@@ -156,7 +156,7 @@ text with one click.
 
 ## Combobox
 
-```svelte example class="h-80"
+```svelte example class="h-96 space-y-20"
 <script>
   import { Input } from "flowbite-svelte";
   const carMakers = [
@@ -171,7 +171,16 @@ text with one click.
   ];
 </script>
 
-<Input clearable data={carMakers} placeholder="Type to search cars..." />
+<Input 
+  data={carMakers}
+  placeholder="Type to search cars..." 
+/>
+
+<Input 
+  data={carMakers}
+  clearable
+  placeholder="Clearable" 
+/>
 ```
 
 ## Input sizes

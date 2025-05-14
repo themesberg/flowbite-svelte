@@ -34,6 +34,9 @@
   // tinted if put in component having its own background
   let background: boolean = getContext("background");
 
+  // svelte-ignore non_reactive_update
+  let dummyFocusDiv: HTMLDivElement;
+
   let group: { size: SizeType } = getContext("group");
   let isGroup = !!group;
   let _size = $derived(size || clampSize(group?.size) || "md");
@@ -43,13 +46,20 @@
 
   const clearAll = () => {
     if (elementRef) {
-      elementRef.value = "";
+      // in order to avoid type error in setTimeout()
+      const input = elementRef;
+      input.value = "";
       value = "";
-      // Trigger filtering with empty value after clearing
-      filterSuggestions("");
-      // Keep focus on input after clearing
-      if (elementRef) elementRef.focus();
+
+      backspaceUsed = false;
+      updateSuggestions();
+      // hack to focus outside
+      dummyFocusDiv?.focus();
+      setTimeout(() => {
+        input.focus();
+      }, 100);
     }
+
     if (clearableOnClick) clearableOnClick();
   };
 
@@ -57,53 +67,78 @@
   let isFocused = $state(false);
   let filteredSuggestions: string[] = $state([]);
   let selectedIndex = $state(-1);
+  let backspaceUsed = $state(false); // Track if backspace was used to clear
   
-  function filterSuggestions(inputValue: string | undefined) {
-    if (!isCombobox || !data || !Array.isArray(data)) {
+  function updateSuggestions() {
+    if (!isCombobox || !isFocused) {
       filteredSuggestions = [];
       return;
     }
     
-    const searchTerm = (inputValue || '').toLowerCase();
+    const searchTerm = ((value as string) || '').toLowerCase();
     
-    // Show suggestions even when input is empty if the field is focused
-    if (isFocused) {
-      filteredSuggestions = data
-        .filter(item => searchTerm ? item.toLowerCase().includes(searchTerm) : true)
-        .slice(0, maxSuggestions);
-    } else {
+    // Show suggestions if:
+    // 1. There's actual input text, OR
+    // 2. The input is empty but backspace was just used to clear it
+    if (searchTerm === '' && !backspaceUsed) {
       filteredSuggestions = [];
+    } else {
+      // If there's text, filter suggestions
+      if (searchTerm) {
+        filteredSuggestions = data
+          .filter(item => item.toLowerCase().includes(searchTerm))
+          .slice(0, maxSuggestions);
+      } 
+      // If empty but backspace was used, show all suggestions
+      else if (backspaceUsed) {
+        filteredSuggestions = [...data].slice(0, maxSuggestions);
+      }
     }
     
-    // Reset selected index when suggestions change
     selectedIndex = -1;
   }
 
-  // Watch for value changes to update suggestions
+  // Watch for value changes
   $effect(() => {
-    if (isFocused && isCombobox) {
-      filterSuggestions(value as string);
+    if (isCombobox) {
+      updateSuggestions();
     }
   });
 
-  function handleInput(event: Event) {
-    filterSuggestions(value as string);
+  function handleInput() {
+    // Reset backspace flag if user starts typing again
+    if ((value as string).length > 0) {
+      backspaceUsed = false;
+    }
+    updateSuggestions();
   }
 
   function handleFocus() {
     isFocused = true;
-    filterSuggestions(value as string);
+    updateSuggestions();
   }
 
   function handleBlur() {
     // Small delay to allow click on suggestion to fire first
     setTimeout(() => {
       isFocused = false;
+      backspaceUsed = false; // Reset flag when focus is lost
       filteredSuggestions = [];
     }, 200);
   }
 
   function handleKeydown(event: KeyboardEvent) {
+    if (!isCombobox) return;
+    
+    // Special handling for backspace/delete - track when it's used to clear the input
+    if ((event.key === 'Backspace' || event.key === 'Delete')) {
+      const currentValue = value as string;
+      // If this keypress will make the input empty
+      if (currentValue.length <= 1) {
+        backspaceUsed = true;
+      }
+    }
+    
     if (!filteredSuggestions.length) return;
     
     switch (event.key) {
@@ -143,6 +178,10 @@
     }
   }
 </script>
+
+{#if clearable}
+  <div tabindex="-1" bind:this={dummyFocusDiv} class="sr-only"></div>
+{/if}
 
 <div class={isCombobox ? "relative w-full" : ""}>
   {#if group}

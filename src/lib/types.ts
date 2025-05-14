@@ -719,6 +719,9 @@ export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size
   clearableColor?: CloseButtonVariants["color"];
   clearableClass?: string;
   clearableOnClick?: () => void;
+  data?: string[];
+  maxSuggestions?: number;
+  onSelect?: (item: string) => void;
 }
 
 // helper
