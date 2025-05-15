@@ -163,6 +163,7 @@ export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
   defaultClass?: string;
   classActive?: string;
   classInactive?: string;
+  transitionType?: TransitionFunc | "none";
 }
 
 export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
@@ -173,7 +174,7 @@ export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   open?: boolean;
   activeClass?: string;
   inactiveClass?: string;
-  transitionType?: TransitionFunc;
+  transitionType?: TransitionFunc | "none";
   transitionParams?: ParamsType;
   headerClass?: string;
   contentClass?: string;

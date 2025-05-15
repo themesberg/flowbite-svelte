@@ -5,7 +5,7 @@
   import type { AccordionProps, BaseThemes } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, flush, activeClass, inactiveClass, multiple = false, class: className, ...restProps }: AccordionProps = $props();
+  let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, ...restProps }: AccordionProps = $props();
 
   // Get merged theme from context
   const context = getContext<BaseThemes>("themeConfig");
@@ -20,6 +20,7 @@
   };
 
   setContext("ctx", ctx);
+  setContext("ctxTransitionType", transitionType);
   const base = $derived(accordionTheme({ flush, class: clsx(className) }));
 </script>
 

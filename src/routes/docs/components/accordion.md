@@ -262,21 +262,21 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 ```svelte example
 <script>
   import { AccordionItem, Accordion } from "flowbite-svelte";
-  import { fade, fly } from "svelte/transition";
+  import { blur, fade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
 </script>
 
 <Accordion>
-  <AccordionItem transitionParams={{ duration: 2000 }}>
-    {#snippet header()}My Header 1{/snippet}
+  <AccordionItem transitionParams={{ duration: 1000 }}>
+    {#snippet header()}Slide duration:1000{/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
-  <AccordionItem transitionType={fly} transitionParams={{ delay: 250, duration: 300, x: 100, y: 500, opacity: 0.5, easing: quintOut }}>
-    {#snippet header()}My Header 2{/snippet}
+  <AccordionItem transitionType={blur} transitionParams={{ duration: 300}}>
+    {#snippet header()}Blur duration:300{/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
-  <AccordionItem transitionType={fade} transitionParams={{ duration: 1000 }}>
-    {#snippet header()}My Header 3{/snippet}
+  <AccordionItem transitionType={fade} transitionParams={{ duration: 300 }}>
+    {#snippet header()}Fade duration:300{/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
 </Accordion>
@@ -379,6 +379,38 @@ Use the following example to preserve the input value. First fill out the form, 
         <a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Tailwind UI</a>
       </li>
     </ul>
+  </AccordionItem>
+</Accordion>
+```
+
+## Using transitionType="none"
+
+When you set transitionType="none" on an Accordion or an AccordionItem, it disables Svelte transitions completely and instead uses CSS display properties (block/hidden) to show or hide content. It prevents Svelte from completely destroying and recreating components when toggling the accordion. 
+
+```svelte example class="h-96 space-y-4"
+<script lang="ts">
+  import { AccordionItem, Accordion } from "flowbite-svelte";
+</script>
+
+<Accordion transitionType="none">
+  <AccordionItem>
+    {#snippet header()}My Header 1{/snippet}
+    Content A
+  </AccordionItem>
+  <AccordionItem>
+    {#snippet header()}My Header 2{/snippet}
+    Content B
+  </AccordionItem>
+</Accordion>
+
+<Accordion>
+  <AccordionItem transitionType="none">
+    {#snippet header()}transitionType: "none"{/snippet}
+    Content C
+  </AccordionItem>
+  <AccordionItem>
+    {#snippet header()}transitionType: default{/snippet}
+    Content D
   </AccordionItem>
 </Accordion>
 ```

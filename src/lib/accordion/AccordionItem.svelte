@@ -10,6 +10,10 @@
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, headerClass, contentClass }: AccordionItemProps = $props();
 
+  const ctxTransitionType = getContext("ctxTransitionType");
+  // Check if transitionType is explicitly set to undefined in props
+  const useTransition = transitionType === "none" ? false : ctxTransitionType === "none" ? false : true;
+  
   // Theme context
   const context = getContext<BaseThemes>("themeConfig");
   // Use theme context if available, otherwise fallback to default
@@ -54,30 +58,19 @@
     {/if}
   </button>
 </h2>
-{#if open}
-  <div transition:transitionType={transitionParams as ParamsType}>
+
+{#if useTransition}
+  {#if open && transitionType !== "none"}
+    <div transition:transitionType={transitionParams as ParamsType}>
+      <div class={content({ class: contentClass })}>
+        {@render children()}
+      </div>
+    </div>
+  {/if}
+{:else}
+  <div class={open ? 'block' : 'hidden'}>
     <div class={content({ class: contentClass })}>
       {@render children()}
     </div>
   </div>
 {/if}
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L168)
-## Props
-@prop children
-@prop header
-@prop arrowup
-@prop arrowdown
-@prop open = $bindable(false)
-@prop activeClass
-@prop inactiveClass
-@prop transitionType = slide
-@prop transitionParams
-@prop class: className
-@prop headerClass
-@prop contentClass
--->
