@@ -711,7 +711,7 @@ As dropdown is implemented using the [Floating UI](https://floating-ui.com) libr
 
 ## Transition
 
-Since `Dropdown` component extends `Popper`, you can use `transition` and `transitionParams` props as well.
+Since the `Dropdown` component extends `Popper`, it also supports the `transition` and `transitionParams` props for customizing animations.
 
 ```svelte example class="flex justify-center items-start space-x-4 h-64" hideResponsiveButtons
 <script>

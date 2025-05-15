@@ -492,7 +492,7 @@ Control the main button position using the flexbox utility classes from Tailwind
 
 ## Transition
 
-Since `SpeedDial` component extends `Popper`, you can use `transition` and `transitionParams` props as well.
+Since the `SpeedDial` component extends `Popper`, it also supports the `transition` and `transitionParams` props for customizing animations.
 
 ```svelte example class="relative h-96" hideResponsiveButtons
 <script>
