@@ -143,6 +143,25 @@ If you need the tooltip to be attached to the other element then the tiggering o
 <Tooltip reference="#ext-ref" triggeredBy="[id^='ref-']" {placement} {onbeforetoggle} class="w-64 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
 ```
 
+## Animations
+
+Use svelte transistions to configure tooltip animations.
+
+
+```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
+<script>
+  import { Tooltip, Button } from "flowbite-svelte";
+  import { slide, scale, blur } from "svelte/transition";
+</script>
+
+<Button>Blur</Button>
+<Tooltip transition={blur} transitionParams={{duration: 300}}>Tooltip content</Tooltip>
+<Button>Slide</Button>
+<Tooltip transition={slide}>Tooltip content</Tooltip>
+<Button>Scale</Button>
+<Tooltip transition={scale}>Tooltip content</Tooltip>
+```
+
 ## Custom type
 
 Various color palettes can be set for a tooltip by using the `color` property. (Setting `color` prop sets the `type` to `custom` implicitly.)
