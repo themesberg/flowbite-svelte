@@ -355,9 +355,11 @@ You can add other components to the `TabItem` component. Here we are adding a ti
 
 ## Using Svelte's snapshot to preserve the input
 
-```svelte example class="h-auto"
+Use the following example to preserve the input value. First fill out the form, navigate to a different page, and then use your browser’s back button. You’ll notice that your input is preserved automatically.
+
+```svelte example hideOutput
 <script lang="ts">
-  import { Tabs, TabItem, Label, Button, Input, Textarea } from "flowbite-svelte";
+  import { Tabs, TabItem, Label, Button, Input, Textarea, A } from "flowbite-svelte";
   import type { Snapshot } from "./$types";
   let name = $state("");
   let email = $state("");
@@ -376,6 +378,8 @@ You can add other components to the `TabItem` component. Here we are adding a ti
     alert(`Submitted:\nName: ${name}\nEmail: ${email}\nComment: ${comment}`);
   };
 </script>
+
+<A href="/">Go home</A>
 
 <Tabs role="tablist">
   <TabItem open title="Profile">
