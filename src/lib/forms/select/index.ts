@@ -1,5 +1,3 @@
-import Select from "./Select.svelte";
-import MultiSelect from "./MultiSelect.svelte";
-import { select } from "./theme";
-
-export { Select, MultiSelect, select };
+export { default as Select } from "./Select.svelte";
+export { default as MultiSelect } from "./MultiSelect.svelte";
+export { select } from "./theme";

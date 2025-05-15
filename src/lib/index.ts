@@ -57,6 +57,7 @@ export * from "./forms/radio";
 export * from "./forms/radio-button";
 export * from "./forms/range";
 export * from "./forms/search";
+export * from "./forms/tags";
 export * from "./forms/textarea";
 export * from "./forms/timepicker";
 export * from "./forms/toggle";

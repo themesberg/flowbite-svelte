@@ -846,6 +846,10 @@ export interface TagsProps extends HTMLAttributes<HTMLDivElement>{
   itemClass?: string;
   placeholder?: string;
   class?: string;
+  spanClass?: string;
+  closeClass?: string;
+  inputClass?: string;
+  closeBtnSize?: CloseButtonVariants['size'];
 }
 
 // Timepicker
