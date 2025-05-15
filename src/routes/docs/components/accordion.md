@@ -271,7 +271,7 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
     {#snippet header()}Slide duration:1000{/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
-  <AccordionItem transitionType={blur} transitionParams={{ duration: 300}}>
+  <AccordionItem transitionType={blur} transitionParams={{ duration: 300 }}>
     {#snippet header()}Blur duration:300{/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
@@ -385,7 +385,7 @@ Use the following example to preserve the input value. First fill out the form, 
 
 ## Using transitionType="none"
 
-When you set transitionType="none" on an Accordion or an AccordionItem, it disables Svelte transitions completely and instead uses CSS display properties (block/hidden) to show or hide content. It prevents Svelte from completely destroying and recreating components when toggling the accordion. 
+When you set transitionType="none" on an Accordion or an AccordionItem, it disables Svelte transitions completely and instead uses CSS display properties (block/hidden) to show or hide content. It prevents Svelte from completely destroying and recreating components when toggling the accordion.
 
 ```svelte example class="h-96 space-y-4"
 <script lang="ts">

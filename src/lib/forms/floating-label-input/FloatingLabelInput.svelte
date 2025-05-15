@@ -148,7 +148,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FloatingLabelInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L709)
+[FloatingLabelInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L710)
 ## Props
 @prop children
 @prop id = idGenerator()

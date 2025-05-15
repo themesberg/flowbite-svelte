@@ -40,5 +40,6 @@
 @prop inactiveClass
 @prop multiple = false
 @prop class: className
+@prop transitionType
 @prop ...restProps
 -->

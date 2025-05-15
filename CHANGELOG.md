@@ -1,15 +1,23 @@
 # Changelog
 
+## 1.2.3
+
+### Patch Changes
+
+- dfd3d7ab8 fix: #1070 add transitionType=none
+- eec434fe1 docs: add snapshots example to accordion
+- 21b963a68 fix: #1485 use value:T[] for MultiSelectProps
+
 ## 1.2.2
 
 ### Patch Changes
 
-- - feat: Tags component
-  - feat: transition and transitionParams added to Popper
-  - feat: #1591 add permanent to Modal
-  - docs: Paging, animation example to tooltip and popover
-  - fix: #1593 add contentClass and headerClass to AccordionItem
-  - fix: locale and firstday of the week (#1590)
+- feat: Tags component
+- feat: transition and transitionParams added to Popper
+- feat: #1591 add permanent to Modal
+- docs: Paging, animation example to tooltip and popover
+- fix: #1593 add contentClass and headerClass to AccordionItem
+- fix: locale and firstday of the week (#1590)
 
 ## 1.2.1
 

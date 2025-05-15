@@ -65,13 +65,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L843)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L844)
 ## Props
 @prop value = $bindable([])
 @prop itemClass
 @prop spanClass
-@prop placeholder = 'Enter tags'
-@prop class:className
+@prop placeholder = "Enter tags"
+@prop class: className
 @prop closeClass
 @prop inputClass
 @prop closeBtnSize = "xs"

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { P } from "$lib"
+  import { P } from "$lib";
 </script>
 
 <div class="h-[500px]">
