@@ -9,9 +9,10 @@ thumnailSize: w-40
 ---
 
 <script>
-  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, Seealso } from '../../utils'
 
   const components = 'FloatingLabelInput, Helper'
+  const relatedLinks = ['/docs/forms/input-field','/docs/forms/floating-label', '/docs/extend/tags' ]
 </script>
 
 The floating label style was first pioneered by Google in its infamous Material UI design system and it’s basically a label tag which floats just above the input field when it is being focused or already has content inside.
@@ -219,6 +220,10 @@ Add a helper text in addition to the label if you want to show more information 
   .
 </Helper>
 ```
+
+## See also
+
+<Seealso links={relatedLinks} />
 
 ## Component data
 

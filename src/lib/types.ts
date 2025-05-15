@@ -832,8 +832,8 @@ export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttribute
 
 export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelectAttributes, "size" | "children"> {
   children?: Snippet<[{ item: SelectOptionType<T>; clear: () => void }]>;
-  items?: SelectOptionType<T>[];
-  // value?: (string | number)[];
+  items: SelectOptionType<T>[];
+  value: T[];
   dropdownClass?: string;
   placeholder?: string;
   disabled?: boolean;
@@ -841,7 +841,6 @@ export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelec
 
 // Tags
 export interface TagsProps extends HTMLAttributes<HTMLDivElement> {
-  // value = $bindable([]), itemClass = '', placeholder = 'Enter tags', class:className, ...restProps
   value: string[];
   itemClass?: string;
   placeholder?: string;

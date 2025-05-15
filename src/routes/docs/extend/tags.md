@@ -45,3 +45,13 @@ Import the `Tags` component in a script tag.
   <Button onclick={handleClick}>Submit</Button>
 </form>
 ```
+
+## See also
+
+<Seealso links={relatedLinks} />
+
+## Component data
+
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+<CompoAttributesViewer {dirName}/>
