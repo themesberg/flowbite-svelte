@@ -839,6 +839,15 @@ export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelec
   disabled?: boolean;
 }
 
+// Tags
+export interface TagsProps extends HTMLAttributes<HTMLDivElement>{
+  // value = $bindable([]), itemClass = '', placeholder = 'Enter tags', class:className, ...restProps 
+  value: string[];
+  itemClass?: string;
+  placeholder?: string;
+  class?: string;
+}
+
 // Timepicker
 export type TimePickerType = "default" | "dropdown" | "select" | "range" | "timerange-dropdown" | "timerange-toggle" | "inline-buttons";
 export type ColumnCount = 1 | 2 | 3 | 4;
