@@ -23,7 +23,7 @@
     meta: PostMeta;
   }
 
-  const components = (Object.values(data.posts) as Post[][])
+  const components = (Object.values(data.posts.posts) as Post[][])
     .flat()
     .filter((x): x is Post => x.meta && x.meta.dir === data.dir)
     .map(({ path, meta }) => ({ path, name: meta.component_title }));
