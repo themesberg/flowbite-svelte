@@ -6,7 +6,7 @@
   import { twMerge } from "tailwind-merge";
 
   const group: SizeType = getContext("group");
-  const ctxDisabled: boolean | undefined  = getContext("disabled");
+  const ctxDisabled: boolean | undefined = getContext("disabled");
 
   let { children, onclick, pill, outline = false, size = group ? "sm" : "md", color = group ? (outline ? "dark" : "alternative") : "primary", shadow = false, tag = "button", disabled, class: className, ...restProps }: ButtonProps = $props();
 
@@ -34,7 +34,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L337)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L340)
 ## Props
 @prop children
 @prop onclick

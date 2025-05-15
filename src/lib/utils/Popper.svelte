@@ -178,7 +178,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1821)
+[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1842)
 ## Props
 @prop triggeredBy
 @prop trigger = "click"
@@ -194,6 +194,8 @@
 @prop class: className = ""
 @prop arrowClass = ""
 @prop isOpen = $bindable(false)
+@prop transitionParams
+@prop transition = fade
 @prop children
 @prop ...restProps
 -->

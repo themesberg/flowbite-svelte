@@ -2,7 +2,7 @@
   "name": "ListPlaceholder",
   "type": {
     "name": "ListPlaceholderProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1333"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1354"
   },
   "props": [
     ["itemNumber", "5"],

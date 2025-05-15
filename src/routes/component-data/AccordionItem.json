@@ -14,6 +14,8 @@
     ["inactiveClass", ""],
     ["transitionType", "slide"],
     ["transitionParams", ""],
-    ["class: className", ""]
+    ["class: className", ""],
+    ["headerClass", ""],
+    ["contentClass", ""]
   ]
 }

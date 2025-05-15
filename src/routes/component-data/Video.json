@@ -2,7 +2,7 @@
   "name": "Video",
   "type": {
     "name": "VideoProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1807"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1828"
   },
   "props": [
     ["children", ""],

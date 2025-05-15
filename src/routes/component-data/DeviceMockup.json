@@ -2,7 +2,7 @@
   "name": "DeviceMockup",
   "type": {
     "name": "DeviceMockupProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L478"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L481"
   },
   "props": [
     ["children", ""],

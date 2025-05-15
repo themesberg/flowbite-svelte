@@ -2,7 +2,7 @@
   "name": "Helper",
   "type": {
     "name": "HelperProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L728"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L731"
   },
   "props": [
     ["children", ""],

@@ -2,7 +2,7 @@
   "name": "Card",
   "type": {
     "name": "CardProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L375"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L378"
   },
   "props": [
     ["children", ""],

@@ -2,7 +2,7 @@
   "name": "Mark",
   "type": {
     "name": "MarkProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1769"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1790"
   },
   "props": [
     ["children", ""],

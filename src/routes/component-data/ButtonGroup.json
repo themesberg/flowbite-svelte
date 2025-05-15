@@ -7,6 +7,7 @@
   "props": [
     ["children", ""],
     ["size", "\"md\""],
+    ["disabled", ""],
     ["class: className", ""]
   ]
 }

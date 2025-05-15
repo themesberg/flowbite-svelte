@@ -62,7 +62,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1115)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1136)
 ## Props
 @prop progress = 45
 @prop radius = 42

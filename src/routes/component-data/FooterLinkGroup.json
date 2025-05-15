@@ -2,7 +2,7 @@
   "name": "FooterLinkGroup",
   "type": {
     "name": "FooterLinkGroupProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L628"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L631"
   },
   "props": [
     ["class: ulClass", ""],

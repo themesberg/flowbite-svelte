@@ -2,7 +2,7 @@
   "name": "Breadcrumb",
   "type": {
     "name": "BreadcrumbProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L305"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L307"
   },
   "props": [
     ["children", ""],

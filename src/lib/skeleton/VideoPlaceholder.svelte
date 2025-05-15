@@ -18,7 +18,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1347)
+[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1368)
 ## Props
 @prop size = "sm"
 @prop class: className

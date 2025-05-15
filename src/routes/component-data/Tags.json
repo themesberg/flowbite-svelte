@@ -1,0 +1,17 @@
+{
+  "name": "Tags",
+  "type": {
+    "name": "TagsProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L843"
+  },
+  "props": [
+    ["value", "$bindable([])"],
+    ["itemClass", ""],
+    ["spanClass", ""],
+    ["placeholder", "'Enter tags'"],
+    ["class:className", ""],
+    ["closeClass", ""],
+    ["inputClass", ""],
+    ["closeBtnSize", "\"xs\""]
+  ]
+}

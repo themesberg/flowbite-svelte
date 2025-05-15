@@ -840,8 +840,8 @@ export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelec
 }
 
 // Tags
-export interface TagsProps extends HTMLAttributes<HTMLDivElement>{
-  // value = $bindable([]), itemClass = '', placeholder = 'Enter tags', class:className, ...restProps 
+export interface TagsProps extends HTMLAttributes<HTMLDivElement> {
+  // value = $bindable([]), itemClass = '', placeholder = 'Enter tags', class:className, ...restProps
   value: string[];
   itemClass?: string;
   placeholder?: string;
@@ -849,7 +849,7 @@ export interface TagsProps extends HTMLAttributes<HTMLDivElement>{
   spanClass?: string;
   closeClass?: string;
   inputClass?: string;
-  closeBtnSize?: CloseButtonVariants['size'];
+  closeBtnSize?: CloseButtonVariants["size"];
 }
 
 // Timepicker

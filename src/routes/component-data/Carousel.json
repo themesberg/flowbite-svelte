@@ -2,7 +2,7 @@
   "name": "Carousel",
   "type": {
     "name": "CarouselProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L387"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L390"
   },
   "props": [
     ["children", ""],

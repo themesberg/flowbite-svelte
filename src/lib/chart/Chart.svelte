@@ -38,7 +38,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ChartProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L437)
+[ChartProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L440)
 ## Props
 @prop options
 @prop class: classname

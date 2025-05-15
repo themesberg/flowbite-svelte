@@ -2,7 +2,7 @@
   "name": "Badge",
   "type": {
     "name": "BadgeProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L210"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L212"
   },
   "props": [
     ["children", ""],

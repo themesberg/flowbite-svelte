@@ -2,7 +2,7 @@
   "name": "Modal",
   "type": {
     "name": "ModalProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L980"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1000"
   },
   "props": [
     ["children", ""],
@@ -14,6 +14,7 @@
     ["footer", ""],
     ["title", ""],
     ["open", "$bindable(false)"],
+    ["permanent", "false"],
     ["dismissable", "true"],
     ["closeBtnClass", ""],
     ["headerClass", ""],

@@ -23,7 +23,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L502)
+[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L505)
 ## Props
 @prop children
 @prop divClass

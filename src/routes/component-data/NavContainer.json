@@ -2,7 +2,7 @@
   "name": "NavContainer",
   "type": {
     "name": "NavContainerProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1018"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1039"
   },
   "props": [
     ["children", ""],

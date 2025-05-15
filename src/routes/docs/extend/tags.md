@@ -30,11 +30,11 @@ Import the `Tags` component in a script tag.
 
 ```svelte example
 <script lang="ts">
-  import { Button, Tags } from 'flowbite-svelte'
+  import { Button, Tags } from "flowbite-svelte";
   let tags: string[] = $state([]);
-  const handleClick = ()=>{
-    alert(`Submitted: ${tags}` )
-  }
+  const handleClick = () => {
+    alert(`Submitted: ${tags}`);
+  };
 </script>
 
 <form>

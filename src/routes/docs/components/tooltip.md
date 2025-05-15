@@ -147,7 +147,6 @@ If you need the tooltip to be attached to the other element then the tiggering o
 
 Use svelte transistions to configure tooltip animations.
 
-
 ```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from "flowbite-svelte";
@@ -155,7 +154,7 @@ Use svelte transistions to configure tooltip animations.
 </script>
 
 <Button>Blur</Button>
-<Tooltip transition={blur} transitionParams={{duration: 300}}>Tooltip content</Tooltip>
+<Tooltip transition={blur} transitionParams={{ duration: 300 }}>Tooltip content</Tooltip>
 <Button>Slide</Button>
 <Tooltip transition={slide}>Tooltip content</Tooltip>
 <Button>Scale</Button>

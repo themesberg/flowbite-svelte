@@ -32,7 +32,7 @@
   let buttonClass = $derived(twMerge(button(), open && !ctx.flush && (activeClass || ctx.activeClass || active()), !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()), clsx(className)));
 </script>
 
-<h2 class={base({ class: headerClass})}>
+<h2 class={base({ class: headerClass })}>
   <button type="button" onclick={handleToggle} class={buttonClass} aria-expanded={open}>
     {#if header}
       {@render header()}
@@ -56,7 +56,7 @@
 </h2>
 {#if open}
   <div transition:transitionType={transitionParams as ParamsType}>
-    <div class={content({ class: contentClass})}>
+    <div class={content({ class: contentClass })}>
       {@render children()}
     </div>
   </div>
@@ -78,4 +78,6 @@
 @prop transitionType = slide
 @prop transitionParams
 @prop class: className
+@prop headerClass
+@prop contentClass
 -->

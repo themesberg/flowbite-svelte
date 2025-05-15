@@ -2,7 +2,7 @@
   "name": "Avatar",
   "type": {
     "name": "AvatarProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L194"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L196"
   },
   "props": [
     ["children", ""],

@@ -2,7 +2,7 @@
   "name": "TabItem",
   "type": {
     "name": "TabitemProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1542"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1563"
   },
   "props": [
     ["children", ""],

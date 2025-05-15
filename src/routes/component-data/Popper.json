@@ -19,6 +19,8 @@
     ["class: className", "\"\""],
     ["arrowClass", "\"\""],
     ["isOpen", "$bindable(false)"],
+    ["transitionParams", ""],
+    ["transition", "fade"],
     ["children", ""]
   ]
 }

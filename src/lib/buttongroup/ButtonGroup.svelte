@@ -7,7 +7,7 @@
 
   let groupClass = $derived(buttonGroup({ size, className }));
   setContext("group", size);
-  setContext("disabled", disabled)
+  setContext("disabled", disabled);
 </script>
 
 <div {...restProps} class={groupClass} role="group">
@@ -18,10 +18,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L323)
+[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L325)
 ## Props
 @prop children
 @prop size = "md"
+@prop disabled
 @prop class: className
 @prop ...restProps
 -->

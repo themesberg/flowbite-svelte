@@ -2,7 +2,7 @@
   "name": "Listgroup",
   "type": {
     "name": "ListgroupProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L948"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L968"
   },
   "props": [
     ["children", ""],

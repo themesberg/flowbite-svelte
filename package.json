@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -397,6 +397,10 @@
     "./Select.svelte": {
       "types": "./dist/forms/select/Select.svelte.d.ts",
       "svelte": "./dist/forms/select/Select.svelte"
+    },
+    "./Tags.svelte": {
+      "types": "./dist/forms/tags/Tags.svelte.d.ts",
+      "svelte": "./dist/forms/tags/Tags.svelte"
     },
     "./Textarea.svelte": {
       "types": "./dist/forms/textarea/Textarea.svelte.d.ts",

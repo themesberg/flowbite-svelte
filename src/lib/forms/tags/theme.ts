@@ -8,4 +8,4 @@ export const tags = tv({
     close: "my-auto ml-1",
     input: "block text-sm m-2.5 p-0 bg-transparent border-none outline-none text-gray-900 h-min w-full min-w-fit focus:ring-0 placeholder-gray-400"
   }
-})
+});

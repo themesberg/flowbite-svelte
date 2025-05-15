@@ -2,7 +2,7 @@
   "name": "FooterIcon",
   "type": {
     "name": "FooterIconProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L621"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L624"
   },
   "props": [
     ["children", ""],

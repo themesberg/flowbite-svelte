@@ -2,7 +2,7 @@
   "name": "SidebarBrand",
   "type": {
     "name": "SidebarBrandProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1282"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1303"
   },
   "props": [
     ["children", ""],

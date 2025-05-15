@@ -2,7 +2,7 @@
   "name": "Dropdown",
   "type": {
     "name": "DropdownProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L560"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L563"
   },
   "props": [
     ["children", ""],

@@ -2,7 +2,7 @@
   "name": "Input",
   "type": {
     "name": "InputProps<InputValue>",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L733"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L736"
   },
   "props": [
     ["children", ""],
@@ -14,6 +14,7 @@
     ["size", ""],
     ["color", "\"default\""],
     ["class: className", ""],
+    ["wrapperClass", ""],
     ["classLeft", ""],
     ["classRight", ""],
     ["divClass", ""],

@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.2.2
+
+### Patch Changes
+
+- - feat: Tags component
+  - feat: transition and transitionParams added to Popper
+  - feat: #1591 add permanent to Modal
+  - docs: Paging, animation example to tooltip and popover
+  - fix: #1593 add contentClass and headerClass to AccordionItem
+  - fix: locale and firstday of the week (#1590)
+
 ## 1.2.1
 
 ### Patch Changes

@@ -2,7 +2,7 @@
   "name": "TableSearch",
   "type": {
     "name": "TableSearchProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1514"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1535"
   },
   "props": [
     ["children", ""],

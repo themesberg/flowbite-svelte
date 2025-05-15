@@ -41,7 +41,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1613)
+[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1634)
 ## Props
 @prop timelines
 @prop aClass

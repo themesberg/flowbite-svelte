@@ -9,30 +9,7 @@
 
   // TODO: missing focus trap
 
-  let { 
-    children, 
-    oncancel, 
-    onclose, 
-    modal = true, 
-    autoclose = false, 
-    header, 
-    footer, 
-    title, 
-    open = $bindable(false), 
-    permanent = false,
-    dismissable = true, 
-    closeBtnClass, 
-    headerClass, 
-    bodyClass, 
-    footerClass, 
-    outsideclose = true, 
-    size = "md", 
-    placement, 
-    class: className, 
-    params, 
-    transition = fade, 
-    ...restProps 
-  }: ModalProps = $props();
+  let { children, oncancel, onclose, modal = true, autoclose = false, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params, transition = fade, ...restProps }: ModalProps = $props();
 
   const paramsDefault = { duration: 100, easing: sineIn };
   const paramsOptions = $derived(params ?? paramsDefault);
@@ -102,3 +79,33 @@
     {/if}
   </dialog>
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1000)
+## Props
+@prop children
+@prop oncancel
+@prop onclose
+@prop modal = true
+@prop autoclose = false
+@prop header
+@prop footer
+@prop title
+@prop open = $bindable(false)
+@prop permanent = false
+@prop dismissable = true
+@prop closeBtnClass
+@prop headerClass
+@prop bodyClass
+@prop footerClass
+@prop outsideclose = true
+@prop size = "md"
+@prop placement
+@prop class: className
+@prop params
+@prop transition = fade
+@prop ...restProps
+-->

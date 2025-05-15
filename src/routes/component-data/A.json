@@ -2,7 +2,7 @@
   "name": "A",
   "type": {
     "name": "AnchorProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1667"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1688"
   },
   "props": [
     ["children", ""],

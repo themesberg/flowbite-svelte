@@ -42,7 +42,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L959)
+[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L979)
 ## Props
 @prop children
 @prop active

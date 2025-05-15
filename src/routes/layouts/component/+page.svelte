@@ -11,8 +11,6 @@
   import Newsletter from "../../utils/Newsletter.svelte";
   import PageHeadSection from "../../utils/PageHeadSection.svelte";
   import Paging from "../../utils/Paging.svelte";
-  import Toc from "../../utils/Toc.svelte";
-  import { extract } from "./Anchor.svelte";
 
   let { title, breadcrumb_title, component_title = "", dir, description, layout = "", children } = $props();
 
