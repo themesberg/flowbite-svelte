@@ -8,7 +8,7 @@
   import type { AccordionCtxType, AccordionItemProps, ParamsType, BaseThemes } from "$lib/types";
   import clsx from "clsx";
 
-  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className }: AccordionItemProps = $props();
+  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, headerClass, contentClass }: AccordionItemProps = $props();
 
   // Theme context
   const context = getContext<BaseThemes>("themeConfig");
@@ -32,7 +32,7 @@
   let buttonClass = $derived(twMerge(button(), open && !ctx.flush && (activeClass || ctx.activeClass || active()), !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()), clsx(className)));
 </script>
 
-<h2 class={base()}>
+<h2 class={base({ class: headerClass})}>
   <button type="button" onclick={handleToggle} class={buttonClass} aria-expanded={open}>
     {#if header}
       {@render header()}
@@ -56,7 +56,7 @@
 </h2>
 {#if open}
   <div transition:transitionType={transitionParams as ParamsType}>
-    <div class={content()}>
+    <div class={content({ class: contentClass})}>
       {@render children()}
     </div>
   </div>

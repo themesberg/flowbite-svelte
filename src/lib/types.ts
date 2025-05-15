@@ -175,6 +175,8 @@ export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   inactiveClass?: string;
   transitionType?: TransitionFunc;
   transitionParams?: ParamsType;
+  headerClass?: string;
+  contentClass?: string;
 }
 
 // alert
