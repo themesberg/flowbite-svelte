@@ -338,6 +338,24 @@ Increase or decrease the default offset by adding the `offset` attribute where t
 <Popover offset={30} class="w-64 text-sm font-light" title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
 ```
 
+## Animation
+
+Customize the animation of the popover component by using the transition functions from Svelte.
+
+```svelte example class="flex h-44 items-end justify-center gap-8" hideResponsiveButtons
+<script>
+  import { Popover, Button } from 'flowbite-svelte';
+  import { blur, fade, slide } from 'svelte/transition';
+</script>
+
+<Button>Fade popover</Button>
+<Popover class="w-64 text-sm font-light" title="Popover title" transition={fade} transitionParams={{ duration: 1000 }}>And here's some amazing content. It's very engaging. Right?</Popover>
+<Button>Blur popover</Button>
+<Popover class="w-64 text-sm font-light" title="Popover title" transition={blur} transitionParams={{ duration: 1000 }}>And here's some amazing content. It's very engaging. Right?</Popover>
+<Button>Slide popover</Button>
+<Popover class="w-64 text-sm font-light" title="Popover title" transition={slide}>And here's some amazing content. It's very engaging. Right?</Popover>
+```
+
 ## Disable arrow
 
 You can also disable the popover arrow by setting `arrow` attribute to `false`.

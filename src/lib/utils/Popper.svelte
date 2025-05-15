@@ -1,26 +1,31 @@
 <script lang="ts">
-  import type { Coords, Middleware, Placement } from "@floating-ui/dom";
+  import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
   import * as dom from "@floating-ui/dom";
   import Arrow from "./Arrow.svelte";
-  import type { PopperProps, TriggeredToggleEvent } from "$lib";
+  import type { ParamsType, PopperProps, TriggeredToggleEvent } from "$lib";
+  import { fade } from "svelte/transition";
+  import { sineIn } from "svelte/easing";
 
   const TRIGGER_DELAY = 200;
 
-  let { triggeredBy, trigger = "click", placement = "top", offset = 8, arrow = false, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", arrowClass = "", isOpen = $bindable(false), children, ...restProps }: PopperProps = $props();
+  let { triggeredBy, trigger = "click", placement = "top", offset = 8, arrow = false, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", arrowClass = "", isOpen = $bindable(false), transitionParams, transition = fade, children, ...restProps }: PopperProps = $props();
 
   let focusable: boolean = true;
   let clickable: boolean = $derived(trigger === "click");
   let hoverable: boolean = $derived(trigger === "hover");
 
-  let popover: HTMLElement | null = null;
+  let popover: HTMLElement | null = $state(null);
   let invoker: HTMLButtonElement | null = null;
   let referenceElement: HTMLElement | null = null;
   let triggerEls: HTMLButtonElement[] = [];
-  let arrowParams: { placement: Placement; cords: Partial<Coords>; strategy: "absolute" | "fixed" } = $state({
+  let arrowParams: { placement: Placement; cords: Partial<Coords>; strategy: Strategy } = $state({
     placement,
     cords: { x: 0, y: 0 },
     strategy
   });
+
+  const paramsDefault = { duration: 100, easing: sineIn };
+  const paramsOptions = $derived(transitionParams ?? paramsDefault);
 
   const px = (n: number | undefined) => (n ? `${n}px` : "");
 
@@ -58,17 +63,14 @@
     if (ev.target !== invoker && triggerEls.includes(ev.target as HTMLButtonElement)) {
       invoker = ev.target as HTMLButtonElement;
       // if (invoker) invoker.popoverTargetElement = popover;
-      popover?.hidePopover(); // invoker changed need to hide old popover
-      isOpen = false; // Update isOpen state when popover is hidden
+      isOpen = false;
+      await new Promise((resolve) => setTimeout(resolve, TRIGGER_DELAY));
     }
 
     if (ev.type === "mousedown") {
-      popover?.togglePopover();
-      // For toggle, we need to check the current state after toggling
-      // This will be handled by the ontoggle event
+      isOpen = !isOpen;
     } else {
-      popover?.showPopover();
-      isOpen = true; // Update isOpen state when popover is shown
+      isOpen = true;
     }
   }
 
@@ -81,8 +83,6 @@
     if (ev?.type === "mouseleave" && popover?.contains(popover.ownerDocument.activeElement)) return;
     if (ev?.type === "focusout" && popover?.contains(popover.ownerDocument.activeElement)) return;
 
-    popover?.hidePopover();
-    // Update isOpen state when popover is closed
     isOpen = false;
   }
 
@@ -108,6 +108,9 @@
 
   function on_toggle(ev: ToggleEvent) {
     if (!invoker) return;
+
+    // Update isOpen value when popover state changes through other means
+    isOpen = ev.newState === "open";
 
     (ev as TriggeredToggleEvent).trigger = invoker;
     _ontoggle?.(ev as TriggeredToggleEvent);
@@ -158,46 +161,18 @@
       isOpen = false;
     }
   }
-
-  // Watch for isOpen changes to control popover state and update isOpen when state changes
-  $effect(() => {
-    if (popover) {
-      if (isOpen === true) {
-        popover.showPopover();
-      } else if (isOpen === false) {
-        popover.hidePopover();
-      }
-    }
-  });
-
-  // Update isOpen value when popover state changes through other means
-  function updateIsOpenState(ev: ToggleEvent) {
-    isOpen = ev.newState === "open";
-  }
 </script>
 
-<div
-  popover="manual"
-  role="tooltip"
-  bind:this={popover}
-  use:set_triggers
-  class:overflow-visible={true}
-  onfocusout={close_popover}
-  onmouseleave={hoverable ? close_popover : undefined}
-  onmouseenter={hoverable ? open_popover : undefined}
-  onbeforetoggle={on_before_toggle}
-  ontoggle={(ev) => {
-    updateIsOpenState(ev);
-    on_toggle(ev);
-  }}
-  class={className}
-  {...restProps}
->
-  {@render children()}
-  {#if arrow}
-    <Arrow {...arrowParams} class={arrowClass} />
-  {/if}
-</div>
+<div use:set_triggers hidden></div>
+
+{#if isOpen}
+  <div popover="manual" role="tooltip" bind:this={popover} class:overflow-visible={true} onfocusout={close_popover} onmouseleave={hoverable ? close_popover : undefined} onmouseenter={hoverable ? open_popover : undefined} onbeforetoggle={on_before_toggle} ontoggle={on_toggle} class={className} transition:transition={paramsOptions as ParamsType} onintrostart={() => popover?.showPopover()} onoutroend={() => popover?.hidePopover()} {...restProps}>
+    {@render children()}
+    {#if arrow}
+      <Arrow {...arrowParams} class={arrowClass} />
+    {/if}
+  </div>
+{/if}
 
 <!--
 @component
