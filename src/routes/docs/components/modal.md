@@ -105,6 +105,12 @@ This example shows the `header` customization as well.
 </Modal>
 ```
 
+## Permanent
+
+If you want to display a modal permanently, add `permanent` prop. All close function will be disabled.
+
+`<Modal title="My title" permanent>Content</Modal>`
+
 ## Modal with onclose
 
 Use the `onclose` prop to run code when the modal closes, regardless of how it was triggered (close button, outside click, ESC key, or autoclose).

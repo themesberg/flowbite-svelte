@@ -3,10 +3,11 @@
   import { buttonGroup } from ".";
   import type { ButtonGroupProps } from "$lib";
 
-  let { children, size = "md", class: className, ...restProps }: ButtonGroupProps = $props();
+  let { children, size = "md", disabled, class: className, ...restProps }: ButtonGroupProps = $props();
 
   let groupClass = $derived(buttonGroup({ size, className }));
   setContext("group", size);
+  setContext("disabled", disabled)
 </script>
 
 <div {...restProps} class={groupClass} role="group">

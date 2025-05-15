@@ -9,7 +9,30 @@
 
   // TODO: missing focus trap
 
-  let { children, oncancel, onclose, modal = true, autoclose = false, header, footer, title, open = $bindable(false), dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params, transition = fade, ...restProps }: ModalProps = $props();
+  let { 
+    children, 
+    oncancel, 
+    onclose, 
+    modal = true, 
+    autoclose = false, 
+    header, 
+    footer, 
+    title, 
+    open = $bindable(false), 
+    permanent = false,
+    dismissable = true, 
+    closeBtnClass, 
+    headerClass, 
+    bodyClass, 
+    footerClass, 
+    outsideclose = true, 
+    size = "md", 
+    placement, 
+    class: className, 
+    params, 
+    transition = fade, 
+    ...restProps 
+  }: ModalProps = $props();
 
   const paramsDefault = { duration: 100, easing: sineIn };
   const paramsOptions = $derived(params ?? paramsDefault);
@@ -17,8 +40,11 @@
   const { base, header: headerCls, footer: footerCls, body, closeBtn } = $derived(modalTheme({ placement, size }));
 
   const closeModal = () => {
-    open = false;
-    onclose?.();
+    // Only close if not permanent
+    if (!permanent) {
+      open = false;
+      onclose?.();
+    }
   };
 
   function _oncancel(ev: Event & { currentTarget: HTMLDialogElement }) {
@@ -26,26 +52,30 @@
     if (ev.currentTarget instanceof HTMLDialogElement) {
       oncancel?.(ev); // propagate the event to the user
       // if user cancels the event we don't close the modal
-      if (ev.defaultPrevented) return;
-      // now we cancel the event to keep control on closing the modal
+      if (ev.defaultPrevented || permanent) return;
       ev.preventDefault();
-      // and close it manually
       closeModal();
     }
   }
 
   function _onclick(ev: Event & { currentTarget: HTMLDialogElement }) {
     if (ev.currentTarget instanceof HTMLDialogElement) {
-      if (outsideclose && ev.target === ev.currentTarget) {
+      if (outsideclose && ev.target === ev.currentTarget && !permanent) {
         closeModal();
       }
-      if (autoclose && ev.target instanceof HTMLButtonElement) {
+      if (autoclose && ev.target instanceof HTMLButtonElement && !permanent) {
         closeModal();
       }
     }
   }
 
   let dlg: HTMLDialogElement | undefined = $state();
+
+  $effect(() => {
+    if (permanent && !open) {
+      open = true;
+    }
+  });
 </script>
 
 {#if open}
@@ -67,37 +97,8 @@
         {@render footer()}
       </div>
     {/if}
-    {#if dismissable}
+    {#if dismissable && !permanent}
       <CloseButton onclick={closeModal} class={closeBtn({ class: closeBtnClass })} />
     {/if}
   </dialog>
 {/if}
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L980)
-## Props
-@prop children
-@prop oncancel
-@prop onclose
-@prop modal = true
-@prop autoclose = false
-@prop header
-@prop footer
-@prop title
-@prop open = $bindable(false)
-@prop dismissable = true
-@prop closeBtnClass
-@prop headerClass
-@prop bodyClass
-@prop footerClass
-@prop outsideclose = true
-@prop size = "md"
-@prop placement
-@prop class: className
-@prop params
-@prop transition = fade
-@prop ...restProps
--->

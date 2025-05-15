@@ -40,6 +40,26 @@ Use the following code to stack together buttons into a single group.
 </ButtonGroup>
 ```
 
+## Disabled
+
+```svelte example class="flex justify-center space-x-4" hideScript hideResponsiveButtons
+<script>
+  import { ButtonGroup, Button } from "flowbite-svelte";
+</script>
+
+<ButtonGroup>
+  <Button disabled>Profile</Button>
+  <Button>Settings</Button>
+  <Button>Messages</Button>
+</ButtonGroup>
+
+<ButtonGroup disabled>
+  <Button>Profile</Button>
+  <Button>Settings</Button>
+  <Button>Messages</Button>
+</ButtonGroup>
+```
+
 ## More examples
 
 ```svelte example class="flex flex-col flex-wrap gap-4" hideResponsiveButtons

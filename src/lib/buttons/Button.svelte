@@ -6,15 +6,18 @@
   import { twMerge } from "tailwind-merge";
 
   const group: SizeType = getContext("group");
+  const ctxDisabled: boolean | undefined  = getContext("disabled");
 
   let { children, onclick, pill, outline = false, size = group ? "sm" : "md", color = group ? (outline ? "dark" : "alternative") : "primary", shadow = false, tag = "button", disabled, class: className, ...restProps }: ButtonProps = $props();
 
-  const { base, outline: outline_, shadow: shadow_ } = $derived(button({ color, size, disabled, pill, group: !!group }));
+  let isDisabled = $derived(Boolean(ctxDisabled) || Boolean(disabled));
+
+  const { base, outline: outline_, shadow: shadow_ } = $derived(button({ color, size, disabled: isDisabled, pill, group: !!group }));
   let btnCls = $derived(twMerge(base(), outline && outline_(), shadow && shadow_(), clsx(className)));
 </script>
 
 {#if restProps.href === undefined}
-  <button type="button" {...restProps} class={btnCls} {disabled} {onclick}>
+  <button type="button" {...restProps} class={btnCls} disabled={isDisabled} {onclick}>
     {@render children?.()}
   </button>
 {:else if restProps.href}

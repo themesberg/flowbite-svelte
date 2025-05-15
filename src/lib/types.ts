@@ -324,6 +324,7 @@ export interface ButtonGroupProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   size?: ButtonGroupSizeType;
   class?: string;
+  disabled?: boolean;
 }
 
 export type ButtonGroupSizeType = "sm" | "md" | "lg" | undefined;
@@ -741,6 +742,7 @@ export interface InputProps<T extends InputValue = string> extends Omit<HTMLInpu
   classLeft?: string;
   classRight?: string;
   divClass?: string;
+  wrapperClass?: string;
   clearable?: boolean;
   clearableSvgClass?: string;
   clearableColor?: CloseButtonVariants["color"];
@@ -912,6 +914,9 @@ export interface GalleryProps extends HTMLAttributes<HTMLDivElement> {
   figure?: Snippet<[item: ImgType]>;
   items?: HTMLImgAttributes[];
   imgClass?: string;
+  height?: string;
+  rowHeight?: number;
+  columns?: number;
 }
 
 // indicator
@@ -984,6 +989,7 @@ export interface ModalProps extends ModalVariants, HTMLDialogAttributes {
   autoclose?: boolean;
   outsideclose?: boolean;
   dismissable?: boolean;
+  permanent?: boolean;
   transition?: TransitionFunc;
   params?: ParamsType;
   headerClass?: string;

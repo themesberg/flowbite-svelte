@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { CloseButton, type SizeType, type InputProps, type InputValue } from "$lib";
+  import { twMerge } from "tailwind-merge";
   import { input, clampSize } from ".";
   import clsx from "clsx";
 
@@ -14,6 +15,7 @@
     size,
     color = "default",
     class: className,
+    wrapperClass,
     classLeft,
     classRight,
     divClass,
@@ -181,7 +183,7 @@
   <div tabindex="-1" bind:this={dummyFocusDiv} class="sr-only"></div>
 {/if}
 
-<div class={isCombobox ? "relative w-full" : ""}>
+<div class={twMerge(isCombobox ? "relative w-full" : "", wrapperClass)}>
   {#if group}
     {@render inputContent()}
   {:else if right || left || clearable}
