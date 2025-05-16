@@ -70,11 +70,11 @@ Use the simplest form of a search input component with an icon and a search butt
 ```svelte example
 <script lang="ts">
   import { Search, Button } from "flowbite-svelte";
-  let searchRef = $state();
+  let searchRef: HTMLInputElement | undefined= $state();
   let elementTxt = $state("This text has NOT been updated.");
 </script>
 
-<form id="example-form" onsubmit={submitted}>
+<form id="example-form">
   <Search bind:value={elementTxt} bind:elementRef={searchRef} class="my-4" />
   <Button
     onclick={() => {
