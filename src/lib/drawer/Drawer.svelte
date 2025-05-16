@@ -5,6 +5,7 @@
   import { drawer } from ".";
   import type { DrawerProps } from "$lib/types";
   import clsx from "clsx";
+  import { trapFocus } from "$lib/utils/actions.svelte";
 
   let { children, hidden = $bindable(), closeDrawer = () => (hidden = true), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, transitionParams, transitionType = fly, ...restProps }: DrawerProps = $props();
 
@@ -26,11 +27,11 @@
   let transition_params = $derived(Object.assign({}, { x, y, duration: 200, easing: sineIn }));
 </script>
 
-<svelte:window onkeydown={hidden ? undefined : (ev: KeyboardEvent) => ev.key === "Escape" && (hidden = true)} bind:innerWidth bind:innerHeight />
+<svelte:window bind:innerWidth bind:innerHeight />
 
 {#if !hidden}
   <div role="presentation" class={backdropCls({ class: backdropClass })} onclick={activateClickOutside ? closeDrawer : undefined}></div>
-  <div {...restProps} class={base({ class: clsx(className) })} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
+  <div use:trapFocus={{ onEscape: closeDrawer }} {...restProps} class={base({ class: clsx(className) })} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
     {@render children?.()}
   </div>
 {/if}

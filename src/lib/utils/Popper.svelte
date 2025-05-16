@@ -99,10 +99,11 @@
     if (ev.newState === "open") {
       autoUpdateDestroy = dom.autoUpdate(referenceElement ?? invoker, popover, updatePopoverPosition);
       popover.ownerDocument.addEventListener("click", closeOnClickOutside);
+      popover.ownerDocument.addEventListener("keydown", closeOnEscape); // ✅ Add this line
     } else {
-      // When closing the popover, we destroy the autoUpdate instance
       autoUpdateDestroy();
       popover.ownerDocument.removeEventListener("click", closeOnClickOutside);
+      popover.ownerDocument.removeEventListener("keydown", closeOnEscape); // ✅ Add this line
     }
   }
 
@@ -148,6 +149,12 @@
         });
       };
     });
+  }
+
+  function closeOnEscape(event: KeyboardEvent) {
+    if (event.key === "Escape") {
+      isOpen = false;
+    }
   }
 
   /**

@@ -24,13 +24,13 @@
   };
 
   function _oncancel(ev: Event & { currentTarget: HTMLDialogElement }) {
-    // this event get called when user press ESC key
+    // this event gets called when user presses ESC key
+    // We'll handle ESC via the trapFocus action instead
     if (ev.currentTarget instanceof HTMLDialogElement) {
-      oncancel?.(ev); // propagate the event to the user
-      // if user cancels the event we don't close the modal
-      if (ev.defaultPrevented || permanent) return;
+      // Stop the default ESC handling from dialog element
+      // as we're handling it in our trapFocus action
       ev.preventDefault();
-      closeModal();
+      oncancel?.(ev); // propagate the event to the user
     }
   }
 
@@ -52,10 +52,31 @@
       open = true;
     }
   });
+
+  // Handler for Escape key that respects component state
+  const handleEscape = () => {
+    if (!permanent) {
+      oncancel?.({ currentTarget: dlg } as any);
+      // If oncancel prevented default, we don't close
+      if (oncancel && event?.defaultPrevented) return;
+      closeModal();
+    }
+  };
 </script>
 
 {#if open}
-  <dialog use:trapFocus bind:this={dlg} {...restProps} class={base({ class: clsx(className) })} tabindex="-1" oncancel={_oncancel} onclick={_onclick} transition:transition={paramsOptions as ParamsType} onintrostart={() => (modal ? dlg?.showModal() : dlg?.show())} onoutroend={() => dlg?.close()}>
+  <dialog 
+    use:trapFocus={{ onEscape: handleEscape }} 
+    bind:this={dlg} 
+    {...restProps} 
+    class={base({ class: clsx(className) })} 
+    tabindex="-1" 
+    oncancel={_oncancel} 
+    onclick={_onclick} 
+    transition:transition={paramsOptions as ParamsType} 
+    onintrostart={() => (modal ? dlg?.showModal() : dlg?.show())} 
+    onoutroend={() => dlg?.close()}
+  >
     {#if title || header}
       <div class={headerCls({ class: headerClass })}>
         {#if title}
