@@ -6,8 +6,7 @@
   import { fade } from "svelte/transition";
   import { modal as modalTheme } from ".";
   import type { ModalProps } from "$lib/types";
-
-  // TODO: missing focus trap
+  import { trapFocus } from "$lib/utils/actions.svelte";
 
   let { children, oncancel, onclose, modal = true, autoclose = false, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params, transition = fade, ...restProps }: ModalProps = $props();
 
@@ -56,7 +55,7 @@
 </script>
 
 {#if open}
-  <dialog bind:this={dlg} {...restProps} class={base({ class: clsx(className) })} tabindex="-1" oncancel={_oncancel} onclick={_onclick} transition:transition={paramsOptions as ParamsType} onintrostart={() => (modal ? dlg?.showModal() : dlg?.show())} onoutroend={() => dlg?.close()}>
+  <dialog use:trapFocus bind:this={dlg} {...restProps} class={base({ class: clsx(className) })} tabindex="-1" oncancel={_oncancel} onclick={_onclick} transition:transition={paramsOptions as ParamsType} onintrostart={() => (modal ? dlg?.showModal() : dlg?.show())} onoutroend={() => dlg?.close()}>
     {#if title || header}
       <div class={headerCls({ class: headerClass })}>
         {#if title}
