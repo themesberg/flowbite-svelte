@@ -666,6 +666,10 @@ The following example shows how to use children for your branding.
 </div>
 ```
 
+## A11y
+
+Use `Tab` and `Shift+Tab` to navigate between buttons or links in the sidebar. Press `ESC` to close it on a small screen.
+
 ## Close button
 
 Use the following example to show a close button in the sidebar for a small screen.

@@ -155,6 +155,10 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 </Dropdown>
 ```
 
+## A11y
+
+Use `Tab` and `Shift+Tab` to navigate between buttons or links in the dropdown. Press `ESC` to close it.
+
 ## Programatic open/close
 
 When you want to control your dropdown open status via javascript code you can bind to `open` property.

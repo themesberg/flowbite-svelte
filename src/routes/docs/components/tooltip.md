@@ -70,6 +70,10 @@ You can use choose between dark and light version styles for the tooltip compone
 <Tooltip type="dark">Tooltip content</Tooltip>
 ```
 
+## A11y
+
+Use `Tab` and `Shift+Tab` to navigate between buttons or links in the tooltip. Press `ESC` to close it.
+
 ## Placement
 
 The positioning of the tooltip element relative to the triggering element (eg. button, link) can be set using the `placement={top|right|bottom|left}` attribute.

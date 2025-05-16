@@ -237,6 +237,10 @@ Use this example if you want to add form elements inside the drawer component in
 </Drawer>
 ```
 
+## A11y
+
+Use `Tab` and `Shift+Tab` to navigate between buttons or links in the drawer. Press `ESC` to close it on a small screen.
+
 ## Placement
 
 Use the placement prop to position the drawer component either on the top, right, bottom, or left side of the document page. This can be done using the `placement='left|right|top|bottom'` where the default value is “left”.

@@ -286,6 +286,11 @@ Dynamically show the password strength progress when creating a new password pos
 </Popover>
 ```
 
+## A11y
+
+Use `Tab` and `Shift+Tab` to navigate between buttons or links in the popover. Press `ESC` to close it.
+
+
 ## Placement
 
 Set the position of the popover component relative to the trigger element by using the `placement={top|right|bottom|left}` data attribute and its values.

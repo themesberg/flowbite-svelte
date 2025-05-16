@@ -188,6 +188,10 @@ You can use `slide` snippet and internal component `Slide` to control the image 
 </div>
 ```
 
+## A11y
+
+Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thumbnails`.
+
 ## Customization
 
 ### Basic customization

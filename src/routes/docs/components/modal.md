@@ -105,6 +105,10 @@ This example shows the `header` customization as well.
 </Modal>
 ```
 
+## A11y
+
+Use `Tab` and `Shift+Tab` to navigate between buttons or links in the modal. Press `ESC` to close it.
+
 ## Permanent
 
 If you want to display a modal permanently, add `permanent` prop. All close function will be disabled.

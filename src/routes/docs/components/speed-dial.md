@@ -451,6 +451,10 @@ This example can be used to show an alternative style when showing a list of men
 </SpeedDial>
 ```
 
+## A11y
+
+Use `Tab` and `Shift+Tab` to navigate between buttons or links in the speed dial. Press `ESC` to close it.
+
 ## Alignment - Position
 
 Align the speed dial menu items by using property `placement="top|right|left|bottom"`.

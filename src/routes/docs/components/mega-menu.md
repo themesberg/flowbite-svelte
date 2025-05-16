@@ -180,6 +180,10 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
 </Navbar>
 ```
 
+## A11y 
+
+Use `Tab` and `Shift+Tab` to navigate between buttons or links in the mega menu. Press `ESC` to close it.
+
 ## Full width dropdown
 
 Use this example to show a mega menu dropdown that spans the entire width of the document page.
