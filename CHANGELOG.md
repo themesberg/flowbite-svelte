@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.4
+
+### Patch Changes
+
+- feat: add trapFocus for Modal, Sidebar, Drawer
+- feat: add closeOnEscape for Dropdown, MegaMenu, Popover, SpeedDial, Tooltip
+- check: a11y for Carousel, Datepicker
+- docs: add a11y to above pages
+
 ## 1.2.3
 
 ### Patch Changes

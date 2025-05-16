@@ -65,18 +65,7 @@
 </script>
 
 {#if open}
-  <dialog 
-    use:trapFocus={{ onEscape: handleEscape }} 
-    bind:this={dlg} 
-    {...restProps} 
-    class={base({ class: clsx(className) })} 
-    tabindex="-1" 
-    oncancel={_oncancel} 
-    onclick={_onclick} 
-    transition:transition={paramsOptions as ParamsType} 
-    onintrostart={() => (modal ? dlg?.showModal() : dlg?.show())} 
-    onoutroend={() => dlg?.close()}
-  >
+  <dialog use:trapFocus={{ onEscape: handleEscape }} bind:this={dlg} {...restProps} class={base({ class: clsx(className) })} tabindex="-1" oncancel={_oncancel} onclick={_onclick} transition:transition={paramsOptions as ParamsType} onintrostart={() => (modal ? dlg?.showModal() : dlg?.show())} onoutroend={() => dlg?.close()}>
     {#if title || header}
       <div class={headerCls({ class: headerClass })}>
         {#if title}

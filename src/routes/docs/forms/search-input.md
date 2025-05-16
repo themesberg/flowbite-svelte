@@ -70,7 +70,7 @@ Use the simplest form of a search input component with an icon and a search butt
 ```svelte example
 <script lang="ts">
   import { Search, Button } from "flowbite-svelte";
-  let searchRef: HTMLInputElement | undefined= $state();
+  let searchRef: HTMLInputElement | undefined = $state();
   let elementTxt = $state("This text has NOT been updated.");
 </script>
 

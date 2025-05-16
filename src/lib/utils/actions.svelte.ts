@@ -22,15 +22,11 @@ export function trapFocus(node: HTMLElement, options: { onEscape?: () => void; i
   let isFocusMovedOutside = false;
 
   function focusable(): HTMLElement[] {
-    return Array.from(
-      node.querySelectorAll<HTMLElement>(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      )
-    );
+    return Array.from(node.querySelectorAll<HTMLElement>('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'));
   }
 
   function handleKeydown(event: KeyboardEvent): void {
-    if (event.key === 'Tab' && options !== null) {
+    if (event.key === "Tab" && options !== null) {
       const current = document.activeElement;
       const elements = focusable();
       const first = elements.at(0);
@@ -45,7 +41,7 @@ export function trapFocus(node: HTMLElement, options: { onEscape?: () => void; i
         first?.focus();
         event.preventDefault();
       }
-    } else if (event.key === 'Escape' && options !== null && options.onEscape) {
+    } else if (event.key === "Escape" && options !== null && options.onEscape) {
       event.preventDefault();
       // Mark as closing via escape to prevent focus restoration
       isClosingViaOutsideClick = true;
@@ -66,7 +62,7 @@ export function trapFocus(node: HTMLElement, options: { onEscape?: () => void; i
     if (options !== null) {
       // Check if we're currently in a closing state
       isClosingViaOutsideClick = !!options.isClosing;
-      
+
       // Only auto-focus if not closing from outside click
       if (!isClosingViaOutsideClick && !isFocusMovedOutside) {
         const elements = focusable();
@@ -74,14 +70,14 @@ export function trapFocus(node: HTMLElement, options: { onEscape?: () => void; i
           elements[0].focus();
         }
       }
-      
-      node.addEventListener('keydown', handleKeydown);
-      node.addEventListener('focusout', handleFocusOut);
+
+      node.addEventListener("keydown", handleKeydown);
+      node.addEventListener("focusout", handleFocusOut);
 
       return () => {
-        node.removeEventListener('keydown', handleKeydown);
-        node.removeEventListener('focusout', handleFocusOut);
-        
+        node.removeEventListener("keydown", handleKeydown);
+        node.removeEventListener("focusout", handleFocusOut);
+
         // Only restore focus if not closing via outside click and focus hasn't moved outside
         if (!isClosingViaOutsideClick && !isFocusMovedOutside && previous) {
           setTimeout(() => {
@@ -91,7 +87,7 @@ export function trapFocus(node: HTMLElement, options: { onEscape?: () => void; i
       };
     }
   });
-  
+
   // Return the action object with destroy method
   return {
     update(newOptions: { onEscape?: () => void; isClosing?: boolean } | null = {}) {
@@ -99,26 +95,26 @@ export function trapFocus(node: HTMLElement, options: { onEscape?: () => void; i
       if (newOptions && newOptions.isClosing !== undefined) {
         isClosingViaOutsideClick = newOptions.isClosing;
       }
-      
+
       options = newOptions;
-      
+
       // Clean up existing listeners if options becomes null
       if (options === null) {
-        node.removeEventListener('keydown', handleKeydown);
-        node.removeEventListener('focusout', handleFocusOut);
+        node.removeEventListener("keydown", handleKeydown);
+        node.removeEventListener("focusout", handleFocusOut);
       } else if (options !== null) {
         // Add listener if it wasn't already there
-        node.removeEventListener('keydown', handleKeydown);
-        node.removeEventListener('focusout', handleFocusOut);
-        node.addEventListener('keydown', handleKeydown);
-        node.addEventListener('focusout', handleFocusOut);
+        node.removeEventListener("keydown", handleKeydown);
+        node.removeEventListener("focusout", handleFocusOut);
+        node.addEventListener("keydown", handleKeydown);
+        node.addEventListener("focusout", handleFocusOut);
       }
     },
     destroy() {
       if (options !== null) {
-        node.removeEventListener('keydown', handleKeydown);
-        node.removeEventListener('focusout', handleFocusOut);
-        
+        node.removeEventListener("keydown", handleKeydown);
+        node.removeEventListener("focusout", handleFocusOut);
+
         // Only restore focus if not closing via outside click and focus hasn't moved outside
         if (!isClosingViaOutsideClick && !isFocusMovedOutside && previous) {
           setTimeout(() => {

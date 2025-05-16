@@ -47,8 +47,8 @@
   let transitionParams = params ? params : { x: -320, duration: 200, easing: sineIn };
 
   setContext("sidebarContext", sidebarCtx);
-  
-  // Handler for Escape key 
+
+  // Handler for Escape key
   const handleEscape = () => {
     closeSidebar?.();
   };
@@ -68,15 +68,35 @@
       <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full"></div>
     {/if}
   {/if}
-  <aside 
-    use:trapFocus={!isLargeScreen && isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null}
-    transition:transition={transitionParams} 
-    {...restProps} 
-    class={base({ class: clsx(className) })} 
-    aria-label={ariaLabel}
-  >
+  <aside use:trapFocus={!isLargeScreen && isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} transition:transition={transitionParams} {...restProps} class={base({ class: clsx(className) })} aria-label={ariaLabel}>
     <div class={div({ class: divClass })}>
       {@render children()}
     </div>
   </aside>
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1269)
+## Props
+@prop children
+@prop isOpen = false
+@prop closeSidebar
+@prop isSingle = true
+@prop breakpoint = "md"
+@prop position = "fixed"
+@prop activateClickOutside = true
+@prop backdrop = true
+@prop backdropClass
+@prop transition = fly
+@prop params
+@prop divClass
+@prop ariaLabel
+@prop nonActiveClass
+@prop activeClass
+@prop activeUrl = ""
+@prop class: className
+@prop ...restProps
+-->

@@ -141,7 +141,7 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
     { name: "License", href: "/license" }
   ];
   let open = $state();
-  import { blur, slide, scale } from 'svelte/transition'
+  import { blur, slide, scale } from "svelte/transition";
 </script>
 
 <Navbar>
@@ -155,7 +155,7 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
     <NavLi class="cursor-pointer" onclick={() => (open = true)}>
       Slide<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
-    <MegaMenu items={menu} transition={slide} transitionParams={{duration: 1000}}>
+    <MegaMenu items={menu} transition={slide} transitionParams={{ duration: 1000 }}>
       {#snippet children({ item })}
         <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
       {/snippet}
@@ -163,7 +163,7 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
     <NavLi class="cursor-pointer" onclick={() => (open = true)}>
       Blur<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
-    <MegaMenu items={menu} transition={blur} transitionParams={{duration: 1000}}>
+    <MegaMenu items={menu} transition={blur} transitionParams={{ duration: 1000 }}>
       {#snippet children({ item })}
         <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
       {/snippet}
@@ -171,7 +171,7 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
     <NavLi class="cursor-pointer" onclick={() => (open = true)}>
       Blur<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
-    <MegaMenu items={menu} transition={scale} transitionParams={{duration: 1000}}>
+    <MegaMenu items={menu} transition={scale} transitionParams={{ duration: 1000 }}>
       {#snippet children({ item })}
         <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
       {/snippet}
@@ -180,7 +180,7 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
 </Navbar>
 ```
 
-## A11y 
+## A11y
 
 Use `Tab` and `Shift+Tab` to navigate between buttons or links in the mega menu. Press `ESC` to close it.
 

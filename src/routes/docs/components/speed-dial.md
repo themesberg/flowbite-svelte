@@ -502,11 +502,11 @@ Since the `SpeedDial` component extends `Popper`, it also supports the `transiti
 <script>
   import { SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte";
   import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
-  import { blur, scale } from 'svelte/transition'
+  import { blur, scale } from "svelte/transition";
 </script>
 
-<SpeedDialTrigger class="absolute end-24 bottom-6"/>
-<SpeedDial transition={blur} transitionParams={{duration: 1000}}>
+<SpeedDialTrigger class="absolute end-24 bottom-6" />
+<SpeedDial transition={blur} transitionParams={{ duration: 1000 }}>
   <SpeedDialButton name="Share">
     <ShareNodesSolid class="h-6 w-6" />
   </SpeedDialButton>
@@ -521,8 +521,8 @@ Since the `SpeedDial` component extends `Popper`, it also supports the `transiti
   </SpeedDialButton>
 </SpeedDial>
 
-<SpeedDialTrigger class="absolute end-6 bottom-6"/>
-<SpeedDial transition={scale} transitionParams={{duration: 1000}}>
+<SpeedDialTrigger class="absolute end-6 bottom-6" />
+<SpeedDial transition={scale} transitionParams={{ duration: 1000 }}>
   <SpeedDialButton name="Share">
     <ShareNodesSolid class="h-6 w-6" />
   </SpeedDialButton>
