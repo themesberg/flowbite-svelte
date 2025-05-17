@@ -8,11 +8,13 @@
   const group: SizeType = getContext("group");
   const ctxDisabled: boolean | undefined = getContext("disabled");
 
-  let { children, onclick, pill, outline = false, size = group ? "sm" : "md", color = group ? (outline ? "dark" : "alternative") : "primary", shadow = false, tag = "button", disabled, class: className, ...restProps }: ButtonProps = $props();
+  let { children, onclick, pill, outline = false, size = "md", color = "primary", shadow = false, tag = "button", disabled, class: className, ...restProps }: ButtonProps = $props();
 
+  let actualSize = $derived(group ? "sm" : size);
+  let actualColor = $derived(group ? (outline ? "dark" : "alternative") : color);
   let isDisabled = $derived(Boolean(ctxDisabled) || Boolean(disabled));
 
-  const { base, outline: outline_, shadow: shadow_ } = $derived(button({ color, size, disabled: isDisabled, pill, group: !!group }));
+  const { base, outline: outline_, shadow: shadow_ } = $derived(button({ color: actualColor, size: actualSize, disabled: isDisabled, pill, group: !!group }));
   let btnCls = $derived(twMerge(base(), outline && outline_(), shadow && shadow_(), clsx(className)));
 </script>
 
@@ -40,8 +42,8 @@
 @prop onclick
 @prop pill
 @prop outline = false
-@prop size = group ? "sm" : "md"
-@prop color = group ? (outline ? "dark" : "alternative") : "primary"
+@prop size = "md"
+@prop color = "primary"
 @prop shadow = false
 @prop tag = "button"
 @prop disabled

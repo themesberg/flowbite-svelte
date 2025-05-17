@@ -1,8 +1,8 @@
 ---
 layout: componentLayout
-title: Svelte Step Indicator
-breadcrumb_title: Step Indicator
-component_title: Step Indicator
+title: Svelte StepIndicator
+breadcrumb_title: StepIndicator
+component_title: StepIndicator
 dir: Extend
 description: Use the step indicator component to show the progress of a process.
 ---

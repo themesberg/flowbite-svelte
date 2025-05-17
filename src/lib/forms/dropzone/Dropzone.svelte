@@ -6,16 +6,7 @@
 
   type HTMLInputElementWithFiles = HTMLInputElement & { files: FileList | null };
 
-  let {
-    children,
-    files = $bindable<FileList | null>(),
-    class: className,
-    ...restProps
-  }: DropzoneProps & {
-    ondrop?: DragEventHandler<HTMLButtonElement>;
-    ondragover?: DragEventHandler<HTMLButtonElement>;
-    onchange?: ChangeEventHandler<HTMLInputElementWithFiles>;
-  } = $props();
+  let { children, files = $bindable<FileList | null>(), class: className, ...restProps }: DropzoneProps = $props();
 
   const base = $derived(dropzone({ class: clsx(className) }));
   let input: HTMLInputElement;
@@ -66,3 +57,15 @@
 <label class="hidden">
   <input {...restProps} bind:files bind:this={input} onchange={onChange} type="file" />
 </label>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[DropzoneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L691)
+## Props
+@prop children
+@prop files = $bindable<FileList | null>()
+@prop class: className
+@prop ...restProps
+-->

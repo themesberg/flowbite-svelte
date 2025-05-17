@@ -7,7 +7,7 @@
   "props": [
     ["children", ""],
     ["hidden", "$bindable()"],
-    ["closeDrawer", "()"],
+    ["closeDrawer", "() => (hidden = true)"],
     ["activateClickOutside", "true"],
     ["position", ""],
     ["width", ""],

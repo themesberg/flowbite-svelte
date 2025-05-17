@@ -16,6 +16,6 @@
     ["dismissable", ""],
     ["transition", "fade"],
     ["params", ""],
-    ["onclick", "()"]
+    ["onclick", "() => (alertStatus = false)"]
   ]
 }

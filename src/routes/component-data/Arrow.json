@@ -1,8 +1,8 @@
 {
   "name": "Arrow",
   "type": {
-    "name": "{placement?:Placement;cords:Partial<Coords>;strategy?:\"absolute\"|\"fixed\";class?:string;}",
-    "link": null
+    "name": "ArrowProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1861"
   },
   "props": [
     ["placement", "\"top\""],

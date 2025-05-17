@@ -1,9 +1,9 @@
-import type { HTMLButtonAttributes, HTMLAnchorAttributes, HTMLAttributes, HTMLLiAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLSelectAttributes, HTMLTextareaAttributes, HTMLDialogAttributes, SVGAttributes, HTMLTableAttributes, HTMLTdAttributes, HTMLThAttributes, HTMLOlAttributes, HTMLBlockquoteAttributes, HTMLSourceAttributes, HTMLTrackAttributes, HTMLVideoAttributes } from "svelte/elements";
+import type { HTMLButtonAttributes, HTMLAnchorAttributes, HTMLAttributes, HTMLLiAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLSelectAttributes, HTMLTextareaAttributes, HTMLDialogAttributes, SVGAttributes, HTMLTableAttributes, HTMLTdAttributes, HTMLThAttributes, HTMLOlAttributes, HTMLBlockquoteAttributes, HTMLSourceAttributes, HTMLTrackAttributes, HTMLVideoAttributes, ChangeEventHandler, DragEventHandler } from "svelte/elements";
 import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams, EasingFunction } from "svelte/transition";
 import { type Writable } from "svelte/store";
 import type { Snippet, Component } from "svelte";
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Middleware, Placement, Strategy } from "@floating-ui/dom";
+import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
 
 // component variants
 import type { AlertVariants } from "./alert/theme";
@@ -1856,4 +1856,11 @@ export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbef
   transition?: TransitionFunc;
   transitionParams?: ParamsType;
   isOpen?: boolean | undefined;
+}
+
+export interface ArrowProps {
+  placement?: Placement;
+  cords: Partial<Coords>;
+  strategy?: "absolute" | "fixed";
+  class?: string;
 }

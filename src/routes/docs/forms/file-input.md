@@ -2,7 +2,7 @@
 layout: componentLayout
 title: Svelte File Input - Flowbite
 breadcrumb_title: Svelte File Input
-component_title: File input
+component_title: Fileupload
 dir: Forms
 description: Get started with the file input component to let the user to upload one or more files from their device storage based on multiple styles and sizes
 thumnailSize: w-48

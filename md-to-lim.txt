@@ -40,7 +40,10 @@ e.g. const relatedLinks = ['/docs/components/buttons','/docs/components/button-g
 - [Button-group](https://flowbite-svelte.com/llm/forms/input.md)
 - [List-group](https://flowbite-svelte.com/llm/components/input.md)
 
-5. For `## Component data` section, use lowercase of component_title in the front matter to look for contents of svelte file in the `./src/lib` directory. For example `component_title: Accordion`, look into the `./src/lib/accordion` to find `Accordion.svelte` and `AccorionItem.svelte. There is `src/routes/component-data` directory with `Accordion.json` and `AccordionItem.json` files. Please note that the extension is `.json` not `.svelte` in the component-data directory. 
+5. For `## Component data` section, use lowercase of component_title in the front matter to look for contents of svelte file in the `./src/lib` directory. For example `component_title: Accordion`, look into the `./src/lib/accordion` to find `Accordion.svelte` and `AccorionItem.svelte. There is `src/routes/component-data` directory with `Accordion.json` and `AccordionItem.json` files. 
+
+If component_title: Bottom Navigation is then the directory will be lowercase and replaced a space with -.
+Please note that the extension is `.json` not `.svelte` in the component-data directory. 
 Each json file has the following structure. 
 ```
 {
@@ -61,7 +64,7 @@ Each json file has the following structure.
 }
 ```
 
-Using this json file content, create the following:
+Using this json file content, create the following. If there are multiple svelte files in a src/lib/component-name, then create the following for each.
 
 ### Accordion
 
@@ -78,6 +81,8 @@ Using this json file content, create the following:
 - multiple: false
 - class: className: ""
 - transitionType: ""
+
+
 
 5. If you find <GitHubCompoLinks />, remove it.
 

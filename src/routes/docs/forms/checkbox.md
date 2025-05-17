@@ -12,7 +12,7 @@ thumnailSize: w-72
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, A } from '$lib'
 
-  const components = 'Checkbox, Label, Helper'
+  const components = 'Checkbox, CheckboxButton'
 </script>
 
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants.

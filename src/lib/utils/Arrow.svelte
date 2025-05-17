@@ -1,18 +1,9 @@
 <script lang="ts">
-  import type { Coords, Placement, Side } from "@floating-ui/dom";
+  import type { Side } from "@floating-ui/dom";
   import { getOppositePlacement, getSide } from "@floating-ui/utils";
+  import { type ArrowProps } from "$lib";
 
-  let {
-    placement = "top",
-    cords,
-    strategy = "absolute",
-    class: className = ""
-  }: {
-    placement?: Placement;
-    cords: Partial<Coords>;
-    strategy?: "absolute" | "fixed";
-    class?: string;
-  } = $props();
+  let { placement = "top", cords, strategy = "absolute", class: className = "" }: ArrowProps = $props();
 
   const px = (n: number | undefined) => (n ? `${n}px` : "");
 
@@ -58,8 +49,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[ArrowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1861)
 ## Props
-@props: 
+@prop placement = "top"
+@prop cords
+@prop strategy = "absolute"
+@prop class: className = ""
 -->
 
 <style>
