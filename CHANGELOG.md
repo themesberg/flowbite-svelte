@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.6
+
+### Patch Changes
+
+- fix: Checkbox typo
+
 ## 1.2.5
 
 ### Patch Changes

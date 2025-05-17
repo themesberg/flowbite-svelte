@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -362,13 +362,13 @@
       "types": "./dist/forms/helper/Helper.svelte.d.ts",
       "svelte": "./dist/forms/helper/Helper.svelte"
     },
-    "./Input.svelte": {
-      "types": "./dist/forms/input-field/Input.svelte.d.ts",
-      "svelte": "./dist/forms/input-field/Input.svelte"
-    },
     "./InputAddon.svelte": {
       "types": "./dist/forms/input-addon/InputAddon.svelte.d.ts",
       "svelte": "./dist/forms/input-addon/InputAddon.svelte"
+    },
+    "./Input.svelte": {
+      "types": "./dist/forms/input-field/Input.svelte.d.ts",
+      "svelte": "./dist/forms/input-field/Input.svelte"
     },
     "./Label.svelte": {
       "types": "./dist/forms/label/Label.svelte.d.ts",
