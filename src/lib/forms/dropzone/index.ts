@@ -1,4 +1,2 @@
-import { dropzone } from "./theme";
-import Dropzone from "./Dropzone.svelte";
-
-export { Dropzone, dropzone };
+export { dropzone } from "./theme";
+export { default as Dropzone } from "./Dropzone.svelte";

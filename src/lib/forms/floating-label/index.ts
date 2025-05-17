@@ -1,4 +1,2 @@
-import FloatingLabelInput from "./FloatingLabelInput.svelte";
-import { floatingLabelInput } from "./theme";
-
-export { FloatingLabelInput, floatingLabelInput };
+export { default as FloatingLabelInput } from "./FloatingLabelInput.svelte";
+export { floatingLabelInput } from "./theme";
