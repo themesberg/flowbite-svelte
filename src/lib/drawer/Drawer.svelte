@@ -1,11 +1,9 @@
 <script lang="ts">
-  import type { ParamsType } from "$lib/types";
+  import { type ParamsType, type DrawerProps, trapFocus } from "$lib";
   import { fly } from "svelte/transition";
   import { sineIn } from "svelte/easing";
   import { drawer } from ".";
-  import type { DrawerProps } from "$lib/types";
   import clsx from "clsx";
-  import { trapFocus } from "$lib/utils/actions.svelte";
 
   let { children, hidden = $bindable(), closeDrawer = () => (hidden = true), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, transitionParams, transitionType = fly, ...restProps }: DrawerProps = $props();
 

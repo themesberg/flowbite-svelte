@@ -18,7 +18,7 @@ import type { DrawerVariants } from "./drawer/theme";
 import type { FileuploadViariants } from "$lib/forms/fileupload/theme";
 import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label/theme";
 import type { HelperVariants } from "$lib/forms/helper/theme";
-import type { InputVariants } from "$lib/forms/input/theme";
+import type { InputVariants } from "$lib/forms/input-field/theme";
 import type { LabelVariants } from "$lib/forms/label/theme";
 import type { RadioVariants } from "$lib/forms/radio/theme";
 import type { RangeVariants } from "$lib/forms/range/theme";

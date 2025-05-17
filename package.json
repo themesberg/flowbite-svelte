@@ -363,8 +363,8 @@
       "svelte": "./dist/forms/helper/Helper.svelte"
     },
     "./Input.svelte": {
-      "types": "./dist/forms/input/Input.svelte.d.ts",
-      "svelte": "./dist/forms/input/Input.svelte"
+      "types": "./dist/forms/input-field/Input.svelte.d.ts",
+      "svelte": "./dist/forms/input-field/Input.svelte"
     },
     "./InputAddon.svelte": {
       "types": "./dist/forms/input-addon/InputAddon.svelte.d.ts",

@@ -48,7 +48,7 @@ export * from "./forms/dropzone";
 export * from "./forms/fileupload";
 export * from "./forms/floating-label";
 export * from "./forms/helper";
-export * from "./forms/input";
+export * from "./forms/input-field";
 export * from "./forms/input-addon";
 export * from "./forms/label";
 export * from "./forms/select";

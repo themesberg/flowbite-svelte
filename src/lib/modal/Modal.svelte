@@ -1,12 +1,9 @@
 <script lang="ts">
-  import type { ParamsType } from "$lib/types";
-  import CloseButton from "$lib/utils/CloseButton.svelte";
+  import { type ParamsType, type ModalProps, CloseButton, trapFocus } from "$lib";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
   import { modal as modalTheme } from ".";
-  import type { ModalProps } from "$lib/types";
-  import { trapFocus } from "$lib/utils/actions.svelte";
 
   let { children, oncancel, onclose, modal = true, autoclose = false, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params, transition = fade, ...restProps }: ModalProps = $props();
 

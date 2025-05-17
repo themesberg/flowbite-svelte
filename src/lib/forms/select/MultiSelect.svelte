@@ -1,10 +1,8 @@
 <script lang="ts" generics="T">
-  import Badge from "$lib/badge/Badge.svelte";
-  import CloseButton from "$lib/utils/CloseButton.svelte";
+  import { Badge, CloseButton, type MultiSelectProps, type SelectOptionType } from "$lib";
   import clsx from "clsx";
   import { twMerge } from "tailwind-merge";
   import { multiselect } from "./theme";
-  import type { MultiSelectProps, SelectOptionType } from "$lib/types";
 
   // Consider reusing that component - https://svelecte.vercel.app/
 

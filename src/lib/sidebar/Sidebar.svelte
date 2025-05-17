@@ -4,9 +4,8 @@
   import { writable } from "svelte/store";
   import { sineIn } from "svelte/easing";
   import { sidebar } from ".";
-  import type { SidebarProps, SidebarCtxType } from "$lib/types";
   import clsx from "clsx";
-  import { trapFocus } from "$lib/utils/actions.svelte";
+  import { trapFocus, type SidebarProps, type SidebarCtxType } from "$lib";
 
   let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = "md", position = "fixed", activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, activeUrl = "", class: className, ...restProps }: SidebarProps = $props();
 

@@ -1,4 +1,2 @@
-import Helper from "./Helper.svelte";
-import { helper } from "./theme";
-
-export { Helper, helper };
+export { default as Helper } from "./Helper.svelte";
+export { helper } from "./theme";
