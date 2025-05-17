@@ -6,7 +6,7 @@ export * from "./badge";
 export * from "./banner";
 export * from "./bottom-navigation";
 export * from "./breadcrumb";
-export * from "./buttongroup";
+export * from "./button-group";
 export * from "./buttons";
 export * from "./card";
 export * from "./carousel";
@@ -44,17 +44,15 @@ export * from "./video";
 
 // forms
 export * from "./forms/checkbox";
-export * from "./forms/checkbox-button";
 export * from "./forms/dropzone";
 export * from "./forms/fileupload";
-export * from "./forms/floating-label-input";
+export * from "./forms/floating-label";
 export * from "./forms/helper";
 export * from "./forms/input";
 export * from "./forms/input-addon";
 export * from "./forms/label";
 export * from "./forms/select";
 export * from "./forms/radio";
-export * from "./forms/radio-button";
 export * from "./forms/range";
 export * from "./forms/search";
 export * from "./forms/tags";

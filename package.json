@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -199,8 +199,8 @@
       "svelte": "./dist/breadcrumb/BreadcrumbItem.svelte"
     },
     "./ButtonGroup.svelte": {
-      "types": "./dist/buttongroup/ButtonGroup.svelte.d.ts",
-      "svelte": "./dist/buttongroup/ButtonGroup.svelte"
+      "types": "./dist/button-group/ButtonGroup.svelte.d.ts",
+      "svelte": "./dist/button-group/ButtonGroup.svelte"
     },
     "./Button.svelte": {
       "types": "./dist/buttons/Button.svelte.d.ts",
@@ -343,8 +343,8 @@
       "svelte": "./dist/forms/checkbox/Checkbox.svelte"
     },
     "./CheckboxButton.svelte": {
-      "types": "./dist/forms/checkbox-button/CheckboxButton.svelte.d.ts",
-      "svelte": "./dist/forms/checkbox-button/CheckboxButton.svelte"
+      "types": "./dist/forms/checkbox/CheckboxButton.svelte.d.ts",
+      "svelte": "./dist/forms/checkbox/CheckboxButton.svelte"
     },
     "./Dropzone.svelte": {
       "types": "./dist/forms/dropzone/Dropzone.svelte.d.ts",
@@ -355,8 +355,8 @@
       "svelte": "./dist/forms/fileupload/Fileupload.svelte"
     },
     "./FloatingLabelInput.svelte": {
-      "types": "./dist/forms/floating-label-input/FloatingLabelInput.svelte.d.ts",
-      "svelte": "./dist/forms/floating-label-input/FloatingLabelInput.svelte"
+      "types": "./dist/forms/floating-label/FloatingLabelInput.svelte.d.ts",
+      "svelte": "./dist/forms/floating-label/FloatingLabelInput.svelte"
     },
     "./Helper.svelte": {
       "types": "./dist/forms/helper/Helper.svelte.d.ts",
@@ -379,8 +379,8 @@
       "svelte": "./dist/forms/radio/Radio.svelte"
     },
     "./RadioButton.svelte": {
-      "types": "./dist/forms/radio-button/RadioButton.svelte.d.ts",
-      "svelte": "./dist/forms/radio-button/RadioButton.svelte"
+      "types": "./dist/forms/radio/RadioButton.svelte.d.ts",
+      "svelte": "./dist/forms/radio/RadioButton.svelte"
     },
     "./Range.svelte": {
       "types": "./dist/forms/range/Range.svelte.d.ts",

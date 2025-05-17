@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Checkbox, Label, Helper, Listgroup, Dropdown, DropdownItem, DropdownGroup, Button, Search, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, ButtonGroup, CheckboxButton } from "$lib";
+  import { Checkbox, CheckboxButton, Label, Helper, Listgroup, Dropdown, DropdownItem, DropdownGroup, Button, Search, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, ButtonGroup } from "$lib";
   import { ChevronDownOutline, UserRemoveSolid, AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from "flowbite-svelte-icons";
 
   // For checkbox group examples

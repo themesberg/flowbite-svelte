@@ -84,3 +84,16 @@ export const radio = tv({
     color: "primary"
   }
 });
+
+export const radiobutton = tv({
+  base: "",
+  variants: {
+    inline: {
+      true: "inline-flex",
+      false: "flex"
+    }
+  },
+  defaultVariants: {
+    inline: true
+  }
+});

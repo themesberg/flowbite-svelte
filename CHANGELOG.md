@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.5
+
+### Patch Changes
+
+- fix: lib directories name change
+
 ## 1.2.4
 
 ### Patch Changes

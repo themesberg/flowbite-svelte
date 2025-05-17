@@ -1,0 +1,84 @@
+# lim-svelte (not sure about the naming. Suggest better names)
+
+## Restrictions
+
+- Use Node with ES6 with "node": ">=22.0.0"
+- Use llm.config.js for configuration details.
+- This will be published to npmjs.com as a package.
+- Use llms.txt standard (https://llmstxt.org/)
+
+## Purpose
+
+Convert markdown file to markdown file that will be used for LLM (Large language model).
+
+## Content of llm.config.js
+
+This file need to have:
+1. srcDir with a string, example “./src/routes/docs” where contains md files.
+2. outDir with a string, example “./src/routes/llm”
+3. ignore with a string or an array for h2 tag (##), example “## See also”, [“Some title”, “Another title”, “Another title 2”]
+4. format with a string: "md"
+
+## Structure of md file that will be converted to md file for llm
+
+A sample markdown file will be attached.
+
+## Functions
+
+1. Use title in the front matter title to add the h1. e.g. # Svelte Accordion - Flowbite
+
+2. if code block starts with svelte then remove all after svelte.
+for example ```svelte example hideOutput should be ```svelte
+Otherwise don't touch them, e.g. ```js, ```css, etc
+
+3. If there is ignore from llm.config.js, remove all title and its content.
+
+4. For `## See also` section, use `relatedLinks` in the top script tag to create a link. The format is the following:
+e.g. const relatedLinks = ['/docs/components/buttons','/docs/components/button-group' ,'/docs/forms/input'];
+
+- [Buttons](https://flowbite-svelte.com/llm/components/button.md)
+- [Button-group](https://flowbite-svelte.com/llm/forms/input.md)
+- [List-group](https://flowbite-svelte.com/llm/components/input.md)
+
+5. For `## Component data` section, use lowercase of component_title in the front matter to look for contents of svelte file in the `./src/lib` directory. For example `component_title: Accordion`, look into the `./src/lib/accordion` to find `Accordion.svelte` and `AccorionItem.svelte. There is `src/routes/component-data` directory with `Accordion.json` and `AccordionItem.json` files. Please note that the extension is `.json` not `.svelte` in the component-data directory. 
+Each json file has the following structure. 
+```
+{
+  "name": "Accordion",
+  "type": {
+    "name": "AccordionProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L157"
+  },
+  "props": [
+    ["children", ""],
+    ["flush", ""],
+    ["activeClass", ""],
+    ["inactiveClass", ""],
+    ["multiple", "false"],
+    ["class: className", ""],
+    ["transitionType", ""]
+  ]
+}
+```
+
+Using this json file content, create the following:
+
+### Accordion
+
+#### Types
+
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L157)
+
+#### Props
+
+- children: ""
+- flush: ""
+- activeClass: ""
+- inactiveClass: ""
+- multiple: false
+- class: className: ""
+- transitionType: ""
+
+5. If you find <GitHubCompoLinks />, remove it.
+
+6. Remove front matter and the top script section.

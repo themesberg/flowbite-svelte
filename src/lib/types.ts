@@ -16,7 +16,7 @@ import type Slide from "./carousel/Slide.svelte";
 import type { ApexOptions } from "apexcharts";
 import type { DrawerVariants } from "./drawer/theme";
 import type { FileuploadViariants } from "$lib/forms/fileupload/theme";
-import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label-input/theme";
+import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label/theme";
 import type { HelperVariants } from "$lib/forms/helper/theme";
 import type { InputVariants } from "$lib/forms/input/theme";
 import type { LabelVariants } from "$lib/forms/label/theme";
