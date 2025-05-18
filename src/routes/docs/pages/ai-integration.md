@@ -39,7 +39,7 @@ const buttonDocs = await fetch("https://flowbite-svelte.com/docs/components/butt
 const chatGptPrompt = `Based on this Flowbite Svelte Button component documentation:
 ${buttonDocs}
 
-Generate a code example for a primary button with an icon.`;
+Generate a code example for a primary button with  a link to '/about'.`;
 ```
 
 These features make it easy to integrate Flowbite Svelte's documentation with modern AI systems, creating powerful, intelligent tools to enhance developer experience and productivity.
