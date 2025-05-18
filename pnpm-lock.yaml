@@ -130,8 +130,8 @@ importers:
         specifier: ^4.2.1
         version: 4.2.1(picomatch@4.0.2)(svelte@5.30.2)(typescript@5.8.3)
       svelte-lib-helpers:
-        specifier: ^0.4.29
-        version: 0.4.29
+        specifier: ^0.4.30
+        version: 0.4.30
       svelte-meta-tags:
         specifier: ^4.3.0
         version: 4.3.0(svelte@5.30.2)
@@ -2354,8 +2354,8 @@ packages:
       svelte:
         optional: true
 
-  svelte-lib-helpers@0.4.29:
-    resolution: {integrity: sha512-8t9TpTMFfVRoc7hbO/ZzD9DRCTzish7B96ypNrmpE9cd8Q+tzUzIwOiGj6Ri3oL7oRtbVOsYkIiUXGL7zdsdtQ==}
+  svelte-lib-helpers@0.4.30:
+    resolution: {integrity: sha512-lIJlXO03nGvysisjCEbut7/Uc5EtECxilgxb/0LrByYnplM5yqrtGuyezbljCldozrOF+iLUFOXwIi6WPiD+oA==}
     hasBin: true
 
   svelte-meta-tags@4.3.0:
@@ -4893,7 +4893,7 @@ snapshots:
     optionalDependencies:
       svelte: 5.30.2
 
-  svelte-lib-helpers@0.4.29:
+  svelte-lib-helpers@0.4.30:
     dependencies:
       jsonc-parser: 3.3.1
       yargs: 17.7.2

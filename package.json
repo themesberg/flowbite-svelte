@@ -67,7 +67,7 @@
     "publint": "^0.3.12",
     "svelte": "^5.30.2",
     "svelte-check": "^4.2.1",
-    "svelte-lib-helpers": "^0.4.29",
+    "svelte-lib-helpers": "^0.4.30",
     "svelte-meta-tags": "^4.3.0",
     "svelte-rune-highlight": "^0.6.6",
     "tailwindcss": "^4.1.7",

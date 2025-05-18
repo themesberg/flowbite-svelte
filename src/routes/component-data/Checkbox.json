@@ -19,6 +19,6 @@
     ["divClass", ""],
     ["disabled", "false"],
     ["value", ""],
-    ["labelProps", "{}"]
+    ["labelProps", "{"]
   ]
 }

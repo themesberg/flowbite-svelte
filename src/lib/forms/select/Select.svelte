@@ -23,8 +23,8 @@
     {/if}
 
     {#if items}
-      {#each items as { value, name }}
-        <option {value}>{name}</option>
+      {#each items as item}
+        <option value={item.value} disabled={item.disabled}>{item.name}</option>
       {/each}
     {/if}
 
