@@ -23,7 +23,7 @@ By adopting this standard, Flowbite Svelte ensures that AI assistants can effici
 
 All documentation pages can be accessed in pure markdown format by simply replacing `docs` with `llm` and appending `.md` to their URLs. For example:
 
-- `https://flowbite-svelte.com/llm/getting-started/introduction.md`
+- `https://flowbite-svelte.com/llm/pages/introduction.md`
 - `https://flowbite-svelte.com/llm/components/buttons.md`
 - `https://flowbite-svelte.com/llm/extend/progressradial.md`
 
