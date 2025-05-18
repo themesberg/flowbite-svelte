@@ -1,6 +1,5 @@
 # Svelte Progressradial
 
-
 ## Setup
 
 Import the `Progressradial` component in a script tag.
@@ -150,4 +149,3 @@ Import the `Progressradial` component in a script tag.
 - outsideProgressClass
 - labelOutsideDivClass
 - divClass
-

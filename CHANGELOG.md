@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.7
+
+### Patch Changes
+
+- - 87d1d793b docs: ai-integration update
+  - 2a45e148b docs: ai-integration update
+  - 7b9bde79b fix: update svelte-doc-llm
+  - 0be08aec5 docs: ai-integration page
+  - 8f272b1ee fix: #1583
+  - 3e68ae155 fix: #1599
+  - 928edbcc7 fix: stepindicator
+
 ## 1.2.6
 
 ### Patch Changes

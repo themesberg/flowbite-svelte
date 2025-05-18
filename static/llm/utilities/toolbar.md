@@ -1,6 +1,5 @@
 # Svelte Toolbar - Flowbite
 
-
 ## Setup
 
 ```svelte
@@ -178,7 +177,6 @@ Most often the textarea component is used as the main text field input element i
 - padding
 - position: "middle"
 - class: className
-
 
 ### Toolbar styling
 

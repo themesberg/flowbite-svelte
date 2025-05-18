@@ -1,6 +1,5 @@
 # Svelte Speed Dial - Flowbite
 
-
 Get started with the speed dial component to show a list of buttons or menu items positioned relative to the body in either corner as a quick way to allow certains actions to be made by your users.
 
 ## Default speed dial
@@ -654,9 +653,6 @@ You can change the main button to any element you want.
 - color
 - class: className
 
-
 ## References
 
 - [Flowbite Speed Dial](https://flowbite.com/docs/components/speed-dial/)
-
-

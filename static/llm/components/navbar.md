@@ -1,6 +1,5 @@
 # Svelte Navbar - Flowbite
 
-
 Get started with the responsive navbar component from Flowbite to quickly set up a navigation menu for your website and set up the logo, list of pages, CTA button, search input, user profile options with a dropdown, and more.
 
 ## Setup
@@ -390,9 +389,6 @@ Use this example to show a solid background for the navbar component instead of 
 - navContainerClass
 - class: className
 
-
 ## References
 
 - [Flowbite Navbar](https://flowbite.com/docs/components/navbar/)
-
-
