@@ -1,5 +1,6 @@
 # Svelte Bottom Navigation - Flowbite
 
+
 The bottom bar component can be used to allow menu items and certain control actions to be performed by the user through the usage of a fixed bar positioning to the bottom side of your page.
 
 Check out multiple examples of the bottom navigation component based on various styles, controls, sizes, content and leverage the utility classes from Tailwind CSS to integrate into your own project.
@@ -420,6 +421,9 @@ You can even use the other bottom navbar examples to exchange the default one pr
 - spanClass
 - active: manualActive
 
+
 ## References
 
 - [Flowbite Bottom Navigation](https://flowbite.com/docs/components/bottom-navigation/)
+
+

@@ -224,7 +224,7 @@
 
 <div class="mb-8">
   <h2 class="my-4 text-2xl">Default timepicker</h2>
-  <div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+  <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
     <Label>Select Time:</Label>
     <Timepicker />
   </div>
@@ -232,7 +232,7 @@
 
 <div class="mb-8">
   <h2 class="my-4 text-2xl">Timepicker with icon</h2>
-  <div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+  <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
     <Label>Select Time (Flowbite Icon):</Label>
     <Timepicker Icon={ClockSolid} />
 
@@ -243,7 +243,7 @@
 
 <div class="mb-8">
   <h2 class="my-4 text-2xl">Timepicker with custom props</h2>
-  <div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+  <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
     <Label for="appointment-time">Choose appointment time:</Label>
     <Timepicker id="appointment-time" value="09:00" min="08:00" max="18:00" />
   </div>
@@ -260,7 +260,7 @@
 
 <div class="mb-8">
   <h2 class="my-4 text-2xl">Timepicker with select</h2>
-  <div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+  <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
     <Label>Select Time and Timezone:</Label>
     <Timepicker type="select" optionLabel="Timezone" options={timezones} onselect={handleTimezoneChange} value={selectedTimeWithTimezone.time} />
     <P>Selected: {selectedTimeWithTimezone.time} {selectedTimeWithTimezone.timezone}</P>
@@ -269,7 +269,7 @@
 
 <div class="mb-8">
   <h2 class="my-4 text-2xl">Timepicker range selector</h2>
-  <div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+  <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
     <Label>Select Time Range:</Label>
     <Timepicker type="range" onselect={handleRangeChange} value={selectedTimeRange.time} endValue={selectedTimeRange.endTime} />
     <P>Selected Range: {selectedTimeRange.time} - {selectedTimeRange.endTime}</P>
@@ -287,7 +287,7 @@
 
 <div class="mb-8">
   <h2 class="my-4 text-2xl">Timerange picker with toggle</h2>
-  <div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+  <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
     <Label class="mb-2" for="timerange-toggle">Toggle Time Range:</Label>
     <Timepicker type="timerange-toggle" onselect={handleTimerangeToggleChange} value={selectedTimerangeToggle.time} endValue={selectedTimerangeToggle.endTime} divClass="" />
     <P>Selected Range: {selectedTimerangeToggle.time} - {selectedTimerangeToggle.endTime}</P>
@@ -296,7 +296,7 @@
 
 <div class="mb-8">
   <h2 class="my-4 text-2xl">Inline timepicker buttons</h2>
-  <div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+  <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
     <div class="mx-auto max-w-2xl rounded-lg bg-white shadow-md dark:bg-gray-800">
       <div class="p-6">
         <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{eventTitle}</h2>

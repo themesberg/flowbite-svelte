@@ -237,7 +237,6 @@ Use the following code to show simple previous and next elements with icons.
   {/snippet}
 </PaginationNav>
 
-
 <PaginationNav size="large" {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation">
   {#snippet prevContent()}
     <ArrowLeftOutline class="h-5 w-5" />

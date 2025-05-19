@@ -1,5 +1,6 @@
 # Svelte Tags
 
+
 The Tags.svelte component is a flexible tag input field that lets users add and manage multiple tags. It supports adding tags with Enter, removing them with Backspace or close buttons, and offers customizable styling options. The component handles keyboard navigation and maintains a reactive array of tag values that can be bound to a parent component.
 
 ## Setup
@@ -56,3 +57,4 @@ Import the `Tags` component in a script tag.
 - closeClass
 - inputClass
 - closeBtnSize: "xs"
+

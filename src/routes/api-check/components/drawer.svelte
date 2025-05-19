@@ -40,7 +40,7 @@
 <h1 class="my-4 text-3xl">Drawer</h1>
 
 <h2 class="my-4 text-2xl">Default drawer</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="text-center">
     <Button onclick={() => (hidden1 = false)}>Show drawer</Button>
   </div>
@@ -64,7 +64,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Drawer navigation</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="text-center">
     <Button onclick={() => (hidden2 = false)}>Show navigation</Button>
   </div>
@@ -132,7 +132,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Contact form</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="text-center">
     <Button onclick={() => (hidden3 = false)}>Show contact form</Button>
   </div>
@@ -168,7 +168,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Form elements</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="text-center">
     <Button onclick={() => (hidden4 = false)}>Show drawer form</Button>
   </div>
@@ -215,7 +215,7 @@
 <h2 class="my-4 text-2xl">Placement</h2>
 
 <h3 class="my-4 text-xl">Left drawer</h3>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="text-center">
     <Button onclick={() => (hidden5 = false)}>Show drawer</Button>
   </div>
@@ -238,7 +238,7 @@
 </div>
 
 <h3 class="my-4 text-xl">Right drawer</h3>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="text-center">
     <Button onclick={() => (hidden6 = false)}>Show drawer</Button>
   </div>
@@ -262,7 +262,7 @@
 </div>
 
 <h3 class="my-4 text-xl">Top drawer</h3>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="text-center">
     <Button onclick={() => (hidden7 = false)}>Show drawer</Button>
   </div>
@@ -283,7 +283,7 @@
 </div>
 
 <h3 class="my-4 text-xl">Bottom drawer</h3>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="text-center">
     <Button onclick={() => (hidden8 = false)}>Show drawer</Button>
   </div>
@@ -307,7 +307,7 @@
 <h2 class="my-4 text-2xl">Backdrop</h2>
 
 <h3 class="my-4 text-xl">Enabled (default)</h3>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="text-center">
     <Button onclick={() => (hiddenBackdropTrue = false)}>Show drawer</Button>
   </div>
@@ -331,7 +331,7 @@
 </div>
 
 <h3 class="my-4 text-xl">Disabled backdrop</h3>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="text-center">
     <Button onclick={() => (hiddenBackdropFalse = false)}>Show drawer</Button>
   </div>
@@ -348,7 +348,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Disabling outside click and backdrop</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="text-center">
     <Button onclick={() => (hidden10 = false)}>Show drawer</Button>
   </div>
@@ -368,7 +368,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Disabling only outside click</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="text-center">
     <Button onclick={() => (hiddenDisablingOnlyOutsideClick = false)}>Show drawer</Button>
   </div>

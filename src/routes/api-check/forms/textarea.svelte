@@ -11,21 +11,21 @@
 
 <h2 class="my-4 text-2xl">Textarea example</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Label for="textarea-id" class="mb-2">Your message</Label>
   <Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" />
 </div>
 
 <h2 class="my-4 text-2xl">Clearable</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Label for="textarea-id" class="mb-2">Your message</Label>
   <Textarea clearable id="textarea-clearable" placeholder="Your message" rows={4} name="message" />
 </div>
 
 <h2 class="my-4 text-2xl">Event</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Label for="textarea-id" class="mb-2">Your message</Label>
   <Textarea
     clearable
@@ -41,7 +41,7 @@
 
 <h2 class="my-4 text-2xl">WYSIWYG Editor</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <form>
     <label for="editor" class="sr-only">Publish post</label>
     <Textarea id="editor" rows={8} class="mb-4" placeholder="Write a comment">

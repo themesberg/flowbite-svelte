@@ -1,5 +1,6 @@
 # Svelte Device Mockups - Flowbite
 
+
 The device mockup component can be used to feature a preview and screenshot of your application as if you would already use it on a mobile phone and it’s a great use case for hero and CTA sections.
 
 This component is built using only the utility classes from Tailwind CSS and has built-in dark mode support so it’s easy to customize, it loads very fast and integrates perfectly with Tailwind CSS and Flowbite.
@@ -241,6 +242,9 @@ This component can be used to showcase applications built for smartwatches.
 - div5Class
 - div6Class
 
+
 ## References
 
 - [Flowbite Device Mockup](https://flowbite.com/docs/components/device-mockups/)
+
+

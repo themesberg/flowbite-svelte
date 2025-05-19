@@ -26,14 +26,14 @@
 
 <h2 class="my-4 text-2xl">Pagination</h2>
 
-<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 p-4 dark:border-gray-600">
   <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} />
   <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} size="large" />
 </div>
 
 <h2 class="my-4 text-2xl">Pagination with icons</h2>
 
-<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="flex flex-col items-center justify-center gap-3">
     <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange}>
       {#snippet prevContent()}
@@ -50,13 +50,13 @@
 
 <h2 class="my-4 text-2xl">Pagination Previous and next</h2>
 
-<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 p-4 dark:border-gray-600">
   <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation" />
 </div>
 
 <h2 class="my-4 text-2xl">Pagination - Previous and next with icons</h2>
 
-<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 p-4 dark:border-gray-600">
   <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation">
     {#snippet prevContent()}
       <ArrowLeftOutline class="h-5 w-5" />
@@ -71,13 +71,13 @@
 
 <h2 class="my-4 text-2xl">Pagination Table data pagination</h2>
 
-<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 p-4 dark:border-gray-600">
   <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="table" />
 </div>
 
 <h2 class="my-4 text-2xl">Pagination Table data pagination with icons</h2>
 
-<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 p-4 dark:border-gray-600">
   <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="table">
     {#snippet prevContent()}
       <ArrowLeftOutline class="h-5 w-5" />

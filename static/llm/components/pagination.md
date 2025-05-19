@@ -1,5 +1,6 @@
 # Svelte Pagination - Flowbite
 
+
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
@@ -11,12 +12,34 @@ The pagination component can be used to navigate across a series of content and 
 ## Setup
 
 ```svelte
-
 ```
 
 ## Default pagination
 
 Use the following list of pagination items to indicate a series of content for your website.
+
+### PaginationNav
+
+```svelte
+<script lang="ts">
+  import { PaginationNav } from "flowbite-svelte";
+
+  let currentPage = $state(1);
+  const totalPages = 20;
+
+  function handlePageChange(page: number) {
+    currentPage = page;
+    // Additional logic here
+    console.log("Page changed to:", page);
+  }
+</script>
+
+<PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} />
+
+<PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} size="large" />
+```
+
+### Pagination, PaginationItem
 
 ```svelte
 <script>
@@ -63,6 +86,37 @@ Use the following list of pagination items to indicate a series of content for y
 
 The following pagination component example shows how you can use SVG icons instead of text to show the previous and next pages.
 
+### PaginationNav
+
+```svelte
+<script lang="ts">
+  import { PaginationNav } from "flowbite-svelte";
+  import { ArrowLeftOutline, ArrowRightOutline } from "flowbite-svelte-icons";
+
+  let currentPage = $state(1);
+  const totalPages = 20;
+
+  function handlePageChange(page: number) {
+    currentPage = page;
+    // Additional logic here
+    console.log("Page changed to:", page);
+  }
+</script>
+
+<PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange}>
+  {#snippet prevContent()}
+    <span class="sr-only">Previous</span>
+    <ArrowLeftOutline class="h-5 w-5" />
+  {/snippet}
+  {#snippet nextContent()}
+    <span class="sr-only">Next</span>
+    <ArrowRightOutline class="h-5 w-5" />
+  {/snippet}
+</PaginationNav>
+```
+
+### Pagination, PaginationItem
+
 ```svelte
 <script lang="ts">
   import { Pagination } from "flowbite-svelte";
@@ -100,6 +154,27 @@ The following pagination component example shows how you can use SVG icons inste
 
 Use the following markup to show simple previous and next elements.
 
+### PaginationNav
+
+```svelte
+<script lang="ts">
+  import { PaginationNav } from "flowbite-svelte";
+  let currentPage = $state(1);
+  const totalPages = 20;
+
+  function handlePageChange(page: number) {
+    currentPage = page;
+    // Additional logic here
+    console.log("Page changed to:", page);
+  }
+</script>
+
+<PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation" />
+<PaginationNav size="large" {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation" />
+```
+
+### Pagination, PaginationItem
+
 ```svelte
 <script>
   import { Pagination, PaginationItem } from "flowbite-svelte";
@@ -124,6 +199,47 @@ Use the following markup to show simple previous and next elements.
 ## Previous and next with icons
 
 Use the following code to show simple previous and next elements with icons.
+
+### PaginationNav
+
+```svelte
+<script lang="ts">
+  import { PaginationNav } from "flowbite-svelte";
+  import { ArrowLeftOutline, ArrowRightOutline } from "flowbite-svelte-icons";
+  let currentPage = $state(1);
+  const totalPages = 20;
+
+  function handlePageChange(page: number) {
+    currentPage = page;
+    // Additional logic here
+    console.log("Page changed to:", page);
+  }
+</script>
+
+<PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation">
+  {#snippet prevContent()}
+    <ArrowLeftOutline class="h-5 w-5" />
+    Previous
+  {/snippet}
+  {#snippet nextContent()}
+    Next
+    <ArrowRightOutline class="h-5 w-5" />
+  {/snippet}
+</PaginationNav>
+
+<PaginationNav size="large" {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation">
+  {#snippet prevContent()}
+    <ArrowLeftOutline class="h-5 w-5" />
+    Previous
+  {/snippet}
+  {#snippet nextContent()}
+    Next
+    <ArrowRightOutline class="h-5 w-5" />
+  {/snippet}
+</PaginationNav>
+```
+
+### Pagination, PaginationItem
 
 ```svelte
 <script>
@@ -163,6 +279,29 @@ Use the following code to show simple previous and next elements with icons.
 
 You can use the following markup to show the number of data shown inside a table element and also the previous and next action buttons.
 
+### PaginationNav
+
+```svelte
+<script lang="ts">
+  import { PaginationNav } from "flowbite-svelte";
+
+  let currentPage = $state(1);
+  const totalPages = 20;
+
+  function handlePageChange(page: number) {
+    currentPage = page;
+    // Additional logic here
+    console.log("Page changed to:", page);
+  }
+</script>
+
+<PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="table" />
+
+<PaginationNav size="large" {currentPage} {totalPages} onPageChange={handlePageChange} layout="table" />
+```
+
+### Pagination, PaginationItem
+
 ```svelte
 <script>
   import { Pagination, PaginationItem } from "flowbite-svelte";
@@ -196,6 +335,37 @@ You can use the following markup to show the number of data shown inside a table
 ## Table data pagination with icons
 
 You can use the following code to show the number of data shown inside a table element and also the previous and next action buttons coupled with icons.
+
+### PaginationNav
+
+```svelte
+<script lang="ts">
+  import { PaginationNav } from "flowbite-svelte";
+  import { ArrowLeftOutline, ArrowRightOutline } from "flowbite-svelte-icons";
+
+  let currentPage = $state(1);
+  const totalPages = 20;
+
+  function handlePageChange(page: number) {
+    currentPage = page;
+    // Additional logic here
+    console.log("Page changed to:", page);
+  }
+</script>
+
+<PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="table">
+  {#snippet prevContent()}
+    <ArrowLeftOutline class="h-5 w-5" />
+    Previous
+  {/snippet}
+  {#snippet nextContent()}
+    Next
+    <ArrowRightOutline class="h-5 w-5" />
+  {/snippet}
+</PaginationNav>
+```
+
+### Pagination, PaginationItem
 
 ```svelte
 <script>
@@ -240,34 +410,13 @@ You can use the following code to show the number of data shown inside a table e
 </div>
 ```
 
-## Event example
-
-```svelte
-<script lang="ts">
-  import { Pagination } from "flowbite-svelte";
-
-  let pages = $state([{ name: "1" }, { name: "2" }, { name: "3" }, { name: "4" }, { name: "5" }]);
-  const previous = () => {
-    alert("Previous btn clicked. Make a call to your server to fetch data.");
-  };
-  const next = () => {
-    alert("Next btn clicked. Make a call to your server to fetch data.");
-  };
-  const handleClick = () => {
-    alert("Page clicked");
-  };
-</script>
-
-<Pagination {pages} {previous} {next} onclick={handleClick} />
-```
-
 ## Component data
 
 ### Pagination
 
 #### Types
 
-[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099)
+[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1124)
 
 #### Props
 
@@ -280,11 +429,27 @@ You can use the following code to show the number of data shown inside a table e
 - size
 - ariaLabel
 
+### PaginationButton
+
+#### Types
+
+[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1095)
+
+#### Props
+
+- children
+- size
+- onclick
+- disabled: false
+- class: className
+- href
+- active: false
+
 ### PaginationItem
 
 #### Types
 
-[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1095)
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1120)
 
 #### Props
 
@@ -294,6 +459,33 @@ You can use the following code to show the number of data shown inside a table e
 - href
 - active
 
+### PaginationNav
+
+#### Types
+
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1101)
+
+#### Props
+
+- currentPage: 1
+- totalPages: 1
+- onPageChange
+- prevContent
+- nextContent
+- prevClass
+- nextClass
+- layout: "pagination"
+- nextLabel: "Next"
+- previousLabel: "Previous"
+- ariaLabel: "Page navigation"
+- size: "default"
+- class: className
+- spanClass
+- tableDivClass
+
+
 ## References
 
 - [Flowbite Pagination](https://flowbite.com/docs/components/pagination/)
+
+

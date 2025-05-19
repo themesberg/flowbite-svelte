@@ -1,5 +1,6 @@
 # Svelte Select - Flowbite
 
+
 The select input component can be used to gather information from users based on multiple options in the form of a dropdown list and by browsing this page you will find multiple options, styles, sizes, and variants built with the utility classes from Tailwind CSS also available in dark mode.
 
 ## Setup
@@ -425,6 +426,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 - clearableColor: "none"
 - clearableClass
 - clearableOnClick
+
 
 ## References
 

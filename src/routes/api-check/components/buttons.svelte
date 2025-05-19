@@ -15,7 +15,7 @@
 
 <h2 class="my-4 text-2xl">Setup</h2>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Button>Default</Button>
   <Button color="alternative">Alternative</Button>
   <Button color="dark">Dark</Button>
@@ -29,13 +29,13 @@
 
 <h2 class="my-4 text-2xl">Button with link</h2>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Button href="/">Home</Button>
 </div>
 
 <h2 class="my-4 text-2xl">Button pills</h2>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Button pill>Default</Button>
   <Button color="alternative" pill>Alternative</Button>
   <Button color="dark" pill>Dark</Button>
@@ -49,7 +49,7 @@
 
 <h2 class="my-4 text-2xl">Gradient monochrome</h2>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
   <GradientButton color="blue">Blue</GradientButton>
   <GradientButton color="green">Green</GradientButton>
   <GradientButton color="cyan">Cyan</GradientButton>
@@ -62,7 +62,7 @@
 
 <h2 class="my-4 text-2xl">Gradient duotone</h2>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
   <GradientButton color="purpleToBlue">Purple to Blue</GradientButton>
   <GradientButton color="cyanToBlue">Cyan to Blue</GradientButton>
   <GradientButton color="greenToBlue">Green to Blue</GradientButton>
@@ -74,7 +74,7 @@
 
 <h2 class="my-4 text-2xl">Gradient outline</h2>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
   <GradientButton outline color="purpleToBlue">Purple to Blue</GradientButton>
   <GradientButton outline color="cyanToBlue">Cyan to Blue</GradientButton>
   <GradientButton outline color="greenToBlue">Green to Blue</GradientButton>
@@ -87,7 +87,7 @@
 
 <h2 class="my-4 text-2xl">Colored shadows</h2>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
   <GradientButton shadow color="blue">Blue</GradientButton>
   <GradientButton shadow color="green">Green</GradientButton>
   <GradientButton shadow color="cyan">Cyan</GradientButton>
@@ -100,7 +100,7 @@
 
 <h2 class="my-4 text-2xl">Outline buttons</h2>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Button outline>Default</Button>
   <Button outline color="dark">Dark</Button>
   <Button outline color="green">Green</Button>
@@ -121,7 +121,7 @@
 
 <h2 class="my-4 text-2xl">Button with icon</h2>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Button>
     <CartSolid class="me-2 h-5 w-5" /> Buy Now
   </Button>
@@ -132,7 +132,7 @@
 
 <h2 class="my-4 text-2xl">Button with label</h2>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Button class="gap-2">
     Messages
     <Indicator class="bg-primary-200 text-primary-800 text-xs font-semibold" size="lg">2</Indicator>
@@ -154,7 +154,7 @@
 
 <h2 class="my-4 text-2xl">Loader</h2>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Button>
     <Spinner class="me-3" size="4" color="gray" />Loading ...
   </Button>
@@ -165,13 +165,13 @@
 
 <h2 class="my-4 text-2xl">Disabled</h2>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Button disabled>Disabled</Button>
 </div>
 
 <h2 class="my-4 text-2xl">Events</h2>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Button onclick={btn1}>Button 1</Button>
   <Button ontouchstart={btn2}>Button 2</Button>
 </div>

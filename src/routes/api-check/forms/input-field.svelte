@@ -18,7 +18,7 @@
 <h1 class="my-4 text-3xl">Input Field</h1>
 
 <h2 class="my-4 text-2xl">Input fields</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <form>
     <div class="mb-6 grid gap-6 md:grid-cols-2">
       <div>
@@ -66,7 +66,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Input sizes</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="space-y-6">
     <Label class="space-y-2">
       <div>Small icon input</div>
@@ -86,18 +86,18 @@
 </div>
 
 <h2 class="my-4 text-2xl">Disabled state</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Input class="mb-6" disabled value="Disabled input" />
   <Input class="mb-6" disabled readonly value="Disabled readonly input" />
 </div>
 
 <h2 class="my-4 text-2xl">Clearable</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Input clearable value="Clearable input" />
 </div>
 
 <h2 class="my-4 text-2xl">Validation</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="mb-6">
     <Label for="success" color="green" class="mb-2 block">Your name</Label>
     <Input id="success" color="green" placeholder="Success input" />
@@ -117,7 +117,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Input with icon</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="space-y-6">
     <Label class="space-y-2">
       <div>Small input - left icon</div>
@@ -152,7 +152,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Input group</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="space-y-6">
     <div>
       <Label class="mb-2" for="input-addon-sm">Small additional text</Label>
@@ -205,7 +205,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Icon click handler</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="gap-6">
     <div>
       <Label for="show-password" class="mb-2">Your password</Label>
@@ -241,7 +241,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Helper text</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Label class="flex flex-col gap-2">
     <span>Your email</span>
     <Input id="email" name="email" required placeholder="name@flowbite.com" />
@@ -253,7 +253,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Number input</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Label class="mb-4 flex flex-col gap-2">
     <span>Your Age</span>
     <Input type="number" bind:value />
@@ -265,7 +265,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Search input</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <form>
     <Label for="search" class="mb-2 block">Your Email</Label>
     <Input id="search" placeholder="Search" size="lg" class="ps-9">
@@ -280,7 +280,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Dropdown</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="h-64">
     <ButtonGroup class="w-full">
       <Button color={undefined} class="shrink-0 border border-gray-300 bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-300 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800">
@@ -301,7 +301,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Advanced usage</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="gap-4">
     <Input>
       {#snippet left()}#{/snippet}
@@ -314,14 +314,14 @@
 
 <h2 class="my-4 text-2xl">Accessing Input element using elementRef</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Input bind:elementRef class="my-4" />
   <Button onclick={() => elementRef?.focus()}>Focus on Input</Button>
 </div>
 
 <h2 class="my-4 text-2xl">Clearable</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Input clearable class="my-4" />
 </div>
 

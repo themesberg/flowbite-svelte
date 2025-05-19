@@ -23,21 +23,21 @@
 <h1 class="my-4 text-3xl">Checkbox</h1>
 
 <h2 class="my-4 text-2xl">Checkbox examples</h2>
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Checkbox>Default checkbox</Checkbox>
   <Checkbox checked>Checked state</Checkbox>
   <Checkbox indeterminate>Indeterminate state</Checkbox>
 </div>
 
 <h2 class="my-4 text-2xl">Disabled state</h2>
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Checkbox disabled>Disabled checkbox</Checkbox>
   <Checkbox disabled checked>Disabled checked</Checkbox>
   <Checkbox disabled indeterminate>Disabled indeterminate</Checkbox>
 </div>
 
 <h2 class="my-4 text-2xl">Alternative syntax</h2>
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Table>
     <TableHead>
       <TableHeadCell>Left column</TableHeadCell>
@@ -61,7 +61,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Checkbox with a link</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Checkbox>
     I agree with the
     <a href="/" class="text-primary-600 dark:text-primary-500 ms-1 hover:underline">terms and conditions</a>
@@ -70,13 +70,13 @@
 </div>
 
 <h2 class="my-4 text-2xl">Helper text</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Checkbox aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>
   <Helper id="helper-checkbox-text" class="ps-6">For orders shipped from $25 in books or $29 in other categories</Helper>
 </div>
 
 <h2 class="my-4 text-2xl">Bordered</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="rounded-sm border border-gray-200 dark:border-gray-700">
     <Checkbox divClass="w-full p-4">Default radio</Checkbox>
   </div>
@@ -86,7 +86,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Checkbox list group</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology</p>
   <Listgroup class="w-48">
     <li><Checkbox divClass="p-3">svelte</Checkbox></li>
@@ -102,7 +102,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Horizontal list group</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
   <ul class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 sm:flex rtl:divide-x-reverse dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
     <li class="w-full"><Checkbox divClass="p-3">Svelte</Checkbox></li>
@@ -113,7 +113,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Checkbox dropdown</h2>
-<div class="my-4 flex h-96 items-start justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex h-96 items-start justify-center rounded border border-gray-200 p-4 dark:border-gray-600">
   <Button>Project users<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown>
     <div class="p-3">
@@ -146,7 +146,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Inline layout</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="flex gap-3">
     <Checkbox>Inline 1</Checkbox>
     <Checkbox>Inline 2</Checkbox>
@@ -163,7 +163,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Colors</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="flex gap-4">
     <Checkbox checked color="red">Red</Checkbox>
     <Checkbox checked color="green">Green</Checkbox>
@@ -179,7 +179,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">CheckboxButton</h2>
-<div class="my-4 space-y-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 space-y-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div>
     <CheckboxButton bind:group value="Apple"><AppleSolid class="me-2 h-6 w-6" />Apple</CheckboxButton>
     <CheckboxButton bind:group value="Facebook"><FacebookSolid class="me-2 h-6 w-6" />Facebook</CheckboxButton>
@@ -196,7 +196,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Advanced layout</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>
   <div class="grid w-full gap-6 md:grid-cols-3">
     <Checkbox custom>
@@ -224,7 +224,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Group variable</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="flex gap-2">
     <Checkbox name="flavours" choices={choicesNumbers} bind:group={groupNumbers} />
   </div>

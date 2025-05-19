@@ -29,37 +29,37 @@
 <h1 class="my-4 text-3xl">List Group</h1>
 <h2 class="text-2xl">Default list group</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Listgroup items={simpleList} class="w-48" />
 </div>
 
 <h2 class="text-2xl">List group with links</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Listgroup active items={links} class="w-48" />
 </div>
 
 <h2 class="text-2xl">List group with buttons</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Listgroup active items={buttons} class="w-48" onclick={(e) => alert(Object.entries(e?.detail ?? {}))} />
 </div>
 
 <h2 class="text-2xl">List group with icons</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Listgroup active items={icons} class="w-48" onclick={console.log} />
 </div>
 
 <h2 class="text-2xl">Horizontal list group</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Listgroup active items={buttons} horizontal onclick={(e) => alert(Object.entries(e?.detail ?? {}))}></Listgroup>
 </div>
 
 <h2 class="text-2xl">Horizontal list with tooltip</h2>
 
-<div class="my-4 flex h-64 items-center justify-center space-x-8 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex h-64 items-center justify-center space-x-8 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Listgroup horizontal active>
     <ListgroupItem>
       <BellOutline />
@@ -87,7 +87,7 @@
 
 <h2 class="text-2xl">Advanced</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Listgroup active class="w-48">
     <h3 class="p-1 text-center text-xl font-medium text-gray-900 dark:text-white">User list</h3>
     <ListgroupItem class="gap-2 text-base font-semibold">

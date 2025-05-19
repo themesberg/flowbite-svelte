@@ -26,7 +26,7 @@
 <h2 class="text-2xl">Default toast</h2>
 Default toast Use this simple toast component with an icon, message, and dismissable close button to show alert messages to your website visitors.
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <Toast>
     {#snippet icon()}
       <FireOutline class="text-primary-500 bg-primary-100 dark:bg-primary-800 dark:text-primary-200 h-6 w-6" />
@@ -38,7 +38,7 @@ Default toast Use this simple toast component with an icon, message, and dismiss
 <h2 class="text-2xl">Colors</h2>
 Colors Use the `color` prop to easily change the colors of the icons. Set the `color` prop to `none` and use the `extraIconClass` prop to customize your desired icon styles. Usually, green, red, and orange are used to show success, danger, or warning alert messages to your users. See the first three examples below.
 
-<div class="my-4 space-y-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 space-y-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <Toast color="green">
     {#snippet icon()}
       <CheckCircleSolid class="h-5 w-5" />
@@ -109,7 +109,7 @@ Colors Use the `color` prop to easily change the colors of the icons. Set the `c
 <h2 class="text-2xl">Simple toast</h2>
 Simple toast This component can be used to show simple messages and notifications without the use of a close button.
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <Toast dismissable={false} contentClass="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700">
     {#snippet icon()}
       <PaperPlaneOutline class="text-primary-600 dark:text-primary-500 h-5 w-5 rotate-45" />
@@ -121,7 +121,7 @@ Simple toast This component can be used to show simple messages and notification
 <h2 class="text-2xl">Icons</h2>
 Icons For the right positioning of the icon use: `{#snippet icon()}...{/snippet}`. You can use any [icon components](/icons).
 
-<div class="my-4 space-y-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 space-y-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <Toast>
     {#snippet icon()}
       <ImageOutline class="h-6 w-6" />
@@ -134,7 +134,7 @@ Icons For the right positioning of the icon use: `{#snippet icon()}...{/snippet}
 
 <h2 class="text-2xl">Autohide example</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <div class="flex gap-10">
     <Button onclick={trigger} class="my-3">Restart</Button>
     <Toast dismissable={false} transition={slide} bind:toastStatus>
@@ -148,7 +148,7 @@ Icons For the right positioning of the icon use: `{#snippet icon()}...{/snippet}
 
 <h2 class="text-2xl">Transitions</h2>
 
-<div class="my-4 space-y-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 space-y-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <Toast transition={slide} class="mb-4">
     {#snippet icon()}
       <CheckCircleSolid class="h-6 w-6" />
@@ -173,7 +173,7 @@ Icons For the right positioning of the icon use: `{#snippet icon()}...{/snippet}
 
 <h3 class="text-xl">Blur examples</h3>
 
-<div class="my-4 space-y-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 space-y-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <Toast transition={blur} color="purple" params={{ amount: 10 }} class="mb-4">
     {#snippet icon()}
       <BellOutline class="h-6 w-6" />
@@ -191,7 +191,7 @@ Icons For the right positioning of the icon use: `{#snippet icon()}...{/snippet}
 
 <h3 class="text-xl">Fly examples</h3>
 
-<div class="my-4 space-y-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 space-y-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <Toast transition={fly} params={{ x: 200 }} color="green" class="mb-4">
     {#snippet icon()}
       <DownloadOutline class="h-6 w-6" />
@@ -210,7 +210,7 @@ Icons For the right positioning of the icon use: `{#snippet icon()}...{/snippet}
 <h2 class="text-2xl">Undo button</h2>
 Use this toast component to also show an “undo” button to reverse the action of the user.
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <Toast contentClass="w-full text-sm font-normal flex items-center justify-between">
     Conversation archived.
     <a class="text-primary-600 hover:bg-primary-100 dark:text-primary-500 ms-auto rounded-lg p-1.5 font-medium dark:hover:bg-gray-700" href="/">Undo</a>
@@ -220,7 +220,7 @@ Use this toast component to also show an “undo” button to reverse the action
 <h2 class="text-2xl">Advanced examples</h2>
 If the toast content grows to multiple lines we need to switch off the `items-center` alignment. Notice how the examples below achieve that by setting `align=flase` property. #Toast message This component can be used to show messages and a CTA button when receiving chat messages, comment notifications, and other use cases.
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <Toast align={false} color={undefined}>
     {#snippet icon()}
       <Avatar src="/images/profile-picture-1.webp" class="h-8" />
@@ -236,7 +236,7 @@ If the toast content grows to multiple lines we need to switch off the `items-ce
 <h2 class="text-2xl">Push notification</h2>
 This component can be used to show notifications for an action from another user such as posting a comment, receiving a like, being tagged. You can show an avatar, icon, message, and the time of the notification.
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <Toast align={false}>
     <span class="font-semibold text-gray-900 dark:text-white">New notification</span>
     <div class="mt-3 flex items-center">
@@ -255,7 +255,7 @@ Use this interactive toast component to encourage users to make a certain action
 
 <p class="italic">This is an example with the icon and extra content at the same time.</p>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <Toast align={false}>
     {#snippet icon()}
       <CameraPhotoOutline class="h-6 w-6" />
@@ -275,7 +275,7 @@ Use this interactive toast component to encourage users to make a certain action
 <h2 class="text-2xl">Positioning</h2>
 Use the position property to position these toast components relative to the main content wrapper element from your document.
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <div class="relative h-56">
     <Toast dismissable={false} position="top-left">Top left positioning.</Toast>
     <Toast dismissable={false} position="top-right">Top right positioning.</Toast>
@@ -286,7 +286,7 @@ Use the position property to position these toast components relative to the mai
 
 <h2>Toast style</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <div class="relative h-56">
     <Toast class="border" iconClass="border" contentClass="border">
       {#snippet icon()}
@@ -300,7 +300,7 @@ Use the position property to position these toast components relative to the mai
 <h2 class="text-2xl">Events</h2>
 You can use `onclose` to execute custom logic when the toast is closed.
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-8">
+<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
   <div class="relative h-56">
     <Toast onclick={() => alert("Toast closed")}>Click the close button to see the event.</Toast>
   </div>

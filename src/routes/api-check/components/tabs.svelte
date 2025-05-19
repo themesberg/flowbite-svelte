@@ -16,7 +16,7 @@
 
 <h2 class="my-4 text-2xl">Default tabs</h2>
 
-<div class="my-4 my-4 rounded rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 my-4 rounded rounded border border-gray-200 p-4 dark:border-gray-600">
   <Tabs>
     <TabItem open title="Profile">
       <p class="text-sm text-gray-500 dark:text-gray-400">
@@ -56,7 +56,7 @@
 
 <h2 class="my-4 text-2xl">Tabs with underline</h2>
 
-<div class="my-4 my-4 rounded rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 my-4 rounded rounded border border-gray-200 p-4 dark:border-gray-600">
   <Tabs tabStyle="underline">
     <TabItem open title="Profile">
       <p class="text-sm text-gray-500 dark:text-gray-400">
@@ -96,7 +96,7 @@
 
 <h2 class="my-4 text-2xl">Tabs with icons</h2>
 
-<div class="my-4 my-4 rounded rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 my-4 rounded rounded border border-gray-200 p-4 dark:border-gray-600">
   <Tabs tabStyle="underline">
     <TabItem open>
       {#snippet titleSlot()}
@@ -151,7 +151,7 @@
 
 <h2 class="my-4 text-2xl">Pills tabs</h2>
 
-<div class="my-4 my-4 rounded rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 my-4 rounded rounded border border-gray-200 p-4 dark:border-gray-600">
   <Tabs tabStyle="pill">
     <TabItem open>
       {#snippet titleSlot()}
@@ -194,7 +194,7 @@
 
 <h2 class="my-4 text-2xl">Full width tabs</h2>
 
-<div class="my-4 my-4 rounded rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 my-4 rounded rounded border border-gray-200 p-4 dark:border-gray-600">
   <Tabs tabStyle="full" class="flex divide-x divide-gray-200 rounded-lg shadow-sm rtl:divide-x-reverse dark:divide-gray-700">
     <TabItem class="w-full" open>
       {#snippet titleSlot()}
@@ -237,7 +237,7 @@
 
 <h2 class="my-4 text-2xl">Components in tab contents</h2>
 
-<div class="my-4 my-4 rounded rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 my-4 rounded rounded border border-gray-200 p-4 dark:border-gray-600">
   <Tabs>
     <TabItem open>
       {#snippet titleSlot()}
@@ -291,7 +291,7 @@
 
 <h2 class="my-4 text-2xl">Using Svelte's snapshot to preserve the input</h2>
 
-<div class="my-4 mb-40 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 mb-40 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Tabs role="tablist">
     <TabItem open title="Profile">
       <form method="POST">

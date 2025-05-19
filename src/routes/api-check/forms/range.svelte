@@ -10,14 +10,14 @@
 
 <h2 class="my-4 text-2xl">Range slider example</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Label>Default range</Label>
   <Range id="range1" value={50} />
 </div>
 
 <h2 class="my-4 text-2xl">Disabled state</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Label>Default range</Label>
   <Range id="range-disabled" disabled value={50} />
 </div>
@@ -28,7 +28,7 @@
 
 <h2 class="my-4 text-2xl">Min and max</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Label>Min-max range</Label>
   <Range id="range-minmax" min="0" max="10" bind:value={minmaxValue} />
   <p>Value: {minmaxValue}</p>
@@ -36,7 +36,7 @@
 
 <h2 class="my-4 text-2xl">Steps</h2>
 
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Label>Range steps</Label>
   <Range id="range-steps" min="0" max="5" bind:value={stepValue} step="0.5" />
   <p>Value: {stepValue}</p>

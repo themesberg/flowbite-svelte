@@ -1,5 +1,6 @@
 # Svelte Mega Menu - Flowbite
 
+
 The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website.
 
 ## Setup
@@ -349,6 +350,9 @@ This example can be used to also show a CTA with a backdround image inside the d
 - isOpen: $bindable(false)
 - class: className
 
+
 ## References
 
 - [Flowbite Mega Menu](https://flowbite.com/docs/components/list-group/)
+
+

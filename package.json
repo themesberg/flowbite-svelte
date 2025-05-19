@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.2.7",
+  "version": "1.3.0",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -28,7 +28,7 @@
     "gen:docspropvalue": "svelte-lib-helpers docspropvalue themesberg/flowbite-svelte",
     "gen:component-data-prop-value": "svelte-lib-helpers component-data-prop-value themesberg/flowbite-svelte",
     "copy:packagejson": "svelte-lib-helpers package",
-    "lib-helpers": "pnpm gen:component-data-prop-value && pnpm gen:docspropvalue && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson",
+    "lib-helpers": "pnpm gen:component-data-prop-value && pnpm gen:docspropvalue && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson && pnpm llm",
     "llm": "svelte-doc-llm",
     "ch": "npx changeset",
     "cv": "npx changeset version",
@@ -483,6 +483,10 @@
     "./PaginationItem.svelte": {
       "types": "./dist/pagination/PaginationItem.svelte.d.ts",
       "svelte": "./dist/pagination/PaginationItem.svelte"
+    },
+    "./PaginationNav.svelte": {
+      "types": "./dist/pagination/PaginationNav.svelte.d.ts",
+      "svelte": "./dist/pagination/PaginationNav.svelte"
     },
     "./Popover.svelte": {
       "types": "./dist/popover/Popover.svelte.d.ts",

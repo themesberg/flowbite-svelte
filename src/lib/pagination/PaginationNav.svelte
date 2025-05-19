@@ -1,7 +1,7 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { paginationnav } from "./theme";
-  import  { type PaginationNavProps, PaginationButton } from "$lib";
+  import { type PaginationNavProps, PaginationButton } from "$lib";
 
   function paginationRange(start: number, end: number): number[] {
     return Array.from({ length: end - start + 1 }, (_, i) => start + i);
@@ -39,7 +39,7 @@
       Showing <span class={tableSpan({ class: spanClass })}>{currentPage}</span>
       of
       <span class={tableSpan({ class: spanClass })}>{totalPages}</span>
-       Entries
+      Entries
     </div>
   {/if}
 
@@ -78,7 +78,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1102)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1101)
 ## Props
 @prop currentPage = 1
 @prop totalPages = 1

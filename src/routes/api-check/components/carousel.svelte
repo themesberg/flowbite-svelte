@@ -55,26 +55,26 @@
 <h1 class="my-4 text-3xl">Carousel</h1>
 
 <h2 class="my-4 text-2xl">Default</h2>
-<div class="my-4 max-w-4xl rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images} duration={3000} />
 </div>
 
 <h2 class="my-4 text-2xl">Controls</h2>
-<div class="my-4 max-w-4xl rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images}>
     <Controls />
   </Carousel>
 </div>
 
 <h2 class="my-4 text-2xl">Indicators</h2>
-<div class="my-4 max-w-4xl rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images}>
     <Indicators />
   </Carousel>
 </div>
 
 <h2 class="my-4 text-2xl">Thumbnails</h2>
-<div class="my-4 max-w-4xl rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images} bind:index>
     <Controls />
     <Indicators position="withThumbnails" />
@@ -83,7 +83,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Caption</h2>
-<div class="my-4 max-w-4xl rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images} onchange={(detail) => (image = detail)}>
     <Controls />
     <Indicators />
@@ -95,7 +95,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Carousel with links</h2>
-<div class="my-4 max-w-4xl rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images} duration={3900}>
     {#snippet slide({ index, Slide })}
       <a href="http://google.com/search?q={images[index]?.title}" target="_blank">
@@ -108,7 +108,7 @@
 <h2 class="my-4 text-2xl">Customization</h2>
 
 <h3 class="my-2 text-xl">Basic customization</h3>
-<div class="my-4 max-w-4xl rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images} imgClass="object-contain h-full w-fit rounded-xs" class="min-h-[320px] rounded-md border-4 border-white bg-gray-200 ring-4 ring-green-500 dark:border-gray-800">
     <Indicators class="rounded-md border border-white p-2" />
     <Controls class="items-center pt-4 text-red-400 dark:text-green-400" />
@@ -116,7 +116,7 @@
 </div>
 
 <h3 class="my-2 text-xl">Advanced customization</h3>
-<div class="my-4 max-w-4xl rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images} bind:index>
     <Indicators>
       {#snippet children({ selected, index })}
@@ -143,7 +143,7 @@
 </div>
 
 <h3 class="my-2 text-xl">Custom Carousel transition</h3>
-<div class="my-4 max-w-4xl rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images} transition={scaleAnimation}>
     <Controls />
     <Indicators />

@@ -16,7 +16,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
 <h2 class="text-2xl">Toggle examples</h2>
 Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
 
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Toggle>Toggle me</Toggle>
   <Toggle checked={true}>Checked toggle</Toggle>
   <Toggle disabled>Disabled toggle</Toggle>
@@ -25,7 +25,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 <h2 class="text-2xl">Colors</h2>
 
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Toggle color="red" checked>Red</Toggle>
   <Toggle color="green" checked>Green</Toggle>
   <Toggle color="purple" checked>Purple</Toggle>
@@ -36,7 +36,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 <h2 class="text-2xl">Sizes</h2>
 
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Toggle size="small">Small toggle</Toggle>
   <Toggle size="default" checked>Default toggle</Toggle>
   <Toggle size="large" checked>Large toggle</Toggle>
@@ -45,7 +45,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 <h2 class="text-2xl">Label for off state</h2>
 
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Toggle>
     {#snippet offLabel()}
       dark mode
@@ -56,7 +56,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 <h2 class="text-2xl">Disabled</h2>
 
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Button class="w-48" onclick={handleClick}>Disabled: {isDisabled ? "True" : "False"}</Button>
 
   <Toggle class="mt-3" bind:checked disabled={isDisabled}>Disabled: {isDisabled}</Toggle>

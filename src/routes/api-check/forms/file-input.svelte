@@ -35,20 +35,20 @@
 <h1 class="my-4 text-3xl">File Input</h1>
 
 <h2 class="my-4 text-2xl">Helper text</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Label for="with_helper" class="pb-2">Upload file</Label>
   <Fileupload id="with_helper" class="mb-2" />
   <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
 </div>
 
 <h2 class="my-4 text-2xl">Clearable and multiple files</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Fileupload clearable bind:files={selectedFiles} multiple />
   <Helper color="emerald" class="mt-2">Selected files: {fileNames}</Helper>
 </div>
 
 <h2 class="my-4 text-2xl">Sizes</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Label class="pb-2" for="small_size">Small file input</Label>
   <Fileupload id="small_size" size="sm" />
   <Label class="py-2" for="default_size">Default size</Label>
@@ -58,7 +58,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Events</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Fileupload
     id="event"
     clearable
@@ -69,7 +69,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Accessing Fileupload Element with elementRef</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Fileupload id="event" bind:elementRef={fileUploadRef} class="my-4" />
   <Button
     onclick={() => {
@@ -81,7 +81,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Dropzone</h2>
-<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Dropzone id="dropzone" bind:files={value} ondrop={dropHandle} ondragover={(event) => event.preventDefault()} onchange={handleChange}>
     <svg aria-hidden="true" class="mb-3 h-10 w-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />

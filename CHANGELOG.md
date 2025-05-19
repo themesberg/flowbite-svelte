@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.0
+
+### Minor Changes
+
+- feat: PaginationNav
+  fix: #882, #876, #579
+
 ## 1.2.7
 
 ### Patch Changes

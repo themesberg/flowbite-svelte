@@ -13,7 +13,7 @@
 
 <h2 class="my-4 text-2xl">Default alert</h2>
 
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Alert>
     <span class="font-medium">Default alert!</span>
     Change a few things up and try submitting again.
@@ -42,7 +42,7 @@
 
 <h2 class="my-4 text-2xl">Alerts with icon</h2>
 
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Alert>
     {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
     <span class="font-medium">Default alert!</span>
@@ -77,7 +77,7 @@
 
 <h2 class="my-4 text-2xl">Bordered alerts</h2>
 
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Alert border>
     {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
     <span class="font-medium">Default alert!</span>
@@ -112,7 +112,7 @@
 
 <h2 class="my-4 text-2xl">Alerts with list</h2>
 
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Alert class="items-start!">
     {#snippet icon()}<span>
         <InfoCircleSolid class="h-5 w-5" />
@@ -143,7 +143,7 @@
 
 <h2 class="my-4 text-2xl">Dismissable alerts</h2>
 
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Alert dismissable>
     {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
     A simple default alert with an
@@ -180,7 +180,7 @@
 
 <h2 class="my-4 text-2xl">Border accent</h2>
 
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Alert rounded={false} class="border-t-4">
     {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
     <span class="font-medium">Info alert!</span>
@@ -210,7 +210,7 @@
 
 <h2 class="my-4 text-2xl">Additional content</h2>
 
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Alert>
     <div class="flex items-center gap-3">
       <InfoCircleSolid class="h-5 w-5" />
@@ -236,11 +236,11 @@
 </div>
 
 <h2 class="my-4 text-2xl">Custom color</h2>
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Alert class="bg-sky-500 text-white">Your content</Alert>
 </div>
 
 <h2 class="my-4 text-2xl">Events</h2>
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Alert dismissable onclick={closeAlert} bind:alertStatus>Close me</Alert>
 </div>
