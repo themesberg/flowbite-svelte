@@ -5,30 +5,7 @@
   import { input, clampSize } from ".";
   import clsx from "clsx";
 
-  let {
-    children,
-    left,
-    right,
-    value = $bindable(),
-    elementRef = $bindable(),
-    clearable = false,
-    size,
-    color = "default",
-    class: className,
-    wrapperClass,
-    classLeft,
-    classRight,
-    divClass,
-    clearableSvgClass,
-    clearableColor = "none",
-    clearableClass,
-    clearableOnClick,
-    // Combobox props
-    data = [],
-    maxSuggestions = 5,
-    onSelect,
-    ...restProps
-  }: InputProps<InputValue> = $props();
+  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, wrapperClass, classLeft, classRight, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, ...restProps }: InputProps<InputValue> = $props();
 
   // Automatically enable combobox when data is provided
   const isCombobox = $derived(Array.isArray(data) && data.length > 0);
@@ -183,10 +160,9 @@
   <div tabindex="-1" bind:this={dummyFocusDiv} class="sr-only"></div>
 {/if}
 
+{#if isCombobox}
 <div class={twMerge(isCombobox ? "relative w-full" : "", wrapperClass)}>
-  {#if group}
-    {@render inputContent()}
-  {:else if right || left || clearable}
+  {#if right || left || clearable}
     <div class={base({ class: divClass })}>
       {@render inputContent()}
     </div>
@@ -204,6 +180,17 @@
     </div>
   {/if}
 </div>
+{:else}
+  {#if group}
+    {@render inputContent()}
+  {:else if right || left || clearable}
+    <div class={base({ class: divClass })}>
+      {@render inputContent()}
+    </div>
+  {:else}
+    {@render inputContent()}
+  {/if}
+{/if}
 
 {#snippet inputContent()}
   {#if left}

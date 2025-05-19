@@ -22,7 +22,7 @@
     ["clearableColor", "\"none\""],
     ["clearableClass", ""],
     ["clearableOnClick", ""],
-    ["// Combobox props\n    data", "[]"],
+    ["data", "[]"],
     ["maxSuggestions", "5"],
     ["onSelect", ""]
   ]

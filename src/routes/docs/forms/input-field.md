@@ -168,6 +168,33 @@ text with one click.
 <Input data={carMakers} clearable placeholder="Clearable" />
 ```
 
+## Combobox with icon
+
+```svelte example class="h-80"
+<script>
+  import { Input } from "flowbite-svelte";
+  import { EnvelopeSolid } from "flowbite-svelte-icons";
+  const fakeEmails = [
+    "alex.jones@example.com",
+    "maria.smith@example.com",
+    "john.doe@example.com",
+    "emma.wilson@example.com",
+    "liam.brown@example.com",
+    "olivia.johnson@example.com",
+    "noah.miller@example.com",
+    "ava.davis@example.com",
+    "elijah.garcia@example.com",
+    "sophia.martinez@example.com"
+  ];
+</script>
+
+<Input data={fakeEmails} placeholder="name@flowbite.com" clearable type="email" size="md" class="ps-9">
+  {#snippet left()}
+    <EnvelopeSolid class="h-5 w-5" />
+  {/snippet}
+</Input>
+```
+
 ## Input sizes
 
 Use the following examples to apply a small, default or large size for the input fields.
