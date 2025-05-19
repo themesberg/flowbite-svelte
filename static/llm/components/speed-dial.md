@@ -607,7 +607,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1427)
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1428)
 
 #### Props
 
@@ -625,7 +625,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1441)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1442)
 
 #### Props
 
@@ -642,7 +642,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1425)
+[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1426)
 
 #### Props
 

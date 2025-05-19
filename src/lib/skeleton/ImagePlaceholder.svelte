@@ -37,7 +37,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1373)
+[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1374)
 ## Props
 @prop size = "md"
 @prop rounded

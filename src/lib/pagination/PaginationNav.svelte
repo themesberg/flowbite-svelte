@@ -7,24 +7,24 @@
     return Array.from({ length: end - start + 1 }, (_, i) => start + i);
   }
 
-  let { 
-    currentPage = 1, 
-    totalPages = 1, 
-    visiblePages = 5,  // New prop to control visible pages
-    onPageChange, 
-    prevContent, 
-    nextContent, 
-    prevClass, 
-    nextClass, 
-    layout = "pagination", 
-    nextLabel = "Next", 
-    previousLabel = "Previous", 
-    ariaLabel = "Page navigation", 
-    size = "default", 
-    class: className, 
-    spanClass, 
-    tableDivClass, 
-    ...restProps 
+  let {
+    currentPage = 1,
+    totalPages = 1,
+    visiblePages = 5, // New prop to control visible pages
+    onPageChange,
+    prevContent,
+    nextContent,
+    prevClass,
+    nextClass,
+    layout = "pagination",
+    nextLabel = "Next",
+    previousLabel = "Previous",
+    ariaLabel = "Page navigation",
+    size = "default",
+    class: className,
+    spanClass,
+    tableDivClass,
+    ...restProps
   }: PaginationNavProps = $props();
 
   // Set context values for child components
@@ -34,15 +34,7 @@
 
   // Calculate visible pages range using Svelte 5 derived values
   const halfVisiblePages = $derived(Math.floor(visiblePages / 2));
-  const lastPage = $derived(Math.min(
-    Math.max(
-      layout === "pagination" 
-        ? currentPage + halfVisiblePages 
-        : currentPage + halfVisiblePages * 2, 
-      visiblePages
-    ), 
-    totalPages
-  ));
+  const lastPage = $derived(Math.min(Math.max(layout === "pagination" ? currentPage + halfVisiblePages : currentPage + halfVisiblePages * 2, visiblePages), totalPages));
   const firstPage = $derived(Math.max(1, lastPage - visiblePages + 1));
 
   // Generate array of page numbers to display
@@ -100,3 +92,28 @@
     </li>
   </ul>
 </nav>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1101)
+## Props
+@prop currentPage = 1
+@prop totalPages = 1
+@prop visiblePages = 5
+@prop onPageChange
+@prop prevContent
+@prop nextContent
+@prop prevClass
+@prop nextClass
+@prop layout = "pagination"
+@prop nextLabel = "Next"
+@prop previousLabel = "Previous"
+@prop ariaLabel = "Page navigation"
+@prop size = "default"
+@prop class: className
+@prop spanClass
+@prop tableDivClass
+@prop ...restProps
+-->

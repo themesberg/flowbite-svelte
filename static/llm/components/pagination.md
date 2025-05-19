@@ -36,6 +36,8 @@ Use the following list of pagination items to indicate a series of content for y
 
 <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} />
 
+<PaginationNav {currentPage} {totalPages} visiblePages={7} onPageChange={handlePageChange} />
+
 <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} size="large" />
 ```
 
@@ -104,6 +106,17 @@ The following pagination component example shows how you can use SVG icons inste
 </script>
 
 <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange}>
+  {#snippet prevContent()}
+    <span class="sr-only">Previous</span>
+    <ArrowLeftOutline class="h-5 w-5" />
+  {/snippet}
+  {#snippet nextContent()}
+    <span class="sr-only">Next</span>
+    <ArrowRightOutline class="h-5 w-5" />
+  {/snippet}
+</PaginationNav>
+
+<PaginationNav visiblePages={7} {currentPage} {totalPages} onPageChange={handlePageChange}>
   {#snippet prevContent()}
     <span class="sr-only">Previous</span>
     <ArrowLeftOutline class="h-5 w-5" />
@@ -416,7 +429,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1124)
+[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1125)
 
 #### Props
 
@@ -449,7 +462,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1120)
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1121)
 
 #### Props
 
@@ -469,7 +482,9 @@ You can use the following code to show the number of data shown inside a table e
 
 - currentPage: 1
 - totalPages: 1
-- onPageChange
+- visiblePages: 5
+- // New prop to control visible pages
+    onPageChange
 - prevContent
 - nextContent
 - prevClass

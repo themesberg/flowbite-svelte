@@ -46,12 +46,7 @@ Use the following list of pagination items to indicate a series of content for y
 
 <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} />
 
-<PaginationNav 
-  currentPage={currentPage}
-  totalPages={totalPages}
-  visiblePages={7} 
-  onPageChange={handlePageChange}
-/>
+<PaginationNav {currentPage} {totalPages} visiblePages={7} onPageChange={handlePageChange} />
 
 <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} size="large" />
 ```

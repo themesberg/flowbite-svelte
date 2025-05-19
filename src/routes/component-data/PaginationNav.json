@@ -7,7 +7,8 @@
   "props": [
     ["currentPage", "1"],
     ["totalPages", "1"],
-    ["onPageChange", ""],
+    ["visiblePages", "5"],
+    ["// New prop to control visible pages\n    onPageChange", ""],
     ["prevContent", ""],
     ["nextContent", ""],
     ["prevClass", ""],

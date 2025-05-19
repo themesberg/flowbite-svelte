@@ -199,7 +199,7 @@ Use the `labelInsideClass` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1144)
+[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1145)
 
 #### Props
 
@@ -222,7 +222,7 @@ Use the `labelInsideClass` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1161)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1162)
 
 #### Props
 
