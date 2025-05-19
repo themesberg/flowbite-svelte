@@ -6,7 +6,7 @@
 <h1 class="my-4 text-3xl">Kbd</h1>
 <h2 class="text-2xl">Default KBD</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Kbd>Shift</Kbd>
   <Kbd>Ctrl</Kbd>
   <Kbd>Tab</Kbd>
@@ -18,7 +18,7 @@
 
 <h2 class="text-2xl">KBD inside text</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <p class="text-gray-500 dark:text-gray-400">
     Please press <Kbd>Ctrl</Kbd> + <Kbd>Shift</Kbd> + <Kbd>R</Kbd> to re-render an MDN page.
   </p>
@@ -26,7 +26,7 @@
 
 <h2 class="text-2xl">KBD inside table</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Table>
     <TableHead>
       <TableHeadCell>Key</TableHeadCell>
@@ -72,7 +72,7 @@
 
 <h2 class="text-2xl">Arrow keys</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Kbd class="me-1 inline-flex items-center px-2 py-1.5">
     <CaretUpSolid />
     <span class="sr-only">Arrow key up</span>
@@ -93,7 +93,7 @@
 
 <h2 class="text-2xl">Letter keys</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Kbd>Q</Kbd>
   <Kbd>W</Kbd>
   <Kbd>E</Kbd>
@@ -124,7 +124,7 @@
 
 <h2 class="text-2xl">Number keys</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Kbd>1</Kbd>
   <Kbd>2</Kbd>
   <Kbd>3</Kbd>
@@ -139,7 +139,7 @@
 
 <h2 class="text-2xl">Function keys</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Kbd>F1</Kbd>
   <Kbd>F2</Kbd>
   <Kbd>F3</Kbd>

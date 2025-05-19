@@ -25,7 +25,7 @@
 
 <h2 class="my-4 text-2xl">Default badge</h2>
 
-<div class="flex flex-wrap gap-2 rounded border p-4">
+<div class="flex flex-wrap gap-2  rounded border border-gray-200 dark:border-gray-600 p-4">
   <Badge>Default</Badge>
   <Badge color="gray">Gray</Badge>
   <Badge color="red">Red</Badge>
@@ -38,7 +38,7 @@
 
 <h2 class="my-4 text-2xl">Large badges</h2>
 
-<div class="flex flex-wrap gap-2 rounded border p-4">
+<div class="flex flex-wrap gap-2  rounded border border-gray-200 dark:border-gray-600 p-4">
   <Badge large>Default</Badge>
   <Badge large color="gray">Gray</Badge>
   <Badge large color="red">Red</Badge>
@@ -51,7 +51,7 @@
 
 <h2 class="my-4 text-2xl">Bordered badge</h2>
 
-<div class="flex flex-wrap gap-2 rounded border p-4">
+<div class="flex flex-wrap gap-2  rounded border border-gray-200 dark:border-gray-600 p-4">
   <Badge border>Default</Badge>
   <Badge border color="gray">Gray</Badge>
   <Badge border color="red">Red</Badge>
@@ -64,7 +64,7 @@
 
 <h2 class="my-4 text-2xl">Pills badge</h2>
 
-<div class="flex flex-wrap gap-2 rounded border p-4">
+<div class="flex flex-wrap gap-2  rounded border border-gray-200 dark:border-gray-600 p-4">
   <Badge rounded>Default</Badge>
   <Badge rounded color="gray">Gray</Badge>
   <Badge rounded color="red">Red</Badge>
@@ -77,7 +77,7 @@
 
 <h2 class="my-4 text-2xl">Badges as links</h2>
 
-<div class="flex flex-wrap gap-2 rounded border p-4">
+<div class="flex flex-wrap gap-2  rounded border border-gray-200 dark:border-gray-600 p-4">
   <Badge href="/">Badge link</Badge>
   <Badge href="/" large>Badge link</Badge>
   <Badge href="/" border>Badge link</Badge>
@@ -86,7 +86,7 @@
 
 <h2 class="my-4 text-2xl">Badges with icon</h2>
 
-<div class="flex flex-wrap gap-2 rounded border p-4">
+<div class="flex flex-wrap gap-2  rounded border border-gray-200 dark:border-gray-600 p-4">
   <Badge color="gray" border>
     <ClockSolid class="me-1.5 h-2.5 w-2.5" />
     3 days ago

@@ -11,7 +11,7 @@
 
 <h2 class="my-4 text-2xl">Setup</h2>
 
-<div class="my-4 flex justify-center rounded border p-4">
+<div class="my-4 flex justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
   <ButtonGroup class="*:ring-primary-700!">
     <Button>Profile</Button>
     <Button>Settings</Button>
@@ -21,7 +21,7 @@
 
 <h2 class="my-4 text-2xl">Default</h2>
 
-<div class="my-4 flex justify-center rounded border p-4">
+<div class="my-4 flex justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
   <ButtonGroup class="*:ring-primary-700!">
     <Button>Profile</Button>
     <Button>Settings</Button>
@@ -31,7 +31,7 @@
 
 <h2 class="my-4 text-2xl">More examples</h2>
 
-<div class="my-4 flex flex-col flex-wrap gap-4 rounded border p-4 text-gray-900 dark:text-gray-100">
+<div class="my-4 flex flex-col flex-wrap gap-4 rounded border border-gray-200 dark:border-gray-600 p-4 text-gray-900 dark:text-gray-100">
   <div class="py-4">Pills</div>
   <ButtonGroup class="space-x-px">
     <Button pill color="purple">Profile</Button>
@@ -77,7 +77,7 @@
 
 <h2 class="my-4 text-2xl">Button group as links</h2>
 
-<div class="my-4 flex justify-center rounded border p-4">
+<div class="my-4 flex justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
   <ButtonGroup class="*:ring-primary-700!">
     <Button href="/">Profile</Button>
     <Button href="/">Settings</Button>
@@ -87,7 +87,7 @@
 
 <h2 class="my-4 text-2xl">Group buttons with icons</h2>
 
-<div class="my-4 flex justify-center rounded border p-4">
+<div class="my-4 flex justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
   <ButtonGroup class="*:ring-primary-700!">
     <Button>
       <UserCircleSolid class="me-2 h-4 w-4" />
@@ -106,7 +106,7 @@
 
 <h2 class="my-4 text-2xl">Outline</h2>
 
-<div class="my-4 flex justify-center rounded border p-4">
+<div class="my-4 flex justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
   <ButtonGroup>
     <Button outline color="dark">Profile</Button>
     <Button outline color="dark">Settings</Button>
@@ -116,7 +116,7 @@
 
 <h2 class="my-4 text-2xl">Outline with icon</h2>
 
-<div class="my-4 flex justify-center rounded border p-4">
+<div class="my-4 flex justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
   <ButtonGroup>
     <Button outline color="dark">
       <UserCircleSolid class="me-2 h-4 w-4" />
@@ -135,7 +135,7 @@
 
 <h2 class="my-4 text-2xl">Events</h2>
 
-<div class="my-4 flex justify-center rounded border p-4">
+<div class="my-4 flex justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
   <ButtonGroup class="*:ring-primary-700!">
     <Button onclick={handleClick}>Click me</Button>
     <Button>Settings</Button>

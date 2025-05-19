@@ -17,19 +17,19 @@
 <h1 class="my-4 text-3xl">Radio</h1>
 
 <h2 class="my-4 text-2xl">Radio examples</h2>
-<div class="my-4 flex flex-col gap-4 rounded border p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Radio name="example1" value="1" bind:group={selectedValue}>Default radio</Radio>
   <Radio name="example1" value="2" bind:group={selectedValue}>Checked state</Radio>
 </div>
 
 <h2 class="my-4 text-2xl">Disabled state</h2>
-<div class="my-4 flex flex-col gap-4 rounded border p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Radio name="disabled-state" disabled value="1" bind:group={selectedValue}>Disabled radio</Radio>
   <Radio name="disabled-state" disabled value="2" bind:group={selectedValue}>Disabled checked</Radio>
 </div>
 
 <h2 class="my-4 text-2xl">Alternative syntax</h2>
-<div class="my-4 flex flex-col gap-4 rounded border p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Table>
     <TableHead>
       <TableHeadCell>Left column</TableHeadCell>
@@ -53,7 +53,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Radio with a link</h2>
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Radio name="with-link">
     I agree with the <a href="/" class="text-primary-600 dark:text-primary-500 ms-1 hover:underline">terms and conditions</a>
     .
@@ -61,13 +61,13 @@
 </div>
 
 <h2 class="my-4 text-2xl">Helper text</h2>
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Radio aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>
   <Helper id="helper-checkbox-text" class="ps-6">For orders shipped from $25 in books or $29 in other categories</Helper>
 </div>
 
 <h2 class="my-4 text-2xl">Bordered</h2>
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <div class="grid grid-cols-2 gap-6">
     <div class="rounded-sm border border-gray-200 dark:border-gray-700">
       <Radio name="bordered" value="1" bind:group={selectedValue3} class="w-full p-4">Default radio</Radio>
@@ -79,7 +79,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Radio list group</h2>
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <p class="mb-4 font-semibold text-gray-900 dark:text-white">
     Technology <span class="capitalize">{technology}</span>
   </p>
@@ -92,7 +92,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Horizontal list group</h2>
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
   <ul class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 sm:flex rtl:divide-x-reverse dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
     <li class="w-full"><Radio name="hor-list" class="p-3">Svelte</Radio></li>
@@ -103,7 +103,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Radio in dropdown</h2>
-<div class="my-4 flex h-80 items-start justify-center rounded border p-4">
+<div class="my-4 flex h-80 items-start justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
   <Button>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
   <Dropdown simple class="w-60">
     <DropdownItem>
@@ -122,7 +122,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Inline layout</h2>
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <div class="flex gap-3">
     <Radio bind:group={inline1} value="first">Inline 1</Radio>
     <Radio bind:group={inline1} value="second">Inline 2 checked</Radio>
@@ -139,7 +139,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Colors</h2>
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <p class="mb-4 font-semibold {colors}">Select color</p>
   <div class="flex gap-4">
     <Radio bind:group={colors} color="red" value="text-red-500">Red</Radio>
@@ -152,7 +152,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Advanced layout</h2>
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>
   <div class="grid w-full gap-6 md:grid-cols-2">
     <Radio name="custom" custom>

@@ -191,6 +191,7 @@ export const fetchApiCheck = async () => {
   const apicheckComponents = import.meta.glob("/src/routes/api-check/components/*.svelte");
   const apicheckForm = import.meta.glob("/src/routes/api-check/forms/*.svelte");
   const apicheckTypography = import.meta.glob("/src/routes/api-check/typography/*.svelte");
+  const apicheckExtend = import.meta.glob("/src/routes/api-check/extend/*.svelte");
 
   const iterableApiComponents = Object.entries(apicheckComponents);
   const componentsApicheck = await Promise.all(
@@ -218,9 +219,20 @@ export const fetchApiCheck = async () => {
       };
     })
   );
+
+  const iterableApiExtend = Object.entries(apicheckExtend);
+  const extendApicheck = await Promise.all(
+    iterableApiExtend.map(async ([path, _]) => {
+      return {
+        path: filePath(path)
+      };
+    })
+  );
+
   return {
     components: componentsApicheck,
     forms: formApicheck,
-    typography: typographyApicheck
+    typography: typographyApicheck,
+    extend: extendApicheck
   };
 };

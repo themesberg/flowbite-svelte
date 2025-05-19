@@ -15,7 +15,7 @@
 
 <h2 class="my-4 text-2xl">Default accordion</h2>
 
-<div class="rounded border p-4">
+<div class="rounded border border-gray-200 dark:border-gray-600 p-4">
   <Accordion>
     <AccordionItem>
       {#snippet header()}My Header 1{/snippet}
@@ -44,7 +44,7 @@
 
 <h2 class="my-4 text-2xl">Always open</h2>
 
-<div class="rounded border p-4">
+<div class="rounded border border-gray-200 dark:border-gray-600 p-4">
   <Accordion>
     <AccordionItem open>
       {#snippet header()}Header 2-1{/snippet}
@@ -59,7 +59,7 @@
 
 <h2 class="my-4 text-2xl">Color option</h2>
 
-<div class="rounded border p-4">
+<div class="rounded border border-gray-200 dark:border-gray-600 p-4">
   <Accordion activeClass="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800" inactiveClass="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
     <AccordionItem class="">
       {#snippet header()}Header 2-1{/snippet}
@@ -74,7 +74,7 @@
 
 <h2 class="my-4 text-2xl">Flush accordion</h2>
 
-<div class="rounded border p-4">
+<div class="rounded border border-gray-200 dark:border-gray-600 p-4">
   <Accordion flush>
     <AccordionItem>
       {#snippet header()}Header 2-1{/snippet}
@@ -88,7 +88,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Arrow style</h2>
-<div class="rounded border p-4">
+<div class="rounded border border-gray-200 dark:border-gray-600 p-4">
   <Accordion>
     <AccordionItem>
       {#snippet header()}Header 2-1{/snippet}
@@ -114,7 +114,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Icon Accordion</h2>
-<div class="rounded border p-4">
+<div class="rounded border border-gray-200 dark:border-gray-600 p-4">
   <Accordion>
     <AccordionItem>
       {#snippet header()}
@@ -142,7 +142,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Multiple mode</h2>
-<div class="rounded border p-4">
+<div class="rounded border border-gray-200 dark:border-gray-600 p-4">
   <Accordion multiple>
     <AccordionItem>
       {#snippet header()}
@@ -203,7 +203,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Nesting accordions</h2>
-<div class="rounded border p-4">
+<div class="rounded border border-gray-200 dark:border-gray-600 p-4">
   <Accordion>
     <AccordionItem open>
       {#snippet header()}My Header 1{/snippet}

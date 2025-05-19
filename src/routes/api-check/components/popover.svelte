@@ -30,14 +30,14 @@
 
 <h2 class="my-4 text-2xl">Default popover</h2>
 
-<div class="my-4 flex h-44 items-end justify-center rounded border p-4">
+<div class="my-4 flex h-44 items-end justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
   <Button>Default popover</Button>
   <Popover class="w-64 text-sm font-light " title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
 </div>
 
 <h2 class="my-4 text-2xl">User profile</h2>
 
-<div class="my-4 flex h-74 items-end justify-center rounded border p-4">
+<div class="my-4 flex h-74 items-end justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
   <Button>User profile</Button>
   <Popover class="w-64 bg-white text-sm font-light text-gray-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
     <div class="p-3">
@@ -75,7 +75,7 @@
 
 <h2 class="my-4 text-2xl">Company profile</h2>
 
-<div class="my-4 flex h-100 items-end justify-center rounded border p-4">
+<div class="my-4 flex h-100 items-end justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
   <Button>Company profile</Button>
   <Popover class="w-80 text-sm">
     <div class="flex">
@@ -122,7 +122,7 @@
 
 <h2 class="my-4 text-2xl">Image popover</h2>
 
-<div class="my-4 flex h-96 items-end rounded border p-4">
+<div class="my-4 flex h-96 items-end rounded border border-gray-200 dark:border-gray-600 p-4">
   <p class="font-light text-gray-500 dark:text-gray-400">
     Due to its central geographic location in Southern Europe, <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline" id="href_1">Italy</a>
     has historically been home to myriad peoples and cultures. In addition to the various ancient peoples dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians founded colonies mostly in insular Italy
@@ -149,7 +149,7 @@
 
 <h2 class="my-4 text-2xl">Description popover</h2>
 
-<div class="my-4 h-96 rounded border p-4">
+<div class="my-4 h-96 rounded border border-gray-200 dark:border-gray-600 p-4">
   <div class="flex items-center text-sm font-light text-gray-500 dark:text-gray-400">
     This is just some informational text
     <button id="b3">
@@ -172,7 +172,7 @@
 
 <h2 class="my-4 text-2xl">Progress popover</h2>
 
-<div class="my-4 flex h-60 items-end justify-center rounded border p-4">
+<div class="my-4 flex h-60 items-end justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
   <Button>
     <DatabaseSolid class="me-2 h-5 w-5 text-white dark:text-white" /> Storage status
   </Button>
@@ -197,7 +197,7 @@
 
 <h2 class="my-4 text-2xl">Password strength</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <form onsubmit={preventDefault(handler)} class="mb-8">
     <div class="mb-6">
       <Label for="email" class="mb-2">Your email</Label>
@@ -237,7 +237,7 @@
 
 <h2 class="my-4 text-2xl">Placement</h2>
 
-<div class="my-4 flex h-96 flex-col items-center justify-center gap-4 rounded border p-4">
+<div class="my-4 flex h-96 flex-col items-center justify-center gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Button id="placement-top">Top popover</Button>
   <div class="space-x-4 rtl:space-x-reverse">
     <Button id="placement-left">Left popover</Button>
@@ -249,7 +249,7 @@
 
 <h2 class="my-4 text-2xl">Triggering</h2>
 
-<div class="my-4 flex h-44 items-end justify-center gap-4 rounded border p-4">
+<div class="my-4 flex h-44 items-end justify-center gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Button id="hover">Hover popover</Button>
   <Button id="click">Click popover</Button>
   <Popover class="w-64 text-sm font-light " title="Popover title" triggeredBy="#hover" trigger="hover">And here's some amazing content. It's very engaging. Right?</Popover>
@@ -258,21 +258,21 @@
 
 <h2 class="my-4 text-2xl">Offset</h2>
 
-<div class="my-4 flex h-56 items-end justify-center rounded border p-4">
+<div class="my-4 flex h-56 items-end justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
   <Button>Default popover</Button>
   <Popover offset={30} class="w-64 text-sm font-light" title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
 </div>
 
 <h2 class="my-4 text-2xl">Disable arrow</h2>
 
-<div class="my-4 flex h-44 items-end justify-center rounded border p-4">
+<div class="my-4 flex h-44 items-end justify-center rounded border border-gray-200 dark:border-gray-600 p-4">
   <Button id="arrow">Default popover</Button>
   <Popover arrow={false} class="w-64 text-sm font-light" title="Popover title" triggeredBy="#arrow">And here's some amazing content. It's very engaging. Right?</Popover>
 </div>
 
 <h2 class="my-4 text-2xl">External reference</h2>
 
-<div class="my-4 flex h-72 flex-col items-center justify-center gap-4 rounded border p-4">
+<div class="my-4 flex h-72 flex-col items-center justify-center gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <div id="ext-ref" class="rounded-lg border border-gray-200 p-2 dark:border-gray-600">External reference</div>
   <div class="space-x-4 rtl:space-x-reverse">
     <Button id="ref-1">Left</Button>
@@ -286,7 +286,7 @@
 
 <h2 class="my-4 text-2xl">Binding isOpen</h2>
 
-<div class="my-4 flex h-44 flex-col items-center justify-center space-y-4 rounded border p-4">
+<div class="my-4 flex h-44 flex-col items-center justify-center space-y-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Button>Hover me</Button>
   <Popover bind:isOpen class="w-64 text-sm font-light " title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
 </div>

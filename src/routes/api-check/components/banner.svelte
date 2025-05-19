@@ -11,7 +11,7 @@
 
 <h2 class="my-4 text-2xl">Default sticky banner</h2>
 
-<div class="relative my-4 flex flex-col rounded border p-4">
+<div class="relative my-4 flex flex-col  rounded border border-gray-200 dark:border-gray-600 p-4">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 
@@ -30,7 +30,7 @@
 
 <h2 class="my-4 text-2xl">Bottom banner position</h2>
 
-<div class="relative my-4 flex flex-col rounded border p-4">
+<div class="relative my-4 flex flex-col  rounded border border-gray-200 dark:border-gray-600 p-4">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 
@@ -51,7 +51,7 @@
 
 <h2 class="my-4 text-2xl">Marketing CTA banner</h2>
 
-<div class="relative my-4 flex flex-col rounded border p-4">
+<div class="relative my-4 flex flex-col  rounded border border-gray-200 dark:border-gray-600 p-4">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 
@@ -66,7 +66,7 @@
 
 <h2 class="my-4 text-2xl">Newsletter sign-up banner</h2>
 
-<div class="relative my-4 flex flex-col rounded border p-4">
+<div class="relative my-4 flex flex-col  rounded border border-gray-200 dark:border-gray-600 p-4">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 
@@ -81,7 +81,7 @@
 
 <h2 class="my-4 text-2xl">Informational banner</h2>
 
-<div class="relative my-4 flex flex-col rounded border p-4">
+<div class="relative my-4 flex flex-col  rounded border border-gray-200 dark:border-gray-600 p-4">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 
@@ -103,7 +103,7 @@
 
 <h2 class="my-4 text-2xl">Transition</h2>
 
-<div class="relative my-4 flex flex-col rounded border p-4">
+<div class="relative my-4 flex flex-col  rounded border border-gray-200 dark:border-gray-600 p-4">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
 

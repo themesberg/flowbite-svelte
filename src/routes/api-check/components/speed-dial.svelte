@@ -26,7 +26,7 @@
 
 <h2 class="my-4 text-2xl">Default speed dial</h2>
 
-<div class="relative my-4 h-96 rounded border p-4">
+<div class="relative my-4 h-96 rounded border border-gray-200 dark:border-gray-600 p-4">
   <SpeedDialTrigger class="absolute end-6 bottom-6" />
   <SpeedDial>
     <SpeedDialButton name="Share">
@@ -46,7 +46,7 @@
 
 <h2 class="my-4 text-2xl">Colors</h2>
 
-<div class="my-4 grid w-fit grid-cols-8 gap-x-6 gap-y-18 rounded border p-4 py-16">
+<div class="my-4 grid w-fit grid-cols-8 gap-x-6 gap-y-18 rounded border border-gray-200 dark:border-gray-600 p-4 py-16">
   <SpeedDialTrigger color="primary" />
   <SpeedDial>
     <SpeedDialButton name="Share">
@@ -202,7 +202,7 @@
 
 <h2 class="my-4 text-2xl">Square speed dial</h2>
 
-<div class="relative my-4 h-96 rounded border p-4">
+<div class="relative my-4 h-96 rounded border border-gray-200 dark:border-gray-600 p-4">
   <SpeedDialTrigger class="absolute end-6 bottom-6" />
   <SpeedDial pill={false}>
     <SpeedDialButton name="Share">
@@ -222,7 +222,7 @@
 
 <h2 class="my-4 text-2xl">Text inside button</h2>
 
-<div class="relative my-4 h-96 rounded border p-4">
+<div class="relative my-4 h-96 rounded border border-gray-200 dark:border-gray-600 p-4">
   <SpeedDialTrigger class="absolute end-24 bottom-6" />
   <SpeedDial tooltip="none">
     <SpeedDialButton name="Share" textClass="text-blue-500">
@@ -258,7 +258,7 @@
 
 <h2 class="my-4 text-2xl">Text outside button</h2>
 
-<div class="relative my-4 h-96 rounded border p-4">
+<div class="relative my-4 h-96 rounded border border-gray-200 dark:border-gray-600 p-4">
   <SpeedDialTrigger class="absolute end-24 bottom-6" />
   <SpeedDial tooltip="none" textOutside>
     <SpeedDialButton name="Share" textClass="text-pink-500">
@@ -294,7 +294,7 @@
 
 <h2 class="my-4 text-2xl">Dropdown menu</h2>
 
-<div class="relative my-4 h-96 rounded border p-4">
+<div class="relative my-4 h-96 rounded border border-gray-200 dark:border-gray-600 p-4">
   <SpeedDialTrigger class="absolute end-24 bottom-6">
     {#snippet icon()}
       <DotsHorizontalOutline class="h-8 w-8" />
@@ -350,7 +350,7 @@
 
 <h2 class="my-4 text-2xl">Alternative menu</h2>
 
-<div class="relative my-4 h-96 rounded border p-4">
+<div class="relative my-4 h-96 rounded border border-gray-200 dark:border-gray-600 p-4">
   <SpeedDialTrigger class="absolute end-24 bottom-6">
     {#snippet icon()}
       <PenSolid class="h-8 w-8" />
@@ -402,7 +402,7 @@
 
 <h2 class="my-4 text-2xl">Alignment - Position</h2>
 
-<div class="relative my-4 h-[400px] rounded border p-4">
+<div class="relative my-4 h-[400px] rounded border border-gray-200 dark:border-gray-600 p-4">
   {#each placements as [position, placement, tooltip]}
     <SpeedDialTrigger class="absolute {position}" />
     <SpeedDial {placement}>
@@ -424,7 +424,7 @@
 
 <h2 class="my-4 text-2xl">Triggering</h2>
 
-<div class="relative my-4 h-96 rounded border p-4">
+<div class="relative my-4 h-96 rounded border border-gray-200 dark:border-gray-600 p-4">
   <SpeedDialTrigger class="absolute start-2 bottom-6" />
   <SpeedDial trigger="hover" tooltip="right">
     <SpeedDialButton name="Share">
@@ -460,7 +460,7 @@
 
 <h2 class="my-4 text-2xl">Custom main button</h2>
 
-<div class="relative my-4 h-96 rounded border p-4">
+<div class="relative my-4 h-96 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Button color="green" class="absolute end-6 bottom-6 py-0">
     <Rating total={1} rating={0.5} size={48} /> Rating
   </Button>
@@ -482,7 +482,7 @@
 
 <h2 class="my-4 text-2xl">Binding isOpen</h2>
 
-<div class="relative my-4 h-96 rounded border p-4">
+<div class="relative my-4 h-96 rounded border border-gray-200 dark:border-gray-600 p-4">
   <SpeedDialTrigger class="absolute end-6 bottom-6" />
   <SpeedDial bind:isOpen>
     <SpeedDialButton name="Share">

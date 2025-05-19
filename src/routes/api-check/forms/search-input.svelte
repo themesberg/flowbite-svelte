@@ -71,7 +71,7 @@
 
 <h2 class="text-2xl">Search bar example</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Search>
     <Button class="me-1">Search</Button>
   </Search>
@@ -79,7 +79,7 @@
 
 <h2 class="text-2xl">Search input with clearable</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <form class="flex gap-2">
     <Search size="md" clearable />
     <Button class="p-2.5!">
@@ -90,7 +90,7 @@
 
 <h2 class="text-2xl">Search with dropdown</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <form class="flex">
     <div class="relative">
       <Button class="border-primary-700 rounded-e-none border border-e-0 whitespace-nowrap">
@@ -120,7 +120,7 @@
 <h2 class="text-2xl">Location search</h2>
 Use this example where you can select a country in which you want to search for an address or city.
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <form class="flex">
     <div class="relative">
       <Button class="border-primary-700 rounded-e-none border border-e-0 whitespace-nowrap">
@@ -152,7 +152,7 @@ Use this example where you can select a country in which you want to search for 
 <h2 class="text-2xl">Voice Search</h2>
 Get started with this example if you would like to enable voice search for your website and users.
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <form class="flex gap-2">
     <Search size="md" class="flex items-center gap-2" placeholder="Search Mockups, Logos, Design Templates...">
       <button type="button" onclick={handleVoiceBtn} class="outline-hidden">
@@ -168,7 +168,7 @@ Get started with this example if you would like to enable voice search for your 
 
 <h2 class="text-2xl">Example</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <form id="example-form" onsubmit={submitted}>
     <Search bind:value />
     <P class="my-1">You are searching: {value}</P>
@@ -178,7 +178,7 @@ Get started with this example if you would like to enable voice search for your 
 
 <h2 class="text-2xl">Accessing Search Element with elementRef</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <form id="example-form" onsubmit={submitted}>
     <Search bind:value={elementTxt} bind:elementRef={searchRef} class="my-4" />
     <Button
@@ -194,7 +194,7 @@ Get started with this example if you would like to enable voice search for your 
 
 <h2 class="text-2xl">Clearable</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Search bind:value={clearableValue} clearable />
 </div>
 

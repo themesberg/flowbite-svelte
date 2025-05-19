@@ -8,7 +8,7 @@
 
 <h2 class="my-4 text-2xl">Default skeleton</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Skeleton size="sm" class="my-8" />
   <Skeleton size="md" class="my-8" />
   <Skeleton size="lg" class="my-8" />
@@ -18,7 +18,7 @@
 
 <h2 class="my-4 text-2xl">Image placeholder</h2>
 
-<div class="my-4 flex flex-col gap-8 rounded border p-4">
+<div class="my-4 flex flex-col gap-8 rounded border border-gray-200 dark:border-gray-600 p-4">
   <ImagePlaceholder size="sm" />
   <ImagePlaceholder size="md" />
   <ImagePlaceholder size="lg" />
@@ -26,7 +26,7 @@
 
 <h2 class="my-4 text-2xl">Video placeholder</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <VideoPlaceholder />
   <VideoPlaceholder size="md" class="mt-8" />
   <VideoPlaceholder size="lg" class="mt-8" />
@@ -36,7 +36,7 @@
 
 <h2 class="my-4 text-2xl">Text placeholder</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <TextPlaceholder />
   <TextPlaceholder size="md" class="mt-8" />
   <TextPlaceholder size="lg" class="mt-8" />
@@ -46,7 +46,7 @@
 
 <h2 class="my-4 text-2xl">Card placeholder</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <CardPlaceholder />
   <CardPlaceholder size="md" class="mt-8" />
   <CardPlaceholder size="lg" class="mt-8" />
@@ -56,18 +56,18 @@
 
 <h2 class="my-4 text-2xl">Widget placeholder</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <WidgetPlaceholder />
 </div>
 
 <h2 class="my-4 text-2xl">List placeholder</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <ListPlaceholder />
 </div>
 
 <h2 class="my-4 text-2xl">Testimonial placeholder</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <TestimonialPlaceholder />
 </div>

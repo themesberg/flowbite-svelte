@@ -8,7 +8,7 @@
 
 <h2 class="my-4 text-2xl">Default avatar</h2>
 
-<div class="flex justify-center gap-4 rounded border p-4">
+<div class="flex justify-center gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <div class="flex space-x-4 rtl:space-x-reverse">
     <Avatar src="/images/profile-picture-2.webp" />
     <Avatar src="/images/profile-picture-2.webp" cornerStyle="rounded" />
@@ -17,14 +17,14 @@
 
 <h2 class="my-4 text-2xl">Bordered</h2>
 
-<div class="flex justify-center gap-4 rounded border p-4">
+<div class="flex justify-center gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Avatar src="/images/profile-picture-2.webp" border />
   <Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300" />
 </div>
 
 <h2 class="my-4 text-2xl">Placeholder</h2>
 
-<div class="flex justify-center gap-4 rounded border p-4">
+<div class="flex justify-center gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Avatar />
   <Avatar cornerStyle="rounded" />
   <Avatar border />
@@ -33,13 +33,13 @@
 
 <h2 class="my-4 text-2xl">Placeholder initials</h2>
 
-<div class="flex justify-center gap-4 rounded border p-4">
+<div class="flex justify-center gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Avatar>JL</Avatar>
 </div>
 
 <h2 class="my-4 text-2xl">Avatar tooltip</h2>
 
-<div class="flex justify-center gap-4 rounded border p-4">
+<div class="flex justify-center gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Avatar data-name="Jese Leos" src="/images/profile-picture-1.webp" />
   <Tooltip>Jese Leos</Tooltip>
   <Avatar data-name="Robert Gouth" src="/images/profile-picture-2.webp" />
@@ -50,7 +50,7 @@
 
 <h2 class="my-4 text-2xl">Dot indicator</h2>
 
-<div class="flex justify-center gap-4 rounded border p-4">
+<div class="flex justify-center gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Avatar src="/images/profile-picture-3.webp" dot={{ color: "red" }} />
   <Avatar src="/images/profile-picture-3.webp" dot={{ placement: "top-right", color: "red" }} cornerStyle="rounded" />
   <Avatar src="/images/profile-picture-5.webp" dot={{ placement: "bottom-right", color: "green" }} />
@@ -77,7 +77,7 @@
 
 <h2 class="my-4 text-2xl">Avatar text</h2>
 
-<div class="flex justify-center gap-4 rounded border p-4">
+<div class="flex justify-center gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <div class="flex items-center space-x-4 rtl:space-x-reverse">
     <Avatar src="/images/profile-picture-1.webp" cornerStyle="rounded" />
     <div class="space-y-1 font-medium dark:text-white">
@@ -109,7 +109,7 @@
 
 <h2 class="my-4 text-2xl">Sizes</h2>
 
-<div class="my-4 flex flex-col gap-4 rounded border p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <div class="flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
     <Avatar src="/images/profile-picture-3.webp" size="xs" />
     <Avatar src="/images/profile-picture-3.webp" size="sm" />
@@ -122,7 +122,7 @@
 
 <h2 class="my-4 text-2xl">Icon avatar</h2>
 
-<div class="my-4 flex flex-col gap-4 rounded border p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Avatar>
     <BugOutline />
   </Avatar>
@@ -130,7 +130,7 @@
 
 <h2 class="my-4 text-2xl">Custom dot</h2>
 
-<div class="my-4 flex flex-col gap-4 rounded border p-4">
+<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Avatar src="/images/profile-picture-3.webp">
     {#snippet indicator()}
       <Indicator color="gray" border size="xl" placement="top-right">

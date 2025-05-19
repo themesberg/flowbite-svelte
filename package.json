@@ -476,6 +476,10 @@
       "types": "./dist/pagination/Pagination.svelte.d.ts",
       "svelte": "./dist/pagination/Pagination.svelte"
     },
+    "./PaginationButton.svelte": {
+      "types": "./dist/pagination/PaginationButton.svelte.d.ts",
+      "svelte": "./dist/pagination/PaginationButton.svelte"
+    },
     "./PaginationItem.svelte": {
       "types": "./dist/pagination/PaginationItem.svelte.d.ts",
       "svelte": "./dist/pagination/PaginationItem.svelte"

@@ -22,7 +22,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1360)
+[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1373)
 ## Props
 @prop size = "sm"
 @prop class: className

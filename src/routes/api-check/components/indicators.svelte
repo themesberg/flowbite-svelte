@@ -9,7 +9,7 @@
 <div class="my-4"></div>
 
 <h2 class="my-4 text-2xl">Default indicator</h2>
-<div class="my-4 flex gap-2 rounded border p-4">
+<div class="my-4 flex gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Indicator color="gray" />
   <Indicator color="secondary" />
   <Indicator color="orange" />
@@ -23,7 +23,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Legend indicator</h2>
-<div class="my-4 flex gap-2 rounded border p-4 text-sm font-medium text-gray-900 dark:text-white">
+<div class="my-4 flex gap-2 rounded border border-gray-200 dark:border-gray-600 p-4 text-sm font-medium text-gray-900 dark:text-white">
   <span class="flex items-center"><Indicator size="sm" color="orange" class="me-1.5" />Visitors</span>
   <span class="flex items-center"><Indicator size="sm" color="purple" class="me-1.5" />Sessions</span>
   <span class="flex items-center"><Indicator size="sm" color="indigo" class="me-1.5" />Customers</span>
@@ -31,7 +31,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Indicator count</h2>
-<div class="my-4 my-4 space-y-4 rounded border p-4">
+<div class="my-4 my-4 space-y-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Button size="lg" class="relative">
     <EnvelopeSolid class="me-2 h-6 w-6 text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
@@ -43,13 +43,13 @@
 </div>
 
 <h2 class="my-4 text-2xl">Status indicator</h2>
-<div class="my-4 flex gap-2 rounded border p-4">
+<div class="my-4 flex gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Avatar src="/images/profile-picture-5.webp" dot={{ color: "green", size: "lg", placement: "top-right" }} />
   <Avatar src="/images/profile-picture-5.webp" dot={{ color: "red", size: "lg", placement: "top-right" }} />
 </div>
 
 <h2 class="my-4 text-2xl">Badge indicator</h2>
-<div class="my-4 flex gap-2 rounded border p-4">
+<div class="my-4 flex gap-2 rounded border border-gray-200 dark:border-gray-600 p-4">
   <ul class="w-full max-w-sm divide-y divide-gray-200 dark:divide-gray-700">
     <li class="py-3 sm:py-4">
       <div class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -81,7 +81,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Stepper indicator</h2>
-<div class="my-4 space-y-8 rounded border p-4">
+<div class="my-4 space-y-8 rounded border border-gray-200 dark:border-gray-600 p-4">
   <ol class="flex items-center">
     {#each [1, 2, 2, 3] as step, i}
       <li class="relative mb-6 w-full">
@@ -123,7 +123,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Indicator position</h2>
-<div class="my-4 flex gap-4 rounded border p-4">
+<div class="my-4 flex gap-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <div class="borer relative h-56 w-56 rounded-lg border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
     <Indicator placement="top-left" color="primary" />
     <Indicator placement="top-center" color="secondary" />

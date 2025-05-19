@@ -3,7 +3,7 @@
   import { setContext, type Snippet } from "svelte";
   import { tv } from "tailwind-variants";
   import { baseThemes } from ".";
-  import type { ThemeProps, BaseThemes } from "$lib/types";
+  import type { ThemeProps, BaseThemes } from "$lib";
 
   let { children, theme }: ThemeProps = $props();
 

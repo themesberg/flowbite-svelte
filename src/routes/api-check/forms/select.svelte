@@ -69,7 +69,7 @@
 
 <h2 class="my-4 text-2xl">Select input example</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Label>
     Select an option
     <Select class="mt-2" items={countries} bind:value={selected} />
@@ -78,14 +78,14 @@
 
 <h2 class="my-4 text-2xl">Disabled state</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Label for="select-disabled" class="mb-2">Disabled select</Label>
   <Select id="select-disabled" disabled items={countries} placeholder="You can't select anything..." />
 </div>
 
 <h2 class="my-4 text-2xl">Underline select</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Label for="select-underline" class="sr-only">Underline select</Label>
   <Select id="select-underline" underline class="mt-2" items={countries} />
 </div>
@@ -123,7 +123,7 @@
 
 <h2 class="my-4 text-2xl">Sizes</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Label for="select-sm" class="mb-2">Small select</Label>
   <Select id="select-sm" size="sm" items={countries} class="mb-6" />
   <Label for="select-md" class="mb-2">Default select</Label>
@@ -141,7 +141,7 @@
 
 <h2 class="my-4 text-2xl">Custom options</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Label for="countries">Select an option</Label>
   <Select id="countries" class="mt-2" bind:value={selected} placeholder="">
     <option selected value="all">All</option>
@@ -237,7 +237,7 @@
 
 <h2>Clearable</h2>
 
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Label>
     Select an option
     <Select class="mt-2" items={countries} bind:value={clearableSelected} clearable />
@@ -245,7 +245,7 @@
 </div>
 
 <h2>Event</h2>
-<div class="my-4 rounded border p-4">
+<div class="my-4 rounded border border-gray-200 dark:border-gray-600 p-4">
   <Label>
     Select an option
     <Select

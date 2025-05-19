@@ -1,0 +1,17 @@
+{
+  "name": "PaginationButton",
+  "type": {
+    "name": "PaginationButtonProps",
+    "link": null
+  },
+  "props": [
+    ["children", ""],
+    ["active", "false"],
+    ["disabled", "false"],
+    ["onclick", ""],
+    ["href", ""],
+    ["class: className", "\"\""],
+    ["showIcon", "false"],
+    ["iconPosition", "\"right\""]
+  ]
+}

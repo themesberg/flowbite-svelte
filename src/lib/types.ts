@@ -1092,6 +1092,31 @@ export interface PaginationItemSpecificProps {
 
 export type PaginationHTMLButtonOrAnchorAttributes = HTMLButtonAttributes & HTMLAnchorAttributes;
 
+export interface PaginationButtonProps extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {
+  children?: Snippet;
+  onclick?: () => void;
+  disabled?: boolean;
+}
+
+export interface PaginationNavProps extends HTMLAttributes<HTMLElement>, PaginationVariants {
+  prevContent?: Snippet;
+  nextContent?: Snippet;
+  prevClass?: string;
+  nextClass?: string;
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+  layout?: "navigation" | "pagination" | "table";
+  previousLabel?: string;
+  nextLabel?: string;
+  showIcons?: boolean;
+  ariaLabel?: string;
+  size?: "default" | "large";
+  class?: string;
+  spanClass?: string;
+  tableDivClass?: string;
+}
+
 export interface PaginationItemProps extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {
   children?: Snippet;
 }

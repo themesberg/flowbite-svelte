@@ -7,8 +7,10 @@
   "props": [
     ["children", ""],
     ["size", ""],
+    ["onclick", ""],
+    ["disabled", "false"],
     ["class: className", ""],
     ["href", ""],
-    ["active", ""]
+    ["active", "false"]
   ]
 }
