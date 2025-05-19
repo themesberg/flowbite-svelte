@@ -1105,6 +1105,7 @@ export interface PaginationNavProps extends HTMLAttributes<HTMLElement>, Paginat
   nextClass?: string;
   currentPage: number;
   totalPages: number;
+  visiblePages?: number;
   onPageChange: (page: number) => void;
   layout?: "navigation" | "pagination" | "table";
   previousLabel?: string;

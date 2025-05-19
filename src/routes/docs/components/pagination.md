@@ -46,6 +46,13 @@ Use the following list of pagination items to indicate a series of content for y
 
 <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} />
 
+<PaginationNav 
+  currentPage={currentPage}
+  totalPages={totalPages}
+  visiblePages={7} 
+  onPageChange={handlePageChange}
+/>
+
 <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} size="large" />
 ```
 
@@ -114,6 +121,17 @@ The following pagination component example shows how you can use SVG icons inste
 </script>
 
 <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange}>
+  {#snippet prevContent()}
+    <span class="sr-only">Previous</span>
+    <ArrowLeftOutline class="h-5 w-5" />
+  {/snippet}
+  {#snippet nextContent()}
+    <span class="sr-only">Next</span>
+    <ArrowRightOutline class="h-5 w-5" />
+  {/snippet}
+</PaginationNav>
+
+<PaginationNav visiblePages={7} {currentPage} {totalPages} onPageChange={handlePageChange}>
   {#snippet prevContent()}
     <span class="sr-only">Previous</span>
     <ArrowLeftOutline class="h-5 w-5" />
