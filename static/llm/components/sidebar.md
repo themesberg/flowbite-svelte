@@ -212,6 +212,68 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
 
 You can control icon class by changing the `class` prop in the `Icon` component.
 
+## Always open
+
+```svelte
+<script lang="ts">
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, uiHelpers } from "flowbite-svelte";
+  import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from "flowbite-svelte-icons";
+  import { page } from "$app/state";
+  let activeUrl = $state(page.url.pathname);
+  import PlusPlaceholder from "../../utils/PlusPlaceholder.svelte";
+  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const demoSidebarUi = uiHelpers();
+  let isDemoOpen = $state(false);
+  const closeDemoSidebar = demoSidebarUi.close;
+  $effect(() => {
+    isDemoOpen = demoSidebarUi.isOpen;
+    activeUrl = page.url.pathname;
+  });
+</script>
+
+<div class="relative">
+  <Sidebar alwaysOpen {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
+    <SidebarGroup>
+      <SidebarItem label="Dashboard" href="/">
+        {#snippet icon()}
+          <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+        {/snippet}
+      </SidebarItem>
+      <SidebarItem label="Kanban" {spanClass} href="/">
+        {#snippet icon()}
+          <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+        {/snippet}
+        {#snippet subtext()}
+          <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
+        {/snippet}
+      </SidebarItem>
+      <SidebarItem label="Inbox" {spanClass} href="/">
+        {#snippet icon()}
+          <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+        {/snippet}
+        {#snippet subtext()}
+          <span class="bg-primary-200 text-primary-600 dark:bg-primary-900 dark:text-primary-200 ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full p-3 text-sm font-medium">3</span>
+        {/snippet}
+      </SidebarItem>
+      <SidebarItem label="Sidebar" href="/components/sidebar">
+        {#snippet icon()}
+          <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+        {/snippet}
+      </SidebarItem>
+    </SidebarGroup>
+  </Sidebar>
+  <div class="h-96 overflow-auto px-4 md:ml-64">
+    <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700">
+      <PlusPlaceholder colnum={3} rownum={1} />
+      <PlusPlaceholder />
+      <PlusPlaceholder colnum={2} rownum={2} />
+      <PlusPlaceholder />
+      <PlusPlaceholder colnum={2} rownum={2} />
+    </div>
+  </div>
+</div>
+```
+
 ## Multi-level dropdown
 
 Use this sidebar example to create multi-level menu items by using the SidebarDropdownWrapper and SidebarDropdownItem components.
@@ -1137,7 +1199,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1295)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1322)
 
 #### Props
 
@@ -1146,7 +1208,9 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 - closeSidebar
 - isSingle: true
 - breakpoint: "md"
-- position: "fixed"
+- alwaysOpen: false
+- // New prop to control always open behavior
+    position: "fixed"
 - activateClickOutside: true
 - backdrop: true
 - backdropClass
@@ -1163,7 +1227,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1329)
+[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1357)
 
 #### Props
 
@@ -1177,7 +1241,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1312)
+[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1340)
 
 #### Props
 
@@ -1188,7 +1252,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1316)
+[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1344)
 
 #### Props
 
@@ -1203,7 +1267,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1335)
+[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1363)
 
 #### Props
 
@@ -1226,7 +1290,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1352)
+[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1380)
 
 #### Props
 
@@ -1239,7 +1303,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1358)
+[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1386)
 
 #### Props
 

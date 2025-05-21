@@ -212,7 +212,7 @@ You can add the `onclick` event to the `Button` component.
 
 #### Types
 
-[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L326)
+[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L328)
 
 #### Props
 

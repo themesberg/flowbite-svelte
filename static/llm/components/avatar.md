@@ -236,7 +236,7 @@ Preset values are equivalents of:
 
 #### Types
 
-[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L197)
+[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L199)
 
 #### Props
 

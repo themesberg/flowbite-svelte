@@ -43,6 +43,7 @@ export * from "./utils";
 export * from "./video";
 
 // forms
+export * from "./forms/button-toggle";
 export * from "./forms/checkbox";
 export * from "./forms/dropzone";
 export * from "./forms/fileupload";

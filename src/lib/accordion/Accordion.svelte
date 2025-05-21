@@ -32,7 +32,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L157)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L159)
 ## Props
 @prop children
 @prop flush

@@ -14,7 +14,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SecondaryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1835)
+[SecondaryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1863)
 ## Props
 @prop children
 @prop class: className

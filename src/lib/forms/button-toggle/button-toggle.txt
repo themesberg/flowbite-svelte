@@ -1,0 +1,25 @@
+# Button toggle
+
+## Requirements
+
+- Svelte 5 rune mode components
+- Structure and component names
+
+```
+<ButtonToggleGroup>
+  <ButtonToggle>Red</BottonToggle>
+  <ButtonToggle>Green</BottonToggle>
+  <ButtonToggle>Blue</BottonToggle>
+</ButtonToggleGroup>
+```
+
+- Single selection and multi selection
+- Sample code below is from material.angular and chrome dev tool.
+
+```
+<mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color" class="mat-button-toggle-group mat-button-toggle-group-appearance-standard" role="radiogroup" aria-disabled="false"><mat-button-toggle role="presentation" value="red" class="mat-button-toggle mat-button-toggle-appearance-standard mat-button-toggle-animations-enabled mat-button-toggle-checked" id="mat-button-toggle-18"><button type="button" class="mat-button-toggle-button mat-focus-indicator" id="mat-button-toggle-18-button" role="radio" tabindex="0" aria-checked="true" name="favoriteColor"><div class="mat-button-toggle-checkbox-wrapper"><mat-pseudo-checkbox state="checked" aria-hidden="true" appearance="minimal" class="mat-pseudo-checkbox mat-pseudo-checkbox-checked mat-pseudo-checkbox-minimal"></mat-pseudo-checkbox></div><!----><span class="mat-button-toggle-label-content">Red</span></button><span class="mat-button-toggle-focus-overlay"></span><span matripple="" class="mat-ripple mat-button-toggle-ripple"></span></mat-button-toggle><mat-button-toggle role="presentation" value="green" class="mat-button-toggle mat-button-toggle-appearance-standard mat-button-toggle-animations-enabled" id="mat-button-toggle-19"><button type="button" class="mat-button-toggle-button mat-focus-indicator" id="mat-button-toggle-19-button" role="radio" tabindex="-1" aria-checked="false" name="favoriteColor"><div class="mat-button-toggle-checkbox-wrapper"><mat-pseudo-checkbox state="checked" aria-hidden="true" appearance="minimal" class="mat-pseudo-checkbox mat-pseudo-checkbox-checked mat-pseudo-checkbox-minimal"></mat-pseudo-checkbox></div><!----><span class="mat-button-toggle-label-content">Green</span></button><span class="mat-button-toggle-focus-overlay"></span><span matripple="" class="mat-ripple mat-button-toggle-ripple"></span></mat-button-toggle><mat-button-toggle role="presentation" value="blue" class="mat-button-toggle mat-button-toggle-appearance-standard mat-button-toggle-animations-enabled" id="mat-button-toggle-20"><button type="button" class="mat-button-toggle-button mat-focus-indicator" id="mat-button-toggle-20-button" role="radio" tabindex="-1" aria-checked="false" name="favoriteColor"><div class="mat-button-toggle-checkbox-wrapper"><mat-pseudo-checkbox state="checked" aria-hidden="true" appearance="minimal" class="mat-pseudo-checkbox mat-pseudo-checkbox-checked mat-pseudo-checkbox-minimal"></mat-pseudo-checkbox></div><!----><span class="mat-button-toggle-label-content">Blue</span></button><span class="mat-button-toggle-focus-overlay"></span><span matripple="" class="mat-ripple mat-button-toggle-ripple"></span></mat-button-toggle></mat-button-toggle-group>
+```
+
+- When you click a button using tailwind css animation to animate word to right and show a green tick svg icon on the left of the word to show ticked.
+
+- When it is selected, background color is bg-primay-100

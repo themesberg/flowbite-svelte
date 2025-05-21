@@ -48,6 +48,7 @@ import type { ImgVariants } from "$lib/typography/img/theme";
 import type { ListVariants } from "$lib/typography/list/theme";
 import type { ParagraphVariants } from "$lib/typography/paragraph/theme";
 import type { SpanVariants } from "$lib/typography/span/theme";
+import type { ButtonToggleVariants, ButtonToggleContentVariants, ButtonToggleTextVariants } from "$lib/forms/button-toggle/theme";
 
 // end of component variants
 
@@ -101,7 +102,8 @@ export type NavbarType = {
   closeNav: () => void;
 };
 
-export type ColorVariant = "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "primary" | "none";
+// primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
+export type ColorVariant = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "none";
 
 export type DeviceVariantType = "default" | "ios" | "android" | "tablet" | "laptop" | "desktop" | "smartwatch";
 
@@ -117,7 +119,7 @@ export interface TransitionParamTypes {
   tick?: (t: number, u: number) => void;
 }
 
-export type ParamsType = FadeParams | BlurParams | FlyParams | SlideParams | ScaleParams;
+export type ParamsType = FadeParams | BlurParams | FlyParams | SlideParams | ScaleParams | undefined;
 
 export type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
 
@@ -352,6 +354,31 @@ export interface GradientButtonProps extends GradientButtonVariantes, HTMLButton
   disabled?: boolean;
   href?: string;
   color?: GradientButtonColor;
+}
+
+// button-toggle
+export type ButtonToggleGroupProps = {
+  multiSelect?: boolean;
+  name?: string;
+  value?: string | null | string[];
+  color?: ButtonToggleVariants["color"];
+  size?: ButtonToggleVariants["size"];
+  roundedSize?: ButtonToggleVariants["roundedSize"];
+  onSelect?: (val: any) => void;
+  children: Snippet;
+  class?: string;
+};
+
+export type ButtonToggleProps = {
+  value: string;
+  selected?: boolean;
+  children: Snippet;
+  color?: ButtonToggleVariants["color"];
+};
+
+export interface ButtonToggleContext {
+  toggleSelected: (toggleValue: string) => void;
+  isSelected: (toggleValue: string) => boolean;
 }
 
 // card
@@ -1307,6 +1334,7 @@ export interface SidebarProps extends SidebarVariants, HTMLAttributes<HTMLElemen
   backdrop?: boolean;
   backdropClass?: string;
   activeUrl?: string;
+  alwaysOpen?: boolean;
 }
 
 export interface SidebarButtonProps extends HTMLButtonAttributes {

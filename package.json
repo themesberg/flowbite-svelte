@@ -340,6 +340,18 @@
       "types": "./dist/footer/FooterLinkGroup.svelte.d.ts",
       "svelte": "./dist/footer/FooterLinkGroup.svelte"
     },
+    "./ButtonToggle.svelte": {
+      "types": "./dist/forms/button-toggle/ButtonToggle.svelte.d.ts",
+      "svelte": "./dist/forms/button-toggle/ButtonToggle.svelte"
+    },
+    "./ButtonToggleGroup.svelte": {
+      "types": "./dist/forms/button-toggle/ButtonToggleGroup.svelte.d.ts",
+      "svelte": "./dist/forms/button-toggle/ButtonToggleGroup.svelte"
+    },
+    "./CheckIcon.svelte": {
+      "types": "./dist/forms/button-toggle/CheckIcon.svelte.d.ts",
+      "svelte": "./dist/forms/button-toggle/CheckIcon.svelte"
+    },
     "./Checkbox.svelte": {
       "types": "./dist/forms/checkbox/Checkbox.svelte.d.ts",
       "svelte": "./dist/forms/checkbox/Checkbox.svelte"

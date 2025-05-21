@@ -11,7 +11,7 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
   import { Badge, P, A } from '$lib'
   const dirName = 'buttongroup'
-  const relatedLinks = ['/docs/components/buttons','/docs/components/button-group' ,'/docs/components/list-group','/docs/utilities/close-button','/docs/forms/radio#radiobutton' , '/docs/forms/checkbox#checkboxbutton'];
+  const relatedLinks = ['/docs/extend/button-toggle','/docs/components/button-group' ,'/docs/components/list-group','/docs/forms/radio#radiobutton' , '/docs/forms/checkbox#checkboxbutton'];
 </script>
 
 The button group component from flowbite-svelte can be used to stack together multiple buttons and links inside a single element.

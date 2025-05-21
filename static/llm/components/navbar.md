@@ -300,7 +300,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1018)
+[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1045)
 
 #### Props
 
@@ -314,7 +314,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1037)
+[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1064)
 
 #### Props
 
@@ -325,7 +325,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1039)
+[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1066)
 
 #### Props
 
@@ -337,7 +337,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1043)
+[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1070)
 
 #### Props
 
@@ -351,7 +351,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1057)
+[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1084)
 
 #### Props
 
@@ -365,7 +365,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1048)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1075)
 
 #### Props
 
@@ -381,7 +381,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1031)
+[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1058)
 
 #### Props
 

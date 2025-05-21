@@ -7,7 +7,27 @@
   import clsx from "clsx";
   import { trapFocus, type SidebarProps, type SidebarCtxType } from "$lib";
 
-  let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = "md", position = "fixed", activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, activeUrl = "", class: className, ...restProps }: SidebarProps = $props();
+  let {
+    children,
+    isOpen = false,
+    closeSidebar,
+    isSingle = true,
+    breakpoint = "md",
+    alwaysOpen = false, // New prop to control always open behavior
+    position = "fixed",
+    activateClickOutside = true,
+    backdrop = true,
+    backdropClass,
+    transition = fly,
+    params,
+    divClass,
+    ariaLabel,
+    nonActiveClass,
+    activeClass,
+    activeUrl = "",
+    class: className,
+    ...restProps
+  }: SidebarProps = $props();
 
   const breakpointValues = {
     sm: 640,
@@ -18,9 +38,8 @@
   };
 
   let innerWidth: number = $state(-1);
-  let isLargeScreen = $derived(innerWidth >= breakpointValues[breakpoint]);
-
-  // const initialPosition = position;
+  // Modified to consider alwaysOpen prop
+  let isLargeScreen = $derived(alwaysOpen || innerWidth >= breakpointValues[breakpoint]);
 
   const activeUrlStore = writable("");
   setContext("activeUrl", activeUrlStore);
@@ -28,7 +47,7 @@
     activeUrlStore.set(activeUrl);
   });
 
-  const { base, active, nonactive, div, backdrop: backdropCls } = $derived(sidebar({ isOpen, breakpoint, position, backdrop }));
+  const { base, active, nonactive, div, backdrop: backdropCls } = $derived(sidebar({ isOpen, breakpoint, position, backdrop, alwaysOpen }));
 
   let sidebarCtx: SidebarCtxType = {
     get closeSidebar() {
@@ -56,7 +75,7 @@
 <svelte:window bind:innerWidth />
 
 {#if isOpen || isLargeScreen}
-  {#if isOpen}
+  {#if isOpen && !alwaysOpen}
     {#if backdrop && activateClickOutside}
       <div role="presentation" class={backdropCls({ class: backdropClass })} onclick={closeSidebar}></div>
     {:else if backdrop && !activateClickOutside}
@@ -67,7 +86,7 @@
       <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full"></div>
     {/if}
   {/if}
-  <aside use:trapFocus={!isLargeScreen && isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} transition:transition={transitionParams} {...restProps} class={base({ class: clsx(className) })} aria-label={ariaLabel}>
+  <aside use:trapFocus={!isLargeScreen && isOpen && !alwaysOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} transition:transition={!alwaysOpen ? transitionParams : undefined} {...restProps} class={base({ class: clsx(className) })} aria-label={ariaLabel}>
     <div class={div({ class: divClass })}>
       {@render children()}
     </div>
@@ -78,13 +97,14 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1295)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1322)
 ## Props
 @prop children
 @prop isOpen = false
 @prop closeSidebar
 @prop isSingle = true
 @prop breakpoint = "md"
+@prop alwaysOpen = false
 @prop position = "fixed"
 @prop activateClickOutside = true
 @prop backdrop = true

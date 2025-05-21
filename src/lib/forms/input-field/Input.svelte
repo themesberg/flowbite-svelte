@@ -161,35 +161,33 @@
 {/if}
 
 {#if isCombobox}
-<div class={twMerge(isCombobox ? "relative w-full" : "", wrapperClass)}>
-  {#if right || left || clearable}
-    <div class={base({ class: divClass })}>
+  <div class={twMerge(isCombobox ? "relative w-full" : "", wrapperClass)}>
+    {#if right || left || clearable}
+      <div class={base({ class: divClass })}>
+        {@render inputContent()}
+      </div>
+    {:else}
       {@render inputContent()}
-    </div>
-  {:else}
-    {@render inputContent()}
-  {/if}
+    {/if}
 
-  {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-    <div class="absolute top-full right-0 left-0 z-10 mt-1 max-h-60 overflow-y-auto rounded-md border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800">
-      {#each filteredSuggestions as item, i}
-        <button type="button" class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none" onclick={() => selectItem(item)} onmouseenter={() => (selectedIndex = i)}>
-          {item}
-        </button>
-      {/each}
-    </div>
-  {/if}
-</div>
+    {#if isCombobox && isFocused && filteredSuggestions.length > 0}
+      <div class="absolute top-full right-0 left-0 z-10 mt-1 max-h-60 overflow-y-auto rounded-md border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800">
+        {#each filteredSuggestions as item, i}
+          <button type="button" class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none" onclick={() => selectItem(item)} onmouseenter={() => (selectedIndex = i)}>
+            {item}
+          </button>
+        {/each}
+      </div>
+    {/if}
+  </div>
+{:else if group}
+  {@render inputContent()}
+{:else if right || left || clearable}
+  <div class={base({ class: divClass })}>
+    {@render inputContent()}
+  </div>
 {:else}
-  {#if group}
-    {@render inputContent()}
-  {:else if right || left || clearable}
-    <div class={base({ class: divClass })}>
-      {@render inputContent()}
-    </div>
-  {:else}
-    {@render inputContent()}
-  {/if}
+  {@render inputContent()}
 {/if}
 
 {#snippet inputContent()}

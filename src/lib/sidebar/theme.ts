@@ -27,10 +27,22 @@ export const sidebar = tv({
       xl: { base: "xl:block" },
       "2xl": { base: "2xl:block" }
     },
+    alwaysOpen: {
+      true: { base: "block" } // Always display the sidebar when alwaysOpen is true
+    },
     backdrop: {
       true: { backdrop: "bg-gray-900 opacity-75" }
     }
-  }
+  },
+  compoundVariants: [
+    // When alwaysOpen is true, override the breakpoint display classes
+    {
+      alwaysOpen: true,
+      class: {
+        base: "!block"
+      }
+    }
+  ]
 });
 
 export const sidebarbutton = tv({

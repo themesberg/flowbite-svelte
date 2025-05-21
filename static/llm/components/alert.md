@@ -325,7 +325,7 @@ Use the `onclick` event with `dismissable` prop.
 
 #### Types
 
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L186)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L188)
 
 #### Props
 

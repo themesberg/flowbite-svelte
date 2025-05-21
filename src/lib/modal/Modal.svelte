@@ -90,7 +90,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1000)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1027)
 ## Props
 @prop children
 @prop oncancel

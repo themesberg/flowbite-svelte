@@ -12,8 +12,8 @@ test("Progressradial page should have h1", async ({ page }) => {
   expect(await page.textContent("h1")).toBe("Svelte Progressradial");
 });
 
-// marquee
-// test("Marquee page should have h1", async ({ page }) => {
-//   await page.goto("/docs/extend/marquee");
-//   expect(await page.textContent("h1")).toBe("Svelte Marquee Banner - Flowbite");
-// });
+// ButtonToggle
+test("ButtonToggle page should have h1", async ({ page }) => {
+  await page.goto("/docs/extend/button-toggle");
+  expect(await page.textContent("h1")).toBe("Svelte Button Toggle");
+});
