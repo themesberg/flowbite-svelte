@@ -25,7 +25,7 @@
       {@render children?.()}
     </button>
   {:else}
-    <a {...restProps} class={liClass}>
+    <a {...restProps} class={liClass} {onclick}>
       {@render children?.()}
     </a>
   {/if}
