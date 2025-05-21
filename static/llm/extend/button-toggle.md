@@ -1,4 +1,4 @@
-# Svelte Button toggle
+# Svelte Button Toggle
 
 
 ## Setup
@@ -263,6 +263,14 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 </div>
 ```
 
+## See also
+
+- [Button toggle](https://flowbite-svelte.com/llm/extend/button-toggle.md)
+- [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
+- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
+- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
+- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+
 ## Component data
 
 ### ButtonToggle
@@ -277,10 +285,4 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 - selected: false
 - children
 - color
-
-
-## See also
-
-- [Progress](https://flowbite-svelte.com/llm/components/progress.md)
-- [Progressradial](https://flowbite-svelte.com/llm/extend/progressradial.md)
 

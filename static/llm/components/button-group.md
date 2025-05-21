@@ -199,10 +199,9 @@ You can add the `onclick` event to the `Button` component.
 
 ## See also
 
-- [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
+- [Button toggle](https://flowbite-svelte.com/llm/extend/button-toggle.md)
 - [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
 - [List group](https://flowbite-svelte.com/llm/components/list-group.md)
-- [Close button](https://flowbite-svelte.com/llm/utilities/close-button.md)
 - [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
 - [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
 
