@@ -387,7 +387,7 @@ export interface ButtonToggleContext {
   isSelected: (toggleValue: string) => boolean;
 }
 
-export interface CheckIconProps extends SVGAttributes<SVGSVGElement>{
+export interface CheckIconProps extends SVGAttributes<SVGSVGElement> {
   class?: string;
 }
 

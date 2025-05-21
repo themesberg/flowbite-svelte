@@ -7,27 +7,7 @@
   import clsx from "clsx";
   import { trapFocus, type SidebarProps, type SidebarCtxType } from "$lib";
 
-  let {
-    children,
-    isOpen = false,
-    closeSidebar,
-    isSingle = true,
-    breakpoint = "md",
-    alwaysOpen = false,
-    position = "fixed",
-    activateClickOutside = true,
-    backdrop = true,
-    backdropClass,
-    transition = fly,
-    params,
-    divClass,
-    ariaLabel,
-    nonActiveClass,
-    activeClass,
-    activeUrl = "",
-    class: className,
-    ...restProps
-  }: SidebarProps = $props();
+  let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = "md", alwaysOpen = false, position = "fixed", activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, activeUrl = "", class: className, ...restProps }: SidebarProps = $props();
 
   const breakpointValues = {
     sm: 640,
@@ -97,7 +77,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1322)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1332)
 ## Props
 @prop children
 @prop isOpen = false

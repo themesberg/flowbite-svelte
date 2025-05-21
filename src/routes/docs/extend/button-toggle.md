@@ -294,7 +294,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 </script>
 
 <ButtonToggleGroup onSelect={handleSingleSelect} color="none" ctxIconClass="text-white" ctxBtnClass="data-[selected=true]:bg-rose-400 data-[selected=false]:hover:bg-rose-300">
-  <ButtonToggle class="data-[selected=true]:bg-green-400 data-[selected=false]:hover:bg-green-300" value="one" selected={singleValue === "one"}>One</ButtonToggle>
+  <ButtonToggle class="data-[selected=false]:hover:bg-green-300 data-[selected=true]:bg-green-400" value="one" selected={singleValue === "one"}>One</ButtonToggle>
   <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
   <ButtonToggle value="three" selected={singleValue === "three"}>Three</ButtonToggle>
 </ButtonToggleGroup>
@@ -302,7 +302,6 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 ```
 
 ## Custom icon with color="none"
-
 
 ```svelte example class="flex flex-col space-y-4"
 <script lang="ts">
@@ -318,21 +317,24 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 </script>
 
 <ButtonToggleGroup onSelect={handleSingleSelect} color="none">
-  <ButtonToggle value="one" selected={singleValue === "one"} >
+  <ButtonToggle value="one" selected={singleValue === "one"}>
     {#snippet iconSlot()}
-      <CheckCircleOutline class="text-green-400 -mr-3"/>
+      <CheckCircleOutline class="-mr-3 text-green-400" />
     {/snippet}
-    One</ButtonToggle>
+    One
+  </ButtonToggle>
   <ButtonToggle value="two" selected={singleValue === "two"}>
     {#snippet iconSlot()}
-      <BadgeCheckOutline class="text-red-400 -mr-3"/>
+      <BadgeCheckOutline class="-mr-3 text-red-400" />
     {/snippet}
-    Two</ButtonToggle>
+    Two
+  </ButtonToggle>
   <ButtonToggle value="three" selected={singleValue === "three"}>
     {#snippet iconSlot()}
-      <FileCheckOutline class="text-purple-400 -mr-3"/>
+      <FileCheckOutline class="-mr-3 text-purple-400" />
     {/snippet}
-    Three</ButtonToggle>
+    Three
+  </ButtonToggle>
 </ButtonToggleGroup>
 <p class="mt-2">Selected: {singleValue || "None"}</p>
 ```

@@ -2,7 +2,7 @@
   "name": "SidebarCta",
   "type": {
     "name": "SidebarCtaProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1344"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1354"
   },
   "props": [
     ["children", ""],

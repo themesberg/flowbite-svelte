@@ -6,7 +6,7 @@
   import type { ButtonToggleVariants } from "./theme";
   import { type ButtonToggleProps, type ButtonToggleContext } from "$lib";
 
-  let { value, selected = false, children, iconSlot, color, class:className, iconClass, txtClass, ...restProps }: ButtonToggleProps = $props();
+  let { value, selected = false, children, iconSlot, color, class: className, iconClass, txtClass, ...restProps }: ButtonToggleProps = $props();
 
   const { toggleSelected, isSelected } = getContext<ButtonToggleContext>("button-toggle-group");
   const multiSelect = getContext<boolean>("multiSelect");
@@ -32,7 +32,7 @@
       {#if iconSlot}
         {@render iconSlot()}
       {:else}
-        <CheckIcon class={twMerge("absolute left-0 flex-shrink-0 text-green-600", actualIconClass)}/>
+        <CheckIcon class={twMerge("absolute left-0 flex-shrink-0 text-green-600", actualIconClass)} />
       {/if}
     {/if}
     <span class={buttonToggleText({ selected, class: txtClass })}>
@@ -45,10 +45,15 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L372)
+[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L374)
 ## Props
 @prop value
 @prop selected = false
 @prop children
+@prop iconSlot
 @prop color
+@prop class:className
+@prop iconClass
+@prop txtClass
+@prop ...restProps
 -->

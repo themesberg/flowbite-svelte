@@ -31,9 +31,9 @@
 
 <h3 class="mb-2 text-lg font-medium">Single Selection</h3>
 <ButtonToggleGroup onSelect={handleSingleSelect}>
-  <ButtonToggle value="red" selected={singleValue === "one"}>One</ButtonToggle>
-  <ButtonToggle value="green" selected={singleValue === "two"}>Two</ButtonToggle>
-  <ButtonToggle value="blue" selected={singleValue === "three"}>Three</ButtonToggle>
+  <ButtonToggle value="one" selected={singleValue === "one"}>One</ButtonToggle>
+  <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
+  <ButtonToggle value="three" selected={singleValue === "three"}>Three</ButtonToggle>
 </ButtonToggleGroup>
 <p class="mt-2">Selected: {singleValue || "None"}</p>
 
@@ -263,6 +263,68 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 </div>
 ```
 
+## ctxBtnClass, ctxIconClass, class
+
+`ButtonToggle`'s `class` takes precedence over `ctxBtnClass`.
+
+```svelte
+<script lang="ts">
+  import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
+
+  let singleValue = $state<string | null>(null);
+
+  function handleSingleSelect(value: string | null) {
+    singleValue = value;
+    console.log("Single selection:", value);
+  }
+</script>
+
+<ButtonToggleGroup onSelect={handleSingleSelect} color="none" ctxIconClass="text-white" ctxBtnClass="data-[selected=true]:bg-rose-400 data-[selected=false]:hover:bg-rose-300">
+  <ButtonToggle class="data-[selected=false]:hover:bg-green-300 data-[selected=true]:bg-green-400" value="one" selected={singleValue === "one"}>One</ButtonToggle>
+  <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
+  <ButtonToggle value="three" selected={singleValue === "three"}>Three</ButtonToggle>
+</ButtonToggleGroup>
+<p class="mt-2">Selected: {singleValue || "None"}</p>
+```
+
+## Custom icon with color="none"
+
+```svelte
+<script lang="ts">
+  import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
+  import { CheckCircleOutline, BadgeCheckOutline, FileCheckOutline } from "flowbite-svelte-icons";
+
+  let singleValue = $state<string | null>(null);
+
+  function handleSingleSelect(value: string | null) {
+    singleValue = value;
+    console.log("Single selection:", value);
+  }
+</script>
+
+<ButtonToggleGroup onSelect={handleSingleSelect} color="none">
+  <ButtonToggle value="one" selected={singleValue === "one"}>
+    {#snippet iconSlot()}
+      <CheckCircleOutline class="-mr-3 text-green-400" />
+    {/snippet}
+    One
+  </ButtonToggle>
+  <ButtonToggle value="two" selected={singleValue === "two"}>
+    {#snippet iconSlot()}
+      <BadgeCheckOutline class="-mr-3 text-red-400" />
+    {/snippet}
+    Two
+  </ButtonToggle>
+  <ButtonToggle value="three" selected={singleValue === "three"}>
+    {#snippet iconSlot()}
+      <FileCheckOutline class="-mr-3 text-purple-400" />
+    {/snippet}
+    Three
+  </ButtonToggle>
+</ButtonToggleGroup>
+<p class="mt-2">Selected: {singleValue || "None"}</p>
+```
+
 ## See also
 
 - [Button toggle](https://flowbite-svelte.com/llm/extend/button-toggle.md)
@@ -277,12 +339,16 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 
 #### Types
 
-[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L372)
+[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L374)
 
 #### Props
 
 - value
 - selected: false
 - children
+- iconSlot
 - color
+- class:className
+- iconClass
+- txtClass
 
