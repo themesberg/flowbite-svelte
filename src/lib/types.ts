@@ -357,7 +357,7 @@ export interface GradientButtonProps extends GradientButtonVariantes, HTMLButton
 }
 
 // button-toggle
-export type ButtonToggleGroupProps = {
+export type ButtonToggleGroupProps = HTMLAttributes<HTMLDivElement> & {
   multiSelect?: boolean;
   name?: string;
   value?: string | null | string[];
@@ -367,18 +367,28 @@ export type ButtonToggleGroupProps = {
   onSelect?: (val: any) => void;
   children: Snippet;
   class?: string;
+  ctxIconClass?: string;
+  ctxBtnClass?: string;
 };
 
-export type ButtonToggleProps = {
+export type ButtonToggleProps = HTMLButtonAttributes & {
   value: string;
   selected?: boolean;
   children: Snippet;
+  iconSlot: Snippet;
   color?: ButtonToggleVariants["color"];
+  iconClass?: string;
+  class?: string;
+  txtClass?: string;
 };
 
 export interface ButtonToggleContext {
   toggleSelected: (toggleValue: string) => void;
   isSelected: (toggleValue: string) => boolean;
+}
+
+export interface CheckIconProps extends SVGAttributes<SVGSVGElement>{
+  class?: string;
 }
 
 // card

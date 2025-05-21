@@ -3,7 +3,7 @@
   import { twMerge } from "tailwind-merge";
   import { type ButtonToggleGroupProps, buttonToggleGroup } from "$lib";
 
-  let { multiSelect = false, name = "toggle-group", value = multiSelect ? [] : null, color, size = "md", roundedSize = "md", onSelect = (val: any) => {}, children, class: className }: ButtonToggleGroupProps = $props();
+  let { multiSelect = false, name = "toggle-group", value = multiSelect ? [] : null, color, size = "md", roundedSize = "md", onSelect = (val: any) => {}, children, ctxIconClass, ctxBtnClass, class: className, ...restProps }: ButtonToggleGroupProps = $props();
 
   const base = $derived(buttonToggleGroup({ roundedSize }));
   type SelectedValue = string | null | string[];
@@ -57,10 +57,12 @@
   setContext("buttonToggleColor", color);
   setContext("buttonToggleSize", size);
   setContext("buttonToggleRounded", roundedSize);
+  setContext("ctxIconClass", ctxIconClass);
+  setContext("ctxBtnClass", ctxBtnClass);
 </script>
 
 <div class="inline">
-  <div class={twMerge(base, className)} role={multiSelect ? "group" : "radiogroup"} aria-label={name}>
+  <div class={twMerge(base, className)} role={multiSelect ? "group" : "radiogroup"} aria-label={name} {...restProps}>
     {@render children()}
   </div>
 </div>

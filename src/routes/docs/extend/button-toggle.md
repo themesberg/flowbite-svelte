@@ -277,6 +277,66 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 </div>
 ```
 
+## ctxBtnClass, ctxIconClass, class
+
+`ButtonToggle`'s `class` takes precedence over `ctxBtnClass`.
+
+```svelte example class="flex flex-col space-y-4"
+<script lang="ts">
+  import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
+
+  let singleValue = $state<string | null>(null);
+
+  function handleSingleSelect(value: string | null) {
+    singleValue = value;
+    console.log("Single selection:", value);
+  }
+</script>
+
+<ButtonToggleGroup onSelect={handleSingleSelect} color="none" ctxIconClass="text-white" ctxBtnClass="data-[selected=true]:bg-rose-400 data-[selected=false]:hover:bg-rose-300">
+  <ButtonToggle class="data-[selected=true]:bg-green-400 data-[selected=false]:hover:bg-green-300" value="one" selected={singleValue === "one"}>One</ButtonToggle>
+  <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
+  <ButtonToggle value="three" selected={singleValue === "three"}>Three</ButtonToggle>
+</ButtonToggleGroup>
+<p class="mt-2">Selected: {singleValue || "None"}</p>
+```
+
+## Custom icon with color="none"
+
+
+```svelte example class="flex flex-col space-y-4"
+<script lang="ts">
+  import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
+  import { CheckCircleOutline, BadgeCheckOutline, FileCheckOutline } from "flowbite-svelte-icons";
+
+  let singleValue = $state<string | null>(null);
+
+  function handleSingleSelect(value: string | null) {
+    singleValue = value;
+    console.log("Single selection:", value);
+  }
+</script>
+
+<ButtonToggleGroup onSelect={handleSingleSelect} color="none">
+  <ButtonToggle value="one" selected={singleValue === "one"} >
+    {#snippet iconSlot()}
+      <CheckCircleOutline class="text-green-400 -mr-3"/>
+    {/snippet}
+    One</ButtonToggle>
+  <ButtonToggle value="two" selected={singleValue === "two"}>
+    {#snippet iconSlot()}
+      <BadgeCheckOutline class="text-red-400 -mr-3"/>
+    {/snippet}
+    Two</ButtonToggle>
+  <ButtonToggle value="three" selected={singleValue === "three"}>
+    {#snippet iconSlot()}
+      <FileCheckOutline class="text-purple-400 -mr-3"/>
+    {/snippet}
+    Three</ButtonToggle>
+</ButtonToggleGroup>
+<p class="mt-2">Selected: {singleValue || "None"}</p>
+```
+
 ## See also
 
 <Seealso links={relatedLinks} />
