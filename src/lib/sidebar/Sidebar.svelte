@@ -13,7 +13,7 @@
     closeSidebar,
     isSingle = true,
     breakpoint = "md",
-    alwaysOpen = false, // New prop to control always open behavior
+    alwaysOpen = false,
     position = "fixed",
     activateClickOutside = true,
     backdrop = true,

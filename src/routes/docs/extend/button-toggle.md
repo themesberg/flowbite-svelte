@@ -45,9 +45,9 @@ description: Use the button toggle to toggle on/off with the appearance of a but
 
 <h3 class="mb-2 text-lg font-medium">Single Selection</h3>
 <ButtonToggleGroup onSelect={handleSingleSelect}>
-  <ButtonToggle value="red" selected={singleValue === "one"}>One</ButtonToggle>
-  <ButtonToggle value="green" selected={singleValue === "two"}>Two</ButtonToggle>
-  <ButtonToggle value="blue" selected={singleValue === "three"}>Three</ButtonToggle>
+  <ButtonToggle value="one" selected={singleValue === "one"}>One</ButtonToggle>
+  <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
+  <ButtonToggle value="three" selected={singleValue === "three"}>Three</ButtonToggle>
 </ButtonToggleGroup>
 <p class="mt-2">Selected: {singleValue || "None"}</p>
 
