@@ -163,13 +163,12 @@ export const fetchMarkdownPosts = async () => {
     components: allComponents,
     forms: allForms,
     typography: allTypographys,
+    extend: allExtends,
+    utilities: allUtils,
+    plugins: allPlugins,
     builders,
     icons: allIcons,
     examples: allExamples,
-    extend: allExtends,
-    utilities: allUtils,
-    plugins: allPlugins
-    // experimental: allExperimental
   };
 };
 
