@@ -7,6 +7,7 @@
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
   import Toc from "../utils/Toc.svelte";
+  import ExternalLink from "../utils/icons/ExternalLink.svelte";
   import { extract } from "./component/Anchor.svelte";
 
   let { data, children, showapicheck = false } = $props();
@@ -111,11 +112,26 @@
           </SidebarDropdownWrapper>
         {/if}
       {/each}
-
-      <SidebarItem label="Blocks" href="https://flowbite-svelte-blocks.vercel.app/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} />
-      <SidebarItem label="Admin Dashboard" href="https://flowbite-svelte-admin-dashboard-next.vercel.app/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} />
-      <SidebarItem label="Icons" href="https://flowbite-svelte-icons.codewithshin.com/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} />
-      <SidebarItem label="Illustration" href="https://flowbite-svelte-illustrations.codewithshin.com/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} />
+      <SidebarItem label="Blocks" href="https://flowbite-svelte-blocks.vercel.app/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} target="_blank">
+        {#snippet subtext()}
+          <ExternalLink />
+        {/snippet}
+      </SidebarItem>
+      <SidebarItem label="Admin Dashboard" href="https://flowbite-svelte-admin-dashboard-next.vercel.app/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} target="_blank">
+        {#snippet subtext()}
+          <ExternalLink />
+        {/snippet}
+      </SidebarItem>
+      <SidebarItem label="Icons" href="https://flowbite-svelte-icons.codewithshin.com/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} target="_blank">
+        {#snippet subtext()}
+          <ExternalLink />
+        {/snippet}
+      </SidebarItem>
+      <SidebarItem label="Illustration" href="https://flowbite-svelte-illustrations.codewithshin.com/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} target="_blank">
+        {#snippet subtext()}
+          <ExternalLink />
+        {/snippet}
+      </SidebarItem>
     </SidebarGroup>
   {/if}
   <!-- /SidebarWrapper -->
