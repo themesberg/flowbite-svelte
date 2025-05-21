@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.2
+
+### Patch Changes
+
+- fix: add border to ButtonToggle
+
 ## 1.4.1
 
 ### Patch Changes

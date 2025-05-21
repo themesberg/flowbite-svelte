@@ -348,7 +348,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 - children
 - iconSlot
 - color
-- class:className
+- class: className
 - iconClass
 - txtClass
 

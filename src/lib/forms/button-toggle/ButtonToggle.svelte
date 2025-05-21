@@ -52,7 +52,7 @@
 @prop children
 @prop iconSlot
 @prop color
-@prop class:className
+@prop class: className
 @prop iconClass
 @prop txtClass
 @prop ...restProps

@@ -10,7 +10,7 @@
     ["children", ""],
     ["iconSlot", ""],
     ["color", ""],
-    ["class:className", ""],
+    ["class: className", ""],
     ["iconClass", ""],
     ["txtClass", ""]
   ]

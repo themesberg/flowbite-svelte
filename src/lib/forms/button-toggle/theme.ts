@@ -14,7 +14,7 @@ export const buttonToggleGroup = tv({
 });
 
 export const buttonToggle = tv({
-  base: "relative flex items-center transition-all duration-200  focus:outline-none",
+  base: "relative flex items-center transition-all duration-200  focus:outline-none border-r last:border-r-0",
   variants: {
     selected: {
       true: "",
