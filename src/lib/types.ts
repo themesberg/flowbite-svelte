@@ -763,6 +763,7 @@ export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size
   data?: string[];
   maxSuggestions?: number;
   onSelect?: (item: string) => void;
+  comboClass?: string;
 }
 
 // helper
@@ -791,6 +792,7 @@ export interface InputProps<T extends InputValue = string> extends Omit<HTMLInpu
   data?: string[];
   maxSuggestions?: number;
   onSelect?: (item: string) => void;
+  comboClass?: string;
 }
 
 // input-addon

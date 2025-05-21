@@ -4,9 +4,9 @@
   import { type FloatingLabelInputProps, CloseButton } from "$lib";
   import clsx from "clsx";
 
-  let { children, id = idGenerator(), value = $bindable(), elementRef = $bindable(), "aria-describedby": ariaDescribedby, variant = "standard", size = "default", color = "default", class: divClass, inputClass, labelClass, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, ...restProps }: FloatingLabelInputProps = $props();
+  let { children, id = idGenerator(), value = $bindable(), elementRef = $bindable(), "aria-describedby": ariaDescribedby, variant = "standard", size = "default", color = "default", class: divClass, inputClass, labelClass, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, ...restProps }: FloatingLabelInputProps = $props();
 
-  const { base, input, label, clearbtn } = $derived(floatingLabelInput({ variant, size, color }));
+  const { base, input, label, clearbtn, combo } = $derived(floatingLabelInput({ variant, size, color }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -134,7 +134,7 @@
   </label>
 
   {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-    <div class="absolute top-full right-0 left-0 z-10 mt-1 max-h-60 overflow-y-auto rounded-md border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800">
+    <div class={combo({ class: clsx(comboClass) })}>
       {#each filteredSuggestions as item, i}
         <button type="button" class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none" onclick={() => selectItem(item)} onmouseenter={() => (selectedIndex = i)}>
           {item}
