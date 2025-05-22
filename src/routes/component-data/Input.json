@@ -2,7 +2,7 @@
   "name": "Input",
   "type": {
     "name": "InputProps<InputValue>",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L774"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L775"
   },
   "props": [
     ["children", ""],
@@ -24,6 +24,7 @@
     ["clearableOnClick", ""],
     ["data", "[]"],
     ["maxSuggestions", "5"],
-    ["onSelect", ""]
+    ["onSelect", ""],
+    ["comboClass", ""]
   ]
 }

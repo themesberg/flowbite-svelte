@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.3
+
+### Patch Changes
+
+- - 393469a00 fix: #1604, fix: add z-20 and comboClass to FlatingLabelInput and Input components
+  - 51f5a54bc docs: add external link svg on the sidemenu items
+  - 040f0b079 docs: sidebar order
+  - 8f5c1e6f7 fix: add border to ButtonToggle
+
 ## 1.4.2
 
 ### Patch Changes

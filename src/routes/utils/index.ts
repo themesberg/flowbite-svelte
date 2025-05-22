@@ -168,7 +168,7 @@ export const fetchMarkdownPosts = async () => {
     plugins: allPlugins,
     builders,
     icons: allIcons,
-    examples: allExamples,
+    examples: allExamples
   };
 };
 

@@ -23,6 +23,7 @@
     ["clearableOnClick", ""],
     ["data", "[]"],
     ["maxSuggestions", "5"],
-    ["onSelect", ""]
+    ["onSelect", ""],
+    ["comboClass", ""]
   ]
 }

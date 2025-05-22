@@ -169,5 +169,6 @@
 @prop data = []
 @prop maxSuggestions = 5
 @prop onSelect
+@prop comboClass
 @prop ...restProps
 -->

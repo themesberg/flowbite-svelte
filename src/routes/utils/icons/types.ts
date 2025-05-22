@@ -1,4 +1,4 @@
-import type { SVGAttributes } from 'svelte/elements';
+import type { SVGAttributes } from "svelte/elements";
 
 type TitleType = {
   id?: string;
