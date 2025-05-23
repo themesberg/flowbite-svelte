@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { android } from ".";
   import type { AndroidProps } from "$lib/types";
 
@@ -7,13 +9,13 @@
   const { div, slot, top, leftTop, leftMid, leftBot, right } = android();
 </script>
 
-<div {...restProps} class={div({ class: divClass })}>
-  <div class={top({ class: div2Class })}></div>
-  <div class={leftTop({ class: div3Class })}></div>
-  <div class={leftMid({ class: div4Class })}></div>
-  <div class={leftBot({ class: div5Class })}></div>
-  <div class={right({ class: div6Class })}></div>
-  <div class={slot({ class: div7Class })}>
+<div {...restProps} class={twMerge(div(), clsx(divClass))}>
+  <div class={twMerge(top(), clsx(div2Class))}></div>
+  <div class={twMerge(leftTop(), clsx(div3Class))}></div>
+  <div class={twMerge(leftMid(), clsx(div4Class))}></div>
+  <div class={twMerge(leftBot(), clsx(div5Class))}></div>
+  <div class={twMerge(right(), clsx(div6Class))}></div>
+  <div class={twMerge(slot(), clsx(div7Class))}>
     {#if children}
       {@render children()}
     {/if}

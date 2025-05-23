@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { tablet } from ".";
   import type { TabletProps } from "$lib/types";
 
@@ -7,12 +9,12 @@
   const { div, leftTop, leftMid, leftBot, right, slot } = tablet();
 </script>
 
-<div {...restProps} class={div({ class: divClass })}>
-  <div class={leftTop({ class: div2Class })}></div>
-  <div class={leftMid({ class: div3Class })}></div>
-  <div class={leftBot({ class: div4Class })}></div>
-  <div class={right({ class: div5Class })}></div>
-  <div class={slot({ class: div6Class })}>
+<div {...restProps} class={twMerge(div(), clsx(divClass))}>
+  <div class={twMerge(leftTop(), clsx(div2Class))}></div>
+  <div class={twMerge(leftMid(), clsx(div3Class))}></div>
+  <div class={twMerge(leftBot(), clsx(div4Class))}></div>
+  <div class={twMerge(right(), clsx(div5Class))}></div>
+  <div class={twMerge(slot(), clsx(div6Class))}>
     {#if children}
       {@render children()}
     {/if}

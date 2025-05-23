@@ -1,13 +1,13 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { dropdownDivider } from "./";
   import type { DropdownDividerProps } from "$lib/types";
 
   let { class: divClass, ...restProps }: DropdownDividerProps = $props();
-  const base = dropdownDivider({ class: clsx(divClass) });
 </script>
 
-<div {...restProps} class={base}></div>
+<div {...restProps} class={twMerge(dropdownDivider(), clsx(divClass))}></div>
 
 <!--
 @component

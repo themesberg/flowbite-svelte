@@ -515,6 +515,7 @@ export interface DatepickerProps extends Omit<HTMLAttributes<HTMLDivElement>, "o
   onselect?: (x: DateOrRange) => void;
   onclear?: () => void;
   onapply?: (x: DateOrRange) => void;
+  btnClass?: string;
 }
 
 // device-mockups
@@ -659,6 +660,7 @@ export interface FooterCopyrightProps extends HTMLAnchorAttributes {
   by?: string;
   copyrightMessage?: string;
   year?: number | undefined;
+  bySpanClass?: string;
 }
 
 export interface FooterIconProps extends HTMLAnchorAttributes {

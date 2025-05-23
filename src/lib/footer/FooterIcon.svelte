@@ -1,14 +1,16 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { footerIcon } from ".";
   import type { FooterIconProps } from "$lib/types";
 
   let { children, href, ariaLabel, class: aClass, ...restProps }: FooterIconProps = $props();
 
-  const aCls = $derived(footerIcon({ class: aClass }));
+  const aCls = footerIcon();
 </script>
 
 {#if href}
-  <a {...restProps} {href} aria-label={ariaLabel} class={aCls}>
+  <a {...restProps} {href} aria-label={ariaLabel} class={twMerge(aCls, clsx(aClass))}>
     {@render children()}
   </a>
 {:else}

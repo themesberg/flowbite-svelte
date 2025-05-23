@@ -1,22 +1,24 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { footerCopyright } from ".";
   import type { FooterCopyrightProps } from "$lib/types";
 
-  let { spanClass, aClass, href, by, copyrightMessage = "All Rights Reserved.", year, ...restProps }: FooterCopyrightProps = $props();
+  let { spanClass, aClass, href, by, copyrightMessage = "All Rights Reserved.", year, bySpanClass, ...restProps }: FooterCopyrightProps = $props();
 
   if (!year) year = new Date().getFullYear();
 
-  const { base, link, bySpan } = $derived(footerCopyright());
+  const { base, link, bySpan } = footerCopyright();
 </script>
 
-<span class={base({ class: spanClass })}>
+<span class={twMerge(base(), clsx(spanClass))}>
   &copy; {year}
   {#if href}
-    <a {...restProps} {href} class={link({ class: aClass })}>
+    <a {...restProps} {href} class={twMerge(link(), clsx(aClass))}>
       {by}
     </a>
   {:else}
-    <span class={bySpan()}>{by}</span>
+    <span class={twMerge(bySpan(), clsx(bySpanClass))}>{by}</span>
   {/if}
   {copyrightMessage}
 </span>

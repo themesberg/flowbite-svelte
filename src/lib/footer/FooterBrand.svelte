@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { footerBrand } from ".";
   import type { FooterBrandProps } from "$lib/types";
 
@@ -8,19 +10,19 @@
 </script>
 
 {#if href}
-  <a {...restProps} {href} class={base({ class: aClass })}>
+  <a {...restProps} {href} class={twMerge(base(), clsx(aClass))}>
     {#if src}
-      <img {src} class={img({ class: imgClass })} {alt} />
+      <img {src} class={twMerge(img(), clsx(imgClass))} {alt} />
     {/if}
     {#if name}
-      <span class={span({ class: spanClass })}>{name}</span>
+      <span class={twMerge(span(), clsx(spanClass))}>{name}</span>
     {/if}
     {#if children}
       {@render children()}
     {/if}
   </a>
 {:else}
-  <img {src} class={img({ class: imgClass })} {alt} />
+  <img {src} class={twMerge(img(), clsx(imgClass))} {alt} />
 {/if}
 
 <!--

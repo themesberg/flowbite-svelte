@@ -1,8 +1,8 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { getContext } from "svelte";
   import { dropdownItem } from ".";
   import type { DropdownItemProps } from "$lib/types";
-  import clsx from "clsx";
 
   let { aClass, children, href, activeClass, liClass, class: className, ...restProps }: DropdownItemProps = $props();
 

@@ -3,6 +3,7 @@
   import { fly } from "svelte/transition";
   import { sineIn } from "svelte/easing";
   import { drawer } from ".";
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
 
   let { children, hidden = $bindable(), closeDrawer = () => (hidden = true), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, transitionParams, transitionType = fly, ...restProps }: DrawerProps = $props();
@@ -28,8 +29,8 @@
 <svelte:window bind:innerWidth bind:innerHeight />
 
 {#if !hidden}
-  <div role="presentation" class={backdropCls({ class: backdropClass })} onclick={activateClickOutside ? closeDrawer : undefined}></div>
-  <div use:trapFocus={{ onEscape: closeDrawer }} {...restProps} class={base({ class: clsx(className) })} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
+  <div role="presentation" class={twMerge(backdropCls(), clsx(backdropClass))} onclick={activateClickOutside ? closeDrawer : undefined}></div>
+  <div use:trapFocus={{ onEscape: closeDrawer }} {...restProps} class={twMerge(base(),clsx(className))} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
     {@render children?.()}
   </div>
 {/if}

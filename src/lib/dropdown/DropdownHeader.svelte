@@ -1,13 +1,13 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { dropdownHeader } from ".";
   import type { DropdownHeaderProps } from "$lib/types";
 
   let { children, class: className, ...restProps }: DropdownHeaderProps = $props();
-  let headerClass = $derived(dropdownHeader({ class: clsx(className) }));
 </script>
 
-<div {...restProps} class={headerClass}>
+<div {...restProps} class={twMerge(dropdownHeader(), clsx(className))}>
   {@render children()}
 </div>
 

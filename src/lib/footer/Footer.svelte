@@ -1,13 +1,15 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { footer } from ".";
   import type { FooterProps } from "$lib/types";
 
   let { children, footerType = "default", class: className, ...restProps }: FooterProps = $props();
 
-  const footerCls = $derived(footer({ footerType, className }));
+  const footerCls = $derived(footer({ footerType }));
 </script>
 
-<footer {...restProps} class={footerCls}>
+<footer {...restProps} class={twMerge(footerCls, clsx(className))}>
   {@render children()}
 </footer>
 

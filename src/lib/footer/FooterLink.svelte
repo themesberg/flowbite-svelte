@@ -1,13 +1,15 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { footerLink } from ".";
   import type { FooterLinkProps } from "$lib/types";
 
   let { children, liClass, aClass, href, ...restProps }: FooterLinkProps = $props();
-  const { base, link } = $derived(footerLink());
+  const { base, link } = footerLink();
 </script>
 
-<li class={base({ class: liClass })}>
-  <a {...restProps} {href} class={link({ class: aClass })}>
+<li class={twMerge(base(), clsx(liClass))}>
+  <a {...restProps} {href} class={twMerge(link(), clsx(aClass))}>
     {@render children()}
   </a>
 </li>

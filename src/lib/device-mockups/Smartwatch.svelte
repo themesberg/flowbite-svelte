@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { smartwatch } from ".";
   import type { SmartwatchProps } from "$lib/types";
 
@@ -8,17 +10,17 @@
 </script>
 
 <div {...restProps}>
-  <div class={div({ class: divClass })}></div>
-  <div class={top({ class: div2Class })}>
-    <div class={rightTop({ class: div3Class })}></div>
-    <div class={rightBot({ class: div4Class })}></div>
-    <div class={slot({ class: div5Class })}>
+  <div class={twMerge(div(), clsx(divClass))}></div>
+  <div class={twMerge(top(), clsx(div2Class))}>
+    <div class={twMerge(rightTop(), clsx(div3Class))}></div>
+    <div class={twMerge(rightBot(), clsx(div4Class))}></div>
+    <div class={twMerge(slot(), clsx(div5Class))}>
       {#if children}
         {@render children()}
       {/if}
     </div>
   </div>
-  <div class={bot({ class: div6Class })}></div>
+  <div class={twMerge(bot(), clsx(div6Class))}></div>
 </div>
 
 <!--

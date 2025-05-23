@@ -1,14 +1,14 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { dropdownGroup } from ".";
   import type { DropdownGroupProps } from "$lib/types";
 
   let { children, class: className, ...restProps }: DropdownGroupProps = $props();
 
-  const ulCls = $derived(dropdownGroup({ class: clsx(className) }));
 </script>
 
-<ul {...restProps} class={ulCls}>
+<ul {...restProps} class={twMerge(dropdownGroup(), clsx(className))}>
   {@render children()}
 </ul>
 

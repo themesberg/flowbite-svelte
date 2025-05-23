@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { desktop } from ".";
   import type { MockupBaseProps } from "$lib/types";
 
@@ -7,15 +9,15 @@
   const { div, inner, bot, botUnder } = desktop();
 </script>
 
-<div {...restProps} class={div({ class: divClass })}>
-  <div class={inner({ class: div2Class })}>
+<div {...restProps} class={twMerge(div(), clsx(divClass))}>
+  <div class={twMerge(inner(), clsx(div2Class))}>
     {#if children}
       {@render children()}
     {/if}
   </div>
 </div>
-<div class={bot({ class: div3Class })}></div>
-<div class={botUnder({ class: div4Class })}></div>
+<div class={twMerge(bot(), clsx(div3Class))}></div>
+<div class={twMerge(botUnder(), clsx(div4Class))}></div>
 
 <!--
 @component

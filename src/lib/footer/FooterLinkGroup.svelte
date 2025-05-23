@@ -1,12 +1,13 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { footerLinkGroup } from ".";
   import type { FooterLinkGroupProps } from "$lib/types";
 
   let { class: ulClass, children, ...restProps }: FooterLinkGroupProps = $props();
-  const base = $derived(footerLinkGroup({ class: ulClass }));
 </script>
 
-<ul {...restProps} class={base}>
+<ul {...restProps} class={twMerge(footerLinkGroup(), clsx(ulClass))}>
   {@render children()}
 </ul>
 

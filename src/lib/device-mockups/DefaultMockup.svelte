@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { defaultMockup } from ".";
   import type { DefaultMockupProps } from "$lib/types";
 
@@ -7,12 +9,12 @@
   const { div, slot, top, leftTop, leftBot, right } = defaultMockup();
 </script>
 
-<div {...restProps} class={div({ class: divClass })}>
-  <div class={top({ class: div2Class })}></div>
-  <div class={leftTop({ class: div3Class })}></div>
-  <div class={leftBot({ class: div4Class })}></div>
-  <div class={right({ class: div5Class })}></div>
-  <div class={slot({ class: div6Class })}>
+<div {...restProps} class={twMerge(div(), clsx(divClass))}>
+  <div class={twMerge(top(), clsx(div2Class))}></div>
+  <div class={twMerge(leftTop(), clsx(div3Class))}></div>
+  <div class={twMerge(leftBot(), clsx(div4Class))}></div>
+  <div class={twMerge(right(), clsx(div5Class))}></div>
+  <div class={twMerge(slot(), clsx(div6Class))}>
     {#if children}
       {@render children()}
     {/if}

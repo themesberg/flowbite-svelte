@@ -1,11 +1,12 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import Popper from "$lib/utils/Popper.svelte";
   import { setContext } from "svelte";
   import { writable } from "svelte/store";
   import { dropdown } from "./";
   import type { DropdownProps } from "$lib/types";
   import DropdownGroup from "./DropdownGroup.svelte";
-  import clsx from "clsx";
 
   let { children, simple = false, placement = "bottom", offset = 2, class: className, backdropClass, activeUrl = "", isOpen = $bindable(false), ...restProps }: DropdownProps = $props();
 
@@ -20,7 +21,7 @@
 
 <!-- Dropdown menu -->
 
-<Popper {...restProps} {placement} {offset} bind:isOpen class={base({ class: clsx(className) })}>
+<Popper {...restProps} {placement} {offset} bind:isOpen class={twMerge(base(), clsx(className))}>
   {#if simple}
     <DropdownGroup>
       {@render children()}
