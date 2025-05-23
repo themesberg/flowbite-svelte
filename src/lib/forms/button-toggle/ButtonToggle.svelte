@@ -1,12 +1,13 @@
 <script lang="ts">
-  import { getContext } from "svelte";
   import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
+  import { getContext } from "svelte";
   import CheckIcon from "./CheckIcon.svelte";
   import { buttonToggle, buttonToggleContent, buttonToggleText } from "./theme";
   import type { ButtonToggleVariants } from "./theme";
   import { type ButtonToggleProps, type ButtonToggleContext } from "$lib";
 
-  let { value, selected = false, children, iconSlot, color, class: className, iconClass, txtClass, ...restProps }: ButtonToggleProps = $props();
+  let { value, selected = false, children, iconSlot, color, class: className, iconClass, txtClass, contentClass, ...restProps }: ButtonToggleProps = $props();
 
   const { toggleSelected, isSelected } = getContext<ButtonToggleContext>("button-toggle-group");
   const multiSelect = getContext<boolean>("multiSelect");
@@ -26,8 +27,8 @@
   });
 </script>
 
-<button type="button" class={twMerge(buttonToggle({ selected, color: actualColor, size, roundedSize }), ctxBtnClass, className)} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
-  <div class={buttonToggleContent()}>
+<button type="button" class={twMerge(buttonToggle({ selected, color: actualColor, size, roundedSize }), ctxBtnClass, clsx(className))} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
+  <div class={twMerge(buttonToggleContent(), clsx(contentClass))}>
     {#if selected}
       {#if iconSlot}
         {@render iconSlot()}
@@ -35,7 +36,7 @@
         <CheckIcon class={twMerge("absolute left-0 flex-shrink-0 text-green-600", actualIconClass)} />
       {/if}
     {/if}
-    <span class={buttonToggleText({ selected, class: txtClass })}>
+    <span class={twMerge(buttonToggleText({ selected }), clsx(txtClass))}>
       {@render children()}
     </span>
   </div>

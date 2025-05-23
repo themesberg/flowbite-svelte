@@ -2,13 +2,14 @@
   import type { DragEventHandler, ChangeEventHandler } from "svelte/elements";
   import { dropzone } from ".";
   import type { DropzoneProps } from "$lib/types";
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
 
   type HTMLInputElementWithFiles = HTMLInputElement & { files: FileList | null };
 
   let { children, files = $bindable<FileList | null>(), class: className, ...restProps }: DropzoneProps = $props();
 
-  const base = $derived(dropzone({ class: clsx(className) }));
+  const base = $derived(twMerge(dropzone(), clsx(className)));
   let input: HTMLInputElement;
 
   function keydown(ev: KeyboardEvent) {

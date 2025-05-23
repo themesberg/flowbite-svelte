@@ -1,9 +1,10 @@
 <script lang="ts">
   import { fileupload } from ".";
   import { CloseButton, type FileuploadProps } from "$lib";
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
 
-  let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, ...restProps }: FileuploadProps = $props();
+  let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, wrapperClass, ...restProps }: FileuploadProps = $props();
 
   const { base, wrapper, right } = fileupload();
 
@@ -16,10 +17,10 @@
   };
 </script>
 
-<div class={wrapper()}>
-  <input type="file" bind:files bind:this={elementRef} {...restProps} class={base({ size, class: clsx(className) })} />
+<div class={twMerge(wrapper(), clsx(wrapperClass))}>
+  <input type="file" bind:files bind:this={elementRef} {...restProps} class={twMerge(base({ size }), clsx(className))} />
   {#if files && files.length > 0 && clearable}
-    <CloseButton onclick={clearAll} class={right({ class: clearableClass })} color={clearableColor} aria-label="Clear selected files" svgClass={clearableSvgClass} />
+    <CloseButton onclick={clearAll} class={twMerge(right(), clsx(clearableClass))} color={clearableColor} aria-label="Clear selected files" svgClass={clearableSvgClass} />
   {/if}
 </div>
 

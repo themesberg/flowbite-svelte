@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { SizeType } from "$lib/types";
   import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { getContext } from "svelte";
   import { clampSize } from "$lib";
   import type { InputAddonProps } from "$lib/types";
@@ -30,7 +31,7 @@
   // size: explicit, inherited, default
   let _size = size || clampSize(group?.size) || "md";
 
-  let divClass: string = twMerge(textSizes[_size], prefixPadding[_size], "text-gray-500 bg-gray-200", background ? darkBgClasses.tinted : darkBgClasses.base, background ? divider.tinted : divider.base, background ? borderClasses["tinted"] : borderClasses["base"], "inline-flex items-center border", group && "not-first:-ms-px", "first:rounded-s-lg last:rounded-e-lg", className);
+  let divClass: string = twMerge(textSizes[_size], prefixPadding[_size], "text-gray-500 bg-gray-200", background ? darkBgClasses.tinted : darkBgClasses.base, background ? divider.tinted : divider.base, background ? borderClasses["tinted"] : borderClasses["base"], "inline-flex items-center border", group && "not-first:-ms-px", "first:rounded-s-lg last:rounded-e-lg", clsx(className));
 </script>
 
 <div {...restProps} class={divClass}>

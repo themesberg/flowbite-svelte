@@ -1,5 +1,6 @@
 <script lang="ts">
   import Button from "$lib/buttons/Button.svelte";
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import type { CheckboxButtonProps } from "$lib/types";
   import { checkboxbutton } from "./theme";
@@ -43,7 +44,7 @@
     }
   }
 
-  let buttonClass: string = $derived(checkboxbutton({ inline, checked, class: clsx(className) }));
+  let buttonClass: string = $derived(twMerge(checkboxbutton({ inline, checked }), clsx(className)));
 </script>
 
 <Button tag="label" {checked} {pill} {outline} {size} {color} {shadow} class={buttonClass}>

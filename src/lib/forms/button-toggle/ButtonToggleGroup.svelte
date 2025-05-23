@@ -1,6 +1,7 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { type ButtonToggleGroupProps, buttonToggleGroup } from "$lib";
 
   let { multiSelect = false, name = "toggle-group", value = multiSelect ? [] : null, color, size = "md", roundedSize = "md", onSelect = (val: any) => {}, children, ctxIconClass, ctxBtnClass, class: className, ...restProps }: ButtonToggleGroupProps = $props();
@@ -62,7 +63,7 @@
 </script>
 
 <div class="inline">
-  <div class={twMerge(base, className)} role={multiSelect ? "group" : "radiogroup"} aria-label={name} {...restProps}>
+  <div class={twMerge(base, clsx(className))} role={multiSelect ? "group" : "radiogroup"} aria-label={name} {...restProps}>
     {@render children()}
   </div>
 </div>

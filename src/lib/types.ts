@@ -381,6 +381,7 @@ export type ButtonToggleProps = HTMLButtonAttributes & {
   color?: ButtonToggleVariants["color"];
   iconClass?: string;
   class?: string;
+  contentClass?: string;
   txtClass?: string;
 };
 
@@ -745,6 +746,7 @@ export interface FileuploadProps extends Omit<HTMLInputAttributes, "size"> {
   clearableColor?: CloseButtonVariants["color"];
   clearableOnClick?: () => void;
   clearableClass?: string;
+  wrapperClass?: string;
 }
 
 // floatinglabel-input
