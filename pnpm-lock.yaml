@@ -17,6 +17,9 @@ importers:
       apexcharts:
         specifier: ^4.7.0
         version: 4.7.0
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       flowbite:
         specifier: ^3.1.2
         version: 3.1.2(rollup@4.41.0)
@@ -26,9 +29,6 @@ importers:
       tailwind-variants:
         specifier: ^1.0.0
         version: 1.0.0(tailwindcss@4.1.7)
-      virtua:
-        specifier: ^0.41.2
-        version: 0.41.2(svelte@5.30.2)
     devDependencies:
       '@changesets/cli':
         specifier: 2.29.2
@@ -75,9 +75,6 @@ importers:
       '@testing-library/svelte':
         specifier: ^5.2.7
         version: 5.2.7(svelte@5.30.2)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4))(vitest@3.1.3(jiti@2.4.2)(jsdom@26.1.0)(lightningcss@1.30.1)(tsx@4.19.4))
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       dayjs:
         specifier: ^1.11.13
         version: 1.11.13
@@ -2584,26 +2581,6 @@ packages:
 
   vfile-message@2.0.4:
     resolution: {integrity: sha512-DjssxRGkMvifUOJre00juHoP9DPWuzjxKuMDrhNbk2TdaYYBNMStsNhEOt3idrtI12VQYM/1+iM0KOzXi4pxwQ==}
-
-  virtua@0.41.2:
-    resolution: {integrity: sha512-48jgdeXKagXEVxalTFf1bJe/5JZq41QG9LcwDweFJwOZgOvIgoHhBR+IMZPOVd0AjtwvLOaS3O7MYNdti9c4VQ==}
-    peerDependencies:
-      react: '>=16.14.0'
-      react-dom: '>=16.14.0'
-      solid-js: '>=1.0'
-      svelte: '>=5.0'
-      vue: '>=3.2'
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
-      solid-js:
-        optional: true
-      svelte:
-        optional: true
-      vue:
-        optional: true
 
   vite-node@3.1.3:
     resolution: {integrity: sha512-uHV4plJ2IxCl4u1up1FQRrqclylKAogbtBfOTwcuJ28xFi+89PZ57BRh+naIRvH70HPwxy5QHYzg1OrEaC7AbA==}
@@ -5183,10 +5160,6 @@ snapshots:
     dependencies:
       '@types/unist': 2.0.11
       unist-util-stringify-position: 2.0.3
-
-  virtua@0.41.2(svelte@5.30.2):
-    optionalDependencies:
-      svelte: 5.30.2
 
   vite-node@3.1.3(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4):
     dependencies:
