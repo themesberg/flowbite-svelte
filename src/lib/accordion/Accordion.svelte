@@ -4,6 +4,7 @@
   import { accordion } from "./";
   import type { AccordionProps, BaseThemes } from "$lib/types";
   import clsx from "clsx";
+  import { twMerge } from "tailwind-merge";
 
   let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, ...restProps }: AccordionProps = $props();
 
@@ -21,7 +22,7 @@
 
   setContext("ctx", ctx);
   setContext("ctxTransitionType", transitionType);
-  const base = $derived(accordionTheme({ flush, class: clsx(className) }));
+  const base = $derived(twMerge(accordionTheme({ flush }), clsx(className)));
 </script>
 
 <div {...restProps} class={base}>

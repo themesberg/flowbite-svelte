@@ -6,6 +6,7 @@
   import { fade } from "svelte/transition";
   import type { ParamsType, BaseThemes } from "$lib/types";
   import clsx from "clsx";
+  import { twMerge } from "tailwind-merge";
 
   let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, border, href, target, rounded, transition = fade, params, aClass, onclose, ...restProps }: BadgeProps = $props();
 
@@ -23,9 +24,9 @@
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} transition:transition={params as ParamsType} class={base({ class: clsx(className) })}>
+  <div {...restProps} transition:transition={params as ParamsType} class={twMerge(base(), clsx(className))}>
     {#if href}
-      <a {href} {target} class={hrefClass({ class: aClass })}>
+      <a {href} {target} class={twMerge(hrefClass(),clsx(aClass))}>
         {@render children()}
       </a>
     {:else}

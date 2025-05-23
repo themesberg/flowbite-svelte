@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { thumbnail } from "./theme";
   import type { ThumbnailProps } from "$lib/types";
@@ -6,7 +7,7 @@
   let { selected, class: className, ...restProps }: ThumbnailProps = $props();
 </script>
 
-<img {...restProps} class={thumbnail({ selected, class: clsx(className) })} />
+<img {...restProps} class={twMerge(thumbnail({ selected}), clsx(className))} />
 
 <!--
 @component

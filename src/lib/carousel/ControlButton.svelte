@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { controlButton } from "./theme";
   import type { ControlButtonProps } from "$lib/types";
@@ -6,7 +7,7 @@
   let { children, forward, name, class: className, ...restProps }: ControlButtonProps = $props();
 </script>
 
-<button type="button" class={controlButton({ forward, class: clsx(className) })} {...restProps}>
+<button type="button" class={twMerge(controlButton({ forward }), clsx(className))} {...restProps}>
   {#if children}
     {@render children()}
   {:else}

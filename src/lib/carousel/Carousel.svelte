@@ -8,7 +8,7 @@
   import { carousel } from "./theme";
   import type { CarouselProps, State } from "$lib/types";
 
-  const SLIDE_DURATION_RATIO = 0.25; // TODO: Expose one day?
+  const SLIDE_DURATION_RATIO = 0.25;
 
   let { children, slide, images, index = $bindable(0), slideDuration = 1000, transition, duration = 0, "aria-label": ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, onchange, divClass, ...restProps }: CarouselProps = $props();
 
@@ -53,8 +53,6 @@
   };
 
   const loop = (node: HTMLElement, duration: number) => {
-    // carouselDiv = node; // used by DragStart
-
     // loop timer
     /* eslint-disable  @typescript-eslint/no-explicit-any */
     let intervalId: any;
@@ -172,7 +170,7 @@
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} />
 <div bind:this={carouselDiv} class={twMerge("relative", divClass)} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
-  <div {...restProps} class={carousel({ class: clsx(activeDragGesture === undefined ? "transition-transform" : "", className) })} use:loop={duration}>
+  <div {...restProps} class={twMerge(carousel(), clsx(activeDragGesture === undefined ? "transition-transform" : "", className))} use:loop={duration}>
     {#if slide}
       {@render slide({ index, Slide })}
     {:else}

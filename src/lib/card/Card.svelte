@@ -2,6 +2,8 @@
   import { card } from ".";
   import type { CardProps } from "$lib/types";
   import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
 
   let { children, href, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, imgClass, contentClass, ...restProps }: CardProps = $props();
 
@@ -18,7 +20,7 @@
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   const commonProps: Record<string, any> = $derived({
-    class: base({ class: className }),
+    class: twMerge(base(), clsx(className)),
     ...restProps
   });
 
@@ -34,7 +36,7 @@
 
 {#snippet childSlot()}
   {#if img}
-    <img class={image({ class: imgClass })} src={img} alt={img} />
+    <img class={twMerge(image(), clsx(imgClass))} src={img} alt={img} />
     {@render children()}
   {:else}
     {@render children()}

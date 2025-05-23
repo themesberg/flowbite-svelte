@@ -6,24 +6,22 @@
   import { alert } from ".";
   import type { AlertProps, BaseThemes } from "$lib/types";
   import clsx from "clsx";
+  import { twMerge } from "tailwind-merge";
 
   let { children, icon, alertStatus = $bindable(true), closeIcon: CloseIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, onclick = () => (alertStatus = false), ...restProps }: AlertProps = $props();
-
-  // Theme context
 
   const context = getContext<BaseThemes>("themeConfig");
   // Use theme context if available, otherwise fallback to default
   const alertTheme = context?.alert || alert;
 
-  let divCls = $derived(
+  let divCls = $derived(twMerge(
     alertTheme({
       color,
       rounded,
       border,
       icon: !!icon,
-      dismissable,
-      class: clsx(className)
-    })
+      dismissable
+    }), clsx(className))
   );
 </script>
 

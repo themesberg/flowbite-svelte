@@ -1,6 +1,7 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { writable } from "svelte/store";
   import { bottomNav } from "./index";
   import type { BottomNavProps, BottomNavContextType } from "$lib/types";
@@ -14,21 +15,19 @@
   setContext("navType", navType);
   setContext<BottomNavContextType>("bottomNavType", { activeClass: activeCls });
 
-  const { outer, inner } = bottomNav({ position, navType });
-  const outerCls = $derived(outer({ class: outerClass }));
-  const innerCls = $derived(inner({ class: innerClass }));
+  const { outer, inner } = $derived(bottomNav({ position, navType }));
 
   $effect(() => {
     activeUrlStore.set(activeUrl);
   });
 </script>
 
-<div {...restProps} class={outerCls}>
+<div {...restProps} class={twMerge(outer(), clsx(outerClass))}>
   {#if header}
     {@render header()}
   {/if}
 
-  <div class={innerCls}>
+  <div class={twMerge(inner(), clsx(innerClass))}>
     {@render children()}
   </div>
 </div>

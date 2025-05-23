@@ -33,7 +33,12 @@
 
   const { base, button, content, active, inactive } = $derived(accordionitemTheme({ flush: ctx.flush, open }));
 
-  let buttonClass = $derived(twMerge(button(), open && !ctx.flush && (activeClass || ctx.activeClass || active()), !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()), clsx(className)));
+  let buttonClass = $derived(twMerge(
+    button(), 
+    open && !ctx.flush && (activeClass || ctx.activeClass || active()), 
+    !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()),
+    clsx(className)
+  ));
 </script>
 
 <h2 class={base({ class: headerClass })}>

@@ -3,12 +3,13 @@
   import type { Writable } from "svelte/store";
   import { indicators } from "./theme";
   import { Indicator, type IndicatorsProps, type State } from "$lib";
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
 
   let { children, activeClass, inactiveClass, position = "bottom", class: className, ...restProps }: IndicatorsProps = $props();
 
   const state = getContext<Writable<State>>("state");
-  const { base, indicator } = indicators({ position });
+  const { base, indicator } = $derived(indicators({ position }));
 
   function goToIndex(newIndex: number) {
     state.update((_state) => {
@@ -24,7 +25,7 @@
   }
 </script>
 
-<div class={base({ class: clsx(className) })} {...restProps}>
+<div class={twMerge(base(), clsx(className))} {...restProps}>
   {#each $state.images as _, idx}
     {@const selected = $state.index === idx}
     <button onclick={() => goToIndex(idx)}>

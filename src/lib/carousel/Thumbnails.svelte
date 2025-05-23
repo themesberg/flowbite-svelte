@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
@@ -48,7 +49,7 @@
   });
 </script>
 
-<div class={thumbnails({ class: clsx(className) })}>
+<div class={twMerge(thumbnails(), clsx(className))}>
   {#each images as image, idx}
     {@const selected = index === idx}
     <button onclick={() => btnClick(idx)} aria-label={ariaLabel}>

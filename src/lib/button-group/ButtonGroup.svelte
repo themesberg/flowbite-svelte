@@ -2,10 +2,12 @@
   import { setContext } from "svelte";
   import { buttonGroup } from ".";
   import type { ButtonGroupProps } from "$lib";
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
 
   let { children, size = "md", disabled, class: className, ...restProps }: ButtonGroupProps = $props();
 
-  let groupClass = $derived(buttonGroup({ size, className }));
+  let groupClass = $derived(twMerge(buttonGroup({ size }), clsx(className)));
   setContext("group", size);
   setContext("disabled", disabled);
 </script>

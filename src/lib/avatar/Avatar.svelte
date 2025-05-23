@@ -4,6 +4,7 @@
   import { getContext } from "svelte";
   import { avatar } from ".";
   import type { AvatarProps, BaseThemes } from "$lib/types";
+  import { twMerge } from "tailwind-merge";
 
   let { children, indicator, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: AvatarProps = $props();
 
@@ -14,15 +15,14 @@
 
   dot = dot && { placement: "top-right", color: "gray", size: "lg", ...dot };
 
-  let avatarClass = $derived(
+  let avatarClass = $derived(twMerge(
     avatarTheme({
       cornerStyle,
       border,
       stacked,
-      size,
-      class: clsx(className)
-    })
-  );
+      size
+    }), clsx(className)
+  ));
 </script>
 
 {#if !src || !!href || children || dot || indicator}

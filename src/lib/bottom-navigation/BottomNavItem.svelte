@@ -4,6 +4,7 @@
   import { bottomNavItem } from "./index";
   import type { BottomNavItemProps, BottomNavContextType, BottomNavVariantType } from "$lib/types";
   import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
 
   let { children, btnName, appBtnPosition = "middle", target, activeClass, href = "", btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
 
@@ -17,17 +18,17 @@
     navUrl = value;
   });
 
-  const { base, span } = bottomNavItem({ navType, appBtnPosition });
+  const { base, span } = $derived(bottomNavItem({ navType, appBtnPosition }));
 
   // Determine active state based on manual prop or URL matching
   let isActive = $derived(manualActive !== undefined ? !!manualActive : navUrl ? (href === "/" ? navUrl === "/" : href && (navUrl === href || navUrl.startsWith(href + "/") || (href !== "/" && navUrl.replace(/^https?:\/\/[^/]+/, "").startsWith(href)))) : false);
 
   function getCommonClass() {
-    return twMerge(base({ class: btnClass }), isActive && (activeClass ?? context.activeClass));
+    return twMerge(base(), isActive && (activeClass ?? context.activeClass), clsx(btnClass));
   }
 
   function getSpanClass() {
-    return twMerge(span({ class: spanClass }), isActive && (activeClass ?? context.activeClass));
+    return twMerge(span(), isActive && (activeClass ?? context.activeClass), clsx(spanClass));
   }
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */

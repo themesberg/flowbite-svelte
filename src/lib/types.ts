@@ -235,6 +235,7 @@ export interface BannerProps extends BannerVariants, HTMLAttributes<HTMLDivEleme
   innerClass?: string;
   transition?: TransitionFunc;
   params?: object;
+  closeClass?: string;
 }
 
 // bottom-navigation
@@ -354,6 +355,7 @@ export interface GradientButtonProps extends GradientButtonVariantes, HTMLButton
   disabled?: boolean;
   href?: string;
   color?: GradientButtonColor;
+  btnClass?: string;
 }
 
 // button-toggle

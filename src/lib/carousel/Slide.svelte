@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
@@ -26,7 +27,7 @@
     duration: $state.slideDuration
   });
 
-  let imgClass = $derived(slide({ class: clsx(className) }));
+  let imgClass = $derived(twMerge(slide(), clsx(className)));
 </script>
 
 {#if transition}

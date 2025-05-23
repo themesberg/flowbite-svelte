@@ -4,22 +4,23 @@
   import { banner } from "./index";
   import type { ParamsType, BannerProps } from "$lib/types";
   import clsx from "clsx";
+  import { twMerge } from "tailwind-merge";
 
-  let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, innerClass, transition = fade, params, ...restProps }: BannerProps = $props();
+  let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, innerClass, transition = fade, params, closeClass, ...restProps }: BannerProps = $props();
 
   const { base, insideDiv, dismissable: dismissableClass } = $derived(banner({ type, color }));
 </script>
 
 {#if open}
-  <div tabindex="-1" class={base({ class: clsx(className) })} {...restProps} transition:transition={params as ParamsType}>
-    <div class={insideDiv({ class: innerClass })}>
+  <div tabindex="-1" class={twMerge(base(), clsx(className) )} {...restProps} transition:transition={params as ParamsType}>
+    <div class={twMerge(insideDiv(), clsx(innerClass))}>
       {@render children?.()}
     </div>
 
     {#if dismissable}
       <div class="flex items-center justify-end">
         <CloseButton
-          class={dismissableClass()}
+          class={twMerge(dismissableClass(), clsx(closeClass))}
           {color}
           ariaLabel="Remove banner"
           onclick={() => {

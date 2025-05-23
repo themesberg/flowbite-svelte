@@ -4,23 +4,24 @@
   import { gradientButton } from ".";
   import type { GradientButtonProps } from "$lib/types";
   import type { SizeType } from "$lib/types";
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
 
   const group: SizeType = getContext("group");
 
-  let { children, outline, pill, color = "blue", shadow, class: className, href, disabled, size, ...restProps }: GradientButtonProps = $props();
+  let { children, outline, pill, color = "blue", shadow, class: className, href, disabled, size, btnClass, ...restProps }: GradientButtonProps = $props();
 
   const { base, outlineWrapper } = $derived(gradientButton({ color, outline, pill, shadow, disabled, size, group: !!group }));
 </script>
 
 {#if outline}
-  <div class={base({ class: clsx(className) })}>
-    <Button {...restProps} class={outlineWrapper()} {disabled} {href} {size}>
+  <div class={twMerge(base(), clsx(className))}>
+    <Button {...restProps} class={twMerge(outlineWrapper(), clsx(btnClass))} {disabled} {href} {size}>
       {@render children?.()}
     </Button>
   </div>
 {:else}
-  <Button {...restProps} class={base({ class: clsx(className) })} {disabled} {href} {size}>
+  <Button {...restProps} class={twMerge(base(), clsx(className))} {disabled} {href} {size}>
     {@render children?.()}
   </Button>
 {/if}

@@ -6,16 +6,15 @@
 
   let { children, icon, home = false, href, linkClass, spanClass, homeClass, class: className, ...restProps }: BreadcrumbItemProps = $props();
 
-  const { item, icon: breacrumbIcon } = breadcrumb({
+  const { item, icon: breacrumbIcon } = $derived(breadcrumb({
     home,
-    hasHref: !!href,
-    class: clsx(className)
-  });
+    hasHref: !!href
+  }));
 </script>
 
-<li {...restProps} class={item()}>
+<li {...restProps} class={twMerge(item(), clsx(className))}>
   {#if home}
-    <a class={item({ home: true, class: homeClass })} {href}>
+    <a class={twMerge(item({ home: true }), clsx(homeClass))} {href}>
       {#if icon}
         {@render icon()}
       {:else}
@@ -36,11 +35,11 @@
     {/if}
 
     {#if href}
-      <a class={twMerge(item({ home: false, hasHref: true }), linkClass)} {href}>
+      <a class={twMerge(item({ home: false, hasHref: true }), clsx(linkClass))} {href}>
         {@render children()}
       </a>
     {:else}
-      <span class={twMerge(item({ home: false, hasHref: false }), spanClass)}>
+      <span class={twMerge(item({ home: false, hasHref: false }), clsx(spanClass))}>
         {@render children()}
       </span>
     {/if}

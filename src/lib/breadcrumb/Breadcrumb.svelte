@@ -3,6 +3,7 @@
   import { breadcrumb } from "./index";
   import type { BreadcrumbProps, BaseThemes } from "$lib/types";
   import clsx from "clsx";
+  import { twMerge } from "tailwind-merge";
 
   let { children, solid = false, class: className, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
 
@@ -12,8 +13,8 @@
   const breadcrumbTheme = context?.breadcrumb || breadcrumb;
 
   const { nav, list } = breadcrumbTheme({ solid });
-  let classNav = $derived(nav({ class: clsx(className) }));
-  let classList = $derived(list({ class: olClass }));
+  let classNav = $derived(twMerge(nav(), clsx(className)));
+  let classList = $derived(twMerge(list(), clsx(olClass)));
 </script>
 
 <nav aria-label={ariaLabel} {...restProps} class={classNav}>
