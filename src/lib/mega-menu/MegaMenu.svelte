@@ -1,11 +1,12 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import type { LinkType } from "$lib/types";
   import Popper from "../utils/Popper.svelte";
   import { megamenu } from "./theme";
   import type { MegaMenuProps } from "$lib/types";
 
-  let { children, extra, items = [], full, ulClass, isOpen = $bindable(false), class: className, ...restProps }: MegaMenuProps = $props();
+  let { children, extra, items = [], full, ulClass, isOpen = $bindable(false), class: className, extraClass, ...restProps }: MegaMenuProps = $props();
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   interface LinkTypeLike extends LinkType {
@@ -13,13 +14,12 @@
   }
 
   const { base, div, ul, extra: extraCls } = $derived(megamenu({ full, extra: !!extra }));
-  let wrapperClass: string = $derived(base({ class: clsx(className) }));
-  let ulCls = $derived(ul({ class: ulClass }));
+
 </script>
 
-<Popper color={full ? "default" : "dropdown"} arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={wrapperClass}>
+<Popper color={full ? "default" : "dropdown"} arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={twMerge(base(), clsx(className))}>
   <div class={div()}>
-    <ul class={ulCls}>
+    <ul class={twMerge(ul(), clsx(ulClass)}>
       {#each items as item, index}
         <li>
           {@render children({ item, index })}
@@ -28,7 +28,7 @@
         {@render children({ item: items[0], index: 0 })}
       {/each}
     </ul>
-    {#if full && extra}<div class={extraCls()}>{@render extra()}</div>{/if}
+    {#if full && extra}<div class={twMerge(extraCls(), clsx(extraClass))}>{@render extra()}</div>{/if}
   </div>
 </Popper>
 

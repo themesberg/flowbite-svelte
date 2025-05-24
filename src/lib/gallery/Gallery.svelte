@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { gallery } from ".";
   import type { GalleryProps, ImgType } from "$lib/types";
@@ -14,11 +15,11 @@
 
 {#snippet _figure(item: ImgType)}
   <div>
-    <img src={item.src} alt={item.alt} class={image({ class: imgClass })} {...restProps} />
+    <img src={item.src} alt={item.alt} class={twMerge(image(), clsx(imgClass))} {...restProps} />
   </div>
 {/snippet}
 
-<div class={div({ class: clsx(className) })} use:init>
+<div class={twMerge(div(),clsx(className))} use:init>
   {#each items as item}
     {#if figure}
       {@render figure(item as ImgType)}

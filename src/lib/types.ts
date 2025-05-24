@@ -988,13 +988,14 @@ export interface TextareaProps extends Omit<HTMLTextareaAttributes, "class"> {
 }
 
 // toggle
-export interface ToggleProps extends Omit<ToggleVariants, "off_state_label">, Omit<HTMLInputAttributes, "size" | "color"> {
+export interface ToggleProps extends Omit<ToggleVariants, "off_state_label">, Omit<HTMLInputAttributes, "size" | "color" | "class"> {
   offLabel?: Snippet;
   value?: string | number;
   checked?: boolean;
   disabled?: boolean;
-  spanClass?: string;
-  inputClass?: string;
+  spanClass?: ClassValue;
+  inputClass?: ClassValue;
+  class?: ClassValue;
 }
 
 // end of forms
@@ -1005,14 +1006,15 @@ export type ImgType = {
   alt?: string;
 };
 
-export interface GalleryProps extends HTMLAttributes<HTMLDivElement> {
+export interface GalleryProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   children?: Snippet;
   figure?: Snippet<[item: ImgType]>;
   items?: HTMLImgAttributes[];
-  imgClass?: string;
+  imgClass?: ClassValue;
   height?: string;
   rowHeight?: number;
   columns?: number;
+  class?: ClassValue;
 }
 
 // indicator
@@ -1028,8 +1030,9 @@ export interface IndicatorProps extends Omit<HTMLAttributes<HTMLDivElement>, "cl
 }
 
 // kbd
-export interface KbdProps extends HTMLAttributes<HTMLElement> {
+export interface KbdProps extends Omit<HTMLAttributes<HTMLElement>, "class"> {
   children: Snippet;
+  class?: ClassValue;
 }
 
 // list-group
@@ -1047,15 +1050,16 @@ export interface ListGroupItemType {
   [key: string]: any;
 }
 
-export interface ListgroupProps extends ListgroupVariants, Omit<HTMLAttributes<HTMLUListElement>, "children"> {
+export interface ListgroupProps extends ListgroupVariants, Omit<HTMLAttributes<HTMLUListElement>, "children" | "class"> {
   children?: Snippet<[item: ListGroupItemType | string | undefined]>;
   items?: (ListGroupItemType | string)[];
   active?: boolean;
   onclick?: (event?: MouseEvent) => void;
-  itemClass?: string;
-  aClasss?: string;
-  btnClass?: string;
-  iconClass?: string;
+  itemClass?: ClassValue;
+  aClasss?: ClassValue;
+  btnClass?: ClassValue;
+  iconClass?: ClassValue;
+  class?: ClassValue;
 }
 
 export type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> &
@@ -1063,9 +1067,10 @@ export type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> &
     current?: boolean;
     disabled?: boolean;
     Icon?: Component;
-    iconClass?: string;
+    iconClass?: ClassValue;
     name?: string;
-    children?: Snippet;
+  children?: Snippet;
+  class?: ClassValue;
   };
 
 // mega-menu
@@ -1074,12 +1079,14 @@ export interface MegaMenuProps extends Omit<PopperProps, "children"> {
   extra?: Snippet;
   items?: LinkType[];
   full?: boolean;
-  ulClass?: string;
+  ulClass?: ClassValue;
+  class?: ClassValue;
+  extraClass?: ClassValue;
   isOpen?: boolean | undefined;
 }
 
 // modal
-export interface ModalProps extends ModalVariants, HTMLDialogAttributes {
+export interface ModalProps extends ModalVariants, Omit<HTMLDialogAttributes, "class"> {
   header?: Snippet;
   footer?: Snippet;
   modal?: boolean;
@@ -1089,10 +1096,11 @@ export interface ModalProps extends ModalVariants, HTMLDialogAttributes {
   permanent?: boolean;
   transition?: TransitionFunc;
   params?: ParamsType;
-  headerClass?: string;
-  bodyClass?: string;
-  footerClass?: string;
-  closeBtnClass?: string;
+  headerClass?: ClassValue;
+  bodyClass?: ClassValue;
+  footerClass?: ClassValue;
+  closeBtnClass?: ClassValue;
+  class?: ClassValue;
   onclose?: () => void;
 }
 

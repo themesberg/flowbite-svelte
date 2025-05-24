@@ -1,5 +1,6 @@
 <script lang="ts">
   import { type ParamsType, type ModalProps, CloseButton, trapFocus } from "$lib";
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
@@ -62,9 +63,9 @@
 </script>
 
 {#if open}
-  <dialog use:trapFocus={{ onEscape: handleEscape }} bind:this={dlg} {...restProps} class={base({ class: clsx(className) })} tabindex="-1" oncancel={_oncancel} onclick={_onclick} transition:transition={paramsOptions as ParamsType} onintrostart={() => (modal ? dlg?.showModal() : dlg?.show())} onoutroend={() => dlg?.close()}>
+  <dialog use:trapFocus={{ onEscape: handleEscape }} bind:this={dlg} {...restProps} class={twMerge(base(), clsx(className))} tabindex="-1" oncancel={_oncancel} onclick={_onclick} transition:transition={paramsOptions as ParamsType} onintrostart={() => (modal ? dlg?.showModal() : dlg?.show())} onoutroend={() => dlg?.close()}>
     {#if title || header}
-      <div class={headerCls({ class: headerClass })}>
+      <div class={twMerge(headerCls(), clsx(headerClass))}>
         {#if title}
           <h3>{title}</h3>
         {:else if header}
@@ -72,16 +73,16 @@
         {/if}
       </div>
     {/if}
-    <div class={body({ class: bodyClass })}>
+    <div class={twMerge(body(), clsx(bodyClass))}>
       {@render children?.()}
     </div>
     {#if footer}
-      <div class={footerCls({ class: footerClass })}>
+      <div class={twMerge(footerCls(), clsx( footerClass))}>
         {@render footer()}
       </div>
     {/if}
     {#if dismissable && !permanent}
-      <CloseButton onclick={closeModal} class={closeBtn({ class: closeBtnClass })} />
+      <CloseButton onclick={closeModal} class={twMerge(closeBtn(), clsx(closeBtnClass))} />
     {/if}
   </dialog>
 {/if}

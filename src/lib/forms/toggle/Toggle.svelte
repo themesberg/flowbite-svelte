@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { Label } from "../label";
   import { toggle } from "./index";
@@ -9,12 +10,12 @@
   const { input, label, span } = $derived(toggle({ color, checked, size, disabled, off_state_label: !!offLabel }));
 </script>
 
-<Label class={label({ class: clsx(className) })}>
+<Label class={twMerge(label(), clsx(className) )}>
   {#if offLabel}
     {@render offLabel()}
   {/if}
-  <input type="checkbox" bind:checked {value} {...restProps} {disabled} class={input({ class: inputClass })} />
-  <span class={span({ class: spanClass })}></span>
+  <input type="checkbox" bind:checked {value} {...restProps} {disabled} class={twMerge(input(), clsx(inputClass))} />
+  <span class={twMerge(span(), clsx(spanClass))}></span>
   {#if children}
     {@render children()}
   {/if}

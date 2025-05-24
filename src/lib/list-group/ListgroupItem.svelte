@@ -2,6 +2,7 @@
   import { getContext } from "svelte";
   import type { ListgroupItemProps } from "$lib/types";
   import { listGroupItem, type ListgroupItemVariants } from "./theme";
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
 
   let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-5 w-5", onclick, ...restProps }: ListgroupItemProps = $props();
@@ -10,12 +11,12 @@
   horizontal = horizontal ?? getContext("listGrpHorizontal");
 
   let state: ListgroupItemVariants["state"] = $derived(disabled ? "disabled" : current ? "current" : "normal");
-  let itemClass = $derived(listGroupItem({ state, active, horizontal, class: clsx(className) }));
+  let itemClass = $derived(listGroupItem({ state, active, horizontal }));
 </script>
 
 {#snippet nameOrChildren()}
   {#if Icon}
-    <Icon class={iconClass} />
+    <Icon class={clsx(iconClass)} />
   {/if}
   {#if children}
     {@render children()}
@@ -25,15 +26,15 @@
 {/snippet}
 
 {#if restProps.href === undefined && !active}
-  <li class={itemClass}>
+  <li class={twMerge(itemClass, clsx(className))}>
     {@render nameOrChildren()}
   </li>
 {:else if restProps.href === undefined}
-  <button type="button" {...restProps} class={itemClass} {disabled} aria-current={current} {onclick}>
+  <button type="button" {...restProps} class={twMerge(itemClass, clsx(className))} {disabled} aria-current={current} {onclick}>
     {@render nameOrChildren()}
   </button>
 {:else}
-  <a {...restProps} class={itemClass} aria-current={current}>
+  <a {...restProps} class={twMerge(itemClass, clsx(className))} aria-current={current}>
     {@render nameOrChildren()}
   </a>
 {/if}

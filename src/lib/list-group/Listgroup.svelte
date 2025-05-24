@@ -3,11 +3,12 @@
   import ListgroupItem from "./ListgroupItem.svelte";
   import { listGroup } from ".";
   import type { ListgroupProps } from "$lib/types";
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
 
   let { children, items, active, onclick, horizontal, rounded, border, class: className, itemClass, iconClass, ...restProps }: ListgroupProps = $props();
 
-  const base = $derived(listGroup({ rounded, border, horizontal, class: clsx(className) }));
+  const base = $derived(listGroup({ rounded, border, horizontal }));
 
   let tag = active ? "div" : "ul";
   setContext("listGrpActive", active);
@@ -24,15 +25,15 @@
   }
 </script>
 
-<svelte:element this={tag} {...restProps} class={base}>
+<svelte:element this={tag} {...restProps} class={twMerge(base, clsx(className))}>
   {#if items?.length}
     {#each items as item}
       {#if children}
         {@render children(item)}
       {:else if typeof item === "string"}
-        <ListgroupItem href={undefined} class={itemClass} {iconClass} {active} {horizontal} onclick={createItemClickHandler(item)}>{item}</ListgroupItem>
+        <ListgroupItem href={undefined} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} onclick={createItemClickHandler(item)}>{item}</ListgroupItem>
       {:else}
-        <ListgroupItem href={item.href} class={itemClass} {iconClass} {active} {horizontal} {...item} onclick={item.onclick ?? createItemClickHandler(item)} />
+        <ListgroupItem href={item.href} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} {...item} onclick={item.onclick ?? createItemClickHandler(item)} />
       {/if}
     {/each}
   {:else}
