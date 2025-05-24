@@ -6,7 +6,7 @@
   import { Button, ToolbarButton, type DatepickerProps } from "$lib";
   import { datepicker } from "./theme";
 
-  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass }: DatepickerProps = $props();
+  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, class:className }: DatepickerProps = $props();
 
   const dateFormatDefault = { year: "numeric", month: "long", day: "numeric" };
   const dateFormatOptions = $derived(dateFormat ?? dateFormatDefault);
@@ -195,7 +195,7 @@
   {/if}
 
   {#if isOpen || inline}
-    <div bind:this={calendarRef} id="datepicker-dropdown" class={base({ inline })} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
+    <div bind:this={calendarRef} id="datepicker-dropdown" class={twMerge(base({ inline }), clsx(className))} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
       {#if title}
         <h2 class={titleVariant()}>{title}</h2>
       {/if}

@@ -8,7 +8,7 @@
 
   let { children, header, position = "fixed", navType = "default", outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
 
-  const activeCls = twMerge("text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900", activeClass);
+  const activeCls = twMerge("text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900", clsx(activeClass));
 
   const activeUrlStore = writable("");
   setContext("activeUrl", activeUrlStore);

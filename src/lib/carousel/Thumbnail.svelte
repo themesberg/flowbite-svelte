@@ -5,9 +5,10 @@
   import type { ThumbnailProps } from "$lib/types";
 
   let { selected, class: className, ...restProps }: ThumbnailProps = $props();
+  const imgCls = $derived(thumbnail({ selected}));
 </script>
 
-<img {...restProps} class={twMerge(thumbnail({ selected}), clsx(className))} />
+<img {...restProps} class={twMerge(imgCls, clsx(className))} />
 
 <!--
 @component

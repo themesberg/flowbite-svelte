@@ -4,13 +4,12 @@
   import { footerIcon } from ".";
   import type { FooterIconProps } from "$lib/types";
 
-  let { children, href, ariaLabel, class: aClass, ...restProps }: FooterIconProps = $props();
+  let { children, href, ariaLabel, class: className, ...restProps }: FooterIconProps = $props();
 
-  const aCls = footerIcon();
 </script>
 
 {#if href}
-  <a {...restProps} {href} aria-label={ariaLabel} class={twMerge(aCls, clsx(aClass))}>
+  <a {...restProps} {href} aria-label={ariaLabel} class={twMerge(footerIcon(), clsx(className))}>
     {@render children()}
   </a>
 {:else}

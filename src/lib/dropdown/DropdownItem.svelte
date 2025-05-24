@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { dropdownItem } from ".";
@@ -18,10 +19,10 @@
   });
 
   const { anchor, activeAnchor } = dropdownItem();
-  let finalClass = $derived([active ? activeAnchor({ class: clsx(activeClass, className) }) : anchor({ class: clsx(aClass, className) })]);
+  let finalClass = $derived([active ? twMerge(activeAnchor(), clsx(activeClass, className)) : twMerge(anchor(), clsx(aClass, className))]);
 </script>
 
-<li class={liClass}>
+<li class={clsx(liClass)}>
   {#if href}
     <a {href} {...restProps} class={finalClass}>
       {@render children()}

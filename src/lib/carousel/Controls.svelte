@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { getContext, type Snippet } from "svelte";
+  import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
   import { canChangeSlide } from "./CarouselSlide";
   import ControlButton from "./ControlButton.svelte";
   import type { State, ControlsProps } from "$lib/types";
+  import clsx from "clsx";
 
   let { children, class: className, ...restProps }: ControlsProps = $props();
 
@@ -43,8 +44,8 @@
 {#if children}
   {@render children(changeSlide)}
 {:else}
-  <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={className} {...restProps} />
-  <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={className} {...restProps} />
+  <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={clsx(className)} {...restProps} />
+  <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={clsx(className)} {...restProps} />
 {/if}
 
 <!--

@@ -54,7 +54,7 @@
     {@const selected = index === idx}
     <button onclick={() => btnClick(idx)} aria-label={ariaLabel}>
       {#if children}
-        {@render children({ image, selected, imgClass, Thumbnail })}
+        {@render children({ image, selected, imgClass:clsx(imgClass), Thumbnail })}
       {:else}
         <Thumbnail {selected} {...image} class={imgClass} />
       {/if}

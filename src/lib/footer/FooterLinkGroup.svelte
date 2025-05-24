@@ -4,10 +4,10 @@
   import { footerLinkGroup } from ".";
   import type { FooterLinkGroupProps } from "$lib/types";
 
-  let { class: ulClass, children, ...restProps }: FooterLinkGroupProps = $props();
+  let { class: className, children, ...restProps }: FooterLinkGroupProps = $props();
 </script>
 
-<ul {...restProps} class={twMerge(footerLinkGroup(), clsx(ulClass))}>
+<ul {...restProps} class={twMerge(footerLinkGroup(), clsx(className))}>
   {@render children()}
 </ul>
 

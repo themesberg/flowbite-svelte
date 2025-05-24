@@ -32,7 +32,7 @@
       {#if children}
         {@render children({ selected, index: idx })}
       {:else}
-        <Indicator class={indicator({ selected, class: selected ? activeClass : inactiveClass })} />
+        <Indicator class={twMerge(indicator({ selected }), selected ? clsx(activeClass) : clsx(inactiveClass))} />
       {/if}
     </button>
   {/each}

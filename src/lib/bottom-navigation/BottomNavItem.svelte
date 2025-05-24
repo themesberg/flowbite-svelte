@@ -24,11 +24,11 @@
   let isActive = $derived(manualActive !== undefined ? !!manualActive : navUrl ? (href === "/" ? navUrl === "/" : href && (navUrl === href || navUrl.startsWith(href + "/") || (href !== "/" && navUrl.replace(/^https?:\/\/[^/]+/, "").startsWith(href)))) : false);
 
   function getCommonClass() {
-    return twMerge(base(), isActive && (activeClass ?? context.activeClass), clsx(btnClass));
+    return twMerge(base(), isActive && (clsx(activeClass) ?? context.activeClass), clsx(btnClass));
   }
 
   function getSpanClass() {
-    return twMerge(span(), isActive && (activeClass ?? context.activeClass), clsx(spanClass));
+    return twMerge(span(), isActive && (clsx(activeClass) ?? context.activeClass), clsx(spanClass));
   }
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */

@@ -4,10 +4,10 @@
   import { dropdownDivider } from "./";
   import type { DropdownDividerProps } from "$lib/types";
 
-  let { class: divClass, ...restProps }: DropdownDividerProps = $props();
+  let { class: className, ...restProps }: DropdownDividerProps = $props();
 </script>
 
-<div {...restProps} class={twMerge(dropdownDivider(), clsx(divClass))}></div>
+<div {...restProps} class={twMerge(dropdownDivider(), clsx(className))}></div>
 
 <!--
 @component

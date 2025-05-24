@@ -19,7 +19,7 @@
   // color, size, group, outline, shadow, disabled, pill
   const btnColors = Object.keys(button.variants.color);
   let btnColor = $state("primary");
-  let btnClass: GradientButtonProps["class"] = $state("");
+  let btnClass = $state("");
   const changeBtnClass = () => {
     btnClass = btnClass === "" ? "w-48" : "";
   };

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { indicator } from "./index";
   import type { IndicatorProps } from "$lib/types";
@@ -19,7 +20,7 @@
   );
 </script>
 
-<div {...restProps} class={base({ class: clsx(className) })}>
+<div {...restProps} class={twMerge(base(), clsx(className))}>
   {#if children}
     {@render children()}
   {/if}

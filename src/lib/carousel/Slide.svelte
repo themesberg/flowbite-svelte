@@ -27,7 +27,7 @@
     duration: $state.slideDuration
   });
 
-  let imgClass = $derived(twMerge(slide(), clsx(className)));
+  let imgClass = twMerge(slide(), clsx(className));
 </script>
 
 {#if transition}

@@ -3,6 +3,7 @@
   import type ApexCharts from "apexcharts";
   import "./chart.css";
   import type { ChartProps } from "$lib/types";
+  import clsx from "clsx";
 
   let { options, class: classname }: ChartProps = $props();
 
@@ -32,7 +33,7 @@
   }
 </script>
 
-<div use:initChart={options} class={classname}></div>
+<div use:initChart={options} class={clsx(classname)}></div>
 
 <!--
 @component

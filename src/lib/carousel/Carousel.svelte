@@ -169,12 +169,12 @@
 
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} />
-<div bind:this={carouselDiv} class={twMerge("relative", divClass)} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
-  <div {...restProps} class={twMerge(carousel(), clsx(activeDragGesture === undefined ? "transition-transform" : "", className))} use:loop={duration}>
+<div bind:this={carouselDiv} class={twMerge("relative", clsx(divClass))} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
+  <div {...restProps} class={twMerge(carousel(), activeDragGesture === undefined ? "transition-transform" : "", clsx(className))} use:loop={duration}>
     {#if slide}
       {@render slide({ index, Slide })}
     {:else}
-      <Slide image={images[index]} class={imgClass} {transition} />
+      <Slide image={images[index]} class={clsx(imgClass)} {transition} />
     {/if}
   </div>
   {@render children?.(index)}

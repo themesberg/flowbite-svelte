@@ -1,11 +1,12 @@
 <script lang="ts">
   import { darkmode } from "./";
   import type { DarkmodeProps } from "$lib/types";
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
 
   // const THEME_PREFERENCE_KEY = 'color-theme';
   let { class: className, lightIcon, darkIcon, size = "md", ariaLabel = "Dark mode", ...restProps }: DarkmodeProps = $props();
 
-  const btnCls = darkmode({ class: className });
   const sizes = {
     sm: "w-4 h-4",
     md: "w-5 h-5",
@@ -31,7 +32,7 @@
   </script>
 </svelte:head>
 
-<button onclick={toggleTheme} aria-label={ariaLabel} type="button" {...restProps} class={btnCls} tabindex={0}>
+<button onclick={toggleTheme} aria-label={ariaLabel} type="button" {...restProps} class={twMerge(darkmode(), clsx(className))} tabindex={0}>
   <span class="hidden dark:block">
     {#if lightIcon}
       {@render lightIcon()}
