@@ -15,7 +15,7 @@
   const size = getContext<ButtonToggleVariants["size"]>("buttonToggleSize");
   const roundedSize = getContext<ButtonToggleVariants["roundedSize"]>("buttonToggleRounded");
   const ctxIconClass = getContext<string | undefined>("ctxIconClass");
-  const actualIconClass = ctxIconClass || iconClass;
+  const actualIconClass = ctxIconClass || clsx(iconClass);
   const ctxBtnClass = getContext<string | undefined>("ctxBtnClass");
 
   function handleClick() {

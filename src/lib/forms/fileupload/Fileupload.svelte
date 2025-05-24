@@ -20,7 +20,7 @@
 <div class={twMerge(wrapper(), clsx(wrapperClass))}>
   <input type="file" bind:files bind:this={elementRef} {...restProps} class={twMerge(base({ size }), clsx(className))} />
   {#if files && files.length > 0 && clearable}
-    <CloseButton onclick={clearAll} class={twMerge(right(), clsx(clearableClass))} color={clearableColor} aria-label="Clear selected files" svgClass={clearableSvgClass} />
+    <CloseButton onclick={clearAll} class={twMerge(right(), clsx(clearableClass))} color={clearableColor} aria-label="Clear selected files" svgClass={clsx(clearableSvgClass)} />
   {/if}
 </div>
 

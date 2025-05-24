@@ -5,7 +5,7 @@
   import { input, clampSize } from ".";
   import clsx from "clsx";
 
-  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, wrapperClass, classLeft, classRight, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, ...restProps }: InputProps<InputValue> = $props();
+  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, ...restProps }: InputProps<InputValue> = $props();
 
   // Automatically enable combobox when data is provided
   const isCombobox = $derived(Array.isArray(data) && data.length > 0);
@@ -21,7 +21,7 @@
   let _size = $derived(size || clampSize(group?.size) || "md");
   const _color = $derived(color === "default" && background ? "tinted" : color);
 
-  const { base, input: inputCls, left: leftCls, right: rightCls, clearbtn, combo } = $derived(input({ size: _size, color: _color, group: isGroup, class: clsx(className) }));
+  const { base, input: inputCls, left: leftCls, right: rightCls, clearbtn, combo } = $derived(input({ size: _size, color: _color, group: isGroup }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -161,9 +161,9 @@
 {/if}
 
 {#if isCombobox}
-  <div class={twMerge(isCombobox ? "relative w-full" : "", wrapperClass)}>
+  <div class={twMerge(isCombobox ? "relative w-full" : "", clsx(wrapperClass))}>
     {#if right || left || clearable}
-      <div class={base({ class: divClass })}>
+      <div class={twMerge(base(), clsx(divClass))}>
         {@render inputContent()}
       </div>
     {:else}
@@ -171,7 +171,7 @@
     {/if}
 
     {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-      <div class={combo({ class: clsx(comboClass) })}>
+      <div class={twMerge(combo(), clsx(comboClass))}>
         {#each filteredSuggestions as item, i}
           <button type="button" class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none" onclick={() => selectItem(item)} onmouseenter={() => (selectedIndex = i)}>
             {item}
@@ -183,7 +183,7 @@
 {:else if group}
   {@render inputContent()}
 {:else if right || left || clearable}
-  <div class={base({ class: divClass })}>
+  <div class={twMerge(base(), clsx(divClass))}>
     {@render inputContent()}
   </div>
 {:else}
@@ -192,20 +192,20 @@
 
 {#snippet inputContent()}
   {#if left}
-    <div class={leftCls({ class: classLeft })}>
+    <div class={twMerge(leftCls(), clsx(leftClass))}>
       {@render left()}
     </div>
   {/if}
   {#if children}
     {@render children({ ...restProps, class: inputCls() })}
   {:else}
-    <input {...restProps} bind:value bind:this={elementRef} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} class={inputCls({ class: clsx(className) })} />
+    <input {...restProps} bind:value bind:this={elementRef} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} class={twMerge(inputCls(), clsx(className))} />
     {#if value !== undefined && value !== "" && clearable}
-      <CloseButton onclick={clearAll} class={clearbtn({ class: clearableClass })} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} />
+      <CloseButton onclick={clearAll} class={twMerge(clearbtn(), clsx(clearableClass))} color={clearableColor} aria-label="Clear search value" svgClass={clsx(clearableSvgClass)} />
     {/if}
   {/if}
   {#if right}
-    <div class={rightCls({ class: classRight })}>
+    <div class={twMerge(rightCls(), clsx(rightClass))}>
       {@render right()}
     </div>
   {/if}

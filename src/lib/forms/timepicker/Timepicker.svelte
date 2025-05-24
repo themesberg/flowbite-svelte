@@ -1,14 +1,17 @@
 <script lang="ts">
   import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { Dropdown, DropdownItem, Button, Input, ButtonGroup, Select, InputAddon, Label, Toggle, type TimepickerProps, type TimePickerOption } from "$lib";
 
   // Props
-  let { id = "time", endId = "end-time", value = "00:00", endValue = "00:00", min = "", max = "", required = true, disabled = false, inputColor, buttonColor = "primary", Icon, type = "default", optionLabel = "Options", options = [], size = "md", divClass = "inline-flex rounded-lg shadow-sm", inputClass, selectClass, timerangeLabel = "Choose time range", timerangeButtonLabel = "Save time", timeIntervals = [], columns = 2, onselect }: TimepickerProps = $props();
+  let { id = "time", endId = "end-time", value = $bindable("00:00"), endValue = $bindable("00:00"), min = "", max = "", required = true, disabled = false, inputColor, buttonColor = "primary", Icon, type = "default", optionLabel = "Options", options = [], size = "md", divClass, inputClass, selectClass, timerangeLabel = "Choose time range", timerangeButtonLabel = "Save time", timeIntervals = [], columns = 2, onselect }: TimepickerProps = $props();
 
-  const defaultInputClass = "block disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:ring-0 focus:outline-none p-2.5 border-r-0";
-  const inputCls = twMerge(defaultInputClass, inputClass);
-  const defaultSelectClass = "text-gray-900 disabled:text-gray-400 bg-gray-50 border border-gray-300 rounded-r-lg rounded-l-none focus:ring-0 focus:outline-none block w-full p-2.5 border-l-1 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:disabled:text-gray-500 dark:focus:ring-primary-500 dark:focus:border-primary-500";
-  const selectCls = twMerge(defaultSelectClass, selectClass);
+  const defaultDivClass = "inline-flex rounded-lg shadow-sm"
+  const acturalDivCls = twMerge(defaultDivClass, clsx(divClass));
+  const defaultInputClass = "block disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:ring-0 focus:outline-none border-r-0";
+  const inputCls = twMerge(defaultInputClass, clsx(inputClass));
+  const defaultSelectClass = "text-gray-900 disabled:text-gray-400 bg-gray-50 border border-gray-300 rounded-r-lg rounded-l-none focus:ring-0 focus:outline-none block w-full border-l-1 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:disabled:text-gray-500 dark:focus:ring-primary-500 dark:focus:border-primary-500";
+  const selectCls = twMerge(defaultSelectClass, clsx(selectClass));
 
   // State
   // let value = $state("00:00");
@@ -23,30 +26,54 @@
   }
 
   function handleTimeChange(event: Event, isEndTime: boolean = false): void {
-    const target = event.target as HTMLInputElement;
-    const newValue = target.value;
-    const newMinutes = timeToMinutes(newValue);
-    const valueMinutes = timeToMinutes(value);
-    const endValueMinutes = timeToMinutes(endValue);
+  const target = event.target as HTMLInputElement;
+  const newValue = target.value;
+  
+  // Validate against min/max constraints first
+  if (min && newValue < min) {
+    target.value = isEndTime ? endValue : value; // Reset to previous valid value
+    return;
+  }
+  
+  if (max && newValue > max) {
+    target.value = isEndTime ? endValue : value; // Reset to previous valid value
+    return;
+  }
+  
+  const newMinutes = timeToMinutes(newValue);
+  const valueMinutes = timeToMinutes(value);
+  const endValueMinutes = timeToMinutes(endValue);
 
-    if (isEndTime) {
-      if (newMinutes < valueMinutes) {
+  if (isEndTime) {
+    if (newMinutes < valueMinutes) {
+      // Only update start time if it respects min/max constraints
+      if ((!min || newValue >= min) && (!max || newValue <= max)) {
         value = newValue;
       } else {
-        endValue = newValue;
+        target.value = endValue; // Reset if constraint violation
+        return;
       }
     } else {
-      if (newMinutes > endValueMinutes) {
+      endValue = newValue;
+    }
+  } else {
+    if (newMinutes > endValueMinutes) {
+      // Only update end time if it respects min/max constraints
+      if ((!min || newValue >= min) && (!max || newValue <= max)) {
         endValue = newValue;
       } else {
-        value = newValue;
+        target.value = value; // Reset if constraint violation
+        return;
       }
-    }
-
-    if (type !== "timerange-dropdown") {
-      notifyChange();
+    } else {
+      value = newValue;
     }
   }
+
+  if (type !== "timerange-dropdown") {
+    notifyChange();
+  }
+}
 
   function handleOptionSelect(event: Event): void {
     const target = event.target as HTMLSelectElement;
@@ -89,9 +116,9 @@
 </script>
 
 {#if type !== "inline-buttons"}
-  <ButtonGroup {size} class={divClass}>
+  <ButtonGroup {size} class={acturalDivCls}>
     {#if type === "default"}
-      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class="{inputCls} rounded-l-lg" bind:value onchange={(e) => handleTimeChange(e)} />
+      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge("rounded-l-lg", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
       <InputAddon class="rounded-r-lg">
         {#if Icon}
           <Icon class="h-4 w-4 text-gray-500 dark:text-gray-400" />
@@ -102,10 +129,10 @@
         {/if}
       </InputAddon>
     {:else if type === "select"}
-      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class="{inputCls} w-1/3 rounded-l-lg" bind:value onchange={(e) => handleTimeChange(e)} />
-      <Select class={selectCls} onchange={handleOptionSelect} items={options} value={selectedOption} />
+      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge("w-1/3 rounded-l-lg", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
+      <Select selectClass={selectCls} onchange={handleOptionSelect} items={options} value={selectedOption} />
     {:else if type === "dropdown"}
-      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class="{inputCls} rounded-l-lg" bind:value onchange={(e) => handleTimeChange(e)} />
+      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge("rounded-l-lg", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
       <Button color={buttonColor} class="!rounded-r-lg">
         {optionLabel}
         <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -118,7 +145,7 @@
         {/each}
       </Dropdown>
     {:else if type === "range"}
-      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class="{inputCls} rounded-l-lg" bind:value onchange={(e) => handleTimeChange(e)} />
+      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge("rounded-l-lg", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
       <InputAddon class="rounded-none">
         {#if Icon}
           <Icon class="h-4 w-4 text-gray-500 dark:text-gray-400" />
@@ -129,7 +156,7 @@
         {/if}
       </InputAddon>
       <span class="flex items-center justify-center px-2 text-gray-500 dark:text-gray-400">-</span>
-      <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class="{inputCls} rounded-none" bind:value={endValue} onchange={(e) => handleTimeChange(e, true)} />
+      <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge("rounded-none", inputCls)} bind:value={endValue} onchange={(e) => handleTimeChange(e, true)} />
       <InputAddon class="rounded-r-lg">
         {#if Icon}
           <Icon class="h-4 w-4 text-gray-500 dark:text-gray-400" />
@@ -149,11 +176,11 @@
           <div class="flex space-x-4">
             <div class="flex flex-col">
               <Label for={id}>Start time:</Label>
-              <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class="{inputCls} rounded-l-lg border-r" bind:value onchange={(e) => handleTimeChange(e)} />
+              <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge("rounded-l-lg !border-r w-24", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
             </div>
             <div class="flex flex-col">
               <Label for={endId}>End time:</Label>
-              <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class="{inputCls} rounded-l-lg border-r" bind:value={endValue} onchange={(e) => handleTimeChange(e, true)} />
+              <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge("rounded-l-lg !border-r w-24", inputCls)} bind:value={endValue} onchange={(e) => handleTimeChange(e, true)} />
             </div>
           </div>
           <Button color={buttonColor} class="w-full !rounded-l-lg" onclick={applyTimerange}>
@@ -164,17 +191,17 @@
     {:else if type === "timerange-toggle"}
       <div class="flex w-full flex-col space-y-2">
         <div class="flex items-center justify-between">
-          <Toggle id={`${id}-timerange-toggle`} checked={showTimerange} onchange={toggleTimerange} spanClass="me-0" />
+          <Toggle id={`${id}-timerange-toggle`} checked={showTimerange} onchange={toggleTimerange} spanClass="me-0 rounded-lg" />
         </div>
         {#if showTimerange}
-          <div class="flex space-x-4">
+          <div class="flex space-x-4 p-2.5">
             <div class="flex flex-col">
               <Label for={id}>Start time:</Label>
-              <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class="{inputCls} !rounded-lg border-r-1" bind:value onchange={(e) => handleTimeChange(e)} />
+              <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge("rounded-lg !border-r w-24", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
             </div>
             <div class="flex flex-col">
               <Label for={endId}>End time:</Label>
-              <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class="{inputCls} !rounded-lg border-r-1" bind:value={endValue} onchange={(e) => handleTimeChange(e, true)} />
+              <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge("rounded-lg !border-r w-24", inputCls)} bind:value={endValue} onchange={(e) => handleTimeChange(e, true)} />
             </div>
           </div>
         {/if}

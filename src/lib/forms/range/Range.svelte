@@ -1,11 +1,12 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { range } from "./";
   import type { RangeProps } from "$lib/types";
 
-  let { value = $bindable(), appearance = "none", color = "blue", size = "md", class: inputClass, ...restProps }: RangeProps = $props();
+  let { value = $bindable(), appearance = "none", color = "blue", size = "md", inputClass, ...restProps }: RangeProps = $props();
 
-  const inputCls = $derived(range({ class: clsx(inputClass), appearance, color, size }));
+  const inputCls = $derived(twMerge(range({ appearance, color, size }), clsx(inputClass)));
 </script>
 
 <input type="range" bind:value {...restProps} class={inputCls} />

@@ -5,6 +5,7 @@
   import type { ParamsType, PopperProps, TriggeredToggleEvent } from "$lib";
   import { fade } from "svelte/transition";
   import { sineIn } from "svelte/easing";
+  import clsx from "clsx";
 
   const TRIGGER_DELAY = 200;
 
@@ -173,7 +174,7 @@
 <div use:set_triggers hidden></div>
 
 {#if isOpen}
-  <div popover="manual" role="tooltip" bind:this={popover} class:overflow-visible={true} onfocusout={close_popover} onmouseleave={hoverable ? close_popover : undefined} onmouseenter={hoverable ? open_popover : undefined} onbeforetoggle={on_before_toggle} ontoggle={on_toggle} class={className} transition:transition={paramsOptions as ParamsType} onintrostart={() => popover?.showPopover()} onoutroend={() => popover?.hidePopover()} {...restProps}>
+  <div popover="manual" role="tooltip" bind:this={popover} class:overflow-visible={true} onfocusout={close_popover} onmouseleave={hoverable ? close_popover : undefined} onmouseenter={hoverable ? open_popover : undefined} onbeforetoggle={on_before_toggle} ontoggle={on_toggle} class={clsx(className)} transition:transition={paramsOptions as ParamsType} onintrostart={() => popover?.showPopover()} onoutroend={() => popover?.hidePopover()} {...restProps}>
     {@render children()}
     {#if arrow}
       <Arrow {...arrowParams} class={arrowClass} />

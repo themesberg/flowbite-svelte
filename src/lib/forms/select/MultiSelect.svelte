@@ -99,7 +99,7 @@
     <option {value} {disabled}>{name}</option>
   {/each}
 </select>
-<div onclick={toggleDropdown} onfocusout={closeDropdown} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={base({ size, class: clsx(className) })}>
+<div onclick={toggleDropdown} onfocusout={closeDropdown} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={twMerge(base({ size }), clsx(className))}>
   {#if !selectItems.length}
     <span class="text-gray-400">{placeholder}</span>
   {/if}
@@ -127,7 +127,7 @@
   </div>
 
   {#if show}
-    <div role="presentation" class={dropdown({ class: dropdownClass })}>
+    <div role="presentation" class={twMerge(dropdown(), clsx(dropdownClass))}>
       {#each items as item (item.name)}
         <div onclick={() => selectOption(item)} role="presentation" class={dropdownitem({ selected: selectItems.includes(item), active: activeItem === item, disabled: item.disabled })}>
           {item.name}

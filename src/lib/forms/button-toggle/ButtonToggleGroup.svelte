@@ -58,8 +58,8 @@
   setContext("buttonToggleColor", color);
   setContext("buttonToggleSize", size);
   setContext("buttonToggleRounded", roundedSize);
-  setContext("ctxIconClass", ctxIconClass);
-  setContext("ctxBtnClass", ctxBtnClass);
+  setContext("ctxIconClass", clsx(ctxIconClass));
+  setContext("ctxBtnClass", clsx(ctxBtnClass));
 </script>
 
 <div class="inline">

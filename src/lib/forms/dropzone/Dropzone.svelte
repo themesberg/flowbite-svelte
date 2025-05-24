@@ -9,7 +9,6 @@
 
   let { children, files = $bindable<FileList | null>(), class: className, ...restProps }: DropzoneProps = $props();
 
-  const base = $derived(twMerge(dropzone(), clsx(className)));
   let input: HTMLInputElement;
 
   function keydown(ev: KeyboardEvent) {
@@ -52,7 +51,7 @@
   };
 </script>
 
-<button class={base} onkeydown={keydown} onclick={onClick} ondrop={onDrop} ondragover={onDragOver} type="button">
+<button class={twMerge(dropzone(), clsx(className))} onkeydown={keydown} onclick={onClick} ondrop={onDrop} ondragover={onDragOver} type="button">
   {@render children()}
 </button>
 <label class="hidden">

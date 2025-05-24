@@ -1,4 +1,5 @@
 <script lang="ts" generics="T">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { select as selectCls } from ".";
   import { type SelectProps, CloseButton } from "$lib";
@@ -16,8 +17,8 @@
   };
 </script>
 
-<div class={base({ class: clsx(className) })}>
-  <select {disabled} {...restProps} bind:value bind:this={elementRef} class={select({ class: clsx(selectClass) })}>
+<div class={twMerge(base(), clsx(className))}>
+  <select {disabled} {...restProps} bind:value bind:this={elementRef} class={twMerge(select(), clsx(selectClass))}>
     {#if placeholder}
       <option disabled selected value="">{placeholder}</option>
     {/if}
@@ -33,7 +34,7 @@
     {/if}
   </select>
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={clearbtn({ class: clearableClass })} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} {disabled} />
+    <CloseButton onclick={clearAll} class={twMerge(clearbtn(), clsx(clearableClass))} color={clearableColor} aria-label="Clear search value" svgClass={clsx(clearableSvgClass)} {disabled} />
   {/if}
 </div>
 <!--

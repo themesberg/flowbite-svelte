@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { type TagsProps, CloseButton } from "$lib";
   import { tags } from "./theme";
 
@@ -33,15 +35,15 @@
   };
 </script>
 
-<div {...restProps} class={base({ class: className })}>
+<div {...restProps} class={twMerge(base(), clsx(className))}>
   {#each value as tag, index}
-    <div class={tagCls({ class: itemClass })}>
-      <span class={spanCls({ class: spanClass })}>
+    <div class={twMerge(tagCls(), clsx(itemClass))}>
+      <span class={twMerge(spanCls(), clsx(spanClass))}>
         {tag}
       </span>
       <CloseButton
         size={closeBtnSize}
-        class={close({ class: closeClass })}
+        class={twMerge(close(), clsx(closeClass))}
         onclick={() => {
           deleteField(index);
         }}
@@ -57,7 +59,7 @@
     placeholder={value.length === 0 ? placeholder : ""}
     type="text"
     autocomplete="new-password"
-    class={inputCls({ class: inputClass })}
+    class={twMerge(inputCls(), clsx(inputClass))}
   />
 </div>
 

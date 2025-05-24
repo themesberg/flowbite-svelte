@@ -379,9 +379,9 @@ export type ButtonToggleGroupProps = HTMLAttributes<HTMLDivElement> & {
   roundedSize?: ButtonToggleVariants["roundedSize"];
   onSelect?: (val: any) => void;
   children: Snippet;
-  class?: string;
-  ctxIconClass?: string;
-  ctxBtnClass?: string;
+  class?: ClassValue;
+  ctxIconClass?: ClassValue;
+  ctxBtnClass?: ClassValue;
 };
 
 export type ButtonToggleProps = HTMLButtonAttributes & {
@@ -390,10 +390,10 @@ export type ButtonToggleProps = HTMLButtonAttributes & {
   children: Snippet;
   iconSlot: Snippet;
   color?: ButtonToggleVariants["color"];
-  iconClass?: string;
-  class?: string;
-  contentClass?: string;
-  txtClass?: string;
+  iconClass?: ClassValue;
+  class?: ClassValue;
+  contentClass?: ClassValue;
+  txtClass?: ClassValue;
 };
 
 export interface ButtonToggleContext {
@@ -401,8 +401,8 @@ export interface ButtonToggleContext {
   isSelected: (toggleValue: string) => boolean;
 }
 
-export interface CheckIconProps extends SVGAttributes<SVGSVGElement> {
-  class?: string;
+export interface CheckIconProps extends Omit<SVGAttributes<SVGSVGElement>, "class"> {
+  class?: ClassValue;
 }
 
 // card
@@ -716,7 +716,7 @@ export interface CheckboxItem {
 
 export type CheckboxColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
 
-export interface CheckboxProps extends Omit<HTMLInputAttributes, "children" | "color"> {
+export interface CheckboxProps extends Omit<HTMLInputAttributes, "children" | "color" | "class"> {
   children?: Snippet<
     [
       | {
@@ -734,12 +734,13 @@ export interface CheckboxProps extends Omit<HTMLInputAttributes, "children" | "c
   group?: (string | number)[];
   choices?: CheckboxItem[];
   indeterminate?: boolean;
-  divClass?: string;
+  divClass?: ClassValue;
   labelProps?: Record<string, any>;
+  class?: ClassValue;
 }
 
 // checkbox-button
-export interface CheckboxButtonProps extends Omit<HTMLInputAttributes, "size"> {
+export interface CheckboxButtonProps extends Omit<HTMLInputAttributes, "size" | "class"> {
   group?: (string | number)[];
   value?: string | number;
   checked?: boolean | undefined;
@@ -749,12 +750,14 @@ export interface CheckboxButtonProps extends Omit<HTMLInputAttributes, "size"> {
   size?: ButtonProps["size"];
   color?: ButtonProps["color"];
   shadow?: boolean;
+  class?: ClassValue;
 }
 
 // dropzone
-export interface DropzoneProps extends HTMLInputAttributes {
+export interface DropzoneProps extends Omit<HTMLInputAttributes, "class"> {
   children: Snippet;
   files?: FileList | null;
+  class?: ClassValue;
 }
 
 // fileupload
@@ -764,15 +767,15 @@ export interface FileuploadProps extends Omit<HTMLInputAttributes, "size"> {
   color?: InputProps<never>["color"];
   elementRef?: HTMLInputElement;
   clearable?: boolean;
-  clearableSvgClass?: string;
+  clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];
   clearableOnClick?: () => void;
-  clearableClass?: string;
-  wrapperClass?: string;
+  clearableClass?: ClassValue;
+  wrapperClass?: ClassValue;
 }
 
 // floatinglabel-input
-export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size"> {
+export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size" | "class"> {
   children: Snippet;
   id?: string;
   value?: string | number | readonly string[] | undefined;
@@ -781,26 +784,29 @@ export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size
   variant?: FloatingLabelInputVaratiants["variant"];
   size?: FloatingLabelInputVaratiants["size"];
   color?: FloatingLabelInputVaratiants["color"];
-  inputClass?: string;
-  labelClass?: string;
+  inputClass?: ClassValue;
+  labelClass?: ClassValue;
   clearable?: boolean;
-  clearableSvgClass?: string;
+  clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];
-  clearableClass?: string;
+  clearableClass?: ClassValue;
   clearableOnClick?: () => void;
   data?: string[];
   maxSuggestions?: number;
   onSelect?: (item: string) => void;
-  comboClass?: string;
+  comboClass?: ClassValue;
+  class?: ClassValue;
 }
 
 // helper
-export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> {}
+export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color" | "class"> {
+  class?: ClassValue;
+}
 
 // input
 export type InputValue = string | number | string[] | undefined;
 
-export interface InputProps<T extends InputValue = string> extends Omit<HTMLInputAttributes, "size" | "children" | "value"> {
+export interface InputProps<T extends InputValue = string> extends Omit<HTMLInputAttributes, "size" | "children" | "value" | "class"> {
   children?: Snippet<[{ class: string } & Omit<InputProps<T>, "children" | "left" | "right" | "size">]>;
   left?: Snippet;
   right?: Snippet;
@@ -808,45 +814,47 @@ export interface InputProps<T extends InputValue = string> extends Omit<HTMLInpu
   value?: T;
   elementRef?: HTMLInputElement;
   color?: InputVariants["color"];
-  classLeft?: string;
-  classRight?: string;
-  divClass?: string;
-  wrapperClass?: string;
+  leftClass?: ClassValue;
+  rightClass?: ClassValue;
+  divClass?: ClassValue;
+  wrapperClass?: ClassValue;
   clearable?: boolean;
-  clearableSvgClass?: string;
+  clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];
-  clearableClass?: string;
+  clearableClass?: ClassValue;
   clearableOnClick?: () => void;
   data?: string[];
   maxSuggestions?: number;
   onSelect?: (item: string) => void;
-  comboClass?: string;
+  comboClass?: ClassValue;
+  class?: ClassValue;
 }
 
 // input-addon
-export interface InputAddonProps extends HTMLAttributes<HTMLDivElement> {
+export interface InputAddonProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   children: Snippet;
-  class?: string;
+  class?: ClassValue;
   size?: "sm" | "md" | "lg" | undefined;
 }
 
 // label
-export interface LabelProps extends HTMLLabelAttributes {
+export interface LabelProps extends Omit<HTMLLabelAttributes, "class"> {
   children: Snippet;
   color?: LabelVariants["color"];
   show?: boolean;
+  class?: ClassValue;
 }
 
 // radio
 export interface RadioProps<T> extends RadioVariants, Omit<HTMLInputAttributes, "color"> {
   group?: T;
   value?: T;
-  inputClass?: string;
-  labelClass?: string;
+  inputClass?: ClassValue;
+  labelClass?: ClassValue;
 }
 
 // raido-button
-export interface RadioButtonProps<T> extends Omit<HTMLInputAttributes, "size"> {
+export interface RadioButtonProps<T> extends Omit<HTMLInputAttributes, "size" | "class"> {
   group?: T;
   value?: T;
   inline?: boolean;
@@ -855,13 +863,14 @@ export interface RadioButtonProps<T> extends Omit<HTMLInputAttributes, "size"> {
   size?: ButtonProps["size"];
   color?: ButtonProps["color"];
   shadow?: boolean;
-  class?: string;
-  checkedClass?: string;
+  class?: ClassValue;
+  checkedClass?: ClassValue;
 }
 
 // range
 export interface RangeProps extends RangeVariants, Omit<HTMLInputAttributes, "size" | "color"> {
   value?: number | string;
+  inputClass?: ClassValue;
 }
 
 // search
@@ -870,10 +879,11 @@ export interface SearchProps extends SearchVariants, Omit<HTMLInputAttributes, "
   value?: string;
   elementRef?: HTMLInputElement;
   clearable?: boolean;
-  clearableSvgClass?: string;
+  clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];
-  clearableClass?: string;
+  clearableClass?: ClassValue;
   clearableOnClick?: () => void;
+  inputClass?: ClassValue;
 }
 
 // select
@@ -884,38 +894,40 @@ export type SelectOptionType<T> = {
   [key: string]: any;
 };
 
-export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttributes, "size" | "disabled"> {
+export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttributes, "size" | "disabled" | "class"> {
   children?: Snippet;
   items?: SelectOptionType<T>[];
   elementRef?: HTMLSelectElement;
   placeholder?: string;
-  selectClass?: string;
+  selectClass?: ClassValue;
   clearable?: boolean;
-  clearableSvgClass?: string;
+  clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];
-  clearableClass?: string;
+  clearableClass?: ClassValue;
   clearableOnClick?: () => void;
   disabled?: boolean;
+  class?: ClassValue;
 }
 
-export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelectAttributes, "size" | "children"> {
+export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelectAttributes, "size" | "children" | "class"> {
   children?: Snippet<[{ item: SelectOptionType<T>; clear: () => void }]>;
   items: SelectOptionType<T>[];
   value: T[];
-  dropdownClass?: string;
+  dropdownClass?: ClassValue;
   placeholder?: string;
   disabled?: boolean;
+  class?: ClassValue;
 }
 
 // Tags
-export interface TagsProps extends HTMLAttributes<HTMLDivElement> {
+export interface TagsProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   value: string[];
-  itemClass?: string;
+  itemClass?: ClassValue;
   placeholder?: string;
-  class?: string;
-  spanClass?: string;
-  closeClass?: string;
-  inputClass?: string;
+  class?: ClassValue;
+  spanClass?: ClassValue;
+  closeClass?: ClassValue;
+  inputClass?: ClassValue;
   closeBtnSize?: CloseButtonVariants["size"];
 }
 
@@ -943,9 +955,9 @@ export interface TimepickerProps {
   optionLabel?: string;
   options?: TimePickerOption[];
   size?: ButtonGroupSizeType; // Use the specific ButtonGroupSizeType
-  divClass?: string;
-  inputClass?: string;
-  selectClass?: string;
+  divClass?: ClassValue;
+  inputClass?: ClassValue;
+  selectClass?: ClassValue;
   timerangeLabel?: string;
   timerangeButtonLabel?: string;
   timeIntervals?: string[];
@@ -955,22 +967,24 @@ export interface TimepickerProps {
 }
 
 // textarea
-export interface TextareaProps extends HTMLTextareaAttributes {
+export interface TextareaProps extends Omit<HTMLTextareaAttributes, "class"> {
   header?: Snippet;
   footer?: Snippet;
   value?: string;
   elementRef?: HTMLTextAreaElement;
   wrapped?: boolean;
-  divClass?: string | null;
-  innerClass?: string;
-  headerClass?: string;
-  footerClass?: string;
+  divClass?: ClassValue;
+  innerClass?: ClassValue;
+  headerClass?: ClassValue;
+  footerClass?: ClassValue;
   cols?: number;
   clearable?: boolean;
-  clearableSvgClass?: string;
+  clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];
-  clearableClass?: string;
+  clearableClass?: ClassValue;
   clearableOnClick?: () => void;
+  class?: ClassValue;
+  textareaClass?: ClassValue;
 }
 
 // toggle

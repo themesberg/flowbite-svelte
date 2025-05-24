@@ -5,7 +5,7 @@
   import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
 
-  let { children, id = idGenerator(), value = $bindable(), elementRef = $bindable(), "aria-describedby": ariaDescribedby, variant = "standard", size = "default", color = "default", class: divClass, inputClass, labelClass, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, ...restProps }: FloatingLabelInputProps = $props();
+  let { children, id = idGenerator(), value = $bindable(), elementRef = $bindable(), "aria-describedby": ariaDescribedby, variant = "standard", size = "default", color = "default", class: className, inputClass, labelClass, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, ...restProps }: FloatingLabelInputProps = $props();
 
   const { base, input, label, clearbtn, combo } = $derived(floatingLabelInput({ variant, size, color }));
 
@@ -125,10 +125,10 @@
   <div tabindex="-1" bind:this={dummyFocusDiv} class="sr-only"></div>
 {/if}
 
-<div class={twMerge(base(), clsx(isCombobox ? "relative" : "", clsx(divClass)))}>
-  <input {id} placeholder=" " bind:value bind:this={elementRef} {...restProps} aria-describedby={ariaDescribedby} class={input({ class: inputClass })} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} />
+<div class={twMerge(base(), clsx(isCombobox ? "relative" : "", clsx(className)))}>
+  <input {id} placeholder=" " bind:value bind:this={elementRef} {...restProps} aria-describedby={ariaDescribedby} class={twMerge(input(), clsx(inputClass))} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} />
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={twMerge(clearbtn(), clsx(clearableClass))} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} />
+    <CloseButton onclick={clearAll} class={twMerge(clearbtn(), clsx(clearableClass))} color={clearableColor} aria-label="Clear search value" svgClass={clsx(clearableSvgClass)} />
   {/if}
   <label for={id} class={twMerge(label(), clsx(labelClass))}>
     {@render children()}

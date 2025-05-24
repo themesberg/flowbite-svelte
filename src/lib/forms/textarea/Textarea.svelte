@@ -1,9 +1,10 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { textarea } from ".";
   import { type TextareaProps, CloseButton } from "$lib";
 
-  let { header, footer, value = $bindable(), elementRef = $bindable(), divClass, innerClass, headerClass, footerClass, disabled, class: className, cols, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, ...restProps }: TextareaProps = $props();
+  let { header, footer, value = $bindable(), elementRef = $bindable(), divClass, innerClass, headerClass, footerClass, disabled, class: className, cols, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, textareaClass, ...restProps }: TextareaProps = $props();
 
   let hasHeader = $derived(!!header);
   let hasFooter = $derived(!!footer);
@@ -20,28 +21,28 @@
   };
 </script>
 
-<div class={divWrapper({ class: divClass })}>
+<div class={twMerge(divWrapper(), clsx(divClass))}>
   {#if !wrapped}
-    <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={wrapper({ class: clsx(className) })}></textarea>
+    <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={twMerge(wrapper(), clsx(className))}></textarea>
   {:else}
-    <div class={wrapper({ class: clsx(className) })}>
+    <div class={twMerge(wrapper(), clsx(className))}>
       {#if header}
-        <div class={headerCls({ class: headerClass })}>
+        <div class={twMerge(headerCls(), clsx(headerClass))}>
           {@render header()}
         </div>
       {/if}
-      <div class={innerWrapper({ class: innerClass })}>
-        <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={base()}></textarea>
+      <div class={twMerge(innerWrapper(), clsx(innerClass))}>
+        <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={twMerge(base(), clsx(textareaClass))}></textarea>
       </div>
       {#if footer}
-        <div class={footerCls({ class: footerClass })}>
+        <div class={twMerge(footerCls(), clsx(footerClass))}>
           {@render footer()}
         </div>
       {/if}
     </div>
   {/if}
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={clearbtn({ class: clearableClass })} color={clearableColor} aria-label="Clear search value" svgClass={clearableSvgClass} />
+    <CloseButton onclick={clearAll} class={twMerge(clearbtn(), clsx(clearableClass))} color={clearableColor} aria-label="Clear search value" svgClass={clsx(clearableSvgClass)} />
   {/if}
 </div>
 
