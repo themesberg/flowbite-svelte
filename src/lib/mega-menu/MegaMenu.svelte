@@ -19,7 +19,7 @@
 
 <Popper color={full ? "default" : "dropdown"} arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={twMerge(base(), clsx(className))}>
   <div class={div()}>
-    <ul class={twMerge(ul(), clsx(ulClass)}>
+    <ul class={twMerge(ul(), clsx(ulClass))}>
       {#each items as item, index}
         <li>
           {@render children({ item, index })}

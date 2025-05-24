@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { navbar_container } from "./theme";
   import type { NavContainerProps } from "$lib/types";
@@ -6,7 +7,7 @@
   let { children, fluid, class: clasName, ...restProps }: NavContainerProps = $props();
 </script>
 
-<div {...restProps} class={navbar_container({ fluid, class: clsx(clasName) })}>
+<div {...restProps} class={twMerge(navbar_container({ fluid }), clsx(clasName))}>
   {@render children?.()}
 </div>
 

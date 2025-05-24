@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import ToolbarButton from "../toolbar/ToolbarButton.svelte";
@@ -17,8 +18,8 @@
   };
 </script>
 
-<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={base({ class: clsx(className) })}>
-  <Menu class={menu({ class: menuClass })} />
+<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={twMerge(base(), clsx(className))}>
+  <Menu class={twMerge(menu(), clsx(menuClass))} />
 </ToolbarButton>
 
 <!--

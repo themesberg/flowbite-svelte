@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { navbar_li } from "./theme";
@@ -16,7 +17,7 @@
   });
 
   let active = $derived(navUrl ? restProps.href === navUrl : false);
-  let liClass = $derived(navbar_li({ hidden: navState.hidden, class: clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), className) }));
+  let liClass = $derived(twMerge(navbar_li({ hidden: navState.hidden }),  clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), className) ));
 </script>
 
 <li>

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { paginationbutton } from ".";
   import type { PaginationButtonProps } from "$lib/types";
@@ -9,14 +10,13 @@
   const group = getContext<boolean>("group");
   const table = getContext<boolean>("table");
 
-  const paginationClass = $derived(
+  const paginationCls = $derived(
     paginationbutton({
       size: getContext("size") ?? size,
       active,
       group,
       table,
-      disabled,
-      class: clsx(className)
+      disabled
     })
   );
 
@@ -30,13 +30,13 @@
 </script>
 
 {#if href}
-  <a {href} {...restProps} class={paginationClass} onclick={handleClick}>
+  <a {href} {...restProps} class={twMerge(paginationCls, clsx(className))} onclick={handleClick}>
     {#if children}
       {@render children()}
     {/if}
   </a>
 {:else}
-  <button {...restProps} {disabled} class={paginationClass} onclick={handleClick}>
+  <button {...restProps} {disabled} class={twMerge(paginationCls, clsx(className))} onclick={handleClick}>
     {#if children}
       {@render children()}
     {/if}

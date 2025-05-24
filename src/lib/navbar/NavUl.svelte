@@ -3,7 +3,7 @@
   import { sineIn } from "svelte/easing";
   import { writable } from "svelte/store";
   import { slide } from "svelte/transition";
-
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { navbar_ul } from "./theme";
   import type { NavbarState, NavUlProps } from "$lib/types";
@@ -23,8 +23,8 @@
 
   $effect(() => {
     // setContext<NavbarLiType>("navbarContext", { activeClass: active({ class: activeClass }), nonActiveClass: nonActive({ class: nonActiveClass }) });
-    navState.activeClass = active({ class: activeClass });
-    navState.nonActiveClass = nonActive({ class: nonActiveClass });
+    navState.activeClass = twMerge(active(), clsx(activeClass));
+    navState.nonActiveClass = twMerge(nonActive(), clsx(nonActiveClass));
   });
 
   $effect(() => {
@@ -32,21 +32,21 @@
   });
   setContext("activeUrl", activeUrlStore);
 
-  let _divClass: string = $derived(base({ class: clsx(clasName) }));
-  let _ulClass: string = $derived(ul({ class: ulClass }));
+  let divCls: string = $derived(twMerge(base(), clsx(clsx(clasName))));
+  let ulCls: string = $derived(twMerge(ul(), clsx(ulClass)));
 </script>
 
 {#if !hidden}
-  <div {...restProps} class={_divClass} transition:slide={slideParamsOptions}>
+  <div {...restProps} class={divCls} transition:slide={slideParamsOptions}>
     <!-- onclick -->
-    <ul class={_ulClass}>
+    <ul class={ulCls}>
       {@render children?.()}
       <ul></ul>
     </ul>
   </div>
 {:else}
-  <div {...restProps} class={_divClass}>
-    <ul class={_ulClass}>
+  <div {...restProps} class={divCls}>
+    <ul class={ulCls}>
       {@render children?.()}
     </ul>
   </div>

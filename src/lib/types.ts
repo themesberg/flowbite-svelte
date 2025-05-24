@@ -1105,11 +1105,12 @@ export interface ModalProps extends ModalVariants, Omit<HTMLDialogAttributes, "c
 }
 
 // navbar
-export interface MenuProps extends SVGAttributes<SVGSVGElement> {
+export interface MenuProps extends Omit<SVGAttributes<SVGSVGElement>, "class"> {
   size?: string;
   color?: string;
   variation?: "solid" | "outline";
   ariaLabel?: string;
+  class?: ClassValue;
 }
 
 export type NavbarState = {
@@ -1118,35 +1119,41 @@ export type NavbarState = {
   nonActiveClass?: string;
 };
 
-export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "children" | "class"> {
   children: Snippet<[{ hidden: boolean; toggle: () => void; NavContainer: Component }]>;
   fluid?: boolean;
-  navContainerClass?: string;
+  navContainerClass?: ClassValue;
+  class?: ClassValue;
 }
 
-export interface NavBrandProps extends HTMLAnchorAttributes {}
+export interface NavBrandProps extends Omit<HTMLAnchorAttributes, "class"> {
+  class?: ClassValue;
+}
 
-export interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
+export interface NavContainerProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   fluid?: boolean;
+  class?: ClassValue;
 }
 
 export type NavHamburgerProps = ToolbarButtonProps & {
-  menuClass?: string;
-  classMenu?: string;
+  menuClass?: ClassValue;
+  class?: ClassValue;
 };
 
-export interface NavUlProps extends HTMLAttributes<HTMLDivElement> {
+export interface NavUlProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   activeUrl?: string;
-  ulClass?: string;
+  ulClass?: ClassValue;
   hidden?: boolean;
   slideParams?: TransitionParamTypes;
-  activeClass?: string;
-  nonActiveClass?: string;
+  activeClass?: ClassValue;
+  nonActiveClass?: ClassValue;
+  class?: ClassValue;
 }
 
 export type NavLiProps = AnchorButtonAttributes & {
-  activeClass?: string;
-  nonActiveClass?: string;
+  activeClass?: ClassValue;
+  nonActiveClass?: ClassValue;
+  class?: ClassValue;
 };
 
 // toolbar
@@ -1182,17 +1189,18 @@ export interface PaginationItemSpecificProps {
 
 export type PaginationHTMLButtonOrAnchorAttributes = HTMLButtonAttributes & HTMLAnchorAttributes;
 
-export interface PaginationButtonProps extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {
+export interface PaginationButtonProps extends PaginationItemVariants, Omit<PaginationHTMLButtonOrAnchorAttributes, "class"> {
   children?: Snippet;
   onclick?: () => void;
   disabled?: boolean;
+  class?: ClassValue;
 }
 
-export interface PaginationNavProps extends HTMLAttributes<HTMLElement>, PaginationVariants {
+export interface PaginationNavProps extends Omit<HTMLAttributes<HTMLElement>, "class">, PaginationVariants {
   prevContent?: Snippet;
   nextContent?: Snippet;
-  prevClass?: string;
-  nextClass?: string;
+  prevClass?: ClassValue;
+  nextClass?: ClassValue;
   currentPage: number;
   totalPages: number;
   visiblePages?: number;
@@ -1203,13 +1211,14 @@ export interface PaginationNavProps extends HTMLAttributes<HTMLElement>, Paginat
   showIcons?: boolean;
   ariaLabel?: string;
   size?: "default" | "large";
-  class?: string;
-  spanClass?: string;
-  tableDivClass?: string;
+  class?: ClassValue;
+  spanClass?: ClassValue;
+  tableDivClass?: ClassValue;
 }
 
-export interface PaginationItemProps extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {
+export interface PaginationItemProps extends PaginationItemVariants, Omit<PaginationHTMLButtonOrAnchorAttributes, "class"> {
   children?: Snippet;
+  class?: ClassValue;
 }
 
 export interface PaginationProps extends PaginationVariants, HTMLLiAttributes {

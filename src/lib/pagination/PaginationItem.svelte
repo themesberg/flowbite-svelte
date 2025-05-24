@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { paginationItem } from ".";
   import type { PaginationItemProps } from "$lib/types";
@@ -8,17 +9,17 @@
 
   const group = getContext<boolean>("group");
   const table = getContext<boolean>("table");
-  const paginationClass = $derived(paginationItem({ size: getContext("size") ?? size, active, group, table, class: clsx(className) }));
+  const paginationCls = $derived(twMerge(paginationItem({ size: getContext("size") ?? size, active, group, table }), clsx(className)));
 </script>
 
 {#if href}
-  <a {href} {...restProps} class={paginationClass}>
+  <a {href} {...restProps} class={paginationCls}>
     {#if children}
       {@render children()}
     {/if}
   </a>
 {:else}
-  <button {...restProps} class={paginationClass}>
+  <button {...restProps} class={paginationCls}>
     {#if children}
       {@render children()}
     {/if}

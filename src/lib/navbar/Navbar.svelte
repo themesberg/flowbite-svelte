@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { setContext } from "svelte";
   import NavContainer from "./NavContainer.svelte";
@@ -18,8 +19,8 @@
 </script>
 
 <nav>
-  <div {...restProps} class={navbar({ class: clsx(className) })}>
-    <NavContainer {fluid} class={navContainerClass}>
+  <div {...restProps} class={twMerge(navbar(), clsx(className))}>
+    <NavContainer {fluid} class={clsx(navContainerClass)}>
       {@render children({ hidden: navState.hidden, toggle, NavContainer })}
     </NavContainer>
   </div>

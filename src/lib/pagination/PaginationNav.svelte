@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { setContext } from "svelte";
   import { paginationnav } from "./theme";
   import { type PaginationNavProps, PaginationButton } from "$lib";
@@ -54,17 +56,17 @@
 
 <nav aria-label={ariaLabel} {...restProps}>
   {#if layout === "table"}
-    <div class={tableDiv({ class: tableDivClass })}>
-      Showing <span class={tableSpan({ class: spanClass })}>{currentPage}</span>
+    <div class={twMerge(tableDiv(), clsx(tableDivClass))}>
+      Showing <span class={twMerge(tableSpan(), clsx(spanClass))}>{currentPage}</span>
       of
-      <span class={tableSpan({ class: spanClass })}>{totalPages}</span>
+      <span class={twMerge(tableSpan(), clsx(spanClass))}>{totalPages}</span>
       Entries
     </div>
   {/if}
 
-  <ul class={base({ class: className })}>
+  <ul class={twMerge(base(), clsx(className))}>
     <li {...restProps}>
-      <PaginationButton onclick={goToPreviousPage} disabled={currentPage === 1} class={prevItem({ class: prevClass })}>
+      <PaginationButton onclick={goToPreviousPage} disabled={currentPage === 1} class={twMerge(prevItem(), clsx(prevClass))}>
         {#if prevContent}
           {@render prevContent()}
         {:else}
@@ -82,7 +84,7 @@
       {/each}
     {/if}
     <li {...restProps}>
-      <PaginationButton onclick={goToNextPage} disabled={currentPage === totalPages} class={nextItem({ class: nextClass })}>
+      <PaginationButton onclick={goToNextPage} disabled={currentPage === totalPages} class={twMerge(nextItem(), clsx(nextClass))}>
         {#if nextContent}
           {@render nextContent()}
         {:else}
