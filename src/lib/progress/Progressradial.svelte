@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
+  import { progressradial } from "$lib/progress/theme";
+  import type { ProgressradialProps } from "$lib/types";
   import clsx from "clsx";
   import { cubicOut } from "svelte/easing";
   import { Tween } from "svelte/motion";
-  import { progressradial } from "$lib/progress/theme";
-  import type { ProgressradialProps } from "$lib/types";
 
-  let { progress = 45, radius = 42, startingPosition = "top", precision = 0, tweenDuration = 400, animate = false, size = "h-24 w-24", thickness = 4, labelInside = false, labelOutside = "", easing = cubicOut, color = "primary", labelInsideClass, outsideSpanClass, outsideProgressClass, labelOutsideDivClass, divClass, ...restProps }: ProgressradialProps = $props();
+  let { progress = 45, radius = 42, startingPosition = "top", precision = 0, tweenDuration = 400, animate = false, size = "h-24 w-24", thickness = 4, labelInside = false, labelOutside = "", easing = cubicOut, color = "primary", class: className, classes, ...restProps }: ProgressradialProps = $props();
 
   const _progress = new Tween(0, {
     duration: animate ? tweenDuration : 0,
@@ -36,13 +35,13 @@
 
 <div class="flex flex-col items-center">
   {#if labelOutside}
-    <div class={twMerge(outsideDiv(), clsx(labelOutsideDivClass))}>
-      <span class={twMerge(outsideSpan(),clsx(outsideSpanClass))}>{labelOutside}</span>
-      <span class={twMerge(outsideProgress(),clsx(outsideProgressClass))}>{formattedProgress}%</span>
+    <div class={outsideDiv({ class: classes?.outsideDiv })}>
+      <span class={outsideSpan({ class: classes?.outsideSpan })}>{labelOutside}</span>
+      <span class={outsideProgress({ class: classes?.outsideProgress })}>{formattedProgress}%</span>
     </div>
   {/if}
 
-  <div {...restProps} class={twMerge(base(), size, clsx(divClass))}>
+  <div {...restProps} class={base({ class: clsx(size, classes?.base, className) })}>
     <svg viewBox="0 0 100 100" class="h-full w-full" style="transform: rotate({rotationAngle}deg)">
       <!-- Background circle -->
       <circle cx="50" cy="50" r={radius} class={circleBackground()} fill="none" stroke-width={thickness} />
@@ -52,7 +51,7 @@
     </svg>
 
     {#if labelInside}
-      <div class={twMerge(labelInsideDiv(), clsx(labelInsideClass))}>
+      <div class={labelInsideDiv({ class: classes?.labelInsideDiv })}>
         {formattedProgress}%
       </div>
     {/if}
@@ -63,7 +62,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1261)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1259)
 ## Props
 @prop progress = 45
 @prop radius = 42
@@ -77,10 +76,7 @@
 @prop labelOutside = ""
 @prop easing = cubicOut
 @prop color = "primary"
-@prop labelInsideClass
-@prop outsideSpanClass
-@prop outsideProgressClass
-@prop labelOutsideDivClass
-@prop divClass
+@prop class: className
+@prop classes
 @prop ...restProps
 -->

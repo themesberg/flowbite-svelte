@@ -1,4 +1,7 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type ProgressbarClasses = Partial<typeof progressbar>["slots"];
+export type ProgressbarVariants = VariantProps<typeof progressbar> & { classes: ProgressbarClasses };
 
 export const progressbar = tv({
   slots: {
@@ -115,6 +118,9 @@ export const progressbar = tv({
     labelInside: false
   }
 });
+
+export type ProgressradialClasses = Partial<typeof progressradial>["slots"];
+export type ProgressradialVariants = VariantProps<typeof progressradial> & { classes: ProgressradialClasses };
 
 export const progressradial = tv({
   slots: {
