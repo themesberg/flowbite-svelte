@@ -1,10 +1,8 @@
 <script lang="ts">
-  import { type ParamsType, type DrawerProps, trapFocus } from "$lib";
+  import { type ParamsType, type DrawerProps, trapFocus, cn } from "$lib";
   import { fly } from "svelte/transition";
   import { sineIn } from "svelte/easing";
   import { drawer } from ".";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
 
   let { children, hidden = $bindable(), closeDrawer = () => (hidden = true), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, transitionParams, transitionType = fly, ...restProps }: DrawerProps = $props();
 
@@ -29,8 +27,8 @@
 <svelte:window bind:innerWidth bind:innerHeight />
 
 {#if !hidden}
-  <div role="presentation" class={twMerge(backdropCls(), clsx(backdropClass))} onclick={activateClickOutside ? closeDrawer : undefined}></div>
-  <div use:trapFocus={{ onEscape: closeDrawer }} {...restProps} class={twMerge(base(),clsx(className))} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
+  <div role="presentation" class={cn(backdropCls(), backdropClass)} onclick={activateClickOutside ? closeDrawer : undefined}></div>
+  <div use:trapFocus={{ onEscape: closeDrawer }} {...restProps} class={cn(base(), className)} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
     {@render children?.()}
   </div>
 {/if}
@@ -39,7 +37,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L584)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L607)
 ## Props
 @prop children
 @prop hidden = $bindable()

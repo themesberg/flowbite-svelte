@@ -2,7 +2,7 @@
   "name": "Input",
   "type": {
     "name": "InputProps<InputValue>",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L775"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L809"
   },
   "props": [
     ["children", ""],
@@ -15,8 +15,8 @@
     ["color", "\"default\""],
     ["class: className", ""],
     ["wrapperClass", ""],
-    ["classLeft", ""],
-    ["classRight", ""],
+    ["leftClass", ""],
+    ["rightClass", ""],
     ["divClass", ""],
     ["clearableSvgClass", ""],
     ["clearableColor", "\"none\""],

@@ -1,4 +1,2 @@
-import Indicator from "./Indicator.svelte";
-import { indicator } from "./theme";
-
-export { Indicator, indicator };
+export { default as Indicator } from "./Indicator.svelte";
+export { indicator } from "./theme";

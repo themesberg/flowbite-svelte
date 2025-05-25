@@ -1,4 +1,2 @@
-import Kbd from "./Kbd.svelte";
-import { kbd } from "./theme";
-
-export { Kbd, kbd };
+export { default as Kbd } from "./Kbd.svelte";
+export { kbd } from "./theme";

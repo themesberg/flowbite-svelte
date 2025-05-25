@@ -1,9 +1,7 @@
-import Input from "./Input.svelte";
+export { default as Input } from "./Input.svelte";
 import type { SizeType } from "$lib/types";
-import { input } from "./theme";
+export { input } from "./theme";
 
-function clampSize(s: SizeType) {
+export function clampSize(s: SizeType) {
   return s && s === "xs" ? "sm" : s === "xl" ? "lg" : s;
 }
-
-export { Input, input, clampSize };

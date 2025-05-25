@@ -24,6 +24,23 @@ Use this example of a default timepicker component to allow the user to select a
 <Timepicker />
 ```
 
+## Using state and bind
+
+```svelte
+<script lang="ts">
+  import { Label, Timepicker } from "$lib";
+  let selectedTime = $state("09:00");
+  function handleChange(data: { time: string; endTime: string; [key: string]: string }): void {
+    if (data) {
+      selectedTime = data.time;
+    }
+  }
+</script>
+
+<Label>Select Time: {selectedTime}</Label>
+<Timepicker bind:value={selectedTime} />
+```
+
 ## Timepicker with icon
 
 This example can be used to select a time via an input field where you can add an icon to the input group. You can use a Flowbite Svelte icon component or any other icon component.
@@ -140,7 +157,7 @@ Use this example to select a time interval using two input fields, often used fo
 </script>
 
 <Label>Select Time Range:</Label>
-<Timepicker type="range" onselect={handleRangeChange} value={selectedTimeRange.time} endValue={selectedTimeRange.endTime} />
+<Timepicker type="range" onselect={handleRangeChange} value={selectedTimeRange.time} endValue={selectedTimeRange.endTime} divClass="shadow-none" />
 <P>Selected Range: {selectedTimeRange.time} - {selectedTimeRange.endTime}</P>
 ```
 
@@ -190,7 +207,7 @@ This example demonstrates a timerange picker that can be toggled on and off, all
 </script>
 
 <Label class="mb-2" for="timerange-toggle">Toggle Time Range:</Label>
-<Timepicker type="timerange-toggle" onselect={handleTimerangeToggleChange} value={selectedTimerangeToggle.time} endValue={selectedTimerangeToggle.endTime} divClass="" />
+<Timepicker type="timerange-toggle" onselect={handleTimerangeToggleChange} value={selectedTimerangeToggle.time} endValue={selectedTimerangeToggle.endTime} divClass="shadow-none" />
 <P>Selected Range: {selectedTimerangeToggle.time} - {selectedTimerangeToggle.endTime}</P>
 ```
 

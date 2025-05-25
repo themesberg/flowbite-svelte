@@ -1,21 +1,19 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { android } from ".";
-  import type { AndroidProps } from "$lib/types";
+  import { type AndroidProps, cn } from "$lib";
 
   let { children, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class, ...restProps }: AndroidProps = $props();
 
   const { div, slot, top, leftTop, leftMid, leftBot, right } = android();
 </script>
 
-<div {...restProps} class={twMerge(div(), clsx(divClass))}>
-  <div class={twMerge(top(), clsx(div2Class))}></div>
-  <div class={twMerge(leftTop(), clsx(div3Class))}></div>
-  <div class={twMerge(leftMid(), clsx(div4Class))}></div>
-  <div class={twMerge(leftBot(), clsx(div5Class))}></div>
-  <div class={twMerge(right(), clsx(div6Class))}></div>
-  <div class={twMerge(slot(), clsx(div7Class))}>
+<div {...restProps} class={cn(div(), divClass)}>
+  <div class={cn(top(), div2Class)}></div>
+  <div class={cn(leftTop(), div3Class)}></div>
+  <div class={cn(leftMid(), div4Class)}></div>
+  <div class={cn(leftBot(), div5Class)}></div>
+  <div class={cn(right(), div6Class)}></div>
+  <div class={cn(slot(), div7Class)}>
     {#if children}
       {@render children()}
     {/if}
@@ -26,7 +24,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L532)
+[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L555)
 ## Props
 @prop children
 @prop divClass

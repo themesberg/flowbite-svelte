@@ -2,9 +2,7 @@
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
   import { canChangeSlide } from "./CarouselSlide";
-  import ControlButton from "./ControlButton.svelte";
-  import type { State, ControlsProps } from "$lib/types";
-  import clsx from "clsx";
+  import { type State, type ControlsProps, ControlButton, cn } from "$lib";
 
   let { children, class: className, ...restProps }: ControlsProps = $props();
 
@@ -44,15 +42,15 @@
 {#if children}
   {@render children(changeSlide)}
 {:else}
-  <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={clsx(className)} {...restProps} />
-  <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={clsx(className)} {...restProps} />
+  <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={cn(className)} {...restProps} />
+  <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={cn(className)} {...restProps} />
 {/if}
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L454)
+[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L472)
 ## Props
 @prop children
 @prop class: className

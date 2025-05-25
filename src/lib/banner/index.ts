@@ -1,4 +1,2 @@
-import Banner from "./Banner.svelte";
-import { banner } from "./theme";
-
-export { Banner, banner };
+export { default as Banner } from "./Banner.svelte";
+export { banner } from "./theme";

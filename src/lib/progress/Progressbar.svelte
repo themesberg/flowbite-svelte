@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { cubicOut } from "svelte/easing";
   import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
+  import { cubicOut } from "svelte/easing";
   import { Tween } from "svelte/motion";
   import { progressbar } from ".";
   import type { ProgressbarProps } from "$lib/types";
@@ -24,18 +25,18 @@
 </script>
 
 {#if labelOutside}
-  <div {...restProps} class={outsideDiv({ class: labeloutsidedivClass })}>
-    <span class={oustsideSpan({ class: oustsideSpanClass })}>{labelOutside}</span>
-    <span class={outsideProgress({ class: oustsideProgressClass })}>{progress}%</span>
+  <div {...restProps} class={twMerge(outsideDiv(), clsx(labeloutsidedivClass))}>
+    <span class={twMerge(oustsideSpan(), clsx(oustsideSpanClass))}>{labelOutside}</span>
+    <span class={twMerge(outsideProgress(), clsx(oustsideProgressClass))}>{progress}%</span>
   </div>
 {/if}
-<div {...restProps} class={twMerge(base({ class: divClass }), size)}>
+<div {...restProps} class={twMerge(base(), size, clsx(divClass))}>
   {#if labelInside}
-    <div class={twMerge(labelInsideDiv({ class: labelInsideClass }), size)} style="width: {_progress.current}%">
+    <div class={twMerge(labelInsideDiv(), size, clsx(labelInsideClass))} style="width: {_progress.current}%">
       {_progress.current.toFixed(precision)}%
     </div>
   {:else}
-    <div class={twMerge(insideDiv({ class: labelInsideClass }), size)} style="width: {_progress.current}%"></div>
+    <div class={twMerge(insideDiv(), size, clsx(labelInsideClass))} style="width: {_progress.current}%"></div>
   {/if}
 </div>
 
@@ -43,7 +44,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1184)
+[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1244)
 ## Props
 @prop progress = "45"
 @prop precision = 0

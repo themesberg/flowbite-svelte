@@ -2,13 +2,13 @@
   "name": "Timepicker",
   "type": {
     "name": "TimepickerProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L902"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L942"
   },
   "props": [
     ["id", "\"time\""],
     ["endId", "\"end-time\""],
-    ["value", "\"00:00\""],
-    ["endValue", "\"00:00\""],
+    ["value", "$bindable(\"00:00\")"],
+    ["endValue", "$bindable(\"00:00\")"],
     ["min", "\"\""],
     ["max", "\"\""],
     ["required", "true"],
@@ -20,7 +20,7 @@
     ["optionLabel", "\"Options\""],
     ["options", "[]"],
     ["size", "\"md\""],
-    ["divClass", "\"inline-flex rounded-lg shadow-sm\""],
+    ["divClass", ""],
     ["inputClass", ""],
     ["selectClass", ""],
     ["timerangeLabel", "\"Choose time range\""],

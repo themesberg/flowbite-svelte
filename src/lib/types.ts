@@ -4,7 +4,7 @@ import { type Writable } from "svelte/store";
 import type { Snippet, Component } from "svelte";
 import { tv, type VariantProps } from "tailwind-variants";
 import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
-import type { ClassValue } from 'clsx';
+import type { ClassValue } from "clsx";
 
 // component variants
 import type { AlertVariants } from "./alert/theme";
@@ -356,8 +356,8 @@ export type ButtonProps = ButtonVariants &
     disabled?: boolean;
     outline?: boolean;
     shadow?: boolean;
-  color?: ButtonColor;
-  class?: ClassValue;
+    color?: ButtonColor;
+    class?: ClassValue;
   };
 
 export interface GradientButtonProps extends GradientButtonVariantes, Omit<HTMLButtonOrAnchorAttributes, "class"> {
@@ -639,7 +639,7 @@ export interface DropdownHeaderProps extends Omit<HTMLAttributes<HTMLDivElement>
   class?: ClassValue;
 }
 
-export type DropdownItemAnchorButtonAttributes = HTMLAnchorAttributes & Omit<HTMLButtonAttributes, keyof HTMLAnchorAttributes | "type" >;
+export type DropdownItemAnchorButtonAttributes = HTMLAnchorAttributes & Omit<HTMLButtonAttributes, keyof HTMLAnchorAttributes | "type">;
 
 export interface DropdownItemProps extends Omit<DropdownItemAnchorButtonAttributes, "class"> {
   children: Snippet;
@@ -1069,8 +1069,8 @@ export type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> &
     Icon?: Component;
     iconClass?: ClassValue;
     name?: string;
-  children?: Snippet;
-  class?: ClassValue;
+    children?: Snippet;
+    class?: ClassValue;
   };
 
 // mega-menu
@@ -1235,9 +1235,10 @@ export interface PopoverProps extends Omit<PopperProps, "title"> {
   title?: Snippet | string;
   color?: PopoverVariants["color"];
   params?: ParamsType | undefined;
-  defaultClass?: string;
+  defaultClass?: ClassValue;
   transition?: TransitionFunc;
   isOpen?: boolean | undefined;
+  class?: ClassValue;
 }
 
 // progress
@@ -1251,11 +1252,11 @@ export interface ProgressbarProps extends HTMLAttributes<HTMLDivElement> {
   labelOutside?: string;
   easing?: EasingFunction;
   color?: ColorType;
-  oustsideSpanClass?: string;
-  oustsideProgressClass?: string;
-  labeloutsidedivClass?: string;
-  labelInsideClass?: string;
-  divClass?: string;
+  oustsideSpanClass?: ClassValue;
+  oustsideProgressClass?: ClassValue;
+  labeloutsidedivClass?: ClassValue;
+  labelInsideClass?: ClassValue;
+  divClass?: ClassValue;
 }
 
 export interface ProgressradialProps {
@@ -1271,11 +1272,11 @@ export interface ProgressradialProps {
   labelOutside?: string;
   easing?: (t: number) => number;
   color?: ColorType;
-  labelInsideClass?: string;
-  outsideSpanClass?: string;
-  outsideProgressClass?: string;
-  labelOutsideDivClass?: string;
-  divClass?: string;
+  labelInsideClass?: ClassValue;
+  outsideSpanClass?: ClassValue;
+  outsideProgressClass?: ClassValue;
+  labelOutsideDivClass?: ClassValue;
+  divClass?: ClassValue;
   [key: string]: any;
 }
 
@@ -1286,11 +1287,11 @@ export interface AdvancedRatingProps {
   rating?: Snippet;
   globalText?: Snippet;
   ratings: RatingItem[];
-  divClass?: string;
-  spanClass?: string;
-  div2Class?: string;
-  div3Class?: string;
-  span2Class?: string;
+  divClass?: ClassValue;
+  spanClass?: ClassValue;
+  div2Class?: ClassValue;
+  div3Class?: ClassValue;
+  span2Class?: ClassValue;
   unit?: string;
 }
 
@@ -1302,7 +1303,8 @@ export interface RatingProps extends HTMLAttributes<HTMLDivElement> {
   rating?: number;
   icon?: Component;
   count?: boolean;
-  pClass?: string;
+  pClass?: ClassValue;
+  divClass?: ClassValue;
 }
 
 export interface RatingCommentProps {
@@ -1348,13 +1350,13 @@ export interface ReviewProps extends HTMLAttributes<HTMLElement> {
   item2?: Snippet;
   item3?: Snippet;
   review?: ReviewType;
-  articleClass?: string;
-  divClass?: string;
-  div2Class?: string;
-  div3Class?: string;
-  imgClass?: string;
-  ulClass?: string;
-  liClass?: string;
+  articleClass?: ClassValue;
+  divClass?: ClassValue;
+  div2Class?: ClassValue;
+  div3Class?: ClassValue;
+  imgClass?: ClassValue;
+  ulClass?: ClassValue;
+  liClass?: ClassValue;
 }
 
 export interface ScoreRatingProps {
@@ -1375,7 +1377,7 @@ export interface RatingIconProps extends SVGAttributes<SVGSVGElement> {
   size?: number;
   ariaLabel?: string;
   role?: string;
-  svgClass?: string;
+  svgClass?: ClassValue;
   iconIndex?: number;
   groupId?: string;
   pathd?: string;
@@ -1398,26 +1400,28 @@ export interface SidebarProps extends SidebarVariants, HTMLAttributes<HTMLElemen
   activateClickOutside?: boolean;
   isSingle?: boolean;
   ariaLabel?: string;
-  divClass?: string;
-  nonActiveClass?: string;
-  activeClass?: string;
+  divClass?: ClassValue;
+  nonActiveClass?: ClassValue;
+  activeClass?: ClassValue;
   params?: ParamsType;
   transition?: TransitionFunc;
   backdrop?: boolean;
-  backdropClass?: string;
+  backdropClass?: ClassValue;
   activeUrl?: string;
   alwaysOpen?: boolean;
 }
 
-export interface SidebarButtonProps extends HTMLButtonAttributes {
+export interface SidebarButtonProps extends Omit<HTMLButtonAttributes, "class"> {
   breakpoint?: SidebarVariants["breakpoint"];
+  class?: ClassValue;
 }
 
-export interface SidebarCtaProps extends HTMLAttributes<HTMLDivElement> {
+export interface SidebarCtaProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   icon?: Snippet;
-  divClass?: string;
-  spanClass?: string;
+  divClass?: ClassValue;
+  spanClass?: ClassValue;
   label: string;
+  class?: ClassValue;
 }
 
 export interface SiteType {
@@ -1426,73 +1430,91 @@ export interface SiteType {
   img?: string;
 }
 
-export interface SidebarBrandProps extends HTMLAnchorAttributes {
+export interface SidebarBrandProps extends Omit<HTMLAnchorAttributes, "class"> {
   site?: SiteType;
-  imgClass?: string;
-  spanClass?: string;
+  imgClass?: ClassValue;
+  spanClass?: ClassValue;
+  class?: ClassValue;
 }
 
-export interface SidebarDropdownWrapperProps extends HTMLButtonAttributes {
+export interface SidebarDropdownWrapperProps extends Omit<HTMLButtonAttributes, "class"> {
   children: Snippet;
   arrowup?: Snippet;
   arrowdown?: Snippet;
   icon?: Snippet;
   isOpen?: boolean | undefined;
-  btnClass?: string;
+  btnClass?: ClassValue;
   label: string | undefined;
-  spanClass?: string;
-  ulClass?: string;
+  spanClass?: ClassValue;
+  ulClass?: ClassValue;
   params?: ParamsType;
   transition?: TransitionFunc;
-  svgClass?: string;
+  svgClass?: ClassValue;
   onclick?: () => void;
   isSingle?: boolean;
+  class?: ClassValue;
 }
 
-export interface SidebarGroupProps extends HTMLAttributes<HTMLUListElement> {
+export interface SidebarGroupProps extends Omit<HTMLAttributes<HTMLUListElement>, "class"> {
   children: Snippet;
-  borderClass?: string;
+  borderClass?: ClassValue;
   border?: boolean;
+  class?: ClassValue;
 }
 
-export interface SidebarItemProps extends HTMLAnchorAttributes {
+export interface SidebarItemProps extends Omit<HTMLAnchorAttributes, "class"> {
   icon?: Snippet;
   subtext?: Snippet;
   label?: string;
-  spanClass?: string;
-  activeClass?: string;
-  nonActiveClass?: string;
-  aClass?: string;
+  spanClass?: ClassValue;
+  activeClass?: ClassValue;
+  nonActiveClass?: ClassValue;
+  aClass?: ClassValue;
   active?: boolean;
+  class?: ClassValue;
 }
 
 // skeleton
-export interface CardPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+export interface CardPlaceholderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   size?: CardPlaceholderVariants["size"];
+  class?: ClassValue;
 }
 
-export interface ImagePlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+export interface ImagePlaceholderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   size?: ImagePlaceholderVariants["size"];
   rounded?: ImagePlaceholderVariants["rounded"];
   imgOnly?: boolean;
+  class?: ClassValue;
 }
 
-export interface ListPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+export interface ListPlaceholderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   itemNumber?: number;
   size?: ListPlaceholderVariants["size"];
   rounded?: ListPlaceholderVariants["rounded"];
+  class?: ClassValue;
 }
 
-export interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
+export interface SkeletonProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   size?: SkeletonVariants["size"];
+  class?: ClassValue;
 }
 
-export interface TextPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+export interface TestimonialPlaceholderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class">{
+  class?: ClassValue;
+}
+
+export interface TextPlaceholderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   size?: TextPlaceholderVariants["size"];
+  class?: ClassValue;
 }
 
-export interface VideoPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+export interface VideoPlaceholderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   size?: VideoPlaceholderVariants["size"];
+  class?: ClassValue;
+}
+
+export interface WidgetPlaceholderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+  class?: ClassValue;
 }
 
 // speeddial
@@ -1528,7 +1550,7 @@ export type SpeedDialTriggerProps = RegularSpeedDialTriggerProps | GradientSpeed
 export type SpeedDialProps = PopperProps & {
   children: Snippet;
   button?: Snippet;
-  popperClass?: string;
+  popperClass?: ClassValue;
   placement?: Placement;
   tooltip?: Placement | "none";
   trigger?: PopperProps["trigger"];
@@ -1537,6 +1559,7 @@ export type SpeedDialProps = PopperProps & {
   ontoggle?: PopperProps["ontoggle"];
   onbeforetoggle?: PopperProps["onbeforetoggle"];
   isOpen?: boolean | undefined;
+  class?: ClassValue;
 };
 
 export type SpeedDialButtonProps = ButtonProps & {
@@ -1544,7 +1567,8 @@ export type SpeedDialButtonProps = ButtonProps & {
   tooltip?: Placement | "none";
   pill?: boolean;
   textOutside?: boolean;
-  textClass?: string;
+  textClass?: ClassValue;
+  class?: ClassValue;
 };
 
 // export type CombinedButtonColor = ButtonColor | GradientButtonColor;
@@ -1557,17 +1581,18 @@ export type SpeedDialButtonProps = ButtonProps & {
 // };
 
 // spinner
-export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
+export interface SpinnerProps extends Omit<SVGAttributes<SVGSVGElement>, "class"> {
   color?: SpinnerVaraiants["color"];
   size?: SpinnerVaraiants["size"];
   currentFill?: string;
   currentColor?: string;
+  class?: ClassValue;
 }
 
 // stepindicator
 export type StepColorType = "primary" | "secondary" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "custom";
 
-export interface StepIndicatorProps extends HTMLAttributes<HTMLElement> {
+export interface StepIndicatorProps extends Omit<HTMLAttributes<HTMLElement>, "class"> {
   steps: string[];
   currentStep: number;
   size?: string;
@@ -1576,7 +1601,7 @@ export interface StepIndicatorProps extends HTMLAttributes<HTMLElement> {
   hideLabel?: boolean;
   completedCustom?: string;
   currentCustom?: string;
-  class?: string;
+  class?: ClassValue;
 }
 
 // tables
@@ -1593,7 +1618,7 @@ export type HeadItemType = string | number | {
   [key: string]: string | number | boolean;
 };
 
-export interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> {
+export interface TableHeadProps extends Omit<HTMLAttributes<HTMLTableSectionElement>, "class"> {
   children?: Snippet;
   headerSlot?: Snippet;
   defaultRow?: boolean;
@@ -1601,55 +1626,60 @@ export interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> 
   striped?: boolean;
   border?: boolean;
   color?: TableVariants["color"];
+  class?: ClassValue;
 }
 
 export type TableItemType = Record<string, string | number | boolean>;
 
-export interface TableProps extends Omit<HTMLTableAttributes, "border"> {
+export interface TableProps extends Omit<HTMLTableAttributes, "border" | "class"> {
   children?: Snippet;
   footerSlot?: Snippet;
   captionSlot?: Snippet;
-  divClass?: string;
+  divClass?: ClassValue;
   striped?: boolean;
   hoverable?: boolean;
   border?: boolean;
   shadow?: boolean;
   color?: TableVariants["color"];
   items?: TableItemType[];
+  class?: ClassValue;
 }
 
-export interface TableBodyRowProps extends HTMLAttributes<HTMLTableRowElement> {
+export interface TableBodyRowProps extends Omit<HTMLAttributes<HTMLTableRowElement>, "class"> {
   children?: Snippet;
   striped?: boolean;
   hoverable?: boolean;
   border?: boolean;
   color?: TableVariants["color"];
+  class?: ClassValue;
 }
 
-export interface TableBodyCellProps extends HTMLTdAttributes {
+export interface TableBodyCellProps extends Omit<HTMLTdAttributes, "class"> {
   children?: Snippet;
   colspan?: number;
   color?: TableVariants["color"];
   onclick?: () => void;
+  class?: ClassValue;
 }
 
 export type CellValue = string | number | boolean | null | undefined;
 
 export type BodyRow = CellValue[] | Record<string, CellValue>;
 
-export interface TableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
+export interface TableBodyProps extends Omit<HTMLAttributes<HTMLTableSectionElement>, "class"> {
   children?: Snippet;
   bodyItems?: BodyRow[];
+  class?: ClassValue;
 }
 
-export interface TableHeadCellProps<T = any> extends HTMLThAttributes {
+export interface TableHeadCellProps<T = any> extends Omit<HTMLThAttributes, "class"> {
   children?: Snippet;
   padding?: string;
   sort?: ((a: T, b: T) => number) | null;
   defaultDirection?: "asc" | "desc";
   defaultSort?: boolean;
   direction?: "asc" | "desc" | null;
-  class?: string;
+  class?: ClassValue;
 }
 
 export type TableSearchType = {
@@ -1658,43 +1688,45 @@ export type TableSearchType = {
   color?: string;
 };
 
-export interface TableSearchProps extends HTMLTableAttributes {
+export interface TableSearchProps extends Omit<HTMLTableAttributes, "class"> {
   children?: Snippet;
   header?: Snippet;
   footer?: Snippet;
-  divClass?: string;
+  divClass?: ClassValue;
   inputValue?: string;
   striped?: boolean;
   hoverable?: boolean;
   customColor?: string;
   color?: string;
-  innerDivClass?: string;
-  inputClass?: string;
-  searchClass?: string;
-  svgDivClass?: string;
-  svgClass?: string;
-  tableClass?: string;
+  innerDivClass?: ClassValue;
+  inputClass?: ClassValue;
+  searchClass?: ClassValue;
+  svgDivClass?: ClassValue;
+  svgClass?: ClassValue;
+  tableClass?: ClassValue;
   placeholder?: string;
+  class?: ClassValue;
 }
 
 // tabs
 export interface TabsProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
   tabStyle?: TabsVaraints["tabStyle"];
-  ulClass?: string;
-  contentClass?: string;
+  ulClass?: ClassValue;
+  contentClass?: ClassValue;
   divider?: boolean;
 }
 
-export interface TabitemProps extends HTMLLiAttributes {
+export interface TabitemProps extends Omit<HTMLLiAttributes, "class"> {
   children?: Snippet;
   titleSlot?: Snippet;
   open?: boolean;
   title?: string;
-  activeClass?: string;
-  inactiveClass?: string;
+  activeClass?: ClassValue;
+  inactiveClass?: ClassValue;
   disabled?: boolean;
   tabStyle?: TabsVaraints["tabStyle"];
+  class?: ClassValue;
 }
 
 export interface TabCtxType {

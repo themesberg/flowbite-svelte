@@ -1,4 +1,2 @@
-import MegaMenu from "./MegaMenu.svelte";
-import { megamenu } from "./theme";
-
-export { MegaMenu, megamenu };
+export { default as MegaMenu } from "./MegaMenu.svelte";
+export { megamenu } from "./theme";

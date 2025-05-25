@@ -1,9 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import type { SizeType, ButtonProps } from "$lib";
+  import { type SizeType, type ButtonProps, cn } from "$lib";
   import { button } from ".";
-  import clsx from "clsx";
-  import { twMerge } from "tailwind-merge";
 
   const group: SizeType = getContext("group");
   const ctxDisabled: boolean | undefined = getContext("disabled");
@@ -15,7 +13,7 @@
   let isDisabled = $derived(Boolean(ctxDisabled) || Boolean(disabled));
 
   const { base, outline: outline_, shadow: shadow_ } = $derived(button({ color: actualColor, size: actualSize, disabled: isDisabled, pill, group: !!group }));
-  let btnCls = $derived(twMerge(base(), outline && outline_(), shadow && shadow_(), clsx(className)));
+  let btnCls = $derived(cn(base(), outline && outline_(), shadow && shadow_(), className));
 </script>
 
 {#if restProps.href === undefined}
@@ -36,7 +34,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L343)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L353)
 ## Props
 @prop children
 @prop onclick

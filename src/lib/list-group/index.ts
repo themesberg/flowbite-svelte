@@ -1,5 +1,3 @@
-import Listgroup from "./Listgroup.svelte";
-import ListgroupItem from "./ListgroupItem.svelte";
-import { listGroup, listGroupItem } from "./theme";
-
-export { Listgroup, ListgroupItem, listGroup, listGroupItem };
+export { default as Listgroup } from "./Listgroup.svelte";
+export { default as ListgroupItem } from "./ListgroupItem.svelte";
+export { listGroup, listGroupItem } from "./theme";

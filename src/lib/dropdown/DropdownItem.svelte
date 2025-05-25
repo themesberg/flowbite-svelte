@@ -1,9 +1,7 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { getContext } from "svelte";
   import { dropdownItem } from ".";
-  import type { DropdownItemProps } from "$lib/types";
+  import { type DropdownItemProps, cn } from "$lib";
 
   let { aClass, children, href, activeClass, liClass, class: className, ...restProps }: DropdownItemProps = $props();
 
@@ -19,10 +17,10 @@
   });
 
   const { anchor, activeAnchor } = dropdownItem();
-  let finalClass = $derived([active ? twMerge(activeAnchor(), clsx(activeClass, className)) : twMerge(anchor(), clsx(aClass, className))]);
+  let finalClass = $derived([active ? cn(activeAnchor(), activeClass, className) : cn(anchor(), aClass, className)]);
 </script>
 
-<li class={clsx(liClass)}>
+<li class={cn(liClass)}>
   {#if href}
     <a {href} {...restProps} class={finalClass}>
       {@render children()}
@@ -42,7 +40,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L620)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L644)
 ## Props
 @prop aClass
 @prop children

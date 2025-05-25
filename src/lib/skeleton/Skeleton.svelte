@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { skeleton } from ".";
   import type { SkeletonProps } from "$lib/types";
@@ -7,7 +8,7 @@
   const { wrapper, line } = $derived(skeleton({ size }));
 </script>
 
-<div role="status" {...restProps} class={wrapper({ class: clsx(className) })}>
+<div role="status" {...restProps} class={twMerge(wrapper(), clsx(className))}>
   <div class={line({ class: "mb-4 h-2.5 w-1/2" })}></div>
   <div class={line({ class: "mb-2.5 h-2 w-9/12" })}></div>
   <div class={line({ class: "mb-2.5 h-2" })}></div>
@@ -22,7 +23,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1426)
+[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1486)
 ## Props
 @prop size = "sm"
 @prop class: className

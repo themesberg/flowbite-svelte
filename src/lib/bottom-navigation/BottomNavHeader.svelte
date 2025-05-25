@@ -1,15 +1,13 @@
 <script lang="ts">
   import { bottomnavheader } from ".";
-  import type { BottomNavHeaderProps } from "$lib/types";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
+  import { type BottomNavHeaderProps, cn } from "$lib";
 
   let { children, outerClass, innerClass, ...restProps }: BottomNavHeaderProps = $props();
   const { innerDiv, outerDiv } = $derived(bottomnavheader());
 </script>
 
-<div {...restProps} class={twMerge(outerDiv(), clsx(outerClass))}>
-  <div class={twMerge(innerDiv(), clsx(innerClass))} role="group">
+<div {...restProps} class={cn(outerDiv(), outerClass)}>
+  <div class={cn(innerDiv(), innerClass)} role="group">
     {@render children()}
   </div>
 </div>
@@ -18,7 +16,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L298)
+[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L305)
 ## Props
 @prop children
 @prop outerClass

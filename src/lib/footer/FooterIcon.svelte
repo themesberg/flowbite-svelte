@@ -1,15 +1,12 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { footerIcon } from ".";
-  import type { FooterIconProps } from "$lib/types";
+  import { type FooterIconProps, cn } from "$lib";
 
   let { children, href, ariaLabel, class: className, ...restProps }: FooterIconProps = $props();
-
 </script>
 
 {#if href}
-  <a {...restProps} {href} aria-label={ariaLabel} class={twMerge(footerIcon(), clsx(className))}>
+  <a {...restProps} {href} aria-label={ariaLabel} class={cn(footerIcon(), className)}>
     {@render children()}
   </a>
 {:else}
@@ -20,11 +17,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L662)
+[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L689)
 ## Props
 @prop children
 @prop href
 @prop ariaLabel
-@prop class: aClass
+@prop class: className
 @prop ...restProps
 -->

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { review as reviewVariants } from ".";
   import type { ReviewProps } from "$lib/types";
 
@@ -9,15 +10,15 @@
 </script>
 
 {#if review}
-  <article class={article({ class: articleClass })}>
+  <article class={twMerge(article(), clsx(articleClass))}>
     <div>
-      <div class={div({ class: divClass })}>
-        <img class={img({ class: imgClass })} src={review.imgSrc} alt={review.imgAlt} />
-        <div class={div2({ class: div2Class })}>
+      <div class={twMerge(div(), clsx(divClass))}>
+        <img class={twMerge(img(), clsx(imgClass))} src={review.imgSrc} alt={review.imgAlt} />
+        <div class={twMerge(div2(), clsx(div2Class))}>
           <p>{review.name}</p>
           {#if review.address}
             {#if address}
-              <div class={div3({ class: div3Class })}>
+              <div class={twMerge(div3(), clsx(div3Class))}>
                 {@render address()}
               </div>
             {/if}
@@ -25,23 +26,23 @@
         </div>
       </div>
       {#if review.item1 || review.item2 || review.item3}
-        <ul class={ul({ class: ulClass })}>
+        <ul class={twMerge(ul(), clsx(ulClass))}>
           {#if review.item1}
-            <li class={twMerge(li({ class: liClass }))}>
+            <li class={twMerge(twMerge(li(), clsx(liClass)))}>
               {#if item1}
                 {@render item1()}
               {/if}
             </li>
           {/if}
           {#if review.item2}
-            <li class={liClass}>
+            <li class={clsx(liClass)}>
               {#if item2}
                 {@render item2()}
               {/if}
             </li>
           {/if}
           {#if review.item3}
-            <li class={twMerge(liClass)}>
+            <li class={twMerge(clsx(liClass))}>
               {#if item3}
                 {@render item3()}
               {/if}
@@ -78,7 +79,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1284)
+[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1344)
 ## Props
 @prop children
 @prop address

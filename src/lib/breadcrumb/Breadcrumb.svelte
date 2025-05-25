@@ -1,9 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { breadcrumb } from "./index";
-  import type { BreadcrumbProps, BaseThemes } from "$lib/types";
-  import clsx from "clsx";
-  import { twMerge } from "tailwind-merge";
+  import { breadcrumb } from ".";
+  import { type BreadcrumbProps, type BaseThemes, cn } from "$lib";
 
   let { children, solid = false, class: className, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
 
@@ -13,8 +11,8 @@
   const breadcrumbTheme = context?.breadcrumb || breadcrumb;
 
   const { nav, list } = breadcrumbTheme({ solid });
-  let classNav = $derived(twMerge(nav(), clsx(className)));
-  let classList = $derived(twMerge(list(), clsx(olClass)));
+  let classNav = $derived(cn(nav(), className));
+  let classList = $derived(cn(list(), olClass));
 </script>
 
 <nav aria-label={ariaLabel} {...restProps} class={classNav}>
@@ -27,7 +25,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L310)
+[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L318)
 ## Props
 @prop children
 @prop solid = false

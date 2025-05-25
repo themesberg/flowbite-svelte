@@ -1,4 +1,2 @@
-import Toggle from "./Toggle.svelte";
-import { toggle } from "./theme";
-
-export { Toggle, toggle };
+export { default as Toggle } from "./Toggle.svelte";
+export { toggle } from "./theme";

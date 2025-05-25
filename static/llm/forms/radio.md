@@ -322,14 +322,14 @@ Use `color` and `checkedClass` props to style the checked state:
 
 #### Types
 
-[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L813)
+[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L849)
 
 #### Props
 
 - children
 - "aria-describedby": ariaDescribedby
 - inline: false
-- class: labelClass
+- labelClass
 - color: "primary"
 - custom: false
 - group: $bindable<T>()

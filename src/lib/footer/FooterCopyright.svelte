@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { footerCopyright } from ".";
-  import type { FooterCopyrightProps } from "$lib/types";
+  import { type FooterCopyrightProps, cn } from "$lib";
 
   let { spanClass, aClass, href, by, copyrightMessage = "All Rights Reserved.", year, bySpanClass, ...restProps }: FooterCopyrightProps = $props();
 
@@ -11,14 +9,14 @@
   const { base, link, bySpan } = footerCopyright();
 </script>
 
-<span class={twMerge(base(), clsx(spanClass))}>
+<span class={cn(base(), spanClass)}>
   &copy; {year}
   {#if href}
-    <a {...restProps} {href} class={twMerge(link(), clsx(aClass))}>
+    <a {...restProps} {href} class={cn(link(), aClass)}>
       {by}
     </a>
   {:else}
-    <span class={twMerge(bySpan(), clsx(bySpanClass))}>{by}</span>
+    <span class={cn(bySpan(), bySpanClass)}>{by}</span>
   {/if}
   {copyrightMessage}
 </span>
@@ -27,7 +25,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L653)
+[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L679)
 ## Props
 @prop spanClass
 @prop aClass
@@ -35,5 +33,6 @@
 @prop by
 @prop copyrightMessage = "All Rights Reserved."
 @prop year
+@prop bySpanClass
 @prop ...restProps
 -->

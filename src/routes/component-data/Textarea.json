@@ -2,7 +2,7 @@
   "name": "Textarea",
   "type": {
     "name": "TextareaProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L930"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L970"
   },
   "props": [
     ["header", ""],
@@ -20,6 +20,7 @@
     ["clearableSvgClass", ""],
     ["clearableColor", "\"none\""],
     ["clearableClass", ""],
-    ["clearableOnClick", ""]
+    ["clearableOnClick", ""],
+    ["textareaClass", ""]
   ]
 }

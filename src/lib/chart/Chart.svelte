@@ -2,8 +2,7 @@
   import type { ApexOptions } from "apexcharts";
   import type ApexCharts from "apexcharts";
   import "./chart.css";
-  import type { ChartProps } from "$lib/types";
-  import clsx from "clsx";
+  import { type ChartProps, cn } from "$lib";
 
   let { options, class: classname }: ChartProps = $props();
 
@@ -33,13 +32,13 @@
   }
 </script>
 
-<div use:initChart={options} class={clsx(classname)}></div>
+<div use:initChart={options} class={cn(classname)}></div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ChartProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L478)
+[ChartProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L499)
 ## Props
 @prop options
 @prop class: classname

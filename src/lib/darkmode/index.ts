@@ -1,4 +1,2 @@
-import DarkMode from "./DarkMode.svelte";
-import { darkmode } from "./theme";
-
-export { DarkMode, darkmode };
+export { default as DarkMode } from "./DarkMode.svelte";
+export { darkmode } from "./theme";

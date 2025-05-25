@@ -1,10 +1,11 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { sidebarbutton } from ".";
   import type { SidebarButtonProps } from "$lib/types";
   let { breakpoint = "md", class: className, ...restProps }: SidebarButtonProps = $props();
 
-  const base = $derived(sidebarbutton({ breakpoint, class: clsx(className) }));
+  const base = $derived(twMerge(sidebarbutton({ breakpoint }), clsx(className)));
 </script>
 
 <button {...restProps} type="button" class={base}>
@@ -18,7 +19,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1352)
+[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1412)
 ## Props
 @prop breakpoint = "md"
 @prop class: className

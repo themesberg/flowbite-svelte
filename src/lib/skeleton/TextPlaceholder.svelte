@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { textPlaceholder } from ".";
   import type { TextPlaceholderProps } from "$lib/types";
@@ -11,7 +12,7 @@
   );
 </script>
 
-<div role="status" {...restProps} class={baseWrapper({ class: clsx(className) })}>
+<div role="status" {...restProps} class={twMerge(baseWrapper(), clsx(className))}>
   <div class={divWrapper({ class: "w-full" })}>
     <div class={lineA({ class: "h-2.5 w-32" })}></div>
     <div class={lineB({ class: "h-2.5 w-24" })}></div>
@@ -49,7 +50,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1430)
+[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1490)
 ## Props
 @prop size = "sm"
 @prop class: className

@@ -1,4 +1,2 @@
-import Search from "./Search.svelte";
-import { search } from "./theme";
-
-export { Search, search };
+export { default as Search } from "./Search.svelte";
+export { search } from "./theme";

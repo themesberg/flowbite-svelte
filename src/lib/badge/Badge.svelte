@@ -1,12 +1,8 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { badge } from "./index";
-  import type { BadgeProps } from "$lib/types";
-  import { CloseButton } from "$lib";
+  import { badge } from ".";
   import { fade } from "svelte/transition";
-  import type { ParamsType, BaseThemes } from "$lib/types";
-  import clsx from "clsx";
-  import { twMerge } from "tailwind-merge";
+  import { type ParamsType, type BaseThemes, type BadgeProps, CloseButton, cn } from "$lib";
 
   let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, border, href, target, rounded, transition = fade, params, aClass, onclose, ...restProps }: BadgeProps = $props();
 
@@ -24,9 +20,9 @@
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} transition:transition={params as ParamsType} class={twMerge(base(), clsx(className))}>
+  <div {...restProps} transition:transition={params as ParamsType} class={cn(base(), className)}>
     {#if href}
-      <a {href} {target} class={twMerge(hrefClass(),clsx(aClass))}>
+      <a {href} {target} class={cn(hrefClass(), aClass)}>
         {@render children()}
       </a>
     {:else}
@@ -50,7 +46,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L215)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L220)
 ## Props
 @prop children
 @prop icon

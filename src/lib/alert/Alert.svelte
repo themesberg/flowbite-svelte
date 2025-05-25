@@ -1,12 +1,8 @@
 <script lang="ts">
-  import { CloseButton } from "$lib";
-  import type { ParamsType } from "$lib/types";
   import { getContext } from "svelte";
   import { fade } from "svelte/transition";
   import { alert } from ".";
-  import type { AlertProps, BaseThemes } from "$lib/types";
-  import clsx from "clsx";
-  import { twMerge } from "tailwind-merge";
+  import { type AlertProps, type BaseThemes, type ParamsType, CloseButton, cn } from "$lib";
 
   let { children, icon, alertStatus = $bindable(true), closeIcon: CloseIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, onclick = () => (alertStatus = false), ...restProps }: AlertProps = $props();
 
@@ -14,14 +10,17 @@
   // Use theme context if available, otherwise fallback to default
   const alertTheme = context?.alert || alert;
 
-  let divCls = $derived(twMerge(
-    alertTheme({
-      color,
-      rounded,
-      border,
-      icon: !!icon,
-      dismissable
-    }), clsx(className))
+  let divCls = $derived(
+    cn(
+      alertTheme({
+        color,
+        rounded,
+        border,
+        icon: !!icon,
+        dismissable
+      }),
+      className
+    )
   );
 </script>
 
@@ -55,7 +54,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L188)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L191)
 ## Props
 @prop children
 @prop icon

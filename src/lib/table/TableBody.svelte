@@ -1,4 +1,5 @@
 <script lang="ts">
+  import clsx from "clsx";
   import { TableBodyRow, TableBodyCell } from ".";
   import type { TableBodyProps, CellValue, BodyRow } from "$lib/types";
 
@@ -13,7 +14,7 @@
   }
 </script>
 
-<tbody {...restProps} class={className}>
+<tbody {...restProps} class={clsx(className)}>
   {#if bodyItems}
     {#each bodyItems as row}
       <TableBodyRow>
@@ -31,7 +32,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1580)
+[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1640)
 ## Props
 @prop children
 @prop bodyItems

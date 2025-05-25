@@ -1,4 +1,2 @@
-import Datepicker from "./Datepicker.svelte";
-import { datepicker } from "./theme";
-
-export { Datepicker, datepicker };
+export { default as Datepicker } from "./Datepicker.svelte";
+export { datepicker } from "./theme";

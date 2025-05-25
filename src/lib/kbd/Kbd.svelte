@@ -1,11 +1,9 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { kbd } from ".";
-  import type { KbdProps } from "$lib/types";
+  import { type KbdProps, cn } from "$lib";
 
   let { children, class: className, ...restProps }: KbdProps = $props();
-  const kbdCls = twMerge(kbd(),clsx(className));
+  const kbdCls = cn(kbd(), className);
 </script>
 
 <kbd {...restProps} class={kbdCls}>
@@ -16,7 +14,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L988)
+[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1033)
 ## Props
 @prop children
 @prop class: className

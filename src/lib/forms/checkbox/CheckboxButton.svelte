@@ -1,8 +1,6 @@
 <script lang="ts">
   import Button from "$lib/buttons/Button.svelte";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
-  import type { CheckboxButtonProps } from "$lib/types";
+  import { type CheckboxButtonProps, cn } from "$lib";
   import { checkboxbutton } from "./theme";
 
   let { children, class: className, group = $bindable([]), value, checked, inline, pill, outline, size, color, shadow, ...restProps }: CheckboxButtonProps = $props();
@@ -44,7 +42,7 @@
     }
   }
 
-  let buttonClass: string = $derived(twMerge(checkboxbutton({ inline, checked }), clsx(className)));
+  let buttonClass: string = $derived(cn(checkboxbutton({ inline, checked }), className));
 </script>
 
 <Button tag="label" {checked} {pill} {outline} {size} {color} {shadow} class={buttonClass}>
@@ -56,7 +54,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CheckboxButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L715)
+[CheckboxButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L743)
 ## Props
 @prop children
 @prop class: className

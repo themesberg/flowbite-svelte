@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { darkmode } from "./";
-  import type { DarkmodeProps } from "$lib/types";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
+  import { darkmode } from ".";
+  import { type DarkmodeProps, cn } from "$lib";
 
   // const THEME_PREFERENCE_KEY = 'color-theme';
   let { class: className, lightIcon, darkIcon, size = "md", ariaLabel = "Dark mode", ...restProps }: DarkmodeProps = $props();
@@ -32,7 +30,7 @@
   </script>
 </svelte:head>
 
-<button onclick={toggleTheme} aria-label={ariaLabel} type="button" {...restProps} class={twMerge(darkmode(), clsx(className))} tabindex={0}>
+<button onclick={toggleTheme} aria-label={ariaLabel} type="button" {...restProps} class={cn(darkmode(), className)} tabindex={0}>
   <span class="hidden dark:block">
     {#if lightIcon}
       {@render lightIcon()}
@@ -62,7 +60,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L484)
+[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L505)
 ## Props
 @prop class: className
 @prop lightIcon

@@ -1,12 +1,10 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { label } from ".";
-  import type { LabelProps } from "$lib/types";
+  import { type LabelProps, cn } from "$lib";
 
   let { children, color = "gray", show = true, class: className, ...restProps }: LabelProps = $props();
 
-  let base = $derived(twMerge(label({ color }), clsx(className)));
+  let base = $derived(cn(label({ color }), className));
 </script>
 
 {#if show}
@@ -21,7 +19,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L806)
+[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L841)
 ## Props
 @prop children
 @prop color = "gray"

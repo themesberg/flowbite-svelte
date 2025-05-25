@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { listPlaceholder } from ".";
   import type { ListPlaceholderProps } from "$lib/types";
@@ -10,7 +11,7 @@
   let items = $derived([...Array(itemNumber).keys()]);
 </script>
 
-<div role="status" {...restProps} class={base({ class: clsx(className) })}>
+<div role="status" {...restProps} class={twMerge(base(), clsx(className))}>
   <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
   {#each items as _, i}
     <div class={item({ class: i > 0 ? "pt-4" : "" })}>
@@ -28,7 +29,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1420)
+[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1480)
 ## Props
 @prop itemNumber = 5
 @prop size = "md"

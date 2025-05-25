@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { gallery } from ".";
-  import type { GalleryProps, ImgType } from "$lib/types";
+  import { type GalleryProps, type ImgType, cn } from "$lib";
 
   let { children, figure, items = [], imgClass, class: className, ...restProps }: GalleryProps = $props();
 
@@ -15,11 +13,11 @@
 
 {#snippet _figure(item: ImgType)}
   <div>
-    <img src={item.src} alt={item.alt} class={twMerge(image(), clsx(imgClass))} {...restProps} />
+    <img src={item.src} alt={item.alt} class={cn(image(), imgClass)} {...restProps} />
   </div>
 {/snippet}
 
-<div class={twMerge(div(),clsx(className))} use:init>
+<div class={cn(div(), className)} use:init>
   {#each items as item}
     {#if figure}
       {@render figure(item as ImgType)}
@@ -37,7 +35,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L966)
+[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1009)
 ## Props
 @prop children
 @prop figure

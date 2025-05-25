@@ -1,4 +1,2 @@
-import Badge from "./Badge.svelte";
-import { badge } from "./theme";
-
-export { Badge, badge };
+export { default as Badge } from "./Badge.svelte";
+export { badge } from "./theme";

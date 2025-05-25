@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { textarea } from ".";
-  import { type TextareaProps, CloseButton } from "$lib";
+  import { type TextareaProps, CloseButton, cn } from "$lib";
 
   let { header, footer, value = $bindable(), elementRef = $bindable(), divClass, innerClass, headerClass, footerClass, disabled, class: className, cols, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, textareaClass, ...restProps }: TextareaProps = $props();
 
@@ -21,28 +19,28 @@
   };
 </script>
 
-<div class={twMerge(divWrapper(), clsx(divClass))}>
+<div class={cn(divWrapper(), divClass)}>
   {#if !wrapped}
-    <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={twMerge(wrapper(), clsx(className))}></textarea>
+    <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={cn(wrapper(), className)}></textarea>
   {:else}
-    <div class={twMerge(wrapper(), clsx(className))}>
+    <div class={cn(wrapper(), className)}>
       {#if header}
-        <div class={twMerge(headerCls(), clsx(headerClass))}>
+        <div class={cn(headerCls(), headerClass)}>
           {@render header()}
         </div>
       {/if}
-      <div class={twMerge(innerWrapper(), clsx(innerClass))}>
-        <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={twMerge(base(), clsx(textareaClass))}></textarea>
+      <div class={cn(innerWrapper(), innerClass)}>
+        <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={cn(base(), textareaClass)}></textarea>
       </div>
       {#if footer}
-        <div class={twMerge(footerCls(), clsx(footerClass))}>
+        <div class={cn(footerCls(), footerClass)}>
           {@render footer()}
         </div>
       {/if}
     </div>
   {/if}
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={twMerge(clearbtn(), clsx(clearableClass))} color={clearableColor} aria-label="Clear search value" svgClass={clsx(clearableSvgClass)} />
+    <CloseButton onclick={clearAll} class={cn(clearbtn(), clearableClass)} color={clearableColor} aria-label="Clear search value" svgClass={cn(clearableSvgClass)} />
   {/if}
 </div>
 
@@ -50,7 +48,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L930)
+[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L970)
 ## Props
 @prop header
 @prop footer
@@ -68,5 +66,6 @@
 @prop clearableColor = "none"
 @prop clearableClass
 @prop clearableOnClick
+@prop textareaClass
 @prop ...restProps
 -->

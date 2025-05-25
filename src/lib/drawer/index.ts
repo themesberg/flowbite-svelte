@@ -1,5 +1,3 @@
-import Drawer from "./Drawer.svelte";
-import Drawerhead from "./Drawerhead.svelte";
-import { drawer, drawerhead } from "./theme";
-
-export { Drawer, drawer, Drawerhead, drawerhead };
+export { default as Drawer } from "./Drawer.svelte";
+export { default as Drawerhead } from "./Drawerhead.svelte";
+export { drawer, drawerhead } from "./theme";

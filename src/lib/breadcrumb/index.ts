@@ -1,5 +1,3 @@
-import Breadcrumb from "./Breadcrumb.svelte";
-import BreadcrumbItem from "./BreadcrumbItem.svelte";
-import { breadcrumb } from "./theme";
-
-export { Breadcrumb, BreadcrumbItem, breadcrumb };
+export { default as Breadcrumb } from "./Breadcrumb.svelte";
+export { default as BreadcrumbItem } from "./BreadcrumbItem.svelte";
+export { breadcrumb } from "./theme";

@@ -1,8 +1,6 @@
 <script lang="ts" generics="T">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { select as selectCls } from ".";
-  import { type SelectProps, CloseButton } from "$lib";
+  import { type SelectProps, CloseButton, cn } from "$lib";
 
   let { children, items, value = $bindable(), elementRef = $bindable(), underline, size = "md", disabled, selectClass, class: className, placeholder = "Choose option ...", clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, ...restProps }: SelectProps<T> = $props();
 
@@ -17,8 +15,8 @@
   };
 </script>
 
-<div class={twMerge(base(), clsx(className))}>
-  <select {disabled} {...restProps} bind:value bind:this={elementRef} class={twMerge(select(), clsx(selectClass))}>
+<div class={cn(base(), className)}>
+  <select {disabled} {...restProps} bind:value bind:this={elementRef} class={cn(select(), selectClass)}>
     {#if placeholder}
       <option disabled selected value="">{placeholder}</option>
     {/if}
@@ -34,7 +32,7 @@
     {/if}
   </select>
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={twMerge(clearbtn(), clsx(clearableClass))} color={clearableColor} aria-label="Clear search value" svgClass={clsx(clearableSvgClass)} {disabled} />
+    <CloseButton onclick={clearAll} class={cn(clearbtn(), clearableClass)} color={clearableColor} aria-label="Clear search value" svgClass={cn(clearableSvgClass)} {disabled} />
   {/if}
 </div>
 <!--

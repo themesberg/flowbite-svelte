@@ -2,7 +2,7 @@
   "name": "StepIndicator",
   "type": {
     "name": "StepIndicatorProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1510"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1570"
   },
   "props": [
     ["steps", "[\"Step 1\", \"Step 2\", \"Step 3\", \"Step 4\", \"Step 5\"]"],

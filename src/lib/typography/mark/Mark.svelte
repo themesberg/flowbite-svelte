@@ -14,7 +14,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[MarkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1856)
+[MarkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1916)
 ## Props
 @prop children
 @prop class: className

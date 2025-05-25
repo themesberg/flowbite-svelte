@@ -1,11 +1,9 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
   import { fly } from "svelte/transition";
   import { slide } from "./theme";
-  import type { SlideProps, State } from "$lib/types";
+  import { type SlideProps, type State, cn } from "$lib";
 
   const state = getContext<Writable<State>>("state");
 
@@ -27,7 +25,7 @@
     duration: $state.slideDuration
   });
 
-  let imgClass = twMerge(slide(), clsx(className));
+  let imgClass = cn(slide(), className);
 </script>
 
 {#if transition}
@@ -44,7 +42,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L472)
+[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L492)
 ## Props
 @prop image
 @prop transition

@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { footerBrand } from ".";
-  import type { FooterBrandProps } from "$lib/types";
+  import { type FooterBrandProps, cn } from "$lib";
 
   let { children, aClass, spanClass, imgClass, href, src, alt, name, ...restProps }: FooterBrandProps = $props();
 
@@ -10,26 +8,26 @@
 </script>
 
 {#if href}
-  <a {...restProps} {href} class={twMerge(base(), clsx(aClass))}>
+  <a {...restProps} {href} class={cn(base(), aClass)}>
     {#if src}
-      <img {src} class={twMerge(img(), clsx(imgClass))} {alt} />
+      <img {src} class={cn(img(), imgClass)} {alt} />
     {/if}
     {#if name}
-      <span class={twMerge(span(), clsx(spanClass))}>{name}</span>
+      <span class={cn(span(), spanClass)}>{name}</span>
     {/if}
     {#if children}
       {@render children()}
     {/if}
   </a>
 {:else}
-  <img {src} class={twMerge(img(), clsx(imgClass))} {alt} />
+  <img {src} class={cn(img(), imgClass)} {alt} />
 {/if}
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L642)
+[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L668)
 ## Props
 @prop children
 @prop aClass

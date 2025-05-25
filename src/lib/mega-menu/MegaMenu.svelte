@@ -1,10 +1,6 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
-  import type { LinkType } from "$lib/types";
-  import Popper from "../utils/Popper.svelte";
   import { megamenu } from "./theme";
-  import type { MegaMenuProps } from "$lib/types";
+  import { type MegaMenuProps, type LinkType, Popper, cn } from "$lib";
 
   let { children, extra, items = [], full, ulClass, isOpen = $bindable(false), class: className, extraClass, ...restProps }: MegaMenuProps = $props();
 
@@ -14,12 +10,11 @@
   }
 
   const { base, div, ul, extra: extraCls } = $derived(megamenu({ full, extra: !!extra }));
-
 </script>
 
-<Popper color={full ? "default" : "dropdown"} arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={twMerge(base(), clsx(className))}>
+<Popper color={full ? "default" : "dropdown"} arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={cn(base(), className)}>
   <div class={div()}>
-    <ul class={twMerge(ul(), clsx(ulClass))}>
+    <ul class={cn(ul(), ulClass)}>
       {#each items as item, index}
         <li>
           {@render children({ item, index })}
@@ -28,7 +23,7 @@
         {@render children({ item: items[0], index: 0 })}
       {/each}
     </ul>
-    {#if full && extra}<div class={twMerge(extraCls(), clsx(extraClass))}>{@render extra()}</div>{/if}
+    {#if full && extra}<div class={cn(extraCls(), extraClass)}>{@render extra()}</div>{/if}
   </div>
 </Popper>
 
@@ -36,7 +31,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1029)
+[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1077)
 ## Props
 @prop children
 @prop extra
@@ -45,5 +40,6 @@
 @prop ulClass
 @prop isOpen = $bindable(false)
 @prop class: className
+@prop extraClass
 @prop ...restProps
 -->

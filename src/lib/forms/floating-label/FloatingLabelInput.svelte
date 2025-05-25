@@ -1,9 +1,7 @@
 <script lang="ts">
   import { idGenerator } from "../../uiHelpers.svelte";
   import { floatingLabelInput } from ".";
-  import { type FloatingLabelInputProps, CloseButton } from "$lib";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
+  import { type FloatingLabelInputProps, CloseButton, cn } from "$lib";
 
   let { children, id = idGenerator(), value = $bindable(), elementRef = $bindable(), "aria-describedby": ariaDescribedby, variant = "standard", size = "default", color = "default", class: className, inputClass, labelClass, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, ...restProps }: FloatingLabelInputProps = $props();
 
@@ -125,17 +123,17 @@
   <div tabindex="-1" bind:this={dummyFocusDiv} class="sr-only"></div>
 {/if}
 
-<div class={twMerge(base(), clsx(isCombobox ? "relative" : "", clsx(className)))}>
-  <input {id} placeholder=" " bind:value bind:this={elementRef} {...restProps} aria-describedby={ariaDescribedby} class={twMerge(input(), clsx(inputClass))} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} />
+<div class={cn(base(), isCombobox ? "relative" : "", className)}>
+  <input {id} placeholder=" " bind:value bind:this={elementRef} {...restProps} aria-describedby={ariaDescribedby} class={cn(input(), inputClass)} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} />
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={twMerge(clearbtn(), clsx(clearableClass))} color={clearableColor} aria-label="Clear search value" svgClass={clsx(clearableSvgClass)} />
+    <CloseButton onclick={clearAll} class={cn(clearbtn(), clearableClass)} color={clearableColor} aria-label="Clear search value" svgClass={cn(clearableSvgClass)} />
   {/if}
-  <label for={id} class={twMerge(label(), clsx(labelClass))}>
+  <label for={id} class={cn(label(), labelClass)}>
     {@render children()}
   </label>
 
   {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-    <div class={twMerge(combo(), clsx(comboClass))}>
+    <div class={cn(combo(), comboClass)}>
       {#each filteredSuggestions as item, i}
         <button type="button" class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none" onclick={() => selectItem(item)} onmouseenter={() => (selectedIndex = i)}>
           {item}
@@ -149,7 +147,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FloatingLabelInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L747)
+[FloatingLabelInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L778)
 ## Props
 @prop children
 @prop id = idGenerator()
@@ -159,7 +157,7 @@
 @prop variant = "standard"
 @prop size = "default"
 @prop color = "default"
-@prop class: divClass
+@prop class: className
 @prop inputClass
 @prop labelClass
 @prop clearable

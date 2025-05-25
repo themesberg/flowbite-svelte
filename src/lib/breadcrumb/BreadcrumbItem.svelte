@@ -1,20 +1,20 @@
 <script lang="ts">
-  import clsx from "clsx";
   import { breadcrumb } from "./index";
-  import type { BreadcrumbItemProps } from "$lib/types";
-  import { twMerge } from "tailwind-merge";
+  import { type BreadcrumbItemProps, cn } from "$lib";
 
   let { children, icon, home = false, href, linkClass, spanClass, homeClass, class: className, ...restProps }: BreadcrumbItemProps = $props();
 
-  const { item, icon: breacrumbIcon } = $derived(breadcrumb({
-    home,
-    hasHref: !!href
-  }));
+  const { item, icon: breacrumbIcon } = $derived(
+    breadcrumb({
+      home,
+      hasHref: !!href
+    })
+  );
 </script>
 
-<li {...restProps} class={twMerge(item(), clsx(className))}>
+<li {...restProps} class={cn(item(), className)}>
   {#if home}
-    <a class={twMerge(item({ home: true }), clsx(homeClass))} {href}>
+    <a class={cn(item({ home: true }), homeClass)} {href}>
       {#if icon}
         {@render icon()}
       {:else}
@@ -35,11 +35,11 @@
     {/if}
 
     {#if href}
-      <a class={twMerge(item({ home: false, hasHref: true }), clsx(linkClass))} {href}>
+      <a class={cn(item({ home: false, hasHref: true }), linkClass)} {href}>
         {@render children()}
       </a>
     {:else}
-      <span class={twMerge(item({ home: false, hasHref: false }), clsx(spanClass))}>
+      <span class={cn(item({ home: false, hasHref: false }), spanClass)}>
         {@render children()}
       </span>
     {/if}
@@ -50,7 +50,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L317)
+[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L326)
 ## Props
 @prop children
 @prop icon

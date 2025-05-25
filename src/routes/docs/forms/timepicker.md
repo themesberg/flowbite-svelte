@@ -37,12 +37,11 @@ Use this example of a default timepicker component to allow the user to select a
 
 ## Using state and bind
 
-
 ```svelte example
 <script lang="ts">
   import { Label, Timepicker } from "$lib";
   let selectedTime = $state("09:00");
-    function handleChange(data: { time: string; endTime: string; [key: string]: string }): void {
+  function handleChange(data: { time: string; endTime: string; [key: string]: string }): void {
     if (data) {
       selectedTime = data.time;
     }
@@ -50,7 +49,7 @@ Use this example of a default timepicker component to allow the user to select a
 </script>
 
 <Label>Select Time: {selectedTime}</Label>
-<Timepicker bind:value={selectedTime}/>
+<Timepicker bind:value={selectedTime} />
 ```
 
 ## Timepicker with icon

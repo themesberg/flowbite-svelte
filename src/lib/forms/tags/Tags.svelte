@@ -1,7 +1,5 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
-  import { type TagsProps, CloseButton } from "$lib";
+  import { type TagsProps, CloseButton, cn } from "$lib";
   import { tags } from "./theme";
 
   let { value = $bindable([]), itemClass, spanClass, placeholder = "Enter tags", class: className, closeClass, inputClass, closeBtnSize = "xs", ...restProps }: TagsProps = $props();
@@ -35,15 +33,15 @@
   };
 </script>
 
-<div {...restProps} class={twMerge(base(), clsx(className))}>
+<div {...restProps} class={cn(base(), className)}>
   {#each value as tag, index}
-    <div class={twMerge(tagCls(), clsx(itemClass))}>
-      <span class={twMerge(spanCls(), clsx(spanClass))}>
+    <div class={cn(tagCls(), itemClass)}>
+      <span class={cn(spanCls(), spanClass)}>
         {tag}
       </span>
       <CloseButton
         size={closeBtnSize}
-        class={twMerge(close(), clsx(closeClass))}
+        class={cn(close(), closeClass)}
         onclick={() => {
           deleteField(index);
         }}
@@ -59,7 +57,7 @@
     placeholder={value.length === 0 ? placeholder : ""}
     type="text"
     autocomplete="new-password"
-    class={twMerge(inputCls(), clsx(inputClass))}
+    class={cn(inputCls(), inputClass)}
   />
 </div>
 
@@ -67,7 +65,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L883)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L923)
 ## Props
 @prop value = $bindable([])
 @prop itemClass

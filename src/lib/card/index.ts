@@ -1,4 +1,2 @@
-import Card from "./Card.svelte";
-import { card } from "./theme";
-
-export { Card, card };
+export { default as Card } from "./Card.svelte";
+export { card } from "./theme";

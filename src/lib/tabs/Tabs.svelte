@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { writable } from "svelte/store";
   import { setContext } from "svelte";
   import { tabs } from ".";
@@ -31,19 +33,19 @@
   }
 </script>
 
-<ul role="tablist" {...restProps} class={base({ class: ulClass })}>
+<ul role="tablist" {...restProps} class={twMerge(base(), clsx(ulClass))}>
   {@render children()}
 </ul>
 {#if dividerBool}
   <div class={dividerClass()}></div>
 {/if}
-<div id={panelId} class={content({ class: contentClass })} role="tabpanel" aria-labelledby={panelId} use:init></div>
+<div id={panelId} class={twMerge(content(), clsx(contentClass))} role="tabpanel" aria-labelledby={panelId} use:init></div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1621)
+[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1681)
 ## Props
 @prop children
 @prop tabStyle = "none"

@@ -1,9 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import type { ListgroupItemProps } from "$lib/types";
+  import { type ListgroupItemProps, cn } from "$lib";
   import { listGroupItem, type ListgroupItemVariants } from "./theme";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
 
   let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-5 w-5", onclick, ...restProps }: ListgroupItemProps = $props();
 
@@ -16,7 +14,7 @@
 
 {#snippet nameOrChildren()}
   {#if Icon}
-    <Icon class={clsx(iconClass)} />
+    <Icon class={cn(iconClass)} />
   {/if}
   {#if children}
     {@render children()}
@@ -26,15 +24,15 @@
 {/snippet}
 
 {#if restProps.href === undefined && !active}
-  <li class={twMerge(itemClass, clsx(className))}>
+  <li class={cn(itemClass, className)}>
     {@render nameOrChildren()}
   </li>
 {:else if restProps.href === undefined}
-  <button type="button" {...restProps} class={twMerge(itemClass, clsx(className))} {disabled} aria-current={current} {onclick}>
+  <button type="button" {...restProps} class={cn(itemClass, className)} {disabled} aria-current={current} {onclick}>
     {@render nameOrChildren()}
   </button>
 {:else}
-  <a {...restProps} class={twMerge(itemClass, clsx(className))} aria-current={current}>
+  <a {...restProps} class={cn(itemClass, className)} aria-current={current}>
     {@render nameOrChildren()}
   </a>
 {/if}
@@ -43,7 +41,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1018)
+[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1065)
 ## Props
 @prop children
 @prop active

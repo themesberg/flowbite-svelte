@@ -1,24 +1,22 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { laptop } from ".";
-  import type { MockupBaseProps } from "$lib/types";
+  import { type MockupBaseProps, cn } from "$lib";
 
   let { children, divClass, div2Class, div3Class, div4Class, ...restProps }: MockupBaseProps = $props();
   const { div, inner, bot, botCen } = laptop();
 </script>
 
 <div {...restProps}>
-  <div class={twMerge(div(), clsx(divClass))}>
-    <div class={twMerge(inner(), clsx(div2Class))}>
+  <div class={cn(div(), divClass)}>
+    <div class={cn(inner(), div2Class)}>
       {#if children}
         {@render children()}
       {/if}
     </div>
   </div>
 
-  <div class={twMerge(bot(), clsx(div3Class))}>
-    <div class={twMerge(botCen(), clsx(div4Class))}></div>
+  <div class={cn(bot(), div3Class)}>
+    <div class={cn(botCen(), div4Class)}></div>
   </div>
 </div>
 
@@ -26,7 +24,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[MockupBaseProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L524)
+[MockupBaseProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L547)
 ## Props
 @prop children
 @prop divClass

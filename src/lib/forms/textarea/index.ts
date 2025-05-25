@@ -1,4 +1,2 @@
-import Textarea from "./Textarea.svelte";
-import { textarea } from "./theme";
-
-export { Textarea, textarea };
+export { default as Textarea } from "./Textarea.svelte";
+export { textarea } from "./theme";

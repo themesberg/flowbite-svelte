@@ -1,10 +1,7 @@
 <script lang="ts">
-  import { Indicator } from "$lib";
-  import clsx from "clsx";
   import { getContext } from "svelte";
   import { avatar } from ".";
-  import type { AvatarProps, BaseThemes } from "$lib/types";
-  import { twMerge } from "tailwind-merge";
+  import { type AvatarProps, type BaseThemes, Indicator, cn } from "$lib";
 
   let { children, indicator, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: AvatarProps = $props();
 
@@ -15,14 +12,17 @@
 
   dot = dot && { placement: "top-right", color: "gray", size: "lg", ...dot };
 
-  let avatarClass = $derived(twMerge(
-    avatarTheme({
-      cornerStyle,
-      border,
-      stacked,
-      size
-    }), clsx(className)
-  ));
+  let avatarClass = $derived(
+    cn(
+      avatarTheme({
+        cornerStyle,
+        border,
+        stacked,
+        size
+      }),
+      className
+    )
+  );
 </script>
 
 {#if !src || !!href || children || dot || indicator}
@@ -51,7 +51,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L199)
+[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L203)
 ## Props
 @prop children
 @prop indicator

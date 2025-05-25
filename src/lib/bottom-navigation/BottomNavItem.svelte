@@ -1,10 +1,8 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import type { HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
-  import { bottomNavItem } from "./index";
-  import type { BottomNavItemProps, BottomNavContextType, BottomNavVariantType } from "$lib/types";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
+  import { bottomNavItem } from ".";
+  import { type BottomNavItemProps, type BottomNavContextType, type BottomNavVariantType, cn } from "$lib";
 
   let { children, btnName, appBtnPosition = "middle", target, activeClass, href = "", btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
 
@@ -24,11 +22,11 @@
   let isActive = $derived(manualActive !== undefined ? !!manualActive : navUrl ? (href === "/" ? navUrl === "/" : href && (navUrl === href || navUrl.startsWith(href + "/") || (href !== "/" && navUrl.replace(/^https?:\/\/[^/]+/, "").startsWith(href)))) : false);
 
   function getCommonClass() {
-    return twMerge(base(), isActive && (clsx(activeClass) ?? context.activeClass), clsx(btnClass));
+    return cn(base(), isActive && (activeClass ?? context.activeClass), btnClass);
   }
 
   function getSpanClass() {
-    return twMerge(span(), isActive && (clsx(activeClass) ?? context.activeClass), clsx(spanClass));
+    return cn(span(), isActive && (activeClass ?? context.activeClass), spanClass);
   }
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -66,7 +64,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L262)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L270)
 ## Props
 @prop children
 @prop btnName

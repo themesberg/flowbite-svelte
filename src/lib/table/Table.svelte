@@ -1,6 +1,7 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { table as tableCls, TableHead, TableBody } from ".";
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import type { TableProps, TableCtxType } from "$lib";
 
@@ -29,8 +30,8 @@
   let bodyItems = $derived(items && items.length > 0 ? items.map((item) => Object.values(item)) : []);
 </script>
 
-<div class={base({ class: divClass })}>
-  <table {...restProps} class={table({ class: clsx(className) })}>
+<div class={twMerge(base(), clsx(divClass ))}>
+  <table {...restProps} class={twMerge(table(),clsx(className))}>
     {#if captionSlot}
       {@render captionSlot()}
     {/if}
@@ -50,7 +51,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1548)
+[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1608)
 ## Props
 @prop children
 @prop footerSlot

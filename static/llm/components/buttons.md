@@ -296,7 +296,7 @@ You can use `onclick` or any standard `on*` to listen to the event.
 
 #### Types
 
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L343)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L353)
 
 #### Props
 
@@ -315,7 +315,7 @@ You can use `onclick` or any standard `on*` to listen to the event.
 
 #### Types
 
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L352)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L363)
 
 #### Props
 
@@ -328,6 +328,7 @@ You can use `onclick` or any standard `on*` to listen to the event.
 - href
 - disabled
 - size
+- btnClass
 
 
 ## References

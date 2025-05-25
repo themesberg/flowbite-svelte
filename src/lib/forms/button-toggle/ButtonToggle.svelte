@@ -1,11 +1,9 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { getContext } from "svelte";
   import CheckIcon from "./CheckIcon.svelte";
   import { buttonToggle, buttonToggleContent, buttonToggleText } from "./theme";
   import type { ButtonToggleVariants } from "./theme";
-  import { type ButtonToggleProps, type ButtonToggleContext } from "$lib";
+  import { type ButtonToggleProps, type ButtonToggleContext, cn } from "$lib";
 
   let { value, selected = false, children, iconSlot, color, class: className, iconClass, txtClass, contentClass, ...restProps }: ButtonToggleProps = $props();
 
@@ -15,7 +13,7 @@
   const size = getContext<ButtonToggleVariants["size"]>("buttonToggleSize");
   const roundedSize = getContext<ButtonToggleVariants["roundedSize"]>("buttonToggleRounded");
   const ctxIconClass = getContext<string | undefined>("ctxIconClass");
-  const actualIconClass = ctxIconClass || clsx(iconClass);
+  const actualIconClass = ctxIconClass || cn(iconClass);
   const ctxBtnClass = getContext<string | undefined>("ctxBtnClass");
 
   function handleClick() {
@@ -27,16 +25,16 @@
   });
 </script>
 
-<button type="button" class={twMerge(buttonToggle({ selected, color: actualColor, size, roundedSize }), ctxBtnClass, clsx(className))} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
-  <div class={twMerge(buttonToggleContent(), clsx(contentClass))}>
+<button type="button" class={cn(buttonToggle({ selected, color: actualColor, size, roundedSize }), ctxBtnClass, className)} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
+  <div class={cn(buttonToggleContent(), contentClass)}>
     {#if selected}
       {#if iconSlot}
         {@render iconSlot()}
       {:else}
-        <CheckIcon class={twMerge("absolute left-0 flex-shrink-0 text-green-600", actualIconClass)} />
+        <CheckIcon class={cn("absolute left-0 flex-shrink-0 text-green-600", actualIconClass)} />
       {/if}
     {/if}
-    <span class={twMerge(buttonToggleText({ selected }), clsx(txtClass))}>
+    <span class={cn(buttonToggleText({ selected }), txtClass)}>
       {@render children()}
     </span>
   </div>
@@ -46,7 +44,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L374)
+[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L387)
 ## Props
 @prop value
 @prop selected = false
@@ -56,5 +54,6 @@
 @prop class: className
 @prop iconClass
 @prop txtClass
+@prop contentClass
 @prop ...restProps
 -->

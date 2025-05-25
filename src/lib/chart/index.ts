@@ -1,3 +1,1 @@
-import Chart from "./Chart.svelte";
-
-export { Chart };
+export { default as Chart } from "./Chart.svelte";

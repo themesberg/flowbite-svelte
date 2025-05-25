@@ -1,4 +1,5 @@
 <script lang="ts">
+  import clsx from "clsx";
   import Button from "$lib/buttons/Button.svelte";
   import GradientButton from "$lib/buttons/GradientButton.svelte";
   import type { SpeedDialTriggerProps, ButtonProps, GradientButtonProps } from "$lib";
@@ -9,7 +10,7 @@
     pill,
     color,
     ...restProps,
-    class: ["group p-3!", className]
+    class: ["group p-3!", clsx(className)]
   });
 </script>
 
@@ -43,7 +44,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1466)
+[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1526)
 ## Props
 @prop children
 @prop name = "Open actions menu"

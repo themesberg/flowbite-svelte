@@ -1,7 +1,5 @@
 <script lang="ts" generics="T">
-  import { Badge, CloseButton, type MultiSelectProps, type SelectOptionType } from "$lib";
-  import clsx from "clsx";
-  import { twMerge } from "tailwind-merge";
+  import { Badge, CloseButton, type MultiSelectProps, type SelectOptionType, cn } from "$lib";
   import { multiselect } from "./theme";
 
   // Consider reusing that component - https://svelecte.vercel.app/
@@ -99,7 +97,7 @@
     <option {value} {disabled}>{name}</option>
   {/each}
 </select>
-<div onclick={toggleDropdown} onfocusout={closeDropdown} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={twMerge(base({ size }), clsx(className))}>
+<div onclick={toggleDropdown} onfocusout={closeDropdown} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={cn(base({ size }), className)}>
   {#if !selectItems.length}
     <span class="text-gray-400">{placeholder}</span>
   {/if}
@@ -121,13 +119,13 @@
       <CloseButton {size} onclick={clearAll} color="none" class={closebutton()} {disabled} />
     {/if}
 
-    <svg class={twMerge("ms-1 h-3 w-3 cursor-pointer text-gray-800 dark:text-white", disabled && "cursor-not-allowed")} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <svg class={cn("ms-1 h-3 w-3 cursor-pointer text-gray-800 dark:text-white", disabled && "cursor-not-allowed")} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={show ? "m1 5 4-4 4 4" : "m9 1-4 4-4-4"} />
     </svg>
   </div>
 
   {#if show}
-    <div role="presentation" class={twMerge(dropdown(), clsx(dropdownClass))}>
+    <div role="presentation" class={cn(dropdown(), dropdownClass)}>
       {#each items as item (item.name)}
         <div onclick={() => selectOption(item)} role="presentation" class={dropdownitem({ selected: selectItems.includes(item), active: activeItem === item, disabled: item.disabled })}>
           {item.name}

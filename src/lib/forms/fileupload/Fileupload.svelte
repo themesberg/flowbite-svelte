@@ -1,8 +1,6 @@
 <script lang="ts">
   import { fileupload } from ".";
-  import { CloseButton, type FileuploadProps } from "$lib";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
+  import { CloseButton, type FileuploadProps, cn } from "$lib";
 
   let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, wrapperClass, ...restProps }: FileuploadProps = $props();
 
@@ -17,10 +15,10 @@
   };
 </script>
 
-<div class={twMerge(wrapper(), clsx(wrapperClass))}>
-  <input type="file" bind:files bind:this={elementRef} {...restProps} class={twMerge(base({ size }), clsx(className))} />
+<div class={cn(wrapper(), wrapperClass)}>
+  <input type="file" bind:files bind:this={elementRef} {...restProps} class={cn(base({ size }), className)} />
   {#if files && files.length > 0 && clearable}
-    <CloseButton onclick={clearAll} class={twMerge(right(), clsx(clearableClass))} color={clearableColor} aria-label="Clear selected files" svgClass={clsx(clearableSvgClass)} />
+    <CloseButton onclick={clearAll} class={cn(right(), clearableClass)} color={clearableColor} aria-label="Clear selected files" svgClass={cn(clearableSvgClass)} />
   {/if}
 </div>
 
@@ -28,7 +26,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L734)
+[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L764)
 ## Props
 @prop files = $bindable()
 @prop size = "md"
@@ -39,5 +37,6 @@
 @prop clearableColor = "none"
 @prop clearableClass
 @prop clearableOnClick
+@prop wrapperClass
 @prop ...restProps
 -->

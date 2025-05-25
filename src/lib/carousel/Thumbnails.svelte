@@ -1,11 +1,8 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
-  import Thumbnail from "./Thumbnail.svelte";
   import { thumbnails } from "./theme";
-  import type { ThumbnailsProps, State } from "$lib/types";
+  import { type ThumbnailsProps, type State, Thumbnail, cn } from "$lib";
 
   let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass = "", throttleDelay = 650, class: className }: ThumbnailsProps = $props();
 
@@ -49,12 +46,12 @@
   });
 </script>
 
-<div class={twMerge(thumbnails(), clsx(className))}>
+<div class={cn(thumbnails(), className)}>
   {#each images as image, idx}
     {@const selected = index === idx}
     <button onclick={() => btnClick(idx)} aria-label={ariaLabel}>
       {#if children}
-        {@render children({ image, selected, imgClass:clsx(imgClass), Thumbnail })}
+        {@render children({ image, selected, imgClass: cn(imgClass), Thumbnail })}
       {:else}
         <Thumbnail {selected} {...image} class={imgClass} />
       {/if}
@@ -66,7 +63,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L463)
+[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L482)
 ## Props
 @prop children
 @prop images = []

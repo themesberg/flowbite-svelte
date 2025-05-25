@@ -1,12 +1,9 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import { slide } from "svelte/transition";
   import { getContext } from "svelte";
   import { writable } from "svelte/store";
-
   import { accordionitem } from ".";
-  import type { AccordionCtxType, AccordionItemProps, ParamsType, BaseThemes } from "$lib/types";
-  import clsx from "clsx";
+  import { type AccordionCtxType, type AccordionItemProps, type ParamsType, type BaseThemes, cn } from "$lib";
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, headerClass, contentClass }: AccordionItemProps = $props();
 
@@ -33,12 +30,7 @@
 
   const { base, button, content, active, inactive } = $derived(accordionitemTheme({ flush: ctx.flush, open }));
 
-  let buttonClass = $derived(twMerge(
-    button(), 
-    open && !ctx.flush && (activeClass || ctx.activeClass || active()), 
-    !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()),
-    clsx(className)
-  ));
+  let buttonClass = $derived(cn(button(), open && !ctx.flush && (activeClass || ctx.activeClass || active()), !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()), className));
 </script>
 
 <h2 class={base({ class: headerClass })}>
@@ -84,7 +76,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L171)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L173)
 ## Props
 @prop children
 @prop header

@@ -1,12 +1,10 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
-  import { Button, ToolbarButton, type DatepickerProps } from "$lib";
+  import { Button, ToolbarButton, type DatepickerProps, cn } from "$lib";
   import { datepicker } from "./theme";
 
-  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, class:className }: DatepickerProps = $props();
+  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, class: className }: DatepickerProps = $props();
 
   const dateFormatDefault = { year: "numeric", month: "long", day: "numeric" };
   const dateFormatOptions = $derived(dateFormat ?? dateFormatDefault);
@@ -185,8 +183,8 @@
 <div bind:this={datepickerContainerElement} class={["relative", inline && "inline-block"]}>
   {#if !inline}
     <div class="relative">
-      <input bind:this={inputElement} type="text" class={twMerge(input({ color}), clsx(inputClass))} {placeholder} value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)} onfocus={() => (isOpen = true)} oninput={handleInputChange} onkeydown={handleInputKeydown} {disabled} {required} aria-haspopup="dialog" />
-      <button type="button" class={twMerge(button(), clsx(btnClass))} onclick={() => (isOpen = !isOpen)} {disabled} aria-label={isOpen ? "Close date picker" : "Open date picker"}>
+      <input bind:this={inputElement} type="text" class={cn(input({ color }), inputClass)} {placeholder} value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)} onfocus={() => (isOpen = true)} oninput={handleInputChange} onkeydown={handleInputKeydown} {disabled} {required} aria-haspopup="dialog" />
+      <button type="button" class={cn(button(), btnClass)} onclick={() => (isOpen = !isOpen)} {disabled} aria-label={isOpen ? "Close date picker" : "Open date picker"}>
         <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
           <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"></path>
         </svg>
@@ -195,7 +193,7 @@
   {/if}
 
   {#if isOpen || inline}
-    <div bind:this={calendarRef} id="datepicker-dropdown" class={twMerge(base({ inline }), clsx(className))} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
+    <div bind:this={calendarRef} id="datepicker-dropdown" class={cn(base({ inline }), className)} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
       {#if title}
         <h2 class={titleVariant()}>{title}</h2>
       {/if}
@@ -232,7 +230,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L495)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L516)
 ## Props
 @prop value = $bindable()
 @prop defaultDate = null
@@ -254,4 +252,6 @@
 @prop onselect
 @prop onclear
 @prop onapply
+@prop btnClass
+@prop class: className
 -->

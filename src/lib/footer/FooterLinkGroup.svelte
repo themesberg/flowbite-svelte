@@ -1,13 +1,11 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { footerLinkGroup } from ".";
-  import type { FooterLinkGroupProps } from "$lib/types";
+  import { type FooterLinkGroupProps, cn } from "$lib";
 
   let { class: className, children, ...restProps }: FooterLinkGroupProps = $props();
 </script>
 
-<ul {...restProps} class={twMerge(footerLinkGroup(), clsx(className))}>
+<ul {...restProps} class={cn(footerLinkGroup(), className)}>
   {@render children()}
 </ul>
 
@@ -15,9 +13,9 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L669)
+[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L696)
 ## Props
-@prop class: ulClass
+@prop class: className
 @prop children
 @prop ...restProps
 -->

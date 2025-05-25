@@ -1,13 +1,11 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { buttonGroup } from ".";
-  import type { ButtonGroupProps } from "$lib";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
+  import { type ButtonGroupProps, cn } from "$lib";
 
   let { children, size = "md", disabled, class: className, ...restProps }: ButtonGroupProps = $props();
 
-  let groupClass = $derived(twMerge(buttonGroup({ size }), clsx(className)));
+  let groupClass = $derived(cn(buttonGroup({ size }), className));
   setContext("group", size);
   setContext("disabled", disabled);
 </script>
@@ -20,7 +18,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L328)
+[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L338)
 ## Props
 @prop children
 @prop size = "md"

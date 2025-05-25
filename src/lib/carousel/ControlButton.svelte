@@ -1,17 +1,15 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { controlButton } from "./theme";
-  import type { ControlButtonProps } from "$lib/types";
+  import { type ControlButtonProps, cn } from "$lib";
 
   let { children, forward, name, class: className, spanClass, ...restProps }: ControlButtonProps = $props();
 </script>
 
-<button type="button" class={twMerge(controlButton({ forward }), clsx(className))} {...restProps}>
+<button type="button" class={cn(controlButton({ forward }), className)} {...restProps}>
   {#if children}
     {@render children()}
   {:else}
-    <span class={twMerge("inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-hidden sm:h-10 sm:w-10 dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70", clsx(spanClass))}>
+    <span class={cn("inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-hidden sm:h-10 sm:w-10 dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70", spanClass)}>
       {#if forward}
         <svg aria-hidden="true" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -32,11 +30,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L449)
+[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L465)
 ## Props
 @prop children
 @prop forward
 @prop name
 @prop class: className
+@prop spanClass
 @prop ...restProps
 -->

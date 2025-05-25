@@ -1,4 +1,2 @@
-import Label from "./Label.svelte";
-import { label } from "./theme";
-
-export { Label, label };
+export { default as Label } from "./Label.svelte";
+export { label } from "./theme";

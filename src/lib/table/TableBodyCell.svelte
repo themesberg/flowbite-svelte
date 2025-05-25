@@ -1,14 +1,14 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { tablebodycell } from ".";
   import type { TableBodyCellProps } from "$lib/types";
 
   let { children, class: className, colspan, onclick, ...restProps }: TableBodyCellProps = $props();
 
-  const base = $derived(tablebodycell({ class: clsx(className) }));
 </script>
 
-<td {...restProps} class={base} colspan={colspan ?? 1}>
+<td {...restProps} class={twMerge(tablebodycell(), clsx(className))} colspan={colspan ?? 1}>
   {#if onclick}
     <button {onclick}>
       {#if children}
@@ -24,7 +24,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1569)
+[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1629)
 ## Props
 @prop children
 @prop class: className

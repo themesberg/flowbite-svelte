@@ -4,6 +4,7 @@
   import { getContext } from "svelte";
   import { speed_dial_button } from "./theme";
   import type { SpeedCtxType, SpeedDialButtonProps } from "$lib/types";
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
 
   const context = getContext<SpeedCtxType>("speed-dial");
@@ -11,10 +12,10 @@
   let { children, name = "", color = "light", tooltip = context.tooltip, pill = context.pill, textOutside = context.textOutside, textClass, class: className, ...restProps }: SpeedDialButtonProps = $props();
 
   let { base, span } = $derived(speed_dial_button({ textOutside, tooltip: tooltip == "none" }));
-  let spanClass = $derived(tooltip === "none" ? span({ class: textClass }) : "sr-only");
+  let spanClass = $derived(tooltip === "none" ? twMerge(span(), clsx(textClass)) : "sr-only");
 </script>
 
-<Button {pill} {color} {...restProps} class={base({ class: clsx(className) })}>
+<Button {pill} {color} {...restProps} class={twMerge(base(),clsx(className))}>
   {@render children?.()}
   <span class={spanClass}>{name}</span>
 </Button>
@@ -27,7 +28,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1482)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1542)
 ## Props
 @prop children
 @prop name = ""

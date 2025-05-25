@@ -1,7 +1,6 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { twMerge } from "tailwind-merge";
-  import type { SidebarCtxType, SidebarItemProps } from "$lib/types";
+  import { type SidebarCtxType, type SidebarItemProps, cn } from "$lib";
 
   let { icon, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: SidebarItemProps = $props();
 
@@ -15,24 +14,20 @@
   });
   let activeItem = $state();
 
-  // $effect(() => {
-  //   activeItem = sidebarUrl ? href === sidebarUrl : false;
-  // });
   $effect(() => {
     // Prioritize the explicit 'active' prop if provided
     activeItem = active !== undefined ? active : sidebarUrl ? href === sidebarUrl : false;
   });
 
-  // let aCls = $derived((activeItem ?? sidebarUrl === href) ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));
   let aCls = $derived((activeItem ?? sidebarUrl === href) ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));
 </script>
 
-<li class={className}>
-  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={(activeItem ?? sidebarUrl === href) ? "page" : undefined} class={twMerge(aCls, aClass)}>
+<li class={cn(className)}>
+  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={(activeItem ?? sidebarUrl === href) ? "page" : undefined} class={cn(aCls, aClass)}>
     {#if icon}
       {@render icon()}
     {/if}
-    <span class={spanClass}>{label}</span>
+    <span class={cn(spanClass)}>{label}</span>
     {#if subtext}
       {@render subtext()}
     {/if}
@@ -43,7 +38,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1398)
+[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1458)
 ## Props
 @prop icon
 @prop subtext

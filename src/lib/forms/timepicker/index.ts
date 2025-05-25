@@ -1,4 +1,2 @@
-import Timepicker from "./Timepicker.svelte";
-// import { textarea } from "./theme";
+export { default as Timepicker } from "./Timepicker.svelte";
 
-export { Timepicker };

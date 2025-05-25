@@ -1,12 +1,10 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { helper } from ".";
-  import type { HelperProps } from "$lib/types";
+  import { type HelperProps, cn } from "$lib";
 
   let { children, class: className, color = "gray", ...restProps }: HelperProps = $props();
 
-  const base = $derived(twMerge(helper({ color}), clsx(className)));
+  const base = $derived(cn(helper({ color }), className));
 </script>
 
 <p {...restProps} class={base}>
@@ -17,7 +15,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[HelperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L770)
+[HelperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L802)
 ## Props
 @prop children
 @prop class: className

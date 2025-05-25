@@ -1,21 +1,18 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
-  import { Label } from "../label";
   import { toggle } from "./index";
-  import type { ToggleProps } from "$lib/types";
+  import { type ToggleProps, Label, cn } from "$lib";
 
   let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, inputClass, spanClass, offLabel, ...restProps }: ToggleProps = $props();
 
   const { input, label, span } = $derived(toggle({ color, checked, size, disabled, off_state_label: !!offLabel }));
 </script>
 
-<Label class={twMerge(label(), clsx(className) )}>
+<Label class={cn(label(), className)}>
   {#if offLabel}
     {@render offLabel()}
   {/if}
-  <input type="checkbox" bind:checked {value} {...restProps} {disabled} class={twMerge(input(), clsx(inputClass))} />
-  <span class={twMerge(span(), clsx(spanClass))}></span>
+  <input type="checkbox" bind:checked {value} {...restProps} {disabled} class={cn(input(), inputClass)} />
+  <span class={cn(span(), spanClass)}></span>
   {#if children}
     {@render children()}
   {/if}
@@ -25,7 +22,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L949)
+[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L991)
 ## Props
 @prop children
 @prop size = "default"

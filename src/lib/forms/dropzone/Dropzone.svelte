@@ -1,9 +1,7 @@
 <script lang="ts">
   import type { DragEventHandler, ChangeEventHandler } from "svelte/elements";
   import { dropzone } from ".";
-  import type { DropzoneProps } from "$lib/types";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
+  import { type DropzoneProps, cn } from "$lib";
 
   type HTMLInputElementWithFiles = HTMLInputElement & { files: FileList | null };
 
@@ -51,7 +49,7 @@
   };
 </script>
 
-<button class={twMerge(dropzone(), clsx(className))} onkeydown={keydown} onclick={onClick} ondrop={onDrop} ondragover={onDragOver} type="button">
+<button class={cn(dropzone(), className)} onkeydown={keydown} onclick={onClick} ondrop={onDrop} ondragover={onDragOver} type="button">
   {@render children()}
 </button>
 <label class="hidden">
@@ -62,7 +60,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropzoneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L728)
+[DropzoneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L757)
 ## Props
 @prop children
 @prop files = $bindable<FileList | null>()

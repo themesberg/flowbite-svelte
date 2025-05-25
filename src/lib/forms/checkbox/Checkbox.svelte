@@ -1,9 +1,6 @@
 <script lang="ts">
-  import Label from "../label/Label.svelte";
   import { checkbox } from ".";
-  import { type CheckboxProps, type CheckboxItem } from "$lib";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
+  import { type CheckboxProps, type CheckboxItem, Label, cn } from "$lib";
 
   let { children, color = "primary", custom, inline, tinted, rounded, group = $bindable([]), choices = [], checked = $bindable(false), indeterminate, class: className, divClass, disabled = false, value, labelProps = {}, ...restProps }: CheckboxProps = $props();
 
@@ -23,16 +20,16 @@
 
 {#if choices.length > 0}
   {#each choices as choice, i}
-    <div class={twMerge(divStyle(), clsx(divClass))}>
-      <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} class={twMerge(base(), clsx(clsx(className)))} />
+    <div class={cn(divStyle(), divClass)}>
+      <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} class={cn(base(), className)} />
       <Label show={true} {...labelProps}>
         {renderLabel(choice)}
       </Label>
     </div>
   {/each}
 {:else}
-  <div class={twMerge(divStyle(), clsx(divClass))}>
-    <input type="checkbox" {value} bind:checked {indeterminate} {disabled} {...restProps} class={twMerge(base(), clsx(className))} />
+  <div class={cn(divStyle(), divClass)}>
+    <input type="checkbox" {value} bind:checked {indeterminate} {disabled} {...restProps} class={cn(base(), className)} />
     {#if children}
       {@render children({ value, checked, disabled })}
     {/if}

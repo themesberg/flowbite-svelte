@@ -1,5 +1,6 @@
 <script lang="ts">
   import { twMerge, twJoin } from "tailwind-merge";
+  import clsx from "clsx";
   import type { StepIndicatorProps, StepColorType } from "$lib";
 
   let { steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"], currentStep = 1, size = "h-2.5", color = "primary", glow = false, hideLabel = false, completedCustom = "", currentCustom = "", class: className, ...restProps }: StepIndicatorProps = $props();
@@ -46,7 +47,7 @@
   }
 </script>
 
-<div {...restProps} class={twMerge("space-y-2 dark:text-white", className)}>
+<div {...restProps} class={twMerge("space-y-2 dark:text-white", clsx(className))}>
   {#if !hideLabel}
     <h3 class="text-base font-semibold">{currentStepLabel}</h3>
   {/if}
@@ -72,7 +73,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1510)
+[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1570)
 ## Props
 @prop steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"]
 @prop currentStep = 1

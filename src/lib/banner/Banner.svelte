@@ -1,10 +1,7 @@
 <script lang="ts">
-  import { CloseButton } from "$lib";
   import { fade } from "svelte/transition";
-  import { banner } from "./index";
-  import type { ParamsType, BannerProps } from "$lib/types";
-  import clsx from "clsx";
-  import { twMerge } from "tailwind-merge";
+  import { banner } from ".";
+  import { type ParamsType, type BannerProps, CloseButton, cn } from "$lib";
 
   let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, innerClass, transition = fade, params, closeClass, ...restProps }: BannerProps = $props();
 
@@ -12,15 +9,15 @@
 </script>
 
 {#if open}
-  <div tabindex="-1" class={twMerge(base(), clsx(className) )} {...restProps} transition:transition={params as ParamsType}>
-    <div class={twMerge(insideDiv(), clsx(innerClass))}>
+  <div tabindex="-1" class={cn(base(), className)} {...restProps} transition:transition={params as ParamsType}>
+    <div class={cn(insideDiv(), innerClass)}>
       {@render children?.()}
     </div>
 
     {#if dismissable}
       <div class="flex items-center justify-end">
         <CloseButton
-          class={twMerge(dismissableClass(), clsx(closeClass))}
+          class={cn(dismissableClass(), closeClass)}
           {color}
           ariaLabel="Remove banner"
           onclick={() => {
@@ -36,7 +33,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L230)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L236)
 ## Props
 @prop children
 @prop header
@@ -48,5 +45,6 @@
 @prop innerClass
 @prop transition = fade
 @prop params
+@prop closeClass
 @prop ...restProps
 -->

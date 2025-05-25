@@ -1,3 +1,2 @@
-import InputAddon from "./InputAddon.svelte";
+export { default as InputAddon } from "./InputAddon.svelte";
 
-export { InputAddon };

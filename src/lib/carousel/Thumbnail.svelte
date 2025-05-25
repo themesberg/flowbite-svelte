@@ -1,20 +1,18 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { thumbnail } from "./theme";
-  import type { ThumbnailProps } from "$lib/types";
+  import { type ThumbnailProps, cn } from "$lib";
 
   let { selected, class: className, ...restProps }: ThumbnailProps = $props();
-  const imgCls = $derived(thumbnail({ selected}));
+  const imgCls = $derived(thumbnail({ selected }));
 </script>
 
-<img {...restProps} class={twMerge(imgCls, clsx(className))} />
+<img {...restProps} class={cn(imgCls, className)} />
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L459)
+[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L477)
 ## Props
 @prop selected
 @prop class: className

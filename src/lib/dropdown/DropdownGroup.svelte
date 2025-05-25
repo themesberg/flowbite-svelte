@@ -1,14 +1,11 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { dropdownGroup } from ".";
-  import type { DropdownGroupProps } from "$lib/types";
+  import { type DropdownGroupProps, cn } from "$lib";
 
   let { children, class: className, ...restProps }: DropdownGroupProps = $props();
-
 </script>
 
-<ul {...restProps} class={twMerge(dropdownGroup(), clsx(className))}>
+<ul {...restProps} class={cn(dropdownGroup(), className)}>
   {@render children()}
 </ul>
 
@@ -16,7 +13,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L629)
+[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L654)
 ## Props
 @prop children
 @prop class: className

@@ -2,9 +2,7 @@
   import { setContext, getContext } from "svelte";
   import { writable } from "svelte/store";
   import { accordion } from "./";
-  import type { AccordionProps, BaseThemes } from "$lib/types";
-  import clsx from "clsx";
-  import { twMerge } from "tailwind-merge";
+  import {type AccordionProps, type BaseThemes, cn } from "$lib";
 
   let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, ...restProps }: AccordionProps = $props();
 
@@ -22,7 +20,7 @@
 
   setContext("ctx", ctx);
   setContext("ctxTransitionType", transitionType);
-  const base = $derived(twMerge(accordionTheme({ flush }), clsx(className)));
+  const base = $derived(cn(accordionTheme({ flush }), className));
 </script>
 
 <div {...restProps} class={base}>
@@ -33,7 +31,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L159)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L160)
 ## Props
 @prop children
 @prop flush

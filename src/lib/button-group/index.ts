@@ -1,4 +1,2 @@
-import ButtonGroup from "./ButtonGroup.svelte";
-import { buttonGroup } from "./theme";
-
-export { ButtonGroup, buttonGroup };
+export { default as ButtonGroup } from "./ButtonGroup.svelte";
+export { buttonGroup } from "./theme";

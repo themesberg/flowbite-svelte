@@ -1,5 +1,3 @@
-import Button from "./Button.svelte";
-import GradientButton from "./GradientButton.svelte";
-import { button, gradientButton } from "./theme";
-
-export { Button, GradientButton, gradientButton, button };
+export { default as Button } from "./Button.svelte";
+export { default as GradientButton } from "./GradientButton.svelte";
+export { button, gradientButton } from "./theme";

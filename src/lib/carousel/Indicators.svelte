@@ -2,9 +2,7 @@
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
   import { indicators } from "./theme";
-  import { Indicator, type IndicatorsProps, type State } from "$lib";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
+  import { Indicator, type IndicatorsProps, type State, cn } from "$lib";
 
   let { children, activeClass, inactiveClass, position = "bottom", class: className, ...restProps }: IndicatorsProps = $props();
 
@@ -25,14 +23,14 @@
   }
 </script>
 
-<div class={twMerge(base(), clsx(className))} {...restProps}>
+<div class={cn(base(), className)} {...restProps}>
   {#each $state.images as _, idx}
     {@const selected = $state.index === idx}
     <button onclick={() => goToIndex(idx)}>
       {#if children}
         {@render children({ selected, index: idx })}
       {:else}
-        <Indicator class={twMerge(indicator({ selected }), selected ? clsx(activeClass) : clsx(inactiveClass))} />
+        <Indicator class={cn(indicator({ selected }), selected ? activeClass : inactiveClass)} />
       {/if}
     </button>
   {/each}
@@ -42,7 +40,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L442)
+[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L457)
 ## Props
 @prop children
 @prop activeClass

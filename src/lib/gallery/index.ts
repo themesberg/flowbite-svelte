@@ -1,4 +1,2 @@
-import Gallery from "./Gallery.svelte";
-import { gallery } from "./theme";
-
-export { Gallery, gallery };
+export { default as Gallery } from "./Gallery.svelte";
+export { gallery } from "./theme";

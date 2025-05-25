@@ -1,10 +1,7 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import ListgroupItem from "./ListgroupItem.svelte";
   import { listGroup } from ".";
-  import type { ListgroupProps } from "$lib/types";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
+  import { type ListgroupProps, ListgroupItem, cn } from "$lib";
 
   let { children, items, active, onclick, horizontal, rounded, border, class: className, itemClass, iconClass, ...restProps }: ListgroupProps = $props();
 
@@ -25,15 +22,15 @@
   }
 </script>
 
-<svelte:element this={tag} {...restProps} class={twMerge(base, clsx(className))}>
+<svelte:element this={tag} {...restProps} class={cn(base, className)}>
   {#if items?.length}
     {#each items as item}
       {#if children}
         {@render children(item)}
       {:else if typeof item === "string"}
-        <ListgroupItem href={undefined} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} onclick={createItemClickHandler(item)}>{item}</ListgroupItem>
+        <ListgroupItem href={undefined} class={cn(itemClass)} iconClass={cn(iconClass)} {active} {horizontal} onclick={createItemClickHandler(item)}>{item}</ListgroupItem>
       {:else}
-        <ListgroupItem href={item.href} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} {...item} onclick={item.onclick ?? createItemClickHandler(item)} />
+        <ListgroupItem href={item.href} class={cn(itemClass)} iconClass={cn(iconClass)} {active} {horizontal} {...item} onclick={item.onclick ?? createItemClickHandler(item)} />
       {/if}
     {/each}
   {:else}
@@ -45,7 +42,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1007)
+[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1053)
 ## Props
 @prop children
 @prop items

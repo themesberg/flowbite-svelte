@@ -4,8 +4,9 @@
   import { writable } from "svelte/store";
   import { sineIn } from "svelte/easing";
   import { sidebar } from ".";
-  import clsx from "clsx";
   import { trapFocus, type SidebarProps, type SidebarCtxType } from "$lib";
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
 
   let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = "md", alwaysOpen = false, position = "fixed", activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, activeUrl = "", class: className, ...restProps }: SidebarProps = $props();
 
@@ -34,10 +35,10 @@
       return closeSidebar;
     },
     get activeClass() {
-      return active({ class: activeClass });
+      return twMerge(active(), clsx(activeClass));
     },
     get nonActiveClass() {
-      return nonactive({ class: nonActiveClass });
+      return twMerge(nonactive(), clsx(nonActiveClass));
     },
     isSingle
   };
@@ -57,17 +58,17 @@
 {#if isOpen || isLargeScreen}
   {#if isOpen && !alwaysOpen}
     {#if backdrop && activateClickOutside}
-      <div role="presentation" class={backdropCls({ class: backdropClass })} onclick={closeSidebar}></div>
+      <div role="presentation" class={twMerge(backdropCls(), clsx(backdropClass))} onclick={closeSidebar}></div>
     {:else if backdrop && !activateClickOutside}
-      <div role="presentation" class={backdropCls({ class: backdropClass })}></div>
+      <div role="presentation" class={twMerge(backdropCls(),clsx(backdropClass))}></div>
     {:else if !backdrop && activateClickOutside}
       <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full" onclick={closeSidebar}></div>
     {:else if !backdrop && !activateClickOutside}
       <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full"></div>
     {/if}
   {/if}
-  <aside use:trapFocus={!isLargeScreen && isOpen && !alwaysOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} transition:transition={!alwaysOpen ? transitionParams : undefined} {...restProps} class={base({ class: clsx(className) })} aria-label={ariaLabel}>
-    <div class={div({ class: divClass })}>
+  <aside use:trapFocus={!isLargeScreen && isOpen && !alwaysOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} transition:transition={!alwaysOpen ? transitionParams : undefined} {...restProps} class={twMerge(base(), clsx(clsx(className)))} aria-label={ariaLabel}>
+    <div class={twMerge(div(), clsx(divClass))}>
       {@render children()}
     </div>
   </aside>
@@ -77,7 +78,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1334)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1394)
 ## Props
 @prop children
 @prop isOpen = false

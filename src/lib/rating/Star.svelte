@@ -1,4 +1,5 @@
 <script lang="ts">
+  import clsx from "clsx";
   import type { RatingIconProps } from "$lib/types";
 
   let { fillPercent = 100, fillColor = "#F5CA14", strokeColor = "#F5CA14", size = 24, ariaLabel = "star", iconIndex = 0, groupId = "star", role = "img", svgClass, ...restProps }: RatingIconProps = $props();
@@ -6,7 +7,7 @@
   const uniqueId = `${groupId}-${iconIndex}`;
 </script>
 
-<svg width={size} height={size} {...restProps} class={svgClass} aria-label={ariaLabel} viewBox="100 100 120 120" {role}>
+<svg width={size} height={size} {...restProps} class={clsx(svgClass)} aria-label={ariaLabel} viewBox="100 100 120 120" {role}>
   <defs>
     <linearGradient id={uniqueId}>
       {#if fillPercent !== 100}
@@ -34,7 +35,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1311)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1371)
 ## Props
 @prop fillPercent = 100
 @prop fillColor = "#F5CA14"

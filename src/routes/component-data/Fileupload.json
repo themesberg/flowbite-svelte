@@ -2,7 +2,7 @@
   "name": "Fileupload",
   "type": {
     "name": "FileuploadProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L734"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L764"
   },
   "props": [
     ["files", "$bindable()"],
@@ -13,6 +13,7 @@
     ["clearableSvgClass", ""],
     ["clearableColor", "\"none\""],
     ["clearableClass", ""],
-    ["clearableOnClick", ""]
+    ["clearableOnClick", ""],
+    ["wrapperClass", ""]
   ]
 }

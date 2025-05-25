@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import Popper from "../utils/Popper.svelte";
   import { popover } from "./theme";
@@ -9,7 +10,7 @@
   let { base, title, h3, content } = $derived(popover({ color }));
 </script>
 
-<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={base({ class: clsx(className) })}>
+<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={twMerge(base(), clsx(className))}>
   {#if typeof titleSlot === "string"}
     <div class={title()}>
       <h3 class={h3()}>{titleSlot}</h3>
@@ -17,7 +18,7 @@
   {:else if titleSlot}
     {@render titleSlot()}
   {/if}
-  <div class={content({ class: defaultClass })}>
+  <div class={twMerge(content(), clsx(defaultClass))}>
     {@render children()}
   </div>
 </Popper>
@@ -26,7 +27,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1174)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1234)
 ## Props
 @prop title: titleSlot
 @prop color = "default"

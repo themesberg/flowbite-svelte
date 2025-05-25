@@ -1,9 +1,7 @@
 <script lang="ts">
   import { card } from ".";
-  import type { CardProps } from "$lib/types";
+  import { type CardProps, cn } from "$lib";
   import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
 
   let { children, href, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, imgClass, contentClass, ...restProps }: CardProps = $props();
 
@@ -20,7 +18,7 @@
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   const commonProps: Record<string, any> = $derived({
-    class: twMerge(base(), clsx(className)),
+    class: cn(base(), className),
     ...restProps
   });
 
@@ -36,7 +34,7 @@
 
 {#snippet childSlot()}
   {#if img}
-    <img class={twMerge(image(), clsx(imgClass))} src={img} alt={img} />
+    <img class={cn(image(), imgClass)} src={img} alt={img} />
     {@render children()}
   {:else}
     {@render children()}
@@ -57,7 +55,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L416)
+[CardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L430)
 ## Props
 @prop children
 @prop href

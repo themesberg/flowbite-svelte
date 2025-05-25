@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { twMerge } from "tailwind-merge";
+  import clsx from "clsx";
   import { advancedrating } from ".";
   import type { AdvancedRatingProps } from "$lib/types";
 
@@ -14,12 +16,12 @@
   {@render globalText()}
 {/if}
 {#each ratings as { label, rating }}
-  <div class={base({ class: divClass })}>
-    <span class={span({ class: spanClass })}>{label}</span>
-    <div class={div2({ class: div2Class })}>
-      <div class={div3({ class: div3Class })} style="width: {rating}%"></div>
+  <div class={twMerge(base(), clsx(divClass))}>
+    <span class={twMerge(span(), clsx(spanClass))}>{label}</span>
+    <div class={twMerge(div2(), clsx(div2Class))}>
+      <div class={twMerge(div3(), clsx(div3Class))} style="width: {rating}%"></div>
     </div>
-    <span class={span2({ class: span2Class })}>{rating}{unit}</span>
+    <span class={twMerge(span2(), clsx(span2Class))}>{rating}{unit}</span>
   </div>
 {/each}
 
@@ -27,7 +29,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1225)
+[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1285)
 ## Props
 @prop rating
 @prop globalText

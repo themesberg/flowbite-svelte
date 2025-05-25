@@ -1,12 +1,8 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
-  import Popper from "$lib/utils/Popper.svelte";
   import { setContext } from "svelte";
   import { writable } from "svelte/store";
   import { dropdown } from "./";
-  import type { DropdownProps } from "$lib/types";
-  import DropdownGroup from "./DropdownGroup.svelte";
+  import { type DropdownProps, Popper, cn, DropdownGroup } from "$lib";
 
   let { children, simple = false, placement = "bottom", offset = 2, class: className, activeUrl = "", isOpen = $bindable(false), ...restProps }: DropdownProps = $props();
 
@@ -21,7 +17,7 @@
 
 <!-- Dropdown menu -->
 
-<Popper {...restProps} {placement} {offset} bind:isOpen class={twMerge(base(), clsx(className))}>
+<Popper {...restProps} {placement} {offset} bind:isOpen class={cn(base(), className)}>
   {#if simple}
     <DropdownGroup>
       {@render children()}
@@ -35,14 +31,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L601)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L626)
 ## Props
 @prop children
 @prop simple = false
 @prop placement = "bottom"
 @prop offset = 2
 @prop class: className
-@prop backdropClass
 @prop activeUrl = ""
 @prop isOpen = $bindable(false)
 @prop ...restProps

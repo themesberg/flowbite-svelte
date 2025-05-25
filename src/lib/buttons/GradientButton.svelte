@@ -1,11 +1,7 @@
 <script lang="ts">
-  import Button from "./Button.svelte";
   import { getContext } from "svelte";
   import { gradientButton } from ".";
-  import type { GradientButtonProps } from "$lib/types";
-  import type { SizeType } from "$lib/types";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
+  import { type GradientButtonProps, type SizeType, Button, cn } from "$lib";
 
   const group: SizeType = getContext("group");
 
@@ -15,13 +11,13 @@
 </script>
 
 {#if outline}
-  <div class={twMerge(base(), clsx(className))}>
-    <Button {...restProps} class={twMerge(outlineWrapper(), clsx(btnClass))} {disabled} {href} {size}>
+  <div class={cn(base(), className)}>
+    <Button {...restProps} class={cn(outlineWrapper(), btnClass)} {disabled} {href} {size}>
       {@render children?.()}
     </Button>
   </div>
 {:else}
-  <Button {...restProps} class={twMerge(base(), clsx(className))} {disabled} {href} {size}>
+  <Button {...restProps} class={cn(base(), className)} {disabled} {href} {size}>
     {@render children?.()}
   </Button>
 {/if}
@@ -30,7 +26,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L352)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L363)
 ## Props
 @prop children
 @prop outline
@@ -41,5 +37,6 @@
 @prop href
 @prop disabled
 @prop size
+@prop btnClass
 @prop ...restProps
 -->

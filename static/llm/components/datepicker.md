@@ -218,7 +218,7 @@ Listen for date selection events using the `onselect` event.
 
 #### Types
 
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L495)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L516)
 
 #### Props
 
@@ -242,6 +242,8 @@ Listen for date selection events using the `onselect` event.
 - onselect
 - onclear
 - onapply
+- btnClass
+- class: className
 
 
 ## References

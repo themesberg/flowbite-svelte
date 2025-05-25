@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { smartwatch } from ".";
-  import type { SmartwatchProps } from "$lib/types";
+  import { type SmartwatchProps, cn } from "$lib";
 
   let { children, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: SmartwatchProps = $props();
 
@@ -10,24 +8,24 @@
 </script>
 
 <div {...restProps}>
-  <div class={twMerge(div(), clsx(divClass))}></div>
-  <div class={twMerge(top(), clsx(div2Class))}>
-    <div class={twMerge(rightTop(), clsx(div3Class))}></div>
-    <div class={twMerge(rightBot(), clsx(div4Class))}></div>
-    <div class={twMerge(slot(), clsx(div5Class))}>
+  <div class={cn(div(), divClass)}></div>
+  <div class={cn(top(), div2Class)}>
+    <div class={cn(rightTop(), div3Class)}></div>
+    <div class={cn(rightBot(), div4Class)}></div>
+    <div class={cn(slot(), div5Class)}>
       {#if children}
         {@render children()}
       {/if}
     </div>
   </div>
-  <div class={twMerge(bot(), clsx(div6Class))}></div>
+  <div class={cn(bot(), div6Class)}></div>
 </div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L563)
+[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L586)
 ## Props
 @prop children
 @prop divClass
