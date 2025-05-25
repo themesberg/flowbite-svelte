@@ -3,8 +3,9 @@
   import type { Writable } from "svelte/store";
   import { thumbnails } from "./theme";
   import { type ThumbnailsProps, type State, Thumbnail, cn } from "$lib";
+  import clsx from "clsx";
 
-  let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass = "", throttleDelay = 650, class: className }: ThumbnailsProps = $props();
+  let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass, throttleDelay = 650, class: className }: ThumbnailsProps = $props();
 
   const state = getContext<Writable<State>>("state");
   if (!state) {
@@ -53,7 +54,7 @@
       {#if children}
         {@render children({ image, selected, imgClass: cn(imgClass), Thumbnail })}
       {:else}
-        <Thumbnail {selected} {...image} class={imgClass} />
+        <Thumbnail {...image} {selected} class={clsx(imgClass)} />
       {/if}
     </button>
   {/each}

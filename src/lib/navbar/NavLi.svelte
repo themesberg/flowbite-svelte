@@ -7,7 +7,7 @@
 
   let navState = getContext<NavbarState>("navState");
 
-  let { children, activeClass, nonActiveClass, class: className, onclick, ...restProps }: NavLiProps = $props();
+  let { children, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
 
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
 
@@ -22,7 +22,7 @@
 
 <li>
   {#if restProps.href === undefined}
-    <button role="presentation" {...restProps} class={liClass} {onclick}>
+    <button role="presentation" {...restProps} class={liClass}>
       {@render children?.()}
     </button>
   {:else}

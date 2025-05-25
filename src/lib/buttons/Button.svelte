@@ -6,7 +6,7 @@
   const group: SizeType = getContext("group");
   const ctxDisabled: boolean | undefined = getContext("disabled");
 
-  let { children, onclick, pill, outline = false, size = "md", color = "primary", shadow = false, tag = "button", disabled, class: className, ...restProps }: ButtonProps = $props();
+  let { children, pill, outline = false, size = "md", color = "primary", shadow = false, tag = "button", disabled, class: className, ...restProps }: ButtonProps = $props();
 
   let actualSize = $derived(group ? "sm" : size);
   let actualColor = $derived(group ? (outline ? "dark" : "alternative") : color);
@@ -17,7 +17,7 @@
 </script>
 
 {#if restProps.href === undefined}
-  <button type="button" {...restProps} class={btnCls} disabled={isDisabled} {onclick}>
+  <button type="button" {...restProps} class={btnCls} disabled={isDisabled}>
     {@render children?.()}
   </button>
 {:else if restProps.href}

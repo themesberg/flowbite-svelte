@@ -104,7 +104,7 @@ export type NavbarType = {
 };
 
 // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
-export type ColorVariant = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "none";
+// export type ColorVariant = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "none";
 
 export type DeviceVariantType = "default" | "ios" | "android" | "tablet" | "laptop" | "desktop" | "smartwatch";
 
@@ -135,16 +135,9 @@ export interface LinkType {
   [propName: string]: any;
 }
 
-interface AnchorAttributes extends Omit<HTMLAnchorAttributes, "on:copy" | "oncopy" | "onclick"> {
-  href: string;
-  onclick?: HTMLButtonAttributes["onclick"];
-}
-
-interface ButtonAttibutes extends Omit<HTMLButtonAttributes, "on:copy" | "oncopy"> {
-  href?: undefined;
-}
-
-export type AnchorButtonAttributes = AnchorAttributes | ButtonAttibutes;
+export type AnchorButtonAttributes =
+  | ({ href: string } & HTMLAnchorAttributes)
+  | ({ href?: undefined } & HTMLButtonAttributes);
 
 // accordion
 export interface AccordionCtxType {
@@ -157,7 +150,7 @@ export interface AccordionCtxType {
   multiple?: boolean;
 }
 
-export interface AccordionProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   flush?: boolean;
   multiple?: boolean;
@@ -167,10 +160,9 @@ export interface AccordionProps extends Omit<HTMLAttributes<HTMLDivElement>, "cl
   classActive?: string;
   classInactive?: string;
   transitionType?: TransitionFunc | "none";
-  class?: ClassValue;
 }
 
-export interface AccordionItemProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   header?: Snippet;
   arrowup?: Snippet;
@@ -182,13 +174,12 @@ export interface AccordionItemProps extends Omit<HTMLAttributes<HTMLDivElement>,
   transitionParams?: ParamsType;
   headerClass?: string;
   contentClass?: string;
-  class?: ClassValue;
 }
 
 // alert
 export type alertColor = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
 
-export interface AlertProps extends Omit<AlertVariants, "icon">, Omit<HTMLAttributes<HTMLDivElement>, "color" | "class"> {
+export interface AlertProps extends Omit<AlertVariants, "icon">, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   children: Snippet;
   icon?: Snippet;
   alertStatus?: boolean;
@@ -196,11 +187,10 @@ export interface AlertProps extends Omit<AlertVariants, "icon">, Omit<HTMLAttrib
   transition?: TransitionFunc;
   params?: ParamsType;
   onclick?: () => void;
-  class?: ClassValue;
 }
 
 // avatar
-export interface AvatarProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface AvatarProps extends HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   indicator?: Snippet;
   href?: HTMLAnchorAttributes["href"];
@@ -213,11 +203,10 @@ export interface AvatarProps extends Omit<HTMLAttributes<HTMLDivElement>, "class
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   onclick?: () => void;
   border?: boolean;
-  class?: ClassValue;
 }
 
 // badge
-export interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivElement>, "color" | "class"> {
+export interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   children: Snippet;
   icon?: Snippet;
   badgeStatus?: boolean;
@@ -229,11 +218,10 @@ export interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivEl
   params?: ParamsType;
   onclose?: (ev: Event) => void;
   aClass?: ClassValue;
-  class?: ClassValue;
 }
 
 // banner
-export interface BannerProps extends BannerVariants, Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface BannerProps extends BannerVariants, HTMLAttributes<HTMLDivElement> {
   header?: Snippet;
   open?: boolean;
   dismissable?: boolean;
@@ -242,7 +230,6 @@ export interface BannerProps extends BannerVariants, Omit<HTMLAttributes<HTMLDiv
   transition?: TransitionFunc;
   params?: object;
   closeClass?: ClassValue;
-  class?: ClassValue;
 }
 
 // bottom-navigation
@@ -308,22 +295,20 @@ export interface BottomNavHeaderProps {
   innerClass?: ClassValue;
 }
 
-export interface BottomNavHeaderItemProps extends Omit<HTMLButtonAttributes, "class"> {
+export interface BottomNavHeaderItemProps extends HTMLButtonAttributes {
   itemName: string;
   active?: boolean;
-  class?: ClassValue;
 }
 
 // breadcrumb
-export interface BreadcrumbProps extends Omit<HTMLAttributes<HTMLElement>, "class"> {
+export interface BreadcrumbProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
   solid?: boolean;
   olClass?: ClassValue;
   ariaLabel?: string;
-  class?: ClassValue;
 }
 
-export interface BreadcrumbItemProps extends Omit<HTMLLiAttributes, "class"> {
+export interface BreadcrumbItemProps extends HTMLLiAttributes {
   children: Snippet;
   icon?: Snippet;
   home?: boolean;
@@ -331,14 +316,12 @@ export interface BreadcrumbItemProps extends Omit<HTMLLiAttributes, "class"> {
   linkClass?: ClassValue;
   spanClass?: ClassValue;
   homeClass?: ClassValue;
-  class?: ClassValue;
 }
 
 // buttongroup
-export interface ButtonGroupProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface ButtonGroupProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   size?: ButtonGroupSizeType;
-  class?: ClassValue;
   disabled?: boolean;
 }
 
@@ -357,16 +340,14 @@ export type ButtonProps = ButtonVariants &
     outline?: boolean;
     shadow?: boolean;
     color?: ButtonColor;
-    class?: ClassValue;
   };
 
-export interface GradientButtonProps extends GradientButtonVariantes, Omit<HTMLButtonOrAnchorAttributes, "class"> {
+export interface GradientButtonProps extends GradientButtonVariantes, HTMLButtonOrAnchorAttributes {
   tag?: string;
   disabled?: boolean;
   href?: string;
   color?: GradientButtonColor;
   btnClass?: ClassValue;
-  class?: ClassValue;
 }
 
 // button-toggle
@@ -379,7 +360,6 @@ export type ButtonToggleGroupProps = HTMLAttributes<HTMLDivElement> & {
   roundedSize?: ButtonToggleVariants["roundedSize"];
   onSelect?: (val: any) => void;
   children: Snippet;
-  class?: ClassValue;
   ctxIconClass?: ClassValue;
   ctxBtnClass?: ClassValue;
 };
@@ -391,7 +371,6 @@ export type ButtonToggleProps = HTMLButtonAttributes & {
   iconSlot: Snippet;
   color?: ButtonToggleVariants["color"];
   iconClass?: ClassValue;
-  class?: ClassValue;
   contentClass?: ClassValue;
   txtClass?: ClassValue;
 };
@@ -401,8 +380,7 @@ export interface ButtonToggleContext {
   isSelected: (toggleValue: string) => boolean;
 }
 
-export interface CheckIconProps extends Omit<SVGAttributes<SVGSVGElement>, "class"> {
-  class?: ClassValue;
+export interface CheckIconProps extends SVGAttributes<SVGSVGElement> {
 }
 
 // card
@@ -421,7 +399,6 @@ export interface BaseCardProps {
   reverse?: boolean;
   img?: string;
   size?: CardSizeType;
-  class?: ClassValue;
   // onclick?: () => void;
   imgClass?: ClassValue;
   contentClass?: string;
@@ -439,7 +416,7 @@ export type State = {
   forward: boolean;
 };
 
-export interface CarouselProps extends CarouselVariants, Omit<HTMLAttributes<HTMLDivElement>, "children" | "onchange" | "class"> {
+export interface CarouselProps extends CarouselVariants, Omit<HTMLAttributes<HTMLDivElement>, "children" | "onchange"> {
   children?: Snippet<[number]>;
   slide?: Snippet<[{ index: number; Slide: typeof Slide }]>;
   images: HTMLImgAttributes[];
@@ -451,48 +428,41 @@ export interface CarouselProps extends CarouselVariants, Omit<HTMLAttributes<HTM
   imgClass?: ClassValue;
   onchange?: (x: HTMLImgAttributes) => {};
   divClass?: ClassValue;
-  class?: ClassValue;
 }
 
-export interface IndicatorsProps extends Omit<HTMLAttributes<HTMLDivElement>, "children" | "class"> {
+export interface IndicatorsProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   children?: Snippet<[{ selected: boolean; index: number }]>;
   activeClass?: ClassValue;
   inactiveClass?: ClassValue;
   position?: "top" | "bottom" | "withThumbnails";
-  class?: ClassValue;
 }
 
-export interface ControlButtonProps extends Omit<HTMLButtonAttributes, "class"> {
+export interface ControlButtonProps extends HTMLButtonAttributes {
   forward: boolean;
   name?: string | undefined | null;
   spanClass?: ClassValue;
-  class?: ClassValue;
 }
 
-export interface ControlsProps extends Omit<HTMLButtonAttributes, "children" | "class"> {
+export interface ControlsProps extends Omit<HTMLButtonAttributes, "children"> {
   children?: Snippet<[(forward: boolean) => void]>;
-  class?: ClassValue;
 }
 
-export interface ThumbnailProps extends Omit<HTMLImgAttributes, "class"> {
+export interface ThumbnailProps extends HTMLImgAttributes {
   selected?: boolean;
-  class?: ClassValue;
 }
 
-export interface ThumbnailsProps extends Omit<HTMLAttributes<HTMLDivElement>, "children" | "class"> {
+export interface ThumbnailsProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   children?: Snippet<[{ image: HTMLImgAttributes; selected: boolean; imgClass: string; Thumbnail: Component }]>;
   images: HTMLImgAttributes[];
   index: number;
   ariaLabel?: string;
   imgClass?: ClassValue;
   throttleDelay?: number;
-  class?: ClassValue;
 }
 
-export interface SlideProps extends Omit<HTMLImgAttributes, "class"> {
+export interface SlideProps extends HTMLImgAttributes {
   image: HTMLImgAttributes;
   transition?: TransitionFunc; // Optional transition function, overrides default slide transition
-  class?: ClassValue;
 }
 
 // chart
@@ -502,8 +472,7 @@ export interface ChartProps {
 }
 
 // darkmode
-export interface DarkmodeProps extends Omit<HTMLButtonAttributes, "class"> {
-  class?: ClassValue;
+export interface DarkmodeProps extends HTMLButtonAttributes {
   lightIcon?: Snippet;
   darkIcon?: Snippet;
   size?: "sm" | "md" | "lg";
@@ -513,7 +482,7 @@ export interface DarkmodeProps extends Omit<HTMLButtonAttributes, "class"> {
 // datepicker
 export type DateOrRange = Date | { from?: Date; to?: Date };
 
-export interface DatepickerProps extends Omit<HTMLAttributes<HTMLDivElement>, "onselect" | "class"> {
+export interface DatepickerProps extends Omit<HTMLAttributes<HTMLDivElement>, "onselect"> {
   value?: Date;
   defaultDate?: Date | null;
   range?: boolean;
@@ -535,7 +504,6 @@ export interface DatepickerProps extends Omit<HTMLAttributes<HTMLDivElement>, "o
   onclear?: () => void;
   onapply?: (x: DateOrRange) => void;
   btnClass?: ClassValue;
-  class?: ClassValue;
 }
 
 // device-mockups
@@ -604,7 +572,7 @@ export interface TabletProps {
 }
 
 // drawer
-export interface DrawerProps extends DrawerVariants, Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface DrawerProps extends DrawerVariants, HTMLAttributes<HTMLDivElement> {
   hidden: boolean;
   closeDrawer?: () => void;
   activateClickOutside?: boolean;
@@ -612,14 +580,12 @@ export interface DrawerProps extends DrawerVariants, Omit<HTMLAttributes<HTMLDiv
   backdropClass?: ClassValue;
   transitionParams?: ParamsType;
   transitionType?: TransitionFunc;
-  class?: ClassValue;
 }
 
-export interface DrawerheadProps extends Omit<HTMLButtonAttributes, "class"> {
+export interface DrawerheadProps extends HTMLButtonAttributes {
   closeIcon?: Snippet;
   buttonClass?: ClassValue;
   svgClass?: ClassValue;
-  class?: ClassValue;
 }
 
 // dropdown
@@ -627,42 +593,36 @@ export interface DropdownProps extends PopperProps {
   simple?: boolean;
   activeUrl?: string;
   isOpen?: boolean | undefined;
-  class?: ClassValue;
 }
 
-export interface DropdownDividerProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
-  class?: ClassValue;
+export interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {
 }
 
-export interface DropdownHeaderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
-  class?: ClassValue;
 }
 
 export type DropdownItemAnchorButtonAttributes = HTMLAnchorAttributes & Omit<HTMLButtonAttributes, keyof HTMLAnchorAttributes | "type">;
 
-export interface DropdownItemProps extends Omit<DropdownItemAnchorButtonAttributes, "class"> {
+export interface DropdownItemProps extends DropdownItemAnchorButtonAttributes {
   children: Snippet;
   aClass?: ClassValue;
   href?: string;
   activeClass?: ClassValue;
   liClass?: ClassValue;
   onclick?: () => void;
-  class?: ClassValue;
 }
 
-export interface DropdownGroupProps extends Omit<HTMLAttributes<HTMLUListElement>, "class"> {
+export interface DropdownGroupProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
-  class?: ClassValue;
 }
 
 // footer
 export type FooterType = "default" | "sticky" | "sitemap" | "socialmedia" | "logo" | undefined;
 
-export interface FooterProps extends Omit<HTMLAttributes<HTMLElement>, "class"> {
+export interface FooterProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
   footerType?: FooterType;
-  class?: ClassValue;
 }
 
 export interface FooterBrandProps extends HTMLAnchorAttributes {
@@ -686,16 +646,14 @@ export interface FooterCopyrightProps extends HTMLAnchorAttributes {
   bySpanClass?: ClassValue;
 }
 
-export interface FooterIconProps extends Omit<HTMLAnchorAttributes, "class"> {
+export interface FooterIconProps extends HTMLAnchorAttributes {
   children: Snippet;
   href?: string;
   ariaLabel?: string;
-  class?: ClassValue;
 }
 
-export interface FooterLinkGroupProps extends Omit<HTMLAttributes<HTMLUListElement>, "class"> {
+export interface FooterLinkGroupProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
-  class?: ClassValue;
 }
 
 export interface FooterLinkProps extends HTMLAnchorAttributes {
@@ -716,13 +674,13 @@ export interface CheckboxItem {
 
 export type CheckboxColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
 
-export interface CheckboxProps extends Omit<HTMLInputAttributes, "children" | "color" | "class"> {
+export interface CheckboxProps extends Omit<HTMLInputAttributes, "children" | "color"> {
   children?: Snippet<
     [
       | {
-          value?: string | number;
-          checked: boolean;
-        }
+        value?: string | number;
+        checked: boolean;
+      }
       | CheckboxItem
     ]
   >;
@@ -736,11 +694,10 @@ export interface CheckboxProps extends Omit<HTMLInputAttributes, "children" | "c
   indeterminate?: boolean;
   divClass?: ClassValue;
   labelProps?: Record<string, any>;
-  class?: ClassValue;
 }
 
 // checkbox-button
-export interface CheckboxButtonProps extends Omit<HTMLInputAttributes, "size" | "class"> {
+export interface CheckboxButtonProps extends Omit<HTMLInputAttributes, "size"> {
   group?: (string | number)[];
   value?: string | number;
   checked?: boolean | undefined;
@@ -750,14 +707,12 @@ export interface CheckboxButtonProps extends Omit<HTMLInputAttributes, "size" | 
   size?: ButtonProps["size"];
   color?: ButtonProps["color"];
   shadow?: boolean;
-  class?: ClassValue;
 }
 
 // dropzone
-export interface DropzoneProps extends Omit<HTMLInputAttributes, "class"> {
+export interface DropzoneProps extends HTMLInputAttributes {
   children: Snippet;
   files?: FileList | null;
-  class?: ClassValue;
 }
 
 // fileupload
@@ -775,7 +730,7 @@ export interface FileuploadProps extends Omit<HTMLInputAttributes, "size"> {
 }
 
 // floatinglabel-input
-export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size" | "class"> {
+export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size"> {
   children: Snippet;
   id?: string;
   value?: string | number | readonly string[] | undefined;
@@ -795,18 +750,16 @@ export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size
   maxSuggestions?: number;
   onSelect?: (item: string) => void;
   comboClass?: ClassValue;
-  class?: ClassValue;
 }
 
 // helper
-export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color" | "class"> {
-  class?: ClassValue;
+export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> {
 }
 
 // input
 export type InputValue = string | number | string[] | undefined;
 
-export interface InputProps<T extends InputValue = string> extends Omit<HTMLInputAttributes, "size" | "children" | "value" | "class"> {
+export interface InputProps<T extends InputValue = string> extends Omit<HTMLInputAttributes, "size" | "children" | "value"> {
   children?: Snippet<[{ class: string } & Omit<InputProps<T>, "children" | "left" | "right" | "size">]>;
   left?: Snippet;
   right?: Snippet;
@@ -827,22 +780,19 @@ export interface InputProps<T extends InputValue = string> extends Omit<HTMLInpu
   maxSuggestions?: number;
   onSelect?: (item: string) => void;
   comboClass?: ClassValue;
-  class?: ClassValue;
 }
 
 // input-addon
-export interface InputAddonProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface InputAddonProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
-  class?: ClassValue;
   size?: "sm" | "md" | "lg" | undefined;
 }
 
 // label
-export interface LabelProps extends Omit<HTMLLabelAttributes, "class"> {
+export interface LabelProps extends HTMLLabelAttributes {
   children: Snippet;
   color?: LabelVariants["color"];
   show?: boolean;
-  class?: ClassValue;
 }
 
 // radio
@@ -854,7 +804,7 @@ export interface RadioProps<T> extends RadioVariants, Omit<HTMLInputAttributes, 
 }
 
 // raido-button
-export interface RadioButtonProps<T> extends Omit<HTMLInputAttributes, "size" | "class"> {
+export interface RadioButtonProps<T> extends Omit<HTMLInputAttributes, "size"> {
   group?: T;
   value?: T;
   inline?: boolean;
@@ -863,7 +813,6 @@ export interface RadioButtonProps<T> extends Omit<HTMLInputAttributes, "size" | 
   size?: ButtonProps["size"];
   color?: ButtonProps["color"];
   shadow?: boolean;
-  class?: ClassValue;
   checkedClass?: ClassValue;
 }
 
@@ -894,7 +843,7 @@ export type SelectOptionType<T> = {
   [key: string]: any;
 };
 
-export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttributes, "size" | "disabled" | "class"> {
+export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttributes, "size" | "disabled"> {
   children?: Snippet;
   items?: SelectOptionType<T>[];
   elementRef?: HTMLSelectElement;
@@ -906,25 +855,22 @@ export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttribute
   clearableClass?: ClassValue;
   clearableOnClick?: () => void;
   disabled?: boolean;
-  class?: ClassValue;
 }
 
-export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelectAttributes, "size" | "children" | "class"> {
+export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelectAttributes, "size" | "children"> {
   children?: Snippet<[{ item: SelectOptionType<T>; clear: () => void }]>;
   items: SelectOptionType<T>[];
   value: T[];
   dropdownClass?: ClassValue;
   placeholder?: string;
   disabled?: boolean;
-  class?: ClassValue;
 }
 
 // Tags
-export interface TagsProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface TagsProps extends HTMLAttributes<HTMLDivElement> {
   value: string[];
   itemClass?: ClassValue;
   placeholder?: string;
-  class?: ClassValue;
   spanClass?: ClassValue;
   closeClass?: ClassValue;
   inputClass?: ClassValue;
@@ -963,11 +909,11 @@ export interface TimepickerProps {
   timeIntervals?: string[];
   columns?: ColumnCount;
   // Callback props instead of events
-  onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
+  onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
 }
 
 // textarea
-export interface TextareaProps extends Omit<HTMLTextareaAttributes, "class"> {
+export interface TextareaProps extends HTMLTextareaAttributes {
   header?: Snippet;
   footer?: Snippet;
   value?: string;
@@ -983,19 +929,17 @@ export interface TextareaProps extends Omit<HTMLTextareaAttributes, "class"> {
   clearableColor?: CloseButtonVariants["color"];
   clearableClass?: ClassValue;
   clearableOnClick?: () => void;
-  class?: ClassValue;
   textareaClass?: ClassValue;
 }
 
 // toggle
-export interface ToggleProps extends Omit<ToggleVariants, "off_state_label">, Omit<HTMLInputAttributes, "size" | "color" | "class"> {
+export interface ToggleProps extends Omit<ToggleVariants, "off_state_label">, Omit<HTMLInputAttributes, "size" | "color"> {
   offLabel?: Snippet;
   value?: string | number;
   checked?: boolean;
   disabled?: boolean;
   spanClass?: ClassValue;
   inputClass?: ClassValue;
-  class?: ClassValue;
 }
 
 // end of forms
@@ -1006,7 +950,7 @@ export type ImgType = {
   alt?: string;
 };
 
-export interface GalleryProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface GalleryProps extends HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   figure?: Snippet<[item: ImgType]>;
   items?: HTMLImgAttributes[];
@@ -1014,11 +958,10 @@ export interface GalleryProps extends Omit<HTMLAttributes<HTMLDivElement>, "clas
   height?: string;
   rowHeight?: number;
   columns?: number;
-  class?: ClassValue;
 }
 
 // indicator
-export interface IndicatorProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface IndicatorProps extends HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   color?: IndicatorVariants["color"];
   cornerStyle?: IndicatorVariants["cornerStyle"];
@@ -1026,13 +969,11 @@ export interface IndicatorProps extends Omit<HTMLAttributes<HTMLDivElement>, "cl
   border?: boolean;
   placement?: IndicatorVariants["placement"];
   offset?: boolean;
-  class?: ClassValue;
 }
 
 // kbd
-export interface KbdProps extends Omit<HTMLAttributes<HTMLElement>, "class"> {
+export interface KbdProps extends HTMLAttributes<HTMLElement> {
   children: Snippet;
-  class?: ClassValue;
 }
 
 // list-group
@@ -1050,7 +991,7 @@ export interface ListGroupItemType {
   [key: string]: any;
 }
 
-export interface ListgroupProps extends ListgroupVariants, Omit<HTMLAttributes<HTMLUListElement>, "children" | "class"> {
+export interface ListgroupProps extends ListgroupVariants, Omit<HTMLAttributes<HTMLUListElement>, "children"> {
   children?: Snippet<[item: ListGroupItemType | string | undefined]>;
   items?: (ListGroupItemType | string)[];
   active?: boolean;
@@ -1059,7 +1000,6 @@ export interface ListgroupProps extends ListgroupVariants, Omit<HTMLAttributes<H
   aClasss?: ClassValue;
   btnClass?: ClassValue;
   iconClass?: ClassValue;
-  class?: ClassValue;
 }
 
 export type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> &
@@ -1070,7 +1010,6 @@ export type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> &
     iconClass?: ClassValue;
     name?: string;
     children?: Snippet;
-    class?: ClassValue;
   };
 
 // mega-menu
@@ -1080,13 +1019,12 @@ export interface MegaMenuProps extends Omit<PopperProps, "children"> {
   items?: LinkType[];
   full?: boolean;
   ulClass?: ClassValue;
-  class?: ClassValue;
   extraClass?: ClassValue;
   isOpen?: boolean | undefined;
 }
 
 // modal
-export interface ModalProps extends ModalVariants, Omit<HTMLDialogAttributes, "class"> {
+export interface ModalProps extends ModalVariants, HTMLDialogAttributes {
   header?: Snippet;
   footer?: Snippet;
   modal?: boolean;
@@ -1100,17 +1038,15 @@ export interface ModalProps extends ModalVariants, Omit<HTMLDialogAttributes, "c
   bodyClass?: ClassValue;
   footerClass?: ClassValue;
   closeBtnClass?: ClassValue;
-  class?: ClassValue;
   onclose?: () => void;
 }
 
 // navbar
-export interface MenuProps extends Omit<SVGAttributes<SVGSVGElement>, "class"> {
+export interface MenuProps extends SVGAttributes<SVGSVGElement> {
   size?: string;
   color?: string;
   variation?: "solid" | "outline";
   ariaLabel?: string;
-  class?: ClassValue;
 }
 
 export type NavbarState = {
@@ -1119,41 +1055,35 @@ export type NavbarState = {
   nonActiveClass?: string;
 };
 
-export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "children" | "class"> {
+export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   children: Snippet<[{ hidden: boolean; toggle: () => void; NavContainer: Component }]>;
   fluid?: boolean;
   navContainerClass?: ClassValue;
-  class?: ClassValue;
 }
 
-export interface NavBrandProps extends Omit<HTMLAnchorAttributes, "class"> {
-  class?: ClassValue;
-}
+export interface NavBrandProps extends HTMLAnchorAttributes { }
 
-export interface NavContainerProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
   fluid?: boolean;
-  class?: ClassValue;
 }
 
 export type NavHamburgerProps = ToolbarButtonProps & {
+  href?: undefined;
   menuClass?: ClassValue;
-  class?: ClassValue;
 };
 
-export interface NavUlProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface NavUlProps extends HTMLAttributes<HTMLDivElement> {
   activeUrl?: string;
   ulClass?: ClassValue;
   hidden?: boolean;
   slideParams?: TransitionParamTypes;
   activeClass?: ClassValue;
   nonActiveClass?: ClassValue;
-  class?: ClassValue;
 }
 
 export type NavLiProps = AnchorButtonAttributes & {
   activeClass?: ClassValue;
   nonActiveClass?: ClassValue;
-  class?: ClassValue;
 };
 
 // toolbar
@@ -1161,7 +1091,7 @@ export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLD
   end?: Snippet;
 }
 
-export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
+export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> { }
 
 export type ToolbarButtonProps = ToolbarButtonVariants &
   AnchorButtonAttributes & {
@@ -1189,14 +1119,13 @@ export interface PaginationItemSpecificProps {
 
 export type PaginationHTMLButtonOrAnchorAttributes = HTMLButtonAttributes & HTMLAnchorAttributes;
 
-export interface PaginationButtonProps extends PaginationItemVariants, Omit<PaginationHTMLButtonOrAnchorAttributes, "class"> {
+export interface PaginationButtonProps extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {
   children?: Snippet;
   onclick?: () => void;
   disabled?: boolean;
-  class?: ClassValue;
 }
 
-export interface PaginationNavProps extends Omit<HTMLAttributes<HTMLElement>, "class">, PaginationVariants {
+export interface PaginationNavProps extends HTMLAttributes<HTMLElement>, PaginationVariants {
   prevContent?: Snippet;
   nextContent?: Snippet;
   prevClass?: ClassValue;
@@ -1211,14 +1140,12 @@ export interface PaginationNavProps extends Omit<HTMLAttributes<HTMLElement>, "c
   showIcons?: boolean;
   ariaLabel?: string;
   size?: "default" | "large";
-  class?: ClassValue;
   spanClass?: ClassValue;
   tableDivClass?: ClassValue;
 }
 
-export interface PaginationItemProps extends PaginationItemVariants, Omit<PaginationHTMLButtonOrAnchorAttributes, "class"> {
+export interface PaginationItemProps extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {
   children?: Snippet;
-  class?: ClassValue;
 }
 
 export interface PaginationProps extends PaginationVariants, HTMLLiAttributes {
@@ -1238,7 +1165,6 @@ export interface PopoverProps extends Omit<PopperProps, "title"> {
   defaultClass?: ClassValue;
   transition?: TransitionFunc;
   isOpen?: boolean | undefined;
-  class?: ClassValue;
 }
 
 // progress
@@ -1411,17 +1337,15 @@ export interface SidebarProps extends SidebarVariants, HTMLAttributes<HTMLElemen
   alwaysOpen?: boolean;
 }
 
-export interface SidebarButtonProps extends Omit<HTMLButtonAttributes, "class"> {
+export interface SidebarButtonProps extends HTMLButtonAttributes {
   breakpoint?: SidebarVariants["breakpoint"];
-  class?: ClassValue;
 }
 
-export interface SidebarCtaProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface SidebarCtaProps extends HTMLAttributes<HTMLDivElement> {
   icon?: Snippet;
   divClass?: ClassValue;
   spanClass?: ClassValue;
   label: string;
-  class?: ClassValue;
 }
 
 export interface SiteType {
@@ -1430,14 +1354,13 @@ export interface SiteType {
   img?: string;
 }
 
-export interface SidebarBrandProps extends Omit<HTMLAnchorAttributes, "class"> {
+export interface SidebarBrandProps extends HTMLAnchorAttributes {
   site?: SiteType;
   imgClass?: ClassValue;
   spanClass?: ClassValue;
-  class?: ClassValue;
 }
 
-export interface SidebarDropdownWrapperProps extends Omit<HTMLButtonAttributes, "class"> {
+export interface SidebarDropdownWrapperProps extends HTMLButtonAttributes {
   children: Snippet;
   arrowup?: Snippet;
   arrowdown?: Snippet;
@@ -1452,17 +1375,15 @@ export interface SidebarDropdownWrapperProps extends Omit<HTMLButtonAttributes, 
   svgClass?: ClassValue;
   onclick?: () => void;
   isSingle?: boolean;
-  class?: ClassValue;
 }
 
-export interface SidebarGroupProps extends Omit<HTMLAttributes<HTMLUListElement>, "class"> {
+export interface SidebarGroupProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
   borderClass?: ClassValue;
   border?: boolean;
-  class?: ClassValue;
 }
 
-export interface SidebarItemProps extends Omit<HTMLAnchorAttributes, "class"> {
+export interface SidebarItemProps extends HTMLAnchorAttributes {
   icon?: Snippet;
   subtext?: Snippet;
   label?: string;
@@ -1471,50 +1392,41 @@ export interface SidebarItemProps extends Omit<HTMLAnchorAttributes, "class"> {
   nonActiveClass?: ClassValue;
   aClass?: ClassValue;
   active?: boolean;
-  class?: ClassValue;
 }
 
 // skeleton
-export interface CardPlaceholderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface CardPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: CardPlaceholderVariants["size"];
-  class?: ClassValue;
 }
 
-export interface ImagePlaceholderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface ImagePlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: ImagePlaceholderVariants["size"];
   rounded?: ImagePlaceholderVariants["rounded"];
   imgOnly?: boolean;
-  class?: ClassValue;
 }
 
-export interface ListPlaceholderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface ListPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   itemNumber?: number;
   size?: ListPlaceholderVariants["size"];
   rounded?: ListPlaceholderVariants["rounded"];
-  class?: ClassValue;
 }
 
-export interface SkeletonProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
   size?: SkeletonVariants["size"];
-  class?: ClassValue;
 }
 
-export interface TestimonialPlaceholderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class">{
-  class?: ClassValue;
+export interface TestimonialPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
 }
 
-export interface TextPlaceholderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface TextPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: TextPlaceholderVariants["size"];
-  class?: ClassValue;
 }
 
-export interface VideoPlaceholderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface VideoPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: VideoPlaceholderVariants["size"];
-  class?: ClassValue;
 }
 
-export interface WidgetPlaceholderProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
-  class?: ClassValue;
+export interface WidgetPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 // speeddial
@@ -1559,7 +1471,6 @@ export type SpeedDialProps = PopperProps & {
   ontoggle?: PopperProps["ontoggle"];
   onbeforetoggle?: PopperProps["onbeforetoggle"];
   isOpen?: boolean | undefined;
-  class?: ClassValue;
 };
 
 export type SpeedDialButtonProps = ButtonProps & {
@@ -1568,7 +1479,6 @@ export type SpeedDialButtonProps = ButtonProps & {
   pill?: boolean;
   textOutside?: boolean;
   textClass?: ClassValue;
-  class?: ClassValue;
 };
 
 // export type CombinedButtonColor = ButtonColor | GradientButtonColor;
@@ -1581,18 +1491,17 @@ export type SpeedDialButtonProps = ButtonProps & {
 // };
 
 // spinner
-export interface SpinnerProps extends Omit<SVGAttributes<SVGSVGElement>, "class"> {
+export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
   color?: SpinnerVaraiants["color"];
   size?: SpinnerVaraiants["size"];
   currentFill?: string;
   currentColor?: string;
-  class?: ClassValue;
 }
 
 // stepindicator
 export type StepColorType = "primary" | "secondary" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "custom";
 
-export interface StepIndicatorProps extends Omit<HTMLAttributes<HTMLElement>, "class"> {
+export interface StepIndicatorProps extends HTMLAttributes<HTMLElement> {
   steps: string[];
   currentStep: number;
   size?: string;
@@ -1601,7 +1510,6 @@ export interface StepIndicatorProps extends Omit<HTMLAttributes<HTMLElement>, "c
   hideLabel?: boolean;
   completedCustom?: string;
   currentCustom?: string;
-  class?: ClassValue;
 }
 
 // tables
@@ -1618,7 +1526,7 @@ export type HeadItemType = string | number | {
   [key: string]: string | number | boolean;
 };
 
-export interface TableHeadProps extends Omit<HTMLAttributes<HTMLTableSectionElement>, "class"> {
+export interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> {
   children?: Snippet;
   headerSlot?: Snippet;
   defaultRow?: boolean;
@@ -1626,12 +1534,11 @@ export interface TableHeadProps extends Omit<HTMLAttributes<HTMLTableSectionElem
   striped?: boolean;
   border?: boolean;
   color?: TableVariants["color"];
-  class?: ClassValue;
 }
 
 export type TableItemType = Record<string, string | number | boolean>;
 
-export interface TableProps extends Omit<HTMLTableAttributes, "border" | "class"> {
+export interface TableProps extends Omit<HTMLTableAttributes, "border"> {
   children?: Snippet;
   footerSlot?: Snippet;
   captionSlot?: Snippet;
@@ -1642,44 +1549,39 @@ export interface TableProps extends Omit<HTMLTableAttributes, "border" | "class"
   shadow?: boolean;
   color?: TableVariants["color"];
   items?: TableItemType[];
-  class?: ClassValue;
 }
 
-export interface TableBodyRowProps extends Omit<HTMLAttributes<HTMLTableRowElement>, "class"> {
+export interface TableBodyRowProps extends HTMLAttributes<HTMLTableRowElement> {
   children?: Snippet;
   striped?: boolean;
   hoverable?: boolean;
   border?: boolean;
   color?: TableVariants["color"];
-  class?: ClassValue;
 }
 
-export interface TableBodyCellProps extends Omit<HTMLTdAttributes, "class"> {
+export interface TableBodyCellProps extends HTMLTdAttributes {
   children?: Snippet;
   colspan?: number;
   color?: TableVariants["color"];
   onclick?: () => void;
-  class?: ClassValue;
 }
 
 export type CellValue = string | number | boolean | null | undefined;
 
 export type BodyRow = CellValue[] | Record<string, CellValue>;
 
-export interface TableBodyProps extends Omit<HTMLAttributes<HTMLTableSectionElement>, "class"> {
+export interface TableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
   children?: Snippet;
   bodyItems?: BodyRow[];
-  class?: ClassValue;
 }
 
-export interface TableHeadCellProps<T = any> extends Omit<HTMLThAttributes, "class"> {
+export interface TableHeadCellProps<T = any> extends HTMLThAttributes {
   children?: Snippet;
   padding?: string;
   sort?: ((a: T, b: T) => number) | null;
   defaultDirection?: "asc" | "desc";
   defaultSort?: boolean;
   direction?: "asc" | "desc" | null;
-  class?: ClassValue;
 }
 
 export type TableSearchType = {
@@ -1688,7 +1590,7 @@ export type TableSearchType = {
   color?: string;
 };
 
-export interface TableSearchProps extends Omit<HTMLTableAttributes, "class"> {
+export interface TableSearchProps extends HTMLTableAttributes {
   children?: Snippet;
   header?: Snippet;
   footer?: Snippet;
@@ -1705,7 +1607,6 @@ export interface TableSearchProps extends Omit<HTMLTableAttributes, "class"> {
   svgClass?: ClassValue;
   tableClass?: ClassValue;
   placeholder?: string;
-  class?: ClassValue;
 }
 
 // tabs
@@ -1717,7 +1618,7 @@ export interface TabsProps extends HTMLAttributes<HTMLUListElement> {
   divider?: boolean;
 }
 
-export interface TabitemProps extends Omit<HTMLLiAttributes, "class"> {
+export interface TabitemProps extends HTMLLiAttributes {
   children?: Snippet;
   titleSlot?: Snippet;
   open?: boolean;
@@ -1726,7 +1627,6 @@ export interface TabitemProps extends Omit<HTMLLiAttributes, "class"> {
   inactiveClass?: ClassValue;
   disabled?: boolean;
   tabStyle?: TabsVaraints["tabStyle"];
-  class?: ClassValue;
 }
 
 export interface TabCtxType {
@@ -1984,7 +1884,6 @@ export interface SpanProps extends HTMLAttributes<HTMLSpanElement> {
 
 // video
 export interface VideoProps extends HTMLVideoAttributes {
-  children?: Snippet;
   type?: HTMLSourceAttributes["type"];
   src?: HTMLSourceAttributes["src"];
   trackSrc?: HTMLTrackAttributes["src"];
@@ -1997,7 +1896,7 @@ export interface TriggeredToggleEvent extends ToggleEvent {
   trigger: HTMLElement;
 }
 
-export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbeforetoggle" | "ontoggle" | "class"> {
+export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbeforetoggle" | "ontoggle"> {
   triggeredBy?: string;
   trigger?: "hover" | "click";
   placement?: Placement;
@@ -2014,12 +1913,11 @@ export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbef
   transition?: TransitionFunc;
   transitionParams?: ParamsType;
   isOpen?: boolean | undefined;
-  class?: ClassValue;
 }
 
 export interface ArrowProps {
   placement?: Placement;
   cords: Partial<Coords>;
   strategy?: "absolute" | "fixed";
-  class?: string;
+  class?: ClassValue | null;
 }

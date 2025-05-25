@@ -1,12 +1,12 @@
 <script lang="ts">
   import { thumbnail } from "./theme";
   import { type ThumbnailProps, cn } from "$lib";
+  import clsx from "clsx";
 
   let { selected, class: className, ...restProps }: ThumbnailProps = $props();
-  const imgCls = $derived(thumbnail({ selected }));
 </script>
 
-<img {...restProps} class={cn(imgCls, className)} />
+<img {...restProps} class={thumbnail({ selected, class: clsx(className) })} />
 
 <!--
 @component
