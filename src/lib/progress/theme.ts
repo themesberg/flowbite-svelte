@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type ProgressbarVariants = VariantProps<typeof progressbar>;
 
 export const progressbar = tv({
   slots: {

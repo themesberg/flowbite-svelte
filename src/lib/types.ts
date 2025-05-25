@@ -96,15 +96,12 @@ export type CloseButtonProps = CloseButtonVariants &
 
 // Navbar
 export type NavbarType = {
-  navStatus: boolean | undefined;
+  navStatus?: boolean;
   breakPoint: "md" | "lg" | "xl" | "xxl";
-  activeClass: string | undefined | null;
-  nonActiveClass: string | undefined | null;
+  activeClass?: string | null;
+  nonActiveClass?: string | null;
   closeNav: () => void;
 };
-
-// primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
-// export type ColorVariant = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | "none";
 
 export type DeviceVariantType = "default" | "ios" | "android" | "tablet" | "laptop" | "desktop" | "smartwatch";
 
@@ -116,7 +113,7 @@ export interface TransitionParamTypes {
   delay?: number;
   duration?: number;
   easing?: (t: number) => number;
-  css?: (t: number, u: number) => string | undefined | null;
+  css?: (t: number, u: number) => string | null;
   tick?: (t: number, u: number) => void;
 }
 
@@ -142,8 +139,8 @@ export type AnchorButtonAttributes =
 // accordion
 export interface AccordionCtxType {
   flush: boolean;
-  activeClass: string | undefined | null;
-  inactiveClass: string | undefined | null;
+  activeClass?: string | null;
+  inactiveClass?: string | null;
   selected?: Writable<object>;
   classActive?: string;
   classInactive?: string;
@@ -177,8 +174,6 @@ export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 // alert
-export type alertColor = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
-
 export interface AlertProps extends Omit<AlertVariants, "icon">, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   children: Snippet;
   icon?: Snippet;
@@ -198,7 +193,7 @@ export interface AvatarProps extends HTMLAttributes<HTMLDivElement> {
   src?: string;
   cornerStyle?: "rounded" | "circular";
   stacked?: boolean;
-  dot?: object | undefined;
+  dot?: object;
   alt?: string;
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   onclick?: () => void;
@@ -238,7 +233,7 @@ export type BottomNavVariantType = "border" | "application" | "group" | "default
 export type PositionType = "static" | "fixed" | "absolute" | "relative" | "sticky" | undefined;
 
 export type BottomNavContextType = {
-  activeClass: string | undefined | null;
+  activeClass?: string | null;
 };
 
 export type AppBtnPositionType = "middle" | "left" | "right" | undefined;
@@ -384,16 +379,13 @@ export interface CheckIconProps extends SVGAttributes<SVGSVGElement> {
 }
 
 // card
-export type CardSizeType = "sm" | "md" | "lg" | "xl" | "xs" | undefined;
+export type CardSizeType = "sm" | "md" | "lg" | "xl" | "xs";
 
-export type ShadowType = "sm" | "normal" | "lg" | "md" | "xl" | "2xl" | "inner" | undefined;
+export type ShadowType = "sm" | "normal" | "lg" | "md" | "xl" | "2xl" | "inner";
 
-export type ColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose" | undefined;
-
-export interface BaseCardProps {
+export interface BaseCardProps extends Omit<CardVariants, "href"> {
   children: Snippet;
   horizontal?: boolean;
-  color?: ColorType;
   target?: string;
   shadow?: ShadowType;
   reverse?: boolean;
@@ -439,7 +431,7 @@ export interface IndicatorsProps extends Omit<HTMLAttributes<HTMLDivElement>, "c
 
 export interface ControlButtonProps extends HTMLButtonAttributes {
   forward: boolean;
-  name?: string | undefined | null;
+  name?: string | null;
   spanClass?: ClassValue;
 }
 
@@ -592,7 +584,7 @@ export interface DrawerheadProps extends HTMLButtonAttributes {
 export interface DropdownProps extends PopperProps {
   simple?: boolean;
   activeUrl?: string;
-  isOpen?: boolean | undefined;
+  isOpen?: boolean;
 }
 
 export interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {
@@ -642,7 +634,7 @@ export interface FooterCopyrightProps extends HTMLAnchorAttributes {
   href?: string;
   by?: string;
   copyrightMessage?: string;
-  year?: number | undefined;
+  year?: number;
   bySpanClass?: ClassValue;
 }
 
@@ -672,9 +664,7 @@ export interface CheckboxItem {
   [key: string]: any;
 }
 
-export type CheckboxColorType = "primary" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose";
-
-export interface CheckboxProps extends Omit<HTMLInputAttributes, "children" | "color"> {
+export interface CheckboxProps extends CheckboxVariants, Omit<HTMLInputAttributes, "children" | "color" | "disabled"> {
   children?: Snippet<
     [
       | {
@@ -684,7 +674,6 @@ export interface CheckboxProps extends Omit<HTMLInputAttributes, "children" | "c
       | CheckboxItem
     ]
   >;
-  color?: CheckboxColorType;
   custom?: boolean;
   inline?: boolean;
   tinted?: boolean;
@@ -700,7 +689,7 @@ export interface CheckboxProps extends Omit<HTMLInputAttributes, "children" | "c
 export interface CheckboxButtonProps extends Omit<HTMLInputAttributes, "size"> {
   group?: (string | number)[];
   value?: string | number;
-  checked?: boolean | undefined;
+  checked?: boolean;
   inline?: boolean;
   pill?: boolean;
   outline?: boolean;
@@ -733,7 +722,7 @@ export interface FileuploadProps extends Omit<HTMLInputAttributes, "size"> {
 export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size"> {
   children: Snippet;
   id?: string;
-  value?: string | number | readonly string[] | undefined;
+  value?: string | number | readonly string[];
   elementRef?: HTMLInputElement;
   "aria-describedby"?: string;
   variant?: FloatingLabelInputVaratiants["variant"];
@@ -785,7 +774,7 @@ export interface InputProps<T extends InputValue = string> extends Omit<HTMLInpu
 // input-addon
 export interface InputAddonProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
-  size?: "sm" | "md" | "lg" | undefined;
+  size?: "sm" | "md" | "lg";
 }
 
 // label
@@ -896,7 +885,7 @@ export interface TimepickerProps {
   disabled?: boolean;
   inputColor?: InputProps["color"];
   buttonColor?: ButtonProps["color"];
-  Icon?: Component | undefined;
+  Icon?: Component;
   type?: TimePickerType;
   optionLabel?: string;
   options?: TimePickerOption[];
@@ -992,7 +981,7 @@ export interface ListGroupItemType {
 }
 
 export interface ListgroupProps extends ListgroupVariants, Omit<HTMLAttributes<HTMLUListElement>, "children"> {
-  children?: Snippet<[item: ListGroupItemType | string | undefined]>;
+  children?: Snippet<[item?: ListGroupItemType | string]>;
   items?: (ListGroupItemType | string)[];
   active?: boolean;
   onclick?: (event?: MouseEvent) => void;
@@ -1020,7 +1009,7 @@ export interface MegaMenuProps extends Omit<PopperProps, "children"> {
   full?: boolean;
   ulClass?: ClassValue;
   extraClass?: ClassValue;
-  isOpen?: boolean | undefined;
+  isOpen?: boolean;
 }
 
 // modal
@@ -1100,6 +1089,9 @@ export type ToolbarButtonProps = ToolbarButtonVariants &
 
 // pagination
 import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
+import type { CheckboxVariants } from "./forms/checkbox/theme";
+import type { ProgressbarVariants } from "./progress/theme";
+import type { CardVariants } from "./card/theme";
 
 export type PaginationItemType = {
   size?: "default" | "large";
@@ -1114,7 +1106,7 @@ export interface PaginationItemSpecificProps {
   href?: string;
   active?: boolean;
   rel?: string;
-  size?: "default" | "large" | undefined;
+  size?: "default" | "large";
 }
 
 export type PaginationHTMLButtonOrAnchorAttributes = HTMLButtonAttributes & HTMLAnchorAttributes;
@@ -1161,14 +1153,14 @@ export interface PaginationProps extends PaginationVariants, HTMLLiAttributes {
 export interface PopoverProps extends Omit<PopperProps, "title"> {
   title?: Snippet | string;
   color?: PopoverVariants["color"];
-  params?: ParamsType | undefined;
+  params?: ParamsType;
   defaultClass?: ClassValue;
   transition?: TransitionFunc;
-  isOpen?: boolean | undefined;
+  isOpen?: boolean;
 }
 
 // progress
-export interface ProgressbarProps extends HTMLAttributes<HTMLDivElement> {
+export interface ProgressbarProps extends ProgressbarVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   progress?: string | number;
   precision?: number;
   tweenDuration?: number;
@@ -1177,7 +1169,6 @@ export interface ProgressbarProps extends HTMLAttributes<HTMLDivElement> {
   labelInside?: boolean;
   labelOutside?: string;
   easing?: EasingFunction;
-  color?: ColorType;
   oustsideSpanClass?: ClassValue;
   oustsideProgressClass?: ClassValue;
   labeloutsidedivClass?: ClassValue;
@@ -1197,7 +1188,6 @@ export interface ProgressradialProps {
   labelInside?: boolean;
   labelOutside?: string;
   easing?: (t: number) => number;
-  color?: ColorType;
   labelInsideClass?: ClassValue;
   outsideSpanClass?: ClassValue;
   outsideProgressClass?: ClassValue;
@@ -1365,9 +1355,9 @@ export interface SidebarDropdownWrapperProps extends HTMLButtonAttributes {
   arrowup?: Snippet;
   arrowdown?: Snippet;
   icon?: Snippet;
-  isOpen?: boolean | undefined;
+  isOpen?: boolean;
   btnClass?: ClassValue;
-  label: string | undefined;
+  label?: string;
   spanClass?: ClassValue;
   ulClass?: ClassValue;
   params?: ParamsType;
@@ -1470,7 +1460,7 @@ export type SpeedDialProps = PopperProps & {
   pill?: boolean;
   ontoggle?: PopperProps["ontoggle"];
   onbeforetoggle?: PopperProps["onbeforetoggle"];
-  isOpen?: boolean | undefined;
+  isOpen?: boolean;
 };
 
 export type SpeedDialButtonProps = ButtonProps & {
@@ -1499,13 +1489,10 @@ export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
 }
 
 // stepindicator
-export type StepColorType = "primary" | "secondary" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue" | "custom";
-
 export interface StepIndicatorProps extends HTMLAttributes<HTMLElement> {
   steps: string[];
   currentStep: number;
   size?: string;
-  color?: StepColorType;
   glow?: boolean;
   hideLabel?: boolean;
   completedCustom?: string;
@@ -1738,7 +1725,7 @@ export interface ToastProps extends HTMLAttributes<HTMLDivElement> {
 export interface TooltipProps extends PopperProps {
   type?: "light" | "dark" | "auto";
   color?: TooltipVariants["color"];
-  isOpen?: boolean | undefined;
+  isOpen?: boolean;
 }
 
 // typography
@@ -1850,16 +1837,10 @@ export interface MarkProps extends HTMLAttributes<HTMLElement> {
 }
 
 // paragraph
-export interface ParagraphProps extends HTMLAttributes<HTMLParagraphElement> {
+export interface ParagraphProps extends ParagraphVariants, HTMLAttributes<HTMLParagraphElement> {
   children: Snippet;
   italic?: boolean;
   firstUpper?: boolean;
-  whitespace?: ParagraphVariants["whitespace"];
-  size?: ParagraphVariants["size"];
-  weight?: ParagraphVariants["weight"];
-  space?: ParagraphVariants["space"];
-  height?: ParagraphVariants["height"];
-  align?: ParagraphVariants["align"];
   justify?: boolean;
 }
 
@@ -1869,17 +1850,12 @@ export interface SecondaryProps extends HTMLAttributes<HTMLElement> {
 }
 
 // span
-export interface SpanProps extends HTMLAttributes<HTMLSpanElement> {
+export interface SpanProps extends SpanVariants, HTMLAttributes<HTMLSpanElement> {
   children?: Snippet;
   italic?: boolean;
   underline?: boolean;
   linethrough?: boolean;
   uppercase?: boolean;
-  gradient?: SpanVariants["gradient"];
-  highlight?: SpanVariants["highlight"];
-  decoration?: SpanVariants["decoration"];
-  decorationThickness?: SpanVariants["decorationThickness"];
-  decorationColor?: SpanVariants["decorationColor"];
 }
 
 // video
@@ -1905,14 +1881,14 @@ export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbef
   offset?: number;
   yOnly?: boolean; // special case for megamenu - only move on y axis
   strategy?: Strategy;
-  reference?: string | undefined;
+  reference?: string;
   middlewares?: Middleware[];
   children: Snippet;
   onbeforetoggle?: (ev: TriggeredToggleEvent) => void;
   ontoggle?: (ev: TriggeredToggleEvent) => void;
   transition?: TransitionFunc;
   transitionParams?: ParamsType;
-  isOpen?: boolean | undefined;
+  isOpen?: boolean;
 }
 
 export interface ArrowProps {
