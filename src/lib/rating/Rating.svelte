@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import Star from "./Star.svelte";
   import { rating as ratingVariants } from ".";
   import type { RatingProps } from "$lib/types";
 
-  let { children, text, divClass, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass, ...restProps }: RatingProps = $props();
+  let { children, text, class: className, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass, ...restProps }: RatingProps = $props();
 
   const { base, p } = $derived(ratingVariants());
   const ratingGroupId = crypto.randomUUID();
@@ -15,10 +14,10 @@
   let grayStars: number = total - (fullStars + Math.ceil(rateDiffence));
 </script>
 
-<div class={twMerge(base(), clsx(divClass))} {...restProps}>
+<div {...restProps} class={base({ class: clsx(className) })}>
   {#if count && children}
     <Icon fillPercent={100} {size} iconIndex={0} groupId={ratingGroupId} />
-    <p class={twMerge(p(), clsx(pClass))}>{rating}</p>
+    <p class={p({ class: clsx(pClass) })}>{rating}</p>
     {@render children()}
   {:else}
     <!-- eslint-disable @typescript-eslint/no-unused-vars-->

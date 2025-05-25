@@ -3,7 +3,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 export type ListgroupVariants = VariantProps<typeof listGroup>;
 
 export const listGroup = tv({
-  base: "flex w-fit bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 divide-gray-200 dark:divide-gray-600",
+  base: "flex bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 divide-gray-200 dark:divide-gray-600",
   variants: {
     rounded: {
       true: "rounded-lg",
@@ -34,7 +34,7 @@ export const listGroup = tv({
 export type ListgroupItemVariants = VariantProps<typeof listGroupItem>;
 
 export const listGroupItem = tv({
-  base: "py-2 px-4 w-full text-sm font-medium list-none flex items-center text-left",
+  base: "py-2 px-4 w-full text-sm font-medium list-none flex items-center text-left gap-2",
   variants: {
     state: {
       normal: "",

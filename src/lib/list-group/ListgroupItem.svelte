@@ -3,7 +3,7 @@
   import { type ListgroupItemProps, cn } from "$lib";
   import { listGroupItem, type ListgroupItemVariants } from "./theme";
 
-  let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-5 w-5", ...restProps }: ListgroupItemProps = $props();
+  let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-15 w-15", ...restProps }: ListgroupItemProps = $props();
 
   active = active ?? getContext("listGrpActive");
   horizontal = horizontal ?? getContext("listGrpHorizontal");

@@ -1,9 +1,9 @@
 <script lang="ts">
+  import type { CardProps } from "$lib";
+  import clsx from "clsx";
   import { card } from ".";
-  import { type CardProps, cn } from "$lib";
-  import type { HTMLAttributes, HTMLAnchorAttributes } from "svelte/elements";
 
-  let { children, href, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, imgClass, contentClass, ...restProps }: CardProps = $props();
+  let { children, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, imgClass, contentClass, ...restProps }: CardProps = $props();
 
   const { base, image } = $derived(
     card({
@@ -12,43 +12,28 @@
       shadow,
       horizontal,
       reverse,
-      href: !!href
+      href: !!restProps.href
     })
   );
-
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
-  const commonProps: Record<string, any> = $derived({
-    class: cn(base(), className),
-    ...restProps
-  });
-
-  const anchorProps: HTMLAnchorAttributes = $derived({
-    ...commonProps,
-    href
-  });
-
-  const divProps: HTMLAttributes<HTMLDivElement> = $derived({
-    ...commonProps
-  });
 </script>
 
 {#snippet childSlot()}
   {#if img}
-    <img class={cn(image(), imgClass)} src={img} alt={img} />
+    <img class={image({ class: clsx(imgClass) })} src={img} alt={img} />
     {@render children()}
   {:else}
     {@render children()}
   {/if}
 {/snippet}
 
-{#if href}
-  <a {...anchorProps}>
-    {@render childSlot()}
-  </a>
-{:else}
-  <div {...divProps}>
+{#if restProps.href === undefined}
+  <div {...restProps} class={base({ class: clsx(className) })}>
     {@render childSlot()}
   </div>
+{:else}
+  <a {...restProps} class={base({ class: clsx(className) })}>
+    {@render childSlot()}
+  </a>
 {/if}
 
 <!--

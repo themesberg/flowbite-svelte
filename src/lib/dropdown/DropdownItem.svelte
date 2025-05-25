@@ -3,7 +3,7 @@
   import { dropdownItem } from ".";
   import { type DropdownItemProps, cn } from "$lib";
 
-  let { aClass, children, href, activeClass, liClass, class: className, ...restProps }: DropdownItemProps = $props();
+  let { aClass, children, activeClass, liClass, class: className, ...restProps }: DropdownItemProps = $props();
 
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
   let sidebarUrl = $state("");
@@ -13,7 +13,7 @@
 
   let active = $state(false);
   $effect(() => {
-    active = sidebarUrl ? href === sidebarUrl : false;
+    active = sidebarUrl ? restProps.href === sidebarUrl : false;
   });
 
   const { anchor, activeAnchor } = dropdownItem();
@@ -21,18 +21,18 @@
 </script>
 
 <li class={cn(liClass)}>
-  {#if href}
-    <a {href} {...restProps} class={finalClass}>
+  {#if restProps.href === undefined && restProps.onclick === undefined}
+    <div {...restProps} class={finalClass}>
       {@render children()}
-    </a>
-  {:else if restProps.onclick}
-    <button type="button" class={finalClass} onclick={restProps.onclick}>
+    </div>
+  {:else if restProps.href === undefined}
+    <button type="button" {...restProps} class={finalClass}>
       {@render children()}
     </button>
   {:else}
-    <div class={finalClass}>
+    <a {...restProps} class={finalClass}>
       {@render children()}
-    </div>
+    </a>
   {/if}
 </li>
 

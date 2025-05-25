@@ -12,6 +12,8 @@ import type { BadgeVariants } from "./badge/theme";
 import type { BannerVariants } from "./banner/theme";
 import type { ButtonVariants, GradientButtonVariantes, button, gradientButton } from "./buttons/theme";
 import type { CarouselVariants } from "./carousel/theme";
+import type { CardVariants } from "./card/theme";
+import type { CheckboxVariants } from "./forms/checkbox/theme";
 import type { closeButtonVariants } from "./utils/theme";
 import type Slide from "./carousel/Slide.svelte";
 import type { ApexOptions } from "apexcharts";
@@ -35,6 +37,8 @@ import type { CardPlaceholderVariants, ImagePlaceholderVariants, ListPlaceholder
 import type { SpinnerVaraiants } from "$lib/spinner/theme";
 import type { TableVariants } from "$lib/table/theme";
 import type { TabsVaraints } from "$lib/tabs/theme";
+import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
+import type { ProgressbarVariants } from "./progress/theme";
 import { baseThemes } from "$lib/theme";
 import { timeline } from "$lib/timeline/theme";
 import type { ToastVaraints } from "$lib/toast/theme";
@@ -135,6 +139,15 @@ export interface LinkType {
 export type AnchorButtonAttributes =
   | ({ href: string } & HTMLAnchorAttributes)
   | ({ href?: undefined } & HTMLButtonAttributes);
+
+export type AnchorDivAttributes =
+  | ({ href: string } & HTMLAnchorAttributes)
+  | ({ href?: undefined } & HTMLAttributes<HTMLDivElement>);
+
+export type AnchorButtonDivAttributes =
+  | ({ href: string } & HTMLAnchorAttributes)
+  | ({ href?: undefined, onclick: Function } & HTMLButtonAttributes)
+  | ({ href?: undefined, onclick?: undefined } & HTMLAttributes<HTMLDivElement>);
 
 // accordion
 export interface AccordionCtxType {
@@ -323,7 +336,7 @@ export interface ButtonGroupProps extends HTMLAttributes<HTMLDivElement> {
 export type ButtonGroupSizeType = "sm" | "md" | "lg" | undefined;
 
 // button
-export type ButtonColor = NonNullable<VariantProps<typeof button>["color"]>;
+// export type ButtonColor = NonNullable<VariantProps<typeof button>["color"]>;
 export type GradientButtonColor = NonNullable<VariantProps<typeof gradientButton>["color"]>;
 
 export type HTMLButtonOrAnchorAttributes = Omit<HTMLButtonAttributes & HTMLAnchorAttributes, "color">;
@@ -334,14 +347,12 @@ export type ButtonProps = ButtonVariants &
     disabled?: boolean;
     outline?: boolean;
     shadow?: boolean;
-    color?: ButtonColor;
   };
 
 export interface GradientButtonProps extends GradientButtonVariantes, HTMLButtonOrAnchorAttributes {
   tag?: string;
   disabled?: boolean;
   href?: string;
-  color?: GradientButtonColor;
   btnClass?: ClassValue;
 }
 
@@ -379,24 +390,13 @@ export interface CheckIconProps extends SVGAttributes<SVGSVGElement> {
 }
 
 // card
-export type CardSizeType = "sm" | "md" | "lg" | "xl" | "xs";
-
-export type ShadowType = "sm" | "normal" | "lg" | "md" | "xl" | "2xl" | "inner";
-
-export interface BaseCardProps extends Omit<CardVariants, "href"> {
+export type CardProps = Omit<CardVariants, "href"> & AnchorDivAttributes & {
   children: Snippet;
-  horizontal?: boolean;
-  target?: string;
-  shadow?: ShadowType;
-  reverse?: boolean;
   img?: string;
-  size?: CardSizeType;
-  // onclick?: () => void;
   imgClass?: ClassValue;
   contentClass?: string;
 }
 
-export type CardProps = BaseCardProps & (({ href: string } & HTMLAnchorAttributes) | ({ href?: never } & HTMLAttributes<HTMLDivElement>));
 
 // carousel
 
@@ -596,13 +596,13 @@ export interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
 
 export type DropdownItemAnchorButtonAttributes = HTMLAnchorAttributes & Omit<HTMLButtonAttributes, keyof HTMLAnchorAttributes | "type">;
 
-export interface DropdownItemProps extends DropdownItemAnchorButtonAttributes {
+export type DropdownItemProps = AnchorButtonDivAttributes & {
   children: Snippet;
   aClass?: ClassValue;
-  href?: string;
+  // href?: string;
   activeClass?: ClassValue;
   liClass?: ClassValue;
-  onclick?: () => void;
+  // onclick?: () => void;
 }
 
 export interface DropdownGroupProps extends HTMLAttributes<HTMLUListElement> {
@@ -1088,11 +1088,6 @@ export type ToolbarButtonProps = ToolbarButtonVariants &
   };
 
 // pagination
-import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
-import type { CheckboxVariants } from "./forms/checkbox/theme";
-import type { ProgressbarVariants } from "./progress/theme";
-import type { CardVariants } from "./card/theme";
-
 export type PaginationItemType = {
   size?: "default" | "large";
   active?: boolean | null;
@@ -1220,7 +1215,6 @@ export interface RatingProps extends HTMLAttributes<HTMLDivElement> {
   icon?: Component;
   count?: boolean;
   pClass?: ClassValue;
-  divClass?: ClassValue;
 }
 
 export interface RatingCommentProps {
@@ -1438,7 +1432,7 @@ type BaseSpeedDialTriggerProps = {
 // Two different prop types based on gradient flag
 export type RegularSpeedDialTriggerProps = BaseSpeedDialTriggerProps & {
   gradient?: false;
-  color?: ButtonColor;
+  color?: ButtonVariants["color"];
 };
 
 export type GradientSpeedDialTriggerProps = BaseSpeedDialTriggerProps & {
