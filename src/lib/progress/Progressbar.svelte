@@ -24,9 +24,9 @@
 </script>
 
 {#if labelOutside}
-  <div {...restProps} class={outsideDiv({ class: classes?.outsideDiv })}>
-    <span class={oustsideSpan({ class: classes?.oustsideSpan })}>{labelOutside}</span>
-    <span class={outsideProgress({ class: classes?.outsideProgress })}>{progress}%</span>
+  <div {...restProps} class={outsideDiv({ class: clsx(classes?.outsideDiv) })}>
+    <span class={oustsideSpan({ class: clsx(classes?.oustsideSpan) })}>{labelOutside}</span>
+    <span class={outsideProgress({ class: clsx(classes?.outsideProgress) })}>{progress}%</span>
   </div>
 {/if}
 <div {...restProps} class={base({ class: clsx(size, classes?.base, className) })}>

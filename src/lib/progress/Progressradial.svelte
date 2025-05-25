@@ -35,23 +35,23 @@
 
 <div class="flex flex-col items-center">
   {#if labelOutside}
-    <div class={outsideDiv({ class: classes?.outsideDiv })}>
-      <span class={outsideSpan({ class: classes?.outsideSpan })}>{labelOutside}</span>
-      <span class={outsideProgress({ class: classes?.outsideProgress })}>{formattedProgress}%</span>
+    <div class={outsideDiv({ class: clsx(classes?.outsideDiv) })}>
+      <span class={outsideSpan({ class: clsx(classes?.outsideSpan) })}>{labelOutside}</span>
+      <span class={outsideProgress({ class: clsx(classes?.outsideProgress) })}>{formattedProgress}%</span>
     </div>
   {/if}
 
   <div {...restProps} class={base({ class: clsx(size, classes?.base, className) })}>
     <svg viewBox="0 0 100 100" class="h-full w-full" style="transform: rotate({rotationAngle}deg)">
       <!-- Background circle -->
-      <circle cx="50" cy="50" r={radius} class={circleBackground()} fill="none" stroke-width={thickness} />
+      <circle cx="50" cy="50" r={radius} class={circleBackground({ class: clsx(classes?.circleBackground) })} fill="none" stroke-width={thickness} />
 
       <!-- Foreground circle (progress indicator) -->
-      <circle cx="50" cy="50" r={radius} class={circleForeground()} fill="none" stroke-width={thickness} stroke-dasharray={circumference} stroke-dashoffset={strokeDashoffset} stroke-linecap="round" />
+      <circle cx="50" cy="50" r={radius} class={circleForeground({ class: clsx(classes?.circleForeground) })} fill="none" stroke-width={thickness} stroke-dasharray={circumference} stroke-dashoffset={strokeDashoffset} stroke-linecap="round" />
     </svg>
 
     {#if labelInside}
-      <div class={labelInsideDiv({ class: classes?.labelInsideDiv })}>
+      <div class={labelInsideDiv({ class: clsx(classes?.labelInsideDiv) })}>
         {formattedProgress}%
       </div>
     {/if}
