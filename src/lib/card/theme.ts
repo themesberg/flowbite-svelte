@@ -1,4 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type CardVariants = VariantProps<typeof card>;
 
 export const card = tv({
   slots: {

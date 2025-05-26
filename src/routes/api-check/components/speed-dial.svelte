@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { SpeedDial, SpeedDialTrigger, SpeedDialButton, Button, Rating, Listgroup, ListgroupItem, Alert, type ButtonColor } from "$lib";
+  import { SpeedDial, SpeedDialTrigger, SpeedDialButton, Button, Rating, Listgroup, ListgroupItem, Alert } from "$lib";
   import type { Middleware, Placement, Strategy } from "@floating-ui/dom";
   import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid, DotsHorizontalOutline, DotsVerticalOutline, PenSolid } from "flowbite-svelte-icons";
 

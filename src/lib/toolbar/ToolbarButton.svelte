@@ -5,7 +5,7 @@
   import clsx from "clsx";
 
   const background = getContext("background");
-  let { children, onclick, color, name, "aria-label": ariaLabel, size, class: className, ...restProps }: ToolbarButtonProps = $props();
+  let { children, color, name, "aria-label": ariaLabel, size, class: className, ...restProps }: ToolbarButtonProps = $props();
 
   const buttonClass = $derived(
     toolbarButton({
@@ -15,12 +15,10 @@
       class: clsx(className)
     })
   );
-
-  // let buttonClass: string = twMerge('focus:outline-hidden whitespace-normal', sizing[size], colors[color], color === 'default' && (background ? 'dark:hover:bg-gray-600' : 'dark:hover:bg-gray-700'), className);
 </script>
 
 {#if restProps.href === undefined}
-  <button type="button" {...restProps} class={buttonClass} aria-label={ariaLabel ?? name} {onclick}>
+  <button type="button" {...restProps} class={buttonClass} aria-label={ariaLabel ?? name}>
     {#if name}<span class="sr-only">{name}</span>{/if}
     {@render children?.()}
   </button>

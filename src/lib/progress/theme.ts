@@ -1,7 +1,6 @@
 import type { ClassValue } from "svelte/elements";
 import { tv, type VariantProps } from "tailwind-variants";
 
-// export type ProgressbarClasses = Partial<typeof progressbar>["slots"];
 export type ProgressbarClasses = Partial<{
   [K in keyof typeof progressbar["slots"]]: ClassValue;
 }>;
