@@ -101,20 +101,20 @@
 
 <H1>Progressbar Builder</H1>
 <CodeWrapper>
-  <div class="my-4 h-16">
+  <div class="my-8 h-16">
     {#if animation}
-      <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} labelInsideClass={progressSize.class} animate {tweenDuration} {easing} />
+      <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} classes={{labelInsideDiv: progressSize.class}} animate {tweenDuration} {easing} />
     {:else}
-      <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} labelInsideClass={progressSize.class} />
+      <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} classes={{labelInsideDiv: progressSize.class}} />
     {/if}
   </div>
-  <div class="mb-4 flex flex-wrap space-x-2">
+  <div class="mb-8 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each progressSizes as size}
       <Radio class="my-1 w-24" name="progress_size" bind:group={progressSize.size} value={size.size} onchange={() => updateProgressSize(size.size)}>{size.size}</Radio>
     {/each}
   </div>
-  <div class="flex flex-wrap space-x-2">
+  <div class="mb-8 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as color}
       <Radio class="my-1 w-24" name="interactive_progress_color" bind:group={progressColor} color={color as RadioColorType} value={color}>{color}</Radio>
