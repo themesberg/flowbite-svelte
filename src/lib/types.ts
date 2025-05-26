@@ -1,29 +1,20 @@
-import type { HTMLButtonAttributes, HTMLAnchorAttributes, HTMLAttributes, HTMLLiAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLSelectAttributes, HTMLTextareaAttributes, HTMLDialogAttributes, SVGAttributes, HTMLTableAttributes, HTMLTdAttributes, HTMLThAttributes, HTMLOlAttributes, HTMLBlockquoteAttributes, HTMLSourceAttributes, HTMLTrackAttributes, HTMLVideoAttributes, ChangeEventHandler, DragEventHandler } from "svelte/elements";
-import type { TransitionConfig, FadeParams, BlurParams, FlyParams, SlideParams, ScaleParams, EasingFunction } from "svelte/transition";
-import { type Writable } from "svelte/store";
-import type { Snippet, Component } from "svelte";
-import { tv, type VariantProps } from "tailwind-variants";
 import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
 import type { ClassValue } from "clsx";
+import type { Component, Snippet } from "svelte";
+import type { HTMLAnchorAttributes, HTMLAttributes, HTMLBlockquoteAttributes, HTMLButtonAttributes, HTMLDialogAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLLiAttributes, HTMLOlAttributes, HTMLProgressAttributes, HTMLSelectAttributes, HTMLSourceAttributes, HTMLTableAttributes, HTMLTdAttributes, HTMLTextareaAttributes, HTMLThAttributes, HTMLTrackAttributes, HTMLVideoAttributes, SVGAttributes } from "svelte/elements";
+import { type Writable } from "svelte/store";
+import type { BlurParams, EasingFunction, FadeParams, FlyParams, ScaleParams, SlideParams, TransitionConfig } from "svelte/transition";
+import { tv, type VariantProps } from "tailwind-variants";
 
 // component variants
-import type { AlertVariants } from "./alert/theme";
-import type { BadgeVariants } from "./badge/theme";
-import type { BannerVariants } from "./banner/theme";
-import type { ButtonVariants, GradientButtonVariantes, button, gradientButton } from "./buttons/theme";
-import type { CarouselVariants } from "./carousel/theme";
-import type { CardVariants } from "./card/theme";
-import type { CheckboxVariants } from "./forms/checkbox/theme";
-import type { closeButtonVariants } from "./utils/theme";
-import type Slide from "./carousel/Slide.svelte";
-import type { ApexOptions } from "apexcharts";
-import type { DrawerVariants } from "./drawer/theme";
+import type { CheckboxVariants } from "$lib/forms/checkbox/theme";
 import type { FileuploadViariants } from "$lib/forms/fileupload/theme";
 import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label/theme";
 import type { HelperVariants } from "$lib/forms/helper/theme";
 import type { InputVariants } from "$lib/forms/input-field/theme";
 import type { LabelVariants } from "$lib/forms/label/theme";
 import type { RadioVariants } from "$lib/forms/radio/theme";
+
 import type { RangeVariants } from "$lib/forms/range/theme";
 import type { SearchVariants } from "$lib/forms/search/theme";
 import type { MultiSelectVariants, SelectVariants } from "$lib/forms/select/theme";
@@ -38,13 +29,25 @@ import type { SpinnerVaraiants } from "$lib/spinner/theme";
 import type { TableVariants } from "$lib/table/theme";
 import type { TabsVaraints } from "$lib/tabs/theme";
 import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
-import type { ProgressbarVariants } from "./progress/theme";
+import type { ProgressbarVariants, ProgressradialVariants } from "$lib/progress/theme";
+
 import { baseThemes } from "$lib/theme";
 import { timeline } from "$lib/timeline/theme";
 import type { ToastVaraints } from "$lib/toast/theme";
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "$lib/toolbar/theme";
 import type { TooltipVariants } from "$lib/tooltip/theme";
+import type { ApexOptions } from "apexcharts";
+import type { AlertVariants } from "$lib/alert/theme";
+import type { BadgeVariants } from "$lib/badge/theme";
+import type { BannerVariants } from "$lib/banner/theme";
+import type { ButtonVariants, GradientButtonVariantes, button, gradientButton } from "$lib/buttons/theme";
+import type { CardVariants } from "$lib/card/theme";
+import type Slide from "$lib/carousel/Slide.svelte";
+import type { CarouselVariants } from "$lib/carousel/theme";
+import type { DrawerVariants } from "$lib/drawer/theme";
+import type { closeButtonVariants } from "$lib/utils/theme";
 // typography component variants
+import type { ButtonToggleVariants } from "$lib/forms/button-toggle/theme";
 import type { AnchorVariants } from "$lib/typography/anchor/theme";
 import type { BlockquoteVariants } from "$lib/typography/blockquote/theme";
 import type { DescriptionListVariants } from "$lib/typography/descriptionlist/theme";
@@ -53,7 +56,6 @@ import type { ImgVariants } from "$lib/typography/img/theme";
 import type { ListVariants } from "$lib/typography/list/theme";
 import type { ParagraphVariants } from "$lib/typography/paragraph/theme";
 import type { SpanVariants } from "$lib/typography/span/theme";
-import type { ButtonToggleVariants, ButtonToggleContentVariants, ButtonToggleTextVariants } from "$lib/forms/button-toggle/theme";
 
 // end of component variants
 
@@ -1164,14 +1166,9 @@ export interface ProgressbarProps extends ProgressbarVariants, Omit<HTMLAttribut
   labelInside?: boolean;
   labelOutside?: string;
   easing?: EasingFunction;
-  oustsideSpanClass?: ClassValue;
-  oustsideProgressClass?: ClassValue;
-  labeloutsidedivClass?: ClassValue;
-  labelInsideClass?: ClassValue;
-  divClass?: ClassValue;
 }
 
-export interface ProgressradialProps {
+export interface ProgressradialProps extends ProgressradialVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   progress?: number | string;
   radius?: number;
   startingPosition?: "top" | "right" | "bottom" | "left";
@@ -1183,12 +1180,6 @@ export interface ProgressradialProps {
   labelInside?: boolean;
   labelOutside?: string;
   easing?: (t: number) => number;
-  labelInsideClass?: ClassValue;
-  outsideSpanClass?: ClassValue;
-  outsideProgressClass?: ClassValue;
-  labelOutsideDivClass?: ClassValue;
-  divClass?: ClassValue;
-  [key: string]: any;
 }
 
 // rating
@@ -1398,6 +1389,7 @@ export interface ListPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
 export interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
   size?: SkeletonVariants["size"];
 }
+
 
 export interface TestimonialPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
 }
