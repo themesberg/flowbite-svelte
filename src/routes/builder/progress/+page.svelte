@@ -69,7 +69,7 @@
       if (progressSize.size !== "h-4") props.push(` size="${progressSize.size}"`);
       // Add labelInsideClass prop if not empty
       if (progressSize.class !== "") {
-        props.push(` labelInsideClass="${progressSize.class}"`);
+        props.push(` classes={{ labelInsideClass:"${progressSize.class}" }}`);
       }
       if (animation) {
         props.push(" animate");
