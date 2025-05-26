@@ -7,9 +7,8 @@
   const ctxDisabled: boolean | undefined = getContext("disabled");
 
   let { children, pill, outline = false, size = "md", color = "primary", shadow = false, tag = "button", disabled, class: className, ...restProps }: ButtonProps = $props();
-
   let actualSize = $derived(group ? "sm" : size);
-  let actualColor = $derived(group ? (outline ? "dark" : "alternative") : color);
+  let actualColor = $derived(color ?? (group ? (outline ? "dark" : "alternative") : "primary"));
   let isDisabled = $derived(Boolean(ctxDisabled) || Boolean(disabled));
 
   const { base, outline: outline_, shadow: shadow_ } = $derived(button({ color: actualColor, size: actualSize, disabled: isDisabled, pill, group: !!group }));
