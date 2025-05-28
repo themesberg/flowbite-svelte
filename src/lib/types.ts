@@ -56,6 +56,7 @@ import type { ImgVariants } from "$lib/typography/img/theme";
 import type { ListVariants } from "$lib/typography/list/theme";
 import type { ParagraphVariants } from "$lib/typography/paragraph/theme";
 import type { SpanVariants } from "$lib/typography/span/theme";
+import type { AccordionItemVariants, AccordionVariants } from "./accordion/theme";
 
 // end of component variants
 
@@ -68,6 +69,11 @@ export interface ThemeConfig {
 export interface ThemeType {
   [key: string]: ReturnType<typeof tv>;
 }
+
+// Generic type definition for ComponentVariants
+export type ComponentVariants<T extends ((...args: any) => any) & { slots: object }> = (
+  VariantProps<T> & { classes?: Partial<{ [K in keyof T["slots"]]: ClassValue }> }
+);
 
 export declare const xs = "xs";
 export declare const sm = "sm";
@@ -162,30 +168,20 @@ export interface AccordionCtxType {
   multiple?: boolean;
 }
 
-export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
+export interface AccordionProps extends AccordionVariants, HTMLAttributes<HTMLDivElement> {
   children: Snippet;
-  flush?: boolean;
   multiple?: boolean;
-  activeClass?: string;
-  inactiveClass?: string;
-  defaultClass?: string;
-  classActive?: string;
-  classInactive?: string;
   transitionType?: TransitionFunc | "none";
+  transitionParams?: ParamsType;
 }
 
-export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
+export interface AccordionItemProps extends AccordionItemVariants, HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   header?: Snippet;
   arrowup?: Snippet;
   arrowdown?: Snippet;
-  open?: boolean;
-  activeClass?: string;
-  inactiveClass?: string;
   transitionType?: TransitionFunc | "none";
   transitionParams?: ParamsType;
-  headerClass?: string;
-  contentClass?: string;
 }
 
 // alert

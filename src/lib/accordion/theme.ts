@@ -1,7 +1,14 @@
-import { tv } from "tailwind-variants";
+import type { ComponentVariants } from "$lib/types";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type AccordionVariants = ComponentVariants<typeof accordion>;
 
 export const accordion = tv({
-  base: "w-full text-gray-500 dark:text-gray-400",
+  slots: {
+    base: "w-full text-gray-500 dark:text-gray-400",
+    active: "",
+    inactive: ""
+  },
   variants: {
     flush: {
       true: "",
@@ -9,6 +16,8 @@ export const accordion = tv({
     }
   }
 });
+
+export type AccordionItemVariants = ComponentVariants<typeof accordionitem>;
 
 export const accordionitem = tv({
   slots: {
