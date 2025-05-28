@@ -85,14 +85,17 @@ Use the `open` prop to make an item open on mount.
 
 ## Color option
 
-You can control the look and feel of `AccordionItems` by overwriting the `activeClass` and `inactiveClass` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
+You can control the look and feel of `AccordionItems` by overwriting the `classes` props: `active` and `inactive`. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
 
 ```svelte example
 <script>
   import { AccordionItem, Accordion } from "flowbite-svelte";
 </script>
 
-<Accordion activeClass="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800" inactiveClass="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
+<Accordion classes={{
+  active: "bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800", 
+  inactive:"text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800"
+  }}>
   <AccordionItem>
     {#snippet header()}Header 2-1{/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>

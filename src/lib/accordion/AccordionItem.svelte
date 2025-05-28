@@ -4,8 +4,9 @@
   import { writable } from "svelte/store";
   import { accordionitem } from ".";
   import { type AccordionCtxType, type AccordionItemProps, type ParamsType, type BaseThemes, cn } from "$lib";
+  import clsx from "clsx";
 
-  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, headerClass, contentClass }: AccordionItemProps = $props();
+  let { children, header, arrowup, arrowdown, open = $bindable(false), classes, transitionType = slide, transitionParams, class: className }: AccordionItemProps = $props();
 
   const ctxTransitionType = getContext("ctxTransitionType");
   // Check if transitionType is explicitly set to undefined in props
@@ -30,10 +31,10 @@
 
   const { base, button, content, active, inactive } = $derived(accordionitemTheme({ flush: ctx.flush, open }));
 
-  let buttonClass = $derived(cn(button(), open && !ctx.flush && (activeClass || ctx.activeClass || active()), !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()), className));
+  let buttonClass = $derived(cn(button(), open && !ctx.flush && (classes?.active || ctx.activeClass || active()), !open && !ctx.flush && (classes?.inactive || ctx.inactiveClass || inactive()), className));
 </script>
 
-<h2 class={base({ class: headerClass })}>
+<h2 class={base({ class: clsx(classes?.base, className) })}>
   <button type="button" onclick={handleToggle} class={buttonClass} aria-expanded={open}>
     {#if header}
       {@render header()}
@@ -59,14 +60,14 @@
 {#if useTransition}
   {#if open && transitionType !== "none"}
     <div transition:transitionType={transitionParams as ParamsType}>
-      <div class={content({ class: contentClass })}>
+      <div class={content({ class: clsx(classes?.content) })}>
         {@render children()}
       </div>
     </div>
   {/if}
 {:else}
   <div class={open ? "block" : "hidden"}>
-    <div class={content({ class: contentClass })}>
+    <div class={content({ class: clsx(classes?.content) })}>
       {@render children()}
     </div>
   </div>

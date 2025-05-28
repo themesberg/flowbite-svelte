@@ -2,9 +2,9 @@
   import { setContext, getContext } from "svelte";
   import { writable } from "svelte/store";
   import { accordion } from "./";
-  import {type AccordionProps, type BaseThemes, cn } from "$lib";
+  import { type AccordionProps, type BaseThemes, cn } from "$lib";
 
-  let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, ...restProps }: AccordionProps = $props();
+  let { children, flush, multiple = false, class: className, classes, transitionType, ...restProps }: AccordionProps = $props();
 
   // Get merged theme from context
   const context = getContext<BaseThemes>("themeConfig");
@@ -13,8 +13,8 @@
 
   const ctx = {
     flush,
-    activeClass,
-    inactiveClass,
+    activeClass: classes?.active,
+    inactiveClass: classes?.inactive,
     selected: multiple ? undefined : writable()
   };
 
