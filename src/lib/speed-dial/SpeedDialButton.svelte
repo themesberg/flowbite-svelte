@@ -15,7 +15,7 @@
   let spanClass = $derived(tooltip === "none" ? twMerge(span(), clsx(textClass)) : "sr-only");
 </script>
 
-<Button {pill} {color} {...restProps} class={twMerge(base(),clsx(className))}>
+<Button {pill} {color} {...restProps} class={twMerge(base(), clsx(className))}>
   {@render children?.()}
   <span class={spanClass}>{name}</span>
 </Button>
@@ -28,7 +28,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1542)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1463)
 ## Props
 @prop children
 @prop name = ""

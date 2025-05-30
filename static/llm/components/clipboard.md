@@ -1,18 +1,5 @@
----
-layout: componentLayout
-title: Svelte Clipboard - Flowbite
-breadcrumb_title: Svelte Clipboard
-component_title: Clipboard
-dir: Components
-description: Use the clipboard component to copy text, data or lines of code to the clipboard with a single click based on various styles and examples coded with Tailwind CSS and Flowbite
-thumnailSize: w-36
----
+# Svelte Clipboard - Flowbite
 
-<script>
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { P, A } from '$lib'
-  const dirName = 'clipboard'
-</script>
 
 The copy to clipboard component allows you to copy text, lines of code, contact details or any other data to the clipboard with a single click on a trigger element such as a button. This component can be used to copy text from an input field, textarea, code block or even address fields in a form element.
 
@@ -22,7 +9,7 @@ Use cases for websites can be found in the examples below and they include copyi
 
 Import Clipboard in the script tag.
 
-```svelte example hideOutput
+```svelte
 <script>
   import { Clipboard } from "flowbite-svelte";
 </script>
@@ -34,7 +21,7 @@ Use this example to copy the content of an input text field by clicking on a but
 
 String variable `value` is the source of the text copied to the clipboard. Boolean variable `success` turns `true` for a while when text was copied.
 
-```svelte example class="flex items-center justify-center gap-2 h-48" hideScript
+```svelte
 <script>
   import { Clipboard, Input } from "flowbite-svelte";
   import { CheckOutline } from "flowbite-svelte-icons";
@@ -55,7 +42,7 @@ This example can be used to copy the content of an input field by clicking on a 
 
 Notice the different style of monitoring the `success` state by using the parameter in the `children` snippet.
 
-```svelte example class="flex justify-center items-center gap-2 h-56" hideScript
+```svelte
 <script>
   import { Clipboard, Input, Tooltip } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
@@ -81,7 +68,7 @@ Notice the different style of monitoring the `success` state by using the parame
 
 Use this example to show a copy button inside the input field with a text label and icon that updates to a success state when the text has been copied.
 
-```svelte example class="flex justify-center items-center gap-2 h-56" hideScript
+```svelte
 <script>
   import { Clipboard, Input, Tooltip, ButtonGroup } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
@@ -110,7 +97,7 @@ Use this example to show a copy button inside the input field with a text label 
 
 This example can be used to show a copy to clipboard button inside an input group which has a label positioned inside the input field.
 
-```svelte example class="flex justify-center items-center gap-2 h-56" hideScript
+```svelte
 <script>
   import { Clipboard, Input, InputAddon, Tooltip, ButtonGroup } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
@@ -134,7 +121,7 @@ This example can be used to show a copy to clipboard button inside an input grou
 
 Use this example to copy a shortened URL to the clipboard by clicking on a button with an icon positioned inside the input field and also show a tooltip with a message when the text has been copied.
 
-```svelte example class="flex flex-col justify-center items-center gap-2 h-56" hideScript
+```svelte
 <script>
   import { Clipboard, Input, Label, Helper, Button, Tooltip, ButtonGroup } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
@@ -162,7 +149,7 @@ Use this example to copy a shortened URL to the clipboard by clicking on a butto
 
 This example can be used to copy and paste code inside a `<pre>` and `<code>` block by clicking on a button with an icon position inside the block and also show a tooltip with a message when the text has been copied.
 
-```svelte example class="flex justify-center items-center gap-2 h-96"
+```svelte
 <script>
   import { Clipboard, Input, Label, Helper, Button } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
@@ -213,7 +200,7 @@ This example can be used to copy and paste code inside a `<pre>` and `<code>` bl
 
 Use this example to show multiple input field elements that have the copy to clipboard button inside a card component for more complex applications where you need to copy API keys, account IDs and more.
 
-```svelte example class="flex justify-center items-center gap-2"
+```svelte
 <script>
   import { Card, Clipboard, Input, Label, Tooltip, Button } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";

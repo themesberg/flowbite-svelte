@@ -2,7 +2,7 @@ import type { ClassValue } from "svelte/elements";
 import { tv, type VariantProps } from "tailwind-variants";
 
 export type ProgressbarClasses = Partial<{
-  [K in keyof typeof progressbar["slots"]]: ClassValue;
+  [K in keyof (typeof progressbar)["slots"]]: ClassValue;
 }>;
 export type ProgressbarVariants = VariantProps<typeof progressbar> & { classes?: ProgressbarClasses };
 
@@ -123,7 +123,7 @@ export const progressbar = tv({
 });
 
 export type ProgressradialClasses = Partial<{
-  [K in keyof typeof progressradial["slots"]]: ClassValue;
+  [K in keyof (typeof progressradial)["slots"]]: ClassValue;
 }>;
 export type ProgressradialVariants = VariantProps<typeof progressradial> & { classes?: ProgressradialClasses };
 

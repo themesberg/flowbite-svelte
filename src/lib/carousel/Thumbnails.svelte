@@ -64,13 +64,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L482)
+[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L449)
 ## Props
 @prop children
 @prop images = []
 @prop index = $bindable()
 @prop ariaLabel = "Click to view image"
-@prop imgClass = ""
+@prop imgClass
 @prop throttleDelay = 650
 @prop class: className
 -->

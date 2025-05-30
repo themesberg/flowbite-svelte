@@ -60,7 +60,7 @@
     {#if backdrop && activateClickOutside}
       <div role="presentation" class={twMerge(backdropCls(), clsx(backdropClass))} onclick={closeSidebar}></div>
     {:else if backdrop && !activateClickOutside}
-      <div role="presentation" class={twMerge(backdropCls(),clsx(backdropClass))}></div>
+      <div role="presentation" class={twMerge(backdropCls(), clsx(backdropClass))}></div>
     {:else if !backdrop && activateClickOutside}
       <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full" onclick={closeSidebar}></div>
     {:else if !backdrop && !activateClickOutside}
@@ -78,7 +78,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1394)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1308)
 ## Props
 @prop children
 @prop isOpen = false

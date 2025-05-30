@@ -49,7 +49,7 @@
   }
 </script>
 
-<li class={twMerge(base(),clsx(className))}>
+<li class={twMerge(base(), clsx(className))}>
   <button {...restProps} onclick={handleDropdown} type="button" class={twMerge(btn(), clsx(btnClass))} aria-controls="sidebar-dropdown">
     {#if icon}
       {@render icon()}
@@ -82,7 +82,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1435)
+[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1349)
 ## Props
 @prop children
 @prop arrowup

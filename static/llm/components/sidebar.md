@@ -1199,7 +1199,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1394)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1308)
 
 #### Props
 
@@ -1226,7 +1226,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1429)
+[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1343)
 
 #### Props
 
@@ -1240,7 +1240,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1412)
+[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1326)
 
 #### Props
 
@@ -1251,7 +1251,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1416)
+[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1330)
 
 #### Props
 
@@ -1266,7 +1266,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1435)
+[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1349)
 
 #### Props
 
@@ -1289,7 +1289,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1452)
+[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1366)
 
 #### Props
 
@@ -1302,7 +1302,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1458)
+[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1372)
 
 #### Props
 

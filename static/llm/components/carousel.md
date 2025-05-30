@@ -260,7 +260,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L442)
+[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L414)
 
 #### Props
 
@@ -282,7 +282,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L465)
+[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L435)
 
 #### Props
 
@@ -296,7 +296,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L472)
+[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L441)
 
 #### Props
 
@@ -307,7 +307,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L457)
+[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L428)
 
 #### Props
 
@@ -321,7 +321,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L492)
+[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L458)
 
 #### Props
 
@@ -333,7 +333,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L477)
+[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L445)
 
 #### Props
 
@@ -344,7 +344,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L482)
+[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L449)
 
 #### Props
 
@@ -352,7 +352,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 - images: []
 - index: $bindable()
 - ariaLabel: "Click to view image"
-- imgClass: ""
+- imgClass
 - throttleDelay: 650
 - class: className
 

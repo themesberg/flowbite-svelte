@@ -366,7 +366,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L259)
+[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L257)
 
 #### Props
 
@@ -383,7 +383,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L305)
+[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L303)
 
 #### Props
 
@@ -395,7 +395,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L311)
+[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L309)
 
 #### Props
 
@@ -407,7 +407,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L270)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L268)
 
 #### Props
 

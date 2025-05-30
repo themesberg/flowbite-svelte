@@ -40,11 +40,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L644)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L612)
 ## Props
 @prop aClass
 @prop children
-@prop href
 @prop activeClass
 @prop liClass
 @prop class: className

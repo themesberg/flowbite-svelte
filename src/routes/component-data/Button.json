@@ -2,15 +2,14 @@
   "name": "Button",
   "type": {
     "name": "ButtonProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L353"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L347"
   },
   "props": [
     ["children", ""],
-    ["onclick", ""],
     ["pill", ""],
     ["outline", "false"],
     ["size", "\"md\""],
-    ["color", "\"primary\""],
+    ["color", ""],
     ["shadow", "false"],
     ["tag", "\"button\""],
     ["disabled", ""],

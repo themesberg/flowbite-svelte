@@ -141,18 +141,18 @@ Use the `color` prop to change the color of a progress bar.
 
 ## Custom style
 
-Use `labelInsideClass` prop to style your progressbar.
+Use `labelInsideDiv` prop to style your progressbar.
 
 ```svelte
 <script>
   import { Progressbar } from "flowbite-svelte";
 </script>
 
-<Progressbar progress="50" size="h-3" labelInside color="green" labelInsideClass="text-xs font-medium text-center p-0 leading-none rounded-full" class="my-4" labelOutside="Size h-3" />
+<Progressbar progress="50" size="h-3" labelInside color="green" classes={{ labelInsideDiv: "text-xs font-medium text-center p-0 leading-none rounded-full" }} class="my-4" labelOutside="Size h-3" />
 
-<Progressbar progress="50" size="h-10" labelInside color="red" labelInsideClass="text-2xl font-medium text-center p-2 leading-none rounded-full" class="my-4" labelOutside="Size h-10" />
+<Progressbar progress="50" size="h-10" labelInside color="red" classes={{ labelInsideDiv: "text-2xl font-medium text-center p-2 leading-none rounded-full" }} class="my-4" labelOutside="Size h-10" />
 
-<Progressbar progress="50" size="h-6" labelInside labelInsideClass="text-base font-medium text-center p-1 leading-none rounded-full" class="my-4" labelOutside="Size h-6" />
+<Progressbar progress="50" size="h-6" labelInside classes={{ labelInsideDiv: "text-base font-medium text-center p-1 leading-none rounded-full" }} class="my-4" labelOutside="Size h-6" />
 ```
 
 ## Animation
@@ -167,14 +167,14 @@ By default progress bar has animation disabled, you can activate with `animate`,
   let progress = "45";
 </script>
 
-<Progressbar {progress} animate precision={2} labelOutside="With animation" labelInside tweenDuration={1500} easing={sineOut} size="h-6" labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" class="mb-8" />
-<Progressbar {progress} labelOutside="Without animation" labelInside size="h-6" labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" />
+<Progressbar {progress} animate precision={2} labelOutside="With animation" labelInside tweenDuration={1500} easing={sineOut} size="h-6" classes={{ labelInsideDiv: "bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" }} class="mb-8" />
+<Progressbar {progress} labelOutside="Without animation" labelInside size="h-6" classes={{ labelInsideDiv: "bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" }} />
 <Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">Randomize</Button>
 ```
 
 ## Custom color
 
-Use the `labelInsideClass` prop to change the color of the progress bar.
+Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 ```svelte
 <script>
@@ -182,9 +182,9 @@ Use the `labelInsideClass` prop to change the color of the progress bar.
 </script>
 
 <div class="space-y-4">
-  <Progressbar progress="40" labelInsideClass="bg-sky-600 dark:bg-sky-400" />
-  <Progressbar progress="40" labelInsideClass="bg-lime-600 dark:bg-lime-400" />
-  <Progressbar progress="40" labelInsideClass="bg-pink-600 dark:bg-pink-400" />
+  <Progressbar progress="40" classes={{ labelInsideDiv: "bg-sky-600 dark:bg-sky-400" }} />
+  <Progressbar progress="40" classes={{ labelInsideDiv: "bg-lime-600 dark:bg-lime-400" }} />
+  <Progressbar progress="40" classes={{ labelInsideDiv: "bg-pink-600 dark:bg-pink-400" }} />
 </div>
 ```
 
@@ -199,7 +199,7 @@ Use the `labelInsideClass` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1244)
+[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1171)
 
 #### Props
 
@@ -212,17 +212,14 @@ Use the `labelInsideClass` prop to change the color of the progress bar.
 - labelOutside: ""
 - easing: cubicOut
 - color: "primary"
-- labelInsideClass
-- oustsideSpanClass
-- oustsideProgressClass
-- labeloutsidedivClass
-- divClass
+- class: className
+- classes
 
 ### Progressradial
 
 #### Types
 
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1261)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1182)
 
 #### Props
 
@@ -238,11 +235,8 @@ Use the `labelInsideClass` prop to change the color of the progress bar.
 - labelOutside: ""
 - easing: cubicOut
 - color: "primary"
-- labelInsideClass
-- outsideSpanClass
-- outsideProgressClass
-- labelOutsideDivClass
-- divClass
+- class: className
+- classes
 
 
 ## References

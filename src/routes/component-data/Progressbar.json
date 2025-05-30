@@ -2,52 +2,19 @@
   "name": "Progressbar",
   "type": {
     "name": "ProgressbarProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1247"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1171"
   },
   "props": [
-    [
-      "progress",
-      "\"45\""
-    ],
-    [
-      "precision",
-      "0"
-    ],
-    [
-      "tweenDuration",
-      "400"
-    ],
-    [
-      "animate",
-      "false"
-    ],
-    [
-      "size",
-      "\"h-2.5\""
-    ],
-    [
-      "labelInside",
-      "false"
-    ],
-    [
-      "labelOutside",
-      "\"\""
-    ],
-    [
-      "easing",
-      "cubicOut"
-    ],
-    [
-      "color",
-      "\"primary\""
-    ],
-    [
-      "class: className",
-      ""
-    ],
-    [
-      "classes",
-      ""
-    ]
+    ["progress", "\"45\""],
+    ["precision", "0"],
+    ["tweenDuration", "400"],
+    ["animate", "false"],
+    ["size", "\"h-2.5\""],
+    ["labelInside", "false"],
+    ["labelOutside", "\"\""],
+    ["easing", "cubicOut"],
+    ["color", "\"primary\""],
+    ["class: className", ""],
+    ["classes", ""]
   ]
 }

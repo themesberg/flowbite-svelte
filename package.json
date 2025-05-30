@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -246,6 +246,10 @@
     "./Chart.svelte": {
       "types": "./dist/chart/Chart.svelte.d.ts",
       "svelte": "./dist/chart/Chart.svelte"
+    },
+    "./Clipboard.svelte": {
+      "types": "./dist/clipboard/Clipboard.svelte.d.ts",
+      "svelte": "./dist/clipboard/Clipboard.svelte"
     },
     "./DarkMode.svelte": {
       "types": "./dist/darkmode/DarkMode.svelte.d.ts",

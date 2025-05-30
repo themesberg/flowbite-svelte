@@ -186,7 +186,7 @@ When non standard usage is needed you can omit the `items` props and add element
 
 #### Types
 
-[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1053)
+[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L996)
 
 #### Props
 
@@ -205,7 +205,7 @@ When non standard usage is needed you can omit the `items` props and add element
 
 #### Types
 
-[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1065)
+[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1007)
 
 #### Props
 
@@ -217,8 +217,7 @@ When non standard usage is needed you can omit the `items` props and add element
 - name
 - Icon
 - class: className
-- iconClass: "me-2.5 h-5 w-5"
-- onclick
+- iconClass: "me-2.5 h-15 w-15"
 
 
 ## References

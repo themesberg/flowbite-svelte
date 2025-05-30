@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.0
+
+### Minor Changes
+
+- feat: Clipboard component
+
 ## 1.4.3
 
 ### Patch Changes

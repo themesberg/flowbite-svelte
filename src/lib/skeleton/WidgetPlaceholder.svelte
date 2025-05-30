@@ -1,4 +1,3 @@
-
 <script lang="ts">
   import { widgetPlaceholder } from "./index";
   import { twMerge } from "tailwind-merge";
@@ -9,7 +8,7 @@
   const { base, wrapper, vLine, hLine } = widgetPlaceholder({});
 </script>
 
-<div role="status" class={twMerge(base(),clsx(className))}>
+<div role="status" class={twMerge(base(), clsx(className))}>
   <div class={hLine({ class: "mb-2.5 h-2.5 w-32" })}></div>
   <div class={hLine({ class: "mb-10 h-2 w-48" })}></div>
   <div class={wrapper()}>
@@ -27,6 +26,8 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1416)
 ## Props
-@props: 
+@prop class: className
 -->

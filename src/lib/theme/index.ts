@@ -116,7 +116,6 @@ import {
   widgetPlaceholder
 } from "$lib";
 
-
 export const baseThemes = {
   accordion,
   accordionitem,

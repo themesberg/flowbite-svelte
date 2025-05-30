@@ -2,7 +2,7 @@
   import { getContext } from "svelte";
   import { writable } from "svelte/store";
   import { tabItem, tabs } from ".";
-  import  {type TabitemProps, type TabCtxType, cn } from "$lib";
+  import { type TabitemProps, type TabCtxType, cn } from "$lib";
 
   let { children, titleSlot, open = false, title = "Tab title", activeClass, inactiveClass, class: className, disabled, tabStyle, ...restProps }: TabitemProps = $props();
 
@@ -27,22 +27,10 @@
   }
 
   const { base, button, content } = $derived(tabItem({ open, disabled }));
-
 </script>
 
 <li {...restProps} class={cn(base(), className)} role="presentation">
-  <button
-    type="button"
-    onclick={() => (open = true)}
-    role="tab"
-    id={tabId}
-    aria-controls={ctx.panelId}
-    aria-selected={open}
-    {disabled}
-    class={cn(button(), open 
-      ? (activeClass ?? active())
-      : (inactiveClass ?? inactive()))}
-  >
+  <button type="button" onclick={() => (open = true)} role="tab" id={tabId} aria-controls={ctx.panelId} aria-selected={open} {disabled} class={cn(button(), open ? (activeClass ?? active()) : (inactiveClass ?? inactive()))}>
     {#if titleSlot}
       {@render titleSlot()}
     {:else}
@@ -63,7 +51,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1689)
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1605)
 ## Props
 @prop children
 @prop titleSlot

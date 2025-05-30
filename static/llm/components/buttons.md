@@ -296,16 +296,15 @@ You can use `onclick` or any standard `on*` to listen to the event.
 
 #### Types
 
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L353)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L347)
 
 #### Props
 
 - children
-- onclick
 - pill
 - outline: false
 - size: "md"
-- color: "primary"
+- color
 - shadow: false
 - tag: "button"
 - disabled
@@ -315,7 +314,7 @@ You can use `onclick` or any standard `on*` to listen to the event.
 
 #### Types
 
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L363)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L355)
 
 #### Props
 

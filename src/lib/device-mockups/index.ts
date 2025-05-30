@@ -7,4 +7,3 @@ export { default as Laptop } from "./Laptop.svelte";
 export { default as Smartwatch } from "./Smartwatch.svelte";
 export { default as Tablet } from "./Tablet.svelte";
 export { android, defaultMockup, desktop, ios, laptop, smartwatch, tablet } from "./theme";
-

@@ -28,7 +28,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1021)
+[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L966)
 ## Props
 @prop children
 @prop color = "primary"

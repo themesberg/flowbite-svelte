@@ -41,11 +41,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1297)
+[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1211)
 ## Props
 @prop children
 @prop text
-@prop class: divClass
+@prop class: className
 @prop size = 24
 @prop total = 5
 @prop rating = 4

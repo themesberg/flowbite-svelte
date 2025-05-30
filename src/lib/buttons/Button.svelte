@@ -33,14 +33,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L353)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L347)
 ## Props
 @prop children
-@prop onclick
 @prop pill
 @prop outline = false
 @prop size = "md"
-@prop color = "primary"
+@prop color
 @prop shadow = false
 @prop tag = "button"
 @prop disabled

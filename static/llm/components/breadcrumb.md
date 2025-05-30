@@ -110,7 +110,7 @@ Use the `icon` snippet to change icons.
 
 #### Types
 
-[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L318)
+[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L315)
 
 #### Props
 
@@ -124,7 +124,7 @@ Use the `icon` snippet to change icons.
 
 #### Types
 
-[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L326)
+[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L322)
 
 #### Props
 

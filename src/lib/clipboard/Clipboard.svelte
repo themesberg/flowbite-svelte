@@ -38,3 +38,18 @@
 <Button onclick={copyToClipboard} {...restProps} class={clipboard({ embedded, class: clsx(className) })}>
   {@render children?.(success)}
 </Button>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L471)
+## Props
+@prop children
+@prop embedded = false
+@prop value = $bindable("")
+@prop success = $bindable(false)
+@prop onclick
+@prop class: className = ""
+@prop ...restProps
+-->
