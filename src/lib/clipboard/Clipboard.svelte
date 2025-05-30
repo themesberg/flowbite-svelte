@@ -21,7 +21,13 @@
       return String.fromCharCode(num);
     });
 
-    await window.navigator.clipboard.writeText(decodedText);
+    try {
+      await window.navigator.clipboard.writeText(decodedText);
+    } catch (error) {
+      console.error("Failed to copy to clipboard:", error);
+      success = false;
+      return;
+    }
 
     setTimeout(() => {
       success = false;
