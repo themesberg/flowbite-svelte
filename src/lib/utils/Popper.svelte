@@ -16,9 +16,9 @@
   let hoverable: boolean = $derived(trigger === "hover");
 
   let popover: HTMLElement | null = $state(null);
-  let invoker: HTMLButtonElement | null = null;
+  let invoker: HTMLElement | null = null;
   let referenceElement: HTMLElement | null = null;
-  let triggerEls: HTMLButtonElement[] = [];
+  let triggerEls: HTMLElement[] = [];
   let arrowParams: { placement: Placement; cords: Partial<Coords>; strategy: Strategy } = $state({
     placement,
     cords: { x: 0, y: 0 },
@@ -61,8 +61,8 @@
 
     ev.preventDefault();
 
-    if (ev.target !== invoker && triggerEls.includes(ev.target as HTMLButtonElement)) {
-      invoker = ev.target as HTMLButtonElement;
+    if (ev.target !== invoker && triggerEls.includes(ev.target as HTMLElement)) {
+      invoker = ev.target as HTMLElement;
       // if (invoker) invoker.popoverTargetElement = popover;
       isOpen = false;
       await new Promise((resolve) => setTimeout(resolve, TRIGGER_DELAY));
@@ -127,8 +127,9 @@
       ["mouseleave", close_popover, hoverable]
     ];
 
-    if (triggeredBy) triggerEls = [...node.ownerDocument.querySelectorAll<HTMLButtonElement>(triggeredBy)];
-    else if (node.previousElementSibling) triggerEls = [node.previousElementSibling as HTMLButtonElement];
+    if (triggeredBy) triggerEls = [...node.ownerDocument.querySelectorAll<HTMLElement>(triggeredBy)];
+    else if (node.previousElementSibling) triggerEls = [node.previousElementSibling as HTMLElement];
+    else if (node.parentElement) triggerEls = [node.parentElement];
 
     if (!triggerEls.length) {
       console.error("No triggers found.", triggeredBy);
@@ -138,7 +139,7 @@
     if (reference) referenceElement = node.ownerDocument.querySelector<HTMLElement>(reference);
     invoker = triggerEls[0];
 
-    triggerEls.forEach((element: HTMLButtonElement) => {
+    triggerEls.forEach((element: HTMLElement) => {
       if (element.tabIndex < 0) element.tabIndex = 0; // trigger must be focusable
       for (const [name, handler, cond] of events) if (cond) element.addEventListener(name, handler);
     });
