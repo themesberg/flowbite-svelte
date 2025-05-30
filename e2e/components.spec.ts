@@ -66,6 +66,12 @@ test("Carousel page should have h1", async ({ page }) => {
   expect(await page.textContent("h1")).toBe("Svelte Carousel - Flowbite");
 });
 
+// Clipboard
+test("Clipboard page should have h1", async ({ page }) => {
+  await page.goto("/docs/components/clipboard");
+  expect(await page.textContent("h1")).toBe("Svelte Clipboard - Flowbite");
+});
+
 // Darkmode
 test("Dark mode page should have h1", async ({ page }) => {
   await page.goto("/docs/components/darkmode");
