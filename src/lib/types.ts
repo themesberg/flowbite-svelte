@@ -56,6 +56,7 @@ import type { ImgVariants } from "$lib/typography/img/theme";
 import type { ListVariants } from "$lib/typography/list/theme";
 import type { ParagraphVariants } from "$lib/typography/paragraph/theme";
 import type { SpanVariants } from "$lib/typography/span/theme";
+import type { ClipboardVariants } from "./clipboard/theme";
 
 // end of component variants
 
@@ -463,6 +464,16 @@ export interface SlideProps extends HTMLImgAttributes {
 export interface ChartProps {
   options: ApexOptions;
   class?: ClassValue;
+}
+
+
+// clipboard
+export interface ClipboardProps extends ClipboardVariants, ButtonVariants, Omit<HTMLButtonAttributes, "children" | "color" | "disabled"> {
+  children: Snippet<[boolean]>;
+  value?: string;
+  success?: boolean;
+  showLabel?: boolean;
+  embedded?: boolean;
 }
 
 // darkmode

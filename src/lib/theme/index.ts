@@ -21,6 +21,7 @@ import {
   card,
   cardPlaceholder,
   checkbox,
+  clipboard,
   darkmode,
   defaultMockup,
   descriptionList,
@@ -115,6 +116,7 @@ import {
   widgetPlaceholder
 } from "$lib";
 
+
 export const baseThemes = {
   accordion,
   accordionitem,
@@ -131,6 +133,7 @@ export const baseThemes = {
   button,
   gradientButton,
   card,
+  clipboard,
   darkmode,
   android,
   defaultMockup,

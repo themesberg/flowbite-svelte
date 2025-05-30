@@ -1,12 +1,16 @@
 <script lang="ts">
   import Button from "$lib/buttons/Button.svelte";
   import clsx from "clsx";
-  import type { ClipboardProps } from "./index";
+  import type { ClipboardProps } from "$lib";
   import { clipboard } from "./theme";
+  import type { MouseEventHandler } from "svelte/elements";
 
   let { children, embedded = false, value = $bindable(""), success = $bindable(false), onclick, class: className = "", ...restProps }: ClipboardProps = $props();
 
-  const copyToClipboard = async (e: MouseEvent) => {
+  const copyToClipboard: MouseEventHandler<HTMLButtonElement> = async (ev) => {
+    onclick?.(ev);
+    if (ev.defaultPrevented) return;
+
     if (success) return;
 
     success = true;
