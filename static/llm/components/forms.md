@@ -1,6 +1,5 @@
 # Svelte Forms - Flowbite
 
-
 The Input component allows you to change the input size, add disabled, helper text, and floating label.
 
 ## Input Sizes
@@ -233,5 +232,3 @@ Get started with the default example of a select input component to get a single
 ## References
 
 - [Flowbite Forms](https://flowbite.com/docs/components/forms/)
-
-

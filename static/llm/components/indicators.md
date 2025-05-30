@@ -1,6 +1,5 @@
 # Svelte Indicators - Flowbite
 
-
 The indicator component can be used as a small element positioned absolutely relative to another component such as a button or card and show a number count, account status (red for offline, green for online) and other useful information.
 
 ## Setup
@@ -209,9 +208,6 @@ Use these examples to position the indicator component anywhere relative to the 
 - offset: true
 - class: className
 
-
 ## References
 
 - [Flowbite Indicators](https://flowbite.com/docs/components/indicators/)
-
-

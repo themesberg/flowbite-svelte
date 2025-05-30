@@ -1,6 +1,5 @@
 # AI and LLM Integration with Flowbite Svelte
 
-
 Flowbite Svelte provides powerful, built-in support for AI and Large Language Model (LLM) integration through specialized routes that expose documentation in machine-readable formats. These features enable seamless integration with ChatGPT, Claude, and other AI assistants.
 
 ## Compliance

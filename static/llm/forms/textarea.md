@@ -1,6 +1,5 @@
 # Svelte Textarea - Flowbite
 
-
 The textarea component is a multi-line text field input that can be used to receive longer chunks of text from the user in the form of a comment box, description field, and more.
 
 ## Setup
@@ -242,7 +241,6 @@ If you want to build a chatroom component you will usually want to use a textare
 - clearableClass
 - clearableOnClick
 - textareaClass
-
 
 ## References
 

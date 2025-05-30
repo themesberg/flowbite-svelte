@@ -1,6 +1,5 @@
 # Svelte Charts - Flowbite
 
-
 ## Area chart
 
 Use this example to show a basic area chart.

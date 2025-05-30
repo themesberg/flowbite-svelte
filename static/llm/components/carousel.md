@@ -1,6 +1,5 @@
 # Svelte Carousel - Flowbite
 
-
 The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
 
 ## Setup
@@ -356,9 +355,6 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 - throttleDelay: 650
 - class: className
 
-
 ## References
 
 - [Flowbite Carousel](https://flowbite.com/docs/components/carousel/)
-
-

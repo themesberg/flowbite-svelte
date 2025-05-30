@@ -1,6 +1,5 @@
 # Customization - Flowbite Svelte
 
-
 When working with components, you may want to customize their default or specific classes. Here's a guide on how to achieve that. Starting from version 0.38.0, we have transitioned from using classnames to tailwind-merge, which allows us to easily overwrite classes and avoid style conflicts. This update brings enhanced flexibility and simplifies the process of customizing component styles.
 
 ## Understanding Props

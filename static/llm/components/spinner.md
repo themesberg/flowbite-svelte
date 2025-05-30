@@ -1,6 +1,5 @@
 # Svelte Spinner - Flowbite
 
-
 The spinner component can be used as a loading indicator which comes in multiple colors, sizes, and styles separately or inside elements such as buttons to improve the user experience whenever data is being fetched from your server.
 
 ## Setup
@@ -104,9 +103,6 @@ The spinner component can also be used inside elements such as buttons when subm
 - currentFill: "currentFill"
 - currentColor: "currentColor"
 
-
 ## References
 
 - [Flowbite Spinner (Loader)](https://flowbite.com/docs/components/spinner/)
-
-
