@@ -34,7 +34,7 @@ Use this example to copy the content of an input text field by clicking on a but
 
 String variable `value` is the source of the text copied to the clipboard. Boolean variable `success` turns `true` for a while when text was copied.
 
-```svelte example class="flex items-center justify-center gap-2 h-48" hideScript
+```svelte example class="flex items-center justify-center gap-2 h-48"
 <script>
   import { Clipboard, Input } from "flowbite-svelte";
   import { CheckOutline } from "flowbite-svelte-icons";
