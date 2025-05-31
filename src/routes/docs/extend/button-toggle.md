@@ -8,7 +8,7 @@ description: Use the button toggle to toggle on/off with the appearance of a but
 ---
 
 <script>
-  import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso } from '../../utils'
   import { P, A } from '$lib'
 
   const components = 'ButtonToggle, ButtonToggleGroup'
@@ -43,21 +43,21 @@ description: Use the button toggle to toggle on/off with the appearance of a but
   }
 </script>
 
-<h3 class="mb-2 text-lg font-medium">Single Selection</h3>
+<h3 class="mb-2 text-lg font-medium dark:text-white">Single Selection</h3>
 <ButtonToggleGroup onSelect={handleSingleSelect}>
   <ButtonToggle value="one" selected={singleValue === "one"}>One</ButtonToggle>
   <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
   <ButtonToggle value="three" selected={singleValue === "three"}>Three</ButtonToggle>
 </ButtonToggleGroup>
-<p class="mt-2">Selected: {singleValue || "None"}</p>
+<p class="mt-2 dark:text-white">Selected: {singleValue || "None"}</p>
 
-<h3 class="mb-2 text-lg font-medium">Multi Selection</h3>
+<h3 class="mb-2 text-lg font-medium dark:text-white">Multi Selection</h3>
 <ButtonToggleGroup multiSelect={true} onSelect={handleMultiSelect}>
   <ButtonToggle value="one" selected={multiValues.includes("one")}>One</ButtonToggle>
   <ButtonToggle value="two" selected={multiValues.includes("two")}>Two</ButtonToggle>
   <ButtonToggle value="three" selected={multiValues.includes("three")}>Three</ButtonToggle>
 </ButtonToggleGroup>
-<p class="mt-2">Selected: {multiValues.length ? multiValues.join(", ") : "None"}</p>
+<p class="mt-2 dark:text-white">Selected: {multiValues.length ? multiValues.join(", ") : "None"}</p>
 ```
 
 ## Button color
@@ -77,7 +77,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
   }
 </script>
 
-<p class="mt-2">Selected: {singleValue || "None"}</p>
+<p class="mt-2 dark:text-white">Selected: {singleValue || "None"}</p>
 <ButtonToggleGroup onSelect={handleSingleSelect}>
   <ButtonToggle color="red" value="red" selected={singleValue === "red"}>Red</ButtonToggle>
   <ButtonToggle color="green" value="green" selected={singleValue === "green"}>Green</ButtonToggle>
@@ -232,7 +232,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 </script>
 
 <div>
-  <h3 class="mb-2 text-lg font-medium">Rounded size: sm</h3>
+  <h3 class="mb-2 text-lg font-medium dark:text-white">Rounded size: sm</h3>
   <ButtonToggleGroup onSelect={handleSingleSelect} roundedSize="sm">
     <ButtonToggle value="one" selected={singleValue === "one"}>One</ButtonToggle>
     <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
@@ -241,7 +241,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 </div>
 
 <div>
-  <h3 class="mb-2 text-lg font-medium">Rounded size: md</h3>
+  <h3 class="mb-2 text-lg font-medium dark:text-white">Rounded size: md</h3>
   <ButtonToggleGroup onSelect={handleSingleSelect} roundedSize="md">
     <ButtonToggle value="one" selected={singleValue === "one"}>One</ButtonToggle>
     <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
@@ -250,7 +250,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 </div>
 
 <div>
-  <h3 class="mb-2 text-lg font-medium">Rounded size: lg</h3>
+  <h3 class="mb-2 text-lg font-medium dark:text-white">Rounded size: lg</h3>
   <ButtonToggleGroup onSelect={handleSingleSelect} roundedSize="lg">
     <ButtonToggle value="one" selected={singleValue === "one"}>One</ButtonToggle>
     <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
@@ -259,7 +259,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 </div>
 
 <div>
-  <h3 class="mb-2 text-lg font-medium">Rounded size: xl</h3>
+  <h3 class="mb-2 text-lg font-medium dark:text-white">Rounded size: xl</h3>
   <ButtonToggleGroup onSelect={handleSingleSelect} roundedSize="xl">
     <ButtonToggle value="one" selected={singleValue === "one"}>One</ButtonToggle>
     <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
@@ -268,7 +268,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 </div>
 
 <div>
-  <h3 class="mb-2 text-lg font-medium">Rounded size: full</h3>
+  <h3 class="mb-2 text-lg font-medium dark:text-white">Rounded size: full</h3>
   <ButtonToggleGroup onSelect={handleSingleSelect} roundedSize="full">
     <ButtonToggle value="one" selected={singleValue === "one"}>One</ButtonToggle>
     <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
@@ -298,7 +298,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
   <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
   <ButtonToggle value="three" selected={singleValue === "three"}>Three</ButtonToggle>
 </ButtonToggleGroup>
-<p class="mt-2">Selected: {singleValue || "None"}</p>
+<p class="mt-2 dark:text-white">Selected: {singleValue || "None"}</p>
 ```
 
 ## Custom icon with color="none"
@@ -336,7 +336,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
     Three
   </ButtonToggle>
 </ButtonToggleGroup>
-<p class="mt-2">Selected: {singleValue || "None"}</p>
+<p class="mt-2 dark:text-white">Selected: {singleValue || "None"}</p>
 ```
 
 ## See also
