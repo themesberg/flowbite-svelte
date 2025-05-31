@@ -370,7 +370,7 @@ export type ButtonToggleProps = HTMLButtonAttributes & {
   value: string;
   selected?: boolean;
   children: Snippet;
-  iconSlot: Snippet;
+  iconSlot?: Snippet;
   color?: ButtonToggleVariants["color"];
   iconClass?: ClassValue;
   contentClass?: ClassValue;
