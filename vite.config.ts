@@ -5,7 +5,7 @@ import path from "path";
 import pkg from "./package.json" with { type: "json" };
 
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from 'vite';
+import { defineConfig } from "vite";
 
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
@@ -24,16 +24,14 @@ export default defineConfig({
     alias: {
       "flowbite-svelte": path.resolve(process.cwd(), "./src/lib/index.ts")
     },
-    conditions: process.env.VITEST ? ['browser'] : undefined
+    conditions: process.env.VITEST ? ["browser"] : undefined
   },
   test: {
-    environment: 'jsdom',
-    setupFiles: ['./vitest-setup-client.ts'], 
-    include: [
-       "src/lib/**/*.{test,spec}.?(c|m)[jt]s?(x)"
-    ],
+    environment: "jsdom",
+    setupFiles: ["./vitest-setup-client.ts"],
+    include: ["src/lib/**/*.{test,spec}.?(c|m)[jt]s?(x)"]
   },
-  
+
   define: {
     __NAME__: JSON.stringify(pkg.name),
     __VERSION__: JSON.stringify(pkg.version)
