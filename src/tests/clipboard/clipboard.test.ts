@@ -5,10 +5,6 @@ import { expect, test, vi, beforeEach, afterEach } from "vitest";
 // Import test components
 import ClipboardTest from "./basic-clipboard.test.svelte";
 import ClipboardCopyTest from "./clipboard-copy.test.svelte";
-import ClipboardHexTest from "./clipboard-hex.test.svelte";
-import ClipboardEmptyTest from "./clipboard-empty.test.svelte";
-import ClipboardEmbeddedTest from "./clipboard-embedded.test.svelte";
-import ClipboardCustomHandlerTest from "./clipboard-custom-handler.test.svelte";
 
 // Mock the clipboard API
 const mockWriteText = vi.fn();

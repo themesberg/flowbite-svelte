@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.1
+
+### Patch Changes
+
+- fix: ButtonToggle dark color
+
 ## 1.5.0
 
 ### Minor Changes

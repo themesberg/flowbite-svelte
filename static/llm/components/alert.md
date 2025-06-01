@@ -1,5 +1,6 @@
 # Svelte Alert - Flowbite
 
+
 The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page. Flowbite also includes dismissable alerts which can be hidden by the users by clicking on the close icon.
 
 ## Set up
@@ -324,7 +325,7 @@ Use the `onclick` event with `dismissable` prop.
 
 #### Types
 
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L193)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L186)
 
 #### Props
 
@@ -341,6 +342,9 @@ Use the `onclick` event with `dismissable` prop.
 - params
 - onclick: () => (alertStatus = false)
 
+
 ## References
 
 - [Flowbite Alerts](https://flowbite.com/docs/components/alerts/)
+
+

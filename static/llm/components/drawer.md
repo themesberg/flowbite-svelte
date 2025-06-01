@@ -1,5 +1,6 @@
 # Svelte Drawer (Off-canvas) - Flowbite
 
+
 Use the Drawer component (or “off-canvas”) to show a fixed element relative to the document page from any side for navigation, contact forms, informational purposes or other user actions.
 
 ## Set up
@@ -559,7 +560,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 
 #### Types
 
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L580)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L571)
 
 #### Props
 
@@ -580,7 +581,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L590)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L581)
 
 #### Props
 
@@ -590,6 +591,9 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 - svgClass
 - class: className
 
+
 ## References
 
 - [Flowbite Drawer](https://flowbite.com/docs/components/drawer/)
+
+

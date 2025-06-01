@@ -29,7 +29,7 @@ export default defineConfig({
   test: {
     environment: "jsdom",
     setupFiles: ["./vitest-setup-client.ts"],
-    include: ["src/lib/**/*.{test,spec}.?(c|m)[jt]s?(x)"]
+    include: ["src/tests/**/*.{test,spec}.?(c|m)[jt]s?(x)"]
   },
 
   define: {

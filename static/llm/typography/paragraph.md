@@ -1,5 +1,6 @@
 # Svelte Paragraph - Flowbite
 
+
 The paragraph element is one of the most commonly used HTML tags on a document page because it is used to write longer blocks of text separated by a blank line and can massively improve the on-page SEO of the page when used correctly. Get started with a collection of paragraph components based on multiple styles, layouts, colors and sizes to use for your website.
 
 ## Default paragraph

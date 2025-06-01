@@ -1,5 +1,5 @@
 <script>
-  import Clipboard from "../Clipboard.svelte";
+  import { Clipboard } from "$lib";
 </script>
 
 <Clipboard value="Hello, World!" data-testid="copy-button">

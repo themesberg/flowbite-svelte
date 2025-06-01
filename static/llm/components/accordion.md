@@ -1,5 +1,6 @@
 # Svelte Accordion - Flowbite
 
+
 The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.
 
 A popular use case would be the “Frequently Asked Questions” section of a website or page when you can show questions and answers for each child element.
@@ -408,7 +409,7 @@ When you set transitionType="none" on an Accordion or an AccordionItem, it disab
 
 #### Types
 
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L166)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L159)
 
 #### Props
 
@@ -424,7 +425,7 @@ When you set transitionType="none" on an Accordion or an AccordionItem, it disab
 
 #### Types
 
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L178)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L171)
 
 #### Props
 
@@ -441,6 +442,9 @@ When you set transitionType="none" on an Accordion or an AccordionItem, it disab
 - headerClass
 - contentClass
 
+
 ## References
 
 - [Flowbite Accordion](https://flowbite.com/docs/components/accordion/)
+
+

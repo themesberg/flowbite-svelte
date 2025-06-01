@@ -1,5 +1,6 @@
 # Svelte Avatar - Flowbite
 
+
 The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from Flowbite to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
 
 ## Setup
@@ -235,7 +236,7 @@ Preset values are equivalents of:
 
 #### Types
 
-[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L204)
+[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L197)
 
 #### Props
 
@@ -253,6 +254,9 @@ Preset values are equivalents of:
 - size: "md"
 - onclick
 
+
 ## References
 
 - [Flowbite Avatar](https://flowbite.com/docs/components/avatar/)
+
+

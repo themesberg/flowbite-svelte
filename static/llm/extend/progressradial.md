@@ -1,5 +1,6 @@
 # Svelte Progressradial
 
+
 ## Setup
 
 Import the `Progressradial` component in a script tag.
@@ -128,7 +129,7 @@ Import the `Progressradial` component in a script tag.
 
 #### Types
 
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1182)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1171)
 
 #### Props
 
@@ -146,3 +147,4 @@ Import the `Progressradial` component in a script tag.
 - color: "primary"
 - class: className
 - classes
+

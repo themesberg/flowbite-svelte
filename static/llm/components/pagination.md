@@ -1,5 +1,6 @@
 # Svelte Pagination - Flowbite
 
+
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
@@ -11,7 +12,6 @@ The pagination component can be used to navigate across a series of content and 
 ## Setup
 
 ```svelte
-
 ```
 
 ## Default pagination
@@ -429,7 +429,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1151)
+[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1140)
 
 #### Props
 
@@ -446,7 +446,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1122)
+[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1111)
 
 #### Props
 
@@ -462,7 +462,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1147)
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1136)
 
 #### Props
 
@@ -476,7 +476,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1128)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1117)
 
 #### Props
 
@@ -484,7 +484,7 @@ You can use the following code to show the number of data shown inside a table e
 - totalPages: 1
 - visiblePages: 5
 - // New prop to control visible pages
-  onPageChange
+    onPageChange
 - prevContent
 - nextContent
 - prevClass
@@ -498,6 +498,9 @@ You can use the following code to show the number of data shown inside a table e
 - spanClass
 - tableDivClass
 
+
 ## References
 
 - [Flowbite Pagination](https://flowbite.com/docs/components/pagination/)
+
+

@@ -1,5 +1,6 @@
 # Svelte List Group - Flowbite
 
+
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
 
 ## Setup
@@ -185,7 +186,7 @@ When non standard usage is needed you can omit the `items` props and add element
 
 #### Types
 
-[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L996)
+[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L985)
 
 #### Props
 
@@ -204,7 +205,7 @@ When non standard usage is needed you can omit the `items` props and add element
 
 #### Types
 
-[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1007)
+[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L996)
 
 #### Props
 
@@ -218,6 +219,9 @@ When non standard usage is needed you can omit the `items` props and add element
 - class: className
 - iconClass: "me-2.5 h-15 w-15"
 
+
 ## References
 
 - [Flowbite List Group](https://flowbite.com/docs/components/list-group/)
+
+

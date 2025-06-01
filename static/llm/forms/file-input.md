@@ -1,5 +1,6 @@
 # Svelte File Input - Flowbite
 
+
 The file input component can be used to upload one or more files from the device storage of the user available in multiple sizes, styles, variants and support for dark mode.
 
 ## Setup
@@ -141,7 +142,7 @@ Add `clearable` and `clearableOnClick` props.
 
 #### Types
 
-[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L721)
+[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L711)
 
 #### Props
 
@@ -155,6 +156,7 @@ Add `clearable` and `clearableOnClick` props.
 - clearableClass
 - clearableOnClick
 - wrapperClass
+
 
 ## References
 

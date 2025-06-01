@@ -1,5 +1,6 @@
 # Svelte Label - Flowbite
 
+
 ## Label
 
 Use the `Label` component when you need to add a label.
@@ -20,7 +21,7 @@ Use the `Label` component when you need to add a label.
 
 #### Types
 
-[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L794)
+[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L783)
 
 #### Props
 
@@ -28,6 +29,7 @@ Use the `Label` component when you need to add a label.
 - color: "gray"
 - show: true
 - class: className
+
 
 ### Label styling
 

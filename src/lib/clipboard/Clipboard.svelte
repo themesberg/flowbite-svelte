@@ -43,7 +43,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L471)
+[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L462)
 ## Props
 @prop children
 @prop embedded = false

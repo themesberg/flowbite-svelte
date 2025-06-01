@@ -1,5 +1,6 @@
 # Svelte Progress Bar - Flowbite
 
+
 The progress bar component can be used as an indicator to show the completion rate of data sets or it can be used as an animated loader component. There are multiple sizes, colors, and styles available.
 
 ## Setup
@@ -198,7 +199,7 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1171)
+[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1160)
 
 #### Props
 
@@ -218,7 +219,7 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1182)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1171)
 
 #### Props
 
@@ -237,6 +238,9 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 - class: className
 - classes
 
+
 ## References
 
 - [Flowbite Progress Bar](https://flowbite.com/docs/components/progress/)
+
+

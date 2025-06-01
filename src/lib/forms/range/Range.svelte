@@ -13,7 +13,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[RangeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L822)
+[RangeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L811)
 ## Props
 @prop value = $bindable()
 @prop appearance = "none"

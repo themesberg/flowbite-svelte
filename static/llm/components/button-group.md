@@ -1,5 +1,6 @@
 # Svelte Button Group - Flowbite
 
+
 The button group component from flowbite-svelte can be used to stack together multiple buttons and links inside a single element.
 
 ## Setup
@@ -210,7 +211,7 @@ You can add the `onclick` event to the `Button` component.
 
 #### Types
 
-[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L333)
+[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L326)
 
 #### Props
 
@@ -219,6 +220,9 @@ You can add the `onclick` event to the `Button` component.
 - disabled
 - class: className
 
+
 ## References
 
 - [Flowbite Button Group](https://flowbite.com/docs/components/button-group/)
+
+

@@ -1,5 +1,6 @@
 # Svelte Tooltip - Flowbite
 
+
 flowbite-svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
 
 ## Setup
@@ -183,7 +184,7 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 
 #### Types
 
-[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1722)
+[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1708)
 
 #### Props
 
@@ -193,10 +194,13 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 - arrow: true
 - children
 - placement: "top"
-- onbeforetoggle: \_onbeforetoggle
+- onbeforetoggle: _onbeforetoggle
 - class: className
 - isOpen: $bindable(false)
+
 
 ## References
 
 - [Flowbite Tooltip](https://flowbite.com/docs/components/tooltips/)
+
+
