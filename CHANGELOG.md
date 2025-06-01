@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.2
+
+### Patch Changes
+
+- fix: add type=button to button in Datepicker since buttons inside inside a form default to type="submit"
+
 ## 1.5.1
 
 ### Patch Changes
