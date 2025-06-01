@@ -210,7 +210,7 @@
         {/each}
         {#each daysInMonth as day}
           {@const current = day.getMonth() !== currentMonth.getMonth()}
-          <button color={isSelected(day) ? color : "alternative"} class={dayButton({ current, today: isToday(day), color: isInRange(day) ? color : undefined })} onclick={() => handleDaySelect(day)} onkeydown={handleCalendarKeydown} aria-label={day.toLocaleDateString(locale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })} aria-selected={isSelected(day)} role="gridcell">
+          <button type="button" color={isSelected(day) ? color : "alternative"} class={dayButton({ current, today: isToday(day), color: isInRange(day) ? color : undefined })} onclick={() => handleDaySelect(day)} onkeydown={handleCalendarKeydown} aria-label={day.toLocaleDateString(locale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })} aria-selected={isSelected(day)} role="gridcell">
             {day.getDate()}
           </button>
         {/each}
