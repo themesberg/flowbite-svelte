@@ -1,8 +1,9 @@
 <script lang="ts">
   import { getContext, setContext } from "svelte";
   import { sineIn } from "svelte/easing";
+  import { prefersReducedMotion } from "svelte/motion";
   import { writable } from "svelte/store";
-  import { slide } from "svelte/transition";
+  import { slide, fly, fade, scale } from "svelte/transition";
   import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { navbar_ul } from "./theme";
@@ -10,10 +11,29 @@
 
   let navState = getContext<NavbarState>("navState");
 
-  let { children, activeUrl, ulClass, slideParams, activeClass, nonActiveClass, class: clasName, ...restProps }: NavUlProps = $props();
+  let { children, activeUrl, ulClass, slideParams, transition = slide,
+    transitionParams, activeClass, nonActiveClass, respectMotionPreference = true, class: clasName, ...restProps }: NavUlProps = $props();
+  
+  // Default parameters for different transitions
+  const getDefaultParams = (transitionFn: any) => {
+    if (transitionFn === slide) return { delay: 0, duration: 200, easing: sineIn };
+    if (transitionFn === fly) return { delay: 0, duration: 200, y: -10, easing: sineIn };
+    if (transitionFn === fade) return { delay: 0, duration: 200, easing: sineIn };
+    if (transitionFn === scale) return { delay: 0, duration: 200, start: 0.95, easing: sineIn };
+    return { delay: 0, duration: 200, easing: sineIn };
+  };
 
-  const slideParamsDefault = { delay: 250, duration: 500, easing: sineIn };
-  const slideParamsOptions = $derived(slideParams ?? slideParamsDefault);
+  // Support legacy slideParams prop
+  const defaultParams = $derived(getDefaultParams(transition));
+  const finalParams = $derived(transitionParams ?? slideParams ?? defaultParams);
+
+  // Create motion-aware parameters
+  const transitionOptions = $derived(() => {
+    if (respectMotionPreference && prefersReducedMotion.current) {
+      return { ...finalParams, duration: 0, delay: 0 };
+    }
+    return finalParams;
+  });
 
   const activeUrlStore = writable<string>("");
 
@@ -22,7 +42,6 @@
   let { base, ul, active, nonActive } = $derived(navbar_ul({ hidden }));
 
   $effect(() => {
-    // setContext<NavbarLiType>("navbarContext", { activeClass: active({ class: activeClass }), nonActiveClass: nonActive({ class: nonActiveClass }) });
     navState.activeClass = twMerge(active(), clsx(activeClass));
     navState.nonActiveClass = twMerge(nonActive(), clsx(nonActiveClass));
   });
@@ -37,11 +56,9 @@
 </script>
 
 {#if !hidden}
-  <div {...restProps} class={divCls} transition:slide={slideParamsOptions}>
-    <!-- onclick -->
+  <div {...restProps} class={divCls} transition:transition={transitionOptions()}>
     <ul class={ulCls}>
       {@render children?.()}
-      <ul></ul>
     </ul>
   </div>
 {:else}

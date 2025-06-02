@@ -8,7 +8,7 @@
 
   // propagate props type from underlying Frame
 
-  let { children, fluid, navContainerClass, class: className, ...restProps }: NavbarProps = $props();
+  let { children, fluid, navContainerClass, class: className, closeOnClickOutside = true, ...restProps }: NavbarProps = $props();
 
   let navState = $state({ hidden: true });
   setContext<NavbarState>("navState", navState);
@@ -21,6 +21,7 @@
   };
   
   function handleDocumentClick(event: MouseEvent) {
+    if (!closeOnClickOutside) return;
     // Check if the click was outside the navbar AND the dropdown is open
     if (!navState.hidden && navbarElement && !navbarElement.contains(event.target as Node)) {
       navState.hidden = true;

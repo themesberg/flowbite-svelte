@@ -18,7 +18,7 @@ export const navbar_container = tv({
 export const navbar_ul = tv({
   slots: {
     base: "w-full md:block md:w-auto",
-    ul: "flex flex-col p-4 mt-4 md:flex-row rtl:space-x-reverse md:mt-0 md:text-sm md:font-medium",
+    ul: "flex flex-col p-4 mt-0 md:flex-row rtl:space-x-reverse md:text-sm md:font-medium",
     active: "text-white bg-primary-700 md:bg-transparent md:text-primary-700 md:dark:text-white dark:bg-primary-600 md:dark:bg-transparent",
     nonActive: "hover:text-primary-500 text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 dark:md:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
   },

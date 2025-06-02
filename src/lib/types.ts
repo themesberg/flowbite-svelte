@@ -1,3 +1,4 @@
+import type { fade, fly, scale, slide } from 'svelte/transition';
 import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
 import type { ClassValue } from "clsx";
 import type { Component, Snippet } from "svelte";
@@ -1050,6 +1051,7 @@ export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "child
   children: Snippet<[{ hidden: boolean; toggle: () => void; NavContainer: Component }]>;
   fluid?: boolean;
   navContainerClass?: ClassValue;
+  closeOnClickOutside?: boolean;
 }
 
 export interface NavBrandProps extends HTMLAnchorAttributes {}
@@ -1063,13 +1065,19 @@ export type NavHamburgerProps = ToolbarButtonProps & {
   menuClass?: ClassValue;
 };
 
-export interface NavUlProps extends HTMLAttributes<HTMLDivElement> {
+export interface NavUlProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   activeUrl?: string;
   ulClass?: ClassValue;
   hidden?: boolean;
-  slideParams?: TransitionParamTypes;
+  // Legacy support
+  slideParams?: SlideParams;
+  // New transition props
+  transition?: typeof slide | typeof fly | typeof fade | typeof scale;
+  transitionParams?: SlideParams | FlyParams | FadeParams | ScaleParams;
   activeClass?: ClassValue;
   nonActiveClass?: ClassValue;
+  respectMotionPreference?: boolean;
+  class?: ClassValue;
 }
 
 export type NavLiProps = AnchorButtonAttributes & {
