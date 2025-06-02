@@ -19,7 +19,7 @@
   let toggle = () => {
     navState.hidden = !navState.hidden;
   };
-  
+
   function handleDocumentClick(event: MouseEvent) {
     if (!closeOnClickOutside) return;
     // Check if the click was outside the navbar AND the dropdown is open
@@ -43,11 +43,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1049)
+[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1050)
 ## Props
 @prop children
 @prop fluid
 @prop navContainerClass
 @prop class: className
+@prop closeOnClickOutside = true
 @prop ...restProps
 -->

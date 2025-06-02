@@ -1,4 +1,4 @@
-import type { fade, fly, scale, slide } from 'svelte/transition';
+import type { fade, fly, scale, slide } from "svelte/transition";
 import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
 import type { ClassValue } from "clsx";
 import type { Component, Snippet } from "svelte";

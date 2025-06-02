@@ -11,7 +11,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CheckIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L385)
+[CheckIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L386)
 ## Props
 @prop class: className
 @prop ...restProps

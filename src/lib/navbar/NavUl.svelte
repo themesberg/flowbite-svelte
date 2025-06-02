@@ -11,9 +11,8 @@
 
   let navState = getContext<NavbarState>("navState");
 
-  let { children, activeUrl, ulClass, slideParams, transition = slide,
-    transitionParams, activeClass, nonActiveClass, respectMotionPreference = true, class: clasName, ...restProps }: NavUlProps = $props();
-  
+  let { children, activeUrl, ulClass, slideParams, transition = slide, transitionParams, activeClass, nonActiveClass, respectMotionPreference = true, class: clasName, ...restProps }: NavUlProps = $props();
+
   // Default parameters for different transitions
   const getDefaultParams = (transitionFn: any) => {
     if (transitionFn === slide) return { delay: 0, duration: 200, easing: sineIn };
@@ -73,14 +72,17 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1066)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1068)
 ## Props
 @prop children
 @prop activeUrl
 @prop ulClass
 @prop slideParams
+@prop transition = slide
+@prop transitionParams
 @prop activeClass
 @prop nonActiveClass
+@prop respectMotionPreference = true
 @prop class: clasName
 @prop ...restProps
 -->

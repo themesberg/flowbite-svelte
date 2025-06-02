@@ -19,7 +19,7 @@ By default, navbar content width is controlled by Tailwind class `container`. If
 
 ```svelte
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, P } from "flowbite-svelte";
 </script>
 
 <Navbar>
@@ -36,6 +36,10 @@ By default, navbar content width is controlled by Tailwind class `container`. If
     <NavLi href="/contact">Contact</NavLi>
   </NavUl>
 </Navbar>
+
+<P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur quos impedit quo, quis quam in distinctio deleniti facere! Ea aliquid maiores iusto obcaecati rerum quisquam repellendus dignissimos rem quo veritatis.</P>
+
+<P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur quos impedit quo, quis quam in distinctio deleniti facere! Ea aliquid maiores iusto obcaecati rerum quisquam repellendus dignissimos rem quo veritatis.</P>
 ```
 
 ## Active class
@@ -90,6 +94,119 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
     <NavLi href="/docs/components/avatar">Avatar</NavLi>
   </NavUl>
 </Navbar>
+```
+
+## respectMotionPreference
+
+Controls whether the navbar dropdown respects the user's motion preferences set in their operating system or browser. When enabled (default), the navbar dropdown will automatically disable animations for users who have "Reduce motion" enabled in their system accessibility settings. This helps users with vestibular disorders, ADHD, or those who simply prefer fewer animations. It's recommended to keep this enabled (true) to ensure your navbar is accessible to users with motion sensitivities. Only disable if you have specific design requirements that require consistent animations for all users.
+
+## Transitions
+
+Use slide (default), fly, fade, or scale transtion.
+
+### Fly transition
+
+```svelte
+<script>
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
+  import { fly } from "svelte/transition";
+</script>
+
+<Navbar>
+  <NavBrand href="/">
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+  </NavBrand>
+  <NavHamburger />
+  <NavUl transition={fly} transitionParams={{ y: -20, duration: 250 }}>
+    <NavLi href="/">Home</NavLi>
+    <NavLi href="/about">About</NavLi>
+    <NavLi href="/docs/components/navbar">Navbar</NavLi>
+    <NavLi href="/pricing">Pricing</NavLi>
+    <NavLi href="/contact">Contact</NavLi>
+  </NavUl>
+</Navbar>
+```
+
+### Fade transition
+
+```svelte
+<script>
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
+  import { fade } from "svelte/transition";
+</script>
+
+<Navbar>
+  <NavBrand href="/">
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+  </NavBrand>
+  <NavHamburger />
+  <NavUl transition={fade} transitionParams={{ duration: 300 }}>
+    <NavLi href="/">Home</NavLi>
+    <NavLi href="/about">About</NavLi>
+    <NavLi href="/docs/components/navbar">Navbar</NavLi>
+    <NavLi href="/pricing">Pricing</NavLi>
+    <NavLi href="/contact">Contact</NavLi>
+  </NavUl>
+</Navbar>
+```
+
+### Scale transition
+
+```svelte
+<script>
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
+  import { scale } from "svelte/transition";
+</script>
+
+<Navbar>
+  <NavBrand href="/">
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+  </NavBrand>
+  <NavHamburger />
+  <NavUl transition={scale} transitionParams={{ start: 0.8, duration: 200 }}>
+    <NavLi href="/">Home</NavLi>
+    <NavLi href="/about">About</NavLi>
+    <NavLi href="/docs/components/navbar">Navbar</NavLi>
+    <NavLi href="/pricing">Pricing</NavLi>
+    <NavLi href="/contact">Contact</NavLi>
+  </NavUl>
+</Navbar>
+```
+
+## closeOnClickOutside
+
+Controls whether the navbar menu closes when clicking outside of it.
+
+`Type: boolean | Default: true`
+
+Set closeOnClickOutside to false to disable closing the menu when clicking outside the navbar. Useful for persistent menus or custom close behaviors.
+
+```svelte
+<script>
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, P } from "flowbite-svelte";
+</script>
+
+<Navbar closeOnClickOutside={false}>
+  <NavBrand href="/">
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+  </NavBrand>
+  <NavHamburger />
+  <NavUl>
+    <NavLi href="/">Home</NavLi>
+    <NavLi href="/about">About</NavLi>
+    <NavLi href="/docs/components/navbar">Navbar</NavLi>
+    <NavLi href="/pricing">Pricing</NavLi>
+    <NavLi href="/contact">Contact</NavLi>
+  </NavUl>
+</Navbar>
+
+<P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur quos impedit quo, quis quam in distinctio deleniti facere! Ea aliquid maiores iusto obcaecati rerum quisquam repellendus dignissimos rem quo veritatis.</P>
+
+<P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur quos impedit quo, quis quam in distinctio deleniti facere! Ea aliquid maiores iusto obcaecati rerum quisquam repellendus dignissimos rem quo veritatis.</P>
 ```
 
 ## Navbar with dropdown
@@ -207,7 +324,7 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
 </script>
 
 <div class="relative px-8">
-  <Navbar class="fixed start-0 top-0 z-20 w-full border-b px-2 py-2.5 sm:px-4">
+  <Navbar class="fixed start-0 top-0 z-20 w-full bg-gray-800 px-2 py-2.5 sm:px-4">
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
       <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
@@ -300,7 +417,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1036)
+[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1037)
 
 #### Props
 
@@ -314,7 +431,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1055)
+[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1057)
 
 #### Props
 
@@ -325,7 +442,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1057)
+[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1059)
 
 #### Props
 
@@ -337,7 +454,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1061)
+[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1063)
 
 #### Props
 
@@ -351,7 +468,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1075)
+[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1083)
 
 #### Props
 
@@ -364,7 +481,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1066)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1068)
 
 #### Props
 
@@ -372,15 +489,18 @@ Use this example to show a solid background for the navbar component instead of 
 - activeUrl
 - ulClass
 - slideParams
+- transition: slide
+- transitionParams
 - activeClass
 - nonActiveClass
+- respectMotionPreference: true
 - class: clasName
 
 ### Navbar
 
 #### Types
 
-[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1049)
+[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1050)
 
 #### Props
 
@@ -388,6 +508,7 @@ Use this example to show a solid background for the navbar component instead of 
 - fluid
 - navContainerClass
 - class: className
+- closeOnClickOutside: true
 
 
 ## References

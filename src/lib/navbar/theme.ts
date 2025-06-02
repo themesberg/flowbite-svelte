@@ -1,7 +1,7 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
 export const navbar = tv({
-   base: "relative w-full px-2 py-2.5 sm:px-4"
+  base: "relative w-full px-2 py-2.5 sm:px-4"
 });
 
 export const navbar_brand = tv({
@@ -29,8 +29,8 @@ export const navbar_ul = tv({
         base: "absolute top-full left-0 right-0 z-50 w-full md:block md:w-auto md:static md:z-auto",
         ul: "border rounded-lg bg-white shadow-lg dark:bg-gray-800 dark:border-gray-700 text-gray-700 dark:text-gray-400 border-gray-100 dark:border-gray-700 divide-gray-100 dark:divide-gray-700 md:border-none md:rounded-none md:bg-inherit dark:md:bg-inherit md:shadow-none"
       },
-      true: { 
-        base: "hidden" 
+      true: {
+        base: "hidden"
       }
     }
   },

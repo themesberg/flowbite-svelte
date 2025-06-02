@@ -230,7 +230,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L481)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L482)
 ## Props
 @prop value = $bindable()
 @prop defaultDate = null

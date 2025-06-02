@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.3
+
+### Patch Changes
+
+- feat: closeOnClickOutside prop to Navbar
+
 ## 1.5.2
 
 ### Patch Changes
