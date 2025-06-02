@@ -13,12 +13,24 @@
   let navState = $state({ hidden: true });
   setContext<NavbarState>("navState", navState);
 
+  // Add reference to the navbar element
+  let navbarElement: HTMLElement;
+
   let toggle = () => {
     navState.hidden = !navState.hidden;
   };
+  
+  function handleDocumentClick(event: MouseEvent) {
+    // Check if the click was outside the navbar AND the dropdown is open
+    if (!navState.hidden && navbarElement && !navbarElement.contains(event.target as Node)) {
+      navState.hidden = true;
+    }
+  }
 </script>
 
-<nav>
+<svelte:document onclick={handleDocumentClick} />
+
+<nav bind:this={navbarElement}>
   <div {...restProps} class={twMerge(navbar(), clsx(className))}>
     <NavContainer {fluid} class={clsx(navContainerClass)}>
       {@render children({ hidden: navState.hidden, toggle, NavContainer })}

@@ -32,7 +32,7 @@
   });
   setContext("activeUrl", activeUrlStore);
 
-  let divCls: string = $derived(twMerge(base(), clsx(clsx(clasName))));
+  let divCls: string = $derived(twMerge(base(), clsx(clasName)));
   let ulCls: string = $derived(twMerge(ul(), clsx(ulClass)));
 </script>
 
