@@ -12,8 +12,8 @@ export const progressbar = tv({
     labelInsideDiv: "text-primary-100 text-xs font-medium text-center leading-none rounded-full",
     insideDiv: "rounded-full",
     outsideDiv: "mb-1 flex justify-between",
-    oustsideSpan: "text-base font-medium text-blue-700 dark:text-white",
-    outsideProgress: "text-sm font-medium text-blue-700 dark:text-white"
+    oustsideSpan: "text-base font-medium dark:text-white",
+    outsideProgress: "text-sm font-medium dark:text-white"
   },
   variants: {
     color: {
