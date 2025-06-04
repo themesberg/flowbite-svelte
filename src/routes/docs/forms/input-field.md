@@ -116,7 +116,22 @@ text with one click.
 
 
 ```svelte example
-hi
+<script lang="ts">
+  import { Input, P } from "flowbite-svelte";
+  let value = $state('Custom Event Handlers')
+</script>
+<P class="my-4">{value}</P>
+<Input 
+  bind:value={value}  
+  onInput={(e) => console.log('Custom input:', e)}
+  onFocus={(e) => console.log('Input focused')}
+  onBlur={(e) => console.log('Input blurred')}
+  onKeydown={(e) => {
+    if (e.key === 'Tab') {
+      console.log('Tab pressed');
+    }
+  }}
+/>
 ```
 
 ## Accessing Input Element with elementRef
