@@ -7,14 +7,11 @@
   import { sineIn } from "svelte/easing";
   import clsx from "clsx";
 
-  const TRIGGER_DELAY = 200;
-
-  let { triggeredBy, trigger = "click", placement = "top", offset = 8, arrow = false, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", arrowClass = "", isOpen = $bindable(false), transitionParams, transition = fade, children, ...restProps }: PopperProps = $props();
+  let { triggeredBy, triggerDelay = 200, trigger = "click", placement = "top", offset = 8, arrow = false, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", arrowClass = "", isOpen = $bindable(false), transitionParams, transition = fade, children, ...restProps }: PopperProps = $props();
 
   let focusable: boolean = true;
   let clickable: boolean = $derived(trigger === "click");
   let hoverable: boolean = $derived(trigger === "hover");
-
   let popover: HTMLElement | null = $state(null);
   let invoker: HTMLElement | null = null;
   let referenceElement: HTMLElement | null = null;
@@ -56,7 +53,7 @@
   async function open_popover(ev: Event) {
     // throttle
     isTriggered = true;
-    await new Promise((resolve) => setTimeout(resolve, TRIGGER_DELAY));
+    await new Promise((resolve) => setTimeout(resolve, triggerDelay));
     if (!isTriggered) return;
 
     ev.preventDefault();
@@ -65,7 +62,7 @@
       invoker = ev.target as HTMLElement;
       // if (invoker) invoker.popoverTargetElement = popover;
       isOpen = false;
-      await new Promise((resolve) => setTimeout(resolve, TRIGGER_DELAY));
+      await new Promise((resolve) => setTimeout(resolve, triggerDelay));
     }
 
     if (ev.type === "mousedown") {
@@ -77,7 +74,7 @@
 
   async function close_popover(ev: Event) {
     isTriggered = false;
-    await new Promise((resolve) => setTimeout(resolve, TRIGGER_DELAY));
+    await new Promise((resolve) => setTimeout(resolve, triggerDelay));
     if (isTriggered) return;
 
     // if popover has focus don't close when leaving the invoker

@@ -1865,6 +1865,7 @@ export interface TriggeredToggleEvent extends ToggleEvent {
 
 export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbeforetoggle" | "ontoggle"> {
   triggeredBy?: string;
+  triggerDelay?: number;
   trigger?: "hover" | "click";
   placement?: Placement;
   arrow?: boolean;
