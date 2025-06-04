@@ -772,6 +772,7 @@ export interface InputProps<T extends InputValue = string> extends Omit<HTMLInpu
   maxSuggestions?: number;
   onSelect?: (item: string) => void;
   comboClass?: ClassValue;
+  comboItemClass?: ClassValue;
   onInput?: (event: Event) => void;
   onFocus?: (event: FocusEvent) => void;
   onBlur?: (event: FocusEvent) => void;

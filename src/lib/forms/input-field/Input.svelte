@@ -3,7 +3,7 @@
   import { CloseButton, type SizeType, type InputProps, type InputValue, cn } from "$lib";
   import { input, clampSize } from ".";
 
-  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass,onInput, onFocus, onBlur, onKeydown, ...restProps }: InputProps<InputValue> = $props();
+  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, comboItemClass, onInput, onFocus, onBlur, onKeydown, ...restProps }: InputProps<InputValue> = $props();
 
   // Automatically enable combobox when data is provided
   const isCombobox = $derived(Array.isArray(data) && data.length > 0);
@@ -19,7 +19,7 @@
   let _size = $derived(size || clampSize(group?.size) || "md");
   const _color = $derived(color === "default" && background ? "tinted" : color);
 
-  const { base, input: inputCls, left: leftCls, right: rightCls, clearbtn, combo } = $derived(input({ size: _size, color: _color, group: isGroup }));
+  const { base, input: inputCls, left: leftCls, right: rightCls, clearbtn, combo, comboItem } = $derived(input({ size: _size, color: _color, group: isGroup }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -202,7 +202,7 @@
       <div class={cn(combo(), comboClass)}>
         {#each filteredSuggestions as item, i}
           <button type="button" class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none" onclick={() => selectItem(item)} onmouseenter={() => (selectedIndex = i)}>
-            {item}
+            <p class={cn(comboItem(),comboItemClass)}>{item}</p>
           </button>
         {/each}
       </div>
