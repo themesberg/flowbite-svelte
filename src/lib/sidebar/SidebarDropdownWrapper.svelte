@@ -13,7 +13,7 @@
     isSingle: boolean;
   };
 
-  let { children, arrowup, arrowdown, icon, isOpen = false, btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, onclick, ...restProps }: SidebarDropdownWrapperProps = $props();
+  let { children, arrowup, arrowdown, icon, isOpen = $bindable(false), btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, onclick, ...restProps }: SidebarDropdownWrapperProps = $props();
 
   const { base, btn, span, svg, ul } = sidebardropdownwrapper();
 
