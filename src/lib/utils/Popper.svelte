@@ -12,6 +12,7 @@
   let focusable: boolean = true;
   let clickable: boolean = $derived(trigger === "click");
   let hoverable: boolean = $derived(trigger === "hover");
+
   let popover: HTMLElement | null = $state(null);
   let invoker: HTMLElement | null = null;
   let referenceElement: HTMLElement | null = null;
@@ -54,7 +55,9 @@
     // throttle
     isTriggered = true;
     await new Promise((resolve) => setTimeout(resolve, triggerDelay));
-    if (!isTriggered) return;
+    if (!isTriggered) {
+      return;
+    }
 
     ev.preventDefault();
 
@@ -73,13 +76,34 @@
   }
 
   async function close_popover(ev: Event) {
+    // For click triggers, don't close on focusout events from inside the popover
+    if (trigger === "click" && ev.type === "focusout") {
+      const relatedTarget = (ev as FocusEvent).relatedTarget as HTMLElement;
+      
+      // If focus is moving to somewhere inside the popover, don't close
+      if (popover && relatedTarget && popover.contains(relatedTarget)) {
+        return;
+      }
+      
+      // If focus is moving to nowhere (like when clicking), don't close for click triggers
+      if (!relatedTarget) {
+        return;
+      }
+    }
+    
     isTriggered = false;
     await new Promise((resolve) => setTimeout(resolve, triggerDelay));
-    if (isTriggered) return;
+    if (isTriggered) {
+      return;
+    }
 
     // if popover has focus don't close when leaving the invoker
-    if (ev?.type === "mouseleave" && popover?.contains(popover.ownerDocument.activeElement)) return;
-    if (ev?.type === "focusout" && popover?.contains(popover.ownerDocument.activeElement)) return;
+    if (ev?.type === "mouseleave" && popover?.contains(popover.ownerDocument.activeElement)) {
+      return;
+    }
+    if (ev?.type === "focusout" && popover?.contains(popover.ownerDocument.activeElement)) {
+      return;
+    }
 
     isOpen = false;
   }
@@ -97,11 +121,11 @@
     if (ev.newState === "open") {
       autoUpdateDestroy = dom.autoUpdate(referenceElement ?? invoker, popover, updatePopoverPosition);
       popover.ownerDocument.addEventListener("click", closeOnClickOutside);
-      popover.ownerDocument.addEventListener("keydown", closeOnEscape); // ✅ Add this line
+      popover.ownerDocument.addEventListener("keydown", closeOnEscape);
     } else {
       autoUpdateDestroy();
       popover.ownerDocument.removeEventListener("click", closeOnClickOutside);
-      popover.ownerDocument.removeEventListener("keydown", closeOnEscape); // ✅ Add this line
+      popover.ownerDocument.removeEventListener("keydown", closeOnEscape);
     }
   }
 
@@ -156,14 +180,19 @@
     }
   }
 
-  /**
-   * Close the popper when clicking outside of it.
-   * This is necessary to get around a bug in Safari where clicking outside of the open popper does not close it.
-   */
   function closeOnClickOutside(event: MouseEvent) {
-    if (popover && !event.composedPath().includes(popover) && !triggerEls.some((el) => event.composedPath().includes(el))) {
+    if (!popover) {
+      return;
+    }
+    
+    const clickPath = event.composedPath();
+    
+    const isClickInsidePopover = clickPath.includes(popover);
+    const isClickOnTrigger = triggerEls.some((el) => clickPath.includes(el));
+    
+    // Only close if click is outside both popover and trigger elements
+    if (!isClickInsidePopover && !isClickOnTrigger) {
       close_popover(event);
-      // Update isOpen state when clicking outside
       isOpen = false;
     }
   }

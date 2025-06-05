@@ -169,7 +169,7 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
       {/snippet}
     </MegaMenu>
     <NavLi class="cursor-pointer" onclick={() => (open = true)}>
-      Blur<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
+      Scale<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
     <MegaMenu items={menu} transition={scale} transitionParams={{ duration: 1000 }}>
       {#snippet children({ item })}

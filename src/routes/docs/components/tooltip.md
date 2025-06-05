@@ -17,6 +17,8 @@ thumnailSize: w-24
 
 flowbite-svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
 
+For interactive elements that need to display additional content on click, use the [popover](/docs/components/popover) component.
+
 ## Setup
 
 ```svelte example hideOutput
