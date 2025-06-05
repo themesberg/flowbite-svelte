@@ -10,6 +10,7 @@ export const textarea = tv({
     innerWrapper: "py-2 px-4 bg-white dark:bg-gray-800",
     headerCls: "py-2 px-3 border-gray-200 dark:border-gray-500",
     footerCls: "py-2 px-3 border-gray-200 dark:border-gray-500",
+    addonCls: "absolute top-2 right-2 z-10",
     clearbtn: "absolute right-2 top-5 -translate-y-1/2 text-gray-400 hover:text-black"
   },
   variants: {

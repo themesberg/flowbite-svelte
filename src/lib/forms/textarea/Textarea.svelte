@@ -2,13 +2,14 @@
   import { textarea } from ".";
   import { type TextareaProps, CloseButton, cn } from "$lib";
 
-  let { header, footer, value = $bindable(), elementRef = $bindable(), divClass, innerClass, headerClass, footerClass, disabled, class: className, cols, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, textareaClass, ...restProps }: TextareaProps = $props();
+  let { header, footer, addon, value = $bindable(), elementRef = $bindable(), divClass, innerClass, headerClass, footerClass, addonClass, disabled, class: className, cols, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, textareaClass, ...restProps }: TextareaProps = $props();
 
   let hasHeader = $derived(!!header);
   let hasFooter = $derived(!!footer);
-  let wrapped: boolean = $derived(hasHeader || hasFooter);
+  let hasAddon = $derived(!!addon);
+  let wrapped: boolean = $derived(hasHeader || hasFooter || hasAddon);
 
-  const { divWrapper, base, wrapper, innerWrapper, headerCls, footerCls, clearbtn } = $derived(textarea({ wrapped, hasHeader, hasFooter, cols: !!cols }));
+  const { divWrapper, base, wrapper, innerWrapper, headerCls, footerCls, addonCls, clearbtn } = $derived(textarea({ wrapped, hasHeader, hasFooter, cols: !!cols }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -30,6 +31,11 @@
         </div>
       {/if}
       <div class={cn(innerWrapper(), innerClass)}>
+        {#if addon}
+          <div class={cn(addonCls(), addonClass)}>
+            {@render addon()}
+          </div>
+        {/if}
         <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={cn(base(), textareaClass)}></textarea>
       </div>
       {#if footer}

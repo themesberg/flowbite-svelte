@@ -913,6 +913,7 @@ export interface TimepickerProps {
 export interface TextareaProps extends HTMLTextareaAttributes {
   header?: Snippet;
   footer?: Snippet;
+  addon?: Snippet;
   value?: string;
   elementRef?: HTMLTextAreaElement;
   wrapped?: boolean;
@@ -920,6 +921,7 @@ export interface TextareaProps extends HTMLTextareaAttributes {
   innerClass?: ClassValue;
   headerClass?: ClassValue;
   footerClass?: ClassValue;
+  addonClass?: ClassValue;
   cols?: number;
   clearable?: boolean;
   clearableSvgClass?: ClassValue;
