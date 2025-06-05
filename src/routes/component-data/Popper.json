@@ -2,10 +2,11 @@
   "name": "Popper",
   "type": {
     "name": "PopperProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1866"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1871"
   },
   "props": [
     ["triggeredBy", ""],
+    ["triggerDelay", "200"],
     ["trigger", "\"click\""],
     ["placement", "\"top\""],
     ["offset", "8"],

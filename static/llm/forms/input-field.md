@@ -13,7 +13,7 @@ On this page you will find all of the input types based on multiple variants, st
 </script>
 ```
 
-## Input fields
+## Input Fields
 
 Use this example as a generic form element which includes multiple input fields types such as text, email, password, number, URL, and phone number and use the grid layout to add multiple columns and rows.
 
@@ -97,6 +97,28 @@ text with one click.
 />
 ```
 
+## Custom Event Handlers
+
+```svelte
+<script lang="ts">
+  import { Input, P } from "flowbite-svelte";
+  let value = $state("Custom Event Handlers");
+</script>
+
+<P class="my-4">{value}</P>
+<Input
+  bind:value
+  onInput={(e) => console.log("Custom input:", e)}
+  onFocus={(e) => console.log("Input focused")}
+  onBlur={(e) => console.log("Input blurred")}
+  onKeydown={(e) => {
+    if (e.key === "Tab") {
+      console.log("Tab pressed");
+    }
+  }}
+/>
+```
+
 ## Accessing Input Element with elementRef
 
 ```svelte
@@ -154,7 +176,7 @@ text with one click.
 <Input data={carMakers} clearable placeholder="Clearable" />
 ```
 
-## Combobox with icon
+## Combobox with Icon
 
 ```svelte
 <script>
@@ -170,7 +192,7 @@ text with one click.
 </Input>
 ```
 
-## Input sizes
+## Input Sizes
 
 Use the following examples to apply a small, default or large size for the input fields.
 
@@ -197,7 +219,7 @@ User the size prop to change the input size. Choose one from 'sm:text-md' | 'tex
 </Label>
 ```
 
-## Disabled state
+## Disabled State
 
 Get started with this example if you want to apply the disabled state to an input field. Add the disabled to change the input to disabled.
 
@@ -237,7 +259,7 @@ Use the following example to apply validation styles for success and error messa
 </div>
 ```
 
-## Input with icon
+## Input with Icon
 
 ```svelte
 <script>
@@ -276,7 +298,7 @@ Use the following example to apply validation styles for success and error messa
 </Label>
 ```
 
-## Input group
+## Input Group
 
 This example can be used to add a descriptive icon or additional text inside the input field.
 
@@ -334,7 +356,7 @@ This example can be used to add a descriptive icon or additional text inside the
 </div>
 ```
 
-## Icon click handler
+## Icon Click Handler
 
 This example shows how to add `onclick` event handler to the icon in `Input`. By clicking an icon, it toggles icon and `type`:
 

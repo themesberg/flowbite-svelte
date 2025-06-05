@@ -25,6 +25,11 @@
     ["data", "[]"],
     ["maxSuggestions", "5"],
     ["onSelect", ""],
-    ["comboClass", ""]
+    ["comboClass", ""],
+    ["comboItemClass", ""],
+    ["onInput", ""],
+    ["onFocus", ""],
+    ["onBlur", ""],
+    ["onKeydown", ""]
   ]
 }

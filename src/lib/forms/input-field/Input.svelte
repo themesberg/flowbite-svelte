@@ -202,7 +202,7 @@
       <div class={cn(combo(), comboClass)}>
         {#each filteredSuggestions as item, i}
           <button type="button" class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none" onclick={() => selectItem(item)} onmouseenter={() => (selectedIndex = i)}>
-            <p class={cn(comboItem(),comboItemClass)}>{item}</p>
+            <p class={cn(comboItem(), comboItemClass)}>{item}</p>
           </button>
         {/each}
       </div>

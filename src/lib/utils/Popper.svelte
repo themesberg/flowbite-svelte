@@ -79,18 +79,18 @@
     // For click triggers, don't close on focusout events from inside the popover
     if (trigger === "click" && ev.type === "focusout") {
       const relatedTarget = (ev as FocusEvent).relatedTarget as HTMLElement;
-      
+
       // If focus is moving to somewhere inside the popover, don't close
       if (popover && relatedTarget && popover.contains(relatedTarget)) {
         return;
       }
-      
+
       // If focus is moving to nowhere (like when clicking), don't close for click triggers
       if (!relatedTarget) {
         return;
       }
     }
-    
+
     isTriggered = false;
     await new Promise((resolve) => setTimeout(resolve, triggerDelay));
     if (isTriggered) {
@@ -184,12 +184,12 @@
     if (!popover) {
       return;
     }
-    
+
     const clickPath = event.composedPath();
-    
+
     const isClickInsidePopover = clickPath.includes(popover);
     const isClickOnTrigger = triggerEls.some((el) => clickPath.includes(el));
-    
+
     // Only close if click is outside both popover and trigger elements
     if (!isClickInsidePopover && !isClickOnTrigger) {
       close_popover(event);
@@ -213,9 +213,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1866)
+[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1871)
 ## Props
 @prop triggeredBy
+@prop triggerDelay = 200
 @prop trigger = "click"
 @prop placement = "top"
 @prop offset = 8

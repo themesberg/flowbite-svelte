@@ -82,13 +82,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1346)
+[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1351)
 ## Props
 @prop children
 @prop arrowup
 @prop arrowdown
 @prop icon
-@prop isOpen = false
+@prop isOpen = $bindable(false)
 @prop btnClass
 @prop label
 @prop spanClass
