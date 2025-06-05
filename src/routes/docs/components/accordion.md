@@ -361,9 +361,9 @@ Use the following example to preserve the input value. First fill out the form, 
     <form method="POST">
       <Label for="name">Name</Label>
       <Input id="name" bind:value={name} type="text" />
-      <label for="email">Email</label>
+      <Label for="email">Email</Label>
       <Input id="email" bind:value={email} type="email" />
-      <label for="comment">Comment</label>
+      <Label for="comment">Comment</Label>
       <Textarea id="comment" bind:value={comment} />
       <Button onclick={handleSubmit} class="mt-4">Submit</Button>
     </form>
