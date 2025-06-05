@@ -4,16 +4,16 @@
 
 ### Patch Changes
 
-- - e708529d7 fix: #1626, Popper to clickable content for Popover and Dropdown
-  - 6a061670f fix: add class to combo item in Input.svelte
-  - 015c790d1 feat: add custom event handlers to Input component
-  - 8a797ccea fix: #1625
-  - 1d32804da fix: #1345, make isOpenbindable in SidebarDropdownWrapper
-  - ae2cc9875 fix: #1624, feat: create triggerDelay prop
-  - a82c2bcea fix: blue to primary in search theme
-  - 7c54ea1fb fix: #1606, fix: remove blue from progress and change blue to primary for search theme
-  - d05597549 fix: #1611, feat: add inputmode=none to Datepicker
-  - 7f513f694 docs: #1612 sidebar page
+- e708529d7 fix: #1626, Popper to clickable content for Popover and Dropdown
+- 6a061670f fix: add class to combo item in Input.svelte
+- 015c790d1 feat: add custom event handlers to Input component
+- 8a797ccea fix: #1625
+- 1d32804da fix: #1345, make isOpenbindable in SidebarDropdownWrapper
+- ae2cc9875 fix: #1624, feat: create triggerDelay prop
+- a82c2bcea fix: blue to primary in search theme
+- 7c54ea1fb fix: #1606, fix: remove blue from progress and change blue to primary for search theme
+- d05597549 fix: #1611, feat: add inputmode=none to Datepicker
+- 7f513f694 docs: #1612 sidebar page
 
 ## 1.5.3
 
