@@ -59,7 +59,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1576)
+[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1578)
 ## Props
 @prop children
 @prop header

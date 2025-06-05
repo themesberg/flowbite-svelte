@@ -50,8 +50,8 @@ Notice the different style of monitoring the `success` state by using the parame
   let value = $state("npm install flowbite");
 </script>
 
-<div>
-  <Input bind:value class="w-64">
+<div class="w-64">
+  <Input bind:value>
     {#snippet right()}
       <Clipboard bind:value embedded>
         {#snippet children(success)}
@@ -76,8 +76,8 @@ Use this example to show a copy button inside the input field with a text label 
   let value = $state("npm install flowbite");
 </script>
 
-<div>
-  <Input bind:value class="w-64 text-sm">
+<div class="w-64">
+  <Input bind:value class="text-sm">
     {#snippet right()}
       <Clipboard size="xs" color="alternative" bind:value class="-mr-1 w-20 focus:ring-0">
         {#snippet children(success)}
@@ -150,20 +150,24 @@ Use this example to copy a shortened URL to the clipboard by clicking on a butto
 This example can be used to copy and paste code inside a `<pre>` and `<code>` block by clicking on a button with an icon position inside the block and also show a tooltip with a message when the text has been copied.
 
 ```svelte
-<script>
-  import { Clipboard, Input, Label, Helper, Button } from "flowbite-svelte";
+<script lang="ts">
+  import { Clipboard, Label, Helper } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
 
   let value = $state("");
   let success = $state(false);
 
-  function onclick(ev) {
-    value = ev.target.ownerDocument.querySelector("#code-block").innerText;
+  function onclick(ev: MouseEvent): void {
+    const target = ev.target as HTMLElement;
+    const codeBlock = target.ownerDocument.querySelector("#code-block");
+    if (codeBlock) {
+      value = codeBlock.textContent || "";
+    }
   }
 </script>
 
 <div class="w-full max-w-lg space-y-1">
-  <Label>Card example URL shortener:</Label>
+  <Label>Copy source code block:</Label>
   <div class="relative h-64 rounded-lg bg-gray-50 p-4 dark:bg-gray-700">
     <div class="max-h-full overflow-scroll">
       <pre><code id="code-block" class="text-sm whitespace-pre text-gray-500 dark:text-gray-400">  
@@ -173,7 +177,7 @@ This example can be used to copy and paste code inside a `<pre>` and `<code>` bl
         &#x3C;Button color="primary"&#x3E;Generate&#x3C;/Button&#x3E;
         &#x3C;Input id="url-shortener" bind:value readonly disabled class="w-64" /&#x3E;
             &#x3C;Clipboard bind:value&#x3E;
-                {#snippet children(success)}
+                {#snippet children(success: boolean)}
             &#x3C;Tooltip class="whitespace-nowrap"&#x3E;{success ? "Copied" : "Copy link"}&#x3C;/Tooltip&#x3E;
                 {#if success}&#x3C;CheckOutline /&#x3E;{:else}&#x3C;ClipboardCleanSolid /&#x3E;{/if}
           {/snippet}
@@ -257,4 +261,32 @@ Use this example to show multiple input field elements that have the copy to cli
     </div>
   </form>
 </Card>
+```
+
+## Copy Textarea
+
+Add a `Clipboard` to your `Textarea` using the `addon` snippet. The button appears in the top-right corner when there's content to copy.
+
+```svelte
+<script lang="ts">
+  import { Clipboard, Textarea } from "flowbite-svelte";
+  import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
+
+  let value = $state("");
+  let success = $state(false);
+</script>
+
+<Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" bind:value>
+  {#snippet addon()}
+    {#if value.length > 0}
+      <Clipboard color={success ? "alternative" : "light"} bind:value bind:success size="sm" class="absolute end-2 top-2 h-8 w-32 px-2.5 font-medium focus:ring-0">
+        {#if success}
+          <CheckOutline class="h-3 w-3" /> Copied
+        {:else}
+          <ClipboardCleanSolid class="h-3 w-3" /> Copy text
+        {/if}
+      </Clipboard>
+    {/if}
+  {/snippet}
+</Textarea>
 ```

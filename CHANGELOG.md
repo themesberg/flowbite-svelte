@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.5
+
+### Patch Changes
+
+- feat: add addon snippet to textarea for Clipboard
+
 ## 1.5.4
 
 ### Patch Changes

@@ -58,12 +58,14 @@
 ## Props
 @prop header
 @prop footer
+@prop addon
 @prop value = $bindable()
 @prop elementRef = $bindable()
 @prop divClass
 @prop innerClass
 @prop headerClass
 @prop footerClass
+@prop addonClass
 @prop disabled
 @prop class: className
 @prop cols

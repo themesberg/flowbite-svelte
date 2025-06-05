@@ -287,20 +287,19 @@ Add a `Clipboard` to your `Textarea` using the `addon` snippet. The button appea
 
   let value = $state("");
   let success = $state(false);
-
 </script>
 
-<Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" bind:value={value}>
-{#snippet addon()}
-  {#if value.length>0}
-  <Clipboard color={success ? "alternative" : "light"} bind:value bind:success size="sm" class="absolute end-2 top-2 h-8 px-2.5 font-medium focus:ring-0 w-32">
-    {#if success}
-      <CheckOutline class="h-3 w-3" /> Copied
-    {:else}
-      <ClipboardCleanSolid class="h-3 w-3" /> Copy text
+<Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" bind:value>
+  {#snippet addon()}
+    {#if value.length > 0}
+      <Clipboard color={success ? "alternative" : "light"} bind:value bind:success size="sm" class="absolute end-2 top-2 h-8 w-32 px-2.5 font-medium focus:ring-0">
+        {#if success}
+          <CheckOutline class="h-3 w-3" /> Copied
+        {:else}
+          <ClipboardCleanSolid class="h-3 w-3" /> Copy text
+        {/if}
+      </Clipboard>
     {/if}
-  </Clipboard>
-  {/if}
-{/snippet}
+  {/snippet}
 </Textarea>
 ```

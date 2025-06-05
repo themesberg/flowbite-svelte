@@ -82,12 +82,12 @@ If you want to add other actions as buttons alongside your textarea component, s
 
 ```svelte
 <script>
-  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from "flowbite-svelte";
+  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button, Label } from "flowbite-svelte";
   import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
 
 <form>
-  <label for="editor" class="sr-only">Publish post</label>
+  <Label for="editor" class="sr-only">Publish post</Label>
   <Textarea id="editor" rows={8} class="mb-4" placeholder="Write a comment">
     {#snippet header()}
       <Toolbar embedded>
@@ -146,12 +146,12 @@ If you want to build a chatroom component you will usually want to use a textare
 
 ```svelte
 <script>
-  import { Textarea, Alert, ToolbarButton } from "flowbite-svelte";
+  import { Textarea, Alert, ToolbarButton, Label } from "flowbite-svelte";
   import { ImageOutline, FaceGrinOutline, PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
 
 <form>
-  <label for="chat" class="sr-only">Your message</label>
+  <Label for="chat" class="sr-only">Your message</Label>
   <div class="flex items-center rounded-lg bg-gray-50 px-3 py-2 dark:bg-gray-700">
     <ToolbarButton color="dark" class="text-gray-500 dark:text-gray-400">
       <ImageOutline class="h-6 w-6" />
@@ -197,11 +197,11 @@ If you want to build a chatroom component you will usually want to use a textare
 <Tabs role="tablist">
   <TabItem open title="Profile">
     <form method="POST">
-      <Label for="name">Name</Label>
+      <Label for="name" class="my-4">Name</Label>
       <Input id="name" bind:value={name} type="text" />
-      <label for="email">Email</label>
+      <Label for="email" class="my-4">Email</Label>
       <Input id="email" bind:value={email} type="email" />
-      <label for="comment">Comment</label>
+      <Label for="comment" class="my-4">Comment</Label>
       <Textarea id="comment" bind:value={comment} />
       <Button onclick={handleSubmit} class="mt-4">Submit</Button>
     </form>
@@ -227,12 +227,14 @@ If you want to build a chatroom component you will usually want to use a textare
 
 - header
 - footer
+- addon
 - value: $bindable()
 - elementRef: $bindable()
 - divClass
 - innerClass
 - headerClass
 - footerClass
+- addonClass
 - disabled
 - class: className
 - cols
