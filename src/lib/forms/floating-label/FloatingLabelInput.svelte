@@ -114,13 +114,14 @@
 
   function selectItem(item: string) {
     const currentValue = (value as string) || '';
-		const lastSpaceIndex = currentValue.lastIndexOf(' ');
+    const lastSpaceIndex = currentValue.lastIndexOf(' ');
 
-		if (lastSpaceIndex === -1) {
-			value = item + ' '; // Replace the whole value if no space, add trailing space
-		} else {
-			value = currentValue.substring(0, lastSpaceIndex + 1) + item + ' '; // Replace last word, add trailing space
-		}
+    if (lastSpaceIndex === -1) {
+      value = item + ' '; // Replace the whole value if no space, add trailing space
+    } else {
+      value = currentValue.substring(0, lastSpaceIndex + 1) + item + ' '; // Replace last word, add trailing space
+    }
+
     if (onSelect) onSelect(item);
     filteredSuggestions = [];
     selectedIndex = -1;
