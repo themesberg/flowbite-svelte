@@ -854,26 +854,17 @@ export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttribute
   disabled?: boolean;
 }
 
-// export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelectAttributes, "size" | "children"> {
-//   children?: Snippet<[{ item: SelectOptionType<T>; clear: () => void }]>;
-//   items: SelectOptionType<T>[];
-//   value: T[];
-//   dropdownClass?: ClassValue;
-//   placeholder?: string;
-//   disabled?: boolean;
-// }
-export interface MultiSelectProps<T> extends 
-  MultiSelectVariants, Omit<HTMLAttributes<HTMLDivElement>, "size" | "children"> {
+export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLAttributes<HTMLDivElement>, "size" | "children"> {
   children?: Snippet<[{ item: SelectOptionType<T>; clear: () => void }]>;
   items: SelectOptionType<T>[];
   value: T[];
   dropdownClass?: ClassValue;
   placeholder?: string;
-  disabled?: boolean | undefined ;
+  disabled?: boolean | undefined;
   size?: "sm" | "md" | "lg";
   // Select-specific attributes for the hidden select element
   name?: string | undefined | null;
-  form?:  string | undefined | null;
+  form?: string | undefined | null;
   required?: boolean | undefined | null;
   autocomplete?: FullAutoFill | undefined | null;
 }

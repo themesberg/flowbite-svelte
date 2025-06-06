@@ -272,7 +272,7 @@ Get started with the default toggle component example as a checkbox element to r
 <script lang="ts">
   import { MultiSelect } from "flowbite-svelte";
 
-  let multiSelected: string = [];
+  let multiSelected: string[] = [];
   let countries = [
     { value: "us", name: "United States" },
     { value: "ca", name: "Canada" },
@@ -288,7 +288,7 @@ Get started with the default toggle component example as a checkbox element to r
 ### Placeholder
 
 ```svelte
-<script>
+<script lang="ts">
   import { MultiSelect } from "flowbite-svelte";
 
   let placeholder = "placeholder text";
