@@ -52,7 +52,9 @@
       return;
     }
 
-    const searchTerm = ((value as string) || "").toLowerCase();
+    const fullSearchTerm = ((value as string) || '').toLowerCase();
+    const lastSpaceIndex = fullSearchTerm.lastIndexOf(' ');
+    const searchTerm = lastSpaceIndex === -1 ? fullSearchTerm : fullSearchTerm.substring(lastSpaceIndex + 1);
 
     // Show suggestions if:
     // 1. There's actual input text, OR
@@ -169,7 +171,14 @@
   }
 
   function selectItem(item: string) {
-    value = item;
+    const currentValue = (value as string) || '';
+    const lastSpaceIndex = currentValue.lastIndexOf(' ');
+
+    if (lastSpaceIndex === -1) {
+      value = item + ' '; // Replace the whole value if no space, add trailing space
+    } else {
+      value = currentValue.substring(0, lastSpaceIndex + 1) + item + ' '; // Replace last word, add trailing space
+    }
 
     if (onSelect) {
       onSelect(item);
