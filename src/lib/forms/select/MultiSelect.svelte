@@ -92,12 +92,12 @@
 </script>
 
 <!-- Hidden select for form submission -->
-<select {...restProps} {value} hidden multiple>
+<select {value} hidden multiple>
   {#each items as { value, name, disabled }}
     <option {value} {disabled}>{name}</option>
   {/each}
 </select>
-<div onclick={toggleDropdown} onfocusout={closeDropdown} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={cn(base({ size }), className)}>
+<div {...restProps} onclick={toggleDropdown} onfocusout={closeDropdown} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={cn(base({ size }), className)}>
   {#if !selectItems.length}
     <span class="text-gray-400">{placeholder}</span>
   {/if}
