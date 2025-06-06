@@ -2,7 +2,7 @@ import type { fade, fly, scale, slide } from "svelte/transition";
 import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
 import type { ClassValue } from "clsx";
 import type { Component, Snippet } from "svelte";
-import type { HTMLAnchorAttributes, HTMLAttributes, HTMLBlockquoteAttributes, HTMLButtonAttributes, HTMLDialogAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLLiAttributes, HTMLOlAttributes, HTMLProgressAttributes, HTMLSelectAttributes, HTMLSourceAttributes, HTMLTableAttributes, HTMLTdAttributes, HTMLTextareaAttributes, HTMLThAttributes, HTMLTrackAttributes, HTMLVideoAttributes, SVGAttributes } from "svelte/elements";
+import type { HTMLAnchorAttributes, HTMLAttributes, HTMLBlockquoteAttributes, HTMLButtonAttributes, HTMLDialogAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLLiAttributes, HTMLOlAttributes, HTMLProgressAttributes, HTMLSelectAttributes, HTMLSourceAttributes, HTMLTableAttributes, HTMLTdAttributes, HTMLTextareaAttributes, HTMLThAttributes, HTMLTrackAttributes, HTMLVideoAttributes, SVGAttributes, FullAutoFill } from "svelte/elements";
 import { type Writable } from "svelte/store";
 import type { BlurParams, EasingFunction, FadeParams, FlyParams, ScaleParams, SlideParams, TransitionConfig } from "svelte/transition";
 import { tv, type VariantProps } from "tailwind-variants";
@@ -854,13 +854,28 @@ export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttribute
   disabled?: boolean;
 }
 
-export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelectAttributes, "size" | "children"> {
+// export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLSelectAttributes, "size" | "children"> {
+//   children?: Snippet<[{ item: SelectOptionType<T>; clear: () => void }]>;
+//   items: SelectOptionType<T>[];
+//   value: T[];
+//   dropdownClass?: ClassValue;
+//   placeholder?: string;
+//   disabled?: boolean;
+// }
+export interface MultiSelectProps<T> extends 
+  MultiSelectVariants, Omit<HTMLAttributes<HTMLDivElement>, "size" | "children"> {
   children?: Snippet<[{ item: SelectOptionType<T>; clear: () => void }]>;
   items: SelectOptionType<T>[];
   value: T[];
   dropdownClass?: ClassValue;
   placeholder?: string;
-  disabled?: boolean;
+  disabled?: boolean | undefined ;
+  size?: "sm" | "md" | "lg";
+  // Select-specific attributes for the hidden select element
+  name?: string | undefined | null;
+  form?:  string | undefined | null;
+  required?: boolean | undefined | null;
+  autocomplete?: FullAutoFill | undefined | null;
 }
 
 // Tags
