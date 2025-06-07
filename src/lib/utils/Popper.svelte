@@ -215,6 +215,16 @@
     timeout = setTimeout(finish_change, triggerDelay);
   }
 
+  $effect(() => {
+    return () => {
+      if (timeout) {
+        clearTimeout(timeout);
+        timeout = undefined;
+      }
+      context = undefined;
+    };
+  });
+
   // finish_change is called after debouncing calls to start_change.
   function finish_change() {
     if (!context) return;
