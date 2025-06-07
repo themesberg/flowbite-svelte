@@ -49,32 +49,27 @@
     });
   }
 
-  let isTriggered: boolean = false;
-
+  // called in response to ui events that attempt to open the popover (e.g.
+  // clicks, hover, focusin, etc.)
   async function open_popover(ev: Event) {
-    // throttle
-    isTriggered = true;
-    await new Promise((resolve) => setTimeout(resolve, triggerDelay));
-    if (!isTriggered) {
-      return;
-    }
-
-    ev.preventDefault();
-
     if (ev.target !== invoker && triggerEls.includes(ev.target as HTMLElement)) {
       invoker = ev.target as HTMLElement;
       // if (invoker) invoker.popoverTargetElement = popover;
-      isOpen = false;
-      await new Promise((resolve) => setTimeout(resolve, triggerDelay));
     }
-
-    if (ev.type === "mousedown") {
-      isOpen = !isOpen;
-    } else {
-      isOpen = true;
-    }
+    start_change(true, true);
   }
 
+  // called in response to ui events (e.g. clicks) that attempt to toggle the
+  // popover, such as clicking the invoker repeatedly.
+  async function toggle_popover(ev: Event) {
+    if (ev.target !== invoker && triggerEls.includes(ev.target as HTMLElement)) {
+      invoker = ev.target as HTMLElement;
+    }
+    start_change(!isOpen, true);
+  }
+
+  // called in response to ui events (e.g. focusout, mouseout, click-outside)
+  // that attempt to close the popover.
   async function close_popover(ev: Event) {
     // For click triggers, don't close on focusout events from inside the popover
     if (trigger === "click" && ev.type === "focusout") {
@@ -91,12 +86,6 @@
       }
     }
 
-    isTriggered = false;
-    await new Promise((resolve) => setTimeout(resolve, triggerDelay));
-    if (isTriggered) {
-      return;
-    }
-
     // if popover has focus don't close when leaving the invoker
     if (ev?.type === "mouseleave" && popover?.contains(popover.ownerDocument.activeElement)) {
       return;
@@ -105,7 +94,7 @@
       return;
     }
 
-    isOpen = false;
+    start_change(false, true);
   }
 
   let autoUpdateDestroy = () => {};
@@ -132,8 +121,7 @@
   function on_toggle(ev: ToggleEvent) {
     if (!invoker) return;
 
-    // Update isOpen value when popover state changes through other means
-    isOpen = ev.newState === "open";
+    start_change(ev.newState === "open", false);
 
     (ev as TriggeredToggleEvent).trigger = invoker;
     _ontoggle?.(ev as TriggeredToggleEvent);
@@ -143,7 +131,7 @@
     const events: [string, any, boolean][] = [
       ["focusin", open_popover, focusable],
       ["focusout", close_popover, focusable],
-      ["mousedown", open_popover, clickable],
+      ["mousedown", toggle_popover, clickable],
       ["mouseenter", open_popover, hoverable],
       ["mouseleave", close_popover, hoverable]
     ];
@@ -176,7 +164,7 @@
 
   function closeOnEscape(event: KeyboardEvent) {
     if (event.key === "Escape") {
-      isOpen = false;
+      start_change(false, true);
     }
   }
 
@@ -193,8 +181,45 @@
     // Only close if click is outside both popover and trigger elements
     if (!isClickInsidePopover && !isClickOnTrigger) {
       close_popover(event);
-      isOpen = false;
     }
+  }
+
+  interface ChangeContext {
+    nextOpen: boolean;
+    interactive: boolean;
+  }
+  let context: ChangeContext | undefined = $state(undefined);
+  let timeout: NodeJS.Timeout | undefined = $state(undefined);
+
+  // start_change debounces calls that attempt to open or close the popover.
+  // callers must specify whether this request is on behalf of ui interactivity
+  // (e.g. clicks, hovers). non-interactive invocations are assumed to be due
+  // to changing value of isOpen.
+  // NOTE: start_change prioritizes non-interactive changes over interactive
+  // ones, so that binding to isOpen (i.e. for things like programmatically
+  // controlled dropdowns) always results in the popover being toggled.
+  function start_change(nextOpen: boolean, interactive: boolean) {
+    // ignore redundant requests
+    if (!context && nextOpen == isOpen) return;
+    if (context && context.nextOpen == nextOpen) return;
+
+    // ignore interactive requests while we're in the middle of a programmatic
+    // one. e.g. if a button is clicked which updates a bound isOpen prop, we
+    // should obey the value of isOpen and ignore any interactive events
+    // (click, hover, etc.) that arrive until we finish handling (triggerDelay
+    // ms).
+    if (context && !context.interactive && interactive) return;
+
+    context = { interactive, nextOpen };
+    if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(finish_change, triggerDelay);
+  }
+
+  // finish_change is called after debouncing calls to start_change.
+  function finish_change() {
+    if (!context) return;
+    isOpen = context.nextOpen;
+    context = undefined;
   }
 </script>
 
