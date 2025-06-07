@@ -189,7 +189,7 @@
     interactive: boolean;
   }
   let context: ChangeContext | undefined = $state(undefined);
-  let timeout: NodeJS.Timeout | undefined = $state(undefined);
+  let timeout: ReturnType<typeof setTimeout> | undefined = $state(undefined);
 
   // start_change debounces calls that attempt to open or close the popover.
   // callers must specify whether this request is on behalf of ui interactivity
@@ -220,6 +220,7 @@
     if (!context) return;
     isOpen = context.nextOpen;
     context = undefined;
+    timeout = undefined;
   }
 </script>
 
