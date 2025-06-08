@@ -27,7 +27,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1424)
+[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1427)
 ## Props
 @prop class: className
 -->

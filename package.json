@@ -636,6 +636,30 @@
       "types": "./dist/stepindicator/StepIndicator.svelte.d.ts",
       "svelte": "./dist/stepindicator/StepIndicator.svelte"
     },
+    "./BreadcrumbStepper.svelte": {
+      "types": "./dist/stepper/BreadcrumbStepper.svelte.d.ts",
+      "svelte": "./dist/stepper/BreadcrumbStepper.svelte"
+    },
+    "./DetailedStepper.svelte": {
+      "types": "./dist/stepper/DetailedStepper.svelte.d.ts",
+      "svelte": "./dist/stepper/DetailedStepper.svelte"
+    },
+    "./ProgressStepper.svelte": {
+      "types": "./dist/stepper/ProgressStepper.svelte.d.ts",
+      "svelte": "./dist/stepper/ProgressStepper.svelte"
+    },
+    "./Stepper.svelte": {
+      "types": "./dist/stepper/Stepper.svelte.d.ts",
+      "svelte": "./dist/stepper/Stepper.svelte"
+    },
+    "./TimelineStepper.svelte": {
+      "types": "./dist/stepper/TimelineStepper.svelte.d.ts",
+      "svelte": "./dist/stepper/TimelineStepper.svelte"
+    },
+    "./VerticalStepper.svelte": {
+      "types": "./dist/stepper/VerticalStepper.svelte.d.ts",
+      "svelte": "./dist/stepper/VerticalStepper.svelte"
+    },
     "./Table.svelte": {
       "types": "./dist/table/Table.svelte.d.ts",
       "svelte": "./dist/table/Table.svelte"

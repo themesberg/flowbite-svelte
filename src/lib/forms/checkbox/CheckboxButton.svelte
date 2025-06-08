@@ -54,7 +54,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CheckboxButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L693)
+[CheckboxButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L694)
 ## Props
 @prop children
 @prop class: className

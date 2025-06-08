@@ -27,6 +27,7 @@ import type { PopoverVariants } from "$lib/popover/theme";
 import type { SidebarVariants } from "$lib/sidebar/theme";
 import type { CardPlaceholderVariants, ImagePlaceholderVariants, ListPlaceholderVariants, SkeletonVariants, TextPlaceholderVariants, VideoPlaceholderVariants } from "$lib/skeleton/theme";
 import type { SpinnerVaraiants } from "$lib/spinner/theme";
+import type { StepperVariants, ProgressStepperVariants, DetailedStepperVariants, VerticalStepperVariants, BreadcrumbStepperVariants, TimelineStepperVariants } from "$lib/stepper/theme";
 import type { TableVariants } from "$lib/table/theme";
 import type { TabsVaraints } from "$lib/tabs/theme";
 import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
@@ -1497,40 +1498,29 @@ export interface StepIndicatorProps extends HTMLAttributes<HTMLElement> {
 }
 
 // stepper
-export type StepperType = "default" | "progress" | "detailed" | "vertical" | "breadcrumb" | "timeline" | undefined;
-
 export interface Step {
-  id: number;
+  id?: number;
   label: string;
-  shortLabel?: string;
-  status: 'completed' | 'current' | 'pending';
+  description?: string;
+  status?: "completed" | "current" | "pending";
   icon?: Component;
-  iconClass?: string;
+  iconClass?: ClassValue;
+  descriptionClass?: ClassValue;
 }
 
-export interface StepperProps extends Omit<HTMLOlAttributes, "class">  {
-  class?: ClassValue;
+export interface StepperProps extends StepperVariants {
   children?: Snippet;
-  stepperType?: StepperType;
   steps?: Step[];
-}
-
-export interface StepperItemProps extends Omit<HTMLLiAttributes, "class"> {
-  class?: ClassValue;
-  item?: object;
-  children?: Snippet;
-  status?: "pending" | "completed" | "current"
 }
 
 // ProgressStepper
 export interface ProgressStep {
-  status: 'completed' | 'current' | 'pending';
+  status?: "completed" | "current" | "pending";
   icon?: Component;
-  iconClass?: string;
+  iconClass?: ClassValue;
 }
 
-export interface ProgressStepperProps extends Omit<HTMLOlAttributes, "class"> {
-  class?: ClassValue;
+export interface ProgressStepperProps extends ProgressStepperVariants {
   children?: Snippet;
   steps?: ProgressStep[];
 }
@@ -1540,30 +1530,30 @@ export interface DetailedStep {
   id: number;
   label: string;
   description?: string;
-  status: 'completed' | 'current' | 'pending';
+  status?: "completed" | "current" | "pending";
   icon?: Component;
-  iconClass?: string;
+  iconClass?: ClassValue;
 }
 
-export interface DetailedStepperProps extends Omit<HTMLOlAttributes, "class"> {
-  class?: ClassValue;
+export interface DetailedStepperProps extends DetailedStepperVariants {
   children?: Snippet;
   steps?: DetailedStep[];
+  contentClass?: ClassValue;
 }
 
 // VerticalStepper
 export interface VerticalStep {
   id: number;
   label: string;
-  status: 'completed' | 'current' | 'pending';
+  status?: "completed" | "current" | "pending";
   icon?: Component;
-  iconClass?: string;
+  iconClass?: ClassValue;
 }
 
-export interface VerticalStepperProps extends Omit<HTMLOlAttributes, "class"> {
-  class?: ClassValue;
+export interface VerticalStepperProps extends VerticalStepperVariants {
   children?: Snippet;
   steps?: VerticalStep[];
+  liClass?: ClassValue;
 }
 
 // BreadcrumbStepper
@@ -1571,13 +1561,12 @@ export interface BreadcrumbStep {
   id: number;
   label: string;
   shortLabel?: string;
-  status: 'completed' | 'current' | 'pending';
+  status?: "completed" | "current" | "pending";
   icon?: Component;
-  iconClass?: string;
+  iconClass?: ClassValue;
 }
 
-export interface BreadcrumbStepperProps extends Omit<HTMLOlAttributes, "class"> {
-  class?: ClassValue;
+export interface BreadcrumbStepperProps extends BreadcrumbStepperVariants {
   children?: Snippet;
   steps?: BreadcrumbStep[];
 }
@@ -1586,15 +1575,15 @@ export interface BreadcrumbStepperProps extends Omit<HTMLOlAttributes, "class"> 
 export interface TimelineStep {
   label: string;
   description?: string;
-  status: 'completed' | 'current' | 'pending';
+  status?: "completed" | "current" | "pending";
   icon?: Component;
-  iconClass?: string;
+  iconClass?: ClassValue;
 }
 
-export interface TimelineStepperProps extends Omit<HTMLOlAttributes, "class"> {
-  class?: ClassValue;
+export interface TimelineStepperProps extends TimelineStepperVariants {
   children?: Snippet;
   steps?: TimelineStep[];
+  contentClass?: ClassValue;
 }
 
 // tables

@@ -4,6 +4,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 export type ProgressbarClasses = Partial<{
   [K in keyof (typeof progressbar)["slots"]]: ClassValue;
 }>;
+
 export type ProgressbarVariants = VariantProps<typeof progressbar> & { classes?: ProgressbarClasses };
 
 export const progressbar = tv({

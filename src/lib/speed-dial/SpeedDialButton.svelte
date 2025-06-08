@@ -28,7 +28,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1470)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1473)
 ## Props
 @prop children
 @prop name = ""

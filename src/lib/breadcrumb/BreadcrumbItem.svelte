@@ -50,7 +50,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L316)
+[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L317)
 ## Props
 @prop children
 @prop icon

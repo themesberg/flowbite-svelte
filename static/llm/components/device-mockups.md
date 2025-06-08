@@ -126,7 +126,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L520)
+[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L521)
 
 #### Props
 
@@ -143,7 +143,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L531)
+[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L532)
 
 #### Props
 
@@ -159,7 +159,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[MockupBaseProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L512)
+[MockupBaseProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L513)
 
 #### Props
 
@@ -173,7 +173,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[DeviceMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L507)
+[DeviceMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L508)
 
 #### Props
 
@@ -184,7 +184,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L541)
+[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L542)
 
 #### Props
 
@@ -200,7 +200,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[MockupBaseProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L512)
+[MockupBaseProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L513)
 
 #### Props
 
@@ -214,7 +214,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L551)
+[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L552)
 
 #### Props
 
@@ -230,7 +230,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L561)
+[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L562)
 
 #### Props
 

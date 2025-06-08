@@ -47,7 +47,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1132)
+[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1135)
 ## Props
 @prop children
 @prop size

@@ -17,7 +17,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1569)
+[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1652)
 ## Props
 @prop children
 @prop class: className

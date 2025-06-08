@@ -22,7 +22,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1353)
+[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1356)
 ## Props
 @prop children
 @prop site

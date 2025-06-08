@@ -35,7 +35,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L958)
+[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L961)
 ## Props
 @prop children
 @prop figure

@@ -142,7 +142,7 @@ Add `clearable` and `clearableOnClick` props.
 
 #### Types
 
-[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L712)
+[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L713)
 
 #### Props
 
