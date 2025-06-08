@@ -34,6 +34,7 @@ export * from "./skeleton";
 export * from "./speed-dial";
 export * from "./spinner";
 export * from "./stepindicator";
+export * from "./stepper";
 export * from "./tabs";
 export * from "./table";
 export * from "./timeline";

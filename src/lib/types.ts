@@ -854,7 +854,7 @@ export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttribute
   disabled?: boolean;
 }
 
-export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLAttributes<HTMLDivElement>, "size" | "children"> {
+export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLAttributes<HTMLDivElement>, "size" | "children" | "onchange" | "onblur"> {
   children?: Snippet<[{ item: SelectOptionType<T>; clear: () => void }]>;
   items: SelectOptionType<T>[];
   value: T[];
@@ -867,6 +867,8 @@ export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLAttri
   form?: string | undefined | null;
   required?: boolean | undefined | null;
   autocomplete?: FullAutoFill | undefined | null;
+  onchange?: (event: Event) => void;
+  onblur?: (event: FocusEvent) => void;
 }
 
 // Tags
@@ -1475,15 +1477,6 @@ export type SpeedDialButtonProps = ButtonProps & {
   textClass?: ClassValue;
 };
 
-// export type CombinedButtonColor = ButtonColor | GradientButtonColor;
-
-// export type SpeedDialTriggerProps = ButtonProps & {
-//   icon?: Snippet;
-//   gradient?: boolean;
-//   name?: string;
-//   color?: CombinedButtonColor;
-// };
-
 // spinner
 export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
   color?: SpinnerVaraiants["color"];
@@ -1501,6 +1494,107 @@ export interface StepIndicatorProps extends HTMLAttributes<HTMLElement> {
   hideLabel?: boolean;
   completedCustom?: string;
   currentCustom?: string;
+}
+
+// stepper
+export type StepperType = "default" | "progress" | "detailed" | "vertical" | "breadcrumb" | "timeline" | undefined;
+
+export interface Step {
+  id: number;
+  label: string;
+  shortLabel?: string;
+  status: 'completed' | 'current' | 'pending';
+  icon?: Component;
+  iconClass?: string;
+}
+
+export interface StepperProps extends Omit<HTMLOlAttributes, "class">  {
+  class?: ClassValue;
+  children?: Snippet;
+  stepperType?: StepperType;
+  steps?: Step[];
+}
+
+export interface StepperItemProps extends Omit<HTMLLiAttributes, "class"> {
+  class?: ClassValue;
+  item?: object;
+  children?: Snippet;
+  status?: "pending" | "completed" | "current"
+}
+
+// ProgressStepper
+export interface ProgressStep {
+  status: 'completed' | 'current' | 'pending';
+  icon?: Component;
+  iconClass?: string;
+}
+
+export interface ProgressStepperProps extends Omit<HTMLOlAttributes, "class"> {
+  class?: ClassValue;
+  children?: Snippet;
+  steps?: ProgressStep[];
+}
+
+// DetailedStepper
+export interface DetailedStep {
+  id: number;
+  label: string;
+  description?: string;
+  status: 'completed' | 'current' | 'pending';
+  icon?: Component;
+  iconClass?: string;
+}
+
+export interface DetailedStepperProps extends Omit<HTMLOlAttributes, "class"> {
+  class?: ClassValue;
+  children?: Snippet;
+  steps?: DetailedStep[];
+}
+
+// VerticalStepper
+export interface VerticalStep {
+  id: number;
+  label: string;
+  status: 'completed' | 'current' | 'pending';
+  icon?: Component;
+  iconClass?: string;
+}
+
+export interface VerticalStepperProps extends Omit<HTMLOlAttributes, "class"> {
+  class?: ClassValue;
+  children?: Snippet;
+  steps?: VerticalStep[];
+}
+
+// BreadcrumbStepper
+export interface BreadcrumbStep {
+  id: number;
+  label: string;
+  shortLabel?: string;
+  status: 'completed' | 'current' | 'pending';
+  icon?: Component;
+  iconClass?: string;
+}
+
+export interface BreadcrumbStepperProps extends Omit<HTMLOlAttributes, "class"> {
+  class?: ClassValue;
+  children?: Snippet;
+  steps?: BreadcrumbStep[];
+}
+
+// TimelineStepper
+export interface TimelineStep {
+  label: string;
+  description?: string;
+  status: 'completed' | 'current' | 'pending';
+  icon?: Component;
+  iconClass?: string;
+}
+
+export interface TimelineStepperProps extends Omit<HTMLOlAttributes, "class"> {
+  class?: ClassValue;
+  children?: Snippet;
+  steps?: TimelineStep[];
 }
 
 // tables

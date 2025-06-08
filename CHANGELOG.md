@@ -4,9 +4,9 @@
 
 ### Patch Changes
 
-- - aa464ce7a fix: #1631, change MultiSelectProps extends to HTMLAttributes HTMLDivElement and move ...restProps to div
-  - 311cf7365 fix: indentation from tabs to spaces
-  - 60380de4d feat: improve combobox continuous suggestions
+- aa464ce7a fix: #1631, change MultiSelectProps extends to HTMLAttributes HTMLDivElement and move ...restProps to div
+- 311cf7365 fix: indentation from tabs to spaces
+- 60380de4d feat: improve combobox continuous suggestions
 
 ## 1.5.5
 

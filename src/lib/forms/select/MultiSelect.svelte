@@ -4,7 +4,24 @@
 
   // Consider reusing that component - https://svelecte.vercel.app/
 
-  let { children, items = [], value = $bindable(), size = "md", dropdownClass = "", placeholder = "", disabled = false, onchange, class: className, ...restProps }: MultiSelectProps<T> = $props();
+  let { 
+    children, 
+    items = [], 
+    value = $bindable(), 
+    size = "md", 
+    dropdownClass = "", 
+    placeholder = "", 
+    disabled = false, 
+    onchange,
+    onblur,
+    class: className, 
+    // Extract select-specific props
+    name,
+    form,
+    required,
+    autocomplete,
+    ...restProps 
+  }: MultiSelectProps<T> = $props();
 
   let selectItems = $derived(items.filter((x) => value.includes(x.value)));
   let show: boolean = $state(false);
@@ -17,11 +34,17 @@
     if (disabled) return;
     if (select.disabled) return;
 
+    const oldValue = [...value];
+    
     if (value.includes(select.value)) {
       clearThisOption(select);
     } else if (!value.includes(select.value)) {
       value = [...value, select.value];
-      // onchange?.(new CustomEvent("change", { detail: value }));
+    }
+    
+    // Trigger onchange if value actually changed
+    if (JSON.stringify(oldValue) !== JSON.stringify(value)) {
+      triggerChange();
     }
   };
 
@@ -29,24 +52,56 @@
     if (disabled) return;
 
     e.stopPropagation();
+    const oldValue = [...value];
     value = [];
-    // onchange?.(new CustomEvent("change", { detail: value }));
+    
+    if (oldValue.length > 0) {
+      triggerChange();
+    }
   };
 
   const clearThisOption = (select: SelectOptionType<any>) => {
     if (disabled) return;
 
     if (value.includes(select.value)) {
+      const oldValue = [...value];
       value = value.filter((o: any) => o !== select.value);
-      // onchange?.(new CustomEvent("change", { detail: value }));
+      
+      if (oldValue.length !== value.length) {
+        triggerChange();
+      }
+    }
+  };
+
+  // Helper function to trigger change events
+  const triggerChange = () => {
+    if (onchange) {
+      // Create a proper change event for the hidden select element
+      const changeEvent = new Event('change', { bubbles: true });
+      Object.defineProperty(changeEvent, 'target', {
+        value: { value: value },
+        enumerable: true
+      });
+      Object.defineProperty(changeEvent, 'currentTarget', {
+        value: { value: value },
+        enumerable: true
+      });
+      onchange(changeEvent as any);
     }
   };
 
   const closeDropdown = () => !disabled && (show = false);
   const toggleDropdown = () => !disabled && (show = !show);
 
-  // Keyboard navigation
+  // Handle blur event for validation
+  const handleBlur = (event: FocusEvent) => {
+    closeDropdown();
+    if (onblur) {
+      onblur(event);
+    }
+  };
 
+  // Keyboard navigation
   function handleToggleActiveItem() {
     if (disabled) return;
 
@@ -57,6 +112,7 @@
       if (activeItem !== null) selectOption(activeItem);
     }
   }
+  
   function handleArrowUpDown(offset: number) {
     if (disabled) return;
 
@@ -71,6 +127,7 @@
       }
     }
   }
+  
   function handleKeyDown(event: KeyboardEvent) {
     if (disabled) return;
     event.stopPropagation();
@@ -92,12 +149,30 @@
 </script>
 
 <!-- Hidden select for form submission -->
-<select {value} hidden multiple>
-  {#each items as { value, name, disabled }}
-    <option {value} {disabled}>{name}</option>
+<select 
+  {name}
+  {form}
+  {required}
+  {autocomplete}
+  value={value}
+  hidden 
+  multiple
+  onchange={onchange}
+>
+  {#each items as item}
+    <option value={item.value} disabled={item.disabled}>{item.name}</option>
   {/each}
 </select>
-<div {...restProps} onclick={toggleDropdown} onfocusout={closeDropdown} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={cn(base({ size }), className)}>
+
+<div 
+  {...restProps}
+  onclick={toggleDropdown} 
+  onblur={handleBlur}
+  onkeydown={handleKeyDown} 
+  tabindex="0" 
+  role="listbox" 
+  class={cn(base({ size }), className)}
+>
   {#if !selectItems.length}
     <span class="text-gray-400">{placeholder}</span>
   {/if}
@@ -107,7 +182,14 @@
         {#if children}
           {@render children({ item, clear: () => clearThisOption(item) })}
         {:else}
-          <Badge color="gray" large={size === "lg"} dismissable params={{ duration: 100 }} onclose={() => clearThisOption(item)} class={[disabled && "pointer-events-none"]}>
+          <Badge 
+            color="gray" 
+            large={size === "lg"} 
+            dismissable 
+            params={{ duration: 100 }} 
+            onclose={() => clearThisOption(item)} 
+            class={[disabled && "pointer-events-none"]}
+          >
             {item.name}
           </Badge>
         {/if}
@@ -119,25 +201,38 @@
       <CloseButton {size} onclick={clearAll} color="none" class={closebutton()} {disabled} />
     {/if}
 
-    <svg class={cn("ms-1 h-3 w-3 cursor-pointer text-gray-800 dark:text-white", disabled && "cursor-not-allowed")} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={show ? "m1 5 4-4 4 4" : "m9 1-4 4-4-4"} />
+    <svg 
+      class={cn("ms-1 h-3 w-3 cursor-pointer text-gray-800 dark:text-white", disabled && "cursor-not-allowed")} 
+      aria-hidden="true" 
+      xmlns="http://www.w3.org/2000/svg" 
+      fill="none" 
+      viewBox="0 0 10 6"
+    >
+      <path 
+        stroke="currentColor" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        stroke-width="2" 
+        d={show ? "m1 5 4-4 4 4" : "m9 1-4 4-4-4"} 
+      />
     </svg>
   </div>
 
   {#if show}
     <div role="presentation" class={cn(dropdown(), dropdownClass)}>
       {#each items as item (item.name)}
-        <div onclick={() => selectOption(item)} role="presentation" class={dropdownitem({ selected: selectItems.includes(item), active: activeItem === item, disabled: item.disabled })}>
+        <div 
+          onclick={() => selectOption(item)} 
+          role="presentation" 
+          class={dropdownitem({ 
+            selected: selectItems.includes(item), 
+            active: activeItem === item, 
+            disabled: item.disabled 
+          })}
+        >
           {item.name}
         </div>
       {/each}
     </div>
   {/if}
 </div>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Props
-@props: 
--->
