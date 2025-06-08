@@ -154,7 +154,7 @@ export const detailedstepperindicator = tv({
   variants: {
     status: {
       completed: ["border border-primary-600 dark:border-primary-500", "bg-primary-600 dark:bg-primary-500", "text-white"],
-      current: ["border border-primary-600 dark:border-primary-500", "text-primary-600 dark:text-primary-500"],
+      current: ["border border-gray-500 dark:border-gray-400", "text-gray-500 dark:text-gray-400"],
       pending: ["border border-gray-500 dark:border-gray-400", "text-gray-500 dark:text-gray-400"]
     }
   },
@@ -216,7 +216,7 @@ export const breadcrumbstepperitem = tv({
   variants: {
     status: {
       completed: ["text-primary-600", "dark:text-primary-500"],
-      current: ["text-primary-600", "dark:text-primary-500"],
+      current: ["text-gray-500", "dark:text-gray-400"],
       pending: ["text-gray-500", "dark:text-gray-400"]
     },
     hasChevron: {
