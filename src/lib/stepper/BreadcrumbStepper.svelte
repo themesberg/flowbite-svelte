@@ -5,14 +5,14 @@
   import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
 
-  let { children, steps = [], classes }: BreadcrumbStepperProps = $props();
+  let { children, steps = [], classes, ...restProps }: BreadcrumbStepperProps = $props();
 
   setContext("stepperType", "breadcrumb");
 
   const base = breadcrumbstepper();
 </script>
 
-<ol class={base}>
+<ol class={base} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
@@ -56,4 +56,5 @@
 @prop children
 @prop steps = []
 @prop classes
+@prop ...restProps
 -->

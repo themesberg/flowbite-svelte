@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.6.0
+
+### Minor Changes
+
+- feat: Stepper, ProgressStepper, DetailedStepper, VerticalStepper, BreadcrumbStepper, TimelineStepper
+- docs: stepper page
+
 ## 1.5.6
 
 ### Patch Changes
