@@ -45,7 +45,7 @@ export const steppercontent = tv({
   base: "flex items-center",
   variants: {
     status: {
-      completed: [],
+      completed: ["after:content-['/']", "sm:after:hidden", "after:mx-2", "after:text-gray-200", "dark:after:text-gray-500"],
       current: ["after:content-['/']", "sm:after:hidden", "after:mx-2", "after:text-gray-200", "dark:after:text-gray-500"],
       pending: ["after:content-['/']", "sm:after:hidden", "after:mx-2", "after:text-gray-200", "dark:after:text-gray-500"]
     },
