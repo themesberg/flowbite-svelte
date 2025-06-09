@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.6.2
+
+### Patch Changes
+
+- fix: Stepper style
+
 ## 1.6.1
 
 ### Patch Changes
