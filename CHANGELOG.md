@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.6.3
+
+### Patch Changes
+
+- fix: #1575
+  feat: add selection of month and year for Datepicker
+
 ## 1.6.2
 
 ### Patch Changes

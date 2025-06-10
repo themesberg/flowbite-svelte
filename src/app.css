@@ -90,8 +90,19 @@ color utility to any element that depends on these defaults.
   #mainContent > pre {
     @apply mx-auto my-4 w-full overflow-auto rounded-xl border border-gray-200 bg-gray-50 bg-linear-to-r p-2 text-sm text-gray-600 sm:p-6 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-400;
   }
+
+  /* input[type="time"]::-webkit-calendar-picker-indicator {
+    all: revert !important;
+  } */
+
   /* disable chrome cancel button */
   input[type="search"]::-webkit-search-cancel-button {
     display: none;
   }
 }
+/* 
+@layer components {
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    all: revert !important;
+  }
+} */

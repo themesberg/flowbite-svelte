@@ -10,6 +10,7 @@
   const dateFormatOptions = $derived(dateFormat ?? dateFormatDefault);
   // Internal state
   let isOpen: boolean = $state(inline);
+  let showMonthSelector: boolean = $state(false);
   let inputElement: HTMLInputElement | null = $state(null);
   let datepickerContainerElement: HTMLDivElement;
   let currentMonth: Date = $state(value || defaultDate || new Date());
@@ -62,11 +63,31 @@
   };
   let weekdays = getWeekdayNames();
 
+  const getMonthNames = (): string[] => {
+    return Array.from({ length: 12 }, (_, i) => new Date(2000, i, 1).toLocaleDateString(locale, { month: "short" }));
+  };
+  let monthNames = getMonthNames();
+
   const addMonth = (date: Date, increment: number): Date => new Date(date.getFullYear(), date.getMonth() + increment, 1);
   const addDay = (date: Date, increment: number): Date => new Date(date.getFullYear(), date.getMonth(), date.getDate() + increment);
 
   function changeMonth(increment: number) {
     currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + increment, 1);
+  }
+
+  function changeYear(increment: number) {
+    currentMonth = new Date(currentMonth.getFullYear() + increment, currentMonth.getMonth(), 1);
+  }
+
+  function selectMonth(monthIndex: number, event: MouseEvent) {
+    event.stopPropagation();
+    currentMonth = new Date(currentMonth.getFullYear(), monthIndex, 1);
+    showMonthSelector = false;
+  }
+
+  function toggleMonthSelector(event: MouseEvent) {
+    event.stopPropagation();
+    showMonthSelector = !showMonthSelector;
   }
 
   function handleDaySelect(day: Date) {
@@ -98,6 +119,7 @@
   function handleClickOutside(event: MouseEvent) {
     if (isOpen && datepickerContainerElement && !datepickerContainerElement.contains(event.target as Node)) {
       isOpen = false;
+      showMonthSelector = false;
     }
   }
 
@@ -133,6 +155,7 @@
         break;
       case "Escape":
         isOpen = false;
+        showMonthSelector = false;
         inputElement?.focus();
         break;
       default:
@@ -180,6 +203,14 @@
   </ToolbarButton>
 {/snippet}
 
+{#snippet yearNavButton(forward: boolean)}
+  <ToolbarButton color="dark" onclick={() => changeYear(forward ? 1 : -1)} size="lg" aria-label={forward ? "Next year" : "Previous year"}>
+    <svg class="h-3 w-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={forward ? "M1 5h12m0 0L9 1m4 4L9 9" : "M13 5H1m0 0 4 4M1 5l4-4"}></path>
+    </svg>
+  </ToolbarButton>
+{/snippet}
+
 <div bind:this={datepickerContainerElement} class={["relative", inline && "inline-block"]}>
   {#if !inline}
     <div class="relative">
@@ -197,25 +228,46 @@
       {#if title}
         <h2 class={titleVariant()}>{title}</h2>
       {/if}
-      <div class={nav()}>
-        {@render navButton(false)}
-        <h3 class={polite()} aria-live="polite">
-          {currentMonth.toLocaleString(locale, { month: "long", year: "numeric" })}
-        </h3>
-        {@render navButton(true)}
-      </div>
-      <div class={grid()} role="grid">
-        {#each weekdays as day}
-          <div class={columnHeader()} role="columnheader">{day}</div>
-        {/each}
-        {#each daysInMonth as day}
-          {@const current = day.getMonth() !== currentMonth.getMonth()}
-          <button type="button" color={isSelected(day) ? color : "alternative"} class={dayButton({ current, today: isToday(day), color: isInRange(day) ? color : undefined })} onclick={() => handleDaySelect(day)} onkeydown={handleCalendarKeydown} aria-label={day.toLocaleDateString(locale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })} aria-selected={isSelected(day)} role="gridcell">
-            {day.getDate()}
+
+      {#if showMonthSelector}
+        <!-- Month/Year Selector View -->
+        <div class={nav()}>
+          {@render yearNavButton(false)}
+          <h3 class={polite()} aria-live="polite">
+            {currentMonth.getFullYear()}
+          </h3>
+          {@render yearNavButton(true)}
+        </div>
+        <div class="grid grid-cols-4 gap-2 p-4">
+          {#each monthNames as month, index}
+            <button type="button" class="rounded-lg px-3 py-2 text-sm hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:hover:bg-gray-700 {currentMonth.getMonth() === index ? 'bg-blue-500 text-white' : 'text-gray-700 dark:text-gray-300'}" onclick={(event) => selectMonth(index, event)}>
+              {month}
+            </button>
+          {/each}
+        </div>
+      {:else}
+        <!-- Regular Calendar View -->
+        <div class={nav()}>
+          {@render navButton(false)}
+          <button type="button" class={cn(polite(), "cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700")} aria-live="polite" onclick={(event) => toggleMonthSelector(event)}>
+            {currentMonth.toLocaleString(locale, { month: "long", year: "numeric" })}
           </button>
-        {/each}
-      </div>
-      {#if showActionButtons}
+          {@render navButton(true)}
+        </div>
+        <div class={grid()} role="grid">
+          {#each weekdays as day}
+            <div class={columnHeader()} role="columnheader">{day}</div>
+          {/each}
+          {#each daysInMonth as day}
+            {@const current = day.getMonth() !== currentMonth.getMonth()}
+            <button type="button" color={isSelected(day) ? color : "alternative"} class={dayButton({ current, today: isToday(day), color: isInRange(day) ? color : undefined })} onclick={() => handleDaySelect(day)} onkeydown={handleCalendarKeydown} aria-label={day.toLocaleDateString(locale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })} aria-selected={isSelected(day)} role="gridcell">
+              {day.getDate()}
+            </button>
+          {/each}
+        </div>
+      {/if}
+
+      {#if showActionButtons && !showMonthSelector}
         <div class={actionButtons()}>
           <Button onclick={() => handleDaySelect(new Date())} {color} size="sm">Today</Button>
           <Button onclick={handleClear} color="red" size="sm">Clear</Button>
