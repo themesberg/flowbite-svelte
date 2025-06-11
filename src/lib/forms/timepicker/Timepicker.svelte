@@ -1,12 +1,13 @@
 <script lang="ts">
-  import { Dropdown, DropdownItem, Button, Input, ButtonGroup, Select, InputAddon, Label, Toggle, type TimepickerProps, type TimePickerOption, cn } from "$lib";
+  import { Dropdown, DropdownItem, Button, Input, ButtonGroup, Select, Label, Toggle, type TimepickerProps, type TimePickerOption, cn } from "$lib";
+  import { twMerge } from "tailwind-merge";
 
   // Props
-  let { id = "time", endId = "end-time", value = $bindable("00:00"), endValue = $bindable("00:00"), min = "", max = "", required = true, disabled = false, inputColor, buttonColor = "primary", Icon, type = "default", optionLabel = "Options", options = [], size = "md", divClass, inputClass, selectClass, timerangeLabel = "Choose time range", timerangeButtonLabel = "Save time", timeIntervals = [], columns = 2, onselect }: TimepickerProps = $props();
+  let { id = "time", endId = "end-time", value = $bindable("00:00"), endValue = $bindable("00:00"), min = "", max = "", required = true, disabled = false, inputColor, buttonColor = "primary", Icon, iconClass="h-5 w-5 text-gray-500 dark:text-gray-400", type = "default", optionLabel = "Options", options = [], size = "md", divClass, inputClass, selectClass, timerangeLabel = "Choose time range", timerangeButtonLabel = "Save time", timeIntervals = [], columns = 2, onselect }: TimepickerProps = $props();
 
   const defaultDivClass = "inline-flex rounded-lg shadow-sm";
   const acturalDivCls = cn(defaultDivClass, divClass);
-  const defaultInputClass = "block disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:ring-0 focus:outline-none border-r-0";
+  const defaultInputClass = "block disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:ring-0 focus:outline-none rounded-e-lg";
   const inputCls = cn(defaultInputClass, inputClass);
   const defaultSelectClass = "text-gray-900 disabled:text-gray-400 bg-gray-50 border border-gray-300 rounded-r-lg rounded-l-none focus:ring-0 focus:outline-none block w-full border-l-1 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:disabled:text-gray-500 dark:focus:ring-primary-500 dark:focus:border-primary-500";
   const selectCls = cn(defaultSelectClass, selectClass);
@@ -116,21 +117,21 @@
 {#if type !== "inline-buttons"}
   <ButtonGroup {size} class={acturalDivCls}>
     {#if type === "default"}
-      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("rounded-l-lg", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
-      <InputAddon class="rounded-r-lg">
+      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("relative pr-8 px-2", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
+      <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
         {#if Icon}
-          <Icon class="h-4 w-4 text-gray-500 dark:text-gray-400" />
+          <Icon class={iconClass} />
         {:else}
           <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
           </svg>
         {/if}
-      </InputAddon>
+      </div>
     {:else if type === "select"}
-      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("w-1/3 rounded-l-lg", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
+      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge(cn("w-1/3 rounded-l-lg", inputCls), 'rounded-e-none')} bind:value onchange={(e) => handleTimeChange(e)} />
       <Select selectClass={selectCls} onchange={handleOptionSelect} items={options} value={selectedOption} />
     {:else if type === "dropdown"}
-      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("rounded-l-lg", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
+      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge(cn("rounded-l-lg",inputCls), 'rounded-e-none')} bind:value onchange={(e) => handleTimeChange(e)} />
       <Button color={buttonColor} class="!rounded-r-lg">
         {optionLabel}
         <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -143,27 +144,31 @@
         {/each}
       </Dropdown>
     {:else if type === "range"}
-      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("rounded-l-lg", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
-      <InputAddon class="rounded-none">
-        {#if Icon}
-          <Icon class="h-4 w-4 text-gray-500 dark:text-gray-400" />
-        {:else}
-          <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-          </svg>
-        {/if}
-      </InputAddon>
+      <div class="relative">
+        <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge(cn("relative pr-8", inputCls))} bind:value onchange={(e) => handleTimeChange(e)} />
+        <button type="button" class="absolute inset-y-0 right-0 top-0 flex items-center pe-3.5 bg-transparent border-0 pointer-events-none" onclick={() => document.getElementById(id)?.click()} aria-label="Open time picker">
+          {#if Icon}
+            <Icon class={iconClass} />
+          {:else}
+            <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+          {/if}
+        </button>
+      </div>
       <span class="flex items-center justify-center px-2 text-gray-500 dark:text-gray-400">-</span>
-      <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("rounded-none", inputCls)} bind:value={endValue} onchange={(e) => handleTimeChange(e, true)} />
-      <InputAddon class="rounded-r-lg">
-        {#if Icon}
-          <Icon class="h-4 w-4 text-gray-500 dark:text-gray-400" />
-        {:else}
-          <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-          </svg>
-        {/if}
-      </InputAddon>
+      <div class="relative">
+        <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn(inputCls, "relative pr-8")} bind:value={endValue} onchange={(e) => handleTimeChange(e, true)} />
+        <button type="button" class="absolute inset-y-0 right-0 top-0 flex items-center pe-3.5 bg-transparent border-0 pointer-events-none" onclick={() => document.getElementById(endId)?.click()} aria-label="Open end time picker">
+          {#if Icon}
+            <Icon class={iconClass} />
+          {:else}
+            <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+          {/if}
+        </button>
+      </div>
     {:else if type === "timerange-dropdown"}
       <Button color={buttonColor} {size} class="!rounded-r-lg">
         {timerangeLabel}
@@ -174,11 +179,11 @@
           <div class="flex space-x-4">
             <div class="flex flex-col">
               <Label for={id}>Start time:</Label>
-              <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("w-24 rounded-l-lg !border-r", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
+              <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("w-24 rounded-l-lg !border-r px-2", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
             </div>
             <div class="flex flex-col">
               <Label for={endId}>End time:</Label>
-              <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("w-24 rounded-l-lg !border-r", inputCls)} bind:value={endValue} onchange={(e) => handleTimeChange(e, true)} />
+              <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("w-24 rounded-l-lg !border-r px-2", inputCls)} bind:value={endValue} onchange={(e) => handleTimeChange(e, true)} />
             </div>
           </div>
           <Button color={buttonColor} class="w-full !rounded-l-lg" onclick={applyTimerange}>
@@ -195,11 +200,11 @@
           <div class="flex space-x-4 p-2.5">
             <div class="flex flex-col">
               <Label for={id}>Start time:</Label>
-              <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("w-24 rounded-lg !border-r", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
+              <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("w-24 rounded-lg !border-r px-2", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
             </div>
             <div class="flex flex-col">
               <Label for={endId}>End time:</Label>
-              <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("w-24 rounded-lg !border-r", inputCls)} bind:value={endValue} onchange={(e) => handleTimeChange(e, true)} />
+              <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("w-24 rounded-lg !border-r px-2", inputCls)} bind:value={endValue} onchange={(e) => handleTimeChange(e, true)} />
             </div>
           </div>
         {/if}

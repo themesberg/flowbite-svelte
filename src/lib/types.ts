@@ -903,6 +903,7 @@ export interface TimepickerProps {
   inputColor?: InputProps["color"];
   buttonColor?: ButtonProps["color"];
   Icon?: Component;
+  iconClass?: string;
   type?: TimePickerType;
   optionLabel?: string;
   options?: TimePickerOption[];
