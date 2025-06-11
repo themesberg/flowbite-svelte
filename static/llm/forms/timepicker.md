@@ -48,11 +48,11 @@ This example can be used to select a time via an input field where you can add a
 ```svelte
 <script lang="ts">
   import { Label, Timepicker } from "flowbite-svelte";
-  import { ClockSolid } from "flowbite-svelte-icons";
+  import { ClockOutline } from "flowbite-svelte-icons";
 </script>
 
 <Label>Select Time (Flowbite Icon):</Label>
-<Timepicker Icon={ClockSolid} />
+<Timepicker Icon={ClockOutline} iconClass="text-red-500" />
 
 <Label>Select Time (Default icon):</Label>
 <Timepicker />

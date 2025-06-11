@@ -19,7 +19,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[LiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1916)
+[LiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1917)
 ## Props
 @prop children
 @prop icon

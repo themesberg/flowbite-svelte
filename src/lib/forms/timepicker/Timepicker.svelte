@@ -3,7 +3,7 @@
   import { twMerge } from "tailwind-merge";
 
   // Props
-  let { id = "time", endId = "end-time", value = $bindable("00:00"), endValue = $bindable("00:00"), min = "", max = "", required = true, disabled = false, inputColor, buttonColor = "primary", Icon, iconClass="h-5 w-5 text-gray-500 dark:text-gray-400", type = "default", optionLabel = "Options", options = [], size = "md", divClass, inputClass, selectClass, timerangeLabel = "Choose time range", timerangeButtonLabel = "Save time", timeIntervals = [], columns = 2, onselect }: TimepickerProps = $props();
+  let { id = "time", endId = "end-time", value = $bindable("00:00"), endValue = $bindable("00:00"), min = "", max = "", required = true, disabled = false, inputColor, buttonColor = "primary", Icon, iconClass = "h-5 w-5 text-gray-500 dark:text-gray-400", type = "default", optionLabel = "Options", options = [], size = "md", divClass, inputClass, selectClass, timerangeLabel = "Choose time range", timerangeButtonLabel = "Save time", timeIntervals = [], columns = 2, onselect }: TimepickerProps = $props();
 
   const defaultDivClass = "inline-flex rounded-lg shadow-sm";
   const acturalDivCls = cn(defaultDivClass, divClass);
@@ -117,8 +117,8 @@
 {#if type !== "inline-buttons"}
   <ButtonGroup {size} class={acturalDivCls}>
     {#if type === "default"}
-      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("relative pr-8 px-2", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
-      <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
+      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn("relative px-2 pr-8", inputCls)} bind:value onchange={(e) => handleTimeChange(e)} />
+      <div class="pointer-events-none absolute inset-y-0 end-0 top-0 flex items-center pe-3.5">
         {#if Icon}
           <Icon class={iconClass} />
         {:else}
@@ -128,10 +128,10 @@
         {/if}
       </div>
     {:else if type === "select"}
-      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge(cn("w-1/3 rounded-l-lg", inputCls), 'rounded-e-none')} bind:value onchange={(e) => handleTimeChange(e)} />
+      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge(cn("w-1/3 rounded-l-lg", inputCls), "rounded-e-none")} bind:value onchange={(e) => handleTimeChange(e)} />
       <Select selectClass={selectCls} onchange={handleOptionSelect} items={options} value={selectedOption} />
     {:else if type === "dropdown"}
-      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge(cn("rounded-l-lg",inputCls), 'rounded-e-none')} bind:value onchange={(e) => handleTimeChange(e)} />
+      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge(cn("rounded-l-lg", inputCls), "rounded-e-none")} bind:value onchange={(e) => handleTimeChange(e)} />
       <Button color={buttonColor} class="!rounded-r-lg">
         {optionLabel}
         <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -146,7 +146,7 @@
     {:else if type === "range"}
       <div class="relative">
         <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={twMerge(cn("relative pr-8", inputCls))} bind:value onchange={(e) => handleTimeChange(e)} />
-        <button type="button" class="absolute inset-y-0 right-0 top-0 flex items-center pe-3.5 bg-transparent border-0 pointer-events-none" onclick={() => document.getElementById(id)?.click()} aria-label="Open time picker">
+        <button type="button" class="pointer-events-none absolute inset-y-0 top-0 right-0 flex items-center border-0 bg-transparent pe-3.5" onclick={() => document.getElementById(id)?.click()} aria-label="Open time picker">
           {#if Icon}
             <Icon class={iconClass} />
           {:else}
@@ -159,7 +159,7 @@
       <span class="flex items-center justify-center px-2 text-gray-500 dark:text-gray-400">-</span>
       <div class="relative">
         <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class={cn(inputCls, "relative pr-8")} bind:value={endValue} onchange={(e) => handleTimeChange(e, true)} />
-        <button type="button" class="absolute inset-y-0 right-0 top-0 flex items-center pe-3.5 bg-transparent border-0 pointer-events-none" onclick={() => document.getElementById(endId)?.click()} aria-label="Open end time picker">
+        <button type="button" class="pointer-events-none absolute inset-y-0 top-0 right-0 flex items-center border-0 bg-transparent pe-3.5" onclick={() => document.getElementById(endId)?.click()} aria-label="Open end time picker">
           {#if Icon}
             <Icon class={iconClass} />
           {:else}
@@ -238,6 +238,7 @@
 @prop inputColor
 @prop buttonColor = "primary"
 @prop Icon
+@prop iconClass = "h-5 w-5 text-gray-500 dark:text-gray-400"
 @prop type = "default"
 @prop optionLabel = "Options"
 @prop options = []

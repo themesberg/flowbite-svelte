@@ -32,7 +32,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1746)
+[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1747)
 ## Props
 @prop activities
 @prop liClass

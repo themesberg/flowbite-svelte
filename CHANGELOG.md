@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.6.4
+
+### Patch Changes
+
+- fix: #1636
+  fix: change from InputAddon to div
+
 ## 1.6.3
 
 ### Patch Changes

@@ -63,7 +63,7 @@ This example can be used to select a time via an input field where you can add a
 </script>
 
 <Label>Select Time (Flowbite Icon):</Label>
-<Timepicker Icon={ClockOutline} iconClass="text-red-500"/>
+<Timepicker Icon={ClockOutline} iconClass="text-red-500" />
 
 <Label>Select Time (Default icon):</Label>
 <Timepicker />
