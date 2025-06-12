@@ -8,6 +8,7 @@ import type { BlurParams, EasingFunction, FadeParams, FlyParams, ScaleParams, Sl
 import { tv, type VariantProps } from "tailwind-variants";
 
 // component variants
+import type { DatepickerVariants } from "$lib/datepicker/theme";
 import type { CheckboxVariants } from "$lib/forms/checkbox/theme";
 import type { FileuploadViariants } from "$lib/forms/fileupload/theme";
 import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label/theme";
@@ -480,7 +481,7 @@ export interface DarkmodeProps extends HTMLButtonAttributes {
 // datepicker
 export type DateOrRange = Date | { from?: Date; to?: Date };
 
-export interface DatepickerProps extends Omit<HTMLAttributes<HTMLDivElement>, "onselect"> {
+export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes<HTMLDivElement>, "onselect"> {
   value?: Date;
   defaultDate?: Date | null;
   range?: boolean;

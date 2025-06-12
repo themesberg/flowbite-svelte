@@ -1,4 +1,11 @@
-import { tv } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type DatepickerClasses = Partial<{
+  [K in keyof (typeof datepicker)["slots"]]: ClassValue;
+}>;
+
+export type DatepickerVariants = VariantProps<typeof datepicker> & { classes?: DatepickerClasses };
 
 export const datepicker = tv({
   slots: {
@@ -11,7 +18,7 @@ export const datepicker = tv({
     columnHeader: "text-center text-sm font-medium text-gray-500 dark:text-gray-400",
     grid: "grid grid-cols-7 gap-1 w-64",
     nav: "mb-4 flex items-center justify-between",
-    dayButton: "h-8 w-full hover:bg-gray-100 dark:hover:bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900 dark:text-white font-semibold text-sm day"
+    dayButton: "h-8 w-full block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center font-semibold text-sm day p-0"
   },
   variants: {
     color: {

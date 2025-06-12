@@ -1,13 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import clsx from "clsx";
   import { fade } from "svelte/transition";
   import { Button, ToolbarButton, type DatepickerProps, cn } from "$lib";
   import { datepicker } from "./theme";
 
-  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, inputmode = 'none', class: className }: DatepickerProps = $props();
+  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, inputmode = 'none', classes, class: className }: DatepickerProps = $props();
 
   const dateFormatDefault = { year: "numeric", month: "long", day: "numeric" };
-  const dateFormatOptions = $derived(dateFormat ?? dateFormatDefault);
+  // const dateFormatOptions = $derived(dateFormat ?? dateFormatDefault);
   // Internal state
   let isOpen: boolean = $state(inline);
   let showMonthSelector: boolean = $state(false);
@@ -68,7 +69,7 @@
   };
   let monthNames = getMonthNames();
 
-  const addMonth = (date: Date, increment: number): Date => new Date(date.getFullYear(), date.getMonth() + increment, 1);
+  // const addMonth = (date: Date, increment: number): Date => new Date(date.getFullYear(), date.getMonth() + increment, 1);
   const addDay = (date: Date, increment: number): Date => new Date(date.getFullYear(), date.getMonth(), date.getDate() + increment);
 
   function changeMonth(increment: number) {
@@ -215,7 +216,7 @@
   {#if !inline}
     <div class="relative">
       <input bind:this={inputElement} type="text" class={cn(input({ color }), inputClass)} {placeholder} value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)} onfocus={() => (isOpen = true)} oninput={handleInputChange} onkeydown={handleInputKeydown} {disabled} {required} {inputmode} aria-haspopup="dialog" />
-      <button type="button" class={cn(button(), btnClass)} onclick={() => (isOpen = !isOpen)} {disabled} aria-label={isOpen ? "Close date picker" : "Open date picker"}>
+      <button type="button" class={cn(button({ class: clsx(classes?.button) }), btnClass)} onclick={() => (isOpen = !isOpen)} {disabled} aria-label={isOpen ? "Close date picker" : "Open date picker"}>
         <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
           <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"></path>
         </svg>
@@ -224,51 +225,51 @@
   {/if}
 
   {#if isOpen || inline}
-    <div bind:this={calendarRef} id="datepicker-dropdown" class={cn(base({ inline }), className)} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
+    <div bind:this={calendarRef} id="datepicker-dropdown" class={cn(base({ inline, class: clsx(classes?.base) }), className)} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
       {#if title}
-        <h2 class={titleVariant()}>{title}</h2>
+        <h2 class={titleVariant({ class: clsx(classes?.titleVariant) })}>{title}</h2>
       {/if}
 
       {#if showMonthSelector}
         <!-- Month/Year Selector View -->
-        <div class={nav()}>
+        <div class={nav({ class: clsx(classes?.nav) })}>
           {@render yearNavButton(false)}
-          <h3 class={polite()} aria-live="polite">
+          <h3 class={polite({ class: clsx(classes?.polite) })} aria-live="polite">
             {currentMonth.getFullYear()}
           </h3>
           {@render yearNavButton(true)}
         </div>
         <div class="grid grid-cols-4 gap-2 p-4">
           {#each monthNames as month, index}
-            <button type="button" class="rounded-lg px-3 py-2 text-sm hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:hover:bg-gray-700 {currentMonth.getMonth() === index ? 'bg-blue-500 text-white' : 'text-gray-700 dark:text-gray-300'}" onclick={(event) => selectMonth(index, event)}>
+            <Button type="button" class="rounded-lg px-3 py-2 text-sm hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:hover:bg-gray-700 {currentMonth.getMonth() === index ? 'bg-blue-500 text-white' : 'text-gray-700 dark:text-gray-300'}" onclick={(event: MouseEvent) => selectMonth(index, event)}>
               {month}
-            </button>
+            </Button>
           {/each}
         </div>
       {:else}
         <!-- Regular Calendar View -->
-        <div class={nav()}>
+        <div class={nav({ class: clsx(classes?.nav) })}>
           {@render navButton(false)}
-          <button type="button" class={cn(polite(), "cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700")} aria-live="polite" onclick={(event) => toggleMonthSelector(event)}>
+          <Button type="button" class={cn(polite({ class: clsx(classes?.polite) }), "cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700")} aria-live="polite" onclick={(event: MouseEvent) => toggleMonthSelector(event)}>
             {currentMonth.toLocaleString(locale, { month: "long", year: "numeric" })}
-          </button>
+          </Button>
           {@render navButton(true)}
         </div>
-        <div class={grid()} role="grid">
+        <div class={grid({ class: clsx(classes?.grid) })} role="grid">
           {#each weekdays as day}
-            <div class={columnHeader()} role="columnheader">{day}</div>
+            <div class={columnHeader({ class: clsx(classes?.columnHeader) })} role="columnheader">{day}</div>
           {/each}
           {#each daysInMonth as day}
             {@const current = day.getMonth() !== currentMonth.getMonth()}
-            <button type="button" color={isSelected(day) ? color : "alternative"} class={dayButton({ current, today: isToday(day), color: isInRange(day) ? color : undefined })} onclick={() => handleDaySelect(day)} onkeydown={handleCalendarKeydown} aria-label={day.toLocaleDateString(locale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })} aria-selected={isSelected(day)} role="gridcell">
+            <Button type="button" color={isSelected(day) ? color : "alternative"} class={dayButton({ current, today: isToday(day), color: isInRange(day) ? color : undefined,  class: clsx(classes?.dayButton)  })} onclick={() => handleDaySelect(day)} onkeydown={handleCalendarKeydown} aria-label={day.toLocaleDateString(locale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })} aria-selected={isSelected(day)} role="gridcell">
               {day.getDate()}
-            </button>
+            </Button>
           {/each}
         </div>
       {/if}
 
       {#if showActionButtons && !showMonthSelector}
-        <div class={actionButtons()}>
+        <div class={actionButtons({ class: clsx(classes?.actionButtons) })}>
           <Button onclick={() => handleDaySelect(new Date())} {color} size="sm">Today</Button>
           <Button onclick={handleClear} color="red" size="sm">Clear</Button>
           <Button onclick={handleApply} {color} size="sm">Apply</Button>
