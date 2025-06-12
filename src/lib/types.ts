@@ -502,6 +502,7 @@ export interface DatepickerProps extends Omit<HTMLAttributes<HTMLDivElement>, "o
   onclear?: () => void;
   onapply?: (x: DateOrRange) => void;
   btnClass?: ClassValue;
+  inputmode?: HTMLInputAttributes['inputmode'];
 }
 
 // device-mockups
