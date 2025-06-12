@@ -1808,6 +1808,7 @@ export interface ToastProps extends HTMLAttributes<HTMLDivElement> {
   params?: ParamsType;
   transition?: TransitionFunc;
   class?: string;
+  onclose?: () => void;
 }
 
 // tooltip

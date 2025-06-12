@@ -5,9 +5,14 @@
   import type { ToastProps } from "$lib/types";
   import { fly } from "svelte/transition";
 
-  let { children, icon, toastStatus = $bindable(true), dismissable = true, color = "primary", position, iconClass, contentClass, align = true, params, transition = fly, class: className, ...restProps }: ToastProps = $props();
+  let { children, icon, toastStatus = $bindable(true), dismissable = true, color = "primary", position, iconClass, contentClass, align = true, params, transition = fly, class: className, onclose, ...restProps }: ToastProps = $props();
 
   const { base, icon: iconVariants, content, close } = $derived(toast({ color, position, align }));
+
+  function handleClose() {
+    toastStatus = false;
+    onclose?.();
+  }
 </script>
 
 {#if toastStatus}
@@ -27,9 +32,7 @@
         class={close()}
         ariaLabel="Remove toast"
         {color}
-        onclick={() => {
-          toastStatus = false;
-        }}
+        onclick={handleClose}
       />
     {/if}
   </div>
