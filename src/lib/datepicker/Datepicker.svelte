@@ -6,7 +6,7 @@
   import { Button, ToolbarButton, type DatepickerProps, cn } from "$lib";
   import { datepicker } from "./theme";
 
-  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, inputmode = "none", classes, monthColor="alternative", monthBtnSelected ='bg-primary-500 text-white', monthBtn='text-gray-700 dark:text-gray-300', class: className }: DatepickerProps = $props();
+  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, inputmode = "none", classes, monthColor = "alternative", monthBtnSelected = "bg-primary-500 text-white", monthBtn = "text-gray-700 dark:text-gray-300", class: className }: DatepickerProps = $props();
 
   const dateFormatDefault = { year: "numeric", month: "long", day: "numeric" };
   // const dateFormatOptions = $derived(dateFormat ?? dateFormatDefault);
@@ -307,7 +307,10 @@
 @prop onclear
 @prop onapply
 @prop btnClass
-@prop inputmode = 'none'
+@prop inputmode = "none"
 @prop classes
+@prop monthColor = "alternative"
+@prop monthBtnSelected = 'bg-primary-500 text-white'
+@prop monthBtn = 'text-gray-700 dark:text-gray-300'
 @prop class: className
 -->

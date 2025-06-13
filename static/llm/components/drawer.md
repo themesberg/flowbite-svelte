@@ -560,7 +560,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 
 #### Types
 
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L575)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L578)
 
 #### Props
 
@@ -581,7 +581,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L585)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L588)
 
 #### Props
 

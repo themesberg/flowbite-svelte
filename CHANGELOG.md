@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.6.6
+
+### Patch Changes
+
+- feat: add monthClor, monthBtnSelected, monthBtn to Datepicker
+
 ## 1.6.5
 
 ### Patch Changes
