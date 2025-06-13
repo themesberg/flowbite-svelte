@@ -780,9 +780,17 @@ export interface InputProps<T extends InputValue = string> extends Omit<HTMLInpu
   onSelect?: (item: string) => void;
   comboClass?: ClassValue;
   comboItemClass?: ClassValue;
+  oninput?: (event: Event) => void;
+  onfocus?: (event: FocusEvent) => void;
+  onblur?: (event: FocusEvent) => void;
+  onkeydown?: (event: KeyboardEvent) => void;
+  /** @deprecated Use `oninput` instead. Will be removed in next minor version. */
   onInput?: (event: Event) => void;
+  /** @deprecated Use `onfocus` instead. Will be removed in next minor version. */
   onFocus?: (event: FocusEvent) => void;
+  /** @deprecated Use `onblur` instead. Will be removed in next minor version. */
   onBlur?: (event: FocusEvent) => void;
+  /** @deprecated Use `onkeydown` instead. Will be removed in next minor version. */
   onKeydown?: (event: KeyboardEvent) => void;
 }
 

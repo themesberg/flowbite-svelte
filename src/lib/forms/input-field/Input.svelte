@@ -3,7 +3,14 @@
   import { CloseButton, type SizeType, type InputProps, type InputValue, cn } from "$lib";
   import { input, clampSize } from ".";
 
-  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, comboItemClass, onInput, onFocus, onBlur, onKeydown, ...restProps }: InputProps<InputValue> = $props();
+  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, comboItemClass, onInput, onFocus, onBlur, onKeydown, oninput, onfocus, onblur, onkeydown, ...restProps }: InputProps<InputValue> = $props();
+
+  // onSelect is a custom combobox selection handler that takes a string
+  // standard DOM events, onInput, onFocus, onBlur, onKeydown will be deprecated in the next minor version
+  const resolvedOnInput = $derived(oninput || onInput);
+  const resolvedOnFocus = $derived(onfocus || onFocus);
+  const resolvedOnBlur = $derived(onblur || onBlur);
+  const resolvedOnKeydown = $derived(onkeydown || onKeydown);
 
   // Automatically enable combobox when data is provided
   const isCombobox = $derived(Array.isArray(data) && data.length > 0);
@@ -143,29 +150,29 @@
 
   // Combined event handlers that call custom handlers first, then default behavior
   function handleInput(event: Event) {
-    if (onInput) {
-      onInput(event);
+    if (resolvedOnInput) {
+      resolvedOnInput(event);
     }
     defaultHandleInput(event);
   }
 
   function handleFocus(event: FocusEvent) {
-    if (onFocus) {
-      onFocus(event);
+    if (resolvedOnFocus) {
+      resolvedOnFocus(event);
     }
     defaultHandleFocus(event);
   }
 
   function handleBlur(event: FocusEvent) {
-    if (onBlur) {
-      onBlur(event);
+    if (resolvedOnBlur) {
+      resolvedOnBlur(event);
     }
     defaultHandleBlur(event);
   }
 
   function handleKeydown(event: KeyboardEvent) {
-    if (onKeydown) {
-      onKeydown(event);
+    if (resolvedOnKeydown) {
+      resolvedOnKeydown(event);
     }
     defaultHandleKeydown(event);
   }

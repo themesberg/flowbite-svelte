@@ -53,7 +53,7 @@
     if (document && document.documentElement) {
       // Get the current dark mode state from document
       const isDark = document.documentElement.classList.contains("dark");
-      console.log("Dark mode detected from document:", isDark);
+      // console.log("Dark mode detected from document:", isDark);
 
       // Reset independent mode when document dark mode changes
       if (independentDarkMode) {
@@ -70,7 +70,7 @@
   // Sync the iframe dark mode with the current dark state
   function syncIframeDarkMode(): void {
     if (iframe && iframe.contentDocument) {
-      console.log("Syncing iframe dark mode:", dark);
+      // console.log("Syncing iframe dark mode:", dark);
       if (dark) {
         iframe.contentDocument.documentElement.classList.add("dark");
       } else {
@@ -98,7 +98,7 @@
 
     // Initial dark mode check
     dark = document.documentElement.classList.contains("dark");
-    console.log("Initial dark mode state:", dark);
+    // console.log("Initial dark mode state:", dark);
 
     // Set up a mutation observer to watch for class changes on documentElement
     documentObserver = new MutationObserver((mutations) => {
