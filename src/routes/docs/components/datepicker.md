@@ -92,7 +92,7 @@ The `classes` prop has the following `class` for disposal: `base`, `input`, `tit
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker color="blue"  classes={{ polite: "hover:text-blue-700!", dayButton:"hover:text-blue-400", titleVariant: "text-blue-800"}} title="Select your preferred date"/>
+  <Datepicker color="blue" classes={{ polite: "hover:text-blue-700!", dayButton: "hover:text-blue-400", titleVariant: "text-blue-800" }} title="Select your preferred date" />
 </div>
 ```
 

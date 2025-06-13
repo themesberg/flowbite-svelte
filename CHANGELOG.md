@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.6.5
+
+### Patch Changes
+
+- fix: TimePicker change from InputAddon to div
+  fix: #1611, Datepicker add inputmode prop
+  fix: #1641
+  feat: Toast add conclose event handler
+  fix: #1639 docs: change class to labelClass
+  fix: #1638 Datepicker change from button to Button
+  feat: add classes
+
 ## 1.6.4
 
 ### Patch Changes

@@ -503,7 +503,7 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   onclear?: () => void;
   onapply?: (x: DateOrRange) => void;
   btnClass?: ClassValue;
-  inputmode?: HTMLInputAttributes['inputmode'];
+  inputmode?: HTMLInputAttributes["inputmode"];
 }
 
 // device-mockups

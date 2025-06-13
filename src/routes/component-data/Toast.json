@@ -2,7 +2,7 @@
   "name": "Toast",
   "type": {
     "name": "ToastProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1797"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1799"
   },
   "props": [
     ["children", ""],
@@ -16,6 +16,7 @@
     ["align", "true"],
     ["params", ""],
     ["transition", "fly"],
-    ["class: className", ""]
+    ["class: className", ""],
+    ["onclose", ""]
   ]
 }

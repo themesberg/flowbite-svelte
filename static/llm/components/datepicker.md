@@ -22,7 +22,7 @@ Use the Datepicker for single date selection. The selected date is bound to the 
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker bind:value={selectedDate} color="green" />
+  <Datepicker bind:value={selectedDate} />
   <P class="mt-4">Selected date: {selectedDate ? selectedDate.toLocaleDateString() : "None"}</P>
 </div>
 ```
@@ -67,9 +67,12 @@ Use the `inline` prop to display the calendar without a popup.
 </div>
 ```
 
-## Custom Color
+## Color and classes
 
-Customize the primary color of the Datepicker using the `color` prop.
+Select one of the following colors for the `color` prop:
+`primary`(default), `blue`, `red`, `green`, `yellow`, `purple`, `dark`, `light`, `alternative`, `secondary`, `gray`, `orange`, `amber`, `lime`, `emerald`, `teal`, `cyan`, `sky`, `indigo`, `violet`, `fuchsia`, `pink`, `rose`.
+
+The `classes` prop has the following `class` for disposal: `base`, `input`, `titleVariant`, `polite`, `button`,`actionButtons`, `columnHeader`, `grid`, `nav`, `dayButton`.
 
 ```svelte
 <script lang="ts">
@@ -77,7 +80,7 @@ Customize the primary color of the Datepicker using the `color` prop.
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker color="red" />
+  <Datepicker color="blue" classes={{ polite: "hover:text-blue-700!", dayButton: "hover:text-blue-400", titleVariant: "text-blue-800" }} title="Select your preferred date" />
 </div>
 ```
 
@@ -218,7 +221,7 @@ Listen for date selection events using the `onselect` event.
 
 #### Types
 
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L483)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L484)
 
 #### Props
 
@@ -243,6 +246,8 @@ Listen for date selection events using the `onselect` event.
 - onclear
 - onapply
 - btnClass
+- inputmode: 'none'
+- classes
 - class: className
 
 
