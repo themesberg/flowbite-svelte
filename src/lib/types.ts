@@ -583,6 +583,7 @@ export interface DrawerProps extends DrawerVariants, HTMLAttributes<HTMLDivEleme
   backdropClass?: ClassValue;
   transitionParams?: ParamsType;
   transitionType?: TransitionFunc;
+  bodyScrolling?: boolean;
 }
 
 export interface DrawerheadProps extends HTMLButtonAttributes {

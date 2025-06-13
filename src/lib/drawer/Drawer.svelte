@@ -4,7 +4,7 @@
   import { sineIn } from "svelte/easing";
   import { drawer } from ".";
 
-  let { children, hidden = $bindable(), closeDrawer = () => (hidden = true), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, transitionParams, transitionType = fly, ...restProps }: DrawerProps = $props();
+  let { children, hidden = $bindable(), closeDrawer = () => (hidden = true), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, transitionParams, transitionType = fly, bodyScrolling = false, ...restProps }: DrawerProps = $props();
 
   const { base, backdrop_: backdropCls } = $derived(
     drawer({
@@ -27,7 +27,7 @@
 <svelte:window bind:innerWidth bind:innerHeight />
 
 {#if !hidden}
-  <div role="presentation" class={cn(backdropCls(), backdropClass)} onclick={activateClickOutside ? closeDrawer : undefined}></div>
+  <div role="presentation" class={cn(backdropCls(), backdropClass)} onclick={activateClickOutside ? closeDrawer : undefined} style={bodyScrolling ? "pointer-events: none;" : ""}></div>
   <div use:trapFocus={{ onEscape: closeDrawer }} {...restProps} class={cn(base(), className)} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
     {@render children?.()}
   </div>
