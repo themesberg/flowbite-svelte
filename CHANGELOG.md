@@ -5,7 +5,7 @@
 ### Patch Changes
 
 - fix: add backward compatibility for Input
-  feat: Input add onfocus, oninput, onblur, onkeydown
+- feat: Input add onfocus, oninput, onblur, onkeydown
 
 ## 1.6.7
 
@@ -24,26 +24,26 @@
 ### Patch Changes
 
 - fix: TimePicker change from InputAddon to div
-  fix: #1611, Datepicker add inputmode prop
-  fix: #1641
-  feat: Toast add conclose event handler
-  fix: #1639 docs: change class to labelClass
-  fix: #1638 Datepicker change from button to Button
-  feat: add classes
+- fix: #1611, Datepicker add inputmode prop
+- fix: #1641
+- feat: Toast add conclose event handler
+- fix: #1639 docs: change class to labelClass
+- fix: #1638 Datepicker change from button to Button
+- feat: add classes
 
 ## 1.6.4
 
 ### Patch Changes
 
 - fix: #1636
-  fix: change from InputAddon to div
+- fix: change from InputAddon to div
 
 ## 1.6.3
 
 ### Patch Changes
 
 - fix: #1575
-  feat: add selection of month and year for Datepicker
+- feat: add selection of month and year for Datepicker
 
 ## 1.6.2
 
@@ -121,10 +121,10 @@
 
 ### Patch Changes
 
-- - 393469a00 fix: #1604, fix: add z-20 and comboClass to FlatingLabelInput and Input components
-  - 51f5a54bc docs: add external link svg on the sidemenu items
-  - 040f0b079 docs: sidebar order
-  - 8f5c1e6f7 fix: add border to ButtonToggle
+- 393469a00 fix: #1604, fix: add z-20 and comboClass to FlatingLabelInput and Input components
+- 51f5a54bc docs: add external link svg on the sidemenu items
+- 040f0b079 docs: sidebar order
+- 8f5c1e6f7 fix: add border to ButtonToggle
 
 ## 1.4.2
 
@@ -143,7 +143,7 @@
 ### Minor Changes
 
 - feat: ButtonToggle
-  fix: #123
+- fix: #123
 
 ## 1.3.1
 
@@ -156,19 +156,21 @@
 ### Minor Changes
 
 - feat: PaginationNav
-  fix: #882, #876, #579
+- fix: #882
+- fix: #876
+- fix: #579
 
 ## 1.2.7
 
 ### Patch Changes
 
-- - 87d1d793b docs: ai-integration update
-  - 2a45e148b docs: ai-integration update
-  - 7b9bde79b fix: update svelte-doc-llm
-  - 0be08aec5 docs: ai-integration page
-  - 8f272b1ee fix: #1583
-  - 3e68ae155 fix: #1599
-  - 928edbcc7 fix: stepindicator
+- 87d1d793b docs: ai-integration update
+- 2a45e148b docs: ai-integration update
+- 7b9bde79b fix: update svelte-doc-llm
+- 0be08aec5 docs: ai-integration page
+- 8f272b1ee fix: #1583
+- 3e68ae155 fix: #1599
+- 928edbcc7 fix: stepindicator
 
 ## 1.2.6
 
