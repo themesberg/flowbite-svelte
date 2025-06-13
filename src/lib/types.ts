@@ -800,6 +800,13 @@ export interface InputAddonProps extends HTMLAttributes<HTMLDivElement> {
   size?: "sm" | "md" | "lg";
 }
 
+// phoneInput
+export interface PhoneInputProps<T extends InputValue = number> extends Omit<HTMLInputAttributes, "size" | "children" | "value"> {
+  phoneType?: "default" | "floating" | "countryCode" | "copy" | "advanced";
+  children?: Snippet;
+  floatingLabel?: string;
+}
+
 // label
 export interface LabelProps extends HTMLLabelAttributes {
   children: Snippet;

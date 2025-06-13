@@ -54,6 +54,7 @@ export * from "./forms/helper";
 export * from "./forms/input-field";
 export * from "./forms/input-addon";
 export * from "./forms/label";
+export * from "./forms/phoneinput";
 export * from "./forms/select";
 export * from "./forms/radio";
 export * from "./forms/range";
