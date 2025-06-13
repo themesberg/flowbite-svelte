@@ -16,6 +16,7 @@
     ["placement", "\"left\""],
     ["class: className", ""],
     ["transitionParams", ""],
-    ["transitionType", "fly"]
+    ["transitionType", "fly"],
+    ["bodyScrolling", "false"]
   ]
 }

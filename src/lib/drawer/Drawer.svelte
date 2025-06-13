@@ -51,5 +51,6 @@
 @prop class: className
 @prop transitionParams
 @prop transitionType = fly
+@prop bodyScrolling = false
 @prop ...restProps
 -->

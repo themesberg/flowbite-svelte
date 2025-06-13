@@ -310,7 +310,7 @@
 @prop inputmode = "none"
 @prop classes
 @prop monthColor = "alternative"
-@prop monthBtnSelected = 'bg-primary-500 text-white'
-@prop monthBtn = 'text-gray-700 dark:text-gray-300'
+@prop monthBtnSelected = "bg-primary-500 text-white"
+@prop monthBtn = "text-gray-700 dark:text-gray-300"
 @prop class: className
 -->

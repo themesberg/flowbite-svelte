@@ -249,8 +249,8 @@ Listen for date selection events using the `onselect` event.
 - inputmode: "none"
 - classes
 - monthColor: "alternative"
-- monthBtnSelected: 'bg-primary-500 text-white'
-- monthBtn: 'text-gray-700 dark:text-gray-300'
+- monthBtnSelected: "bg-primary-500 text-white"
+- monthBtn: "text-gray-700 dark:text-gray-300"
 - class: className
 
 

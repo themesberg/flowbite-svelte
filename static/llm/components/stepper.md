@@ -217,7 +217,7 @@ Use this example to show the number of steps inside a timeline component using i
 
 #### Types
 
-[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1575)
+[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1576)
 
 #### Props
 
@@ -229,7 +229,7 @@ Use this example to show the number of steps inside a timeline component using i
 
 #### Types
 
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1544)
+[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1545)
 
 #### Props
 
@@ -242,7 +242,7 @@ Use this example to show the number of steps inside a timeline component using i
 
 #### Types
 
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1529)
+[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1530)
 
 #### Props
 
@@ -254,7 +254,7 @@ Use this example to show the number of steps inside a timeline component using i
 
 #### Types
 
-[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1517)
+[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1518)
 
 #### Props
 
@@ -266,7 +266,7 @@ Use this example to show the number of steps inside a timeline component using i
 
 #### Types
 
-[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1589)
+[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1590)
 
 #### Props
 
@@ -279,7 +279,7 @@ Use this example to show the number of steps inside a timeline component using i
 
 #### Types
 
-[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1559)
+[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1560)
 
 #### Props
 

@@ -554,6 +554,41 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 </Drawer>
 ```
 
+## Body scrolling
+
+By default, body scrolling is disabled when the drawer is visible, however, you can choose to enable it using the `bodyScrolling={true|false}` prop.
+
+**Limitation:** When bodyScrolling={true}, clicking the backdrop to close the drawer is disabled. Use the Escape key or provide a close button inside the drawer content instead.
+
+```svelte
+<script>
+  import { Drawer, Button, CloseButton } from "flowbite-svelte";
+  import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
+  let drawerHidden = $state(true);
+</script>
+
+<div class="text-center">
+  <Button onclick={() => (drawerHidden = false)}>Show drawer</Button>
+</div>
+
+<Drawer bind:hidden={drawerHidden} bodyScrolling={true}>
+  <div class="flex items-center justify-between">
+    <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
+      <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
+    </h5>
+    <CloseButton onclick={() => (drawerHidden = true)} class="mb-4 dark:text-white" />
+  </div>
+  <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
+    Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
+    for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
+  </p>
+  <div class="grid grid-cols-2 gap-4">
+    <Button color="light" href="/">Learn more</Button>
+    <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
+  </div>
+</Drawer>
+```
+
 ## Component data
 
 ### Drawer
@@ -576,12 +611,13 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 - class: className
 - transitionParams
 - transitionType: fly
+- bodyScrolling: false
 
 ### Drawerhead
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L588)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L589)
 
 #### Props
 

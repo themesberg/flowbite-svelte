@@ -423,7 +423,7 @@ Rarely you would need a non-modal dialog. You can get it by setting `modal` prop
 
 #### Types
 
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1041)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1042)
 
 #### Props
 

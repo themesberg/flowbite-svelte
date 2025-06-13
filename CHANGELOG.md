@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.6.7
+
+### Patch Changes
+
+- feat: add bodyScrolling prop to Drawer
+
 ## 1.6.6
 
 ### Patch Changes
