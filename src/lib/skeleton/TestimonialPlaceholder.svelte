@@ -25,7 +25,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1424)
+[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1432)
 ## Props
 @prop class: className
 @prop ...restProps

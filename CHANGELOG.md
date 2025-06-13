@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.6.8
+
+### Patch Changes
+
+- fix: add backward compatibility for Input
+  feat: Input add onfocus, oninput, onblur, onkeydown
+
 ## 1.6.7
 
 ### Patch Changes

@@ -113,7 +113,7 @@ text with one click.
 
 ## Event Handlers
 
-Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`. 
+Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
 
 **Migration**: `OnInput`, `onFocus`, `onBlur`, and `onKeydown` will be **deprecated** from version v1.7.0.
 

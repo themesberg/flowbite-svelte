@@ -38,7 +38,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1112)
+[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1120)
 ## Props
 @prop children
 @prop end

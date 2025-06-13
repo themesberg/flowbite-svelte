@@ -97,7 +97,11 @@ text with one click.
 />
 ```
 
-## Custom Event Handlers
+## Event Handlers
+
+Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
+
+**Migration**: `OnInput`, `onFocus`, `onBlur`, and `onKeydown` will be **deprecated** from version v1.7.0.
 
 ```svelte
 <script lang="ts">
@@ -108,10 +112,10 @@ text with one click.
 <P class="my-4">{value}</P>
 <Input
   bind:value
-  onInput={(e) => console.log("Custom input:", e)}
-  onFocus={(e) => console.log("Input focused")}
-  onBlur={(e) => console.log("Input blurred")}
-  onKeydown={(e) => {
+  oninput={(e) => console.log("Custom input:", e)}
+  onfocus={(e) => console.log("Input focused")}
+  onblur={(e) => console.log("Input blurred")}
+  onkeydown={(e) => {
     if (e.key === "Tab") {
       console.log("Tab pressed");
     }

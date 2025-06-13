@@ -30,6 +30,10 @@
     ["onInput", ""],
     ["onFocus", ""],
     ["onBlur", ""],
-    ["onKeydown", ""]
+    ["onKeydown", ""],
+    ["oninput", ""],
+    ["onfocus", ""],
+    ["onblur", ""],
+    ["onkeydown", ""]
   ]
 }
