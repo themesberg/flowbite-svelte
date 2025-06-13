@@ -504,6 +504,9 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   onapply?: (x: DateOrRange) => void;
   btnClass?: ClassValue;
   inputmode?: HTMLInputAttributes["inputmode"];
+  monthColor?: ButtonProps["color"];
+  monthBtnSelected?: ClassValue;
+  monthBtn?: ClassValue;
 }
 
 // device-mockups

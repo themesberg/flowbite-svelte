@@ -1,11 +1,12 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { fade } from "svelte/transition";
   import { Button, ToolbarButton, type DatepickerProps, cn } from "$lib";
   import { datepicker } from "./theme";
 
-  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, inputmode = "none", classes, class: className }: DatepickerProps = $props();
+  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, inputmode = "none", classes, monthColor="alternative", monthBtnSelected ='bg-primary-500 text-white', monthBtn='text-gray-700 dark:text-gray-300', class: className }: DatepickerProps = $props();
 
   const dateFormatDefault = { year: "numeric", month: "long", day: "numeric" };
   // const dateFormatOptions = $derived(dateFormat ?? dateFormatDefault);
@@ -193,7 +194,7 @@
     if (!inline) isOpen = false;
   }
 
-  let { base, input, button, titleVariant, actionButtons, columnHeader, polite, grid, nav, dayButton } = datepicker();
+  let { base, input, button, titleVariant, actionButtons, columnHeader, polite, grid, nav, dayButton, monthButton } = datepicker();
 </script>
 
 {#snippet navButton(forward: boolean)}
@@ -241,7 +242,7 @@
         </div>
         <div class="grid grid-cols-4 gap-2 p-4">
           {#each monthNames as month, index}
-            <Button type="button" class="rounded-lg px-3 py-2 text-sm hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:hover:bg-gray-700 {currentMonth.getMonth() === index ? 'bg-blue-500 text-white' : 'text-gray-700 dark:text-gray-300'}" onclick={(event: MouseEvent) => selectMonth(index, event)}>
+            <Button type="button" color={monthColor} class={twMerge(monthButton(), currentMonth.getMonth() === index ? clsx(monthBtnSelected) : clsx(monthBtn), clsx(classes?.monthButton))} onclick={(event: MouseEvent) => selectMonth(index, event)}>
               {month}
             </Button>
           {/each}

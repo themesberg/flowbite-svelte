@@ -18,7 +18,8 @@ export const datepicker = tv({
     columnHeader: "text-center text-sm font-medium text-gray-500 dark:text-gray-400",
     grid: "grid grid-cols-7 gap-1 w-64",
     nav: "mb-4 flex items-center justify-between",
-    dayButton: "h-8 w-full block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center font-semibold text-sm day p-0"
+    dayButton: "h-8 w-full block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center font-semibold text-sm day p-0",
+    monthButton: "rounded-lg px-3 py-2 text-sm hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:hover:bg-gray-700"
   },
   variants: {
     color: {
