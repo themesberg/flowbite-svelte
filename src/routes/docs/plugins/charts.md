@@ -91,7 +91,7 @@ Use this example to show a basic area chart.
   };
 </script>
 
-<Card>
+<Card class="p-4 md:p-6">
   <div class="flex justify-between">
     <div>
       <h5 class="pb-2 text-3xl leading-none font-bold text-gray-900 dark:text-white">32.4k</h5>
@@ -106,7 +106,7 @@ Use this example to show a basic area chart.
   <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
     <div class="flex items-center justify-between pt-5">
       <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
-      <Dropdown class="w-40" offset="-6">
+      <Dropdown simple class="w-40" offset="-6">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
         <DropdownItem>Last 7 days</DropdownItem>
@@ -203,7 +203,7 @@ To create a double line chart check the example below.
   };
 </script>
 
-<Card>
+<Card class="p-4 md:p-6">
   <div class="mb-5 flex justify-between">
     <div class="grid grid-cols-2 gap-4">
       <div>
@@ -244,7 +244,7 @@ To create a double line chart check the example below.
     </div>
     <div>
       <Button color="light" class="px-3 py-2">Last week<ChevronDownOutline class="ms-1.5 h-2.5 w-2.5" /></Button>
-      <Dropdown class="w-40">
+      <Dropdown simple class="w-40">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
         <DropdownItem>Last 7 days</DropdownItem>
@@ -380,7 +380,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
   };
 </script>
 
-<Card>
+<Card class="p-4 md:p-6">
   <div class="mb-4 flex justify-between border-b border-gray-200 pb-4 dark:border-gray-700">
     <div class="flex items-center">
       <div class="me-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700">
@@ -412,7 +412,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
   <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
     <div class="flex items-center justify-between pt-5">
       <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
-      <Dropdown class="w-40" offset="-6">
+      <Dropdown simple class="w-40" offset="-6">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
         <DropdownItem>Last 7 days</DropdownItem>
@@ -529,7 +529,7 @@ Create a horizontal bar chart with as many data series as you like by setting th
   };
 </script>
 
-<Card>
+<Card class="p-4 md:p-6">
   <div class="flex justify-between border-b border-gray-200 pb-3 dark:border-gray-700">
     <dl>
       <dt class="pb-1 text-base font-normal text-gray-500 dark:text-gray-400">Profit</dt>
@@ -558,7 +558,7 @@ Create a horizontal bar chart with as many data series as you like by setting th
   <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
     <div class="flex items-center justify-between pt-5">
       <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
-      <Dropdown class="w-40" offset="-6">
+      <Dropdown simple class="w-40" offset="-6">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
         <DropdownItem>Last 7 days</DropdownItem>
@@ -640,7 +640,7 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
   };
 </script>
 
-<Card>
+<Card class="p-4 md:p-6">
   <div class="flex w-full items-start justify-between">
     <div class="flex-col items-center">
       <div class="mb-1 flex items-center">
@@ -659,7 +659,7 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
     </div>
     <div class="flex items-center justify-end">
       <DotsHorizontalOutline id="dots-menu" class="dots-menu dark:text-white" />
-      <Dropdown triggeredBy="#dots-menu" class="w-44" offset="-6">
+      <Dropdown simple triggeredBy="#dots-menu" class="w-44" offset="-6">
         <DropdownItem><PenSolid class="me-2 inline h-3 w-3" /> Edit widget</DropdownItem>
         <DropdownItem><DownloadSolid class="me-2 inline h-3 w-3" />Dropdown data</DropdownItem>
         <DropdownItem><ShareNodesSolid class="me-2 inline h-3 w-3" />Add to repository</DropdownItem>
@@ -673,7 +673,7 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
   <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
     <div class="flex items-center justify-between pt-5">
       <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
-      <Dropdown class="w-40" offset="-6">
+      <Dropdown simple class="w-40" offset="-6">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
         <DropdownItem>Last 7 days</DropdownItem>
@@ -781,7 +781,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
   };
 </script>
 
-<Card>
+<Card class="p-4 md:p-6">
   <div class="flex w-full items-start justify-between">
     <div class="flex-col items-center">
       <div class="mb-1 flex items-center">
@@ -809,7 +809,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
   <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
     <div class="flex items-center justify-between pt-5">
       <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
-      <Dropdown class="w-40" offset="-6">
+      <Dropdown simple class="w-40" offset="-6">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
         <DropdownItem>Last 7 days</DropdownItem>
@@ -894,7 +894,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
   };
 </script>
 
-<Card>
+<Card class="p-4 md:p-6">
   <div class="flex w-full items-start justify-between">
     <div class="flex-col items-center">
       <div class="mb-1 flex items-center">
@@ -961,7 +961,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
   <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
     <div class="flex items-center justify-between pt-5">
       <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
-      <Dropdown class="w-40" offset="-6">
+      <Dropdown simple class="w-40" offset="-6">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
         <DropdownItem>Last 7 days</DropdownItem>
