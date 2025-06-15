@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.7.1
+
+### Patch Changes
+
+- fix: #1642
+  feat: both the checkbox and its children are inside the label, making the text clickable
+
 ## 1.7.0
 
 ### Minor Changes

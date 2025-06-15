@@ -287,6 +287,18 @@ Use this example to verify a phone number via SMS or phone call using a dropdown
 </form>
 ```
 
+## Classes
+
+The PhoneInput component provides customizable styling through six distinct class slots: `defaultDiv` for the icon container positioning, `phonesvg` for the phone icon styling, `defaultInput` for the standard input field appearance, `floatingSpan` for floating label positioning, `floatingInput` for the floating variant input styling, and `labelFloating` for animated label transitions. Each class can be overridden using the classes prop to customize the component's appearance.
+
+```svelte
+<script>
+  import { PhoneInput } from "flowbite-svelte";
+</script>
+
+<PhoneInput aria-describedby="helper-text-explanation" id="phone-input" placeholder="123-456-7890" required classes={{ defaultInput: "border-blue-500", defaultDiv: "ps-4" }} />
+```
+
 ## See also
 
 - [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)

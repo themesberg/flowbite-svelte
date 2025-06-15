@@ -225,6 +225,7 @@ Use this example to show the number of steps inside a timeline component using i
 ```
 
 ## Stepper with form
+
 Use this example to show the stepper component next to a form layout and change the content based on which currently step your are completing.
 
 ```svelte example
