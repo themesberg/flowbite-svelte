@@ -101,7 +101,7 @@ text with one click.
 
 Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
 
-**Migration**: `OnInput`, `onFocus`, `onBlur`, and `onKeydown` will be **deprecated** from version v1.7.0.
+**Migration**: `OnInput`, `onFocus`, `onBlur`, and `onKeydown` will be **deprecated** from version v1.8.0.
 
 ```svelte
 <script lang="ts">

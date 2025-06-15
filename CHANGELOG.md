@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.7.0
+
+### Minor Changes
+
+- feat: PhoneInput
+
 ## 1.6.8
 
 ### Patch Changes
