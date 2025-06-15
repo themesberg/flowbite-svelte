@@ -95,6 +95,13 @@ color utility to any element that depends on these defaults.
   input[type="search"]::-webkit-search-cancel-button {
     display: none;
   }
+
+  /* remove the number input arrows for Chrome, Safari, Edge, Opera */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
 }
 /* 
 @layer components {
