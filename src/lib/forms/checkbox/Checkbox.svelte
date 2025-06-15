@@ -21,17 +21,19 @@
 {#if choices.length > 0}
   {#each choices as choice, i}
     <div class={cn(divStyle(), divClass)}>
-      <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} class={cn(base(), className)} />
       <Label show={true} {...labelProps}>
+        <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} class={cn(base(), className)} />
         {renderLabel(choice)}
       </Label>
     </div>
   {/each}
 {:else}
   <div class={cn(divStyle(), divClass)}>
-    <input type="checkbox" {value} bind:checked {indeterminate} {disabled} {...restProps} class={cn(base(), className)} />
-    {#if children}
-      {@render children({ value, checked, disabled })}
-    {/if}
+    <Label show={true} {...labelProps}>
+      <input type="checkbox" {value} bind:checked {indeterminate} {disabled} {...restProps} class={cn(base(), className)} />
+      {#if children}
+        {@render children({ value, checked, disabled })}
+      {/if}
+    </Label>
   </div>
 {/if}
