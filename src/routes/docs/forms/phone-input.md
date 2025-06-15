@@ -251,7 +251,7 @@ Use this example to authenticate users with a login form using a phone number in
 
 Use this example to verify a phone number via SMS or phone call using a dropdown component.
 
-```svelte example
+```svelte example class="h-64"
 <script>
   import { PhoneInput, Label, Dropdown, DropdownItem, Button } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
