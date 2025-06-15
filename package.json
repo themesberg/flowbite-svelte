@@ -392,6 +392,10 @@
       "types": "./dist/forms/label/Label.svelte.d.ts",
       "svelte": "./dist/forms/label/Label.svelte"
     },
+    "./PhoneInput.svelte": {
+      "types": "./dist/forms/phoneinput/PhoneInput.svelte.d.ts",
+      "svelte": "./dist/forms/phoneinput/PhoneInput.svelte"
+    },
     "./Radio.svelte": {
       "types": "./dist/forms/radio/Radio.svelte.d.ts",
       "svelte": "./dist/forms/radio/Radio.svelte"

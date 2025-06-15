@@ -284,7 +284,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L484)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L486)
 ## Props
 @prop value = $bindable()
 @prop defaultDate = null

@@ -221,7 +221,7 @@ Listen for date selection events using the `onselect` event.
 
 #### Types
 
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L484)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L486)
 
 #### Props
 

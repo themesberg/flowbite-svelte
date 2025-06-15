@@ -9,18 +9,6 @@ import { tv, type VariantProps } from "tailwind-variants";
 
 // component variants
 import type { DatepickerVariants } from "$lib/datepicker/theme";
-import type { CheckboxVariants } from "$lib/forms/checkbox/theme";
-import type { FileuploadViariants } from "$lib/forms/fileupload/theme";
-import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label/theme";
-import type { HelperVariants } from "$lib/forms/helper/theme";
-import type { InputVariants } from "$lib/forms/input-field/theme";
-import type { LabelVariants } from "$lib/forms/label/theme";
-import type { RadioVariants } from "$lib/forms/radio/theme";
-
-import type { RangeVariants } from "$lib/forms/range/theme";
-import type { SearchVariants } from "$lib/forms/search/theme";
-import type { MultiSelectVariants, SelectVariants } from "$lib/forms/select/theme";
-import type { ToggleVariants } from "$lib/forms/toggle/theme";
 import type { IndicatorVariants } from "$lib/indicator/theme";
 import type { ListgroupItemVariants, ListgroupVariants } from "$lib/list-group/theme";
 import type { ModalVariants } from "$lib/modal/theme";
@@ -33,7 +21,6 @@ import type { TableVariants } from "$lib/table/theme";
 import type { TabsVaraints } from "$lib/tabs/theme";
 import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
 import type { ProgressbarVariants, ProgressradialVariants } from "$lib/progress/theme";
-
 import { baseThemes } from "$lib/theme";
 import { timeline } from "$lib/timeline/theme";
 import type { ToastVaraints } from "$lib/toast/theme";
@@ -49,8 +36,23 @@ import type Slide from "$lib/carousel/Slide.svelte";
 import type { CarouselVariants } from "$lib/carousel/theme";
 import type { DrawerVariants } from "$lib/drawer/theme";
 import type { closeButtonVariants } from "$lib/utils/theme";
-// typography component variants
+
+// forms component variants
+import type { CheckboxVariants } from "$lib/forms/checkbox/theme";
+import type { FileuploadViariants } from "$lib/forms/fileupload/theme";
+import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label/theme";
+import type { HelperVariants } from "$lib/forms/helper/theme";
+import type { InputVariants } from "$lib/forms/input-field/theme";
+import type { LabelVariants } from "$lib/forms/label/theme";
+import type { RadioVariants } from "$lib/forms/radio/theme";
+
+import type { RangeVariants } from "$lib/forms/range/theme";
+import type { SearchVariants } from "$lib/forms/search/theme";
+import type { MultiSelectVariants, SelectVariants } from "$lib/forms/select/theme";
+import type { ToggleVariants } from "$lib/forms/toggle/theme";
+import type { PhoneInputVariants } from "$lib/forms/phoneinput/theme";
 import type { ButtonToggleVariants } from "$lib/forms/button-toggle/theme";
+// typography component variants
 import type { AnchorVariants } from "$lib/typography/anchor/theme";
 import type { BlockquoteVariants } from "$lib/typography/blockquote/theme";
 import type { DescriptionListVariants } from "$lib/typography/descriptionlist/theme";
@@ -801,10 +803,12 @@ export interface InputAddonProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 // phoneInput
-export interface PhoneInputProps<T extends InputValue = number> extends Omit<HTMLInputAttributes, "size" | "children" | "value"> {
+export interface PhoneInputProps<T extends InputValue = number> extends PhoneInputVariants, Omit<HTMLInputAttributes, "size" | "children" | "value"> {
   phoneType?: "default" | "floating" | "countryCode" | "copy" | "advanced";
   children?: Snippet;
   floatingLabel?: string;
+  labelFor?: string;
+  phoneIcon?: boolean;
 }
 
 // label

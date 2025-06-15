@@ -12,6 +12,7 @@ thumnailSize: w-36
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = 'clipboard'
+
 </script>
 
 The copy to clipboard component allows you to copy text, lines of code, contact details or any other data to the clipboard with a single click on a trigger element such as a button. This component can be used to copy text from an input field, textarea, code block or even address fields in a form element.
@@ -55,7 +56,7 @@ This example can be used to copy the content of an input field by clicking on a 
 
 Notice the different style of monitoring the `success` state by using the parameter in the `children` snippet.
 
-```svelte example class="flex justify-center items-center gap-2 h-56" hideScript
+```svelte example class="flex justify-center items-center gap-2 h-56"
 <script>
   import { Clipboard, Input, Tooltip } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
@@ -81,7 +82,7 @@ Notice the different style of monitoring the `success` state by using the parame
 
 Use this example to show a copy button inside the input field with a text label and icon that updates to a success state when the text has been copied.
 
-```svelte example class="flex justify-center items-center gap-2 h-56" hideScript
+```svelte example class="flex justify-center items-center gap-2 h-56"
 <script>
   import { Clipboard, Input, Tooltip, ButtonGroup } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
@@ -110,7 +111,7 @@ Use this example to show a copy button inside the input field with a text label 
 
 This example can be used to show a copy to clipboard button inside an input group which has a label positioned inside the input field.
 
-```svelte example class="flex justify-center items-center gap-2 h-56" hideScript
+```svelte example class="flex justify-center items-center gap-2 h-56"
 <script>
   import { Clipboard, Input, InputAddon, Tooltip, ButtonGroup } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
@@ -134,7 +135,7 @@ This example can be used to show a copy to clipboard button inside an input grou
 
 Use this example to copy a shortened URL to the clipboard by clicking on a button with an icon positioned inside the input field and also show a tooltip with a message when the text has been copied.
 
-```svelte example class="flex flex-col justify-center items-center gap-2 h-56" hideScript
+```svelte example class="flex flex-col justify-center items-center gap-2 h-56"
 <script>
   import { Clipboard, Input, Label, Helper, Button, Tooltip, ButtonGroup } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
@@ -303,3 +304,15 @@ Add a `Clipboard` to your `Textarea` using the `addon` snippet. The button appea
   {/snippet}
 </Textarea>
 ```
+
+## Component data
+
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+<CompoAttributesViewer {dirName}/>
+
+## References
+
+- [Flowbite Clipboard](https://flowbite.com/docs/components/clipboard/)
+
+<GitHubCompoLinks />

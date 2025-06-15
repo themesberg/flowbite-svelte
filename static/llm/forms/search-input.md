@@ -62,8 +62,9 @@ Use the simplest form of a search input component with an icon and a search butt
 </script>
 
 <form id="example-form">
-  <Search bind:value={elementTxt} bind:elementRef={searchRef} class="my-4" />
+  <Search bind:value={elementTxt} bind:elementRef={searchRef} />
   <Button
+    class="mt-2"
     onclick={() => {
       searchRef?.setRangeText("ALREADY", 14, 17, "select");
       searchRef?.select();
@@ -123,7 +124,7 @@ Use this search component with a dropdown to let your users select a category in
       {/each}
     </Dropdown>
   </div>
-  <Search size="lg" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
+  <Search size="lg" inputClass="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
   <Button class="rounded-s-none p-2!">
     <SearchOutline class="h-6 w-6" />
   </Button>
@@ -188,7 +189,7 @@ Use this example where you can select a country in which you want to search for 
       {/each}
     </Dropdown>
   </div>
-  <Search size="lg" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
+  <Search size="lg" inputClass="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
   <Button class="rounded-s-none p-2!">
     <SearchOutline class="h-6 w-6" />
   </Button>
@@ -209,7 +210,7 @@ Get started with this example if you would like to enable voice search for your 
 </script>
 
 <form class="flex gap-2">
-  <Search hideClear size="lg" class="flex items-center gap-2" placeholder="Search Mockups, Logos, Design Templates...">
+  <Search hideClear size="lg" inputClass="flex items-center gap-2" placeholder="Search Mockups, Logos, Design Templates...">
     <button type="button" onclick={handleVoiceBtn} class="outline-hidden">
       <MicrophoneSolid class="me-2 h-5 w-5" />
     </button>

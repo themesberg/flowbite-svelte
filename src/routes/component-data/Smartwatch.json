@@ -2,7 +2,7 @@
   "name": "Smartwatch",
   "type": {
     "name": "SmartwatchProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L557"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L559"
   },
   "props": [
     ["children", ""],

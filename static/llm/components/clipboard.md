@@ -290,3 +290,27 @@ Add a `Clipboard` to your `Textarea` using the `addon` snippet. The button appea
   {/snippet}
 </Textarea>
 ```
+
+## Component data
+
+### Clipboard
+
+#### Types
+
+[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L467)
+
+#### Props
+
+- children
+- embedded: false
+- value: $bindable("")
+- success: $bindable(false)
+- onclick
+- class: className: ""
+
+
+## References
+
+- [Flowbite Clipboard](https://flowbite.com/docs/components/clipboard/)
+
+
