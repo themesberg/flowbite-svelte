@@ -33,6 +33,12 @@ importers:
       '@changesets/cli':
         specifier: 2.29.2
         version: 2.29.2
+      '@codewithshin/flowbite-svelte-chart':
+        specifier: ^0.2.1
+        version: 0.2.1(rollup@4.43.0)(svelte@5.34.3)(tailwindcss@4.1.10)
+      '@codewithshin/flowbite-svelte-datatable':
+        specifier: ^0.2.1
+        version: 0.2.1(rollup@4.43.0)(svelte@5.34.3)(tailwindcss@4.1.10)
       '@docsearch/css':
         specifier: ^3.9.0
         version: 3.9.0
@@ -313,6 +319,18 @@ packages:
 
   '@changesets/write@0.4.0':
     resolution: {integrity: sha512-CdTLvIOPiCNuH71pyDu3rA+Q0n65cmAbXnwWH84rKGiFumFzkmHNT8KHTMEchcxN+Kl8I54xGUhJ7l3E7X396Q==}
+
+  '@codewithshin/flowbite-svelte-chart@0.2.1':
+    resolution: {integrity: sha512-gPD0RZ1S0924SiR7SOqIwVzeoIkQ32deisqcPkHthNCsxSuMZn9XUh4xg00i8ikFj5XEeJZ86w17cventDrjdw==}
+    peerDependencies:
+      svelte: ^5.0.0
+      tailwindcss: ^4.1.4
+
+  '@codewithshin/flowbite-svelte-datatable@0.2.1':
+    resolution: {integrity: sha512-KiqZA/rRgu8aAnIXndmKT1XO/xA1Kxj6uhr09cPQYzH9dlGn26tMoU1Ai5vQURpZBOXJgjYC3syRKP90iZ6MiQ==}
+    peerDependencies:
+      svelte: ^5.0.0
+      tailwindcss: ^4.1.4
 
   '@csstools/color-helpers@5.0.2':
     resolution: {integrity: sha512-JqWH1vsgdGcw2RR6VliXXdA0/59LttzlU8UlRT/iUUsEeWfYq8I+K0yhihEUTTHLRm1EXvpsCx3083EU15ecsA==}
@@ -1350,6 +1368,9 @@ packages:
   devalue@5.1.1:
     resolution: {integrity: sha512-maua5KUiapvEwiEAe+XnlZ3Rh0GD+qI1J/nb9vrJc3muPXvcF/8gXYTWF76+5DAqHyDUtOIImEuo0YKE9mshVw==}
 
+  diff-dom@5.2.0:
+    resolution: {integrity: sha512-+FEFvDJljxPBz9ddkxCpn7I/5SFFYYfvqcS63zE+Aw+3TgTyHAI1RGXEBGLfrkbVQTYCSpvc0nxNNMyNBA60tQ==}
+
   dir-glob@3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
     engines: {node: '>=8'}
@@ -1548,6 +1569,12 @@ packages:
     resolution: {integrity: sha512-X+xZXeLaYS/NaybPonw1RGIIzmrExmCOrva62NPCXN52xGmJWqcSnnbHO4+iZsDD4V6EsDRqwH8tVq6t6SLLQg==}
     peerDependencies:
       svelte: ^5.0.0
+
+  flowbite-svelte@1.7.1:
+    resolution: {integrity: sha512-LPmqL9Xaa2bTuj8EORwUWItsZc60vnz/N/p/nHNqttD9zz8XZsZvPoi16QDOCnB2tq1aVBuzHo2v3y2GhLdMoA==}
+    peerDependencies:
+      svelte: ^5.0.0
+      tailwindcss: ^4.1.4
 
   flowbite@2.5.2:
     resolution: {integrity: sha512-kwFD3n8/YW4EG8GlY3Od9IoKND97kitO+/ejISHSqpn3vw2i5K/+ZI8Jm2V+KC4fGdnfi0XZ+TzYqQb4Q1LshA==}
@@ -2346,6 +2373,9 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
+  simple-datatables@10.0.0:
+    resolution: {integrity: sha512-Pqzld1ixWz2/dbA3ZB/3m78elfolzbiC0+aBuugj+bF70Yk35J0p8qwrOpaAfSe/8II9WV+nKJ5CYDOeJVx5mw==}
+
   sirv@3.0.1:
     resolution: {integrity: sha512-FoqMu0NCGBLCcAkS1qA+XJIQTR6/JHfQXl+uGteNCQ76T91DMUjPa9xfmeqMY3z80nLSg9yQmNjK0Px6RWsH/A==}
     engines: {node: '>=18'}
@@ -3075,6 +3105,28 @@ snapshots:
       fs-extra: 7.0.1
       human-id: 4.1.1
       prettier: 2.8.8
+
+  '@codewithshin/flowbite-svelte-chart@0.2.1(rollup@4.43.0)(svelte@5.34.3)(tailwindcss@4.1.10)':
+    dependencies:
+      apexcharts: 4.7.0
+      clsx: 2.1.1
+      flowbite: 3.1.2(rollup@4.43.0)
+      flowbite-svelte: 1.7.1(rollup@4.43.0)(svelte@5.34.3)(tailwindcss@4.1.10)
+      svelte: 5.34.3
+      tailwind-merge: 3.3.1
+      tailwindcss: 4.1.10
+    transitivePeerDependencies:
+      - rollup
+
+  '@codewithshin/flowbite-svelte-datatable@0.2.1(rollup@4.43.0)(svelte@5.34.3)(tailwindcss@4.1.10)':
+    dependencies:
+      clsx: 2.1.1
+      flowbite: 3.1.2(rollup@4.43.0)
+      simple-datatables: 10.0.0
+      svelte: 5.34.3
+      tailwindcss: 4.1.10
+    transitivePeerDependencies:
+      - rollup
 
   '@csstools/color-helpers@5.0.2': {}
 
@@ -4025,6 +4077,8 @@ snapshots:
 
   devalue@5.1.1: {}
 
+  diff-dom@5.2.0: {}
+
   dir-glob@3.0.1:
     dependencies:
       path-type: 4.0.0
@@ -4267,6 +4321,20 @@ snapshots:
       clsx: 2.1.1
       svelte: 5.34.3
       tailwind-merge: 3.3.1
+
+  flowbite-svelte@1.7.1(rollup@4.43.0)(svelte@5.34.3)(tailwindcss@4.1.10):
+    dependencies:
+      '@floating-ui/dom': 1.7.1
+      '@floating-ui/utils': 0.2.9
+      apexcharts: 4.7.0
+      clsx: 2.1.1
+      flowbite: 3.1.2(rollup@4.43.0)
+      svelte: 5.34.3
+      tailwind-merge: 3.3.1
+      tailwind-variants: 1.0.0(tailwindcss@4.1.10)
+      tailwindcss: 4.1.10
+    transitivePeerDependencies:
+      - rollup
 
   flowbite@2.5.2(rollup@4.43.0):
     dependencies:
@@ -4949,6 +5017,11 @@ snapshots:
   siginfo@2.0.0: {}
 
   signal-exit@4.1.0: {}
+
+  simple-datatables@10.0.0:
+    dependencies:
+      dayjs: 1.11.13
+      diff-dom: 5.2.0
 
   sirv@3.0.1:
     dependencies:
