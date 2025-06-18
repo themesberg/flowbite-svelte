@@ -4,7 +4,7 @@ title: Svelte DataTables - Flowbite
 breadcrumb_title: Svelte DataTables
 component_title: DataTables
 dir: components
-description: Use the datatable component to search, sort, filter, export and paginate table data of rows and columns for your web application.
+description: Use the datatable component to search, sort, filter and paginate table data of rows and columns for your web application.
 ---
 
 <script lang="ts">
@@ -86,7 +86,7 @@ description: Use the datatable component to search, sort, filter, export and pag
 
 The datatable component examples from Flowbite are open-source under the MIT License and they are based on the [simple-datatables repository](https://github.com/fiduswriter/simple-datatables) from GitHub.
 
-This page provides multiple examples of datatable components where you can search, sort, filter, paginate and export table data up to thousands of entries.
+This page provides multiple examples of datatable components where you can search, sort, filter, and paginate table data up to thousands of entries.
 
 All examples are responsive, dark mode and RTL support included and by installing the Flowbite-Svelte-DataTable plugin the custom styles will automatically be applied to the datatable components using Tailwind CSS.
 
