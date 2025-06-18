@@ -322,7 +322,7 @@ All examples are responsive, dark mode and RTL support included and by installin
 pnpm i -D @flowbite-svelte-plugins/datatable simple-datatables
 ```
 
-Update `app.css`:
+### app.css
 
 ```css
 @source "../node_modules/simple-datatables/dist";
