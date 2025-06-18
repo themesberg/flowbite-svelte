@@ -4,6 +4,24 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@source "../node_modules/simple-datatables/dist";
+@source "../node_modules/@flowbite-svelte-plugins/datatable/dist";
+@source "../node_modules/@flowbite-svelte-plugins/chart/dist";
+
+.datatable-pagination .datatable-active a,
+.datatable-pagination .datatable-active a:focus,
+.datatable-pagination .datatable-active a:hover,
+.datatable-pagination .datatable-active button,
+.datatable-pagination .datatable-active button:focus,
+.datatable-pagination .datatable-active button:hover {
+	background-color: #ffe4de;
+	cursor: default;
+}
+
+.datatable-wrapper .datatable-table tbody tr.selected {
+	background-color: #fff1ee !important;
+}
+
 @theme {
   --z-index-100: 100;
 

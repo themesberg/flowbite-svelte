@@ -16,7 +16,7 @@
     };
   };
 
-  let { dirName = "", components }: { dirName: string; components: string } = $props();
+  let { dirName = "", components, plugin }: { dirName: string; components: string, plugin: string } = $props();
 
   let compoData: TCompoData[] = $state([]);
   // default is find fileName using dirName
@@ -33,12 +33,48 @@
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   let importPromises: Promise<any>[] = [];
 
+  let chartData = $state(null);
+  let dataTableData = $state(null);
+  let loading = $state(true);
+  let error: string | null = $state(null);
+
+  onMount(async () => {
+    try {
+      loading = true;
+      
+      const [chartResponse, tableResponse] = await Promise.all([
+        fetch('https://raw.githubusercontent.com/shinokada/flowbite-svelte-plugins/main/apps/flowbite-svelte-chart/src/routes/component-data/Chart.json'),
+        fetch('https://raw.githubusercontent.com/shinokada/flowbite-svelte-plugins/main/apps/flowbite-svelte-datatable/src/routes/component-data/Table.json')
+      ]);
+      
+      if (!chartResponse.ok || !tableResponse.ok) {
+        throw new Error('Failed to fetch one or more data sources');
+      }
+      
+      [chartData, dataTableData] = await Promise.all([
+        chartResponse.json(),
+        tableResponse.json()
+      ]);
+
+      error = null;
+      
+    } catch (err) {
+      error = err instanceof Error ? err.message : 'An unknown error occurred';
+    } finally {
+      loading = false;
+    }
+  });
+
   async function processComponents() {
     if (componentArray.length > 0) {
       importPromises = componentArray.map(async (component) => {
         const module = await import(`../component-data/${component}.json`);
         return { data: module };
       });
+    } else if (plugin === "chart" && chartData) {
+      importPromises = [Promise.resolve({ data: chartData })];
+    } else if (plugin === "dataTable" && dataTableData) {
+      importPromises = [Promise.resolve({ data: dataTableData })];
     } else {
       importPromises = fileNames.map(async (component) => {
         const module = await import(`../component-data/${component}.json`);

@@ -11,7 +11,7 @@ description: Use the chart and graph components from flowbite-svelte built with 
   import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import componentData1 from '../../component-data/Chart.json'
   import componentData2 from '../../component-data/Card.json'
-  const components = 'Chart, Card'
+  const components = 'Chart'
 
   import { Badge, P } from "$lib"
   import { InfoCircleOutline } from "flowbite-svelte-icons";
@@ -24,7 +24,7 @@ description: Use the chart and graph components from flowbite-svelte built with 
       <span class="sr-only">Info Circle</span>
     </span>
     <span>
-      Flowbite-Svelte Chart component will be deprecated in the next version. Please use @codewithshin/flowbite-svelte-chart.
+      Flowbite-Svelte Chart component will be deprecated in the next version. Please use @flowbite-svelte-plugins/chart.
     </span>
   </P>
 </Badge>
@@ -32,7 +32,12 @@ description: Use the chart and graph components from flowbite-svelte built with 
 ## Installation
 
 ```svelte example hideOutput
-pnpm i -D @codewithshin/flowbite-svelte-chart
+pnpm i -D @flowbite-svelte-plugins/chart
+```
+
+Update `app.css`:
+```svelte example hideOutput
+@source "../node_modules/@flowbite-svelte-plugins/chart/dist";
 ```
 
 ## Area chart
@@ -42,7 +47,7 @@ Use this example to show a basic area chart.
 ```svelte example class="flex justify-center"
 <script lang="ts">
 	import type { ApexOptions } from 'apexcharts';
-	import { Chart } from '@codewithshin/flowbite-svelte-chart';
+	import { Chart } from '@flowbite-svelte-plugins/chart';
 	import { Card, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
 	import { ChevronRightOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
 
@@ -169,7 +174,7 @@ To create a double line chart check the example below.
 ```svelte example class="flex justify-center"
 <script lang="ts">
 	import type { ApexOptions } from 'apexcharts';
-	import { Chart } from '@codewithshin/flowbite-svelte-chart';
+	import { Chart } from '@flowbite-svelte-plugins/chart';
 	import { Card, A, Button, Dropdown, DropdownItem, Popover } from 'flowbite-svelte';
 	import {
 		InfoCircleSolid,
@@ -359,7 +364,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
 ```svelte example class="flex justify-center"
 <script lang="ts">
 	import type { ApexOptions } from 'apexcharts';
-	import { Chart } from '@codewithshin/flowbite-svelte-chart';
+	import { Chart } from '@flowbite-svelte-plugins/chart';
 	import { Card, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
 	import {
 		UsersGroupOutline,
@@ -540,7 +545,7 @@ Create a horizontal bar chart with as many data series as you like by setting th
 ```svelte example class="flex justify-center"
 <script lang="ts">
 	import type { ApexOptions } from 'apexcharts';
-	import { Chart } from '@codewithshin/flowbite-svelte-chart';
+	import { Chart } from '@flowbite-svelte-plugins/chart';
 	import { Card, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
 	import { ArrowUpOutline, ChevronDownOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
 
@@ -695,7 +700,7 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
 ```svelte example class="flex justify-center"
 <script lang="ts">
 	import type { ApexOptions } from 'apexcharts';
-	import { Chart } from '@codewithshin/flowbite-svelte-chart';
+	import { Chart } from '@flowbite-svelte-plugins/chart';
 	import { Card, A, Button, Dropdown, DropdownItem, Popover } from 'flowbite-svelte';
 	import {
 		InfoCircleSolid,
@@ -843,7 +848,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
 ```svelte example class="flex justify-center"
 <script lang="ts">
 	import type { ApexOptions } from 'apexcharts';
-	import { Chart } from '@codewithshin/flowbite-svelte-chart';
+	import { Chart } from '@flowbite-svelte-plugins/chart';
 	import { Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from 'flowbite-svelte';
 	import {
 		InfoCircleSolid,
@@ -1011,7 +1016,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
 ```svelte example class="flex justify-center"
 <script lang="ts">
 	import type { ApexOptions } from 'apexcharts';
-	import { Chart } from '@codewithshin/flowbite-svelte-chart';
+	import { Chart } from '@flowbite-svelte-plugins/chart';
 	import { Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from 'flowbite-svelte';
 	import {
 		InfoCircleSolid,
@@ -1246,7 +1251,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
 ```svelte example class="flex justify-center"
 <script lang="ts">
 	import type { ApexOptions } from 'apexcharts';
-	import { Chart } from '@codewithshin/flowbite-svelte-chart';
+	import { Chart } from '@flowbite-svelte-plugins/chart';
 	import { onMount, onDestroy } from 'svelte';
 	import { Card } from 'flowbite-svelte';
 
@@ -1319,10 +1324,8 @@ To create a radial chart with multiple data entries you need to set the type: "r
 
 The component has the following props, type, and default values. See [types page](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-chart/src/lib/types.ts) for type information.
 
-## Component data
-
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {components} plugin="chart"/>
 
 ## References
 
-<GitHubCompoLinks {components}/>
+- [@flowbite-svelte-plugins/chart](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-chart/src/lib/Chart.svelte)
