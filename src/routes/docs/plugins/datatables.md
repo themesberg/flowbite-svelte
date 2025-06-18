@@ -358,7 +358,7 @@ description: Use the datatable component to search, sort, filter and paginate ta
     </div>`
 	};
 
-  import { Badge, P, Button } from "$lib"
+  import { Badge, P, Button, Heading, Span } from "$lib"
   import { InfoCircleOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -408,6 +408,62 @@ Use this example to show table data with default sorting and pagination function
 </script>
 
 <Table {items} />
+```
+
+## Snippets
+
+Use `captionSlot` and `footerSlot` `snippet`s.
+
+<Table {items}>
+	{#snippet captionSlot()}
+		<Heading tag="h5" class="text-left text-primary-700">Caption</Heading>
+		<P
+			>Browse a list of Flowbite products designed to help you work and play, stay organized, get
+			answers, keep in touch, grow your business, and more.</P
+		>
+	{/snippet}
+	{#snippet footerSlot()}
+		<tr>
+			<td
+				colspan={4}
+				class="whitespace-normal text-left text-base font-normal leading-normal tracking-normal text-gray-900 dark:text-white"
+			><Span highlight="red" class="bold">footerSlot:</Span>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias laboriosam placeat eum
+				facilis aliquam, adipisci consequuntur excepturi rerum distinctio illum quibusdam neque
+				magni quaerat dolorum hic labore repellat omnis? Quisquam?
+			</td>
+		</tr>
+	{/snippet}
+</Table>
+
+```svelte example hideOutput
+<script lang="ts">
+	import { Table } from '@flowbite-svelte-plugins/datatable';
+	import { P, Heading } from 'flowbite-svelte';
+	import items from './data/sample.json';
+</script>
+
+<Table {items}>
+	{#snippet captionSlot()}
+		<Heading tag="h5" class="text-left text-primary-700">Caption</Heading>
+		<P
+			>Browse a list of Flowbite products designed to help you work and play, stay organized, get
+			answers, keep in touch, grow your business, and more.</P
+		>
+	{/snippet}
+	{#snippet footerSlot()}
+		<tr>
+			<td
+				colspan={4}
+				class="whitespace-normal text-left text-base font-normal leading-normal tracking-normal text-gray-900 dark:text-white"
+			><Span highlight="red" class="bold">footerSlot:</Span>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias laboriosam placeat eum
+				facilis aliquam, adipisci consequuntur excepturi rerum distinctio illum quibusdam neque
+				magni quaerat dolorum hic labore repellat omnis? Quisquam?
+			</td>
+		</tr>
+	{/snippet}
+</Table>
 ```
 
 ## searchable and sortable
