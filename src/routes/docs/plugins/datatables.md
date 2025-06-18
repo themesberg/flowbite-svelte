@@ -93,7 +93,7 @@ All examples are responsive, dark mode and RTL support included and by installin
 ## Installation
 
 ```svelte example hideOutput
-pnpm i -D @flowbite-svelte-plugins/datatable
+pnpm i -D @flowbite-svelte-plugins/datatable simple-datatables
 ```
 
 Update `app.css`:
