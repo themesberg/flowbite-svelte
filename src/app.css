@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 @plugin 'flowbite/plugin';
+@plugin "flowbite-typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @source "../node_modules/simple-datatables/dist";
 @source "../node_modules/@flowbite-svelte-plugins/datatable/dist";
 @source "../node_modules/@flowbite-svelte-plugins/chart/dist";
+@source "../node_modules/@flowbite-svelte-plugins/texteditor/dist";
 
 .datatable-pagination .datatable-active a,
 .datatable-pagination .datatable-active a:focus,

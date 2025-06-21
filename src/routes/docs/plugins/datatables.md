@@ -312,7 +312,7 @@ description: Use the datatable component to search, sort, filter and paginate ta
   const scrollyOptions: DataTableOptions = {
 		paging: false,
     scrollY: "30vh",
-    rowNavigation: true,
+    // rowNavigation: true,
     tabIndex: 1
 	};
 
@@ -371,7 +371,52 @@ All examples are responsive, dark mode and RTL support included and by installin
 ## Installation
 
 ```svelte example hideOutput
-pnpm i -D @flowbite-svelte-plugins/datatable simple-datatables
+pnpm i -D @flowbite-svelte-plugins/datatable
+```
+
+### app.d.ts
+
+Update `app.d.ts` as the following:
+
+```ts
+declare global {
+  namespace App {}
+}
+
+declare module 'simple-datatables' {
+  export { DataTable } from 'simple-datatables/dist/dts/datatable';
+  export { convertCSV, convertJSON } from 'simple-datatables/dist/dts/convert';
+  export { exportCSV, exportJSON, exportSQL, exportTXT } from 'simple-datatables/dist/dts/export';
+  export { createElement, isJson, isObject } from 'simple-datatables/dist/dts/helpers';
+  export { makeEditable } from 'simple-datatables/dist/dts/editing';
+  export { addColumnFilter } from 'simple-datatables/dist/dts/column_filter';
+
+  export type {
+    DataTableOptions,
+    DataTableConfiguration,
+    ColumnOption,
+    cellType,
+    inputCellType,
+    dataRowType,
+    inputRowType,
+    headerCellType,
+    inputHeaderCellType,
+    TableDataType,
+    DataOption,
+    renderType,
+    nodeType,
+    elementNodeType,
+    textNodeType,
+    cellDataType
+  } from 'simple-datatables/dist/dts/datatable';
+
+  export interface SelectableDataRow {
+    selected?: boolean;
+    [key: string]: any;
+  }
+}
+
+export {};
 ```
 
 ### app.css
@@ -394,6 +439,8 @@ pnpm i -D @flowbite-svelte-plugins/datatable simple-datatables
 	background-color: #fff1ee !important;
 }
 ```
+
+
 
 ## Default datatable
 
