@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { idGenerator } from "../../uiHelpers.svelte";
+  import { idGenerator } from "../../utils";
   import { floatingLabelInput } from ".";
   import { type FloatingLabelInputProps, CloseButton, cn } from "$lib";
 

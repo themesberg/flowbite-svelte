@@ -1,5 +1,5 @@
 export function uiHelpers() {
-  let isOpen: boolean = $state(false);
+  let isOpen = $state(false);
 
   function toggle() {
     isOpen = !isOpen;
@@ -17,7 +17,7 @@ export function uiHelpers() {
     get isOpen() {
       return isOpen;
     },
-    set isOpen(value: boolean) {
+    set isOpen(value) {
       isOpen = value;
     },
 
@@ -27,10 +27,10 @@ export function uiHelpers() {
   };
 }
 
-export function clickOutside(element: HTMLElement, callbackFunction?: (e: MouseEvent) => void) {
-  const onClick = (event: MouseEvent) => {
+export function clickOutside(element, callbackFunction) {
+  const onClick = (event) => {
     if (typeof callbackFunction === "function") {
-      const targetNode = event.target as Node | null;
+      const targetNode = event.target;
       if (!element.contains(targetNode)) {
         callbackFunction(event);
       }
@@ -42,7 +42,7 @@ export function clickOutside(element: HTMLElement, callbackFunction?: (e: MouseE
   element.ownerDocument.body.addEventListener("click", onClick);
 
   return {
-    update(newCallbackFunction: () => void) {
+    update(newCallbackFunction) {
       if (typeof newCallbackFunction === "function") {
         callbackFunction = newCallbackFunction;
       } else {
@@ -53,10 +53,4 @@ export function clickOutside(element: HTMLElement, callbackFunction?: (e: MouseE
       element.ownerDocument.body.removeEventListener("click", onClick);
     }
   };
-}
-
-let n = Date.now();
-
-export function idGenerator() {
-  return (++n).toString(36);
 }
