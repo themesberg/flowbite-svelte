@@ -52,8 +52,8 @@ importers:
         specifier: ^0.3.4
         version: 0.3.4(svelte@5.34.7)(tailwindcss@4.1.10)
       '@flowbite-svelte-plugins/texteditor':
-        specifier: ^0.9.5
-        version: 0.9.5(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(highlight.js@11.11.1)(svelte@5.34.7)(tailwindcss@4.1.10)
+        specifier: ^0.10.1
+        version: 0.10.1(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(highlight.js@11.11.1)(svelte@5.34.7)(tailwindcss@4.1.10)
       '@playwright/test':
         specifier: ^1.53.1
         version: 1.53.1
@@ -611,8 +611,8 @@ packages:
       svelte: ^5.0.0
       tailwindcss: ^4.1.4
 
-  '@flowbite-svelte-plugins/texteditor@0.9.5':
-    resolution: {integrity: sha512-MUbk5erUWvoEkRSCFxLIF4RRRnWzbBtVKrjPevXMv2oIcIdxZnhmbC5bNWX3zD/vlDSxYn37+Z7OzduG0KNgkA==}
+  '@flowbite-svelte-plugins/texteditor@0.10.1':
+    resolution: {integrity: sha512-4R+A480TAC2DIohZocgMZffVHSgwbLb1Q7e2xuzj3qQ/JUvKOK8FAwCMso0Ocmfx+KvyQyXdd919G5e6KeHvJQ==}
     peerDependencies:
       svelte: ^5.0.0
       tailwindcss: ^4.1.4
@@ -3671,7 +3671,7 @@ snapshots:
       svelte: 5.34.7
       tailwindcss: 4.1.10
 
-  '@flowbite-svelte-plugins/texteditor@0.9.5(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(highlight.js@11.11.1)(svelte@5.34.7)(tailwindcss@4.1.10)':
+  '@flowbite-svelte-plugins/texteditor@0.10.1(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(highlight.js@11.11.1)(svelte@5.34.7)(tailwindcss@4.1.10)':
     dependencies:
       '@tiptap/core': 2.22.3(@tiptap/pm@2.22.3)
       '@tiptap/extension-bold': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))
