@@ -57,7 +57,8 @@ export function trapFocus(node: HTMLElement, options: { onEscape?: () => void; i
     }
   }
 
-  $effect(() => {
+  // Initialize the action
+  function initialize() {
     // Only add event listeners if options is not null
     if (options !== null) {
       // Check if we're currently in a closing state
@@ -73,24 +74,34 @@ export function trapFocus(node: HTMLElement, options: { onEscape?: () => void; i
 
       node.addEventListener("keydown", handleKeydown);
       node.addEventListener("focusout", handleFocusOut);
-
-      return () => {
-        node.removeEventListener("keydown", handleKeydown);
-        node.removeEventListener("focusout", handleFocusOut);
-
-        // Only restore focus if not closing via outside click and focus hasn't moved outside
-        if (!isClosingViaOutsideClick && !isFocusMovedOutside && previous) {
-          setTimeout(() => {
-            previous.focus({ preventScroll: true });
-          }, 0);
-        }
-      };
     }
-  });
+  }
 
-  // Return the action object with destroy method
+  // Cleanup function
+  function cleanup() {
+    if (options !== null) {
+      node.removeEventListener("keydown", handleKeydown);
+      node.removeEventListener("focusout", handleFocusOut);
+
+      // Only restore focus if not closing via outside click and focus hasn't moved outside
+      if (!isClosingViaOutsideClick && !isFocusMovedOutside && previous) {
+        setTimeout(() => {
+          previous.focus({ preventScroll: true });
+        }, 0);
+      }
+    }
+  }
+
+  // Initialize on mount
+  initialize();
+
+  // Return the action object with update and destroy methods
   return {
     update(newOptions: { onEscape?: () => void; isClosing?: boolean } | null = {}) {
+      // Clean up existing listeners first
+      node.removeEventListener("keydown", handleKeydown);
+      node.removeEventListener("focusout", handleFocusOut);
+
       // Update the closing state
       if (newOptions && newOptions.isClosing !== undefined) {
         isClosingViaOutsideClick = newOptions.isClosing;
@@ -98,30 +109,14 @@ export function trapFocus(node: HTMLElement, options: { onEscape?: () => void; i
 
       options = newOptions;
 
-      // Clean up existing listeners if options becomes null
-      if (options === null) {
-        node.removeEventListener("keydown", handleKeydown);
-        node.removeEventListener("focusout", handleFocusOut);
-      } else if (options !== null) {
-        // Add listener if it wasn't already there
-        node.removeEventListener("keydown", handleKeydown);
-        node.removeEventListener("focusout", handleFocusOut);
+      // Reinitialize with new options
+      if (options !== null) {
         node.addEventListener("keydown", handleKeydown);
         node.addEventListener("focusout", handleFocusOut);
       }
     },
     destroy() {
-      if (options !== null) {
-        node.removeEventListener("keydown", handleKeydown);
-        node.removeEventListener("focusout", handleFocusOut);
-
-        // Only restore focus if not closing via outside click and focus hasn't moved outside
-        if (!isClosingViaOutsideClick && !isFocusMovedOutside && previous) {
-          setTimeout(() => {
-            previous.focus({ preventScroll: true });
-          }, 0);
-        }
-      }
+      cleanup();
     }
   };
 }
