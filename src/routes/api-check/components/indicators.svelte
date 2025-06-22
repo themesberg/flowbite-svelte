@@ -31,7 +31,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Indicator count</h2>
-<div class="my-4 my-4 space-y-4 rounded border border-gray-200 p-4 dark:border-gray-600">
+<div class="my-4 space-y-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Button size="lg" class="relative">
     <EnvelopeSolid class="me-2 h-6 w-6 text-white dark:text-white" />
     <span class="sr-only">Notifications</span>

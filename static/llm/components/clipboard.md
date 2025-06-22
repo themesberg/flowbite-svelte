@@ -291,6 +291,87 @@ Add a `Clipboard` to your `Textarea` using the `addon` snippet. The button appea
 </Textarea>
 ```
 
+## Copy contact details
+
+This example can be used to copy the text content (ie. contact details) inside of the `<address>` field by clicking on the copy to clipboard button positioned inside of the address card.
+
+Make sure that you set the `id` to the trigger element to specify the source of the content that is to be copied.
+
+```svelte
+<script lang="ts">
+  import { Card, Clipboard, Tooltip } from "$lib";
+  import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
+
+  let value = $state("");
+
+  function onclick(ev: MouseEvent): void {
+    const target = ev.target as HTMLElement;
+    const codeBlock = target.ownerDocument.querySelector("#contact-details");
+    if (codeBlock) {
+      value = codeBlock.textContent || "";
+    }
+  }
+</script>
+
+<Card class="relative p-5">
+  <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Contact details</h2>
+  <address class="relative grid grid-cols-2 rounded-lg border border-gray-200 bg-gray-50 p-4 not-italic dark:border-gray-600 dark:bg-gray-700">
+    <div class="hidden space-y-2 leading-loose text-gray-500 sm:block dark:text-gray-400">
+      Name <br />
+      Email
+      <br />
+      Phone Number
+    </div>
+    <div id="contact-details" class="space-y-2 leading-loose font-medium text-gray-900 dark:text-white">
+      Bonnie Green <br />
+      name@flowbite.com
+      <br />
+      + 12 345 67890
+    </div>
+  </address>
+  <Clipboard {onclick} bind:value embedded class="absolute end-2 top-2 h-8 px-2.5 font-medium focus:ring-0">
+    {#snippet children(success)}
+      <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
+      {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+    {/snippet}
+  </Clipboard>
+</Card>
+```
+
+## Copy button with modal
+
+Use this example to show an input field where you can copy the URL of the current page and also show a modal with the copied URL when the copy button is clicked.
+
+```svelte
+<script>
+  import { Clipboard, Input, Tooltip, Modal, Button, Label } from "flowbite-svelte";
+  import { CheckOutline, ClipboardCleanSolid, ShareNodesOutline } from "flowbite-svelte-icons";
+
+  let value = $state("npm install flowbite-svelte");
+  let copyModal = $state(false);
+</script>
+
+<Button color="alternative" onclick={() => (copyModal = true)}><ShareNodesOutline class="me-2" /> Share course</Button>
+
+<Modal title="Share course" bind:open={copyModal} autoclose class="divide-y-0" headerClass="text-lg text-gray-500 dark:text-gray-400" footerClass="px-5 pb-5">
+  <Label for="course-url" class="mb-2 block text-sm font-medium">Share the course link below with your friends:</Label>
+
+  <Input bind:value id="course-url">
+    {#snippet right()}
+      <Clipboard bind:value embedded>
+        {#snippet children(success)}
+          <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
+          {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+        {/snippet}
+      </Clipboard>
+    {/snippet}
+  </Input>
+  {#snippet footer()}
+    <Button onclick={() => (copyModal = false)}>Close</Button>
+  {/snippet}
+</Modal>
+```
+
 ## Component data
 
 ### Clipboard

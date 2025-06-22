@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.8.0
+
+### Minor Changes
+
+- feat: @flowbite-svelte-plugins/texteditor
+
 ## 1.7.1
 
 ### Patch Changes

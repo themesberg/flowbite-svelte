@@ -18,7 +18,7 @@
           <div class="mt-4 justify-center sm:flex sm:justify-start md:mt-5">
             <div class="mx-0 flex max-w-2xl flex-row items-center gap-4 sm:gap-6">
               <CopyCliboardInput />
-              <Button size="lg" class="hover:bg-primary-800 max-w-sm space-x-2 whitespace-nowrap md:w-fit rtl:space-x-reverse rtl:space-x-reverse" href="/docs/pages/quickstart" color="primary">
+              <Button size="lg" class="hover:bg-primary-800 max-w-sm space-x-2 whitespace-nowrap md:w-fit rtl:space-x-reverse" href="/docs/pages/quickstart" color="primary">
                 <span>Get started</span>
                 <ArrowRight />
               </Button>

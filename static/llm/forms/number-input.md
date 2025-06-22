@@ -1,19 +1,5 @@
----
-layout: componentLayout
-title: Svelte Number Input - Flowbite
-breadcrumb_title: Svelte  Number Input
-component_title: Number Input
-dir: Forms
-description: Use the number input component to set a numeric value inside a form field based on multiple styles, variants, and layouts that can be used in product pages, forms, and more
----
+# Svelte Number Input - Flowbite
 
-<script>
-  import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, Seealso } from '../../utils'
-  import { A } from '$lib'
-
-  const components = 'Input'
-  const relatedLinks = ['/docs/forms/input-field','/docs/forms/floating-label', '/docs/extend/tags' ]
-</script>
 
 The number input component can be used to introduce numeric values inside a form such as for a quantity field, a ZIP code, a phone number, your credit card number, and more.
 
@@ -21,7 +7,7 @@ The number input component can be used to introduce numeric values inside a form
 
 Use this component to set a number value inside a form field by applying the type="number" attribute.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { Input, Label } from "flowbite-svelte";
 </script>
@@ -36,7 +22,7 @@ Use this component to set a number value inside a form field by applying the typ
 
 Use this example with an icon and helper text to set a ZIP code value inside a form field by also applying the pattern attribute to validate the input using a regular expression for a 5 digit number.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { Input, Label, P } from "flowbite-svelte";
   import { MapPinAltSolid } from "flowbite-svelte-icons";
@@ -59,7 +45,7 @@ Use this example with an icon and helper text to set a ZIP code value inside a f
 
 Use this example to set a phone number inside a form field and a dropdown menu to select the country code.
 
-```svelte example class="h-64"
+```svelte
 <script>
   import { PhoneInput, Label, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
@@ -106,7 +92,7 @@ Use this example to set a phone number inside a form field and a dropdown menu t
 
 Use this example with control buttons to increment and decrement the value inside the input field.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { Input, Label, P, Button, ButtonGroup } from "flowbite-svelte";
   import { PlusOutline, MinusOutline } from "flowbite-svelte-icons";
@@ -134,7 +120,7 @@ Use this example with control buttons to increment and decrement the value insid
 
 Use this example to also add an icon inside the input field to improve the user experience.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { Input, Label, P, Button, ButtonGroup } from "flowbite-svelte";
   import { PlusOutline, MinusOutline, HomeOutline } from "flowbite-svelte-icons";
@@ -166,7 +152,7 @@ Use this example to also add an icon inside the input field to improve the user 
 
 Use this example as an alternative style to the control buttons example above.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { Input, Label, Button, ButtonGroup } from "flowbite-svelte";
   import { PlusOutline, MinusOutline } from "flowbite-svelte-icons";
@@ -186,3 +172,11 @@ Use this example as an alternative style to the control buttons example above.
   </div>
 </form>
 ```
+
+
+## See also
+
+- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
+- [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
+- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+

@@ -5,6 +5,18 @@ The table component represents a set of structured elements made up of rows and 
 
 Get started with multiple variants and styles of these table components.
 
+<Badge class="p-4 w-full" color="green">
+  <P class="flex items-center gap-2">
+    <span class="inline-flex">
+      <InfoCircleOutline class="h-6 w-6 text-green-600 dark:text-green-500 " />
+      <span class="sr-only">Info Circle</span>
+    </span>
+    <span>
+      Use <A href="/docs/plugins/datatables" target="_blank">@flowbite-svelte-plugins/datatable</A> to search, sort, filter and paginate table data of rows and columns for your web application.
+    </span>
+  </P>
+</Badge>
+
 ## Setup
 
 ```svelte

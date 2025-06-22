@@ -1,11 +1,5 @@
----
-layout: componentLayout
-title: Svelte DataTables - Flowbite
-breadcrumb_title: Svelte DataTables
-component_title: DataTables
-dir: components
-description: Use the datatable component to search, sort, filter and paginate table data of rows and columns for your web application.
----
+# Svelte DataTables - Flowbite
+
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
@@ -370,7 +364,7 @@ All examples are responsive, dark mode and RTL support included and by installin
 
 ## Installation
 
-```svelte example hideOutput
+```svelte
 pnpm i -D @flowbite-svelte-plugins/datatable
 ```
 
@@ -429,7 +423,7 @@ Use this example to show table data with default sorting and pagination function
 
 <Table {items} />
 
-```svelte example hideOutput
+```svelte
 <script lang="ts">
   import { Table } from "@flowbite-svelte-plugins/datatable";
   import items from "./data/sample.json";
@@ -464,7 +458,7 @@ Use `captionSlot` and `footerSlot` `snippet`s.
 	{/snippet}
 </Table>
 
-```svelte example hideOutput
+```svelte
 <script lang="ts">
   import { Table } from "@flowbite-svelte-plugins/datatable";
   import { P, Heading } from "flowbite-svelte";
@@ -493,7 +487,7 @@ Use `captionSlot` and `footerSlot` `snippet`s.
 
 <Table {items} dataTableOptions={{searchable: false, sortable: false}} />
 
-```svelte example hideOutput
+```svelte
 <Table {items} dataTableOptions={{ searchable: false, sortable: false }} />
 ```
 
@@ -504,7 +498,7 @@ Enabling search for each individual data column is an advanced way of letting us
 
 <Table items={products} dataTableOptions={filterOptions} />
 
-```svelte example hideOutput
+```svelte
 <script lang="ts">
   import { Table } from "@flowbite-svelte-plugins/datatable";
   import products from "./data/products.json";
@@ -555,7 +549,7 @@ You can also set the perPageSelect option to set the selection options of the ta
 
 <Table items={aimodels} dataTableOptions={paginationOptions} />
 
-```svelte example hideOutput
+```svelte
 <script lang="ts">
   import { Table } from "@flowbite-svelte-plugins/datatable";
   import aimodels from "./data/aimodels.json";
@@ -580,7 +574,7 @@ Use `selectable` true and `rowRender` option to enable multi selection. Use `mul
 
 <Table selectable {items} dataTableOptions={selectRowsOptions} />
 
-```svelte example hideOutput
+```svelte
 <script lang="ts">
   import { Table } from "@flowbite-svelte-plugins/datatable";
   import items from "./data/sample.json";
@@ -610,7 +604,7 @@ Use `selectable` true and `rowRender` option to enable multi selection. Use `mul
 
 <Table dataTableOptions={cellRendererOptions} />
 
-```svelte example hideOutput
+```svelte
 <script lang="ts">
   import { Table } from "@flowbite-svelte-plugins/datatable";
   import type { DataTableOptions } from "simple-datatables";
@@ -794,7 +788,7 @@ Use `selectable` true and `rowRender` option to enable multi selection. Use `mul
 	<Button onclick={handleJSON}>Export JSON</Button>
 </div>
 
-```svelte example hideOutput
+```svelte
 <script lang="ts">
   import { Table } from "@flowbite-svelte-plugins/datatable";
   import { Button } from "flowbite-svelte";
@@ -855,7 +849,7 @@ Use `selectable` true and `rowRender` option to enable multi selection. Use `mul
 
 <Table items={products} dataTableOptions={scrollyOptions}/>
 
-```svelte example hideOutput
+```svelte
 <script lang="ts">
   import { Table } from "@flowbite-svelte-plugins/datatable";
   import products from "./data/products.json";
@@ -880,7 +874,7 @@ The search item separator for the extension column is ";" so that searching for 
 
 <Table items={andsearch} dataTableOptions={andsearchOptions}/>
 
-```svelte example hideOutput
+```svelte
 <script lang="ts">
   import { Table } from "@flowbite-svelte-plugins/datatable";
   import andsearch from "./data/andsearch.json";

@@ -16,12 +16,12 @@
 .datatable-pagination .datatable-active button,
 .datatable-pagination .datatable-active button:focus,
 .datatable-pagination .datatable-active button:hover {
-	background-color: #ffe4de;
-	cursor: default;
+  background-color: #ffe4de;
+  cursor: default;
 }
 
 .datatable-wrapper .datatable-table tbody tr.selected {
-	background-color: #fff1ee !important;
+  background-color: #fff1ee !important;
 }
 
 @theme {
@@ -119,8 +119,8 @@ color utility to any element that depends on these defaults.
   /* remove the number input arrows for Chrome, Safari, Edge, Opera */
   input[type="number"]::-webkit-outer-spin-button,
   input[type="number"]::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
   }
 }
 /* 
@@ -134,31 +134,44 @@ color utility to any element that depends on these defaults.
 
 /* customcellrenderer example */
 .buy-now {
-	background-color: #0ea90e;
+  background-color: #0ea90e;
 }
 
 .caffeinated {
-	color: limegreen;
+  color: limegreen;
 }
 .uncaffeinated {
-	color: red;
+  color: red;
 }
 
 .currency:before {
-	content: "$ "
+  content: "$ ";
 }
 .currency--profit {
-	color: limegreen;
+  color: limegreen;
 }
 .currency--loss {
-	color: red;
+  color: red;
 }
 .currency--zero {
-	color: #808080;
+  color: #808080;
 }
 
 /* demo general */
-button:not(.datatable-sorter):not(.datatable-filter) { cursor: pointer; padding: 0.5em; }
+button:not(.datatable-sorter):not(.datatable-filter) {
+  cursor: pointer;
+  padding: 0.5em;
+}
 
-tbody button { background: #565656; color: white; border: none; border-radius: 4px; padding: .25rem .5rem; margin: 0 0 0 .25rem; }
-tbody button:hover, tbody button:focus { background: #3b3b3b; }
+tbody button {
+  background: #565656;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  margin: 0 0 0 0.25rem;
+}
+tbody button:hover,
+tbody button:focus {
+  background: #3b3b3b;
+}

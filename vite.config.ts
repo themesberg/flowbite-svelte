@@ -3,7 +3,7 @@ import { sveltekit } from "@sveltejs/kit/vite";
 import examples from "mdsvexamples/vite";
 import path from "path";
 import pkg from "./package.json" with { type: "json" };
-import devtoolsJson from 'vite-plugin-devtools-json';
+import devtoolsJson from "vite-plugin-devtools-json";
 
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";

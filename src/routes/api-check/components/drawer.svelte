@@ -194,7 +194,7 @@
       <div class="mb-4">
         <div class="relative">
           <Input id="search" placeholder="Add guest email" class="p-3" />
-          <Button class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 absolute end-2 bottom-2 inline-flex items-center rounded-lg px-3 py-1 text-sm text-sm font-medium text-white focus:ring-4 focus:outline-hidden" type="submit">
+          <Button class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 absolute end-2 bottom-2 inline-flex items-center rounded-lg px-3 py-1 text-sm font-medium text-white focus:ring-4 focus:outline-hidden" type="submit">
             <UserAddOutline class="me-1.5 h-3 w-3 text-white" />Add
           </Button>
         </div>

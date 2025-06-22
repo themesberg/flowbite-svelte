@@ -1,19 +1,5 @@
----
-layout: componentLayout
-title: Svelte WYSIWYG Text Editor - Flowbite
-breadcrumb_title: Svelte WYSIWYG Text Editor
-component_title: WYSIWYG
-dir: components
-description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins to create and modify content by manipulating paragraphs, headings, images and styling them using all available options
----
+# Svelte WYSIWYG Text Editor - Flowbite
 
-<script>
-  import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
-  const components = 'Texteditor'
-
-  import { Badge, P, Button } from "$lib"
-  import { InfoCircleOutline } from "flowbite-svelte-icons";
-</script>
 
 The WYSIWYG text editor from Flowbite-Svelte is open-source under the MIT license based on the Tip Tap library and allows you to easily edit complex text data with typography styles, links, images, videos, and more.
 
@@ -23,7 +9,7 @@ All examples provided on this page have support for dark mode, RTL (right-to-lef
 
 ## Installation
 
-```svelte example hideOutput
+```svelte
 pnpm i -D @flowbite-svelte-plugins/texteditor
 ```
 
@@ -43,7 +29,7 @@ pnpm i -D @flowbite-svelte-plugins/texteditor
 
 Use this example of a WYSIWYG text editor to enable basic typography styling and formatting, adding lists, links, images, videos, code blocks, aligning text, blockquotes, setting headers and paragraphs and more.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { GroupAlignments, GroupFonts, GroupUndoRedo, GroupFormats, GroupLayouts, GroupImages, GroupLists, GroupVideos, TextEditor, ToolbarRowWrapper, Divider } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -94,7 +80,7 @@ Use this example of a WYSIWYG text editor to enable basic typography styling and
 
 Use `GroupFormats` to enable typography styling, formatting and marking such as underline, bold, italic, strikethrough, code, highlight.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { GroupFormats, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -128,7 +114,7 @@ Use `GroupFormats` to enable typography styling, formatting and marking such as 
 
 `GroupAlignments` component enables text alignment to the left, center, right, and justify for the content inside of the WYSIWYG component.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { GroupAlignments, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -162,7 +148,7 @@ Use `GroupFormats` to enable typography styling, formatting and marking such as 
 
 `GroupLayouts` creates typography elements like blockquotes, horizontal rules, code blocks.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { GroupLayouts, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -199,7 +185,7 @@ Use `GroupFormats` to enable typography styling, formatting and marking such as 
 
 `GroupImages` adds images inside of the WYSIWYG text editor and configure settings such as the image URL, image alt attribute which is important for SEO and accessibility and the image title.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { GroupImages, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -233,7 +219,7 @@ Use `GroupFormats` to enable typography styling, formatting and marking such as 
 
 `GroupAlignments` enables text alignment to the left, center, right, and justify for the content inside of the WYSIWYG component.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { GroupAlignments, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -267,7 +253,7 @@ Use `GroupFormats` to enable typography styling, formatting and marking such as 
 
 Use this example to create typography elements like bullet lists, ordered lists, blockquotes, horizontal rules, paragraphs, headings, code blocks based on Tailwind CSS utility classees and the Flowbite API.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { GroupLists, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -300,7 +286,7 @@ Use this example to create typography elements like bullet lists, ordered lists,
 
 ## Fonts
 
-```svelte example
+```svelte
 <script lang="ts">
   import { GroupFonts, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -334,7 +320,7 @@ Use this example to create typography elements like bullet lists, ordered lists,
 
 Use `GroupVideos` to embed videos inside the WYSIWYG text editor based on a YouTube URL source and set the width and height of the video by using the advanced video component.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { GroupVideos, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -368,7 +354,7 @@ Use `GroupVideos` to embed videos inside the WYSIWYG text editor based on a YouT
 
 Use `GroupTables`s to edit table data inside the WYSIWYG text editor by adding and removing table column, rows, and cells and use other features to navigate through the table data for a convenient editing process.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { GroupTables1, GroupTables2, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -408,7 +394,7 @@ Use `GroupTables`s to edit table data inside the WYSIWYG text editor by adding a
 
 Use the history functionality from the WYSIWYG text editor component to integrate undo and redo actions.
 
-```svelte example
+```svelte
 <script lang="ts">
   import { GroupUndoRedo, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -444,7 +430,7 @@ Use the history functionality from the WYSIWYG text editor component to integrat
 
 Use the following example to create your custom texteditor.
 
-```svelte example hideOutput
+```svelte
 <script lang="ts">
   // GroupCustom.svelte
   import { type GroupEditorBasicProps, AlignmentButtons, FontButtons, FormatButtons, ImageButtons } from "@flowbite-svelte-plugins/texteditor";
@@ -463,7 +449,7 @@ Use the following example to create your custom texteditor.
 {/if}
 ```
 
-```svelte example hideOutput
+```svelte
 <script lang="ts">
   // +page.svelte
   import GroupCustom from "./GroupCustom.svelte";

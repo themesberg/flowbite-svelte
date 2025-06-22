@@ -185,7 +185,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Custom transitions</h2>
-<div class="rounded rounded border p-4">
+<div class="rounded border p-4">
   <Accordion>
     <AccordionItem transitionParams={{ duration: 2000 }}>
       {#snippet header()}My Header 1{/snippet}

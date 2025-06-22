@@ -8,7 +8,7 @@
 <h2 class="my-4 text-2xl">Unordored list</h2>
 
 <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
+  <Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
   <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li>At least 10 characters (and up to 100 characters)</Li>
     <Li>At least one lowercase character</Li>
@@ -19,7 +19,7 @@
 <h3>Icons</h3>
 
 <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
+  <Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
   <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li icon>
       <CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
@@ -70,7 +70,7 @@
 <h3>Unstyled</h3>
 
 <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold  text-gray-900 dark:text-white">Password requirements</Heading>
+  <Heading tag="h2" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Password requirements</Heading>
   <List tag="dl" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li>At least 10 characters (and up to 100 characters)</Li>
     <Li>At least one lowercase character</Li>
@@ -81,7 +81,7 @@
 <h2 class="my-4 text-2xl">Ordered list</h2>
 
 <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold  text-gray-900 dark:text-white">Top students:</Heading>
+  <Heading tag="h2" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Top students:</Heading>
   <List tag="ol" class="space-y-1 text-gray-500 dark:text-gray-400">
     <Li><Span>Bonnie Green</Span> with <Span>70</Span> points</Li>
     <Li><Span>Jese Leos</Span> with <Span>63</Span> points</Li>
