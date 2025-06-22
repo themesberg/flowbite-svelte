@@ -1,5 +1,5 @@
 // @ts-nocheck
-export function uiHelpers () {
+export function uiHelpers() {
   let isOpen = $state(false);
 
   function toggle() {

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.8.1
+
+### Patch Changes
+
+- fix: trapFocus
+
 ## 1.8.0
 
 ### Minor Changes
