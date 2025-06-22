@@ -163,9 +163,9 @@ export const fetchMarkdownPosts = async () => {
     components: allComponents,
     forms: allForms,
     typography: allTypographys,
+    plugins: allPlugins,
     extend: allExtends,
     utilities: allUtils,
-    plugins: allPlugins,
     builders,
     icons: allIcons,
     examples: allExamples
