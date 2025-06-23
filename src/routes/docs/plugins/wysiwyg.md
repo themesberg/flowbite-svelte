@@ -108,7 +108,7 @@ Use this example of a WYSIWYG text editor to enable basic typography styling and
 
 ## Text formatting
 
-Use `FormatButtonGroup` to enable typography styling, formatting and marking such as underline, bold, italic, strikethrough, code, highlight.
+Use `FormatButtonGroup` to enable typography styling, formatting and marking such as bold, code, highlight, italic, link, remove link, underline, strikethrough, subscript, seperscript, and line break.
 
 ```svelte example
 <script lang="ts">

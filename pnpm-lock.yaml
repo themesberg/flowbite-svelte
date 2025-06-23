@@ -52,8 +52,8 @@ importers:
         specifier: ^0.3.4
         version: 0.3.4(svelte@5.34.7)(tailwindcss@4.1.10)
       '@flowbite-svelte-plugins/texteditor':
-        specifier: ^0.12.1
-        version: 0.12.1(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(svelte@5.34.7)(tailwindcss@4.1.10)
+        specifier: ^0.12.2
+        version: 0.12.2(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(svelte@5.34.7)(tailwindcss@4.1.10)
       '@playwright/test':
         specifier: ^1.53.1
         version: 1.53.1
@@ -614,8 +614,8 @@ packages:
       svelte: ^5.0.0
       tailwindcss: ^4.1.4
 
-  '@flowbite-svelte-plugins/texteditor@0.12.1':
-    resolution: {integrity: sha512-4j5p3bW+XxqWRVWS4t80CLHFihgOL/Nw/bYRKSnYGPBX9a2MgAHWdn8lp6E3qDmoJq/DPyaUDV742hKiN0Y62w==}
+  '@flowbite-svelte-plugins/texteditor@0.12.2':
+    resolution: {integrity: sha512-ksOc7A/4RNBeEJlclodegXZh+VDsGj9dpGAnpRCZMOWYONCKCtvZm/IvaNI9lEeLZCE5UBZ6I357BVOEzU6FVA==}
     peerDependencies:
       svelte: ^5.0.0
       tailwindcss: ^4.1.4
@@ -3692,7 +3692,7 @@ snapshots:
       svelte: 5.34.7
       tailwindcss: 4.1.10
 
-  '@flowbite-svelte-plugins/texteditor@0.12.1(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(svelte@5.34.7)(tailwindcss@4.1.10)':
+  '@flowbite-svelte-plugins/texteditor@0.12.2(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(svelte@5.34.7)(tailwindcss@4.1.10)':
     dependencies:
       '@tiptap/core': 2.22.3(@tiptap/pm@2.22.3)
       '@tiptap/extension-bold': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))
@@ -3705,6 +3705,7 @@ snapshots:
       '@tiptap/extension-document': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))
       '@tiptap/extension-focus': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3)
       '@tiptap/extension-font-family': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/extension-text-style@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3)))
+      '@tiptap/extension-hard-break': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))
       '@tiptap/extension-heading': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))
       '@tiptap/extension-highlight': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))
       '@tiptap/extension-image': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))
