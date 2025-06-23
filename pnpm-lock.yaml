@@ -52,8 +52,8 @@ importers:
         specifier: ^0.3.4
         version: 0.3.4(svelte@5.34.7)(tailwindcss@4.1.10)
       '@flowbite-svelte-plugins/texteditor':
-        specifier: ^0.11.1
-        version: 0.11.1(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(svelte@5.34.7)(tailwindcss@4.1.10)
+        specifier: ^0.12.1
+        version: 0.12.1(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(svelte@5.34.7)(tailwindcss@4.1.10)
       '@playwright/test':
         specifier: ^1.53.1
         version: 1.53.1
@@ -614,8 +614,8 @@ packages:
       svelte: ^5.0.0
       tailwindcss: ^4.1.4
 
-  '@flowbite-svelte-plugins/texteditor@0.11.1':
-    resolution: {integrity: sha512-AYMpgb0WmtzetK7PKsTzH9An42FBnvmKQT46kriSMgFF8IQ+NAeyj3DksjmyMtBxY7NJ4txL4b0ucPmAYXvh5g==}
+  '@flowbite-svelte-plugins/texteditor@0.12.1':
+    resolution: {integrity: sha512-4j5p3bW+XxqWRVWS4t80CLHFihgOL/Nw/bYRKSnYGPBX9a2MgAHWdn8lp6E3qDmoJq/DPyaUDV742hKiN0Y62w==}
     peerDependencies:
       svelte: ^5.0.0
       tailwindcss: ^4.1.4
@@ -1077,6 +1077,24 @@ packages:
 
   '@tiptap/extension-color@2.22.3':
     resolution: {integrity: sha512-4GewNUnDE16cte85kG0qhMGS1NQUQ1HRObVRGP47RlrSc/6x++DOfkqYbSJ0btyfWHGBahC3QQfyQ3eCdryUxg==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+      '@tiptap/extension-text-style': ^2.7.0
+
+  '@tiptap/extension-details-content@2.22.3':
+    resolution: {integrity: sha512-wlkF3Y+kdxg23xoKJFaLK+1yMJSyRkUGBQD8M+BtWrSDsB7ywz3ZnI2HiSiZQDEB5adksqEqD5psDIpuZwVYSQ==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+      '@tiptap/extension-text-style': ^2.7.0
+
+  '@tiptap/extension-details-summary@2.22.3':
+    resolution: {integrity: sha512-+ohQoRSDsUT43fi+BOrE6JTTnwY3Lg6tlt4FZA/hG5JoNnfmz4XzNpPRvrjgWAO+af/vxmF+OwaMMcTA/a6gTQ==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+      '@tiptap/extension-text-style': ^2.7.0
+
+  '@tiptap/extension-details@2.22.3':
+    resolution: {integrity: sha512-YYWpIpS0Ue7t/557S7AP+ZGpnC16few5Yrf8twV+VXsN7rxj8KsVqRO4cvX1cIqMEKPxzupsYs6KEkx/JUf1ng==}
     peerDependencies:
       '@tiptap/core': ^2.7.0
       '@tiptap/extension-text-style': ^2.7.0
@@ -3674,13 +3692,16 @@ snapshots:
       svelte: 5.34.7
       tailwindcss: 4.1.10
 
-  '@flowbite-svelte-plugins/texteditor@0.11.1(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(svelte@5.34.7)(tailwindcss@4.1.10)':
+  '@flowbite-svelte-plugins/texteditor@0.12.1(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(svelte@5.34.7)(tailwindcss@4.1.10)':
     dependencies:
       '@tiptap/core': 2.22.3(@tiptap/pm@2.22.3)
       '@tiptap/extension-bold': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))
       '@tiptap/extension-character-count': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3)
       '@tiptap/extension-code-block-lowlight': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3)(highlight.js@11.11.1)(lowlight@3.3.0)
       '@tiptap/extension-color': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/extension-text-style@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3)))
+      '@tiptap/extension-details': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/extension-text-style@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3)))
+      '@tiptap/extension-details-content': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/extension-text-style@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3)))
+      '@tiptap/extension-details-summary': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/extension-text-style@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3)))
       '@tiptap/extension-document': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))
       '@tiptap/extension-focus': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3)
       '@tiptap/extension-font-family': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/extension-text-style@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3)))
@@ -4135,6 +4156,21 @@ snapshots:
       '@tiptap/core': 2.22.3(@tiptap/pm@2.22.3)
 
   '@tiptap/extension-color@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/extension-text-style@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3)))':
+    dependencies:
+      '@tiptap/core': 2.22.3(@tiptap/pm@2.22.3)
+      '@tiptap/extension-text-style': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))
+
+  '@tiptap/extension-details-content@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/extension-text-style@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3)))':
+    dependencies:
+      '@tiptap/core': 2.22.3(@tiptap/pm@2.22.3)
+      '@tiptap/extension-text-style': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))
+
+  '@tiptap/extension-details-summary@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/extension-text-style@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3)))':
+    dependencies:
+      '@tiptap/core': 2.22.3(@tiptap/pm@2.22.3)
+      '@tiptap/extension-text-style': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))
+
+  '@tiptap/extension-details@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/extension-text-style@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3)))':
     dependencies:
       '@tiptap/core': 2.22.3(@tiptap/pm@2.22.3)
       '@tiptap/extension-text-style': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))

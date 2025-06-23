@@ -130,6 +130,9 @@ color utility to any element that depends on these defaults.
   }
 } */
 
+@layer components{
+
+
 /* datatable */
 
 /* customcellrenderer example */
@@ -148,7 +151,7 @@ color utility to any element that depends on these defaults.
   content: "$ ";
 }
 .currency--profit {
-  color: limegreen;
+  color: rgb(205, 122, 50);
 }
 .currency--loss {
   color: red;
@@ -174,4 +177,6 @@ tbody button {
 tbody button:hover,
 tbody button:focus {
   background: #3b3b3b;
+}
+
 }
