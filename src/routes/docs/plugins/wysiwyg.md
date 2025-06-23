@@ -442,9 +442,40 @@ Use the history functionality from the WYSIWYG text editor component to integrat
 </div>
 ```
 
-## Customize texteditor
+## Customizing Group components
 
-Use the following example to create your custom texteditor.
+You can control display of buttons by adding `false` as the following example.
+
+```svelte example
+<script lang="ts">
+  import { LayoutButtonGroup, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
+
+  let editorElement = $state<HTMLDivElement | null>(null);
+  let editorInstance = $state<Editor | null>(null);
+
+  function getEditorContent() {
+    return editorInstance?.getHTML() ?? '';
+  }
+
+  function setEditorContent(content: string) {
+    editorInstance?.commands.setContent(content);
+  }
+
+  const content = '<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>';
+</script>
+
+<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
+  <ToolbarRowWrapper>
+    <LayoutButtonGroup hr={false} codeblock={false} editor={editorInstance} />
+  </ToolbarRowWrapper>
+</TextEditor>
+```
+
+## Customizing texteditor
+
+Either using the above example or use button components to create your custom texteditor.
 
 ```svelte example hideOutput
 <script lang="ts">
@@ -490,11 +521,6 @@ Use the following example to create your custom texteditor.
 <TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
   <CustomGroup editor={editorInstance} />
 </TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
-</div>
 ```
 
 ## Exporting data
