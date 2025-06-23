@@ -160,7 +160,6 @@ color utility to any element that depends on these defaults.
 /* demo general */
 button:not(.datatable-sorter):not(.datatable-filter) {
   cursor: pointer;
-  padding: 0.5em;
 }
 
 tbody button {
