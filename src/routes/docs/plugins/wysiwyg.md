@@ -45,221 +45,242 @@ Use this example of a WYSIWYG text editor to enable basic typography styling and
 
 ```svelte example
 <script lang="ts">
-  import { GroupAlignments, GroupFonts, GroupUndoRedo, GroupFormats, GroupLayouts, GroupImages, GroupLists, GroupVideos, TextEditor, ToolbarRowWrapper, Divider } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
+  import { AlignmentButtonGroup, FontButtonGroup, UndoRedoButtonGroup, FormatButtonGroup, LayoutButtonGroup, ImageButtonGroup, ListButtonGroup, VideoButtonGroup, TextEditor, ToolbarRowWrapper, Divider, SourceButton } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
 
   let editorElement = $state<HTMLDivElement | null>(null);
   let editorInstance = $state<Editor | null>(null);
 
   function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
+    return editorInstance?.getHTML() ?? '';
   }
 
   function setEditorContent(content: string) {
     editorInstance?.commands.setContent(content);
   }
 
-  const content = '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a button component:</p><code>&#x3C;button type=&#x22;button&#x22; class=&#x22;text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800&#x22;&#x3E;Default&#x3C;/button&#x3E;</code><p>Learn more about all components from the <a href="https://flowbite.com/docs/getting-started/introduction/">Flowbite Docs</a>.</p>';
+  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>
+    <p>Here is an example of a js block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
+{
+  if (i % 15 == 0)
+    console.log("FizzBuzz");
+  else if (i % 3 == 0)
+    console.log("Fizz");
+  else if (i % 5 == 0)
+    console.log("Buzz");
+  else
+    console.log(i);
+}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
 </script>
 
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
+<svelte:head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />
+</svelte:head>
+
+<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content} showSourceButton={true}>
   <ToolbarRowWrapper>
-    <GroupFormats editor={editorInstance} />
+    <FormatButtonGroup editor={editorInstance} />
     <Divider />
-    <GroupFonts editor={editorInstance} />
+    <FontButtonGroup editor={editorInstance} />
     <Divider />
-    <GroupAlignments editor={editorInstance} />
+    <AlignmentButtonGroup editor={editorInstance} />
   </ToolbarRowWrapper>
   <ToolbarRowWrapper top={false}>
-    <GroupUndoRedo editor={editorInstance} />
+    <UndoRedoButtonGroup editor={editorInstance} />
     <Divider />
-    <GroupLayouts editor={editorInstance} />
+    <LayoutButtonGroup editor={editorInstance} />
     <Divider />
-    <GroupLists editor={editorInstance} />
+    <ListButtonGroup editor={editorInstance} />
     <Divider />
-    <GroupImages editor={editorInstance} />
+    <ImageButtonGroup editor={editorInstance} />
     <Divider />
-    <GroupVideos editor={editorInstance} />
+    <VideoButtonGroup editor={editorInstance} />
+    <SourceButton editor={editorInstance} />
   </ToolbarRowWrapper>
 </TextEditor>
 
 <div class="mt-4">
   <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
+  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
 
 ## Text formatting
 
-Use `GroupFormats` to enable typography styling, formatting and marking such as underline, bold, italic, strikethrough, code, highlight.
+Use `FormatButtonGroup` to enable typography styling, formatting and marking such as underline, bold, italic, strikethrough, code, highlight.
 
 ```svelte example
 <script lang="ts">
-  import { GroupFormats, TextEditor } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
+  import { FormatButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
 
   let editorElement = $state<HTMLDivElement | null>(null);
   let editorInstance = $state<Editor | null>(null);
 
   function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
+    return editorInstance?.getHTML() ?? '';
   }
 
   function setEditorContent(content: string) {
     editorInstance?.commands.setContent(content);
   }
 
-  const content = '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a button component:</p><code>&#x3C;button type=&#x22;button&#x22; class=&#x22;text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800&#x22;&#x3E;Default&#x3C;/button&#x3E;</code><p>Learn more about all components from the <a href="https://flowbite.com/docs/getting-started/introduction/">Flowbite Docs</a>.</p>';
+  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
+{
+  if (i % 15 == 0)
+    console.log("FizzBuzz");
+  else if (i % 3 == 0)
+    console.log("Fizz");
+  else if (i % 5 == 0)
+    console.log("Buzz");
+  else
+    console.log(i);
+}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
 </script>
 
 <TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <GroupFormats editor={editorInstance} />
+  <FormatButtonGroup editor={editorInstance} />
 </TextEditor>
 
 <div class="mt-4">
   <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
+  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
 
 ## Text alignment
 
-`GroupAlignments` component enables text alignment to the left, center, right, and justify for the content inside of the WYSIWYG component.
+`AlignmentButtonGroup` component enables text alignment to the left, center, right, and justify for the content inside of the WYSIWYG component.
 
 ```svelte example
 <script lang="ts">
-  import { GroupAlignments, TextEditor } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
+  import { AlignmentButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
 
   let editorElement = $state<HTMLDivElement | null>(null);
   let editorInstance = $state<Editor | null>(null);
 
   function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
+    return editorInstance?.getHTML() ?? '';
   }
 
   function setEditorContent(content: string) {
     editorInstance?.commands.setContent(content);
   }
 
-  const content = '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a button component:</p><code>&#x3C;button type=&#x22;button&#x22; class=&#x22;text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800&#x22;&#x3E;Default&#x3C;/button&#x3E;</code><p>Learn more about all components from the <a href="https://flowbite.com/docs/getting-started/introduction/">Flowbite Docs</a>.</p>';
+  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
+{
+  if (i % 15 == 0)
+    console.log("FizzBuzz");
+  else if (i % 3 == 0)
+    console.log("Fizz");
+  else if (i % 5 == 0)
+    console.log("Buzz");
+  else
+    console.log(i);
+}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
 </script>
 
 <TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <GroupAlignments editor={editorInstance} />
+  <AlignmentButtonGroup editor={editorInstance} />
 </TextEditor>
 
 <div class="mt-4">
   <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
+  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
 
 ## Layout elements
 
-`GroupLayouts` creates typography elements like blockquotes, horizontal rules, code blocks.
+`LayoutButtonGroup` creates typography elements like blockquotes, horizontal rules, code blocks.
 
 ```svelte example
 <script lang="ts">
-  import { GroupLayouts, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
+  import { LayoutButtonGroup, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
 
   let editorElement = $state<HTMLDivElement | null>(null);
   let editorInstance = $state<Editor | null>(null);
 
   function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
+    return editorInstance?.getHTML() ?? '';
   }
 
   function setEditorContent(content: string) {
     editorInstance?.commands.setContent(content);
   }
 
-  const content =
-    '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><ul><li>Over 600+ open-source UI components</li><li>Supports dark mode and RTL</li><li>Available in React, Vue, Svelte frameworks</li></ul><p>Here is an example of a button component:</p><pre><code>&#x3C;button type=&#x22;button&#x22; class=&#x22;text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800&#x22;&#x3E;Default&#x3C;/button&#x3E;</code></pre><p>Learn more about all components from the <a href="https://flowbite.com/docs/getting-started/introduction/">Flowbite Docs</a>.</p>';
+  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
+{
+  if (i % 15 == 0)
+    console.log("FizzBuzz");
+  else if (i % 3 == 0)
+    console.log("Fizz");
+  else if (i % 5 == 0)
+    console.log("Buzz");
+  else
+    console.log(i);
+}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
 </script>
 
 <TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
   <ToolbarRowWrapper>
-    <GroupLayouts editor={editorInstance} />
+    <LayoutButtonGroup editor={editorInstance} />
   </ToolbarRowWrapper>
 </TextEditor>
 
 <div class="mt-4">
   <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
+  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
 
 ## Images
 
-`GroupImages` adds images inside of the WYSIWYG text editor and configure settings such as the image URL, image alt attribute which is important for SEO and accessibility and the image title.
+`ImageButtonGroup` adds images inside of the WYSIWYG text editor and configure settings such as the image URL, image alt attribute which is important for SEO and accessibility and the image title.
 
 ```svelte example
 <script lang="ts">
-  import { GroupImages, TextEditor } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
+  import { ImageButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
 
   let editorElement = $state<HTMLDivElement | null>(null);
   let editorInstance = $state<Editor | null>(null);
 
   function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
+    return editorInstance?.getHTML() ?? '';
   }
 
   function setEditorContent(content: string) {
     editorInstance?.commands.setContent(content);
   }
 
-  const content = '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><img src="https://placehold.co/600x400" contenteditable="false" draggable="true"><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a button component:</p><code>&#x3C;button type=&#x22;button&#x22; class=&#x22;text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800&#x22;&#x3E;Default&#x3C;/button&#x3E;</code><p>Learn more about all components from the <a href="https://flowbite.com/docs/getting-started/introduction/">Flowbite Docs</a>.</p>';
+  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><img src="https://placehold.co/600x400" contenteditable="false" draggable="true"><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
+{
+  if (i % 15 == 0)
+    console.log("FizzBuzz");
+  else if (i % 3 == 0)
+    console.log("Fizz");
+  else if (i % 5 == 0)
+    console.log("Buzz");
+  else
+    console.log(i);
+}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
 </script>
 
 <TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <GroupImages editor={editorInstance} />
+  <ImageButtonGroup editor={editorInstance} />
 </TextEditor>
 
 <div class="mt-4">
   <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
-</div>
-```
-
-## Text alignment
-
-`GroupAlignments` enables text alignment to the left, center, right, and justify for the content inside of the WYSIWYG component.
-
-```svelte example
-<script lang="ts">
-  import { GroupAlignments, TextEditor } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
-
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content = '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a button component:</p><code>&#x3C;button type=&#x22;button&#x22; class=&#x22;text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800&#x22;&#x3E;Default&#x3C;/button&#x3E;</code><p>Learn more about all components from the <a href="https://flowbite.com/docs/getting-started/introduction/">Flowbite Docs</a>.</p>';
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <GroupAlignments editor={editorInstance} />
-</TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
+  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
 
@@ -269,32 +290,41 @@ Use this example to create typography elements like bullet lists, ordered lists,
 
 ```svelte example
 <script lang="ts">
-  import { GroupLists, TextEditor } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
+  import { ListButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
 
   let editorElement = $state<HTMLDivElement | null>(null);
   let editorInstance = $state<Editor | null>(null);
 
   function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
+    return editorInstance?.getHTML() ?? '';
   }
 
   function setEditorContent(content: string) {
     editorInstance?.commands.setContent(content);
   }
 
-  const content =
-    '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><ul><li>Over 600+ open-source UI components</li><li>Supports dark mode and RTL</li><li>Available in React, Vue, Svelte frameworks</li></ul><p>Here is an example of a button component:</p><pre><code>&#x3C;button type=&#x22;button&#x22; class=&#x22;text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800&#x22;&#x3E;Default&#x3C;/button&#x3E;</code></pre><p>Learn more about all components from the <a href="https://flowbite.com/docs/getting-started/introduction/">Flowbite Docs</a>.</p>';
+  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><ul><li>Over 600+ open-source UI components</li><li>Supports dark mode and RTL</li><li>Available in React, Vue, Svelte frameworks</li></ul><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p><pre><code>for (var i=1; i <= 20; i++)
+{
+  if (i % 15 == 0)
+    console.log("FizzBuzz");
+  else if (i % 3 == 0)
+    console.log("Fizz");
+  else if (i % 5 == 0)
+    console.log("Buzz");
+  else
+    console.log(i);
+}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
 </script>
 
 <TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <GroupLists editor={editorInstance} />
+  <ListButtonGroup editor={editorInstance} />
 </TextEditor>
 
 <div class="mt-4">
   <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
+  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
 
@@ -302,83 +332,59 @@ Use this example to create typography elements like bullet lists, ordered lists,
 
 ```svelte example
 <script lang="ts">
-  import { GroupFonts, TextEditor } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
+  import { FontButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
 
   let editorElement = $state<HTMLDivElement | null>(null);
   let editorInstance = $state<Editor | null>(null);
 
   function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
+    return editorInstance?.getHTML() ?? '';
   }
 
   function setEditorContent(content: string) {
     editorInstance?.commands.setContent(content);
   }
 
-  const content = '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a button component:</p><code>&#x3C;button type=&#x22;button&#x22; class=&#x22;text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800&#x22;&#x3E;Default&#x3C;/button&#x3E;</code><p>Learn more about all components from the <a href="https://flowbite.com/docs/getting-started/introduction/">Flowbite Docs</a>.</p>';
+  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
+{
+  if (i % 15 == 0)
+    console.log("FizzBuzz");
+  else if (i % 3 == 0)
+    console.log("Fizz");
+  else if (i % 5 == 0)
+    console.log("Buzz");
+  else
+    console.log(i);
+}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
 </script>
 
 <TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <GroupFonts editor={editorInstance} />
+  <FontButtonGroup editor={editorInstance} />
 </TextEditor>
 
 <div class="mt-4">
   <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
+  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
 
 ## Adding videos
 
-Use `GroupVideos` to embed videos inside the WYSIWYG text editor based on a YouTube URL source and set the width and height of the video by using the advanced video component.
+Use `VideoButtonGroup` to embed videos inside the WYSIWYG text editor based on a YouTube URL source and set the width and height of the video by using the advanced video component.
 
 ```svelte example
 <script lang="ts">
-  import { GroupVideos, TextEditor } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
+  import { VideoButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
 
   let editorElement = $state<HTMLDivElement | null>(null);
   let editorInstance = $state<Editor | null>(null);
 
   function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content = '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a button component:</p><code>&#x3C;button type=&#x22;button&#x22; class=&#x22;text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800&#x22;&#x3E;Default&#x3C;/button&#x3E;</code><p>Learn more about all components from the <a href="https://flowbite.com/docs/getting-started/introduction/">Flowbite Docs</a>.</p>';
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <GroupVideos editor={editorInstance} />
-</TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
-</div>
-```
-
-## Editing tables
-
-Use `GroupTables`s to edit table data inside the WYSIWYG text editor by adding and removing table column, rows, and cells and use other features to navigate through the table data for a convenient editing process.
-
-```svelte example
-<script lang="ts">
-  import { GroupTables1, GroupTables2, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
-
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
+    return editorInstance?.getHTML() ?? '';
   }
 
   function setEditorContent(content: string) {
@@ -386,21 +392,56 @@ Use `GroupTables`s to edit table data inside the WYSIWYG text editor by adding a
   }
 
   const content =
-    "<p>Understanding global <strong>population growth trends</strong> is essential for analyzing the development and future of nations. Population growth rates provide insights into economic prospects, resource allocation, and potential challenges for countries worldwide.</p><p>Here is an example of population data:</p><div class=tableWrapper><table style=min-width:75px><col><col><col><tr><th colspan=1 rowspan=1><p>Country<th colspan=1 rowspan=1><p>Population<th colspan=1 rowspan=1><p>Growth rate<tr><td colspan=1 rowspan=1><p>United States<td colspan=1 rowspan=1><p>333 million<td colspan=1 rowspan=1><p>0.4%<tr><td colspan=1 rowspan=1><p>China<td colspan=1 rowspan=1><p>1.41 billion<td colspan=1 rowspan=1><p>0%<tr><td colspan=1 rowspan=1><p>Germany<td colspan=1 rowspan=1><p>83.8 million<td colspan=1 rowspan=1><p>0.7%<tr><td colspan=1 rowspan=1><p>India<td colspan=1 rowspan=1><p>1.42 billion<td colspan=1 rowspan=1><p>1.0%<tr><td colspan=1 rowspan=1><p>Brazil<td colspan=1 rowspan=1><p>214 million<td colspan=1 rowspan=1><p>0.6%<tr><td colspan=1 rowspan=1><p>Indonesia<td colspan=1 rowspan=1><p>273 million<td colspan=1 rowspan=1><p>1.1%<tr><td colspan=1 rowspan=1><p>Pakistan<td colspan=1 rowspan=1><p>231 million<td colspan=1 rowspan=1><p>2.0%<tr><td colspan=1 rowspan=1><p>Nigeria<td colspan=1 rowspan=1><p>223 million<td colspan=1 rowspan=1><p>2.5%</table></div><p>Learn more about global population trends from reliable sources like the <a href=https://www.worldpopulationreview.com>World Population Review</a>.</p>";
+    '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a button component:</p><code>&#x3C;button type=&#x22;button&#x22; class=&#x22;text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800&#x22;&#x3E;Default&#x3C;/button&#x3E;</code><p>Learn more about all components from the <a href="https://flowbite.com/docs/getting-started/introduction/">Flowbite Docs</a>.</p>';
+</script>
+
+<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
+  <VideoButtonGroup editor={editorInstance} />
+</TextEditor>
+
+<div class="mt-4">
+  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
+</div>
+```
+
+## Editing tables
+
+Use `TableButtonGroup`s to edit table data inside the WYSIWYG text editor by adding and removing table column, rows, and cells and use other features to navigate through the table data for a convenient editing process.
+
+```svelte example
+<script lang="ts">
+  import { TableButtonGroup1, TableButtonGroup2, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
+
+  let editorElement = $state<HTMLDivElement | null>(null);
+  let editorInstance = $state<Editor | null>(null);
+
+  function getEditorContent() {
+    return editorInstance?.getHTML() ?? '';
+  }
+
+  function setEditorContent(content: string) {
+    editorInstance?.commands.setContent(content);
+  }
+
+  const content =
+    '<p>Understanding global <strong>population growth trends</strong> is essential for analyzing the development and future of nations. Population growth rates provide insights into economic prospects, resource allocation, and potential challenges for countries worldwide.</p><p>Here is an example of population data:</p><div class=tableWrapper><table style=min-width:75px><col><col><col><tr><th colspan=1 rowspan=1><p>Country<th colspan=1 rowspan=1><p>Population<th colspan=1 rowspan=1><p>Growth rate<tr><td colspan=1 rowspan=1><p>United States<td colspan=1 rowspan=1><p>333 million<td colspan=1 rowspan=1><p>0.4%<tr><td colspan=1 rowspan=1><p>China<td colspan=1 rowspan=1><p>1.41 billion<td colspan=1 rowspan=1><p>0%<tr><td colspan=1 rowspan=1><p>Germany<td colspan=1 rowspan=1><p>83.8 million<td colspan=1 rowspan=1><p>0.7%<tr><td colspan=1 rowspan=1><p>India<td colspan=1 rowspan=1><p>1.42 billion<td colspan=1 rowspan=1><p>1.0%<tr><td colspan=1 rowspan=1><p>Brazil<td colspan=1 rowspan=1><p>214 million<td colspan=1 rowspan=1><p>0.6%<tr><td colspan=1 rowspan=1><p>Indonesia<td colspan=1 rowspan=1><p>273 million<td colspan=1 rowspan=1><p>1.1%<tr><td colspan=1 rowspan=1><p>Pakistan<td colspan=1 rowspan=1><p>231 million<td colspan=1 rowspan=1><p>2.0%<tr><td colspan=1 rowspan=1><p>Nigeria<td colspan=1 rowspan=1><p>223 million<td colspan=1 rowspan=1><p>2.5%</table></div><p>Learn more about global population trends from reliable sources like the <a href=https://www.worldpopulationreview.com>World Population Review</a>.</p>';
 </script>
 
 <TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
   <ToolbarRowWrapper>
-    <GroupTables1 editor={editorInstance} />
+    <TableButtonGroup1 editor={editorInstance} />
   </ToolbarRowWrapper>
   <ToolbarRowWrapper top={false}>
-    <GroupTables2 editor={editorInstance} />
+    <TableButtonGroup2 editor={editorInstance} />
   </ToolbarRowWrapper>
 </TextEditor>
 
 <div class="mt-4">
   <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
+  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
 
@@ -410,33 +451,34 @@ Use the history functionality from the WYSIWYG text editor component to integrat
 
 ```svelte example
 <script lang="ts">
-  import { GroupUndoRedo, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
+  import { UndoRedoButtonGroup, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
 
   let editorElement = $state<HTMLDivElement | null>(null);
   let editorInstance = $state<Editor | null>(null);
 
   function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
+    return editorInstance?.getHTML() ?? '';
   }
 
   function setEditorContent(content: string) {
     editorInstance?.commands.setContent(content);
   }
 
-  const content = '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a button component:</p><code>&#x3C;button type=&#x22;button&#x22; class=&#x22;text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800&#x22;&#x3E;Default&#x3C;/button&#x3E;</code><p>Learn more about all components from the <a href="https://flowbite.com/docs/getting-started/introduction/">Flowbite Docs</a>.</p>';
+  const content =
+    '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a button component:</p><code>&#x3C;button type=&#x22;button&#x22; class=&#x22;text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800&#x22;&#x3E;Default&#x3C;/button&#x3E;</code><p>Learn more about all components from the <a href="https://flowbite.com/docs/getting-started/introduction/">Flowbite Docs</a>.</p>';
 </script>
 
 <TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
   <ToolbarRowWrapper>
-    <GroupUndoRedo editor={editorInstance} />
+    <UndoRedoButtonGroup editor={editorInstance} />
   </ToolbarRowWrapper>
 </TextEditor>
 
 <div class="mt-4">
   <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
+  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
 
@@ -446,27 +488,27 @@ Use the following example to create your custom texteditor.
 
 ```svelte example hideOutput
 <script lang="ts">
-  // GroupCustom.svelte
-  import { type GroupEditorBasicProps, AlignmentButtons, FontButtons, FormatButtons, ImageButtons } from "@flowbite-svelte-plugins/texteditor";
+  import { AlignmentButton, FontButton, FormatButton, ImageButton } from "@flowbite-svelte-plugins/texteditor";
+  import type { GroupEditorBasicProps } from "@flowbite-svelte-plugins/texteditor";
 
   let { editor, showToolbar = true }: GroupEditorBasicProps = $props();
 </script>
 
 {#if editor && showToolbar}
-  <AlignmentButtons {editor} alignment="left" />
-  <AlignmentButtons {editor} alignment="right" />
-  <ImageButtons {editor} />
-  <FontButtons {editor} format="fontSize" />
-  <FormatButtons {editor} format="italic" />
-  <FormatButtons {editor} format="link" />
-  <FormatButtons {editor} format="removeLink" />
+  <AlignmentButton {editor} alignment="left" />
+  <AlignmentButton {editor} alignment="right" />
+  <ImageButton {editor} />
+  <FontButton {editor} format="fontSize" />
+  <FormatButton {editor} format="italic" />
+  <FormatButton {editor} format="link" />
+  <FormatButton {editor} format="removeLink" />
 {/if}
 ```
 
 ```svelte example hideOutput
 <script lang="ts">
   // +page.svelte
-  import GroupCustom from "./GroupCustom.svelte";
+  import CustomGroup from "./CustomGroup.svelte";
   import { TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
   import { Button } from "flowbite-svelte";
@@ -486,7 +528,7 @@ Use the following example to create your custom texteditor.
 </script>
 
 <TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <GroupCustom editor={editorInstance} />
+  <CustomGroup editor={editorInstance} />
 </TextEditor>
 
 <div class="mt-4">
@@ -496,22 +538,79 @@ Use the following example to create your custom texteditor.
 ```
 
 ## Exporting data
-Use `GroupExports.svelte` to export the text content inside of the WYSIWYG text editor in JSON or raw HTML format to persist into your database or API structure.
+Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG text editor in JSON or raw HTML format to persist into your database or API structure.
 
 ```svelte example
 <script lang="ts">
-  import { GroupExports, TextEditor } from '@flowbite-svelte-plugins/texteditor';
+  import { ExportButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
   import type { Editor } from '@tiptap/core';
 
   let editorElement = $state<HTMLDivElement | null>(null);
   let editorInstance = $state<Editor | null>(null);
 
-  const content =
-    '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a button component:</p><code>&#x3C;button type=&#x22;button&#x22; class=&#x22;text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800&#x22;&#x3E;Default&#x3C;/button&#x3E;</code><p>Learn more about all components from the <a href="https://flowbite.com/docs/getting-started/introduction/">Flowbite Docs</a>.</p>';
+  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
+{
+  if (i % 15 == 0)
+    console.log("FizzBuzz");
+  else if (i % 3 == 0)
+    console.log("Fizz");
+  else if (i % 5 == 0)
+    console.log("Buzz");
+  else
+    console.log(i);
+}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
 </script>
 
 <TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <GroupExports editor={editorInstance} />
+  <ExportButtonGroup editor={editorInstance} />
 </TextEditor>
+```
+
+## Source and HTML
+
+Use the following example to view/edit source code and insert HTML code.
+
+```svelte example
+<script lang="ts">
+  import { HtmlCodeButton, SourceButton, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
+
+  let editorElement = $state<HTMLDivElement | null>(null);
+  let editorInstance = $state<Editor | null>(null);
+
+  function getEditorContent() {
+    return editorInstance?.getHTML() ?? '';
+  }
+
+  function setEditorContent(content: string) {
+    editorInstance?.commands.setContent(content);
+  }
+
+  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p>
+    <p>Here is an example of a code block:</p><pre><code class="language-js">for (var i=1; i <= 20; i++)
+{
+  if (i % 15 == 0)
+    console.log("FizzBuzz");
+  else if (i % 3 == 0)
+    console.log("Fizz");
+  else if (i % 5 == 0)
+    console.log("Buzz");
+  else
+    console.log(i);
+}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
+</script>
+
+<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
+  <ToolbarRowWrapper>
+    <SourceButton editor={editorInstance} />
+    <HtmlCodeButton editor={editorInstance} />
+  </ToolbarRowWrapper>
+</TextEditor>
+
+<div class="mt-4">
+  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
+</div>
 ```
 

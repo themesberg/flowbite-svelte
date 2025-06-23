@@ -52,8 +52,8 @@ importers:
         specifier: ^0.3.4
         version: 0.3.4(svelte@5.34.7)(tailwindcss@4.1.10)
       '@flowbite-svelte-plugins/texteditor':
-        specifier: ^0.10.1
-        version: 0.10.1(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(highlight.js@11.11.1)(svelte@5.34.7)(tailwindcss@4.1.10)
+        specifier: ^0.11.0
+        version: 0.11.0(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(svelte@5.34.7)(tailwindcss@4.1.10)
       '@playwright/test':
         specifier: ^1.53.1
         version: 1.53.1
@@ -611,8 +611,8 @@ packages:
       svelte: ^5.0.0
       tailwindcss: ^4.1.4
 
-  '@flowbite-svelte-plugins/texteditor@0.10.1':
-    resolution: {integrity: sha512-4R+A480TAC2DIohZocgMZffVHSgwbLb1Q7e2xuzj3qQ/JUvKOK8FAwCMso0Ocmfx+KvyQyXdd919G5e6KeHvJQ==}
+  '@flowbite-svelte-plugins/texteditor@0.11.0':
+    resolution: {integrity: sha512-ZodXbW/mp1VgtKCTb8zCyTn2mR76iGixzL5NI8FaS5m/DfLDqKdFi/katZv3X/BJzMl70yo2/vnnBoYzJbVa/A==}
     peerDependencies:
       svelte: ^5.0.0
       tailwindcss: ^4.1.4
@@ -3671,7 +3671,7 @@ snapshots:
       svelte: 5.34.7
       tailwindcss: 4.1.10
 
-  '@flowbite-svelte-plugins/texteditor@0.10.1(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(highlight.js@11.11.1)(svelte@5.34.7)(tailwindcss@4.1.10)':
+  '@flowbite-svelte-plugins/texteditor@0.11.0(@tiptap/extension-code-block@2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))(@tiptap/pm@2.22.3))(svelte@5.34.7)(tailwindcss@4.1.10)':
     dependencies:
       '@tiptap/core': 2.22.3(@tiptap/pm@2.22.3)
       '@tiptap/extension-bold': 2.22.3(@tiptap/core@2.22.3(@tiptap/pm@2.22.3))
@@ -3703,12 +3703,12 @@ snapshots:
       '@tiptap/pm': 2.22.3
       '@tiptap/starter-kit': 2.22.3
       flowbite-typography: 1.0.5
+      highlight.js: 11.11.1
       lowlight: 3.3.0
       svelte: 5.34.7
       tailwindcss: 4.1.10
     transitivePeerDependencies:
       - '@tiptap/extension-code-block'
-      - highlight.js
 
   '@humanfs/core@0.19.1': {}
 
