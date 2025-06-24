@@ -33,10 +33,126 @@ pnpm i -D @flowbite-svelte-plugins/texteditor highlight.js lowlight
 @import 'tailwindcss';
 // ...
 @plugin "flowbite-typography";
-// ...
 
 @source "../node_modules/@flowbite-svelte-plugins/texteditor/dist";
-// ...
+
+@layer components {
+  .tiptap ul,
+  .tiptap ol {
+    padding: 0 1rem;
+    margin: 1.25rem 1rem 1.25rem 0.4rem;
+  }
+
+  .tiptap ul li p,
+  .tiptap ol li p {
+    margin-bottom: 0.15em;
+  }
+
+  
+  .tiptap ul[data-type='taskList'] {
+    list-style: none;
+    margin-left: 0;
+    padding: 1em;
+  }
+
+  .tiptap ul[data-type='taskList'] li {
+    align-items: flex-start;
+    display: flex;
+    margin: 0 !important;
+    padding: 0.3em !important;
+    gap: 0.5rem;
+  }
+
+  .tiptap ul[data-type='taskList'] li > label {
+    flex: 0 0 auto;
+    user-select: none;
+    margin-top: 0.4em !important;
+  }
+
+  .tiptap ul[data-type='taskList'] li > div {
+    flex: 1 1 auto;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 0;
+  }
+
+  .tiptap ul[data-type='taskList'] input[type='checkbox'] {
+    cursor: pointer;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .tiptap ul[data-type='taskList'] ul[data-type='taskList'] {
+    margin: 0;
+  }
+
+  .tiptap ul[data-type='taskList'] li > label span {
+    display: inline-block;
+  }
+
+  .tiptap ul[data-type='taskList'] li p {
+    margin: 0 !important;
+  }
+
+  /* texteditor Details */
+  .tiptap .details {
+    display: flex;
+    gap: 0.25rem;
+    margin: 1.5rem 0;
+    border: 1px solid #d4c8c760;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .tiptap .details summary {
+    font-weight: 700;
+    list-style: none;
+  }
+
+  .tiptap .details > button {
+    align-items: center;
+    background: transparent;
+    border-radius: 4px;
+    display: flex;
+    font-size: 0.625rem;
+    height: 1.25rem;
+    justify-content: center;
+    line-height: 1;
+    margin-top: 0.1rem;
+    padding: 0;
+    width: 1.25rem;
+  }
+
+  .tiptap .details > button:hover {
+    background-color: #dedad8d8;
+  }
+
+  .tiptap .details > button::before {
+    content: '▶';
+    display: inline-block;
+    position: relative;
+    top: 3px;
+  }
+
+  .tiptap .details.is-open > button::before {
+    transform: rotate(90deg);
+  }
+
+  .tiptap .details > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .tiptap .details > div > [data-type='detailsContent'] > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .tiptap .details .details {
+    margin: 0.5rem 0;
+  }
+}
 ```
 
 ## Default text editor
@@ -682,10 +798,3 @@ Either using the above example or use button components to create your custom te
   <CustomGroup editor={editorInstance} />
 </TextEditor>
 ```
-
-<style>
-  /* task list adjustment */
-:global(.tiptap ul[data-type='taskList'] li > label) {
-    margin-top: 0.4em !important;
-}
-</style>
