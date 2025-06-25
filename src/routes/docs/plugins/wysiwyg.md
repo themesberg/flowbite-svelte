@@ -11,7 +11,9 @@ description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins 
   import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   const components = 'Texteditor'
 
-  import { Badge, P, Button } from "$lib"
+  import Appcss from './examples/appcss.md';
+
+  import { Badge, P, Button, Accordion, AccordionItem } from "$lib"
   import { InfoCircleOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -29,178 +31,14 @@ pnpm i -D @flowbite-svelte-plugins/texteditor highlight.js lowlight
 
 ### app.css
 
-```css
-@import 'tailwindcss';
-// ...
-@plugin "flowbite-typography";
+Use the following example or create your own.
 
-@source "../node_modules/@flowbite-svelte-plugins/texteditor/dist";
-
-@layer components {
-  .tiptap ul,
-  .tiptap ol {
-    padding: 0 1rem;
-    margin: 1.25rem 1rem 1.25rem 0.4rem;
-  }
-
-  .tiptap ul li p,
-  .tiptap ol li p {
-    margin-bottom: 0.15em;
-  }
-
-  
-  .tiptap ul[data-type='taskList'] {
-    list-style: none;
-    margin-left: 0;
-    padding: 1em;
-  }
-
-  .tiptap ul[data-type='taskList'] li {
-    align-items: flex-start;
-    display: flex;
-    margin: 0 !important;
-    padding: 0.3em !important;
-    gap: 0.5rem;
-  }
-
-  .tiptap ul[data-type='taskList'] li > label {
-    flex: 0 0 auto;
-    user-select: none;
-    margin-top: 0.4em !important;
-  }
-
-  .tiptap ul[data-type='taskList'] li > div {
-    flex: 1 1 auto;
-    margin: 0 !important;
-    padding: 0 !important;
-    min-width: 0;
-  }
-
-  .tiptap ul[data-type='taskList'] input[type='checkbox'] {
-    cursor: pointer;
-    margin: 0;
-    flex-shrink: 0;
-  }
-
-  .tiptap ul[data-type='taskList'] ul[data-type='taskList'] {
-    margin: 0;
-  }
-
-  .tiptap ul[data-type='taskList'] li > label span {
-    display: inline-block;
-  }
-
-  .tiptap ul[data-type='taskList'] li p {
-    margin: 0 !important;
-  }
-
-  /* texteditor Details */
-  .tiptap .details {
-    display: flex;
-    gap: 0.25rem;
-    margin: 1.5rem 0;
-    border: 1px solid #d4c8c760;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-  }
-
-  .tiptap .details summary {
-    font-weight: 700;
-    list-style: none;
-  }
-
-  .tiptap .details > button {
-    align-items: center;
-    background: transparent;
-    border-radius: 4px;
-    display: flex;
-    font-size: 0.625rem;
-    height: 1.25rem;
-    justify-content: center;
-    line-height: 1;
-    margin-top: 0.1rem;
-    padding: 0;
-    width: 1.25rem;
-  }
-
-  .tiptap .details > button:hover {
-    background-color: #dedad8d8;
-  }
-
-  .tiptap .details > button::before {
-    content: '▶';
-    display: inline-block;
-    position: relative;
-    top: 3px;
-  }
-
-  .tiptap .details.is-open > button::before {
-    transform: rotate(90deg);
-  }
-
-  .tiptap .details > div {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-  }
-
-  .tiptap .details > div > [data-type='detailsContent'] > :last-child {
-    margin-bottom: 0.5rem;
-  }
-
-  .tiptap .details .details {
-    margin: 0.5rem 0;
-  }
-
-  /* emoji */
-  [data-type='emoji'] img {
-    height: 1em;
-    width: 1em;
-    display: inline;
-    margin: 0;
-    padding: 0;
-  }
-
-  .tippy-box .tippy-content .dropdown-menu {
-    background: #fff;
-    border: 1px solid rgba(61, 37, 20, 0.05);
-    border-radius: 0.7rem;
-    box-shadow:
-      0px 12px 33px 0px rgba(0, 0, 0, 0.06),
-      0px 3.618px 9.949px 0px rgba(0, 0, 0, 0.04);
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-    overflow: auto;
-    padding: 0.6rem;
-    position: relative;
-  }
-
-  .tippy-box .tippy-content .dropdown-menu button {
-    align-items: center;
-    background-color: transparent;
-    display: flex;
-    gap: 0.25rem;
-    text-align: left;
-    width: 100%;
-  }
-
-  .tippy-box .tippy-content .dropdown-menu button:hover,
-  .tippy-box .tippy-content .dropdown-menu button:hover.is-selected {
-    background-color: rgba(61, 37, 20, 0.12);
-  }
-
-  .tippy-box .tippy-content .dropdown-menu button.is-selected {
-    background-color: rgba(61, 37, 20, 0.08);
-  }
-
-  .tippy-box .tippy-content .dropdown-menu button img {
-    height: 1em;
-    width: 1em;
-  }
-}
-```
+<Accordion flush>
+  <AccordionItem>
+  {#snippet header()}Example style{/snippet}
+  <Appcss />
+  </AccordionItem>
+</Accordion>
 
 ## Default text editor
 
@@ -291,17 +129,19 @@ Use `FormatButtonGroup` to enable typography styling, formatting and marking suc
     editorInstance?.commands.setContent(content);
   }
 
-  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
-{
-  if (i % 15 == 0)
-    console.log("FizzBuzz");
-  else if (i % 3 == 0)
-    console.log("Fizz");
-  else if (i % 5 == 0)
-    console.log("Buzz");
-  else
-    console.log(i);
-}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
+  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p>
+  <pre><code class="language-javascript">for (var i=1; i <= 20; i++)
+    {
+      if (i % 15 == 0)
+        console.log("FizzBuzz");
+      else if (i % 3 == 0)
+        console.log("Fizz");
+      else if (i % 5 == 0)
+        console.log("Buzz");
+      else
+        console.log(i);
+    }</code></pre>
+<p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
 </script>
 
 <TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
@@ -830,7 +670,7 @@ Use the following example to view/edit source code and insert HTML code.
 
 ## Customizing Group components
 
-You can control display of buttons by adding `false` as the following example.
+You can control display of buttons by adding `false` to a button group component as the following example.
 
 ```svelte example
 <script lang="ts">
@@ -865,6 +705,7 @@ Either using the above example or use button components to create your custom te
 
 ```svelte example hideOutput
 <script lang="ts">
+  // CustomGroup.svelte
   import { AlignmentButton, FontButton, FormatButton, ImageButton } from "@flowbite-svelte-plugins/texteditor";
   import type { GroupEditorBasicProps } from "@flowbite-svelte-plugins/texteditor";
 

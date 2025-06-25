@@ -131,6 +131,13 @@ color utility to any element that depends on these defaults.
 } */
 
 @layer components{
+  /* for wysiwyg accordion code style */
+  :not(pre) > code[class*="language-"], pre[class*="language-"]{
+    background-color: #fff;
+    max-width: 700px;
+    margin:auto;
+    font-size: .8em;
+  }
   /* plugin datatable */
   /* customcellrenderer example */
   .buy-now {
