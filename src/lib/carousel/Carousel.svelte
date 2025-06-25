@@ -29,7 +29,7 @@
     onchange?.(images[index]);
   });
 
-  const nextSlide = () => {
+  export const nextSlide = () => {
     update((_state) => {
       if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
 
@@ -39,7 +39,7 @@
     });
   };
 
-  const prevSlide = () => {
+  export const prevSlide = () => {
     update((_state) => {
       if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
 
@@ -49,20 +49,14 @@
     });
   };
 
-  const loop = (node: HTMLElement, duration: number) => {
+  const loop = (node: HTMLElement) => {
     // loop timer
     /* eslint-disable  @typescript-eslint/no-explicit-any */
     let intervalId: any;
 
     if (duration > 0) intervalId = setInterval(nextSlide, duration);
 
-    return {
-      update: (duration: number) => {
-        clearInterval(intervalId);
-        if (duration > 0) intervalId = setInterval(nextSlide, duration);
-      },
-      destroy: () => clearInterval(intervalId)
-    };
+    return () => clearInterval(intervalId);
   };
 
   type ActiveDragGesture = {
@@ -167,7 +161,7 @@
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} />
 <div bind:this={carouselDiv} class={cn("relative", divClass)} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
-  <div {...restProps} class={cn(carousel(), activeDragGesture === undefined ? "transition-transform" : "", className)} use:loop={duration}>
+  <div {...restProps} class={cn(carousel(), activeDragGesture === undefined ? "transition-transform" : "", className)} {@attach loop}>
     {#if slide}
       {@render slide({ index, Slide })}
     {:else}
