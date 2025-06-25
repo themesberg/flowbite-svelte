@@ -34,7 +34,7 @@ pnpm i -D @flowbite-svelte-plugins/texteditor highlight.js lowlight
 Use the following example or create your own.
 
 <Accordion flush>
-  <AccordionItem>
+  <AccordionItem contentClass="customstyle">
   {#snippet header()}Example style{/snippet}
   <Appcss />
   </AccordionItem>
