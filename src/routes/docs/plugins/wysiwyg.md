@@ -265,7 +265,7 @@ Use this example of a WYSIWYG text editor to enable basic typography styling and
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
@@ -309,7 +309,7 @@ Use `FormatButtonGroup` to enable typography styling, formatting and marking suc
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
@@ -370,7 +370,7 @@ Type `:` to open the autocomplete. The default value is `emoji={true}`, and you 
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
@@ -405,7 +405,7 @@ Type `:` to open the autocomplete. The default value is `emoji={true}`, and you 
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
@@ -451,7 +451,7 @@ Type `:` to open the autocomplete. The default value is `emoji={true}`, and you 
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
@@ -485,7 +485,7 @@ Type `:` to open the autocomplete. The default value is `emoji={true}`, and you 
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
@@ -519,7 +519,7 @@ Use this example to create typography elements like bullet lists, ordered lists,
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
@@ -551,7 +551,7 @@ Use this example to create typography elements like bullet lists, ordered lists,
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
@@ -586,7 +586,7 @@ Use `VideoButtonGroup` to embed videos inside the WYSIWYG text editor based on a
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
@@ -626,7 +626,7 @@ Use `TableButtonGroup`s to edit table data inside the WYSIWYG text editor by add
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
@@ -663,7 +663,7 @@ Use the history functionality from the WYSIWYG text editor component to integrat
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
@@ -728,7 +728,7 @@ Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG 
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
@@ -775,7 +775,7 @@ Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG 
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
@@ -823,7 +823,7 @@ Use the following example to view/edit source code and insert HTML code.
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
