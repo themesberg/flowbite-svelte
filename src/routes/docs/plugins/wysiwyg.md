@@ -152,6 +152,53 @@ pnpm i -D @flowbite-svelte-plugins/texteditor highlight.js lowlight
   .tiptap .details .details {
     margin: 0.5rem 0;
   }
+
+  /* emoji */
+  [data-type='emoji'] img {
+    height: 1em;
+    width: 1em;
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tippy-box .tippy-content .dropdown-menu {
+    background: #fff;
+    border: 1px solid rgba(61, 37, 20, 0.05);
+    border-radius: 0.7rem;
+    box-shadow:
+      0px 12px 33px 0px rgba(0, 0, 0, 0.06),
+      0px 3.618px 9.949px 0px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    overflow: auto;
+    padding: 0.6rem;
+    position: relative;
+  }
+
+  .tippy-box .tippy-content .dropdown-menu button {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    gap: 0.25rem;
+    text-align: left;
+    width: 100%;
+  }
+
+  .tippy-box .tippy-content .dropdown-menu button:hover,
+  .tippy-box .tippy-content .dropdown-menu button:hover.is-selected {
+    background-color: rgba(61, 37, 20, 0.12);
+  }
+
+  .tippy-box .tippy-content .dropdown-menu button.is-selected {
+    background-color: rgba(61, 37, 20, 0.08);
+  }
+
+  .tippy-box .tippy-content .dropdown-menu button img {
+    height: 1em;
+    width: 1em;
+  }
 }
 ```
 
@@ -266,6 +313,68 @@ Use `FormatButtonGroup` to enable typography styling, formatting and marking suc
   <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>
 ```
+
+## Emoji
+
+Type `:` to open the autocomplete. The default value is `emoji={true}`, and you can disable it by adding `emoji={false}` to `TextEditor`.
+
+```svelte example
+<script lang="ts">
+  import { UndoRedoButtonGroup, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
+
+  let editorElement = $state<HTMLDivElement | null>(null);
+  let editorInstance = $state<Editor | null>(null);
+
+  function getEditorContent() {
+    return editorInstance?.getHTML() ?? '';
+  }
+
+  function setEditorContent(content: string) {
+    editorInstance?.commands.setContent(content);
+  }
+
+  let content = `
+        <p>
+          These <span data-type="emoji" data-name="smiley"></span>
+          are <span data-type="emoji" data-name="fire"></span>
+          some <span data-type="emoji" data-name="smiley_cat"></span>
+          emojis <span data-type="emoji" data-name="exploding_head"></span>
+          rendered <span data-type="emoji" data-name="ghost"></span>
+          as <span data-type="emoji" data-name="massage"></span>
+          inline <span data-type="emoji" data-name="v"></span>
+          nodes.
+        </p>
+        <p>
+          Type <code>:</code> to open the autocomplete.
+        </p>
+        <p>
+          Even <span data-type="emoji" data-name="octocat"></span>
+          custom <span data-type="emoji" data-name="trollface"></span>
+          emojis <span data-type="emoji" data-name="neckbeard"></span>
+          are <span data-type="emoji" data-name="rage1"></span>
+          supported.
+        </p>
+        <p>
+          And unsupported emojis (without a fallback image) are rendered as just the shortcode <span data-type="emoji" data-name="this_does_not_exist"></span>.
+        </p>
+        <pre><code>In code blocks all emojis are rendered as plain text. 👩‍💻👨‍💻</code></pre>
+      `;
+</script>
+
+<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
+  <ToolbarRowWrapper>
+    <UndoRedoButtonGroup editor={editorInstance} />
+  </ToolbarRowWrapper>
+</TextEditor>
+
+<div class="mt-4">
+  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
+</div>
+```
+
 
 ## Text alignment
 

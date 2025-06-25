@@ -42,7 +42,6 @@
     "@eslint/js": "^9.29.0",
     "@flowbite-svelte-plugins/chart": "^0.2.4",
     "@flowbite-svelte-plugins/datatable": "^0.3.4",
-    "@flowbite-svelte-plugins/texteditor": "^0.12.3",
     "@playwright/test": "^1.53.1",
     "@sveltejs/adapter-auto": "^6.0.1",
     "@sveltejs/adapter-vercel": "^5.7.2",
@@ -138,6 +137,7 @@
   "dependencies": {
     "@floating-ui/dom": "^1.7.1",
     "@floating-ui/utils": "^0.2.9",
+    "@flowbite-svelte-plugins/texteditor": "link:../flowbite-svelte-plugins/apps/flowbite-svelte-texteditor",
     "apexcharts": "^4.7.0",
     "clsx": "^2.1.1",
     "flowbite": "^3.1.2",

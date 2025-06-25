@@ -290,4 +290,75 @@ color utility to any element that depends on these defaults.
   .tiptap .details .details {
     margin: 0.5rem 0;
   }
+
+  /* emoji */
+  [data-type='emoji'] img {
+    height: 1em;
+    width: 1em;
+    display: inline;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .tippy-box .tippy-content .dropdown-menu {
+    background: #fff;
+    border: 1px solid rgba(61, 37, 20, 0.05);
+    border-radius: 0.7rem;
+    box-shadow:
+      0px 12px 33px 0px rgba(0, 0, 0, 0.06),
+      0px 3.618px 9.949px 0px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    overflow: auto;
+    padding: 0.6rem;
+    position: relative;
+  }
+
+  .tippy-box .tippy-content .dropdown-menu button {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    gap: 0.25rem;
+    text-align: left;
+    width: 100%;
+  }
+
+  .tippy-box .tippy-content .dropdown-menu button:hover,
+  .tippy-box .tippy-content .dropdown-menu button:hover.is-selected {
+    background-color: rgba(61, 37, 20, 0.12);
+  }
+
+  .tippy-box .tippy-content .dropdown-menu button.is-selected {
+    background-color: rgba(61, 37, 20, 0.08);
+  }
+
+  .tippy-box .tippy-content .dropdown-menu button img {
+    height: 1em;
+    width: 1em;
+  }
+
+  .tippy-box {
+    /* Ensure tippy can position freely */
+    transform-origin: center !important;
+  }
+
+  .tippy-box .tippy-content .dropdown-menu {
+    background: #fff;
+    border: 1px solid rgba(61, 37, 20, 0.05);
+    border-radius: 0.7rem;
+    box-shadow:
+      0px 12px 33px 0px rgba(0, 0, 0, 0.06),
+      0px 3.618px 9.949px 0px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    overflow: auto;
+    padding: 0.6rem;
+    position: relative;
+    /* Add these to prevent issues */
+    min-width: 200px; /* Set a reasonable minimum width */
+    max-width: 300px; /* Prevent it from being too wide */
+    width: max-content;
+  }
 }
