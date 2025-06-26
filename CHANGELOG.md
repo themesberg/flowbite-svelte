@@ -4,22 +4,22 @@
 
 ### Patch Changes
 
-- - 2173d5f3e docs: wysiwyg: add accordion for app.css update
-  - b1fffaf1f docs: wysiwyg: add accordion for app.css
-  - a5745dcae fix: emoji in wysiwyg page
-  - f9c0990a4 feat: editor: emoji update
-  - 4fe291dff fix: #1566 - quick restart (#1652)
-  - adaa7e89a fix: #1623 (#1650)
-  - 2b62607e4 docs: texteditor: update default editor
-  - 083484a87 docs: texteditor: update app.css
-  - 924af90f6 docs: texteditor: add line break to formatting
-  - c83e88d2d fix: buttons padding (#1649)
-  - 2a519fb98 docs: phone-input layout issues for compound widgets (#1648)
-  - b17bd6d11 docs: wysiwyg TaskList and Details
-  - 0fc2ca040 docs: wysiwyg update
-  - 418dabb2c docs: wysiwyg update
-  - 682dddd35 fix: wysiwyg page according to new texteditor version
-  - e67cc4e63 docs: add Exporting data
+- 2173d5f3e docs: wysiwyg: add accordion for app.css update
+- b1fffaf1f docs: wysiwyg: add accordion for app.css
+- a5745dcae fix: emoji in wysiwyg page
+- f9c0990a4 feat: editor: emoji update
+- 4fe291dff fix: #1566 - quick restart (#1652)
+- adaa7e89a fix: #1623 (#1650)
+- 2b62607e4 docs: texteditor: update default editor
+- 083484a87 docs: texteditor: update app.css
+- 924af90f6 docs: texteditor: add line break to formatting
+- c83e88d2d fix: buttons padding (#1649)
+- 2a519fb98 docs: phone-input layout issues for compound widgets (#1648)
+- b17bd6d11 docs: wysiwyg TaskList and Details
+- 0fc2ca040 docs: wysiwyg update
+- 418dabb2c docs: wysiwyg update
+- 682dddd35 fix: wysiwyg page according to new texteditor version
+- e67cc4e63 docs: add Exporting data
 
 ## 1.8.1
 

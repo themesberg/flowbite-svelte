@@ -309,7 +309,18 @@ color utility to any element that depends on these defaults.
     }
   }
 
-  .tippy-box .tippy-content .dropdown-menu button {
+  /* mention */
+  [data-type="mention"] {
+    background-color: rgba(88, 5, 255, .05);
+    border-radius: 0.4rem;
+    box-decoration-break: clone;
+    color: #6A00F5;
+    padding: 0.1rem 0.3rem;
+  }
+
+  /*  mention and emoji */
+  .tippy-box .tippy-content .dropdown-menu button,
+  .tippy-box .tippy-content .mention-dropdown button {
     align-items: center;
     background-color: transparent;
     display: flex;
@@ -319,11 +330,14 @@ color utility to any element that depends on these defaults.
   }
 
   .tippy-box .tippy-content .dropdown-menu button:hover,
-  .tippy-box .tippy-content .dropdown-menu button:hover.is-selected {
+  .tippy-box .tippy-content .dropdown-menu button:hover.is-selected,
+  .tippy-box .tippy-content .mention-dropdown button:hover,
+  .tippy-box .tippy-content .mention-dropdown button:hover.is-selected {
     background-color: rgba(61, 37, 20, 0.12);
   }
 
-  .tippy-box .tippy-content .dropdown-menu button.is-selected {
+  .tippy-box .tippy-content .dropdown-menu button.is-selected,
+  .tippy-box .tippy-content .mention-dropdown button.is-selected {
     background-color: rgba(61, 37, 20, 0.08);
   }
 
@@ -332,7 +346,12 @@ color utility to any element that depends on these defaults.
     width: 1em;
   }
 
-  .tippy-box .tippy-content .dropdown-menu {
+  .tippy-box {
+    transform-origin: center !important;
+  }
+
+  .tippy-box .tippy-content .dropdown-menu,
+  .tippy-box .tippy-content .mention-dropdown {
     background: #fff;
     border: 1px solid rgba(61, 37, 20, 0.05);
     border-radius: 0.7rem;
@@ -344,6 +363,7 @@ color utility to any element that depends on these defaults.
     gap: 0.1rem;
     overflow: auto;
     padding: 0.6rem;
+    position: relative;
     min-width: 200px;
     max-width: 300px;
     width: max-content;

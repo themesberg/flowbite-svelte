@@ -215,6 +215,75 @@ Type `:` to open the autocomplete. The default value is `emoji={true}`, and you 
 </div>
 ```
 
+## Mention
+
+Trigger a mention popup by typing `@`. Provide a `mentions` array of name strings to display filtered suggestions as you type.
+
+```svelte example
+<script lang="ts">
+  import { UndoRedoButtonGroup, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
+
+  let editorElement = $state<HTMLDivElement | null>(null);
+  let editorInstance = $state<Editor | null>(null);
+
+  function getEditorContent() {
+    return editorInstance?.getHTML() ?? '';
+  }
+
+  function setEditorContent(content: string) {
+    editorInstance?.commands.setContent(content);
+  }
+
+  let content = `
+        <p>Hi everyone! Don’t forget the daily stand up at 8 AM.</p>
+        <p><span data-type="mention" data-id="Jennifer Grey"></span> Would you mind to share what you’ve been working on lately? We fear not much happened since Dirty Dancing.
+        <p><span data-type="mention" data-id="Winona Ryder"></span> <span data-type="mention" data-id="Axl Rose"></span> Let’s go through your most important points quickly.</p>
+        <p>I have a meeting with <span data-type="mention" data-id="Christina Applegate"></span> and don’t want to come late.</p>
+        <p>– Thanks, your big boss</p>
+      `;
+  const mentions = [
+    'Lea Thompson',
+    'Cyndi Lauper',
+    'Tom Cruise',
+    'Madonna',
+    'Jerry Hall',
+    'Joan Collins',
+    'Winona Ryder',
+    'Christina Applegate',
+    'Alyssa Milano',
+    'Molly Ringwald',
+    'Ally Sheedy',
+    'Debbie Harry',
+    'Olivia Newton-John',
+    'Elton John',
+    'Michael J. Fox',
+    'Axl Rose',
+    'Emilio Estevez',
+    'Ralph Macchio',
+    'Rob Lowe',
+    'Jennifer Grey',
+    'Mickey Rourke',
+    'John Cusack',
+    'Matthew Broderick',
+    'Justine Bateman',
+    'Lisa Bonet'
+  ];
+</script>
+
+<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content} {mentions}>
+  <ToolbarRowWrapper>
+    <UndoRedoButtonGroup editor={editorInstance} />
+  </ToolbarRowWrapper>
+</TextEditor>
+
+<div class="mt-4">
+  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
+</div>
+```
+
 ## Text alignment
 
 `AlignmentButtonGroup` component enables text alignment to the left, center, right, and justify for the content inside of the WYSIWYG component.
