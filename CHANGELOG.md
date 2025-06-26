@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.8.2
+
+### Patch Changes
+
+- - 2173d5f3e docs: wysiwyg: add accordion for app.css update
+  - b1fffaf1f docs: wysiwyg: add accordion for app.css
+  - a5745dcae fix: emoji in wysiwyg page
+  - f9c0990a4 feat: editor: emoji update
+  - 4fe291dff fix: #1566 - quick restart (#1652)
+  - adaa7e89a fix: #1623 (#1650)
+  - 2b62607e4 docs: texteditor: update default editor
+  - 083484a87 docs: texteditor: update app.css
+  - 924af90f6 docs: texteditor: add line break to formatting
+  - c83e88d2d fix: buttons padding (#1649)
+  - 2a519fb98 docs: phone-input layout issues for compound widgets (#1648)
+  - b17bd6d11 docs: wysiwyg TaskList and Details
+  - 0fc2ca040 docs: wysiwyg update
+  - 418dabb2c docs: wysiwyg update
+  - 682dddd35 fix: wysiwyg page according to new texteditor version
+  - e67cc4e63 docs: add Exporting data
+
 ## 1.8.1
 
 ### Patch Changes
@@ -5281,7 +5302,6 @@ This reverts commit c949b82f02f8adad2a2d172e602ce5774ae3bca6.
 ### Patch Changes
 
 - fix: SidebarItem: change icon snippet to iconSlot ([`d4c8b51c4a14fb56e7b768942b909aa792ea4022`](https://github.com/shinokada/svelte-5-ui-lib/commit/d4c8b51c4a14fb56e7b768942b909aa792ea4022))
-
   - fix: add aclass to SidebarItem
 
 ## 0.4.1
@@ -5295,7 +5315,6 @@ This reverts commit c949b82f02f8adad2a2d172e602ce5774ae3bca6.
 ### Minor Changes
 
 - feat: TabItem, and Tabs components ([`69db35d4d1f32ef4cfc64b34ceb982627d50009e`](https://github.com/shinokada/svelte-5-ui-lib/commit/69db35d4d1f32ef4cfc64b34ceb982627d50009e))
-
   - docs: tab page is added
 
 ## 0.3.7

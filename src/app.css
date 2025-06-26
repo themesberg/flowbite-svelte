@@ -130,13 +130,13 @@ color utility to any element that depends on these defaults.
   }
 } */
 
-@layer components{
+@layer components {
   /* for wysiwyg accordion code style */
-  .customstyle > pre[class="language-css"]{
+  .customstyle > pre[class="language-css"] {
     background-color: #fff;
     max-width: 700px;
-    margin:auto;
-    font-size: .9em;
+    margin: auto;
+    font-size: 0.9em;
   }
   /* plugin datatable */
   /* customcellrenderer example */
@@ -194,13 +194,13 @@ color utility to any element that depends on these defaults.
     margin-bottom: 0.15em;
   }
 
-  .tiptap ul[data-type='taskList'] {
+  .tiptap ul[data-type="taskList"] {
     list-style: none;
     margin-left: 0;
     padding: 1em;
   }
 
-  .tiptap ul[data-type='taskList'] li {
+  .tiptap ul[data-type="taskList"] li {
     align-items: flex-start;
     display: flex;
     margin: 0 !important;
@@ -208,34 +208,34 @@ color utility to any element that depends on these defaults.
     gap: 0.5rem;
   }
 
-  .tiptap ul[data-type='taskList'] li > label {
+  .tiptap ul[data-type="taskList"] li > label {
     flex: 0 0 auto;
     user-select: none;
     margin-top: 0.4em !important;
   }
 
-  .tiptap ul[data-type='taskList'] li > div {
+  .tiptap ul[data-type="taskList"] li > div {
     flex: 1 1 auto;
     margin: 0 !important;
     padding: 0 !important;
     min-width: 0;
   }
 
-  .tiptap ul[data-type='taskList'] input[type='checkbox'] {
+  .tiptap ul[data-type="taskList"] input[type="checkbox"] {
     cursor: pointer;
     margin: 0;
     flex-shrink: 0;
   }
 
-  .tiptap ul[data-type='taskList'] ul[data-type='taskList'] {
+  .tiptap ul[data-type="taskList"] ul[data-type="taskList"] {
     margin: 0;
   }
 
-  .tiptap ul[data-type='taskList'] li > label span {
+  .tiptap ul[data-type="taskList"] li > label span {
     display: inline-block;
   }
 
-  .tiptap ul[data-type='taskList'] li p {
+  .tiptap ul[data-type="taskList"] li p {
     margin: 0 !important;
   }
 
@@ -273,7 +273,7 @@ color utility to any element that depends on these defaults.
   }
 
   .tiptap .details > button::before {
-    content: '▶';
+    content: "▶";
     display: inline-block;
     position: relative;
     top: 3px;
@@ -290,7 +290,7 @@ color utility to any element that depends on these defaults.
     width: 100%;
   }
 
-  .tiptap .details > div > [data-type='detailsContent'] > :last-child {
+  .tiptap .details > div > [data-type="detailsContent"] > :last-child {
     margin-bottom: 0.5rem;
   }
 
@@ -299,7 +299,7 @@ color utility to any element that depends on these defaults.
   }
 
   /* emoji */
-  [data-type='emoji'] {
+  [data-type="emoji"] {
     img {
       height: 1em;
       width: 1em;
@@ -344,8 +344,8 @@ color utility to any element that depends on these defaults.
     gap: 0.1rem;
     overflow: auto;
     padding: 0.6rem;
-    min-width: 200px; 
-    max-width: 300px; 
+    min-width: 200px;
+    max-width: 300px;
     width: max-content;
   }
 }

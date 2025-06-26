@@ -44,7 +44,7 @@ This example can be used to select the country code from a dropdown menu and set
 </script>
 
 <form class="mx-auto max-w-sm">
-  <div class="flex items-center">
+  <div class="flex">
     <button id="states-button" class="z-10 inline-flex shrink-0 items-center rounded-s-lg border border-r-0 border-gray-300 bg-gray-100 px-3 py-2 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 focus:outline-hidden dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700" type="button">
       <Usa />
       +1
@@ -105,7 +105,7 @@ Use this example to send a verification code to the user’s phone number for au
 </script>
 
 <form class="mx-auto max-w-sm">
-  <div class="flex items-center">
+  <div class="flex">
     <button id="states-button" class="z-10 inline-flex shrink-0 items-center rounded-s-lg border border-r-0 border-gray-300 bg-gray-100 px-3 py-2 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 focus:outline-hidden dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700" type="button">
       <Usa />
       +1
@@ -161,7 +161,7 @@ Use this example to select one of your saved phone numbers from an application w
     <A href="/">Manage numbers</A>
   </div>
 
-  <ButtonGroup class="flex items-center">
+  <ButtonGroup class="flex">
     <div class="relative w-full">
       <Select id="phone-numbers" selectClass="rounded-none rounded-s-lg border-r-0" items={phonenumbers} bind:value={selected} aria-describedby="helper-text-explanation" />
     </div>
@@ -192,7 +192,7 @@ Use this example to authenticate users with a login form using a phone number in
 
 <form class="mx-auto max-w-sm">
   <Label for="phone-input" class="mb-2">Phone number:</Label>
-  <div class="flex items-center">
+  <div class="flex">
     <button id="states-button" class="z-10 inline-flex shrink-0 items-center rounded-s-lg border border-r-0 border-gray-300 bg-gray-100 px-3 py-2 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 focus:outline-hidden dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700" type="button">
       <Usa />
       +1
@@ -248,7 +248,7 @@ Use this example to verify a phone number via SMS or phone call using a dropdown
 </script>
 
 <form class="mx-auto max-w-sm">
-  <div class="mt-2 flex items-center">
+  <div class="mt-2 flex">
     <button id="states-button" class="z-10 inline-flex shrink-0 items-center rounded-s-lg border border-r-0 border-gray-300 bg-gray-100 px-3 py-2 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 focus:outline-hidden dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700" type="button">
       <Usa />
       +1
