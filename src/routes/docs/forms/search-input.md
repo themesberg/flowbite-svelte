@@ -33,7 +33,7 @@ You will also find more advanced search components on this page including dropdo
   import { Search, Button } from "flowbite-svelte";
 </script>
 
-<Search">
+<Search>
   <Button class="me-1">Search</Button>
 </Search>
 ```
