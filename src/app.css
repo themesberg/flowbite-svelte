@@ -164,7 +164,7 @@ color utility to any element that depends on these defaults.
     color: #808080;
   }
 
-  /* datatabel demo general */
+  /* datatable demo general */
   button:not(.datatable-sorter):not(.datatable-filter) {
     cursor: pointer;
   }
@@ -180,6 +180,93 @@ color utility to any element that depends on these defaults.
   tbody button:hover,
   tbody button:focus {
     background: #3b3b3b;
+  }
+
+  /* texteditor */
+  :root {
+    --white: #FFF;
+    --black: #2E2B29;
+    --black-contrast: #110F0E;
+    --gray-1: rgba(61, 37, 20, .05);
+    --gray-2: rgba(61, 37, 20, .08);
+    --gray-3: rgba(61, 37, 20, .12);
+    --gray-4: rgba(53, 38, 28, .3);
+    --gray-5: rgba(28, 25, 23, .6);
+    --green: #22C55E;
+    --purple: #6A00F5;
+    --purple-contrast: #5800CC;
+    --purple-light: rgba(88, 5, 255, .05);
+    --yellow-contrast: #FACC15;
+    --yellow: rgba(250, 204, 21, .4);
+    --yellow-light: #FFFAE5;
+    --red: #FF5C33;
+    --red-light: #FFEBE5;
+    --shadow: 0px 12px 33px 0px rgba(0, 0, 0, .06), 0px 3.618px 9.949px 0px rgba(0, 0, 0, .04);
+  }
+
+  .tiptap:first-child {
+    margin-top: 0;
+  }
+
+  /* texteditor Table-specific styling */
+  .tiptap table {
+    border-collapse: collapse;
+    margin: 0;
+    overflow: hidden;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .tiptap table td,
+  .tiptap table th {
+    border: 1px solid var(--gray-3);
+    box-sizing: border-box;
+    min-width: 1em;
+    padding: 6px 8px;
+    position: relative;
+    vertical-align: top;
+  }
+
+  .tiptap table td > *,
+  .tiptap table th > * {
+    margin-bottom: 0;
+  }
+
+  .tiptap table th {
+    background-color: var(--gray-1);
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .tiptap table .selectedCell:after {
+    background: var(--gray-2);
+    content: "";
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .tiptap table .column-resize-handle {
+    background-color: var(--purple);
+    bottom: -2px;
+    pointer-events: none;
+    position: absolute;
+    right: -2px;
+    top: 0;
+    width: 4px;
+  }
+
+  .tiptap .tableWrapper {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+
+  .tiptap.resize-cursor {
+    cursor: col-resize;
   }
 
   /* texteditor List styles */
