@@ -401,6 +401,9 @@ color utility to any element that depends on these defaults.
     border-top: 1px solid var(--purple) !important;
   }
 
+  /* invisible characters */
+  
+
   /* Table-specific styling */
   .tiptap table {
     border-collapse: collapse;

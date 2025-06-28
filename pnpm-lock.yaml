@@ -52,8 +52,8 @@ importers:
         specifier: ^0.3.4
         version: 0.3.4(svelte@5.34.8)(tailwindcss@4.1.11)
       '@flowbite-svelte-plugins/texteditor':
-        specifier: ^0.16.0
-        version: 0.16.0(@tiptap/extension-code-block@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0))(emojibase@16.0.0)(svelte@5.34.8)(tailwindcss@4.1.11)
+        specifier: ^0.17.1
+        version: 0.17.1(@tiptap/extension-code-block@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0))(emojibase@16.0.0)(svelte@5.34.8)(tailwindcss@4.1.11)
       '@playwright/test':
         specifier: ^1.53.1
         version: 1.53.1
@@ -617,8 +617,8 @@ packages:
       svelte: ^5.0.0
       tailwindcss: ^4.1.4
 
-  '@flowbite-svelte-plugins/texteditor@0.16.0':
-    resolution: {integrity: sha512-d/H5QguV7G5Xv97yLedkBEcLcX/PEf5+9DEj4MP9npPGcDTYBcn3e7aRcAhe2XHOsRJuLc00yeV4mKazNsMIdw==}
+  '@flowbite-svelte-plugins/texteditor@0.17.1':
+    resolution: {integrity: sha512-5yQGDyu4PV5E3kY61Jk2gFBYqmd36JpBArvl/XaGBYsMPgTSu8OvJmaEewvyoNunDemD3vjTg3C7dcWBULDL1g==}
     peerDependencies:
       svelte: ^5.0.0
       tailwindcss: ^4.1.4
@@ -1175,6 +1175,12 @@ packages:
     resolution: {integrity: sha512-/rW2+a21VBGBv5c/78CVW8XA7bThSqE3FqcBtWyq8IxZoe8Hj9+Jac7FcB2YR3aY0BeHwso474e1RuVr1iYBKQ==}
     peerDependencies:
       '@tiptap/core': ^2.7.0
+
+  '@tiptap/extension-invisible-characters@2.23.0':
+    resolution: {integrity: sha512-HIFQEwGATBHON6q9A7UsgcVXaUpAfbSiXbuHbFc5LrSjCDaF+3HNn3klvNateHBr4KPcdrGbqCrgTqn6ObvXsQ==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+      '@tiptap/extension-text-style': ^2.7.0
 
   '@tiptap/extension-italic@2.23.0':
     resolution: {integrity: sha512-hX3oacTUloWM8Xu8IapcU2onMWmSkJi8mNAJiIFMiAYcERfTfxPsT3u2yO2gvpoh1iqtZWFM2gc+3x6BnXek8g==}
@@ -3754,7 +3760,7 @@ snapshots:
       svelte: 5.34.8
       tailwindcss: 4.1.11
 
-  '@flowbite-svelte-plugins/texteditor@0.16.0(@tiptap/extension-code-block@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0))(emojibase@16.0.0)(svelte@5.34.8)(tailwindcss@4.1.11)':
+  '@flowbite-svelte-plugins/texteditor@0.17.1(@tiptap/extension-code-block@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0))(emojibase@16.0.0)(svelte@5.34.8)(tailwindcss@4.1.11)':
     dependencies:
       '@tiptap/core': 2.23.0(@tiptap/pm@2.23.0)
       '@tiptap/extension-bold': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))
@@ -3773,6 +3779,7 @@ snapshots:
       '@tiptap/extension-heading': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))
       '@tiptap/extension-highlight': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))
       '@tiptap/extension-image': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))
+      '@tiptap/extension-invisible-characters': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/extension-text-style@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0)))
       '@tiptap/extension-link': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0)
       '@tiptap/extension-mathematics': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0)(katex@0.16.22)
       '@tiptap/extension-mention': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0)(@tiptap/suggestion@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0))
@@ -4312,6 +4319,11 @@ snapshots:
   '@tiptap/extension-image@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))':
     dependencies:
       '@tiptap/core': 2.23.0(@tiptap/pm@2.23.0)
+
+  '@tiptap/extension-invisible-characters@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/extension-text-style@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0)))':
+    dependencies:
+      '@tiptap/core': 2.23.0(@tiptap/pm@2.23.0)
+      '@tiptap/extension-text-style': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))
 
   '@tiptap/extension-italic@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))':
     dependencies:

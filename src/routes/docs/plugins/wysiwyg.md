@@ -356,33 +356,35 @@ Render mathematical formulas and equations by adding the `math` prop.
 <TextEditor bind:editor={editorInstance} {content} math>
   <UndoRedoButtonGroup editor={editorInstance} />
 </TextEditor>
+```
 
-<style>
-  :global(.tiptap .Tiptap-mathematics-editor) {
-    background: #202020;
-    color: #fff;
-    font-family: monospace;
-    padding: 0.2rem 0.5rem;
-  }
+## Invisible characters
 
-  :global(.tiptap .Tiptap-mathematics-render) {
-    padding: 0 0.25rem;
-  }
+A button group component that provides toggle, show, and hide controls for invisible elements in a text editor. Each button can be individually shown or hidden using boolean props.
 
-  :global(.tiptap .Tiptap-mathematics-render--editable) {
-    cursor: pointer;
-    transition: background 0.2s;
-  }
+```svelte example
+<script lang="ts">
+  import { InvisibleButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
 
-  :global(.tiptap .Tiptap-mathematics-render--editable:hover) {
-    background: #eee;
-  }
+  let editorInstance = $state<Editor | null>(null);
 
-  :global(.tiptap .Tiptap-mathematics-editor, .tiptap .Tiptap-mathematics-render) {
-    border-radius: 0.25rem;
-    display: inline-block;
-  }
-</style>
+  const content = `
+      <h1>
+        This is a heading.
+      </h1>
+      <p>
+        This<br>is<br>a<br>paragraph.
+      </p>
+      <p>
+        This is a paragraph, but without breaks.
+      </p>
+    `;
+</script>
+
+<TextEditor bind:editor={editorInstance} {content}>
+  <InvisibleButtonGroup editor={editorInstance} />
+</TextEditor>
 ```
 
 ## Text alignment
