@@ -251,6 +251,25 @@ color utility to any element that depends on these defaults.
     background-color: var(--purple-contrast);
   }
 
+  /* character count */
+  .character-count {
+    align-items: center;
+    color: var(--gray-5);
+    display: flex;
+    font-size: 0.75rem;
+    gap: 0.5rem;
+    margin: 1.5rem;
+  }
+
+  .character-count svg {
+    color: var(--purple);
+  }
+
+  .character-count--warning,
+  .character-count--warning svg {
+    color: var(--red);
+  }
+
   /* texteditor Details */
   .tiptap .details {
     display: flex;
@@ -400,9 +419,6 @@ color utility to any element that depends on these defaults.
   .tiptap hr.ProseMirror-selectednode {
     border-top: 1px solid var(--purple) !important;
   }
-
-  /* invisible characters */
-  
 
   /* Table-specific styling */
   .tiptap table {
