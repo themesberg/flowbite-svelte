@@ -74,10 +74,6 @@ Use this example of a WYSIWYG text editor to enable basic typography styling and
 }</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
 </script>
 
-<svelte:head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />
-</svelte:head>
-
 <TextEditor bind:editor={editorInstance} {content} showSourceButton={true}>
   <ToolbarRowWrapper>
     <FormatButtonGroup editor={editorInstance} />
