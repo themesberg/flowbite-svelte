@@ -44,7 +44,7 @@ Use the following example or create your own.
 
 Use this example of a WYSIWYG text editor to enable basic typography styling and formatting, adding lists, links, images, videos, code blocks, aligning text, blockquotes, setting headers and paragraphs and more.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { AlignmentButtonGroup, FontButtonGroup, UndoRedoButtonGroup, FormatButtonGroup, LayoutButtonGroup, ImageButtonGroup, ListButtonGroup, VideoButtonGroup, TextEditor, ToolbarRowWrapper, Divider, SourceButton, HeadingButtonGroup } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -107,7 +107,7 @@ Use this example of a WYSIWYG text editor to enable basic typography styling and
 
 Use `FormatButtonGroup` to enable typography styling, formatting and marking such as bold, code, highlight, italic, link, remove link, underline, strikethrough, subscript, seperscript, and line break.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { FormatButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -152,7 +152,7 @@ Use `FormatButtonGroup` to enable typography styling, formatting and marking suc
 
 Type `:` to open the autocomplete. The default value is `emoji={true}`, and you can disable it by adding `emoji={false}` to `TextEditor`.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { UndoRedoButtonGroup, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -212,7 +212,7 @@ Type `:` to open the autocomplete. The default value is `emoji={true}`, and you 
 
 Trigger a mention popup by typing `@`. Provide a `mentions` array of name strings to display filtered suggestions as you type.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { UndoRedoButtonGroup, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
   import type { Editor } from '@tiptap/core';
@@ -280,7 +280,7 @@ Trigger a mention popup by typing `@`. Provide a `mentions` array of name string
 
 The bubble menu displays a contextual toolbar near selected text. Disable features like `underline` and `highlight` using `underline={false}`.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { TextEditor, AlignmentButtonGroup, UndoRedoButtonGroup } from '@flowbite-svelte-plugins/texteditor';
   import { Button } from 'flowbite-svelte';
@@ -315,7 +315,7 @@ The bubble menu displays a contextual toolbar near selected text. Disable featur
 
 Render mathematical formulas and equations by adding the `math` prop.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import 'katex/dist/katex.min.css';
   import { TextEditor, UndoRedoButtonGroup } from '@flowbite-svelte-plugins/texteditor';
@@ -360,9 +360,9 @@ Render mathematical formulas and equations by adding the `math` prop.
 
 ## Invisible characters
 
-A button group component that provides toggle, show, and hide controls for invisible elements in a text editor. Each button can be individually shown or hidden using boolean props.
+The `InvisibleButtonGroup` component provides toggle, show, and hide controls for invisible elements in a text editor. Each button can be individually shown or hidden using boolean props.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { InvisibleButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
   import type { Editor } from '@tiptap/core';
@@ -391,7 +391,7 @@ A button group component that provides toggle, show, and hide controls for invis
 
 The `CharacterCount` component limits the number of allowed characters to a specific length and is able to return the number of characters and words.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { CharacterCount, UndoRedoButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
   import type { Editor } from '@tiptap/core';
@@ -417,7 +417,7 @@ The `CharacterCount` component limits the number of allowed characters to a spec
 
 `AlignmentButtonGroup` component enables text alignment to the left, center, right, and justify for the content inside of the WYSIWYG component.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { AlignmentButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -450,7 +450,7 @@ The `CharacterCount` component limits the number of allowed characters to a spec
 
 `LayoutButtonGroup` creates typography elements like blockquotes, horizontal rules, code blocks.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { LayoutButtonGroup, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -495,7 +495,7 @@ The `CharacterCount` component limits the number of allowed characters to a spec
 
 `ImageButtonGroup` adds images inside of the WYSIWYG text editor and configure settings such as the image URL, image alt attribute which is important for SEO and accessibility and the image title.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { ImageButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -528,7 +528,7 @@ The `CharacterCount` component limits the number of allowed characters to a spec
 
 Use this example to create typography elements like bullet lists, ordered lists, blockquotes, horizontal rules, paragraphs, headings, code blocks based on Tailwind CSS utility classees and the Flowbite API.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { ListButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -559,7 +559,7 @@ Use this example to create typography elements like bullet lists, ordered lists,
 
 ## Fonts
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { FontButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -592,7 +592,7 @@ Use this example to create typography elements like bullet lists, ordered lists,
 
 Use `VideoButtonGroup` to embed videos inside the WYSIWYG text editor based on a YouTube URL source and set the width and height of the video by using the advanced video component.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { VideoButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -625,7 +625,7 @@ Use `VideoButtonGroup` to embed videos inside the WYSIWYG text editor based on a
 
 Use `TableButtonGroup`s to edit table data inside the WYSIWYG text editor by adding and removing table column, rows, and cells and use other features to navigate through the table data for a convenient editing process.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { TableButtonGroup1, TableButtonGroup2, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -664,7 +664,7 @@ Use `TableButtonGroup`s to edit table data inside the WYSIWYG text editor by add
 
 Use the history functionality from the WYSIWYG text editor component to integrate undo and redo actions.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { UndoRedoButtonGroup, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -699,7 +699,7 @@ Use the history functionality from the WYSIWYG text editor component to integrat
 
 Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG text editor in JSON or raw HTML format to persist into your database or API structure.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { ExportButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -726,7 +726,7 @@ Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG 
 
 ## TaskList
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { TaskListButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -760,7 +760,7 @@ Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG 
 
 ## Details
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { DetailsButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -808,7 +808,7 @@ Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG 
 
 Use the following example to view/edit source code and insert HTML code.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { HtmlCodeButton, SourceButton, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -855,7 +855,7 @@ Use the following example to view/edit source code and insert HTML code.
 
 You can control display of buttons by adding `false` to a button group component as the following example.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { LayoutButtonGroup, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -885,7 +885,7 @@ You can control display of buttons by adding `false` to a button group component
 
 Either using the above example or use button components to create your custom texteditor.
 
-```svelte example hideOutput
+```svelte example class="pt-10" hideOutput
 <script lang="ts">
   // CustomGroup.svelte
   import { AlignmentButton, FontButton, FormatButton, ImageButton } from "@flowbite-svelte-plugins/texteditor";
