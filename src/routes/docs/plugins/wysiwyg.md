@@ -389,6 +389,8 @@ A button group component that provides toggle, show, and hide controls for invis
 
 ## Character count
 
+The `CharacterCount` component limits the number of allowed characters to a specific length and is able to return the number of characters and words.
+
 ```svelte example
 <script lang="ts">
   import { CharacterCount, UndoRedoButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
