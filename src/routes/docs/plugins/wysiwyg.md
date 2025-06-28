@@ -413,6 +413,31 @@ The `CharacterCount` component limits the number of allowed characters to a spec
 </TextEditor>
 ```
 
+## File Handler
+The `file` prop allows you to easily handle file drops and pastes in the editor.
+
+```svelte example
+<script lang="ts">
+  import { SourceButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+
+  let editorInstance = $state<Editor | null>(null);
+
+  const content = `<h1>
+        Try to paste or drop files into this editor
+      </h1>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>`;
+</script>
+
+<TextEditor bind:editor={editorInstance} {content} file>
+  <SourceButtonGroup editor={editorInstance} html={false} />
+</TextEditor>
+```
+
 ## Text alignment
 
 `AlignmentButtonGroup` component enables text alignment to the left, center, right, and justify for the content inside of the WYSIWYG component.
