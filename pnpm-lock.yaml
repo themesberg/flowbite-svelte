@@ -49,8 +49,8 @@ importers:
         specifier: ^0.2.4
         version: 0.2.4(svelte@5.34.8)(tailwindcss@4.1.11)
       '@flowbite-svelte-plugins/datatable':
-        specifier: ^0.3.4
-        version: 0.3.4(svelte@5.34.8)(tailwindcss@4.1.11)
+        specifier: ^0.4.0
+        version: 0.4.0(svelte@5.34.8)(tailwindcss@4.1.11)
       '@flowbite-svelte-plugins/texteditor':
         specifier: ^0.20.1
         version: 0.20.1(@tiptap/extension-code-block@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0))(emojibase@16.0.0)(svelte@5.34.8)(tailwindcss@4.1.11)
@@ -611,8 +611,8 @@ packages:
       svelte: ^5.0.0
       tailwindcss: ^4.1.4
 
-  '@flowbite-svelte-plugins/datatable@0.3.4':
-    resolution: {integrity: sha512-aDsX9gfqytWPyIWkCmerrjeeUtJB5lF32bF3nAGOjS4Tst5isQMzeea3iRcFint9jobB5q2fousABzZx3Ru3AQ==}
+  '@flowbite-svelte-plugins/datatable@0.4.0':
+    resolution: {integrity: sha512-mGNDi2TkyeHDouKUpRv/LkA5R/JyLfE75qRBfvKwTM3HlurbGgmXOrvdFyjcSGuD+EAVY6VWpuh/XS4hi9rP1w==}
     peerDependencies:
       svelte: ^5.0.0
       tailwindcss: ^4.1.4
@@ -3766,7 +3766,7 @@ snapshots:
       svelte: 5.34.8
       tailwindcss: 4.1.11
 
-  '@flowbite-svelte-plugins/datatable@0.3.4(svelte@5.34.8)(tailwindcss@4.1.11)':
+  '@flowbite-svelte-plugins/datatable@0.4.0(svelte@5.34.8)(tailwindcss@4.1.11)':
     dependencies:
       simple-datatables: 10.0.0
       svelte: 5.34.8
