@@ -202,14 +202,14 @@ Trigger a mention popup by typing `@`. Provide a `mentions` array of name string
 
 ```svelte example class="pt-10"
 <script lang="ts">
-  import { UndoRedoButtonGroup, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
+  import { UndoRedoButtonGroup, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
+  import type { Editor } from "@tiptap/core";
+  import { Button } from "flowbite-svelte";
 
   let editorInstance = $state<Editor | null>(null);
 
   function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
+    return editorInstance?.getHTML() ?? "";
   }
 
   function setEditorContent(content: string) {
@@ -223,33 +223,7 @@ Trigger a mention popup by typing `@`. Provide a `mentions` array of name string
         <p>I have a meeting with <span data-type="mention" data-id="Christina Applegate"></span> and don’t want to come late.</p>
         <p>– Thanks, your big boss</p>
       `;
-  const mentions = [
-    'Lea Thompson',
-    'Cyndi Lauper',
-    'Tom Cruise',
-    'Madonna',
-    'Jerry Hall',
-    'Joan Collins',
-    'Winona Ryder',
-    'Christina Applegate',
-    'Alyssa Milano',
-    'Molly Ringwald',
-    'Ally Sheedy',
-    'Debbie Harry',
-    'Olivia Newton-John',
-    'Elton John',
-    'Michael J. Fox',
-    'Axl Rose',
-    'Emilio Estevez',
-    'Ralph Macchio',
-    'Rob Lowe',
-    'Jennifer Grey',
-    'Mickey Rourke',
-    'John Cusack',
-    'Matthew Broderick',
-    'Justine Bateman',
-    'Lisa Bonet'
-  ];
+  const mentions = ["Lea Thompson", "Cyndi Lauper", "Tom Cruise", "Madonna", "Jerry Hall", "Joan Collins", "Winona Ryder", "Christina Applegate", "Alyssa Milano", "Molly Ringwald", "Ally Sheedy", "Debbie Harry", "Olivia Newton-John", "Elton John", "Michael J. Fox", "Axl Rose", "Emilio Estevez", "Ralph Macchio", "Rob Lowe", "Jennifer Grey", "Mickey Rourke", "John Cusack", "Matthew Broderick", "Justine Bateman", "Lisa Bonet"];
 </script>
 
 <TextEditor bind:editor={editorInstance} {content} {mentions}>
@@ -260,7 +234,7 @@ Trigger a mention popup by typing `@`. Provide a `mentions` array of name string
 
 <div class="mt-4">
   <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
+  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
 </div>
 ```
 
@@ -270,22 +244,21 @@ The bubble menu displays a contextual toolbar near selected text. Disable featur
 
 ```svelte example class="pt-10"
 <script lang="ts">
-  import { TextEditor, AlignmentButtonGroup, UndoRedoButtonGroup } from '@flowbite-svelte-plugins/texteditor';
-  import { Button } from 'flowbite-svelte';
-  import type { Editor } from '@tiptap/core';
+  import { TextEditor, AlignmentButtonGroup, UndoRedoButtonGroup } from "@flowbite-svelte-plugins/texteditor";
+  import { Button } from "flowbite-svelte";
+  import type { Editor } from "@tiptap/core";
 
   let editorInstance = $state<Editor | null>(null);
 
   function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
+    return editorInstance?.getHTML() ?? "";
   }
 
   function setEditorContent(content: string) {
     editorInstance?.commands.setContent(content);
   }
 
-  const content =
-    '<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>';
+  const content = "<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>";
 </script>
 
 <TextEditor bind:editor={editorInstance} {content} bubbleMenu>
@@ -295,7 +268,7 @@ The bubble menu displays a contextual toolbar near selected text. Disable featur
 
 <div class="mt-4">
   <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
+  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
 </div>
 ```
 
@@ -303,14 +276,13 @@ Configure which menu items are displayed using the following examples:
 
 ```svelte example
 <script lang="ts">
-  import { TextEditor, UndoRedoButtonGroup } from '@flowbite-svelte-plugins/texteditor';
-  import { Button } from 'flowbite-svelte';
-  import type { Editor } from '@tiptap/core';
+  import { TextEditor, UndoRedoButtonGroup } from "@flowbite-svelte-plugins/texteditor";
+  import { Button } from "flowbite-svelte";
+  import type { Editor } from "@tiptap/core";
 
   let editorInstance = $state<Editor | null>(null);
 
-  const content =
-    '<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>';
+  const content = "<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>";
 </script>
 
 <TextEditor bind:editor={editorInstance} {content} bubbleMenu={{ showUnderline: false, showHighlight: false }}>
@@ -324,9 +296,9 @@ Render mathematical formulas and equations by adding the `math` prop.
 
 ```svelte example class="pt-10"
 <script lang="ts">
-  import 'katex/dist/katex.min.css';
-  import { TextEditor, UndoRedoButtonGroup } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
+  import "katex/dist/katex.min.css";
+  import { TextEditor, UndoRedoButtonGroup } from "@flowbite-svelte-plugins/texteditor";
+  import type { Editor } from "@tiptap/core";
 
   let editorInstance = $state<Editor | null>(null);
 
@@ -371,8 +343,8 @@ The `InvisibleButtonGroup` component provides toggle, show, and hide controls fo
 
 ```svelte example class="pt-10"
 <script lang="ts">
-  import { InvisibleButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
+  import { InvisibleButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
+  import type { Editor } from "@tiptap/core";
 
   let editorInstance = $state<Editor | null>(null);
 
@@ -400,8 +372,8 @@ The `CharacterCount` component limits the number of allowed characters to a spec
 
 ```svelte example class="pt-10"
 <script lang="ts">
-  import { CharacterCount, UndoRedoButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
+  import { CharacterCount, UndoRedoButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
+  import type { Editor } from "@tiptap/core";
 
   let editorInstance = $state<Editor | null>(null);
 
@@ -421,12 +393,13 @@ The `CharacterCount` component limits the number of allowed characters to a spec
 ```
 
 ## File Handler
+
 The `file` prop allows you to easily handle file drops and pastes in the editor.
 
 ```svelte example
 <script lang="ts">
-  import { SourceButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
+  import { SourceButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
+  import type { Editor } from "@tiptap/core";
 
   let editorInstance = $state<Editor | null>(null);
 
@@ -446,12 +419,13 @@ The `file` prop allows you to easily handle file drops and pastes in the editor.
 ```
 
 ## Floating menu
+
 Use the `floatingMenu` prop in `TextEditor` to make a menu appear on an empty line.
 
 ```svelte example
 <script lang="ts">
-  import { TextEditor, UndoRedoButtonGroup } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
+  import { TextEditor, UndoRedoButtonGroup } from "@flowbite-svelte-plugins/texteditor";
+  import type { Editor } from "@tiptap/core";
 
   let editorInstance = $state<Editor | null>(null);
 
@@ -470,8 +444,8 @@ Configure which menu items are displayed using the following examples:
 
 ```svelte example
 <script lang="ts">
-  import { TextEditor, UndoRedoButtonGroup } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
+  import { TextEditor, UndoRedoButtonGroup } from "@flowbite-svelte-plugins/texteditor";
+  import type { Editor } from "@tiptap/core";
 
   let editorInstance = $state<Editor | null>(null);
 

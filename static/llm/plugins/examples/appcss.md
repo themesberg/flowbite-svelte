@@ -6,61 +6,167 @@
 @source "../node_modules/@flowbite-svelte-plugins/texteditor/dist";
 
 @layer components {
-  .tiptap ul,
-  .tiptap ol {
-    padding: 0 1rem;
-    margin: 1.25rem 1rem 1.25rem 0.4rem;
+  /* texteditor */
+  :root {
+    --white: #fff;
+    --black: #2e2b29;
+    --black-contrast: #110f0e;
+    --gray-1: rgba(61, 37, 20, 0.05);
+    --gray-2: rgba(61, 37, 20, 0.08);
+    --gray-3: rgba(61, 37, 20, 0.12);
+    --gray-4: rgba(53, 38, 28, 0.3);
+    --gray-5: rgba(28, 25, 23, 0.6);
+    --green: #22c55e;
+    --purple: #6a00f5;
+    --purple-contrast: #5800cc;
+    --purple-light: rgba(88, 5, 255, 0.05);
+    --yellow-contrast: #facc15;
+    --yellow: rgba(250, 204, 21, 0.4);
+    --yellow-light: #fffae5;
+    --red: #ff5c33;
+    --red-light: #ffebe5;
+    --shadow: 0px 12px 33px 0px rgba(0, 0, 0, 0.06), 0px 3.618px 9.949px 0px rgba(0, 0, 0, 0.04);
   }
 
-  .tiptap ul li p,
-  .tiptap ol li p {
-    margin-bottom: 0.15em;
+  .tiptap:first-child {
+    margin-top: 0;
   }
 
-
-  .tiptap ul[data-type='taskList'] {
-    list-style: none;
-    margin-left: 0;
-    padding: 1em;
+  /* blockquote */
+  .tiptap blockquote {
+    border-left: 3px solid var(--gray-3);
+    margin: 1.5rem 0;
+    padding-left: 1rem;
   }
 
-  .tiptap ul[data-type='taskList'] li {
-    align-items: flex-start;
+  /* bubble menu */
+  .bubble-menu {
+    background-color: var(--white);
+    border: 1px solid var(--gray-1);
+    border-radius: 0.7rem;
+    box-shadow: var(--shadow);
     display: flex;
-    margin: 0 !important;
-    padding: 0.3em !important;
+    padding: 0.2rem;
+  }
+
+  .bubble-menu button {
+    background-color: unset;
+    border-radius: 0.5rem;
+    border: none;
+    color: var(--black);
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.15;
+    padding: 0.375rem 0.625rem;
+    transition: all 0.2s cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+
+  .bubble-menu button:hover {
+    background-color: var(--gray-3);
+  }
+
+  .bubble-menu button.is-active {
+    background-color: var(--purple);
+    color: var(--white);
+  }
+
+  .bubble-menu button.is-active:hover {
+    background-color: var(--purple-contrast);
+  }
+
+  /* character count */
+  .character-count {
+    align-items: center;
+    color: var(--gray-5);
+    display: flex;
+    font-size: 0.75rem;
     gap: 0.5rem;
+    margin: 1.5rem;
   }
 
-  .tiptap ul[data-type='taskList'] li > label {
-    flex: 0 0 auto;
-    user-select: none;
-    margin-top: 0.4em !important;
+  .character-count svg {
+    color: var(--purple);
   }
 
-  .tiptap ul[data-type='taskList'] li > div {
-    flex: 1 1 auto;
-    margin: 0 !important;
-    padding: 0 !important;
-    min-width: 0;
+  .character-count--warning,
+  .character-count--warning svg {
+    color: var(--red);
   }
 
-  .tiptap ul[data-type='taskList'] input[type='checkbox'] {
-    cursor: pointer;
-    margin: 0;
+  /* floating menu */
+  .tippy-box {
+    max-width: 480px !important;
+  }
+
+  .floating-menu {
+    display: flex;
+    background-color: var(--gray-3);
+    padding: 0.1rem;
+    border-radius: 0.5rem;
+    gap: 0.1rem;
+  }
+
+  .floating-menu button {
+    background-color: unset;
+    padding: 0.275rem 0.425rem;
+    border-radius: 0.3rem;
     flex-shrink: 0;
   }
 
-  .tiptap ul[data-type='taskList'] ul[data-type='taskList'] {
-    margin: 0;
+  .floating-menu button:hover {
+    background-color: var(--gray-3);
   }
 
-  .tiptap ul[data-type='taskList'] li > label span {
+  .floating-menu button.is-active {
+    background-color: var(--white);
+    color: var(--purple);
+  }
+
+  .floating-menu button.is-active:hover {
+    color: var(--purple-contrast);
+  }
+
+  /* Invisible characters */
+  .Tiptap-invisible-character {
+    height: 0;
+    padding: 0;
+    pointer-events: none;
+    user-select: none;
+    width: 0;
+  }
+
+  .Tiptap-invisible-character::before {
+    caret-color: inherit;
+    color: #aaa;
     display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1em;
+    width: 0;
   }
 
-  .tiptap ul[data-type='taskList'] li p {
-    margin: 0 !important;
+  .Tiptap-invisible-character--space::before {
+    content: '·';
+  }
+
+  .Tiptap-invisible-character--break::before {
+    content: '¬';
+  }
+
+  .Tiptap-invisible-character--paragraph::before {
+    content: '¶';
+  }
+
+  .Tiptap-invisible-character + img.ProseMirror-separator {
+    height: 0 !important;
+    pointer-events: none;
+    user-select: none;
+    width: 0 !important;
+  }
+
+  .is-empty[data-placeholder].has-focus > .Tiptap-invisible-character {
+    display: none;
   }
 
   /* texteditor Details */
@@ -123,15 +229,59 @@
   }
 
   /* emoji */
-  [data-type='emoji'] img {
-    height: 1em;
-    width: 1em;
-    display: inline;
-    margin: 0;
-    padding: 0;
+  [data-type='emoji'] {
+    img {
+      height: 1em;
+      width: 1em;
+      display: inline;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
   }
 
-  .tippy-box .tippy-content .dropdown-menu {
+  /* mention */
+  [data-type='mention'] {
+    background-color: rgba(88, 5, 255, 0.05);
+    border-radius: 0.4rem;
+    box-decoration-break: clone;
+    color: #6a00f5;
+    padding: 0.1rem 0.3rem;
+  }
+
+  /*  mention and emoji */
+  .tippy-box .tippy-content .dropdown-menu button,
+  .tippy-box .tippy-content .mention-dropdown button {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    gap: 0.25rem;
+    text-align: left;
+    width: 100%;
+  }
+
+  .tippy-box .tippy-content .dropdown-menu button:hover,
+  .tippy-box .tippy-content .dropdown-menu button:hover.is-selected,
+  .tippy-box .tippy-content .mention-dropdown button:hover,
+  .tippy-box .tippy-content .mention-dropdown button:hover.is-selected {
+    background-color: rgba(61, 37, 20, 0.12);
+  }
+
+  .tippy-box .tippy-content .dropdown-menu button.is-selected,
+  .tippy-box .tippy-content .mention-dropdown button.is-selected {
+    background-color: rgba(61, 37, 20, 0.08);
+  }
+
+  .tippy-box .tippy-content .dropdown-menu button img {
+    height: 1em;
+    width: 1em;
+  }
+
+  .tippy-box {
+    transform-origin: center !important;
+  }
+
+  .tippy-box .tippy-content .dropdown-menu,
+  .tippy-box .tippy-content .mention-dropdown {
     background: #fff;
     border: 1px solid rgba(61, 37, 20, 0.05);
     border-radius: 0.7rem;
@@ -144,29 +294,199 @@
     overflow: auto;
     padding: 0.6rem;
     position: relative;
+    min-width: 200px;
+    max-width: 300px;
+    width: max-content;
   }
 
-  .tippy-box .tippy-content .dropdown-menu button {
-    align-items: center;
-    background-color: transparent;
-    display: flex;
-    gap: 0.25rem;
-    text-align: left;
+  /* highlight */
+  .tiptap mark {
+    background-color: #faf594;
+    border-radius: 0.4rem;
+    box-decoration-break: clone;
+    padding: 0.1rem 0.3rem;
+  }
+
+  /* hr: horizontal rule */
+  .tiptap hr {
+    border: none;
+    border-top: 1px solid var(--gray-2);
+    cursor: pointer;
+    margin: 2rem 0;
+  }
+
+  .tiptap hr.ProseMirror-selectednode {
+    border-top: 1px solid var(--purple) !important;
+  }
+
+  /* Table-specific styling */
+  .tiptap table {
+    border-collapse: collapse;
+    margin: 0;
+    overflow: hidden;
+    table-layout: fixed;
     width: 100%;
   }
 
-  .tippy-box .tippy-content .dropdown-menu button:hover,
-  .tippy-box .tippy-content .dropdown-menu button:hover.is-selected {
-    background-color: rgba(61, 37, 20, 0.12);
+  .tiptap table td,
+  .tiptap table th {
+    border: 1px solid var(--gray-3);
+    box-sizing: border-box;
+    min-width: 1em;
+    padding: 6px 8px;
+    position: relative;
+    vertical-align: top;
   }
 
-  .tippy-box .tippy-content .dropdown-menu button.is-selected {
-    background-color: rgba(61, 37, 20, 0.08);
+  .tiptap table td > *,
+  .tiptap table th > * {
+    margin-bottom: 0;
   }
 
-  .tippy-box .tippy-content .dropdown-menu button img {
-    height: 1em;
-    width: 1em;
+  .tiptap table th {
+    background-color: var(--gray-1);
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .tiptap table .selectedCell:after {
+    background: var(--gray-2);
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .tiptap table .column-resize-handle {
+    background-color: var(--purple);
+    bottom: -2px;
+    pointer-events: none;
+    position: absolute;
+    right: -2px;
+    top: 0;
+    width: 4px;
+  }
+
+  .tiptap .tableWrapper {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+
+  .tiptap.resize-cursor {
+    cursor: col-resize;
+  }
+
+  /* List styles */
+  .tiptap ul,
+  .tiptap ol {
+    padding: 0 1rem;
+    margin: 1.25rem 1rem 1.25rem 0.4rem;
+  }
+
+  .tiptap ul li p,
+  .tiptap ol li p {
+    margin-bottom: 0.15em;
+  }
+
+  /* math */
+  .tiptap .Tiptap-mathematics-editor {
+    background: #202020;
+    color: #fff;
+    font-family: monospace;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .tiptap .Tiptap-mathematics-render {
+    padding: 0 0.25rem;
+  }
+
+  .tiptap .Tiptap-mathematics-render--editable {
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .tiptap .Tiptap-mathematics-render--editable:hover {
+    background: #eee;
+  }
+
+  .tiptap .Tiptap-mathematics-editor,
+  .tiptap .Tiptap-mathematics-render {
+    border-radius: 0.25rem;
+    display: inline-block;
+  }
+
+  /* Task list specific styles */
+  .tiptap ul[data-type='taskList'] {
+    list-style: none;
+    margin-left: 0;
+    padding: 0.2em;
+  }
+
+  .tiptap ul[data-type='taskList'] li {
+    align-items: flex-start;
+    display: flex;
+    margin: 0 !important;
+    padding: 0.3em !important;
+    gap: 0.5rem;
+  }
+
+  .tiptap ul[data-type='taskList'] li > label {
+    flex: 0 0 auto;
+    user-select: none;
+    margin-top: -0.1em !important;
+  }
+
+  .tiptap ul[data-type='taskList'] li > div {
+    flex: 1 1 auto;
+    margin: 0 !important;
+    padding: 0 !important;
+    /* Prevent content from overflowing */
+    min-width: 0;
+  }
+
+  .tiptap ul[data-type='taskList'] input[type='checkbox'] {
+    cursor: pointer;
+    /* Ensure consistent checkbox sizing */
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .tiptap ul[data-type='taskList'] ul[data-type='taskList'] {
+    margin: 0 !important;
+  }
+
+  /* Optional: Handle the span element in your label if it's for custom styling */
+  .tiptap ul[data-type='taskList'] li > label span {
+    display: inline-block;
+    /* Add custom checkbox styles here if needed */
+  }
+
+  /* Ensure paragraphs in task list items don't add extra spacing */
+  .tiptap ul[data-type='taskList'] li p {
+    margin: 0 !important;
+  }
+
+  /* Youtube embed */
+  .tiptap div[data-youtube-video] {
+    cursor: move;
+    padding-right: 1.5rem;
+  }
+
+  .tiptap div[data-youtube-video] iframe {
+    border: 0.5rem solid var(--black-contrast);
+    display: block;
+    min-height: 200px;
+    min-width: 200px;
+    outline: 0px solid transparent;
+  }
+
+  .tiptap div[data-youtube-video].ProseMirror-selectednode iframe {
+    outline: 3px solid var(--purple);
+    transition: outline 0.15s;
   }
 }
 ```

@@ -490,8 +490,8 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   range?: boolean;
   rangeFrom?: Date;
   rangeTo?: Date;
-  availableFrom?: Date | null;  
-  availableTo?: Date | null;    
+  availableFrom?: Date | null;
+  availableTo?: Date | null;
   locale?: string;
   firstDayOfWeek?: number;
   dateFormat?: Intl.DateTimeFormatOptions;

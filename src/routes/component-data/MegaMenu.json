@@ -2,7 +2,7 @@
   "name": "MegaMenu",
   "type": {
     "name": "MegaMenuProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1050"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1053"
   },
   "props": [
     ["children", ""],

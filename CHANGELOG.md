@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.8.3
+
+### Patch Changes
+
+- feat: datepicker: add availableFrom and availableTo
+
 ## 1.8.2
 
 ### Patch Changes

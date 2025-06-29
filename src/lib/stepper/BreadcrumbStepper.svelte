@@ -51,7 +51,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1595)
+[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1598)
 ## Props
 @prop children
 @prop steps = []
