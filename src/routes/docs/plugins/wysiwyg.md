@@ -311,6 +311,25 @@ The bubble menu displays a contextual toolbar near selected text. Disable featur
 </div>
 ```
 
+Configure which menu items are displayed using the following examples:
+
+```svelte example
+<script lang="ts">
+  import { TextEditor, UndoRedoButtonGroup } from '@flowbite-svelte-plugins/texteditor';
+  import { Button } from 'flowbite-svelte';
+  import type { Editor } from '@tiptap/core';
+
+  let editorInstance = $state<Editor | null>(null);
+
+  const content =
+    '<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>';
+</script>
+
+<TextEditor bind:editor={editorInstance} {content} bubbleMenu={{ showUnderline: false, showHighlight: false }}>
+  <UndoRedoButtonGroup editor={editorInstance} />
+</TextEditor>
+```
+
 ## Math
 
 Render mathematical formulas and equations by adding the `math` prop.
@@ -435,6 +454,47 @@ The `file` prop allows you to easily handle file drops and pastes in the editor.
 
 <TextEditor bind:editor={editorInstance} {content} file>
   <SourceButtonGroup editor={editorInstance} html={false} />
+</TextEditor>
+```
+
+## Floating menu
+Use the `floatingMenu` prop in `TextEditor` to make a menu appear on an empty line.
+
+```svelte example
+<script lang="ts">
+  import { TextEditor, UndoRedoButtonGroup } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+
+  let editorInstance = $state<Editor | null>(null);
+
+  const content = `<p>
+        This is an example of a Medium-like editor. Enter a new line and some buttons will appear.
+      </p>
+      <p></p>`;
+</script>
+
+<TextEditor bind:editor={editorInstance} {content} floatingMenu>
+  <UndoRedoButtonGroup editor={editorInstance} />
+</TextEditor>
+```
+
+Configure which menu items are displayed using the following examples:
+
+```svelte example
+<script lang="ts">
+  import { TextEditor, UndoRedoButtonGroup } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+
+  let editorInstance = $state<Editor | null>(null);
+
+  const content = `<p>
+        This is an example of a Medium-like editor. Enter a new line and some buttons will appear.
+      </p>
+      <p></p>`;
+</script>
+
+<TextEditor bind:editor={editorInstance} {content} floatingMenu={{ showHorizontalRule: false, showTable: false, showImage: false }}>
+  <UndoRedoButtonGroup editor={editorInstance} />
 </TextEditor>
 ```
 

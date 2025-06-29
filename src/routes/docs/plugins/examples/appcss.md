@@ -6,8 +6,7 @@
 @source "../node_modules/@flowbite-svelte-plugins/texteditor/dist";
 
 @layer components {
-
-/* texteditor */
+  /* texteditor */
   :root {
     --white: #fff;
     --black: #2e2b29;
@@ -74,6 +73,100 @@
 
   .bubble-menu button.is-active:hover {
     background-color: var(--purple-contrast);
+  }
+
+  /* character count */
+  .character-count {
+    align-items: center;
+    color: var(--gray-5);
+    display: flex;
+    font-size: 0.75rem;
+    gap: 0.5rem;
+    margin: 1.5rem;
+  }
+
+  .character-count svg {
+    color: var(--purple);
+  }
+
+  .character-count--warning,
+  .character-count--warning svg {
+    color: var(--red);
+  }
+
+  /* floating menu */
+  .tippy-box {
+    max-width: 480px !important;
+  }
+
+  .floating-menu {
+    display: flex;
+    background-color: var(--gray-3);
+    padding: 0.1rem;
+    border-radius: 0.5rem;
+    gap: 0.1rem;
+  }
+
+  .floating-menu button {
+    background-color: unset;
+    padding: 0.275rem 0.425rem;
+    border-radius: 0.3rem;
+    flex-shrink: 0;
+  }
+
+  .floating-menu button:hover {
+    background-color: var(--gray-3);
+  }
+
+  .floating-menu button.is-active {
+    background-color: var(--white);
+    color: var(--purple);
+  }
+
+  .floating-menu button.is-active:hover {
+    color: var(--purple-contrast);
+  }
+
+  /* Invisible characters */
+  .Tiptap-invisible-character {
+    height: 0;
+    padding: 0;
+    pointer-events: none;
+    user-select: none;
+    width: 0;
+  }
+
+  .Tiptap-invisible-character::before {
+    caret-color: inherit;
+    color: #aaa;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1em;
+    width: 0;
+  }
+
+  .Tiptap-invisible-character--space::before {
+    content: '·';
+  }
+
+  .Tiptap-invisible-character--break::before {
+    content: '¬';
+  }
+
+  .Tiptap-invisible-character--paragraph::before {
+    content: '¶';
+  }
+
+  .Tiptap-invisible-character + img.ProseMirror-separator {
+    height: 0 !important;
+    pointer-events: none;
+    user-select: none;
+    width: 0 !important;
+  }
+
+  .is-empty[data-placeholder].has-focus > .Tiptap-invisible-character {
+    display: none;
   }
 
   /* texteditor Details */
@@ -297,6 +390,33 @@
   .tiptap ul li p,
   .tiptap ol li p {
     margin-bottom: 0.15em;
+  }
+
+  /* math */
+  .tiptap .Tiptap-mathematics-editor {
+    background: #202020;
+    color: #fff;
+    font-family: monospace;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .tiptap .Tiptap-mathematics-render {
+    padding: 0 0.25rem;
+  }
+
+  .tiptap .Tiptap-mathematics-render--editable {
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .tiptap .Tiptap-mathematics-render--editable:hover {
+    background: #eee;
+  }
+
+  .tiptap .Tiptap-mathematics-editor,
+  .tiptap .Tiptap-mathematics-render {
+    border-radius: 0.25rem;
+    display: inline-block;
   }
 
   /* Task list specific styles */

@@ -52,8 +52,8 @@ importers:
         specifier: ^0.3.4
         version: 0.3.4(svelte@5.34.8)(tailwindcss@4.1.11)
       '@flowbite-svelte-plugins/texteditor':
-        specifier: ^0.19.0
-        version: 0.19.0(@tiptap/extension-code-block@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0))(emojibase@16.0.0)(svelte@5.34.8)(tailwindcss@4.1.11)
+        specifier: ^0.20.1
+        version: 0.20.1(@tiptap/extension-code-block@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0))(emojibase@16.0.0)(svelte@5.34.8)(tailwindcss@4.1.11)
       '@playwright/test':
         specifier: ^1.53.1
         version: 1.53.1
@@ -617,8 +617,8 @@ packages:
       svelte: ^5.0.0
       tailwindcss: ^4.1.4
 
-  '@flowbite-svelte-plugins/texteditor@0.19.0':
-    resolution: {integrity: sha512-xX/QSlAGBvWxMLcLL6XQMSvFTYhWX5XJE2Uh64hkgNKfdbxL0Jld526iAt8cD8XTlplaTpaa4x7W8o6hCm2JRw==}
+  '@flowbite-svelte-plugins/texteditor@0.20.1':
+    resolution: {integrity: sha512-1fB0YOMrwC5dimXd7UukOMxcZujttUs+UobgSeNzFgY/ZBlRa9r8BvhDudGSRQI27IMU/Yt25A72p6/LhI9YHg==}
     peerDependencies:
       svelte: ^5.0.0
       tailwindcss: ^4.1.4
@@ -1131,6 +1131,12 @@ packages:
     peerDependencies:
       '@tiptap/core': ^2.7.0
       '@tiptap/extension-text-style': ^2.7.0
+
+  '@tiptap/extension-floating-menu@2.23.0':
+    resolution: {integrity: sha512-MvwDMhO5o5NciE+wc6B9dQgTFzmPjtB1o3S+HTdlGzGFGgx9PsNikK5BkqMit9j2NnrqyHnOf88QK/wZR5fqGA==}
+    peerDependencies:
+      '@tiptap/core': ^2.7.0
+      '@tiptap/pm': ^2.7.0
 
   '@tiptap/extension-focus@2.23.0':
     resolution: {integrity: sha512-xqVOuLk4xVc2LHq+x8pvCmCFTrrjoVFv/0k+97QzhFGxBITPzyiFUz0xGAdmKHnKJo4nnG6PIw8LV2jxzIuw+Q==}
@@ -3766,7 +3772,7 @@ snapshots:
       svelte: 5.34.8
       tailwindcss: 4.1.11
 
-  '@flowbite-svelte-plugins/texteditor@0.19.0(@tiptap/extension-code-block@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0))(emojibase@16.0.0)(svelte@5.34.8)(tailwindcss@4.1.11)':
+  '@flowbite-svelte-plugins/texteditor@0.20.1(@tiptap/extension-code-block@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0))(emojibase@16.0.0)(svelte@5.34.8)(tailwindcss@4.1.11)':
     dependencies:
       '@tiptap/core': 2.23.0(@tiptap/pm@2.23.0)
       '@tiptap/extension-bold': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))
@@ -3780,6 +3786,7 @@ snapshots:
       '@tiptap/extension-document': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))
       '@tiptap/extension-emoji': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0)(@tiptap/suggestion@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0))(emojibase@16.0.0)
       '@tiptap/extension-file-handler': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/extension-text-style@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0)))
+      '@tiptap/extension-floating-menu': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0)
       '@tiptap/extension-focus': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0)
       '@tiptap/extension-font-family': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/extension-text-style@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0)))
       '@tiptap/extension-hard-break': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))
@@ -4290,6 +4297,12 @@ snapshots:
     dependencies:
       '@tiptap/core': 2.23.0(@tiptap/pm@2.23.0)
       '@tiptap/extension-text-style': 2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))
+
+  '@tiptap/extension-floating-menu@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0)':
+    dependencies:
+      '@tiptap/core': 2.23.0(@tiptap/pm@2.23.0)
+      '@tiptap/pm': 2.23.0
+      tippy.js: 6.3.7
 
   '@tiptap/extension-focus@2.23.0(@tiptap/core@2.23.0(@tiptap/pm@2.23.0))(@tiptap/pm@2.23.0)':
     dependencies:
