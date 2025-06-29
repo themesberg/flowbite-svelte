@@ -55,6 +55,9 @@ export const datepicker = tv({
     },
     today: {
       true: { dayButton: "font-bold" }
+    },
+    unavailable: {
+      true: { dayButton: "opacity-50 cursor-not-allowed hover:bg-gray-100 dark:hover:bg-gray-700" }
     }
   },
   compoundVariants: []

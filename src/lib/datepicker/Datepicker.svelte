@@ -6,7 +6,37 @@
   import { Button, ToolbarButton, type DatepickerProps, cn } from "$lib";
   import { datepicker } from "./theme";
 
-  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, inputmode = "none", classes, monthColor = "alternative", monthBtnSelected = "bg-primary-500 text-white", monthBtn = "text-gray-700 dark:text-gray-300", class: className }: DatepickerProps = $props();
+  let { 
+    value = $bindable(), 
+    defaultDate = null, 
+    range = false, 
+    rangeFrom = $bindable(), 
+    rangeTo = $bindable(), 
+    availableFrom = null,
+    availableTo = null,
+    locale = "default", 
+    firstDayOfWeek = 0, 
+    dateFormat, 
+    placeholder = "Select date", 
+    disabled = false, 
+    required = false, 
+    inputClass = "", 
+    color = "primary", 
+    inline = false, 
+    autohide = true, 
+    showActionButtons = false, 
+    title = "", 
+    onselect, 
+    onclear, 
+    onapply, 
+    btnClass, 
+    inputmode = "none", 
+    classes, 
+    monthColor = "alternative", 
+    monthBtnSelected = "bg-primary-500 text-white", 
+    monthBtn = "text-gray-700 dark:text-gray-300", 
+    class: className 
+  }: DatepickerProps = $props();
 
   const dateFormatDefault = { year: "numeric", month: "long", day: "numeric" };
   // const dateFormatOptions = $derived(dateFormat ?? dateFormatDefault);
@@ -92,7 +122,27 @@
     showMonthSelector = !showMonthSelector;
   }
 
+  // Helper function to check if a date is available for selection
+  function isDateAvailable(date: Date): boolean {
+    const dateOnly = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    
+    if (availableFrom) {
+      const fromDate = new Date(availableFrom.getFullYear(), availableFrom.getMonth(), availableFrom.getDate());
+      if (dateOnly < fromDate) return false;
+    }
+    
+    if (availableTo) {
+      const toDate = new Date(availableTo.getFullYear(), availableTo.getMonth(), availableTo.getDate());
+      if (dateOnly > toDate) return false;
+    }
+    
+    return true;
+  }
+
   function handleDaySelect(day: Date) {
+    // Don't allow selection of unavailable dates
+    if (!isDateAvailable(day)) return;
+
     if (range) {
       if (!rangeFrom || (rangeFrom && rangeTo)) {
         rangeFrom = day;
@@ -262,7 +312,25 @@
           {/each}
           {#each daysInMonth as day}
             {@const current = day.getMonth() !== currentMonth.getMonth()}
-            <Button type="button" color={isSelected(day) ? color : "alternative"} class={dayButton({ current, today: isToday(day), color: isInRange(day) ? color : undefined, class: clsx(classes?.dayButton) })} onclick={() => handleDaySelect(day)} onkeydown={handleCalendarKeydown} aria-label={day.toLocaleDateString(locale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })} aria-selected={isSelected(day)} role="gridcell">
+            {@const available = isDateAvailable(day)}
+            <Button 
+              type="button" 
+              color={isSelected(day) ? color : "alternative"} 
+              class={dayButton({ 
+                current, 
+                today: isToday(day), 
+                color: isInRange(day) ? color : undefined, 
+                unavailable: !available,
+                class: clsx(classes?.dayButton, !available && "opacity-50 cursor-not-allowed") 
+              })} 
+              onclick={() => handleDaySelect(day)} 
+              onkeydown={handleCalendarKeydown} 
+              aria-label={day.toLocaleDateString(locale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })} 
+              aria-selected={isSelected(day)} 
+              aria-disabled={!available}
+              disabled={!available}
+              role="gridcell"
+            >
               {day.getDate()}
             </Button>
           {/each}
@@ -271,7 +339,14 @@
 
       {#if showActionButtons && !showMonthSelector}
         <div class={actionButtons({ class: clsx(classes?.actionButtons) })}>
-          <Button onclick={() => handleDaySelect(new Date())} {color} size="sm">Today</Button>
+          <Button 
+            onclick={() => handleDaySelect(new Date())} 
+            {color} 
+            size="sm" 
+            disabled={!isDateAvailable(new Date())}
+          >
+            Today
+          </Button>
           <Button onclick={handleClear} color="red" size="sm">Clear</Button>
           <Button onclick={handleApply} {color} size="sm">Apply</Button>
         </div>
@@ -291,6 +366,8 @@
 @prop range = false
 @prop rangeFrom = $bindable()
 @prop rangeTo = $bindable()
+@prop availableFrom = null
+@prop availableTo = null
 @prop locale = "default"
 @prop firstDayOfWeek = 0
 @prop dateFormat
