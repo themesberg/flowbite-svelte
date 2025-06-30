@@ -272,7 +272,7 @@ color utility to any element that depends on these defaults.
 
   /* floating menu */
   .tippy-box {
-    max-width: 480px !important;
+    max-width: 475px !important;
   }
 
   .floating-menu {
@@ -323,15 +323,15 @@ color utility to any element that depends on these defaults.
   }
 
   .Tiptap-invisible-character--space::before {
-    content: "·";
+    content: '·';
   }
 
   .Tiptap-invisible-character--break::before {
-    content: "¬";
+    content: '¬';
   }
 
   .Tiptap-invisible-character--paragraph::before {
-    content: "¶";
+    content: '¶';
   }
 
   .Tiptap-invisible-character + img.ProseMirror-separator {
@@ -379,7 +379,7 @@ color utility to any element that depends on these defaults.
   }
 
   .tiptap .details > button::before {
-    content: "▶";
+    content: '▶';
     display: inline-block;
     position: relative;
     top: 3px;
@@ -396,7 +396,7 @@ color utility to any element that depends on these defaults.
     width: 100%;
   }
 
-  .tiptap .details > div > [data-type="detailsContent"] > :last-child {
+  .tiptap .details > div > [data-type='detailsContent'] > :last-child {
     margin-bottom: 0.5rem;
   }
 
@@ -404,8 +404,89 @@ color utility to any element that depends on these defaults.
     margin: 0.5rem 0;
   }
 
+  /* drag handle */
+  #drag-handle-wrapper ::selection {
+    background-color: #70cff850;
+  }
+
+  #drag-handle-wrapper .ProseMirror {
+    padding: 1rem 1rem 1rem 0;
+    position: relative;
+  }
+
+  #drag-handle-wrapper .ProseMirror * {
+    margin-top: 0.75em;
+  }
+
+  #drag-handle-wrapper .ProseMirror > * {
+    margin-left: 3rem;
+  }
+
+  #drag-handle-wrapper .ProseMirror .ProseMirror-widget * {
+    margin-top: auto;
+  }
+
+  #drag-handle-wrapper .ProseMirror ul,
+  #drag-handle-wrapper .ProseMirror ol {
+    padding: 0 1rem;
+  }
+
+  #drag-handle-wrapper .ProseMirror-noderangeselection *::selection {
+    background: transparent;
+  }
+
+  #drag-handle-wrapper .ProseMirror-hideselection *::selection {
+    background-color: #70cff850 !important;
+  }
+
+  #drag-handle-wrapper .ProseMirror-noderangeselection * {
+    caret-color: transparent;
+  }
+
+  #drag-handle-wrapper .ProseMirror-selectednode,
+  #drag-handle-wrapper .ProseMirror-selectednoderange {
+    position: relative;
+  }
+
+  #drag-handle-wrapper .ProseMirror-selectednode::before,
+  #drag-handle-wrapper .ProseMirror-selectednoderange::before {
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    content: '';
+    top: -0.25rem;
+    left: -0.25rem;
+    right: -0.25rem;
+    bottom: -0.25rem;
+    background-color: #70cff850;
+    border-radius: 0.2rem;
+  }
+
+  #drag-handle-wrapper .drag-handle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 1rem;
+    height: 1.25rem;
+    content: '⠿';
+    margin-top: 0.3rem;
+    top: 1rem !important;
+    font-weight: 700;
+    cursor: grab;
+    background: #0d0d0d10;
+    color: #0d0d0d;
+    border-radius: 0.25rem;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  #drag-handle-wrapper .drag-handle:hover {
+    transform: scale(1.1) !important;
+  }
+
   /* emoji */
-  [data-type="emoji"] {
+  [data-type='emoji'] {
     img {
       height: 1em;
       width: 1em;
@@ -416,7 +497,7 @@ color utility to any element that depends on these defaults.
   }
 
   /* mention */
-  [data-type="mention"] {
+  [data-type='mention'] {
     background-color: rgba(88, 5, 255, 0.05);
     border-radius: 0.4rem;
     box-decoration-break: clone;
@@ -527,7 +608,7 @@ color utility to any element that depends on these defaults.
 
   .tiptap table .selectedCell:after {
     background: var(--gray-2);
-    content: "";
+    content: '';
     left: 0;
     right: 0;
     top: 0;
@@ -596,13 +677,13 @@ color utility to any element that depends on these defaults.
   }
 
   /* Task list specific styles */
-  .tiptap ul[data-type="taskList"] {
+  .tiptap ul[data-type='taskList'] {
     list-style: none;
     margin-left: 0;
     padding: 0.2em;
   }
 
-  .tiptap ul[data-type="taskList"] li {
+  .tiptap ul[data-type='taskList'] li {
     align-items: flex-start;
     display: flex;
     margin: 0 !important;
@@ -610,13 +691,13 @@ color utility to any element that depends on these defaults.
     gap: 0.5rem;
   }
 
-  .tiptap ul[data-type="taskList"] li > label {
+  .tiptap ul[data-type='taskList'] li > label {
     flex: 0 0 auto;
     user-select: none;
     margin-top: -0.1em !important;
   }
 
-  .tiptap ul[data-type="taskList"] li > div {
+  .tiptap ul[data-type='taskList'] li > div {
     flex: 1 1 auto;
     margin: 0 !important;
     padding: 0 !important;
@@ -624,25 +705,25 @@ color utility to any element that depends on these defaults.
     min-width: 0;
   }
 
-  .tiptap ul[data-type="taskList"] input[type="checkbox"] {
+  .tiptap ul[data-type='taskList'] input[type='checkbox'] {
     cursor: pointer;
     /* Ensure consistent checkbox sizing */
     margin: 0;
     flex-shrink: 0;
   }
 
-  .tiptap ul[data-type="taskList"] ul[data-type="taskList"] {
+  .tiptap ul[data-type='taskList'] ul[data-type='taskList'] {
     margin: 0 !important;
   }
 
   /* Optional: Handle the span element in your label if it's for custom styling */
-  .tiptap ul[data-type="taskList"] li > label span {
+  .tiptap ul[data-type='taskList'] li > label span {
     display: inline-block;
     /* Add custom checkbox styles here if needed */
   }
 
   /* Ensure paragraphs in task list items don't add extra spacing */
-  .tiptap ul[data-type="taskList"] li p {
+  .tiptap ul[data-type='taskList'] li p {
     margin: 0 !important;
   }
 

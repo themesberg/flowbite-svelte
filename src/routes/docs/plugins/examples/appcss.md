@@ -96,7 +96,7 @@
 
   /* floating menu */
   .tippy-box {
-    max-width: 480px !important;
+    max-width: 475px !important;
   }
 
   .floating-menu {
@@ -226,6 +226,87 @@
 
   .tiptap .details .details {
     margin: 0.5rem 0;
+  }
+
+  /* drag handle */
+  #drag-handle-wrapper ::selection {
+    background-color: #70cff850;
+  }
+
+  #drag-handle-wrapper .ProseMirror {
+    padding: 1rem 1rem 1rem 0;
+    position: relative;
+  }
+
+  #drag-handle-wrapper .ProseMirror * {
+    margin-top: 0.75em;
+  }
+
+  #drag-handle-wrapper .ProseMirror > * {
+    margin-left: 3rem;
+  }
+
+  #drag-handle-wrapper .ProseMirror .ProseMirror-widget * {
+    margin-top: auto;
+  }
+
+  #drag-handle-wrapper .ProseMirror ul,
+  #drag-handle-wrapper .ProseMirror ol {
+    padding: 0 1rem;
+  }
+
+  #drag-handle-wrapper .ProseMirror-noderangeselection *::selection {
+    background: transparent;
+  }
+
+  #drag-handle-wrapper .ProseMirror-hideselection *::selection {
+    background-color: #70cff850 !important;
+  }
+
+  #drag-handle-wrapper .ProseMirror-noderangeselection * {
+    caret-color: transparent;
+  }
+
+  #drag-handle-wrapper .ProseMirror-selectednode,
+  #drag-handle-wrapper .ProseMirror-selectednoderange {
+    position: relative;
+  }
+
+  #drag-handle-wrapper .ProseMirror-selectednode::before,
+  #drag-handle-wrapper .ProseMirror-selectednoderange::before {
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    content: '';
+    top: -0.25rem;
+    left: -0.25rem;
+    right: -0.25rem;
+    bottom: -0.25rem;
+    background-color: #70cff850;
+    border-radius: 0.2rem;
+  }
+
+  #drag-handle-wrapper .drag-handle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 1rem;
+    height: 1.25rem;
+    content: '⠿';
+    margin-top: 0.3rem;
+    top: 1rem !important;
+    font-weight: 700;
+    cursor: grab;
+    background: #0d0d0d10;
+    color: #0d0d0d;
+    border-radius: 0.25rem;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  #drag-handle-wrapper .drag-handle:hover {
+    transform: scale(1.1) !important;
   }
 
   /* emoji */
