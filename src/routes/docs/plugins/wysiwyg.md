@@ -393,6 +393,7 @@ The `CharacterCount` component limits the number of allowed characters to a spec
 ```
 
 ## Drag Handle
+The `dragHandle` prop allows you to easily handle dragging nodes around in the editor.
 
 <DragHandle />
 
