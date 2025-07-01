@@ -256,7 +256,7 @@
   });
 </script>
 
-<div class="code-example mt-8" use:init>
+<div class="code-example my-8" use:init>
   {#if !meta.hideOutput}
     <div class="w-full rounded-t-xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700">
       <div class="grid {meta.hideResponsiveButtons ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}">

@@ -114,9 +114,6 @@ importers:
       globals:
         specifier: ^16.2.0
         version: 16.2.0
-      highlight.js:
-        specifier: ^11.11.1
-        version: 11.11.1
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0

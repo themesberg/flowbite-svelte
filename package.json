@@ -63,7 +63,6 @@
     "flowbite-svelte-icons": "^2.2.1",
     "flowbite-typography": "^1.0.5",
     "globals": "^16.2.0",
-    "highlight.js": "^11.11.1",
     "jsdom": "^26.1.0",
     "katex": "^0.16.22",
     "lowlight": "^3.3.0",

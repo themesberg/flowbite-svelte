@@ -4,7 +4,6 @@
   import { Button, Badge } from "$lib";
   import { copyToClipboard, replaceLibImport } from "./helpers";
   import { highlightcompo } from "./theme";
-  import DynamicCodeBlockStyle from "./DynamicCodeBlockStyle.svelte";
 
   interface Props {
     // componentStatus: boolean;

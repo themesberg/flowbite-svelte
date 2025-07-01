@@ -10,7 +10,7 @@ All examples provided on this page have support for dark mode, RTL (right-to-lef
 ## Installation
 
 ```svelte
-pnpm i -D @flowbite-svelte-plugins/texteditor highlight.js lowlight
+pnpm i -D @flowbite-svelte-plugins/texteditor lowlight
 ```
 
 ### app.css

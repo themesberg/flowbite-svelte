@@ -10,12 +10,20 @@ description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins 
 <script>
   import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   const components = 'Texteditor'
+  import DefaultTexteditor from './examples/DefaultTexteditor.svelte'
+  import LayoutEx from './examples/LayoutEx.svelte'
+  import SourceAndHtml from './examples/SourceAndHtml.svelte'
   import DragHandle from './examples/DragHandle.svelte'
+  import CustomEditor from './examples/CustomEditor.svelte'
   import Appcss from './examples/appcss.md';
 
   import { Badge, P, Button, Accordion, AccordionItem } from "$lib"
   import { InfoCircleOutline } from "flowbite-svelte-icons";
 </script>
+
+<svelte:head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />
+</svelte:head>
 
 The WYSIWYG text editor from Flowbite-Svelte is open-source under the MIT license based on the Tip Tap library and allows you to easily edit complex text data with typography styles, links, images, videos, and more.
 
@@ -26,7 +34,7 @@ All examples provided on this page have support for dark mode, RTL (right-to-lef
 ## Installation
 
 ```svelte example hideOutput
-pnpm i -D @flowbite-svelte-plugins/texteditor highlight.js lowlight
+pnpm i -D @flowbite-svelte-plugins/texteditor lowlight
 ```
 
 ### app.css
@@ -40,11 +48,24 @@ Use the following example or create your own.
   </AccordionItem>
 </Accordion>
 
+### Code Block Styling
+To add syntax highlighting styles to your code blocks, include a highlight.js theme:
+
+```svelte
+<svelte:head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />
+</svelte:head>
+```
+
+Browse available themes at cdnjs.com/libraries/highlight.js or preview them at https://highlightjs.org/demo.
+
 ## Default text editor
 
 Use this example of a WYSIWYG text editor to enable basic typography styling and formatting, adding lists, links, images, videos, code blocks, aligning text, blockquotes, setting headers and paragraphs and more.
 
-```svelte example class="pt-10"
+<DefaultTexteditor />
+
+```svelte example hideOutput class="pt-10"
 <script lang="ts">
   import { AlignmentButtonGroup, FontButtonGroup, UndoRedoButtonGroup, FormatButtonGroup, LayoutButtonGroup, ImageButtonGroup, ListButtonGroup, VideoButtonGroup, TextEditor, ToolbarRowWrapper, Divider, SourceButton, HeadingButtonGroup } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -61,7 +82,7 @@ Use this example of a WYSIWYG text editor to enable basic typography styling and
   }
 
   const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>
-    <p>Here is an example of a js block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
+    <p>Here is an example of a js block:</p><pre><code class="language-js">for (var i=1; i <= 20; i++)
 {
   if (i % 15 == 0)
     console.log("FizzBuzz");
@@ -534,7 +555,9 @@ Configure which menu items are displayed using the following examples:
 
 `LayoutButtonGroup` creates typography elements like blockquotes, horizontal rules, code blocks.
 
-```svelte example class="pt-10"
+<LayoutEx />
+
+```svelte example hideOutput class="pt-10"
 <script lang="ts">
   import { LayoutButtonGroup, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -550,7 +573,7 @@ Configure which menu items are displayed using the following examples:
     editorInstance?.commands.setContent(content);
   }
 
-  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
+  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p><pre><code class="language-js">for (var i=1; i <= 20; i++)
 {
   if (i % 15 == 0)
     console.log("FizzBuzz");
@@ -790,17 +813,7 @@ Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG 
 
   let editorInstance = $state<Editor | null>(null);
 
-  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
-{
-  if (i % 15 == 0)
-    console.log("FizzBuzz");
-  else if (i % 3 == 0)
-    console.log("Fizz");
-  else if (i % 5 == 0)
-    console.log("Buzz");
-  else
-    console.log(i);
-}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
+  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
 </script>
 
 <TextEditor bind:editor={editorInstance} {content}>
@@ -892,7 +905,9 @@ Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG 
 
 Use the following example to view/edit source code and insert HTML code.
 
-```svelte example class="pt-10"
+<SourceAndHtml />
+
+```svelte example hideOutput class="pt-10"
 <script lang="ts">
   import { HtmlCodeButton, SourceButton, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -969,7 +984,7 @@ You can control display of buttons by adding `false` to a button group component
 
 Either using the above example or use button components to create your custom texteditor.
 
-```svelte example class="pt-10" hideOutput
+```svelte example hideOutput
 <script lang="ts">
   // CustomGroup.svelte
   import { AlignmentButton, FontButton, FormatButton, ImageButton } from "@flowbite-svelte-plugins/texteditor";
@@ -989,23 +1004,16 @@ Either using the above example or use button components to create your custom te
 {/if}
 ```
 
+<CustomEditor />
+
 ```svelte example hideOutput
 <script lang="ts">
   // +page.svelte
   import CustomGroup from "./CustomGroup.svelte";
   import { TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
 
   let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
 
   const content = "<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>";
 </script>
