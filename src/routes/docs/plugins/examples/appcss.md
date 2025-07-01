@@ -400,6 +400,33 @@
     border-top: 1px solid var(--purple) !important;
   }
 
+  /* placeholder */
+  p.is-editor-empty:first-child::before {
+    color: var(--gray-4);
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
+
+  summary.is-empty::before {
+    color: var(--gray-4);
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
+
+  [data-type='detailsContent'].is-empty::before {
+    color: var(--gray-4);
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+    position: relative;
+    top: 1.5rem;
+  }
+
   /* Table-specific styling */
   .tiptap table {
     border-collapse: collapse;

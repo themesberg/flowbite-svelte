@@ -295,7 +295,7 @@ The bubble menu displays a contextual toolbar near selected text. Disable featur
 
 Configure which menu items are displayed using the following examples:
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { TextEditor, UndoRedoButtonGroup } from "@flowbite-svelte-plugins/texteditor";
   import { Button } from "flowbite-svelte";
@@ -454,7 +454,7 @@ The `dragHandle` prop allows you to easily handle dragging nodes around in the e
 
 The `file` prop allows you to easily handle file drops and pastes in the editor.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { SourceButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -480,7 +480,7 @@ The `file` prop allows you to easily handle file drops and pastes in the editor.
 
 Use the `floatingMenu` prop in `TextEditor` to make a menu appear on an empty line.
 
-```svelte example
+```svelte example class="pt-10"
 <script lang="ts">
   import { TextEditor, UndoRedoButtonGroup } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -823,7 +823,7 @@ Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG 
 
 ## TaskList
 
-```svelte example class="pt-10"
+```svelte example
 <script lang="ts">
   import { TaskListButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -857,7 +857,9 @@ Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG 
 
 ## Details
 
-```svelte example class="pt-10"
+Use `summary` and `detailsPlaceholder` props to change placeholders.
+
+```svelte example
 <script lang="ts">
   import { DetailsButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
@@ -891,7 +893,7 @@ Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG 
     `;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content}>
+<TextEditor bind:editor={editorInstance} {content} summary='my summary ...' detailsPlaceholder='my details ...'>
   <DetailsButtonGroup editor={editorInstance} />
 </TextEditor>
 
@@ -948,6 +950,25 @@ Use the following example to view/edit source code and insert HTML code.
   <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
   <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
 </div>
+```
+
+## Placeholder
+
+Use the `placeholder` prop to customize the text shown in empty editor content (default: "Write something ...").
+
+```svelte example class="pt-10"
+<script lang="ts">
+  import { UndoRedoButtonGroup, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+
+  let editorInstance = $state<Editor | null>(null);
+</script>
+
+<TextEditor bind:editor={editorInstance} placeholder="my placeholder text ...">
+  <ToolbarRowWrapper>
+    <UndoRedoButtonGroup editor={editorInstance} />
+  </ToolbarRowWrapper>
+</TextEditor>
 ```
 
 ## Customizing Group components
