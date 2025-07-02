@@ -578,6 +578,108 @@
     margin: 0 !important;
   }
 
+  /* toc  #toc-ex*/
+  #toc-ex .col-group {
+    display: flex;
+    flex-direction: row;
+  }
+
+  @media (max-width: 540px) {
+    #toc-ex .col-group {
+      flex-direction: column-reverse;
+    }
+  }
+
+  #toc-ex .main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* max-height: 28rem; */
+  }
+
+  #toc-ex .sidebar {
+    border-left: 1px solid var(--gray-3);
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 1rem;
+    width: 15rem;
+    position: sticky;
+    height: 100vh;
+    top: 0;
+  }
+
+  @media (min-width: 800px) {
+    #toc-ex .sidebar {
+      width: 20rem;
+    }
+  }
+
+  @media (max-width: 540px) {
+    #toc-ex .sidebar {
+      border-bottom: 1px solid var(--gray-3);
+      border-left: unset;
+      width: 100%;
+      height: auto;
+      position: unset;
+      padding: 1.5rem;
+    }
+  }
+
+  #toc-ex .sidebar-options {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1rem;
+    position: sticky;
+    top: 1rem;
+  }
+
+  #toc-ex .table-of-contents {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.875rem;
+    gap: 0.25rem;
+    overflow: auto;
+    text-decoration: none;
+  }
+
+  #toc-ex .table-of-contents > div {
+    border-radius: 0.25rem;
+    padding-left: calc(0.875rem * (var(--level) - 1));
+    transition: all 0.2s cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+
+  #toc-ex .table-of-contents > div:hover {
+    background-color: var(--gray-2);
+  }
+
+  #toc-ex .table-of-contents .empty-state {
+    color: var(--gray-5);
+    user-select: none;
+  }
+
+  #toc-ex .table-of-contents .is-active a {
+    color: var(--purple);
+  }
+
+  #toc-ex .table-of-contents .is-scrolled-over a {
+    color: var(--gray-5);
+  }
+
+  #toc-ex .table-of-contents a {
+    color: var(--black);
+    display: flex;
+    gap: 0.25rem;
+    text-decoration: none;
+  }
+
+  #toc-ex .table-of-contents a::before {
+    content: attr(data-item-index) '.';
+  }
+
   /* Youtube embed */
   .tiptap div[data-youtube-video] {
     cursor: move;

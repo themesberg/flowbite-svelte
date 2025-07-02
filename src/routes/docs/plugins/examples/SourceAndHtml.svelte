@@ -1,17 +1,8 @@
 <script lang="ts">
   import { HtmlCodeButton, SourceButton, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
 
   let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
 
   const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p>
     <p>Here is an example of a code block:</p><pre><code class="language-js">for (var i=1; i <= 20; i++)
@@ -33,8 +24,3 @@
     <HtmlCodeButton editor={editorInstance} />
   </ToolbarRowWrapper>
 </TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
-</div>

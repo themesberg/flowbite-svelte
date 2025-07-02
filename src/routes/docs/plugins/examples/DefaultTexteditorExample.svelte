@@ -27,13 +27,13 @@
 }</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content} showSourceButton={true}>
+<TextEditor bind:editor={editorInstance} {content} showSourceButton={true} contentprops={{ id: 'default-ex' }}>
   <ToolbarRowWrapper>
     <FormatButtonGroup editor={editorInstance} />
     <Divider />
     <HeadingButtonGroup editor={editorInstance} />
   </ToolbarRowWrapper>
-  <ToolbarRowWrapper top={false}>
+  <ToolbarRowWrapper toolbarrawprops={{ top: false }}>
     <UndoRedoButtonGroup editor={editorInstance} />
     <Divider />
     <LayoutButtonGroup editor={editorInstance} />
@@ -43,7 +43,7 @@
     <VideoButtonGroup editor={editorInstance} />
     <SourceButton editor={editorInstance} />
   </ToolbarRowWrapper>
-  <ToolbarRowWrapper top={false}>
+  <ToolbarRowWrapper toolbarrawprops={{ top: false }}>
     <ListButtonGroup editor={editorInstance} />
     <Divider />
     <AlignmentButtonGroup editor={editorInstance} />
