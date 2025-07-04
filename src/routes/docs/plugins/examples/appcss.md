@@ -182,6 +182,7 @@
   .tiptap .details summary {
     font-weight: 700;
     list-style: none;
+    margin: 0;
   }
 
   .tiptap .details > button {
@@ -193,7 +194,7 @@
     height: 1.25rem;
     justify-content: center;
     line-height: 1;
-    margin-top: 0.1rem;
+    margin-top: 0.1rem !important;
     padding: 0;
     width: 1.25rem;
   }
@@ -218,10 +219,17 @@
     flex-direction: column;
     gap: 1rem;
     width: 100%;
+    margin: 0;
   }
 
   .tiptap .details > div > [data-type='detailsContent'] > :last-child {
-    margin-bottom: 0.5rem;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .tiptap .details > div > [data-type='detailsContent'] {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   .tiptap .details .details {
@@ -229,51 +237,51 @@
   }
 
   /* drag handle */
-  #drag-handle-wrapper ::selection {
+  [id^='drag-handle-'] ::selection {
     background-color: #70cff850;
   }
 
-  #drag-handle-wrapper .ProseMirror {
+  [id^='drag-handle-'] .ProseMirror {
     padding: 1rem 1rem 1rem 0;
     position: relative;
   }
 
-  #drag-handle-wrapper .ProseMirror * {
+  [id^='drag-handle-'] .ProseMirror * {
     margin-top: 0.75em;
   }
 
-  #drag-handle-wrapper .ProseMirror > * {
+  [id^='drag-handle-'] .ProseMirror > * {
     margin-left: 3rem;
   }
 
-  #drag-handle-wrapper .ProseMirror .ProseMirror-widget * {
+  [id^='drag-handle-'] .ProseMirror .ProseMirror-widget * {
     margin-top: auto;
   }
 
-  #drag-handle-wrapper .ProseMirror ul,
-  #drag-handle-wrapper .ProseMirror ol {
+  [id^='drag-handle-'] .ProseMirror ul,
+  [id^='drag-handle-'] .ProseMirror ol {
     padding: 0 1rem;
   }
 
-  #drag-handle-wrapper .ProseMirror-noderangeselection *::selection {
+  [id^='drag-handle-'] .ProseMirror-noderangeselection *::selection {
     background: transparent;
   }
 
-  #drag-handle-wrapper .ProseMirror-hideselection *::selection {
+  [id^='drag-handle-'] .ProseMirror-hideselection *::selection {
     background-color: #70cff850 !important;
   }
 
-  #drag-handle-wrapper .ProseMirror-noderangeselection * {
+  [id^='drag-handle-'] .ProseMirror-noderangeselection * {
     caret-color: transparent;
   }
 
-  #drag-handle-wrapper .ProseMirror-selectednode,
-  #drag-handle-wrapper .ProseMirror-selectednoderange {
+  [id^='drag-handle-'] .ProseMirror-selectednode,
+  [id^='drag-handle-'] .ProseMirror-selectednoderange {
     position: relative;
   }
 
-  #drag-handle-wrapper .ProseMirror-selectednode::before,
-  #drag-handle-wrapper .ProseMirror-selectednoderange::before {
+  [id^='drag-handle-'] .ProseMirror-selectednode::before,
+  [id^='drag-handle-'] .ProseMirror-selectednoderange::before {
     position: absolute;
     pointer-events: none;
     z-index: -1;
@@ -286,7 +294,7 @@
     border-radius: 0.2rem;
   }
 
-  #drag-handle-wrapper .drag-handle {
+  [id^='drag-handle-'] .drag-handle {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -305,7 +313,7 @@
     pointer-events: auto !important;
   }
 
-  #drag-handle-wrapper .drag-handle:hover {
+  [id^='drag-handle-'] .drag-handle:hover {
     transform: scale(1.1) !important;
   }
 
@@ -425,6 +433,10 @@
     pointer-events: none;
     position: relative;
     top: 1.5rem;
+  }
+
+  [id^='drag-handle-'] [data-type='detailsContent'].is-empty::before {
+    top: 0.5rem;
   }
 
   /* Table-specific styling */

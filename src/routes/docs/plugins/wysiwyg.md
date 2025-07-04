@@ -11,6 +11,7 @@ description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins 
   import { CompoAttributesViewer, GitHubCompoLinks, ExampleWrapper } from '../../utils'
   const components = 'Texteditor'
   import * as Examples from './examples';
+  import Appcss from './examples/appcss.md';
   // const Markdowns = import.meta.glob('./examples/*.svelte,{query:'?raw', import: 'default'})
   const exampleRawModules = import.meta.glob("./examples/*.svelte", {
     query: "?raw",
@@ -21,8 +22,6 @@ description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins 
   const exampleModules = import.meta.glob("./examples/*.svelte", {
     eager: true,
   });
-
-  // console.log('eg:', exampleModules['./examples/Alignment.svelte'])
   
   import { Badge, P, Button, Accordion, AccordionItem, A } from "$lib"
   import { InfoCircleOutline } from "flowbite-svelte-icons";
