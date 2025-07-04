@@ -66,7 +66,7 @@ To add syntax highlighting styles to your code blocks, include a highlight.js th
 
 Browse available themes at cdnjs.com/libraries/highlight.js or preview them at https://highlightjs.org/demo.
 
-## Default text editor
+## Full-featured Text Editor
 
 Use this example of a WYSIWYG text editor to enable basic typography styling and formatting, adding lists, links, images, videos, code blocks, aligning text, blockquotes, setting headers and paragraphs and more.
 
