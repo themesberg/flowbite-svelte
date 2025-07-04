@@ -348,6 +348,8 @@ Use the following example to view/edit source code and insert HTML code.
 
 Use the following example to display Table of Contents.
 
+<P>See an example at <A href="https://flowbite-svelte-texteditor.vercel.app/toc" target="_blank">this page</A>.</P>
+
 <ExampleWrapper 
   meta={{hideOutput: true}}
   codeString={exampleRawModules['./examples/TocEx.svelte']}
