@@ -3,15 +3,16 @@ export { default as BubbleMenu } from './BubbleMenu.svelte';
 export { default as CharacterCount} from './CharacterCount.svelte';
 export { default as CustomEditor} from './CustomEditor.svelte';
 export { default as CustomGroup} from './CustomGroup.svelte';
-export { default as DefaultTextEditorExample} from './DefaultTexteditorExample.svelte';
 export { default as Details} from './Details.svelte';
-export { default as DragHandle} from './DragHandle.svelte';
+export { default as DragHandle } from './DragHandle.svelte';
+export { default as EditableButton } from './EditableButton.svelte'
 export { default as Emoji} from './Emoji.svelte';
 export { default as Export} from './Export.svelte';
 export { default as Filehandler} from './Filehandler.svelte';
 export { default as FloatingMenu} from './FloatingMenu.svelte';
 export { default as Fonts } from './Fonts.svelte';
 export { default as Format } from './Format.svelte';
+export { default as FullFeaturedTexteditor} from './FullFeaturedTexteditor.svelte';
 export { default as Heading } from './Heading.svelte';
 export { default as Images } from './Images.svelte';
 export { default as Invisible} from './Invisible.svelte';

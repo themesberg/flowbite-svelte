@@ -70,11 +70,11 @@ Browse available themes at cdnjs.com/libraries/highlight.js or preview them at h
 
 Use this example of a WYSIWYG text editor to enable basic typography styling and formatting, adding lists, links, images, videos, code blocks, aligning text, blockquotes, setting headers and paragraphs and more.
 
-<Examples.DefaultTextEditorExample />
+<Examples.FullFeaturedTexteditor />
 
 <ExampleWrapper 
   meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/DefaultTexteditorExample.svelte']}
+  codeString={exampleRawModules['./examples/FullFeaturedTexteditor.svelte']}
 />
 
 
@@ -371,6 +371,16 @@ Use the `placeholder` prop to customize the text shown in empty editor content (
 <ExampleWrapper 
   meta={{hideOutput: true}}
   codeString={exampleRawModules['./examples/Heading.svelte']}
+/>
+
+## Editable Button
+
+Use the `EditableButton` to enable or disable editing mode.
+
+<Examples.EditableButton />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/EditableButton.svelte']}
 />
 
 ## Customizing Group components
