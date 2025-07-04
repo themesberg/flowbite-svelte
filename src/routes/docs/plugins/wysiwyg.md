@@ -24,7 +24,7 @@ description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins 
 
   // console.log('eg:', exampleModules['./examples/Alignment.svelte'])
   
-  import { Badge, P, Button, Accordion, AccordionItem } from "$lib"
+  import { Badge, P, Button, Accordion, AccordionItem, A } from "$lib"
   import { InfoCircleOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -381,6 +381,21 @@ Use the `EditableButton` to enable or disable editing mode.
 <ExampleWrapper 
   meta={{hideOutput: true}}
   codeString={exampleRawModules['./examples/EditableButton.svelte']}
+/>
+
+## Autofocus position
+
+`autofocusPosition` prop controls the initial cursor position when the editor loads. Set to 'start' to focus at the beginning, 'end' to focus at the end, 'all' to select all content, or a number for a specific character position. Use false or null to disable autofocus entirely. 
+
+```md
+Default: false 
+Type: 'start' | 'end' | 'all' | number | boolean | null
+```
+
+<P>See an example at <A href="/examples/texteditor/autofocus">this page</A>.</P>
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/AutofocusEx.svelte']}
 />
 
 ## Customizing Group components

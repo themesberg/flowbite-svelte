@@ -117,7 +117,7 @@
 
   {#snippet footer()}
     {#if editorInstance}
-      <CharacterCount editor={editorInstance} limit={280} />
+      <CharacterCount editor={editorInstance} limit={700} />
     {/if}
   {/snippet}
 </TextEditor>

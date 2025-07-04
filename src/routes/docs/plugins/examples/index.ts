@@ -1,4 +1,5 @@
 export { default as Alignment } from './Alignment.svelte';
+export { default as AutofocusEx } from './AutofocusEx.svelte';
 export { default as BubbleMenu } from './BubbleMenu.svelte';
 export { default as CharacterCount} from './CharacterCount.svelte';
 export { default as CustomEditor} from './CustomEditor.svelte';
