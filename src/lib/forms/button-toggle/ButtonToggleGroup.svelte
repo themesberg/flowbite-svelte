@@ -2,12 +2,24 @@
   import { setContext } from "svelte";
   import { type ButtonToggleGroupProps, buttonToggleGroup, cn } from "$lib";
 
-  let { multiSelect = false, name = "toggle-group", value = multiSelect ? [] : null, color, size = "md", roundedSize = "md", onSelect = (val: any) => {}, children, ctxIconClass, ctxBtnClass, class: className, ...restProps }: ButtonToggleGroupProps = $props();
+  let { multiSelect = false, name = "toggle-group", value = null, color, size = "md", roundedSize = "md", onSelect = (val: any) => {}, children, ctxIconClass, ctxBtnClass, class: className, ...restProps }: ButtonToggleGroupProps = $props();
 
   const base = $derived(buttonToggleGroup({ roundedSize }));
   type SelectedValue = string | null | string[];
 
-  let selectedValues = $state<SelectedValue>(multiSelect ? [] : null);
+  if (multiSelect) {
+    if (value === null) {
+      value = [];
+    } else if (typeof value === "string") {
+      value = [value];
+    }
+  } else {
+    if (Array.isArray(value)) {
+      value = value[0] || null;
+    }
+  }
+
+  let selectedValues = $state<SelectedValue>(value);
 
   interface ButtonToggleContext {
     toggleSelected: (toggleValue: string) => void;
