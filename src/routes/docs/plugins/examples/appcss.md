@@ -85,6 +85,10 @@
     margin: 1.5rem;
   }
 
+  .dark .character-count {
+    color: #777;
+  }
+
   .character-count svg {
     color: var(--purple);
   }
@@ -194,7 +198,7 @@
     height: 1.25rem;
     justify-content: center;
     line-height: 1;
-    margin-top: 0.1rem !important;
+    margin-top: 6px !important;
     padding: 0;
     width: 1.25rem;
   }
@@ -207,7 +211,6 @@
     content: '▶';
     display: inline-block;
     position: relative;
-    top: 3px;
   }
 
   .tiptap .details.is-open > button::before {
@@ -237,8 +240,12 @@
   }
 
   /* drag handle */
-  [id^='drag-handle-'] ::selection {
+  [id^='drag-handle-'] ::selection{
     background-color: #70cff850;
+  }
+
+  .dark [id^='drag-handle-'] .ProseMirror-hideselection *::selection{
+    background-color: #e3508950 !important;
   }
 
   [id^='drag-handle-'] .ProseMirror {
@@ -311,6 +318,11 @@
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
+  }
+
+  .dark [id^='drag-handle-'] .drag-handle {
+    background: #ffffff;
+    color: #179df186;
   }
 
   [id^='drag-handle-'] .drag-handle:hover {
@@ -425,6 +437,10 @@
     pointer-events: none;
   }
 
+  .dark summary.is-empty::before {
+    color: #666;
+  }
+
   [data-type='detailsContent'].is-empty::before {
     color: var(--gray-4);
     content: attr(data-placeholder);
@@ -432,7 +448,11 @@
     height: 0;
     pointer-events: none;
     position: relative;
-    top: 1.5rem;
+    top: 0.5rem;
+  }
+
+  .dark [data-type='detailsContent'].is-empty::before {
+    color: #666;
   }
 
   [id^='drag-handle-'] [data-type='detailsContent'].is-empty::before {
@@ -679,6 +699,11 @@
 
   #toc-ex .table-of-contents .is-scrolled-over a {
     color: var(--gray-5);
+  }
+
+  .dark #toc-ex .table-of-contents a,
+  .dark #toc-ex .table-of-contents .is-scrolled-over a {
+    color: #888;
   }
 
   #toc-ex .table-of-contents a {

@@ -261,7 +261,7 @@ color utility to any element that depends on these defaults.
     margin: 1.5rem;
   }
 
-  .dark .character-count{
+  .dark .character-count {
     color: #777;
   }
 
@@ -416,8 +416,12 @@ color utility to any element that depends on these defaults.
   }
 
   /* drag handle */
-  [id^='drag-handle-'] ::selection {
+  [id^='drag-handle-'] ::selection{
     background-color: #70cff850;
+  }
+
+  .dark [id^='drag-handle-'] .ProseMirror-hideselection *::selection{
+    background-color: #e3508950 !important;
   }
 
   [id^='drag-handle-'] .ProseMirror {
@@ -490,6 +494,11 @@ color utility to any element that depends on these defaults.
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
+  }
+
+  .dark [id^='drag-handle-'] .drag-handle {
+    background: #ffffff;
+    color: #179df186;
   }
 
   [id^='drag-handle-'] .drag-handle:hover {
@@ -866,6 +875,11 @@ color utility to any element that depends on these defaults.
 
   #toc-ex .table-of-contents .is-scrolled-over a {
     color: var(--gray-5);
+  }
+
+  .dark #toc-ex .table-of-contents a,
+  .dark #toc-ex .table-of-contents .is-scrolled-over a {
+    color: #888;
   }
 
   #toc-ex .table-of-contents a {
