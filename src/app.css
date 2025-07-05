@@ -605,6 +605,10 @@ color utility to any element that depends on these defaults.
     pointer-events: none;
   }
 
+  .dark p.is-editor-empty:first-child::before{
+    color: #666;
+  }
+
   summary.is-empty::before {
     color: var(--gray-4);
     content: attr(data-placeholder);

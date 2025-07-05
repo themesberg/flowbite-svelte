@@ -429,6 +429,10 @@
     pointer-events: none;
   }
 
+  .dark p.is-editor-empty:first-child::before{
+    color: #666;
+  }
+
   summary.is-empty::before {
     color: var(--gray-4);
     content: attr(data-placeholder);
