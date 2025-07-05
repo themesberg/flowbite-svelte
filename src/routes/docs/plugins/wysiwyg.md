@@ -77,7 +77,7 @@ Use this example of a WYSIWYG text editor to enable basic typography styling and
 />
 
 
-## Text formatting
+## Text Formatting
 
 Use `FormatButtonGroup` to enable typography styling, formatting and marking such as bold, code, highlight, italic, link, remove link, underline, strikethrough, subscript, seperscript, and line break.
 
@@ -87,7 +87,6 @@ Use `FormatButtonGroup` to enable typography styling, formatting and marking suc
   meta={{hideOutput: true}}
   codeString={exampleRawModules['./examples/Format.svelte']}
 />
-
 
 ## Emoji
 
@@ -111,7 +110,7 @@ Trigger a mention popup by typing `@`. Provide a `mentions` array of name string
   codeString={exampleRawModules['./examples/Mention.svelte']}
 />
 
-## Bubble menu
+## Bubble Menu
 
 The bubble menu displays a contextual toolbar near selected text. Disable features like `underline` and `highlight` using `underline={false}`.
 
@@ -151,7 +150,7 @@ Render mathematical formulas and equations by adding the `math` prop.
   codeString={exampleRawModules['./examples/Math.svelte']}
 />
 
-## Invisible characters
+## Invisible Characters
 
 The `InvisibleButtonGroup` component provides toggle, show, and hide controls for invisible elements in a text editor. Each button can be individually shown or hidden using boolean props.
 
@@ -162,7 +161,7 @@ The `InvisibleButtonGroup` component provides toggle, show, and hide controls fo
   codeString={exampleRawModules['./examples/Invisible.svelte']}
 />
 
-## Character count
+## Character Count
 
 The `CharacterCount` component limits the number of allowed characters to a specific length and is able to return the number of characters and words.
 
@@ -194,7 +193,7 @@ The `file` prop allows you to easily handle file drops and pastes in the editor.
   codeString={exampleRawModules['./examples/Filehandler.svelte']}
 />
 
-## Floating menu
+## Floating Menu
 
 Use the `floatingMenu` prop in `TextEditor` to make a menu appear on an empty line.
 
@@ -225,7 +224,7 @@ Configure which menu items are displayed using the following examples:
 </TextEditor>
 ```
 
-## Text alignment
+## Text Alignment
 
 `AlignmentButtonGroup` component enables text alignment to the left, center, right, and justify for the content inside of the WYSIWYG component.
 
@@ -237,7 +236,7 @@ Configure which menu items are displayed using the following examples:
 />
 
 
-## Layout elements
+## Layout Elements
 
 `LayoutButtonGroup` creates typography elements like blockquotes, horizontal rules, code blocks.
 
@@ -276,7 +275,7 @@ Use this example to create typography elements like bullet lists, ordered lists,
   codeString={exampleRawModules['./examples/Fonts.svelte']}
 />
 
-## Adding videos
+## Adding Videos
 
 Use `VideoButtonGroup` to embed videos inside the WYSIWYG text editor based on a YouTube URL source and set the width and height of the video by using the advanced video component.
 
@@ -286,7 +285,7 @@ Use `VideoButtonGroup` to embed videos inside the WYSIWYG text editor based on a
   codeString={exampleRawModules['./examples/Videos.svelte']}
 />
 
-## Editing tables
+## Editing Tables
 
 Use `TableButtonGroup`s to edit table data inside the WYSIWYG text editor by adding and removing table column, rows, and cells and use other features to navigate through the table data for a convenient editing process.
 
@@ -296,7 +295,7 @@ Use `TableButtonGroup`s to edit table data inside the WYSIWYG text editor by add
   codeString={exampleRawModules['./examples/Tables.svelte']}
 />
 
-## Undo and redo
+## Undo and Redo
 
 Use the `UndoRedoButtonGroup` component to integrate undo and redo actions.
 
@@ -306,7 +305,7 @@ Use the `UndoRedoButtonGroup` component to integrate undo and redo actions.
   codeString={exampleRawModules['./examples/UndoRedo.svelte']}
 />
 
-## Exporting data
+## Exporting Data
 
 Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG text editor in JSON or raw HTML format to persist into your database or API structure.
 
@@ -384,7 +383,7 @@ Use the `EditableButton` to enable or disable editing mode.
   codeString={exampleRawModules['./examples/EditableButton.svelte']}
 />
 
-## Autofocus position
+## Autofocus Position
 
 `autofocusPosition` prop controls the initial cursor position when the editor loads. Set to 'start' to focus at the beginning, 'end' to focus at the end, 'all' to select all content, or a number for a specific character position. Use false or null to disable autofocus entirely. 
 
@@ -397,6 +396,16 @@ Type: 'start' | 'end' | 'all' | number | boolean | null
 <ExampleWrapper 
   meta={{hideOutput: true}}
   codeString={exampleRawModules['./examples/AutofocusEx.svelte']}
+/>
+
+## Getting and Setting Content
+
+Use the following example to get and set text editor content.
+
+<Examples.GetSetContent />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/GetSetContent.svelte']}
 />
 
 ## Customizing Group components
