@@ -481,6 +481,7 @@ export interface DarkmodeProps extends HTMLButtonAttributes {
 }
 
 // datepicker
+// datepicker
 export type DateOrRange = Date | { from?: Date; to?: Date };
 
 export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes<HTMLDivElement>, "onselect"> {
@@ -489,6 +490,8 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   range?: boolean;
   rangeFrom?: Date;
   rangeTo?: Date;
+  availableFrom?: Date | null;
+  availableTo?: Date | null;
   locale?: string;
   firstDayOfWeek?: number;
   dateFormat?: Intl.DateTimeFormatOptions;

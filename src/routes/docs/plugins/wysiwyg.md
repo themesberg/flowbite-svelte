@@ -8,14 +8,28 @@ description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins 
 ---
 
 <script>
-  import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, ExampleWrapper } from '../../utils'
   const components = 'Texteditor'
-
+  import * as Examples from './examples';
   import Appcss from './examples/appcss.md';
+  // const Markdowns = import.meta.glob('./examples/*.svelte,{query:'?raw', import: 'default'})
+  const exampleRawModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
+    eager: true
+  });
 
-  import { Badge, P, Button, Accordion, AccordionItem } from "$lib"
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    eager: true,
+  });
+  
+  import { Badge, P, Button, Accordion, AccordionItem, A } from "$lib"
   import { InfoCircleOutline } from "flowbite-svelte-icons";
 </script>
+
+<svelte:head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />
+</svelte:head>
 
 The WYSIWYG text editor from Flowbite-Svelte is open-source under the MIT license based on the Tip Tap library and allows you to easily edit complex text data with typography styles, links, images, videos, and more.
 
@@ -26,7 +40,7 @@ All examples provided on this page have support for dark mode, RTL (right-to-lef
 ## Installation
 
 ```svelte example hideOutput
-pnpm i -D @flowbite-svelte-plugins/texteditor highlight.js lowlight
+pnpm i -D @flowbite-svelte-plugins/texteditor lowlight
 ```
 
 ### app.css
@@ -40,712 +54,375 @@ Use the following example or create your own.
   </AccordionItem>
 </Accordion>
 
-## Default text editor
+### Code Block Styling
+To add syntax highlighting styles to your code blocks, include a highlight.js theme:
 
-Use this example of a WYSIWYG text editor to enable basic typography styling and formatting, adding lists, links, images, videos, code blocks, aligning text, blockquotes, setting headers and paragraphs and more.
-
-```svelte example
-<script lang="ts">
-  import { AlignmentButtonGroup, FontButtonGroup, UndoRedoButtonGroup, FormatButtonGroup, LayoutButtonGroup, ImageButtonGroup, ListButtonGroup, VideoButtonGroup, TextEditor, ToolbarRowWrapper, Divider, SourceButton, HeadingButtonGroup } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
-
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>
-    <p>Here is an example of a js block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
-{
-  if (i % 15 == 0)
-    console.log("FizzBuzz");
-  else if (i % 3 == 0)
-    console.log("Fizz");
-  else if (i % 5 == 0)
-    console.log("Buzz");
-  else
-    console.log(i);
-}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
-</script>
-
+```svelte
 <svelte:head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />
 </svelte:head>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content} showSourceButton={true}>
-  <ToolbarRowWrapper>
-    <FormatButtonGroup editor={editorInstance} />
-    <Divider />
-    <HeadingButtonGroup editor={editorInstance} />
-  </ToolbarRowWrapper>
-  <ToolbarRowWrapper top={false}>
-    <UndoRedoButtonGroup editor={editorInstance} />
-    <Divider />
-    <LayoutButtonGroup editor={editorInstance} />
-    <Divider />
-    <ImageButtonGroup editor={editorInstance} />
-    <Divider />
-    <VideoButtonGroup editor={editorInstance} />
-    <SourceButton editor={editorInstance} />
-  </ToolbarRowWrapper>
-  <ToolbarRowWrapper top={false}>
-    <ListButtonGroup editor={editorInstance} />
-    <Divider />
-    <AlignmentButtonGroup editor={editorInstance} />
-  </ToolbarRowWrapper>
-</TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
-</div>
 ```
 
-## Text formatting
+Browse available themes at cdnjs.com/libraries/highlight.js or preview them at https://highlightjs.org/demo.
+
+## Full-featured Text Editor
+
+Use this example of a WYSIWYG text editor to enable basic typography styling and formatting, adding lists, links, images, videos, code blocks, aligning text, blockquotes, setting headers and paragraphs and more.
+
+<Examples.FullFeaturedTexteditor />
+
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/FullFeaturedTexteditor.svelte']}
+/>
+
+
+## Text Formatting
 
 Use `FormatButtonGroup` to enable typography styling, formatting and marking such as bold, code, highlight, italic, link, remove link, underline, strikethrough, subscript, seperscript, and line break.
 
-```svelte example
-<script lang="ts">
-  import { FormatButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
+<Examples.Format />
 
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p>
-  <pre><code class="language-javascript">for (var i=1; i <= 20; i++)
-    {
-      if (i % 15 == 0)
-        console.log("FizzBuzz");
-      else if (i % 3 == 0)
-        console.log("Fizz");
-      else if (i % 5 == 0)
-        console.log("Buzz");
-      else
-        console.log(i);
-    }</code></pre>
-<p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <FormatButtonGroup editor={editorInstance} />
-</TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
-</div>
-```
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Format.svelte']}
+/>
 
 ## Emoji
 
 Type `:` to open the autocomplete. The default value is `emoji={true}`, and you can disable it by adding `emoji={false}` to `TextEditor`.
 
-```svelte example
-<script lang="ts">
-  import { UndoRedoButtonGroup, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
+<Examples.Emoji />
 
-  let editorElement = $state<HTMLDivElement | null>(null);
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Emoji.svelte']}
+/>
+
+## Mention
+
+Trigger a mention popup by typing `@`. Provide a `mentions` array of name strings to display filtered suggestions as you type.
+
+<Examples.Mention />
+
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Mention.svelte']}
+/>
+
+## Bubble Menu
+
+The bubble menu displays a contextual toolbar near selected text. Disable features like `underline` and `highlight` using `underline={false}`.
+
+<Examples.BubbleMenu />
+
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/BubbleMenu.svelte']}
+/>
+
+Configure which menu items are displayed using the following examples:
+
+```svelte example hideOutput class="p-2 pt-10"
+<script lang="ts">
+  import { TextEditor, UndoRedoButtonGroup } from "@flowbite-svelte-plugins/texteditor";
+  import { Button } from "flowbite-svelte";
+  import type { Editor } from "@tiptap/core";
+
   let editorInstance = $state<Editor | null>(null);
 
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  let content = `
-        <p>
-          These <span data-type="emoji" data-name="smiley"></span>
-          are <span data-type="emoji" data-name="fire"></span>
-          some <span data-type="emoji" data-name="smiley_cat"></span>
-          emojis <span data-type="emoji" data-name="exploding_head"></span>
-          rendered <span data-type="emoji" data-name="ghost"></span>
-          as <span data-type="emoji" data-name="massage"></span>
-          inline <span data-type="emoji" data-name="v"></span>
-          nodes.
-        </p>
-        <p>
-          Type <code>:</code> to open the autocomplete.
-        </p>
-        <p>
-          Even <span data-type="emoji" data-name="octocat"></span>
-          custom <span data-type="emoji" data-name="trollface"></span>
-          emojis <span data-type="emoji" data-name="neckbeard"></span>
-          are <span data-type="emoji" data-name="rage1"></span>
-          supported.
-        </p>
-        <p>
-          And unsupported emojis (without a fallback image) are rendered as just the shortcode <span data-type="emoji" data-name="this_does_not_exist"></span>.
-        </p>
-        <pre><code>In code blocks all emojis are rendered as plain text. 👩‍💻👨‍💻</code></pre>
-      `;
+  const content = "<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>";
 </script>
 
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <ToolbarRowWrapper>
-    <UndoRedoButtonGroup editor={editorInstance} />
-  </ToolbarRowWrapper>
+<TextEditor bind:editor={editorInstance} {content} bubbleMenu={{ showUnderline: false, showHighlight: false }}>
+  <UndoRedoButtonGroup editor={editorInstance} />
 </TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
-</div>
 ```
 
+## Math
 
-## Text alignment
+Render mathematical formulas and equations by adding the `math` prop.
+
+<Examples.Math />
+
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Math.svelte']}
+/>
+
+## Invisible Characters
+
+The `InvisibleButtonGroup` component provides toggle, show, and hide controls for invisible elements in a text editor. Each button can be individually shown or hidden using boolean props.
+
+<Examples.Invisible />
+
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Invisible.svelte']}
+/>
+
+## Character Count
+
+The `CharacterCount` component limits the number of allowed characters to a specific length and is able to return the number of characters and words.
+
+<Examples.CharacterCount />
+
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/CharacterCount.svelte']}
+/>
+
+## Drag Handle
+The `dragHandle` prop allows you to easily handle dragging nodes around in the editor.
+
+<Examples.DragHandle />
+
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/DragHandle.svelte']}
+/>
+
+## File Handler
+
+The `file` prop allows you to easily handle file drops and pastes in the editor.
+
+<Examples.Filehandler />
+
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Filehandler.svelte']}
+/>
+
+## Floating Menu
+
+Use the `floatingMenu` prop in `TextEditor` to make a menu appear on an empty line.
+
+<Examples.FloatingMenu />
+
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/FloatingMenu.svelte']}
+/>
+
+Configure which menu items are displayed using the following examples:
+
+```svelte example
+<script lang="ts">
+  import { TextEditor, UndoRedoButtonGroup } from "@flowbite-svelte-plugins/texteditor";
+  import type { Editor } from "@tiptap/core";
+
+  let editorInstance = $state<Editor | null>(null);
+
+  const content = `<p>
+        This is an example of a Medium-like editor. Enter a new line and some buttons will appear.
+      </p>
+      <p></p>`;
+</script>
+
+<TextEditor bind:editor={editorInstance} {content} floatingMenu={{ showHorizontalRule: false, showTable: false, showImage: false, showCodeBlock:false, showList:false }} contentprops={{ id: 'floating-menu-ex2' }}>
+  <UndoRedoButtonGroup editor={editorInstance} />
+</TextEditor>
+```
+
+## Text Alignment
 
 `AlignmentButtonGroup` component enables text alignment to the left, center, right, and justify for the content inside of the WYSIWYG component.
 
-```svelte example
-<script lang="ts">
-  import { AlignmentButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
+<Examples.Alignment />
 
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Alignment.svelte']}
+/>
 
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
 
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content = '<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>';
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <AlignmentButtonGroup editor={editorInstance} />
-</TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
-</div>
-```
-
-## Layout elements
+## Layout Elements
 
 `LayoutButtonGroup` creates typography elements like blockquotes, horizontal rules, code blocks.
 
-```svelte example
-<script lang="ts">
-  import { LayoutButtonGroup, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
+<Examples.Layouts />
 
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
-{
-  if (i % 15 == 0)
-    console.log("FizzBuzz");
-  else if (i % 3 == 0)
-    console.log("Fizz");
-  else if (i % 5 == 0)
-    console.log("Buzz");
-  else
-    console.log(i);
-}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <ToolbarRowWrapper>
-    <LayoutButtonGroup editor={editorInstance} />
-  </ToolbarRowWrapper>
-</TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
-</div>
-```
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Layouts.svelte']}
+/>
 
 ## Images
 
 `ImageButtonGroup` adds images inside of the WYSIWYG text editor and configure settings such as the image URL, image alt attribute which is important for SEO and accessibility and the image title.
 
-```svelte example
-<script lang="ts">
-  import { ImageButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
-
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content = '<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><img src="https://placehold.co/600x400" contenteditable="false" draggable="true"><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>';
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <ImageButtonGroup editor={editorInstance} />
-</TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
-</div>
-```
+<Examples.Images />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Images.svelte']}
+/>
 
 ## List
 
 Use this example to create typography elements like bullet lists, ordered lists, blockquotes, horizontal rules, paragraphs, headings, code blocks based on Tailwind CSS utility classees and the Flowbite API.
 
-```svelte example
-<script lang="ts">
-  import { ListButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
-
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content = '<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><ul><li>Over 600+ open-source UI components</li><li>Supports dark mode and RTL</li><li>Available in React, Vue, Svelte frameworks</li></ul><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>';
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <ListButtonGroup editor={editorInstance} />
-</TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
-</div>
-```
+<Examples.List />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/List.svelte']}
+/>
 
 ## Fonts
 
-```svelte example
-<script lang="ts">
-  import { FontButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
+<Examples.Fonts />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Fonts.svelte']}
+/>
 
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content = '<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>';
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <FontButtonGroup editor={editorInstance} />
-</TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
-</div>
-```
-
-## Adding videos
+## Adding Videos
 
 Use `VideoButtonGroup` to embed videos inside the WYSIWYG text editor based on a YouTube URL source and set the width and height of the video by using the advanced video component.
 
-```svelte example
-<script lang="ts">
-  import { VideoButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
+<Examples.Videos />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Videos.svelte']}
+/>
 
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content =
-    '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>';
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <VideoButtonGroup editor={editorInstance} />
-</TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
-</div>
-```
-
-## Editing tables
+## Editing Tables
 
 Use `TableButtonGroup`s to edit table data inside the WYSIWYG text editor by adding and removing table column, rows, and cells and use other features to navigate through the table data for a convenient editing process.
 
-```svelte example
-<script lang="ts">
-  import { TableButtonGroup1, TableButtonGroup2, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
+<Examples.Tables />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Tables.svelte']}
+/>
 
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
+## Undo and Redo
 
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
+Use the `UndoRedoButtonGroup` component to integrate undo and redo actions.
 
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
+<Examples.UndoRedo />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/UndoRedo.svelte']}
+/>
 
-  const content =
-    '<p>Understanding global <strong>population growth trends</strong> is essential for analyzing the development and future of nations. Population growth rates provide insights into economic prospects, resource allocation, and potential challenges for countries worldwide.</p><p>Here is an example of population data:</p><div class=tableWrapper><table style=min-width:75px><col><col><col><tr><th colspan=1 rowspan=1><p>Country<th colspan=1 rowspan=1><p>Population<th colspan=1 rowspan=1><p>Growth rate<tr><td colspan=1 rowspan=1><p>United States<td colspan=1 rowspan=1><p>333 million<td colspan=1 rowspan=1><p>0.4%<tr><td colspan=1 rowspan=1><p>China<td colspan=1 rowspan=1><p>1.41 billion<td colspan=1 rowspan=1><p>0%<tr><td colspan=1 rowspan=1><p>Germany<td colspan=1 rowspan=1><p>83.8 million<td colspan=1 rowspan=1><p>0.7%<tr><td colspan=1 rowspan=1><p>India<td colspan=1 rowspan=1><p>1.42 billion<td colspan=1 rowspan=1><p>1.0%<tr><td colspan=1 rowspan=1><p>Brazil<td colspan=1 rowspan=1><p>214 million<td colspan=1 rowspan=1><p>0.6%<tr><td colspan=1 rowspan=1><p>Indonesia<td colspan=1 rowspan=1><p>273 million<td colspan=1 rowspan=1><p>1.1%<tr><td colspan=1 rowspan=1><p>Pakistan<td colspan=1 rowspan=1><p>231 million<td colspan=1 rowspan=1><p>2.0%<tr><td colspan=1 rowspan=1><p>Nigeria<td colspan=1 rowspan=1><p>223 million<td colspan=1 rowspan=1><p>2.5%</table></div><p>Learn more about global population trends from reliable sources like the <a href=https://www.worldpopulationreview.com>World Population Review</a>.</p>';
-</script>
+## Exporting Data
 
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <ToolbarRowWrapper>
-    <TableButtonGroup1 editor={editorInstance} />
-  </ToolbarRowWrapper>
-  <ToolbarRowWrapper top={false}>
-    <TableButtonGroup2 editor={editorInstance} />
-  </ToolbarRowWrapper>
-</TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
-</div>
-```
-
-## Undo and redo
-
-Use the history functionality from the WYSIWYG text editor component to integrate undo and redo actions.
-
-```svelte example
-<script lang="ts">
-  import { UndoRedoButtonGroup, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
-
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content =
-    '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>';
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <ToolbarRowWrapper>
-    <UndoRedoButtonGroup editor={editorInstance} />
-  </ToolbarRowWrapper>
-</TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
-</div>
-```
-
-
-## Exporting data
 Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG text editor in JSON or raw HTML format to persist into your database or API structure.
 
-```svelte example
-<script lang="ts">
-  import { ExportButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p><p>Here is an example of a code block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
-{
-  if (i % 15 == 0)
-    console.log("FizzBuzz");
-  else if (i % 3 == 0)
-    console.log("Fizz");
-  else if (i % 5 == 0)
-    console.log("Buzz");
-  else
-    console.log(i);
-}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <ExportButtonGroup editor={editorInstance} />
-</TextEditor>
-```
+<Examples.Export />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Export.svelte']}
+/>
 
 ## TaskList
 
-```svelte example
-<script lang="ts">
-  import { TaskListButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
-
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content = `<ul data-type="taskList">
-          <li data-type="taskItem" data-checked="true">A list item</li>
-          <li data-type="taskItem" data-checked="false">And another one</li>
-        </ul>`;
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <TaskListButtonGroup editor={editorInstance} />
-</TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
-</div>
-```
+<Examples.Tasklist />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Tasklist.svelte']}
+/>
 
 ## Details
 
-```svelte example
-<script lang="ts">
-  import { DetailsButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
+Use `summary` and `detailsPlaceholder` props to change placeholders.
 
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content = `
-      <p>Look at these details</p>
-      <details>
-        <summary>This is a summary</summary>
-        <p>Surprise!</p>
-      </details>
-      <p>Nested details are also supported</p>
-      <details open>
-        <summary>This is another summary</summary>
-        <p>And there is even more.</p>
-        <details>
-          <summary>We need to go deeper</summary>
-          <p>Booya!</p>
-        </details>
-      </details>
-    `;
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <DetailsButtonGroup editor={editorInstance} />
-</TextEditor>
-
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
-</div>
-```
+<Examples.Details />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Details.svelte']}
+/>
 
 ## Source and HTML
 
 Use the following example to view/edit source code and insert HTML code.
 
-```svelte example
-<script lang="ts">
-  import { HtmlCodeButton, SourceButton, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
+<Examples.SourceAndHtml />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/SourceAndHtml.svelte']}
+/>
 
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
+## Table of Contents
 
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
+Use the following example to display Table of Contents.
 
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
+<P>See an example at <A href="https://flowbite-svelte-texteditor.vercel.app/toc" target="_blank">this page</A>.</P>
 
-  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p>
-    <p>Here is an example of a code block:</p><pre><code class="language-js">for (var i=1; i <= 20; i++)
-{
-  if (i % 15 == 0)
-    console.log("FizzBuzz");
-  else if (i % 3 == 0)
-    console.log("Fizz");
-  else if (i % 5 == 0)
-    console.log("Buzz");
-  else
-    console.log(i);
-}</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
-</script>
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/TocEx.svelte']}
+/>
 
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <ToolbarRowWrapper>
-    <SourceButton editor={editorInstance} />
-    <HtmlCodeButton editor={editorInstance} />
-  </ToolbarRowWrapper>
-</TextEditor>
 
-<div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
-</div>
+## Placeholder
+
+Use the `placeholder` prop to customize the text shown in empty editor content (default: "Write something ...").
+
+<Examples.Placeholder />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Placeholder.svelte']}
+/>
+
+## Heading
+
+<Examples.Heading />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/Heading.svelte']}
+/>
+
+## Editable Button
+
+Use the `EditableButton` to enable or disable editing mode.
+
+<Examples.EditableButton />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/EditableButton.svelte']}
+/>
+
+## Autofocus Position
+
+`autofocusPosition` prop controls the initial cursor position when the editor loads. Set to 'start' to focus at the beginning, 'end' to focus at the end, 'all' to select all content, or a number for a specific character position. Use false or null to disable autofocus entirely. 
+
+```md
+Default: false 
+Type: 'start' | 'end' | 'all' | number | boolean | null
 ```
+
+<P>See an example at <A href="/examples/texteditor/autofocus">this page</A>.</P>
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/AutofocusEx.svelte']}
+/>
+
+## Getting and Setting Content
+
+Use the following example to get and set text editor content.
+
+<Examples.GetSetContent />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/GetSetContent.svelte']}
+/>
 
 ## Customizing Group components
 
 You can control display of buttons by adding `false` to a button group component as the following example.
 
-```svelte example
-<script lang="ts">
-  import { LayoutButtonGroup, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
-
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content = '<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>';
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <ToolbarRowWrapper>
-    <LayoutButtonGroup hr={false} codeblock={false} editor={editorInstance} />
-  </ToolbarRowWrapper>
-</TextEditor>
-```
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/CustomGroup.svelte']}
+/>
 
 ## Customizing texteditor
 
 Either using the above example or use button components to create your custom texteditor.
 
-```svelte example hideOutput
-<script lang="ts">
-  // CustomGroup.svelte
-  import { AlignmentButton, FontButton, FormatButton, ImageButton } from "@flowbite-svelte-plugins/texteditor";
-  import type { GroupEditorBasicProps } from "@flowbite-svelte-plugins/texteditor";
-
-  let { editor, showToolbar = true }: GroupEditorBasicProps = $props();
-</script>
-
-{#if editor && showToolbar}
-  <AlignmentButton {editor} alignment="left" />
-  <AlignmentButton {editor} alignment="right" />
-  <ImageButton {editor} />
-  <FontButton {editor} format="fontSize" />
-  <FormatButton {editor} format="italic" />
-  <FormatButton {editor} format="link" />
-  <FormatButton {editor} format="removeLink" />
-{/if}
-```
-
-```svelte example hideOutput
-<script lang="ts">
-  // +page.svelte
-  import CustomGroup from "./CustomGroup.svelte";
-  import { TextEditor } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
-
-  let editorElement = $state<HTMLDivElement | null>(null);
-  let editorInstance = $state<Editor | null>(null);
-
-  function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
-  }
-
-  function setEditorContent(content: string) {
-    editorInstance?.commands.setContent(content);
-  }
-
-  const content = '<p>Flowbite is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>';
-</script>
-
-<TextEditor bind:element={editorElement} bind:editor={editorInstance} {content}>
-  <CustomGroup editor={editorInstance} />
-</TextEditor>
-```
+<Examples.CustomEditor />
+<ExampleWrapper 
+  meta={{hideOutput: true}}
+  codeString={exampleRawModules['./examples/CustomEditor.svelte']}
+/>
