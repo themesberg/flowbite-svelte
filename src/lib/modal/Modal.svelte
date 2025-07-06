@@ -1,25 +1,16 @@
 <script lang="ts">
-  import { type ParamsType, type ModalProps, CloseButton, trapFocus } from "$lib";
-  import { twMerge } from "tailwind-merge";
+  import { type ModalProps, type ParamsType, CloseButton, trapFocus } from "$lib";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
   import { modal as modalTheme } from ".";
 
-  let { children, oncancel, onclose, modal = true, autoclose = false, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params, transition = fade, ...restProps }: ModalProps = $props();
+  let { children, oncancel, onsubmit, modal = true, autoclose = false, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params, transition = fade, ...restProps }: ModalProps = $props();
 
   const paramsDefault = { duration: 100, easing: sineIn };
   const paramsOptions = $derived(params ?? paramsDefault);
 
   const { base, header: headerCls, footer: footerCls, body, closeBtn } = $derived(modalTheme({ placement, size }));
-
-  const closeModal = () => {
-    // Only close if not permanent
-    if (!permanent) {
-      open = false;
-      onclose?.();
-    }
-  };
 
   function _oncancel(ev: Event & { currentTarget: HTMLDialogElement }) {
     // this event gets called when user presses ESC key
@@ -35,21 +26,23 @@
   function _onclick(ev: Event & { currentTarget: HTMLDialogElement }) {
     if (ev.currentTarget instanceof HTMLDialogElement) {
       if (outsideclose && ev.target === ev.currentTarget && !permanent) {
-        closeModal();
+        open = false;
       }
       if (autoclose && ev.target instanceof HTMLButtonElement && !permanent) {
-        closeModal();
+        open = false;
       }
     }
   }
 
   let dlg: HTMLDialogElement | undefined = $state();
 
-  $effect(() => {
-    if (permanent && !open) {
-      open = true;
-    }
-  });
+  // This prevents total dialog closing and we want only to prevent cancelling
+  // The close with user defined actions should be allowed
+  // $effect(() => {
+  //   if (permanent && !open) {
+  //     open = true;
+  //   }
+  // });
 
   // Handler for Escape key that respects component state
   const handleEscape = () => {
@@ -57,32 +50,55 @@
       oncancel?.({ currentTarget: dlg } as any);
       // If oncancel prevented default, we don't close
       if (oncancel && event?.defaultPrevented) return;
-      closeModal();
+      open = false;
     }
   };
+
+  function _onsubmit(ev: SubmitEvent) {
+    if (!dlg) return;
+
+    if (ev.submitter instanceof HTMLButtonElement || ev.submitter instanceof HTMLInputElement) {
+      dlg.returnValue = ev.submitter.value;
+    }
+
+    // @ts-ignore
+    onsubmit?.(ev); // forward event to user handle
+
+    if (!ev.defaultPrevented) {
+      // stop dialog.close() and trigger close with transition
+      ev.preventDefault();
+      open = false;
+    }
+  }
+
+  function init(dlg: HTMLDialogElement) {
+    modal ? dlg?.showModal() : dlg?.show();
+    return () => dlg?.close();
+  }
 </script>
 
 {#if open}
-  <dialog use:trapFocus={{ onEscape: handleEscape }} bind:this={dlg} {...restProps} class={twMerge(base(), clsx(className))} tabindex="-1" oncancel={_oncancel} onclick={_onclick} transition:transition|global={paramsOptions as ParamsType} onintrostart={() => (modal ? dlg?.showModal() : dlg?.show())} onoutroend={() => dlg?.close()}>
+  <dialog use:trapFocus={{ onEscape: handleEscape }} {@attach init} onsubmit={_onsubmit} bind:this={dlg} {...restProps} class={base({ class: clsx(className) })} tabindex="-1" oncancel={_oncancel} onclick={_onclick} transition:transition|global={paramsOptions as ParamsType}>
     {#if title || header}
-      <div class={twMerge(headerCls(), clsx(headerClass))}>
+      <div class={headerCls({ class: clsx(headerClass) })}>
         {#if title}
           <h3>{title}</h3>
+          <CloseButton onclick={() => (open = false)} class={clsx(closeBtnClass)} />
         {:else if header}
           {@render header()}
         {/if}
       </div>
     {/if}
-    <div class={twMerge(body(), clsx(bodyClass))}>
+    <div class={body({ class: clsx(bodyClass) })}>
       {@render children?.()}
     </div>
     {#if footer}
-      <div class={twMerge(footerCls(), clsx(footerClass))}>
+      <div class={footerCls({ class: clsx(footerClass) })}>
         {@render footer()}
       </div>
     {/if}
-    {#if dismissable && !permanent}
-      <CloseButton onclick={closeModal} class={twMerge(closeBtn(), clsx(closeBtnClass))} />
+    {#if dismissable && !permanent && !title}
+      <CloseButton onclick={() => (open = false)} class={closeBtn({ class: clsx(closeBtnClass) })} />
     {/if}
   </dialog>
 {/if}
