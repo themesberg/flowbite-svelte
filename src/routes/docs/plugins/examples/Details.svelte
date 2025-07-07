@@ -22,6 +22,6 @@
     `;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content} summary='my summary ...' detailsPlaceholder='my details ...'>
+<TextEditor bind:editor={editorInstance} {content} summary="my summary ..." detailsPlaceholder="my details ...">
   <DetailsButtonGroup editor={editorInstance} />
 </TextEditor>

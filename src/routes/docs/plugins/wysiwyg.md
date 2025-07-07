@@ -28,6 +28,7 @@ description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins 
 </script>
 
 <svelte:head>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />
 </svelte:head>
 
@@ -55,6 +56,7 @@ Use the following example or create your own.
 </Accordion>
 
 ### Code Block Styling
+
 To add syntax highlighting styles to your code blocks, include a highlight.js theme:
 
 ```svelte
@@ -71,11 +73,10 @@ Use this example of a WYSIWYG text editor to enable basic typography styling and
 
 <Examples.FullFeaturedTexteditor />
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/FullFeaturedTexteditor.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/FullFeaturedTexteditor.svelte']}
 />
-
 
 ## Text Formatting
 
@@ -83,9 +84,9 @@ Use `FormatButtonGroup` to enable typography styling, formatting and marking suc
 
 <Examples.Format />
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Format.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Format.svelte']}
 />
 
 ## Emoji
@@ -94,9 +95,9 @@ Type `:` to open the autocomplete. The default value is `emoji={true}`, and you 
 
 <Examples.Emoji />
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Emoji.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Emoji.svelte']}
 />
 
 ## Mention
@@ -105,9 +106,9 @@ Trigger a mention popup by typing `@`. Provide a `mentions` array of name string
 
 <Examples.Mention />
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Mention.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Mention.svelte']}
 />
 
 ## Bubble Menu
@@ -116,9 +117,9 @@ The bubble menu displays a contextual toolbar near selected text. Disable featur
 
 <Examples.BubbleMenu />
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/BubbleMenu.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/BubbleMenu.svelte']}
 />
 
 Configure which menu items are displayed using the following examples:
@@ -145,9 +146,9 @@ Render mathematical formulas and equations by adding the `math` prop.
 
 <Examples.Math />
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Math.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Math.svelte']}
 />
 
 ## Invisible Characters
@@ -156,9 +157,9 @@ The `InvisibleButtonGroup` component provides toggle, show, and hide controls fo
 
 <Examples.Invisible />
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Invisible.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Invisible.svelte']}
 />
 
 ## Character Count
@@ -167,19 +168,20 @@ The `CharacterCount` component limits the number of allowed characters to a spec
 
 <Examples.CharacterCount />
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/CharacterCount.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/CharacterCount.svelte']}
 />
 
 ## Drag Handle
+
 The `dragHandle` prop allows you to easily handle dragging nodes around in the editor.
 
 <Examples.DragHandle />
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/DragHandle.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/DragHandle.svelte']}
 />
 
 ## File Handler
@@ -188,9 +190,9 @@ The `file` prop allows you to easily handle file drops and pastes in the editor.
 
 <Examples.Filehandler />
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Filehandler.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Filehandler.svelte']}
 />
 
 ## Floating Menu
@@ -199,9 +201,9 @@ Use the `floatingMenu` prop in `TextEditor` to make a menu appear on an empty li
 
 <Examples.FloatingMenu />
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/FloatingMenu.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/FloatingMenu.svelte']}
 />
 
 Configure which menu items are displayed using the following examples:
@@ -219,7 +221,7 @@ Configure which menu items are displayed using the following examples:
       <p></p>`;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content} floatingMenu={{ showHorizontalRule: false, showTable: false, showImage: false, showCodeBlock:false, showList:false }} contentprops={{ id: 'floating-menu-ex2' }}>
+<TextEditor bind:editor={editorInstance} {content} floatingMenu={{ showHorizontalRule: false, showTable: false, showImage: false, showCodeBlock: false, showList: false }} contentprops={{ id: "floating-menu-ex2" }}>
   <UndoRedoButtonGroup editor={editorInstance} />
 </TextEditor>
 ```
@@ -230,11 +232,10 @@ Configure which menu items are displayed using the following examples:
 
 <Examples.Alignment />
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Alignment.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Alignment.svelte']}
 />
-
 
 ## Layout Elements
 
@@ -242,9 +243,9 @@ Configure which menu items are displayed using the following examples:
 
 <Examples.Layouts />
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Layouts.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Layouts.svelte']}
 />
 
 ## Images
@@ -252,9 +253,9 @@ Configure which menu items are displayed using the following examples:
 `ImageButtonGroup` adds images inside of the WYSIWYG text editor and configure settings such as the image URL, image alt attribute which is important for SEO and accessibility and the image title.
 
 <Examples.Images />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Images.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Images.svelte']}
 />
 
 ## List
@@ -262,17 +263,17 @@ Configure which menu items are displayed using the following examples:
 Use this example to create typography elements like bullet lists, ordered lists, blockquotes, horizontal rules, paragraphs, headings, code blocks based on Tailwind CSS utility classees and the Flowbite API.
 
 <Examples.List />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/List.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/List.svelte']}
 />
 
 ## Fonts
 
 <Examples.Fonts />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Fonts.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Fonts.svelte']}
 />
 
 ## Adding Videos
@@ -280,9 +281,9 @@ Use this example to create typography elements like bullet lists, ordered lists,
 Use `VideoButtonGroup` to embed videos inside the WYSIWYG text editor based on a YouTube URL source and set the width and height of the video by using the advanced video component.
 
 <Examples.Videos />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Videos.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Videos.svelte']}
 />
 
 ## Editing Tables
@@ -290,9 +291,9 @@ Use `VideoButtonGroup` to embed videos inside the WYSIWYG text editor based on a
 Use `TableButtonGroup`s to edit table data inside the WYSIWYG text editor by adding and removing table column, rows, and cells and use other features to navigate through the table data for a convenient editing process.
 
 <Examples.Tables />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Tables.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Tables.svelte']}
 />
 
 ## Undo and Redo
@@ -300,9 +301,9 @@ Use `TableButtonGroup`s to edit table data inside the WYSIWYG text editor by add
 Use the `UndoRedoButtonGroup` component to integrate undo and redo actions.
 
 <Examples.UndoRedo />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/UndoRedo.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/UndoRedo.svelte']}
 />
 
 ## Exporting Data
@@ -310,17 +311,17 @@ Use the `UndoRedoButtonGroup` component to integrate undo and redo actions.
 Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG text editor in JSON or raw HTML format to persist into your database or API structure.
 
 <Examples.Export />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Export.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Export.svelte']}
 />
 
 ## TaskList
 
 <Examples.Tasklist />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Tasklist.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Tasklist.svelte']}
 />
 
 ## Details
@@ -328,9 +329,9 @@ Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG 
 Use `summary` and `detailsPlaceholder` props to change placeholders.
 
 <Examples.Details />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Details.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Details.svelte']}
 />
 
 ## Source and HTML
@@ -338,9 +339,9 @@ Use `summary` and `detailsPlaceholder` props to change placeholders.
 Use the following example to view/edit source code and insert HTML code.
 
 <Examples.SourceAndHtml />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/SourceAndHtml.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/SourceAndHtml.svelte']}
 />
 
 ## Table of Contents
@@ -349,28 +350,27 @@ Use the following example to display Table of Contents.
 
 <P>See an example at <A href="https://flowbite-svelte-texteditor.vercel.app/toc" target="_blank">this page</A>.</P>
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/TocEx.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/TocEx.svelte']}
 />
-
 
 ## Placeholder
 
 Use the `placeholder` prop to customize the text shown in empty editor content (default: "Write something ...").
 
 <Examples.Placeholder />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Placeholder.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Placeholder.svelte']}
 />
 
 ## Heading
 
 <Examples.Heading />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Heading.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/Heading.svelte']}
 />
 
 ## Editable Button
@@ -378,17 +378,17 @@ Use the `placeholder` prop to customize the text shown in empty editor content (
 Use the `EditableButton` to enable or disable editing mode.
 
 <Examples.EditableButton />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/EditableButton.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/EditableButton.svelte']}
 />
 
 ## Autofocus Position
 
-`autofocusPosition` prop controls the initial cursor position when the editor loads. Set to 'start' to focus at the beginning, 'end' to focus at the end, 'all' to select all content, or a number for a specific character position. Use false or null to disable autofocus entirely. 
+`autofocusPosition` prop controls the initial cursor position when the editor loads. Set to 'start' to focus at the beginning, 'end' to focus at the end, 'all' to select all content, or a number for a specific character position. Use false or null to disable autofocus entirely.
 
 ```md
-Default: false 
+Default: false
 Type: 'start' | 'end' | 'all' | number | boolean | null
 ```
 
@@ -403,18 +403,18 @@ Type: 'start' | 'end' | 'all' | number | boolean | null
 Use the following example to get and set text editor content.
 
 <Examples.GetSetContent />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/GetSetContent.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/GetSetContent.svelte']}
 />
 
 ## Customizing Group components
 
 You can control display of buttons by adding `false` to a button group component as the following example.
 
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/CustomGroup.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/CustomGroup.svelte']}
 />
 
 ## Customizing texteditor
@@ -422,7 +422,7 @@ You can control display of buttons by adding `false` to a button group component
 Either using the above example or use button components to create your custom texteditor.
 
 <Examples.CustomEditor />
-<ExampleWrapper 
-  meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/CustomEditor.svelte']}
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/CustomEditor.svelte']}
 />

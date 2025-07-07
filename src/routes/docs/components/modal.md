@@ -58,35 +58,34 @@ HTML `<dialog>` element works nicely with `<form method="dialog">` element put i
 
 Remember to disable `autoclose` by setting it to `false` or omit it.
 
-
 ```svelte example class="flex flex-col items-center justify-center gap-4" hideResponsiveButtons
 <script>
   import { Button, Modal, P } from "flowbite-svelte";
   let defaultModal = $state(false);
   let result = $state("Waiting for user action");
 
-  function onclose({currentTarget: dialog}) {
-    switch(dialog.returnValue) {
-      case 'accept':
+  function onclose({ currentTarget: dialog }) {
+    switch (dialog.returnValue) {
+      case "accept":
         result = "User has accepted the terms of service";
         break;
-      case 'decline':
+      case "decline":
         result = "Unfortunately user has declined the terms of service";
         break;
       default:
-        result = "User has not taken any action"
+        result = "User has not taken any action";
     }
   }
 </script>
 
 <Button onclick={() => (defaultModal = true)}>Default modal</Button>
-<Modal title="Terms of Service" bind:open={defaultModal} onsubmit={onclose} >
+<Modal title="Terms of Service" bind:open={defaultModal} onsubmit={onclose}>
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
   <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
 
   {#snippet footer()}
     <form method="dialog">
-      <Button type="submit" value="accept" >I accept</Button>
+      <Button type="submit" value="accept">I accept</Button>
       <Button type="submit" value="decline" color="alternative">Decline</Button>
     </form>
   {/snippet}
@@ -137,7 +136,6 @@ You can use this modal example to show a pop-up decision dialog to your users es
 Notice lack of the `footer` snippet and the transition set to `slide`.
 
 You can as well force user to take an action by adding `permanent` prop. All canceling functions will be disabled (Esc key, click outside, close button).
-
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
@@ -426,7 +424,6 @@ Rarely you would need a non-modal dialog. You can get it by setting `modal` prop
 </Modal>
 ```
 
-
 ## Modal events
 
 Use the `onclose` event handlre to run code when the modal closes, regardless of how it was triggered (close button, outside click, ESC key, or autoclose).
@@ -441,13 +438,11 @@ Use the `onsubmit` event handler to catch only user actions.
 
 <Button onclick={() => (open = true)}>Default modal</Button>
 
-<Modal
-  bind:open
-  onsubmit={(ev) => alert(`User taken action "${ev.currentTarget.returnValue}".`)}
-  onclose={(ev) => alert(`Dialog closed with "${ev.target.returnValue || "no"}" action.`)}
->
+<Modal bind:open onsubmit={(ev) => alert(`User taken action "${ev.currentTarget.returnValue}".`)} onclose={(ev) => alert(`Dialog closed with "${ev.target.returnValue || "no"}" action.`)}>
   {#snippet header()}
-    <h3>Terms of Service <small class="font-normal">(Revised)</small></h3>
+    <h3>
+      Terms of Service <small class="font-normal">(Revised)</small>
+    </h3>
   {/snippet}
 
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>

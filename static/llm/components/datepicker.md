@@ -217,6 +217,8 @@ Listen for date selection events using the `onselect` event.
 
 ## Restricting the selectable date range
 
+Use `availableFrom` and/or `availableTo` props to restrict the selectable date range.
+
 ```svelte
 <script lang="ts">
   import { Datepicker, P, type DateOrRange } from "flowbite-svelte";

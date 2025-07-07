@@ -20,34 +20,31 @@
   };
 
   function normalizeIndentation(code: string): string {
-  if (!code) return code;
-  
-  const lines = code.split('\n');
+    if (!code) return code;
 
-  while (lines.length && lines[0].trim() === '') {
-    lines.shift();
+    const lines = code.split("\n");
+
+    while (lines.length && lines[0].trim() === "") {
+      lines.shift();
+    }
+    while (lines.length && lines[lines.length - 1].trim() === "") {
+      lines.pop();
+    }
+
+    if (!lines.length) return "";
+
+    const nonEmptyLines = lines.filter((line) => line.trim().length > 0);
+    const indentations = nonEmptyLines.map((line) => {
+      const match = line.match(/^(\s*)/);
+      return match ? match[1].length : 0;
+    });
+
+    const minIndent = Math.min(...indentations);
+
+    const trimmedLines = lines.map((line) => (line.trim() === "" ? "" : line.length >= minIndent ? line.slice(minIndent) : line));
+
+    return trimmedLines.join("\n").trim(); // ← Fix: Add .trim() here
   }
-  while (lines.length && lines[lines.length - 1].trim() === '') {
-    lines.pop();
-  }
-
-  if (!lines.length) return '';
-
-  const nonEmptyLines = lines.filter(line => line.trim().length > 0);
-  const indentations = nonEmptyLines.map(line => {
-    const match = line.match(/^(\s*)/);
-    return match ? match[1].length : 0;
-  });
-
-  const minIndent = Math.min(...indentations);
-
-  const trimmedLines = lines.map(line =>
-    line.trim() === '' ? '' : line.length >= minIndent ? line.slice(minIndent) : line
-  );
-
-  return trimmedLines.join('\n').trim(); // ← Fix: Add .trim() here
-}
-
 
   // Action to normalize rendered code content
   function normalizeRenderedCode(node: HTMLPreElement) {
@@ -63,13 +60,13 @@
   }
 
   // Use typed props
-  let { 
-    src = undefined, 
-    meta = { hideOutput: false, hideSource: false, hideResponsiveButtons: false }, 
-    example, 
-    code, 
+  let {
+    src = undefined,
+    meta = { hideOutput: false, hideSource: false, hideResponsiveButtons: false },
+    example,
+    code,
     codeString = undefined, // New prop
-    divClass = "relative w-full mx-auto bg-linear-to-r p-6 bg-white dark:bg-gray-900" 
+    divClass = "relative w-full mx-auto bg-linear-to-r p-6 bg-white dark:bg-gray-900"
   }: Props = $props();
 
   type NotificationDirection = "ltr" | "rtl" | "auto";
@@ -180,7 +177,7 @@
     if (!codeEl) return;
 
     let textToCopy: string;
-    
+
     // Use codeString if available, otherwise fall back to innerText
     if (codeString) {
       textToCopy = normalizeIndentation(codeString);

@@ -7,7 +7,7 @@
   "props": [
     ["children", ""],
     ["oncancel", ""],
-    ["onclose", ""],
+    ["onsubmit", ""],
     ["modal", "true"],
     ["autoclose", "false"],
     ["header", ""],
