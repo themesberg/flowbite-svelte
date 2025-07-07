@@ -4,11 +4,11 @@
 
 ### Patch Changes
 
-- - fix: support for onsubmit when there's a form inside
-  - fix: twMerge removal
-  - chore: code clean up
-  - docs: encourage to use dialog actions instead of autoclose that gives no info about which button was pressed
-  - docs: onsubmit and onclose example
+- fix: support for onsubmit when there's a form inside
+- fix: twMerge removal
+- chore: code clean up
+- docs: encourage to use dialog actions instead of autoclose that gives no info about which button was pressed
+- docs: onsubmit and onclose example
 
 ## 1.8.3
 
