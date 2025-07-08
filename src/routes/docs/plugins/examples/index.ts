@@ -1,4 +1,5 @@
 export { default as Alignment } from "./Alignment.svelte";
+export { default as Appcss } from "./Appcss.svelte";
 export { default as Autofocus } from "./Autofocus.svelte";
 export { default as BubbleMenu } from "./BubbleMenu.svelte";
 export { default as BubbleMenu2 } from "./BubbleMenu2.svelte";
@@ -18,7 +19,9 @@ export { default as Format } from "./Format.svelte";
 export { default as FullFeaturedTexteditor } from "./FullFeaturedTexteditor.svelte";
 export { default as GetSetContent } from "./GetSetContent.svelte";
 export { default as Heading } from "./Heading.svelte";
+export { default as HighlightTheme } from "./HighlightTheme.svelte";
 export { default as Images } from "./Images.svelte";
+export { default as InstallCommand } from "./Installcommand.svelte";
 export { default as Invisible } from "./Invisible.svelte";
 export { default as Layouts } from "./Layouts.svelte";
 export { default as Lists } from "./Lists.svelte";

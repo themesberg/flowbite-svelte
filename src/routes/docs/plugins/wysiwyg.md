@@ -11,7 +11,7 @@ description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins 
   import { CompoAttributesViewer, GitHubCompoLinks, ExampleWrapper } from '../../utils'
   const components = 'Texteditor'
   import * as Examples from './examples';
-  import Appcss from './examples/appcss.md';
+  // import Appcss from './examples/Appcss.svelte';
   // const Markdowns = import.meta.glob('./examples/*.svelte,{query:'?raw', import: 'default'})
   const tiptapVersion = __TIPTAP__;
   // console.log('tiip', tiptapVersion);
@@ -44,9 +44,7 @@ All examples provided on this page have support for dark mode, RTL (right-to-lef
 
 <P class="text-red-500 text-xl">@flowbite-svelte-plugins/texteditor@0.24.0 contains breaking changes. It uses @tiptap{tiptapVersion}.</P>
 
-```svelte example hideOutput
-pnpm i -D @flowbite-svelte-plugins/texteditor lowlight
-```
+<Examples.InstallCommand />
 
 ### app.css
 
@@ -55,7 +53,7 @@ Use the following example or create your own.
 <Accordion flush>
   <AccordionItem contentClass="customstyle">
   {#snippet header()}Example style{/snippet}
-  <Appcss />
+  <Examples.Appcss />
   </AccordionItem>
 </Accordion>
 
@@ -63,11 +61,7 @@ Use the following example or create your own.
 
 To add syntax highlighting styles to your code blocks, include a highlight.js theme:
 
-```svelte
-<svelte:head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />
-</svelte:head>
-```
+<Examples.HighlightTheme />
 
 Browse available themes at cdnjs.com/libraries/highlight.js or preview them at https://highlightjs.org/demo.
 
