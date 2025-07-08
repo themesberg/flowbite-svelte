@@ -1,7 +1,5 @@
 <script lang="ts">
-  // CustomGroup.svelte
-  import { AlignmentButton, FontButton, FormatButton, ImageButton } from "@flowbite-svelte-plugins/texteditor";
-  import type { GroupEditorBasicProps } from "@flowbite-svelte-plugins/texteditor";
+  import { type GroupEditorBasicProps, AlignmentButton, FontButton, FormatButton, ImageButton } from '@flowbite-svelte-plugins/texteditor';
 
   let { editor, showToolbar = true }: GroupEditorBasicProps = $props();
 </script>

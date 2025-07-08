@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { TextEditor, AlignmentButtonGroup, HeadingButtonGroup, UndoRedoButtonGroup, EditableButton } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
+  import { TextEditor, AlignmentButtonGroup, HeadingButtonGroup, UndoRedoButtonGroup, EditableButton } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
 
   let editorInstance = $state<Editor | null>(null);
   let isEditable = $state(true);
@@ -12,11 +12,11 @@
 
   function handleEditableToggle(editable: boolean) {
     isEditable = editable;
-    console.log("Editor is now:", editable ? "editable" : "read-only");
+    console.log('Editor is now:', editable ? 'editable' : 'read-only');
   }
 </script>
 
-<TextEditor bind:editor={editorInstance} {content} floatingMenu bubbleMenu {isEditable} contentprops={{ id: "editable-toggle-ex" }}>
+<TextEditor bind:editor={editorInstance} {content} {isEditable} contentprops={{ id: 'editable-toggle-ex' }}>
   <EditableButton editor={editorInstance} bind:isEditable onToggle={handleEditableToggle} />
   <AlignmentButtonGroup editor={editorInstance} />
   <HeadingButtonGroup editor={editorInstance} />

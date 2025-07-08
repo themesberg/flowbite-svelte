@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { SourceButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
+  import { SourceButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
 
   let editorInstance = $state<Editor | null>(null);
 
@@ -14,6 +14,6 @@
       <p></p>`;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content} file>
+<TextEditor bind:editor={editorInstance} {content} file contentprops={{ id: 'file-handler-ex' }}>
   <SourceButtonGroup editor={editorInstance} html={false} />
 </TextEditor>

@@ -275,10 +275,6 @@ color utility to any element that depends on these defaults.
   }
 
   /* floating menu */
-  .tippy-box {
-    max-width: 475px !important;
-  }
-
   .floating-menu {
     display: flex;
     background-color: var(--gray-3);
@@ -327,15 +323,15 @@ color utility to any element that depends on these defaults.
   }
 
   .Tiptap-invisible-character--space::before {
-    content: "·";
+    content: '·';
   }
 
   .Tiptap-invisible-character--break::before {
-    content: "¬";
+    content: '¬';
   }
 
   .Tiptap-invisible-character--paragraph::before {
-    content: "¶";
+    content: '¶';
   }
 
   .Tiptap-invisible-character + img.ProseMirror-separator {
@@ -349,12 +345,12 @@ color utility to any element that depends on these defaults.
     display: none;
   }
 
-  /* texteditor Details */
+  /* Details */
   .tiptap .details {
     display: flex;
     gap: 0.25rem;
     margin: 1.5rem 0;
-    border: 1px solid #d4c8c760;
+    border: 1px solid var(--gray-3);
     border-radius: 0.5rem;
     padding: 0.5rem;
   }
@@ -380,11 +376,11 @@ color utility to any element that depends on these defaults.
   }
 
   .tiptap .details > button:hover {
-    background-color: #dedad8d8;
+    background-color: var(--gray-3);
   }
 
   .tiptap .details > button::before {
-    content: "▶";
+    content: '▶';
     display: inline-block;
     position: relative;
   }
@@ -401,12 +397,12 @@ color utility to any element that depends on these defaults.
     margin: 0;
   }
 
-  .tiptap .details > div > [data-type="detailsContent"] > :last-child {
+  .tiptap .details > div > [data-type='detailsContent'] > :last-child {
     margin-top: 0.5rem !important;
     margin-bottom: 0.5rem !important;
   }
 
-  .tiptap .details > div > [data-type="detailsContent"] {
+  .tiptap .details > div > [data-type='detailsContent'] {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
@@ -416,59 +412,59 @@ color utility to any element that depends on these defaults.
   }
 
   /* drag handle */
-  [id^="drag-handle-"] ::selection {
+  [id^='drag-handle-'] ::selection {
     background-color: #70cff850;
   }
 
-  .dark [id^="drag-handle-"] .ProseMirror-hideselection *::selection {
+  .dark [id^='drag-handle-'] .ProseMirror-hideselection *::selection {
     background-color: #e3508950 !important;
   }
 
-  [id^="drag-handle-"] .ProseMirror {
+  [id^='drag-handle-'] .ProseMirror {
     padding: 1rem 1rem 1rem 0;
     position: relative;
   }
 
-  [id^="drag-handle-"] .ProseMirror * {
+  [id^='drag-handle-'] .ProseMirror * {
     margin-top: 0.75em;
   }
 
-  [id^="drag-handle-"] .ProseMirror > * {
+  [id^='drag-handle-'] .ProseMirror > * {
     margin-left: 3rem;
   }
 
-  [id^="drag-handle-"] .ProseMirror .ProseMirror-widget * {
+  [id^='drag-handle-'] .ProseMirror .ProseMirror-widget * {
     margin-top: auto;
   }
 
-  [id^="drag-handle-"] .ProseMirror ul,
-  [id^="drag-handle-"] .ProseMirror ol {
+  [id^='drag-handle-'] .ProseMirror ul,
+  [id^='drag-handle-'] .ProseMirror ol {
     padding: 0 1rem;
   }
 
-  [id^="drag-handle-"] .ProseMirror-noderangeselection *::selection {
+  [id^='drag-handle-'] .ProseMirror-noderangeselection *::selection {
     background: transparent;
   }
 
-  [id^="drag-handle-"] .ProseMirror-hideselection *::selection {
+  [id^='drag-handle-'] .ProseMirror-hideselection *::selection {
     background-color: #70cff850 !important;
   }
 
-  [id^="drag-handle-"] .ProseMirror-noderangeselection * {
+  [id^='drag-handle-'] .ProseMirror-noderangeselection * {
     caret-color: transparent;
   }
 
-  [id^="drag-handle-"] .ProseMirror-selectednode,
-  [id^="drag-handle-"] .ProseMirror-selectednoderange {
+  [id^='drag-handle-'] .ProseMirror-selectednode,
+  [id^='drag-handle-'] .ProseMirror-selectednoderange {
     position: relative;
   }
 
-  [id^="drag-handle-"] .ProseMirror-selectednode::before,
-  [id^="drag-handle-"] .ProseMirror-selectednoderange::before {
+  [id^='drag-handle-'] .ProseMirror-selectednode::before,
+  [id^='drag-handle-'] .ProseMirror-selectednoderange::before {
     position: absolute;
     pointer-events: none;
     z-index: -1;
-    content: "";
+    content: '';
     top: -0.25rem;
     left: -0.25rem;
     right: -0.25rem;
@@ -477,36 +473,36 @@ color utility to any element that depends on these defaults.
     border-radius: 0.2rem;
   }
 
-  [id^="drag-handle-"] .drag-handle {
+  [id^='drag-handle-'] .drag-handle {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     width: 1rem;
     height: 1.25rem;
-    content: "⠿";
+    content: '⠿';
     margin-top: 0.3rem;
-    top: 1rem !important;
+    /* top: 1rem !important; */
     font-weight: 700;
     cursor: grab;
     background: #0d0d0d10;
     color: #0d0d0d;
     border-radius: 0.25rem;
-    opacity: 1 !important;
+    /* opacity: 1 !important;
     visibility: visible !important;
-    pointer-events: auto !important;
+    pointer-events: auto !important; */
   }
 
-  .dark [id^="drag-handle-"] .drag-handle {
+  .dark [id^='drag-handle-'] .drag-handle {
     background: #ffffff;
     color: #179df186;
   }
 
-  [id^="drag-handle-"] .drag-handle:hover {
+  [id^='drag-handle-'] .drag-handle:hover {
     transform: scale(1.1) !important;
   }
 
   /* emoji */
-  [data-type="emoji"] {
+  [data-type='emoji'] {
     img {
       height: 1em;
       width: 1em;
@@ -517,7 +513,7 @@ color utility to any element that depends on these defaults.
   }
 
   /* mention */
-  [data-type="mention"] {
+  [data-type='mention'] {
     background-color: rgba(88, 5, 255, 0.05);
     border-radius: 0.4rem;
     box-decoration-break: clone;
@@ -526,8 +522,8 @@ color utility to any element that depends on these defaults.
   }
 
   /*  mention and emoji */
-  .tippy-box .tippy-content .dropdown-menu button,
-  .tippy-box .tippy-content .mention-dropdown button {
+  .emoji-suggestion-popup .dropdown-menu button,
+  .mention-suggestion-popup .mention-dropdown button {
     align-items: center;
     background-color: transparent;
     display: flex;
@@ -536,29 +532,31 @@ color utility to any element that depends on these defaults.
     width: 100%;
   }
 
-  .tippy-box .tippy-content .dropdown-menu button:hover,
-  .tippy-box .tippy-content .dropdown-menu button:hover.is-selected,
-  .tippy-box .tippy-content .mention-dropdown button:hover,
-  .tippy-box .tippy-content .mention-dropdown button:hover.is-selected {
+  .emoji-suggestion-popup .dropdown-menu button:hover,
+  .emoji-suggestion-popup .dropdown-menu button:hover.is-selected,
+  .mention-suggestion-popup .mention-dropdown button:hover,
+  .mention-dropdown button:hover.is-selected {
     background-color: rgba(61, 37, 20, 0.12);
   }
 
-  .tippy-box .tippy-content .dropdown-menu button.is-selected,
-  .tippy-box .tippy-content .mention-dropdown button.is-selected {
+  .emoji-suggestion-popup .dropdown-menu button.is-selected,
+  .mention-suggestion-popup .mention-dropdown button.is-selected {
     background-color: rgba(61, 37, 20, 0.08);
   }
 
-  .tippy-box .tippy-content .dropdown-menu button img {
+  .emoji-suggestion-popup .dropdown-menu button img,
+  .mention-suggestion-popup .dropdown-menu button img {
     height: 1em;
     width: 1em;
   }
 
-  .tippy-box {
+  .emoji-suggestion-popup,
+  .mention-suggestion-popup {
     transform-origin: center !important;
   }
 
-  .tippy-box .tippy-content .dropdown-menu,
-  .tippy-box .tippy-content .mention-dropdown {
+  .emoji-suggestion-popup .dropdown-menu,
+  .mention-suggestion-popup .mention-dropdown {
     background: #fff;
     border: 1px solid rgba(61, 37, 20, 0.05);
     border-radius: 0.7rem;
@@ -621,7 +619,7 @@ color utility to any element that depends on these defaults.
     color: #666;
   }
 
-  [data-type="detailsContent"].is-empty::before {
+  [data-type='detailsContent'].is-empty::before {
     color: var(--gray-4);
     content: attr(data-placeholder);
     float: left;
@@ -631,11 +629,11 @@ color utility to any element that depends on these defaults.
     top: 0.5rem;
   }
 
-  .dark [data-type="detailsContent"].is-empty::before {
+  .dark [data-type='detailsContent'].is-empty::before {
     color: #666;
   }
 
-  [id^="drag-handle-"] [data-type="detailsContent"].is-empty::before {
+  [id^='drag-handle-'] [data-type='detailsContent'].is-empty::before {
     top: 0.5rem;
   }
 
@@ -671,7 +669,7 @@ color utility to any element that depends on these defaults.
 
   .tiptap table .selectedCell:after {
     background: var(--gray-2);
-    content: "";
+    content: '';
     left: 0;
     right: 0;
     top: 0;
@@ -712,41 +710,52 @@ color utility to any element that depends on these defaults.
     margin-bottom: 0.15em;
   }
 
-  /* math */
-  .tiptap .Tiptap-mathematics-editor {
-    background: #202020;
-    color: #fff;
-    font-family: monospace;
-    padding: 0.2rem 0.5rem;
-  }
-
-  .tiptap .Tiptap-mathematics-render {
+  /* Mathematics extension styles */
+  .tiptap .tiptap-mathematics-render {
     padding: 0 0.25rem;
   }
 
-  .tiptap .Tiptap-mathematics-render--editable {
+  .tiptap .tiptap-mathematics-render--editable {
     cursor: pointer;
     transition: background 0.2s;
   }
 
-  .tiptap .Tiptap-mathematics-render--editable:hover {
+  .tiptap .tiptap-mathematics-render--editable:hover {
     background: #eee;
   }
 
-  .tiptap .Tiptap-mathematics-editor,
-  .tiptap .Tiptap-mathematics-render {
+  .tiptap .tiptap-mathematics-render {
     border-radius: 0.25rem;
+  }
+
+  .tiptap .tiptap-mathematics-render[data-type='inline-math'] {
     display: inline-block;
   }
 
+  .tiptap .tiptap-mathematics-render[data-type='block-math'] {
+    display: block;
+    margin: 1rem 0;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .tiptap .tiptap-mathematics-render.inline-math-error,
+  .tiptap .tiptap-mathematics-render.block-math-error {
+    background: var(--red-light);
+    color: var(--red);
+    border: 1px solid var(--red-dark);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+
   /* Task list specific styles */
-  .tiptap ul[data-type="taskList"] {
+  .tiptap ul[data-type='taskList'] {
     list-style: none;
     margin-left: 0;
     padding: 0.2em;
   }
 
-  .tiptap ul[data-type="taskList"] li {
+  .tiptap ul[data-type='taskList'] li {
     align-items: flex-start;
     display: flex;
     margin: 0 !important;
@@ -754,13 +763,13 @@ color utility to any element that depends on these defaults.
     gap: 0.5rem;
   }
 
-  .tiptap ul[data-type="taskList"] li > label {
+  .tiptap ul[data-type='taskList'] li > label {
     flex: 0 0 auto;
     user-select: none;
     margin-top: -0.1em !important;
   }
 
-  .tiptap ul[data-type="taskList"] li > div {
+  .tiptap ul[data-type='taskList'] li > div {
     flex: 1 1 auto;
     margin: 0 !important;
     padding: 0 !important;
@@ -768,25 +777,25 @@ color utility to any element that depends on these defaults.
     min-width: 0;
   }
 
-  .tiptap ul[data-type="taskList"] input[type="checkbox"] {
+  .tiptap ul[data-type='taskList'] input[type='checkbox'] {
     cursor: pointer;
     /* Ensure consistent checkbox sizing */
     margin: 0;
     flex-shrink: 0;
   }
 
-  .tiptap ul[data-type="taskList"] ul[data-type="taskList"] {
+  .tiptap ul[data-type='taskList'] ul[data-type='taskList'] {
     margin: 0 !important;
   }
 
   /* Optional: Handle the span element in your label if it's for custom styling */
-  .tiptap ul[data-type="taskList"] li > label span {
+  .tiptap ul[data-type='taskList'] li > label span {
     display: inline-block;
     /* Add custom checkbox styles here if needed */
   }
 
   /* Ensure paragraphs in task list items don't add extra spacing */
-  .tiptap ul[data-type="taskList"] li p {
+  .tiptap ul[data-type='taskList'] li p {
     margin: 0 !important;
   }
 
@@ -894,7 +903,7 @@ color utility to any element that depends on these defaults.
   }
 
   #toc-ex .table-of-contents a::before {
-    content: attr(data-item-index) ".";
+    content: attr(data-item-index) '.';
   }
 
   /* Youtube embed */
@@ -914,5 +923,10 @@ color utility to any element that depends on these defaults.
   .tiptap div[data-youtube-video].ProseMirror-selectednode iframe {
     outline: 3px solid var(--purple);
     transition: outline 0.15s;
+  }
+
+  /* confit test */
+  .my-custom-class {
+    border: 2px solid rgb(150, 238, 206);
   }
 }

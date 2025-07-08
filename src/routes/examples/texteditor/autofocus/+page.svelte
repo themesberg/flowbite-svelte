@@ -1,7 +1,6 @@
 <script lang="ts">
   import { AlignmentButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
-  import { P } from "$lib";
 
   let editorInstance = $state<Editor | null>(null);
 

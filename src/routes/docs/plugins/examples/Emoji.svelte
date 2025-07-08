@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { UndoRedoButtonGroup, TextEditor, ToolbarRowWrapper } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
-  import { Button } from "flowbite-svelte";
+  import { UndoRedoButtonGroup, TextEditor, ToolbarRowWrapper } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
+  import { Button } from 'flowbite-svelte';
 
   let editorInstance = $state<Editor | null>(null);
 
   function getEditorContent() {
-    return editorInstance?.getHTML() ?? "";
+    return editorInstance?.getHTML() ?? '';
   }
 
   function setEditorContent(content: string) {
@@ -41,13 +41,13 @@
       `;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content}>
+<TextEditor bind:editor={editorInstance} {content} contentprops={{ id: 'emoji-ex' }}>
   <ToolbarRowWrapper>
     <UndoRedoButtonGroup editor={editorInstance} />
   </ToolbarRowWrapper>
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
-  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
+  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
 </div>

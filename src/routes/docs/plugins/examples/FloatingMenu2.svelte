@@ -10,6 +10,6 @@
       <p></p>`;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content} floatingMenu contentprops={{ id: 'floating-menu-ex' }}>
+<TextEditor bind:editor={editorInstance} {content} floatingMenu={{ showHorizontalRule: false, showTable: false, showImage: false, showCodeBlock: false, showList: false }} contentprops={{ id: 'floating-menu-ex2' }}>
   <UndoRedoButtonGroup editor={editorInstance} />
 </TextEditor>

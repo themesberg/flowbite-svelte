@@ -1,8 +1,16 @@
 <script lang="ts">
-  import { InvisibleButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
+  import { InvisibleButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
+  import type { Editor } from '@tiptap/core';
 
   let editorInstance = $state<Editor | null>(null);
+
+  function getEditorContent() {
+    return editorInstance?.getHTML() ?? '';
+  }
+
+  function setEditorContent(content: string) {
+    editorInstance?.commands.setContent(content);
+  }
 
   const content = `
       <h1>
@@ -17,6 +25,6 @@
     `;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content}>
+<TextEditor bind:editor={editorInstance} {content} contentprops={{ id: 'invisible-ex' }}>
   <InvisibleButtonGroup editor={editorInstance} />
 </TextEditor>

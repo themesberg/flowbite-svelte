@@ -4,7 +4,7 @@
 @plugin "flowbite-typography";
 
 @source "../node_modules/@flowbite-svelte-plugins/texteditor/dist";
-
+// ...
 @layer components {
   /* texteditor */
   :root {
@@ -99,10 +99,6 @@
   }
 
   /* floating menu */
-  .tippy-box {
-    max-width: 475px !important;
-  }
-
   .floating-menu {
     display: flex;
     background-color: var(--gray-3);
@@ -173,12 +169,12 @@
     display: none;
   }
 
-  /* texteditor Details */
+  /* Details */
   .tiptap .details {
     display: flex;
     gap: 0.25rem;
     margin: 1.5rem 0;
-    border: 1px solid #d4c8c760;
+    border: 1px solid var(--gray-3);
     border-radius: 0.5rem;
     padding: 0.5rem;
   }
@@ -204,7 +200,7 @@
   }
 
   .tiptap .details > button:hover {
-    background-color: #dedad8d8;
+    background-color: var(--gray-3);
   }
 
   .tiptap .details > button::before {
@@ -240,11 +236,11 @@
   }
 
   /* drag handle */
-  [id^='drag-handle-'] ::selection{
+  [id^='drag-handle-'] ::selection {
     background-color: #70cff850;
   }
 
-  .dark [id^='drag-handle-'] .ProseMirror-hideselection *::selection{
+  .dark [id^='drag-handle-'] .ProseMirror-hideselection *::selection {
     background-color: #e3508950 !important;
   }
 
@@ -309,15 +305,15 @@
     height: 1.25rem;
     content: '⠿';
     margin-top: 0.3rem;
-    top: 1rem !important;
+    /* top: 1rem !important; */
     font-weight: 700;
     cursor: grab;
     background: #0d0d0d10;
     color: #0d0d0d;
     border-radius: 0.25rem;
-    opacity: 1 !important;
+    /* opacity: 1 !important;
     visibility: visible !important;
-    pointer-events: auto !important;
+    pointer-events: auto !important; */
   }
 
   .dark [id^='drag-handle-'] .drag-handle {
@@ -350,8 +346,8 @@
   }
 
   /*  mention and emoji */
-  .tippy-box .tippy-content .dropdown-menu button,
-  .tippy-box .tippy-content .mention-dropdown button {
+  .emoji-suggestion-popup .dropdown-menu button,
+  .mention-suggestion-popup .mention-dropdown button {
     align-items: center;
     background-color: transparent;
     display: flex;
@@ -360,29 +356,31 @@
     width: 100%;
   }
 
-  .tippy-box .tippy-content .dropdown-menu button:hover,
-  .tippy-box .tippy-content .dropdown-menu button:hover.is-selected,
-  .tippy-box .tippy-content .mention-dropdown button:hover,
-  .tippy-box .tippy-content .mention-dropdown button:hover.is-selected {
+  .emoji-suggestion-popup .dropdown-menu button:hover,
+  .emoji-suggestion-popup .dropdown-menu button:hover.is-selected,
+  .mention-suggestion-popup .mention-dropdown button:hover,
+  .mention-dropdown button:hover.is-selected {
     background-color: rgba(61, 37, 20, 0.12);
   }
 
-  .tippy-box .tippy-content .dropdown-menu button.is-selected,
-  .tippy-box .tippy-content .mention-dropdown button.is-selected {
+  .emoji-suggestion-popup .dropdown-menu button.is-selected,
+  .mention-suggestion-popup .mention-dropdown button.is-selected {
     background-color: rgba(61, 37, 20, 0.08);
   }
 
-  .tippy-box .tippy-content .dropdown-menu button img {
+  .emoji-suggestion-popup .dropdown-menu button img,
+  .mention-suggestion-popup .dropdown-menu button img {
     height: 1em;
     width: 1em;
   }
 
-  .tippy-box {
+  .emoji-suggestion-popup,
+  .mention-suggestion-popup {
     transform-origin: center !important;
   }
 
-  .tippy-box .tippy-content .dropdown-menu,
-  .tippy-box .tippy-content .mention-dropdown {
+  .emoji-suggestion-popup .dropdown-menu,
+  .mention-suggestion-popup .mention-dropdown {
     background: #fff;
     border: 1px solid rgba(61, 37, 20, 0.05);
     border-radius: 0.7rem;
@@ -429,7 +427,7 @@
     pointer-events: none;
   }
 
-  .dark p.is-editor-empty:first-child::before{
+  .dark p.is-editor-empty:first-child::before {
     color: #666;
   }
 
@@ -536,31 +534,42 @@
     margin-bottom: 0.15em;
   }
 
-  /* math */
-  .tiptap .Tiptap-mathematics-editor {
-    background: #202020;
-    color: #fff;
-    font-family: monospace;
-    padding: 0.2rem 0.5rem;
-  }
-
-  .tiptap .Tiptap-mathematics-render {
+  /* Mathematics extension styles */
+  .tiptap .tiptap-mathematics-render {
     padding: 0 0.25rem;
   }
 
-  .tiptap .Tiptap-mathematics-render--editable {
+  .tiptap .tiptap-mathematics-render--editable {
     cursor: pointer;
     transition: background 0.2s;
   }
 
-  .tiptap .Tiptap-mathematics-render--editable:hover {
+  .tiptap .tiptap-mathematics-render--editable:hover {
     background: #eee;
   }
 
-  .tiptap .Tiptap-mathematics-editor,
-  .tiptap .Tiptap-mathematics-render {
+  .tiptap .tiptap-mathematics-render {
     border-radius: 0.25rem;
+  }
+
+  .tiptap .tiptap-mathematics-render[data-type='inline-math'] {
     display: inline-block;
+  }
+
+  .tiptap .tiptap-mathematics-render[data-type='block-math'] {
+    display: block;
+    margin: 1rem 0;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .tiptap .tiptap-mathematics-render.inline-math-error,
+  .tiptap .tiptap-mathematics-render.block-math-error {
+    background: var(--red-light);
+    color: var(--red);
+    border: 1px solid var(--red-dark);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
   }
 
   /* Task list specific styles */
@@ -738,6 +747,11 @@
   .tiptap div[data-youtube-video].ProseMirror-selectednode iframe {
     outline: 3px solid var(--purple);
     transition: outline 0.15s;
+  }
+
+  /* confit test */
+  .my-custom-class {
+    border: 2px solid rgb(150, 238, 206);
   }
 }
 ```
