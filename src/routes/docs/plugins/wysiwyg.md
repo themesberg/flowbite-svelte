@@ -30,7 +30,6 @@ description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins 
 </script>
 
 <svelte:head>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />
 </svelte:head>
 
@@ -59,11 +58,9 @@ Use the following example or create your own.
 
 ### Code Block Styling
 
-To add syntax highlighting styles to your code blocks, include a highlight.js theme:
+To add syntax highlighting styles to your code blocks, include a highlight.js theme. You can browse available themes at cdnjs.com/libraries/highlight.js or preview them at https://highlightjs.org/demo.
 
 <Examples.HighlightTheme />
-
-Browse available themes at cdnjs.com/libraries/highlight.js or preview them at https://highlightjs.org/demo.
 
 ## Full-featured Text Editor
 
