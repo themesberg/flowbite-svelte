@@ -40,6 +40,8 @@ All examples provided on this page have support for dark mode, RTL (right-to-lef
 
 ## Installation
 
+<P class="text-red-500 text-xl">@flowbite-svelte-plugins/texteditor@0.24.0 contains breaking changes. It uses @tiptap beta.</P>
+
 ```svelte example hideOutput
 pnpm i -D @flowbite-svelte-plugins/texteditor lowlight
 ```
