@@ -19,7 +19,6 @@ export { default as Format } from "./Format.svelte";
 export { default as FullFeaturedTexteditor } from "./FullFeaturedTexteditor.svelte";
 export { default as GetSetContent } from "./GetSetContent.svelte";
 export { default as Heading } from "./Heading.svelte";
-export { default as HighlightTheme } from "./HighlightTheme.svelte";
 export { default as Images } from "./Images.svelte";
 export { default as InstallCommand } from "./Installcommand.svelte";
 export { default as Invisible } from "./Invisible.svelte";

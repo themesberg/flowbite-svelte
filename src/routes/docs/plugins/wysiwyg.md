@@ -60,7 +60,12 @@ Use the following example or create your own.
 
 To add syntax highlighting styles to your code blocks, include a highlight.js theme. You can browse available themes at cdnjs.com/libraries/highlight.js or preview them at https://highlightjs.org/demo.
 
-<Examples.HighlightTheme />
+
+```svelte example hideOutput
+<svelte:head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />
+</svelte:head>
+```
 
 ## Full-featured Text Editor
 
