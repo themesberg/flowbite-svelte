@@ -13,6 +13,8 @@ description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins 
   import * as Examples from './examples';
   import Appcss from './examples/appcss.md';
   // const Markdowns = import.meta.glob('./examples/*.svelte,{query:'?raw', import: 'default'})
+  const tiptapVersion = __TIPTAP__;
+  // console.log('tiip', tiptapVersion);
   const exampleRawModules = import.meta.glob("./examples/*.svelte", {
     query: "?raw",
     import: "default",
@@ -40,7 +42,7 @@ All examples provided on this page have support for dark mode, RTL (right-to-lef
 
 ## Installation
 
-<P class="text-red-500 text-xl">@flowbite-svelte-plugins/texteditor@0.24.0 contains breaking changes. It uses @tiptap beta.</P>
+<P class="text-red-500 text-xl">@flowbite-svelte-plugins/texteditor@0.24.0 contains breaking changes. It uses @tiptap{tiptapVersion}.</P>
 
 ```svelte example hideOutput
 pnpm i -D @flowbite-svelte-plugins/texteditor lowlight
