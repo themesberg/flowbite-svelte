@@ -461,11 +461,13 @@ If you want the dialog without the default form inside or you want to manage the
 
 ## Modal events
 
-Closing the modal will trigger the `close` or `cancel` events - see [`<dialog>`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement) API for details.
+Modal triggers the `close` or `cancel` events - see [`<dialog>`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement) API for details.
 
-Use the `onclose` event handler to run code when the modal closes, regardless of how it was triggered (close button, outside click, ESC key, or autoclose).
+The `oncancel` handler will run when dialog is closed by non-action trigger: `Esc` key, click outside, close button, submit button with empty `value` attribute. This event is cancelable.
 
-Use the `onsubmit` event handler for advanced validation.
+Use the `onclose` event handler to run code when the modal closes, regardless of how it was triggered.
+
+You can as well use the `onsubmit` event handler which is bubbled event from the internal form.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
