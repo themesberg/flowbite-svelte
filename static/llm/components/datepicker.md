@@ -273,44 +273,30 @@ Set `translationLocale` to change translation. The following example shows Germa
 </div>
 ```
 
+## Accessing Datepicker Element with elementRef
+
+```svelte
+<script lang="ts">
+  import { Datepicker, Button } from "flowbite-svelte";
+
+  let datepickerRef = $state();
+  let selectedDate = $state();
+</script>
+
+<Datepicker bind:elementRef={datepickerRef} bind:value={selectedDate} placeholder="Select a date" />
+
+<div class="my-4">
+  <Button onclick={() => datepickerRef?.focus()}>Focus Datepicker</Button>
+
+  <Button onclick={() => datepickerRef?.select()}>Select All Text</Button>
+
+  <Button onclick={() => datepickerRef?.blur()}>Blur Datepicker</Button>
+</div>
+```
+
 ## Component data
 
 ### Datepicker
-
-#### Props
-
-- value: $bindable()
-- defaultDate: null
-- range: false
-- rangeFrom: $bindable()
-- rangeTo: $bindable()
-- availableFrom: null
-- availableTo: null
-- locale: "default"
-- translationLocale: locale
-- // NEW: Separate locale for translations
-- defaults to locale for backward compatibility
-    firstDayOfWeek: 0
-- dateFormat
-- placeholder: "Select date"
-- disabled: false
-- required: false
-- inputClass: ""
-- color: "primary"
-- inline: false
-- autohide: true
-- showActionButtons: false
-- title: ""
-- onselect
-- onclear
-- onapply
-- btnClass
-- inputmode: "none"
-- classes
-- monthColor: "alternative"
-- monthBtnSelected: "bg-primary-500 text-white"
-- monthBtn: "text-gray-700 dark:text-gray-300"
-- class: className
 
 
 ## References

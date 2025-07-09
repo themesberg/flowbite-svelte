@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.8.6
+
+### Patch Changes
+
+- - feat: add elementRef prop to Datepicker
+
+  Enables programmatic control of the input element (focus, select, blur).
+  Consistent with FloatingLabelInput API.
+
 ## 1.8.5
 
 ### Patch Changes

@@ -141,7 +141,7 @@ Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script lang="ts">
-  import {  Button, Modal, Input, Label  } from "flowbite-svelte";
+  import { Button, Modal, Input, Label } from "flowbite-svelte";
   let defaultModal = $state(false);
   let elementRef = $state() as HTMLInputElement;
   const handleClick = () => {
@@ -151,7 +151,7 @@ Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
 </script>
 
 <Button onclick={handleClick}>Default modal</Button>
-<Modal dismissable={false} bind:open={defaultModal} >
+<Modal dismissable={false} bind:open={defaultModal}>
   {#snippet header()}
     Form title
   {/snippet}
