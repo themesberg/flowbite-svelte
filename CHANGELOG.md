@@ -1,5 +1,35 @@
 # Changelog
 
+## 1.8.6
+
+### Patch Changes
+
+- - feat: add elementRef prop to Datepicker
+
+  Enables programmatic control of the input element (focus, select, blur).
+  Consistent with FloatingLabelInput API.
+
+## 1.8.5
+
+### Patch Changes
+
+- - feat: add translationLocale prop to separate date formatting from UI language
+
+  Allows using different locales for date formatting vs UI text translation.
+  Maintains backward compatibility - translationLocale defaults to locale.
+
+  Example: locale="de-DE" translationLocale="en-US" gives German date format with English text.
+
+## 1.8.4
+
+### Patch Changes
+
+- fix: support for onsubmit when there's a form inside
+- fix: twMerge removal
+- chore: code clean up
+- docs: encourage to use dialog actions instead of autoclose that gives no info about which button was pressed
+- docs: onsubmit and onclose example
+
 ## 1.8.3
 
 ### Patch Changes

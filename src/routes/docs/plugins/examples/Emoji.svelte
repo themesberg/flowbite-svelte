@@ -41,13 +41,13 @@
       `;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content}>
+<TextEditor bind:editor={editorInstance} {content} contentprops={{ id: "emoji-ex" }}>
   <ToolbarRowWrapper>
     <UndoRedoButtonGroup editor={editorInstance} />
   </ToolbarRowWrapper>
 </TextEditor>
 
 <div class="mt-4">
-  <Button onclick={() => console.log(getEditorContent())}>Log Content</Button>
+  <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
   <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
 </div>

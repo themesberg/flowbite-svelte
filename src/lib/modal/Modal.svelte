@@ -120,7 +120,7 @@
 ## Props
 @prop children
 @prop oncancel
-@prop onclose
+@prop onsubmit
 @prop modal = true
 @prop autoclose = false
 @prop header

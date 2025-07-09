@@ -6,14 +6,53 @@
   import { Button, ToolbarButton, type DatepickerProps, cn } from "$lib";
   import { datepicker } from "./theme";
 
-  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), availableFrom = null, availableTo = null, locale = "default", firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, inputmode = "none", classes, monthColor = "alternative", monthBtnSelected = "bg-primary-500 text-white", monthBtn = "text-gray-700 dark:text-gray-300", class: className }: DatepickerProps = $props();
+  let {
+    value = $bindable(),
+    defaultDate = null,
+    range = false,
+    rangeFrom = $bindable(),
+    rangeTo = $bindable(),
+    availableFrom = null,
+    availableTo = null,
+    locale = "default",
+    translationLocale = locale, // NEW: Separate locale for translations, defaults to locale for backward compatibility
+    firstDayOfWeek = 0,
+    dateFormat,
+    placeholder = "Select date",
+    disabled = false,
+    required = false,
+    inputClass = "",
+    color = "primary",
+    inline = false,
+    autohide = true,
+    showActionButtons = false,
+    title = "",
+    onselect,
+    onclear,
+    onapply,
+    btnClass,
+    inputmode = "none",
+    classes,
+    monthColor = "alternative",
+    monthBtnSelected = "bg-primary-500 text-white",
+    monthBtn = "text-gray-700 dark:text-gray-300",
+    class: className,
+    elementRef = $bindable() // NEW: Add elementRef prop
+  }: DatepickerProps & { translationLocale?: string; elementRef?: HTMLInputElement } = $props();
 
   const dateFormatDefault = { year: "numeric", month: "long", day: "numeric" };
-  // const dateFormatOptions = $derived(dateFormat ?? dateFormatDefault);
+
   // Internal state
   let isOpen: boolean = $state(inline);
   let showMonthSelector: boolean = $state(false);
   let inputElement: HTMLInputElement | null = $state(null);
+
+  // Update elementRef when inputElement changes
+  $effect(() => {
+    if (inputElement) {
+      elementRef = inputElement;
+    }
+  });
   let datepickerContainerElement: HTMLDivElement;
   let currentMonth: Date = $state(value || defaultDate || new Date());
   let focusedDate: Date | null = null;
@@ -60,17 +99,18 @@
     return daysArray;
   }
 
+  // MODIFIED: Use translationLocale for weekday names
   const getWeekdayNames = (): string[] => {
-    return Array.from({ length: 7 }, (_, i) => new Date(1970, 0, 5 + i + firstDayOfWeek).toLocaleDateString(locale, { weekday: "short" }));
+    return Array.from({ length: 7 }, (_, i) => new Date(1970, 0, 5 + i + firstDayOfWeek).toLocaleDateString(translationLocale, { weekday: "short" }));
   };
-  let weekdays = getWeekdayNames();
+  let weekdays = $derived(getWeekdayNames());
 
+  // MODIFIED: Use translationLocale for month names
   const getMonthNames = (): string[] => {
-    return Array.from({ length: 12 }, (_, i) => new Date(2000, i, 1).toLocaleDateString(locale, { month: "short" }));
+    return Array.from({ length: 12 }, (_, i) => new Date(2000, i, 1).toLocaleDateString(translationLocale, { month: "short" }));
   };
-  let monthNames = getMonthNames();
+  let monthNames = $derived(getMonthNames());
 
-  // const addMonth = (date: Date, increment: number): Date => new Date(date.getFullYear(), date.getMonth() + increment, 1);
   const addDay = (date: Date, increment: number): Date => new Date(date.getFullYear(), date.getMonth(), date.getDate() + increment);
 
   function changeMonth(increment: number) {
@@ -92,7 +132,6 @@
     showMonthSelector = !showMonthSelector;
   }
 
-  // Helper function to check if a date is available for selection
   function isDateAvailable(date: Date): boolean {
     const dateOnly = new Date(date.getFullYear(), date.getMonth(), date.getDate());
 
@@ -110,7 +149,6 @@
   }
 
   function handleDaySelect(day: Date) {
-    // Don't allow selection of unavailable dates
     if (!isDateAvailable(day)) return;
 
     if (range) {
@@ -145,6 +183,7 @@
     }
   }
 
+  // MODIFIED: Use locale for formatting (not translationLocale)
   const formatDate = (date?: Date): string => date?.toLocaleDateString(locale, dateFormat) ?? "";
   const isSameDate = (date1?: Date, date2?: Date): boolean => date1?.toDateString() === date2?.toDateString();
   const isToday = (day: Date): boolean => isSameDate(day, new Date());
@@ -189,9 +228,9 @@
       currentMonth = new Date(focusedDate.getFullYear(), focusedDate.getMonth(), 1);
     }
 
-    // Focus the button for the focused date
+    // MODIFIED: Use translationLocale for aria-label
     setTimeout(() => {
-      const focusedButton = calendarRef?.querySelector(`button[aria-label="${focusedDate!.toLocaleDateString(locale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}"]`) as HTMLButtonElement | null;
+      const focusedButton = calendarRef?.querySelector(`button[aria-label="${focusedDate!.toLocaleDateString(translationLocale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}"]`) as HTMLButtonElement | null;
       focusedButton?.focus();
     }, 0);
   }
@@ -271,8 +310,9 @@
         <!-- Regular Calendar View -->
         <div class={nav({ class: clsx(classes?.nav) })}>
           {@render navButton(false)}
+          <!-- MODIFIED: Use translationLocale for month/year display -->
           <Button type="button" class={cn(polite({ class: clsx(classes?.polite) }), "cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700")} aria-live="polite" onclick={(event: MouseEvent) => toggleMonthSelector(event)}>
-            {currentMonth.toLocaleString(locale, { month: "long", year: "numeric" })}
+            {currentMonth.toLocaleString(translationLocale, { month: "long", year: "numeric" })}
           </Button>
           {@render navButton(true)}
         </div>
@@ -295,7 +335,7 @@
               })}
               onclick={() => handleDaySelect(day)}
               onkeydown={handleCalendarKeydown}
-              aria-label={day.toLocaleDateString(locale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}
+              aria-label={day.toLocaleDateString(translationLocale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}
               aria-selected={isSelected(day)}
               aria-disabled={!available}
               disabled={!available}
@@ -317,40 +357,3 @@
     </div>
   {/if}
 </div>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L487)
-## Props
-@prop value = $bindable()
-@prop defaultDate = null
-@prop range = false
-@prop rangeFrom = $bindable()
-@prop rangeTo = $bindable()
-@prop availableFrom = null
-@prop availableTo = null
-@prop locale = "default"
-@prop firstDayOfWeek = 0
-@prop dateFormat
-@prop placeholder = "Select date"
-@prop disabled = false
-@prop required = false
-@prop inputClass = ""
-@prop color = "primary"
-@prop inline = false
-@prop autohide = true
-@prop showActionButtons = false
-@prop title = ""
-@prop onselect
-@prop onclear
-@prop onapply
-@prop btnClass
-@prop inputmode = "none"
-@prop classes
-@prop monthColor = "alternative"
-@prop monthBtnSelected = "bg-primary-500 text-white"
-@prop monthBtn = "text-gray-700 dark:text-gray-300"
-@prop class: className
--->

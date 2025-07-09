@@ -150,8 +150,11 @@ Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
   };
 </script>
 
-<Button onclick={handleClick}>Click to focus on Input in Modal</Button>
-<Modal title="Terms of Service" bind:open={defaultModal} autoclose>
+<Button onclick={handleClick}>Default modal</Button>
+<Modal dismissable={false} bind:open={defaultModal}>
+  {#snippet header()}
+    Form title
+  {/snippet}
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cumque quisquam dolores doloribus. Aperiam perferendis quod ea repudiandae odit libero tempore error?</p>
   <form>
     <div class="mb-6 grid gap-6 md:grid-cols-2">

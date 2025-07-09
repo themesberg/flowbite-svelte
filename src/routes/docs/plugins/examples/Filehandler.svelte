@@ -14,6 +14,6 @@
       <p></p>`;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content} file>
+<TextEditor bind:editor={editorInstance} {content} file contentprops={{ id: "file-handler-ex" }}>
   <SourceButtonGroup editor={editorInstance} html={false} />
 </TextEditor>

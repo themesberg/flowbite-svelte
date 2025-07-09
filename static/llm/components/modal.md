@@ -39,26 +39,46 @@ An option of automatic closing of the modal can be enabled by setting the `autoc
 </Modal>
 ```
 
-## autoclose
+## Dialog actions
 
-If `autoclose` is set to `false` or omitted, clicking buttons inside the modal will not automatically close it.
+HTML `<dialog>` element works nicely with `<form method="dialog">` element put inside. In such a case elements with `type="submit"` (buttons or inputs) close the dialog and set its return value to the value of their own `value` parameter. This mechanism can be used to implement dialog actions.
+
+Remember to disable `autoclose` by setting it to `false` or omit it.
 
 ```svelte
 <script>
   import { Button, Modal, P } from "flowbite-svelte";
   let defaultModal = $state(false);
+  let result = $state("Waiting for user action");
+
+  function onclose({ currentTarget: dialog }) {
+    switch (dialog.returnValue) {
+      case "accept":
+        result = "User has accepted the terms of service";
+        break;
+      case "decline":
+        result = "Unfortunately user has declined the terms of service";
+        break;
+      default:
+        result = "User has not taken any action";
+    }
+  }
 </script>
 
 <Button onclick={() => (defaultModal = true)}>Default modal</Button>
-<Modal title="Terms of Service" bind:open={defaultModal}>
-  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
-  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
+<Modal title="Terms of Service" bind:open={defaultModal} onsubmit={onclose}>
+  <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
+  <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
 
   {#snippet footer()}
-    <Button onclick={() => alert('Handle "success"')}>I accept</Button>
-    <Button color="alternative">Decline</Button>
+    <form method="dialog">
+      <Button type="submit" value="accept">I accept</Button>
+      <Button type="submit" value="decline" color="alternative">Decline</Button>
+    </form>
   {/snippet}
 </Modal>
+
+<P>{result}</P>
 ```
 
 ## Clicking outside
@@ -96,50 +116,13 @@ This example shows the `header` customization as well.
 
 Use `Tab` and `Shift+Tab` to navigate between buttons or links in the modal. Press `ESC` to close it.
 
-## Permanent
-
-If you want to display a modal permanently, add `permanent` prop. All close function will be disabled.
-
-`<Modal title="My title" permanent>Content</Modal>`
-
-## Modal with onclose
-
-Use the `onclose` prop to run code when the modal closes, regardless of how it was triggered (close button, outside click, ESC key, or autoclose).
-
-```svelte
-<script>
-  import { Button, Modal } from "flowbite-svelte";
-  let open = $state(false);
-</script>
-
-<Button onclick={() => (open = true)}>Default modal</Button>
-
-<Modal
-  bind:open
-  autoclose
-  onclose={() => {
-    alert("Using onclose prop.");
-  }}
->
-  {#snippet header()}
-    <h3>
-      Terms of Service <small class="font-normal">(Revised)</small>
-    </h3>
-  {/snippet}
-  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
-  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union's General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
-  {#snippet footer()}
-    <Button onclick={() => alert('Handle "success"')}>I accept</Button>
-    <Button color="alternative">Decline</Button>
-  {/snippet}
-</Modal>
-```
-
 ## Pop-up modal
 
 You can use this modal example to show a pop-up decision dialog to your users especially when deleting an item and making sure if the user really wants to do that by double confirming.
 
 Notice lack of the `footer` snippet and the transition set to `slide`.
+
+You can as well force user to take an action by adding `permanent` prop. All canceling functions will be disabled (Esc key, click outside, close button).
 
 ```svelte
 <script>
@@ -151,12 +134,14 @@ Notice lack of the `footer` snippet and the transition set to `slide`.
 
 <Button onclick={() => (popupModal = true)}>Pop-up modal</Button>
 
-<Modal bind:open={popupModal} size="xs" autoclose transition={slide}>
+<Modal bind:open={popupModal} size="xs" transition={slide} permanent>
   <div class="text-center">
     <ExclamationCircleOutline class="mx-auto mb-4 h-12 w-12 text-gray-400 dark:text-gray-200" />
     <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
-    <Button color="red" class="me-2">Yes, I'm sure</Button>
-    <Button color="alternative">No, cancel</Button>
+    <form method="dialog" class="space-x-2">
+      <Button type="submit" value="yes" color="red">Yes, I'm sure</Button>
+      <Button type="submit" value="no" color="alternative">No, cancel</Button>
+    </form>
   </div>
 </Modal>
 ```
@@ -173,11 +158,20 @@ Use this modal example with form input element to receive information from your 
 <script>
   import { Button, Modal, Label, Input, Checkbox } from "flowbite-svelte";
   let formModal = $state(false);
+  function onsubmit(ev) {
+    const formData = new FormData(ev.target);
+
+    // Check the data validity and prevent dialog closing if needed.
+    // if( ! checkValid(formData) ) ev.preventDefault();
+
+    const object = Object.fromEntries(formData);
+    alert(JSON.stringify(object));
+  }
 </script>
 
 <Button onclick={() => (formModal = true)}>Form modal</Button>
 
-<Modal bind:open={formModal} size="xs">
+<Modal bind:open={formModal} size="xs" {onsubmit}>
   <form class="flex flex-col space-y-6" method="dialog" action="#">
     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
     <Label class="space-y-2">
@@ -189,7 +183,7 @@ Use this modal example with form input element to receive information from your 
       <Input type="password" name="password" placeholder="•••••" required />
     </Label>
     <div class="flex items-start">
-      <Checkbox>Remember me</Checkbox>
+      <Checkbox name="remember">Remember me</Checkbox>
       <a href="/" class="text-primary-700 dark:text-primary-500 ms-auto text-sm hover:underline">Lost password?</a>
     </div>
     <Button type="submit" class="w-full1">Login to your account</Button>
@@ -417,6 +411,38 @@ Rarely you would need a non-modal dialog. You can get it by setting `modal` prop
 </Modal>
 ```
 
+## Modal events
+
+Use the `onclose` event handlre to run code when the modal closes, regardless of how it was triggered (close button, outside click, ESC key, or autoclose).
+
+Use the `onsubmit` event handler to catch only user actions.
+
+```svelte
+<script>
+  import { Button, Modal } from "flowbite-svelte";
+  let open = $state(false);
+</script>
+
+<Button onclick={() => (open = true)}>Default modal</Button>
+
+<Modal bind:open onsubmit={(ev) => alert(`User taken action "${ev.currentTarget.returnValue}".`)} onclose={(ev) => alert(`Dialog closed with "${ev.target.returnValue || "no"}" action.`)}>
+  {#snippet header()}
+    <h3>
+      Terms of Service <small class="font-normal">(Revised)</small>
+    </h3>
+  {/snippet}
+
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union's General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
+  {#snippet footer()}
+    <form method="dialog">
+      <Button type="submit" value="accept">I accept</Button>
+      <Button type="submit" value="decline" color="alternative">Decline</Button>
+    </form>
+  {/snippet}
+</Modal>
+```
+
 ## Component data
 
 ### Modal
@@ -429,7 +455,7 @@ Rarely you would need a non-modal dialog. You can get it by setting `modal` prop
 
 - children
 - oncancel
-- onclose
+- onsubmit
 - modal: true
 - autoclose: false
 - header

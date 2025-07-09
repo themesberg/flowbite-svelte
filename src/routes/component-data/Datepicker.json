@@ -1,38 +1,5 @@
 {
   "name": "Datepicker",
-  "type": {
-    "name": "DatepickerProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L487"
-  },
-  "props": [
-    ["value", "$bindable()"],
-    ["defaultDate", "null"],
-    ["range", "false"],
-    ["rangeFrom", "$bindable()"],
-    ["rangeTo", "$bindable()"],
-    ["availableFrom", "null"],
-    ["availableTo", "null"],
-    ["locale", "\"default\""],
-    ["firstDayOfWeek", "0"],
-    ["dateFormat", ""],
-    ["placeholder", "\"Select date\""],
-    ["disabled", "false"],
-    ["required", "false"],
-    ["inputClass", "\"\""],
-    ["color", "\"primary\""],
-    ["inline", "false"],
-    ["autohide", "true"],
-    ["showActionButtons", "false"],
-    ["title", "\"\""],
-    ["onselect", ""],
-    ["onclear", ""],
-    ["onapply", ""],
-    ["btnClass", ""],
-    ["inputmode", "\"none\""],
-    ["classes", ""],
-    ["monthColor", "\"alternative\""],
-    ["monthBtnSelected", "\"bg-primary-500 text-white\""],
-    ["monthBtn", "\"text-gray-700 dark:text-gray-300\""],
-    ["class: className", ""]
-  ]
+  "type": null,
+  "props": []
 }

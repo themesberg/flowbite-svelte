@@ -1,27 +1,6 @@
 <script lang="ts">
-  import {
-    TextEditor,
-    ToolbarRowWrapper,
-    AlignmentButtonGroup,
-    CharacterCount,
-    DetailsButtonGroup,
-    Divider,
-    EditableButton,
-    ExportButtonGroup,
-    FormatButtonGroup,
-    HeadingButtonGroup,
-    ImageButtonGroup,
-    InvisibleButtonGroup,
-    LayoutButtonGroup,
-    ListButtonGroup,
-    SourceButtonGroup,
-    TableButtonGroup1,
-    TableButtonGroup2,
-    TaskListButtonGroup,
-    UndoRedoButtonGroup,
-    VideoButtonGroup
-  } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
+  import { TextEditor, ToolbarRowWrapper, AlignmentButtonGroup, CharacterCount, DetailsButtonGroup, Divider, EditableButton, ExportButtonGroup, FormatButtonGroup, HeadingButtonGroup, ImageButtonGroup, InvisibleButtonGroup, LayoutButtonGroup, ListButtonGroup, SourceButtonGroup, TableButtonGroup1, TableButtonGroup2, TaskListButtonGroup, UndoRedoButtonGroup, YoutubeButtonGroup } from "@flowbite-svelte-plugins/texteditor";
+  import type { Editor } from "@tiptap/core";
   import { Button } from "flowbite-svelte";
 
   let editorInstance = $state<Editor | null>(null);
@@ -35,7 +14,7 @@
     editorInstance?.commands.setContent(content);
   }
 
-   const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>
+  const content = `<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>
     <p>Here is an example of a js block:</p><pre><code class="language-javascript">for (var i=1; i <= 20; i++)
 {
   if (i % 15 == 0)
@@ -50,39 +29,13 @@
 
   function handleEditableToggle(editable: boolean) {
     isEditable = editable;
-    console.log('Editor is now:', editable ? 'editable' : 'read-only');
+    console.log("Editor is now:", editable ? "editable" : "read-only");
   }
 
-  const mentions = [
-    'Lea Thompson',
-    'Cyndi Lauper',
-    'Tom Cruise',
-    'Madonna',
-    'Jerry Hall',
-    'Joan Collins',
-    'Winona Ryder',
-    'Christina Applegate',
-    'Alyssa Milano',
-    'Molly Ringwald',
-    'Ally Sheedy',
-    'Debbie Harry',
-    'Olivia Newton-John',
-    'Elton John',
-    'Michael J. Fox',
-    'Axl Rose',
-    'Emilio Estevez',
-    'Ralph Macchio',
-    'Rob Lowe',
-    'Jennifer Grey',
-    'Mickey Rourke',
-    'John Cusack',
-    'Matthew Broderick',
-    'Justine Bateman',
-    'Lisa Bonet'
-  ];
+  const mentions = ["Lea Thompson", "Cyndi Lauper", "Tom Cruise", "Madonna", "Jerry Hall", "Joan Collins", "Winona Ryder", "Christina Applegate", "Alyssa Milano", "Molly Ringwald", "Ally Sheedy", "Debbie Harry", "Olivia Newton-John", "Elton John", "Michael J. Fox", "Axl Rose", "Emilio Estevez", "Ralph Macchio", "Rob Lowe", "Jennifer Grey", "Mickey Rourke", "John Cusack", "Matthew Broderick", "Justine Bateman", "Lisa Bonet"];
 </script>
 
-<TextEditor bind:editor={editorInstance} {content} {mentions} floatingMenu bubbleMenu draghandle file {isEditable} contentprops={{ id: 'drag-handle-editable' }}>
+<TextEditor bind:editor={editorInstance} {content} {mentions} file {isEditable} contentprops={{ id: "drag-handle-editable" }}>
   <ToolbarRowWrapper>
     <EditableButton editor={editorInstance} bind:isEditable onToggle={handleEditableToggle} />
     <Divider />
@@ -98,7 +51,7 @@
     <Divider />
     <ImageButtonGroup editor={editorInstance} />
     <Divider />
-    <VideoButtonGroup editor={editorInstance} />
+    <YoutubeButtonGroup editor={editorInstance} />
     <Divider />
     <InvisibleButtonGroup editor={editorInstance} />
     <Divider />
@@ -118,7 +71,7 @@
   <ToolbarRowWrapper toolbarrawprops={{ top: false }}>
     <TaskListButtonGroup editor={editorInstance} />
   </ToolbarRowWrapper>
-  
+
   <ToolbarRowWrapper toolbarrawprops={{ top: false }}>
     <TableButtonGroup1 editor={editorInstance} />
     <TableButtonGroup2 editor={editorInstance} />

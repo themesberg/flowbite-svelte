@@ -271,6 +271,41 @@ Use `availableFrom` and/or `availableTo` props to restrict the selectable date r
 </P>
 ```
 
+## Local translation
+
+Set `translationLocale` to change translation. The following example shows German date format (DD.MM.YYYY) but English text.
+
+```svelte example class="h-[430px]"
+<script lang="ts">
+  import { Datepicker, P } from "flowbite-svelte";
+</script>
+
+<div class="mb-64 md:w-1/2">
+  <Datepicker locale="de-DE" translationLocale="en-US" />
+</div>
+```
+
+## Accessing Datepicker Element with elementRef
+
+```svelte example class="h-[430px]"
+<script lang="ts">
+  import { Datepicker, Button } from "flowbite-svelte";
+
+  let datepickerRef = $state();
+  let selectedDate = $state();
+</script>
+
+<Datepicker bind:elementRef={datepickerRef} bind:value={selectedDate} placeholder="Select a date" />
+
+<div class="my-4">
+  <Button onclick={() => datepickerRef?.focus()}>Focus Datepicker</Button>
+
+  <Button onclick={() => datepickerRef?.select()}>Select All Text</Button>
+
+  <Button onclick={() => datepickerRef?.blur()}>Blur Datepicker</Button>
+</div>
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

@@ -934,94 +934,135 @@ The search item separator for the extension column is ";" so that searching for 
 ```
 
 ## DataTable Event Callbacks
+
 The DataTable component exposes callback props that allow you to hook into the underlying simple-datatables library events. These callbacks provide access to the table lifecycle and user interactions.
+
 ### Initialization Events
+
 #### `onInitStart`
+
 Called when table initialization begins. Useful for showing loading indicators.
+
 ```ts
 typescriptonInitStart?: () => void
 ```
+
 #### `onInitComplete`
+
 Called when the table is fully initialized and ready for interaction.
+
 ```ts
 typescriptonInitComplete?: (dataTable: DataTable) => void
 ```
+
 #### `onInitError`
+
 Called if table initialization fails.
+
 ```ts
 typescriptonInitError?: (error: Error) => void
 ```
+
 ### Data Events
+
 #### `onRefresh`
+
 Called when the table data is refreshed.
+
 ```ts
 typescriptonRefresh?: (dataTable: DataTable) => void
 ```
+
 #### `onUpdate`
+
 Called when the table is updated (e.g., after sorting or filtering).
+
 ```ts
 typescriptonUpdate?: (dataTable: DataTable) => void
 ```
+
 ### User Interaction Events
+
 #### `onSort`
+
 Called when a column is sorted.
+
 ```ts
 typescriptonSort?: (column: number, direction: string, dataTable: DataTable) => void
 ```
+
 #### `onSearch`
+
 Called when a search is performed.
+
 ```ts
 typescriptonSearch?: (query: string, matched: any[], dataTable: DataTable) => void
 ```
+
 #### `onPage`
+
 Called when pagination changes.
+
 ```ts
 typescriptonPage?: (page: number, dataTable: DataTable) => void
 ```
+
 ### Selection Events (when selectable=true)
+
 #### `onSelectRow`
+
 Called when a row is selected.
+
 ```ts
 typescriptonSelectRow?: (rowIndex: number, event: Event, dataTable: DataTable) => void
 ```
+
 #### `onSelectAll`
+
 Called when all rows are selected.
+
 ```ts
 typescriptonSelectAll?: (dataTable: DataTable) => void
 ```
+
 #### `onDeselectRow`
+
 Called when a row is deselected.
+
 ```ts
 typescriptonDeselectRow?: (rowIndex: number, dataTable: DataTable) => void
 ```
+
 #### `onDeselectAll`
+
 Called when all rows are deselected.
+
 ```ts
 typescriptonDeselectAll?: (dataTable: DataTable) => void
 ```
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { Table } from '@flowbite-svelte-plugins/datatable';
-  import items from './data/sample.json';
-  import type { DataTable } from 'simple-datatables';
-  import { Spinner } from 'flowbite-svelte';
+  import { Table } from "@flowbite-svelte-plugins/datatable";
+  import items from "./data/sample.json";
+  import type { DataTable } from "simple-datatables";
+  import { Spinner } from "flowbite-svelte";
 
   let isTableLoading = true;
   let tableInstance: DataTable | null = null;
 
   function handleInitStart(): void {
-    console.log('Table initialization started');
+    console.log("Table initialization started");
     isTableLoading = true;
   }
 
   function handleInitComplete(dataTable: DataTable): void {
-    console.log('Table ready:', dataTable);
+    console.log("Table ready:", dataTable);
     isTableLoading = false;
   }
 
   function handleInitError(error: Error): void {
-    console.error('Table initialization failed:', error);
+    console.error("Table initialization failed:", error);
     isTableLoading = false;
   }
 
@@ -1045,19 +1086,7 @@ typescriptonDeselectAll?: (dataTable: DataTable) => void
   </div>
 {/if}
 
-<Table
-  {items}
-  bind:isLoading={isTableLoading}
-  bind:dataTableInstance={tableInstance}
-  onInitStart={handleInitStart}
-  onInitComplete={handleInitComplete}
-  onInitError={handleInitError}
-  onSort={handleSort}
-  onSearch={handleSearch}
-  onSelectRow={handleRowSelect}
-  selectable={true}
-  dataTableOptions={selectRowsOptions}
-/>
+<Table {items} bind:isLoading={isTableLoading} bind:dataTableInstance={tableInstance} onInitStart={handleInitStart} onInitComplete={handleInitComplete} onInitError={handleInitError} onSort={handleSort} onSearch={handleSearch} onSelectRow={handleRowSelect} selectable={true} dataTableOptions={selectRowsOptions} />
 ```
 
 ## Component data
