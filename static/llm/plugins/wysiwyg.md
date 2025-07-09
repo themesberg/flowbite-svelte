@@ -14,9 +14,9 @@ All examples provided on this page have support for dark mode, RTL (right-to-lef
 
 ## Installation
 
-```svelte
-pnpm i -D @flowbite-svelte-plugins/texteditor lowlight
-```
+<P class="text-red-500 text-xl">@flowbite-svelte-plugins/texteditor@0.24.0 contains breaking changes. It uses @tiptap{tiptapVersion}.</P>
+
+<Examples.InstallCommand />
 
 ### app.css
 
@@ -25,21 +25,19 @@ Use the following example or create your own.
 <Accordion flush>
   <AccordionItem contentClass="customstyle">
   {#snippet header()}Example style{/snippet}
-  <Appcss />
+  <Examples.Appcss />
   </AccordionItem>
 </Accordion>
 
 ### Code Block Styling
 
-To add syntax highlighting styles to your code blocks, include a highlight.js theme:
+To add syntax highlighting styles to your code blocks, include a highlight.js theme. You can browse available themes at cdnjs.com/libraries/highlight.js or preview them at https://highlightjs.org/demo.
 
 ```svelte
 <svelte:head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />
 </svelte:head>
 ```
-
-Browse available themes at cdnjs.com/libraries/highlight.js or preview them at https://highlightjs.org/demo.
 
 ## Full-featured Text Editor
 
@@ -98,21 +96,11 @@ codeString={exampleRawModules['./examples/BubbleMenu.svelte']}
 
 Configure which menu items are displayed using the following examples:
 
-```svelte
-<script lang="ts">
-  import { TextEditor, UndoRedoButtonGroup } from "@flowbite-svelte-plugins/texteditor";
-  import { Button } from "flowbite-svelte";
-  import type { Editor } from "@tiptap/core";
-
-  let editorInstance = $state<Editor | null>(null);
-
-  const content = "<p>Flowbite-Svelte is an <strong>open-source library of UI components</strong> based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, and more.</p><p>It includes all of the commonly used components that a website requires, such as buttons, dropdowns, navigation bars, modals, datepickers, advanced charts and the list goes on.</p>";
-</script>
-
-<TextEditor bind:editor={editorInstance} {content} bubbleMenu={{ showUnderline: false, showHighlight: false }}>
-  <UndoRedoButtonGroup editor={editorInstance} />
-</TextEditor>
-```
+<Examples.BubbleMenu2 />
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/BubbleMenu2.svelte']}
+/>
 
 ## Math
 
@@ -182,23 +170,12 @@ codeString={exampleRawModules['./examples/FloatingMenu.svelte']}
 
 Configure which menu items are displayed using the following examples:
 
-```svelte
-<script lang="ts">
-  import { TextEditor, UndoRedoButtonGroup } from "@flowbite-svelte-plugins/texteditor";
-  import type { Editor } from "@tiptap/core";
+<Examples.FloatingMenu2 />
 
-  let editorInstance = $state<Editor | null>(null);
-
-  const content = `<p>
-        This is an example of a Medium-like editor. Enter a new line and some buttons will appear.
-      </p>
-      <p></p>`;
-</script>
-
-<TextEditor bind:editor={editorInstance} {content} floatingMenu={{ showHorizontalRule: false, showTable: false, showImage: false, showCodeBlock: false, showList: false }} contentprops={{ id: "floating-menu-ex2" }}>
-  <UndoRedoButtonGroup editor={editorInstance} />
-</TextEditor>
-```
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/FloatingMenu2.svelte']}
+/>
 
 ## Text Alignment
 
@@ -232,14 +209,14 @@ meta={{hideOutput: true}}
 codeString={exampleRawModules['./examples/Images.svelte']}
 />
 
-## List
+## Lists
 
 Use this example to create typography elements like bullet lists, ordered lists, blockquotes, horizontal rules, paragraphs, headings, code blocks based on Tailwind CSS utility classees and the Flowbite API.
 
-<Examples.List />
+<Examples.Lists />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/List.svelte']}
+codeString={exampleRawModules['./examples/Lists.svelte']}
 />
 
 ## Fonts
@@ -250,14 +227,14 @@ meta={{hideOutput: true}}
 codeString={exampleRawModules['./examples/Fonts.svelte']}
 />
 
-## Adding Videos
+## Adding Youtube Videos
 
-Use `VideoButtonGroup` to embed videos inside the WYSIWYG text editor based on a YouTube URL source and set the width and height of the video by using the advanced video component.
+Use `YoutubeButtonGroup` to embed videos inside the WYSIWYG text editor based on a YouTube URL source and set the width and height of the video by using the advanced video component.
 
-<Examples.Videos />
+<Examples.Youtube />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Videos.svelte']}
+codeString={exampleRawModules['./examples/Youtube.svelte']}
 />
 
 ## Editing Tables
@@ -322,11 +299,11 @@ codeString={exampleRawModules['./examples/SourceAndHtml.svelte']}
 
 Use the following example to display Table of Contents.
 
-<P>See an example at <A href="https://flowbite-svelte-texteditor.vercel.app/toc" target="_blank">this page</A>.</P>
+<P>See an example at <A href="https://flowbite-svelte-texteditor.vercel.app/examples/Toc" target="_blank">this page</A>.</P>
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/TocEx.svelte']}
+codeString={exampleRawModules['./examples/Toc.svelte']}
 />
 
 ## Placeholder
@@ -369,7 +346,7 @@ Type: 'start' | 'end' | 'all' | number | boolean | null
 <P>See an example at <A href="/examples/texteditor/autofocus">this page</A>.</P>
 <ExampleWrapper 
   meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/AutofocusEx.svelte']}
+  codeString={exampleRawModules['./examples/Autofocus.svelte']}
 />
 
 ## Getting and Setting Content

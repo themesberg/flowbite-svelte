@@ -1,7 +1,7 @@
 <script lang="ts">
-  import 'katex/dist/katex.min.css';
-  import { TextEditor, UndoRedoButtonGroup } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
+  import "katex/dist/katex.min.css";
+  import { TextEditor, UndoRedoButtonGroup } from "@flowbite-svelte-plugins/texteditor";
+  import type { Editor } from "@tiptap/core";
 
   let editorInstance = $state<Editor | null>(null);
 
@@ -39,6 +39,6 @@
         <div data-type="block-math" data-latex="\\int_a^b x^2 dx"></div>`;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content} math contentprops={{ id: 'math-ex' }}>
+<TextEditor bind:editor={editorInstance} {content} math contentprops={{ id: "math-ex" }}>
   <UndoRedoButtonGroup editor={editorInstance} />
 </TextEditor>

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { TaskListButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
+  import { TaskListButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
+  import type { Editor } from "@tiptap/core";
 
   let editorInstance = $state<Editor | null>(null);
 
@@ -13,6 +13,6 @@
       `;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content} contentprops={{ id: 'task-ex' }}>
+<TextEditor bind:editor={editorInstance} {content} contentprops={{ id: "task-ex" }}>
   <TaskListButtonGroup editor={editorInstance} />
 </TextEditor>

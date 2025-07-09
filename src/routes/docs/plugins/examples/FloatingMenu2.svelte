@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { TextEditor, UndoRedoButtonGroup } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
+  import { TextEditor, UndoRedoButtonGroup } from "@flowbite-svelte-plugins/texteditor";
+  import type { Editor } from "@tiptap/core";
 
   let editorInstance = $state<Editor | null>(null);
 
@@ -10,6 +10,6 @@
       <p></p>`;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content} floatingMenu={{ showHorizontalRule: false, showTable: false, showImage: false, showCodeBlock: false, showList: false }} contentprops={{ id: 'floating-menu-ex2' }}>
+<TextEditor bind:editor={editorInstance} {content} floatingMenu={{ showHorizontalRule: false, showTable: false, showImage: false, showCodeBlock: false, showList: false }} contentprops={{ id: "floating-menu-ex2" }}>
   <UndoRedoButtonGroup editor={editorInstance} />
 </TextEditor>

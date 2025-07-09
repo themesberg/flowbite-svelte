@@ -259,13 +259,23 @@ Use `availableFrom` and/or `availableTo` props to restrict the selectable date r
 </P>
 ```
 
+## Local translation
+
+Set `translationLocale` to change translation. The following example shows German date format (DD.MM.YYYY) but English text.
+
+```svelte
+<script lang="ts">
+  import { Datepicker, P } from "flowbite-svelte";
+</script>
+
+<div class="mb-64 md:w-1/2">
+  <Datepicker locale="de-DE" translationLocale="en-US" />
+</div>
+```
+
 ## Component data
 
 ### Datepicker
-
-#### Types
-
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L487)
 
 #### Props
 
@@ -277,7 +287,10 @@ Use `availableFrom` and/or `availableTo` props to restrict the selectable date r
 - availableFrom: null
 - availableTo: null
 - locale: "default"
-- firstDayOfWeek: 0
+- translationLocale: locale
+- // NEW: Separate locale for translations
+- defaults to locale for backward compatibility
+    firstDayOfWeek: 0
 - dateFormat
 - placeholder: "Select date"
 - disabled: false

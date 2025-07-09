@@ -6,41 +6,41 @@
   import { Button, ToolbarButton, type DatepickerProps, cn } from "$lib";
   import { datepicker } from "./theme";
 
-  let { 
-    value = $bindable(), 
-    defaultDate = null, 
-    range = false, 
-    rangeFrom = $bindable(), 
-    rangeTo = $bindable(), 
-    availableFrom = null, 
-    availableTo = null, 
-    locale = "default", 
+  let {
+    value = $bindable(),
+    defaultDate = null,
+    range = false,
+    rangeFrom = $bindable(),
+    rangeTo = $bindable(),
+    availableFrom = null,
+    availableTo = null,
+    locale = "default",
     translationLocale = locale, // NEW: Separate locale for translations, defaults to locale for backward compatibility
-    firstDayOfWeek = 0, 
-    dateFormat, 
-    placeholder = "Select date", 
-    disabled = false, 
-    required = false, 
-    inputClass = "", 
-    color = "primary", 
-    inline = false, 
-    autohide = true, 
-    showActionButtons = false, 
-    title = "", 
-    onselect, 
-    onclear, 
-    onapply, 
-    btnClass, 
-    inputmode = "none", 
-    classes, 
-    monthColor = "alternative", 
-    monthBtnSelected = "bg-primary-500 text-white", 
-    monthBtn = "text-gray-700 dark:text-gray-300", 
-    class: className 
+    firstDayOfWeek = 0,
+    dateFormat,
+    placeholder = "Select date",
+    disabled = false,
+    required = false,
+    inputClass = "",
+    color = "primary",
+    inline = false,
+    autohide = true,
+    showActionButtons = false,
+    title = "",
+    onselect,
+    onclear,
+    onapply,
+    btnClass,
+    inputmode = "none",
+    classes,
+    monthColor = "alternative",
+    monthBtnSelected = "bg-primary-500 text-white",
+    monthBtn = "text-gray-700 dark:text-gray-300",
+    class: className
   }: DatepickerProps & { translationLocale?: string } = $props();
 
   const dateFormatDefault = { year: "numeric", month: "long", day: "numeric" };
-  
+
   // Internal state
   let isOpen: boolean = $state(inline);
   let showMonthSelector: boolean = $state(false);
@@ -93,17 +93,13 @@
 
   // MODIFIED: Use translationLocale for weekday names
   const getWeekdayNames = (): string[] => {
-    return Array.from({ length: 7 }, (_, i) => 
-      new Date(1970, 0, 5 + i + firstDayOfWeek).toLocaleDateString(translationLocale, { weekday: "short" })
-    );
+    return Array.from({ length: 7 }, (_, i) => new Date(1970, 0, 5 + i + firstDayOfWeek).toLocaleDateString(translationLocale, { weekday: "short" }));
   };
   let weekdays = $derived(getWeekdayNames());
 
   // MODIFIED: Use translationLocale for month names
   const getMonthNames = (): string[] => {
-    return Array.from({ length: 12 }, (_, i) => 
-      new Date(2000, i, 1).toLocaleDateString(translationLocale, { month: "short" })
-    );
+    return Array.from({ length: 12 }, (_, i) => new Date(2000, i, 1).toLocaleDateString(translationLocale, { month: "short" }));
   };
   let monthNames = $derived(getMonthNames());
 

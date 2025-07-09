@@ -14,7 +14,7 @@
 </script>
 
 <div class="relative">
-  <div class="overflow-x-scroll rounded-lg bg-gray-50 p-4 mt-9 dark:bg-gray-700">
+  <div class="mt-9 overflow-x-scroll rounded-lg bg-gray-50 p-4 dark:bg-gray-700">
     <pre><code id="code-block">pnpm i -D @flowbite-svelte-plugins/texteditor@latest lowlight @tiptap/core@{tiptapVersion}
 </code></pre>
   </div>

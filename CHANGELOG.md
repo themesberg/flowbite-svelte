@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.8.5
+
+### Patch Changes
+
+- - feat: add translationLocale prop to separate date formatting from UI language
+
+  Allows using different locales for date formatting vs UI text translation.
+  Maintains backward compatibility - translationLocale defaults to locale.
+
+  Example: locale="de-DE" translationLocale="en-US" gives German date format with English text.
+
 ## 1.8.4
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { TextEditor, UndoRedoButtonGroup, DragHandle } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
+  import { TextEditor, UndoRedoButtonGroup, DragHandle } from "@flowbite-svelte-plugins/texteditor";
+  import type { Editor } from "@tiptap/core";
 
   let editorInstance = $state<Editor | null>(null);
 
@@ -16,7 +16,7 @@
       `;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content} contentprops={{ id: 'drag-handle-wrapper' }}>
+<TextEditor bind:editor={editorInstance} {content} contentprops={{ id: "drag-handle-wrapper" }}>
   <UndoRedoButtonGroup editor={editorInstance} />
   <DragHandle editor={editorInstance} />
 </TextEditor>

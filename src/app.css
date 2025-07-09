@@ -323,15 +323,15 @@ color utility to any element that depends on these defaults.
   }
 
   .Tiptap-invisible-character--space::before {
-    content: '·';
+    content: "·";
   }
 
   .Tiptap-invisible-character--break::before {
-    content: '¬';
+    content: "¬";
   }
 
   .Tiptap-invisible-character--paragraph::before {
-    content: '¶';
+    content: "¶";
   }
 
   .Tiptap-invisible-character + img.ProseMirror-separator {
@@ -380,7 +380,7 @@ color utility to any element that depends on these defaults.
   }
 
   .tiptap .details > button::before {
-    content: '▶';
+    content: "▶";
     display: inline-block;
     position: relative;
   }
@@ -397,12 +397,12 @@ color utility to any element that depends on these defaults.
     margin: 0;
   }
 
-  .tiptap .details > div > [data-type='detailsContent'] > :last-child {
+  .tiptap .details > div > [data-type="detailsContent"] > :last-child {
     margin-top: 0.5rem !important;
     margin-bottom: 0.5rem !important;
   }
 
-  .tiptap .details > div > [data-type='detailsContent'] {
+  .tiptap .details > div > [data-type="detailsContent"] {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
@@ -412,59 +412,59 @@ color utility to any element that depends on these defaults.
   }
 
   /* drag handle */
-  [id^='drag-handle-'] ::selection {
+  [id^="drag-handle-"] ::selection {
     background-color: #70cff850;
   }
 
-  .dark [id^='drag-handle-'] .ProseMirror-hideselection *::selection {
+  .dark [id^="drag-handle-"] .ProseMirror-hideselection *::selection {
     background-color: #e3508950 !important;
   }
 
-  [id^='drag-handle-'] .ProseMirror {
+  [id^="drag-handle-"] .ProseMirror {
     padding: 1rem 1rem 1rem 0;
     position: relative;
   }
 
-  [id^='drag-handle-'] .ProseMirror * {
+  [id^="drag-handle-"] .ProseMirror * {
     margin-top: 0.75em;
   }
 
-  [id^='drag-handle-'] .ProseMirror > * {
+  [id^="drag-handle-"] .ProseMirror > * {
     margin-left: 3rem;
   }
 
-  [id^='drag-handle-'] .ProseMirror .ProseMirror-widget * {
+  [id^="drag-handle-"] .ProseMirror .ProseMirror-widget * {
     margin-top: auto;
   }
 
-  [id^='drag-handle-'] .ProseMirror ul,
-  [id^='drag-handle-'] .ProseMirror ol {
+  [id^="drag-handle-"] .ProseMirror ul,
+  [id^="drag-handle-"] .ProseMirror ol {
     padding: 0 1rem;
   }
 
-  [id^='drag-handle-'] .ProseMirror-noderangeselection *::selection {
+  [id^="drag-handle-"] .ProseMirror-noderangeselection *::selection {
     background: transparent;
   }
 
-  [id^='drag-handle-'] .ProseMirror-hideselection *::selection {
+  [id^="drag-handle-"] .ProseMirror-hideselection *::selection {
     background-color: #70cff850 !important;
   }
 
-  [id^='drag-handle-'] .ProseMirror-noderangeselection * {
+  [id^="drag-handle-"] .ProseMirror-noderangeselection * {
     caret-color: transparent;
   }
 
-  [id^='drag-handle-'] .ProseMirror-selectednode,
-  [id^='drag-handle-'] .ProseMirror-selectednoderange {
+  [id^="drag-handle-"] .ProseMirror-selectednode,
+  [id^="drag-handle-"] .ProseMirror-selectednoderange {
     position: relative;
   }
 
-  [id^='drag-handle-'] .ProseMirror-selectednode::before,
-  [id^='drag-handle-'] .ProseMirror-selectednoderange::before {
+  [id^="drag-handle-"] .ProseMirror-selectednode::before,
+  [id^="drag-handle-"] .ProseMirror-selectednoderange::before {
     position: absolute;
     pointer-events: none;
     z-index: -1;
-    content: '';
+    content: "";
     top: -0.25rem;
     left: -0.25rem;
     right: -0.25rem;
@@ -473,13 +473,13 @@ color utility to any element that depends on these defaults.
     border-radius: 0.2rem;
   }
 
-  [id^='drag-handle-'] .drag-handle {
+  [id^="drag-handle-"] .drag-handle {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     width: 1rem;
     height: 1.25rem;
-    content: '⠿';
+    content: "⠿";
     margin-top: 0.3rem;
     /* top: 1rem !important; */
     font-weight: 700;
@@ -492,17 +492,17 @@ color utility to any element that depends on these defaults.
     pointer-events: auto !important; */
   }
 
-  .dark [id^='drag-handle-'] .drag-handle {
+  .dark [id^="drag-handle-"] .drag-handle {
     background: #ffffff;
     color: #179df186;
   }
 
-  [id^='drag-handle-'] .drag-handle:hover {
+  [id^="drag-handle-"] .drag-handle:hover {
     transform: scale(1.1) !important;
   }
 
   /* emoji */
-  [data-type='emoji'] {
+  [data-type="emoji"] {
     img {
       height: 1em;
       width: 1em;
@@ -513,7 +513,7 @@ color utility to any element that depends on these defaults.
   }
 
   /* mention */
-  [data-type='mention'] {
+  [data-type="mention"] {
     background-color: rgba(88, 5, 255, 0.05);
     border-radius: 0.4rem;
     box-decoration-break: clone;
@@ -619,7 +619,7 @@ color utility to any element that depends on these defaults.
     color: #666;
   }
 
-  [data-type='detailsContent'].is-empty::before {
+  [data-type="detailsContent"].is-empty::before {
     color: var(--gray-4);
     content: attr(data-placeholder);
     float: left;
@@ -629,11 +629,11 @@ color utility to any element that depends on these defaults.
     top: 0.5rem;
   }
 
-  .dark [data-type='detailsContent'].is-empty::before {
+  .dark [data-type="detailsContent"].is-empty::before {
     color: #666;
   }
 
-  [id^='drag-handle-'] [data-type='detailsContent'].is-empty::before {
+  [id^="drag-handle-"] [data-type="detailsContent"].is-empty::before {
     top: 0.5rem;
   }
 
@@ -669,7 +669,7 @@ color utility to any element that depends on these defaults.
 
   .tiptap table .selectedCell:after {
     background: var(--gray-2);
-    content: '';
+    content: "";
     left: 0;
     right: 0;
     top: 0;
@@ -728,11 +728,11 @@ color utility to any element that depends on these defaults.
     border-radius: 0.25rem;
   }
 
-  .tiptap .tiptap-mathematics-render[data-type='inline-math'] {
+  .tiptap .tiptap-mathematics-render[data-type="inline-math"] {
     display: inline-block;
   }
 
-  .tiptap .tiptap-mathematics-render[data-type='block-math'] {
+  .tiptap .tiptap-mathematics-render[data-type="block-math"] {
     display: block;
     margin: 1rem 0;
     padding: 1rem;
@@ -749,13 +749,13 @@ color utility to any element that depends on these defaults.
   }
 
   /* Task list specific styles */
-  .tiptap ul[data-type='taskList'] {
+  .tiptap ul[data-type="taskList"] {
     list-style: none;
     margin-left: 0;
     padding: 0.2em;
   }
 
-  .tiptap ul[data-type='taskList'] li {
+  .tiptap ul[data-type="taskList"] li {
     align-items: flex-start;
     display: flex;
     margin: 0 !important;
@@ -763,13 +763,13 @@ color utility to any element that depends on these defaults.
     gap: 0.5rem;
   }
 
-  .tiptap ul[data-type='taskList'] li > label {
+  .tiptap ul[data-type="taskList"] li > label {
     flex: 0 0 auto;
     user-select: none;
     margin-top: -0.1em !important;
   }
 
-  .tiptap ul[data-type='taskList'] li > div {
+  .tiptap ul[data-type="taskList"] li > div {
     flex: 1 1 auto;
     margin: 0 !important;
     padding: 0 !important;
@@ -777,25 +777,25 @@ color utility to any element that depends on these defaults.
     min-width: 0;
   }
 
-  .tiptap ul[data-type='taskList'] input[type='checkbox'] {
+  .tiptap ul[data-type="taskList"] input[type="checkbox"] {
     cursor: pointer;
     /* Ensure consistent checkbox sizing */
     margin: 0;
     flex-shrink: 0;
   }
 
-  .tiptap ul[data-type='taskList'] ul[data-type='taskList'] {
+  .tiptap ul[data-type="taskList"] ul[data-type="taskList"] {
     margin: 0 !important;
   }
 
   /* Optional: Handle the span element in your label if it's for custom styling */
-  .tiptap ul[data-type='taskList'] li > label span {
+  .tiptap ul[data-type="taskList"] li > label span {
     display: inline-block;
     /* Add custom checkbox styles here if needed */
   }
 
   /* Ensure paragraphs in task list items don't add extra spacing */
-  .tiptap ul[data-type='taskList'] li p {
+  .tiptap ul[data-type="taskList"] li p {
     margin: 0 !important;
   }
 
@@ -903,7 +903,7 @@ color utility to any element that depends on these defaults.
   }
 
   #toc-ex .table-of-contents a::before {
-    content: attr(data-item-index) '.';
+    content: attr(data-item-index) ".";
   }
 
   /* Youtube embed */

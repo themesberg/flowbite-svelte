@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { FormatButtonGroup, TextEditor } from '@flowbite-svelte-plugins/texteditor';
-  import type { Editor } from '@tiptap/core';
-  import { Button } from 'flowbite-svelte';
+  import { FormatButtonGroup, TextEditor } from "@flowbite-svelte-plugins/texteditor";
+  import type { Editor } from "@tiptap/core";
+  import { Button } from "flowbite-svelte";
 
   let editorInstance = $state<Editor | null>(null);
 
   function getEditorContent() {
-    return editorInstance?.getHTML() ?? '';
+    return editorInstance?.getHTML() ?? "";
   }
 
   function setEditorContent(content: string) {
@@ -26,11 +26,11 @@
 }</code></pre><p>Learn more about all components from the <a href="https://flowbite-svelte.com/docs/pages/quickstart">Flowbite-Svelte Docs</a>.</p>`;
 </script>
 
-<TextEditor bind:editor={editorInstance} {content} contentprops={{ id: 'formats-ex' }}>
+<TextEditor bind:editor={editorInstance} {content} contentprops={{ id: "formats-ex" }}>
   <FormatButtonGroup editor={editorInstance} />
 </TextEditor>
 
 <div class="mt-4">
   <Button onclick={() => console.log(getEditorContent())}>Get Content</Button>
-  <Button onclick={() => setEditorContent('<p>New content!</p>')}>Set Content</Button>
+  <Button onclick={() => setEditorContent("<p>New content!</p>")}>Set Content</Button>
 </div>
