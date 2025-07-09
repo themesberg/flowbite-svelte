@@ -10,7 +10,7 @@
   const paramsDefault = { duration: 100, easing: sineIn };
   const paramsOptions = $derived(params ?? paramsDefault);
 
-  const { base, header: headerCls, footer: footerCls, body, closeBtn } = $derived(modalTheme({ placement, size }));
+  const { base, form: formCls, header: headerCls, footer: footerCls, body, closeBtn } = $derived(modalTheme({ placement, size }));
 
   const close = (dlg: HTMLDialogElement) => (open = false);
   // @ts-expect-error: dlg.requestClose may not be supported
@@ -103,7 +103,7 @@
 {#if open}
   <dialog {@attach init} use:focusTrap class={base({ class: clsx(className) })} tabindex="-1" onsubmit={_onsubmit} oncancel={_oncancel} onclick={_onclick} ontoggle={_ontoggle} transition:transition|global={paramsOptions as ParamsType} {...restProps}>
     {#if form}
-      <form method="dialog">
+      <form method="dialog" class={formCls()}>
         {@render content()}
       </form>
     {:else}
