@@ -40,7 +40,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L393)
+[CardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L394)
 ## Props
 @prop children
 @prop color = "gray"

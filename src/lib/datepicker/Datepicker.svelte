@@ -5,41 +5,9 @@
   import { fade } from "svelte/transition";
   import { Button, ToolbarButton, type DatepickerProps, cn } from "$lib";
   import { datepicker } from "./theme";
-  import { parse, isValid, format } from 'date-fns';
+  import { parse, isValid, addDays, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, isWithinInterval } from "date-fns";
 
-  let {
-    value = $bindable(),
-    defaultDate = null,
-    range = false,
-    rangeFrom = $bindable(),
-    rangeTo = $bindable(),
-    availableFrom = null,
-    availableTo = null,
-    locale = "default",
-    translationLocale = locale, // NEW: Separate locale for translations, defaults to locale for backward compatibility
-    firstDayOfWeek = 0,
-    dateFormat,
-    placeholder = "Select date",
-    disabled = false,
-    required = false,
-    inputClass = "",
-    color = "primary",
-    inline = false,
-    autohide = true,
-    showActionButtons = false,
-    title = "",
-    onselect,
-    onclear,
-    onapply,
-    btnClass,
-    inputmode = "none",
-    classes,
-    monthColor = "alternative",
-    monthBtnSelected = "bg-primary-500 text-white",
-    monthBtn = "text-gray-700 dark:text-gray-300",
-    class: className,
-    elementRef = $bindable() // NEW: Add elementRef prop
-  }: DatepickerProps & { translationLocale?: string; elementRef?: HTMLInputElement } = $props();
+  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), availableFrom = null, availableTo = null, locale = "default", translationLocale = locale, firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, inputmode = "none", classes, monthColor = "alternative", monthBtnSelected = "bg-primary-500 text-white", monthBtn = "text-gray-700 dark:text-gray-300", class: className, elementRef = $bindable() }: DatepickerProps = $props();
 
   const dateFormatDefault = { year: "numeric", month: "long", day: "numeric" };
 
@@ -71,39 +39,19 @@
   });
 
   function getDaysInMonth(date: Date): Date[] {
-    const year = date.getFullYear();
-    const month = date.getMonth();
-    const firstDay = new Date(year, month, 0);
-    const lastDay = new Date(year, month + 1, 0);
-    const daysArray: Date[] = [];
+    const monthStart = startOfMonth(date);
+    const monthEnd = endOfMonth(date);
+    const calendarStart = startOfWeek(monthStart, { weekStartsOn: firstDayOfWeek });
+    const calendarEnd = endOfWeek(monthEnd, { weekStartsOn: firstDayOfWeek });
 
-    // Add days from previous month to fill the first week
-    let start = firstDay.getDay() - firstDayOfWeek;
-    if (start < 0) start += 7;
-    for (let i = 0; i < start; i++) {
-      daysArray.unshift(new Date(year, month, -i));
-    }
-
-    // Add days of the current month
-    for (let i = 1; i <= lastDay.getDate(); i++) {
-      daysArray.push(new Date(year, month, i));
-    }
-
-    // Add days from next month to fill the last week
-    const remainingDays = 7 - (daysArray.length % 7);
-    if (remainingDays < 7) {
-      for (let i = 1; i <= remainingDays; i++) {
-        daysArray.push(new Date(year, month + 1, i));
-      }
-    }
-
-    return daysArray;
+    return eachDayOfInterval({ start: calendarStart, end: calendarEnd });
   }
 
   // MODIFIED: Use translationLocale for weekday names
   const getWeekdayNames = (): string[] => {
     return Array.from({ length: 7 }, (_, i) => new Date(1970, 0, 5 + i + firstDayOfWeek).toLocaleDateString(translationLocale, { weekday: "short" }));
   };
+
   let weekdays = $derived(getWeekdayNames());
 
   // MODIFIED: Use translationLocale for month names
@@ -112,7 +60,7 @@
   };
   let monthNames = $derived(getMonthNames());
 
-  const addDay = (date: Date, increment: number): Date => new Date(date.getFullYear(), date.getMonth(), date.getDate() + increment);
+  const addDay = (date: Date, increment: number): Date => addDays(date, increment);
 
   function changeMonth(increment: number) {
     currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + increment, 1);
@@ -170,35 +118,29 @@
     }
   }
 
-  // function handleInputChange() {
-  //   const date = new Date(inputElement?.value ?? "");
-  //   if (!isNaN(date.getTime())) {
-  //     handleDaySelect(date);
-  //   }
-  // }
   function handleInputChangeWithDateFns() {
     const inputValue = inputElement?.value?.trim();
     if (!inputValue) return;
-    
+
     // Get the actual format pattern
     const formatPattern = getDateFormatPattern();
-    
+
     try {
       // Parse with the exact format expected
       const parsedDate = parse(inputValue, formatPattern, new Date());
-      
+
       if (!isValid(parsedDate)) {
         inputElement?.setCustomValidity(`Please enter date in format: ${formatPattern}`);
         return;
       }
-      
-      inputElement?.setCustomValidity('');
-      
+
+      inputElement?.setCustomValidity("");
+
       if (!isDateAvailable(parsedDate)) {
-        inputElement?.setCustomValidity('Selected date is not available');
+        inputElement?.setCustomValidity("Selected date is not available");
         return;
       }
-      
+
       handleDaySelect(parsedDate);
     } catch (error) {
       inputElement?.setCustomValidity(`Please enter date in format: ${formatPattern}`);
@@ -209,26 +151,26 @@
     // Test with a known date to determine format
     const testDate = new Date(2025, 0, 15); // January 15, 2025
     const formatted = formatDate(testDate);
-    
+
     // Map common formats to date-fns patterns
     if (formatted.match(/^\d{1,2}\/\d{1,2}\/\d{4}$/)) {
       // Could be DD/MM/YYYY or MM/DD/YYYY, need to determine
       const testDate2 = new Date(2025, 11, 3); // December 3, 2025
       const formatted2 = formatDate(testDate2);
-      
-      if (formatted2.startsWith('3/') || formatted2.startsWith('03/')) {
-        return 'd/M/yyyy'; // DD/MM/YYYY format
+
+      if (formatted2.startsWith("3/") || formatted2.startsWith("03/")) {
+        return "d/M/yyyy"; // DD/MM/YYYY format
       } else {
-        return 'M/d/yyyy'; // MM/DD/YYYY format
+        return "M/d/yyyy"; // MM/DD/YYYY format
       }
     }
-    
+
     if (formatted.match(/^\d{4}-\d{1,2}-\d{1,2}$/)) {
-      return 'yyyy-M-d'; // ISO format
+      return "yyyy-M-d"; // ISO format
     }
-    
+
     // Add more patterns as needed
-    return 'M/d/yyyy'; // Default fallback
+    return "M/d/yyyy"; // Default fallback
   }
 
   function handleClickOutside(event: MouseEvent) {
@@ -240,9 +182,9 @@
 
   // MODIFIED: Use locale for formatting (not translationLocale)
   const formatDate = (date?: Date): string => date?.toLocaleDateString(locale, dateFormat) ?? "";
-  const isSameDate = (date1?: Date, date2?: Date): boolean => date1?.toDateString() === date2?.toDateString();
+  const isSameDate = (date1?: Date, date2?: Date): boolean => (date1 && date2 ? isSameDay(date1, date2) : false);
   const isToday = (day: Date): boolean => isSameDate(day, new Date());
-  const isInRange = (day: Date): boolean => !!(range && rangeFrom && rangeTo && day > rangeFrom && day < rangeTo);
+  const isInRange = (day: Date): boolean => !!(range && rangeFrom && rangeTo && isWithinInterval(day, { start: rangeFrom, end: rangeTo }));
 
   let isSelected = $derived((day: Date): boolean => (range ? isSameDate(day, rangeFrom) || isSameDate(day, rangeTo) : isSameDate(day, value)));
 
@@ -412,3 +354,42 @@
     </div>
   {/if}
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L487)
+## Props
+@prop value = $bindable()
+@prop defaultDate = null
+@prop range = false
+@prop rangeFrom = $bindable()
+@prop rangeTo = $bindable()
+@prop availableFrom = null
+@prop availableTo = null
+@prop locale = "default"
+@prop translationLocale = locale
+@prop firstDayOfWeek = 0
+@prop dateFormat
+@prop placeholder = "Select date"
+@prop disabled = false
+@prop required = false
+@prop inputClass = ""
+@prop color = "primary"
+@prop inline = false
+@prop autohide = true
+@prop showActionButtons = false
+@prop title = ""
+@prop onselect
+@prop onclear
+@prop onapply
+@prop btnClass
+@prop inputmode = "none"
+@prop classes
+@prop monthColor = "alternative"
+@prop monthBtnSelected = "bg-primary-500 text-white"
+@prop monthBtn = "text-gray-700 dark:text-gray-300"
+@prop class: className
+@prop elementRef = $bindable()
+-->

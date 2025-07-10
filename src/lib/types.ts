@@ -6,6 +6,7 @@ import type { HTMLAnchorAttributes, HTMLAttributes, HTMLBlockquoteAttributes, HT
 import { type Writable } from "svelte/store";
 import type { BlurParams, EasingFunction, FadeParams, FlyParams, ScaleParams, SlideParams, TransitionConfig } from "svelte/transition";
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Day } from "date-fns";
 
 // component variants
 import type { DatepickerVariants } from "$lib/datepicker/theme";
@@ -481,7 +482,6 @@ export interface DarkmodeProps extends HTMLButtonAttributes {
 }
 
 // datepicker
-// datepicker
 export type DateOrRange = Date | { from?: Date; to?: Date };
 
 export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes<HTMLDivElement>, "onselect"> {
@@ -493,7 +493,7 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   availableFrom?: Date | null;
   availableTo?: Date | null;
   locale?: string;
-  firstDayOfWeek?: number;
+  firstDayOfWeek?: Day;
   dateFormat?: Intl.DateTimeFormatOptions;
   placeholder?: string;
   disabled?: boolean;
@@ -512,6 +512,8 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   monthColor?: ButtonProps["color"];
   monthBtnSelected?: ClassValue;
   monthBtn?: ClassValue;
+  translationLocale?: string;
+  elementRef?: HTMLInputElement;
 }
 
 // device-mockups
