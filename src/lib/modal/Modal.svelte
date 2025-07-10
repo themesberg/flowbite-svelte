@@ -119,10 +119,14 @@
 [ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1066)
 ## Props
 @prop children
+@prop onaction = ()
 @prop oncancel
 @prop onsubmit
+@prop ontoggle
+@prop form = false
 @prop modal = true
 @prop autoclose = false
+@prop focustrap = false
 @prop header
 @prop footer
 @prop title

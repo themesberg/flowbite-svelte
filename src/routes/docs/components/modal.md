@@ -30,10 +30,9 @@ Get started with multiple sizes, colors, and styles built with the utility class
 
 Modal visibility (open/close) is controlled by the `open` property. You can bind it to a variable that other element (usually button) will toggle.
 
-Upon action taken from user i.e. pressing the action button, the `onaction` callback function will be called. 
+Upon action taken from user i.e. pressing the action button, the `onaction` callback function will be called.
 
 Modal can me dismissed (canceled) by pressing `Esc` key, clicking outside of it or clicking the close button.
-
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
@@ -42,7 +41,7 @@ Modal can me dismissed (canceled) by pressing `Esc` key, clicking outside of it 
 </script>
 
 <Button onclick={() => (defaultModal = true)}>Default modal</Button>
-<Modal title="Terms of Service" form bind:open={defaultModal} onaction={({action}) => alert(`Handle "${action}"`)}>
+<Modal title="Terms of Service" form bind:open={defaultModal} onaction={({ action }) => alert(`Handle "${action}"`)}>
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
   <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
 
@@ -53,20 +52,20 @@ Modal can me dismissed (canceled) by pressing `Esc` key, clicking outside of it 
 </Modal>
 ```
 
-This component is built upon the **dialog - form** pair (note the `form` property set on dialog above): 
+This component is built upon the **dialog - form** pair (note the `form` property set on dialog above):
+
 ```html
-<dialog >
-  <form method="dialog">
-    ...
-  </form>
+<dialog>
+  <form method="dialog">...</form>
 </dialog>
 ```
 
 In such a structure, it is enough to press `<button type="submit" value="somevalue">` to close the dialog and sets its return value to the `value` parameter of that submitter. Use a convenience callback `onaction` to get the action info:
+
 ```typescript
 function onaction(params: {
-  action: string;  // name of the action
-  data: FormData;  // form data - if other then buttons form elements used
+  action: string; // name of the action
+  data: FormData; // form data - if other then buttons form elements used
 }): void;
 ```
 
@@ -108,17 +107,16 @@ Notice as well the lack of the `footer` snippet and the transition set to `slide
 
 Use this modal example with form input element to receive information from your users with the advantage of not having to link to another page but keeping the user on the currently active page. A great example would be a login or a register form.
 
-
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal, Label, Input, Checkbox } from "flowbite-svelte";
   let formModal = $state(false);
   let error = $state("");
 
-  function onaction({action, data}) {
+  function onaction({ action, data }) {
     error = "";
     // Check the data validity, return false to prevent dialog closing; anything else to proceed
-    if(action == "login" && data.get('password').length < 4){
+    if (action == "login" && data.get("password").length < 4) {
       error = "Password must have at least 4 characters";
       return false;
     }
@@ -239,7 +237,7 @@ This example shows the `header` customization as well.
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
   <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
   {#snippet footer()}
-    <Button type="submit" value="accept" >I accept</Button>
+    <Button type="submit" value="accept">I accept</Button>
     <Button type="submit" color="alternative">Decline</Button>
   {/snippet}
 </Modal>
@@ -249,7 +247,7 @@ This example shows the `header` customization as well.
 
 You can use `Tab` and `Shift+Tab` to navigate between buttons or links in the modal. Element `<dialog>` prevents the focus from going back to the current document body outside the dialog itself, however it allows focus to go out to the browser user interface.
 
-You can force the *focus trap* option to disallow focus to leave the page by setting `focustrap` prop to `true`. Note that this is discurage as, in case of problems, user won't be able to get to browser UX with keyboard only.
+You can force the _focus trap_ option to disallow focus to leave the page by setting `focustrap` prop to `true`. Note that this is discurage as, in case of problems, user won't be able to get to browser UX with keyboard only.
 
 Note the `autofocus` set on `Input`. See [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog#usage_notes)
 
@@ -264,9 +262,12 @@ Note the `autofocus` set on `Input`. See [MDN Web Docs](https://developer.mozill
 <Checkbox bind:checked>Focus trap</Checkbox>
 
 <Modal form bind:open focustrap={checked} size="sm" title="Notify user">
-  <Label class="space-y-2"><span>Email:</span><Input autofocus /></Label>
+  <Label class="space-y-2">
+    <span>Email:</span>
+    <Input autofocus />
+  </Label>
   {#snippet footer()}
-    <Button type="submit" value="notify" >Notify</Button>
+    <Button type="submit" value="notify">Notify</Button>
     <Button type="submit" color="alternative">Cancel</Button>
   {/snippet}
 </Modal>
@@ -441,21 +442,20 @@ If you want the dialog without the default form inside or you want to manage the
 <Button onclick={() => (open = true)}>No form modal</Button>
 <Modal bind:open title="Custom form">
   <form method="dialog" name="my_form" novalidate>
-    <fieldset class="flex gap-4 p-4 border">
+    <fieldset class="flex gap-4 border p-4">
       <legend class="px-2">Custom form</legend>
-        <Input required placeholder="This is separate form" />
-        <Button type="submit" value="accept" class="shrink-0">Submit button</Button>
+      <Input required placeholder="This is separate form" />
+      <Button type="submit" value="accept" class="shrink-0">Submit button</Button>
     </fieldset>
   </form>
 
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
 
   {#snippet footer()}
-      <Button type="submit" value="accept">Submit button not in form</Button>
-      <Button onclick={() => (open = false)} color="alternative">Button with 'onclick' handler</Button>
+    <Button type="submit" value="accept">Submit button not in form</Button>
+    <Button onclick={() => (open = false)} color="alternative">Button with 'onclick' handler</Button>
   {/snippet}
 </Modal>
-
 ```
 
 ## Modal events
@@ -476,19 +476,12 @@ You can as well use the `onsubmit` event handler which is bubbled event from the
 
 <Button onclick={() => (open = true)}>Default modal</Button>
 
-<Modal
-  form
-  bind:open
-  onsubmit={(ev) => alert(`SUBMIT: Form is about to be submitted.`)}
-  oncancel={(ev) => alert("CANCEL: User canceled the dialog")}
-  onclose={(ev) => alert(`CLOSE: Dialog closed with "${ev.target.returnValue || "no"}" action.`)}
-  title="Terms of Service"
->
+<Modal form bind:open onsubmit={(ev) => alert(`SUBMIT: Form is about to be submitted.`)} oncancel={(ev) => alert("CANCEL: User canceled the dialog")} onclose={(ev) => alert(`CLOSE: Dialog closed with "${ev.target.returnValue || "no"}" action.`)} title="Terms of Service">
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
   <P>The European Union's General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
   {#snippet footer()}
-      <Button type="submit" value="accept">I accept</Button>
-      <Button type="submit" value="decline" color="alternative">Decline</Button>
+    <Button type="submit" value="accept">I accept</Button>
+    <Button type="submit" value="decline" color="alternative">Decline</Button>
   {/snippet}
 </Modal>
 ```
