@@ -33,7 +33,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L345)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L346)
 ## Props
 @prop children
 @prop pill
