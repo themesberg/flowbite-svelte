@@ -5,6 +5,7 @@
   import { fade } from "svelte/transition";
   import { Button, ToolbarButton, type DatepickerProps, cn } from "$lib";
   import { datepicker } from "./theme";
+  import { parse, isValid, format } from 'date-fns';
 
   let {
     value = $bindable(),
@@ -169,11 +170,65 @@
     }
   }
 
-  function handleInputChange() {
-    const date = new Date(inputElement?.value ?? "");
-    if (!isNaN(date.getTime())) {
-      handleDaySelect(date);
+  // function handleInputChange() {
+  //   const date = new Date(inputElement?.value ?? "");
+  //   if (!isNaN(date.getTime())) {
+  //     handleDaySelect(date);
+  //   }
+  // }
+  function handleInputChangeWithDateFns() {
+    const inputValue = inputElement?.value?.trim();
+    if (!inputValue) return;
+    
+    // Get the actual format pattern
+    const formatPattern = getDateFormatPattern();
+    
+    try {
+      // Parse with the exact format expected
+      const parsedDate = parse(inputValue, formatPattern, new Date());
+      
+      if (!isValid(parsedDate)) {
+        inputElement?.setCustomValidity(`Please enter date in format: ${formatPattern}`);
+        return;
+      }
+      
+      inputElement?.setCustomValidity('');
+      
+      if (!isDateAvailable(parsedDate)) {
+        inputElement?.setCustomValidity('Selected date is not available');
+        return;
+      }
+      
+      handleDaySelect(parsedDate);
+    } catch (error) {
+      inputElement?.setCustomValidity(`Please enter date in format: ${formatPattern}`);
     }
+  }
+
+  function getDateFormatPattern(): string {
+    // Test with a known date to determine format
+    const testDate = new Date(2025, 0, 15); // January 15, 2025
+    const formatted = formatDate(testDate);
+    
+    // Map common formats to date-fns patterns
+    if (formatted.match(/^\d{1,2}\/\d{1,2}\/\d{4}$/)) {
+      // Could be DD/MM/YYYY or MM/DD/YYYY, need to determine
+      const testDate2 = new Date(2025, 11, 3); // December 3, 2025
+      const formatted2 = formatDate(testDate2);
+      
+      if (formatted2.startsWith('3/') || formatted2.startsWith('03/')) {
+        return 'd/M/yyyy'; // DD/MM/YYYY format
+      } else {
+        return 'M/d/yyyy'; // MM/DD/YYYY format
+      }
+    }
+    
+    if (formatted.match(/^\d{4}-\d{1,2}-\d{1,2}$/)) {
+      return 'yyyy-M-d'; // ISO format
+    }
+    
+    // Add more patterns as needed
+    return 'M/d/yyyy'; // Default fallback
   }
 
   function handleClickOutside(event: MouseEvent) {
@@ -275,7 +330,7 @@
 <div bind:this={datepickerContainerElement} class={["relative", inline && "inline-block"]}>
   {#if !inline}
     <div class="relative">
-      <input bind:this={inputElement} type="text" class={cn(input({ color }), inputClass)} {placeholder} value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)} onfocus={() => (isOpen = true)} oninput={handleInputChange} onkeydown={handleInputKeydown} {disabled} {required} {inputmode} aria-haspopup="dialog" />
+      <input bind:this={inputElement} type="text" class={cn(input({ color }), inputClass)} {placeholder} value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)} onfocus={() => (isOpen = true)} oninput={handleInputChangeWithDateFns} onkeydown={handleInputKeydown} {disabled} {required} {inputmode} aria-haspopup="dialog" />
       <button type="button" class={cn(button({ class: clsx(classes?.button) }), btnClass)} onclick={() => (isOpen = !isOpen)} {disabled} aria-label={isOpen ? "Close date picker" : "Open date picker"}>
         <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
           <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"></path>
