@@ -5,6 +5,7 @@ export type ModalVariants = VariantProps<typeof modal>;
 export const modal = tv({
   slots: {
     base: "backdrop:bg-black/80 open:flex flex-col w-full max-h-[90hv] rounded-lg divide-y text-gray-500 dark:text-gray-400 border-gray-300 dark:border-gray-800 divide-gray-300 dark:divide-gray-700 bg-white dark:bg-gray-800 pointer-events-auto",
+    form: "flex flex-col rounded-lg divide-y",
     header: "flex items-center p-4 md:p-5 justify-between rounded-t-lg shrink-0 text-xl font-semibold text-gray-900 dark:text-white",
     footer: "flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse rounded-b-lg shrink-0",
     body: "p-4 md:p-5 space-y-4 overflow-y-auto overscroll-contain",
