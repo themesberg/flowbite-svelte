@@ -4,15 +4,15 @@
 
 ### Minor Changes
 
-- - feat: Modal updates
-    - encourages usage of dialog/form structure
-    - introduces onaction handler
-    - keeps back compatibility: from is optional, autoclose still exists
-  - feat: Datepicker updates
-    - new dependency date-fns
-    - functions update using date-fns
-  - fix: #1660
-  - fix: #1659
+- feat: Modal updates
+  - encourages usage of dialog/form structure
+  - introduces onaction handler
+  - keeps back compatibility: from is optional, autoclose still exists
+- feat: Datepicker updates
+  - new dependency date-fns
+  - functions update using date-fns
+- fix: #1660
+- fix: #1659
 
 ## 1.8.6
 
