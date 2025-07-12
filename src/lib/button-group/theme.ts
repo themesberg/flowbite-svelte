@@ -15,3 +15,5 @@ const buttonGroup = tv({
 });
 
 export { buttonGroup };
+
+export type ButtonGroupTheme = string;

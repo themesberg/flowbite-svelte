@@ -1,2 +1,2 @@
 export { default as ButtonGroup } from "./ButtonGroup.svelte";
-export { buttonGroup } from "./theme";
+export { buttonGroup, type ButtonGroupTheme } from "./theme";

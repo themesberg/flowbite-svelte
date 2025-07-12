@@ -1,2 +1,2 @@
 export { default as Avatar } from "./Avatar.svelte";
-export { avatar } from "./theme";
+export { avatar, type AvatarTheme } from "./theme";

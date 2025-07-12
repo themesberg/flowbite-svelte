@@ -710,10 +710,6 @@
       "types": "./dist/tabs/Tabs.svelte.d.ts",
       "svelte": "./dist/tabs/Tabs.svelte"
     },
-    "./Theme.svelte": {
-      "types": "./dist/theme/Theme.svelte.d.ts",
-      "svelte": "./dist/theme/Theme.svelte"
-    },
     "./Activity.svelte": {
       "types": "./dist/timeline/Activity.svelte.d.ts",
       "svelte": "./dist/timeline/Activity.svelte"

@@ -152,3 +152,5 @@ const alert = tv({
 });
 
 export { alert, type AlertVariants };
+
+export type AlertTheme = string;
