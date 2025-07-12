@@ -1,23 +1,26 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { gradientButton } from ".";
+  import { gradientButton, type GradientButtonTheme } from ".";
   import { type GradientButtonProps, type SizeType, Button, cn } from "$lib";
+import { getTheme } from "$lib/theme/themeUtils";
 
   const group: SizeType = getContext("group");
 
   let { children, outline, pill, color = "blue", shadow, class: className, href, disabled, size, btnClass, ...restProps }: GradientButtonProps = $props();
 
+  const theme = getTheme("gradientButton");
+
   const { base, outlineWrapper } = $derived(gradientButton({ color, outline, pill, shadow, disabled, size, group: !!group }));
 </script>
 
 {#if outline}
-  <div class={cn(base(), className)}>
-    <Button {...restProps} class={cn(outlineWrapper(), btnClass)} {disabled} {href} {size}>
+  <div class={cn(base(), className, (theme as GradientButtonTheme)?.base)}>
+    <Button {...restProps} class={cn(outlineWrapper(), btnClass, (theme as GradientButtonTheme)?.outlineWrapper)} {disabled} {href} {size}>
       {@render children?.()}
     </Button>
   </div>
 {:else}
-  <Button {...restProps} class={cn(base(), className)} {disabled} {href} {size}>
+  <Button {...restProps} class={cn(base(), className, (theme as GradientButtonTheme)?.base)} {disabled} {href} {size}>
     {@render children?.()}
   </Button>
 {/if}

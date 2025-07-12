@@ -1,18 +1,22 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { type SizeType, type ButtonProps, cn } from "$lib";
-  import { button } from ".";
+import { getTheme } from "$lib/theme/themeUtils";
+  import { button, type ButtonTheme } from ".";
 
   const group: SizeType = getContext("group");
   const ctxDisabled: boolean | undefined = getContext("disabled");
 
   let { children, pill, outline = false, size = "md", color, shadow = false, tag = "button", disabled, class: className, ...restProps }: ButtonProps = $props();
+
+  const theme = getTheme("button");
+
   let actualSize = $derived(group ? "sm" : size);
   let actualColor = $derived(color ?? (group ? (outline ? "dark" : "alternative") : "primary"));
   let isDisabled = $derived(Boolean(ctxDisabled) || Boolean(disabled));
 
   const { base, outline: outline_, shadow: shadow_ } = $derived(button({ color: actualColor, size: actualSize, disabled: isDisabled, pill, group: !!group }));
-  let btnCls = $derived(cn(base(), outline && outline_(), shadow && shadow_(), className));
+  let btnCls = $derived(cn(base(), outline && outline_(), shadow && shadow_(), className, (theme as ButtonTheme)?.base));
 </script>
 
 {#if restProps.href === undefined}

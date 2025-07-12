@@ -1,12 +1,17 @@
 <script lang="ts">
-  import { bottomnavheaderitem } from ".";
+  import { bottomNavHeaderItem } from ".";
   import { type BottomNavHeaderItemProps, cn } from "$lib";
+import { getTheme } from "$lib/theme/themeUtils";
 
   let { itemName, active, class: className, ...restProps }: BottomNavHeaderItemProps = $props();
-  let base = $derived(bottomnavheaderitem({ active }));
+
+  // Theme context
+  const theme = getTheme("bottomNavHeaderItem");
+
+  let base = $derived(bottomNavHeaderItem({ active }));
 </script>
 
-<button {...restProps} class={cn(base, className)}>
+<button {...restProps} class={cn(base, className, theme)}>
   {itemName}
 </button>
 

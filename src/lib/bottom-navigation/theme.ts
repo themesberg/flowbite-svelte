@@ -99,14 +99,14 @@ export const bottomNavItem = tv({
   }
 });
 
-export const bottomnavheader = tv({
+export const bottomNavHeader = tv({
   slots: {
     innerDiv: "grid max-w-xs grid-cols-3 gap-1 p-1 mx-auto my-2 bg-gray-100 rounded-lg dark:bg-gray-600",
     outerDiv: "w-full"
   }
 });
 
-export const bottomnavheaderitem = tv({
+export const bottomNavHeaderItem = tv({
   base: "px-5 py-1.5 text-xs font-medium rounded-lg",
   variants: {
     active: {
@@ -115,3 +115,15 @@ export const bottomnavheaderitem = tv({
     }
   }
 });
+
+export type BottomNavSlots = keyof typeof bottomNav.slots;
+export type BottomNavTheme = Partial<Record<BottomNavSlots, string>>;
+// bottomNavItem
+export type BottomNavItemSlots = keyof typeof bottomNavItem.slots;
+export type BottomNavItemTheme = Partial<Record<BottomNavItemSlots, string>>;
+// bottomNavHeader
+export type BottomnavheaderSlots = keyof typeof bottomNavHeader.slots;
+export type BottomNavHeaderTheme = Partial<Record<BottomnavheaderSlots, string>>;
+// bottomNavHeaderItem
+export type bottomNavHeaderItemSlots = keyof typeof bottomNavHeaderItem.slots;
+export type BottomNavHeaderItemTheme = Partial<Record<bottomNavHeaderItemSlots, string>>;

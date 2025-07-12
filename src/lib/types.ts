@@ -22,7 +22,7 @@ import type { TableVariants } from "$lib/table/theme";
 import type { TabsVaraints } from "$lib/tabs/theme";
 import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
 import type { ProgressbarVariants, ProgressradialVariants } from "$lib/progress/theme";
-import { baseThemes } from "$lib/theme";
+// import { baseThemes } from "$lib/theme";
 import { timeline } from "$lib/timeline/theme";
 import type { ToastVaraints } from "$lib/toast/theme";
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "$lib/toolbar/theme";
@@ -65,16 +65,6 @@ import type { SpanVariants } from "$lib/typography/span/theme";
 import type { ClipboardVariants } from "./clipboard/theme";
 
 // end of component variants
-
-export interface ThemeConfig {
-  slots?: Record<string, object | string>;
-  variants?: Record<string, object>;
-  compoundVariants?: Array<Record<string, object>>;
-  defaultVariants?: Record<string, object>;
-}
-export interface ThemeType {
-  [key: string]: ReturnType<typeof tv>;
-}
 
 export declare const xs = "xs";
 export declare const sm = "sm";
@@ -1746,11 +1736,8 @@ export interface TabCtxType {
 }
 
 // theme
-export type BaseThemes = typeof baseThemes;
-
-export interface ThemeProps {
-  children: Snippet;
-  theme?: BaseThemes;
+export interface ThemeConfig {
+  [key: string]: string | ThemeConfig;
 }
 
 // timeline

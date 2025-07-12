@@ -1,15 +1,13 @@
 <script lang="ts">
-  import { setContext, getContext } from "svelte";
+  import { setContext } from "svelte";
   import { writable } from "svelte/store";
   import { accordion } from "./";
-  import { type AccordionProps, type BaseThemes, cn } from "$lib";
+  import { type AccordionProps, cn } from "$lib";
+import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, ...restProps }: AccordionProps = $props();
 
-  // Get merged theme from context
-  const context = getContext<BaseThemes>("themeConfig");
-  // Use context theme if available, otherwise fallback to default
-  const accordionTheme = context?.accordion || accordion;
+  const theme = getTheme("accordion");
 
   const ctx = {
     flush,
@@ -20,10 +18,11 @@
 
   setContext("ctx", ctx);
   setContext("ctxTransitionType", transitionType);
-  const base = $derived(cn(accordionTheme({ flush }), className));
+  const base = $derived(cn(accordion({ flush }), className));
+  const finalClass = $derived(cn(base, theme))
 </script>
 
-<div {...restProps} class={base}>
+<div {...restProps} class={finalClass}>
   {@render children()}
 </div>
 

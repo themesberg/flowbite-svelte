@@ -1,26 +1,25 @@
 <script lang="ts">
-  import { getContext } from "svelte";
   import { avatar } from ".";
-  import { type AvatarProps, type BaseThemes, Indicator, cn } from "$lib";
+  import { type AvatarProps, Indicator, cn } from "$lib";
+import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, indicator, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: AvatarProps = $props();
 
-  // Get merged theme from context
-  const context = getContext<BaseThemes>("themeConfig");
-  // Use context theme if available, otherwise fallback to default
-  const avatarTheme = context?.avatar || avatar;
+  // Theme context
+  const theme = getTheme("avatar");
 
   dot = dot && { placement: "top-right", color: "gray", size: "lg", ...dot };
 
   let avatarClass = $derived(
     cn(
-      avatarTheme({
+      avatar({
         cornerStyle,
         border,
         stacked,
         size
       }),
-      className
+      className,
+      theme
     )
   );
 </script>

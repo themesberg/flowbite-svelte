@@ -2,9 +2,13 @@
   import { setContext } from "svelte";
   import { writable } from "svelte/store";
   import { bottomNav } from ".";
-  import { type BottomNavProps, type BottomNavContextType, cn } from "$lib";
+  import { type BottomNavProps, type BottomNavContextType, cn, type BottomNavTheme } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, header, position = "fixed", navType = "default", outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
+
+  // Theme context
+  const theme = getTheme("bottomNav");
 
   const activeCls = cn("text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900", activeClass);
 
@@ -20,12 +24,12 @@
   });
 </script>
 
-<div {...restProps} class={cn(outer(), outerClass)}>
+<div {...restProps} class={cn(outer(), outerClass, (theme as BottomNavTheme)?.outer)}>
   {#if header}
     {@render header()}
   {/if}
 
-  <div class={cn(inner(), innerClass)}>
+  <div class={cn(inner(), innerClass, (theme as BottomNavTheme)?.inner)}>
     {@render children()}
   </div>
 </div>

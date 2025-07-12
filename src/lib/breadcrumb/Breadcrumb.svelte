@@ -1,18 +1,15 @@
 <script lang="ts">
-  import { getContext } from "svelte";
   import { breadcrumb } from ".";
-  import { type BreadcrumbProps, type BaseThemes, cn } from "$lib";
+  import { type BreadcrumbProps, cn, type BreadcrumbTheme } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils"
 
   let { children, solid = false, class: className, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
 
-  // Get merged theme from context
-  const context = getContext<BaseThemes>("themeConfig");
-  // Use context theme if available, otherwise fallback to default
-  const breadcrumbTheme = context?.breadcrumb || breadcrumb;
+  const theme = getTheme("breadcrumb");
 
-  const { nav, list } = breadcrumbTheme({ solid });
-  let classNav = $derived(cn(nav(), className));
-  let classList = $derived(cn(list(), olClass));
+  const { nav, list } = breadcrumb({ solid });
+  let classNav = $derived(cn(nav(), className, (theme as BreadcrumbTheme)?.nav));
+  let classList = $derived(cn(list(), olClass, ( theme as BreadcrumbTheme)?.list));
 </script>
 
 <nav aria-label={ariaLabel} {...restProps} class={classNav}>

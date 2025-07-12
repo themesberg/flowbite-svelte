@@ -1,2 +1,2 @@
 export { default as Banner } from "./Banner.svelte";
-export { banner } from "./theme";
+export { banner, type BannerTheme } from "./theme";

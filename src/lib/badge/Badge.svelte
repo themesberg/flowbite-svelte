@@ -1,17 +1,15 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import { badge } from ".";
+  import { badge, type BadgeTheme } from ".";
   import { fade } from "svelte/transition";
-  import { type ParamsType, type BaseThemes, type BadgeProps, CloseButton, cn } from "$lib";
+  import { type ParamsType, type BadgeProps, CloseButton, cn } from "$lib";
+import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, border, href, target, rounded, transition = fade, params, aClass, onclose, ...restProps }: BadgeProps = $props();
 
-  // Get merged theme from context
-  const context = getContext<BaseThemes>("themeConfig");
-  // Use context theme if available, otherwise fallback to default
-  const badgeTheme = context?.badge || badge;
+  // Theme context
+  const theme = getTheme("badge");
 
-  const { base, hrefClass } = $derived(badgeTheme({ color, size: large ? "large" : "small", rounded, border }));
+  const { base, linkClass } = $derived(badge({ color, size: large ? "large" : "small", rounded, border }));
 
   const close = (ev: MouseEvent) => {
     onclose?.(ev);
@@ -20,9 +18,9 @@
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} transition:transition={params as ParamsType} class={cn(base(), className)}>
+  <div {...restProps} transition:transition={params as ParamsType} class={cn(base(), className, (theme as BadgeTheme)?.base)}>
     {#if href}
-      <a {href} {target} class={cn(hrefClass(), aClass)}>
+      <a {href} {target} class={cn(linkClass(), aClass, (theme as BadgeTheme)?.linkClass)}>
         {@render children()}
       </a>
     {:else}

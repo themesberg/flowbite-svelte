@@ -1,4 +1,9 @@
+// utils/helpers
 export * from "./uiHelpers.svelte";
+// theme
+export { default as ThemeProvider } from "./theme/ThemeProvider.svelte"
+export { getTheme } from './theme/themeUtils';
+// components
 export * from "./accordion";
 export * from "./alert";
 export * from "./avatar";
@@ -80,5 +85,3 @@ export * from "./typography/span";
 export * from "./video";
 export * from "./utils";
 export * from "./types";
-
-export { default as Theme } from "./theme/Theme.svelte";

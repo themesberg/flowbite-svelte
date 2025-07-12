@@ -2,8 +2,9 @@
   import { slide } from "svelte/transition";
   import { getContext } from "svelte";
   import { writable } from "svelte/store";
-  import { accordionitem } from ".";
-  import { type AccordionCtxType, type AccordionItemProps, type ParamsType, type BaseThemes, cn } from "$lib";
+  import { accordionItem, type AccordionItemTheme } from ".";
+  import { type AccordionCtxType, type AccordionItemProps, type ParamsType, cn } from "$lib";
+import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, headerClass, contentClass }: AccordionItemProps = $props();
 
@@ -12,9 +13,7 @@
   const useTransition = transitionType === "none" ? false : ctxTransitionType === "none" ? false : true;
 
   // Theme context
-  const context = getContext<BaseThemes>("themeConfig");
-  // Use theme context if available, otherwise fallback to default
-  const accordionitemTheme = context?.accordionitem || accordionitem;
+  const theme = getTheme("accordionitem");
 
   const ctx: AccordionCtxType = getContext("ctx") ?? {};
 
@@ -28,13 +27,13 @@
 
   const handleToggle = () => selected.set(open ? {} : self);
 
-  const { base, button, content, active, inactive } = $derived(accordionitemTheme({ flush: ctx.flush, open }));
+  const { base, button, content, active, inactive } = $derived(accordionItem({ flush: ctx.flush, open }));
 
   let buttonClass = $derived(cn(button(), open && !ctx.flush && (activeClass || ctx.activeClass || active()), !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()), className));
 </script>
 
-<h2 class={base({ class: headerClass })}>
-  <button type="button" onclick={handleToggle} class={buttonClass} aria-expanded={open}>
+<h2 class={cn(base({ class: headerClass }), (theme as AccordionItemTheme)?.base)}>
+  <button type="button" onclick={handleToggle} class={cn(buttonClass, (theme as AccordionItemTheme)?.button)} aria-expanded={open}>
     {#if header}
       {@render header()}
       {#if open}
@@ -59,14 +58,14 @@
 {#if useTransition}
   {#if open && transitionType !== "none"}
     <div transition:transitionType={transitionParams as ParamsType}>
-      <div class={content({ class: contentClass })}>
+      <div class={cn(content({ class: contentClass }), (theme as AccordionItemTheme)?.content)}>
         {@render children()}
       </div>
     </div>
   {/if}
 {:else}
   <div class={open ? "block" : "hidden"}>
-    <div class={content({ class: contentClass })}>
+    <div class={cn(content({ class: contentClass }), (theme as AccordionItemTheme)?.content)}>
       {@render children()}
     </div>
   </div>

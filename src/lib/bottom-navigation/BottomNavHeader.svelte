@@ -1,13 +1,18 @@
 <script lang="ts">
-  import { bottomnavheader } from ".";
-  import { type BottomNavHeaderProps, cn } from "$lib";
+  import { bottomNavHeader } from ".";
+  import { type BottomNavHeaderProps, cn, type BottomNavHeaderTheme, } from "$lib";
+import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, outerClass, innerClass, ...restProps }: BottomNavHeaderProps = $props();
-  const { innerDiv, outerDiv } = $derived(bottomnavheader());
+
+  // Theme context
+  const theme = getTheme("bottomNavHeader");
+
+  const { innerDiv, outerDiv } = $derived(bottomNavHeader());
 </script>
 
-<div {...restProps} class={cn(outerDiv(), outerClass)}>
-  <div class={cn(innerDiv(), innerClass)} role="group">
+<div {...restProps} class={cn(outerDiv(), outerClass, (theme as BottomNavHeaderTheme)?.outerDiv)}>
+  <div class={cn(innerDiv(), innerClass, (theme as BottomNavHeaderTheme)?.innerDiv)} role="group">
     {@render children()}
   </div>
 </div>

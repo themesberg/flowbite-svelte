@@ -186,3 +186,6 @@ export const card = tv({
     reverse: false
   }
 });
+
+export type CardSlots = keyof typeof card.slots;
+export type CardTheme = Partial<Record<CardSlots, string>>;

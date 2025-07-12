@@ -1,9 +1,12 @@
 <script lang="ts">
-  import type { CardProps } from "$lib";
+  import { type CardProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils"
   import clsx from "clsx";
-  import { card } from ".";
+  import { card, type CardTheme } from ".";
 
   let { children, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, imgClass, contentClass, ...restProps }: CardProps = $props();
+
+  const theme = getTheme("card");
 
   const { base, image } = $derived(
     card({
@@ -19,7 +22,7 @@
 
 {#snippet childSlot()}
   {#if img}
-    <img class={image({ class: clsx(imgClass) })} src={img} alt={img} />
+    <img class={cn(image({ class: clsx(imgClass) }), (theme as CardTheme)?.image)} src={img} alt={img} />
     {@render children()}
   {:else}
     {@render children()}
@@ -27,11 +30,11 @@
 {/snippet}
 
 {#if restProps.href === undefined}
-  <div {...restProps} class={base({ class: clsx(className) })}>
+  <div {...restProps} class={cn(base({ class: clsx(className) }), (theme as CardTheme)?.base)}>
     {@render childSlot()}
   </div>
 {:else}
-  <a {...restProps} class={base({ class: clsx(className) })}>
+  <a {...restProps} class={cn(base({ class: clsx(className) }), (theme as CardTheme)?.base)}>
     {@render childSlot()}
   </a>
 {/if}

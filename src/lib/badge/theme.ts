@@ -4,7 +4,7 @@ type BadgeVariants = VariantProps<typeof badge>;
 
 const badge = tv({
   slots: {
-    hrefClass: "flex align-middle",
+    linkClass: "flex align-middle",
     base: "font-medium inline-flex items-center justify-center px-2.5 py-0.5"
   },
   variants: {
@@ -253,3 +253,5 @@ const badge = tv({
 });
 
 export { badge, type BadgeVariants };
+export type BadgeSlots = keyof typeof badge.slots;
+export type BadgeTheme = Partial<Record<BadgeSlots, string>>;

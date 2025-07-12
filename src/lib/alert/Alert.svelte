@@ -1,25 +1,25 @@
 <script lang="ts">
-  import { getContext } from "svelte";
   import { fade } from "svelte/transition";
   import { alert } from ".";
-  import { type AlertProps, type BaseThemes, type ParamsType, CloseButton, cn } from "$lib";
+  import { type AlertProps, type ParamsType, CloseButton, cn } from "$lib";
+import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, icon, alertStatus = $bindable(true), closeIcon: CloseIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, onclick = () => (alertStatus = false), ...restProps }: AlertProps = $props();
 
-  const context = getContext<BaseThemes>("themeConfig");
-  // Use theme context if available, otherwise fallback to default
-  const alertTheme = context?.alert || alert;
+  // Theme context
+  const theme = getTheme("alert");
 
   let divCls = $derived(
     cn(
-      alertTheme({
+      alert({
         color,
         rounded,
         border,
         icon: !!icon,
         dismissable
       }),
-      className
+      className,
+      theme
     )
   );
 </script>
