@@ -1,2 +1,2 @@
 export { default as Clipboard } from "./Clipboard.svelte";
-export { clipboard } from "./theme";
+export { clipboard, type ClipboardTheme } from "./theme";

@@ -254,10 +254,6 @@
       "types": "./dist/carousel/Thumbnails.svelte.d.ts",
       "svelte": "./dist/carousel/Thumbnails.svelte"
     },
-    "./Chart.svelte": {
-      "types": "./dist/chart/Chart.svelte.d.ts",
-      "svelte": "./dist/chart/Chart.svelte"
-    },
     "./Clipboard.svelte": {
       "types": "./dist/clipboard/Clipboard.svelte.d.ts",
       "svelte": "./dist/clipboard/Clipboard.svelte"

@@ -62,3 +62,6 @@ export const datepicker = tv({
   },
   compoundVariants: []
 });
+
+export type DatepickerSlots = keyof typeof datepicker.slots;
+export type DatepickerTheme = Partial<Record<DatepickerSlots, string>>;

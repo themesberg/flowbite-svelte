@@ -4,8 +4,11 @@
   import { thumbnails } from "./theme";
   import { type ThumbnailsProps, type State, Thumbnail, cn } from "$lib";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass, throttleDelay = 650, class: className }: ThumbnailsProps = $props();
+
+  const theme = getTheme("thumbnails");
 
   const state = getContext<Writable<State>>("state");
   if (!state) {
@@ -47,7 +50,7 @@
   });
 </script>
 
-<div class={cn(thumbnails(), className)}>
+<div class={cn(thumbnails(), className, theme)}>
   {#each images as image, idx}
     {@const selected = index === idx}
     <button onclick={() => btnClick(idx)} aria-label={ariaLabel}>

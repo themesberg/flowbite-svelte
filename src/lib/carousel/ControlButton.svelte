@@ -1,11 +1,14 @@
 <script lang="ts">
   import { controlButton } from "./theme";
   import { type ControlButtonProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, forward, name, class: className, spanClass, ...restProps }: ControlButtonProps = $props();
+
+  const theme = getTheme("carouselButton");
 </script>
 
-<button type="button" class={cn(controlButton({ forward }), className)} {...restProps}>
+<button type="button" class={cn(controlButton({ forward }), className, theme)} {...restProps}>
   {#if children}
     {@render children()}
   {:else}

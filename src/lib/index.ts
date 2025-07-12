@@ -15,7 +15,6 @@ export * from "./button-group";
 export * from "./buttons";
 export * from "./card";
 export * from "./carousel";
-export * from "./chart";
 export * from "./clipboard";
 export * from "./darkmode";
 export * from "./datepicker";

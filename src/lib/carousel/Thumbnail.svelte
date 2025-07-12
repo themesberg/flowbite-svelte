@@ -2,11 +2,14 @@
   import { thumbnail } from "./theme";
   import { type ThumbnailProps, cn } from "$lib";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { selected, class: className, ...restProps }: ThumbnailProps = $props();
+
+  const theme = getTheme("thumbnail");
 </script>
 
-<img {...restProps} class={thumbnail({ selected, class: clsx(className) })} />
+<img {...restProps} class={cn(thumbnail({ selected, class: clsx(className) }), theme)} />
 
 <!--
 @component

@@ -5,12 +5,12 @@ export type DrawerVariants = VariantProps<typeof drawer>;
 export const drawer = tv({
   slots: {
     base: "overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800",
-    backdrop_: "fixed top-0 start-0 z-50 w-full h-full"
+    backdrop: "fixed top-0 start-0 z-50 w-full h-full"
   },
   variants: {
     position: {
-      fixed: { base: "fixed", backdrop_: "fixed" },
-      absolute: { base: "absolute", backdrop_: "absolute" }
+      fixed: { base: "fixed", backdrop: "fixed" },
+      absolute: { base: "absolute", backdrop: "absolute" }
     },
     placement: {
       left: { base: "inset-y-0 start-0" },
@@ -24,7 +24,7 @@ export const drawer = tv({
       half: { base: "w-1/2" }
     },
     backdrop: {
-      true: { backdrop_: "bg-gray-900 opacity-75" }
+      true: { backdrop: "bg-gray-900 opacity-75" }
     }
   },
   defaultVariants: {
@@ -41,3 +41,9 @@ export const drawerhead = tv({
     svg: "h-4 w-4"
   }
 });
+
+export type DrawerSlots = keyof typeof drawer.slots;
+export type DrawerTheme = Partial<Record<DrawerSlots, string>>;
+
+export type DrawerHeadSlots = keyof typeof drawerhead.slots;
+export type DrawerHeadTheme = Partial<Record<DrawerHeadSlots, string>>;

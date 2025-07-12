@@ -14,3 +14,5 @@ export const clipboard = tv({
     embedded: false
   }
 });
+
+export type ClipboardTheme = string;

@@ -4,10 +4,13 @@
   import { fly } from "svelte/transition";
   import { slide } from "./theme";
   import { type SlideProps, type State, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   const state = getContext<Writable<State>>("state");
 
   let { image, transition, class: className, ...restProps }: SlideProps = $props();
+
+  const theme = getTheme("slide");
 
   let transitionSlideIn = $derived({
     x: $state.forward ? "100%" : "-100%",
@@ -25,7 +28,7 @@
     duration: $state.slideDuration
   });
 
-  let imgClass = cn(slide(), className);
+  let imgClass = cn(slide(), className, theme);
 </script>
 
 {#if transition}

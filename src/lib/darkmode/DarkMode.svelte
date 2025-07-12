@@ -1,9 +1,12 @@
 <script lang="ts">
   import { darkmode } from ".";
   import { type DarkmodeProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   // const THEME_PREFERENCE_KEY = 'color-theme';
   let { class: className, lightIcon, darkIcon, size = "md", ariaLabel = "Dark mode", ...restProps }: DarkmodeProps = $props();
+
+  const theme = getTheme("darkmode");
 
   const sizes = {
     sm: "w-4 h-4",
@@ -30,7 +33,7 @@
   </script>
 </svelte:head>
 
-<button onclick={toggleTheme} aria-label={ariaLabel} type="button" {...restProps} class={cn(darkmode(), className)} tabindex={0}>
+<button onclick={toggleTheme} aria-label={ariaLabel} type="button" {...restProps} class={cn(darkmode(), className, theme)} tabindex={0}>
   <span class="hidden dark:block">
     {#if lightIcon}
       {@render lightIcon()}

@@ -4,10 +4,13 @@
   import { canChangeSlide } from "./CarouselSlide";
   import { carousel } from "./theme";
   import { type CarouselProps, type State, Slide, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   const SLIDE_DURATION_RATIO = 0.25;
 
   let { children, slide, images, index = $bindable(0), slideDuration = 1000, transition, duration = 0, "aria-label": ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, onchange, divClass, ...restProps }: CarouselProps = $props();
+
+  const theme = getTheme("carousel");
 
   const { set, subscribe, update } = writable<State>({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: new Date() });
 
@@ -166,7 +169,7 @@
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} />
 <div bind:this={carouselDiv} class={cn("relative", divClass)} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
-  <div {...restProps} class={cn(carousel(), activeDragGesture === undefined ? "transition-transform" : "", className)} {@attach loop}>
+  <div {...restProps} class={cn(carousel(), activeDragGesture === undefined ? "transition-transform" : "", className, theme)} {@attach loop}>
     {#if slide}
       {@render slide({ index, Slide })}
     {:else}

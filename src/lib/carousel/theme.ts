@@ -1,4 +1,3 @@
-import { select } from "$lib/forms/select";
 import { tv, type VariantProps } from "tailwind-variants";
 
 export type CarouselVariants = VariantProps<typeof carousel>;
@@ -9,6 +8,8 @@ export const carousel = tv({
   compoundVariants: [],
   defaultVariants: {}
 });
+
+export type CarouselTheme = string;
 
 export const indicators = tv({
   slots: {
@@ -28,6 +29,9 @@ export const indicators = tv({
   }
 });
 
+export type IndicatorSlots = keyof typeof indicators.slots;
+export type IndicatorTheme = Partial<Record<IndicatorSlots, string>>;
+
 export const controlButton = tv({
   base: "flex absolute top-0 z-30 justify-center items-center px-4 h-full group focus:outline-hidden text-white dark:text-gray-300",
   variants: {
@@ -38,9 +42,13 @@ export const controlButton = tv({
   }
 });
 
+export type ControlButtonTheme = string;
+
 export const thumbnails = tv({
   base: "flex flex-row justify-center bg-gray-100 w-full"
 });
+
+export type ThumbnailsTheme = string;
 
 export const thumbnail = tv({
   base: "",
@@ -55,6 +63,10 @@ export const thumbnail = tv({
   }
 });
 
+export type ThumbnailTheme = string;
+
 export const slide = tv({
   base: "absolute block w-full! h-full object-cover"
 });
+
+export type SlideTheme = string;
