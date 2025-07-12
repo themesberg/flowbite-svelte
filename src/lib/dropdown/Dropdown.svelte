@@ -3,8 +3,11 @@
   import { writable } from "svelte/store";
   import { dropdown } from "./";
   import { type DropdownProps, Popper, cn, DropdownGroup } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, simple = false, placement = "bottom", offset = 2, class: className, activeUrl = "", isOpen = $bindable(false), ...restProps }: DropdownProps = $props();
+
+  const theme = getTheme("dropdown");
 
   const { base, backdrop } = $derived(dropdown());
   const activeUrlStore = writable("");
@@ -17,7 +20,7 @@
 
 <!-- Dropdown menu -->
 
-<Popper {...restProps} {placement} {offset} bind:isOpen class={cn(base(), className)}>
+<Popper {...restProps} {placement} {offset} bind:isOpen class={cn(base(), className, theme)}>
   {#if simple}
     <DropdownGroup>
       {@render children()}

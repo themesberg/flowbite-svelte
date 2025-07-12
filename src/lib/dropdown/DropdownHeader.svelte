@@ -1,11 +1,14 @@
 <script lang="ts">
   import { dropdownHeader } from ".";
   import { type DropdownHeaderProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: DropdownHeaderProps = $props();
+
+  const theme = getTheme("dropdownHeader");
 </script>
 
-<div {...restProps} class={cn(dropdownHeader(), className)}>
+<div {...restProps} class={cn(dropdownHeader(), className, theme)}>
   {@render children()}
 </div>
 

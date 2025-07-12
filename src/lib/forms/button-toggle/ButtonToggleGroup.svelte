@@ -1,8 +1,11 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { type ButtonToggleGroupProps, buttonToggleGroup, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { multiSelect = false, name = "toggle-group", value = multiSelect ? [] : null, color, size = "md", roundedSize = "md", onSelect = (val: any) => {}, children, ctxIconClass, ctxBtnClass, class: className, ...restProps }: ButtonToggleGroupProps = $props();
+
+  const theme = getTheme("buttonToggleGroup");
 
   const base = $derived(buttonToggleGroup({ roundedSize }));
   type SelectedValue = string | null | string[];
@@ -61,7 +64,7 @@
 </script>
 
 <div class="inline">
-  <div class={cn(base, className)} role={multiSelect ? "group" : "radiogroup"} aria-label={name} {...restProps}>
+  <div class={cn(base, className, theme)} role={multiSelect ? "group" : "radiogroup"} aria-label={name} {...restProps}>
     {@render children()}
   </div>
 </div>

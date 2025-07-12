@@ -4,8 +4,14 @@
   import { buttonToggle, buttonToggleContent, buttonToggleText } from "./theme";
   import type { ButtonToggleVariants } from "./theme";
   import { type ButtonToggleProps, type ButtonToggleContext, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { value, selected = false, children, iconSlot, color, class: className, iconClass, txtClass, contentClass, ...restProps }: ButtonToggleProps = $props();
+
+  const buttonToggleTheme = getTheme("buttonToggle");
+  const buttonToggleContenttheme = getTheme("buttonToggleContent");
+  buttonToggleText
+  const buttonToggleTextTheme = getTheme("buttonToggleText");
 
   const { toggleSelected, isSelected } = getContext<ButtonToggleContext>("button-toggle-group");
   const multiSelect = getContext<boolean>("multiSelect");
@@ -25,8 +31,8 @@
   });
 </script>
 
-<button type="button" class={cn(buttonToggle({ selected, color: actualColor, size, roundedSize }), ctxBtnClass, className)} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
-  <div class={cn(buttonToggleContent(), contentClass)}>
+<button type="button" class={cn(buttonToggle({ selected, color: actualColor, size, roundedSize }), ctxBtnClass, className, buttonToggleTheme)} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
+  <div class={cn(buttonToggleContent(), contentClass, buttonToggleContenttheme)}>
     {#if selected}
       {#if iconSlot}
         {@render iconSlot()}
@@ -34,7 +40,7 @@
         <CheckIcon class={cn("absolute left-0 flex-shrink-0 text-green-600", actualIconClass)} />
       {/if}
     {/if}
-    <span class={cn(buttonToggleText({ selected }), txtClass)}>
+    <span class={cn(buttonToggleText({ selected }), txtClass, buttonToggleTextTheme)}>
       {@render children()}
     </span>
   </div>

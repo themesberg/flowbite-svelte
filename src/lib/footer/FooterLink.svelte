@@ -1,13 +1,17 @@
 <script lang="ts">
-  import { footerLink } from ".";
+  import { footerLink, type FooterLinkTheme } from ".";
   import { type FooterLinkProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, liClass, aClass, href, ...restProps }: FooterLinkProps = $props();
+
+  const theme = getTheme("footerLink");
+
   const { base, link } = footerLink();
 </script>
 
-<li class={cn(base(), liClass)}>
-  <a {...restProps} {href} class={cn(link(), aClass)}>
+<li class={cn(base(), liClass, (theme as FooterLinkTheme)?.base)}>
+  <a {...restProps} {href} class={cn(link(), aClass, (theme as FooterLinkTheme)?.link)}>
     {@render children()}
   </a>
 </li>

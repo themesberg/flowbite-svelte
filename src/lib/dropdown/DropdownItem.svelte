@@ -1,9 +1,12 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { dropdownItem } from ".";
+  import { dropdownItem, type DropdownItemTheme } from ".";
   import { type DropdownItemProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { aClass, children, activeClass, liClass, class: className, ...restProps }: DropdownItemProps = $props();
+
+  const theme = getTheme("dropdownItem");
 
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
   let sidebarUrl = $state("");
@@ -17,7 +20,7 @@
   });
 
   const { anchor, activeAnchor } = dropdownItem();
-  let finalClass = $derived([active ? cn(activeAnchor(), activeClass, className) : cn(anchor(), aClass, className)]);
+  let finalClass = $derived([active ? cn(activeAnchor(), activeClass, className, (theme as DropdownItemTheme)?.activeAnchor) : cn(anchor(), aClass, className, (theme as DropdownItemTheme)?.anchor)]);
 </script>
 
 <li class={cn(liClass)}>

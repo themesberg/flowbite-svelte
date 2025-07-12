@@ -1,13 +1,16 @@
 <script lang="ts">
   import { footer } from ".";
   import { type FooterProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, footerType = "default", class: className, ...restProps }: FooterProps = $props();
+
+  const theme = getTheme("footer");
 
   const footerCls = $derived(footer({ footerType }));
 </script>
 
-<footer {...restProps} class={cn(footerCls, className)}>
+<footer {...restProps} class={cn(footerCls, className, theme)}>
   {@render children()}
 </footer>
 

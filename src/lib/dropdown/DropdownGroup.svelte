@@ -1,11 +1,14 @@
 <script lang="ts">
   import { dropdownGroup } from ".";
   import { type DropdownGroupProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: DropdownGroupProps = $props();
+
+  const theme = getTheme("dropdownGroup");
 </script>
 
-<ul {...restProps} class={cn(dropdownGroup(), className)}>
+<ul {...restProps} class={cn(dropdownGroup(), className, theme)}>
   {@render children()}
 </ul>
 

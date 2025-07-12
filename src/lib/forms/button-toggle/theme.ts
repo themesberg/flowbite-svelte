@@ -13,6 +13,8 @@ export const buttonToggleGroup = tv({
   }
 });
 
+export type ButtonToggleGroupTheme = string;
+
 export const buttonToggle = tv({
   base: "relative flex items-center transition-all duration-200  focus:outline-none border-r last:border-r-0 dark:bg-white dark:text-gray-800",
   variants: {
@@ -65,9 +67,13 @@ export const buttonToggle = tv({
   }
 });
 
+export type ButtonToggleTheme = string;
+
 export const buttonToggleContent = tv({
   base: "flex items-center w-full overflow-hidden relative"
 });
+
+export type ButtonToggleContentTheme = string;
 
 export const buttonToggleText = tv({
   base: "transition-all duration-200 ml-0",
@@ -81,6 +87,8 @@ export const buttonToggleText = tv({
     selected: false
   }
 });
+
+export type ButtonToggleTextTheme = string;
 
 export type ButtonToggleVariants = VariantProps<typeof buttonToggle>;
 export type ButtonToggleContentVariants = VariantProps<typeof buttonToggleContent>;

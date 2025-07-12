@@ -1,12 +1,15 @@
 <script lang="ts">
   import { footerIcon } from ".";
   import { type FooterIconProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, href, ariaLabel, class: className, ...restProps }: FooterIconProps = $props();
+
+  const theme = getTheme("footerIcon");
 </script>
 
 {#if href}
-  <a {...restProps} {href} aria-label={ariaLabel} class={cn(footerIcon(), className)}>
+  <a {...restProps} {href} aria-label={ariaLabel} class={cn(footerIcon(), className, theme)}>
     {@render children()}
   </a>
 {:else}

@@ -1,19 +1,22 @@
 <script lang="ts">
-  import { footerBrand } from ".";
+  import { footerBrand, type FooterBrandTheme } from ".";
   import { type FooterBrandProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, aClass, spanClass, imgClass, href, src, alt, name, ...restProps }: FooterBrandProps = $props();
+
+  const theme = getTheme("footerBrand");
 
   const { base, span, img } = $derived(footerBrand());
 </script>
 
 {#if href}
-  <a {...restProps} {href} class={cn(base(), aClass)}>
+  <a {...restProps} {href} class={cn(base(), aClass, (theme as FooterBrandTheme)?.base)}>
     {#if src}
-      <img {src} class={cn(img(), imgClass)} {alt} />
+      <img {src} class={cn(img(), imgClass, (theme as FooterBrandTheme)?.img)} {alt} />
     {/if}
     {#if name}
-      <span class={cn(span(), spanClass)}>{name}</span>
+      <span class={cn(span(), spanClass, (theme as FooterBrandTheme)?.span)}>{name}</span>
     {/if}
     {#if children}
       {@render children()}
