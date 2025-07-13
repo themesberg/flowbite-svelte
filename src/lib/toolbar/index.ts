@@ -1,6 +1,4 @@
-import Toolbar from "./Toolbar.svelte";
-import ToolbarButton from "./ToolbarButton.svelte";
-import ToolbarGroup from "./ToolbarGroup.svelte";
-import { toolbar, toolbarGroup, toolbarButton } from "./theme";
-
-export { Toolbar, toolbar, ToolbarButton, toolbarButton, ToolbarGroup, toolbarGroup };
+export { default as Toolbar } from "./Toolbar.svelte";
+export { default as ToolbarButton } from "./ToolbarButton.svelte";
+export { default as ToolbarGroup } from "./ToolbarGroup.svelte";
+export { toolbar, toolbarGroup, toolbarButton, type ToolbarTheme, type ToolbarGroupTheme, type ToolbarButtonTheme } from "./theme";

@@ -4,8 +4,12 @@
   import { toolbarGroup } from ".";
   import type { ToolbarGroupProps } from "$lib/types";
   import clsx from "clsx";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, spacing, padding, position = "middle", class: className, ...restProps }: ToolbarGroupProps = $props();
+
+  const theme = getTheme('toolbarGroup');
 
   const groupClass = $derived(toolbarGroup({ spacing, padding, position, class: clsx(className) }));
 
@@ -13,7 +17,7 @@
   if (options) $options = true;
 </script>
 
-<div {...restProps} class={groupClass}>
+<div {...restProps} class={cn(groupClass, theme)}>
   {@render children?.()}
 </div>
 

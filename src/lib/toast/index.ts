@@ -1,4 +1,2 @@
-import Toast from "./Toast.svelte";
-import { toast } from "./theme";
-
-export { Toast, toast };
+export { default as Toast } from "./Toast.svelte";
+export { toast, type ToastTheme } from "./theme";

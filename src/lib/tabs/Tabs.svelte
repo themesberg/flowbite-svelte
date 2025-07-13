@@ -1,12 +1,15 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { writable } from "svelte/store";
   import { setContext } from "svelte";
-  import { tabs } from ".";
+  import { tabs, type TabsTheme } from ".";
   import type { TabsProps, TabCtxType } from "$lib/types";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, tabStyle = "none", ulClass, contentClass, divider = true, ...restProps }: TabsProps = $props();
+
+  const theme = getTheme("tabs");
 
   const { base, content, divider: dividerClass } = $derived(tabs({ tabStyle, hasDivider: divider }));
 
@@ -33,13 +36,13 @@
   }
 </script>
 
-<ul role="tablist" {...restProps} class={twMerge(base(), clsx(ulClass))}>
+<ul role="tablist" {...restProps} class={cn(base(), clsx(ulClass), (theme as TabsTheme)?.base)}>
   {@render children()}
 </ul>
 {#if dividerBool}
-  <div class={dividerClass()}></div>
+  <div class={cn(dividerClass(), (theme as TabsTheme)?.divider)}></div>
 {/if}
-<div id={panelId} class={twMerge(content(), clsx(contentClass))} role="tabpanel" aria-labelledby={panelId} use:init></div>
+<div id={panelId} class={cn(content(), clsx(contentClass), (theme as TabsTheme)?.content)} role="tabpanel" aria-labelledby={panelId} use:init></div>
 
 <!--
 @component

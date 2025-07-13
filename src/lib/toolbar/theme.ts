@@ -84,6 +84,9 @@ export const toolbar = tv({
   }
 });
 
+export type ToolbarSlots = keyof typeof toolbar.slots;
+export type ToolbarTheme = Partial<Record<ToolbarSlots, string>>;
+
 export type ToolbarGroupVariants = VariantProps<typeof toolbarGroup>;
 
 export const toolbarGroup = tv({
@@ -115,6 +118,8 @@ export const toolbarGroup = tv({
     padding: "default"
   }
 });
+
+export type ToolbarGroupTheme = string;
 
 export type ToolbarButtonVariants = VariantProps<typeof toolbarButton>;
 
@@ -162,3 +167,5 @@ export const toolbarButton = tv({
     size: "md"
   }
 });
+
+export type ToolbarButtonTheme = string;

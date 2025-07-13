@@ -101,3 +101,6 @@ export const toast = tv({
     }
   }
 });
+
+export type ToastSlots = keyof typeof toast.slots;
+export type ToastTheme = Partial<Record<ToastSlots, string>>;

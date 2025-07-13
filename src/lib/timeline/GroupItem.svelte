@@ -1,24 +1,29 @@
 <script lang="ts">
-  import { groupitem } from ".";
+  import { groupItem, type GroupItemTheme } from ".";
   import type { GroupItemProps } from "$lib/types";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
+
   let { timelines, aClass, imgClass, divClass, titleClass, spanClass, ...restProps }: GroupItemProps = $props();
 
-  const { a, img, div, title, span } = $derived(groupitem());
+  const theme = getTheme('groupItem');
+
+  const { a, img, div, title, span } = $derived(groupItem());
 </script>
 
 {#each timelines as { name, src, alt, isPrivate, href, comment }}
   <li {...restProps}>
-    <a {href} class={a({ class: aClass })}>
-      <img class={img({ class: imgClass })} {src} {alt} />
-      <div class={div({ class: divClass })}>
-        <div class={title({ class: titleClass })}>
+    <a {href} class={cn(a({ class: aClass }), (theme as GroupItemTheme)?.a)}>
+      <img class={cn(img({ class: imgClass }), (theme as GroupItemTheme)?.img)} {src} {alt} />
+      <div class={cn(div({ class: divClass }), (theme as GroupItemTheme)?.div)}>
+        <div class={cn(title({ class: titleClass }), (theme as GroupItemTheme)?.title)}>
           {@html name}
         </div>
         {#if comment}
           <div class="text-sm font-normal">{comment}</div>
         {/if}
 
-        <span class={span({ class: spanClass })}>
+        <span class={cn(span({ class: spanClass }), (theme as GroupItemTheme)?.span)}>
           {#if isPrivate}
             <svg class="me-1 h-3 w-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M3.707 2.293a1 1 0 00-1.414 1.414l14 14a1 1 0 001.414-1.414l-1.473-1.473A10.014 10.014 0 0019.542 10C18.268 5.943 14.478 3 10 3a9.958 9.958 0 00-4.512 1.074l-1.78-1.781zm4.261 4.26l1.514 1.515a2.003 2.003 0 012.45 2.45l1.514 1.514a4 4 0 00-5.478-5.478z" clip-rule="evenodd" />

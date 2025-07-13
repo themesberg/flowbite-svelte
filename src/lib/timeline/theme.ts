@@ -4,7 +4,9 @@ export const activity = tv({
   base: "relative border-s border-gray-200 dark:border-gray-700"
 });
 
-export const activityitem = tv({
+export type ActivityTheme = string;
+
+export const activityItem = tv({
   slots: {
     li: "mb-10 ms-6",
     span: "flex absolute -start-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900",
@@ -17,6 +19,10 @@ export const activityitem = tv({
   }
 });
 
+export type ActivityItemSlots = keyof typeof activityItem.slots;
+export type ActivityItemTheme = Partial<Record<ActivityItemSlots, string>>;
+
+
 export const group = tv({
   slots: {
     div: "p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700",
@@ -25,7 +31,10 @@ export const group = tv({
   }
 });
 
-export const groupitem = tv({
+export type GroupSlots = keyof typeof group.slots;
+export type GroupTheme = Partial<Record<GroupSlots, string>>;
+
+export const groupItem = tv({
   slots: {
     a: "block items-center p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700",
     img: "me-3 mb-3 w-12 h-12 rounded-full sm:mb-0",
@@ -34,6 +43,9 @@ export const groupitem = tv({
     span: "inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400"
   }
 });
+
+export type GroupItemSlots = keyof typeof groupItem.slots;
+export type GroupItemTheme = Partial<Record<GroupItemSlots, string>>;
 
 export type TimelineVariants = VariantProps<typeof timeline>;
 
@@ -52,9 +64,11 @@ export const timeline = tv({
   }
 });
 
+export type TimelineTheme = string;
+
 // export type TimelineItemVariants = VariantProps<typeof timelineitem>;
 
-export const timelineitem = tv({
+export const timelineItem = tv({
   slots: {
     li: "",
     div: "",
@@ -100,3 +114,6 @@ export const timelineitem = tv({
     order: "default"
   }
 });
+
+export type TimelineItemSlots = keyof typeof timelineItem.slots;
+export type TimelineItemTheme = Partial<Record<TimelineItemSlots, string>>;

@@ -3,9 +3,13 @@
   import { toolbarButton } from ".";
   import type { ToolbarButtonProps } from "$lib/types";
   import clsx from "clsx";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   const background = getContext("background");
   let { children, color, name, "aria-label": ariaLabel, size, class: className, ...restProps }: ToolbarButtonProps = $props();
+
+  const theme = getTheme('toolbarButton');
 
   const buttonClass = $derived(
     toolbarButton({
@@ -18,7 +22,7 @@
 </script>
 
 {#if restProps.href === undefined}
-  <button type="button" {...restProps} class={buttonClass} aria-label={ariaLabel ?? name}>
+  <button type="button" {...restProps} class={cn(buttonClass, theme)} aria-label={ariaLabel ?? name}>
     {#if name}<span class="sr-only">{name}</span>{/if}
     {@render children?.()}
   </button>

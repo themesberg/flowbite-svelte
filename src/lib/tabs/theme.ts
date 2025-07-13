@@ -49,6 +49,9 @@ export const tabs = tv({
   }
 });
 
+export type TabsSlots = keyof typeof tabs.slots;
+export type TabsTheme = Partial<Record<TabsSlots, string>>;
+
 export const tabItem = tv({
   slots: {
     base: "group focus-within:z-10",
@@ -86,3 +89,6 @@ export const tabItem = tv({
     disabled: false
   }
 });
+
+export type TabItemSlots = keyof typeof tabItem.slots;
+export type TabItemTheme = Partial<Record<TabItemSlots, string>>;
