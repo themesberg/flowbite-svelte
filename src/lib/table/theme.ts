@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "clsx";
 
 export type TableVariants = VariantProps<typeof table>;
 
@@ -38,7 +39,10 @@ export const table = tv({
   }
 });
 
-export const tablebodyrow = tv({
+export type TableSlots = keyof typeof table.slots;
+export type TableTheme = Partial<Record<TableSlots, string>>;
+
+export const tableBodyRow = tv({
   base: "",
   variants: {
     color: {
@@ -289,7 +293,9 @@ export const tablebodyrow = tv({
   ]
 });
 
-export const tablehead = tv({
+export type TableBodyRowTheme = string;
+
+export const tableHead = tv({
   base: "text-xs uppercase",
   variants: {
     color: {
@@ -375,10 +381,103 @@ export const tablehead = tv({
   ]
 });
 
-export const tablebodycell = tv({
+export type TableHeadTheme = string;
+
+export const tableBodyCell = tv({
   base: "px-6 py-4 whitespace-nowrap font-medium"
 });
 
-export const tableheadcell = tv({
+export type TableBodyCellTheme = string;
+
+export const tableHeadCell = tv({
   base: "px-6 py-3"
 });
+
+export type TableHeadCellTheme = string;
+
+// TableSearch
+export type TableSearchClasses = Partial<{
+  root: ClassValue;
+  innerDiv: ClassValue;
+  searchContainer: ClassValue;
+  svgContainer: ClassValue;
+  svg: ClassValue;
+  input: ClassValue;
+  table: ClassValue;
+}>;
+
+export type TableSearchVariants = {
+  classes?: TableSearchClasses;
+};
+
+export const tableSearch = tv({
+  slots: {
+    root: "relative overflow-x-auto shadow-md sm:rounded-lg",
+    innerDiv: "p-4",
+    searchContainer: "relative mt-1",
+    svgContainer: "absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none",
+    svg: "w-5 h-5",
+    input: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 ps-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
+    table: "w-full text-left text-sm"
+  },
+  variants: {
+    color: {
+      default: {
+        svg: "text-gray-500 dark:text-gray-400",
+        table: "text-gray-500 dark:text-gray-400"
+      },
+      blue: {
+        svg: "text-blue-500 dark:text-blue-400",
+        table: "text-blue-100 dark:text-blue-100"
+      },
+      green: {
+        svg: "text-green-500 dark:text-green-400",
+        table: "text-green-100 dark:text-green-100"
+      },
+      red: {
+        svg: "text-red-500 dark:text-red-400",
+        table: "text-red-100 dark:text-red-100"
+      },
+      yellow: {
+        svg: "text-yellow-500 dark:text-yellow-400",
+        table: "text-yellow-100 dark:text-yellow-100"
+      },
+      purple: {
+        svg: "text-purple-500 dark:text-purple-400",
+        table: "text-purple-100 dark:text-purple-100"
+      },
+      indigo: {
+        svg: "text-indigo-500 dark:text-indigo-400",
+        table: "text-indigo-100 dark:text-indigo-100"
+      },
+      pink: {
+        svg: "text-pink-500 dark:text-pink-400",
+        table: "text-pink-100 dark:text-pink-100"
+      }
+    },
+    striped: {
+      true: {
+        table: "[&_tbody_tr:nth-child(odd)]:bg-white [&_tbody_tr:nth-child(odd)]:dark:bg-gray-900 [&_tbody_tr:nth-child(even)]:bg-gray-50 [&_tbody_tr:nth-child(even)]:dark:bg-gray-800"
+      },
+      false: {}
+    },
+    hoverable: {
+      true: {
+        table: "[&_tbody_tr]:hover:bg-gray-50 [&_tbody_tr]:dark:hover:bg-gray-600"
+      },
+      false: {}
+    }
+  },
+  defaultVariants: {
+    color: "default",
+    striped: false,
+    hoverable: false
+  }
+});
+
+// Export color type for use in props
+export type TableSearchColor = "default" | "blue" | "green" | "red" | "yellow" | "purple" | "indigo" | "pink" | "custom";
+
+
+export type TableSearchSlots = keyof typeof tableSearch.slots;
+export type TableSearchTheme = Partial<Record<TableSearchSlots, string>>;

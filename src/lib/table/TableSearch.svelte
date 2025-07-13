@@ -1,25 +1,51 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
   import { setContext } from "svelte";
   import type { TableSearchProps, TableSearchType } from "$lib/types";
+  import { cn } from "$lib";
+  import { tableSearch, type TableSearchTheme } from ".";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, header, footer, divClass = "relative overflow-x-auto shadow-md sm:rounded-lg", inputValue = $bindable(), striped, hoverable, customColor = "", color = "default", innerDivClass = "p-4", inputClass, searchClass = "relative mt-1", svgDivClass, svgClass = "w-5 h-5 text-gray-500 dark:text-gray-400", tableClass = "w-full text-left text-sm", class: className, placeholder = "Search", ...restProps }: TableSearchProps = $props();
+  let { 
+    children, 
+    header, 
+    footer, 
+    divClass, 
+    inputValue = $bindable(), 
+    striped = false, 
+    hoverable = false, 
+    customColor = "", 
+    color = "default", 
+    innerDivClass, 
+    inputClass, 
+    searchClass, 
+    svgDivClass, 
+    svgClass, 
+    tableClass, 
+    class: className, 
+    placeholder = "Search", 
+    ...restProps 
+  }: TableSearchProps = $props();
 
-  let inputCls = twMerge("bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 ps-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", clsx(inputClass));
-  let svgDivCls = twMerge("absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none", clsx(svgDivClass));
+  const theme = getTheme("tableSearch");
 
-  const colors: { [key: string]: string } = {
-    default: "text-gray-500 dark:text-gray-400",
-    blue: "text-blue-100 dark:text-blue-100",
-    green: "text-green-100 dark:text-green-100",
-    red: "text-red-100 dark:text-red-100",
-    yellow: "text-yellow-100 dark:text-yellow-100",
-    purple: "text-purple-100 dark:text-purple-100",
-    indigo: "text-indigo-100 dark:text-indigo-100",
-    pink: "text-pink-100 dark:text-pink-100",
-    custom: customColor
-  };
+  // Generate theme styles - handle custom color case
+  const themeColor = color === "custom" ? "default" : color as "default" | "blue" | "green" | "red" | "yellow" | "purple" | "indigo" | "pink";
+
+  const styles = tableSearch({ color: themeColor, striped, hoverable });
+
+  // Apply custom classes or use theme defaults
+  const rootClass = cn(styles.root(), divClass, (theme as TableSearchTheme)?.root);
+  const innerDivCls = cn(styles.innerDiv(), innerDivClass, (theme as TableSearchTheme)?.innerDiv);
+  const searchContainerCls = cn(styles.searchContainer(), searchClass, (theme as TableSearchTheme)?.searchContainer);
+  const svgContainerCls = cn(styles.svgContainer(), svgDivClass, (theme as TableSearchTheme)?.svgContainer);
+  const svgCls = cn(styles.svg(), svgClass, (theme as TableSearchTheme)?.svg);
+  const inputCls = cn(styles.input(), inputClass, (theme as TableSearchTheme)?.input);
+  const tableCls = cn(styles.table(), tableClass, className, (theme as TableSearchTheme)?.table);
+
+  // Handle custom color
+  const finalTableClass = color === "custom" && customColor 
+    ? cn(tableCls, customColor)
+    : tableCls;
 
   const tableSearchCtx: TableSearchType = {
     striped,
@@ -30,12 +56,12 @@
   setContext("tableCtx", tableSearchCtx);
 </script>
 
-<div class={clsx(divClass)}>
-  <div class={clsx(innerDivClass)}>
+<div class={rootClass}>
+  <div class={innerDivCls}>
     <label for="table-search" class="sr-only">Search</label>
-    <div class={clsx(searchClass)}>
-      <div class={svgDivCls}>
-        <svg class={clsx(svgClass)} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <div class={searchContainerCls}>
+      <div class={svgContainerCls}>
+        <svg class={svgCls} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
         </svg>
       </div>
@@ -45,7 +71,7 @@
       {@render header()}
     {/if}
   </div>
-  <table {...restProps} class={twMerge(clsx(tableClass), colors[color], clsx(className))}>
+  <table {...restProps} class={finalTableClass}>
     {#if children}
       {@render children()}
     {/if}
@@ -54,29 +80,3 @@
     {@render footer()}
   {/if}
 </div>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1701)
-## Props
-@prop children
-@prop header
-@prop footer
-@prop divClass = "relative overflow-x-auto shadow-md sm:rounded-lg"
-@prop inputValue = $bindable()
-@prop striped
-@prop hoverable
-@prop customColor = ""
-@prop color = "default"
-@prop innerDivClass = "p-4"
-@prop inputClass
-@prop searchClass = "relative mt-1"
-@prop svgDivClass
-@prop svgClass = "w-5 h-5 text-gray-500 dark:text-gray-400"
-@prop tableClass = "w-full text-left text-sm"
-@prop class: className
-@prop placeholder = "Search"
-@prop ...restProps
--->

@@ -1,13 +1,16 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
-  import { tableheadcell } from ".";
+  import { tableHeadCell } from ".";
   import type { TableHeadCellProps } from "$lib/types";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: TableHeadCellProps = $props();
+
+  const theme = getTheme("tableHeadCell");
 </script>
 
-<th {...restProps} class={twMerge(tableheadcell(), clsx(className))}>
+<th {...restProps} class={cn(tableHeadCell(), clsx(className), theme)}>
   {#if children}
     {@render children()}
   {/if}

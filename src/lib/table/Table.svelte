@@ -1,11 +1,13 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { table as tableCls, TableHead, TableBody } from ".";
-  import { twMerge } from "tailwind-merge";
+  import { table as tableCls, TableHead, TableBody, type TableTheme } from ".";
   import clsx from "clsx";
-  import type { TableProps, TableCtxType } from "$lib";
+  import { type TableProps, type TableCtxType, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, footerSlot, captionSlot, items, divClass = "relative overflow-x-auto", striped, hoverable, border = true, shadow, color = "default", class: className, ...restProps }: TableProps = $props();
+
+  const theme = getTheme("table");
 
   const { base, table } = $derived(tableCls({ color, shadow }));
 
@@ -30,8 +32,8 @@
   let bodyItems = $derived(items && items.length > 0 ? items.map((item) => Object.values(item)) : []);
 </script>
 
-<div class={twMerge(base(), clsx(divClass))}>
-  <table {...restProps} class={twMerge(table(), clsx(className))}>
+<div class={cn(base(), clsx(divClass), (theme as TableTheme)?.base)}>
+  <table {...restProps} class={cn(table(), clsx(className), (theme as TableTheme)?.table)}>
     {#if captionSlot}
       {@render captionSlot()}
     {/if}

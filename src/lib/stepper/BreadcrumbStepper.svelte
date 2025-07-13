@@ -1,15 +1,18 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { breadcrumbstepper, breadcrumbstepperitem, breadcrumbstepperindicator } from ".";
-  import { type BreadcrumbStepperProps } from "$lib";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
+  import { breadcrumbStepper, breadcrumbStepperItem, breadcrumbStepperIndicator } from ".";
+  import { type BreadcrumbStepperProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, steps = [], classes, ...restProps }: BreadcrumbStepperProps = $props();
 
+  const stepperTheme = getTheme("breadcrumbStepper");
+  const stepperItemTheme = getTheme("breadcrumbStepperItem");
+  const stepperIndicatorTheme = getTheme("breadcrumbStepperIndicator");
+
   setContext("stepperType", "breadcrumb");
 
-  const base = breadcrumbstepper();
+  const base = cn(breadcrumbStepper(), stepperTheme);
 </script>
 
 <ol class={base} {...restProps}>
@@ -18,12 +21,12 @@
   {:else if steps}
     {#each steps as step, index}
       <li
-        class={breadcrumbstepperitem({
+        class={cn(breadcrumbStepperItem({
           status: step.status,
           hasChevron: index < steps.length - 1
-        })}
+        }), stepperItemTheme)}
       >
-        <span class={breadcrumbstepperindicator({ status: step.status })}>
+        <span class={cn(breadcrumbStepperIndicator({ status: step.status }), stepperIndicatorTheme)}>
           {#if step.status === "completed" && step.icon}
             <step.icon class={step.iconClass || "h-3 w-3"} />
           {:else}

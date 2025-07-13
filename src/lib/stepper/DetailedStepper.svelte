@@ -1,24 +1,27 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { detailedstepper, detailedstepperitem, detailedstepperindicator } from ".";
-  import { type DetailedStepperProps } from "$lib";
-  import { twMerge } from "tailwind-merge";
+  import { detailedStepper, detailedStepperItem, detailedStepperIndicator } from ".";
+  import { type DetailedStepperProps, cn } from "$lib";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, steps = [], contentClass, classes, ...restrorps }: DetailedStepperProps = $props();
 
+  const stepperTheme = getTheme("detailedStepper");
+  const stepperItemTheme = getTheme("detailedStepperItem");
+  const stepperIndicatorTheme = getTheme("detailedStepperIndicator");
+
   setContext("stepperType", "detailed");
 
-  const base = detailedstepper();
 </script>
 
-<ol class={twMerge(base, clsx(classes?.detailedstepper))} {...restrorps}>
+<ol class={cn(detailedStepper(), clsx(classes?.detailedstepper), stepperTheme)} {...restrorps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
-      <li class={twMerge(detailedstepperitem({ status: step.status }), clsx(classes?.detailedstepperitem))}>
-        <span class={twMerge(detailedstepperindicator({ status: step.status }), clsx(classes?.detailedstepperindicator))}>
+      <li class={cn(detailedStepperItem({ status: step.status }), clsx(classes?.detailedstepperitem),stepperItemTheme )}>
+        <span class={cn(detailedStepperIndicator({ status: step.status }), clsx(classes?.detailedstepperindicator), stepperIndicatorTheme)}>
           {#if step.status === "completed" && step.icon}
             <step.icon class={clsx(step.iconClass)} />
           {:else}

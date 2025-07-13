@@ -54,6 +54,8 @@ import type { MultiSelectVariants, SelectVariants } from "$lib/forms/select/them
 import type { ToggleVariants } from "$lib/forms/toggle/theme";
 import type { PhoneInputVariants } from "$lib/forms/phoneinput/theme";
 import type { ButtonToggleVariants } from "$lib/forms/button-toggle/theme";
+import type { TableSearchColor } from "$lib/table/theme"
+
 // typography component variants
 import type { AnchorVariants } from "$lib/typography/anchor/theme";
 import type { BlockquoteVariants } from "$lib/typography/blockquote/theme";
@@ -1699,7 +1701,7 @@ export interface TableSearchProps extends HTMLTableAttributes {
   striped?: boolean;
   hoverable?: boolean;
   customColor?: string;
-  color?: string;
+  color?: TableSearchColor;
   innerDivClass?: ClassValue;
   inputClass?: ClassValue;
   searchClass?: ClassValue;

@@ -1,28 +1,30 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { verticalstepper, verticalsteppercard, verticalsteppercontent } from ".";
-  import { type VerticalStepperProps } from "$lib";
-  import { twMerge } from "tailwind-merge";
+  import { verticalStepper, verticalStepperCard, verticalStepperContent } from ".";
+  import { type VerticalStepperProps, cn } from "$lib";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, steps = [], liClass, classes, ...restProps }: VerticalStepperProps = $props();
 
-  setContext("stepperType", "vertical");
+  // verticalStepper, verticalStepperCard, verticalStepperContent 
+  const stepperTheme = getTheme("veticalStepper");
+  const stepperCardTheme = getTheme("verticalStepperCard");
+  const stepperContentTheme = getTheme("verticalStepperContent");
 
-  const base = verticalstepper();
+  setContext("stepperType", "vertical");
 </script>
 
-<ol class={twMerge(base, clsx(verticalstepper))} {...restProps}>
+<ol class={cn(verticalStepper(), stepperTheme)} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li class={clsx(liClass)}>
-        <div class={twMerge(verticalsteppercard({ status: step.status }), clsx(classes?.verticalsteppercard))} role="alert">
-          <div class={twMerge(verticalsteppercontent(), clsx(classes?.verticalsteppercontent))}>
+        <div class={cn(verticalStepperCard({ status: step.status }), clsx(classes?.verticalsteppercard), stepperCardTheme)} role="alert">
+          <div class={cn(verticalStepperContent(), clsx(classes?.verticalsteppercontent), stepperContentTheme)}>
             <span class="sr-only">{step.label}</span>
             <h3 class="font-medium">{step.id}. {step.label}</h3>
-
             {#if step.status === "completed"}
               {#if step.icon}
                 <step.icon class={step.iconClass || "h-4 w-4"} />

@@ -1,38 +1,43 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { stepper, stepperitem, steppercontent } from ".";
-  import { type StepperProps } from "$lib";
-  import { twMerge } from "tailwind-merge";
+  import { stepper, stepperItem, stepperContent } from ".";
+  import { type StepperProps, cn } from "$lib";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, steps = [], classes, ...restProps }: StepperProps = $props();
 
-  setContext("stepperType", "stepper");
+  // stepper, stepperItem, stepperContent
+  const stepperTheme = getTheme("stepper");
+  const stepperItemTheme = getTheme("stepperItem");
+  const stepperContentTheme = getTheme("stepperContent");
 
-  const base = stepper();
+  setContext("stepperType", "stepper");
 </script>
 
-<ol {...restProps} class={twMerge(stepper(), clsx(classes?.stepper))}>
+<ol {...restProps} class={cn(stepper(), clsx(classes?.stepper), stepperTheme)}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li
-        class={twMerge(
-          stepperitem({
+        class={cn(
+          stepperItem({
             status: step.status,
             isLast: index === steps.length - 1
           }),
-          clsx(classes?.stepperitem)
+          clsx(classes?.stepperitem),
+          stepperItemTheme
         )}
       >
         <span
-          class={twMerge(
-            steppercontent({
+          class={cn(
+            stepperContent({
               status: step.status,
               isLast: index === steps.length - 1
             }),
-            clsx(classes?.steppercontent)
+            clsx(classes?.steppercontent),
+            stepperContentTheme
           )}
         >
           {#if step.status === "completed"}

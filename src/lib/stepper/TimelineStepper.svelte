@@ -1,24 +1,27 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { timelinestepper, timelinestepperitem, timelinesteppercircle } from ".";
-  import { type TimelineStepperProps } from "$lib";
-  import { twMerge } from "tailwind-merge";
+  import { timelineStepper, timelineStepperItem, timelineStepperCircle } from ".";
+  import { type TimelineStepperProps, cn } from "$lib";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, steps = [], classes, contentClass, ...restProps }: TimelineStepperProps = $props();
 
-  setContext("stepperType", "timeline");
+  // timelineStepper, timelineStepperItem, timelineStepperCircle
+  const stepperTheme = getTheme("timelineStepper");
+  const stepperItemTheme = getTheme("timelineStepperItem");
+  const stepperCircleTheme = getTheme("timelineStepperCircle");
 
-  const base = timelinestepper();
+  setContext("stepperType", "timeline");
 </script>
 
-<ol class={twMerge(base, clsx(classes?.timelinestepper))} {...restProps}>
+<ol class={cn(timelineStepper(), clsx(classes?.timelinestepper), stepperTheme)} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
-      <li class={twMerge(timelinestepperitem({ isLast: index === steps.length - 1 }), clsx(classes?.timelinestepperitem))}>
-        <span class={twMerge(timelinesteppercircle({ status: step.status }), clsx(classes?.timelinesteppercircle))}>
+      <li class={cn(timelineStepperItem({ isLast: index === steps.length - 1 }), clsx(classes?.timelinestepperitem), stepperItemTheme)}>
+        <span class={cn(timelineStepperCircle({ status: step.status }), clsx(classes?.timelinesteppercircle), stepperCircleTheme)}>
           {#if step.status === "completed"}
             {#if step.icon}
               <step.icon class={clsx(step.iconClass) || "h-3.5 w-3.5"} />
