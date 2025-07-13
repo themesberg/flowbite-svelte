@@ -1,24 +1,27 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
-  import { review as reviewVariants } from ".";
+  import { review as reviewVariants, type ReviewTheme } from ".";
   import type { ReviewProps } from "$lib/types";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, address, item1, item2, item3, review, articleClass, divClass, div2Class, div3Class, imgClass, ulClass, liClass }: ReviewProps = $props();
+
+  const theme = getTheme("review");
 
   const { article, div, div2, div3, img, ul, li } = $derived(reviewVariants());
 </script>
 
 {#if review}
-  <article class={twMerge(article(), clsx(articleClass))}>
+  <article class={cn(article(), clsx(articleClass), (theme as ReviewTheme)?.article)}>
     <div>
-      <div class={twMerge(div(), clsx(divClass))}>
-        <img class={twMerge(img(), clsx(imgClass))} src={review.imgSrc} alt={review.imgAlt} />
-        <div class={twMerge(div2(), clsx(div2Class))}>
+      <div class={cn(div(), clsx(divClass), (theme as ReviewTheme)?.div)}>
+        <img class={cn(img(), clsx(imgClass), (theme as ReviewTheme)?.img)} src={review.imgSrc} alt={review.imgAlt} />
+        <div class={cn(div2(), clsx(div2Class), (theme as ReviewTheme)?.div2)}>
           <p>{review.name}</p>
           {#if review.address}
             {#if address}
-              <div class={twMerge(div3(), clsx(div3Class))}>
+              <div class={cn(div3(), clsx(div3Class), (theme as ReviewTheme)?.div3)}>
                 {@render address()}
               </div>
             {/if}
@@ -26,9 +29,9 @@
         </div>
       </div>
       {#if review.item1 || review.item2 || review.item3}
-        <ul class={twMerge(ul(), clsx(ulClass))}>
+        <ul class={cn(ul(), clsx(ulClass), (theme as ReviewTheme)?.ul)}>
           {#if review.item1}
-            <li class={twMerge(twMerge(li(), clsx(liClass)))}>
+            <li class={cn(li(), clsx(liClass), (theme as ReviewTheme)?.li)}>
               {#if item1}
                 {@render item1()}
               {/if}
@@ -42,7 +45,7 @@
             </li>
           {/if}
           {#if review.item3}
-            <li class={twMerge(clsx(liClass))}>
+            <li class={clsx(liClass)}>
               {#if item3}
                 {@render item3()}
               {/if}

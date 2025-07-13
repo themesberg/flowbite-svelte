@@ -17,6 +17,7 @@ import type { PopoverVariants } from "$lib/popover/theme";
 import type { SidebarVariants } from "$lib/sidebar/theme";
 import type { CardPlaceholderVariants, ImagePlaceholderVariants, ListPlaceholderVariants, SkeletonVariants, TextPlaceholderVariants, VideoPlaceholderVariants } from "$lib/skeleton/theme";
 import type { SpinnerVaraiants } from "$lib/spinner/theme";
+import type { StepIndicatorVariants } from "$lib/stepindicator/theme";
 import type { StepperVariants, ProgressStepperVariants, DetailedStepperVariants, VerticalStepperVariants, BreadcrumbStepperVariants, TimelineStepperVariants } from "$lib/stepper/theme";
 import type { TableVariants } from "$lib/table/theme";
 import type { TabsVaraints } from "$lib/tabs/theme";
@@ -1512,11 +1513,12 @@ export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
 
 // stepindicator
 export interface StepIndicatorProps extends HTMLAttributes<HTMLElement> {
-  steps: string[];
-  currentStep: number;
-  size?: string;
-  glow?: boolean;
-  hideLabel?: boolean;
+  steps?: string[];
+  currentStep?: number;
+  size?: StepIndicatorVariants["size"];
+  color?: StepIndicatorVariants["color"] | "custom";
+  glow?: StepIndicatorVariants["glow"];
+  hideLabel?: StepIndicatorVariants["hideLabel"];
   completedCustom?: string;
   currentCustom?: string;
 }

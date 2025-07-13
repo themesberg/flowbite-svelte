@@ -1,12 +1,11 @@
-import Sidebar from "./Sidebar.svelte";
-import SidebarWrapper from "./SidebarWrapper.svelte";
-import SidebarDropdownWrapper from "./SidebarDropdownWrapper.svelte";
-import SidebarGroup from "./SidebarGroup.svelte";
-import SidebarItem from "./SidebarItem.svelte";
-import SidebarDropdownItem from "./SidebarItem.svelte";
-import SidebarButton from "./SidebarButton.svelte";
-import SidebarCta from "./SidebarCta.svelte";
-import SidebarBrand from "./SidebarBrand.svelte";
-import { sidebar, sidebarbutton, sidebarcta, sitebarbrand, sidebardropdownwrapper } from "./theme";
+export { default as Sidebar } from "./Sidebar.svelte";
+export { default as SidebarWrapper } from "./SidebarWrapper.svelte";
+export { default as SidebarDropdownWrapper } from "./SidebarDropdownWrapper.svelte";
+export { default as SidebarGroup } from "./SidebarGroup.svelte";
+export { default as SidebarItem } from "./SidebarItem.svelte";
+export { default as SidebarDropdownItem } from "./SidebarItem.svelte";
+export { default as SidebarButton } from "./SidebarButton.svelte";
+export { default as SidebarCta } from "./SidebarCta.svelte";
+export { default as SidebarBrand } from "./SidebarBrand.svelte";
+export { sidebar, sidebarButton, sidebarCta, sidebarBrand, sidebarDropdownWrapper, type SidebarTheme, type SidebarButtonTheme, type SidebarCtaTheme, type SidebarBrandTheme, type SidebarDropdownWrapperTheme } from "./theme";
 
-export { Sidebar, sidebar, SidebarDropdownItem, SidebarDropdownWrapper, SidebarWrapper, sidebardropdownwrapper, SidebarGroup, SidebarItem, SidebarButton, sidebarbutton, SidebarCta, sidebarcta, SidebarBrand, sitebarbrand };

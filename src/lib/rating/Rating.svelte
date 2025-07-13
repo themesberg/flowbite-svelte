@@ -1,10 +1,14 @@
 <script lang="ts">
   import clsx from "clsx";
   import Star from "./Star.svelte";
-  import { rating as ratingVariants } from ".";
+  import { rating as ratingVariants, type RatingTheme } from ".";
   import type { RatingProps } from "$lib/types";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, text, class: className, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass, ...restProps }: RatingProps = $props();
+
+  const theme = getTheme("rating");
 
   const { base, p } = $derived(ratingVariants());
   const ratingGroupId = crypto.randomUUID();
@@ -14,10 +18,10 @@
   let grayStars: number = total - (fullStars + Math.ceil(rateDiffence));
 </script>
 
-<div {...restProps} class={base({ class: clsx(className) })}>
+<div {...restProps} class={cn(base({ class: clsx(className) }), (theme as RatingTheme)?.base)}>
   {#if count && children}
     <Icon fillPercent={100} {size} iconIndex={0} groupId={ratingGroupId} />
-    <p class={p({ class: clsx(pClass) })}>{rating}</p>
+    <p class={cn(p({ class: clsx(pClass) }), (theme as RatingTheme)?.p)}>{rating}</p>
     {@render children()}
   {:else}
     <!-- eslint-disable @typescript-eslint/no-unused-vars-->

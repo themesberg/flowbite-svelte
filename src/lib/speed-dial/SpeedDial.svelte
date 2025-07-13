@@ -1,25 +1,25 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
-  import Popper from "$lib/utils/Popper.svelte";
+  import { Popper, cn } from "$lib";
   import { getSideAxis } from "@floating-ui/utils";
   import { setContext } from "svelte";
-  import { speed_dial } from "./theme";
+  import { speedDial, type SpeedDialTheme } from "./theme";
   import type { SpeedDialProps, SpeedCtxType } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, popperClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, class: className, isOpen = $bindable(false), ...restProps }: SpeedDialProps = $props();
+
+  const theme = getTheme("speedDial");
 
   setContext<SpeedCtxType>("speed-dial", { pill, tooltip, textOutside });
 
   let vertical: boolean = $derived(getSideAxis(placement) === "y");
 
-  let { base, popper } = $derived(speed_dial({ vertical }));
+  let { base, popper } = $derived(speedDial({ vertical }));
 </script>
 
-<!-- class="bg-transparent" -->
-
-<Popper {...restProps} bind:isOpen {trigger} arrow={false} {placement} class={twMerge(base(), clsx(className))}>
-  <div class={twMerge(popper(), clsx(popperClass))}>
+<Popper {...restProps} bind:isOpen {trigger} arrow={false} {placement} class={cn(base(), clsx(className), (theme as SpeedDialTheme)?.base)}>
+  <div class={cn(popper(), clsx(popperClass), (theme as SpeedDialTheme)?.popper)}>
     {@render children()}
   </div>
 </Popper>

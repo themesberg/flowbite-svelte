@@ -1,14 +1,18 @@
 <script lang="ts">
-  import { widgetPlaceholder } from "./index";
-  import { twMerge } from "tailwind-merge";
+  import { widgetPlaceholder, type WidgetPlaceholderTheme } from ".";
   import clsx from "clsx";
   import { type WidgetPlaceholderProps } from "$lib";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { class: className }: WidgetPlaceholderProps = $props();
+
+  const theme = getTheme("widgetPlaceholder");
+
   const { base, wrapper, vLine, hLine } = widgetPlaceholder({});
 </script>
 
-<div role="status" class={twMerge(base(), clsx(className))}>
+<div role="status" class={cn(base(), clsx(className), (theme as WidgetPlaceholderTheme)?.base)}>
   <div class={hLine({ class: "mb-2.5 h-2.5 w-32" })}></div>
   <div class={hLine({ class: "mb-10 h-2 w-48" })}></div>
   <div class={wrapper()}>

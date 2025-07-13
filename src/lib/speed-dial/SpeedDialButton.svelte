@@ -1,21 +1,22 @@
 <script lang="ts">
-  import Button from "$lib/buttons/Button.svelte";
-  import Tooltip from "$lib/tooltip/Tooltip.svelte";
+  import { Button, Tooltip, cn } from "$lib";
   import { getContext } from "svelte";
-  import { speed_dial_button } from "./theme";
+  import { speedDialButton, type SpeedDialButtonTheme } from "./theme";
   import type { SpeedCtxType, SpeedDialButtonProps } from "$lib/types";
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   const context = getContext<SpeedCtxType>("speed-dial");
 
   let { children, name = "", color = "light", tooltip = context.tooltip, pill = context.pill, textOutside = context.textOutside, textClass, class: className, ...restProps }: SpeedDialButtonProps = $props();
 
-  let { base, span } = $derived(speed_dial_button({ textOutside, tooltip: tooltip == "none" }));
-  let spanClass = $derived(tooltip === "none" ? twMerge(span(), clsx(textClass)) : "sr-only");
+  const theme = getTheme("speedDialButton");
+
+  let { base, span } = $derived(speedDialButton({ textOutside, tooltip: tooltip == "none" }));
+  let spanClass = $derived(tooltip === "none" ? cn(span(), clsx(textClass), (theme as SpeedDialButtonTheme)?.span) : "sr-only");
 </script>
 
-<Button {pill} {color} {...restProps} class={twMerge(base(), clsx(className))}>
+<Button {pill} {color} {...restProps} class={cn(base(), clsx(className), (theme as SpeedDialButtonTheme)?.base)}>
   {@render children?.()}
   <span class={spanClass}>{name}</span>
 </Button>

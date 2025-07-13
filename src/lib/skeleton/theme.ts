@@ -1,8 +1,8 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
 // card placeholder
-type CardPlaceholderVariants = VariantProps<typeof cardPlaceholder>;
-const cardPlaceholder = tv({
+export type CardPlaceholderVariants = VariantProps<typeof cardPlaceholder>;
+export const cardPlaceholder = tv({
   slots: {
     base: "p-4 rounded-sm border border-gray-200 shadow-sm animate-pulse md:p-6 dark:border-gray-700",
     imageArea: "mb-4 flex h-48 items-center justify-center rounded-sm bg-gray-300 dark:bg-gray-700",
@@ -21,9 +21,12 @@ const cardPlaceholder = tv({
   }
 });
 
+export type CardPlaceholderSlots = keyof typeof cardPlaceholder.slots;
+export type CardPlaceholderTheme = Partial<Record<CardPlaceholderSlots, string>>;
+
 // ImagePlaceholder
-type ImagePlaceholderVariants = VariantProps<typeof imagePlaceholder>;
-const imagePlaceholder = tv({
+export type ImagePlaceholderVariants = VariantProps<typeof imagePlaceholder>;
+export const imagePlaceholder = tv({
   slots: {
     base: "space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center",
     image: "flex w-full items-center justify-center rounded-sm bg-gray-300 sm:w-96 dark:bg-gray-700",
@@ -71,10 +74,14 @@ const imagePlaceholder = tv({
   }
 });
 
-// ListPlaceholder
-type ListPlaceholderVariants = VariantProps<typeof listPlaceholder>;
+export type ImagePlaceholderSlots = keyof typeof imagePlaceholder.slots;
+export type ImagePlaceholderTheme = Partial<Record<ImagePlaceholderSlots, string>>;
 
-const listPlaceholder = tv({
+
+// ListPlaceholder
+export type ListPlaceholderVariants = VariantProps<typeof listPlaceholder>;
+
+export const listPlaceholder = tv({
   slots: {
     base: "p-4 space-y-4 max-w-md rounded-sm border border-gray-200 divide-y divide-gray-200 shadow-sm animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700",
     item: "flex items-center justify-between",
@@ -109,10 +116,13 @@ const listPlaceholder = tv({
   }
 });
 
-type SkeletonVariants = VariantProps<typeof skeleton>;
+export type ListPlaceholderSlots = keyof typeof listPlaceholder.slots;
+export type ListPlaceholderTheme = Partial<Record<ListPlaceholderSlots, string>>;
+
+export type SkeletonVariants = VariantProps<typeof skeleton>;
 
 // Skeleton
-const skeleton = tv({
+export const skeleton = tv({
   slots: {
     wrapper: "animate-pulse",
     line: "rounded-full bg-gray-200 dark:bg-gray-700"
@@ -138,8 +148,11 @@ const skeleton = tv({
   }
 });
 
+export type SkeletonSlots = keyof typeof skeleton.slots;
+export type SkeletonTheme = Partial<Record<SkeletonSlots, string>>;
+
 // TestimonialPlaceholder
-const testimonialPlaceholder = tv({
+export const testimonialPlaceholder = tv({
   slots: {
     wrapper: "animate-pulse",
     line1: "rounded-full bg-gray-200 dark:bg-gray-700",
@@ -149,10 +162,14 @@ const testimonialPlaceholder = tv({
   }
 });
 
-// TextPlaceholder
-type TextPlaceholderVariants = VariantProps<typeof textPlaceholder>;
+export type TestimonialPlaceholderSlots = keyof typeof testimonialPlaceholder.slots;
+export type TestimonialPlaceholderTheme = Partial<Record<TestimonialPlaceholderSlots, string>>;
 
-const textPlaceholder = tv({
+
+// TextPlaceholder
+export type TextPlaceholderVariants = VariantProps<typeof textPlaceholder>;
+
+export const textPlaceholder = tv({
   slots: {
     baseWrapper: "space-y-2.5 animate-pulse",
     divWrapper: "flex items-center space-x-2 rtl:space-x-reverse",
@@ -170,9 +187,13 @@ const textPlaceholder = tv({
   }
 });
 
+export type TextPlaceholderSlots = keyof typeof textPlaceholder.slots;
+export type TextPlaceholderTheme = Partial<Record<TextPlaceholderSlots, string>>;
+
+
 // VideoPlaceholder
-type VideoPlaceholderVariants = VariantProps<typeof videoPlaceholder>;
-const videoPlaceholder = tv({
+export type VideoPlaceholderVariants = VariantProps<typeof videoPlaceholder>;
+export const videoPlaceholder = tv({
   base: "flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700",
   variants: {
     size: {
@@ -185,8 +206,10 @@ const videoPlaceholder = tv({
   }
 });
 
+export type VideoPlaceholderTheme = string;
+
 // WidgetPlaceholder
-const widgetPlaceholder = tv({
+export const widgetPlaceholder = tv({
   slots: {
     base: "p-4 max-w-sm rounded-sm border border-gray-200 shadow-sm animate-pulse md:p-6 dark:border-gray-700",
     wrapper: "mt-4 flex items-baseline space-x-6 rtl:space-x-reverse",
@@ -195,4 +218,5 @@ const widgetPlaceholder = tv({
   }
 });
 
-export { cardPlaceholder, type CardPlaceholderVariants, imagePlaceholder, type ImagePlaceholderVariants, listPlaceholder, type ListPlaceholderVariants, skeleton, type SkeletonVariants, testimonialPlaceholder, textPlaceholder, type TextPlaceholderVariants, videoPlaceholder, type VideoPlaceholderVariants, widgetPlaceholder };
+export type WidgetPlaceholderSlots = keyof typeof widgetPlaceholder.slots;
+export type WidgetPlaceholderTheme = Partial<Record<WidgetPlaceholderSlots, string>>;

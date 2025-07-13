@@ -1,11 +1,15 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
-  import { sidebarbutton } from ".";
+  import { sidebarButton } from ".";
   import type { SidebarButtonProps } from "$lib/types";
+    import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
+
   let { breakpoint = "md", class: className, ...restProps }: SidebarButtonProps = $props();
 
-  const base = $derived(twMerge(sidebarbutton({ breakpoint }), clsx(className)));
+  const theme = getTheme("sidebarButton");
+
+  const base = $derived(cn(sidebarButton({ breakpoint }), clsx(className), theme));
 </script>
 
 <button {...restProps} type="button" class={base}>

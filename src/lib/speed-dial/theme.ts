@@ -1,9 +1,9 @@
 // Dial
 import { tv, type VariantProps } from "tailwind-variants";
 
-export type SpeedDialVariants = VariantProps<typeof speed_dial>;
+export type SpeedDialVariants = VariantProps<typeof speedDial>;
 
-export const speed_dial = tv({
+export const speedDial = tv({
   slots: {
     base: "group bg-transparent",
     popper: "flex items-center gap-2 bg-transparent text-inherit"
@@ -18,10 +18,13 @@ export const speed_dial = tv({
   }
 });
 
-// Button
-export type SpeedDialButtonVariants = VariantProps<typeof speed_dial_button>;
+export type SpeedDialSlots = keyof typeof speedDial.slots;
+export type SpeedDialTheme = Partial<Record<SpeedDialSlots, string>>;
 
-export const speed_dial_button = tv({
+// Button
+export type SpeedDialButtonVariants = VariantProps<typeof speedDialButton>;
+
+export const speedDialButton = tv({
   slots: {
     base: "w-[52px] h-[52px] shadow-xs p-0",
     span: "block mb-px text-xs font-medium"
@@ -41,3 +44,6 @@ export const speed_dial_button = tv({
   },
   defaultVariants: {}
 });
+
+export type SpeedDialButtonSlots = keyof typeof speedDialButton.slots;
+export type SpeedDialButtonTheme = Partial<Record<SpeedDialButtonSlots, string>>;

@@ -1,12 +1,10 @@
-import AdvancedRating from "./AdvancedRating.svelte";
-import Heart from "./Heart.svelte";
-import Rating from "./Rating.svelte";
-import RatingComment from "./RatingComment.svelte";
-import Review from "./Review.svelte";
-import ScoreRating from "./ScoreRating.svelte";
-import Star from "./Star.svelte";
-import Thumbup from "./Thumbup.svelte";
-import CustomIcon from "./CustomIcon.svelte";
-import { advancedrating, rating, review, scorerating } from "./theme";
-
-export { AdvancedRating, advancedrating, Heart, Rating, rating, RatingComment, Review, review, ScoreRating, scorerating, Star, Thumbup, CustomIcon };
+export { default as AdvancedRating } from "./AdvancedRating.svelte";
+export { default as Heart } from "./Heart.svelte";
+export { default as Rating}  from "./Rating.svelte";
+export { default as RatingComment } from "./RatingComment.svelte";
+export { default as Review } from "./Review.svelte";
+export { default as ScoreRating } from "./ScoreRating.svelte";
+export { default as Star } from "./Star.svelte";
+export { default as Thumbup } from "./Thumbup.svelte";
+export { default as CustomIcon } from "./CustomIcon.svelte";
+export { advancedRating, rating, review, scoreRating, type AdvancedRatingTheme, type RatingTheme, type ReviewTheme, type ScoreRatingTheme } from "./theme";

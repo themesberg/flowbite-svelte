@@ -3,12 +3,15 @@
   import { fly } from "svelte/transition";
   import { writable } from "svelte/store";
   import { sineIn } from "svelte/easing";
-  import { sidebar } from ".";
+  import { sidebar, type SidebarTheme } from ".";
   import { trapFocus, type SidebarProps, type SidebarCtxType } from "$lib";
-  import { twMerge } from "tailwind-merge";
+    import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
 
   let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = "md", alwaysOpen = false, position = "fixed", activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, activeUrl = "", class: className, ...restProps }: SidebarProps = $props();
+
+  const theme = getTheme("sidebar");
 
   const breakpointValues = {
     sm: 640,
@@ -35,10 +38,10 @@
       return closeSidebar;
     },
     get activeClass() {
-      return twMerge(active(), clsx(activeClass));
+      return cn(active(), clsx(activeClass), (theme as SidebarTheme)?.active);
     },
     get nonActiveClass() {
-      return twMerge(nonactive(), clsx(nonActiveClass));
+      return cn(nonactive(), clsx(nonActiveClass), (theme as SidebarTheme)?.nonactive);
     },
     isSingle
   };
@@ -58,17 +61,17 @@
 {#if isOpen || isLargeScreen}
   {#if isOpen && !alwaysOpen}
     {#if backdrop && activateClickOutside}
-      <div role="presentation" class={twMerge(backdropCls(), clsx(backdropClass))} onclick={closeSidebar}></div>
+      <div role="presentation" class={cn(backdropCls(), clsx(backdropClass), (theme as SidebarTheme)?.backdrop)} onclick={closeSidebar}></div>
     {:else if backdrop && !activateClickOutside}
-      <div role="presentation" class={twMerge(backdropCls(), clsx(backdropClass))}></div>
+      <div role="presentation" class={cn(backdropCls(), clsx(backdropClass), (theme as SidebarTheme)?.backdrop)}></div>
     {:else if !backdrop && activateClickOutside}
       <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full" onclick={closeSidebar}></div>
     {:else if !backdrop && !activateClickOutside}
       <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full"></div>
     {/if}
   {/if}
-  <aside use:trapFocus={!isLargeScreen && isOpen && !alwaysOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} transition:transition={!alwaysOpen ? transitionParams : undefined} {...restProps} class={twMerge(base(), clsx(clsx(className)))} aria-label={ariaLabel}>
-    <div class={twMerge(div(), clsx(divClass))}>
+  <aside use:trapFocus={!isLargeScreen && isOpen && !alwaysOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} transition:transition={!alwaysOpen ? transitionParams : undefined} {...restProps} class={cn(base(), clsx(clsx(className)), (theme as SidebarTheme)?.base)} aria-label={ariaLabel}>
+    <div class={cn(div(), clsx(divClass), (theme as SidebarTheme)?.base)}>
       {@render children()}
     </div>
   </aside>

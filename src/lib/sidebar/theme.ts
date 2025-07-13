@@ -45,7 +45,10 @@ export const sidebar = tv({
   ]
 });
 
-export const sidebarbutton = tv({
+export type SidebarSlots = keyof typeof sidebar.slots;
+export type SidebarTheme = Partial<Record<SidebarSlots, string>>;
+
+export const sidebarButton = tv({
   base: "inline-flex items-center p-0 mt-0 ms-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
   variants: {
     breakpoint: {
@@ -58,7 +61,9 @@ export const sidebarbutton = tv({
   }
 });
 
-export const sidebarcta = tv({
+export type SidebarButtonTheme = string;
+
+export const sidebarCta = tv({
   slots: {
     base: "p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900",
     div: "flex items-center mb-3",
@@ -66,7 +71,10 @@ export const sidebarcta = tv({
   }
 });
 
-export const sitebarbrand = tv({
+export type SidebarCtaSlots = keyof typeof sidebarCta.slots;
+export type SidebarCtaTheme = Partial<Record<SidebarCtaSlots, string>>;
+
+export const sidebarBrand = tv({
   slots: {
     base: "flex items-center ps-2.5 mb-5",
     img: "h-6 me-3 sm:h-7",
@@ -74,7 +82,10 @@ export const sitebarbrand = tv({
   }
 });
 
-export const sidebardropdownwrapper = tv({
+export type SidebarBrandSlots = keyof typeof sidebarBrand.slots;
+export type SidebarBrandTheme = Partial<Record<SidebarBrandSlots, string>>;
+
+export const sidebarDropdownWrapper = tv({
   slots: {
     base: "group",
     btn: "flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-sm transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
@@ -83,3 +94,6 @@ export const sidebardropdownwrapper = tv({
     ul: "py-2 space-y-0"
   }
 });
+
+export type SidebarDropdownWrapperSlots = keyof typeof sidebarDropdownWrapper.slots;
+export type SidebarDropdownWrapperTheme = Partial<Record<SidebarDropdownWrapperSlots, string>>;

@@ -3,10 +3,11 @@
   import { writable, type Writable } from "svelte/store";
   import { slide } from "svelte/transition";
   import { uiHelpers } from "$lib";
-  import { sidebardropdownwrapper } from ".";
+  import { sidebarDropdownWrapper, type SidebarDropdownWrapperTheme } from ".";
   import type { SidebarDropdownWrapperProps, ParamsType } from "$lib/types";
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   type SidebarContext = {
     selected?: Writable<object | null>;
@@ -15,7 +16,9 @@
 
   let { children, arrowup, arrowdown, icon, isOpen = $bindable(false), btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, onclick, ...restProps }: SidebarDropdownWrapperProps = $props();
 
-  const { base, btn, span, svg, ul } = sidebardropdownwrapper();
+  const theme = getTheme("sidebarDropdownWrapper");
+
+  const { base, btn, span, svg, ul } = sidebarDropdownWrapper();
 
   let sidebarDropdown = uiHelpers();
   sidebarDropdown.isOpen = isOpen;
@@ -49,30 +52,30 @@
   }
 </script>
 
-<li class={twMerge(base(), clsx(className))}>
-  <button {...restProps} onclick={handleDropdown} type="button" class={twMerge(btn(), clsx(btnClass))} aria-controls="sidebar-dropdown">
+<li class={cn(base(), clsx(className), (theme as SidebarDropdownWrapperTheme)?.base)}>
+  <button {...restProps} onclick={handleDropdown} type="button" class={cn(btn(), clsx(btnClass), (theme as SidebarDropdownWrapperTheme)?.btn)} aria-controls="sidebar-dropdown">
     {#if icon}
       {@render icon()}
     {/if}
-    <span class={twMerge(span(), clsx(spanClass))}>{label}</span>
+    <span class={cn(span(), clsx(spanClass), (theme as SidebarDropdownWrapperTheme)?.span)}>{label}</span>
     {#if isOpen}
       {#if arrowup}
         {@render arrowup()}
       {:else}
-        <svg class={twMerge(svg(), clsx(svgClass))} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <svg class={cn(svg(), clsx(svgClass), (theme as SidebarDropdownWrapperTheme)?.svg)} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
         </svg>
       {/if}
     {:else if arrowdown}
       {@render arrowdown()}
     {:else}
-      <svg class={twMerge(svg(), clsx(svgClass))} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+      <svg class={cn(svg(), clsx(svgClass), (theme as SidebarDropdownWrapperTheme)?.svg)} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
       </svg>
     {/if}
   </button>
   {#if isOpen}
-    <ul class={twMerge(ul(), clsx(ulClass))} transition:transition={params as ParamsType}>
+    <ul class={cn(ul(), clsx(ulClass), (theme as SidebarDropdownWrapperTheme)?.ul)} transition:transition={params as ParamsType}>
       {@render children()}
     </ul>
   {/if}

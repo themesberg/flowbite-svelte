@@ -1,18 +1,21 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
-  import { sitebarbrand } from ".";
+  import { sidebarBrand, type SidebarBrandTheme } from ".";
   import type { SidebarBrandProps } from "$lib/types";
+    import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, site, imgClass, spanClass, class: className, ...restProps }: SidebarBrandProps = $props();
 
-  const { base, img, span } = $derived(sitebarbrand());
+  const theme = getTheme("sidebarBrand");
+
+  const { base, img, span } = $derived(sidebarBrand());
 </script>
 
-<a {...restProps} href={site?.href ? site.href : "/"} class={twMerge(base(), clsx(className))}>
+<a {...restProps} href={site?.href ? site.href : "/"} class={cn(base(), clsx(className), (theme as SidebarBrandTheme)?.base)}>
   {#if site}
-    <img src={site.img} class={twMerge(img(), clsx(imgClass))} alt={site.name} />
-    <span class={twMerge(span(), clsx(spanClass))}>{site.name}</span>
+    <img src={site.img} class={cn(img(), clsx(imgClass), (theme as SidebarBrandTheme)?.img)} alt={site.name} />
+    <span class={cn(span(), clsx(spanClass), (theme as SidebarBrandTheme)?.span)}>{site.name}</span>
   {:else if children}
     {@render children()}
   {/if}

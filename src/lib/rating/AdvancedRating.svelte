@@ -1,12 +1,15 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
-  import { advancedrating } from ".";
+  import { advancedRating, type AdvancedRatingTheme } from ".";
   import type { AdvancedRatingProps } from "$lib/types";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { rating, globalText, ratings, divClass, spanClass, div2Class, div3Class, span2Class, unit }: AdvancedRatingProps = $props();
+  
+  const theme = getTheme("advancedRating");
 
-  const { base, span, div2, div3, span2 } = $derived(advancedrating());
+  const { base, span, div2, div3, span2 } = $derived(advancedRating());
 </script>
 
 {#if rating}
@@ -16,12 +19,12 @@
   {@render globalText()}
 {/if}
 {#each ratings as { label, rating }}
-  <div class={twMerge(base(), clsx(divClass))}>
-    <span class={twMerge(span(), clsx(spanClass))}>{label}</span>
-    <div class={twMerge(div2(), clsx(div2Class))}>
-      <div class={twMerge(div3(), clsx(div3Class))} style="width: {rating}%"></div>
+  <div class={cn(base(), clsx(divClass), (theme as AdvancedRatingTheme)?.base)}>
+    <span class={cn(span(), clsx(spanClass), (theme as AdvancedRatingTheme)?.span)}>{label}</span>
+    <div class={cn(div2(), clsx(div2Class), (theme as AdvancedRatingTheme)?.div2)}>
+      <div class={cn(div3(), clsx(div3Class), (theme as AdvancedRatingTheme)?.div3)} style="width: {rating}%"></div>
     </div>
-    <span class={twMerge(span2(), clsx(span2Class))}>{rating}{unit}</span>
+    <span class={cn(span2(), clsx(span2Class), (theme as AdvancedRatingTheme)?.span2)}>{rating}{unit}</span>
   </div>
 {/each}
 
