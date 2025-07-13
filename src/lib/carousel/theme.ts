@@ -11,7 +11,7 @@ export const carousel = tv({
 
 export type CarouselTheme = string;
 
-export const indicators = tv({
+export const carouselIndicators = tv({
   slots: {
     base: "absolute start-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:translate-x-1/2 rtl:space-x-reverse",
     indicator: "bg-gray-100 hover:bg-gray-300"
@@ -29,8 +29,8 @@ export const indicators = tv({
   }
 });
 
-export type IndicatorSlots = keyof typeof indicators.slots;
-export type IndicatorTheme = Partial<Record<IndicatorSlots, string>>;
+export type CarouselIndicatorsSlots = keyof typeof carouselIndicators.slots;
+export type CarouselIndicatorsTheme = Partial<Record<CarouselIndicatorsSlots, string>>;
 
 export const controlButton = tv({
   base: "flex absolute top-0 z-30 justify-center items-center px-4 h-full group focus:outline-hidden text-white dark:text-gray-300",

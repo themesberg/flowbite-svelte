@@ -1,16 +1,19 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
+  import { cn } from "$lib";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import ToolbarButton from "../toolbar/ToolbarButton.svelte";
   import Menu from "./Menu.svelte";
-  import { navbar_hamburger } from "./theme";
+  import { navbarHamburger, type NavbarHamburgerTheme } from "./theme";
   import type { NavbarState, NavHamburgerProps } from "$lib/types";
   import type { MouseEventHandler } from "svelte/elements";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, onclick, menuClass, class: className, name = "Open main menu", ...restProps }: NavHamburgerProps = $props();
 
-  let { base, menu } = navbar_hamburger();
+  const theme = getTheme("navHamburger");
+
+  let { base, menu } = navbarHamburger();
 
   let navState = getContext<NavbarState>("navState");
   const toggle: MouseEventHandler<HTMLButtonElement> = (ev) => {
@@ -18,8 +21,8 @@
   };
 </script>
 
-<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={twMerge(base(), clsx(className))}>
-  <Menu class={twMerge(menu(), clsx(menuClass))} />
+<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={cn(base(), clsx(className), (theme as NavbarHamburgerTheme)?.base)}>
+  <Menu class={cn(menu(), clsx(menuClass), (theme as NavbarHamburgerTheme)?.menu)} />
 </ToolbarButton>
 
 <!--

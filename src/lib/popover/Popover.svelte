@@ -1,24 +1,27 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
+  import { cn } from "$lib";
   import clsx from "clsx";
   import Popper from "../utils/Popper.svelte";
-  import { popover } from "./theme";
+  import { popover, type PopoverTheme } from "./theme";
   import type { PopoverProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { title: titleSlot, color = "default", trigger = "hover", defaultClass, arrow = true, children, placement = "top", class: className, isOpen = $bindable(false), ...restProps }: PopoverProps = $props();
+
+  const theme = getTheme("popover");
 
   let { base, title, h3, content } = $derived(popover({ color }));
 </script>
 
-<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={twMerge(base(), clsx(className))}>
+<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={cn(base(), clsx(className), (theme as PopoverTheme)?.base)}>
   {#if typeof titleSlot === "string"}
-    <div class={title()}>
-      <h3 class={h3()}>{titleSlot}</h3>
+    <div class={cn(title(), (theme as PopoverTheme)?.title)}>
+      <h3 class={cn(h3(), (theme as PopoverTheme)?.h3)}>{titleSlot}</h3>
     </div>
   {:else if titleSlot}
     {@render titleSlot()}
   {/if}
-  <div class={twMerge(content(), clsx(defaultClass))}>
+  <div class={cn(content(), clsx(defaultClass), (theme as PopoverTheme)?.content)}>
     {@render children()}
   </div>
 </Popper>

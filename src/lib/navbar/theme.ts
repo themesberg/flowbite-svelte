@@ -4,18 +4,22 @@ export const navbar = tv({
   base: "relative w-full px-2 py-2.5 sm:px-4"
 });
 
-export const navbar_brand = tv({
+export type NavbarTheme = string;
+
+export const navbarBrand = tv({
   base: "flex items-center"
 });
 
-export const navbar_container = tv({
+export type NavbarBrandTheme = string;
+
+export const navbarContainer = tv({
   base: "mx-auto flex flex-wrap items-center justify-between ",
   variants: {
     fluid: { true: "w-full", false: "container" }
   }
 });
 
-export const navbar_ul = tv({
+export const navbarUl = tv({
   slots: {
     base: "w-full md:block md:w-auto",
     ul: "flex flex-col p-4 mt-0 md:flex-row rtl:space-x-reverse md:text-sm md:font-medium",
@@ -37,7 +41,10 @@ export const navbar_ul = tv({
   defaultVariants: {}
 });
 
-export const navbar_li = tv({
+export type NavbarUlSlots = keyof typeof navbarUl.slots;
+export type NavbarUlTheme = Partial<Record<NavbarUlSlots, string>>;
+
+export const navbarLi = tv({
   base: "block py-2 pe-4 ps-3 md:p-2 rounded-sm md:border-0",
   variants: {
     hidden: {
@@ -47,9 +54,15 @@ export const navbar_li = tv({
   defaultVariants: {}
 });
 
-export const navbar_hamburger = tv({
+export type NavbarLiTheme = string;
+
+export const navbarHamburger = tv({
   slots: {
     base: "ms-3 md:hidden",
     menu: "h-6 w-6 shrink-0"
   }
 });
+
+export type NavbarHamburgerSlots = keyof typeof navbarHamburger.slots;
+export type NavbarHamburgerTheme = Partial<Record<NavbarHamburgerSlots, string>>;
+

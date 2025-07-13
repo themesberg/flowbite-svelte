@@ -34,3 +34,6 @@ export const phoneinput = tv({
     }
   }
 });
+
+export type PhoneInputSlots = keyof typeof phoneinput.slots;
+export type PhoneInputTheme = Partial<Record<PhoneInputSlots, string>>;

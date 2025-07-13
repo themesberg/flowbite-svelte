@@ -1,16 +1,19 @@
 <script lang="ts">
-  import { type ModalProps, type ParamsType, CloseButton, trapFocus } from "$lib";
+  import { type ModalProps, type ParamsType, CloseButton, trapFocus, cn } from "$lib";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
-  import { modal as modalTheme } from ".";
+  import { modal as modalStyle, type ModalTheme } from ".";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params, transition = fade, ...restProps }: ModalProps = $props();
+
+  const theme = getTheme("modal");
 
   const paramsDefault = { duration: 100, easing: sineIn };
   const paramsOptions = $derived(params ?? paramsDefault);
 
-  const { base, form: formCls, header: headerCls, footer: footerCls, body, closeBtn } = $derived(modalTheme({ placement, size }));
+  const { base, form: formCls, header: headerCls, footer: footerCls, body, closebutton } = $derived(modalStyle({ placement, size }));
 
   const close = (dlg: HTMLDialogElement) => (open = false);
   // @ts-expect-error: dlg.requestClose may not be supported
@@ -76,7 +79,7 @@
 
 {#snippet content()}
   {#if title || header}
-    <div class={headerCls({ class: clsx(headerClass) })}>
+    <div class={cn(headerCls({ class: clsx(headerClass) }), (theme as ModalTheme)?.header)}>
       {#if title}
         <h3>{title}</h3>
         {#if dismissable && !permanent}
@@ -87,23 +90,23 @@
       {/if}
     </div>
   {/if}
-  <div class={body({ class: clsx(bodyClass) })}>
+  <div class={cn(body({ class: clsx(bodyClass) }), (theme as ModalTheme)?.body)}>
     {@render children?.()}
   </div>
   {#if footer}
-    <div class={footerCls({ class: clsx(footerClass) })}>
+    <div class={cn(footerCls({ class: clsx(footerClass) }), (theme as ModalTheme)?.footer)}>
       {@render footer()}
     </div>
   {/if}
   {#if dismissable && !permanent && !title}
-    <CloseButton type="submit" onclick={close_handler(form)} class={closeBtn({ class: clsx(closeBtnClass) })} />
+    <CloseButton type="submit" onclick={close_handler(form)} class={cn(closebutton({ class: clsx(closeBtnClass) }), (theme as ModalTheme)?.closebutton)} />
   {/if}
 {/snippet}
 
 {#if open}
-  <dialog {@attach init} use:focusTrap class={base({ class: clsx(className) })} tabindex="-1" onsubmit={_onsubmit} oncancel={_oncancel} onclick={_onclick} ontoggle={_ontoggle} transition:transition|global={paramsOptions as ParamsType} {...restProps}>
+  <dialog {@attach init} use:focusTrap class={cn(base({ class: clsx(className) }), (theme as ModalTheme)?.base)} tabindex="-1" onsubmit={_onsubmit} oncancel={_oncancel} onclick={_onclick} ontoggle={_ontoggle} transition:transition|global={paramsOptions as ParamsType} {...restProps}>
     {#if form}
-      <form method="dialog" class={formCls()}>
+      <form method="dialog" class={cn(formCls(), (theme as ModalTheme)?.form)}>
         {@render content()}
       </form>
     {:else}

@@ -9,7 +9,7 @@ export const modal = tv({
     header: "flex items-center p-4 md:p-5 justify-between rounded-t-lg shrink-0 text-xl font-semibold text-gray-900 dark:text-white",
     footer: "flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse rounded-b-lg shrink-0",
     body: "p-4 md:p-5 space-y-4 overflow-y-auto overscroll-contain",
-    closeBtn: "absolute top-3 end-2.5"
+    closebutton: "absolute top-3 end-2.5"
   },
   variants: {
     placement: {
@@ -36,3 +36,6 @@ export const modal = tv({
     size: "md"
   }
 });
+
+export type ModalSlots = keyof typeof modal.slots;
+export type ModalTheme = Partial<Record<ModalSlots, string>>;

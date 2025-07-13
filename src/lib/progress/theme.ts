@@ -123,6 +123,9 @@ export const progressbar = tv({
   }
 });
 
+export type ProgressbarSlots = keyof typeof progressbar.slots;
+export type ProgressbarTheme = Partial<Record<ProgressbarSlots, string>>;
+
 export type ProgressradialClasses = Partial<{
   [K in keyof (typeof progressradial)["slots"]]: ClassValue;
 }>;
@@ -226,3 +229,6 @@ export const progressradial = tv({
     }
   }
 });
+
+export type ProgressradialSlots = keyof typeof progressradial.slots;
+export type ProgressradialTheme = Partial<Record<ProgressradialSlots, string>>;

@@ -6,7 +6,7 @@ export const select = tv({
   slots: {
     base: "relative",
     select: "block w-full rtl:text-right",
-    clearbtn: "absolute right-8 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black"
+    closebutton: "absolute right-8 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black"
   },
   variants: {
     underline: {
@@ -34,6 +34,9 @@ export const select = tv({
     size: "md"
   }
 });
+
+export type SelectSlots = keyof typeof select.slots;
+export type SelectTheme = Partial<Record<SelectSlots, string>>;
 
 export type MultiSelectVariants = VariantProps<typeof multiselect>;
 
@@ -75,3 +78,6 @@ export const multiselect = tv({
     size: "md"
   }
 });
+
+export type MultiSelectSlots = keyof typeof multiselect.slots;
+export type MultiSelectTheme = Partial<Record<MultiSelectSlots, string>>;

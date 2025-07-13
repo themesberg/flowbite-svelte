@@ -238,10 +238,6 @@
       "types": "./dist/carousel/Controls.svelte.d.ts",
       "svelte": "./dist/carousel/Controls.svelte"
     },
-    "./Indicators.svelte": {
-      "types": "./dist/carousel/Indicators.svelte.d.ts",
-      "svelte": "./dist/carousel/Indicators.svelte"
-    },
     "./Slide.svelte": {
       "types": "./dist/carousel/Slide.svelte.d.ts",
       "svelte": "./dist/carousel/Slide.svelte"

@@ -2,8 +2,11 @@
   import Button from "$lib/buttons/Button.svelte";
   import { type CheckboxButtonProps, cn } from "$lib";
   import { checkboxbutton } from "./theme";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, group = $bindable([]), value, checked, inline, pill, outline, size, color, shadow, ...restProps }: CheckboxButtonProps = $props();
+
+  const theme = getTheme("checkboxButton");
 
   // react on external group changes
   function init(_: HTMLElement, _group: (string | number)[]) {
@@ -42,7 +45,7 @@
     }
   }
 
-  let buttonClass: string = $derived(cn(checkboxbutton({ inline, checked }), className));
+  let buttonClass: string = $derived(cn(checkboxbutton({ inline, checked }), className, theme));
 </script>
 
 <Button tag="label" {checked} {pill} {outline} {size} {color} {shadow} class={buttonClass}>

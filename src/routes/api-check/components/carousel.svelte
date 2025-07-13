@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Carousel, ControlButton, Controls, Indicator, Indicators, Thumbnails } from "$lib";
+  import { Button, Carousel, ControlButton, Controls, Indicator, CarouselIndicators, Thumbnails } from "$lib";
   import type { HTMLImgAttributes } from "svelte/elements";
   import { CaretRightOutline } from "flowbite-svelte-icons";
   import { scale } from "svelte/transition";
@@ -69,7 +69,7 @@
 <h2 class="my-4 text-2xl">Indicators</h2>
 <div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images}>
-    <Indicators />
+    <CarouselIndicators />
   </Carousel>
 </div>
 
@@ -77,7 +77,7 @@
 <div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images} bind:index>
     <Controls />
-    <Indicators position="withThumbnails" />
+    <CarouselIndicators position="withThumbnails" />
     <Thumbnails {images} bind:index />
   </Carousel>
 </div>
@@ -86,7 +86,7 @@
 <div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images} onchange={(detail) => (image = detail)}>
     <Controls />
-    <Indicators />
+    <CarouselIndicators />
   </Carousel>
 
   <div class="my-2 h-10 rounded-sm bg-gray-300 p-2 text-center dark:bg-gray-700 dark:text-white">
@@ -110,7 +110,7 @@
 <h3 class="my-2 text-xl">Basic customization</h3>
 <div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images} imgClass="object-contain h-full w-fit rounded-xs" class="min-h-[320px] rounded-md border-4 border-white bg-gray-200 ring-4 ring-green-500 dark:border-gray-800">
-    <Indicators class="rounded-md border border-white p-2" />
+    <CarouselIndicators class="rounded-md border border-white p-2" />
     <Controls class="items-center pt-4 text-red-400 dark:text-green-400" />
   </Carousel>
 </div>
@@ -118,13 +118,13 @@
 <h3 class="my-2 text-xl">Advanced customization</h3>
 <div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images} bind:index>
-    <Indicators>
+    <CarouselIndicators>
       {#snippet children({ selected, index })}
         <Indicator color={selected ? "red" : "green"} class="h-5 w-5 border border-white text-white {selected ? 'opacity-100' : 'opacity-80'}">
           {index}
         </Indicator>
       {/snippet}
-    </Indicators>
+    </CarouselIndicators>
     <Controls>
       {#snippet children(changeSlide)}
         <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class="bg-red-300/50 dark:bg-red-400/50" />
@@ -146,6 +146,6 @@
 <div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images} transition={scaleAnimation}>
     <Controls />
-    <Indicators />
+    <CarouselIndicators />
   </Carousel>
 </div>

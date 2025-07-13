@@ -1,9 +1,13 @@
 <script lang="ts">
   import { kbd } from ".";
   import { type KbdProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: KbdProps = $props();
-  const kbdCls = cn(kbd(), className);
+
+  const theme = getTheme("kbd");
+
+  const kbdCls = cn(kbd(), className, theme);
 </script>
 
 <kbd {...restProps} class={kbdCls}>

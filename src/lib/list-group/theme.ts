@@ -31,6 +31,8 @@ export const listGroup = tv({
   }
 });
 
+export type ListGroupTheme = string;
+
 export type ListgroupItemVariants = VariantProps<typeof listGroupItem>;
 
 export const listGroupItem = tv({
@@ -71,3 +73,5 @@ export const listGroupItem = tv({
     // }
   ]
 });
+
+export type ListGroupItemTheme = string;

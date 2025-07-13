@@ -1,14 +1,16 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { setContext } from "svelte";
-  import NavContainer from "./NavContainer.svelte";
+  import { NavContainer, cn } from "$lib";
   import { navbar } from "./theme";
   import type { NavbarState, NavbarProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   // propagate props type from underlying Frame
 
   let { children, fluid, navContainerClass, class: className, closeOnClickOutside = true, ...restProps }: NavbarProps = $props();
+
+  const theme = getTheme("navbar");
 
   let navState = $state({ hidden: true });
   setContext<NavbarState>("navState", navState);
@@ -32,7 +34,7 @@
 <svelte:document onclick={handleDocumentClick} />
 
 <nav bind:this={navbarElement}>
-  <div {...restProps} class={twMerge(navbar(), clsx(className))}>
+  <div {...restProps} class={cn(navbar(), clsx(className), theme)}>
     <NavContainer {fluid} class={clsx(navContainerClass)}>
       {@render children({ hidden: navState.hidden, toggle, NavContainer })}
     </NavContainer>

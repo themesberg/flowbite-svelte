@@ -1,6 +1,7 @@
 <script lang="ts" generics="T">
   import { Badge, CloseButton, type MultiSelectProps, type SelectOptionType, cn } from "$lib";
-  import { multiselect } from "./theme";
+  import { multiselect, type MultiSelectTheme } from ".";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   // Consider reusing that component - https://svelecte.vercel.app/
 
@@ -22,6 +23,8 @@
     autocomplete,
     ...restProps
   }: MultiSelectProps<T> = $props();
+
+  const theme = getTheme("multiSelect");
 
   let selectItems = $derived(items.filter((x) => value.includes(x.value)));
   let show: boolean = $state(false);
@@ -155,11 +158,11 @@
   {/each}
 </select>
 
-<div {...restProps} onclick={toggleDropdown} onblur={handleBlur} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={cn(base({ size }), className)}>
+<div {...restProps} onclick={toggleDropdown} onblur={handleBlur} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={cn(base({ size }), className, (theme as MultiSelectTheme)?.base)}>
   {#if !selectItems.length}
     <span class="text-gray-400">{placeholder}</span>
   {/if}
-  <span class={select()}>
+  <span class={cn(select(), (theme as MultiSelectTheme)?.select)}>
     {#if selectItems.length}
       {#each selectItems as item (item.name)}
         {#if children}
@@ -174,7 +177,7 @@
   </span>
   <div class="ms-auto flex items-center gap-2">
     {#if selectItems.length}
-      <CloseButton {size} onclick={clearAll} color="none" class={closebutton()} {disabled} />
+      <CloseButton {size} onclick={clearAll} color="none" class={cn(closebutton(),(theme as MultiSelectTheme)?.closebutton)} {disabled} />
     {/if}
 
     <svg class={cn("ms-1 h-3 w-3 cursor-pointer text-gray-800 dark:text-white", disabled && "cursor-not-allowed")} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">

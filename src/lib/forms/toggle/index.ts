@@ -1,2 +1,2 @@
 export { default as Toggle } from "./Toggle.svelte";
-export { toggle } from "./theme";
+export { toggle, type ToggleTheme } from "./theme";

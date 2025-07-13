@@ -11,7 +11,7 @@ export const textarea = tv({
     headerCls: "py-2 px-3 border-gray-200 dark:border-gray-500",
     footerCls: "py-2 px-3 border-gray-200 dark:border-gray-500",
     addonCls: "absolute top-2 right-2 z-10",
-    clearbtn: "absolute right-2 top-5 -translate-y-1/2 text-gray-400 hover:text-black"
+    closebutton: "absolute right-2 top-5 -translate-y-1/2 text-gray-400 hover:text-black"
   },
   variants: {
     cols: {
@@ -41,3 +41,6 @@ export const textarea = tv({
     }
   }
 });
+
+export type TextareaSlots = keyof typeof textarea.slots;
+export type TextareaTheme = Partial<Record<TextareaSlots, string>>;

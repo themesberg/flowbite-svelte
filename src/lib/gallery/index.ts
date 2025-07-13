@@ -1,2 +1,2 @@
 export { default as Gallery } from "./Gallery.svelte";
-export { gallery } from "./theme";
+export { gallery, type GalleryTheme } from "./theme";

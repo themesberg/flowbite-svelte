@@ -1,8 +1,11 @@
 <script lang="ts">
-  import { gallery } from ".";
+  import { gallery, type GalleryTheme } from ".";
   import { type GalleryProps, type ImgType, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, figure, items = [], imgClass, class: className, ...restProps }: GalleryProps = $props();
+
+  const theme = getTheme("gallery");
 
   function init(node: HTMLElement) {
     if (getComputedStyle(node).gap === "normal") node.style.gap = "inherit";
@@ -13,11 +16,11 @@
 
 {#snippet _figure(item: ImgType)}
   <div>
-    <img src={item.src} alt={item.alt} class={cn(image(), imgClass)} {...restProps} />
+    <img src={item.src} alt={item.alt} class={cn(image(), imgClass, (theme as GalleryTheme)?.image)} {...restProps} />
   </div>
 {/snippet}
 
-<div class={cn(div(), className)} use:init>
+<div class={cn(div(), className, (theme as GalleryTheme)?.div)} use:init>
   {#each items as item}
     {#if figure}
       {@render figure(item as ImgType)}

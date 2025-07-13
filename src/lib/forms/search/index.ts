@@ -1,2 +1,2 @@
 export { default as Search } from "./Search.svelte";
-export { search } from "./theme";
+export { search, type SearchTheme } from "./theme";

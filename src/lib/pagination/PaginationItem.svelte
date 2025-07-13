@@ -1,15 +1,18 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
+  import { cn } from "$lib";
   import clsx from "clsx";
-  import { paginationItem } from ".";
+  import { paginationItem, type PaginationItemTheme } from ".";
   import type { PaginationItemProps } from "$lib/types";
   import { getContext } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, size, class: className, href, active, ...restProps }: PaginationItemProps = $props();
 
+  const theme = getTheme("paginationItem");
+
   const group = getContext<boolean>("group");
   const table = getContext<boolean>("table");
-  const paginationCls = $derived(twMerge(paginationItem({ size: getContext("size") ?? size, active, group, table }), clsx(className)));
+  const paginationCls = $derived(cn(paginationItem({ size: getContext("size") ?? size, active, group, table }), clsx(className), theme));
 </script>
 
 {#if href}

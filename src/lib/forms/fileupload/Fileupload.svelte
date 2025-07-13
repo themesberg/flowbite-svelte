@@ -1,10 +1,14 @@
 <script lang="ts">
-  import { fileupload } from ".";
+  import { fileupload, type FileuploadTheme } from ".";
   import { CloseButton, type FileuploadProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, wrapperClass, ...restProps }: FileuploadProps = $props();
 
+  const theme = getTheme("fileupload");
+
   const { base, wrapper, right } = fileupload();
+
 
   const clearAll = () => {
     if (elementRef) {
@@ -15,10 +19,10 @@
   };
 </script>
 
-<div class={cn(wrapper(), wrapperClass)}>
-  <input type="file" bind:files bind:this={elementRef} {...restProps} class={cn(base({ size }), className)} />
+<div class={cn(wrapper(), wrapperClass, (theme as FileuploadTheme)?.wrapper)}>
+  <input type="file" bind:files bind:this={elementRef} {...restProps} class={cn(base({ size }), className, (theme as FileuploadTheme)?.base)} />
   {#if files && files.length > 0 && clearable}
-    <CloseButton onclick={clearAll} class={cn(right(), clearableClass)} color={clearableColor} aria-label="Clear selected files" svgClass={cn(clearableSvgClass)} />
+    <CloseButton onclick={clearAll} class={cn(right(), clearableClass, (theme as FileuploadTheme)?.right)} color={clearableColor} aria-label="Clear selected files" svgClass={cn(clearableSvgClass)} />
   {/if}
 </div>
 

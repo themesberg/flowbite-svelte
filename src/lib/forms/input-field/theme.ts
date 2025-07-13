@@ -8,7 +8,7 @@ export const input = tv({
     input: "block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:outline-hidden",
     left: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 pointer-events-none start-0 p-2.5",
     right: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 end-0 p-2.5",
-    clearbtn: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black",
+    closebutton: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black",
     combo: "absolute top-full right-0 left-0 z-20 mt-1 max-h-60 overflow-y-auto rounded-md border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800",
     comboItem: "text-gray-900 dark:text-gray-50"
   },
@@ -98,3 +98,6 @@ export const input = tv({
     color: "default"
   }
 });
+
+export type InputSlots = keyof typeof input.slots;
+export type InputTheme = Partial<Record<InputSlots, string>>;

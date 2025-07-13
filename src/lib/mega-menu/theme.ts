@@ -23,3 +23,6 @@ export const megamenu = tv({
     }
   ]
 });
+
+export type MegaMenuSlots = keyof typeof megamenu.slots;
+export type MegaMenuTheme = Partial<Record<MegaMenuSlots, string>>;

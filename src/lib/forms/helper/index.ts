@@ -1,2 +1,2 @@
 export { default as Helper } from "./Helper.svelte";
-export { helper } from "./theme";
+export { helper, type HelperTheme } from "./theme";

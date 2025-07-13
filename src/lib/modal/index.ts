@@ -1,4 +1,2 @@
-import Modal from "./Modal.svelte";
-import { modal } from "./theme";
-
-export { Modal, modal };
+export { default as Modal } from "./Modal.svelte";
+export { modal, type ModalTheme } from "./theme";

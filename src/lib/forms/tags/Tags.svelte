@@ -1,10 +1,13 @@
 <script lang="ts">
   import { type TagsProps, CloseButton, cn } from "$lib";
-  import { tags } from "./theme";
+  import { tags, type TagsTheme } from "./theme";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { value = $bindable([]), itemClass, spanClass, placeholder = "Enter tags", class: className, closeClass, inputClass, closeBtnSize = "xs", ...restProps }: TagsProps = $props();
 
-  const { base, tag: tagCls, span: spanCls, close, input: inputCls } = $derived(tags());
+  const theme = getTheme("tags");
+
+  const { base, tag: tagCls, span: spanCls, closebutton, input: inputCls } = $derived(tags());
 
   let contents: string = $state("");
 
@@ -33,15 +36,15 @@
   };
 </script>
 
-<div {...restProps} class={cn(base(), className)}>
+<div {...restProps} class={cn(base(), className, (theme as TagsTheme)?.base)}>
   {#each value as tag, index}
-    <div class={cn(tagCls(), itemClass)}>
-      <span class={cn(spanCls(), spanClass)}>
+    <div class={cn(tagCls(), itemClass, (theme as TagsTheme)?.tag)}>
+      <span class={cn(spanCls(), spanClass, (theme as TagsTheme)?.span)}>
         {tag}
       </span>
       <CloseButton
         size={closeBtnSize}
-        class={cn(close(), closeClass)}
+        class={cn(closebutton(), closeClass, (theme as TagsTheme)?.closebutton)}
         onclick={() => {
           deleteField(index);
         }}

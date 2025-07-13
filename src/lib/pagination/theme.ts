@@ -2,7 +2,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 
 export type PaginationVariants = VariantProps<typeof pagination>;
 
-export const paginationnav = tv({
+export const paginationNav = tv({
   slots: {
     base: "inline-flex -space-x-px rtl:space-x-reverse items-center",
     tableDiv: "flex items-center text-sm mb-4",
@@ -27,9 +27,12 @@ export const paginationnav = tv({
   }
 });
 
+export type PaginationNavSlots = keyof typeof paginationNav.slots;
+export type PaginationNavTheme = Partial<Record<PaginationNavSlots, string>>;
+
 export type PaginationItemVariants = VariantProps<typeof paginationItem>;
 
-export const paginationbutton = tv({
+export const paginationButton = tv({
   base: "flex items-center font-medium",
   variants: {
     size: {
@@ -68,6 +71,8 @@ export const paginationbutton = tv({
   }
 });
 
+export type PaginationButtonTheme = string;
+
 export const paginationItem = tv({
   base: "flex items-center font-medium",
   variants: {
@@ -103,6 +108,8 @@ export const paginationItem = tv({
   }
 });
 
+export type PaginationItemTheme = string;
+
 export const pagination = tv({
   base: "inline-flex -space-x-px rtl:space-x-reverse items-center",
   variants: {
@@ -120,3 +127,5 @@ export const pagination = tv({
     size: "default"
   }
 });
+
+export type PaginationTheme = string;

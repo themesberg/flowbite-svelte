@@ -85,6 +85,9 @@ export const radio = tv({
   }
 });
 
+export type RadioSlots = keyof typeof radio.slots;
+export type RadioTheme = Partial<Record<RadioSlots, string>>;
+
 export const radiobutton = tv({
   base: "",
   variants: {
@@ -97,3 +100,5 @@ export const radiobutton = tv({
     inline: true
   }
 });
+
+export type RadioButtonTheme = string; 

@@ -7,3 +7,6 @@ const gallery = tv({
 });
 
 export { gallery };
+
+export type GallerySlots = keyof typeof gallery.slots;
+export type GalleryTheme = Partial<Record<GallerySlots, string>>;

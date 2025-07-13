@@ -1,2 +1,2 @@
 export { default as Indicator } from "./Indicator.svelte";
-export { indicator } from "./theme";
+export { indicator, type IndicatorTheme } from "./theme";

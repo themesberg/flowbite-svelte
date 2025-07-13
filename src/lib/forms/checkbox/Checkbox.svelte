@@ -1,8 +1,11 @@
 <script lang="ts">
-  import { checkbox } from ".";
+  import { checkbox, type CheckboxTheme } from ".";
   import { type CheckboxProps, type CheckboxItem, Label, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, color = "primary", custom, inline, tinted, rounded, group = $bindable([]), choices = [], checked = $bindable(false), indeterminate, class: className, divClass, disabled = false, value, labelProps = {}, ...restProps }: CheckboxProps = $props();
+
+  const theme = getTheme("checkbox");
 
   const disabledValue = $derived(disabled === null ? undefined : disabled);
   const { base, div: divStyle } = $derived(checkbox({ color, tinted, custom, rounded, inline, disabled: disabledValue }));
@@ -20,17 +23,17 @@
 
 {#if choices.length > 0}
   {#each choices as choice, i}
-    <div class={cn(divStyle(), divClass)}>
+    <div class={cn(divStyle(), divClass, (theme as CheckboxTheme)?.div)}>
       <Label show={true} {...labelProps}>
-        <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} class={cn(base(), className)} />
+        <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} class={cn(base(), className, (theme as CheckboxTheme)?.base)} />
         {renderLabel(choice)}
       </Label>
     </div>
   {/each}
 {:else}
-  <div class={cn(divStyle(), divClass)}>
+  <div class={cn(divStyle(), divClass, (theme as CheckboxTheme)?.div)}>
     <Label show={true} {...labelProps}>
-      <input type="checkbox" {value} bind:checked {indeterminate} {disabled} {...restProps} class={cn(base(), className)} />
+      <input type="checkbox" {value} bind:checked {indeterminate} {disabled} {...restProps} class={cn(base(), className, (theme as CheckboxTheme)?.base)} />
       {#if children}
         {@render children({ value, checked, disabled })}
       {/if}

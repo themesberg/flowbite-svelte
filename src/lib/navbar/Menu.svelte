@@ -1,8 +1,12 @@
 <script lang="ts">
   import type { MenuProps } from "$lib/types";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
+  import { cn } from "$lib";
 
   let { size = "24", color = "currentColor", variation = "outline", ariaLabel = "bars 3", class: className, ...restProps }: MenuProps = $props();
+
+  const theme = getTheme("memu");
 
   let viewBox: string = $state("0 0 24 24");
   let svgpath: string = $state("");
@@ -25,7 +29,7 @@
   });
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" role="button" tabindex="0" width={size} height={size} class={clsx(className)} {...restProps} aria-label={ariaLabel} fill="none" {viewBox} stroke-width="2">
+<svg xmlns="http://www.w3.org/2000/svg" role="button" tabindex="0" width={size} height={size} class={cn(clsx(className), theme)} {...restProps} aria-label={ariaLabel} fill="none" {viewBox} stroke-width="2">
   {@html svgpath}
 </svg>
 

@@ -1,11 +1,14 @@
 <script lang="ts">
   import { indicator } from "./index";
   import { type IndicatorProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, color = "primary", cornerStyle = "circular", size = "md", border = false, placement, offset = true, class: className, ...restProps }: IndicatorProps = $props();
 
+  const theme = getTheme("indicator");
+
   let hasChildren = !!children;
-  const { base } = $derived(
+  const base  = $derived(
     indicator({
       color,
       size,
@@ -18,7 +21,7 @@
   );
 </script>
 
-<div {...restProps} class={cn(base(), className)}>
+<div {...restProps} class={cn(base, className, theme)}>
   {#if children}
     {@render children()}
   {/if}

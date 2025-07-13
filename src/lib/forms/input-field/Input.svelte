@@ -1,9 +1,12 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { CloseButton, type SizeType, type InputProps, type InputValue, cn } from "$lib";
-  import { input, clampSize } from ".";
+  import { input, clampSize, type InputTheme } from ".";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, comboItemClass, onInput, onFocus, onBlur, onKeydown, oninput, onfocus, onblur, onkeydown, ...restProps }: InputProps<InputValue> = $props();
+
+  const theme = getTheme("input");
 
   // onSelect is a custom combobox selection handler that takes a string
   // standard DOM events, onInput, onFocus, onBlur, onKeydown will be deprecated in the next minor version
@@ -26,7 +29,7 @@
   let _size = $derived(size || clampSize(group?.size) || "md");
   const _color = $derived(color === "default" && background ? "tinted" : color);
 
-  const { base, input: inputCls, left: leftCls, right: rightCls, clearbtn, combo, comboItem } = $derived(input({ size: _size, color: _color, group: isGroup }));
+  const { base, input: inputCls, left: leftCls, right: rightCls, closebutton, combo, comboItem } = $derived(input({ size: _size, color: _color, group: isGroup }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -207,7 +210,7 @@
 {#if isCombobox}
   <div class={cn(isCombobox ? "relative w-full" : "", wrapperClass)}>
     {#if right || left || clearable}
-      <div class={cn(base(), divClass)}>
+      <div class={cn(base(), divClass, (theme as InputTheme)?.base)}>
         {@render inputContent()}
       </div>
     {:else}
@@ -215,10 +218,10 @@
     {/if}
 
     {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-      <div class={cn(combo(), comboClass)}>
+      <div class={cn(combo(), comboClass, (theme as InputTheme)?.combo)}>
         {#each filteredSuggestions as item, i}
           <button type="button" class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none" onclick={() => selectItem(item)} onmouseenter={() => (selectedIndex = i)}>
-            <p class={cn(comboItem(), comboItemClass)}>{item}</p>
+            <p class={cn(comboItem(), comboItemClass, (theme as InputTheme)?.comboItem)}>{item}</p>
           </button>
         {/each}
       </div>
@@ -227,7 +230,7 @@
 {:else if group}
   {@render inputContent()}
 {:else if right || left || clearable}
-  <div class={cn(base(), divClass)}>
+  <div class={cn(base(), divClass, (theme as InputTheme)?.base)}>
     {@render inputContent()}
   </div>
 {:else}
@@ -236,20 +239,20 @@
 
 {#snippet inputContent()}
   {#if left}
-    <div class={cn(leftCls(), leftClass)}>
+    <div class={cn(leftCls(), leftClass, (theme as InputTheme)?.left)}>
       {@render left()}
     </div>
   {/if}
   {#if children}
     {@render children({ ...restProps, class: inputCls() })}
   {:else}
-    <input {...restProps} bind:value bind:this={elementRef} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} class={cn(inputCls(), className)} />
+    <input {...restProps} bind:value bind:this={elementRef} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} class={cn(inputCls(), className, (theme as InputTheme)?.input)} />
     {#if value !== undefined && value !== "" && clearable}
-      <CloseButton onclick={clearAll} class={cn(clearbtn(), clearableClass)} color={clearableColor} aria-label="Clear search value" svgClass={cn(clearableSvgClass)} />
+      <CloseButton onclick={clearAll} class={cn(closebutton(), clearableClass, (theme as InputTheme)?.closebutton)} color={clearableColor} aria-label="Clear search value" svgClass={cn(clearableSvgClass)} />
     {/if}
   {/if}
   {#if right}
-    <div class={cn(rightCls(), rightClass)}>
+    <div class={cn(rightCls(), rightClass, (theme as InputTheme)?.right)}>
       {@render right()}
     </div>
   {/if}

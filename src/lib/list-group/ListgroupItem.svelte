@@ -2,8 +2,11 @@
   import { getContext } from "svelte";
   import { type ListgroupItemProps, cn } from "$lib";
   import { listGroupItem, type ListgroupItemVariants } from "./theme";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-15 w-15", ...restProps }: ListgroupItemProps = $props();
+
+  const theme = getTheme("listgroupItem");
 
   active = active ?? getContext("listGrpActive");
   horizontal = horizontal ?? getContext("listGrpHorizontal");
@@ -24,15 +27,15 @@
 {/snippet}
 
 {#if restProps.href === undefined && !active}
-  <li class={cn(itemClass, className)}>
+  <li class={cn(itemClass, className, theme)}>
     {@render nameOrChildren()}
   </li>
 {:else if restProps.href === undefined}
-  <button type="button" {...restProps} class={cn(itemClass, className)} {disabled} aria-current={current}>
+  <button type="button" {...restProps} class={cn(itemClass, className, theme)} {disabled} aria-current={current}>
     {@render nameOrChildren()}
   </button>
 {:else}
-  <a {...restProps} class={cn(itemClass, className)} aria-current={current}>
+  <a {...restProps} class={cn(itemClass, className, theme)} aria-current={current}>
     {@render nameOrChildren()}
   </a>
 {/if}

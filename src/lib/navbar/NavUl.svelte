@@ -4,14 +4,17 @@
   import { prefersReducedMotion } from "svelte/motion";
   import { writable } from "svelte/store";
   import { slide, fly, fade, scale } from "svelte/transition";
-  import { twMerge } from "tailwind-merge";
+  import { cn } from "$lib";
   import clsx from "clsx";
-  import { navbar_ul } from "./theme";
+  import { navbarUl, type NavbarUlTheme } from "./theme";
   import type { NavbarState, NavUlProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let navState = getContext<NavbarState>("navState");
 
   let { children, activeUrl, ulClass, slideParams, transition = slide, transitionParams, activeClass, nonActiveClass, respectMotionPreference = true, class: clasName, ...restProps }: NavUlProps = $props();
+
+  const theme = getTheme("navUl");
 
   // Default parameters for different transitions
   const getDefaultParams = (transitionFn: any) => {
@@ -38,11 +41,11 @@
 
   let hidden: boolean = $derived(navState.hidden ?? true);
 
-  let { base, ul, active, nonActive } = $derived(navbar_ul({ hidden }));
+  let { base, ul, active, nonActive } = $derived(navbarUl({ hidden }));
 
   $effect(() => {
-    navState.activeClass = twMerge(active(), clsx(activeClass));
-    navState.nonActiveClass = twMerge(nonActive(), clsx(nonActiveClass));
+    navState.activeClass = cn(active(), clsx(activeClass), (theme as NavbarUlTheme)?.active);
+    navState.nonActiveClass = cn(nonActive(), clsx(nonActiveClass), (theme as NavbarUlTheme)?.nonActive);
   });
 
   $effect(() => {
@@ -50,8 +53,8 @@
   });
   setContext("activeUrl", activeUrlStore);
 
-  let divCls: string = $derived(twMerge(base(), clsx(clasName)));
-  let ulCls: string = $derived(twMerge(ul(), clsx(ulClass)));
+  let divCls: string = $derived(cn(base(), clsx(clasName), (theme as NavbarUlTheme)?.base));
+  let ulCls: string = $derived(cn(ul(), clsx(ulClass), (theme as NavbarUlTheme)?.ul));
 </script>
 
 {#if !hidden}

@@ -2,8 +2,11 @@
   import { setContext } from "svelte";
   import { listGroup } from ".";
   import { type ListgroupProps, ListgroupItem, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, items, active, onclick, horizontal, rounded, border, class: className, itemClass, iconClass, ...restProps }: ListgroupProps = $props();
+
+  const theme = getTheme("listgroup");
 
   const base = $derived(listGroup({ rounded, border, horizontal }));
 
@@ -22,7 +25,7 @@
   }
 </script>
 
-<svelte:element this={tag} {...restProps} class={cn(base, className)}>
+<svelte:element this={tag} {...restProps} class={cn(base, className, theme)}>
   {#if items?.length}
     {#each items as item}
       {#if children}

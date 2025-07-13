@@ -1,10 +1,13 @@
 <script lang="ts">
   import { range } from "./";
   import { type RangeProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { value = $bindable(), appearance = "none", color = "blue", size = "md", inputClass, ...restProps }: RangeProps = $props();
 
-  const inputCls = $derived(cn(range({ appearance, color, size }), inputClass));
+  const theme = getTheme("range");
+
+  const inputCls = $derived(cn(range({ appearance, color, size }), inputClass, theme));
 </script>
 
 <input type="range" bind:value {...restProps} class={inputCls} />

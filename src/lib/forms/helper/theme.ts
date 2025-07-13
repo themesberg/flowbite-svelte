@@ -30,3 +30,5 @@ export const helper = tv({
     }
   }
 });
+
+export type HelperTheme = string;

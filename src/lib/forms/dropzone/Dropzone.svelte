@@ -2,10 +2,13 @@
   import type { DragEventHandler, ChangeEventHandler } from "svelte/elements";
   import { dropzone } from ".";
   import { type DropzoneProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   type HTMLInputElementWithFiles = HTMLInputElement & { files: FileList | null };
 
   let { children, files = $bindable<FileList | null>(), class: className, ...restProps }: DropzoneProps = $props();
+
+  const theme = getTheme("dropzone");
 
   let input: HTMLInputElement;
 
@@ -49,7 +52,7 @@
   };
 </script>
 
-<button class={cn(dropzone(), className)} onkeydown={keydown} onclick={onClick} ondrop={onDrop} ondragover={onDragOver} type="button">
+<button class={cn(dropzone(), className, theme)} onkeydown={keydown} onclick={onClick} ondrop={onDrop} ondragover={onDragOver} type="button">
   {@render children()}
 </button>
 <label class="hidden">

@@ -75,3 +75,5 @@ export const range = tv({
     }
   ]
 });
+
+export type RangeTheme = string;

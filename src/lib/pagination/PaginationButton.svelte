@@ -1,23 +1,26 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
+  import { cn } from "$lib";
   import clsx from "clsx";
-  import { paginationbutton } from ".";
+  import { paginationButton } from ".";
   import type { PaginationButtonProps } from "$lib/types";
   import { getContext } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, size, onclick, disabled = false, class: className, href, active = false, ...restProps }: PaginationButtonProps = $props();
+
+  const theme = getTheme("paginationButton");
 
   const group = getContext<boolean>("group");
   const table = getContext<boolean>("table");
 
   const paginationCls = $derived(
-    paginationbutton({
+    cn(paginationButton({
       size: getContext("size") ?? size,
       active,
       group,
       table,
       disabled
-    })
+    }), theme)
   );
 
   function handleClick(e: MouseEvent) {
@@ -30,13 +33,13 @@
 </script>
 
 {#if href}
-  <a {href} {...restProps} class={twMerge(paginationCls, clsx(className))} onclick={handleClick}>
+  <a {href} {...restProps} class={cn(paginationCls, clsx(className), theme)} onclick={handleClick}>
     {#if children}
       {@render children()}
     {/if}
   </a>
 {:else}
-  <button {...restProps} {disabled} class={twMerge(paginationCls, clsx(className))} onclick={handleClick}>
+  <button {...restProps} {disabled} class={cn(paginationCls, clsx(className), theme)} onclick={handleClick}>
     {#if children}
       {@render children()}
     {/if}

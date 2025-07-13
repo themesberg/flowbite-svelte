@@ -1,2 +1,2 @@
 export { default as Label } from "./Label.svelte";
-export { label } from "./theme";
+export { label, type LabelTheme } from "./theme";

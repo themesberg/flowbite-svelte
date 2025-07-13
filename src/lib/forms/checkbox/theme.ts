@@ -100,6 +100,9 @@ export const checkbox = tv({
   }
 });
 
+export type CheckboxSlots = keyof typeof checkbox.slots;
+export type CheckboxTheme = Partial<Record<CheckboxSlots, string>>;
+
 export const checkboxbutton = tv({
   base: "",
   variants: {
@@ -115,3 +118,5 @@ export const checkboxbutton = tv({
     inline: true
   }
 });
+
+export type CheckboxButtonTheme = string;

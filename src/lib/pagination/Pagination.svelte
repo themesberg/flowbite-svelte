@@ -2,18 +2,22 @@
   import { setContext } from "svelte";
   import { pagination, PaginationItem } from ".";
   import type { PaginationProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
+  import { cn } from "$lib";
 
   let { pages = [], previous, next, prevContent, nextContent, table, size, ariaLabel, ...restProps }: PaginationProps = $props();
+
+  const theme = getTheme("pagination");
 
   setContext("group", true);
   setContext("table", table);
   setContext("size", size);
 
-  const paginationClass = $derived(pagination({ table, size }));
+  const paginationCls = $derived(cn(pagination({ table, size }), theme));
 </script>
 
 <nav aria-label={ariaLabel}>
-  <ul class={paginationClass}>
+  <ul class={paginationCls}>
     {#if typeof previous === "function"}
       <li {...restProps}>
         <PaginationItem {size} onclick={() => previous()} class={table ? "rounded-none rounded-l" : "rounded-none  rounded-s-lg"}>

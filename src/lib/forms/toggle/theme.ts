@@ -98,3 +98,6 @@ export const toggle = tv({
     color: "primary"
   }
 });
+
+export type ToggleSlots = keyof typeof toggle.slots;
+export type ToggleTheme = Partial<Record<ToggleSlots, string>>;

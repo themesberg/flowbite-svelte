@@ -1,10 +1,13 @@
 <script lang="ts">
   import { helper } from ".";
   import { type HelperProps, cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, color = "gray", ...restProps }: HelperProps = $props();
 
-  const base = $derived(cn(helper({ color }), className));
+  const theme = getTheme("helper");
+
+  const base = $derived(cn(helper({ color }), className, theme));
 </script>
 
 <p {...restProps} class={base}>

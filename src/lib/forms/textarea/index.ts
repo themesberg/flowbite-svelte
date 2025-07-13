@@ -1,2 +1,2 @@
 export { default as Textarea } from "./Textarea.svelte";
-export { textarea } from "./theme";
+export { textarea, type TextareaTheme } from "./theme";

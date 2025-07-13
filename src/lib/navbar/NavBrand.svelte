@@ -1,13 +1,16 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
-  import { navbar_brand } from "./theme";
+  import { cn } from "$lib";
+  import { navbarBrand } from "./theme";
   import type { NavBrandProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: NavBrandProps = $props();
+
+  const theme = getTheme("navBrand");
 </script>
 
-<a {...restProps} class={twMerge(navbar_brand(), clsx(className))}>
+<a {...restProps} class={cn(navbarBrand(), clsx(className), theme)}>
   {@render children?.()}
 </a>
 

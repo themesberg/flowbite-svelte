@@ -9,7 +9,7 @@ export const search = tv({
     icon: "text-gray-500 dark:text-gray-400",
     content: "absolute inset-y-0 end-0 flex items-center text-gray-500 dark:text-gray-400",
     input: "block w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500",
-    clearbtn: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black"
+    closebutton: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black"
   },
   variants: {
     size: {
@@ -34,3 +34,6 @@ export const search = tv({
     size: "lg"
   }
 });
+
+export type SearchSlots = keyof typeof search.slots;
+export type SearchTheme = Partial<Record<SearchSlots, string>>;

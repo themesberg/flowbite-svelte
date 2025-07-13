@@ -16,3 +16,6 @@ export const fileupload = tv({
     }
   }
 });
+
+export type FileuploadSlots = keyof typeof fileupload.slots;
+export type FileuploadTheme = Partial<Record<FileuploadSlots, string>>;

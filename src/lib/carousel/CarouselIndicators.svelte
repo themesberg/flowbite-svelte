@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
-  import { indicators, type IndicatorTheme } from "./theme";
+  import { carouselIndicators, type CarouselIndicatorsTheme } from "./theme";
   import { Indicator, type IndicatorsProps, type State, cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -10,7 +10,7 @@
   const theme = getTheme("indicators");
 
   const state = getContext<Writable<State>>("state");
-  const { base, indicator } = $derived(indicators({ position }));
+  const { base, indicator } = $derived(carouselIndicators({ position }));
 
   function goToIndex(newIndex: number) {
     state.update((_state) => {
@@ -26,14 +26,14 @@
   }
 </script>
 
-<div class={cn(base(), className, (theme as IndicatorTheme)?.base)} {...restProps}>
+<div class={cn(base(), className, (theme as CarouselIndicatorsTheme)?.base)} {...restProps}>
   {#each $state.images as _, idx}
     {@const selected = $state.index === idx}
     <button onclick={() => goToIndex(idx)}>
       {#if children}
         {@render children({ selected, index: idx })}
       {:else}
-        <Indicator class={cn(indicator({ selected }), selected ? activeClass : inactiveClass, (theme as IndicatorTheme)?.indicator)} />
+        <Indicator class={cn(indicator({ selected }), selected ? activeClass : inactiveClass, (theme as CarouselIndicatorsTheme)?.indicator)} />
       {/if}
     </button>
   {/each}
