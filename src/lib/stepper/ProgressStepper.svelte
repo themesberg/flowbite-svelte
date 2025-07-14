@@ -13,7 +13,6 @@
   const stepperCircleTheme = getTheme("progressStepperCircle");
 
   setContext("stepperType", "progress");
-
 </script>
 
 <ol class={cn(progressStepper(), clsx(classes?.progressstepper), stepperTheme)} {...restrorps}>
@@ -57,7 +56,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1557)
+[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1551)
 ## Props
 @prop children
 @prop steps = []

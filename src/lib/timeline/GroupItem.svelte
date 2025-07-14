@@ -6,7 +6,7 @@
 
   let { timelines, aClass, imgClass, divClass, titleClass, spanClass, ...restProps }: GroupItemProps = $props();
 
-  const theme = getTheme('groupItem');
+  const theme = getTheme("groupItem");
 
   const { a, img, div, title, span } = $derived(groupItem());
 </script>
@@ -46,7 +46,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1800)
+[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1791)
 ## Props
 @prop timelines
 @prop aClass

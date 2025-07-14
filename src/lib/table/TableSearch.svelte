@@ -5,31 +5,12 @@
   import { tableSearch, type TableSearchTheme } from ".";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { 
-    children, 
-    header, 
-    footer, 
-    divClass, 
-    inputValue = $bindable(), 
-    striped = false, 
-    hoverable = false, 
-    customColor = "", 
-    color = "default", 
-    innerDivClass, 
-    inputClass, 
-    searchClass, 
-    svgDivClass, 
-    svgClass, 
-    tableClass, 
-    class: className, 
-    placeholder = "Search", 
-    ...restProps 
-  }: TableSearchProps = $props();
+  let { children, header, footer, divClass, inputValue = $bindable(), striped = false, hoverable = false, customColor = "", color = "default", innerDivClass, inputClass, searchClass, svgDivClass, svgClass, tableClass, class: className, placeholder = "Search", ...restProps }: TableSearchProps = $props();
 
   const theme = getTheme("tableSearch");
 
   // Generate theme styles - handle custom color case
-  const themeColor = color === "custom" ? "default" : color as "default" | "blue" | "green" | "red" | "yellow" | "purple" | "indigo" | "pink";
+  const themeColor = color === "custom" ? "default" : (color as "default" | "blue" | "green" | "red" | "yellow" | "purple" | "indigo" | "pink");
 
   const styles = tableSearch({ color: themeColor, striped, hoverable });
 
@@ -43,9 +24,7 @@
   const tableCls = cn(styles.table(), tableClass, className, (theme as TableSearchTheme)?.table);
 
   // Handle custom color
-  const finalTableClass = color === "custom" && customColor 
-    ? cn(tableCls, customColor)
-    : tableCls;
+  const finalTableClass = color === "custom" && customColor ? cn(tableCls, customColor) : tableCls;
 
   const tableSearchCtx: TableSearchType = {
     striped,
@@ -80,3 +59,29 @@
     {@render footer()}
   {/if}
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1695)
+## Props
+@prop children
+@prop header
+@prop footer
+@prop divClass
+@prop inputValue = $bindable()
+@prop striped = false
+@prop hoverable = false
+@prop customColor = ""
+@prop color = "default"
+@prop innerDivClass
+@prop inputClass
+@prop searchClass
+@prop svgDivClass
+@prop svgClass
+@prop tableClass
+@prop class: className
+@prop placeholder = "Search"
+@prop ...restProps
+-->

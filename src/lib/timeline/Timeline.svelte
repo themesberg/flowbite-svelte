@@ -8,7 +8,7 @@
 
   let { children, order = "default", class: className, ...restProps }: TimelineProps = $props();
 
-  const theme = getTheme('timeline');
+  const theme = getTheme("timeline");
 
   setContext<TimelineVariants["order"]>("order", order);
   const olCls = $derived(timeline({ order, class: clsx(className) }));
@@ -22,7 +22,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1811)
+[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1802)
 ## Props
 @prop children
 @prop order = "default"

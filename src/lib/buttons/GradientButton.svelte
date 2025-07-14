@@ -2,7 +2,7 @@
   import { getContext } from "svelte";
   import { gradientButton, type GradientButtonTheme } from ".";
   import { type GradientButtonProps, type SizeType, Button, cn } from "$lib";
-import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   const group: SizeType = getContext("group");
 
@@ -29,7 +29,7 @@ import { getTheme } from "$lib/theme/themeUtils";
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L354)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L347)
 ## Props
 @prop children
 @prop outline

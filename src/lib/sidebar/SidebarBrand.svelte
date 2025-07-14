@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { sidebarBrand, type SidebarBrandTheme } from ".";
   import type { SidebarBrandProps } from "$lib/types";
-    import { cn } from "$lib";
+  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, site, imgClass, spanClass, class: className, ...restProps }: SidebarBrandProps = $props();
@@ -25,7 +25,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1390)
+[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1383)
 ## Props
 @prop children
 @prop site

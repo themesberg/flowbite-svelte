@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { type SizeType, type ButtonProps, cn } from "$lib";
-import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import { button, type ButtonTheme } from ".";
 
   const group: SizeType = getContext("group");
@@ -37,7 +37,7 @@ import { getTheme } from "$lib/theme/themeUtils";
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L346)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L339)
 ## Props
 @prop children
 @prop pill

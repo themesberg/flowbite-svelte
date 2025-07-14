@@ -7,7 +7,7 @@
 
   let { children, steps = [], liClass, classes, ...restProps }: VerticalStepperProps = $props();
 
-  // verticalStepper, verticalStepperCard, verticalStepperContent 
+  // verticalStepper, verticalStepperCard, verticalStepperContent
   const stepperTheme = getTheme("veticalStepper");
   const stepperCardTheme = getTheme("verticalStepperCard");
   const stepperContentTheme = getTheme("verticalStepperContent");
@@ -53,7 +53,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1587)
+[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1581)
 ## Props
 @prop children
 @prop steps = []

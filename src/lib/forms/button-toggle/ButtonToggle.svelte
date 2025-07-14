@@ -10,7 +10,7 @@
 
   const buttonToggleTheme = getTheme("buttonToggle");
   const buttonToggleContenttheme = getTheme("buttonToggleContent");
-  buttonToggleText
+  buttonToggleText;
   const buttonToggleTextTheme = getTheme("buttonToggleText");
 
   const { toggleSelected, isSelected } = getContext<ButtonToggleContext>("button-toggle-group");
@@ -50,7 +50,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L375)
+[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L368)
 ## Props
 @prop value
 @prop selected = false

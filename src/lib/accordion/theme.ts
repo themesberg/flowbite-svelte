@@ -4,8 +4,8 @@ export const accordion = tv({
   base: "w-full",
   variants: {
     color: {
-      primary: 'text-primary-500 dark:text-primary-400',
-      secondary: 'text-secondary-500 dark:text-secondary-400',
+      primary: "text-primary-500 dark:text-primary-400",
+      secondary: "text-secondary-500 dark:text-secondary-400"
     },
     flush: {
       true: "",

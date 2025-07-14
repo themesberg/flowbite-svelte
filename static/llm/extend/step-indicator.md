@@ -145,13 +145,13 @@ Use the `color` prop to change the color of a step indicator.
 
 #### Types
 
-[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1524)
+[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1517)
 
 #### Props
 
 - steps: ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"]
 - currentStep: 1
-- size: "h-2.5"
+- size: "md"
 - color: "primary"
 - glow: false
 - hideLabel: false

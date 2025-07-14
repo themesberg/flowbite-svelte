@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { cardPlaceholder, type CardPlaceholderTheme } from ".";
   import type { CardPlaceholderProps } from "$lib/types";
-    import { cn } from "$lib";
+  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { size = "sm", class: className, ...restProps }: CardPlaceholderProps = $props();
@@ -36,7 +36,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1431)
+[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1424)
 ## Props
 @prop size = "sm"
 @prop class: className

@@ -231,6 +231,10 @@
       "types": "./dist/carousel/Carousel.svelte.d.ts",
       "svelte": "./dist/carousel/Carousel.svelte"
     },
+    "./CarouselIndicators.svelte": {
+      "types": "./dist/carousel/CarouselIndicators.svelte.d.ts",
+      "svelte": "./dist/carousel/CarouselIndicators.svelte"
+    },
     "./ControlButton.svelte": {
       "types": "./dist/carousel/ControlButton.svelte.d.ts",
       "svelte": "./dist/carousel/ControlButton.svelte"
@@ -702,6 +706,10 @@
     "./Tabs.svelte": {
       "types": "./dist/tabs/Tabs.svelte.d.ts",
       "svelte": "./dist/tabs/Tabs.svelte"
+    },
+    "./ThemeProvider.svelte": {
+      "types": "./dist/theme/ThemeProvider.svelte.d.ts",
+      "svelte": "./dist/theme/ThemeProvider.svelte"
     },
     "./Activity.svelte": {
       "types": "./dist/timeline/Activity.svelte.d.ts",

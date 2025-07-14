@@ -32,7 +32,6 @@ export const dropdownItem = tv({
 export type DropdownItemSlots = keyof typeof dropdownItem.slots;
 export type DropdownItemTheme = Partial<Record<DropdownItemSlots, string>>;
 
-
 export const dropdownGroup = tv({
   base: "py-2 text-sm text-gray-700 dark:text-gray-200"
 });

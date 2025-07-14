@@ -286,12 +286,12 @@
   {#if isOpen || inline}
     <div bind:this={calendarRef} id="datepicker-dropdown" class={cn(base({ inline, class: clsx(classes?.base) }), className, (theme as DatepickerTheme)?.base)} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
       {#if title}
-        <h2 class={cn(titleVariant({ class: clsx(classes?.titleVariant) }),(theme as DatepickerTheme)?.titleVariant)}>{title}</h2>
+        <h2 class={cn(titleVariant({ class: clsx(classes?.titleVariant) }), (theme as DatepickerTheme)?.titleVariant)}>{title}</h2>
       {/if}
 
       {#if showMonthSelector}
         <!-- Month/Year Selector View -->
-        <div class={cn(nav({ class: clsx(classes?.nav) }),(theme as DatepickerTheme)?.nav)}>
+        <div class={cn(nav({ class: clsx(classes?.nav) }), (theme as DatepickerTheme)?.nav)}>
           {@render yearNavButton(false)}
           <h3 class={cn(polite({ class: clsx(classes?.polite) }), (theme as DatepickerTheme)?.polite)} aria-live="polite">
             {currentMonth.getFullYear()}
@@ -325,13 +325,16 @@
             <Button
               type="button"
               color={isSelected(day) ? color : "alternative"}
-              class={cn(dayButton({
-                current,
-                today: isToday(day),
-                color: isInRange(day) ? color : undefined,
-                unavailable: !available,
-                class: clsx(classes?.dayButton, !available && "cursor-not-allowed opacity-50")
-              }), (theme as DatepickerTheme)?.dayButton)}
+              class={cn(
+                dayButton({
+                  current,
+                  today: isToday(day),
+                  color: isInRange(day) ? color : undefined,
+                  unavailable: !available,
+                  class: clsx(classes?.dayButton, !available && "cursor-not-allowed opacity-50")
+                }),
+                (theme as DatepickerTheme)?.dayButton
+              )}
               onclick={() => handleDaySelect(day)}
               onkeydown={handleCalendarKeydown}
               aria-label={day.toLocaleDateString(translationLocale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}
@@ -361,7 +364,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L487)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L480)
 ## Props
 @prop value = $bindable()
 @prop defaultDate = null

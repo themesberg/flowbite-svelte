@@ -2,7 +2,7 @@
   import { fade } from "svelte/transition";
   import { banner, type BannerTheme } from ".";
   import { type ParamsType, type BannerProps, CloseButton, cn } from "$lib";
-import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, innerClass, transition = fade, params, closeClass, ...restProps }: BannerProps = $props();
 
@@ -37,7 +37,7 @@ import { getTheme } from "$lib/theme/themeUtils";
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L234)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L227)
 ## Props
 @prop children
 @prop header

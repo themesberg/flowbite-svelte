@@ -7,7 +7,7 @@
 
   let { src, href, caption, size, figClass, class: imgClass, captionClass, ...restProps }: EnhandedImgProps = $props();
 
-  const theme = getTheme('enhancedImg');
+  const theme = getTheme("enhancedImg");
 
   let { base, figure, figureCaption } = $derived(img({ size }));
 </script>
@@ -37,7 +37,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[EnhandedImgProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1926)
+[EnhandedImgProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1929)
 ## Props
 @prop src
 @prop href

@@ -868,7 +868,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1649)
+[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1643)
 
 #### Props
 
@@ -888,7 +888,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1681)
+[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1675)
 
 #### Props
 
@@ -900,7 +900,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1670)
+[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1664)
 
 #### Props
 
@@ -913,7 +913,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1662)
+[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1656)
 
 #### Props
 
@@ -928,7 +928,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1637)
+[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1631)
 
 #### Props
 
@@ -945,7 +945,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1686)
+[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1680)
 
 #### Props
 
@@ -956,25 +956,25 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1701)
+[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1695)
 
 #### Props
 
 - children
 - header
 - footer
-- divClass: "relative overflow-x-auto shadow-md sm:rounded-lg"
+- divClass
 - inputValue: $bindable()
-- striped
-- hoverable
+- striped: false
+- hoverable: false
 - customColor: ""
 - color: "default"
-- innerDivClass: "p-4"
+- innerDivClass
 - inputClass
-- searchClass: "relative mt-1"
+- searchClass
 - svgDivClass
-- svgClass: "w-5 h-5 text-gray-500 dark:text-gray-400"
-- tableClass: "w-full text-left text-sm"
+- svgClass
+- tableClass
 - class: className
 - placeholder: "Search"
 

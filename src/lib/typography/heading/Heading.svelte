@@ -7,7 +7,7 @@
 
   let { children, tag = "h1", class: className, ...restProps }: HeadingProps = $props();
 
-  const theme = getTheme('heading');
+  const theme = getTheme("heading");
 
   let headingCls = $derived(heading({ tag, class: clsx(className) }));
 </script>
@@ -20,7 +20,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1900)
+[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1891)
 ## Props
 @prop children
 @prop tag = "h1"

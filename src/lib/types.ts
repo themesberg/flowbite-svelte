@@ -54,7 +54,7 @@ import type { MultiSelectVariants, SelectVariants } from "$lib/forms/select/them
 import type { ToggleVariants } from "$lib/forms/toggle/theme";
 import type { PhoneInputVariants } from "$lib/forms/phoneinput/theme";
 import type { ButtonToggleVariants } from "$lib/forms/button-toggle/theme";
-import type { TableSearchColor } from "$lib/table/theme"
+import type { TableSearchColor } from "$lib/table/theme";
 
 // typography component variants
 import type { AnchorVariants } from "$lib/typography/anchor/theme";
@@ -1908,12 +1908,12 @@ export interface Picture {
   /**
    * Key is format. Value is srcset.
    */
-  sources: Record<string, string>
+  sources: Record<string, string>;
   img: {
-    src: string
-    w: number
-    h: number
-  }
+    src: string;
+    w: number;
+    h: number;
+  };
 }
 // export type EnhancedImgAttributes = Omit<HTMLImgAttributes, "src"> & { src: string };
 
@@ -1926,7 +1926,7 @@ export interface ImgProps extends HTMLImgAttributes {
   href?: HTMLAnchorElement["href"];
 }
 
-export interface EnhandedImgProps extends Omit<HTMLImgAttributes, "src">{
+export interface EnhandedImgProps extends Omit<HTMLImgAttributes, "src"> {
   src: string | Picture;
   size?: ImgVariants["size"];
   multiple?: boolean;

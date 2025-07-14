@@ -65,4 +65,3 @@ export const navbarHamburger = tv({
 
 export type NavbarHamburgerSlots = keyof typeof navbarHamburger.slots;
 export type NavbarHamburgerTheme = Partial<Record<NavbarHamburgerSlots, string>>;
-

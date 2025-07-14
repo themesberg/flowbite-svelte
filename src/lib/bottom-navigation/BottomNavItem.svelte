@@ -3,7 +3,7 @@
   import type { HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
   import { bottomNavItem, type BottomNavItemTheme } from ".";
   import { type BottomNavItemProps, type BottomNavContextType, type BottomNavVariantType, cn } from "$lib";
-import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, btnName, appBtnPosition = "middle", target, activeClass, href = "", btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
 
@@ -68,7 +68,7 @@ import { getTheme } from "$lib/theme/themeUtils";
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L267)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L260)
 ## Props
 @prop children
 @prop btnName

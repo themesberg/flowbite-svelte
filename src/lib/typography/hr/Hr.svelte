@@ -7,7 +7,7 @@
 
   let { children, divClass, class: className, innerDivClass, ...restProps }: HrProps = $props();
 
-  const theme = getTheme('hr');
+  const theme = getTheme("hr");
 
   let { base, container, content } = $derived(hr({ withChildren: !!children }));
 </script>
@@ -27,7 +27,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1906)
+[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1897)
 ## Props
 @prop children
 @prop divClass

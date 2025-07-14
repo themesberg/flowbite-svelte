@@ -1,7 +1,7 @@
 <script lang="ts">
   import { bottomNavHeaderItem } from ".";
   import { type BottomNavHeaderItemProps, cn } from "$lib";
-import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { itemName, active, class: className, ...restProps }: BottomNavHeaderItemProps = $props();
 
@@ -19,7 +19,7 @@ import { getTheme } from "$lib/theme/themeUtils";
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L308)
+[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L301)
 ## Props
 @prop itemName
 @prop active

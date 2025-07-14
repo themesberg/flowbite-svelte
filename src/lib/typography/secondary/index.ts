@@ -1,4 +1,2 @@
-import Secondary from "./Secondary.svelte";
-import { secondary } from "./theme";
-
-export { Secondary, secondary };
+export { default as Secondary } from "./Secondary.svelte";
+export { secondary, type SecondaryTheme } from "./theme";

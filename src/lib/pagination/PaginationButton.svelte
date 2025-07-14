@@ -14,13 +14,16 @@
   const table = getContext<boolean>("table");
 
   const paginationCls = $derived(
-    cn(paginationButton({
-      size: getContext("size") ?? size,
-      active,
-      group,
-      table,
-      disabled
-    }), theme)
+    cn(
+      paginationButton({
+        size: getContext("size") ?? size,
+        active,
+        group,
+        table,
+        disabled
+      }),
+      theme
+    )
   );
 
   function handleClick(e: MouseEvent) {
@@ -50,7 +53,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1169)
+[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1162)
 ## Props
 @prop children
 @prop size

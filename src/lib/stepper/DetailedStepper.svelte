@@ -12,7 +12,6 @@
   const stepperIndicatorTheme = getTheme("detailedStepperIndicator");
 
   setContext("stepperType", "detailed");
-
 </script>
 
 <ol class={cn(detailedStepper(), clsx(classes?.detailedstepper), stepperTheme)} {...restrorps}>
@@ -20,7 +19,7 @@
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
-      <li class={cn(detailedStepperItem({ status: step.status }), clsx(classes?.detailedstepperitem),stepperItemTheme )}>
+      <li class={cn(detailedStepperItem({ status: step.status }), clsx(classes?.detailedstepperitem), stepperItemTheme)}>
         <span class={cn(detailedStepperIndicator({ status: step.status }), clsx(classes?.detailedstepperindicator), stepperIndicatorTheme)}>
           {#if step.status === "completed" && step.icon}
             <step.icon class={clsx(step.iconClass)} />
@@ -43,7 +42,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1572)
+[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1566)
 ## Props
 @prop children
 @prop steps = []

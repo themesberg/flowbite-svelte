@@ -1,4 +1,2 @@
-import Span from "./Span.svelte";
-import { span } from "./theme";
-
-export { Span, span };
+export { default as Span } from "./Span.svelte";
+export { span, type SpanTheme } from "./theme";

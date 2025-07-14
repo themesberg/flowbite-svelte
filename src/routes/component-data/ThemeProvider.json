@@ -1,0 +1,11 @@
+{
+  "name": "ThemeProvider",
+  "type": {
+    "name": "ThemeProviderProps",
+    "link": null
+  },
+  "props": [
+    ["children", ""],
+    ["theme", ""]
+  ]
+}

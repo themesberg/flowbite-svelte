@@ -101,4 +101,4 @@ export const radiobutton = tv({
   }
 });
 
-export type RadioButtonTheme = string; 
+export type RadioButtonTheme = string;

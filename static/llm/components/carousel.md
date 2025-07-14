@@ -96,13 +96,13 @@ Show the carousel indicators by adding the internal `Indicators` component.
 
 ```svelte
 <script>
-  import { Carousel, Indicators } from "flowbite-svelte";
+  import { Carousel, CarouselIndicators } from "flowbite-svelte";
   import images from "./imageData/images.json";
 </script>
 
 <div class="max-w-4xl">
   <Carousel {images}>
-    <Indicators />
+    <CarouselIndicators />
   </Carousel>
 </div>
 ```
@@ -113,7 +113,7 @@ You can control the `Carousel` component externally by the `index` prop. Here is
 
 ```svelte
 <script lang="ts">
-  import { Carousel, Controls, Indicators, Thumbnails } from "flowbite-svelte";
+  import { Carousel, Controls, CarouselIndicators, Thumbnails } from "flowbite-svelte";
   import images from "./imageData/images.json";
 
   let index = $state(0);
@@ -122,7 +122,7 @@ You can control the `Carousel` component externally by the `index` prop. Here is
 <div class="max-w-4xl space-y-4">
   <Carousel {images} bind:index>
     <Controls />
-    <Indicators position="withThumbnails" />
+    <CarouselIndicators position="withThumbnails" />
     <Thumbnails {images} bind:index />
   </Carousel>
 </div>
@@ -134,7 +134,7 @@ The `Carousel` exposes the `change` event containing info about the currently di
 
 ```svelte
 <script lang="ts">
-  import { Carousel, Controls, Indicators } from "flowbite-svelte";
+  import { Carousel, Controls, CarouselIndicators } from "flowbite-svelte";
   import images from "./imageData/images.json";
   import type { HTMLImgAttributes } from "svelte/elements";
 
@@ -145,7 +145,7 @@ The `Carousel` exposes the `change` event containing info about the currently di
 <div class="max-w-4xl space-y-4">
   <Carousel {images} onchange={(detail) => (image = detail)}>
     <Controls />
-    <Indicators />
+    <CarouselIndicators />
   </Carousel>
 
   <div class="my-2 h-10 rounded-sm bg-gray-300 p-2 text-center dark:bg-gray-700 dark:text-white">
@@ -160,7 +160,7 @@ You can use `slide` snippet and internal component `Slide` to control the image 
 
 ```svelte
 <script>
-  import { Carousel, Indicators } from "flowbite-svelte";
+  import { Carousel } from "flowbite-svelte";
   import images from "./imageData/images.json";
 </script>
 
@@ -186,13 +186,13 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 ```svelte
 <script>
-  import { Carousel, Controls, Indicators } from "flowbite-svelte";
+  import { Carousel, Controls, CarouselIndicators } from "flowbite-svelte";
   import images from "./imageData/images.json";
 </script>
 
 <div class="max-w-4xl space-y-4">
   <Carousel {images} imgClass="object-contain h-full w-fit rounded-xs" class="min-h-[320px] rounded-md border-4 border-white bg-gray-200 ring-4 ring-green-500 dark:border-gray-800">
-    <Indicators class="rounded-md border border-white p-2" />
+    <CarouselIndicators class="rounded-md border border-white p-2" />
     <Controls class="items-center pt-4 text-red-400 dark:text-green-400" />
   </Carousel>
 </div>
@@ -202,7 +202,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 ```svelte
 <script>
-  import { Button, Carousel, ControlButton, Controls, Indicator, Indicators, Thumbnails } from "flowbite-svelte";
+  import { Button, Carousel, ControlButton, Controls, Indicator, CarouselIndicators, Thumbnails } from "flowbite-svelte";
   import { CaretRightOutline } from "flowbite-svelte-icons";
   import images from "./imageData/images.json";
   let index = $state(0);
@@ -210,13 +210,13 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 <div class="max-w-4xl space-y-4">
   <Carousel {images} bind:index>
-    <Indicators>
+    <CarouselIndicators>
       {#snippet children({ selected, index })}
         <Indicator color={selected ? "red" : "green"} class="h-5 w-5 border border-white text-white {selected ? 'opacity-100' : 'opacity-80'}">
           {index}
         </Indicator>
       {/snippet}
-    </Indicators>
+    </CarouselIndicators>
     <Controls>
       {#snippet children(changeSlide)}
         <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class="bg-red-300/50 dark:bg-red-400/50" />
@@ -238,7 +238,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 ```svelte
 <script lang="ts">
-  import { Carousel, Controls, Indicators } from "flowbite-svelte";
+  import { Carousel, Controls, CarouselIndicators } from "flowbite-svelte";
   import images from "./imageData/images.json";
   import { scale } from "svelte/transition";
   import { quintOut } from "svelte/easing";
@@ -249,7 +249,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 <div class="max-w-4xl">
   <Carousel {images} transition={scaleAnimation}>
     <Controls />
-    <Indicators />
+    <CarouselIndicators />
   </Carousel>
 </div>
 ```
@@ -260,7 +260,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L412)
+[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L405)
 
 #### Props
 
@@ -278,11 +278,25 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 - onchange
 - divClass
 
+### CarouselIndicators
+
+#### Types
+
+[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L419)
+
+#### Props
+
+- children
+- activeClass
+- inactiveClass
+- position: "bottom"
+- class: className
+
 ### ControlButton
 
 #### Types
 
-[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L433)
+[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L426)
 
 #### Props
 
@@ -296,32 +310,18 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L439)
+[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L432)
 
 #### Props
 
 - children
-- class: className
-
-### Indicators
-
-#### Types
-
-[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L426)
-
-#### Props
-
-- children
-- activeClass
-- inactiveClass
-- position: "bottom"
 - class: className
 
 ### Slide
 
 #### Types
 
-[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L456)
+[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L449)
 
 #### Props
 
@@ -333,7 +333,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L443)
+[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L436)
 
 #### Props
 
@@ -344,7 +344,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L447)
+[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L440)
 
 #### Props
 

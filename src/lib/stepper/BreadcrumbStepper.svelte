@@ -21,10 +21,13 @@
   {:else if steps}
     {#each steps as step, index}
       <li
-        class={cn(breadcrumbStepperItem({
-          status: step.status,
-          hasChevron: index < steps.length - 1
-        }), stepperItemTheme)}
+        class={cn(
+          breadcrumbStepperItem({
+            status: step.status,
+            hasChevron: index < steps.length - 1
+          }),
+          stepperItemTheme
+        )}
       >
         <span class={cn(breadcrumbStepperIndicator({ status: step.status }), stepperIndicatorTheme)}>
           {#if step.status === "completed" && step.icon}
@@ -54,7 +57,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1603)
+[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1597)
 ## Props
 @prop children
 @prop steps = []

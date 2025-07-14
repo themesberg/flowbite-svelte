@@ -80,3 +80,5 @@ export const paragraph = tv({
     }
   }
 });
+
+export type ParagraphTheme = string;

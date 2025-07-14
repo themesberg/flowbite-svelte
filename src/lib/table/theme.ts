@@ -478,6 +478,5 @@ export const tableSearch = tv({
 // Export color type for use in props
 export type TableSearchColor = "default" | "blue" | "green" | "red" | "yellow" | "purple" | "indigo" | "pink" | "custom";
 
-
 export type TableSearchSlots = keyof typeof tableSearch.slots;
 export type TableSearchTheme = Partial<Record<TableSearchSlots, string>>;

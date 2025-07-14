@@ -6,7 +6,7 @@
 
   let { children, divClass, timeClass, date, olClass, ...restProps }: GroupProps = $props();
 
-  const theme = getTheme('group');
+  const theme = getTheme("group");
 
   const { div, time, ol } = $derived(group());
 </script>
@@ -22,7 +22,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1792)
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1783)
 ## Props
 @prop children
 @prop divClass

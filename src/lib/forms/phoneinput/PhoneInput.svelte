@@ -34,6 +34,6 @@
       </span>
     {/if}
     <input type="tel" class={cn(floatingInput({ class: clsx(classes?.floatingInput) }), (theme as PhoneInputTheme)?.floatingInput)} {pattern} {...restProps} />
-    <label for={labelFor} class={cn(labelFloating({ class: clsx(classes?.labelFloating) }),(theme as PhoneInputTheme)?.labelFloating )}>{floatingLabel}</label>
+    <label for={labelFor} class={cn(labelFloating({ class: clsx(classes?.labelFloating) }), (theme as PhoneInputTheme)?.labelFloating)}>{floatingLabel}</label>
   </div>
 {/if}

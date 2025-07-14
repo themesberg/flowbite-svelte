@@ -244,8 +244,8 @@ export const breadcrumbStepperItem = tv({
       pending: "text-gray-500 dark:text-gray-400"
     },
     hasChevron: {
-      true: '',
-      false: ''
+      true: "",
+      false: ""
     }
   },
   defaultVariants: {

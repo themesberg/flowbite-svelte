@@ -77,7 +77,6 @@ export const imagePlaceholder = tv({
 export type ImagePlaceholderSlots = keyof typeof imagePlaceholder.slots;
 export type ImagePlaceholderTheme = Partial<Record<ImagePlaceholderSlots, string>>;
 
-
 // ListPlaceholder
 export type ListPlaceholderVariants = VariantProps<typeof listPlaceholder>;
 
@@ -165,7 +164,6 @@ export const testimonialPlaceholder = tv({
 export type TestimonialPlaceholderSlots = keyof typeof testimonialPlaceholder.slots;
 export type TestimonialPlaceholderTheme = Partial<Record<TestimonialPlaceholderSlots, string>>;
 
-
 // TextPlaceholder
 export type TextPlaceholderVariants = VariantProps<typeof textPlaceholder>;
 
@@ -189,7 +187,6 @@ export const textPlaceholder = tv({
 
 export type TextPlaceholderSlots = keyof typeof textPlaceholder.slots;
 export type TextPlaceholderTheme = Partial<Record<TextPlaceholderSlots, string>>;
-
 
 // VideoPlaceholder
 export type VideoPlaceholderVariants = VariantProps<typeof videoPlaceholder>;

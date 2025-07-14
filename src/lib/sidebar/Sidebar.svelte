@@ -5,7 +5,7 @@
   import { sineIn } from "svelte/easing";
   import { sidebar, type SidebarTheme } from ".";
   import { trapFocus, type SidebarProps, type SidebarCtxType } from "$lib";
-    import { cn } from "$lib";
+  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
 
@@ -81,7 +81,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1355)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1348)
 ## Props
 @prop children
 @prop isOpen = false

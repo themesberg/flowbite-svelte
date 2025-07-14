@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { sidebarButton } from ".";
   import type { SidebarButtonProps } from "$lib/types";
-    import { cn } from "$lib";
+  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { breakpoint = "md", class: className, ...restProps }: SidebarButtonProps = $props();
@@ -23,7 +23,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1373)
+[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1366)
 ## Props
 @prop breakpoint = "md"
 @prop class: className

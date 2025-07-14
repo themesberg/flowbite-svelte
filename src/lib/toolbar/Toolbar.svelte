@@ -9,7 +9,7 @@
 
   let { children, end, color, embedded, class: className, ...restProps }: ToolbarProps = $props();
 
-  const theme = getTheme('toolbar');
+  const theme = getTheme("toolbar");
 
   const separators = writable(false);
   setContext("toolbar", separators);
@@ -42,7 +42,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1139)
+[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1132)
 ## Props
 @prop children
 @prop end

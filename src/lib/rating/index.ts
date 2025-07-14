@@ -1,6 +1,6 @@
 export { default as AdvancedRating } from "./AdvancedRating.svelte";
 export { default as Heart } from "./Heart.svelte";
-export { default as Rating}  from "./Rating.svelte";
+export { default as Rating } from "./Rating.svelte";
 export { default as RatingComment } from "./RatingComment.svelte";
 export { default as Review } from "./Review.svelte";
 export { default as ScoreRating } from "./ScoreRating.svelte";

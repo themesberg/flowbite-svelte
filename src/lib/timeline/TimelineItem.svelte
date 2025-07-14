@@ -7,7 +7,7 @@
 
   let { children, orientationSlot, title, date, dateFormat = "month-year", svgClass, liClass, divClass, timeClass, h3Class, ...restProps }: TimelineItemProps = $props();
 
-  const theme = getTheme('timelineItem');
+  const theme = getTheme("timelineItem");
 
   let order = getContext<TimelineVariants["order"]>("order");
 
@@ -79,7 +79,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1816)
+[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1807)
 ## Props
 @prop children
 @prop orientationSlot

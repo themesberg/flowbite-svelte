@@ -2,12 +2,12 @@
   import clsx from "clsx";
   import { anchor } from "./index";
   import type { AnchorProps } from "$lib/types";
-import { cn } from "$lib";
+  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, color = "primary", asButton = false, onclick, href = "#", class: className, ...restProps }: AnchorProps = $props();
 
-  const theme = getTheme('a');
+  const theme = getTheme("a");
 
   let linkClass = $derived(anchor({ color, class: clsx(className) }));
 
@@ -44,7 +44,7 @@ import { cn } from "$lib";
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AnchorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1855)
+[AnchorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1846)
 ## Props
 @prop children
 @prop color = "primary"

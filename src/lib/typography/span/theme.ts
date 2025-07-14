@@ -89,3 +89,5 @@ export const span = tv({
     }
   }
 });
+
+export type SpanTheme = string;

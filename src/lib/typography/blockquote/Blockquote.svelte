@@ -7,7 +7,7 @@
 
   let { children, class: className, border, italic = true, bg, alignment = "left", size = "lg", ...restProps }: BlockquoteProps = $props();
 
-  const theme = getTheme('blockquote');
+  const theme = getTheme("blockquote");
 
   let blockquoteClass = $derived(
     blockquote({
@@ -29,7 +29,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1884)
+[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1875)
 ## Props
 @prop children
 @prop class: className

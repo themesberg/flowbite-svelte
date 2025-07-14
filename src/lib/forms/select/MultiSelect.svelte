@@ -177,7 +177,7 @@
   </span>
   <div class="ms-auto flex items-center gap-2">
     {#if selectItems.length}
-      <CloseButton {size} onclick={clearAll} color="none" class={cn(closebutton(),(theme as MultiSelectTheme)?.closebutton)} {disabled} />
+      <CloseButton {size} onclick={clearAll} color="none" class={cn(closebutton(), (theme as MultiSelectTheme)?.closebutton)} {disabled} />
     {/if}
 
     <svg class={cn("ms-1 h-3 w-3 cursor-pointer text-gray-800 dark:text-white", disabled && "cursor-not-allowed")} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">

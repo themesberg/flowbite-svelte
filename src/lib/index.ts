@@ -1,8 +1,8 @@
 // utils/helpers
 export * from "./uiHelpers.svelte";
 // theme
-export { default as ThemeProvider } from "./theme/ThemeProvider.svelte"
-export { getTheme } from './theme/themeUtils';
+export { default as ThemeProvider } from "./theme/ThemeProvider.svelte";
+export { getTheme } from "./theme/themeUtils";
 // components
 export * from "./accordion";
 export * from "./alert";

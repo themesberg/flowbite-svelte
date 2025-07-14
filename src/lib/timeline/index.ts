@@ -4,4 +4,4 @@ export { default as Group } from "./Group.svelte";
 export { default as GroupItem } from "./GroupItem.svelte";
 export { default as Timeline } from "./Timeline.svelte";
 export { default as TimelineItem } from "./TimelineItem.svelte";
-export { activity, activityItem, group, groupItem, timeline, timelineItem, type ActivityTheme, type ActivityItemTheme, type GroupTheme, type GroupItemTheme, type TimelineTheme, type TimelineItemTheme} from "./theme";
+export { activity, activityItem, group, groupItem, timeline, timelineItem, type ActivityTheme, type ActivityItemTheme, type GroupTheme, type GroupItemTheme, type TimelineTheme, type TimelineItemTheme } from "./theme";

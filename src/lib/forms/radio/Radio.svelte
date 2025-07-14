@@ -12,7 +12,7 @@
 </script>
 
 <Label class={cn(label(), labelClass, (theme as RadioTheme)?.label)}>
-  <input type="radio" bind:group {value} aria-describedby={ariaDescribedby} {...restProps} class={cn(input(), inputClass,  (theme as RadioTheme)?.input)} />
+  <input type="radio" bind:group {value} aria-describedby={ariaDescribedby} {...restProps} class={cn(input(), inputClass, (theme as RadioTheme)?.input)} />
   {@render children?.()}
 </Label>
 

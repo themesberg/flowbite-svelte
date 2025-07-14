@@ -1,4 +1,2 @@
-import Layout from "./Layout.svelte";
-import { layout } from "./theme";
-
-export { Layout, layout };
+export { default as Layout } from "./Layout.svelte";
+export { layout, type LayoutTheme } from "./theme";

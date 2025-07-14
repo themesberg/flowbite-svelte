@@ -9,7 +9,7 @@
   const background = getContext("background");
   let { children, color, name, "aria-label": ariaLabel, size, class: className, ...restProps }: ToolbarButtonProps = $props();
 
-  const theme = getTheme('toolbarButton');
+  const theme = getTheme("toolbarButton");
 
   const buttonClass = $derived(
     toolbarButton({
@@ -37,7 +37,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1145)
+[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1138)
 ## Props
 @prop children
 @prop color

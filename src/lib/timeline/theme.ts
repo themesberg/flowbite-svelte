@@ -22,7 +22,6 @@ export const activityItem = tv({
 export type ActivityItemSlots = keyof typeof activityItem.slots;
 export type ActivityItemTheme = Partial<Record<ActivityItemSlots, string>>;
 
-
 export const group = tv({
   slots: {
     div: "p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700",

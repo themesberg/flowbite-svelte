@@ -8,7 +8,7 @@
   const theme = getTheme("indicator");
 
   let hasChildren = !!children;
-  const base  = $derived(
+  const base = $derived(
     indicator({
       color,
       size,
@@ -31,7 +31,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1003)
+[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L996)
 ## Props
 @prop children
 @prop color = "primary"

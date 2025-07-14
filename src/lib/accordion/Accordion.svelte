@@ -3,7 +3,7 @@
   import { writable } from "svelte/store";
   import { accordion } from "./";
   import { type AccordionProps, cn } from "$lib";
-import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, ...restProps }: AccordionProps = $props();
 
@@ -19,7 +19,7 @@ import { getTheme } from "$lib/theme/themeUtils";
   setContext("ctx", ctx);
   setContext("ctxTransitionType", transitionType);
   const base = $derived(cn(accordion({ flush }), className));
-  const finalClass = $derived(cn(base, theme))
+  const finalClass = $derived(cn(base, theme));
 </script>
 
 <div {...restProps} class={finalClass}>
@@ -30,7 +30,7 @@ import { getTheme } from "$lib/theme/themeUtils";
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L165)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L158)
 ## Props
 @prop children
 @prop flush

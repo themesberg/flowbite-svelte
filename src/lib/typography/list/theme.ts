@@ -20,3 +20,5 @@ export const list = tv({
     tag: "ul"
   }
 });
+
+export type ListTheme = string;

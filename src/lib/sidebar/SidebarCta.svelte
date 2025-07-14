@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { sidebarCta, type SidebarCtaTheme } from ".";
   import type { SidebarCtaProps } from "$lib/types";
-    import { cn } from "$lib";
+  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, icon, divClass, spanClass, label, class: className, ...restProps }: SidebarCtaProps = $props();
@@ -26,7 +26,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1377)
+[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1370)
 ## Props
 @prop children
 @prop icon

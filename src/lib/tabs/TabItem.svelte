@@ -33,8 +33,7 @@
 </script>
 
 <li {...restProps} class={cn(base(), className, (theme as TabItemTheme)?.base)} role="presentation">
-  <button type="button" onclick={() => (open = true)} role="tab" id={tabId} aria-controls={ctx.panelId} aria-selected={open} {disabled} class={cn(button(), open ? (activeClass ?? active()) : (inactiveClass ?? inactive()), (theme as TabItemTheme)?.button
-)}>
+  <button type="button" onclick={() => (open = true)} role="tab" id={tabId} aria-controls={ctx.panelId} aria-selected={open} {disabled} class={cn(button(), open ? (activeClass ?? active()) : (inactiveClass ?? inactive()), (theme as TabItemTheme)?.button)}>
     {#if titleSlot}
       {@render titleSlot()}
     {:else}
@@ -55,7 +54,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1729)
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1723)
 ## Props
 @prop children
 @prop titleSlot

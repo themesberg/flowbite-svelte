@@ -32,5 +32,5 @@ const avatar = tv({
 });
 
 export { avatar };
-  
+
 export type AvatarTheme = string;
