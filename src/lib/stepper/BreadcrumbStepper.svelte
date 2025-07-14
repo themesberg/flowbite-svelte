@@ -1,18 +1,16 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { breadcrumbStepper, breadcrumbStepperItem, breadcrumbStepperIndicator } from ".";
+  import { breadcrumbStepper, type BreadcrumbStepperTheme } from ".";
   import { type BreadcrumbStepperProps, cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, steps = [], classes, ...restProps }: BreadcrumbStepperProps = $props();
 
-  const stepperTheme = getTheme("breadcrumbStepper");
-  const stepperItemTheme = getTheme("breadcrumbStepperItem");
-  const stepperIndicatorTheme = getTheme("breadcrumbStepperIndicator");
+  const theme = getTheme("breadcrumbStepper");
 
   setContext("stepperType", "breadcrumb");
 
-  const base = cn(breadcrumbStepper(), stepperTheme);
+  const base = cn(breadcrumbStepper.stepper(), (theme as BreadcrumbStepperTheme)?.stepper);
 </script>
 
 <ol class={base} {...restProps}>
@@ -22,14 +20,14 @@
     {#each steps as step, index}
       <li
         class={cn(
-          breadcrumbStepperItem({
+          breadcrumbStepper.item({
             status: step.status,
             hasChevron: index < steps.length - 1
           }),
-          stepperItemTheme
+          (theme as BreadcrumbStepperTheme)?.item
         )}
       >
-        <span class={cn(breadcrumbStepperIndicator({ status: step.status }), stepperIndicatorTheme)}>
+        <span class={cn(breadcrumbStepper.indicator({ status: step.status }), (theme as BreadcrumbStepperTheme)?.indicator)}>
           {#if step.status === "completed" && step.icon}
             <step.icon class={step.iconClass || "h-3 w-3"} />
           {:else}
@@ -52,15 +50,3 @@
     {/each}
   {/if}
 </ol>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1597)
-## Props
-@prop children
-@prop steps = []
-@prop classes
-@prop ...restProps
--->

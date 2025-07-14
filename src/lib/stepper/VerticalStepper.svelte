@@ -1,28 +1,25 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { verticalStepper, verticalStepperCard, verticalStepperContent } from ".";
+  import { verticalStepper, type VerticalStepperTheme } from ".";
   import { type VerticalStepperProps, cn } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, steps = [], liClass, classes, ...restProps }: VerticalStepperProps = $props();
 
-  // verticalStepper, verticalStepperCard, verticalStepperContent
-  const stepperTheme = getTheme("veticalStepper");
-  const stepperCardTheme = getTheme("verticalStepperCard");
-  const stepperContentTheme = getTheme("verticalStepperContent");
+  const theme = getTheme("veticalStepper");
 
   setContext("stepperType", "vertical");
 </script>
 
-<ol class={cn(verticalStepper(), stepperTheme)} {...restProps}>
+<ol class={cn(verticalStepper.stepper(), (theme as VerticalStepperTheme)?.stepper)} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li class={clsx(liClass)}>
-        <div class={cn(verticalStepperCard({ status: step.status }), clsx(classes?.verticalsteppercard), stepperCardTheme)} role="alert">
-          <div class={cn(verticalStepperContent(), clsx(classes?.verticalsteppercontent), stepperContentTheme)}>
+        <div class={cn(verticalStepper.card({ status: step.status }), clsx(classes?.verticalsteppercard), (theme as VerticalStepperTheme)?.card)} role="alert">
+          <div class={cn(verticalStepper.content(), clsx(classes?.verticalsteppercontent), (theme as VerticalStepperTheme)?.content)}>
             <span class="sr-only">{step.label}</span>
             <h3 class="font-medium">{step.id}. {step.label}</h3>
             {#if step.status === "completed"}

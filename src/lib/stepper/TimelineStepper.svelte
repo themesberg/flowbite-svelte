@@ -1,27 +1,24 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { timelineStepper, timelineStepperItem, timelineStepperCircle } from ".";
+  import { timelineStepper, type TimelineStepperTheme } from ".";
   import { type TimelineStepperProps, cn } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, steps = [], classes, contentClass, ...restProps }: TimelineStepperProps = $props();
 
-  // timelineStepper, timelineStepperItem, timelineStepperCircle
-  const stepperTheme = getTheme("timelineStepper");
-  const stepperItemTheme = getTheme("timelineStepperItem");
-  const stepperCircleTheme = getTheme("timelineStepperCircle");
+  const theme = getTheme("timelineStepper");
 
   setContext("stepperType", "timeline");
 </script>
 
-<ol class={cn(timelineStepper(), clsx(classes?.timelinestepper), stepperTheme)} {...restProps}>
+<ol class={cn(timelineStepper.base(), clsx(classes?.timelinestepper), (theme as TimelineStepperTheme)?.base)} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
-      <li class={cn(timelineStepperItem({ isLast: index === steps.length - 1 }), clsx(classes?.timelinestepperitem), stepperItemTheme)}>
-        <span class={cn(timelineStepperCircle({ status: step.status }), clsx(classes?.timelinesteppercircle), stepperCircleTheme)}>
+      <li class={cn(timelineStepper.item({ isLast: index === steps.length - 1 }), clsx(classes?.timelinestepperitem), (theme as TimelineStepperTheme)?.item)}>
+        <span class={cn(timelineStepper.circle({ status: step.status }), clsx(classes?.timelinesteppercircle), (theme as TimelineStepperTheme)?.circle)}>
           {#if step.status === "completed"}
             {#if step.icon}
               <step.icon class={clsx(step.iconClass) || "h-3.5 w-3.5"} />
@@ -48,16 +45,3 @@
     {/each}
   {/if}
 </ol>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1611)
-## Props
-@prop children
-@prop steps = []
-@prop classes
-@prop contentClass
-@prop ...restProps
--->

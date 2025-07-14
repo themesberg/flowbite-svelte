@@ -1,36 +1,34 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { progressStepper, progressStepperItem, progressStepperCircle } from ".";
+  import { progressStepper } from ".";
   import { type ProgressStepperProps, cn } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
+  import type { ProgressStepperTheme } from ".";
 
   let { children, steps = [], classes, ...restrorps }: ProgressStepperProps = $props();
 
-  // progressStepper, progressStepperItem, progressStepperCircle
-  const stepperTheme = getTheme("progressStepper");
-  const stepperItemTheme = getTheme("progressStepperItem");
-  const stepperCircleTheme = getTheme("progressStepperCircle");
+  const theme = getTheme("progressStepper");
 
   setContext("stepperType", "progress");
 </script>
 
-<ol class={cn(progressStepper(), clsx(classes?.progressstepper), stepperTheme)} {...restrorps}>
+<ol class={cn(progressStepper.stepper(), clsx(classes?.progressstepper), (theme as ProgressStepperTheme)?.stepper)} {...restrorps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li
         class={cn(
-          progressStepperItem({
+          progressStepper.item({
             status: step.status,
             isLast: index === steps.length - 1
           }),
           clsx(classes?.progressstepperitem),
-          stepperItemTheme
+          (theme as ProgressStepperTheme)?.item
         )}
       >
-        <span class={cn(progressStepperCircle({ status: step.status }), clsx(classes?.progresssteppercircle), stepperCircleTheme)}>
+        <span class={cn(progressStepper.circle({ status: step.status }), clsx(classes?.progresssteppercircle), (theme as ProgressStepperTheme)?.circle)}>
           {#if step.status === "completed"}
             {#if step.icon}
               <step.icon class={clsx(step.iconClass) || "h-5 w-5 lg:h-6 lg:w-6"} />
@@ -51,15 +49,3 @@
     {/each}
   {/if}
 </ol>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1551)
-## Props
-@prop children
-@prop steps = []
-@prop classes
-@prop ...restrorps
--->

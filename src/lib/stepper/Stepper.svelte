@@ -1,43 +1,40 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { stepper, stepperItem, stepperContent } from ".";
+  import { stepper, type StepperTheme } from ".";
   import { type StepperProps, cn } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, steps = [], classes, ...restProps }: StepperProps = $props();
 
-  // stepper, stepperItem, stepperContent
-  const stepperTheme = getTheme("stepper");
-  const stepperItemTheme = getTheme("stepperItem");
-  const stepperContentTheme = getTheme("stepperContent");
+  const theme = getTheme("stepper");
 
   setContext("stepperType", "stepper");
 </script>
 
-<ol {...restProps} class={cn(stepper(), clsx(classes?.stepper), stepperTheme)}>
+<ol {...restProps} class={cn(stepper.base(), clsx(classes?.stepper), (theme as StepperTheme)?.base)}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li
         class={cn(
-          stepperItem({
+          stepper.item({
             status: step.status,
             isLast: index === steps.length - 1
           }),
           clsx(classes?.stepperitem),
-          stepperItemTheme
+          (theme as StepperTheme)?.item
         )}
       >
         <span
           class={cn(
-            stepperContent({
+            stepper.content({
               status: step.status,
               isLast: index === steps.length - 1
             }),
             clsx(classes?.steppercontent),
-            stepperContentTheme
+            (theme as StepperTheme)?.content
           )}
         >
           {#if step.status === "completed"}
@@ -60,15 +57,3 @@
     {/each}
   {/if}
 </ol>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1539)
-## Props
-@prop children
-@prop steps = []
-@prop classes
-@prop ...restProps
--->

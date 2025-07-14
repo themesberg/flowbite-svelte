@@ -5,4 +5,4 @@ export { default as VerticalStepper } from "./VerticalStepper.svelte";
 export { default as BreadcrumbStepper } from "./BreadcrumbStepper.svelte";
 export { default as TimelineStepper } from "./TimelineStepper.svelte";
 
-export { stepper, stepperItem, stepperContent, progressStepper, progressStepperItem, progressStepperCircle, detailedStepper, detailedStepperItem, detailedStepperIndicator, verticalStepper, verticalStepperCard, verticalStepperContent, breadcrumbStepper, breadcrumbStepperItem, breadcrumbStepperIndicator, timelineStepper, timelineStepperItem, timelineStepperCircle } from "./theme";
+export { stepper, progressStepper, detailedStepper, verticalStepper, breadcrumbStepper,  timelineStepper, type StepperTheme, type BreadcrumbStepperTheme, type DetailedStepperTheme, type ProgressStepperTheme, type TimelineStepperTheme, type VerticalStepperTheme } from "./theme";

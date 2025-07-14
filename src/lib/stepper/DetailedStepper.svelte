@@ -1,26 +1,24 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { detailedStepper, detailedStepperItem, detailedStepperIndicator } from ".";
+  import { detailedStepper, type DetailedStepperTheme } from ".";
   import { type DetailedStepperProps, cn } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, steps = [], contentClass, classes, ...restrorps }: DetailedStepperProps = $props();
 
-  const stepperTheme = getTheme("detailedStepper");
-  const stepperItemTheme = getTheme("detailedStepperItem");
-  const stepperIndicatorTheme = getTheme("detailedStepperIndicator");
+  const theme = getTheme("detailedStepper");
 
   setContext("stepperType", "detailed");
 </script>
 
-<ol class={cn(detailedStepper(), clsx(classes?.detailedstepper), stepperTheme)} {...restrorps}>
+<ol class={cn(detailedStepper.stepper(), clsx(classes?.detailedstepper), (theme as DetailedStepperTheme)?.stepper)} {...restrorps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
-      <li class={cn(detailedStepperItem({ status: step.status }), clsx(classes?.detailedstepperitem), stepperItemTheme)}>
-        <span class={cn(detailedStepperIndicator({ status: step.status }), clsx(classes?.detailedstepperindicator), stepperIndicatorTheme)}>
+      <li class={cn(detailedStepper.item({ status: step.status }), clsx(classes?.detailedstepperitem), (theme as DetailedStepperTheme)?.item)}>
+        <span class={cn(detailedStepper.indicator({ status: step.status }), clsx(classes?.detailedstepperindicator), (theme as DetailedStepperTheme)?.indicator)}>
           {#if step.status === "completed" && step.icon}
             <step.icon class={clsx(step.iconClass)} />
           {:else}
@@ -37,16 +35,3 @@
     {/each}
   {/if}
 </ol>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1566)
-## Props
-@prop children
-@prop steps = []
-@prop contentClass
-@prop classes
-@prop ...restrorps
--->
