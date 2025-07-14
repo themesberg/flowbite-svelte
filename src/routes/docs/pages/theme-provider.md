@@ -136,9 +136,50 @@ const theme: ThemeConfig = {
 };
 ```
 
+## Nested ThemeProvider
+You can nest ThemeProvider components to apply different themes to different sections of your application. Child ThemeProviders will override the parent themes for their specific scope:
+
+```svelte example hideOutput
+<script>
+  import { ThemeProvider, Card, Heading, P } from "flowbite-svelte";
+  
+  const theme1 = {
+    card: {
+      base: "bg-blue-50 border-blue-200"
+    },
+    heading: "text-3xl text-green-500",
+    p: "text-blue-500 text-lg"
+  };
+  
+  const theme2 = {
+    heading: "text-lg text-purple-600 font-bold"
+  };
+  
+  const theme3 = {
+    p: "text-gray-600 italic text-md"
+  };
+</script>
+
+<ThemeProvider theme={theme1}>
+  <Heading tag="h1">Card</Heading>
+  <P>Card example</P>
+  <Card href="/cards">
+    <ThemeProvider theme={theme2}>     
+      <Heading tag="h5">Noteworthy technology</Heading>     
+    </ThemeProvider>
+    <ThemeProvider theme={theme3}>
+      <P>Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</P>
+    </ThemeProvider>
+  </Card> 
+</ThemeProvider>
+```
+
+This allows for granular control over theming in different parts of your component tree.
+
 ## Notes
 
 - If no theme is provided, the component will log a message to the console but won't break functionality.
 - The theme configuration is passed through Svelte's context system, making it available to all child components.
 - Each component will fall back to its default styling if no theme is provided for that specific component.
 - Theme configurations are merged with default component styles, allowing for partial customization.
+- Use nested ThemeProviders for section-specific styling while maintaining global themes.
