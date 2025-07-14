@@ -2,8 +2,12 @@
   import clsx from "clsx";
   import { blockquote } from "./index";
   import type { BlockquoteProps } from "$lib/types";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, border, italic = true, bg, alignment = "left", size = "lg", ...restProps }: BlockquoteProps = $props();
+
+  const theme = getTheme('blockquote');
 
   let blockquoteClass = $derived(
     blockquote({
@@ -17,7 +21,7 @@
   );
 </script>
 
-<blockquote {...restProps} class={blockquoteClass}>
+<blockquote {...restProps} class={cn(blockquoteClass, theme)}>
   {@render children()}
 </blockquote>
 

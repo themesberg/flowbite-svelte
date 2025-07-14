@@ -2,8 +2,12 @@
   import clsx from "clsx";
   import { anchor } from "./index";
   import type { AnchorProps } from "$lib/types";
+import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, color = "primary", asButton = false, onclick, href = "#", class: className, ...restProps }: AnchorProps = $props();
+
+  const theme = getTheme('a');
 
   let linkClass = $derived(anchor({ color, class: clsx(className) }));
 
@@ -26,12 +30,12 @@
 
 {#if asButton}
   <!-- Render as a button that looks like a link -->
-  <button type="button" class={linkClass} onclick={handleClick} {...buttonProps}>
+  <button type="button" class={cn(linkClass, theme)} onclick={handleClick} {...buttonProps}>
     {@render children()}
   </button>
 {:else}
   <!-- Standard anchor behavior -->
-  <a {href} class={linkClass} onclick={handleClick} {...restProps}>
+  <a {href} class={cn(linkClass, theme)} onclick={handleClick} {...restProps}>
     {@render children()}
   </a>
 {/if}

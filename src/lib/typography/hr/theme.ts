@@ -18,3 +18,6 @@ export const hr = tv({
     withChildren: false
   }
 });
+
+export type HrSlots = keyof typeof hr.slots;
+export type HrTheme = Partial<Record<HrSlots, string>>;

@@ -13,3 +13,5 @@ export const descriptionList = tv({
     tag: "dt"
   }
 });
+
+export type DescriptionListTheme = string;

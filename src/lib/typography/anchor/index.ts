@@ -1,4 +1,2 @@
-import A from "./A.svelte";
-import { anchor } from "./theme";
-
-export { A, anchor };
+export { default as A } from "./A.svelte";
+export { anchor, type AnchorTheme } from "./theme";

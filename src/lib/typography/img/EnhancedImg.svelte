@@ -1,23 +1,27 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { img } from ".";
+  import { img, type ImgTheme } from ".";
   import type { EnhandedImgProps } from "$lib/types";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { src, href, caption, size, figClass, class: imgClass, captionClass, ...restProps }: EnhandedImgProps = $props();
+
+  const theme = getTheme('enhancedImg');
 
   let { base, figure, figureCaption } = $derived(img({ size }));
 </script>
 
 {#snippet imageSlot()}
   {#if caption}
-    <figure class={figure({ class: figClass })}>
-      <enhanced:img {src} {...restProps} class={base({ class: clsx(imgClass) })} />
-      <figcaption class={figureCaption({ class: captionClass })}>
+    <figure class={cn(figure({ class: figClass }), (theme as ImgTheme)?.figure)}>
+      <enhanced:img {src} {...restProps} class={cn(base({ class: clsx(imgClass) }), (theme as ImgTheme)?.base)} />
+      <figcaption class={cn(figureCaption({ class: captionClass }), (theme as ImgTheme)?.figureCaption)}>
         {@html caption}
       </figcaption>
     </figure>
   {:else}
-    <enhanced:img {src} {...restProps} class={base({ class: clsx(imgClass) })} />
+    <enhanced:img {src} {...restProps} class={cn(base({ class: clsx(imgClass) }), (theme as ImgTheme)?.base)} />
   {/if}
 {/snippet}
 

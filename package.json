@@ -46,6 +46,7 @@
     "@playwright/test": "^1.53.2",
     "@sveltejs/adapter-auto": "^6.0.1",
     "@sveltejs/adapter-vercel": "^5.7.2",
+    "@sveltejs/enhanced-img": "^0.6.1",
     "@sveltejs/kit": "^2.22.2",
     "@sveltejs/package": "2.3.12",
     "@sveltejs/vite-plugin-svelte": "^5.1.0",

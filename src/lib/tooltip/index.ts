@@ -1,4 +1,2 @@
-import Tooltip from "./Tooltip.svelte";
-import { tooltip } from "./theme";
-
-export { Tooltip, tooltip };
+export { default as  Tooltip }from "./Tooltip.svelte";
+export { tooltip, type TooltipTheme } from "./theme";

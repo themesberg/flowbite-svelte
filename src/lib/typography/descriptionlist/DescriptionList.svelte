@@ -2,10 +2,14 @@
   import clsx from "clsx";
   import { descriptionList } from "./index";
   import type { DescriptionListProps } from "$lib/types";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, tag, class: className, ...restProps }: DescriptionListProps = $props();
 
-  let classDesc = $derived(
+  const theme = getTheme('descriptionList');
+
+  let descCls = $derived(
     descriptionList({
       tag,
       class: clsx(className)
@@ -13,7 +17,7 @@
   );
 </script>
 
-<svelte:element this={tag} {...restProps} class={classDesc}>
+<svelte:element this={tag} {...restProps} class={cn(descCls, theme)}>
   {@render children()}
 </svelte:element>
 

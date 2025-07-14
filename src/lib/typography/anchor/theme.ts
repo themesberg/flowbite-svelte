@@ -30,3 +30,5 @@ export const anchor = tv({
     }
   }
 });
+
+export type AnchorTheme = string;

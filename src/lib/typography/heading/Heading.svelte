@@ -2,13 +2,17 @@
   import clsx from "clsx";
   import { heading } from "./index";
   import type { HeadingProps } from "$lib/types";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, tag = "h1", class: className, ...restProps }: HeadingProps = $props();
 
-  let headingClass = $derived(heading({ tag, class: clsx(className) }));
+  const theme = getTheme('heading');
+
+  let headingCls = $derived(heading({ tag, class: clsx(className) }));
 </script>
 
-<svelte:element this={tag} {...restProps} class={headingClass}>
+<svelte:element this={tag} {...restProps} class={cn(headingCls, theme)}>
   {@render children()}
 </svelte:element>
 

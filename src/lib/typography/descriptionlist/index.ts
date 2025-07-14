@@ -1,4 +1,2 @@
-import DescriptionList from "./DescriptionList.svelte";
-import { descriptionList } from "./theme";
-
-export { DescriptionList, descriptionList };
+export { default as DescriptionList } from "./DescriptionList.svelte";
+export { descriptionList, type DescriptionListTheme } from "./theme";

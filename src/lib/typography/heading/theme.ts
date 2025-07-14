@@ -18,3 +18,5 @@ export const heading = tv({
     tag: "h1"
   }
 });
+
+export type HeadingTheme = string;

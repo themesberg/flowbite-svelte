@@ -1903,7 +1903,19 @@ export interface HrProps extends HTMLAttributes<HTMLElement> {
 }
 
 // img
-export type EnhancedImgAttributes = Omit<HTMLImgAttributes, "src"> & { src: string };
+// https://github.com/JonasKruckenberg/imagetools/blob/main/packages/core/src/types.ts
+export interface Picture {
+  /**
+   * Key is format. Value is srcset.
+   */
+  sources: Record<string, string>
+  img: {
+    src: string
+    w: number
+    h: number
+  }
+}
+// export type EnhancedImgAttributes = Omit<HTMLImgAttributes, "src"> & { src: string };
 
 export interface ImgProps extends HTMLImgAttributes {
   size?: ImgVariants["size"];
@@ -1914,7 +1926,8 @@ export interface ImgProps extends HTMLImgAttributes {
   href?: HTMLAnchorElement["href"];
 }
 
-export interface EnhandedImgProps extends EnhancedImgAttributes {
+export interface EnhandedImgProps extends Omit<HTMLImgAttributes, "src">{
+  src: string | Picture;
   size?: ImgVariants["size"];
   multiple?: boolean;
   transform?: string;

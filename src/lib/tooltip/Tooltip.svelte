@@ -1,10 +1,14 @@
 <script lang="ts">
   import clsx from "clsx";
   import Popper from "../utils/Popper.svelte";
-  import { tooltip } from "./theme";
+  import { tooltip, type TooltipTheme } from "./theme";
   import type { TooltipProps, TriggeredToggleEvent } from "$lib";
+   import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { type = "dark", color = undefined, trigger = "hover", arrow = true, children, placement = "top", onbeforetoggle: _onbeforetoggle, class: className, isOpen = $bindable(false), ...restProps }: TooltipProps = $props();
+
+  const theme = getTheme('tooltip');
 
   let { base } = $derived(tooltip({ color, type }));
 
@@ -18,7 +22,7 @@
   }
 </script>
 
-<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={base({ class: clsx(className) })} {onbeforetoggle}>
+<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={cn(base({ class: clsx(className) }), (theme as TooltipTheme)?.base)} {onbeforetoggle}>
   <div class="pointer-events-none">{@render children()}</div>
 </Popper>
 

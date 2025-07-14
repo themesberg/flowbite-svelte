@@ -46,3 +46,5 @@ export const blockquote = tv({
     size: "lg"
   }
 });
+
+export type BlockquoteTheme = string;

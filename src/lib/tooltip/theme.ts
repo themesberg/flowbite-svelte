@@ -38,3 +38,6 @@ export const tooltip = tv({
     }
   }
 });
+
+export type TooltipSlots = keyof typeof tooltip.slots;
+export type TooltipTheme = Partial<Record<TooltipSlots, string>>;

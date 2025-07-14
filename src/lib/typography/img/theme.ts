@@ -42,3 +42,6 @@ export const img = tv({
     }
   }
 });
+
+export type ImgSlots = keyof typeof img.slots;
+export type ImgTheme = Partial<Record<ImgSlots, string>>;

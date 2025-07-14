@@ -1,22 +1,26 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { hr } from "./index";
+  import { hr, type HrTheme } from "./index";
   import type { HrProps } from "$lib/types";
+  import { cn } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, divClass, class: className, innerDivClass, ...restProps }: HrProps = $props();
+
+  const theme = getTheme('hr');
 
   let { base, container, content } = $derived(hr({ withChildren: !!children }));
 </script>
 
 {#if children}
-  <div {...restProps} class={container({ class: divClass })}>
-    <hr class={base({ class: clsx(className) })} />
-    <div class={content({ class: innerDivClass })}>
+  <div {...restProps} class={cn(container({ class: divClass }), (theme as HrTheme)?.container)}>
+    <hr class={cn(base({ class: clsx(className) }), (theme as HrTheme)?.base)} />
+    <div class={cn(content({ class: innerDivClass }), (theme as HrTheme)?.content)}>
       {@render children()}
     </div>
   </div>
 {:else}
-  <hr class={base({ class: clsx(className) })} {...restProps} />
+  <hr class={cn(base({ class: clsx(className) }), (theme as HrTheme)?.base)} {...restProps} />
 {/if}
 
 <!--

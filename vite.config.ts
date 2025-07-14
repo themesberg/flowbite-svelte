@@ -7,10 +7,11 @@ import devtoolsJson from "vite-plugin-devtools-json";
 import tiptapPackage from "./node_modules/@tiptap/core/package.json";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
+import { enhancedImages } from '@sveltejs/enhanced-img';
 
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
-  plugins: [sveltekit(), tailwindcss(), devtoolsJson(), examples],
+  plugins: [enhancedImages(), sveltekit(), tailwindcss(), devtoolsJson(), examples],
   // test: {
   //   include: ['src/**/*.{test,spec}.{js,ts}']
   // },
