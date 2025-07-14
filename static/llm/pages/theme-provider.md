@@ -1,22 +1,11 @@
----
-layout: componentLayout
-breadcrumb_title: ThemeProvider - Flowbite Svelte
-title: ThemeProvider - Flowbite Svelte
-component_title: ThemeProvider
-dir: Pages
-description: The ThemeProvider component allows you to customize the styling of Flowbite-Svelte components by providing theme configurations through Svelte's context system. This enables consistent theming across your application and easy customization of component appearances.
----
+# ThemeProvider - Flowbite Svelte
 
-<script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils';
-  import { A, Img, P } from '$lib';
-</script>
 
 ## Basic Usage
 
 Wrap your components with ThemeProvider and pass a theme configuration object:
 
-```svelte example hideOutput
+```svelte
 <script>
   import { ThemeProvider, Button, Card } from "flowbite-svelte";
 

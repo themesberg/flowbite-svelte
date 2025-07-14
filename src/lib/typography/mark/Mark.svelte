@@ -6,7 +6,7 @@
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: MarkProps = $props();
-  
+
   const theme = getTheme("mark");
 </script>
 

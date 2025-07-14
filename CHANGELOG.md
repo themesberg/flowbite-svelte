@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.10.0
+
+### Minor Changes
+
+- feat: add ThemeProvider
+
 ## 1.9.0
 
 ### Minor Changes

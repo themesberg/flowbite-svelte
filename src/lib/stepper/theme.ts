@@ -12,7 +12,6 @@ export type StepperVariants = {
   classes?: StepperClasses;
 };
 
-
 export const stepper = {
   base: tv({
     base: "flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base"
@@ -213,13 +212,13 @@ export const verticalStepper = {
   content: tv({
     base: "flex items-center justify-between"
   })
-}
+};
 
 export type VerticalStepperTheme = {
   stepper?: string;
   card?: string;
   content?: string;
-}
+};
 
 // breadcrumbstepper
 export type BreadcrumbStepperClasses = Partial<{
