@@ -45,14 +45,14 @@
       base: "bg-red-50 w-72 p-4 sm:p-6 md:p-8",
       image: ""
     } as CardTheme,
-    heading: 'my-8' as HeadingTheme
+    heading: "my-8" as HeadingTheme
   };
   const theme2 = {
-    p: 'me-8 flex items-center text-lg font-normal text-blue-500 md:me-0 dark:text-blue-400' as ParagraphTheme
-  }
+    p: "me-8 flex items-center text-lg font-normal text-blue-500 md:me-0 dark:text-blue-400" as ParagraphTheme
+  };
   const theme3 = {
-    heading: 'mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'
-  }
+    heading: "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+  };
 </script>
 
 <Heading tag="h1">ThemeProvider</Heading>
@@ -83,7 +83,7 @@
   <div class="relative h-96 w-96 border p-4">
     <Banner class="absolute">
       <ThemeProvider theme={theme2}>
-      <P>Content</P>
+        <P>Content</P>
       </ThemeProvider>
     </Banner>
     <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde ratione voluptatibus ex nobis nostrum eum aliquid sit vitae odio tempora a impedit ducimus omnis, itaque illo? Illo, voluptas natus!</P>
@@ -93,7 +93,7 @@
     <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde ratione voluptatibus ex nobis nostrum eum aliquid sit vitae odio tempora a impedit ducimus omnis, itaque illo? Illo, voluptas natus!</P>
     <BottomNav position="absolute" innerClass="grid-cols-4">
       <BottomNavItem btnName="Home">
-        <HomeSolid/>
+        <HomeSolid />
       </BottomNavItem>
       <BottomNavItem btnName="Wallet">
         <WalletSolid />
@@ -124,7 +124,7 @@
   <Heading tag="h2">Card</Heading>
   <Card href="/cards">
     <ThemeProvider theme={theme3}>
-    <Heading tag="h5">Noteworthy technology</Heading>
+      <Heading tag="h5">Noteworthy technology</Heading>
     </ThemeProvider>
     <P>Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</P>
   </Card>

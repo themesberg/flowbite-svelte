@@ -137,12 +137,13 @@ const theme: ThemeConfig = {
 ```
 
 ## Nested ThemeProvider
+
 You can nest ThemeProvider components to apply different themes to different sections of your application. Child ThemeProviders will override the parent themes for their specific scope:
 
 ```svelte example hideOutput
 <script>
   import { ThemeProvider, Card, Heading, P } from "flowbite-svelte";
-  
+
   const theme1 = {
     card: {
       base: "bg-blue-50 border-blue-200"
@@ -150,11 +151,11 @@ You can nest ThemeProvider components to apply different themes to different sec
     heading: "text-3xl text-green-500",
     p: "text-blue-500 text-lg"
   };
-  
+
   const theme2 = {
     heading: "text-lg text-purple-600 font-bold"
   };
-  
+
   const theme3 = {
     p: "text-gray-600 italic text-md"
   };
@@ -164,13 +165,13 @@ You can nest ThemeProvider components to apply different themes to different sec
   <Heading tag="h1">Card</Heading>
   <P>Card example</P>
   <Card href="/cards">
-    <ThemeProvider theme={theme2}>     
-      <Heading tag="h5">Noteworthy technology</Heading>     
+    <ThemeProvider theme={theme2}>
+      <Heading tag="h5">Noteworthy technology</Heading>
     </ThemeProvider>
     <ThemeProvider theme={theme3}>
       <P>Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</P>
     </ThemeProvider>
-  </Card> 
+  </Card>
 </ThemeProvider>
 ```
 

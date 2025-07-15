@@ -221,7 +221,11 @@ Use the max-w-full class to set the full width of the image as long as it doesnâ
 
 ## Enhanced image
 
-Use this example for an enhanced image. Store your image in `src/images` directory.
+**Warning: ** Since `@sveltejs/enhanced-img` uses pre-1.0 versioning and may introduce breaking changes with every minor version release.
+
+Please follow how to set up `@sveltejs/enhanced-img` at https://svelte.dev/docs/kit/images#sveltejs-enhanced-img and install `v0.6.1`.
+
+Use this example for an enhanced image. In this example an image is stored in `src/images` directory.
 
 ```svelte
 <script lang="ts">

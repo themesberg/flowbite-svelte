@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.10.1
+
+### Patch Changes
+
+- - 876ff0661 fix: #1670 move isChecked && checkedClass afer classname
+  - 77ffe022b fix: #1671 datepicker add disabled style
+  - c29042207 docs: enhanced image update 2
+  - d3c1c2cdd docs: enhanced image update
+  - 7934d7258 chore: @tiptap dependencies update
+  - 8bfccad6b chore: dependencies update
+  - d4d4c79d7 docs: themeprovider: add nested example
+
 ## 1.10.0
 
 ### Minor Changes
