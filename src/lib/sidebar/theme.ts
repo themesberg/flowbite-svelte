@@ -1,3 +1,4 @@
+// theme.ts
 import { tv, type VariantProps } from "tailwind-variants";
 
 export type SidebarVariants = VariantProps<typeof sidebar>;
@@ -16,10 +17,11 @@ export const sidebar = tv({
       absolute: { base: "absolute" },
       static: { base: "static" }
     },
-    // isOpen: {
-    //   true: "block",
-    //   false: "hidden"
-    // },
+    // Reintroducing isOpen, but this will only apply when isLargeScreen AND alwaysOpen is false
+    isOpen: {
+      true: { base: "block" }, // When explicitly open (hamburger menu clicked)
+      false: { base: "hidden" } // When explicitly closed
+    },
     breakpoint: {
       sm: { base: "sm:block" },
       md: { base: "md:block" },
@@ -28,21 +30,58 @@ export const sidebar = tv({
       "2xl": { base: "2xl:block" }
     },
     alwaysOpen: {
-      true: { base: "block" } // Always display the sidebar when alwaysOpen is true
+      true: { base: "block" } // This variant will ensure it's always block regardless of breakpoints
     },
     backdrop: {
       true: { backdrop: "bg-gray-900 opacity-75" }
     }
   },
   compoundVariants: [
-    // When alwaysOpen is true, override the breakpoint display classes
+    // Rule for responsive display when NOT alwaysOpen
+    {
+      alwaysOpen: false, // Only apply these if the sidebar is NOT always open
+      breakpoint: "sm",
+      class: { base: "sm:block" }
+    },
+    {
+      alwaysOpen: false,
+      breakpoint: "md",
+      class: { base: "md:block" }
+    },
+    {
+      alwaysOpen: false,
+      breakpoint: "lg",
+      class: { base: "lg:block" }
+    },
+    {
+      alwaysOpen: false,
+      breakpoint: "xl",
+      class: { base: "xl:block" }
+    },
+    {
+      alwaysOpen: false,
+      breakpoint: "2xl",
+      class: { base: "2xl:block" }
+    },
+    // Override: When alwaysOpen is true, it should always be visible, ignoring `isOpen` and `breakpoint`
     {
       alwaysOpen: true,
       class: {
-        base: "!block"
+        base: "!block" // Force block display
       }
+    },
+    // Another compound variant to hide it below the breakpoint if not alwaysOpen and not explicitly open
+    {
+        alwaysOpen: false,
+        isOpen: false, // If it's not always open AND not explicitly open (via hamburger)
+        class: {
+            base: "hidden" // Hide it by default. Breakpoint rules will override this for larger screens.
+        }
     }
-  ]
+  ],
+  defaultVariants: {
+    isOpen: false // Default to closed on small screens if not specified
+  }
 });
 
 export type SidebarSlots = keyof typeof sidebar.slots;

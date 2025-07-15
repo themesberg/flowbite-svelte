@@ -11,14 +11,14 @@
 
   let {
     children,
-    isOpen = false, // Keep isOpen prop for context, trapFocus, etc.
+    isOpen = false, // Controls the *overlay* state on small screens
     closeSidebar,
     isSingle = true,
-    breakpoint = "md",
-    alwaysOpen = false,
+    breakpoint = "md", // e.g., 'md'
+    alwaysOpen = false, // When true, sidebar is always visible, no hamburger menu
     position = "fixed",
     activateClickOutside = true,
-    backdrop = true, // Sidebar's own backdrop should only be used if not in Drawer mode
+    backdrop = true,
     backdropClass,
     transition = fly,
     params,
@@ -28,7 +28,7 @@
     activeClass,
     activeUrl = "",
     class: className,
-    disableBreakpoints = false, // This prop still crucial
+    disableBreakpoints = false, // Key prop for Drawer integration
     ...restProps
   }: SidebarProps = $props();
 
@@ -43,8 +43,15 @@
   };
 
   let innerWidth: number = $state(-1);
-  // isLargeScreen only active if NOT disabling breakpoints and criteria met
-  let isLargeScreen = $derived(disableBreakpoints ? false : (alwaysOpen || innerWidth >= breakpointValues[breakpoint]));
+  // This derived state is now primarily for trapFocus and transition,
+  // NOT for rendering the main sidebar element in standalone mode.
+  // It determines if the screen size *would* make it "large" if alwaysOpen were applied.
+  let isLargeScreen = $derived(innerWidth >= breakpointValues[breakpoint]);
+
+  // Determine if the sidebar should be "open" based on explicit isOpen or large screen AND alwaysOpen
+  // This state is what should drive the 'hidden' / 'block' classes for the sidebar itself,
+  // which will be passed to tailwind-variants.
+  let shouldBeOpen = $derived(isOpen || (alwaysOpen && isLargeScreen));
 
   const activeUrlStore = writable("");
   setContext("activeUrl", activeUrlStore);
@@ -52,11 +59,17 @@
     activeUrlStore.set(activeUrl);
   });
 
-  // Pass isOpen to the sidebar utility ONLY for styling variants it might need (not display)
-  // Ensure alwaysOpen in utility respects disableBreakpoints
+  // Pass shouldBeOpen to sidebar utility for `isOpen` variant and other relevant styling.
+  // Pass alwaysOpen directly to sidebar utility for the `alwaysOpen` variant.
   const { base, active, nonactive, div, backdrop: backdropCls } = $derived(
-    sidebar({ breakpoint, position, backdrop: backdrop && !disableBreakpoints, alwaysOpen: alwaysOpen && !disableBreakpoints })
-  ); // isOpen removed as a direct prop here
+    sidebar({
+      isOpen: shouldBeOpen, // Now dynamically drives the tv `isOpen` variant
+      breakpoint: alwaysOpen ? undefined : breakpoint, // Apply breakpoint variant ONLY if not alwaysOpen
+      position,
+      backdrop: backdrop && !disableBreakpoints, // Backdrop for standalone sidebar
+      alwaysOpen // Pass alwaysOpen directly
+    })
+  );
 
   let sidebarCtx: SidebarCtxType = {
     get closeSidebar() {
@@ -71,11 +84,11 @@
     isSingle
   };
 
+  // Transition parameters for the fly effect when opening/closing
   let transitionParams = params ? params : { x: -320, duration: 200, easing: sineIn };
 
   setContext("sidebarContext", sidebarCtx);
 
-  // Handler for Escape key
   const handleEscape = () => {
     closeSidebar?.();
   };
@@ -84,30 +97,9 @@
 <svelte:window bind:innerWidth />
 
 {#if !disableBreakpoints}
-  {#if isOpen || isLargeScreen}
-    {#if isOpen && !alwaysOpen && backdrop}
-      <div
-        role="presentation"
-        class={cn(backdropCls(), clsx(backdropClass), (theme as SidebarTheme)?.backdrop)}
-        onclick={activateClickOutside ? closeSidebar : undefined}
-      ></div>
-    {/if}
-    <aside
-      use:trapFocus={!isLargeScreen && isOpen && !alwaysOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null}
-      transition:transition={!alwaysOpen ? transitionParams : undefined}
-      {...restProps}
-      class={cn(base(), clsx(clsx(className)), (theme as SidebarTheme)?.base)}
-      aria-label={ariaLabel}
-    >
-      <div class={cn(div(), clsx(divClass), (theme as SidebarTheme)?.base)}>
-        {@render children()}
-      </div>
-    </aside>
-  {/if}
-{:else}
   <aside
     use:trapFocus={isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null}
-    transition:transition={!alwaysOpen ? transitionParams : undefined}
+    transition:transition={isOpen && !alwaysOpen ? transitionParams : undefined}
     {...restProps}
     class={cn(base(), clsx(clsx(className)), (theme as SidebarTheme)?.base)}
     aria-label={ariaLabel}
@@ -116,4 +108,24 @@
       {@render children()}
     </div>
   </aside>
+
+  {#if isOpen && !alwaysOpen && backdrop}
+    <div
+      role="presentation"
+      class={cn(backdropCls(), clsx(backdropClass), (theme as SidebarTheme)?.backdrop)}
+      onclick={activateClickOutside ? closeSidebar : undefined}
+    ></div>
   {/if}
+{:else}
+  <aside
+    use:trapFocus={isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null}
+    transition:transition={isOpen && !alwaysOpen ? transitionParams : undefined}
+    {...restProps}
+    class={cn(base(), clsx(clsx(className)), (theme as SidebarTheme)?.base)}
+    aria-label={ariaLabel}
+  >
+    <div class={cn(div(), clsx(divClass), (theme as SidebarTheme)?.base)}>
+      {@render children()}
+    </div>
+  </aside>
+{/if}
