@@ -92,10 +92,10 @@
     }
   });
 
-  // Default event handlers
   function defaultHandleInput(event: Event) {
-    // Reset backspace flag if user starts typing again
-    if ((value as string).length > 0) {
+    // Ensure value is treated as a string to safely check its length
+    const currentValueAsString = String(value || ""); 
+    if (currentValueAsString.length > 0) {
       backspaceUsed = false;
     }
     updateSuggestions();
