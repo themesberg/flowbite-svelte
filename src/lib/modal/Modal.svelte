@@ -20,6 +20,10 @@
   const cancel = (dlg: HTMLDialogElement) => (typeof dlg.requestClose === "function" ? dlg.requestClose() : close());
 
   function _oncancel(ev: Event & { currentTarget: HTMLDialogElement }) {
+    if (ev.target !== ev.currentTarget) {
+      return; // ignore if not on dialog
+    }
+
     // this event gets called when user canceled the dialog:
     // pressesed ESC key, clicked outside, pressed submit button with no 'value' like close button
     oncancel?.(ev);
@@ -32,10 +36,11 @@
   function _onclick(ev: Event & { currentTarget: HTMLDialogElement }) {
     const dlg: HTMLDialogElement = ev.currentTarget;
     if (outsideclose && ev.target === dlg) {
-      cancel(dlg);
+      return cancel(dlg);
     }
+
     if (autoclose && ev.target instanceof HTMLButtonElement && !permanent) {
-      close(dlg);
+      return close(dlg);
     }
   }
 
