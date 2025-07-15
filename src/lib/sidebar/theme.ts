@@ -16,10 +16,10 @@ export const sidebar = tv({
       absolute: { base: "absolute" },
       static: { base: "static" }
     },
-    isOpen: {
-      true: "block",
-      false: "hidden"
-    },
+    // isOpen: {
+    //   true: "block",
+    //   false: "hidden"
+    // },
     breakpoint: {
       sm: { base: "sm:block" },
       md: { base: "md:block" },

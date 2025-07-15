@@ -1361,6 +1361,7 @@ export interface SidebarProps extends SidebarVariants, HTMLAttributes<HTMLElemen
   backdropClass?: ClassValue;
   activeUrl?: string;
   alwaysOpen?: boolean;
+  disableBreakpoints?: boolean;
 }
 
 export interface SidebarButtonProps extends HTMLButtonAttributes {
