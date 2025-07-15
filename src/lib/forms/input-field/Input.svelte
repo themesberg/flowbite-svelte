@@ -94,7 +94,7 @@
 
   function defaultHandleInput(event: Event) {
     // Ensure value is treated as a string to safely check its length
-    const currentValueAsString = String(value || ""); 
+    const currentValueAsString = String(value || "");
     if (currentValueAsString.length > 0) {
       backspaceUsed = false;
     }

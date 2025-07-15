@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.10.3
+
+### Patch Changes
+
+- - fix: #1677 Handle nullish values in Input component's defaultHandleInput
+
+  Ensures robust handling of value in defaultHandleInput by safely converting it to a string, preventing TypeError when input is cleared or null/undefined.
+
 ## 1.10.2
 
 ### Patch Changes
