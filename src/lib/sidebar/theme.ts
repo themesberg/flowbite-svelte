@@ -72,11 +72,11 @@ export const sidebar = tv({
     },
     // Another compound variant to hide it below the breakpoint if not alwaysOpen and not explicitly open
     {
-        alwaysOpen: false,
-        isOpen: false, // If it's not always open AND not explicitly open (via hamburger)
-        class: {
-            base: "hidden" // Hide it by default. Breakpoint rules will override this for larger screens.
-        }
+      alwaysOpen: false,
+      isOpen: false, // If it's not always open AND not explicitly open (via hamburger)
+      class: {
+        base: "hidden" // Hide it by default. Breakpoint rules will override this for larger screens.
+      }
     }
   ],
   defaultVariants: {

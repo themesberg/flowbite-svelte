@@ -61,7 +61,13 @@
 
   // Pass shouldBeOpen to sidebar utility for `isOpen` variant and other relevant styling.
   // Pass alwaysOpen directly to sidebar utility for the `alwaysOpen` variant.
-  const { base, active, nonactive, div, backdrop: backdropCls } = $derived(
+  const {
+    base,
+    active,
+    nonactive,
+    div,
+    backdrop: backdropCls
+  } = $derived(
     sidebar({
       isOpen: shouldBeOpen, // Now dynamically drives the tv `isOpen` variant
       breakpoint: alwaysOpen ? undefined : breakpoint, // Apply breakpoint variant ONLY if not alwaysOpen
@@ -97,35 +103,47 @@
 <svelte:window bind:innerWidth />
 
 {#if !disableBreakpoints}
-  <aside
-    use:trapFocus={isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null}
-    transition:transition={isOpen && !alwaysOpen ? transitionParams : undefined}
-    {...restProps}
-    class={cn(base(), clsx(clsx(className)), (theme as SidebarTheme)?.base)}
-    aria-label={ariaLabel}
-  >
+  <aside use:trapFocus={isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} transition:transition={isOpen && !alwaysOpen ? transitionParams : undefined} {...restProps} class={cn(base(), clsx(clsx(className)), (theme as SidebarTheme)?.base)} aria-label={ariaLabel}>
     <div class={cn(div(), clsx(divClass), (theme as SidebarTheme)?.base)}>
       {@render children()}
     </div>
   </aside>
 
   {#if isOpen && !alwaysOpen && backdrop}
-    <div
-      role="presentation"
-      class={cn(backdropCls(), clsx(backdropClass), (theme as SidebarTheme)?.backdrop)}
-      onclick={activateClickOutside ? closeSidebar : undefined}
-    ></div>
+    <div role="presentation" class={cn(backdropCls(), clsx(backdropClass), (theme as SidebarTheme)?.backdrop)} onclick={activateClickOutside ? closeSidebar : undefined}></div>
   {/if}
 {:else}
-  <aside
-    use:trapFocus={isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null}
-    transition:transition={isOpen && !alwaysOpen ? transitionParams : undefined}
-    {...restProps}
-    class={cn(base(), clsx(clsx(className)), (theme as SidebarTheme)?.base)}
-    aria-label={ariaLabel}
-  >
+  <aside use:trapFocus={isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} transition:transition={isOpen && !alwaysOpen ? transitionParams : undefined} {...restProps} class={cn(base(), clsx(clsx(className)), (theme as SidebarTheme)?.base)} aria-label={ariaLabel}>
     <div class={cn(div(), clsx(divClass), (theme as SidebarTheme)?.base)}>
       {@render children()}
     </div>
   </aside>
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1348)
+## Props
+@prop children
+@prop isOpen = false
+@prop closeSidebar
+@prop isSingle = true
+@prop breakpoint = "md"
+@prop alwaysOpen = false
+@prop position = "fixed"
+@prop activateClickOutside = true
+@prop backdrop = true
+@prop backdropClass
+@prop transition = fly
+@prop params
+@prop divClass
+@prop ariaLabel
+@prop nonActiveClass
+@prop activeClass
+@prop activeUrl = ""
+@prop class: className
+@prop disableBreakpoints = false
+@prop ...restProps
+-->

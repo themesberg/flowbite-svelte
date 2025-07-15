@@ -1,10 +1,34 @@
 # Changelog
 
+## 1.10.4
+
+### Patch Changes
+
+- feat(sidebar, drawer): #1664 Fix content visibility and breakpoint conflicts ([`10d9aef`](https://github.com/themesberg/flowbite-svelte/commit/10d9aef6287643952708833a8c2c5a4166e21fea))
+
+  Resolves an issue where Sidebar content disappeared on mobile when nested within Drawer. The sidebar tv variant's isOpen: false setting was applying display: hidden, conflicting with Drawer's visibility control.
+
+  Changes:
+
+  theme.ts: Removed isOpen variant from sidebar tv definition.
+
+  Sidebar.svelte: Simplified rendering logic when disableBreakpoints is true, ensuring content always renders.
+
+  Usage: Ensures isOpen={!isDrawerHidden} is passed to Sidebar to sync with Drawer's state.
+
+  The Drawer now solely controls Sidebar's visibility, eliminating display conflicts.
+
+- fix(sidebar): Resolve dynamic resize responsiveness ([`c2a5445`](https://github.com/themesberg/flowbite-svelte/commit/c2a54459e5bad1991e0fac694cbcd094c89175f3))
+
+  Corrects an issue where the standalone Sidebar failed to show/hide responsively on dynamic screen size changes (e.g., dev tools). Modified Sidebar.svelte to ensure the element is always in the DOM and its display is controlled by Tailwind's responsive classes via tailwind-variants in theme.ts.
+
+- fix: #1678, #1679
+
 ## 1.10.3
 
 ### Patch Changes
 
-- - fix: #1677 Handle nullish values in Input component's defaultHandleInput
+- fix: #1677 Handle nullish values in Input component's defaultHandleInput
 
   Ensures robust handling of value in defaultHandleInput by safely converting it to a string, preventing TypeError when input is cleared or null/undefined.
 

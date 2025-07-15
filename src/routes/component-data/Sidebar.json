@@ -7,11 +7,14 @@
   "props": [
     ["children", ""],
     ["isOpen", "false"],
-    ["closeSidebar", ""],
+    ["// Controls the *overlay* state on small screens\n    closeSidebar", ""],
     ["isSingle", "true"],
     ["breakpoint", "\"md\""],
-    ["alwaysOpen", "false"],
-    ["position", "\"fixed\""],
+    ["// e.g.", ""],
+    ["'md'\n    alwaysOpen", "false"],
+    ["// When true", ""],
+    ["sidebar is always visible", ""],
+    ["no hamburger menu\n    position", "\"fixed\""],
     ["activateClickOutside", "true"],
     ["backdrop", "true"],
     ["backdropClass", ""],
@@ -22,6 +25,8 @@
     ["nonActiveClass", ""],
     ["activeClass", ""],
     ["activeUrl", "\"\""],
-    ["class: className", ""]
+    ["class: className", ""],
+    ["disableBreakpoints", "false"],
+    ["// Key prop for Drawer integration\n    ...restProps", ""]
   ]
 }
