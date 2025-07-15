@@ -1,7 +1,8 @@
 <script lang="ts" generics="T">
   import { Badge, CloseButton, type MultiSelectProps, type SelectOptionType, cn } from "$lib";
-  import { multiselect, type MultiSelectTheme } from ".";
+  import { multiSelect, type MultiSelectTheme } from ".";
   import { getTheme } from "$lib/theme/themeUtils";
+  import { onMount, onDestroy } from 'svelte'; // Import onMount and onDestroy
 
   // Consider reusing that component - https://svelecte.vercel.app/
 
@@ -33,7 +34,12 @@
   let activeIndex: number | null = $state(null);
   let activeItem = $derived(activeIndex !== null ? items[((activeIndex % items.length) + items.length) % items.length] : null);
 
-  const selectOption = (select: SelectOptionType<any>) => {
+  let multiSelectContainer: HTMLDivElement; // Reference to the main div
+
+  const selectOption = (select: SelectOptionType<any>, event: MouseEvent) => {
+    // Prevent the click from propagating to the parent div
+    event.stopPropagation();
+
     if (disabled) return;
     if (select.disabled) return;
 
@@ -49,6 +55,7 @@
     if (JSON.stringify(oldValue) !== JSON.stringify(value)) {
       triggerChange();
     }
+    // Don't close the dropdown here
   };
 
   const clearAll = (e: MouseEvent) => {
@@ -94,11 +101,23 @@
   };
 
   const closeDropdown = () => !disabled && (show = false);
-  const toggleDropdown = () => !disabled && (show = !show);
+  const toggleDropdown = (event: MouseEvent) => {
+    if (disabled) return;
+    // Prevent immediate closing if the click originated from within the component itself
+    // This is useful if the click triggers a re-render and focus is lost momentarily.
+    if (multiSelectContainer && multiSelectContainer.contains(event.target as Node)) {
+        show = !show;
+    } else {
+        show = false; // Close if clicked outside
+    }
+  }
 
   // Handle blur event for validation
   const handleBlur = (event: FocusEvent) => {
-    closeDropdown();
+    // We'll rely more on the global click listener for closing, but keep this for standard blur behavior
+    if (event.currentTarget && (event.currentTarget as HTMLElement).contains && ! (event.currentTarget as HTMLElement).contains(event.relatedTarget as Node)) {
+        closeDropdown();
+    }
     if (onblur) {
       onblur(event);
     }
@@ -112,7 +131,7 @@
       show = true;
       activeIndex = 0;
     } else {
-      if (activeItem !== null) selectOption(activeItem);
+      if (activeItem !== null) selectOption(activeItem, new MouseEvent('click')); // Pass a dummy MouseEvent
     }
   }
 
@@ -133,8 +152,12 @@
 
   function handleKeyDown(event: KeyboardEvent) {
     if (disabled) return;
+    // Do not prevent default for tab key, allow it to move focus
+    if (event.key !== 'Tab') {
+        event.preventDefault();
+    }
     event.stopPropagation();
-    event.preventDefault();
+
 
     const actions = {
       Escape: closeDropdown,
@@ -148,17 +171,40 @@
     }
   }
 
-  const { base, dropdown, dropdownitem, closebutton, select } = multiselect({ disabled });
+  // Global click listener for closing the dropdown when clicking outside
+  onMount(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (multiSelectContainer && !multiSelectContainer.contains(event.target as Node)) {
+        closeDropdown();
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  });
+
+
+  const { base, dropdown, dropdownitem, closebutton, select } = multiSelect({ disabled });
 </script>
 
-<!-- Hidden select for form submission -->
 <select {name} {form} {required} {autocomplete} {value} hidden multiple {onchange}>
   {#each items as item}
     <option value={item.value} disabled={item.disabled}>{item.name}</option>
   {/each}
 </select>
 
-<div {...restProps} onclick={toggleDropdown} onblur={handleBlur} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={cn(base({ size }), className, (theme as MultiSelectTheme)?.base)}>
+<div
+  bind:this={multiSelectContainer}
+  {...restProps}
+  onclick={toggleDropdown}
+  onblur={handleBlur}
+  onkeydown={handleKeyDown}
+  tabindex="0"
+  role="listbox"
+  class={cn(base({ size }), className, (theme as MultiSelectTheme)?.base)}
+>
   {#if !selectItems.length}
     <span class="text-gray-400">{placeholder}</span>
   {/if}
@@ -189,7 +235,7 @@
     <div role="presentation" class={cn(dropdown(), dropdownClass)}>
       {#each items as item (item.name)}
         <div
-          onclick={() => selectOption(item)}
+          onclick={(e) => selectOption(item, e)}
           role="presentation"
           class={dropdownitem({
             selected: selectItems.includes(item),

@@ -38,9 +38,9 @@ export const select = tv({
 export type SelectSlots = keyof typeof select.slots;
 export type SelectTheme = Partial<Record<SelectSlots, string>>;
 
-export type MultiSelectVariants = VariantProps<typeof multiselect>;
+export type MultiSelectVariants = VariantProps<typeof multiSelect>;
 
-export const multiselect = tv({
+export const multiSelect = tv({
   slots: {
     base: "relative border border-gray-300 flex items-center rounded-lg gap-2 dark:border-gray-600 ring-primary-500 dark:ring-primary-500 focus-visible:outline-hidden",
     select: "flex flex-wrap gap-2",
@@ -73,11 +73,21 @@ export const multiselect = tv({
       }
     }
   },
+  // Add compoundVariants here
+  compoundVariants: [
+    {
+      selected: true,
+      active: true,
+      class: {
+        dropdownitem: "bg-primary-200 dark:bg-primary-600 text-primary-700 dark:text-primary-100 font-semibold" // Adjust colors as needed
+      }
+    }
+  ],
   defaultVariants: {
     underline: false,
     size: "md"
   }
 });
 
-export type MultiSelectSlots = keyof typeof multiselect.slots;
+export type MultiSelectSlots = keyof typeof multiSelect.slots;
 export type MultiSelectTheme = Partial<Record<MultiSelectSlots, string>>;
