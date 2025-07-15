@@ -9,7 +9,7 @@
 
   let inputEl: HTMLInputElement;
   let isChecked = $derived(value == group);
-  let base = $derived(cn(radiobutton({ inline }), isChecked && checkedClass, className, theme));
+  let base = $derived(cn(radiobutton({ inline }), className, isChecked && checkedClass, theme));
 
   function clickHandler() {
     inputEl?.click(); // manually trigger the click on the hidden input
