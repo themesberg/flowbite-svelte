@@ -83,7 +83,7 @@
       {#if title}
         <h3>{title}</h3>
         {#if dismissable && !permanent}
-          <CloseButton type="submit" onclick={close_handler(form)} class={clsx(closeBtnClass)} />
+          <CloseButton type="submit" formnovalidate onclick={close_handler(form)} class={clsx(closeBtnClass)} />
         {/if}
       {:else if header}
         {@render header()}
@@ -99,7 +99,7 @@
     </div>
   {/if}
   {#if dismissable && !permanent && !title}
-    <CloseButton type="submit" onclick={close_handler(form)} class={cn(closebutton({ class: clsx(closeBtnClass) }), (theme as ModalTheme)?.closebutton)} />
+    <CloseButton type="submit" formnovalidate onclick={close_handler(form)} class={cn(closebutton({ class: clsx(closeBtnClass) }), (theme as ModalTheme)?.closebutton)} />
   {/if}
 {/snippet}
 
