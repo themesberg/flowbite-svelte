@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.10.2
+
+### Patch Changes
+
+- - fix(MultiSelect): #1669 Resolve dropdown closing prematurely and enhance active/selected states
+
+  Previously, clicking an item in the MultiSelect dropdown would cause the dropdown to close, leading to a suboptimal user experience for multi-selection. This commit resolves the issue by:
+  - Modifying `selectOption` to `stopPropagation` of the click event.
+  - Introducing a `bind:this` and `onMount`/`onDestroy` lifecycle hooks to handle clicks outside the component for proper dropdown closure.
+  - Updated `theme.ts` with `compoundVariants` for `dropdownitem` to provide a clear visual distinction when an item is both keyboard `active` and `selected`. This improves accessibility and clarity during keyboard navigation.
+  - Addressed TypeScript errors in `handleBlur` related to `event.currentTarget` potentially being null and `EventTarget` lacking a `contains` method, ensuring type safety.
+
 ## 1.10.1
 
 ### Patch Changes

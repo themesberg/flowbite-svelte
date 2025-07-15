@@ -2,7 +2,7 @@
   import { Badge, CloseButton, type MultiSelectProps, type SelectOptionType, cn } from "$lib";
   import { multiSelect, type MultiSelectTheme } from ".";
   import { getTheme } from "$lib/theme/themeUtils";
-  import { onMount, onDestroy } from 'svelte'; // Import onMount and onDestroy
+  import { onMount, onDestroy } from "svelte"; // Import onMount and onDestroy
 
   // Consider reusing that component - https://svelecte.vercel.app/
 
@@ -106,17 +106,17 @@
     // Prevent immediate closing if the click originated from within the component itself
     // This is useful if the click triggers a re-render and focus is lost momentarily.
     if (multiSelectContainer && multiSelectContainer.contains(event.target as Node)) {
-        show = !show;
+      show = !show;
     } else {
-        show = false; // Close if clicked outside
+      show = false; // Close if clicked outside
     }
-  }
+  };
 
   // Handle blur event for validation
   const handleBlur = (event: FocusEvent) => {
     // We'll rely more on the global click listener for closing, but keep this for standard blur behavior
-    if (event.currentTarget && (event.currentTarget as HTMLElement).contains && ! (event.currentTarget as HTMLElement).contains(event.relatedTarget as Node)) {
-        closeDropdown();
+    if (event.currentTarget && (event.currentTarget as HTMLElement).contains && !(event.currentTarget as HTMLElement).contains(event.relatedTarget as Node)) {
+      closeDropdown();
     }
     if (onblur) {
       onblur(event);
@@ -131,7 +131,7 @@
       show = true;
       activeIndex = 0;
     } else {
-      if (activeItem !== null) selectOption(activeItem, new MouseEvent('click')); // Pass a dummy MouseEvent
+      if (activeItem !== null) selectOption(activeItem, new MouseEvent("click")); // Pass a dummy MouseEvent
     }
   }
 
@@ -153,11 +153,10 @@
   function handleKeyDown(event: KeyboardEvent) {
     if (disabled) return;
     // Do not prevent default for tab key, allow it to move focus
-    if (event.key !== 'Tab') {
-        event.preventDefault();
+    if (event.key !== "Tab") {
+      event.preventDefault();
     }
     event.stopPropagation();
-
 
     const actions = {
       Escape: closeDropdown,
@@ -178,13 +177,12 @@
         closeDropdown();
       }
     };
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
 
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   });
-
 
   const { base, dropdown, dropdownitem, closebutton, select } = multiSelect({ disabled });
 </script>
@@ -195,16 +193,7 @@
   {/each}
 </select>
 
-<div
-  bind:this={multiSelectContainer}
-  {...restProps}
-  onclick={toggleDropdown}
-  onblur={handleBlur}
-  onkeydown={handleKeyDown}
-  tabindex="0"
-  role="listbox"
-  class={cn(base({ size }), className, (theme as MultiSelectTheme)?.base)}
->
+<div bind:this={multiSelectContainer} {...restProps} onclick={toggleDropdown} onblur={handleBlur} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={cn(base({ size }), className, (theme as MultiSelectTheme)?.base)}>
   {#if !selectItems.length}
     <span class="text-gray-400">{placeholder}</span>
   {/if}
