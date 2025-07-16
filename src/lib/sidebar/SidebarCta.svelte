@@ -2,7 +2,6 @@
   import clsx from "clsx";
   import { sidebarCta, type SidebarCtaTheme } from ".";
   import type { SidebarCtaProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, icon, divClass, spanClass, label, class: className, ...restProps }: SidebarCtaProps = $props();
@@ -12,9 +11,9 @@
   const { base, div, span } = $derived(sidebarCta());
 </script>
 
-<div {...restProps} id="dropdown-cta" class={cn(base(), clsx(className), (theme as SidebarCtaTheme)?.base)} role="alert">
-  <div class={cn(div(), clsx(divClass), (theme as SidebarCtaTheme)?.div)}>
-    <span class={cn(span(), clsx(spanClass), (theme as SidebarCtaTheme)?.span)}>{label}</span>
+<div {...restProps} id="dropdown-cta" class={base({class:clsx((theme as SidebarCtaTheme)?.base, className)})} role="alert">
+  <div class={div({class:clsx((theme as SidebarCtaTheme)?.div, divClass)}) }>
+    <span class={span({class:clsx((theme as SidebarCtaTheme)?.span, spanClass)}) }>{label}</span>
     {#if icon}
       {@render icon()}
     {/if}

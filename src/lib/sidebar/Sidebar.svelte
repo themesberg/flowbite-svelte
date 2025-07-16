@@ -5,7 +5,6 @@
   import { sineIn } from "svelte/easing";
   import { sidebar, type SidebarTheme } from ".";
   import { trapFocus, type SidebarProps, type SidebarCtxType } from "$lib";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
 
@@ -39,10 +38,10 @@
       return closeSidebar;
     },
     get activeClass() {
-      return cn(active(), clsx(activeClass), (theme as SidebarTheme)?.active);
+      return active({class:clsx((theme as SidebarTheme)?.active, activeClass)});
     },
     get nonActiveClass() {
-      return cn(nonactive(), clsx(nonActiveClass), (theme as SidebarTheme)?.nonactive);
+      return nonactive({class: clsx((theme as SidebarTheme)?.nonactive, nonActiveClass)});
     },
     isSingle
   };
@@ -63,24 +62,24 @@
   {#if isOpen || isLargeScreen}
     {#if isOpen && !alwaysOpen}
       {#if backdrop && activateClickOutside}
-        <div role="presentation" class={cn(backdropCls(), clsx(backdropClass), (theme as SidebarTheme)?.backdrop)} onclick={closeSidebar}></div>
+        <div role="presentation" class={backdropCls({class:clsx((theme as SidebarTheme)?.backdrop, backdropClass)})} onclick={closeSidebar}></div>
       {:else if backdrop && !activateClickOutside}
-        <div role="presentation" class={cn(backdropCls(), clsx(backdropClass), (theme as SidebarTheme)?.backdrop)}></div>
+        <div role="presentation" class={backdropCls({class:clsx((theme as SidebarTheme)?.backdrop, backdropClass)})}></div>
       {:else if !backdrop && activateClickOutside}
         <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full" onclick={closeSidebar}></div>
       {:else if !backdrop && !activateClickOutside}
         <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full"></div>
       {/if}
     {/if}
-    <aside use:trapFocus={!isLargeScreen && isOpen && !alwaysOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} transition:transition={!alwaysOpen ? transitionParams : undefined} {...restProps} class={cn(base(), clsx(clsx(className)), (theme as SidebarTheme)?.base)} aria-label={ariaLabel}>
-      <div class={cn(div(), clsx(divClass), (theme as SidebarTheme)?.base)}>
+    <aside use:trapFocus={!isLargeScreen && isOpen && !alwaysOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} transition:transition={!alwaysOpen ? transitionParams : undefined} {...restProps} class={base({class:clsx((theme as SidebarTheme)?.base, className)})} aria-label={ariaLabel}>
+      <div class={div({class:clsx((theme as SidebarTheme)?.base, divClass)})}>
         {@render children()}
       </div>
     </aside>
   {/if}
 {:else}
-  <aside use:trapFocus={isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} {...restProps} class={cn(base(), clsx(clsx(className)), (theme as SidebarTheme)?.base)} aria-label={ariaLabel}>
-    <div class={cn(div(), clsx(divClass), (theme as SidebarTheme)?.base)}>
+  <aside use:trapFocus={isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} {...restProps} class={base({class:clsx((theme as SidebarTheme)?.base, className)})} aria-label={ariaLabel}>
+    <div class={div({class:clsx((theme as SidebarTheme)?.base, divClass)}) }>
       {@render children()}
     </div>
   </aside>

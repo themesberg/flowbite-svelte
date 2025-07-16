@@ -2,7 +2,6 @@
   import clsx from "clsx";
   import { TableBodyRow, TableBodyCell } from ".";
   import type { TableBodyProps, CellValue, BodyRow } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, bodyItems, class: className, ...restProps }: TableBodyProps = $props();
@@ -18,7 +17,7 @@
   }
 </script>
 
-<tbody {...restProps} class={cn(clsx(className), theme)}>
+<tbody {...restProps} class={clsx(theme, className)}>
   {#if bodyItems}
     {#each bodyItems as row}
       <TableBodyRow>

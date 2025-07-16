@@ -2,7 +2,6 @@
   import clsx from "clsx";
   import { img, type ImgTheme } from ".";
   import type { EnhandedImgProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { src, href, caption, size, figClass, class: imgClass, captionClass, ...restProps }: EnhandedImgProps = $props();
@@ -14,14 +13,14 @@
 
 {#snippet imageSlot()}
   {#if caption}
-    <figure class={cn(figure({ class: figClass }), (theme as ImgTheme)?.figure)}>
-      <enhanced:img {src} {...restProps} class={cn(base({ class: clsx(imgClass) }), (theme as ImgTheme)?.base)} />
-      <figcaption class={cn(figureCaption({ class: captionClass }), (theme as ImgTheme)?.figureCaption)}>
+    <figure class={figure({ class: clsx((theme as ImgTheme)?.figure, figClass)})}>
+      <enhanced:img {src} {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, imgClass) })} />
+      <figcaption class={figureCaption({ class: clsx((theme as ImgTheme)?.figureCaption, captionClass)})}>
         {@html caption}
       </figcaption>
     </figure>
   {:else}
-    <enhanced:img {src} {...restProps} class={cn(base({ class: clsx(imgClass) }), (theme as ImgTheme)?.base)} />
+    <enhanced:img {src} {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, imgClass)})} />
   {/if}
 {/snippet}
 

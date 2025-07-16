@@ -2,7 +2,6 @@
   import clsx from "clsx";
   import { span } from "./index";
   import type { SpanProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, italic, underline, linethrough, uppercase, gradient, highlight, decoration, decorationColor, decorationThickness, ...restProps }: SpanProps = $props();
@@ -20,12 +19,12 @@
       decoration,
       decorationColor,
       decorationThickness,
-      class: clsx(className)
+      class: clsx(theme, className)
     })
   );
 </script>
 
-<span {...restProps} class={cn(classSpan, theme)}>
+<span {...restProps} class={classSpan}>
   {#if children}
     {@render children()}
   {/if}

@@ -2,7 +2,6 @@
   import clsx from "clsx";
   import { tableHeadCell } from ".";
   import type { TableHeadCellProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: TableHeadCellProps = $props();
@@ -10,7 +9,7 @@
   const theme = getTheme("tableHeadCell");
 </script>
 
-<th {...restProps} class={cn(tableHeadCell(), clsx(className), theme)}>
+<th {...restProps} class={tableHeadCell({class:clsx(theme, className)})}>
   {#if children}
     {@render children()}
   {/if}

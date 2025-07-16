@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { cn } from "$lib";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import ToolbarButton from "../toolbar/ToolbarButton.svelte";
@@ -21,8 +20,8 @@
   };
 </script>
 
-<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={cn(base(), clsx(className), (theme as NavbarHamburgerTheme)?.base)}>
-  <Menu class={cn(menu(), clsx(menuClass), (theme as NavbarHamburgerTheme)?.menu)} />
+<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={base({class:clsx((theme as NavbarHamburgerTheme)?.base, className)})}>
+  <Menu class={menu({class:clsx((theme as NavbarHamburgerTheme)?.menu, menuClass)})} />
 </ToolbarButton>
 
 <!--

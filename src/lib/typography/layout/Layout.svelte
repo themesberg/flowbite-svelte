@@ -2,17 +2,16 @@
   import clsx from "clsx";
   import { layout } from "./index";
   import type { LayoutProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: LayoutProps = $props();
 
   const theme = getTheme("layout");
 
-  let classDiv = $derived(layout({ class: clsx(className) }));
+  let divCls = $derived(layout({ class: clsx(theme, className) }));
 </script>
 
-<div {...restProps} class={cn(classDiv, theme)}>
+<div {...restProps} class={divCls}>
   {@render children()}
 </div>
 

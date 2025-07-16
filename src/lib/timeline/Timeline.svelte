@@ -3,7 +3,6 @@
   import { timeline } from ".";
   import clsx from "clsx";
   import type { TimelineProps, TimelineVariants } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, order = "default", class: className, ...restProps }: TimelineProps = $props();
@@ -11,10 +10,10 @@
   const theme = getTheme("timeline");
 
   setContext<TimelineVariants["order"]>("order", order);
-  const olCls = $derived(timeline({ order, class: clsx(className) }));
+  const olCls = $derived(timeline({ order, class: clsx(theme, className) }));
 </script>
 
-<ol {...restProps} class={cn(olCls, theme)}>
+<ol {...restProps} class={olCls}>
   {@render children()}
 </ol>
 

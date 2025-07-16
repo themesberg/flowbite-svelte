@@ -2,26 +2,25 @@
   import clsx from "clsx";
   import { blockquote } from "./index";
   import type { BlockquoteProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, border, italic = true, bg, alignment = "left", size = "lg", ...restProps }: BlockquoteProps = $props();
 
   const theme = getTheme("blockquote");
 
-  let blockquoteClass = $derived(
+  let blockquoteCls = $derived(
     blockquote({
       border,
       italic,
       bg,
       alignment,
       size,
-      class: clsx(className)
+      class: clsx(theme, className)
     })
   );
 </script>
 
-<blockquote {...restProps} class={cn(blockquoteClass, theme)}>
+<blockquote {...restProps} class={blockquoteCls}>
   {@render children()}
 </blockquote>
 

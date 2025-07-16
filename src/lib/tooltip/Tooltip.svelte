@@ -3,7 +3,6 @@
   import Popper from "../utils/Popper.svelte";
   import { tooltip, type TooltipTheme } from "./theme";
   import type { TooltipProps, TriggeredToggleEvent } from "$lib";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { type = "dark", color = undefined, trigger = "hover", arrow = true, children, placement = "top", onbeforetoggle: _onbeforetoggle, class: className, isOpen = $bindable(false), ...restProps }: TooltipProps = $props();
@@ -22,7 +21,7 @@
   }
 </script>
 
-<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={cn(base({ class: clsx(className) }), (theme as TooltipTheme)?.base)} {onbeforetoggle}>
+<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={base({ class: clsx( (theme as TooltipTheme)?.base, className) })} {onbeforetoggle}>
   <div class="pointer-events-none">{@render children()}</div>
 </Popper>
 

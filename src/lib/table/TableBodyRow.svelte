@@ -3,7 +3,6 @@
   import { tableBodyRow } from ".";
   import type { TableBodyRowProps, TableCtxType } from "$lib/types";
   import clsx from "clsx";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, color, striped, hoverable, border, ...restProps }: TableBodyRowProps = $props();
@@ -17,10 +16,10 @@
   let compoStriped = $derived(striped || tableCtx.striped || false);
   let compoBorder = $derived(border || tableCtx.border || false);
 
-  const base = $derived(tableBodyRow({ color: compoColor, hoverable: compoHoverable, striped: compoStriped, border: compoBorder }));
+  const base = $derived(tableBodyRow({ color: compoColor, hoverable: compoHoverable, striped: compoStriped, border: compoBorder, class:clsx(theme, className) }));
 </script>
 
-<tr {...restProps} class={cn(base, clsx(className), theme)}>
+<tr {...restProps} class={base}>
   {#if children}
     {@render children()}
   {/if}

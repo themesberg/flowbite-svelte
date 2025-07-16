@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Tooltip, cn } from "$lib";
+  import { Button, Tooltip } from "$lib";
   import { getContext } from "svelte";
   import { speedDialButton, type SpeedDialButtonTheme } from "./theme";
   import type { SpeedCtxType, SpeedDialButtonProps } from "$lib/types";
@@ -13,10 +13,10 @@
   const theme = getTheme("speedDialButton");
 
   let { base, span } = $derived(speedDialButton({ textOutside, tooltip: tooltip == "none" }));
-  let spanClass = $derived(tooltip === "none" ? cn(span(), clsx(textClass), (theme as SpeedDialButtonTheme)?.span) : "sr-only");
+  let spanClass = $derived(tooltip === "none" ? span({class:clsx((theme as SpeedDialButtonTheme)?.span, textClass)}) : "sr-only");
 </script>
 
-<Button {pill} {color} {...restProps} class={cn(base(), clsx(className), (theme as SpeedDialButtonTheme)?.base)}>
+<Button {pill} {color} {...restProps} class={base({class:clsx((theme as SpeedDialButtonTheme)?.base, className)})}>
   {@render children?.()}
   <span class={spanClass}>{name}</span>
 </Button>

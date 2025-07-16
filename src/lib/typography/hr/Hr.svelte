@@ -2,7 +2,6 @@
   import clsx from "clsx";
   import { hr, type HrTheme } from "./index";
   import type { HrProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, divClass, class: className, innerDivClass, ...restProps }: HrProps = $props();
@@ -13,14 +12,14 @@
 </script>
 
 {#if children}
-  <div {...restProps} class={cn(container({ class: divClass }), (theme as HrTheme)?.container)}>
-    <hr class={cn(base({ class: clsx(className) }), (theme as HrTheme)?.base)} />
-    <div class={cn(content({ class: innerDivClass }), (theme as HrTheme)?.content)}>
+  <div {...restProps} class={container({ class: clsx((theme as HrTheme)?.container, divClass)})}>
+    <hr class={base({ class: clsx( (theme as HrTheme)?.base, className) })} />
+    <div class={content({ class: clsx((theme as HrTheme)?.content, innerDivClass)})}>
       {@render children()}
     </div>
   </div>
 {:else}
-  <hr class={cn(base({ class: clsx(className) }), (theme as HrTheme)?.base)} {...restProps} />
+  <hr class={base({ class: clsx((theme as HrTheme)?.base, className)})} {...restProps} />
 {/if}
 
 <!--

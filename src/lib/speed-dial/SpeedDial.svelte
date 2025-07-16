@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { Popper, cn } from "$lib";
+  import { Popper } from "$lib";
   import { getSideAxis } from "@floating-ui/utils";
   import { setContext } from "svelte";
   import { speedDial, type SpeedDialTheme } from "./theme";
@@ -18,8 +18,8 @@
   let { base, popper } = $derived(speedDial({ vertical }));
 </script>
 
-<Popper {...restProps} bind:isOpen {trigger} arrow={false} {placement} class={cn(base(), clsx(className), (theme as SpeedDialTheme)?.base)}>
-  <div class={cn(popper(), clsx(popperClass), (theme as SpeedDialTheme)?.popper)}>
+<Popper {...restProps} bind:isOpen {trigger} arrow={false} {placement} class={base({class:clsx((theme as SpeedDialTheme)?.base, className)})}>
+  <div class={popper({class:clsx((theme as SpeedDialTheme)?.popper, popperClass)})}>
     {@render children()}
   </div>
 </Popper>

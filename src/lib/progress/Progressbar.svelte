@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { cn } from "$lib";
   import type { ProgressbarProps } from "$lib/types";
   import clsx from "clsx";
   import { cubicOut } from "svelte/easing";
@@ -28,18 +27,18 @@
 </script>
 
 {#if labelOutside}
-  <div {...restProps} class={cn(outsideDiv({ class: clsx(classes?.outsideDiv) }), (theme as ProgressbarTheme)?.outsideDiv)}>
-    <span class={cn(oustsideSpan({ class: clsx(classes?.oustsideSpan) }), (theme as ProgressbarTheme)?.oustsideSpan)}>{labelOutside}</span>
-    <span class={cn(outsideProgress({ class: clsx(classes?.outsideProgress) }), (theme as ProgressbarTheme)?.outsideProgress)}>{progress}%</span>
+  <div {...restProps} class={outsideDiv({ class: clsx((theme as ProgressbarTheme)?.outsideDiv, classes?.outsideDiv) })}>
+    <span class={oustsideSpan({ class: clsx((theme as ProgressbarTheme)?.oustsideSpan, classes?.oustsideSpan) })}>{labelOutside}</span>
+    <span class={outsideProgress({ class: clsx((theme as ProgressbarTheme)?.outsideProgress, classes?.outsideProgress) })}>{progress}%</span>
   </div>
 {/if}
-<div {...restProps} class={cn(base({ class: clsx(size, classes?.base, className) }), (theme as ProgressbarTheme)?.base)}>
+<div {...restProps} class={base({ class: clsx(size, classes?.base, (theme as ProgressbarTheme)?.base, className) })}>
   {#if labelInside}
-    <div class={cn(labelInsideDiv({ class: clsx(classes?.labelInsideDiv, size) }), (theme as ProgressbarTheme)?.labelInsideDiv)} style="width: {_progress.current}%">
+    <div class={labelInsideDiv({ class: clsx(size, (theme as ProgressbarTheme)?.labelInsideDiv, classes?.labelInsideDiv) })} style="width: {_progress.current}%">
       {_progress.current.toFixed(precision)}%
     </div>
   {:else}
-    <div class={cn(insideDiv({ class: clsx(classes?.labelInsideDiv, size) }), (theme as ProgressbarTheme)?.insideDiv)} style="width: {_progress.current}%"></div>
+    <div class={insideDiv({ class: clsx(size, (theme as ProgressbarTheme)?.insideDiv, classes?.labelInsideDiv)})} style="width: {_progress.current}%"></div>
   {/if}
 </div>
 

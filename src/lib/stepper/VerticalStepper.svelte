@@ -1,7 +1,7 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { verticalStepper, type VerticalStepperTheme } from ".";
-  import { type VerticalStepperProps, cn } from "$lib";
+  import { type VerticalStepperProps } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -12,14 +12,14 @@
   setContext("stepperType", "vertical");
 </script>
 
-<ol class={cn(verticalStepper.stepper(), (theme as VerticalStepperTheme)?.stepper)} {...restProps}>
+<ol class={verticalStepper.stepper({class:(theme as VerticalStepperTheme)?.stepper})} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li class={clsx(liClass)}>
-        <div class={cn(verticalStepper.card({ status: step.status }), clsx(classes?.verticalsteppercard), (theme as VerticalStepperTheme)?.card)} role="alert">
-          <div class={cn(verticalStepper.content(), clsx(classes?.verticalsteppercontent), (theme as VerticalStepperTheme)?.content)}>
+        <div class={verticalStepper.card({ status: step.status, class: clsx((theme as VerticalStepperTheme)?.card, classes?.verticalsteppercard) })} role="alert">
+          <div class={verticalStepper.content({class:clsx((theme as VerticalStepperTheme)?.content, classes?.verticalsteppercontent)})}>
             <span class="sr-only">{step.label}</span>
             <h3 class="font-medium">{step.id}. {step.label}</h3>
             {#if step.status === "completed"}

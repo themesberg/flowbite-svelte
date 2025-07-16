@@ -4,7 +4,6 @@
   import { prefersReducedMotion } from "svelte/motion";
   import { writable } from "svelte/store";
   import { slide, fly, fade, scale } from "svelte/transition";
-  import { cn } from "$lib";
   import clsx from "clsx";
   import { navbarUl, type NavbarUlTheme } from "./theme";
   import type { NavbarState, NavUlProps } from "$lib/types";
@@ -44,8 +43,8 @@
   let { base, ul, active, nonActive } = $derived(navbarUl({ hidden }));
 
   $effect(() => {
-    navState.activeClass = cn(active(), clsx(activeClass), (theme as NavbarUlTheme)?.active);
-    navState.nonActiveClass = cn(nonActive(), clsx(nonActiveClass), (theme as NavbarUlTheme)?.nonActive);
+    navState.activeClass = active({class:clsx((theme as NavbarUlTheme)?.active, activeClass)});
+    navState.nonActiveClass = nonActive({class:clsx((theme as NavbarUlTheme)?.nonActive, nonActiveClass)});
   });
 
   $effect(() => {
@@ -53,8 +52,8 @@
   });
   setContext("activeUrl", activeUrlStore);
 
-  let divCls: string = $derived(cn(base(), clsx(clasName), (theme as NavbarUlTheme)?.base));
-  let ulCls: string = $derived(cn(ul(), clsx(ulClass), (theme as NavbarUlTheme)?.ul));
+  let divCls: string = $derived(base({class:clsx((theme as NavbarUlTheme)?.base, clasName)}));
+  let ulCls: string = $derived(ul({class:clsx((theme as NavbarUlTheme)?.ul, ulClass)}));
 </script>
 
 {#if !hidden}

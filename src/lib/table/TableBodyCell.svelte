@@ -2,7 +2,6 @@
   import clsx from "clsx";
   import { tableBodyCell } from ".";
   import type { TableBodyCellProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, colspan, onclick, ...restProps }: TableBodyCellProps = $props();
@@ -10,7 +9,7 @@
   const theme = getTheme("tableBodyCell");
 </script>
 
-<td {...restProps} class={cn(tableBodyCell(), clsx(className), theme)} colspan={colspan ?? 1}>
+<td {...restProps} class={tableBodyCell({class:clsx(theme, className)})} colspan={colspan ?? 1}>
   {#if onclick}
     <button {onclick}>
       {#if children}

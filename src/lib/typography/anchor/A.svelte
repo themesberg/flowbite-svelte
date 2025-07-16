@@ -2,14 +2,13 @@
   import clsx from "clsx";
   import { anchor } from "./index";
   import type { AnchorProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, color = "primary", asButton = false, onclick, href = "#", class: className, ...restProps }: AnchorProps = $props();
 
   const theme = getTheme("a");
 
-  let linkClass = $derived(anchor({ color, class: clsx(className) }));
+  let linkCls = $derived(anchor({ color, class: clsx(theme, className) }));
 
   // Handle click events when in button mode
   function handleClick(event: MouseEvent) {
@@ -30,12 +29,12 @@
 
 {#if asButton}
   <!-- Render as a button that looks like a link -->
-  <button type="button" class={cn(linkClass, theme)} onclick={handleClick} {...buttonProps}>
+  <button type="button" class={linkCls} onclick={handleClick} {...buttonProps}>
     {@render children()}
   </button>
 {:else}
   <!-- Standard anchor behavior -->
-  <a {href} class={cn(linkClass, theme)} onclick={handleClick} {...restProps}>
+  <a {href} class={linkCls} onclick={handleClick} {...restProps}>
     {@render children()}
   </a>
 {/if}
