@@ -78,8 +78,8 @@ Use this example to show a navigational sidebar inside the drawer component.
     <h5 class="px-4 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
     <CloseButton onclick={() => (hidden2 = true)} class="dark:text-white" />
   </div>
-  <Sidebar disableBreakpoints={true}>
-    <SidebarWrapper class="overflow-y-auto rounded-sm px-3 py-4 dark:bg-gray-800">
+  <Sidebar disableBreakpoints={true} class="top-16">
+    <SidebarWrapper class="overflow-y-auto rounded-sm px-3 py-0 dark:bg-gray-800">
       <SidebarGroup>
         <SidebarItem label="Dashboard">
           {#snippet icon()}
