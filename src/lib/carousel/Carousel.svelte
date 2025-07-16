@@ -3,7 +3,8 @@
   import { writable } from "svelte/store";
   import { canChangeSlide } from "./CarouselSlide";
   import { carousel } from "./theme";
-  import { type CarouselProps, type State, Slide, cn } from "$lib";
+  import clsx from "clsx";
+  import { type CarouselProps, type State, Slide } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   const SLIDE_DURATION_RATIO = 0.25;
@@ -168,12 +169,12 @@
 
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} />
-<div bind:this={carouselDiv} class={cn("relative", divClass)} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
-  <div {...restProps} class={cn(carousel(), activeDragGesture === undefined ? "transition-transform" : "", className, theme)} {@attach loop}>
+<div bind:this={carouselDiv} class={clsx("relative", divClass)} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
+  <div {...restProps} class={carousel({class: clsx(activeDragGesture === undefined ? "transition-transform" : "", theme, className)})} {@attach loop}>
     {#if slide}
       {@render slide({ index, Slide })}
     {:else}
-      <Slide image={images[index]} class={cn(imgClass)} {transition} />
+      <Slide image={images[index]} class={clsx(imgClass)} {transition} />
     {/if}
   </div>
   {@render children?.(index)}

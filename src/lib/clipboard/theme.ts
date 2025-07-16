@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type ClipboardVariants = VariantProps<typeof clipboard>;
 
@@ -15,4 +16,4 @@ export const clipboard = tv({
   }
 });
 
-export type ClipboardTheme = string;
+export type ClipboardTheme = ClassValue;

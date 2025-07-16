@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { type SizeType, type ButtonProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type SizeType, type ButtonProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import { button, type ButtonTheme } from ".";
 
@@ -16,7 +17,7 @@
   let isDisabled = $derived(Boolean(ctxDisabled) || Boolean(disabled));
 
   const { base, outline: outline_, shadow: shadow_ } = $derived(button({ color: actualColor, size: actualSize, disabled: isDisabled, pill, group: !!group }));
-  let btnCls = $derived(cn(base(), outline && outline_(), shadow && shadow_(), (theme as ButtonTheme)?.base, className));
+  let btnCls = $derived(base({class:clsx(outline && outline_(), shadow && shadow_(), (theme as ButtonTheme)?.base, className)}));
 </script>
 
 {#if restProps.href === undefined}

@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type CardVariants = VariantProps<typeof card>;
 
@@ -188,4 +189,4 @@ export const card = tv({
 });
 
 export type CardSlots = keyof typeof card.slots;
-export type CardTheme = Partial<Record<CardSlots, string>>;
+export type CardTheme = Partial<Record<CardSlots, ClassValue>>;

@@ -1,14 +1,15 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { buttonGroup } from ".";
-  import { type ButtonGroupProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type ButtonGroupProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, size = "md", disabled, class: className, ...restProps }: ButtonGroupProps = $props();
 
   const theme = getTheme("buttonGroup");
 
-  let groupClass = $derived(cn(buttonGroup({ size }), theme, className));
+  let groupClass = $derived(buttonGroup({ size, class:clsx(theme, className) }));
   setContext("group", size);
   setContext("disabled", disabled);
 </script>

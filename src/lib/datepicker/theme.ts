@@ -64,4 +64,4 @@ export const datepicker = tv({
 });
 
 export type DatepickerSlots = keyof typeof datepicker.slots;
-export type DatepickerTheme = Partial<Record<DatepickerSlots, string>>;
+export type DatepickerTheme = Partial<Record<DatepickerSlots, ClassValue>>;

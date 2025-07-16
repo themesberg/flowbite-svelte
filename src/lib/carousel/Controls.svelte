@@ -2,7 +2,8 @@
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
   import { canChangeSlide } from "./CarouselSlide";
-  import { type State, type ControlsProps, ControlButton, cn } from "$lib";
+  import clsx from "clsx";
+  import { type State, type ControlsProps, ControlButton } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: ControlsProps = $props();
@@ -45,8 +46,8 @@
 {#if children}
   {@render children(changeSlide)}
 {:else}
-  <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={cn(className, theme)} {...restProps} />
-  <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={cn(className, theme)} {...restProps} />
+  <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={clsx(theme, className)} {...restProps} />
+  <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={clsx(theme, className)} {...restProps} />
 {/if}
 
 <!--

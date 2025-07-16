@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type CarouselVariants = VariantProps<typeof carousel>;
 
@@ -30,10 +31,13 @@ export const carouselIndicators = tv({
 });
 
 export type CarouselIndicatorsSlots = keyof typeof carouselIndicators.slots;
-export type CarouselIndicatorsTheme = Partial<Record<CarouselIndicatorsSlots, string>>;
+export type CarouselIndicatorsTheme = Partial<Record<CarouselIndicatorsSlots, ClassValue>>;
 
 export const controlButton = tv({
-  base: "flex absolute top-0 z-30 justify-center items-center px-4 h-full group focus:outline-hidden text-white dark:text-gray-300",
+  slots: {
+    base: "flex absolute top-0 z-30 justify-center items-center px-4 h-full group focus:outline-hidden text-white dark:text-gray-300",
+    span:"inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-hidden sm:h-10 sm:w-10 dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70"
+  },
   variants: {
     forward: {
       true: "end-0",
@@ -42,13 +46,14 @@ export const controlButton = tv({
   }
 });
 
-export type ControlButtonTheme = string;
+export type ControlButtonSlots = keyof typeof controlButton.slots;
+export type ControlButtonTheme = Partial<Record<ControlButtonSlots, ClassValue>>;
 
 export const thumbnails = tv({
   base: "flex flex-row justify-center bg-gray-100 w-full"
 });
 
-export type ThumbnailsTheme = string;
+export type ThumbnailsTheme = ClassValue;
 
 export const thumbnail = tv({
   base: "",
@@ -63,10 +68,10 @@ export const thumbnail = tv({
   }
 });
 
-export type ThumbnailTheme = string;
+export type ThumbnailTheme = ClassValue;
 
 export const slide = tv({
   base: "absolute block w-full! h-full object-cover"
 });
 
-export type SlideTheme = string;
+export type SlideTheme = ClassValue;

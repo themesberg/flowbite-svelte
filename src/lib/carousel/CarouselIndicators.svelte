@@ -2,7 +2,8 @@
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
   import { carouselIndicators, type CarouselIndicatorsTheme } from "./theme";
-  import { Indicator, type IndicatorsProps, type State, cn } from "$lib";
+  import clsx from "clsx";
+  import { Indicator, type IndicatorsProps, type State } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, activeClass, inactiveClass, position = "bottom", class: className, ...restProps }: IndicatorsProps = $props();
@@ -26,14 +27,14 @@
   }
 </script>
 
-<div class={cn(base(), className, (theme as CarouselIndicatorsTheme)?.base)} {...restProps}>
+<div class={base({class:clsx((theme as CarouselIndicatorsTheme)?.base, className)})} {...restProps}>
   {#each $state.images as _, idx}
     {@const selected = $state.index === idx}
     <button onclick={() => goToIndex(idx)}>
       {#if children}
         {@render children({ selected, index: idx })}
       {:else}
-        <Indicator class={cn(indicator({ selected }), selected ? activeClass : inactiveClass, (theme as CarouselIndicatorsTheme)?.indicator)} />
+        <Indicator class={indicator({ selected, class:clsx(selected ? activeClass : inactiveClass, (theme as CarouselIndicatorsTheme)?.indicator)})} />
       {/if}
     </button>
   {/each}

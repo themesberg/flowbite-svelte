@@ -3,7 +3,8 @@
   import type { Writable } from "svelte/store";
   import { fly } from "svelte/transition";
   import { slide } from "./theme";
-  import { type SlideProps, type State, cn } from "$lib";
+  import clsx from "clsx";
+  import { type SlideProps, type State } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   const state = getContext<Writable<State>>("state");
@@ -28,7 +29,7 @@
     duration: $state.slideDuration
   });
 
-  let imgClass = cn(slide(), className, theme);
+  let imgClass = slide({class:clsx(theme, className)});
 </script>
 
 {#if transition}

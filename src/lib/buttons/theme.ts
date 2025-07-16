@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type ButtonVariants = VariantProps<typeof button>;
 
@@ -308,7 +309,7 @@ export const gradientButton = tv({
 });
 
 export type ButtonSlots = keyof typeof button.slots;
-export type ButtonTheme = Partial<Record<ButtonSlots, string>>;
+export type ButtonTheme = Partial<Record<ButtonSlots, ClassValue>>;
 
 export type GradientButtonSlots = keyof typeof gradientButton.slots;
-export type GradientButtonTheme = Partial<Record<GradientButtonSlots, string>>;
+export type GradientButtonTheme = Partial<Record<GradientButtonSlots, ClassValue>>;

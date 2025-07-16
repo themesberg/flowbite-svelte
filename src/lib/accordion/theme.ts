@@ -61,7 +61,7 @@ export const accordionItem = tv({
   }
 });
 
-export type AccordionTheme = string;
+export type AccordionTheme = ClassValue;
 
 export type AccordionItemSlots = keyof typeof accordionItem.slots;
 export type AccordionItemTheme = Partial<Record<AccordionItemSlots, ClassValue>>;

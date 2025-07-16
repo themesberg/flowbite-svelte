@@ -2,7 +2,7 @@
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
   import { thumbnails } from "./theme";
-  import { type ThumbnailsProps, type State, Thumbnail, cn } from "$lib";
+  import { type ThumbnailsProps, type State, Thumbnail } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -50,12 +50,12 @@
   });
 </script>
 
-<div class={cn(thumbnails(), className, theme)}>
+<div class={thumbnails({class:clsx(theme, className)})}>
   {#each images as image, idx}
     {@const selected = index === idx}
     <button onclick={() => btnClick(idx)} aria-label={ariaLabel}>
       {#if children}
-        {@render children({ image, selected, imgClass: cn(imgClass), Thumbnail })}
+        {@render children({ image, selected, imgClass: clsx(imgClass), Thumbnail })}
       {:else}
         <Thumbnail {...image} {selected} class={clsx(imgClass)} />
       {/if}

@@ -1,4 +1,5 @@
 import { tv } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 const buttonGroup = tv({
   base: "inline-flex rounded-lg shadow-xs",
@@ -16,4 +17,4 @@ const buttonGroup = tv({
 
 export { buttonGroup };
 
-export type ButtonGroupTheme = string;
+export type ButtonGroupTheme = ClassValue;

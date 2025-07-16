@@ -1,7 +1,8 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { gradientButton, type GradientButtonTheme } from ".";
-  import { type GradientButtonProps, type SizeType, Button, cn } from "$lib";
+  import clsx from "clsx";
+  import { type GradientButtonProps, type SizeType, Button } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   const group: SizeType = getContext("group");
@@ -14,13 +15,13 @@
 </script>
 
 {#if outline}
-  <div class={cn(base(), (theme as GradientButtonTheme)?.base, className)}>
-    <Button {...restProps} class={cn(outlineWrapper(), (theme as GradientButtonTheme)?.outlineWrapper, btnClass)} {disabled} {href} {size}>
+  <div class={base({class:clsx((theme as GradientButtonTheme)?.base, className)})}>
+    <Button {...restProps} class={outlineWrapper({class:clsx((theme as GradientButtonTheme)?.outlineWrapper, btnClass)})} {disabled} {href} {size}>
       {@render children?.()}
     </Button>
   </div>
 {:else}
-  <Button {...restProps} class={cn(base(), (theme as GradientButtonTheme)?.base, className)} {disabled} {href} {size}>
+  <Button {...restProps} class={base({class:clsx((theme as GradientButtonTheme)?.base, className)})} {disabled} {href} {size}>
     {@render children?.()}
   </Button>
 {/if}
