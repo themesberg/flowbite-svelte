@@ -2,7 +2,8 @@
   import { getContext } from "svelte";
   import type { HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
   import { bottomNavItem, type BottomNavItemTheme } from ".";
-  import { type BottomNavItemProps, type BottomNavContextType, type BottomNavVariantType, cn } from "$lib";
+  import clsx from "clsx";
+  import { type BottomNavItemProps, type BottomNavContextType, type BottomNavVariantType } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, btnName, appBtnPosition = "middle", target, activeClass, href = "", btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
@@ -26,11 +27,11 @@
   let isActive = $derived(manualActive !== undefined ? !!manualActive : navUrl ? (href === "/" ? navUrl === "/" : href && (navUrl === href || navUrl.startsWith(href + "/") || (href !== "/" && navUrl.replace(/^https?:\/\/[^/]+/, "").startsWith(href)))) : false);
 
   function getCommonClass() {
-    return cn(base(), isActive && (activeClass ?? context.activeClass), btnClass, (theme as BottomNavItemTheme)?.base);
+    return base({class: clsx(isActive && (activeClass ?? context.activeClass), (theme as BottomNavItemTheme)?.base, btnClass)});
   }
 
   function getSpanClass() {
-    return cn(span(), isActive && (activeClass ?? context.activeClass), spanClass, (theme as BottomNavItemTheme)?.span);
+    return span({class: clsx(isActive && (activeClass ?? context.activeClass), (theme as BottomNavItemTheme)?.span, spanClass)}) ;
   }
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */

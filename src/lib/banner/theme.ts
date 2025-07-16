@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type BannerVariants = VariantProps<typeof banner>;
 
@@ -49,4 +50,4 @@ const banner = tv({
 
 export { banner };
 export type BannerSlots = keyof typeof banner.slots;
-export type BannerTheme = Partial<Record<BannerSlots, string>>;
+export type BannerTheme = Partial<Record<BannerSlots, ClassValue>>;

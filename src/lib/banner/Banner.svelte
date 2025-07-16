@@ -1,7 +1,8 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
   import { banner, type BannerTheme } from ".";
-  import { type ParamsType, type BannerProps, CloseButton, cn } from "$lib";
+  import clsx from "clsx";
+  import { type ParamsType, type BannerProps, CloseButton } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, innerClass, transition = fade, params, closeClass, ...restProps }: BannerProps = $props();
@@ -13,15 +14,15 @@
 </script>
 
 {#if open}
-  <div tabindex="-1" class={cn(base(), className, (theme as BannerTheme)?.base)} {...restProps} transition:transition={params as ParamsType}>
-    <div class={cn(insideDiv(), innerClass, (theme as BannerTheme)?.insideDiv)}>
+  <div tabindex="-1" class={base({ class: clsx((theme as BannerTheme)?.base, className)})} {...restProps} transition:transition={params as ParamsType}>
+    <div class={insideDiv({class: clsx((theme as BannerTheme)?.insideDiv, innerClass)})}>
       {@render children?.()}
     </div>
 
     {#if dismissable}
       <div class="flex items-center justify-end">
         <CloseButton
-          class={cn(dismissableClass(), closeClass, (theme as BannerTheme)?.dismissable)}
+          class={dismissableClass({class: clsx((theme as BannerTheme)?.dismissable, closeClass)})}
           {color}
           ariaLabel="Remove banner"
           onclick={() => {

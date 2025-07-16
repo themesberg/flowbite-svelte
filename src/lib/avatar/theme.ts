@@ -1,4 +1,5 @@
 import { tv } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 const avatar = tv({
   base: "relative flex items-center justify-center bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300",
@@ -33,4 +34,4 @@ const avatar = tv({
 
 export { avatar };
 
-export type AvatarTheme = string;
+export type AvatarTheme = ClassValue;

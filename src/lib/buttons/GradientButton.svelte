@@ -14,13 +14,13 @@
 </script>
 
 {#if outline}
-  <div class={cn(base(), className, (theme as GradientButtonTheme)?.base)}>
-    <Button {...restProps} class={cn(outlineWrapper(), btnClass, (theme as GradientButtonTheme)?.outlineWrapper)} {disabled} {href} {size}>
+  <div class={cn(base(), (theme as GradientButtonTheme)?.base, className)}>
+    <Button {...restProps} class={cn(outlineWrapper(), (theme as GradientButtonTheme)?.outlineWrapper, btnClass)} {disabled} {href} {size}>
       {@render children?.()}
     </Button>
   </div>
 {:else}
-  <Button {...restProps} class={cn(base(), className, (theme as GradientButtonTheme)?.base)} {disabled} {href} {size}>
+  <Button {...restProps} class={cn(base(), (theme as GradientButtonTheme)?.base, className)} {disabled} {href} {size}>
     {@render children?.()}
   </Button>
 {/if}

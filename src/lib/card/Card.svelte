@@ -22,7 +22,7 @@
 
 {#snippet childSlot()}
   {#if img}
-    <img class={cn(image({ class: clsx(imgClass) }), (theme as CardTheme)?.image)} src={img} alt={img} />
+    <img class={cn(image(), (theme as CardTheme)?.image, clsx(imgClass))} src={img} alt={img} />
     {@render children()}
   {:else}
     {@render children()}

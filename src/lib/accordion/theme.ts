@@ -1,4 +1,5 @@
 import { tv } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export const accordion = tv({
   base: "w-full",
@@ -63,4 +64,4 @@ export const accordionItem = tv({
 export type AccordionTheme = string;
 
 export type AccordionItemSlots = keyof typeof accordionItem.slots;
-export type AccordionItemTheme = Partial<Record<AccordionItemSlots, string>>;
+export type AccordionItemTheme = Partial<Record<AccordionItemSlots, ClassValue>>;

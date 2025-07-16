@@ -1,7 +1,8 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
   import { alert } from ".";
-  import { type AlertProps, type ParamsType, CloseButton, cn } from "$lib";
+  import clsx from "clsx";
+  import { type AlertProps, type ParamsType, CloseButton } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, icon, alertStatus = $bindable(true), closeIcon: CloseIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, onclick = () => (alertStatus = false), ...restProps }: AlertProps = $props();
@@ -10,17 +11,14 @@
   const theme = getTheme("alert");
 
   let divCls = $derived(
-    cn(
       alert({
         color,
         rounded,
         border,
         icon: !!icon,
-        dismissable
-      }),
-      className,
-      theme
-    )
+        dismissable,
+        class: clsx(theme, className)
+      })
   );
 </script>
 

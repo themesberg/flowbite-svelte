@@ -8,7 +8,7 @@
 
   const theme = getTheme("buttonGroup");
 
-  let groupClass = $derived(cn(buttonGroup({ size }), className, theme));
+  let groupClass = $derived(cn(buttonGroup({ size }), theme, className));
   setContext("group", size);
   setContext("disabled", disabled);
 </script>

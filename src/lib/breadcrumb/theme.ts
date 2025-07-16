@@ -1,4 +1,5 @@
 import { tv } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export const breadcrumb = tv({
   slots: {
@@ -59,7 +60,7 @@ export const breadcrumbItem = tv({
 });
 
 export type BreadcrumbSlots = keyof typeof breadcrumb.slots;
-export type BreadcrumbTheme = Partial<Record<BreadcrumbSlots, string>>;
+export type BreadcrumbTheme = Partial<Record<BreadcrumbSlots, ClassValue>>;
 
 export type BreadcrumbItemSlots = keyof typeof breadcrumbItem.slots;
-export type BreadcrumbItemTheme = Partial<Record<BreadcrumbItemSlots, string>>;
+export type BreadcrumbItemTheme = Partial<Record<BreadcrumbItemSlots, ClassValue>>;

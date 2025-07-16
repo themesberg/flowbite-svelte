@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 type AlertVariants = VariantProps<typeof alert>;
 
@@ -153,4 +154,4 @@ const alert = tv({
 
 export { alert, type AlertVariants };
 
-export type AlertTheme = string;
+export type AlertTheme = ClassValue;

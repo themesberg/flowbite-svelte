@@ -1,6 +1,7 @@
 <script lang="ts">
   import { breadcrumb } from ".";
-  import { type BreadcrumbProps, cn, type BreadcrumbTheme } from "$lib";
+  import clsx from "clsx";
+  import { type BreadcrumbProps, type BreadcrumbTheme } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, solid = false, class: className, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
@@ -8,8 +9,8 @@
   const theme = getTheme("breadcrumb");
 
   const { nav, list } = breadcrumb({ solid });
-  let classNav = $derived(cn(nav(), className, (theme as BreadcrumbTheme)?.nav));
-  let classList = $derived(cn(list(), olClass, (theme as BreadcrumbTheme)?.list));
+  let classNav = $derived(nav({class:clsx( (theme as BreadcrumbTheme)?.nav, className)}));
+  let classList = $derived(list({class:clsx((theme as BreadcrumbTheme)?.list, olClass)}));
 </script>
 
 <nav aria-label={ariaLabel} {...restProps} class={classNav}>

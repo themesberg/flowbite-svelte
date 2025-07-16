@@ -1,6 +1,7 @@
 <script lang="ts">
   import { bottomNavHeaderItem } from ".";
-  import { type BottomNavHeaderItemProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type BottomNavHeaderItemProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { itemName, active, class: className, ...restProps }: BottomNavHeaderItemProps = $props();
@@ -8,10 +9,10 @@
   // Theme context
   const theme = getTheme("bottomNavHeaderItem");
 
-  let base = $derived(bottomNavHeaderItem({ active }));
+  let base = $derived(bottomNavHeaderItem({ active, class: clsx(theme, className) }));
 </script>
 
-<button {...restProps} class={cn(base, className, theme)}>
+<button {...restProps} class={base}>
   {itemName}
 </button>
 

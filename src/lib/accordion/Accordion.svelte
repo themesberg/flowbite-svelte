@@ -2,7 +2,8 @@
   import { setContext } from "svelte";
   import { writable } from "svelte/store";
   import { accordion } from "./";
-  import { type AccordionProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type AccordionProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, ...restProps }: AccordionProps = $props();
@@ -18,11 +19,10 @@
 
   setContext("ctx", ctx);
   setContext("ctxTransitionType", transitionType);
-  const base = $derived(cn(accordion({ flush }), className));
-  const finalClass = $derived(cn(base, theme));
+  const base = $derived(accordion({ flush, class: clsx(theme, className) }));
 </script>
 
-<div {...restProps} class={finalClass}>
+<div {...restProps} class={base}>
   {@render children()}
 </div>
 

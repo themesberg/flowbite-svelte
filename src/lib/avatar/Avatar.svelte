@@ -1,6 +1,7 @@
 <script lang="ts">
   import { avatar } from ".";
-  import { type AvatarProps, Indicator, cn } from "$lib";
+  import clsx from "clsx";
+  import { type AvatarProps, Indicator } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, indicator, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: AvatarProps = $props();
@@ -11,16 +12,13 @@
   dot = dot && { placement: "top-right", color: "gray", size: "lg", ...dot };
 
   let avatarClass = $derived(
-    cn(
-      avatar({
-        cornerStyle,
-        border,
-        stacked,
-        size
-      }),
-      className,
-      theme
-    )
+    avatar({
+      cornerStyle,
+      border,
+      stacked,
+      size,
+      class: clsx(theme, className)
+    })
   );
 </script>
 

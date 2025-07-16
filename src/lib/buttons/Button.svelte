@@ -16,7 +16,7 @@
   let isDisabled = $derived(Boolean(ctxDisabled) || Boolean(disabled));
 
   const { base, outline: outline_, shadow: shadow_ } = $derived(button({ color: actualColor, size: actualSize, disabled: isDisabled, pill, group: !!group }));
-  let btnCls = $derived(cn(base(), outline && outline_(), shadow && shadow_(), className, (theme as ButtonTheme)?.base));
+  let btnCls = $derived(cn(base(), outline && outline_(), shadow && shadow_(), (theme as ButtonTheme)?.base, className));
 </script>
 
 {#if restProps.href === undefined}

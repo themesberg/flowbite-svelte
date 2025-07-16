@@ -2,6 +2,7 @@
   import { setContext } from "svelte";
   import { writable } from "svelte/store";
   import { bottomNav } from ".";
+  import clsx from "clsx";
   import { type BottomNavProps, type BottomNavContextType, cn, type BottomNavTheme } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -24,12 +25,12 @@
   });
 </script>
 
-<div {...restProps} class={cn(outer(), outerClass, (theme as BottomNavTheme)?.outer)}>
+<div {...restProps} class={outer({class:clsx((theme as BottomNavTheme)?.outer, outerClass)})}>
   {#if header}
     {@render header()}
   {/if}
 
-  <div class={cn(inner(), innerClass, (theme as BottomNavTheme)?.inner)}>
+  <div class={inner({class:clsx((theme as BottomNavTheme)?.inner, innerClass)})}>
     {@render children()}
   </div>
 </div>
