@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type ListgroupVariants = VariantProps<typeof listGroup>;
 
@@ -31,7 +32,7 @@ export const listGroup = tv({
   }
 });
 
-export type ListGroupTheme = string;
+export type ListGroupTheme = ClassValue;
 
 export type ListgroupItemVariants = VariantProps<typeof listGroupItem>;
 
@@ -74,4 +75,4 @@ export const listGroupItem = tv({
   ]
 });
 
-export type ListGroupItemTheme = string;
+export type ListGroupItemTheme = ClassValue;

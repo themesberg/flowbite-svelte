@@ -1,6 +1,7 @@
 <script lang="ts">
   import { indicator } from "./index";
-  import { type IndicatorProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type IndicatorProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, color = "primary", cornerStyle = "circular", size = "md", border = false, placement, offset = true, class: className, ...restProps }: IndicatorProps = $props();
@@ -16,12 +17,13 @@
       border,
       placement,
       offset,
-      hasChildren
+      hasChildren,
+      class:clsx(theme, className)
     })
   );
 </script>
 
-<div {...restProps} class={cn(base, className, theme)}>
+<div {...restProps} class={base}>
   {#if children}
     {@render children()}
   {/if}

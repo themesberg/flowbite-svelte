@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type PaginationVariants = VariantProps<typeof pagination>;
 
@@ -28,7 +29,7 @@ export const paginationNav = tv({
 });
 
 export type PaginationNavSlots = keyof typeof paginationNav.slots;
-export type PaginationNavTheme = Partial<Record<PaginationNavSlots, string>>;
+export type PaginationNavTheme = Partial<Record<PaginationNavSlots, ClassValue>>;
 
 export type PaginationItemVariants = VariantProps<typeof paginationItem>;
 
@@ -71,7 +72,7 @@ export const paginationButton = tv({
   }
 });
 
-export type PaginationButtonTheme = string;
+export type PaginationButtonTheme = ClassValue;
 
 export const paginationItem = tv({
   base: "flex items-center font-medium",
@@ -108,7 +109,7 @@ export const paginationItem = tv({
   }
 });
 
-export type PaginationItemTheme = string;
+export type PaginationItemTheme = ClassValue;
 
 export const pagination = tv({
   base: "inline-flex -space-x-px rtl:space-x-reverse items-center",
@@ -128,4 +129,4 @@ export const pagination = tv({
   }
 });
 
-export type PaginationTheme = string;
+export type PaginationTheme = ClassValue;

@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type TooltipVariants = VariantProps<typeof tooltip>;
 
@@ -40,4 +41,4 @@ export const tooltip = tv({
 });
 
 export type TooltipSlots = keyof typeof tooltip.slots;
-export type TooltipTheme = Partial<Record<TooltipSlots, string>>;
+export type TooltipTheme = Partial<Record<TooltipSlots, ClassValue>>;

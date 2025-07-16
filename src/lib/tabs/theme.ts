@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type TabsVaraints = VariantProps<typeof tabs>;
 
@@ -50,7 +51,7 @@ export const tabs = tv({
 });
 
 export type TabsSlots = keyof typeof tabs.slots;
-export type TabsTheme = Partial<Record<TabsSlots, string>>;
+export type TabsTheme = Partial<Record<TabsSlots, ClassValue>>;
 
 export const tabItem = tv({
   slots: {
@@ -91,4 +92,4 @@ export const tabItem = tv({
 });
 
 export type TabItemSlots = keyof typeof tabItem.slots;
-export type TabItemTheme = Partial<Record<TabItemSlots, string>>;
+export type TabItemTheme = Partial<Record<TabItemSlots, ClassValue>>;

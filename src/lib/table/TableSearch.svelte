@@ -1,7 +1,7 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import type { TableSearchProps, TableSearchType } from "$lib/types";
-  import { cn } from "$lib";
+  import clsx from "clsx";
   import { tableSearch, type TableSearchTheme } from ".";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -15,16 +15,16 @@
   const styles = tableSearch({ color: themeColor, striped, hoverable });
 
   // Apply custom classes or use theme defaults
-  const rootClass = cn(styles.root(), divClass, (theme as TableSearchTheme)?.root);
-  const innerDivCls = cn(styles.innerDiv(), innerDivClass, (theme as TableSearchTheme)?.innerDiv);
-  const searchContainerCls = cn(styles.searchContainer(), searchClass, (theme as TableSearchTheme)?.searchContainer);
-  const svgContainerCls = cn(styles.svgContainer(), svgDivClass, (theme as TableSearchTheme)?.svgContainer);
-  const svgCls = cn(styles.svg(), svgClass, (theme as TableSearchTheme)?.svg);
-  const inputCls = cn(styles.input(), inputClass, (theme as TableSearchTheme)?.input);
-  const tableCls = cn(styles.table(), tableClass, className, (theme as TableSearchTheme)?.table);
+  const rootClass = styles.root({class:clsx((theme as TableSearchTheme)?.root,divClass)});
+  const innerDivCls = styles.innerDiv({class:clsx((theme as TableSearchTheme)?.innerDiv, innerDivClass)});
+  const searchContainerCls = styles.searchContainer({class:clsx((theme as TableSearchTheme)?.searchContainer, searchClass)});
+  const svgContainerCls = styles.svgContainer({class:clsx((theme as TableSearchTheme)?.svgContainer, svgDivClass)});
+  const svgCls = styles.svg({class:clsx((theme as TableSearchTheme)?.svg, svgClass)});
+  const inputCls = styles.input({class:clsx((theme as TableSearchTheme)?.input, inputClass)});
+  const tableCls = styles.table({class:clsx(tableClass, (theme as TableSearchTheme)?.table, className)});
 
   // Handle custom color
-  const finalTableClass = color === "custom" && customColor ? cn(tableCls, customColor) : tableCls;
+  const finalTableClass = color === "custom" && customColor ? clsx(tableCls, customColor) : tableCls;
 
   const tableSearchCtx: TableSearchType = {
     striped,

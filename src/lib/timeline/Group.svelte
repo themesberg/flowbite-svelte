@@ -1,7 +1,7 @@
 <script lang="ts">
   import { group, type GroupTheme } from ".";
   import type { GroupProps } from "$lib/types";
-  import { cn } from "$lib";
+  import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, divClass, timeClass, date, olClass, ...restProps }: GroupProps = $props();
@@ -11,9 +11,9 @@
   const { div, time, ol } = $derived(group());
 </script>
 
-<div class={cn(div({ class: divClass }), (theme as GroupTheme)?.div)}>
-  <time class={cn(time({ class: timeClass }), (theme as GroupTheme)?.time)}>{date}</time>
-  <ol {...restProps} class={cn(ol({ class: olClass }), (theme as GroupTheme)?.ol)}>
+<div class={div({ class: clsx((theme as GroupTheme)?.div, divClass)})}>
+  <time class={time({ class: clsx((theme as GroupTheme)?.time, timeClass)})}>{date}</time>
+  <ol {...restProps} class={ol({ class: clsx((theme as GroupTheme)?.ol, olClass)})}>
     {@render children()}
   </ol>
 </div>

@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 // step indicator
 export type StepIndicatorVariants = VariantProps<typeof stepIndicator>;
@@ -98,7 +99,7 @@ export const stepIndicator = tv({
 });
 
 export type StepIndicatorSlots = keyof typeof stepIndicator.slots;
-export type StepIndicatorTheme = Partial<Record<StepIndicatorSlots, string>>;
+export type StepIndicatorTheme = Partial<Record<StepIndicatorSlots, ClassValue>>;
 
 // Helper function to get step state classes
 export const getStepStateClasses = (stepIndex: number, currentStep: number) => {

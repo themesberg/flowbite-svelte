@@ -1,10 +1,11 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export const activity = tv({
   base: "relative border-s border-gray-200 dark:border-gray-700"
 });
 
-export type ActivityTheme = string;
+export type ActivityTheme = ClassValue;
 
 export const activityItem = tv({
   slots: {
@@ -20,7 +21,7 @@ export const activityItem = tv({
 });
 
 export type ActivityItemSlots = keyof typeof activityItem.slots;
-export type ActivityItemTheme = Partial<Record<ActivityItemSlots, string>>;
+export type ActivityItemTheme = Partial<Record<ActivityItemSlots, ClassValue>>;
 
 export const group = tv({
   slots: {
@@ -31,7 +32,7 @@ export const group = tv({
 });
 
 export type GroupSlots = keyof typeof group.slots;
-export type GroupTheme = Partial<Record<GroupSlots, string>>;
+export type GroupTheme = Partial<Record<GroupSlots, ClassValue>>;
 
 export const groupItem = tv({
   slots: {
@@ -44,7 +45,7 @@ export const groupItem = tv({
 });
 
 export type GroupItemSlots = keyof typeof groupItem.slots;
-export type GroupItemTheme = Partial<Record<GroupItemSlots, string>>;
+export type GroupItemTheme = Partial<Record<GroupItemSlots, ClassValue>>;
 
 export type TimelineVariants = VariantProps<typeof timeline>;
 
@@ -63,7 +64,7 @@ export const timeline = tv({
   }
 });
 
-export type TimelineTheme = string;
+export type TimelineTheme = ClassValue;
 
 // export type TimelineItemVariants = VariantProps<typeof timelineitem>;
 
@@ -115,4 +116,4 @@ export const timelineItem = tv({
 });
 
 export type TimelineItemSlots = keyof typeof timelineItem.slots;
-export type TimelineItemTheme = Partial<Record<TimelineItemSlots, string>>;
+export type TimelineItemTheme = Partial<Record<TimelineItemSlots, ClassValue>>;

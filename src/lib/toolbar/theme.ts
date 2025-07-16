@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type ToolbarVariants = VariantProps<typeof toolbar>;
 
@@ -85,7 +86,7 @@ export const toolbar = tv({
 });
 
 export type ToolbarSlots = keyof typeof toolbar.slots;
-export type ToolbarTheme = Partial<Record<ToolbarSlots, string>>;
+export type ToolbarTheme = Partial<Record<ToolbarSlots, ClassValue>>;
 
 export type ToolbarGroupVariants = VariantProps<typeof toolbarGroup>;
 
@@ -119,7 +120,7 @@ export const toolbarGroup = tv({
   }
 });
 
-export type ToolbarGroupTheme = string;
+export type ToolbarGroupTheme = ClassValue;
 
 export type ToolbarButtonVariants = VariantProps<typeof toolbarButton>;
 
@@ -168,4 +169,4 @@ export const toolbarButton = tv({
   }
 });
 
-export type ToolbarButtonTheme = string;
+export type ToolbarButtonTheme = ClassValue;

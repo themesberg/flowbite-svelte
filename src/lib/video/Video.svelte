@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { VideoProps } from "$lib/types";
-  import { cn } from "$lib";
+  import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, type = "video/mp4", trackSrc, src, srclang = "en", label = "english_captions", class: classname, ...restProps }: VideoProps = $props();
@@ -8,7 +8,7 @@
   const theme = getTheme("span");
 </script>
 
-<video {...restProps} class={cn(classname, theme)}>
+<video {...restProps} class={clsx(theme, classname)}>
   <source {src} {type} />
   {#if children}
     {@render children()}

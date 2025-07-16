@@ -1,5 +1,6 @@
 // Dial
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type SpeedDialVariants = VariantProps<typeof speedDial>;
 
@@ -19,7 +20,7 @@ export const speedDial = tv({
 });
 
 export type SpeedDialSlots = keyof typeof speedDial.slots;
-export type SpeedDialTheme = Partial<Record<SpeedDialSlots, string>>;
+export type SpeedDialTheme = Partial<Record<SpeedDialSlots, ClassValue>>;
 
 // Button
 export type SpeedDialButtonVariants = VariantProps<typeof speedDialButton>;
@@ -46,4 +47,4 @@ export const speedDialButton = tv({
 });
 
 export type SpeedDialButtonSlots = keyof typeof speedDialButton.slots;
-export type SpeedDialButtonTheme = Partial<Record<SpeedDialButtonSlots, string>>;
+export type SpeedDialButtonTheme = Partial<Record<SpeedDialButtonSlots, ClassValue>>;

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { type SidebarCtxType, type SidebarItemProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type SidebarCtxType, type SidebarItemProps } from "$lib";
 
   let { icon, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: SidebarItemProps = $props();
 
@@ -22,12 +23,12 @@
   let aCls = $derived((activeItem ?? sidebarUrl === href) ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));
 </script>
 
-<li class={cn(className)}>
-  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={(activeItem ?? sidebarUrl === href) ? "page" : undefined} class={cn(aCls, aClass)}>
+<li class={clsx(className)}>
+  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={(activeItem ?? sidebarUrl === href) ? "page" : undefined} class={clsx(aCls, aClass)}>
     {#if icon}
       {@render icon()}
     {/if}
-    <span class={cn(spanClass)}>{label}</span>
+    <span class={clsx(spanClass)}>{label}</span>
     {#if subtext}
       {@render subtext()}
     {/if}

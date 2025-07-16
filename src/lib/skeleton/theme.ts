@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 // card placeholder
 export type CardPlaceholderVariants = VariantProps<typeof cardPlaceholder>;
@@ -22,7 +23,7 @@ export const cardPlaceholder = tv({
 });
 
 export type CardPlaceholderSlots = keyof typeof cardPlaceholder.slots;
-export type CardPlaceholderTheme = Partial<Record<CardPlaceholderSlots, string>>;
+export type CardPlaceholderTheme = Partial<Record<CardPlaceholderSlots, ClassValue>>;
 
 // ImagePlaceholder
 export type ImagePlaceholderVariants = VariantProps<typeof imagePlaceholder>;
@@ -75,7 +76,7 @@ export const imagePlaceholder = tv({
 });
 
 export type ImagePlaceholderSlots = keyof typeof imagePlaceholder.slots;
-export type ImagePlaceholderTheme = Partial<Record<ImagePlaceholderSlots, string>>;
+export type ImagePlaceholderTheme = Partial<Record<ImagePlaceholderSlots, ClassValue>>;
 
 // ListPlaceholder
 export type ListPlaceholderVariants = VariantProps<typeof listPlaceholder>;
@@ -116,7 +117,7 @@ export const listPlaceholder = tv({
 });
 
 export type ListPlaceholderSlots = keyof typeof listPlaceholder.slots;
-export type ListPlaceholderTheme = Partial<Record<ListPlaceholderSlots, string>>;
+export type ListPlaceholderTheme = Partial<Record<ListPlaceholderSlots, ClassValue>>;
 
 export type SkeletonVariants = VariantProps<typeof skeleton>;
 
@@ -148,7 +149,7 @@ export const skeleton = tv({
 });
 
 export type SkeletonSlots = keyof typeof skeleton.slots;
-export type SkeletonTheme = Partial<Record<SkeletonSlots, string>>;
+export type SkeletonTheme = Partial<Record<SkeletonSlots, ClassValue>>;
 
 // TestimonialPlaceholder
 export const testimonialPlaceholder = tv({
@@ -162,7 +163,7 @@ export const testimonialPlaceholder = tv({
 });
 
 export type TestimonialPlaceholderSlots = keyof typeof testimonialPlaceholder.slots;
-export type TestimonialPlaceholderTheme = Partial<Record<TestimonialPlaceholderSlots, string>>;
+export type TestimonialPlaceholderTheme = Partial<Record<TestimonialPlaceholderSlots, ClassValue>>;
 
 // TextPlaceholder
 export type TextPlaceholderVariants = VariantProps<typeof textPlaceholder>;
@@ -186,7 +187,7 @@ export const textPlaceholder = tv({
 });
 
 export type TextPlaceholderSlots = keyof typeof textPlaceholder.slots;
-export type TextPlaceholderTheme = Partial<Record<TextPlaceholderSlots, string>>;
+export type TextPlaceholderTheme = Partial<Record<TextPlaceholderSlots, ClassValue>>;
 
 // VideoPlaceholder
 export type VideoPlaceholderVariants = VariantProps<typeof videoPlaceholder>;
@@ -203,7 +204,7 @@ export const videoPlaceholder = tv({
   }
 });
 
-export type VideoPlaceholderTheme = string;
+export type VideoPlaceholderTheme = ClassValue;
 
 // WidgetPlaceholder
 export const widgetPlaceholder = tv({
@@ -216,4 +217,4 @@ export const widgetPlaceholder = tv({
 });
 
 export type WidgetPlaceholderSlots = keyof typeof widgetPlaceholder.slots;
-export type WidgetPlaceholderTheme = Partial<Record<WidgetPlaceholderSlots, string>>;
+export type WidgetPlaceholderTheme = Partial<Record<WidgetPlaceholderSlots, ClassValue>>;

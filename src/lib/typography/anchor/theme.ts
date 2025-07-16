@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type AnchorVariants = VariantProps<typeof anchor>;
 
@@ -31,4 +32,4 @@ export const anchor = tv({
   }
 });
 
-export type AnchorTheme = string;
+export type AnchorTheme = ClassValue;

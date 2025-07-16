@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type SpanVariants = VariantProps<typeof span>;
 
@@ -90,4 +91,4 @@ export const span = tv({
   }
 });
 
-export type SpanTheme = string;
+export type SpanTheme = ClassValue;

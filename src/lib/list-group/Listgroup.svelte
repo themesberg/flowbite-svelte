@@ -1,14 +1,15 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { listGroup } from ".";
-  import { type ListgroupProps, ListgroupItem, cn } from "$lib";
+  import clsx from "clsx";
+  import { type ListgroupProps, ListgroupItem } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, items, active, onclick, horizontal, rounded, border, class: className, itemClass, iconClass, ...restProps }: ListgroupProps = $props();
 
   const theme = getTheme("listgroup");
 
-  const base = $derived(listGroup({ rounded, border, horizontal }));
+  const base = $derived(listGroup({ rounded, border, horizontal, class:clsx(theme, className) }));
 
   let tag = active ? "div" : "ul";
   setContext("listGrpActive", active);
@@ -25,15 +26,15 @@
   }
 </script>
 
-<svelte:element this={tag} {...restProps} class={cn(base, className, theme)}>
+<svelte:element this={tag} {...restProps} class={base}>
   {#if items?.length}
     {#each items as item}
       {#if children}
         {@render children(item)}
       {:else if typeof item === "string"}
-        <ListgroupItem href={undefined} class={cn(itemClass)} iconClass={cn(iconClass)} {active} {horizontal} onclick={createItemClickHandler(item)}>{item}</ListgroupItem>
+        <ListgroupItem href={undefined} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} onclick={createItemClickHandler(item)}>{item}</ListgroupItem>
       {:else}
-        <ListgroupItem href={item.href} class={cn(itemClass)} iconClass={cn(iconClass)} {active} {horizontal} {...item} onclick={item.onclick ?? createItemClickHandler(item)} />
+        <ListgroupItem href={item.href} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} {...item} onclick={item.onclick ?? createItemClickHandler(item)} />
       {/if}
     {/each}
   {:else}

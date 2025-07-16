@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type ToastVaraints = VariantProps<typeof toast>;
 
@@ -103,4 +104,4 @@ export const toast = tv({
 });
 
 export type ToastSlots = keyof typeof toast.slots;
-export type ToastTheme = Partial<Record<ToastSlots, string>>;
+export type ToastTheme = Partial<Record<ToastSlots, ClassValue>>;

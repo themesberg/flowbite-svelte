@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type ModalProps, type ParamsType, CloseButton, trapFocus, cn } from "$lib";
+  import { type ModalProps, type ParamsType, CloseButton, trapFocus } from "$lib";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
@@ -84,7 +84,7 @@
 
 {#snippet content()}
   {#if title || header}
-    <div class={cn(headerCls({ class: clsx(headerClass) }), (theme as ModalTheme)?.header)}>
+    <div class={headerCls({ class: clsx((theme as ModalTheme)?.header, headerClass) })}>
       {#if title}
         <h3>{title}</h3>
         {#if dismissable && !permanent}
@@ -95,23 +95,23 @@
       {/if}
     </div>
   {/if}
-  <div class={cn(body({ class: clsx(bodyClass) }), (theme as ModalTheme)?.body)}>
+  <div class={body({ class: clsx( (theme as ModalTheme)?.body, bodyClass) })}>
     {@render children?.()}
   </div>
   {#if footer}
-    <div class={cn(footerCls({ class: clsx(footerClass) }), (theme as ModalTheme)?.footer)}>
+    <div class={footerCls({ class: clsx((theme as ModalTheme)?.footer, footerClass) })}>
       {@render footer()}
     </div>
   {/if}
   {#if dismissable && !permanent && !title}
-    <CloseButton type="submit" formnovalidate onclick={close_handler(form)} class={cn(closebutton({ class: clsx(closeBtnClass) }), (theme as ModalTheme)?.closebutton)} />
+    <CloseButton type="submit" formnovalidate onclick={close_handler(form)} class={closebutton({ class: clsx((theme as ModalTheme)?.closebutton, closeBtnClass)})} />
   {/if}
 {/snippet}
 
 {#if open}
-  <dialog {@attach init} use:focusTrap class={cn(base({ class: clsx(className) }), (theme as ModalTheme)?.base)} tabindex="-1" onsubmit={_onsubmit} oncancel={_oncancel} onclick={_onclick} ontoggle={_ontoggle} transition:transition|global={paramsOptions as ParamsType} {...restProps}>
+  <dialog {@attach init} use:focusTrap class={base({ class: clsx((theme as ModalTheme)?.base, className) })} tabindex="-1" onsubmit={_onsubmit} oncancel={_oncancel} onclick={_onclick} ontoggle={_ontoggle} transition:transition|global={paramsOptions as ParamsType} {...restProps}>
     {#if form}
-      <form method="dialog" class={cn(formCls(), (theme as ModalTheme)?.form)}>
+      <form method="dialog" class={formCls({class:clsx((theme as ModalTheme)?.form)})}>
         {@render content()}
       </form>
     {:else}

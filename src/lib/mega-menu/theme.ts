@@ -1,4 +1,5 @@
 import { tv } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export const megamenu = tv({
   slots: {
@@ -25,4 +26,4 @@ export const megamenu = tv({
 });
 
 export type MegaMenuSlots = keyof typeof megamenu.slots;
-export type MegaMenuTheme = Partial<Record<MegaMenuSlots, string>>;
+export type MegaMenuTheme = Partial<Record<MegaMenuSlots, ClassValue>>;

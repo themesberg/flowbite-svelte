@@ -3,7 +3,7 @@
   import { pagination, PaginationItem } from ".";
   import type { PaginationProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
-  import { cn } from "$lib";
+  import clsx from "clsx";
 
   let { pages = [], previous, next, prevContent, nextContent, table, size, ariaLabel, ...restProps }: PaginationProps = $props();
 
@@ -13,7 +13,7 @@
   setContext("table", table);
   setContext("size", size);
 
-  const paginationCls = $derived(cn(pagination({ table, size }), theme));
+  const paginationCls = $derived(pagination({ table, size, class:clsx(theme) }));
 </script>
 
 <nav aria-label={ariaLabel}>

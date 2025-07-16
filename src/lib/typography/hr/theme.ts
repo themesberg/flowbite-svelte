@@ -1,4 +1,5 @@
 import { tv } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export const hr = tv({
   slots: {
@@ -20,4 +21,4 @@ export const hr = tv({
 });
 
 export type HrSlots = keyof typeof hr.slots;
-export type HrTheme = Partial<Record<HrSlots, string>>;
+export type HrTheme = Partial<Record<HrSlots, ClassValue>>;

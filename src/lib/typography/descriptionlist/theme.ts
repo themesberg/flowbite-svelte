@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type DescriptionListVariants = VariantProps<typeof descriptionList>;
 
@@ -14,4 +15,4 @@ export const descriptionList = tv({
   }
 });
 
-export type DescriptionListTheme = string;
+export type DescriptionListTheme = ClassValue;

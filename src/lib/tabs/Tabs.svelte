@@ -4,7 +4,6 @@
   import { setContext } from "svelte";
   import { tabs, type TabsTheme } from ".";
   import type { TabsProps, TabCtxType } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, tabStyle = "none", ulClass, contentClass, divider = true, ...restProps }: TabsProps = $props();
@@ -36,13 +35,13 @@
   }
 </script>
 
-<ul role="tablist" {...restProps} class={cn(base(), clsx(ulClass), (theme as TabsTheme)?.base)}>
+<ul role="tablist" {...restProps} class={base({class:clsx((theme as TabsTheme)?.base, ulClass)})}>
   {@render children()}
 </ul>
 {#if dividerBool}
-  <div class={cn(dividerClass(), (theme as TabsTheme)?.divider)}></div>
+  <div class={dividerClass({class:clsx( (theme as TabsTheme)?.divider)})}></div>
 {/if}
-<div id={panelId} class={cn(content(), clsx(contentClass), (theme as TabsTheme)?.content)} role="tabpanel" aria-labelledby={panelId} use:init></div>
+<div id={panelId} class={content({class:clsx((theme as TabsTheme)?.content, contentClass)})} role="tabpanel" aria-labelledby={panelId} use:init></div>
 
 <!--
 @component

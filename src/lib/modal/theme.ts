@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type ModalVariants = VariantProps<typeof modal>;
 
@@ -38,4 +39,4 @@ export const modal = tv({
 });
 
 export type ModalSlots = keyof typeof modal.slots;
-export type ModalTheme = Partial<Record<ModalSlots, string>>;
+export type ModalTheme = Partial<Record<ModalSlots, ClassValue>>;

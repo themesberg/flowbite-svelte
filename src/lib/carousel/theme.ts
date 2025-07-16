@@ -10,7 +10,7 @@ export const carousel = tv({
   defaultVariants: {}
 });
 
-export type CarouselTheme = string;
+export type CarouselTheme = ClassValue;
 
 export const carouselIndicators = tv({
   slots: {

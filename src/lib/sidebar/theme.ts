@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type SidebarVariants = VariantProps<typeof sidebar>;
 
@@ -46,7 +47,7 @@ export const sidebar = tv({
 });
 
 export type SidebarSlots = keyof typeof sidebar.slots;
-export type SidebarTheme = Partial<Record<SidebarSlots, string>>;
+export type SidebarTheme = Partial<Record<SidebarSlots, ClassValue>>;
 
 export const sidebarButton = tv({
   base: "inline-flex items-center p-0 mt-0 ms-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
@@ -61,7 +62,7 @@ export const sidebarButton = tv({
   }
 });
 
-export type SidebarButtonTheme = string;
+export type SidebarButtonTheme = ClassValue;
 
 export const sidebarCta = tv({
   slots: {
@@ -72,7 +73,7 @@ export const sidebarCta = tv({
 });
 
 export type SidebarCtaSlots = keyof typeof sidebarCta.slots;
-export type SidebarCtaTheme = Partial<Record<SidebarCtaSlots, string>>;
+export type SidebarCtaTheme = Partial<Record<SidebarCtaSlots, ClassValue>>;
 
 export const sidebarBrand = tv({
   slots: {
@@ -83,7 +84,7 @@ export const sidebarBrand = tv({
 });
 
 export type SidebarBrandSlots = keyof typeof sidebarBrand.slots;
-export type SidebarBrandTheme = Partial<Record<SidebarBrandSlots, string>>;
+export type SidebarBrandTheme = Partial<Record<SidebarBrandSlots, ClassValue>>;
 
 export const sidebarDropdownWrapper = tv({
   slots: {
@@ -96,4 +97,4 @@ export const sidebarDropdownWrapper = tv({
 });
 
 export type SidebarDropdownWrapperSlots = keyof typeof sidebarDropdownWrapper.slots;
-export type SidebarDropdownWrapperTheme = Partial<Record<SidebarDropdownWrapperSlots, string>>;
+export type SidebarDropdownWrapperTheme = Partial<Record<SidebarDropdownWrapperSlots, ClassValue>>;

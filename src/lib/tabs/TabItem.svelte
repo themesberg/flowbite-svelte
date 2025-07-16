@@ -2,7 +2,8 @@
   import { getContext } from "svelte";
   import { writable } from "svelte/store";
   import { tabItem, tabs, type TabItemTheme } from ".";
-  import { type TabitemProps, type TabCtxType, cn } from "$lib";
+  import clsx from "clsx";
+  import { type TabitemProps, type TabCtxType } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, titleSlot, open = false, title = "Tab title", activeClass, inactiveClass, class: className, disabled, tabStyle, ...restProps }: TabitemProps = $props();
@@ -32,8 +33,8 @@
   const { base, button, content } = $derived(tabItem({ open, disabled }));
 </script>
 
-<li {...restProps} class={cn(base(), className, (theme as TabItemTheme)?.base)} role="presentation">
-  <button type="button" onclick={() => (open = true)} role="tab" id={tabId} aria-controls={ctx.panelId} aria-selected={open} {disabled} class={cn(button(), open ? (activeClass ?? active()) : (inactiveClass ?? inactive()), (theme as TabItemTheme)?.button)}>
+<li {...restProps} class={base({class:clsx((theme as TabItemTheme)?.base, className)})} role="presentation">
+  <button type="button" onclick={() => (open = true)} role="tab" id={tabId} aria-controls={ctx.panelId} aria-selected={open} {disabled} class={button({class:clsx( open ? (activeClass ?? active()) : (inactiveClass ?? inactive()), (theme as TabItemTheme)?.button)}) }>
     {#if titleSlot}
       {@render titleSlot()}
     {:else}
@@ -42,7 +43,7 @@
   </button>
 
   {#if open && children}
-    <div class={cn(content(), (theme as TabItemTheme)?.content)}>
+    <div class={content({class:clsx((theme as TabItemTheme)?.content)})}>
       <div use:init>
         {@render children()}
       </div>

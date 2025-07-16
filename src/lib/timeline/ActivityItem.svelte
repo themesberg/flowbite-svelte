@@ -1,7 +1,7 @@
 <script lang="ts">
   import { activityItem, type ActivityItemTheme } from "./index";
   import type { ActivityItemProps } from "$lib/types";
-  import { cn } from "$lib";
+  import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { activities, liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass, ...restProps }: ActivityItemProps = $props();
@@ -12,19 +12,19 @@
 </script>
 
 {#each activities as { title: name, date, src, alt, text: activity }}
-  <li {...restProps} class={cn(li({ class: liClass }), (theme as ActivityItemTheme)?.li)}>
-    <span class={cn(span({ class: spanClass }), (theme as ActivityItemTheme)?.span)}>
-      <img class={cn(img({ class: imgClass }), (theme as ActivityItemTheme)?.img)} {src} {alt} />
+  <li {...restProps} class={li({ class: clsx((theme as ActivityItemTheme)?.li, liClass)})}>
+    <span class={span({ class: clsx((theme as ActivityItemTheme)?.span, spanClass)})}>
+      <img class={img({ class: clsx( (theme as ActivityItemTheme)?.img, imgClass)})} {src} {alt} />
     </span>
-    <div class={cn(outerDiv({ class: outerDivClass }), (theme as ActivityItemTheme)?.outerDiv)}>
-      <div class={cn(innerDiv({ class: innerDivClass }), (theme as ActivityItemTheme)?.innerDiv)}>
-        <time class={cn(time({ class: timeClass }), (theme as ActivityItemTheme)?.time)}>{date}</time>
-        <div class={cn(title({ class: titleClass }), (theme as ActivityItemTheme)?.title)}>
+    <div class={outerDiv({ class: clsx((theme as ActivityItemTheme)?.outerDiv, outerDivClass)})}>
+      <div class={innerDiv({ class: clsx((theme as ActivityItemTheme)?.innerDiv, innerDivClass)})}>
+        <time class={time({ class: clsx((theme as ActivityItemTheme)?.time, timeClass)})}>{date}</time>
+        <div class={title({ class: clsx((theme as ActivityItemTheme)?.title, titleClass)})}>
           {@html name}
         </div>
       </div>
       {#if activity}
-        <div class={cn(text({ class: textClass }), (theme as ActivityItemTheme)?.text)}>
+        <div class={text({ class: clsx((theme as ActivityItemTheme)?.text, textClass)})}>
           {@html activity}
         </div>
       {/if}

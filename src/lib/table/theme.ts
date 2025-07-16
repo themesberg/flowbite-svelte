@@ -40,7 +40,7 @@ export const table = tv({
 });
 
 export type TableSlots = keyof typeof table.slots;
-export type TableTheme = Partial<Record<TableSlots, string>>;
+export type TableTheme = Partial<Record<TableSlots, ClassValue>>;
 
 export const tableBodyRow = tv({
   base: "",
@@ -293,7 +293,7 @@ export const tableBodyRow = tv({
   ]
 });
 
-export type TableBodyRowTheme = string;
+export type TableBodyRowTheme = ClassValue;
 
 export const tableHead = tv({
   base: "text-xs uppercase",
@@ -381,19 +381,19 @@ export const tableHead = tv({
   ]
 });
 
-export type TableHeadTheme = string;
+export type TableHeadTheme = ClassValue;
 
 export const tableBodyCell = tv({
   base: "px-6 py-4 whitespace-nowrap font-medium"
 });
 
-export type TableBodyCellTheme = string;
+export type TableBodyCellTheme = ClassValue;
 
 export const tableHeadCell = tv({
   base: "px-6 py-3"
 });
 
-export type TableHeadCellTheme = string;
+export type TableHeadCellTheme = ClassValue;
 
 // TableSearch
 export type TableSearchClasses = Partial<{
@@ -479,4 +479,4 @@ export const tableSearch = tv({
 export type TableSearchColor = "default" | "blue" | "green" | "red" | "yellow" | "purple" | "indigo" | "pink" | "custom";
 
 export type TableSearchSlots = keyof typeof tableSearch.slots;
-export type TableSearchTheme = Partial<Record<TableSearchSlots, string>>;
+export type TableSearchTheme = Partial<Record<TableSearchSlots, ClassValue>>;

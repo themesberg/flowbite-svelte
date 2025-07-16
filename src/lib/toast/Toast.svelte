@@ -4,7 +4,7 @@
   import { toast, type ToastTheme } from ".";
   import type { ToastProps } from "$lib/types";
   import { fly } from "svelte/transition";
-  import { cn } from "$lib";
+  import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, icon, toastStatus = $bindable(true), dismissable = true, color = "primary", position, iconClass, contentClass, align = true, params, transition = fly, class: className, onclose, ...restProps }: ToastProps = $props();
@@ -20,19 +20,19 @@
 </script>
 
 {#if toastStatus}
-  <div role="alert" transition:transition={params as ParamsType} {...restProps} class={cn(base({ class: className }), (theme as ToastTheme)?.base)}>
+  <div role="alert" transition:transition={params as ParamsType} {...restProps} class={base({ class: clsx((theme as ToastTheme)?.base, className)})}>
     {#if icon}
-      <div class={cn(iconVariants({ class: iconClass }), (theme as ToastTheme)?.icon)}>
+      <div class={iconVariants({ class: clsx((theme as ToastTheme)?.icon,iconClass)})}>
         {@render icon()}
       </div>
     {/if}
 
-    <div class={cn(content({ class: contentClass }), (theme as ToastTheme)?.content)}>
+    <div class={content({ class: clsx((theme as ToastTheme)?.content,contentClass)})}>
       {@render children()}
     </div>
 
     {#if dismissable}
-      <CloseButton class={cn(close(), (theme as ToastTheme)?.close)} ariaLabel="Remove toast" {color} onclick={handleClose} />
+      <CloseButton class={close({class:clsx((theme as ToastTheme)?.close)})} ariaLabel="Remove toast" {color} onclick={handleClose} />
     {/if}
   </div>
 {/if}

@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type SpinnerVaraiants = VariantProps<typeof spinner>;
 
@@ -44,4 +45,4 @@ export const spinner = tv({
   }
 });
 
-export type SpinnerTheme = string;
+export type SpinnerTheme = ClassValue;

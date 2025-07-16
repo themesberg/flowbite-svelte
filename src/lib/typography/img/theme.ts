@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type ImgVariants = VariantProps<typeof img>;
 
@@ -44,4 +45,4 @@ export const img = tv({
 });
 
 export type ImgSlots = keyof typeof img.slots;
-export type ImgTheme = Partial<Record<ImgSlots, string>>;
+export type ImgTheme = Partial<Record<ImgSlots, ClassValue>>;

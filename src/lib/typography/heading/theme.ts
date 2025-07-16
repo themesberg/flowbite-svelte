@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type HeadingVariants = VariantProps<typeof heading>;
 
@@ -19,4 +20,4 @@ export const heading = tv({
   }
 });
 
-export type HeadingTheme = string;
+export type HeadingTheme = ClassValue;
