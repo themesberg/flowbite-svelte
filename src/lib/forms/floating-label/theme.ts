@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type FloatingLabelInputVaratiants = VariantProps<typeof floatingLabelInput>;
 
@@ -184,4 +185,4 @@ export const floatingLabelInput = tv({
 });
 
 export type FloatingLabelInputSlots = keyof typeof floatingLabelInput.slots;
-export type FloatingLabelInputTheme = Partial<Record<FloatingLabelInputSlots, string>>;
+export type FloatingLabelInputTheme = Partial<Record<FloatingLabelInputSlots, ClassValue>>;

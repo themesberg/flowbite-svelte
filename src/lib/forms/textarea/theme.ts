@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type TextareaVariants = VariantProps<typeof textarea>;
 
@@ -43,4 +44,4 @@ export const textarea = tv({
 });
 
 export type TextareaSlots = keyof typeof textarea.slots;
-export type TextareaTheme = Partial<Record<TextareaSlots, string>>;
+export type TextareaTheme = Partial<Record<TextareaSlots, ClassValue>>;

@@ -1,4 +1,5 @@
 import { tv } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export const footer = tv({
   base: "bg-white dark:bg-gray-800",
@@ -13,7 +14,7 @@ export const footer = tv({
   }
 });
 
-export type FooterTheme = string;
+export type FooterTheme = ClassValue;
 
 export const footerBrand = tv({
   slots: {
@@ -24,7 +25,7 @@ export const footerBrand = tv({
 });
 
 export type FooterBrandSlots = keyof typeof footerBrand.slots;
-export type FooterBrandTheme = Partial<Record<FooterBrandSlots, string>>;
+export type FooterBrandTheme = Partial<Record<FooterBrandSlots, ClassValue>>;
 
 export const footerCopyright = tv({
   slots: {
@@ -35,19 +36,19 @@ export const footerCopyright = tv({
 });
 
 export type FooterCopyrightSlots = keyof typeof footerCopyright.slots;
-export type FooterCopyrightTheme = Partial<Record<FooterCopyrightSlots, string>>;
+export type FooterCopyrightTheme = Partial<Record<FooterCopyrightSlots, ClassValue>>;
 
 export const footerIcon = tv({
   base: "text-gray-500 hover:text-gray-900 dark:hover:text-white"
 });
 
-export type FooterIconTheme = string;
+export type FooterIconTheme = ClassValue;
 
 export const footerLinkGroup = tv({
   base: "text-gray-600 dark:text-gray-400"
 });
 
-export type FooterLinkGroupTheme = string;
+export type FooterLinkGroupTheme = ClassValue;
 
 export const footerLink = tv({
   slots: {
@@ -57,4 +58,4 @@ export const footerLink = tv({
 });
 
 export type FooterLinkSlots = keyof typeof footerLink.slots;
-export type FooterLinkTheme = Partial<Record<FooterLinkSlots, string>>;
+export type FooterLinkTheme = Partial<Record<FooterLinkSlots, ClassValue>>;

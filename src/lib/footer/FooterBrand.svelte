@@ -1,6 +1,7 @@
 <script lang="ts">
   import { footerBrand, type FooterBrandTheme } from ".";
-  import { type FooterBrandProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type FooterBrandProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, aClass, spanClass, imgClass, href, src, alt, name, ...restProps }: FooterBrandProps = $props();
@@ -11,19 +12,19 @@
 </script>
 
 {#if href}
-  <a {...restProps} {href} class={cn(base(), aClass, (theme as FooterBrandTheme)?.base)}>
+  <a {...restProps} {href} class={base({class:clsx((theme as FooterBrandTheme)?.base, aClass)})}>
     {#if src}
-      <img {src} class={cn(img(), imgClass, (theme as FooterBrandTheme)?.img)} {alt} />
+      <img {src} class={img({class:clsx((theme as FooterBrandTheme)?.img, imgClass)})} {alt} />
     {/if}
     {#if name}
-      <span class={cn(span(), spanClass, (theme as FooterBrandTheme)?.span)}>{name}</span>
+      <span class={span({class:clsx((theme as FooterBrandTheme)?.span, spanClass)})}>{name}</span>
     {/if}
     {#if children}
       {@render children()}
     {/if}
   </a>
 {:else}
-  <img {src} class={cn(img(), imgClass)} {alt} />
+  <img {src} class={img({class:clsx(imgClass)})} {alt} />
 {/if}
 
 <!--

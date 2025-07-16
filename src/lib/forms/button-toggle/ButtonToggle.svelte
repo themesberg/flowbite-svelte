@@ -3,7 +3,8 @@
   import CheckIcon from "./CheckIcon.svelte";
   import { buttonToggle, type ButtonToggleTheme } from ".";
   import type { ButtonToggleVariants } from "./theme";
-  import { type ButtonToggleProps, type ButtonToggleContext, cn } from "$lib";
+  import clsx from "clsx";
+  import { type ButtonToggleProps, type ButtonToggleContext } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { value, selected = false, children, iconSlot, color, class: className, iconClass, txtClass, contentClass, ...restProps }: ButtonToggleProps = $props();
@@ -16,7 +17,7 @@
   const size = getContext<ButtonToggleVariants["size"]>("buttonToggleSize");
   const roundedSize = getContext<ButtonToggleVariants["roundedSize"]>("buttonToggleRounded");
   const ctxIconClass = getContext<string | undefined>("ctxIconClass");
-  const actualIconClass = ctxIconClass || cn(iconClass);
+  const actualIconClass = ctxIconClass || clsx(iconClass);
   const ctxBtnClass = getContext<string | undefined>("ctxBtnClass");
 
   function handleClick() {
@@ -28,16 +29,16 @@
   });
 </script>
 
-<button type="button" class={cn(buttonToggle.button({ selected, color: actualColor, size, roundedSize }), ctxBtnClass, className, (theme as ButtonToggleTheme)?.button)} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
-  <div class={cn(buttonToggle.content(), contentClass, (theme as ButtonToggleTheme)?.content)}>
+<button type="button" class={buttonToggle.button({ selected, color: actualColor, size, roundedSize, class:clsx((theme as ButtonToggleTheme)?.button, ctxBtnClass, className) }) } data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
+  <div class={buttonToggle.content({class:clsx((theme as ButtonToggleTheme)?.content, contentClass)})}>
     {#if selected}
       {#if iconSlot}
         {@render iconSlot()}
       {:else}
-        <CheckIcon class={cn("absolute left-0 flex-shrink-0 text-green-600", actualIconClass)} />
+        <CheckIcon class={clsx("absolute left-0 flex-shrink-0 text-green-600", actualIconClass)} />
       {/if}
     {/if}
-    <span class={cn(buttonToggle.text({ selected }), txtClass, (theme as ButtonToggleTheme)?.text)}>
+    <span class={buttonToggle.text({ selected, class:clsx((theme as ButtonToggleTheme)?.text, txtClass)})}>
       {@render children()}
     </span>
   </div>

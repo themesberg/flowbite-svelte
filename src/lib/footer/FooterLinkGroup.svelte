@@ -1,6 +1,7 @@
 <script lang="ts">
   import { footerLinkGroup } from ".";
-  import { type FooterLinkGroupProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type FooterLinkGroupProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { class: className, children, ...restProps }: FooterLinkGroupProps = $props();
@@ -8,7 +9,7 @@
   const theme = getTheme("footerLinkGroup");
 </script>
 
-<ul {...restProps} class={cn(footerLinkGroup(), className, theme)}>
+<ul {...restProps} class={footerLinkGroup({class:clsx(theme,className)})}>
   {@render children()}
 </ul>
 

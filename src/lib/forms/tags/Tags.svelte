@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { type TagsProps, CloseButton, cn } from "$lib";
+  import clsx from 'clsx';
+  import { type TagsProps, CloseButton } from "$lib";
   import { tags, type TagsTheme } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -36,15 +37,15 @@
   };
 </script>
 
-<div {...restProps} class={cn(base(), className, (theme as TagsTheme)?.base)}>
+<div {...restProps} class={base({class:clsx((theme as TagsTheme)?.base, className)})}>
   {#each value as tag, index}
-    <div class={cn(tagCls(), itemClass, (theme as TagsTheme)?.tag)}>
-      <span class={cn(spanCls(), spanClass, (theme as TagsTheme)?.span)}>
+    <div class={tagCls({class:clsx((theme as TagsTheme)?.tag, itemClass)})}>
+      <span class={spanCls({class:clsx((theme as TagsTheme)?.span, spanClass)})}>
         {tag}
       </span>
       <CloseButton
         size={closeBtnSize}
-        class={cn(closebutton(), closeClass, (theme as TagsTheme)?.closebutton)}
+        class={closebutton({class:clsx( (theme as TagsTheme)?.closebutton, closeClass)})}
         onclick={() => {
           deleteField(index);
         }}
@@ -60,7 +61,7 @@
     placeholder={value.length === 0 ? placeholder : ""}
     type="text"
     autocomplete="new-password"
-    class={cn(inputCls(), inputClass)}
+    class={inputCls({class:clsx(inputClass)})}
   />
 </div>
 

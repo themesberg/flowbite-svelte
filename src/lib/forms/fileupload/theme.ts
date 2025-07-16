@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type FileuploadViariants = VariantProps<typeof fileupload>;
 
@@ -18,4 +19,4 @@ export const fileupload = tv({
 });
 
 export type FileuploadSlots = keyof typeof fileupload.slots;
-export type FileuploadTheme = Partial<Record<FileuploadSlots, string>>;
+export type FileuploadTheme = Partial<Record<FileuploadSlots, ClassValue>>;

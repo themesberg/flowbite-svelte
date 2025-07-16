@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type RangeVariants = VariantProps<typeof range>;
 
@@ -76,4 +77,4 @@ export const range = tv({
   ]
 });
 
-export type RangeTheme = string;
+export type RangeTheme = ClassValue;

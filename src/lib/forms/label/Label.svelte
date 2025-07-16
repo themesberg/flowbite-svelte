@@ -1,13 +1,14 @@
 <script lang="ts">
   import { label } from ".";
-  import { type LabelProps, cn } from "$lib";
+  import clsx from 'clsx';
+  import { type LabelProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, color = "gray", show = true, class: className, ...restProps }: LabelProps = $props();
 
   const theme = getTheme("label");
 
-  let base = $derived(cn(label({ color }), className, theme));
+  let base = $derived(label({ color, class:clsx(theme, className)}));
 </script>
 
 {#if show}

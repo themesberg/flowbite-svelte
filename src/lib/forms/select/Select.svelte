@@ -1,6 +1,7 @@
 <script lang="ts" generics="T">
   import { select as selectCls, type SelectTheme } from ".";
-  import { type SelectProps, CloseButton, cn } from "$lib";
+  import clsx from 'clsx';
+  import { type SelectProps, CloseButton } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, items, value = $bindable(), elementRef = $bindable(), underline, size = "md", disabled, selectClass, class: className, placeholder = "Choose option ...", clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, ...restProps }: SelectProps<T> = $props();
@@ -18,8 +19,8 @@
   };
 </script>
 
-<div class={cn(base(), className, (theme as SelectTheme)?.base)}>
-  <select {disabled} {...restProps} bind:value bind:this={elementRef} class={cn(select(), selectClass, (theme as SelectTheme)?.select)}>
+<div class={base({class:clsx((theme as SelectTheme)?.base, className)})}>
+  <select {disabled} {...restProps} bind:value bind:this={elementRef} class={select({class:clsx((theme as SelectTheme)?.select, selectClass)})}>
     {#if placeholder}
       <option disabled selected value="">{placeholder}</option>
     {/if}
@@ -35,7 +36,7 @@
     {/if}
   </select>
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={cn(closebutton(), clearableClass, (theme as SelectTheme)?.closebutton)} color={clearableColor} aria-label="Clear search value" svgClass={cn(clearableSvgClass)} {disabled} />
+    <CloseButton onclick={clearAll} class={closebutton({class:clsx((theme as SelectTheme)?.closebutton, clearableClass)})} color={clearableColor} aria-label="Clear search value" svgClass={clsx(clearableSvgClass)} {disabled} />
   {/if}
 </div>
 <!--

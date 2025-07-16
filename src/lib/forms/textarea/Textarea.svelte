@@ -1,6 +1,7 @@
 <script lang="ts">
   import { textarea, type TextareaTheme } from ".";
-  import { type TextareaProps, CloseButton, cn } from "$lib";
+  import clsx from 'clsx';
+  import { type TextareaProps, CloseButton } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { header, footer, addon, value = $bindable(), elementRef = $bindable(), divClass, innerClass, headerClass, footerClass, addonClass, disabled, class: className, cols, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, textareaClass, ...restProps }: TextareaProps = $props();
@@ -23,33 +24,33 @@
   };
 </script>
 
-<div class={cn(divWrapper(), divClass, (theme as TextareaTheme)?.divWrapper)}>
+<div class={divWrapper({class:clsx((theme as TextareaTheme)?.divWrapper, divClass)})}>
   {#if !wrapped}
-    <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={cn(wrapper(), className)}></textarea>
+    <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={wrapper({class:clsx(className)})}></textarea>
   {:else}
-    <div class={cn(wrapper(), className, (theme as TextareaTheme)?.wrapper)}>
+    <div class={wrapper({class:clsx( (theme as TextareaTheme)?.wrapper,className)})}>
       {#if header}
-        <div class={cn(headerCls(), headerClass, (theme as TextareaTheme)?.headerCls)}>
+        <div class={headerCls({class:clsx((theme as TextareaTheme)?.headerCls, headerClass)})}>
           {@render header()}
         </div>
       {/if}
-      <div class={cn(innerWrapper(), innerClass, (theme as TextareaTheme)?.innerWrapper)}>
+      <div class={innerWrapper({class:clsx((theme as TextareaTheme)?.innerWrapper, innerClass)})}>
         {#if addon}
-          <div class={cn(addonCls(), addonClass, (theme as TextareaTheme)?.addonCls)}>
+          <div class={addonCls({class:clsx((theme as TextareaTheme)?.addonCls, addonClass)})}>
             {@render addon()}
           </div>
         {/if}
-        <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={cn(base(), textareaClass, (theme as TextareaTheme)?.base)}></textarea>
+        <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={base({class:clsx((theme as TextareaTheme)?.base, textareaClass)})}></textarea>
       </div>
       {#if footer}
-        <div class={cn(footerCls(), footerClass, (theme as TextareaTheme)?.footerCls)}>
+        <div class={footerCls({class:clsx((theme as TextareaTheme)?.footerCls, footerClass)})}>
           {@render footer()}
         </div>
       {/if}
     </div>
   {/if}
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={cn(closebutton(), clearableClass, (theme as TextareaTheme)?.closebutton)} color={clearableColor} aria-label="Clear search value" svgClass={cn(clearableSvgClass)} />
+    <CloseButton onclick={clearAll} class={closebutton({class:clsx((theme as TextareaTheme)?.closebutton, clearableClass)})} color={clearableColor} aria-label="Clear search value" svgClass={clsx(clearableSvgClass)} />
   {/if}
 </div>
 

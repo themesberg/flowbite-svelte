@@ -1,6 +1,7 @@
 <script lang="ts">
   import { footerIcon } from ".";
-  import { type FooterIconProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type FooterIconProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, href, ariaLabel, class: className, ...restProps }: FooterIconProps = $props();
@@ -9,7 +10,7 @@
 </script>
 
 {#if href}
-  <a {...restProps} {href} aria-label={ariaLabel} class={cn(footerIcon(), className, theme)}>
+  <a {...restProps} {href} aria-label={ariaLabel} class={footerIcon({class:clsx(theme, className)})}>
     {@render children()}
   </a>
 {:else}

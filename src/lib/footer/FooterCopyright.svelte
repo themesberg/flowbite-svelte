@@ -1,6 +1,7 @@
 <script lang="ts">
   import { footerCopyright, type FooterCopyrightTheme } from ".";
-  import { type FooterCopyrightProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type FooterCopyrightProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { spanClass, aClass, href, by, copyrightMessage = "All Rights Reserved.", year, bySpanClass, ...restProps }: FooterCopyrightProps = $props();
@@ -12,14 +13,14 @@
   const { base, link, bySpan } = footerCopyright();
 </script>
 
-<span class={cn(base(), spanClass, (theme as FooterCopyrightTheme)?.base)}>
+<span class={base({class:clsx((theme as FooterCopyrightTheme)?.base, spanClass)})}>
   &copy; {year}
   {#if href}
-    <a {...restProps} {href} class={cn(link(), aClass, (theme as FooterCopyrightTheme)?.link)}>
+    <a {...restProps} {href} class={link({class:clsx((theme as FooterCopyrightTheme)?.link, aClass)})}>
       {by}
     </a>
   {:else}
-    <span class={cn(bySpan(), bySpanClass, (theme as FooterCopyrightTheme)?.bySpan)}>{by}</span>
+    <span class={bySpan({class:clsx((theme as FooterCopyrightTheme)?.bySpan, bySpanClass)})}>{by}</span>
   {/if}
   {copyrightMessage}
 </span>

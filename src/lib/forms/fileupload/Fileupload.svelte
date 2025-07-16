@@ -1,6 +1,7 @@
 <script lang="ts">
   import { fileupload, type FileuploadTheme } from ".";
-  import { CloseButton, type FileuploadProps, cn } from "$lib";
+  import clsx from 'clsx';
+  import { CloseButton, type FileuploadProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, wrapperClass, ...restProps }: FileuploadProps = $props();
@@ -18,10 +19,10 @@
   };
 </script>
 
-<div class={cn(wrapper(), wrapperClass, (theme as FileuploadTheme)?.wrapper)}>
-  <input type="file" bind:files bind:this={elementRef} {...restProps} class={cn(base({ size }), className, (theme as FileuploadTheme)?.base)} />
+<div class={wrapper({class:clsx((theme as FileuploadTheme)?.wrapper, wrapperClass)})}>
+  <input type="file" bind:files bind:this={elementRef} {...restProps} class={base({ size, class:clsx((theme as FileuploadTheme)?.base,className)})} />
   {#if files && files.length > 0 && clearable}
-    <CloseButton onclick={clearAll} class={cn(right(), clearableClass, (theme as FileuploadTheme)?.right)} color={clearableColor} aria-label="Clear selected files" svgClass={cn(clearableSvgClass)} />
+    <CloseButton onclick={clearAll} class={right({class:clsx((theme as FileuploadTheme)?.right, clearableClass)})} color={clearableColor} aria-label="Clear selected files" svgClass={clsx(clearableSvgClass)} />
   {/if}
 </div>
 

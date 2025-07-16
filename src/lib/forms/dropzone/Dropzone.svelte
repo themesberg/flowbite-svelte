@@ -1,7 +1,8 @@
 <script lang="ts">
   import type { DragEventHandler, ChangeEventHandler } from "svelte/elements";
   import { dropzone } from ".";
-  import { type DropzoneProps, cn } from "$lib";
+  import clsx from 'clsx';
+  import { type DropzoneProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   type HTMLInputElementWithFiles = HTMLInputElement & { files: FileList | null };
@@ -52,7 +53,7 @@
   };
 </script>
 
-<button class={cn(dropzone(), className, theme)} onkeydown={keydown} onclick={onClick} ondrop={onDrop} ondragover={onDragOver} type="button">
+<button class={dropzone({class:clsx(theme,className)})} onkeydown={keydown} onclick={onClick} ondrop={onDrop} ondragover={onDragOver} type="button">
   {@render children()}
 </button>
 <label class="hidden">

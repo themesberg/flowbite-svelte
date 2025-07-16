@@ -1,5 +1,6 @@
 <script lang="ts" generics="T">
-  import { Badge, CloseButton, type MultiSelectProps, type SelectOptionType, cn } from "$lib";
+  import clsx from 'clsx';
+  import { Badge, CloseButton, type MultiSelectProps, type SelectOptionType } from "$lib";
   import { multiSelect, type MultiSelectTheme } from ".";
   import { getTheme } from "$lib/theme/themeUtils";
   import { onMount, onDestroy } from "svelte"; // Import onMount and onDestroy
@@ -193,11 +194,11 @@
   {/each}
 </select>
 
-<div bind:this={multiSelectContainer} {...restProps} onclick={toggleDropdown} onblur={handleBlur} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={cn(base({ size }), className, (theme as MultiSelectTheme)?.base)}>
+<div bind:this={multiSelectContainer} {...restProps} onclick={toggleDropdown} onblur={handleBlur} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={base({ size, class:clsx( (theme as MultiSelectTheme)?.base, className) })}>
   {#if !selectItems.length}
     <span class="text-gray-400">{placeholder}</span>
   {/if}
-  <span class={cn(select(), (theme as MultiSelectTheme)?.select)}>
+  <span class={select({class:clsx( (theme as MultiSelectTheme)?.select)})}>
     {#if selectItems.length}
       {#each selectItems as item (item.name)}
         {#if children}
@@ -212,16 +213,16 @@
   </span>
   <div class="ms-auto flex items-center gap-2">
     {#if selectItems.length}
-      <CloseButton {size} onclick={clearAll} color="none" class={cn(closebutton(), (theme as MultiSelectTheme)?.closebutton)} {disabled} />
+      <CloseButton {size} onclick={clearAll} color="none" class={closebutton({class:clsx((theme as MultiSelectTheme)?.closebutton)})} {disabled} />
     {/if}
 
-    <svg class={cn("ms-1 h-3 w-3 cursor-pointer text-gray-800 dark:text-white", disabled && "cursor-not-allowed")} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <svg class={clsx("ms-1 h-3 w-3 cursor-pointer text-gray-800 dark:text-white", disabled && "cursor-not-allowed")} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={show ? "m1 5 4-4 4 4" : "m9 1-4 4-4-4"} />
     </svg>
   </div>
 
   {#if show}
-    <div role="presentation" class={cn(dropdown(), dropdownClass)}>
+    <div role="presentation" class={dropdown({class:clsx(dropdownClass)})}>
       {#each items as item (item.name)}
         <div
           onclick={(e) => selectOption(item, e)}

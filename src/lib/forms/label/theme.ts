@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type LabelVariants = VariantProps<typeof label>;
 
@@ -31,4 +32,4 @@ export const label = tv({
   }
 });
 
-export type LabelTheme = string;
+export type LabelTheme = ClassValue;

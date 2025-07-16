@@ -1,6 +1,7 @@
 <script lang="ts">
   import { toggle, type ToggleTheme } from "./index";
-  import { type ToggleProps, Label, cn } from "$lib";
+  import clsx from 'clsx';
+  import { type ToggleProps, Label } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, inputClass, spanClass, offLabel, ...restProps }: ToggleProps = $props();
@@ -10,12 +11,12 @@
   const { input, label, span } = $derived(toggle({ color, checked, size, disabled, off_state_label: !!offLabel }));
 </script>
 
-<Label class={cn(label(), className, (theme as ToggleTheme)?.label)}>
+<Label class={label({class:clsx((theme as ToggleTheme)?.label, className)})}>
   {#if offLabel}
     {@render offLabel()}
   {/if}
-  <input type="checkbox" bind:checked {value} {...restProps} {disabled} class={cn(input(), inputClass, (theme as ToggleTheme)?.input)} />
-  <span class={cn(span(), spanClass, (theme as ToggleTheme)?.span)}></span>
+  <input type="checkbox" bind:checked {value} {...restProps} {disabled} class={input({class:clsx( (theme as ToggleTheme)?.input, inputClass)})} />
+  <span class={span({class:clsx((theme as ToggleTheme)?.span, spanClass)})}></span>
   {#if children}
     {@render children()}
   {/if}

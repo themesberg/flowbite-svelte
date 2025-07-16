@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export const buttonToggleGroup = tv({
   base: "inline-flex border border-gray-300 overflow-hidden",
@@ -13,7 +14,7 @@ export const buttonToggleGroup = tv({
   }
 });
 
-export type ButtonToggleGroupTheme = string;
+export type ButtonToggleGroupTheme = ClassValue;
 
 export const buttonToggle = {
   button: tv({
@@ -85,9 +86,9 @@ export const buttonToggle = {
 };
 
 export type ButtonToggleTheme = {
-  button?: string;
-  content?: string;
-  text?: string;
+  button?: ClassValue;
+  content?: ClassValue;
+  text?: ClassValue;
 };
 
 export type ButtonToggleVariants = VariantProps<typeof buttonToggle.button>;

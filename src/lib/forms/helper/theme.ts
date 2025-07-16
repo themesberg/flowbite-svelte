@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type HelperVariants = VariantProps<typeof helper>;
 
@@ -31,4 +32,4 @@ export const helper = tv({
   }
 });
 
-export type HelperTheme = string;
+export type HelperTheme = ClassValue;

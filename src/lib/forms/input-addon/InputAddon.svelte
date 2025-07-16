@@ -1,7 +1,8 @@
 <script lang="ts">
   import type { SizeType } from "$lib/types";
   import { getContext } from "svelte";
-  import { type InputAddonProps, clampSize, cn } from "$lib";
+  import clsx from 'clsx';
+  import { type InputAddonProps, clampSize } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, size, ...restProps }: InputAddonProps = $props();
@@ -32,7 +33,7 @@
   // size: explicit, inherited, default
   let _size = size || clampSize(group?.size) || "md";
 
-  let divClass: string = cn(textSizes[_size], prefixPadding[_size], "text-gray-500 bg-gray-200", background ? darkBgClasses.tinted : darkBgClasses.base, background ? divider.tinted : divider.base, background ? borderClasses["tinted"] : borderClasses["base"], "inline-flex items-center border", group && "not-first:-ms-px", "first:rounded-s-lg last:rounded-e-lg", className, theme);
+  let divClass: string = clsx(textSizes[_size], prefixPadding[_size], "text-gray-500 bg-gray-200", background ? darkBgClasses.tinted : darkBgClasses.base, background ? divider.tinted : divider.base, background ? borderClasses["tinted"] : borderClasses["base"], "inline-flex items-center border", group && "not-first:-ms-px", "first:rounded-s-lg last:rounded-e-lg", theme, className);
 </script>
 
 <div {...restProps} class={divClass}>

@@ -1,4 +1,5 @@
 import { tv } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export const tags = tv({
   slots: {
@@ -11,4 +12,4 @@ export const tags = tv({
 });
 
 export type TagsSlots = keyof typeof tags.slots;
-export type TagsTheme = Partial<Record<TagsSlots, string>>;
+export type TagsTheme = Partial<Record<TagsSlots, ClassValue>>;

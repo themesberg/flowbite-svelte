@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
 
 export type SearchVariants = VariantProps<typeof search>;
 
@@ -36,4 +37,4 @@ export const search = tv({
 });
 
 export type SearchSlots = keyof typeof search.slots;
-export type SearchTheme = Partial<Record<SearchSlots, string>>;
+export type SearchTheme = Partial<Record<SearchSlots, ClassValue>>;
