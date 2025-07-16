@@ -9,7 +9,7 @@
   const theme = getTheme("navBrand");
 </script>
 
-<a {...restProps} class={navbarBrand({class:clsx(theme, className)})}>
+<a {...restProps} class={navbarBrand({ class: clsx(theme, className) })}>
   {@render children?.()}
 </a>
 

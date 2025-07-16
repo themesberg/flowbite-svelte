@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.10.6
+
+### Patch Changes
+
+- fix: place theme before className
+
 ## 1.10.5
 
 ### Patch Changes

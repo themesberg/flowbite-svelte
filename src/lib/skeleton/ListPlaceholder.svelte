@@ -13,36 +13,32 @@
   let items = $derived([...Array(itemNumber).keys()]);
 </script>
 
-<div
-  role="status"
-  {...restProps}
-  class={base({ class: clsx(className, (theme as ListPlaceholderTheme)?.base) })}
->
+<div role="status" {...restProps} class={base({ class: clsx(className, (theme as ListPlaceholderTheme)?.base) })}>
   {#each items as _, i}
     <div
       class={item({
-        class: clsx(i > 0 ? "pt-4" : "", (theme as ListPlaceholderTheme)?.item),
+        class: clsx(i > 0 ? "pt-4" : "", (theme as ListPlaceholderTheme)?.item)
       })}
     >
       <div
         class={itemContent({
-          class: clsx((theme as ListPlaceholderTheme)?.itemContent),
+          class: clsx((theme as ListPlaceholderTheme)?.itemContent)
         })}
       >
         <div
           class={itemTitle({
-            class: clsx((theme as ListPlaceholderTheme)?.itemTitle),
+            class: clsx((theme as ListPlaceholderTheme)?.itemTitle)
           })}
         ></div>
         <div
           class={itemSubtitle({
-            class: clsx((theme as ListPlaceholderTheme)?.itemSubtitle),
+            class: clsx((theme as ListPlaceholderTheme)?.itemSubtitle)
           })}
         ></div>
       </div>
       <div
         class={itemExtra({
-          class: clsx((theme as ListPlaceholderTheme)?.itemExtra),
+          class: clsx((theme as ListPlaceholderTheme)?.itemExtra)
         })}
       ></div>
     </div>

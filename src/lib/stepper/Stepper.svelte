@@ -12,28 +12,24 @@
   setContext("stepperType", "stepper");
 </script>
 
-<ol {...restProps} class={stepper.base({class:clsx((theme as StepperTheme)?.base, classes?.stepper)})}>
+<ol {...restProps} class={stepper.base({ class: clsx((theme as StepperTheme)?.base, classes?.stepper) })}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li
-        class={
-          stepper.item({
-            status: step.status,
-            isLast: index === steps.length - 1,
-            class:clsx((theme as StepperTheme)?.item, classes?.stepperitem)
-          })
-        }
+        class={stepper.item({
+          status: step.status,
+          isLast: index === steps.length - 1,
+          class: clsx((theme as StepperTheme)?.item, classes?.stepperitem)
+        })}
       >
         <span
-          class={
-            stepper.content({
-              status: step.status,
-              isLast: index === steps.length - 1,
-              class:clsx((theme as StepperTheme)?.content, classes?.steppercontent)
-            })
-          }
+          class={stepper.content({
+            status: step.status,
+            isLast: index === steps.length - 1,
+            class: clsx((theme as StepperTheme)?.content, classes?.steppercontent)
+          })}
         >
           {#if step.status === "completed"}
             {#if step.icon}

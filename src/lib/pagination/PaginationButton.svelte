@@ -13,14 +13,14 @@
   const table = getContext<boolean>("table");
 
   const paginationCls = $derived(
-      paginationButton({
-        size: getContext("size") ?? size,
-        active,
-        group,
-        table,
-        disabled,
-        class:clsx(theme, className)
-      })
+    paginationButton({
+      size: getContext("size") ?? size,
+      active,
+      group,
+      table,
+      disabled,
+      class: clsx(theme, className)
+    })
   );
 
   function handleClick(e: MouseEvent) {

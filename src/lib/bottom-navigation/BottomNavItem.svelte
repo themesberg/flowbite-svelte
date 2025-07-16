@@ -27,11 +27,11 @@
   let isActive = $derived(manualActive !== undefined ? !!manualActive : navUrl ? (href === "/" ? navUrl === "/" : href && (navUrl === href || navUrl.startsWith(href + "/") || (href !== "/" && navUrl.replace(/^https?:\/\/[^/]+/, "").startsWith(href)))) : false);
 
   function getCommonClass() {
-    return base({class: clsx(isActive && (activeClass ?? context.activeClass), (theme as BottomNavItemTheme)?.base, btnClass)});
+    return base({ class: clsx(isActive && (activeClass ?? context.activeClass), (theme as BottomNavItemTheme)?.base, btnClass) });
   }
 
   function getSpanClass() {
-    return span({class: clsx(isActive && (activeClass ?? context.activeClass), (theme as BottomNavItemTheme)?.span, spanClass)}) ;
+    return span({ class: clsx(isActive && (activeClass ?? context.activeClass), (theme as BottomNavItemTheme)?.span, spanClass) });
   }
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */

@@ -9,7 +9,7 @@
   const theme = getTheme("secondary");
 </script>
 
-<small {...restProps} class={secondary({ class: clsx(theme, className)})}>
+<small {...restProps} class={secondary({ class: clsx(theme, className) })}>
   {@render children()}
 </small>
 

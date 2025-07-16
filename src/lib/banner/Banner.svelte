@@ -14,15 +14,15 @@
 </script>
 
 {#if open}
-  <div tabindex="-1" class={base({ class: clsx((theme as BannerTheme)?.base, className)})} {...restProps} transition:transition={params as ParamsType}>
-    <div class={insideDiv({class: clsx((theme as BannerTheme)?.insideDiv, innerClass)})}>
+  <div tabindex="-1" class={base({ class: clsx((theme as BannerTheme)?.base, className) })} {...restProps} transition:transition={params as ParamsType}>
+    <div class={insideDiv({ class: clsx((theme as BannerTheme)?.insideDiv, innerClass) })}>
       {@render children?.()}
     </div>
 
     {#if dismissable}
       <div class="flex items-center justify-end">
         <CloseButton
-          class={dismissableClass({class: clsx((theme as BannerTheme)?.dismissable, closeClass)})}
+          class={dismissableClass({ class: clsx((theme as BannerTheme)?.dismissable, closeClass) })}
           {color}
           ariaLabel="Remove banner"
           onclick={() => {

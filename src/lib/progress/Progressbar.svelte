@@ -38,7 +38,7 @@
       {_progress.current.toFixed(precision)}%
     </div>
   {:else}
-    <div class={insideDiv({ class: clsx(size, (theme as ProgressbarTheme)?.insideDiv, classes?.labelInsideDiv)})} style="width: {_progress.current}%"></div>
+    <div class={insideDiv({ class: clsx(size, (theme as ProgressbarTheme)?.insideDiv, classes?.labelInsideDiv) })} style="width: {_progress.current}%"></div>
   {/if}
 </div>
 

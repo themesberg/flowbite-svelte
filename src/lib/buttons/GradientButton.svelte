@@ -15,13 +15,13 @@
 </script>
 
 {#if outline}
-  <div class={base({class:clsx((theme as GradientButtonTheme)?.base, className)})}>
-    <Button {...restProps} class={outlineWrapper({class:clsx((theme as GradientButtonTheme)?.outlineWrapper, btnClass)})} {disabled} {href} {size}>
+  <div class={base({ class: clsx((theme as GradientButtonTheme)?.base, className) })}>
+    <Button {...restProps} class={outlineWrapper({ class: clsx((theme as GradientButtonTheme)?.outlineWrapper, btnClass) })} {disabled} {href} {size}>
       {@render children?.()}
     </Button>
   </div>
 {:else}
-  <Button {...restProps} class={base({class:clsx((theme as GradientButtonTheme)?.base, className)})} {disabled} {href} {size}>
+  <Button {...restProps} class={base({ class: clsx((theme as GradientButtonTheme)?.base, className) })} {disabled} {href} {size}>
     {@render children?.()}
   </Button>
 {/if}

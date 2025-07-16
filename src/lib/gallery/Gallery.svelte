@@ -17,11 +17,11 @@
 
 {#snippet _figure(item: ImgType)}
   <div>
-    <img src={item.src} alt={item.alt} class={image({class:clsx( (theme as GalleryTheme)?.image, imgClass)})} {...restProps} />
+    <img src={item.src} alt={item.alt} class={image({ class: clsx((theme as GalleryTheme)?.image, imgClass) })} {...restProps} />
   </div>
 {/snippet}
 
-<div class={div({class:clsx((theme as GalleryTheme)?.div, className)})} use:init>
+<div class={div({ class: clsx((theme as GalleryTheme)?.div, className) })} use:init>
   {#each items as item}
     {#if figure}
       {@render figure(item as ImgType)}

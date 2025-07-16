@@ -11,14 +11,14 @@
   const theme = getTheme("alert");
 
   let divCls = $derived(
-      alert({
-        color,
-        rounded,
-        border,
-        icon: !!icon,
-        dismissable,
-        class: clsx(theme, className)
-      })
+    alert({
+      color,
+      rounded,
+      border,
+      icon: !!icon,
+      dismissable,
+      class: clsx(theme, className)
+    })
   );
 </script>
 

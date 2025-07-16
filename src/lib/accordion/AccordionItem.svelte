@@ -33,8 +33,8 @@
   let buttonClass = $derived(clsx(open && !ctx.flush && (activeClass || ctx.activeClass || active()), !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive())));
 </script>
 
-<h2 class={base({class: clsx((theme as AccordionItemTheme)?.base, headerClass)})}>
-  <button type="button" onclick={handleToggle} class={button({class: clsx(buttonClass, (theme as AccordionItemTheme)?.button, className)})} aria-expanded={open}>
+<h2 class={base({ class: clsx((theme as AccordionItemTheme)?.base, headerClass) })}>
+  <button type="button" onclick={handleToggle} class={button({ class: clsx(buttonClass, (theme as AccordionItemTheme)?.button, className) })} aria-expanded={open}>
     {#if header}
       {@render header()}
       {#if open}
@@ -66,7 +66,7 @@
   {/if}
 {:else}
   <div class={open ? "block" : "hidden"}>
-    <div class={content({ class: clsx(contentClass, (theme as AccordionItemTheme)?.content)})}>
+    <div class={content({ class: clsx(contentClass, (theme as AccordionItemTheme)?.content) })}>
       {@render children()}
     </div>
   </div>

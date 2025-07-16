@@ -43,8 +43,8 @@
   let { base, ul, active, nonActive } = $derived(navbarUl({ hidden }));
 
   $effect(() => {
-    navState.activeClass = active({class:clsx((theme as NavbarUlTheme)?.active, activeClass)});
-    navState.nonActiveClass = nonActive({class:clsx((theme as NavbarUlTheme)?.nonActive, nonActiveClass)});
+    navState.activeClass = active({ class: clsx((theme as NavbarUlTheme)?.active, activeClass) });
+    navState.nonActiveClass = nonActive({ class: clsx((theme as NavbarUlTheme)?.nonActive, nonActiveClass) });
   });
 
   $effect(() => {
@@ -52,8 +52,8 @@
   });
   setContext("activeUrl", activeUrlStore);
 
-  let divCls: string = $derived(base({class:clsx((theme as NavbarUlTheme)?.base, clasName)}));
-  let ulCls: string = $derived(ul({class:clsx((theme as NavbarUlTheme)?.ul, ulClass)}));
+  let divCls: string = $derived(base({ class: clsx((theme as NavbarUlTheme)?.base, clasName) }));
+  let ulCls: string = $derived(ul({ class: clsx((theme as NavbarUlTheme)?.ul, ulClass) }));
 </script>
 
 {#if !hidden}

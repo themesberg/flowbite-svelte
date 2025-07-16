@@ -29,8 +29,8 @@
   });
 </script>
 
-<button type="button" class={buttonToggle.button({ selected, color: actualColor, size, roundedSize, class:clsx((theme as ButtonToggleTheme)?.button, ctxBtnClass, className) }) } data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
-  <div class={buttonToggle.content({class:clsx((theme as ButtonToggleTheme)?.content, contentClass)})}>
+<button type="button" class={buttonToggle.button({ selected, color: actualColor, size, roundedSize, class: clsx((theme as ButtonToggleTheme)?.button, ctxBtnClass, className) })} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
+  <div class={buttonToggle.content({ class: clsx((theme as ButtonToggleTheme)?.content, contentClass) })}>
     {#if selected}
       {#if iconSlot}
         {@render iconSlot()}
@@ -38,7 +38,7 @@
         <CheckIcon class={clsx("absolute left-0 flex-shrink-0 text-green-600", actualIconClass)} />
       {/if}
     {/if}
-    <span class={buttonToggle.text({ selected, class:clsx((theme as ButtonToggleTheme)?.text, txtClass)})}>
+    <span class={buttonToggle.text({ selected, class: clsx((theme as ButtonToggleTheme)?.text, txtClass) })}>
       {@render children()}
     </span>
   </div>

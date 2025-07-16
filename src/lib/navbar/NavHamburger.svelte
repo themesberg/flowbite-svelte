@@ -20,8 +20,8 @@
   };
 </script>
 
-<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={base({class:clsx((theme as NavbarHamburgerTheme)?.base, className)})}>
-  <Menu class={menu({class:clsx((theme as NavbarHamburgerTheme)?.menu, menuClass)})} />
+<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={base({ class: clsx((theme as NavbarHamburgerTheme)?.base, className) })}>
+  <Menu class={menu({ class: clsx((theme as NavbarHamburgerTheme)?.menu, menuClass) })} />
 </ToolbarButton>
 
 <!--

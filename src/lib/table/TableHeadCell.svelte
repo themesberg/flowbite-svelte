@@ -9,7 +9,7 @@
   const theme = getTheme("tableHeadCell");
 </script>
 
-<th {...restProps} class={tableHeadCell({class:clsx(theme, className)})}>
+<th {...restProps} class={tableHeadCell({ class: clsx(theme, className) })}>
   {#if children}
     {@render children()}
   {/if}

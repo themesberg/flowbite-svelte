@@ -11,40 +11,30 @@
   const { wrapper, line } = $derived(skeleton({ size }));
 </script>
 
-<div
-  role="status"
-  {...restProps}
-  class={wrapper({ class: clsx(className, (theme as SkeletonTheme)?.wrapper) })}
->
+<div role="status" {...restProps} class={wrapper({ class: clsx(className, (theme as SkeletonTheme)?.wrapper) })}>
   <div
     class={line({
-      class: clsx("mb-4 h-2.5 w-1/2", (theme as SkeletonTheme)?.line),
+      class: clsx("mb-4 h-2.5 w-1/2", (theme as SkeletonTheme)?.line)
     })}
   ></div>
   <div
     class={line({
-      class: clsx("mb-2.5 h-2 w-9/12", (theme as SkeletonTheme)?.line),
+      class: clsx("mb-2.5 h-2 w-9/12", (theme as SkeletonTheme)?.line)
     })}
   ></div>
-  <div
-    class={line({ class: clsx("mb-2.5 h-2", (theme as SkeletonTheme)?.line) })}
-  ></div>
-  <div
-    class={line({ class: clsx("mb-2.5 h-2", (theme as SkeletonTheme)?.line) })}
-  ></div>
+  <div class={line({ class: clsx("mb-2.5 h-2", (theme as SkeletonTheme)?.line) })}></div>
+  <div class={line({ class: clsx("mb-2.5 h-2", (theme as SkeletonTheme)?.line) })}></div>
   <div
     class={line({
-      class: clsx("mb-2.5 h-2 w-10/12", (theme as SkeletonTheme)?.line),
+      class: clsx("mb-2.5 h-2 w-10/12", (theme as SkeletonTheme)?.line)
     })}
   ></div>
   <div
     class={line({
-      class: clsx("mb-2.5 h-2 w-11/12", (theme as SkeletonTheme)?.line),
+      class: clsx("mb-2.5 h-2 w-11/12", (theme as SkeletonTheme)?.line)
     })}
   ></div>
-  <div
-    class={line({ class: clsx("h-2 w-9/12", (theme as SkeletonTheme)?.line) })}
-  ></div>
+  <div class={line({ class: clsx("h-2 w-9/12", (theme as SkeletonTheme)?.line) })}></div>
   <span class="sr-only">Loading...</span>
 </div>
 

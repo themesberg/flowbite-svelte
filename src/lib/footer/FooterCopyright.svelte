@@ -13,14 +13,14 @@
   const { base, link, bySpan } = footerCopyright();
 </script>
 
-<span class={base({class:clsx((theme as FooterCopyrightTheme)?.base, spanClass)})}>
+<span class={base({ class: clsx((theme as FooterCopyrightTheme)?.base, spanClass) })}>
   &copy; {year}
   {#if href}
-    <a {...restProps} {href} class={link({class:clsx((theme as FooterCopyrightTheme)?.link, aClass)})}>
+    <a {...restProps} {href} class={link({ class: clsx((theme as FooterCopyrightTheme)?.link, aClass) })}>
       {by}
     </a>
   {:else}
-    <span class={bySpan({class:clsx((theme as FooterCopyrightTheme)?.bySpan, bySpanClass)})}>{by}</span>
+    <span class={bySpan({ class: clsx((theme as FooterCopyrightTheme)?.bySpan, bySpanClass) })}>{by}</span>
   {/if}
   {copyrightMessage}
 </span>

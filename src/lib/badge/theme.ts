@@ -1,6 +1,6 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
- 
+
 type BadgeVariants = VariantProps<typeof badge>;
 
 const badge = tv({

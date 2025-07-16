@@ -33,8 +33,8 @@
   const { base, button, content } = $derived(tabItem({ open, disabled }));
 </script>
 
-<li {...restProps} class={base({class:clsx((theme as TabItemTheme)?.base, className)})} role="presentation">
-  <button type="button" onclick={() => (open = true)} role="tab" id={tabId} aria-controls={ctx.panelId} aria-selected={open} {disabled} class={button({class:clsx( open ? (activeClass ?? active()) : (inactiveClass ?? inactive()), (theme as TabItemTheme)?.button)}) }>
+<li {...restProps} class={base({ class: clsx((theme as TabItemTheme)?.base, className) })} role="presentation">
+  <button type="button" onclick={() => (open = true)} role="tab" id={tabId} aria-controls={ctx.panelId} aria-selected={open} {disabled} class={button({ class: clsx(open ? (activeClass ?? active()) : (inactiveClass ?? inactive()), (theme as TabItemTheme)?.button) })}>
     {#if titleSlot}
       {@render titleSlot()}
     {:else}
@@ -43,7 +43,7 @@
   </button>
 
   {#if open && children}
-    <div class={content({class:clsx((theme as TabItemTheme)?.content)})}>
+    <div class={content({ class: clsx((theme as TabItemTheme)?.content) })}>
       <div use:init>
         {@render children()}
       </div>

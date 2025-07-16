@@ -19,9 +19,9 @@
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} transition:transition={params as ParamsType} class={base({class: clsx((theme as BadgeTheme)?.base, className)})}>
+  <div {...restProps} transition:transition={params as ParamsType} class={base({ class: clsx((theme as BadgeTheme)?.base, className) })}>
     {#if href}
-      <a {href} {target} class={linkClass({class: clsx((theme as BadgeTheme)?.linkClass, aClass)})}>
+      <a {href} {target} class={linkClass({ class: clsx((theme as BadgeTheme)?.linkClass, aClass) })}>
         {@render children()}
       </a>
     {:else}

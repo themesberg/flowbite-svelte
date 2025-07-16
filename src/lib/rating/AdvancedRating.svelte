@@ -18,12 +18,12 @@
   {@render globalText()}
 {/if}
 {#each ratings as { label, rating }}
-  <div class={base({class:clsx((theme as AdvancedRatingTheme)?.base, divClass)})}>
-    <span class={span({class:clsx((theme as AdvancedRatingTheme)?.span, spanClass)})}>{label}</span>
-    <div class={div2({class:clsx( (theme as AdvancedRatingTheme)?.div2, div2Class)})}>
-      <div class={div3({class:clsx( (theme as AdvancedRatingTheme)?.div3, div3Class)})} style="width: {rating}%"></div>
+  <div class={base({ class: clsx((theme as AdvancedRatingTheme)?.base, divClass) })}>
+    <span class={span({ class: clsx((theme as AdvancedRatingTheme)?.span, spanClass) })}>{label}</span>
+    <div class={div2({ class: clsx((theme as AdvancedRatingTheme)?.div2, div2Class) })}>
+      <div class={div3({ class: clsx((theme as AdvancedRatingTheme)?.div3, div3Class) })} style="width: {rating}%"></div>
     </div>
-    <span class={span2({class:clsx((theme as AdvancedRatingTheme)?.span2, span2Class)})}>{rating}{unit}</span>
+    <span class={span2({ class: clsx((theme as AdvancedRatingTheme)?.span2, span2Class) })}>{rating}{unit}</span>
   </div>
 {/each}
 

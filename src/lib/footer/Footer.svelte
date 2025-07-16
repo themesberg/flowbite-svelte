@@ -8,7 +8,7 @@
 
   const theme = getTheme("footer");
 
-  const footerCls = $derived(footer({ footerType, class:clsx(theme, className) }));
+  const footerCls = $derived(footer({ footerType, class: clsx(theme, className) }));
 </script>
 
 <footer {...restProps} class={footerCls}>

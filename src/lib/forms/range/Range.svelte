@@ -1,6 +1,6 @@
 <script lang="ts">
   import { range } from "./";
-  import clsx from 'clsx';
+  import clsx from "clsx";
   import { type RangeProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -8,7 +8,7 @@
 
   const theme = getTheme("range");
 
-  const inputCls = $derived(range({ appearance, color, size, class:clsx(theme, inputClass)}));
+  const inputCls = $derived(range({ appearance, color, size, class: clsx(theme, inputClass) }));
 </script>
 
 <input type="range" bind:value {...restProps} class={inputCls} />

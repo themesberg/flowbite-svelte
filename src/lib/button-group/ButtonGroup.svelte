@@ -9,7 +9,7 @@
 
   const theme = getTheme("buttonGroup");
 
-  let groupClass = $derived(buttonGroup({ size, class:clsx(theme, className) }));
+  let groupClass = $derived(buttonGroup({ size, class: clsx(theme, className) }));
   setContext("group", size);
   setContext("disabled", disabled);
 </script>

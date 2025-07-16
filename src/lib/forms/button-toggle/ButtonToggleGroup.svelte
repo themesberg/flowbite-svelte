@@ -8,7 +8,7 @@
 
   const theme = getTheme("buttonToggleGroup");
 
-  const base = $derived(buttonToggleGroup({ roundedSize, class:clsx(theme, className) }));
+  const base = $derived(buttonToggleGroup({ roundedSize, class: clsx(theme, className) }));
   type SelectedValue = string | null | string[];
 
   let selectedValues = $state<SelectedValue>(multiSelect ? [] : null);

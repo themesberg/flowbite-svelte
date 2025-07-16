@@ -9,7 +9,7 @@
   const theme = getTheme("tableBodyCell");
 </script>
 
-<td {...restProps} class={tableBodyCell({class:clsx(theme, className)})} colspan={colspan ?? 1}>
+<td {...restProps} class={tableBodyCell({ class: clsx(theme, className) })} colspan={colspan ?? 1}>
   {#if onclick}
     <button {onclick}>
       {#if children}

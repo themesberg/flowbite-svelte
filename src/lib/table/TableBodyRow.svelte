@@ -16,7 +16,7 @@
   let compoStriped = $derived(striped || tableCtx.striped || false);
   let compoBorder = $derived(border || tableCtx.border || false);
 
-  const base = $derived(tableBodyRow({ color: compoColor, hoverable: compoHoverable, striped: compoStriped, border: compoBorder, class:clsx(theme, className) }));
+  const base = $derived(tableBodyRow({ color: compoColor, hoverable: compoHoverable, striped: compoStriped, border: compoBorder, class: clsx(theme, className) }));
 </script>
 
 <tr {...restProps} class={base}>

@@ -11,7 +11,7 @@
   const { base, wrapper, vLine, hLine } = widgetPlaceholder({});
 </script>
 
-<div role="status" class={base({class:clsx( (theme as WidgetPlaceholderTheme)?.base, className)})}>
+<div role="status" class={base({ class: clsx((theme as WidgetPlaceholderTheme)?.base, className) })}>
   <div class={hLine({ class: "mb-2.5 h-2.5 w-32" })}></div>
   <div class={hLine({ class: "mb-10 h-2 w-48" })}></div>
   <div class={wrapper()}>

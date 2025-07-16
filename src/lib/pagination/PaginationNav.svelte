@@ -58,17 +58,17 @@
 
 <nav aria-label={ariaLabel} {...restProps}>
   {#if layout === "table"}
-    <div class={tableDiv({class:clsx((theme as PaginationNavTheme)?.tableDiv, tableDivClass)})}>
-      Showing <span class={tableSpan({class:clsx((theme as PaginationNavTheme)?.tableSpan, spanClass)})}>{currentPage}</span>
+    <div class={tableDiv({ class: clsx((theme as PaginationNavTheme)?.tableDiv, tableDivClass) })}>
+      Showing <span class={tableSpan({ class: clsx((theme as PaginationNavTheme)?.tableSpan, spanClass) })}>{currentPage}</span>
       of
-      <span class={tableSpan({class:clsx((theme as PaginationNavTheme)?.tableSpan, spanClass)})}>{totalPages}</span>
+      <span class={tableSpan({ class: clsx((theme as PaginationNavTheme)?.tableSpan, spanClass) })}>{totalPages}</span>
       Entries
     </div>
   {/if}
 
-  <ul class={base({class: clsx((theme as PaginationNavTheme)?.base, className)})}>
+  <ul class={base({ class: clsx((theme as PaginationNavTheme)?.base, className) })}>
     <li {...restProps}>
-      <PaginationButton onclick={goToPreviousPage} disabled={currentPage === 1} class={prevItem({class:clsx((theme as PaginationNavTheme)?.prevItem, prevClass)})}>
+      <PaginationButton onclick={goToPreviousPage} disabled={currentPage === 1} class={prevItem({ class: clsx((theme as PaginationNavTheme)?.prevItem, prevClass) })}>
         {#if prevContent}
           {@render prevContent()}
         {:else}
@@ -86,7 +86,7 @@
       {/each}
     {/if}
     <li {...restProps}>
-      <PaginationButton onclick={goToNextPage} disabled={currentPage === totalPages} class={nextItem({class:clsx((theme as PaginationNavTheme)?.nextItem, nextClass)})}>
+      <PaginationButton onclick={goToNextPage} disabled={currentPage === totalPages} class={nextItem({ class: clsx((theme as PaginationNavTheme)?.nextItem, nextClass) })}>
         {#if nextContent}
           {@render nextContent()}
         {:else}

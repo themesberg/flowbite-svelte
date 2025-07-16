@@ -13,14 +13,14 @@
 
 {#snippet imageSlot()}
   {#if caption}
-    <figure class={figure({ class: clsx((theme as ImgTheme)?.figure, figClass )})}>
-      <img {...restProps} class={base({ class: clsx( (theme as ImgTheme)?.base, imgClass) })} />
-      <figcaption class={figureCaption({ class: clsx((theme as ImgTheme)?.figureCaption, captionClass)})}>
+    <figure class={figure({ class: clsx((theme as ImgTheme)?.figure, figClass) })}>
+      <img {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, imgClass) })} />
+      <figcaption class={figureCaption({ class: clsx((theme as ImgTheme)?.figureCaption, captionClass) })}>
         {@html caption}
       </figcaption>
     </figure>
   {:else}
-    <img {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, imgClass)})} />
+    <img {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, imgClass) })} />
   {/if}
 {/snippet}
 

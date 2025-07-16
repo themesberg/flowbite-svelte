@@ -1,6 +1,6 @@
 <script lang="ts">
   import { label } from ".";
-  import clsx from 'clsx';
+  import clsx from "clsx";
   import { type LabelProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -8,7 +8,7 @@
 
   const theme = getTheme("label");
 
-  let base = $derived(label({ color, class:clsx(theme, className)}));
+  let base = $derived(label({ color, class: clsx(theme, className) }));
 </script>
 
 {#if show}

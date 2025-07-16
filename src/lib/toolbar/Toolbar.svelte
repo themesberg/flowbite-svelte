@@ -29,7 +29,7 @@
 </script>
 
 <div {...restProps} class={base({ class: clsx((theme as ToolbarTheme)?.base, className) })}>
-  <div class={content({class:clsx( (theme as ToolbarTheme)?.content)})}>
+  <div class={content({ class: clsx((theme as ToolbarTheme)?.content) })}>
     {@render children?.()}
   </div>
   {#if end}

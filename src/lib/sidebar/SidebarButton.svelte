@@ -8,7 +8,7 @@
 
   const theme = getTheme("sidebarButton");
 
-  const base = $derived(sidebarButton({ breakpoint, class:clsx(theme, className) }));
+  const base = $derived(sidebarButton({ breakpoint, class: clsx(theme, className) }));
 </script>
 
 <button {...restProps} type="button" class={base}>

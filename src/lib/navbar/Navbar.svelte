@@ -34,7 +34,7 @@
 <svelte:document onclick={handleDocumentClick} />
 
 <nav bind:this={navbarElement}>
-  <div {...restProps} class={navbar({ class:clsx(theme, className)})}>
+  <div {...restProps} class={navbar({ class: clsx(theme, className) })}>
     <NavContainer {fluid} class={clsx(navContainerClass)}>
       {@render children({ hidden: navState.hidden, toggle, NavContainer })}
     </NavContainer>

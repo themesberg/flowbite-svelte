@@ -13,10 +13,10 @@
   const theme = getTheme("speedDialButton");
 
   let { base, span } = $derived(speedDialButton({ textOutside, tooltip: tooltip == "none" }));
-  let spanClass = $derived(tooltip === "none" ? span({class:clsx((theme as SpeedDialButtonTheme)?.span, textClass)}) : "sr-only");
+  let spanClass = $derived(tooltip === "none" ? span({ class: clsx((theme as SpeedDialButtonTheme)?.span, textClass) }) : "sr-only");
 </script>
 
-<Button {pill} {color} {...restProps} class={base({class:clsx((theme as SpeedDialButtonTheme)?.base, className)})}>
+<Button {pill} {color} {...restProps} class={base({ class: clsx((theme as SpeedDialButtonTheme)?.base, className) })}>
   {@render children?.()}
   <span class={spanClass}>{name}</span>
 </Button>

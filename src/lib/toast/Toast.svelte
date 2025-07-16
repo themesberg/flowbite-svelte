@@ -20,19 +20,19 @@
 </script>
 
 {#if toastStatus}
-  <div role="alert" transition:transition={params as ParamsType} {...restProps} class={base({ class: clsx((theme as ToastTheme)?.base, className)})}>
+  <div role="alert" transition:transition={params as ParamsType} {...restProps} class={base({ class: clsx((theme as ToastTheme)?.base, className) })}>
     {#if icon}
-      <div class={iconVariants({ class: clsx((theme as ToastTheme)?.icon,iconClass)})}>
+      <div class={iconVariants({ class: clsx((theme as ToastTheme)?.icon, iconClass) })}>
         {@render icon()}
       </div>
     {/if}
 
-    <div class={content({ class: clsx((theme as ToastTheme)?.content,contentClass)})}>
+    <div class={content({ class: clsx((theme as ToastTheme)?.content, contentClass) })}>
       {@render children()}
     </div>
 
     {#if dismissable}
-      <CloseButton class={close({class:clsx((theme as ToastTheme)?.close)})} ariaLabel="Remove toast" {color} onclick={handleClose} />
+      <CloseButton class={close({ class: clsx((theme as ToastTheme)?.close) })} ariaLabel="Remove toast" {color} onclick={handleClose} />
     {/if}
   </div>
 {/if}

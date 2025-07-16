@@ -38,9 +38,9 @@
 
 <div class="flex flex-col items-center">
   {#if labelOutside}
-    <div class={outsideDiv({ class: clsx( (theme as ProgressradialTheme)?.outsideDiv, classes?.outsideDiv) })}>
-      <span class={outsideSpan({ class: clsx((theme as ProgressradialTheme)?.outsideSpan, classes?.outsideSpan)})}>{labelOutside}</span>
-      <span class={outsideProgress({ class: clsx((theme as ProgressradialTheme)?.outsideProgress, classes?.outsideProgress)})}>{formattedProgress}%</span>
+    <div class={outsideDiv({ class: clsx((theme as ProgressradialTheme)?.outsideDiv, classes?.outsideDiv) })}>
+      <span class={outsideSpan({ class: clsx((theme as ProgressradialTheme)?.outsideSpan, classes?.outsideSpan) })}>{labelOutside}</span>
+      <span class={outsideProgress({ class: clsx((theme as ProgressradialTheme)?.outsideProgress, classes?.outsideProgress) })}>{formattedProgress}%</span>
     </div>
   {/if}
 
@@ -54,7 +54,7 @@
     </svg>
 
     {#if labelInside}
-      <div class={labelInsideDiv({ class: clsx((theme as ProgressradialTheme)?.labelInsideDiv, classes?.labelInsideDiv)})}>
+      <div class={labelInsideDiv({ class: clsx((theme as ProgressradialTheme)?.labelInsideDiv, classes?.labelInsideDiv) })}>
         {formattedProgress}%
       </div>
     {/if}

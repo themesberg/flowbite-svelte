@@ -8,7 +8,7 @@
 
   const theme = getTheme("videoPlaceholder");
 
-  const base = $derived(videoPlaceholder({ size, class:clsx(theme, className)}));
+  const base = $derived(videoPlaceholder({ size, class: clsx(theme, className) }));
 </script>
 
 <div role="status" class={base}>

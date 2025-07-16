@@ -34,7 +34,7 @@
   </script>
 </svelte:head>
 
-<button onclick={toggleTheme} aria-label={ariaLabel} type="button" {...restProps} class={darkmode({class:clsx(theme, className)})} tabindex={0}>
+<button onclick={toggleTheme} aria-label={ariaLabel} type="button" {...restProps} class={darkmode({ class: clsx(theme, className) })} tabindex={0}>
   <span class="hidden dark:block">
     {#if lightIcon}
       {@render lightIcon()}

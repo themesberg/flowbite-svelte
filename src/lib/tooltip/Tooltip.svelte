@@ -21,7 +21,7 @@
   }
 </script>
 
-<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={base({ class: clsx( (theme as TooltipTheme)?.base, className) })} {onbeforetoggle}>
+<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={base({ class: clsx((theme as TooltipTheme)?.base, className) })} {onbeforetoggle}>
   <div class="pointer-events-none">{@render children()}</div>
 </Popper>
 

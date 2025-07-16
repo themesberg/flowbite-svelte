@@ -1,6 +1,6 @@
 <script lang="ts">
   import Button from "$lib/buttons/Button.svelte";
-  import clsx from 'clsx';
+  import clsx from "clsx";
   import { type CheckboxButtonProps } from "$lib";
   import { checkboxbutton } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
@@ -46,7 +46,7 @@
     }
   }
 
-  let buttonClass: string = $derived(checkboxbutton({ inline, checked, class:clsx(theme,className)}));
+  let buttonClass: string = $derived(checkboxbutton({ inline, checked, class: clsx(theme, className) }));
 </script>
 
 <Button tag="label" {checked} {pill} {outline} {size} {color} {shadow} class={buttonClass}>

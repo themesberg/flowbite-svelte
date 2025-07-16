@@ -32,8 +32,8 @@
   let bodyItems = $derived(items && items.length > 0 ? items.map((item) => Object.values(item)) : []);
 </script>
 
-<div class={base({class:clsx( (theme as TableTheme)?.base, divClass)})}>
-  <table {...restProps} class={table({class:clsx((theme as TableTheme)?.table, className)})}>
+<div class={base({ class: clsx((theme as TableTheme)?.base, divClass) })}>
+  <table {...restProps} class={table({ class: clsx((theme as TableTheme)?.table, className) })}>
     {#if captionSlot}
       {@render captionSlot()}
     {/if}

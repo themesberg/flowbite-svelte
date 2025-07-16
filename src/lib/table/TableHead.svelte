@@ -15,7 +15,7 @@
   let compoStriped = $derived(striped ? striped : tableCtx.striped || false);
   let compoBorder = $derived(border ? border : tableCtx.border || false);
 
-  const base = $derived(tableHead({ color: compoColor, border: compoBorder, striped: compoStriped, class:clsx(theme, className) }));
+  const base = $derived(tableHead({ color: compoColor, border: compoBorder, striped: compoStriped, class: clsx(theme, className) }));
 
   function getItemText(item: HeadItemType): string {
     if (typeof item === "object" && "text" in item) {

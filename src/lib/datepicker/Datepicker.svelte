@@ -274,8 +274,8 @@
 <div bind:this={datepickerContainerElement} class={["relative", inline && "inline-block"]}>
   {#if !inline}
     <div class="relative">
-      <input bind:this={inputElement} type="text" class={input({ color, class:clsx((theme as DatepickerTheme)?.input, inputClass) })} {placeholder} value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)} onfocus={() => (isOpen = true)} oninput={handleInputChangeWithDateFns} onkeydown={handleInputKeydown} {disabled} {required} {inputmode} aria-haspopup="dialog" />
-      <button type="button" class={button({ class: clsx(btnClass, (theme as DatepickerTheme)?.button, classes?.button)})} onclick={() => (isOpen = !isOpen)} {disabled} aria-label={isOpen ? "Close date picker" : "Open date picker"}>
+      <input bind:this={inputElement} type="text" class={input({ color, class: clsx((theme as DatepickerTheme)?.input, inputClass) })} {placeholder} value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)} onfocus={() => (isOpen = true)} oninput={handleInputChangeWithDateFns} onkeydown={handleInputKeydown} {disabled} {required} {inputmode} aria-haspopup="dialog" />
+      <button type="button" class={button({ class: clsx(btnClass, (theme as DatepickerTheme)?.button, classes?.button) })} onclick={() => (isOpen = !isOpen)} {disabled} aria-label={isOpen ? "Close date picker" : "Open date picker"}>
         <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
           <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"></path>
         </svg>
@@ -284,9 +284,9 @@
   {/if}
 
   {#if isOpen || inline}
-    <div bind:this={calendarRef} id="datepicker-dropdown" class={base({ inline, class: clsx((theme as DatepickerTheme)?.base, classes?.base, className)})} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
+    <div bind:this={calendarRef} id="datepicker-dropdown" class={base({ inline, class: clsx((theme as DatepickerTheme)?.base, classes?.base, className) })} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
       {#if title}
-        <h2 class={titleVariant({ class: clsx((theme as DatepickerTheme)?.titleVariant, classes?.titleVariant)})}>{title}</h2>
+        <h2 class={titleVariant({ class: clsx((theme as DatepickerTheme)?.titleVariant, classes?.titleVariant) })}>{title}</h2>
       {/if}
 
       {#if showMonthSelector}
@@ -300,14 +300,14 @@
         </div>
         <div class="grid grid-cols-4 gap-2 p-4">
           {#each monthNames as month, index}
-            <Button type="button" color={monthColor} class={monthButton({
-    class: clsx(
-      currentMonth.getMonth() === index ? monthBtnSelected : monthBtn,
-      classes?.monthButton,
-      (theme as DatepickerTheme)?.monthButton
-    )
-  })}
-  onclick={(event: MouseEvent) => selectMonth(index, event)}>
+            <Button
+              type="button"
+              color={monthColor}
+              class={monthButton({
+                class: clsx(currentMonth.getMonth() === index ? monthBtnSelected : monthBtn, classes?.monthButton, (theme as DatepickerTheme)?.monthButton)
+              })}
+              onclick={(event: MouseEvent) => selectMonth(index, event)}
+            >
               {month}
             </Button>
           {/each}
@@ -317,14 +317,14 @@
         <div class={nav({ class: clsx(classes?.nav) })}>
           {@render navButton(false)}
           <!-- MODIFIED: Use translationLocale for month/year display -->
-          <Button type="button" class={polite({ class: clsx( "cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700", classes?.polite) })} aria-live="polite" onclick={(event: MouseEvent) => toggleMonthSelector(event)}>
+          <Button type="button" class={polite({ class: clsx("cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700", classes?.polite) })} aria-live="polite" onclick={(event: MouseEvent) => toggleMonthSelector(event)}>
             {currentMonth.toLocaleString(translationLocale, { month: "long", year: "numeric" })}
           </Button>
           {@render navButton(true)}
         </div>
         <div class={grid({ class: clsx((theme as DatepickerTheme)?.grid, classes?.grid) })} role="grid">
           {#each weekdays as day}
-            <div class={columnHeader({ class: clsx((theme as DatepickerTheme)?.columnHeader, classes?.columnHeader)})} role="columnheader">{day}</div>
+            <div class={columnHeader({ class: clsx((theme as DatepickerTheme)?.columnHeader, classes?.columnHeader) })} role="columnheader">{day}</div>
           {/each}
           {#each daysInMonth as day}
             {@const current = day.getMonth() !== currentMonth.getMonth()}
@@ -332,15 +332,13 @@
             <Button
               type="button"
               color={isSelected(day) ? color : "alternative"}
-              class={
-                dayButton({
-                  current,
-                  today: isToday(day),
-                  color: isInRange(day) ? color : undefined,
-                  unavailable: !available,
-                  class: clsx((theme as DatepickerTheme)?.dayButton, classes?.dayButton, !available && "cursor-not-allowed opacity-50")
-                })
-              }
+              class={dayButton({
+                current,
+                today: isToday(day),
+                color: isInRange(day) ? color : undefined,
+                unavailable: !available,
+                class: clsx((theme as DatepickerTheme)?.dayButton, classes?.dayButton, !available && "cursor-not-allowed opacity-50")
+              })}
               onclick={() => handleDaySelect(day)}
               onkeydown={handleCalendarKeydown}
               aria-label={day.toLocaleDateString(translationLocale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}

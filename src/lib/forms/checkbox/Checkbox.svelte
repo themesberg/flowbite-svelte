@@ -1,6 +1,6 @@
 <script lang="ts">
   import { checkbox, type CheckboxTheme } from ".";
-  import clsx from 'clsx';
+  import clsx from "clsx";
   import { type CheckboxProps, type CheckboxItem, Label } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -24,17 +24,17 @@
 
 {#if choices.length > 0}
   {#each choices as choice, i}
-    <div class={divStyle({class:clsx((theme as CheckboxTheme)?.div, divClass)})}>
+    <div class={divStyle({ class: clsx((theme as CheckboxTheme)?.div, divClass) })}>
       <Label show={true} {...labelProps}>
-        <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} class={base({class:clsx( (theme as CheckboxTheme)?.base, className)})} />
+        <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} class={base({ class: clsx((theme as CheckboxTheme)?.base, className) })} />
         {renderLabel(choice)}
       </Label>
     </div>
   {/each}
 {:else}
-  <div class={divStyle({class:clsx((theme as CheckboxTheme)?.div, divClass)})}>
+  <div class={divStyle({ class: clsx((theme as CheckboxTheme)?.div, divClass) })}>
     <Label show={true} {...labelProps}>
-      <input type="checkbox" {value} bind:checked {indeterminate} {disabled} {...restProps} class={base({class:clsx((theme as CheckboxTheme)?.base,className)})} />
+      <input type="checkbox" {value} bind:checked {indeterminate} {disabled} {...restProps} class={base({ class: clsx((theme as CheckboxTheme)?.base, className) })} />
       {#if children}
         {@render children({ value, checked, disabled })}
       {/if}

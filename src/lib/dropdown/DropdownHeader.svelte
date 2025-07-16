@@ -9,7 +9,7 @@
   const theme = getTheme("dropdownHeader");
 </script>
 
-<div {...restProps} class={dropdownHeader({class:clsx(theme, className)})}>
+<div {...restProps} class={dropdownHeader({ class: clsx(theme, className) })}>
   {@render children()}
 </div>
 

@@ -12,14 +12,14 @@
 </script>
 
 {#if children}
-  <div {...restProps} class={container({ class: clsx((theme as HrTheme)?.container, divClass)})}>
-    <hr class={base({ class: clsx( (theme as HrTheme)?.base, className) })} />
-    <div class={content({ class: clsx((theme as HrTheme)?.content, innerDivClass)})}>
+  <div {...restProps} class={container({ class: clsx((theme as HrTheme)?.container, divClass) })}>
+    <hr class={base({ class: clsx((theme as HrTheme)?.base, className) })} />
+    <div class={content({ class: clsx((theme as HrTheme)?.content, innerDivClass) })}>
       {@render children()}
     </div>
   </div>
 {:else}
-  <hr class={base({ class: clsx((theme as HrTheme)?.base, className)})} {...restProps} />
+  <hr class={base({ class: clsx((theme as HrTheme)?.base, className) })} {...restProps} />
 {/if}
 
 <!--

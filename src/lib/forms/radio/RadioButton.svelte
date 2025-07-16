@@ -1,5 +1,5 @@
 <script lang="ts" generics="T">
-  import clsx from 'clsx';
+  import clsx from "clsx";
   import { Button, type RadioButtonProps } from "$lib";
   import { radiobutton } from ".";
   import { getTheme } from "$lib/theme/themeUtils";
@@ -10,7 +10,7 @@
 
   let inputEl: HTMLInputElement;
   let isChecked = $derived(value == group);
-  let base = $derived(radiobutton({ inline, class:clsx(isChecked && checkedClass, theme, className)}));
+  let base = $derived(radiobutton({ inline, class: clsx(isChecked && checkedClass, theme, className) }));
 
   function clickHandler() {
     inputEl?.click(); // manually trigger the click on the hidden input

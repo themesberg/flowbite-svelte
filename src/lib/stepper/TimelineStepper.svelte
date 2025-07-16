@@ -12,13 +12,13 @@
   setContext("stepperType", "timeline");
 </script>
 
-<ol class={timelineStepper.base({class:clsx((theme as TimelineStepperTheme)?.base, classes?.timelinestepper)})} {...restProps}>
+<ol class={timelineStepper.base({ class: clsx((theme as TimelineStepperTheme)?.base, classes?.timelinestepper) })} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
-      <li class={timelineStepper.item({ isLast: index === steps.length - 1 , class: clsx((theme as TimelineStepperTheme)?.item, classes?.timelinestepperitem)}) }>
-        <span class={timelineStepper.circle({ status: step.status, class:clsx((theme as TimelineStepperTheme)?.circle, classes?.timelinesteppercircle) })}>
+      <li class={timelineStepper.item({ isLast: index === steps.length - 1, class: clsx((theme as TimelineStepperTheme)?.item, classes?.timelinestepperitem) })}>
+        <span class={timelineStepper.circle({ status: step.status, class: clsx((theme as TimelineStepperTheme)?.circle, classes?.timelinesteppercircle) })}>
           {#if step.status === "completed"}
             {#if step.icon}
               <step.icon class={clsx(step.iconClass) || "h-3.5 w-3.5"} />

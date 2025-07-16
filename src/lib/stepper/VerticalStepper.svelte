@@ -12,14 +12,14 @@
   setContext("stepperType", "vertical");
 </script>
 
-<ol class={verticalStepper.stepper({class:(theme as VerticalStepperTheme)?.stepper})} {...restProps}>
+<ol class={verticalStepper.stepper({ class: (theme as VerticalStepperTheme)?.stepper })} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li class={clsx(liClass)}>
         <div class={verticalStepper.card({ status: step.status, class: clsx((theme as VerticalStepperTheme)?.card, classes?.verticalsteppercard) })} role="alert">
-          <div class={verticalStepper.content({class:clsx((theme as VerticalStepperTheme)?.content, classes?.verticalsteppercontent)})}>
+          <div class={verticalStepper.content({ class: clsx((theme as VerticalStepperTheme)?.content, classes?.verticalsteppercontent) })}>
             <span class="sr-only">{step.label}</span>
             <h3 class="font-medium">{step.id}. {step.label}</h3>
             {#if step.status === "completed"}

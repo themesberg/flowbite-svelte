@@ -12,19 +12,19 @@
 </script>
 
 {#if href}
-  <a {...restProps} {href} class={base({class:clsx((theme as FooterBrandTheme)?.base, aClass)})}>
+  <a {...restProps} {href} class={base({ class: clsx((theme as FooterBrandTheme)?.base, aClass) })}>
     {#if src}
-      <img {src} class={img({class:clsx((theme as FooterBrandTheme)?.img, imgClass)})} {alt} />
+      <img {src} class={img({ class: clsx((theme as FooterBrandTheme)?.img, imgClass) })} {alt} />
     {/if}
     {#if name}
-      <span class={span({class:clsx((theme as FooterBrandTheme)?.span, spanClass)})}>{name}</span>
+      <span class={span({ class: clsx((theme as FooterBrandTheme)?.span, spanClass) })}>{name}</span>
     {/if}
     {#if children}
       {@render children()}
     {/if}
   </a>
 {:else}
-  <img {src} class={img({class:clsx(imgClass)})} {alt} />
+  <img {src} class={img({ class: clsx(imgClass) })} {alt} />
 {/if}
 
 <!--

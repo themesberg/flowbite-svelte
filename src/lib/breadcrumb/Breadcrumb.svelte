@@ -9,8 +9,8 @@
   const theme = getTheme("breadcrumb");
 
   const { nav, list } = breadcrumb({ solid });
-  let classNav = $derived(nav({class:clsx( (theme as BreadcrumbTheme)?.nav, className)}));
-  let classList = $derived(list({class:clsx((theme as BreadcrumbTheme)?.list, olClass)}));
+  let classNav = $derived(nav({ class: clsx((theme as BreadcrumbTheme)?.nav, className) }));
+  let classList = $derived(list({ class: clsx((theme as BreadcrumbTheme)?.list, olClass) }));
 </script>
 
 <nav aria-label={ariaLabel} {...restProps} class={classNav}>

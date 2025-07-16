@@ -21,7 +21,7 @@
 
 <!-- Dropdown menu -->
 
-<Popper {...restProps} {placement} {offset} bind:isOpen class={base({class:clsx(theme, className)})}>
+<Popper {...restProps} {placement} {offset} bind:isOpen class={base({ class: clsx(theme, className) })}>
   {#if simple}
     <DropdownGroup>
       {@render children()}

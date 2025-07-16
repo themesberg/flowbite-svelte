@@ -13,21 +13,19 @@
   setContext("stepperType", "progress");
 </script>
 
-<ol class={progressStepper.stepper({class:clsx((theme as ProgressStepperTheme)?.stepper, classes?.progressstepper)}) } {...restrorps}>
+<ol class={progressStepper.stepper({ class: clsx((theme as ProgressStepperTheme)?.stepper, classes?.progressstepper) })} {...restrorps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li
-        class={
-          progressStepper.item({
-            status: step.status,
-            isLast: index === steps.length - 1,
-            class:clsx((theme as ProgressStepperTheme)?.item, classes?.progressstepperitem)
-          })
-        }
+        class={progressStepper.item({
+          status: step.status,
+          isLast: index === steps.length - 1,
+          class: clsx((theme as ProgressStepperTheme)?.item, classes?.progressstepperitem)
+        })}
       >
-        <span class={progressStepper.circle({ status: step.status, class:clsx((theme as ProgressStepperTheme)?.circle, classes?.progresssteppercircle) })}>
+        <span class={progressStepper.circle({ status: step.status, class: clsx((theme as ProgressStepperTheme)?.circle, classes?.progresssteppercircle) })}>
           {#if step.status === "completed"}
             {#if step.icon}
               <step.icon class={clsx(step.iconClass) || "h-5 w-5 lg:h-6 lg:w-6"} />

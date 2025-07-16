@@ -9,7 +9,7 @@
   const theme = getTheme("navContainer");
 </script>
 
-<div {...restProps} class={navbarContainer({ fluid, class:clsx(theme, clasName) })}>
+<div {...restProps} class={navbarContainer({ fluid, class: clsx(theme, clasName) })}>
   {@render children?.()}
 </div>
 

@@ -12,15 +12,15 @@
 </script>
 
 {#if review}
-  <article class={article({class:clsx((theme as ReviewTheme)?.article, articleClass)})}>
+  <article class={article({ class: clsx((theme as ReviewTheme)?.article, articleClass) })}>
     <div>
-      <div class={div({class:clsx((theme as ReviewTheme)?.div, divClass)})}>
-        <img class={img({class:clsx((theme as ReviewTheme)?.img, imgClass)})} src={review.imgSrc} alt={review.imgAlt} />
-        <div class={div2({class:clsx((theme as ReviewTheme)?.div2, div2Class)})}>
+      <div class={div({ class: clsx((theme as ReviewTheme)?.div, divClass) })}>
+        <img class={img({ class: clsx((theme as ReviewTheme)?.img, imgClass) })} src={review.imgSrc} alt={review.imgAlt} />
+        <div class={div2({ class: clsx((theme as ReviewTheme)?.div2, div2Class) })}>
           <p>{review.name}</p>
           {#if review.address}
             {#if address}
-              <div class={div3({class:clsx((theme as ReviewTheme)?.div3, div3Class)})}>
+              <div class={div3({ class: clsx((theme as ReviewTheme)?.div3, div3Class) })}>
                 {@render address()}
               </div>
             {/if}
@@ -28,9 +28,9 @@
         </div>
       </div>
       {#if review.item1 || review.item2 || review.item3}
-        <ul class={ul({class:clsx((theme as ReviewTheme)?.ul, ulClass)})}>
+        <ul class={ul({ class: clsx((theme as ReviewTheme)?.ul, ulClass) })}>
           {#if review.item1}
-            <li class={li({class:clsx((theme as ReviewTheme)?.li, liClass)})}>
+            <li class={li({ class: clsx((theme as ReviewTheme)?.li, liClass) })}>
               {#if item1}
                 {@render item1()}
               {/if}

@@ -25,12 +25,12 @@
   });
 </script>
 
-<div {...restProps} class={outer({class:clsx((theme as BottomNavTheme)?.outer, outerClass)})}>
+<div {...restProps} class={outer({ class: clsx((theme as BottomNavTheme)?.outer, outerClass) })}>
   {#if header}
     {@render header()}
   {/if}
 
-  <div class={inner({class:clsx((theme as BottomNavTheme)?.inner, innerClass)})}>
+  <div class={inner({ class: clsx((theme as BottomNavTheme)?.inner, innerClass) })}>
     {@render children()}
   </div>
 </div>

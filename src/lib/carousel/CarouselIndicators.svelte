@@ -27,14 +27,14 @@
   }
 </script>
 
-<div class={base({class:clsx((theme as CarouselIndicatorsTheme)?.base, className)})} {...restProps}>
+<div class={base({ class: clsx((theme as CarouselIndicatorsTheme)?.base, className) })} {...restProps}>
   {#each $state.images as _, idx}
     {@const selected = $state.index === idx}
     <button onclick={() => goToIndex(idx)}>
       {#if children}
         {@render children({ selected, index: idx })}
       {:else}
-        <Indicator class={indicator({ selected, class:clsx(selected ? activeClass : inactiveClass, (theme as CarouselIndicatorsTheme)?.indicator)})} />
+        <Indicator class={indicator({ selected, class: clsx(selected ? activeClass : inactiveClass, (theme as CarouselIndicatorsTheme)?.indicator) })} />
       {/if}
     </button>
   {/each}

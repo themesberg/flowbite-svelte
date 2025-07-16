@@ -38,7 +38,7 @@
   };
 </script>
 
-<Button onclick={copyToClipboard} {...restProps} class={clipboard({ embedded, class: clsx(theme, className)})}>
+<Button onclick={copyToClipboard} {...restProps} class={clipboard({ embedded, class: clsx(theme, className) })}>
   {@render children?.(success)}
 </Button>
 

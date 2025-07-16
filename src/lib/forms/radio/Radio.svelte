@@ -1,7 +1,7 @@
 <script lang="ts" generics="T">
   import { getContext } from "svelte";
   import { radio, type RadioTheme } from ".";
-  import clsx from 'clsx';
+  import clsx from "clsx";
   import { type RadioProps, Label } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -12,8 +12,8 @@
   const { input, label } = $derived(radio({ color, tinted: !!getContext("background"), custom, inline }));
 </script>
 
-<Label class={label({class:clsx((theme as RadioTheme)?.label, labelClass)})}>
-  <input type="radio" bind:group {value} aria-describedby={ariaDescribedby} {...restProps} class={input({class:clsx((theme as RadioTheme)?.input, inputClass)})} />
+<Label class={label({ class: clsx((theme as RadioTheme)?.label, labelClass) })}>
+  <input type="radio" bind:group {value} aria-describedby={ariaDescribedby} {...restProps} class={input({ class: clsx((theme as RadioTheme)?.input, inputClass) })} />
   {@render children?.()}
 </Label>
 

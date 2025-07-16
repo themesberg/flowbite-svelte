@@ -11,10 +11,10 @@
   const { base, img, span } = $derived(sidebarBrand());
 </script>
 
-<a {...restProps} href={site?.href ? site.href : "/"} class={base({class:clsx((theme as SidebarBrandTheme)?.base, className)})}>
+<a {...restProps} href={site?.href ? site.href : "/"} class={base({ class: clsx((theme as SidebarBrandTheme)?.base, className) })}>
   {#if site}
-    <img src={site.img} class={img({class:clsx((theme as SidebarBrandTheme)?.img, imgClass)})} alt={site.name} />
-    <span class={span({class:clsx((theme as SidebarBrandTheme)?.span, spanClass)})}>{site.name}</span>
+    <img src={site.img} class={img({ class: clsx((theme as SidebarBrandTheme)?.img, imgClass) })} alt={site.name} />
+    <span class={span({ class: clsx((theme as SidebarBrandTheme)?.span, spanClass) })}>{site.name}</span>
   {:else if children}
     {@render children()}
   {/if}

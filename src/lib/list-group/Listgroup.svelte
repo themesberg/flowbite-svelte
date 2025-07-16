@@ -9,7 +9,7 @@
 
   const theme = getTheme("listgroup");
 
-  const base = $derived(listGroup({ rounded, border, horizontal, class:clsx(theme, className) }));
+  const base = $derived(listGroup({ rounded, border, horizontal, class: clsx(theme, className) }));
 
   let tag = active ? "div" : "ul";
   setContext("listGrpActive", active);
