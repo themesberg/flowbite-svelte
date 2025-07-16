@@ -2,7 +2,8 @@
   import { setContext } from "svelte";
   import { writable } from "svelte/store";
   import { dropdown } from "./";
-  import { type DropdownProps, Popper, cn, DropdownGroup } from "$lib";
+  import clsx from "clsx";
+  import { type DropdownProps, Popper, DropdownGroup } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, simple = false, placement = "bottom", offset = 2, class: className, activeUrl = "", isOpen = $bindable(false), ...restProps }: DropdownProps = $props();
@@ -20,7 +21,7 @@
 
 <!-- Dropdown menu -->
 
-<Popper {...restProps} {placement} {offset} bind:isOpen class={cn(base(), className, theme)}>
+<Popper {...restProps} {placement} {offset} bind:isOpen class={base({class:clsx(theme, className)})}>
   {#if simple}
     <DropdownGroup>
       {@render children()}

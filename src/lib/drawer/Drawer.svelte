@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { type ParamsType, type DrawerProps, trapFocus, cn } from "$lib";
+  import { type ParamsType, type DrawerProps, trapFocus } from "$lib";
+  import clsx from "clsx";
   import { fly } from "svelte/transition";
   import { sineIn } from "svelte/easing";
   import { drawer, type DrawerTheme } from ".";
@@ -30,8 +31,8 @@
 <svelte:window bind:innerWidth bind:innerHeight />
 
 {#if !hidden}
-  <div role="presentation" class={cn(backdropCls(), backdropClass, (theme as DrawerTheme)?.backdrop)} onclick={activateClickOutside ? closeDrawer : undefined} style={bodyScrolling ? "pointer-events: none;" : ""}></div>
-  <div use:trapFocus={{ onEscape: closeDrawer }} {...restProps} class={cn(base(), className, (theme as DrawerTheme)?.base)} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
+  <div role="presentation" class={backdropCls({class:clsx((theme as DrawerTheme)?.backdrop, backdropClass)})} onclick={activateClickOutside ? closeDrawer : undefined} style={bodyScrolling ? "pointer-events: none;" : ""}></div>
+  <div use:trapFocus={{ onEscape: closeDrawer }} {...restProps} class={base({class:clsx((theme as DrawerTheme)?.base, className)})} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
     {@render children?.()}
   </div>
 {/if}

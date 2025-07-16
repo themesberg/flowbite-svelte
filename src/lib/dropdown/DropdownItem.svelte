@@ -1,7 +1,8 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { dropdownItem, type DropdownItemTheme } from ".";
-  import { type DropdownItemProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type DropdownItemProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { aClass, children, activeClass, liClass, class: className, ...restProps }: DropdownItemProps = $props();
@@ -20,10 +21,10 @@
   });
 
   const { anchor, activeAnchor } = dropdownItem();
-  let finalClass = $derived([active ? cn(activeAnchor(), activeClass, className, (theme as DropdownItemTheme)?.activeAnchor) : cn(anchor(), aClass, className, (theme as DropdownItemTheme)?.anchor)]);
+  let finalClass = $derived([active ? activeAnchor({class:clsx((theme as DropdownItemTheme)?.activeAnchor,activeClass, className)}) : anchor({class:clsx((theme as DropdownItemTheme)?.anchor, aClass, className)})]);
 </script>
 
-<li class={cn(liClass)}>
+<li class={liClass}>
   {#if restProps.href === undefined && restProps.onclick === undefined}
     <div {...restProps} class={finalClass}>
       {@render children()}

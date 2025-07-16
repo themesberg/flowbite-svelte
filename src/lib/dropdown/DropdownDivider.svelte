@@ -1,6 +1,7 @@
 <script lang="ts">
   import { dropdownDivider } from ".";
-  import { type DropdownDividerProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type DropdownDividerProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { class: className, ...restProps }: DropdownDividerProps = $props();
@@ -8,7 +9,7 @@
   const theme = getTheme("dropdownDivider");
 </script>
 
-<div {...restProps} class={cn(dropdownDivider(), className, theme)}></div>
+<div {...restProps} class={dropdownDivider({class:clsx(theme, className)})}></div>
 
 <!--
 @component
