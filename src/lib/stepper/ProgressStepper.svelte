@@ -1,7 +1,7 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { progressStepper } from ".";
-  import { type ProgressStepperProps, cn } from "$lib";
+  import { type ProgressStepperProps } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
   import type { ProgressStepperTheme } from ".";
@@ -13,22 +13,19 @@
   setContext("stepperType", "progress");
 </script>
 
-<ol class={cn(progressStepper.stepper(), clsx(classes?.progressstepper), (theme as ProgressStepperTheme)?.stepper)} {...restrorps}>
+<ol class={progressStepper.stepper({ class: clsx((theme as ProgressStepperTheme)?.stepper, classes?.progressstepper) })} {...restrorps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li
-        class={cn(
-          progressStepper.item({
-            status: step.status,
-            isLast: index === steps.length - 1
-          }),
-          clsx(classes?.progressstepperitem),
-          (theme as ProgressStepperTheme)?.item
-        )}
+        class={progressStepper.item({
+          status: step.status,
+          isLast: index === steps.length - 1,
+          class: clsx((theme as ProgressStepperTheme)?.item, classes?.progressstepperitem)
+        })}
       >
-        <span class={cn(progressStepper.circle({ status: step.status }), clsx(classes?.progresssteppercircle), (theme as ProgressStepperTheme)?.circle)}>
+        <span class={progressStepper.circle({ status: step.status, class: clsx((theme as ProgressStepperTheme)?.circle, classes?.progresssteppercircle) })}>
           {#if step.status === "completed"}
             {#if step.icon}
               <step.icon class={clsx(step.iconClass) || "h-5 w-5 lg:h-6 lg:w-6"} />

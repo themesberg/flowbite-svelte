@@ -1,14 +1,14 @@
 <script lang="ts">
   import { helper } from ".";
   import { type HelperProps } from "$lib";
-  import clsx from 'clsx';
+  import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, color = "gray", ...restProps }: HelperProps = $props();
 
   const theme = getTheme("helper");
 
-  const base = $derived(helper({ color, class:clsx(theme,className)}));
+  const base = $derived(helper({ color, class: clsx(theme, className) }));
 </script>
 
 <p {...restProps} class={base}>

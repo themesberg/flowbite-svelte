@@ -1,11 +1,8 @@
-import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
-
+import type { ClassValue } from "svelte/elements";
+import { tv, type VariantProps } from "tailwind-variants";
 
 type BadgeVariants = VariantProps<typeof badge> & Classes<typeof badge>;
-
-
 
 const badge = tv({
   slots: {

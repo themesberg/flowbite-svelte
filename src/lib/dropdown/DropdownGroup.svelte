@@ -9,7 +9,7 @@
   const theme = getTheme("dropdownGroup");
 </script>
 
-<ul {...restProps} class={dropdownGroup({class:clsx(theme, className)})}>
+<ul {...restProps} class={dropdownGroup({ class: clsx(theme, className) })}>
   {@render children()}
 </ul>
 

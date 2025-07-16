@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { SizeType } from "$lib/types";
   import { getContext } from "svelte";
-  import clsx from 'clsx';
+  import clsx from "clsx";
   import { type InputAddonProps, clampSize } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 

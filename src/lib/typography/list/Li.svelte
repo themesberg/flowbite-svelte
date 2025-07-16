@@ -2,7 +2,6 @@
   import { getContext } from "svelte";
   import type { LiProps } from "$lib/types";
   import clsx from "clsx";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, icon, class: className, ...restProps }: LiProps = $props();
@@ -11,7 +10,7 @@
 
   const getCtxClass = getContext<() => string>("ctxClass");
 
-  let liCls = $derived(cn(getCtxClass(), icon && "flex items-center", clsx(className), theme));
+  let liCls = $derived(clsx(getCtxClass(), icon && "flex items-center", theme, className));
 </script>
 
 <li {...restProps} class={liCls}>

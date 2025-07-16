@@ -95,7 +95,7 @@
       {/if}
     </div>
   {/if}
-  <div class={body({ class: clsx( (theme as ModalTheme)?.body, bodyClass) })}>
+  <div class={body({ class: clsx((theme as ModalTheme)?.body, bodyClass) })}>
     {@render children?.()}
   </div>
   {#if footer}
@@ -104,14 +104,14 @@
     </div>
   {/if}
   {#if dismissable && !permanent && !title}
-    <CloseButton type="submit" formnovalidate onclick={close_handler(form)} class={closebutton({ class: clsx((theme as ModalTheme)?.closebutton, closeBtnClass)})} />
+    <CloseButton type="submit" formnovalidate onclick={close_handler(form)} class={closebutton({ class: clsx((theme as ModalTheme)?.closebutton, closeBtnClass) })} />
   {/if}
 {/snippet}
 
 {#if open}
   <dialog {@attach init} use:focusTrap class={base({ class: clsx((theme as ModalTheme)?.base, className) })} tabindex="-1" onsubmit={_onsubmit} oncancel={_oncancel} onclick={_onclick} ontoggle={_ontoggle} transition:transition|global={paramsOptions as ParamsType} {...restProps}>
     {#if form}
-      <form method="dialog" class={formCls({class:clsx((theme as ModalTheme)?.form)})}>
+      <form method="dialog" class={formCls({ class: clsx((theme as ModalTheme)?.form) })}>
         {@render content()}
       </form>
     {:else}

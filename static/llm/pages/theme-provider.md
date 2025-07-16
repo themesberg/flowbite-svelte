@@ -125,39 +125,42 @@ const theme: ThemeConfig = {
 };
 ```
 
-## Nested ThemeProvider
+## Nested ThemeProvider and Component Classes
 
-You can nest ThemeProvider components to apply different themes to different sections of your application. Child ThemeProviders will override the parent themes for their specific scope:
+You can nest ThemeProvider components to apply different themes to different sections of your application. Child ThemeProviders will override the parent themes for their specific scope.
+
+Component classes, when defined directly on a component, will always take precedence over any styles provided by ThemeProviders, whether from parent or nested providers. This allows for granular control and specific styling adjustments at the component level, even when a global or scoped theme is in effect.
 
 ```svelte
 <script>
   import { ThemeProvider, Card, Heading, P } from "flowbite-svelte";
 
-  const theme1 = {
+  const theme1a = {
     card: {
-      base: "bg-blue-50 border-blue-200"
+      base: "bg-blue-50 border-blue-200 p-4"
     },
-    heading: "text-3xl text-green-500",
+    heading: "text-3xl text-blue-500",
     p: "text-blue-500 text-lg"
   };
 
-  const theme2 = {
+  const theme1b = {
     heading: "text-lg text-purple-600 font-bold"
   };
 
-  const theme3 = {
+  const theme1c = {
     p: "text-gray-600 italic text-md"
   };
 </script>
 
-<ThemeProvider theme={theme1}>
-  <Heading tag="h1">Card</Heading>
+<ThemeProvider theme={theme1a}>
+  <Heading tag="h1">Blue Heading</Heading>
   <P>Card example</P>
   <Card href="/cards">
-    <ThemeProvider theme={theme2}>
-      <Heading tag="h5">Noteworthy technology</Heading>
+    <ThemeProvider theme={theme1b}>
+      <Heading tag="h2">Purple Heading</Heading>
+      <Heading tag="h3" class="text-green-400">Green heading</Heading>
     </ThemeProvider>
-    <ThemeProvider theme={theme3}>
+    <ThemeProvider theme={theme1c}>
       <P>Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</P>
     </ThemeProvider>
   </Card>

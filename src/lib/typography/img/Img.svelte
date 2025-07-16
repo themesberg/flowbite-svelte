@@ -2,7 +2,6 @@
   import clsx from "clsx";
   import { img, type ImgTheme } from ".";
   import type { ImgProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { size = "none", effect = "none", caption, class: imgClass, figClass, captionClass, href, ...restProps }: ImgProps = $props();
@@ -14,14 +13,14 @@
 
 {#snippet imageSlot()}
   {#if caption}
-    <figure class={cn(figure({ class: figClass }), (theme as ImgTheme)?.figure)}>
-      <img {...restProps} class={cn(base({ class: clsx(imgClass) }), (theme as ImgTheme)?.base)} />
-      <figcaption class={cn(figureCaption({ class: captionClass }), (theme as ImgTheme)?.figureCaption)}>
+    <figure class={figure({ class: clsx((theme as ImgTheme)?.figure, figClass) })}>
+      <img {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, imgClass) })} />
+      <figcaption class={figureCaption({ class: clsx((theme as ImgTheme)?.figureCaption, captionClass) })}>
         {@html caption}
       </figcaption>
     </figure>
   {:else}
-    <img {...restProps} class={cn(base({ class: clsx(imgClass) }), (theme as ImgTheme)?.base)} />
+    <img {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, imgClass) })} />
   {/if}
 {/snippet}
 

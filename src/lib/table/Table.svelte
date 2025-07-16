@@ -2,7 +2,7 @@
   import { setContext } from "svelte";
   import { table as tableCls, TableHead, TableBody, type TableTheme } from ".";
   import clsx from "clsx";
-  import { type TableProps, type TableCtxType, cn } from "$lib";
+  import { type TableProps, type TableCtxType } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, footerSlot, captionSlot, items, divClass = "relative overflow-x-auto", striped, hoverable, border = true, shadow, color = "default", class: className, ...restProps }: TableProps = $props();
@@ -32,8 +32,8 @@
   let bodyItems = $derived(items && items.length > 0 ? items.map((item) => Object.values(item)) : []);
 </script>
 
-<div class={cn(base(), clsx(divClass), (theme as TableTheme)?.base)}>
-  <table {...restProps} class={cn(table(), clsx(className), (theme as TableTheme)?.table)}>
+<div class={base({ class: clsx((theme as TableTheme)?.base, divClass) })}>
+  <table {...restProps} class={table({ class: clsx((theme as TableTheme)?.table, className) })}>
     {#if captionSlot}
       {@render captionSlot()}
     {/if}

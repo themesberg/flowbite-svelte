@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { cn } from "$lib";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { navbarLi } from "./theme";
@@ -20,7 +19,7 @@
   });
 
   let active = $derived(navUrl ? restProps.href === navUrl : false);
-  let liClass = $derived(cn(navbarLi({ hidden: navState.hidden }), clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), className), theme));
+  let liClass = $derived(navbarLi({ hidden: navState.hidden, class: clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), theme, className) }));
 </script>
 
 <li>

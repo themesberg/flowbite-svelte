@@ -2,7 +2,6 @@
   import clsx from "clsx";
   import { activity } from ".";
   import type { ActivityProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: ActivityProps = $props();
@@ -10,7 +9,7 @@
   const theme = getTheme("activity");
 </script>
 
-<ol {...restProps} class={cn(activity({ class: clsx(className) }), theme)}>
+<ol {...restProps} class={activity({ class: clsx(theme, className) })}>
   {@render children()}
 </ol>
 

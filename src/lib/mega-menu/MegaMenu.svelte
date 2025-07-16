@@ -16,9 +16,9 @@
   const { base, div, ul, extra: extraCls } = $derived(megamenu({ full, extra: !!extra }));
 </script>
 
-<Popper color={full ? "default" : "dropdown"} arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={base({class:clsx((theme as MegaMenuTheme)?.base, className)})}>
-  <div class={div({class:clsx((theme as MegaMenuTheme)?.div)})}>
-    <ul class={ul({class:clsx((theme as MegaMenuTheme)?.ul, ulClass)})}>
+<Popper color={full ? "default" : "dropdown"} arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={base({ class: clsx((theme as MegaMenuTheme)?.base, className) })}>
+  <div class={div({ class: clsx((theme as MegaMenuTheme)?.div) })}>
+    <ul class={ul({ class: clsx((theme as MegaMenuTheme)?.ul, ulClass) })}>
       {#each items as item, index}
         <li>
           {@render children({ item, index })}
@@ -27,7 +27,7 @@
         {@render children({ item: items[0], index: 0 })}
       {/each}
     </ul>
-    {#if full && extra}<div class={extraCls({class:clsx((theme as MegaMenuTheme)?.extra, extraClass)})}>{@render extra()}</div>{/if}
+    {#if full && extra}<div class={extraCls({ class: clsx((theme as MegaMenuTheme)?.extra, extraClass) })}>{@render extra()}</div>{/if}
   </div>
 </Popper>
 

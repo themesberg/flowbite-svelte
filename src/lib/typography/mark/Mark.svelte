@@ -10,7 +10,7 @@
   const theme = getTheme("mark");
 </script>
 
-<mark {...restProps} class={cn(mark({ class: clsx(className) }), theme)}>
+<mark {...restProps} class={mark({ class: clsx(theme, className) })}>
   {@render children()}
 </mark>
 

@@ -31,8 +31,8 @@
 <svelte:window bind:innerWidth bind:innerHeight />
 
 {#if !hidden}
-  <div role="presentation" class={backdropCls({class:clsx((theme as DrawerTheme)?.backdrop, backdropClass)})} onclick={activateClickOutside ? closeDrawer : undefined} style={bodyScrolling ? "pointer-events: none;" : ""}></div>
-  <div use:trapFocus={{ onEscape: closeDrawer }} {...restProps} class={base({class:clsx((theme as DrawerTheme)?.base, className)})} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
+  <div role="presentation" class={backdropCls({ class: clsx((theme as DrawerTheme)?.backdrop, backdropClass) })} onclick={activateClickOutside ? closeDrawer : undefined} style={bodyScrolling ? "pointer-events: none;" : ""}></div>
+  <div use:trapFocus={{ onEscape: closeDrawer }} {...restProps} class={base({ class: clsx((theme as DrawerTheme)?.base, className) })} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
     {@render children?.()}
   </div>
 {/if}

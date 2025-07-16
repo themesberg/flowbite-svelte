@@ -8,7 +8,7 @@
 
   const theme = getTheme("kbd");
 
-  const kbdCls = kbd({class:clsx(theme, className)});
+  const kbdCls = kbd({ class: clsx(theme, className) });
 </script>
 
 <kbd {...restProps} class={kbdCls}>

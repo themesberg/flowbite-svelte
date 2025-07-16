@@ -29,7 +29,7 @@
     duration: $state.slideDuration
   });
 
-  let imgClass = slide({class:clsx(theme, className)});
+  let imgClass = slide({ class: clsx(theme, className) });
 </script>
 
 {#if transition}

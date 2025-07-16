@@ -11,7 +11,7 @@
 
   setContext("stepperType", "breadcrumb");
 
-  const base = breadcrumbStepper.stepper({class:clsx((theme as BreadcrumbStepperTheme)?.stepper)});
+  const base = breadcrumbStepper.stepper({ class: clsx((theme as BreadcrumbStepperTheme)?.stepper) });
 </script>
 
 <ol class={base} {...restProps}>
@@ -20,15 +20,13 @@
   {:else if steps}
     {#each steps as step, index}
       <li
-        class={
-          breadcrumbStepper.item({
-            status: step.status,
-            hasChevron: index < steps.length - 1,
-            class:clsx((theme as BreadcrumbStepperTheme)?.item)
-          })
-        }
+        class={breadcrumbStepper.item({
+          status: step.status,
+          hasChevron: index < steps.length - 1,
+          class: clsx((theme as BreadcrumbStepperTheme)?.item)
+        })}
       >
-        <span class={breadcrumbStepper.indicator({ status: step.status, class:clsx((theme as BreadcrumbStepperTheme)?.indicator) })}>
+        <span class={breadcrumbStepper.indicator({ status: step.status, class: clsx((theme as BreadcrumbStepperTheme)?.indicator) })}>
           {#if step.status === "completed" && step.icon}
             <step.icon class={step.iconClass || "h-3 w-3"} />
           {:else}

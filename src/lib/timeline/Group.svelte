@@ -11,9 +11,9 @@
   const { div, time, ol } = $derived(group());
 </script>
 
-<div class={div({ class: clsx((theme as GroupTheme)?.div, divClass)})}>
-  <time class={time({ class: clsx((theme as GroupTheme)?.time, timeClass)})}>{date}</time>
-  <ol {...restProps} class={ol({ class: clsx((theme as GroupTheme)?.ol, olClass)})}>
+<div class={div({ class: clsx((theme as GroupTheme)?.div, divClass) })}>
+  <time class={time({ class: clsx((theme as GroupTheme)?.time, timeClass) })}>{date}</time>
+  <ol {...restProps} class={ol({ class: clsx((theme as GroupTheme)?.ol, olClass) })}>
     {@render children()}
   </ol>
 </div>

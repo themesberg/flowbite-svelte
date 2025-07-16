@@ -100,7 +100,7 @@ Usually, green, red, and orange are used to show success, danger, or warning ale
   Purple
 </Toast>
 
-<Toast color={undefined} class="h-8 w-8 bg-pink-100 text-pink-500 dark:bg-pink-800 dark:text-pink-200">
+<Toast color={undefined} class="bg-pink-100 text-pink-500 dark:bg-pink-800 dark:text-pink-200">
   {#snippet icon()}
     <FireOutline class="h-6 w-6" />
   {/snippet}

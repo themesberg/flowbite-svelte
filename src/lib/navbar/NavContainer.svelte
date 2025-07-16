@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { cn } from "$lib";
   import clsx from "clsx";
   import { navbarContainer } from "./theme";
   import type { NavContainerProps } from "$lib/types";
@@ -10,7 +9,7 @@
   const theme = getTheme("navContainer");
 </script>
 
-<div {...restProps} class={cn(navbarContainer({ fluid }), clsx(clasName), theme)}>
+<div {...restProps} class={navbarContainer({ fluid, class: clsx(theme, clasName) })}>
   {@render children?.()}
 </div>
 

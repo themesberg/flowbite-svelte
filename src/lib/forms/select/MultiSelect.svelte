@@ -1,5 +1,5 @@
 <script lang="ts" generics="T">
-  import clsx from 'clsx';
+  import clsx from "clsx";
   import { Badge, CloseButton, type MultiSelectProps, type SelectOptionType } from "$lib";
   import { multiSelect, type MultiSelectTheme } from ".";
   import { getTheme } from "$lib/theme/themeUtils";
@@ -194,11 +194,11 @@
   {/each}
 </select>
 
-<div bind:this={multiSelectContainer} {...restProps} onclick={toggleDropdown} onblur={handleBlur} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={base({ size, class:clsx( (theme as MultiSelectTheme)?.base, className) })}>
+<div bind:this={multiSelectContainer} {...restProps} onclick={toggleDropdown} onblur={handleBlur} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={base({ size, class: clsx((theme as MultiSelectTheme)?.base, className) })}>
   {#if !selectItems.length}
     <span class="text-gray-400">{placeholder}</span>
   {/if}
-  <span class={select({class:clsx( (theme as MultiSelectTheme)?.select)})}>
+  <span class={select({ class: clsx((theme as MultiSelectTheme)?.select) })}>
     {#if selectItems.length}
       {#each selectItems as item (item.name)}
         {#if children}
@@ -213,7 +213,7 @@
   </span>
   <div class="ms-auto flex items-center gap-2">
     {#if selectItems.length}
-      <CloseButton {size} onclick={clearAll} color="none" class={closebutton({class:clsx((theme as MultiSelectTheme)?.closebutton)})} {disabled} />
+      <CloseButton {size} onclick={clearAll} color="none" class={closebutton({ class: clsx((theme as MultiSelectTheme)?.closebutton) })} {disabled} />
     {/if}
 
     <svg class={clsx("ms-1 h-3 w-3 cursor-pointer text-gray-800 dark:text-white", disabled && "cursor-not-allowed")} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -222,7 +222,7 @@
   </div>
 
   {#if show}
-    <div role="presentation" class={dropdown({class:clsx(dropdownClass)})}>
+    <div role="presentation" class={dropdown({ class: clsx(dropdownClass) })}>
       {#each items as item (item.name)}
         <div
           onclick={(e) => selectOption(item, e)}

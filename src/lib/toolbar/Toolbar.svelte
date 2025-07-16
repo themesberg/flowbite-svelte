@@ -4,7 +4,6 @@
   import { toolbar, type ToolbarTheme } from "./";
   import type { ToolbarProps } from "$lib/types";
   import clsx from "clsx";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, end, color, embedded, class: className, ...restProps }: ToolbarProps = $props();
@@ -29,8 +28,8 @@
   // let divClass: string = twMerge('flex justify-between items-center', !embedded && 'py-2 px-3', className);
 </script>
 
-<div {...restProps} class={cn(base({ class: clsx(className) }), (theme as ToolbarTheme)?.base)}>
-  <div class={cn(content(), (theme as ToolbarTheme)?.content)}>
+<div {...restProps} class={base({ class: clsx((theme as ToolbarTheme)?.base, className) })}>
+  <div class={content({ class: clsx((theme as ToolbarTheme)?.content) })}>
     {@render children?.()}
   </div>
   {#if end}

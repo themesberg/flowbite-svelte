@@ -1,7 +1,7 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { detailedStepper, type DetailedStepperTheme } from ".";
-  import { type DetailedStepperProps, cn } from "$lib";
+  import { type DetailedStepperProps } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -12,13 +12,13 @@
   setContext("stepperType", "detailed");
 </script>
 
-<ol class={cn(detailedStepper.stepper(), clsx(classes?.detailedstepper), (theme as DetailedStepperTheme)?.stepper)} {...restrorps}>
+<ol class={detailedStepper.stepper({ class: clsx((theme as DetailedStepperTheme)?.stepper, classes?.detailedstepper) })} {...restrorps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
-      <li class={cn(detailedStepper.item({ status: step.status }), clsx(classes?.detailedstepperitem), (theme as DetailedStepperTheme)?.item)}>
-        <span class={cn(detailedStepper.indicator({ status: step.status }), clsx(classes?.detailedstepperindicator), (theme as DetailedStepperTheme)?.indicator)}>
+      <li class={detailedStepper.item({ status: step.status, class: clsx((theme as DetailedStepperTheme)?.item, classes?.detailedstepperitem) })}>
+        <span class={detailedStepper.indicator({ status: step.status, class: clsx((theme as DetailedStepperTheme)?.indicator, classes?.detailedstepperindicator) })}>
           {#if step.status === "completed" && step.icon}
             <step.icon class={clsx(step.iconClass)} />
           {:else}

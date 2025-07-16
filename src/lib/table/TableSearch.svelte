@@ -15,13 +15,13 @@
   const styles = tableSearch({ color: themeColor, striped, hoverable });
 
   // Apply custom classes or use theme defaults
-  const rootClass = styles.root({class:clsx((theme as TableSearchTheme)?.root,divClass)});
-  const innerDivCls = styles.innerDiv({class:clsx((theme as TableSearchTheme)?.innerDiv, innerDivClass)});
-  const searchContainerCls = styles.searchContainer({class:clsx((theme as TableSearchTheme)?.searchContainer, searchClass)});
-  const svgContainerCls = styles.svgContainer({class:clsx((theme as TableSearchTheme)?.svgContainer, svgDivClass)});
-  const svgCls = styles.svg({class:clsx((theme as TableSearchTheme)?.svg, svgClass)});
-  const inputCls = styles.input({class:clsx((theme as TableSearchTheme)?.input, inputClass)});
-  const tableCls = styles.table({class:clsx(tableClass, (theme as TableSearchTheme)?.table, className)});
+  const rootClass = styles.root({ class: clsx((theme as TableSearchTheme)?.root, divClass) });
+  const innerDivCls = styles.innerDiv({ class: clsx((theme as TableSearchTheme)?.innerDiv, innerDivClass) });
+  const searchContainerCls = styles.searchContainer({ class: clsx((theme as TableSearchTheme)?.searchContainer, searchClass) });
+  const svgContainerCls = styles.svgContainer({ class: clsx((theme as TableSearchTheme)?.svgContainer, svgDivClass) });
+  const svgCls = styles.svg({ class: clsx((theme as TableSearchTheme)?.svg, svgClass) });
+  const inputCls = styles.input({ class: clsx((theme as TableSearchTheme)?.input, inputClass) });
+  const tableCls = styles.table({ class: clsx(tableClass, (theme as TableSearchTheme)?.table, className) });
 
   // Handle custom color
   const finalTableClass = color === "custom" && customColor ? clsx(tableCls, customColor) : tableCls;

@@ -3,7 +3,6 @@
   import { TableHeadCell, tableHead } from ".";
   import type { TableHeadProps, TableCtxType, HeadItemType } from "$lib/types";
   import clsx from "clsx";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, headerSlot, color, striped, border, class: className, headItems, defaultRow = true, ...restProps }: TableHeadProps = $props();
@@ -16,7 +15,7 @@
   let compoStriped = $derived(striped ? striped : tableCtx.striped || false);
   let compoBorder = $derived(border ? border : tableCtx.border || false);
 
-  const base = $derived(tableHead({ color: compoColor, border: compoBorder, striped: compoStriped }));
+  const base = $derived(tableHead({ color: compoColor, border: compoBorder, striped: compoStriped, class: clsx(theme, className) }));
 
   function getItemText(item: HeadItemType): string {
     if (typeof item === "object" && "text" in item) {
@@ -26,7 +25,7 @@
   }
 </script>
 
-<thead {...restProps} class={cn(base, clsx(className), theme)}>
+<thead {...restProps} class={base}>
   {#if headItems}
     {#if headerSlot}
       {@render headerSlot()}

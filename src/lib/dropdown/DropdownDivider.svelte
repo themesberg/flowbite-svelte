@@ -9,7 +9,7 @@
   const theme = getTheme("dropdownDivider");
 </script>
 
-<div {...restProps} class={dropdownDivider({class:clsx(theme, className)})}></div>
+<div {...restProps} class={dropdownDivider({ class: clsx(theme, className) })}></div>
 
 <!--
 @component

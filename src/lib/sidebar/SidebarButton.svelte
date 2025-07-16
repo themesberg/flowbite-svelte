@@ -2,14 +2,13 @@
   import clsx from "clsx";
   import { sidebarButton } from ".";
   import type { SidebarButtonProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { breakpoint = "md", class: className, ...restProps }: SidebarButtonProps = $props();
 
   const theme = getTheme("sidebarButton");
 
-  const base = $derived(cn(sidebarButton({ breakpoint }), clsx(className), theme));
+  const base = $derived(sidebarButton({ breakpoint, class: clsx(theme, className) }));
 </script>
 
 <button {...restProps} type="button" class={base}>

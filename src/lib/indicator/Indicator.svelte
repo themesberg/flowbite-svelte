@@ -18,7 +18,7 @@
       placement,
       offset,
       hasChildren,
-      class:clsx(theme, className)
+      class: clsx(theme, className)
     })
   );
 </script>

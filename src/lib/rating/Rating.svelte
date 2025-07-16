@@ -3,7 +3,6 @@
   import Star from "./Star.svelte";
   import { rating as ratingVariants, type RatingTheme } from ".";
   import type { RatingProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, text, class: className, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass, ...restProps }: RatingProps = $props();
@@ -18,10 +17,10 @@
   let grayStars: number = total - (fullStars + Math.ceil(rateDiffence));
 </script>
 
-<div {...restProps} class={cn(base({ class: clsx(className) }), (theme as RatingTheme)?.base)}>
+<div {...restProps} class={base({ class: clsx((theme as RatingTheme)?.base, className) })}>
   {#if count && children}
     <Icon fillPercent={100} {size} iconIndex={0} groupId={ratingGroupId} />
-    <p class={cn(p({ class: clsx(pClass) }), (theme as RatingTheme)?.p)}>{rating}</p>
+    <p class={p({ class: clsx((theme as RatingTheme)?.p, pClass) })}>{rating}</p>
     {@render children()}
   {:else}
     <!-- eslint-disable @typescript-eslint/no-unused-vars-->

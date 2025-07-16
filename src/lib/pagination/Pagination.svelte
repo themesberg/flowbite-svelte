@@ -13,7 +13,7 @@
   setContext("table", table);
   setContext("size", size);
 
-  const paginationCls = $derived(pagination({ table, size, class:clsx(theme) }));
+  const paginationCls = $derived(pagination({ table, size, class: clsx(theme) }));
 </script>
 
 <nav aria-label={ariaLabel}>

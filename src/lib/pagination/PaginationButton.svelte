@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { cn } from "$lib";
   import clsx from "clsx";
   import { paginationButton } from ".";
   import type { PaginationButtonProps } from "$lib/types";
@@ -14,16 +13,14 @@
   const table = getContext<boolean>("table");
 
   const paginationCls = $derived(
-    cn(
-      paginationButton({
-        size: getContext("size") ?? size,
-        active,
-        group,
-        table,
-        disabled
-      }),
-      theme
-    )
+    paginationButton({
+      size: getContext("size") ?? size,
+      active,
+      group,
+      table,
+      disabled,
+      class: clsx(theme, className)
+    })
   );
 
   function handleClick(e: MouseEvent) {
@@ -36,13 +33,13 @@
 </script>
 
 {#if href}
-  <a {href} {...restProps} class={cn(paginationCls, clsx(className), theme)} onclick={handleClick}>
+  <a {href} {...restProps} class={paginationCls} onclick={handleClick}>
     {#if children}
       {@render children()}
     {/if}
   </a>
 {:else}
-  <button {...restProps} {disabled} class={cn(paginationCls, clsx(className), theme)} onclick={handleClick}>
+  <button {...restProps} {disabled} class={paginationCls} onclick={handleClick}>
     {#if children}
       {@render children()}
     {/if}

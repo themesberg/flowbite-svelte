@@ -50,7 +50,7 @@
   });
 </script>
 
-<div class={thumbnails({class:clsx(theme, className)})}>
+<div class={thumbnails({ class: clsx(theme, className) })}>
   {#each images as image, idx}
     {@const selected = index === idx}
     <button onclick={() => btnClick(idx)} aria-label={ariaLabel}>

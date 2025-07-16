@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { cn } from "$lib";
   import clsx from "clsx";
   import { paginationItem, type PaginationItemTheme } from ".";
   import type { PaginationItemProps } from "$lib/types";
@@ -12,7 +11,7 @@
 
   const group = getContext<boolean>("group");
   const table = getContext<boolean>("table");
-  const paginationCls = $derived(cn(paginationItem({ size: getContext("size") ?? size, active, group, table }), clsx(className), theme));
+  const paginationCls = $derived(paginationItem({ size: getContext("size") ?? size, active, group, table, class: clsx(theme, className) }));
 </script>
 
 {#if href}

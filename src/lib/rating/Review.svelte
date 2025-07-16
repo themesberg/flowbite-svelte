@@ -2,7 +2,6 @@
   import clsx from "clsx";
   import { review as reviewVariants, type ReviewTheme } from ".";
   import type { ReviewProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, address, item1, item2, item3, review, articleClass, divClass, div2Class, div3Class, imgClass, ulClass, liClass }: ReviewProps = $props();
@@ -13,15 +12,15 @@
 </script>
 
 {#if review}
-  <article class={cn(article(), clsx(articleClass), (theme as ReviewTheme)?.article)}>
+  <article class={article({ class: clsx((theme as ReviewTheme)?.article, articleClass) })}>
     <div>
-      <div class={cn(div(), clsx(divClass), (theme as ReviewTheme)?.div)}>
-        <img class={cn(img(), clsx(imgClass), (theme as ReviewTheme)?.img)} src={review.imgSrc} alt={review.imgAlt} />
-        <div class={cn(div2(), clsx(div2Class), (theme as ReviewTheme)?.div2)}>
+      <div class={div({ class: clsx((theme as ReviewTheme)?.div, divClass) })}>
+        <img class={img({ class: clsx((theme as ReviewTheme)?.img, imgClass) })} src={review.imgSrc} alt={review.imgAlt} />
+        <div class={div2({ class: clsx((theme as ReviewTheme)?.div2, div2Class) })}>
           <p>{review.name}</p>
           {#if review.address}
             {#if address}
-              <div class={cn(div3(), clsx(div3Class), (theme as ReviewTheme)?.div3)}>
+              <div class={div3({ class: clsx((theme as ReviewTheme)?.div3, div3Class) })}>
                 {@render address()}
               </div>
             {/if}
@@ -29,9 +28,9 @@
         </div>
       </div>
       {#if review.item1 || review.item2 || review.item3}
-        <ul class={cn(ul(), clsx(ulClass), (theme as ReviewTheme)?.ul)}>
+        <ul class={ul({ class: clsx((theme as ReviewTheme)?.ul, ulClass) })}>
           {#if review.item1}
-            <li class={cn(li(), clsx(liClass), (theme as ReviewTheme)?.li)}>
+            <li class={li({ class: clsx((theme as ReviewTheme)?.li, liClass) })}>
               {#if item1}
                 {@render item1()}
               {/if}

@@ -21,7 +21,7 @@
   });
 
   const { anchor, activeAnchor } = dropdownItem();
-  let finalClass = $derived([active ? activeAnchor({class:clsx((theme as DropdownItemTheme)?.activeAnchor,activeClass, className)}) : anchor({class:clsx((theme as DropdownItemTheme)?.anchor, aClass, className)})]);
+  let finalClass = $derived([active ? activeAnchor({ class: clsx((theme as DropdownItemTheme)?.activeAnchor, activeClass, className) }) : anchor({ class: clsx((theme as DropdownItemTheme)?.anchor, aClass, className) })]);
 </script>
 
 <li class={liClass}>

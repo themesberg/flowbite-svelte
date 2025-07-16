@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { setContext } from "svelte";
   import { paginationNav, type PaginationNavTheme } from "./theme";
-  import { type PaginationNavProps, PaginationButton, cn } from "$lib";
+  import { type PaginationNavProps, PaginationButton } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   function paginationRange(start: number, end: number): number[] {
@@ -58,17 +58,17 @@
 
 <nav aria-label={ariaLabel} {...restProps}>
   {#if layout === "table"}
-    <div class={cn(tableDiv(), clsx(tableDivClass), (theme as PaginationNavTheme)?.tableDiv)}>
-      Showing <span class={cn(tableSpan(), clsx(spanClass), (theme as PaginationNavTheme)?.tableSpan)}>{currentPage}</span>
+    <div class={tableDiv({ class: clsx((theme as PaginationNavTheme)?.tableDiv, tableDivClass) })}>
+      Showing <span class={tableSpan({ class: clsx((theme as PaginationNavTheme)?.tableSpan, spanClass) })}>{currentPage}</span>
       of
-      <span class={cn(tableSpan(), clsx(spanClass), (theme as PaginationNavTheme)?.tableSpan)}>{totalPages}</span>
+      <span class={tableSpan({ class: clsx((theme as PaginationNavTheme)?.tableSpan, spanClass) })}>{totalPages}</span>
       Entries
     </div>
   {/if}
 
-  <ul class={cn(base(), clsx(className), (theme as PaginationNavTheme)?.base)}>
+  <ul class={base({ class: clsx((theme as PaginationNavTheme)?.base, className) })}>
     <li {...restProps}>
-      <PaginationButton onclick={goToPreviousPage} disabled={currentPage === 1} class={cn(prevItem(), clsx(prevClass), (theme as PaginationNavTheme)?.prevItem)}>
+      <PaginationButton onclick={goToPreviousPage} disabled={currentPage === 1} class={prevItem({ class: clsx((theme as PaginationNavTheme)?.prevItem, prevClass) })}>
         {#if prevContent}
           {@render prevContent()}
         {:else}
@@ -86,7 +86,7 @@
       {/each}
     {/if}
     <li {...restProps}>
-      <PaginationButton onclick={goToNextPage} disabled={currentPage === totalPages} class={cn(nextItem(), clsx(nextClass), (theme as PaginationNavTheme)?.nextItem)}>
+      <PaginationButton onclick={goToNextPage} disabled={currentPage === totalPages} class={nextItem({ class: clsx((theme as PaginationNavTheme)?.nextItem, nextClass) })}>
         {#if nextContent}
           {@render nextContent()}
         {:else}

@@ -10,7 +10,7 @@
 </script>
 
 {#if href}
-  <a {...restProps} {href} aria-label={ariaLabel} class={footerIcon({class:clsx(theme, className)})}>
+  <a {...restProps} {href} aria-label={ariaLabel} class={footerIcon({ class: clsx(theme, className) })}>
     {@render children()}
   </a>
 {:else}

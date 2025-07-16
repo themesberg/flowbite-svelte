@@ -1,6 +1,5 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { cn } from "$lib";
   import { navbarBrand } from "./theme";
   import type { NavBrandProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
@@ -10,7 +9,7 @@
   const theme = getTheme("navBrand");
 </script>
 
-<a {...restProps} class={cn(navbarBrand(), clsx(className), theme)}>
+<a {...restProps} class={navbarBrand({ class: clsx(theme, className) })}>
   {@render children?.()}
 </a>
 

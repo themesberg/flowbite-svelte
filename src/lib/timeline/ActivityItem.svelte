@@ -12,19 +12,19 @@
 </script>
 
 {#each activities as { title: name, date, src, alt, text: activity }}
-  <li {...restProps} class={li({ class: clsx((theme as ActivityItemTheme)?.li, liClass)})}>
-    <span class={span({ class: clsx((theme as ActivityItemTheme)?.span, spanClass)})}>
-      <img class={img({ class: clsx( (theme as ActivityItemTheme)?.img, imgClass)})} {src} {alt} />
+  <li {...restProps} class={li({ class: clsx((theme as ActivityItemTheme)?.li, liClass) })}>
+    <span class={span({ class: clsx((theme as ActivityItemTheme)?.span, spanClass) })}>
+      <img class={img({ class: clsx((theme as ActivityItemTheme)?.img, imgClass) })} {src} {alt} />
     </span>
-    <div class={outerDiv({ class: clsx((theme as ActivityItemTheme)?.outerDiv, outerDivClass)})}>
-      <div class={innerDiv({ class: clsx((theme as ActivityItemTheme)?.innerDiv, innerDivClass)})}>
-        <time class={time({ class: clsx((theme as ActivityItemTheme)?.time, timeClass)})}>{date}</time>
-        <div class={title({ class: clsx((theme as ActivityItemTheme)?.title, titleClass)})}>
+    <div class={outerDiv({ class: clsx((theme as ActivityItemTheme)?.outerDiv, outerDivClass) })}>
+      <div class={innerDiv({ class: clsx((theme as ActivityItemTheme)?.innerDiv, innerDivClass) })}>
+        <time class={time({ class: clsx((theme as ActivityItemTheme)?.time, timeClass) })}>{date}</time>
+        <div class={title({ class: clsx((theme as ActivityItemTheme)?.title, titleClass) })}>
           {@html name}
         </div>
       </div>
       {#if activity}
-        <div class={text({ class: clsx((theme as ActivityItemTheme)?.text, textClass)})}>
+        <div class={text({ class: clsx((theme as ActivityItemTheme)?.text, textClass) })}>
           {@html activity}
         </div>
       {/if}

@@ -9,7 +9,7 @@
   const theme = getTheme("footerLinkGroup");
 </script>
 
-<ul {...restProps} class={footerLinkGroup({class:clsx(theme,className)})}>
+<ul {...restProps} class={footerLinkGroup({ class: clsx(theme, className) })}>
   {@render children()}
 </ul>
 

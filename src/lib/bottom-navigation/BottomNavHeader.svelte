@@ -12,8 +12,8 @@
   const { innerDiv, outerDiv } = $derived(bottomNavHeader());
 </script>
 
-<div {...restProps} class={outerDiv({class: clsx((theme as BottomNavHeaderTheme)?.outerDiv, outerClass)})}>
-  <div class={innerDiv({class:clsx((theme as BottomNavHeaderTheme)?.innerDiv, innerClass)})} role="group">
+<div {...restProps} class={outerDiv({ class: clsx((theme as BottomNavHeaderTheme)?.outerDiv, outerClass) })}>
+  <div class={innerDiv({ class: clsx((theme as BottomNavHeaderTheme)?.innerDiv, innerClass) })} role="group">
     {@render children()}
   </div>
 </div>

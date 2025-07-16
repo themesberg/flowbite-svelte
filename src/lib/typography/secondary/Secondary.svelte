@@ -2,7 +2,6 @@
   import clsx from "clsx";
   import { secondary } from "./index";
   import type { SecondaryProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: SecondaryProps = $props();
@@ -10,7 +9,7 @@
   const theme = getTheme("secondary");
 </script>
 
-<small {...restProps} class={cn(secondary({ class: clsx(className) }), theme)}>
+<small {...restProps} class={secondary({ class: clsx(theme, className) })}>
   {@render children()}
 </small>
 

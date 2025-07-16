@@ -35,13 +35,13 @@
   }
 </script>
 
-<ul role="tablist" {...restProps} class={base({class:clsx((theme as TabsTheme)?.base, ulClass)})}>
+<ul role="tablist" {...restProps} class={base({ class: clsx((theme as TabsTheme)?.base, ulClass) })}>
   {@render children()}
 </ul>
 {#if dividerBool}
-  <div class={dividerClass({class:clsx( (theme as TabsTheme)?.divider)})}></div>
+  <div class={dividerClass({ class: clsx((theme as TabsTheme)?.divider) })}></div>
 {/if}
-<div id={panelId} class={content({class:clsx((theme as TabsTheme)?.content, contentClass)})} role="tabpanel" aria-labelledby={panelId} use:init></div>
+<div id={panelId} class={content({ class: clsx((theme as TabsTheme)?.content, contentClass) })} role="tabpanel" aria-labelledby={panelId} use:init></div>
 
 <!--
 @component

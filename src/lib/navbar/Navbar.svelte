@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import { setContext } from "svelte";
-  import { NavContainer, cn } from "$lib";
+  import { NavContainer } from "$lib";
   import { navbar } from "./theme";
   import type { NavbarState, NavbarProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
@@ -34,7 +34,7 @@
 <svelte:document onclick={handleDocumentClick} />
 
 <nav bind:this={navbarElement}>
-  <div {...restProps} class={cn(navbar(), clsx(className), theme)}>
+  <div {...restProps} class={navbar({ class: clsx(theme, className) })}>
     <NavContainer {fluid} class={clsx(navContainerClass)}>
       {@render children({ hidden: navState.hidden, toggle, NavContainer })}
     </NavContainer>
