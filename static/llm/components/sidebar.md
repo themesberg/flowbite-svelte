@@ -1205,17 +1205,11 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 - children
 - isOpen: false
-- // Controls the *overlay* state on small screens
-    closeSidebar
+- closeSidebar
 - isSingle: true
 - breakpoint: "md"
-- // e.g.
-- 'md'
-    alwaysOpen: false
-- // When true
-- sidebar is always visible
-- no hamburger menu
-    position: "fixed"
+- alwaysOpen: false
+- position: "fixed"
 - activateClickOutside: true
 - backdrop: true
 - backdropClass
@@ -1228,8 +1222,6 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 - activeUrl: ""
 - class: className
 - disableBreakpoints: false
-- // Key prop for Drawer integration
-    ...restProps
 
 ### SidebarBrand
 

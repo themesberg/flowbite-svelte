@@ -23,7 +23,7 @@
 
   let innerWidth: number = $state(-1);
   // isLargeScreen should only be true if not disabling breakpoints and it meets the criteria
-  let isLargeScreen = $derived(disableBreakpoints ? false : (alwaysOpen || innerWidth >= breakpointValues[breakpoint]));
+  let isLargeScreen = $derived(disableBreakpoints ? false : alwaysOpen || innerWidth >= breakpointValues[breakpoint]);
 
   const activeUrlStore = writable("");
   setContext("activeUrl", activeUrlStore);
@@ -31,7 +31,7 @@
     activeUrlStore.set(activeUrl);
   });
 
-  if(disableBreakpoints) isOpen = true;
+  if (disableBreakpoints) isOpen = true;
   const { base, active, nonactive, div, backdrop: backdropCls } = $derived(sidebar({ isOpen, breakpoint, position, backdrop, alwaysOpen: alwaysOpen && !disableBreakpoints }));
 
   let sidebarCtx: SidebarCtxType = {
@@ -84,4 +84,32 @@
       {@render children()}
     </div>
   </aside>
-  {/if}
+{/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1348)
+## Props
+@prop children
+@prop isOpen = false
+@prop closeSidebar
+@prop isSingle = true
+@prop breakpoint = "md"
+@prop alwaysOpen = false
+@prop position = "fixed"
+@prop activateClickOutside = true
+@prop backdrop = true
+@prop backdropClass
+@prop transition = fly
+@prop params
+@prop divClass
+@prop ariaLabel
+@prop nonActiveClass
+@prop activeClass
+@prop activeUrl = ""
+@prop class: className
+@prop disableBreakpoints = false
+@prop ...restProps
+-->

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.10.5
+
+### Patch Changes
+
+- fix: #1664
+
 ## 1.10.4
 
 ### Patch Changes
