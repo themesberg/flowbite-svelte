@@ -66,6 +66,8 @@ import type { ListVariants } from "$lib/typography/list/theme";
 import type { ParagraphVariants } from "$lib/typography/paragraph/theme";
 import type { SpanVariants } from "$lib/typography/span/theme";
 import type { ClipboardVariants } from "./clipboard/theme";
+import type { AccordionItemVariants, AccordionVariants } from "./accordion/theme";
+import type { AvatarVariants } from "./avatar/theme";
 
 // end of component variants
 
@@ -155,24 +157,19 @@ export interface AccordionCtxType {
   multiple?: boolean;
 }
 
-export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
+export interface AccordionProps extends AccordionVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   children: Snippet;
-  flush?: boolean;
   multiple?: boolean;
   activeClass?: string;
   inactiveClass?: string;
-  defaultClass?: string;
-  classActive?: string;
-  classInactive?: string;
   transitionType?: TransitionFunc | "none";
 }
 
-export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
+export interface AccordionItemProps extends AccordionItemVariants, HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   header?: Snippet;
   arrowup?: Snippet;
   arrowdown?: Snippet;
-  open?: boolean;
   activeClass?: string;
   inactiveClass?: string;
   transitionType?: TransitionFunc | "none";
@@ -193,19 +190,15 @@ export interface AlertProps extends Omit<AlertVariants, "icon">, Omit<HTMLAttrib
 }
 
 // avatar
-export interface AvatarProps extends HTMLAttributes<HTMLDivElement> {
+export interface AvatarProps extends AvatarVariants, HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   indicator?: Snippet;
   href?: HTMLAnchorAttributes["href"];
   target?: HTMLAnchorAttributes["target"];
   src?: string;
-  cornerStyle?: "rounded" | "circular";
-  stacked?: boolean;
   dot?: object;
   alt?: string;
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
   onclick?: () => void;
-  border?: boolean;
 }
 
 // badge
@@ -224,11 +217,10 @@ export interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivEl
 }
 
 // banner
-export interface BannerProps extends BannerVariants, HTMLAttributes<HTMLDivElement> {
+export interface BannerProps extends BannerVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   header?: Snippet;
   open?: boolean;
   dismissable?: boolean;
-  color?: BannerVariants["color"];
   innerClass?: ClassValue;
   transition?: TransitionFunc;
   params?: object;
@@ -381,7 +373,7 @@ export interface ButtonToggleContext {
   isSelected: (toggleValue: string) => boolean;
 }
 
-export interface CheckIconProps extends SVGAttributes<SVGSVGElement> {}
+export interface CheckIconProps extends SVGAttributes<SVGSVGElement> { }
 
 // card
 export type CardProps = Omit<CardVariants, "href"> &
@@ -599,7 +591,7 @@ export interface DropdownProps extends PopperProps {
   isOpen?: boolean;
 }
 
-export interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {}
+export interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> { }
 
 export interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
@@ -679,9 +671,9 @@ export interface CheckboxProps extends CheckboxVariants, Omit<HTMLInputAttribute
   children?: Snippet<
     [
       | {
-          value?: string | number;
-          checked: boolean;
-        }
+        value?: string | number;
+        checked: boolean;
+      }
       | CheckboxItem
     ]
   >;
@@ -753,7 +745,7 @@ export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size
 }
 
 // helper
-export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> {}
+export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> { }
 
 // input
 export type InputValue = string | number | string[] | undefined;
@@ -939,7 +931,7 @@ export interface TimepickerProps {
   timeIntervals?: string[];
   columns?: ColumnCount;
   // Callback props instead of events
-  onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
+  onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
 }
 
 // textarea
@@ -1097,7 +1089,7 @@ export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "child
   closeOnClickOutside?: boolean;
 }
 
-export interface NavBrandProps extends HTMLAnchorAttributes {}
+export interface NavBrandProps extends HTMLAnchorAttributes { }
 
 export interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
   fluid?: boolean;
@@ -1133,7 +1125,7 @@ export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLD
   end?: Snippet;
 }
 
-export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
+export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> { }
 
 export type ToolbarButtonProps = ToolbarButtonVariants &
   AnchorButtonAttributes & {
@@ -1442,7 +1434,7 @@ export interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
   size?: SkeletonVariants["size"];
 }
 
-export interface TestimonialPlaceholderProps extends HTMLAttributes<HTMLDivElement> {}
+export interface TestimonialPlaceholderProps extends HTMLAttributes<HTMLDivElement> { }
 
 export interface TextPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: TextPlaceholderVariants["size"];
@@ -1452,7 +1444,7 @@ export interface VideoPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: VideoPlaceholderVariants["size"];
 }
 
-export interface WidgetPlaceholderProps extends HTMLAttributes<HTMLDivElement> {}
+export interface WidgetPlaceholderProps extends HTMLAttributes<HTMLDivElement> { }
 
 // speeddial
 export interface SpeedCtxType {

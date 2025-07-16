@@ -3,9 +3,12 @@
   import { banner, type BannerTheme } from ".";
   import clsx from "clsx";
   import { type ParamsType, type BannerProps, CloseButton } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
 
-  let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, innerClass, transition = fade, params, closeClass, ...restProps }: BannerProps = $props();
+  let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, classes, innerClass, transition = fade, params, closeClass, ...restProps }: BannerProps = $props();
+
+  themeDeprecated("Banner", { innerClass, closeClass });
+  let styling = $derived(classes ?? { insideDiv: innerClass, dismissable: closeClass });
 
   // Theme context
   const theme = getTheme("banner");
@@ -14,15 +17,15 @@
 </script>
 
 {#if open}
-  <div tabindex="-1" class={base({ class: clsx((theme as BannerTheme)?.base, className)})} {...restProps} transition:transition={params as ParamsType}>
-    <div class={insideDiv({class: clsx((theme as BannerTheme)?.insideDiv, innerClass)})}>
+  <div tabindex="-1" class={base({ class: clsx((theme as BannerTheme)?.base, className) })} {...restProps} transition:transition={params as ParamsType}>
+    <div class={insideDiv({ class: clsx((theme as BannerTheme)?.insideDiv, styling.insideDiv) })}>
       {@render children?.()}
     </div>
 
     {#if dismissable}
       <div class="flex items-center justify-end">
         <CloseButton
-          class={dismissableClass({class: clsx((theme as BannerTheme)?.dismissable, closeClass)})}
+          class={dismissableClass({ class: clsx((theme as BannerTheme)?.dismissable, styling.dismissable) })}
           {color}
           ariaLabel="Remove banner"
           onclick={() => {

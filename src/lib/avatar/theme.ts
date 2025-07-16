@@ -1,5 +1,7 @@
-import { tv } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import { tv, type VariantProps } from "tailwind-variants";
+
+export type AvatarVariants = VariantProps<typeof avatar>;
 
 const avatar = tv({
   base: "relative flex items-center justify-center bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300",

@@ -1,13 +1,17 @@
 <script lang="ts">
-  import { slide } from "svelte/transition";
+  import { type AccordionCtxType, type AccordionItemProps, type ParamsType } from "$lib";
+  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   import { getContext } from "svelte";
   import { writable } from "svelte/store";
-  import clsx from "clsx";
+  import { slide } from "svelte/transition";
   import { accordionItem, type AccordionItemTheme } from ".";
-  import { type AccordionCtxType, type AccordionItemProps, type ParamsType } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, headerClass, contentClass }: AccordionItemProps = $props();
+  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, classes, headerClass, contentClass }: AccordionItemProps = $props();
+
+  themeDeprecated("AccordionItem", { headerClass, contentClass, activeClass, inactiveClass });
+
+  let styling: typeof classes = $derived(classes ?? { button: headerClass, content: contentClass, active: activeClass, inactive: inactiveClass });
 
   const ctxTransitionType = getContext("ctxTransitionType");
   // Check if transitionType is explicitly set to undefined in props
@@ -30,11 +34,11 @@
 
   const { base, button, content, active, inactive } = $derived(accordionItem({ flush: ctx.flush, open }));
 
-  let buttonClass = $derived(clsx(open && !ctx.flush && (activeClass || ctx.activeClass || active()), !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive())));
+  let buttonClass = $derived(clsx(open && !ctx.flush && (styling.active || ctx.activeClass || active()), !open && !ctx.flush && (styling.inactive || ctx.inactiveClass || inactive())));
 </script>
 
-<h2 class={base({class: clsx((theme as AccordionItemTheme)?.base, headerClass)})}>
-  <button type="button" onclick={handleToggle} class={button({class: clsx(buttonClass, (theme as AccordionItemTheme)?.button, className)})} aria-expanded={open}>
+<h2 class={base({ class: clsx((theme as AccordionItemTheme)?.base, className) })}>
+  <button type="button" onclick={handleToggle} class={button({ class: clsx(buttonClass, (theme as AccordionItemTheme)?.button, styling.button) })} aria-expanded={open}>
     {#if header}
       {@render header()}
       {#if open}
@@ -59,14 +63,14 @@
 {#if useTransition}
   {#if open && transitionType !== "none"}
     <div transition:transitionType={transitionParams as ParamsType}>
-      <div class={content({ class: clsx((theme as AccordionItemTheme)?.content, contentClass) })}>
+      <div class={content({ class: clsx((theme as AccordionItemTheme)?.content, styling.content) })}>
         {@render children()}
       </div>
     </div>
   {/if}
 {:else}
   <div class={open ? "block" : "hidden"}>
-    <div class={content({ class: clsx(contentClass, (theme as AccordionItemTheme)?.content)})}>
+    <div class={content({ class: clsx((theme as AccordionItemTheme)?.content, styling.content) })}>
       {@render children()}
     </div>
   </div>
