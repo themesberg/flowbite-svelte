@@ -6,9 +6,9 @@
   import { type BottomNavProps, type BottomNavContextType, cn, type BottomNavTheme } from "$lib";
   import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
 
-  let { children, header, position = "fixed", navType = "default", class: className, classes, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
+  let { children, header, position = "fixed", navType = "default", class: className, classes, outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
 
-  themeDeprecated("BottomNav", { innerClass });
+  themeDeprecated("BottomNav", { innerClass, outerClass });
   let styling = $derived(classes ?? { inner: innerClass });
 
   // Theme context
@@ -28,7 +28,7 @@
   });
 </script>
 
-<div {...restProps} class={base({ class: clsx((theme as BottomNavTheme)?.base, className) })}>
+<div {...restProps} class={base({ class: clsx((theme as BottomNavTheme)?.base, className ?? outerClass) })}>
   {#if header}
     {@render header()}
   {/if}

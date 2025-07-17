@@ -4,9 +4,9 @@
   import { type BottomNavHeaderProps, type BottomNavHeaderTheme } from "$lib";
   import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
 
-  let { children, class: className, classes, innerClass, ...restProps }: BottomNavHeaderProps = $props();
+  let { children, class: className, classes, outerClass, innerClass, ...restProps }: BottomNavHeaderProps = $props();
 
-  themeDeprecated("BottomNavHeader", { innerClass });
+  themeDeprecated("BottomNavHeader", { innerClass, outerClass });
   let styling = $derived(classes ?? { innerDiv: innerClass });
 
   // Theme context
@@ -15,7 +15,7 @@
   const { innerDiv, base } = $derived(bottomNavHeader());
 </script>
 
-<div {...restProps} class={base({ class: clsx((theme as BottomNavHeaderTheme)?.base, className) })}>
+<div {...restProps} class={base({ class: clsx((theme as BottomNavHeaderTheme)?.base, className ?? outerClass) })}>
   <div class={innerDiv({ class: clsx((theme as BottomNavHeaderTheme)?.innerDiv, styling.innerDiv) })} role="group">
     {@render children()}
   </div>

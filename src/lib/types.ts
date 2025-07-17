@@ -234,7 +234,6 @@ export type BottomNavContextType = {
   activeClass?: string | null;
 };
 
-export type AppBtnPositionType = "middle" | "left" | "right" | undefined;
 
 export interface BottomNavProps extends BottomNavVariants, HTMLAttributes<HTMLDivElement> {
   children: Snippet;
@@ -248,7 +247,6 @@ export interface BottomNavProps extends BottomNavVariants, HTMLAttributes<HTMLDi
 export type BottomNavItemProps = BottomNavItemVariants & AnchorButtonAttributes & {
   children: Snippet;
   btnName?: string;
-  appBtnPosition?: AppBtnPositionType;
   activeClass?: ClassValue;
   btnClass?: ClassValue;
   spanClass?: ClassValue;
