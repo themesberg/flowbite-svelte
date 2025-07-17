@@ -4,13 +4,13 @@
 
 ### Patch Changes
 
-- - fix(dropzone): #1586
-  - Classes (#1681)
-    - classes: Accordion, Badge, Banner
-    - types corrections
-    - BottomNav
-    - coderabbit suggested fixes
-    - BottomNav modern context handling
+- fix(dropzone): #1586
+- Classes (#1681)
+  - classes: Accordion, Badge, Banner
+  - types corrections
+  - BottomNav
+  - coderabbit suggested fixes
+  - BottomNav modern context handling
 
 ## 1.10.6
 
