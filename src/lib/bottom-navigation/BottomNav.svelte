@@ -4,9 +4,12 @@
   import { bottomNav } from ".";
   import clsx from "clsx";
   import { type BottomNavProps, type BottomNavContextType, cn, type BottomNavTheme } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
 
-  let { children, header, position = "fixed", navType = "default", outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
+  let { children, header, position = "fixed", navType = "default", class: className, classes, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
+
+  themeDeprecated("BottomNav", { innerClass });
+  let styling = $derived(classes ?? { inner: innerClass });
 
   // Theme context
   const theme = getTheme("bottomNav");
@@ -18,19 +21,19 @@
   setContext("navType", navType);
   setContext<BottomNavContextType>("bottomNavType", { activeClass: activeCls });
 
-  const { outer, inner } = $derived(bottomNav({ position, navType }));
+  const { base, inner } = $derived(bottomNav({ position, navType }));
 
   $effect(() => {
     activeUrlStore.set(activeUrl);
   });
 </script>
 
-<div {...restProps} class={outer({ class: clsx((theme as BottomNavTheme)?.outer, outerClass) })}>
+<div {...restProps} class={base({ class: clsx((theme as BottomNavTheme)?.base, className) })}>
   {#if header}
     {@render header()}
   {/if}
 
-  <div class={inner({ class: clsx((theme as BottomNavTheme)?.inner, innerClass) })}>
+  <div class={inner({ class: clsx((theme as BottomNavTheme)?.inner, styling.inner) })}>
     {@render children()}
   </div>
 </div>

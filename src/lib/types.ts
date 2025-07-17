@@ -68,6 +68,7 @@ import type { SpanVariants } from "$lib/typography/span/theme";
 import type { ClipboardVariants } from "./clipboard/theme";
 import type { AccordionItemVariants, AccordionVariants } from "./accordion/theme";
 import type { AvatarVariants } from "./avatar/theme";
+import type { BottomNavHeaderItemVariants, BottomNavHeaderVariants, BottomNavItemVariants, BottomNavVariants } from "./bottom-navigation/theme";
 
 // end of component variants
 
@@ -228,9 +229,6 @@ export interface BannerProps extends BannerVariants, Omit<HTMLAttributes<HTMLDiv
 }
 
 // bottom-navigation
-export type BottomNavVariantType = "border" | "application" | "group" | "default" | "pagination" | "card" | "meeting" | "video" | undefined;
-
-export type PositionType = "static" | "fixed" | "absolute" | "relative" | "sticky" | undefined;
 
 export type BottomNavContextType = {
   activeClass?: string | null;
@@ -238,18 +236,16 @@ export type BottomNavContextType = {
 
 export type AppBtnPositionType = "middle" | "left" | "right" | undefined;
 
-export interface BottomNavProps extends HTMLAttributes<HTMLDivElement> {
+export interface BottomNavProps extends BottomNavVariants, HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   header?: Snippet;
   activeUrl?: string;
-  position?: PositionType;
-  navType?: BottomNavVariantType;
   outerClass?: ClassValue;
   innerClass?: ClassValue;
   activeClass?: ClassValue;
 }
 
-export interface BottomNavItemProps {
+export type BottomNavItemProps = BottomNavItemVariants & AnchorButtonAttributes & {
   children: Snippet;
   btnName?: string;
   appBtnPosition?: AppBtnPositionType;
@@ -258,39 +254,36 @@ export interface BottomNavItemProps {
   spanClass?: ClassValue;
   active?: boolean;
   // Common attributes that make sense for both button and anchor
-  id?: string;
-  style?: string;
-  tabindex?: number;
-  title?: string;
-  role?: string;
-  "aria-label"?: string;
-  "data-testid"?: string;
-  // Anchor-specific attributes
-  href?: string;
-  target?: string;
-  rel?: string;
-  download?: string | boolean;
-  // Button-specific attributes
-  type?: "button" | "submit" | "reset";
-  disabled?: boolean;
-  name?: string;
-  value?: string | number | string[];
-  // Allow any other attributes (like data-* attributes)
-  [key: string]: any;
+  // AnchorButtonDivAttributes provides them
+  // id?: string;
+  // style?: string;
+  // tabindex?: number;
+  // title?: string;
+  // role?: string;
+  // "aria-label"?: string;
+  // "data-testid"?: string;
+  // // Anchor-specific attributes
+  // href?: string;
+  // target?: string;
+  // rel?: string;
+  // download?: string | boolean;
+  // // Button-specific attributes
+  // type?: "button" | "submit" | "reset";
+  // disabled?: boolean;
+  // name?: string;
+  // value?: string | number | string[];
+  // // Allow any other attributes (like data-* attributes)
+  // [key: string]: any;
 }
 
-// export type BottomNavItemProps = BaseBottomNavItemProps & (
-//   ({ href: string } & HTMLAnchorAttributes & { active?: boolean }) |
-//   ({ href?: never } & HTMLButtonAttributes & { active?: boolean })
-// );
 
-export interface BottomNavHeaderProps {
+export interface BottomNavHeaderProps extends BottomNavHeaderVariants, HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   outerClass?: ClassValue;
   innerClass?: ClassValue;
 }
 
-export interface BottomNavHeaderItemProps extends HTMLButtonAttributes {
+export interface BottomNavHeaderItemProps extends BottomNavHeaderItemVariants, HTMLButtonAttributes {
   itemName: string;
   active?: boolean;
 }
