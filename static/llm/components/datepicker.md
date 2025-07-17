@@ -300,7 +300,7 @@ Set `translationLocale` to change translation. The following example shows Germa
 
 #### Types
 
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L480)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L463)
 
 #### Props
 

@@ -41,7 +41,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L227)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L219)
 ## Props
 @prop children
 @prop header
@@ -50,6 +50,7 @@
 @prop color = "gray"
 @prop type
 @prop class: className
+@prop classes
 @prop innerClass
 @prop transition = fade
 @prop params

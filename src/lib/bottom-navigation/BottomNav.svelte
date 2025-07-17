@@ -42,12 +42,14 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L249)
+[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L238)
 ## Props
 @prop children
 @prop header
 @prop position = "fixed"
 @prop navType = "default"
+@prop class: className
+@prop classes
 @prop outerClass
 @prop innerClass
 @prop activeClass

@@ -56,7 +56,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1540)
+[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1526)
 ## Props
 @prop children
 @prop steps = []

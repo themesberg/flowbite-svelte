@@ -22,7 +22,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1784)
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1770)
 ## Props
 @prop children
 @prop divClass

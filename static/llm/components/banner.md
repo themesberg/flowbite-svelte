@@ -176,7 +176,7 @@ This example demonstrates a sliding transition using the slide transition from s
 
 #### Types
 
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L227)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L219)
 
 #### Props
 
@@ -187,6 +187,7 @@ This example demonstrates a sliding transition using the slide transition from s
 - color: "gray"
 - type
 - class: className
+- classes
 - innerClass
 - transition: fade
 - params

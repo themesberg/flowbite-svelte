@@ -67,14 +67,14 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L260)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L247)
 ## Props
 @prop children
 @prop btnName
 @prop appBtnPosition = "middle"
-@prop target
 @prop activeClass
-@prop href = ""
+@prop class: className
+@prop classes
 @prop btnClass
 @prop spanClass
 @prop active: manualActive

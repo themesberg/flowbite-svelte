@@ -2,7 +2,7 @@
   "name": "Button",
   "type": {
     "name": "ButtonProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L339"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L322"
   },
   "props": [
     ["children", ""],

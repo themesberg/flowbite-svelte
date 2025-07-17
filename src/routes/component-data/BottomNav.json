@@ -2,13 +2,15 @@
   "name": "BottomNav",
   "type": {
     "name": "BottomNavProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L249"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L238"
   },
   "props": [
     ["children", ""],
     ["header", ""],
     ["position", "\"fixed\""],
     ["navType", "\"default\""],
+    ["class: className", ""],
+    ["classes", ""],
     ["outerClass", ""],
     ["innerClass", ""],
     ["activeClass", ""],

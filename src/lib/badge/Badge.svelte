@@ -49,7 +49,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L212)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L204)
 ## Props
 @prop children
 @prop icon
@@ -58,6 +58,7 @@
 @prop large = false
 @prop dismissable = false
 @prop class: className
+@prop classes
 @prop border
 @prop href
 @prop target

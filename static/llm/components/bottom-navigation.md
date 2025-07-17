@@ -366,7 +366,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L249)
+[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L238)
 
 #### Props
 
@@ -374,6 +374,8 @@ You can even use the other bottom navbar examples to exchange the default one pr
 - header
 - position: "fixed"
 - navType: "default"
+- class: className
+- classes
 - outerClass
 - innerClass
 - activeClass
@@ -383,11 +385,13 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L295)
+[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L278)
 
 #### Props
 
 - children
+- class: className
+- classes
 - outerClass
 - innerClass
 
@@ -395,7 +399,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L301)
+[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L284)
 
 #### Props
 
@@ -407,16 +411,16 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L260)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L247)
 
 #### Props
 
 - children
 - btnName
 - appBtnPosition: "middle"
-- target
 - activeClass
-- href: ""
+- class: className
+- classes
 - btnClass
 - spanClass
 - active: manualActive

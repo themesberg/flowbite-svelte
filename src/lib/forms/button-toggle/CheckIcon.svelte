@@ -12,7 +12,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CheckIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L384)
+[CheckIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L367)
 ## Props
 @prop class: className
 @prop ...restProps
