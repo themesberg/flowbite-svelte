@@ -5,7 +5,6 @@
   import { getContext } from "svelte";
   import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
   import { bottomNavItem, type BottomNavItemTheme } from ".";
-  import type { BottomNavVariants } from "./theme";
 
   let { children, btnName, appBtnPosition = "middle", activeClass, class: className, classes, btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
 
@@ -15,17 +14,11 @@
   // Theme context
   const theme = getTheme("bottomNavItem");
 
-  const navType: BottomNavVariants["navType"] = getContext("navType");
   const context = getContext<BottomNavContextType>("bottomNavType") ?? {};
 
-  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
+  let navUrl = $derived(context.activeUrl || "");
 
-  let navUrl = $state("");
-  activeUrlStore.subscribe((value) => {
-    navUrl = value;
-  });
-
-  const { base, span } = $derived(bottomNavItem({ navType, appBtnPosition }));
+  const { base, span } = $derived(bottomNavItem({ navType: context.navType, appBtnPosition }));
 
   // Determine active state based on manual prop or URL matching
   let isActive = $derived.by(() => {

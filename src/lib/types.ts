@@ -232,6 +232,8 @@ export interface BannerProps extends BannerVariants, Omit<HTMLAttributes<HTMLDiv
 
 export type BottomNavContextType = {
   activeClass?: string | null;
+  activeUrl?: string;
+  navType?: BottomNavVariants["navType"];
 };
 
 

@@ -16,15 +16,15 @@
 
   const activeCls = cn("text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900", activeClass);
 
-  const activeUrlStore = writable("");
-  setContext("activeUrl", activeUrlStore);
-  setContext("navType", navType);
-  setContext<BottomNavContextType>("bottomNavType", { activeClass: activeCls });
+  let context: BottomNavContextType = $state({ activeClass: activeCls, activeUrl, navType });
+  setContext<BottomNavContextType>("bottomNavType", context);
 
   const { base, inner } = $derived(bottomNav({ position, navType }));
 
   $effect(() => {
-    activeUrlStore.set(activeUrl);
+    context.activeUrl = activeUrl;
+    context.navType = navType;
+    context.activeClass = activeCls;
   });
 </script>
 
