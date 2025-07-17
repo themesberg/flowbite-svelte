@@ -120,59 +120,135 @@
     }
   }
 
+  // FIXED: Completely rewritten to handle multiple date formats and locales
   function handleInputChangeWithDateFns() {
     const inputValue = inputElement?.value?.trim();
     if (!inputValue) return;
 
-    // Get the actual format pattern
-    const formatPattern = getDateFormatPattern();
+    // Clear any previous custom validity
+    inputElement?.setCustomValidity("");
 
-    try {
-      // Parse with the exact format expected
-      const parsedDate = parse(inputValue, formatPattern, new Date());
+    // Try multiple parsing strategies
+    const parsedDate = tryParseDate(inputValue);
 
-      if (!isValid(parsedDate)) {
-        inputElement?.setCustomValidity(`Please enter date in format: ${formatPattern}`);
-        return;
-      }
-
-      inputElement?.setCustomValidity("");
-
-      if (!isDateAvailable(parsedDate)) {
-        inputElement?.setCustomValidity("Selected date is not available");
-        return;
-      }
-
-      handleDaySelect(parsedDate);
-    } catch (error) {
+    if (!parsedDate || !isValid(parsedDate)) {
+      const formatPattern = getDateFormatPattern();
       inputElement?.setCustomValidity(`Please enter date in format: ${formatPattern}`);
+      return;
     }
+
+    if (!isDateAvailable(parsedDate)) {
+      inputElement?.setCustomValidity("Selected date is not available");
+      return;
+    }
+
+    handleDaySelect(parsedDate);
   }
 
-  function getDateFormatPattern(): string {
-    // Test with a known date to determine format
-    const testDate = new Date(2025, 0, 15); // January 15, 2025
-    const formatted = formatDate(testDate);
+  // FIXED: New function to try parsing with multiple strategies
+  function tryParseDate(inputValue: string): Date | null {
+    // Strategy 1: Try parsing with the expected format pattern
+    const formatPattern = getDateFormatPattern();
+    try {
+      const parsedDate = parse(inputValue, formatPattern, new Date());
+      if (isValid(parsedDate)) {
+        return parsedDate;
+      }
+    } catch (error) {
+      // Continue to next strategy
+    }
 
-    // Map common formats to date-fns patterns
-    if (formatted.match(/^\d{1,2}\/\d{1,2}\/\d{4}$/)) {
-      // Could be DD/MM/YYYY or MM/DD/YYYY, need to determine
-      const testDate2 = new Date(2025, 11, 3); // December 3, 2025
-      const formatted2 = formatDate(testDate2);
+    // Strategy 2: Try common date formats
+    const commonFormats = [
+      'd.M.yyyy',    // German: 17.7.2025
+      'dd.MM.yyyy',  // German: 17.07.2025
+      'M/d/yyyy',    // US: 7/17/2025
+      'MM/dd/yyyy',  // US: 07/17/2025
+      'd/M/yyyy',    // UK: 17/7/2025
+      'dd/MM/yyyy',  // UK: 17/07/2025
+      'yyyy-MM-dd',  // ISO: 2025-07-17
+      'yyyy-M-d',    // ISO: 2025-7-17
+      'M-d-yyyy',    // US with dashes: 7-17-2025
+      'd-M-yyyy',    // EU with dashes: 17-7-2025
+    ];
 
-      if (formatted2.startsWith("3/") || formatted2.startsWith("03/")) {
-        return "d/M/yyyy"; // DD/MM/YYYY format
-      } else {
-        return "M/d/yyyy"; // MM/DD/YYYY format
+    for (const format of commonFormats) {
+      try {
+        const parsedDate = parse(inputValue, format, new Date());
+        if (isValid(parsedDate)) {
+          return parsedDate;
+        }
+      } catch (error) {
+        // Continue to next format
       }
     }
 
-    if (formatted.match(/^\d{4}-\d{1,2}-\d{1,2}$/)) {
-      return "yyyy-M-d"; // ISO format
+    // Strategy 3: Try native Date parsing as fallback
+    try {
+      const nativeDate = new Date(inputValue);
+      if (isValid(nativeDate) && !isNaN(nativeDate.getTime())) {
+        return nativeDate;
+      }
+    } catch (error) {
+      // Continue
     }
 
-    // Add more patterns as needed
-    return "M/d/yyyy"; // Default fallback
+    return null;
+  }
+
+  // FIXED: Better format pattern detection based on locale
+  function getDateFormatPattern(): string {
+    const actualLocale = locale === "default" ? navigator.language : locale;
+    
+    // Create a test date and format it to understand the pattern
+    const testDate = new Date(2025, 0, 15); // January 15, 2025
+    const formatted = testDate.toLocaleDateString(actualLocale, dateFormat || { year: "numeric", month: "numeric", day: "numeric" });
+
+    // Analyze the formatted string to determine the pattern
+    if (formatted.includes('.')) {
+      // German/European format with dots
+      if (formatted.startsWith('15.')) {
+        return 'd.M.yyyy';
+      } else if (formatted.startsWith('01.')) {
+        return 'M.d.yyyy';
+      }
+      return 'd.M.yyyy'; // Default to day first
+    } else if (formatted.includes('/')) {
+      // US/UK format with slashes
+      if (formatted.startsWith('1/')) {
+        return 'M/d/yyyy'; // US format
+      } else if (formatted.startsWith('15/')) {
+        return 'd/M/yyyy'; // UK format
+      }
+      // Additional check with different test date
+      const testDate2 = new Date(2025, 11, 3); // December 3, 2025
+      const formatted2 = testDate2.toLocaleDateString(actualLocale, dateFormat || { year: "numeric", month: "numeric", day: "numeric" });
+      if (formatted2.startsWith('3/') || formatted2.startsWith('03/')) {
+        return 'd/M/yyyy';
+      } else {
+        return 'M/d/yyyy';
+      }
+    } else if (formatted.includes('-')) {
+      // ISO or other dash format
+      if (formatted.startsWith('2025-')) {
+        return 'yyyy-M-d';
+      } else if (formatted.startsWith('1-')) {
+        return 'M-d-yyyy';
+      } else {
+        return 'd-M-yyyy';
+      }
+    }
+
+    // Default fallback - try to detect based on locale
+    if (actualLocale.startsWith('en-US')) {
+      return 'M/d/yyyy';
+    } else if (actualLocale.startsWith('de') || actualLocale.startsWith('at') || actualLocale.startsWith('ch')) {
+      return 'd.M.yyyy';
+    } else if (actualLocale.startsWith('en-GB') || actualLocale.startsWith('en-AU')) {
+      return 'd/M/yyyy';
+    }
+
+    return 'M/d/yyyy'; // Final fallback
   }
 
   function handleClickOutside(event: MouseEvent) {
@@ -363,42 +439,3 @@
     </div>
   {/if}
 </div>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L463)
-## Props
-@prop value = $bindable()
-@prop defaultDate = null
-@prop range = false
-@prop rangeFrom = $bindable()
-@prop rangeTo = $bindable()
-@prop availableFrom = null
-@prop availableTo = null
-@prop locale = "default"
-@prop translationLocale = locale
-@prop firstDayOfWeek = 0
-@prop dateFormat
-@prop placeholder = "Select date"
-@prop disabled = false
-@prop required = false
-@prop inputClass = ""
-@prop color = "primary"
-@prop inline = false
-@prop autohide = true
-@prop showActionButtons = false
-@prop title = ""
-@prop onselect
-@prop onclear
-@prop onapply
-@prop btnClass
-@prop inputmode = "none"
-@prop classes
-@prop monthColor = "alternative"
-@prop monthBtnSelected = "bg-primary-500 text-white"
-@prop monthBtn = "text-gray-700 dark:text-gray-300"
-@prop class: className
-@prop elementRef = $bindable()
--->
