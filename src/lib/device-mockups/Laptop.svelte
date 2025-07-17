@@ -1,22 +1,34 @@
 <script lang="ts">
+  import { type LaptopProps } from "$lib";
+  import { themeDeprecated } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   import { laptop } from ".";
-  import { type MockupBaseProps, cn } from "$lib";
 
-  let { children, divClass, div2Class, div3Class, div4Class, ...restProps }: MockupBaseProps = $props();
-  const { div, inner, bot, botCen } = laptop();
+  let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, ...restProps }: LaptopProps = $props();
+
+  themeDeprecated("Laptop", { divClass, div2Class, div3Class, div4Class });
+  let styling = $derived(
+    classes ?? {
+      inner: div2Class,
+      bot: div3Class,
+      botCen: div4Class
+    }
+  );
+
+  const { base, inner, bot, botCen } = laptop();
 </script>
 
 <div {...restProps}>
-  <div class={cn(div(), divClass)}>
-    <div class={cn(inner(), div2Class)}>
+  <div class={base({ class: clsx(className ?? divClass) })}>
+    <div class={inner({ class: clsx(styling.inner) })}>
       {#if children}
         {@render children()}
       {/if}
     </div>
   </div>
 
-  <div class={cn(bot(), div3Class)}>
-    <div class={cn(botCen(), div4Class)}></div>
+  <div class={bot({ class: clsx(styling.bot) })}>
+    <div class={botCen({ class: clsx(styling.botCen) })}></div>
   </div>
 </div>
 

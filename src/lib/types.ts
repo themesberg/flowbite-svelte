@@ -69,6 +69,7 @@ import type { AvatarVariants } from "./avatar/theme";
 import type { BottomNavHeaderItemVariants, BottomNavHeaderVariants, BottomNavItemVariants, BottomNavVariants } from "./bottom-navigation/theme";
 import type { BreadcrumbItemVariants, BreadcrumbVariants } from "./breadcrumb/theme";
 import type { ButtonGroupVariants } from "./button-group/theme";
+import type { AndroidVariants, DefaultMockupVariants, DesktopVariants, IosVariants, LaptopVariants, SmartwatchVariants, TabletVariants } from "./device-mockups/theme";
 
 // end of component variants
 
@@ -476,7 +477,7 @@ export interface DeviceMockupProps {
   device?: DeviceVariantType;
 }
 
-export interface MockupBaseProps extends HTMLAttributes<HTMLElement> {
+export interface DesktopProps extends DesktopVariants, HTMLAttributes<HTMLElement> {
   children?: Snippet;
   divClass?: ClassValue;
   div2Class?: ClassValue;
@@ -484,7 +485,15 @@ export interface MockupBaseProps extends HTMLAttributes<HTMLElement> {
   div4Class?: ClassValue;
 }
 
-export interface AndroidProps extends HTMLAttributes<HTMLDivElement> {
+export interface LaptopProps extends LaptopVariants, HTMLAttributes<HTMLDivElement> {
+  children?: Snippet;
+  divClass?: ClassValue;
+  div2Class?: ClassValue;
+  div3Class?: ClassValue;
+  div4Class?: ClassValue;
+}
+
+export interface AndroidProps extends AndroidVariants, HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   divClass?: ClassValue;
   div2Class?: ClassValue;
@@ -495,7 +504,7 @@ export interface AndroidProps extends HTMLAttributes<HTMLDivElement> {
   div7Class?: ClassValue;
 }
 
-export interface DefaultMockupProps {
+export interface DefaultMockupProps extends DefaultMockupVariants, HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   divClass?: ClassValue;
   div2Class?: ClassValue;
@@ -505,7 +514,7 @@ export interface DefaultMockupProps {
   div6Class?: ClassValue;
 }
 
-export interface IosProps {
+export interface IosProps extends IosVariants, HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   divClass?: ClassValue;
   div2Class?: ClassValue;
@@ -515,7 +524,7 @@ export interface IosProps {
   div6Class?: ClassValue;
 }
 
-export interface SmartwatchProps {
+export interface SmartwatchProps extends SmartwatchVariants, HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   divClass?: ClassValue;
   div2Class?: ClassValue;
@@ -525,7 +534,7 @@ export interface SmartwatchProps {
   div6Class?: ClassValue;
 }
 
-export interface TabletProps {
+export interface TabletProps extends TabletVariants, HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   divClass?: ClassValue;
   div2Class?: ClassValue;

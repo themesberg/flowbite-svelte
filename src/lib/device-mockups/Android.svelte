@@ -1,19 +1,33 @@
 <script lang="ts">
+  import { type AndroidProps } from "$lib";
+  import { themeDeprecated } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   import { android } from ".";
-  import { type AndroidProps, cn } from "$lib";
 
-  let { children, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class, ...restProps }: AndroidProps = $props();
+  let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class, ...restProps }: AndroidProps = $props();
 
-  const { div, slot, top, leftTop, leftMid, leftBot, right } = android();
+  themeDeprecated("Android", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class });
+  let styling = $derived(
+    classes ?? {
+      top: div2Class,
+      leftTop: div3Class,
+      leftMid: div4Class,
+      leftBot: div5Class,
+      right: div6Class,
+      slot: div7Class
+    }
+  );
+
+  const { base, slot, top, leftTop, leftMid, leftBot, right } = android();
 </script>
 
-<div {...restProps} class={cn(div(), divClass)}>
-  <div class={cn(top(), div2Class)}></div>
-  <div class={cn(leftTop(), div3Class)}></div>
-  <div class={cn(leftMid(), div4Class)}></div>
-  <div class={cn(leftBot(), div5Class)}></div>
-  <div class={cn(right(), div6Class)}></div>
-  <div class={cn(slot(), div7Class)}>
+<div {...restProps} class={base({ class: clsx(className ?? divClass) })}>
+  <div class={top({ class: clsx(styling.top) })}></div>
+  <div class={leftTop({ class: clsx(styling.leftTop) })}></div>
+  <div class={leftMid({ class: clsx(styling.leftMid) })}></div>
+  <div class={leftBot({ class: clsx(styling.leftBot) })}></div>
+  <div class={right({ class: clsx(styling.right) })}></div>
+  <div class={slot({ class: clsx(styling.slot) })}>
     {#if children}
       {@render children()}
     {/if}
