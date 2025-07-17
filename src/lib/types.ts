@@ -67,6 +67,8 @@ import type { ClipboardVariants } from "./clipboard/theme";
 import type { AccordionItemVariants, AccordionVariants } from "./accordion/theme";
 import type { AvatarVariants } from "./avatar/theme";
 import type { BottomNavHeaderItemVariants, BottomNavHeaderVariants, BottomNavItemVariants, BottomNavVariants } from "./bottom-navigation/theme";
+import type { BreadcrumbItemVariants, BreadcrumbVariants } from "./breadcrumb/theme";
+import type { ButtonGroupVariants } from "./button-group/theme";
 
 // end of component variants
 
@@ -251,27 +253,6 @@ export type BottomNavItemProps = BottomNavItemVariants &
     btnClass?: ClassValue;
     spanClass?: ClassValue;
     active?: boolean;
-    // Common attributes that make sense for both button and anchor
-    // AnchorButtonDivAttributes provides them
-    // id?: string;
-    // style?: string;
-    // tabindex?: number;
-    // title?: string;
-    // role?: string;
-    // "aria-label"?: string;
-    // "data-testid"?: string;
-    // // Anchor-specific attributes
-    // href?: string;
-    // target?: string;
-    // rel?: string;
-    // download?: string | boolean;
-    // // Button-specific attributes
-    // type?: "button" | "submit" | "reset";
-    // disabled?: boolean;
-    // name?: string;
-    // value?: string | number | string[];
-    // // Allow any other attributes (like data-* attributes)
-    // [key: string]: any;
   };
 
 export interface BottomNavHeaderProps extends BottomNavHeaderVariants, HTMLAttributes<HTMLDivElement> {
@@ -286,14 +267,14 @@ export interface BottomNavHeaderItemProps extends BottomNavHeaderItemVariants, H
 }
 
 // breadcrumb
-export interface BreadcrumbProps extends HTMLAttributes<HTMLElement> {
+export interface BreadcrumbProps extends BreadcrumbVariants, HTMLAttributes<HTMLElement> {
   children: Snippet;
   solid?: boolean;
   olClass?: ClassValue;
   ariaLabel?: string;
 }
 
-export interface BreadcrumbItemProps extends HTMLLiAttributes {
+export interface BreadcrumbItemProps extends BreadcrumbItemVariants, HTMLLiAttributes {
   children: Snippet;
   icon?: Snippet;
   home?: boolean;
@@ -304,16 +285,14 @@ export interface BreadcrumbItemProps extends HTMLLiAttributes {
 }
 
 // buttongroup
-export interface ButtonGroupProps extends HTMLAttributes<HTMLDivElement> {
+export interface ButtonGroupProps extends ButtonGroupVariants, HTMLAttributes<HTMLDivElement> {
   children: Snippet;
-  size?: ButtonGroupSizeType;
   disabled?: boolean;
 }
 
-export type ButtonGroupSizeType = "sm" | "md" | "lg" | undefined;
+
 
 // button
-// export type ButtonColor = NonNullable<VariantProps<typeof button>["color"]>;
 export type GradientButtonColor = NonNullable<VariantProps<typeof gradientButton>["color"]>;
 
 export type HTMLButtonOrAnchorAttributes = Omit<HTMLButtonAttributes & HTMLAnchorAttributes, "color">;
@@ -363,7 +342,7 @@ export interface ButtonToggleContext {
   isSelected: (toggleValue: string) => boolean;
 }
 
-export interface CheckIconProps extends SVGAttributes<SVGSVGElement> {}
+export interface CheckIconProps extends SVGAttributes<SVGSVGElement> { }
 
 // card
 export type CardProps = Omit<CardVariants, "href"> &
@@ -581,7 +560,7 @@ export interface DropdownProps extends PopperProps {
   isOpen?: boolean;
 }
 
-export interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {}
+export interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> { }
 
 export interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
@@ -661,9 +640,9 @@ export interface CheckboxProps extends CheckboxVariants, Omit<HTMLInputAttribute
   children?: Snippet<
     [
       | {
-          value?: string | number;
-          checked: boolean;
-        }
+        value?: string | number;
+        checked: boolean;
+      }
       | CheckboxItem
     ]
   >;
@@ -738,7 +717,7 @@ export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size
 }
 
 // helper
-export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> {}
+export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> { }
 
 // input
 export type InputValue = string | number | string[] | undefined;
@@ -915,7 +894,7 @@ export interface TimepickerProps {
   type?: TimePickerType;
   optionLabel?: string;
   options?: TimePickerOption[];
-  size?: ButtonGroupSizeType; // Use the specific ButtonGroupSizeType
+  size?: ButtonGroupVariants["size"]; // Use the specific ButtonGroupSizeType
   divClass?: ClassValue;
   inputClass?: ClassValue;
   selectClass?: ClassValue;
@@ -924,7 +903,7 @@ export interface TimepickerProps {
   timeIntervals?: string[];
   columns?: ColumnCount;
   // Callback props instead of events
-  onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
+  onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
 }
 
 // textarea
@@ -1082,7 +1061,7 @@ export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "child
   closeOnClickOutside?: boolean;
 }
 
-export interface NavBrandProps extends HTMLAnchorAttributes {}
+export interface NavBrandProps extends HTMLAnchorAttributes { }
 
 export interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
   fluid?: boolean;
@@ -1118,7 +1097,7 @@ export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLD
   end?: Snippet;
 }
 
-export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
+export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> { }
 
 export type ToolbarButtonProps = ToolbarButtonVariants &
   AnchorButtonAttributes & {
@@ -1427,7 +1406,7 @@ export interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
   size?: SkeletonVariants["size"];
 }
 
-export interface TestimonialPlaceholderProps extends HTMLAttributes<HTMLDivElement> {}
+export interface TestimonialPlaceholderProps extends HTMLAttributes<HTMLDivElement> { }
 
 export interface TextPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: TextPlaceholderVariants["size"];
@@ -1437,7 +1416,7 @@ export interface VideoPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   size?: VideoPlaceholderVariants["size"];
 }
 
-export interface WidgetPlaceholderProps extends HTMLAttributes<HTMLDivElement> {}
+export interface WidgetPlaceholderProps extends HTMLAttributes<HTMLDivElement> { }
 
 // speeddial
 export interface SpeedCtxType {

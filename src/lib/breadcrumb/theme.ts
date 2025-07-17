@@ -1,15 +1,18 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
+
+export type BreadcrumbVariants = VariantProps<typeof breadcrumb> & Classes<typeof breadcrumb>;
 
 export const breadcrumb = tv({
   slots: {
-    nav: "flex",
+    base: "flex",
     list: "inline-flex items-center space-x-1 rtl:space-x-reverse md:space-x-3 rtl:space-x-reverse"
   },
   variants: {
     solid: {
       true: {
-        nav: "px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
+        base: "px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
       },
       false: ""
     }
@@ -18,6 +21,8 @@ export const breadcrumb = tv({
     solid: false
   }
 });
+
+export type BreadcrumbItemVariants = VariantProps<typeof breadcrumbItem> & Classes<typeof breadcrumbItem>;
 
 export const breadcrumbItem = tv({
   slots: {
