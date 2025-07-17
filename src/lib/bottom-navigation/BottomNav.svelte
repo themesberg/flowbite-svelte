@@ -4,33 +4,36 @@
   import { bottomNav } from ".";
   import clsx from "clsx";
   import { type BottomNavProps, type BottomNavContextType, cn, type BottomNavTheme } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
 
-  let { children, header, position = "fixed", navType = "default", outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
+  let { children, header, position = "fixed", navType = "default", class: className, classes, outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
+
+  themeDeprecated("BottomNav", { innerClass, outerClass });
+  let styling = $derived(classes ?? { inner: innerClass });
 
   // Theme context
   const theme = getTheme("bottomNav");
 
   const activeCls = cn("text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900", activeClass);
 
-  const activeUrlStore = writable("");
-  setContext("activeUrl", activeUrlStore);
-  setContext("navType", navType);
-  setContext<BottomNavContextType>("bottomNavType", { activeClass: activeCls });
+  let context: BottomNavContextType = $state({ activeClass: activeCls, activeUrl, navType });
+  setContext<BottomNavContextType>("bottomNavType", context);
 
-  const { outer, inner } = $derived(bottomNav({ position, navType }));
+  const { base, inner } = $derived(bottomNav({ position, navType }));
 
   $effect(() => {
-    activeUrlStore.set(activeUrl);
+    context.activeUrl = activeUrl;
+    context.navType = navType;
+    context.activeClass = activeCls;
   });
 </script>
 
-<div {...restProps} class={outer({ class: clsx((theme as BottomNavTheme)?.outer, outerClass) })}>
+<div {...restProps} class={base({ class: clsx((theme as BottomNavTheme)?.base, className ?? outerClass) })}>
   {#if header}
     {@render header()}
   {/if}
 
-  <div class={inner({ class: clsx((theme as BottomNavTheme)?.inner, innerClass) })}>
+  <div class={inner({ class: clsx((theme as BottomNavTheme)?.inner, styling.inner) })}>
     {@render children()}
   </div>
 </div>

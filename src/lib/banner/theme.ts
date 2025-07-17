@@ -1,7 +1,8 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type BannerVariants = VariantProps<typeof banner>;
+export type BannerVariants = VariantProps<typeof banner> & Classes<typeof banner>;
 
 const banner = tv({
   slots: {

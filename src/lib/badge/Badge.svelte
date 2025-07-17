@@ -1,11 +1,15 @@
 <script lang="ts">
-  import { badge, type BadgeTheme } from ".";
+  import { type BadgeProps, CloseButton, type ParamsType } from "$lib";
+  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { fade } from "svelte/transition";
-  import { type ParamsType, type BadgeProps, CloseButton } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { badge, type BadgeTheme } from ".";
 
-  let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, border, href, target, rounded, transition = fade, params, aClass, onclose, ...restProps }: BadgeProps = $props();
+  let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, classes, border, href, target, rounded, transition = fade, params, aClass, onclose, ...restProps }: BadgeProps = $props();
+
+  themeDeprecated("Badge", { aClass });
+
+  let styling = $derived(classes ?? { linkClass: aClass });
 
   // Theme context
   const theme = getTheme("badge");
@@ -21,7 +25,7 @@
 {#if badgeStatus}
   <div {...restProps} transition:transition={params as ParamsType} class={base({ class: clsx((theme as BadgeTheme)?.base, className) })}>
     {#if href}
-      <a {href} {target} class={linkClass({ class: clsx((theme as BadgeTheme)?.linkClass, aClass) })}>
+      <a {href} {target} class={linkClass({ class: clsx((theme as BadgeTheme)?.linkClass, styling.linkClass) })}>
         {@render children()}
       </a>
     {:else}
