@@ -1,11 +1,8 @@
+import type { Classes } from "$lib/theme/themeUtils";
 import type { ClassValue } from "svelte/elements";
 import { tv, type VariantProps } from "tailwind-variants";
 
-export type DatepickerClasses = Partial<{
-  [K in keyof (typeof datepicker)["slots"]]: ClassValue;
-}>;
-
-export type DatepickerVariants = VariantProps<typeof datepicker> & { classes?: DatepickerClasses };
+export type DatepickerVariants = VariantProps<typeof datepicker> & Classes<typeof datepicker>;
 
 export const datepicker = tv({
   slots: {

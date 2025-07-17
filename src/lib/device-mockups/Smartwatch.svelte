@@ -1,24 +1,36 @@
 <script lang="ts">
+  import { type SmartwatchProps } from "$lib";
+  import { themeDeprecated } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   import { smartwatch } from ".";
-  import { type SmartwatchProps, cn } from "$lib";
 
-  let { children, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: SmartwatchProps = $props();
+  let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: SmartwatchProps = $props();
 
-  const { div, top, rightTop, rightBot, bot, slot } = smartwatch();
+  themeDeprecated("Smartwatch", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class });
+  let styling = $derived(
+    classes ?? {
+      top: div2Class,
+      rightTop: div3Class,
+      rightBot: div4Class,
+      bot: div5Class,
+      slot: div6Class
+    }
+  );
+  const { base, top, rightTop, rightBot, bot, slot } = smartwatch();
 </script>
 
 <div {...restProps}>
-  <div class={cn(div(), divClass)}></div>
-  <div class={cn(top(), div2Class)}>
-    <div class={cn(rightTop(), div3Class)}></div>
-    <div class={cn(rightBot(), div4Class)}></div>
-    <div class={cn(slot(), div5Class)}>
+  <div class={base({ class: clsx(className ?? divClass) })}></div>
+  <div class={top({ class: clsx(styling.top) })}>
+    <div class={rightTop({ class: clsx(styling.rightTop) })}></div>
+    <div class={rightBot({ class: clsx(styling.rightBot) })}></div>
+    <div class={slot({ class: clsx(styling.slot) })}>
       {#if children}
         {@render children()}
       {/if}
     </div>
   </div>
-  <div class={cn(bot(), div6Class)}></div>
+  <div class={bot({ class: clsx(styling.bot) })}></div>
 </div>
 
 <!--

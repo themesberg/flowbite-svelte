@@ -1,21 +1,32 @@
 <script lang="ts">
+  import { type DesktopProps } from "$lib";
+  import { themeDeprecated } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   import { desktop } from ".";
-  import { type MockupBaseProps, cn } from "$lib";
 
-  let { children, divClass, div2Class, div3Class, div4Class, ...restProps }: MockupBaseProps = $props();
+  let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, ...restProps }: DesktopProps = $props();
 
-  const { div, inner, bot, botUnder } = desktop();
+  themeDeprecated("DesktopMockup", { divClass, div2Class, div3Class, div4Class });
+  let styling = $derived(
+    classes ?? {
+      inner: div2Class,
+      bot: div3Class,
+      botUnder: div4Class
+    }
+  );
+
+  const { base, inner, bot, botUnder } = desktop();
 </script>
 
-<div {...restProps} class={cn(div(), divClass)}>
-  <div class={cn(inner(), div2Class)}>
+<div {...restProps} class={base({ class: clsx(className ?? divClass) })}>
+  <div class={inner({ class: clsx(styling.inner) })}>
     {#if children}
       {@render children()}
     {/if}
   </div>
 </div>
-<div class={cn(bot(), div3Class)}></div>
-<div class={cn(botUnder(), div4Class)}></div>
+<div class={bot({ class: clsx(styling.bot) })}></div>
+<div class={botUnder({ class: clsx(styling.botUnder) })}></div>
 
 <!--
 @component

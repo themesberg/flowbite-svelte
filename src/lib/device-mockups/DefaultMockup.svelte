@@ -1,18 +1,31 @@
 <script lang="ts">
+  import { type DefaultMockupProps } from "$lib";
+  import { themeDeprecated } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   import { defaultMockup } from ".";
-  import { type DefaultMockupProps, cn } from "$lib";
 
-  let { children, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: DefaultMockupProps = $props();
+  let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: DefaultMockupProps = $props();
 
-  const { div, slot, top, leftTop, leftBot, right } = defaultMockup();
+  themeDeprecated("DefaultMockup", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class });
+  let styling = $derived(
+    classes ?? {
+      top: div2Class,
+      leftTop: div3Class,
+      leftBot: div4Class,
+      right: div5Class,
+      slot: div6Class
+    }
+  );
+
+  const { base, slot, top, leftTop, leftBot, right } = defaultMockup();
 </script>
 
-<div {...restProps} class={cn(div(), divClass)}>
-  <div class={cn(top(), div2Class)}></div>
-  <div class={cn(leftTop(), div3Class)}></div>
-  <div class={cn(leftBot(), div4Class)}></div>
-  <div class={cn(right(), div5Class)}></div>
-  <div class={cn(slot(), div6Class)}>
+<div {...restProps} class={base({ class: clsx(className ?? divClass) })}>
+  <div class={top({ class: clsx(styling.top) })}></div>
+  <div class={leftTop({ class: clsx(styling.leftTop) })}></div>
+  <div class={leftBot({ class: clsx(styling.leftBot) })}></div>
+  <div class={right({ class: clsx(styling.right) })}></div>
+  <div class={slot({ class: clsx(styling.slot) })}>
     {#if children}
       {@render children()}
     {/if}

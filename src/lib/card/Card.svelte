@@ -1,10 +1,13 @@
 <script lang="ts">
   import { type CardProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { card, type CardTheme } from ".";
 
-  let { children, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, imgClass, contentClass, ...restProps }: CardProps = $props();
+  let { children, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, classes, imgClass, ...restProps }: CardProps = $props();
+
+  themeDeprecated("Card", { imgClass });
+  let styling = $derived(classes ?? { image: imgClass });
 
   const theme = getTheme("card");
 
@@ -22,7 +25,7 @@
 
 {#snippet childSlot()}
   {#if img}
-    <img class={image({ class: clsx((theme as CardTheme)?.image, imgClass) })} src={img} alt={img} />
+    <img class={image({ class: clsx((theme as CardTheme)?.image, styling.image) })} src={img} alt={img} />
     {@render children()}
   {:else}
     {@render children()}
