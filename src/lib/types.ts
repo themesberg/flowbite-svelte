@@ -698,6 +698,9 @@ export interface CheckboxButtonProps extends Omit<HTMLInputAttributes, "size"> {
 export interface DropzoneProps extends HTMLInputAttributes {
   children: Snippet;
   files?: FileList | null;
+  onDrop?: HTMLLabelAttributes['ondrop'];
+  onDragOver?: HTMLLabelAttributes['ondragover'];
+  onChange?: HTMLInputAttributes['onchange'];
 }
 
 // fileupload
