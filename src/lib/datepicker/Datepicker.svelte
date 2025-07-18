@@ -135,8 +135,7 @@
         const parsedFrom = tryParseDate(parts[0]);
         const parsedTo = tryParseDate(parts[1]);
 
-        if (parsedFrom && isValid(parsedFrom) && isDateAvailable(parsedFrom) &&
-            parsedTo && isValid(parsedTo) && isDateAvailable(parsedTo)) {
+        if (parsedFrom && isValid(parsedFrom) && isDateAvailable(parsedFrom) && parsedTo && isValid(parsedTo) && isDateAvailable(parsedTo)) {
           rangeFrom = parsedFrom;
           rangeTo = parsedTo;
           onselect?.({ from: rangeFrom, to: rangeTo });
@@ -336,14 +335,15 @@
 
   function handleInputKeydown(event: KeyboardEvent) {
     if (event.key === "Enter") {
-        event.preventDefault(); // Prevent default form submission or other Enter key behaviors
-        handleInputChangeWithDateFns(); // Call the function to parse and apply the date
-        if (autohide && !inline) { // Optionally close the datepicker after applying
-            isOpen = false;
-        }
+      event.preventDefault(); // Prevent default form submission or other Enter key behaviors
+      handleInputChangeWithDateFns(); // Call the function to parse and apply the date
+      if (autohide && !inline) {
+        // Optionally close the datepicker after applying
+        isOpen = false;
+      }
     } else if (event.key === " ") {
-        event.preventDefault();
-        isOpen = !isOpen;
+      event.preventDefault();
+      isOpen = !isOpen;
     }
   }
 

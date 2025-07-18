@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.10.10
+
+### Patch Changes
+
+- fix(datepicker): Add a guard to avoid re-calling handleDaySelect() if the range is already complete.
+
+  problem: Pressing the return/enter key after selecting datepicker range by using mouse doesn't close the calender and selecting today's date.
+
 ## 1.10.9
 
 ### Patch Changes
