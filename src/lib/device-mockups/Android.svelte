@@ -1,12 +1,13 @@
 <script lang="ts">
   import { type AndroidProps } from "$lib";
-  import { themeDeprecated } from "$lib/theme/themeUtils";
+  import { themeDeprecatedNew } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { android } from ".";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class, ...restProps }: AndroidProps = $props();
 
-  themeDeprecated("Android", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class });
+  themeDeprecatedNew("Android", { divClass:"class", div2Class: "top", div3Class: "leftTop", div4Class: "leftMid", div5Class: "leftBot", div6Class: "right", div7Class: "slot" });
+
   let styling = $derived(
     classes ?? {
       top: div2Class,

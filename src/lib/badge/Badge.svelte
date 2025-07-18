@@ -1,13 +1,13 @@
 <script lang="ts">
   import { type BadgeProps, CloseButton, type ParamsType } from "$lib";
-  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
+  import { getTheme, themeDeprecatedNew } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { fade } from "svelte/transition";
   import { badge, type BadgeTheme } from ".";
 
   let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, classes, border, href, target, rounded, transition = fade, params, aClass, onclose, ...restProps }: BadgeProps = $props();
 
-  themeDeprecated("Badge", { aClass });
+  themeDeprecatedNew("Badge", { aClass: "linkClass" });
 
   let styling = $derived(classes ?? { linkClass: aClass });
 

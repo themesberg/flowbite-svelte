@@ -1,12 +1,12 @@
 <script lang="ts">
   import { type DefaultMockupProps } from "$lib";
-  import { themeDeprecated } from "$lib/theme/themeUtils";
+  import { themeDeprecatedNew } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { defaultMockup } from ".";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: DefaultMockupProps = $props();
 
-  themeDeprecated("DefaultMockup", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class });
+  themeDeprecatedNew("DefaultMockup", { divClass:"class", div2Class:"top", div3Class:"leftTop", div4Class:"leftBot", div5Class:"right", div6Class:"slot" });
   let styling = $derived(
     classes ?? {
       top: div2Class,

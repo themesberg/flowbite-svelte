@@ -4,11 +4,11 @@
   import { bottomNav } from ".";
   import clsx from "clsx";
   import { type BottomNavProps, type BottomNavContextType, cn, type BottomNavTheme } from "$lib";
-  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
+  import { getTheme, themeDeprecatedNew } from "$lib/theme/themeUtils";
 
   let { children, header, position = "fixed", navType = "default", class: className, classes, outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
 
-  themeDeprecated("BottomNav", { innerClass, outerClass });
+  themeDeprecatedNew("BottomNav", { innerClass: "inner", outerClass: "class" });
   let styling = $derived(classes ?? { inner: innerClass });
 
   // Theme context

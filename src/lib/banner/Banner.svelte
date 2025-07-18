@@ -3,11 +3,12 @@
   import { banner, type BannerTheme } from ".";
   import clsx from "clsx";
   import { type ParamsType, type BannerProps, CloseButton } from "$lib";
-  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
+  import { getTheme, themeDeprecatedNew } from "$lib/theme/themeUtils";
 
   let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, classes, innerClass, transition = fade, params, closeClass, ...restProps }: BannerProps = $props();
 
-  themeDeprecated("Banner", { innerClass, closeClass });
+  themeDeprecatedNew("Banner", { innerClass: "insideDiv", closeClass:"dismissable" });
+  
   let styling = $derived(classes ?? { insideDiv: innerClass, dismissable: closeClass });
 
   // Theme context

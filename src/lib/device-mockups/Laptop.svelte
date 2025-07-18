@@ -1,12 +1,12 @@
 <script lang="ts">
   import { type LaptopProps } from "$lib";
-  import { themeDeprecated } from "$lib/theme/themeUtils";
+  import { themeDeprecatedNew } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { laptop } from ".";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, ...restProps }: LaptopProps = $props();
 
-  themeDeprecated("Laptop", { divClass, div2Class, div3Class, div4Class });
+  themeDeprecatedNew("Laptop", { divClass:"class", div2Class:"inner", div3Class:"bot", div4Class:"botCen" });
   let styling = $derived(
     classes ?? {
       inner: div2Class,
