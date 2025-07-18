@@ -36,9 +36,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L530)
+[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L517)
 ## Props
 @prop children
+@prop class: className
+@prop classes
 @prop divClass
 @prop div2Class
 @prop div3Class

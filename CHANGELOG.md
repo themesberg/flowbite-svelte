@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.10.8
+
+### Patch Changes
+
+- fix: #1684
+
+  feat(datepicker): Allow `translationLocale` prop to be reactive
+
+  Ensures the calendar's locale updates correctly when `translationLocale` (or `locale` when `translationLocale` isn't explicitly set) changes. This provides independent control over date formatting and calendar translations.
+
 ## 1.10.7
 
 ### Patch Changes

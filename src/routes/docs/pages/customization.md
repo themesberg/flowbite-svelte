@@ -40,7 +40,7 @@ In Tailwind CSS, you can make any utility class important by adding a `!` charac
 
 ## Overwriting Specific Classes
 
-While the `class` prop can be used for most components, some components with a complex structure may require multiple props. 
+While the `class` prop can be used for most components, some components with a complex structure may require multiple props.
 
 For instance, let's consider [the Banner component](https://next.flowbite-svelte.com/docs/components/banner#component-data) has two relevant props: `class` for `div` and `classInner` for `innerClass`. To overwrite the `div`, you can use the `classDiv` prop:
 
@@ -71,7 +71,7 @@ Instead of intrducing multiple props for component's internal element classes ne
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
-<Banner id="default-banner" type="bottom" class="border-green-600 bg-green-700 dark:border-green-400 dark:bg-green-500" classes={{ insideDiv:"text-white" }}>
+<Banner id="default-banner" type="bottom" class="border-green-600 bg-green-700 dark:border-green-400 dark:bg-green-500" classes={{ insideDiv: "text-white" }}>
   <p class="flex items-center text-sm font-normal">Overwriting divClass and innerClass</p>
 </Banner>
 ```

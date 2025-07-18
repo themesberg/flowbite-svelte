@@ -46,7 +46,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L370)
+[CardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L349)
 ## Props
 @prop children
 @prop color = "gray"
@@ -56,7 +56,7 @@
 @prop img
 @prop size = "sm"
 @prop class: className
+@prop classes
 @prop imgClass
-@prop contentClass
 @prop ...restProps
 -->

@@ -176,7 +176,7 @@ This example demonstrates a sliding transition using the slide transition from s
 
 #### Types
 
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L219)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L222)
 
 #### Props
 

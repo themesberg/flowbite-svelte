@@ -11,14 +11,13 @@
 
   const theme = getTheme("datepicker");
 
-  const dateFormatDefault = { year: "numeric", month: "long", day: "numeric" };
+  // If translationLocale is not explicitly provided, it will default to the value of locale. This ensures reactivity as both are directly exposed as props.
+  translationLocale = translationLocale ?? locale;
 
-  // Internal state
   let isOpen: boolean = $state(inline);
   let showMonthSelector: boolean = $state(false);
   let inputElement: HTMLInputElement | null = $state(null);
 
-  // Update elementRef when inputElement changes
   $effect(() => {
     if (inputElement) {
       elementRef = inputElement;
@@ -49,14 +48,12 @@
     return eachDayOfInterval({ start: calendarStart, end: calendarEnd });
   }
 
-  // MODIFIED: Use translationLocale for weekday names
   const getWeekdayNames = (): string[] => {
     return Array.from({ length: 7 }, (_, i) => new Date(1970, 0, 5 + i + firstDayOfWeek).toLocaleDateString(translationLocale, { weekday: "short" }));
   };
 
   let weekdays = $derived(getWeekdayNames());
 
-  // MODIFIED: Use translationLocale for month names
   const getMonthNames = (): string[] => {
     return Array.from({ length: 12 }, (_, i) => new Date(2000, i, 1).toLocaleDateString(translationLocale, { month: "short" }));
   };
@@ -120,15 +117,12 @@
     }
   }
 
-  // FIXED: Completely rewritten to handle multiple date formats and locales
   function handleInputChangeWithDateFns() {
     const inputValue = inputElement?.value?.trim();
     if (!inputValue) return;
 
-    // Clear any previous custom validity
     inputElement?.setCustomValidity("");
 
-    // Try multiple parsing strategies
     const parsedDate = tryParseDate(inputValue);
 
     if (!parsedDate || !isValid(parsedDate)) {
@@ -145,9 +139,7 @@
     handleDaySelect(parsedDate);
   }
 
-  // FIXED: New function to try parsing with multiple strategies
   function tryParseDate(inputValue: string): Date | null {
-    // Strategy 1: Try parsing with the expected format pattern
     const formatPattern = getDateFormatPattern();
     try {
       const parsedDate = parse(inputValue, formatPattern, new Date());
@@ -158,18 +150,17 @@
       // Continue to next strategy
     }
 
-    // Strategy 2: Try common date formats
     const commonFormats = [
-      'd.M.yyyy',    // German: 17.7.2025
-      'dd.MM.yyyy',  // German: 17.07.2025
-      'M/d/yyyy',    // US: 7/17/2025
-      'MM/dd/yyyy',  // US: 07/17/2025
-      'd/M/yyyy',    // UK: 17/7/2025
-      'dd/MM/yyyy',  // UK: 17/07/2025
-      'yyyy-MM-dd',  // ISO: 2025-07-17
-      'yyyy-M-d',    // ISO: 2025-7-17
-      'M-d-yyyy',    // US with dashes: 7-17-2025
-      'd-M-yyyy',    // EU with dashes: 17-7-2025
+      "d.M.yyyy", // German: 17.7.2025
+      "dd.MM.yyyy", // German: 17.07.2025
+      "M/d/yyyy", // US: 7/17/2025
+      "MM/dd/yyyy", // US: 07/17/2025
+      "d/M/yyyy", // UK: 17/7/2025
+      "dd/MM/yyyy", // UK: 17/07/2025
+      "yyyy-MM-dd", // ISO: 2025-07-17
+      "yyyy-M-d", // ISO: 2025-7-17
+      "M-d-yyyy", // US with dashes: 7-17-2025
+      "d-M-yyyy" // EU with dashes: 17-7-2025
     ];
 
     for (const format of commonFormats) {
@@ -183,7 +174,6 @@
       }
     }
 
-    // Strategy 3: Try native Date parsing as fallback
     try {
       const nativeDate = new Date(inputValue);
       if (isValid(nativeDate) && !isNaN(nativeDate.getTime())) {
@@ -196,59 +186,58 @@
     return null;
   }
 
-  // FIXED: Better format pattern detection based on locale
   function getDateFormatPattern(): string {
     const actualLocale = locale === "default" ? navigator.language : locale;
-    
+
     // Create a test date and format it to understand the pattern
     const testDate = new Date(2025, 0, 15); // January 15, 2025
     const formatted = testDate.toLocaleDateString(actualLocale, dateFormat || { year: "numeric", month: "numeric", day: "numeric" });
 
     // Analyze the formatted string to determine the pattern
-    if (formatted.includes('.')) {
+    if (formatted.includes(".")) {
       // German/European format with dots
-      if (formatted.startsWith('15.')) {
-        return 'd.M.yyyy';
-      } else if (formatted.startsWith('01.')) {
-        return 'M.d.yyyy';
+      if (formatted.startsWith("15.")) {
+        return "d.M.yyyy";
+      } else if (formatted.startsWith("01.")) {
+        return "M.d.yyyy";
       }
-      return 'd.M.yyyy'; // Default to day first
-    } else if (formatted.includes('/')) {
+      return "d.M.yyyy"; // Default to day first
+    } else if (formatted.includes("/")) {
       // US/UK format with slashes
-      if (formatted.startsWith('1/')) {
-        return 'M/d/yyyy'; // US format
-      } else if (formatted.startsWith('15/')) {
-        return 'd/M/yyyy'; // UK format
+      if (formatted.startsWith("1/")) {
+        return "M/d/yyyy"; // US format
+      } else if (formatted.startsWith("15/")) {
+        return "d/M/yyyy"; // UK format
       }
       // Additional check with different test date
       const testDate2 = new Date(2025, 11, 3); // December 3, 2025
       const formatted2 = testDate2.toLocaleDateString(actualLocale, dateFormat || { year: "numeric", month: "numeric", day: "numeric" });
-      if (formatted2.startsWith('3/') || formatted2.startsWith('03/')) {
-        return 'd/M/yyyy';
+      if (formatted2.startsWith("3/") || formatted2.startsWith("03/")) {
+        return "d/M/yyyy";
       } else {
-        return 'M/d/yyyy';
+        return "M/d/yyyy";
       }
-    } else if (formatted.includes('-')) {
+    } else if (formatted.includes("-")) {
       // ISO or other dash format
-      if (formatted.startsWith('2025-')) {
-        return 'yyyy-M-d';
-      } else if (formatted.startsWith('1-')) {
-        return 'M-d-yyyy';
+      if (formatted.startsWith("2025-")) {
+        return "yyyy-M-d";
+      } else if (formatted.startsWith("1-")) {
+        return "M-d-yyyy";
       } else {
-        return 'd-M-yyyy';
+        return "d-M-yyyy";
       }
     }
 
     // Default fallback - try to detect based on locale
-    if (actualLocale.startsWith('en-US')) {
-      return 'M/d/yyyy';
-    } else if (actualLocale.startsWith('de') || actualLocale.startsWith('at') || actualLocale.startsWith('ch')) {
-      return 'd.M.yyyy';
-    } else if (actualLocale.startsWith('en-GB') || actualLocale.startsWith('en-AU')) {
-      return 'd/M/yyyy';
+    if (actualLocale.startsWith("en-US")) {
+      return "M/d/yyyy";
+    } else if (actualLocale.startsWith("de") || actualLocale.startsWith("at") || actualLocale.startsWith("ch")) {
+      return "d.M.yyyy";
+    } else if (actualLocale.startsWith("en-GB") || actualLocale.startsWith("en-AU")) {
+      return "d/M/yyyy";
     }
 
-    return 'M/d/yyyy'; // Final fallback
+    return "M/d/yyyy";
   }
 
   function handleClickOutside(event: MouseEvent) {
@@ -350,7 +339,7 @@
 <div bind:this={datepickerContainerElement} class={["relative", inline && "inline-block"]}>
   {#if !inline}
     <div class="relative">
-      <input bind:this={inputElement} type="text" class={input({ color, class: clsx((theme as DatepickerTheme)?.input, inputClass) })} {placeholder} value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)} onfocus={() => (isOpen = true)} oninput={handleInputChangeWithDateFns} onkeydown={handleInputKeydown} {disabled} {required} {inputmode} aria-haspopup="dialog" />
+      <input bind:this={inputElement} type="text" class={input({ color, class: clsx((theme as DatepickerTheme)?.input, inputClass) })} {placeholder} value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)} onfocus={() => (isOpen = true)} onchange={handleInputChangeWithDateFns} onkeydown={handleInputKeydown} {disabled} {required} {inputmode} aria-haspopup="dialog" />
       <button type="button" class={button({ class: clsx(btnClass, (theme as DatepickerTheme)?.button, classes?.button) })} onclick={() => (isOpen = !isOpen)} {disabled} aria-label={isOpen ? "Close date picker" : "Open date picker"}>
         <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
           <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"></path>
@@ -389,10 +378,8 @@
           {/each}
         </div>
       {:else}
-        <!-- Regular Calendar View -->
         <div class={nav({ class: clsx(classes?.nav) })}>
           {@render navButton(false)}
-          <!-- MODIFIED: Use translationLocale for month/year display -->
           <Button type="button" class={polite({ class: clsx("cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700", classes?.polite) })} aria-live="polite" onclick={(event: MouseEvent) => toggleMonthSelector(event)}>
             {currentMonth.toLocaleString(translationLocale, { month: "long", year: "numeric" })}
           </Button>
@@ -439,3 +426,42 @@
     </div>
   {/if}
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L442)
+## Props
+@prop value = $bindable()
+@prop defaultDate = null
+@prop range = false
+@prop rangeFrom = $bindable()
+@prop rangeTo = $bindable()
+@prop availableFrom = null
+@prop availableTo = null
+@prop locale = "default"
+@prop translationLocale = locale
+@prop firstDayOfWeek = 0
+@prop dateFormat
+@prop placeholder = "Select date"
+@prop disabled = false
+@prop required = false
+@prop inputClass = ""
+@prop color = "primary"
+@prop inline = false
+@prop autohide = true
+@prop showActionButtons = false
+@prop title = ""
+@prop onselect
+@prop onclear
+@prop onapply
+@prop btnClass
+@prop inputmode = "none"
+@prop classes
+@prop monthColor = "alternative"
+@prop monthBtnSelected = "bg-primary-500 text-white"
+@prop monthBtn = "text-gray-700 dark:text-gray-300"
+@prop class: className
+@prop elementRef = $bindable()
+-->

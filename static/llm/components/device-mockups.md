@@ -126,11 +126,13 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L509)
+[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L496)
 
 #### Props
 
 - children
+- class: className
+- classes
 - divClass
 - div2Class
 - div3Class
@@ -143,11 +145,13 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L520)
+[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L507)
 
 #### Props
 
 - children
+- class: className
+- classes
 - divClass
 - div2Class
 - div3Class
@@ -159,11 +163,13 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[MockupBaseProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L501)
+[DesktopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L480)
 
 #### Props
 
 - children
+- class: className
+- classes
 - divClass
 - div2Class
 - div3Class
@@ -173,7 +179,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[DeviceMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L496)
+[DeviceMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L475)
 
 #### Props
 
@@ -184,11 +190,13 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L530)
+[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L517)
 
 #### Props
 
 - children
+- class: className
+- classes
 - divClass
 - div2Class
 - div3Class
@@ -200,11 +208,13 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[MockupBaseProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L501)
+[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L488)
 
 #### Props
 
 - children
+- class: className
+- classes
 - divClass
 - div2Class
 - div3Class
@@ -214,11 +224,13 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L540)
+[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L527)
 
 #### Props
 
 - children
+- class: className
+- classes
 - divClass
 - div2Class
 - div3Class
@@ -230,11 +242,13 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L550)
+[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L537)
 
 #### Props
 
 - children
+- class: className
+- classes
 - divClass
 - div2Class
 - div3Class
