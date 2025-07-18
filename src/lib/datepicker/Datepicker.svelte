@@ -120,10 +120,35 @@
 
   function handleInputChangeWithDateFns() {
     const inputValue = inputElement?.value?.trim();
-    if (!inputValue) return;
+    if (!inputValue) {
+      rangeFrom = undefined;
+      rangeTo = undefined;
+      inputElement?.setCustomValidity("");
+      return;
+    }
 
     inputElement?.setCustomValidity("");
 
+    if (range) {
+      const parts = inputValue.split(" - "); // Split the string by " - "
+      if (parts.length === 2) {
+        const parsedFrom = tryParseDate(parts[0]);
+        const parsedTo = tryParseDate(parts[1]);
+
+        if (parsedFrom && isValid(parsedFrom) && isDateAvailable(parsedFrom) &&
+            parsedTo && isValid(parsedTo) && isDateAvailable(parsedTo)) {
+          rangeFrom = parsedFrom;
+          rangeTo = parsedTo;
+          onselect?.({ from: rangeFrom, to: rangeTo });
+          return; // Successfully parsed range
+        } else {
+          inputElement?.setCustomValidity(`Please enter date range in format: ${getDateFormatPattern()} - ${getDateFormatPattern()}`);
+          return;
+        }
+      }
+    }
+
+    // Original single date parsing logic
     const parsedDate = tryParseDate(inputValue);
 
     if (!parsedDate || !isValid(parsedDate)) {
@@ -277,7 +302,16 @@
         focusedDate = addDay(focusedDate, 7);
         break;
       case "Enter":
-        handleDaySelect(focusedDate);
+        if (range) {
+          if (rangeFrom && rangeTo) {
+            if (autohide && !inline) isOpen = false;
+          } else {
+            handleDaySelect(focusedDate);
+          }
+        } else {
+          handleDaySelect(focusedDate);
+          if (autohide && !inline) isOpen = false;
+        }
         break;
       case "Escape":
         isOpen = false;
@@ -301,9 +335,15 @@
   }
 
   function handleInputKeydown(event: KeyboardEvent) {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      isOpen = !isOpen;
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent default form submission or other Enter key behaviors
+        handleInputChangeWithDateFns(); // Call the function to parse and apply the date
+        if (autohide && !inline) { // Optionally close the datepicker after applying
+            isOpen = false;
+        }
+    } else if (event.key === " ") {
+        event.preventDefault();
+        isOpen = !isOpen;
     }
   }
 
