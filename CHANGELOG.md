@@ -1,14 +1,20 @@
 # Changelog
 
+## 1.10.9
+
+### Patch Changes
+
+- fix(datepicker): the getWeekdayNames function aligns with the firstDayOfWeek setting used by date-fns in startOfWeek.
+
 ## 1.10.8
 
 ### Patch Changes
 
-- fix: #1684
+fix: #1684
 
-  feat(datepicker): Allow `translationLocale` prop to be reactive
+feat(datepicker): Allow `translationLocale` prop to be reactive
 
-  Ensures the calendar's locale updates correctly when `translationLocale` (or `locale` when `translationLocale` isn't explicitly set) changes. This provides independent control over date formatting and calendar translations.
+Ensures the calendar's locale updates correctly when `translationLocale` (or `locale` when `translationLocale` isn't explicitly set) changes. This provides independent control over date formatting and calendar translations.
 
 ## 1.10.7
 

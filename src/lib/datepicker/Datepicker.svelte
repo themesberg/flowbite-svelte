@@ -49,7 +49,8 @@
   }
 
   const getWeekdayNames = (): string[] => {
-    return Array.from({ length: 7 }, (_, i) => new Date(1970, 0, 5 + i + firstDayOfWeek).toLocaleDateString(translationLocale, { weekday: "short" }));
+    const referenceDate = new Date(1970, 0, 4 + firstDayOfWeek);
+    return Array.from({ length: 7 }, (_, i) => addDays(referenceDate, i).toLocaleDateString(translationLocale, { weekday: "short" }));
   };
 
   let weekdays = $derived(getWeekdayNames());
@@ -431,7 +432,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L442)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L440)
 ## Props
 @prop value = $bindable()
 @prop defaultDate = null

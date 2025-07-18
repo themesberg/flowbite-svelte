@@ -55,7 +55,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1697)
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1695)
 ## Props
 @prop children
 @prop titleSlot

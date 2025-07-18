@@ -2,7 +2,7 @@
   "name": "Thumbnail",
   "type": {
     "name": "ThumbnailProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L398"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L396"
   },
   "props": [
     ["selected", ""],
