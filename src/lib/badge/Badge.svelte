@@ -7,7 +7,7 @@
 
   let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, classes, border, href, target, rounded, transition = fade, params, aClass, onclose, ...restProps }: BadgeProps = $props();
 
-  themeDeprecated("Badge", { aClass });
+  themeDeprecated("Badge", { aClass }, { aClass: "linkClass" });
 
   let styling = $derived(classes ?? { linkClass: aClass });
 

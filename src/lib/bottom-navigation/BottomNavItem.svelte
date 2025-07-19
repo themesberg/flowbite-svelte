@@ -8,7 +8,7 @@
 
   let { children, btnName, appBtnPosition = "middle", activeClass, class: className, classes, btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
 
-  themeDeprecated("BottomNavItem", { spanClass, btnClass });
+  themeDeprecated("BottomNavItem", { spanClass, btnClass }, { spanClass: "span", btnClass: "class" });
   let styling = $derived(classes ?? { span: spanClass });
 
   // Theme context

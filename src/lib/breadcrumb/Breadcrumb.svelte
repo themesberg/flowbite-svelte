@@ -6,7 +6,7 @@
 
   let { children, solid = false, class: className, classes, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
 
-  themeDeprecated("Breadcrumb", { olClass });
+  themeDeprecated("Breadcrumb", { olClass}, { olClass: "list" });
   let styling = $derived(classes ?? { list: olClass });
 
   const theme = getTheme("breadcrumb");

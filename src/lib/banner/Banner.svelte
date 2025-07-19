@@ -7,7 +7,8 @@
 
   let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, classes, innerClass, transition = fade, params, closeClass, ...restProps }: BannerProps = $props();
 
-  themeDeprecated("Banner", { innerClass, closeClass });
+  themeDeprecated("Banner", { innerClass, closeClass }, { innerClass: "insideDiv", closeClass:"dismissable" });
+  
   let styling = $derived(classes ?? { insideDiv: innerClass, dismissable: closeClass });
 
   // Theme context

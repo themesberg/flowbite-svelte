@@ -6,7 +6,8 @@
 
   let { children, class: className, classes, outerClass, innerClass, ...restProps }: BottomNavHeaderProps = $props();
 
-  themeDeprecated("BottomNavHeader", { innerClass, outerClass });
+  themeDeprecated("BottomNavHeader", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
+  
   let styling = $derived(classes ?? { innerDiv: innerClass });
 
   // Theme context

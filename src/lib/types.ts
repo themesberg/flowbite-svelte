@@ -451,7 +451,6 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   placeholder?: string;
   disabled?: boolean;
   required?: boolean;
-  inputClass?: ClassValue;
   color?: ButtonProps["color"];
   inline?: boolean;
   autohide?: boolean;
@@ -460,9 +459,10 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   onselect?: (x: DateOrRange) => void;
   onclear?: () => void;
   onapply?: (x: DateOrRange) => void;
-  btnClass?: ClassValue;
   inputmode?: HTMLInputAttributes["inputmode"];
   monthColor?: ButtonProps["color"];
+  btnClass?: ClassValue;
+  inputClass?: ClassValue;
   monthBtnSelected?: ClassValue;
   monthBtn?: ClassValue;
   translationLocale?: string;

@@ -6,7 +6,7 @@
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: TabletProps = $props();
 
-  themeDeprecated("TabletMockup", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class });
+  themeDeprecated("TabletMockup", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class }, { divClass: "class", div2Class: "leftTop", div3Class:"leftMid", div4Class:"leftBot", div5Class: "right", div6Class: "slot" });
   let styling = $derived(
     classes ?? {
       leftTop: div2Class,
