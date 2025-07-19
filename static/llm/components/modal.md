@@ -479,7 +479,7 @@ You can as well use the `onsubmit` event handler which is bubbled event from the
 
 #### Types
 
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1030)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1034)
 
 #### Props
 

@@ -1,12 +1,12 @@
 <script lang="ts">
   import { type DesktopProps } from "$lib";
-  import { themeDeprecated } from "$lib/theme/themeUtils";
+  import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { desktop } from ".";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, ...restProps }: DesktopProps = $props();
 
-  themeDeprecated("DesktopMockup", { divClass, div2Class, div3Class, div4Class }, { divClass: "class", div2Class: "inner", div3Class: "bot", div4Class: "botUnder" });
+  warnThemeDeprecation("DesktopMockup", { divClass, div2Class, div3Class, div4Class }, { divClass: "class", div2Class: "inner", div3Class: "bot", div4Class: "botUnder" });
   let styling = $derived(
     classes ?? {
       inner: div2Class,
@@ -32,7 +32,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DesktopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L478)
+[DesktopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L484)
 ## Props
 @prop children
 @prop class: className

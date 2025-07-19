@@ -1,12 +1,12 @@
 <script lang="ts">
   import { type DefaultMockupProps } from "$lib";
-  import { themeDeprecated } from "$lib/theme/themeUtils";
+  import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { defaultMockup } from ".";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: DefaultMockupProps = $props();
 
-  themeDeprecated("DefaultMockup", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class }, { divClass: "class", div2Class: "top", div3Class: "leftTop", div4Class: "leftBot", div5Class: "right", div6Class: "slot" });
+  warnThemeDeprecation("DefaultMockup", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class }, { divClass: "class", div2Class: "top", div3Class: "leftTop", div4Class: "leftBot", div5Class: "right", div6Class: "slot" });
   let styling = $derived(
     classes ?? {
       top: div2Class,
@@ -36,7 +36,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L505)
+[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L511)
 ## Props
 @prop children
 @prop class: className

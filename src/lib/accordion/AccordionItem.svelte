@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type AccordionCtxType, type AccordionItemProps, type ParamsType } from "$lib";
-  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { writable } from "svelte/store";
@@ -9,7 +9,7 @@
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, classes, headerClass, contentClass }: AccordionItemProps = $props();
 
-  themeDeprecated(
+  warnThemeDeprecation(
     "AccordionItem",
     {
       headerClass,
@@ -94,7 +94,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L170)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L176)
 ## Props
 @prop children
 @prop header

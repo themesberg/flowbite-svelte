@@ -1,12 +1,12 @@
 <script lang="ts">
   import { type LaptopProps } from "$lib";
-  import { themeDeprecated } from "$lib/theme/themeUtils";
+  import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { laptop } from ".";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, ...restProps }: LaptopProps = $props();
 
-  themeDeprecated("Laptop", { divClass, div2Class, div3Class, div4Class }, { divClass: "class", div2Class: "top", div3Class: "lefttop", div4Class: "leftBot", div5Class: "right", div6Class: "slot" });
+  warnThemeDeprecation("Laptop", { divClass, div2Class, div3Class, div4Class }, { divClass: "class", div2Class: "top", div3Class: "lefttop", div4Class: "leftBot", div5Class: "right", div6Class: "slot" });
   let styling = $derived(
     classes ?? {
       inner: div2Class,
@@ -36,7 +36,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L486)
+[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L492)
 ## Props
 @prop children
 @prop class: className

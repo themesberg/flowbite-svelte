@@ -2,11 +2,11 @@
   import { breadcrumb } from ".";
   import clsx from "clsx";
   import { type BreadcrumbProps, type BreadcrumbTheme } from "$lib";
-  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, solid = false, class: className, classes, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
 
-  themeDeprecated("Breadcrumb", { olClass }, { olClass: "list" });
+  warnThemeDeprecation("Breadcrumb", { olClass }, { olClass: "list" });
   let styling = $derived(classes ?? { list: olClass });
 
   const theme = getTheme("breadcrumb");
@@ -26,7 +26,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L271)
+[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L277)
 ## Props
 @prop children
 @prop solid = false

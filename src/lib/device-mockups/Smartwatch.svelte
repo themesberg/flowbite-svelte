@@ -1,12 +1,12 @@
 <script lang="ts">
   import { type SmartwatchProps } from "$lib";
-  import { themeDeprecated } from "$lib/theme/themeUtils";
+  import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { smartwatch } from ".";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: SmartwatchProps = $props();
 
-  themeDeprecated("Smartwatch", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class }, { divClass: "class", div2Class: "top", div3Class: "rightTop", div4Class: "rightBot", div5Class: "bot", div6Class: "slot" });
+  warnThemeDeprecation("Smartwatch", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class }, { divClass: "class", div2Class: "top", div3Class: "rightTop", div4Class: "rightBot", div5Class: "bot", div6Class: "slot" });
   let styling = $derived(
     classes ?? {
       top: div2Class,
@@ -37,7 +37,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L525)
+[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L531)
 ## Props
 @prop children
 @prop class: className

@@ -1,13 +1,13 @@
 <script lang="ts">
   import { type BadgeProps, CloseButton, type ParamsType } from "$lib";
-  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { fade } from "svelte/transition";
   import { badge, type BadgeTheme } from ".";
 
   let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, classes, border, href, target, rounded, transition = fade, params, aClass, onclose, ...restProps }: BadgeProps = $props();
 
-  themeDeprecated("Badge", { aClass }, { aClass: "linkClass" });
+  warnThemeDeprecation("Badge", { aClass }, { aClass: "linkClass" });
 
   let styling = $derived(classes ?? { linkClass: aClass });
 
@@ -49,7 +49,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L207)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L213)
 ## Props
 @prop children
 @prop icon

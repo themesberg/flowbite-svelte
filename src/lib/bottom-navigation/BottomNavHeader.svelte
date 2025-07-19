@@ -2,11 +2,11 @@
   import { bottomNavHeader } from ".";
   import clsx from "clsx";
   import { type BottomNavHeaderProps, type BottomNavHeaderTheme } from "$lib";
-  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, class: className, classes, outerClass, innerClass, ...restProps }: BottomNavHeaderProps = $props();
 
-  themeDeprecated("BottomNavHeader", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
+  warnThemeDeprecation("BottomNavHeader", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
 
   let styling = $derived(classes ?? { innerDiv: innerClass });
 
@@ -26,7 +26,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L259)
+[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L265)
 ## Props
 @prop children
 @prop class: className

@@ -75,22 +75,22 @@ The footer is one of the most underestimated sections of a website being located
       <div>
         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
         <FooterLinkGroup>
-          <FooterLink liClass="mb-4" href="/">Flowbite</FooterLink>
-          <FooterLink liClass="mb-4" href="/">Tailwind CSS</FooterLink>
+          <FooterLink class="mb-4" href="/">Flowbite</FooterLink>
+          <FooterLink class="mb-4" href="/">Tailwind CSS</FooterLink>
         </FooterLinkGroup>
       </div>
       <div>
         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
         <FooterLinkGroup>
-          <FooterLink liClass="mb-4" href="/">GitHub</FooterLink>
-          <FooterLink liClass="mb-4" href="/">Discord</FooterLink>
+          <FooterLink class="mb-4" href="/">GitHub</FooterLink>
+          <FooterLink class="mb-4" href="/">Discord</FooterLink>
         </FooterLinkGroup>
       </div>
       <div>
         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
         <FooterLinkGroup>
-          <FooterLink liClass="mb-4" href="/">Privacy Policy</FooterLink>
-          <FooterLink liClass="mb-4" href="/">Terms & Conditions</FooterLink>
+          <FooterLink class="mb-4" href="/">Privacy Policy</FooterLink>
+          <FooterLink class="mb-4" href="/">Terms & Conditions</FooterLink>
         </FooterLinkGroup>
       </div>
     </div>
@@ -135,36 +135,36 @@ The footer is one of the most underestimated sections of a website being located
     <div>
       <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Company</h2>
       <FooterLinkGroup class="text-gray-900 dark:text-gray-200">
-        <FooterLink liClass="mb-4" href="/">About</FooterLink>
-        <FooterLink liClass="mb-4" href="/">Careers</FooterLink>
-        <FooterLink liClass="mb-4" href="/">Brand Center</FooterLink>
-        <FooterLink liClass="mb-4" href="/">Blog</FooterLink>
+        <FooterLink class="mb-4" href="/">About</FooterLink>
+        <FooterLink class="mb-4" href="/">Careers</FooterLink>
+        <FooterLink class="mb-4" href="/">Brand Center</FooterLink>
+        <FooterLink class="mb-4" href="/">Blog</FooterLink>
       </FooterLinkGroup>
     </div>
     <div>
       <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Download</h2>
       <FooterLinkGroup class="text-gray-900 dark:text-gray-200">
-        <FooterLink liClass="mb-4" href="/">Discord Server</FooterLink>
-        <FooterLink liClass="mb-4" href="/">Twitter</FooterLink>
-        <FooterLink liClass="mb-4" href="/">Facebook</FooterLink>
-        <FooterLink liClass="mb-4" href="/">Contact Us</FooterLink>
+        <FooterLink class="mb-4" href="/">Discord Server</FooterLink>
+        <FooterLink class="mb-4" href="/">Twitter</FooterLink>
+        <FooterLink class="mb-4" href="/">Facebook</FooterLink>
+        <FooterLink class="mb-4" href="/">Contact Us</FooterLink>
       </FooterLinkGroup>
     </div>
     <div>
       <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Legal</h2>
       <FooterLinkGroup class="text-gray-900 dark:text-gray-200">
-        <FooterLink liClass="mb-4" href="/">Privacy Policy</FooterLink>
-        <FooterLink liClass="mb-4" href="/">Licensing</FooterLink>
-        <FooterLink liClass="mb-4" href="/">Terms & Conditions</FooterLink>
+        <FooterLink class="mb-4" href="/">Privacy Policy</FooterLink>
+        <FooterLink class="mb-4" href="/">Licensing</FooterLink>
+        <FooterLink class="mb-4" href="/">Terms & Conditions</FooterLink>
       </FooterLinkGroup>
     </div>
     <div>
       <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Download</h2>
       <FooterLinkGroup class="text-gray-900 dark:text-gray-200">
-        <FooterLink liClass="mb-4" href="/">iOS</FooterLink>
-        <FooterLink liClass="mb-4" href="/">Android</FooterLink>
-        <FooterLink liClass="mb-4" href="/">Windows</FooterLink>
-        <FooterLink liClass="mb-4" href="/">MacOS</FooterLink>
+        <FooterLink class="mb-4" href="/">iOS</FooterLink>
+        <FooterLink class="mb-4" href="/">Android</FooterLink>
+        <FooterLink class="mb-4" href="/">Windows</FooterLink>
+        <FooterLink class="mb-4" href="/">MacOS</FooterLink>
       </FooterLinkGroup>
     </div>
   </div>
@@ -222,7 +222,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L594)
+[FooterProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L598)
 
 #### Props
 
@@ -234,7 +234,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L599)
+[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L603)
 
 #### Props
 
@@ -251,7 +251,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L610)
+[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L614)
 
 #### Props
 
@@ -262,12 +262,14 @@ Use this example to set create a sticky footer by using a fixed position to the 
 - copyrightMessage: "All Rights Reserved."
 - year
 - bySpanClass
+- classes
+- class:className
 
 ### FooterIcon
 
 #### Types
 
-[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L620)
+[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L624)
 
 #### Props
 
@@ -280,7 +282,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L630)
+[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L634)
 
 #### Props
 
@@ -288,12 +290,14 @@ Use this example to set create a sticky footer by using a fixed position to the 
 - liClass
 - aClass
 - href
+- classes
+- class:className
 
 ### FooterLinkGroup
 
 #### Types
 
-[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L626)
+[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L630)
 
 #### Props
 

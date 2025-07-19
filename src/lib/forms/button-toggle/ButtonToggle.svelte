@@ -24,13 +24,15 @@
     toggleSelected(value);
   }
 
+  const { button, content, text } = buttonToggle({ selected, color, size });
+
   $effect(() => {
     selected = isSelected(value);
   });
 </script>
 
-<button type="button" class={buttonToggle.button({ selected, color: actualColor, size, roundedSize, class: clsx((theme as ButtonToggleTheme)?.button, ctxBtnClass, className) })} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
-  <div class={buttonToggle.content({ class: clsx((theme as ButtonToggleTheme)?.content, contentClass) })}>
+<button type="button" class={button({ selected, color: actualColor, size, roundedSize, class: clsx((theme as ButtonToggleTheme)?.button, ctxBtnClass, className) })} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
+  <div class={content({ class: clsx((theme as ButtonToggleTheme)?.content, contentClass) })}>
     {#if selected}
       {#if iconSlot}
         {@render iconSlot()}
@@ -38,7 +40,7 @@
         <CheckIcon class={clsx("absolute left-0 flex-shrink-0 text-green-600", actualIconClass)} />
       {/if}
     {/if}
-    <span class={buttonToggle.text({ selected, class: clsx((theme as ButtonToggleTheme)?.text, txtClass) })}>
+    <span class={text({ selected, class: clsx((theme as ButtonToggleTheme)?.text, txtClass) })}>
       {@render children()}
     </span>
   </div>
@@ -48,7 +50,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L328)
+[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L334)
 ## Props
 @prop value
 @prop selected = false

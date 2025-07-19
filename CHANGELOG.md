@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.10.12
+
+### Patch Changes
+
+- fix: remove env value from warnThemeDeprecation
+
 ## 1.10.11
 
 ### Patch Changes

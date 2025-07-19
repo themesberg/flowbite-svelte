@@ -10,7 +10,7 @@
 
   const theme = getTheme("dropdown");
 
-  const { base, backdrop } = $derived(dropdown());
+  const base = $derived(dropdown({ class: clsx(theme, className) }));
   const activeUrlStore = writable("");
   setContext("activeUrl", activeUrlStore);
 
@@ -21,7 +21,7 @@
 
 <!-- Dropdown menu -->
 
-<Popper {...restProps} {placement} {offset} bind:isOpen class={base({ class: clsx(theme, className) })}>
+<Popper {...restProps} {placement} {offset} bind:isOpen class={base}>
   {#if simple}
     <DropdownGroup>
       {@render children()}
@@ -35,7 +35,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L564)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L570)
 ## Props
 @prop children
 @prop simple = false

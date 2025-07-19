@@ -8,7 +8,17 @@ import { tv, type VariantProps } from "tailwind-variants";
 import type { Day } from "date-fns";
 
 // component variants
+import type { AlertVariants } from "$lib/alert/theme";
+import type { BadgeVariants } from "$lib/badge/theme";
+import type { BannerVariants } from "$lib/banner/theme";
+import type { ButtonVariants, GradientButtonVariantes, gradientButton } from "$lib/buttons/theme";
+import type { CardVariants } from "$lib/card/theme";
+import type Slide from "$lib/carousel/Slide.svelte";
+import type { CarouselVariants } from "$lib/carousel/theme";
+import type { DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
+import type { DropdownItemVariants } from "$lib/dropdown/theme";
 import type { DatepickerVariants } from "$lib/datepicker/theme";
+import type { FooterCopyrightVariants, FooterLinkVariants } from "$lib/footer/theme";
 import type { IndicatorVariants } from "$lib/indicator/theme";
 import type { ListgroupItemVariants, ListgroupVariants } from "$lib/list-group/theme";
 import type { ModalVariants } from "$lib/modal/theme";
@@ -26,15 +36,6 @@ import { timeline } from "$lib/timeline/theme";
 import type { ToastVaraints } from "$lib/toast/theme";
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "$lib/toolbar/theme";
 import type { TooltipVariants } from "$lib/tooltip/theme";
-import type { ApexOptions } from "apexcharts";
-import type { AlertVariants } from "$lib/alert/theme";
-import type { BadgeVariants } from "$lib/badge/theme";
-import type { BannerVariants } from "$lib/banner/theme";
-import type { ButtonVariants, GradientButtonVariantes, gradientButton } from "$lib/buttons/theme";
-import type { CardVariants } from "$lib/card/theme";
-import type Slide from "$lib/carousel/Slide.svelte";
-import type { CarouselVariants } from "$lib/carousel/theme";
-import type { DrawerVariants } from "$lib/drawer/theme";
 import type { closeButtonVariants } from "$lib/utils/theme";
 
 // forms component variants
@@ -51,7 +52,6 @@ import type { SearchVariants } from "$lib/forms/search/theme";
 import type { MultiSelectVariants, SelectVariants } from "$lib/forms/select/theme";
 import type { ToggleVariants } from "$lib/forms/toggle/theme";
 import type { PhoneInputVariants } from "$lib/forms/phoneinput/theme";
-import type { ButtonToggleVariants } from "$lib/forms/button-toggle/theme";
 import type { TableSearchColor } from "$lib/table/theme";
 
 // typography component variants
@@ -70,6 +70,12 @@ import type { BottomNavHeaderItemVariants, BottomNavHeaderVariants, BottomNavIte
 import type { BreadcrumbItemVariants, BreadcrumbVariants } from "./breadcrumb/theme";
 import type { ButtonGroupVariants } from "./button-group/theme";
 import type { AndroidVariants, DefaultMockupVariants, DesktopVariants, IosVariants, LaptopVariants, SmartwatchVariants, TabletVariants } from "./device-mockups/theme";
+
+// plugins component variants
+import type { ApexOptions } from "apexcharts";
+
+// extend
+import type { ButtonToggleVariants } from "$lib/forms/button-toggle/theme";
 
 // end of component variants
 
@@ -325,16 +331,17 @@ export type ButtonToggleGroupProps = HTMLAttributes<HTMLDivElement> & {
   ctxBtnClass?: ClassValue;
 };
 
-export type ButtonToggleProps = HTMLButtonAttributes & {
-  value: string;
-  selected?: boolean;
-  children: Snippet;
-  iconSlot?: Snippet;
-  color?: ButtonToggleVariants["color"];
-  iconClass?: ClassValue;
-  contentClass?: ClassValue;
-  txtClass?: ClassValue;
-};
+export type ButtonToggleProps = ButtonToggleVariants &
+  HTMLButtonAttributes & {
+    value: string;
+    selected?: boolean;
+    children: Snippet;
+    iconSlot?: Snippet;
+    color?: ButtonToggleVariants["color"];
+    iconClass?: ClassValue;
+    contentClass?: ClassValue;
+    txtClass?: ClassValue;
+  };
 
 export interface ButtonToggleContext {
   toggleSelected: (toggleValue: string) => void;
@@ -554,7 +561,7 @@ export interface DrawerProps extends DrawerVariants, HTMLAttributes<HTMLDivEleme
   bodyScrolling?: boolean;
 }
 
-export interface DrawerheadProps extends HTMLButtonAttributes {
+export interface DrawerheadProps extends DrawerheadVariants, HTMLButtonAttributes {
   closeIcon?: Snippet;
   buttonClass?: ClassValue;
   svgClass?: ClassValue;
@@ -575,14 +582,13 @@ export interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
 
 export type DropdownItemAnchorButtonAttributes = HTMLAnchorAttributes & Omit<HTMLButtonAttributes, keyof HTMLAnchorAttributes | "type">;
 
-export type DropdownItemProps = AnchorButtonDivAttributes & {
-  children: Snippet;
-  aClass?: ClassValue;
-  // href?: string;
-  activeClass?: ClassValue;
-  liClass?: ClassValue;
-  // onclick?: () => void;
-};
+export type DropdownItemProps = DropdownItemVariants &
+  AnchorButtonDivAttributes & {
+    children: Snippet;
+    aClass?: ClassValue;
+    activeClass?: ClassValue;
+    liClass?: ClassValue;
+  };
 
 export interface DropdownGroupProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
@@ -607,7 +613,7 @@ export interface FooterBrandProps extends HTMLAnchorAttributes {
   name?: string;
 }
 
-export interface FooterCopyrightProps extends HTMLAnchorAttributes {
+export interface FooterCopyrightProps extends FooterCopyrightVariants, HTMLAnchorAttributes {
   spanClass?: ClassValue;
   aClass?: ClassValue;
   href?: string;
@@ -627,7 +633,7 @@ export interface FooterLinkGroupProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
 }
 
-export interface FooterLinkProps extends HTMLAnchorAttributes {
+export interface FooterLinkProps extends FooterLinkVariants, HTMLAnchorAttributes {
   children: Snippet;
   liClass?: ClassValue;
   aClass?: ClassValue;

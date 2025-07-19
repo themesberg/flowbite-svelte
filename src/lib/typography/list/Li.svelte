@@ -21,7 +21,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[LiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1927)
+[LiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1931)
 ## Props
 @prop children
 @prop icon

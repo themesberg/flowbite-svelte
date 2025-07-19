@@ -211,7 +211,7 @@ This example can be used to denote function keys inside the KBD component.
 
 #### Types
 
-[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L978)
+[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L982)
 
 #### Props
 

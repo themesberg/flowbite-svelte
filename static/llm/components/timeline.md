@@ -200,7 +200,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1739)
+[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1743)
 
 #### Props
 
@@ -211,7 +211,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1743)
+[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1747)
 
 #### Props
 
@@ -229,7 +229,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1755)
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1759)
 
 #### Props
 
@@ -243,7 +243,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1763)
+[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1767)
 
 #### Props
 
@@ -258,7 +258,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1774)
+[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1778)
 
 #### Props
 
@@ -270,7 +270,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1779)
+[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1783)
 
 #### Props
 

@@ -1,12 +1,12 @@
 <script lang="ts">
   import { type CardProps } from "$lib";
-  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { card, type CardTheme } from ".";
 
   let { children, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, classes, imgClass, ...restProps }: CardProps = $props();
 
-  themeDeprecated("Card", { imgClass }, { imgClass: "image" });
+  warnThemeDeprecation("Card", { imgClass }, { imgClass: "image" });
 
   let styling = $derived(classes ?? { image: imgClass });
 
@@ -47,7 +47,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L347)
+[CardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L353)
 ## Props
 @prop children
 @prop color = "gray"

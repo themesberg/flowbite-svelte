@@ -1,12 +1,12 @@
 <script lang="ts">
   import { type AndroidProps } from "$lib";
-  import { themeDeprecated } from "$lib/theme/themeUtils";
+  import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { android } from ".";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class, ...restProps }: AndroidProps = $props();
 
-  themeDeprecated("Android", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class }, { divClass: "class", div2Class: "top", div3Class: "leftTop", div4Class: "leftMid", div5Class: "leftBot", div6Class: "right", div7Class: "slot" });
+  warnThemeDeprecation("Android", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class }, { divClass: "class", div2Class: "top", div3Class: "leftTop", div4Class: "leftMid", div5Class: "leftBot", div6Class: "right", div7Class: "slot" });
 
   let styling = $derived(
     classes ?? {
@@ -39,7 +39,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L494)
+[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L500)
 ## Props
 @prop children
 @prop class: className

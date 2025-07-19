@@ -3,9 +3,12 @@
   import { dropdownItem, type DropdownItemTheme } from ".";
   import clsx from "clsx";
   import { type DropdownItemProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { aClass, children, activeClass, liClass, class: className, ...restProps }: DropdownItemProps = $props();
+  let { aClass, children, activeClass, liClass, classes, class: className, ...restProps }: DropdownItemProps = $props();
+
+  warnThemeDeprecation("DropdownItem", { aClass, activeClass }, { aClass: "anchor", activeClass: "active" });
+  let styling = $derived(classes ?? { activeAnchor: activeClass, anchor: aClass });
 
   const theme = getTheme("dropdownItem");
 
@@ -21,10 +24,10 @@
   });
 
   const { anchor, activeAnchor } = dropdownItem();
-  let finalClass = $derived([active ? activeAnchor({ class: clsx((theme as DropdownItemTheme)?.activeAnchor, activeClass, className) }) : anchor({ class: clsx((theme as DropdownItemTheme)?.anchor, aClass, className) })]);
+  let finalClass = $derived([active ? activeAnchor({ class: clsx((theme as DropdownItemTheme)?.activeAnchor, styling.activeAnchor) }) : anchor({ class: clsx((theme as DropdownItemTheme)?.anchor, styling.anchor) })]);
 </script>
 
-<li class={liClass}>
+<li class={clsx(className ?? liClass)}>
   {#if restProps.href === undefined && restProps.onclick === undefined}
     <div {...restProps} class={finalClass}>
       {@render children()}
@@ -44,12 +47,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L578)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L584)
 ## Props
 @prop aClass
 @prop children
 @prop activeClass
 @prop liClass
+@prop classes
 @prop class: className
 @prop ...restProps
 -->

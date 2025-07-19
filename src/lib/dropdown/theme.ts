@@ -1,11 +1,9 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
 
 export const dropdown = tv({
-  slots: {
-    base: "mt-2 divide-y divide-gray-300 dark:divide-gray-500 overflow-hidden rounded-lg bg-white shadow-sm dark:bg-gray-700",
-    backdrop: "fixed top-0 start-0 w-full h-full"
-  }
+  base: "mt-2 divide-y divide-gray-300 dark:divide-gray-500 overflow-hidden rounded-lg bg-white shadow-sm dark:bg-gray-700"
 });
 
 export type DropdownSlots = keyof typeof dropdown.slots;
@@ -22,6 +20,8 @@ export const dropdownHeader = tv({
 });
 
 export type DropdownHeaderTheme = ClassValue;
+
+export type DropdownItemVariants = VariantProps<typeof dropdownItem> & Classes<typeof dropdownItem>;
 
 export const dropdownItem = tv({
   slots: {

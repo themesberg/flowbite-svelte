@@ -89,7 +89,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1319)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1323)
 ## Props
 @prop children
 @prop isOpen = false

@@ -26,7 +26,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1869)
+[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1873)
 ## Props
 @prop children
 @prop divClass

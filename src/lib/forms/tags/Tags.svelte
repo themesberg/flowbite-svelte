@@ -69,7 +69,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L870)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L874)
 ## Props
 @prop value = $bindable([])
 @prop itemClass

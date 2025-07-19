@@ -1,5 +1,6 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
 
 export const footer = tv({
   base: "bg-white dark:bg-gray-800",
@@ -16,6 +17,8 @@ export const footer = tv({
 
 export type FooterTheme = ClassValue;
 
+export type FooterBrandVariants = VariantProps<typeof footerBrand> & Classes<typeof footerBrand>;
+
 export const footerBrand = tv({
   slots: {
     base: "flex items-center",
@@ -26,6 +29,8 @@ export const footerBrand = tv({
 
 export type FooterBrandSlots = keyof typeof footerBrand.slots;
 export type FooterBrandTheme = Partial<Record<FooterBrandSlots, ClassValue>>;
+
+export type FooterCopyrightVariants = VariantProps<typeof footerCopyright> & Classes<typeof footerCopyright>;
 
 export const footerCopyright = tv({
   slots: {
@@ -49,6 +54,8 @@ export const footerLinkGroup = tv({
 });
 
 export type FooterLinkGroupTheme = ClassValue;
+
+export type FooterLinkVariants = VariantProps<typeof footerLink> & Classes<typeof footerLink>;
 
 export const footerLink = tv({
   slots: {

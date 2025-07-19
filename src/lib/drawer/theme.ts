@@ -1,7 +1,8 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type DrawerVariants = VariantProps<typeof drawer>;
+export type DrawerVariants = VariantProps<typeof drawer> & Classes<typeof drawer>;
 
 export const drawer = tv({
   slots: {
@@ -34,6 +35,8 @@ export const drawer = tv({
     width: "default"
   }
 });
+
+export type DrawerheadVariants = VariantProps<typeof drawerhead> & Classes<typeof drawerhead>;
 
 export const drawerhead = tv({
   slots: {

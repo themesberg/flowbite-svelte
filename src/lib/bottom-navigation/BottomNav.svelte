@@ -4,11 +4,11 @@
   import { bottomNav } from ".";
   import clsx from "clsx";
   import { type BottomNavProps, type BottomNavContextType, cn, type BottomNavTheme } from "$lib";
-  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, header, position = "fixed", navType = "default", class: className, classes, outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
 
-  themeDeprecated("BottomNav", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
+  warnThemeDeprecation("BottomNav", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
   let styling = $derived(classes ?? { inner: innerClass });
 
   // Theme context
@@ -42,7 +42,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L240)
+[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L246)
 ## Props
 @prop children
 @prop header

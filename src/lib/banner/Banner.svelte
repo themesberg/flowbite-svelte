@@ -3,11 +3,11 @@
   import { banner, type BannerTheme } from ".";
   import clsx from "clsx";
   import { type ParamsType, type BannerProps, CloseButton } from "$lib";
-  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, classes, innerClass, transition = fade, params, closeClass, ...restProps }: BannerProps = $props();
 
-  themeDeprecated("Banner", { innerClass, closeClass }, { innerClass: "insideDiv", closeClass: "dismissable" });
+  warnThemeDeprecation("Banner", { innerClass, closeClass }, { innerClass: "insideDiv", closeClass: "dismissable" });
 
   let styling = $derived(classes ?? { insideDiv: innerClass, dismissable: closeClass });
 
@@ -42,7 +42,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L222)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L228)
 ## Props
 @prop children
 @prop header
