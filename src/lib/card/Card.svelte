@@ -7,7 +7,7 @@
   let { children, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, classes, imgClass, ...restProps }: CardProps = $props();
 
   themeDeprecated("Card", { imgClass }, { imgClass: "image" });
-  
+
   let styling = $derived(classes ?? { image: imgClass });
 
   const theme = getTheme("card");

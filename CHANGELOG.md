@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.10.11
+
+### Patch Changes
+
+- fix(datepicker): normalize range input when from > to
+
 ## 1.10.10
 
 ### Patch Changes

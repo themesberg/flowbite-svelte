@@ -138,7 +138,7 @@
         if (parsedFrom && isValid(parsedFrom) && isDateAvailable(parsedFrom) && parsedTo && isValid(parsedTo) && isDateAvailable(parsedTo)) {
           [rangeFrom, rangeTo] = parsedFrom > parsedTo ? [parsedTo, parsedFrom] : [parsedFrom, parsedTo];
           onselect?.({ from: rangeFrom, to: rangeTo });
-          return; 
+          return;
         } else {
           inputElement?.setCustomValidity(`Please enter date range in format: ${getDateFormatPattern()} - ${getDateFormatPattern()}`);
           return;
@@ -214,7 +214,6 @@
     const testDate = new Date(2025, 0, 15); // January 15, 2025
     const formatted = testDate.toLocaleDateString(actualLocale, dateFormat || { year: "numeric", month: "numeric", day: "numeric" });
 
-
     if (formatted.includes(".")) {
       // German/European format with dots
       if (formatted.startsWith("15.")) {
@@ -230,7 +229,7 @@
       } else if (formatted.startsWith("15/")) {
         return "d/M/yyyy"; // UK format
       }
-      
+
       const testDate2 = new Date(2025, 11, 3); // December 3, 2025
       const formatted2 = testDate2.toLocaleDateString(actualLocale, dateFormat || { year: "numeric", month: "numeric", day: "numeric" });
       if (formatted2.startsWith("3/") || formatted2.startsWith("03/")) {
@@ -331,8 +330,8 @@
 
   function handleInputKeydown(event: KeyboardEvent) {
     if (event.key === "Enter") {
-      event.preventDefault(); 
-      handleInputChangeWithDateFns(); 
+      event.preventDefault();
+      handleInputChangeWithDateFns();
       if (autohide && !inline) {
         isOpen = false;
       }

@@ -1,9 +1,9 @@
 import { type ThemeConfig } from "$lib";
 import type { ClassValue } from "clsx";
 import { getContext } from "svelte";
-import { dev } from '$app/environment';
+import { dev } from "$app/environment";
 // add PUBLIC_SHOW_HINT=true to .env to show migration hints in the console during the playwright tests
-import { PUBLIC_SHOW_HINT } from '$env/static/public';
+import { PUBLIC_SHOW_HINT } from "$env/static/public";
 
 export function getTheme<K extends keyof ThemeConfig>(componentKey: K) {
   const theme = getContext<ThemeConfig>("theme");
@@ -15,20 +15,16 @@ export type Classes<T extends { slots: Record<string, unknown> }> = {
   classes?: Partial<{ [K in keyof Slots<T>]: ClassValue }>;
 };
 
-export function themeDeprecated(
-  component: string,
-  names: Record<string, unknown>,
-  replacements?: Record<string, unknown>
-): void {
-  const showHint = dev || PUBLIC_SHOW_HINT === 'true';
+export function themeDeprecated(component: string, names: Record<string, unknown>, replacements?: Record<string, unknown>): void {
+  const showHint = dev || PUBLIC_SHOW_HINT === "true";
   if (!showHint) return;
 
   const nonEmptyNames = Object.keys(names).filter((name) => names[name]);
   if (nonEmptyNames.length === 0) return;
 
-  let migrationHint = '';
+  let migrationHint = "";
 
-  const usesClass = nonEmptyNames.some((name) => replacements?.[name] === 'class');
+  const usesClass = nonEmptyNames.some((name) => replacements?.[name] === "class");
   const propText = usesClass ? `"classes" or "class"` : `"classes"`;
 
   if (replacements) {
@@ -40,7 +36,7 @@ export function themeDeprecated(
       const value = names[name];
       if (!newKey || !value) continue;
 
-      if (newKey === 'class') {
+      if (newKey === "class") {
         classProps.push(`class="${value}"`);
       } else {
         classesObjectEntries.push(`${newKey}: "${value}"`);
@@ -50,19 +46,13 @@ export function themeDeprecated(
     const hintLines: string[] = [];
     if (classProps.length > 0) hintLines.push(...classProps);
     if (classesObjectEntries.length > 0) {
-      hintLines.push(`classes={{ ${classesObjectEntries.join(', ')} }}`);
+      hintLines.push(`classes={{ ${classesObjectEntries.join(", ")} }}`);
     }
 
     if (hintLines.length > 0) {
-      migrationHint = `\nMigration example: ${hintLines.join(' ')}`;
+      migrationHint = `\nMigration example: ${hintLines.join(" ")}`;
     }
   }
 
-  console.warn(
-    `The following "${component}" props are deprecated: ${nonEmptyNames
-      .map((n) => `"${n}"`)
-      .join(', ')}.` +
-      ` Please update your code to use the new ${propText} prop.${migrationHint}`
-  );
+  console.warn(`The following "${component}" props are deprecated: ${nonEmptyNames.map((n) => `"${n}"`).join(", ")}.` + ` Please update your code to use the new ${propText} prop.${migrationHint}`);
 }
-

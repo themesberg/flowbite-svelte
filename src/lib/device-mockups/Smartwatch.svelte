@@ -6,7 +6,7 @@
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: SmartwatchProps = $props();
 
-  themeDeprecated("Smartwatch", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class }, { divClass:"class", div2Class:"top", div3Class:"rightTop", div4Class:"rightBot", div5Class:"bot", div6Class:"slot" });
+  themeDeprecated("Smartwatch", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class }, { divClass: "class", div2Class: "top", div3Class: "rightTop", div4Class: "rightBot", div5Class: "bot", div6Class: "slot" });
   let styling = $derived(
     classes ?? {
       top: div2Class,
