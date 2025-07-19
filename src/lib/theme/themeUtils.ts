@@ -66,20 +66,59 @@ export function themeDeprecated(
   );
 }
 
+<<<<<<< HEAD
 export function themeDeprecated(component: string, usedDeprecatedProps: Record<string, unknown>): void {
   const activeProps = Object.entries(usedDeprecatedProps).filter(([_, val]) => !!val);
   if (activeProps.length === 0) return;
+=======
+export function themeDeprecated(
+  component: string,
+  names: Record<string, unknown>,
+  replacements?: Record<string, unknown>
+): void {
+  const showHint = dev || PUBLIC_SHOW_HINT === 'true';
+  if (!showHint) return;
+>>>>>>> 1ae5fdf43 (fix: update themeDeprecated)
 
-  const lines = activeProps.map(
-    ([oldProp, newClass]) => `  • "${oldProp}" → "classes.${newClass}"`
-  );
+  const nonEmptyNames = Object.keys(names).filter((name) => names[name]);
+  if (nonEmptyNames.length === 0) return;
+
+  let migrationHint = '';
+
+  const usesClass = nonEmptyNames.some((name) => replacements?.[name] === 'class');
+  const propText = usesClass ? `"classes" or "class"` : `"classes"`;
+
+  if (replacements) {
+    const classProps: string[] = [];
+    const classesObjectEntries: string[] = [];
+
+    for (const name of nonEmptyNames) {
+      const newKey = replacements[name];
+      const value = names[name];
+      if (!newKey || !value) continue;
+
+      if (newKey === 'class') {
+        classProps.push(`class="${value}"`);
+      } else {
+        classesObjectEntries.push(`${newKey}: "${value}"`);
+      }
+    }
+
+    const hintLines: string[] = [];
+    if (classProps.length > 0) hintLines.push(...classProps);
+    if (classesObjectEntries.length > 0) {
+      hintLines.push(`classes={{ ${classesObjectEntries.join(', ')} }}`);
+    }
+
+    if (hintLines.length > 0) {
+      migrationHint = `\nMigration example:\n  ${hintLines.join('   ')}`;
+    }
+  }
 
   console.warn(
-    `[Deprecated Props] ${component}\n` +
-    `The following props are deprecated and will be removed in the next major version:` +
-    lines.join("\n") +
-    `\n Please update your component usage to the new structure:` +
-    `  <${component} classes={{ ${activeProps.map(([_, newClass]) => `${newClass}: '...'`).join(", ")} }} />`
+    `The following "${component}" props are deprecated: ${nonEmptyNames
+      .map((n) => `"${n}"`)
+      .join(', ')}.` +
+      ` Please update your code to use the new ${propText} prop.${migrationHint}`
   );
 }
-
