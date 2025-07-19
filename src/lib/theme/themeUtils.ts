@@ -54,7 +54,7 @@ export function themeDeprecated(
     }
 
     if (hintLines.length > 0) {
-      migrationHint = `\nMigration example:  ${hintLines.join(' ')}`;
+      migrationHint = `\nMigration example: ${hintLines.join(' ')}`;
     }
   }
 
