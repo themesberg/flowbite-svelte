@@ -1,12 +1,12 @@
 <script lang="ts">
   import { type DesktopProps } from "$lib";
-  import { themeDeprecatedNew } from "$lib/theme/themeUtils";
+  import { themeDeprecated } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { desktop } from ".";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, ...restProps }: DesktopProps = $props();
 
-  themeDeprecatedNew("DesktopMockup", { divClass, div2Class, div3Class, div4Class }, { divClass:"class", div2Class:"inner", div3Class:"bot", div4Class:"botUnder" });
+  themeDeprecated("DesktopMockup", { divClass, div2Class, div3Class, div4Class }, { divClass:"class", div2Class:"inner", div3Class:"bot", div4Class:"botUnder" });
   let styling = $derived(
     classes ?? {
       inner: div2Class,

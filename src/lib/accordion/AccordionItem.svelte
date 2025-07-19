@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type AccordionCtxType, type AccordionItemProps, type ParamsType } from "$lib";
-  import { getTheme, themeDeprecatedNew } from "$lib/theme/themeUtils";
+  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { writable } from "svelte/store";
@@ -9,7 +9,7 @@
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, classes, headerClass, contentClass }: AccordionItemProps = $props();
 
-  themeDeprecatedNew("AccordionItem", {
+  themeDeprecated("AccordionItem", {
     headerClass,
     contentClass,
     activeClass,

@@ -1,12 +1,12 @@
 <script lang="ts">
   import { type CardProps } from "$lib";
-  import { getTheme, themeDeprecatedNew } from "$lib/theme/themeUtils";
+  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { card, type CardTheme } from ".";
 
   let { children, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, classes, imgClass, ...restProps }: CardProps = $props();
 
-  themeDeprecatedNew("Card", { imgClass }, { imgClass: "image" });
+  themeDeprecated("Card", { imgClass }, { imgClass: "image" });
   
   let styling = $derived(classes ?? { image: imgClass });
 

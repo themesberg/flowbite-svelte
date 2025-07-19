@@ -2,11 +2,11 @@
   import { breadcrumb } from ".";
   import clsx from "clsx";
   import { type BreadcrumbProps, type BreadcrumbTheme } from "$lib";
-  import { getTheme, themeDeprecatedNew } from "$lib/theme/themeUtils";
+  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
 
   let { children, solid = false, class: className, classes, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
 
-  themeDeprecatedNew("Breadcrumb", { olClass}, { olClass: "list" });
+  themeDeprecated("Breadcrumb", { olClass}, { olClass: "list" });
   let styling = $derived(classes ?? { list: olClass });
 
   const theme = getTheme("breadcrumb");

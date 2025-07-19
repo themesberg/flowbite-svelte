@@ -1,12 +1,12 @@
 <script lang="ts">
   import { type SmartwatchProps } from "$lib";
-  import { themeDeprecatedNew } from "$lib/theme/themeUtils";
+  import { themeDeprecated } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { smartwatch } from ".";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: SmartwatchProps = $props();
 
-  themeDeprecatedNew("Smartwatch", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class }, { divClass:"class", div2Class:"top", div3Class:"rightTop", div4Class:"rightBot", div5Class:"bot", div6Class:"slot" });
+  themeDeprecated("Smartwatch", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class }, { divClass:"class", div2Class:"top", div3Class:"rightTop", div4Class:"rightBot", div5Class:"bot", div6Class:"slot" });
   let styling = $derived(
     classes ?? {
       top: div2Class,

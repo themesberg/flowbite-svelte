@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type BottomNavContextType, type BottomNavItemProps } from "$lib";
-  import { getTheme, themeDeprecatedNew } from "$lib/theme/themeUtils";
+  import { getTheme, themeDeprecated } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
@@ -8,7 +8,7 @@
 
   let { children, btnName, appBtnPosition = "middle", activeClass, class: className, classes, btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
 
-  themeDeprecatedNew("BottomNavItem", { spanClass, btnClass }, { spanClass: "span", btnClass: "class" });
+  themeDeprecated("BottomNavItem", { spanClass, btnClass }, { spanClass: "span", btnClass: "class" });
   let styling = $derived(classes ?? { span: spanClass });
 
   // Theme context
