@@ -130,16 +130,15 @@
     inputElement?.setCustomValidity("");
 
     if (range) {
-      const parts = inputValue.split(" - "); // Split the string by " - "
+      const parts = inputValue.split(" - ");
       if (parts.length === 2) {
         const parsedFrom = tryParseDate(parts[0]);
         const parsedTo = tryParseDate(parts[1]);
 
         if (parsedFrom && isValid(parsedFrom) && isDateAvailable(parsedFrom) && parsedTo && isValid(parsedTo) && isDateAvailable(parsedTo)) {
-          rangeFrom = parsedFrom;
-          rangeTo = parsedTo;
+          [rangeFrom, rangeTo] = parsedFrom > parsedTo ? [parsedTo, parsedFrom] : [parsedFrom, parsedTo];
           onselect?.({ from: rangeFrom, to: rangeTo });
-          return; // Successfully parsed range
+          return; 
         } else {
           inputElement?.setCustomValidity(`Please enter date range in format: ${getDateFormatPattern()} - ${getDateFormatPattern()}`);
           return;
@@ -147,7 +146,6 @@
       }
     }
 
-    // Original single date parsing logic
     const parsedDate = tryParseDate(inputValue);
 
     if (!parsedDate || !isValid(parsedDate)) {
@@ -213,12 +211,10 @@
 
   function getDateFormatPattern(): string {
     const actualLocale = locale === "default" ? navigator.language : locale;
-
-    // Create a test date and format it to understand the pattern
     const testDate = new Date(2025, 0, 15); // January 15, 2025
     const formatted = testDate.toLocaleDateString(actualLocale, dateFormat || { year: "numeric", month: "numeric", day: "numeric" });
 
-    // Analyze the formatted string to determine the pattern
+
     if (formatted.includes(".")) {
       // German/European format with dots
       if (formatted.startsWith("15.")) {
@@ -234,7 +230,7 @@
       } else if (formatted.startsWith("15/")) {
         return "d/M/yyyy"; // UK format
       }
-      // Additional check with different test date
+      
       const testDate2 = new Date(2025, 11, 3); // December 3, 2025
       const formatted2 = testDate2.toLocaleDateString(actualLocale, dateFormat || { year: "numeric", month: "numeric", day: "numeric" });
       if (formatted2.startsWith("3/") || formatted2.startsWith("03/")) {
@@ -272,7 +268,7 @@
     }
   }
 
-  // MODIFIED: Use locale for formatting (not translationLocale)
+  // Use locale for formatting (not translationLocale)
   const formatDate = (date?: Date): string => date?.toLocaleDateString(locale, dateFormat) ?? "";
   const isSameDate = (date1?: Date, date2?: Date): boolean => (date1 && date2 ? isSameDay(date1, date2) : false);
   const isToday = (day: Date): boolean => isSameDate(day, new Date());
@@ -326,7 +322,7 @@
       currentMonth = new Date(focusedDate.getFullYear(), focusedDate.getMonth(), 1);
     }
 
-    // MODIFIED: Use translationLocale for aria-label
+    // Use translationLocale for aria-label
     setTimeout(() => {
       const focusedButton = calendarRef?.querySelector(`button[aria-label="${focusedDate!.toLocaleDateString(translationLocale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}"]`) as HTMLButtonElement | null;
       focusedButton?.focus();
@@ -335,10 +331,9 @@
 
   function handleInputKeydown(event: KeyboardEvent) {
     if (event.key === "Enter") {
-      event.preventDefault(); // Prevent default form submission or other Enter key behaviors
-      handleInputChangeWithDateFns(); // Call the function to parse and apply the date
+      event.preventDefault(); 
+      handleInputChangeWithDateFns(); 
       if (autohide && !inline) {
-        // Optionally close the datepicker after applying
         isOpen = false;
       }
     } else if (event.key === " ") {
