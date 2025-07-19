@@ -10,6 +10,11 @@
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, classes, headerClass, contentClass }: AccordionItemProps = $props();
 
   themeDeprecatedNew("AccordionItem", {
+    headerClass,
+    contentClass,
+    activeClass,
+    inactiveClass
+  }, {
     headerClass: "button",
     contentClass: "content",
     activeClass: "active",

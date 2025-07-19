@@ -6,7 +6,7 @@
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class, ...restProps }: AndroidProps = $props();
 
-  themeDeprecatedNew("Android", { divClass:"class", div2Class: "top", div3Class: "leftTop", div4Class: "leftMid", div5Class: "leftBot", div6Class: "right", div7Class: "slot" });
+  themeDeprecatedNew("Android", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class }, { divClass:"class", div2Class: "top", div3Class: "leftTop", div4Class: "leftMid", div5Class: "leftBot", div6Class: "right", div7Class: "slot" });
 
   let styling = $derived(
     classes ?? {

@@ -6,7 +6,7 @@
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, ...restProps }: LaptopProps = $props();
 
-  themeDeprecatedNew("Laptop", { divClass:"class", div2Class:"inner", div3Class:"bot", div4Class:"botCen" });
+  themeDeprecatedNew("Laptop", { divClass, div2Class, div3Class, div4Class }, { divClass:"class", div2Class:"top", div3Class:"lefttop", div4Class:"leftBot", div5Class:"right", div6Class: "slot" });
   let styling = $derived(
     classes ?? {
       inner: div2Class,

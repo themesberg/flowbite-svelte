@@ -8,7 +8,7 @@
 
   let { children, header, position = "fixed", navType = "default", class: className, classes, outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
 
-  themeDeprecatedNew("BottomNav", { innerClass: "inner", outerClass: "class" });
+  themeDeprecatedNew("BottomNav", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
   let styling = $derived(classes ?? { inner: innerClass });
 
   // Theme context
