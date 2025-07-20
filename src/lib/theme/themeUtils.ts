@@ -1,7 +1,8 @@
 import { type ThemeConfig } from "$lib";
 import type { ClassValue } from "clsx";
 import { getContext } from "svelte";
-import { dev } from "$app/environment";
+
+const dev = import.meta.env.DEV;
 
 export function getTheme<K extends keyof ThemeConfig>(componentKey: K) {
   const theme = getContext<ThemeConfig>("theme");
