@@ -13,6 +13,7 @@
     ["class: className", ""],
     ["iconClass", ""],
     ["txtClass", ""],
-    ["contentClass", ""]
+    ["contentClass", ""],
+    ["classes", ""]
   ]
 }

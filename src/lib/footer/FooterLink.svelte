@@ -25,13 +25,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L634)
+[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L636)
 ## Props
 @prop children
 @prop liClass
 @prop aClass
 @prop href
 @prop classes
-@prop class:className
+@prop class: className
 @prop ...restProps
 -->

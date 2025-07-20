@@ -1,7 +1,8 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type CheckboxVariants = VariantProps<typeof checkbox>;
+export type CheckboxVariants = VariantProps<typeof checkbox> & Classes<typeof checkbox>;
 
 export const checkbox = tv({
   slots: {

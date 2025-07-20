@@ -693,7 +693,7 @@ export interface DropzoneProps extends HTMLInputAttributes {
 }
 
 // fileupload
-export interface FileuploadProps extends Omit<HTMLInputAttributes, "size"> {
+export interface FileuploadProps extends FileuploadViariants, Omit<HTMLInputAttributes, "size"> {
   files?: FileList | null;
   size?: FileuploadViariants["size"];
   color?: InputProps<never>["color"];
@@ -707,7 +707,7 @@ export interface FileuploadProps extends Omit<HTMLInputAttributes, "size"> {
 }
 
 // floatinglabel-input
-export interface FloatingLabelInputProps extends Omit<HTMLInputAttributes, "size"> {
+export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, Omit<HTMLInputAttributes, "size"> {
   children: Snippet;
   id?: string;
   value?: string | number | readonly string[];
@@ -735,7 +735,7 @@ export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLPar
 // input
 export type InputValue = string | number | string[] | undefined;
 
-export interface InputProps<T extends InputValue = string> extends Omit<HTMLInputAttributes, "size" | "children" | "value"> {
+export interface InputProps<T extends InputValue = string> extends InputVariants, Omit<HTMLInputAttributes, "size" | "children" | "value"> {
   children?: Snippet<[{ class: string } & Omit<InputProps<T>, "children" | "left" | "right" | "size">]>;
   left?: Snippet;
   right?: Snippet;

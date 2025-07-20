@@ -146,7 +146,7 @@ Add `clearable` and `clearableOnClick` props.
 
 #### Types
 
-[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L694)
+[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L696)
 
 #### Props
 
@@ -155,6 +155,7 @@ Add `clearable` and `clearableOnClick` props.
 - clearable: false
 - elementRef: $bindable()
 - class: className
+- classes
 - clearableSvgClass
 - clearableColor: "none"
 - clearableClass

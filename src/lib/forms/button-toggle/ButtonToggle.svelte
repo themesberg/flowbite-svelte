@@ -5,9 +5,13 @@
   import type { ButtonToggleVariants } from "./theme";
   import clsx from "clsx";
   import { type ButtonToggleProps, type ButtonToggleContext } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { value, selected = false, children, iconSlot, color, class: className, iconClass, txtClass, contentClass, ...restProps }: ButtonToggleProps = $props();
+  let { value, selected = false, children, iconSlot, color, class: className, iconClass, txtClass, contentClass, classes, ...restProps }: ButtonToggleProps = $props();
+
+  warnThemeDeprecation("ButtonToggle", { iconClass, txtClass, contentClass }, { iconClass: "icon", txtClass: "text", contentClass: "content" });
+  // button(className), content, text, icon
+  let styling = $derived(classes ?? { icon: iconClass, text: txtClass, content: contentClass });
 
   const theme = getTheme("buttonToggle");
 
@@ -17,14 +21,14 @@
   const size = getContext<ButtonToggleVariants["size"]>("buttonToggleSize");
   const roundedSize = getContext<ButtonToggleVariants["roundedSize"]>("buttonToggleRounded");
   const ctxIconClass = getContext<string | undefined>("ctxIconClass");
-  const actualIconClass = ctxIconClass || clsx(iconClass);
+  const actualIconClass = ctxIconClass;
   const ctxBtnClass = getContext<string | undefined>("ctxBtnClass");
 
   function handleClick() {
     toggleSelected(value);
   }
 
-  const { button, content, text } = buttonToggle({ selected, color, size });
+  const { button, content, text, icon } = $derived(buttonToggle({ selected, color, size }));
 
   $effect(() => {
     selected = isSelected(value);
@@ -32,15 +36,15 @@
 </script>
 
 <button type="button" class={button({ selected, color: actualColor, size, roundedSize, class: clsx((theme as ButtonToggleTheme)?.button, ctxBtnClass, className) })} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
-  <div class={content({ class: clsx((theme as ButtonToggleTheme)?.content, contentClass) })}>
+  <div class={content({ class: clsx((theme as ButtonToggleTheme)?.content, styling.content) })}>
     {#if selected}
       {#if iconSlot}
         {@render iconSlot()}
       {:else}
-        <CheckIcon class={clsx("absolute left-0 flex-shrink-0 text-green-600", actualIconClass)} />
+        <CheckIcon class={icon({ class: clsx((theme as ButtonToggleTheme)?.icon ?? actualIconClass, styling.icon) })} />
       {/if}
     {/if}
-    <span class={text({ selected, class: clsx((theme as ButtonToggleTheme)?.text, txtClass) })}>
+    <span class={text({ selected, class: clsx((theme as ButtonToggleTheme)?.text, styling.text) })}>
       {@render children()}
     </span>
   </div>
@@ -61,5 +65,6 @@
 @prop iconClass
 @prop txtClass
 @prop contentClass
+@prop classes
 @prop ...restProps
 -->

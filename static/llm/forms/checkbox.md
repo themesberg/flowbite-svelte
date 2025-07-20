@@ -356,7 +356,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 #### Types
 
-[CheckboxProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L650)
+[CheckboxProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L652)
 
 #### Props
 
@@ -370,6 +370,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 - choices: []
 - checked: $bindable(false)
 - indeterminate
+- classes
 - class: className
 - divClass
 - disabled: false

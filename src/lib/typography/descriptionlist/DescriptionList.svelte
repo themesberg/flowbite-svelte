@@ -24,7 +24,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DescriptionListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1861)
+[DescriptionListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1863)
 ## Props
 @prop children
 @prop tag

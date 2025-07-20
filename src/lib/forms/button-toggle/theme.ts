@@ -17,6 +17,8 @@ export const buttonToggleGroup = tv({
 
 export type ButtonToggleGroupTheme = ClassValue;
 
+export type ButtonToggleVariants = VariantProps<typeof buttonToggle> & Classes<typeof buttonToggle>;
+
 export const buttonToggle = tv({
   slots: {
     button: "relative flex items-center transition-all duration-200 focus:outline-none border-r last:border-r-0 dark:bg-white dark:text-gray-800",
@@ -134,13 +136,5 @@ export const buttonToggle = tv({
   }
 });
 
-// export type ButtonToggleTheme = {
-//   button?: ClassValue;
-//   content?: ClassValue;
-//   text?: ClassValue;
-// };
-
 export type ButtonToggleSlots = keyof typeof buttonToggle.slots;
 export type ButtonToggleTheme = Partial<Record<ButtonToggleSlots, ClassValue>>;
-
-export type ButtonToggleVariants = VariantProps<typeof buttonToggle> & Classes<typeof buttonToggle>;

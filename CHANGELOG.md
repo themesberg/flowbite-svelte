@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.10.13
+
+### Patch Changes
+
+- fix: remove sveltekit dev $app/environment for svelte project
+  feat: classes update
+
 ## 1.10.12
 
 ### Patch Changes

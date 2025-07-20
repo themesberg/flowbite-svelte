@@ -6,7 +6,7 @@
 
   let { spanClass, aClass, href, by, copyrightMessage = "All Rights Reserved.", year, bySpanClass, classes, class: className, ...restProps }: FooterCopyrightProps = $props();
 
-  warnThemeDeprecation("FooterCopyright", { aClass, spanClass, bySpanClass }, { aClass: "anchor", spanClass: "class", bySpanClass: "bySpan" });
+  warnThemeDeprecation("FooterCopyright", { aClass, spanClass, bySpanClass }, { aClass: "link", spanClass: "class", bySpanClass: "bySpan" });
   // link, bySpan
   let styling = $derived(classes ?? { bySpan: bySpanClass, link: aClass });
 
@@ -33,7 +33,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L614)
+[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L616)
 ## Props
 @prop spanClass
 @prop aClass
@@ -43,6 +43,6 @@
 @prop year
 @prop bySpanClass
 @prop classes
-@prop class:className
+@prop class: className
 @prop ...restProps
 -->

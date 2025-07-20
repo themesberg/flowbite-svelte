@@ -18,7 +18,7 @@
   const dirName = "typography/layout";
   // for examples section that dynamically changes the svelte component and svelteCode content
   import * as ExampleComponents from "../layoutExamples/index";
-  const exampleModules = import.meta.glob("./layoutExamples/*.svelte", {
+  const exampleModules = import.meta.glob("../layoutExamples/*.svelte", {
     query: "?raw",
     import: "default",
     eager: true
@@ -67,6 +67,6 @@
   </div>
   <SelectedComponent />
   {#snippet codeblock()}
-    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`./layoutExamples/${svelteCode}`] as string} />
+    <DynamicCodeBlockHighlight replaceLib {handleExpandClick} {expand} {showExpandButton} code={exampleModules[`../layoutExamples/${svelteCode}`] as string} />
   {/snippet}
 </CodeWrapper>
