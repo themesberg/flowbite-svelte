@@ -260,7 +260,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L372)
+[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L373)
 
 #### Props
 
@@ -282,7 +282,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L386)
+[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L387)
 
 #### Props
 
@@ -296,7 +296,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L393)
+[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L394)
 
 #### Props
 
@@ -310,7 +310,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L399)
+[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L400)
 
 #### Props
 
@@ -321,7 +321,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L416)
+[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L417)
 
 #### Props
 
@@ -333,7 +333,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L403)
+[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L404)
 
 #### Props
 
@@ -344,7 +344,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L407)
+[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L408)
 
 #### Props
 

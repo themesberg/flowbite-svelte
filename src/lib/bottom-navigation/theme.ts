@@ -21,7 +21,6 @@ export type BottomNavHeaderTheme = Partial<Record<BottomnavheaderSlots, ClassVal
 export type bottomNavHeaderItemSlots = keyof typeof bottomNavHeaderItem.slots;
 export type BottomNavHeaderItemTheme = Partial<Record<bottomNavHeaderItemSlots, ClassValue>>;
 
-
 export const bottomNav = tv({
   slots: {
     base: "w-full z-30 border-gray-200 dark:bg-gray-700 dark:border-gray-600",

@@ -63,7 +63,7 @@ Import the `Tags` component in a script tag.
   import { Tags, Button } from "flowbite-svelte";
   let tags: string[] = $state([]);
 
-  const available = ['svelte', 'react', 'vue', 'tailwind'];
+  const available = ["svelte", "react", "vue", "tailwind"];
 
   const handleClick = () => {
     alert(`Submitted: ${tags.join(", ")}`);
@@ -71,19 +71,10 @@ Import the `Tags` component in a script tag.
 </script>
 
 <form class="mx-auto mt-8 space-y-4">
-  <Tags
-    class="mt-5 mb-3"
-    bind:value={tags}
-    unique={true}
-    availableTags={available}
-    showHelper
-    showAvailableTags
-    allowNewTags
-    placeholder="Add tag"
-  />
+  <Tags class="mt-5 mb-3" bind:value={tags} unique={true} availableTags={available} showHelper showAvailableTags allowNewTags placeholder="Add tag" />
 
   {#if tags.length > 0}
-    <div class="bg-gray-100 p-4 rounded">
+    <div class="rounded bg-gray-100 p-4">
       <strong>Selected Tags:</strong>
       <pre>{JSON.stringify(tags, null, 2)}</pre>
     </div>

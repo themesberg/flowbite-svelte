@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.10.14
+
+### Patch Changes
+
+- fix(Tags): new props, unique, availableTags={available}, showHelper, showAvailableTags, and allowNewTags.
+
+  feat(classes): upto Select
+
 ## 1.10.13
 
 ### Patch Changes

@@ -251,7 +251,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1575)
+[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1582)
 
 #### Props
 
@@ -263,7 +263,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1544)
+[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1551)
 
 #### Props
 
@@ -276,7 +276,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1529)
+[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1536)
 
 #### Props
 
@@ -288,7 +288,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1517)
+[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1524)
 
 #### Props
 
@@ -300,7 +300,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1589)
+[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1596)
 
 #### Props
 
@@ -313,7 +313,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1559)
+[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1566)
 
 #### Props
 

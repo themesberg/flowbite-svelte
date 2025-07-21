@@ -69,5 +69,3 @@ export const accordionItem = tv({
     open: false
   }
 });
-
-

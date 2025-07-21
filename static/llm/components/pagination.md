@@ -429,7 +429,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1168)
+[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1175)
 
 #### Props
 
@@ -446,7 +446,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1139)
+[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1146)
 
 #### Props
 
@@ -462,7 +462,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1164)
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1171)
 
 #### Props
 
@@ -476,7 +476,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1145)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1152)
 
 #### Props
 

@@ -36,7 +36,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L493)
+[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L494)
 ## Props
 @prop children
 @prop class: className

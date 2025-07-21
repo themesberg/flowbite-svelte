@@ -407,7 +407,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 #### Types
 
-[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L844)
+[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L845)
 
 #### Props
 
@@ -418,14 +418,15 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 - underline
 - size: "md"
 - disabled
-- selectClass
-- class: className
 - placeholder: "Choose option ..."
 - clearable
-- clearableSvgClass
 - clearableColor: "none"
-- clearableClass
 - clearableOnClick
+- clearableSvgClass
+- clearableClass
+- selectClass
+- class: className
+- classes
 
 
 ## References

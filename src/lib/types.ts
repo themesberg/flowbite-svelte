@@ -882,8 +882,8 @@ export interface TagsProps extends TagsVariants, HTMLAttributes<HTMLDivElement> 
   closeClass?: ClassValue;
   inputClass?: ClassValue;
   closeBtnSize?: CloseButtonVariants["size"];
-  unique?: boolean; 
-  availableTags?: string[]; 
+  unique?: boolean;
+  availableTags?: string[];
   maxSuggestions?: number;
   showHelper?: boolean;
   showAvailableTags?: boolean;

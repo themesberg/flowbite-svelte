@@ -33,6 +33,44 @@ Import the `Tags` component in a script tag.
 </form>
 ```
 
+## Additional Props
+
+- `unique` (boolean): Prevents duplicate tags from being added if set to true.
+
+- `availableTags` (string[]): Defines a list of allowed tags that users can select from or type.
+
+- `showHelper` (boolean): Displays real-time validation messages below the input based on user input and tag constraints.
+
+- `showAvailableTags` (boolean): Shows a static list of all available tags above the tag input.
+
+- `allowNewTags` (boolean): Allows users to create and add custom tags not included in availableTags when true.
+
+```svelte
+<script lang="ts">
+  import { Tags, Button } from "flowbite-svelte";
+  let tags: string[] = $state([]);
+
+  const available = ["svelte", "react", "vue", "tailwind"];
+
+  const handleClick = () => {
+    alert(`Submitted: ${tags.join(", ")}`);
+  };
+</script>
+
+<form class="mx-auto mt-8 space-y-4">
+  <Tags class="mt-5 mb-3" bind:value={tags} unique={true} availableTags={available} showHelper showAvailableTags allowNewTags placeholder="Add tag" />
+
+  {#if tags.length > 0}
+    <div class="rounded bg-gray-100 p-4">
+      <strong>Selected Tags:</strong>
+      <pre>{JSON.stringify(tags, null, 2)}</pre>
+    </div>
+  {/if}
+
+  <Button onclick={handleClick}>Submit</Button>
+</form>
+```
+
 ## See also
 
 - [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
@@ -45,16 +83,22 @@ Import the `Tags` component in a script tag.
 
 #### Types
 
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L876)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L877)
 
 #### Props
 
 - value: $bindable([])
-- itemClass
-- spanClass
 - placeholder: "Enter tags"
 - class: className
+- classes
+- itemClass
+- spanClass
 - closeClass
 - inputClass
 - closeBtnSize: "xs"
+- unique: false
+- availableTags: []
+- showHelper: false
+- showAvailableTags: false
+- allowNewTags: false
 

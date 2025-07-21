@@ -81,7 +81,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1275)
+[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1282)
 ## Props
 @prop children
 @prop address

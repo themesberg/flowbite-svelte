@@ -4,29 +4,9 @@
   import { tags, type TagsTheme } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let {
-    value = $bindable([]),
-    placeholder = "Enter tags",
-    class: className,
-    classes,
-    itemClass,
-    spanClass,
-    closeClass,
-    inputClass,
-    closeBtnSize = "xs",
-    unique = false,
-    availableTags = [],
-    showHelper = false,
-    showAvailableTags = false,
-    allowNewTags = false,
-    ...restProps
-  }: TagsProps = $props();
+  let { value = $bindable([]), placeholder = "Enter tags", class: className, classes, itemClass, spanClass, closeClass, inputClass, closeBtnSize = "xs", unique = false, availableTags = [], showHelper = false, showAvailableTags = false, allowNewTags = false, ...restProps }: TagsProps = $props();
 
-  warnThemeDeprecation(
-    "Tags",
-    { itemClass, spanClass, closeClass, inputClass },
-    { itemClass: "tag", spanClass: "span", closeClass: "close", inputClass: "input" }
-  );
+  warnThemeDeprecation("Tags", { itemClass, spanClass, closeClass, inputClass }, { itemClass: "tag", spanClass: "span", closeClass: "close", inputClass: "input" });
   let styling = $derived({
     tag: itemClass,
     span: spanClass,
@@ -42,44 +22,39 @@
   let errorMessage: string = $state("");
 
   const handleKeys = (event: KeyboardEvent) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    const newTag = contents.trim();
+    if (event.key === "Enter") {
+      event.preventDefault();
+      const newTag = contents.trim();
 
-    if (newTag.length === 0) return;
+      if (newTag.length === 0) return;
 
-    const isInAvailable =
-      availableTags.length === 0 ||
-      availableTags.some((tag) => tag.toLowerCase() === newTag.toLowerCase());
+      const isInAvailable = availableTags.length === 0 || availableTags.some((tag) => tag.toLowerCase() === newTag.toLowerCase());
 
-    const alreadyExists = value.some(
-      (tag) => tag.toLowerCase() === newTag.toLowerCase()
-    );
+      const alreadyExists = value.some((tag) => tag.toLowerCase() === newTag.toLowerCase());
 
-    if (!allowNewTags && !isInAvailable) {
-      errorMessage = `"${newTag}" is not in the available tags.`;
-      return;
+      if (!allowNewTags && !isInAvailable) {
+        errorMessage = `"${newTag}" is not in the available tags.`;
+        return;
+      }
+
+      if (unique && alreadyExists) {
+        errorMessage = `"${newTag}" is already added.`;
+        return;
+      }
+
+      value.push(newTag);
+      value = value;
+      contents = "";
+      errorMessage = "";
     }
 
-    if (unique && alreadyExists) {
-      errorMessage = `"${newTag}" is already added.`;
-      return;
+    if (event.key === "Backspace" && contents.length === 0) {
+      event.preventDefault();
+      contents = value.pop() ?? "";
+      value = value;
+      errorMessage = "";
     }
-
-    value.push(newTag);
-    value = value;
-    contents = "";
-    errorMessage = "";
-  }
-
-  if (event.key === "Backspace" && contents.length === 0) {
-    event.preventDefault();
-    contents = value.pop() ?? "";
-    value = value;
-    errorMessage = "";
-  }
-};
-
+  };
 
   const deleteField = (index: number) => {
     value.splice(index, 1);
@@ -99,11 +74,7 @@
 <div
   {...restProps}
   class={base({
-    class: clsx(
-      (theme as TagsTheme)?.base,
-      className,
-      availableTags.length > 0 ? "overflow-auto" : "overflow-x-auto"
-    )
+    class: clsx((theme as TagsTheme)?.base, className, availableTags.length > 0 ? "overflow-auto" : "overflow-x-auto")
   })}
 >
   {#each value as tag, index}
@@ -111,29 +82,14 @@
       <span class={spanCls({ class: clsx((theme as TagsTheme)?.span, styling.span) })}>
         {tag}
       </span>
-      <CloseButton
-        size={closeBtnSize}
-        class={close({ class: clsx((theme as TagsTheme)?.close, styling.close) })}
-        onclick={() => deleteField(index)}
-      />
+      <CloseButton size={closeBtnSize} class={close({ class: clsx((theme as TagsTheme)?.close, styling.close) })} onclick={() => deleteField(index)} />
     </div>
   {/each}
   <div class="relative w-full">
-    <input
-      onkeydown={handleKeys}
-      bind:value={contents}
-      placeholder={value.length === 0 ? placeholder : ""}
-      type="text"
-      autocomplete="new-password"
-      class={inputCls({ class: clsx(styling.input) })}
-    />
+    <input onkeydown={handleKeys} bind:value={contents} placeholder={value.length === 0 ? placeholder : ""} type="text" autocomplete="new-password" class={inputCls({ class: clsx(styling.input) })} />
     {#if availableTags.length > 0 && contents.trim() !== ""}
       <ul class="absolute z-10 mt-1 max-h-48 w-full overflow-auto rounded border border-gray-300 bg-white shadow">
-        {#each availableTags.filter(
-          (tag) =>
-            tag.toLowerCase().includes(contents.trim().toLowerCase()) &&
-            (!unique || !value.some((t) => t.toLowerCase() === tag.toLowerCase()))
-        ) as suggestion}
+        {#each availableTags.filter((tag) => tag.toLowerCase().includes(contents.trim().toLowerCase()) && (!unique || !value.some((t) => t.toLowerCase() === tag.toLowerCase()))) as suggestion}
           <li>
             <button
               type="button"
@@ -152,3 +108,26 @@
     {/if}
   </div>
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L877)
+## Props
+@prop value = $bindable([])
+@prop placeholder = "Enter tags"
+@prop class: className
+@prop classes
+@prop itemClass
+@prop spanClass
+@prop closeClass
+@prop inputClass
+@prop closeBtnSize = "xs"
+@prop unique = false
+@prop availableTags = []
+@prop showHelper = false
+@prop showAvailableTags = false
+@prop allowNewTags = false
+@prop ...restProps
+-->

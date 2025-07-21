@@ -43,7 +43,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AnchorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1824)
+[AnchorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1831)
 ## Props
 @prop children
 @prop color = "primary"

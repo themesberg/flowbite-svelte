@@ -2,7 +2,7 @@
   "name": "Search",
   "type": {
     "name": "SearchProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L824"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L825"
   },
   "props": [
     ["children", ""],
@@ -15,6 +15,8 @@
     ["clearableSvgClass", ""],
     ["clearableColor", "\"none\""],
     ["clearableClass", ""],
-    ["clearableOnClick", ""]
+    ["clearableOnClick", ""],
+    ["class:className", ""],
+    ["classes", ""]
   ]
 }

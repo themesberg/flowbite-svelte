@@ -4,8 +4,8 @@
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, phoneIcon = true, pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}", phoneType = "default", floatingLabel = "Phone number", labelFor = "floating-phone-number", class:className, classes, ...restProps }: PhoneInputProps = $props();
- 
+  let { children, phoneIcon = true, pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}", phoneType = "default", floatingLabel = "Phone number", labelFor = "floating-phone-number", class: className, classes, ...restProps }: PhoneInputProps = $props();
+
   const theme = getTheme("phoneInput");
 
   const { div, svg, input, span, floatingInput, label } = $derived(phoneinput({ phoneType, phoneIcon }));

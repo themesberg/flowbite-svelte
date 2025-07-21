@@ -322,7 +322,7 @@ Use `color` and `checkedClass` props to style the checked state:
 
 #### Types
 
-[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L797)
+[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L798)
 
 #### Props
 
@@ -334,7 +334,9 @@ Use `color` and `checkedClass` props to style the checked state:
 - custom: false
 - group: $bindable<T>()
 - value: $bindable<T>()
+- class:className
 - inputClass
+- classes
 
 
 ## References

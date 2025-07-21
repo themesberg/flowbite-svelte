@@ -44,7 +44,6 @@ export const select = tv({
   }
 });
 
-
 export const multiSelect = tv({
   slots: {
     base: "relative border border-gray-300 flex items-center rounded-lg gap-2 dark:border-gray-600 ring-primary-500 dark:ring-primary-500 focus-visible:outline-hidden",
@@ -93,4 +92,3 @@ export const multiSelect = tv({
     size: "md"
   }
 });
-

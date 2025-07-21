@@ -74,7 +74,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1088)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1095)
 ## Props
 @prop children
 @prop activeUrl

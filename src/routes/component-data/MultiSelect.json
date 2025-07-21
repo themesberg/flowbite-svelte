@@ -2,7 +2,7 @@
   "name": "MultiSelect",
   "type": {
     "name": "MultiSelectProps<T>",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L858"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L859"
   },
   "props": [
     ["children", ""],
@@ -15,6 +15,7 @@
     ["onchange", ""],
     ["onblur", ""],
     ["class: className", ""],
+    ["classes", ""],
     ["// Extract select-specific props\n    name", ""],
     ["form", ""],
     ["required", ""],

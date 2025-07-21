@@ -4,11 +4,11 @@
   import { CloseButton, type SearchProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, inputClass, size, placeholder = "Search", value = $bindable(), elementRef = $bindable(), clearable = false, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, class:className, classes, ...restProps }: SearchProps = $props();
+  let { children, inputClass, size, placeholder = "Search", value = $bindable(), elementRef = $bindable(), clearable = false, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, class: className, classes, ...restProps }: SearchProps = $props();
 
   warnThemeDeprecation("Search", { inputClass, clearableSvgClass, clearableClass }, { inputClass: "input", clearableSvgClass: "svg", clearableClass: "close" });
-  let styling = $derived({ input: inputClass, svg: clearableSvgClass, close: clearableClass,  });
-  
+  let styling = $derived({ input: inputClass, svg: clearableSvgClass, close: clearableClass });
+
   const theme = getTheme("search");
 
   const { base, content, icon, close, input: inputCls, left } = $derived(search({ size }));
@@ -24,7 +24,7 @@
 
 <div class={base({ class: clsx((theme as SearchTheme)?.base, className) })}>
   <div class={left({ class: clsx((theme as SearchTheme)?.left, classes?.left) })}>
-    <svg class={icon({ class: clsx((theme as SearchTheme)?.icon,classes?.icon ) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+    <svg class={icon({ class: clsx((theme as SearchTheme)?.icon, classes?.icon) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
     </svg>
   </div>
@@ -43,7 +43,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L824)
+[SearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L825)
 ## Props
 @prop children
 @prop inputClass
@@ -56,5 +56,7 @@
 @prop clearableColor = "none"
 @prop clearableClass
 @prop clearableOnClick
+@prop class:className
+@prop classes
 @prop ...restProps
 -->

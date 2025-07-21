@@ -146,7 +146,7 @@ Add `clearable` and `clearableOnClick` props.
 
 #### Types
 
-[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L696)
+[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L697)
 
 #### Props
 
