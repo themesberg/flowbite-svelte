@@ -63,6 +63,10 @@
   };
 </script>
 
+{#if showAvailableTags && availableTags.length > 0}
+  <P class={clsx(info(), classes?.info)}>Available tags: {availableTags.join(", ")}</P>
+{/if}
+
 {#if showHelper && contents.trim().length > 0 && availableTags.length > 0 && !allowNewTags}
   {#if value.some((tag) => tag.toLowerCase() === contents.trim().toLowerCase())}
     <P class={clsx(warning(), classes?.warning)}>"{contents.trim()}" is already added.</P>
