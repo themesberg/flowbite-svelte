@@ -78,7 +78,7 @@
 <div
   {...restProps}
   class={base({
-    class: clsx((theme as TagsTheme)?.base, className, availableTags.length > 0 ? "overflow-auto" : "overflow-x-auto")
+    class: clsx((theme as TagsTheme)?.base, className)
   })}
 >
   {#each value as tag, index}
