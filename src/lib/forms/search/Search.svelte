@@ -56,7 +56,7 @@
 @prop clearableColor = "none"
 @prop clearableClass
 @prop clearableOnClick
-@prop class:className
+@prop class: className
 @prop classes
 @prop ...restProps
 -->

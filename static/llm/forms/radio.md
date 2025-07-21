@@ -334,7 +334,7 @@ Use `color` and `checkedClass` props to style the checked state:
 - custom: false
 - group: $bindable<T>()
 - value: $bindable<T>()
-- class:className
+- class: className
 - inputClass
 - classes
 

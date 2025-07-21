@@ -16,7 +16,7 @@
     ["clearableColor", "\"none\""],
     ["clearableClass", ""],
     ["clearableOnClick", ""],
-    ["class:className", ""],
+    ["class: className", ""],
     ["classes", ""]
   ]
 }

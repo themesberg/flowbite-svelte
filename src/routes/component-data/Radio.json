@@ -13,7 +13,7 @@
     ["custom", "false"],
     ["group", "$bindable<T>()"],
     ["value", "$bindable<T>()"],
-    ["class:className", ""],
+    ["class: className", ""],
     ["inputClass", ""],
     ["classes", ""]
   ]
