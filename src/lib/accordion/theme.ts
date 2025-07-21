@@ -2,8 +2,13 @@ import type { Classes } from "$lib/theme/themeUtils";
 import type { ClassValue } from "svelte/elements";
 import { tv, type VariantProps } from "tailwind-variants";
 
+// Variants
 export type AccordionVariants = VariantProps<typeof accordion>;
 export type AccordionItemVariants = VariantProps<typeof accordionItem> & Classes<typeof accordionItem>;
+// Theme
+export type AccordionTheme = ClassValue;
+export type AccordionItemSlots = keyof typeof accordionItem.slots;
+export type AccordionItemTheme = Partial<Record<AccordionItemSlots, ClassValue>>;
 
 export const accordion = tv({
   base: "w-full",
@@ -65,7 +70,4 @@ export const accordionItem = tv({
   }
 });
 
-export type AccordionTheme = ClassValue;
 
-export type AccordionItemSlots = keyof typeof accordionItem.slots;
-export type AccordionItemTheme = Partial<Record<AccordionItemSlots, ClassValue>>;

@@ -2,9 +2,13 @@ import type { Classes } from "$lib/theme/themeUtils";
 import type { ClassValue } from "svelte/elements";
 import { tv, type VariantProps } from "tailwind-variants";
 
-type BadgeVariants = VariantProps<typeof badge> & Classes<typeof badge>;
+// Variants
+export type BadgeVariants = VariantProps<typeof badge> & Classes<typeof badge>;
+// Theme
+export type BadgeSlots = keyof typeof badge.slots;
+export type BadgeTheme = Partial<Record<BadgeSlots, ClassValue>>;
 
-const badge = tv({
+export const badge = tv({
   slots: {
     linkClass: "flex align-middle",
     base: "font-medium inline-flex items-center justify-center px-2.5 py-0.5"
@@ -253,7 +257,3 @@ const badge = tv({
     rounded: false
   }
 });
-
-export { badge, type BadgeVariants };
-export type BadgeSlots = keyof typeof badge.slots;
-export type BadgeTheme = Partial<Record<BadgeSlots, ClassValue>>;

@@ -2,8 +2,8 @@
   import clsx from "clsx";
   import { Badge, CloseButton, type MultiSelectProps, type SelectOptionType } from "$lib";
   import { multiSelect, type MultiSelectTheme } from ".";
-  import { getTheme } from "$lib/theme/themeUtils";
-  import { onMount, onDestroy } from "svelte"; // Import onMount and onDestroy
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { onMount } from "svelte";
 
   // Consider reusing that component - https://svelecte.vercel.app/
 
@@ -18,6 +18,7 @@
     onchange,
     onblur,
     class: className,
+    classes,
     // Extract select-specific props
     name,
     form,

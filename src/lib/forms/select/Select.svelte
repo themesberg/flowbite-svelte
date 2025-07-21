@@ -2,13 +2,17 @@
   import { select as selectCls, type SelectTheme } from ".";
   import clsx from "clsx";
   import { type SelectProps, CloseButton } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, items, value = $bindable(), elementRef = $bindable(), underline, size = "md", disabled, selectClass, class: className, placeholder = "Choose option ...", clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, ...restProps }: SelectProps<T> = $props();
+  let { children, items, value = $bindable(), elementRef = $bindable(), underline, size = "md", disabled, placeholder = "Choose option ...", clearable, clearableColor = "none", clearableOnClick, clearableSvgClass, clearableClass, selectClass, class: className, classes, ...restProps }: SelectProps<T> = $props();
+
+  // clearableSvgClass, clearableClass, selectClass
+  warnThemeDeprecation("Select", { selectClass, clearableSvgClass, clearableClass }, { selectClass: "select", clearableSvgClass: "svg", clearableClass: "close" });
+  let styling = $derived({ select: selectClass, svg: clearableSvgClass, close: clearableClass });
 
   const theme = getTheme("select");
 
-  const { base, select, closebutton } = $derived(selectCls({ underline, size, disabled }));
+  const { base, select, close } = $derived(selectCls({ underline, size, disabled }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -36,7 +40,7 @@
     {/if}
   </select>
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={closebutton({ class: clsx((theme as SelectTheme)?.closebutton, clearableClass) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(clearableSvgClass)} {disabled} />
+    <CloseButton onclick={clearAll} class={close({ class: clsx((theme as SelectTheme)?.close, clearableClass) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(clearableSvgClass)} {disabled} />
   {/if}
 </div>
 <!--

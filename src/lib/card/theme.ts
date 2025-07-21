@@ -2,7 +2,11 @@ import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
+// Variants
 export type CardVariants = VariantProps<typeof card> & Classes<typeof card>;
+// Theme
+export type CardSlots = keyof typeof card.slots;
+export type CardTheme = Partial<Record<CardSlots, ClassValue>>;
 
 export const card = tv({
   slots: {
@@ -188,6 +192,3 @@ export const card = tv({
     reverse: false
   }
 });
-
-export type CardSlots = keyof typeof card.slots;
-export type CardTheme = Partial<Record<CardSlots, ClassValue>>;

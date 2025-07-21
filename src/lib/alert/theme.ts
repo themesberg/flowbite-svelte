@@ -1,9 +1,12 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
 
-type AlertVariants = VariantProps<typeof alert>;
+// Variants
+export type AlertVariants = VariantProps<typeof alert>;
+// Theme
+export type AlertTheme = ClassValue;
 
-const alert = tv({
+export const alert = tv({
   base: "p-4 gap-3 text-sm",
   variants: {
     color: {
@@ -151,7 +154,3 @@ const alert = tv({
     rounded: true
   }
 });
-
-export { alert, type AlertVariants };
-
-export type AlertTheme = ClassValue;

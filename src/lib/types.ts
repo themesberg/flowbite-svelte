@@ -76,6 +76,7 @@ import type { ApexOptions } from "apexcharts";
 
 // extend
 import type { ButtonToggleVariants } from "$lib/forms/button-toggle/theme";
+import type { TagsVariants } from "$lib/forms/tags/theme";
 
 // end of component variants
 
@@ -873,7 +874,7 @@ export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLAttri
 }
 
 // Tags
-export interface TagsProps extends HTMLAttributes<HTMLDivElement> {
+export interface TagsProps extends TagsVariants, HTMLAttributes<HTMLDivElement> {
   value: string[];
   itemClass?: ClassValue;
   placeholder?: string;
@@ -881,6 +882,12 @@ export interface TagsProps extends HTMLAttributes<HTMLDivElement> {
   closeClass?: ClassValue;
   inputClass?: ClassValue;
   closeBtnSize?: CloseButtonVariants["size"];
+  unique?: boolean; 
+  availableTags?: string[]; 
+  maxSuggestions?: number;
+  showHelper?: boolean;
+  showAvailableTags?: boolean;
+  allowNewTags?: boolean;
 }
 
 // Timepicker

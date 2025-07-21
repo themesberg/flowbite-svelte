@@ -2,7 +2,11 @@ import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
+// Variants
 export type InputVariants = VariantProps<typeof input> & Classes<typeof input>;
+// Theme
+export type InputSlots = keyof typeof input.slots;
+export type InputTheme = Partial<Record<InputSlots, ClassValue>>;
 
 export const input = tv({
   slots: {
@@ -103,6 +107,3 @@ export const input = tv({
     color: "default"
   }
 });
-
-export type InputSlots = keyof typeof input.slots;
-export type InputTheme = Partial<Record<InputSlots, ClassValue>>;

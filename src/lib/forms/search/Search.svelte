@@ -2,13 +2,16 @@
   import { search, type SearchTheme } from ".";
   import clsx from "clsx";
   import { CloseButton, type SearchProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, inputClass, size, placeholder = "Search", value = $bindable(), elementRef = $bindable(), clearable = false, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, ...restProps }: SearchProps = $props();
+  let { children, inputClass, size, placeholder = "Search", value = $bindable(), elementRef = $bindable(), clearable = false, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, class:className, classes, ...restProps }: SearchProps = $props();
 
+  warnThemeDeprecation("Search", { inputClass, clearableSvgClass, clearableClass }, { inputClass: "input", clearableSvgClass: "svg", clearableClass: "close" });
+  let styling = $derived({ input: inputClass, svg: clearableSvgClass, close: clearableClass,  });
+  
   const theme = getTheme("search");
 
-  const { base, content, icon, closebutton, input: inputCls, leftDiv } = $derived(search({ size }));
+  const { base, content, icon, close, input: inputCls, left } = $derived(search({ size }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -19,20 +22,20 @@
   };
 </script>
 
-<div class={base({ class: clsx((theme as SearchTheme)?.base) })}>
-  <div class={leftDiv({ class: clsx((theme as SearchTheme)?.leftDiv) })}>
-    <svg class={icon({ class: clsx((theme as SearchTheme)?.icon) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+<div class={base({ class: clsx((theme as SearchTheme)?.base, className) })}>
+  <div class={left({ class: clsx((theme as SearchTheme)?.left, classes?.left) })}>
+    <svg class={icon({ class: clsx((theme as SearchTheme)?.icon,classes?.icon ) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
     </svg>
   </div>
-  <input type="search" bind:value bind:this={elementRef} class={inputCls({ class: clsx((theme as SearchTheme)?.input, inputClass) })} {placeholder} required {...restProps} />
+  <input type="search" bind:value bind:this={elementRef} class={inputCls({ class: clsx((theme as SearchTheme)?.input, styling.input) })} {placeholder} required {...restProps} />
   {#if children}
-    <div class={content({ class: clsx((theme as SearchTheme)?.content) })}>
+    <div class={content({ class: clsx((theme as SearchTheme)?.content, classes?.content) })}>
       {@render children()}
     </div>
   {/if}
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={closebutton({ class: clsx((theme as SearchTheme)?.closebutton, clearableClass) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(clearableSvgClass)} />
+    <CloseButton onclick={clearAll} class={close({ class: clsx((theme as SearchTheme)?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
   {/if}
 </div>
 

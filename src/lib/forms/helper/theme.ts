@@ -1,7 +1,10 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
 
+// Variants
 export type HelperVariants = VariantProps<typeof helper>;
+// Theme
+export type HelperTheme = ClassValue;
 
 export const helper = tv({
   base: "text-xs font-normal text-gray-500 dark:text-gray-300",
@@ -31,5 +34,3 @@ export const helper = tv({
     }
   }
 });
-
-export type HelperTheme = ClassValue;

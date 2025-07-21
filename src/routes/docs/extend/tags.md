@@ -46,6 +46,53 @@ Import the `Tags` component in a script tag.
 </form>
 ```
 
+## Additional Props
+
+- `unique` (boolean): Prevents duplicate tags from being added if set to true.
+
+- `availableTags` (string[]): Defines a list of allowed tags that users can select from or type.
+
+- `showHelper` (boolean): Displays real-time validation messages below the input based on user input and tag constraints.
+
+- `showAvailableTags` (boolean): Shows a static list of all available tags above the tag input.
+
+- `allowNewTags` (boolean): Allows users to create and add custom tags not included in availableTags when true.
+
+```svelte example class="h-[800px]"
+<script lang="ts">
+  import { Tags, Button } from "flowbite-svelte";
+  let tags: string[] = $state([]);
+
+  const available = ['svelte', 'react', 'vue', 'tailwind'];
+
+  const handleClick = () => {
+    alert(`Submitted: ${tags.join(", ")}`);
+  };
+</script>
+
+<form class="mx-auto mt-8 space-y-4">
+  <Tags
+    class="mt-5 mb-3"
+    bind:value={tags}
+    unique={true}
+    availableTags={available}
+    showHelper
+    showAvailableTags
+    allowNewTags
+    placeholder="Add tag"
+  />
+
+  {#if tags.length > 0}
+    <div class="bg-gray-100 p-4 rounded">
+      <strong>Selected Tags:</strong>
+      <pre>{JSON.stringify(tags, null, 2)}</pre>
+    </div>
+  {/if}
+
+  <Button onclick={handleClick}>Submit</Button>
+</form>
+```
+
 ## See also
 
 <Seealso links={relatedLinks} />

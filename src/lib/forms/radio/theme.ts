@@ -1,7 +1,13 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type RadioVariants = VariantProps<typeof radio>;
+// Variants
+export type RadioVariants = VariantProps<typeof radio> & Classes<typeof radio>;
+// Theme
+export type RadioSlots = keyof typeof radio.slots;
+export type RadioTheme = Partial<Record<RadioSlots, ClassValue>>;
+export type RadioButtonTheme = ClassValue;
 
 export const radio = tv({
   slots: {
@@ -86,9 +92,6 @@ export const radio = tv({
   }
 });
 
-export type RadioSlots = keyof typeof radio.slots;
-export type RadioTheme = Partial<Record<RadioSlots, ClassValue>>;
-
 export const radiobutton = tv({
   base: "",
   variants: {
@@ -101,5 +104,3 @@ export const radiobutton = tv({
     inline: true
   }
 });
-
-export type RadioButtonTheme = ClassValue;

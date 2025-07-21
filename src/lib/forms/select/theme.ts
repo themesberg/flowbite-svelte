@@ -1,13 +1,21 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type SelectVariants = VariantProps<typeof select>;
+// Variants
+export type SelectVariants = VariantProps<typeof select> & Classes<typeof select>;
+export type MultiSelectVariants = VariantProps<typeof multiSelect> & Classes<typeof multiSelect>;
+// Theme
+export type SelectSlots = keyof typeof select.slots;
+export type SelectTheme = Partial<Record<SelectSlots, ClassValue>>;
+export type MultiSelectSlots = keyof typeof multiSelect.slots;
+export type MultiSelectTheme = Partial<Record<MultiSelectSlots, ClassValue>>;
 
 export const select = tv({
   slots: {
     base: "relative",
     select: "block w-full rtl:text-right",
-    closebutton: "absolute right-8 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black"
+    close: "absolute right-8 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black"
   },
   variants: {
     underline: {
@@ -36,10 +44,6 @@ export const select = tv({
   }
 });
 
-export type SelectSlots = keyof typeof select.slots;
-export type SelectTheme = Partial<Record<SelectSlots, ClassValue>>;
-
-export type MultiSelectVariants = VariantProps<typeof multiSelect>;
 
 export const multiSelect = tv({
   slots: {
@@ -90,5 +94,3 @@ export const multiSelect = tv({
   }
 });
 
-export type MultiSelectSlots = keyof typeof multiSelect.slots;
-export type MultiSelectTheme = Partial<Record<MultiSelectSlots, ClassValue>>;

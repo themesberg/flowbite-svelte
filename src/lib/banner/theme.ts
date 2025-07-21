@@ -2,9 +2,13 @@ import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
+// Variants
 export type BannerVariants = VariantProps<typeof banner> & Classes<typeof banner>;
+// Theme
+export type BannerSlots = keyof typeof banner.slots;
+export type BannerTheme = Partial<Record<BannerSlots, ClassValue>>;
 
-const banner = tv({
+export const banner = tv({
   slots: {
     base: "fixed z-50 flex justify-between p-4 mx-auto dark:bg-gray-700 dark:border-gray-600",
     insideDiv: "flex flex-col md:flex-row md:items-center gap-2 mx-auto",
@@ -48,7 +52,3 @@ const banner = tv({
     multiline: true
   }
 });
-
-export { banner };
-export type BannerSlots = keyof typeof banner.slots;
-export type BannerTheme = Partial<Record<BannerSlots, ClassValue>>;
