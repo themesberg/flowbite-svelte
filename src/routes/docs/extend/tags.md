@@ -52,9 +52,9 @@ Import the `Tags` component in a script tag.
 
 - `availableTags` (string[]): Defines a list of allowed tags that users can select from or type.
 
-- `showHelper` (boolean): Displays real-time validation messages below the input based on user input and tag constraints.
+- `showHelper` (boolean): Displays real-time validation messages  based on user input and tag constraints.
 
-- `showAvailableTags` (boolean): Shows a static list of all available tags above the tag input.
+- `showAvailableTags` (boolean): Shows a static list of all available tags.
 
 - `allowNewTags` (boolean): Allows users to create and add custom tags not included in availableTags when true.
 
