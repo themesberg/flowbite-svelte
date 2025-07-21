@@ -58,7 +58,7 @@ Import the `Tags` component in a script tag.
 
 - `allowNewTags` (boolean): Allows users to create and add custom tags not included in availableTags when true.
 
-```svelte example class="h-[800px]"
+```svelte example class="h-96"
 <script lang="ts">
   import { Tags, Button } from "flowbite-svelte";
   let tags: string[] = $state([]);
@@ -71,7 +71,7 @@ Import the `Tags` component in a script tag.
 </script>
 
 <form class="mx-auto mt-8 space-y-4">
-  <Tags class="mt-5 mb-3" bind:value={tags} unique={true} availableTags={available} showHelper showAvailableTags allowNewTags placeholder="Add tag" />
+  <Tags class="mt-5 mb-3" bind:value={tags} unique={true} availableTags={available} showHelper showAvailableTags  placeholder="Add tag" />
 
   {#if tags.length > 0}
     <div class="rounded bg-gray-100 p-4">
