@@ -38,7 +38,7 @@ Import the `Tags` component in a script tag.
 </script>
 
 <form>
-  <Tags class="mt-5 mb-3" bind:value={tags} />
+  <Tags class="overflow-x-auto mt-5 mb-3" bind:value={tags} />
   {#if tags.length > 0}
     <pre>{JSON.stringify(tags, null, 2)}</pre>
   {/if}
@@ -71,7 +71,7 @@ Import the `Tags` component in a script tag.
 </script>
 
 <form class="mx-auto mt-8 space-y-4">
-  <Tags class="mt-5 mb-3" bind:value={tags} unique={true} availableTags={available} showHelper showAvailableTags placeholder="Add tag" />
+  <Tags class="flex-wrap mt-5 mb-3" bind:value={tags} unique={true} availableTags={available} showHelper showAvailableTags placeholder="Add tag"/>
 
   {#if tags.length > 0}
     <div class="rounded bg-gray-100 p-4">

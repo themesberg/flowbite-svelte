@@ -49,8 +49,10 @@ export const multiSelect = tv({
     base: "relative border border-gray-300 flex items-center rounded-lg gap-2 dark:border-gray-600 ring-primary-500 dark:ring-primary-500 focus-visible:outline-hidden",
     select: "flex flex-wrap gap-2",
     dropdown: "absolute z-50 p-3 flex flex-col gap-1 max-h-64 bg-white border border-gray-300 dark:bg-gray-700 dark:border-gray-600 start-0 top-[calc(100%+1rem)] rounded-lg cursor-pointer overflow-y-scroll w-full",
-    dropdownitem: "py-2 px-3 rounded-lg text-gray-600 hover:text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-gray-600",
-    closebutton: "p-0 focus:ring-gray-400 dark:text-white"
+    item: "py-2 px-3 rounded-lg text-gray-600 hover:text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-gray-600",
+    close: "p-0 focus:ring-gray-400 dark:text-white",
+    span: '',
+    placeholder:'text-gray-400'
   },
   variants: {
     size: {

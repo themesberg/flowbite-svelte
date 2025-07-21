@@ -10,7 +10,7 @@ export type TagsTheme = Partial<Record<TagsSlots, ClassValue>>;
 
 export const tags = tv({
   slots: {
-    base: "border bg-gray-50 border-gray-300 rounded-lg flex flex-wrap focus-within:ring-primary-500 focus-within:ring-1 focus-within:border-primary-500 scrollbar-hidden overflow-auto",
+    base: "border bg-gray-50 border-gray-300 rounded-lg flex focus-within:ring-primary-500 focus-within:ring-1 focus-within:border-primary-500 scrollbar-hidden",
     tag: "flex items-center rounded-lg bg-gray-100 text-gray-900 border border-gray-300 my-1 ml-1 px-2 text-sm max-w-full min-w-fit",
     span: "items-center",
     close: "my-auto ml-1",
