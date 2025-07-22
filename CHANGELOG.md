@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.10.17
+
+### Patch Changes
+
+- fix(Tags): default allowNewTags to true to allow tag creation without explicit config
+
 ## 1.10.16
 
 ### Patch Changes

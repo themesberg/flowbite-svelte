@@ -18,6 +18,6 @@
     ["availableTags", "[]"],
     ["showHelper", "false"],
     ["showAvailableTags", "false"],
-    ["allowNewTags", "false"]
+    ["allowNewTags", "true"]
   ]
 }

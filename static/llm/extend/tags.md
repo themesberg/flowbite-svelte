@@ -35,15 +35,17 @@ Import the `Tags` component in a script tag.
 
 ## Additional Props
 
-- `unique` (boolean): Prevents duplicate tags from being added if set to true.
+## Additional Props
 
-- `availableTags` (string[]): Defines a list of allowed tags that users can select from or type.
+- `unique` (boolean, default: `false`): Prevents duplicate tags from being added if set to true.
 
-- `showHelper` (boolean): Displays real-time validation messages based on user input and tag constraints.
+- `availableTags` (string[], default: `[]`): Defines a list of allowed tags that users can select from or type.
 
-- `showAvailableTags` (boolean): Shows a static list of all available tags.
+- `showHelper` (boolean, default: `false`): Displays real-time validation messages based on user input and tag constraints.
 
-- `allowNewTags` (boolean): Allows users to create and add custom tags not included in availableTags when true.
+- `showAvailableTags` (boolean, default: `false`): Shows a static list of all available tags.
+
+- `allowNewTags` (boolean, default: `true`): Allows users to create and add custom tags not included in availableTags when true.
 
 ```svelte
 <script lang="ts">
@@ -58,7 +60,7 @@ Import the `Tags` component in a script tag.
 </script>
 
 <form class="mx-auto space-y-4">
-  <Tags class="mt-5 mb-3" bind:value={tags} unique={true} availableTags={available} showHelper showAvailableTags placeholder="Add tag" />
+  <Tags class="mt-5 mb-3" bind:value={tags} unique={true} availableTags={available} allowNewTags={false} showHelper showAvailableTags placeholder="Add tag" />
 
   {#if tags.length > 0}
     <div class="rounded bg-gray-100 p-4">
@@ -100,5 +102,5 @@ Import the `Tags` component in a script tag.
 - availableTags: []
 - showHelper: false
 - showAvailableTags: false
-- allowNewTags: false
+- allowNewTags: true
 

@@ -6,7 +6,7 @@
   import { computePosition, offset, flip, shift, autoUpdate } from "@floating-ui/dom";
   import { onDestroy } from "svelte";
 
-  let { value = $bindable([]), placeholder = "Enter tags", class: className, classes, itemClass, spanClass, closeClass, inputClass, closeBtnSize = "xs", unique = false, availableTags = [], showHelper = false, showAvailableTags = false, allowNewTags = false, ...restProps }: TagsProps = $props();
+  let { value = $bindable([]), placeholder = "Enter tags", class: className, classes, itemClass, spanClass, closeClass, inputClass, closeBtnSize = "xs", unique = false, availableTags = [], showHelper = false, showAvailableTags = false, allowNewTags = true, ...restProps }: TagsProps = $props();
 
   warnThemeDeprecation("Tags", { itemClass, spanClass, closeClass, inputClass }, { itemClass: "tag", spanClass: "span", closeClass: "close", inputClass: "input" });
   let styling = $derived({
@@ -58,6 +58,12 @@
       const newTag = contents.trim();
 
       if (newTag.length === 0) return;
+
+      // Add validation: if allowNewTags is false and availableTags is empty, show error
+      if (!allowNewTags && availableTags.length === 0) {
+        errorMessage = "No available tags provided. Please add available tags or enable allowNewTags.";
+        return;
+      }
 
       const isInAvailable = availableTags.length === 0 || availableTags.some((tag) => tag.toLowerCase() === newTag.toLowerCase());
 
@@ -203,6 +209,6 @@
 @prop availableTags = []
 @prop showHelper = false
 @prop showAvailableTags = false
-@prop allowNewTags = false
+@prop allowNewTags = true
 @prop ...restProps
 -->
