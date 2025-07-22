@@ -50,6 +50,7 @@ import type { RadioVariants } from "$lib/forms/radio/theme";
 import type { RangeVariants } from "$lib/forms/range/theme";
 import type { SearchVariants } from "$lib/forms/search/theme";
 import type { MultiSelectVariants, SelectVariants } from "$lib/forms/select/theme";
+import type { TextareaVariants } from "$lib/forms/textarea/theme";
 import type { ToggleVariants } from "$lib/forms/toggle/theme";
 import type { PhoneInputVariants } from "$lib/forms/phoneinput/theme";
 import type { TableSearchColor } from "$lib/table/theme";
@@ -927,7 +928,7 @@ export interface TimepickerProps {
 }
 
 // textarea
-export interface TextareaProps extends HTMLTextareaAttributes {
+export interface TextareaProps extends TextareaVariants, HTMLTextareaAttributes {
   header?: Snippet;
   footer?: Snippet;
   addon?: Snippet;
@@ -939,7 +940,7 @@ export interface TextareaProps extends HTMLTextareaAttributes {
   headerClass?: ClassValue;
   footerClass?: ClassValue;
   addonClass?: ClassValue;
-  cols?: number;
+  // cols?: number;
   clearable?: boolean;
   clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];

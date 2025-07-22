@@ -188,7 +188,7 @@
     };
   });
 
-  const { base, dropdown, item: dropdownItem, close, select, placeholder: placeholderSpan } = multiSelect({ disabled });
+  const { base, dropdown, item: dropdownItem, close, select, placeholder: placeholderSpan, svg } = multiSelect({ disabled });
 </script>
 
 <select {name} {form} {required} {autocomplete} {value} hidden multiple {onchange}>
@@ -199,7 +199,7 @@
 
 <div bind:this={multiSelectContainer} {...restProps} onclick={toggleDropdown} onblur={handleBlur} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={base({ size, class: clsx((theme as MultiSelectTheme)?.base, className) })}>
   {#if !selectItems.length}
-    <span class={placeholderSpan({class: clsx(classes?.placeholder)})}>{placeholder}</span>
+    <span class={placeholderSpan({ class: clsx(classes?.placeholder) })}>{placeholder}</span>
   {/if}
   <span class={select({ class: clsx((theme as MultiSelectTheme)?.select, classes?.span) })}>
     {#if selectItems.length}
@@ -216,10 +216,10 @@
   </span>
   <div class="ms-auto flex items-center gap-2">
     {#if selectItems.length}
-      <CloseButton {size} onclick={clearAll} color="none" class={close({ class: clsx((theme as MultiSelectTheme)?.close) })} {disabled} />
+      <CloseButton {size} onclick={clearAll} color="none" class={close({ class: clsx((theme as MultiSelectTheme)?.close, classes?.close) })} {disabled} />
     {/if}
 
-    <svg class={clsx("ms-1 h-3 w-3 cursor-pointer text-gray-800 dark:text-white", disabled && "cursor-not-allowed")} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <svg class={clsx(svg(), disabled && "cursor-not-allowed", classes?.svg)} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={show ? "m1 5 4-4 4 4" : "m9 1-4 4-4-4"} />
     </svg>
   </div>
@@ -233,7 +233,8 @@
           class={dropdownItem({
             selected: selectItems.includes(item),
             active: activeItem === item,
-            disabled: item.disabled
+            disabled: item.disabled,
+            class: clsx(classes?.item)
           })}
         >
           {item.name}

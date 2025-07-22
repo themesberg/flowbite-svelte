@@ -51,8 +51,9 @@ export const multiSelect = tv({
     dropdown: "absolute z-50 p-3 flex flex-col gap-1 max-h-64 bg-white border border-gray-300 dark:bg-gray-700 dark:border-gray-600 start-0 top-[calc(100%+1rem)] rounded-lg cursor-pointer overflow-y-scroll w-full",
     item: "py-2 px-3 rounded-lg text-gray-600 hover:text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-gray-600",
     close: "p-0 focus:ring-gray-400 dark:text-white",
-    span: '',
-    placeholder:'text-gray-400'
+    span: "",
+    placeholder: "text-gray-400",
+    svg: "ms-1 h-3 w-3 cursor-pointer text-gray-800 dark:text-white"
   },
   variants: {
     size: {
@@ -63,19 +64,19 @@ export const multiSelect = tv({
     disabled: {
       true: {
         base: "cursor-not-allowed opacity-50 pointer-events-none",
-        dropdownitem: "cursor-not-allowed opacity-50",
-        closebutton: "cursor-not-allowed"
+        item: "cursor-not-allowed opacity-50",
+        close: "cursor-not-allowed"
       },
       false: { base: "focus-within:border-primary-500 dark:focus-within:border-primary-500 focus-within:ring-1" }
     },
     active: {
       true: {
-        dropdownitem: "bg-primary-100 text-primary-500 dark:bg-primary-500 dark:text-primary-100 hover:bg-primary-100 dark:hover:bg-primary-500 hover:text-primary-600 dark:hover:text-primary-100"
+        item: "bg-primary-100 text-primary-500 dark:bg-primary-500 dark:text-primary-100 hover:bg-primary-100 dark:hover:bg-primary-500 hover:text-primary-600 dark:hover:text-primary-100"
       }
     },
     selected: {
       true: {
-        dropdownitem: "bg-gray-100 text-black font-semibold hover:text-black dark:text-white dark:bg-gray-600 dark:hover:text-white"
+        item: "bg-gray-100 text-black font-semibold hover:text-black dark:text-white dark:bg-gray-600 dark:hover:text-white"
       }
     }
   },
@@ -85,7 +86,7 @@ export const multiSelect = tv({
       selected: true,
       active: true,
       class: {
-        dropdownitem: "bg-primary-200 dark:bg-primary-600 text-primary-700 dark:text-primary-100 font-semibold" // Adjust colors as needed
+        item: "bg-primary-200 dark:bg-primary-600 text-primary-700 dark:text-primary-100 font-semibold" // Adjust colors as needed
       }
     }
   ],

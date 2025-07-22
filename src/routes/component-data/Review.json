@@ -2,7 +2,7 @@
   "name": "Review",
   "type": {
     "name": "ReviewProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1282"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1283"
   },
   "props": [
     ["children", ""],

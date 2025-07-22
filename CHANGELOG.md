@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.10.16
+
+### Patch Changes
+
+- refactor(Tags): improve dropdown logic and UX
+  - fix: #1690
+  - Integrated @floating-ui for dropdown positioning with autoUpdate
+  - Replaced inline <ul> dropdown with dynamically positioned element
+  - Removed hardcoded dropdown markup and positioning
+  - Used $effect and onDestroy for floating cleanup
+  - Replaced $state(null) with let + non-null assertions for DOM refs
+  - Improved reactivity by avoiding mutation warnings
+
 ## 1.10.15
 
 ### Patch Changes

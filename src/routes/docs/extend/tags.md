@@ -38,7 +38,7 @@ Import the `Tags` component in a script tag.
 </script>
 
 <form>
-  <Tags class="overflow-x-auto mt-5 mb-3" bind:value={tags} />
+  <Tags class="mt-5 mb-3" bind:value={tags} />
   {#if tags.length > 0}
     <pre>{JSON.stringify(tags, null, 2)}</pre>
   {/if}
@@ -52,7 +52,7 @@ Import the `Tags` component in a script tag.
 
 - `availableTags` (string[]): Defines a list of allowed tags that users can select from or type.
 
-- `showHelper` (boolean): Displays real-time validation messages  based on user input and tag constraints.
+- `showHelper` (boolean): Displays real-time validation messages based on user input and tag constraints.
 
 - `showAvailableTags` (boolean): Shows a static list of all available tags.
 
@@ -63,15 +63,15 @@ Import the `Tags` component in a script tag.
   import { Tags, Button } from "flowbite-svelte";
   let tags: string[] = $state([]);
 
-  const available = ["svelte", "react", "vue", "tailwind"];
+  const available = ["svelte", "react", "vue", "angular", "javascript", "typescript", "flowbite", "flowbite-svelte", "tailwindcss"];
 
   const handleClick = () => {
     alert(`Submitted: ${tags.join(", ")}`);
   };
 </script>
 
-<form class="mx-auto mt-8 space-y-4">
-  <Tags class="flex-wrap mt-5 mb-3" bind:value={tags} unique={true} availableTags={available} showHelper showAvailableTags placeholder="Add tag"/>
+<form class="mx-auto space-y-4">
+  <Tags class="mt-5 mb-3" bind:value={tags} unique={true} availableTags={available} showHelper showAvailableTags placeholder="Add tag" />
 
   {#if tags.length > 0}
     <div class="rounded bg-gray-100 p-4">

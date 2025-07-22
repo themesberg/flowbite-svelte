@@ -3,6 +3,8 @@
   import { type TagsProps, CloseButton, P } from "$lib";
   import { tags, type TagsTheme } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { computePosition, offset, flip, shift, autoUpdate } from "@floating-ui/dom";
+  import { onDestroy } from "svelte";
 
   let { value = $bindable([]), placeholder = "Enter tags", class: className, classes, itemClass, spanClass, closeClass, inputClass, closeBtnSize = "xs", unique = false, availableTags = [], showHelper = false, showAvailableTags = false, allowNewTags = false, ...restProps }: TagsProps = $props();
 
@@ -20,6 +22,35 @@
 
   let contents: string = $state("");
   let errorMessage: string = $state("");
+  let inputElement: HTMLInputElement;
+  let inputContainer: HTMLDivElement;
+  // svelte-ignore non_reactive_update
+  let dropdownElement: HTMLUListElement | null = null;
+  let cleanupFloating: (() => void) | undefined;
+
+  function updateDropdownPosition() {
+    if (!inputContainer || !dropdownElement) return;
+
+    cleanupFloating?.(); // Clean previous listener
+
+    cleanupFloating = autoUpdate(inputContainer!, dropdownElement!, async () => {
+      const { x, y } = await computePosition(inputContainer!, dropdownElement!, {
+        placement: "bottom-start",
+        middleware: [offset(4), flip(), shift()]
+      });
+
+      Object.assign(dropdownElement!.style, {
+        position: "absolute",
+        left: `${x}px`,
+        top: `${y}px`
+      });
+    });
+  }
+
+  // Function to check if dropdown should show above
+  const checkDropdownPosition = () => {
+    if (!inputContainer) return;
+  };
 
   const handleKeys = (event: KeyboardEvent) => {
     if (event.key === "Enter") {
@@ -42,35 +73,70 @@
         return;
       }
 
-      value.push(newTag);
-      value = value;
+      value = [...value, newTag];
       contents = "";
+      if (inputElement) {
+        inputElement.value = "";
+      }
       errorMessage = "";
     }
 
     if (event.key === "Backspace" && contents.length === 0) {
       event.preventDefault();
-      contents = value.pop() ?? "";
-      value = value;
+      const lastTag = value[value.length - 1] ?? "";
+      value = value.slice(0, -1);
+      contents = lastTag;
+      if (inputElement) {
+        inputElement.value = lastTag;
+      }
       errorMessage = "";
     }
   };
 
+  const handleInput = () => {
+    // Check position whenever user types
+    checkDropdownPosition();
+  };
+
   const deleteField = (index: number) => {
-    value.splice(index, 1);
-    value = value;
+    value = value.filter((_, i) => i !== index);
     errorMessage = "";
   };
+
+  $effect(() => {
+    const trimmed = contents.trim();
+
+    const shouldShow = availableTags.length > 0 && trimmed !== "" && inputContainer && dropdownElement;
+
+    if (!shouldShow) {
+      cleanupFloating?.();
+      return;
+    }
+
+    const filtered = availableTags.filter((tag) => tag.toLowerCase().includes(trimmed.toLowerCase()) && (!unique || !value.some((t) => t.toLowerCase() === tag.toLowerCase())));
+
+    if (filtered.length > 0) {
+      updateDropdownPosition();
+    } else {
+      cleanupFloating?.();
+    }
+  });
+
+  onDestroy(() => {
+    cleanupFloating?.();
+  });
 </script>
+
+<svelte:window on:scroll={checkDropdownPosition} on:resize={checkDropdownPosition} />
 
 {#if showAvailableTags && availableTags.length > 0}
   <P class={clsx(info(), classes?.info)}>Available tags: {availableTags.join(", ")}</P>
 {/if}
 
-{#if showHelper && contents.trim().length > 0 && availableTags.length > 0 && !allowNewTags}
-  {#if value.some((tag) => tag.toLowerCase() === contents.trim().toLowerCase())}
+{#if showHelper && contents.trim().length > 0}
+  {#if unique && value.some((tag) => tag.toLowerCase() === contents.trim().toLowerCase())}
     <P class={clsx(warning(), classes?.warning)}>"{contents.trim()}" is already added.</P>
-  {:else if !availableTags.some((tag) => tag.toLowerCase() === contents.trim().toLowerCase())}
+  {:else if availableTags.length > 0 && !allowNewTags && !availableTags.some((tag) => tag.toLowerCase() === contents.trim().toLowerCase())}
     <P class={clsx(error(), classes?.error)}>"{contents.trim()}" is not in the available tags.</P>
   {/if}
 {/if}
@@ -89,26 +155,31 @@
       <CloseButton size={closeBtnSize} class={close({ class: clsx((theme as TagsTheme)?.close, styling.close) })} onclick={() => deleteField(index)} />
     </div>
   {/each}
-  <div class="relative w-full">
-    <input onkeydown={handleKeys} bind:value={contents} placeholder={value.length === 0 ? placeholder : ""} type="text" autocomplete="new-password" class={inputCls({ class: clsx(styling.input) })} />
+  <div class="relative w-full" bind:this={inputContainer}>
+    <input bind:this={inputElement} onkeydown={handleKeys} oninput={handleInput} bind:value={contents} placeholder={value.length === 0 ? placeholder : ""} type="text" autocomplete="off" class={inputCls({ class: clsx(styling.input) })} />
     {#if availableTags.length > 0 && contents.trim() !== ""}
-      <ul class="absolute z-10 mt-1 max-h-48 w-full overflow-auto rounded border border-gray-300 bg-white shadow">
-        {#each availableTags.filter((tag) => tag.toLowerCase().includes(contents.trim().toLowerCase()) && (!unique || !value.some((t) => t.toLowerCase() === tag.toLowerCase()))) as suggestion}
-          <li>
-            <button
-              type="button"
-              class="block w-full cursor-pointer px-3 py-2 text-left hover:bg-gray-100"
-              onclick={() => {
-                value.push(suggestion);
-                value = value;
-                contents = "";
-              }}
-            >
-              {suggestion}
-            </button>
-          </li>
-        {/each}
-      </ul>
+      {@const filteredSuggestions = availableTags.filter((tag) => tag.toLowerCase().includes(contents.trim().toLowerCase()) && (!unique || !value.some((t) => t.toLowerCase() === tag.toLowerCase())))}
+      {#if filteredSuggestions.length > 0}
+        <ul bind:this={dropdownElement} class="z-10 max-h-48 w-full overflow-auto rounded border border-gray-300 bg-white shadow" style="position: absolute;">
+          {#each filteredSuggestions as suggestion}
+            <li>
+              <button
+                type="button"
+                class="block w-full cursor-pointer px-3 py-2 text-left hover:bg-gray-100"
+                onclick={() => {
+                  value = [...value, suggestion];
+                  contents = "";
+                  if (inputElement) {
+                    inputElement.value = "";
+                  }
+                }}
+              >
+                {suggestion}
+              </button>
+            </li>
+          {/each}
+        </ul>
+      {/if}
     {/if}
   </div>
 </div>
@@ -117,7 +188,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L877)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L878)
 ## Props
 @prop value = $bindable([])
 @prop placeholder = "Enter tags"
