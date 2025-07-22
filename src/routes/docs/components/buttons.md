@@ -297,9 +297,10 @@ You can use `onclick` or any standard `on*` to listen to the event.
 ```
 
 ## Loading State with Spinner
+
 Use the `loading` prop to indicate a pending action (e.g. form submission). When `true`, the button is automatically disabled and shows a built-in spinner. This improves user feedback and prevents duplicate submissions.
 
-```svelte example class="flex justify-center" 
+```svelte example class="flex justify-center"
 <script lang="ts">
   import { Button } from "flowbite-svelte";
   let loading = $state(false);

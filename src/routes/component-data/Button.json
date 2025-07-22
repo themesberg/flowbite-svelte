@@ -13,6 +13,7 @@
     ["shadow", "false"],
     ["tag", "\"button\""],
     ["disabled", ""],
+    ["loading", "false"],
     ["class: className", ""]
   ]
 }

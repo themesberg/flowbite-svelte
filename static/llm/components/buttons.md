@@ -151,7 +151,7 @@ Use the following button styles to show the colors only for the border of the el
   import { Button } from "flowbite-svelte";
 </script>
 
-<div class="flex flex-wrap gap-2">
+<div class="flex justify-center gap-2">
   <Button outline>Default</Button>
   <Button outline color="dark">Dark</Button>
   <Button outline color="green">Green</Button>
@@ -281,6 +281,25 @@ You can use `onclick` or any standard `on*` to listen to the event.
 <Button ontouchstart={btn2}>Button 2</Button>
 ```
 
+## Loading State with Spinner
+
+Use the `loading` prop to indicate a pending action (e.g. form submission). When `true`, the button is automatically disabled and shows a built-in spinner. This improves user feedback and prevents duplicate submissions.
+
+```svelte
+<script lang="ts">
+  import { Button } from "flowbite-svelte";
+  let loading = $state(false);
+
+  async function handleSubmit() {
+    loading = true;
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    loading = false;
+  }
+</script>
+
+<Button class="w-32" onclick={handleSubmit} {loading}>Submit</Button>
+```
+
 ## See also
 
 - [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
@@ -308,13 +327,14 @@ You can use `onclick` or any standard `on*` to listen to the event.
 - shadow: false
 - tag: "button"
 - disabled
+- loading: false
 - class: className
 
 ### GradientButton
 
 #### Types
 
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L315)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L316)
 
 #### Props
 

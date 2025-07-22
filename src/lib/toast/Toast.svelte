@@ -41,7 +41,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1809)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1810)
 ## Props
 @prop children
 @prop icon

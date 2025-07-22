@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.10.19
+
+### Patch Changes
+
+- feat(Button): add `loading` prop with built-in spinner and auto-disable
+  - Introduced `loading?: boolean` prop to Button.svelte
+  - When `loading` is true, the button shows a spinner and becomes disabled
+  - Spinner is implemented inline without importing Spinner.svelte
+  - Improved accessibility by preventing interaction during loading
+  - Added reactive usage examples and updated documentation
+
 ## 1.10.18
 
 ### Patch Changes

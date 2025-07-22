@@ -39,3 +39,22 @@
     {@render children?.()}
   </svelte:element>
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L307)
+## Props
+@prop children
+@prop pill
+@prop outline = false
+@prop size = "md"
+@prop color
+@prop shadow = false
+@prop tag = "button"
+@prop disabled
+@prop loading = false
+@prop class: className
+@prop ...restProps
+-->
