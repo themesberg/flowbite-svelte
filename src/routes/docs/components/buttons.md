@@ -34,7 +34,7 @@ Import a button component in the script tag.
 
 Use these default button styles with multiple colors to indicate an action or link within your website.
 
-```svelte example class="flex flex-wrap gap-2" hideScript
+```svelte example class="flex justify-center gap-2" hideScript
 <script>
   import { Button } from "flowbite-svelte";
 </script>
@@ -54,7 +54,7 @@ Use these default button styles with multiple colors to indicate an action or li
 
 You can add a link to a Button component:
 
-```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideScript hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
 </script>
@@ -66,7 +66,7 @@ You can add a link to a Button component:
 
 The button pills can be used as an alternative style by using fully rounded edges.
 
-```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideScript hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
 </script>
@@ -86,7 +86,7 @@ The button pills can be used as an alternative style by using fully rounded edge
 
 These beautifully colored buttons built with the gradient color stops utility classes from Tailwind CSS can be used as a creative alternative to the default button styles.
 
-```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideResponsiveButtons
 <script>
   import { GradientButton } from "flowbite-svelte";
 </script>
@@ -142,7 +142,7 @@ This is a special button style that incorporates a gradient color for the outlin
 
 These beautiful button elements with color shadows can be used since the release of Tailwind v3.0.
 
-```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideResponsiveButtons
 <script>
   import { Button, GradientButton } from "flowbite-svelte";
 </script>
@@ -161,12 +161,12 @@ These beautiful button elements with color shadows can be used since the release
 
 Use the following button styles to show the colors only for the border of the element.
 
-```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideScript hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
 </script>
 
-<div class="flex flex-wrap gap-2">
+<div class="flex justify-center gap-2">
   <Button outline>Default</Button>
   <Button outline color="dark">Dark</Button>
   <Button outline color="green">Green</Button>
@@ -197,7 +197,7 @@ Use these examples if you want to use smaller or larger buttons.
 
 Use the following examples to add a SVG icon inside the button either on the left or right side.
 
-```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
   import { ArrowRightOutline, CartSolid } from "flowbite-svelte-icons";
@@ -215,7 +215,7 @@ Use the following examples to add a SVG icon inside the button either on the lef
 
 This example can be used to show a notification count or helper text inside a button using the badge element.
 
-```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideResponsiveButtons
 <script>
   import { Button, Indicator } from "flowbite-svelte";
 </script>
@@ -230,7 +230,7 @@ This example can be used to show a notification count or helper text inside a bu
 
 Sometimes you need a button to indicate an action using only an icon.
 
-```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
   import { ThumbsUpSolid, ArrowRightOutline } from "flowbite-svelte-icons";
@@ -252,7 +252,7 @@ Sometimes you need a button to indicate an action using only an icon.
 
 Use the spinner components to indicate a loader animation inside buttons.
 
-```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideResponsiveButtons
 <script>
   import { Button, Spinner } from "flowbite-svelte";
 </script>
@@ -269,7 +269,7 @@ Use the spinner components to indicate a loader animation inside buttons.
 
 You can add any additional button attributes. The following example shows adding the `disabled` attribute.
 
-```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideScript hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
 </script>
@@ -281,7 +281,7 @@ You can add any additional button attributes. The following example shows adding
 
 You can use `onclick` or any standard `on*` to listen to the event.
 
-```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
   const btn1 = () => {
@@ -294,6 +294,24 @@ You can use `onclick` or any standard `on*` to listen to the event.
 
 <Button onclick={btn1}>Button 1</Button>
 <Button ontouchstart={btn2}>Button 2</Button>
+```
+
+## Loading State with Spinner
+Use the `loading` prop to indicate a pending action (e.g. form submission). When `true`, the button is automatically disabled and shows a built-in spinner. This improves user feedback and prevents duplicate submissions.
+
+```svelte example class="flex justify-center" 
+<script lang="ts">
+  import { Button } from "flowbite-svelte";
+  let loading = $state(false);
+
+  async function handleSubmit() {
+    loading = true;
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    loading = false;
+  }
+</script>
+
+<Button class="w-32" onclick={handleSubmit} {loading}>Submit</Button>
 ```
 
 ## See also

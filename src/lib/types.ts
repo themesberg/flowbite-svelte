@@ -310,6 +310,7 @@ export type ButtonProps = ButtonVariants &
     disabled?: boolean;
     outline?: boolean;
     shadow?: boolean;
+    loading?: boolean;
   };
 
 export interface GradientButtonProps extends GradientButtonVariantes, HTMLButtonOrAnchorAttributes {
