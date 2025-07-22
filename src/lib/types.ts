@@ -853,7 +853,9 @@ export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttribute
   clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];
   clearableClass?: ClassValue;
+  // remove this in next major version
   clearableOnClick?: () => void;
+  onClear?: () => void;
   disabled?: boolean;
 }
 

@@ -31,7 +31,7 @@
   function updateDropdownPosition() {
     if (!inputContainer || !dropdownElement) return;
 
-    cleanupFloating?.(); // Clean previous listener
+    cleanupFloating?.();
 
     cleanupFloating = autoUpdate(inputContainer!, dropdownElement!, async () => {
       const { x, y } = await computePosition(inputContainer!, dropdownElement!, {
@@ -47,7 +47,6 @@
     });
   }
 
-  // Function to check if dropdown should show above
   const checkDropdownPosition = () => {
     if (!inputContainer) return;
   };
@@ -100,7 +99,6 @@
   };
 
   const handleInput = () => {
-    // Check position whenever user types
     checkDropdownPosition();
   };
 
