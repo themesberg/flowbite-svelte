@@ -92,7 +92,7 @@ Get started with the default example of a select input component to get a single
       alert("Clicked clear button!");
     }}
     onchange={() => {
-      console.log("Changed select value:"); 
+      console.log("Changed select value:");
     }}
   />
 </Label>

@@ -55,6 +55,8 @@ Get started with the default example of a select input component to get a single
 
 ## Event
 
+`onClear` is a `Select`'s prop and `onchange` is Svelte's built-in event handler for the native <select> element.
+
 ```svelte
 <script>
   import { Select, Label } from "flowbite-svelte";
@@ -73,8 +75,11 @@ Get started with the default example of a select input component to get a single
     items={countries}
     bind:value={eventSelected}
     clearable
-    clearableOnClick={() => {
+    onClear={() => {
       alert("Clicked clear button!");
+    }}
+    onchange={() => {
+      console.log("Changed select value:");
     }}
   />
 </Label>
@@ -422,6 +427,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 - clearable
 - clearableColor: "none"
 - clearableOnClick
+- onClear
 - clearableSvgClass
 - clearableClass
 - selectClass

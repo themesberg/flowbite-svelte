@@ -19,11 +19,11 @@
       // Set to empty string to show placeholder and trigger change event
       elementRef.value = "";
       // Dispatch a synthetic change event to notify listeners
-      elementRef.dispatchEvent(new Event('change', { bubbles: true }));
+      elementRef.dispatchEvent(new Event("change", { bubbles: true }));
     }
     // Set reactive value to empty string to match placeholder option
     value = "" as T;
-    
+
     // Support both old and new callback names for backward compatibility
     if (onClear) onClear();
     // remove this in next major version

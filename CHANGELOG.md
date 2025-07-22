@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.10.18
+
+### Patch Changes
+
+- fix(Select): show placeholder after clear and trigger change event
+  - Fix placeholder not appearing after clearing select
+  - Dispatch change event when clearing programmatically
+  - Add onClear prop with better naming (keep clearableOnClick for compatibility)
+
 ## 1.10.17
 
 ### Patch Changes

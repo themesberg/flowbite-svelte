@@ -16,6 +16,7 @@
     ["clearable", ""],
     ["clearableColor", "\"none\""],
     ["clearableOnClick", ""],
+    ["onClear", ""],
     ["clearableSvgClass", ""],
     ["clearableClass", ""],
     ["selectClass", ""],
