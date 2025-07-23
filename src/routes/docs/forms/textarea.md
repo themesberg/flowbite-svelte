@@ -34,7 +34,7 @@ Get started with the default example of a textarea component below.
 </script>
 
 <Label for="textarea-id" class="mb-2">Your message</Label>
-<Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" />
+<Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" class="w-full" />
 ```
 
 ## Clearable
@@ -45,7 +45,7 @@ Get started with the default example of a textarea component below.
 </script>
 
 <Label for="textarea-id" class="mb-2">Your message</Label>
-<Textarea clearable id="textarea-clearable" placeholder="Your message" rows={4} name="message" />
+<Textarea clearable id="textarea-clearable" placeholder="Your message" rows={4} name="message" class="w-full"/>
 ```
 
 ## Event
@@ -61,7 +61,7 @@ Get started with the default example of a textarea component below.
   clearableOnClick={() => {
     alert("Clicked clear button!");
   }}
-  class="textarea-event"
+  class="textarea-event w-full"
   placeholder="Your message"
   rows={4}
   name="message"
@@ -78,7 +78,7 @@ Get started with the default example of a textarea component below.
   let textContent = $state("This is some example text that will be selected when you click the button.");
 </script>
 
-<Textarea bind:elementRef={textareaRef} bind:value={textContent} placeholder="Type something here..." class="my-4" />
+<Textarea bind:elementRef={textareaRef} bind:value={textContent} placeholder="Type something here..." class="my-4 w-full" />
 <Button
   onclick={() => {
     textareaRef?.focus();
