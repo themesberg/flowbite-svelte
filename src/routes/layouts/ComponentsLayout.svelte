@@ -74,13 +74,13 @@
 </script>
 
 <SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-4 z-40 mb-2 sm:top-8" />
-<Sidebar breakpoint="lg" backdrop={true} {isOpen} {closeSidebar} {nonActiveClass} {activeClass} activeUrl={mainSidebarUrl} {divClass} class={mainClass} params={{ x: -50, duration: 50 }}>
+<Sidebar breakpoint="lg" backdrop={true} {isOpen} {closeSidebar} classes={{ div: divClass, nonactive: nonActiveClass, active: activeClass }} activeUrl={mainSidebarUrl} class={mainClass} params={{ x: -50, duration: 50 }}>
   <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
   {#if showapicheck}
     <SidebarGroup>
       <Label class="pl-4 text-xl">API Check</Label>
       {#each Object.entries(apicheck) as [key, values] (key)}
-        <SidebarDropdownWrapper label={names_mapping[key] ?? key} ulClass="space-y-0 p-0" {btnClass} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
+        <SidebarDropdownWrapper label={names_mapping[key] ?? key} classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
           {#each values as { path }}
             {@const href = `/api-check/${key}${path}`}
             {@const linkLabel = convertString(path)}
@@ -93,7 +93,7 @@
     <SidebarGroup>
       {#each Object.entries(posts) as [key, values] (key)}
         {#if key !== "builders"}
-          <SidebarDropdownWrapper label={names_mapping[key] ?? key} ulClass="space-y-0 p-0" {btnClass} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
+          <SidebarDropdownWrapper label={names_mapping[key] ?? key} classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
             {#each values as { meta, path }}
               {@const href = key === "icons" ? `/${key}${path}` : `/docs/${key}${path}`}
               {#if meta}
@@ -102,7 +102,7 @@
             {/each}
           </SidebarDropdownWrapper>
         {:else}
-          <SidebarDropdownWrapper label="Builders" ulClass="space-y-0 p-0" {btnClass} class={"text-primary-700 dark:text-primary-700"}>
+          <SidebarDropdownWrapper label="Builders" classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class={"text-primary-700 dark:text-primary-700"}>
             {#each values.filter((builder) => builder.path !== "" && builder.path !== "layout") as builder}
               {@const pathWithoutSlash = builder.path.replace(/^\//, "")}
               {@const capitalizedPath = pathWithoutSlash.charAt(0).toUpperCase() + pathWithoutSlash.slice(1)}

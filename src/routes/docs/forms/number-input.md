@@ -9,7 +9,6 @@ description: Use the number input component to set a numeric value inside a form
 
 <script>
   import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, Seealso } from '../../utils'
-  import { A } from '$lib'
 
   const components = 'Input'
   const relatedLinks = ['/docs/forms/input-field','/docs/forms/floating-label', '/docs/extend/tags' ]

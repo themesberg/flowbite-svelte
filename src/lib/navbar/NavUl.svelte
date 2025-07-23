@@ -14,7 +14,7 @@
   let { children, activeUrl, ulClass, slideParams, transition = slide, transitionParams, activeClass, nonActiveClass, respectMotionPreference = true, class: clasName, classes, ...restProps }: NavUlProps = $props();
 
   warnThemeDeprecation("NavUl", { ulClass, activeClass, nonActiveClass }, { ulClass: "ul", activeClass: "active", nonActiveClass: "nonActive" });
-  const styling = $derived( classes ?? { ul: ulClass, active: activeClass, nonActive: nonActiveClass });
+  const styling = $derived(classes ?? { ul: ulClass, active: activeClass, nonActive: nonActiveClass });
 
   const theme = getTheme("navUl");
 
@@ -77,7 +77,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1106)
 ## Props
 @prop children
 @prop activeUrl
@@ -89,5 +89,6 @@
 @prop nonActiveClass
 @prop respectMotionPreference = true
 @prop class: clasName
+@prop classes
 @prop ...restProps
 -->

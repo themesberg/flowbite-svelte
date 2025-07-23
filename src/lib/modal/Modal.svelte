@@ -10,8 +10,8 @@
 
   // form, header, footer, body, close
   warnThemeDeprecation("Modal", { headerClass, bodyClass, footerClass, closeBtnClass }, { bodyClass: "body", headerClass: "header", footerClass: "footer", closeBtnClass: "close" });
-  const styling = $derived( classes ?? { header: headerClass, body: bodyClass, footer: footerClass, close: closeBtnClass });
-  
+  const styling = $derived(classes ?? { header: headerClass, body: bodyClass, footer: footerClass, close: closeBtnClass });
+
   const theme = getTheme("modal");
 
   const paramsDefault = { duration: 100, easing: sineIn };
@@ -128,7 +128,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1047)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1053)
 ## Props
 @prop children
 @prop onaction = ()
@@ -153,6 +153,7 @@
 @prop size = "md"
 @prop placement
 @prop class: className
+@prop classes
 @prop params
 @prop transition = fade
 @prop ...restProps

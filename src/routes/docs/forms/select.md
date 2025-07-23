@@ -9,7 +9,7 @@ description: Get started with the select component to allow the user to choose f
 
 <script>
 import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
-import { Badge, A, Kbd  } from '$lib';
+import { Badge, Kbd  } from '$lib';
 import { ArrowUpOutline, ArrowDownOutline } from 'flowbite-svelte-icons';
 const components = 'Select, MultiSelect'
 </script>
@@ -68,7 +68,7 @@ Get started with the default example of a select input component to get a single
 
 ## Event
 
-`onClear` is a `Select`'s prop and `onchange` is Svelte's built-in event handler for the native <select> element.
+`onClear` is a `Select`'s prop and `onchange` is Svelte's built-in event handler for the native `<select>` element.
 
 ```svelte example
 <script>

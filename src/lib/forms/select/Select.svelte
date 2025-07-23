@@ -8,7 +8,7 @@
 
   // clearableSvgClass, clearableClass, selectClass
   warnThemeDeprecation("Select", { selectClass, clearableSvgClass, clearableClass }, { selectClass: "select", clearableSvgClass: "svg", clearableClass: "close" });
-  const styling = $derived( classes ?? { select: selectClass, svg: clearableSvgClass, close: clearableClass });
+  const styling = $derived(classes ?? { select: selectClass, svg: clearableSvgClass, close: clearableClass });
 
   const theme = getTheme("select");
 

@@ -28,7 +28,7 @@
   }: MultiSelectProps<T> = $props();
 
   warnThemeDeprecation("MultiSelect", { dropdownClass }, { dropdownClass: "dropdown" });
-  const styling = $derived( classes ?? { dropdown: dropdownClass });
+  const styling = $derived(classes ?? { dropdown: dropdownClass });
 
   const theme = getTheme("multiSelect");
 

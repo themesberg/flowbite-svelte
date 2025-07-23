@@ -10,7 +10,6 @@ thumnailSize: w-72
 
 <script>
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { Badge, A } from '$lib'
 
   const components = 'Radio, RadioButton, Label, Helper'
 </script>

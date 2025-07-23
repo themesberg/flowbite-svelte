@@ -391,7 +391,7 @@ You can use `onclose` to execute custom logic when the toast is closed.
 
 #### Types
 
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1810)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1817)
 
 #### Props
 

@@ -77,9 +77,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1435)
+[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1442)
 ## Props
 @prop size = "sm"
 @prop class: className
+@prop classes
 @prop ...restProps
 -->

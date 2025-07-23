@@ -2,7 +2,7 @@
   "name": "NavUl",
   "type": {
     "name": "NavUlProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1106"
   },
   "props": [
     ["children", ""],
@@ -14,6 +14,7 @@
     ["activeClass", ""],
     ["nonActiveClass", ""],
     ["respectMotionPreference", "true"],
-    ["class: clasName", ""]
+    ["class: clasName", ""],
+    ["classes", ""]
   ]
 }

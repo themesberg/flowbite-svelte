@@ -186,7 +186,7 @@
       </div>
       <div class="mb-6">
         <Label for="description" class="mb-2">Description</Label>
-        <Textarea id="message" placeholder="Write event description..." rows={4} name="message" class="w-full"/>
+        <Textarea id="message" placeholder="Write event description..." rows={4} name="message" class="w-full" />
       </div>
       <div class="mb-6">
         <Input id="date" name="date" required type="date" />

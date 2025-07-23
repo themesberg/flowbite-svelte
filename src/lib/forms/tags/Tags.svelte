@@ -9,12 +9,14 @@
   let { value = $bindable([]), placeholder = "Enter tags", class: className, classes, itemClass, spanClass, closeClass, inputClass, closeBtnSize = "xs", unique = false, availableTags = [], showHelper = false, showAvailableTags = false, allowNewTags = true, ...restProps }: TagsProps = $props();
 
   warnThemeDeprecation("Tags", { itemClass, spanClass, closeClass, inputClass }, { itemClass: "tag", spanClass: "span", closeClass: "close", inputClass: "input" });
-  const styling = $derived(classes ?? {
-    tag: itemClass,
-    span: spanClass,
-    close: closeClass,
-    input: inputClass
-  });
+  const styling = $derived(
+    classes ?? {
+      tag: itemClass,
+      span: spanClass,
+      close: closeClass,
+      input: inputClass
+    }
+  );
 
   const theme = getTheme("tags");
 
@@ -192,7 +194,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L881)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L887)
 ## Props
 @prop value = $bindable([])
 @prop placeholder = "Enter tags"

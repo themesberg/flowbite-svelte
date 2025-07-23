@@ -74,7 +74,7 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 #### Types
 
-[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L440)
+[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L446)
 
 #### Props
 

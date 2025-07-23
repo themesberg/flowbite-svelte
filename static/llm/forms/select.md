@@ -55,7 +55,7 @@ Get started with the default example of a select input component to get a single
 
 ## Event
 
-`onClear` is a `Select`'s prop and `onchange` is Svelte's built-in event handler for the native <select> element.
+`onClear` is a `Select`'s prop and `onchange` is Svelte's built-in event handler for the native `<select>` element.
 
 ```svelte
 <script>
@@ -412,7 +412,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 #### Types
 
-[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L847)
+[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L853)
 
 #### Props
 

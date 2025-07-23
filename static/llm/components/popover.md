@@ -388,7 +388,7 @@ If you need the popover to be attached to the other element then the tiggering o
 
 #### Types
 
-[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1189)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1196)
 
 #### Props
 
@@ -400,6 +400,7 @@ If you need the popover to be attached to the other element then the tiggering o
 - children
 - placement: "top"
 - class: className
+- classes
 - isOpen: $bindable(false)
 
 

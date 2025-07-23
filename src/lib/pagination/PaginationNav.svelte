@@ -30,8 +30,8 @@
     ...restProps
   }: PaginationNavProps = $props();
 
-  warnThemeDeprecation("PaginationNav", { prevClass, nextClass, spanClass, tableDivClass }, { prevClass: "prev", nextClass:"next", spanClass: "span", tableDivClass: "tableDiv"});
-  const styling = $derived( classes ?? { prev: prevClass, next: nextClass, span: spanClass, tableDiv: tableDivClass });
+  warnThemeDeprecation("PaginationNav", { prevClass, nextClass, spanClass, tableDivClass }, { prevClass: "prev", nextClass: "next", spanClass: "span", tableDivClass: "tableDiv" });
+  const styling = $derived(classes ?? { prev: prevClass, next: nextClass, span: spanClass, tableDiv: tableDivClass });
 
   const theme = getTheme("paginationNav");
 
@@ -105,7 +105,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1156)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1163)
 ## Props
 @prop currentPage = 1
 @prop totalPages = 1
@@ -121,6 +121,7 @@
 @prop ariaLabel = "Page navigation"
 @prop size = "default"
 @prop class: className
+@prop classes
 @prop spanClass
 @prop tableDivClass
 @prop ...restProps

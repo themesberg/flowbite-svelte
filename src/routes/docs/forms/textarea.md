@@ -9,7 +9,6 @@ description: Use the textarea component as a multi-line text field input and use
 
 <script>
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { Badge, A } from '$lib'
 
   const components = 'Textarea'
 </script>
@@ -45,7 +44,7 @@ Get started with the default example of a textarea component below.
 </script>
 
 <Label for="textarea-id" class="mb-2">Your message</Label>
-<Textarea clearable id="textarea-clearable" placeholder="Your message" rows={4} name="message" class="w-full"/>
+<Textarea clearable id="textarea-clearable" placeholder="Your message" rows={4} name="message" class="w-full" />
 ```
 
 ## Event

@@ -11,7 +11,7 @@ thumbnailSize: w-72
 <script>
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { onMount } from 'svelte';
-  import { Toggle, Badge, A } from '$lib'
+  import { Toggle } from '$lib'
 
   const components = 'Toggle'
 </script>

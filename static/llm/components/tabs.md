@@ -379,7 +379,7 @@ Use the following example to preserve the input value. First fill out the form, 
       <label for="email">Email</label>
       <Input id="email" bind:value={email} type="email" />
       <label for="comment">Comment</label>
-      <Textarea id="comment" bind:value={comment} />
+      <Textarea id="comment" bind:value={comment} class="w-full" />
       <Button onclick={handleSubmit} class="mt-4">Submit</Button>
     </form>
   </TabItem>
@@ -398,7 +398,7 @@ Use the following example to preserve the input value. First fill out the form, 
 
 #### Types
 
-[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1712)
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1719)
 
 #### Props
 
@@ -416,7 +416,7 @@ Use the following example to preserve the input value. First fill out the form, 
 
 #### Types
 
-[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1704)
+[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1711)
 
 #### Props
 

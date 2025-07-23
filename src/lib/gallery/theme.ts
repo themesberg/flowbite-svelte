@@ -14,4 +14,3 @@ export const gallery = tv({
     div: "grid"
   }
 });
-

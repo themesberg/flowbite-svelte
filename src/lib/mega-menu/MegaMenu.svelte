@@ -7,8 +7,8 @@
   let { children, extra, items = [], full, ulClass, isOpen = $bindable(false), class: className, extraClass, classes, ...restProps }: MegaMenuProps = $props();
 
   //  ulClass, extraClass
-  warnThemeDeprecation("MegaMenu", {ulClass, extraClass}, {ulClass:"ul", extraClass:"extra"} );
-  const styling = $derived( classes ?? { ul: ulClass, extra: extraClass });
+  warnThemeDeprecation("MegaMenu", { ulClass, extraClass }, { ulClass: "ul", extraClass: "extra" });
+  const styling = $derived(classes ?? { ul: ulClass, extra: extraClass });
 
   const theme = getTheme("megaMenu");
 
@@ -17,7 +17,7 @@
     [propName: string]: any;
   }
 
-  const { base, div, ul, extra:extraCls } = $derived(megamenu({ full, hasExtra: !!extra }));
+  const { base, div, ul, extra: extraCls } = $derived(megamenu({ full, hasExtra: !!extra }));
 </script>
 
 <Popper color={full ? "default" : "dropdown"} arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={base({ class: clsx((theme as MegaMenuTheme)?.base, className) })}>
@@ -39,7 +39,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1036)
+[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1042)
 ## Props
 @prop children
 @prop extra
@@ -49,5 +49,6 @@
 @prop isOpen = $bindable(false)
 @prop class: className
 @prop extraClass
+@prop classes
 @prop ...restProps
 -->

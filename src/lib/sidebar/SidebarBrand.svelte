@@ -7,10 +7,12 @@
   let { children, site, imgClass, spanClass, class: className, classes, ...restProps }: SidebarBrandProps = $props();
 
   warnThemeDeprecation("SidebarBrand", { imgClass, spanClass }, { imgClass: "img", spanClass: "span" });
-  const styling = $derived(classes ?? {
-    img: imgClass,
-    span: spanClass
-  });
+  const styling = $derived(
+    classes ?? {
+      img: imgClass,
+      span: spanClass
+    }
+  );
 
   const theme = getTheme("sidebarBrand");
 
@@ -30,12 +32,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1372)
+[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1379)
 ## Props
 @prop children
 @prop site
 @prop imgClass
 @prop spanClass
 @prop class: className
+@prop classes
 @prop ...restProps
 -->

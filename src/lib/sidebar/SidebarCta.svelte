@@ -7,10 +7,12 @@
   let { children, icon, divClass, spanClass, label, class: className, classes, ...restProps }: SidebarCtaProps = $props();
 
   warnThemeDeprecation("SidebarCta", { divClass, spanClass }, { divClass: "div", spanClass: "span" });
-  const styling = $derived(classes ?? {
-    div: divClass,
-    span: spanClass
-  });
+  const styling = $derived(
+    classes ?? {
+      div: divClass,
+      span: spanClass
+    }
+  );
 
   const theme = getTheme("sidebarCta");
 
@@ -31,7 +33,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1359)
+[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1366)
 ## Props
 @prop children
 @prop icon
@@ -39,5 +41,6 @@
 @prop spanClass
 @prop label
 @prop class: className
+@prop classes
 @prop ...restProps
 -->

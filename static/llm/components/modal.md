@@ -479,7 +479,7 @@ You can as well use the `onsubmit` event handler which is bubbled event from the
 
 #### Types
 
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1047)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1053)
 
 #### Props
 
@@ -506,6 +506,7 @@ You can as well use the `onsubmit` event handler which is bubbled event from the
 - size: "md"
 - placement
 - class: className
+- classes
 - params
 - transition: fade
 

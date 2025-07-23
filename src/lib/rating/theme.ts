@@ -1,6 +1,6 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
-import type { Classes } from "$lib/theme/themeUtils"
+import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type RatingVariants = VariantProps<typeof rating> & Classes<typeof rating>;
@@ -57,4 +57,3 @@ export const scoreRating = tv({
     bar: "bg-primary-600 h-2.5 rounded-sm dark:bg-primary-500"
   }
 });
-

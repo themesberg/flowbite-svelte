@@ -46,7 +46,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L419)
+[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L425)
 ## Props
 @prop image
 @prop transition

@@ -7,17 +7,18 @@
   import { trapFocus, type SidebarProps, type SidebarCtxType } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
-  import { aC } from "vitest/dist/chunks/reporters.d.BFLkQcL6.js";
 
   let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = "md", alwaysOpen = false, position = "fixed", activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, activeUrl = "", class: className, classes, disableBreakpoints = false, ...restProps }: SidebarProps = $props();
 
-  warnThemeDeprecation("Sidebar", {backdropClass, divClass, nonActiveClass, activeClass }, { backdropClass: "backdrop", divClass: "div", nonActiveClass: "nonactive", activeClass: "active" });
-  const styling = $derived( classes ?? {
-    backdrop: backdropClass,
-    div: divClass,
-    nonactive: nonActiveClass,
-    active: activeClass
-  })
+  warnThemeDeprecation("Sidebar", { backdropClass, divClass, nonActiveClass, activeClass }, { backdropClass: "backdrop", divClass: "div", nonActiveClass: "nonactive", activeClass: "active" });
+  const styling = $derived(
+    classes ?? {
+      backdrop: backdropClass,
+      div: divClass,
+      nonactive: nonActiveClass,
+      active: activeClass
+    }
+  );
 
   const theme = getTheme("sidebar");
 
@@ -98,7 +99,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1336)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1343)
 ## Props
 @prop children
 @prop isOpen = false
@@ -118,6 +119,7 @@
 @prop activeClass
 @prop activeUrl = ""
 @prop class: className
+@prop classes
 @prop disableBreakpoints = false
 @prop ...restProps
 -->

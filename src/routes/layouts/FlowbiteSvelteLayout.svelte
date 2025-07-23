@@ -1,10 +1,8 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import { DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl, uiHelpers } from "$lib";
+  import { DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl } from "$lib";
   import Tooltip from "$lib/tooltip/Tooltip.svelte";
-  import { onMount, setContext } from "svelte";
-  import { writable, type Writable } from "svelte/store";
-
+  import { onMount } from "svelte";
   import Discord from "../utils/icons/Discord.svelte";
   import GitHub from "../utils/icons/GitHub.svelte";
   import YouTube from "../utils/icons/YouTube.svelte";
@@ -60,7 +58,7 @@
       </div>
     {/if}
 
-    <NavUl {activeUrl} class="order-1 ml-auto w-full lg:order-none lg:block lg:w-auto" ulClass="flex flex-col lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4">
+    <NavUl {activeUrl} class="order-1 ml-auto w-full lg:order-none lg:block lg:w-auto" classes={{ ul: "flex flex-col lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4" }}>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/pages/introduction">Docs</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/components/accordion">Components</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="https://flowbite-svelte-blocks.vercel.app/">Blocks</NavLi>

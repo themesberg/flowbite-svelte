@@ -9,7 +9,7 @@
 
   // content, title, h3
   warnThemeDeprecation("Popover", { defaultClass }, { defaultClass: "content" });
-  const styling = $derived( classes ?? { content: defaultClass });
+  const styling = $derived(classes ?? { content: defaultClass });
 
   const theme = getTheme("popover");
 
@@ -33,7 +33,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1189)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1196)
 ## Props
 @prop title: titleSlot
 @prop color = "default"
@@ -43,6 +43,7 @@
 @prop children
 @prop placement = "top"
 @prop class: className
+@prop classes
 @prop isOpen = $bindable(false)
 @prop ...restProps
 -->

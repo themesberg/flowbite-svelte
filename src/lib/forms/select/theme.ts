@@ -16,7 +16,7 @@ export const select = tv({
     base: "relative",
     select: "block w-full rtl:text-right",
     close: "absolute right-8 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black",
-    svg:''
+    svg: ""
   },
   variants: {
     underline: {

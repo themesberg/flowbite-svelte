@@ -409,7 +409,7 @@ When you set transitionType="none" on an Accordion or an AccordionItem, it disab
 
 #### Types
 
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L170)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L176)
 
 #### Props
 
@@ -425,7 +425,7 @@ When you set transitionType="none" on an Accordion or an AccordionItem, it disab
 
 #### Types
 
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L178)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L184)
 
 #### Props
 

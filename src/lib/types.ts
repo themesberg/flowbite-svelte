@@ -976,7 +976,7 @@ export type ImgType = {
   alt?: string;
 };
 
-export interface GalleryProps extends GalleryVariants,HTMLAttributes<HTMLDivElement> {
+export interface GalleryProps extends GalleryVariants, HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   figure?: Snippet<[item: ImgType]>;
   items?: HTMLImgAttributes[];
@@ -1097,10 +1097,11 @@ export interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
   fluid?: boolean;
 }
 
-export type NavHamburgerProps = ToolbarButtonProps & NavbarHamburgerVariants & {
-  href?: undefined;
-  menuClass?: ClassValue;
-};
+export type NavHamburgerProps = ToolbarButtonProps &
+  NavbarHamburgerVariants & {
+    href?: undefined;
+    menuClass?: ClassValue;
+  };
 
 export interface NavUlProps extends NavbarUlVariants, Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   activeUrl?: string;
@@ -1420,7 +1421,7 @@ export interface CardPlaceholderProps extends CardPlaceholderVariants, HTMLAttri
   size?: CardPlaceholderVariants["size"];
 }
 
-export interface ImagePlaceholderProps extends ImagePlaceholderVariants,  HTMLAttributes<HTMLDivElement> {
+export interface ImagePlaceholderProps extends ImagePlaceholderVariants, HTMLAttributes<HTMLDivElement> {
   size?: ImagePlaceholderVariants["size"];
   rounded?: ImagePlaceholderVariants["rounded"];
   imgOnly?: boolean;

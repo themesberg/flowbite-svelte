@@ -20,7 +20,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L273)
+[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L279)
 ## Props
 @prop itemName
 @prop active

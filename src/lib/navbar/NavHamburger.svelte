@@ -11,7 +11,7 @@
   let { children, onclick, menuClass, class: className, classes, name = "Open main menu", ...restProps }: NavHamburgerProps = $props();
 
   warnThemeDeprecation("NavHamburger", { menuClass }, { menuClass: "menu" });
-  const styling = $derived( classes ?? { menu: menuClass });
+  const styling = $derived(classes ?? { menu: menuClass });
 
   const theme = getTheme("navHamburger");
 
@@ -31,12 +31,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1094)
+[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1100)
 ## Props
 @prop children
 @prop onclick
 @prop menuClass
 @prop class: className
+@prop classes
 @prop name = "Open main menu"
 @prop ...restProps
 -->

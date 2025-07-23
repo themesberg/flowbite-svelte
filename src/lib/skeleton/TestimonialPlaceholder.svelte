@@ -48,8 +48,9 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1433)
+[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1440)
 ## Props
 @prop class: className
+@prop classes
 @prop ...restProps
 -->

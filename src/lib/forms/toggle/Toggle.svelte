@@ -7,7 +7,7 @@
   let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, classes, inputClass, spanClass, offLabel, ...restProps }: ToggleProps = $props();
 
   warnThemeDeprecation("Toggle", { inputClass, spanClass }, { inputClass: "input", spanClass: "span" });
-  const styling = $derived( classes ?? { input: inputClass, span: spanClass });
+  const styling = $derived(classes ?? { input: inputClass, span: spanClass });
 
   const theme = getTheme("toggle");
 
@@ -29,7 +29,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L956)
+[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L962)
 ## Props
 @prop children
 @prop size = "default"
@@ -38,6 +38,7 @@
 @prop disabled
 @prop color = "primary"
 @prop class: className
+@prop classes
 @prop inputClass
 @prop spanClass
 @prop offLabel

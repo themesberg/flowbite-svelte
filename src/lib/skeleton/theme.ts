@@ -29,7 +29,6 @@ export type VideoPlaceholderTheme = ClassValue;
 export type WidgetPlaceholderSlots = keyof typeof widgetPlaceholder.slots;
 export type WidgetPlaceholderTheme = Partial<Record<WidgetPlaceholderSlots, ClassValue>>;
 
-
 export const cardPlaceholder = tv({
   slots: {
     base: "p-4 rounded-sm border border-gray-200 shadow-sm animate-pulse md:p-6 dark:border-gray-700",
@@ -174,7 +173,6 @@ export const testimonialPlaceholder = tv({
   }
 });
 
-
 // TextPlaceholder
 export const textPlaceholder = tv({
   slots: {
@@ -208,7 +206,6 @@ export const videoPlaceholder = tv({
   }
 });
 
-
 // WidgetPlaceholder
 export const widgetPlaceholder = tv({
   slots: {
@@ -218,5 +215,3 @@ export const widgetPlaceholder = tv({
     vLine: "w-full rounded-t-lg bg-gray-200 dark:bg-gray-700"
   }
 });
-
-

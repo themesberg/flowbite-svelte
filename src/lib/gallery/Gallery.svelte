@@ -7,7 +7,7 @@
   let { children, figure, items = [], imgClass, class: className, classes, ...restProps }: GalleryProps = $props();
 
   warnThemeDeprecation("Gallery", { imgClass }, { imgClass: "image" });
-  const styling = $derived( classes ?? { image: imgClass });
+  const styling = $derived(classes ?? { image: imgClass });
 
   const theme = getTheme("gallery");
 
@@ -42,12 +42,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L973)
+[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L979)
 ## Props
 @prop children
 @prop figure
 @prop items = []
 @prop imgClass
 @prop class: className
+@prop classes
 @prop ...restProps
 -->

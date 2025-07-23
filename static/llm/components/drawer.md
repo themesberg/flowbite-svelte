@@ -157,7 +157,7 @@ Use this example to show a contact form inside the drawer component.
     </div>
     <div class="mb-6">
       <Label for="message" class="mb-2">Your message</Label>
-      <Textarea id="message" placeholder="Your message..." rows={4} name="message" />
+      <Textarea id="message" placeholder="Your message..." rows={4} name="message" class="w-full" />
     </div>
     <Button type="submit" class="w-full">Send message</Button>
   </form>
@@ -199,7 +199,7 @@ Use this example if you want to add form elements inside the drawer component in
     </div>
     <div class="mb-6">
       <Label for="description" class="mb-2">Description</Label>
-      <Textarea id="message" placeholder="Write event description..." rows={4} name="message" />
+      <Textarea id="message" placeholder="Write event description..." rows={4} name="message" class="w-full" />
     </div>
     <div class="mb-6">
       <Input id="date" name="date" required type="date" />
@@ -595,7 +595,7 @@ By default, body scrolling is disabled when the drawer is visible, however, you 
 
 #### Types
 
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L556)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L562)
 
 #### Props
 
@@ -618,7 +618,7 @@ By default, body scrolling is disabled when the drawer is visible, however, you 
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L567)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L573)
 
 #### Props
 

@@ -93,7 +93,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 #### Types
 
-[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L956)
+[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L962)
 
 #### Props
 
@@ -104,6 +104,7 @@ Get started with the default toggle component example as a checkbox element to r
 - disabled
 - color: "primary"
 - class: className
+- classes
 - inputClass
 - spanClass
 - offLabel
