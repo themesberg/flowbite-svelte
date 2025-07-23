@@ -389,7 +389,7 @@ Use the following example to preserve the input value. First fill out the form, 
       <label for="email">Email</label>
       <Input id="email" bind:value={email} type="email" />
       <label for="comment">Comment</label>
-      <Textarea id="comment" bind:value={comment} />
+      <Textarea id="comment" bind:value={comment} class="w-full" />
       <Button onclick={handleSubmit} class="mt-4">Submit</Button>
     </form>
   </TabItem>

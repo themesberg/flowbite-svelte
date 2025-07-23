@@ -116,7 +116,7 @@
 <h2 class="text-2xl">Textarea</h2>
 
 <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Textarea {...textareaprops} />
+  <Textarea {...textareaprops} class="w-full" />
 </div>
 
 <h2 class="text-2xl">Select input</h2>

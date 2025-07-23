@@ -13,14 +13,14 @@
 
 <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Label for="textarea-id" class="mb-2">Your message</Label>
-  <Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" />
+  <Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" class="w-full" />
 </div>
 
 <h2 class="my-4 text-2xl">Clearable</h2>
 
 <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Label for="textarea-id" class="mb-2">Your message</Label>
-  <Textarea clearable id="textarea-clearable" placeholder="Your message" rows={4} name="message" />
+  <Textarea clearable id="textarea-clearable" placeholder="Your message" rows={4} name="message" class="w-full" />
 </div>
 
 <h2 class="my-4 text-2xl">Event</h2>
@@ -32,7 +32,7 @@
     clearableOnClick={() => {
       alert("Clicked clear button!");
     }}
-    class="textarea-event"
+    class="textarea-event w-full"
     placeholder="Your message"
     rows={4}
     name="message"
@@ -44,7 +44,7 @@
 <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <form>
     <label for="editor" class="sr-only">Publish post</label>
-    <Textarea id="editor" rows={8} class="mb-4" placeholder="Write a comment">
+    <Textarea id="editor" rows={8} class="mb-4 w-full" placeholder="Write a comment">
       {#snippet header()}
         <Toolbar embedded>
           <ToolbarGroup>
@@ -70,7 +70,7 @@
 
 <div class="my-4 space-y-4 rounded border p-4">
   <form>
-    <Textarea class="mb-4" placeholder="Write a comment">
+    <Textarea class="mb-4 w-full" placeholder="Write a comment">
       {#snippet footer()}
         <div class="flex items-center justify-between">
           <Button type="submit">Post comment</Button>
@@ -103,7 +103,7 @@
         <FaceGrinOutline class="h-6 w-6" />
         <span class="sr-only">Add emoji</span>
       </ToolbarButton>
-      <Textarea id="chat" class="mx-4 bg-white dark:bg-gray-800" rows={1} placeholder="Your message..." />
+      <Textarea id="chat" class="mx-4 bg-white dark:bg-gray-800 w-full" rows={1} placeholder="Your message..." />
       <ToolbarButton type="submit" color="blue" class="text-primary-600 dark:text-primary-500 rounded-full">
         <PaperPlaneOutline class="h-6 w-6 rotate-45" />
         <span class="sr-only">Send message</span>
@@ -114,7 +114,7 @@
 
 <h2>Accessing Textarea Element with elementRef</h2>
 <div class="my-4 space-y-4 rounded border p-4">
-  <Textarea bind:elementRef={textareaRef} bind:value={textContent} placeholder="Type something here..." />
+  <Textarea bind:elementRef={textareaRef} bind:value={textContent} placeholder="Type something here..." class="w-full" />
   <Button
     onclick={() => {
       textareaRef?.focus();

@@ -344,7 +344,7 @@
     <TabItem open title="Profile">
       <form method="POST">
         <Label for="comment">Comment</Label>
-        <Textarea id="comment" bind:value={comment} />
+        <Textarea id="comment" bind:value={comment} class="w-full" />
         <Button>Post comment</Button>
       </form>
     </TabItem>

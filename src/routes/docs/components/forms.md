@@ -149,7 +149,7 @@ Use the following example to apply validation styles for success and error messa
   };
 </script>
 
-<Textarea {...textareaprops} />
+<Textarea {...textareaprops} class="w-full" />
 ```
 
 ## Select input

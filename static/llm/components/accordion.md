@@ -352,7 +352,7 @@ Use the following example to preserve the input value. First fill out the form, 
       <Label for="email">Email</Label>
       <Input id="email" bind:value={email} type="email" />
       <Label for="comment">Comment</Label>
-      <Textarea id="comment" bind:value={comment} />
+      <Textarea id="comment" bind:value={comment} class="w-full" />
       <Button onclick={handleSubmit} class="mt-4">Submit</Button>
     </form>
   </AccordionItem>

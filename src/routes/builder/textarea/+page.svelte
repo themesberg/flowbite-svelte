@@ -41,7 +41,7 @@
   };
   let textAreaClass: TextareaProps["class"] = $state("");
   const changeClass = () => {
-    textAreaClass = textAreaClass === "" ? "w-48" : "";
+    textAreaClass = textAreaClass === "w-full" ? "w-48" : "w-full";
   };
   // code generator
   let generatedCode = $derived(

@@ -558,7 +558,7 @@ If you need a full control over `input` HTML element while still re-using the Fl
       <label for="email">Email</label>
       <Input id="email" bind:value={email} type="email" />
       <label for="comment">Comment</label>
-      <Textarea id="comment" bind:value={comment} />
+      <Textarea id="comment" bind:value={comment} class="w-full" />
       <Button onclick={handleSubmit} class="mt-4">Submit</Button>
     </form>
   </TabItem>
