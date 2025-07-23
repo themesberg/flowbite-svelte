@@ -1,17 +1,26 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
+
+// Variants
+export type NavbarUlVariants = VariantProps<typeof navbarUl> & Classes<typeof navbarUl>;
+export type NavbarHamburgerVariants = VariantProps<typeof navbarHamburger> & Classes<typeof navbarHamburger>;
+// Theme
+export type NavbarTheme = ClassValue;
+export type NavbarBrandTheme = ClassValue;
+export type NavbarUlSlots = keyof typeof navbarUl.slots;
+export type NavbarUlTheme = Partial<Record<NavbarUlSlots, ClassValue>>;
+export type NavbarLiTheme = ClassValue;
+export type NavbarHamburgerSlots = keyof typeof navbarHamburger.slots;
+export type NavbarHamburgerTheme = Partial<Record<NavbarHamburgerSlots, ClassValue>>;
 
 export const navbar = tv({
   base: "relative w-full px-2 py-2.5 sm:px-4"
 });
 
-export type NavbarTheme = ClassValue;
-
 export const navbarBrand = tv({
   base: "flex items-center"
 });
-
-export type NavbarBrandTheme = ClassValue;
 
 export const navbarContainer = tv({
   base: "mx-auto flex flex-wrap items-center justify-between ",
@@ -42,9 +51,6 @@ export const navbarUl = tv({
   defaultVariants: {}
 });
 
-export type NavbarUlSlots = keyof typeof navbarUl.slots;
-export type NavbarUlTheme = Partial<Record<NavbarUlSlots, ClassValue>>;
-
 export const navbarLi = tv({
   base: "block py-2 pe-4 ps-3 md:p-2 rounded-sm md:border-0",
   variants: {
@@ -55,14 +61,9 @@ export const navbarLi = tv({
   defaultVariants: {}
 });
 
-export type NavbarLiTheme = ClassValue;
-
 export const navbarHamburger = tv({
   slots: {
     base: "ms-3 md:hidden",
     menu: "h-6 w-6 shrink-0"
   }
 });
-
-export type NavbarHamburgerSlots = keyof typeof navbarHamburger.slots;
-export type NavbarHamburgerTheme = Partial<Record<NavbarHamburgerSlots, ClassValue>>;

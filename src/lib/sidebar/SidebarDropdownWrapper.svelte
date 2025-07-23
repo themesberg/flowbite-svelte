@@ -6,14 +6,22 @@
   import { sidebarDropdownWrapper, type SidebarDropdownWrapperTheme } from ".";
   import type { SidebarDropdownWrapperProps, ParamsType } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   type SidebarContext = {
     selected?: Writable<object | null>;
     isSingle: boolean;
   };
 
-  let { children, arrowup, arrowdown, icon, isOpen = $bindable(false), btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, onclick, ...restProps }: SidebarDropdownWrapperProps = $props();
+  let { children, arrowup, arrowdown, icon, isOpen = $bindable(false), btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, classes, onclick, ...restProps }: SidebarDropdownWrapperProps = $props();
+
+  warnThemeDeprecation("SidebarDropdownWrapper", { btnClass, spanClass, ulClass, svgClass }, { btnClass: "btn", spanClass: "span", ulClass: "ul", svgClass: "svg" });
+  const styling = $derived(classes ?? {
+    btn: btnClass,
+    span: spanClass,
+    ul: ulClass,
+    svg: svgClass
+  });
 
   const theme = getTheme("sidebarDropdownWrapper");
 
@@ -52,29 +60,29 @@
 </script>
 
 <li class={base({ class: clsx((theme as SidebarDropdownWrapperTheme)?.base, className) })}>
-  <button {...restProps} onclick={handleDropdown} type="button" class={btn({ class: clsx((theme as SidebarDropdownWrapperTheme)?.btn, btnClass) })} aria-controls="sidebar-dropdown">
+  <button {...restProps} onclick={handleDropdown} type="button" class={btn({ class: clsx((theme as SidebarDropdownWrapperTheme)?.btn, styling.btn) })} aria-controls="sidebar-dropdown">
     {#if icon}
       {@render icon()}
     {/if}
-    <span class={span({ class: clsx((theme as SidebarDropdownWrapperTheme)?.span, spanClass) })}>{label}</span>
+    <span class={span({ class: clsx((theme as SidebarDropdownWrapperTheme)?.span, styling.span) })}>{label}</span>
     {#if isOpen}
       {#if arrowup}
         {@render arrowup()}
       {:else}
-        <svg class={svg({ class: clsx((theme as SidebarDropdownWrapperTheme)?.svg, svgClass) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <svg class={svg({ class: clsx((theme as SidebarDropdownWrapperTheme)?.svg, styling.svg) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
         </svg>
       {/if}
     {:else if arrowdown}
       {@render arrowdown()}
     {:else}
-      <svg class={svg({ class: clsx((theme as SidebarDropdownWrapperTheme)?.svg, svgClass) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+      <svg class={svg({ class: clsx((theme as SidebarDropdownWrapperTheme)?.svg, styling.svg) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
       </svg>
     {/if}
   </button>
   {#if isOpen}
-    <ul class={ul({ class: clsx((theme as SidebarDropdownWrapperTheme)?.ul, ulClass) })} transition:transition={params as ParamsType}>
+    <ul class={ul({ class: clsx((theme as SidebarDropdownWrapperTheme)?.ul, styling.ul) })} transition:transition={params as ParamsType}>
       {@render children()}
     </ul>
   {/if}

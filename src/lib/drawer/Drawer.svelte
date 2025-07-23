@@ -9,7 +9,7 @@
   let { children, hidden = $bindable(), closeDrawer = () => (hidden = true), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, classes, transitionParams, transitionType = fly, bodyScrolling = false, ...restProps }: DrawerProps = $props();
 
   warnThemeDeprecation("Drawer", { backdropClass }, { backdropClass: "backdrop" });
-  let styling = $derived(classes ?? { backdrop: backdropClass });
+  const styling = $derived(classes ?? { backdrop: backdropClass });
 
   const theme = getTheme("drawer");
 

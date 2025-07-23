@@ -7,7 +7,7 @@
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, ...restProps }: DesktopProps = $props();
 
   warnThemeDeprecation("DesktopMockup", { divClass, div2Class, div3Class, div4Class }, { divClass: "class", div2Class: "inner", div3Class: "bot", div4Class: "botUnder" });
-  let styling = $derived(
+  const styling = $derived(
     classes ?? {
       inner: div2Class,
       bot: div3Class,

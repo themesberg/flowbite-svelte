@@ -8,7 +8,7 @@
 
   warnThemeDeprecation("BottomNavHeader", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
 
-  let styling = $derived(classes ?? { innerDiv: innerClass });
+  const styling = $derived(classes ?? { innerDiv: innerClass });
 
   // Theme context
   const theme = getTheme("bottomNavHeader");

@@ -7,7 +7,7 @@
   let { closeIcon, children, buttonClass, svgClass, class: className, classes, ...restProps }: DrawerheadProps = $props();
 
   warnThemeDeprecation("Drawerhead", { buttonClass, svgClass }, { buttonClass: "button", svgClass: "svg" });
-  let styling = $derived(classes ?? { button: buttonClass, svg: svgClass });
+  const styling = $derived(classes ?? { button: buttonClass, svg: svgClass });
 
   const theme = getTheme("drawer");
 

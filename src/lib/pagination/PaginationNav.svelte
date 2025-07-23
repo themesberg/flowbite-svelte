@@ -3,7 +3,7 @@
   import { setContext } from "svelte";
   import { paginationNav, type PaginationNavTheme } from "./theme";
   import { type PaginationNavProps, PaginationButton } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   function paginationRange(start: number, end: number): number[] {
     return Array.from({ length: end - start + 1 }, (_, i) => start + i);
@@ -24,10 +24,14 @@
     ariaLabel = "Page navigation",
     size = "default",
     class: className,
+    classes,
     spanClass,
     tableDivClass,
     ...restProps
   }: PaginationNavProps = $props();
+
+  warnThemeDeprecation("PaginationNav", { prevClass, nextClass, spanClass, tableDivClass }, { prevClass: "prev", nextClass:"next", spanClass: "span", tableDivClass: "tableDiv"});
+  const styling = $derived( classes ?? { prev: prevClass, next: nextClass, span: spanClass, tableDiv: tableDivClass });
 
   const theme = getTheme("paginationNav");
 
@@ -53,22 +57,22 @@
     onPageChange(Math.max(currentPage - 1, 1));
   }
 
-  const { base, tableDiv, tableSpan, prevItem, nextItem } = $derived(paginationNav({ layout }));
+  const { base, tableDiv, span, prev, next } = $derived(paginationNav({ layout }));
 </script>
 
 <nav aria-label={ariaLabel} {...restProps}>
   {#if layout === "table"}
-    <div class={tableDiv({ class: clsx((theme as PaginationNavTheme)?.tableDiv, tableDivClass) })}>
-      Showing <span class={tableSpan({ class: clsx((theme as PaginationNavTheme)?.tableSpan, spanClass) })}>{currentPage}</span>
+    <div class={tableDiv({ class: clsx((theme as PaginationNavTheme)?.tableDiv, styling.tableDiv) })}>
+      Showing <span class={span({ class: clsx((theme as PaginationNavTheme)?.span, styling.span) })}>{currentPage}</span>
       of
-      <span class={tableSpan({ class: clsx((theme as PaginationNavTheme)?.tableSpan, spanClass) })}>{totalPages}</span>
+      <span class={span({ class: clsx((theme as PaginationNavTheme)?.span, styling.span) })}>{totalPages}</span>
       Entries
     </div>
   {/if}
 
   <ul class={base({ class: clsx((theme as PaginationNavTheme)?.base, className) })}>
     <li {...restProps}>
-      <PaginationButton onclick={goToPreviousPage} disabled={currentPage === 1} class={prevItem({ class: clsx((theme as PaginationNavTheme)?.prevItem, prevClass) })}>
+      <PaginationButton onclick={goToPreviousPage} disabled={currentPage === 1} class={prev({ class: clsx((theme as PaginationNavTheme)?.prev, styling.prev) })}>
         {#if prevContent}
           {@render prevContent()}
         {:else}
@@ -86,7 +90,7 @@
       {/each}
     {/if}
     <li {...restProps}>
-      <PaginationButton onclick={goToNextPage} disabled={currentPage === totalPages} class={nextItem({ class: clsx((theme as PaginationNavTheme)?.nextItem, nextClass) })}>
+      <PaginationButton onclick={goToNextPage} disabled={currentPage === totalPages} class={next({ class: clsx((theme as PaginationNavTheme)?.next, styling.next) })}>
         {#if nextContent}
           {@render nextContent()}
         {:else}

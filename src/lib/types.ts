@@ -19,12 +19,16 @@ import type { DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
 import type { DropdownItemVariants } from "$lib/dropdown/theme";
 import type { DatepickerVariants } from "$lib/datepicker/theme";
 import type { FooterCopyrightVariants, FooterLinkVariants } from "$lib/footer/theme";
+import type { GalleryVariants } from "$lib/gallery/theme";
 import type { IndicatorVariants } from "$lib/indicator/theme";
 import type { ListgroupItemVariants, ListgroupVariants } from "$lib/list-group/theme";
+import type { MegaMenuVariants } from "$lib/mega-menu/theme";
 import type { ModalVariants } from "$lib/modal/theme";
+import type { NavbarUlVariants, NavbarHamburgerVariants } from "$lib/navbar/theme";
+import type { PaginationNavVariants } from "$lib/pagination/theme";
 import type { PopoverVariants } from "$lib/popover/theme";
-import type { SidebarVariants } from "$lib/sidebar/theme";
-import type { CardPlaceholderVariants, ImagePlaceholderVariants, ListPlaceholderVariants, SkeletonVariants, TextPlaceholderVariants, VideoPlaceholderVariants } from "$lib/skeleton/theme";
+import type { SidebarVariants, SidebarCtaVariants, SidebarBrandVariants, SidebarDropdownWrapperVariants } from "$lib/sidebar/theme";
+import type { CardPlaceholderVariants, ImagePlaceholderVariants, ListPlaceholderVariants, SkeletonVariants, TestimonialPlaceholderVariants, TextPlaceholderVariants, VideoPlaceholderVariants, WidgetPlaceholderVariants } from "$lib/skeleton/theme";
 import type { SpinnerVaraiants } from "$lib/spinner/theme";
 import type { StepIndicatorVariants } from "$lib/stepindicator/theme";
 import type { StepperVariants, ProgressStepperVariants, DetailedStepperVariants, VerticalStepperVariants, BreadcrumbStepperVariants, TimelineStepperVariants } from "$lib/stepper/theme";
@@ -32,6 +36,7 @@ import type { TableVariants } from "$lib/table/theme";
 import type { TabsVaraints } from "$lib/tabs/theme";
 import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
 import type { ProgressbarVariants, ProgressradialVariants } from "$lib/progress/theme";
+import type { RatingVariants, AdvancedRatingVariants, ReviewVariants, ScoreRatingVariants } from "$lib/rating/theme";
 import { timeline } from "$lib/timeline/theme";
 import type { ToastVaraints } from "$lib/toast/theme";
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "$lib/toolbar/theme";
@@ -78,6 +83,7 @@ import type { ApexOptions } from "apexcharts";
 // extend
 import type { ButtonToggleVariants } from "$lib/forms/button-toggle/theme";
 import type { TagsVariants } from "$lib/forms/tags/theme";
+import type { R } from "vitest/dist/chunks/environment.d.cL3nLXbE.js";
 
 // end of component variants
 
@@ -970,7 +976,7 @@ export type ImgType = {
   alt?: string;
 };
 
-export interface GalleryProps extends HTMLAttributes<HTMLDivElement> {
+export interface GalleryProps extends GalleryVariants,HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   figure?: Snippet<[item: ImgType]>;
   items?: HTMLImgAttributes[];
@@ -1033,7 +1039,7 @@ export type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> &
   };
 
 // mega-menu
-export interface MegaMenuProps extends Omit<PopperProps, "children"> {
+export interface MegaMenuProps extends MegaMenuVariants, Omit<PopperProps, "children"> {
   children: Snippet<[{ item: LinkType; index: number }]>;
   extra?: Snippet;
   items?: LinkType[];
@@ -1091,12 +1097,12 @@ export interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
   fluid?: boolean;
 }
 
-export type NavHamburgerProps = ToolbarButtonProps & {
+export type NavHamburgerProps = ToolbarButtonProps & NavbarHamburgerVariants & {
   href?: undefined;
   menuClass?: ClassValue;
 };
 
-export interface NavUlProps extends Omit<HTMLAttributes<HTMLDivElement>, "class"> {
+export interface NavUlProps extends NavbarUlVariants, Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   activeUrl?: string;
   ulClass?: ClassValue;
   hidden?: boolean;
@@ -1153,7 +1159,7 @@ export interface PaginationButtonProps extends PaginationItemVariants, Paginatio
   disabled?: boolean;
 }
 
-export interface PaginationNavProps extends HTMLAttributes<HTMLElement>, PaginationVariants {
+export interface PaginationNavProps extends PaginationNavVariants, HTMLAttributes<HTMLElement>, PaginationVariants {
   prevContent?: Snippet;
   nextContent?: Snippet;
   prevClass?: ClassValue;
@@ -1186,7 +1192,7 @@ export interface PaginationProps extends PaginationVariants, HTMLLiAttributes {
 }
 
 // popover
-export interface PopoverProps extends Omit<PopperProps, "title"> {
+export interface PopoverProps extends PopoverVariants, Omit<PopperProps, "title"> {
   title?: Snippet | string;
   color?: PopoverVariants["color"];
   params?: ParamsType;
@@ -1224,7 +1230,7 @@ export interface ProgressradialProps extends ProgressradialVariants, Omit<HTMLAt
 // rating
 export type RatingItem = { label: string | null | undefined; rating: number };
 
-export interface AdvancedRatingProps {
+export interface AdvancedRatingProps extends AdvancedRatingVariants, HTMLAttributes<HTMLDivElement> {
   rating?: Snippet;
   globalText?: Snippet;
   ratings: RatingItem[];
@@ -1236,7 +1242,7 @@ export interface AdvancedRatingProps {
   unit?: string;
 }
 
-export interface RatingProps extends HTMLAttributes<HTMLDivElement> {
+export interface RatingProps extends RatingVariants, HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
   text?: Snippet;
   size?: number;
@@ -1283,7 +1289,7 @@ export type ReviewType = {
   item3?: string;
 };
 
-export interface ReviewProps extends HTMLAttributes<HTMLElement> {
+export interface ReviewProps extends ReviewVariants, HTMLAttributes<HTMLElement> {
   children: Snippet;
   address?: Snippet;
   item1?: Snippet;
@@ -1299,7 +1305,7 @@ export interface ReviewProps extends HTMLAttributes<HTMLElement> {
   liClass?: ClassValue;
 }
 
-export interface ScoreRatingProps {
+export interface ScoreRatingProps extends ScoreRatingVariants {
   ratings?: { label: string | undefined | null; rating: number }[];
   ratings2?: { label: string | undefined | null; rating: number }[];
   headerLabel?: {
@@ -1356,7 +1362,7 @@ export interface SidebarButtonProps extends HTMLButtonAttributes {
   breakpoint?: SidebarVariants["breakpoint"];
 }
 
-export interface SidebarCtaProps extends HTMLAttributes<HTMLDivElement> {
+export interface SidebarCtaProps extends SidebarCtaVariants, HTMLAttributes<HTMLDivElement> {
   icon?: Snippet;
   divClass?: ClassValue;
   spanClass?: ClassValue;
@@ -1369,13 +1375,13 @@ export interface SiteType {
   img?: string;
 }
 
-export interface SidebarBrandProps extends HTMLAnchorAttributes {
+export interface SidebarBrandProps extends SidebarBrandVariants, HTMLAnchorAttributes {
   site?: SiteType;
   imgClass?: ClassValue;
   spanClass?: ClassValue;
 }
 
-export interface SidebarDropdownWrapperProps extends HTMLButtonAttributes {
+export interface SidebarDropdownWrapperProps extends SidebarDropdownWrapperVariants, HTMLButtonAttributes {
   children: Snippet;
   arrowup?: Snippet;
   arrowdown?: Snippet;
@@ -1410,37 +1416,37 @@ export interface SidebarItemProps extends HTMLAnchorAttributes {
 }
 
 // skeleton
-export interface CardPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+export interface CardPlaceholderProps extends CardPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
   size?: CardPlaceholderVariants["size"];
 }
 
-export interface ImagePlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+export interface ImagePlaceholderProps extends ImagePlaceholderVariants,  HTMLAttributes<HTMLDivElement> {
   size?: ImagePlaceholderVariants["size"];
   rounded?: ImagePlaceholderVariants["rounded"];
   imgOnly?: boolean;
 }
 
-export interface ListPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+export interface ListPlaceholderProps extends ListPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
   itemNumber?: number;
   size?: ListPlaceholderVariants["size"];
   rounded?: ListPlaceholderVariants["rounded"];
 }
 
-export interface SkeletonProps extends HTMLAttributes<HTMLDivElement> {
+export interface SkeletonProps extends SkeletonVariants, HTMLAttributes<HTMLDivElement> {
   size?: SkeletonVariants["size"];
 }
 
-export interface TestimonialPlaceholderProps extends HTMLAttributes<HTMLDivElement> {}
+export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
 
-export interface TextPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+export interface TextPlaceholderProps extends TextPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
   size?: TextPlaceholderVariants["size"];
 }
 
-export interface VideoPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
+export interface VideoPlaceholderProps extends VideoPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
   size?: VideoPlaceholderVariants["size"];
 }
 
-export interface WidgetPlaceholderProps extends HTMLAttributes<HTMLDivElement> {}
+export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
 
 // speeddial
 export interface SpeedCtxType {

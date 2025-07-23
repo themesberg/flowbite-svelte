@@ -1,5 +1,21 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils"
+
+// Variants
+export type RatingVariants = VariantProps<typeof rating> & Classes<typeof rating>;
+export type AdvancedRatingVariants = VariantProps<typeof advancedRating> & Classes<typeof advancedRating>;
+export type ReviewVariants = VariantProps<typeof review> & Classes<typeof review>;
+export type ScoreRatingVariants = VariantProps<typeof scoreRating> & Classes<typeof scoreRating>;
+// Theme
+export type AdvancedRatingSlots = keyof typeof advancedRating.slots;
+export type AdvancedRatingTheme = Partial<Record<AdvancedRatingSlots, ClassValue>>;
+export type RatingSlots = keyof typeof rating.slots;
+export type RatingTheme = Partial<Record<RatingSlots, ClassValue>>;
+export type ReviewSlots = keyof typeof review.slots;
+export type ReviewTheme = Partial<Record<ReviewSlots, ClassValue>>;
+export type ScoreRatingSlots = keyof typeof scoreRating.slots;
+export type ScoreRatingTheme = Partial<Record<ScoreRatingSlots, ClassValue>>;
 
 export const advancedRating = tv({
   // divClass = 'flex items-center mt-4', spanClass = 'text-sm font-medium text-gray-600 dark:text-gray-500', div2Class = 'mx-4 w-2/4 h-5 bg-gray-200 rounded-sm dark:bg-gray-700', div3Class = 'h-5 bg-yellow-400 rounded-sm', span2Class = 'text-sm font-medium text-gray-600 dark:text-gray-500',
@@ -12,18 +28,12 @@ export const advancedRating = tv({
   }
 });
 
-export type AdvancedRatingSlots = keyof typeof advancedRating.slots;
-export type AdvancedRatingTheme = Partial<Record<AdvancedRatingSlots, ClassValue>>;
-
 export const rating = tv({
   slots: {
     base: "flex items-center",
     p: "ms-2 text-sm font-bold text-gray-900 dark:text-white"
   }
 });
-
-export type RatingSlots = keyof typeof rating.slots;
-export type RatingTheme = Partial<Record<RatingSlots, ClassValue>>;
 
 export const review = tv({
   slots: {
@@ -37,9 +47,6 @@ export const review = tv({
   }
 });
 
-export type ReviewSlots = keyof typeof review.slots;
-export type ReviewTheme = Partial<Record<ReviewSlots, ClassValue>>;
-
 export const scoreRating = tv({
   slots: {
     desc1: "bg-primary-100 w-8 text-primary-800 text-sm font-semibold inline-flex items-center p-1.5 rounded-sm dark:bg-primary-200 dark:text-primary-800",
@@ -51,5 +58,3 @@ export const scoreRating = tv({
   }
 });
 
-export type ScoreRatingSlots = keyof typeof scoreRating.slots;
-export type ScoreRatingTheme = Partial<Record<ScoreRatingSlots, ClassValue>>;

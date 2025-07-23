@@ -9,7 +9,7 @@
   let { value = $bindable([]), placeholder = "Enter tags", class: className, classes, itemClass, spanClass, closeClass, inputClass, closeBtnSize = "xs", unique = false, availableTags = [], showHelper = false, showAvailableTags = false, allowNewTags = true, ...restProps }: TagsProps = $props();
 
   warnThemeDeprecation("Tags", { itemClass, spanClass, closeClass, inputClass }, { itemClass: "tag", spanClass: "span", closeClass: "close", inputClass: "input" });
-  let styling = $derived({
+  const styling = $derived(classes ?? {
     tag: itemClass,
     span: spanClass,
     close: closeClass,

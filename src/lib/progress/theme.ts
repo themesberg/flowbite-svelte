@@ -1,102 +1,106 @@
-import type { ClassValue } from "svelte/elements";
 import { tv, type VariantProps } from "tailwind-variants";
+import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type ProgressbarClasses = Partial<{
-  [K in keyof (typeof progressbar)["slots"]]: ClassValue;
-}>;
-
-export type ProgressbarVariants = VariantProps<typeof progressbar> & { classes?: ProgressbarClasses };
+// Variants
+export type ProgressbarVariants = VariantProps<typeof progressbar> & Classes<typeof progressbar>;
+export type ProgressradialVariants = VariantProps<typeof progressradial> & Classes<typeof progressradial>;
+// Theme
+export type ProgressbarSlots = keyof typeof progressbar.slots;
+export type ProgressbarTheme = Partial<Record<ProgressbarSlots, ClassValue>>;
+export type ProgressradialSlots = keyof typeof progressradial.slots;
+export type ProgressradialTheme = Partial<Record<ProgressradialSlots, ClassValue>>;
 
 export const progressbar = tv({
   slots: {
     base: "w-full bg-gray-200 rounded-full dark:bg-gray-700",
-    labelInsideDiv: "text-primary-100 text-xs font-medium text-center leading-none rounded-full",
-    insideDiv: "rounded-full",
-    outsideDiv: "mb-1 flex justify-between",
-    oustsideSpan: "text-base font-medium dark:text-white",
-    outsideProgress: "text-sm font-medium dark:text-white"
+    label: "text-primary-100 text-xs font-medium text-center leading-none rounded-full",
+    inside: "rounded-full",
+    outside: "mb-1 flex justify-between",
+    span: "text-base font-medium dark:text-white",
+    progressCls: "text-sm font-medium dark:text-white"
   },
   variants: {
     color: {
       primary: {
-        labelInsideDiv: "bg-primary-600",
-        insideDiv: "bg-primary-600"
+        label: "bg-primary-600",
+        inside: "bg-primary-600"
       },
       secondary: {
-        labelInsideDiv: "bg-secondary-600",
-        insideDiv: "bg-secondary-600"
+        label: "bg-secondary-600",
+        inside: "bg-secondary-600"
       },
       gray: {
-        labelInsideDiv: "bg-gray-600 dark:bg-gray-300",
-        insideDiv: "bg-gray-600 dark:bg-gray-300"
+        label: "bg-gray-600 dark:bg-gray-300",
+        inside: "bg-gray-600 dark:bg-gray-300"
       },
       red: {
-        labelInsideDiv: "bg-red-600 dark:bg-red-500",
-        insideDiv: "bg-red-600 dark:bg-red-500"
+        label: "bg-red-600 dark:bg-red-500",
+        inside: "bg-red-600 dark:bg-red-500"
       },
       orange: {
-        labelInsideDiv: "bg-orange-600 dark:bg-orange-500",
-        insideDiv: "bg-orange-600 dark:bg-orange-500"
+        label: "bg-orange-600 dark:bg-orange-500",
+        inside: "bg-orange-600 dark:bg-orange-500"
       },
       amber: {
-        labelInsideDiv: "bg-amber-600 dark:bg-amber-500",
-        insideDiv: "bg-amber-600 dark:bg-amber-500"
+        label: "bg-amber-600 dark:bg-amber-500",
+        inside: "bg-amber-600 dark:bg-amber-500"
       },
       yellow: {
-        labelInsideDiv: "bg-yellow-400",
-        insideDiv: "bg-yellow-400"
+        label: "bg-yellow-400",
+        inside: "bg-yellow-400"
       },
       lime: {
-        labelInsideDiv: "bg-lime-600 dark:bg-lime-500",
-        insideDiv: "bg-lime-600 dark:bg-lime-500"
+        label: "bg-lime-600 dark:bg-lime-500",
+        inside: "bg-lime-600 dark:bg-lime-500"
       },
       green: {
-        labelInsideDiv: "bg-green-600 dark:bg-green-500",
-        insideDiv: "bg-green-600 dark:bg-green-500"
+        label: "bg-green-600 dark:bg-green-500",
+        inside: "bg-green-600 dark:bg-green-500"
       },
       emerald: {
-        labelInsideDiv: "bg-emerald-600 dark:bg-emerald-500",
-        insideDiv: "bg-emerald-600 dark:bg-emerald-500"
+        label: "bg-emerald-600 dark:bg-emerald-500",
+        inside: "bg-emerald-600 dark:bg-emerald-500"
       },
       teal: {
-        labelInsideDiv: "bg-teal-600 dark:bg-teal-500",
-        insideDiv: "bg-teal-600 dark:bg-teal-500"
+        label: "bg-teal-600 dark:bg-teal-500",
+        inside: "bg-teal-600 dark:bg-teal-500"
       },
       cyan: {
-        labelInsideDiv: "bg-cyan-600 dark:bg-cyan-500",
-        insideDiv: "bg-cyan-600 dark:bg-cyan-500"
+        label: "bg-cyan-600 dark:bg-cyan-500",
+        inside: "bg-cyan-600 dark:bg-cyan-500"
       },
       sky: {
-        labelInsideDiv: "bg-sky-600 dark:bg-sky-500",
-        insideDiv: "bg-sky-600 dark:bg-sky-500"
+        label: "bg-sky-600 dark:bg-sky-500",
+        inside: "bg-sky-600 dark:bg-sky-500"
       },
       blue: {
-        labelInsideDiv: "bg-blue-600",
-        insideDiv: "bg-blue-600"
+        label: "bg-blue-600",
+        inside: "bg-blue-600"
       },
       indigo: {
-        labelInsideDiv: "bg-indigo-600 dark:bg-indigo-500",
-        insideDiv: "bg-indigo-600 dark:bg-indigo-500"
+        label: "bg-indigo-600 dark:bg-indigo-500",
+        inside: "bg-indigo-600 dark:bg-indigo-500"
       },
       violet: {
-        labelInsideDiv: "bg-violet-600 dark:bg-violet-500",
-        insideDiv: "bg-violet-600 dark:bg-violet-500"
+        label: "bg-violet-600 dark:bg-violet-500",
+        inside: "bg-violet-600 dark:bg-violet-500"
       },
       purple: {
-        labelInsideDiv: "bg-purple-600 dark:bg-purple-500",
-        insideDiv: "bg-purple-600 dark:bg-purple-500"
+        label: "bg-purple-600 dark:bg-purple-500",
+        inside: "bg-purple-600 dark:bg-purple-500"
       },
       fuchsia: {
-        labelInsideDiv: "bg-fuchsia-600 dark:bg-fuchsia-500",
-        insideDiv: "bg-fuchsia-600 dark:bg-fuchsia-500"
+        label: "bg-fuchsia-600 dark:bg-fuchsia-500",
+        inside: "bg-fuchsia-600 dark:bg-fuchsia-500"
       },
       pink: {
-        labelInsideDiv: "bg-pink-600 dark:bg-pink-500",
-        insideDiv: "bg-pink-600 dark:bg-pink-500"
+        label: "bg-pink-600 dark:bg-pink-500",
+        inside: "bg-pink-600 dark:bg-pink-500"
       },
       rose: {
-        labelInsideDiv: "bg-rose-600 dark:bg-rose-500",
-        insideDiv: "bg-rose-600 dark:bg-rose-500"
+        label: "bg-rose-600 dark:bg-rose-500",
+        inside: "bg-rose-600 dark:bg-rose-500"
       }
     },
     labelInside: {
@@ -109,7 +113,7 @@ export const progressbar = tv({
       labelInside: true,
       class: {
         base: "text-primary-100 text-xs font-medium text-center leading-none rounded-full",
-        labelInsideDiv: "p-0.5"
+        label: "p-0.5"
       }
     },
     {
@@ -123,105 +127,97 @@ export const progressbar = tv({
   }
 });
 
-export type ProgressbarSlots = keyof typeof progressbar.slots;
-export type ProgressbarTheme = Partial<Record<ProgressbarSlots, ClassValue>>;
-
-export type ProgressradialClasses = Partial<{
-  [K in keyof (typeof progressradial)["slots"]]: ClassValue;
-}>;
-export type ProgressradialVariants = VariantProps<typeof progressradial> & { classes?: ProgressradialClasses };
-
 export const progressradial = tv({
   slots: {
     base: "relative inline-flex",
-    labelInsideDiv: "absolute inset-0 flex items-center justify-center text-sm font-medium",
-    circleBackground: "opacity-25",
-    circleForeground: "transition-all",
-    outsideDiv: "flex flex-col items-center mb-2 text-center",
-    outsideSpan: "text-base font-medium",
-    outsideProgress: "text-sm font-medium ml-1"
+    label: "absolute inset-0 flex items-center justify-center text-sm font-medium",
+    background: "opacity-25",
+    foreground: "transition-all",
+    outside: "flex flex-col items-center mb-2 text-center",
+    span: "text-base font-medium",
+    progressCls: "text-sm font-medium ml-1"
   },
   variants: {
     color: {
       primary: {
-        circleBackground: "stroke-primary-600",
-        circleForeground: "stroke-primary-600"
+        background: "stroke-primary-600",
+        foreground: "stroke-primary-600"
       },
       secondary: {
-        circleBackground: "stroke-secondary-600",
-        circleForeground: "stroke-secondary-600"
+        background: "stroke-secondary-600",
+        foreground: "stroke-secondary-600"
       },
       gray: {
-        circleBackground: "stroke-gray-600 dark:stroke-gray-300",
-        circleForeground: "stroke-gray-600 dark:stroke-gray-300"
+        background: "stroke-gray-600 dark:stroke-gray-300",
+        foreground: "stroke-gray-600 dark:stroke-gray-300"
       },
       red: {
-        circleBackground: "stroke-red-600 dark:stroke-red-500",
-        circleForeground: "stroke-red-600 dark:stroke-red-500"
+        background: "stroke-red-600 dark:stroke-red-500",
+        foreground: "stroke-red-600 dark:stroke-red-500"
       },
       orange: {
-        circleBackground: "stroke-orange-600 dark:stroke-orange-500",
-        circleForeground: "stroke-orange-600 dark:stroke-orange-500"
+        background: "stroke-orange-600 dark:stroke-orange-500",
+        foreground: "stroke-orange-600 dark:stroke-orange-500"
       },
       amber: {
-        circleBackground: "stroke-amber-600 dark:stroke-amber-500",
-        circleForeground: "stroke-amber-600 dark:stroke-amber-500"
+        background: "stroke-amber-600 dark:stroke-amber-500",
+        foreground: "stroke-amber-600 dark:stroke-amber-500"
       },
       yellow: {
-        circleBackground: "stroke-yellow-400",
-        circleForeground: "stroke-yellow-400"
+        background: "stroke-yellow-400",
+        foreground: "stroke-yellow-400"
       },
       lime: {
-        circleBackground: "stroke-lime-600 dark:stroke-lime-500",
-        circleForeground: "stroke-lime-600 dark:stroke-lime-500"
+        background: "stroke-lime-600 dark:stroke-lime-500",
+        foreground: "stroke-lime-600 dark:stroke-lime-500"
       },
       green: {
-        circleBackground: "stroke-green-600 dark:stroke-green-500",
-        circleForeground: "stroke-green-600 dark:stroke-green-500"
+        background: "stroke-green-600 dark:stroke-green-500",
+        foreground: "stroke-green-600 dark:stroke-green-500"
       },
       emerald: {
-        circleBackground: "stroke-emerald-600 dark:stroke-emerald-500",
-        circleForeground: "stroke-emerald-600 dark:stroke-emerald-500"
+        background: "stroke-emerald-600 dark:stroke-emerald-500",
+        foreground: "stroke-emerald-600 dark:stroke-emerald-500"
       },
       teal: {
-        circleBackground: "stroke-teal-600 dark:stroke-teal-500",
-        circleForeground: "stroke-teal-600 dark:stroke-teal-500"
+        background: "stroke-teal-600 dark:stroke-teal-500",
+        foreground: "stroke-teal-600 dark:stroke-teal-500"
       },
       cyan: {
-        circleBackground: "stroke-cyan-600 dark:stroke-cyan-500",
-        circleForeground: "stroke-cyan-600 dark:stroke-cyan-500"
+        background: "stroke-cyan-600 dark:stroke-cyan-500",
+        foreground: "stroke-cyan-600 dark:stroke-cyan-500"
       },
       sky: {
-        circleBackground: "stroke-sky-600 dark:stroke-sky-500",
-        circleForeground: "stroke-sky-600 dark:stroke-sky-500"
+        background: "stroke-sky-600 dark:stroke-sky-500",
+        foreground: "stroke-sky-600 dark:stroke-sky-500"
       },
       blue: {
-        circleBackground: "stroke-blue-600",
-        circleForeground: "stroke-blue-600"
+        background: "stroke-blue-600",
+        foreground: "stroke-blue-600"
       },
       indigo: {
-        circleBackground: "stroke-indigo-600 dark:stroke-indigo-500",
-        circleForeground: "stroke-indigo-600 dark:stroke-indigo-500"
+        background: "stroke-indigo-600 dark:stroke-indigo-500",
+        foreground: "stroke-indigo-600 dark:stroke-indigo-500"
       },
       violet: {
-        circleBackground: "stroke-violet-600 dark:stroke-violet-500",
-        circleForeground: "stroke-violet-600 dark:stroke-violet-500"
+        background: "stroke-violet-600 dark:stroke-violet-500",
+        foreground: "stroke-violet-600 dark:stroke-violet-500"
       },
       purple: {
-        circleBackground: "stroke-purple-600 dark:stroke-purple-500",
-        circleForeground: "stroke-purple-600 dark:stroke-purple-500"
+        background: "stroke-purple-600 dark:stroke-purple-500",
+        foreground: "stroke-purple-600 dark:stroke-purple-500"
       },
       fuchsia: {
-        circleBackground: "stroke-fuchsia-600 dark:stroke-fuchsia-500",
-        circleForeground: "stroke-fuchsia-600 dark:stroke-fuchsia-500"
+        background: "stroke-fuchsia-600 dark:stroke-fuchsia-500",
+        foreground: "stroke-fuchsia-600 dark:stroke-fuchsia-500"
       },
       pink: {
-        circleBackground: "stroke-pink-600 dark:stroke-pink-500",
-        circleForeground: "stroke-pink-600 dark:stroke-pink-500"
+        background: "stroke-pink-600 dark:stroke-pink-500",
+        foreground: "stroke-pink-600 dark:stroke-pink-500"
       },
       rose: {
-        circleBackground: "stroke-rose-600 dark:stroke-rose-500",
-        circleForeground: "stroke-rose-600 dark:stroke-rose-500"
+        background: "stroke-rose-600 dark:stroke-rose-500",
+        foreground: "stroke-rose-600 dark:stroke-rose-500"
       }
     },
     labelInside: {
@@ -229,6 +225,3 @@ export const progressradial = tv({
     }
   }
 });
-
-export type ProgressradialSlots = keyof typeof progressradial.slots;
-export type ProgressradialTheme = Partial<Record<ProgressradialSlots, ClassValue>>;

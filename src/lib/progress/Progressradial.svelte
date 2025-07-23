@@ -15,7 +15,7 @@
     easing
   });
 
-  const { base, labelInsideDiv, circleBackground, circleForeground, outsideDiv, outsideSpan, outsideProgress } = $derived(
+  const { base, label, background, foreground, outside, span, progressCls } = $derived(
     progressradial({
       color,
       labelInside
@@ -38,23 +38,23 @@
 
 <div class="flex flex-col items-center">
   {#if labelOutside}
-    <div class={outsideDiv({ class: clsx((theme as ProgressradialTheme)?.outsideDiv, classes?.outsideDiv) })}>
-      <span class={outsideSpan({ class: clsx((theme as ProgressradialTheme)?.outsideSpan, classes?.outsideSpan) })}>{labelOutside}</span>
-      <span class={outsideProgress({ class: clsx((theme as ProgressradialTheme)?.outsideProgress, classes?.outsideProgress) })}>{formattedProgress}%</span>
+    <div class={outside({ class: clsx((theme as ProgressradialTheme)?.outside, classes?.outside) })}>
+      <span class={span({ class: clsx((theme as ProgressradialTheme)?.span, classes?.span) })}>{labelOutside}</span>
+      <span class={progressCls({ class: clsx((theme as ProgressradialTheme)?.progressCls, classes?.progressCls) })}>{formattedProgress}%</span>
     </div>
   {/if}
 
-  <div {...restProps} class={base({ class: clsx(size, (theme as ProgressradialTheme)?.base, classes?.base, className) })}>
+  <div {...restProps} class={base({ class: clsx(size, (theme as ProgressradialTheme)?.base, className) })}>
     <svg viewBox="0 0 100 100" class="h-full w-full" style="transform: rotate({rotationAngle}deg)">
       <!-- Background circle -->
-      <circle cx="50" cy="50" r={radius} class={circleBackground({ class: clsx((theme as ProgressradialTheme)?.circleBackground, classes?.circleBackground) })} fill="none" stroke-width={thickness} />
+      <circle cx="50" cy="50" r={radius} class={background({ class: clsx((theme as ProgressradialTheme)?.background, classes?.background) })} fill="none" stroke-width={thickness} />
 
       <!-- Foreground circle (progress indicator) -->
-      <circle cx="50" cy="50" r={radius} class={circleForeground({ class: clsx((theme as ProgressradialTheme)?.circleForeground, classes?.circleForeground) })} fill="none" stroke-width={thickness} stroke-dasharray={circumference} stroke-dashoffset={strokeDashoffset} stroke-linecap="round" />
+      <circle cx="50" cy="50" r={radius} class={foreground({ class: clsx((theme as ProgressradialTheme)?.foreground, classes?.foreground) })} fill="none" stroke-width={thickness} stroke-dasharray={circumference} stroke-dashoffset={strokeDashoffset} stroke-linecap="round" />
     </svg>
 
     {#if labelInside}
-      <div class={labelInsideDiv({ class: clsx((theme as ProgressradialTheme)?.labelInsideDiv, classes?.labelInsideDiv) })}>
+      <div class={label({ class: clsx((theme as ProgressradialTheme)?.label, classes?.label) })}>
         {formattedProgress}%
       </div>
     {/if}

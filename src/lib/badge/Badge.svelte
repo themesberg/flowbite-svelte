@@ -9,7 +9,7 @@
 
   warnThemeDeprecation("Badge", { aClass }, { aClass: "linkClass" });
 
-  let styling = $derived(classes ?? { linkClass: aClass });
+  const styling = $derived(classes ?? { linkClass: aClass });
 
   // Theme context
   const theme = getTheme("badge");

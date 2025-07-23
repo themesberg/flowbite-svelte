@@ -1,5 +1,12 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
+
+// Variants
+export type MegaMenuVariants = VariantProps<typeof megamenu> & Classes<typeof megamenu>;
+// Theme
+export type MegaMenuSlots = keyof typeof megamenu.slots;
+export type MegaMenuTheme = Partial<Record<MegaMenuSlots, ClassValue>>;
 
 export const megamenu = tv({
   slots: {
@@ -12,18 +19,15 @@ export const megamenu = tv({
     full: {
       true: { base: "border-y w-full ml-0 rounded-none" }
     },
-    extra: {
+    hasExtra: {
       true: {}
     }
   },
   compoundVariants: [
     {
       full: true,
-      extra: true,
+      hasExtra: true,
       class: { ul: "grid-cols-2 md:w-2/3" }
     }
   ]
 });
-
-export type MegaMenuSlots = keyof typeof megamenu.slots;
-export type MegaMenuTheme = Partial<Record<MegaMenuSlots, ClassValue>>;

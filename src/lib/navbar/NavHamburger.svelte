@@ -6,9 +6,12 @@
   import { navbarHamburger, type NavbarHamburgerTheme } from "./theme";
   import type { NavbarState, NavHamburgerProps } from "$lib/types";
   import type { MouseEventHandler } from "svelte/elements";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, onclick, menuClass, class: className, name = "Open main menu", ...restProps }: NavHamburgerProps = $props();
+  let { children, onclick, menuClass, class: className, classes, name = "Open main menu", ...restProps }: NavHamburgerProps = $props();
+
+  warnThemeDeprecation("NavHamburger", { menuClass }, { menuClass: "menu" });
+  const styling = $derived( classes ?? { menu: menuClass });
 
   const theme = getTheme("navHamburger");
 
@@ -21,7 +24,7 @@
 </script>
 
 <ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={base({ class: clsx((theme as NavbarHamburgerTheme)?.base, className) })}>
-  <Menu class={menu({ class: clsx((theme as NavbarHamburgerTheme)?.menu, menuClass) })} />
+  <Menu class={menu({ class: clsx((theme as NavbarHamburgerTheme)?.menu, styling.menu) })} />
 </ToolbarButton>
 
 <!--

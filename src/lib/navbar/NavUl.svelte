@@ -7,11 +7,14 @@
   import clsx from "clsx";
   import { navbarUl, type NavbarUlTheme } from "./theme";
   import type { NavbarState, NavUlProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let navState = getContext<NavbarState>("navState");
 
-  let { children, activeUrl, ulClass, slideParams, transition = slide, transitionParams, activeClass, nonActiveClass, respectMotionPreference = true, class: clasName, ...restProps }: NavUlProps = $props();
+  let { children, activeUrl, ulClass, slideParams, transition = slide, transitionParams, activeClass, nonActiveClass, respectMotionPreference = true, class: clasName, classes, ...restProps }: NavUlProps = $props();
+
+  warnThemeDeprecation("NavUl", { ulClass, activeClass, nonActiveClass }, { ulClass: "ul", activeClass: "active", nonActiveClass: "nonActive" });
+  const styling = $derived( classes ?? { ul: ulClass, active: activeClass, nonActive: nonActiveClass });
 
   const theme = getTheme("navUl");
 
@@ -43,8 +46,8 @@
   let { base, ul, active, nonActive } = $derived(navbarUl({ hidden }));
 
   $effect(() => {
-    navState.activeClass = active({ class: clsx((theme as NavbarUlTheme)?.active, activeClass) });
-    navState.nonActiveClass = nonActive({ class: clsx((theme as NavbarUlTheme)?.nonActive, nonActiveClass) });
+    navState.activeClass = active({ class: clsx((theme as NavbarUlTheme)?.active, styling.active) });
+    navState.nonActiveClass = nonActive({ class: clsx((theme as NavbarUlTheme)?.nonActive, styling.nonActive) });
   });
 
   $effect(() => {
@@ -53,7 +56,7 @@
   setContext("activeUrl", activeUrlStore);
 
   let divCls: string = $derived(base({ class: clsx((theme as NavbarUlTheme)?.base, clasName) }));
-  let ulCls: string = $derived(ul({ class: clsx((theme as NavbarUlTheme)?.ul, ulClass) }));
+  let ulCls: string = $derived(ul({ class: clsx((theme as NavbarUlTheme)?.ul, styling.ul) }));
 </script>
 
 {#if !hidden}

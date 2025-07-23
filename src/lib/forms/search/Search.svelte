@@ -7,7 +7,7 @@
   let { children, inputClass, size, placeholder = "Search", value = $bindable(), elementRef = $bindable(), clearable = false, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, class: className, classes, ...restProps }: SearchProps = $props();
 
   warnThemeDeprecation("Search", { inputClass, clearableSvgClass, clearableClass }, { inputClass: "input", clearableSvgClass: "svg", clearableClass: "close" });
-  let styling = $derived({ input: inputClass, svg: clearableSvgClass, close: clearableClass });
+  const styling = $derived( classes ?? { input: inputClass, svg: clearableSvgClass, close: clearableClass });
 
   const theme = getTheme("search");
 

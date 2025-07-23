@@ -2,9 +2,12 @@
   import { toggle, type ToggleTheme } from "./index";
   import clsx from "clsx";
   import { type ToggleProps, Label } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, inputClass, spanClass, offLabel, ...restProps }: ToggleProps = $props();
+  let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, classes, inputClass, spanClass, offLabel, ...restProps }: ToggleProps = $props();
+
+  warnThemeDeprecation("Toggle", { inputClass, spanClass }, { inputClass: "input", spanClass: "span" });
+  const styling = $derived( classes ?? { input: inputClass, span: spanClass });
 
   const theme = getTheme("toggle");
 
@@ -15,8 +18,8 @@
   {#if offLabel}
     {@render offLabel()}
   {/if}
-  <input type="checkbox" bind:checked {value} {...restProps} {disabled} class={input({ class: clsx((theme as ToggleTheme)?.input, inputClass) })} />
-  <span class={span({ class: clsx((theme as ToggleTheme)?.span, spanClass) })}></span>
+  <input type="checkbox" bind:checked {value} {...restProps} {disabled} class={input({ class: clsx((theme as ToggleTheme)?.input, styling.input) })} />
+  <span class={span({ class: clsx((theme as ToggleTheme)?.span, styling.span) })}></span>
   {#if children}
     {@render children()}
   {/if}

@@ -1,7 +1,12 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type PopoverVariants = VariantProps<typeof popover>;
+// Variants
+export type PopoverVariants = VariantProps<typeof popover> & Classes<typeof popover>;
+// Theme
+export type PopoverSlots = keyof typeof popover.slots;
+export type PopoverTheme = Partial<Record<PopoverSlots, ClassValue>>;
 
 export const popover = tv({
   slots: {
@@ -99,6 +104,3 @@ export const popover = tv({
     }
   }
 });
-
-export type PopoverSlots = keyof typeof popover.slots;
-export type PopoverTheme = Partial<Record<PopoverSlots, ClassValue>>;

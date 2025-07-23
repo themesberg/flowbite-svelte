@@ -8,7 +8,7 @@
 
   warnThemeDeprecation("FooterLink", { liClass, aClass }, { liClass: "class", aClass: "link" });
   // link, bySpan
-  let styling = $derived(classes ?? { link: aClass });
+  const styling = $derived(classes ?? { link: aClass });
 
   const theme = getTheme("footerLink");
 

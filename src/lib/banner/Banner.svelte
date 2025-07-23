@@ -9,7 +9,7 @@
 
   warnThemeDeprecation("Banner", { innerClass, closeClass }, { innerClass: "insideDiv", closeClass: "dismissable" });
 
-  let styling = $derived(classes ?? { insideDiv: innerClass, dismissable: closeClass });
+  const styling = $derived(classes ?? { insideDiv: innerClass, dismissable: closeClass });
 
   // Theme context
   const theme = getTheme("banner");

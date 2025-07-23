@@ -6,7 +6,7 @@
 
   let { children, icon, home = false, href, linkClass, spanClass, homeClass, class: className, classes, ...restProps }: BreadcrumbItemProps = $props();
 
-  let styling = $derived(classes ?? {});
+  const styling = $derived(classes ?? {});
 
   const theme = getTheme("breadcrumbItem");
 

@@ -11,7 +11,7 @@
 
   warnThemeDeprecation("ButtonToggle", { iconClass, txtClass, contentClass }, { iconClass: "icon", txtClass: "text", contentClass: "content" });
   // button(className), content, text, icon
-  let styling = $derived(classes ?? { icon: iconClass, text: txtClass, content: contentClass });
+  const styling = $derived(classes ?? { icon: iconClass, text: txtClass, content: contentClass });
 
   const theme = getTheme("buttonToggle");
 

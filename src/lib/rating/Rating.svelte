@@ -3,9 +3,12 @@
   import Star from "./Star.svelte";
   import { rating as ratingVariants, type RatingTheme } from ".";
   import type { RatingProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, text, class: className, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass, ...restProps }: RatingProps = $props();
+  let { children, text, class: className, classes, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass, ...restProps }: RatingProps = $props();
+
+  warnThemeDeprecation("Rating", { pClass }, { pClass: "p" });
+  const styling = $derived(classes ?? { p: pClass });
 
   const theme = getTheme("rating");
 
@@ -20,7 +23,7 @@
 <div {...restProps} class={base({ class: clsx((theme as RatingTheme)?.base, className) })}>
   {#if count && children}
     <Icon fillPercent={100} {size} iconIndex={0} groupId={ratingGroupId} />
-    <p class={p({ class: clsx((theme as RatingTheme)?.p, pClass) })}>{rating}</p>
+    <p class={p({ class: clsx((theme as RatingTheme)?.p, styling.p) })}>{rating}</p>
     {@render children()}
   {:else}
     <!-- eslint-disable @typescript-eslint/no-unused-vars-->

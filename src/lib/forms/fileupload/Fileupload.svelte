@@ -7,7 +7,7 @@
   let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, classes, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, wrapperClass, ...restProps }: FileuploadProps = $props();
 
   warnThemeDeprecation("Fileupload", { wrapperClass, clearableClass, clearableSvgClass }, { wrapperClass: "wrapper", clearableClass: "close", clearableSvgClass: "svg" });
-  let styling = $derived(classes ?? { wrapper: wrapperClass, close: clearableClass, svg: clearableSvgClass });
+  const styling = $derived(classes ?? { wrapper: wrapperClass, close: clearableClass, svg: clearableSvgClass });
 
   const theme = getTheme("fileupload");
 

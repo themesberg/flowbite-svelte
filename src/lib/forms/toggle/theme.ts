@@ -1,7 +1,12 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type ToggleVariants = VariantProps<typeof toggle>;
+// Variants
+export type ToggleVariants = VariantProps<typeof toggle> & Classes<typeof toggle>;
+// Theme
+export type ToggleSlots = keyof typeof toggle.slots;
+export type ToggleTheme = Partial<Record<ToggleSlots, ClassValue>>;
 
 export const toggle = tv({
   slots: {
@@ -99,6 +104,3 @@ export const toggle = tv({
     color: "primary"
   }
 });
-
-export type ToggleSlots = keyof typeof toggle.slots;
-export type ToggleTheme = Partial<Record<ToggleSlots, ClassValue>>;

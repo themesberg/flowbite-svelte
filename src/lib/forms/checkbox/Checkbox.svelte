@@ -7,7 +7,7 @@
   let { children, color = "primary", custom, inline, tinted, rounded, group = $bindable([]), choices = [], checked = $bindable(false), indeterminate, classes, class: className, divClass, disabled = false, value, labelProps = {}, ...restProps }: CheckboxProps = $props();
 
   warnThemeDeprecation("Checkbox", { divClass }, { divClass: "div" });
-  let styling = $derived(classes ?? { div: divClass });
+  const styling = $derived(classes ?? { div: divClass });
 
   const theme = getTheme("checkbox");
 

@@ -92,28 +92,28 @@
     color="green"
     labelOutside="Size h-3"
     classes={{
-      labelInsideDiv: "text-xs font-medium text-center p-0 leading-none rounded-full",
-      base: "my-4"
+      label: "text-xs font-medium text-center p-0 leading-none rounded-full"
     }}
+    class="my-4" 
   />
 
-  <Progressbar progress="50" size="h-10" labelInside color="red" labelOutside="Size h-10" classes={{ labelInsideDiv: "text-2xl font-medium text-center p-2 leading-none rounded-full", base: "my-4" }} />
+  <Progressbar progress="50" size="h-10" labelInside color="red" labelOutside="Size h-10" classes={{ label: "text-2xl font-medium text-center p-2 leading-none rounded-full"}} class="my-4" />
 
-  <Progressbar progress="50" size="h-6" labelInside labelOutside="Size h-6" classes={{ labelInsideDiv: "text-base font-medium text-center p-1 leading-none rounded-full", base: "my-4" }} />
+  <Progressbar progress="50" size="h-6" labelInside labelOutside="Size h-6" classes={{ label: "text-base font-medium text-center p-1 leading-none rounded-full" }} class="my-4" />
 </div>
 
 <h2 class="my-4 text-2xl">Animation</h2>
 <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Progressbar {progress} animate precision={2} labelOutside="With animation" labelInside tweenDuration={1500} easing={sineOut} size="h-6" classes={{ labelInsideDiv: "bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full", base: "mb-8" }} />
-  <Progressbar {progress} labelOutside="Without animation" labelInside size="h-6" classes={{ labelInsideDiv: "bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" }} />
+  <Progressbar {progress} animate precision={2} labelOutside="With animation" labelInside tweenDuration={1500} easing={sineOut} size="h-6" classes={{ label: "bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"}}  class="mb-8" />
+  <Progressbar {progress} labelOutside="Without animation" labelInside size="h-6" classes={{ label: "bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" }} />
   <Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">Randomize</Button>
 </div>
 
 <h2 class="my-4 text-2xl">Custom color</h2>
 <div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <div class="space-y-4">
-    <Progressbar progress="40" classes={{ labelInsideDiv: "bg-sky-600 dark:bg-sky-400" }} />
-    <Progressbar progress="40" classes={{ labelInsideDiv: "bg-lime-600 dark:bg-lime-400" }} />
-    <Progressbar progress="40" classes={{ labelInsideDiv: "bg-pink-600 dark:bg-pink-400" }} />
+    <Progressbar progress="40" classes={{ label: "bg-sky-600 dark:bg-sky-400" }} />
+    <Progressbar progress="40" classes={{ label: "bg-lime-600 dark:bg-lime-400" }} />
+    <Progressbar progress="40" classes={{ label: "bg-pink-600 dark:bg-pink-400" }} />
   </div>
 </div>

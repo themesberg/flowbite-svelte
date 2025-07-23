@@ -8,7 +8,7 @@
 
   // clearableSvgClass, clearableClass, selectClass
   warnThemeDeprecation("Select", { selectClass, clearableSvgClass, clearableClass }, { selectClass: "select", clearableSvgClass: "svg", clearableClass: "close" });
-  let styling = $derived({ select: selectClass, svg: clearableSvgClass, close: clearableClass });
+  const styling = $derived( classes ?? { select: selectClass, svg: clearableSvgClass, close: clearableClass });
 
   const theme = getTheme("select");
 
@@ -32,7 +32,7 @@
 </script>
 
 <div class={base({ class: clsx((theme as SelectTheme)?.base, className) })}>
-  <select {disabled} {...restProps} bind:value bind:this={elementRef} class={select({ class: clsx((theme as SelectTheme)?.select, selectClass) })}>
+  <select {disabled} {...restProps} bind:value bind:this={elementRef} class={select({ class: clsx((theme as SelectTheme)?.select, styling.select) })}>
     {#if placeholder}
       <option disabled selected={value === "" || value === undefined} value="">{placeholder}</option>
     {/if}
@@ -48,6 +48,6 @@
     {/if}
   </select>
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={close({ class: clsx((theme as SelectTheme)?.close, clearableClass) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(clearableSvgClass)} {disabled} />
+    <CloseButton onclick={clearAll} class={close({ class: clsx((theme as SelectTheme)?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} {disabled} />
   {/if}
 </div>

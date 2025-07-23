@@ -103,9 +103,9 @@
 <CodeWrapper>
   <div class="my-8 h-16">
     {#if animation}
-      <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} classes={{ labelInsideDiv: progressSize.class }} animate {tweenDuration} {easing} />
+      <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} classes={{ label: progressSize.class }} animate {tweenDuration} {easing} />
     {:else}
-      <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} classes={{ labelInsideDiv: progressSize.class }} />
+      <Progressbar {progress} size={progressSize.size} color={progressColor} labelOutside={labelContent} {labelInside} classes={{ label: progressSize.class }} />
     {/if}
   </div>
   <div class="mb-8 flex flex-wrap space-x-2">

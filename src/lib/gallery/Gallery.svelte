@@ -2,9 +2,12 @@
   import { gallery, type GalleryTheme } from ".";
   import clsx from "clsx";
   import { type GalleryProps, type ImgType } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, figure, items = [], imgClass, class: className, ...restProps }: GalleryProps = $props();
+  let { children, figure, items = [], imgClass, class: className, classes, ...restProps }: GalleryProps = $props();
+
+  warnThemeDeprecation("Gallery", { imgClass }, { imgClass: "image" });
+  const styling = $derived( classes ?? { image: imgClass });
 
   const theme = getTheme("gallery");
 
@@ -17,7 +20,7 @@
 
 {#snippet _figure(item: ImgType)}
   <div>
-    <img src={item.src} alt={item.alt} class={image({ class: clsx((theme as GalleryTheme)?.image, imgClass) })} {...restProps} />
+    <img src={item.src} alt={item.alt} class={image({ class: clsx((theme as GalleryTheme)?.image, styling.image) })} {...restProps} />
   </div>
 {/snippet}
 

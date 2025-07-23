@@ -2,9 +2,18 @@
   import clsx from "clsx";
   import { advancedRating, type AdvancedRatingTheme } from ".";
   import type { AdvancedRatingProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { rating, globalText, ratings, divClass, spanClass, div2Class, div3Class, span2Class, unit }: AdvancedRatingProps = $props();
+  let { rating, globalText, ratings, divClass, spanClass, div2Class, div3Class, span2Class, class:className, classes, unit }: AdvancedRatingProps = $props();
+
+  warnThemeDeprecation("AdvancedRating", { divClass, spanClass, div2Class, div3Class, span2Class }, { divClass: "class", spanClass: "span", div2Class: "div2", div3Class: "div3", span2Class: "span2" });
+  const styling = $derived(
+    classes??{
+    span: spanClass,
+    div2: div2Class,
+    div3: div3Class,
+    span2: span2Class
+  });
 
   const theme = getTheme("advancedRating");
 
@@ -18,12 +27,12 @@
   {@render globalText()}
 {/if}
 {#each ratings as { label, rating }}
-  <div class={base({ class: clsx((theme as AdvancedRatingTheme)?.base, divClass) })}>
-    <span class={span({ class: clsx((theme as AdvancedRatingTheme)?.span, spanClass) })}>{label}</span>
-    <div class={div2({ class: clsx((theme as AdvancedRatingTheme)?.div2, div2Class) })}>
-      <div class={div3({ class: clsx((theme as AdvancedRatingTheme)?.div3, div3Class) })} style="width: {rating}%"></div>
+  <div class={base({ class: clsx((theme as AdvancedRatingTheme)?.base, className) })}>
+    <span class={span({ class: clsx((theme as AdvancedRatingTheme)?.span, styling.span) })}>{label}</span>
+    <div class={div2({ class: clsx((theme as AdvancedRatingTheme)?.div2, styling.div2) })}>
+      <div class={div3({ class: clsx((theme as AdvancedRatingTheme)?.div3, styling.div3) })} style="width: {rating}%"></div>
     </div>
-    <span class={span2({ class: clsx((theme as AdvancedRatingTheme)?.span2, span2Class) })}>{rating}{unit}</span>
+    <span class={span2({ class: clsx((theme as AdvancedRatingTheme)?.span2, styling.span2) })}>{rating}{unit}</span>
   </div>
 {/each}
 

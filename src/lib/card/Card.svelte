@@ -8,7 +8,7 @@
 
   warnThemeDeprecation("Card", { imgClass }, { imgClass: "image" });
 
-  let styling = $derived(classes ?? { image: imgClass });
+  const styling = $derived(classes ?? { image: imgClass });
 
   const theme = getTheme("card");
 

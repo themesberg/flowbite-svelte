@@ -8,7 +8,7 @@
 
   warnThemeDeprecation("FooterCopyright", { aClass, spanClass, bySpanClass }, { aClass: "link", spanClass: "class", bySpanClass: "bySpan" });
   // link, bySpan
-  let styling = $derived(classes ?? { bySpan: bySpanClass, link: aClass });
+  const styling = $derived(classes ?? { bySpan: bySpanClass, link: aClass });
 
   const theme = getTheme("footerCopyright");
 

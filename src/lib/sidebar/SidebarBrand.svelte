@@ -2,9 +2,15 @@
   import clsx from "clsx";
   import { sidebarBrand, type SidebarBrandTheme } from ".";
   import type { SidebarBrandProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, site, imgClass, spanClass, class: className, ...restProps }: SidebarBrandProps = $props();
+  let { children, site, imgClass, spanClass, class: className, classes, ...restProps }: SidebarBrandProps = $props();
+
+  warnThemeDeprecation("SidebarBrand", { imgClass, spanClass }, { imgClass: "img", spanClass: "span" });
+  const styling = $derived(classes ?? {
+    img: imgClass,
+    span: spanClass
+  });
 
   const theme = getTheme("sidebarBrand");
 
@@ -13,8 +19,8 @@
 
 <a {...restProps} href={site?.href ? site.href : "/"} class={base({ class: clsx((theme as SidebarBrandTheme)?.base, className) })}>
   {#if site}
-    <img src={site.img} class={img({ class: clsx((theme as SidebarBrandTheme)?.img, imgClass) })} alt={site.name} />
-    <span class={span({ class: clsx((theme as SidebarBrandTheme)?.span, spanClass) })}>{site.name}</span>
+    <img src={site.img} class={img({ class: clsx((theme as SidebarBrandTheme)?.img, styling.img) })} alt={site.name} />
+    <span class={span({ class: clsx((theme as SidebarBrandTheme)?.span, styling.span) })}>{site.name}</span>
   {:else if children}
     {@render children()}
   {/if}

@@ -4,11 +4,11 @@
   import { type RangeProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { value = $bindable(), appearance = "none", color = "blue", size = "md", inputClass, ...restProps }: RangeProps = $props();
+  let { value = $bindable(), appearance = "none", color = "blue", size = "md", inputClass, class:className, ...restProps }: RangeProps = $props();
 
   const theme = getTheme("range");
-
-  const inputCls = $derived(range({ appearance, color, size, class: clsx(theme, inputClass) }));
+  // remove inputClass in next major version
+  const inputCls = $derived(range({ appearance, color, size, class: clsx(theme, inputClass, className) }));
 </script>
 
 <input type="range" bind:value {...restProps} class={inputCls} />

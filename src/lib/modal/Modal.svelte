@@ -4,16 +4,20 @@
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
   import { modal as modalStyle, type ModalTheme } from ".";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params, transition = fade, ...restProps }: ModalProps = $props();
+  let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, classes, params, transition = fade, ...restProps }: ModalProps = $props();
 
+  // form, header, footer, body, close
+  warnThemeDeprecation("Modal", { headerClass, bodyClass, footerClass, closeBtnClass }, { bodyClass: "body", headerClass: "header", footerClass: "footer", closeBtnClass: "close" });
+  const styling = $derived( classes ?? { header: headerClass, body: bodyClass, footer: footerClass, close: closeBtnClass });
+  
   const theme = getTheme("modal");
 
   const paramsDefault = { duration: 100, easing: sineIn };
   const paramsOptions = $derived(params ?? paramsDefault);
 
-  const { base, form: formCls, header: headerCls, footer: footerCls, body, closebutton } = $derived(modalStyle({ placement, size }));
+  const { base, form: formCls, header: headerCls, footer: footerCls, body, close: closeCls } = $derived(modalStyle({ placement, size }));
 
   const close = (dlg: HTMLDialogElement) => (open = false);
   // @ts-expect-error: dlg.requestClose may not be supported
@@ -84,27 +88,27 @@
 
 {#snippet content()}
   {#if title || header}
-    <div class={headerCls({ class: clsx((theme as ModalTheme)?.header, headerClass) })}>
+    <div class={headerCls({ class: clsx((theme as ModalTheme)?.header, styling.header) })}>
       {#if title}
         <h3>{title}</h3>
         {#if dismissable && !permanent}
-          <CloseButton type="submit" formnovalidate onclick={close_handler(form)} class={clsx(closeBtnClass)} />
+          <CloseButton type="submit" formnovalidate onclick={close_handler(form)} class={clsx(styling.close)} />
         {/if}
       {:else if header}
         {@render header()}
       {/if}
     </div>
   {/if}
-  <div class={body({ class: clsx((theme as ModalTheme)?.body, bodyClass) })}>
+  <div class={body({ class: clsx((theme as ModalTheme)?.body, styling.body) })}>
     {@render children?.()}
   </div>
   {#if footer}
-    <div class={footerCls({ class: clsx((theme as ModalTheme)?.footer, footerClass) })}>
+    <div class={footerCls({ class: clsx((theme as ModalTheme)?.footer, styling.footer) })}>
       {@render footer()}
     </div>
   {/if}
   {#if dismissable && !permanent && !title}
-    <CloseButton type="submit" formnovalidate onclick={close_handler(form)} class={closebutton({ class: clsx((theme as ModalTheme)?.closebutton, closeBtnClass) })} />
+    <CloseButton type="submit" formnovalidate onclick={close_handler(form)} class={closeCls({ class: clsx((theme as ModalTheme)?.close, styling.close) })} />
   {/if}
 {/snippet}
 

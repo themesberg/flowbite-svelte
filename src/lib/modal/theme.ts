@@ -1,7 +1,12 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type ModalVariants = VariantProps<typeof modal>;
+// Variants
+export type ModalVariants = VariantProps<typeof modal> & Classes<typeof modal>;
+// Theme
+export type ModalSlots = keyof typeof modal.slots;
+export type ModalTheme = Partial<Record<ModalSlots, ClassValue>>;
 
 export const modal = tv({
   slots: {
@@ -10,7 +15,7 @@ export const modal = tv({
     header: "flex items-center p-4 md:p-5 justify-between rounded-t-lg shrink-0 text-xl font-semibold text-gray-900 dark:text-white",
     footer: "flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse rounded-b-lg shrink-0",
     body: "p-4 md:p-5 space-y-4 overflow-y-auto overscroll-contain",
-    closebutton: "absolute top-3 end-2.5"
+    close: "absolute top-3 end-2.5"
   },
   variants: {
     placement: {
@@ -37,6 +42,3 @@ export const modal = tv({
     size: "md"
   }
 });
-
-export type ModalSlots = keyof typeof modal.slots;
-export type ModalTheme = Partial<Record<ModalSlots, ClassValue>>;

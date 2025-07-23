@@ -10,7 +10,7 @@
   // input, left, right, close, combo, comboItem, div, svg
   warnThemeDeprecation("Fileupload", { wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableClass, comboClass }, { wrapperClass: "wrapper", leftClass: "left", rightClass: "right", divClass: "div", clearableSvgClass: "svg", clearableClass: "close", comboClass: "comboItem" });
 
-  let styling = $derived(classes ?? { wrapper: wrapperClass, left: leftClass, right: rightClass, div: divClass, svg: clearableSvgClass, close: clearableClass, combo: comboClass, comboItem: comboItemClass });
+  const styling = $derived(classes ?? { wrapper: wrapperClass, left: leftClass, right: rightClass, div: divClass, svg: clearableSvgClass, close: clearableClass, combo: comboClass, comboItem: comboItemClass });
 
   const theme = getTheme("input");
 

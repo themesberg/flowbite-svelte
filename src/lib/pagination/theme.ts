@@ -1,15 +1,25 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
 
+// Variants
+export type PaginationNavVariants = VariantProps<typeof paginationNav> & Classes<typeof paginationNav>;
+// Theme
 export type PaginationVariants = VariantProps<typeof pagination>;
+export type PaginationNavSlots = keyof typeof paginationNav.slots;
+export type PaginationNavTheme = Partial<Record<PaginationNavSlots, ClassValue>>;
+export type PaginationItemVariants = VariantProps<typeof paginationItem>;
+export type PaginationButtonTheme = ClassValue;
+export type PaginationItemTheme = ClassValue;
+export type PaginationTheme = ClassValue;
 
 export const paginationNav = tv({
   slots: {
     base: "inline-flex -space-x-px rtl:space-x-reverse items-center",
     tableDiv: "flex items-center text-sm mb-4",
-    tableSpan: "font-semibold mx-1",
-    prevItem: "rounded-none",
-    nextItem: "rounded-none"
+    span: "font-semibold mx-1",
+    prev: "rounded-none",
+    next: "rounded-none"
   },
   variants: {
     size: {
@@ -17,9 +27,9 @@ export const paginationNav = tv({
       large: ""
     },
     layout: {
-      table: { prevItem: "rounded-s bg-gray-800 hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white text-white  hover:text-gray-200", nextItem: "text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 hover:text-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" },
-      navigation: { prevItem: "rounded-s-lg", nextItem: "rounded-e-lg" },
-      pagination: { prevItem: "rounded-s-lg", nextItem: "rounded-e-lg" }
+      table: { prev: "rounded-s bg-gray-800 hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white text-white  hover:text-gray-200", next: "text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 hover:text-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" },
+      navigation: { prev: "rounded-s-lg", next: "rounded-e-lg" },
+      pagination: { prev: "rounded-s-lg", next: "rounded-e-lg" }
     }
   },
   defaultVariants: {
@@ -27,11 +37,6 @@ export const paginationNav = tv({
     size: "default"
   }
 });
-
-export type PaginationNavSlots = keyof typeof paginationNav.slots;
-export type PaginationNavTheme = Partial<Record<PaginationNavSlots, ClassValue>>;
-
-export type PaginationItemVariants = VariantProps<typeof paginationItem>;
 
 export const paginationButton = tv({
   base: "flex items-center font-medium",
@@ -72,8 +77,6 @@ export const paginationButton = tv({
   }
 });
 
-export type PaginationButtonTheme = ClassValue;
-
 export const paginationItem = tv({
   base: "flex items-center font-medium",
   variants: {
@@ -109,8 +112,6 @@ export const paginationItem = tv({
   }
 });
 
-export type PaginationItemTheme = ClassValue;
-
 export const pagination = tv({
   base: "inline-flex -space-x-px rtl:space-x-reverse items-center",
   variants: {
@@ -128,5 +129,3 @@ export const pagination = tv({
     size: "default"
   }
 });
-
-export type PaginationTheme = ClassValue;
