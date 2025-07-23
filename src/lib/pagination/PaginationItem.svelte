@@ -32,7 +32,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1182)
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1183)
 ## Props
 @prop children
 @prop size

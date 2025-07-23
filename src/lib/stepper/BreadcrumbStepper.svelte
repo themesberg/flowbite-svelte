@@ -5,28 +5,29 @@
   import { type BreadcrumbStepperProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, steps = [], classes, ...restProps }: BreadcrumbStepperProps = $props();
+  let { children, steps = [], class: className, classes, ...restProps }: BreadcrumbStepperProps = $props();
 
   const theme = getTheme("breadcrumbStepper");
 
   setContext("stepperType", "breadcrumb");
 
-  const base = breadcrumbStepper.stepper({ class: clsx((theme as BreadcrumbStepperTheme)?.stepper) });
+  const { base, item, indicator } = $derived(breadcrumbStepper());
+  // { class: clsx((theme as BreadcrumbStepperTheme)?.stepper) }
 </script>
 
-<ol class={base} {...restProps}>
+<ol class={base({ class: clsx((theme as BreadcrumbStepperTheme)?.base, className) })} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li
-        class={breadcrumbStepper.item({
+        class={item({
           status: step.status,
           hasChevron: index < steps.length - 1,
-          class: clsx((theme as BreadcrumbStepperTheme)?.item)
+          class: clsx((theme as BreadcrumbStepperTheme)?.item, classes?.item)
         })}
       >
-        <span class={breadcrumbStepper.indicator({ status: step.status, class: clsx((theme as BreadcrumbStepperTheme)?.indicator) })}>
+        <span class={indicator({ status: step.status, class: clsx((theme as BreadcrumbStepperTheme)?.indicator, classes?.indicator) })}>
           {#if step.status === "completed" && step.icon}
             <step.icon class={step.iconClass || "h-3 w-3"} />
           {:else}
@@ -54,10 +55,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1593)
+[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1594)
 ## Props
 @prop children
 @prop steps = []
+@prop class:className
 @prop classes
 @prop ...restProps
 -->

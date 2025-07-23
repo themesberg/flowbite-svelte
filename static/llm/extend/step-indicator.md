@@ -145,7 +145,7 @@ Use the `color` prop to change the color of a step indicator.
 
 #### Types
 
-[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1513)
+[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1514)
 
 #### Props
 
@@ -158,6 +158,7 @@ Use the `color` prop to change the color of a step indicator.
 - completedCustom: ""
 - currentCustom: ""
 - class: className
+- classes
 
 
 ### StepIndicator styling

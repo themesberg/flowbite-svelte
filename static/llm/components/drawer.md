@@ -595,7 +595,7 @@ By default, body scrolling is disabled when the drawer is visible, however, you 
 
 #### Types
 
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L562)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L563)
 
 #### Props
 
@@ -618,7 +618,7 @@ By default, body scrolling is disabled when the drawer is visible, however, you 
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L573)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L574)
 
 #### Props
 

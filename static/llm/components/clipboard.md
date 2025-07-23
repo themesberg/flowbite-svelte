@@ -378,7 +378,7 @@ Use this example to show an input field where you can copy the URL of the curren
 
 #### Types
 
-[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L437)
+[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L438)
 
 #### Props
 

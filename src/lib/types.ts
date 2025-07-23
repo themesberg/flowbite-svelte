@@ -29,6 +29,7 @@ import type { PaginationNavVariants } from "$lib/pagination/theme";
 import type { PopoverVariants } from "$lib/popover/theme";
 import type { SidebarVariants, SidebarCtaVariants, SidebarBrandVariants, SidebarDropdownWrapperVariants } from "$lib/sidebar/theme";
 import type { CardPlaceholderVariants, ImagePlaceholderVariants, ListPlaceholderVariants, SkeletonVariants, TestimonialPlaceholderVariants, TextPlaceholderVariants, VideoPlaceholderVariants, WidgetPlaceholderVariants } from "$lib/skeleton/theme";
+import type { SpeedDialVariants, SpeedDialButtonVariants } from "$lib/speed-dial/theme";
 import type { SpinnerVaraiants } from "$lib/spinner/theme";
 import type { StepIndicatorVariants } from "$lib/stepindicator/theme";
 import type { StepperVariants, ProgressStepperVariants, DetailedStepperVariants, VerticalStepperVariants, BreadcrumbStepperVariants, TimelineStepperVariants } from "$lib/stepper/theme";
@@ -1479,27 +1480,29 @@ export type GradientSpeedDialTriggerProps = BaseSpeedDialTriggerProps & {
 // Union type that forces TypeScript to check properly
 export type SpeedDialTriggerProps = RegularSpeedDialTriggerProps | GradientSpeedDialTriggerProps;
 
-export type SpeedDialProps = PopperProps & {
-  children: Snippet;
-  button?: Snippet;
-  popperClass?: ClassValue;
-  placement?: Placement;
-  tooltip?: Placement | "none";
-  trigger?: PopperProps["trigger"];
-  textOutside?: boolean;
-  pill?: boolean;
-  ontoggle?: PopperProps["ontoggle"];
-  onbeforetoggle?: PopperProps["onbeforetoggle"];
-  isOpen?: boolean;
-};
+export type SpeedDialProps = PopperProps &
+  SpeedDialVariants & {
+    children: Snippet;
+    button?: Snippet;
+    popperClass?: ClassValue;
+    placement?: Placement;
+    tooltip?: Placement | "none";
+    trigger?: PopperProps["trigger"];
+    textOutside?: boolean;
+    pill?: boolean;
+    ontoggle?: PopperProps["ontoggle"];
+    onbeforetoggle?: PopperProps["onbeforetoggle"];
+    isOpen?: boolean;
+  };
 
-export type SpeedDialButtonProps = ButtonProps & {
-  name?: string;
-  tooltip?: Placement | "none";
-  pill?: boolean;
-  textOutside?: boolean;
-  textClass?: ClassValue;
-};
+export type SpeedDialButtonProps = ButtonProps &
+  SpeedDialButtonVariants & {
+    name?: string;
+    tooltip?: Placement | "none";
+    pill?: boolean;
+    textOutside?: boolean;
+    textClass?: ClassValue;
+  };
 
 // spinner
 export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
@@ -1510,13 +1513,13 @@ export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
 }
 
 // stepindicator
-export interface StepIndicatorProps extends HTMLAttributes<HTMLElement> {
+export interface StepIndicatorProps extends StepIndicatorVariants, HTMLAttributes<HTMLElement> {
   steps?: string[];
   currentStep?: number;
-  size?: StepIndicatorVariants["size"];
+  // size?: StepIndicatorVariants["size"];
   color?: StepIndicatorVariants["color"] | "custom";
-  glow?: StepIndicatorVariants["glow"];
-  hideLabel?: StepIndicatorVariants["hideLabel"];
+  // glow?: StepIndicatorVariants["glow"];
+  // hideLabel?: StepIndicatorVariants["hideLabel"];
   completedCustom?: string;
   currentCustom?: string;
 }
@@ -1532,7 +1535,7 @@ export interface Step {
   descriptionClass?: ClassValue;
 }
 
-export interface StepperProps extends StepperVariants {
+export interface StepperProps extends HTMLOlAttributes, StepperVariants {
   children?: Snippet;
   steps?: Step[];
 }
@@ -1544,7 +1547,7 @@ export interface ProgressStep {
   iconClass?: ClassValue;
 }
 
-export interface ProgressStepperProps extends ProgressStepperVariants {
+export interface ProgressStepperProps extends HTMLOlAttributes, ProgressStepperVariants {
   children?: Snippet;
   steps?: ProgressStep[];
 }
@@ -1559,7 +1562,7 @@ export interface DetailedStep {
   iconClass?: ClassValue;
 }
 
-export interface DetailedStepperProps extends DetailedStepperVariants {
+export interface DetailedStepperProps extends HTMLOlAttributes, DetailedStepperVariants {
   children?: Snippet;
   steps?: DetailedStep[];
   contentClass?: ClassValue;
@@ -1574,7 +1577,7 @@ export interface VerticalStep {
   iconClass?: ClassValue;
 }
 
-export interface VerticalStepperProps extends VerticalStepperVariants {
+export interface VerticalStepperProps extends HTMLOlAttributes, VerticalStepperVariants {
   children?: Snippet;
   steps?: VerticalStep[];
   liClass?: ClassValue;
@@ -1590,7 +1593,7 @@ export interface BreadcrumbStep {
   iconClass?: ClassValue;
 }
 
-export interface BreadcrumbStepperProps extends BreadcrumbStepperVariants {
+export interface BreadcrumbStepperProps extends BreadcrumbStepperVariants, HTMLOlAttributes {
   children?: Snippet;
   steps?: BreadcrumbStep[];
 }
@@ -1604,7 +1607,7 @@ export interface TimelineStep {
   iconClass?: ClassValue;
 }
 
-export interface TimelineStepperProps extends TimelineStepperVariants {
+export interface TimelineStepperProps extends HTMLOlAttributes, TimelineStepperVariants {
   children?: Snippet;
   steps?: TimelineStep[];
   contentClass?: ClassValue;

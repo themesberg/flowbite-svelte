@@ -5,20 +5,22 @@
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, steps = [], classes, contentClass, ...restProps }: TimelineStepperProps = $props();
+  let { children, steps = [], class: className, classes, contentClass, ...restProps }: TimelineStepperProps = $props();
 
   const theme = getTheme("timelineStepper");
 
   setContext("stepperType", "timeline");
+
+  const { base, item, circle } = $derived(timelineStepper());
 </script>
 
-<ol class={timelineStepper.base({ class: clsx((theme as TimelineStepperTheme)?.base, classes?.timelinestepper) })} {...restProps}>
+<ol class={base({ class: clsx((theme as TimelineStepperTheme)?.base, className) })} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
-      <li class={timelineStepper.item({ isLast: index === steps.length - 1, class: clsx((theme as TimelineStepperTheme)?.item, classes?.timelinestepperitem) })}>
-        <span class={timelineStepper.circle({ status: step.status, class: clsx((theme as TimelineStepperTheme)?.circle, classes?.timelinesteppercircle) })}>
+      <li class={item({ isLast: index === steps.length - 1, class: clsx((theme as TimelineStepperTheme)?.item, classes?.item) })}>
+        <span class={circle({ status: step.status, class: clsx((theme as TimelineStepperTheme)?.circle, classes?.circle) })}>
           {#if step.status === "completed"}
             {#if step.icon}
               <step.icon class={clsx(step.iconClass) || "h-3.5 w-3.5"} />
@@ -50,10 +52,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1607)
+[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1608)
 ## Props
 @prop children
 @prop steps = []
+@prop class:className
 @prop classes
 @prop contentClass
 @prop ...restProps

@@ -5,21 +5,23 @@
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, steps = [], liClass, classes, ...restProps }: VerticalStepperProps = $props();
+  let { children, steps = [], liClass, class: className, classes, ...restProps }: VerticalStepperProps = $props();
 
   const theme = getTheme("veticalStepper");
 
   setContext("stepperType", "vertical");
+
+  const { base, card, content } = $derived(verticalStepper());
 </script>
 
-<ol class={verticalStepper.stepper({ class: (theme as VerticalStepperTheme)?.stepper })} {...restProps}>
+<ol class={base({ class: clsx((theme as VerticalStepperTheme)?.base, className) })} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li class={clsx(liClass)}>
-        <div class={verticalStepper.card({ status: step.status, class: clsx((theme as VerticalStepperTheme)?.card, classes?.verticalsteppercard) })} role="alert">
-          <div class={verticalStepper.content({ class: clsx((theme as VerticalStepperTheme)?.content, classes?.verticalsteppercontent) })}>
+        <div class={card({ status: step.status, class: clsx((theme as VerticalStepperTheme)?.card, classes?.card) })} role="alert">
+          <div class={content({ class: clsx((theme as VerticalStepperTheme)?.content, classes?.content) })}>
             <span class="sr-only">{step.label}</span>
             <h3 class="font-medium">{step.id}. {step.label}</h3>
             {#if step.status === "completed"}
@@ -50,11 +52,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1577)
+[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1578)
 ## Props
 @prop children
 @prop steps = []
 @prop liClass
+@prop class:className
 @prop classes
 @prop ...restProps
 -->

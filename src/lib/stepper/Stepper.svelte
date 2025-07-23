@@ -5,30 +5,32 @@
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, steps = [], classes, ...restProps }: StepperProps = $props();
+  let { children, steps = [], class: className, classes, ...restProps }: StepperProps = $props();
 
   const theme = getTheme("stepper");
 
   setContext("stepperType", "stepper");
+
+  const { base, item, content } = $derived(stepper());
 </script>
 
-<ol {...restProps} class={stepper.base({ class: clsx((theme as StepperTheme)?.base, classes?.stepper) })}>
+<ol {...restProps} class={base({ class: clsx((theme as StepperTheme)?.base, className) })}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li
-        class={stepper.item({
+        class={item({
           status: step.status,
           isLast: index === steps.length - 1,
-          class: clsx((theme as StepperTheme)?.item, classes?.stepperitem)
+          class: clsx((theme as StepperTheme)?.item, classes?.item)
         })}
       >
         <span
-          class={stepper.content({
+          class={content({
             status: step.status,
             isLast: index === steps.length - 1,
-            class: clsx((theme as StepperTheme)?.content, classes?.steppercontent)
+            class: clsx((theme as StepperTheme)?.content, classes?.content)
           })}
         >
           {#if step.status === "completed"}
@@ -56,10 +58,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1535)
+[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1536)
 ## Props
 @prop children
 @prop steps = []
+@prop class:className
 @prop classes
 @prop ...restProps
 -->

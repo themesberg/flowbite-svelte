@@ -306,7 +306,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1234)
+[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1235)
 
 #### Props
 
@@ -326,7 +326,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1320)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1321)
 
 #### Props
 
@@ -345,7 +345,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1320)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1321)
 
 #### Props
 
@@ -363,7 +363,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1246)
+[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1247)
 
 #### Props
 
@@ -382,7 +382,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingCommentProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1257)
+[RatingCommentProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1258)
 
 #### Props
 
@@ -396,7 +396,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1293)
+[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1294)
 
 #### Props
 
@@ -420,7 +420,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[ScoreRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1309)
+[ScoreRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1310)
 
 #### Props
 
@@ -433,7 +433,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1320)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1321)
 
 #### Props
 
@@ -451,7 +451,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1320)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1321)
 
 #### Props
 

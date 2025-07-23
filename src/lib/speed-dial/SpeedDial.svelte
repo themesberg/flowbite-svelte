@@ -5,9 +5,16 @@
   import { setContext } from "svelte";
   import { speedDial, type SpeedDialTheme } from "./theme";
   import type { SpeedDialProps, SpeedCtxType } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, popperClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, class: className, isOpen = $bindable(false), ...restProps }: SpeedDialProps = $props();
+  let { children, popperClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, class: className, classes, isOpen = $bindable(false), ...restProps }: SpeedDialProps = $props();
+
+  warnThemeDeprecation("SpeedDial", { popperClass: "popper" });
+  const styling = $derived(
+    classes ?? {
+      popper: popperClass
+    }
+  );
 
   const theme = getTheme("speedDial");
 
@@ -19,7 +26,7 @@
 </script>
 
 <Popper {...restProps} bind:isOpen {trigger} arrow={false} {placement} class={base({ class: clsx((theme as SpeedDialTheme)?.base, className) })}>
-  <div class={popper({ class: clsx((theme as SpeedDialTheme)?.popper, popperClass) })}>
+  <div class={popper({ class: clsx((theme as SpeedDialTheme)?.popper, styling.popper) })}>
     {@render children()}
   </div>
 </Popper>
@@ -28,7 +35,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1482)
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1483)
 ## Props
 @prop children
 @prop popperClass
@@ -38,6 +45,7 @@
 @prop trigger = "hover"
 @prop textOutside = false
 @prop class: className
+@prop classes
 @prop isOpen = $bindable(false)
 @prop ...restProps
 -->

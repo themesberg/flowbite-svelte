@@ -3,6 +3,8 @@ import type { ClassValue } from "svelte/elements";
 
 export type SpinnerVaraiants = VariantProps<typeof spinner>;
 
+export type SpinnerTheme = ClassValue;
+
 export const spinner = tv({
   base: "inline-block animate-spin text-gray-300",
   variants: {
@@ -44,5 +46,3 @@ export const spinner = tv({
     size: "8"
   }
 });
-
-export type SpinnerTheme = ClassValue;

@@ -251,61 +251,66 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1593)
+[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1594)
 
 #### Props
 
 - children
 - steps: []
+- class:className
 - classes
 
 ### DetailedStepper
 
 #### Types
 
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1562)
+[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1563)
 
 #### Props
 
 - children
 - steps: []
 - contentClass
+- class:className
 - classes
 
 ### ProgressStepper
 
 #### Types
 
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1547)
+[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1548)
 
 #### Props
 
 - children
 - steps: []
+- class:className
 - classes
 
 ### Stepper
 
 #### Types
 
-[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1535)
+[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1536)
 
 #### Props
 
 - children
 - steps: []
+- class:className
 - classes
 
 ### TimelineStepper
 
 #### Types
 
-[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1607)
+[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1608)
 
 #### Props
 
 - children
 - steps: []
+- class:className
 - classes
 - contentClass
 
@@ -313,13 +318,14 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1577)
+[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1578)
 
 #### Props
 
 - children
 - steps: []
 - liClass
+- class:className
 - classes
 
 

@@ -47,7 +47,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1711)
+[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1712)
 ## Props
 @prop children
 @prop tabStyle = "none"

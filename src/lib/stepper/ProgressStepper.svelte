@@ -6,26 +6,28 @@
   import { getTheme } from "$lib/theme/themeUtils";
   import type { ProgressStepperTheme } from ".";
 
-  let { children, steps = [], classes, ...restrorps }: ProgressStepperProps = $props();
+  let { children, steps = [], class: className, classes, ...restrorps }: ProgressStepperProps = $props();
 
   const theme = getTheme("progressStepper");
 
   setContext("stepperType", "progress");
+
+  const { base, item, circle } = $derived(progressStepper());
 </script>
 
-<ol class={progressStepper.stepper({ class: clsx((theme as ProgressStepperTheme)?.stepper, classes?.progressstepper) })} {...restrorps}>
+<ol class={base({ class: clsx((theme as ProgressStepperTheme)?.base, className) })} {...restrorps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li
-        class={progressStepper.item({
+        class={item({
           status: step.status,
           isLast: index === steps.length - 1,
-          class: clsx((theme as ProgressStepperTheme)?.item, classes?.progressstepperitem)
+          class: clsx((theme as ProgressStepperTheme)?.item, classes?.item)
         })}
       >
-        <span class={progressStepper.circle({ status: step.status, class: clsx((theme as ProgressStepperTheme)?.circle, classes?.progresssteppercircle) })}>
+        <span class={circle({ status: step.status, class: clsx((theme as ProgressStepperTheme)?.circle, classes?.circle) })}>
           {#if step.status === "completed"}
             {#if step.icon}
               <step.icon class={clsx(step.iconClass) || "h-5 w-5 lg:h-6 lg:w-6"} />
@@ -51,10 +53,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1547)
+[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1548)
 ## Props
 @prop children
 @prop steps = []
+@prop class:className
 @prop classes
 @prop ...restrorps
 -->
