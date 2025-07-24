@@ -36,7 +36,6 @@ Search by the icon name and you'll find the component name that you need to impo
 </script>
 
 <div class="w-full">
-  <!-- <TableSearch placeholder="Search by icon name" hoverable={true} bind:inputValue={searchTerm} divClass="relative overflow-x-auto [&>div]:p-0"> -->
   <div class="mb-4 w-full max-w-64">
     <Label class="py-4 text-lg ">Icon size: {size}</Label>
     <Range id="range1" min="4" max="10" bind:value={size} />

@@ -617,6 +617,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
 ## TableSearch
 
 Use the following example to search in a table.
+For more advanced usage, please see [this page](https://flowbite-svelte.com/docs/plugins/datatables).
 
 ```svelte example
 <script>
@@ -628,7 +629,11 @@ Use the following example to search in a table.
     { id: 3, maker: "Volvo", type: "FGH", make: 2019 },
     { id: 4, maker: "Saab", type: "IJK", make: 2020 }
   ];
-  let filteredItems = $derived(items.filter((item) => !searchTerm || item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
+  let filteredItems = $derived.by(() =>
+    items.filter((item) =>
+      !searchTerm || item.maker.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  );
 </script>
 
 <TableSearch placeholder="Search by maker name" hoverable bind:inputValue={searchTerm}>

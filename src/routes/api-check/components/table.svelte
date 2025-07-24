@@ -10,7 +10,12 @@
   // For TableSearch example
   let searchTerm = $state("");
 
-  let filteredItems = $derived(items.filter((item) => !searchTerm || item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
+  let filteredItems = $derived.by(() =>
+    items.filter((item) =>
+      !searchTerm || item.maker.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  );
+
   type ItemType = {
     name: string;
     color: string;
