@@ -5,30 +5,37 @@
   import { speedDialButton, type SpeedDialButtonTheme } from "./theme";
   import type { SpeedCtxType, SpeedDialButtonProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   const context = getContext<SpeedCtxType>("speed-dial");
 
   let { children, name = "", color = "light", tooltip: _tooltip, pill = context.pill, textOutside = context.textOutside, textClass, class: className, classes, ...restProps }: SpeedDialButtonProps = $props();
+
+  warnThemeDeprecation("SpeedDialButton", { textClass }, { textClass: "span"});
+  const styling = $derived(
+    classes ?? {
+      span: textClass
+    }
+  );
 
   let tooltip: Placement | "none" = _tooltip ?? context.tooltip;
 
   const theme = getTheme("speedDialButton");
 
   let { base, span } = $derived(speedDialButton({ textOutside }));
-  let spanClass = $derived(tooltip === "none" ? span({ class: clsx((theme as SpeedDialButtonTheme)?.span, textClass) }) : "sr-only");
+  let spanCls = $derived(tooltip === "none" ? span({ class: clsx((theme as SpeedDialButtonTheme)?.span, styling.span) }) : "sr-only");
 
   // Add flex-col when tooltip is shown
-  let buttonClass = $derived(
+  let buttonCls = $derived(
     base({
       class: clsx((theme as SpeedDialButtonTheme)?.base, className, tooltip !== "none" && "flex-col")
     })
   );
 </script>
 
-<Button {pill} {color} {...restProps} class={buttonClass}>
+<Button {pill} {color} {...restProps} class={buttonCls}>
   {@render children?.()}
-  <span class={spanClass}>{name}</span>
+  <span class={spanCls}>{name}</span>
 </Button>
 
 {#if tooltip !== "none"}

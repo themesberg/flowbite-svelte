@@ -13,10 +13,10 @@ export const stepIndicator = tv({
     base: "space-y-2 dark:text-white",
     label: "text-base font-semibold",
     container: "flex w-full justify-between gap-2",
-    stepWrapper: "relative h-full w-full",
+    wrapper: "relative h-full w-full",
     step: "h-full w-full rounded-xs",
-    stepGlow: "absolute -inset-1 rounded-xs opacity-30 blur-sm dark:opacity-25",
-    incompleteStep: "h-full w-full rounded-xs bg-gray-200 dark:bg-gray-700"
+    glow: "absolute -inset-1 rounded-xs opacity-30 blur-sm dark:opacity-25",
+    incomplete: "h-full w-full rounded-xs bg-gray-200 dark:bg-gray-700"
   },
   variants: {
     size: {
@@ -29,47 +29,47 @@ export const stepIndicator = tv({
     color: {
       primary: {
         step: "data-[state=completed]:bg-primary-500 data-[state=completed]:dark:bg-primary-900 data-[state=current]:bg-primary-800 data-[state=current]:dark:bg-primary-400",
-        stepGlow: "bg-primary-800 dark:bg-primary-400"
+        glow: "bg-primary-800 dark:bg-primary-400"
       },
       secondary: {
         step: "data-[state=completed]:bg-secondary-500 data-[state=completed]:dark:bg-secondary-900 data-[state=current]:bg-secondary-800 data-[state=current]:dark:bg-secondary-400",
-        stepGlow: "bg-secondary-800 dark:bg-secondary-400"
+        glow: "bg-secondary-800 dark:bg-secondary-400"
       },
       gray: {
         step: "data-[state=completed]:bg-gray-400 data-[state=completed]:dark:bg-gray-500 data-[state=current]:bg-gray-700 data-[state=current]:dark:bg-gray-200",
-        stepGlow: "bg-gray-700 dark:bg-gray-200"
+        glow: "bg-gray-700 dark:bg-gray-200"
       },
       red: {
         step: "data-[state=completed]:bg-red-600 data-[state=completed]:dark:bg-red-900 data-[state=current]:bg-red-900 data-[state=current]:dark:bg-red-500",
-        stepGlow: "bg-red-900 dark:bg-red-500"
+        glow: "bg-red-900 dark:bg-red-500"
       },
       yellow: {
         step: "data-[state=completed]:bg-yellow-400 data-[state=completed]:dark:bg-yellow-600 data-[state=current]:bg-yellow-600 data-[state=current]:dark:bg-yellow-400",
-        stepGlow: "bg-yellow-600 dark:bg-yellow-400"
+        glow: "bg-yellow-600 dark:bg-yellow-400"
       },
       green: {
         step: "data-[state=completed]:bg-green-500 data-[state=completed]:dark:bg-green-900 data-[state=current]:bg-green-800 data-[state=current]:dark:bg-green-400",
-        stepGlow: "bg-green-800 dark:bg-green-400"
+        glow: "bg-green-800 dark:bg-green-400"
       },
       indigo: {
         step: "data-[state=completed]:bg-indigo-500 data-[state=completed]:dark:bg-indigo-900 data-[state=current]:bg-indigo-800 data-[state=current]:dark:bg-indigo-400",
-        stepGlow: "bg-indigo-800 dark:bg-indigo-400"
+        glow: "bg-indigo-800 dark:bg-indigo-400"
       },
       purple: {
         step: "data-[state=completed]:bg-purple-500 data-[state=completed]:dark:bg-purple-900 data-[state=current]:bg-purple-800 data-[state=current]:dark:bg-purple-400",
-        stepGlow: "bg-purple-800 dark:bg-purple-400"
+        glow: "bg-purple-800 dark:bg-purple-400"
       },
       pink: {
         step: "data-[state=completed]:bg-pink-500 data-[state=completed]:dark:bg-pink-900 data-[state=current]:bg-pink-800 data-[state=current]:dark:bg-pink-400",
-        stepGlow: "bg-pink-800 dark:bg-pink-400"
+        glow: "bg-pink-800 dark:bg-pink-400"
       },
       blue: {
         step: "data-[state=completed]:bg-blue-500 data-[state=completed]:dark:bg-blue-900 data-[state=current]:bg-blue-800 data-[state=current]:dark:bg-blue-400",
-        stepGlow: "bg-blue-800 dark:bg-blue-400"
+        glow: "bg-blue-800 dark:bg-blue-400"
       },
       custom: {
         step: "",
-        stepGlow: ""
+        glow: ""
       }
     },
     glow: {
@@ -85,7 +85,7 @@ export const stepIndicator = tv({
     {
       glow: false,
       class: {
-        stepGlow: "hidden"
+        glow: "hidden"
       }
     },
     {

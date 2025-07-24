@@ -38,11 +38,6 @@ export const speedDialButton = tv({
         span: "absolute -start-12 top-1/2 mb-px text-sm font-medium -translate-y-1/2"
       }
     }
-    // tooltip: {
-    //   true: {
-    //     base: "flex-col"
-    //   }
-    // }
   },
   defaultVariants: {}
 });

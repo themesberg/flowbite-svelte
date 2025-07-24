@@ -8,7 +8,7 @@
 
   const theme = getTheme("stepIndicator");
 
-  const style = stepIndicator({ size, color, glow, hideLabel });
+  const {base, label, container, wrapper, step: stepCls, glow:stepGlow, incomplete} = stepIndicator({ size, color, glow, hideLabel });
 
   // Ensure currentStep is within bounds
   let safeCurrentStep = $derived(Math.max(1, Math.min(currentStep, steps.length)));
@@ -25,28 +25,26 @@
     }
     return "";
   };
-
-  // base,label,container,stepWrapper,step,stepGlow,incompleteStep:
 </script>
 
-<div {...restProps} class={style.base({ class: clsx((theme as StepIndicatorTheme)?.base, className) })}>
+<div {...restProps} class={base({ class: clsx((theme as StepIndicatorTheme)?.base, className) })}>
   {#if !hideLabel}
-    <h3 class={style.label({ class: clsx((theme as StepIndicatorTheme)?.label, classes?.label) })}>{currentStepLabel}</h3>
+    <h3 class={label({ class: clsx((theme as StepIndicatorTheme)?.label, classes?.label) })}>{currentStepLabel}</h3>
   {/if}
 
-  <div class={style.container({ class: clsx((theme as StepIndicatorTheme)?.container, classes?.container) })}>
+  <div class={container({ class: clsx((theme as StepIndicatorTheme)?.container, classes?.container) })}>
     {#each steps as step, i}
       {#if i === currentStep - 1}
-        <div class={style.stepWrapper({ class: clsx((theme as StepIndicatorTheme)?.stepWrapper, classes?.stepWrapper) })}>
-          <div class={style.step({ class: clsx(getStepStateClasses(i, currentStep), getCustomStepClass(i), (theme as StepIndicatorTheme)?.step, classes?.step) })} data-state="current"></div>
+        <div class={wrapper({ class: clsx((theme as StepIndicatorTheme)?.wrapper, classes?.wrapper) })}>
+          <div class={stepCls({ class: clsx(getStepStateClasses(i, currentStep), getCustomStepClass(i), (theme as StepIndicatorTheme)?.step, classes?.step) })} data-state="current"></div>
           {#if glow}
-            <div class={style.stepGlow({ class: clsx(getCustomStepClass(i), (theme as StepIndicatorTheme)?.stepGlow, classes?.stepGlow) })}></div>
+            <div class={stepGlow({ class: clsx(getCustomStepClass(i), (theme as StepIndicatorTheme)?.glow, classes?.glow) })}></div>
           {/if}
         </div>
       {:else if i < currentStep - 1}
-        <div class={style.step({ class: clsx(getStepStateClasses(i, currentStep), getCustomStepClass(i), (theme as StepIndicatorTheme)?.step, classes?.step) })} data-state="completed"></div>
+        <div class={stepCls({ class: clsx(getStepStateClasses(i, currentStep), getCustomStepClass(i), (theme as StepIndicatorTheme)?.step, classes?.step) })} data-state="completed"></div>
       {:else}
-        <div class={style.incompleteStep({ class: clsx((theme as StepIndicatorTheme)?.incompleteStep, classes?.incompleteStep) })} data-state="incomplete"></div>
+        <div class={incomplete({ class: clsx((theme as StepIndicatorTheme)?.incomplete, classes?.incomplete) })} data-state="incomplete"></div>
       {/if}
     {/each}
   </div>
