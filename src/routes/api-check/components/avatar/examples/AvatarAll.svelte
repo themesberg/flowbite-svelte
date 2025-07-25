@@ -14,7 +14,6 @@
   </div>
 </div>
 
-
 <h2 class="my-4 text-2xl">Icon avatar</h2>
 <div class="flex justify-center gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
 <Avatar>

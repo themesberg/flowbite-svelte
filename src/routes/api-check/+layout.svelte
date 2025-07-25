@@ -9,7 +9,7 @@
 
 <FlowbiteSvelteLayout>
   <ComponentsLayout {data} showapicheck>
-    <div class="mx-auto max-w-7xl p-8">
+    <div class="mx-auto max-w-7xl p-8 mb-32">
       {@render children()}
     </div>
   </ComponentsLayout>

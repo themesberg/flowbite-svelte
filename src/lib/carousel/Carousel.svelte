@@ -9,7 +9,7 @@
 
   const SLIDE_DURATION_RATIO = 0.25;
 
-  let { children, slide, images, index = $bindable(0), slideDuration = 1000, transition, duration = 0, "aria-label": ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, onchange, divClass, ...restProps }: CarouselProps = $props();
+  let { children, slide, images, index = $bindable(0), slideDuration = 1000, transition, duration = 0, "aria-label": ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, onchange, divClass, isPreload = false, ...restProps }: CarouselProps = $props();
 
   const theme = getTheme("carousel");
 
@@ -158,9 +158,8 @@
   );
 </script>
 
-<!-- Preload all Carousel images for improved responsivity -->
 <svelte:head>
-  {#if images.length > 0}
+  {#if isPreload && images.length > 0}
     {#each images as image}
       <link rel="preload" href={image.src} as="image" />
     {/each}

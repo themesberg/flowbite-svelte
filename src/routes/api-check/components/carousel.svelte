@@ -118,7 +118,7 @@
 <h3 class="my-2 text-xl">Advanced customization</h3>
 <div class="my-4 max-w-4xl rounded border border-gray-200 p-4 dark:border-gray-600">
   <Carousel {images} bind:index>
-    <CarouselIndicators>
+    <CarouselIndicators position="withThumbnails">
       {#snippet children({ selected, index })}
         <Indicator color={selected ? "red" : "green"} class="h-5 w-5 border border-white text-white {selected ? 'opacity-100' : 'opacity-80'}">
           {index}
@@ -127,19 +127,18 @@
     </CarouselIndicators>
     <Controls>
       {#snippet children(changeSlide)}
-        <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class="bg-red-300/50 dark:bg-red-400/50" />
+        <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} />
         <Button pill class="absolute end-4 top-1/2 -translate-y-1/2 p-2 font-bold" onclick={() => changeSlide(true)}>
           <CaretRightOutline />
         </Button>
       {/snippet}
     </Controls>
+    <Thumbnails class="mt-4 gap-3 bg-transparent" {images} bind:index>
+      {#snippet children({ image, selected, Thumbnail })}
+        <Thumbnail {selected} {...image} class="hover:outline-primary-500 rounded-md shadow-xl hover:outline {selected ? 'outline-primary-400 outline-4' : ''}" />
+      {/snippet}
+    </Thumbnails>
   </Carousel>
-
-  <Thumbnails class="gap-3 bg-transparent" {images} bind:index>
-    {#snippet children({ image, selected, Thumbnail })}
-      <Thumbnail {selected} {...image} class="hover:outline-primary-500 rounded-md shadow-xl hover:outline {selected ? 'outline-primary-400 outline-4' : ''}" />
-    {/snippet}
-  </Thumbnails>
 </div>
 
 <h3 class="my-2 text-xl">Custom Carousel transition</h3>

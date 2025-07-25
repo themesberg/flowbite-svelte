@@ -219,17 +219,16 @@ This example can be used to copy and paste code inside a `<pre>` and `<code>` bl
 Use this example to show multiple input field elements that have the copy to clipboard button inside a card component for more complex applications where you need to copy API keys, account IDs and more.
 
 ```svelte example class="flex justify-center items-center gap-2"
-<script>
+<script lang="ts">
   import { Card, Clipboard, Input, Label, Tooltip, Button } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
 
   let acc_id = $state("756593826");
   let api_key = $state("f4h6sd3t-jsy63ind-hsgdt7rs-jdhf76st");
   let role_arn = $state("123456789012:user/Flowbite");
-  let value = $state("");
 </script>
 
-{#snippet children(success)}
+{#snippet children(success:boolean)}
   <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
   {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
 {/snippet}
@@ -367,7 +366,7 @@ Use this example to show an input field where you can copy the URL of the curren
 
 <Button color="alternative" onclick={() => (copyModal = true)}><ShareNodesOutline class="me-2" /> Share course</Button>
 
-<Modal title="Share course" bind:open={copyModal} autoclose class="divide-y-0" headerClass="text-lg text-gray-500 dark:text-gray-400" footerClass="px-5 pb-5">
+<Modal title="Share course" bind:open={copyModal} autoclose class="divide-y-0" classes={{header:"text-lg text-gray-500 dark:text-gray-400", footer:"px-5 pb-5"}} >
   <Label for="course-url" class="mb-2 block text-sm font-medium">Share the course link below with your friends:</Label>
 
   <Input bind:value id="course-url">

@@ -29,6 +29,22 @@
   </ButtonGroup>
 </div>
 
+<h2 class="my-4 text-2xl">Disabled</h2>
+<div class="my-4 flex justify-center rounded border border-gray-200 p-4 dark:border-gray-600 space-x-4">
+  <ButtonGroup>
+    <Button disabled>Profile</Button>
+    <Button>Settings</Button>
+    <Button>Messages</Button>
+  </ButtonGroup>
+
+  <ButtonGroup disabled>
+    <Button>Profile</Button>
+    <Button>Settings</Button>
+    <Button>Messages</Button>
+  </ButtonGroup>
+</div>
+
+
 <h2 class="my-4 text-2xl">More examples</h2>
 
 <div class="my-4 flex flex-col flex-wrap gap-4 rounded border border-gray-200 p-4 text-gray-900 dark:border-gray-600 dark:text-gray-100">

@@ -9,6 +9,14 @@
   const btn2 = () => {
     alert("You touched btn2.");
   };
+
+  let loading = $state(false);
+
+  async function handleSubmit() {
+    loading = true;
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    loading = false;
+  }
 </script>
 
 <h1 class="my-4 text-3xl">Buttons</h1>
@@ -174,4 +182,10 @@
 <div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Button onclick={btn1}>Button 1</Button>
   <Button ontouchstart={btn2}>Button 2</Button>
+</div>
+
+<h2 class="my-4 text-2xl">Loading state with Spinner</h2>
+
+<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
+  <Button class="w-32" onclick={handleSubmit} {loading}>Submit</Button>
 </div>
