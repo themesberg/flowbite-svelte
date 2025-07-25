@@ -2,18 +2,28 @@
   import { group, type GroupTheme } from ".";
   import type { GroupProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, divClass, timeClass, date, olClass, ...restProps }: GroupProps = $props();
+  let { children, divClass, timeClass, date, olClass, class:className, classes, ...restProps }: GroupProps = $props();
+
+  warnThemeDeprecation("Group", { divClass, timeClass, olClass }, {
+    divClass: "class",
+    timeClass: "time",
+    olClass: "ol"
+  });
+  const styling = $derived({
+    time: timeClass,
+    ol: olClass
+  });
 
   const theme = getTheme("group");
 
   const { div, time, ol } = $derived(group());
 </script>
 
-<div class={div({ class: clsx((theme as GroupTheme)?.div, divClass) })}>
-  <time class={time({ class: clsx((theme as GroupTheme)?.time, timeClass) })}>{date}</time>
-  <ol {...restProps} class={ol({ class: clsx((theme as GroupTheme)?.ol, olClass) })}>
+<div class={div({ class: clsx((theme as GroupTheme)?.div, className ?? divClass) })}>
+  <time class={time({ class: clsx((theme as GroupTheme)?.time, styling.time) })}>{date}</time>
+  <ol {...restProps} class={ol({ class: clsx((theme as GroupTheme)?.ol, styling.ol) })}>
     {@render children()}
   </ol>
 </div>

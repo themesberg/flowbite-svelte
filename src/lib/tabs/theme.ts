@@ -1,7 +1,15 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils"
 
-export type TabsVaraints = VariantProps<typeof tabs>;
+// Variants
+export type TabsVaraints = VariantProps<typeof tabs> & Classes<typeof tabs>;
+export type TabItemVariants = VariantProps<typeof tabItem> & Classes<typeof tabItem>;
+// Theme
+export type TabsSlots = keyof typeof tabs.slots;
+export type TabsTheme = Partial<Record<TabsSlots, ClassValue>>;
+export type TabItemSlots = keyof typeof tabItem.slots;
+export type TabItemTheme = Partial<Record<TabItemSlots, ClassValue>>;
 
 export const tabs = tv({
   slots: {
@@ -50,9 +58,6 @@ export const tabs = tv({
   }
 });
 
-export type TabsSlots = keyof typeof tabs.slots;
-export type TabsTheme = Partial<Record<TabsSlots, ClassValue>>;
-
 export const tabItem = tv({
   slots: {
     base: "group focus-within:z-10",
@@ -90,6 +95,3 @@ export const tabItem = tv({
     disabled: false
   }
 });
-
-export type TabItemSlots = keyof typeof tabItem.slots;
-export type TabItemTheme = Partial<Record<TabItemSlots, ClassValue>>;

@@ -6,7 +6,7 @@
   import { type TabitemProps, type TabCtxType } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, titleSlot, open = false, title = "Tab title", activeClass, inactiveClass, class: className, disabled, tabStyle, ...restProps }: TabitemProps = $props();
+  let { children, titleSlot, open = false, title = "Tab title", activeClass, inactiveClass, class: className, classes, disabled, tabStyle, ...restProps }: TabitemProps = $props();
 
   const theme = getTheme("tabItem");
 
@@ -34,7 +34,7 @@
 </script>
 
 <li {...restProps} class={base({ class: clsx((theme as TabItemTheme)?.base, className) })} role="presentation">
-  <button type="button" onclick={() => (open = true)} role="tab" id={tabId} aria-controls={ctx.panelId} aria-selected={open} {disabled} class={button({ class: clsx(open ? (activeClass ?? active()) : (inactiveClass ?? inactive()), (theme as TabItemTheme)?.button) })}>
+  <button type="button" onclick={() => (open = true)} role="tab" id={tabId} aria-controls={ctx.panelId} aria-selected={open} {disabled} class={button({ class: clsx(open ? (activeClass ?? active()) : (inactiveClass ?? inactive()), (theme as TabItemTheme)?.button, classes?.button) })}>
     {#if titleSlot}
       {@render titleSlot()}
     {:else}
@@ -43,7 +43,7 @@
   </button>
 
   {#if open && children}
-    <div class={content({ class: clsx((theme as TabItemTheme)?.content) })}>
+    <div class={content({ class: clsx((theme as TabItemTheme)?.content, classes?.content) })}>
       <div use:init>
         {@render children()}
       </div>

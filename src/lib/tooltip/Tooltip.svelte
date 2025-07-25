@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import Popper from "../utils/Popper.svelte";
-  import { tooltip, type TooltipTheme } from "./theme";
+  import { tooltip } from "./theme";
   import type { TooltipProps, TriggeredToggleEvent } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -9,7 +9,7 @@
 
   const theme = getTheme("tooltip");
 
-  let { base } = $derived(tooltip({ color, type }));
+  let base = $derived(tooltip({ color, type, class: clsx( className) }));
 
   function onbeforetoggle(ev: TriggeredToggleEvent) {
     // block all focusable elements inside the tooltip
@@ -21,7 +21,7 @@
   }
 </script>
 
-<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={base({ class: clsx((theme as TooltipTheme)?.base, className) })} {onbeforetoggle}>
+<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={base} {onbeforetoggle}>
   <div class="pointer-events-none">{@render children()}</div>
 </Popper>
 

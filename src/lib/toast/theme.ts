@@ -1,7 +1,12 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type ToastVaraints = VariantProps<typeof toast>;
+// Variants
+export type ToastVaraints = VariantProps<typeof toast> & Classes<typeof toast>;
+// Theme
+export type ToastSlots = keyof typeof toast.slots;
+export type ToastTheme = Partial<Record<ToastSlots, ClassValue>>;
 
 export const toast = tv({
   slots: {
@@ -102,6 +107,3 @@ export const toast = tv({
     }
   }
 });
-
-export type ToastSlots = keyof typeof toast.slots;
-export type ToastTheme = Partial<Record<ToastSlots, ClassValue>>;

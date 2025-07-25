@@ -90,7 +90,7 @@
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
-    "svelte": "^5.0.0",
+    "svelte": "^5.29.0",
     "tailwindcss": "^4.1.4"
   },
   "type": "module",

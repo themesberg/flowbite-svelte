@@ -6,7 +6,7 @@
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, end, color, embedded, class: className, ...restProps }: ToolbarProps = $props();
+  let { children, end, color, embedded, class: className, classes, ...restProps }: ToolbarProps = $props();
 
   const theme = getTheme("toolbar");
 
@@ -29,7 +29,7 @@
 </script>
 
 <div {...restProps} class={base({ class: clsx((theme as ToolbarTheme)?.base, className) })}>
-  <div class={content({ class: clsx((theme as ToolbarTheme)?.content) })}>
+  <div class={content({ class: clsx((theme as ToolbarTheme)?.content, classes?.content) })}>
     {@render children?.()}
   </div>
   {#if end}

@@ -1,8 +1,8 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { timeline } from ".";
+  import { timeline, type TimelineVariants } from ".";
   import clsx from "clsx";
-  import type { TimelineProps, TimelineVariants } from "$lib/types";
+  import type { TimelineProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, order = "default", class: className, ...restProps }: TimelineProps = $props();

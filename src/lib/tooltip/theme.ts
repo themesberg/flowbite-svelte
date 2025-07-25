@@ -1,13 +1,15 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
 
+// Variants
 export type TooltipVariants = VariantProps<typeof tooltip>;
+// Theme
+export type TooltipSlots = keyof typeof tooltip.slots;
+export type TooltipTheme = Partial<Record<TooltipSlots, ClassValue>>;
+
 
 export const tooltip = tv({
-  slots: {
-    base: "absolute px-3 py-2 rounded-lg text-sm z-50 pointer-events-none",
-    arrowBase: ""
-  },
+  base: "absolute px-3 py-2 rounded-lg text-sm z-50 pointer-events-none",
   variants: {
     type: {
       light: { base: "bg-white text-gray-800 dark:bg-white dark:text-gray-800 border border-gray-200 dark:border-gray-200" },
@@ -39,6 +41,3 @@ export const tooltip = tv({
     }
   }
 });
-
-export type TooltipSlots = keyof typeof tooltip.slots;
-export type TooltipTheme = Partial<Record<TooltipSlots, ClassValue>>;

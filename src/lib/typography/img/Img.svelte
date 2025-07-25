@@ -2,25 +2,34 @@
   import clsx from "clsx";
   import { img, type ImgTheme } from ".";
   import type { ImgProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { size = "none", effect = "none", caption, class: imgClass, figClass, captionClass, href, ...restProps }: ImgProps = $props();
+  let { size = "none", effect = "none", caption, class: className, classes, figClass, captionClass, href, ...restProps }: ImgProps = $props();
+
+  warnThemeDeprecation("Img", { figClass, captionClass }, {
+    figClass: "fig",
+    captionClass: "caption"
+  });
+  const styling = $derived({
+    fig: figClass,
+    caption: captionClass
+  });
 
   const theme = getTheme("img");
 
-  let { base, figure, figureCaption } = $derived(img({ size, effect }));
+  let { base, figure, caption:figureCaption } = $derived(img({ size, effect }));
 </script>
 
 {#snippet imageSlot()}
   {#if caption}
-    <figure class={figure({ class: clsx((theme as ImgTheme)?.figure, figClass) })}>
-      <img {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, imgClass) })} />
-      <figcaption class={figureCaption({ class: clsx((theme as ImgTheme)?.figureCaption, captionClass) })}>
+    <figure class={figure({ class: clsx((theme as ImgTheme)?.figure, styling.fig) })}>
+      <img {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, className) })} />
+      <figcaption class={figureCaption({ class: clsx((theme as ImgTheme)?.caption, styling.caption) })}>
         {@html caption}
       </figcaption>
     </figure>
   {:else}
-    <img {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, imgClass) })} />
+    <img {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, className) })} />
   {/if}
 {/snippet}
 

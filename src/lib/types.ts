@@ -33,12 +33,12 @@ import type { SpeedDialVariants, SpeedDialButtonVariants } from "$lib/speed-dial
 import type { SpinnerVaraiants } from "$lib/spinner/theme";
 import type { StepIndicatorVariants } from "$lib/stepindicator/theme";
 import type { StepperVariants, ProgressStepperVariants, DetailedStepperVariants, VerticalStepperVariants, BreadcrumbStepperVariants, TimelineStepperVariants } from "$lib/stepper/theme";
-import type { TableVariants } from "$lib/table/theme";
-import type { TabsVaraints } from "$lib/tabs/theme";
 import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
 import type { ProgressbarVariants, ProgressradialVariants } from "$lib/progress/theme";
 import type { RatingVariants, AdvancedRatingVariants, ReviewVariants, ScoreRatingVariants } from "$lib/rating/theme";
-import { timeline } from "$lib/timeline/theme";
+import type { TableVariants, TableSearchVariants, TableSearchColor } from "$lib/table/theme";
+import type { TabsVaraints, TabItemVariants } from "$lib/tabs/theme";
+import type { TimelineVariants, ActivityItemVariants, GroupVariants, GroupItemVariants, TimelineItemVariants } from "$lib/timeline/theme";
 import type { ToastVaraints } from "$lib/toast/theme";
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "$lib/toolbar/theme";
 import type { TooltipVariants } from "$lib/tooltip/theme";
@@ -59,13 +59,13 @@ import type { MultiSelectVariants, SelectVariants } from "$lib/forms/select/them
 import type { TextareaVariants } from "$lib/forms/textarea/theme";
 import type { ToggleVariants } from "$lib/forms/toggle/theme";
 import type { PhoneInputVariants } from "$lib/forms/phoneinput/theme";
-import type { TableSearchColor } from "$lib/table/theme";
 
 // typography component variants
 import type { AnchorVariants } from "$lib/typography/anchor/theme";
 import type { BlockquoteVariants } from "$lib/typography/blockquote/theme";
 import type { DescriptionListVariants } from "$lib/typography/descriptionlist/theme";
 import type { HeadingVariants } from "$lib/typography/heading/theme";
+import type { HrVariants } from "$lib/typography/hr/theme";
 import type { ImgVariants } from "$lib/typography/img/theme";
 import type { ListVariants } from "$lib/typography/list/theme";
 import type { ParagraphVariants } from "$lib/typography/paragraph/theme";
@@ -1639,7 +1639,7 @@ export interface TableHeadProps extends HTMLAttributes<HTMLTableSectionElement> 
 
 export type TableItemType = Record<string, string | number | boolean>;
 
-export interface TableProps extends Omit<HTMLTableAttributes, "border"> {
+export interface TableProps extends TableVariants, Omit<HTMLTableAttributes, "border"> {
   children?: Snippet;
   footerSlot?: Snippet;
   captionSlot?: Snippet;
@@ -1691,7 +1691,7 @@ export type TableSearchType = {
   color?: string;
 };
 
-export interface TableSearchProps extends HTMLTableAttributes {
+export interface TableSearchProps extends TableSearchVariants, HTMLTableAttributes {
   children?: Snippet;
   header?: Snippet;
   footer?: Snippet;
@@ -1711,7 +1711,7 @@ export interface TableSearchProps extends HTMLTableAttributes {
 }
 
 // tabs
-export interface TabsProps extends HTMLAttributes<HTMLUListElement> {
+export interface TabsProps extends TabsVaraints, HTMLAttributes<HTMLUListElement> {
   children: Snippet;
   tabStyle?: TabsVaraints["tabStyle"];
   ulClass?: ClassValue;
@@ -1719,7 +1719,7 @@ export interface TabsProps extends HTMLAttributes<HTMLUListElement> {
   divider?: boolean;
 }
 
-export interface TabitemProps extends HTMLLiAttributes {
+export interface TabitemProps extends TabItemVariants, HTMLLiAttributes {
   children?: Snippet;
   titleSlot?: Snippet;
   open?: boolean;
@@ -1744,8 +1744,6 @@ export interface ThemeConfig {
 }
 
 // timeline
-export type TimelineVariants = VariantProps<typeof timeline>;
-
 export interface ActivityType {
   title: HTMLElement | string;
   date: Date | string;
@@ -1754,20 +1752,11 @@ export interface ActivityType {
   text?: HTMLElement | string;
 }
 
-export interface GroupTimelineType {
-  name?: string | HTMLElement;
-  src?: string;
-  alt?: string;
-  href?: string;
-  isPrivate?: boolean;
-  comment?: string | HTMLElement;
-}
-
 export interface ActivityProps extends HTMLOlAttributes {
   children: Snippet;
 }
 
-export interface ActivityItemProps extends HTMLLiAttributes {
+export interface ActivityItemProps extends ActivityItemVariants, HTMLLiAttributes {
   activities: ActivityType[];
   liClass?: string;
   spanClass?: string;
@@ -1779,7 +1768,7 @@ export interface ActivityItemProps extends HTMLLiAttributes {
   textClass?: string;
 }
 
-export interface GroupProps extends HTMLOlAttributes {
+export interface GroupProps extends GroupVariants, HTMLOlAttributes {
   children: Snippet;
   divClass?: string;
   timeClass?: string;
@@ -1787,13 +1776,22 @@ export interface GroupProps extends HTMLOlAttributes {
   olClass?: string;
 }
 
-export interface GroupItemProps extends HTMLLiAttributes {
+export interface GroupItemProps extends GroupItemVariants, HTMLLiAttributes {
   timelines: GroupTimelineType[];
   aClass?: string;
   imgClass?: string;
   divClass?: string;
   titleClass?: string;
   spanClass?: string;
+}
+
+export interface GroupTimelineType {
+  name?: string | HTMLElement;
+  src?: string;
+  alt?: string;
+  href?: string;
+  isPrivate?: boolean;
+  comment?: string | HTMLElement;
 }
 
 export type DateFormat = "year" | "month-year" | "full-date";
@@ -1803,7 +1801,7 @@ export interface TimelineProps extends HTMLOlAttributes {
   order?: TimelineVariants["order"];
 }
 
-export interface TimelineItemProps extends HTMLLiAttributes {
+export interface TimelineItemProps extends TimelineItemVariants, HTMLLiAttributes {
   children: Snippet;
   orientationSlot?: Snippet;
   title: string;
@@ -1817,7 +1815,7 @@ export interface TimelineItemProps extends HTMLLiAttributes {
 }
 
 // toast
-export interface ToastProps extends HTMLAttributes<HTMLDivElement> {
+export interface ToastProps extends ToastVaraints,  HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   icon?: Snippet;
   toastStatus?: boolean;
@@ -1893,7 +1891,7 @@ export interface HeadingProps extends HTMLAttributes<HTMLElement> {
 }
 
 // hr
-export interface HrProps extends HTMLAttributes<HTMLElement> {
+export interface HrProps extends HrVariants, HTMLAttributes<HTMLElement> {
   children?: Snippet;
   divClass?: string;
   iconDivClass?: string;
@@ -1916,7 +1914,7 @@ export interface Picture {
 }
 // export type EnhancedImgAttributes = Omit<HTMLImgAttributes, "src"> & { src: string };
 
-export interface ImgProps extends HTMLImgAttributes {
+export interface ImgProps extends ImgVariants, HTMLImgAttributes {
   size?: ImgVariants["size"];
   effect?: ImgVariants["effect"];
   caption?: string;
@@ -1925,7 +1923,7 @@ export interface ImgProps extends HTMLImgAttributes {
   href?: HTMLAnchorElement["href"];
 }
 
-export interface EnhandedImgProps extends Omit<HTMLImgAttributes, "src"> {
+export interface EnhandedImgProps extends ImgVariants, Omit<HTMLImgAttributes, "src"> {
   src: string | Picture;
   size?: ImgVariants["size"];
   multiple?: boolean;

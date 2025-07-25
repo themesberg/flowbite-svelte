@@ -2,19 +2,29 @@
   import clsx from "clsx";
   import { hr, type HrTheme } from "./index";
   import type { HrProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, divClass, class: className, innerDivClass, ...restProps }: HrProps = $props();
+  let { children, divClass, innerDivClass, class: className, classes, ...restProps }: HrProps = $props();
+
+  // base container content
+  warnThemeDeprecation("Hr", { divClass, innerDivClass }, {
+    divClass: "div",
+    innerDivClass: "content"
+  });
+  const styling = $derived({
+    div: divClass,
+    content: innerDivClass
+  });
 
   const theme = getTheme("hr");
 
-  let { base, container, content } = $derived(hr({ withChildren: !!children }));
+  let { base, div, content } = $derived(hr({ withChildren: !!children }));
 </script>
 
 {#if children}
-  <div {...restProps} class={container({ class: clsx((theme as HrTheme)?.container, divClass) })}>
+  <div {...restProps} class={div({ class: clsx((theme as HrTheme)?.div, divClass) })}>
     <hr class={base({ class: clsx((theme as HrTheme)?.base, className) })} />
-    <div class={content({ class: clsx((theme as HrTheme)?.content, innerDivClass) })}>
+    <div class={content({ class: clsx((theme as HrTheme)?.content, styling.content) })}>
       {@render children()}
     </div>
   </div>

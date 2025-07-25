@@ -4,9 +4,13 @@
   import { setContext } from "svelte";
   import { tabs, type TabsTheme } from ".";
   import type { TabsProps, TabCtxType } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, tabStyle = "none", ulClass, contentClass, divider = true, ...restProps }: TabsProps = $props();
+  let { children, tabStyle = "none", ulClass, contentClass, divider = true, class:className, classes, ...restProps }: TabsProps = $props();
+
+  // base, content, divider, active, inactive
+  warnThemeDeprecation("Tabs", { ulClass, contentClass }, { ulClass: "class", contentClass: "content" });
+  const styling = $derived(classes ?? { content: contentClass });
 
   const theme = getTheme("tabs");
 
@@ -35,13 +39,13 @@
   }
 </script>
 
-<ul role="tablist" {...restProps} class={base({ class: clsx((theme as TabsTheme)?.base, ulClass) })}>
+<ul role="tablist" {...restProps} class={base({ class: clsx((theme as TabsTheme)?.base, className ?? ulClass) })}>
   {@render children()}
 </ul>
 {#if dividerBool}
-  <div class={dividerClass({ class: clsx((theme as TabsTheme)?.divider) })}></div>
+  <div class={dividerClass({ class: clsx((theme as TabsTheme)?.divider, classes?.divider) })}></div>
 {/if}
-<div id={panelId} class={content({ class: clsx((theme as TabsTheme)?.content, contentClass) })} role="tabpanel" aria-labelledby={panelId} use:init></div>
+<div id={panelId} class={content({ class: clsx((theme as TabsTheme)?.content, styling.content) })} role="tabpanel" aria-labelledby={panelId} use:init></div>
 
 <!--
 @component

@@ -3,13 +3,17 @@
   import { table as tableCls, TableHead, TableBody, type TableTheme } from ".";
   import clsx from "clsx";
   import { type TableProps, type TableCtxType } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, footerSlot, captionSlot, items, divClass = "relative overflow-x-auto", striped, hoverable, border = true, shadow, color = "default", class: className, ...restProps }: TableProps = $props();
+  let { children, footerSlot, captionSlot, items, divClass = "relative overflow-x-auto", striped, hoverable, border = true, shadow, color = "default", class: className, classes, ...restProps }: TableProps = $props();
 
+  warnThemeDeprecation("Table", {divClass}, {divClass: "div"});
+  const styling = $derived( classes ?? {
+    div: divClass
+  })
   const theme = getTheme("table");
 
-  const { base, table } = $derived(tableCls({ color, shadow }));
+  const { div, table } = $derived(tableCls({ color, shadow }));
 
   let tableCtx: TableCtxType = {
     get striped() {
@@ -32,7 +36,7 @@
   let bodyItems = $derived(items && items.length > 0 ? items.map((item) => Object.values(item)) : []);
 </script>
 
-<div class={base({ class: clsx((theme as TableTheme)?.base, divClass) })}>
+<div class={div({ class: clsx((theme as TableTheme)?.div, styling.div) })}>
   <table {...restProps} class={table({ class: clsx((theme as TableTheme)?.table, className) })}>
     {#if captionSlot}
       {@render captionSlot()}

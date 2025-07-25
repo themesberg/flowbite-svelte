@@ -2,25 +2,34 @@
   import clsx from "clsx";
   import { img, type ImgTheme } from ".";
   import type { EnhandedImgProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { src, href, caption, size, figClass, class: imgClass, captionClass, ...restProps }: EnhandedImgProps = $props();
+  let { src, href, caption, size, figClass, class: className,  classes, captionClass, ...restProps }: EnhandedImgProps = $props();
+
+  warnThemeDeprecation("EnhancedImg", { figClass, captionClass }, {
+    figClass: "fig",
+    captionClass: "caption"
+  });
+  const styling = $derived({
+    fig: figClass,
+    caption: captionClass
+  });
 
   const theme = getTheme("enhancedImg");
 
-  let { base, figure, figureCaption } = $derived(img({ size }));
+  let { base, figure, caption:figureCaption } = $derived(img({ size }));
 </script>
 
 {#snippet imageSlot()}
   {#if caption}
-    <figure class={figure({ class: clsx((theme as ImgTheme)?.figure, figClass) })}>
-      <enhanced:img {src} {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, imgClass) })} />
-      <figcaption class={figureCaption({ class: clsx((theme as ImgTheme)?.figureCaption, captionClass) })}>
+    <figure class={figure({ class: clsx((theme as ImgTheme)?.figure, styling.fig) })}>
+      <enhanced:img {src} {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, className) })} />
+      <figcaption class={figureCaption({ class: clsx((theme as ImgTheme)?.caption, styling.caption) })}>
         {@html caption}
       </figcaption>
     </figure>
   {:else}
-    <enhanced:img {src} {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, imgClass) })} />
+    <enhanced:img {src} {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, className) })} />
   {/if}
 {/snippet}
 
