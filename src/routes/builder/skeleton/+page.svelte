@@ -92,7 +92,7 @@
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size(width)</Label>
     {#each skeletonSizes as size}
-      <Radio class="my-1 w-12" name="skeletonsize" bind:group={skeletonSize} value={size}>{size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-12" }} name="skeletonsize" bind:group={skeletonSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <Button class="w-36" onclick={() => (skeletonClass === "" ? (skeletonClass = "ml-4") : (skeletonClass = ""))}>{skeletonClass ? "Remove class" : "Add class"}</Button>
@@ -109,13 +109,13 @@
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each imageSizes as size}
-      <Radio class="my-1 w-12" name="imageSize" bind:group={imagePlaceholderSize} value={size}>{size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-12" }} name="imageSize" bind:group={imagePlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Rounded</Label>
     {#each imageRoundedSizes as size}
-      <Radio class="my-1 w-12" name="imageRoundedSize" bind:group={imagePlaceholderRounded} value={size}>{size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-12" }} name="imageRoundedSize" bind:group={imagePlaceholderRounded} value={size}>{size}</Radio>
     {/each}
   </div>
   <Button class="w-36" onclick={() => (imagePlaceholderClass === "" ? (imagePlaceholderClass = "ml-4") : (imagePlaceholderClass = ""))}>{imagePlaceholderClass ? "Remove class" : "Add class"}</Button>
@@ -132,7 +132,7 @@
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size(width)</Label>
     {#each videoSizes as size}
-      <Radio class="my-1 w-12" name="videoSize" bind:group={videoPlaceholderSize} value={size}>{size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-12" }} name="videoSize" bind:group={videoPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <Button class="w-36" onclick={() => (videoPlaceholderClass === "" ? (videoPlaceholderClass = "ml-4") : (videoPlaceholderClass = ""))}>{videoPlaceholderClass ? "Remove class" : "Add class"}</Button>
@@ -147,7 +147,7 @@
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size(width)</Label>
     {#each textSizes as size}
-      <Radio class="my-1 w-12" name="textSize" bind:group={textPlaceholderSize} value={size}>{size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-12" }} name="textSize" bind:group={textPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <Button class="w-36" onclick={() => (textPlaceholderClass === "" ? (textPlaceholderClass = "ml-4") : (textPlaceholderClass = ""))}>{textPlaceholderClass ? "Remove class" : "Add class"}</Button>
@@ -162,7 +162,7 @@
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size(width)</Label>
     {#each cardSizes as size}
-      <Radio class="my-1 w-12" name="cardSize" bind:group={cardPlaceholderSize} value={size}>{size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-12" }} name="cardSize" bind:group={cardPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <Button class="w-36" onclick={() => (cardPlaceholderClass === "" ? (cardPlaceholderClass = "ml-4") : (cardPlaceholderClass = ""))}>{cardPlaceholderClass ? "Remove class" : "Add class"}</Button>
@@ -188,19 +188,19 @@
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each listSizes as size}
-      <Radio class="my-1 w-12" name="size" bind:group={listPlaceholderSize} value={size}>{size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-12" }} name="size" bind:group={listPlaceholderSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Rounded</Label>
     {#each listRoundedSizes as size}
-      <Radio class="my-1 w-12" name="roundedSize" bind:group={listPlaceholderRounded} value={size}>{size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-12" }} name="roundedSize" bind:group={listPlaceholderRounded} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Items:</Label>
     {#each listItemNumbers as itemNumber}
-      <Radio class="my-1 w-10" name="itemNumber" bind:group={listPlaceholderItemNumber} value={itemNumber}>{itemNumber}</Radio>
+      <Radio class="my-1" classes={{ label: "w-10" }} name="itemNumber" bind:group={listPlaceholderItemNumber} value={itemNumber}>{itemNumber}</Radio>
     {/each}
   </div>
   <Button class="w-36" onclick={() => (listPlaceholderClass === "" ? (listPlaceholderClass = "ml-4") : (listPlaceholderClass = ""))}>{listPlaceholderClass ? "Remove class" : "Add class"}</Button>

@@ -76,19 +76,19 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as color}
-      <Radio class="my-1 w-24" name="spinnercolor" bind:group={spinnerColor} color={color as RadioColorType} value={color}>{color}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="spinnercolor" bind:group={spinnerColor} color={color as RadioColorType} value={color}>{color}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as size}
-      <Radio class="my-1 w-12" name="spinnersize" bind:group={spinnerSize} value={size}>{size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-12" }} name="spinnersize" bind:group={spinnerSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Alignment</Label>
     {#each alignments as option}
-      <Radio class="my-1 w-16" name="alignment" bind:group={selectedAlignment} value={option.name}>{option.name}</Radio>
+      <Radio class="my-1" classes={{ label: "w-16" }} name="alignment" bind:group={selectedAlignment} value={option.name}>{option.name}</Radio>
     {/each}
   </div>
   <Button class="w-36" onclick={changeClass}>{spinnerClass ? "Remove class" : "Add class"}</Button>

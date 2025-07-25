@@ -158,9 +158,9 @@
     <Button disabled={badgeStatus2 ? true : false} onclick={changeStatus}>Open badge</Button>
   </div>
   <div class="flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Color</Label>
+    <Label class="mb-4 w-full font-bold">Color 1</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24" name="color" bind:group={color} color={colorOption as BadgeProps["color"]} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="color" bind:group={color} color={colorOption as BadgeProps["color"]} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

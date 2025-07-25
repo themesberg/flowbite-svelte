@@ -116,19 +116,19 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as size}
-      <Radio class="my-1 w-12" name="modal-size" bind:group={modalSize} value={size}>{size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-12" }} name="modal-size" bind:group={modalSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Position</Label>
     {#each placements as position}
-      <Radio class="my-1 w-32" name="modal-position" bind:group={placement} value={position}>{position}</Radio>
+      <Radio class="my-1" classes={{ label: "w-32" }} name="modal-position" bind:group={placement} value={position}>{position}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio class="my-1 w-16" name="transition_interactive" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      <Radio class="my-1" classes={{ label: "w-16" }} name="transition_interactive" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
   {#snippet codeblock()}

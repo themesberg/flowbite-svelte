@@ -90,13 +90,13 @@
   <div class="mb-4 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="m-2 w-24" name="toggle_color" bind:group={toggleColor} color={colorOption as ToggleColor} value={colorOption}>{colorOption}</Radio>
+      <Radio class="m-2" classes={{ label: "w-24" }} name="toggle_color" bind:group={toggleColor} color={colorOption as ToggleColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as size}
-      <Radio class="m-2 w-32" name="toggle_size" bind:group={toggleSize} value={size}>{size}</Radio>
+      <Radio class="m-2" classes={{ label: "w-32" }} name="toggle_size" bind:group={toggleSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

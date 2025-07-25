@@ -87,14 +87,14 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as option}
-      <Radio class="my-1 w-16" name="img_size" bind:group={imgSize} value={option}>{option}</Radio>
+      <Radio class="my-1" classes={{ label: "w-16" }} name="img_size" bind:group={imgSize} value={option}>{option}</Radio>
     {/each}
   </div>
 
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Effect</Label>
     {#each effects as effect}
-      <Radio class="my-1 w-24" name="img_effect" bind:group={imgEffect} value={effect}>{effect}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="img_effect" bind:group={imgEffect} value={effect}>{effect}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

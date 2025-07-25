@@ -81,13 +81,13 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24" name="color" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="color" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Position</Label>
     {#each placements as option}
-      <Radio class="my-1 w-20" name="interactive_toast_position" bind:group={placement} value={option}>{option}</Radio>
+      <Radio class="my-1" classes={{ label: "w-32" }} name="interactive_toast_position" bind:group={placement} value={option}>{option}</Radio>
     {/each}
   </div>
   <div class="mb-4">
