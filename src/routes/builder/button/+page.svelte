@@ -147,13 +147,13 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each btnColors as colorOption}
-      <Radio class="my-1 w-24" name="btn_color" bind:group={btnColor as ButtonProps["color"]} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="btn_color" bind:group={btnColor as ButtonProps["color"]} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each btnSizes as sizeOption}
-      <Radio class="my-1 w-24" name="btn_size" bind:group={btnSize as ButtonProps["size"]} value={sizeOption}>{sizeOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="btn_size" bind:group={btnSize as ButtonProps["size"]} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
@@ -178,13 +178,13 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each gradientColors as colorOption}
-      <Radio class="my-1 w-32" name="gradient_color" bind:group={gradientColor} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-32" }} name="gradient_color" bind:group={gradientColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each gradientSizes as sizeOption}
-      <Radio class="my-1 w-24" name="gradient_size" bind:group={gradientSize as GradientButtonProps["size"]} value={sizeOption}>{sizeOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="gradient_size" bind:group={gradientSize as GradientButtonProps["size"]} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

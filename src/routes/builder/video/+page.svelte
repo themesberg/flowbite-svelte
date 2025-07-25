@@ -77,7 +77,7 @@
   <div class="mb-4 flex flex-wrap space-x-6">
     <Label class="mb-4 w-full font-bold">Style</Label>
     {#each videoClasses as option}
-      <Radio class="my-1 w-24" name="interactive_toast_color" bind:group={selectedClass} value={option.name}>{option.name}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="interactive_toast_color" bind:group={selectedClass} value={option.name}>{option.name}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

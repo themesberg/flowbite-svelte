@@ -77,7 +77,7 @@
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24" name="table_color" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="table_color" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex gap-4">

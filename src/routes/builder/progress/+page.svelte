@@ -111,13 +111,13 @@
   <div class="mb-8 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each progressSizes as size}
-      <Radio class="my-1 w-24" name="progress_size" bind:group={progressSize.size} value={size.size} onchange={() => updateProgressSize(size.size)}>{size.size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="progress_size" bind:group={progressSize.size} value={size.size} onchange={() => updateProgressSize(size.size)}>{size.size}</Radio>
     {/each}
   </div>
   <div class="mb-8 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as color}
-      <Radio class="my-1 w-24" name="interactive_progress_color" bind:group={progressColor} color={color as RadioColorType} value={color}>{color}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="interactive_progress_color" bind:group={progressColor} color={color as RadioColorType} value={color}>{color}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

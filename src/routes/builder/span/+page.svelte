@@ -113,7 +113,8 @@
     <Label class="mb-4 w-full font-bold">Highlight</Label>
     {#each highlights as highlight}
       <Radio
-        class="my-1 w-20"
+        class="my-1"
+        classes={{ label: "w-20" }}
         name="span_highlight"
         bind:group={spanHighlight}
         onchange={() => {
@@ -130,14 +131,15 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Gradient</Label>
     {#each gradients as gradient}
-      <Radio class="my-1 w-40" name="span_gradient" bind:group={spanGradient} onchange={() => (spanHighlight = "none")} value={gradient}>{gradient}</Radio>
+      <Radio class="my-1" classes={{ label: "w-40" }} name="span_gradient" bind:group={spanGradient} onchange={() => (spanHighlight = "none")} value={gradient}>{gradient}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Decoration thickness</Label>
     {#each docrationThickness as thickness}
       <Radio
-        class="my-1 w-16"
+        class="my-1"
+        classes={{ label: "w-16" }}
         name="span_decoration_thickness"
         bind:group={spanDecorationThickness}
         onchange={() => {
@@ -154,7 +156,8 @@
     <Label class="mb-4 w-full font-bold">Decoration color</Label>
     {#each decorationColors as color}
       <Radio
-        class="my-1 w-24"
+        class="my-1"
+        classes={{ label: "w-24" }}
         name="p_decoration_color"
         bind:group={spanDecorationColor}
         onchange={() => {
@@ -172,7 +175,8 @@
     <Label class="mb-4 w-full font-bold">Decoration</Label>
     {#each decorations as decoration}
       <Radio
-        class="my-1 w-20"
+        class="my-1"
+        classes={{ label: "w-20" }}
         name="span_decoration"
         bind:group={spanDecoration}
         onchange={() => {

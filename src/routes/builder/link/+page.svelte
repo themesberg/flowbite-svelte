@@ -87,7 +87,7 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24" name="anchor_color" bind:group={anchorColor} color={colorOption as AnchorColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="anchor_color" bind:group={anchorColor} color={colorOption as AnchorColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

@@ -79,7 +79,7 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ""}`;
   <div class="mt-4 mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24" name="checkbox_color" bind:group={checkboxColor} color={colorOption as RadioColorType} onchange={() => (checkedState = true)} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="checkbox_color" bind:group={checkboxColor} color={colorOption as RadioColorType} onchange={() => (checkedState = true)} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

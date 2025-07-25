@@ -105,19 +105,19 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24" name="interactive_toast_color" bind:group={toastColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="interactive_toast_color" bind:group={toastColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio class="my-1 w-16" name="interactive_toast_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      <Radio class="my-1" classes={{ label: "w-16" }} name="interactive_toast_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Position</Label>
     {#each positions as option}
-      <Radio class="my-1 w-32" name="interactive_toast_position" bind:group={toastPosition} value={option}>{option}</Radio>
+      <Radio class="my-1" classes={{ label: "w-32" }} name="interactive_toast_position" bind:group={toastPosition} value={option}>{option}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap gap-2">

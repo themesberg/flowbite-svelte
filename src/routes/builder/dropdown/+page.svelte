@@ -174,7 +174,7 @@
   <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio class="my-1 w-24" name="dropdown_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="dropdown_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
   {#snippet codeblock()}

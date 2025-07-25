@@ -98,19 +98,19 @@
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as size}
-      <Radio class="my-1 w-16" name="interactive_card_size" bind:group={cardSize} value={size}>{size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-16" }} name="interactive_card_size" bind:group={cardSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24" name="alert_reactive" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="alert_reactive" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Shadow</Label>
     {#each shadows as shadow}
-      <Radio class="my-1 w-16" name="interactive_card_shadow" bind:group={cardShadow} value={shadow}>{shadow}</Radio>
+      <Radio class="my-1" classes={{ label: "w-16" }} name="interactive_card_shadow" bind:group={cardShadow} value={shadow}>{shadow}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

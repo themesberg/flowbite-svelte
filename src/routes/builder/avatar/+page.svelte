@@ -112,7 +112,7 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as size}
-      <Radio class="my-1 w-12" name="spinnersize" bind:group={avatarSize} value={size}>{size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-12" }} name="spinnersize" bind:group={avatarSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
