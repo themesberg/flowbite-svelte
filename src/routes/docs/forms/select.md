@@ -264,7 +264,7 @@ If you want custom options, put them directly inside the component and leave the
 <Button
   onclick={() => {
     // programmatically change the selection
-    selectRef.selectedIndex = 1; // This would select Option 2
+    selectRef.selectedIndex = 2; // This would select Option 2
     selectedValue = "option2";
     selectRef?.focus();
     console.log(`Selected index: ${selectRef?.selectedIndex}`);

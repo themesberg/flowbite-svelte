@@ -152,6 +152,25 @@
   </Select>
 </div>
 
+
+<h2 class="my-4 text-2xl">Accessing Select Element with elementRef </h2>
+
+<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
+<Select bind:elementRef={selectRef} bind:value={selectedValue} items={options} class="my-4" />
+
+<Button
+  onclick={() => {
+    // programmatically change the selection
+    selectRef.selectedIndex = 2; // This would select Option 2
+    selectedValue = "option2";
+    selectRef?.focus();
+    console.log(`Selected index: ${selectRef?.selectedIndex}`);
+  }}
+>
+  Access Select
+</Button>
+</div>
+
 <h2 class="my-4 text-2xl">MultiSelect</h2>
 
 <h3 class="my-3 text-xl">Basic example</h3>

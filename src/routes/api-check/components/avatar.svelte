@@ -1,7 +1,6 @@
 <script>
   import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownGroup, Tooltip, Indicator } from "$lib";
   import { BugOutline } from "flowbite-svelte-icons";
-  let name;
 </script>
 
 <h1 class="my-4 text-3xl">Avatar</h1>
@@ -13,6 +12,25 @@
     <Avatar src="/images/profile-picture-2.webp" />
     <Avatar src="/images/profile-picture-2.webp" cornerStyle="rounded" />
   </div>
+</div>
+
+
+<h2 class="my-4 text-2xl">Icon avatar</h2>
+<div class="flex justify-center gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
+<Avatar>
+  <BugOutline />
+</Avatar>
+</div>
+
+<h2 class="my-4 text-2xl">Custom dot</h2>
+<div class="flex justify-center gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
+  <Avatar src="/images/profile-picture-3.webp">
+    {#snippet indicator()}
+      <Indicator color="gray" border size="xl" placement="top-right">
+        <BugOutline />
+      </Indicator>
+    {/snippet}
+  </Avatar>
 </div>
 
 <h2 class="my-4 text-2xl">Bordered</h2>
@@ -120,22 +138,3 @@
   </div>
 </div>
 
-<h2 class="my-4 text-2xl">Icon avatar</h2>
-
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Avatar>
-    <BugOutline />
-  </Avatar>
-</div>
-
-<h2 class="my-4 text-2xl">Custom dot</h2>
-
-<div class="my-4 flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Avatar src="/images/profile-picture-3.webp">
-    {#snippet indicator()}
-      <Indicator color="gray" border size="xl" placement="top-right">
-        <BugOutline />
-      </Indicator>
-    {/snippet}
-  </Avatar>
-</div>
