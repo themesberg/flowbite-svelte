@@ -73,7 +73,7 @@
   }
 </script>
 
-<SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-4 z-40 mb-2 sm:top-8" />
+<SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-4 sm:top-4 z-40 mb-2 md:top-7" />
 <Sidebar breakpoint="lg" backdrop={true} {isOpen} {closeSidebar} classes={{ div: divClass, nonactive: nonActiveClass, active: activeClass }} activeUrl={mainSidebarUrl} class={mainClass} params={{ x: -50, duration: 50 }}>
   <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
   {#if showapicheck}
