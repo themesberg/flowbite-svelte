@@ -4,4 +4,11 @@ export { default as Default } from './Default.svelte';
 export { default as Dismissable } from './Dismissable.svelte';
 export { default as Dismissable2 } from './Dismissable2.svelte';
 export { default as Dismissable3 } from './Dismissable3.svelte';
-
+export { default as Dynamic } from './Dynamic.svelte';
+export { default as Icon } from './Icon.svelte';
+export { default as IconOnly } from './IconOnly.svelte';
+export { default as Large } from './Large.svelte';
+export { default as Links } from './Links.svelte';
+export { default as Notification } from './Notification.svelte';
+export { default as Opening } from './Opening.svelte';
+export { default as Pills } from './Pills.svelte';
