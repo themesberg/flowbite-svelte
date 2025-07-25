@@ -11,7 +11,7 @@
 
   let { children, name = "", color = "light", tooltip: _tooltip, pill = context.pill, textOutside = context.textOutside, textClass, class: className, classes, ...restProps }: SpeedDialButtonProps = $props();
 
-  warnThemeDeprecation("SpeedDialButton", { textClass }, { textClass: "span"});
+  warnThemeDeprecation("SpeedDialButton", { textClass }, { textClass: "span" });
   const styling = $derived(
     classes ?? {
       span: textClass
@@ -46,7 +46,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1497)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1498)
 ## Props
 @prop children
 @prop name = ""

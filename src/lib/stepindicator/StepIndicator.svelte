@@ -8,7 +8,7 @@
 
   const theme = getTheme("stepIndicator");
 
-  const {base, label, container, wrapper, step: stepCls, glow:stepGlow, incomplete} = stepIndicator({ size, color, glow, hideLabel });
+  const { base, label, container, wrapper, step: stepCls, glow: stepGlow, incomplete } = stepIndicator({ size, color, glow, hideLabel });
 
   // Ensure currentStep is within bounds
   let safeCurrentStep = $derived(Math.max(1, Math.min(currentStep, steps.length)));
@@ -54,7 +54,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1514)
+[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1516)
 ## Props
 @prop steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"]
 @prop currentStep = 1

@@ -4,12 +4,16 @@
   import type { EnhandedImgProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { src, href, caption, size, figClass, class: className,  classes, captionClass, ...restProps }: EnhandedImgProps = $props();
+  let { src, href, caption, size, figClass, class: className, classes, captionClass, ...restProps }: EnhandedImgProps = $props();
 
-  warnThemeDeprecation("EnhancedImg", { figClass, captionClass }, {
-    figClass: "fig",
-    captionClass: "caption"
-  });
+  warnThemeDeprecation(
+    "EnhancedImg",
+    { figClass, captionClass },
+    {
+      figClass: "fig",
+      captionClass: "caption"
+    }
+  );
   const styling = $derived({
     fig: figClass,
     caption: captionClass
@@ -17,7 +21,7 @@
 
   const theme = getTheme("enhancedImg");
 
-  let { base, figure, caption:figureCaption } = $derived(img({ size }));
+  let { base, figure, caption: figureCaption } = $derived(img({ size }));
 </script>
 
 {#snippet imageSlot()}
@@ -52,7 +56,8 @@
 @prop caption
 @prop size
 @prop figClass
-@prop class: imgClass
+@prop class: className
+@prop classes
 @prop captionClass
 @prop ...restProps
 -->

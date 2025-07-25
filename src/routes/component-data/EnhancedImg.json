@@ -10,7 +10,8 @@
     ["caption", ""],
     ["size", ""],
     ["figClass", ""],
-    ["class: imgClass", ""],
+    ["class: className", ""],
+    ["classes", ""],
     ["captionClass", ""]
   ]
 }

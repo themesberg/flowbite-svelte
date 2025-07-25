@@ -4,28 +4,33 @@
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { activities, liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass, class:className, classes, ...restProps }: ActivityItemProps = $props();
+  let { activities, liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass, class: className, classes, ...restProps }: ActivityItemProps = $props();
 
-  warnThemeDeprecation("ActivityItem", { liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass }, {
-    liClass: "class",
-    spanClass: "span",
-    imgClass: "img",
-    outerDivClass: "outer",
-    innerDivClass: "inner",
-    timeClass: "time",
-    titleClass: "title",
-    textClass: "text"
-  });
-  const styling = $derived(classes ?? {
-    span: spanClass,
-    img: imgClass,
-    outer: outerDivClass,
-    inner: innerDivClass,
-    time: timeClass,
-    title: titleClass,
-    text: textClass
-  });
- 
+  warnThemeDeprecation(
+    "ActivityItem",
+    { liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass },
+    {
+      liClass: "class",
+      spanClass: "span",
+      imgClass: "img",
+      outerDivClass: "outer",
+      innerDivClass: "inner",
+      timeClass: "time",
+      titleClass: "title",
+      textClass: "text"
+    }
+  );
+  const styling = $derived(
+    classes ?? {
+      span: spanClass,
+      img: imgClass,
+      outer: outerDivClass,
+      inner: innerDivClass,
+      time: timeClass,
+      title: titleClass,
+      text: textClass
+    }
+  );
 
   const theme = getTheme("activityItem");
 
@@ -57,7 +62,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1768)
+[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1759)
 ## Props
 @prop activities
 @prop liClass
@@ -68,5 +73,7 @@
 @prop timeClass
 @prop titleClass
 @prop textClass
+@prop class:className
+@prop classes
 @prop ...restProps
 -->

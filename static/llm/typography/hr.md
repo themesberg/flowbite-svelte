@@ -100,8 +100,9 @@ This example can be used to separate content with a HR tag as a shape instead of
 
 - children
 - divClass
-- class: className
 - innerDivClass
+- class: className
+- classes
 
 
 ## References

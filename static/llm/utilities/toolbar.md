@@ -148,6 +148,7 @@ Most often the textarea component is used as the main text field input element i
 - color
 - embedded
 - class: className
+- classes
 
 ### ToolbarButton
 

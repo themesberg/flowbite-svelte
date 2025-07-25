@@ -603,6 +603,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
 ## TableSearch
 
 Use the following example to search in a table.
+For more advanced usage, please see [this page](https://flowbite-svelte.com/docs/plugins/datatables).
 
 ```svelte
 <script>
@@ -614,7 +615,7 @@ Use the following example to search in a table.
     { id: 3, maker: "Volvo", type: "FGH", make: 2019 },
     { id: 4, maker: "Saab", type: "IJK", make: 2020 }
   ];
-  let filteredItems = $derived(items.filter((item) => !searchTerm || item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
+  let filteredItems = $derived.by(() => items.filter((item) => !searchTerm || item.maker.toLowerCase().includes(searchTerm.toLowerCase())));
 </script>
 
 <TableSearch placeholder="Search by maker name" hoverable bind:inputValue={searchTerm}>
@@ -868,7 +869,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1640)
+[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1642)
 
 #### Props
 
@@ -883,12 +884,13 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 - shadow
 - color: "default"
 - class: className
+- classes
 
 ### TableBody
 
 #### Types
 
-[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1672)
+[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1674)
 
 #### Props
 
@@ -900,7 +902,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1661)
+[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1663)
 
 #### Props
 
@@ -913,7 +915,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1653)
+[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1655)
 
 #### Props
 
@@ -928,7 +930,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1628)
+[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1630)
 
 #### Props
 
@@ -945,7 +947,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1677)
+[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1679)
 
 #### Props
 
@@ -956,7 +958,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1692)
+[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1694)
 
 #### Props
 
@@ -976,6 +978,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 - svgClass
 - tableClass
 - class: className
+- classes
 - placeholder: "Search"
 
 

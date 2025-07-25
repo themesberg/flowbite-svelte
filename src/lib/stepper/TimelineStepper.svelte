@@ -52,11 +52,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1608)
+[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1610)
 ## Props
 @prop children
 @prop steps = []
-@prop class:className
+@prop class: className
 @prop classes
 @prop contentClass
 @prop ...restProps

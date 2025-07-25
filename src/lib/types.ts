@@ -1815,7 +1815,7 @@ export interface TimelineItemProps extends TimelineItemVariants, HTMLLiAttribute
 }
 
 // toast
-export interface ToastProps extends ToastVaraints,  HTMLAttributes<HTMLDivElement> {
+export interface ToastProps extends ToastVaraints, HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   icon?: Snippet;
   toastStatus?: boolean;

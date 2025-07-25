@@ -9,10 +9,14 @@
 
   let { children, icon, toastStatus = $bindable(true), dismissable = true, color = "primary", position, iconClass, contentClass, align = true, params, transition = fly, class: className, classes, onclose, ...restProps }: ToastProps = $props();
 
-  warnThemeDeprecation("Toast", { iconClass, contentClass }, {
-    iconClass: "icon",
-    contentClass: "content"
-  });
+  warnThemeDeprecation(
+    "Toast",
+    { iconClass, contentClass },
+    {
+      iconClass: "icon",
+      contentClass: "content"
+    }
+  );
   const styling = $derived({
     icon: iconClass,
     content: contentClass
@@ -64,6 +68,7 @@
 @prop params
 @prop transition = fly
 @prop class: className
+@prop classes
 @prop onclose
 @prop ...restProps
 -->

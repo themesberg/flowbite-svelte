@@ -17,6 +17,7 @@
     ["params", ""],
     ["transition", "fly"],
     ["class: className", ""],
+    ["classes", ""],
     ["onclose", ""]
   ]
 }

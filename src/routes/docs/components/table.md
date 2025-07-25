@@ -629,11 +629,7 @@ For more advanced usage, please see [this page](https://flowbite-svelte.com/docs
     { id: 3, maker: "Volvo", type: "FGH", make: 2019 },
     { id: 4, maker: "Saab", type: "IJK", make: 2020 }
   ];
-  let filteredItems = $derived.by(() =>
-    items.filter((item) =>
-      !searchTerm || item.maker.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-  );
+  let filteredItems = $derived.by(() => items.filter((item) => !searchTerm || item.maker.toLowerCase().includes(searchTerm.toLowerCase())));
 </script>
 
 <TableSearch placeholder="Search by maker name" hoverable bind:inputValue={searchTerm}>

@@ -251,66 +251,66 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1594)
+[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1596)
 
 #### Props
 
 - children
 - steps: []
-- class:className
+- class: className
 - classes
 
 ### DetailedStepper
 
 #### Types
 
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1563)
+[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1565)
 
 #### Props
 
 - children
 - steps: []
 - contentClass
-- class:className
+- class: className
 - classes
 
 ### ProgressStepper
 
 #### Types
 
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1548)
+[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1550)
 
 #### Props
 
 - children
 - steps: []
-- class:className
+- class: className
 - classes
 
 ### Stepper
 
 #### Types
 
-[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1536)
+[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1538)
 
 #### Props
 
 - children
 - steps: []
-- class:className
+- class: className
 - classes
 
 ### TimelineStepper
 
 #### Types
 
-[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1608)
+[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1610)
 
 #### Props
 
 - children
 - steps: []
-- class:className
+- class: className
 - classes
 - contentClass
 
@@ -318,14 +318,14 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1578)
+[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1580)
 
 #### Props
 
 - children
 - steps: []
 - liClass
-- class:className
+- class: className
 - classes
 
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.10.20
+
+### Patch Changes
+
+- fix(package): peerDependencies svelte 5.29 for @attach
+
+- fix(classes): update classes for all components
+
 ## 1.10.19
 
 ### Patch Changes

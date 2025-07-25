@@ -6,10 +6,14 @@
 
   let { size = "none", effect = "none", caption, class: className, classes, figClass, captionClass, href, ...restProps }: ImgProps = $props();
 
-  warnThemeDeprecation("Img", { figClass, captionClass }, {
-    figClass: "fig",
-    captionClass: "caption"
-  });
+  warnThemeDeprecation(
+    "Img",
+    { figClass, captionClass },
+    {
+      figClass: "fig",
+      captionClass: "caption"
+    }
+  );
   const styling = $derived({
     fig: figClass,
     caption: captionClass
@@ -17,7 +21,7 @@
 
   const theme = getTheme("img");
 
-  let { base, figure, caption:figureCaption } = $derived(img({ size, effect }));
+  let { base, figure, caption: figureCaption } = $derived(img({ size, effect }));
 </script>
 
 {#snippet imageSlot()}
@@ -50,7 +54,8 @@
 @prop size = "none"
 @prop effect = "none"
 @prop caption
-@prop class: imgClass
+@prop class: className
+@prop classes
 @prop figClass
 @prop captionClass
 @prop href

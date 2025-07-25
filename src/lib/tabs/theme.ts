@@ -1,6 +1,6 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
-import type { Classes } from "$lib/theme/themeUtils"
+import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type TabsVaraints = VariantProps<typeof tabs> & Classes<typeof tabs>;

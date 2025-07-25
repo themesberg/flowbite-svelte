@@ -7,10 +7,14 @@
   let { children, divClass, innerDivClass, class: className, classes, ...restProps }: HrProps = $props();
 
   // base container content
-  warnThemeDeprecation("Hr", { divClass, innerDivClass }, {
-    divClass: "div",
-    innerDivClass: "content"
-  });
+  warnThemeDeprecation(
+    "Hr",
+    { divClass, innerDivClass },
+    {
+      divClass: "div",
+      innerDivClass: "content"
+    }
+  );
   const styling = $derived({
     div: divClass,
     content: innerDivClass
@@ -40,7 +44,8 @@
 ## Props
 @prop children
 @prop divClass
-@prop class: className
 @prop innerDivClass
+@prop class: className
+@prop classes
 @prop ...restProps
 -->

@@ -5,15 +5,19 @@
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, orientationSlot, title, date, dateFormat = "month-year", svgClass, liClass, divClass, timeClass, h3Class, class:className, classes, ...restProps }: TimelineItemProps = $props();
+  let { children, orientationSlot, title, date, dateFormat = "month-year", svgClass, liClass, divClass, timeClass, h3Class, class: className, classes, ...restProps }: TimelineItemProps = $props();
 
-  warnThemeDeprecation("TimelineItem", { svgClass, liClass, divClass, timeClass, h3Class }, {
-    liClass: "class",
-    svgClass: "svg",
-    divClass: "div",
-    timeClass: "time",
-    h3Class: "h3"
-  });
+  warnThemeDeprecation(
+    "TimelineItem",
+    { svgClass, liClass, divClass, timeClass, h3Class },
+    {
+      liClass: "class",
+      svgClass: "svg",
+      divClass: "div",
+      timeClass: "time",
+      h3Class: "h3"
+    }
+  );
   const styling = $derived({
     svg: svgClass,
     div: divClass,
@@ -105,5 +109,7 @@
 @prop divClass
 @prop timeClass
 @prop h3Class
+@prop class:className
+@prop classes
 @prop ...restProps
 -->

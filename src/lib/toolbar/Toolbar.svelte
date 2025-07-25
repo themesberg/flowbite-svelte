@@ -48,5 +48,6 @@
 @prop color
 @prop embedded
 @prop class: className
+@prop classes
 @prop ...restProps
 -->

@@ -4,13 +4,17 @@
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, divClass, timeClass, date, olClass, class:className, classes, ...restProps }: GroupProps = $props();
+  let { children, divClass, timeClass, date, olClass, class: className, classes, ...restProps }: GroupProps = $props();
 
-  warnThemeDeprecation("Group", { divClass, timeClass, olClass }, {
-    divClass: "class",
-    timeClass: "time",
-    olClass: "ol"
-  });
+  warnThemeDeprecation(
+    "Group",
+    { divClass, timeClass, olClass },
+    {
+      divClass: "class",
+      timeClass: "time",
+      olClass: "ol"
+    }
+  );
   const styling = $derived({
     time: timeClass,
     ol: olClass
@@ -32,12 +36,14 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1780)
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1771)
 ## Props
 @prop children
 @prop divClass
 @prop timeClass
 @prop date
 @prop olClass
+@prop class:className
+@prop classes
 @prop ...restProps
 -->

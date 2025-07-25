@@ -42,12 +42,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1563)
+[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1565)
 ## Props
 @prop children
 @prop steps = []
 @prop contentClass
-@prop class:className
+@prop class: className
 @prop classes
 @prop ...restrorps
 -->

@@ -8,7 +8,8 @@
     ["size", "\"none\""],
     ["effect", "\"none\""],
     ["caption", ""],
-    ["class: imgClass", ""],
+    ["class: className", ""],
+    ["classes", ""],
     ["figClass", ""],
     ["captionClass", ""],
     ["href", ""]

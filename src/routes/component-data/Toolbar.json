@@ -9,6 +9,7 @@
     ["end", ""],
     ["color", ""],
     ["embedded", ""],
-    ["class: className", ""]
+    ["class: className", ""],
+    ["classes", ""]
   ]
 }

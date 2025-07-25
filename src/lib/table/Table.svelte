@@ -7,10 +7,12 @@
 
   let { children, footerSlot, captionSlot, items, divClass = "relative overflow-x-auto", striped, hoverable, border = true, shadow, color = "default", class: className, classes, ...restProps }: TableProps = $props();
 
-  warnThemeDeprecation("Table", {divClass}, {divClass: "div"});
-  const styling = $derived( classes ?? {
-    div: divClass
-  })
+  warnThemeDeprecation("Table", { divClass }, { divClass: "div" });
+  const styling = $derived(
+    classes ?? {
+      div: divClass
+    }
+  );
   const theme = getTheme("table");
 
   const { div, table } = $derived(tableCls({ color, shadow }));
@@ -57,7 +59,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1640)
+[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1642)
 ## Props
 @prop children
 @prop footerSlot
@@ -70,5 +72,6 @@
 @prop shadow
 @prop color = "default"
 @prop class: className
+@prop classes
 @prop ...restProps
 -->

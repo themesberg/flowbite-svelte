@@ -8,22 +8,24 @@
   let { children, header, footer, divClass, inputValue = $bindable(), striped = false, hoverable = false, customColor = "", color = "default", innerDivClass, inputClass, searchClass, svgDivClass, svgClass, tableClass, class: className, classes, placeholder = "Search", ...restProps }: TableSearchProps = $props();
 
   warnThemeDeprecation("TableSearch", { divClass, innerDivClass, inputClass, searchClass, svgDivClass, svgClass, tableClass }, { divClass: "root", innerDivClass: "inner", inputClass: "input", searchClass: "search", svgDivClass: "svgDiv", svgClass: "svg", tableClass: "table" });
-  const styling = $derived( classes ?? {
-    root: divClass,
-    inner: innerDivClass,
-    input: inputClass,
-    search: searchClass,
-    svgDiv: svgDivClass,
-    svg: svgClass,
-    table: tableClass
-  });
+  const styling = $derived(
+    classes ?? {
+      root: divClass,
+      inner: innerDivClass,
+      input: inputClass,
+      search: searchClass,
+      svgDiv: svgDivClass,
+      svg: svgClass,
+      table: tableClass
+    }
+  );
 
   const theme = getTheme("tableSearch");
 
   // Generate theme styles - handle custom color case
   const themeColor = color === "custom" ? "default" : (color as "default" | "blue" | "green" | "red" | "yellow" | "purple" | "indigo" | "pink");
 
-  const { root, inner, search, svgDiv, svg, input, table} = $derived(tableSearch({ color: themeColor, striped, hoverable }));
+  const { root, inner, search, svgDiv, svg, input, table } = $derived(tableSearch({ color: themeColor, striped, hoverable }));
 
   const tableCls = $derived(table({ class: clsx(tableClass, (theme as TableSearchTheme)?.table, className) }));
 
@@ -68,7 +70,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1692)
+[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1694)
 ## Props
 @prop children
 @prop header
@@ -86,6 +88,7 @@
 @prop svgClass
 @prop tableClass
 @prop class: className
+@prop classes
 @prop placeholder = "Search"
 @prop ...restProps
 -->

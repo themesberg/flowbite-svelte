@@ -8,7 +8,6 @@ export type HrVariants = VariantProps<typeof hr> & Classes<typeof hr>;
 export type HrSlots = keyof typeof hr.slots;
 export type HrTheme = Partial<Record<HrSlots, ClassValue>>;
 
-
 export const hr = tv({
   slots: {
     base: "h-px my-8 bg-gray-200 border-0 dark:bg-gray-700",

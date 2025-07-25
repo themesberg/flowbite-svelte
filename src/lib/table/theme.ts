@@ -1,6 +1,6 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "clsx";
-import type { Classes } from "$lib/theme/themeUtils"
+import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type TableVariants = VariantProps<typeof table> & Classes<typeof table>;
@@ -22,7 +22,7 @@ export type TableSearchColor = "default" | "blue" | "green" | "red" | "yellow" |
 export const table = tv({
   slots: {
     div: "",
-    table: "w-full text-left text-sm",
+    table: "w-full text-left text-sm"
   },
   variants: {
     color: {
@@ -305,8 +305,6 @@ export const tableBodyRow = tv({
     }
   ]
 });
-
-
 
 export const tableHead = tv({
   base: "text-xs uppercase",

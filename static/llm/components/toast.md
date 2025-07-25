@@ -407,6 +407,7 @@ You can use `onclose` to execute custom logic when the toast is closed.
 - params
 - transition: fly
 - class: className
+- classes
 - onclose
 
 

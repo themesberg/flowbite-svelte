@@ -7,7 +7,6 @@ export type TooltipVariants = VariantProps<typeof tooltip>;
 export type TooltipSlots = keyof typeof tooltip.slots;
 export type TooltipTheme = Partial<Record<TooltipSlots, ClassValue>>;
 
-
 export const tooltip = tv({
   base: "absolute px-3 py-2 rounded-lg text-sm z-50 pointer-events-none",
   variants: {

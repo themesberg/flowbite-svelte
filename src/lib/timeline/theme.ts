@@ -2,7 +2,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
-// Variants 
+// Variants
 export type TimelineVariants = VariantProps<typeof timeline>;
 export type ActivityItemVariants = VariantProps<typeof activityItem> & Classes<typeof activityItem>;
 export type GroupVariants = VariantProps<typeof group> & Classes<typeof group>;
@@ -48,7 +48,7 @@ export const group = tv({
 
 export const groupItem = tv({
   slots: {
-    base: '',
+    base: "",
     a: "block items-center p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700",
     img: "me-3 mb-3 w-12 h-12 rounded-full sm:mb-0",
     div: "text-gray-600 dark:text-gray-400",
