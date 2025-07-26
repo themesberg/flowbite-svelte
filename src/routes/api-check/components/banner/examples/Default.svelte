@@ -6,7 +6,7 @@
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
-<Banner>
+<Banner class="absolute">
   <p class="me-8 flex items-center text-sm font-normal text-gray-500 md:me-0 dark:text-gray-400">
     <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
       <BullhornSolid class="h-3 w-3 text-gray-500 dark:text-gray-400" />

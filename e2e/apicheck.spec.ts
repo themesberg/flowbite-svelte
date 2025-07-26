@@ -55,6 +55,11 @@ test("API check carousel page should have h1", async ({ page }) => {
   expect(await page.textContent("h1")).toBe("Carousel");
 });
 
+test("API check clipboard page should have h1", async ({ page }) => {
+  await page.goto("/api-check/components/clipboard");
+  expect(await page.textContent("h1")).toBe("Clipboard");
+});
+
 test("API check darkmode page should have h1", async ({ page }) => {
   await page.goto("/api-check/components/darkmode");
   expect(await page.textContent("h1")).toBe("Darkmode");

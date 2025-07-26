@@ -6,7 +6,7 @@
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
-<Banner type="bottom">
+<Banner type="bottom" class="absolute">
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
     <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
       <SalePercentSolid class="h-4 w-4 text-gray-500 dark:text-gray-400" />
