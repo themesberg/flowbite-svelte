@@ -1,75 +1,46 @@
-<script>
-  import { Breadcrumb, BreadcrumbItem, Button } from "$lib";
-  import { HomeOutline, ChevronDoubleRightOutline } from "flowbite-svelte-icons";
+<script lang="ts">
+	import HighlightCompo from '../../../utils/api-check/HighlightCompo.svelte';
+	import CodeWrapper from '../../../utils/api-check/CodeWrapper.svelte';
+	import H1 from '../../../utils/api-check/H1.svelte';
+	import H2 from '../../../utils/api-check/H2.svelte';
 
-  // For the class and olClass example
-  let navClass = $state("");
-  let olClass = $state("");
-
-  const changeNavClass = () => {
-    navClass = navClass === "" ? "border border-red-500 p-2" : "";
-  };
-
-  const changeOlClass = () => {
-    olClass = olClass === "" ? "border border-blue-500 p-2" : "";
-  };
+	import * as ExampleComponents from './examples/';
+	const exampleModules = import.meta.glob('./examples/*.svelte', {
+		query: '?raw',
+		import: 'default',
+		eager: true
+	}) as Record<string, string>;
 </script>
 
-<h1 class="my-4 text-3xl">Breadcrumb</h1>
+<H1>Breadcrumb</H1>
+<H2>Default</H2>
+<CodeWrapper>
+  <ExampleComponents.Default />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Default.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Default Breadcrumb</h2>
+<H2>Solid Breadcrumb</H2>
+<CodeWrapper>
+  <ExampleComponents.Solid />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Solid.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Breadcrumb aria-label="Default breadcrumb example">
-    <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
-    <BreadcrumbItem href="/">Projects</BreadcrumbItem>
-    <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
-  </Breadcrumb>
-</div>
+<H2>Icons</H2>
+<CodeWrapper>
+  <ExampleComponents.Icons />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Icons.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Solid Breadcrumb</h2>
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Breadcrumb aria-label="Solid background breadcrumb example" solid>
-    <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
-    <BreadcrumbItem href="/">Projects</BreadcrumbItem>
-    <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
-  </Breadcrumb>
-</div>
-
-<h2 class="my-4 text-2xl">Icons</h2>
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 px-5 py-3 dark:bg-gray-900">
-    <BreadcrumbItem href="/" home>
-      {#snippet icon()}
-        <HomeOutline class="me-2 h-4 w-4" />
-      {/snippet}Home
-    </BreadcrumbItem>
-    <BreadcrumbItem href="/">
-      {#snippet icon()}
-        <ChevronDoubleRightOutline class="mx-2 h-5 w-5 dark:text-white" />
-      {/snippet}
-      Projects
-    </BreadcrumbItem>
-    <BreadcrumbItem>
-      {#snippet icon()}
-        <ChevronDoubleRightOutline class="mx-2 h-5 w-5 dark:text-white" />
-      {/snippet}
-      Flowbite Svelte
-    </BreadcrumbItem>
-  </Breadcrumb>
-</div>
-
-<h2 class="my-4 text-2xl">Class and olClass</h2>
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <div class="h-20">
-    <Breadcrumb class={navClass} {olClass}>
-      <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
-      <BreadcrumbItem href="/">Projects</BreadcrumbItem>
-      <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
-    </Breadcrumb>
-  </div>
-  <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-48" onclick={changeNavClass}>{navClass ? "Remove navClass" : "Add navClass"}</Button>
-    <Button class="w-48" color="green" onclick={changeOlClass}>{olClass ? "Remove olClass" : "Add olClass"}</Button>
-  </div>
-</div>
+<H2>Class and olClass</H2>
+<CodeWrapper>
+  <ExampleComponents.Class />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Class.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
