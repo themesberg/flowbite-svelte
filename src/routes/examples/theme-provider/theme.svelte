@@ -1,54 +1,54 @@
 <script lang="ts">
-  import { ThemeProvider, Accordion, AccordionItem, Alert, Avatar, Badge, Heading, Banner, P, BottomNav, BottomNavItem, Breadcrumb, BreadcrumbItem, ButtonGroup, Button, GradientButton, Card } from "$lib";
+  import { Accordion, AccordionItem, Alert, Avatar, Badge, Banner, BottomNav, BottomNavItem, Breadcrumb, BreadcrumbItem, Button, ButtonGroup, Card, GradientButton, Heading, P, ThemeProvider } from "$lib";
   // theme types
-  import type { ThemeConfig, AccordionTheme, AccordionItemTheme, AlertTheme, AvatarTheme, BadgeTheme, BannerTheme, BottomNavTheme, BottomNavItemTheme, BreadcrumbTheme, BreadcrumbItemTheme, ButtonGroupTheme, ButtonTheme, GradientButtonTheme, CardTheme, ParagraphTheme, HeadingTheme } from "$lib";
+  import type { ThemeConfig } from "$lib";
 
-  import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid } from "flowbite-svelte-icons";
+  import { AdjustmentsVerticalOutline, HomeSolid, UserCircleSolid, WalletSolid } from "flowbite-svelte-icons";
 
   const theme: ThemeConfig = {
-    accordion: "w-96 text-green-500" as AccordionTheme,
-    accordionitem: {
+    accordion: "w-96 text-green-500",
+    accordionItem: {
       button: "text-purple-500"
-    } as AccordionItemTheme,
-    alert: "bg-green-500 text-white w-48" as AlertTheme,
-    avatar: "bg-blue-50 text-green-700 ring-red-400 dark:ring-red-300" as AvatarTheme,
+    },
+    alert: "bg-green-500 text-white w-48",
+    avatar: "bg-blue-50 text-green-700 ring-red-400 dark:ring-red-300",
     badge: {
       base: "bg-purple-400 text-white"
-    } as BadgeTheme,
+    },
     banner: {
       base: "mx-auto bg-yellow-400 border-blue-600"
-    } as BannerTheme,
+    },
     bottomNav: {
-      outer: "border-red-500"
-    } as BottomNavTheme,
+      inner: "border-red-500"
+    },
     bottomNavItem: {
       base: "bg-blue-200",
       span: "bg-green-400"
-    } as BottomNavItemTheme,
+    },
     breadcrumb: {
       list: "bg-blue-100"
-    } as BreadcrumbTheme,
+    },
     breadcrumbItem: {
       separator: "text-green-500"
-    } as BreadcrumbItemTheme,
-    buttonGroup: "shadow-lg *:ring-primary-700!" as ButtonGroupTheme,
+    },
+    buttonGroup: "shadow-lg *:ring-primary-700!",
     button: {
       base: "w-48",
       outline: "",
       shadow: ""
-    } as ButtonTheme,
+    },
     gradientButton: {
       base: "",
       outlineWrapper: ""
-    } as GradientButtonTheme,
+    },
     card: {
       base: "bg-red-50 w-72 p-4 sm:p-6 md:p-8",
       image: ""
-    } as CardTheme,
-    heading: "my-8" as HeadingTheme
+    },
+    heading: "my-8"
   };
-  const theme2 = {
-    p: "me-8 flex items-center text-lg font-normal text-blue-500 md:me-0 dark:text-blue-400" as ParagraphTheme
+  const theme2: ThemeConfig = {
+    paragraph: "me-8 flex items-center text-lg font-normal text-blue-500 md:me-0 dark:text-blue-400"
   };
   const theme3 = {
     heading: "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
@@ -86,11 +86,11 @@
         <P>Content</P>
       </ThemeProvider>
     </Banner>
-    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde ratione voluptatibus ex nobis nostrum eum aliquid sit vitae odio tempora a impedit ducimus omnis, itaque illo? Illo, voluptas natus!</P>
+    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde ratione voluptatibus ex nobis nostrum eum aliquid sit vitae odio tempora a impedit ducimus omnis, itaque illo? Illo, volup!</P>
   </div>
   <Heading tag="h2">Bottom Navigation</Heading>
   <div class="relative h-96 w-96 border p-4">
-    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde ratione voluptatibus ex nobis nostrum eum aliquid sit vitae odio tempora a impedit ducimus omnis, itaque illo? Illo, voluptas natus!</P>
+    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde ratione voluptatibus ex nobis nostrum eum aliquid sit vitae odio tempora a impedit ducimus omnis, itaque illo? Illo, volup!</P>
     <BottomNav position="absolute" innerClass="grid-cols-4">
       <BottomNavItem btnName="Home">
         <HomeSolid />
