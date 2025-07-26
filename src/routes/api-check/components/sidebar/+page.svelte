@@ -2,7 +2,7 @@
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarButton, SidebarCta, SidebarBrand, SidebarDropdownWrapper, SidebarDropdownItem, CloseButton, uiHelpers } from "$lib";
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditSolid, ShoppingBagSolid, BookSolid, RestoreWindowOutline, FireSolid, CloseOutline, ChevronDoubleUpOutline, ChevronDoubleDownOutline, ChartPieSolid, CartSolid } from "flowbite-svelte-icons";
   import { page } from "$app/state";
-  import PlusPlaceholder from "../../utils/PlusPlaceholder.svelte";
+  import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
   import { fade } from "svelte/transition";
   import { sineIn } from "svelte/easing";
 

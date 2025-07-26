@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Tabs, TabItem, Timeline, TimelineItem, Button, Label, Textarea } from "$lib";
   import { UserCircleSolid, GridSolid, AdjustmentsVerticalSolid, ClipboardSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-  import type { Snapshot } from "../$types";
+  import type { Snapshot } from "../../$types";
 
   let comment = $state("");
   export const snapshot: Snapshot<string> = {

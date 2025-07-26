@@ -1,7 +1,7 @@
 <script>
   import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, ImagePlaceholder, TextPlaceholder, Skeleton } from "$lib";
   import { FacebookSolid, GithubSolid, DiscordSolid, TwitterSolid } from "flowbite-svelte-icons";
-  import Dribble from "../../utils/icons/Dribble.svelte";
+  import Dribble from "../../../utils/icons/Dribble.svelte";
 </script>
 
 <h1 class="my-4 text-3xl">Footer</h1>
