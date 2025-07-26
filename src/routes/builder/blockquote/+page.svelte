@@ -90,13 +90,13 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as size}
-      <Radio class="my-1 w-16" name="block_size" bind:group={selectedSize} value={size}>{size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-16" }} name="block_size" bind:group={selectedSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Alignment</Label>
     {#each alignments as alignment}
-      <Radio class="my-1 w-16" name="block_alignment" bind:group={selectedAlignment} value={alignment}>{alignment}</Radio>
+      <Radio class="my-1" classes={{ label: "w-16" }} name="block_alignment" bind:group={selectedAlignment} value={alignment}>{alignment}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

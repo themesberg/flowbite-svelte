@@ -69,7 +69,7 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Rounded</Label>
     {#each tags as tag}
-      <Radio class="my-1 w-12" name="tag" bind:group={headingTag} value={tag}>{tag}</Radio>
+      <Radio class="my-1" classes={{ label: "w-12" }} name="tag" bind:group={headingTag} value={tag}>{tag}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

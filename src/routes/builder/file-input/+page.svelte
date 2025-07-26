@@ -75,7 +75,7 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ""}`;
   <div class="mt-4 mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as sizeOption}
-      <Radio class="my-1 w-16" name="file_input_size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-16" }} name="file_input_size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

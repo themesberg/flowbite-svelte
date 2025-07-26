@@ -104,14 +104,14 @@ ${helperSlot ? `<Helper class="ps-6" color="${helperColor}">Helper text</Helper>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24" name="radio_color" bind:group={radioColor} onchange={() => handleOnchange(colorOption)} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="radio_color" bind:group={radioColor} onchange={() => handleOnchange(colorOption)} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Button class="mb-4 w-40" color="secondary" onclick={changeHelperSlot}>{helperSlot ? "Remove helper" : "Add helper"}</Button>
     <Label class="mb-4 w-full font-bold">Helper Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24 {helperSlot ? '' : 'cursor-not-allowed opacity-30'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1{helperSlot ? '' : 'cursor-not-allowed opacity-30'}" classes={{ label: "w-24" }} disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

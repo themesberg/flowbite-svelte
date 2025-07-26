@@ -34,7 +34,7 @@ Import a button component in the script tag.
 
 Use these default button styles with multiple colors to indicate an action or link within your website.
 
-```svelte example class="flex justify-center gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
   import { Button } from "flowbite-svelte";
 </script>
@@ -54,7 +54,7 @@ Use these default button styles with multiple colors to indicate an action or li
 
 You can add a link to a Button component:
 
-```svelte example class="flex justify-center gap-2" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center" hideScript hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
 </script>
@@ -66,7 +66,7 @@ You can add a link to a Button component:
 
 The button pills can be used as an alternative style by using fully rounded edges.
 
-```svelte example class="flex justify-center gap-2" hideScript hideResponsiveButtons
+```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
 </script>
@@ -86,7 +86,7 @@ The button pills can be used as an alternative style by using fully rounded edge
 
 These beautifully colored buttons built with the gradient color stops utility classes from Tailwind CSS can be used as a creative alternative to the default button styles.
 
-```svelte example class="flex justify-center gap-2" hideResponsiveButtons
+```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
   import { GradientButton } from "flowbite-svelte";
 </script>
@@ -142,7 +142,7 @@ This is a special button style that incorporates a gradient color for the outlin
 
 These beautiful button elements with color shadows can be used since the release of Tailwind v3.0.
 
-```svelte example class="flex justify-center gap-2" hideResponsiveButtons
+```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
   import { Button, GradientButton } from "flowbite-svelte";
 </script>
@@ -161,7 +161,7 @@ These beautiful button elements with color shadows can be used since the release
 
 Use the following button styles to show the colors only for the border of the element.
 
-```svelte example class="flex justify-center gap-2" hideScript hideResponsiveButtons
+```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
 </script>
@@ -180,7 +180,7 @@ Use the following button styles to show the colors only for the border of the el
 
 Use these examples if you want to use smaller or larger buttons.
 
-```svelte example class="gap-2" hideScript hideResponsiveButtons
+```svelte example class="space-y-2" hideScript hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
   import { EnvelopeSolid } from "flowbite-svelte-icons";

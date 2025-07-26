@@ -147,7 +147,7 @@
   <div class="mb-8 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Device</Label>
     {#each deviceNames as device}
-      <Radio class="my-1 w-24" name="alert_reactive" bind:group={selectedDevice} value={device}>{device}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="alert_reactive" bind:group={selectedDevice} value={device}>{device}</Radio>
     {/each}
   </div>
   <DeviceMockup device={currentDevice.device as DeviceVariantType}>

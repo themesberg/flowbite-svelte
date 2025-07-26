@@ -118,7 +118,7 @@
     <Label class="mb-4 w-full font-bold">Style</Label>
     {#each tabStyles as option}
       {#if option !== "full"}
-        <Radio class="my-1 w-24" name="table_color" bind:group={tabStyle} value={option}>{option}</Radio>
+        <Radio class="my-1" classes={{ label: "w-24" }} name="table_color" bind:group={tabStyle} value={option}>{option}</Radio>
       {/if}
     {/each}
   </div>

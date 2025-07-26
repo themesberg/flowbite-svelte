@@ -16,6 +16,13 @@ export { default as Seealso } from "./Seealso.svelte";
 
 const basename = (path: string) => path.split("/").pop()?.split(".").shift() ?? "";
 const filePath = (path: string) => "/" + basename(path);
+
+const newFilePath = (path: string) => {
+  const segments = path.split("/");
+  const folder = segments.at(-2); // get subdirectory like "accordion", "alert"
+  return `/${folder}`;
+};
+
 /**
  * Extracts the route name from a SvelteKit file path
  * @param {string} path - The file path (e.g. '/src/routes/builder/video/+page.svelte')
@@ -188,16 +195,19 @@ export const fetchBuilders = async () => {
 };
 
 export const fetchApiCheck = async () => {
-  const apicheckComponents = import.meta.glob("/src/routes/api-check/components/*.svelte");
+  // const apicheckComponents = import.meta.glob("/src/routes/api-check/components/*.svelte");
+  const apicheckComponents = import.meta.glob("/src/routes/api-check/components/*/+page.svelte");
   const apicheckForm = import.meta.glob("/src/routes/api-check/forms/*.svelte");
   const apicheckTypography = import.meta.glob("/src/routes/api-check/typography/*.svelte");
   const apicheckExtend = import.meta.glob("/src/routes/api-check/extend/*.svelte");
 
-  const iterableApiComponents = Object.entries(apicheckComponents);
+  const iterableApiComponents = Object.entries(apicheckComponents).filter(
+    ([path]) => !path.includes("/[...slug]/")
+  );
   const componentsApicheck = await Promise.all(
     iterableApiComponents.map(async ([path, _]) => {
       return {
-        path: filePath(path)
+        path: newFilePath(path) // assuming filePath() still works on the new path
       };
     })
   );

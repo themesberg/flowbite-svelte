@@ -391,6 +391,7 @@ export interface CarouselProps extends CarouselVariants, Omit<HTMLAttributes<HTM
   imgClass?: ClassValue;
   onchange?: (x: HTMLImgAttributes) => {};
   divClass?: ClassValue;
+  isPreload?: boolean;
 }
 
 export interface IndicatorsProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
