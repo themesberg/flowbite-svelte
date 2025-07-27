@@ -1740,9 +1740,11 @@ export interface TabCtxType {
 }
 
 // theme
-export interface ThemeConfig {
-  [key: string]: ClassValue | ThemeConfig;
-}
+//export interface ThemeConfig {
+//  [key: string]: ClassValue | ThemeConfig;
+//}
+
+export type { ThemeConfig } from "$lib/theme";
 
 // timeline
 export interface ActivityType {
