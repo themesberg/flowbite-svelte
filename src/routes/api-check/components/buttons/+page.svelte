@@ -1,191 +1,142 @@
-<script>
-  import { Button, GradientButton, Indicator, Spinner } from "$lib";
-  import { EnvelopeSolid, ArrowRightOutline, CartSolid, ThumbsUpSolid } from "flowbite-svelte-icons";
+<script lang="ts">
+	import HighlightCompo from '../../../utils/api-check/HighlightCompo.svelte';
+	import CodeWrapper from '../../../utils/api-check/CodeWrapper.svelte';
+	import H1 from '../../../utils/api-check/H1.svelte';
+	import H2 from '../../../utils/api-check/H2.svelte';
 
-  const btn1 = () => {
-    alert("You clicked btn1.");
-  };
-
-  const btn2 = () => {
-    alert("You touched btn2.");
-  };
-
-  let loading = $state(false);
-
-  async function handleSubmit() {
-    loading = true;
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    loading = false;
-  }
+	import * as ExampleComponents from './examples/';
+	const exampleModules = import.meta.glob('./examples/*.svelte', {
+		query: '?raw',
+		import: 'default',
+		eager: true
+	}) as Record<string, string>;
 </script>
 
-<h1 class="my-4 text-3xl">Buttons</h1>
+<H1>Buttons</H1>
+<H2>Default</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.Default />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Default.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Setup</h2>
+<H2>Button with link</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.Link />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Link.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Button>Default</Button>
-  <Button color="alternative">Alternative</Button>
-  <Button color="dark">Dark</Button>
-  <Button color="light">Light</Button>
-  <Button color="blue">Blue</Button>
-  <Button color="green">Green</Button>
-  <Button color="red">Red</Button>
-  <Button color="yellow">Yellow</Button>
-  <Button color="purple">Purple</Button>
-</div>
+<H2>Button pills</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.Pills />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Pills.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Button with link</h2>
+<H2>Gradient monochrome</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.Monochrome />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Monochrome.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Button href="/">Home</Button>
-</div>
+<H2>Gradient duotone</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.Duotone />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Duotone.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Button pills</h2>
+<H2>Gradient outline</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.GradientOutline />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/GradientOutline.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Button pill>Default</Button>
-  <Button color="alternative" pill>Alternative</Button>
-  <Button color="dark" pill>Dark</Button>
-  <Button color="light" pill>Light</Button>
-  <Button color="blue" pill>Blue</Button>
-  <Button color="green" pill>Green</Button>
-  <Button color="red" pill>Red</Button>
-  <Button color="yellow" pill>Yellow</Button>
-  <Button color="purple" pill>Purple</Button>
-</div>
+<H2>Colored shadows</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.Colored />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Colored.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Gradient monochrome</h2>
+<H2>Outline buttons</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.Outline />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Outline.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <GradientButton color="blue">Blue</GradientButton>
-  <GradientButton color="green">Green</GradientButton>
-  <GradientButton color="cyan">Cyan</GradientButton>
-  <GradientButton color="teal">Teal</GradientButton>
-  <GradientButton color="lime">Lime</GradientButton>
-  <GradientButton color="red">Red</GradientButton>
-  <GradientButton color="pink">Pink</GradientButton>
-  <GradientButton color="purple">Purple</GradientButton>
-</div>
+<H2>Button sizes with icons</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.Sizes />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Sizes.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Gradient duotone</h2>
+<H2>Button with icon</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.Icon />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Icon.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <GradientButton color="purpleToBlue">Purple to Blue</GradientButton>
-  <GradientButton color="cyanToBlue">Cyan to Blue</GradientButton>
-  <GradientButton color="greenToBlue">Green to Blue</GradientButton>
-  <GradientButton color="purpleToPink">Purple to Pink</GradientButton>
-  <GradientButton color="pinkToOrange">Pink to Orange</GradientButton>
-  <GradientButton color="tealToLime">Teal to Lime</GradientButton>
-  <GradientButton color="redToYellow">Red to Yellow</GradientButton>
-</div>
+<H2>Button with label</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.Label />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Label.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Gradient outline</h2>
+<H2>Icon buttons</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.IconButton />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/IconButton.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <GradientButton outline color="purpleToBlue">Purple to Blue</GradientButton>
-  <GradientButton outline color="cyanToBlue">Cyan to Blue</GradientButton>
-  <GradientButton outline color="greenToBlue">Green to Blue</GradientButton>
-  <GradientButton outline color="purpleToPink">Purple to Pink</GradientButton>
-  <GradientButton outline color="pinkToOrange">Pink to Orange</GradientButton>
-  <GradientButton outline color="tealToLime">Teal to Lime</GradientButton>
-  <GradientButton outline pill color="redToYellow">Red to Yellow</GradientButton>
-  <GradientButton outline color="redToYellow" class="w-72">Red to Yellow</GradientButton>
-</div>
+<H2>Loader</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.Loader />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Loader.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Colored shadows</h2>
+<H2>Disabled</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.Disabled />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Disabled.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <GradientButton shadow color="blue">Blue</GradientButton>
-  <GradientButton shadow color="green">Green</GradientButton>
-  <GradientButton shadow color="cyan">Cyan</GradientButton>
-  <GradientButton shadow color="teal">Teal</GradientButton>
-  <GradientButton shadow color="lime">Lime</GradientButton>
-  <GradientButton shadow color="red">Red</GradientButton>
-  <GradientButton shadow color="pink">Pink</GradientButton>
-  <GradientButton shadow color="purple">Purple</GradientButton>
-</div>
+<H2>Events</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.Events />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Events.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Outline buttons</h2>
-
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Button outline>Default</Button>
-  <Button outline color="dark">Dark</Button>
-  <Button outline color="green">Green</Button>
-  <Button outline color="red">Red</Button>
-  <Button outline color="yellow">Yellow</Button>
-  <Button outline color="purple">Purple</Button>
-</div>
-
-<h2 class="my-4 text-2xl">Button sizes with icons</h2>
-
-<div class="gap-2">
-  <Button size="xs"><EnvelopeSolid class="me-2 h-4 w-4" />Extra small</Button>
-  <Button size="sm"><EnvelopeSolid class="me-2 h-4 w-4" />Small</Button>
-  <Button size="md"><EnvelopeSolid class="me-2 h-5 w-5" />Base</Button>
-  <Button size="lg"><EnvelopeSolid class="me-2 h-5 w-5" />Large</Button>
-  <Button size="xl"><EnvelopeSolid class="me-2 h-6 w-6" />Extra large</Button>
-</div>
-
-<h2 class="my-4 text-2xl">Button with icon</h2>
-
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Button>
-    <CartSolid class="me-2 h-5 w-5" /> Buy Now
-  </Button>
-  <Button>
-    Choose Plan <ArrowRightOutline class="ms-2 h-5 w-5" />
-  </Button>
-</div>
-
-<h2 class="my-4 text-2xl">Button with label</h2>
-
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Button class="gap-2">
-    Messages
-    <Indicator class="bg-primary-200 text-primary-800 text-xs font-semibold" size="lg">2</Indicator>
-  </Button>
-</div>
-
-<h2 class="my-4 text-2xl">Icon buttons</h2>
-
-<div class="flex flex-wrap items-center gap-2">
-  <Button class="p-2!"><ArrowRightOutline class="h-6 w-6" /></Button>
-  <Button pill={true} class="p-2!"><ArrowRightOutline class="h-6 w-6" /></Button>
-  <Button outline={true} class="p-2!" size="lg">
-    <ThumbsUpSolid class="text-primary-700 h-7 w-7" />
-  </Button>
-  <Button pill={true} outline={true} class="p-2!" size="xl">
-    <ThumbsUpSolid class="text-primary-700 h-6 w-6" />
-  </Button>
-</div>
-
-<h2 class="my-4 text-2xl">Loader</h2>
-
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Button>
-    <Spinner class="me-3" size="4" color="gray" />Loading ...
-  </Button>
-  <Button color="alternative">
-    <Spinner class="me-3" size="4" />Loading ...
-  </Button>
-</div>
-
-<h2 class="my-4 text-2xl">Disabled</h2>
-
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Button disabled>Disabled</Button>
-</div>
-
-<h2 class="my-4 text-2xl">Events</h2>
-
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Button onclick={btn1}>Button 1</Button>
-  <Button ontouchstart={btn2}>Button 2</Button>
-</div>
-
-<h2 class="my-4 text-2xl">Loading state with Spinner</h2>
-
-<div class="my-4 flex flex-wrap gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Button class="w-32" onclick={handleSubmit} {loading}>Submit</Button>
-</div>
+<H2>Loading State with Spinner</H2>
+<CodeWrapper innerClass="flex flex-wrap gap-2">
+  <ExampleComponents.Loading />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Loading.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
