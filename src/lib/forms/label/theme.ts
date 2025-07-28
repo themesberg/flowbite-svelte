@@ -1,10 +1,7 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 
 // Variants
 export type LabelVariants = VariantProps<typeof label>;
-// Theme
-export type LabelTheme = ClassValue;
 
 export const label = tv({
   base: "text-sm rtl:text-right font-medium block",

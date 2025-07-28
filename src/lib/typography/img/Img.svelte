@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { img, type ImgTheme } from ".";
+  import { img } from ".";
   import type { ImgProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
@@ -26,14 +26,14 @@
 
 {#snippet imageSlot()}
   {#if caption}
-    <figure class={figure({ class: clsx((theme as ImgTheme)?.figure, styling.fig) })}>
-      <img {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, className) })} />
-      <figcaption class={figureCaption({ class: clsx((theme as ImgTheme)?.caption, styling.caption) })}>
+    <figure class={figure({ class: clsx(theme?.figure, styling.fig) })}>
+      <img {...restProps} class={base({ class: clsx(theme?.base, className) })} />
+      <figcaption class={figureCaption({ class: clsx(theme?.caption, styling.caption) })}>
         {@html caption}
       </figcaption>
     </figure>
   {:else}
-    <img {...restProps} class={base({ class: clsx((theme as ImgTheme)?.base, className) })} />
+    <img {...restProps} class={base({ class: clsx(theme?.base, className) })} />
   {/if}
 {/snippet}
 

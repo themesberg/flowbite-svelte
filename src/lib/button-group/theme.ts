@@ -1,10 +1,7 @@
-import type { ClassValue } from "svelte/elements";
 import { tv, type VariantProps } from "tailwind-variants";
 
 // Variants
 export type ButtonGroupVariants = VariantProps<typeof buttonGroup>;
-// Theme
-export type ButtonGroupTheme = ClassValue;
 
 export const buttonGroup = tv({
   base: "inline-flex rounded-lg shadow-xs",

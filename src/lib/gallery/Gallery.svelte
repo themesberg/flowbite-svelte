@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { gallery, type GalleryTheme } from ".";
+  import { gallery } from ".";
   import clsx from "clsx";
   import { type GalleryProps, type ImgType } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -20,11 +20,11 @@
 
 {#snippet _figure(item: ImgType)}
   <div>
-    <img src={item.src} alt={item.alt} class={image({ class: clsx((theme as GalleryTheme)?.image, styling.image) })} {...restProps} />
+    <img src={item.src} alt={item.alt} class={image({ class: clsx(theme?.image, styling.image) })} {...restProps} />
   </div>
 {/snippet}
 
-<div class={div({ class: clsx((theme as GalleryTheme)?.div, className) })} use:init>
+<div class={div({ class: clsx(theme?.div, className) })} use:init>
   {#each items as item}
     {#if figure}
       {@render figure(item as ImgType)}

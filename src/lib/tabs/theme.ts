@@ -5,11 +5,6 @@ import type { Classes } from "$lib/theme/themeUtils";
 // Variants
 export type TabsVaraints = VariantProps<typeof tabs> & Classes<typeof tabs>;
 export type TabItemVariants = VariantProps<typeof tabItem> & Classes<typeof tabItem>;
-// Theme
-export type TabsSlots = keyof typeof tabs.slots;
-export type TabsTheme = Partial<Record<TabsSlots, ClassValue>>;
-export type TabItemSlots = keyof typeof tabItem.slots;
-export type TabItemTheme = Partial<Record<TabItemSlots, ClassValue>>;
 
 export const tabs = tv({
   slots: {

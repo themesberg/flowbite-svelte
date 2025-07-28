@@ -1,18 +1,9 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type phoneInputClasses = Partial<{
-  [K in keyof (typeof phoneinput)["slots"]]: ClassValue;
-}>;
-// Variants
-// No need to expand Classes here as they are not used in props
-// Applied classes from the beginning
-export type PhoneInputVariants = VariantProps<typeof phoneinput> & { classes?: phoneInputClasses };
-// Theme
-export type PhoneInputSlots = keyof typeof phoneinput.slots;
-export type PhoneInputTheme = Partial<Record<PhoneInputSlots, ClassValue>>;
+export type PhoneInputVariants = VariantProps<typeof phoneInput> &  Classes<typeof phoneInput>;
 
-export const phoneinput = tv({
+export const phoneInput = tv({
   slots: {
     div: "absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none",
     svg: "w-4 h-4 text-gray-500 dark:text-gray-400",

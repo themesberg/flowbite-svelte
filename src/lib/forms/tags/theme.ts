@@ -1,12 +1,8 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type TagsVariants = VariantProps<typeof tags> & Classes<typeof tags>;
-// Theme
-export type TagsSlots = keyof typeof tags.slots;
-export type TagsTheme = Partial<Record<TagsSlots, ClassValue>>;
 
 export const tags = tv({
   slots: {

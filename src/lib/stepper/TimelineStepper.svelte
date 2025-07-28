@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { timelineStepper, type TimelineStepperTheme } from ".";
+  import { timelineStepper } from ".";
   import { type TimelineStepperProps } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
@@ -14,13 +14,13 @@
   const { base, item, circle } = $derived(timelineStepper());
 </script>
 
-<ol class={base({ class: clsx((theme as TimelineStepperTheme)?.base, className) })} {...restProps}>
+<ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
-      <li class={item({ isLast: index === steps.length - 1, class: clsx((theme as TimelineStepperTheme)?.item, classes?.item) })}>
-        <span class={circle({ status: step.status, class: clsx((theme as TimelineStepperTheme)?.circle, classes?.circle) })}>
+      <li class={item({ isLast: index === steps.length - 1, class: clsx(theme?.item, classes?.item) })}>
+        <span class={circle({ status: step.status, class: clsx(theme?.circle, classes?.circle) })}>
           {#if step.status === "completed"}
             {#if step.icon}
               <step.icon class={clsx(step.iconClass) || "h-3.5 w-3.5"} />

@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 
 export type BlockquoteVariants = VariantProps<typeof blockquote>;
 
@@ -47,5 +46,3 @@ export const blockquote = tv({
     size: "lg"
   }
 });
-
-export type BlockquoteTheme = ClassValue;

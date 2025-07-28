@@ -3,7 +3,7 @@
   import { writable } from "svelte/store";
   import { bottomNav } from ".";
   import clsx from "clsx";
-  import { type BottomNavProps, type BottomNavContextType, cn, type BottomNavTheme } from "$lib";
+  import { type BottomNavProps, type BottomNavContextType, cn } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, header, position = "fixed", navType = "default", class: className, classes, outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
@@ -28,12 +28,12 @@
   });
 </script>
 
-<div {...restProps} class={base({ class: clsx((theme as BottomNavTheme)?.base, className ?? outerClass) })}>
+<div {...restProps} class={base({ class: clsx(theme?.base, className ?? outerClass) })}>
   {#if header}
     {@render header()}
   {/if}
 
-  <div class={inner({ class: clsx((theme as BottomNavTheme)?.inner, styling.inner) })}>
+  <div class={inner({ class: clsx(theme?.inner, styling.inner) })}>
     {@render children()}
   </div>
 </div>

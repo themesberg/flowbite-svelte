@@ -2,7 +2,7 @@
   import { Button, Tooltip } from "$lib";
   import type { Placement } from "@floating-ui/dom";
   import { getContext } from "svelte";
-  import { speedDialButton, type SpeedDialButtonTheme } from "./theme";
+  import { speedDialButton } from "./theme";
   import type { SpeedCtxType, SpeedDialButtonProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -23,12 +23,12 @@
   const theme = getTheme("speedDialButton");
 
   let { base, span } = $derived(speedDialButton({ textOutside }));
-  let spanCls = $derived(tooltip === "none" ? span({ class: clsx((theme as SpeedDialButtonTheme)?.span, styling.span) }) : "sr-only");
+  let spanCls = $derived(tooltip === "none" ? span({ class: clsx(theme?.span, styling.span) }) : "sr-only");
 
   // Add flex-col when tooltip is shown
   let buttonCls = $derived(
     base({
-      class: clsx((theme as SpeedDialButtonTheme)?.base, className, tooltip !== "none" && "flex-col")
+      class: clsx(theme?.base, className, tooltip !== "none" && "flex-col")
     })
   );
 </script>

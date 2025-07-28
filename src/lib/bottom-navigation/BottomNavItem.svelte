@@ -4,7 +4,7 @@
   import clsx from "clsx";
   import { getContext } from "svelte";
   import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
-  import { bottomNavItem, type BottomNavItemTheme } from ".";
+  import { bottomNavItem } from ".";
 
   let { children, btnName, appBtnPosition = "middle", activeClass, class: className, classes, btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
 
@@ -27,11 +27,11 @@
   });
 
   function getCommonClass() {
-    return base({ class: clsx(isActive && (activeClass ?? context.activeClass), (theme as BottomNavItemTheme)?.base, className ?? btnClass) });
+    return base({ class: clsx(isActive && (activeClass ?? context.activeClass), theme?.base, className ?? btnClass) });
   }
 
   function getSpanClass() {
-    return span({ class: clsx(isActive && (activeClass ?? context.activeClass), (theme as BottomNavItemTheme)?.span, styling.span) });
+    return span({ class: clsx(isActive && (activeClass ?? context.activeClass), theme?.span, styling.span) });
   }
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */

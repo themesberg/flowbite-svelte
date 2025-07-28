@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { widgetPlaceholder, type WidgetPlaceholderTheme } from ".";
+  import { widgetPlaceholder } from ".";
   import clsx from "clsx";
   import { type WidgetPlaceholderProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
@@ -11,7 +11,7 @@
   const { base, wrapper, vLine, hLine } = widgetPlaceholder({});
 </script>
 
-<div role="status" class={base({ class: clsx((theme as WidgetPlaceholderTheme)?.base, className) })}>
+<div role="status" class={base({ class: clsx(theme?.base, className) })}>
   <div class={hLine({ class: clsx("mb-2.5 h-2.5 w-32", classes?.hLine) })}></div>
   <div class={hLine({ class: clsx("mb-10 h-2 w-48", classes?.hLine) })}></div>
   <div class={wrapper()}>

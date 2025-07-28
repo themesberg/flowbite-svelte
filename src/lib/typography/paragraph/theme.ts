@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 
 export type ParagraphVariants = VariantProps<typeof paragraph>;
 
@@ -81,5 +80,3 @@ export const paragraph = tv({
     }
   }
 });
-
-export type ParagraphTheme = ClassValue;

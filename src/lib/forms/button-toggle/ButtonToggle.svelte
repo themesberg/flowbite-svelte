@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import CheckIcon from "./CheckIcon.svelte";
-  import { buttonToggle, type ButtonToggleTheme } from ".";
+  import { buttonToggle } from ".";
   import type { ButtonToggleVariants } from "./theme";
   import clsx from "clsx";
   import { type ButtonToggleProps, type ButtonToggleContext } from "$lib";
@@ -35,16 +35,16 @@
   });
 </script>
 
-<button type="button" class={button({ selected, color: actualColor, size, roundedSize, class: clsx((theme as ButtonToggleTheme)?.button, ctxBtnClass, className) })} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
-  <div class={content({ class: clsx((theme as ButtonToggleTheme)?.content, styling.content) })}>
+<button type="button" class={button({ selected, color: actualColor, size, roundedSize, class: clsx(theme?.button, ctxBtnClass, className) })} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
+  <div class={content({ class: clsx(theme?.content, styling.content) })}>
     {#if selected}
       {#if iconSlot}
         {@render iconSlot()}
       {:else}
-        <CheckIcon class={icon({ class: clsx((theme as ButtonToggleTheme)?.icon ?? actualIconClass, styling.icon) })} />
+        <CheckIcon class={icon({ class: clsx(theme?.icon ?? actualIconClass, styling.icon) })} />
       {/if}
     {/if}
-    <span class={text({ selected, class: clsx((theme as ButtonToggleTheme)?.text, styling.text) })}>
+    <span class={text({ selected, class: clsx(theme?.text, styling.text) })}>
       {@render children()}
     </span>
   </div>

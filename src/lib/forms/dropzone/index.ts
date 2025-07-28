@@ -1,2 +1,2 @@
-export { dropzone, type DropzoneTheme } from "./theme";
+export { dropzone } from "./theme";
 export { default as Dropzone } from "./Dropzone.svelte";

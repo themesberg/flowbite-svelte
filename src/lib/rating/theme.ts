@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
@@ -7,15 +6,6 @@ export type RatingVariants = VariantProps<typeof rating> & Classes<typeof rating
 export type AdvancedRatingVariants = VariantProps<typeof advancedRating> & Classes<typeof advancedRating>;
 export type ReviewVariants = VariantProps<typeof review> & Classes<typeof review>;
 export type ScoreRatingVariants = VariantProps<typeof scoreRating> & Classes<typeof scoreRating>;
-// Theme
-export type AdvancedRatingSlots = keyof typeof advancedRating.slots;
-export type AdvancedRatingTheme = Partial<Record<AdvancedRatingSlots, ClassValue>>;
-export type RatingSlots = keyof typeof rating.slots;
-export type RatingTheme = Partial<Record<RatingSlots, ClassValue>>;
-export type ReviewSlots = keyof typeof review.slots;
-export type ReviewTheme = Partial<Record<ReviewSlots, ClassValue>>;
-export type ScoreRatingSlots = keyof typeof scoreRating.slots;
-export type ScoreRatingTheme = Partial<Record<ScoreRatingSlots, ClassValue>>;
 
 export const advancedRating = tv({
   // divClass = 'flex items-center mt-4', spanClass = 'text-sm font-medium text-gray-600 dark:text-gray-500', div2Class = 'mx-4 w-2/4 h-5 bg-gray-200 rounded-sm dark:bg-gray-700', div3Class = 'h-5 bg-yellow-400 rounded-sm', span2Class = 'text-sm font-medium text-gray-600 dark:text-gray-500',

@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import { type SizeType, type ButtonProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
-  import { button, type ButtonTheme } from ".";
+  import { button } from ".";
 
   const group: SizeType = getContext("group");
   const ctxDisabled: boolean | undefined = getContext("disabled");
@@ -17,7 +17,7 @@
   let isDisabled = $derived(Boolean(ctxDisabled) || Boolean(disabled) || loading);
 
   const { base, outline: outline_, shadow: shadow_ } = $derived(button({ color: actualColor, size: actualSize, disabled: isDisabled, pill, group: !!group }));
-  let btnCls = $derived(base({ class: clsx(outline && outline_(), shadow && shadow_(), (theme as ButtonTheme)?.base, className) }));
+  let btnCls = $derived(base({ class: clsx(outline && outline_(), shadow && shadow_(), theme?.base, className) }));
 </script>
 
 {#if restProps.href === undefined}

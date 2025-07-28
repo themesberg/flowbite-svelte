@@ -4,9 +4,6 @@ import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type ToastVaraints = VariantProps<typeof toast> & Classes<typeof toast>;
-// Theme
-export type ToastSlots = keyof typeof toast.slots;
-export type ToastTheme = Partial<Record<ToastSlots, ClassValue>>;
 
 export const toast = tv({
   slots: {

@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import { fly } from "svelte/transition";
   import { sineIn } from "svelte/easing";
-  import { drawer, type DrawerTheme } from ".";
+  import { drawer } from ".";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, hidden = $bindable(), closeDrawer = () => (hidden = true), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, classes, transitionParams, transitionType = fly, bodyScrolling = false, ...restProps }: DrawerProps = $props();
@@ -34,8 +34,8 @@
 <svelte:window bind:innerWidth bind:innerHeight />
 
 {#if !hidden}
-  <div role="presentation" class={backdropCls({ class: clsx((theme as DrawerTheme)?.backdrop, styling.backdrop) })} onclick={activateClickOutside ? closeDrawer : undefined} style={bodyScrolling ? "pointer-events: none;" : ""}></div>
-  <div use:trapFocus={{ onEscape: closeDrawer }} {...restProps} class={base({ class: clsx((theme as DrawerTheme)?.base, className) })} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
+  <div role="presentation" class={backdropCls({ class: clsx(theme?.backdrop, styling.backdrop) })} onclick={activateClickOutside ? closeDrawer : undefined} style={bodyScrolling ? "pointer-events: none;" : ""}></div>
+  <div use:trapFocus={{ onEscape: closeDrawer }} {...restProps} class={base({ class: clsx(theme?.base, className) })} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
     {@render children?.()}
   </div>
 {/if}

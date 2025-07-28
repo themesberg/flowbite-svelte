@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { activityItem, type ActivityItemTheme } from "./index";
+  import { activityItem } from "./index";
   import type { ActivityItemProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -38,19 +38,19 @@
 </script>
 
 {#each activities as { title: name, date, src, alt, text: activity }}
-  <li {...restProps} class={li({ class: clsx((theme as ActivityItemTheme)?.li, className ?? liClass) })}>
-    <span class={span({ class: clsx((theme as ActivityItemTheme)?.span, styling.span) })}>
-      <img class={img({ class: clsx((theme as ActivityItemTheme)?.img, styling.img) })} {src} {alt} />
+  <li {...restProps} class={li({ class: clsx(theme?.li, className ?? liClass) })}>
+    <span class={span({ class: clsx(theme?.span, styling.span) })}>
+      <img class={img({ class: clsx(theme?.img, styling.img) })} {src} {alt} />
     </span>
-    <div class={outer({ class: clsx((theme as ActivityItemTheme)?.outer, styling.outer) })}>
-      <div class={inner({ class: clsx((theme as ActivityItemTheme)?.inner, styling.inner) })}>
-        <time class={time({ class: clsx((theme as ActivityItemTheme)?.time, styling.time) })}>{date}</time>
-        <div class={title({ class: clsx((theme as ActivityItemTheme)?.title, styling.title) })}>
+    <div class={outer({ class: clsx(theme?.outer, styling.outer) })}>
+      <div class={inner({ class: clsx(theme?.inner, styling.inner) })}>
+        <time class={time({ class: clsx(theme?.time, styling.time) })}>{date}</time>
+        <div class={title({ class: clsx(theme?.title, styling.title) })}>
           {@html name}
         </div>
       </div>
       {#if activity}
-        <div class={text({ class: clsx((theme as ActivityItemTheme)?.text, styling.text) })}>
+        <div class={text({ class: clsx(theme?.text, styling.text) })}>
           {@html activity}
         </div>
       {/if}

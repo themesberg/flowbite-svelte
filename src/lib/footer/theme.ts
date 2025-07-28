@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 export const footer = tv({
@@ -15,8 +14,6 @@ export const footer = tv({
   }
 });
 
-export type FooterTheme = ClassValue;
-
 export type FooterBrandVariants = VariantProps<typeof footerBrand> & Classes<typeof footerBrand>;
 
 export const footerBrand = tv({
@@ -26,9 +23,6 @@ export const footerBrand = tv({
     img: "me-3 h-8"
   }
 });
-
-export type FooterBrandSlots = keyof typeof footerBrand.slots;
-export type FooterBrandTheme = Partial<Record<FooterBrandSlots, ClassValue>>;
 
 export type FooterCopyrightVariants = VariantProps<typeof footerCopyright> & Classes<typeof footerCopyright>;
 
@@ -40,20 +34,13 @@ export const footerCopyright = tv({
   }
 });
 
-export type FooterCopyrightSlots = keyof typeof footerCopyright.slots;
-export type FooterCopyrightTheme = Partial<Record<FooterCopyrightSlots, ClassValue>>;
-
 export const footerIcon = tv({
   base: "text-gray-500 hover:text-gray-900 dark:hover:text-white"
 });
 
-export type FooterIconTheme = ClassValue;
-
 export const footerLinkGroup = tv({
   base: "text-gray-600 dark:text-gray-400"
 });
-
-export type FooterLinkGroupTheme = ClassValue;
 
 export type FooterLinkVariants = VariantProps<typeof footerLink> & Classes<typeof footerLink>;
 
@@ -63,6 +50,3 @@ export const footerLink = tv({
     link: "hover:underline"
   }
 });
-
-export type FooterLinkSlots = keyof typeof footerLink.slots;
-export type FooterLinkTheme = Partial<Record<FooterLinkSlots, ClassValue>>;

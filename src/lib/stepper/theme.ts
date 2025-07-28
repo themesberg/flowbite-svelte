@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
@@ -9,19 +8,6 @@ export type DetailedStepperVariants = VariantProps<typeof detailedStepper> & Cla
 export type VerticalStepperVariants = VariantProps<typeof verticalStepper> & Classes<typeof verticalStepper>;
 export type BreadcrumbStepperVariants = VariantProps<typeof breadcrumbStepper> & Classes<typeof breadcrumbStepper>;
 export type TimelineStepperVariants = VariantProps<typeof timelineStepper> & Classes<typeof timelineStepper>;
-// Theme
-export type StepperSlots = keyof typeof stepper.slots;
-export type StepperTheme = Partial<Record<StepperSlots, ClassValue>>;
-export type ProgressStepperSlots = keyof typeof progressStepper.slots;
-export type ProgressStepperTheme = Partial<Record<ProgressStepperSlots, ClassValue>>;
-export type DetailedStepperSlots = keyof typeof detailedStepper.slots;
-export type DetailedStepperTheme = Partial<Record<DetailedStepperSlots, ClassValue>>;
-export type VerticalStepperSlots = keyof typeof verticalStepper.slots;
-export type VerticalStepperTheme = Partial<Record<VerticalStepperSlots, ClassValue>>;
-export type BreadcrumbStepperSlots = keyof typeof breadcrumbStepper.slots;
-export type BreadcrumbStepperTheme = Partial<Record<BreadcrumbStepperSlots, ClassValue>>;
-export type TimelineStepperSlots = keyof typeof timelineStepper.slots;
-export type TimelineStepperTheme = Partial<Record<TimelineStepperSlots, ClassValue>>;
 
 export const stepper = tv({
   slots: {

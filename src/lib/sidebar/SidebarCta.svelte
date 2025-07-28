@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { sidebarCta, type SidebarCtaTheme } from ".";
+  import { sidebarCta } from ".";
   import type { SidebarCtaProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
@@ -19,9 +19,9 @@
   const { base, div, span } = $derived(sidebarCta());
 </script>
 
-<div {...restProps} id="dropdown-cta" class={base({ class: clsx((theme as SidebarCtaTheme)?.base, className) })} role="alert">
-  <div class={div({ class: clsx((theme as SidebarCtaTheme)?.div, styling.div) })}>
-    <span class={span({ class: clsx((theme as SidebarCtaTheme)?.span, styling.span) })}>{label}</span>
+<div {...restProps} id="dropdown-cta" class={base({ class: clsx(theme?.base, className) })} role="alert">
+  <div class={div({ class: clsx(theme?.div, styling.div) })}>
+    <span class={span({ class: clsx(theme?.span, styling.span) })}>{label}</span>
     {#if icon}
       {@render icon()}
     {/if}

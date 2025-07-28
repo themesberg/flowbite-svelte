@@ -1,15 +1,9 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type ProgressbarVariants = VariantProps<typeof progressbar> & Classes<typeof progressbar>;
 export type ProgressradialVariants = VariantProps<typeof progressradial> & Classes<typeof progressradial>;
-// Theme
-export type ProgressbarSlots = keyof typeof progressbar.slots;
-export type ProgressbarTheme = Partial<Record<ProgressbarSlots, ClassValue>>;
-export type ProgressradialSlots = keyof typeof progressradial.slots;
-export type ProgressradialTheme = Partial<Record<ProgressradialSlots, ClassValue>>;
 
 export const progressbar = tv({
   slots: {

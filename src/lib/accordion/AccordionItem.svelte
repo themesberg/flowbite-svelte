@@ -5,7 +5,7 @@
   import { getContext } from "svelte";
   import { writable } from "svelte/store";
   import { slide } from "svelte/transition";
-  import { accordionItem, type AccordionItemTheme } from ".";
+  import { accordionItem } from ".";
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, classes, headerClass, contentClass }: AccordionItemProps = $props();
 
@@ -32,7 +32,7 @@
   const useTransition = transitionType === "none" ? false : ctxTransitionType === "none" ? false : true;
 
   // Theme context
-  const theme = getTheme("accordionitem");
+  const theme = getTheme("accordionItem");
 
   const ctx: AccordionCtxType = getContext("ctx") ?? {};
 
@@ -51,8 +51,8 @@
   let buttonClass = $derived(clsx(open && !ctx.flush && (styling.active || ctx.activeClass || active()), !open && !ctx.flush && (styling.inactive || ctx.inactiveClass || inactive())));
 </script>
 
-<h2 class={base({ class: clsx((theme as AccordionItemTheme)?.base, className) })}>
-  <button type="button" onclick={handleToggle} class={button({ class: clsx(buttonClass, (theme as AccordionItemTheme)?.button, styling.button) })} aria-expanded={open}>
+<h2 class={base({ class: clsx(theme?.base, className) })}>
+  <button type="button" onclick={handleToggle} class={button({ class: clsx(buttonClass, theme?.button, styling.button) })} aria-expanded={open}>
     {#if header}
       {@render header()}
       {#if open}
@@ -77,14 +77,14 @@
 {#if useTransition}
   {#if open && transitionType !== "none"}
     <div transition:transitionType={transitionParams as ParamsType}>
-      <div class={content({ class: clsx((theme as AccordionItemTheme)?.content, styling.content) })}>
+      <div class={content({ class: clsx(theme?.content, styling.content) })}>
         {@render children()}
       </div>
     </div>
   {/if}
 {:else}
   <div class={open ? "block" : "hidden"}>
-    <div class={content({ class: clsx((theme as AccordionItemTheme)?.content, styling.content) })}>
+    <div class={content({ class: clsx(theme?.content, styling.content) })}>
       {@render children()}
     </div>
   </div>

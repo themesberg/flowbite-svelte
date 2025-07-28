@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
@@ -7,17 +6,6 @@ export type SidebarVariants = VariantProps<typeof sidebar> & Classes<typeof side
 export type SidebarCtaVariants = VariantProps<typeof sidebarCta> & Classes<typeof sidebarCta>;
 export type SidebarBrandVariants = VariantProps<typeof sidebarBrand> & Classes<typeof sidebarBrand>;
 export type SidebarDropdownWrapperVariants = VariantProps<typeof sidebarDropdownWrapper> & Classes<typeof sidebarDropdownWrapper>;
-
-// Theme
-export type SidebarSlots = keyof typeof sidebar.slots;
-export type SidebarTheme = Partial<Record<SidebarSlots, ClassValue>>;
-export type SidebarButtonTheme = ClassValue;
-export type SidebarCtaSlots = keyof typeof sidebarCta.slots;
-export type SidebarCtaTheme = Partial<Record<SidebarCtaSlots, ClassValue>>;
-export type SidebarBrandSlots = keyof typeof sidebarBrand.slots;
-export type SidebarBrandTheme = Partial<Record<SidebarBrandSlots, ClassValue>>;
-export type SidebarDropdownWrapperSlots = keyof typeof sidebarDropdownWrapper.slots;
-export type SidebarDropdownWrapperTheme = Partial<Record<SidebarDropdownWrapperSlots, ClassValue>>;
 
 export const sidebar = tv({
   slots: {

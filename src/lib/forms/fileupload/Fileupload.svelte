@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fileupload, type FileuploadTheme } from ".";
+  import { fileupload } from ".";
   import clsx from "clsx";
   import { CloseButton, type FileuploadProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -22,10 +22,10 @@
   };
 </script>
 
-<div class={wrapper({ class: clsx((theme as FileuploadTheme)?.wrapper, styling.wrapper) })}>
-  <input type="file" bind:files bind:this={elementRef} {...restProps} class={base({ size, class: clsx((theme as FileuploadTheme)?.base, className) })} />
+<div class={wrapper({ class: clsx(theme?.wrapper, styling.wrapper) })}>
+  <input type="file" bind:files bind:this={elementRef} {...restProps} class={base({ size, class: clsx(theme?.base, className) })} />
   {#if files && files.length > 0 && clearable}
-    <CloseButton onclick={clearAll} class={close({ class: clsx((theme as FileuploadTheme)?.close, styling.close) })} color={clearableColor} aria-label="Clear selected files" svgClass={clsx(styling.svg)} />
+    <CloseButton onclick={clearAll} class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear selected files" svgClass={clsx(styling.svg)} />
   {/if}
 </div>
 

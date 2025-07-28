@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { group, type GroupTheme } from ".";
+  import { group } from ".";
   import type { GroupProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -25,9 +25,9 @@
   const { div, time, ol } = $derived(group());
 </script>
 
-<div class={div({ class: clsx((theme as GroupTheme)?.div, className ?? divClass) })}>
-  <time class={time({ class: clsx((theme as GroupTheme)?.time, styling.time) })}>{date}</time>
-  <ol {...restProps} class={ol({ class: clsx((theme as GroupTheme)?.ol, styling.ol) })}>
+<div class={div({ class: clsx(theme?.div, className ?? divClass) })}>
+  <time class={time({ class: clsx(theme?.time, styling.time) })}>{date}</time>
+  <ol {...restProps} class={ol({ class: clsx(theme?.ol, styling.ol) })}>
     {@render children()}
   </ol>
 </div>

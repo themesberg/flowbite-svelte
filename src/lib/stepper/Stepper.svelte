@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { stepper, type StepperTheme } from ".";
+  import { stepper } from ".";
   import { type StepperProps } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
@@ -14,7 +14,7 @@
   const { base, item, content } = $derived(stepper());
 </script>
 
-<ol {...restProps} class={base({ class: clsx((theme as StepperTheme)?.base, className) })}>
+<ol {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {#if children}
     {@render children()}
   {:else if steps}
@@ -23,14 +23,14 @@
         class={item({
           status: step.status,
           isLast: index === steps.length - 1,
-          class: clsx((theme as StepperTheme)?.item, classes?.item)
+          class: clsx(theme?.item, classes?.item)
         })}
       >
         <span
           class={content({
             status: step.status,
             isLast: index === steps.length - 1,
-            class: clsx((theme as StepperTheme)?.content, classes?.content)
+            class: clsx(theme?.content, classes?.content)
           })}
         >
           {#if step.status === "completed"}

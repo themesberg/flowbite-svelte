@@ -4,9 +4,6 @@ import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type PopoverVariants = VariantProps<typeof popover> & Classes<typeof popover>;
-// Theme
-export type PopoverSlots = keyof typeof popover.slots;
-export type PopoverTheme = Partial<Record<PopoverSlots, ClassValue>>;
 
 export const popover = tv({
   slots: {

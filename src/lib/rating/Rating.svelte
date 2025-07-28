@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import Star from "./Star.svelte";
-  import { rating as ratingVariants, type RatingTheme } from ".";
+  import { rating as ratingVariants } from ".";
   import type { RatingProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
@@ -20,10 +20,10 @@
   let grayStars: number = total - (fullStars + Math.ceil(rateDiffence));
 </script>
 
-<div {...restProps} class={base({ class: clsx((theme as RatingTheme)?.base, className) })}>
+<div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {#if count && children}
     <Icon fillPercent={100} {size} iconIndex={0} groupId={ratingGroupId} />
-    <p class={p({ class: clsx((theme as RatingTheme)?.p, styling.p) })}>{rating}</p>
+    <p class={p({ class: clsx(theme?.p, styling.p) })}>{rating}</p>
     {@render children()}
   {:else}
     <!-- eslint-disable @typescript-eslint/no-unused-vars-->

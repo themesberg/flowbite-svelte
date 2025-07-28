@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { listPlaceholder, type ListPlaceholderTheme } from ".";
+  import { listPlaceholder } from ".";
   import type { ListPlaceholderProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -13,32 +13,32 @@
   let items = $derived([...Array(itemNumber).keys()]);
 </script>
 
-<div role="status" {...restProps} class={base({ class: clsx((theme as ListPlaceholderTheme)?.base, className) })}>
+<div role="status" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {#each items as _, i}
     <div
       class={item({
-        class: clsx(i > 0 ? "pt-4" : "", (theme as ListPlaceholderTheme)?.item, classes?.item)
+        class: clsx(i > 0 ? "pt-4" : "", theme?.item, classes?.item)
       })}
     >
       <div
         class={content({
-          class: clsx((theme as ListPlaceholderTheme)?.content, classes?.content)
+          class: clsx(theme?.content, classes?.content)
         })}
       >
         <div
           class={title({
-            class: clsx((theme as ListPlaceholderTheme)?.title, classes?.title)
+            class: clsx(theme?.title, classes?.title)
           })}
         ></div>
         <div
           class={subTitle({
-            class: clsx((theme as ListPlaceholderTheme)?.subTitle, classes?.subTitle)
+            class: clsx(theme?.subTitle, classes?.subTitle)
           })}
         ></div>
       </div>
       <div
         class={extra({
-          class: clsx((theme as ListPlaceholderTheme)?.extra, classes?.extra)
+          class: clsx(theme?.extra, classes?.extra)
         })}
       ></div>
     </div>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { bottomNavHeader } from ".";
   import clsx from "clsx";
-  import { type BottomNavHeaderProps, type BottomNavHeaderTheme } from "$lib";
+  import { type BottomNavHeaderProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, class: className, classes, outerClass, innerClass, ...restProps }: BottomNavHeaderProps = $props();
@@ -16,8 +16,8 @@
   const { innerDiv, base } = $derived(bottomNavHeader());
 </script>
 
-<div {...restProps} class={base({ class: clsx((theme as BottomNavHeaderTheme)?.base, className ?? outerClass) })}>
-  <div class={innerDiv({ class: clsx((theme as BottomNavHeaderTheme)?.innerDiv, styling.innerDiv) })} role="group">
+<div {...restProps} class={base({ class: clsx(theme?.base, className ?? outerClass) })}>
+  <div class={innerDiv({ class: clsx(theme?.innerDiv, styling.innerDiv) })} role="group">
     {@render children()}
   </div>
 </div>

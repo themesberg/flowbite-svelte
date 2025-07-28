@@ -9,7 +9,7 @@
 
   let { children, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
 
-  const theme = getTheme("navLi");
+  const theme = getTheme("navbarLi");
 
   const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
 

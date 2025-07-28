@@ -5,7 +5,7 @@
   import { writable } from "svelte/store";
   import { slide, fly, fade, scale } from "svelte/transition";
   import clsx from "clsx";
-  import { navbarUl, type NavbarUlTheme } from "./theme";
+  import { navbarUl } from "./theme";
   import type { NavbarState, NavUlProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
@@ -16,7 +16,7 @@
   warnThemeDeprecation("NavUl", { ulClass, activeClass, nonActiveClass }, { ulClass: "ul", activeClass: "active", nonActiveClass: "nonActive" });
   const styling = $derived(classes ?? { ul: ulClass, active: activeClass, nonActive: nonActiveClass });
 
-  const theme = getTheme("navUl");
+  const theme = getTheme("navbarUl");
 
   // Default parameters for different transitions
   const getDefaultParams = (transitionFn: any) => {
@@ -46,8 +46,8 @@
   let { base, ul, active, nonActive } = $derived(navbarUl({ hidden }));
 
   $effect(() => {
-    navState.activeClass = active({ class: clsx((theme as NavbarUlTheme)?.active, styling.active) });
-    navState.nonActiveClass = nonActive({ class: clsx((theme as NavbarUlTheme)?.nonActive, styling.nonActive) });
+    navState.activeClass = active({ class: clsx(theme?.active, styling.active) });
+    navState.nonActiveClass = nonActive({ class: clsx(theme?.nonActive, styling.nonActive) });
   });
 
   $effect(() => {
@@ -55,8 +55,8 @@
   });
   setContext("activeUrl", activeUrlStore);
 
-  let divCls: string = $derived(base({ class: clsx((theme as NavbarUlTheme)?.base, clasName) }));
-  let ulCls: string = $derived(ul({ class: clsx((theme as NavbarUlTheme)?.ul, styling.ul) }));
+  let divCls: string = $derived(base({ class: clsx(theme?.base, clasName) }));
+  let ulCls: string = $derived(ul({ class: clsx(theme?.ul, styling.ul) }));
 </script>
 
 {#if !hidden}

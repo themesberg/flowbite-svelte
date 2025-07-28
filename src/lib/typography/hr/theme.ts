@@ -4,9 +4,6 @@ import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type HrVariants = VariantProps<typeof hr> & Classes<typeof hr>;
-// Theme
-export type HrSlots = keyof typeof hr.slots;
-export type HrTheme = Partial<Record<HrSlots, ClassValue>>;
 
 export const hr = tv({
   slots: {

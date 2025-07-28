@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { sidebarBrand, type SidebarBrandTheme } from ".";
+  import { sidebarBrand } from ".";
   import type { SidebarBrandProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
@@ -19,10 +19,10 @@
   const { base, img, span } = $derived(sidebarBrand());
 </script>
 
-<a {...restProps} href={site?.href ? site.href : "/"} class={base({ class: clsx((theme as SidebarBrandTheme)?.base, className) })}>
+<a {...restProps} href={site?.href ? site.href : "/"} class={base({ class: clsx(theme?.base, className) })}>
   {#if site}
-    <img src={site.img} class={img({ class: clsx((theme as SidebarBrandTheme)?.img, styling.img) })} alt={site.name} />
-    <span class={span({ class: clsx((theme as SidebarBrandTheme)?.span, styling.span) })}>{site.name}</span>
+    <img src={site.img} class={img({ class: clsx(theme?.img, styling.img) })} alt={site.name} />
+    <span class={span({ class: clsx(theme?.span, styling.span) })}>{site.name}</span>
   {:else if children}
     {@render children()}
   {/if}

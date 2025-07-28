@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { footerCopyright, type FooterCopyrightTheme } from ".";
+  import { footerCopyright } from ".";
   import clsx from "clsx";
   import { type FooterCopyrightProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -17,14 +17,14 @@
   const { base, link, bySpan } = footerCopyright();
 </script>
 
-<span class={base({ class: clsx((theme as FooterCopyrightTheme)?.base, className ?? spanClass) })}>
+<span class={base({ class: clsx(theme?.base, className ?? spanClass) })}>
   &copy; {year}
   {#if href}
-    <a {...restProps} {href} class={link({ class: clsx((theme as FooterCopyrightTheme)?.link, styling.link) })}>
+    <a {...restProps} {href} class={link({ class: clsx(theme?.link, styling.link) })}>
       {by}
     </a>
   {:else}
-    <span class={bySpan({ class: clsx((theme as FooterCopyrightTheme)?.bySpan, styling.bySpan) })}>{by}</span>
+    <span class={bySpan({ class: clsx(theme?.bySpan, styling.bySpan) })}>{by}</span>
   {/if}
   {copyrightMessage}
 </span>

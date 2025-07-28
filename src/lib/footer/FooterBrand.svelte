@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { footerBrand, type FooterBrandTheme } from ".";
+  import { footerBrand } from ".";
   import clsx from "clsx";
   import { type FooterBrandProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
@@ -12,12 +12,12 @@
 </script>
 
 {#if href}
-  <a {...restProps} {href} class={base({ class: clsx((theme as FooterBrandTheme)?.base, aClass) })}>
+  <a {...restProps} {href} class={base({ class: clsx(theme?.base, aClass) })}>
     {#if src}
-      <img {src} class={img({ class: clsx((theme as FooterBrandTheme)?.img, imgClass) })} {alt} />
+      <img {src} class={img({ class: clsx(theme?.img, imgClass) })} {alt} />
     {/if}
     {#if name}
-      <span class={span({ class: clsx((theme as FooterBrandTheme)?.span, spanClass) })}>{name}</span>
+      <span class={span({ class: clsx(theme?.span, spanClass) })}>{name}</span>
     {/if}
     {#if children}
       {@render children()}

@@ -4,4 +4,4 @@ export { default as NavLi } from "./NavLi.svelte";
 export { default as NavUl } from "./NavUl.svelte";
 export { default as NavHamburger } from "./NavHamburger.svelte";
 export { default as NavContainer } from "./NavContainer.svelte";
-export { navbar, navbarUl, navbarBrand, navbarLi, navbarHamburger, type NavbarTheme, type NavbarUlTheme, type NavbarBrandTheme, type NavbarLiTheme, type NavbarHamburgerTheme } from "./theme";
+export { navbar, navbarUl, navbarBrand, navbarLi, navbarHamburger, navbarContainer } from "./theme";

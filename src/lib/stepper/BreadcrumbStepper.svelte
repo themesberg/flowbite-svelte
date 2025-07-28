@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { breadcrumbStepper, type BreadcrumbStepperTheme } from ".";
+  import { breadcrumbStepper } from ".";
   import clsx from "clsx";
   import { type BreadcrumbStepperProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
@@ -12,10 +12,10 @@
   setContext("stepperType", "breadcrumb");
 
   const { base, item, indicator } = $derived(breadcrumbStepper());
-  // { class: clsx((theme as BreadcrumbStepperTheme)?.stepper) }
+  // { class: clsx(theme?.stepper) }
 </script>
 
-<ol class={base({ class: clsx((theme as BreadcrumbStepperTheme)?.base, className) })} {...restProps}>
+<ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
@@ -24,10 +24,10 @@
         class={item({
           status: step.status,
           hasChevron: index < steps.length - 1,
-          class: clsx((theme as BreadcrumbStepperTheme)?.item, classes?.item)
+          class: clsx(theme?.item, classes?.item)
         })}
       >
-        <span class={indicator({ status: step.status, class: clsx((theme as BreadcrumbStepperTheme)?.indicator, classes?.indicator) })}>
+        <span class={indicator({ status: step.status, class: clsx(theme?.indicator, classes?.indicator) })}>
           {#if step.status === "completed" && step.icon}
             <step.icon class={step.iconClass || "h-3 w-3"} />
           {:else}

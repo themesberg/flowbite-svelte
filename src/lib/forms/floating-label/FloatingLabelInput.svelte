@@ -1,6 +1,6 @@
 <script lang="ts">
   import { idGenerator } from "../../utils";
-  import { floatingLabelInput, type FloatingLabelInputTheme } from ".";
+  import { floatingLabelInput } from ".";
   import clsx from "clsx";
   import { type FloatingLabelInputProps, CloseButton } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -140,17 +140,17 @@
   <div tabindex="-1" bind:this={dummyFocusDiv} class="sr-only"></div>
 {/if}
 
-<div class={base({ class: clsx(isCombobox ? "relative" : "", (theme as FloatingLabelInputTheme)?.base, className) })}>
-  <input {id} placeholder=" " bind:value bind:this={elementRef} {...restProps} aria-describedby={ariaDescribedby} class={input({ class: clsx((theme as FloatingLabelInputTheme)?.input, styling.input) })} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} />
+<div class={base({ class: clsx(isCombobox ? "relative" : "", theme?.base, className) })}>
+  <input {id} placeholder=" " bind:value bind:this={elementRef} {...restProps} aria-describedby={ariaDescribedby} class={input({ class: clsx(theme?.input, styling.input) })} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} />
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={close({ class: clsx((theme as FloatingLabelInputTheme)?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
+    <CloseButton onclick={clearAll} class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
   {/if}
-  <label for={id} class={label({ class: clsx((theme as FloatingLabelInputTheme)?.label, styling.label) })}>
+  <label for={id} class={label({ class: clsx(theme?.label, styling.label) })}>
     {@render children()}
   </label>
 
   {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-    <div class={combo({ class: clsx((theme as FloatingLabelInputTheme)?.combo, styling.combo) })}>
+    <div class={combo({ class: clsx(theme?.combo, styling.combo) })}>
       {#each filteredSuggestions as item, i}
         <button type="button" class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none" onclick={() => selectItem(item)} onmouseenter={() => (selectedIndex = i)}>
           {item}

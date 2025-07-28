@@ -1,12 +1,8 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type SearchVariants = VariantProps<typeof search> & Classes<typeof search>;
-// Theme
-export type SearchSlots = keyof typeof search.slots;
-export type SearchTheme = Partial<Record<SearchSlots, ClassValue>>;
 
 export const search = tv({
   slots: {

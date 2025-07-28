@@ -6,7 +6,7 @@
 
   let { children, color = "primary", asButton = false, onclick, href = "#", class: className, ...restProps }: AnchorProps = $props();
 
-  const theme = getTheme("a");
+  const theme = getTheme("anchor");
 
   let linkCls = $derived(anchor({ color, class: clsx(theme, className) }));
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { textPlaceholder, type TextPlaceholderTheme } from ".";
+  import { textPlaceholder } from ".";
   import type { TextPlaceholderProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -15,60 +15,60 @@
   );
 </script>
 
-<div role="status" {...restProps} class={base({ class: clsx((theme as TextPlaceholderTheme)?.base, className) })}>
+<div role="status" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   <div
     class={div({
-      class: clsx("w-full", (theme as TextPlaceholderTheme)?.div, classes?.div)
+      class: clsx("w-full", theme?.div, classes?.div)
     })}
   >
-    <div class={lineA({ class: clsx("h-2.5 w-32", (theme as TextPlaceholderTheme)?.lineA, classes?.lineA) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-24", (theme as TextPlaceholderTheme)?.lineB, classes?.lineB) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-full", (theme as TextPlaceholderTheme)?.lineB, classes?.lineB) })}></div>
+    <div class={lineA({ class: clsx("h-2.5 w-32", theme?.lineA, classes?.lineA) })}></div>
+    <div class={lineB({ class: clsx("h-2.5 w-24", theme?.lineB, classes?.lineB) })}></div>
+    <div class={lineB({ class: clsx("h-2.5 w-full", theme?.lineB, classes?.lineB) })}></div>
   </div>
   <div
     class={div({
-      class: clsx("w-11/12", (theme as TextPlaceholderTheme)?.div, classes?.div)
+      class: clsx("w-11/12", theme?.div, classes?.div)
     })}
   >
-    <div class={lineA({ class: clsx("h-2.5 w-full", (theme as TextPlaceholderTheme)?.lineA, classes?.lineA) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-full", (theme as TextPlaceholderTheme)?.lineB, classes?.lineB) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-24", (theme as TextPlaceholderTheme)?.lineB, classes?.lineB) })}></div>
+    <div class={lineA({ class: clsx("h-2.5 w-full", theme?.lineA, classes?.lineA) })}></div>
+    <div class={lineB({ class: clsx("h-2.5 w-full", theme?.lineB, classes?.lineB) })}></div>
+    <div class={lineB({ class: clsx("h-2.5 w-24", theme?.lineB, classes?.lineB) })}></div>
   </div>
   <div
     class={div({
-      class: clsx("w-9/12", (theme as TextPlaceholderTheme)?.div, classes?.div)
+      class: clsx("w-9/12", theme?.div, classes?.div)
     })}
   >
-    <div class={lineB({ class: clsx("h-2.5 w-full", (theme as TextPlaceholderTheme)?.lineB, classes?.lineB) })}></div>
-    <div class={lineA({ class: clsx("h-2.5 w-80", (theme as TextPlaceholderTheme)?.lineA, classes?.lineA) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-full", (theme as TextPlaceholderTheme)?.lineB, classes?.lineB) })}></div>
+    <div class={lineB({ class: clsx("h-2.5 w-full", theme?.lineB, classes?.lineB) })}></div>
+    <div class={lineA({ class: clsx("h-2.5 w-80", theme?.lineA, classes?.lineA) })}></div>
+    <div class={lineB({ class: clsx("h-2.5 w-full", theme?.lineB, classes?.lineB) })}></div>
   </div>
   <div
     class={div({
-      class: clsx("w-11/12", (theme as TextPlaceholderTheme)?.div, classes?.div)
+      class: clsx("w-11/12", theme?.div, classes?.div)
     })}
   >
-    <div class={lineA({ class: clsx("h-2.5 w-full", (theme as TextPlaceholderTheme)?.lineA, classes?.lineA) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-full", (theme as TextPlaceholderTheme)?.lineB, classes?.lineB) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-24", (theme as TextPlaceholderTheme)?.lineB, classes?.lineB) })}></div>
+    <div class={lineA({ class: clsx("h-2.5 w-full", theme?.lineA, classes?.lineA) })}></div>
+    <div class={lineB({ class: clsx("h-2.5 w-full", theme?.lineB, classes?.lineB) })}></div>
+    <div class={lineB({ class: clsx("h-2.5 w-24", theme?.lineB, classes?.lineB) })}></div>
   </div>
   <div
     class={div({
-      class: clsx("w-10/12", (theme as TextPlaceholderTheme)?.div, classes?.div)
+      class: clsx("w-10/12", theme?.div, classes?.div)
     })}
   >
-    <div class={lineB({ class: clsx("h-2.5 w-32", (theme as TextPlaceholderTheme)?.lineB, classes?.lineB) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-24", (theme as TextPlaceholderTheme)?.lineB, classes?.lineB) })}></div>
-    <div class={lineA({ class: clsx("h-2.5 w-full", (theme as TextPlaceholderTheme)?.lineA, classes?.lineA) })}></div>
+    <div class={lineB({ class: clsx("h-2.5 w-32", theme?.lineB, classes?.lineB) })}></div>
+    <div class={lineB({ class: clsx("h-2.5 w-24", theme?.lineB, classes?.lineB) })}></div>
+    <div class={lineA({ class: clsx("h-2.5 w-full", theme?.lineA, classes?.lineA) })}></div>
   </div>
   <div
     class={div({
-      class: clsx("w-8/12", (theme as TextPlaceholderTheme)?.div)
+      class: clsx("w-8/12", theme?.div)
     })}
   >
-    <div class={lineB({ class: clsx("h-2.5 w-full", (theme as TextPlaceholderTheme)?.lineB, classes?.lineB) })}></div>
-    <div class={lineA({ class: clsx("h-2.5 w-80", (theme as TextPlaceholderTheme)?.lineA, classes?.lineA) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-full", (theme as TextPlaceholderTheme)?.lineB, classes?.lineB) })}></div>
+    <div class={lineB({ class: clsx("h-2.5 w-full", theme?.lineB, classes?.lineB) })}></div>
+    <div class={lineA({ class: clsx("h-2.5 w-80", theme?.lineA, classes?.lineA) })}></div>
+    <div class={lineB({ class: clsx("h-2.5 w-full", theme?.lineB, classes?.lineB) })}></div>
   </div>
   <span class="sr-only">Loading...</span>
 </div>

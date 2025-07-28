@@ -3,7 +3,7 @@
   import { getContext } from "svelte";
   import ToolbarButton from "../toolbar/ToolbarButton.svelte";
   import Menu from "./Menu.svelte";
-  import { navbarHamburger, type NavbarHamburgerTheme } from "./theme";
+  import { navbarHamburger } from "./theme";
   import type { NavbarState, NavHamburgerProps } from "$lib/types";
   import type { MouseEventHandler } from "svelte/elements";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -13,7 +13,7 @@
   warnThemeDeprecation("NavHamburger", { menuClass }, { menuClass: "menu" });
   const styling = $derived(classes ?? { menu: menuClass });
 
-  const theme = getTheme("navHamburger");
+  const theme = getTheme("navbarHamburger");
 
   let { base, menu } = navbarHamburger();
 
@@ -23,8 +23,8 @@
   };
 </script>
 
-<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={base({ class: clsx((theme as NavbarHamburgerTheme)?.base, className) })}>
-  <Menu class={menu({ class: clsx((theme as NavbarHamburgerTheme)?.menu, styling.menu) })} />
+<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <Menu class={menu({ class: clsx(theme?.menu, styling.menu) })} />
 </ToolbarButton>
 
 <!--

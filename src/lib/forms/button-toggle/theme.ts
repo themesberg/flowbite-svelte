@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 export const buttonToggleGroup = tv({
@@ -14,8 +13,6 @@ export const buttonToggleGroup = tv({
     }
   }
 });
-
-export type ButtonToggleGroupTheme = ClassValue;
 
 export type ButtonToggleVariants = VariantProps<typeof buttonToggle> & Classes<typeof buttonToggle>;
 
@@ -135,6 +132,3 @@ export const buttonToggle = tv({
     roundedSize: "md"
   }
 });
-
-export type ButtonToggleSlots = keyof typeof buttonToggle.slots;
-export type ButtonToggleTheme = Partial<Record<ButtonToggleSlots, ClassValue>>;

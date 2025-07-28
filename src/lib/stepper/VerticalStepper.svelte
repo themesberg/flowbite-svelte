@@ -1,27 +1,27 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { verticalStepper, type VerticalStepperTheme } from ".";
+  import { verticalStepper } from ".";
   import { type VerticalStepperProps } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, steps = [], liClass, class: className, classes, ...restProps }: VerticalStepperProps = $props();
 
-  const theme = getTheme("veticalStepper");
+  const theme = getTheme("verticalStepper");
 
   setContext("stepperType", "vertical");
 
   const { base, card, content } = $derived(verticalStepper());
 </script>
 
-<ol class={base({ class: clsx((theme as VerticalStepperTheme)?.base, className) })} {...restProps}>
+<ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li class={clsx(liClass)}>
-        <div class={card({ status: step.status, class: clsx((theme as VerticalStepperTheme)?.card, classes?.card) })} role="alert">
-          <div class={content({ class: clsx((theme as VerticalStepperTheme)?.content, classes?.content) })}>
+        <div class={card({ status: step.status, class: clsx(theme?.card, classes?.card) })} role="alert">
+          <div class={content({ class: clsx(theme?.content, classes?.content) })}>
             <span class="sr-only">{step.label}</span>
             <h3 class="font-medium">{step.id}. {step.label}</h3>
             {#if step.status === "completed"}

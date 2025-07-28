@@ -1,10 +1,7 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 
 // Variants
 export type RangeVariants = VariantProps<typeof range>;
-// Theme
-export type RangeTheme = ClassValue;
 
 export const range = tv({
   base: "w-full bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-700",

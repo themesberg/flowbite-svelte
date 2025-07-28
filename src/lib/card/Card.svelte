@@ -2,7 +2,7 @@
   import { type CardProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
-  import { card, type CardTheme } from ".";
+  import { card } from ".";
 
   let { children, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, classes, imgClass, ...restProps }: CardProps = $props();
 
@@ -26,7 +26,7 @@
 
 {#snippet childSlot()}
   {#if img}
-    <img class={image({ class: clsx((theme as CardTheme)?.image, styling.image) })} src={img} alt={img} />
+    <img class={image({ class: clsx(theme?.image, styling.image) })} src={img} alt={img} />
     {@render children()}
   {:else}
     {@render children()}
@@ -34,11 +34,11 @@
 {/snippet}
 
 {#if restProps.href === undefined}
-  <div {...restProps} class={base({ class: clsx((theme as CardTheme)?.base, className) })}>
+  <div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
     {@render childSlot()}
   </div>
 {:else}
-  <a {...restProps} class={base({ class: clsx((theme as CardTheme)?.base, className) })}>
+  <a {...restProps} class={base({ class: clsx(theme?.base, className) })}>
     {@render childSlot()}
   </a>
 {/if}

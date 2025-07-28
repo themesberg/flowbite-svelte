@@ -2,11 +2,8 @@
   import clsx from "clsx";
   import { TableBodyRow, TableBodyCell } from ".";
   import type { TableBodyProps, CellValue, BodyRow } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, bodyItems, class: className, ...restProps }: TableBodyProps = $props();
-
-  const theme = getTheme("tableBody");
 
   function getCellValues(row: BodyRow): CellValue[] {
     if (Array.isArray(row)) {
@@ -17,7 +14,7 @@
   }
 </script>
 
-<tbody {...restProps} class={clsx(theme, className)}>
+<tbody {...restProps} class={clsx(className)}>
   {#if bodyItems}
     {#each bodyItems as row}
       <TableBodyRow>

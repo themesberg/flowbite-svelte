@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
@@ -7,19 +6,6 @@ export type BottomNavVariants = VariantProps<typeof bottomNav> & Classes<typeof 
 export type BottomNavItemVariants = VariantProps<typeof bottomNavItem> & Classes<typeof bottomNavItem>;
 export type BottomNavHeaderVariants = VariantProps<typeof bottomNavHeader> & Classes<typeof bottomNavHeader>;
 export type BottomNavHeaderItemVariants = VariantProps<typeof bottomNavHeaderItem>;
-
-// Theme
-export type BottomNavSlots = keyof typeof bottomNav.slots;
-export type BottomNavTheme = Partial<Record<BottomNavSlots, ClassValue>>;
-// bottomNavItem
-export type BottomNavItemSlots = keyof typeof bottomNavItem.slots;
-export type BottomNavItemTheme = Partial<Record<BottomNavItemSlots, ClassValue>>;
-// bottomNavHeader
-export type BottomnavheaderSlots = keyof typeof bottomNavHeader.slots;
-export type BottomNavHeaderTheme = Partial<Record<BottomnavheaderSlots, ClassValue>>;
-// bottomNavHeaderItem
-export type bottomNavHeaderItemSlots = keyof typeof bottomNavHeaderItem.slots;
-export type BottomNavHeaderItemTheme = Partial<Record<bottomNavHeaderItemSlots, ClassValue>>;
 
 export const bottomNav = tv({
   slots: {

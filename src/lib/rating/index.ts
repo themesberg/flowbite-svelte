@@ -7,4 +7,4 @@ export { default as ScoreRating } from "./ScoreRating.svelte";
 export { default as Star } from "./Star.svelte";
 export { default as Thumbup } from "./Thumbup.svelte";
 export { default as CustomIcon } from "./CustomIcon.svelte";
-export { advancedRating, rating, review, scoreRating, type AdvancedRatingTheme, type RatingTheme, type ReviewTheme, type ScoreRatingTheme } from "./theme";
+export { advancedRating, rating, review, scoreRating } from "./theme";

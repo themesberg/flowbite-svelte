@@ -8,7 +8,7 @@
 
   let { children, class: className, ...restProps }: ControlsProps = $props();
 
-  const theme = getTheme("controls");
+  const theme = getTheme("controlButton");
 
   const state = getContext<Writable<State>>("state");
   const { update } = state;

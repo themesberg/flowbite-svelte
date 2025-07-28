@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { footerLink, type FooterLinkTheme } from ".";
+  import { footerLink } from ".";
   import clsx from "clsx";
   import { type FooterLinkProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -15,8 +15,8 @@
   const { base, link } = footerLink();
 </script>
 
-<li class={base({ class: clsx((theme as FooterLinkTheme)?.base, className ?? liClass) })}>
-  <a {...restProps} {href} class={link({ class: clsx((theme as FooterLinkTheme)?.link, styling.link) })}>
+<li class={base({ class: clsx(theme?.base, className ?? liClass) })}>
+  <a {...restProps} {href} class={link({ class: clsx(theme?.link, styling.link) })}>
     {@render children()}
   </a>
 </li>

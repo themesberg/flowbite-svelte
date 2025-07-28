@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { table as tableCls, TableHead, TableBody, type TableTheme } from ".";
+  import { table as tableCls, TableHead, TableBody } from ".";
   import clsx from "clsx";
   import { type TableProps, type TableCtxType } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -38,8 +38,8 @@
   let bodyItems = $derived(items && items.length > 0 ? items.map((item) => Object.values(item)) : []);
 </script>
 
-<div class={div({ class: clsx((theme as TableTheme)?.div, styling.div) })}>
-  <table {...restProps} class={table({ class: clsx((theme as TableTheme)?.table, className) })}>
+<div class={div({ class: clsx(theme?.div, styling.div) })}>
+  <table {...restProps} class={table({ class: clsx(theme?.table, className) })}>
     {#if captionSlot}
       {@render captionSlot()}
     {/if}

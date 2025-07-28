@@ -6,7 +6,7 @@
 
   let { children, class: className = "text-gray-900 dark:text-white", height = "normal", align = "left", justify = false, italic, firstUpper = false, whitespace = "normal", size = "base", space = "normal", weight = "normal", ...restProps }: ParagraphProps = $props();
 
-  const theme = getTheme("p");
+  const theme = getTheme("paragraph");
 
   let classP = $derived(paragraph({ height, size, weight, space, align, justify, italic, firstUpper, whitespace, class: clsx(theme, className) }));
 </script>

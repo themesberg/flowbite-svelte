@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import { cubicOut } from "svelte/easing";
   import { Tween } from "svelte/motion";
-  import { progressbar, type ProgressbarTheme } from ".";
+  import { progressbar } from ".";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { progress = "45", precision = 0, tweenDuration = 400, animate = false, size = "h-2.5", labelInside = false, labelOutside = "", easing = cubicOut, color = "primary", class: className, classes, ...restProps }: ProgressbarProps = $props();
@@ -34,18 +34,18 @@
 </script>
 
 {#if labelOutside}
-  <div {...restProps} class={outside({ class: clsx((theme as ProgressbarTheme)?.outside, classes?.outside) })}>
-    <span class={span({ class: clsx((theme as ProgressbarTheme)?.span, classes?.span) })}>{labelOutside}</span>
-    <span class={progressCls({ class: clsx((theme as ProgressbarTheme)?.progressCls, classes?.progressCls) })}>{progress}%</span>
+  <div {...restProps} class={outside({ class: clsx(theme?.outside, classes?.outside) })}>
+    <span class={span({ class: clsx(theme?.span, classes?.span) })}>{labelOutside}</span>
+    <span class={progressCls({ class: clsx(theme?.progressCls, classes?.progressCls) })}>{progress}%</span>
   </div>
 {/if}
-<div {...restProps} class={base({ class: clsx(size, (theme as ProgressbarTheme)?.base, className) })}>
+<div {...restProps} class={base({ class: clsx(size, theme?.base, className) })}>
   {#if labelInside}
-    <div class={labelInsideCls({ class: clsx(size, (theme as ProgressbarTheme)?.label, classes?.label) })} style="width: {_progress.current}%">
+    <div class={labelInsideCls({ class: clsx(size, theme?.label, classes?.label) })} style="width: {_progress.current}%">
       {_progress.current.toFixed(precision)}%
     </div>
   {:else}
-    <div class={inside({ class: clsx(size, (theme as ProgressbarTheme)?.inside, classes?.label) })} style="width: {_progress.current}%"></div>
+    <div class={inside({ class: clsx(size, theme?.inside, classes?.label) })} style="width: {_progress.current}%"></div>
   {/if}
 </div>
 

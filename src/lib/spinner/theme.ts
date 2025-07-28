@@ -1,9 +1,6 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 
 export type SpinnerVaraiants = VariantProps<typeof spinner>;
-
-export type SpinnerTheme = ClassValue;
 
 export const spinner = tv({
   base: "inline-block animate-spin text-gray-300",

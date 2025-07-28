@@ -2,7 +2,6 @@
   import clsx from "clsx";
   import { mark } from "./index";
   import type { MarkProps } from "$lib/types";
-  import { cn } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: MarkProps = $props();

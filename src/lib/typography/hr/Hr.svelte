@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { hr, type HrTheme } from "./index";
+  import { hr } from "./index";
   import type { HrProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
@@ -26,14 +26,14 @@
 </script>
 
 {#if children}
-  <div {...restProps} class={div({ class: clsx((theme as HrTheme)?.div, divClass) })}>
-    <hr class={base({ class: clsx((theme as HrTheme)?.base, className) })} />
-    <div class={content({ class: clsx((theme as HrTheme)?.content, styling.content) })}>
+  <div {...restProps} class={div({ class: clsx(theme?.div, divClass) })}>
+    <hr class={base({ class: clsx(theme?.base, className) })} />
+    <div class={content({ class: clsx(theme?.content, styling.content) })}>
       {@render children()}
     </div>
   </div>
 {:else}
-  <hr class={base({ class: clsx((theme as HrTheme)?.base, className) })} {...restProps} />
+  <hr class={base({ class: clsx(theme?.base, className) })} {...restProps} />
 {/if}
 
 <!--

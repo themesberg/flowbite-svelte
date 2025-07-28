@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 export type DrawerVariants = VariantProps<typeof drawer> & Classes<typeof drawer>;
@@ -45,9 +44,3 @@ export const drawerhead = tv({
     svg: "h-4 w-4"
   }
 });
-
-export type DrawerSlots = keyof typeof drawer.slots;
-export type DrawerTheme = Partial<Record<DrawerSlots, ClassValue>>;
-
-export type DrawerHeadSlots = keyof typeof drawerhead.slots;
-export type DrawerHeadTheme = Partial<Record<DrawerHeadSlots, ClassValue>>;

@@ -5,4 +5,4 @@ export { default as TableBodyRow } from "./TableBodyRow.svelte";
 export { default as TableHeadCell } from "./TableHeadCell.svelte";
 export { default as TableHead } from "./TableHead.svelte";
 export { default as TableSearch } from "./TableSearch.svelte";
-export { table, tableBodyRow, tableHead, tableBodyCell, tableHeadCell, tableSearch, type TableTheme, type TableBodyRowTheme, type TableHeadTheme, type TableBodyCellTheme, type TableHeadCellTheme, type TableSearchTheme } from "./theme";
+export { table, tableBodyRow, tableHead, tableBodyCell, tableHeadCell, tableSearch } from "./theme";

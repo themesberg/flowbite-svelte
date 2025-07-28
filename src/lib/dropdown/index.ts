@@ -3,4 +3,4 @@ export { default as DropdownDivider } from "./DropdownDivider.svelte";
 export { default as DropdownGroup } from "./DropdownGroup.svelte";
 export { default as DropdownHeader } from "./DropdownHeader.svelte";
 export { default as DropdownItem } from "./DropdownItem.svelte";
-export { dropdown, dropdownDivider, dropdownGroup, dropdownHeader, dropdownItem, type DropdownTheme, type DropdownDividerTheme, type DropdownGroupTheme, type DropdownHeaderTheme, type DropdownItemTheme } from "./theme";
+export { dropdown, dropdownDivider, dropdownGroup, dropdownHeader, dropdownItem } from "./theme";

@@ -1,2 +1,2 @@
 export { default as Tags } from "./Tags.svelte";
-export { tags, type TagsTheme } from "./theme";
+export { tags } from "./theme";

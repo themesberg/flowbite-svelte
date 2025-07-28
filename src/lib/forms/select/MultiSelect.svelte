@@ -1,7 +1,7 @@
 <script lang="ts" generics="T">
   import clsx from "clsx";
   import { Badge, CloseButton, type MultiSelectProps, type SelectOptionType } from "$lib";
-  import { multiSelect, type MultiSelectTheme } from ".";
+  import { multiSelect } from ".";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { onMount } from "svelte";
 
@@ -197,11 +197,11 @@
   {/each}
 </select>
 
-<div bind:this={multiSelectContainer} {...restProps} onclick={toggleDropdown} onblur={handleBlur} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={base({ size, class: clsx((theme as MultiSelectTheme)?.base, className) })}>
+<div bind:this={multiSelectContainer} {...restProps} onclick={toggleDropdown} onblur={handleBlur} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={base({ size, class: clsx(theme?.base, className) })}>
   {#if !selectItems.length}
     <span class={placeholderSpan({ class: clsx(classes?.placeholder) })}>{placeholder}</span>
   {/if}
-  <span class={select({ class: clsx((theme as MultiSelectTheme)?.select, classes?.span) })}>
+  <span class={select({ class: clsx(theme?.select, classes?.span) })}>
     {#if selectItems.length}
       {#each selectItems as item (item.name)}
         {#if children}
@@ -216,7 +216,7 @@
   </span>
   <div class="ms-auto flex items-center gap-2">
     {#if selectItems.length}
-      <CloseButton {size} onclick={clearAll} color="none" class={close({ class: clsx((theme as MultiSelectTheme)?.close, classes?.close) })} {disabled} />
+      <CloseButton {size} onclick={clearAll} color="none" class={close({ class: clsx(theme?.close, classes?.close) })} {disabled} />
     {/if}
 
     <svg class={clsx(svg(), disabled && "cursor-not-allowed", classes?.svg)} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">

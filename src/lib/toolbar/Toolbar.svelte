@@ -1,7 +1,7 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { writable } from "svelte/store";
-  import { toolbar, type ToolbarTheme } from "./";
+  import { toolbar } from "./";
   import type { ToolbarProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
@@ -28,8 +28,8 @@
   // let divClass: string = twMerge('flex justify-between items-center', !embedded && 'py-2 px-3', className);
 </script>
 
-<div {...restProps} class={base({ class: clsx((theme as ToolbarTheme)?.base, className) })}>
-  <div class={content({ class: clsx((theme as ToolbarTheme)?.content, classes?.content) })}>
+<div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <div class={content({ class: clsx(theme?.content, classes?.content) })}>
     {@render children?.()}
   </div>
   {#if end}

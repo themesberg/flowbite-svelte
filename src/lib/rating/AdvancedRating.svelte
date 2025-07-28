@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { advancedRating, type AdvancedRatingTheme } from ".";
+  import { advancedRating } from ".";
   import type { AdvancedRatingProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
@@ -28,12 +28,12 @@
   {@render globalText()}
 {/if}
 {#each ratings as { label, rating }}
-  <div class={base({ class: clsx((theme as AdvancedRatingTheme)?.base, className) })}>
-    <span class={span({ class: clsx((theme as AdvancedRatingTheme)?.span, styling.span) })}>{label}</span>
-    <div class={div2({ class: clsx((theme as AdvancedRatingTheme)?.div2, styling.div2) })}>
-      <div class={div3({ class: clsx((theme as AdvancedRatingTheme)?.div3, styling.div3) })} style="width: {rating}%"></div>
+  <div class={base({ class: clsx(theme?.base, className) })}>
+    <span class={span({ class: clsx(theme?.span, styling.span) })}>{label}</span>
+    <div class={div2({ class: clsx(theme?.div2, styling.div2) })}>
+      <div class={div3({ class: clsx(theme?.div3, styling.div3) })} style="width: {rating}%"></div>
     </div>
-    <span class={span2({ class: clsx((theme as AdvancedRatingTheme)?.span2, styling.span2) })}>{rating}{unit}</span>
+    <span class={span2({ class: clsx(theme?.span2, styling.span2) })}>{rating}{unit}</span>
   </div>
 {/each}
 

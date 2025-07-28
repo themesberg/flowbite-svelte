@@ -4,9 +4,6 @@ import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type ImgVariants = VariantProps<typeof img> & Classes<typeof img>;
-// Theme
-export type ImgSlots = keyof typeof img.slots;
-export type ImgTheme = Partial<Record<ImgSlots, ClassValue>>;
 
 export const img = tv({
   slots: {

@@ -3,7 +3,7 @@
   import { Popper } from "$lib";
   import { getSideAxis } from "@floating-ui/utils";
   import { setContext } from "svelte";
-  import { speedDial, type SpeedDialTheme } from "./theme";
+  import { speedDial } from "./theme";
   import type { SpeedDialProps, SpeedCtxType } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
@@ -25,8 +25,8 @@
   let { base, popper } = $derived(speedDial({ vertical }));
 </script>
 
-<Popper {...restProps} bind:isOpen {trigger} arrow={false} {placement} class={base({ class: clsx((theme as SpeedDialTheme)?.base, className) })}>
-  <div class={popper({ class: clsx((theme as SpeedDialTheme)?.popper, styling.popper) })}>
+<Popper {...restProps} bind:isOpen {trigger} arrow={false} {placement} class={base({ class: clsx(theme?.base, className) })}>
+  <div class={popper({ class: clsx(theme?.popper, styling.popper) })}>
     {@render children()}
   </div>
 </Popper>

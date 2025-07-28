@@ -6,4 +6,4 @@ export { default as TestimonialPlaceholder } from "./TestimonialPlaceholder.svel
 export { default as TextPlaceholder } from "./TextPlaceholder.svelte";
 export { default as VideoPlaceholder } from "./VideoPlaceholder.svelte";
 export { default as WidgetPlaceholder } from "./WidgetPlaceholder.svelte";
-export { cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimonialPlaceholder, textPlaceholder, videoPlaceholder, widgetPlaceholder, type CardPlaceholderTheme, type ImagePlaceholderTheme, type ListPlaceholderTheme, type SkeletonTheme, type TestimonialPlaceholderTheme, type TextPlaceholderTheme, type VideoPlaceholderTheme, type WidgetPlaceholderTheme } from "./theme";
+export { cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimonialPlaceholder, textPlaceholder, videoPlaceholder, widgetPlaceholder } from "./theme";

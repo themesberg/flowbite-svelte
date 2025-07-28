@@ -4,4 +4,4 @@ export { default as FooterCopyright } from "./FooterCopyright.svelte";
 export { default as FooterIcon } from "./FooterIcon.svelte";
 export { default as FooterLink } from "./FooterLink.svelte";
 export { default as FooterLinkGroup } from "./FooterLinkGroup.svelte";
-export { footer, footerBrand, footerCopyright, footerIcon, footerLinkGroup, footerLink, type FooterTheme, type FooterBrandTheme, type FooterCopyrightTheme, type FooterIconTheme, type FooterLinkGroupTheme, type FooterLinkTheme } from "./theme";
+export { footer, footerBrand, footerCopyright, footerIcon, footerLinkGroup, footerLink } from "./theme";

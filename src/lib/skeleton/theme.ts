@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
@@ -11,23 +10,6 @@ export type TestimonialPlaceholderVariants = VariantProps<typeof testimonialPlac
 export type TextPlaceholderVariants = VariantProps<typeof textPlaceholder> & Classes<typeof textPlaceholder>;
 export type VideoPlaceholderVariants = VariantProps<typeof videoPlaceholder>;
 export type WidgetPlaceholderVariants = VariantProps<typeof widgetPlaceholder> & Classes<typeof widgetPlaceholder>;
-
-// Theme
-export type CardPlaceholderSlots = keyof typeof cardPlaceholder.slots;
-export type CardPlaceholderTheme = Partial<Record<CardPlaceholderSlots, ClassValue>>;
-export type ImagePlaceholderSlots = keyof typeof imagePlaceholder.slots;
-export type ImagePlaceholderTheme = Partial<Record<ImagePlaceholderSlots, ClassValue>>;
-export type ListPlaceholderSlots = keyof typeof listPlaceholder.slots;
-export type ListPlaceholderTheme = Partial<Record<ListPlaceholderSlots, ClassValue>>;
-export type SkeletonSlots = keyof typeof skeleton.slots;
-export type SkeletonTheme = Partial<Record<SkeletonSlots, ClassValue>>;
-export type TestimonialPlaceholderSlots = keyof typeof testimonialPlaceholder.slots;
-export type TestimonialPlaceholderTheme = Partial<Record<TestimonialPlaceholderSlots, ClassValue>>;
-export type TextPlaceholderSlots = keyof typeof textPlaceholder.slots;
-export type TextPlaceholderTheme = Partial<Record<TextPlaceholderSlots, ClassValue>>;
-export type VideoPlaceholderTheme = ClassValue;
-export type WidgetPlaceholderSlots = keyof typeof widgetPlaceholder.slots;
-export type WidgetPlaceholderTheme = Partial<Record<WidgetPlaceholderSlots, ClassValue>>;
 
 export const cardPlaceholder = tv({
   slots: {

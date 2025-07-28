@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { search, type SearchTheme } from ".";
+  import { search } from ".";
   import clsx from "clsx";
   import { CloseButton, type SearchProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -22,20 +22,20 @@
   };
 </script>
 
-<div class={base({ class: clsx((theme as SearchTheme)?.base, className) })}>
-  <div class={left({ class: clsx((theme as SearchTheme)?.left, classes?.left) })}>
-    <svg class={icon({ class: clsx((theme as SearchTheme)?.icon, classes?.icon) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+<div class={base({ class: clsx(theme?.base, className) })}>
+  <div class={left({ class: clsx(theme?.left, classes?.left) })}>
+    <svg class={icon({ class: clsx(theme?.icon, classes?.icon) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
     </svg>
   </div>
-  <input type="search" bind:value bind:this={elementRef} class={inputCls({ class: clsx((theme as SearchTheme)?.input, styling.input) })} {placeholder} required {...restProps} />
+  <input type="search" bind:value bind:this={elementRef} class={inputCls({ class: clsx(theme?.input, styling.input) })} {placeholder} required {...restProps} />
   {#if children}
-    <div class={content({ class: clsx((theme as SearchTheme)?.content, classes?.content) })}>
+    <div class={content({ class: clsx(theme?.content, classes?.content) })}>
       {@render children()}
     </div>
   {/if}
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={close({ class: clsx((theme as SearchTheme)?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
+    <CloseButton onclick={clearAll} class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
   {/if}
 </div>
 

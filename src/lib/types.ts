@@ -1063,13 +1063,13 @@ export interface ModalProps extends ModalVariants, HTMLDialogAttributes {
   focustrap?: boolean;
   transition?: TransitionFunc;
   params?: ParamsType;
-
   header?: Snippet;
   footer?: Snippet;
   headerClass?: ClassValue;
   bodyClass?: ClassValue;
   footerClass?: ClassValue;
   closeBtnClass?: ClassValue;
+  fullscreen?: boolean;
 }
 
 // navbar

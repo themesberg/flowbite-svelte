@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import { type TagsProps, CloseButton, P } from "$lib";
-  import { tags, type TagsTheme } from "./theme";
+  import { tags } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { computePosition, offset, flip, shift, autoUpdate } from "@floating-ui/dom";
   import { onDestroy } from "svelte";
@@ -150,15 +150,15 @@
 <div
   {...restProps}
   class={base({
-    class: clsx((theme as TagsTheme)?.base, className)
+    class: clsx(theme?.base, className)
   })}
 >
   {#each value as tag, index}
-    <div class={tagCls({ class: clsx((theme as TagsTheme)?.tag, styling.tag) })}>
-      <span class={spanCls({ class: clsx((theme as TagsTheme)?.span, styling.span) })}>
+    <div class={tagCls({ class: clsx(theme?.tag, styling.tag) })}>
+      <span class={spanCls({ class: clsx(theme?.span, styling.span) })}>
         {tag}
       </span>
-      <CloseButton size={closeBtnSize} class={close({ class: clsx((theme as TagsTheme)?.close, styling.close) })} onclick={() => deleteField(index)} />
+      <CloseButton size={closeBtnSize} class={close({ class: clsx(theme?.close, styling.close) })} onclick={() => deleteField(index)} />
     </div>
   {/each}
   <div class="relative w-full" bind:this={inputContainer}>

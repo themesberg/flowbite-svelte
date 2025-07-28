@@ -4,7 +4,6 @@
   import { type ProgressStepperProps } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
-  import type { ProgressStepperTheme } from ".";
 
   let { children, steps = [], class: className, classes, ...restrorps }: ProgressStepperProps = $props();
 
@@ -15,7 +14,7 @@
   const { base, item, circle } = $derived(progressStepper());
 </script>
 
-<ol class={base({ class: clsx((theme as ProgressStepperTheme)?.base, className) })} {...restrorps}>
+<ol class={base({ class: clsx(theme?.base, className) })} {...restrorps}>
   {#if children}
     {@render children()}
   {:else if steps}
@@ -24,10 +23,10 @@
         class={item({
           status: step.status,
           isLast: index === steps.length - 1,
-          class: clsx((theme as ProgressStepperTheme)?.item, classes?.item)
+          class: clsx(theme?.item, classes?.item)
         })}
       >
-        <span class={circle({ status: step.status, class: clsx((theme as ProgressStepperTheme)?.circle, classes?.circle) })}>
+        <span class={circle({ status: step.status, class: clsx(theme?.circle, classes?.circle) })}>
           {#if step.status === "completed"}
             {#if step.icon}
               <step.icon class={clsx(step.iconClass) || "h-5 w-5 lg:h-6 lg:w-6"} />

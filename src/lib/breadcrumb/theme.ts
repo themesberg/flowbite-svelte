@@ -1,15 +1,9 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type BreadcrumbVariants = VariantProps<typeof breadcrumb> & Classes<typeof breadcrumb>;
 export type BreadcrumbItemVariants = VariantProps<typeof breadcrumbItem> & Classes<typeof breadcrumbItem>;
-// Theme
-export type BreadcrumbSlots = keyof typeof breadcrumb.slots;
-export type BreadcrumbTheme = Partial<Record<BreadcrumbSlots, ClassValue>>;
-export type BreadcrumbItemSlots = keyof typeof breadcrumbItem.slots;
-export type BreadcrumbItemTheme = Partial<Record<BreadcrumbItemSlots, ClassValue>>;
 
 export const breadcrumb = tv({
   slots: {

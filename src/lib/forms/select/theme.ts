@@ -1,15 +1,9 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type SelectVariants = VariantProps<typeof select> & Classes<typeof select>;
 export type MultiSelectVariants = VariantProps<typeof multiSelect> & Classes<typeof multiSelect>;
-// Theme
-export type SelectSlots = keyof typeof select.slots;
-export type SelectTheme = Partial<Record<SelectSlots, ClassValue>>;
-export type MultiSelectSlots = keyof typeof multiSelect.slots;
-export type MultiSelectTheme = Partial<Record<MultiSelectSlots, ClassValue>>;
 
 export const select = tv({
   slots: {

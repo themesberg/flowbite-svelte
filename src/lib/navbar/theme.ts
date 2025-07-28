@@ -1,18 +1,9 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type NavbarUlVariants = VariantProps<typeof navbarUl> & Classes<typeof navbarUl>;
 export type NavbarHamburgerVariants = VariantProps<typeof navbarHamburger> & Classes<typeof navbarHamburger>;
-// Theme
-export type NavbarTheme = ClassValue;
-export type NavbarBrandTheme = ClassValue;
-export type NavbarUlSlots = keyof typeof navbarUl.slots;
-export type NavbarUlTheme = Partial<Record<NavbarUlSlots, ClassValue>>;
-export type NavbarLiTheme = ClassValue;
-export type NavbarHamburgerSlots = keyof typeof navbarHamburger.slots;
-export type NavbarHamburgerTheme = Partial<Record<NavbarHamburgerSlots, ClassValue>>;
 
 export const navbar = tv({
   base: "relative w-full px-2 py-2.5 sm:px-4"

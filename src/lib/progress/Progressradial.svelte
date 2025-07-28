@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { progressradial, type ProgressradialTheme } from ".";
+  import { progressradial } from ".";
   import type { ProgressradialProps } from "$lib/types";
   import clsx from "clsx";
   import { cubicOut } from "svelte/easing";
@@ -38,23 +38,23 @@
 
 <div class="flex flex-col items-center">
   {#if labelOutside}
-    <div class={outside({ class: clsx((theme as ProgressradialTheme)?.outside, classes?.outside) })}>
-      <span class={span({ class: clsx((theme as ProgressradialTheme)?.span, classes?.span) })}>{labelOutside}</span>
-      <span class={progressCls({ class: clsx((theme as ProgressradialTheme)?.progressCls, classes?.progressCls) })}>{formattedProgress}%</span>
+    <div class={outside({ class: clsx(theme?.outside, classes?.outside) })}>
+      <span class={span({ class: clsx(theme?.span, classes?.span) })}>{labelOutside}</span>
+      <span class={progressCls({ class: clsx(theme?.progressCls, classes?.progressCls) })}>{formattedProgress}%</span>
     </div>
   {/if}
 
-  <div {...restProps} class={base({ class: clsx(size, (theme as ProgressradialTheme)?.base, className) })}>
+  <div {...restProps} class={base({ class: clsx(size, theme?.base, className) })}>
     <svg viewBox="0 0 100 100" class="h-full w-full" style="transform: rotate({rotationAngle}deg)">
       <!-- Background circle -->
-      <circle cx="50" cy="50" r={radius} class={background({ class: clsx((theme as ProgressradialTheme)?.background, classes?.background) })} fill="none" stroke-width={thickness} />
+      <circle cx="50" cy="50" r={radius} class={background({ class: clsx(theme?.background, classes?.background) })} fill="none" stroke-width={thickness} />
 
       <!-- Foreground circle (progress indicator) -->
-      <circle cx="50" cy="50" r={radius} class={foreground({ class: clsx((theme as ProgressradialTheme)?.foreground, classes?.foreground) })} fill="none" stroke-width={thickness} stroke-dasharray={circumference} stroke-dashoffset={strokeDashoffset} stroke-linecap="round" />
+      <circle cx="50" cy="50" r={radius} class={foreground({ class: clsx(theme?.foreground, classes?.foreground) })} fill="none" stroke-width={thickness} stroke-dasharray={circumference} stroke-dashoffset={strokeDashoffset} stroke-linecap="round" />
     </svg>
 
     {#if labelInside}
-      <div class={label({ class: clsx((theme as ProgressradialTheme)?.label, classes?.label) })}>
+      <div class={label({ class: clsx(theme?.label, classes?.label) })}>
         {formattedProgress}%
       </div>
     {/if}

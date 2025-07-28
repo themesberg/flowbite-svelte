@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { review as reviewVariants, type ReviewTheme } from ".";
+  import { review as reviewVariants } from ".";
   import type { ReviewProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
@@ -25,15 +25,15 @@
 </script>
 
 {#if review}
-  <article class={article({ class: clsx((theme as ReviewTheme)?.article, styling.article) })}>
+  <article class={article({ class: clsx(theme?.article, styling.article) })}>
     <div>
-      <div class={div({ class: clsx((theme as ReviewTheme)?.div, styling.div) })}>
-        <img class={img({ class: clsx((theme as ReviewTheme)?.img, styling.img) })} src={review.imgSrc} alt={review.imgAlt} />
-        <div class={div2({ class: clsx((theme as ReviewTheme)?.div2, styling.div2) })}>
+      <div class={div({ class: clsx(theme?.div, styling.div) })}>
+        <img class={img({ class: clsx(theme?.img, styling.img) })} src={review.imgSrc} alt={review.imgAlt} />
+        <div class={div2({ class: clsx(theme?.div2, styling.div2) })}>
           <p>{review.name}</p>
           {#if review.address}
             {#if address}
-              <div class={div3({ class: clsx((theme as ReviewTheme)?.div3, styling.div3) })}>
+              <div class={div3({ class: clsx(theme?.div3, styling.div3) })}>
                 {@render address()}
               </div>
             {/if}
@@ -41,9 +41,9 @@
         </div>
       </div>
       {#if review.item1 || review.item2 || review.item3}
-        <ul class={ul({ class: clsx((theme as ReviewTheme)?.ul, styling.ul) })}>
+        <ul class={ul({ class: clsx(theme?.ul, styling.ul) })}>
           {#if review.item1}
-            <li class={li({ class: clsx((theme as ReviewTheme)?.li, styling.li) })}>
+            <li class={li({ class: clsx(theme?.li, styling.li) })}>
               {#if item1}
                 {@render item1()}
               {/if}

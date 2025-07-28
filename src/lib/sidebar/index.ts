@@ -7,4 +7,4 @@ export { default as SidebarDropdownItem } from "./SidebarItem.svelte";
 export { default as SidebarButton } from "./SidebarButton.svelte";
 export { default as SidebarCta } from "./SidebarCta.svelte";
 export { default as SidebarBrand } from "./SidebarBrand.svelte";
-export { sidebar, sidebarButton, sidebarCta, sidebarBrand, sidebarDropdownWrapper, type SidebarTheme, type SidebarButtonTheme, type SidebarCtaTheme, type SidebarBrandTheme, type SidebarDropdownWrapperTheme } from "./theme";
+export { sidebar, sidebarButton, sidebarCta, sidebarBrand, sidebarDropdownWrapper } from "./theme";

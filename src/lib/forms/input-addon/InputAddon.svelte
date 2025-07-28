@@ -3,11 +3,8 @@
   import { getContext } from "svelte";
   import clsx from "clsx";
   import { type InputAddonProps, clampSize } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, size, ...restProps }: InputAddonProps = $props();
-
-  const theme = getTheme("inputAddon");
 
   let background: boolean = getContext("background");
   let group: { size: SizeType } = getContext("group");
@@ -33,7 +30,7 @@
   // size: explicit, inherited, default
   let _size = size || clampSize(group?.size) || "md";
 
-  let divClass: string = clsx(textSizes[_size], prefixPadding[_size], "text-gray-500 bg-gray-200", background ? darkBgClasses.tinted : darkBgClasses.base, background ? divider.tinted : divider.base, background ? borderClasses["tinted"] : borderClasses["base"], "inline-flex items-center border", group && "not-first:-ms-px", "first:rounded-s-lg last:rounded-e-lg", theme, className);
+  let divClass: string = clsx(textSizes[_size], prefixPadding[_size], "text-gray-500 bg-gray-200", background ? darkBgClasses.tinted : darkBgClasses.base, background ? divider.tinted : divider.base, background ? borderClasses["tinted"] : borderClasses["base"], "inline-flex items-center border", group && "not-first:-ms-px", "first:rounded-s-lg last:rounded-e-lg", className);
 </script>
 
 <div {...restProps} class={divClass}>

@@ -2,7 +2,7 @@
   import { getContext } from "svelte";
   import clsx from "clsx";
   import { CloseButton, type SizeType, type InputProps, type InputValue } from "$lib";
-  import { input, clampSize, type InputTheme } from ".";
+  import { input, clampSize } from ".";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, classes, wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, comboItemClass, onInput, onFocus, onBlur, onKeydown, oninput, onfocus, onblur, onkeydown, ...restProps }: InputProps<InputValue> = $props();
@@ -214,9 +214,9 @@
 {/if}
 
 {#if isCombobox}
-  <div class={clsx(isCombobox ? "relative w-full" : "", (theme as InputTheme)?.wrapper, styling.wrapper)}>
+  <div class={clsx(isCombobox ? "relative w-full" : "", theme?.wrapper, styling.wrapper)}>
     {#if right || left || clearable}
-      <div class={base({ class: clsx((theme as InputTheme)?.base, styling.div) })}>
+      <div class={base({ class: clsx(theme?.base, styling.div) })}>
         {@render inputContent()}
       </div>
     {:else}
@@ -224,10 +224,10 @@
     {/if}
 
     {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-      <div class={combo({ class: clsx((theme as InputTheme)?.combo, styling.combo) })}>
+      <div class={combo({ class: clsx(theme?.combo, styling.combo) })}>
         {#each filteredSuggestions as item, i}
           <button type="button" class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none" onclick={() => selectItem(item)} onmouseenter={() => (selectedIndex = i)}>
-            <p class={comboItem({ class: clsx((theme as InputTheme)?.comboItem, styling.comboItem) })}>{item}</p>
+            <p class={comboItem({ class: clsx(theme?.comboItem, styling.comboItem) })}>{item}</p>
           </button>
         {/each}
       </div>
@@ -236,7 +236,7 @@
 {:else if group}
   {@render inputContent()}
 {:else if right || left || clearable}
-  <div class={base({ class: clsx((theme as InputTheme)?.base, styling.div) })}>
+  <div class={base({ class: clsx(theme?.base, styling.div) })}>
     {@render inputContent()}
   </div>
 {:else}
@@ -245,20 +245,20 @@
 
 {#snippet inputContent()}
   {#if left}
-    <div class={leftCls({ class: clsx((theme as InputTheme)?.left, styling.left) })}>
+    <div class={leftCls({ class: clsx(theme?.left, styling.left) })}>
       {@render left()}
     </div>
   {/if}
   {#if children}
     {@render children({ ...restProps, class: inputCls() })}
   {:else}
-    <input {...restProps} bind:value bind:this={elementRef} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} class={inputCls({ class: clsx((theme as InputTheme)?.input, className) })} />
+    <input {...restProps} bind:value bind:this={elementRef} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} class={inputCls({ class: clsx(theme?.input, className) })} />
     {#if value !== undefined && value !== "" && clearable}
-      <CloseButton onclick={clearAll} class={close({ class: clsx((theme as InputTheme)?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
+      <CloseButton onclick={clearAll} class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
     {/if}
   {/if}
   {#if right}
-    <div class={rightCls({ class: clsx((theme as InputTheme)?.right, styling.right) })}>
+    <div class={rightCls({ class: clsx(theme?.right, styling.right) })}>
       {@render right()}
     </div>
   {/if}

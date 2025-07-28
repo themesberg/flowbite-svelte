@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { dropdownItem, type DropdownItemTheme } from ".";
+  import { dropdownItem } from ".";
   import clsx from "clsx";
   import { type DropdownItemProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -24,7 +24,7 @@
   });
 
   const { anchor, activeAnchor } = dropdownItem();
-  let finalClass = $derived([active ? activeAnchor({ class: clsx((theme as DropdownItemTheme)?.activeAnchor, styling.activeAnchor) }) : anchor({ class: clsx((theme as DropdownItemTheme)?.anchor, styling.anchor) })]);
+  let finalClass = $derived([active ? activeAnchor({ class: clsx(theme?.activeAnchor, styling.activeAnchor) }) : anchor({ class: clsx(theme?.anchor, styling.anchor) })]);
 </script>
 
 <li class={clsx(className ?? liClass)}>

@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 export type TimepickerVariants = VariantProps<typeof timepicker> & Classes<typeof timepicker>;
@@ -75,6 +74,3 @@ export const timepicker = tv({
     disabled: false
   }
 });
-
-export type TimepickerSlots = keyof typeof timepicker.slots;
-export type TimepickerTheme = Partial<Record<TimepickerSlots, ClassValue>>;

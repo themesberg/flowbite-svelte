@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 
 export type IndicatorVariants = VariantProps<typeof indicator>;
 
@@ -116,5 +115,3 @@ export const indicator = tv({
     hasChildren: false
   }
 });
-
-export type IndicatorTheme = ClassValue;

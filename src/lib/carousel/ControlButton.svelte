@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { controlButton, type ControlButtonTheme } from "./theme";
+  import { controlButton } from "./theme";
   import clsx from "clsx";
   import { type ControlButtonProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
@@ -8,7 +8,7 @@
 
   const { base, span } = controlButton({ forward });
 
-  const theme = getTheme("carouselButton");
+  const theme = getTheme("controlButton");
 </script>
 
 <button type="button" class={base({ class: clsx(className, theme) })} {...restProps}>

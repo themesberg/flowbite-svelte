@@ -1,20 +1,9 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "clsx";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type TableVariants = VariantProps<typeof table> & Classes<typeof table>;
 export type TableSearchVariants = Omit<VariantProps<typeof tableSearch>, "color"> & Classes<typeof tableSearch>;
-
-// Theme
-export type TableSlots = keyof typeof table.slots;
-export type TableTheme = Partial<Record<TableSlots, ClassValue>>;
-export type TableBodyRowTheme = ClassValue;
-export type TableHeadTheme = ClassValue;
-export type TableBodyCellTheme = ClassValue;
-export type TableHeadCellTheme = ClassValue;
-export type TableSearchSlots = keyof typeof tableSearch.slots;
-export type TableSearchTheme = Partial<Record<TableSearchSlots, ClassValue>>;
 
 // Export color type for use in props
 export type TableSearchColor = "default" | "blue" | "green" | "red" | "yellow" | "purple" | "indigo" | "pink" | "custom" | undefined;

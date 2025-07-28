@@ -7,7 +7,7 @@
 
   let { children, items, active, onclick, horizontal, rounded, border, class: className, itemClass, iconClass, ...restProps }: ListgroupProps = $props();
 
-  const theme = getTheme("listgroup");
+  const theme = getTheme("listGroup");
 
   const base = $derived(listGroup({ rounded, border, horizontal, class: clsx(theme, className) }));
 

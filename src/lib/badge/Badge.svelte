@@ -3,7 +3,7 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { fade } from "svelte/transition";
-  import { badge, type BadgeTheme } from ".";
+  import { badge } from ".";
 
   let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, classes, border, href, target, rounded, transition = fade, params, aClass, onclose, ...restProps }: BadgeProps = $props();
 
@@ -23,9 +23,9 @@
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} transition:transition={params as ParamsType} class={base({ class: clsx((theme as BadgeTheme)?.base, className) })}>
+  <div {...restProps} transition:transition={params as ParamsType} class={base({ class: clsx(theme?.base, className) })}>
     {#if href}
-      <a {href} {target} class={linkClass({ class: clsx((theme as BadgeTheme)?.linkClass, styling.linkClass) })}>
+      <a {href} {target} class={linkClass({ class: clsx(theme?.linkClass, styling.linkClass) })}>
         {@render children()}
       </a>
     {:else}

@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { writable } from "svelte/store";
   import { setContext } from "svelte";
-  import { tabs, type TabsTheme } from ".";
+  import { tabs } from ".";
   import type { TabsProps, TabCtxType } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
@@ -39,13 +39,13 @@
   }
 </script>
 
-<ul role="tablist" {...restProps} class={base({ class: clsx((theme as TabsTheme)?.base, className ?? ulClass) })}>
+<ul role="tablist" {...restProps} class={base({ class: clsx(theme?.base, className ?? ulClass) })}>
   {@render children()}
 </ul>
 {#if dividerBool}
-  <div class={dividerClass({ class: clsx((theme as TabsTheme)?.divider, classes?.divider) })}></div>
+  <div class={dividerClass({ class: clsx(theme?.divider, classes?.divider) })}></div>
 {/if}
-<div id={panelId} class={content({ class: clsx((theme as TabsTheme)?.content, styling.content) })} role="tabpanel" aria-labelledby={panelId} use:init></div>
+<div id={panelId} class={content({ class: clsx(theme?.content, styling.content) })} role="tabpanel" aria-labelledby={panelId} use:init></div>
 
 <!--
 @component

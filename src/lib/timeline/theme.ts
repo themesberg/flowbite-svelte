@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
@@ -8,18 +7,6 @@ export type ActivityItemVariants = VariantProps<typeof activityItem> & Classes<t
 export type GroupVariants = VariantProps<typeof group> & Classes<typeof group>;
 export type GroupItemVariants = VariantProps<typeof groupItem> & Classes<typeof groupItem>;
 export type TimelineItemVariants = VariantProps<typeof timelineItem> & Classes<typeof timelineItem>;
-
-// Theme
-export type ActivityTheme = ClassValue;
-export type ActivityItemSlots = keyof typeof activityItem.slots;
-export type ActivityItemTheme = Partial<Record<ActivityItemSlots, ClassValue>>;
-export type GroupSlots = keyof typeof group.slots;
-export type GroupTheme = Partial<Record<GroupSlots, ClassValue>>;
-export type GroupItemSlots = keyof typeof groupItem.slots;
-export type GroupItemTheme = Partial<Record<GroupItemSlots, ClassValue>>;
-export type TimelineTheme = ClassValue;
-export type TimelineItemSlots = keyof typeof timelineItem.slots;
-export type TimelineItemTheme = Partial<Record<TimelineItemSlots, ClassValue>>;
 
 export const activity = tv({
   base: "relative border-s border-gray-200 dark:border-gray-700"

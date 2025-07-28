@@ -6,7 +6,7 @@
 
   let { children, class: className, ...restProps }: NavBrandProps = $props();
 
-  const theme = getTheme("navBrand");
+  const theme = getTheme("navbarBrand");
 </script>
 
 <a {...restProps} class={navbarBrand({ class: clsx(theme, className) })}>
