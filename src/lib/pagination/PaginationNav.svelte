@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import { setContext } from "svelte";
-  import { paginationNav, type PaginationNavTheme } from "./theme";
+  import { paginationNav } from "./theme";
   import { type PaginationNavProps, PaginationButton } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
@@ -62,17 +62,17 @@
 
 <nav aria-label={ariaLabel} {...restProps}>
   {#if layout === "table"}
-    <div class={tableDiv({ class: clsx((theme as PaginationNavTheme)?.tableDiv, styling.tableDiv) })}>
-      Showing <span class={span({ class: clsx((theme as PaginationNavTheme)?.span, styling.span) })}>{currentPage}</span>
+    <div class={tableDiv({ class: clsx(theme?.tableDiv, styling.tableDiv) })}>
+      Showing <span class={span({ class: clsx(theme?.span, styling.span) })}>{currentPage}</span>
       of
-      <span class={span({ class: clsx((theme as PaginationNavTheme)?.span, styling.span) })}>{totalPages}</span>
+      <span class={span({ class: clsx(theme?.span, styling.span) })}>{totalPages}</span>
       Entries
     </div>
   {/if}
 
-  <ul class={base({ class: clsx((theme as PaginationNavTheme)?.base, className) })}>
+  <ul class={base({ class: clsx(theme?.base, className) })}>
     <li {...restProps}>
-      <PaginationButton onclick={goToPreviousPage} disabled={currentPage === 1} class={prev({ class: clsx((theme as PaginationNavTheme)?.prev, styling.prev) })}>
+      <PaginationButton onclick={goToPreviousPage} disabled={currentPage === 1} class={prev({ class: clsx(theme?.prev, styling.prev) })}>
         {#if prevContent}
           {@render prevContent()}
         {:else}
@@ -90,7 +90,7 @@
       {/each}
     {/if}
     <li {...restProps}>
-      <PaginationButton onclick={goToNextPage} disabled={currentPage === totalPages} class={next({ class: clsx((theme as PaginationNavTheme)?.next, styling.next) })}>
+      <PaginationButton onclick={goToNextPage} disabled={currentPage === totalPages} class={next({ class: clsx(theme?.next, styling.next) })}>
         {#if nextContent}
           {@render nextContent()}
         {:else}

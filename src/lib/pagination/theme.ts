@@ -1,17 +1,10 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
 export type PaginationNavVariants = VariantProps<typeof paginationNav> & Classes<typeof paginationNav>;
-// Theme
 export type PaginationVariants = VariantProps<typeof pagination>;
-export type PaginationNavSlots = keyof typeof paginationNav.slots;
-export type PaginationNavTheme = Partial<Record<PaginationNavSlots, ClassValue>>;
 export type PaginationItemVariants = VariantProps<typeof paginationItem>;
-export type PaginationButtonTheme = ClassValue;
-export type PaginationItemTheme = ClassValue;
-export type PaginationTheme = ClassValue;
 
 export const paginationNav = tv({
   slots: {
