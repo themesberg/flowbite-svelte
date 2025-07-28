@@ -12,7 +12,7 @@
 	}) as Record<string, string>;
 </script>
 
-<H1>Carousel</H1>
+<H1>Datepicker</H1>
 <H2>Default</H2>
 <CodeWrapper>
   <ExampleComponents.Default />

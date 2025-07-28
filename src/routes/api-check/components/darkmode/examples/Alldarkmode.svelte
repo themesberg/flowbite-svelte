@@ -1,5 +1,5 @@
 <script>
-  import { P, A, DarkMode } from "$lib";
+  import { DarkMode } from "$lib";
   import { ThumbsUpSolid, ThumbsDownSolid } from "flowbite-svelte-icons";
 </script>
 

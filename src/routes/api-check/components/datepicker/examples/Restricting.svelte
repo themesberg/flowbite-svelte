@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Datepicker, P, type DateOrRange } from "flowbite-svelte";
+  import { Datepicker, P } from "flowbite-svelte";
   let selectedDate = $state<Date | undefined>(undefined);
 
   // Helper function to add/subtract days

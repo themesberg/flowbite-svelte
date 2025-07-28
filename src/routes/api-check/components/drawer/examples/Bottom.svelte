@@ -1,0 +1,31 @@
+<script>
+  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
+  import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
+  import { sineIn } from "svelte/easing";
+
+  let hidden8 = $state(true);
+  let transitionParamsBottom = {
+    y: 320,
+    duration: 200,
+    easing: sineIn
+  };
+</script>
+
+<div class="text-center">
+  <Button onclick={() => (hidden8 = false)}>Show drawer</Button>
+</div>
+
+<Drawer placement="bottom" class="w-full" transitionParams={transitionParamsBottom} bind:hidden={hidden8}>
+  <div class="flex items-center justify-between">
+    <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
+      <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
+    </h5>
+    <CloseButton onclick={() => (hidden8 = true)} class="mb-4 dark:text-white" />
+  </div>
+  <p class="mb-6 max-w-lg text-sm text-gray-500 dark:text-gray-400">
+    Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
+    for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
+  </p>
+  <Button color="light" href="/">Learn more</Button>
+  <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
+</Drawer>
