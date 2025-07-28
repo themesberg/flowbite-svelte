@@ -291,8 +291,8 @@ Set `translationLocale` to change translation. The following example shows Germa
 <script lang="ts">
   import { Datepicker, Button } from "flowbite-svelte";
 
-  let datepickerRef = $state();
-  let selectedDate = $state();
+  let datepickerRef: HTMLInputElement | undefined = $state();
+  let selectedDate: Date | undefined = $state();
 </script>
 
 <Datepicker bind:elementRef={datepickerRef} bind:value={selectedDate} placeholder="Select a date" />

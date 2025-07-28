@@ -1,26 +1,30 @@
-<script>
-  import { P, A, DarkMode } from "$lib";
-  import { ThumbsUpSolid, ThumbsDownSolid } from "flowbite-svelte-icons";
+<script lang="ts">
+	import HighlightCompo from '../../../utils/api-check/HighlightCompo.svelte';
+	import CodeWrapper from '../../../utils/api-check/CodeWrapper.svelte';
+	import H1 from '../../../utils/api-check/H1.svelte';
+	import H2 from '../../../utils/api-check/H2.svelte';
+
+	import * as ExampleComponents from './examples/';
+	const exampleModules = import.meta.glob('./examples/*.svelte', {
+		query: '?raw',
+		import: 'default',
+		eager: true
+	}) as Record<string, string>;
 </script>
 
-<h1 class="text-3xl">Darkmode</h1>
-<div class="flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <DarkMode />
-</div>
+<H1>Darkmode</H1>
+<H2>Switcher style</H2>
+<CodeWrapper>
+  <ExampleComponents.Switcher />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Switcher.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>
 
-<h2 class="text-2xl">Switcher style</h2>
-<div class="flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <DarkMode class="text-primary-500 dark:text-primary-600 border dark:border-gray-800" />
-</div>
-
-<h2 class="my-4 text-2xl">Mode icon</h2>
-<div class="flex flex-col gap-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <DarkMode class="text-lg">
-    {#snippet lightIcon()}
-      <ThumbsUpSolid color="red" />
-    {/snippet}
-    {#snippet darkIcon()}
-      <ThumbsDownSolid color="green" />
-    {/snippet}
-  </DarkMode>
-</div>
+<H2>Mode icon</H2>
+<CodeWrapper>
+  <ExampleComponents.Icon />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules['./examples/Icon.svelte'] as string} />
+	{/snippet}
+</CodeWrapper>

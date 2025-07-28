@@ -84,7 +84,7 @@ Use this example to show a copy button inside the input field with a text label 
 
 ```svelte example class="flex justify-center items-center gap-2 h-56"
 <script>
-  import { Clipboard, Input, Tooltip, ButtonGroup } from "flowbite-svelte";
+  import { Clipboard, Input } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
 
   let value = $state("npm install flowbite");
