@@ -38,7 +38,9 @@
       {/if}
     {/each}
   {:else}
-    {@render children?.(items?.[0])}
+    {#if children && items?.length}
+      {@render children?.(items?.[0])}
+    {/if}
   {/if}
 </svelte:element>
 

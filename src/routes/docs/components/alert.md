@@ -191,7 +191,7 @@ You can use `closeIcon` prop to override the default close button. See the last 
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert, Button } from "flowbite-svelte";
+  import { Alert } from "flowbite-svelte";
   import { InfoCircleSolid, EnvelopeSolid } from "flowbite-svelte-icons";
   import { fly } from "svelte/transition";
 </script>
