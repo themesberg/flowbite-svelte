@@ -2,10 +2,19 @@
   import clsx from "clsx";
   import { type CloseButtonProps } from "$lib";
   import { closeButtonVariants } from ".";
+  import { useDismiss } from "./dismissable.svelte";
 
-  let { children, color = "gray", onclick, name = "Close", ariaLabel, size = "md", class: className, svgClass, ...restProps }: CloseButtonProps = $props();
+  let { children, color = "gray", onclick: onclickorg, name = "Close", ariaLabel, size = "md", class: className, svgClass, ...restProps }: CloseButtonProps = $props();
 
   const { base, svg } = $derived(closeButtonVariants({ color, size }));
+
+  const context = useDismiss();
+
+  function onclick(event: MouseEvent) {
+    onclickorg?.(event);
+    if (event.defaultPrevented) return;
+    context?.dismiss?.(event);
+  }
 </script>
 
 {#if restProps.href === undefined}

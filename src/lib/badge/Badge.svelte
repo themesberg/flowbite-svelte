@@ -4,6 +4,7 @@
   import clsx from "clsx";
   import { fade } from "svelte/transition";
   import { badge } from ".";
+  import { createDismissableContext } from "flowbite-svelte/utils/dismissable.svelte";
 
   let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, classes, border, href, target, rounded, transition = fade, params, aClass, onclose, ...restProps }: BadgeProps = $props();
 
@@ -20,6 +21,8 @@
     onclose?.(ev);
     if (!ev.defaultPrevented) badgeStatus = false;
   };
+
+  createDismissableContext(close);
 </script>
 
 {#if badgeStatus}
@@ -39,7 +42,7 @@
           {@render icon()}
         </button>
       {:else}
-        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge" onclick={close} />
+        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge" />
       {/if}
     {/if}
   </div>
