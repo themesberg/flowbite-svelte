@@ -3,5 +3,4 @@
   import images from "./imageData/images.json";
 </script>
 
-
-  <Carousel {images} duration={3000} />
+<Carousel {images} duration={3000} />

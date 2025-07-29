@@ -16,8 +16,7 @@ export const modal = tv({
   variants: {
     fullscreen: {
       true: {
-        base:
-        "fixed inset-0 w-screen h-screen max-w-none max-h-none m-0 p-0 border-none rounded-none bg-white dark:bg-gray-900"
+        base: "fixed inset-0 w-screen h-screen max-w-none max-h-none m-0 p-0 border-none rounded-none bg-white dark:bg-gray-900"
       }
     },
     placement: {

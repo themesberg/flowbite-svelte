@@ -201,9 +201,7 @@ export const fetchApiCheck = async () => {
   const apicheckTypography = import.meta.glob("/src/routes/api-check/typography/*.svelte");
   const apicheckExtend = import.meta.glob("/src/routes/api-check/extend/*.svelte");
 
-  const iterableApiComponents = Object.entries(apicheckComponents).filter(
-    ([path]) => !path.includes("/[...slug]/")
-  );
+  const iterableApiComponents = Object.entries(apicheckComponents).filter(([path]) => !path.includes("/[...slug]/"));
   const componentsApicheck = await Promise.all(
     iterableApiComponents.map(async ([path, _]) => {
       return {

@@ -52,7 +52,7 @@ Use this example to show a navigational sidebar inside the drawer component.
 
 ```svelte
 <script>
-  import { Drawer, Button, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
+  import { Drawer, Button, CloseButton, Sidebar, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
   import { ChartPieSolid, CartSolid, GridSolid, MailBoxSolid, UsersSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   let hidden2 = $state(true);
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
@@ -462,9 +462,8 @@ Use `fixed|aboslute` prop to manage the CSS position value of the drawer.
 
 ```svelte
 <script>
-  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
+  import { Drawer, Button, CloseButton } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-  import { sineIn } from "svelte/easing";
 
   let hidden9 = true;
 </script>
@@ -526,7 +525,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 
 ```svelte
 <script>
-  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
+  import { Drawer, Button, CloseButton } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
   let hiddenDisablingOnlyOutsideClick = $state(true);
@@ -580,7 +579,9 @@ By default, body scrolling is disabled when the drawer is visible, however, you 
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
-    for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
+    for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board. Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet
+    consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto
+    aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea!
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
@@ -595,7 +596,7 @@ By default, body scrolling is disabled when the drawer is visible, however, you 
 
 #### Types
 
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L563)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L564)
 
 #### Props
 
@@ -618,7 +619,7 @@ By default, body scrolling is disabled when the drawer is visible, however, you 
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L574)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L575)
 
 #### Props
 

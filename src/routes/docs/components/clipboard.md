@@ -228,7 +228,7 @@ Use this example to show multiple input field elements that have the copy to cli
   let role_arn = $state("123456789012:user/Flowbite");
 </script>
 
-{#snippet children(success:boolean)}
+{#snippet children(success: boolean)}
   <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
   {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
 {/snippet}
@@ -366,7 +366,7 @@ Use this example to show an input field where you can copy the URL of the curren
 
 <Button color="alternative" onclick={() => (copyModal = true)}><ShareNodesOutline class="me-2" /> Share course</Button>
 
-<Modal title="Share course" bind:open={copyModal} autoclose class="divide-y-0" classes={{header:"text-lg text-gray-500 dark:text-gray-400", footer:"px-5 pb-5"}} >
+<Modal title="Share course" bind:open={copyModal} autoclose class="divide-y-0" classes={{ header: "text-lg text-gray-500 dark:text-gray-400", footer: "px-5 pb-5" }}>
   <Label for="course-url" class="mb-2 block text-sm font-medium">Share the course link below with your friends:</Label>
 
   <Input bind:value id="course-url">

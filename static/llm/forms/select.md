@@ -251,7 +251,7 @@ If you want custom options, put them directly inside the component and leave the
 <Button
   onclick={() => {
     // programmatically change the selection
-    selectRef.selectedIndex = 1; // This would select Option 2
+    selectRef.selectedIndex = 2; // This would select Option 2
     selectedValue = "option2";
     selectRef?.focus();
     console.log(`Selected index: ${selectRef?.selectedIndex}`);
@@ -412,7 +412,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 #### Types
 
-[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L854)
+[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L855)
 
 #### Props
 

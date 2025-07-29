@@ -1,7 +1,7 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { Classes } from "$lib/theme/themeUtils";
 
-export type PhoneInputVariants = VariantProps<typeof phoneInput> &  Classes<typeof phoneInput>;
+export type PhoneInputVariants = VariantProps<typeof phoneInput> & Classes<typeof phoneInput>;
 
 export const phoneInput = tv({
   slots: {

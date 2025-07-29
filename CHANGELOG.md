@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.10.21
+
+### Patch Changes
+
+- feat(modal): full-screen modal
+
 ## 1.10.20
 
 ### Patch Changes

@@ -44,7 +44,7 @@
       {/if}
     {/snippet}
   </Listgroup>
-  <BottomNav position="sticky" navType="card"  classes={{ inner: "grid-cols-3 pt-2 pb-4" }}>
+  <BottomNav position="sticky" navType="card" classes={{ inner: "grid-cols-3 pt-2 pb-4" }}>
     <BottomNavItem btnName="Latest" id="card-latest">
       <ClockSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
     </BottomNavItem>

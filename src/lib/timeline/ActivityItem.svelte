@@ -62,7 +62,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1759)
+[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1762)
 ## Props
 @prop activities
 @prop liClass
@@ -73,7 +73,7 @@
 @prop timeClass
 @prop titleClass
 @prop textClass
-@prop class:className
+@prop class: className
 @prop classes
 @prop ...restProps
 -->

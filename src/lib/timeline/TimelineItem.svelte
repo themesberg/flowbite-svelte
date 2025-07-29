@@ -97,7 +97,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1804)
+[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1807)
 ## Props
 @prop children
 @prop orientationSlot
@@ -109,7 +109,7 @@
 @prop divClass
 @prop timeClass
 @prop h3Class
-@prop class:className
+@prop class: className
 @prop classes
 @prop ...restProps
 -->

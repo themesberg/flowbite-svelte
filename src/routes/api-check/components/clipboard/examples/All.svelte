@@ -137,7 +137,6 @@
 
 <h2 class="my-4 text-2xl">Card with API keys</h2>
 <div class="my-4 flex flex-wrap justify-center gap-2 rounded border border-gray-200 p-4 dark:border-gray-600">
-
   {#snippet children(success: boolean)}
     <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
     {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
