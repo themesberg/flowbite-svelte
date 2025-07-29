@@ -17,6 +17,7 @@
     ["imgClass", "\"\""],
     ["class: className", ""],
     ["onchange", ""],
-    ["divClass", ""]
+    ["divClass", ""],
+    ["isPreload", "false"]
   ]
 }

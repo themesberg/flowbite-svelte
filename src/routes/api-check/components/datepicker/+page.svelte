@@ -1,99 +1,142 @@
 <script lang="ts">
-  import { Datepicker, P, A, type DateOrRange } from "$lib";
+  import HighlightCompo from "../../../utils/api-check/HighlightCompo.svelte";
+  import CodeWrapper from "../../../utils/api-check/CodeWrapper.svelte";
+  import H1 from "../../../utils/api-check/H1.svelte";
+  import H2 from "../../../utils/api-check/H2.svelte";
 
-  let selectedDate = $state<Date | undefined>(undefined);
-
-  let dateRange: { from: Date | undefined; to: Date | undefined } = $state({
-    from: undefined,
-    to: undefined
-  });
-
-  let selectedDateWithButtons = $state<Date | undefined>();
-  let lastAction = $state<string | undefined>();
-
-  function handleClear() {
-    lastAction = "Cleared";
-  }
-
-  function handleApply(detail: DateOrRange): void {
-    lastAction = "Applied";
-    if (detail instanceof Date) {
-      selectedDateWithButtons = detail;
-    }
-  }
-
-  function handleDateSelect(detail: DateOrRange) {
-    console.log("Selected date:", detail);
-  }
+  import * as ExampleComponents from "./examples/";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
+    eager: true
+  }) as Record<string, string>;
 </script>
 
-<h1 class="my-4 text-3xl">Datepicker</h1>
+<H1>Datepicker</H1>
+<H2>Default</H2>
+<CodeWrapper>
+  <ExampleComponents.Default />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Default.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Default Datepicker</h2>
-<div class="my-4 h-96 rounded border border-gray-200 p-4 md:w-1/2 dark:border-gray-600">
-  <Datepicker bind:value={selectedDate} color="green" />
-  <P class="mt-4">Selected date: {selectedDate ? selectedDate.toLocaleDateString() : "None"}</P>
-</div>
+<H2>Date Range Selection</H2>
+<CodeWrapper>
+  <ExampleComponents.Range />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Range.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Date Range Selection</h2>
-<div class="my-4 h-96 rounded border border-gray-200 p-4 md:w-1/2 dark:border-gray-600">
-  <Datepicker range bind:rangeFrom={dateRange.from} bind:rangeTo={dateRange.to} color="pink" />
-  <P class="mt-4">
-    Selected range:
-    {dateRange.from ? dateRange.from.toLocaleDateString() : "None"} -
-    {dateRange.to ? dateRange.to.toLocaleDateString() : "None"}
-  </P>
-</div>
+<H2>Inline Datepicker</H2>
+<CodeWrapper>
+  <ExampleComponents.Inline />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Inline.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Inline Datepicker</h2>
-<div class="my-4 h-96 rounded border border-gray-200 p-4 md:w-1/2 dark:border-gray-600">
-  <Datepicker inline bind:value={selectedDate} />
-  <P class="mt-4">Selected date: {selectedDate ? selectedDate.toLocaleDateString() : "None"}</P>
-</div>
+<H2>Color and classes</H2>
+<CodeWrapper>
+  <ExampleComponents.Color />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Color.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Custom Color</h2>
-<div class="my-4 h-96 rounded border border-gray-200 p-4 md:w-1/2 dark:border-gray-600">
-  <Datepicker color="red" />
-</div>
+<H2>Localization</H2>
+<CodeWrapper>
+  <ExampleComponents.Localization />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Localization.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Localization</h2>
-<div class="my-4 h-96 rounded border border-gray-200 p-4 md:w-1/2 dark:border-gray-600">
-  <Datepicker locale="fr-FR" />
-</div>
+<H2>Custom Date Format</H2>
+<CodeWrapper>
+  <ExampleComponents.Format />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Format.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Custom Date Format</h2>
-<div class="my-4 h-96 rounded border border-gray-200 p-4 md:w-1/2 dark:border-gray-600">
-  <Datepicker dateFormat={{ year: "numeric", month: "short", day: "2-digit" }} />
-</div>
+<H2>Action Buttons</H2>
+<CodeWrapper>
+  <ExampleComponents.Action />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Action.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Action Buttons</h2>
-<div class="my-4 h-96 rounded border border-gray-200 p-4 md:w-1/2 dark:border-gray-600">
-  <Datepicker bind:value={selectedDateWithButtons} showActionButtons autohide={false} onclear={handleClear} onapply={handleApply} />
-  <P class="mt-4">Selected date: {selectedDateWithButtons ? selectedDateWithButtons.toLocaleDateString() : "None"}</P>
-  <P class="mt-2">Last action: {lastAction}</P>
-</div>
+<H2>Custom Title</H2>
+<CodeWrapper>
+  <ExampleComponents.Title />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Title.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Custom Title</h2>
-<div class="my-4 h-96 rounded border border-gray-200 p-4 md:w-1/2 dark:border-gray-600">
-  <Datepicker title="Select your preferred date" />
-</div>
+<H2>Disabled State</H2>
+<CodeWrapper>
+  <ExampleComponents.Disabled />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Disabled.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Disabled State</h2>
-<div class="my-4 h-96 rounded border border-gray-200 p-4 md:w-1/2 dark:border-gray-600">
-  <Datepicker disabled />
-</div>
+<H2>Required Field</H2>
+<CodeWrapper>
+  <ExampleComponents.Required />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Required.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Required Field</h2>
-<div class="my-4 h-96 rounded border border-gray-200 p-4 md:w-1/2 dark:border-gray-600">
-  <Datepicker required />
-</div>
+<H2>Custom First Day of Week</H2>
+<CodeWrapper>
+  <ExampleComponents.First />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/First.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Custom First Day of Week</h2>
-<div class="my-4 h-96 rounded border border-gray-200 p-4 md:w-1/2 dark:border-gray-600">
-  <Datepicker firstDayOfWeek={3} />
-</div>
+<H2>Event Handling</H2>
+<CodeWrapper>
+  <ExampleComponents.Event />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Event.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Event Handling</h2>
-<div class="my-4 h-96 rounded border border-gray-200 p-4 md:w-1/2 dark:border-gray-600">
-  <Datepicker onselect={handleDateSelect} />
-</div>
+<H2>Restricting the selectable date range</H2>
+<CodeWrapper>
+  <ExampleComponents.Restricting />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Restricting.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Local translation</H2>
+<CodeWrapper>
+  <ExampleComponents.Local />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Local.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Accessing Datepicker Element with elementRef</H2>
+<CodeWrapper>
+  <ExampleComponents.ElementRef />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/ElementRef.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Usage & Localization</H2>
+<CodeWrapper>
+  <ExampleComponents.Usage />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Usage.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>

@@ -1,7 +1,6 @@
 <script>
   import { AccordionItem, Accordion } from "flowbite-svelte";
   import { blur, fade } from "svelte/transition";
-  import { quintOut } from "svelte/easing";
 </script>
 
 <Accordion>

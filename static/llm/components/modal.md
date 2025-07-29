@@ -473,13 +473,31 @@ You can as well use the `onsubmit` event handler which is bubbled event from the
 </Modal>
 ```
 
+## Full-Screen Modal
+
+Use the following example to create a full-screen modal.
+
+```svelte
+<script>
+  import { Button, Modal, P } from "$lib";
+  let defaultModal = $state(false);
+</script>
+
+<Button onclick={() => (defaultModal = true)}>Default modal</Button>
+<Modal bind:open={defaultModal} fullscreen size="none" class="m-0 bg-gray-100 p-0">
+  <div class="m-0 flex h-screen items-center justify-center">
+    <P class="text-3xl">Content</P>
+  </div>
+</Modal>
+```
+
 ## Component data
 
 ### Modal
 
 #### Types
 
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1054)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1055)
 
 #### Props
 
@@ -509,6 +527,7 @@ You can as well use the `onsubmit` event handler which is bubbled event from the
 - classes
 - params
 - transition: fade
+- fullscreen: false
 
 
 ## References

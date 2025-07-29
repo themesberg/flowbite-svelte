@@ -37,7 +37,7 @@
         <ListgroupItem href={item.href} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} {...item} onclick={item.onclick ?? createItemClickHandler(item)} />
       {/if}
     {/each}
-  {:else}
+  {:else if children && items?.length}
     {@render children?.(items?.[0])}
   {/if}
 </svelte:element>
@@ -46,7 +46,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1021)
+[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1022)
 ## Props
 @prop children
 @prop items

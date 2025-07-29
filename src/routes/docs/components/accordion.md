@@ -263,7 +263,6 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 <script>
   import { AccordionItem, Accordion } from "flowbite-svelte";
   import { blur, fade } from "svelte/transition";
-  import { quintOut } from "svelte/easing";
 </script>
 
 <Accordion>

@@ -36,14 +36,14 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1771)
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1774)
 ## Props
 @prop children
 @prop divClass
 @prop timeClass
 @prop date
 @prop olClass
-@prop class:className
+@prop class: className
 @prop classes
 @prop ...restProps
 -->

@@ -1,5 +1,5 @@
 <script>
-  import { Alert, Button } from "flowbite-svelte";
+  import { Alert } from "flowbite-svelte";
   import { InfoCircleSolid, EnvelopeSolid } from "flowbite-svelte-icons";
   import { fly } from "svelte/transition";
 </script>

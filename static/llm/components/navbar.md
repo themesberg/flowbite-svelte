@@ -324,7 +324,7 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
 </script>
 
 <div class="relative px-8">
-  <Navbar class="fixed start-0 top-0 z-20 w-full bg-gray-800 px-2 py-2.5 sm:px-4">
+  <Navbar class="fixed start-0 top-0 z-20 w-full bg-white px-2 py-2.5 sm:px-4 dark:bg-gray-800">
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
       <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
@@ -417,7 +417,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1075)
+[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1076)
 
 #### Props
 
@@ -431,7 +431,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1095)
+[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1096)
 
 #### Props
 
@@ -442,7 +442,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1097)
+[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1098)
 
 #### Props
 
@@ -454,7 +454,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1101)
+[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1102)
 
 #### Props
 
@@ -469,7 +469,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1122)
+[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1123)
 
 #### Props
 
@@ -482,7 +482,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1107)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1108)
 
 #### Props
 
@@ -502,7 +502,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1088)
+[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1089)
 
 #### Props
 

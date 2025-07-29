@@ -30,7 +30,7 @@
 </div>
 
 <h2 class="my-4 text-2xl">Disabled</h2>
-<div class="my-4 flex justify-center rounded border border-gray-200 p-4 dark:border-gray-600 space-x-4">
+<div class="my-4 flex justify-center space-x-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <ButtonGroup>
     <Button disabled>Profile</Button>
     <Button>Settings</Button>
@@ -43,7 +43,6 @@
     <Button>Messages</Button>
   </ButtonGroup>
 </div>
-
 
 <h2 class="my-4 text-2xl">More examples</h2>
 

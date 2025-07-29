@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Badge } from 'flowbite-svelte';
-  import { CheckOutline } from 'flowbite-svelte-icons';
+  import { Badge } from "flowbite-svelte";
+  import { CheckOutline } from "flowbite-svelte-icons";
 </script>
 
 <Badge color="gray" large class="p-1! font-semibold!">

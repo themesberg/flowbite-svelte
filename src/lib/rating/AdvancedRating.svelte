@@ -41,7 +41,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1235)
+[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1236)
 ## Props
 @prop rating
 @prop globalText

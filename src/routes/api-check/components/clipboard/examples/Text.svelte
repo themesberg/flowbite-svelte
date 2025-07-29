@@ -1,5 +1,5 @@
 <script>
-  import { Clipboard, Input, Tooltip, ButtonGroup } from "flowbite-svelte";
+  import { Clipboard, Input } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
 
   let value = $state("npm install flowbite");

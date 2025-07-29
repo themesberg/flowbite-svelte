@@ -486,6 +486,24 @@ You can as well use the `onsubmit` event handler which is bubbled event from the
 </Modal>
 ```
 
+## Full-Screen Modal
+
+Use the following example to create a full-screen modal.
+
+```svelte example class="flex justify-center" hideResponsiveButtons
+<script>
+  import { Button, Modal, P } from "$lib";
+  let defaultModal = $state(false);
+</script>
+
+<Button onclick={() => (defaultModal = true)}>Default modal</Button>
+<Modal bind:open={defaultModal} fullscreen size="none" class="bg-gray-100">
+  <div class="flex h-screen items-center justify-center">
+    <P class="text-3xl">Content</P>
+  </div>
+</Modal>
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

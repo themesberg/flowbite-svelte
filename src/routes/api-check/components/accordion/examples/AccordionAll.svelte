@@ -241,27 +241,27 @@
   </Accordion>
 </div>
 
-<h2 class="my-4 text-2xl">Using transitionType=“none” </h2>
-<div class="rounded border border-gray-200 p-4 dark:border-gray-600  space-y-4">
+<h2 class="my-4 text-2xl">Using transitionType=“none”</h2>
+<div class="space-y-4 rounded border border-gray-200 p-4 dark:border-gray-600">
   <Accordion transitionType="none">
-  <AccordionItem>
-    {#snippet header()}My Header 1{/snippet}
-    Content A
-  </AccordionItem>
-  <AccordionItem>
-    {#snippet header()}My Header 2{/snippet}
-    Content B
-  </AccordionItem>
-</Accordion>
+    <AccordionItem>
+      {#snippet header()}My Header 1{/snippet}
+      Content A
+    </AccordionItem>
+    <AccordionItem>
+      {#snippet header()}My Header 2{/snippet}
+      Content B
+    </AccordionItem>
+  </Accordion>
 
-<Accordion>
-  <AccordionItem transitionType="none">
-    {#snippet header()}transitionType: "none"{/snippet}
-    Content C
-  </AccordionItem>
-  <AccordionItem>
-    {#snippet header()}transitionType: default{/snippet}
-    Content D
-  </AccordionItem>
-</Accordion>
+  <Accordion>
+    <AccordionItem transitionType="none">
+      {#snippet header()}transitionType: "none"{/snippet}
+      Content C
+    </AccordionItem>
+    <AccordionItem>
+      {#snippet header()}transitionType: default{/snippet}
+      Content D
+    </AccordionItem>
+  </Accordion>
 </div>

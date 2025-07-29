@@ -398,7 +398,7 @@ Use the following example to preserve the input value. First fill out the form, 
 
 #### Types
 
-[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1722)
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1723)
 
 #### Props
 
@@ -417,7 +417,7 @@ Use the following example to preserve the input value. First fill out the form, 
 
 #### Types
 
-[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1714)
+[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1715)
 
 #### Props
 
@@ -426,7 +426,7 @@ Use the following example to preserve the input value. First fill out the form, 
 - ulClass
 - contentClass
 - divider: true
-- class:className
+- class: className
 - classes
 
 

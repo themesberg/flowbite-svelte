@@ -221,7 +221,7 @@ Use `availableFrom` and/or `availableTo` props to restrict the selectable date r
 
 ```svelte
 <script lang="ts">
-  import { Datepicker, P, type DateOrRange } from "flowbite-svelte";
+  import { Datepicker, P } from "flowbite-svelte";
   let selectedDate = $state<Date | undefined>(undefined);
 
   // Helper function to add/subtract days
@@ -279,8 +279,8 @@ Set `translationLocale` to change translation. The following example shows Germa
 <script lang="ts">
   import { Datepicker, Button } from "flowbite-svelte";
 
-  let datepickerRef = $state();
-  let selectedDate = $state();
+  let datepickerRef: HTMLInputElement | undefined = $state();
+  let selectedDate: Date | undefined = $state();
 </script>
 
 <Datepicker bind:elementRef={datepickerRef} bind:value={selectedDate} placeholder="Select a date" />
@@ -351,7 +351,7 @@ Set `translationLocale` to change translation. The following example shows Germa
 
 #### Types
 
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L457)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L458)
 
 #### Props
 

@@ -200,7 +200,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1755)
+[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1758)
 
 #### Props
 
@@ -211,7 +211,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1759)
+[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1762)
 
 #### Props
 
@@ -224,14 +224,14 @@ Use this component to group multiple data entries inside a single date and show 
 - timeClass
 - titleClass
 - textClass
-- class:className
+- class: className
 - classes
 
 ### Group
 
 #### Types
 
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1771)
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1774)
 
 #### Props
 
@@ -240,14 +240,14 @@ Use this component to group multiple data entries inside a single date and show 
 - timeClass
 - date
 - olClass
-- class:className
+- class: className
 - classes
 
 ### GroupItem
 
 #### Types
 
-[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1779)
+[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1782)
 
 #### Props
 
@@ -257,14 +257,14 @@ Use this component to group multiple data entries inside a single date and show 
 - divClass
 - titleClass
 - spanClass
-- class:className
+- class: className
 - classes
 
 ### Timeline
 
 #### Types
 
-[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1799)
+[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1802)
 
 #### Props
 
@@ -276,7 +276,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1804)
+[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1807)
 
 #### Props
 
@@ -290,7 +290,7 @@ Use this component to group multiple data entries inside a single date and show 
 - divClass
 - timeClass
 - h3Class
-- class:className
+- class: className
 - classes
 
 

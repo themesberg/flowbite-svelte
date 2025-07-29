@@ -8,7 +8,7 @@
 
 <Button color="alternative" onclick={() => (copyModal = true)}><ShareNodesOutline class="me-2" /> Share course</Button>
 
-<Modal title="Share course" bind:open={copyModal} autoclose class="divide-y-0" classes={{header:"text-lg text-gray-500 dark:text-gray-400", footer:"px-5 pb-5"}} >
+<Modal title="Share course" bind:open={copyModal} autoclose class="divide-y-0" classes={{ header: "text-lg text-gray-500 dark:text-gray-400", footer: "px-5 pb-5" }}>
   <Label for="course-url" class="mb-2 block text-sm font-medium">Share the course link below with your friends:</Label>
 
   <Input bind:value id="course-url">

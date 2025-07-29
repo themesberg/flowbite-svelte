@@ -198,5 +198,6 @@
 @prop class: className
 @prop onchange
 @prop divClass
+@prop isPreload = false
 @prop ...restProps
 -->
