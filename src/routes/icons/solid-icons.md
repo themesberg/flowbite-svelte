@@ -15,9 +15,10 @@ Search by the icon name and you'll find the component name that you need to impo
 
 ```svelte example hideSource hideResponsiveButtons
 <script>
-  import { Label, Range, TabItem, Tabs } from "$lib";
+  import { Label, Range, TabItem, Tabs, Clipboard, Tooltip } from "$lib";
   import * as Icons from "flowbite-svelte-icons";
-  import { IconSolid } from "flowbite-svelte-icons";
+  import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
+  import IconSolid from "./utils/IconSolid.svelte";
   import { filterIconsByKeyword, random_hex_color_code, random_tailwind_color } from "../icons/utils/utils";
   const keywordsToInclude = "Solid";
   const keyIcons = filterIconsByKeyword(Icons, keywordsToInclude);
@@ -38,18 +39,33 @@ Search by the icon name and you'll find the component name that you need to impo
 <div class="w-full">
   <div class="mb-4 w-full max-w-64">
     <Label class="py-4">Icon size: {size}</Label>
+    <input
+      type="search"
+      id="site-search"
+      name="q"
+      class='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 ps-4 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500'
+      placeholder="Search icons"
+      bind:value={searchTerm}
+    />
     <Range id="range1" min="4" max="10" bind:value={size} />
   </div>
-  <Tabs style="pill" classes={{content}} class="p-4">
+  <Tabs style="pill" classes={{content}}>
     <TabItem open>
       {#snippet titleSlot()}
         <span>Mono</span>
       {/snippet}
       <div class={tabItemDivcls}>
-        {#each filteredEntries as [name, component]}
+        {#each filteredEntries as [name, component],i}
+          {@const iconValue = `<${filteredEntries[i][0]} class="shrink-0 h-${size} w-${size}" />`}
           <div class="flex items-center gap-4">
             <IconSolid Icon={component} class="shrink-0 h-{size} w-{size}" />
             {name}
+            <Clipboard value={iconValue} embedded>
+              {#snippet children(success)}
+                <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
+                {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+              {/snippet}
+            </Clipboard>
           </div>
         {/each}
       </div>
@@ -59,10 +75,18 @@ Search by the icon name and you'll find the component name that you need to impo
         <span>Random Hex Colors</span>
       {/snippet}
       <div class={tabItemDivcls}>
-        {#each filteredEntries as [name, component]}
+        {#each filteredEntries as [name, component],i}
+        {@const color = random_hex_color_code()}
+        {@const iconValue = `<${filteredEntries[i][0]} class="shrink-0 h-${size} w-${size}" color="${color}"/>`}
           <div class="flex items-center gap-4">
             <IconSolid Icon={component} color={random_hex_color_code()} class="shrink-0 h-{size} w-{size}" />
             {name}
+            <Clipboard value={iconValue} embedded>
+              {#snippet children(success)}
+                <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
+                {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+              {/snippet}
+            </Clipboard>
           </div>
         {/each}
       </div>
@@ -72,10 +96,18 @@ Search by the icon name and you'll find the component name that you need to impo
         <span>Random Tailwind CSS Colors</span>
       {/snippet}
       <div class={tabItemDivcls}>
-        {#each filteredEntries as [name, component]}
+        {#each filteredEntries as [name, component],i}
+          {@const color = random_tailwind_color()}
+          {@const iconValue = `<${filteredEntries[i][0]} class="h-${size} w-${size} ${color}"/>`}
           <div class="flex items-center gap-4">
             <IconSolid Icon={component} class="{random_tailwind_color()} shrink-0 h-{size} w-{size}" />
             {name}
+            <Clipboard value={iconValue}  embedded>
+              {#snippet children(success)}
+                <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
+                {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+              {/snippet}
+            </Clipboard>
           </div>
         {/each}
       </div>
