@@ -1,5 +1,5 @@
 <script>
-  import { Button, Dropdown, DropdownItem, Checkbox, Helper } from "flowbite-svelte";
+  import { Button, Dropdown, Checkbox, Helper } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 

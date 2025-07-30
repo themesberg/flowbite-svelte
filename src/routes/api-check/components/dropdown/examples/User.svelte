@@ -1,5 +1,5 @@
 <script>
-  import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup, DropdownDivider } from "flowbite-svelte";
+  import { Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup } from "flowbite-svelte";
 </script>
 
 <Avatar class="acs" src="/images/profile-picture-3.webp" dot={{ color: "green" }} />

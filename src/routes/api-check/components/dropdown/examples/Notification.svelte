@@ -1,5 +1,5 @@
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownHeader, DropdownGroup, Avatar } from "flowbite-svelte";
+  import { Dropdown, DropdownItem, DropdownGroup, Avatar } from "flowbite-svelte";
   import { BellSolid, EyeSolid } from "flowbite-svelte-icons";
 </script>
 

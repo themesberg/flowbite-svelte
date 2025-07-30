@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Dropdown, DropdownItem, DropdownDivider, P } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownItem, P } from "flowbite-svelte";
   import { ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
   let isOpen = $state(false);
 </script>
