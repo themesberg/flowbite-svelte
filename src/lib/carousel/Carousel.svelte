@@ -39,9 +39,12 @@
     update((_state) => {
       if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
 
-      _state.index = _state.index >= images.length - 1 ? 0 : _state.index + 1;
-      _state.lastSlideChange = new Date();
-      return { ..._state };
+      return {
+        ..._state,
+        forward: true,
+        index: _state.index >= images.length - 1 ? 0 : _state.index + 1,
+        lastSlideChange: new Date()
+      };
     });
   };
 
@@ -49,11 +52,15 @@
     update((_state) => {
       if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
 
-      _state.index = _state.index <= 0 ? images.length - 1 : _state.index - 1;
-      _state.lastSlideChange = new Date();
-      return { ..._state };
+      return {
+        ..._state,
+        forward: false,
+        index: _state.index <= 0 ? images.length - 1 : _state.index - 1,
+        lastSlideChange: new Date()
+      };
     });
   };
+
 
   const loop = (node: HTMLElement) => {
     // loop timer
