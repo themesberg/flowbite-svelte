@@ -1,11 +1,11 @@
 <script lang="ts">
   import clsx from "clsx";
   import { type CloseButtonProps } from "$lib";
-  import { closeButtonVariants } from ".";
+  import { closeButton } from ".";
 
   let { children, color = "gray", onclick, name = "Close", ariaLabel, size = "md", class: className, svgClass, ...restProps }: CloseButtonProps = $props();
 
-  const { base, svg } = $derived(closeButtonVariants({ color, size }));
+  const { base, svg } = $derived(closeButton({ color, size }));
 </script>
 
 {#if restProps.href === undefined}

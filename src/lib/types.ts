@@ -42,7 +42,7 @@ import type { TimelineVariants, ActivityItemVariants, GroupVariants, GroupItemVa
 import type { ToastVaraints } from "$lib/toast/theme";
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "$lib/toolbar/theme";
 import type { TooltipVariants } from "$lib/tooltip/theme";
-import type { closeButtonVariants } from "$lib/utils/theme";
+import type { closeButton } from "$lib/utils/theme";
 
 // forms component variants
 import type { CheckboxVariants } from "$lib/forms/checkbox/theme";
@@ -84,7 +84,9 @@ import type { ApexOptions } from "apexcharts";
 // extend
 import type { ButtonToggleVariants } from "$lib/forms/button-toggle/theme";
 import type { TagsVariants } from "$lib/forms/tags/theme";
-import type { R } from "vitest/dist/chunks/environment.d.cL3nLXbE.js";
+
+// utils
+import type { CloseButtonVariants } from "$lib/utils/theme";
 
 // end of component variants
 
@@ -108,7 +110,7 @@ export type FormSizeType = "sm" | "md" | "lg";
 
 // closebutton
 
-export type CloseButtonVariants = VariantProps<typeof closeButtonVariants>;
+// export type CloseButtonVariants = VariantProps<typeof closeButton>;
 
 export type CloseButtonProps = CloseButtonVariants &
   AnchorButtonAttributes & {
@@ -1070,6 +1072,7 @@ export interface ModalProps extends ModalVariants, HTMLDialogAttributes {
   footerClass?: ClassValue;
   closeBtnClass?: ClassValue;
   fullscreen?: boolean;
+  
 }
 
 // navbar
