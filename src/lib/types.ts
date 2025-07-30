@@ -1072,7 +1072,6 @@ export interface ModalProps extends ModalVariants, HTMLDialogAttributes {
   footerClass?: ClassValue;
   closeBtnClass?: ClassValue;
   fullscreen?: boolean;
-  
 }
 
 // navbar

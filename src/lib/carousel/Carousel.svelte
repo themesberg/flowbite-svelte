@@ -61,7 +61,6 @@
     });
   };
 
-
   const loop = (node: HTMLElement) => {
     // loop timer
     /* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -190,7 +189,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L382)
+[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L384)
 ## Props
 @prop children
 @prop slide

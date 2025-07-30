@@ -484,8 +484,8 @@ Use the following example to create a full-screen modal.
 </script>
 
 <Button onclick={() => (defaultModal = true)}>Default modal</Button>
-<Modal bind:open={defaultModal} fullscreen size="none" class="m-0 bg-gray-100 p-0">
-  <div class="m-0 flex h-screen items-center justify-center">
+<Modal bind:open={defaultModal} fullscreen size="none" class="bg-gray-100">
+  <div class="flex h-screen items-center justify-center">
     <P class="text-3xl">Content</P>
   </div>
 </Modal>
@@ -497,7 +497,7 @@ Use the following example to create a full-screen modal.
 
 #### Types
 
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1055)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1057)
 
 #### Props
 

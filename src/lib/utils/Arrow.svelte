@@ -50,7 +50,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ArrowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2021)
+[ArrowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2024)
 ## Props
 @prop placement = "top"
 @prop cords

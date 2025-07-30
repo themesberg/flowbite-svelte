@@ -38,17 +38,10 @@ Search by the icon name and you'll find the component name that you need to impo
 <div class="w-full">
   <div class="mb-4 w-full max-w-64">
     <Label class="py-4">Icon size: {size}</Label>
-    <input
-      type="search"
-      id="site-search"
-      name="q"
-      class='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 ps-4 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500'
-      placeholder="Search icons"
-      bind:value={searchTerm}
-    />
+    <input type="search" id="site-search" name="q" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 ps-4 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500" placeholder="Search icons" bind:value={searchTerm} />
     <Range id="range1" min="4" max="10" bind:value={size} />
   </div>
-  <Tabs style="pill" classes={{content}}>
+  <Tabs style="pill" classes={{ content }}>
     <TabItem open>
       {#snippet titleSlot()}
         <span>Mono</span>
@@ -59,7 +52,7 @@ Search by the icon name and you'll find the component name that you need to impo
           <div class="flex items-center gap-4">
             <IconOutline Icon={component} class="shrink-0 h-{size} w-{size}" />
             {name}
-            <Clipboard value={iconValue}  embedded>
+            <Clipboard value={iconValue} embedded>
               {#snippet children(success)}
                 <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
                 {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
@@ -101,7 +94,7 @@ Search by the icon name and you'll find the component name that you need to impo
           <div class="flex items-center gap-4">
             <IconOutline Icon={component} class="{color} shrink-0 h-{size} w-{size}" />
             {name}
-            <Clipboard value={iconValue}  embedded>
+            <Clipboard value={iconValue} embedded>
               {#snippet children(success)}
                 <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
                 {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}

@@ -315,7 +315,7 @@ Use the `loading` prop to indicate a pending action (e.g. form submission). When
 
 #### Types
 
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L314)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L316)
 
 #### Props
 
@@ -334,7 +334,7 @@ Use the `loading` prop to indicate a pending action (e.g. form submission). When
 
 #### Types
 
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L323)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L325)
 
 #### Props
 
