@@ -137,7 +137,7 @@ The footer is one of the most underestimated sections of a website being located
 
 ```svelte example
 <script>
-  import { Footer, FooterLinkGroup, FooterLink, FooterBrand, FooterIcon, FooterCopyright } from "flowbite-svelte";
+  import { Footer, FooterLinkGroup, FooterLink, FooterIcon, FooterCopyright } from "flowbite-svelte";
   import { FacebookSolid, GithubSolid, DiscordSolid, TwitterSolid } from "flowbite-svelte-icons";
   import Dribble from "../../utils/icons/Dribble.svelte";
 </script>
