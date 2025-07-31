@@ -14,7 +14,7 @@
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
     </h5>
-    <CloseButton onclick={() => (hidden5 = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
