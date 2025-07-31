@@ -1,0 +1,14 @@
+<script>
+  import { Indicator } from "flowbite-svelte";
+</script>
+
+<Indicator color="gray" />
+<Indicator color="secondary" />
+<Indicator color="orange" />
+<Indicator color="blue" />
+<Indicator color="green" />
+<Indicator color="red" />
+<Indicator color="purple" />
+<Indicator color="indigo" />
+<Indicator color="yellow" />
+<Indicator color="teal" />

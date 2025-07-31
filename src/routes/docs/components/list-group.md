@@ -74,7 +74,7 @@ You can pass extra properties to the `<button>` element by setting the `attrs` a
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Listgroup, ListgroupItem } from "flowbite-svelte";
+  import { Listgroup } from "flowbite-svelte";
   let buttons = [
     { name: "Profile", mycustomfield: "data1", current: true },
     { name: "Settings", mycustomfield: "data2" },
@@ -111,7 +111,7 @@ Use the `horizontal` property to change the direction of list items.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Listgroup, ListgroupItem } from "flowbite-svelte";
+  import { Listgroup } from "flowbite-svelte";
   let buttons = [
     { name: "Profile", mycustomfield: "data1", current: true },
     { name: "Settings", mycustomfield: "data2" },
@@ -130,7 +130,7 @@ Use the following example when you want to use `Tooltip` with a horizontal list.
 ```svelte example class="space-x-8 h-64 flex justify-center items-center" hideResponsiveButtons
 <script lang="ts">
   import { Listgroup, ListgroupItem, Tooltip } from "flowbite-svelte";
-  import { BellOutline, ClockOutline, PenOutline, TrashBinOutline } from "flowbite-svelte-icons";
+  import { BellOutline, ClockOutline, TrashBinOutline } from "flowbite-svelte-icons";
 </script>
 
 <Listgroup horizontal active>

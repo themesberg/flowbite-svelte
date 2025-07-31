@@ -11,7 +11,7 @@
 
   active = active ?? getContext("listGrpActive");
   horizontal = horizontal ?? getContext("listGrpHorizontal");
-
+  
   let state: ListgroupItemVariants["state"] = $derived(disabled ? "disabled" : current ? "current" : "normal");
   let itemClass = $derived(listGroupItem({ state, active, horizontal, class: clsx(theme, className) }));
 </script>

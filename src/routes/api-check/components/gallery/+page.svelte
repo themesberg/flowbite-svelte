@@ -1,133 +1,70 @@
-<script>
-  import { Gallery, Button } from "$lib";
+<script lang="ts">
+  import HighlightCompo from "../../../utils/api-check/HighlightCompo.svelte";
+  import CodeWrapper from "../../../utils/api-check/CodeWrapper.svelte";
+  import H1 from "../../../utils/api-check/H1.svelte";
+  import H2 from "../../../utils/api-check/H2.svelte";
 
-  // Default gallery images
-  const images = [
-    { alt: "erbology", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" },
-    { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" },
-    { alt: "plants", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" },
-    { alt: "watch", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" },
-    { alt: "shoe", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" },
-    { alt: "cream", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg" },
-    { alt: "lamp", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg" },
-    { alt: "toiletbag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg" },
-    { alt: "playstation", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg" },
-    { alt: "bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg" }
-  ];
-
-  // Masonry grid images
-  const images1 = [
-    { alt: "erbology", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" },
-    { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" }
-  ];
-  const images2 = [
-    { alt: "plants", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" },
-    { alt: "watch", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" },
-    { alt: "shoe", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" }
-  ];
-  const images3 = [
-    { alt: "cream", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" },
-    { alt: "lamp", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" }
-  ];
-  const images4 = [
-    { alt: "toiletbag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" },
-    { alt: "playstation", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" },
-    { alt: "bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" }
-  ];
-
-  // Featured image
-  const image1 = {
-    alt: "erbology",
-    src: "https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg"
-  };
-  const featuredImages = [
-    { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" },
-    { alt: "plants", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" },
-    { alt: "watch", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" },
-    { alt: "shoe", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" }
-  ];
-
-  // Quad gallery images
-  const quadImages = [
-    { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" },
-    { alt: "plants", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" },
-    { alt: "watch", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" }
-  ];
-
-  // Custom image rendering
-  const customImages = [
-    { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" },
-    { alt: "plants", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" },
-    { alt: "watch", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" },
-    { alt: "shoe", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" }
-  ];
+  import * as ExampleComponents from "./examples/";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
+    eager: true
+  }) as Record<string, string>;
 </script>
 
-<h1 class="my-4 text-3xl">Gallery</h1>
-<h2 class="my-4 text-2xl">Default gallery</h2>
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Gallery items={images} class="grid-cols-2 gap-4 md:grid-cols-3" />
-</div>
+<H1>Gallery</H1>
+<H2>Default gallery</H2>
+<CodeWrapper>
+  <ExampleComponents.Default />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Default.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Masonry grid</h2>
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Gallery class="grid-cols-2 gap-4 md:grid-cols-4">
-    <Gallery items={images1} />
-    <Gallery items={images2} />
-    <Gallery items={images3} />
-    <Gallery items={images4} />
-  </Gallery>
-</div>
+<H2>Masonry grid</H2>
+<CodeWrapper>
+  <ExampleComponents.Masonry />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Masonry.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Featured image</h2>
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Gallery class="gap-4">
-    <img src={image1.src} alt={image1.alt} class="h-auto max-w-full rounded-lg" />
-    <Gallery class="grid-cols-5" items={featuredImages} />
-  </Gallery>
-</div>
+<H2>Featured image</H2>
+<CodeWrapper>
+  <ExampleComponents.Featured />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Featured.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Quad gallery</h2>
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Gallery class="grid-cols-2 gap-2" items={quadImages} />
-</div>
+<H2>Quad gallery</H2>
+<CodeWrapper>
+  <ExampleComponents.Quad />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Quad.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Gallery with tag filters</h2>
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <div class="mx-auto mb-3 flex flex-wrap items-center justify-center gap-3 py-4 md:py-8">
-    <Button pill size="xl" outline>All categories</Button>
-    <Button pill size="xl" color="alternative">Shoes</Button>
-    <Button pill size="xl" color="alternative">Bags</Button>
-    <Button pill size="xl" color="alternative">Electronics</Button>
-    <Button pill size="xl" color="alternative">Gaming</Button>
-  </div>
-  <Gallery items={images} class="grid-cols-2 gap-4 md:grid-cols-3" />
-</div>
+<H2>Gallery with tag filters</H2>
+<CodeWrapper>
+  <ExampleComponents.Filters />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Filters.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Heterogeneous gallery</h2>
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Gallery class="grid-cols-2 gap-4">
-    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="shoas" class="max-w- h-auto rounded-lg" />
-    <div class="max-w- flex h-auto items-center justify-center rounded-lg bg-red-300 text-6xl font-extrabold">Sale</div>
-    <div class="max-w- flex h-auto items-center justify-center rounded-lg bg-blue-300 text-6xl font-extrabold">Sale</div>
-    <img alt="plants" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" class="max-w- h-auto rounded-lg" />
-  </Gallery>
-</div>
+<H2>Heterogeneous gallery</H2>
+<CodeWrapper>
+  <ExampleComponents.Heterogeneous />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Heterogeneous.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Custom image rendering</h2>
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Gallery class="grid-cols-3 gap-4" items={customImages}>
-    {#snippet figure(item)}
-      <div class="p-1 ring-4 ring-red-600 dark:ring-red-400">
-        <img src={item.src} alt={item.alt} class="h-auto max-w-full" />
-      </div>
-    {/snippet}
-  </Gallery>
-</div>
+<H2>Custom image rendering</H2>
+<CodeWrapper>
+  <ExampleComponents.Custom />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Custom.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
