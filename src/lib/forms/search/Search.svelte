@@ -3,6 +3,7 @@
   import clsx from "clsx";
   import { CloseButton, type SearchProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
 
   let { children, inputClass, size, placeholder = "Search", value = $bindable(), elementRef = $bindable(), clearable = false, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, class: className, classes, ...restProps }: SearchProps = $props();
 
@@ -20,6 +21,8 @@
     }
     if (clearableOnClick) clearableOnClick();
   };
+
+  createDismissableContext(clearAll);
 </script>
 
 <div class={base({ class: clsx(theme?.base, className) })}>
@@ -35,7 +38,7 @@
     </div>
   {/if}
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
+    <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
   {/if}
 </div>
 

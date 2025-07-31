@@ -4,6 +4,7 @@
   import { multiSelect } from ".";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { onMount } from "svelte";
+  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
 
   // Consider reusing that component - https://svelecte.vercel.app/
 
@@ -73,6 +74,8 @@
       triggerChange();
     }
   };
+
+  createDismissableContext(clearAll);
 
   const clearThisOption = (select: SelectOptionType<any>) => {
     if (disabled) return;
@@ -216,7 +219,7 @@
   </span>
   <div class="ms-auto flex items-center gap-2">
     {#if selectItems.length}
-      <CloseButton {size} onclick={clearAll} color="none" class={close({ class: clsx(theme?.close, classes?.close) })} {disabled} />
+      <CloseButton {size} color="none" class={close({ class: clsx(theme?.close, classes?.close) })} {disabled} />
     {/if}
 
     <svg class={clsx(svg(), disabled && "cursor-not-allowed", classes?.svg)} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">

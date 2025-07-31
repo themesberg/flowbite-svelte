@@ -3,6 +3,7 @@
   import clsx from "clsx";
   import { type TextareaProps, CloseButton } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
 
   let { header, footer, addon, value = $bindable(), elementRef = $bindable(), divClass, innerClass, headerClass, footerClass, addonClass, disabled, class: className, classes, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, textareaClass, ...restProps }: TextareaProps = $props();
 
@@ -36,6 +37,8 @@
     }
     if (clearableOnClick) clearableOnClick();
   };
+
+  createDismissableContext(clearAll);
 </script>
 
 <div class={div({ class: clsx(theme?.div, styling.div) })}>
@@ -64,7 +67,7 @@
     </div>
   {/if}
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
+    <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
   {/if}
 </div>
 

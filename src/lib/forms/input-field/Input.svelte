@@ -4,6 +4,7 @@
   import { CloseButton, type SizeType, type InputProps, type InputValue } from "$lib";
   import { input, clampSize } from ".";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
 
   let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, classes, wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, comboItemClass, onInput, onFocus, onBlur, onKeydown, oninput, onfocus, onblur, onkeydown, ...restProps }: InputProps<InputValue> = $props();
 
@@ -55,6 +56,8 @@
 
     if (clearableOnClick) clearableOnClick();
   };
+
+  createDismissableContext(clearAll);
 
   // Combobox functionality
   let isFocused = $state(false);
@@ -254,7 +257,7 @@
   {:else}
     <input {...restProps} bind:value bind:this={elementRef} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} class={inputCls({ class: clsx(theme?.input, className) })} />
     {#if value !== undefined && value !== "" && clearable}
-      <CloseButton onclick={clearAll} class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
+      <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
     {/if}
   {/if}
   {#if right}
