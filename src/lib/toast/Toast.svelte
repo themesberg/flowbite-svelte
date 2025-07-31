@@ -6,6 +6,7 @@
   import { fly } from "svelte/transition";
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
 
   let { children, icon, toastStatus = $bindable(true), dismissable = true, color = "primary", position, iconClass, contentClass, align = true, params, transition = fly, class: className, classes, onclose, ...restProps }: ToastProps = $props();
 
@@ -26,14 +27,19 @@
 
   const { base, icon: iconVariants, content, close } = $derived(toast({ color, position, align }));
 
-  function handleClose() {
-    toastStatus = false;
-    onclose?.();
+  let ref: HTMLDivElement | undefined = $state(undefined);
+
+  function _close(event: MouseEvent) {
+    if (ref?.dispatchEvent(new Event("close", { bubbles: true, cancelable: true }))) {
+      toastStatus = false;
+    }
   }
+
+  createDismissableContext(_close);
 </script>
 
 {#if toastStatus}
-  <div role="alert" transition:transition={params as ParamsType} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <div role="alert" bind:this={ref} {onclose} transition:transition={params as ParamsType} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
     {#if icon}
       <div class={iconVariants({ class: clsx(theme?.icon, styling.icon) })}>
         {@render icon()}
@@ -45,7 +51,7 @@
     </div>
 
     {#if dismissable}
-      <CloseButton class={close({ class: clsx(theme?.close, classes?.close) })} ariaLabel="Remove toast" {color} onclick={handleClose} />
+      <CloseButton class={close({ class: clsx(theme?.close, classes?.close) })} ariaLabel="Remove toast" {color} />
     {/if}
   </div>
 {/if}
