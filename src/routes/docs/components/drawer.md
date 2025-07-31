@@ -45,7 +45,7 @@ Since `Drawer` component extend Svelte's `HTMLAttributes<HTMLDivElement>`, you c
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
     </h5>
-    <CloseButton onclick={() => (hidden1 = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
@@ -76,7 +76,7 @@ Use this example to show a navigational sidebar inside the drawer component.
 <Drawer bind:hidden={hidden2} class="w-64 bg-gray-50 p-0 dark:bg-gray-800">
   <div class="flex items-center justify-between px-2 pt-4">
     <h5 class="px-4 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
-    <CloseButton onclick={() => (hidden2 = true)} class="dark:text-white" />
+    <CloseButton class="dark:text-white" />
   </div>
   <Sidebar disableBreakpoints={true} class="top-16">
     <SidebarWrapper class="overflow-y-auto rounded-sm px-3 py-0 dark:bg-gray-800">
@@ -156,7 +156,7 @@ Use this example to show a contact form inside the drawer component.
     <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Contact us
     </h5>
-    <CloseButton onclick={() => (hidden3 = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <form action="#" class="mb-6">
     <div class="mb-6">
@@ -202,7 +202,7 @@ Use this example if you want to add form elements inside the drawer component in
     <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />New event
     </h5>
-    <CloseButton onclick={() => (hidden4 = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <form action="#" class="mb-6">
     <div class="mb-6">
@@ -264,7 +264,7 @@ Use the placement prop to position the drawer component either on the top, right
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
     </h5>
-    <CloseButton onclick={() => (hidden5 = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
@@ -306,7 +306,7 @@ Set the `transitionParams` variable to new variables.
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
     </h5>
-    <CloseButton onclick={() => (hidden6 = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
@@ -346,7 +346,7 @@ Use this example to show the drawer on the top side of the page.
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Top drawer
     </h5>
-    <CloseButton onclick={() => (hidden7 = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 max-w-lg text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <A href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</A> for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
@@ -383,7 +383,7 @@ Use this example to show the drawer on the bottom side of the page.
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
     </h5>
-    <CloseButton onclick={() => (hidden8 = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 max-w-lg text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
@@ -421,7 +421,7 @@ Use this example to enable the backdrop element by default.
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
     </h5>
-    <CloseButton onclick={() => (hiddenBackdropTrue = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
@@ -455,7 +455,7 @@ Use the `backdrop={false}` prop to disable the backdrop element when the drawer 
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
     </h5>
-    <CloseButton onclick={() => (hiddenBackdropFalse = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
@@ -489,7 +489,7 @@ Use `fixed|aboslute` prop to manage the CSS position value of the drawer.
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
     </h5>
-    <CloseButton onclick={() => (hidden9 = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
@@ -524,7 +524,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
     </h5>
-    <CloseButton onclick={() => (hidden10 = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
@@ -552,7 +552,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
     </h5>
-    <CloseButton onclick={() => (hiddenDisablingOnlyOutsideClick = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
@@ -587,7 +587,7 @@ By default, body scrolling is disabled when the drawer is visible, however, you 
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
     </h5>
-    <CloseButton onclick={() => (drawerHidden = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
