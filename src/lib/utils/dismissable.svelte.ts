@@ -20,8 +20,8 @@ export function createDismissableContext(onDismiss: (event: MouseEvent) => void)
 export function useDismiss() {
     const context = getContext<DismissableContext>(DISMISSABLE_KEY);
     if (!context) {
-        // throw new Error('useDismiss must be used within a Dismissable component');
-        console.warn('useDismiss must be used within a Dismissable component'); // For development purposes
+        // uncomment below line if you want to trace usage without the context
+        // console.warn('useDismiss must be used within a Dismissable component'); // For development purposes
     }
     return context;
 }
