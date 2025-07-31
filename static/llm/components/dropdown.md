@@ -129,7 +129,7 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown simple>
   <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem class="flex items-center justify-between">
+  <DropdownItem class="flex items-center justify-between" classes={{ anchor: "flex" }}>
     Dropdown<ChevronRightOutline class="text-primary-700 ms-2 h-6 w-6 dark:text-white" />
   </DropdownItem>
   <Dropdown simple placement="right-start">
@@ -755,7 +755,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L582)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L584)
 
 #### Props
 
@@ -771,7 +771,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L588)
+[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L590)
 
 #### Props
 
@@ -781,7 +781,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L604)
+[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L606)
 
 #### Props
 
@@ -792,7 +792,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L590)
+[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L592)
 
 #### Props
 
@@ -803,7 +803,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L596)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L598)
 
 #### Props
 

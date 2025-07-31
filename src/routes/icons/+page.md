@@ -19,7 +19,7 @@ description: 500+ SVG Flowbite icons components for Svelte 3/4/5/Runes.
 <h1 class='flex justify-center text-4xl dark:text-white my-8'>Flowbite Svelte Icons</h1>
 
 <div class='grid grid-cols-2 md:grid-cols-3 gap-4 mx-8'>
-  <Card>
+  <Card class="p-4 sm:p-6">
   <GlobeOutline class="w-8 h-8 mb-3 text-blue-500 dark:text-blue-400" />
   <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Svelte 4/5/Runes</h3>
   <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">

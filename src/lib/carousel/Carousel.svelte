@@ -39,9 +39,12 @@
     update((_state) => {
       if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
 
-      _state.index = _state.index >= images.length - 1 ? 0 : _state.index + 1;
-      _state.lastSlideChange = new Date();
-      return { ..._state };
+      return {
+        ..._state,
+        forward: true,
+        index: _state.index >= images.length - 1 ? 0 : _state.index + 1,
+        lastSlideChange: new Date()
+      };
     });
   };
 
@@ -49,9 +52,12 @@
     update((_state) => {
       if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
 
-      _state.index = _state.index <= 0 ? images.length - 1 : _state.index - 1;
-      _state.lastSlideChange = new Date();
-      return { ..._state };
+      return {
+        ..._state,
+        forward: false,
+        index: _state.index <= 0 ? images.length - 1 : _state.index - 1,
+        lastSlideChange: new Date()
+      };
     });
   };
 
@@ -183,7 +189,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L382)
+[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L384)
 ## Props
 @prop children
 @prop slide

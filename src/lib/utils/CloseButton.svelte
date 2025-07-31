@@ -1,12 +1,12 @@
 <script lang="ts">
   import clsx from "clsx";
   import { type CloseButtonProps } from "$lib";
-  import { closeButtonVariants } from ".";
+  import { closeButton } from ".";
   import { useDismiss } from "./dismissable.svelte";
 
   let { children, color = "gray", onclick: onclickorg, name = "Close", ariaLabel, size = "md", class: className, svgClass, ...restProps }: CloseButtonProps = $props();
 
-  const { base, svg } = $derived(closeButtonVariants({ color, size }));
+  const { base, svg } = $derived(closeButton({ color, size }));
 
   const context = useDismiss();
 
@@ -45,7 +45,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CloseButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L113)
+[CloseButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L115)
 ## Props
 @prop children
 @prop color = "gray"

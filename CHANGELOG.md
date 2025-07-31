@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.10.22
+
+### Patch Changes
+
+- fix(carousel): reverse swipe direction to match drag gesture
+
+  Update swipe logic so dragging left-to-right navigates to the previous
+  slide, and right-to-left to the next slide. Adjust transition direction
+  for consistent user experience.
+
 ## 1.10.21
 
 ### Patch Changes

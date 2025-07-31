@@ -1,6 +1,10 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export const closeButtonVariants = tv({
+// Variants
+export type CloseButtonVariants = VariantProps<typeof closeButton> & Classes<typeof closeButton>;
+
+export const closeButton = tv({
   base: "focus:outline-hidden whitespace-normal",
   variants: {
     // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose

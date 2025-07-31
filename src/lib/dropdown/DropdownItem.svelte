@@ -7,7 +7,7 @@
 
   let { aClass, children, activeClass, liClass, classes, class: className, ...restProps }: DropdownItemProps = $props();
 
-  warnThemeDeprecation("DropdownItem", { aClass, activeClass }, { aClass: "anchor", activeClass: "activeAnchor" });
+  warnThemeDeprecation("DropdownItem", { aClass, activeClass, liClass }, { aClass: "anchor", activeClass: "activeAnchor", liClass: "class" });
   const styling = $derived(classes ?? { activeAnchor: activeClass, anchor: aClass });
 
   const theme = getTheme("dropdownItem");
@@ -47,7 +47,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L596)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L598)
 ## Props
 @prop aClass
 @prop children

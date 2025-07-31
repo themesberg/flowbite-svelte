@@ -1,0 +1,15 @@
+## Close button
+ - [ ] src/lib/alert/Alert.svelte
+ - [ ] src/lib/badge/Badge.svelte
+ - [ ] src/lib/banner/Banner.svelte
+ - [ ] src/lib/forms/tags/Tags.svelte
+ - [ ] src/lib/forms/textarea/Textarea.svelte
+ - [ ] src/lib/forms/floating-label/FloatingLabelInput.svelte
+ - [ ] src/lib/forms/select/Select.svelte
+ - [ ] src/lib/forms/select/MultiSelect.svelte
+ - [ ] src/lib/forms/input-field/Input.svelte
+ - [ ] src/lib/forms/search/Search.svelte
+ - [ ] src/lib/forms/fileupload/Fileupload.svelte
+ - [ ] src/lib/modal/Modal.svelte
+ - [ ] src/lib/toast/Toast.svelte
+ - [ ] src/lib/utils/CloseButton.svelte

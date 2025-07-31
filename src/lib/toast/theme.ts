@@ -1,5 +1,4 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { ClassValue } from "svelte/elements";
 import type { Classes } from "$lib/theme/themeUtils";
 
 // Variants
