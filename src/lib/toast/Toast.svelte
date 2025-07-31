@@ -18,10 +18,12 @@
       contentClass: "content"
     }
   );
-  const styling = $derived({
-    icon: iconClass,
-    content: contentClass
-  });
+  const styling = $derived(
+    classes ?? {
+      icon: iconClass,
+      content: contentClass
+    }
+  );
 
   const theme = getTheme("toast");
 
