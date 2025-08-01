@@ -5,7 +5,6 @@
   import { getContext } from "svelte";
   import { slide } from "svelte/transition";
   import { accordionItem } from ".";
-  import Math from "../../routes/docs/plugins/examples/Math.svelte";
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, classes, headerClass, contentClass }: AccordionItemProps = $props();
 
@@ -27,28 +26,30 @@
 
   let styling: typeof classes = $derived(classes ?? { button: headerClass, content: contentClass, active: activeClass, inactive: inactiveClass });
 
-  const ctxTransitionType = getContext("ctxTransitionType");
+  const ctx: AccordionCtxType = getContext("ctx") ?? {};
+
+  const ctxTransitionType = ctx.transitionType ?? transitionType;
   // Check if transitionType is explicitly set to undefined in props
   const useTransition = transitionType === "none" ? false : ctxTransitionType === "none" ? false : true;
 
   // Theme context
   const theme = getTheme("accordionItem");
 
-  const ctx: AccordionCtxType = getContext("ctx") ?? {};
-  $inspect(ctx.selected);
-
   // single selection
-  const self = `a-${Math.random().toString(36).substring(2)}`;
+  const self = Symbol("accordion-item");
 
-  if (open) ctx.selected = self;
+  const nonSharedState = $state({ value: undefined }); // case for 'multiple' option
+  let selected = ctx.selected ?? nonSharedState;
+
+  if (open) selected.value = self;
 
   $effect(() => {
-    console.log(ctx.selected == self);
-    // open = ctx.selected === self;
+    open = selected.value === self;
   });
 
-  // const handleToggle = () => (ctx.selected = open ? undefined : self);
-  const handleToggle = () => ctx && (ctx.selected = self);
+  const handleToggle = () => {
+    selected.value = open ? undefined : self;
+  };
 
   const { base, button, content, active, inactive } = $derived(accordionItem({ flush: ctx.flush, open }));
 

@@ -9,15 +9,18 @@
 
   const theme = getTheme("accordion");
 
+  let selected = $state({ value: undefined });
+
   const ctx = $state({
     flush,
     activeClass,
     inactiveClass,
-    selected: multiple ? null : undefined
+    transitionType,
+    selected: multiple ? undefined : selected // for single selection
   });
 
   setContext("ctx", ctx);
-  setContext("ctxTransitionType", transitionType);
+
   const base = $derived(accordion({ flush, class: clsx(theme, className) }));
 </script>
 

@@ -170,10 +170,11 @@ export interface AccordionCtxType {
   flush: boolean;
   activeClass?: string | null;
   inactiveClass?: string | null;
-  selected?: object | null;
+  selected?: { value: Symbol | null };
   classActive?: string;
   classInactive?: string;
   multiple?: boolean;
+  transitionType?: TransitionFunc | "none";
 }
 
 export interface AccordionProps extends AccordionVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
