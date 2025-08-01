@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.11.0
+
+### Minor Changes
+
+- - New Features
+    Badges, alerts, banners, modals, toasts, drawers, and form inputs now support a standardized dismiss (close/clear) behavior using event-driven dismissal.
+  - Improvements
+    Close buttons across components no longer have direct click handlers but rely on a shared dismissable context, enabling consistent dismissal behavior and external event handling.
+    Dismissal logic supports event cancellation and bubbling, improving flexibility and predictability of user interactions.
+    Form components’ clear buttons adopt the dismissable context for clearing inputs.
+    Documentation examples updated to use new styling prop conventions and remove deprecated inline close handlers.
+  - Chores
+    Introduced a shared dismissable context mechanism to unify dismissal behavior across multiple UI components.
+
 ## 1.10.22
 
 ### Patch Changes
