@@ -1,35 +1,28 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import type { Writable } from "svelte/store";
-  import { carouselIndicators } from "./theme";
-  import clsx from "clsx";
   import { Indicator, type IndicatorsProps, type State } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+  import { getContext } from "svelte";
+  import { carouselIndicators } from "./theme";
 
   let { children, activeClass, inactiveClass, position = "bottom", class: className, ...restProps }: IndicatorsProps = $props();
 
   const theme = getTheme("carouselIndicators");
 
-  const state = getContext<Writable<State>>("state");
+  const _state = getContext<State>("state");
   const { base, indicator } = $derived(carouselIndicators({ position }));
 
   function goToIndex(newIndex: number) {
-    state.update((_state) => {
-      const currentIndex = _state.index;
-      const forward = newIndex >= currentIndex;
-      return {
-        ..._state,
-        index: newIndex,
-        forward,
-        lastSlideChange: new Date()
-      };
-    });
+    const currentIndex = _state.index;
+    _state.index = newIndex;
+    _state.forward = newIndex >= currentIndex;
+    _state.lastSlideChange = new Date();
   }
 </script>
 
 <div class={base({ class: clsx(theme?.base, className) })} {...restProps}>
-  {#each $state.images as _, idx}
-    {@const selected = $state.index === idx}
+  {#each _state.images as _, idx}
+    {@const selected = _state.index === idx}
     <button onclick={() => goToIndex(idx)}>
       {#if children}
         {@render children({ selected, index: idx })}

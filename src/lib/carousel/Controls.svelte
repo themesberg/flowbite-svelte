@@ -1,44 +1,31 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import type { Writable } from "svelte/store";
-  import { canChangeSlide } from "./CarouselSlide";
-  import clsx from "clsx";
-  import { type State, type ControlsProps, ControlButton } from "$lib";
+  import { type ControlsProps, type State, ControlButton } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+  import { getContext } from "svelte";
+  import { canChangeSlide } from "./CarouselSlide";
 
   let { children, class: className, ...restProps }: ControlsProps = $props();
 
   const theme = getTheme("controlButton");
 
-  const state = getContext<Writable<State>>("state");
-  const { update } = state;
+  const _state = getContext<State>("state");
 
   function changeSlide(forward: boolean) {
-    if (
-      !canChangeSlide({
-        lastSlideChange: $state.lastSlideChange,
-        slideDuration: $state.slideDuration,
-        slideDurationRatio: 0.75
-      })
-    ) {
+    const { lastSlideChange, slideDuration } = _state;
+    if (!canChangeSlide({ lastSlideChange, slideDuration, slideDurationRatio: 0.75 })) {
       return;
     }
 
     if (forward) {
-      update((_state) => {
-        _state.forward = true;
-        _state.index = _state.index >= _state.images.length - 1 ? 0 : _state.index + 1;
-        _state.lastSlideChange = new Date();
-        return { ..._state };
-      });
+      _state.forward = true;
+      _state.index = _state.index >= _state.images.length - 1 ? 0 : _state.index + 1;
     } else {
-      update((_state) => {
-        _state.forward = false;
-        _state.index = _state.index <= 0 ? _state.images.length - 1 : _state.index - 1;
-        _state.lastSlideChange = new Date();
-        return { ..._state };
-      });
+      _state.forward = false;
+      _state.index = _state.index <= 0 ? _state.images.length - 1 : _state.index - 1;
     }
+    _state.lastSlideChange = new Date();
+    return _state;
   }
 </script>
 
