@@ -1,21 +1,20 @@
 <script lang="ts">
-  import { setContext } from "svelte";
-  import { writable } from "svelte/store";
-  import { accordion } from "./";
-  import clsx from "clsx";
   import { type AccordionProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+  import { setContext } from "svelte";
+  import { accordion } from "./";
 
   let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, ...restProps }: AccordionProps = $props();
 
   const theme = getTheme("accordion");
 
-  const ctx = {
+  const ctx = $state({
     flush,
     activeClass,
     inactiveClass,
-    selected: multiple ? undefined : writable()
-  };
+    selected: multiple ? null : undefined
+  });
 
   setContext("ctx", ctx);
   setContext("ctxTransitionType", transitionType);

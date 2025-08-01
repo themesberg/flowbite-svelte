@@ -170,7 +170,7 @@ export interface AccordionCtxType {
   flush: boolean;
   activeClass?: string | null;
   inactiveClass?: string | null;
-  selected?: Writable<object>;
+  selected?: object | null;
   classActive?: string;
   classInactive?: string;
   multiple?: boolean;

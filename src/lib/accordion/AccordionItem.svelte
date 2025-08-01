@@ -3,9 +3,9 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { getContext } from "svelte";
-  import { writable } from "svelte/store";
   import { slide } from "svelte/transition";
   import { accordionItem } from ".";
+  import Math from "../../routes/docs/plugins/examples/Math.svelte";
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, classes, headerClass, contentClass }: AccordionItemProps = $props();
 
@@ -35,16 +35,20 @@
   const theme = getTheme("accordionItem");
 
   const ctx: AccordionCtxType = getContext("ctx") ?? {};
+  $inspect(ctx.selected);
 
   // single selection
-  const self = {};
-  const selected = ctx.selected ?? writable();
+  const self = `a-${Math.random().toString(36).substring(2)}`;
 
-  if (open) selected.set(self);
+  if (open) ctx.selected = self;
 
-  selected.subscribe((x) => (open = x === self));
+  $effect(() => {
+    console.log(ctx.selected == self);
+    // open = ctx.selected === self;
+  });
 
-  const handleToggle = () => selected.set(open ? {} : self);
+  // const handleToggle = () => (ctx.selected = open ? undefined : self);
+  const handleToggle = () => ctx && (ctx.selected = self);
 
   const { base, button, content, active, inactive } = $derived(accordionItem({ flush: ctx.flush, open }));
 
