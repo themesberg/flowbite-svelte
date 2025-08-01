@@ -131,7 +131,7 @@ This component can be used to show simple messages and notifications without the
   import { PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
 
-<Toast dismissable={false} contentClass="flex space-x-4 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-700">
+<Toast dismissable={false}>
   {#snippet icon()}
     <PaperPlaneOutline class="text-primary-600 dark:text-primary-500 h-5 w-5 rotate-45" />
   {/snippet}
@@ -286,7 +286,7 @@ Use this toast component to also show an “undo” button to reverse the action
   import { Toast } from "flowbite-svelte";
 </script>
 
-<Toast contentClass="w-full text-sm font-normal flex items-center justify-between">
+<Toast classes={{ content: "w-full text-sm font-normal flex items-center justify-between" }}>
   Conversation archived.
   <a class="text-primary-600 hover:bg-primary-100 dark:text-primary-500 ms-auto rounded-lg p-1.5 font-medium dark:hover:bg-gray-700" href="/">Undo</a>
 </Toast>

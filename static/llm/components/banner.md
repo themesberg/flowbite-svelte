@@ -192,6 +192,7 @@ This example demonstrates a sliding transition using the slide transition from s
 - transition: fade
 - params
 - closeClass
+- onclose
 
 
 ## References

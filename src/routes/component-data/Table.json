@@ -2,7 +2,7 @@
   "name": "Table",
   "type": {
     "name": "TableProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1646"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1645"
   },
   "props": [
     ["children", ""],

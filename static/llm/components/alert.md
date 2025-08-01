@@ -340,7 +340,7 @@ Use the `onclick` event with `dismissable` prop.
 - dismissable
 - transition: fade
 - params
-- onclick: () => (alertStatus = false)
+- onclose
 
 
 ## References

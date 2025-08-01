@@ -3,6 +3,7 @@
   import clsx from "clsx";
   import { CloseButton, type FileuploadProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
 
   let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, classes, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, wrapperClass, ...restProps }: FileuploadProps = $props();
 
@@ -20,12 +21,14 @@
     }
     if (clearableOnClick) clearableOnClick();
   };
+
+  createDismissableContext(clearAll);
 </script>
 
 <div class={wrapper({ class: clsx(theme?.wrapper, styling.wrapper) })}>
   <input type="file" bind:files bind:this={elementRef} {...restProps} class={base({ size, class: clsx(theme?.base, className) })} />
   {#if files && files.length > 0 && clearable}
-    <CloseButton onclick={clearAll} class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear selected files" svgClass={clsx(styling.svg)} />
+    <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear selected files" svgClass={clsx(styling.svg)} />
   {/if}
 </div>
 

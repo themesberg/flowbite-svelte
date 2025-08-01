@@ -13,7 +13,7 @@
     <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />New event
     </h5>
-    <CloseButton onclick={() => (hidden4 = true)} class="mb-4 dark:text-white" />
+    <CloseButton class="mb-4 dark:text-white" />
   </div>
   <form action="#" class="mb-6">
     <div class="mb-6">

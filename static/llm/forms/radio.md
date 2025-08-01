@@ -68,7 +68,7 @@ If you need separate control over the label and the radio you can use the verbos
 </Table>
 
 <Label color="red" class="mt-4 flex items-center font-bold italic">
-  Label on the other side <Radio name="separate" labelClass="ms-2" />
+  Label on the other side <Radio name="separate" classes={{ label: "ms-2" }} />
 </Label>
 ```
 
@@ -112,10 +112,10 @@ Use this example of a radio inside a card element to enable a larger area of cli
 
 <div class="grid grid-cols-2 gap-6">
   <div class="rounded-sm border border-gray-200 dark:border-gray-700">
-    <Radio name="bordered" value="1" bind:group={selectedValue3} labelClass="w-full p-4">Default radio</Radio>
+    <Radio name="bordered" value="1" bind:group={selectedValue3} classes={{ label: "w-full p-4" }}>Default radio</Radio>
   </div>
   <div class="rounded-sm border border-gray-200 dark:border-gray-700">
-    <Radio name="bordered" value="2" bind:group={selectedValue3} labelClass="w-full p-4">Checked state</Radio>
+    <Radio name="bordered" value="2" bind:group={selectedValue3} classes={{ label: "w-full p-4" }}>Checked state</Radio>
   </div>
 </div>
 ```
@@ -134,10 +134,10 @@ Use this example to show a list of radio items grouped inside a card.
   Technology <span class="capitalize">{technology}</span>
 </p>
 <ul class="w-48 divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
-  <li><Radio labelClass="p-3" bind:group={technology} value="svelte">Svelte</Radio></li>
-  <li><Radio labelClass="p-3" bind:group={technology} value="vue js">Vue JS</Radio></li>
-  <li><Radio labelClass="p-3" bind:group={technology} value="react">React</Radio></li>
-  <li><Radio labelClass="p-3" bind:group={technology} value="angular">Angular</Radio></li>
+  <li><Radio classes={{ label: "p-3" }} bind:group={technology} value="svelte">Svelte</Radio></li>
+  <li><Radio classes={{ label: "p-3" }} bind:group={technology} value="vue js">Vue JS</Radio></li>
+  <li><Radio classes={{ label: "p-3" }} bind:group={technology} value="react">React</Radio></li>
+  <li><Radio classes={{ label: "p-3" }} bind:group={technology} value="angular">Angular</Radio></li>
 </ul>
 ```
 
@@ -152,10 +152,10 @@ Use this example to show a list of radio items inside a card horizontally.
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
 <ul class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 sm:flex rtl:divide-x-reverse dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
-  <li class="w-full"><Radio name="hor-list" labelClass="p-3">Svelte</Radio></li>
-  <li class="w-full"><Radio name="hor-list" labelClass="p-3">Vue JS</Radio></li>
-  <li class="w-full"><Radio name="hor-list" labelClass="p-3">React</Radio></li>
-  <li class="w-full"><Radio name="hor-list" labelClass="p-3">Angular</Radio></li>
+  <li class="w-full"><Radio name="hor-list" classes={{ label: "p-3" }}>Svelte</Radio></li>
+  <li class="w-full"><Radio name="hor-list" classes={{ label: "p-3" }}>Vue JS</Radio></li>
+  <li class="w-full"><Radio name="hor-list" classes={{ label: "p-3" }}>React</Radio></li>
+  <li class="w-full"><Radio name="hor-list" classes={{ label: "p-3" }}>Angular</Radio></li>
 </ul>
 ```
 

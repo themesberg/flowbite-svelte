@@ -66,7 +66,7 @@ If you need separate control over the label and the checkbox you can use the ver
 </Table>
 
 <Label color="red" class="mt-4 flex items-center font-bold italic">
-  Label on the other side <Checkbox divClass="ms-2" />
+  Label on the other side <Checkbox classes={{ div: "ms-2" }} />
 </Label>
 ```
 
@@ -109,10 +109,10 @@ Use this example of a checkbox inside a card element to enable a larger area of 
 </script>
 
 <div class="rounded-sm border border-gray-200 dark:border-gray-700">
-  <Checkbox divClass="w-full p-4">Default radio</Checkbox>
+  <Checkbox classes={{ div: "w-full p-4" }}>Default radio</Checkbox>
 </div>
 <div class="rounded-sm border border-gray-200 dark:border-gray-700">
-  <Checkbox checked divClass="w-full p-4">Checked state</Checkbox>
+  <Checkbox checked classes={{ div: "w-full p-4" }}>Checked state</Checkbox>
 </div>
 ```
 
@@ -127,10 +127,10 @@ Use this example to show a list of checkbox items grouped inside a card.
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology</p>
 <Listgroup class="w-48">
-  <li><Checkbox divClass="p-3">svelte</Checkbox></li>
-  <li><Checkbox divClass="p-3">Vue JS</Checkbox></li>
-  <li><Checkbox divClass="p-3">React</Checkbox></li>
-  <li><Checkbox divClass="p-3">Angular</Checkbox></li>
+  <li><Checkbox classes={{ div: "p-3" }}>svelte</Checkbox></li>
+  <li><Checkbox classes={{ div: "p-3" }}>Vue JS</Checkbox></li>
+  <li><Checkbox classes={{ div: "p-3" }}>React</Checkbox></li>
+  <li><Checkbox classes={{ div: "p-3" }}>Angular</Checkbox></li>
 </Listgroup>
 ```
 
@@ -150,7 +150,7 @@ You can use the internal loop to render a list of `CheckboxItem`s.
 
 <p class="my-2">Choices: {group.join(", ")}</p>
 <Listgroup class="w-48">
-  <Checkbox bind:group {choices} divClass="p-3" />
+  <Checkbox bind:group {choices} classes={{ div: "p-3" }} />
 </Listgroup>
 ```
 
@@ -165,10 +165,10 @@ Use this example to show a list of checkbox items inside a card horizontally.
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
 <ul class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 sm:flex rtl:divide-x-reverse dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
-  <li class="w-full"><Checkbox divClass="p-3">Svelte</Checkbox></li>
-  <li class="w-full"><Checkbox divClass="p-3">Vue JS</Checkbox></li>
-  <li class="w-full"><Checkbox divClass="p-3">React</Checkbox></li>
-  <li class="w-full"><Checkbox divClass="p-3">Angular</Checkbox></li>
+  <li class="w-full"><Checkbox classes={{ div: "p-3" }}>Svelte</Checkbox></li>
+  <li class="w-full"><Checkbox classes={{ div: "p-3" }}>Vue JS</Checkbox></li>
+  <li class="w-full"><Checkbox classes={{ div: "p-3" }}>React</Checkbox></li>
+  <li class="w-full"><Checkbox classes={{ div: "p-3" }}>Angular</Checkbox></li>
 </ul>
 ```
 
@@ -237,10 +237,10 @@ You can use the property `inline` as the alternative.
   import { Checkbox } from "flowbite-svelte";
 </script>
 
-<Checkbox inline divClass="me-2">Inline 1</Checkbox>
-<Checkbox inline divClass="me-2">Inline 2</Checkbox>
-<Checkbox inline divClass="me-2" checked>Inline checked</Checkbox>
-<Checkbox inline divClass="me-2" disabled>Inline disabled</Checkbox>
+<Checkbox inline classes={{ div: "me-2" }}>Inline 1</Checkbox>
+<Checkbox inline classes={{ div: "me-2" }}>Inline 2</Checkbox>
+<Checkbox inline classes={{ div: "me-2" }} checked>Inline checked</Checkbox>
+<Checkbox inline classes={{ div: "me-2" }} disabled>Inline disabled</Checkbox>
 ```
 
 ## Colors

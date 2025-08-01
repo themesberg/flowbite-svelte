@@ -5,6 +5,7 @@
   import { fade } from "svelte/transition";
   import { modal as modalStyle } from ".";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
 
   let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, classes, params, transition = fade, fullscreen = false, ...restProps }: ModalProps = $props();
 
@@ -83,7 +84,19 @@
   }
 
   const focusTrap = (node: HTMLElement) => (focustrap ? trapFocus(node) : undefined);
-  const close_handler = (pred: boolean) => (pred ? undefined : () => (open = false));
+
+  let ref: HTMLDialogElement | undefined = $state(undefined);
+
+  function close_handler(ev: MouseEvent) {
+    if (form) {
+      // dialog/form mechanism will close the dialog
+      return;
+    }
+
+    ref?.dispatchEvent(new Event("cancel", { bubbles: true, cancelable: true }));
+  }
+
+  createDismissableContext(close_handler);
 </script>
 
 {#snippet content()}
@@ -92,7 +105,7 @@
       {#if title}
         <h3>{title}</h3>
         {#if dismissable && !permanent}
-          <CloseButton type="submit" formnovalidate onclick={close_handler(form)} class={clsx(styling.close)} />
+          <CloseButton type="submit" formnovalidate class={clsx(styling.close)} />
         {/if}
       {:else if header}
         {@render header()}
@@ -108,12 +121,12 @@
     </div>
   {/if}
   {#if dismissable && !permanent && !title}
-    <CloseButton type="submit" formnovalidate onclick={close_handler(form)} class={closeCls({ class: clsx(theme?.close, styling.close) })} />
+    <CloseButton type="submit" formnovalidate class={closeCls({ class: clsx(theme?.close, styling.close) })} />
   {/if}
 {/snippet}
 
 {#if open}
-  <dialog {@attach init} use:focusTrap class={base({ fullscreen, class: clsx(theme?.base, className) })} tabindex="-1" onsubmit={_onsubmit} oncancel={_oncancel} onclick={_onclick} ontoggle={_ontoggle} transition:transition|global={paramsOptions as ParamsType} {...restProps}>
+  <dialog {@attach init} bind:this={ref} use:focusTrap class={base({ fullscreen, class: clsx(theme?.base, className) })} tabindex="-1" onsubmit={_onsubmit} oncancel={_oncancel} onclick={_onclick} ontoggle={_ontoggle} transition:transition|global={paramsOptions as ParamsType} {...restProps}>
     {#if form}
       <form method="dialog" class={formCls({ class: clsx(theme?.form) })}>
         {@render content()}

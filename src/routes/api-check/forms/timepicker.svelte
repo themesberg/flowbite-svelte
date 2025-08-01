@@ -432,7 +432,7 @@
           <ClockSolid class="h-6 w-6" />
           Time schedule
         </Heading>
-        <CloseButton onclick={() => (hidden = true)} class="mb-4 dark:text-white" />
+        <CloseButton class="mb-4 dark:text-white" />
       </div>
 
       <form onsubmit={saveAll} class="space-y-8">

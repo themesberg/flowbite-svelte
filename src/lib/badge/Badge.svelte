@@ -4,6 +4,7 @@
   import clsx from "clsx";
   import { fade } from "svelte/transition";
   import { badge } from ".";
+  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
 
   let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, classes, border, href, target, rounded, transition = fade, params, aClass, onclose, ...restProps }: BadgeProps = $props();
 
@@ -16,14 +17,19 @@
 
   const { base, linkClass } = $derived(badge({ color, size: large ? "large" : "small", rounded, border }));
 
+  let ref: HTMLDivElement | undefined = $state(undefined);
+
   const close = (ev: MouseEvent) => {
-    onclose?.(ev);
-    if (!ev.defaultPrevented) badgeStatus = false;
+    if (ref?.dispatchEvent(new Event("close", { bubbles: true, cancelable: true }))) {
+      badgeStatus = false;
+    }
   };
+
+  createDismissableContext(close);
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} transition:transition={params as ParamsType} class={base({ class: clsx(theme?.base, className) })}>
+  <div {...restProps} bind:this={ref} transition:transition={params as ParamsType} {onclose} class={base({ class: clsx(theme?.base, className) })}>
     {#if href}
       <a {href} {target} class={linkClass({ class: clsx(theme?.linkClass, styling.linkClass) })}>
         {@render children()}
@@ -34,12 +40,11 @@
 
     {#if dismissable}
       {#if icon}
-        <button type="button" class="text-primary-500 hover:bg-primary-200 focus:ring-primary-400 dark:hover:bg-primary-800 dark:hover:text-primary-300 m-0.5 ms-1.5 -me-1.5 rounded-sm p-0.5 whitespace-normal focus:ring-1 focus:outline-hidden" aria-label="Remove badge" onclick={close}>
-          <span class="sr-only">Remove badge</span>
+        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge">
           {@render icon()}
-        </button>
+        </CloseButton>
       {:else}
-        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge" onclick={close} />
+        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge" />
       {/if}
     {/if}
   </div>

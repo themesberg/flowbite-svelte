@@ -4,6 +4,7 @@
   import clsx from "clsx";
   import { type FloatingLabelInputProps, CloseButton } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
 
   let { children, id = idGenerator(), value = $bindable(), elementRef = $bindable(), "aria-describedby": ariaDescribedby, variant = "standard", size = "default", color = "default", class: className, classes, inputClass, labelClass, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, ...restProps }: FloatingLabelInputProps = $props();
 
@@ -134,6 +135,8 @@
     selectedIndex = -1;
     elementRef?.focus();
   }
+
+  createDismissableContext(clearAll);
 </script>
 
 {#if clearable}
@@ -143,7 +146,7 @@
 <div class={base({ class: clsx(isCombobox ? "relative" : "", theme?.base, className) })}>
   <input {id} placeholder=" " bind:value bind:this={elementRef} {...restProps} aria-describedby={ariaDescribedby} class={input({ class: clsx(theme?.input, styling.input) })} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} />
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
+    <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
   {/if}
   <label for={id} class={label({ class: clsx(theme?.label, styling.label) })}>
     {@render children()}

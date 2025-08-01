@@ -40,7 +40,7 @@ Use `CloseButton` component to close a component.
 
 - children
 - color: "gray"
-- onclick
+- onclick: onclickorg
 - name: "Close"
 - ariaLabel
 - size: "md"

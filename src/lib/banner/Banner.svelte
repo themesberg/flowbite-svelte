@@ -4,8 +4,9 @@
   import clsx from "clsx";
   import { type ParamsType, type BannerProps, CloseButton } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
 
-  let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, classes, innerClass, transition = fade, params, closeClass, ...restProps }: BannerProps = $props();
+  let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, classes, innerClass, transition = fade, params, closeClass, onclose, ...restProps }: BannerProps = $props();
 
   warnThemeDeprecation("Banner", { innerClass, closeClass }, { innerClass: "insideDiv", closeClass: "dismissable" });
 
@@ -15,24 +16,25 @@
   const theme = getTheme("banner");
 
   const { base, insideDiv, dismissable: dismissableClass } = $derived(banner({ type, color }));
+
+  let ref: HTMLDivElement | undefined = $state(undefined);
+  function close(event: MouseEvent) {
+    if (ref?.dispatchEvent(new Event("close", { bubbles: true, cancelable: true }))) {
+      open = false;
+    }
+  }
+  createDismissableContext(close);
 </script>
 
 {#if open}
-  <div tabindex="-1" class={base({ class: clsx(theme?.base, className) })} {...restProps} transition:transition={params as ParamsType}>
+  <div tabindex="-1" bind:this={ref} {onclose} class={base({ class: clsx(theme?.base, className) })} {...restProps} transition:transition={params as ParamsType}>
     <div class={insideDiv({ class: clsx(theme?.insideDiv, styling.insideDiv) })}>
       {@render children?.()}
     </div>
 
     {#if dismissable}
       <div class="flex items-center justify-end">
-        <CloseButton
-          class={dismissableClass({ class: clsx(theme?.dismissable, styling.dismissable) })}
-          {color}
-          ariaLabel="Remove banner"
-          onclick={() => {
-            open = false;
-          }}
-        />
+        <CloseButton class={dismissableClass({ class: clsx(theme?.dismissable, styling.dismissable) })} {color} ariaLabel="Remove banner" />
       </div>
     {/if}
   </div>
@@ -56,5 +58,6 @@
 @prop transition = fade
 @prop params
 @prop closeClass
+@prop onclose
 @prop ...restProps
 -->
