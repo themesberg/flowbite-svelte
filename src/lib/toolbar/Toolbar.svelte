@@ -1,17 +1,16 @@
 <script lang="ts">
-  import { setContext } from "svelte";
-  import { writable } from "svelte/store";
-  import { toolbar } from "./";
+  import { getTheme } from "$lib/theme/themeUtils";
   import type { ToolbarProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { setContext } from "svelte";
+  import { toolbar } from "./";
 
   let { children, end, color, embedded, class: className, classes, ...restProps }: ToolbarProps = $props();
 
   const theme = getTheme("toolbar");
 
-  const separators = writable(false);
-  setContext("toolbar", separators);
+  const context = $state({ separators: false });
+  setContext("toolbar", context);
 
   let frameColor = $derived(embedded ? "default" : color);
 
@@ -19,7 +18,7 @@
     toolbar({
       color: frameColor,
       embedded,
-      separators: $separators
+      separators: context.separators
     })
   );
 
