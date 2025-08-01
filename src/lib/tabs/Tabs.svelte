@@ -1,10 +1,9 @@
 <script lang="ts">
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import type { TabCtxType, TabsProps } from "$lib/types";
   import clsx from "clsx";
-  import { writable } from "svelte/store";
   import { setContext } from "svelte";
   import { tabs } from ".";
-  import type { TabsProps, TabCtxType } from "$lib/types";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, tabStyle = "none", ulClass, contentClass, divider = true, class: className, classes, ...restProps }: TabsProps = $props();
 
@@ -19,23 +18,18 @@
   // Generate a unique ID for the tab panel
   const panelId = `tab-panel-${Math.random().toString(36).substring(2)}`;
 
-  const ctx: TabCtxType = {
-    get tabStyle() {
-      return tabStyle;
-    },
-    selected: writable<HTMLElement>(),
+  const ctx: TabCtxType = $state({
+    tabStyle,
+    selected: undefined,
     panelId // Add panelId to the context
-  };
+  });
 
   let dividerBool = $derived(["full", "pill"].includes(tabStyle) ? false : divider);
 
   setContext("ctx", ctx);
 
   function init(node: HTMLElement) {
-    const destroy = ctx.selected.subscribe((x: HTMLElement) => {
-      if (x) node.replaceChildren(x);
-    });
-    return { destroy };
+    if (ctx.selected) node.replaceChildren(ctx.selected);
   }
 </script>
 
@@ -45,7 +39,7 @@
 {#if dividerBool}
   <div class={dividerClass({ class: clsx(theme?.divider, classes?.divider) })}></div>
 {/if}
-<div id={panelId} class={content({ class: clsx(theme?.content, styling.content) })} role="tabpanel" aria-labelledby={panelId} use:init></div>
+<div id={panelId} class={content({ class: clsx(theme?.content, styling.content) })} role="tabpanel" aria-labelledby={panelId} {@attach init}></div>
 
 <!--
 @component

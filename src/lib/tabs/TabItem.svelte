@@ -1,10 +1,9 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import { writable } from "svelte/store";
-  import { tabItem, tabs } from ".";
-  import clsx from "clsx";
-  import { type TabitemProps, type TabCtxType } from "$lib";
+  import { type TabCtxType, type TabitemProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+  import { getContext } from "svelte";
+  import { tabItem, tabs } from ".";
 
   let { children, titleSlot, open = false, title = "Tab title", activeClass, inactiveClass, class: className, classes, disabled, tabStyle, ...restProps }: TabitemProps = $props();
 
@@ -14,20 +13,17 @@
   let compoTabStyle = $derived(tabStyle ? tabStyle : ctx.tabStyle || "full");
 
   const { active, inactive } = $derived(tabs({ tabStyle: compoTabStyle, hasDivider: true }));
-  let selected = ctx.selected ?? writable<HTMLElement>();
+
   // Generate a unique ID for this tab button
   const tabId = `tab-${Math.random().toString(36).substring(2)}`;
 
   function init(node: HTMLElement) {
-    selected.set(node);
-
-    const destroy = selected.subscribe((x) => {
-      if (x !== node) {
+    ctx.selected = node;
+    $effect(() => {
+      if (ctx.selected !== node) {
         open = false;
       }
     });
-
-    return { destroy };
   }
 
   const { base, button, content } = $derived(tabItem({ open, disabled }));
@@ -44,7 +40,7 @@
 
   {#if open && children}
     <div class={content({ class: clsx(theme?.content, classes?.content) })}>
-      <div use:init>
+      <div {@attach init}>
         {@render children()}
       </div>
     </div>
