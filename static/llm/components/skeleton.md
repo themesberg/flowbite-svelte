@@ -1,6 +1,5 @@
 # Svelte Skeleton - Flowbite
 
-
 Use the skeleton component to indicate a loading status with placeholder elements that look very similar to the type of content that is being loaded such as paragraphs, images, videos, and more.
 
 ## Setup
@@ -211,9 +210,6 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 - class: className
 - classes
 
-
 ## References
 
 - [Flowbite Skeleton](https://flowbite.com/docs/components/sidebar/)
-
-

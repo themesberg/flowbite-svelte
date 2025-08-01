@@ -1,6 +1,5 @@
 # Svelte Badge - Flowbite
 
-
 The badge component can be used to complement other elements such as buttons or text elements as a label or to show the count of a given data, such as the number of comments for an article or how much time has passed by since a comment has been made.
 
 Alternatively, badges can also be used as standalone elements that link to a certain page.
@@ -304,9 +303,6 @@ The color can be changed dynamically.
 - aClass
 - onclose
 
-
 ## References
 
 - [Flowbite Badge](https://flowbite.com/docs/components/badge/)
-
-

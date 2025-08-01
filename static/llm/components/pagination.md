@@ -1,6 +1,5 @@
 # Svelte Pagination - Flowbite
 
-
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
@@ -12,6 +11,7 @@ The pagination component can be used to navigate across a series of content and 
 ## Setup
 
 ```svelte
+
 ```
 
 ## Default pagination
@@ -484,7 +484,7 @@ You can use the following code to show the number of data shown inside a table e
 - totalPages: 1
 - visiblePages: 5
 - // New prop to control visible pages
-    onPageChange
+  onPageChange
 - prevContent
 - nextContent
 - prevClass
@@ -499,9 +499,6 @@ You can use the following code to show the number of data shown inside a table e
 - spanClass
 - tableDivClass
 
-
 ## References
 
 - [Flowbite Pagination](https://flowbite.com/docs/components/pagination/)
-
-

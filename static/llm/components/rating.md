@@ -1,6 +1,5 @@
 # Svelte Rating - Flowbite
 
-
 Get started with the rating component to show an aggregate of reviews and scores in the forms of stars or numbers.
 
 You can find multiple examples on this page including different styles, sizes, and variants of the rating component and other associated elements such as a comment or card.
@@ -465,9 +464,6 @@ Use this component to show the review content from a user alongside the avatar, 
 - role: "img"
 - svgClass
 
-
 ## References
 
 - [Flowbite Rating](https://flowbite.com/docs/components/rating/)
-
-

@@ -1,6 +1,5 @@
 # Svelte Timeline - Flowbite
 
-
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge } from '$lib'
@@ -12,6 +11,7 @@ The timeline component can be used to show series of data in a chronological ord
 ## Setup
 
 ```svelte
+
 ```
 
 ## Default timeline
@@ -293,9 +293,6 @@ Use this component to group multiple data entries inside a single date and show 
 - class: className
 - classes
 
-
 ## References
 
 - [Flowbite Timeline](https://flowbite.com/docs/components/timeline/)
-
-

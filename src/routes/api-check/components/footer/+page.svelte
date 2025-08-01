@@ -52,4 +52,3 @@
     <HighlightCompo codeLang="ts" code={exampleModules["./examples/Sticky.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
-

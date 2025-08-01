@@ -1,6 +1,5 @@
 # Svelte Range Slider - Flowbite
 
-
 The range component can be used as an input field to get a number from the user based on your custom selection (ie. from 1 to 100) by using a sliding animation.
 
 ## Setup
@@ -98,7 +97,6 @@ Since we added `...restProps` to input field, you can contain the props which ar
 - size: "md"
 - inputClass
 - class: className
-
 
 ## References
 

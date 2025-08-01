@@ -1,6 +1,5 @@
 # Svelte Dark Mode - Flowbite
 
-
 In flowbite-svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Tailwind CSS:
 
 ```js example
@@ -84,9 +83,6 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 - size: "md"
 - ariaLabel: "Dark mode"
 
-
 ## References
 
 - [Flowbite Dark Mode](https://flowbite.com/docs/customize/dark-mode/)
-
-

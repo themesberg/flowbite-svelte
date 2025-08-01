@@ -1,6 +1,5 @@
 # Svelte StepIndicator
 
-
 The Step Indicator component is a simple component to show the progress of a process. It can be used to show the progress of a multi-step form or a multi-step process.
 
 ## Setup
@@ -159,7 +158,6 @@ Use the `color` prop to change the color of a step indicator.
 - currentCustom: ""
 - class: className
 - classes
-
 
 ### StepIndicator styling
 

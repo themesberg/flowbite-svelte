@@ -1,6 +1,5 @@
 # Svelte Gallery (Mansonry) - Flowbite
 
-
 The gallery component can be used to show multiple images inside a masonry grid layout styles with the utility-first classes from Tailwind CSS to show a collection of pictures to your users based on various layouts, styles, sizes, and colors.
 
 This component is recommended for usage within marketing UI interfaces and website sections when you want to show pictures of your team members, office pictures, or even case study images.
@@ -220,9 +219,6 @@ This example shows how to get a complete control over the gallery images look an
 - class: className
 - classes
 
-
 ## References
 
 - [Flowbite Gallery](https://flowbite.com/docs/components/gallery/)
-
-

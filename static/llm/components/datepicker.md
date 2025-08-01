@@ -1,6 +1,5 @@
 # Svelte Datepicker - Flowbite
 
-
 The Datepicker component provides an interactive calendar interface for selecting single dates or date ranges. It's fully integrated with flowbite-svelte's design system and offers various customization options.
 
 ## Setup
@@ -387,9 +386,6 @@ Set `translationLocale` to change translation. The following example shows Germa
 - class: className
 - elementRef: $bindable()
 
-
 ## References
 
 - [Flowbite Datepicker (JavaScript)](https://flowbite.com/docs/plugins/Datepicker/)
-
-

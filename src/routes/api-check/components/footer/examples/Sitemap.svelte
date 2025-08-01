@@ -43,7 +43,7 @@
     </div>
   </div>
   <div class="bg-gray-100 px-4 py-6 md:flex md:items-center md:justify-between dark:bg-gray-700">
-    <FooterCopyright class="text-sm text-gray-900 dark:text-gray-200 sm:text-center" href="/" by="Flowbite™" />
+    <FooterCopyright class="text-sm text-gray-900 sm:text-center dark:text-gray-200" href="/" by="Flowbite™" />
     <div class="mt-4 flex space-x-6 sm:justify-center md:mt-0 rtl:space-x-reverse">
       <FooterIcon href="/">
         <FacebookSolid class="h-5 w-5 text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white" />

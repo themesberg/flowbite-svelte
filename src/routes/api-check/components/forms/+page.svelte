@@ -29,7 +29,7 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Helper text </H2>
+<H2>Helper text</H2>
 <CodeWrapper>
   <ExampleComponents.Helper />
   {#snippet codeblock()}

@@ -1,6 +1,5 @@
 # Svelte Button Toggle
 
-
 ## Setup
 
 ```svelte
@@ -353,4 +352,3 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 - txtClass
 - contentClass
 - classes
-
