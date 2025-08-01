@@ -1,5 +1,6 @@
 # ThemeProvider - Flowbite Svelte
 
+
 ## Basic Usage
 
 Wrap your components with ThemeProvider and pass a theme configuration object:

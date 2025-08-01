@@ -1,5 +1,6 @@
 # Svelte Label - Flowbite
 
+
 ## Label
 
 Use the `Label` component when you need to add a label.
@@ -28,6 +29,7 @@ Use the `Label` component when you need to add a label.
 - color: "gray"
 - show: true
 - class: className
+
 
 ### Label styling
 

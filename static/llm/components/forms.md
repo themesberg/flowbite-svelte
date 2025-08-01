@@ -1,5 +1,6 @@
 # Svelte Forms - Flowbite
 
+
 The Input component allows you to change the input size, add disabled, helper text, and floating label.
 
 ## Input Sizes
@@ -31,7 +32,7 @@ Get started with this example if you want to apply the disabled state to an inpu
 
 ```svelte
 <script>
-  import { Label, Input } from "flowbite-svelte";
+  import { Input } from "flowbite-svelte";
 </script>
 
 <Input id="disabled-input" class="mb-6" disabled value="Disabled input" />
@@ -61,7 +62,7 @@ With the Input component, you can add <A href="https://flowbite-svelte-icons.cod
 
 ```svelte
 <script>
-  import { Label, Input, ButtonGroup } from "flowbite-svelte";
+  import { Label, Input } from "flowbite-svelte";
   import { EnvelopeSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -232,3 +233,5 @@ Get started with the default example of a select input component to get a single
 ## References
 
 - [Flowbite Forms](https://flowbite.com/docs/components/forms/)
+
+

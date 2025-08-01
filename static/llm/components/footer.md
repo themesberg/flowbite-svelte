@@ -1,5 +1,6 @@
 # Svelte Footer - Flowbite
 
+
 The footer is one of the most underestimated sections of a website being located at the very bottom of every page, however, it can be used as a way to try to convince users to stay on your website if they haven’t found the information they’ve been looking for inside the main content area.
 
 ## Setup
@@ -124,7 +125,7 @@ The footer is one of the most underestimated sections of a website being located
 
 ```svelte
 <script>
-  import { Footer, FooterLinkGroup, FooterLink, FooterBrand, FooterIcon, FooterCopyright } from "flowbite-svelte";
+  import { Footer, FooterLinkGroup, FooterLink, FooterIcon, FooterCopyright } from "flowbite-svelte";
   import { FacebookSolid, GithubSolid, DiscordSolid, TwitterSolid } from "flowbite-svelte-icons";
   import Dribble from "../../utils/icons/Dribble.svelte";
 </script>
@@ -303,6 +304,9 @@ Use this example to set create a sticky footer by using a fixed position to the 
 - class: className
 - children
 
+
 ## References
 
 - [Flowbite Footer](https://flowbite.com/docs/components/footer/)
+
+

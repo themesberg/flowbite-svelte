@@ -1,5 +1,6 @@
 # Svelte Drawer (Off-canvas) - Flowbite
 
+
 Use the Drawer component (or “off-canvas”) to show a fixed element relative to the document page from any side for navigation, contact forms, informational purposes or other user actions.
 
 ## Set up
@@ -601,7 +602,6 @@ By default, body scrolling is disabled when the drawer is visible, however, you 
 
 - children
 - hidden: $bindable()
-- closeDrawer: () => (hidden = true)
 - activateClickOutside: true
 - position
 - width
@@ -613,6 +613,7 @@ By default, body scrolling is disabled when the drawer is visible, however, you 
 - transitionParams
 - transitionType: fly
 - bodyScrolling: false
+- onclose
 
 ### Drawerhead
 
@@ -629,6 +630,9 @@ By default, body scrolling is disabled when the drawer is visible, however, you 
 - class: className
 - classes
 
+
 ## References
 
 - [Flowbite Drawer](https://flowbite.com/docs/components/drawer/)
+
+

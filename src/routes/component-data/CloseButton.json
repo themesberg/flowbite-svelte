@@ -7,7 +7,7 @@
   "props": [
     ["children", ""],
     ["color", "\"gray\""],
-    ["onclick", ""],
+    ["onclick: onclickorg", ""],
     ["name", "\"Close\""],
     ["ariaLabel", ""],
     ["size", "\"md\""],

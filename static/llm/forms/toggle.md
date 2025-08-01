@@ -1,5 +1,6 @@
 # Svelte Toggle (Switch) - Flowbite
 
+
 The toggle component can be used to receive a simple “yes” or “no” type of answer from the user by choosing a single option from two options available in multiple sizes, styles, and colors coded with the utility classes from Tailwind CSS and with dark mode support.
 
 ## Setup
@@ -51,7 +52,7 @@ Get started with the default toggle component example as a checkbox element to r
 <Toggle size="small">Small toggle</Toggle>
 <Toggle size="default" checked>Default toggle</Toggle>
 <Toggle size="large" checked>Large toggle</Toggle>
-<Toggle size={undefined} spanClass={customSize}>Custom toggle</Toggle>
+<Toggle size={undefined} classes={{ span: customSize }}>Custom toggle</Toggle>
 ```
 
 ## Label for off state
@@ -107,6 +108,7 @@ Get started with the default toggle component example as a checkbox element to r
 - inputClass
 - spanClass
 - offLabel
+
 
 ## References
 

@@ -1,5 +1,6 @@
 # Svelte Speed Dial - Flowbite
 
+
 Get started with the speed dial component to show a list of buttons or menu items positioned relative to the body in either corner as a quick way to allow certains actions to be made by your users.
 
 ## Default speed dial
@@ -606,7 +607,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1487)
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1486)
 
 #### Props
 
@@ -625,14 +626,14 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1502)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1501)
 
 #### Props
 
 - children
 - name: ""
 - color: "light"
-- tooltip: \_tooltip
+- tooltip: _tooltip
 - pill: context.pill
 - textOutside: context.textOutside
 - textClass
@@ -643,7 +644,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1485)
+[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1484)
 
 #### Props
 
@@ -655,6 +656,9 @@ You can change the main button to any element you want.
 - color
 - class: className
 
+
 ## References
 
 - [Flowbite Speed Dial](https://flowbite.com/docs/components/speed-dial/)
+
+

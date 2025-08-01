@@ -1,5 +1,6 @@
 # Svelte Clipboard - Flowbite
 
+
 The copy to clipboard component allows you to copy text, lines of code, contact details or any other data to the clipboard with a single click on a trigger element such as a button. This component can be used to copy text from an input field, textarea, code block or even address fields in a form element.
 
 Use cases for websites can be found in the examples below and they include copying code installation commands, API keys, URLs, addresses, contact details, sharing course URLs inside a modal and more.
@@ -387,6 +388,9 @@ Use this example to show an input field where you can copy the URL of the curren
 - onclick
 - class: className: ""
 
+
 ## References
 
 - [Flowbite Clipboard](https://flowbite.com/docs/components/clipboard/)
+
+

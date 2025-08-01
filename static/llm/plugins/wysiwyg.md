@@ -1,5 +1,6 @@
 # Svelte WYSIWYG Text Editor - Flowbite
 
+
 <svelte:head>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />

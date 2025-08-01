@@ -1,5 +1,6 @@
 # Svelte Dropdown - Flowbite
 
+
 The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
 
 ## Setup
@@ -96,7 +97,7 @@ Use this example to show extra information outside of the list of menu items ins
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownDivider, DropdownGroup, DropdownHeader } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownItem, DropdownGroup, DropdownHeader } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -121,7 +122,7 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownDivider } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -151,7 +152,7 @@ When you want to control your dropdown open status via javascript code you can b
 
 ```svelte
 <script lang="ts">
-  import { Button, Dropdown, DropdownItem, DropdownDivider, P } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownItem, P } from "flowbite-svelte";
   import { ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
   let isOpen = $state(false);
 </script>
@@ -184,7 +185,7 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, Checkbox } from "flowbite-svelte";
+  import { Button, Dropdown, Checkbox } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -208,7 +209,7 @@ Use this example to update the background color of a menu item when using a list
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, Checkbox } from "flowbite-svelte";
+  import { Button, Dropdown, Checkbox } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -232,7 +233,7 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, Checkbox, Helper } from "flowbite-svelte";
+  import { Button, Dropdown, Checkbox, Helper } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -259,7 +260,7 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, Radio } from "flowbite-svelte";
+  import { Button, Dropdown, Radio } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let group1 = $state(2);
 </script>
@@ -286,7 +287,7 @@ Use this example to update the background color of a menu item when using a list
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, Radio } from "flowbite-svelte";
+  import { Button, Dropdown, Radio } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let group2 = $state(2);
 </script>
@@ -311,7 +312,7 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, Radio, Helper } from "flowbite-svelte";
+  import { Button, Dropdown, Radio, Helper } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let group3 = $state(2);
 </script>
@@ -339,7 +340,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, Toggle } from "flowbite-svelte";
+  import { Button, Dropdown, Toggle } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -363,7 +364,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownDivider, Navbar, NavBrand, NavHamburger, NavUl, NavLi } from "flowbite-svelte";
+  import { Dropdown, DropdownItem, Navbar, NavBrand, NavHamburger, NavUl, NavLi } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -435,7 +436,7 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownHeader, DropdownGroup, Checkbox, Search } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownGroup, Checkbox, Search } from "flowbite-svelte";
   import { ChevronDownOutline, UserRemoveSolid } from "flowbite-svelte-icons";
   let searchTerm = $state("");
   const people = [
@@ -470,7 +471,7 @@ Use the menu icon trigger element on components such as cards as an alternative 
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, ToolbarButton, DropdownDivider } from "flowbite-svelte";
+  import { Dropdown, DropdownItem } from "flowbite-svelte";
   import { DotsHorizontalOutline, DotsVerticalOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -490,7 +491,7 @@ Use this example to show a list of notifications inside your application by prov
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownHeader, DropdownGroup, Avatar } from "flowbite-svelte";
+  import { Dropdown, DropdownItem, DropdownGroup, Avatar } from "flowbite-svelte";
   import { BellSolid, EyeSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -553,7 +554,7 @@ This example can be used to show a list of menu items and options when a user is
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup, DropdownDivider } from "flowbite-svelte";
+  import { Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup } from "flowbite-svelte";
 </script>
 
 <Avatar class="acs" src="/images/profile-picture-3.webp" dot={{ color: "green" }} />
@@ -675,14 +676,20 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 As dropdown is implemented using the [Floating UI](https://floating-ui.com) library, placement can be further specified by using the `Placement` type defined in [Floating UI docs](https://floating-ui.com/docs/computePosition#placement)
 
 ```svelte
-<script>
+<script lang="ts">
   import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import type { Placement } from "@floating-ui/dom";
   import { ChevronDownOutline, ChevronUpOutline } from "flowbite-svelte-icons";
-  let placement = $state("left");
+  let placement: Placement | undefined = $state("left");
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
-<div onmousedown={(e) => (placement = e.target.dataset.placement)}>
+<div
+  onmousedown={(e) => {
+    const placementValue = (e.target as HTMLElement | null)?.dataset.placement;
+    if (placementValue) placement = placementValue as Placement;
+  }}
+>
   <Button data-placement="left-start">
     Left start<ChevronUpOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
   </Button>
@@ -733,7 +740,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 ```svelte
 <script lang="ts">
-  import { Button, Dropdown, DropdownItem, Checkbox } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   const handleClick = (e: Event) => {
     e.preventDefault();
@@ -813,6 +820,9 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 - classes
 - class: className
 
+
 ## References
 
 - [Flowbite Dropdown](https://flowbite.com/docs/components/drawer/)
+
+

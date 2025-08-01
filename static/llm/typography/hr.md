@@ -1,5 +1,6 @@
 # Svelte Horizontal Line (HR) - Flowbite
 
+
 The `Hr` component can be used to separate content using a horizontal line by adding space between elements based on multiple styles, variants, and layouts.
 
 ## Setup
@@ -89,19 +90,9 @@ This example can be used to separate content with a HR tag as a shape instead of
 
 ## Component data
 
-### Hr
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-#### Types
-
-[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1900)
-
-#### Props
-
-- children
-- divClass
-- innerDivClass
-- class: className
-- classes
+<CompoAttributesViewer {components}/>
 
 ## References
 

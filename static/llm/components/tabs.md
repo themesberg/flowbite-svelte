@@ -1,5 +1,6 @@
 # Svelte Tabs - Flowbite
 
+
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, P, A } from '$lib'
@@ -11,7 +12,6 @@ The tabs component can be used either as an extra navigational hierarchy complem
 ## Setup
 
 ```svelte
-
 ```
 
 ## Default tabs
@@ -398,7 +398,7 @@ Use the following example to preserve the input value. First fill out the form, 
 
 #### Types
 
-[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1726)
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1725)
 
 #### Props
 
@@ -417,7 +417,7 @@ Use the following example to preserve the input value. First fill out the form, 
 
 #### Types
 
-[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1718)
+[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1717)
 
 #### Props
 
@@ -429,6 +429,9 @@ Use the following example to preserve the input value. First fill out the form, 
 - class: className
 - classes
 
+
 ## References
 
 - [Flowbite Tabs](https://flowbite.com/docs/components/tabs/)
+
+

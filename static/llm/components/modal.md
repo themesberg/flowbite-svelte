@@ -1,5 +1,6 @@
 # Svelte Modal - Flowbite
 
+
 The modal component can be used as an interactive dialog on top of the main content area of the website to show notifications and gather information using form elements from your website users.
 
 Get started with multiple sizes, colors, and styles built with the utility classes from Tailwind CSS and the components from Flowbite.
@@ -528,6 +529,9 @@ Use the following example to create a full-screen modal.
 - transition: fade
 - fullscreen: false
 
+
 ## References
 
 - [Flowbite Modal](https://flowbite.com/docs/components/modal/)
+
+

@@ -1,5 +1,6 @@
 # Svelte Number Input - Flowbite
 
+
 The number input component can be used to introduce numeric values inside a form such as for a quantity field, a ZIP code, a phone number, your credit card number, and more.
 
 ## Default number input
@@ -172,8 +173,10 @@ Use this example as an alternative style to the control buttons example above.
 </form>
 ```
 
+
 ## See also
 
 - [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
 - [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
 - [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+
