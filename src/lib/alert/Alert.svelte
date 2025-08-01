@@ -76,6 +76,6 @@
 @prop dismissable
 @prop transition = fade
 @prop params
-@prop onclick = ()
+@prop onclose
 @prop ...restProps
 -->

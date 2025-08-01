@@ -46,20 +46,20 @@
 
 <div use:positioning class="popover-arrow clip pointer-events-none block h-[10px] w-[10px] border-b border-l border-inherit bg-inherit text-inherit {className}"></div>
 
+<style>
+  :global(.clip) {
+    clip-path: polygon(0 0, 0% 100%, 100% 100%, 100% 85%, 15% 0);
+  }
+</style>
+
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ArrowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2024)
+[ArrowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2023)
 ## Props
 @prop placement = "top"
 @prop cords
 @prop strategy = "absolute"
 @prop class: className = ""
 -->
-
-<style>
-  :global(.clip) {
-    clip-path: polygon(0 0, 0% 100%, 100% 100%, 100% 85%, 15% 0);
-  }
-</style>

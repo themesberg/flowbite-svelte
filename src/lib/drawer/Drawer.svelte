@@ -57,7 +57,6 @@
 ## Props
 @prop children
 @prop hidden = $bindable()
-@prop closeDrawer = ()
 @prop activateClickOutside = true
 @prop position
 @prop width
@@ -69,5 +68,6 @@
 @prop transitionParams
 @prop transitionType = fly
 @prop bodyScrolling = false
+@prop onclose
 @prop ...restProps
 -->

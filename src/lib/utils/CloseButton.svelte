@@ -49,7 +49,7 @@
 ## Props
 @prop children
 @prop color = "gray"
-@prop onclick
+@prop onclick: onclickorg
 @prop name = "Close"
 @prop ariaLabel
 @prop size = "md"
