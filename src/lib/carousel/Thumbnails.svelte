@@ -24,13 +24,12 @@
     if (_state) {
       const currentIndex = _state.index;
 
-      // Update the bound index
-      index = newIndex;
-
       _state.index = newIndex;
       _state.forward = newIndex >= currentIndex;
       _state.lastSlideChange = new Date();
-      return _state;
+
+      // Update the bound index
+      index = newIndex;
     } else {
       // Fallback behavior if state is not available
       index = newIndex;

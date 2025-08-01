@@ -39,7 +39,7 @@
 {#if dividerBool}
   <div class={dividerClass({ class: clsx(theme?.divider, classes?.divider) })}></div>
 {/if}
-<div id={panelId} class={content({ class: clsx(theme?.content, styling.content) })} role="tabpanel" aria-labelledby={panelId} {@attach init}></div>
+<div id={panelId} class={content({ class: clsx(theme?.content, styling.content) })} role="tabpanel" aria-labelledby={ctx.selected?.id} {@attach init}></div>
 
 <!--
 @component

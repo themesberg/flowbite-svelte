@@ -40,7 +40,7 @@
 
   {#if open && children}
     <div class={content({ class: clsx(theme?.content, classes?.content) })}>
-      <div {@attach init}>
+      <div use:init>
         {@render children()}
       </div>
     </div>
