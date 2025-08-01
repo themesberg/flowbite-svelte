@@ -1,21 +1,20 @@
 <script lang="ts">
-  import { setContext } from "svelte";
-  import { writable } from "svelte/store";
-  import { dropdown } from "./";
-  import clsx from "clsx";
-  import { type DropdownProps, Popper, DropdownGroup } from "$lib";
+  import { DropdownGroup, type DropdownProps, Popper } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+  import { setContext } from "svelte";
+  import { dropdown } from "./";
 
   let { children, simple = false, placement = "bottom", offset = 2, class: className, activeUrl = "", isOpen = $bindable(false), ...restProps }: DropdownProps = $props();
 
   const theme = getTheme("dropdown");
 
   const base = $derived(dropdown({ class: clsx(theme, className) }));
-  const activeUrlStore = writable("");
+  const activeUrlStore = $state({ value: "" });
   setContext("activeUrl", activeUrlStore);
 
   $effect(() => {
-    activeUrlStore.set(activeUrl ?? "");
+    activeUrlStore.value = activeUrl ?? "";
   });
 </script>
 

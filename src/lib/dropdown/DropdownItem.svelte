@@ -12,16 +12,9 @@
 
   const theme = getTheme("dropdownItem");
 
-  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
-  let sidebarUrl = $state("");
-  activeUrlStore.subscribe((value) => {
-    sidebarUrl = value;
-  });
+  const activeUrl: { value: string } = getContext("activeUrl");
 
-  let active = $state(false);
-  $effect(() => {
-    active = sidebarUrl ? restProps.href === sidebarUrl : false;
-  });
+  let active = $derived(activeUrl?.value ? restProps.href === activeUrl.value : false);
 
   const { anchor, activeAnchor } = dropdownItem();
   let finalClass = $derived([active ? activeAnchor({ class: clsx(theme?.activeAnchor, styling.activeAnchor) }) : anchor({ class: clsx(theme?.anchor, styling.anchor) })]);
