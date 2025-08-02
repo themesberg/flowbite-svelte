@@ -1022,7 +1022,7 @@ export interface ListGroupItemType {
 }
 
 export interface ListgroupProps extends ListgroupVariants, Omit<HTMLAttributes<HTMLUListElement>, "children"> {
-  children?: Snippet;
+  children?: Snippet<[item: ListGroupItemType | string]>;
   items?: (ListGroupItemType | string)[];
   active?: boolean;
   onclick?: (event?: MouseEvent) => void;

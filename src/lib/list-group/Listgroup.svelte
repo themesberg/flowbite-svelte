@@ -30,7 +30,7 @@
   {#if items?.length}
     {#each items as item}
       {#if children}
-        {@render children()}
+        {@render children(item)}
       {:else if typeof item === "string"}
         <ListgroupItem href={undefined} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} onclick={createItemClickHandler(item)}>{item}</ListgroupItem>
       {:else}
@@ -38,7 +38,7 @@
       {/if}
     {/each}
   {:else}
-    {@render children?.()}
+    {@render children?.(items?.[0] ?? "")}
   {/if}
 </svelte:element>
 

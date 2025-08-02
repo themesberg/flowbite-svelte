@@ -12,7 +12,7 @@
   }) as Record<string, string>;
 </script>
 
-<H1>KBD</H1>
+<H1>Kbd</H1>
 <H2>Default KBD</H2>
 <CodeWrapper innerClass="flex justify-center gap-2">
   <ExampleComponents.Default />

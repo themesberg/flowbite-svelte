@@ -12,7 +12,7 @@
   }) as Record<string, string>;
 </script>
 
-<H1>Indcators</H1>
+<H1>Indicators</H1>
 <H2>Default indicator</H2>
 <CodeWrapper innerClass="flex justify-center gap-2">
   <ExampleComponents.Default />

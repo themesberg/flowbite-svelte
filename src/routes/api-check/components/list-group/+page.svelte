@@ -12,7 +12,7 @@
   }) as Record<string, string>;
 </script>
 
-<H1>List group</H1>
+<H1>List Group</H1>
 <H2>Default list group</H2>
 <CodeWrapper innerClass="flex justify-center gap-2">
   <ExampleComponents.Default />

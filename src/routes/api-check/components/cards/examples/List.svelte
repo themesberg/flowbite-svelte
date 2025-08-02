@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Card, Listgroup, Avatar } from "flowbite-svelte";
   let list = [
     {
