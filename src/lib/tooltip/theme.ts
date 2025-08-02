@@ -37,6 +37,6 @@ export const tooltip = tv({
   },
   defaultVariants: {
     type: "dark",
-    color: undefined 
+    color: undefined
   }
 });
