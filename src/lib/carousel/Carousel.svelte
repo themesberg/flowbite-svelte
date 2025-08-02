@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { onMount, setContext } from "svelte";
-  import { writable } from "svelte/store";
-  import { canChangeSlide } from "./CarouselSlide";
-  import { carousel } from "./theme";
-  import clsx from "clsx";
   import { type CarouselProps, type State, Slide } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+  import { onMount, setContext } from "svelte";
+  import { canChangeSlide } from "./CarouselSlide";
+  import { carousel } from "./theme";
 
   const SLIDE_DURATION_RATIO = 0.25;
 
@@ -13,20 +12,14 @@
 
   const theme = getTheme("carousel");
 
-  const { set, subscribe, update } = writable<State>({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: new Date() });
+  const _state: State = $state({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: new Date() });
 
-  setContext("state", {
-    set: (_state: State) => set({ index: _state.index, images: _state.images, lastSlideChange: new Date(), slideDuration, forward }),
-    subscribe,
-    update
-  });
+  setContext("state", _state);
 
-  let forward = $state(true);
   let initialized = false;
 
-  subscribe((_state) => {
+  $effect(() => {
     index = _state.index;
-    forward = _state.forward;
     onchange?.(images[index]);
   });
 
@@ -36,29 +29,23 @@
   });
 
   const nextSlide = () => {
-    update((_state) => {
-      if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
+    if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
 
-      return {
-        ..._state,
-        forward: true,
-        index: _state.index >= images.length - 1 ? 0 : _state.index + 1,
-        lastSlideChange: new Date()
-      };
-    });
+    _state.forward = true;
+    _state.index = _state.index >= images.length - 1 ? 0 : _state.index + 1;
+    _state.lastSlideChange = new Date();
+
+    return _state;
   };
 
   const prevSlide = () => {
-    update((_state) => {
-      if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
+    if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
 
-      return {
-        ..._state,
-        forward: false,
-        index: _state.index <= 0 ? images.length - 1 : _state.index - 1,
-        lastSlideChange: new Date()
-      };
-    });
+    _state.forward = false;
+    _state.index = _state.index <= 0 ? images.length - 1 : _state.index - 1;
+    _state.lastSlideChange = new Date();
+
+    return _state;
   };
 
   const loop = (node: HTMLElement) => {
@@ -68,7 +55,7 @@
 
     if (duration > 0) {
       intervalId = setInterval(nextSlide, duration);
-      if (initialized) forward ? nextSlide() : prevSlide();
+      if (initialized) _state.forward ? nextSlide() : prevSlide();
     }
 
     return () => clearInterval(intervalId);

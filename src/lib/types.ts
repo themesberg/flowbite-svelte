@@ -170,10 +170,11 @@ export interface AccordionCtxType {
   flush: boolean;
   activeClass?: string | null;
   inactiveClass?: string | null;
-  selected?: Writable<object>;
+  selected?: { value: symbol | null };
   classActive?: string;
   classInactive?: string;
   multiple?: boolean;
+  transitionType?: TransitionFunc | "none";
 }
 
 export interface AccordionProps extends AccordionVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
@@ -360,7 +361,7 @@ export interface ButtonToggleContext {
   isSelected: (toggleValue: string) => boolean;
 }
 
-export interface CheckIconProps extends SVGAttributes<SVGSVGElement> {}
+export interface CheckIconProps extends SVGAttributes<SVGSVGElement> { }
 
 // card
 export type CardProps = Omit<CardVariants, "href"> &
@@ -587,7 +588,7 @@ export interface DropdownProps extends PopperProps {
   isOpen?: boolean;
 }
 
-export interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {}
+export interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> { }
 
 export interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
@@ -666,9 +667,9 @@ export interface CheckboxProps extends CheckboxVariants, Omit<HTMLInputAttribute
   children?: Snippet<
     [
       | {
-          value?: string | number;
-          checked: boolean;
-        }
+        value?: string | number;
+        checked: boolean;
+      }
       | CheckboxItem
     ]
   >;
@@ -743,7 +744,7 @@ export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, O
 }
 
 // helper
-export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> {}
+export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> { }
 
 // input
 export type InputValue = string | number | string[] | undefined;
@@ -937,7 +938,7 @@ export interface TimepickerProps {
   timeIntervals?: string[];
   columns?: ColumnCount;
   // Callback props instead of events
-  onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
+  onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
 }
 
 // textarea
@@ -1095,7 +1096,7 @@ export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "child
   closeOnClickOutside?: boolean;
 }
 
-export interface NavBrandProps extends HTMLAnchorAttributes {}
+export interface NavBrandProps extends HTMLAnchorAttributes { }
 
 export interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
   fluid?: boolean;
@@ -1132,7 +1133,7 @@ export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLD
   end?: Snippet;
 }
 
-export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
+export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> { }
 
 export type ToolbarButtonProps = ToolbarButtonVariants &
   AnchorButtonAttributes & {
@@ -1441,7 +1442,7 @@ export interface SkeletonProps extends SkeletonVariants, HTMLAttributes<HTMLDivE
   size?: SkeletonVariants["size"];
 }
 
-export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
+export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
 
 export interface TextPlaceholderProps extends TextPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
   size?: TextPlaceholderVariants["size"];
@@ -1451,7 +1452,7 @@ export interface VideoPlaceholderProps extends VideoPlaceholderVariants, HTMLAtt
   size?: VideoPlaceholderVariants["size"];
 }
 
-export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
+export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
 
 // speeddial
 export interface SpeedCtxType {
@@ -1737,7 +1738,7 @@ export interface TabCtxType {
   activeClass?: string;
   inactiveClass?: string;
   tabStyle?: TabsVaraints["tabStyle"];
-  selected: Writable<HTMLElement>;
+  selected?: HTMLElement;
   panelId: string;
 }
 

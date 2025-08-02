@@ -3,7 +3,6 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { getContext } from "svelte";
-  import { writable } from "svelte/store";
   import { slide } from "svelte/transition";
   import { accordionItem } from ".";
 
@@ -27,24 +26,30 @@
 
   let styling: typeof classes = $derived(classes ?? { button: headerClass, content: contentClass, active: activeClass, inactive: inactiveClass });
 
-  const ctxTransitionType = getContext("ctxTransitionType");
+  const ctx: AccordionCtxType = getContext("ctx") ?? {};
+
+  const ctxTransitionType = ctx.transitionType ?? transitionType;
   // Check if transitionType is explicitly set to undefined in props
   const useTransition = transitionType === "none" ? false : ctxTransitionType === "none" ? false : true;
 
   // Theme context
   const theme = getTheme("accordionItem");
 
-  const ctx: AccordionCtxType = getContext("ctx") ?? {};
-
   // single selection
-  const self = {};
-  const selected = ctx.selected ?? writable();
+  const self = Symbol("accordion-item");
 
-  if (open) selected.set(self);
+  const nonSharedState = $state({ value: undefined }); // case for 'multiple' option
+  let selected = ctx.selected ?? nonSharedState;
 
-  selected.subscribe((x) => (open = x === self));
+  if (open) selected.value = self;
 
-  const handleToggle = () => selected.set(open ? {} : self);
+  $effect(() => {
+    open = selected.value === self;
+  });
+
+  const handleToggle = () => {
+    selected.value = open ? undefined : self;
+  };
 
   const { base, button, content, active, inactive } = $derived(accordionItem({ flush: ctx.flush, open }));
 

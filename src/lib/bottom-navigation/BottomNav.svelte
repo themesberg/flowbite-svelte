@@ -1,10 +1,9 @@
 <script lang="ts">
-  import { setContext } from "svelte";
-  import { writable } from "svelte/store";
-  import { bottomNav } from ".";
-  import clsx from "clsx";
-  import { type BottomNavProps, type BottomNavContextType, cn } from "$lib";
+  import { type BottomNavContextType, type BottomNavProps, cn } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+  import { setContext } from "svelte";
+  import { bottomNav } from ".";
 
   let { children, header, position = "fixed", navType = "default", class: className, classes, outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
 

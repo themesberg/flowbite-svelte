@@ -1,10 +1,9 @@
 <script lang="ts">
-  import type { Writable } from "svelte/store";
-  import { getContext } from "svelte";
-  import { toolbarGroup } from ".";
+  import { getTheme } from "$lib/theme/themeUtils";
   import type { ToolbarGroupProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getContext } from "svelte";
+  import { toolbarGroup } from ".";
 
   let { children, spacing, padding, position = "middle", class: className, ...restProps }: ToolbarGroupProps = $props();
 
@@ -12,8 +11,9 @@
 
   const groupCls = $derived(toolbarGroup({ spacing, padding, position, class: clsx(theme, className) }));
 
-  const options: Writable<boolean> = getContext("toolbar");
-  if (options) $options = true;
+  const context = getContext<Record<string, boolean>>("toolbar");
+
+  if (context) context.separators = true;
 </script>
 
 <div {...restProps} class={groupCls}>

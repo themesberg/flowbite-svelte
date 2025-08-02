@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { setContext } from "svelte";
-  import { fly } from "svelte/transition";
-  import { writable } from "svelte/store";
-  import { sineIn } from "svelte/easing";
-  import { sidebar } from ".";
-  import { trapFocus, type SidebarProps, type SidebarCtxType } from "$lib";
+  import { trapFocus, type SidebarCtxType, type SidebarProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
+  import { setContext } from "svelte";
+  import { sineIn } from "svelte/easing";
+  import { fly } from "svelte/transition";
+  import { sidebar } from ".";
 
   let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = "md", alwaysOpen = false, position = "fixed", activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, activeUrl = "", class: className, classes, disableBreakpoints = false, ...restProps }: SidebarProps = $props();
 
@@ -34,10 +33,10 @@
   // isLargeScreen should only be true if not disabling breakpoints and it meets the criteria
   let isLargeScreen = $derived(disableBreakpoints ? false : alwaysOpen || innerWidth >= breakpointValues[breakpoint]);
 
-  const activeUrlStore = writable("");
+  const activeUrlStore = $state({ value: "" });
   setContext("activeUrl", activeUrlStore);
   $effect(() => {
-    activeUrlStore.set(activeUrl);
+    activeUrlStore.value = activeUrl;
   });
 
   if (disableBreakpoints) isOpen = true;

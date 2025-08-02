@@ -1,32 +1,31 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import type { Writable } from "svelte/store";
-  import { fly } from "svelte/transition";
-  import { slide } from "./theme";
-  import clsx from "clsx";
   import { type SlideProps, type State } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+  import { getContext } from "svelte";
+  import { fly } from "svelte/transition";
+  import { slide } from "./theme";
 
-  const state = getContext<Writable<State>>("state");
+  const _state = getContext<State>("state");
 
   let { image, transition, class: className, ...restProps }: SlideProps = $props();
 
   const theme = getTheme("slide");
 
   let transitionSlideIn = $derived({
-    x: $state.forward ? "100%" : "-100%",
+    x: _state.forward ? "100%" : "-100%",
     opacity: 1,
     width: "100%",
     height: "100%",
-    duration: $state.slideDuration
+    duration: _state.slideDuration
   });
 
   let transitionSlideOut = $derived({
-    x: $state.forward ? "-100%" : "100%",
+    x: _state.forward ? "-100%" : "100%",
     opacity: 0.9,
     width: "100%",
     height: "100%",
-    duration: $state.slideDuration
+    duration: _state.slideDuration
   });
 
   let imgClass = slide({ class: clsx(theme, className) });

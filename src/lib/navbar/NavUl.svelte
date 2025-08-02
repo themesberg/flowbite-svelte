@@ -1,13 +1,12 @@
 <script lang="ts">
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import type { NavbarState, NavUlProps } from "$lib/types";
+  import clsx from "clsx";
   import { getContext, setContext } from "svelte";
   import { sineIn } from "svelte/easing";
   import { prefersReducedMotion } from "svelte/motion";
-  import { writable } from "svelte/store";
-  import { slide, fly, fade, scale } from "svelte/transition";
-  import clsx from "clsx";
+  import { fade, fly, scale, slide } from "svelte/transition";
   import { navbarUl } from "./theme";
-  import type { NavbarState, NavUlProps } from "$lib/types";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let navState = getContext<NavbarState>("navState");
 
@@ -39,8 +38,6 @@
     return finalParams;
   });
 
-  const activeUrlStore = writable<string>("");
-
   let hidden: boolean = $derived(navState.hidden ?? true);
 
   let { base, ul, active, nonActive } = $derived(navbarUl({ hidden }));
@@ -50,8 +47,9 @@
     navState.nonActiveClass = nonActive({ class: clsx(theme?.nonActive, styling.nonActive) });
   });
 
+  let activeUrlStore = $state({ value: activeUrl });
   $effect(() => {
-    activeUrlStore.set(activeUrl ?? "");
+    activeUrlStore.value = activeUrl;
   });
   setContext("activeUrl", activeUrlStore);
 

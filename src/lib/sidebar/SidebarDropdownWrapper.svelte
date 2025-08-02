@@ -1,12 +1,12 @@
 <script lang="ts">
+  import { uiHelpers } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import type { ParamsType, SidebarDropdownWrapperProps } from "$lib/types";
+  import clsx from "clsx";
   import { getContext } from "svelte";
   import { writable, type Writable } from "svelte/store";
   import { slide } from "svelte/transition";
-  import { uiHelpers } from "$lib";
-  import { sidebarDropdownWrapper } from ".";
-  import type { SidebarDropdownWrapperProps, ParamsType } from "$lib/types";
-  import clsx from "clsx";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { sidebarDropdownWrapper } from "./theme";
 
   type SidebarContext = {
     selected?: Writable<object | null>;
