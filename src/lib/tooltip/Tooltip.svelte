@@ -9,8 +9,7 @@
 
   const theme = getTheme("tooltip");
 
-  let base = $derived(tooltip({ color, type, class: clsx(className) }));
-
+  const base = $derived(tooltip({ color, type, class: clsx(className) }));
   function onbeforetoggle(ev: TriggeredToggleEvent) {
     // block all focusable elements inside the tooltip
     if (ev.target instanceof HTMLElement) {
