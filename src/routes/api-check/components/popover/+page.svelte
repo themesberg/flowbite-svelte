@@ -207,7 +207,7 @@
       <Label for="password" class="mb-2">Your password</Label>
       <Input type="password" id="password" />
     </div>
-    <Checkbox divClass="mb-6">Remember me</Checkbox>
+    <Checkbox classes={{div:"mb-6"}}>Remember me</Checkbox>
     <Button type="submit">Submit</Button>
   </form>
   <Popover class="text-sm" triggeredBy="#password" placement="bottom">
