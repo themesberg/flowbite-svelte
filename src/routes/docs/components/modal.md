@@ -285,7 +285,7 @@ You can use five different modal sizing options starting from extra small to ext
 
   let openModal = $state(false);
   let size: ModalProps["size"] = $state("md"); // Set default value
-  
+
   function onclick(modalSize: ModalProps["size"]) {
     size = modalSize;
     openModal = true;
@@ -299,7 +299,6 @@ You can use five different modal sizing options starting from extra small to ext
   <Button onclick={() => onclick("lg")}>lg</Button>
   <Button onclick={() => onclick("xl")}>xl</Button>
 </div>
-
 
 <Modal form title="Terms of Service" bind:open={openModal} {size}>
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
@@ -319,10 +318,10 @@ You can use five different modal sizing options starting from extra small to ext
 
   let placement: ModalPlacementType = $state("center");
   let openPlacement = $state(false);
-  
+
   const setPlacement = (newPlacement: ModalPlacementType) => {
     placement = newPlacement;
-    console.log('placement: ', placement);
+    console.log("placement: ", placement);
     openPlacement = !openPlacement;
   };
 </script>
@@ -348,6 +347,7 @@ You can use five different modal sizing options starting from extra small to ext
   {/snippet}
 </Modal>
 ```
+
 ## Scrolling behaviour
 
 ```svelte example class="flex justify-center" hideResponsiveButtons

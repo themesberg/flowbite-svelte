@@ -86,7 +86,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger />
-  <NavUl {activeUrl} {activeClass} {nonActiveClass}>
+  <NavUl {activeUrl} classes={{ active: activeClass, nonActive: nonActiveClass }}>
     <NavLi href="/">Home</NavLi>
     <NavLi href="/docs/components/navbar">Navbar</NavLi>
     <NavLi href="/docs/components/accordion">Accordion</NavLi>
@@ -252,7 +252,7 @@ Use this example of a navbar element to also show a search input element that yo
 
 ```svelte
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Search, ToolbarButton, Button, Input } from "flowbite-svelte";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Search, ToolbarButton } from "flowbite-svelte";
   import { SearchOutline } from "flowbite-svelte-icons";
   import { fade } from "svelte/transition";
 </script>
@@ -292,7 +292,7 @@ Use the following navbar element to show a call to action button alongside the l
 
 ```svelte
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from "flowbite-svelte";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button } from "flowbite-svelte";
 </script>
 
 <Navbar>

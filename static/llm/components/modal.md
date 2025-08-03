@@ -271,19 +271,20 @@ You can use five different modal sizing options starting from extra small to ext
   import { Button, Modal, type ModalProps, P } from "flowbite-svelte";
 
   let openModal = $state(false);
-  let size: ModalProps["size"] = $state();
-  function onclick(ev: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) {
-    size = (ev.target as HTMLButtonElement).textContent as ModalProps["size"];
+  let size: ModalProps["size"] = $state("md"); // Set default value
+
+  function onclick(modalSize: ModalProps["size"]) {
+    size = modalSize;
     openModal = true;
   }
 </script>
 
 <div class="block space-y-4 md:space-y-0 md:space-x-4 rtl:space-x-reverse">
-  <Button size="xs" {onclick}>xs</Button>
-  <Button size="sm" {onclick}>sm</Button>
-  <Button size="md" {onclick}>md</Button>
-  <Button size="lg" {onclick}>lg</Button>
-  <Button size="xl" {onclick}>xl</Button>
+  <Button onclick={() => onclick("xs")}>xs</Button>
+  <Button onclick={() => onclick("sm")}>sm</Button>
+  <Button onclick={() => onclick("md")}>md</Button>
+  <Button onclick={() => onclick("lg")}>lg</Button>
+  <Button onclick={() => onclick("xl")}>xl</Button>
 </div>
 
 <Modal form title="Terms of Service" bind:open={openModal} {size}>
@@ -303,23 +304,25 @@ You can use five different modal sizing options starting from extra small to ext
   import { Button, Modal, type ModalPlacementType, P } from "flowbite-svelte";
 
   let placement: ModalPlacementType = $state("center");
-  const setPlacement = (ev: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) => {
-    placement = (ev.target as HTMLButtonElement).textContent as ModalPlacementType;
+  let openPlacement = $state(false);
+
+  const setPlacement = (newPlacement: ModalPlacementType) => {
+    placement = newPlacement;
+    console.log("placement: ", placement);
     openPlacement = !openPlacement;
   };
-  let openPlacement = $state(false);
 </script>
 
 <div class="inline-grid grid-cols-3 grid-rows-3 gap-4">
-  <Button onclick={setPlacement}>top-left</Button>
-  <Button onclick={setPlacement}>top-center</Button>
-  <Button onclick={setPlacement}>top-right</Button>
-  <Button onclick={setPlacement}>center-left</Button>
-  <Button onclick={setPlacement}>center</Button>
-  <Button onclick={setPlacement}>center-right</Button>
-  <Button onclick={setPlacement}>bottom-left</Button>
-  <Button onclick={setPlacement}>bottom-center</Button>
-  <Button onclick={setPlacement}>bottom-right</Button>
+  <Button onclick={() => setPlacement("top-left")}>top-left</Button>
+  <Button onclick={() => setPlacement("top-center")}>top-center</Button>
+  <Button onclick={() => setPlacement("top-right")}>top-right</Button>
+  <Button onclick={() => setPlacement("center-left")}>center-left</Button>
+  <Button onclick={() => setPlacement("center")}>center</Button>
+  <Button onclick={() => setPlacement("center-right")}>center-right</Button>
+  <Button onclick={() => setPlacement("bottom-left")}>bottom-left</Button>
+  <Button onclick={() => setPlacement("bottom-center")}>bottom-center</Button>
+  <Button onclick={() => setPlacement("bottom-right")}>bottom-right</Button>
 </div>
 
 <Modal title="Terms of Service" form bind:open={openPlacement} {placement}>
@@ -327,37 +330,6 @@ You can use five different modal sizing options starting from extra small to ext
   <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
   {#snippet footer()}
     <Button type="submit">I accept</Button>
-    <Button type="submit" color="alternative">Decline</Button>
-  {/snippet}
-</Modal>
-```
-
-## Colors
-
-```svelte
-<script lang="ts">
-  import { Button, Modal, type ButtonProps } from "flowbite-svelte";
-
-  let openColor = $state(false);
-  let color = $state();
-  function onclickColor(ev: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) {
-    color = (ev.target as HTMLButtonElement).textContent?.split(" ")[0].toLowerCase();
-    openColor = true;
-  }
-</script>
-
-<div class="block space-y-4 md:space-y-0 md:space-x-2 rtl:space-x-reverse">
-  <Button color="primary" onclick={onclickColor}>Primary modal</Button>
-  <Button color="red" onclick={onclickColor}>Red modal</Button>
-  <Button color="green" onclick={onclickColor}>Green modal</Button>
-  <Button color="blue" onclick={onclickColor}>Blue modal</Button>
-  <Button color="yellow" onclick={onclickColor}>Yellow modal</Button>
-</div>
-
-<Modal title="Terms of Service" form bind:open={openColor} {color}>
-  <div class="text-base leading-relaxed">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</div>
-  {#snippet footer()}
-    <Button type="submit" color={color as ButtonProps["color"]}>I accept</Button>
     <Button type="submit" color="alternative">Decline</Button>
   {/snippet}
 </Modal>
@@ -456,14 +428,14 @@ Use the `onclose` event handler to run code when the modal closes, regardless of
 You can as well use the `onsubmit` event handler which is bubbled event from the internal form.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Button, Modal, P } from "flowbite-svelte";
   let open = $state(false);
 </script>
 
 <Button onclick={() => (open = true)}>Default modal</Button>
 
-<Modal form bind:open onsubmit={(ev) => alert(`SUBMIT: Form is about to be submitted.`)} oncancel={(ev) => alert("CANCEL: User canceled the dialog")} onclose={(ev) => alert(`CLOSE: Dialog closed with "${ev.target.returnValue || "no"}" action.`)} title="Terms of Service">
+<Modal form bind:open onsubmit={(ev) => alert(`SUBMIT: Form is about to be submitted.`)} oncancel={(ev) => alert("CANCEL: User canceled the dialog")} onclose={(ev) => alert(`CLOSE: Dialog closed with "${(ev.target as HTMLDialogElement)?.returnValue || "no"}" action.`)} title="Terms of Service">
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
   <P>The European Union's General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
   {#snippet footer()}

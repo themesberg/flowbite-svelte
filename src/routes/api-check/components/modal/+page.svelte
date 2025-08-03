@@ -21,7 +21,7 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Pop-up modal </H2>
+<H2>Pop-up modal</H2>
 <CodeWrapper>
   <ExampleComponents.Popup />
   {#snippet codeblock()}

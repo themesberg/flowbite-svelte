@@ -3,7 +3,7 @@
 
   let openModal = $state(false);
   let size: ModalProps["size"] = $state("md"); // Set default value
-  
+
   function onclick(modalSize: ModalProps["size"]) {
     size = modalSize;
     openModal = true;

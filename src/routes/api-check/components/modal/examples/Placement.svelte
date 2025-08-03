@@ -3,10 +3,10 @@
 
   let placement: ModalPlacementType = $state("center");
   let openPlacement = $state(false);
-  
+
   const setPlacement = (newPlacement: ModalPlacementType) => {
     placement = newPlacement;
-    console.log('placement: ', placement);
+    console.log("placement: ", placement);
     openPlacement = !openPlacement;
   };
 </script>

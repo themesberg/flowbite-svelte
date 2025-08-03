@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.11.2
+
+### Patch Changes
+
+- fix: warnThemeDeprecation component names
+
 ## 1.11.1
 
 ### Patch Changes

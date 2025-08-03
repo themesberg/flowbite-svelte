@@ -93,7 +93,7 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>Sticky navbar </H2>
+<H2>Sticky navbar</H2>
 <CodeWrapper>
   <ExampleComponents.Sticky />
   {#snippet codeblock()}

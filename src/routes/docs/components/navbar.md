@@ -98,7 +98,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger />
-  <NavUl {activeUrl} classes={{active:activeClass,nonActive:nonActiveClass }} >
+  <NavUl {activeUrl} classes={{ active: activeClass, nonActive: nonActiveClass }}>
     <NavLi href="/">Home</NavLi>
     <NavLi href="/docs/components/navbar">Navbar</NavLi>
     <NavLi href="/docs/components/accordion">Accordion</NavLi>
