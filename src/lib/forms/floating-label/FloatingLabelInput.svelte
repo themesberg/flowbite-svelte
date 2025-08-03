@@ -8,7 +8,7 @@
 
   let { children, id = idGenerator(), value = $bindable(), elementRef = $bindable(), "aria-describedby": ariaDescribedby, variant = "standard", size = "default", color = "default", class: className, classes, inputClass, labelClass, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, ...restProps }: FloatingLabelInputProps = $props();
 
-  warnThemeDeprecation("Fileupload", { inputClass, labelClass, clearableSvgClass, clearableClass, comboClass }, { inputClass: "input", labelClass: "label", clearableSvgClass: "svg", clearableClass: "close", comboClass: "combo" });
+  warnThemeDeprecation("FloatingLabelInput", { inputClass, labelClass, clearableSvgClass, clearableClass, comboClass }, { inputClass: "input", labelClass: "label", clearableSvgClass: "svg", clearableClass: "close", comboClass: "combo" });
   const styling = $derived(classes ?? { input: inputClass, label: labelClass, svg: clearableSvgClass, close: clearableClass, combo: comboClass });
 
   const theme = getTheme("floatingLabelInput");
