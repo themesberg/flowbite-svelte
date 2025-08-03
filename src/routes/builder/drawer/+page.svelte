@@ -158,13 +158,13 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio labelClass="w-16 my-1" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      <Radio classes={{label:"w-16 my-1"}} name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Placement</Label>
     {#each placements as placement}
-      <Radio labelClass="w-16 my-1" name="interactive_placement" bind:group={selectedPlacement} value={placement.name}>{placement.name}</Radio>
+      <Radio classes={{label:"w-16 my-1"}} name="interactive_placement" bind:group={selectedPlacement} value={placement.name}>{placement.name}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
