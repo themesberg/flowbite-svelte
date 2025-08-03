@@ -1,91 +1,110 @@
 <script lang="ts">
-  import { PaginationNav } from "$lib";
-  import { ArrowLeftOutline, ArrowRightOutline } from "flowbite-svelte-icons";
+  import HighlightCompo from "../../../utils/api-check/HighlightCompo.svelte";
+  import CodeWrapper from "../../../utils/api-check/CodeWrapper.svelte";
+  import H1 from "../../../utils/api-check/H1.svelte";
+  import H2 from "../../../utils/api-check/H2.svelte";
 
-  const previous = () => {
-    alert("Previous btn clicked. Make a call to your server to fetch data.");
-  };
-  const next = () => {
-    alert("Next btn clicked. Make a call to your server to fetch data.");
-  };
-
-  // new pagination
-  let currentPage = $state(1);
-  const totalPages = 100;
-
-  function handlePageChange(page: number) {
-    currentPage = page;
-    // Additional logic here
-    console.log("Page changed to:", page);
-  }
+  import * as ExampleComponents from "./examples/";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
+    eager: true
+  }) as Record<string, string>;
 </script>
 
-<h1 class="my-4 text-3xl">Pagination</h1>
+<H1>Pagination</H1>
+<H2>Default: PaginationNav</H2>
+<CodeWrapper innerClass="flex flex-col justify-center items-center gap-3">
+  <ExampleComponents.Default />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Default.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<p>The pagination component can be used to navigate across a series of content and data sets for various pages such as blog posts, products, and more. You can use multiple variants of this component with or without icons and even for paginating table data entries.</p>
+<H2>Default: Pagination, PaginationItem</H2>
+<CodeWrapper innerClass="flex flex-col justify-center items-center gap-3">
+  <ExampleComponents.Default2 />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Default2.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Pagination</h2>
+<H2>Pagination with icons: PaginationNav</H2>
+<CodeWrapper innerClass="flex flex-col justify-center items-center gap-3">
+  <ExampleComponents.Icons />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Icons.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} />
-  <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} size="large" />
-</div>
+<H2>Pagination with icons: Pagination, PaginationItem</H2>
+<CodeWrapper>
+  <ExampleComponents.Icons2 />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Icons2.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Pagination with icons</h2>
+<H2>Previous and next: PaginationNav</H2>
+<CodeWrapper innerClass="flex flex-col justify-center items-center gap-3">
+  <ExampleComponents.PreviousNext />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/PreviousNext.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <div class="flex flex-col items-center justify-center gap-3">
-    <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange}>
-      {#snippet prevContent()}
-        <span class="sr-only">Previous</span>
-        <ArrowLeftOutline class="h-5 w-5" />
-      {/snippet}
-      {#snippet nextContent()}
-        <span class="sr-only">Next</span>
-        <ArrowRightOutline class="h-5 w-5" />
-      {/snippet}
-    </PaginationNav>
-  </div>
-</div>
+<H2>Previous and next: Pagination, PaginationItem</H2>
+<CodeWrapper innerClass="flex flex-col justify-center items-center gap-3">
+  <ExampleComponents.PreviousNext2 />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/PreviousNext2.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Pagination Previous and next</h2>
+<H2>Previous and next with icons: PaginationNav</H2>
+<CodeWrapper innerClass="flex flex-col justify-center items-center gap-3">
+  <ExampleComponents.PreviousNextIcons />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/PreviousNextIcons.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation" />
-</div>
+<H2>Previous and next with icons: Pagination, PaginationItem</H2>
+<CodeWrapper innerClass="flex flex-col justify-center items-center gap-3">
+  <ExampleComponents.PreviousNextIcons2 />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/PreviousNextIcons2.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Pagination - Previous and next with icons</h2>
+<H2>Table data pagination: PaginationNav</H2>
+<CodeWrapper innerClass="flex flex-col justify-center items-center gap-3">
+  <ExampleComponents.TableData />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/TableData.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation">
-    {#snippet prevContent()}
-      <ArrowLeftOutline class="h-5 w-5" />
-      Previous
-    {/snippet}
-    {#snippet nextContent()}
-      Next
-      <ArrowRightOutline class="h-5 w-5" />
-    {/snippet}
-  </PaginationNav>
-</div>
+<H2>Table data pagination: Pagination, PaginationItem</H2>
+<CodeWrapper>
+  <ExampleComponents.TableData2 />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/TableData2.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Pagination Table data pagination</h2>
+<H2>Table data pagination with icons: PaginationNav</H2>
+<CodeWrapper innerClass="flex flex-col justify-center items-center">
+  <ExampleComponents.TableDataIcons />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/TableDataIcons.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="table" />
-</div>
-
-<h2 class="my-4 text-2xl">Pagination Table data pagination with icons</h2>
-
-<div class="my-4 flex flex-col items-center justify-center gap-3 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="table">
-    {#snippet prevContent()}
-      <ArrowLeftOutline class="h-5 w-5" />
-      Previous
-    {/snippet}
-    {#snippet nextContent()}
-      Next
-      <ArrowRightOutline class="h-5 w-5" />
-    {/snippet}
-  </PaginationNav>
-</div>
+<H2>Table data pagination with icons: Pagination, PaginationItem</H2>
+<CodeWrapper>
+  <ExampleComponents.TableDataIcons2 />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/TableDataIcons2.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
