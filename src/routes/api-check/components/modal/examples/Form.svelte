@@ -1,12 +1,13 @@
-<script>
+<script lang="ts">
   import { Button, Modal, Label, Input, Checkbox } from "flowbite-svelte";
+  
   let formModal = $state(false);
   let error = $state("");
 
-  function onaction({ action, data }) {
+  function onaction({ action, data }: { action: string; data: FormData }) {
     error = "";
     // Check the data validity, return false to prevent dialog closing; anything else to proceed
-    if (action == "login" && data.get("password").length < 4) {
+    if (action === "login" && (data.get("password") as string)?.length < 4) {
       error = "Password must have at least 4 characters";
       return false;
     }
