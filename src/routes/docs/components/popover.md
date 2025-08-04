@@ -296,7 +296,7 @@ Set the position of the popover component relative to the trigger element by usi
 
 ```svelte example class="flex gap-4 flex-col justify-center items-center h-96" hideResponsiveButtons
 <script lang="ts">
-  import { Popover, Button } from "flowbite-svelte";
+  import { Popover, Button, type PopoverProps } from "flowbite-svelte";
   let placement = $state("bottom");
 
   function onbeforetoggle(ev: Event) {
@@ -380,7 +380,6 @@ If you need the popover to be attached to the other element then the tiggering o
 ```svelte example class="flex gap-4 flex-col justify-end items-center h-64" hideResponsiveButtons
 <script>
   import { Popover, Button } from "flowbite-svelte";
-  let placement = "";
 </script>
 
 <div id="ext-ref" class="my-4 rounded-lg border border-gray-200 p-2 dark:border-gray-600">External reference</div>

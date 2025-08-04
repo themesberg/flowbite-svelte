@@ -54,7 +54,7 @@
 
 <div class={base({ className })}>
   <div class="relative">
-    <div class="overflow-hidden p-6 {showExpandButton ? 'pb-16' : ''}" class:max-h-72={!expand} tabindex="-1" use:checkOverflow>
+    <div class="overflow-x-auto p-6 {showExpandButton ? 'pb-16' : ''}" class:max-h-72={!expand} tabindex="-1" use:checkOverflow>
       {#if copiedStatus}
         <Badge class={badge({ class: badgeClass })} color="green">Copied to clipboard</Badge>
       {/if}
