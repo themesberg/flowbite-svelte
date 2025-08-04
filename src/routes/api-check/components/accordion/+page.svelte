@@ -3,7 +3,6 @@
   import CodeWrapper from "../../../utils/api-check/CodeWrapper.svelte";
   import H1 from "../../../utils/api-check/H1.svelte";
   import H2 from "../../../utils/api-check/H2.svelte";
-  const dirName = "accordion";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
   import * as ExampleComponents from "./examples";
