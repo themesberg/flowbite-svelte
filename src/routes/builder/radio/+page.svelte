@@ -93,7 +93,7 @@ ${helperSlot ? `<Helper class="ps-6" color="${helperColor}">Helper text</Helper>
 <H1>Radio Builder</H1>
 <CodeWrapper>
   <div class="mb-4">
-    <Radio class={inputClass} classes={{label:labelClass}} name="radio_interactive" {disabled} color={demoRadioColor} checked={isChecked}>Radio</Radio>
+    <Radio class={inputClass} classes={{ label: labelClass }} name="radio_interactive" {disabled} color={demoRadioColor} checked={isChecked}>Radio</Radio>
     {#if helperSlot}
       <Helper id="helper-radio-text" color={helperColor} class="ps-6">For orders shipped from $25 in books or $29 in other categories</Helper>
     {/if}

@@ -48,7 +48,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L212)
+[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L201)
 ## Props
 @prop children
 @prop indicator

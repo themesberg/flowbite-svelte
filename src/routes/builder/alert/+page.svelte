@@ -159,7 +159,7 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio disabled={dismissable ? false : true} classes={{label:"w-16 my-1 {dismissable ? '' : 'opacity-30 cursor-not-allowed'}"}}  name="transition_interactive" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      <Radio disabled={dismissable ? false : true} classes={{ label: "w-16 my-1 {dismissable ? '' : 'opacity-30 cursor-not-allowed'}" }} name="transition_interactive" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

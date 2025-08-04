@@ -109,12 +109,10 @@
   {/snippet}
 </CodeWrapper>
 
-<H2>External reference </H2>
+<H2>External reference</H2>
 <CodeWrapper innerClass="flex gap-4 flex-col justify-end items-center h-64">
   <ExampleComponents.External />
   {#snippet codeblock()}
     <HighlightCompo codeLang="ts" code={exampleModules["./examples/External.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
-
-

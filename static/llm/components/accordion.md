@@ -193,13 +193,13 @@ Use `multiple` to open all accordion items.
 </script>
 
 <Accordion multiple>
-  <AccordionItem>
+  <AccordionItem open>
     {#snippet header()}
       Header 1-1
     {/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
-  <AccordionItem>
+  <AccordionItem open>
     {#snippet header()}
       Header 1-2
     {/snippet}
@@ -212,8 +212,8 @@ Another example how to use the `multiple` option together with expand all behavi
 
 ```svelte
 <script>
-  import { AccordionItem, Accordion, Button } from "flowbite-svelte";
-  const items = [false, false, false];
+  import { AccordionItem, Accordion, Button, P } from "flowbite-svelte";
+  const items = $state([false, false, false]);
 
   const open_all = () => items.forEach((_, i) => (items[i] = true));
   const close_all = () => items.forEach((_, i) => (items[i] = false));
@@ -224,21 +224,21 @@ Another example how to use the `multiple` option together with expand all behavi
 <Accordion multiple>
   <AccordionItem bind:open={items[0]}>
     {#snippet header()}My Header 1{/snippet}
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    <p class="text-gray-500 dark:text-gray-400">
+    <P class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</P>
+    <P class="text-gray-500 dark:text-gray-400">
       Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">get started</a>
       and start developing websites even faster with components on top of Tailwind CSS.
-    </p>
+    </P>
   </AccordionItem>
   <AccordionItem bind:open={items[1]}>
     {#snippet header()}My Header 2{/snippet}
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+    <P class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</P>
+    <P class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</P>
+    <P class="mb-2">Learn more about these technologies:</P>
   </AccordionItem>
   <AccordionItem bind:open={items[2]}>
     {#snippet header()}My Header 3{/snippet}
-    <p>Something more</p>
+    <P>Something more</P>
   </AccordionItem>
 </Accordion>
 ```
@@ -408,7 +408,7 @@ When you set transitionType="none" on an Accordion or an AccordionItem, it disab
 
 #### Types
 
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L179)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L168)
 
 #### Props
 
@@ -424,7 +424,7 @@ When you set transitionType="none" on an Accordion or an AccordionItem, it disab
 
 #### Types
 
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L187)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L176)
 
 #### Props
 

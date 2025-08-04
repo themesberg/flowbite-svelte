@@ -4,7 +4,7 @@ import type { Component, Snippet } from "svelte";
 import type { ClassValue, HTMLAnchorAttributes, HTMLAttributes, HTMLBlockquoteAttributes, HTMLButtonAttributes, HTMLDialogAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLLiAttributes, HTMLOlAttributes, HTMLSelectAttributes, HTMLSourceAttributes, HTMLTableAttributes, HTMLTdAttributes, HTMLTextareaAttributes, HTMLThAttributes, HTMLTrackAttributes, HTMLVideoAttributes, SVGAttributes, FullAutoFill } from "svelte/elements";
 import { type Writable } from "svelte/store";
 import type { BlurParams, EasingFunction, FadeParams, FlyParams, ScaleParams, SlideParams, TransitionConfig } from "svelte/transition";
-import { tv, type VariantProps } from "tailwind-variants";
+import { type VariantProps } from "tailwind-variants";
 import type { Day } from "date-fns";
 
 // component variants
@@ -106,11 +106,7 @@ export interface drawerTransitionParamTypes {
   y?: number;
 }
 
-export type FormSizeType = "sm" | "md" | "lg";
-
-// closebutton
-
-// export type CloseButtonVariants = VariantProps<typeof closeButton>;
+// CloseButton
 
 export type CloseButtonProps = CloseButtonVariants &
   AnchorButtonAttributes & {
@@ -134,8 +130,6 @@ export type DeviceVariantType = "default" | "ios" | "android" | "tablet" | "lapt
 
 export declare type SizeType = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
 
-export type TransitionTypes = "fade" | "fly" | "slide" | "blur" | "in:fly" | "out:fly" | "in:slide" | "out:slide" | "in:fade" | "out:fade" | "in:blur" | "out:blur";
-
 export interface TransitionParamTypes {
   delay?: number;
   duration?: number;
@@ -147,8 +141,6 @@ export interface TransitionParamTypes {
 export type ParamsType = FadeParams | BlurParams | FlyParams | SlideParams | ScaleParams | undefined;
 
 export type TransitionFunc = (node: HTMLElement, params: ParamsType) => TransitionConfig;
-
-export type ModalPlacementType = "top-left" | "top-center" | "top-right" | "center-left" | "center" | "center-right" | "bottom-left" | "bottom-center" | "bottom-right";
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 export interface LinkType {
@@ -228,7 +220,6 @@ export interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivEl
   target?: HTMLAnchorAttributes["target"];
   transition?: TransitionFunc;
   params?: ParamsType;
-  onclose?: (ev: Event) => void;
   aClass?: ClassValue;
 }
 
@@ -357,7 +348,7 @@ export interface ButtonToggleContext {
   isSelected: (toggleValue: string) => boolean;
 }
 
-export interface CheckIconProps extends SVGAttributes<SVGSVGElement> { }
+export interface CheckIconProps extends SVGAttributes<SVGSVGElement> {}
 
 // card
 export type CardProps = Omit<CardVariants, "href"> &
@@ -584,7 +575,7 @@ export interface DropdownProps extends PopperProps {
   isOpen?: boolean;
 }
 
-export interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> { }
+export interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {}
 
 export interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
@@ -660,15 +651,7 @@ export interface CheckboxItem {
 }
 
 export interface CheckboxProps extends CheckboxVariants, Omit<HTMLInputAttributes, "children" | "color" | "disabled"> {
-  children?: Snippet<
-    [
-      | {
-        value?: string | number;
-        checked: boolean;
-      }
-      | CheckboxItem
-    ]
-  >;
+  children?: Snippet<[{ value?: string | number; checked: boolean } | CheckboxItem]>;
   custom?: boolean;
   inline?: boolean;
   tinted?: boolean;
@@ -740,7 +723,7 @@ export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, O
 }
 
 // helper
-export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> { }
+export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> {}
 
 // input
 export type InputValue = string | number | string[] | undefined;
@@ -784,7 +767,7 @@ export interface InputProps<T extends InputValue = string> extends InputVariants
 // input-addon
 export interface InputAddonProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
-  size?: "sm" | "md" | "lg";
+  size?: ButtonGroupProps["size"];
 }
 
 // phoneInput
@@ -934,7 +917,7 @@ export interface TimepickerProps {
   timeIntervals?: string[];
   columns?: ColumnCount;
   // Callback props instead of events
-  onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
+  onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
 }
 
 // textarea
@@ -1093,7 +1076,7 @@ export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "child
   closeOnClickOutside?: boolean;
 }
 
-export interface NavBrandProps extends HTMLAnchorAttributes { }
+export interface NavBrandProps extends HTMLAnchorAttributes {}
 
 export interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
   fluid?: boolean;
@@ -1130,7 +1113,7 @@ export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLD
   end?: Snippet;
 }
 
-export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> { }
+export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
 
 export type ToolbarButtonProps = ToolbarButtonVariants &
   AnchorButtonAttributes & {
@@ -1439,7 +1422,7 @@ export interface SkeletonProps extends SkeletonVariants, HTMLAttributes<HTMLDivE
   size?: SkeletonVariants["size"];
 }
 
-export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
+export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
 
 export interface TextPlaceholderProps extends TextPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
   size?: TextPlaceholderVariants["size"];
@@ -1449,7 +1432,7 @@ export interface VideoPlaceholderProps extends VideoPlaceholderVariants, HTMLAtt
   size?: VideoPlaceholderVariants["size"];
 }
 
-export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
+export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
 
 // speeddial
 export interface SpeedCtxType {
@@ -1832,7 +1815,6 @@ export interface ToastProps extends ToastVaraints, HTMLAttributes<HTMLDivElement
   params?: ParamsType;
   transition?: TransitionFunc;
   class?: string;
-  onclose?: () => void;
 }
 
 // tooltip

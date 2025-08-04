@@ -125,13 +125,13 @@
     <div class="mb-4 flex flex-wrap space-x-4">
       <Label class="mb-4 w-full font-bold">Color</Label>
       {#each colors as colorOption}
-        <Radio classes={{label:"w-24 my-1"}}  name="color" bind:group={color} color={colorOption as BannerProps["color"]} value={colorOption}>{colorOption}</Radio>
+        <Radio classes={{ label: "w-24 my-1" }} name="color" bind:group={color} color={colorOption as BannerProps["color"]} value={colorOption}>{colorOption}</Radio>
       {/each}
     </div>
     <div class="mb-4 flex flex-wrap space-x-4">
       <Label class="mb-4 w-full font-bold">Transition</Label>
       {#each transitions as transition}
-        <Radio classes={{label:"w-16 my-1"}} name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+        <Radio classes={{ label: "w-16 my-1" }} name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
       {/each}
     </div>
   </div>

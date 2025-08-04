@@ -283,7 +283,7 @@ The color can be changed dynamically.
 
 #### Types
 
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L224)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L213)
 
 #### Props
 
@@ -302,7 +302,6 @@ The color can be changed dynamically.
 - transition: fade
 - params
 - aClass
-- onclose
 
 
 ## References

@@ -7,7 +7,7 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable.svelte";
 
-  let { children, hidden = $bindable(), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, classes, transitionParams, transitionType = fly, bodyScrolling = false, onclose, ...restProps }: DrawerProps = $props();
+  let { children, hidden = $bindable(), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, classes, transitionParams, transitionType = fly, bodyScrolling = false, ...restProps }: DrawerProps = $props();
 
   warnThemeDeprecation("Drawer", { backdropClass }, { backdropClass: "backdrop" });
   const styling = $derived(classes ?? { backdrop: backdropClass });
@@ -43,7 +43,7 @@
 <svelte:window bind:innerWidth bind:innerHeight />
 
 {#if !hidden}
-  <div role="presentation" bind:this={ref} {onclose} class={backdropCls({ class: clsx(theme?.backdrop, styling.backdrop) })} onclick={activateClickOutside ? close : undefined} style={bodyScrolling ? "pointer-events: none;" : ""}></div>
+  <div role="presentation" bind:this={ref} class={backdropCls({ class: clsx(theme?.backdrop, styling.backdrop) })} onclick={activateClickOutside ? close : undefined} style={bodyScrolling ? "pointer-events: none;" : ""}></div>
   <div use:trapFocus={{ onEscape: close as () => void }} {...restProps} class={base({ class: clsx(theme?.base, className) })} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
     {@render children?.()}
   </div>
@@ -53,7 +53,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L566)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L554)
 ## Props
 @prop children
 @prop hidden = $bindable()
@@ -68,6 +68,5 @@
 @prop transitionParams
 @prop transitionType = fly
 @prop bodyScrolling = false
-@prop onclose
 @prop ...restProps
 -->

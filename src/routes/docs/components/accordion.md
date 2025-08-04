@@ -226,7 +226,7 @@ Another example how to use the `multiple` option together with expand all behavi
 <script>
   import { AccordionItem, Accordion, Button, P } from "flowbite-svelte";
   const items = $state([false, false, false]);
-  
+
   const open_all = () => items.forEach((_, i) => (items[i] = true));
   const close_all = () => items.forEach((_, i) => (items[i] = false));
 </script>

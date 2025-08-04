@@ -70,10 +70,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1110)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1091)
 ## Props
 @prop children
-@prop activeUrl
+@prop activeUrl = $bindable()
 @prop ulClass
 @prop slideParams
 @prop transition = slide
