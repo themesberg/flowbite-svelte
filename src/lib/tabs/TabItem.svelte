@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { type TabCtxType, type TabitemProps } from "$lib";
+  import { type SelectedTab, type TabCtxType, type TabitemProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
+  import { useSingleSelection } from "$lib/utils/singleselection.svelte";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { tabItem, tabs } from ".";
 
-  let { children, titleSlot, open = false, title = "Tab title", activeClass, inactiveClass, class: className, classes, disabled, tabStyle, ...restProps }: TabitemProps = $props();
+  let { children, titleSlot, open = $bindable(false), title = "Tab title", activeClass, inactiveClass, class: className, classes, disabled, tabStyle, ...restProps }: TabitemProps = $props();
 
   const theme = getTheme("tabItem");
 
@@ -17,16 +18,14 @@
   // Generate a unique ID for this tab button
   const tabId = `tab-${Math.random().toString(36).substring(2)}`;
 
-  function init(node: HTMLElement) {
-    ctx.selected = node;
-    $effect(() => {
-      if (ctx.selected !== node) {
-        open = false;
-      }
-    });
-  }
+  const updateSingleSelection = useSingleSelection<SelectedTab>((value) => (open = value.id === tabId));
 
-  const { base, button, content } = $derived(tabItem({ open, disabled }));
+  $effect(() => {
+    // monitor if open changes out side of that component
+    updateSingleSelection?.(open, { snippet: children, id: tabId });
+  });
+
+  const { base, button } = $derived(tabItem({ open, disabled }));
 </script>
 
 <li {...restProps} class={base({ class: clsx(theme?.base, className) })} role="presentation">
@@ -37,14 +36,6 @@
       {title}
     {/if}
   </button>
-
-  {#if open && children}
-    <div class={content({ class: clsx(theme?.content, classes?.content) })}>
-      <div use:init>
-        {@render children()}
-      </div>
-    </div>
-  {/if}
 </li>
 
 <!--

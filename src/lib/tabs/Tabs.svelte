@@ -1,8 +1,9 @@
 <script lang="ts">
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import type { TabCtxType, TabsProps } from "$lib/types";
+  import type { SelectedTab, TabCtxType, TabsProps } from "$lib/types";
+  import { createSingleSelectionContext, useSingleSelection } from "$lib/utils/singleselection.svelte";
   import clsx from "clsx";
-  import { setContext } from "svelte";
+  import { setContext, type Snippet } from "svelte";
   import { tabs } from ".";
 
   let { children, tabStyle = "none", ulClass, contentClass, divider = true, class: className, classes, ...restProps }: TabsProps = $props();
@@ -28,9 +29,10 @@
 
   setContext("ctx", ctx);
 
-  function init(node: HTMLElement) {
-    if (ctx.selected) node.replaceChildren(ctx.selected);
-  }
+  createSingleSelectionContext<SelectedTab>();
+
+  let selected: SelectedTab = $state({});
+  useSingleSelection<SelectedTab>((v) => (selected = v));
 </script>
 
 <ul role="tablist" {...restProps} class={base({ class: clsx(theme?.base, className ?? ulClass) })}>
@@ -39,7 +41,9 @@
 {#if dividerBool}
   <div class={dividerClass({ class: clsx(theme?.divider, classes?.divider) })}></div>
 {/if}
-<div id={panelId} class={content({ class: clsx(theme?.content, styling.content) })} role="tabpanel" aria-labelledby={ctx.selected?.id} {@attach init}></div>
+<div id={panelId} class={content({ class: clsx(theme?.content, styling.content) })} role="tabpanel" aria-labelledby={selected.id}>
+  {@render selected.snippet?.()}
+</div>
 
 <!--
 @component

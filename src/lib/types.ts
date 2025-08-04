@@ -167,13 +167,9 @@ export type AnchorButtonDivAttributes = ({ href: string } & HTMLAnchorAttributes
 
 // accordion
 export interface AccordionCtxType {
-  flush: boolean;
+  flush?: boolean;
   activeClass?: string | null;
   inactiveClass?: string | null;
-  selected?: { value: symbol | null };
-  classActive?: string;
-  classInactive?: string;
-  multiple?: boolean;
   transitionType?: TransitionFunc | "none";
 }
 
@@ -1087,6 +1083,7 @@ export type NavbarState = {
   hidden: boolean;
   activeClass?: string;
   nonActiveClass?: string;
+  activeUrl?: string;
 };
 
 export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
@@ -1738,9 +1735,10 @@ export interface TabCtxType {
   activeClass?: string;
   inactiveClass?: string;
   tabStyle?: TabsVaraints["tabStyle"];
-  selected?: HTMLElement;
   panelId: string;
 }
+
+export type SelectedTab = { snippet?: Snippet; id?: string };
 
 // theme
 //export interface ThemeConfig {

@@ -2,7 +2,7 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import type { NavbarState, NavUlProps } from "$lib/types";
   import clsx from "clsx";
-  import { getContext, setContext } from "svelte";
+  import { getContext } from "svelte";
   import { sineIn } from "svelte/easing";
   import { prefersReducedMotion } from "svelte/motion";
   import { fade, fly, scale, slide } from "svelte/transition";
@@ -10,7 +10,7 @@
 
   let navState = getContext<NavbarState>("navState");
 
-  let { children, activeUrl, ulClass, slideParams, transition = slide, transitionParams, activeClass, nonActiveClass, respectMotionPreference = true, class: clasName, classes, ...restProps }: NavUlProps = $props();
+  let { children, activeUrl = $bindable(), ulClass, slideParams, transition = slide, transitionParams, activeClass, nonActiveClass, respectMotionPreference = true, class: clasName, classes, ...restProps }: NavUlProps = $props();
 
   warnThemeDeprecation("NavUl", { ulClass, activeClass, nonActiveClass }, { ulClass: "ul", activeClass: "active", nonActiveClass: "nonActive" });
   const styling = $derived(classes ?? { ul: ulClass, active: activeClass, nonActive: nonActiveClass });
@@ -45,13 +45,8 @@
   $effect(() => {
     navState.activeClass = active({ class: clsx(theme?.active, styling.active) });
     navState.nonActiveClass = nonActive({ class: clsx(theme?.nonActive, styling.nonActive) });
+    navState.activeUrl = activeUrl;
   });
-
-  let activeUrlStore = $state({ value: activeUrl });
-  $effect(() => {
-    activeUrlStore.value = activeUrl;
-  });
-  setContext("activeUrl", activeUrlStore);
 
   let divCls: string = $derived(base({ class: clsx(theme?.base, clasName) }));
   let ulCls: string = $derived(ul({ class: clsx(theme?.ul, styling.ul) }));

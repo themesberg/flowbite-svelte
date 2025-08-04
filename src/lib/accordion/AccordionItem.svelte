@@ -1,6 +1,7 @@
 <script lang="ts">
   import { type AccordionCtxType, type AccordionItemProps, type ParamsType } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { useSingleSelection } from "$lib/utils/singleselection.svelte";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { slide } from "svelte/transition";
@@ -38,17 +39,14 @@
   // single selection
   const self = Symbol("accordion-item");
 
-  const nonSharedState = $state({ value: undefined }); // case for 'multiple' option
-  let selected = ctx.selected ?? nonSharedState;
-
-  if (open) selected.value = self;
+  const updateSingleSelection = useSingleSelection<symbol>((value) => (open = value === self));
 
   $effect(() => {
-    open = selected.value === self;
+    updateSingleSelection(open, self);
   });
 
   const handleToggle = () => {
-    selected.value = open ? undefined : self;
+    open = !open;
   };
 
   const { base, button, content, active, inactive } = $derived(accordionItem({ flush: ctx.flush, open }));

@@ -11,9 +11,7 @@
 
   const theme = getTheme("navbarLi");
 
-  const activeUrl: { value: string } = getContext("activeUrl");
-
-  let active = $derived(activeUrl?.value ? restProps.href === activeUrl?.value : false);
+  let active = $derived(navState.activeUrl ? restProps.href === navState.activeUrl : false);
   let liClass = $derived(navbarLi({ hidden: navState.hidden, class: clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), theme, className) }));
 </script>
 

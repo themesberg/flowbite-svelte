@@ -55,7 +55,10 @@
 
     if (duration > 0) {
       intervalId = setInterval(nextSlide, duration);
-      if (initialized) _state.forward ? nextSlide() : prevSlide();
+      if (initialized) {
+        if (_state.forward) nextSlide();
+        else prevSlide();
+      }
     }
 
     return () => clearInterval(intervalId);
