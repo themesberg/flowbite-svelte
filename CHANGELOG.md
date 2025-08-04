@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.11.3
+
+### Patch Changes
+
+- - 6e0a070b7 chore: dependencies update
+  - 794c35a7c fix(api-check): accordion
+  - 99af59c91 cleanup: onclose + lib-helpers (#1704)
+  - eb695f615 Stores (#1703)
+  - 4fa701e96 fix(api-check): popover
+  - 1e848aa77 fix(api-check): pagination
+  - 0171e25ab fix(Checkbox): classes
+  - 055b662a7 fix(Radio): classes, labelClass and inputClass
+
 ## 1.11.2
 
 ### Patch Changes
