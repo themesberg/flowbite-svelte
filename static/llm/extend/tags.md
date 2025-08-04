@@ -85,7 +85,7 @@ Import the `Tags` component in a script tag.
 
 #### Types
 
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L891)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L871)
 
 #### Props
 

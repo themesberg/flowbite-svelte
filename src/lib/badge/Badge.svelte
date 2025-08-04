@@ -6,7 +6,7 @@
   import { badge } from ".";
   import { createDismissableContext } from "$lib/utils/dismissable.svelte";
 
-  let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, classes, border, href, target, rounded, transition = fade, params, aClass, onclose, ...restProps }: BadgeProps = $props();
+  let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, classes, border, href, target, rounded, transition = fade, params, aClass, ...restProps }: BadgeProps = $props();
 
   warnThemeDeprecation("Badge", { aClass }, { aClass: "linkClass" });
 
@@ -19,7 +19,7 @@
 
   let ref: HTMLDivElement | undefined = $state(undefined);
 
-  const close = (ev: MouseEvent) => {
+  const close = (ev: Event) => {
     if (ref?.dispatchEvent(new Event("close", { bubbles: true, cancelable: true }))) {
       badgeStatus = false;
     }
@@ -29,7 +29,7 @@
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} bind:this={ref} transition:transition={params as ParamsType} {onclose} class={base({ class: clsx(theme?.base, className) })}>
+  <div {...restProps} bind:this={ref} transition:transition={params as ParamsType} class={base({ class: clsx(theme?.base, className) })}>
     {#if href}
       <a {href} {target} class={linkClass({ class: clsx(theme?.linkClass, styling.linkClass) })}>
         {@render children()}
@@ -54,7 +54,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L224)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L213)
 ## Props
 @prop children
 @prop icon
@@ -71,6 +71,5 @@
 @prop transition = fade
 @prop params
 @prop aClass
-@prop onclose
 @prop ...restProps
 -->

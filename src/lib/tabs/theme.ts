@@ -55,7 +55,7 @@ export const tabs = tv({
 export const tabItem = tv({
   slots: {
     base: "group focus-within:z-10",
-    button: "inline-block text-sm font-medium text-center disabled:cursor-not-allowed",
+    button: "inline-block text-sm font-medium text-center disabled:cursor-not-allowed"
   },
   variants: {
     open: {

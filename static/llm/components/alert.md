@@ -325,7 +325,7 @@ Use the `onclick` event with `dismissable` prop.
 
 #### Types
 
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L201)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L190)
 
 #### Props
 
@@ -340,7 +340,6 @@ Use the `onclick` event with `dismissable` prop.
 - dismissable
 - transition: fade
 - params
-- onclose
 
 
 ## References

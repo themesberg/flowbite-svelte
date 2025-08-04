@@ -52,7 +52,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1583)
+[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1564)
 ## Props
 @prop children
 @prop steps = []

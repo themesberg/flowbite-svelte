@@ -6,7 +6,7 @@
   import { getTheme } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable.svelte";
 
-  let { children, icon, alertStatus = $bindable(true), closeIcon: CloseIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, onclose, ...restProps }: AlertProps = $props();
+  let { children, icon, alertStatus = $bindable(true), closeIcon: CloseIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, ...restProps }: AlertProps = $props();
 
   // Theme context
   const theme = getTheme("alert");
@@ -34,7 +34,7 @@
 </script>
 
 {#if alertStatus}
-  <div role="alert" bind:this={ref} {...restProps} {onclose} transition:transition={params as ParamsType} class={divCls}>
+  <div role="alert" bind:this={ref} {...restProps} transition:transition={params as ParamsType} class={divCls}>
     {#if icon}
       {@render icon()}
     {/if}
@@ -63,7 +63,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L201)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L190)
 ## Props
 @prop children
 @prop icon
@@ -76,6 +76,5 @@
 @prop dismissable
 @prop transition = fade
 @prop params
-@prop onclose
 @prop ...restProps
 -->

@@ -42,11 +42,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1725)
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1706)
 ## Props
 @prop children
 @prop titleSlot
-@prop open = false
+@prop open = $bindable(false)
 @prop title = "Tab title"
 @prop activeClass
 @prop inactiveClass

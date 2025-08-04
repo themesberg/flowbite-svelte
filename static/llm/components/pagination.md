@@ -50,11 +50,11 @@ Use the following list of pagination items to indicate a series of content for y
 
   let activeUrl = $derived(page.url.searchParams.get("page"));
   let pages = $state([
-    { name: "1", href: "/docs/components/pagination?page=1" },
-    { name: "2", href: "/docs/components/pagination?page=2" },
-    { name: "3", href: "/docs/components/pagination?page=3" },
-    { name: "4", href: "/docs/components/pagination?page=4" },
-    { name: "5", href: "/docs/components/pagination?page=5" }
+    { name: "1", href: "/docs/components/pagination?page=1", active: false },
+    { name: "2", href: "/docs/components/pagination?page=2", active: false },
+    { name: "3", href: "/docs/components/pagination?page=3", active: false },
+    { name: "4", href: "/docs/components/pagination?page=4", active: false },
+    { name: "5", href: "/docs/components/pagination?page=5", active: false }
   ]);
 
   $effect(() => {
@@ -190,7 +190,7 @@ Use the following markup to show simple previous and next elements.
 
 ```svelte
 <script>
-  import { Pagination, PaginationItem } from "flowbite-svelte";
+  import { PaginationItem } from "flowbite-svelte";
   const previous = () => {
     alert("Previous btn clicked. Make a call to your server to fetch data.");
   };
@@ -256,7 +256,7 @@ Use the following code to show simple previous and next elements with icons.
 
 ```svelte
 <script>
-  import { Pagination, PaginationItem } from "flowbite-svelte";
+  import { PaginationItem } from "flowbite-svelte";
   import { ArrowLeftOutline, ArrowRightOutline } from "flowbite-svelte-icons";
   const previous = () => {
     alert("Previous btn clicked. Make a call to your server to fetch data.");
@@ -317,7 +317,7 @@ You can use the following markup to show the number of data shown inside a table
 
 ```svelte
 <script>
-  import { Pagination, PaginationItem } from "flowbite-svelte";
+  import { Pagination } from "flowbite-svelte";
 
   let helper = { start: 1, end: 10, total: 100 };
 
@@ -429,7 +429,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1190)
+[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1171)
 
 #### Props
 
@@ -446,7 +446,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1161)
+[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1142)
 
 #### Props
 
@@ -462,7 +462,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1186)
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1167)
 
 #### Props
 
@@ -476,7 +476,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1167)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1148)
 
 #### Props
 
