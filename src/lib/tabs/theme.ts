@@ -56,7 +56,6 @@ export const tabItem = tv({
   slots: {
     base: "group focus-within:z-10",
     button: "inline-block text-sm font-medium text-center disabled:cursor-not-allowed",
-    content: "hidden"
   },
   variants: {
     open: {

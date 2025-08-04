@@ -1,9 +1,9 @@
 <script lang="ts">
+  import { getTheme } from "$lib/theme/themeUtils";
+  import type { NavbarState, NavLiProps } from "$lib/types";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { navbarLi } from "./theme";
-  import type { NavbarState, NavLiProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
 
   let navState = getContext<NavbarState>("navState");
 
@@ -11,14 +11,7 @@
 
   const theme = getTheme("navbarLi");
 
-  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
-
-  let navUrl = $state("");
-  activeUrlStore.subscribe((value) => {
-    navUrl = value;
-  });
-
-  let active = $derived(navUrl ? restProps.href === navUrl : false);
+  let active = $derived(navState.activeUrl ? restProps.href === navState.activeUrl : false);
   let liClass = $derived(navbarLi({ hidden: navState.hidden, class: clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), theme, className) }));
 </script>
 

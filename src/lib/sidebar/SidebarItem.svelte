@@ -7,24 +7,15 @@
 
   const context = getContext<SidebarCtxType>("sidebarContext") ?? {};
 
-  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
+  const activeUrl: { value: string } = getContext("activeUrl");
 
-  let sidebarUrl = $state("");
-  activeUrlStore.subscribe((value) => {
-    sidebarUrl = value;
-  });
-  let activeItem = $state();
+  let activeItem = $derived(active !== undefined ? active : activeUrl?.value ? href === activeUrl?.value : false);
 
-  $effect(() => {
-    // Prioritize the explicit 'active' prop if provided
-    activeItem = active !== undefined ? active : sidebarUrl ? href === sidebarUrl : false;
-  });
-
-  let aCls = $derived((activeItem ?? sidebarUrl === href) ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));
+  let aCls = $derived((activeItem ?? activeUrl?.value === href) ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));
 </script>
 
 <li class={clsx(className)}>
-  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={(activeItem ?? sidebarUrl === href) ? "page" : undefined} class={clsx(aCls, aClass)}>
+  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={(activeItem ?? activeUrl?.value === href) ? "page" : undefined} class={clsx(aCls, aClass)}>
     {#if icon}
       {@render icon()}
     {/if}

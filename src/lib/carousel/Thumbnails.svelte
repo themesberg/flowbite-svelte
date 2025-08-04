@@ -1,17 +1,16 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import type { Writable } from "svelte/store";
-  import { thumbnails } from "./theme";
-  import { type ThumbnailsProps, type State, Thumbnail } from "$lib";
-  import clsx from "clsx";
+  import { type State, Thumbnail, type ThumbnailsProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+  import { getContext } from "svelte";
+  import { thumbnails } from "./theme";
 
   let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass, throttleDelay = 650, class: className }: ThumbnailsProps = $props();
 
   const theme = getTheme("thumbnails");
 
-  const state = getContext<Writable<State>>("state");
-  if (!state) {
+  const _state = getContext<State>("state");
+  if (!_state) {
     console.error("State is undefined. Make sure to provide state context or pass it as a prop.");
   }
 
@@ -22,21 +21,15 @@
       console.warn("Thumbnail action throttled");
       return;
     }
-    if (state) {
-      state.update((_state) => {
-        const currentIndex = _state.index;
-        const forward = newIndex >= currentIndex;
+    if (_state) {
+      const currentIndex = _state.index;
 
-        // Update the bound index
-        index = newIndex;
+      _state.index = newIndex;
+      _state.forward = newIndex >= currentIndex;
+      _state.lastSlideChange = new Date();
 
-        return {
-          ..._state,
-          index: newIndex,
-          forward,
-          lastSlideChange: new Date()
-        };
-      });
+      // Update the bound index
+      index = newIndex;
     } else {
       // Fallback behavior if state is not available
       index = newIndex;

@@ -1,24 +1,28 @@
 <script lang="ts">
-  import { setContext } from "svelte";
-  import { writable } from "svelte/store";
-  import { accordion } from "./";
-  import clsx from "clsx";
-  import { type AccordionProps } from "$lib";
+  import { type AccordionCtxType, type AccordionProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+  import { setContext } from "svelte";
+  import { accordion } from "./";
+  import { createSingleSelectionContext } from "$lib/utils/singleselection.svelte";
 
   let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, ...restProps }: AccordionProps = $props();
 
   const theme = getTheme("accordion");
 
-  const ctx = {
+  const ctx: AccordionCtxType = $state({
     flush,
     activeClass,
     inactiveClass,
-    selected: multiple ? undefined : writable()
-  };
+    transitionType
+  });
 
-  setContext("ctx", ctx);
-  setContext("ctxTransitionType", transitionType);
+  setContext<AccordionCtxType>("ctx", ctx);
+
+  if (!multiple) {
+    createSingleSelectionContext();
+  }
+
   const base = $derived(accordion({ flush, class: clsx(theme, className) }));
 </script>
 
