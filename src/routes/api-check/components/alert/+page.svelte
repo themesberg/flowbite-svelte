@@ -48,7 +48,7 @@
 <CodeWrapper innerClass="space-y-4">
   <ExampleComponents.Dismissable />
   {#snippet codeblock()}
-    <HighlightCompo codeLang="ts" code={exampleModules["./examples/dismissable"] as string} />
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Dismissable.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
 
