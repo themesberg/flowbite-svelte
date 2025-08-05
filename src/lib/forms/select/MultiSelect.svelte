@@ -4,7 +4,7 @@
   import { multiSelect } from ".";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { onMount } from "svelte";
-  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
   // Consider reusing that component - https://svelecte.vercel.app/
 

@@ -4,7 +4,7 @@
   import { CloseButton, type SizeType, type InputProps, type InputValue } from "$lib";
   import { input, clampSize } from ".";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
   let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, classes, wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, comboItemClass, onInput, onFocus, onBlur, onKeydown, oninput, onfocus, onblur, onkeydown, ...restProps }: InputProps<InputValue> = $props();
 

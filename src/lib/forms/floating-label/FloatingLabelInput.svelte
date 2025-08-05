@@ -4,7 +4,7 @@
   import clsx from "clsx";
   import { type FloatingLabelInputProps, CloseButton } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
   let { children, id = idGenerator(), value = $bindable(), elementRef = $bindable(), variant = "standard", size = "default", color = "default", class: className, classes, inputClass, labelClass, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, ...restProps }: FloatingLabelInputProps = $props();
 

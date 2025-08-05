@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import { type SelectProps, CloseButton } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
   let { children, items, value = $bindable(), elementRef = $bindable(), underline, size = "md", disabled, placeholder = "Choose option ...", clearable, clearableColor = "none", clearableOnClick, onClear, clearableSvgClass, clearableClass, selectClass, class: className, classes, ...restProps }: SelectProps<T> = $props();
 
