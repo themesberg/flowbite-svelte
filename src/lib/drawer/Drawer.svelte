@@ -5,7 +5,7 @@
   import { sineIn } from "svelte/easing";
   import { drawer } from ".";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
   let { children, hidden = $bindable(), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, classes, transitionParams, transitionType = fly, bodyScrolling = false, ...restProps }: DrawerProps = $props();
 

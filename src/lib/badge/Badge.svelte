@@ -4,7 +4,7 @@
   import clsx from "clsx";
   import { fade } from "svelte/transition";
   import { badge } from ".";
-  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
   let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, classes, border, href, target, rounded, transition = fade, params, aClass, ...restProps }: BadgeProps = $props();
 

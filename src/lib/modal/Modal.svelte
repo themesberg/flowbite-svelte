@@ -5,7 +5,7 @@
   import { fade } from "svelte/transition";
   import { modal as modalStyle } from ".";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
   let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, classes, params, transition = fade, fullscreen = false, ...restProps }: ModalProps = $props();
 

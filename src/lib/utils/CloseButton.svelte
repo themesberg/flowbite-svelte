@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { type CloseButtonProps } from "$lib";
   import { closeButton } from ".";
-  import { useDismiss } from "./dismissable.svelte";
+  import { useDismiss } from "./dismissable";
 
   let { children, color = "gray", onclick: onclickorg, name = "Close", ariaLabel, size = "md", class: className, svgClass, ...restProps }: CloseButtonProps = $props();
 

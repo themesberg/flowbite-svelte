@@ -18,7 +18,7 @@ const config = {
     // preprocess({
     //   postcss: true
     // })
-    vitePreprocess()
+    vitePreprocess({typeScript: true})
   ],
   vitePlugin: {
     inspector: {

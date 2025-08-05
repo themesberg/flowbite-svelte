@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import { CloseButton, type SearchProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
   let { children, inputClass, size, placeholder = "Search", value = $bindable(), elementRef = $bindable(), clearable = false, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, class: className, classes, ...restProps }: SearchProps = $props();
 

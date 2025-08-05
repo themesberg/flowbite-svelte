@@ -4,7 +4,7 @@
   import clsx from "clsx";
   import { type AlertProps, type ParamsType, CloseButton } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
-  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
   let { children, icon, alertStatus = $bindable(true), closeIcon: CloseIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, ...restProps }: AlertProps = $props();
 

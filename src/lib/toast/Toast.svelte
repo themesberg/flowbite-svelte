@@ -6,7 +6,7 @@
   import { fly } from "svelte/transition";
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { createDismissableContext } from "$lib/utils/dismissable.svelte";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
   let { children, icon, toastStatus = $bindable(true), dismissable = true, color = "primary", position, iconClass, contentClass, align = true, params, transition = fly, class: className, classes, ...restProps }: ToastProps = $props();
 
