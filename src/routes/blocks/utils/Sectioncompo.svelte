@@ -30,12 +30,23 @@
 	const INIT_COUNT = 18;
 
 	const sectionPosts = $derived(section !== undefined ? data.posts.blocks[section] : Object.values(data.posts.blocks).flat());
-	$inspect('sectionPosts',sectionPosts)
+	// $inspect('sectionPosts',sectionPosts)
 
 	const searchTermLower = $derived(searchTerm.toLowerCase());
+	let selected = $state("");
+	let blockCategories = [
+    { value: "application", name: "Application" },
+    { value: "marketing", name: "Marketing" },
+    { value: "publisher", name: "Publisher" },
+  ];
+	const filteredSectionPosts = $derived(
+		selected
+			? sectionPosts.filter((post: Post) => post.meta?.dir === selected)
+			: sectionPosts
+	);
 
 	const components = $derived(
-		sectionPosts.filter((post: Post) => {
+		filteredSectionPosts.filter((post: Post) => {
 			if (!post.meta || !post.meta.breadcrumb_title) return false;
 
 			const breadcrumbTitleLower = post.meta.breadcrumb_title.toLowerCase();
@@ -45,20 +56,12 @@
 			return breadcrumbTitleIncludesSearchTerm && pathDoesNotIncludePage;
 		})
 	);
-
-	let selected = $state("");
-	let blockCategories = [
-    { value: "application", name: "Application" },
-    { value: "marketing", name: "Marketing" },
-    { value: "publisher", name: "Publisher" },
-    { value: "example", name: "Example" }
-  ];
 </script>
 
 <Section class="max-w-8xl mx-auto">
 	<div class="w-full mb-6">
-	<TableSearch placeholder="Search by name" hoverable={true} bind:inputValue={searchTerm} classes={{ table:"flex flex-col items-center justify-between p-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 sm:flex-row"}}>
-	<Select class="inline w-24" items={blockCategories} bind:value={selected} />
+	<TableSearch placeholder="Search by name" hoverable={true} bind:inputValue={searchTerm} classes={{ root:"flex flex-col items-center justify-between p-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 sm:flex-row"}}>
+	<Select class="w-48" items={blockCategories} bind:value={selected} />
 	</TableSearch>
 	</div>
 

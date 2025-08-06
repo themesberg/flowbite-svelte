@@ -15,7 +15,7 @@ description: Flowbite Svelte Blocks example website homepage.
     ContentWithImage,
     Content,
     Cta
-  } from '$lib';
+  } from 'flowbite-svelte-blocks';
   import {
     Button
   } from 'flowbite-svelte';

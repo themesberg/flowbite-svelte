@@ -9,7 +9,7 @@
 	import ExampleDarkMode from './ExampleDarkMode.svelte';
 	import ExampleHelper from './ExampleHelper.svelte';
 	import ExampleRtl from './ExampleRTL.svelte';
-	import { GitHub } from '$lib';
+	// import { GitHub } from '$lib';
 
 	let { src = undefined, meta = undefined, example, code, divClass = 'relative w-full mx-auto bg-linear-to-r bg-white dark:bg-gray-900 p-6' } = $props();
 
@@ -187,7 +187,7 @@
 			<div class="grid {meta.hideResponsiveButtons ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}">
 				{#if path}
 					<Button size="xs" color="alternative" class="hover:text-primary-600 w-fit gap-2 dark:bg-gray-900" href={'' + path} target="_blank" rel="noreferrer">
-						<GitHub />Edit on GitHub
+						Edit on GitHub
 					</Button>
 					{#if !meta.hideResponsiveButtons}
 						<div class="hidden justify-center gap-x-2 sm:flex">

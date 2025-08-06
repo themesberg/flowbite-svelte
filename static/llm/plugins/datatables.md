@@ -3,8 +3,8 @@
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
-  import componentData1 from '../../component-data/Chart.json'
-  import componentData2 from '../../component-data/Card.json'
+  import componentData1 from '../component-data/Chart.json'
+  import componentData2 from '../component-data/Card.json'
   const components = 'Table'
 
   import { Table } from '@flowbite-svelte-plugins/datatable';
