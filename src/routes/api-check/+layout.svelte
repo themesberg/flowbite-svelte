@@ -8,8 +8,8 @@
 </script>
 
 <FlowbiteSvelteLayout>
-  <ComponentsLayout {data} showapicheck>
-    <div class="mx-auto mb-32 max-w-7xl p-8">
+  <ComponentsLayout {data} submenu='api-check'>
+    <div id="mainContent" class="mb-32 p-8">
       {@render children()}
     </div>
   </ComponentsLayout>

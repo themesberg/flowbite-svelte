@@ -61,6 +61,7 @@
     "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-svelte": "^3.11.0",
+    "flowbite-svelte-blocks": "^2.1.0",
     "flowbite-svelte-icons": "^2.2.1",
     "flowbite-typography": "^1.0.5",
     "globals": "^16.3.0",

@@ -3,10 +3,11 @@
   import ComponentsLayout from "../layouts/ComponentsLayout.svelte";
 
   let { data, children } = $props();
+  // console.log('data: ', data)
 </script>
 
 <FlowbiteSvelteLayout>
-  <ComponentsLayout {data} submenu="builder">
+  <ComponentsLayout {data} submenu="blocks">
     {@render children()}
   </ComponentsLayout>
 </FlowbiteSvelteLayout>
