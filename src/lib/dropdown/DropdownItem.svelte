@@ -7,20 +7,20 @@
 
   let { aClass, children, activeClass, liClass, classes, class: className, ...restProps }: DropdownItemProps = $props();
 
-  warnThemeDeprecation("DropdownItem", { aClass, activeClass, liClass }, { aClass: "anchor", activeClass: "activeAnchor", liClass: "class" });
-  const styling = $derived(classes ?? { activeAnchor: activeClass, anchor: aClass });
+  warnThemeDeprecation("DropdownItem", { aClass, activeClass, liClass }, { aClass: "class", activeClass: "active", liClass: "li" });
+  const styling = $derived(classes ?? { active: activeClass, li: liClass });
 
   const theme = getTheme("dropdownItem");
 
   const activeUrl: { value: string } = getContext("activeUrl");
 
-  let active = $derived(activeUrl?.value ? restProps.href === activeUrl.value : false);
+  let isActive = $derived(activeUrl?.value ? restProps.href === activeUrl.value : false);
 
-  const { anchor, activeAnchor } = dropdownItem();
-  let finalClass = $derived([active ? activeAnchor({ class: clsx(theme?.activeAnchor, styling.activeAnchor) }) : anchor({ class: clsx(theme?.anchor, styling.anchor) })]);
+  const { base, active, li } = dropdownItem();
+  let finalClass = $derived([isActive ? active({ class: clsx(theme?.active, styling.active) }) : base({ class: clsx(theme?.base, className) })]);
 </script>
 
-<li class={clsx(className ?? liClass)}>
+<li class={li({ class: clsx(styling.li) })}>
   {#if restProps.href === undefined && restProps.onclick === undefined}
     <div {...restProps} class={finalClass}>
       {@render children()}
