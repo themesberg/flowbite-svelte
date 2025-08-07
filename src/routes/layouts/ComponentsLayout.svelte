@@ -9,6 +9,7 @@
   import Toc from "../utils/Toc.svelte";
   import ExternalLink from "../utils/icons/ExternalLink.svelte";
   import { extract } from "./component/Anchor.svelte";
+  import { capitalizeFirstLetter } from "../builder/utils/helpers";
 
   interface Props {
     data: any;
@@ -22,8 +23,9 @@
   const posts: Record<string, any[]> = data.posts?.posts ?? {};
   const builders: Array<{ path: string }> = data.posts?.builders ?? [];
   const apicheck: Record<string, { path: string }[]> = data.posts.apicheck || {};
-  const blocks: Record<string, any[]> = data.posts?.blocks ?? {};
-
+  // const blocks: Record<string, any[]> = data.posts?.blocks ?? {};
+  // console.log(blocks)
+  const blocks = ['quickstart', 'application', 'marketing', 'publisher'];
   const drawerHidden: Writable<boolean> = getContext("drawer");
   let noToc = ["blocks", "builder"].includes(submenu ?? "");
   // const isBlockLike = ["blocks", "builder"].includes(submenu ?? "");
@@ -102,7 +104,6 @@
           {/each}
         </SidebarDropdownWrapper>
       {/each}
-
       {#if builders.length}
         <SidebarDropdownWrapper
           label="Builders"
@@ -117,7 +118,12 @@
           {/each}
         </SidebarDropdownWrapper>
       {/if}
-      <SidebarItem label="Blocks" href="/blocks" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass}/>
+      <SidebarDropdownWrapper label="Blocks" classes={{ btn: btnClass, ul: "space-y-0 p-0" }}
+          class="text-primary-700 dark:text-primary-700">
+        {#each blocks as block}
+          <SidebarItem label={capitalizeFirstLetter(block)} href="/blocks/{block}" {spanClass}/>
+        {/each}
+      </SidebarDropdownWrapper>
       <SidebarItem label="Admin Dashboard" href="https://flowbite-svelte-admin-dashboard-next.vercel.app/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} target="_blank">
         {#snippet subtext()}
           <ExternalLink />

@@ -165,7 +165,7 @@ export const fetchApiCheck = async () => {
 export const fetchBlocksMarkdownPosts = async () => {
   const globs = {
     application: import.meta.glob<Mdsvex>('/src/routes/blocks/application/*.md'),
-    example: import.meta.glob<Mdsvex>('/src/routes/blocks/example/*.md'),
+    quickstart: import.meta.glob<Mdsvex>('/src/routes/blocks/quickstart/*.md'),
     marketing: import.meta.glob<Mdsvex>('/src/routes/blocks/marketing/*.md'),
     publisher: import.meta.glob<Mdsvex>('/src/routes/blocks/publisher/*.md')
   };

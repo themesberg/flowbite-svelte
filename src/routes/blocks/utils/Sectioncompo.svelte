@@ -3,7 +3,7 @@
 	import type { PageData } from '../../$types';
 	import CompoCard from './CompoCard.svelte';
 	import Section from './Section.svelte';
-	import { TableSearch } from 'flowbite-svelte';
+	import { Search } from 'flowbite-svelte';
 	import type { Snippet } from 'svelte';
 
 	interface Post {
@@ -33,15 +33,15 @@
 	// $inspect('sectionPosts',sectionPosts)
 
 	const searchTermLower = $derived(searchTerm.toLowerCase());
-	let selected = $state("");
+	let blockSelected = $state("");
 	let blockCategories = [
-    { value: "application", name: "Application" },
-    { value: "marketing", name: "Marketing" },
-    { value: "publisher", name: "Publisher" },
+    { value: "application", name: "Application UI" },
+    { value: "marketing", name: "Marketing UI" },
+    { value: "publisher", name: "Publisher UI" },
   ];
 	const filteredSectionPosts = $derived(
-		selected
-			? sectionPosts.filter((post: Post) => post.meta?.dir === selected)
+		blockSelected
+			? sectionPosts.filter((post: Post) => post.meta?.dir === blockSelected)
 			: sectionPosts
 	);
 
@@ -59,10 +59,16 @@
 </script>
 
 <Section class="max-w-8xl mx-auto">
-	<div class="w-full mb-6">
-	<TableSearch placeholder="Search by name" hoverable={true} bind:inputValue={searchTerm} classes={{ root:"flex flex-col items-center justify-between p-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 sm:flex-row"}}>
-	<Select class="w-48" items={blockCategories} bind:value={selected} />
-	</TableSearch>
+	<div class="w-full mb-6 relative flex">
+	<Search size="md" placeholder="Search by name" clearable bind:value={searchTerm} class="mr-2 w-64" />
+	{#if section === undefined}
+	<Select id="blocks-select" class="w-48" bind:value={blockSelected} placeholder="">
+    <option selected value="">All categories</option>
+		{#each blockCategories as { value, name }}
+			<option {value}>{name}</option>
+		{/each}
+	</Select>	
+	{/if}
 	</div>
 
 	{#if header}

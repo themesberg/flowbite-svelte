@@ -20,7 +20,7 @@
   layout;
   component_title;
 
-  const blockDirs = new Set(["application", "marketing", "publisher"]);
+  const blockDirs = new Set(["application", "marketing", "publisher", "quickstart"]);
   const pageWidth = blockDirs.has(dir) ? 'max-w-8xl' : 'max-w-4xl';
 
   let divClass = category ? '' : 'mx-auto max-w-8xl lg:px-20 px-8 md:px-auto py-8';
