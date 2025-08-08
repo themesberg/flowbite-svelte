@@ -1,5 +1,6 @@
 export { default as Active } from "./Active.svelte";
 export { default as ActiveClass } from "./ActiveClass.svelte";
+export { default as Breakpoint } from "./Breakpoint.svelte";
 export { default as Close } from "./Close.svelte";
 export { default as Cta } from "./Cta.svelte";
 export { default as Default } from "./Default.svelte";

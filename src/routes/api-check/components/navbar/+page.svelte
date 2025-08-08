@@ -116,3 +116,11 @@
     <HighlightCompo codeLang="ts" code={exampleModules["./examples/Solid.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
+
+<H2>Breakpoint</H2>
+<CodeWrapper>
+  <ExampleComponents.Breakpoint />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Breakpoint.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
