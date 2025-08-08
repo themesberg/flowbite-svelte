@@ -30,8 +30,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       tailwind-variants:
-        specifier: ^1.0.0
-        version: 1.0.0(tailwindcss@4.1.11)
+        specifier: 2.0.1
+        version: 2.0.1(tailwind-merge@3.3.1)(tailwindcss@4.1.11)
     devDependencies:
       '@changesets/cli':
         specifier: 2.29.5
@@ -117,12 +117,18 @@ importers:
       flowbite-svelte-icons:
         specifier: ^2.2.1
         version: 2.2.1(svelte@5.38.0)
+      flowbite-svelte-illustrations:
+        specifier: ^1.0.4
+        version: 1.0.4(svelte@5.38.0)(tailwindcss@4.1.11)
       flowbite-typography:
         specifier: ^1.0.5
         version: 1.0.5
       globals:
         specifier: ^16.3.0
         version: 16.3.0
+      highlight.js:
+        specifier: ^11.11.1
+        version: 11.11.1
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
@@ -172,8 +178,8 @@ importers:
         specifier: ^4.4.0
         version: 4.4.0(svelte@5.38.0)
       svelte-rune-highlight:
-        specifier: ^0.6.6
-        version: 0.6.6(svelte@5.38.0)
+        specifier: ^0.6.8
+        version: 0.6.8(svelte@5.38.0)
       tailwindcss:
         specifier: ^4.1.11
         version: 4.1.11
@@ -2135,6 +2141,12 @@ packages:
     peerDependencies:
       svelte: ^5.0.0
 
+  flowbite-svelte-illustrations@1.0.4:
+    resolution: {integrity: sha512-KwZsov9wshWj+3hu85cQJ4xbxkp7hAzhlebRogKBTSosxbEU6muwUKvv1Sk/qTtLMIibtpI8jOBPDggM4z6NnA==}
+    peerDependencies:
+      svelte: ^5.0.0
+      tailwindcss: ^4.0.0
+
   flowbite-svelte@1.11.3:
     resolution: {integrity: sha512-9luWhmPRC5MZyX+VGdk4ql7qgNuew/X24i2HohELLA7ezz4Y3WUH9B41BjaZMziqE/0JL+58NUjofXACFRKG7g==}
     peerDependencies:
@@ -3180,8 +3192,8 @@ packages:
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
 
-  svelte-rune-highlight@0.6.6:
-    resolution: {integrity: sha512-IDpujRQgJJA4gu/9+yF8bMLEn/2GKqI+oGB571MqkSVlLonVuEWp2FGaM7RQ0OCTUfOU1ibumzZh1VrBA4ehAg==}
+  svelte-rune-highlight@0.6.8:
+    resolution: {integrity: sha512-NokF1I+ZvZS+cWZa17lUSQeGt+4cP1MLY6dhrp69iPqyaBElW/xFBhgSunZjpXIom9wbmGDmY1w5TUXdWRNgfg==}
     peerDependencies:
       svelte: ^5.0.0
 
@@ -3209,6 +3221,16 @@ packages:
     engines: {node: '>=16.x', pnpm: '>=7.x'}
     peerDependencies:
       tailwindcss: '*'
+
+  tailwind-variants@2.0.1:
+    resolution: {integrity: sha512-1wt8c4PWO3jbZcKGBrjIV8cehWarREw1C2os0k8Mcq0nof/CbafNhUUjb0LRWiiRfAvDK6v1deswtHLsygKglw==}
+    engines: {node: '>=16.x', pnpm: '>=7.x'}
+    peerDependencies:
+      tailwind-merge: '>=3.0.0'
+      tailwindcss: '*'
+    peerDependenciesMeta:
+      tailwind-merge:
+        optional: true
 
   tailwindcss@4.1.11:
     resolution: {integrity: sha512-2E9TBm6MDD/xKYe+dvJZAmg3yxIEDNRc0jwlNyDg/4Fil2QcSLjFKGVff0lAf1jjeaArlG/M75Ey/EYr/OJtBA==}
@@ -5639,6 +5661,11 @@ snapshots:
       svelte: 5.38.0
       tailwind-merge: 3.3.1
 
+  flowbite-svelte-illustrations@1.0.4(svelte@5.38.0)(tailwindcss@4.1.11):
+    dependencies:
+      svelte: 5.38.0
+      tailwindcss: 4.1.11
+
   flowbite-svelte@1.11.3(rollup@4.46.2)(svelte@5.38.0)(tailwindcss@4.1.11):
     dependencies:
       '@floating-ui/dom': 1.7.3
@@ -6639,7 +6666,7 @@ snapshots:
     dependencies:
       svelte: 5.38.0
 
-  svelte-rune-highlight@0.6.6(svelte@5.38.0):
+  svelte-rune-highlight@0.6.8(svelte@5.38.0):
     dependencies:
       highlight.js: 11.11.1
       svelte: 5.38.0
@@ -6678,6 +6705,12 @@ snapshots:
     dependencies:
       tailwind-merge: 3.0.2
       tailwindcss: 4.1.11
+
+  tailwind-variants@2.0.1(tailwind-merge@3.3.1)(tailwindcss@4.1.11):
+    dependencies:
+      tailwindcss: 4.1.11
+    optionalDependencies:
+      tailwind-merge: 3.3.1
 
   tailwindcss@4.1.11: {}
 

@@ -38,8 +38,7 @@ function setSelected(context, open, value) {
  * @returns {(open: boolean, v?: T) => SingleSelectionContext<T>}
  */
 export function useSingleSelection(callback) {
-  const context =
-    getContext(SINGLE_SELECTION_KEY) ?? createSingleSelectionContext();
+  const context = getContext(SINGLE_SELECTION_KEY) ?? createSingleSelectionContext();
 
   // @ts-ignore - $effect is assumed to be a Svelte reactive helper
   $effect(() => {

@@ -18,24 +18,24 @@ Use this example of statistical numbers that you can use to showcase the adoptio
 
 ```svelte example
 <script lang="ts">
-	import { Section, Social } from 'flowbite-svelte-blocks';
+  import { Section, Social } from "flowbite-svelte-blocks";
 </script>
 
 <Section name="social">
-	<Social>
-		<div class="flex flex-col items-center justify-center">
-			<dt class="mb-2 text-3xl font-extrabold md:text-4xl">73M+</dt>
-			<dd class="font-light text-gray-500 dark:text-gray-400">developers</dd>
-		</div>
-		<div class="flex flex-col items-center justify-center">
-			<dt class="mb-2 text-3xl font-extrabold md:text-4xl">1B+</dt>
-			<dd class="font-light text-gray-500 dark:text-gray-400">contributors</dd>
-		</div>
-		<div class="flex flex-col items-center justify-center">
-			<dt class="mb-2 text-3xl font-extrabold md:text-4xl">4M+</dt>
-			<dd class="font-light text-gray-500 dark:text-gray-400">organizations</dd>
-		</div>
-	</Social>
+  <Social>
+    <div class="flex flex-col items-center justify-center">
+      <dt class="mb-2 text-3xl font-extrabold md:text-4xl">73M+</dt>
+      <dd class="font-light text-gray-500 dark:text-gray-400">developers</dd>
+    </div>
+    <div class="flex flex-col items-center justify-center">
+      <dt class="mb-2 text-3xl font-extrabold md:text-4xl">1B+</dt>
+      <dd class="font-light text-gray-500 dark:text-gray-400">contributors</dd>
+    </div>
+    <div class="flex flex-col items-center justify-center">
+      <dt class="mb-2 text-3xl font-extrabold md:text-4xl">4M+</dt>
+      <dd class="font-light text-gray-500 dark:text-gray-400">organizations</dd>
+    </div>
+  </Social>
 </Section>
 ```
 

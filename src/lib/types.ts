@@ -1069,11 +1069,14 @@ export type NavbarState = {
   activeUrl?: string;
 };
 
+export type NavbarBreakpoint = "sm" | "md" | "lg" | "xl";
+
 export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   children: Snippet<[{ hidden: boolean; toggle: () => void; NavContainer: Component }]>;
   fluid?: boolean;
   navContainerClass?: ClassValue;
   closeOnClickOutside?: boolean;
+  breakpoint?: NavbarBreakpoint;
 }
 
 export interface NavBrandProps extends HTMLAnchorAttributes {}

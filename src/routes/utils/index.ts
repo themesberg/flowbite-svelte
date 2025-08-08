@@ -28,16 +28,13 @@ export type PathEntry = {
 
 // --- Path Utilities ---
 
-export const basename = (path: string): string =>
-  path.substring(path.lastIndexOf("/") + 1).replace(/\.[^/.]+$/, "");
+export const basename = (path: string): string => path.substring(path.lastIndexOf("/") + 1).replace(/\.[^/.]+$/, "");
 
 export const toSlug = (path: string): string => "/" + basename(path);
 
-export const parentFolderSlug = (path: string): string =>
-  "/" + (path.split("/").at(-2) ?? "");
+export const parentFolderSlug = (path: string): string => "/" + (path.split("/").at(-2) ?? "");
 
-export const extractRouteName = (path: string): string =>
-  path.split("/").at(-2) ?? "";
+export const extractRouteName = (path: string): string => path.split("/").at(-2) ?? "";
 
 export const sortByList =
   (order: string[]) =>
@@ -49,9 +46,7 @@ export const sortByList =
     return aIndex - bIndex;
   };
 
-const resolveMarkdownFiles = async (
-  files: Record<string, () => Promise<{ metadata: Metadata }>>
-): Promise<MarkdownEntry[]> => {
+const resolveMarkdownFiles = async (files: Record<string, () => Promise<{ metadata: Metadata }>>): Promise<MarkdownEntry[]> => {
   return Promise.all(
     Object.entries(files).map(async ([path, resolver]) => {
       const { metadata } = await resolver();
@@ -63,12 +58,11 @@ const resolveMarkdownFiles = async (
   );
 };
 
-const resolvePaths = async (
-  files: Record<string, unknown>,
-  pathFn: (path: string) => string = toSlug
-): Promise<PathEntry[]> => {
+const resolvePaths = async (files: Record<string, unknown>, pathFn: (path: string) => string = toSlug): Promise<PathEntry[]> => {
   return Promise.all(
-    Object.keys(files).filter((path) => !path.includes("[...slug]")).map(async (path) => ({ path: pathFn(path) }))
+    Object.keys(files)
+      .filter((path) => !path.includes("[...slug]"))
+      .map(async (path) => ({ path: pathFn(path) }))
   );
 };
 
@@ -82,19 +76,11 @@ export const fetchMarkdownPosts = async () => {
     extend: import.meta.glob<Mdsvex>("/src/routes/docs/extend/*.md"),
     examples: import.meta.glob<Mdsvex>("/src/routes/docs/examples/*.md"),
     plugins: import.meta.glob<Mdsvex>("/src/routes/docs/plugins/*.md"),
-    icons: import.meta.glob<Mdsvex>("/src/routes/icons/*.md")
+    icons: import.meta.glob<Mdsvex>("/src/routes/icons/*.md"),
+    illustrations: import.meta.glob<Mdsvex>("/src/routes/illustrations/*.md")
   };
 
-  const pageOrder = [
-    "introduction",
-    "quickstart",
-    "colors",
-    "customization",
-    "typescript",
-    "compiler-speed",
-    "how-to-contribute",
-    "license"
-  ];
+  const pageOrder = ["introduction", "quickstart", "colors", "customization", "typescript", "compiler-speed", "how-to-contribute", "license"];
 
   const pages = await Promise.all(
     Object.entries(globs.pages)
@@ -127,18 +113,10 @@ export const fetchBuilders = async () => {
     .map((path) => ({
       path: extractRouteName(path)
     }))
-    .filter(
-      (item, index, self) =>
-        item.path !== "builder" &&
-        item.path !== "layout" &&
-        item.path !== "layoutExamples" &&
-        item.path !== "utils" &&
-        self.findIndex((i) => i.path === item.path) === index 
-    );
+    .filter((item, index, self) => item.path !== "builder" && item.path !== "layout" && item.path !== "layoutExamples" && item.path !== "utils" && self.findIndex((i) => i.path === item.path) === index);
 
-  return allPaths ;
+  return allPaths;
 };
-
 
 export const fetchApiCheck = async () => {
   const globs = {
@@ -161,13 +139,12 @@ export const fetchApiCheck = async () => {
   };
 };
 
-
 export const fetchBlocksMarkdownPosts = async () => {
   const globs = {
-    application: import.meta.glob<Mdsvex>('/src/routes/blocks/application/*.md'),
-    quickstart: import.meta.glob<Mdsvex>('/src/routes/blocks/quickstart/*.md'),
-    marketing: import.meta.glob<Mdsvex>('/src/routes/blocks/marketing/*.md'),
-    publisher: import.meta.glob<Mdsvex>('/src/routes/blocks/publisher/*.md')
+    application: import.meta.glob<Mdsvex>("/src/routes/blocks/application/*.md"),
+    quickstart: import.meta.glob<Mdsvex>("/src/routes/blocks/quickstart/*.md"),
+    marketing: import.meta.glob<Mdsvex>("/src/routes/blocks/marketing/*.md"),
+    publisher: import.meta.glob<Mdsvex>("/src/routes/blocks/publisher/*.md")
   };
 
   const entries = await Promise.all(

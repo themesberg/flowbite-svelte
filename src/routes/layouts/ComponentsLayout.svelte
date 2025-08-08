@@ -15,7 +15,7 @@
     data: any;
     children: Snippet;
     showapicheck?: boolean;
-    submenu?: 'api-check' | 'blocks' | 'builder'
+    submenu?: "api-check" | "blocks" | "builder" | "illustrations";
   }
 
   let { data, children, submenu }: Props = $props();
@@ -24,8 +24,8 @@
   const builders: Array<{ path: string }> = data.posts?.builders ?? [];
   const apicheck: Record<string, { path: string }[]> = data.posts.apicheck || {};
   // const blocks: Record<string, any[]> = data.posts?.blocks ?? {};
-  // console.log(blocks)
-  const blocks = ['quickstart', 'application', 'marketing', 'publisher'];
+  // console.log(posts)
+  const blocks = ["quickstart", "application", "marketing", "publisher"];
   const drawerHidden: Writable<boolean> = getContext("drawer");
   let noToc = ["blocks", "builder"].includes(submenu ?? "");
   // const isBlockLike = ["blocks", "builder"].includes(submenu ?? "");
@@ -75,80 +75,68 @@
   }
 </script>
 
-{#if submenu!=='blocks'}
-<SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-4 z-40 mb-2 sm:top-4 md:top-7" />
-<Sidebar breakpoint="lg" backdrop={true} {isOpen} {closeSidebar} classes={{ div: divClass, nonactive: nonActiveClass, active: activeClass }} activeUrl={mainSidebarUrl} class={mainClass} params={{ x: -50, duration: 50 }}>
-  <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
-  {#if submenu==='api-check'}
-    <SidebarGroup>
-      <Label class="pl-4 text-xl">API Check</Label>
-      {#each Object.entries(apicheck) as [key, values] (key)}
-        <SidebarDropdownWrapper label={names_mapping[key] ?? key} classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
-          {#each values as { path }}
-            {@const href = `/api-check/${key}${path}`}
-            {@const linkLabel = convertString(path)}
-            <SidebarItem label={linkLabel} {href} {spanClass} />
-          {/each}
-        </SidebarDropdownWrapper>
-      {/each}
-    </SidebarGroup>
-  {:else}
-    <SidebarGroup>
-      {#each Object.entries(posts) as [key, values] (key)}
-        <SidebarDropdownWrapper label={names_mapping[key] ?? key} classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
-          {#each values as { meta, path }}
-            {@const href = key === "icons" ? `/${key}${path}` : `/docs/${key}${path}`}
-            
-              <SidebarItem label={meta.component_title} {href} {spanClass} />
-            
-          {/each}
-        </SidebarDropdownWrapper>
-      {/each}
-      {#if builders.length}
-        <SidebarDropdownWrapper
-          label="Builders"
-          classes={{ btn: btnClass, ul: "space-y-0 p-0" }}
-          class="text-primary-700 dark:text-primary-700"
-        >
-          {#each builders as builder}
-            {@const pathWithoutSlash = builder.path.replace(/^\//, "")}
-            {@const capitalizedPath = pathWithoutSlash.charAt(0).toUpperCase() + pathWithoutSlash.slice(1)}
-            {@const href = `/builder/${builder.path}`}
-            <SidebarItem label={capitalizedPath} {href} {spanClass} />
-          {/each}
-        </SidebarDropdownWrapper>
-      {/if}
-      <SidebarDropdownWrapper label="Blocks" classes={{ btn: btnClass, ul: "space-y-0 p-0" }}
-          class="text-primary-700 dark:text-primary-700">
-        {#each blocks as block}
-          <SidebarItem label={capitalizeFirstLetter(block)} href="/blocks/{block}" {spanClass}/>
+{#if submenu !== "blocks"}
+  <SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-4 z-40 mb-2 sm:top-4 md:top-7" />
+  <Sidebar breakpoint="lg" backdrop={true} {isOpen} {closeSidebar} classes={{ div: divClass, nonactive: nonActiveClass, active: activeClass }} activeUrl={mainSidebarUrl} class={mainClass} params={{ x: -50, duration: 50 }}>
+    <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
+    {#if submenu === "api-check"}
+      <SidebarGroup>
+        <Label class="pl-4 text-xl">API Check</Label>
+        {#each Object.entries(apicheck) as [key, values] (key)}
+          <SidebarDropdownWrapper label={names_mapping[key] ?? key} classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
+            {#each values as { path }}
+              {@const href = `/api-check/${key}${path}`}
+              {@const linkLabel = convertString(path)}
+              <SidebarItem label={linkLabel} {href} {spanClass} />
+            {/each}
+          </SidebarDropdownWrapper>
         {/each}
-      </SidebarDropdownWrapper>
-      <SidebarItem label="Admin Dashboard" href="https://flowbite-svelte-admin-dashboard-next.vercel.app/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} target="_blank">
-        {#snippet subtext()}
-          <ExternalLink />
-        {/snippet}
-      </SidebarItem>
-      <SidebarItem label="Icons" href="https://flowbite-svelte-icons.codewithshin.com/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} target="_blank">
-        {#snippet subtext()}
-          <ExternalLink />
-        {/snippet}
-      </SidebarItem>
-      <SidebarItem label="Illustration" href="https://flowbite-svelte-illustrations.codewithshin.com/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} target="_blank">
-        {#snippet subtext()}
-          <ExternalLink />
-        {/snippet}
-      </SidebarItem>
-    </SidebarGroup>
-  {/if}
-  <!-- /SidebarWrapper -->
-</Sidebar>
+      </SidebarGroup>
+    {:else}
+      <SidebarGroup>
+        {#each Object.entries(posts) as [key, values] (key)}
+          <SidebarDropdownWrapper label={names_mapping[key] ?? key} classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
+            {#each values as { meta, path }}
+              {@const href = key === "icons" || key === "illustrations" ? `/${key}${path}` : `/docs/${key}${path}`}
+              <SidebarItem label={meta.component_title} {href} {spanClass} />
+            {/each}
+          </SidebarDropdownWrapper>
+        {/each}
+        {#if builders.length}
+          <SidebarDropdownWrapper label="Builders" classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class="text-primary-700 dark:text-primary-700">
+            {#each builders as builder}
+              {@const pathWithoutSlash = builder.path.replace(/^\//, "")}
+              {@const capitalizedPath = pathWithoutSlash.charAt(0).toUpperCase() + pathWithoutSlash.slice(1)}
+              {@const href = `/builder/${builder.path}`}
+              <SidebarItem label={capitalizedPath} {href} {spanClass} />
+            {/each}
+          </SidebarDropdownWrapper>
+        {/if}
+        <SidebarDropdownWrapper label="Blocks" classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class="text-primary-700 dark:text-primary-700">
+          {#each blocks as block}
+            <SidebarItem label={capitalizeFirstLetter(block)} href="/blocks/{block}" {spanClass} />
+          {/each}
+        </SidebarDropdownWrapper>
+        <SidebarItem label="Admin Dashboard" href="https://flowbite-svelte-admin-dashboard-next.vercel.app/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} target="_blank">
+          {#snippet subtext()}
+            <ExternalLink />
+          {/snippet}
+        </SidebarItem>
+        <SidebarItem label="Illustration" href="https://flowbite-svelte-illustrations.codewithshin.com/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} target="_blank">
+          {#snippet subtext()}
+            <ExternalLink />
+          {/snippet}
+        </SidebarItem>
+      </SidebarGroup>
+    {/if}
+    <!-- /SidebarWrapper -->
+  </Sidebar>
 {/if}
 
 <div hidden={$drawerHidden} class="static inset-0 z-20 bg-gray-900/50 dark:bg-gray-900/60" onclick={closeSidebar} onkeydown={closeSidebar} role="presentation"></div>
 
 {#if noToc}
-  <main class="mx-auto max-w-8xl min-w-0 flex-auto pb-40 lg:static lg:max-h-full lg:overflow-visible">
+  <main class="max-w-8xl mx-auto min-w-0 flex-auto pb-40 lg:static lg:max-h-full lg:overflow-visible">
     {@render children()}
   </main>
 {:else}

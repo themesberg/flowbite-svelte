@@ -8,12 +8,13 @@
 
   // propagate props type from underlying Frame
 
-  let { children, fluid, navContainerClass, class: className, closeOnClickOutside = true, ...restProps }: NavbarProps = $props();
+  let { children, fluid, navContainerClass, class: className, closeOnClickOutside = true, breakpoint = "md", ...restProps }: NavbarProps = $props();
 
   const theme = getTheme("navbar");
 
   let navState = $state({ hidden: true });
   setContext<NavbarState>("navState", navState);
+  setContext("breakpoint", breakpoint);
 
   // Add reference to the navbar element
   let navbarElement: HTMLElement;
@@ -45,12 +46,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1072)
+[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1074)
 ## Props
 @prop children
 @prop fluid
 @prop navContainerClass
 @prop class: className
 @prop closeOnClickOutside = true
+@prop breakpoint = "md"
 @prop ...restProps
 -->

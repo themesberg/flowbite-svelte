@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button, Modal, P } from "flowbite-svelte";
-  
+
   type ModalPlacementType = "top-left" | "top-center" | "top-right" | "center-left" | "center" | "center-right" | "bottom-left" | "bottom-center" | "bottom-right";
 
   let placement: ModalPlacementType = $state("center");

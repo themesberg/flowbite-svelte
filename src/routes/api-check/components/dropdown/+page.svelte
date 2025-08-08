@@ -62,7 +62,7 @@
 </CodeWrapper>
 
 <H2>Programatic open/close</H2>
-<CodeWrapper innerClass="flex justify-center items-start h-64">
+<CodeWrapper innerClass="flex flex-col h-96 items-center gap-4 justify-start">
   <ExampleComponents.Programatic />
   {#snippet codeblock()}
     <HighlightCompo codeLang="ts" code={exampleModules["./examples/Programatic.svelte"] as string} />

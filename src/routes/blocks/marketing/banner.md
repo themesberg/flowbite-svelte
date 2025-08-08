@@ -19,20 +19,20 @@ Use this example of a dismissable banner component to show extra information rel
 
 ```svelte example class="h-48"
 <script lang="ts">
-	import { Banner } from '$lib';
-	import { CloseButton } from 'flowbite-svelte';
+  import { Banner } from "$lib";
+  import { CloseButton } from "flowbite-svelte";
 
-	export let visible = true;
+  export let visible = true;
 </script>
 
 {#if visible}
-	<Banner>
-		<p class="text-sm font-light text-gray-500 dark:text-gray-400">
-			Supercharge your hiring by taking advantage of our <a class="text-primary-600 dark:text-primary-500 font-medium underline hover:no-underline" href="/">limited-time sale</a> for Designer Search +
-			Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-		</p>
-		<CloseButton onclick={() => (visible = false)} class="rounded-lg p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" />
-	</Banner>
+  <Banner>
+    <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+      Supercharge your hiring by taking advantage of our <a class="text-primary-600 dark:text-primary-500 font-medium underline hover:no-underline" href="/">limited-time sale</a>
+      for Designer Search + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
+    </p>
+    <CloseButton onclick={() => (visible = false)} class="rounded-lg p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white" />
+  </Banner>
 {/if}
 ```
 

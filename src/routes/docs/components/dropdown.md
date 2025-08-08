@@ -204,16 +204,16 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
 
 <Button>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown class="w-44">
-  <DropdownGroup class="p-3 space-y-3">
-  <li>
-    <Checkbox>Default checkbox</Checkbox>
-  </li>
-  <li>
-    <Checkbox checked>Checked state</Checkbox>
-  </li>
-  <li>
-    <Checkbox>Default checkbox</Checkbox>
-  </li>
+  <DropdownGroup class="space-y-3 p-3">
+    <li>
+      <Checkbox>Default checkbox</Checkbox>
+    </li>
+    <li>
+      <Checkbox checked>Checked state</Checkbox>
+    </li>
+    <li>
+      <Checkbox>Default checkbox</Checkbox>
+    </li>
   </DropdownGroup>
 </Dropdown>
 ```
@@ -230,13 +230,13 @@ Use this example to update the background color of a menu item when using a list
 
 <Button>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown simple class="w-48 space-y-1 p-3 text-sm">
-  <DropdownItem class="px-2 rounded-sm">
+  <DropdownItem class="rounded-sm px-2">
     <Checkbox>Default checkbox</Checkbox>
   </DropdownItem>
   <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox checked>Checked state</Checkbox>
   </li>
-  <DropdownItem class="px-2 rounded-sm">
+  <DropdownItem class="rounded-sm px-2">
     <Checkbox>Default checkbox</Checkbox>
   </DropdownItem>
 </Dropdown>
@@ -254,15 +254,15 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
 
 <Button>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown simple class="w-60 space-y-1 p-3 text-sm">
-  <DropdownItem class="px-2 rounded-sm">
+  <DropdownItem class="rounded-sm px-2">
     <Checkbox>Enable notifications</Checkbox>
     <Helper class="ps-7">Some helpful instruction goes over here.</Helper>
   </DropdownItem>
-  <DropdownItem class="px-2 rounded-sm">
+  <DropdownItem class="rounded-sm px-2">
     <Checkbox checked>Enable 2FA auth</Checkbox>
     <Helper class="ps-7">Some helpful instruction goes over here.</Helper>
   </DropdownItem>
-  <DropdownItem class="px-2 rounded-sm">
+  <DropdownItem class="rounded-sm px-2">
     <Checkbox>Subscribe newsletter</Checkbox>
     <Helper class="ps-7">Some helpful instruction goes over here.</Helper>
   </DropdownItem>
@@ -284,7 +284,7 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
   Dropdown radio {group1}<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
 </Button>
 <Dropdown class="w-44">
-  <DropdownGroup class="p-3 space-y-3">
+  <DropdownGroup class="space-y-3 p-3">
     <li>
       <Radio name="group1" bind:group={group1} value={1}>Default radio</Radio>
     </li>
@@ -311,13 +311,13 @@ Use this example to update the background color of a menu item when using a list
 
 <Button>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown simple class="w-48 space-y-1 p-3">
-  <DropdownItem class="px-2 rounded-sm">
+  <DropdownItem class="rounded-sm px-2">
     <Radio name="group2" bind:group={group2} value={1}>Default radio</Radio>
   </DropdownItem>
-  <DropdownItem class="px-2 rounded-sm">
+  <DropdownItem class="rounded-sm px-2">
     <Radio name="group2" bind:group={group2} value={2}>Checked state</Radio>
   </DropdownItem>
-  <DropdownItem class="px-2 rounded-sm">
+  <DropdownItem class="rounded-sm px-2">
     <Radio name="group2" bind:group={group2} value={3}>Default radio</Radio>
   </DropdownItem>
 </Dropdown>
@@ -336,15 +336,15 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 
 <Button>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown simple class="w-60 space-y-1 p-3">
-  <DropdownItem class="px-2 rounded-sm">
+  <DropdownItem class="rounded-sm px-2">
     <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
     <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </DropdownItem>
-  <DropdownItem class="px-2 rounded-sm">
+  <DropdownItem class="rounded-sm px-2">
     <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
     <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </DropdownItem>
-  <DropdownItem class="px-2 rounded-sm">
+  <DropdownItem class="rounded-sm px-2">
     <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
     <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </DropdownItem>
@@ -460,9 +460,9 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
     { name: "Robert Gouth", checked: false },
     { name: "Jese Leos", checked: false },
     { name: "Bonnie Green", checked: true },
-    { name: "Joseph Mcfall", checked: false},
-    { name: "Rober Wall", checked: false},
-    { name: "Leslie Livingston", checked: false}
+    { name: "Joseph Mcfall", checked: false },
+    { name: "Rober Wall", checked: false },
+    { name: "Leslie Livingston", checked: false }
   ];
   let filteredItems = $derived(people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1));
 </script>
@@ -479,7 +479,7 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
       </li>
     {/each}
   </DropdownGroup>
-  <a href="/" class="-mb-1 p-3 rounded-b-lg flex items-center bg-gray-50 text-sm font-medium text-red-600 hover:bg-gray-100 hover:underline dark:bg-gray-700 dark:text-red-500 dark:hover:bg-gray-600">
+  <a href="/" class="-mb-1 flex items-center rounded-b-lg bg-gray-50 p-3 text-sm font-medium text-red-600 hover:bg-gray-100 hover:underline dark:bg-gray-700 dark:text-red-500 dark:hover:bg-gray-600">
     <UserRemoveSolid class="text-primary-700 dark:text-primary-700 me-2 h-4 w-4" />Delete user
   </a>
 </Dropdown>
@@ -522,7 +522,7 @@ Use this example to show a list of notifications inside your application by prov
   </div>
 </div>
 <Dropdown triggeredBy="#bell" class="w-full max-w-sm divide-y divide-gray-100 rounded-sm shadow-sm dark:divide-gray-700 dark:bg-gray-800">
-  <div class="py-2 text-center font-bold text-gray-700 dark:text-white bg-gray-50 dark:bg-gray-800">Notifications</div>
+  <div class="bg-gray-50 py-2 text-center font-bold text-gray-700 dark:bg-gray-800 dark:text-white">Notifications</div>
   <DropdownGroup>
     <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
       <Avatar src="/images/profile-picture-1.webp" dot={{ color: "bg-gray-300" }} />

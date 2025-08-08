@@ -4,7 +4,7 @@
   import ToolbarButton from "../toolbar/ToolbarButton.svelte";
   import Menu from "./Menu.svelte";
   import { navbarHamburger } from "./theme";
-  import type { NavbarState, NavHamburgerProps } from "$lib/types";
+  import type { NavbarState, NavHamburgerProps, NavbarBreakpoint } from "$lib/types";
   import type { MouseEventHandler } from "svelte/elements";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
@@ -14,10 +14,10 @@
   const styling = $derived(classes ?? { menu: menuClass });
 
   const theme = getTheme("navbarHamburger");
+  const navState = getContext<NavbarState>("navState");
+  const navBreakpoint = getContext<NavbarBreakpoint>("breakpoint");
+  const { base, menu } = navbarHamburger({ breakpoint: navBreakpoint });
 
-  let { base, menu } = navbarHamburger();
-
-  let navState = getContext<NavbarState>("navState");
   const toggle: MouseEventHandler<HTMLButtonElement> = (ev) => {
     navState.hidden = !navState.hidden;
   };
@@ -31,7 +31,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1085)
+[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1088)
 ## Props
 @prop children
 @prop onclick

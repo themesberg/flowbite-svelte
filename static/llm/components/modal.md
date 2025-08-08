@@ -301,7 +301,9 @@ You can use five different modal sizing options starting from extra small to ext
 
 ```svelte
 <script lang="ts">
-  import { Button, Modal, type ModalPlacementType, P } from "flowbite-svelte";
+  import { Button, Modal, P } from "flowbite-svelte";
+
+  type ModalPlacementType = "top-left" | "top-center" | "top-right" | "center-left" | "center" | "center-right" | "bottom-left" | "bottom-center" | "bottom-right";
 
   let placement: ModalPlacementType = $state("center");
   let openPlacement = $state(false);

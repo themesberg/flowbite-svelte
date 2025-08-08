@@ -1,18 +1,19 @@
 <script lang="ts">
   import { getTheme } from "$lib/theme/themeUtils";
-  import type { NavbarState, NavLiProps } from "$lib/types";
+  import type { NavbarState, NavLiProps, NavbarBreakpoint } from "$lib/types";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { navbarLi } from "./theme";
 
   let navState = getContext<NavbarState>("navState");
+  let navBreakpoint = getContext<NavbarBreakpoint>("breakpoint");
 
   let { children, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
 
   const theme = getTheme("navbarLi");
 
   let active = $derived(navState.activeUrl ? restProps.href === navState.activeUrl : false);
-  let liClass = $derived(navbarLi({ hidden: navState.hidden, class: clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), theme, className) }));
+  let liClass = $derived(navbarLi({ breakpoint: navBreakpoint, hidden: navState.hidden, class: clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), theme, className) }));
 </script>
 
 <li>
@@ -31,7 +32,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1106)
+[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1109)
 ## Props
 @prop children
 @prop activeClass

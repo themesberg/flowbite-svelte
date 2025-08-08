@@ -18,14 +18,14 @@ Use this example to let your users know that you are working on an important upd
 
 ```svelte example
 <script>
-	import { Section, Maintenance } from 'flowbite-svelte-blocks';
+  import { Section, Maintenance } from "flowbite-svelte-blocks";
 </script>
 
 <Section name="maintenance">
-	<Maintenance>
-		{#snippet h1()}Under Maintenance{/snippet}
-		{#snippet paragraph()}Our Enterprise administrators are performing scheduled maintenance.{/snippet}
-	</Maintenance>
+  <Maintenance>
+    {#snippet h1()}Under Maintenance{/snippet}
+    {#snippet paragraph()}Our Enterprise administrators are performing scheduled maintenance.{/snippet}
+  </Maintenance>
 </Section>
 ```
 

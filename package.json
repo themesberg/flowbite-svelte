@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.11.3",
+  "version": "1.11.4",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -63,8 +63,10 @@
     "eslint-plugin-svelte": "^3.11.0",
     "flowbite-svelte-blocks": "^2.1.0",
     "flowbite-svelte-icons": "^2.2.1",
+    "flowbite-svelte-illustrations": "^1.0.4",
     "flowbite-typography": "^1.0.5",
     "globals": "^16.3.0",
+    "highlight.js": "^11.11.1",
     "jsdom": "^26.1.0",
     "katex": "^0.16.22",
     "lowlight": "^3.3.0",
@@ -81,7 +83,7 @@
     "svelte-doc-llm": "^0.2.2",
     "svelte-lib-helpers": "^0.4.30",
     "svelte-meta-tags": "^4.4.0",
-    "svelte-rune-highlight": "^0.6.6",
+    "svelte-rune-highlight": "^0.6.8",
     "tailwindcss": "^4.1.11",
     "tsx": "^4.20.3",
     "typescript": "^5.9.2",
@@ -145,7 +147,7 @@
     "date-fns": "^4.1.0",
     "flowbite": "^3.1.2",
     "tailwind-merge": "^3.3.1",
-    "tailwind-variants": "^1.0.0"
+    "tailwind-variants": "2.0.1"
   },
   "files": [
     "dist",

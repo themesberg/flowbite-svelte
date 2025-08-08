@@ -13,92 +13,92 @@ Use this free example of a drawer component to show a list of checkbox, radio an
 
 ```svelte example hideResponsiveButtons class="h-64"
 <script>
-	import { Drawer, Button, CloseButton, Label, Input, Checkbox, A, Heading, Rating, Radio } from 'flowbite-svelte';
+  import { Drawer, Button, CloseButton, Label, Input, Checkbox, A, Heading, Rating, Radio } from "flowbite-svelte";
 
-	let hidden = true;
-	let myRating = '3';
+  let hidden = true;
+  let myRating = "3";
 </script>
 
 <div class="mt-8 flex justify-center">
-	<Button onclick={() => (hidden = false)}>Show drawer</Button>
+  <Button onclick={() => (hidden = false)}>Show drawer</Button>
 </div>
 <Drawer bind:hidden id="sidebar4">
-	<div class="flex items-center justify-between">
-		<Heading tag="h5" id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">APPLY FILTERS</Heading>
-		<CloseButton onclick={() => (hidden = true)} class="mb-4 dark:text-white" />
-	</div>
-	<form action="#">
-		<div class="space-y-6">
-			<!-- Categories -->
-			<div class="space-y-2">
-				<Heading tag="h6" class="text-base font-medium text-black dark:text-white">Categories</Heading>
-				<div class="flex items-center">
-					<Checkbox>TV, Audio-Video</Checkbox>
-				</div>
-				<div class="flex items-center">
-					<Checkbox checked>Desktop PC</Checkbox>
-				</div>
-				<div class="flex items-center">
-					<Checkbox>Gaming</Checkbox>
-				</div>
-				<div class="flex items-center">
-					<Checkbox>Monitors</Checkbox>
-				</div>
-				<div class="flex items-center">
-					<Checkbox>Laptops</Checkbox>
-				</div>
-				<div class="flex items-center">
-					<Checkbox checked>Console</Checkbox>
-				</div>
-				<div class="flex items-center">
-					<Checkbox>Tablets</Checkbox>
-				</div>
-				<div class="flex items-center">
-					<Checkbox>Foto</Checkbox>
-				</div>
-				<div class="flex items-center">
-					<Checkbox>Fashion</Checkbox>
-				</div>
-				<div class="flex items-center">
-					<Checkbox>Books</Checkbox>
-				</div>
-				<A href="/">View all</A>
-			</div>
-			<!-- Prices -->
-			<div class="space-y-2">
-				<Heading tag="h6" class="text-base font-medium text-black dark:text-white">Prices</Heading>
-				<div class="col-span-2 flex items-center justify-between space-x-3">
-					<div class="w-full">
-						<Label for="last_name" class="mb-2">From</Label>
-						<Input type="text" id="last_name" placeholder="300" required />
-					</div>
-					<div class="w-full">
-						<Label for="company" class="mb-2">To</Label>
-						<Input type="text" id="company" placeholder="3500" required />
-					</div>
-				</div>
-			</div>
+  <div class="flex items-center justify-between">
+    <Heading tag="h5" id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">APPLY FILTERS</Heading>
+    <CloseButton onclick={() => (hidden = true)} class="mb-4 dark:text-white" />
+  </div>
+  <form action="#">
+    <div class="space-y-6">
+      <!-- Categories -->
+      <div class="space-y-2">
+        <Heading tag="h6" class="text-base font-medium text-black dark:text-white">Categories</Heading>
+        <div class="flex items-center">
+          <Checkbox>TV, Audio-Video</Checkbox>
+        </div>
+        <div class="flex items-center">
+          <Checkbox checked>Desktop PC</Checkbox>
+        </div>
+        <div class="flex items-center">
+          <Checkbox>Gaming</Checkbox>
+        </div>
+        <div class="flex items-center">
+          <Checkbox>Monitors</Checkbox>
+        </div>
+        <div class="flex items-center">
+          <Checkbox>Laptops</Checkbox>
+        </div>
+        <div class="flex items-center">
+          <Checkbox checked>Console</Checkbox>
+        </div>
+        <div class="flex items-center">
+          <Checkbox>Tablets</Checkbox>
+        </div>
+        <div class="flex items-center">
+          <Checkbox>Foto</Checkbox>
+        </div>
+        <div class="flex items-center">
+          <Checkbox>Fashion</Checkbox>
+        </div>
+        <div class="flex items-center">
+          <Checkbox>Books</Checkbox>
+        </div>
+        <A href="/">View all</A>
+      </div>
+      <!-- Prices -->
+      <div class="space-y-2">
+        <Heading tag="h6" class="text-base font-medium text-black dark:text-white">Prices</Heading>
+        <div class="col-span-2 flex items-center justify-between space-x-3">
+          <div class="w-full">
+            <Label for="last_name" class="mb-2">From</Label>
+            <Input type="text" id="last_name" placeholder="300" required />
+          </div>
+          <div class="w-full">
+            <Label for="company" class="mb-2">To</Label>
+            <Input type="text" id="company" placeholder="3500" required />
+          </div>
+        </div>
+      </div>
 
-			<!-- Rating -->
-			<div class="space-y-2">
-				<Heading tag="h6" class="text-base font-medium text-black dark:text-white">Rating</Heading>
-				<div class="flex items-center">
-					<Radio bind:group={myRating} value="5"><Rating total={5} rating={5} /></Radio>
-				</div>
-				<div class="flex items-center">
-					<Radio bind:group={myRating} value="4"><Rating total={5} rating={4} /></Radio>
-				</div>
-				<div class="flex items-center">
-					<Radio bind:group={myRating} value="3"><Rating total={5} rating={3} /></Radio>
-				</div>
-				<div class="flex items-center">
-					<Radio bind:group={myRating} value="2"><Rating total={5} rating={2} /></Radio>
-				</div>
-				<div class="flex items-center">
-					<Radio bind:group={myRating} value="1"><Rating total={5} rating={1} /></Radio>
-				</div>
-			</div>
-		</div>
-	</form>
+      <!-- Rating -->
+      <div class="space-y-2">
+        <Heading tag="h6" class="text-base font-medium text-black dark:text-white">Rating</Heading>
+        <div class="flex items-center">
+          <Radio bind:group={myRating} value="5"><Rating total={5} rating={5} /></Radio>
+        </div>
+        <div class="flex items-center">
+          <Radio bind:group={myRating} value="4"><Rating total={5} rating={4} /></Radio>
+        </div>
+        <div class="flex items-center">
+          <Radio bind:group={myRating} value="3"><Rating total={5} rating={3} /></Radio>
+        </div>
+        <div class="flex items-center">
+          <Radio bind:group={myRating} value="2"><Rating total={5} rating={2} /></Radio>
+        </div>
+        <div class="flex items-center">
+          <Radio bind:group={myRating} value="1"><Rating total={5} rating={1} /></Radio>
+        </div>
+      </div>
+    </div>
+  </form>
 </Drawer>
 ```

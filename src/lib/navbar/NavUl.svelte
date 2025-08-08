@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import type { NavbarState, NavUlProps } from "$lib/types";
+  import type { NavbarState, NavUlProps, NavbarBreakpoint } from "$lib/types";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { sineIn } from "svelte/easing";
@@ -9,6 +9,7 @@
   import { navbarUl } from "./theme";
 
   let navState = getContext<NavbarState>("navState");
+  let navBreakpoint = getContext<NavbarBreakpoint>("breakpoint");
 
   let { children, activeUrl = $bindable(), ulClass, slideParams, transition = slide, transitionParams, activeClass, nonActiveClass, respectMotionPreference = true, class: clasName, classes, ...restProps }: NavUlProps = $props();
 
@@ -40,7 +41,7 @@
 
   let hidden: boolean = $derived(navState.hidden ?? true);
 
-  let { base, ul, active, nonActive } = $derived(navbarUl({ hidden }));
+  let { base, ul, active, nonActive } = $derived(navbarUl({ hidden, breakpoint: navBreakpoint }));
 
   $effect(() => {
     navState.activeClass = active({ class: clsx(theme?.active, styling.active) });
@@ -70,7 +71,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1091)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1094)
 ## Props
 @prop children
 @prop activeUrl = $bindable()

@@ -1,6 +1,6 @@
 {
-	"name": "HeroBody",
-	"slots": ["head"],
-	"events": [],
-	"props": [["hero", "'default' | 'visual'", "'default'"]]
+  "name": "HeroBody",
+  "slots": ["head"],
+  "events": [],
+  "props": [["hero", "'default' | 'visual'", "'default'"]]
 }

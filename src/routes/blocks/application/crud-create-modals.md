@@ -18,59 +18,57 @@ Use this free example to show a modal component with a form inside when creating
 
 ```svelte example hideResponsiveButtons
 <script lang="ts">
-	import { Section } from 'flowbite-svelte-blocks';
-	import { Label, Input, Button, Modal, Textarea, Select } from 'flowbite-svelte';
+  import { Section } from "flowbite-svelte-blocks";
+  import { Label, Input, Button, Modal, Textarea, Select } from "flowbite-svelte";
 
-	let defaultModal = $state(false);
-	const handleSubmit = () => {
-		alert('Form submited.');
-	};
-	let selected = $state();
-	let countries = [
-		{ value: 'tv', name: 'TV/Monitors' },
-		{ value: 'pc', name: 'PC' },
-		{ value: 'phone', name: 'Phones' }
-	];
+  let defaultModal = $state(false);
+  const handleSubmit = () => {
+    alert("Form submited.");
+  };
+  let selected = $state();
+  let countries = [
+    { value: "tv", name: "TV/Monitors" },
+    { value: "pc", name: "PC" },
+    { value: "phone", name: "Phones" }
+  ];
 </script>
 
 <Section sectionClass="h-96">
-	<div class="mt-8 flex justify-center">
-		<Button onclick={() => (defaultModal = true)}>Create product</Button>
-	</div>
-	<Modal title="Add Product" bind:open={defaultModal} autoclose>
-		<form onsubmit={handleSubmit}>
-			<div class="mb-4 grid gap-4 sm:grid-cols-2">
-				<div>
-					<Label for="name" class="mb-2">Name</Label>
-					<Input type="text" id="name" placeholder="Type product name" required />
-				</div>
-				<div>
-					<Label for="brand" class="mb-2">Brand</Label>
-					<Input type="text" id="brand" placeholder="Product brand" required />
-				</div>
-				<div>
-					<Label for="price" class="mb-2">Price</Label>
-					<Input type="text" id="price" placeholder="$29999" required />
-				</div>
-				<div>
-					<Label
-						>Category
-						<Select class="mt-2" items={countries} bind:value={selected} required />
-					</Label>
-				</div>
-				<div class="sm:col-span-2">
-					<Label for="description" class="mb-2">Description</Label>
-					<Textarea class="w-full" id="description" placeholder="Your description here" rows={4} name="description" required />
-				</div>
-				<Button type="submit" class="w-52">
-					<svg class="mr-1 -ml-1 h-6 w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
-						><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" /></svg
-					>
-					Add new product
-				</Button>
-			</div>
-		</form>
-	</Modal>
+  <div class="mt-8 flex justify-center">
+    <Button onclick={() => (defaultModal = true)}>Create product</Button>
+  </div>
+  <Modal title="Add Product" bind:open={defaultModal} autoclose>
+    <form onsubmit={handleSubmit}>
+      <div class="mb-4 grid gap-4 sm:grid-cols-2">
+        <div>
+          <Label for="name" class="mb-2">Name</Label>
+          <Input type="text" id="name" placeholder="Type product name" required />
+        </div>
+        <div>
+          <Label for="brand" class="mb-2">Brand</Label>
+          <Input type="text" id="brand" placeholder="Product brand" required />
+        </div>
+        <div>
+          <Label for="price" class="mb-2">Price</Label>
+          <Input type="text" id="price" placeholder="$29999" required />
+        </div>
+        <div>
+          <Label>
+            Category
+            <Select class="mt-2" items={countries} bind:value={selected} required />
+          </Label>
+        </div>
+        <div class="sm:col-span-2">
+          <Label for="description" class="mb-2">Description</Label>
+          <Textarea class="w-full" id="description" placeholder="Your description here" rows={4} name="description" required />
+        </div>
+        <Button type="submit" class="w-52">
+          <svg class="mr-1 -ml-1 h-6 w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" /></svg>
+          Add new product
+        </Button>
+      </div>
+    </form>
+  </Modal>
 </Section>
 ```
 

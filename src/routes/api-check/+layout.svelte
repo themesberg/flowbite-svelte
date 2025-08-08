@@ -8,7 +8,7 @@
 </script>
 
 <FlowbiteSvelteLayout>
-  <ComponentsLayout {data} submenu='api-check'>
+  <ComponentsLayout {data} submenu="api-check">
     <div id="mainContent" class="mb-32 p-8">
       {@render children()}
     </div>

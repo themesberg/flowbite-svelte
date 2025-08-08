@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.11.4
+
+### Patch Changes
+
+- feat: breakpoint for nav components
+
 ## 1.11.3
 
 ### Patch Changes
