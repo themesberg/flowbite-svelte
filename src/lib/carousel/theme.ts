@@ -22,7 +22,6 @@ export const carouselIndicators = tv({
     position: {
       top: { base: "top-5" },
       bottom: { base: "bottom-5" },
-      withThumbnails: { base: "bottom-24" }
     }
   }
 });

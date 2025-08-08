@@ -13,10 +13,7 @@
   const { base, indicator } = $derived(carouselIndicators({ position }));
 
   function goToIndex(newIndex: number) {
-    const currentIndex = _state.index;
-    _state.index = newIndex;
-    _state.forward = newIndex >= currentIndex;
-    _state.lastSlideChange = new Date();
+    _state.changeSlide(newIndex);
   }
 </script>
 

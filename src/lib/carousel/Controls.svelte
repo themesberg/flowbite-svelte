@@ -3,7 +3,6 @@
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { getContext } from "svelte";
-  import { canChangeSlide } from "./CarouselSlide";
 
   let { children, class: className, ...restProps }: ControlsProps = $props();
 
@@ -12,20 +11,7 @@
   const _state = getContext<State>("state");
 
   function changeSlide(forward: boolean) {
-    const { lastSlideChange, slideDuration } = _state;
-    if (!canChangeSlide({ lastSlideChange, slideDuration, slideDurationRatio: 0.75 })) {
-      return;
-    }
-
-    if (forward) {
-      _state.forward = true;
-      _state.index = _state.index >= _state.images.length - 1 ? 0 : _state.index + 1;
-    } else {
-      _state.forward = false;
-      _state.index = _state.index <= 0 ? _state.images.length - 1 : _state.index - 1;
-    }
-    _state.lastSlideChange = new Date();
-    return _state;
+    _state.changeSlide(forward ? _state.index + 1 : _state.index - 1);
   }
 </script>
 

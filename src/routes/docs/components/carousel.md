@@ -134,9 +134,9 @@ You can control the `Carousel` component externally by the `index` prop. Here is
 <div class="max-w-4xl space-y-4">
   <Carousel {images} bind:index>
     <Controls />
-    <CarouselIndicators position="withThumbnails" />
-    <Thumbnails {images} bind:index />
+    <CarouselIndicators position="bottom" />
   </Carousel>
+  <Thumbnails {images} bind:index />
 </div>
 ```
 
@@ -222,7 +222,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 <div class="max-w-4xl space-y-4">
   <Carousel {images} bind:index>
-    <CarouselIndicators position="withThumbnails">
+    <CarouselIndicators position="bottom">
       {#snippet children({ selected, index })}
         <Indicator color={selected ? "red" : "green"} class="h-5 w-5 border border-white text-white {selected ? 'opacity-100' : 'opacity-80'}">
           {index}
@@ -237,12 +237,12 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
         </Button>
       {/snippet}
     </Controls>
-    <Thumbnails class="mt-4 gap-3 bg-transparent" {images} bind:index>
-      {#snippet children({ image, selected, Thumbnail })}
-        <Thumbnail {selected} {...image} class="hover:outline-primary-500 rounded-md shadow-xl hover:outline {selected ? 'outline-primary-400 outline-4' : ''}" />
-      {/snippet}
-    </Thumbnails>
   </Carousel>
+  <Thumbnails class="mt-4 gap-3 bg-transparent" {images} bind:index>
+    {#snippet children({ image, selected, Thumbnail })}
+      <Thumbnail {selected} {...image} class="hover:outline-primary-500 rounded-md shadow-xl hover:outline {selected ? 'outline-primary-400 outline-4' : ''}" />
+    {/snippet}
+  </Thumbnails>
 </div>
 ```
 

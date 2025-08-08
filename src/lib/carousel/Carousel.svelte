@@ -12,15 +12,30 @@
 
   const theme = getTheme("carousel");
 
-  const _state: State = $state({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: new Date() });
+  const changeSlide = (n: number) => {
+    // console.debug("changeSlide: n =", n, ", _state.index =", _state.index, " length =", images.length);
+    if (n % images.length === _state.index) return _state;
+
+    if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
+
+    _state.forward = n >= _state.index;
+    _state.index = (images.length + n) % images.length;
+    _state.lastSlideChange = new Date();
+
+    index = _state.index; // Update the bindable index
+    onchange?.(images[_state.index]);
+
+    return _state;
+  };
+
+  const _state: State = $state({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: new Date(), changeSlide });
 
   setContext("state", _state);
 
   let initialized = false;
 
   $effect(() => {
-    index = _state.index;
-    onchange?.(images[index]);
+    changeSlide(index);
   });
 
   onMount(() => {
@@ -29,23 +44,11 @@
   });
 
   const nextSlide = () => {
-    if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
-
-    _state.forward = true;
-    _state.index = _state.index >= images.length - 1 ? 0 : _state.index + 1;
-    _state.lastSlideChange = new Date();
-
-    return _state;
+    return changeSlide(_state.index + 1);
   };
 
   const prevSlide = () => {
-    if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
-
-    _state.forward = false;
-    _state.index = _state.index <= 0 ? images.length - 1 : _state.index - 1;
-    _state.lastSlideChange = new Date();
-
-    return _state;
+    return changeSlide(_state.index - 1);
   };
 
   const loop = (node: HTMLElement) => {
@@ -167,12 +170,12 @@
 <div bind:this={carouselDiv} class={clsx("relative", divClass)} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
   <div {...restProps} class={carousel({ class: clsx(activeDragGesture === undefined ? "transition-transform" : "", theme, className) })} {@attach loop}>
     {#if slide}
-      {@render slide({ index, Slide })}
+      {@render slide({ index: _state.index, Slide })}
     {:else}
-      <Slide image={images[index]} class={clsx(imgClass)} {transition} />
+      <Slide image={images[_state.index]} class={clsx(imgClass)} {transition} />
     {/if}
   </div>
-  {@render children?.(index)}
+  {@render children?.(_state.index)}
 </div>
 
 <!--

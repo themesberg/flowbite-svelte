@@ -1,18 +1,12 @@
 <script lang="ts">
-  import { type State, Thumbnail, type ThumbnailsProps } from "$lib";
+  import { Thumbnail, type ThumbnailsProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
-  import { getContext } from "svelte";
   import { thumbnails } from "./theme";
 
   let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass, throttleDelay = 650, class: className }: ThumbnailsProps = $props();
 
   const theme = getTheme("thumbnails");
-
-  const _state = getContext<State>("state");
-  if (!_state) {
-    console.error("State is undefined. Make sure to provide state context or pass it as a prop.");
-  }
 
   let lastClickedAt = new Date();
 
@@ -21,21 +15,9 @@
       console.warn("Thumbnail action throttled");
       return;
     }
-    if (_state) {
-      const currentIndex = _state.index;
 
-      _state.index = newIndex;
-      _state.forward = newIndex >= currentIndex;
-      _state.lastSlideChange = new Date();
-
-      // Update the bound index
-      index = newIndex;
-    } else {
-      // Fallback behavior if state is not available
-      index = newIndex;
-      lastClickedAt = new Date();
-      console.warn("State update skipped - no valid state available");
-    }
+    lastClickedAt = new Date();
+    index = newIndex;
   };
 
   $effect(() => {
