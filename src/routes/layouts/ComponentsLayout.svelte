@@ -122,11 +122,6 @@
             <ExternalLink />
           {/snippet}
         </SidebarItem>
-        <SidebarItem label="Illustration" href="https://flowbite-svelte-illustrations.codewithshin.com/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} target="_blank">
-          {#snippet subtext()}
-            <ExternalLink />
-          {/snippet}
-        </SidebarItem>
       </SidebarGroup>
     {/if}
     <!-- /SidebarWrapper -->
