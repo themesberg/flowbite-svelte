@@ -44,6 +44,6 @@
     <Label for="confirm_password" class="mb-2">Confirm password</Label>
     <Input type="password" id="confirm_password" placeholder="•••••••••" />
   </div>
-  <Checkbox divClass="mb-6 space-x-1 rtl:space-x-reverse" required>I agree with the <A href="/">terms and conditions</A>.</Checkbox>
+  <Checkbox classes={{ div: "mb-6 space-x-1 rtl:space-x-reverse" }} required>I agree with the <A href="/">terms and conditions</A>.</Checkbox>
   <Button type="submit">Submit</Button>
 </form>
