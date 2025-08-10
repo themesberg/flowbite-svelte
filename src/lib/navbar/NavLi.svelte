@@ -8,12 +8,24 @@
   let navState = getContext<NavbarState>("navState");
   let navBreakpoint = getContext<NavbarBreakpoint>("breakpoint");
 
-  let { children, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
+  let { children, onclick, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
 
   const theme = getTheme("navbarLi");
 
   let active = $derived(navState.activeUrl ? restProps.href === navState.activeUrl : false);
   let liClass = $derived(navbarLi({ breakpoint: navBreakpoint, hidden: navState.hidden, class: clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), theme, className) }));
+
+  function handleClick(event: any) {
+    // Close the mobile menu when a link is clicked
+    if (restProps.href !== undefined && !navState.hidden) {
+      navState.hidden = true;
+    }
+    
+    // Call original onclick handler if provided
+    if (onclick) {
+      onclick(event);
+    }
+  }
 </script>
 
 <li>
@@ -22,7 +34,7 @@
       {@render children?.()}
     </button>
   {:else}
-    <a {...restProps} class={liClass}>
+    <a {...restProps} class={liClass} onclick={handleClick}>
       {@render children?.()}
     </a>
   {/if}
