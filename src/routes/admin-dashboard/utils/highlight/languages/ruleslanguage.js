@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/ruleslanguage';
+import register from "highlight.js/lib/languages/ruleslanguage";
 
-export const ruleslanguage = { name: 'ruleslanguage', register };
+export const ruleslanguage = { name: "ruleslanguage", register };
 export default ruleslanguage;

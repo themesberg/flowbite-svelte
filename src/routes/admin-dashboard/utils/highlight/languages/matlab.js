@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/matlab';
+import register from "highlight.js/lib/languages/matlab";
 
-export const matlab = { name: 'matlab', register };
+export const matlab = { name: "matlab", register };
 export default matlab;

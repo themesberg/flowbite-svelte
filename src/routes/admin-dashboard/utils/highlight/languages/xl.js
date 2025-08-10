@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/xl';
+import register from "highlight.js/lib/languages/xl";
 
-export const xl = { name: 'xl', register };
+export const xl = { name: "xl", register };
 export default xl;

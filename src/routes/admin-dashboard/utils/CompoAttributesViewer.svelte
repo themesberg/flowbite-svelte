@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import JSONView from './JSONView.svelte';
+  import { onMount } from "svelte";
+  import JSONView from "./JSONView.svelte";
 
   type TCompoData = {
     default: {
@@ -14,7 +14,7 @@
   };
 
   // Replace dirName and components with a single fileName prop
-  let { fileName = '' }: { fileName: string } = $props();
+  let { fileName = "" }: { fileName: string } = $props();
 
   let compoData: TCompoData | null = $state(null);
 
@@ -32,7 +32,7 @@
   onMount(() => {
     if (fileName) {
       loadComponentData().catch((error) => {
-        console.error('Error loading component data:', error);
+        console.error("Error loading component data:", error);
       });
     }
   });

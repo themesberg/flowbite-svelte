@@ -20,7 +20,7 @@
     if (restProps.href !== undefined && !navState.hidden) {
       navState.hidden = true;
     }
-    
+
     // Call original onclick handler if provided
     if (onclick) {
       onclick(event);
@@ -47,6 +47,7 @@
 [NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1109)
 ## Props
 @prop children
+@prop onclick
 @prop activeClass
 @prop nonActiveClass
 @prop class: className

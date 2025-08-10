@@ -1,21 +1,21 @@
 <script lang="ts">
-  import { Label, Input } from 'flowbite-svelte';
-  import { SignUp } from 'flowbite-svelte-admin-dashboard';
-  import MetaTag from '../utils/MetaTag.svelte';
+  import { Label, Input } from "flowbite-svelte";
+  import { SignUp } from "flowbite-svelte-admin-dashboard";
+  import MetaTag from "../utils/MetaTag.svelte";
 
-  const title = 'Create a Free Account';
+  const title = "Create a Free Account";
   const site = {
-    name: 'Flowbite',
-    img: '/images/flowbite-svelte-icon-logo.svg',
-    link: '/',
-    imgAlt: 'FlowBite Logo'
+    name: "Flowbite",
+    img: "/images/flowbite-svelte-icon-logo.svg",
+    link: "/",
+    imgAlt: "FlowBite Logo"
   };
   const acceptTerms = true;
   const haveAccount = true;
-  const btnTitle = 'Create account';
-  const termsLink = '/';
-  const loginLink = 'sign-in';
-  const labelClass = 'space-y-2 dark:text-white';
+  const btnTitle = "Create account";
+  const termsLink = "/";
+  const loginLink = "sign-in";
+  const labelClass = "space-y-2 dark:text-white";
   const onSubmit = (e: Event) => {
     const formData = new FormData(e.target as HTMLFormElement);
 
@@ -27,10 +27,10 @@
     console.log(data);
   };
 
-  const path: string = '/authentication/sign-up';
-  const description: string = 'Sign up example - Flowbite Svelte Admin Dashboard';
-  const metaTitle: string = 'Flowbite Svelte Admin Dashboard - Sign up';
-  const subtitle: string = 'Sign up';
+  const path: string = "/authentication/sign-up";
+  const description: string = "Sign up example - Flowbite Svelte Admin Dashboard";
+  const metaTitle: string = "Flowbite Svelte Admin Dashboard - Sign up";
+  const subtitle: string = "Sign up";
 </script>
 
 <MetaTag {path} {description} title={metaTitle} {subtitle} />

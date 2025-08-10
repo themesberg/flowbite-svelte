@@ -1,13 +1,13 @@
 <script>
-  import { A, Button } from 'flowbite-svelte';
-  import { DribbbleSolid, FacebookSolid, GithubSolid, TwitterSolid } from 'flowbite-svelte-icons';
-  import { CardWidget } from 'flowbite-svelte-admin-dashboard';
+  import { A, Button } from "flowbite-svelte";
+  import { DribbbleSolid, FacebookSolid, GithubSolid, TwitterSolid } from "flowbite-svelte-icons";
+  import { CardWidget } from "flowbite-svelte-admin-dashboard";
 
   const items = [
-    { icon: FacebookSolid, name: 'Facebook account', link: 'www.facebook.com/themesberg' },
-    { icon: TwitterSolid, name: 'Twitter account', link: 'www.twitter.com/themesberg' },
-    { icon: GithubSolid, name: 'Github account', link: '' },
-    { icon: DribbbleSolid, name: 'Dribble account', link: '' }
+    { icon: FacebookSolid, name: "Facebook account", link: "www.facebook.com/themesberg" },
+    { icon: TwitterSolid, name: "Twitter account", link: "www.twitter.com/themesberg" },
+    { icon: GithubSolid, name: "Github account", link: "" },
+    { icon: DribbbleSolid, name: "Dribble account", link: "" }
   ];
 </script>
 

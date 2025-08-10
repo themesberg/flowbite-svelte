@@ -1,26 +1,10 @@
 <script lang="ts">
-  import {
-    Breadcrumb,
-    BreadcrumbItem,
-    Button,
-    Checkbox,
-    Drawer,
-    Heading,
-    Input,
-    Table,
-    TableBody,
-    TableBodyCell,
-    TableBodyRow,
-    TableHead,
-    TableHeadCell,
-    Toolbar,
-    ToolbarButton
-  } from 'flowbite-svelte';
-  import { CogSolid, DotsVerticalOutline, EditOutline, ExclamationCircleSolid, TrashBinSolid } from 'flowbite-svelte-icons';
-  import type { Component } from 'svelte';
-  import Products from '../../../data/product.json';
-  import MetaTag from '../../../utils/MetaTag.svelte';
-  import { DeleteDrawer, ProductDrawer } from 'flowbite-svelte-admin-dashboard';
+  import { Breadcrumb, BreadcrumbItem, Button, Checkbox, Drawer, Heading, Input, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Toolbar, ToolbarButton } from "flowbite-svelte";
+  import { CogSolid, DotsVerticalOutline, EditOutline, ExclamationCircleSolid, TrashBinSolid } from "flowbite-svelte-icons";
+  import type { Component } from "svelte";
+  import Products from "../../../data/product.json";
+  import MetaTag from "../../../utils/MetaTag.svelte";
+  import { DeleteDrawer, ProductDrawer } from "flowbite-svelte-admin-dashboard";
 
   // import Product from './Product.svelte';
 
@@ -32,10 +16,10 @@
     hidden = !hidden;
   };
 
-  const path: string = '/crud/products';
-  const description: string = 'CRUD products examaple - Flowbite Svelte Admin Dashboard';
-  const title: string = 'Flowbite Svelte Admin Dashboard - CRUD Products';
-  const subtitle: string = 'CRUD Products';
+  const path: string = "/crud/products";
+  const description: string = "CRUD products examaple - Flowbite Svelte Admin Dashboard";
+  const title: string = "Flowbite Svelte Admin Dashboard - CRUD Products";
+  const subtitle: string = "CRUD Products";
 </script>
 
 <MetaTag {path} {description} {title} {subtitle} />
@@ -74,7 +58,7 @@
   <Table>
     <TableHead class="border-y border-gray-200 bg-gray-100 dark:border-gray-700">
       <TableHeadCell class="w-4 p-4"><Checkbox /></TableHeadCell>
-      {#each ['Product Name', 'Technology', 'Description', 'ID', 'Price', 'Discount', 'Actions'] as title}
+      {#each ["Product Name", "Technology", "Description", "ID", "Price", "Discount", "Actions"] as title}
         <TableHeadCell class="ps-4 font-normal">{title}</TableHeadCell>
       {/each}
     </TableHead>

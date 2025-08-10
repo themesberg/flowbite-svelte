@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { RunesMetaTags } from 'runes-meta-tags';
+  import { RunesMetaTags } from "runes-meta-tags";
 
   interface Props {
     path: string;
@@ -18,7 +18,7 @@
   {title}
   {description}
   og={{
-    type: 'website',
+    type: "website",
     url: `${og_url}`,
     title: `${title}`,
     description: `${description}`,
@@ -26,11 +26,11 @@
     imageWidth: 1200,
     imageHeight: 630,
     imageAlt: `${title}`,
-    siteName: 'Flowbite Svelte Admin Dashboard'
+    siteName: "Flowbite Svelte Admin Dashboard"
   }}
   twitter={{
-    creator: '@shinokada',
-    card: 'summary_large_image',
+    creator: "@shinokada",
+    card: "summary_large_image",
     title: `${title}`,
     description: `${description}`,
     image: imgsrc,

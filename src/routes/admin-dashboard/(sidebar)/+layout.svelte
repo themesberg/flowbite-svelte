@@ -1,8 +1,8 @@
 <script lang="ts">
   // import '../../app.css';
-  import Navbar from './Navbar.svelte';
-  import Sidebar from './Sidebar.svelte';
-  import type { LayoutProps } from './$types';
+  import Navbar from "./Navbar.svelte";
+  import Sidebar from "./Sidebar.svelte";
+  import type { LayoutProps } from "./$types";
 
   interface Route {
     path: string;

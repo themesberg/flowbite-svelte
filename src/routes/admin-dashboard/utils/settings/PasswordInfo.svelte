@@ -1,6 +1,6 @@
 <script>
-  import { Button, Input, Label } from 'flowbite-svelte';
-  import { CardWidget } from 'flowbite-svelte-admin-dashboard';
+  import { Button, Input, Label } from "flowbite-svelte";
+  import { CardWidget } from "flowbite-svelte-admin-dashboard";
 </script>
 
 <CardWidget title="Password Information" class="max-w-none p-4 sm:p-6">

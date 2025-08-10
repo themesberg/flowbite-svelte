@@ -1,24 +1,24 @@
-import type { ApexOptions } from 'apexcharts';
+import type { ApexOptions } from "apexcharts";
 
 const signupsChartColors: {
   backgroundBarColors: string[];
 } = {
-  backgroundBarColors: ['#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB']
+  backgroundBarColors: ["#E5E7EB", "#E5E7EB", "#E5E7EB", "#E5E7EB", "#E5E7EB", "#E5E7EB", "#E5E7EB"]
 };
 
 const config: ApexOptions = {
   series: [
     {
-      name: 'Users',
+      name: "Users",
       data: [1334, 2435, 1753, 1328, 1155, 1632, 1336]
     }
   ],
-  labels: ['01 Feb', '02 Feb', '03 Feb', '04 Feb', '05 Feb', '06 Feb', '07 Feb'],
+  labels: ["01 Feb", "02 Feb", "03 Feb", "04 Feb", "05 Feb", "06 Feb", "07 Feb"],
   chart: {
-    type: 'bar',
-    height: '140px',
-    foreColor: '#4B5563',
-    fontFamily: 'Inter, sans-serif',
+    type: "bar",
+    height: "140px",
+    foreColor: "#4B5563",
+    fontFamily: "Inter, sans-serif",
     toolbar: {
       show: false
     }
@@ -26,12 +26,12 @@ const config: ApexOptions = {
   theme: {
     monochrome: {
       enabled: true,
-      color: '#EF562F'
+      color: "#EF562F"
     }
   },
   plotOptions: {
     bar: {
-      columnWidth: '25%',
+      columnWidth: "25%",
       borderRadius: 3,
       colors: {
         backgroundBarColors: signupsChartColors.backgroundBarColors,
@@ -58,14 +58,14 @@ const config: ApexOptions = {
     shared: true,
     intersect: false,
     style: {
-      fontSize: '14px',
-      fontFamily: 'Inter, sans-serif'
+      fontSize: "14px",
+      fontFamily: "Inter, sans-serif"
     }
   },
   states: {
     hover: {
       filter: {
-        type: 'darken'
+        type: "darken"
       }
     }
   },

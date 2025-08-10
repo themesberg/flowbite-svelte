@@ -1,30 +1,30 @@
-import type { ApexOptions } from 'apexcharts';
+import type { ApexOptions } from "apexcharts";
 
 interface TrafficChannelsChartColors {
   strokeColor: string;
 }
 
 const getTrafficChannelsChartConfig = (dark: boolean): ApexOptions => {
-  let trafficChannelsChartColors: TrafficChannelsChartColors = { strokeColor: '#ffffff' };
+  let trafficChannelsChartColors: TrafficChannelsChartColors = { strokeColor: "#ffffff" };
 
   if (dark) {
     trafficChannelsChartColors = {
-      strokeColor: '#1f2937'
+      strokeColor: "#1f2937"
     };
   } else {
     trafficChannelsChartColors = {
-      strokeColor: '#ffffff'
+      strokeColor: "#ffffff"
     };
   }
 
   return {
     series: [70, 5, 25],
-    labels: ['Desktop', 'Tablet', 'Phone'],
-    colors: ['#16BDCA', '#FDBA8C', '#1A56DB'],
+    labels: ["Desktop", "Tablet", "Phone"],
+    colors: ["#16BDCA", "#FDBA8C", "#1A56DB"],
     chart: {
-      type: 'donut',
+      type: "donut",
       height: 400,
-      fontFamily: 'Inter, sans-serif',
+      fontFamily: "Inter, sans-serif",
       toolbar: {
         show: false
       }
@@ -45,7 +45,7 @@ const getTrafficChannelsChartConfig = (dark: boolean): ApexOptions => {
     states: {
       hover: {
         filter: {
-          type: 'darken'
+          type: "darken"
         }
       }
     },
@@ -55,8 +55,8 @@ const getTrafficChannelsChartConfig = (dark: boolean): ApexOptions => {
       fillSeriesColor: false,
       inverseOrder: true,
       style: {
-        fontSize: '14px',
-        fontFamily: 'Inter, sans-serif'
+        fontSize: "14px",
+        fontFamily: "Inter, sans-serif"
       },
       x: {
         show: true,
@@ -67,7 +67,7 @@ const getTrafficChannelsChartConfig = (dark: boolean): ApexOptions => {
       },
       y: {
         formatter: function (value: number) {
-          return value + '%';
+          return value + "%";
         }
       }
     },

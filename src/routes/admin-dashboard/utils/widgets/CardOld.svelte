@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Card, Heading } from 'flowbite-svelte';
-  import type { Snippet } from 'svelte';
+  import { Card, Heading } from "flowbite-svelte";
+  import type { Snippet } from "svelte";
   interface Props {
     children: Snippet;
     title: string;

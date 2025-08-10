@@ -26,14 +26,14 @@
   // Check if a prop has a default value
   function hasDefaultValue(propArray: string[]): boolean {
     // Check if there is a second element and it's not an empty string
-    return propArray.length > 1 && propArray[1] !== '';
+    return propArray.length > 1 && propArray[1] !== "";
   }
 </script>
 
 <div class="json-view my-2 mb-8 overflow-hidden rounded-md border border-gray-200 bg-gray-50">
   <button onclick={toggle} class="toggle-btn flex w-full items-center justify-between p-3 text-left transition-colors hover:bg-gray-100">
     <div class="flex items-center gap-2">
-      <span class="text-gray-600">{expanded ? '▼' : '►'}</span>
+      <span class="text-gray-600">{expanded ? "▼" : "►"}</span>
       <span class="font-medium">{data.name}</span>
       <a href={data.type.link} target="_blank" rel="noopener noreferrer" class="ml-2 text-sm text-blue-600 hover:underline">
         Type: {data.type.name}

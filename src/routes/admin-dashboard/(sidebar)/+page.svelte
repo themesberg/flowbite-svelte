@@ -1,11 +1,11 @@
 <script lang="ts">
-  import Dashboard from '../utils/dashboard/Dashboard.svelte';
-  import MetaTag from '../utils/MetaTag.svelte';
+  import Dashboard from "../utils/dashboard/Dashboard.svelte";
+  import MetaTag from "../utils/MetaTag.svelte";
 
-  const path: string = '';
-  const description: string = 'Admin Dashboard example using Flowbite Svelte';
-  const title: string = 'Flowbite Svelte Admin Dashboard - Home';
-  const subtitle: string = 'Admin Dashboard';
+  const path: string = "";
+  const description: string = "Admin Dashboard example using Flowbite Svelte";
+  const title: string = "Flowbite Svelte Admin Dashboard - Home";
+  const subtitle: string = "Admin Dashboard";
 </script>
 
 <MetaTag {path} {description} {title} {subtitle} />

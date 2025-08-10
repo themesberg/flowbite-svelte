@@ -1,6 +1,6 @@
 <script>
-  import { Breadcrumb, BreadcrumbItem, Heading } from 'flowbite-svelte';
-  import { EmptyCard } from 'flowbite-svelte-admin-dashboard';
+  import { Breadcrumb, BreadcrumbItem, Heading } from "flowbite-svelte";
+  import { EmptyCard } from "flowbite-svelte-admin-dashboard";
 </script>
 
 <main>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Maintenance } from 'flowbite-svelte-admin-dashboard';
+  import { Maintenance } from "flowbite-svelte-admin-dashboard";
 </script>
 
 <Maintenance />

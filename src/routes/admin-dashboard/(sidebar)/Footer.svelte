@@ -1,23 +1,23 @@
 <script lang="ts">
-  import type { LinkType } from 'flowbite-svelte';
-  import Frame from './Frame.svelte';
-  import { DiscordSolid, DribbbleSolid, FacebookSolid, GithubSolid, TwitterSolid } from 'flowbite-svelte-icons';
-  import type { Component } from 'svelte';
+  import type { LinkType } from "flowbite-svelte";
+  import Frame from "./Frame.svelte";
+  import { DiscordSolid, DribbbleSolid, FacebookSolid, GithubSolid, TwitterSolid } from "flowbite-svelte-icons";
+  import type { Component } from "svelte";
 
   const links: LinkType[] = [
-    { name: 'Terms and conditions', href: '#' },
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Licensing', href: '#' },
-    { name: 'Cookie Policy', href: '#' },
-    { name: 'Contact', href: '#' }
+    { name: "Terms and conditions", href: "#" },
+    { name: "Privacy Policy", href: "#" },
+    { name: "Licensing", href: "#" },
+    { name: "Cookie Policy", href: "#" },
+    { name: "Contact", href: "#" }
   ];
 
   const brands: [Component, string][] = [
-    [FacebookSolid, ''],
-    [DiscordSolid, ''],
-    [TwitterSolid, ''],
-    [GithubSolid, ''],
-    [DribbbleSolid, '']
+    [FacebookSolid, ""],
+    [DiscordSolid, ""],
+    [TwitterSolid, ""],
+    [GithubSolid, ""],
+    [DribbbleSolid, ""]
   ];
 </script>
 
@@ -41,5 +41,6 @@
 </Frame>
 
 <p class="my-10 text-center text-sm text-gray-500">
-  © 2019-2023 <a href="https://flowbite.com/" class="hover:underline" target="_blank"> Flowbite.com </a>. All rights reserved.
+  © 2019-2023 <a href="https://flowbite.com/" class="hover:underline" target="_blank">Flowbite.com</a>
+  . All rights reserved.
 </p>

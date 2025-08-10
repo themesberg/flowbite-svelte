@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.11.5
+
+### Patch Changes
+
+- fix: NavLi close after click
+
 ## 1.11.4
 
 ### Patch Changes

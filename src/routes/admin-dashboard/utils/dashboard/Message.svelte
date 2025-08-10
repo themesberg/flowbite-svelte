@@ -1,9 +1,9 @@
 <script>
-  import { Button, Textarea, Toolbar, ToolbarButton } from 'flowbite-svelte';
-  import { ImageSolid, MapPinAltSolid, PaperClipOutline } from 'flowbite-svelte-icons';
-  import { setContext } from 'svelte';
+  import { Button, Textarea, Toolbar, ToolbarButton } from "flowbite-svelte";
+  import { ImageSolid, MapPinAltSolid, PaperClipOutline } from "flowbite-svelte-icons";
+  import { setContext } from "svelte";
 
-  setContext('background', false);
+  setContext("background", false);
 </script>
 
 <form>

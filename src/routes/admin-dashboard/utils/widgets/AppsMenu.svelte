@@ -1,28 +1,17 @@
 <script>
-  import { MegaMenu, ToolbarButton } from 'flowbite-svelte';
-  import {
-    ArchiveSolid,
-    ArrowRightToBracketOutline,
-    CogOutline,
-    DollarOutline,
-    GridSolid,
-    InboxOutline,
-    ProfileCardOutline,
-    SalePercentOutline,
-    ShoppingBagSolid,
-    UsersGroupSolid
-  } from 'flowbite-svelte-icons';
+  import { MegaMenu, ToolbarButton } from "flowbite-svelte";
+  import { ArchiveSolid, ArrowRightToBracketOutline, CogOutline, DollarOutline, GridSolid, InboxOutline, ProfileCardOutline, SalePercentOutline, ShoppingBagSolid, UsersGroupSolid } from "flowbite-svelte-icons";
 
   const menu = [
-    { name: 'Sales', href: '/', icon: ShoppingBagSolid },
-    { name: 'Users', href: '/', icon: UsersGroupSolid },
-    { name: 'Inbox', href: '/', icon: InboxOutline },
-    { name: 'Profile', href: '/', icon: ProfileCardOutline },
-    { name: 'Settings', href: '/settings', icon: CogOutline },
-    { name: 'Prouducts', href: '/', icon: ArchiveSolid },
-    { name: 'Pricing', href: '/pages/pricing', icon: DollarOutline },
-    { name: 'Billing', href: '/', icon: SalePercentOutline },
-    { name: 'Logout', href: '/', icon: ArrowRightToBracketOutline }
+    { name: "Sales", href: "/", icon: ShoppingBagSolid },
+    { name: "Users", href: "/", icon: UsersGroupSolid },
+    { name: "Inbox", href: "/", icon: InboxOutline },
+    { name: "Profile", href: "/", icon: ProfileCardOutline },
+    { name: "Settings", href: "/settings", icon: CogOutline },
+    { name: "Prouducts", href: "/", icon: ArchiveSolid },
+    { name: "Pricing", href: "/pages/pricing", icon: DollarOutline },
+    { name: "Billing", href: "/", icon: SalePercentOutline },
+    { name: "Logout", href: "/", icon: ArrowRightToBracketOutline }
   ];
   let { open = $bindable() } = $props();
 </script>

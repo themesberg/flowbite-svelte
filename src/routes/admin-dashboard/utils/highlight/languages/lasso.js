@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/lasso';
+import register from "highlight.js/lib/languages/lasso";
 
-export const lasso = { name: 'lasso', register };
+export const lasso = { name: "lasso", register };
 export default lasso;

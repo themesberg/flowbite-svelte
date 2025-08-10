@@ -1,11 +1,11 @@
-import type { ApexOptions } from 'apexcharts';
+import type { ApexOptions } from "apexcharts";
 
 // dark
 const visitorsChartColors: {
-  fillGradientShade: 'dark' | 'light';
+  fillGradientShade: "dark" | "light";
   fillGradientShadeIntensity: number;
 } = {
-  fillGradientShade: 'dark',
+  fillGradientShade: "dark",
   fillGradientShadeIntensity: 0.45
 };
 
@@ -21,15 +21,15 @@ const visitorsChartColors: {
 const config: ApexOptions = {
   series: [
     {
-      name: 'Visitors',
+      name: "Visitors",
       data: [500, 590, 600, 520, 610, 550, 600]
     }
   ],
-  labels: ['01 Feb', '02 Feb', '03 Feb', '04 Feb', '05 Feb', '06 Feb', '07 Feb'],
+  labels: ["01 Feb", "02 Feb", "03 Feb", "04 Feb", "05 Feb", "06 Feb", "07 Feb"],
   chart: {
-    type: 'area',
-    height: '305px',
-    fontFamily: 'Inter, sans-serif',
+    type: "area",
+    height: "305px",
+    fontFamily: "Inter, sans-serif",
     sparkline: {
       enabled: true
     },
@@ -38,7 +38,7 @@ const config: ApexOptions = {
     }
   },
   fill: {
-    type: 'gradient',
+    type: "gradient",
     gradient: {
       shade: visitorsChartColors.fillGradientShade,
       shadeIntensity: visitorsChartColors.fillGradientShadeIntensity
@@ -46,19 +46,19 @@ const config: ApexOptions = {
   },
   plotOptions: {
     area: {
-      fillTo: 'end'
+      fillTo: "end"
     }
   },
   theme: {
     monochrome: {
       enabled: true,
-      color: '#EF562F'
+      color: "#EF562F"
     }
   },
   tooltip: {
     style: {
-      fontSize: '14px',
-      fontFamily: 'Inter, sans-serif'
+      fontSize: "14px",
+      fontFamily: "Inter, sans-serif"
     }
   }
 };

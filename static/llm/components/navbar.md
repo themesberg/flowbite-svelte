@@ -503,6 +503,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 #### Props
 
 - children
+- onclick
 - activeClass
 - nonActiveClass
 - class: className

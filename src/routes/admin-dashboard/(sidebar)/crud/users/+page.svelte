@@ -1,21 +1,21 @@
 <script lang="ts">
-  import { Avatar, Breadcrumb, BreadcrumbItem, Button, Checkbox, Heading, Indicator } from 'flowbite-svelte';
-  import { Input, Table, TableBody, TableBodyCell, TableBodyRow, TableHead } from 'flowbite-svelte';
-  import { TableHeadCell, Toolbar, ToolbarButton } from 'flowbite-svelte';
-  import { CogSolid, DotsVerticalOutline, DownloadSolid } from 'flowbite-svelte-icons';
-  import { EditOutline, ExclamationCircleSolid, PlusOutline, TrashBinSolid } from 'flowbite-svelte-icons';
-  import Users from '../../../data/users.json';
-  import { imagesPath, DeleteModal, UserModal } from 'flowbite-svelte-admin-dashboard';
-  import MetaTag from '../../../utils/MetaTag.svelte';
+  import { Avatar, Breadcrumb, BreadcrumbItem, Button, Checkbox, Heading, Indicator } from "flowbite-svelte";
+  import { Input, Table, TableBody, TableBodyCell, TableBodyRow, TableHead } from "flowbite-svelte";
+  import { TableHeadCell, Toolbar, ToolbarButton } from "flowbite-svelte";
+  import { CogSolid, DotsVerticalOutline, DownloadSolid } from "flowbite-svelte-icons";
+  import { EditOutline, ExclamationCircleSolid, PlusOutline, TrashBinSolid } from "flowbite-svelte-icons";
+  import Users from "../../../data/users.json";
+  import { imagesPath, DeleteModal, UserModal } from "flowbite-svelte-admin-dashboard";
+  import MetaTag from "../../../utils/MetaTag.svelte";
 
   let openUser: boolean = $state(false); // modal control
   let openDelete: boolean = $state(false); // modal control
 
   let current_user: any = $state({});
-  const path: string = '/crud/users';
-  const description: string = 'CRUD users examaple - Flowbite Svelte Admin Dashboard';
-  const title: string = 'Flowbite Svelte Admin Dashboard - CRUD Users';
-  const subtitle: string = 'CRUD Users';
+  const path: string = "/crud/users";
+  const description: string = "CRUD users examaple - Flowbite Svelte Admin Dashboard";
+  const title: string = "Flowbite Svelte Admin Dashboard - CRUD Users";
+  const subtitle: string = "CRUD Users";
 </script>
 
 <MetaTag {path} {description} {title} {subtitle} />
@@ -61,7 +61,7 @@
   <Table>
     <TableHead class="border-y border-gray-200 bg-gray-100 dark:border-gray-700">
       <TableHeadCell class="w-4 p-4"><Checkbox /></TableHeadCell>
-      {#each ['Name', 'Biography', 'Position', 'Country', 'Status', 'Actions'] as title}
+      {#each ["Name", "Biography", "Position", "Country", "Status", "Actions"] as title}
         <TableHeadCell class="p-4 font-medium">{title}</TableHeadCell>
       {/each}
     </TableHead>
@@ -70,7 +70,7 @@
         <TableBodyRow class="text-base">
           <TableBodyCell class="w-4 p-4"><Checkbox /></TableBodyCell>
           <TableBodyCell class="mr-12 flex items-center space-x-6 p-4 whitespace-nowrap">
-            <Avatar src={imagesPath(user.avatar, 'users')} />
+            <Avatar src={imagesPath(user.avatar, "users")} />
             <div class="text-sm font-normal text-gray-500 dark:text-gray-300">
               <div class="text-base font-semibold text-gray-900 dark:text-white">{user.name}</div>
               <div class="text-sm font-normal text-gray-500 dark:text-gray-300">{user.email}</div>
@@ -83,7 +83,7 @@
           <TableBodyCell class="p-4">{user.country}</TableBodyCell>
           <TableBodyCell class="p-4 font-normal">
             <div class="flex items-center gap-2">
-              <Indicator color={user.status === 'Active' ? 'green' : 'red'} />
+              <Indicator color={user.status === "Active" ? "green" : "red"} />
               {user.status}
             </div>
           </TableBodyCell>

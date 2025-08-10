@@ -117,8 +117,7 @@
             <SidebarItem label={capitalizeFirstLetter(block)} href="/blocks/{block}" {spanClass} />
           {/each}
         </SidebarDropdownWrapper>
-        <SidebarItem label="Admin Dashboard" href="/admin-dashboard" spanClass="ms-3 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass}>
-        </SidebarItem>
+        <SidebarItem label="Admin Dashboard" href="/admin-dashboard" spanClass="ms-3 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass}></SidebarItem>
       </SidebarGroup>
     {/if}
     <!-- /SidebarWrapper -->

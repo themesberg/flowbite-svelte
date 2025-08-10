@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { HighlightSvelte, Highlight } from 'svelte-rune-highlight';
-  import markdown from 'highlight.js/lib/languages/markdown';
-  import { Clipboard } from 'flowbite-svelte';
-  import { replaceLibImport } from './helpers';
-  import { highlightcompo } from './theme';
+  import { HighlightSvelte, Highlight } from "svelte-rune-highlight";
+  import markdown from "highlight.js/lib/languages/markdown";
+  import { Clipboard } from "flowbite-svelte";
+  import { replaceLibImport } from "./helpers";
+  import { highlightcompo } from "./theme";
   // import clsx from "clsx";
 
   interface Props {
@@ -16,7 +16,7 @@
     replaceLib?: string;
   }
 
-  let { code, codeLang, contentClass = 'overflow-hidden', replaceLib = 'runes-webkit', class: className }: Props = $props();
+  let { code, codeLang, contentClass = "overflow-hidden", replaceLib = "runes-webkit", class: className }: Props = $props();
 
   let value = $state(code);
   if (replaceLib) {
@@ -38,7 +38,7 @@
   };
 
   const mdLang = {
-    name: 'markdown',
+    name: "markdown",
     register: markdown
   };
 </script>
@@ -54,7 +54,7 @@
         {/if}
       {/snippet}
     </Clipboard>
-    {#if codeLang === 'md'}
+    {#if codeLang === "md"}
       <Highlight language={mdLang} {code} class="m-0 p-0" />
     {:else if code}
       <HighlightSvelte {code} class="m-0 p-0" />
@@ -64,12 +64,7 @@
   </div>
 
   {#if showExpandButton}
-    <button
-      onclick={handleExpandClick}
-      type="button"
-      class="hover:text-primary-700 absolute start-0 bottom-0 w-full border-t border-gray-200 bg-gray-100 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-      >{expand ? 'Collapse code' : 'Expand code'}</button
-    >
+    <button onclick={handleExpandClick} type="button" class="hover:text-primary-700 absolute start-0 bottom-0 w-full border-t border-gray-200 bg-gray-100 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{expand ? "Collapse code" : "Expand code"}</button>
   {/if}
 </div>
 

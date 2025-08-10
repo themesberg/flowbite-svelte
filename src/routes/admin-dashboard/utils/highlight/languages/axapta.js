@@ -1,4 +1,4 @@
-import register from 'highlight.js/lib/languages/axapta';
+import register from "highlight.js/lib/languages/axapta";
 
-export const axapta = { name: 'axapta', register };
+export const axapta = { name: "axapta", register };
 export default axapta;

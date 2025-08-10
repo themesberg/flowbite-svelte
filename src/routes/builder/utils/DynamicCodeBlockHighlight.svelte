@@ -49,9 +49,9 @@
   }
 
   const mdLang = {
-    name: 'markdown',
+    name: "markdown",
     register: markdown
-  }
+  };
 </script>
 
 <div class={base({ className })}>

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Footer from '../(no-sidebar)/Footer.svelte';
-  import Navbar from '../(sidebar)/Navbar.svelte';
-  import type { Snippet } from 'svelte';
+  import Footer from "../(no-sidebar)/Footer.svelte";
+  import Navbar from "../(sidebar)/Navbar.svelte";
+  import type { Snippet } from "svelte";
   // import '../../app.css';
   interface Props {
     children: Snippet;
