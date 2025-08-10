@@ -62,7 +62,7 @@
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/pages/introduction">Docs</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/components/accordion">Components</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/blocks">Blocks</NavLi>
-      <NavLi class="lg:mb-0 lg:px-2" href="https://flowbite-svelte-admin-dashboard-next.vercel.app/">Dashboard</NavLi>
+      <NavLi class="lg:mb-0 lg:px-2" href="/admin-dashboard">Dashboard</NavLi>
     </NavUl>
 
     <div class="ml-auto flex items-center">
