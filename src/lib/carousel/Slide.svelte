@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { type SlideProps, type State } from "$lib";
+  import { type SlideProps, type CarouselState } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { fly } from "svelte/transition";
   import { slide } from "./theme";
 
-  const _state = getContext<State>("state");
+  const _state = getContext<CarouselState>("state");
 
   let { image, transition, fit, class: className, ...restProps }: SlideProps = $props();
 
@@ -28,7 +28,7 @@
     duration: _state.slideDuration
   });
 
-  let imgClass = slide({ fit, class: clsx(theme, className) });
+  let imgClass = $derived(slide({ fit, class: clsx(theme, className) }));
 </script>
 
 {#if transition}

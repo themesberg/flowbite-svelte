@@ -8,7 +8,7 @@
 <div class="max-w-4xl space-y-4">
   <Carousel {images} bind:index>
     <Controls />
-    <CarouselIndicators position="withThumbnails" />
-    <Thumbnails {images} bind:index />
+    <CarouselIndicators />
   </Carousel>
+  <Thumbnails {images} bind:index />
 </div>
