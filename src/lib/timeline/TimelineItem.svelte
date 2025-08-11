@@ -97,7 +97,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1794)
+[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1795)
 ## Props
 @prop children
 @prop orientationSlot

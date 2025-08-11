@@ -17,7 +17,7 @@
     <ChatMsg replays={4} name={Users[2].name} avatar={imagesPath(Users[2].avatar, "users")}>
       <p>
         Hello <a href="#top" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">@designteam</a>
-         Let's schedule a kick-off meeting and workshop this week. It would be great to gather everyone involved in the design project. Let me know about your availability in the thread.
+        Let's schedule a kick-off meeting and workshop this week. It would be great to gather everyone involved in the design project. Let me know about your availability in the thread.
       </p>
       <p>Looking forward to it! Thanks.</p>
     </ChatMsg>
@@ -77,7 +77,7 @@
     <ChatMsg replays={0} name={Users[3].name} avatar={imagesPath(Users[3].avatar, "users")}>
       <p>
         Ok <a href="#top" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">@team</a>
-         I'am attaching our offer and pitch deck. Take your time to review everything. I'am looking forward to the next steps! Thank you.
+        I'am attaching our offer and pitch deck. Take your time to review everything. I'am looking forward to the next steps! Thank you.
       </p>
       <p>Looking forward to it! Thanks.</p>
       <div class="items-center 2xl:flex 2xl:space-x-4">
@@ -126,13 +126,13 @@
     <ChatMsg replays={0} name={Users[8].name} avatar={imagesPath(Users[8].avatar, "users")} class="pl-12">
       <p>
         Hello <a href="#top" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">@jeseleos</a>
-         I need some informations about flowbite react version.
+        I need some informations about flowbite react version.
       </p>
     </ChatMsg>
     <ChatMsg replays={0} name={Users[3].name} avatar={imagesPath(Users[3].avatar, "users")} class="pl-12">
       <p class="mb-5">
         Hi <a href="#top" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">@josephh</a>
-         Sure, just let me know whean you are available and we can speak.
+        Sure, just let me know whean you are available and we can speak.
       </p>
 
       <label for="chat" class="sr-only">Your message</label>

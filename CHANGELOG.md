@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.11.6
+
+### Patch Changes
+
+- fix: carousel update
+
 ## 1.11.5
 
 ### Patch Changes

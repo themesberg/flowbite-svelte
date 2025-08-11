@@ -56,9 +56,9 @@ The carousel component can be used to cycle through a set of elements using cust
 
 ## Default Carousel
 
-Set the `duration` prop to define the time interval for chaning images. Time is set in miliseconds.
+Set the `duration` prop (in milliseconds) to define the auto‑advance interval between slides.
 
-The default value for `duration` is set to zero that means no autochange of images. In that case you can control which image is displayed by the `index` prop.
+The default value of `duration` is `0` (no auto‑advance). In that case, control the visible slide with the `index` prop.
 
 ```svelte
 <script>
@@ -122,9 +122,9 @@ You can control the `Carousel` component externally by the `index` prop. Here is
 <div class="max-w-4xl space-y-4">
   <Carousel {images} bind:index>
     <Controls />
-    <CarouselIndicators position="withThumbnails" />
-    <Thumbnails {images} bind:index />
+    <CarouselIndicators />
   </Carousel>
+  <Thumbnails {images} bind:index />
 </div>
 ```
 
@@ -191,7 +191,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} imgClass="object-contain h-full w-fit rounded-xs" class="min-h-[320px] rounded-md border-4 border-white bg-gray-200 ring-4 ring-green-500 dark:border-gray-800">
+  <Carousel {images} slideFit="contain" classes={{ slide: "border border-red-500 p-2 rounded-3xl" }} class="min-h-[320px] rounded-md border-4 border-white bg-gray-200 ring-4 ring-green-500 dark:border-gray-800">
     <CarouselIndicators class="rounded-md border border-white p-2" />
     <Controls class="items-center pt-4 text-red-400 dark:text-green-400" />
   </Carousel>
@@ -210,7 +210,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 <div class="max-w-4xl space-y-4">
   <Carousel {images} bind:index>
-    <CarouselIndicators position="withThumbnails">
+    <CarouselIndicators>
       {#snippet children({ selected, index })}
         <Indicator color={selected ? "red" : "green"} class="h-5 w-5 border border-white text-white {selected ? 'opacity-100' : 'opacity-80'}">
           {index}
@@ -225,12 +225,12 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
         </Button>
       {/snippet}
     </Controls>
-    <Thumbnails class="mt-4 gap-3 bg-transparent" {images} bind:index>
-      {#snippet children({ image, selected, Thumbnail })}
-        <Thumbnail {selected} {...image} class="hover:outline-primary-500 rounded-md shadow-xl hover:outline {selected ? 'outline-primary-400 outline-4' : ''}" />
-      {/snippet}
-    </Thumbnails>
   </Carousel>
+  <Thumbnails class="mt-4 gap-3 bg-transparent" {images} bind:index>
+    {#snippet children({ image, selected, Thumbnail })}
+      <Thumbnail {selected} {...image} class="hover:outline-primary-500 rounded-md shadow-xl hover:outline {selected ? 'outline-primary-400 outline-4' : ''}" />
+    {/snippet}
+  </Thumbnails>
 </div>
 ```
 
@@ -260,7 +260,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L372)
+[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L373)
 
 #### Props
 
@@ -269,21 +269,22 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 - images
 - index: $bindable(0)
 - slideDuration: 1000
+- slideFit
 - transition
 - duration: 0
 - "aria-label": ariaLabel: "Draggable Carousel"
 - disableSwipe: false
 - imgClass: ""
 - class: className
+- classes
 - onchange
-- divClass
 - isPreload: false
 
 ### CarouselIndicators
 
 #### Types
 
-[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L387)
+[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L388)
 
 #### Props
 
@@ -297,7 +298,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L394)
+[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L395)
 
 #### Props
 
@@ -311,7 +312,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L400)
+[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L401)
 
 #### Props
 
@@ -322,19 +323,20 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L417)
+[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L418)
 
 #### Props
 
 - image
 - transition
+- fit
 - class: className
 
 ### Thumbnail
 
 #### Types
 
-[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L404)
+[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L405)
 
 #### Props
 
@@ -345,7 +347,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L408)
+[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L409)
 
 #### Props
 

@@ -19,7 +19,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[HelperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L726)
+[HelperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L727)
 ## Props
 @prop children
 @prop class: className

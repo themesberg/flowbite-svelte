@@ -471,7 +471,7 @@ Use the following example to create a full-screen modal.
 
 #### Types
 
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1037)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1038)
 
 #### Props
 

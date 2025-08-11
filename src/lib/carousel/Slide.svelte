@@ -45,10 +45,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L417)
+[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L418)
 ## Props
 @prop image
 @prop transition
+@prop fit
 @prop class: className
 @prop ...restProps
 -->
