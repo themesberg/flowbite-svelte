@@ -8,7 +8,7 @@
 
   const _state = getContext<State>("state");
 
-  let { image, transition, class: className, ...restProps }: SlideProps = $props();
+  let { image, transition, fit, class: className, ...restProps }: SlideProps = $props();
 
   const theme = getTheme("slide");
 
@@ -28,7 +28,7 @@
     duration: _state.slideDuration
   });
 
-  let imgClass = slide({ class: clsx(theme, className) });
+  let imgClass = slide({ fit, class: clsx(theme, className) });
 </script>
 
 {#if transition}

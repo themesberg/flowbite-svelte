@@ -203,7 +203,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} imgClass="object-contain h-full w-fit rounded-xs" class="min-h-[320px] rounded-md border-4 border-white bg-gray-200 ring-4 ring-green-500 dark:border-gray-800">
+  <Carousel {images} slideFit="contain" classes={{slide: "border border-red-500 p-2 rounded-3xl" }}  class="min-h-[320px] rounded-md border-4 border-white bg-gray-200 ring-4 ring-green-500 dark:border-gray-800">
     <CarouselIndicators class="rounded-md border border-white p-2" />
     <Controls class="items-center pt-4 text-red-400 dark:text-green-400" />
   </Carousel>

@@ -14,7 +14,7 @@ import type { BannerVariants } from "$lib/banner/theme";
 import type { ButtonVariants, GradientButtonVariantes, gradientButton } from "$lib/buttons/theme";
 import type { CardVariants } from "$lib/card/theme";
 import type Slide from "$lib/carousel/Slide.svelte";
-import type { CarouselVariants } from "$lib/carousel/theme";
+import type { CarouselVariants, SlideVariants } from "$lib/carousel/theme";
 import type { DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
 import type { DropdownItemVariants } from "$lib/dropdown/theme";
 import type { DatepickerVariants } from "$lib/datepicker/theme";
@@ -381,8 +381,8 @@ export interface CarouselProps extends CarouselVariants, Omit<HTMLAttributes<HTM
   disableSwipe?: boolean;
   imgClass?: ClassValue;
   onchange?: (x: HTMLImgAttributes) => {};
-  divClass?: ClassValue;
   isPreload?: boolean;
+  slideFit?: SlideProps["fit"];
 }
 
 export interface IndicatorsProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
@@ -415,7 +415,7 @@ export interface ThumbnailsProps extends Omit<HTMLAttributes<HTMLDivElement>, "c
   throttleDelay?: number;
 }
 
-export interface SlideProps extends HTMLImgAttributes {
+export interface SlideProps extends SlideVariants, HTMLImgAttributes {
   image: HTMLImgAttributes;
   transition?: TransitionFunc; // Optional transition function, overrides default slide transition
 }
