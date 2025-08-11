@@ -8,20 +8,23 @@
 
   const theme = getTheme("thumbnails");
 
-  let lastClickedAt = new Date();
+  let lastClickedAt = Date.now();
 
   const btnClick = (newIndex: number) => {
-    if (new Date().getTime() - lastClickedAt.getTime() < throttleDelay) {
+    const now = Date.now();
+    if (now - lastClickedAt < throttleDelay) {
       console.warn("Thumbnail action throttled");
       return;
     }
 
-    lastClickedAt = new Date();
+    lastClickedAt = now;
     index = newIndex;
   };
 
   $effect(() => {
-    index = (index + images.length) % images.length;
+    if (images.length > 0) {
+      index = (index + images.length) % images.length;
+    }
   });
 </script>
 

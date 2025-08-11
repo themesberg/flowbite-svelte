@@ -20,10 +20,11 @@
   let { base, slide: slideCls } = $derived(carousel());
 
   const changeSlide = (n: number) => {
-    // console.debug("changeSlide: n =", n, ", _state.index =", _state.index, " length =", images.length);
-    if (n % images.length === _state.index) return _state;
+    if (images.length === 0) return;
 
-    if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
+    if (n % images.length === _state.index) return;
+
+    if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return;
 
     _state.forward = n >= _state.index;
     _state.index = (images.length + n) % images.length;
@@ -31,8 +32,6 @@
 
     index = _state.index; // Update the bindable index
     onchange?.(images[_state.index]);
-
-    return _state;
   };
 
   const _state: State = $state({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: new Date(), changeSlide });
@@ -51,11 +50,11 @@
   });
 
   const nextSlide = () => {
-    return changeSlide(_state.index + 1);
+    changeSlide(_state.index + 1);
   };
 
   const prevSlide = () => {
-    return changeSlide(_state.index - 1);
+    changeSlide(_state.index - 1);
   };
 
   const loop = (node: HTMLElement) => {
@@ -89,7 +88,7 @@
 
   const getPositionFromEvent = (evt: MouseEvent | TouchEvent) => {
     const mousePos = (evt as MouseEvent)?.clientX;
-    if (mousePos) return mousePos;
+    if (mousePos !== undefined) return mousePos;
 
     let touchEvt = evt as TouchEvent;
     if (/^touch/.test(touchEvt?.type)) {
@@ -199,7 +198,7 @@
 @prop duration = 0
 @prop "aria-label": ariaLabel = "Draggable Carousel"
 @prop disableSwipe = false
-@prop imgClass = ""
+@prop imgClass = "" // deprecated; use classes.slide instead
 @prop class: className
 @prop onchange
 @prop divClass

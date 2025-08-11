@@ -68,9 +68,9 @@ The carousel component can be used to cycle through a set of elements using cust
 
 ## Default Carousel
 
-Set the `duration` prop to define the time interval for chaning images. Time is set in miliseconds.
+Set the `duration` prop to define the time interval for changing images. Time is set in milliseconds.
 
-The default value for `duration` is set to zero that means no autochange of images. In that case you can control which image is displayed by the `index` prop.
+The default value for `duration` is set to zero that means no auto-change of images. In that case you can control which image is displayed by the `index` prop.
 
 ```svelte example
 <script>
