@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type CarouselProps, type State, Slide } from "$lib";
+  import { type CarouselProps, type CarouselState, Slide } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { onMount, setContext } from "svelte";
@@ -28,13 +28,13 @@
 
     _state.forward = n >= _state.index;
     _state.index = (images.length + n) % images.length;
-    _state.lastSlideChange = new Date();
+    _state.lastSlideChange = Date.now();
 
     index = _state.index; // Update the bindable index
     onchange?.(images[_state.index]);
   };
 
-  const _state: State = $state({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: new Date(), changeSlide });
+  const _state: CarouselState = $state({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: Date.now(), changeSlide });
 
   setContext("state", _state);
 
@@ -49,13 +49,8 @@
     initialized = true;
   });
 
-  const nextSlide = () => {
-    changeSlide(_state.index + 1);
-  };
-
-  const prevSlide = () => {
-    changeSlide(_state.index - 1);
-  };
+  const nextSlide = () => changeSlide(_state.index + 1);
+  const prevSlide = () => changeSlide(_state.index - 1);
 
   const loop = (node: HTMLElement) => {
     // loop timer

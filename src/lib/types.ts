@@ -348,7 +348,7 @@ export interface ButtonToggleContext {
   isSelected: (toggleValue: string) => boolean;
 }
 
-export interface CheckIconProps extends SVGAttributes<SVGSVGElement> {}
+export type CheckIconProps = SVGAttributes<SVGSVGElement>;
 
 // card
 export type CardProps = Omit<CardVariants, "href"> &
@@ -361,10 +361,10 @@ export type CardProps = Omit<CardVariants, "href"> &
 
 // carousel
 
-export type State = {
+export type CarouselState = {
   images: HTMLImgAttributes[];
   index: number;
-  lastSlideChange: Date;
+  lastSlideChange: number; // ms
   slideDuration: number; // ms
   forward: boolean;
   changeSlide: (newIndex: number) => void;
@@ -576,7 +576,7 @@ export interface DropdownProps extends PopperProps {
   isOpen?: boolean;
 }
 
-export interface DropdownDividerProps extends HTMLAttributes<HTMLDivElement> {}
+export type DropdownDividerProps = HTMLAttributes<HTMLDivElement>;
 
 export interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
@@ -724,7 +724,7 @@ export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, O
 }
 
 // helper
-export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> {}
+export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> { }
 
 // input
 export type InputValue = string | number | string[] | undefined;
@@ -918,7 +918,7 @@ export interface TimepickerProps {
   timeIntervals?: string[];
   columns?: ColumnCount;
   // Callback props instead of events
-  onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
+  onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
 }
 
 // textarea
@@ -1080,7 +1080,7 @@ export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "child
   breakpoint?: NavbarBreakpoint;
 }
 
-export interface NavBrandProps extends HTMLAnchorAttributes {}
+export type NavBrandProps = HTMLAnchorAttributes;
 
 export interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
   fluid?: boolean;
@@ -1117,7 +1117,7 @@ export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLD
   end?: Snippet;
 }
 
-export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
+export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> { }
 
 export type ToolbarButtonProps = ToolbarButtonVariants &
   AnchorButtonAttributes & {
@@ -1426,7 +1426,7 @@ export interface SkeletonProps extends SkeletonVariants, HTMLAttributes<HTMLDivE
   size?: SkeletonVariants["size"];
 }
 
-export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
+export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
 
 export interface TextPlaceholderProps extends TextPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
   size?: TextPlaceholderVariants["size"];
@@ -1436,7 +1436,7 @@ export interface VideoPlaceholderProps extends VideoPlaceholderVariants, HTMLAtt
   size?: VideoPlaceholderVariants["size"];
 }
 
-export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
+export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
 
 // speeddial
 export interface SpeedCtxType {
