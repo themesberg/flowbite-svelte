@@ -8,7 +8,8 @@
 
   const theme = getTheme("thumbnails");
 
-  let lastClickedAt = Date.now();
+  // Initialize so the first click is never throttled
+  let lastClickedAt = -Infinity;
 
   const btnClick = (newIndex: number) => {
     const now = Date.now();
@@ -31,7 +32,7 @@
 <div class={thumbnails({ class: clsx(theme, className) })}>
   {#each images as image, idx}
     {@const selected = index === idx}
-    <button onclick={() => btnClick(idx)} aria-label={ariaLabel}>
+    <button onclick={() => btnClick(idx)} aria-label={ariaLabel} aria-current={selected ? "true" : undefined}>
       {#if children}
         {@render children({ image, selected, imgClass: clsx(imgClass), Thumbnail })}
       {:else}

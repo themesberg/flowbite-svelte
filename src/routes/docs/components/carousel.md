@@ -68,9 +68,9 @@ The carousel component can be used to cycle through a set of elements using cust
 
 ## Default Carousel
 
-Set the `duration` prop to define the time interval for changing images. Time is set in milliseconds.
+Set the `duration` prop (in milliseconds) to define the auto‑advance interval between slides.
 
-The default value for `duration` is set to zero that means no auto-change of images. In that case you can control which image is displayed by the `index` prop.
+The default value of `duration` is `0` (no auto‑advance). In that case, control the visible slide with the `index` prop.
 
 ```svelte example
 <script>
@@ -134,7 +134,7 @@ You can control the `Carousel` component externally by the `index` prop. Here is
 <div class="max-w-4xl space-y-4">
   <Carousel {images} bind:index>
     <Controls />
-    <CarouselIndicators position="bottom" />
+    <CarouselIndicators />
   </Carousel>
   <Thumbnails {images} bind:index />
 </div>
@@ -222,7 +222,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 <div class="max-w-4xl space-y-4">
   <Carousel {images} bind:index>
-    <CarouselIndicators position="bottom">
+    <CarouselIndicators>
       {#snippet children({ selected, index })}
         <Indicator color={selected ? "red" : "green"} class="h-5 w-5 border border-white text-white {selected ? 'opacity-100' : 'opacity-80'}">
           {index}
