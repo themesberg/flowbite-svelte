@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.11.8
+
+### Patch Changes
+
+- - Carousel duration state sync
+    src/lib/carousel/Carousel.svelte
+    canChangeSlide uses \_state.slideDuration; added reactive effect to sync prop slideDuration to internal \_state.slideDuration; initial mount still derives from prop.
+  - Type rename: State → CarouselState
+    src/lib/carousel/CarouselIndicators.svelte, src/lib/carousel/Controls.svelte Updated imports and getContext generics to use CarouselState instead of State; no runtime logic changes.
+
 ## 1.11.7
 
 ### Patch Changes
