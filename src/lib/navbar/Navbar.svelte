@@ -6,8 +6,6 @@
   import type { NavbarState, NavbarProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  // propagate props type from underlying Frame
-
   let { children, fluid, navContainerClass, class: className, closeOnClickOutside = true, breakpoint = "md", ...restProps }: NavbarProps = $props();
 
   const theme = getTheme("navbar");

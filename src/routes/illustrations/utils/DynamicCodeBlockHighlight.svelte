@@ -1,6 +1,6 @@
 <script lang="ts">
   import { HighlightSvelte, Highlight } from "svelte-rune-highlight";
-  import markdown from "svelte-rune-highlight/languages/markdown";
+  import markdown from "highlight.js/lib/languages/markdown";
   import { Button, Badge } from "flowbite-svelte";
   import { copyToClipboard, replaceLibImport } from "./helper";
   import { highlightcompo } from "./theme";
@@ -47,16 +47,20 @@
         // Handle the error as needed
       });
   }
+  const mdLang = {
+    name: "markdown",
+    register: markdown
+  };
 </script>
 
 <div class={base({ className })}>
   <div class="relative">
-    <div class="overflow-hidden {showExpandButton ? 'pb-8' : ''}" class:max-h-56={!expand} tabindex="-1">
+    <div class="overflow-hidden pb-4" class:max-h-56={!expand} tabindex="-1">
       {#if copiedStatus}
         <Badge class={badge({ class: badgeClass })} color="green">Copied to clipboard</Badge>
       {/if}
       {#if codeLang === "md"}
-        <Highlight language={markdown} {code} class="mb-4" />
+        <Highlight language={mdLang} {code} class="mb-4" />
       {:else if code}
         <HighlightSvelte {code} class="mb-4" />
       {:else}
@@ -70,7 +74,7 @@
       </svg>
     </Button>
     {#if showExpandButton}
-      <button onclick={() => handleExpandClick()} type="button" class="hover:text-primary-700 absolute start-0 bottom-0 w-full border-t border-gray-200 bg-gray-100 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{expand ? "Collapse code" : "Expand code"}</button>
+      <button onclick={() => handleExpandClick()} type="button" class="hover:text-primary-700 absolute start-0 -bottom-1 w-full bg-gray-100 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{expand ? "Collapse code" : "Expand code"}</button>
     {/if}
   </div>
 </div>

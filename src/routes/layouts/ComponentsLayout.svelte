@@ -117,16 +117,7 @@
             <SidebarItem label={capitalizeFirstLetter(block)} href="/blocks/{block}" {spanClass} />
           {/each}
         </SidebarDropdownWrapper>
-        <SidebarItem label="Admin Dashboard" href="https://flowbite-svelte-admin-dashboard-next.vercel.app/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} target="_blank">
-          {#snippet subtext()}
-            <ExternalLink />
-          {/snippet}
-        </SidebarItem>
-        <SidebarItem label="Illustration" href="https://flowbite-svelte-illustrations.codewithshin.com/" spanClass="ms-4 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass} target="_blank">
-          {#snippet subtext()}
-            <ExternalLink />
-          {/snippet}
-        </SidebarItem>
+        <SidebarItem label="Admin Dashboard" href="/admin-dashboard" spanClass="ms-3 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass}></SidebarItem>
       </SidebarGroup>
     {/if}
     <!-- /SidebarWrapper -->
