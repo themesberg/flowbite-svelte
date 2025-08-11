@@ -24,7 +24,7 @@
 
     if (n % images.length === _state.index) return;
 
-    if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return;
+    if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration: _state.slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return;
 
     _state.forward = n >= _state.index;
     _state.index = (images.length + n) % images.length;
@@ -42,6 +42,10 @@
 
   $effect(() => {
     changeSlide(index);
+  });
+
+  $effect(() => {
+    _state.slideDuration = slideDuration;
   });
 
   onMount(() => {

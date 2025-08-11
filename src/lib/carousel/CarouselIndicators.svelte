@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Indicator, type IndicatorsProps, type State } from "$lib";
+  import { Indicator, type IndicatorsProps, type CarouselState } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { getContext } from "svelte";
@@ -9,7 +9,7 @@
 
   const theme = getTheme("carouselIndicators");
 
-  const _state = getContext<State>("state");
+  const _state = getContext<CarouselState>("state");
   const { base, indicator } = $derived(carouselIndicators({ position }));
 
   function goToIndex(newIndex: number) {
