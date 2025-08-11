@@ -1,9 +1,13 @@
+import type { Classes } from "$lib/theme/themeUtils";
 import { tv, type VariantProps } from "tailwind-variants";
 
-export type CarouselVariants = VariantProps<typeof carousel>;
+export type CarouselVariants = VariantProps<typeof carousel> & Classes<typeof carousel>;
 
 export const carousel = tv({
-  base: "grid overflow-hidden relative rounded-lg h-56 sm:h-64 xl:h-80 2xl:h-96",
+  slots: {
+    base: "grid overflow-hidden relative rounded-lg h-56 sm:h-64 xl:h-80 2xl:h-96",
+    slide: ""
+  },
   variants: {},
   compoundVariants: [],
   defaultVariants: {}
@@ -22,7 +26,6 @@ export const carouselIndicators = tv({
     position: {
       top: { base: "top-5" },
       bottom: { base: "bottom-5" },
-      withThumbnails: { base: "bottom-24" }
     }
   }
 });
@@ -57,6 +60,20 @@ export const thumbnail = tv({
   }
 });
 
+export type SlideVariants = VariantProps<typeof slide>;
+
 export const slide = tv({
-  base: "absolute block w-full! h-full object-cover"
+  base: "absolute block w-full h-full",
+  variants: {
+    fit: {
+      contain: "object-contain",
+      cover: "object-cover",
+      fill: "object-fill",
+      none: "object-none",
+      "scale-down": "object-scale-down"
+    }
+  },
+  defaultVariants: {
+    fit: "cover"
+  }
 });

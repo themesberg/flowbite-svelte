@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type CarouselProps, type State, Slide } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { onMount, setContext } from "svelte";
   import { canChangeSlide } from "./CarouselSlide";
@@ -8,19 +8,40 @@
 
   const SLIDE_DURATION_RATIO = 0.25;
 
-  let { children, slide, images, index = $bindable(0), slideDuration = 1000, transition, duration = 0, "aria-label": ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, onchange, divClass, isPreload = false, ...restProps }: CarouselProps = $props();
+  let { children, slide, images, index = $bindable(0), slideDuration = 1000, slideFit, transition, duration = 0, "aria-label": ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, classes, onchange, isPreload = false, ...restProps }: CarouselProps = $props();
 
+  warnThemeDeprecation("Carousel", { imgClass }, { imgClass: "slide" });
+
+  const styling = $derived(classes ?? { slide: imgClass });
+
+  // // Theme context
   const theme = getTheme("carousel");
 
-  const _state: State = $state({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: new Date() });
+  let { base, slide: slideCls } = $derived(carousel());
+
+  const changeSlide = (n: number) => {
+    if (images.length === 0) return;
+
+    if (n % images.length === _state.index) return;
+
+    if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return;
+
+    _state.forward = n >= _state.index;
+    _state.index = (images.length + n) % images.length;
+    _state.lastSlideChange = new Date();
+
+    index = _state.index; // Update the bindable index
+    onchange?.(images[_state.index]);
+  };
+
+  const _state: State = $state({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: new Date(), changeSlide });
 
   setContext("state", _state);
 
   let initialized = false;
 
   $effect(() => {
-    index = _state.index;
-    onchange?.(images[index]);
+    changeSlide(index);
   });
 
   onMount(() => {
@@ -29,23 +50,11 @@
   });
 
   const nextSlide = () => {
-    if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
-
-    _state.forward = true;
-    _state.index = _state.index >= images.length - 1 ? 0 : _state.index + 1;
-    _state.lastSlideChange = new Date();
-
-    return _state;
+    changeSlide(_state.index + 1);
   };
 
   const prevSlide = () => {
-    if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
-
-    _state.forward = false;
-    _state.index = _state.index <= 0 ? images.length - 1 : _state.index - 1;
-    _state.lastSlideChange = new Date();
-
-    return _state;
+    changeSlide(_state.index - 1);
   };
 
   const loop = (node: HTMLElement) => {
@@ -79,7 +88,7 @@
 
   const getPositionFromEvent = (evt: MouseEvent | TouchEvent) => {
     const mousePos = (evt as MouseEvent)?.clientX;
-    if (mousePos) return mousePos;
+    if (mousePos !== undefined) return mousePos;
 
     let touchEvt = evt as TouchEvent;
     if (/^touch/.test(touchEvt?.type)) {
@@ -164,15 +173,14 @@
 
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} />
-<div bind:this={carouselDiv} class={clsx("relative", divClass)} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
-  <div {...restProps} class={carousel({ class: clsx(activeDragGesture === undefined ? "transition-transform" : "", theme, className) })} {@attach loop}>
-    {#if slide}
-      {@render slide({ index, Slide })}
-    {:else}
-      <Slide image={images[index]} class={clsx(imgClass)} {transition} />
-    {/if}
-  </div>
-  {@render children?.(index)}
+<div bind:this={carouselDiv} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0" {...restProps} class={base({ class: clsx(activeDragGesture === undefined ? "transition-transform" : "", theme?.base, className) })} {@attach loop}>
+  {#if slide}
+    {@render slide({ index: _state.index, Slide })}
+  {:else}
+    <Slide image={images[_state.index]} fit={slideFit} class={slideCls({ class: clsx(theme?.slide, styling.slide) })} {transition} />
+  {/if}
+
+  {@render children?.(_state.index)}
 </div>
 
 <!--
@@ -190,7 +198,7 @@
 @prop duration = 0
 @prop "aria-label": ariaLabel = "Draggable Carousel"
 @prop disableSwipe = false
-@prop imgClass = ""
+@prop imgClass = "" // deprecated; use classes.slide instead
 @prop class: className
 @prop onchange
 @prop divClass
