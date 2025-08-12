@@ -152,7 +152,7 @@ Use this example to show a contact form inside the drawer component.
   <h5 class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
     <InfoCircleSolid class="me-2.5 h-5 w-5" />Contact us
   </h5>
-  <form action="#" class="mb-6">
+  <form method="dialog" class="mb-6">
     <div class="mb-6">
       <Label for="email" class="mb-2 block">Your email</Label>
       <Input id="email" name="email" required placeholder="name@company.com" />
@@ -199,7 +199,7 @@ Use this example if you want to add form elements inside the drawer component in
     </h5>
     <CloseButton class="mb-4 dark:text-white" />
   </div>
-  <form action="dialog" class="mb-6">
+  <form method="dialog" class="mb-6">
     <div class="mb-6">
       <Label for="title" class="mb-2 block">Title</Label>
       <Input id="title" name="title" required placeholder="Apple Keynote" />

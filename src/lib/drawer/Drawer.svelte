@@ -24,7 +24,7 @@
   let x = $derived(placement === "left" ? -320 : placement === "right" ? innerWidth + 320 : undefined);
   let y = $derived(placement === "top" ? -100 : placement === "bottom" ? innerHeight + 100 : undefined);
 
-  let transition_params = $derived(Object.assign({}, { x, y, duration: 200, easing: sineIn }));
+  let transition_params = $derived(transitionParams ?? Object.assign({}, { x, y, duration: 200, easing: sineIn }));
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />

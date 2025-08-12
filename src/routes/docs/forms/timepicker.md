@@ -498,14 +498,11 @@ Use this example to show multiple time interval selections inside of a drawer co
   </Button>
 </div>
 
-<Drawer bind:open class="w-96 bg-gray-50 p-6 dark:bg-gray-800" id="drawer-timepicker">
-  <div class="mb-8 flex items-center justify-between">
-    <Heading tag="h5" id="drawer-label" class="inline-flex items-center text-base font-semibold text-gray-800 uppercase dark:text-white">
-      <ClockSolid class="h-6 w-6" />
-      Time schedule
-    </Heading>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
+<Drawer bind:open class="w-96 bg-gray-50 p-6 dark:bg-gray-800">
+  <Heading tag="h5" id="drawer-label" class="mb-8 inline-flex items-center text-base font-semibold text-gray-800 uppercase dark:text-white">
+    <ClockSolid class="h-6 w-6" />
+    Time schedule
+  </Heading>
 
   <form onsubmit={saveAll} class="space-y-8">
     <Card class="p-4 transition-shadow hover:shadow-lg">

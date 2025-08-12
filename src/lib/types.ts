@@ -552,6 +552,21 @@ export interface TabletProps extends TabletVariants, HTMLAttributes<HTMLDivEleme
   div6Class?: ClassValue;
 }
 
+// dialog
+
+export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
+  onaction?: ({ action, data }: { action: string; data: FormData }) => any;
+  form?: boolean;
+  modal?: boolean;
+  autoclose?: boolean;
+  focustrap?: boolean;
+  permanent?: boolean;
+  dismissable?: boolean;
+  outsideclose?: boolean;
+  transition?: TransitionFunc;
+  transitionParams?: ParamsType;
+}
+
 // drawer
 export interface DrawerProps extends DrawerVariants, DialogProps {
   bodyScrolling?: boolean;
@@ -1037,19 +1052,6 @@ export interface ModalProps extends ModalVariants, Omit<DialogProps, "classes"> 
   footerClass?: ClassValue;
   closeBtnClass?: ClassValue;
   fullscreen?: boolean;
-}
-
-export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
-  onaction?: ({ action, data }: { action: string; data: FormData }) => any;
-  form?: boolean;
-  modal?: boolean;
-  autoclose?: boolean;
-  focustrap?: boolean;
-  permanent?: boolean;
-  dismissable?: boolean;
-  outsideclose?: boolean;
-  transition?: TransitionFunc;
-  transitionParams?: ParamsType;
 }
 
 // navbar

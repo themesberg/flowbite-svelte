@@ -8,7 +8,7 @@
   <Button onclick={() => (open1 = true)}>Show drawer</Button>
 </div>
 
-<Drawer bind:open={open1} id="sidebar1" aria-controls="sidebar1" aria-labelledby="sidebar1" classes={{ backdrop: "bg-red-700 opacity-50" }}>
+<Drawer bind:open={open1} id="sidebar1" aria-labelledby="drawer-label" class="backdrop:bg-red-700 backdrop:opacity-50">
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info

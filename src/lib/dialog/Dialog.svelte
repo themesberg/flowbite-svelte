@@ -6,15 +6,19 @@
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
 
-  let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, title, open = $bindable(false), permanent = false, dismissable = true, outsideclose = true, class: className, classes, transition = fade, transitionParams, ...restProps }: DialogProps = $props();
+  let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, open = $bindable(false), permanent = false, dismissable = true, outsideclose = true, class: className, classes, transition = fade, transitionParams, ...restProps }: DialogProps = $props();
 
   const paramsOptions = $derived(transitionParams ?? { duration: 100, easing: sineIn });
 
   let { base, form: formCls, close: closeCls } = dialog();
 
   const close = (dlg: HTMLDialogElement) => (open = false);
-  // @ts-expect-error: dlg.requestClose may not be supported
-  const cancel = (dlg: HTMLDialogElement) => (typeof dlg.requestClose === "function" ? dlg.requestClose() : close());
+
+  // Prefer requestClose when available to trigger a cancellable "cancel" event; otherwise synthesize it.
+  const cancel = (dlg: HTMLDialogElement) => {
+    if (typeof dlg.requestClose === "function") return dlg.requestClose();
+    dlg.dispatchEvent(new Event("cancel", { bubbles: true, cancelable: true }));
+  };
 
   function _oncancel(ev: Event & { currentTarget: HTMLDialogElement }) {
     if (ev.target !== ev.currentTarget) {
@@ -71,7 +75,8 @@
   }
 
   function init(dlg: HTMLDialogElement) {
-    modal ? dlg.showModal() : dlg.show();
+    if (modal) dlg.showModal();
+    else dlg.show();
     return () => dlg.close();
   }
 
@@ -125,23 +130,13 @@
 @prop modal = true
 @prop autoclose = false
 @prop focustrap = false
-@prop header
-@prop footer
-@prop title
 @prop open = $bindable(false)
 @prop permanent = false
 @prop dismissable = true
-@prop closeBtnClass
-@prop headerClass
-@prop bodyClass
-@prop footerClass
 @prop outsideclose = true
-@prop size = "md"
-@prop placement
 @prop class: className
 @prop classes
 @prop params
 @prop transition = fade
-@prop fullscreen = false
 @prop ...restProps
 -->
