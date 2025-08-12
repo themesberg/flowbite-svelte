@@ -568,9 +568,7 @@ export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
 }
 
 // drawer
-export interface DrawerProps extends DrawerVariants, DialogProps {
-  bodyScrolling?: boolean;
-}
+export interface DrawerProps extends DrawerVariants, DialogProps { }
 
 export interface DrawerheadProps extends DrawerheadVariants, HTMLButtonAttributes {
   closeIcon?: Snippet;

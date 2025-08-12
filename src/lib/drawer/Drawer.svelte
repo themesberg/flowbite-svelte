@@ -7,7 +7,7 @@
   import { fly } from "svelte/transition";
   import { drawer } from ".";
 
-  let { children, open = $bindable(false), width, placement = "left", class: className, classes, transitionParams, transition = fly, bodyScrolling = false, ...restProps }: DrawerProps = $props();
+  let { children, open = $bindable(false), width, placement = "left", class: className, classes, transitionParams, transition = fly, ...restProps }: DrawerProps = $props();
 
   const theme = getTheme("drawer");
 
@@ -51,6 +51,5 @@
 @prop classes
 @prop transitionParams
 @prop transitionType = fly
-@prop bodyScrolling = false
 @prop ...restProps
 -->

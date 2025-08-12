@@ -41,8 +41,8 @@ Since `Drawer` component extend Svelte's `HTMLAttributes<HTMLDivElement>`, you c
   <CardPlaceholder size="2xl" class="mt-6"/>
 </div>
 
-<Drawer bind:open>
-  <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
+<Drawer bind:open aria-labelledby="drawer-label">
+  <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
     <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
   </h5>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
@@ -405,7 +405,7 @@ Drawer by default is `modal` (see `dialog`). You can set prop `modal={false}` to
   <CardPlaceholder size="2xl" class="mt-6"/>
 </div>
 
-<Drawer modal={false} bind:open={openNonModal} class="fixed z-50">
+<Drawer modal={false} bind:open={openNonModal} class="fixed z-50 top-0 left-0">
   <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
     <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
   </h5>
@@ -444,50 +444,6 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-  </p>
-  <div class="grid grid-cols-2 gap-4">
-    <Button color="light" href="/">Learn more</Button>
-    <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
-  </div>
-</Drawer>
-```
-
-## Body scrolling
-
-
-### This section is useless. We don't need it. Confirm.
-
-By default, body scrolling is disabled when the drawer is visible, however, you can choose to enable it using the `bodyScrolling={true|false}` prop.
-
-**Limitation:** When bodyScrolling={true}, clicking the backdrop to close the drawer is disabled. Use the Escape key or provide a close button inside the drawer content instead.
-
-```svelte example
-<script>
-  import { Drawer, CardPlaceholder, Button, CloseButton } from "flowbite-svelte";
-  import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-  let drawerOpen = $state(false);
-</script>
-
-<div class="text-center">
-  <Button onclick={() => (drawerOpen = true)}>Show drawer</Button>
-  <CardPlaceholder size="2xl" class="mt-6"/>
-</div>
-
-<Drawer bind:open={drawerOpen} bodyScrolling={true}>
-  <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-    <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
-  </h5>
-  <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-    Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
-    for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board. Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet
-    consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto
-    aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea!
-  </p>
-  <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-    Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
-    for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board. Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet
-    consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto
-    aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea!
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
