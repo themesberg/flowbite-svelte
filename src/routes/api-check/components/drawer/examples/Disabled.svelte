@@ -1,15 +1,16 @@
 <script>
+  import { findAllByTestId } from "@testing-library/svelte";
   import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
-  let hiddenBackdropFalse = $state(true);
+  let openBackdropFalse = $state(false);
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hiddenBackdropFalse = false)}>Show drawer</Button>
+  <Button onclick={() => (openBackdropFalse = true)}>Show drawer</Button>
 </div>
 
-<Drawer backdrop={false} bind:hidden={hiddenBackdropFalse}>
+<Drawer modal={false} bind:open={openBackdropFalse}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info

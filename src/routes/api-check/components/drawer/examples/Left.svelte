@@ -2,14 +2,14 @@
   import { Drawer, Button, CloseButton, Label, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
-  let hidden5 = $state(true);
+  let open5 = $state(false);
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hidden5 = false)}>Show drawer</Button>
+  <Button onclick={() => (open5 = true)}>Show drawer</Button>
 </div>
 
-<Drawer placement="left" bind:hidden={hidden5}>
+<Drawer placement="left" bind:open={open5}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info

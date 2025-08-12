@@ -145,7 +145,7 @@
   }
 
   // Drawer with timepicker
-  let hidden = $state(true);
+  let open1 = $state(false);
   let businessHoursEnabled = $state(true);
   let selectedTimezoneDrawer = $state("");
   let workingDays = $state([
@@ -211,7 +211,7 @@
   function saveAll(e: Event): void {
     e.preventDefault();
     console.log("Saving settings:", { businessHoursEnabled, selectedTimezoneDrawer, workingDays });
-    hidden = true;
+    open1 = false;
   }
 
   const timepickerClasses = {
@@ -420,13 +420,13 @@
   <h2 class="my-4 text-2xl">Drawer with timepicker</h2>
   <div class="example-container h-96 p-4">
     <div class="flex justify-center">
-      <Button onclick={() => (hidden = false)} class="transform transition-all hover:scale-105">
+      <Button onclick={() => (open1 = true)} class="transform transition-all hover:scale-105">
         <ClockSolid class="me-2 h-4 w-4" />
         Set Time Schedule
       </Button>
     </div>
 
-    <Drawer bind:hidden class="w-96 bg-gray-50 p-6 dark:bg-gray-800" id="drawer-timepicker">
+    <Drawer bind:open={open1} class="w-96 bg-gray-50 p-6 dark:bg-gray-800" id="drawer-timepicker">
       <div class="mb-8 flex items-center justify-between">
         <Heading tag="h5" id="drawer-label" class="inline-flex items-center text-base font-semibold text-gray-800 uppercase dark:text-white">
           <ClockSolid class="h-6 w-6" />
@@ -478,7 +478,7 @@
         </Button>
 
         <div class="flex gap-4">
-          <Button class="w-1/2" color="alternative" onclick={() => (hidden = true)}>Cancel</Button>
+          <Button class="w-1/2" color="alternative" onclick={() => (open1 = false)}>Cancel</Button>
           <Button type="submit" class="w-1/2" color="primary">Save Changes</Button>
         </div>
       </form>

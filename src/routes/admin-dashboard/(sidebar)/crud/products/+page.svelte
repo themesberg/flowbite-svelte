@@ -8,12 +8,12 @@
 
   // import Product from './Product.svelte';
 
-  let hidden: boolean = $state(true); // modal control
+  let open: boolean = $state(false); // modal control
   let DrawerComponent: Component = $state(ProductDrawer); // drawer component
 
   const toggle = (component: Component) => {
     DrawerComponent = component;
-    hidden = !hidden;
+    open = !open;
   };
 
   const path: string = "/crud/products";
@@ -95,6 +95,6 @@
   </Table>
 </main>
 
-<Drawer placement="right" bind:hidden>
-  <DrawerComponent bind:hidden />
+<Drawer placement="right" bind:open>
+  <DrawerComponent bind:open />
 </Drawer>

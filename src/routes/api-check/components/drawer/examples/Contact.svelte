@@ -2,13 +2,13 @@
   import { Drawer, Button, CloseButton, Label, Input, Textarea, P, A, Checkbox } from "flowbite-svelte";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 
-  let hidden3 = $state(true);
+  let open3 = $state(false);
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hidden3 = false)}>Show contact form</Button>
+  <Button onclick={() => (open3 = true)}>Show contact form</Button>
 </div>
-<Drawer bind:hidden={hidden3}>
+<Drawer bind:open={open3}>
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Contact us

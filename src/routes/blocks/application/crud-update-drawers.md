@@ -21,22 +21,19 @@ Use this free and responsive example of a drawer component to update an existing
   import { Section } from "flowbite-svelte-blocks";
   import { Label, Input, Button, Drawer, CloseButton } from "flowbite-svelte";
 
-  let hidden = true;
+  let open = false;
 
   const handleCancel = () => {
-    hidden = true;
+    open = false;
   };
 </script>
 
 <Section sectionClass="h-96">
   <div class="mt-8 flex justify-center">
-    <Button onclick={() => (hidden = false)}>Update user</Button>
+    <Button onclick={() => (open = true)}>Update user</Button>
   </div>
-  <Drawer bind:hidden id="sidebar4">
-    <div class="flex items-center justify-between">
-      <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">UPDATE USER</h5>
-      <CloseButton onclick={() => (hidden = true)} class="mb-4 dark:text-white" />
-    </div>
+  <Drawer bind:open id="sidebar4">
+    <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">UPDATE USER</h5>
     <form action="#" class="mb-6">
       <div class="mb-6">
         <Label for="name" class="mb-2 block">Username</Label>

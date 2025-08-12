@@ -1,16 +1,15 @@
 <script>
   import { Drawer, Button, CloseButton } from "flowbite-svelte";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
-  let hidden10 = $state(true);
-  let activateClickOutside = false;
-  let backdrop = false;
+  let open10 = $state(false);
+  let outsideclose = false;
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hidden10 = false)}>Show drawer</Button>
+  <Button onclick={() => (open10 = true)}>Show drawer</Button>
 </div>
 
-<Drawer {activateClickOutside} {backdrop} bind:hidden={hidden10} id="sidebar10">
+<Drawer {outsideclose} bind:open={open10} id="sidebar10">
   <div class="flex items-center justify-between">
     <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
