@@ -452,7 +452,7 @@ Access multiple breakpoints with a single hook:
 
 ### Advanced Patterns
 
-Current Breakpoint Display showw the current breakpoint in your UI:
+Current Breakpoint Display show the current breakpoint in your UI:
 
 ```svelte example
 <script>
