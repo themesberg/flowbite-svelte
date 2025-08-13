@@ -112,3 +112,39 @@
     <HighlightCompo codeLang="ts" code={exampleModules["./examples/TransitionNone.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
+
+<H2>Breakpoints</H2>
+<CodeWrapper innerClass="space-y-4">
+  <ExampleComponents.BpBasic />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/BpBasic.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<CodeWrapper innerClass="space-y-4">
+  <ExampleComponents.BpObject />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/BpObject.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<CodeWrapper innerClass="space-y-4">
+  <ExampleComponents.BpAdvanced />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/BpAdvanced.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<CodeWrapper innerClass="space-y-4">
+  <ExampleComponents.BpRange />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/BpRange.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<CodeWrapper innerClass="space-y-4">
+  <ExampleComponents.BpComplex />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/BpComplex.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>

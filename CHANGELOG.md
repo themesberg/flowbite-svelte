@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.12.2
+
+### Patch Changes
+
+- - feat(utils): add responsive breakpoint utilities
+
+  Add useMediaQuery, useBreakpoints, and useCurrentBreakpoint hooks with TypeScript support and comprehensive documentation for controlling component behavior based on screen size.
+
 ## 1.12.1
 
 ### Patch Changes
