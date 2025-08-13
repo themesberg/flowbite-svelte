@@ -1,36 +1,35 @@
 <script module lang="ts">
 /**
  * A Svelte 5 rune-based media query hook
- * @param {string} query - CSS media query string (e.g., '(min-width: 768px)')
- * @returns {() => boolean} A function that returns the current match state
+ * @param query - CSS media query string (e.g., '(min-width: 768px)')
+ * @returns A function that returns the current match state
  */
-export function useMediaQuery(query) {
-  let matches = $state(false);
+export function useMediaQuery(query: string): () => boolean {
+  let matches = $state<boolean>(false);
 
   $effect(() => {
     if (typeof window === "undefined") return;
 
-    const mediaQuery = window.matchMedia(query);
+    const mediaQuery: MediaQueryList = window.matchMedia(query);
     matches = mediaQuery.matches;
 
-    // @ts-ignore
-    const handler = (e) => {
+    const handler = (e: MediaQueryListEvent): void => {
       matches = e.matches;
     };
 
     mediaQuery.addEventListener("change", handler);
 
-    return () => {
+    return (): void => {
       mediaQuery.removeEventListener("change", handler);
     };
   });
 
-  return () => matches;
+  return (): boolean => matches;
 }
 
 /**
  * Hook for common Tailwind CSS breakpoints
- * @returns {{ sm: boolean, md: boolean, lg: boolean, xl: boolean, '2xl': boolean, isMobile: boolean, isTablet: boolean, isDesktop: boolean }}
+ * @returns Object with boolean values for each breakpoint
  */
 export function useBreakpoints() {
   const sm = useMediaQuery("(min-width: 640px)");
@@ -69,15 +68,15 @@ export function useBreakpoints() {
 
 /**
  * Get current breakpoint name
- * @returns {() => string} Current breakpoint as string
+ * @returns Current breakpoint as string
  */
-export function useCurrentBreakpoint() {
-  let currentBreakpoint = $state("xs");
+export function useCurrentBreakpoint(): () => "xs" | "sm" | "md" | "lg" | "xl" | "2xl" {
+  let currentBreakpoint = $state<"xs" | "sm" | "md" | "lg" | "xl" | "2xl">("xs");
 
   $effect(() => {
     if (typeof window === "undefined") return;
 
-    const updateBreakpoint = () => {
+    const updateBreakpoint = (): void => {
       const width = window.innerWidth;
       if (width >= 1536) currentBreakpoint = "2xl";
       else if (width >= 1280) currentBreakpoint = "xl";
@@ -90,18 +89,18 @@ export function useCurrentBreakpoint() {
     updateBreakpoint();
     window.addEventListener("resize", updateBreakpoint);
 
-    return () => {
+    return (): void => {
       window.removeEventListener("resize", updateBreakpoint);
     };
   });
 
-  return () => currentBreakpoint;
+  return (): "xs" | "sm" | "md" | "lg" | "xl" | "2xl" => currentBreakpoint;
 }
 
-/**
- * Common breakpoint values
- */
-export const BREAKPOINTS = {
+// Type definitions for common breakpoint values
+export type BreakpointKey = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+
+export const BREAKPOINTS: Record<BreakpointKey, number> = {
   xs: 0,
   sm: 640,
   md: 768,
