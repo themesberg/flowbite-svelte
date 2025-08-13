@@ -1,5 +1,3 @@
-import { browser } from "$app/environment";
-
 /**
  * A Svelte 5 rune-based media query hook
  * @param query - CSS media query string (e.g., '(min-width: 768px)')
@@ -9,7 +7,7 @@ export function useMediaQuery(query: string): () => boolean {
   let matches = $state<boolean>(false);
 
   $effect(() => {
-    if (!browser) return;
+    if (typeof window === "undefined") return;
 
     const mediaQuery: MediaQueryList = window.matchMedia(query);
     matches = mediaQuery.matches;
@@ -75,7 +73,7 @@ export function useCurrentBreakpoint(): () => "xs" | "sm" | "md" | "lg" | "xl" |
   let currentBreakpoint = $state<"xs" | "sm" | "md" | "lg" | "xl" | "2xl">("xs");
 
   $effect(() => {
-    if (!browser) return;
+    if (typeof window === "undefined") return;
 
     const updateBreakpoint = (): void => {
       const width = window.innerWidth;

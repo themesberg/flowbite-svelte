@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.12.3
+
+### Patch Changes
+
+- fix: change sveltekit browser from $app/environment with typeof window !== "undefined"
+
 ## 1.12.2
 
 ### Patch Changes
