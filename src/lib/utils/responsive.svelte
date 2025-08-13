@@ -1,3 +1,4 @@
+<script module lang="ts">
 /**
  * A Svelte 5 rune-based media query hook
  * @param query - CSS media query string (e.g., '(min-width: 768px)')
@@ -107,3 +108,4 @@ export const BREAKPOINTS: Record<BreakpointKey, number> = {
   xl: 1280,
   "2xl": 1536
 } as const;
+</script>
