@@ -19,7 +19,7 @@ Use the Drawer component (or “off-canvas”) to show a fixed element relative 
 
 ```svelte example hideOutput
 <script>
-  import { Drawer, CardPlaceholder, Button, CloseButton } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
   import { sineIn } from "svelte/easing";
 </script>
 ```
@@ -30,7 +30,7 @@ Since `Drawer` component extend Svelte's `HTMLAttributes<HTMLDivElement>`, you c
 
 ```svelte example
 <script>
-  import { Drawer, CardPlaceholder, Button, CloseButton } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
   let open = $state(false);
@@ -62,7 +62,7 @@ Use this example to show a navigational sidebar inside the drawer component.
 
 ```svelte example
 <script>
-  import { Drawer, CardPlaceholder, Button, CloseButton, Sidebar, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, Sidebar, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
   import { ChartPieSolid, CartSolid, GridSolid, MailBoxSolid, UsersSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   let open2 = $state(false);
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
@@ -138,7 +138,7 @@ Use this example to show a contact form inside the drawer component.
 
 ```svelte example
 <script>
-  import { Drawer, CardPlaceholder, Button, CloseButton, Label, Input, Textarea, P, A, Checkbox } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, Label, Input, Textarea, P, A, Checkbox } from "flowbite-svelte";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 
   let open3 = $state(false);
@@ -182,7 +182,7 @@ Use this example if you want to add form elements inside the drawer component in
 
 ```svelte example
 <script>
-  import { Drawer, CardPlaceholder, Button, CloseButton, Label, Input, Textarea } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, Label, Input, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, UserAddOutline, CalendarEditSolid } from "flowbite-svelte-icons";
 
   let open4 = $state(false);
@@ -193,12 +193,9 @@ Use this example if you want to add form elements inside the drawer component in
   <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 <Drawer bind:open={open4}>
-  <div class="flex items-center justify-between">
-    <h5 class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />New event
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
+  <h5 class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+    <InfoCircleSolid class="me-2.5 h-5 w-5" />New event
+  </h5>
   <form method="dialog" class="mb-6">
     <div class="mb-6">
       <Label for="title" class="mb-2 block">Title</Label>
@@ -244,7 +241,7 @@ Use the placement prop to position the drawer component either on the top, right
 
 ```svelte example
 <script>
-  import { Drawer, CardPlaceholder, Button, CloseButton, Label, Textarea } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, Label, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
   let open5 = $state(false);
@@ -278,7 +275,7 @@ Set the `transitionParams` variable to new variables.
 
 ```svelte example
 <script>
-  import { Drawer, CardPlaceholder, Button, CloseButton } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
@@ -316,7 +313,7 @@ Use this example to show the drawer on the top side of the page.
 
 ```svelte example
 <script>
-  import { Drawer, CardPlaceholder, Button, CloseButton, A } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
@@ -351,7 +348,7 @@ Use this example to show the drawer on the bottom side of the page.
 
 ```svelte example
 <script>
-  import { Drawer, CardPlaceholder, Button, CloseButton, A } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
@@ -393,7 +390,7 @@ Drawer by default is `modal` (see `dialog`). You can set prop `modal={false}` to
 
 ```svelte example
 <script>
-  import { Drawer, CardPlaceholder, Button, CloseButton, A } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
   let openNonModal = $state(false);
@@ -425,7 +422,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 
 ```svelte example
 <script>
-  import { Drawer, CardPlaceholder, Button, CloseButton } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
   let openDisablingOnlyOutsideClick = $state(false);
