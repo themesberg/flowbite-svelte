@@ -4,7 +4,7 @@
   let { breadcrumb_title = "", description = "", title = "", dir = "" } = $props();
 
   // title = title.replaceAll(' ', '-');
-  let imgsrc = `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${encodeURIComponent(breadcrumb_title)}`;
+  let imgsrc = `https://flowbite-svelte.com/og?title=${encodeURIComponent(breadcrumb_title)}`;
   let dirstring = dir.toLowerCase();
   let breadcrumb = breadcrumb_title.toLowerCase().replaceAll(" ", "-");
 </script>

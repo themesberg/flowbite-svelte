@@ -8,9 +8,9 @@
   };
   let { path, description, title, subtitle }: Props = $props();
 
-  let imgsrc = `https://open-graph-vercel.vercel.app/api/flowbite-svelte-icons?title=${subtitle}`;
+  let imgsrc = `flowbite-svelte.com/og?package=Flowbite%20Svelte%20Icons?title=${subtitle}`;
 
-  let og_url: string = `https://flowbite-svelte-icons.com/${path}`;
+  let og_url: string = `https://flowbite-svelte.com/icons/${path}`;
 </script>
 
 <MetaTags
