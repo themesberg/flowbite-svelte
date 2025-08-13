@@ -424,13 +424,13 @@ Simple Media Query opens accordion item on medium screens and larger:
 
 ```svelte example
 <script>
-  import { AccordionItem, useMediaQuery } from "flowbite-svelte";
+  import { AccordionItem, useMediaQuery, P } from "flowbite-svelte";
   const isMdAndUp = useMediaQuery("(min-width: 768px)");
 </script>
 
 <AccordionItem open={isMdAndUp()}>
   {#snippet header()}Opens on tablets and desktop{/snippet}
-  <p>This content is visible on medium screens and larger.</p>
+  <P>This content is visible on medium screens and larger.</P>
 </AccordionItem>
 ```
 
@@ -440,13 +440,13 @@ Access multiple breakpoints with a single hook:
 
 ```svelte example
 <script>
-  import { AccordionItem, useBreakpoints } from "flowbite-svelte";
+  import { AccordionItem, useBreakpoints, P } from "flowbite-svelte";
   const breakpoints = useBreakpoints();
 </script>
 
 <AccordionItem open={breakpoints.md}>
   {#snippet header()}Opens on medium screens+{/snippet}
-  <p>Content for tablets and desktop users.</p>
+  <P>Content for tablets and desktop users.</P>
 </AccordionItem>
 ```
 
@@ -456,7 +456,7 @@ Current Breakpoint Display show the current breakpoint in your UI:
 
 ```svelte example
 <script>
-  import { AccordionItem, useCurrentBreakpoint, useBreakpoints } from "flowbite-svelte";
+  import { AccordionItem, useCurrentBreakpoint, useBreakpoints, P } from "flowbite-svelte";
   const breakpoints = useBreakpoints();
   const getCurrentBreakpoint = useCurrentBreakpoint();
   const currentBp = $derived(getCurrentBreakpoint());
@@ -464,7 +464,7 @@ Current Breakpoint Display show the current breakpoint in your UI:
 
 <AccordionItem open={breakpoints.lg}>
   {#snippet header()}Desktop Only (Current: {currentBp}){/snippet}
-  <p>This opens only on large screens and above.</p>
+  <P>This opens only on large screens and above.</P>
 </AccordionItem>
 ```
 
@@ -474,7 +474,7 @@ Open accordion only within specific screen size ranges:
 
 ```svelte example
 <script>
-  import { AccordionItem, useMediaQuery, useBreakpoints } from "flowbite-svelte";
+  import { AccordionItem, useMediaQuery, useBreakpoints, P } from "flowbite-svelte";
   const breakpoints = useBreakpoints();
 
   // Open from sm to lg (640px - 1023px)
@@ -489,17 +489,17 @@ Open accordion only within specific screen size ranges:
 
 <AccordionItem open={tabletRange}>
   {#snippet header()}Tablet Range (640px - 1023px){/snippet}
-  <p>Open on tablets, closed on phones and large desktops.</p>
+  <P>Open on tablets, closed on phones and large desktops.</P>
 </AccordionItem>
 
 <AccordionItem open={specificSizes}>
   {#snippet header()}Small phones OR Large desktops only{/snippet}
-  <p>Open on sm-only OR lg-only, closed on other sizes.</p>
+  <P>Open on sm-only OR lg-only, closed on other sizes.</P>
 </AccordionItem>
 
 <AccordionItem open={customRange()}>
   {#snippet header()}Custom Range{/snippet}
-  <p>Define exact pixel ranges for precise control.</p>
+  <P>Define exact pixel ranges for precise control.</P>
 </AccordionItem>
 ```
 
