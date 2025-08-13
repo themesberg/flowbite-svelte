@@ -9,7 +9,7 @@
   <Button onclick={() => (open9 = true)}>Show drawer</Button>
 </div>
 
-<Drawer class="absolute" placement="right" bind:open={open9}>
+<Drawer class="absolute inset-y-0 z-50" modal={false} placement="right" bind:open={open9}>
   <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
     <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
   </h5>

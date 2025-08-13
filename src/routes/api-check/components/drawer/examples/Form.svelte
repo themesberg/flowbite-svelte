@@ -9,12 +9,9 @@
   <Button onclick={() => (open4 = true)}>Show drawer form</Button>
 </div>
 <Drawer bind:open={open4}>
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />New event
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
+  <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+    <InfoCircleSolid class="me-2.5 h-5 w-5" />New event
+  </h5>
   <form action="#" class="mb-6">
     <div class="mb-6">
       <Label for="title" class="mb-2 block">Title</Label>
