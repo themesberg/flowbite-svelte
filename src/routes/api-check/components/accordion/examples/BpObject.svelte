@@ -1,9 +1,9 @@
 <script>
-  import { AccordionItem, useBreakpoints } from "flowbite-svelte";
+  import { AccordionItem, useBreakpoints, P } from "flowbite-svelte";
   const breakpoints = useBreakpoints();
 </script>
 
 <AccordionItem open={breakpoints.md}>
   {#snippet header()}Opens on medium screens+{/snippet}
-  <p>Content for tablets and desktop users.</p>
+  <P>Content for tablets and desktop users.</P>
 </AccordionItem>

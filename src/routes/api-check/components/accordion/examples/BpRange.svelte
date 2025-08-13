@@ -1,5 +1,5 @@
 <script>
-  import { AccordionItem, useMediaQuery, useBreakpoints } from "flowbite-svelte";
+  import { AccordionItem, useMediaQuery, useBreakpoints, P } from "flowbite-svelte";
   const breakpoints = useBreakpoints();
 
   // Open from sm to lg (640px - 1023px)
@@ -14,15 +14,15 @@
 
 <AccordionItem open={tabletRange}>
   {#snippet header()}Tablet Range (640px - 1023px){/snippet}
-  <p>Open on tablets, closed on phones and large desktops.</p>
+  <P>Open on tablets, closed on phones and large desktops.</P>
 </AccordionItem>
 
 <AccordionItem open={specificSizes}>
   {#snippet header()}Small phones OR Large desktops only{/snippet}
-  <p>Open on sm-only OR lg-only, closed on other sizes.</p>
+  <P>Open on sm-only OR lg-only, closed on other sizes.</P>
 </AccordionItem>
 
 <AccordionItem open={customRange()}>
   {#snippet header()}Custom Range{/snippet}
-  <p>Define exact pixel ranges for precise control.</p>
+  <P>Define exact pixel ranges for precise control.</P>
 </AccordionItem>

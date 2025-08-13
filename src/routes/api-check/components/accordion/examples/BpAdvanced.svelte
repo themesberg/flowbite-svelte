@@ -1,5 +1,5 @@
 <script>
-  import { AccordionItem, useCurrentBreakpoint, useBreakpoints } from "flowbite-svelte";
+  import { AccordionItem, useCurrentBreakpoint, useBreakpoints, P } from "flowbite-svelte";
   const breakpoints = useBreakpoints();
   const getCurrentBreakpoint = useCurrentBreakpoint();
   const currentBp = $derived(getCurrentBreakpoint());
@@ -7,5 +7,5 @@
 
 <AccordionItem open={breakpoints.lg}>
   {#snippet header()}Desktop Only (Current: {currentBp}){/snippet}
-  <p>This opens only on large screens and above.</p>
+  <P>This opens only on large screens and above.</P>
 </AccordionItem>
