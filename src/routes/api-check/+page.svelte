@@ -2,7 +2,7 @@
   import { List, Li, P, A } from "$lib";
   import A4 from "../admin-dashboard/(no-sidebar)/pages/404.svelte";
   let { data } = $props();
-  
+
   function convertString(path: string): string {
     return path.replace(/^\/(\w)(\w*)/, (match, firstChar, restOfString) => {
       return firstChar.toUpperCase() + restOfString;
@@ -19,15 +19,14 @@
 <List class="my-8 space-y-1 text-gray-500 dark:text-gray-400">
   {#each Object.entries(data.posts.apicheck) as [key, values] (key)}
     <List class="text-2xl">{key}</List>
-    {#each values as Array<{path: string}> as item (item.path)}
+    {#each values as Array<{ path: string }> as item (item.path)}
       {@const href = `/api-check/${key}${item.path}`}
       {@const linkLabel = convertString(item.path)}
       <Li>
-        <A {href} >
+        <A {href}>
           {linkLabel}
         </A>
       </Li>
     {/each}
   {/each}
 </List>
-

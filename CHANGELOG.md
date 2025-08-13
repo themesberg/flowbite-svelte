@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.12.1
+
+### Patch Changes
+
+- - docs – Drawer examples
+    src/routes/docs/components/drawer.md Removed CloseButton from imports and removed all CloseButton elements in example markup; updated backdrop guidance to recommend Tailwind backdrop classes; clarified modal vs non-modal wording and fixed minor typos.
+  - docs – Timepicker drawer example
+    src/routes/docs/forms/timepicker.md Removed CloseButton from the flowbite-svelte import in the Drawer-with-timepicker example; example markup otherwise unchanged.
+  - github: pull_request_template update
+
 ## 1.12.0
 
 ### Minor Changes
@@ -17,7 +27,7 @@
   Adds DialogProps and DialogVariants. Refactors DrawerProps and ModalProps to extend/reuse dialog typings and reflect the new prop surface (transitionParams, modal, outsideclose, etc.).
 
 - Examples & docs — Drawer migration — src/routes/api-check/components/drawer/examples/_, src/routes/examples/drawer/_.svelte, src/routes/blocks/**, src/routes/docs/**, src/routes/builder/drawer/+page.svelte
-Examples/docs updated: rename hiddenX → openX, bind:hidden → bind:open, replace backdrop / activateClickOutside with modal / outsideclose or CSS backdrop classes, remove some CloseButton / header wrappers, and update generated code snippets.
+  Examples/docs updated: rename hiddenX → openX, bind:hidden → bind:open, replace backdrop / activateClickOutside with modal / outsideclose or CSS backdrop classes, remove some CloseButton / header wrappers, and update generated code snippets.
 
 - Specific page & example updates — src/routes/admin-dashboard/(sidebar)/crud/products/+page.svelte, src/routes/builder/modal/+page.svelte, src/routes/api-check/forms/timepicker.svelte, various drawer example pages
   Replace hidden → open bindings; update modal usage from params → transitionParams; align triggers and handlers to new open semantics and new Drawer props (outsideclose / modal).
