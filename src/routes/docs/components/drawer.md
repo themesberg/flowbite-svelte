@@ -382,7 +382,7 @@ Use this example to show the drawer on the bottom side of the page.
 
 The backdrop element can be used to dim out the background elements when the drawer is visible and also automatically hide the component when clicking outside of it.
 
-Use the drawer's `backdrop:xxx` class to manage it's look.
+Use the drawer's `backdrop:xxx` class to manage its look.
 
 ## Non-modal
 
