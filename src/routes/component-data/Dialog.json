@@ -1,0 +1,26 @@
+{
+  "name": "Dialog",
+  "type": {
+    "name": "DialogProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L557"
+  },
+  "props": [
+    ["children", ""],
+    ["onaction", "() => true"],
+    ["oncancel", ""],
+    ["onsubmit", ""],
+    ["ontoggle", ""],
+    ["form", "false"],
+    ["modal", "true"],
+    ["autoclose", "false"],
+    ["focustrap", "false"],
+    ["open", "$bindable(false)"],
+    ["permanent", "false"],
+    ["dismissable", "true"],
+    ["outsideclose", "true"],
+    ["class: className", ""],
+    ["classes", ""],
+    ["transition", "fade"],
+    ["transitionParams", ""]
+  ]
+}

@@ -2,7 +2,7 @@
   "name": "CloseButton",
   "type": {
     "name": "CloseButtonProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L111"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L112"
   },
   "props": [
     ["children", ""],

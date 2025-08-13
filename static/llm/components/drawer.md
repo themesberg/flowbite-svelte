@@ -7,7 +7,7 @@ Use the Drawer component (or “off-canvas”) to show a fixed element relative 
 
 ```svelte
 <script>
-  import { Drawer, Button, CloseButton } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, CloseButton } from "flowbite-svelte";
   import { sineIn } from "svelte/easing";
 </script>
 ```
@@ -18,23 +18,21 @@ Since `Drawer` component extend Svelte's `HTMLAttributes<HTMLDivElement>`, you c
 
 ```svelte
 <script>
-  import { Drawer, Button, CloseButton } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, CloseButton } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
-  let hidden1 = $state(true);
+  let open = $state(false);
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hidden1 = false)}>Show drawer</Button>
+  <Button onclick={() => (open = true)}>Show drawer</Button>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
-<Drawer bind:hidden={hidden1} id="sidebar1" aria-controls="sidebar1" aria-labelledby="sidebar1">
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
+<Drawer bind:open aria-labelledby="drawer-label">
+  <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
+    <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
+  </h5>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
@@ -52,20 +50,18 @@ Use this example to show a navigational sidebar inside the drawer component.
 
 ```svelte
 <script>
-  import { Drawer, Button, CloseButton, Sidebar, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, CloseButton, Sidebar, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
   import { ChartPieSolid, CartSolid, GridSolid, MailBoxSolid, UsersSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
-  let hidden2 = $state(true);
+  let open2 = $state(false);
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hidden2 = false)}>Show navigation</Button>
+  <Button onclick={() => (open2 = true)}>Show navigation</Button>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
-<Drawer bind:hidden={hidden2} class="w-64 bg-gray-50 p-0 dark:bg-gray-800">
-  <div class="flex items-center justify-between px-2 pt-4">
-    <h5 class="px-4 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
-    <CloseButton class="dark:text-white" />
-  </div>
+<Drawer bind:open={open2} class="w-64 bg-gray-50 p-0 dark:bg-gray-800">
+  <h5 class="px-6 py-4 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
   <Sidebar disableBreakpoints={true} class="top-16">
     <SidebarWrapper class="overflow-y-auto rounded-sm px-3 py-0 dark:bg-gray-800">
       <SidebarGroup>
@@ -130,23 +126,21 @@ Use this example to show a contact form inside the drawer component.
 
 ```svelte
 <script>
-  import { Drawer, Button, CloseButton, Label, Input, Textarea, P, A, Checkbox } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, CloseButton, Label, Input, Textarea, P, A, Checkbox } from "flowbite-svelte";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 
-  let hidden3 = $state(true);
+  let open3 = $state(false);
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hidden3 = false)}>Show contact form</Button>
+  <Button onclick={() => (open3 = true)}>Show contact form</Button>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
-<Drawer bind:hidden={hidden3}>
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />Contact us
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
-  <form action="#" class="mb-6">
+<Drawer bind:open={open3}>
+  <h5 class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+    <InfoCircleSolid class="me-2.5 h-5 w-5" />Contact us
+  </h5>
+  <form method="dialog" class="mb-6">
     <div class="mb-6">
       <Label for="email" class="mb-2 block">Your email</Label>
       <Input id="email" name="email" required placeholder="name@company.com" />
@@ -176,23 +170,24 @@ Use this example if you want to add form elements inside the drawer component in
 
 ```svelte
 <script>
-  import { Drawer, Button, CloseButton, Label, Input, Textarea } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, CloseButton, Label, Input, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, UserAddOutline, CalendarEditSolid } from "flowbite-svelte-icons";
 
-  let hidden4 = $state(true);
+  let open4 = $state(false);
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hidden4 = false)}>Show drawer form</Button>
+  <Button onclick={() => (open4 = true)}>Show drawer form</Button>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
-<Drawer bind:hidden={hidden4}>
+<Drawer bind:open={open4}>
   <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+    <h5 class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
       <InfoCircleSolid class="me-2.5 h-5 w-5" />New event
     </h5>
     <CloseButton class="mb-4 dark:text-white" />
   </div>
-  <form action="#" class="mb-6">
+  <form method="dialog" class="mb-6">
     <div class="mb-6">
       <Label for="title" class="mb-2 block">Title</Label>
       <Input id="title" name="title" required placeholder="Apple Keynote" />
@@ -237,23 +232,21 @@ Use the placement prop to position the drawer component either on the top, right
 
 ```svelte
 <script>
-  import { Drawer, Button, CloseButton, Label, Textarea } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, CloseButton, Label, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
-  let hidden5 = $state(true);
+  let open5 = $state(false);
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hidden5 = false)}>Show drawer</Button>
+  <Button onclick={() => (open5 = true)}>Show drawer</Button>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
-<Drawer placement="left" bind:hidden={hidden5}>
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
+<Drawer placement="left" bind:open={open5}>
+  <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
+    <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
+  </h5>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
@@ -273,11 +266,11 @@ Set the `transitionParams` variable to new variables.
 
 ```svelte
 <script>
-  import { Drawer, Button, CloseButton } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, CloseButton } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
-  let hidden6 = $state(true);
+  let open6 = $state(false);
   let transitionParamsRight = {
     x: 320,
     duration: 200,
@@ -286,16 +279,14 @@ Set the `transitionParams` variable to new variables.
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hidden6 = false)}>Show drawer</Button>
+  <Button onclick={() => (open6 = true)}>Show drawer</Button>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
-<Drawer placement="right" transitionParams={transitionParamsRight} bind:hidden={hidden6}>
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
+<Drawer placement="right" transitionParams={transitionParamsRight} bind:open={open6}>
+  <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
+    <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
+  </h5>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
@@ -313,11 +304,11 @@ Use this example to show the drawer on the top side of the page.
 
 ```svelte
 <script>
-  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
-  let hidden7 = $state(true);
+  let open7 = $state(false);
   let transitionParamsTop = {
     y: -320,
     duration: 200,
@@ -326,16 +317,14 @@ Use this example to show the drawer on the top side of the page.
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hidden7 = false)}>Show drawer</Button>
+  <Button onclick={() => (open7 = true)}>Show drawer</Button>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
-<Drawer placement="top" class="w-full" transitionParams={transitionParamsTop} bind:hidden={hidden7}>
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />Top drawer
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
+<Drawer placement="top" class="w-full" transitionParams={transitionParamsTop} bind:open={open7}>
+  <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
+    <InfoCircleSolid class="me-2.5 h-5 w-5" />Top drawer
+  </h5>
   <p class="mb-6 max-w-lg text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <A href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</A> for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
@@ -350,11 +339,11 @@ Use this example to show the drawer on the bottom side of the page.
 
 ```svelte
 <script>
-  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
 
-  let hidden8 = $state(true);
+  let open8 = $state(false);
   let transitionParamsBottom = {
     y: 320,
     duration: 200,
@@ -363,16 +352,14 @@ Use this example to show the drawer on the bottom side of the page.
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hidden8 = false)}>Show drawer</Button>
+  <Button onclick={() => (open8 = true)}>Show drawer</Button>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
-<Drawer placement="bottom" class="w-full" transitionParams={transitionParamsBottom} bind:hidden={hidden8}>
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
+<Drawer form placement="bottom" class="w-full" transitionParams={transitionParamsBottom} bind:open={open8}>
+  <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
+    <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
+  </h5>
   <p class="mb-6 max-w-lg text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
@@ -386,31 +373,29 @@ Use this example to show the drawer on the bottom side of the page.
 
 The backdrop element can be used to dim out the background elements when the drawer is visible and also automatically hide the component when clicking outside of it.
 
-Use the `backdrop="false|true"` prop where you can disable or enable the backdrop element.
+Use the drawer's `backdrop:xxx` class to manage it's look.
 
-### Enabled (default)
+## Non-modal
 
-Use this example to enable the backdrop element by default.
+Drawer by default is `modal` (see `dialog`). You can set prop `modal={false}` to open `Drawer` in non-modal mode, that means with no backdrop. Note howerver, that you will need managed the `Drawer` position, z-index and `Esc` button manually.
 
 ```svelte
 <script>
-  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, CloseButton, A } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
-  let hiddenBackdropTrue = $state(true);
+  let openNonModal = $state(false);
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hiddenBackdropTrue = false)}>Show drawer</Button>
+  <Button onclick={() => (openNonModal = true)}>Show drawer</Button>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
-<Drawer backdrop={true} bind:hidden={hiddenBackdropTrue}>
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
+<Drawer modal={false} bind:open={openNonModal} class="fixed top-0 left-0 z-50">
+  <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
+    <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
+  </h5>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
@@ -422,166 +407,30 @@ Use this example to enable the backdrop element by default.
 </Drawer>
 ```
 
-### Disabled
+## Disabling outside click
 
-Use the `backdrop={false}` prop to disable the backdrop element when the drawer is shown.
+As the default, the drawer closes when you click the outside of the drawer. However sometimes you don't want that. Set `outsideclose` to false to disable it.
 
 ```svelte
 <script>
-  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, CloseButton } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
-  let hiddenBackdropFalse = $state(true);
+  let openDisablingOnlyOutsideClick = $state(false);
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hiddenBackdropFalse = false)}>Show drawer</Button>
+  <Button onclick={() => (openDisablingOnlyOutsideClick = true)}>Show drawer</Button>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
-<Drawer backdrop={false} bind:hidden={hiddenBackdropFalse}>
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
+<Drawer outsideclose={false} bind:open={openDisablingOnlyOutsideClick}>
+  <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
+    <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
+  </h5>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-  </p>
-  <div class="grid grid-cols-2 gap-4">
-    <Button color="light" href="/">Learn more</Button>
-    <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
-  </div>
-</Drawer>
-```
-
-## Position
-
-Use `fixed|aboslute` prop to manage the CSS position value of the drawer.
-
-```svelte
-<script>
-  import { Drawer, Button, CloseButton } from "flowbite-svelte";
-  import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-
-  let hidden9 = true;
-</script>
-
-<div class="text-center">
-  <Button onclick={() => (hidden9 = false)}>Show drawer</Button>
-</div>
-
-<Drawer position="absolute" placement="right" bind:hidden={hidden9}>
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
-  <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-    Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
-    for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-  </p>
-  <div class="grid grid-cols-2 gap-4">
-    <Button color="light" href="/">Learn more</Button>
-    <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
-  </div>
-</Drawer>
-```
-
-## Disabling outside click and backdrop
-
-As the default, the drawer closes when you click the outside of the drawer. However sometimes you don't want that. Set `activateClickOutside` to false to disable it.
-
-```svelte
-<script>
-  import { Drawer, Button, CloseButton } from "flowbite-svelte";
-  import { InfoCircleSolid } from "flowbite-svelte-icons";
-  let hidden10 = $state(true);
-  let activateClickOutside = false;
-  let backdrop = false;
-</script>
-
-<div class="text-center">
-  <Button onclick={() => (hidden10 = false)}>Show drawer</Button>
-</div>
-
-<Drawer {activateClickOutside} {backdrop} bind:hidden={hidden10} id="sidebar10">
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
-  <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-    Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
-    for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-  </p>
-</Drawer>
-```
-
-## Disabling only outside click
-
-```svelte
-<script>
-  import { Drawer, Button, CloseButton } from "flowbite-svelte";
-  import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-
-  let hiddenDisablingOnlyOutsideClick = $state(true);
-</script>
-
-<div class="text-center">
-  <Button onclick={() => (hiddenDisablingOnlyOutsideClick = false)}>Show drawer</Button>
-</div>
-
-<Drawer activateClickOutside={false} bind:hidden={hiddenDisablingOnlyOutsideClick}>
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
-  <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-    Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
-    for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-  </p>
-  <div class="grid grid-cols-2 gap-4">
-    <Button color="light" href="/">Learn more</Button>
-    <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
-  </div>
-</Drawer>
-```
-
-## Body scrolling
-
-By default, body scrolling is disabled when the drawer is visible, however, you can choose to enable it using the `bodyScrolling={true|false}` prop.
-
-**Limitation:** When bodyScrolling={true}, clicking the backdrop to close the drawer is disabled. Use the Escape key or provide a close button inside the drawer content instead.
-
-```svelte
-<script>
-  import { Drawer, Button, CloseButton } from "flowbite-svelte";
-  import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-  let drawerHidden = $state(true);
-</script>
-
-<div class="text-center">
-  <Button onclick={() => (drawerHidden = false)}>Show drawer</Button>
-</div>
-
-<Drawer bind:hidden={drawerHidden} bodyScrolling={true}>
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
-  <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-    Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
-    for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board. Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet
-    consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea! Lorem ipsum dolor sit, amet consectetur adipisicing elit. At vel quidem sed numquam repellendus. Nihil earum veritatis quas non quisquam nisi hic ad, quo ullam iusto
-    aliquid architecto saepe asperiores. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ratione vero repudiandae ex? Possimus doloremque culpa excepturi, corporis natus hic perferendis dolorem dignissimos fugit nostrum ipsam sapiente voluptate eos ea!
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
@@ -596,29 +445,24 @@ By default, body scrolling is disabled when the drawer is visible, however, you 
 
 #### Types
 
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L555)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L571)
 
 #### Props
 
 - children
-- hidden: $bindable()
-- activateClickOutside: true
-- position
+- open: $bindable(false)
 - width
-- backdrop: true
-- backdropClass
 - placement: "left"
 - class: className
 - classes
 - transitionParams
-- transitionType: fly
-- bodyScrolling: false
+- transition: fly
 
 ### Drawerhead
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L566)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L573)
 
 #### Props
 

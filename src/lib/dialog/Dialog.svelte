@@ -119,7 +119,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1038)
+[DialogProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L557)
 ## Props
 @prop children
 @prop onaction = ()
@@ -136,7 +136,7 @@
 @prop outsideclose = true
 @prop class: className
 @prop classes
-@prop params
 @prop transition = fade
+@prop transitionParams
 @prop ...restProps
 -->

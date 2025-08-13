@@ -37,19 +37,15 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L555)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L571)
 ## Props
 @prop children
-@prop hidden = $bindable()
-@prop activateClickOutside = true
-@prop position
+@prop open = $bindable(false)
 @prop width
-@prop backdrop = true
-@prop backdropClass
 @prop placement = "left"
 @prop class: className
 @prop classes
 @prop transitionParams
-@prop transitionType = fly
+@prop transition = fly
 @prop ...restProps
 -->

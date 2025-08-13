@@ -471,19 +471,11 @@ Use the following example to create a full-screen modal.
 
 #### Types
 
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1038)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1045)
 
 #### Props
 
 - children
-- onaction: () => true
-- oncancel
-- onsubmit
-- ontoggle
-- form: false
-- modal: true
-- autoclose: false
-- focustrap: false
 - header
 - footer
 - title
@@ -499,7 +491,7 @@ Use the following example to create a full-screen modal.
 - placement
 - class: className
 - classes
-- params
+- transitionParams
 - transition: fade
 - fullscreen: false
 

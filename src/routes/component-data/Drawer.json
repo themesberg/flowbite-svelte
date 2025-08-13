@@ -2,21 +2,16 @@
   "name": "Drawer",
   "type": {
     "name": "DrawerProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L555"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L571"
   },
   "props": [
     ["children", ""],
-    ["hidden", "$bindable()"],
-    ["activateClickOutside", "true"],
-    ["position", ""],
+    ["open", "$bindable(false)"],
     ["width", ""],
-    ["backdrop", "true"],
-    ["backdropClass", ""],
     ["placement", "\"left\""],
     ["class: className", ""],
     ["classes", ""],
     ["transitionParams", ""],
-    ["transitionType", "fly"],
-    ["bodyScrolling", "false"]
+    ["transition", "fly"]
   ]
 }

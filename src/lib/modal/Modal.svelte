@@ -47,17 +47,9 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1038)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1045)
 ## Props
 @prop children
-@prop onaction = ()
-@prop oncancel
-@prop onsubmit
-@prop ontoggle
-@prop form = false
-@prop modal = true
-@prop autoclose = false
-@prop focustrap = false
 @prop header
 @prop footer
 @prop title
@@ -73,7 +65,7 @@
 @prop placement
 @prop class: className
 @prop classes
-@prop params
+@prop transitionParams
 @prop transition = fade
 @prop fullscreen = false
 @prop ...restProps

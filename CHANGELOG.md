@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.12.0
+
+### Minor Changes
+
+- Dialog component & exports — src/lib/dialog/Dialog.svelte, src/lib/dialog/index.ts, src/lib/dialog/theme.ts, src/lib/index.ts
+  New Dialog.svelte (TypeScript) implementing native <dialog> integration (form/modal modes), lifecycle callbacks (onaction / oncancel / onsubmit / ontoggle), focus trap, dismissal, transitions, and styling via dialog() theme. Re-exports added and surfaced in library index.
+
+- Drawer refactor & theme — src/lib/drawer/Drawer.svelte, src/lib/drawer/theme.ts
+  Drawer now renders via Dialog (bind:open); public API changed from hidden / backdrop / activateClickOutside / transitionType → open / outsideclose / transition. Theme extends dialog and simplifies slots, placement, and backdrop handling.
+
+- Modal refactor & theme — src/lib/modal/Modal.svelte, src/lib/modal/theme.ts
+  Modal delegates rendering/lifecycle to Dialog (bind:open), removes native dialog handlers and legacy props, adopts transitionParams. Modal theme extends dialog and updates slots/placements.
+
+- Types centralization — src/lib/types.ts
+  Adds DialogProps and DialogVariants. Refactors DrawerProps and ModalProps to extend/reuse dialog typings and reflect the new prop surface (transitionParams, modal, outsideclose, etc.).
+
+- Examples & docs — Drawer migration — src/routes/api-check/components/drawer/examples/_, src/routes/examples/drawer/_.svelte, src/routes/blocks/**, src/routes/docs/**, src/routes/builder/drawer/+page.svelte
+Examples/docs updated: rename hiddenX → openX, bind:hidden → bind:open, replace backdrop / activateClickOutside with modal / outsideclose or CSS backdrop classes, remove some CloseButton / header wrappers, and update generated code snippets.
+
+- Specific page & example updates — src/routes/admin-dashboard/(sidebar)/crud/products/+page.svelte, src/routes/builder/modal/+page.svelte, src/routes/api-check/forms/timepicker.svelte, various drawer example pages
+  Replace hidden → open bindings; update modal usage from params → transitionParams; align triggers and handlers to new open semantics and new Drawer props (outsideclose / modal).
+
 ## 1.11.8
 
 ### Patch Changes

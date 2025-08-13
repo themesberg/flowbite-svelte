@@ -7,7 +7,7 @@ export type DrawerVariants = VariantProps<typeof drawer> & Classes<typeof drawer
 export const drawer = tv({
   extend: dialog,
   slots: {
-    base: "p-4 max-h-screen max-w-screen",
+    base: "p-4 max-h-screen max-w-screen"
   },
   variants: {
     placement: {
@@ -20,7 +20,7 @@ export const drawer = tv({
       default: { base: "w-80" },
       full: { base: "w-full" },
       half: { base: "w-1/2" }
-    },
+    }
   },
   defaultVariants: {
     placement: "left",

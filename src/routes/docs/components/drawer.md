@@ -38,7 +38,7 @@ Since `Drawer` component extend Svelte's `HTMLAttributes<HTMLDivElement>`, you c
 
 <div class="text-center">
   <Button onclick={() => (open = true)}>Show drawer</Button>
-  <CardPlaceholder size="2xl" class="mt-6"/>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
 <Drawer bind:open aria-labelledby="drawer-label">
@@ -70,7 +70,7 @@ Use this example to show a navigational sidebar inside the drawer component.
 
 <div class="text-center">
   <Button onclick={() => (open2 = true)}>Show navigation</Button>
-  <CardPlaceholder size="2xl" class="mt-6"/>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 <Drawer bind:open={open2} class="w-64 bg-gray-50 p-0 dark:bg-gray-800">
   <h5 class="px-6 py-4 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
@@ -146,7 +146,7 @@ Use this example to show a contact form inside the drawer component.
 
 <div class="text-center">
   <Button onclick={() => (open3 = true)}>Show contact form</Button>
-  <CardPlaceholder size="2xl" class="mt-6"/>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 <Drawer bind:open={open3}>
   <h5 class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
@@ -190,7 +190,7 @@ Use this example if you want to add form elements inside the drawer component in
 
 <div class="text-center">
   <Button onclick={() => (open4 = true)}>Show drawer form</Button>
-  <CardPlaceholder size="2xl" class="mt-6"/>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 <Drawer bind:open={open4}>
   <div class="flex items-center justify-between">
@@ -252,7 +252,7 @@ Use the placement prop to position the drawer component either on the top, right
 
 <div class="text-center">
   <Button onclick={() => (open5 = true)}>Show drawer</Button>
-  <CardPlaceholder size="2xl" class="mt-6"/>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
 <Drawer placement="left" bind:open={open5}>
@@ -292,7 +292,7 @@ Set the `transitionParams` variable to new variables.
 
 <div class="text-center">
   <Button onclick={() => (open6 = true)}>Show drawer</Button>
-  <CardPlaceholder size="2xl" class="mt-6"/>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
 <Drawer placement="right" transitionParams={transitionParamsRight} bind:open={open6}>
@@ -330,7 +330,7 @@ Use this example to show the drawer on the top side of the page.
 
 <div class="text-center">
   <Button onclick={() => (open7 = true)}>Show drawer</Button>
-  <CardPlaceholder size="2xl" class="mt-6"/>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
 <Drawer placement="top" class="w-full" transitionParams={transitionParamsTop} bind:open={open7}>
@@ -365,7 +365,7 @@ Use this example to show the drawer on the bottom side of the page.
 
 <div class="text-center">
   <Button onclick={() => (open8 = true)}>Show drawer</Button>
-  <CardPlaceholder size="2xl" class="mt-6"/>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
 <Drawer form placement="bottom" class="w-full" transitionParams={transitionParamsBottom} bind:open={open8}>
@@ -391,7 +391,6 @@ Use the drawer's `backdrop:xxx` class to manage it's look.
 
 Drawer by default is `modal` (see `dialog`). You can set prop `modal={false}` to open `Drawer` in non-modal mode, that means with no backdrop. Note howerver, that you will need managed the `Drawer` position, z-index and `Esc` button manually.
 
-
 ```svelte example
 <script>
   import { Drawer, CardPlaceholder, Button, CloseButton, A } from "flowbite-svelte";
@@ -402,10 +401,10 @@ Drawer by default is `modal` (see `dialog`). You can set prop `modal={false}` to
 
 <div class="text-center">
   <Button onclick={() => (openNonModal = true)}>Show drawer</Button>
-  <CardPlaceholder size="2xl" class="mt-6"/>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
-<Drawer modal={false} bind:open={openNonModal} class="fixed z-50 top-0 left-0">
+<Drawer modal={false} bind:open={openNonModal} class="fixed top-0 left-0 z-50">
   <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
     <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
   </h5>
@@ -434,7 +433,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 
 <div class="text-center">
   <Button onclick={() => (openDisablingOnlyOutsideClick = true)}>Show drawer</Button>
-  <CardPlaceholder size="2xl" class="mt-6"/>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
 <Drawer outsideclose={false} bind:open={openDisablingOnlyOutsideClick}>
