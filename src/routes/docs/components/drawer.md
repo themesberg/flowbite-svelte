@@ -382,11 +382,11 @@ Use this example to show the drawer on the bottom side of the page.
 
 The backdrop element can be used to dim out the background elements when the drawer is visible and also automatically hide the component when clicking outside of it.
 
-Use the drawer's `backdrop:xxx` class to manage its look.
+Use Tailwind's `backdrop:` variant classes (e.g., `backdrop:bg-black/50`) to style the dialog backdrop.
 
 ## Non-modal
 
-Drawer by default is `modal` (see `dialog`). You can set prop `modal={false}` to open `Drawer` in non-modal mode, that means with no backdrop. Note howerver, that you will need managed the `Drawer` position, z-index and `Esc` button manually.
+Drawer is `modal` by default (see `dialog`). You can set `modal={false}` to open `Drawer` in non-modal mode (no backdrop). However, you will need to manage the `Drawer` position, z-index, and `ESC` key behavior manually.
 
 ```svelte example
 <script>
