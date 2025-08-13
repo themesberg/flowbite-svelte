@@ -15,18 +15,15 @@ Use this free example of a drawer component to show a list of checkbox, radio an
 <script>
   import { Drawer, Button, CloseButton, Label, Input, Checkbox, A, Heading, Rating, Radio } from "flowbite-svelte";
 
-  let hidden = true;
+  let open = false;
   let myRating = "3";
 </script>
 
 <div class="mt-8 flex justify-center">
-  <Button onclick={() => (hidden = false)}>Show drawer</Button>
+  <Button onclick={() => (open = true)}>Show drawer</Button>
 </div>
-<Drawer bind:hidden id="sidebar4">
-  <div class="flex items-center justify-between">
-    <Heading tag="h5" id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">APPLY FILTERS</Heading>
-    <CloseButton onclick={() => (hidden = true)} class="mb-4 dark:text-white" />
-  </div>
+<Drawer bind:open id="sidebar4">
+  <Heading tag="h5" id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">APPLY FILTERS</Heading>
   <form action="#">
     <div class="space-y-6">
       <!-- Categories -->

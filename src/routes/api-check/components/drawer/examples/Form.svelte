@@ -2,19 +2,16 @@
   import { Drawer, Button, CloseButton, Label, Input, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, UserAddOutline, CalendarEditSolid } from "flowbite-svelte-icons";
 
-  let hidden4 = $state(true);
+  let open4 = $state(false);
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hidden4 = false)}>Show drawer form</Button>
+  <Button onclick={() => (open4 = true)}>Show drawer form</Button>
 </div>
-<Drawer bind:hidden={hidden4}>
-  <div class="flex items-center justify-between">
-    <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-      <InfoCircleSolid class="me-2.5 h-5 w-5" />New event
-    </h5>
-    <CloseButton class="mb-4 dark:text-white" />
-  </div>
+<Drawer bind:open={open4}>
+  <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+    <InfoCircleSolid class="me-2.5 h-5 w-5" />New event
+  </h5>
   <form action="#" class="mb-6">
     <div class="mb-6">
       <Label for="title" class="mb-2 block">Title</Label>

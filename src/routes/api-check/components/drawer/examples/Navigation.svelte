@@ -1,18 +1,15 @@
 <script>
   import { Drawer, Button, CloseButton, Sidebar, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
   import { ChartPieSolid, CartSolid, GridSolid, MailBoxSolid, UsersSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
-  let hidden2 = $state(true);
+  let open2 = $state(false);
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (hidden2 = false)}>Show navigation</Button>
+  <Button onclick={() => (open2 = true)}>Show navigation</Button>
 </div>
-<Drawer bind:hidden={hidden2} class="w-64 bg-gray-50 p-0 dark:bg-gray-800">
-  <div class="flex items-center justify-between px-2 pt-4">
-    <h5 class="px-4 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
-    <CloseButton class="dark:text-white" />
-  </div>
+<Drawer bind:open={open2} class="w-64 bg-gray-50 p-0 dark:bg-gray-800">
+  <h5 class="px-4 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
   <Sidebar disableBreakpoints={true} class="top-16">
     <SidebarWrapper class="overflow-y-auto rounded-sm px-3 py-0 dark:bg-gray-800">
       <SidebarGroup>

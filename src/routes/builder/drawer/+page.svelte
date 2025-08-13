@@ -12,7 +12,7 @@
   import { isGeneratedCodeOverflow } from "../utils/helpers";
 
   const drawerTransition = uiHelpers();
-  let hidden = $state(true);
+  let open = $state(false);
   const closeDrawerTransition = drawerTransition.close;
 
   // $effect(() => {
@@ -68,11 +68,6 @@
   let selectedPlacement = $state("Left");
   let currentPlacement = $derived(placements.find((p) => p.name === selectedPlacement) || placements[0]);
 
-  // backdrop
-  let backdropStatus = $state(true);
-  const changeBackdropStatus = () => {
-    backdropStatus = !backdropStatus;
-  };
   // outsideclick
   let outsideclickStatus = $state(true);
   const changeOutsideclickStatus = () => {
@@ -86,7 +81,6 @@
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (!backdropStatus) props.push(" backdrop={false}");
       if (!outsideclickStatus) props.push(" activateClickOutside={false}");
       if (currentPlacement.width !== "default") props.push(` width="${currentPlacement.width}"`);
       if (currentTransition !== transitions[0]) {
@@ -140,19 +134,17 @@
 <H1>Drawer Builder</H1>
 <CodeWrapper>
   <div class="text-center">
-    <Button onclick={() => (hidden = false)}>Drawer</Button>
+    <Button onclick={() => (open = true)}>Drawer</Button>
   </div>
-  <Drawer bind:hidden transitionType={currentTransition.transition} placement={currentPlacement.placement as DrawerProps["placement"]} width={currentPlacement.width as DrawerProps["width"]} transitionParams={currentPlacement.placement === "left" ? currentTransition.params : currentPlacement.params} backdrop={backdropStatus} activateClickOutside={outsideclickStatus}>
-    <Drawerhead onclick={() => (hidden = true)} class="mb-4">
+  <Drawer bind:open transition={currentTransition.transition} placement={currentPlacement.placement as DrawerProps["placement"]} width={currentPlacement.width as DrawerProps["width"]} transitionParams={currentPlacement.placement === "left" ? currentTransition.params : currentPlacement.params} outsideclose={outsideclickStatus}>
+    <Drawerhead onclick={() => (open = false)} class="mb-4">
       <h5 id="drawer-label" class="inline-flex items-center text-xl font-semibold text-gray-500 dark:text-gray-400">
         <InfoCircleSolid class="me-2.5 h-5 w-5" />{selectedTransition} drawer
       </h5>
     </Drawerhead>
     <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">Content</p>
     <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-      Backdrop: {backdropStatus ? "true" : "false"}
-      <br />
-      Outsideclick: {outsideclickStatus ? "true" : "false"}
+      Outsideclose: {outsideclickStatus ? "true" : "false"}
     </p>
   </Drawer>
   <div class="mb-4 flex flex-wrap space-x-2">
@@ -168,8 +160,7 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-48" color="primary" onclick={changeBackdropStatus}>{backdropStatus ? "Hide backdrop" : "Show backdrop"}</Button>
-    <Button class="w-48" color="secondary" onclick={changeOutsideclickStatus}>{outsideclickStatus ? "Disable outsideclick" : "Enable outsideclick"}</Button>
+    <Button class="w-48" onclick={changeOutsideclickStatus}>{outsideclickStatus ? "Disable outsideclick" : "Enable outsideclick"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

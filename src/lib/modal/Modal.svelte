@@ -1,13 +1,12 @@
 <script lang="ts">
-  import { type ModalProps, type ParamsType, CloseButton, trapFocus } from "$lib";
+  import { type ModalProps, type ParamsType, CloseButton, Dialog } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
   import { modal as modalStyle } from ".";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, classes, params, transition = fade, fullscreen = false, ...restProps }: ModalProps = $props();
+  let { children, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, classes, transitionParams, transition = fade, fullscreen = false, ...restProps }: ModalProps = $props();
 
   // form, header, footer, body, close
   warnThemeDeprecation("Modal", { headerClass, bodyClass, footerClass, closeBtnClass }, { bodyClass: "body", headerClass: "header", footerClass: "footer", closeBtnClass: "close" });
@@ -16,90 +15,12 @@
   const theme = getTheme("modal");
 
   const paramsDefault = { duration: 100, easing: sineIn };
-  const paramsOptions = $derived(params ?? paramsDefault);
+  const paramsOptions = $derived(transitionParams ?? paramsDefault);
 
-  const { base, form: formCls, header: headerCls, footer: footerCls, body, close: closeCls } = $derived(modalStyle({ placement, size }));
-
-  const close = (dlg: HTMLDialogElement) => (open = false);
-  // @ts-expect-error: dlg.requestClose may not be supported
-  const cancel = (dlg: HTMLDialogElement) => (typeof dlg.requestClose === "function" ? dlg.requestClose() : close());
-
-  function _oncancel(ev: Event & { currentTarget: HTMLDialogElement }) {
-    if (ev.target !== ev.currentTarget) {
-      return; // ignore if not on dialog
-    }
-
-    // this event gets called when user canceled the dialog:
-    // pressesed ESC key, clicked outside, pressed submit button with no 'value' like close button
-    oncancel?.(ev);
-    if (ev.defaultPrevented) return;
-
-    ev.preventDefault(); // prevent anyway, we need clean close
-    if (!permanent) close(ev.currentTarget);
-  }
-
-  function _onclick(ev: Event & { currentTarget: HTMLDialogElement }) {
-    const dlg: HTMLDialogElement = ev.currentTarget;
-    if (outsideclose && ev.target === dlg) {
-      return cancel(dlg);
-    }
-
-    if (autoclose && ev.target instanceof HTMLButtonElement && !permanent) {
-      return close(dlg);
-    }
-  }
-
-  function _onsubmit(ev: SubmitEvent & { currentTarget: HTMLDialogElement }) {
-    // When dialog contains the <form method="dialog"> and when child with type="submit" was pressed
-
-    onsubmit?.(ev);
-    if (ev.defaultPrevented) return;
-
-    ev.preventDefault(); // stop dialog.close()
-
-    const dlg: HTMLDialogElement = ev.currentTarget;
-
-    if (ev.submitter instanceof HTMLButtonElement || ev.submitter instanceof HTMLInputElement) {
-      dlg.returnValue = ev.submitter.value;
-    }
-
-    if (!dlg.returnValue) {
-      return cancel(dlg); // if no action - treat that as cancel
-    }
-
-    // explicit false from onaction blocks the form closing
-    if (typeof onaction === "function" && onaction({ action: dlg.returnValue, data: new FormData(ev.target as HTMLFormElement) }) === false) return;
-
-    close(dlg);
-  }
-
-  function _ontoggle(ev: ToggleEvent & { currentTarget: HTMLDialogElement }) {
-    ontoggle?.(ev);
-    open = ev.newState === "open"; // for cases when toggle by other means
-  }
-
-  function init(dlg: HTMLDialogElement) {
-    modal ? dlg.showModal() : dlg.show();
-    return () => dlg.close();
-  }
-
-  const focusTrap = (node: HTMLElement) => (focustrap ? trapFocus(node) : undefined);
-
-  let ref: HTMLDialogElement | undefined = $state(undefined);
-
-  function close_handler(ev: MouseEvent) {
-    if (form) {
-      // dialog/form mechanism will close the dialog
-      return;
-    }
-
-    ref?.dispatchEvent(new Event("cancel", { bubbles: true, cancelable: true }));
-  }
-
-  createDismissableContext(close_handler);
+  const { base, header: headerCls, footer: footerCls, body } = $derived(modalStyle({ placement, size }));
 </script>
 
-{#snippet content()}
+<Dialog bind:open {transition} dismissable={dismissable && !title && !permanent} transitionParams={paramsOptions} {...restProps} class={base({ fullscreen, class: clsx(theme?.base, className) })}>
   {#if title || header}
     <div class={headerCls({ class: clsx(theme?.header, styling.header) })}>
       {#if title}
@@ -120,22 +41,7 @@
       {@render footer()}
     </div>
   {/if}
-  {#if dismissable && !permanent && !title}
-    <CloseButton type="submit" formnovalidate class={closeCls({ class: clsx(theme?.close, styling.close) })} />
-  {/if}
-{/snippet}
-
-{#if open}
-  <dialog {@attach init} bind:this={ref} use:focusTrap class={base({ fullscreen, class: clsx(theme?.base, className) })} tabindex="-1" onsubmit={_onsubmit} oncancel={_oncancel} onclick={_onclick} ontoggle={_ontoggle} transition:transition|global={paramsOptions as ParamsType} {...restProps}>
-    {#if form}
-      <form method="dialog" class={formCls({ class: clsx(theme?.form) })}>
-        {@render content()}
-      </form>
-    {:else}
-      {@render content()}
-    {/if}
-  </dialog>
-{/if}
+</Dialog>
 
 <!--
 @component

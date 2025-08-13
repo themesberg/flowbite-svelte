@@ -19,6 +19,7 @@ export * from "./clipboard";
 export * from "./darkmode";
 export * from "./datepicker";
 export * from "./device-mockups";
+export * from "./dialog";
 export * from "./dropdown";
 export * from "./drawer";
 export * from "./footer";

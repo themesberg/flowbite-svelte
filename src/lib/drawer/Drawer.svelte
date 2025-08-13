@@ -1,25 +1,20 @@
 <script lang="ts">
-  import { type ParamsType, type DrawerProps, trapFocus } from "$lib";
+  import { type DrawerProps } from "$lib";
+  import Dialog from "$lib/dialog/Dialog.svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
-  import { fly } from "svelte/transition";
   import { sineIn } from "svelte/easing";
+  import { fly } from "svelte/transition";
   import { drawer } from ".";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { children, hidden = $bindable(), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, classes, transitionParams, transitionType = fly, bodyScrolling = false, ...restProps }: DrawerProps = $props();
-
-  warnThemeDeprecation("Drawer", { backdropClass }, { backdropClass: "backdrop" });
-  const styling = $derived(classes ?? { backdrop: backdropClass });
+  let { children, open = $bindable(false), width, placement = "left", class: className, classes, transitionParams, transition = fly, ...restProps }: DrawerProps = $props();
 
   const theme = getTheme("drawer");
 
-  const { base, backdrop: backdropCls } = $derived(
+  const { base } = $derived(
     drawer({
-      position,
       placement,
-      width,
-      backdrop
+      width
     })
   );
 
@@ -29,25 +24,14 @@
   let x = $derived(placement === "left" ? -320 : placement === "right" ? innerWidth + 320 : undefined);
   let y = $derived(placement === "top" ? -100 : placement === "bottom" ? innerHeight + 100 : undefined);
 
-  let transition_params = $derived(Object.assign({}, { x, y, duration: 200, easing: sineIn }));
-
-  let ref: HTMLDivElement | undefined = $state(undefined);
-  function close(ev: MouseEvent) {
-    if (ref?.dispatchEvent(new Event("close", { bubbles: true, cancelable: true }))) {
-      hidden = true;
-    }
-  }
-  createDismissableContext(close);
+  let transition_params = $derived(transitionParams ?? Object.assign({}, { x, y, duration: 200, easing: sineIn }));
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-{#if !hidden}
-  <div role="presentation" bind:this={ref} class={backdropCls({ class: clsx(theme?.backdrop, styling.backdrop) })} onclick={activateClickOutside ? close : undefined} style={bodyScrolling ? "pointer-events: none;" : ""}></div>
-  <div use:trapFocus={{ onEscape: close as () => void }} {...restProps} class={base({ class: clsx(theme?.base, className) })} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
-    {@render children?.()}
-  </div>
-{/if}
+<Dialog bind:open {transition} transitionParams={transition_params} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  {@render children?.()}
+</Dialog>
 
 <!--
 @component
@@ -67,6 +51,5 @@
 @prop classes
 @prop transitionParams
 @prop transitionType = fly
-@prop bodyScrolling = false
 @prop ...restProps
 -->

@@ -21,21 +21,18 @@ Use this free drawer component to show details of a basic data entry from your d
   import { Section } from "flowbite-svelte-blocks";
   import { Button, Drawer, CloseButton } from "flowbite-svelte";
 
-  let hidden = true;
+  let open = false;
 </script>
 
 <Section sectionClass="h-96">
   <div class="mt-8 flex justify-center">
-    <Button onclick={() => (hidden = false)}>Read product</Button>
+    <Button onclick={() => (open = true)}>Read product</Button>
   </div>
 
-  <Drawer bind:hidden id="sidebar1">
-    <div class="flex items-center justify-between">
-      <div>
-        <h4 id="drawer-label" class="mb-1.5 text-xl leading-none font-semibold text-gray-900 dark:text-white">Apple iMac 25"</h4>
-        <p class="mb-5 text-xl font-bold text-gray-900 dark:text-white">$2999</p>
-      </div>
-      <CloseButton onclick={() => (hidden = true)} class="mb-4 dark:text-white" />
+  <Drawer bind:open id="sidebar1">
+    <div>
+      <h4 id="drawer-label" class="mb-1.5 text-xl leading-none font-semibold text-gray-900 dark:text-white">Apple iMac 25"</h4>
+      <p class="mb-5 text-xl font-bold text-gray-900 dark:text-white">$2999</p>
     </div>
     <dl>
       <dt class="mb-2 leading-none font-semibold text-gray-900 dark:text-white">Details</dt>

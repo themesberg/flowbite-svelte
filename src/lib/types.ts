@@ -87,6 +87,7 @@ import type { TagsVariants } from "$lib/forms/tags/theme";
 
 // utils
 import type { CloseButtonVariants } from "$lib/utils/theme";
+import type { DialogVariants } from "./dialog/theme";
 
 // end of component variants
 
@@ -551,17 +552,23 @@ export interface TabletProps extends TabletVariants, HTMLAttributes<HTMLDivEleme
   div6Class?: ClassValue;
 }
 
-// drawer
-export interface DrawerProps extends DrawerVariants, HTMLAttributes<HTMLDivElement> {
-  hidden: boolean;
-  closeDrawer?: () => void;
-  activateClickOutside?: boolean;
-  backdrop?: boolean;
-  backdropClass?: ClassValue;
+// dialog
+
+export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
+  onaction?: ({ action, data }: { action: string; data: FormData }) => any;
+  form?: boolean;
+  modal?: boolean;
+  autoclose?: boolean;
+  focustrap?: boolean;
+  permanent?: boolean;
+  dismissable?: boolean;
+  outsideclose?: boolean;
+  transition?: TransitionFunc;
   transitionParams?: ParamsType;
-  transitionType?: TransitionFunc;
-  bodyScrolling?: boolean;
 }
+
+// drawer
+export interface DrawerProps extends DrawerVariants, DialogProps { }
 
 export interface DrawerheadProps extends DrawerheadVariants, HTMLButtonAttributes {
   closeIcon?: Snippet;
@@ -724,7 +731,7 @@ export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, O
 }
 
 // helper
-export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> {}
+export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> { }
 
 // input
 export type InputValue = string | number | string[] | undefined;
@@ -918,7 +925,7 @@ export interface TimepickerProps {
   timeIntervals?: string[];
   columns?: ColumnCount;
   // Callback props instead of events
-  onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
+  onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
 }
 
 // textarea
@@ -1035,17 +1042,7 @@ export interface MegaMenuProps extends MegaMenuVariants, Omit<PopperProps, "chil
 }
 
 // modal
-export interface ModalProps extends ModalVariants, HTMLDialogAttributes {
-  onaction?: ({ action, data }: { action: string; data: FormData }) => any;
-  modal?: boolean;
-  form?: boolean;
-  autoclose?: boolean;
-  outsideclose?: boolean;
-  dismissable?: boolean;
-  permanent?: boolean;
-  focustrap?: boolean;
-  transition?: TransitionFunc;
-  params?: ParamsType;
+export interface ModalProps extends ModalVariants, Omit<DialogProps, "classes"> {
   header?: Snippet;
   footer?: Snippet;
   headerClass?: ClassValue;
@@ -1117,7 +1114,7 @@ export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLD
   end?: Snippet;
 }
 
-export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
+export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> { }
 
 export type ToolbarButtonProps = ToolbarButtonVariants &
   AnchorButtonAttributes & {
@@ -1426,7 +1423,7 @@ export interface SkeletonProps extends SkeletonVariants, HTMLAttributes<HTMLDivE
   size?: SkeletonVariants["size"];
 }
 
-export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
+export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
 
 export interface TextPlaceholderProps extends TextPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
   size?: TextPlaceholderVariants["size"];
@@ -1436,7 +1433,7 @@ export interface VideoPlaceholderProps extends VideoPlaceholderVariants, HTMLAtt
   size?: VideoPlaceholderVariants["size"];
 }
 
-export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
+export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
 
 // speeddial
 export interface SpeedCtxType {

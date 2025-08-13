@@ -109,7 +109,7 @@
       <Button onclick={() => (defaultModal = true)}>Default modal</Button>
     </div>
 
-    <Modal title="Terms of Service" size={modalSize} {placement} transition={currentTransition.transition} params={currentTransition.params} bind:open={defaultModal} autoclose>
+    <Modal title="Terms of Service" size={modalSize} {placement} transition={currentTransition.transition} transitionParams={currentTransition.params} bind:open={defaultModal} autoclose>
       <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odit quis fugit beatae, veritatis minus cupiditate ea numquam facere iusto vitae sequi, ipsum ducimus quo eaque illum. Eveniet, dolorem autem.</p>
     </Modal>
   </div>
