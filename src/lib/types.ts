@@ -568,7 +568,10 @@ export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
 }
 
 // drawer
-export interface DrawerProps extends DrawerVariants, DialogProps {}
+export interface DrawerProps extends DrawerVariants, DialogProps {
+  activateClickOutside?: boolean; // for backward compability
+  hidden?: boolean | null; // for backward compability
+}
 
 export interface DrawerheadProps extends DrawerheadVariants, HTMLButtonAttributes {
   closeIcon?: Snippet;
