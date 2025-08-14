@@ -568,7 +568,13 @@ export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
 }
 
 // drawer
-export interface DrawerProps extends DrawerVariants, DialogProps {}
+export interface DrawerProps extends DrawerVariants, Omit<DialogProps, "hidden"> {
+  /** @deprecated Use `outsideclose` instead. Will be removed in next minor version. */
+  activateClickOutside?: boolean;
+  /** @deprecated Use `open` instead. Will be removed in next minor version. */
+  hidden?: boolean | null;
+}
+
 
 export interface DrawerheadProps extends DrawerheadVariants, HTMLButtonAttributes {
   closeIcon?: Snippet;
@@ -925,7 +931,7 @@ export interface TimepickerProps {
   timeIntervals?: string[];
   columns?: ColumnCount;
   // Callback props instead of events
-  onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
+  onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
 }
 
 // textarea

@@ -7,16 +7,35 @@
   import { fly } from "svelte/transition";
   import { drawer } from ".";
 
-  let { children, open = $bindable(false), width, placement = "left", class: className, classes, transitionParams, transition = fly, ...restProps }: DrawerProps = $props();
+  let { children, open = $bindable(false), hidden = $bindable(), width, dismissable = false, placement = "left", class: className, classes, transitionParams, transition = fly, outsideclose, activateClickOutside, ...restProps }: DrawerProps = $props();
+
+  // back compatibility
+  if (hidden !== undefined) console.warn("'hidden' property is deprecated. Please use the 'open' property to manage 'Drawer'.");
+
+  if (activateClickOutside !== undefined) console.warn("'activateClickOutside' property is deprecated. Please use the 'outsideclose' property to manage 'Drawer' behaviour.");
+
+  $effect(() => {
+    if (activateClickOutside !== undefined && outsideclose === undefined) {
+      outsideclose = activateClickOutside;
+    }
+  });
+  $effect(() => {
+    if (hidden !== undefined) {
+      const nextOpen = !hidden;
+      if (open !== nextOpen) open = nextOpen;
+    }
+  });
+  $effect(() => {
+    if (hidden !== undefined) {
+      const nextHidden = !open;
+      if (hidden !== nextHidden) hidden = nextHidden;
+    }
+  });
+  // end
 
   const theme = getTheme("drawer");
 
-  const { base } = $derived(
-    drawer({
-      placement,
-      width
-    })
-  );
+  const { base } = $derived(drawer({ placement, width, modal: restProps.modal }));
 
   let innerWidth: number = $state(-1);
   let innerHeight: number = $state(-1);
@@ -29,7 +48,7 @@
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-<Dialog bind:open {transition} transitionParams={transition_params} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<Dialog bind:open {transition} {dismissable} {outsideclose} transitionParams={transition_params} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {@render children?.()}
 </Dialog>
 

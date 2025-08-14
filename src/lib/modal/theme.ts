@@ -1,6 +1,6 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { Classes } from "$lib/theme/themeUtils";
-import { dialog } from "$lib/dialog";
+import { dialog } from "$lib/dialog/theme";
 
 // Variants
 export type ModalVariants = VariantProps<typeof modal> & Classes<typeof modal> & Classes<typeof dialog>;
