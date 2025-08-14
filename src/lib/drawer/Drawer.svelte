@@ -7,16 +7,11 @@
   import { fly } from "svelte/transition";
   import { drawer } from ".";
 
-  let { children, open = $bindable(false), width, placement = "left", class: className, classes, transitionParams, transition = fly, ...restProps }: DrawerProps = $props();
+  let { children, open = $bindable(false), width, dismissable = false, placement = "left", class: className, classes, transitionParams, transition = fly, ...restProps }: DrawerProps = $props();
 
   const theme = getTheme("drawer");
 
-  const { base } = $derived(
-    drawer({
-      placement,
-      width
-    })
-  );
+  const { base } = $derived(drawer({ placement, width, modal: restProps.modal }));
 
   let innerWidth: number = $state(-1);
   let innerHeight: number = $state(-1);
@@ -29,7 +24,7 @@
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-<Dialog bind:open {transition} transitionParams={transition_params} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<Dialog bind:open {transition} {dismissable} transitionParams={transition_params} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {@render children?.()}
 </Dialog>
 

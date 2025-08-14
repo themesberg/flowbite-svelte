@@ -1,25 +1,29 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { Classes } from "$lib/theme/themeUtils";
-import { dialog } from "$lib/dialog";
+import { dialog } from "$lib/dialog/theme";
 
 export type DrawerVariants = VariantProps<typeof drawer> & Classes<typeof drawer>;
 
 export const drawer = tv({
   extend: dialog,
   slots: {
-    base: "p-4 max-h-screen max-w-screen"
+    base: "p-4 max-h-none max-w-none"
   },
   variants: {
     placement: {
       left: { base: "me-auto h-full" },
       right: { base: "ms-auto h-full" },
-      top: { base: "mb-auto w-full" },
-      bottom: { base: "mt-auto w-full" }
+      top: { base: "mb-auto !w-full" },
+      bottom: { base: "mt-auto !w-full" }
     },
     width: {
       default: { base: "w-80" },
       full: { base: "w-full" },
       half: { base: "w-1/2" }
+    },
+    modal: {
+      false: { base: "fixed inset-0" },
+      true: { base: "" }
     }
   },
   defaultVariants: {
