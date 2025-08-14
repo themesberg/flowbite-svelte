@@ -15,14 +15,21 @@
   if (activateClickOutside !== undefined) console.warn("'activateClickOutside' property is deprecated. Please use the 'outsideclose' property to manage 'Drawer' behaviour.");
 
   $effect(() => {
-    if (activateClickOutside !== undefined && outsideclose === undefined) outsideclose = activateClickOutside;
-    console.log("outsideclose", outsideclose);
+    if (activateClickOutside !== undefined && outsideclose === undefined) {
+      outsideclose = activateClickOutside;
+    }
   });
   $effect(() => {
-    if (hidden !== undefined) open = !hidden;
+    if (hidden !== undefined) {
+      const nextOpen = !hidden;
+      if (open !== nextOpen) open = nextOpen;
+    }
   });
   $effect(() => {
-    hidden = !open;
+    if (hidden !== undefined) {
+      const nextHidden = !open;
+      if (hidden !== nextHidden) hidden = nextHidden;
+    }
   });
   // end
 
