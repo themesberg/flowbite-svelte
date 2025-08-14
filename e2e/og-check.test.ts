@@ -81,7 +81,7 @@ test("Illustration page should have OG image", async ({ page }) => {
   const ogImage = page.locator('meta[property="og:image"]');
   const content = await ogImage.getAttribute("content");
 
-  expect(content).toContain("og?title=&package=Flowbite%20Svelte%20Illustrations");
+  expect(content).toContain("og?title=Illustrations&package=Flowbite%20Svelte%20Illustrations");
 });
 // builder
 test("Builder page should have OG image", async ({ page }) => {
