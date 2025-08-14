@@ -9,13 +9,28 @@ const height = 630;
 const width = 1200;
 
 export const GET = async ({ url }) => {
-  // Decode &amp; back to & to properly parse URL parameters
-  // This happens because svelte-meta-tags HTML-encodes URLs in meta tags
-  const searchString = url.search.replace(/&amp;/g, '&');
-  const correctedUrl = new URL(url.origin + url.pathname + searchString);
+  // Debug: log the raw URL to see what we're getting
+  console.log('Raw URL:', url.href);
+  console.log('Search params:', url.search);
   
-  const pkg = correctedUrl.searchParams.get('package') || 'Flowbite Svelte';
-  const title = correctedUrl.searchParams.get('title') || '';
+  // Handle the case where &amp; appears in the URL
+  let pkg, title;
+  
+  if (url.search.includes('&amp;')) {
+    // If &amp; is in the URL, we need to manually parse it
+    const searchString = url.search.replace(/&amp;/g, '&');
+    const correctedUrl = new URL(url.origin + url.pathname + searchString);
+    pkg = correctedUrl.searchParams.get('package') || 'Flowbite Svelte';
+    title = correctedUrl.searchParams.get('title') || '';
+  } else {
+    // Normal URL parsing
+    pkg = url.searchParams.get('package') || 'Flowbite Svelte';
+    title = url.searchParams.get('title') || '';
+  }
+  
+  console.log('Extracted package:', pkg);
+  console.log('Extracted title:', title);
+  
   const fontSize = pkg.includes('Admin') ? 60 : 90;
 
   const html = {
