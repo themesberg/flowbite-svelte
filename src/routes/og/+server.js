@@ -9,29 +9,26 @@ const height = 630;
 const width = 1200;
 
 export const GET = async ({ url }) => {
-  // Debug: log the raw URL to see what we're getting
-  // console.log('Raw URL:', url.href);
-  // console.log('Search params:', url.search);
-  
-  // Handle the case where &amp; appears in the URL
+  // Parse URL parameters with proper handling of &amp; entities
   let pkg, title;
   
-  if (url.search.includes('&amp;')) {
-    // If &amp; is in the URL, we need to manually parse it
-    const searchString = url.search.replace(/&amp;/g, '&');
-    const correctedUrl = new URL(url.origin + url.pathname + searchString);
-    pkg = correctedUrl.searchParams.get('package') || 'Flowbite Svelte';
-    title = correctedUrl.searchParams.get('title') || '';
-  } else {
-    // Normal URL parsing
-    pkg = url.searchParams.get('package') || 'Flowbite Svelte';
-    title = url.searchParams.get('title') || '';
-  }
+  // Get the raw search string and decode HTML entities
+  const rawSearch = url.search;
+  const decodedSearch = rawSearch.replace(/&amp;/g, '&');
   
-  console.log('Extracted package:', pkg);
-  console.log('Extracted title:', title);
+  // Create a new URLSearchParams object with the properly decoded search string
+  const searchParams = new URLSearchParams(decodedSearch.startsWith('?') ? decodedSearch.slice(1) : decodedSearch);
   
-  const fontSize = pkg.includes('Admin') ? 60 : 90;
+  pkg = searchParams.get('package') || 'Flowbite Svelte';
+  title = searchParams.get('title') || '';
+  
+  // Debug logging (uncomment if needed)
+  // console.log('Raw search:', rawSearch);
+  // console.log('Decoded search:', decodedSearch);
+  // console.log('Extracted package:', pkg);
+  // console.log('Extracted title:', title);
+  
+  const fontSize = pkg.includes('Admin') || pkg.includes('Illustrations') ? 60 : 90;
 
   const html = {
     type: 'div',
@@ -150,117 +147,98 @@ export const GET = async ({ url }) => {
                             }
                           },
                           {
-                            type: 'defs',
+                            type: 'linearGradient',
                             props: {
+                              id: 'paint1_linear_2768_3907',
+                              x1:"81.9279", y1:"31.2009", x2:"57.089", y2:"6.44934",
+                              gradientUnits: 'userSpaceOnUse',
                               children: [
-                                {
-                                  type: 'linearGradient',
-                                  props: {
-                                    id: 'paint0_linear_2768_3907',
-                                    x1:"60.1798", y1:"71.3098", x2:"69.6224", y2:"38.4205",
-                                    gradientUnits: 'userSpaceOnUse',
-                                    children: [
-                                      { type: 'stop', props: { offset: '0', stopColor:"#A72F09" } },
-                                      { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
-                                    ]
-                                  }
-                                },
-                                {
-                                  type: 'linearGradient',
-                                  props: {
-                                    id: 'paint1_linear_2768_3907',
-                                    x1:"81.9279", y1:"31.2009", x2:"57.089", y2:"6.44934",
-                                    gradientUnits: 'userSpaceOnUse',
-                                    children: [
-                                      { type: 'stop', props: { offset: '0', stopColor: '#F83C00' } },
-                                      { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
-                                    ]
-                                  }
-                                },
-                                {
-                                  type: 'linearGradient',
-                                  props: {
-                                    id: 'paint2_linear_2768_3907',
-                                    x1:"48.4931", y1:"15.0634", x2:"11.0227", y2:"17.4312",
-                                    gradientUnits: 'userSpaceOnUse',
-                                    children: [
-                                      { type: 'stop', props: { offset: '0', stopColor: '#F83C00' } },
-                                      { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
-                                    ]
-                                  }
-                                },
-                                {
-                                  type: 'linearGradient',
-                                  props: {
-                                    id: 'paint3_linear_2768_3907',
-                                    x1:"45.9592", y1:"85.9878", x2:"79.6097", y2:"76.9076",
-                                    gradientUnits: 'userSpaceOnUse',
-                                    children: [
-                                      { type: 'stop', props: { offset: '0', stopColor: '#F83C00' } },
-                                      { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
-                                    ]
-                                  }
-                                },
-                                {
-                                  type: 'linearGradient',
-                                  props: {
-                                    id: 'paint4_linear_2768_3907',
-                                    x1:"21.8062", y1:"47.0477", x2:"45.6971", y2:"71.8037",
-                                    gradientUnits: 'userSpaceOnUse',
-                                    children: [
-                                      { type: 'stop', props: { offset: '0', stopColor: '#A72F09' } },
-                                      { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
-                                    ]
-                                  }
-                                },
-                                {
-                                  type: 'linearGradient',
-                                  props: {
-                                    id: 'paint5_linear_2768_3907',
-                                    x1:"76.3514", y1:"64.9067", x2:"93.0208", y2:"31.3033",
-                                    gradientUnits: 'userSpaceOnUse',
-                                    children: [
-                                      { type: 'stop', props: { offset: '0', stopColor: '#F83C00' } },
-                                      { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
-                                    ]
-                                  }
-                                },
-                                {
-                                  type: 'linearGradient',
-                                  props: {
-                                    id: 'paint6_linear_2768_3907',
-                                    x1:"16.0916", y1:"27.393", x2:"7.17161", y2:"60.9197",
-                                    gradientUnits: 'userSpaceOnUse',
-                                    children: [
-                                      { type: 'stop', props: { offset: '0', stopColor: '#D03504' } },
-                                      { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
-                                    ]
-                                  }
-                                },
-                                {
-                                  type: 'linearGradient',
-                                  props: {
-                                    id: 'paint7_linear_2768_3907',
-                                    x1:"61.6291", y1:"25.7983", x2:"29.0329", y2:"33.9141",
-                                    gradientUnits: 'userSpaceOnUse',
-                                    children: [
-                                      { type: 'stop', props: { offset: '0', stopColor: '#A72E08' } },
-                                      { type: 'stop', props: { offset: '1', stopColor: '#CF3403' } }
-                                    ]
-                                  }
-                                },
-                                {
-                                  type: 'linearGradient',
-                                  props: {
-                                    id: 'paint8_linear_2768_3907',
-                                    x1:"19.2203", y1:"64.0702", x2:"39.9976", y2:"95.3241",
-                                    gradientUnits: 'userSpaceOnUse',
-                                    children: [
-                                      { type: 'stop', props: { offset: '0', stopColor: '#F83C00' } },
-                                      { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
-                                    ]
-                                  }
-                                }
+                                { type: 'stop', props: { offset: '0', stopColor: '#F83C00' } },
+                                { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
+                              ]
+                            }
+                          },
+                          {
+                            type: 'linearGradient',
+                            props: {
+                              id: 'paint2_linear_2768_3907',
+                              x1:"48.4931", y1:"15.0634", x2:"11.0227", y2:"17.4312",
+                              gradientUnits: 'userSpaceOnUse',
+                              children: [
+                                { type: 'stop', props: { offset: '0', stopColor: '#F83C00' } },
+                                { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
+                              ]
+                            }
+                          },
+                          {
+                            type: 'linearGradient',
+                            props: {
+                              id: 'paint3_linear_2768_3907',
+                              x1:"45.9592", y1:"85.9878", x2:"79.6097", y2:"76.9076",
+                              gradientUnits: 'userSpaceOnUse',
+                              children: [
+                                { type: 'stop', props: { offset: '0', stopColor: '#F83C00' } },
+                                { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
+                              ]
+                            }
+                          },
+                          {
+                            type: 'linearGradient',
+                            props: {
+                              id: 'paint4_linear_2768_3907',
+                              x1:"21.8062", y1:"47.0477", x2:"45.6971", y2:"71.8037",
+                              gradientUnits: 'userSpaceOnUse',
+                              children: [
+                                { type: 'stop', props: { offset: '0', stopColor: '#A72F09' } },
+                                { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
+                              ]
+                            }
+                          },
+                          {
+                            type: 'linearGradient',
+                            props: {
+                              id: 'paint5_linear_2768_3907',
+                              x1:"76.3514", y1:"64.9067", x2:"93.0208", y2:"31.3033",
+                              gradientUnits: 'userSpaceOnUse',
+                              children: [
+                                { type: 'stop', props: { offset: '0', stopColor: '#F83C00' } },
+                                { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
+                              ]
+                            }
+                          },
+                          {
+                            type: 'linearGradient',
+                            props: {
+                              id: 'paint6_linear_2768_3907',
+                              x1:"16.0916", y1:"27.393", x2:"7.17161", y2:"60.9197",
+                              gradientUnits: 'userSpaceOnUse',
+                              children: [
+                                { type: 'stop', props: { offset: '0', stopColor: '#D03504' } },
+                                { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
+                              ]
+                            }
+                          },
+                          {
+                            type: 'linearGradient',
+                            props: {
+                              id: 'paint7_linear_2768_3907',
+                              x1:"61.6291", y1:"25.7983", x2:"29.0329", y2:"33.9141",
+                              gradientUnits: 'userSpaceOnUse',
+                              children: [
+                                { type: 'stop', props: { offset: '0', stopColor: '#A72E08' } },
+                                { type: 'stop', props: { offset: '1', stopColor: '#CF3403' } }
+                              ]
+                            }
+                          },
+                          {
+                            type: 'linearGradient',
+                            props: {
+                              id: 'paint8_linear_2768_3907',
+                              x1:"19.2203", y1:"64.0702", x2:"39.9976", y2:"95.3241",
+                              gradientUnits: 'userSpaceOnUse',
+                              children: [
+                                { type: 'stop', props: { offset: '0', stopColor: '#F83C00' } },
+                                { type: 'stop', props: { offset: '1', stopColor: '#F83C00' } }
                               ]
                             }
                           }
