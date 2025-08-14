@@ -34,9 +34,13 @@
     if (!permanent) close(ev.currentTarget);
   }
 
-  function _onclick(ev: Event & { currentTarget: HTMLDialogElement }) {
-    const dlg: HTMLDialogElement = ev.currentTarget;
-    if (outsideclose && ev.target === dlg) {
+  function _onclick(ev: MouseEvent & { currentTarget: HTMLDialogElement }) {
+    const dlg: HTMLDialogElement = ev.currentTarget,
+      rect = dlg.getBoundingClientRect(),
+      clickedInContent = ev.clientX >= rect.left && ev.clientX <= rect.right && ev.clientY >= rect.top && ev.clientY <= rect.bottom;
+
+    // if (outsideclose && ev.target === dlg) {
+    if (outsideclose && !clickedInContent) {
       return cancel(dlg);
     }
 
@@ -102,6 +106,7 @@
     <CloseButton type="submit" formnovalidate class={closeCls({ class: clsx(classes?.close) })} />
   {/if}
 {/snippet}
+
 {#if open}
   <dialog {@attach init} bind:this={ref} use:focusTrap tabindex="-1" onsubmit={_onsubmit} oncancel={_oncancel} onclick={_onclick} ontoggle={_ontoggle} transition:transition|global={paramsOptions as ParamsType} {...restProps} class={base({ class: clsx(className) })}>
     {#if form}
@@ -110,7 +115,6 @@
       </form>
     {:else}
       {@render content()}
-      <div class="h-full w-full"></div>
     {/if}
   </dialog>
 {/if}
