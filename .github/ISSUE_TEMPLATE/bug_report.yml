@@ -18,8 +18,17 @@ body:
     id: reproduction
     attributes:
       label: Reproduction
-      description: Please provide code or a link to a repo that can reproduce the problem you ran into. If a report is vague (e.g. just a generic error message) and has no reproduction, it will receive a "need reproduction" label. If no reproduction is provided within a reasonable time-frame, the issue will be closed.
-      placeholder: Repo, Stackblitz, demo.
+      description: |
+        Please provide a **minimal code example** that demonstrates the problem. This should be self-contained, minimal, and runnable.
+        
+        Include:
+        - What you expected to happen
+        - What actually happens instead
+        - Complete code example (copy/paste ready)
+        - Any specific steps to trigger the issue
+        
+        Issues with vague descriptions and no reproduction code will receive a "needs reproduction" label and may be closed if not provided within a reasonable timeframe.
+      placeholder: "Provide your minimal code example here..."
     validations:
       required: true
   - type: textarea
