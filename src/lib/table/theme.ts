@@ -10,7 +10,7 @@ export type TableSearchColor = "default" | "blue" | "green" | "red" | "yellow" |
 
 export const table = tv({
   slots: {
-    div: "",
+    div: "relative overflow-x-auto",
     table: "w-full text-left text-sm"
   },
   variants: {

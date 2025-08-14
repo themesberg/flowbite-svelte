@@ -5,7 +5,7 @@
   import { type TableProps, type TableCtxType } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, footerSlot, captionSlot, items, divClass = "relative overflow-x-auto", striped, hoverable, border = true, shadow, color = "default", class: className, classes, ...restProps }: TableProps = $props();
+  let { children, footerSlot, captionSlot, items, divClass, striped, hoverable, border = true, shadow, color = "default", class: className, classes, ...restProps }: TableProps = $props();
 
   warnThemeDeprecation("Table", { divClass }, { divClass: "div" });
   const styling = $derived(
