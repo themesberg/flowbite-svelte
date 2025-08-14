@@ -1,9 +1,10 @@
 ---
 layout: componentLayout
 title: Marketing UI - Flowbite Svelte Blocks
-breadcrumb_title: ""
+breadcrumb_title: Marketing
 no_of_components: 0
 dir: marketing
+pkg: Flowbite Svelte Blocks
 description: Get started with a large collection of free UI components built with Tailwind CSS and the Flowbite library featuring hero sections, headers, contact forms, and more.
 category: true
 ---

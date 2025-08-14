@@ -1,10 +1,11 @@
 <script lang="ts">
   import { MetaTags } from "svelte-meta-tags";
 
-  let { breadcrumb_title = "", description = "", title = "", dir = "" } = $props();
+  let { breadcrumb_title = "", description = "", title = "", dir = "", pkg="Flowbite Svelte" } = $props();
 
   // title = title.replaceAll(' ', '-');
-  let imgsrc = `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${encodeURIComponent(breadcrumb_title)}`;
+  let imgsrc = `https://flowbite-svelte.com/og?title=${encodeURIComponent(breadcrumb_title)}&package=${encodeURIComponent(pkg)}`;
+  
   let dirstring = dir.toLowerCase();
   let breadcrumb = breadcrumb_title.toLowerCase().replaceAll(" ", "-");
 </script>

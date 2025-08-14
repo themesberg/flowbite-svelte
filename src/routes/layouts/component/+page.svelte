@@ -13,7 +13,7 @@
   import Paging from "../../utils/Paging.svelte";
   import SectionHeader from "../../blocks/utils/SectionHeader.svelte";
 
-  let { title, breadcrumb_title, component_title = "", dir, description, layout = "", category, children } = $props();
+  let { title, breadcrumb_title, component_title = "", dir, description, layout = "", category, children, pkg="Flowbite Svelte" } = $props();
 
   // calm down `unused export property` warrning
   /* eslint-disable @typescript-eslint/no-unused-expressions */
@@ -26,7 +26,7 @@
   let divClass = category ? "" : "mx-auto max-w-8xl lg:px-20 px-8 md:px-auto py-8";
 </script>
 
-<MetaTag {breadcrumb_title} {title} {dir} {description} />
+<MetaTag {breadcrumb_title} {title} {dir} {description} {pkg}/>
 
 {#if blockDirs.has(dir)}
   <div class={divClass}>

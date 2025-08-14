@@ -11,7 +11,7 @@
   let title = "Flowbite Svelte Blocks - UI Component Library";
   const description = "Get started with free UI components built with the utility classes from Tailwind CSS to upgrade your web development stack and customize the colors, fonts, and dark mode using the configurator.";
   let default_title = "Svelte UI Components";
-  const image = `https://open-graph-vercel.vercel.app/api/flowbite-svelte-blocks?title=${default_title}`;
+  const image = `flowbite-svelte.com/og?package=Flowbite%20Svelte%20Blocks&title=${default_title}`;
 </script>
 
 <MetaTags

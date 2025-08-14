@@ -4,6 +4,7 @@ title: Svelte Team Sections - Flowbite Svelte Blocks
 breadcrumb_title: Team Sections
 no_of_components: 1 free component
 dir: marketing
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of team sections built with Tailwind CSS and Flowbite to showcase your organization's team members based on multiple layouts.
 ---
 

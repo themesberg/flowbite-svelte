@@ -4,6 +4,7 @@ title: Svelte Advanced Tables - Flowbite Svelte Blocks
 breadcrumb_title: Advanced Tables
 no_of_components: 1 free components
 dir: application
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of advanced table components based on multiple layouts and styles to show a complex set of data using rows and columns built with Tailwind CSS.
 ---
 

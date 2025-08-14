@@ -4,6 +4,7 @@ title: Svelte Testimonial - Flowbite Svelte Blocks
 breadcrumb_title: Testimonial
 no_of_components: 2 free components
 dir: marketing
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of testimonial sections built with Tailwind CSS to show a statement from a customer as an endorsement to other potential clients.
 ---
 

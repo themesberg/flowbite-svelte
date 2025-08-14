@@ -414,6 +414,147 @@ When you set transitionType="none" on an Accordion or an AccordionItem, it disab
 </Accordion>
 ```
 
+## Breakpoints
+
+Control when accordion items are open or closed based on screen size using Flowbite Svelte's responsive utilities.
+
+### Basic Usage
+
+Simple Media Query opens accordion item on medium screens and larger:
+
+```svelte example
+<script>
+  import { AccordionItem, useMediaQuery, P } from "flowbite-svelte";
+  const isMdAndUp = useMediaQuery("(min-width: 768px)");
+</script>
+
+<AccordionItem open={isMdAndUp()}>
+  {#snippet header()}Opens on tablets and desktop{/snippet}
+  <P>This content is visible on medium screens and larger.</P>
+</AccordionItem>
+```
+
+### Using Breakpoints Object
+
+Access multiple breakpoints with a single hook:
+
+```svelte example
+<script>
+  import { AccordionItem, useBreakpoints, P } from "flowbite-svelte";
+  const breakpoints = useBreakpoints();
+</script>
+
+<AccordionItem open={breakpoints.md}>
+  {#snippet header()}Opens on medium screens+{/snippet}
+  <P>Content for tablets and desktop users.</P>
+</AccordionItem>
+```
+
+### Advanced Patterns
+
+Current Breakpoint Display show the current breakpoint in your UI:
+
+```svelte example
+<script>
+  import { AccordionItem, useCurrentBreakpoint, useBreakpoints, P } from "flowbite-svelte";
+  const breakpoints = useBreakpoints();
+  const getCurrentBreakpoint = useCurrentBreakpoint();
+  const currentBp = $derived(getCurrentBreakpoint());
+</script>
+
+<AccordionItem open={breakpoints.lg}>
+  {#snippet header()}Desktop Only (Current: {currentBp}){/snippet}
+  <P>This opens only on large screens and above.</P>
+</AccordionItem>
+```
+
+### Range-Based Opening
+
+Open accordion only within specific screen size ranges:
+
+```svelte example
+<script>
+  import { AccordionItem, useMediaQuery, useBreakpoints, P } from "flowbite-svelte";
+  const breakpoints = useBreakpoints();
+
+  // Open from sm to lg (640px - 1023px)
+  const tabletRange = $derived(breakpoints.sm && !breakpoints.lg);
+
+  // Open on specific breakpoints only
+  const specificSizes = $derived((breakpoints.sm && !breakpoints.md) || (breakpoints.lg && !breakpoints.xl));
+
+  // Custom pixel range
+  const customRange = useMediaQuery("(min-width: 640px) and (max-width: 1023px)");
+</script>
+
+<AccordionItem open={tabletRange}>
+  {#snippet header()}Tablet Range (640px - 1023px){/snippet}
+  <P>Open on tablets, closed on phones and large desktops.</P>
+</AccordionItem>
+
+<AccordionItem open={specificSizes}>
+  {#snippet header()}Small phones OR Large desktops only{/snippet}
+  <P>Open on sm-only OR lg-only, closed on other sizes.</P>
+</AccordionItem>
+
+<AccordionItem open={customRange()}>
+  {#snippet header()}Custom Range{/snippet}
+  <P>Define exact pixel ranges for precise control.</P>
+</AccordionItem>
+```
+
+### Complex examples
+
+```svelte example class="space-y-4"
+<script lang="ts">
+  import { Accordion, AccordionItem, P, useMediaQuery, useBreakpoints, useCurrentBreakpoint } from "flowbite-svelte";
+
+  // Different approaches to responsive behavior
+  const isMdAndUp = useMediaQuery("(min-width: 768px)");
+  const breakpoints = useBreakpoints();
+  const getCurrentBreakpoint = useCurrentBreakpoint();
+
+  const currentBp = $derived(getCurrentBreakpoint());
+  const tabletOnly = $derived(breakpoints.sm && !breakpoints.lg);
+  const mobileOnly = $derived(!breakpoints.sm);
+</script>
+
+<!-- Always open on medium+ screens -->
+<Accordion>
+  <AccordionItem open={isMdAndUp()}>
+    {#snippet header()}
+      📱 Tablet & Desktop (Current: {currentBp})
+    {/snippet}
+    <P>Opens on tablets and larger screens. Stays closed on mobile.</P>
+  </AccordionItem>
+
+  <AccordionItem>
+    {#snippet header()}Always Interactive{/snippet}
+    <P>This accordion item behaves normally on all screen sizes.</P>
+  </AccordionItem>
+</Accordion>
+
+<!-- Open only in tablet range -->
+<Accordion>
+  <AccordionItem open={tabletOnly}>
+    {#snippet header()}
+      📱 Tablet Only (640px - 1023px)
+    {/snippet}
+    <P>This opens automatically on tablets but closes on mobile phones and large desktop screens.</P>
+  </AccordionItem>
+</Accordion>
+
+<!-- Mobile-first approach -->
+<Accordion>
+  <AccordionItem open={mobileOnly}>
+    {#snippet header()}
+      📱 Mobile Only (below 640px)
+    {/snippet}
+    <P>Expanded by default on mobile for better accessibility, collapsed on larger screens to save space.</P>
+  </AccordionItem>
+</Accordion>
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

@@ -4,6 +4,7 @@ title: Quickstart - Flowbite Svelte Blocks
 breadcrumb_title: Quickstart
 no_of_components: 0 free component
 dir: quickstart
+pkg: Flowbite Svelte Blocks
 description: Learn how to get started with the free and open-source Flowbite Svelte Blocks component library
 ---
 

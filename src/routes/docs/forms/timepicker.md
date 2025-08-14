@@ -413,7 +413,7 @@ Use this example to show multiple time interval selections inside of a drawer co
 
 ```svelte example class="flex justify-center p-4" hideResponsiveButtons
 <script lang="ts">
-  import { Button, Drawer, Label, Select, Toggle, Checkbox, Timepicker, Card, P, Heading, Span, CloseButton } from "flowbite-svelte";
+  import { Button, Drawer, Label, Select, Toggle, Checkbox, Timepicker, Card, P, Heading, Span } from "flowbite-svelte";
   import { InfoCircleSolid, ClockSolid, PlusOutline, TrashBinSolid, CloseOutline } from "flowbite-svelte-icons";
 
   let open = $state(false);

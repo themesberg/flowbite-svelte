@@ -1,9 +1,10 @@
 ---
 layout: componentLayout
 title: Publisher UI - Flowbite Svelte Blocks
-breadcrumb_title: ""
+breadcrumb_title: Publisher
 no_of_components:
 dir: publisher
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of free Tailwind CSS UI components for publishing blog posts, articles, comment sections, sidebar widgets, and more.
 category: true
 ---

@@ -4,6 +4,7 @@ title: Svelte Outline Icons - Flowbite
 breadcrumb_title: Outline Icons
 component_title: Outline Icons
 dir: Icons
+pkg: Flowbite Svelte Icons
 description: Get started with a collection of outline styled open-source Svelte 5 powered icons built by the Flowbite community and use the interactive search and configurator features
 ---
 

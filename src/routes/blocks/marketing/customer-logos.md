@@ -4,6 +4,7 @@ title: Svelte Customer Logos - Flowbite Svelte Blocks
 breadcrumb_title: Customer Logos
 no_of_components: 1 free component
 dir: marketing
+pkg: Flowbite Svelte Blocks
 description: This website section can be used as a social proof incentive to convince your potential clients by showcasing popular companies that you've collaborated with.
 ---
 

@@ -3,6 +3,7 @@ title: Example Homepage - Flowbite Svelte Blocks
 breadcrumb_title: Example Homepage
 no_of_components: 0 component
 dir: application
+pkg: Flowbite Svelte Blocks
 description: Flowbite Svelte Blocks example website homepage.
 ---
 

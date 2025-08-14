@@ -4,6 +4,7 @@ title: Flowbite Svelte Icons - Flowbite
 breadcrumb_title: Flowbite Svelte Icons
 component_title: Quickstart
 dir: Icons
+pkg: Flowbite Svelte Icons
 description: Get started with a collection of open-source Flowbite Svelte Icons built by the Flowbite community and based on the official design system
 ---
 

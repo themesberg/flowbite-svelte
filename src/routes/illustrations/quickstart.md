@@ -1,7 +1,8 @@
 ---
 layout: componentLayout
 title: Quickstart - Flowbite Svelte Illustrations
-breadcrumb_title: Flowbite Svelte Illustrations
+breadcrumb_title: Illustrations Quickstart
+pkg: Flowbite Svelte Illustrations
 component_title: Quickstart
 dir: Illustrations
 description: Get started with a collection of open-source Flowbite Svelte Illustrations

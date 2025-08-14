@@ -4,6 +4,7 @@ title: Svelte Blog Sections - Flowbite Svelte Blocks
 breadcrumb_title: Blog Sections
 no_of_components: 1 free component
 dir: marketing
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of website sections related to the blog area of your website including blog posts, article pages, comments, categories, and more.
 ---
 

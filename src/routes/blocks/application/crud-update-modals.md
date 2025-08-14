@@ -4,6 +4,7 @@ title: Svelte Update Modals (CRUD) - Flowbite Svelte Blocks
 breadcrumb_title: CRUD Update Modals
 no_of_components: 1 free component
 dir: application
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of modal components based on the CRUD layout to update an existing set of data from the database built with Tailwind CSS.
 ---
 

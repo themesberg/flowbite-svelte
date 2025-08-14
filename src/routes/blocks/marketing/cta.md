@@ -4,6 +4,7 @@ title: Svelte CTA Sections - Flowbite Svelte Blocks
 breadcrumb_title: CTA Sections
 no_of_components: 3 free components
 dir: marketing
+pkg: Flowbite Svelte Blocks
 description: The CTA (call to action) website sections can be used anywhere on your website to encourage your users to take any action, such as creating a new account.
 ---
 

@@ -4,6 +4,7 @@ title: Svelte Solid Icons - Flowbite
 breadcrumb_title: Solid Icons
 component_title: Solid Icons
 dir: Icons
+pkg: Flowbite Svelte Icons
 description: Get started with a collection of solid styled open-source Svelte 5 powered icons built by the Flowbite community and use the interactive search and configurator features
 ---
 
