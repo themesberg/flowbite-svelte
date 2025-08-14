@@ -10,8 +10,8 @@ const width = 1200;
 
 export const GET = async ({ url }) => {
   // Debug: log the raw URL to see what we're getting
-  console.log('Raw URL:', url.href);
-  console.log('Search params:', url.search);
+  // console.log('Raw URL:', url.href);
+  // console.log('Search params:', url.search);
   
   // Handle the case where &amp; appears in the URL
   let pkg, title;
