@@ -4,6 +4,7 @@ title: Svelte Read Sections (CRUD) - Flowbite Svelte Blocks
 breadcrumb_title: CRUD Read Sections
 no_of_components: 1 free component
 dir: application
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of responsive website sections to show details about data entries from your database based on the CRUD layouts.
 ---
 

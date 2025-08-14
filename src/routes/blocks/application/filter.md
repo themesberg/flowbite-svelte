@@ -4,6 +4,7 @@ title: Svelte Dropdown Filters - Flowbite Svelte Blocks
 breadcrumb_title: Dropdown Filters
 no_of_components: 1 free component
 dir: application
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of dropdown filter components to allow users to query through search results by filtering categories, date ranges, keywords, and more.
 ---
 

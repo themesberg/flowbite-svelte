@@ -4,6 +4,7 @@ title: Application UI - Flowbite Svelte Blocks
 breadcrumb_title: ""
 no_of_components: 0
 dir: application
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of free Tailwind CSS UI components for admin dashboard layouts, sidebars, charts, widgets, kanban boards, and more.
 category: true
 ---

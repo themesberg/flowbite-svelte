@@ -4,6 +4,7 @@ title: Svelte Faceted Search Drawers - Flowbite Svelte Blocks
 breadcrumb_title: Faceted Search Drawers
 no_of_components: 1 free component
 dir: application
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of drawer components using a faceted search interface to use multiple filters options to search for results in your application.
 ---
 

@@ -4,6 +4,7 @@ title: Svelte Delete Confirm (CRUD) - Flowbite Svelte Blocks
 breadcrumb_title: CRUD Delete Confirm
 no_of_components: 1 free component
 dir: application
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of delete confirmation modal components based on the CRUD layout to make sure the user is ready to remove a selected item.
 ---
 

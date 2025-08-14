@@ -4,6 +4,7 @@ title: Svelte Register Forms - Flowbite Svelte Blocks
 breadcrumb_title: Register Forms
 no_of_components: 1 free component
 dir: marketing
+pkg: Flowbite Svelte Blocks
 description: Use a collection of register pages to let your users create an account on your website based on multiple layouts, social media authentication, and more.
 ---
 

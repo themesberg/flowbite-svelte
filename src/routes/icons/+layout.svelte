@@ -3,7 +3,6 @@
   import FlowbiteSvelteLayout from "../layouts/FlowbiteSvelteLayout.svelte";
   import ComponentsLayout from "../layouts/ComponentsLayout.svelte";
   import type { Snippet } from "svelte";
-  // import MetaTag from "./utils/MetaTag.svelte"
 
   let { data, children }: { data: PageData; children: Snippet } = $props();
 </script>

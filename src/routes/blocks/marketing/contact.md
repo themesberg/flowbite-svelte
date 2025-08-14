@@ -4,6 +4,7 @@ title: Svelte Contact Form - Flowbite Svelte Blocks
 breadcrumb_title: Contact Forms
 no_of_components: 1 free component
 dir: marketing
+pkg: Flowbite Svelte Blocks
 description: The contact section is an important part of your website where the user can reach out to your team by interacting with the form elements and submitting the data.
 ---
 

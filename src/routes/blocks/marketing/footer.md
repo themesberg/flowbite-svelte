@@ -4,6 +4,7 @@ title: Svelte Footer Sections - Flowbite Svelte Blocks
 breadcrumb_title: Footer Sections
 no_of_components: 2 free components
 dir: marketing
+pkg: Flowbite Svelte Blocks
 description: Get started with footer sections coded in Tailwind CSS to use at the bottom of every page of your website and showcase your logo, sitemap links, and more.
 ---
 

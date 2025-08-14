@@ -4,6 +4,7 @@ title: Svelte Banner - Flowbite Svelte Blocks
 breadcrumb_title: Banners
 no_of_components: 1 free component
 dir: marketing
+pkg: Flowbite Svelte Blocks
 description: The banner component can be used to show extra information or enable interactions with the user without affecting the main content area of the website.
 ---
 

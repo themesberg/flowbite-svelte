@@ -11,7 +11,7 @@ const width = 1200;
 export const GET = async ({ url }) => {
   const pkg = url.searchParams.get('package') || 'Flowbite Svelte';
   const title = url.searchParams.get('title') || '';
-
+  console.log(pkg)
   const fontSize = pkg.includes('Admin') ? 60 : 90;
 
   const html = {

@@ -4,6 +4,7 @@ title: Svelte Update Drawers (CRUD) - Flowbite Svelte Blocks
 breadcrumb_title: CRUD Update Drawers
 no_of_components: 1 free component
 dir: application
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of drawer components that you can use to update existing data sets from your database inside your dashboard.
 ---
 

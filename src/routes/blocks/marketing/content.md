@@ -4,6 +4,7 @@ title: Svelte Content Sections - Flowbite Svelte Blocks
 breadcrumb_title: Content Sections
 no_of_components: 2 free components
 dir: marketing
+pkg: Flowbite Svelte Blocks
 description: Choose one of these website sections to show extra content relative to the other sections on the page such as a gallery of images, description texts, and more.
 ---
 

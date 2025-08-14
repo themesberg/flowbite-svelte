@@ -4,6 +4,7 @@ title: Svelte Newsletter Sections - Flowbite Svelte Blocks
 breadcrumb_title: Newsletter Sections
 no_of_components: 1 free component
 dir: marketing
+pkg: Flowbite Svelte Blocks
 description: The newsletter component is an important marketing method that you can use to convince website visitors to sign up for additional news from your organization.
 ---
 

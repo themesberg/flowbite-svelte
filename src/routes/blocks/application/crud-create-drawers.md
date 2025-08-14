@@ -4,6 +4,7 @@ title: Svelte Create Drawers (CRUD) - Flowbite Svelte Blocks
 breadcrumb_title: CRUD Create Drawers
 no_of_components: 1 free component
 dir: application
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of drawer components to create new data models in your application by including form elements.
 ---
 

@@ -4,6 +4,7 @@ title: Svelte Create Modals (CRUD) - Flowbite Svelte Blocks
 breadcrumb_title: CRUD Create Modals
 no_of_components: 1 free component
 dir: application
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of modal components with form input elements to create new data models inside your dashboard based on Tailwind CSS.;
 ---
 

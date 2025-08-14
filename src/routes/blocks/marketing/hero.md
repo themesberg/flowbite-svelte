@@ -4,6 +4,7 @@ title: Svelte Hero Sections - Flowbite Svelte Blocks
 breadcrumb_title: Hero Sections
 no_of_components: 2 free components
 dir: marketing
+pkg: Flowbite Svelte Blocks
 description: Get started with a collection of hero sections coded with Tailwind CSS to showcase the most important parts of your website based on multiple styles and layouts.
 ---
 

@@ -4,6 +4,7 @@ title: Svelte Faceted Search Modals - Flowbite Svelte Blocks
 breadcrumb_title: Faceted Search Modals
 no_of_components: 1 free component
 dir: application
+pkg: Flowbite Svelte Blocks
 description: Use the faceted search component to allow users to narrow down search results by applying multiple filters using checkboxes, radios, and range sliders inside of a modal.
 ---
 
