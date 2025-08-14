@@ -1,7 +1,7 @@
 ---
 layout: componentLayout
 title: Publisher UI - Flowbite Svelte Blocks
-breadcrumb_title: ""
+breadcrumb_title: Publisher
 no_of_components:
 dir: publisher
 pkg: Flowbite Svelte Blocks

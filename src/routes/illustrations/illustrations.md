@@ -3,6 +3,7 @@ layout: componentLayout
 title: Flowbite Svelte Illustrations - Free and open-source SVG illustrations
 subtitle: SVG Illustrations
 dir: Illustrations
+pkg: Flowbite Svelte Illustrations
 component_title: Illustrations
 description: Get started with 54 free and open-source SVG illustrations based on 3D styles, fully compatible with Flowbite and Tailwind CSS.
 ---

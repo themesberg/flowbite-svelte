@@ -1,7 +1,7 @@
 ---
 layout: componentLayout
 title: Application UI - Flowbite Svelte Blocks
-breadcrumb_title: ""
+breadcrumb_title: Application
 no_of_components: 0
 dir: application
 pkg: Flowbite Svelte Blocks

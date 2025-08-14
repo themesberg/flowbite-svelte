@@ -1,7 +1,7 @@
 ---
 layout: componentLayout
 title: Marketing UI - Flowbite Svelte Blocks
-breadcrumb_title: ""
+breadcrumb_title: Marketing
 no_of_components: 0
 dir: marketing
 pkg: Flowbite Svelte Blocks

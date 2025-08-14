@@ -9,9 +9,13 @@ const height = 630;
 const width = 1200;
 
 export const GET = async ({ url }) => {
-  const pkg = url.searchParams.get('package') || 'Flowbite Svelte';
-  const title = url.searchParams.get('title') || '';
-  console.log(pkg)
+  // Decode &amp; back to & to properly parse URL parameters
+  // This happens because svelte-meta-tags HTML-encodes URLs in meta tags
+  const searchString = url.search.replace(/&amp;/g, '&');
+  const correctedUrl = new URL(url.origin + url.pathname + searchString);
+  
+  const pkg = correctedUrl.searchParams.get('package') || 'Flowbite Svelte';
+  const title = correctedUrl.searchParams.get('title') || '';
   const fontSize = pkg.includes('Admin') ? 60 : 90;
 
   const html = {
