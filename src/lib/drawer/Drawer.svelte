@@ -60,11 +60,15 @@
 ## Props
 @prop children
 @prop open = $bindable(false)
+@prop hidden = $bindable()
 @prop width
+@prop dismissable = false
 @prop placement = "left"
 @prop class: className
 @prop classes
 @prop transitionParams
 @prop transition = fly
+@prop outsideclose
+@prop activateClickOutside
 @prop ...restProps
 -->

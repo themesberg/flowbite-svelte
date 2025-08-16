@@ -59,13 +59,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1627)
+[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1633)
 ## Props
 @prop children
 @prop footerSlot
 @prop captionSlot
 @prop items
-@prop divClass = "relative overflow-x-auto"
+@prop divClass
 @prop striped
 @prop hoverable
 @prop border = true

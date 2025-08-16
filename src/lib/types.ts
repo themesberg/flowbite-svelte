@@ -575,7 +575,6 @@ export interface DrawerProps extends DrawerVariants, Omit<DialogProps, "hidden">
   hidden?: boolean | null;
 }
 
-
 export interface DrawerheadProps extends DrawerheadVariants, HTMLButtonAttributes {
   closeIcon?: Snippet;
   buttonClass?: ClassValue;
@@ -931,7 +930,7 @@ export interface TimepickerProps {
   timeIntervals?: string[];
   columns?: ColumnCount;
   // Callback props instead of events
-  onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
+  onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
 }
 
 // textarea

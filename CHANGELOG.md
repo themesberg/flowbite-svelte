@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.12.4
+
+### Patch Changes
+
+- - 31d62e70e fix: #1721
+  - 3ee5f2eeb fix: bug_report.yml update
+  - 4abcc89b0 tests: og-check update
+  - 33e229132 Dialog (#1723)
+  - 4225c8bd3 fix(og): update +server.js
+  - 1b38747d1 fix(og): remove console.log
+  - 7536e6d62 fix(og): +server update
+  - 5cf74c865 fix(meta): block typo
+  - 2a2cc5b16 (meta-update) feat: add og image generator
+  - 5b4b85085 fix(meta): add to blocks, icons and admin-dashboard
+  - f98ff0cc1 fix: import name
+  - 9d391f37f fix: rebase conflicts
+  - dcffaffb6 fix: change .svelte.ts to .svelte using module
+  - 23f13a72d api-check(accordion): change p to P
+  - dd2221d91 docs(accordion): use P for p
+
 ## 1.12.3
 
 ### Patch Changes

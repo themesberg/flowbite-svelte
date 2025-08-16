@@ -454,18 +454,22 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 
 - children
 - open: $bindable(false)
+- hidden: $bindable()
 - width
+- dismissable: false
 - placement: "left"
 - class: className
 - classes
 - transitionParams
 - transition: fly
+- outsideclose
+- activateClickOutside
 
 ### Drawerhead
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L573)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L579)
 
 #### Props
 

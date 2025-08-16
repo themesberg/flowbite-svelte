@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.12.3",
+  "version": "1.12.4",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -835,6 +835,10 @@
     "./Popper.svelte": {
       "types": "./dist/utils/Popper.svelte.d.ts",
       "svelte": "./dist/utils/Popper.svelte"
+    },
+    "./responsive.svelte": {
+      "types": "./dist/utils/responsive.svelte.d.ts",
+      "svelte": "./dist/utils/responsive.svelte"
     },
     "./Video.svelte": {
       "types": "./dist/video/Video.svelte.d.ts",

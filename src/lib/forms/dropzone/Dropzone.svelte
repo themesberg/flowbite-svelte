@@ -52,7 +52,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropzoneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L688)
+[DropzoneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L694)
 ## Props
 @prop children
 @prop files = $bindable<FileList | null>()
