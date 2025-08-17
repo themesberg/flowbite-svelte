@@ -49,7 +49,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ImgProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1910)
+[ImgProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1909)
 ## Props
 @prop size = "none"
 @prop effect = "none"

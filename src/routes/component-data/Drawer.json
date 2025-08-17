@@ -12,7 +12,6 @@
     ["dismissable", "false"],
     ["placement", "\"left\""],
     ["class: className", ""],
-    ["classes", ""],
     ["transitionParams", ""],
     ["transition", "fly"],
     ["outsideclose", ""],

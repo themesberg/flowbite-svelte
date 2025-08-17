@@ -65,7 +65,6 @@
 @prop dismissable = false
 @prop placement = "left"
 @prop class: className
-@prop classes
 @prop transitionParams
 @prop transition = fly
 @prop outsideclose
