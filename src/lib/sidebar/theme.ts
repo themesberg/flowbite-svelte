@@ -6,6 +6,7 @@ export type SidebarVariants = VariantProps<typeof sidebar> & Classes<typeof side
 export type SidebarCtaVariants = VariantProps<typeof sidebarCta> & Classes<typeof sidebarCta>;
 export type SidebarBrandVariants = VariantProps<typeof sidebarBrand> & Classes<typeof sidebarBrand>;
 export type SidebarDropdownWrapperVariants = VariantProps<typeof sidebarDropdownWrapper> & Classes<typeof sidebarDropdownWrapper>;
+export type SidebarButtonVariants = VariantProps<typeof sidebarButton> & Classes<typeof sidebarButton>;
 
 export const sidebar = tv({
   slots: {
@@ -51,7 +52,10 @@ export const sidebar = tv({
 });
 
 export const sidebarButton = tv({
-  base: "inline-flex items-center p-0 mt-0 ms-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
+  slots: {
+    base: "inline-flex items-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
+    svg: "h-6 w-6 m-2"
+  },
   variants: {
     breakpoint: {
       sm: "sm:hidden",

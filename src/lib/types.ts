@@ -27,7 +27,7 @@ import type { ModalVariants } from "$lib/modal/theme";
 import type { NavbarUlVariants, NavbarHamburgerVariants } from "$lib/navbar/theme";
 import type { PaginationNavVariants } from "$lib/pagination/theme";
 import type { PopoverVariants } from "$lib/popover/theme";
-import type { SidebarVariants, SidebarCtaVariants, SidebarBrandVariants, SidebarDropdownWrapperVariants } from "$lib/sidebar/theme";
+import type { SidebarVariants, SidebarCtaVariants, SidebarBrandVariants, SidebarDropdownWrapperVariants, SidebarButtonVariants } from "$lib/sidebar/theme";
 import type { CardPlaceholderVariants, ImagePlaceholderVariants, ListPlaceholderVariants, SkeletonVariants, TestimonialPlaceholderVariants, TextPlaceholderVariants, VideoPlaceholderVariants, WidgetPlaceholderVariants } from "$lib/skeleton/theme";
 import type { SpeedDialVariants, SpeedDialButtonVariants } from "$lib/speed-dial/theme";
 import type { SpinnerVaraiants } from "$lib/spinner/theme";
@@ -88,6 +88,7 @@ import type { TagsVariants } from "$lib/forms/tags/theme";
 // utils
 import type { CloseButtonVariants } from "$lib/utils/theme";
 import type { DialogVariants } from "./dialog/theme";
+import type { Class } from "../routes/api-check/components/breadcrumb/examples";
 
 // end of component variants
 
@@ -1350,8 +1351,9 @@ export interface SidebarProps extends SidebarVariants, HTMLAttributes<HTMLElemen
   disableBreakpoints?: boolean;
 }
 
-export interface SidebarButtonProps extends HTMLButtonAttributes {
+export interface SidebarButtonProps extends SidebarButtonVariants, HTMLButtonAttributes {
   breakpoint?: SidebarVariants["breakpoint"];
+  svgClass?: ClassValue;
 }
 
 export interface SidebarCtaProps extends SidebarCtaVariants, HTMLAttributes<HTMLDivElement> {

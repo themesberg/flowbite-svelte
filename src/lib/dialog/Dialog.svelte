@@ -80,8 +80,25 @@
   function init(dlg: HTMLDialogElement) {
     if (modal) dlg.showModal();
     else dlg.show();
+
+    // Custom focus management
+    queueMicrotask(() => {
+      const autofocusEl =
+        dlg.querySelector<HTMLElement>('[data-autofocus]') ??
+        dlg.querySelector<HTMLElement>(
+          'input, textarea, select, button:not([aria-label="Close"])'
+        );
+
+      if (autofocusEl) {
+        autofocusEl.focus();
+      } else {
+        dlg.focus(); // fallback
+      }
+    });
+
     return () => dlg.close();
   }
+
 
   const focusTrap = (node: HTMLElement) => (focustrap ? trapFocus(node) : undefined);
 

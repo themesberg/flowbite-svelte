@@ -6,7 +6,7 @@
 
 - fix: Avatar theming src/lib/avatar/theme.ts
 
-  Changed stacked variant from "border-2 -ms-4 ..." to "border-2 not-first:-ms-4 ..." so the negative margin applies only to non-first avatars.
+Changed stacked variant from "border-2 -ms-4 ..." to "border-2 not-first:-ms-4 ..." so the negative margin applies only to non-first avatars.
 
 - fix: Drawer implementation & types src/lib/drawer/Drawer.svelte, src/lib/drawer/theme.ts
 
