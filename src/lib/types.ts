@@ -573,6 +573,7 @@ export interface DrawerProps extends DrawerVariants, Omit<DialogProps, "hidden">
   activateClickOutside?: boolean;
   /** @deprecated Use `open` instead. Will be removed in next minor version. */
   hidden?: boolean | null;
+  edge?: string;
 }
 
 
@@ -737,7 +738,7 @@ export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, O
 }
 
 // helper
-export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> {}
+export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> { }
 
 // input
 export type InputValue = string | number | string[] | undefined;
@@ -1120,7 +1121,7 @@ export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLD
   end?: Snippet;
 }
 
-export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
+export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> { }
 
 export type ToolbarButtonProps = ToolbarButtonVariants &
   AnchorButtonAttributes & {
@@ -1429,7 +1430,7 @@ export interface SkeletonProps extends SkeletonVariants, HTMLAttributes<HTMLDivE
   size?: SkeletonVariants["size"];
 }
 
-export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
+export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
 
 export interface TextPlaceholderProps extends TextPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
   size?: TextPlaceholderVariants["size"];
@@ -1439,7 +1440,7 @@ export interface VideoPlaceholderProps extends VideoPlaceholderVariants, HTMLAtt
   size?: VideoPlaceholderVariants["size"];
 }
 
-export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
+export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
 
 // speeddial
 export interface SpeedCtxType {
