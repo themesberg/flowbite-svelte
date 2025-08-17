@@ -20,7 +20,7 @@
   const { base, header: headerCls, footer: footerCls, body } = $derived(modalStyle({ placement, size }));
 </script>
 
-<Dialog bind:open {transition} dismissable={dismissable && !title && !permanent} transitionParams={paramsOptions} {...restProps} class={base({ fullscreen, class: clsx(theme?.base, className) })}>
+<Dialog bind:open {transition} dismissable={dismissable && !title && !permanent} transitionParams={paramsOptions} {classes} {...restProps} class={base({ fullscreen, class: clsx(theme?.base, className) })}>
   {#if title || header}
     <div class={headerCls({ class: clsx(theme?.header, styling.header) })}>
       {#if title}

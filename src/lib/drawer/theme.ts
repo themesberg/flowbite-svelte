@@ -2,7 +2,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 import type { Classes } from "$lib/theme/themeUtils";
 import { dialog } from "$lib/dialog/theme";
 
-export type DrawerVariants = VariantProps<typeof drawer> & Classes<typeof drawer>;
+export type DrawerVariants = VariantProps<typeof drawer> & Classes<typeof drawer> & Classes<typeof dialog>;
 
 export const drawer = tv({
   extend: dialog,
