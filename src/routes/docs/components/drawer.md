@@ -182,7 +182,7 @@ Use this example if you want to add form elements inside the drawer component in
 
 ```svelte example
 <script>
-  import { Drawer, CardPlaceholder, Button, Label, Input, Textarea } from "flowbite-svelte";
+  import { Avatar, Drawer, CardPlaceholder, Button, Label, Input, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, UserAddOutline, CalendarEditSolid } from "flowbite-svelte-icons";
 
   let open4 = $state(false);
@@ -192,40 +192,35 @@ Use this example if you want to add form elements inside the drawer component in
   <Button onclick={() => (open4 = true)}>Show drawer form</Button>
   <CardPlaceholder size="2xl" class="mt-6" />
 </div>
-<Drawer bind:open={open4}>
+<Drawer form bind:open={open4} classes={{ form: "space-y-6 mb-6" }}>
   <h5 class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
     <InfoCircleSolid class="me-2.5 h-5 w-5" />New event
   </h5>
-  <form method="dialog" class="mb-6">
-    <div class="mb-6">
-      <Label for="title" class="mb-2 block">Title</Label>
-      <Input id="title" name="title" required placeholder="Apple Keynote" />
-    </div>
-    <div class="mb-6">
-      <Label for="description" class="mb-2">Description</Label>
-      <Textarea id="message" placeholder="Write event description..." rows={4} name="message" class="w-full" />
-    </div>
-    <div class="mb-6">
-      <Input id="date" name="date" required type="date" />
-    </div>
-    <div class="mb-4">
-      <div class="relative">
-        <Input id="search" placeholder="Add guest email" class="p-3" />
-        <Button class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 absolute end-2 bottom-2 inline-flex items-center rounded-lg px-3 py-1 text-sm font-medium text-white focus:ring-4 focus:outline-hidden" type="submit">
-          <UserAddOutline class="me-1.5 h-3 w-3 text-white" />Add
-        </Button>
-      </div>
-    </div>
-    <div class="mb-4 flex -space-x-4 rtl:space-x-reverse">
-      <img class="h-8 w-8 rounded-full border-2 border-white dark:border-gray-800" src="/images/profile-picture-1.webp" alt="" />
-      <img class="h-8 w-8 rounded-full border-2 border-white dark:border-gray-800" src="/images/profile-picture-2.webp" alt="" />
-      <img class="h-8 w-8 rounded-full border-2 border-white dark:border-gray-800" src="/images/profile-picture-3.webp" alt="" />
-      <img class="h-8 w-8 rounded-full border-2 border-white dark:border-gray-800" src="/images/profile-picture-4.webp" alt="" />
-    </div>
-    <Button type="submit" class="w-full">
-      <CalendarEditSolid class="me-2.5 h-3.5 w-3.5 text-white" /> Create event
-    </Button>
-  </form>
+  <Label>
+    Title
+    <Input name="title" class="mt-2" required placeholder="Apple Keynote" />
+  </Label>
+  <Label>
+    Description
+    <Textarea placeholder="Write event description..." rows={4} name="message" class="mt-2 w-full font-normal" />
+  </Label>
+  <Input name="date" required type="date" />
+  <Input placeholder="Add guest email">
+    {#snippet right()}
+      <Button size="xs">
+        <UserAddOutline class="me-1.5 h-4 w-4 text-white" />Add
+      </Button>
+    {/snippet}
+  </Input>
+  <div class="mb-4 flex">
+    <Avatar src="/images/profile-picture-1.webp" stacked size="sm" />
+    <Avatar src="/images/profile-picture-2.webp" stacked size="sm" />
+    <Avatar src="/images/profile-picture-3.webp" stacked size="sm" />
+    <Avatar src="/images/profile-picture-4.webp" stacked size="sm" />
+  </div>
+  <Button type="submit" class="w-full">
+    <CalendarEditSolid class="me-2.5 h-3.5 w-3.5 text-white" /> Create event
+  </Button>
 </Drawer>
 ```
 

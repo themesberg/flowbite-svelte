@@ -39,7 +39,6 @@
       rect = dlg.getBoundingClientRect(),
       clickedInContent = ev.clientX >= rect.left && ev.clientX <= rect.right && ev.clientY >= rect.top && ev.clientY <= rect.bottom;
 
-    // if (outsideclose && ev.target === dlg) {
     if (outsideclose && !clickedInContent) {
       return cancel(dlg);
     }
