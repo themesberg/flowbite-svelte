@@ -7,12 +7,12 @@ export type DrawerVariants = VariantProps<typeof drawer> & Classes<typeof drawer
 export const drawer = tv({
   extend: dialog,
   slots: {
-    base: "p-4 max-h-none max-w-none",
+    base: "p-4 max-h-none max-w-none ",
     handle: "absolute h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-gray-300 dark:bg-gray-600"
   },
   variants: {
     placement: {
-      left: { base: "me-auto h-full !left-0", handle: "right-3 top-1/2 h-8" },
+      left: { base: "me-auto h-full", handle: "right-3 top-1/2 h-8" },
       right: { base: "ms-auto h-full", handle: "left-3 top-1/2 h-8" },
       top: { base: "mb-auto !w-full", handle: "left-1/2 bottom-3 w-8" },
       bottom: { base: "mt-auto !w-full", handle: "left-1/2 top-3 w-8" }
@@ -25,8 +25,33 @@ export const drawer = tv({
     modal: {
       false: { base: "fixed inset-0" },
       true: { base: "" }
+    },
+    open: {
+      false: {}
     }
   },
+  compoundVariants: [
+    {
+      open: false,
+      placement: 'left',
+      class: { base: "-translate-x-full" }
+    },
+    {
+      open: false,
+      placement: 'right',
+      class: { base: "translate-x-full" }
+    },
+    {
+      open: false,
+      placement: 'top',
+      class: { base: "-translate-y-full" }
+    },
+    {
+      open: false,
+      placement: 'bottom',
+      class: { base: "translate-y-full" }
+    },
+  ],
   defaultVariants: {
     placement: "left",
     width: "default"
