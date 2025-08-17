@@ -7,11 +7,14 @@
   "props": [
     ["children", ""],
     ["open", "$bindable(false)"],
+    ["hidden", "$bindable()"],
     ["width", ""],
+    ["dismissable", "false"],
     ["placement", "\"left\""],
     ["class: className", ""],
-    ["classes", ""],
     ["transitionParams", ""],
-    ["transition", "fly"]
+    ["transition", "fly"],
+    ["outsideclose", ""],
+    ["activateClickOutside", ""]
   ]
 }

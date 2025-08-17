@@ -15,7 +15,7 @@ export const avatar = tv({
       false: ""
     },
     stacked: {
-      true: "border-2 -ms-4 border-white dark:border-gray-800",
+      true: "border-2 not-first:-ms-4 border-white dark:border-gray-800",
       false: ""
     },
     size: {

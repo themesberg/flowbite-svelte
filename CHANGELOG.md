@@ -1,5 +1,49 @@
 # Changelog
 
+## 1.12.5
+
+### Patch Changes
+
+- fix: Avatar theming src/lib/avatar/theme.ts
+
+  Changed stacked variant from "border-2 -ms-4 ..." to "border-2 not-first:-ms-4 ..." so the negative margin applies only to non-first avatars.
+
+- fix: Drawer implementation & types src/lib/drawer/Drawer.svelte, src/lib/drawer/theme.ts
+
+Drawer.svelte no longer destructures classes and now forwards it via ...restProps; DrawerVariants type expanded to include Classes<typeof dialog>.
+
+- fix: Modal prop forwarding src/lib/modal/Modal.svelte
+
+Removed outsideclose prop from Modal public API and explicitly passes {classes} to inner Dialog before spreading restProps.
+
+- fix: Dialog logic src/lib/dialog/Dialog.svelte
+
+Removed commented conditional; active outside-close logic uses outsideclose && !clickedInContent to cancel on outside-content clicks.
+
+- docs (Drawer example) src/routes/docs/components/drawer.md
+
+Reworked Drawer example to form-mode using Flowbite Svelte Label, Input, Textarea, Avatar, etc.; adds form and classes.form usage and updates imports and structure.
+
+## 1.12.4
+
+### Patch Changes
+
+- 31d62e70e fix: #1721
+- 3ee5f2eeb fix: bug_report.yml update
+- 4abcc89b0 tests: og-check update
+- 33e229132 Dialog (#1723)
+- 4225c8bd3 fix(og): update +server.js
+- 1b38747d1 fix(og): remove console.log
+- 7536e6d62 fix(og): +server update
+- 5cf74c865 fix(meta): block typo
+- 2a2cc5b16 (meta-update) feat: add og image generator
+- 5b4b85085 fix(meta): add to blocks, icons and admin-dashboard
+- f98ff0cc1 fix: import name
+- 9d391f37f fix: rebase conflicts
+- dcffaffb6 fix: change .svelte.ts to .svelte using module
+- 23f13a72d api-check(accordion): change p to P
+- dd2221d91 docs(accordion): use P for p
+
 ## 1.12.3
 
 ### Patch Changes
@@ -10,7 +54,7 @@
 
 ### Patch Changes
 
-- - feat(utils): add responsive breakpoint utilities
+- feat(utils): add responsive breakpoint utilities
 
   Add useMediaQuery, useBreakpoints, and useCurrentBreakpoint hooks with TypeScript support and comprehensive documentation for controlling component behavior based on screen size.
 
@@ -18,7 +62,7 @@
 
 ### Patch Changes
 
-- - docs – Drawer examples
+  - docs – Drawer examples
     src/routes/docs/components/drawer.md Removed CloseButton from imports and removed all CloseButton elements in example markup; updated backdrop guidance to recommend Tailwind backdrop classes; clarified modal vs non-modal wording and fixed minor typos.
   - docs – Timepicker drawer example
     src/routes/docs/forms/timepicker.md Removed CloseButton from the flowbite-svelte import in the Drawer-with-timepicker example; example markup otherwise unchanged.
@@ -84,7 +128,7 @@
 
 ### Patch Changes
 
-- - 6e0a070b7 chore: dependencies update
+- 6e0a070b7 chore: dependencies update
   - 794c35a7c fix(api-check): accordion
   - 99af59c91 cleanup: onclose + lib-helpers (#1704)
   - eb695f615 Stores (#1703)
@@ -110,7 +154,7 @@
 
 ### Minor Changes
 
-- - New Features
+- New Features
     Badges, alerts, banners, modals, toasts, drawers, and form inputs now support a standardized dismiss (close/clear) behavior using event-driven dismissal.
   - Improvements
     Close buttons across components no longer have direct click handlers but rely on a shared dismissable context, enabling consistent dismissal behavior and external event handling.
@@ -300,7 +344,7 @@ Ensures the calendar's locale updates correctly when `translationLocale` (or `lo
 
 ### Patch Changes
 
-- - fix(MultiSelect): #1669 Resolve dropdown closing prematurely and enhance active/selected states
+- fix(MultiSelect): #1669 Resolve dropdown closing prematurely and enhance active/selected states
 
   Previously, clicking an item in the MultiSelect dropdown would cause the dropdown to close, leading to a suboptimal user experience for multi-selection. This commit resolves the issue by:
   - Modifying `selectOption` to `stopPropagation` of the click event.
@@ -344,7 +388,7 @@ Ensures the calendar's locale updates correctly when `translationLocale` (or `lo
 
 ### Patch Changes
 
-- - feat: add elementRef prop to Datepicker
+- feat: add elementRef prop to Datepicker
 
   Enables programmatic control of the input element (focus, select, blur).
   Consistent with FloatingLabelInput API.
@@ -353,7 +397,7 @@ Ensures the calendar's locale updates correctly when `translationLocale` (or `lo
 
 ### Patch Changes
 
-- - feat: add translationLocale prop to separate date formatting from UI language
+- feat: add translationLocale prop to separate date formatting from UI language
 
   Allows using different locales for date formatting vs UI text translation.
   Maintains backward compatibility - translationLocale defaults to locale.
@@ -1133,7 +1177,7 @@ Ensures the calendar's locale updates correctly when `translationLocale` (or `lo
 
 ### Minor Changes
 
-- - 998d0176 BREAKING: #1277 change style prop to tabStyle to avoid conflict with CSS attr ([`40a1d6581d555c28ff00e5b373d5742a314b6b02`](https://github.com/themesberg/flowbite-svelte/commit/40a1d6581d555c28ff00e5b373d5742a314b6b02))
+- 998d0176 BREAKING: #1277 change style prop to tabStyle to avoid conflict with CSS attr ([`40a1d6581d555c28ff00e5b373d5742a314b6b02`](https://github.com/themesberg/flowbite-svelte/commit/40a1d6581d555c28ff00e5b373d5742a314b6b02))
   - 572888c4 docs: #1282 add warnings in the docs where components are using @html
   - bb479286 fix: docsearch style using @docsearch/css@3
   - 656f2223 fix: #1287 #1304
@@ -1144,7 +1188,7 @@ Ensures the calendar's locale updates correctly when `translationLocale` (or `lo
 
 ### Patch Changes
 
-- - 3eb228d3 fix: node from 20.0.0 to 18.0.0 in package.json engines ([`987f564b0e7cc62c68898fd5e0b73af96610c406`](https://github.com/themesberg/flowbite-svelte/commit/987f564b0e7cc62c68898fd5e0b73af96610c406))
+- 3eb228d3 fix: node from 20.0.0 to 18.0.0 in package.json engines ([`987f564b0e7cc62c68898fd5e0b73af96610c406`](https://github.com/themesberg/flowbite-svelte/commit/987f564b0e7cc62c68898fd5e0b73af96610c406))
   - 0d9a9332 fix: adjust eslint configuration to eslint-plugin-svelte (previously used eslint-plugin-svelte3) (#1310)
   - 191ca2e0 fix: add define to vite.config.ts for **VERSION**
   - ad3d1c7f fix: move FATHOM_ID to .env and use FathomAnalytics.svelte
@@ -5751,13 +5795,13 @@ This reverts commit c949b82f02f8adad2a2d172e602ce5774ae3bca6.
 
 ### Patch Changes
 
-- - 490669e fix: add if children to Navbar ([`a7cd201631728bd3ddb8b7d572bf2f33b11a2542`](https://github.com/shinokada/svelte-5-ui-lib/commit/a7cd201631728bd3ddb8b7d572bf2f33b11a2542))
+- 490669e fix: add if children to Navbar ([`a7cd201631728bd3ddb8b7d572bf2f33b11a2542`](https://github.com/shinokada/svelte-5-ui-lib/commit/a7cd201631728bd3ddb8b7d572bf2f33b11a2542))
 
 ## 0.2.47
 
 ### Patch Changes
 
-- - ec25597 (HEAD -> main) fix: change to chilren?: any ([`35d2b4573ff8cf1e187637f1f3700605c01339ab`](https://github.com/shinokada/svelte-5-ui-lib/commit/35d2b4573ff8cf1e187637f1f3700605c01339ab))
+- ec25597 (HEAD -> main) fix: change to chilren?: any ([`35d2b4573ff8cf1e187637f1f3700605c01339ab`](https://github.com/shinokada/svelte-5-ui-lib/commit/35d2b4573ff8cf1e187637f1f3700605c01339ab))
   - cc1482c (origin/main, origin/HEAD) fix: update links
   - 66b7cd4 fix: update links
   - 3644446 fix: change vercel.app to codewithshin.com
