@@ -6,7 +6,7 @@
   import { fade } from "svelte/transition";
   import { modal as modalStyle } from ".";
 
-  let { children, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, classes, transitionParams, transition = fade, fullscreen = false, ...restProps }: ModalProps = $props();
+  let { children, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, size = "md", placement, class: className, classes, transitionParams, transition = fade, fullscreen = false, ...restProps }: ModalProps = $props();
 
   // form, header, footer, body, close
   warnThemeDeprecation("Modal", { headerClass, bodyClass, footerClass, closeBtnClass }, { bodyClass: "body", headerClass: "header", footerClass: "footer", closeBtnClass: "close" });
@@ -60,7 +60,6 @@
 @prop headerClass
 @prop bodyClass
 @prop footerClass
-@prop outsideclose = true
 @prop size = "md"
 @prop placement
 @prop class: className
