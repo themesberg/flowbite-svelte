@@ -7,7 +7,7 @@ export type DrawerVariants = VariantProps<typeof drawer> & Classes<typeof drawer
 export const drawer = tv({
   extend: dialog,
   slots: {
-    base: "p-4 max-h-none max-w-none transition-transform ",
+    base: "p-4 max-h-none max-w-none",
     handle: "absolute h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-gray-300 dark:bg-gray-600"
   },
   variants: {

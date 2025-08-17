@@ -7,6 +7,10 @@
   import { fly } from "svelte/transition";
   import { drawer } from ".";
   import { tick } from "svelte";
+  import { readNextDescriptor } from "@testing-library/user-event/dist/cjs/utils/index.js";
+  import Toggle from "$lib/forms/toggle/Toggle.svelte";
+  import type { EventHandler } from "svelte/elements";
+  import Event from "../../routes/api-check/components/alert/examples/Event.svelte";
 
   let { children, open = $bindable(false), hidden = $bindable(), edge = "", width, dismissable = false, placement = "left", class: className, classes, transitionParams, transition = fly, outsideclose, activateClickOutside, ...restProps }: DrawerProps = $props();
 
@@ -41,38 +45,64 @@
   let innerWidth: number = $state(-1);
   let innerHeight: number = $state(-1);
 
-  let x = $derived(placement === "left" ? -320 : placement === "right" ? innerWidth + 320 : undefined);
-  let y = $derived(placement === "top" ? -100 : placement === "bottom" ? innerHeight + 100 : undefined);
+  let x = $state(),
+    y = $state();
 
-  let rect: DOMRect | undefined = $state();
+  let transition_params = $derived(transitionParams ?? Object.assign({}, { x, y, duration: 2000, easing: sineIn, opacity: 100 }));
 
-  let transition_params = $derived.by(() => {
-    if (rect) {
-      let xx = placement === "left" ? rect.x : placement === "right" ? rect.width - (innerWidth - rect.x) : undefined;
-      let yy = placement === "top" ? rect.y : placement === "bottom" ? rect.height - (innerHeight - rect.y) : undefined;
-      return { x: xx, y: yy, duration: 2000, easing: sineIn, opacity: 100 };
+  let dlg: HTMLDialogElement = $state() as HTMLDialogElement;
+  let edgeDlg: HTMLDialogElement = $state() as HTMLDialogElement;
+
+  function edgeDlgInit(node: HTMLDialogElement) {
+    edgeDlg = node;
+    tick() // wait for position to settle
+      .then(() => {
+        const rect = node.getBoundingClientRect();
+        console.log("edgeDlgInit", rect);
+        switch (placement) {
+          case "left":
+            node.style.transform = `translateX(calc(-${rect.width}px + ${edge}))`;
+            break;
+
+          case "right":
+            node.style.transform = `translateX(calc(${rect.width}px - ${edge}))`;
+            break;
+
+          case "top":
+            node.style.transform = `translateY(calc(-${rect.height}px + ${edge}))`;
+            break;
+          case "bottom":
+            node.style.transform = `translateY(calc(${rect.height}px - ${edge}))`;
+            break;
+        }
+      });
+  }
+
+  const noTransition = (node: HTMLElement) => ({});
+
+  async function dlgInit(node: HTMLDialogElement) {
+    dlg = node;
+  }
+
+  function onintrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
+    if (!edge) {
+      const rect = ev.currentTarget.getBoundingClientRect();
+      console.log("pre no edge", rect);
+      x = placement === "left" ? -rect.width : placement === "right" ? rect.width : undefined;
+      y = placement === "top" ? -rect.height : placement === "bottom" ? rect.height : undefined;
     }
-    // let startX = $derived(position === 'fixed'? 0: )
-    // const rect = dlg?.getBoundingClientRect();
-    // if (rect) {
-    //   x = rect.x;
-    //   y = rect.y;
-    // }
+  }
 
-    return transitionParams ?? Object.assign({}, { x, y, duration: 2000, easing: sineIn, opacity: 100 });
-  });
-
-  async function bindDlg(node: HTMLDialogElement) {
-    await tick();
-    rect = node.getBoundingClientRect();
-    console.log("bindDlg", rect);
-    return () => (rect = undefined);
+  function onoutrostart(ev: Event & { currentTarget: HTMLDialogElement }) {
+    const rect = ev.currentTarget.getBoundingClientRect();
+    x = placement === "left" ? rect.left : placement === "right" ? rect.right - innerWidth : undefined;
+    y = placement === "top" ? rect.top : placement === "bottom" ? rect.bottom - innerHeight : undefined;
   }
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-<Dialog bind:open {transition} {dismissable} {outsideclose} transitionParams={transition_params} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<Dialog {@attach dlgInit} id="main" bind:open {transition} {onintrostart} {dismissable} {outsideclose} transitionParams={transition_params} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {@render children?.()}
   {#if edge}
     <button onclick={() => (open = !open)} aria-label="open drawer" class={handle({ class: clsx(theme?.handle, classes?.handle) })}></button>
@@ -80,7 +110,7 @@
 </Dialog>
 
 {#if edge}
-  <Dialog {@attach bindDlg} open={!open} {dismissable} modal={false} {...restProps} class={base({ class: clsx(edge, theme?.base, className) })}>
+  <Dialog id="edge" {@attach edgeDlgInit} open={!open} {onoutrostart} {dismissable} modal={false} transition={noTransition} {...restProps} class={base({ class: clsx(edge, theme?.base, className) })}>
     {@render children?.()}
     <button onclick={() => (open = !open)} aria-label="open drawer" class={handle({ class: clsx(theme?.handle, classes?.handle) })}></button>
   </Dialog>
