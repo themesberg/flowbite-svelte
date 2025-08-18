@@ -768,7 +768,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L585)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L586)
 
 #### Props
 
@@ -784,7 +784,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L591)
+[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L592)
 
 #### Props
 
@@ -794,7 +794,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L607)
+[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L608)
 
 #### Props
 
@@ -805,7 +805,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L593)
+[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L594)
 
 #### Props
 
@@ -816,7 +816,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L599)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L600)
 
 #### Props
 

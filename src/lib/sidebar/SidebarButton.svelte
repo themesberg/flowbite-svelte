@@ -8,7 +8,7 @@
 
   const theme = getTheme("sidebarButton");
 
-  const {base, svg} = $derived(sidebarButton({ breakpoint }));
+  const { base, svg } = $derived(sidebarButton({ breakpoint }));
 </script>
 
 <button {...restProps} type="button" class={base({ class: clsx(theme?.base, className) })}>
@@ -22,9 +22,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1353)
+[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1354)
 ## Props
 @prop breakpoint = "md"
 @prop class: className
+@prop classes
 @prop ...restProps
 -->

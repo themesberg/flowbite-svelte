@@ -83,11 +83,7 @@
 
     // Custom focus management
     queueMicrotask(() => {
-      const autofocusEl =
-        dlg.querySelector<HTMLElement>('[data-autofocus]') ??
-        dlg.querySelector<HTMLElement>(
-          'input, textarea, select, button:not([aria-label="Close"])'
-        );
+      const autofocusEl = dlg.querySelector<HTMLElement>("[data-autofocus]") ?? dlg.querySelector<HTMLElement>('input, textarea, select, button:not([aria-label="Close"])');
 
       if (autofocusEl) {
         autofocusEl.focus();
@@ -98,7 +94,6 @@
 
     return () => dlg.close();
   }
-
 
   const focusTrap = (node: HTMLElement) => (focustrap ? trapFocus(node) : undefined);
 
@@ -139,7 +134,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DialogProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L557)
+[DialogProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L558)
 ## Props
 @prop children
 @prop onaction = ()
