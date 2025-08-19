@@ -77,8 +77,12 @@ export const isSvelteOverflow = (sveltefile: string, exampleModules: Record<stri
   return lines.length > 7;
 };
 
-export function replaceLibImport(componentString: string): string {
-  return componentString.replace(/from ["']\$lib["']/g, "from 'svelte-5-ui-lib'").replace(/from ["']\$lib\//g, "from 'svelte-5-ui-lib/");
+export function replaceLibImport(componentString: string | undefined, libraryName: string): string {
+  if (typeof componentString !== "string") {
+    throw new Error("Invalid componentString: Expected a string");
+  }
+
+  return componentString.replace(/from '\$lib'/g, `from '${libraryName}'`);
 }
 
 export function getExampleFileName(selectedExample: string, exampleArr: { name: string }[]): string {

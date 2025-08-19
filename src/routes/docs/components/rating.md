@@ -108,7 +108,7 @@ The default icon size is `24`. Import your icon and set it in a icon props.
 
 ```svelte example
 <script lang="ts">
-  import { Rating, Heart } from "flowbite-svelte";
+  import { Rating, Heart, type RatingIconProps } from "flowbite-svelte";
   const heartWrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) => Heart(anchor, { ..._props, ...props });
 </script>
 
@@ -119,7 +119,7 @@ The default icon size is `24`. Import your icon and set it in a icon props.
 
 ```svelte example
 <script lang="ts">
-  import { Rating, Thumbup } from "flowbite-svelte";
+  import { Rating, Thumbup, type RatingIconProps } from "flowbite-svelte";
   const thumbWrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) => Thumbup(anchor, { ..._props, ...props });
 </script>
 
