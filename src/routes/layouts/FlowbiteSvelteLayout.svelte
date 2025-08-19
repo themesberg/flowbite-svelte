@@ -63,27 +63,29 @@
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/components/accordion">Components</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/blocks">Blocks</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/admin-dashboard">Dashboard</NavLi>
+      <NavLi class="lg:mb-0 lg:px-2" href="/icons/quickstart">Icons</NavLi>
+      <NavLi class="lg:mb-0 lg:px-2" href="/illustrations/illustrations">Illustrations</NavLi>
     </NavUl>
 
-    <div class="ml-auto flex items-center">
-      <ToolbarLink class="hidden hover:text-gray-900 sm:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
+    <div class="ml-auto flex items-center order-1 lg:order-2">
+      <ToolbarLink class="hidden hover:text-gray-900 xl:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
         <GitHub />
       </ToolbarLink>
-      <ToolbarLink class="hidden hover:text-gray-900 sm:inline-block dark:hover:text-white" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
+      <ToolbarLink class="hidden hover:text-gray-900 xl:inline-block dark:hover:text-white" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
         <Discord />
       </ToolbarLink>
-      <ToolbarLink class="hidden hover:text-gray-900 sm:inline-block dark:hover:text-white" name="Subscribe to YouTube channel" href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
+      <ToolbarLink class="hidden hover:text-gray-900 xl:inline-block dark:hover:text-white" name="Subscribe to YouTube channel" href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
         <YouTube />
       </ToolbarLink>
       <DarkMode size="lg" class="inline-block hover:text-gray-900 dark:hover:text-white" />
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
-    <a href="https://www.npmjs.com/package/flowbite-svelte" class="hidden sm:block">
+    <a href="https://www.npmjs.com/package/flowbite-svelte" class="hidden xl:block order-4">
       <Badge large class="hover:bg-primary-600 dark:hover:bg-primary-800 ms-2 hover:text-white xl:ms-6 dark:hover:text-white">
         v{version}
       </Badge>
     </a>
-    <NavHamburger class="m-0 ml-3 lg:hidden" />
+    <NavHamburger class="m-0 ml-3 order-3 lg:hidden" />
   </Navbar>
 </header>
 
