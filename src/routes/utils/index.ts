@@ -123,19 +123,22 @@ export const fetchApiCheck = async () => {
     components: import.meta.glob("/src/routes/api-check/components/*/+page.svelte"),
     forms: import.meta.glob("/src/routes/api-check/forms/*.svelte"),
     typography: import.meta.glob("/src/routes/api-check/typography/*.svelte"),
-    extend: import.meta.glob("/src/routes/api-check/extend/*.svelte")
+    extend: import.meta.glob("/src/routes/api-check/extend/*.svelte"),
+    pages: import.meta.glob("/src/routes/api-check/pages/*.svelte")
   };
 
   const components = await resolvePaths(globs.components, parentFolderSlug);
   const forms = await resolvePaths(globs.forms);
   const typography = await resolvePaths(globs.typography);
   const extend = await resolvePaths(globs.extend);
+  const pages = await resolvePaths(globs.pages);
 
   return {
     components,
     forms,
     typography,
-    extend
+    extend,
+    pages
   };
 };
 
