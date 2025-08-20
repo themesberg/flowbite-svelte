@@ -1,73 +1,78 @@
-<script>
-  import { Skeleton, ImagePlaceholder, VideoPlaceholder, TextPlaceholder, CardPlaceholder, WidgetPlaceholder, ListPlaceholder, TestimonialPlaceholder } from "$lib";
+<script lang="ts">
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+
+  import * as ExampleComponents from "./examples/";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
+    eager: true
+  }) as Record<string, string>;
 </script>
 
-<h1 class="my-4 text-3xl">Skeleton</h1>
+<H1>Skeleton</H1>
+<H2>Default</H2>
+<CodeWrapper>
+  <ExampleComponents.Default />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Default.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<p>Use the skeleton component to indicate a loading status with placeholder elements that look very similar to the type of content that is being loaded such as paragraphs, images, videos, and more.</p>
+<H2>Image</H2>
+<CodeWrapper>
+  <ExampleComponents.Image />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Image.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Default skeleton</h2>
+<H2>Video</H2>
+<CodeWrapper>
+  <ExampleComponents.Video />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Video.svelte"] as string} />
+  {/snippet}Text
+</CodeWrapper>
 
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <Skeleton size="sm" class="my-8" />
-  <Skeleton size="md" class="my-8" />
-  <Skeleton size="lg" class="my-8" />
-  <Skeleton size="xl" class="my-8" />
-  <Skeleton size="2xl" class="mt-8 mb-2.5" />
-</div>
+<H2>Text</H2>
+<CodeWrapper>
+  <ExampleComponents.Text />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Text.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Image placeholder</h2>
+<H2>Card</H2>
+<CodeWrapper>
+  <ExampleComponents.Card />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Card.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<div class="my-4 flex flex-col gap-8 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <ImagePlaceholder size="sm" />
-  <ImagePlaceholder size="md" />
-  <ImagePlaceholder size="lg" />
-</div>
+<H2>Widget</H2>
+<CodeWrapper>
+  <ExampleComponents.Widget />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Widget.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Video placeholder</h2>
+<H2>List</H2>
+<CodeWrapper>
+  <ExampleComponents.List />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/List.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <VideoPlaceholder />
-  <VideoPlaceholder size="md" class="mt-8" />
-  <VideoPlaceholder size="lg" class="mt-8" />
-  <VideoPlaceholder size="xl" class="mt-8" />
-  <VideoPlaceholder size="2xl" class="mt-8" />
-</div>
-
-<h2 class="my-4 text-2xl">Text placeholder</h2>
-
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <TextPlaceholder />
-  <TextPlaceholder size="md" class="mt-8" />
-  <TextPlaceholder size="lg" class="mt-8" />
-  <TextPlaceholder size="xl" class="mt-8" />
-  <TextPlaceholder size="2xl" class="mt-8" />
-</div>
-
-<h2 class="my-4 text-2xl">Card placeholder</h2>
-
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <CardPlaceholder />
-  <CardPlaceholder size="md" class="mt-8" />
-  <CardPlaceholder size="lg" class="mt-8" />
-  <CardPlaceholder size="xl" class="mt-8" />
-  <CardPlaceholder size="2xl" class="mt-8" />
-</div>
-
-<h2 class="my-4 text-2xl">Widget placeholder</h2>
-
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <WidgetPlaceholder />
-</div>
-
-<h2 class="my-4 text-2xl">List placeholder</h2>
-
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <ListPlaceholder />
-</div>
-
-<h2 class="my-4 text-2xl">Testimonial placeholder</h2>
-
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <TestimonialPlaceholder />
-</div>
+<H2>Testimonial</H2>
+<CodeWrapper>
+  <ExampleComponents.Testimonial />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Testimonial.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
