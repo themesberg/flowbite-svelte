@@ -1,40 +1,70 @@
-<script>
-  import { Video } from "$lib";
+<script lang="ts">
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+
+  import * as ExampleComponents from "./examples/";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
+    eager: true
+  }) as Record<string, string>;
 </script>
 
-<h1 class="my-4 text-3xl">Video</h1>
+<H1>Video</H1>
+<H2>Default</H2>
+<CodeWrapper>
+  <ExampleComponents.Default />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Default.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Video player</h2>
-<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
-  <Video src="/videos/flowbite.mp4" controls trackSrc="flowbite.mp4" />
-</div>
+<H2>Autoplay</H2>
+<CodeWrapper>
+  <ExampleComponents.Autoplay />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Autoplay.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Autoplay</h2>
-<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
-  <Video src="/videos/flowbite.mp4" autoplay controls trackSrc="flowbite.mp4" />
-</div>
+<H2>Muted</H2>
+<CodeWrapper>
+  <ExampleComponents.Muted />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Muted.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Muted</h2>
-<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
-  <Video src="/videos/flowbite.mp4" autoplay muted controls trackSrc="flowbite.mp4" />
-</div>
+<H2>Width</H2>
+<CodeWrapper>
+  <ExampleComponents.Width />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Width.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Width</h2>
-<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
-  <Video src="/videos/flowbite.mp4" controls class="w-96" trackSrc="flowbite.mp4" />
-</div>
+<H2>Height</H2>
+<CodeWrapper>
+  <ExampleComponents.Height />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Height.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-xl">Height</h2>
-<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
-  <Video src="/videos/flowbite.mp4" controls class="h-80" trackSrc="flowbite.mp4" />
-</div>
+<H2>Responsive</H2>
+<CodeWrapper>
+  <ExampleComponents.Responsive />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Responsive.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<h2 class="my-4 text-2xl">Responsive</h2>
-<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
-  <Video src="/videos/flowbite.mp4" controls class="h-auto w-full max-w-full" trackSrc="flowbite.mp4" />
-</div>
-
-<h2 class="my-4 text-2xl">Custom styles</h2>
-<div class="my-4 rounded border border-gray-200 p-8 dark:border-gray-600">
-  <Video src="/videos/flowbite.mp4" controls class="h-auto w-full max-w-full rounded-lg border border-gray-200 dark:border-gray-700" trackSrc="flowbite.mp4" />
-</div>
+<H2>Custom</H2>
+<CodeWrapper>
+  <ExampleComponents.Custom />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Custom.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>Autoplay
