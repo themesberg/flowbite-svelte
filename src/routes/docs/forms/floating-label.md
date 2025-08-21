@@ -22,7 +22,7 @@ On this page you will find a three different input field styles including a stan
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { FloatingLabelInput, Helper } from "flowbite-svelte";
 </script>
 ```
@@ -32,7 +32,7 @@ On this page you will find a three different input field styles including a stan
 Get started with the following three styles for the floating label component and use the label tag as a visual placeholder using the peer-placeholder-shown and peer-focus utility classes from Tailwind CSS.
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { FloatingLabelInput } from "flowbite-svelte";
 </script>
 
@@ -46,7 +46,7 @@ Get started with the following three styles for the floating label component and
 ## Clearable
 
 ```svelte example
-<script>
+<script lang="ts">
   import { FloatingLabelInput } from "flowbite-svelte";
 </script>
 
@@ -62,7 +62,7 @@ Get started with the following three styles for the floating label component and
 Use `clearable` and `clearableOnClick` props.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { FloatingLabelInput } from "flowbite-svelte";
 </script>
 
@@ -85,7 +85,7 @@ Use `clearable` and `clearableOnClick` props.
 ```svelte example
 <script lang="ts">
   import { FloatingLabelInput, Button } from "flowbite-svelte";
-  let floatingRef = $state();
+  let floatingRef: HTMLInputElement | undefined = $state();
 </script>
 
 <FloatingLabelInput bind:elementRef={floatingRef} variant="outlined" id="element_outlined" name="element_outlined" type="text" class="my-4">Floating filled</FloatingLabelInput>
@@ -101,7 +101,7 @@ Use `clearable` and `clearableOnClick` props.
 ## Combobox
 
 ```svelte example class="h-96 space-y-24"
-<script>
+<script lang="ts">
   import { FloatingLabelInput } from "flowbite-svelte";
   const carMakers = ["Toyota", "Ford", "Honda", "Chevrolet", "Nissan", "BMW", "Mercedes-Benz", "Volkswagen", "Hyundai", "Kia", "Mazda", "Subaru", "Lexus", "Audi", "Jeep", "Dodge", "Ram", "GMC", "Cadillac", "Chrysler", "Buick", "Infiniti", "Acura", "Volvo", "Porsche", "Jaguar", "Land Rover", "Mini", "Mitsubishi", "Genesis", "Tesla", "Fiat", "Peugeot", "Renault", "Alfa Romeo", "Citroën", "SEAT", "Skoda", "Saab", "Suzuki", "Isuzu", "Scion", "Hummer", "Lincoln", "Opel", "Daewoo", "Rivian", "Lucid", "Polestar", "Bugatti", "Maserati", "Ferrari", "Lamborghini", "Bentley", "Rolls-Royce", "Aston Martin", "McLaren", "Pagani", "Koenigsegg", "Maybach", "Tata", "Mahindra", "Perodua", "Proton", "Chery", "Geely", "Great Wall", "BYD", "NIO", "XPeng", "VinFast", "Zotye", "FAW", "BAIC", "Lancia", "Dacia", "Cupra", "Roewe", "Holden", "Smart"];
 </script>
@@ -114,7 +114,7 @@ Use `clearable` and `clearableOnClick` props.
 Apply the disabled attribute to the input fields to disallow the user from changing the content.
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { FloatingLabelInput } from "flowbite-svelte";
 </script>
 
@@ -130,7 +130,7 @@ Apply the disabled attribute to the input fields to disallow the user from chang
 Use the following examples of input validation for the success and error messages by applying the validation text below the input field and using the green or red color classes from Tailwind CSS.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { FloatingLabelInput, Helper } from "flowbite-svelte";
 </script>
 
@@ -189,7 +189,7 @@ Use the following examples of input validation for the success and error message
 Use the small and default sizes of the floating label input fields from the following example.
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { FloatingLabelInput } from "flowbite-svelte";
 </script>
 
@@ -210,7 +210,7 @@ Use the small and default sizes of the floating label input fields from the foll
 Add a helper text in addition to the label if you want to show more information below the input field.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { FloatingLabelInput, Helper } from "flowbite-svelte";
 </script>
 
