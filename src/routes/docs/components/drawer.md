@@ -49,7 +49,7 @@ Since `Drawer` component extend Svelte's `HTMLAttributes<HTMLDivElement>`, you c
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
-  <div class="grid grid-cols-2 gap-4">
+  <div class="grid grid-cols-2 gap-2">
     <Button color="light" href="/">Learn more</Button>
     <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
@@ -230,9 +230,8 @@ Use `Tab` and `Shift+Tab` to navigate between buttons or links in the drawer. Pr
 
 ## Placement
 
-Use the placement prop to position the drawer component either on the top, right, bottom, or left side of the document page. This can be done using the `placement='left|right|top|bottom'` where the default value is “left”.
+Use the placement prop to position the drawer component either on the top, right, bottom, or left side of the document page. This can be done using the `placement='left|right|top|bottom'` where the default value is `left`.
 
-### Left drawer
 
 ```svelte example
 <script>
@@ -240,14 +239,20 @@ Use the placement prop to position the drawer component either on the top, right
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
   let open5 = $state(false);
+  let placement = $state("right")
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (open5 = true)}>Show drawer</Button>
+  <Button onclick={() => ((placement="top"), (open5 = true))}>Top drawer</Button>
+  <div class="space-x-6 my-2">
+    <Button onclick={() => ((placement="left"), (open5 = true))}>Left drawer</Button>
+    <Button onclick={() => ((placement="right"), (open5 = true))}>Right drawer</Button>
+  </div>
+  <Button onclick={() => ((placement="bottom"), (open5 = true))}>Bottom drawer</Button>
   <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
-<Drawer placement="left" bind:open={open5}>
+<Drawer {placement} bind:open={open5}>
   <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
     <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
   </h5>
@@ -255,127 +260,14 @@ Use the placement prop to position the drawer component either on the top, right
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
-  <div class="grid grid-cols-2 gap-4">
+  <div class="grid grid-cols-2 gap-2">
     <Button color="light" href="/">Learn more</Button>
     <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
-</Drawer>
-```
-
-### Right drawer
-
-Use this example to show the drawer component on the right side of the page.
-
-Set the `transitionParams` variable to new variables.
-
-```svelte example
-<script>
-  import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
-  import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-  import { sineIn } from "svelte/easing";
-
-  let open6 = $state(false);
-  let transitionParamsRight = {
-    x: 320,
-    duration: 200,
-    easing: sineIn
-  };
-</script>
-
-<div class="text-center">
-  <Button onclick={() => (open6 = true)}>Show drawer</Button>
-  <CardPlaceholder size="2xl" class="mt-6" />
-</div>
-
-<Drawer placement="right" transitionParams={transitionParamsRight} bind:open={open6}>
-  <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-    <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
-  </h5>
-  <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
-    Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
-    for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-  </p>
-  <div class="grid grid-cols-2 gap-4">
-    <Button color="light" href="/">Learn more</Button>
-    <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
-  </div>
-</Drawer>
-```
-
-### Top drawer
-
-Use this example to show the drawer on the top side of the page.
-
-```svelte example
-<script>
-  import { Drawer, CardPlaceholder, Button, A } from "flowbite-svelte";
-  import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-  import { sineIn } from "svelte/easing";
-
-  let open7 = $state(false);
-  let transitionParamsTop = {
-    y: -320,
-    duration: 200,
-    easing: sineIn
-  };
-</script>
-
-<div class="text-center">
-  <Button onclick={() => (open7 = true)}>Show drawer</Button>
-  <CardPlaceholder size="2xl" class="mt-6" />
-</div>
-
-<Drawer placement="top" class="w-full" transitionParams={transitionParamsTop} bind:open={open7}>
-  <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-    <InfoCircleSolid class="me-2.5 h-5 w-5" />Top drawer
-  </h5>
-  <p class="mb-6 max-w-lg text-sm text-gray-500 dark:text-gray-400">
-    Supercharge your hiring by taking advantage of our <A href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</A> for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-  </p>
-  <Button color="light" href="/">Learn more</Button>
-  <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
-</Drawer>
-```
-
-### Bottom drawer
-
-Use this example to show the drawer on the bottom side of the page.
-
-```svelte example
-<script>
-  import { Drawer, CardPlaceholder, Button, A } from "flowbite-svelte";
-  import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-  import { sineIn } from "svelte/easing";
-
-  let open8 = $state(false);
-  let transitionParamsBottom = {
-    y: 320,
-    duration: 200,
-    easing: sineIn
-  };
-</script>
-
-<div class="text-center">
-  <Button onclick={() => (open8 = true)}>Show drawer</Button>
-  <CardPlaceholder size="2xl" class="mt-6" />
-</div>
-
-<Drawer form placement="bottom" class="w-full" transitionParams={transitionParamsBottom} bind:open={open8}>
-  <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
-    <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
-  </h5>
-  <p class="mb-6 max-w-lg text-sm text-gray-500 dark:text-gray-400">
-    Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
-    for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
-  </p>
-  <Button color="light" href="/">Learn more</Button>
-  <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
 </Drawer>
 ```
 
 ## Backdrop
-
-The backdrop element can be used to dim out the background elements when the drawer is visible and also automatically hide the component when clicking outside of it.
 
 Use Tailwind's `backdrop:` variant classes (e.g., `backdrop:bg-black/50`) to style the dialog backdrop. For example:
 
@@ -402,7 +294,7 @@ Drawer is `modal` by default (see `dialog`). You can set `modal={false}` to open
   <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
-<Drawer modal={false} bind:open={openNonModal} class="fixed top-0 left-0 z-50">
+<Drawer modal={false} bind:open={openNonModal}>
   <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
     <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
   </h5>
@@ -410,16 +302,16 @@ Drawer is `modal` by default (see `dialog`). You can set `modal={false}` to open
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
-  <div class="grid grid-cols-2 gap-4">
-    <Button color="light" href="/">Learn more</Button>
-    <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
+  <div class="grid grid-cols-2 gap-2">
+    <Button color="light" href="#/">Learn more</Button>
+    <Button href="#/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
 </Drawer>
 ```
 
 ## Disabling outside click
 
-As the default, the drawer closes when you click the outside of the drawer. However sometimes you don't want that. Set `outsideclose` to false to disable it.
+As the default, the drawer closes when you click the outside of the drawer. However sometimes you don't want that. Set `outsideclose` to false to disable it. Do not confuse that with non-modal state where there is no backdrop at all.
 
 ```svelte example
 <script>
@@ -442,13 +334,58 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
     Supercharge your hiring by taking advantage of our <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</a>
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
-  <div class="grid grid-cols-2 gap-4">
+  <div class="grid grid-cols-2 gap-2">
     <Button color="light" href="/">Learn more</Button>
     <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
 </Drawer>
 ```
 
+## Swipeable edge 
+
+The drawer edge functionality allows you to show a small part of the drawer when it is not shown completely by applying the `offset` property.
+
+In this example we also use the utility `DrawerHandle` component to toggle the visibility of the drawer component by clicking on the “edge” part of the element.
+
+```svelte example
+<script>
+  import { Drawer, DrawerHandle, CardPlaceholder, Button } from "flowbite-svelte";
+  import { AdjustmentsVerticalSolid, ChartPieSolid, ClipboardListSolid, GridPlusSolid, ReceiptSolid, TableRowSolid, UsersSolid } from "flowbite-svelte-icons";
+
+  let open = $state(false);
+  let widgets = [
+    { icon: ChartPieSolid, name: "Chart" },
+    { icon: TableRowSolid, name: "Table" },
+    { icon: ClipboardListSolid, name: "List" },
+    { icon: ReceiptSolid, name: "Ticket" },
+    { icon: UsersSolid, name: "Users" },
+    { icon: AdjustmentsVerticalSolid, name: "Custom" }
+  ];
+</script>
+
+<div class="ms-12 text-center">
+  <CardPlaceholder size="2xl" class="mt-6" />
+</div>
+
+<Drawer bind:open offset="52px" placement="bottom" class="rounded-t-lg" aria-labelledby="drawer-swipe-label">
+  <DrawerHandle onclick={() => (open = !open)} class="h-14 hover:bg-gray-50 dark:hover:bg-gray-700">
+    <h5 id="drawer-swipe-label" class="inline-flex items-center gap-2 text-base font-medium text-gray-500 dark:text-gray-400">
+      <GridPlusSolid />Add widget
+    </h5>
+  </DrawerHandle>
+
+  <div class="mt-16 grid grid-cols-3 gap-4 lg:grid-cols-4">
+    {#each widgets as { icon: Icon, name }}
+      <div class="cursor-pointer rounded-lg bg-gray-50 p-4 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600">
+        <div class="mx-auto mb-2 flex h-[48px] max-h-[48px] w-[48px] max-w-[48px] items-center justify-center rounded-full bg-gray-200 p-2 dark:bg-gray-600">
+          <Icon class="inline h-5 w-5 text-gray-500 dark:text-gray-400" />
+        </div>
+        <div class="text-center font-medium text-gray-500 dark:text-gray-400">{name}</div>
+      </div>
+    {/each}
+  </div>
+</Drawer>
+```
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

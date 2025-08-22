@@ -7,15 +7,14 @@ export type DrawerVariants = VariantProps<typeof drawer> & Classes<typeof drawer
 export const drawer = tv({
   extend: dialog,
   slots: {
-    base: "p-4 max-h-none max-w-none",
-    handle: "absolute h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-gray-300 dark:bg-gray-600"
+    base: "p-4 max-h-none max-w-none border border-gray-200 dark:border-gray-700"
   },
   variants: {
     placement: {
-      left: { base: "me-auto h-full", handle: "right-3 top-1/2 h-8" },
-      right: { base: "ms-auto h-full", handle: "left-3 top-1/2 h-8" },
-      top: { base: "mb-auto !w-full", handle: "left-1/2 bottom-3 w-8" },
-      bottom: { base: "mt-auto !w-full", handle: "left-1/2 top-3 w-8" }
+      left: { base: "me-auto h-full" },
+      right: { base: "ms-auto h-full" },
+      top: { base: "mb-auto !w-full" },
+      bottom: { base: "mt-auto !w-full" }
     },
     width: {
       default: { base: "w-80" },
@@ -71,4 +70,21 @@ export const drawerhead = tv({
     button: "ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white",
     svg: "h-4 w-4"
   }
+});
+
+export type DrawerHandleVariants = VariantProps<typeof drawerhandle> & Classes<typeof drawerhandle>;
+
+export const drawerhandle = tv({
+  slots: {
+    base: "p-4 absolute flex focus:outline-none",
+    handle: "absolute h-1 w-1 rounded-lg bg-gray-300 dark:bg-gray-600"
+  },
+  variants: {
+    placement: {
+      left: { base: "inset-y-0 right-0", handle: "h-8 top-1/2 -transition-y-1/2" },
+      right: { base: "inset-y-0 left-0", handle: "h-8 top-1/2 -transition-y-1/2" },
+      top: { base: "inset-x-0 bottom-0", handle: "w-8 left-1/2 -transition-x-1/2" },
+      bottom: { base: "inset-x-0 top-0", handle: "w-8 left-1/2 -transition-x-1/2" }
+    },
+  },
 });

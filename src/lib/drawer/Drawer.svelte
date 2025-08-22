@@ -6,8 +6,15 @@
   import { sineIn } from "svelte/easing";
   import { fly } from "svelte/transition";
   import { drawer } from ".";
+  import { setContext } from "svelte";
 
-  let { children, open = $bindable(false), hidden = $bindable(), modal = true, offset, width, dismissable = offset ? false : undefined, placement = "left", class: className, classes, transitionParams, transition = fly, outsideclose, activateClickOutside, ...restProps }: DrawerProps = $props();
+  let { children, open = $bindable(false), hidden = $bindable(), modal = true, offset, width, dismissable = offset ? false : undefined, placement = "left", class: className, transitionParams, transition = fly, outsideclose, activateClickOutside, ...restProps }: DrawerProps = $props();
+
+  setContext("drawer", {
+    get placement() {
+      return placement;
+    }
+  });
 
   // back compatibility
   if (hidden !== undefined) console.warn("'hidden' property is deprecated. Please use the 'open' property to manage 'Drawer'.");
@@ -38,10 +45,7 @@
   let shifted = $state(true);
   let innerModal = $derived(offset ? false : modal);
 
-  const { base, handle } = $derived(drawer({ placement, width, modal: innerModal, shifted }));
-
-  let innerWidth: number = $state(-1);
-  let innerHeight: number = $state(-1);
+  const { base } = $derived(drawer({ placement, width, modal: innerModal, shifted }));
 
   let x = $state(),
     y = $state();
@@ -55,14 +59,18 @@
 
   function onintrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
     // set the values for transition start position
-    const rect = ev.currentTarget.getBoundingClientRect();
+    const dlg = ev.currentTarget;
+    const { innerWidth = 0, innerHeight = 0 } = dlg.ownerDocument.defaultView ?? {};
+
+    const rect = dlg.getBoundingClientRect();
+
     x = placement === "left" ? rect.left : placement === "right" ? rect.right - innerWidth : undefined;
     y = placement === "top" ? rect.top : placement === "bottom" ? rect.bottom - innerHeight : undefined;
     // remove shift for transition end position
     shifted = false;
 
     // add offset if closed, remove it when open
-    if (offset) ev.currentTarget.style[placement] = open ? "" : offset;
+    if (offset) dlg.style[placement] = open ? "" : offset;
   }
 
   function onoutrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
@@ -70,22 +78,13 @@
   }
 </script>
 
-<svelte:window bind:innerWidth bind:innerHeight />
-
-{#snippet content()}
-  {@render children?.()}
-  {#if offset}
-    <button type="button" onclick={() => (open = !open)} aria-label="{open ? 'close' : 'open'} drawer" class={handle({ class: clsx(theme?.handle, classes?.handle) })}></button>
-  {/if}
-{/snippet}
-
 <Dialog {@attach init} bind:open {modal} {dismissable} {transition} {onintrostart} {onoutrostart} {outsideclose} transitionParams={transition_params} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-  {@render content()}
+  {@render children?.()}
 </Dialog>
 
 {#if offset && !open}
   <Dialog {@attach init} open modal={false} {dismissable} {outsideclose} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-    {@render content()}
+    {@render children?.()}
   </Dialog>
 {/if}
 

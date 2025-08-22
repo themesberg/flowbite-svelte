@@ -15,7 +15,7 @@ import type { ButtonVariants, GradientButtonVariantes, gradientButton } from "$l
 import type { CardVariants } from "$lib/card/theme";
 import type Slide from "$lib/carousel/Slide.svelte";
 import type { CarouselVariants, SlideVariants } from "$lib/carousel/theme";
-import type { DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
+import type { DrawerHandleVariants, DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
 import type { DropdownItemVariants } from "$lib/dropdown/theme";
 import type { DatepickerVariants } from "$lib/datepicker/theme";
 import type { FooterCopyrightVariants, FooterLinkVariants } from "$lib/footer/theme";
@@ -575,6 +575,8 @@ export interface DrawerProps extends DrawerVariants, Omit<DialogProps, "hidden" 
   hidden?: boolean | null;
   offset?: string;
 }
+
+export interface DrawerHandleProps extends DrawerHandleVariants, HTMLButtonAttributes { }
 
 export interface DrawerheadProps extends DrawerheadVariants, HTMLButtonAttributes {
   closeIcon?: Snippet;
