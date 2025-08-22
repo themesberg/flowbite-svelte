@@ -81,10 +81,10 @@ export const drawerhandle = tv({
   },
   variants: {
     placement: {
-      left: { base: "inset-y-0 right-0", handle: "h-8 top-1/2 -transition-y-1/2" },
-      right: { base: "inset-y-0 left-0", handle: "h-8 top-1/2 -transition-y-1/2" },
-      top: { base: "inset-x-0 bottom-0", handle: "w-8 left-1/2 -transition-x-1/2" },
-      bottom: { base: "inset-x-0 top-0", handle: "w-8 left-1/2 -transition-x-1/2" }
+      left: { base: "inset-y-0 right-0", handle: "h-8 top-1/2 -translate-y-1/2" },
+      right: { base: "inset-y-0 left-0", handle: "h-8 top-1/2 -translate-y-1/2" },
+      top: { base: "inset-x-0 bottom-0", handle: "w-8 left-1/2 -translate-x-1/2" },
+      bottom: { base: "inset-x-0 top-0", handle: "w-8 left-1/2 -translate-x-1/2" }
     },
   },
 });

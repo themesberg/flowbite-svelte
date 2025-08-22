@@ -7,10 +7,10 @@
 
   let { children, placement, "aria-label": ariaLabel, class: className, classes, ...restProps }: DrawerHandleProps = $props();
 
-  const ctx = getContext<{ placement: DrawerHandleProps["placement"] }>("drawer");
+  const ctx = getContext<{ placement: DrawerHandleProps["placement"] } | undefined>("drawer");
 
   const theme = getTheme("drawerhandle");
-  let { base, handle } = $derived(drawerhandle({ placement: placement ?? ctx.placement }));
+  let { base, handle } = $derived(drawerhandle({ placement: placement ?? ctx?.placement ?? "left" }));
 </script>
 
 <button type="button" aria-label={ariaLabel} {...restProps} class={base({ class: clsx(theme?.base, className) })}>

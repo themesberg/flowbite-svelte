@@ -50,7 +50,7 @@
   let x = $state(),
     y = $state();
 
-  let transition_params = $derived({ x, y, duration: 300, easing: sineIn, opacity: 100, ...transitionParams });
+  let transition_params = $derived({ x, y, duration: 300, easing: sineIn, opacity: 1, ...transitionParams });
 
   function init(node: HTMLDialogElement) {
     // set initial offset, later it will be switched on/off by onintrostart
