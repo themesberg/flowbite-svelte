@@ -1,13 +1,10 @@
 <script lang="ts">
   import { afterNavigate } from "$app/navigation";
   import { page } from "$app/state";
-  import { Sidebar, SidebarGroup, SidebarItem, uiHelpers, Label } from "$lib";
-  import SidebarButton from "$lib/sidebar/SidebarButton.svelte";
-  import SidebarDropdownWrapper from "$lib/sidebar/SidebarDropdownWrapper.svelte";
+  import { Sidebar, SidebarGroup, SidebarItem, uiHelpers, Label, SidebarButton, SidebarDropdownWrapper } from "$lib";
   import { getContext, type Snippet } from "svelte";
   import type { Writable } from "svelte/store";
   import Toc from "../utils/Toc.svelte";
-  import ExternalLink from "../utils/icons/ExternalLink.svelte";
   import { extract } from "./component/Anchor.svelte";
   import { capitalizeFirstLetter } from "../builder/utils/helpers";
 
@@ -76,7 +73,7 @@
 </script>
 
 {#if submenu !== "blocks"}
-  <SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-4 z-40 mb-2 sm:top-4 md:top-7" />
+  <SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="mb-2 fixed top-2 md:top-4 z-40" />
   <Sidebar breakpoint="lg" backdrop={true} {isOpen} {closeSidebar} classes={{ div: divClass, nonactive: nonActiveClass, active: activeClass }} activeUrl={mainSidebarUrl} class={mainClass} params={{ x: -50, duration: 50 }}>
     <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
     {#if submenu === "api-check"}

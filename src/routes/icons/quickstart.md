@@ -49,16 +49,12 @@ pnpm i -D flowbite-svelte-icons
 
 ## tailwind.config.cjs
 
-To make sure the classes used by flowbite-svelte-icons are included by the Tailwindcss, add the following to `tailwind.config.cjs`.
+To make sure the classes used by flowbite-svelte-icons are included by the Tailwindcss, add the following to `app.css`.
 
 ```js
-const config = {
-  content: [
-    // more lines
-    "./node_modules/flowbite-svelte-icons/**/*.{html,js,svelte,ts}"
-  ]
-  // more lines
-};
+@import "tailwindcss";
+// ...
+@source "../node_modules/flowbite-svelte-icons/dist";
 ```
 
 ## Basic Usages
@@ -132,14 +128,24 @@ Use `import * as Icon from 'flowbite-svelte-icons`.
 All icons are extended <A href="https://github.com/sveltejs/svelte/blob/main/packages/svelte/elements.d.ts">`SVGAttributes<SVGSVGElement>`</A> from svelte/elements.
 
 ```markdown
-- size?: "xs" | "sm" | "md" | "lg" | "xl" = ctx.size || 'md';
-- color?: string | undefined | null = ctx.color || 'currentColor'
-- class?: string | undefined | null = ''
-- ariaLabel?: string = "<icon file name>"
-- title?: TitleType
-- desc?: DescType
-- strokeWidth?: string | undefined | null = ctx.strokeWidth || '2' // only Outline icons
-- ...restProps
+// outline
+size = ctx.size || 'md',
+color = ctx.color || 'currentColor',
+title,
+strokeWidth= ctx.strokeWidth || 2,
+desc,  
+class: className,
+ariaLabel,
+...restProps
+
+// solid
+size = ctx.size || 'md',
+color = ctx.color || 'currentColor',
+title,
+desc,  
+class: className,
+ariaLabel,
+...restProps
 ```
 
 ## Size
@@ -199,8 +205,7 @@ Let's use `dark` for the dark mode class as an example.
 
 ## aria-label
 
-All icons have aria-label. For example `BxAbacus` has `aria-label="bx abacus"`.
-Use `ariaLabel` prop to modify the `aria-label` value.
+Use `ariaLabel` prop to add the `aria-label` value.
 
 ```html
 <AddressBookOutline ariaLabel="address card outline" />

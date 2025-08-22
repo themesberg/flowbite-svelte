@@ -200,6 +200,7 @@ test("API check video page should have h1", async ({ page }) => {
   expect(await page.textContent("h1")).toBe("Video");
 });
 
+// Forms
 test("API check checkbox page should have h1", async ({ page }) => {
   await page.goto("/api-check/forms/checkbox");
   expect(await page.textContent("h1")).toBe("Checkbox");

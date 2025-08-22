@@ -121,19 +121,9 @@ import type {
   ThemeConfig,
   AccordionTheme,
   ButtonTheme,
-  CardTheme
+  CardTheme.
+  // ...
 } from "flowbite-svelte";
-
-const theme: ThemeConfig = {
-  accordion: "custom-classes" as AccordionTheme,
-  button: {
-    base: "base-classes"
-  } as ButtonTheme,
-  card: {
-    base: "card-base-classes",
-    image: "image-classes"
-  } as CardTheme
-};
 ```
 
 ## Nested ThemeProvider and Component Classes

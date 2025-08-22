@@ -19,7 +19,7 @@ The checkbox component can be used to receive one or more selected options from 
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Checkbox } from "flowbite-svelte";
 </script>
 ```
@@ -29,7 +29,7 @@ The checkbox component can be used to receive one or more selected options from 
 Use this default example of a checbkox element in a checked, unchecked and indeterminate state.
 
 ```svelte example class="flex flex-col gap-4" hideScript
-<script>
+<script lang="ts">
   import { Checkbox } from "flowbite-svelte";
 </script>
 
@@ -43,7 +43,7 @@ Use this default example of a checbkox element in a checked, unchecked and indet
 This example can be used for the disabled state of the checkbox component by applying the disabled attribute to the input element.
 
 ```svelte example class="flex flex-col gap-4" hideScript
-<script>
+<script lang="ts">
   import { Checkbox } from "flowbite-svelte";
 </script>
 
@@ -57,7 +57,7 @@ This example can be used for the disabled state of the checkbox component by app
 If you need separate control over the label and the checkbox you can use the verbose syntax, but then you need to take care about aligning manually.
 
 ```svelte example class="flex flex-col gap-4"
-<script>
+<script lang="ts">
   import { Checkbox, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, Label, TableBodyRow } from "flowbite-svelte";
 </script>
 
@@ -88,7 +88,7 @@ If you need separate control over the label and the checkbox you can use the ver
 Use this example if you want to add an anchor link inside the label of the checkbox component.
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { Checkbox } from "flowbite-svelte";
 </script>
 
@@ -104,7 +104,7 @@ Use this example if you want to add an anchor link inside the label of the check
 Get started with this example if you want to add a secondary helper text for the checkbox component.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Checkbox, Helper } from "flowbite-svelte";
 </script>
 
@@ -117,7 +117,7 @@ Get started with this example if you want to add a secondary helper text for the
 Use this example of a checkbox inside a card element to enable a larger area of clicking activation.
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { Checkbox } from "flowbite-svelte";
 </script>
 
@@ -133,8 +133,8 @@ Use this example of a checkbox inside a card element to enable a larger area of 
 
 Use this example to show a list of checkbox items grouped inside a card.
 
-```svelte example hideScript
-<script>
+```svelte example
+<script lang="ts">
   import { Checkbox, Listgroup } from "flowbite-svelte";
 </script>
 
@@ -150,7 +150,7 @@ Use this example to show a list of checkbox items grouped inside a card.
 You can use the internal loop to render a list of `CheckboxItem`s.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Checkbox, Listgroup } from "flowbite-svelte";
   let choices = [
     { value: "svelte", label: "svelte" },
@@ -172,7 +172,7 @@ You can use the internal loop to render a list of `CheckboxItem`s.
 Use this example to show a list of checkbox items inside a card horizontally.
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { Checkbox } from "flowbite-svelte";
 </script>
 
@@ -190,7 +190,7 @@ Use this example to show a list of checkbox items inside a card horizontally.
 Use this example to show a list of checkbox items inside a dropdown menu.
 
 ```svelte example class="flex justify-center items-start h-96"
-<script>
+<script lang="ts">
   import { Dropdown, DropdownItem, DropdownGroup, Checkbox, Button, Search } from "flowbite-svelte";
   import { ChevronDownOutline, UserRemoveSolid } from "flowbite-svelte-icons";
 </script>
@@ -231,7 +231,7 @@ Use this example to show a list of checkbox items inside a dropdown menu.
 You can align the checkbox elements horizontally by using a wrapper tag and applying the flex class.
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { Checkbox } from "flowbite-svelte";
 </script>
 
@@ -246,7 +246,7 @@ You can align the checkbox elements horizontally by using a wrapper tag and appl
 You can use the property `inline` as the alternative.
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { Checkbox } from "flowbite-svelte";
 </script>
 
@@ -258,8 +258,8 @@ You can use the property `inline` as the alternative.
 
 ## Colors
 
-```svelte example hideScript hideResponsiveButtons
-<script>
+```svelte example hideResponsiveButtons
+<script lang="ts">
   import { Label, Checkbox } from "flowbite-svelte";
 </script>
 
@@ -284,7 +284,7 @@ The special case component - `CheckboxButton` - is the `Checkbox` with the [Butt
 This component accepts all props from the [Button](/docs/components/buttons) for styling and `Checkbox` for behaviour.
 
 ```svelte example class="space-y-4"
-<script>
+<script lang="ts">
   import { ButtonGroup, CheckboxButton } from "flowbite-svelte";
   import { AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from "flowbite-svelte-icons";
   let group = $state([]);
@@ -310,7 +310,7 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 Use this example of an advanced layout of checkbox elements where the label parent element can be styled when the checkbox is checked.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Checkbox } from "flowbite-svelte";
   import React from "../../utils/icons/React.svelte";
   import Vue from "../../utils/icons/Vue.svelte";
@@ -346,7 +346,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 ## Group variable
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Button, Checkbox } from "flowbite-svelte";
   let choices = [
     { value: "1", label: "One" },

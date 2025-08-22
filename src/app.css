@@ -9,6 +9,9 @@
 @source "../node_modules/@flowbite-svelte-plugins/datatable/dist";
 @source "../node_modules/@flowbite-svelte-plugins/chart/dist";
 @source "../node_modules/@flowbite-svelte-plugins/texteditor/dist";
+@source "../node_modules/flowbite-svelte-icons/dist";
+@source "../node_modules/flowbite-svelte-blocks/dist";
+@source "../node_modules/flowbite-svelte-admin-dashboard/dist";
 
 .datatable-pagination .datatable-active a,
 .datatable-pagination .datatable-active a:focus,

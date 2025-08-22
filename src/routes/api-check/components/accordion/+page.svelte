@@ -1,8 +1,8 @@
 <script lang="ts">
-  import HighlightCompo from "../../../utils/api-check/HighlightCompo.svelte";
-  import CodeWrapper from "../../../utils/api-check/CodeWrapper.svelte";
-  import H1 from "../../../utils/api-check/H1.svelte";
-  import H2 from "../../../utils/api-check/H2.svelte";
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
 
   // for examples section that dynamically changes the svelte component and svelteCode content
   import * as ExampleComponents from "./examples";

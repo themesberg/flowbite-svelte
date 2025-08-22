@@ -1,49 +1,54 @@
-<script>
-  import { Spinner, Button } from "$lib";
+<script lang="ts">
+  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import CodeWrapper from "../../utils/CodeWrapper.svelte";
+  import H1 from "../../utils/H1.svelte";
+  import H2 from "../../utils/H2.svelte";
+
+  import * as ExampleComponents from "./examples/";
+  const exampleModules = import.meta.glob("./examples/*.svelte", {
+    query: "?raw",
+    import: "default",
+    eager: true
+  }) as Record<string, string>;
 </script>
 
-<h1 class="my-4 text-3xl">Spinner</h1>
+<H1>Spinner</H1>
+<H2>Default</H2>
+<CodeWrapper innerClass="relative h-96">
+  <ExampleComponents.Default />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Default.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <h2 class="my-4 text-2xl">Default spinner</h2>
-  <Spinner />
-</div>
+<H2>Colors</H2>
+<CodeWrapper innerClass="relative h-96">
+  <ExampleComponents.Colors />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Colors.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <h2 class="my-4 text-2xl">Colors</h2>
-  <Spinner />
-  <Spinner color="gray" />
-  <Spinner color="green" />
-  <Spinner color="red" />
-  <Spinner color="yellow" />
-  <Spinner color="pink" />
-  <Spinner color="purple" />
-</div>
+<H2>Sizes</H2>
+<CodeWrapper innerClass="relative h-96">
+  <ExampleComponents.Sizes />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Sizes.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <h2 class="my-4 text-2xl">Sizes</h2>
-  <Spinner size="4" />
-  <Spinner size="6" />
-  <Spinner size="8" />
-</div>
+<H2>Alignment</H2>
+<CodeWrapper innerClass="relative h-96">
+  <ExampleComponents.Alignment />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Alignment.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
 
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <h2 class="my-4 text-2xl">Alignment</h2>
-  <div class="text-left"><Spinner /></div>
-  <div class="text-center"><Spinner /></div>
-  <div class="text-right"><Spinner /></div>
-</div>
-
-<div class="my-4 rounded border border-gray-200 p-4 dark:border-gray-600">
-  <h2 class="my-4 text-2xl">Buttons</h2>
-  <div class="flex flex-wrap items-center gap-2">
-    <Button>
-      <Spinner class="me-3" size="4" color="blue" />
-      Loading ...
-    </Button>
-    <Button outline color="gray">
-      <Spinner class="me-3" size="4" />
-      Loading ...
-    </Button>
-  </div>
-</div>
+<H2>Buttons</H2>
+<CodeWrapper innerClass="relative h-96">
+  <ExampleComponents.Buttons />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Buttons.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>

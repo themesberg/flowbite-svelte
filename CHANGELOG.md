@@ -1,12 +1,18 @@
 # Changelog
 
+## 1.12.6
+
+### Patch Changes
+
+- fix: SidebarButton update
+
 ## 1.12.5
 
 ### Patch Changes
 
 - fix: Avatar theming src/lib/avatar/theme.ts
 
-  Changed stacked variant from "border-2 -ms-4 ..." to "border-2 not-first:-ms-4 ..." so the negative margin applies only to non-first avatars.
+Changed stacked variant from "border-2 -ms-4 ..." to "border-2 not-first:-ms-4 ..." so the negative margin applies only to non-first avatars.
 
 - fix: Drawer implementation & types src/lib/drawer/Drawer.svelte, src/lib/drawer/theme.ts
 
@@ -62,11 +68,11 @@ Reworked Drawer example to form-mode using Flowbite Svelte Label, Input, Textare
 
 ### Patch Changes
 
-  - docs – Drawer examples
-    src/routes/docs/components/drawer.md Removed CloseButton from imports and removed all CloseButton elements in example markup; updated backdrop guidance to recommend Tailwind backdrop classes; clarified modal vs non-modal wording and fixed minor typos.
-  - docs – Timepicker drawer example
-    src/routes/docs/forms/timepicker.md Removed CloseButton from the flowbite-svelte import in the Drawer-with-timepicker example; example markup otherwise unchanged.
-  - github: pull_request_template update
+- docs – Drawer examples
+  src/routes/docs/components/drawer.md Removed CloseButton from imports and removed all CloseButton elements in example markup; updated backdrop guidance to recommend Tailwind backdrop classes; clarified modal vs non-modal wording and fixed minor typos.
+- docs – Timepicker drawer example
+  src/routes/docs/forms/timepicker.md Removed CloseButton from the flowbite-svelte import in the Drawer-with-timepicker example; example markup otherwise unchanged.
+- github: pull_request_template update
 
 ## 1.12.0
 
@@ -155,7 +161,7 @@ Reworked Drawer example to form-mode using Flowbite Svelte Label, Input, Textare
 ### Minor Changes
 
 - New Features
-    Badges, alerts, banners, modals, toasts, drawers, and form inputs now support a standardized dismiss (close/clear) behavior using event-driven dismissal.
+  Badges, alerts, banners, modals, toasts, drawers, and form inputs now support a standardized dismiss (close/clear) behavior using event-driven dismissal.
   - Improvements
     Close buttons across components no longer have direct click handlers but rely on a shared dismissable context, enabling consistent dismissal behavior and external event handling.
     Dismissal logic supports event cancellation and bubbling, improving flexibility and predictability of user interactions.

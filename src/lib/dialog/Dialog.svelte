@@ -16,6 +16,7 @@
 
   // Prefer requestClose when available to trigger a cancellable "cancel" event; otherwise synthesize it.
   const cancel = (dlg: HTMLDialogElement) => {
+    // @ts-ignore
     if (typeof dlg.requestClose === "function") return dlg.requestClose();
     dlg.dispatchEvent(new Event("cancel", { bubbles: true, cancelable: true }));
   };
@@ -83,6 +84,18 @@
   function init(dlg: HTMLDialogElement) {
     if (modal) dlg.showModal();
     else dlg.show();
+
+    // Custom focus management
+    queueMicrotask(() => {
+      const autofocusEl = dlg.querySelector<HTMLElement>("[data-autofocus]") ?? dlg.querySelector<HTMLElement>('input, textarea, select, button:not([aria-label="Close"])');
+
+      if (autofocusEl) {
+        autofocusEl.focus();
+      } else {
+        dlg.focus(); // fallback
+      }
+    });
+
     return () => dlg.close();
   }
 
@@ -125,7 +138,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DialogProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L557)
+[DialogProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L558)
 ## Props
 @prop children
 @prop onaction = ()

@@ -9,7 +9,7 @@
 
   let { children, popperClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, class: className, classes, isOpen = $bindable(false), ...restProps }: SpeedDialProps = $props();
 
-  warnThemeDeprecation("SpeedDial", { popperClass: "popper" });
+  warnThemeDeprecation("SpeedDial", {popperClass}, { popperClass: "popper" });
   const styling = $derived(
     classes ?? {
       popper: popperClass
@@ -35,7 +35,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1473)
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1475)
 ## Props
 @prop children
 @prop popperClass
