@@ -7,7 +7,7 @@
   import { fly } from "svelte/transition";
   import { drawer } from ".";
 
-  let { children, open = $bindable(false), hidden = $bindable(), modal, edge, width, dismissable = true, placement = "left", class: className, classes, transitionParams, transition = fly, outsideclose, activateClickOutside, ...restProps }: DrawerProps = $props();
+  let { children, open = $bindable(false), hidden = $bindable(), onaction, modal = true, edge, width, permanent, placement = "left", class: className, classes, transitionParams, transition = fly, outsideclose, activateClickOutside, ...restProps }: DrawerProps = $props();
 
   // back compatibility
   if (hidden !== undefined) console.warn("'hidden' property is deprecated. Please use the 'open' property to manage 'Drawer'.");
@@ -35,7 +35,10 @@
 
   const theme = getTheme("drawer");
 
-  const { base, handle } = $derived(drawer({ placement, width, modal, open }));
+  let shifted = $state(true);
+  let innerModal = $derived(edge ? !!open : modal);
+
+  const { base, handle } = $derived(drawer({ placement, width, modal: innerModal, shifted }));
 
   let innerWidth: number = $state(-1);
   let innerHeight: number = $state(-1);
@@ -43,55 +46,52 @@
   let x = $state(),
     y = $state();
 
-  let transition_params = $derived(transitionParams ?? { x, y, duration: edge ? 250 : 500, easing: sineIn, opacity: 100 });
-
-  let dlg: HTMLDialogElement = $state() as HTMLDialogElement;
+  let transition_params = $derived(transitionParams ?? { x, y, duration: edge ? 500 : 500, easing: sineIn, opacity: 100 });
 
   function dlgInit(node: HTMLDialogElement) {
-    dlg = node;
-
-    if (edge) {
-      node.style[placement] = edge;
-    }
+    // set initial offset, next it will be switched on/off by outrestart
+    if (edge) node.style[placement] = edge;
   }
-
-  $effect.pre(() => {
-    if (edge && open && dlg) {
-      const rect = dlg.getBoundingClientRect();
-
-      x = placement === "left" ? rect.left : placement === "right" ? rect.right - innerWidth : undefined;
-      y = placement === "top" ? rect.top : placement === "bottom" ? rect.bottom - innerHeight : undefined;
-    }
-  });
 
   function onintrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
-    if (edge) {
-      ev.currentTarget.style[placement] = open ? "" : edge;
-    } else {
+    if (open) {
+      // set the values for transition start
       const rect = ev.currentTarget.getBoundingClientRect();
-      x = placement === "left" ? -rect.width : placement === "right" ? rect.width : undefined;
-      y = placement === "top" ? -rect.height : placement === "bottom" ? rect.height : undefined;
+      x = placement === "left" ? rect.left : placement === "right" ? rect.right - innerWidth : undefined;
+      y = placement === "top" ? rect.top : placement === "bottom" ? rect.bottom - innerHeight : undefined;
+      // remove shift for transition end position
+      shifted = false;
     }
+
+    // add offset if closed, remove it when open
+    if (edge) ev.currentTarget.style[placement] = open ? "" : edge;
   }
 
-  let innerOpen = $derived(edge ? true : open);
-  let innerModal = $derived(edge && !open ? false : true);
+  function onoutrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
+    if (!open) shifted = true;
+  }
+
+  function _onaction() {
+    console.log("drawer on action");
+    if (edge) return false;
+  }
 
   function oncancel(ev: Event & { currentTarget: HTMLDialogElement }) {
-    if (edge) {
-      ev.preventDefault();
-      open = false;
-    }
+    // drawer with edge is always open: cancel the closing, but update `open` prop
+    if (edge) ev.preventDefault();
+
+    open = false;
   }
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
 {#key open}
-  <Dialog {@attach dlgInit} open={innerOpen} {oncancel} modal={innerModal} {transition} {onintrostart} {dismissable} {outsideclose} transitionParams={transition_params} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <Dialog {@attach dlgInit} open={edge ? true : open} {oncancel} {onaction} modal={innerModal} {transition} {onintrostart} {onoutrostart} permanent={edge ? true : permanent} {outsideclose} transitionParams={transition_params} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
     {@render children?.()}
-    <button onclick={() => (open = !open)} aria-label="open drawer" class={handle({ class: clsx(theme?.handle, classes?.handle) })}></button>
-    {#if edge}{/if}
+    {#if edge}
+      <button type="button" onclick={() => (open = !open)} aria-label="open drawer" class={handle({ class: clsx(theme?.handle, classes?.handle) })}></button>
+    {/if}
   </Dialog>
 {/key}
 
@@ -105,7 +105,7 @@
 @prop open = $bindable(false)
 @prop hidden = $bindable()
 @prop width
-@prop dismissable = false
+@prop permanent = false
 @prop placement = "left"
 @prop class: className
 @prop transitionParams

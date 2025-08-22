@@ -7,7 +7,7 @@ export type DrawerVariants = VariantProps<typeof drawer> & Classes<typeof drawer
 export const drawer = tv({
   extend: dialog,
   slots: {
-    base: "p-4 max-h-none max-w-none ",
+    base: "p-4 max-h-none max-w-none",
     handle: "absolute h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-gray-300 dark:bg-gray-600"
   },
   variants: {
@@ -26,28 +26,28 @@ export const drawer = tv({
       false: { base: "fixed inset-0" },
       true: { base: "" }
     },
-    open: {
-      false: {}
+    shifted: {
+      true: {}
     }
   },
   compoundVariants: [
     {
-      open: false,
+      shifted: true,
       placement: 'left',
       class: { base: "-translate-x-full" }
     },
     {
-      open: false,
+      shifted: true,
       placement: 'right',
       class: { base: "translate-x-full" }
     },
     {
-      open: false,
+      shifted: true,
       placement: 'top',
       class: { base: "-translate-y-full" }
     },
     {
-      open: false,
+      shifted: true,
       placement: 'bottom',
       class: { base: "translate-y-full" }
     },
