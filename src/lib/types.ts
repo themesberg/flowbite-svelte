@@ -568,12 +568,12 @@ export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
 }
 
 // drawer
-export interface DrawerProps extends DrawerVariants, Omit<DialogProps, "hidden" | "classes"> {
+export interface DrawerProps extends DrawerVariants, Omit<DialogProps, "hidden" | "classes" | "shifted"> {
   /** @deprecated Use `outsideclose` instead. Will be removed in next minor version. */
   activateClickOutside?: boolean;
   /** @deprecated Use `open` instead. Will be removed in next minor version. */
   hidden?: boolean | null;
-  edge?: string;
+  offset?: string;
 }
 
 export interface DrawerheadProps extends DrawerheadVariants, HTMLButtonAttributes {

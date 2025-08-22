@@ -7,7 +7,7 @@
   import { fly } from "svelte/transition";
   import { drawer } from ".";
 
-  let { children, open = $bindable(false), hidden = $bindable(), onaction, modal = true, edge, width, permanent, placement = "left", class: className, classes, transitionParams, transition = fly, outsideclose, activateClickOutside, ...restProps }: DrawerProps = $props();
+  let { children, open = $bindable(false), hidden = $bindable(), modal = true, offset, width, dismissable = offset ? false : undefined, placement = "left", class: className, classes, transitionParams, transition = fly, outsideclose, activateClickOutside, ...restProps }: DrawerProps = $props();
 
   // back compatibility
   if (hidden !== undefined) console.warn("'hidden' property is deprecated. Please use the 'open' property to manage 'Drawer'.");
@@ -36,7 +36,7 @@
   const theme = getTheme("drawer");
 
   let shifted = $state(true);
-  let innerModal = $derived(edge ? !!open : modal);
+  let innerModal = $derived(offset ? false : modal);
 
   const { base, handle } = $derived(drawer({ placement, width, modal: innerModal, shifted }));
 
@@ -46,54 +46,48 @@
   let x = $state(),
     y = $state();
 
-  let transition_params = $derived(transitionParams ?? { x, y, duration: edge ? 500 : 500, easing: sineIn, opacity: 100 });
+  let transition_params = $derived({ x, y, duration: 300, easing: sineIn, opacity: 100, ...transitionParams });
 
-  function dlgInit(node: HTMLDialogElement) {
-    // set initial offset, next it will be switched on/off by outrestart
-    if (edge) node.style[placement] = edge;
+  function init(node: HTMLDialogElement) {
+    // set initial offset, later it will be switched on/off by onintrostart
+    if (offset) node.style[placement] = offset;
   }
 
   function onintrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
-    if (open) {
-      // set the values for transition start
-      const rect = ev.currentTarget.getBoundingClientRect();
-      x = placement === "left" ? rect.left : placement === "right" ? rect.right - innerWidth : undefined;
-      y = placement === "top" ? rect.top : placement === "bottom" ? rect.bottom - innerHeight : undefined;
-      // remove shift for transition end position
-      shifted = false;
-    }
+    // set the values for transition start position
+    const rect = ev.currentTarget.getBoundingClientRect();
+    x = placement === "left" ? rect.left : placement === "right" ? rect.right - innerWidth : undefined;
+    y = placement === "top" ? rect.top : placement === "bottom" ? rect.bottom - innerHeight : undefined;
+    // remove shift for transition end position
+    shifted = false;
 
     // add offset if closed, remove it when open
-    if (edge) ev.currentTarget.style[placement] = open ? "" : edge;
+    if (offset) ev.currentTarget.style[placement] = open ? "" : offset;
   }
 
   function onoutrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
-    if (!open) shifted = true;
-  }
-
-  function _onaction() {
-    console.log("drawer on action");
-    if (edge) return false;
-  }
-
-  function oncancel(ev: Event & { currentTarget: HTMLDialogElement }) {
-    // drawer with edge is always open: cancel the closing, but update `open` prop
-    if (edge) ev.preventDefault();
-
-    open = false;
+    shifted = true;
   }
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-{#key open}
-  <Dialog {@attach dlgInit} open={edge ? true : open} {oncancel} {onaction} modal={innerModal} {transition} {onintrostart} {onoutrostart} permanent={edge ? true : permanent} {outsideclose} transitionParams={transition_params} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-    {@render children?.()}
-    {#if edge}
-      <button type="button" onclick={() => (open = !open)} aria-label="open drawer" class={handle({ class: clsx(theme?.handle, classes?.handle) })}></button>
-    {/if}
+{#snippet content()}
+  {@render children?.()}
+  {#if offset}
+    <button type="button" onclick={() => (open = !open)} aria-label="{open ? 'close' : 'open'} drawer" class={handle({ class: clsx(theme?.handle, classes?.handle) })}></button>
+  {/if}
+{/snippet}
+
+<Dialog {@attach init} bind:open {modal} {dismissable} {transition} {onintrostart} {onoutrostart} {outsideclose} transitionParams={transition_params} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  {@render content()}
+</Dialog>
+
+{#if offset && !open}
+  <Dialog {@attach init} open modal={false} {dismissable} {outsideclose} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+    {@render content()}
   </Dialog>
-{/key}
+{/if}
 
 <!--
 @component
@@ -105,7 +99,7 @@
 @prop open = $bindable(false)
 @prop hidden = $bindable()
 @prop width
-@prop permanent = false
+@prop dismissable 
 @prop placement = "left"
 @prop class: className
 @prop transitionParams

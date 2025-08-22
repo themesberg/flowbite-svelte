@@ -32,6 +32,11 @@ export const drawer = tv({
   },
   compoundVariants: [
     {
+      shifted: false,
+      modal: false,
+      class: { base: "z-50" }
+    },
+    {
       shifted: true,
       placement: 'left',
       class: { base: "-translate-x-full" }
