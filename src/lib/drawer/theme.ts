@@ -26,7 +26,8 @@ export const drawer = tv({
       true: { base: "" }
     },
     shifted: {
-      true: {}
+      true: {},
+      false: {}
     }
   },
   compoundVariants: [
@@ -58,7 +59,8 @@ export const drawer = tv({
   ],
   defaultVariants: {
     placement: "left",
-    width: "default"
+    width: "default",
+    modal: true
   }
 });
 

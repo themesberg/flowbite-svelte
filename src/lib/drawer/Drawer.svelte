@@ -8,7 +8,7 @@
   import { drawer } from ".";
   import { setContext } from "svelte";
 
-  let { children, open = $bindable(false), hidden = $bindable(), modal = true, offset, width, dismissable = offset ? false : undefined, placement = "left", class: className, transitionParams, transition = fly, outsideclose, activateClickOutside, ...restProps }: DrawerProps = $props();
+  let { children, open = $bindable(false), hidden = $bindable(), modal, offset, width, dismissable = offset ? false : undefined, placement = "left", class: className, transitionParams, transition = fly, outsideclose, activateClickOutside, ...restProps }: DrawerProps = $props();
 
   setContext("drawer", {
     get placement() {
