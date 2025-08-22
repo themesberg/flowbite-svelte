@@ -7,7 +7,7 @@ export type DrawerVariants = VariantProps<typeof drawer> & Classes<typeof drawer
 export const drawer = tv({
   extend: dialog,
   slots: {
-    base: "p-4 max-h-none max-w-none border border-gray-200 dark:border-gray-700"
+    base: "p-4 max-h-none max-w-none border border-gray-200 dark:border-gray-700 transform-gpu will-change-transform"
   },
   variants: {
     placement: {
@@ -76,7 +76,7 @@ export type DrawerHandleVariants = VariantProps<typeof drawerhandle> & Classes<t
 
 export const drawerhandle = tv({
   slots: {
-    base: "p-4 absolute flex focus:outline-none",
+    base: "p-4 absolute flex focus:outline-none select-none cursor-grab active:cursor-grabbing",
     handle: "absolute h-1 w-1 rounded-lg bg-gray-300 dark:bg-gray-600"
   },
   variants: {
