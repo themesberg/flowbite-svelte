@@ -121,17 +121,17 @@ export const fetchBuilders = async () => {
 export const fetchApiCheck = async () => {
   const globs = {
     components: import.meta.glob("/src/routes/api-check/components/*/+page.svelte"),
-    forms: import.meta.glob("/src/routes/api-check/forms/*.svelte"),
-    typography: import.meta.glob("/src/routes/api-check/typography/*.svelte"),
-    extend: import.meta.glob("/src/routes/api-check/extend/*.svelte"),
-    pages: import.meta.glob("/src/routes/api-check/pages/*.svelte")
+    forms: import.meta.glob("/src/routes/api-check/forms/*/+page.svelte"),
+    typography: import.meta.glob("/src/routes/api-check/typography/*/+page.svelte"),
+    extend: import.meta.glob("/src/routes/api-check/extend/*/+page.svelte"),
+    pages: import.meta.glob("/src/routes/api-check/pages/*/+page.svelte")
   };
 
   const components = await resolvePaths(globs.components, parentFolderSlug);
-  const forms = await resolvePaths(globs.forms);
-  const typography = await resolvePaths(globs.typography);
-  const extend = await resolvePaths(globs.extend);
-  const pages = await resolvePaths(globs.pages);
+  const forms = await resolvePaths(globs.forms, parentFolderSlug);
+  const typography = await resolvePaths(globs.typography, parentFolderSlug);
+  const extend = await resolvePaths(globs.extend, parentFolderSlug);
+  const pages = await resolvePaths(globs.pages, parentFolderSlug);
 
   return {
     components,
