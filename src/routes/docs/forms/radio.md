@@ -28,7 +28,7 @@ The radio component can be used to allow the user to choose a single option from
 
 Use the default example of a radio component with the checked and unchecked state.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4"
 <script>
   import { Radio } from "flowbite-svelte";
   let selectedValue = $state("2");
@@ -44,7 +44,7 @@ Apply the `disabled` attribute to the radio component to disallow the selection 
 
 This example can be used for the disabled state of the radio component by applying the disabled attribute to the input element.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4"
 <script>
   import { Radio } from "flowbite-svelte";
   let selectedValue = $state("2");
