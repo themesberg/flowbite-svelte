@@ -343,7 +343,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 
 ## Swipeable edge 
 
-The drawer edge functionality allows you to show a small part of the drawer when it is not shown completely by applying the `offset` property.
+The drawer edge functionality allows you to show a small part of the drawer when it is not shown completely by applying the `offset` property. This can be given any CSS compliant unit like `200px` or `10em`.
 
 In this example we also use the utility `DrawerHandle` component to toggle the visibility of the drawer component by clicking on the “edge” part of the element.
 
