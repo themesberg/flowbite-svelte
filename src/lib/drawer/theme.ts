@@ -78,15 +78,15 @@ export type DrawerHandleVariants = VariantProps<typeof drawerhandle> & Classes<t
 
 export const drawerhandle = tv({
   slots: {
-    base: "p-4 absolute flex focus:outline-none select-none cursor-grab active:cursor-grabbing",
-    handle: "absolute h-1 w-1 rounded-lg bg-gray-300 dark:bg-gray-600"
+    base: "p-4 absolute flex select-none cursor-grab active:cursor-grabbing focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 dark:focus-visible:ring-offset-gray-800",
+    handle: "absolute rounded-lg bg-gray-300 dark:bg-gray-600"
   },
   variants: {
     placement: {
-      left: { base: "inset-y-0 right-0", handle: "h-8 top-1/2 -translate-y-1/2" },
-      right: { base: "inset-y-0 left-0", handle: "h-8 top-1/2 -translate-y-1/2" },
-      top: { base: "inset-x-0 bottom-0", handle: "w-8 left-1/2 -translate-x-1/2" },
-      bottom: { base: "inset-x-0 top-0", handle: "w-8 left-1/2 -translate-x-1/2" }
+      left: { base: "inset-y-0 right-0 touch-pan-y", handle: "w-1 h-8 top-1/2 -translate-y-1/2" },
+      right: { base: "inset-y-0 left-0 touch-pan-y", handle: "w-1 h-8 top-1/2 -translate-y-1/2" },
+      top: { base: "inset-x-0 bottom-0 touch-pan-x", handle: "w-8 h-1 left-1/2 -translate-x-1/2" },
+      bottom: { base: "inset-x-0 top-0 touch-pan-x", handle: "w-8 h-1 left-1/2 -translate-x-1/2" }
     },
   },
 });

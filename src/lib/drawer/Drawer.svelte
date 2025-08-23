@@ -43,9 +43,8 @@
   const theme = getTheme("drawer");
 
   let shifted = $state(true);
-  let innerModal = $derived(offset ? false : modal);
 
-  const { base } = $derived(drawer({ placement, width, modal: innerModal, shifted }));
+  const { base } = $derived(drawer({ placement, width, modal: offset && !open ? false : modal, shifted }));
 
   let x = $state(),
     y = $state();
