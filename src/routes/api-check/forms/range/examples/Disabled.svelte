@@ -3,4 +3,4 @@
 </script>
 
 <Label>Default range</Label>
-<Range id="range1" value={50} />
+<Range id="range-disabled" disabled value={50} />
