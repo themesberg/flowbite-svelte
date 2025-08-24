@@ -77,7 +77,7 @@ Get started with the default example of a textarea component below.
   let textContent = $state("This is some example text that will be selected when you click the button.");
 </script>
 
-<Textarea bind:elementRef={textareaRef} bind:value={textContent} placeholder="Type something here..." class="my-4 w-full" />
+<Textarea bind:elementRef={textareaRef} bind:value={textContent} placeholder="Type something here..." class="w-full" />
 <Button
   onclick={() => {
     textareaRef?.focus();
@@ -118,7 +118,7 @@ If you want to add other actions as buttons alongside your textarea component, s
       </Toolbar>
     {/snippet}
   </Textarea>
-  <Button>Publish post</Button>
+  <Button class="mt-2">Publish post</Button>
 </form>
 ```
 

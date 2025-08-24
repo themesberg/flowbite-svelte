@@ -18,7 +18,7 @@ interface Component {
   category: string;
 }
 
-console.log("DEBUG: data =", data.posts.apicheck);
+// console.log("DEBUG: data =", data.posts.apicheck);
 
 // Flatten everything from apicheck and track categories
 const components: Component[] = [];

@@ -13,3 +13,43 @@
 </script>
 
 <H1>Hr</H1>
+<H2>Default</H2>
+<CodeWrapper>
+  <ExampleComponents.Default />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Default.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Trimmed</H2>
+<CodeWrapper>
+  <ExampleComponents.Trimmed />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Trimmed.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Icon</H2>
+<CodeWrapper innerClass="relative">
+  <ExampleComponents.Icon />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Icon.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Text</H2>
+<CodeWrapper innerClass="relative">
+  <ExampleComponents.Text />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Text.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
+<H2>Shape</H2>
+<CodeWrapper>
+  <ExampleComponents.Shape />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/Shape.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>
+
