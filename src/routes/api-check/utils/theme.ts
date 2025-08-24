@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants";
 
 export const highlightCompo = tv({
-  base: "max-w-4xl rounded-md relative bg-gray-50 dark:bg-gray-900",
+  base: "max-w-4xl rounded-md relative bg-gray-50 dark:bg-gray-800",
   variants: {
     expanded: {
       true: "min-h-full"
