@@ -1,1 +1,9 @@
-export { default as Default } from "./Default.svelte";
+export { default as FontSize } from "./FontSize.svelte";
+export { default as FontStyle } from "./FontStyle.svelte";
+export { default as FontWeight } from "./FontWeight.svelte";
+export { default as LetterSpacing } from "./LetterSpacing.svelte";
+export { default as LineHeight } from "./LineHeight.svelte";
+export { default as TextAlign } from "./TextAlign.svelte";
+export { default as TextColor } from "./TextColor.svelte";
+export { default as TextDecoration } from "./TextDecoration.svelte";
+export { default as Whitespace } from "./Whitespace.svelte";
