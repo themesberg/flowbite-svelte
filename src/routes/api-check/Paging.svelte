@@ -12,14 +12,24 @@ interface Post {
   path: string;
 }
 
-// Flatten everything from apicheck
-const components = (Object.values(data.posts.apicheck) as Post[][])
-  .flat()
-  .map(({ path }) => {
+interface Component {
+  path: string;
+  name: string;
+  category: string;
+}
+
+console.log("DEBUG: data =", data.posts.apicheck);
+
+// Flatten everything from apicheck and track categories
+const components: Component[] = [];
+
+Object.entries(data.posts.apicheck).forEach(([category, posts]) => {
+  (posts as Post[]).forEach(({ path }) => {
     const raw = path.replace("/", "").replace(/-/g, " ");
     const name = raw.replace(/\b\w/g, (c) => c.toUpperCase());
-    return { path, name };
+    components.push({ path, name, category });
   });
+});
 
 // Make these values reactive with a state that updates when URL changes
 let currentComponent = $state();
@@ -39,28 +49,20 @@ $effect(() => {
 
 function sibling(next: boolean) {
   const i = next ? index + 1 : index - 1;
-  const { path, name } = components[i];
+  const { path, name, category } = components[i];
   
-  // For /api-check/components/avatar, we want /api-check/components/alert (for example)
-  // So we need to replace just the last segment
+  // Build the correct path using the component's category
   const pathSegments = page.url.pathname.split("/").filter(Boolean);
-  pathSegments.pop(); // Remove current component (e.g., "avatar")
-  pathSegments.push(path.slice(1)); // Add new component (e.g., "alert")
+  pathSegments.pop(); // Remove current component (e.g., "video")
+  pathSegments.pop(); // Remove current category (e.g., "components")
+  pathSegments.push(category); // Add new category (e.g., "forms")
+  pathSegments.push(path.slice(1)); // Add new component (e.g., "checkbox")
   const href = "/" + pathSegments.join("/");
   
-  console.log("DEBUG: sibling href =", href, "for component", name);
+  console.log("DEBUG: sibling href =", href, "for component", name, "in category", category);
   
   return { href, name };
 }
-
-// Debug logging
-// console.log("DEBUG: url.pathname =", page.url.pathname);
-// console.log("DEBUG: currentComponent =", currentComponent);
-// console.log("DEBUG: index =", index);
-// console.log("DEBUG: components length =", components.length);
-// if (index >= 0) {
-//   console.log("DEBUG: current component in list =", components[index]);
-// }
 </script>
 
 <div class="flex flex-col items-start gap-4 py-4">
