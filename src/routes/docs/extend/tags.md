@@ -48,8 +48,6 @@ Import the `Tags` component in a script tag.
 
 ## Additional Props
 
-## Additional Props
-
 - `unique` (boolean, default: `false`): Prevents duplicate tags from being added if set to true.
 
 - `availableTags` (string[], default: `[]`): Defines a list of allowed tags that users can select from or type.

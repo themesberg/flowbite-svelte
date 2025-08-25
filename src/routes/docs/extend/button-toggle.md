@@ -64,7 +64,7 @@ description: Use the button toggle to toggle on/off with the appearance of a but
 
 You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, `lime`, `green`, `emerald`, `teal`, `cyan`, `sky`, `blue`, `indigo`, `violet`, `purple`, `fuchsia`, `pink`, `rose`.
 
-```svelte example class="grid grid-col-1 sm:grid-col-2 md:grid-col-3 space-y-4 "
+```svelte example class="grid grid-col-1 sm:grid-col-2 md:grid-col-3 space-y-4"
 <script lang="ts">
   import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
 

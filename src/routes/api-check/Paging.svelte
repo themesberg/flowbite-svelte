@@ -65,7 +65,7 @@ function sibling(next: boolean) {
 }
 </script>
 
-<div class="flex flex-col items-start gap-4 py-4">
+<div class="flex flex-col items-start gap-4 py-4 max-w-4xl">
   {#if index >= 0}
     <div class="flex flex-row justify-between gap-2.5 self-stretch">
       {#if index > 0}

@@ -24,7 +24,7 @@
       headings = [...document.querySelectorAll<HTMLElement>(headingSelector)].map(extract).filter((x) => x.name);
     });
   }
-
+  // $inspect("DEBUG: Toc initialized with headingSelector =", headings);
   afterNavigate(toc);
 </script>
 

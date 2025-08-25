@@ -90,7 +90,7 @@
   <Heading tag="h2">Bottom Navigation</Heading>
   <div class="relative h-96 w-96 border p-4">
     <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde ratione voluptatibus ex nobis nostrum eum aliquid sit vitae odio tempora a impedit ducimus omnis, itaque illo? Illo, voluptas natus!</P>
-    <BottomNav position="absolute" innerClass="grid-cols-4">
+    <BottomNav position="absolute" classes={{ inner: "grid-cols-4" }}>
       <BottomNavItem btnName="Home">
         <HomeSolid/>
       </BottomNavItem>

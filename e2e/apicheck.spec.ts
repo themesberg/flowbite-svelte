@@ -290,3 +290,40 @@ test("API check text page should have h1", async ({ page }) => {
   await page.goto("/api-check/typography/text");
   expect(await page.textContent("h1")).toBe("Text");
 });
+
+// extend, Button Toggle, Progressradial, Step Indicator, Tags
+test("API check button-toggle page should have h1", async ({ page }) => {
+  await page.goto("/api-check/extend/button-toggle");
+  expect(await page.textContent("h1")).toBe("Button Toggle");
+});
+
+test("API check progressradial page should have h1", async ({ page }) => {
+  await page.goto("/api-check/extend/progressradial");
+  expect(await page.textContent("h1")).toBe("Progressradial");
+});
+
+test("API check step-indicator page should have h1", async ({ page }) => {
+  await page.goto("/api-check/extend/step-indicator");
+  expect(await page.textContent("h1")).toBe("Step Indicator");
+});
+
+test("API check tags page should have h1", async ({ page }) => {
+  await page.goto("/api-check/extend/tags");
+  expect(await page.textContent("h1")).toBe("Tags");
+});
+
+// Utilities, CloseButton, Label, Toolbar
+test("API check close-button page should have h1", async ({ page }) => {
+  await page.goto("/api-check/utilities/close-button");
+  expect(await page.textContent("h1")).toBe("Close Button");
+});
+
+test("API check label page should have h1", async ({ page }) => {
+  await page.goto("/api-check/utilities/label");
+  expect(await page.textContent("h1")).toBe("Label");
+}); 
+
+test("API check toolbar page should have h1", async ({ page }) => {
+  await page.goto("/api-check/utilities/toolbar");
+  expect(await page.textContent("h1")).toBe("Toolbar");
+});
