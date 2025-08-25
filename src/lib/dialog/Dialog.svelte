@@ -36,12 +36,15 @@
   }
 
   function _onclick(ev: MouseEvent & { currentTarget: HTMLDialogElement }) {
-    const dlg: HTMLDialogElement = ev.currentTarget,
-      rect = dlg.getBoundingClientRect(),
-      clickedInContent = ev.clientX >= rect.left && ev.clientX <= rect.right && ev.clientY >= rect.top && ev.clientY <= rect.bottom;
+    const dlg: HTMLDialogElement = ev.currentTarget;
+    if (ev.target === dlg) {
+      // click outside - backdrop is dialog
+      const rect = dlg.getBoundingClientRect(),
+        clickedInContent = ev.clientX >= rect.left && ev.clientX <= rect.right && ev.clientY >= rect.top && ev.clientY <= rect.bottom;
 
-    if (outsideclose && !clickedInContent) {
-      return cancel(dlg);
+      if (outsideclose && !clickedInContent) {
+        return cancel(dlg);
+      }
     }
 
     if (autoclose && ev.target instanceof HTMLButtonElement && !permanent) {

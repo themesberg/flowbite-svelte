@@ -15,7 +15,7 @@ import type { ButtonVariants, GradientButtonVariantes, gradientButton } from "$l
 import type { CardVariants } from "$lib/card/theme";
 import type Slide from "$lib/carousel/Slide.svelte";
 import type { CarouselVariants, SlideVariants } from "$lib/carousel/theme";
-import type { DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
+import type { DrawerHandleVariants, DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
 import type { DropdownItemVariants } from "$lib/dropdown/theme";
 import type { DatepickerVariants } from "$lib/datepicker/theme";
 import type { FooterCopyrightVariants, FooterLinkVariants } from "$lib/footer/theme";
@@ -569,12 +569,15 @@ export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
 }
 
 // drawer
-export interface DrawerProps extends DrawerVariants, Omit<DialogProps, "hidden"> {
+export interface DrawerProps extends DrawerVariants, Omit<DialogProps, "hidden" | "classes" | "shifted"> {
   /** @deprecated Use `outsideclose` instead. Will be removed in next minor version. */
   activateClickOutside?: boolean;
   /** @deprecated Use `open` instead. Will be removed in next minor version. */
   hidden?: boolean | null;
+  offset?: string;
 }
+
+export interface DrawerHandleProps extends DrawerHandleVariants, HTMLButtonAttributes { }
 
 export interface DrawerheadProps extends DrawerheadVariants, HTMLButtonAttributes {
   closeIcon?: Snippet;
@@ -737,7 +740,7 @@ export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, O
 }
 
 // helper
-export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> {}
+export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> { }
 
 // input
 export type InputValue = string | number | string[] | undefined;
@@ -931,7 +934,7 @@ export interface TimepickerProps {
   timeIntervals?: string[];
   columns?: ColumnCount;
   // Callback props instead of events
-  onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
+  onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
 }
 
 // textarea
@@ -1120,7 +1123,7 @@ export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLD
   end?: Snippet;
 }
 
-export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
+export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> { }
 
 export type ToolbarButtonProps = ToolbarButtonVariants &
   AnchorButtonAttributes & {
@@ -1430,7 +1433,7 @@ export interface SkeletonProps extends SkeletonVariants, HTMLAttributes<HTMLDivE
   size?: SkeletonVariants["size"];
 }
 
-export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
+export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
 
 export interface TextPlaceholderProps extends TextPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
   size?: TextPlaceholderVariants["size"];
@@ -1440,7 +1443,7 @@ export interface VideoPlaceholderProps extends VideoPlaceholderVariants, HTMLAtt
   size?: VideoPlaceholderVariants["size"];
 }
 
-export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
+export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
 
 // speeddial
 export interface SpeedCtxType {
