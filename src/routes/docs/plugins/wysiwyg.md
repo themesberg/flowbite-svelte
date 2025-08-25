@@ -11,6 +11,7 @@ description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins 
   import { CompoAttributesViewer, GitHubCompoLinks, ExampleWrapper } from '../../utils'
   const components = 'Texteditor'
   import * as Examples from './examples';
+  
   // import Appcss from './examples/Appcss.svelte';
   // const Markdowns = import.meta.glob('./examples/*.svelte,{query:'?raw', import: 'default'})
   const tiptapVersion = __TIPTAP__;
@@ -27,6 +28,8 @@ description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins 
   
   import { Badge, P, Button, Accordion, AccordionItem, A } from "$lib"
   import { InfoCircleOutline } from "flowbite-svelte-icons";
+
+  const textEditor = __TEXTEDITOR__;
 </script>
 
 <svelte:head>
@@ -42,7 +45,7 @@ All examples provided on this page have support for dark mode, RTL (right-to-lef
 
 ## Installation
 
-<P class="text-red-500 text-xl">@flowbite-svelte-plugins/texteditor@0.24.0 contains breaking changes. It uses @tiptap{tiptapVersion}.</P>
+<P class="text-red-500 text-xl">UPDATE: @flowbite-svelte-plugins/texteditor@{textEditor} uses @tiptap{tiptapVersion}.</P>
 
 <Examples.InstallCommand />
 
@@ -51,7 +54,7 @@ All examples provided on this page have support for dark mode, RTL (right-to-lef
 Use the following example or create your own.
 
 <Accordion flush>
-  <AccordionItem contentClass="customstyle">
+  <AccordionItem classes={{ content: "customstyle" }}>
   {#snippet header()}Example style{/snippet}
   <Examples.Appcss />
   </AccordionItem>
