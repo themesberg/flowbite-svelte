@@ -16,7 +16,6 @@ export const codewrapper = tv({
   }
 });
 
-
 export const h1Cls = tv({
   base: "my-8 text-3xl"
 });

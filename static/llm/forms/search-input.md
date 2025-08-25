@@ -210,7 +210,7 @@ Get started with this example if you would like to enable voice search for your 
 </script>
 
 <form class="flex gap-2">
-  <Search hideClear size="lg" classes={{ input: "flex items-center gap-2" }} placeholder="Search Mockups, Logos, Design Templates...">
+  <Search size="lg" classes={{ input: "flex items-center gap-2" }} placeholder="Search Mockups, Logos, Design Templates...">
     <button type="button" onclick={handleVoiceBtn} class="outline-hidden">
       <MicrophoneSolid class="me-2 h-5 w-5" />
     </button>

@@ -321,7 +321,7 @@ test("API check close-button page should have h1", async ({ page }) => {
 test("API check label page should have h1", async ({ page }) => {
   await page.goto("/api-check/utilities/label");
   expect(await page.textContent("h1")).toBe("Label");
-}); 
+});
 
 test("API check toolbar page should have h1", async ({ page }) => {
   await page.goto("/api-check/utilities/toolbar");

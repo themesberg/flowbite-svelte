@@ -76,4 +76,3 @@
     <HighlightCompo codeLang="ts" code={exampleModules["./examples/Snapshot.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
-

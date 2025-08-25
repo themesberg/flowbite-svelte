@@ -81,7 +81,7 @@ If you want to add other actions as buttons alongside your textarea component, s
 
 <form>
   <label for="editor" class="sr-only">Publish post</label>
-  <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
+  <Textarea id="editor" rows={8} class="mb-4" placeholder="Write a comment">
     {#snippet header()}
       <Toolbar embedded>
         <ToolbarGroup>

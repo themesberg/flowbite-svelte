@@ -141,7 +141,7 @@ export const fetchApiCheck = async () => {
     typography,
     extend,
     utilities,
-    pages,
+    pages
   };
 };
 

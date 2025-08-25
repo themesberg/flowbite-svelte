@@ -18,7 +18,6 @@
   };
 </script>
 
-
 <ThemeProvider theme={theme1a}>
   <Heading tag="h1">Blue Heading</Heading>
   <P>Card example</P>

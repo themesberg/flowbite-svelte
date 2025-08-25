@@ -7,4 +7,3 @@ export { default as External } from "./External.svelte";
 export { default as Placement } from "./Placement.svelte";
 export { default as TooltipTypes } from "./TooltipTypes.svelte";
 export { default as Triggering } from "./Triggering.svelte";
-

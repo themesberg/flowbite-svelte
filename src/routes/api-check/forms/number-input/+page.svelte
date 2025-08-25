@@ -29,7 +29,6 @@
   {/snippet}
 </CodeWrapper>
 
-
 <H2>Phone number</H2>
 <CodeWrapper>
   <ExampleComponents.Phone />
@@ -61,4 +60,3 @@
     <HighlightCompo codeLang="ts" code={exampleModules["./examples/Counter.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
-

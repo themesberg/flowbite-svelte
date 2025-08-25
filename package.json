@@ -769,8 +769,8 @@
       "svelte": "./dist/tooltip/Tooltip.svelte"
     },
     "./A.svelte": {
-      "types": "./dist/typography/anchor/A.svelte.d.ts",
-      "svelte": "./dist/typography/anchor/A.svelte"
+      "types": "./dist/typography/a/A.svelte.d.ts",
+      "svelte": "./dist/typography/a/A.svelte"
     },
     "./Blockquote.svelte": {
       "types": "./dist/typography/blockquote/Blockquote.svelte.d.ts",

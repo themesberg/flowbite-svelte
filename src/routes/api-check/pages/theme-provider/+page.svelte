@@ -11,7 +11,7 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
-  
+
   import { ThemeProvider, Accordion, AccordionItem, Alert, Avatar, Badge, Heading, Banner, P, BottomNav, BottomNavItem, Breadcrumb, BreadcrumbItem, ButtonGroup, Button, GradientButton, Card } from "$lib";
   // theme types
   import type { ThemeConfig } from "$lib";
@@ -30,7 +30,7 @@
     },
     banner: {
       base: "mx-auto bg-yellow-400 border-blue-600"
-    } ,
+    },
     bottomNav: {
       inner: "border-red-500"
     },
@@ -58,14 +58,14 @@
       base: "bg-red-50 w-72 p-4 sm:p-6 md:p-8",
       image: ""
     },
-    heading: 'my-8'
+    heading: "my-8"
   };
   const theme2 = {
-    paragraph: 'me-8 flex items-center text-lg font-normal text-blue-500 md:me-0 dark:text-blue-400'
-  }
+    paragraph: "me-8 flex items-center text-lg font-normal text-blue-500 md:me-0 dark:text-blue-400"
+  };
   const theme3 = {
-    heading: 'mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'
-  }
+    heading: "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+  };
 
   const theme1a = {
     card: {

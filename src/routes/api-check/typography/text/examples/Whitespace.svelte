@@ -6,8 +6,4 @@
 
 <P whitespace="nowrap">This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</P>
 
-<P whitespace="preline">
-  This is some text. This is some text. This is some text. 
-  This is some text. This is some text. This is some text. 
-  This is some text. This is some text. This is some text.
-</P>
+<P whitespace="preline">This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</P>

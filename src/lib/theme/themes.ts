@@ -63,7 +63,7 @@ export { timepicker } from "../forms/timepicker";
 export { toggle } from "../forms/toggle";
 
 // typography
-export { anchor } from "../typography/anchor";
+export { anchor } from "../typography/a";
 export { blockquote } from "../typography/blockquote";
 export { descriptionList } from "../typography/descriptionlist";
 export { heading } from "../typography/heading";

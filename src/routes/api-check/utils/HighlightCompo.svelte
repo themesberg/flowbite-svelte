@@ -16,14 +16,7 @@
     clipboardClass?: string;
   }
 
-  let {
-    code,
-    codeLang,
-    contentClass = "overflow-hidden",
-    replaceLib = "flowbiet-svelte",
-    clipboardClass,
-    class: className
-  }: Props = $props();
+  let { code, codeLang, contentClass = "overflow-hidden", replaceLib = "flowbiet-svelte", clipboardClass, class: className }: Props = $props();
 
   let value = $state(code);
   if (replaceLib) {
@@ -51,21 +44,8 @@
 </script>
 
 <div class={base}>
-  <div
-    class="{contentClass} {showExpandButton ? 'pb-8' : ''}"
-    class:max-h-72={!expand}
-    tabindex="-1"
-    use:checkOverflow
-  >
-    <Clipboard
-      size="xs"
-      color="alternative"
-      bind:value
-      class={twMerge(
-        "absolute top-2 right-2 w-20 bg-gray-50 focus:ring-0 dark:bg-gray-800",
-        clipboardClass
-      )}
-    >
+  <div class="{contentClass} {showExpandButton ? 'pb-8' : ''}" class:max-h-72={!expand} tabindex="-1" use:checkOverflow>
+    <Clipboard size="xs" color="alternative" bind:value class={twMerge("absolute top-2 right-2 w-20 bg-gray-50 focus:ring-0 dark:bg-gray-800", clipboardClass)}>
       {#snippet children(success)}
         {#if success}
           Copied
@@ -84,12 +64,7 @@
   </div>
 
   {#if showExpandButton}
-    <button
-      onclick={handleExpandClick}
-      type="button"
-      class="hover:text-primary-700 absolute start-0 bottom-0 w-full border-t border-gray-200 bg-gray-100 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-      >{expand ? "Collapse code" : "Expand code"}</button
-    >
+    <button onclick={handleExpandClick} type="button" class="hover:text-primary-700 absolute start-0 bottom-0 w-full border-t border-gray-200 bg-gray-100 px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{expand ? "Collapse code" : "Expand code"}</button>
   {/if}
 </div>
 

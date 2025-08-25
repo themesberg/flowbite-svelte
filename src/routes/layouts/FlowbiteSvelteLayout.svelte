@@ -67,7 +67,7 @@
       <NavLi class="lg:mb-0 lg:px-2" href="/illustrations/illustrations">Illustrations</NavLi>
     </NavUl>
 
-    <div class="ml-auto flex items-center order-1 lg:order-2">
+    <div class="order-1 ml-auto flex items-center lg:order-2">
       <ToolbarLink class="hidden hover:text-gray-900 xl:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
         <GitHub />
       </ToolbarLink>
@@ -80,12 +80,12 @@
       <DarkMode size="lg" class="inline-block hover:text-gray-900 dark:hover:text-white" />
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
-    <a href="https://www.npmjs.com/package/flowbite-svelte" class="hidden xl:block order-4">
+    <a href="https://www.npmjs.com/package/flowbite-svelte" class="order-4 hidden xl:block">
       <Badge large class="hover:bg-primary-600 dark:hover:bg-primary-800 ms-2 hover:text-white xl:ms-6 dark:hover:text-white">
         v{version}
       </Badge>
     </a>
-    <NavHamburger class="m-0 ml-3 order-3 lg:hidden" />
+    <NavHamburger class="order-3 m-0 ml-3 lg:hidden" />
   </Navbar>
 </header>
 

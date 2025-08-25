@@ -273,7 +273,7 @@ Use this example to verify a phone number via SMS or phone call using a dropdown
       </DropdownItem>
     </Dropdown>
     <Label for="phone-input" class="sr-only">Phone number:</Label>
-    <PhoneInput phoneIcon={false} placeholder="123-456-7890" required phoneType="countryCode" classes={{ defaultInput: "rounded-none border-r-0" }} />
+    <PhoneInput phoneIcon={false} placeholder="123-456-7890" required phoneType="countryCode" classes={{ input: "rounded-none border-r-0" }} />
     <label for="phone-input" class="sr-only">Phone number:</label>
     <button id="dropdown-verification-option-button" data-dropdown-toggle="dropdown-verification-option" class="z-10 inline-flex shrink-0 items-center rounded-e-lg border border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-sm font-medium text-gray-900 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700" type="button">
       Send SMS <svg class="ms-2.5 h-2.5 w-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" /></svg>

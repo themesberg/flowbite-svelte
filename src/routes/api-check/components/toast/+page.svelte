@@ -78,7 +78,7 @@
 </CodeWrapper>
 
 <H2>Undo</H2>
-<CodeWrapper innerClass="flex justify-center h-40" >
+<CodeWrapper innerClass="flex justify-center h-40">
   <ExampleComponents.Undo />
   {#snippet codeblock()}
     <HighlightCompo codeLang="ts" code={exampleModules["./examples/Undo.svelte"] as string} />

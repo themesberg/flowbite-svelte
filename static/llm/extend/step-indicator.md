@@ -67,23 +67,28 @@ Use the `size` prop to change the size of a step indicator.
 </script>
 
 <div class="my-4">
-  <div class="mb-1 text-base font-medium dark:text-white">Small</div>
-  <StepIndicator {currentStep} {steps} size="h-1.5" />
+  <div class="mb-1 text-base font-medium dark:text-white">xs</div>
+  <StepIndicator {currentStep} {steps} size="xs" />
+</div>
+
+<div class="my-4">
+  <div class="mb-1 text-base font-medium dark:text-white">sm</div>
+  <StepIndicator {currentStep} {steps} size="sm" />
 </div>
 
 <div class="my-4">
   <div class="mb-1 text-base font-medium dark:text-white">Default</div>
-  <StepIndicator {currentStep} {steps} size="h-2.5" />
+  <StepIndicator {currentStep} {steps} size="md" />
 </div>
 
 <div class="my-4">
-  <div class="mb-1 text-lg font-medium dark:text-white">Large</div>
-  <StepIndicator {currentStep} {steps} size="h-4" />
+  <div class="mb-1 text-lg font-medium dark:text-white">lg</div>
+  <StepIndicator {currentStep} {steps} size="lg" />
 </div>
 
 <div class="my-4">
-  <div class="mb-1 text-lg font-medium dark:text-white">Extra Large</div>
-  <StepIndicator {currentStep} {steps} size="h-6" />
+  <div class="mb-1 text-lg font-medium dark:text-white">xl</div>
+  <StepIndicator {currentStep} {steps} size="xl" />
 </div>
 ```
 

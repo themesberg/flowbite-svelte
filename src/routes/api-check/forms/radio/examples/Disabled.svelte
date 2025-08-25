@@ -1,6 +1,6 @@
 <script>
   import { Radio } from "flowbite-svelte";
-   let selectedValue = $state("2");
+  let selectedValue = $state("2");
 </script>
 
 <Radio name="disabled-state" disabled value="1" bind:group={selectedValue}>Disabled radio</Radio>

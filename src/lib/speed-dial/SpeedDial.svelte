@@ -9,7 +9,7 @@
 
   let { children, popperClass, placement = "top", pill = true, tooltip = "left", trigger = "hover", textOutside = false, class: className, classes, isOpen = $bindable(false), ...restProps }: SpeedDialProps = $props();
 
-  warnThemeDeprecation("SpeedDial", {popperClass}, { popperClass: "popper" });
+  warnThemeDeprecation("SpeedDial", { popperClass }, { popperClass: "popper" });
   const styling = $derived(
     classes ?? {
       popper: popperClass

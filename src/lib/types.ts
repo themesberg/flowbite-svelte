@@ -61,7 +61,7 @@ import type { ToggleVariants } from "$lib/forms/toggle/theme";
 import type { PhoneInputVariants } from "$lib/forms/phoneinput/theme";
 
 // typography component variants
-import type { AnchorVariants } from "$lib/typography/anchor/theme";
+import type { AnchorVariants } from "$lib/typography/a/theme";
 import type { BlockquoteVariants } from "$lib/typography/blockquote/theme";
 import type { DescriptionListVariants } from "$lib/typography/descriptionlist/theme";
 import type { HeadingVariants } from "$lib/typography/heading/theme";

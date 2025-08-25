@@ -70,7 +70,7 @@ export * from "./forms/timepicker";
 export * from "./forms/toggle";
 
 // typography
-export * from "./typography/anchor";
+export * from "./typography/a";
 export * from "./typography/blockquote";
 export * from "./typography/descriptionlist";
 export * from "./typography/heading";

@@ -436,8 +436,8 @@ Use this example to show multiple time interval selections inside of a drawer co
     workingDays = [...workingDays];
   }
 
-  function handleTimeChange(index: number, isStartTime: boolean, event: { detail: { time: string } }): void {
-    const newTime = event.detail.time;
+  function handleTimeChange(index: number, isStartTime: boolean, event: { time: string; endTime: string; [key: string]: string }): void {
+    const newTime = isStartTime ? event.time : event.endTime;
     if (isStartTime) {
       workingDays[index].startTime = newTime;
     } else {

@@ -2,7 +2,6 @@
   import { FloatingLabelInput, Helper } from "flowbite-svelte";
 </script>
 
-
 <!-- Success messages -->
 <div class="mb-6 grid items-end gap-6 md:grid-cols-3">
   <div>
