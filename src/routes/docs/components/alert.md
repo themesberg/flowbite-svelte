@@ -29,34 +29,7 @@ Import Alert and set variables in the script tag.
 Use the following examples of alert components to show messages as feedback to your users.
 
 ```svelte example class="flex flex-col gap-4"
-<script>
-  import { Alert } from "flowbite-svelte";
-</script>
-
-<Alert>
-  <span class="font-medium">Default alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
-<Alert color="blue">
-  <span class="font-medium">Info alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
-<Alert color="red">
-  <span class="font-medium">Danger alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
-<Alert color="green">
-  <span class="font-medium">Success alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
-<Alert color="yellow">
-  <span class="font-medium">Warning alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
-<Alert color="secondary">
-  <span class="font-medium">Dark alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
+{@include Default.svelte}
 ```
 
 ## Alerts with icon
@@ -64,41 +37,7 @@ Use the following examples of alert components to show messages as feedback to y
 You can also include a descriptive icon to complement the message inside the alert component with the following example.
 
 ```svelte example class="flex flex-col gap-4"
-<script>
-  import { Alert } from "flowbite-svelte";
-  import { InfoCircleSolid } from "flowbite-svelte-icons";
-</script>
-
-<Alert>
-  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
-  <span class="font-medium">Default alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
-<Alert color="blue">
-  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
-  <span class="font-medium">Info alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
-<Alert color="red">
-  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
-  <span class="font-medium">Danger alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
-<Alert color="green">
-  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
-  <span class="font-medium">Success alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
-<Alert color="yellow">
-  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
-  <span class="font-medium">Warning alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
-<Alert color="secondary">
-  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
-  <span class="font-medium">Dark alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
+{@include Icon.svelte}
 ```
 
 ## Bordered alerts

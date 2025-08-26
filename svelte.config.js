@@ -4,6 +4,7 @@ import adapter from "@sveltejs/adapter-vercel";
 // import adapter from '@sveltejs/adapter-auto';
 // import preprocess from 'svelte-preprocess';
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
+import { includeFiles } from './include-files.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,6 +15,11 @@ const config = {
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
   preprocess: [
+    includeFiles({ 
+      extensions :  ['.md'],
+      docsDir : 'src/routes/docs',
+      examplesDir : 'src/routes/docs-examples'
+    }),
     mdsvex(mdsvexConfig),
     // preprocess({
     //   postcss: true
