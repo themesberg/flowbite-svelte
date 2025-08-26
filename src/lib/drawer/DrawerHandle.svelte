@@ -17,3 +17,17 @@
   {@render children?.()}
   <span class={handle({ class: clsx(theme?.handle, classes?.handle) })}></span>
 </button>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L580)
+## Props
+@prop children
+@prop placement
+@prop "aria-label": ariaLabel
+@prop class: className
+@prop classes
+@prop ...restProps
+-->

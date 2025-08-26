@@ -46,7 +46,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L831)
+[SearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L834)
 ## Props
 @prop children
 @prop inputClass

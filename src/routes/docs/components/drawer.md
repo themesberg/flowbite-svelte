@@ -232,23 +232,22 @@ Use `Tab` and `Shift+Tab` to navigate between buttons or links in the drawer. Pr
 
 Use the placement prop to position the drawer component either on the top, right, bottom, or left side of the document page. This can be done using the `placement='left|right|top|bottom'` where the default value is `left`.
 
-
 ```svelte example
 <script>
   import { Drawer, CardPlaceholder, Button, Label, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
   let open5 = $state(false);
-  let placement = $state("right")
+  let placement = $state("right");
 </script>
 
 <div class="text-center">
-  <Button onclick={() => ((placement="top"), (open5 = true))}>Top drawer</Button>
-  <div class="space-x-6 my-2">
-    <Button onclick={() => ((placement="left"), (open5 = true))}>Left drawer</Button>
-    <Button onclick={() => ((placement="right"), (open5 = true))}>Right drawer</Button>
+  <Button onclick={() => ((placement = "top"), (open5 = true))}>Top drawer</Button>
+  <div class="my-2 space-x-6">
+    <Button onclick={() => ((placement = "left"), (open5 = true))}>Left drawer</Button>
+    <Button onclick={() => ((placement = "right"), (open5 = true))}>Right drawer</Button>
   </div>
-  <Button onclick={() => ((placement="bottom"), (open5 = true))}>Bottom drawer</Button>
+  <Button onclick={() => ((placement = "bottom"), (open5 = true))}>Bottom drawer</Button>
   <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
@@ -341,7 +340,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 </Drawer>
 ```
 
-## Swipeable edge 
+## Swipeable edge
 
 The drawer edge functionality allows you to show a small part of the drawer when it is not shown completely by applying the `offset` property. This can be given any CSS compliant unit like `200px` or `10em`.
 
@@ -386,6 +385,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
   </div>
 </Drawer>
 ```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
