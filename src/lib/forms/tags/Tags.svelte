@@ -194,7 +194,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L888)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L896)
 ## Props
 @prop value = $bindable([])
 @prop placeholder = "Enter tags"

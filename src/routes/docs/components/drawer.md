@@ -348,7 +348,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 ```svelte example
 <script>
-  import { Drawer, DrawerHandle, CardPlaceholder, Button } from "flowbite-svelte";
+  import { Drawer, DrawerHandle, CardPlaceholder } from "flowbite-svelte";
   import { AdjustmentsVerticalSolid, ChartPieSolid, ClipboardListSolid, GridPlusSolid, ReceiptSolid, TableRowSolid, UsersSolid } from "flowbite-svelte-icons";
 
   let open = $state(false);

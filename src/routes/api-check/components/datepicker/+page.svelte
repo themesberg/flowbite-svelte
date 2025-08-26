@@ -140,3 +140,11 @@
     <HighlightCompo codeLang="ts" code={exampleModules["./examples/Usage.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
+
+<H2>ActionSlot</H2>
+<CodeWrapper>
+  <ExampleComponents.ActionSlot />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/ActionSlot.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>

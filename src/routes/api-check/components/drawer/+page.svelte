@@ -124,3 +124,11 @@
     <HighlightCompo codeLang="ts" code={exampleModules["./examples/Scrolling.svelte"] as string} />
   {/snippet}
 </CodeWrapper>
+
+<H2>Swipeable Edge</H2>
+<CodeWrapper>
+  <ExampleComponents.SwipeableEdge />
+  {#snippet codeblock()}
+    <HighlightCompo codeLang="ts" code={exampleModules["./examples/SwipeableEdge.svelte"] as string} />
+  {/snippet}
+</CodeWrapper>

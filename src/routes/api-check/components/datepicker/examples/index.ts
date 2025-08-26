@@ -1,4 +1,5 @@
 export { default as Action } from "./Action.svelte";
+export { default as ActionSlot } from "./ActionSlot.svelte";
 export { default as Color } from "./Color.svelte";
 export { default as Default } from "./Default.svelte";
 export { default as Disabled } from "./Disabled.svelte";

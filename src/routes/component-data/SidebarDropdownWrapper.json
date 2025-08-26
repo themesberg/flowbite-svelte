@@ -2,7 +2,7 @@
   "name": "SidebarDropdownWrapper",
   "type": {
     "name": "SidebarDropdownWrapperProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1381"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1389"
   },
   "props": [
     ["children", ""],

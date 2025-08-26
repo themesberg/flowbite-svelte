@@ -105,7 +105,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1158)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1166)
 ## Props
 @prop currentPage = 1
 @prop totalPages = 1

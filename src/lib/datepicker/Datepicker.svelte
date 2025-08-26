@@ -7,7 +7,7 @@
   import { parse, isValid, addDays, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, isWithinInterval } from "date-fns";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), availableFrom = null, availableTo = null, locale = "default", translationLocale = locale, firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, inputmode = "none", classes, monthColor = "alternative", monthBtnSelected = "bg-primary-500 text-white", monthBtn = "text-gray-700 dark:text-gray-300", class: className, elementRef = $bindable() }: DatepickerProps = $props();
+  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), availableFrom = null, availableTo = null, locale = "default", translationLocale = locale, firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, inputmode = "none", classes, monthColor = "alternative", monthBtnSelected = "bg-primary-500 text-white", monthBtn = "text-gray-700 dark:text-gray-300", class: className, elementRef = $bindable(), actionSlot }: DatepickerProps = $props();
 
   const theme = getTheme("datepicker");
 
@@ -458,6 +458,20 @@
           <Button onclick={handleApply} {color} size="sm">Apply</Button>
         </div>
       {/if}
+
+      {#if actionSlot}
+        <div class={clsx(classes?.actionSlot, theme?.actionSlot)}>
+          {@render actionSlot({
+            selectedDate: range ? { from: rangeFrom, to: rangeTo } : value,
+            handleClear,
+            handleApply,
+            close: () => {
+              isOpen = false;
+              showMonthSelector = false;
+            }
+          })}
+        </div>
+      {/if}
     </div>
   {/if}
 </div>
@@ -466,7 +480,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L451)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L458)
 ## Props
 @prop value = $bindable()
 @prop defaultDate = null
@@ -499,4 +513,5 @@
 @prop monthBtn = "text-gray-700 dark:text-gray-300"
 @prop class: className
 @prop elementRef = $bindable()
+@prop actionSlot
 -->

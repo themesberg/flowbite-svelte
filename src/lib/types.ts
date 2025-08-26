@@ -448,6 +448,13 @@ export interface DarkmodeProps extends HTMLButtonAttributes {
 // datepicker
 export type DateOrRange = Date | { from?: Date; to?: Date };
 
+export interface ActionSlotParams {
+  selectedDate: DateOrRange | undefined;
+  handleClear: () => void;
+  handleApply: (date: DateOrRange) => void;
+  close: () => void;
+}
+
 export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes<HTMLDivElement>, "onselect"> {
   value?: Date;
   defaultDate?: Date | null;
@@ -478,6 +485,7 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   monthBtn?: ClassValue;
   translationLocale?: string;
   elementRef?: HTMLInputElement;
+  actionSlot?: Snippet<[ActionSlotParams]>;
 }
 
 // device-mockups
