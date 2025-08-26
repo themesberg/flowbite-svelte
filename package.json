@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.12.6",
+  "version": "1.13.0",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -315,6 +315,10 @@
     "./Drawer.svelte": {
       "types": "./dist/drawer/Drawer.svelte.d.ts",
       "svelte": "./dist/drawer/Drawer.svelte"
+    },
+    "./DrawerHandle.svelte": {
+      "types": "./dist/drawer/DrawerHandle.svelte.d.ts",
+      "svelte": "./dist/drawer/DrawerHandle.svelte"
     },
     "./Drawerhead.svelte": {
       "types": "./dist/drawer/Drawerhead.svelte.d.ts",

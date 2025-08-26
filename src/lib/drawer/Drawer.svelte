@@ -96,8 +96,10 @@
 @prop children
 @prop open = $bindable(false)
 @prop hidden = $bindable()
+@prop modal
+@prop offset
 @prop width
-@prop dismissable 
+@prop dismissable = offset ? false : undefined
 @prop placement = "left"
 @prop class: className
 @prop transitionParams

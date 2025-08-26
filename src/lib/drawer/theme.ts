@@ -38,24 +38,24 @@ export const drawer = tv({
     },
     {
       shifted: true,
-      placement: 'left',
+      placement: "left",
       class: { base: "-translate-x-full" }
     },
     {
       shifted: true,
-      placement: 'right',
+      placement: "right",
       class: { base: "translate-x-full" }
     },
     {
       shifted: true,
-      placement: 'top',
+      placement: "top",
       class: { base: "-translate-y-full" }
     },
     {
       shifted: true,
-      placement: 'bottom',
+      placement: "bottom",
       class: { base: "translate-y-full" }
-    },
+    }
   ],
   defaultVariants: {
     placement: "left",
@@ -87,6 +87,6 @@ export const drawerhandle = tv({
       right: { base: "inset-y-0 left-0 touch-pan-y", handle: "w-1 h-8 top-1/2 -translate-y-1/2" },
       top: { base: "inset-x-0 bottom-0 touch-pan-x", handle: "w-8 h-1 left-1/2 -translate-x-1/2" },
       bottom: { base: "inset-x-0 top-0 touch-pan-x", handle: "w-8 h-1 left-1/2 -translate-x-1/2" }
-    },
-  },
+    }
+  }
 });
