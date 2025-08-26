@@ -57,7 +57,7 @@ export function includeFiles({
           }
         );
         
-        return { code: processedContent };
+        return { code: processedContent, dependencies: Array.from(deps) };
       } catch (error) {
         console.error('Error in include-files preprocessor:', error);
         return { code: content };
