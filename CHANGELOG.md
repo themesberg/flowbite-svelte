@@ -1,23 +1,34 @@
 # Changelog
 
+## 1.13.1
+
+### Patch Changes
+
+- feat: add actionSlot with parameters to Datepicker component
+  - Add actionSlot snippet prop to enable custom action buttons
+  - Pass selectedDate, handleClear, handleApply, and close functions to actionSlot
+  - Update DatepickerProps interface with ActionSlotParams type
+  - Support both single date and date range modes in actionSlot
+  - Allow custom actions while maintaining access to datepicker state and methods
+
 ## 1.13.0
 
 ### Minor Changes
 
-- - Dialog click handling src/lib/dialog/Dialog.svelte
-    Guards outside-close/backdrop logic with ev.target === dlg; computes bounding rect / clickedInContent only when target is the dialog/backdrop; no public API changes.
-  - Drawer core updates src/lib/drawer/Drawer.svelte
-    Adds modal and offset props; makes dismissable optional; dynamic modal/shifted handling; exposes placement via context; introduces reactive x/y and transition_params, init(node) hook, onintrostart/onoutrostart handlers; secondary Dialog rendering when offset set.
-  - Drawer handle component src/lib/drawer/DrawerHandle.svelte
-    New DrawerHandle button component with theming, placement context lookup, forwards props/aria, renders children and an inner handle span.
-  - Exports & theme barrel src/lib/drawer/index.ts, src/lib/theme/themes.ts
-    Adds DrawerHandle export and re-exports drawerhandle from drawer theme; expands public theme barrel to include drawerhandle.
-  - Drawer theme src/lib/drawer/theme.ts
-    Adds border/transform classes to drawer base, introduces shifted variant and compoundVariants mapping placement→translate classes, refines modal handling, and adds drawerhandle tv plus DrawerHandleVariants type.
-  - Types src/lib/types.ts
-    Adds DrawerHandleProps (extends DrawerHandleVariants & HTMLButtonAttributes); updates DrawerProps to omit `"hidden"
-  - Docs src/routes/docs/components/drawer.md
-    Collapses separate placement examples into a single interactive demo, documents offset and DrawerHandle in a new “Swipeable edge” section, tightens layout and clarifies backdrop/modal notes.
+- Dialog click handling src/lib/dialog/Dialog.svelte
+  Guards outside-close/backdrop logic with ev.target === dlg; computes bounding rect / clickedInContent only when target is the dialog/backdrop; no public API changes.
+- Drawer core updates src/lib/drawer/Drawer.svelte
+  Adds modal and offset props; makes dismissable optional; dynamic modal/shifted handling; exposes placement via context; introduces reactive x/y and transition_params, init(node) hook, onintrostart/onoutrostart handlers; secondary Dialog rendering when offset set.
+- Drawer handle component src/lib/drawer/DrawerHandle.svelte
+  New DrawerHandle button component with theming, placement context lookup, forwards props/aria, renders children and an inner handle span.
+- Exports & theme barrel src/lib/drawer/index.ts, src/lib/theme/themes.ts
+  Adds DrawerHandle export and re-exports drawerhandle from drawer theme; expands public theme barrel to include drawerhandle.
+- Drawer theme src/lib/drawer/theme.ts
+  Adds border/transform classes to drawer base, introduces shifted variant and compoundVariants mapping placement→translate classes, refines modal handling, and adds drawerhandle tv plus DrawerHandleVariants type.
+- Types src/lib/types.ts
+  Adds DrawerHandleProps (extends DrawerHandleVariants & HTMLButtonAttributes); updates DrawerProps to omit `"hidden"
+- Docs src/routes/docs/components/drawer.md
+  Collapses separate placement examples into a single interactive demo, documents offset and DrawerHandle in a new “Swipeable edge” section, tightens layout and clarifies backdrop/modal notes.
 
 ## 1.12.6
 

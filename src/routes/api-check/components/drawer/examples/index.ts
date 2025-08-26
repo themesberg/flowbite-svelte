@@ -11,4 +11,5 @@ export { default as OnlyOutside } from "./OnlyOutside.svelte";
 export { default as Position } from "./Position.svelte";
 export { default as Right } from "./Right.svelte";
 export { default as Scrolling } from "./Scrolling.svelte";
+export { default as SwipeableEdge } from "./SwipeableEdge.svelte";
 export { default as Top } from "./Top.svelte";

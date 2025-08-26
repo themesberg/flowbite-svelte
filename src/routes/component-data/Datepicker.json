@@ -2,7 +2,7 @@
   "name": "Datepicker",
   "type": {
     "name": "DatepickerProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L451"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L458"
   },
   "props": [
     ["value", "$bindable()"],
@@ -35,6 +35,7 @@
     ["monthBtnSelected", "\"bg-primary-500 text-white\""],
     ["monthBtn", "\"text-gray-700 dark:text-gray-300\""],
     ["class: className", ""],
-    ["elementRef", "$bindable()"]
+    ["elementRef", "$bindable()"],
+    ["actionSlot", ""]
   ]
 }
