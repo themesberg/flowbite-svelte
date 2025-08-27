@@ -66,7 +66,7 @@
     example,
     code,
     codeString = undefined, // New prop
-    divClass = "relative w-full mx-auto bg-linear-to-r p-6 bg-white dark:bg-gray-900"
+    divClass = "relative w-full mx-auto bg-linear-to-r p-5 bg-white dark:bg-gray-900"
   }: Props = $props();
 
   type NotificationDirection = "ltr" | "rtl" | "auto";
