@@ -65,6 +65,9 @@
   }
 
   async function onintrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
+    restProps.onintrostart?.(ev);
+    if (ev.defaultPrevented) return;
+
     // set the values for transition start position
     const dlg = ev.currentTarget;
     const { innerWidth = 0, innerHeight = 0 } = dlg.ownerDocument.defaultView ?? {};
@@ -84,11 +87,14 @@
   }
 
   function onoutrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
+    restProps.onoutrostart?.(ev);
+    if (ev.defaultPrevented) return;
+
     shifted = true;
   }
 </script>
 
-<Dialog {@attach init} bind:open {modal} {dismissable} {transition} {onintrostart} {onoutrostart} {outsideclose} transitionParams={transition_params} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<Dialog {@attach init} bind:open {modal} {dismissable} {transition} {outsideclose} transitionParams={transition_params} {...restProps} {onintrostart} {onoutrostart} class={base({ class: clsx(theme?.base, className) })}>
   {@render children?.()}
 </Dialog>
 
