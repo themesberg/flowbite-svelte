@@ -8,13 +8,8 @@
 
   const theme = getTheme("radioButton");
 
-  let inputEl: HTMLInputElement;
   let isChecked = $derived(value == group);
   let base = $derived(radioButton({ inline, class: clsx(isChecked && checkedClass, theme, className) }));
-
-  function clickHandler() {
-    inputEl?.click(); // manually trigger the click on the hidden input
-  }
 </script>
 
 <Button tag="label" {pill} {outline} {size} {color} {shadow} class={base}>
