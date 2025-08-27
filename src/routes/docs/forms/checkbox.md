@@ -45,7 +45,7 @@ This example can be used for the disabled state of the checkbox component by app
 If you need separate control over the label and the checkbox you can use the verbose syntax, but then you need to take care about aligning manually.
 
 ```svelte example class="flex flex-col gap-4"
-{@include alternative.svelte}
+{@include Alternative.svelte}
 ```
 
 ## Checkbox with a link
