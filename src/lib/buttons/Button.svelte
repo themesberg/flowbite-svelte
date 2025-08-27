@@ -20,7 +20,11 @@
   let btnCls = $derived(base({ class: clsx(outline && outline_(), shadow && shadow_(), theme?.base, className) }));
 </script>
 
-{#if restProps.href === undefined}
+{#if restProps.href !== undefined}
+  <a {...restProps} class={btnCls}>
+    {@render children?.()}
+  </a>
+{:else if tag === "button"}
   <button type="button" {...restProps} class={btnCls} disabled={isDisabled}>
     {@render children?.()}
     {#if loading}
@@ -30,10 +34,6 @@
       </svg>
     {/if}
   </button>
-{:else if restProps.href}
-  <a {...restProps} class={btnCls} role="button">
-    {@render children?.()}
-  </a>
 {:else}
   <svelte:element this={tag} {...restProps} class={btnCls}>
     {@render children?.()}

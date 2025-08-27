@@ -17,8 +17,8 @@
   }
 </script>
 
-<Button tag="label" onclick={clickHandler} {pill} {outline} {size} {color} {shadow} class={base}>
-  <input bind:this={inputEl} type="radio" class="sr-only" {value} bind:group {...restProps} />
+<Button tag="label" {pill} {outline} {size} {color} {shadow} class={base}>
+  <input type="radio" class="sr-only" {value} bind:group {...restProps} />
   {@render children?.()}
 </Button>
 
