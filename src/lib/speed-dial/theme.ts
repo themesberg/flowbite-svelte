@@ -23,9 +23,13 @@ export const speedDial = tv({
 export const speedDialButton = tv({
   slots: {
     base: "w-[52px] h-[52px] shadow-xs p-0",
-    span: "block mb-px text-xs font-medium"
+    span: "mb-px text-xs font-medium"
   },
   variants: {
+    noTooltip: {
+      false: {},
+      true: {}
+    },
     textOutside: {
       true: {
         base: "relative",
@@ -33,5 +37,11 @@ export const speedDialButton = tv({
       }
     }
   },
+  compoundVariants:[
+    {noTooltip: true,
+      textOutside: false,
+      class: {base: "flex flex-col"}
+    }
+  ],
   defaultVariants: {}
 });

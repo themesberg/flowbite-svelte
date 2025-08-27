@@ -22,15 +22,10 @@
 
   const theme = getTheme("speedDialButton");
 
-  let { base, span } = $derived(speedDialButton({ textOutside }));
-  let spanCls = $derived(tooltip === "none" ? span({ class: clsx(theme?.span, styling.span) }) : "sr-only");
+  let { base, span } = $derived(speedDialButton({ textOutside, noTooltip: tooltip === "none" }));
+  let spanCls = $derived(tooltip === "none" || textOutside ? span({ class: clsx(theme?.span, styling.span) }) : "sr-only");
 
-  // Add flex-col when tooltip is shown
-  let buttonCls = $derived(
-    base({
-      class: clsx(theme?.base, className, tooltip !== "none" && "flex-col")
-    })
-  );
+  let buttonCls = $derived(base({ class: clsx(theme?.base, className) }));
 </script>
 
 <Button {pill} {color} {...restProps} class={buttonCls}>
