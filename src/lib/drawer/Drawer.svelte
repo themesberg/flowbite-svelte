@@ -73,11 +73,14 @@
 
     x = placement === "left" ? rect.left : placement === "right" ? rect.right - innerWidth : undefined;
     y = placement === "top" ? rect.top : placement === "bottom" ? rect.bottom - innerHeight : undefined;
-    // remove shift for transition end position
-    shifted = false;
 
-    // add offset if closed, remove it when open
-    if (offset) dlg.style[placement] = open ? "" : offset;
+    tick().then(() => {
+      // remove shift for transition end position
+      shifted = false;
+
+      // add offset if closed, remove it when open
+      if (offset) dlg.style[placement] = open ? "" : offset;
+    });
   }
 
   function onoutrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
