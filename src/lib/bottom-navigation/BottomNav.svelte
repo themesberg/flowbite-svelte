@@ -1,31 +1,38 @@
 <script lang="ts">
+  import { type BottomNavContextType, type BottomNavProps, cn } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   import { setContext } from "svelte";
-  import { writable } from "svelte/store";
   import { bottomNav } from ".";
-  import { type BottomNavProps, type BottomNavContextType, cn } from "$lib";
 
-  let { children, header, position = "fixed", navType = "default", outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
+  let { children, header, position = "fixed", navType = "default", class: className, classes, outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
+
+  warnThemeDeprecation("BottomNav", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
+  const styling = $derived(classes ?? { inner: innerClass });
+
+  // Theme context
+  const theme = getTheme("bottomNav");
 
   const activeCls = cn("text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900", activeClass);
 
-  const activeUrlStore = writable("");
-  setContext("activeUrl", activeUrlStore);
-  setContext("navType", navType);
-  setContext<BottomNavContextType>("bottomNavType", { activeClass: activeCls });
+  let context: BottomNavContextType = $state({ activeClass: activeCls, activeUrl, navType });
+  setContext<BottomNavContextType>("bottomNavType", context);
 
-  const { outer, inner } = $derived(bottomNav({ position, navType }));
+  const { base, inner } = $derived(bottomNav({ position, navType }));
 
   $effect(() => {
-    activeUrlStore.set(activeUrl);
+    context.activeUrl = activeUrl;
+    context.navType = navType;
+    context.activeClass = activeCls;
   });
 </script>
 
-<div {...restProps} class={cn(outer(), outerClass)}>
+<div {...restProps} class={base({ class: clsx(theme?.base, className ?? outerClass) })}>
   {#if header}
     {@render header()}
   {/if}
 
-  <div class={cn(inner(), innerClass)}>
+  <div class={inner({ class: clsx(theme?.inner, styling.inner) })}>
     {@render children()}
   </div>
 </div>
@@ -34,12 +41,14 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L255)
+[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L247)
 ## Props
 @prop children
 @prop header
 @prop position = "fixed"
 @prop navType = "default"
+@prop class: className
+@prop classes
 @prop outerClass
 @prop innerClass
 @prop activeClass

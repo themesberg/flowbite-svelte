@@ -1,69 +1,64 @@
 <script lang="ts">
   import type { DragEventHandler, ChangeEventHandler } from "svelte/elements";
   import { dropzone } from ".";
-  import { type DropzoneProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type DropzoneProps } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   type HTMLInputElementWithFiles = HTMLInputElement & { files: FileList | null };
 
-  let { children, files = $bindable<FileList | null>(), class: className, ...restProps }: DropzoneProps = $props();
+  let { children, files = $bindable<FileList | null>(), class: className, onDrop, onDragOver, onChange, ...restProps }: DropzoneProps = $props();
 
-  let input: HTMLInputElement;
+  const theme = getTheme("dropzone");
 
-  function keydown(ev: KeyboardEvent) {
-    if ([" ", "Enter"].includes(ev.key)) {
-      ev.preventDefault();
-      input.click();
-    }
-  }
+  let inputElement: HTMLInputElement;
 
-  function onClick(event: MouseEvent) {
-    event.preventDefault();
-    input.click();
-  }
-
-  const onDrop: DragEventHandler<HTMLButtonElement> = function (this: Window, event) {
+  const handleDrop: DragEventHandler<HTMLLabelElement> = function (this: Window, event) {
     event.preventDefault();
 
-    // When files are dropped, update the files binding
     if (event.dataTransfer?.files && event.dataTransfer.files.length > 0) {
       files = event.dataTransfer.files;
+      if (inputElement) {
+        inputElement.files = event.dataTransfer.files;
+      }
     }
 
-    // Then call any custom ondrop handler
-    if (ondrop) {
-      ondrop.call(this, event);
+    if (onDrop) {
+      onDrop.call(this, event);
     }
   };
 
-  const onDragOver: DragEventHandler<HTMLButtonElement> = function (this: Window, event) {
+  const handleDragOver: DragEventHandler<HTMLLabelElement> = function (this: Window, event) {
     event.preventDefault();
-    if (ondragover) {
-      ondragover.call(this, event);
+    if (onDragOver) {
+      onDragOver.call(this, event);
     }
   };
 
-  const onChange: ChangeEventHandler<HTMLInputElementWithFiles> = function (this: Window, event) {
-    if (onchange) {
-      onchange.call(this, event);
+  const handleChange: ChangeEventHandler<HTMLInputElementWithFiles> = function (this: Window, event) {
+    if (onChange) {
+      onChange.call(this, event);
     }
   };
 </script>
 
-<button class={cn(dropzone(), className)} onkeydown={keydown} onclick={onClick} ondrop={onDrop} ondragover={onDragOver} type="button">
+<label class={dropzone({ class: clsx(theme, className) })} ondrop={handleDrop} ondragover={handleDragOver}>
   {@render children()}
-</button>
-<label class="hidden">
-  <input {...restProps} bind:files bind:this={input} onchange={onChange} type="file" />
+
+  <input {...restProps} bind:files bind:this={inputElement} onchange={handleChange} type="file" class="hidden" />
 </label>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropzoneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L715)
+[DropzoneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L705)
 ## Props
 @prop children
 @prop files = $bindable<FileList | null>()
 @prop class: className
+@prop onDrop
+@prop onDragOver
+@prop onChange
 @prop ...restProps
 -->

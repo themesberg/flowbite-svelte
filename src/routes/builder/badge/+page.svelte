@@ -158,15 +158,15 @@
     <Button disabled={badgeStatus2 ? true : false} onclick={changeStatus}>Open badge</Button>
   </div>
   <div class="flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Color</Label>
+    <Label class="mb-4 w-full font-bold">Color 1</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24" name="color" bind:group={color} color={colorOption as BadgeProps["color"]} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="color" bind:group={color} color={colorOption as BadgeProps["color"]} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio disabled={badgeDismissable ? false : true} labelClass="w-16 my-1 {badgeDismissable ? '' : 'opacity-30 cursor-not-allowed'}" name="transition_interactive" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      <Radio disabled={badgeDismissable ? false : true} classes={{ label: "w-16 my-1 {badgeDismissable ? '' : 'opacity-30 cursor-not-allowed'}" }} name="transition_interactive" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

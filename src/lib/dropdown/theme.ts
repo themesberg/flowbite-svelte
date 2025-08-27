@@ -1,10 +1,8 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
 export const dropdown = tv({
-  slots: {
-    base: "mt-2 divide-y divide-gray-300 dark:divide-gray-500 overflow-hidden rounded-lg bg-white shadow-sm dark:bg-gray-700",
-    backdrop: "fixed top-0 start-0 w-full h-full"
-  }
+  base: "mt-2 divide-y divide-gray-300 dark:divide-gray-500 overflow-hidden rounded-lg bg-white shadow-sm dark:bg-gray-700"
 });
 
 export const dropdownDivider = tv({
@@ -15,10 +13,13 @@ export const dropdownHeader = tv({
   base: "px-4 py-3 text-sm text-gray-900 dark:text-white"
 });
 
+export type DropdownItemVariants = VariantProps<typeof dropdownItem> & Classes<typeof dropdownItem>;
+
 export const dropdownItem = tv({
   slots: {
-    anchor: "block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white",
-    activeAnchor: "block px-4 py-2 text-primary-700 dark:text-primary-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+    base: "block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white",
+    active: "block px-4 py-2 text-primary-700 dark:text-primary-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white",
+    li: ""
   }
 });
 

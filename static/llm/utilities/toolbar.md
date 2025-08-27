@@ -81,7 +81,7 @@ If you want to add other actions as buttons alongside your textarea component, s
 
 <form>
   <label for="editor" class="sr-only">Publish post</label>
-  <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
+  <Textarea id="editor" rows={8} class="mb-4" placeholder="Write a comment">
     {#snippet header()}
       <Toolbar embedded>
         <ToolbarGroup>
@@ -139,7 +139,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1131)
+[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1130)
 
 #### Props
 
@@ -148,12 +148,13 @@ Most often the textarea component is used as the main text field input element i
 - color
 - embedded
 - class: className
+- classes
 
 ### ToolbarButton
 
 #### Types
 
-[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1137)
+[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1136)
 
 #### Props
 
@@ -168,7 +169,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1135)
+[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1134)
 
 #### Props
 

@@ -413,10 +413,10 @@ Use this example to show multiple time interval selections inside of a drawer co
 
 ```svelte example class="flex justify-center p-4" hideResponsiveButtons
 <script lang="ts">
-  import { Button, Drawer, Label, Select, Toggle, Checkbox, Timepicker, Card, P, Heading, Span, CloseButton } from "flowbite-svelte";
+  import { Button, Drawer, Label, Select, Toggle, Checkbox, Timepicker, Card, P, Heading, Span } from "flowbite-svelte";
   import { InfoCircleSolid, ClockSolid, PlusOutline, TrashBinSolid, CloseOutline } from "flowbite-svelte-icons";
 
-  let hidden = $state(true);
+  let open = $state(false);
   let businessHoursEnabled = $state(true);
   let selectedTimezoneDrawer = $state("");
   let workingDays = $state([
@@ -447,8 +447,8 @@ Use this example to show multiple time interval selections inside of a drawer co
     workingDays = [...workingDays];
   }
 
-  function handleTimeChange(index: number, isStartTime: boolean, event: { detail: { time: string } }): void {
-    const newTime = event.detail.time;
+  function handleTimeChange(index: number, isStartTime: boolean, event: { time: string; endTime: string; [key: string]: string }): void {
+    const newTime = isStartTime ? event.time : event.endTime;
     if (isStartTime) {
       workingDays[index].startTime = newTime;
     } else {
@@ -482,7 +482,7 @@ Use this example to show multiple time interval selections inside of a drawer co
   function saveAll(e: Event): void {
     e.preventDefault();
     console.log("Saving settings:", { businessHoursEnabled, selectedTimezoneDrawer, workingDays });
-    hidden = true;
+    open = false;
   }
 
   const timepickerClasses = {
@@ -492,20 +492,17 @@ Use this example to show multiple time interval selections inside of a drawer co
 </script>
 
 <div class="flex justify-center">
-  <Button onclick={() => (hidden = false)} class="transform transition-all hover:scale-105">
+  <Button onclick={() => (open = true)} class="transform transition-all hover:scale-105">
     <ClockSolid class="me-2 h-4 w-4" />
     Set Time Schedule
   </Button>
 </div>
 
-<Drawer bind:hidden class="w-96 bg-gray-50 p-6 dark:bg-gray-800" id="drawer-timepicker">
-  <div class="mb-8 flex items-center justify-between">
-    <Heading tag="h5" id="drawer-label" class="inline-flex items-center text-base font-semibold text-gray-800 uppercase dark:text-white">
-      <ClockSolid class="h-6 w-6" />
-      Time schedule
-    </Heading>
-    <CloseButton onclick={() => (hidden = true)} class="mb-4 dark:text-white" />
-  </div>
+<Drawer bind:open class="w-96 bg-gray-50 p-6 dark:bg-gray-800">
+  <Heading tag="h5" id="drawer-label" class="mb-8 inline-flex items-center text-base font-semibold text-gray-800 uppercase dark:text-white">
+    <ClockSolid class="h-6 w-6" />
+    Time schedule
+  </Heading>
 
   <form onsubmit={saveAll} class="space-y-8">
     <Card class="p-4 transition-shadow hover:shadow-lg">
@@ -550,7 +547,7 @@ Use this example to show multiple time interval selections inside of a drawer co
     </Button>
 
     <div class="flex gap-4">
-      <Button class="w-1/2" color="alternative" onclick={() => (hidden = true)}>Cancel</Button>
+      <Button class="w-1/2" color="alternative" onclick={() => (open = false)}>Cancel</Button>
       <Button type="submit" class="w-1/2" color="primary">Save Changes</Button>
     </div>
   </form>

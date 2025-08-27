@@ -1,4 +1,2 @@
-import Popover from "./Popover.svelte";
-import { popover } from "./theme";
-
-export { Popover, popover };
+export { default as Popover } from "./Popover.svelte";
+export { popover } from "./theme";

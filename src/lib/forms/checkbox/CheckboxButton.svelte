@@ -1,9 +1,13 @@
 <script lang="ts">
   import Button from "$lib/buttons/Button.svelte";
-  import { type CheckboxButtonProps, cn } from "$lib";
-  import { checkboxbutton } from "./theme";
+  import clsx from "clsx";
+  import { type CheckboxButtonProps } from "$lib";
+  import { checkboxButton } from "./theme";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, group = $bindable([]), value, checked, inline, pill, outline, size, color, shadow, ...restProps }: CheckboxButtonProps = $props();
+
+  const theme = getTheme("checkboxButton");
 
   // react on external group changes
   function init(_: HTMLElement, _group: (string | number)[]) {
@@ -42,7 +46,7 @@
     }
   }
 
-  let buttonClass: string = $derived(cn(checkboxbutton({ inline, checked }), className));
+  let buttonClass: string = $derived(checkboxButton({ inline, checked, class: clsx(theme, className) }));
 </script>
 
 <Button tag="label" {checked} {pill} {outline} {size} {color} {shadow} class={buttonClass}>
@@ -54,7 +58,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CheckboxButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L702)
+[CheckboxButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L692)
 ## Props
 @prop children
 @prop class: className

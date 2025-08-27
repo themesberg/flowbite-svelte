@@ -110,13 +110,14 @@ Use the `icon` snippet to change icons.
 
 #### Types
 
-[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L313)
+[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L278)
 
 #### Props
 
 - children
 - solid: false
 - class: className
+- classes
 - olClass
 - ariaLabel: "Breadcrumb"
 
@@ -124,7 +125,7 @@ Use the `icon` snippet to change icons.
 
 #### Types
 
-[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L320)
+[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L285)
 
 #### Props
 
@@ -136,6 +137,7 @@ Use the `icon` snippet to change icons.
 - spanClass
 - homeClass
 - class: className
+- classes
 
 
 ## References

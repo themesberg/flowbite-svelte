@@ -3,27 +3,30 @@
   import { toolbarButton } from ".";
   import type { ToolbarButtonProps } from "$lib/types";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   const background = getContext("background");
   let { children, color, name, "aria-label": ariaLabel, size, class: className, ...restProps }: ToolbarButtonProps = $props();
 
-  const buttonClass = $derived(
+  const theme = getTheme("toolbarButton");
+
+  const buttonCls = $derived(
     toolbarButton({
       color,
       size,
       background: !!background,
-      class: clsx(className)
+      class: clsx(theme, className)
     })
   );
 </script>
 
 {#if restProps.href === undefined}
-  <button type="button" {...restProps} class={buttonClass} aria-label={ariaLabel ?? name}>
+  <button type="button" {...restProps} class={buttonCls} aria-label={ariaLabel ?? name}>
     {#if name}<span class="sr-only">{name}</span>{/if}
     {@render children?.()}
   </button>
 {:else}
-  <a {...restProps} class={buttonClass} aria-label={ariaLabel ?? name}>
+  <a {...restProps} class={buttonCls} aria-label={ariaLabel ?? name}>
     {#if name}<span class="sr-only">{name}</span>{/if}
     {@render children?.()}
   </a>
@@ -33,7 +36,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1137)
+[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1136)
 ## Props
 @prop children
 @prop color

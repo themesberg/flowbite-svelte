@@ -1,13 +1,15 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
-  import { tableheadcell } from ".";
+  import { tableHeadCell } from ".";
   import type { TableHeadCellProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: TableHeadCellProps = $props();
+
+  const theme = getTheme("tableHeadCell");
 </script>
 
-<th {...restProps} class={twMerge(tableheadcell(), clsx(className))}>
+<th {...restProps} class={tableHeadCell({ class: clsx(theme, className) })}>
   {#if children}
     {@render children()}
   {/if}
@@ -17,7 +19,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1678)
+[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1682)
 ## Props
 @prop children
 @prop class: className

@@ -1,19 +1,22 @@
 <script lang="ts">
-  import type { Writable } from "svelte/store";
-  import { getContext } from "svelte";
-  import { toolbarGroup } from ".";
+  import { getTheme } from "$lib/theme/themeUtils";
   import type { ToolbarGroupProps } from "$lib/types";
   import clsx from "clsx";
+  import { getContext } from "svelte";
+  import { toolbarGroup } from ".";
 
   let { children, spacing, padding, position = "middle", class: className, ...restProps }: ToolbarGroupProps = $props();
 
-  const groupClass = $derived(toolbarGroup({ spacing, padding, position, class: clsx(className) }));
+  const theme = getTheme("toolbarGroup");
 
-  const options: Writable<boolean> = getContext("toolbar");
-  if (options) $options = true;
+  const groupCls = $derived(toolbarGroup({ spacing, padding, position, class: clsx(theme, className) }));
+
+  const context = getContext<Record<string, boolean>>("toolbar");
+
+  if (context) context.separators = true;
 </script>
 
-<div {...restProps} class={groupClass}>
+<div {...restProps} class={groupCls}>
   {@render children?.()}
 </div>
 
@@ -21,7 +24,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1135)
+[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1134)
 ## Props
 @prop children
 @prop spacing

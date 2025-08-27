@@ -54,7 +54,7 @@ Use these default button styles with multiple colors to indicate an action or li
 
 You can add a link to a Button component:
 
-```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center" hideScript hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
 </script>
@@ -166,7 +166,7 @@ Use the following button styles to show the colors only for the border of the el
   import { Button } from "flowbite-svelte";
 </script>
 
-<div class="flex flex-wrap gap-2">
+<div class="flex justify-center gap-2">
   <Button outline>Default</Button>
   <Button outline color="dark">Dark</Button>
   <Button outline color="green">Green</Button>
@@ -180,7 +180,7 @@ Use the following button styles to show the colors only for the border of the el
 
 Use these examples if you want to use smaller or larger buttons.
 
-```svelte example class="gap-2" hideScript hideResponsiveButtons
+```svelte example class="space-y-2" hideScript hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
   import { EnvelopeSolid } from "flowbite-svelte-icons";
@@ -197,7 +197,7 @@ Use these examples if you want to use smaller or larger buttons.
 
 Use the following examples to add a SVG icon inside the button either on the left or right side.
 
-```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
   import { ArrowRightOutline, CartSolid } from "flowbite-svelte-icons";
@@ -215,7 +215,7 @@ Use the following examples to add a SVG icon inside the button either on the lef
 
 This example can be used to show a notification count or helper text inside a button using the badge element.
 
-```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideResponsiveButtons
 <script>
   import { Button, Indicator } from "flowbite-svelte";
 </script>
@@ -230,7 +230,7 @@ This example can be used to show a notification count or helper text inside a bu
 
 Sometimes you need a button to indicate an action using only an icon.
 
-```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
   import { ThumbsUpSolid, ArrowRightOutline } from "flowbite-svelte-icons";
@@ -252,7 +252,7 @@ Sometimes you need a button to indicate an action using only an icon.
 
 Use the spinner components to indicate a loader animation inside buttons.
 
-```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideResponsiveButtons
 <script>
   import { Button, Spinner } from "flowbite-svelte";
 </script>
@@ -269,7 +269,7 @@ Use the spinner components to indicate a loader animation inside buttons.
 
 You can add any additional button attributes. The following example shows adding the `disabled` attribute.
 
-```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideScript hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
 </script>
@@ -281,7 +281,7 @@ You can add any additional button attributes. The following example shows adding
 
 You can use `onclick` or any standard `on*` to listen to the event.
 
-```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
+```svelte example class="flex justify-center gap-2" hideResponsiveButtons
 <script>
   import { Button } from "flowbite-svelte";
   const btn1 = () => {
@@ -294,6 +294,25 @@ You can use `onclick` or any standard `on*` to listen to the event.
 
 <Button onclick={btn1}>Button 1</Button>
 <Button ontouchstart={btn2}>Button 2</Button>
+```
+
+## Loading State with Spinner
+
+Use the `loading` prop to indicate a pending action (e.g. form submission). When `true`, the button is automatically disabled and shows a built-in spinner. This improves user feedback and prevents duplicate submissions.
+
+```svelte example class="flex justify-center"
+<script lang="ts">
+  import { Button } from "flowbite-svelte";
+  let loading = $state(false);
+
+  async function handleSubmit() {
+    loading = true;
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    loading = false;
+  }
+</script>
+
+<Button class="w-32" onclick={handleSubmit} {loading}>Submit</Button>
 ```
 
 ## See also

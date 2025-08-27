@@ -8,7 +8,7 @@ On this page you will find all of the input types based on multiple variants, st
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Input, Label, Helper } from "flowbite-svelte";
 </script>
 ```
@@ -18,8 +18,8 @@ On this page you will find all of the input types based on multiple variants, st
 Use this example as a generic form element which includes multiple input fields types such as text, email, password, number, URL, and phone number and use the grid layout to add multiple columns and rows.
 
 ```svelte
-<script>
-  import { Input, Label, Helper, Button, Checkbox, A } from "flowbite-svelte";
+<script lang="ts">
+  import { Input, Label, Button, Checkbox, A } from "flowbite-svelte";
 </script>
 
 <form>
@@ -61,7 +61,7 @@ Use this example as a generic form element which includes multiple input fields 
     <Label for="confirm_password" class="mb-2">Confirm password</Label>
     <Input type="password" id="confirm_password" placeholder="•••••••••" required />
   </div>
-  <Checkbox divClass="mb-6 gap-1 rtl:space-x-reverse" required>
+  <Checkbox classes={{ div: "mb-6 gap-1 rtl:space-x-reverse" }} required>
     I agree with the <A href="/" class="text-primary-700 dark:text-primary-600 hover:underline">terms and conditions</A>.
   </Checkbox>
   <Button type="submit">Submit</Button>
@@ -74,7 +74,7 @@ This example shows how to create an input field where the user can remove the
 text with one click.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Input } from "flowbite-svelte";
 </script>
 
@@ -84,7 +84,7 @@ text with one click.
 ## Event
 
 ```svelte
-<script>
+<script lang="ts">
   import { Input } from "flowbite-svelte";
 </script>
 
@@ -136,8 +136,11 @@ Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
   };
 </script>
 
-<Button onclick={handleClick}>Click to focus on Input in Modal</Button>
-<Modal title="Terms of Service" bind:open={defaultModal} autoclose>
+<Button onclick={handleClick}>Default modal</Button>
+<Modal dismissable={false} bind:open={defaultModal}>
+  {#snippet header()}
+    Form title
+  {/snippet}
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cumque quisquam dolores doloribus. Aperiam perferendis quod ea repudiandae odit libero tempore error?</p>
   <form>
     <div class="mb-6 grid gap-6 md:grid-cols-2">
@@ -170,7 +173,7 @@ Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
 ## Combobox
 
 ```svelte
-<script>
+<script lang="ts">
   import { Input } from "flowbite-svelte";
   const carMakers = ["Toyota", "Ford", "Honda", "Chevrolet", "Nissan", "BMW", "Mercedes-Benz", "Volkswagen", "Hyundai", "Kia", "Mazda", "Subaru", "Lexus", "Audi", "Jeep", "Dodge", "Ram", "GMC", "Cadillac", "Chrysler", "Buick", "Infiniti", "Acura", "Volvo", "Porsche", "Jaguar", "Land Rover", "Mini", "Mitsubishi", "Genesis", "Tesla", "Fiat", "Peugeot", "Renault", "Alfa Romeo", "Citroën", "SEAT", "Skoda", "Saab", "Suzuki", "Isuzu", "Scion", "Hummer", "Lincoln", "Opel", "Daewoo", "Rivian", "Lucid", "Polestar", "Bugatti", "Maserati", "Ferrari", "Lamborghini", "Bentley", "Rolls-Royce", "Aston Martin", "McLaren", "Pagani", "Koenigsegg", "Maybach", "Tata", "Mahindra", "Perodua", "Proton", "Chery", "Geely", "Great Wall", "BYD", "NIO", "XPeng", "VinFast", "Zotye", "FAW", "BAIC", "Lancia", "Dacia", "Cupra", "Roewe", "Holden", "Smart"];
 </script>
@@ -183,7 +186,7 @@ Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
 ## Combobox with Icon
 
 ```svelte
-<script>
+<script lang="ts">
   import { Input } from "flowbite-svelte";
   import { EnvelopeSolid } from "flowbite-svelte-icons";
   const fakeEmails = ["alex.jones@example.com", "maria.smith@example.com", "john.doe@example.com", "emma.wilson@example.com", "liam.brown@example.com", "olivia.johnson@example.com", "noah.miller@example.com", "ava.davis@example.com", "elijah.garcia@example.com", "sophia.martinez@example.com"];
@@ -203,7 +206,7 @@ Use the following examples to apply a small, default or large size for the input
 User the size prop to change the input size. Choose one from 'sm:text-md' | 'text-sm' | 'sm:text-xs'. The default size is text-sm.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Input, Label } from "flowbite-svelte";
 </script>
 
@@ -228,7 +231,7 @@ User the size prop to change the input size. Choose one from 'sm:text-md' | 'tex
 Get started with this example if you want to apply the disabled state to an input field. Add the disabled to change the input to disabled.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Input } from "flowbite-svelte";
 </script>
 
@@ -241,7 +244,7 @@ Get started with this example if you want to apply the disabled state to an inpu
 Use the following example to apply validation styles for success and error messages.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Input, Label, Helper } from "flowbite-svelte";
 </script>
 
@@ -266,7 +269,7 @@ Use the following example to apply validation styles for success and error messa
 ## Input with Icon
 
 ```svelte
-<script>
+<script lang="ts">
   import { Label, Input, Button, CloseButton } from "flowbite-svelte";
   import { EnvelopeSolid } from "flowbite-svelte-icons";
 </script>
@@ -307,7 +310,7 @@ Use the following example to apply validation styles for success and error messa
 This example can be used to add a descriptive icon or additional text inside the input field.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Label, Input, Button, InputAddon, ButtonGroup, Checkbox } from "flowbite-svelte";
 </script>
 
@@ -365,8 +368,8 @@ This example can be used to add a descriptive icon or additional text inside the
 This example shows how to add `onclick` event handler to the icon in `Input`. By clicking an icon, it toggles icon and `type`:
 
 ```svelte
-<script>
-  import { Button, Label, Input, ButtonGroup, InputAddon } from "flowbite-svelte";
+<script lang="ts">
+  import { Label, Input, ButtonGroup, InputAddon } from "flowbite-svelte";
   import { EyeOutline, EyeSlashOutline } from "flowbite-svelte-icons";
   let show = $state(false);
   let show1 = $state(false);
@@ -409,7 +412,7 @@ This example shows how to add `onclick` event handler to the icon in `Input`. By
 Use the helper prop to add your helper text. You can use HTML in the helper text.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Input, Label, Helper } from "flowbite-svelte";
 </script>
 
@@ -446,7 +449,7 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 ## Search input
 
 ```svelte
-<script>
+<script lang="ts">
   import { Input, Label, Button } from "flowbite-svelte";
   import { SearchOutline } from "flowbite-svelte-icons";
 </script>
@@ -469,8 +472,8 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 Use this example to show a dropdown menu right next to the input field.
 
 ```svelte
-<script>
-  import { Input, InputAddon, ButtonGroup, Button, Dropdown, DropdownItem } from "flowbite-svelte";
+<script lang="ts">
+  import { Input, ButtonGroup, Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline, SearchOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -496,7 +499,7 @@ Use this example to show a dropdown menu right next to the input field.
 If you need a full control over `input` HTML element while still re-using the Flowbite formatting, you can put the `input` element as a default slot. The example below is in fact the implementation of the above mentioned `NumberInput`.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Input } from "flowbite-svelte";
   let value = $state(5);
 </script>
@@ -541,7 +544,7 @@ If you need a full control over `input` HTML element while still re-using the Fl
       <label for="email">Email</label>
       <Input id="email" bind:value={email} type="email" />
       <label for="comment">Comment</label>
-      <Textarea id="comment" bind:value={comment} />
+      <Textarea id="comment" bind:value={comment} class="w-full" />
       <Button onclick={handleSubmit} class="mt-4">Submit</Button>
     </form>
   </TabItem>

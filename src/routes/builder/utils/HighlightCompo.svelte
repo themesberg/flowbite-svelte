@@ -1,6 +1,6 @@
 <script lang="ts">
   import { HighlightSvelte, Highlight } from "svelte-rune-highlight";
-  import markdown from "svelte-rune-highlight/languages/markdown";
+  import markdown from "highlight.js/lib/languages/markdown";
   import { Button, Badge } from "$lib";
   import { copyToClipboard, replaceLibImport } from "./helpers";
   import { highlightcompo } from "./theme";
@@ -49,6 +49,10 @@
         // Handle the error as needed
       });
   }
+  const mdLang = {
+    name: "markdown",
+    register: markdown
+  };
 </script>
 
 <div class={base({ className })}>
@@ -58,7 +62,7 @@
         <Badge class={badge({ class: badgeClass })} color="green">Copied to clipboard</Badge>
       {/if}
       {#if codeLang === "md"}
-        <Highlight language={markdown} {code} />
+        <Highlight language={mdLang} {code} />
       {:else if code}
         <HighlightSvelte {code} />
       {:else}

@@ -1,6 +1,8 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type InputVariants = VariantProps<typeof input>;
+// Variants
+export type InputVariants = VariantProps<typeof input> & Classes<typeof input>;
 
 export const input = tv({
   slots: {
@@ -8,9 +10,12 @@ export const input = tv({
     input: "block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:outline-hidden",
     left: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 pointer-events-none start-0 p-2.5",
     right: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 end-0 p-2.5",
-    clearbtn: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black",
+    close: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black",
     combo: "absolute top-full right-0 left-0 z-20 mt-1 max-h-60 overflow-y-auto rounded-md border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800",
-    comboItem: "text-gray-900 dark:text-gray-50"
+    comboItem: "text-gray-900 dark:text-gray-50",
+    div: "",
+    svg: "",
+    wrapper: ""
   },
   variants: {
     size: {
@@ -86,7 +91,7 @@ export const input = tv({
         input: "border border-rose-200 dark:border-rose-400 focus:ring-rose-500 focus:border-rose-600 dark:focus:ring-rose-500 dark:focus:border-rose-500 bg-rose-50 text-rose-900 placeholder-rose-700 dark:text-rose-400 dark:placeholder-rose-500 dark:bg-gray-700"
       }
     },
-    group: {
+    grouped: {
       false: { input: "rounded-lg" },
       true: {
         input: "first:rounded-s-lg last:rounded-e-lg not-first:-ms-px"

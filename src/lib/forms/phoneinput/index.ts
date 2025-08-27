@@ -1,2 +1,2 @@
 export { default as PhoneInput } from "./PhoneInput.svelte";
-export { phoneinput } from "./theme";
+export { phoneInput } from "./theme";

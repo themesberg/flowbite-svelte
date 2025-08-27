@@ -84,37 +84,37 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as size}
-      <Radio class="my-1 w-12" name="p_size" bind:group={pSize} value={size}>{size}</Radio>
+      <Radio class="my-1" classes={{ label: "w-12" }} name="p_size" bind:group={pSize} value={size}>{size}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Weight</Label>
     {#each weights as weight}
-      <Radio class="my-1 w-20" name="p_weight" bind:group={pWeight} value={weight}>{weight}</Radio>
+      <Radio class="my-1" classes={{ label: "w-20" }} name="p_weight" bind:group={pWeight} value={weight}>{weight}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Space(Tracking)</Label>
     {#each spaces as space}
-      <Radio class="my-1 w-20" name="p_space" bind:group={pSpace} value={space}>{space}</Radio>
+      <Radio class="my-1" classes={{ label: "w-20" }} name="p_space" bind:group={pSpace} value={space}>{space}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Height(Leading)</Label>
     {#each heights as height}
-      <Radio class="my-1 w-16" name="p_height" bind:group={pHeight} value={height}>{height}</Radio>
+      <Radio class="my-1" classes={{ label: "w-16" }} name="p_height" bind:group={pHeight} value={height}>{height}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Alignment</Label>
     {#each alignments as align}
-      <Radio class="my-1 w-20" name="p_align" bind:group={pAlign} onchange={() => (pJustify = false)} value={align}>{align}</Radio>
+      <Radio class="my-1" classes={{ label: "w-20" }} name="p_align" bind:group={pAlign} onchange={() => (pJustify = false)} value={align}>{align}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Whitespace</Label>
     {#each whitespaces as whitespace}
-      <Radio class="my-1 w-16" name="p_whitespace" bind:group={pWhitespace} value={whitespace}>{whitespace}</Radio>
+      <Radio class="my-1" classes={{ label: "w-16" }} name="p_whitespace" bind:group={pWhitespace} value={whitespace}>{whitespace}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

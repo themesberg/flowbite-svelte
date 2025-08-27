@@ -2,7 +2,7 @@
   "name": "AdvancedRating",
   "type": {
     "name": "AdvancedRatingProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1238"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1237"
   },
   "props": [
     ["rating", ""],
@@ -13,6 +13,8 @@
     ["div2Class", ""],
     ["div3Class", ""],
     ["span2Class", ""],
+    ["class: className", ""],
+    ["classes", ""],
     ["unit", ""]
   ]
 }

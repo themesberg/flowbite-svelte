@@ -1,5 +1,494 @@
 # Changelog
 
+## 1.13.1
+
+### Patch Changes
+
+- feat: add actionSlot with parameters to Datepicker component
+  - Add actionSlot snippet prop to enable custom action buttons
+  - Pass selectedDate, handleClear, handleApply, and close functions to actionSlot
+  - Update DatepickerProps interface with ActionSlotParams type
+  - Support both single date and date range modes in actionSlot
+  - Allow custom actions while maintaining access to datepicker state and methods
+
+## 1.13.0
+
+### Minor Changes
+
+- Dialog click handling src/lib/dialog/Dialog.svelte
+  Guards outside-close/backdrop logic with ev.target === dlg; computes bounding rect / clickedInContent only when target is the dialog/backdrop; no public API changes.
+- Drawer core updates src/lib/drawer/Drawer.svelte
+  Adds modal and offset props; makes dismissable optional; dynamic modal/shifted handling; exposes placement via context; introduces reactive x/y and transition_params, init(node) hook, onintrostart/onoutrostart handlers; secondary Dialog rendering when offset set.
+- Drawer handle component src/lib/drawer/DrawerHandle.svelte
+  New DrawerHandle button component with theming, placement context lookup, forwards props/aria, renders children and an inner handle span.
+- Exports & theme barrel src/lib/drawer/index.ts, src/lib/theme/themes.ts
+  Adds DrawerHandle export and re-exports drawerhandle from drawer theme; expands public theme barrel to include drawerhandle.
+- Drawer theme src/lib/drawer/theme.ts
+  Adds border/transform classes to drawer base, introduces shifted variant and compoundVariants mapping placement→translate classes, refines modal handling, and adds drawerhandle tv plus DrawerHandleVariants type.
+- Types src/lib/types.ts
+  Adds DrawerHandleProps (extends DrawerHandleVariants & HTMLButtonAttributes); updates DrawerProps to omit `"hidden"
+- Docs src/routes/docs/components/drawer.md
+  Collapses separate placement examples into a single interactive demo, documents offset and DrawerHandle in a new “Swipeable edge” section, tightens layout and clarifies backdrop/modal notes.
+
+## 1.12.6
+
+### Patch Changes
+
+- fix: SidebarButton update
+
+## 1.12.5
+
+### Patch Changes
+
+- fix: Avatar theming src/lib/avatar/theme.ts
+
+Changed stacked variant from "border-2 -ms-4 ..." to "border-2 not-first:-ms-4 ..." so the negative margin applies only to non-first avatars.
+
+- fix: Drawer implementation & types src/lib/drawer/Drawer.svelte, src/lib/drawer/theme.ts
+
+Drawer.svelte no longer destructures classes and now forwards it via ...restProps; DrawerVariants type expanded to include Classes<typeof dialog>.
+
+- fix: Modal prop forwarding src/lib/modal/Modal.svelte
+
+Removed outsideclose prop from Modal public API and explicitly passes {classes} to inner Dialog before spreading restProps.
+
+- fix: Dialog logic src/lib/dialog/Dialog.svelte
+
+Removed commented conditional; active outside-close logic uses outsideclose && !clickedInContent to cancel on outside-content clicks.
+
+- docs (Drawer example) src/routes/docs/components/drawer.md
+
+Reworked Drawer example to form-mode using Flowbite Svelte Label, Input, Textarea, Avatar, etc.; adds form and classes.form usage and updates imports and structure.
+
+## 1.12.4
+
+### Patch Changes
+
+- 31d62e70e fix: #1721
+- 3ee5f2eeb fix: bug_report.yml update
+- 4abcc89b0 tests: og-check update
+- 33e229132 Dialog (#1723)
+- 4225c8bd3 fix(og): update +server.js
+- 1b38747d1 fix(og): remove console.log
+- 7536e6d62 fix(og): +server update
+- 5cf74c865 fix(meta): block typo
+- 2a2cc5b16 (meta-update) feat: add og image generator
+- 5b4b85085 fix(meta): add to blocks, icons and admin-dashboard
+- f98ff0cc1 fix: import name
+- 9d391f37f fix: rebase conflicts
+- dcffaffb6 fix: change .svelte.ts to .svelte using module
+- 23f13a72d api-check(accordion): change p to P
+- dd2221d91 docs(accordion): use P for p
+
+## 1.12.3
+
+### Patch Changes
+
+- fix: change sveltekit browser from $app/environment with typeof window !== "undefined"
+
+## 1.12.2
+
+### Patch Changes
+
+- feat(utils): add responsive breakpoint utilities
+
+  Add useMediaQuery, useBreakpoints, and useCurrentBreakpoint hooks with TypeScript support and comprehensive documentation for controlling component behavior based on screen size.
+
+## 1.12.1
+
+### Patch Changes
+
+- docs – Drawer examples
+  src/routes/docs/components/drawer.md Removed CloseButton from imports and removed all CloseButton elements in example markup; updated backdrop guidance to recommend Tailwind backdrop classes; clarified modal vs non-modal wording and fixed minor typos.
+- docs – Timepicker drawer example
+  src/routes/docs/forms/timepicker.md Removed CloseButton from the flowbite-svelte import in the Drawer-with-timepicker example; example markup otherwise unchanged.
+- github: pull_request_template update
+
+## 1.12.0
+
+### Minor Changes
+
+- Dialog component & exports — src/lib/dialog/Dialog.svelte, src/lib/dialog/index.ts, src/lib/dialog/theme.ts, src/lib/index.ts
+  New Dialog.svelte (TypeScript) implementing native <dialog> integration (form/modal modes), lifecycle callbacks (onaction / oncancel / onsubmit / ontoggle), focus trap, dismissal, transitions, and styling via dialog() theme. Re-exports added and surfaced in library index.
+
+- Drawer refactor & theme — src/lib/drawer/Drawer.svelte, src/lib/drawer/theme.ts
+  Drawer now renders via Dialog (bind:open); public API changed from hidden / backdrop / activateClickOutside / transitionType → open / outsideclose / transition. Theme extends dialog and simplifies slots, placement, and backdrop handling.
+
+- Modal refactor & theme — src/lib/modal/Modal.svelte, src/lib/modal/theme.ts
+  Modal delegates rendering/lifecycle to Dialog (bind:open), removes native dialog handlers and legacy props, adopts transitionParams. Modal theme extends dialog and updates slots/placements.
+
+- Types centralization — src/lib/types.ts
+  Adds DialogProps and DialogVariants. Refactors DrawerProps and ModalProps to extend/reuse dialog typings and reflect the new prop surface (transitionParams, modal, outsideclose, etc.).
+
+- Examples & docs — Drawer migration — src/routes/api-check/components/drawer/examples/_, src/routes/examples/drawer/_.svelte, src/routes/blocks/**, src/routes/docs/**, src/routes/builder/drawer/+page.svelte
+  Examples/docs updated: rename hiddenX → openX, bind:hidden → bind:open, replace backdrop / activateClickOutside with modal / outsideclose or CSS backdrop classes, remove some CloseButton / header wrappers, and update generated code snippets.
+
+- Specific page & example updates — src/routes/admin-dashboard/(sidebar)/crud/products/+page.svelte, src/routes/builder/modal/+page.svelte, src/routes/api-check/forms/timepicker.svelte, various drawer example pages
+  Replace hidden → open bindings; update modal usage from params → transitionParams; align triggers and handlers to new open semantics and new Drawer props (outsideclose / modal).
+
+## 1.11.8
+
+### Patch Changes
+
+- Carousel duration state sync
+  src/lib/carousel/Carousel.svelte
+  canChangeSlide uses \_state.slideDuration; added reactive effect to sync prop slideDuration to internal \_state.slideDuration; initial mount still derives from prop.
+- Type rename: State → CarouselState
+  src/lib/carousel/CarouselIndicators.svelte, src/lib/carousel/Controls.svelte Updated imports and getContext generics to use CarouselState instead of State; no runtime logic changes.
+
+## 1.11.7
+
+### Patch Changes
+
+- fix: carousel update
+
+## 1.11.6
+
+### Patch Changes
+
+- fix: carousel update
+
+## 1.11.5
+
+### Patch Changes
+
+- fix: NavLi close after click
+
+## 1.11.4
+
+### Patch Changes
+
+- feat: breakpoint for nav components
+
+## 1.11.3
+
+### Patch Changes
+
+- 6e0a070b7 chore: dependencies update
+  - 794c35a7c fix(api-check): accordion
+  - 99af59c91 cleanup: onclose + lib-helpers (#1704)
+  - eb695f615 Stores (#1703)
+  - 4fa701e96 fix(api-check): popover
+  - 1e848aa77 fix(api-check): pagination
+  - 0171e25ab fix(Checkbox): classes
+  - 055b662a7 fix(Radio): classes, labelClass and inputClass
+
+## 1.11.2
+
+### Patch Changes
+
+- fix: warnThemeDeprecation component names
+
+## 1.11.1
+
+### Patch Changes
+
+- fix: Listgroup
+  fix: Tooltip style
+
+## 1.11.0
+
+### Minor Changes
+
+- New Features
+  Badges, alerts, banners, modals, toasts, drawers, and form inputs now support a standardized dismiss (close/clear) behavior using event-driven dismissal.
+  - Improvements
+    Close buttons across components no longer have direct click handlers but rely on a shared dismissable context, enabling consistent dismissal behavior and external event handling.
+    Dismissal logic supports event cancellation and bubbling, improving flexibility and predictability of user interactions.
+    Form components’ clear buttons adopt the dismissable context for clearing inputs.
+    Documentation examples updated to use new styling prop conventions and remove deprecated inline close handlers.
+  - Chores
+    Introduced a shared dismissable context mechanism to unify dismissal behavior across multiple UI components.
+
+## 1.10.22
+
+### Patch Changes
+
+- fix(carousel): reverse swipe direction to match drag gesture
+
+  Update swipe logic so dragging left-to-right navigates to the previous
+  slide, and right-to-left to the next slide. Adjust transition direction
+  for consistent user experience.
+
+## 1.10.21
+
+### Patch Changes
+
+- feat(modal): full-screen modal
+
+## 1.10.20
+
+### Patch Changes
+
+- fix(package): peerDependencies svelte 5.29 for @attach
+
+- fix(classes): update classes for all components
+
+## 1.10.19
+
+### Patch Changes
+
+- feat(Button): add `loading` prop with built-in spinner and auto-disable
+  - Introduced `loading?: boolean` prop to Button.svelte
+  - When `loading` is true, the button shows a spinner and becomes disabled
+  - Spinner is implemented inline without importing Spinner.svelte
+  - Improved accessibility by preventing interaction during loading
+  - Added reactive usage examples and updated documentation
+
+## 1.10.18
+
+### Patch Changes
+
+- fix(Select): show placeholder after clear and trigger change event
+  - Fix placeholder not appearing after clearing select
+  - Dispatch change event when clearing programmatically
+  - Add onClear prop with better naming (keep clearableOnClick for compatibility)
+
+## 1.10.17
+
+### Patch Changes
+
+- fix(Tags): default allowNewTags to true to allow tag creation without explicit config
+
+## 1.10.16
+
+### Patch Changes
+
+- refactor(Tags): improve dropdown logic and UX
+  - fix: #1690
+  - Integrated @floating-ui for dropdown positioning with autoUpdate
+  - Replaced inline <ul> dropdown with dynamically positioned element
+  - Removed hardcoded dropdown markup and positioning
+  - Used $effect and onDestroy for floating cleanup
+  - Replaced $state(null) with let + non-null assertions for DOM refs
+  - Improved reactivity by avoiding mutation warnings
+
+## 1.10.15
+
+### Patch Changes
+
+- fix(tags): put back available tags
+
+## 1.10.14
+
+### Patch Changes
+
+- fix(Tags): new props, unique, availableTags={available}, showHelper, showAvailableTags, and allowNewTags.
+
+- feat(classes): upto Select
+
+## 1.10.13
+
+### Patch Changes
+
+- fix: remove sveltekit dev $app/environment for svelte project
+  feat: classes update
+
+## 1.10.12
+
+### Patch Changes
+
+- fix: remove env value from warnThemeDeprecation
+
+## 1.10.11
+
+### Patch Changes
+
+- fix(datepicker): normalize range input when from > to
+
+## 1.10.10
+
+### Patch Changes
+
+- fix(datepicker): Add a guard to avoid re-calling handleDaySelect() if the range is already complete.
+
+  problem: Pressing the return/enter key after selecting datepicker range by using mouse doesn't close the calender and selecting today's date.
+
+## 1.10.9
+
+### Patch Changes
+
+- fix(datepicker): the getWeekdayNames function aligns with the firstDayOfWeek setting used by date-fns in startOfWeek.
+
+## 1.10.8
+
+### Patch Changes
+
+fix: #1684
+
+feat(datepicker): Allow `translationLocale` prop to be reactive
+
+Ensures the calendar's locale updates correctly when `translationLocale` (or `locale` when `translationLocale` isn't explicitly set) changes. This provides independent control over date formatting and calendar translations.
+
+## 1.10.7
+
+### Patch Changes
+
+- fix(dropzone): #1586
+- Classes (#1681)
+  - classes: Accordion, Badge, Banner
+  - types corrections
+  - BottomNav
+  - coderabbit suggested fixes
+  - BottomNav modern context handling
+
+## 1.10.6
+
+### Patch Changes
+
+- fix: place theme before className
+
+## 1.10.5
+
+### Patch Changes
+
+- fix: #1664
+
+## 1.10.4
+
+### Patch Changes
+
+- feat(sidebar, drawer): #1664 Fix content visibility and breakpoint conflicts ([`10d9aef`](https://github.com/themesberg/flowbite-svelte/commit/10d9aef6287643952708833a8c2c5a4166e21fea))
+
+  Resolves an issue where Sidebar content disappeared on mobile when nested within Drawer. The sidebar tv variant's isOpen: false setting was applying display: hidden, conflicting with Drawer's visibility control.
+
+  Changes:
+
+  theme.ts: Removed isOpen variant from sidebar tv definition.
+
+  Sidebar.svelte: Simplified rendering logic when disableBreakpoints is true, ensuring content always renders.
+
+  Usage: Ensures isOpen={!isDrawerHidden} is passed to Sidebar to sync with Drawer's state.
+
+  The Drawer now solely controls Sidebar's visibility, eliminating display conflicts.
+
+- fix(sidebar): Resolve dynamic resize responsiveness ([`c2a5445`](https://github.com/themesberg/flowbite-svelte/commit/c2a54459e5bad1991e0fac694cbcd094c89175f3))
+
+  Corrects an issue where the standalone Sidebar failed to show/hide responsively on dynamic screen size changes (e.g., dev tools). Modified Sidebar.svelte to ensure the element is always in the DOM and its display is controlled by Tailwind's responsive classes via tailwind-variants in theme.ts.
+
+- fix: #1678, #1679
+
+## 1.10.3
+
+### Patch Changes
+
+- fix: #1677 Handle nullish values in Input component's defaultHandleInput
+
+  Ensures robust handling of value in defaultHandleInput by safely converting it to a string, preventing TypeError when input is cleared or null/undefined.
+
+## 1.10.2
+
+### Patch Changes
+
+- fix(MultiSelect): #1669 Resolve dropdown closing prematurely and enhance active/selected states
+
+  Previously, clicking an item in the MultiSelect dropdown would cause the dropdown to close, leading to a suboptimal user experience for multi-selection. This commit resolves the issue by:
+  - Modifying `selectOption` to `stopPropagation` of the click event.
+  - Introducing a `bind:this` and `onMount`/`onDestroy` lifecycle hooks to handle clicks outside the component for proper dropdown closure.
+  - Updated `theme.ts` with `compoundVariants` for `dropdownitem` to provide a clear visual distinction when an item is both keyboard `active` and `selected`. This improves accessibility and clarity during keyboard navigation.
+  - Addressed TypeScript errors in `handleBlur` related to `event.currentTarget` potentially being null and `EventTarget` lacking a `contains` method, ensuring type safety.
+
+## 1.10.1
+
+### Patch Changes
+
+- 876ff0661 fix: #1670 move isChecked && checkedClass afer classname
+- 77ffe022b fix: #1671 datepicker add disabled style
+- c29042207 docs: enhanced image update 2
+- d3c1c2cdd docs: enhanced image update
+- 7934d7258 chore: @tiptap dependencies update
+- 8bfccad6b chore: dependencies update
+- d4d4c79d7 docs: themeprovider: add nested example
+
+## 1.10.0
+
+### Minor Changes
+
+- feat: add ThemeProvider
+
+## 1.9.0
+
+### Minor Changes
+
+- feat: Modal updates
+  - encourages usage of dialog/form structure
+  - introduces onaction handler
+  - keeps back compatibility: from is optional, autoclose still exists
+- feat: Datepicker updates
+  - new dependency date-fns
+  - functions update using date-fns
+- fix: #1660
+- fix: #1659
+
+## 1.8.6
+
+### Patch Changes
+
+- feat: add elementRef prop to Datepicker
+
+  Enables programmatic control of the input element (focus, select, blur).
+  Consistent with FloatingLabelInput API.
+
+## 1.8.5
+
+### Patch Changes
+
+- feat: add translationLocale prop to separate date formatting from UI language
+
+  Allows using different locales for date formatting vs UI text translation.
+  Maintains backward compatibility - translationLocale defaults to locale.
+
+  Example: locale="de-DE" translationLocale="en-US" gives German date format with English text.
+
+## 1.8.4
+
+### Patch Changes
+
+- fix: support for onsubmit when there's a form inside
+- fix: twMerge removal
+- chore: code clean up
+- docs: encourage to use dialog actions instead of autoclose that gives no info about which button was pressed
+- docs: onsubmit and onclose example
+
+## 1.8.3
+
+### Patch Changes
+
+- feat: datepicker: add availableFrom and availableTo
+
+## 1.8.2
+
+### Patch Changes
+
+- 2173d5f3e docs: wysiwyg: add accordion for app.css update
+- b1fffaf1f docs: wysiwyg: add accordion for app.css
+- a5745dcae fix: emoji in wysiwyg page
+- f9c0990a4 feat: editor: emoji update
+- 4fe291dff fix: #1566 - quick restart (#1652)
+- adaa7e89a fix: #1623 (#1650)
+- 2b62607e4 docs: texteditor: update default editor
+- 083484a87 docs: texteditor: update app.css
+- 924af90f6 docs: texteditor: add line break to formatting
+- c83e88d2d fix: buttons padding (#1649)
+- 2a519fb98 docs: phone-input layout issues for compound widgets (#1648)
+- b17bd6d11 docs: wysiwyg TaskList and Details
+- 0fc2ca040 docs: wysiwyg update
+- 418dabb2c docs: wysiwyg update
+- 682dddd35 fix: wysiwyg page according to new texteditor version
+- e67cc4e63 docs: add Exporting data
+
+## 1.8.1
+
+### Patch Changes
+
+- fix: trapFocus
+
+## 1.8.0
+
+### Minor Changes
+
+- feat: @flowbite-svelte-plugins/texteditor
+
 ## 1.7.1
 
 ### Patch Changes
@@ -724,7 +1213,7 @@
 
 ### Minor Changes
 
-- - 998d0176 BREAKING: #1277 change style prop to tabStyle to avoid conflict with CSS attr ([`40a1d6581d555c28ff00e5b373d5742a314b6b02`](https://github.com/themesberg/flowbite-svelte/commit/40a1d6581d555c28ff00e5b373d5742a314b6b02))
+- 998d0176 BREAKING: #1277 change style prop to tabStyle to avoid conflict with CSS attr ([`40a1d6581d555c28ff00e5b373d5742a314b6b02`](https://github.com/themesberg/flowbite-svelte/commit/40a1d6581d555c28ff00e5b373d5742a314b6b02))
   - 572888c4 docs: #1282 add warnings in the docs where components are using @html
   - bb479286 fix: docsearch style using @docsearch/css@3
   - 656f2223 fix: #1287 #1304
@@ -735,7 +1224,7 @@
 
 ### Patch Changes
 
-- - 3eb228d3 fix: node from 20.0.0 to 18.0.0 in package.json engines ([`987f564b0e7cc62c68898fd5e0b73af96610c406`](https://github.com/themesberg/flowbite-svelte/commit/987f564b0e7cc62c68898fd5e0b73af96610c406))
+- 3eb228d3 fix: node from 20.0.0 to 18.0.0 in package.json engines ([`987f564b0e7cc62c68898fd5e0b73af96610c406`](https://github.com/themesberg/flowbite-svelte/commit/987f564b0e7cc62c68898fd5e0b73af96610c406))
   - 0d9a9332 fix: adjust eslint configuration to eslint-plugin-svelte (previously used eslint-plugin-svelte3) (#1310)
   - 191ca2e0 fix: add define to vite.config.ts for **VERSION**
   - ad3d1c7f fix: move FATHOM_ID to .env and use FathomAnalytics.svelte
@@ -5269,7 +5758,6 @@ This reverts commit c949b82f02f8adad2a2d172e602ce5774ae3bca6.
 ### Patch Changes
 
 - fix: SidebarItem: change icon snippet to iconSlot ([`d4c8b51c4a14fb56e7b768942b909aa792ea4022`](https://github.com/shinokada/svelte-5-ui-lib/commit/d4c8b51c4a14fb56e7b768942b909aa792ea4022))
-
   - fix: add aclass to SidebarItem
 
 ## 0.4.1
@@ -5283,7 +5771,6 @@ This reverts commit c949b82f02f8adad2a2d172e602ce5774ae3bca6.
 ### Minor Changes
 
 - feat: TabItem, and Tabs components ([`69db35d4d1f32ef4cfc64b34ceb982627d50009e`](https://github.com/shinokada/svelte-5-ui-lib/commit/69db35d4d1f32ef4cfc64b34ceb982627d50009e))
-
   - docs: tab page is added
 
 ## 0.3.7
@@ -5344,13 +5831,13 @@ This reverts commit c949b82f02f8adad2a2d172e602ce5774ae3bca6.
 
 ### Patch Changes
 
-- - 490669e fix: add if children to Navbar ([`a7cd201631728bd3ddb8b7d572bf2f33b11a2542`](https://github.com/shinokada/svelte-5-ui-lib/commit/a7cd201631728bd3ddb8b7d572bf2f33b11a2542))
+- 490669e fix: add if children to Navbar ([`a7cd201631728bd3ddb8b7d572bf2f33b11a2542`](https://github.com/shinokada/svelte-5-ui-lib/commit/a7cd201631728bd3ddb8b7d572bf2f33b11a2542))
 
 ## 0.2.47
 
 ### Patch Changes
 
-- - ec25597 (HEAD -> main) fix: change to chilren?: any ([`35d2b4573ff8cf1e187637f1f3700605c01339ab`](https://github.com/shinokada/svelte-5-ui-lib/commit/35d2b4573ff8cf1e187637f1f3700605c01339ab))
+- ec25597 (HEAD -> main) fix: change to chilren?: any ([`35d2b4573ff8cf1e187637f1f3700605c01339ab`](https://github.com/shinokada/svelte-5-ui-lib/commit/35d2b4573ff8cf1e187637f1f3700605c01339ab))
   - cc1482c (origin/main, origin/HEAD) fix: update links
   - 66b7cd4 fix: update links
   - 3644446 fix: change vercel.app to codewithshin.com

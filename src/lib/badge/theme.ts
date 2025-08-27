@@ -1,10 +1,12 @@
+import type { Classes } from "$lib/theme/themeUtils";
 import { tv, type VariantProps } from "tailwind-variants";
 
-type BadgeVariants = VariantProps<typeof badge>;
+// Variants
+export type BadgeVariants = VariantProps<typeof badge> & Classes<typeof badge>;
 
-const badge = tv({
+export const badge = tv({
   slots: {
-    hrefClass: "flex align-middle",
+    linkClass: "flex align-middle",
     base: "font-medium inline-flex items-center justify-center px-2.5 py-0.5"
   },
   variants: {
@@ -251,5 +253,3 @@ const badge = tv({
     rounded: false
   }
 });
-
-export { badge, type BadgeVariants };

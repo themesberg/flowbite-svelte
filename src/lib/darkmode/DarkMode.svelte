@@ -1,9 +1,13 @@
 <script lang="ts">
   import { darkmode } from ".";
-  import { type DarkmodeProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type DarkmodeProps } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   // const THEME_PREFERENCE_KEY = 'color-theme';
   let { class: className, lightIcon, darkIcon, size = "md", ariaLabel = "Dark mode", ...restProps }: DarkmodeProps = $props();
+
+  const theme = getTheme("darkmode");
 
   const sizes = {
     sm: "w-4 h-4",
@@ -30,7 +34,7 @@
   </script>
 </svelte:head>
 
-<button onclick={toggleTheme} aria-label={ariaLabel} type="button" {...restProps} class={cn(darkmode(), className)} tabindex={0}>
+<button onclick={toggleTheme} aria-label={ariaLabel} type="button" {...restProps} class={darkmode({ class: clsx(theme, className) })} tabindex={0}>
   <span class="hidden dark:block">
     {#if lightIcon}
       {@render lightIcon()}
@@ -60,7 +64,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L476)
+[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L441)
 ## Props
 @prop class: className
 @prop lightIcon

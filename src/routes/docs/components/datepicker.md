@@ -227,6 +227,164 @@ Listen for date selection events using the `onselect` event.
 </div>
 ```
 
+## Restricting the selectable date range
+
+Use `availableFrom` and/or `availableTo` props to restrict the selectable date range.
+
+```svelte example class="h-[430px]"
+<script lang="ts">
+  import { Datepicker, P } from "flowbite-svelte";
+  let selectedDate = $state<Date | undefined>(undefined);
+
+  // Helper function to add/subtract days
+  function addDays(date: Date, days: number): Date {
+    const result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  }
+
+  // Calculate dates relative to today
+  const today = new Date();
+  const availableFrom = addDays(today, -10); // 10 days ago
+  const availableTo = addDays(today, 10); // 10 days from now
+
+  function formatDate(date: Date): string {
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  }
+</script>
+
+<Datepicker bind:value={selectedDate} {availableFrom} {availableTo} placeholder="Select available date" />
+
+<P class="mt-4">Available from: {formatDate(availableFrom)} to: {formatDate(availableTo)}</P>
+
+<P>Selected date: {selectedDate ? formatDate(selectedDate) : "None selected"}</P>
+
+<!-- Show some context -->
+<P class="mt-4 text-sm text-gray-600">
+  Today: {formatDate(today)}
+  <br />
+  Range: 10 days before today to 10 days after today
+</P>
+```
+
+## Local translation
+
+Set `translationLocale` to change translation. The following example shows German date format (DD.MM.YYYY) but English text.
+
+```svelte example class="h-[430px]"
+<script lang="ts">
+  import { Datepicker, P } from "flowbite-svelte";
+</script>
+
+<div class="mb-64 md:w-1/2">
+  <Datepicker locale="de-DE" translationLocale="en-US" />
+</div>
+```
+
+## Accessing Datepicker Element with elementRef
+
+```svelte example class="h-[430px]"
+<script lang="ts">
+  import { Datepicker, Button } from "flowbite-svelte";
+
+  let datepickerRef: HTMLInputElement | undefined = $state();
+  let selectedDate: Date | undefined = $state();
+</script>
+
+<Datepicker bind:elementRef={datepickerRef} bind:value={selectedDate} placeholder="Select a date" />
+
+<div class="my-4">
+  <Button onclick={() => datepickerRef?.focus()}>Focus Datepicker</Button>
+
+  <Button onclick={() => datepickerRef?.select()}>Select All Text</Button>
+
+  <Button onclick={() => datepickerRef?.blur()}>Blur Datepicker</Button>
+</div>
+```
+
+## Usage & Localization
+
+```svelte example class="h-[530px]"
+<script lang="ts">
+  import { Datepicker, P, Label, Select, Button } from "flowbite-svelte";
+
+  let value = $state<Date | undefined>(undefined);
+  let locale = $state("de");
+  const locales = [
+    { value: "en-US", name: "en-US (US)" },
+    { value: "en-GB", name: "en-GB (UK)" },
+    { value: "de", name: "de (Germany)" },
+    { value: "fr", name: "fr (France)" },
+    { value: "ja", name: "ja (Japan)" }
+  ];
+
+  const handleSubmit = (event: Event) => {
+    event.preventDefault();
+    console.log("Selected date:", value ? value.toLocaleDateString(locale) : "None");
+  };
+
+  $effect(() => {
+    // Only clear if locale is actually changing from a previous value
+    if (locale) {
+      value = undefined;
+    }
+  });
+</script>
+
+<div class="overflow-visible p-4">
+  <h1 class="mb-4 text-xl font-bold">Datepicker Locale Test</h1>
+  <form onsubmit={handleSubmit} class="mb-4">
+    <Label>
+      Choose locale:
+      <Select class="mb-4 w-40 rounded p-2" items={locales} bind:value={locale} />
+    </Label>
+
+    <Datepicker bind:value {locale} translationLocale={locale} placeholder="Type a date or use calendar" />
+
+    <P class="mt-4">
+      <strong>Selected Locale:</strong>
+      {locale}
+      <br />
+      <strong>Selected Date:</strong>
+      {value ? value.toLocaleDateString(locale) : "None"}
+    </P>
+    <Button type="submit" class="mt-4">Submit</Button>
+  </form>
+</div>
+```
+
+## actionSlot
+
+Add `actionSlot` snippet with `selectedDate`, `handleClear`, `handleApply`, `close` params.
+
+```svelte example
+<script lang="ts">
+  import { Datepicker, P, Button } from "$lib";
+  let selectedDate = $state<Date | undefined>(undefined);
+  let lastAction = $state<string | undefined>();
+</script>
+
+<div class="mb-64 md:w-1/2">
+  <Datepicker bind:value={selectedDate} autohide={false}>
+    {#snippet actionSlot({ selectedDate, handleClear, handleApply, close })}
+      <div class="mt-2 flex gap-2">
+        <Button size="sm" onclick={handleClear}>Clear</Button>
+        <Button size="sm" onclick={() => selectedDate && handleApply(selectedDate)} disabled={!selectedDate}>Apply</Button>
+        <Button size="sm" onclick={() => console.log("Selection:", selectedDate || "None")}>Show Selection</Button>
+      </div>
+    {/snippet}
+  </Datepicker>
+  <P class="mt-4">Selected date: {selectedDate ? selectedDate.toLocaleDateString() : "None"}</P>
+  <P class="mt-2">Last action: {lastAction}</P>
+</div>
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. In quidem rerum, optio adipisci illum at earum fugiat eius minus quae! Quisquam cumque architecto facilis? Tempora ipsum perferendis quo explicabo minus.
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

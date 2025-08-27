@@ -1,36 +1,98 @@
 <script lang="ts">
-  import { type ParamsType, type DrawerProps, trapFocus, cn } from "$lib";
-  import { fly } from "svelte/transition";
+  import { type DrawerProps } from "$lib";
+  import Dialog from "$lib/dialog/Dialog.svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   import { sineIn } from "svelte/easing";
+  import { fly } from "svelte/transition";
   import { drawer } from ".";
+  import { setContext, tick } from "svelte";
 
-  let { children, hidden = $bindable(), closeDrawer = () => (hidden = true), activateClickOutside = true, position, width, backdrop = true, backdropClass, placement = "left", class: className, transitionParams, transitionType = fly, bodyScrolling = false, ...restProps }: DrawerProps = $props();
+  let { children, open = $bindable(false), hidden = $bindable(), modal, offset, width, dismissable = offset ? false : undefined, placement = "left", class: className, transitionParams, transition = fly, outsideclose, activateClickOutside, ...restProps }: DrawerProps = $props();
 
-  const { base, backdrop_: backdropCls } = $derived(
-    drawer({
-      position,
-      placement,
-      width,
-      backdrop
-    })
-  );
+  setContext("drawer", {
+    get placement() {
+      return placement;
+    }
+  });
 
-  let innerWidth: number = $state(-1);
-  let innerHeight: number = $state(-1);
-  // let startX = $derived(position === 'fixed'? 0: )
-  let x = $derived(placement === "left" ? -320 : placement === "right" ? innerWidth + 320 : undefined);
-  let y = $derived(placement === "top" ? -100 : placement === "bottom" ? innerHeight + 100 : undefined);
+  // back compatibility
+  if (hidden !== undefined) console.warn("'hidden' property is deprecated. Please use the 'open' property to manage 'Drawer'.");
 
-  let transition_params = $derived(Object.assign({}, { x, y, duration: 200, easing: sineIn }));
+  if (activateClickOutside !== undefined) console.warn("'activateClickOutside' property is deprecated. Please use the 'outsideclose' property to manage 'Drawer' behaviour.");
+
+  $effect(() => {
+    if (activateClickOutside !== undefined && outsideclose === undefined) {
+      outsideclose = activateClickOutside;
+    }
+  });
+  $effect(() => {
+    if (hidden !== undefined) {
+      const nextOpen = !hidden;
+      if (open !== nextOpen) open = nextOpen;
+    }
+  });
+  $effect(() => {
+    if (hidden !== undefined) {
+      const nextHidden = !open;
+      if (hidden !== nextHidden) hidden = nextHidden;
+    }
+  });
+  // end
+
+  const theme = getTheme("drawer");
+
+  let shifted = $state(true);
+
+  const { base } = $derived(drawer({ placement, width, modal: offset && !open ? false : modal, shifted }));
+
+  let x = $state(),
+    y = $state();
+
+  let transition_params = $derived({ x, y, duration: 300, easing: sineIn, opacity: 1, ...transitionParams });
+
+  function init(node: HTMLDialogElement) {
+    // set initial offset, later it will be switched on/off by onintrostart
+    if (offset) {
+      node.style[placement] = offset;
+      tick().then(() => {
+        // few borwsers give focus when dialog is open even in non-modal version
+        // to prevent that we set dialog to inert during creation and remove it
+        // as soon as ready
+        node.inert = false;
+      });
+    }
+  }
+
+  function onintrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
+    // set the values for transition start position
+    const dlg = ev.currentTarget;
+    const { innerWidth = 0, innerHeight = 0 } = dlg.ownerDocument.defaultView ?? {};
+
+    const rect = dlg.getBoundingClientRect();
+
+    x = placement === "left" ? rect.left : placement === "right" ? rect.right - innerWidth : undefined;
+    y = placement === "top" ? rect.top : placement === "bottom" ? rect.bottom - innerHeight : undefined;
+    // remove shift for transition end position
+    shifted = false;
+
+    // add offset if closed, remove it when open
+    if (offset) dlg.style[placement] = open ? "" : offset;
+  }
+
+  function onoutrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
+    shifted = true;
+  }
 </script>
 
-<svelte:window bind:innerWidth bind:innerHeight />
+<Dialog {@attach init} bind:open {modal} {dismissable} {transition} {onintrostart} {onoutrostart} {outsideclose} transitionParams={transition_params} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  {@render children?.()}
+</Dialog>
 
-{#if !hidden}
-  <div role="presentation" class={cn(backdropCls(), backdropClass)} onclick={activateClickOutside ? closeDrawer : undefined} style={bodyScrolling ? "pointer-events: none;" : ""}></div>
-  <div use:trapFocus={{ onEscape: closeDrawer }} {...restProps} class={cn(base(), className)} transition:transitionType={transitionParams ? transitionParams : (transition_params as ParamsType)} tabindex="-1">
+{#if offset && !open}
+  <Dialog {@attach init} open modal={false} {dismissable} {outsideclose} inert {...restProps} class={base({ class: clsx(theme?.base, className) })}>
     {@render children?.()}
-  </div>
+  </Dialog>
 {/if}
 
 <!--
@@ -40,17 +102,17 @@
 [DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L580)
 ## Props
 @prop children
+@prop open = $bindable(false)
 @prop hidden = $bindable()
-@prop closeDrawer = ()
-@prop activateClickOutside = true
-@prop position
+@prop modal
+@prop offset
 @prop width
-@prop backdrop = true
-@prop backdropClass
+@prop dismissable = offset ? false : undefined
 @prop placement = "left"
 @prop class: className
 @prop transitionParams
-@prop transitionType = fly
-@prop bodyScrolling = false
+@prop transition = fly
+@prop outsideclose
+@prop activateClickOutside
 @prop ...restProps
 -->

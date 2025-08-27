@@ -1,31 +1,40 @@
 <script lang="ts">
-  import { getContext } from "svelte";
   import { fade } from "svelte/transition";
   import { alert } from ".";
-  import { type AlertProps, type BaseThemes, type ParamsType, CloseButton, cn } from "$lib";
+  import clsx from "clsx";
+  import { type AlertProps, type ParamsType, CloseButton } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { children, icon, alertStatus = $bindable(true), closeIcon: CloseIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, onclick = () => (alertStatus = false), ...restProps }: AlertProps = $props();
+  let { children, icon, alertStatus = $bindable(true), closeIcon: CloseIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, ...restProps }: AlertProps = $props();
 
-  const context = getContext<BaseThemes>("themeConfig");
-  // Use theme context if available, otherwise fallback to default
-  const alertTheme = context?.alert || alert;
+  // Theme context
+  const theme = getTheme("alert");
 
   let divCls = $derived(
-    cn(
-      alertTheme({
-        color,
-        rounded,
-        border,
-        icon: !!icon,
-        dismissable
-      }),
-      className
-    )
+    alert({
+      color,
+      rounded,
+      border,
+      icon: !!icon,
+      dismissable,
+      class: clsx(theme, className)
+    })
   );
+
+  let ref: HTMLDivElement | undefined = $state(undefined);
+
+  function close(event: MouseEvent) {
+    if (ref?.dispatchEvent(new Event("close", { bubbles: true, cancelable: true }))) {
+      alertStatus = false;
+    }
+  }
+
+  createDismissableContext(close);
 </script>
 
 {#if alertStatus}
-  <div role="alert" {...restProps} transition:transition={params as ParamsType} class={divCls}>
+  <div role="alert" bind:this={ref} {...restProps} transition:transition={params as ParamsType} class={divCls}>
     {#if icon}
       {@render icon()}
     {/if}
@@ -40,11 +49,11 @@
 
     {#if dismissable}
       {#if CloseIcon}
-        <CloseButton class="-my-1.5 ms-auto -me-1.5 dark:hover:bg-gray-700" {color} ariaLabel="Remove alert" {onclick}>
+        <CloseButton class="-my-1.5 ms-auto -me-1.5" {color} ariaLabel="Remove alert">
           <CloseIcon />
         </CloseButton>
       {:else}
-        <CloseButton class="-my-1.5 ms-auto -me-1.5 dark:hover:bg-gray-700" {color} ariaLabel="Remove alert" {onclick} />
+        <CloseButton class="-my-1.5 ms-auto -me-1.5" {color} ariaLabel="Remove alert" />
       {/if}
     {/if}
   </div>
@@ -54,7 +63,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L191)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L192)
 ## Props
 @prop children
 @prop icon
@@ -67,6 +76,5 @@
 @prop dismissable
 @prop transition = fade
 @prop params
-@prop onclick = ()
 @prop ...restProps
 -->

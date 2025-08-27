@@ -2,18 +2,22 @@
   import { setContext } from "svelte";
   import { pagination, PaginationItem } from ".";
   import type { PaginationProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
 
   let { pages = [], previous, next, prevContent, nextContent, table, size, ariaLabel, ...restProps }: PaginationProps = $props();
+
+  const theme = getTheme("pagination");
 
   setContext("group", true);
   setContext("table", table);
   setContext("size", size);
 
-  const paginationClass = $derived(pagination({ table, size }));
+  const paginationCls = $derived(pagination({ table, size, class: clsx(theme) }));
 </script>
 
 <nav aria-label={ariaLabel}>
-  <ul class={paginationClass}>
+  <ul class={paginationCls}>
     {#if typeof previous === "function"}
       <li {...restProps}>
         <PaginationItem {size} onclick={() => previous()} class={table ? "rounded-none rounded-l" : "rounded-none  rounded-s-lg"}>
@@ -50,7 +54,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1190)
+[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1189)
 ## Props
 @prop pages = []
 @prop previous

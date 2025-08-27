@@ -11,7 +11,7 @@ thumbnailSize: w-72
 <script>
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { onMount } from 'svelte';
-  import { Toggle, Badge, A } from '$lib'
+  import { Toggle } from '$lib'
 
   const components = 'Toggle'
 </script>
@@ -67,7 +67,7 @@ Get started with the default toggle component example as a checkbox element to r
 <Toggle size="small">Small toggle</Toggle>
 <Toggle size="default" checked>Default toggle</Toggle>
 <Toggle size="large" checked>Large toggle</Toggle>
-<Toggle size={undefined} spanClass={customSize}>Custom toggle</Toggle>
+<Toggle size={undefined} classes={{ span: customSize }}>Custom toggle</Toggle>
 ```
 
 ## Label for off state

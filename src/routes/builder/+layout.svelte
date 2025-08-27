@@ -6,7 +6,7 @@
 </script>
 
 <FlowbiteSvelteLayout>
-  <ComponentsLayout {data}>
+  <ComponentsLayout {data} submenu="builder">
     {@render children()}
   </ComponentsLayout>
 </FlowbiteSvelteLayout>

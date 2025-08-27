@@ -1,6 +1,8 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type CardVariants = VariantProps<typeof card>;
+// Variants
+export type CardVariants = VariantProps<typeof card> & Classes<typeof card>;
 
 export const card = tv({
   slots: {

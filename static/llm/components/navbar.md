@@ -86,7 +86,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger />
-  <NavUl {activeUrl} {activeClass} {nonActiveClass}>
+  <NavUl {activeUrl} classes={{ active: activeClass, nonActive: nonActiveClass }}>
     <NavLi href="/">Home</NavLi>
     <NavLi href="/docs/components/navbar">Navbar</NavLi>
     <NavLi href="/docs/components/accordion">Accordion</NavLi>
@@ -252,7 +252,7 @@ Use this example of a navbar element to also show a search input element that yo
 
 ```svelte
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Search, ToolbarButton, Button, Input } from "flowbite-svelte";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Search, ToolbarButton } from "flowbite-svelte";
   import { SearchOutline } from "flowbite-svelte-icons";
   import { fade } from "svelte/transition";
 </script>
@@ -292,7 +292,7 @@ Use the following navbar element to show a call to action button alongside the l
 
 ```svelte
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from "flowbite-svelte";
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button } from "flowbite-svelte";
 </script>
 
 <Navbar>
@@ -324,7 +324,7 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
 </script>
 
 <div class="relative px-8">
-  <Navbar class="fixed start-0 top-0 z-20 w-full bg-gray-800 px-2 py-2.5 sm:px-4">
+  <Navbar class="fixed start-0 top-0 z-20 w-full bg-white px-2 py-2.5 sm:px-4 dark:bg-gray-800">
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
       <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
@@ -411,13 +411,42 @@ Use this example to show a solid background for the navbar component instead of 
 </Navbar>
 ```
 
+## Breakpoint
+
+Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoint of navbar.
+
+```svelte
+<script>
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, P } from "flowbite-svelte";
+</script>
+
+<Navbar breakpoint="lg">
+  <NavBrand href="/">
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+  </NavBrand>
+  <NavHamburger />
+  <NavUl>
+    <NavLi href="/">Home</NavLi>
+    <NavLi href="/about">About</NavLi>
+    <NavLi href="/docs/components/navbar">Navbar</NavLi>
+    <NavLi href="/pricing">Pricing</NavLi>
+    <NavLi href="/contact">Contact</NavLi>
+  </NavUl>
+</Navbar>
+
+<P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur quos impedit quo, quis quam in distinctio deleniti facere! Ea aliquid maiores iusto obcaecati rerum quisquam repellendus dignissimos rem quo veritatis.</P>
+
+<P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur quos impedit quo, quis quam in distinctio deleniti facere! Ea aliquid maiores iusto obcaecati rerum quisquam repellendus dignissimos rem quo veritatis.</P>
+```
+
 ## Component data
 
 ### Menu
 
 #### Types
 
-[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1079)
+[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1073)
 
 #### Props
 
@@ -431,7 +460,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099)
+[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1097)
 
 #### Props
 
@@ -442,7 +471,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1101)
+[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099)
 
 #### Props
 
@@ -454,7 +483,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1105)
+[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1103)
 
 #### Props
 
@@ -462,17 +491,19 @@ Use this example to show a solid background for the navbar component instead of 
 - onclick
 - menuClass
 - class: className
+- classes
 - name: "Open main menu"
 
 ### NavLi
 
 #### Types
 
-[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1125)
+[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1124)
 
 #### Props
 
 - children
+- onclick
 - activeClass
 - nonActiveClass
 - class: className
@@ -481,12 +512,12 @@ Use this example to show a solid background for the navbar component instead of 
 
 #### Types
 
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1110)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1109)
 
 #### Props
 
 - children
-- activeUrl
+- activeUrl: $bindable()
 - ulClass
 - slideParams
 - transition: slide
@@ -495,12 +526,13 @@ Use this example to show a solid background for the navbar component instead of 
 - nonActiveClass
 - respectMotionPreference: true
 - class: clasName
+- classes
 
 ### Navbar
 
 #### Types
 
-[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1092)
+[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1089)
 
 #### Props
 
@@ -509,6 +541,7 @@ Use this example to show a solid background for the navbar component instead of 
 - navContainerClass
 - class: className
 - closeOnClickOutside: true
+- breakpoint: "md"
 
 
 ## References

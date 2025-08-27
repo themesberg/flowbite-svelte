@@ -1,32 +1,32 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { progressstepper, progressstepperitem, progresssteppercircle } from ".";
+  import { progressStepper } from ".";
   import { type ProgressStepperProps } from "$lib";
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, steps = [], classes, ...restrorps }: ProgressStepperProps = $props();
+  let { children, steps = [], class: className, classes, ...restrorps }: ProgressStepperProps = $props();
+
+  const theme = getTheme("progressStepper");
 
   setContext("stepperType", "progress");
 
-  const base = progressstepper();
+  const { base, item, circle } = $derived(progressStepper());
 </script>
 
-<ol class={twMerge(base, clsx(classes?.progressstepper))} {...restrorps}>
+<ol class={base({ class: clsx(theme?.base, className) })} {...restrorps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li
-        class={twMerge(
-          progressstepperitem({
-            status: step.status,
-            isLast: index === steps.length - 1
-          }),
-          clsx(classes?.progressstepperitem)
-        )}
+        class={item({
+          status: step.status,
+          isLast: index === steps.length - 1,
+          class: clsx(theme?.item, classes?.item)
+        })}
       >
-        <span class={twMerge(progresssteppercircle({ status: step.status }), clsx(classes?.progresssteppercircle))}>
+        <span class={circle({ status: step.status, class: clsx(theme?.circle, classes?.circle) })}>
           {#if step.status === "completed"}
             {#if step.icon}
               <step.icon class={clsx(step.iconClass) || "h-5 w-5 lg:h-6 lg:w-6"} />
@@ -52,10 +52,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1549)
+[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1553)
 ## Props
 @prop children
 @prop steps = []
+@prop class: className
 @prop classes
 @prop ...restrorps
 -->

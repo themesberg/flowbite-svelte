@@ -2,14 +2,10 @@
   "name": "Modal",
   "type": {
     "name": "ModalProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1061"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1062"
   },
   "props": [
     ["children", ""],
-    ["oncancel", ""],
-    ["onclose", ""],
-    ["modal", "true"],
-    ["autoclose", "false"],
     ["header", ""],
     ["footer", ""],
     ["title", ""],
@@ -20,11 +16,12 @@
     ["headerClass", ""],
     ["bodyClass", ""],
     ["footerClass", ""],
-    ["outsideclose", "true"],
     ["size", "\"md\""],
     ["placement", ""],
     ["class: className", ""],
-    ["params", ""],
-    ["transition", "fade"]
+    ["classes", ""],
+    ["transitionParams", ""],
+    ["transition", "fade"],
+    ["fullscreen", "false"]
   ]
 }

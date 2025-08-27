@@ -50,7 +50,7 @@
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{column}</h2>
             <FooterLinkGroup>
               {#each Object.entries(links) as [name, href]}
-                <FooterLink liClass="mb-4" {href}>{name}</FooterLink>
+                <FooterLink class="mb-4" {href}>{name}</FooterLink>
               {/each}
             </FooterLinkGroup>
           </div>

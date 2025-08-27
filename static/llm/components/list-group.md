@@ -60,7 +60,7 @@ You can pass extra properties to the `<button>` element by setting the `attrs` a
 
 ```svelte
 <script>
-  import { Listgroup, ListgroupItem } from "flowbite-svelte";
+  import { Listgroup } from "flowbite-svelte";
   let buttons = [
     { name: "Profile", mycustomfield: "data1", current: true },
     { name: "Settings", mycustomfield: "data2" },
@@ -97,7 +97,7 @@ Use the `horizontal` property to change the direction of list items.
 
 ```svelte
 <script>
-  import { Listgroup, ListgroupItem } from "flowbite-svelte";
+  import { Listgroup } from "flowbite-svelte";
   let buttons = [
     { name: "Profile", mycustomfield: "data1", current: true },
     { name: "Settings", mycustomfield: "data2" },
@@ -116,7 +116,7 @@ Use the following example when you want to use `Tooltip` with a horizontal list.
 ```svelte
 <script lang="ts">
   import { Listgroup, ListgroupItem, Tooltip } from "flowbite-svelte";
-  import { BellOutline, ClockOutline, PenOutline, TrashBinOutline } from "flowbite-svelte-icons";
+  import { BellOutline, ClockOutline, TrashBinOutline } from "flowbite-svelte-icons";
 </script>
 
 <Listgroup horizontal active>
@@ -186,7 +186,7 @@ When non standard usage is needed you can omit the `items` props and add element
 
 #### Types
 
-[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1028)
+[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1029)
 
 #### Props
 
@@ -205,7 +205,7 @@ When non standard usage is needed you can omit the `items` props and add element
 
 #### Types
 
-[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1039)
+[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1040)
 
 #### Props
 

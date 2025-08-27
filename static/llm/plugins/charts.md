@@ -1,19 +1,44 @@
 # Svelte Charts - Flowbite
 
 
+<Badge class="p-4 w-full">
+  <P class="flex items-center gap-2">
+    <span class="inline-flex">
+      <InfoCircleOutline class="h-6 w-6 text-pink-600 dark:text-pink-500 " />
+      <span class="sr-only">Info Circle</span>
+    </span>
+    <span>
+      Flowbite-Svelte Chart component will be deprecated in the next version. Please use @flowbite-svelte-plugins/chart.
+    </span>
+  </P>
+</Badge>
+
+## Installation
+
+```svelte
+pnpm i -D @flowbite-svelte-plugins/chart
+```
+
+Update `app.css`:
+
+```svelte
+@source "../node_modules/@flowbite-svelte-plugins/chart/dist";
+```
+
 ## Area chart
 
 Use this example to show a basic area chart.
 
 ```svelte
-<script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
+<script lang="ts">
+  import type { ApexOptions } from "apexcharts";
+  import { Chart } from "@flowbite-svelte-plugins/chart";
+  import { Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronRightOutline, ChevronDownOutline } from "flowbite-svelte-icons";
 
-  let options = {
+  let options: ApexOptions = {
     chart: {
       height: "400px",
-      maxWidth: "100%",
       type: "area",
       fontFamily: "Inter, sans-serif",
       dropShadow: {
@@ -78,7 +103,7 @@ Use this example to show a basic area chart.
   };
 </script>
 
-<Card>
+<Card class="p-4 md:p-6">
   <div class="flex justify-between">
     <div>
       <h5 class="pb-2 text-3xl leading-none font-bold text-gray-900 dark:text-white">32.4k</h5>
@@ -93,7 +118,7 @@ Use this example to show a basic area chart.
   <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
     <div class="flex items-center justify-between pt-5">
       <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
-      <Dropdown class="w-40" offset="-6">
+      <Dropdown simple class="w-40" offset={-6}>
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
         <DropdownItem>Last 7 days</DropdownItem>
@@ -114,14 +139,15 @@ Use this example to show a basic area chart.
 To create a double line chart check the example below.
 
 ```svelte
-<script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover } from "flowbite-svelte";
+<script lang="ts">
+  import type { ApexOptions } from "apexcharts";
+  import { Chart } from "@flowbite-svelte-plugins/chart";
+  import { Card, A, Button, Dropdown, DropdownItem, Popover } from "flowbite-svelte";
   import { InfoCircleSolid, ChevronRightOutline, ChevronDownOutline, FileLinesSolid } from "flowbite-svelte-icons";
 
-  let options = {
+  let options: ApexOptions = {
     chart: {
       height: "400px",
-      maxWidth: "100%",
       type: "line",
       fontFamily: "Inter, sans-serif",
       dropShadow: {
@@ -190,7 +216,7 @@ To create a double line chart check the example below.
   };
 </script>
 
-<Card>
+<Card class="p-4 md:p-6">
   <div class="mb-5 flex justify-between">
     <div class="grid grid-cols-2 gap-4">
       <div>
@@ -231,7 +257,7 @@ To create a double line chart check the example below.
     </div>
     <div>
       <Button color="light" class="px-3 py-2">Last week<ChevronDownOutline class="ms-1.5 h-2.5 w-2.5" /></Button>
-      <Dropdown class="w-40">
+      <Dropdown simple class="w-40">
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
         <DropdownItem>Last 7 days</DropdownItem>
@@ -257,11 +283,13 @@ To create a double line chart check the example below.
 You can represent multiple data entries using columns by setting the type: "bar" option
 
 ```svelte
-<script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
+<script lang="ts">
+  import type { ApexOptions } from "apexcharts";
+  import { Chart } from "@flowbite-svelte-plugins/chart";
+  import { Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { UsersGroupOutline, ArrowUpOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
-  const options = {
+  const options: ApexOptions = {
     colors: ["#1A56DB", "#FDBA8C"],
     series: [
       {
@@ -317,8 +345,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
     states: {
       hover: {
         filter: {
-          type: "darken",
-          value: 1
+          type: "darken"
         }
       }
     },
@@ -367,7 +394,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
   };
 </script>
 
-<Card>
+<Card class="p-4 md:p-6">
   <div class="mb-4 flex justify-between border-b border-gray-200 pb-4 dark:border-gray-700">
     <div class="flex items-center">
       <div class="me-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700">
@@ -399,7 +426,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
   <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
     <div class="flex items-center justify-between pt-5">
       <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
-      <Dropdown class="w-40" offset="-6">
+      <Dropdown simple class="w-40" offset={-6}>
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
         <DropdownItem>Last 7 days</DropdownItem>
@@ -420,20 +447,22 @@ You can represent multiple data entries using columns by setting the type: "bar"
 Create a horizontal bar chart with as many data series as you like by setting the type: "bar" chart type.
 
 ```svelte
-<script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
+<script lang="ts">
+  import type { ApexOptions } from "apexcharts";
+  import { Chart } from "@flowbite-svelte-plugins/chart";
+  import { Card, A, Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ArrowUpOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
-  const options = {
+  const options: ApexOptions = {
     series: [
       {
         name: "Income",
         color: "#31C48D",
-        data: ["1420", "1620", "1820", "1420", "1650", "2120"]
+        data: [1420, 1620, 1820, 1420, 1650, 2120]
       },
       {
         name: "Expense",
-        data: ["788", "810", "866", "788", "1100", "1200"],
+        data: [788, 810, 866, 788, 1100, 1200],
         color: "#F05252"
       }
     ],
@@ -471,10 +500,7 @@ Create a horizontal bar chart with as many data series as you like by setting th
     },
     tooltip: {
       shared: true,
-      intersect: false,
-      formatter: function (value) {
-        return "$" + value;
-      }
+      intersect: false
     },
     xaxis: {
       labels: {
@@ -516,7 +542,7 @@ Create a horizontal bar chart with as many data series as you like by setting th
   };
 </script>
 
-<Card>
+<Card class="p-4 md:p-6">
   <div class="flex justify-between border-b border-gray-200 pb-3 dark:border-gray-700">
     <dl>
       <dt class="pb-1 text-base font-normal text-gray-500 dark:text-gray-400">Profit</dt>
@@ -545,7 +571,7 @@ Create a horizontal bar chart with as many data series as you like by setting th
   <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
     <div class="flex items-center justify-between pt-5">
       <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
-      <Dropdown class="w-40" offset="-6">
+      <Dropdown simple class="w-40" offset={-6}>
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
         <DropdownItem>Last 7 days</DropdownItem>
@@ -566,11 +592,13 @@ Create a horizontal bar chart with as many data series as you like by setting th
 Create a pie chart with multiple data series by setting the type: "pie" chart type option.
 
 ```svelte
-<script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover } from "flowbite-svelte";
+<script lang="ts">
+  import type { ApexOptions } from "apexcharts";
+  import { Chart } from "@flowbite-svelte-plugins/chart";
+  import { Card, A, Button, Dropdown, DropdownItem, Popover } from "flowbite-svelte";
   import { InfoCircleSolid, ChevronDownOutline, ChevronRightOutline, PenSolid, DownloadSolid, ShareNodesSolid, TrashBinSolid, DotsHorizontalOutline } from "flowbite-svelte-icons";
 
-  const options = {
+  const options: ApexOptions = {
     series: [52.8, 26.8, 20.4],
     colors: ["#1C64F2", "#16BDCA", "#9061F9"],
     chart: {
@@ -579,15 +607,10 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
       type: "pie"
     },
     stroke: {
-      colors: ["white"],
-      lineCap: ""
+      colors: ["white"]
     },
     plotOptions: {
       pie: {
-        labels: {
-          show: true
-        },
-        size: "100%",
         dataLabels: {
           offset: -25
         }
@@ -627,7 +650,7 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
   };
 </script>
 
-<Card>
+<Card class="p-4 md:p-6">
   <div class="flex w-full items-start justify-between">
     <div class="flex-col items-center">
       <div class="mb-1 flex items-center">
@@ -646,7 +669,7 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
     </div>
     <div class="flex items-center justify-end">
       <DotsHorizontalOutline id="dots-menu" class="dots-menu dark:text-white" />
-      <Dropdown triggeredBy="#dots-menu" class="w-44" offset="-6">
+      <Dropdown simple triggeredBy="#dots-menu" class="w-44" offset={-6}>
         <DropdownItem><PenSolid class="me-2 inline h-3 w-3" /> Edit widget</DropdownItem>
         <DropdownItem><DownloadSolid class="me-2 inline h-3 w-3" />Dropdown data</DropdownItem>
         <DropdownItem><ShareNodesSolid class="me-2 inline h-3 w-3" />Add to repository</DropdownItem>
@@ -660,7 +683,7 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
   <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
     <div class="flex items-center justify-between pt-5">
       <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
-      <Dropdown class="w-40" offset="-6">
+      <Dropdown simple class="w-40" offset={-6}>
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
         <DropdownItem>Last 7 days</DropdownItem>
@@ -681,11 +704,13 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
 Set the chart type: "donut" to create a donut chart and copy the options from the example below to style the elements such as the data series, legends and labels for the X and Y axis.
 
 ```svelte
-<script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "flowbite-svelte";
-  import { InfoCircleSolid, ArrowDownToBracketOutline, ChevronDownOutline, ChevronRightOutline, PenSolid, DownloadSolid, ShareNodesSolid } from "flowbite-svelte-icons";
+<script lang="ts">
+  import type { ApexOptions } from "apexcharts";
+  import { Chart } from "@flowbite-svelte-plugins/chart";
+  import { Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "flowbite-svelte";
+  import { InfoCircleSolid, ArrowDownToBracketOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
-  const options = {
+  const options: ApexOptions = {
     series: [35.1, 23.5, 2.4, 5.4],
     colors: ["#1C64F2", "#16BDCA", "#FDBA8C", "#E74694"],
     chart: {
@@ -694,8 +719,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
       type: "donut"
     },
     stroke: {
-      colors: ["transparent"],
-      lineCap: ""
+      colors: ["transparent"]
     },
     plotOptions: {
       pie: {
@@ -713,7 +737,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
               label: "Unique visitors",
               fontFamily: "Inter, sans-serif",
               formatter: function (w) {
-                const sum = w.globals.seriesTotals.reduce((a, b) => {
+                const sum = w.globals.seriesTotals.reduce((a: number, b: number) => {
                   return a + b;
                 }, 0);
                 return `${sum}k`;
@@ -768,7 +792,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
   };
 </script>
 
-<Card>
+<Card class="p-4 md:p-6">
   <div class="flex w-full items-start justify-between">
     <div class="flex-col items-center">
       <div class="mb-1 flex items-center">
@@ -796,7 +820,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
   <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
     <div class="flex items-center justify-between pt-5">
       <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
-      <Dropdown class="w-40" offset="-6">
+      <Dropdown simple class="w-40" offset={-6}>
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
         <DropdownItem>Last 7 days</DropdownItem>
@@ -817,13 +841,15 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
 To create a radial chart with multiple data entries you need to set the type: "radialBar".
 
 ```svelte
-<script>
-  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "flowbite-svelte";
-  import { InfoCircleSolid, ArrowDownToBracketOutline, ChevronDownOutline, ChevronRightOutline, PenSolid, DownloadSolid, ShareNodesSolid } from "flowbite-svelte-icons";
+<script lang="ts">
+  import type { ApexOptions } from "apexcharts";
+  import { Chart } from "@flowbite-svelte-plugins/chart";
+  import { Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from "flowbite-svelte";
+  import { InfoCircleSolid, ArrowDownToBracketOutline, ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 
   let isOpen = false;
 
-  const options = {
+  const options: ApexOptions = {
     series: [90, 85, 70],
     colors: ["#1C64F2", "#16BDCA", "#FDBA8C"],
     chart: {
@@ -881,7 +907,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
   };
 </script>
 
-<Card>
+<Card class="p-4 md:p-6">
   <div class="flex w-full items-start justify-between">
     <div class="flex-col items-center">
       <div class="mb-1 flex items-center">
@@ -948,7 +974,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
   <div class="grid grid-cols-1 items-center justify-between border-t border-gray-200 dark:border-gray-700">
     <div class="flex items-center justify-between pt-5">
       <Button class="inline-flex items-center bg-transparent py-0 text-center text-sm font-medium text-gray-500 hover:bg-transparent hover:text-gray-900 focus:ring-transparent dark:bg-transparent dark:text-gray-400 dark:hover:bg-transparent dark:hover:text-white dark:focus:ring-transparent">Last 7 days<ChevronDownOutline class="m-2.5 ms-1.5 w-2.5" /></Button>
-      <Dropdown class="w-40" offset="-6">
+      <Dropdown simple class="w-40" offset={-6}>
         <DropdownItem>Yesterday</DropdownItem>
         <DropdownItem>Today</DropdownItem>
         <DropdownItem>Last 7 days</DropdownItem>
@@ -968,11 +994,10 @@ To create a radial chart with multiple data entries you need to set the type: "r
 
 ```svelte
 <script lang="ts">
-  import { Chart } from "$lib";
-  import { onMount, onDestroy } from "svelte";
   import type { ApexOptions } from "apexcharts";
-
-  let chart: ApexCharts | undefined;
+  import { Chart } from "@flowbite-svelte-plugins/chart";
+  import { onMount, onDestroy } from "svelte";
+  import { Card } from "flowbite-svelte";
 
   const initialData = [6500, 6418, 6456, 6526, 6356, 6456];
   const alternateData = [5500, 5418, 5456, 4526, 4356, 3456];
@@ -1005,21 +1030,28 @@ To create a radial chart with multiple data entries you need to set the type: "r
   };
 
   let intervalId: ReturnType<typeof setInterval>;
+  let isUsingInitialData = true;
 
   function toggleData() {
+    // Toggle between the two datasets
+    const newData = isUsingInitialData ? alternateData : initialData;
+    isUsingInitialData = !isUsingInitialData;
+
+    // Create a completely new options object to trigger reactivity
     options = {
       ...options,
       series: [
         {
-          ...options.series[0],
-          data: options.series[0].data === initialData ? alternateData : initialData
+          name: "New users",
+          data: newData,
+          color: "#1A56DB"
         }
       ]
     };
   }
 
   onMount(() => {
-    intervalId = setInterval(toggleData, 5000);
+    intervalId = setInterval(toggleData, 3000);
   });
 
   onDestroy(() => {
@@ -1027,25 +1059,17 @@ To create a radial chart with multiple data entries you need to set the type: "r
   });
 </script>
 
-<Chart bind:options bind:chart />
+<Card class="p-4 md:p-6">
+  <Chart bind:options />
+</Card>
 ```
 
 ## Component data
 
-The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+The component has the following props, type, and default values. See [types page](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-chart/src/lib/types.ts) for type information.
 
-### Chart styling
-
-- Use the `class` prop to overwrite `div` tag.
-
-### Card styling
-
-- Use the `class` prop to overwrite `divClass`.
-
-## Component data
-
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {components} plugin="chart"/>
 
 ## References
 
-<GitHubCompoLinks {components}/>
+- [@flowbite-svelte-plugins/chart](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-chart/src/lib/Chart.svelte)

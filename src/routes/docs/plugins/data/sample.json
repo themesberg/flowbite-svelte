@@ -1,128 +1,128 @@
 [
-	{
-		"name": "Flowbite",
-		"releaseDate": "2021/25/09",
-		"npmDownloads": 269000,
-		"growth": "49%"
-	},
-	{
-		"name": "React",
-		"releaseDate": "2013/24/05",
-		"npmDownloads": 4500000,
-		"growth": "24%"
-	},
-	{
-		"name": "Angular",
-		"releaseDate": "2010/20/09",
-		"npmDownloads": 2800000,
-		"growth": "17%"
-	},
-	{
-		"name": "Vue",
-		"releaseDate": "2014/12/02",
-		"npmDownloads": 3600000,
-		"growth": "30%"
-	},
-	{
-		"name": "Svelte",
-		"releaseDate": "2016/26/11",
-		"npmDownloads": 1200000,
-		"growth": "57%"
-	},
-	{
-		"name": "Ember",
-		"releaseDate": "2011/08/12",
-		"npmDownloads": 500000,
-		"growth": "44%"
-	},
-	{
-		"name": "Backbone",
-		"releaseDate": "2010/13/10",
-		"npmDownloads": 300000,
-		"growth": "9%"
-	},
-	{
-		"name": "jQuery",
-		"releaseDate": "2006/28/01",
-		"npmDownloads": 6000000,
-		"growth": "5%"
-	},
-	{
-		"name": "Bootstrap",
-		"releaseDate": "2011/19/08",
-		"npmDownloads": 1800000,
-		"growth": "12%"
-	},
-	{
-		"name": "Foundation",
-		"releaseDate": "2011/23/09",
-		"npmDownloads": 700000,
-		"growth": "8%"
-	},
-	{
-		"name": "Bulma",
-		"releaseDate": "2016/24/10",
-		"npmDownloads": 500000,
-		"growth": "7%"
-	},
-	{
-		"name": "Next.js",
-		"releaseDate": "2016/25/10",
-		"npmDownloads": 2300000,
-		"growth": "45%"
-	},
-	{
-		"name": "Nuxt.js",
-		"releaseDate": "2016/16/10",
-		"npmDownloads": 900000,
-		"growth": "50%"
-	},
-	{
-		"name": "Meteor",
-		"releaseDate": "2012/17/01",
-		"npmDownloads": 1000000,
-		"growth": "10%"
-	},
-	{
-		"name": "Aurelia",
-		"releaseDate": "2015/08/07",
-		"npmDownloads": 200000,
-		"growth": "20%"
-	},
-	{
-		"name": "Inferno",
-		"releaseDate": "2016/27/09",
-		"npmDownloads": 100000,
-		"growth": "35%"
-	},
-	{
-		"name": "Preact",
-		"releaseDate": "2015/16/08",
-		"npmDownloads": 600000,
-		"growth": "28%"
-	},
-	{
-		"name": "Lit",
-		"releaseDate": "2018/28/05",
-		"npmDownloads": 400000,
-		"growth": "60%"
-	},
-	{
-		"name": "Alpine.js",
-		"releaseDate": "2019/02/11",
-		"npmDownloads": 300000,
-		"growth": "70%"
-	},
-	{
-		"name": "Stimulus",
-		"releaseDate": "2018/06/03",
-		"npmDownloads": 150000,
-		"growth": "25%"
-	},
-	{
-		"name": "Solid",
-		"releaseDate": "2021/05/07",
-		"npmDownloads": 250000,
-		"growth": "80%"
-	}
+  {
+    "name": "Flowbite",
+    "releaseDate": "2021/25/09",
+    "npmDownloads": 269000,
+    "growth": "49%"
+  },
+  {
+    "name": "React",
+    "releaseDate": "2013/24/05",
+    "npmDownloads": 4500000,
+    "growth": "24%"
+  },
+  {
+    "name": "Angular",
+    "releaseDate": "2010/20/09",
+    "npmDownloads": 2800000,
+    "growth": "17%"
+  },
+  {
+    "name": "Vue",
+    "releaseDate": "2014/12/02",
+    "npmDownloads": 3600000,
+    "growth": "30%"
+  },
+  {
+    "name": "Svelte",
+    "releaseDate": "2016/26/11",
+    "npmDownloads": 1200000,
+    "growth": "57%"
+  },
+  {
+    "name": "Ember",
+    "releaseDate": "2011/08/12",
+    "npmDownloads": 500000,
+    "growth": "44%"
+  },
+  {
+    "name": "Backbone",
+    "releaseDate": "2010/13/10",
+    "npmDownloads": 300000,
+    "growth": "9%"
+  },
+  {
+    "name": "jQuery",
+    "releaseDate": "2006/28/01",
+    "npmDownloads": 6000000,
+    "growth": "5%"
+  },
+  {
+    "name": "Bootstrap",
+    "releaseDate": "2011/19/08",
+    "npmDownloads": 1800000,
+    "growth": "12%"
+  },
+  {
+    "name": "Foundation",
+    "releaseDate": "2011/23/09",
+    "npmDownloads": 700000,
+    "growth": "8%"
+  },
+  {
+    "name": "Bulma",
+    "releaseDate": "2016/24/10",
+    "npmDownloads": 500000,
+    "growth": "7%"
+  },
+  {
+    "name": "Next.js",
+    "releaseDate": "2016/25/10",
+    "npmDownloads": 2300000,
+    "growth": "45%"
+  },
+  {
+    "name": "Nuxt.js",
+    "releaseDate": "2016/16/10",
+    "npmDownloads": 900000,
+    "growth": "50%"
+  },
+  {
+    "name": "Meteor",
+    "releaseDate": "2012/17/01",
+    "npmDownloads": 1000000,
+    "growth": "10%"
+  },
+  {
+    "name": "Aurelia",
+    "releaseDate": "2015/08/07",
+    "npmDownloads": 200000,
+    "growth": "20%"
+  },
+  {
+    "name": "Inferno",
+    "releaseDate": "2016/27/09",
+    "npmDownloads": 100000,
+    "growth": "35%"
+  },
+  {
+    "name": "Preact",
+    "releaseDate": "2015/16/08",
+    "npmDownloads": 600000,
+    "growth": "28%"
+  },
+  {
+    "name": "Lit",
+    "releaseDate": "2018/28/05",
+    "npmDownloads": 400000,
+    "growth": "60%"
+  },
+  {
+    "name": "Alpine.js",
+    "releaseDate": "2019/02/11",
+    "npmDownloads": 300000,
+    "growth": "70%"
+  },
+  {
+    "name": "Stimulus",
+    "releaseDate": "2018/06/03",
+    "npmDownloads": 150000,
+    "growth": "25%"
+  },
+  {
+    "name": "Solid",
+    "releaseDate": "2021/05/07",
+    "npmDownloads": 250000,
+    "growth": "80%"
+  }
 ]

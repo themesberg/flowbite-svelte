@@ -1,12 +1,18 @@
 <script lang="ts">
-  import { bottomnavheaderitem } from ".";
-  import { type BottomNavHeaderItemProps, cn } from "$lib";
+  import { bottomNavHeaderItem } from ".";
+  import clsx from "clsx";
+  import { type BottomNavHeaderItemProps } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { itemName, active, class: className, ...restProps }: BottomNavHeaderItemProps = $props();
-  let base = $derived(bottomnavheaderitem({ active }));
+
+  // Theme context
+  const theme = getTheme("bottomNavHeaderItem");
+
+  let base = $derived(bottomNavHeaderItem({ active, class: clsx(theme, className) }));
 </script>
 
-<button {...restProps} class={cn(base, className)}>
+<button {...restProps} class={base}>
   {itemName}
 </button>
 
@@ -14,7 +20,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L307)
+[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L272)
 ## Props
 @prop itemName
 @prop active

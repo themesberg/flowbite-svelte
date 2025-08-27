@@ -1,10 +1,14 @@
 <script lang="ts">
   import type { VideoProps } from "$lib/types";
+  import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, type = "video/mp4", trackSrc, src, srclang = "en", label = "english_captions", class: classname, ...restProps }: VideoProps = $props();
+
+  const theme = getTheme("span");
 </script>
 
-<video {...restProps} class={classname}>
+<video {...restProps} class={clsx(theme, classname)}>
   <source {src} {type} />
   {#if children}
     {@render children()}
@@ -17,7 +21,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1976)
+[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1990)
 ## Props
 @prop children
 @prop type = "video/mp4"

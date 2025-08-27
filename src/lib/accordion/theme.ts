@@ -1,8 +1,17 @@
-import { tv } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
+import { tv, type VariantProps } from "tailwind-variants";
+
+// Variants
+export type AccordionVariants = VariantProps<typeof accordion>;
+export type AccordionItemVariants = VariantProps<typeof accordionItem> & Classes<typeof accordionItem>;
 
 export const accordion = tv({
-  base: "w-full text-gray-500 dark:text-gray-400",
+  base: "w-full",
   variants: {
+    color: {
+      primary: "text-primary-500 dark:text-primary-400",
+      secondary: "text-secondary-500 dark:text-secondary-400"
+    },
     flush: {
       true: "",
       false: "border border-gray-200 dark:border-gray-700 rounded-t-xl"
@@ -10,7 +19,7 @@ export const accordion = tv({
   }
 });
 
-export const accordionitem = tv({
+export const accordionItem = tv({
   slots: {
     base: "group",
     button: "flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700 border-b",

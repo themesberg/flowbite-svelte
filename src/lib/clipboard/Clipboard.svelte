@@ -1,11 +1,14 @@
 <script lang="ts">
   import Button from "$lib/buttons/Button.svelte";
   import clsx from "clsx";
-  import type { ClipboardProps } from "$lib";
+  import { type ClipboardProps } from "$lib";
   import { clipboard } from "./theme";
   import type { MouseEventHandler } from "svelte/elements";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, embedded = false, value = $bindable(""), success = $bindable(false), onclick, class: className = "", ...restProps }: ClipboardProps = $props();
+
+  const theme = getTheme("clipboard");
 
   const copyToClipboard: MouseEventHandler<HTMLButtonElement> = async (ev) => {
     onclick?.(ev);
@@ -35,7 +38,7 @@
   };
 </script>
 
-<Button onclick={copyToClipboard} {...restProps} class={clipboard({ embedded, class: clsx(className) })}>
+<Button onclick={copyToClipboard} {...restProps} class={clipboard({ embedded, class: clsx(theme, className) })}>
   {@render children?.(success)}
 </Button>
 
@@ -43,7 +46,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L467)
+[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L432)
 ## Props
 @prop children
 @prop embedded = false

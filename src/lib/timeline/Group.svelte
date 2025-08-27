@@ -1,13 +1,33 @@
 <script lang="ts">
   import { group } from ".";
   import type { GroupProps } from "$lib/types";
-  let { children, divClass, timeClass, date, olClass, ...restProps }: GroupProps = $props();
+  import clsx from "clsx";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+
+  let { children, divClass, timeClass, date, olClass, class: className, classes, ...restProps }: GroupProps = $props();
+
+  warnThemeDeprecation(
+    "Group",
+    { divClass, timeClass, olClass },
+    {
+      divClass: "class",
+      timeClass: "time",
+      olClass: "ol"
+    }
+  );
+  const styling = $derived({
+    time: timeClass,
+    ol: olClass
+  });
+
+  const theme = getTheme("group");
+
   const { div, time, ol } = $derived(group());
 </script>
 
-<div class={div({ class: divClass })}>
-  <time class={time({ class: timeClass })}>{date}</time>
-  <ol {...restProps} class={ol({ class: olClass })}>
+<div class={div({ class: clsx(theme?.div, className ?? divClass) })}>
+  <time class={time({ class: clsx(theme?.time, styling.time) })}>{date}</time>
+  <ol {...restProps} class={ol({ class: clsx(theme?.ol, styling.ol) })}>
     {@render children()}
   </ol>
 </div>
@@ -16,12 +36,14 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1784)
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1777)
 ## Props
 @prop children
 @prop divClass
 @prop timeClass
 @prop date
 @prop olClass
+@prop class: className
+@prop classes
 @prop ...restProps
 -->

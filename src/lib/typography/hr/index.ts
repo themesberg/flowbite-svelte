@@ -1,4 +1,2 @@
-import Hr from "./Hr.svelte";
-import { hr } from "./theme";
-
-export { Hr, hr };
+export { default as Hr } from "./Hr.svelte";
+export { hr } from "./theme";

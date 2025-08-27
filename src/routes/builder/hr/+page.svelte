@@ -80,7 +80,7 @@
   <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each types as type}
-      <Radio class="my-1 w-20" name="hr_style" bind:group={selectedStyle} value={type}>{type}</Radio>
+      <Radio class="my-1" classes={{ label: "w-20" }} name="hr_style" bind:group={selectedStyle} value={type}>{type}</Radio>
     {/each}
   </div>
   {#snippet codeblock()}

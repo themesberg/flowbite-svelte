@@ -1,11 +1,13 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { tablebodyrow } from ".";
+  import { tableBodyRow } from ".";
   import type { TableBodyRowProps, TableCtxType } from "$lib/types";
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, color, striped, hoverable, border, ...restProps }: TableBodyRowProps = $props();
+
+  const theme = getTheme("tableBodyRow");
 
   const tableCtx = getContext<TableCtxType>("tableCtx");
   // for reactivity with svelte context
@@ -14,10 +16,10 @@
   let compoStriped = $derived(striped || tableCtx.striped || false);
   let compoBorder = $derived(border || tableCtx.border || false);
 
-  const base = $derived(tablebodyrow({ color: compoColor, hoverable: compoHoverable, striped: compoStriped, border: compoBorder }));
+  const base = $derived(tableBodyRow({ color: compoColor, hoverable: compoHoverable, striped: compoStriped, border: compoBorder, class: clsx(theme, className) }));
 </script>
 
-<tr {...restProps} class={twMerge(base, clsx(className))}>
+<tr {...restProps} class={base}>
   {#if children}
     {@render children()}
   {/if}
@@ -27,7 +29,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1654)
+[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1658)
 ## Props
 @prop children
 @prop class: className

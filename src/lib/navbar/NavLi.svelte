@@ -1,23 +1,31 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
+  import { getTheme } from "$lib/theme/themeUtils";
+  import type { NavbarState, NavLiProps, NavbarBreakpoint } from "$lib/types";
   import clsx from "clsx";
   import { getContext } from "svelte";
-  import { navbar_li } from "./theme";
-  import type { NavbarState, NavLiProps } from "$lib/types";
+  import { navbarLi } from "./theme";
 
   let navState = getContext<NavbarState>("navState");
+  let navBreakpoint = getContext<NavbarBreakpoint>("breakpoint");
 
-  let { children, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
+  let { children, onclick, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
 
-  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
+  const theme = getTheme("navbarLi");
 
-  let navUrl = $state("");
-  activeUrlStore.subscribe((value) => {
-    navUrl = value;
-  });
+  let active = $derived(navState.activeUrl ? restProps.href === navState.activeUrl : false);
+  let liClass = $derived(navbarLi({ breakpoint: navBreakpoint, hidden: navState.hidden, class: clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), theme, className) }));
 
-  let active = $derived(navUrl ? restProps.href === navUrl : false);
-  let liClass = $derived(twMerge(navbar_li({ hidden: navState.hidden }), clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), className)));
+  function handleClick(event: any) {
+    // Close the mobile menu when a link is clicked
+    if (restProps.href !== undefined && !navState.hidden) {
+      navState.hidden = true;
+    }
+
+    // Call original onclick handler if provided
+    if (onclick) {
+      onclick(event);
+    }
+  }
 </script>
 
 <li>
@@ -26,7 +34,7 @@
       {@render children?.()}
     </button>
   {:else}
-    <a {...restProps} class={liClass}>
+    <a {...restProps} class={liClass} onclick={handleClick}>
       {@render children?.()}
     </a>
   {/if}
@@ -36,9 +44,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1125)
+[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1124)
 ## Props
 @prop children
+@prop onclick
 @prop activeClass
 @prop nonActiveClass
 @prop class: className

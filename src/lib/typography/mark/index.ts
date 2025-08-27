@@ -1,4 +1,2 @@
-import Mark from "./Mark.svelte";
-import { mark } from "./theme";
-
-export { Mark, mark };
+export { default as Mark } from "./Mark.svelte";
+export { mark } from "./theme";

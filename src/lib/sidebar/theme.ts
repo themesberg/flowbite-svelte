@@ -1,6 +1,12 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type SidebarVariants = VariantProps<typeof sidebar>;
+// Variants
+export type SidebarVariants = VariantProps<typeof sidebar> & Classes<typeof sidebar>;
+export type SidebarCtaVariants = VariantProps<typeof sidebarCta> & Classes<typeof sidebarCta>;
+export type SidebarBrandVariants = VariantProps<typeof sidebarBrand> & Classes<typeof sidebarBrand>;
+export type SidebarDropdownWrapperVariants = VariantProps<typeof sidebarDropdownWrapper> & Classes<typeof sidebarDropdownWrapper>;
+export type SidebarButtonVariants = VariantProps<typeof sidebarButton> & Classes<typeof sidebarButton>;
 
 export const sidebar = tv({
   slots: {
@@ -45,8 +51,11 @@ export const sidebar = tv({
   ]
 });
 
-export const sidebarbutton = tv({
-  base: "inline-flex items-center p-0 mt-0 ms-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
+export const sidebarButton = tv({
+  slots: {
+    base: "inline-flex items-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
+    svg: "h-6 w-6 m-2"
+  },
   variants: {
     breakpoint: {
       sm: "sm:hidden",
@@ -58,15 +67,7 @@ export const sidebarbutton = tv({
   }
 });
 
-export const sidebarcta = tv({
-  slots: {
-    base: "p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900",
-    div: "flex items-center mb-3",
-    span: "bg-primary-100 text-primary-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded-sm dark:bg-primary-200 dark:text-primary-900"
-  }
-});
-
-export const sitebarbrand = tv({
+export const sidebarBrand = tv({
   slots: {
     base: "flex items-center ps-2.5 mb-5",
     img: "h-6 me-3 sm:h-7",
@@ -74,7 +75,15 @@ export const sitebarbrand = tv({
   }
 });
 
-export const sidebardropdownwrapper = tv({
+export const sidebarCta = tv({
+  slots: {
+    base: "p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900",
+    div: "flex items-center mb-3",
+    span: "bg-primary-100 text-primary-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded-sm dark:bg-primary-200 dark:text-primary-900"
+  }
+});
+
+export const sidebarDropdownWrapper = tv({
   slots: {
     base: "group",
     btn: "flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-sm transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",

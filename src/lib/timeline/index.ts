@@ -1,9 +1,7 @@
-import Activity from "./Activity.svelte";
-import ActivityItem from "./ActivityItem.svelte";
-import Group from "./Group.svelte";
-import GroupItem from "./GroupItem.svelte";
-import Timeline from "./Timeline.svelte";
-import TimelineItem from "./TimelineItem.svelte";
-import { activity, activityitem, group, groupitem, timeline, timelineitem } from "./theme";
-
-export { Activity, ActivityItem, Group, GroupItem, Timeline, TimelineItem, activity, activityitem, group, groupitem, timeline, timelineitem };
+export { default as Activity } from "./Activity.svelte";
+export { default as ActivityItem } from "./ActivityItem.svelte";
+export { default as Group } from "./Group.svelte";
+export { default as GroupItem } from "./GroupItem.svelte";
+export { default as Timeline } from "./Timeline.svelte";
+export { default as TimelineItem } from "./TimelineItem.svelte";
+export { activity, activityItem, group, groupItem, timeline, timelineItem, type TimelineVariants } from "./theme";

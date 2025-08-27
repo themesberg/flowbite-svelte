@@ -54,8 +54,8 @@
     (() => {
       let props = [];
       if (radioColor !== "primary") props.push(`color="${radioColor}"`);
-      if (labelClass !== "") props.push(`labelClass="${labelClass}"`);
-      if (inputClass !== "") props.push(`inputClass="${inputClass}"`);
+      if (labelClass !== "") props.push(`classes={{label:"${labelClass}"}}`);
+      if (inputClass !== "") props.push(`class="${inputClass}"`);
       if (disabled) props.push("disabled");
       // if (indeterminateState) props.push(' indeterminate');
       // if (disabledState) props.push(' disabled');
@@ -81,9 +81,6 @@ ${helperSlot ? `<Helper class="ps-6" color="${helperColor}">Helper text</Helper>
   let codeBlock = uiHelpers();
   let exampleExpand = $state(false);
 
-  const handleExpandClick = () => {
-    exampleExpand = !exampleExpand;
-  };
   // end of DynamicCodeBlock setup
   $effect(() => {
     exampleExpand = codeBlock.isOpen;
@@ -96,7 +93,7 @@ ${helperSlot ? `<Helper class="ps-6" color="${helperColor}">Helper text</Helper>
 <H1>Radio Builder</H1>
 <CodeWrapper>
   <div class="mb-4">
-    <Radio {inputClass} class={labelClass} name="radio_interactive" {disabled} color={demoRadioColor} checked={isChecked}>Radio</Radio>
+    <Radio class={inputClass} classes={{ label: labelClass }} name="radio_interactive" {disabled} color={demoRadioColor} checked={isChecked}>Radio</Radio>
     {#if helperSlot}
       <Helper id="helper-radio-text" color={helperColor} class="ps-6">For orders shipped from $25 in books or $29 in other categories</Helper>
     {/if}
@@ -104,19 +101,19 @@ ${helperSlot ? `<Helper class="ps-6" color="${helperColor}">Helper text</Helper>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24" name="radio_color" bind:group={radioColor} onchange={() => handleOnchange(colorOption)} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="radio_color" bind:group={radioColor} onchange={() => handleOnchange(colorOption)} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Button class="mb-4 w-40" color="secondary" onclick={changeHelperSlot}>{helperSlot ? "Remove helper" : "Add helper"}</Button>
     <Label class="mb-4 w-full font-bold">Helper Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24 {helperSlot ? '' : 'cursor-not-allowed opacity-30'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1{helperSlot ? '' : 'cursor-not-allowed opacity-30'}" classes={{ label: "w-24" }} disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-32" color="primary" onclick={changeInputClass}>{inputClass === inputClasses[0] ? "inputClass=w-6 h-6" : "Default size"}</Button>
-    <Button class="w-32" color="secondary" onclick={changeLabelClass}>{labelClass === labelClasses[0] ? "Default labelClass" : "labelClass=w-24 m-2"}</Button>
+    <Button class="w-32" color="primary" onclick={changeInputClass}>{inputClass === inputClasses[0] ? "class=w-6 h-6" : "Default size"}</Button>
+    <Button class="w-32" color="secondary" onclick={changeLabelClass}>{labelClass === labelClasses[0] ? "Default label" : "label:w-24 m-2"}</Button>
     <Button class="w-32" color="lime" onclick={changeDisabled}>{disabled ? "Enabled" : "Disabled"}</Button>
   </div>
   {#snippet codeblock()}

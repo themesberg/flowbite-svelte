@@ -1,6 +1,7 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type CheckboxVariants = VariantProps<typeof checkbox>;
+export type CheckboxVariants = VariantProps<typeof checkbox> & Classes<typeof checkbox>;
 
 export const checkbox = tv({
   slots: {
@@ -100,7 +101,7 @@ export const checkbox = tv({
   }
 });
 
-export const checkboxbutton = tv({
+export const checkboxButton = tv({
   base: "",
   variants: {
     inline: {

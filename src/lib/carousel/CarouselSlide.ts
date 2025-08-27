@@ -3,11 +3,11 @@ export const canChangeSlide = ({
   slideDuration,
   slideDurationRatio = 1
 }: {
-  lastSlideChange: Date;
+  lastSlideChange: number;
   slideDuration: number;
   slideDurationRatio?: number; // Allows for starting a new transition before the previous completes
 }) => {
-  if (lastSlideChange && new Date().getTime() - lastSlideChange.getTime() < slideDuration * slideDurationRatio) {
+  if (lastSlideChange && Date.now() - lastSlideChange < slideDuration * slideDurationRatio) {
     console.warn("Can't change slide yet, too soon");
     return false;
   }

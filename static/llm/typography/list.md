@@ -20,7 +20,7 @@ Use this example to create a default unordered list of items.
   import { Li, List, Heading } from "flowbite-svelte";
 </script>
 
-<Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
+<Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
   <Li>At least 10 characters (and up to 100 characters)</Li>
   <Li>At least one lowercase character</Li>
@@ -38,7 +38,7 @@ This example can be used to apply custom icons instead of the default bullets fo
   import { CheckCircleSolid, CloseCircleSolid } from "flowbite-svelte-icons";
 </script>
 
-<Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
+<Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
   <Li icon>
     <CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
@@ -101,7 +101,7 @@ Use the `tag="dl"` prop to disable the list style bullets or numbers.
   import { List, Li, Heading } from "flowbite-svelte";
 </script>
 
-<Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold  text-gray-900 dark:text-white">Password requirements</Heading>
+<Heading tag="h2" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Password requirements</Heading>
 <List tag="dl" class="space-y-1 text-gray-500 dark:text-gray-400">
   <Li>At least 10 characters (and up to 100 characters)</Li>
   <Li>At least one lowercase character</Li>
@@ -118,7 +118,7 @@ Use the `tag="ol"` prop to create an ordered list of items with numbers.
   import { List, Li, Span, Heading } from "flowbite-svelte";
 </script>
 
-<Heading tag="h2" class="mb-2 text-lg text-lg font-semibold font-semibold  text-gray-900 dark:text-white">Top students:</Heading>
+<Heading tag="h2" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Top students:</Heading>
 <List tag="ol" class="space-y-1 text-gray-500 dark:text-gray-400">
   <Li><Span>Bonnie Green</Span> with <Span>70</Span> points</Li>
   <Li><Span>Jese Leos</Span> with <Span>63</Span> points</Li>
@@ -332,7 +332,7 @@ Use this example to create a horizontally aligned list of items.
 
 #### Types
 
-[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1935)
+[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1949)
 
 #### Props
 

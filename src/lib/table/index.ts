@@ -1,10 +1,8 @@
-import Table from "./Table.svelte";
-import TableBody from "./TableBody.svelte";
-import TableBodyCell from "./TableBodyCell.svelte";
-import TableBodyRow from "./TableBodyRow.svelte";
-import TableHeadCell from "./TableHeadCell.svelte";
-import TableHead from "./TableHead.svelte";
-import TableSearch from "./TableSearch.svelte";
-import { table, tablebodyrow, tablehead, tablebodycell, tableheadcell } from "./theme";
-
-export { Table, table, TableBody, TableBodyCell, tablebodycell, TableBodyRow, tablebodyrow, TableHeadCell, tableheadcell, TableHead, tablehead, TableSearch };
+export { default as Table } from "./Table.svelte";
+export { default as TableBody } from "./TableBody.svelte";
+export { default as TableBodyCell } from "./TableBodyCell.svelte";
+export { default as TableBodyRow } from "./TableBodyRow.svelte";
+export { default as TableHeadCell } from "./TableHeadCell.svelte";
+export { default as TableHead } from "./TableHead.svelte";
+export { default as TableSearch } from "./TableSearch.svelte";
+export { table, tableBodyRow, tableHead, tableBodyCell, tableHeadCell, tableSearch } from "./theme";

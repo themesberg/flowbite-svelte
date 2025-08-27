@@ -1,13 +1,15 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
-  import { navbar_container } from "./theme";
+  import { navbarContainer } from "./theme";
   import type { NavContainerProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, fluid, class: clasName, ...restProps }: NavContainerProps = $props();
+
+  const theme = getTheme("navbarContainer");
 </script>
 
-<div {...restProps} class={twMerge(navbar_container({ fluid }), clsx(clasName))}>
+<div {...restProps} class={navbarContainer({ fluid, class: clsx(theme, clasName) })}>
   {@render children?.()}
 </div>
 
@@ -15,7 +17,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1101)
+[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099)
 ## Props
 @prop children
 @prop fluid

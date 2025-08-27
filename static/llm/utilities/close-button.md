@@ -34,13 +34,13 @@ Use `CloseButton` component to close a component.
 
 #### Types
 
-[CloseButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L100)
+[CloseButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L113)
 
 #### Props
 
 - children
 - color: "gray"
-- onclick
+- onclick: onclickorg
 - name: "Close"
 - ariaLabel
 - size: "md"

@@ -1,17 +1,22 @@
 <script lang="ts">
-  import { getContext, setContext } from "svelte";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import type { NavbarState, NavUlProps, NavbarBreakpoint } from "$lib/types";
+  import clsx from "clsx";
+  import { getContext } from "svelte";
   import { sineIn } from "svelte/easing";
   import { prefersReducedMotion } from "svelte/motion";
-  import { writable } from "svelte/store";
-  import { slide, fly, fade, scale } from "svelte/transition";
-  import { twMerge } from "tailwind-merge";
-  import clsx from "clsx";
-  import { navbar_ul } from "./theme";
-  import type { NavbarState, NavUlProps } from "$lib/types";
+  import { fade, fly, scale, slide } from "svelte/transition";
+  import { navbarUl } from "./theme";
 
   let navState = getContext<NavbarState>("navState");
+  let navBreakpoint = getContext<NavbarBreakpoint>("breakpoint");
 
-  let { children, activeUrl, ulClass, slideParams, transition = slide, transitionParams, activeClass, nonActiveClass, respectMotionPreference = true, class: clasName, ...restProps }: NavUlProps = $props();
+  let { children, activeUrl = $bindable(), ulClass, slideParams, transition = slide, transitionParams, activeClass, nonActiveClass, respectMotionPreference = true, class: clasName, classes, ...restProps }: NavUlProps = $props();
+
+  warnThemeDeprecation("NavUl", { ulClass, activeClass, nonActiveClass }, { ulClass: "ul", activeClass: "active", nonActiveClass: "nonActive" });
+  const styling = $derived(classes ?? { ul: ulClass, active: activeClass, nonActive: nonActiveClass });
+
+  const theme = getTheme("navbarUl");
 
   // Default parameters for different transitions
   const getDefaultParams = (transitionFn: any) => {
@@ -34,24 +39,18 @@
     return finalParams;
   });
 
-  const activeUrlStore = writable<string>("");
-
   let hidden: boolean = $derived(navState.hidden ?? true);
 
-  let { base, ul, active, nonActive } = $derived(navbar_ul({ hidden }));
+  let { base, ul, active, nonActive } = $derived(navbarUl({ hidden, breakpoint: navBreakpoint }));
 
   $effect(() => {
-    navState.activeClass = twMerge(active(), clsx(activeClass));
-    navState.nonActiveClass = twMerge(nonActive(), clsx(nonActiveClass));
+    navState.activeClass = active({ class: clsx(theme?.active, styling.active) });
+    navState.nonActiveClass = nonActive({ class: clsx(theme?.nonActive, styling.nonActive) });
+    navState.activeUrl = activeUrl;
   });
 
-  $effect(() => {
-    activeUrlStore.set(activeUrl ?? "");
-  });
-  setContext("activeUrl", activeUrlStore);
-
-  let divCls: string = $derived(twMerge(base(), clsx(clasName)));
-  let ulCls: string = $derived(twMerge(ul(), clsx(ulClass)));
+  let divCls: string = $derived(base({ class: clsx(theme?.base, clasName) }));
+  let ulCls: string = $derived(ul({ class: clsx(theme?.ul, styling.ul) }));
 </script>
 
 {#if !hidden}
@@ -72,10 +71,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1110)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1109)
 ## Props
 @prop children
-@prop activeUrl
+@prop activeUrl = $bindable()
 @prop ulClass
 @prop slideParams
 @prop transition = slide
@@ -84,5 +83,6 @@
 @prop nonActiveClass
 @prop respectMotionPreference = true
 @prop class: clasName
+@prop classes
 @prop ...restProps
 -->

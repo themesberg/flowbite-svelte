@@ -1,37 +1,43 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { getContext } from "svelte";
   import ToolbarButton from "../toolbar/ToolbarButton.svelte";
   import Menu from "./Menu.svelte";
-  import { navbar_hamburger } from "./theme";
-  import type { NavbarState, NavHamburgerProps } from "$lib/types";
+  import { navbarHamburger } from "./theme";
+  import type { NavbarState, NavHamburgerProps, NavbarBreakpoint } from "$lib/types";
   import type { MouseEventHandler } from "svelte/elements";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, onclick, menuClass, class: className, name = "Open main menu", ...restProps }: NavHamburgerProps = $props();
+  let { children, onclick, menuClass, class: className, classes, name = "Open main menu", ...restProps }: NavHamburgerProps = $props();
 
-  let { base, menu } = navbar_hamburger();
+  warnThemeDeprecation("NavHamburger", { menuClass }, { menuClass: "menu" });
+  const styling = $derived(classes ?? { menu: menuClass });
 
-  let navState = getContext<NavbarState>("navState");
+  const theme = getTheme("navbarHamburger");
+  const navState = getContext<NavbarState>("navState");
+  const navBreakpoint = getContext<NavbarBreakpoint>("breakpoint");
+  const { base, menu } = navbarHamburger({ breakpoint: navBreakpoint });
+
   const toggle: MouseEventHandler<HTMLButtonElement> = (ev) => {
     navState.hidden = !navState.hidden;
   };
 </script>
 
-<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={twMerge(base(), clsx(className))}>
-  <Menu class={twMerge(menu(), clsx(menuClass))} />
+<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <Menu class={menu({ class: clsx(theme?.menu, styling.menu) })} />
 </ToolbarButton>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1105)
+[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1103)
 ## Props
 @prop children
 @prop onclick
 @prop menuClass
 @prop class: className
+@prop classes
 @prop name = "Open main menu"
 @prop ...restProps
 -->

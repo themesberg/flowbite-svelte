@@ -1,13 +1,16 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { timeline } from ".";
+  import { timeline, type TimelineVariants } from ".";
   import clsx from "clsx";
-  import type { TimelineProps, TimelineVariants } from "$lib/types";
+  import type { TimelineProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, order = "default", class: className, ...restProps }: TimelineProps = $props();
 
+  const theme = getTheme("timeline");
+
   setContext<TimelineVariants["order"]>("order", order);
-  const olCls = $derived(timeline({ order, class: clsx(className) }));
+  const olCls = $derived(timeline({ order, class: clsx(theme, className) }));
 </script>
 
 <ol {...restProps} class={olCls}>
@@ -18,7 +21,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1803)
+[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1805)
 ## Props
 @prop children
 @prop order = "default"

@@ -1,6 +1,8 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
+// Variants
 export type ButtonVariants = VariantProps<typeof button>;
+export type GradientButtonVariantes = VariantProps<typeof gradientButton>;
 
 export const button = tv({
   slots: {
@@ -156,8 +158,6 @@ export const button = tv({
     pill: false
   }
 });
-
-export type GradientButtonVariantes = VariantProps<typeof gradientButton>;
 
 export const gradientButton = tv({
   slots: {

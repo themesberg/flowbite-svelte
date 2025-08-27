@@ -1,31 +1,34 @@
 <script lang="ts">
+  import { type SlideProps, type CarouselState } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   import { getContext } from "svelte";
-  import type { Writable } from "svelte/store";
   import { fly } from "svelte/transition";
   import { slide } from "./theme";
-  import { type SlideProps, type State, cn } from "$lib";
 
-  const state = getContext<Writable<State>>("state");
+  const _state = getContext<CarouselState>("state");
 
-  let { image, transition, class: className, ...restProps }: SlideProps = $props();
+  let { image, transition, fit, class: className, ...restProps }: SlideProps = $props();
+
+  const theme = getTheme("slide");
 
   let transitionSlideIn = $derived({
-    x: $state.forward ? "100%" : "-100%",
+    x: _state.forward ? "100%" : "-100%",
     opacity: 1,
     width: "100%",
     height: "100%",
-    duration: $state.slideDuration
+    duration: _state.slideDuration
   });
 
   let transitionSlideOut = $derived({
-    x: $state.forward ? "-100%" : "100%",
+    x: _state.forward ? "-100%" : "100%",
     opacity: 0.9,
     width: "100%",
     height: "100%",
-    duration: $state.slideDuration
+    duration: _state.slideDuration
   });
 
-  let imgClass = cn(slide(), className);
+  let imgClass = $derived(slide({ fit, class: clsx(theme, className) }));
 </script>
 
 {#if transition}
@@ -42,10 +45,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L455)
+[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L420)
 ## Props
 @prop image
 @prop transition
+@prop fit
 @prop class: className
 @prop ...restProps
 -->

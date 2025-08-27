@@ -2,10 +2,13 @@
   import clsx from "clsx";
   import { paragraph } from "./index";
   import type { ParagraphProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className = "text-gray-900 dark:text-white", height = "normal", align = "left", justify = false, italic, firstUpper = false, whitespace = "normal", size = "base", space = "normal", weight = "normal", ...restProps }: ParagraphProps = $props();
 
-  let classP = $derived(paragraph({ height, size, weight, space, align, justify, italic, firstUpper, whitespace, class: clsx(className) }));
+  const theme = getTheme("paragraph");
+
+  let classP = $derived(paragraph({ height, size, weight, space, align, justify, italic, firstUpper, whitespace, class: clsx(theme, className) }));
 </script>
 
 <p {...restProps} class={classP}>
@@ -16,7 +19,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ParagraphProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1954)
+[ParagraphProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1968)
 ## Props
 @prop children
 @prop class: className = "text-gray-900 dark:text-white"

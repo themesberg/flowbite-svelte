@@ -1,14 +1,25 @@
 <script lang="ts">
-  import { setContext } from "svelte";
-  import { fly } from "svelte/transition";
-  import { writable } from "svelte/store";
-  import { sineIn } from "svelte/easing";
-  import { sidebar } from ".";
-  import { trapFocus, type SidebarProps, type SidebarCtxType } from "$lib";
-  import { twMerge } from "tailwind-merge";
+  import { trapFocus, type SidebarCtxType, type SidebarProps } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
+  import { setContext } from "svelte";
+  import { sineIn } from "svelte/easing";
+  import { fly } from "svelte/transition";
+  import { sidebar } from ".";
 
-  let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = "md", alwaysOpen = false, position = "fixed", activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, activeUrl = "", class: className, ...restProps }: SidebarProps = $props();
+  let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = "md", alwaysOpen = false, position = "fixed", activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, activeUrl = "", class: className, classes, disableBreakpoints = false, ...restProps }: SidebarProps = $props();
+
+  warnThemeDeprecation("Sidebar", { backdropClass, divClass, nonActiveClass, activeClass }, { backdropClass: "backdrop", divClass: "div", nonActiveClass: "nonactive", activeClass: "active" });
+  const styling = $derived(
+    classes ?? {
+      backdrop: backdropClass,
+      div: divClass,
+      nonactive: nonActiveClass,
+      active: activeClass
+    }
+  );
+
+  const theme = getTheme("sidebar");
 
   const breakpointValues = {
     sm: 640,
@@ -19,26 +30,27 @@
   };
 
   let innerWidth: number = $state(-1);
-  // Modified to consider alwaysOpen prop
-  let isLargeScreen = $derived(alwaysOpen || innerWidth >= breakpointValues[breakpoint]);
+  // isLargeScreen should only be true if not disabling breakpoints and it meets the criteria
+  let isLargeScreen = $derived(disableBreakpoints ? false : alwaysOpen || innerWidth >= breakpointValues[breakpoint]);
 
-  const activeUrlStore = writable("");
+  const activeUrlStore = $state({ value: "" });
   setContext("activeUrl", activeUrlStore);
   $effect(() => {
-    activeUrlStore.set(activeUrl);
+    activeUrlStore.value = activeUrl;
   });
 
-  const { base, active, nonactive, div, backdrop: backdropCls } = $derived(sidebar({ isOpen, breakpoint, position, backdrop, alwaysOpen }));
+  if (disableBreakpoints) isOpen = true;
+  const { base, active, nonactive, div, backdrop: backdropCls } = $derived(sidebar({ isOpen, breakpoint, position, backdrop, alwaysOpen: alwaysOpen && !disableBreakpoints }));
 
   let sidebarCtx: SidebarCtxType = {
     get closeSidebar() {
       return closeSidebar;
     },
     get activeClass() {
-      return twMerge(active(), clsx(activeClass));
+      return active({ class: clsx(theme?.active, styling.active) });
     },
     get nonActiveClass() {
-      return twMerge(nonactive(), clsx(nonActiveClass));
+      return nonactive({ class: clsx(theme?.nonactive, styling.nonactive) });
     },
     isSingle
   };
@@ -55,20 +67,28 @@
 
 <svelte:window bind:innerWidth />
 
-{#if isOpen || isLargeScreen}
-  {#if isOpen && !alwaysOpen}
-    {#if backdrop && activateClickOutside}
-      <div role="presentation" class={twMerge(backdropCls(), clsx(backdropClass))} onclick={closeSidebar}></div>
-    {:else if backdrop && !activateClickOutside}
-      <div role="presentation" class={twMerge(backdropCls(), clsx(backdropClass))}></div>
-    {:else if !backdrop && activateClickOutside}
-      <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full" onclick={closeSidebar}></div>
-    {:else if !backdrop && !activateClickOutside}
-      <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full"></div>
+{#if !disableBreakpoints}
+  {#if isOpen || isLargeScreen}
+    {#if isOpen && !alwaysOpen}
+      {#if backdrop && activateClickOutside}
+        <div role="presentation" class={backdropCls({ class: clsx(theme?.backdrop, styling.backdrop) })} onclick={closeSidebar}></div>
+      {:else if backdrop && !activateClickOutside}
+        <div role="presentation" class={backdropCls({ class: clsx(theme?.backdrop, styling.backdrop) })}></div>
+      {:else if !backdrop && activateClickOutside}
+        <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full" onclick={closeSidebar}></div>
+      {:else if !backdrop && !activateClickOutside}
+        <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full"></div>
+      {/if}
     {/if}
+    <aside use:trapFocus={!isLargeScreen && isOpen && !alwaysOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} transition:transition={!alwaysOpen ? transitionParams : undefined} {...restProps} class={base({ class: clsx(theme?.base, className) })} aria-label={ariaLabel}>
+      <div class={div({ class: clsx(theme?.base, styling.div) })}>
+        {@render children()}
+      </div>
+    </aside>
   {/if}
-  <aside use:trapFocus={!isLargeScreen && isOpen && !alwaysOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} transition:transition={!alwaysOpen ? transitionParams : undefined} {...restProps} class={twMerge(base(), clsx(clsx(className)))} aria-label={ariaLabel}>
-    <div class={twMerge(div(), clsx(divClass))}>
+{:else}
+  <aside use:trapFocus={isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} {...restProps} class={base({ class: clsx(theme?.base, className) })} aria-label={ariaLabel}>
+    <div class={div({ class: clsx(theme?.base, styling.div) })}>
       {@render children()}
     </div>
   </aside>
@@ -78,7 +98,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1347)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1346)
 ## Props
 @prop children
 @prop isOpen = false
@@ -98,5 +118,7 @@
 @prop activeClass
 @prop activeUrl = ""
 @prop class: className
+@prop classes
+@prop disableBreakpoints = false
 @prop ...restProps
 -->

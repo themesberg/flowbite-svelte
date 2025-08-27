@@ -1,40 +1,61 @@
 <script lang="ts">
-  import { slide } from "svelte/transition";
+  import { type AccordionCtxType, type AccordionItemProps, type ParamsType } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { useSingleSelection } from "$lib/utils/singleselection.svelte";
+  import clsx from "clsx";
   import { getContext } from "svelte";
-  import { writable } from "svelte/store";
-  import { accordionitem } from ".";
-  import { type AccordionCtxType, type AccordionItemProps, type ParamsType, type BaseThemes, cn } from "$lib";
+  import { slide } from "svelte/transition";
+  import { accordionItem } from ".";
 
-  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, headerClass, contentClass }: AccordionItemProps = $props();
+  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, classes, headerClass, contentClass }: AccordionItemProps = $props();
 
-  const ctxTransitionType = getContext("ctxTransitionType");
+  warnThemeDeprecation(
+    "AccordionItem",
+    {
+      headerClass,
+      contentClass,
+      activeClass,
+      inactiveClass
+    },
+    {
+      headerClass: "button",
+      contentClass: "content",
+      activeClass: "active",
+      inactiveClass: "inactive"
+    }
+  );
+
+  let styling: typeof classes = $derived(classes ?? { button: headerClass, content: contentClass, active: activeClass, inactive: inactiveClass });
+
+  const ctx: AccordionCtxType = getContext("ctx") ?? {};
+
+  const ctxTransitionType = ctx.transitionType ?? transitionType;
   // Check if transitionType is explicitly set to undefined in props
   const useTransition = transitionType === "none" ? false : ctxTransitionType === "none" ? false : true;
 
   // Theme context
-  const context = getContext<BaseThemes>("themeConfig");
-  // Use theme context if available, otherwise fallback to default
-  const accordionitemTheme = context?.accordionitem || accordionitem;
-
-  const ctx: AccordionCtxType = getContext("ctx") ?? {};
+  const theme = getTheme("accordionItem");
 
   // single selection
-  const self = {};
-  const selected = ctx.selected ?? writable();
+  const self = Symbol("accordion-item");
 
-  if (open) selected.set(self);
+  const updateSingleSelection = useSingleSelection<symbol>((value) => (open = value === self));
 
-  selected.subscribe((x) => (open = x === self));
+  $effect(() => {
+    updateSingleSelection(open, self);
+  });
 
-  const handleToggle = () => selected.set(open ? {} : self);
+  const handleToggle = () => {
+    open = !open;
+  };
 
-  const { base, button, content, active, inactive } = $derived(accordionitemTheme({ flush: ctx.flush, open }));
+  const { base, button, content, active, inactive } = $derived(accordionItem({ flush: ctx.flush, open }));
 
-  let buttonClass = $derived(cn(button(), open && !ctx.flush && (activeClass || ctx.activeClass || active()), !open && !ctx.flush && (inactiveClass || ctx.inactiveClass || inactive()), className));
+  let buttonClass = $derived(clsx(open && !ctx.flush && (styling.active || ctx.activeClass || active()), !open && !ctx.flush && (styling.inactive || ctx.inactiveClass || inactive())));
 </script>
 
-<h2 class={base({ class: headerClass })}>
-  <button type="button" onclick={handleToggle} class={buttonClass} aria-expanded={open}>
+<h2 class={base({ class: clsx(theme?.base, className) })}>
+  <button type="button" onclick={handleToggle} class={button({ class: clsx(buttonClass, theme?.button, styling.button) })} aria-expanded={open}>
     {#if header}
       {@render header()}
       {#if open}
@@ -59,14 +80,14 @@
 {#if useTransition}
   {#if open && transitionType !== "none"}
     <div transition:transitionType={transitionParams as ParamsType}>
-      <div class={content({ class: contentClass })}>
+      <div class={content({ class: clsx(theme?.content, styling.content) })}>
         {@render children()}
       </div>
     </div>
   {/if}
 {:else}
   <div class={open ? "block" : "hidden"}>
-    <div class={content({ class: contentClass })}>
+    <div class={content({ class: clsx(theme?.content, styling.content) })}>
       {@render children()}
     </div>
   </div>
@@ -76,7 +97,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L176)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L178)
 ## Props
 @prop children
 @prop header
@@ -88,6 +109,7 @@
 @prop transitionType = slide
 @prop transitionParams
 @prop class: className
+@prop classes
 @prop headerClass
 @prop contentClass
 -->

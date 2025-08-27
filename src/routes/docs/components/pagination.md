@@ -60,11 +60,11 @@ Use the following list of pagination items to indicate a series of content for y
 
   let activeUrl = $derived(page.url.searchParams.get("page"));
   let pages = $state([
-    { name: "1", href: "/docs/components/pagination?page=1" },
-    { name: "2", href: "/docs/components/pagination?page=2" },
-    { name: "3", href: "/docs/components/pagination?page=3" },
-    { name: "4", href: "/docs/components/pagination?page=4" },
-    { name: "5", href: "/docs/components/pagination?page=5" }
+    { name: "1", href: "/docs/components/pagination?page=1", active: false },
+    { name: "2", href: "/docs/components/pagination?page=2", active: false },
+    { name: "3", href: "/docs/components/pagination?page=3", active: false },
+    { name: "4", href: "/docs/components/pagination?page=4", active: false },
+    { name: "5", href: "/docs/components/pagination?page=5", active: false }
   ]);
 
   $effect(() => {
@@ -200,7 +200,7 @@ Use the following markup to show simple previous and next elements.
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { Pagination, PaginationItem } from "flowbite-svelte";
+  import { PaginationItem } from "flowbite-svelte";
   const previous = () => {
     alert("Previous btn clicked. Make a call to your server to fetch data.");
   };
@@ -266,7 +266,7 @@ Use the following code to show simple previous and next elements with icons.
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { Pagination, PaginationItem } from "flowbite-svelte";
+  import { PaginationItem } from "flowbite-svelte";
   import { ArrowLeftOutline, ArrowRightOutline } from "flowbite-svelte-icons";
   const previous = () => {
     alert("Previous btn clicked. Make a call to your server to fetch data.");
@@ -327,7 +327,7 @@ You can use the following markup to show the number of data shown inside a table
 
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
-  import { Pagination, PaginationItem } from "flowbite-svelte";
+  import { Pagination } from "flowbite-svelte";
 
   let helper = { start: 1, end: 10, total: 100 };
 

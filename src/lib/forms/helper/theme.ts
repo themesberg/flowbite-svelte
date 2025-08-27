@@ -1,5 +1,6 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
+// Variants
 export type HelperVariants = VariantProps<typeof helper>;
 
 export const helper = tv({

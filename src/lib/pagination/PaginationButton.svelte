@@ -1,22 +1,25 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
-  import { paginationbutton } from ".";
+  import { paginationButton } from ".";
   import type { PaginationButtonProps } from "$lib/types";
   import { getContext } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, size, onclick, disabled = false, class: className, href, active = false, ...restProps }: PaginationButtonProps = $props();
+
+  const theme = getTheme("paginationButton");
 
   const group = getContext<boolean>("group");
   const table = getContext<boolean>("table");
 
   const paginationCls = $derived(
-    paginationbutton({
+    paginationButton({
       size: getContext("size") ?? size,
       active,
       group,
       table,
-      disabled
+      disabled,
+      class: clsx(theme, className)
     })
   );
 
@@ -30,13 +33,13 @@
 </script>
 
 {#if href}
-  <a {href} {...restProps} class={twMerge(paginationCls, clsx(className))} onclick={handleClick}>
+  <a {href} {...restProps} class={paginationCls} onclick={handleClick}>
     {#if children}
       {@render children()}
     {/if}
   </a>
 {:else}
-  <button {...restProps} {disabled} class={twMerge(paginationCls, clsx(className))} onclick={handleClick}>
+  <button {...restProps} {disabled} class={paginationCls} onclick={handleClick}>
     {#if children}
       {@render children()}
     {/if}
@@ -47,7 +50,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1161)
+[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1160)
 ## Props
 @prop children
 @prop size

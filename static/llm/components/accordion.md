@@ -193,13 +193,13 @@ Use `multiple` to open all accordion items.
 </script>
 
 <Accordion multiple>
-  <AccordionItem>
+  <AccordionItem open>
     {#snippet header()}
       Header 1-1
     {/snippet}
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
-  <AccordionItem>
+  <AccordionItem open>
     {#snippet header()}
       Header 1-2
     {/snippet}
@@ -212,8 +212,8 @@ Another example how to use the `multiple` option together with expand all behavi
 
 ```svelte
 <script>
-  import { AccordionItem, Accordion, Button } from "flowbite-svelte";
-  const items = [false, false, false];
+  import { AccordionItem, Accordion, Button, P } from "flowbite-svelte";
+  const items = $state([false, false, false]);
 
   const open_all = () => items.forEach((_, i) => (items[i] = true));
   const close_all = () => items.forEach((_, i) => (items[i] = false));
@@ -224,21 +224,21 @@ Another example how to use the `multiple` option together with expand all behavi
 <Accordion multiple>
   <AccordionItem bind:open={items[0]}>
     {#snippet header()}My Header 1{/snippet}
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    <p class="text-gray-500 dark:text-gray-400">
+    <P class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</P>
+    <P class="text-gray-500 dark:text-gray-400">
       Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">get started</a>
       and start developing websites even faster with components on top of Tailwind CSS.
-    </p>
+    </P>
   </AccordionItem>
   <AccordionItem bind:open={items[1]}>
     {#snippet header()}My Header 2{/snippet}
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+    <P class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</P>
+    <P class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</P>
+    <P class="mb-2">Learn more about these technologies:</P>
   </AccordionItem>
   <AccordionItem bind:open={items[2]}>
     {#snippet header()}My Header 3{/snippet}
-    <p>Something more</p>
+    <P>Something more</P>
   </AccordionItem>
 </Accordion>
 ```
@@ -251,7 +251,6 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 <script>
   import { AccordionItem, Accordion } from "flowbite-svelte";
   import { blur, fade } from "svelte/transition";
-  import { quintOut } from "svelte/easing";
 </script>
 
 <Accordion>
@@ -352,7 +351,7 @@ Use the following example to preserve the input value. First fill out the form, 
       <Label for="email">Email</Label>
       <Input id="email" bind:value={email} type="email" />
       <Label for="comment">Comment</Label>
-      <Textarea id="comment" bind:value={comment} />
+      <Textarea id="comment" bind:value={comment} class="w-full" />
       <Button onclick={handleSubmit} class="mt-4">Submit</Button>
     </form>
   </AccordionItem>
@@ -403,13 +402,154 @@ When you set transitionType="none" on an Accordion or an AccordionItem, it disab
 </Accordion>
 ```
 
+## Breakpoints
+
+Control when accordion items are open or closed based on screen size using Flowbite Svelte's responsive utilities.
+
+### Basic Usage
+
+Simple Media Query opens accordion item on medium screens and larger:
+
+```svelte
+<script>
+  import { AccordionItem, useMediaQuery, P } from "flowbite-svelte";
+  const isMdAndUp = useMediaQuery("(min-width: 768px)");
+</script>
+
+<AccordionItem open={isMdAndUp()}>
+  {#snippet header()}Opens on tablets and desktop{/snippet}
+  <P>This content is visible on medium screens and larger.</P>
+</AccordionItem>
+```
+
+### Using Breakpoints Object
+
+Access multiple breakpoints with a single hook:
+
+```svelte
+<script>
+  import { AccordionItem, useBreakpoints, P } from "flowbite-svelte";
+  const breakpoints = useBreakpoints();
+</script>
+
+<AccordionItem open={breakpoints.md}>
+  {#snippet header()}Opens on medium screens+{/snippet}
+  <P>Content for tablets and desktop users.</P>
+</AccordionItem>
+```
+
+### Advanced Patterns
+
+Current Breakpoint Display show the current breakpoint in your UI:
+
+```svelte
+<script>
+  import { AccordionItem, useCurrentBreakpoint, useBreakpoints, P } from "flowbite-svelte";
+  const breakpoints = useBreakpoints();
+  const getCurrentBreakpoint = useCurrentBreakpoint();
+  const currentBp = $derived(getCurrentBreakpoint());
+</script>
+
+<AccordionItem open={breakpoints.lg}>
+  {#snippet header()}Desktop Only (Current: {currentBp}){/snippet}
+  <P>This opens only on large screens and above.</P>
+</AccordionItem>
+```
+
+### Range-Based Opening
+
+Open accordion only within specific screen size ranges:
+
+```svelte
+<script>
+  import { AccordionItem, useMediaQuery, useBreakpoints, P } from "flowbite-svelte";
+  const breakpoints = useBreakpoints();
+
+  // Open from sm to lg (640px - 1023px)
+  const tabletRange = $derived(breakpoints.sm && !breakpoints.lg);
+
+  // Open on specific breakpoints only
+  const specificSizes = $derived((breakpoints.sm && !breakpoints.md) || (breakpoints.lg && !breakpoints.xl));
+
+  // Custom pixel range
+  const customRange = useMediaQuery("(min-width: 640px) and (max-width: 1023px)");
+</script>
+
+<AccordionItem open={tabletRange}>
+  {#snippet header()}Tablet Range (640px - 1023px){/snippet}
+  <P>Open on tablets, closed on phones and large desktops.</P>
+</AccordionItem>
+
+<AccordionItem open={specificSizes}>
+  {#snippet header()}Small phones OR Large desktops only{/snippet}
+  <P>Open on sm-only OR lg-only, closed on other sizes.</P>
+</AccordionItem>
+
+<AccordionItem open={customRange()}>
+  {#snippet header()}Custom Range{/snippet}
+  <P>Define exact pixel ranges for precise control.</P>
+</AccordionItem>
+```
+
+### Complex examples
+
+```svelte
+<script lang="ts">
+  import { Accordion, AccordionItem, P, useMediaQuery, useBreakpoints, useCurrentBreakpoint } from "flowbite-svelte";
+
+  // Different approaches to responsive behavior
+  const isMdAndUp = useMediaQuery("(min-width: 768px)");
+  const breakpoints = useBreakpoints();
+  const getCurrentBreakpoint = useCurrentBreakpoint();
+
+  const currentBp = $derived(getCurrentBreakpoint());
+  const tabletOnly = $derived(breakpoints.sm && !breakpoints.lg);
+  const mobileOnly = $derived(!breakpoints.sm);
+</script>
+
+<!-- Always open on medium+ screens -->
+<Accordion>
+  <AccordionItem open={isMdAndUp()}>
+    {#snippet header()}
+      📱 Tablet & Desktop (Current: {currentBp})
+    {/snippet}
+    <P>Opens on tablets and larger screens. Stays closed on mobile.</P>
+  </AccordionItem>
+
+  <AccordionItem>
+    {#snippet header()}Always Interactive{/snippet}
+    <P>This accordion item behaves normally on all screen sizes.</P>
+  </AccordionItem>
+</Accordion>
+
+<!-- Open only in tablet range -->
+<Accordion>
+  <AccordionItem open={tabletOnly}>
+    {#snippet header()}
+      📱 Tablet Only (640px - 1023px)
+    {/snippet}
+    <P>This opens automatically on tablets but closes on mobile phones and large desktop screens.</P>
+  </AccordionItem>
+</Accordion>
+
+<!-- Mobile-first approach -->
+<Accordion>
+  <AccordionItem open={mobileOnly}>
+    {#snippet header()}
+      📱 Mobile Only (below 640px)
+    {/snippet}
+    <P>Expanded by default on mobile for better accessibility, collapsed on larger screens to save space.</P>
+  </AccordionItem>
+</Accordion>
+```
+
 ## Component data
 
 ### Accordion
 
 #### Types
 
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L164)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L170)
 
 #### Props
 
@@ -425,7 +565,7 @@ When you set transitionType="none" on an Accordion or an AccordionItem, it disab
 
 #### Types
 
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L176)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L178)
 
 #### Props
 
@@ -439,6 +579,7 @@ When you set transitionType="none" on an Accordion or an AccordionItem, it disab
 - transitionType: slide
 - transitionParams
 - class: className
+- classes
 - headerClass
 - contentClass
 

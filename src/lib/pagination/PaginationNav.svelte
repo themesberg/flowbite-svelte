@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { setContext } from "svelte";
-  import { paginationnav } from "./theme";
+  import { paginationNav } from "./theme";
   import { type PaginationNavProps, PaginationButton } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   function paginationRange(start: number, end: number): number[] {
     return Array.from({ length: end - start + 1 }, (_, i) => start + i);
@@ -24,10 +24,16 @@
     ariaLabel = "Page navigation",
     size = "default",
     class: className,
+    classes,
     spanClass,
     tableDivClass,
     ...restProps
   }: PaginationNavProps = $props();
+
+  warnThemeDeprecation("PaginationNav", { prevClass, nextClass, spanClass, tableDivClass }, { prevClass: "prev", nextClass: "next", spanClass: "span", tableDivClass: "tableDiv" });
+  const styling = $derived(classes ?? { prev: prevClass, next: nextClass, span: spanClass, tableDiv: tableDivClass });
+
+  const theme = getTheme("paginationNav");
 
   // Set context values for child components
   setContext("group", true);
@@ -51,22 +57,22 @@
     onPageChange(Math.max(currentPage - 1, 1));
   }
 
-  const { base, tableDiv, tableSpan, prevItem, nextItem } = $derived(paginationnav({ layout }));
+  const { base, tableDiv, span, prev, next } = $derived(paginationNav({ layout }));
 </script>
 
 <nav aria-label={ariaLabel} {...restProps}>
   {#if layout === "table"}
-    <div class={twMerge(tableDiv(), clsx(tableDivClass))}>
-      Showing <span class={twMerge(tableSpan(), clsx(spanClass))}>{currentPage}</span>
+    <div class={tableDiv({ class: clsx(theme?.tableDiv, styling.tableDiv) })}>
+      Showing <span class={span({ class: clsx(theme?.span, styling.span) })}>{currentPage}</span>
       of
-      <span class={twMerge(tableSpan(), clsx(spanClass))}>{totalPages}</span>
+      <span class={span({ class: clsx(theme?.span, styling.span) })}>{totalPages}</span>
       Entries
     </div>
   {/if}
 
-  <ul class={twMerge(base(), clsx(className))}>
+  <ul class={base({ class: clsx(theme?.base, className) })}>
     <li {...restProps}>
-      <PaginationButton onclick={goToPreviousPage} disabled={currentPage === 1} class={twMerge(prevItem(), clsx(prevClass))}>
+      <PaginationButton onclick={goToPreviousPage} disabled={currentPage === 1} class={prev({ class: clsx(theme?.prev, styling.prev) })}>
         {#if prevContent}
           {@render prevContent()}
         {:else}
@@ -84,7 +90,7 @@
       {/each}
     {/if}
     <li {...restProps}>
-      <PaginationButton onclick={goToNextPage} disabled={currentPage === totalPages} class={twMerge(nextItem(), clsx(nextClass))}>
+      <PaginationButton onclick={goToNextPage} disabled={currentPage === totalPages} class={next({ class: clsx(theme?.next, styling.next) })}>
         {#if nextContent}
           {@render nextContent()}
         {:else}
@@ -99,7 +105,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1167)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1166)
 ## Props
 @prop currentPage = 1
 @prop totalPages = 1
@@ -115,6 +121,7 @@
 @prop ariaLabel = "Page navigation"
 @prop size = "default"
 @prop class: className
+@prop classes
 @prop spanClass
 @prop tableDivClass
 @prop ...restProps

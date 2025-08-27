@@ -1,6 +1,8 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type RadioVariants = VariantProps<typeof radio>;
+// Variants
+export type RadioVariants = VariantProps<typeof radio> & Classes<typeof radio>;
 
 export const radio = tv({
   slots: {
@@ -85,7 +87,7 @@ export const radio = tv({
   }
 });
 
-export const radiobutton = tv({
+export const radioButton = tv({
   base: "",
   variants: {
     inline: {

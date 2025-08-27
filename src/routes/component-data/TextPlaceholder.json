@@ -2,10 +2,11 @@
   "name": "TextPlaceholder",
   "type": {
     "name": "TextPlaceholderProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1445"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1446"
   },
   "props": [
     ["size", "\"sm\""],
-    ["class: className", ""]
+    ["class: className", ""],
+    ["classes", ""]
   ]
 }

@@ -1,20 +1,26 @@
 <script lang="ts">
-  import { breadcrumb } from "./index";
-  import { type BreadcrumbItemProps, cn } from "$lib";
+  import { type BreadcrumbItemProps } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+  import { breadcrumbItem } from "./index";
 
-  let { children, icon, home = false, href, linkClass, spanClass, homeClass, class: className, ...restProps }: BreadcrumbItemProps = $props();
+  let { children, icon, home = false, href, linkClass, spanClass, homeClass, class: className, classes, ...restProps }: BreadcrumbItemProps = $props();
 
-  const { item, icon: breacrumbIcon } = $derived(
-    breadcrumb({
+  const styling = $derived(classes ?? {});
+
+  const theme = getTheme("breadcrumbItem");
+
+  const { base, separator } = $derived(
+    breadcrumbItem({
       home,
       hasHref: !!href
     })
   );
 </script>
 
-<li {...restProps} class={cn(item(), className)}>
+<li {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {#if home}
-    <a class={cn(item({ home: true }), homeClass)} {href}>
+    <a class={base({ home: true, class: clsx(theme?.base, homeClass) })} {href}>
       {#if icon}
         {@render icon()}
       {:else}
@@ -29,17 +35,17 @@
     {#if icon}
       {@render icon()}
     {:else}
-      <svg class={breacrumbIcon()} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <svg class={separator({ class: clsx(theme?.separator, styling.separator) })} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
       </svg>
     {/if}
 
     {#if href}
-      <a class={cn(item({ home: false, hasHref: true }), linkClass)} {href}>
+      <a class={base({ home: false, hasHref: true, class: clsx(theme?.base, linkClass) })} {href}>
         {@render children()}
       </a>
     {:else}
-      <span class={cn(item({ home: false, hasHref: false }), spanClass)}>
+      <span class={base({ home: false, hasHref: false, class: clsx(theme?.base, spanClass) })}>
         {@render children()}
       </span>
     {/if}
@@ -50,7 +56,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L320)
+[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L285)
 ## Props
 @prop children
 @prop icon
@@ -60,5 +66,6 @@
 @prop spanClass
 @prop homeClass
 @prop class: className
+@prop classes
 @prop ...restProps
 -->

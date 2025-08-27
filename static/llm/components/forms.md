@@ -32,7 +32,7 @@ Get started with this example if you want to apply the disabled state to an inpu
 
 ```svelte
 <script>
-  import { Label, Input } from "flowbite-svelte";
+  import { Input } from "flowbite-svelte";
 </script>
 
 <Input id="disabled-input" class="mb-6" disabled value="Disabled input" />
@@ -62,7 +62,7 @@ With the Input component, you can add <A href="https://flowbite-svelte-icons.cod
 
 ```svelte
 <script>
-  import { Label, Input, ButtonGroup } from "flowbite-svelte";
+  import { Label, Input } from "flowbite-svelte";
   import { EnvelopeSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -136,7 +136,7 @@ Use the following example to apply validation styles for success and error messa
   };
 </script>
 
-<Textarea {...textareaprops} />
+<Textarea {...textareaprops} class="w-full" />
 ```
 
 ## Select input

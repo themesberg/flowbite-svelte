@@ -1,11 +1,19 @@
 <script lang="ts">
-  import { idGenerator } from "../../uiHelpers.svelte";
+  import { idGenerator } from "../../utils";
   import { floatingLabelInput } from ".";
-  import { type FloatingLabelInputProps, CloseButton, cn } from "$lib";
+  import clsx from "clsx";
+  import { type FloatingLabelInputProps, CloseButton } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { children, id = idGenerator(), value = $bindable(), elementRef = $bindable(), "aria-describedby": ariaDescribedby, variant = "standard", size = "default", color = "default", class: className, inputClass, labelClass, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, ...restProps }: FloatingLabelInputProps = $props();
+  let { children, id = idGenerator(), value = $bindable(), elementRef = $bindable(), variant = "standard", size = "default", color = "default", class: className, classes, inputClass, labelClass, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, ...restProps }: FloatingLabelInputProps = $props();
 
-  const { base, input, label, clearbtn, combo } = $derived(floatingLabelInput({ variant, size, color }));
+  warnThemeDeprecation("FloatingLabelInput", { inputClass, labelClass, clearableSvgClass, clearableClass, comboClass }, { inputClass: "input", labelClass: "label", clearableSvgClass: "svg", clearableClass: "close", comboClass: "combo" });
+  const styling = $derived(classes ?? { input: inputClass, label: labelClass, svg: clearableSvgClass, close: clearableClass, combo: comboClass });
+
+  const theme = getTheme("floatingLabelInput");
+
+  const { base, input, label, close, combo } = $derived(floatingLabelInput({ variant, size, color }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -127,23 +135,25 @@
     selectedIndex = -1;
     elementRef?.focus();
   }
+
+  createDismissableContext(clearAll);
 </script>
 
 {#if clearable}
   <div tabindex="-1" bind:this={dummyFocusDiv} class="sr-only"></div>
 {/if}
 
-<div class={cn(base(), isCombobox ? "relative" : "", className)}>
-  <input {id} placeholder=" " bind:value bind:this={elementRef} {...restProps} aria-describedby={ariaDescribedby} class={cn(input(), inputClass)} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} />
+<div class={base({ class: clsx(isCombobox ? "relative" : "", theme?.base, className) })}>
+  <input {id} placeholder=" " bind:value bind:this={elementRef} {...restProps} class={input({ class: clsx(theme?.input, styling.input) })} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} />
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton onclick={clearAll} class={cn(clearbtn(), clearableClass)} color={clearableColor} aria-label="Clear search value" svgClass={cn(clearableSvgClass)} />
+    <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
   {/if}
-  <label for={id} class={cn(label(), labelClass)}>
+  <label for={id} class={label({ class: clsx(theme?.label, styling.label) })}>
     {@render children()}
   </label>
 
   {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-    <div class={cn(combo(), comboClass)}>
+    <div class={combo({ class: clsx(theme?.combo, styling.combo) })}>
       {#each filteredSuggestions as item, i}
         <button type="button" class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none" onclick={() => selectItem(item)} onmouseenter={() => (selectedIndex = i)}>
           {item}
@@ -157,17 +167,17 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FloatingLabelInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L735)
+[FloatingLabelInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L728)
 ## Props
 @prop children
 @prop id = idGenerator()
 @prop value = $bindable()
 @prop elementRef = $bindable()
-@prop "aria-describedby": ariaDescribedby
 @prop variant = "standard"
 @prop size = "default"
 @prop color = "default"
 @prop class: className
+@prop classes
 @prop inputClass
 @prop labelClass
 @prop clearable

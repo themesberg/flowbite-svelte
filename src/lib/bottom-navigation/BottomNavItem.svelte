@@ -1,32 +1,37 @@
 <script lang="ts">
+  import { type BottomNavContextType, type BottomNavItemProps } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   import { getContext } from "svelte";
-  import type { HTMLButtonAttributes, HTMLAnchorAttributes } from "svelte/elements";
+  import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
   import { bottomNavItem } from ".";
-  import { type BottomNavItemProps, type BottomNavContextType, type BottomNavVariantType, cn } from "$lib";
 
-  let { children, btnName, appBtnPosition = "middle", target, activeClass, href = "", btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
+  let { children, btnName, appBtnPosition = "middle", activeClass, class: className, classes, btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
 
-  const navType: BottomNavVariantType = getContext("navType");
+  warnThemeDeprecation("BottomNavItem", { spanClass, btnClass }, { spanClass: "span", btnClass: "class" });
+  const styling = $derived(classes ?? { span: spanClass });
+
+  // Theme context
+  const theme = getTheme("bottomNavItem");
+
   const context = getContext<BottomNavContextType>("bottomNavType") ?? {};
 
-  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
+  let navUrl = $derived(context.activeUrl || "");
 
-  let navUrl = $state("");
-  activeUrlStore.subscribe((value) => {
-    navUrl = value;
-  });
-
-  const { base, span } = $derived(bottomNavItem({ navType, appBtnPosition }));
+  const { base, span } = $derived(bottomNavItem({ navType: context.navType, appBtnPosition }));
 
   // Determine active state based on manual prop or URL matching
-  let isActive = $derived(manualActive !== undefined ? !!manualActive : navUrl ? (href === "/" ? navUrl === "/" : href && (navUrl === href || navUrl.startsWith(href + "/") || (href !== "/" && navUrl.replace(/^https?:\/\/[^/]+/, "").startsWith(href)))) : false);
+  let isActive = $derived.by(() => {
+    const href = restProps.href ?? "";
+    return manualActive !== undefined ? !!manualActive : navUrl ? (href === "/" ? navUrl === "/" : href && (navUrl === href || navUrl.startsWith(href + "/") || (href !== "/" && navUrl.replace(/^https?:\/\/[^/]+/, "").startsWith(href)))) : false;
+  });
 
   function getCommonClass() {
-    return cn(base(), isActive && (activeClass ?? context.activeClass), btnClass);
+    return base({ class: clsx(isActive && (activeClass ?? context.activeClass), theme?.base, className ?? btnClass) });
   }
 
   function getSpanClass() {
-    return cn(span(), isActive && (activeClass ?? context.activeClass), spanClass);
+    return span({ class: clsx(isActive && (activeClass ?? context.activeClass), theme?.span, styling.span) });
   }
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -37,9 +42,7 @@
   });
 
   const anchorProps: HTMLAnchorAttributes = $derived({
-    ...commonProps,
-    href,
-    target
+    ...commonProps
   });
 
   const buttonProps: HTMLButtonAttributes = $derived({
@@ -48,30 +51,30 @@
   });
 </script>
 
-{#if typeof href === "string" && href.length > 0}
-  <a {...anchorProps}>
-    {@render children()}
-    <span class={getSpanClass()}>{btnName}</span>
-  </a>
-{:else}
+{#if restProps.href === undefined}
   <button {...buttonProps}>
     {@render children()}
     <span class={getSpanClass()}>{btnName}</span>
   </button>
+{:else}
+  <a {...anchorProps}>
+    {@render children()}
+    <span class={getSpanClass()}>{btnName}</span>
+  </a>
 {/if}
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L266)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L256)
 ## Props
 @prop children
 @prop btnName
 @prop appBtnPosition = "middle"
-@prop target
 @prop activeClass
-@prop href = ""
+@prop class: className
+@prop classes
 @prop btnClass
 @prop spanClass
 @prop active: manualActive

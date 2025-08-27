@@ -1,18 +1,19 @@
 <script lang="ts">
-  import { getContext } from "svelte";
   import { breadcrumb } from ".";
-  import { type BreadcrumbProps, type BaseThemes, cn } from "$lib";
+  import clsx from "clsx";
+  import { type BreadcrumbProps } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, solid = false, class: className, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
+  let { children, solid = false, class: className, classes, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
 
-  // Get merged theme from context
-  const context = getContext<BaseThemes>("themeConfig");
-  // Use context theme if available, otherwise fallback to default
-  const breadcrumbTheme = context?.breadcrumb || breadcrumb;
+  warnThemeDeprecation("Breadcrumb", { olClass }, { olClass: "list" });
+  const styling = $derived(classes ?? { list: olClass });
 
-  const { nav, list } = breadcrumbTheme({ solid });
-  let classNav = $derived(cn(nav(), className));
-  let classList = $derived(cn(list(), olClass));
+  const theme = getTheme("breadcrumb");
+
+  const { base, list } = breadcrumb({ solid });
+  let classNav = $derived(base({ class: clsx(theme?.base, className) }));
+  let classList = $derived(list({ class: clsx(theme?.list, styling.list) }));
 </script>
 
 <nav aria-label={ariaLabel} {...restProps} class={classNav}>
@@ -25,11 +26,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L313)
+[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L278)
 ## Props
 @prop children
 @prop solid = false
 @prop class: className
+@prop classes
 @prop olClass
 @prop ariaLabel = "Breadcrumb"
 @prop ...restProps

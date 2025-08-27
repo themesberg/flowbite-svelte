@@ -95,7 +95,7 @@ The default icon size is `24`. Import your icon and set it in a icon props.
 
 ```svelte
 <script lang="ts">
-  import { Rating, Heart } from "flowbite-svelte";
+  import { Rating, Heart, type RatingIconProps } from "flowbite-svelte";
   const heartWrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) => Heart(anchor, { ..._props, ...props });
 </script>
 
@@ -106,7 +106,7 @@ The default icon size is `24`. Import your icon and set it in a icon props.
 
 ```svelte
 <script lang="ts">
-  import { Rating, Thumbup } from "flowbite-svelte";
+  import { Rating, Thumbup, type RatingIconProps } from "flowbite-svelte";
   const thumbWrapper = (props: RatingIconProps) => (anchor: any, _props: RatingIconProps) => Thumbup(anchor, { ..._props, ...props });
 </script>
 
@@ -306,7 +306,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1238)
+[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1237)
 
 #### Props
 
@@ -318,13 +318,15 @@ Use this component to show the review content from a user alongside the avatar, 
 - div2Class
 - div3Class
 - span2Class
+- class: className
+- classes
 - unit
 
 ### CustomIcon
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1324)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1323)
 
 #### Props
 
@@ -343,7 +345,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1324)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1323)
 
 #### Props
 
@@ -361,13 +363,14 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1250)
+[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1249)
 
 #### Props
 
 - children
 - text
 - class: className
+- classes
 - size: 24
 - total: 5
 - rating: 4
@@ -379,7 +382,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingCommentProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1261)
+[RatingCommentProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1260)
 
 #### Props
 
@@ -393,7 +396,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1297)
+[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1296)
 
 #### Props
 
@@ -403,6 +406,8 @@ Use this component to show the review content from a user alongside the avatar, 
 - item2
 - item3
 - review
+- class: className
+- classes
 - articleClass
 - divClass
 - div2Class
@@ -415,19 +420,20 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[ScoreRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1313)
+[ScoreRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1312)
 
 #### Props
 
 - ratings
 - ratings2
 - headerLabel
+- classes
 
 ### Star
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1324)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1323)
 
 #### Props
 
@@ -445,7 +451,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1324)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1323)
 
 #### Props
 

@@ -1,23 +1,26 @@
 <script lang="ts">
+  import { DropdownGroup, type DropdownProps, Popper } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   import { setContext } from "svelte";
-  import { writable } from "svelte/store";
   import { dropdown } from "./";
-  import { type DropdownProps, Popper, cn, DropdownGroup } from "$lib";
 
   let { children, simple = false, placement = "bottom", offset = 2, class: className, activeUrl = "", isOpen = $bindable(false), ...restProps }: DropdownProps = $props();
 
-  const { base, backdrop } = $derived(dropdown());
-  const activeUrlStore = writable("");
+  const theme = getTheme("dropdown");
+
+  const base = $derived(dropdown({ class: clsx(theme, className) }));
+  const activeUrlStore = $state({ value: "" });
   setContext("activeUrl", activeUrlStore);
 
   $effect(() => {
-    activeUrlStore.set(activeUrl ?? "");
+    activeUrlStore.value = activeUrl ?? "";
   });
 </script>
 
 <!-- Dropdown menu -->
 
-<Popper {...restProps} {placement} {offset} bind:isOpen class={cn(base(), className)}>
+<Popper {...restProps} {placement} {offset} bind:isOpen class={base}>
   {#if simple}
     <DropdownGroup>
       {@render children()}
@@ -31,7 +34,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L598)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L597)
 ## Props
 @prop children
 @prop simple = false

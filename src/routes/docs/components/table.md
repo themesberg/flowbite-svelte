@@ -15,7 +15,6 @@ thumnailSize: w-48
   import { InfoCircleOutline } from "flowbite-svelte-icons";
 </script>
 
-
 The table component represents a set of structured elements made up of rows and columns as table cells that can be used to show data sets to your website users.
 
 Get started with multiple variants and styles of these table components.
@@ -313,40 +312,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 
 ## Sorting by column
 
-```svelte example
-<script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
-  let items = [
-    { id: 1, maker: "Toyota", type: "ABC", make: 2017 },
-    { id: 2, maker: "Ford", type: "CDE", make: 2018 },
-    { id: 3, maker: "Volvo", type: "FGH", make: 2019 },
-    { id: 4, maker: "Saab", type: "IJK", make: 2020 }
-  ];
-</script>
-
-<Table hoverable={true} {items}>
-  <TableHead>
-    <TableHeadCell sort={(a, b) => a.id - b.id}>ID</TableHeadCell>
-    <TableHeadCell sort={(a, b) => a.maker.localeCompare(b.maker)} defaultSort>Maker</TableHeadCell>
-    <TableHeadCell sort={(a, b) => a.type.localeCompare(b.type)}>Type</TableHeadCell>
-    <TableHeadCell sort={(a, b) => a.make - b.make} defaultDirection="desc">Make</TableHeadCell>
-    <TableHeadCell>
-      <span class="sr-only">Buy</span>
-    </TableHeadCell>
-  </TableHead>
-  <TableBody>
-    <TableBodyRow let:item>
-      <TableBodyCell>{item.id}</TableBodyCell>
-      <TableBodyCell>{item.maker}</TableBodyCell>
-      <TableBodyCell>{item.type}</TableBodyCell>
-      <TableBodyCell>{item.make}</TableBodyCell>
-      <TableBodyCell>
-        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Buy</a>
-      </TableBodyCell>
-    </TableBodyRow>
-  </TableBody>
-</Table>
-```
+Please use [DataTable](https://flowbite-svelte.com/docs/plugins/datatables)
 
 ## Table head
 
@@ -651,6 +617,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
 ## TableSearch
 
 Use the following example to search in a table.
+For more advanced usage, please see [this page](https://flowbite-svelte.com/docs/plugins/datatables).
 
 ```svelte example
 <script>
@@ -662,7 +629,7 @@ Use the following example to search in a table.
     { id: 3, maker: "Volvo", type: "FGH", make: 2019 },
     { id: 4, maker: "Saab", type: "IJK", make: 2020 }
   ];
-  let filteredItems = $derived(items.filter((item) => !searchTerm || item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
+  let filteredItems = $derived.by(() => items.filter((item) => !searchTerm || item.maker.toLowerCase().includes(searchTerm.toLowerCase())));
 </script>
 
 <TableSearch placeholder="Search by maker name" hoverable bind:inputValue={searchTerm}>

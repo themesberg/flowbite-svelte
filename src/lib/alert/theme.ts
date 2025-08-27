@@ -1,8 +1,9 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
-type AlertVariants = VariantProps<typeof alert>;
+// Variants
+export type AlertVariants = VariantProps<typeof alert>;
 
-const alert = tv({
+export const alert = tv({
   base: "p-4 gap-3 text-sm",
   variants: {
     color: {
@@ -150,5 +151,3 @@ const alert = tv({
     rounded: true
   }
 });
-
-export { alert, type AlertVariants };

@@ -1,12 +1,14 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type ImgVariants = VariantProps<typeof img>;
+// Variants
+export type ImgVariants = VariantProps<typeof img> & Classes<typeof img>;
 
 export const img = tv({
   slots: {
     base: "max-w-full h-auto",
     figure: "",
-    figureCaption: "mt-2 text-sm text-center text-gray-500 dark:text-gray-400"
+    caption: "mt-2 text-sm text-center text-gray-500 dark:text-gray-400"
   },
   variants: {
     size: {

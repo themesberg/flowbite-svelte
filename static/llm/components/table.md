@@ -5,6 +5,18 @@ The table component represents a set of structured elements made up of rows and 
 
 Get started with multiple variants and styles of these table components.
 
+<Badge class="p-4 w-full" color="green">
+  <P class="flex items-center gap-2">
+    <span class="inline-flex">
+      <InfoCircleOutline class="h-6 w-6 text-green-600 dark:text-green-500 " />
+      <span class="sr-only">Info Circle</span>
+    </span>
+    <span>
+      Use <A href="/docs/plugins/datatables" target="_blank">@flowbite-svelte-plugins/datatable</A> to search, sort, filter and paginate table data of rows and columns for your web application.
+    </span>
+  </P>
+</Badge>
+
 ## Setup
 
 ```svelte
@@ -286,40 +298,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 
 ## Sorting by column
 
-```svelte
-<script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
-  let items = [
-    { id: 1, maker: "Toyota", type: "ABC", make: 2017 },
-    { id: 2, maker: "Ford", type: "CDE", make: 2018 },
-    { id: 3, maker: "Volvo", type: "FGH", make: 2019 },
-    { id: 4, maker: "Saab", type: "IJK", make: 2020 }
-  ];
-</script>
-
-<Table hoverable={true} {items}>
-  <TableHead>
-    <TableHeadCell sort={(a, b) => a.id - b.id}>ID</TableHeadCell>
-    <TableHeadCell sort={(a, b) => a.maker.localeCompare(b.maker)} defaultSort>Maker</TableHeadCell>
-    <TableHeadCell sort={(a, b) => a.type.localeCompare(b.type)}>Type</TableHeadCell>
-    <TableHeadCell sort={(a, b) => a.make - b.make} defaultDirection="desc">Make</TableHeadCell>
-    <TableHeadCell>
-      <span class="sr-only">Buy</span>
-    </TableHeadCell>
-  </TableHead>
-  <TableBody>
-    <TableBodyRow let:item>
-      <TableBodyCell>{item.id}</TableBodyCell>
-      <TableBodyCell>{item.maker}</TableBodyCell>
-      <TableBodyCell>{item.type}</TableBodyCell>
-      <TableBodyCell>{item.make}</TableBodyCell>
-      <TableBodyCell>
-        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Buy</a>
-      </TableBodyCell>
-    </TableBodyRow>
-  </TableBody>
-</Table>
-```
+Please use [DataTable](https://flowbite-svelte.com/docs/plugins/datatables)
 
 ## Table head
 
@@ -624,6 +603,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
 ## TableSearch
 
 Use the following example to search in a table.
+For more advanced usage, please see [this page](https://flowbite-svelte.com/docs/plugins/datatables).
 
 ```svelte
 <script>
@@ -635,7 +615,7 @@ Use the following example to search in a table.
     { id: 3, maker: "Volvo", type: "FGH", make: 2019 },
     { id: 4, maker: "Saab", type: "IJK", make: 2020 }
   ];
-  let filteredItems = $derived(items.filter((item) => !searchTerm || item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
+  let filteredItems = $derived.by(() => items.filter((item) => !searchTerm || item.maker.toLowerCase().includes(searchTerm.toLowerCase())));
 </script>
 
 <TableSearch placeholder="Search by maker name" hoverable bind:inputValue={searchTerm}>
@@ -889,7 +869,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1641)
+[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1645)
 
 #### Props
 
@@ -897,19 +877,20 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 - footerSlot
 - captionSlot
 - items
-- divClass: "relative overflow-x-auto"
+- divClass
 - striped
 - hoverable
 - border: true
 - shadow
 - color: "default"
 - class: className
+- classes
 
 ### TableBody
 
 #### Types
 
-[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1673)
+[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1677)
 
 #### Props
 
@@ -921,7 +902,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1662)
+[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1666)
 
 #### Props
 
@@ -934,7 +915,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1654)
+[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1658)
 
 #### Props
 
@@ -949,7 +930,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1629)
+[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1633)
 
 #### Props
 
@@ -966,7 +947,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1678)
+[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1682)
 
 #### Props
 
@@ -977,26 +958,27 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1693)
+[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1697)
 
 #### Props
 
 - children
 - header
 - footer
-- divClass: "relative overflow-x-auto shadow-md sm:rounded-lg"
+- divClass
 - inputValue: $bindable()
-- striped
-- hoverable
+- striped: false
+- hoverable: false
 - customColor: ""
 - color: "default"
-- innerDivClass: "p-4"
+- innerDivClass
 - inputClass
-- searchClass: "relative mt-1"
+- searchClass
 - svgDivClass
-- svgClass: "w-5 h-5 text-gray-500 dark:text-gray-400"
-- tableClass: "w-full text-left text-sm"
+- svgClass
+- tableClass
 - class: className
+- classes
 - placeholder: "Search"
 
 

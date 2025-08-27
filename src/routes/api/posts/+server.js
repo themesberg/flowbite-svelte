@@ -1,11 +1,14 @@
-import { fetchMarkdownPosts, fetchApiCheck } from "../../utils";
+// src/routes/api/posts/+server.ts
 import { json } from "@sveltejs/kit";
+import { fetchMarkdownPosts, fetchApiCheck, fetchBuilders, fetchBlocksMarkdownPosts } from "../../utils";
 
 export const GET = async () => {
-  const allPosts = await fetchMarkdownPosts();
-  const allApicheck = await fetchApiCheck();
+  const [posts, apicheck, blocks, builders] = await Promise.all([fetchMarkdownPosts(), fetchApiCheck(), fetchBlocksMarkdownPosts(), fetchBuilders()]);
+
   return json({
-    posts: allPosts,
-    apicheck: allApicheck
+    posts,
+    apicheck,
+    blocks,
+    builders
   });
 };

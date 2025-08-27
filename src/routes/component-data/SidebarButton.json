@@ -6,6 +6,7 @@
   },
   "props": [
     ["breakpoint", "\"md\""],
-    ["class: className", ""]
+    ["class: className", ""],
+    ["classes", ""]
   ]
 }

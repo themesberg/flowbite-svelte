@@ -1,12 +1,24 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
-  import { advancedrating } from ".";
+  import { advancedRating } from ".";
   import type { AdvancedRatingProps } from "$lib/types";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { rating, globalText, ratings, divClass, spanClass, div2Class, div3Class, span2Class, unit }: AdvancedRatingProps = $props();
+  let { rating, globalText, ratings, divClass, spanClass, div2Class, div3Class, span2Class, class: className, classes, unit }: AdvancedRatingProps = $props();
 
-  const { base, span, div2, div3, span2 } = $derived(advancedrating());
+  warnThemeDeprecation("AdvancedRating", { divClass, spanClass, div2Class, div3Class, span2Class }, { divClass: "class", spanClass: "span", div2Class: "div2", div3Class: "div3", span2Class: "span2" });
+  const styling = $derived(
+    classes ?? {
+      span: spanClass,
+      div2: div2Class,
+      div3: div3Class,
+      span2: span2Class
+    }
+  );
+
+  const theme = getTheme("advancedRating");
+
+  const { base, span, div2, div3, span2 } = $derived(advancedRating());
 </script>
 
 {#if rating}
@@ -16,12 +28,12 @@
   {@render globalText()}
 {/if}
 {#each ratings as { label, rating }}
-  <div class={twMerge(base(), clsx(divClass))}>
-    <span class={twMerge(span(), clsx(spanClass))}>{label}</span>
-    <div class={twMerge(div2(), clsx(div2Class))}>
-      <div class={twMerge(div3(), clsx(div3Class))} style="width: {rating}%"></div>
+  <div class={base({ class: clsx(theme?.base, className) })}>
+    <span class={span({ class: clsx(theme?.span, styling.span) })}>{label}</span>
+    <div class={div2({ class: clsx(theme?.div2, styling.div2) })}>
+      <div class={div3({ class: clsx(theme?.div3, styling.div3) })} style="width: {rating}%"></div>
     </div>
-    <span class={twMerge(span2(), clsx(span2Class))}>{rating}{unit}</span>
+    <span class={span2({ class: clsx(theme?.span2, styling.span2) })}>{rating}{unit}</span>
   </div>
 {/each}
 
@@ -29,7 +41,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1238)
+[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1237)
 ## Props
 @prop rating
 @prop globalText
@@ -39,5 +51,7 @@
 @prop div2Class
 @prop div3Class
 @prop span2Class
+@prop class: className
+@prop classes
 @prop unit
 -->

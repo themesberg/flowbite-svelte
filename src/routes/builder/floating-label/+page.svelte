@@ -78,20 +78,20 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Style</Label>
     {#each inputStyles as option}
-      <Radio class="my-1 w-24" name="style1" bind:group={inputStyle} value={option}>{option}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="style1" bind:group={inputStyle} value={option}>{option}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24" name="floating_color" bind:group={floatingColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="floating_color" bind:group={floatingColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Button class="mb-4 w-48" color="secondary" onclick={changeHelperSlot}>{helperSlot ? "Remove helper slot" : "Add helper slot"}</Button>
     <Label class="mb-4 w-full font-bold">Helper Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24 {helperSlot ? '' : 'cursor-not-allowed opacity-30'}" disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1 {helperSlot ? '' : 'cursor-not-allowed opacity-30'}" classes={{ label: "w-24" }} disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

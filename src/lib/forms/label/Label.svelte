@@ -1,10 +1,14 @@
 <script lang="ts">
   import { label } from ".";
-  import { type LabelProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type LabelProps } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, color = "gray", show = true, class: className, ...restProps }: LabelProps = $props();
 
-  let base = $derived(cn(label({ color }), className));
+  const theme = getTheme("label");
+
+  let base = $derived(label({ color, class: clsx(theme, className) }));
 </script>
 
 {#if show}
@@ -19,7 +23,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L815)
+[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L808)
 ## Props
 @prop children
 @prop color = "gray"

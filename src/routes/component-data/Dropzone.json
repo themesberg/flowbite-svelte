@@ -2,11 +2,14 @@
   "name": "Dropzone",
   "type": {
     "name": "DropzoneProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L715"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L705"
   },
   "props": [
     ["children", ""],
     ["files", "$bindable<FileList | null>()"],
-    ["class: className", ""]
+    ["class: className", ""],
+    ["onDrop", ""],
+    ["onDragOver", ""],
+    ["onChange", ""]
   ]
 }

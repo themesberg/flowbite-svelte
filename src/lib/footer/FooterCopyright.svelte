@@ -1,22 +1,30 @@
 <script lang="ts">
   import { footerCopyright } from ".";
-  import { type FooterCopyrightProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type FooterCopyrightProps } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { spanClass, aClass, href, by, copyrightMessage = "All Rights Reserved.", year, bySpanClass, ...restProps }: FooterCopyrightProps = $props();
+  let { spanClass, aClass, href, by, copyrightMessage = "All Rights Reserved.", year, bySpanClass, classes, class: className, ...restProps }: FooterCopyrightProps = $props();
+
+  warnThemeDeprecation("FooterCopyright", { aClass, spanClass, bySpanClass }, { aClass: "link", spanClass: "class", bySpanClass: "bySpan" });
+  // link, bySpan
+  const styling = $derived(classes ?? { bySpan: bySpanClass, link: aClass });
+
+  const theme = getTheme("footerCopyright");
 
   if (!year) year = new Date().getFullYear();
 
   const { base, link, bySpan } = footerCopyright();
 </script>
 
-<span class={cn(base(), spanClass)}>
+<span class={base({ class: clsx(theme?.base, className ?? spanClass) })}>
   &copy; {year}
   {#if href}
-    <a {...restProps} {href} class={cn(link(), aClass)}>
+    <a {...restProps} {href} class={link({ class: clsx(theme?.link, styling.link) })}>
       {by}
     </a>
   {:else}
-    <span class={cn(bySpan(), bySpanClass)}>{by}</span>
+    <span class={bySpan({ class: clsx(theme?.bySpan, styling.bySpan) })}>{by}</span>
   {/if}
   {copyrightMessage}
 </span>
@@ -25,7 +33,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L644)
+[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L642)
 ## Props
 @prop spanClass
 @prop aClass
@@ -34,5 +42,7 @@
 @prop copyrightMessage = "All Rights Reserved."
 @prop year
 @prop bySpanClass
+@prop classes
+@prop class: className
 @prop ...restProps
 -->

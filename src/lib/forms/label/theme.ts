@@ -1,5 +1,6 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
+// Variants
 export type LabelVariants = VariantProps<typeof label>;
 
 export const label = tv({

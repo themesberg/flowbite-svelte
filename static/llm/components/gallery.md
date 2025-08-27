@@ -209,7 +209,7 @@ This example shows how to get a complete control over the gallery images look an
 
 #### Types
 
-[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L987)
+[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L988)
 
 #### Props
 
@@ -218,6 +218,7 @@ This example shows how to get a complete control over the gallery images look an
 - items: []
 - imgClass
 - class: className
+- classes
 
 
 ## References

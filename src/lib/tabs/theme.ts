@@ -1,6 +1,9 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type TabsVaraints = VariantProps<typeof tabs>;
+// Variants
+export type TabsVaraints = VariantProps<typeof tabs> & Classes<typeof tabs>;
+export type TabItemVariants = VariantProps<typeof tabItem> & Classes<typeof tabItem>;
 
 export const tabs = tv({
   slots: {
@@ -52,8 +55,7 @@ export const tabs = tv({
 export const tabItem = tv({
   slots: {
     base: "group focus-within:z-10",
-    button: "inline-block text-sm font-medium text-center disabled:cursor-not-allowed",
-    content: "hidden"
+    button: "inline-block text-sm font-medium text-center disabled:cursor-not-allowed"
   },
   variants: {
     open: {

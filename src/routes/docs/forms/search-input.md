@@ -9,7 +9,6 @@ description: Use the search input component as a text field to allow users to en
 
 <script>
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { Badge, A } from '$lib'
   import componentData1 from '../../component-data/Search.json'
   const components = 'Search'
 </script>
@@ -33,7 +32,7 @@ You will also find more advanced search components on this page including dropdo
   import { Search, Button } from "flowbite-svelte";
 </script>
 
-<Search clearBtnClass="right-[100px]">
+<Search>
   <Button class="me-1">Search</Button>
 </Search>
 ```
@@ -137,7 +136,7 @@ Use this search component with a dropdown to let your users select a category in
       {/each}
     </Dropdown>
   </div>
-  <Search size="lg" inputClass="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
+  <Search size="lg" classes={{ input: "rounded-none py-2.5" }} placeholder="Search Mockups, Logos, Design Templates..." />
   <Button class="rounded-s-none p-2!">
     <SearchOutline class="h-6 w-6" />
   </Button>
@@ -202,7 +201,7 @@ Use this example where you can select a country in which you want to search for 
       {/each}
     </Dropdown>
   </div>
-  <Search size="lg" inputClass="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
+  <Search size="lg" classes={{ input: "rounded-none py-2.5" }} placeholder="Search Mockups, Logos, Design Templates..." />
   <Button class="rounded-s-none p-2!">
     <SearchOutline class="h-6 w-6" />
   </Button>
@@ -223,7 +222,7 @@ Get started with this example if you would like to enable voice search for your 
 </script>
 
 <form class="flex gap-2">
-  <Search hideClear size="lg" inputClass="flex items-center gap-2" placeholder="Search Mockups, Logos, Design Templates...">
+  <Search size="lg" classes={{ input: "flex items-center gap-2" }} placeholder="Search Mockups, Logos, Design Templates...">
     <button type="button" onclick={handleVoiceBtn} class="outline-hidden">
       <MicrophoneSolid class="me-2 h-5 w-5" />
     </button>

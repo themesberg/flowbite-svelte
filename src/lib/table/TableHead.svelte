@@ -1,11 +1,13 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { TableHeadCell, tablehead } from ".";
+  import { TableHeadCell, tableHead } from ".";
   import type { TableHeadProps, TableCtxType, HeadItemType } from "$lib/types";
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, headerSlot, color, striped, border, class: className, headItems, defaultRow = true, ...restProps }: TableHeadProps = $props();
+
+  const theme = getTheme("tableHead");
 
   const tableCtx = getContext<TableCtxType>("tableCtx");
   // for reactivity with svelte context
@@ -13,7 +15,7 @@
   let compoStriped = $derived(striped ? striped : tableCtx.striped || false);
   let compoBorder = $derived(border ? border : tableCtx.border || false);
 
-  const base = $derived(tablehead({ color: compoColor, border: compoBorder, striped: compoStriped }));
+  const base = $derived(tableHead({ color: compoColor, border: compoBorder, striped: compoStriped, class: clsx(theme, className) }));
 
   function getItemText(item: HeadItemType): string {
     if (typeof item === "object" && "text" in item) {
@@ -23,7 +25,7 @@
   }
 </script>
 
-<thead {...restProps} class={twMerge(base, clsx(className))}>
+<thead {...restProps} class={base}>
   {#if headItems}
     {#if headerSlot}
       {@render headerSlot()}
@@ -50,7 +52,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1629)
+[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1633)
 ## Props
 @prop children
 @prop headerSlot

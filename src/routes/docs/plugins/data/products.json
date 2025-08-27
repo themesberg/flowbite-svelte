@@ -1,254 +1,254 @@
 [
-	{
-		"name": "Apple iMac",
-		"category": "Computers",
-		"brand": "Apple",
-		"price": "$1,299",
-		"stock": 50,
-		"totalSales": 200,
-		"status": "In Stock"
-	},
-	{
-		"name": "Apple iPhone",
-		"category": "Mobile Phones",
-		"brand": "Apple",
-		"price": "$999",
-		"stock": 120,
-		"totalSales": 300,
-		"status": "In Stock"
-	},
-	{
-		"name": "Samsung Galaxy",
-		"category": "Mobile Phones",
-		"brand": "Samsung",
-		"price": "$899",
-		"stock": 80,
-		"totalSales": 150,
-		"status": "In Stock"
-	},
-	{
-		"name": "Dell XPS 13",
-		"category": "Computers",
-		"brand": "Dell",
-		"price": "$1,099",
-		"stock": 30,
-		"totalSales": 120,
-		"status": "In Stock"
-	},
-	{
-		"name": "HP Spectre x360",
-		"category": "Computers",
-		"brand": "HP",
-		"price": "$1,299",
-		"stock": 25,
-		"totalSales": 80,
-		"status": "In Stock"
-	},
-	{
-		"name": "Google Pixel 6",
-		"category": "Mobile Phones",
-		"brand": "Google",
-		"price": "$799",
-		"stock": 100,
-		"totalSales": 200,
-		"status": "In Stock"
-	},
-	{
-		"name": "Sony WH-1000XM4",
-		"category": "Headphones",
-		"brand": "Sony",
-		"price": "$349",
-		"stock": 60,
-		"totalSales": 150,
-		"status": "In Stock"
-	},
-	{
-		"name": "Apple AirPods Pro",
-		"category": "Headphones",
-		"brand": "Apple",
-		"price": "$249",
-		"stock": 200,
-		"totalSales": 300,
-		"status": "In Stock"
-	},
-	{
-		"name": "Asus ROG Zephyrus",
-		"category": "Computers",
-		"brand": "Asus",
-		"price": "$1,899",
-		"stock": 15,
-		"totalSales": 50,
-		"status": "In Stock"
-	},
-	{
-		"name": "Microsoft Surface Pro 7",
-		"category": "Computers",
-		"brand": "Microsoft",
-		"price": "$899",
-		"stock": 40,
-		"totalSales": 100,
-		"status": "In Stock"
-	},
-	{
-		"name": "Samsung QLED TV",
-		"category": "Televisions",
-		"brand": "Samsung",
-		"price": "$1,299",
-		"stock": 25,
-		"totalSales": 70,
-		"status": "In Stock"
-	},
-	{
-		"name": "LG OLED TV",
-		"category": "Televisions",
-		"brand": "LG",
-		"price": "$1,499",
-		"stock": 20,
-		"totalSales": 50,
-		"status": "In Stock"
-	},
-	{
-		"name": "Canon EOS R5",
-		"category": "Cameras",
-		"brand": "Canon",
-		"price": "$3,899",
-		"stock": 10,
-		"totalSales": 30,
-		"status": "In Stock"
-	},
-	{
-		"name": "Nikon Z7 II",
-		"category": "Cameras",
-		"brand": "Nikon",
-		"price": "$3,299",
-		"stock": 8,
-		"totalSales": 25,
-		"status": "In Stock"
-	},
-	{
-		"name": "Apple Watch Series 7",
-		"category": "Wearables",
-		"brand": "Apple",
-		"price": "$399",
-		"stock": 150,
-		"totalSales": 500,
-		"status": "In Stock"
-	},
-	{
-		"name": "Fitbit Charge 5",
-		"category": "Wearables",
-		"brand": "Fitbit",
-		"price": "$179",
-		"stock": 100,
-		"totalSales": 250,
-		"status": "In Stock"
-	},
-	{
-		"name": "Dyson V11 Vacuum",
-		"category": "Home Appliances",
-		"brand": "Dyson",
-		"price": "$599",
-		"stock": 30,
-		"totalSales": 90,
-		"status": "In Stock"
-	},
-	{
-		"name": "iRobot Roomba i7+",
-		"category": "Home Appliances",
-		"brand": "iRobot",
-		"price": "$799",
-		"stock": 20,
-		"totalSales": 70,
-		"status": "In Stock"
-	},
-	{
-		"name": "Bose SoundLink Revolve",
-		"category": "Speakers",
-		"brand": "Bose",
-		"price": "$199",
-		"stock": 80,
-		"totalSales": 200,
-		"status": "In Stock"
-	},
-	{
-		"name": "Sonos One",
-		"category": "Speakers",
-		"brand": "Sonos",
-		"price": "$219",
-		"stock": 60,
-		"totalSales": 180,
-		"status": "In Stock"
-	},
-	{
-		"name": "Apple iPad Pro",
-		"category": "Tablets",
-		"brand": "Apple",
-		"price": "$1,099",
-		"stock": 50,
-		"totalSales": 150,
-		"status": "In Stock"
-	},
-	{
-		"name": "Samsung Galaxy Tab S7",
-		"category": "Tablets",
-		"brand": "Samsung",
-		"price": "$649",
-		"stock": 70,
-		"totalSales": 130,
-		"status": "In Stock"
-	},
-	{
-		"name": "Amazon Echo Dot",
-		"category": "Smart Home",
-		"brand": "Amazon",
-		"price": "$49",
-		"stock": 300,
-		"totalSales": 800,
-		"status": "In Stock"
-	},
-	{
-		"name": "Google Nest Hub",
-		"category": "Smart Home",
-		"brand": "Google",
-		"price": "$89",
-		"stock": 150,
-		"totalSales": 400,
-		"status": "In Stock"
-	},
-	{
-		"name": "PlayStation 5",
-		"category": "Gaming Consoles",
-		"brand": "Sony",
-		"price": "$499",
-		"stock": 10,
-		"totalSales": 500,
-		"status": "Out of Stock"
-	},
-	{
-		"name": "Xbox Series X",
-		"category": "Gaming Consoles",
-		"brand": "Microsoft",
-		"price": "$499",
-		"stock": 15,
-		"totalSales": 450,
-		"status": "Out of Stock"
-	},
-	{
-		"name": "Nintendo Switch",
-		"category": "Gaming Consoles",
-		"brand": "Nintendo",
-		"price": "$299",
-		"stock": 40,
-		"totalSales": 600,
-		"status": "In Stock"
-	},
-	{
-		"name": "Apple MacBook Pro",
-		"category": "Computers",
-		"brand": "Apple",
-		"price": "$1,299",
-		"stock": 20,
-		"totalSales": 100,
-		"status": "In Stock"
-	}
+  {
+    "name": "Apple iMac",
+    "category": "Computers",
+    "brand": "Apple",
+    "price": "$1,299",
+    "stock": 50,
+    "totalSales": 200,
+    "status": "In Stock"
+  },
+  {
+    "name": "Apple iPhone",
+    "category": "Mobile Phones",
+    "brand": "Apple",
+    "price": "$999",
+    "stock": 120,
+    "totalSales": 300,
+    "status": "In Stock"
+  },
+  {
+    "name": "Samsung Galaxy",
+    "category": "Mobile Phones",
+    "brand": "Samsung",
+    "price": "$899",
+    "stock": 80,
+    "totalSales": 150,
+    "status": "In Stock"
+  },
+  {
+    "name": "Dell XPS 13",
+    "category": "Computers",
+    "brand": "Dell",
+    "price": "$1,099",
+    "stock": 30,
+    "totalSales": 120,
+    "status": "In Stock"
+  },
+  {
+    "name": "HP Spectre x360",
+    "category": "Computers",
+    "brand": "HP",
+    "price": "$1,299",
+    "stock": 25,
+    "totalSales": 80,
+    "status": "In Stock"
+  },
+  {
+    "name": "Google Pixel 6",
+    "category": "Mobile Phones",
+    "brand": "Google",
+    "price": "$799",
+    "stock": 100,
+    "totalSales": 200,
+    "status": "In Stock"
+  },
+  {
+    "name": "Sony WH-1000XM4",
+    "category": "Headphones",
+    "brand": "Sony",
+    "price": "$349",
+    "stock": 60,
+    "totalSales": 150,
+    "status": "In Stock"
+  },
+  {
+    "name": "Apple AirPods Pro",
+    "category": "Headphones",
+    "brand": "Apple",
+    "price": "$249",
+    "stock": 200,
+    "totalSales": 300,
+    "status": "In Stock"
+  },
+  {
+    "name": "Asus ROG Zephyrus",
+    "category": "Computers",
+    "brand": "Asus",
+    "price": "$1,899",
+    "stock": 15,
+    "totalSales": 50,
+    "status": "In Stock"
+  },
+  {
+    "name": "Microsoft Surface Pro 7",
+    "category": "Computers",
+    "brand": "Microsoft",
+    "price": "$899",
+    "stock": 40,
+    "totalSales": 100,
+    "status": "In Stock"
+  },
+  {
+    "name": "Samsung QLED TV",
+    "category": "Televisions",
+    "brand": "Samsung",
+    "price": "$1,299",
+    "stock": 25,
+    "totalSales": 70,
+    "status": "In Stock"
+  },
+  {
+    "name": "LG OLED TV",
+    "category": "Televisions",
+    "brand": "LG",
+    "price": "$1,499",
+    "stock": 20,
+    "totalSales": 50,
+    "status": "In Stock"
+  },
+  {
+    "name": "Canon EOS R5",
+    "category": "Cameras",
+    "brand": "Canon",
+    "price": "$3,899",
+    "stock": 10,
+    "totalSales": 30,
+    "status": "In Stock"
+  },
+  {
+    "name": "Nikon Z7 II",
+    "category": "Cameras",
+    "brand": "Nikon",
+    "price": "$3,299",
+    "stock": 8,
+    "totalSales": 25,
+    "status": "In Stock"
+  },
+  {
+    "name": "Apple Watch Series 7",
+    "category": "Wearables",
+    "brand": "Apple",
+    "price": "$399",
+    "stock": 150,
+    "totalSales": 500,
+    "status": "In Stock"
+  },
+  {
+    "name": "Fitbit Charge 5",
+    "category": "Wearables",
+    "brand": "Fitbit",
+    "price": "$179",
+    "stock": 100,
+    "totalSales": 250,
+    "status": "In Stock"
+  },
+  {
+    "name": "Dyson V11 Vacuum",
+    "category": "Home Appliances",
+    "brand": "Dyson",
+    "price": "$599",
+    "stock": 30,
+    "totalSales": 90,
+    "status": "In Stock"
+  },
+  {
+    "name": "iRobot Roomba i7+",
+    "category": "Home Appliances",
+    "brand": "iRobot",
+    "price": "$799",
+    "stock": 20,
+    "totalSales": 70,
+    "status": "In Stock"
+  },
+  {
+    "name": "Bose SoundLink Revolve",
+    "category": "Speakers",
+    "brand": "Bose",
+    "price": "$199",
+    "stock": 80,
+    "totalSales": 200,
+    "status": "In Stock"
+  },
+  {
+    "name": "Sonos One",
+    "category": "Speakers",
+    "brand": "Sonos",
+    "price": "$219",
+    "stock": 60,
+    "totalSales": 180,
+    "status": "In Stock"
+  },
+  {
+    "name": "Apple iPad Pro",
+    "category": "Tablets",
+    "brand": "Apple",
+    "price": "$1,099",
+    "stock": 50,
+    "totalSales": 150,
+    "status": "In Stock"
+  },
+  {
+    "name": "Samsung Galaxy Tab S7",
+    "category": "Tablets",
+    "brand": "Samsung",
+    "price": "$649",
+    "stock": 70,
+    "totalSales": 130,
+    "status": "In Stock"
+  },
+  {
+    "name": "Amazon Echo Dot",
+    "category": "Smart Home",
+    "brand": "Amazon",
+    "price": "$49",
+    "stock": 300,
+    "totalSales": 800,
+    "status": "In Stock"
+  },
+  {
+    "name": "Google Nest Hub",
+    "category": "Smart Home",
+    "brand": "Google",
+    "price": "$89",
+    "stock": 150,
+    "totalSales": 400,
+    "status": "In Stock"
+  },
+  {
+    "name": "PlayStation 5",
+    "category": "Gaming Consoles",
+    "brand": "Sony",
+    "price": "$499",
+    "stock": 10,
+    "totalSales": 500,
+    "status": "Out of Stock"
+  },
+  {
+    "name": "Xbox Series X",
+    "category": "Gaming Consoles",
+    "brand": "Microsoft",
+    "price": "$499",
+    "stock": 15,
+    "totalSales": 450,
+    "status": "Out of Stock"
+  },
+  {
+    "name": "Nintendo Switch",
+    "category": "Gaming Consoles",
+    "brand": "Nintendo",
+    "price": "$299",
+    "stock": 40,
+    "totalSales": 600,
+    "status": "In Stock"
+  },
+  {
+    "name": "Apple MacBook Pro",
+    "category": "Computers",
+    "brand": "Apple",
+    "price": "$1,299",
+    "stock": 20,
+    "totalSales": 100,
+    "status": "In Stock"
+  }
 ]

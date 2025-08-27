@@ -4,6 +4,7 @@ title: Svelte Outline Icons - Flowbite
 breadcrumb_title: Outline Icons
 component_title: Outline Icons
 dir: Icons
+pkg: Flowbite Svelte Icons
 description: Get started with a collection of outline styled open-source Svelte 5 powered icons built by the Flowbite community and use the interactive search and configurator features
 ---
 
@@ -15,16 +16,16 @@ Search by the icon name and you'll find the component name that you need to impo
 
 ```svelte example hideSource hideResponsiveButtons
 <script>
-  import { Label, Range, TabItem, Tabs } from "$lib";
+  import { Label, Range, TabItem, Tabs, Clipboard, Tooltip } from "$lib";
   import * as Icons from "flowbite-svelte-icons";
-  import { IconOutline } from "flowbite-svelte-icons";
+  import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
+  import IconOutline from "./utils/IconOutline.svelte";
   import { filterIconsByKeyword, random_hex_color_code, random_tailwind_color } from "../icons/utils/utils";
   const keywordsToInclude = "Outline";
   const keyIcons = filterIconsByKeyword(Icons, keywordsToInclude);
 
-  const contentClass = " rounded-lg mt-4";
+  const content = "rounded-lg";
   let searchTerm = $state("");
-
   let filteredEntries = $derived(Object.entries(keyIcons).filter(([name, component]) => name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
   let size = $state(6);
   // for metatag
@@ -36,52 +37,74 @@ Search by the icon name and you'll find the component name that you need to impo
 </script>
 
 <div class="w-full">
-  <!-- <TableSearch placeholder="Search by icon name" hoverable={true} bind:inputValue={searchTerm} divClass="relative overflow-x-auto [&>div]:p-0"> -->
   <div class="mb-4 w-full max-w-64">
-    <Label class="py-4 text-lg ">Icon size: {size}</Label>
+    <Label class="py-4">Icon size: {size}</Label>
+    <input type="search" id="site-search" name="q" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2 ps-4 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500" placeholder="Search icons" bind:value={searchTerm} />
     <Range id="range1" min="4" max="10" bind:value={size} />
   </div>
-  <Tabs style="pill" {contentClass} class="p-4">
+  <Tabs style="pill" classes={{ content }}>
     <TabItem open>
       {#snippet titleSlot()}
-        <span class="text-lg">Mono</span>
+        <span>Mono</span>
       {/snippet}
       <div class={tabItemDivcls}>
-        {#each filteredEntries as [name, component]}
-          <div class="flex items-center gap-4 text-lg">
+        {#each filteredEntries as [name, component], i}
+          {@const iconValue = `<${filteredEntries[i][0]} class="shrink-0 h-${size} w-${size}" />`}
+          <div class="flex items-center gap-4">
             <IconOutline Icon={component} class="shrink-0 h-{size} w-{size}" />
             {name}
+            <Clipboard value={iconValue} embedded>
+              {#snippet children(success)}
+                <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
+                {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+              {/snippet}
+            </Clipboard>
           </div>
         {/each}
       </div>
     </TabItem>
     <TabItem>
       {#snippet titleSlot()}
-        <span class="text-lg">Random Hex Colors</span>
+        <span>Random Hex Colors</span>
       {/snippet}
       <div class={tabItemDivcls}>
-        {#each filteredEntries as [name, component]}
-          <div class="flex items-center gap-4 text-lg">
-            <IconOutline Icon={component} color={random_hex_color_code()} class="shrink-0 h-{size} w-{size}" />
+        {#each filteredEntries as [name, component], i}
+          {@const color = random_hex_color_code()}
+          {@const iconValue = `<${filteredEntries[i][0]} class="shrink-0 h-${size} w-${size}" color="${color}"/>`}
+          <div class="flex items-center gap-4">
+            <IconOutline Icon={component} {color} class="shrink-0 h-{size} w-{size}" />
             {name}
+            <Clipboard value={iconValue} embedded>
+              {#snippet children(success)}
+                <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
+                {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+              {/snippet}
+            </Clipboard>
           </div>
         {/each}
       </div>
     </TabItem>
     <TabItem>
       {#snippet titleSlot()}
-        <span class="text-lg">Random Tailwind CSS Colors</span>
+        <span>Random Tailwind CSS Colors</span>
       {/snippet}
       <div class={tabItemDivcls}>
-        {#each filteredEntries as [name, component]}
-          <div class="flex items-center gap-4 text-lg">
-            <IconOutline Icon={component} class="{random_tailwind_color()} shrink-0 h-{size} w-{size}" />
+        {#each filteredEntries as [name, component], i}
+          {@const color = random_tailwind_color()}
+          {@const iconValue = `<${filteredEntries[i][0]} class="h-${size} w-${size} ${color}"/>`}
+          <div class="flex items-center gap-4">
+            <IconOutline Icon={component} class="{color} shrink-0 h-{size} w-{size}" />
             {name}
+            <Clipboard value={iconValue} embedded>
+              {#snippet children(success)}
+                <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
+                {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+              {/snippet}
+            </Clipboard>
           </div>
         {/each}
       </div>
     </TabItem>
   </Tabs>
-  <!-- </TableSearch> -->
 </div>
 ```

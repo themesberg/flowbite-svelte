@@ -2,18 +2,18 @@
   "name": "FloatingLabelInput",
   "type": {
     "name": "FloatingLabelInputProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L735"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L728"
   },
   "props": [
     ["children", ""],
     ["id", "idGenerator()"],
     ["value", "$bindable()"],
     ["elementRef", "$bindable()"],
-    ["\"aria-describedby\": ariaDescribedby", ""],
     ["variant", "\"standard\""],
     ["size", "\"default\""],
     ["color", "\"default\""],
     ["class: className", ""],
+    ["classes", ""],
     ["inputClass", ""],
     ["labelClass", ""],
     ["clearable", ""],

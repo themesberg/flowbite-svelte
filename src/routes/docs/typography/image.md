@@ -233,6 +233,23 @@ Use the max-w-full class to set the full width of the image as long as it doesnâ
 <Img src="/images/examples/image-1@2x.jpg" class="max-w-full" alt="sample 1" />
 ```
 
+## Enhanced image
+
+**Warning: ** Since `@sveltejs/enhanced-img` uses pre-1.0 versioning and may introduce breaking changes with every minor version release.
+
+Please follow how to set up `@sveltejs/enhanced-img` at https://svelte.dev/docs/kit/images#sveltejs-enhanced-img and install `v0.6.1`.
+
+Use this example for an enhanced image. In this example an image is stored in `src/images` directory.
+
+```svelte example
+<script lang="ts">
+  import { EnhancedImg } from "flowbite-svelte";
+  import imagePicture from "/src/images/content-gallery-3.png?enhanced";
+</script>
+
+<EnhancedImg src={imagePicture} alt="some alt text" />
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

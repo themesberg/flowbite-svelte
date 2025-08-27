@@ -2,10 +2,11 @@
   "name": "CardPlaceholder",
   "type": {
     "name": "CardPlaceholderProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1423"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1424"
   },
   "props": [
     ["size", "\"sm\""],
-    ["class: className", ""]
+    ["class: className", ""],
+    ["classes", ""]
   ]
 }

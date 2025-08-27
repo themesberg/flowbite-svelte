@@ -1,6 +1,9 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
 
-const avatar = tv({
+// Variants
+export type AvatarVariants = VariantProps<typeof avatar>;
+
+export const avatar = tv({
   base: "relative flex items-center justify-center bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300",
   variants: {
     cornerStyle: {
@@ -12,7 +15,7 @@ const avatar = tv({
       false: ""
     },
     stacked: {
-      true: "border-2 -ms-4 border-white dark:border-gray-800",
+      true: "border-2 not-first:-ms-4 border-white dark:border-gray-800",
       false: ""
     },
     size: {
@@ -30,5 +33,3 @@ const avatar = tv({
     size: "md"
   }
 });
-
-export { avatar };

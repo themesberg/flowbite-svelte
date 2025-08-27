@@ -36,7 +36,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" classes={{ nonactive: "p-2", active: "p-2" }}>
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet icon()}
@@ -103,7 +103,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} {activeClass} {nonActiveClass} position="absolute" class="z-50 h-full">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} classes={{ nonactive: nonActiveClass, active: activeClass }} position="absolute" class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet icon()}
@@ -168,7 +168,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" {activeClass} {nonActiveClass} class="z-50 h-full">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" classes={{ nonactive: nonActiveClass, active: activeClass }} class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/" active>
         {#snippet icon()}
@@ -232,7 +232,7 @@ You can control icon class by changing the `class` prop in the `Icon` component.
 </script>
 
 <div class="relative">
-  <Sidebar alwaysOpen {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
+  <Sidebar alwaysOpen {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" classes={{ nonactive: "p-2", active: "p-2" }}>
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet icon()}
@@ -297,7 +297,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" activeClass="p-2" nonActiveClass="p-2" class="z-50 h-full">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" classes={{ nonactive: "p-2", active: "p-2" }} class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard">
         {#snippet icon()}
@@ -378,7 +378,7 @@ You can change the icons using `arrowup` and `arrowdown` slots.
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" class="z-50 h-full" activeClass="p-2" nonActiveClass="p-2">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" class="z-50 h-full" classes={{ nonactive: "p-2", active: "p-2" }}>
     <SidebarGroup>
       <SidebarItem label="Dashboard">
         {#snippet icon()}
@@ -437,7 +437,7 @@ Separate the content inside the sidebar component by applying a border separator
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" classes={{ nonactive: "p-2", active: "p-2" }}>
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet icon()}
@@ -519,7 +519,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" classes={{ nonactive: "p-2", active: "p-2" }}>
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet icon()}
@@ -600,7 +600,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" classes={{ nonactive: "p-2", active: "p-2" }}>
     <CloseButton onclick={closeDemoSidebar} color="gray" class="absolute top-3 right-1 p-2 md:hidden" />
     <SidebarGroup>
       <SidebarBrand {site} {imgClass} />
@@ -667,7 +667,7 @@ The following example shows how to use children for your branding.
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" classes={{ nonactive: "p-2", active: "p-2" }}>
     <CloseButton onclick={closeDemoSidebar} color="gray" class="absolute top-3 right-1 p-2 md:hidden" />
     <SidebarGroup>
       <SidebarBrand>
@@ -741,7 +741,7 @@ Use the following example to show a close button in the sidebar for a small scre
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full pt-6" position="absolute" activeClass="p-2" nonActiveClass="p-2">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full pt-6" position="absolute" classes={{ nonactive: "p-2", active: "p-2" }}>
     <CloseButton onclick={closeDemoSidebar} color="gray" class="absolute top-2 right-2 p-2 md:hidden" />
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
@@ -831,7 +831,7 @@ You can use object for the sidebar items as the following example.
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" activeClass="p-2" nonActiveClass="p-2">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" classes={{ nonactive: "p-2", active: "p-2" }}>
     <SidebarGroup>
       {#each sidebarEx1 as { label, href, icon: Icon, subContent }}
         <SidebarItem {label} {href} {spanClass}>
@@ -882,7 +882,7 @@ The following example shows to open only one dropdown when you click another dro
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" activeClass="p-2" nonActiveClass="p-2" class="z-50 h-full">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" classes={{ nonactive: "p-2", active: "p-2" }} class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard">
         {#snippet icon()}
@@ -952,7 +952,7 @@ To open all dropdown menus, set `isSingle={false}`.
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} isSingle={false} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" activeClass="p-2" nonActiveClass="p-2" class="z-50 h-full">
+  <Sidebar {activeUrl} isSingle={false} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" classes={{ nonactive: "p-2", active: "p-2" }} class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard">
         {#snippet icon()}
@@ -1028,7 +1028,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" activeClass="p-2" nonActiveClass="p-2" class="z-50 h-full">
+  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} position="absolute" classes={{ nonactive: "p-2", active: "p-2" }} class="z-50 h-full">
     <SidebarGroup>
       <SidebarItem label="Dashboard">
         {#snippet icon()}
@@ -1112,7 +1112,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
   <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700">
     <div class="flex w-full flex-row pb-4">
       <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
-      <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50" position="static" activeClass="p-2" nonActiveClass="p-2">
+      <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50" position="static" classes={{ nonactive: "p-2", active: "p-2" }}>
         <SidebarGroup>
           <SidebarItem label="Dashboard" href="/">
             {#snippet icon()}
@@ -1174,7 +1174,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
           <ChartPieSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="E-commerce" onclickclick={handleClick}>
+      <SidebarDropdownWrapper label="E-commerce" onclick={handleClick}>
         {#snippet icon()}
           <CartSolid class="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1199,7 +1199,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1347)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1346)
 
 #### Props
 
@@ -1221,12 +1221,14 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 - activeClass
 - activeUrl: ""
 - class: className
+- classes
+- disableBreakpoints: false
 
 ### SidebarBrand
 
 #### Types
 
-[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1382)
+[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1383)
 
 #### Props
 
@@ -1235,6 +1237,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 - imgClass
 - spanClass
 - class: className
+- classes
 
 ### SidebarButton
 
@@ -1246,12 +1249,13 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 - breakpoint: "md"
 - class: className
+- classes
 
 ### SidebarCta
 
 #### Types
 
-[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1369)
+[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1370)
 
 #### Props
 
@@ -1261,12 +1265,13 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 - spanClass
 - label
 - class: className
+- classes
 
 ### SidebarDropdownWrapper
 
 #### Types
 
-[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1388)
+[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1389)
 
 #### Props
 
@@ -1283,13 +1288,14 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 - params
 - svgClass
 - class: className
+- classes
 - onclick
 
 ### SidebarGroup
 
 #### Types
 
-[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1405)
+[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1406)
 
 #### Props
 
@@ -1302,7 +1308,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1411)
+[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1412)
 
 #### Props
 

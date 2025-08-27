@@ -1,26 +1,29 @@
 <script lang="ts">
-  import { setContext, getContext } from "svelte";
-  import { writable } from "svelte/store";
+  import { type AccordionCtxType, type AccordionProps } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+  import { setContext } from "svelte";
   import { accordion } from "./";
-  import { type AccordionProps, type BaseThemes, cn } from "$lib";
+  import { createSingleSelectionContext } from "$lib/utils/singleselection.svelte";
 
   let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, ...restProps }: AccordionProps = $props();
 
-  // Get merged theme from context
-  const context = getContext<BaseThemes>("themeConfig");
-  // Use context theme if available, otherwise fallback to default
-  const accordionTheme = context?.accordion || accordion;
+  const theme = getTheme("accordion");
 
-  const ctx = {
+  const ctx: AccordionCtxType = $state({
     flush,
     activeClass,
     inactiveClass,
-    selected: multiple ? undefined : writable()
-  };
+    transitionType
+  });
 
-  setContext("ctx", ctx);
-  setContext("ctxTransitionType", transitionType);
-  const base = $derived(cn(accordionTheme({ flush }), className));
+  setContext<AccordionCtxType>("ctx", ctx);
+
+  if (!multiple) {
+    createSingleSelectionContext();
+  }
+
+  const base = $derived(accordion({ flush, class: clsx(theme, className) }));
 </script>
 
 <div {...restProps} class={base}>
@@ -31,7 +34,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L164)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L170)
 ## Props
 @prop children
 @prop flush

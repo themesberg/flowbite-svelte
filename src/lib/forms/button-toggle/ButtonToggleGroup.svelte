@@ -1,10 +1,14 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { type ButtonToggleGroupProps, buttonToggleGroup, cn } from "$lib";
+  import clsx from "clsx";
+  import { type ButtonToggleGroupProps, buttonToggleGroup } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { multiSelect = false, name = "toggle-group", value = multiSelect ? [] : null, color, size = "md", roundedSize = "md", onSelect = (val: any) => {}, children, ctxIconClass, ctxBtnClass, class: className, ...restProps }: ButtonToggleGroupProps = $props();
 
-  const base = $derived(buttonToggleGroup({ roundedSize }));
+  const theme = getTheme("buttonToggleGroup");
+
+  const base = $derived(buttonToggleGroup({ roundedSize, class: clsx(theme, className) }));
   type SelectedValue = string | null | string[];
 
   let selectedValues = $state<SelectedValue>(multiSelect ? [] : null);
@@ -56,12 +60,12 @@
   setContext("buttonToggleColor", color);
   setContext("buttonToggleSize", size);
   setContext("buttonToggleRounded", roundedSize);
-  setContext("ctxIconClass", cn(ctxIconClass));
-  setContext("ctxBtnClass", cn(ctxBtnClass));
+  setContext("ctxIconClass", clsx(ctxIconClass));
+  setContext("ctxBtnClass", clsx(ctxBtnClass));
 </script>
 
 <div class="inline">
-  <div class={cn(base, className)} role={multiSelect ? "group" : "radiogroup"} aria-label={name} {...restProps}>
+  <div class={base} role={multiSelect ? "group" : "radiogroup"} aria-label={name} {...restProps}>
     {@render children()}
   </div>
 </div>

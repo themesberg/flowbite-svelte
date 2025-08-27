@@ -1,17 +1,18 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
   import { setContext } from "svelte";
-  import NavContainer from "./NavContainer.svelte";
+  import { NavContainer } from "$lib";
   import { navbar } from "./theme";
   import type { NavbarState, NavbarProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  // propagate props type from underlying Frame
+  let { children, fluid, navContainerClass, class: className, closeOnClickOutside = true, breakpoint = "md", ...restProps }: NavbarProps = $props();
 
-  let { children, fluid, navContainerClass, class: className, closeOnClickOutside = true, ...restProps }: NavbarProps = $props();
+  const theme = getTheme("navbar");
 
   let navState = $state({ hidden: true });
   setContext<NavbarState>("navState", navState);
+  setContext("breakpoint", breakpoint);
 
   // Add reference to the navbar element
   let navbarElement: HTMLElement;
@@ -32,7 +33,7 @@
 <svelte:document onclick={handleDocumentClick} />
 
 <nav bind:this={navbarElement}>
-  <div {...restProps} class={twMerge(navbar(), clsx(className))}>
+  <div {...restProps} class={navbar({ class: clsx(theme, className) })}>
     <NavContainer {fluid} class={clsx(navContainerClass)}>
       {@render children({ hidden: navState.hidden, toggle, NavContainer })}
     </NavContainer>
@@ -43,12 +44,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1092)
+[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1089)
 ## Props
 @prop children
 @prop fluid
 @prop navContainerClass
 @prop class: className
 @prop closeOnClickOutside = true
+@prop breakpoint = "md"
 @prop ...restProps
 -->

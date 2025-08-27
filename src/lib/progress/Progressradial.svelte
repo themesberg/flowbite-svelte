@@ -1,18 +1,21 @@
 <script lang="ts">
-  import { progressradial } from "$lib/progress/theme";
+  import { progressradial } from ".";
   import type { ProgressradialProps } from "$lib/types";
   import clsx from "clsx";
   import { cubicOut } from "svelte/easing";
   import { Tween } from "svelte/motion";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { progress = 45, radius = 42, startingPosition = "top", precision = 0, tweenDuration = 400, animate = false, size = "h-24 w-24", thickness = 4, labelInside = false, labelOutside = "", easing = cubicOut, color = "primary", class: className, classes, ...restProps }: ProgressradialProps = $props();
+
+  const theme = getTheme("progressradial");
 
   const _progress = new Tween(0, {
     duration: animate ? tweenDuration : 0,
     easing
   });
 
-  const { base, labelInsideDiv, circleBackground, circleForeground, outsideDiv, outsideSpan, outsideProgress } = $derived(
+  const { base, label, background, foreground, outside, span, progressCls } = $derived(
     progressradial({
       color,
       labelInside
@@ -35,23 +38,23 @@
 
 <div class="flex flex-col items-center">
   {#if labelOutside}
-    <div class={outsideDiv({ class: clsx(classes?.outsideDiv) })}>
-      <span class={outsideSpan({ class: clsx(classes?.outsideSpan) })}>{labelOutside}</span>
-      <span class={outsideProgress({ class: clsx(classes?.outsideProgress) })}>{formattedProgress}%</span>
+    <div class={outside({ class: clsx(theme?.outside, classes?.outside) })}>
+      <span class={span({ class: clsx(theme?.span, classes?.span) })}>{labelOutside}</span>
+      <span class={progressCls({ class: clsx(theme?.progressCls, classes?.progressCls) })}>{formattedProgress}%</span>
     </div>
   {/if}
 
-  <div {...restProps} class={base({ class: clsx(size, classes?.base, className) })}>
+  <div {...restProps} class={base({ class: clsx(size, theme?.base, className) })}>
     <svg viewBox="0 0 100 100" class="h-full w-full" style="transform: rotate({rotationAngle}deg)">
       <!-- Background circle -->
-      <circle cx="50" cy="50" r={radius} class={circleBackground({ class: clsx(classes?.circleBackground) })} fill="none" stroke-width={thickness} />
+      <circle cx="50" cy="50" r={radius} class={background({ class: clsx(theme?.background, classes?.background) })} fill="none" stroke-width={thickness} />
 
       <!-- Foreground circle (progress indicator) -->
-      <circle cx="50" cy="50" r={radius} class={circleForeground({ class: clsx(classes?.circleForeground) })} fill="none" stroke-width={thickness} stroke-dasharray={circumference} stroke-dashoffset={strokeDashoffset} stroke-linecap="round" />
+      <circle cx="50" cy="50" r={radius} class={foreground({ class: clsx(theme?.foreground, classes?.foreground) })} fill="none" stroke-width={thickness} stroke-dasharray={circumference} stroke-dashoffset={strokeDashoffset} stroke-linecap="round" />
     </svg>
 
     {#if labelInside}
-      <div class={labelInsideDiv({ class: clsx(classes?.labelInsideDiv) })}>
+      <div class={label({ class: clsx(theme?.label, classes?.label) })}>
         {formattedProgress}%
       </div>
     {/if}
@@ -62,7 +65,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1221)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1220)
 ## Props
 @prop progress = 45
 @prop radius = 42

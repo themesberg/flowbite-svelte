@@ -1,26 +1,26 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { dropdownItem } from ".";
-  import { type DropdownItemProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type DropdownItemProps } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { aClass, children, activeClass, liClass, class: className, ...restProps }: DropdownItemProps = $props();
+  let { aClass, children, activeClass, liClass, classes, class: className, ...restProps }: DropdownItemProps = $props();
 
-  const activeUrlStore = getContext("activeUrl") as { subscribe: (callback: (value: string) => void) => void };
-  let sidebarUrl = $state("");
-  activeUrlStore.subscribe((value) => {
-    sidebarUrl = value;
-  });
+  warnThemeDeprecation("DropdownItem", { aClass, activeClass, liClass }, { aClass: "class", activeClass: "active", liClass: "li" });
+  const styling = $derived(classes ?? { active: activeClass, li: liClass });
 
-  let active = $state(false);
-  $effect(() => {
-    active = sidebarUrl ? restProps.href === sidebarUrl : false;
-  });
+  const theme = getTheme("dropdownItem");
 
-  const { anchor, activeAnchor } = dropdownItem();
-  let finalClass = $derived([active ? cn(activeAnchor(), activeClass, className) : cn(anchor(), aClass, className)]);
+  const activeUrl: { value: string } = getContext("activeUrl");
+
+  let isActive = $derived(activeUrl?.value ? restProps.href === activeUrl.value : false);
+
+  const { base, active, li } = dropdownItem();
+  let finalClass = $derived([isActive ? active({ class: clsx(theme?.active, styling.active) }) : base({ class: clsx(theme?.base, className) })]);
 </script>
 
-<li class={cn(liClass)}>
+<li class={li({ class: clsx(styling.li) })}>
   {#if restProps.href === undefined && restProps.onclick === undefined}
     <div {...restProps} class={finalClass}>
       {@render children()}
@@ -40,12 +40,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L612)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L611)
 ## Props
 @prop aClass
 @prop children
 @prop activeClass
 @prop liClass
+@prop classes
 @prop class: className
 @prop ...restProps
 -->

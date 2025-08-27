@@ -1,5 +1,6 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
+// Variants
 export type RangeVariants = VariantProps<typeof range>;
 
 export const range = tv({

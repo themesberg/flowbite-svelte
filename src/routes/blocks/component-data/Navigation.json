@@ -1,0 +1,9 @@
+{
+  "name": "Navigation",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["navClass", "string", "'bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800'"],
+    ["divClass", "string", "'flex flex-wrap justify-between items-center mx-auto max-w-screen-xl'"]
+  ]
+}

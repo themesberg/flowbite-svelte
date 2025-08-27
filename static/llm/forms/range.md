@@ -88,7 +88,7 @@ Since we added `...restProps` to input field, you can contain the props which ar
 
 #### Types
 
-[RangeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L843)
+[RangeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L836)
 
 #### Props
 
@@ -97,6 +97,7 @@ Since we added `...restProps` to input field, you can contain the props which ar
 - color: "blue"
 - size: "md"
 - inputClass
+- class: className
 
 
 ## References

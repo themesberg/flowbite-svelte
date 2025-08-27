@@ -1,58 +1,40 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import type { Writable } from "svelte/store";
-  import { thumbnails } from "./theme";
-  import { type ThumbnailsProps, type State, Thumbnail, cn } from "$lib";
+  import { Thumbnail, type ThumbnailsProps } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
+  import { thumbnails } from "./theme";
 
   let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass, throttleDelay = 650, class: className }: ThumbnailsProps = $props();
 
-  const state = getContext<Writable<State>>("state");
-  if (!state) {
-    console.error("State is undefined. Make sure to provide state context or pass it as a prop.");
-  }
+  const theme = getTheme("thumbnails");
 
-  let lastClickedAt = new Date();
+  // Initialize so the first click is never throttled
+  let lastClickedAt = -Infinity;
 
   const btnClick = (newIndex: number) => {
-    if (new Date().getTime() - lastClickedAt.getTime() < throttleDelay) {
+    const now = Date.now();
+    if (now - lastClickedAt < throttleDelay) {
       console.warn("Thumbnail action throttled");
       return;
     }
-    if (state) {
-      state.update((_state) => {
-        const currentIndex = _state.index;
-        const forward = newIndex >= currentIndex;
 
-        // Update the bound index
-        index = newIndex;
-
-        return {
-          ..._state,
-          index: newIndex,
-          forward,
-          lastSlideChange: new Date()
-        };
-      });
-    } else {
-      // Fallback behavior if state is not available
-      index = newIndex;
-      lastClickedAt = new Date();
-      console.warn("State update skipped - no valid state available");
-    }
+    lastClickedAt = now;
+    index = newIndex;
   };
 
   $effect(() => {
-    index = (index + images.length) % images.length;
+    if (images.length > 0) {
+      index = (index + images.length) % images.length;
+    }
   });
 </script>
 
-<div class={cn(thumbnails(), className)}>
+<div class={thumbnails({ class: clsx(theme, className) })}>
   {#each images as image, idx}
     {@const selected = index === idx}
-    <button onclick={() => btnClick(idx)} aria-label={ariaLabel}>
+    <button onclick={() => btnClick(idx)} aria-label={ariaLabel} aria-current={selected ? "true" : undefined}>
       {#if children}
-        {@render children({ image, selected, imgClass: cn(imgClass), Thumbnail })}
+        {@render children({ image, selected, imgClass: clsx(imgClass), Thumbnail })}
       {:else}
         <Thumbnail {...image} {selected} class={clsx(imgClass)} />
       {/if}
@@ -64,7 +46,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L446)
+[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L411)
 ## Props
 @prop children
 @prop images = []

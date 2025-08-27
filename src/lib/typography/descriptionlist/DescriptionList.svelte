@@ -2,18 +2,21 @@
   import clsx from "clsx";
   import { descriptionList } from "./index";
   import type { DescriptionListProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, tag, class: className, ...restProps }: DescriptionListProps = $props();
 
-  let classDesc = $derived(
+  const theme = getTheme("descriptionList");
+
+  let descCls = $derived(
     descriptionList({
       tag,
-      class: clsx(className)
+      class: clsx(theme, className)
     })
   );
 </script>
 
-<svelte:element this={tag} {...restProps} class={classDesc}>
+<svelte:element this={tag} {...restProps} class={descCls}>
   {@render children()}
 </svelte:element>
 
@@ -21,7 +24,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DescriptionListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1886)
+[DescriptionListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1887)
 ## Props
 @prop children
 @prop tag

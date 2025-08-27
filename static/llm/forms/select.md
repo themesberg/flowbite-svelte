@@ -6,7 +6,7 @@ The select input component can be used to gather information from users based on
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Select } from "flowbite-svelte";
 </script>
 ```
@@ -16,7 +16,7 @@ The select input component can be used to gather information from users based on
 Get started with the default example of a select input component to get a single option selection.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Select, Label } from "flowbite-svelte";
   let selected = "";
   let countries = [
@@ -36,7 +36,7 @@ Get started with the default example of a select input component to get a single
 ## Clearable
 
 ```svelte
-<script>
+<script lang="ts">
   import { Select, Label } from "flowbite-svelte";
   let countries = [
     { value: "us", name: "United States" },
@@ -55,8 +55,10 @@ Get started with the default example of a select input component to get a single
 
 ## Event
 
+`onClear` is a `Select`'s prop and `onchange` is Svelte's built-in event handler for the native `<select>` element.
+
 ```svelte
-<script>
+<script lang="ts">
   import { Select, Label } from "flowbite-svelte";
   let countries = [
     { value: "us", name: "United States" },
@@ -73,8 +75,11 @@ Get started with the default example of a select input component to get a single
     items={countries}
     bind:value={eventSelected}
     clearable
-    clearableOnClick={() => {
+    onClear={() => {
       alert("Clicked clear button!");
+    }}
+    onchange={() => {
+      console.log("Changed select value:");
     }}
   />
 </Label>
@@ -85,7 +90,7 @@ Get started with the default example of a select input component to get a single
 Apply the disable state to the select component to disallow the selection of new options.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Select, Label } from "flowbite-svelte";
   let countries = [
     { value: "us", name: "United States" },
@@ -103,7 +108,7 @@ Apply the disable state to the select component to disallow the selection of new
 Use the underline style for the select component as an alternative appearance.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Select, Label } from "flowbite-svelte";
   let countries = [
     { value: "us", name: "United States" },
@@ -121,7 +126,7 @@ Use the underline style for the select component as an alternative appearance.
 Use this example if you want to create a multi-level dropdown and select component combination.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Select, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   import Usa from "../../utils/icons/Usa.svelte";
@@ -177,7 +182,7 @@ Use this example if you want to create a multi-level dropdown and select compone
 Get started with the small, default, and large sizes for the select component from the example below.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Select, Label } from "flowbite-svelte";
   let countries = [
     { value: "us", name: "United States" },
@@ -206,9 +211,9 @@ Get started with the small, default, and large sizes for the select component fr
 If you want custom options, put them directly inside the component and leave the `items` prop unset. Furthermore, if the default placeholder is not what you want, set the `placeholder` prop to `""`.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Select, Label } from "flowbite-svelte";
-  let selected;
+  let selected = $state();
   let countries = [
     { value: "us", name: "United States" },
     { value: "ca", name: "Canada" },
@@ -246,7 +251,7 @@ If you want custom options, put them directly inside the component and leave the
 <Button
   onclick={() => {
     // programmatically change the selection
-    selectRef.selectedIndex = 1; // This would select Option 2
+    selectRef.selectedIndex = 2; // This would select Option 2
     selectedValue = "option2";
     selectRef?.focus();
     console.log(`Selected index: ${selectRef?.selectedIndex}`);
@@ -259,7 +264,7 @@ If you want custom options, put them directly inside the component and leave the
 ## MultiSelect
 
 ```svelte
-<script>
+<script lang="ts">
   import { MultiSelect } from "flowbite-svelte";
 </script>
 ```
@@ -292,7 +297,7 @@ Get started with the default toggle component example as a checkbox element to r
   import { MultiSelect } from "flowbite-svelte";
 
   let placeholder = "placeholder text";
-  let selected = [];
+  let selected: string[] = [];
   let countries = [
     { value: "us", name: "United States" },
     { value: "ca", name: "Canada" },
@@ -308,10 +313,10 @@ Get started with the default toggle component example as a checkbox element to r
 ### Disabled select
 
 ```svelte
-<script>
+<script lang="ts">
   import { MultiSelect } from "flowbite-svelte";
 
-  let selected = [];
+  let selected: string[] = [];
   let countries = [
     { value: "us", name: "United States" },
     { value: "ca", name: "Canada" },
@@ -327,7 +332,7 @@ Get started with the default toggle component example as a checkbox element to r
 ### MultiSelect Disabled Option
 
 ```svelte
-<script>
+<script lang="ts">
   import { MultiSelect } from "flowbite-svelte";
 
   let selected = [];
@@ -382,7 +387,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 <script lang="ts">
   import { MultiSelect, Badge, type SelectOptionType } from "flowbite-svelte";
 
-  let selected = [];
+  let selected: string[] = [];
   let countries: SelectOptionType<string>[] = [
     { value: "us", name: "United States", color: "indigo" },
     { value: "ca", name: "Canada", color: "green" },
@@ -407,7 +412,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 #### Types
 
-[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L869)
+[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L862)
 
 #### Props
 
@@ -418,14 +423,16 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 - underline
 - size: "md"
 - disabled
-- selectClass
-- class: className
 - placeholder: "Choose option ..."
 - clearable
-- clearableSvgClass
 - clearableColor: "none"
-- clearableClass
 - clearableOnClick
+- onClear
+- clearableSvgClass
+- clearableClass
+- selectClass
+- class: className
+- classes
 
 
 ## References

@@ -1,68 +1,75 @@
 <script lang="ts">
+  import { type CarouselProps, type CarouselState, Slide } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   import { onMount, setContext } from "svelte";
-  import { writable } from "svelte/store";
   import { canChangeSlide } from "./CarouselSlide";
   import { carousel } from "./theme";
-  import { type CarouselProps, type State, Slide, cn } from "$lib";
 
   const SLIDE_DURATION_RATIO = 0.25;
 
-  let { children, slide, images, index = $bindable(0), slideDuration = 1000, transition, duration = 0, "aria-label": ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, onchange, divClass, ...restProps }: CarouselProps = $props();
+  let { children, slide, images, index = $bindable(0), slideDuration = 1000, slideFit, transition, duration = 0, "aria-label": ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, classes, onchange, isPreload = false, ...restProps }: CarouselProps = $props();
 
-  const { set, subscribe, update } = writable<State>({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: new Date() });
+  warnThemeDeprecation("Carousel", { imgClass }, { imgClass: "slide" });
 
-  setContext("state", {
-    set: (_state: State) => set({ index: _state.index, images: _state.images, lastSlideChange: new Date(), slideDuration, forward }),
-    subscribe,
-    update
+  const styling = $derived(classes ?? { slide: imgClass });
+
+  // // Theme context
+  const theme = getTheme("carousel");
+
+  let { base, slide: slideCls } = $derived(carousel());
+
+  const changeSlide = (n: number) => {
+    if (images.length === 0) return;
+
+    if (n % images.length === _state.index) return;
+
+    if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration: _state.slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return;
+
+    _state.forward = n >= _state.index;
+    _state.index = (images.length + n) % images.length;
+    _state.lastSlideChange = Date.now();
+
+    index = _state.index; // Update the bindable index
+    onchange?.(images[_state.index]);
+  };
+
+  const _state: CarouselState = $state({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: Date.now(), changeSlide });
+
+  setContext("state", _state);
+
+  let initialized = false;
+
+  $effect(() => {
+    changeSlide(index);
   });
 
-  let forward = $state(true);
-
-  subscribe((_state) => {
-    index = _state.index;
-    forward = _state.forward;
-    onchange?.(images[index]);
+  $effect(() => {
+    _state.slideDuration = slideDuration;
   });
 
   onMount(() => {
     onchange?.(images[index]);
+    initialized = true;
   });
 
-  const nextSlide = () => {
-    update((_state) => {
-      if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
+  const nextSlide = () => changeSlide(_state.index + 1);
+  const prevSlide = () => changeSlide(_state.index - 1);
 
-      _state.index = _state.index >= images.length - 1 ? 0 : _state.index + 1;
-      _state.lastSlideChange = new Date();
-      return { ..._state };
-    });
-  };
-
-  const prevSlide = () => {
-    update((_state) => {
-      if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
-
-      _state.index = _state.index <= 0 ? images.length - 1 : _state.index - 1;
-      _state.lastSlideChange = new Date();
-      return { ..._state };
-    });
-  };
-
-  const loop = (node: HTMLElement, duration: number) => {
+  const loop = (node: HTMLElement) => {
     // loop timer
     /* eslint-disable  @typescript-eslint/no-explicit-any */
     let intervalId: any;
 
-    if (duration > 0) intervalId = setInterval(nextSlide, duration);
+    if (duration > 0) {
+      intervalId = setInterval(nextSlide, duration);
+      if (initialized) {
+        if (_state.forward) nextSlide();
+        else prevSlide();
+      }
+    }
 
-    return {
-      update: (duration: number) => {
-        clearInterval(intervalId);
-        if (duration > 0) intervalId = setInterval(nextSlide, duration);
-      },
-      destroy: () => clearInterval(intervalId)
-    };
+    return () => clearInterval(intervalId);
   };
 
   type ActiveDragGesture = {
@@ -80,7 +87,7 @@
 
   const getPositionFromEvent = (evt: MouseEvent | TouchEvent) => {
     const mousePos = (evt as MouseEvent)?.clientX;
-    if (mousePos) return mousePos;
+    if (mousePos !== undefined) return mousePos;
 
     let touchEvt = evt as TouchEvent;
     if (/^touch/.test(touchEvt?.type)) {
@@ -155,9 +162,8 @@
   );
 </script>
 
-<!-- Preload all Carousel images for improved responsivity -->
 <svelte:head>
-  {#if images.length > 0}
+  {#if isPreload && images.length > 0}
     {#each images as image}
       <link rel="preload" href={image.src} as="image" />
     {/each}
@@ -166,35 +172,36 @@
 
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} />
-<div bind:this={carouselDiv} class={cn("relative", divClass)} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
-  <div {...restProps} class={cn(carousel(), activeDragGesture === undefined ? "transition-transform" : "", className)} use:loop={duration}>
-    {#if slide}
-      {@render slide({ index, Slide })}
-    {:else}
-      <Slide image={images[index]} class={cn(imgClass)} {transition} />
-    {/if}
-  </div>
-  {@render children?.(index)}
+<div bind:this={carouselDiv} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0" {...restProps} class={base({ class: clsx(activeDragGesture === undefined ? "transition-transform" : "", theme?.base, className) })} {@attach loop}>
+  {#if slide}
+    {@render slide({ index: _state.index, Slide })}
+  {:else}
+    <Slide image={images[_state.index]} fit={slideFit} class={slideCls({ class: clsx(theme?.slide, styling.slide) })} {transition} />
+  {/if}
+
+  {@render children?.(_state.index)}
 </div>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L411)
+[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L375)
 ## Props
 @prop children
 @prop slide
 @prop images
 @prop index = $bindable(0)
 @prop slideDuration = 1000
+@prop slideFit
 @prop transition
 @prop duration = 0
 @prop "aria-label": ariaLabel = "Draggable Carousel"
 @prop disableSwipe = false
 @prop imgClass = ""
 @prop class: className
+@prop classes
 @prop onchange
-@prop divClass
+@prop isPreload = false
 @prop ...restProps
 -->

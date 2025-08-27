@@ -1,6 +1,8 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type ToggleVariants = VariantProps<typeof toggle>;
+// Variants
+export type ToggleVariants = VariantProps<typeof toggle> & Classes<typeof toggle>;
 
 export const toggle = tv({
   slots: {

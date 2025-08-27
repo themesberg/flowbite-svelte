@@ -1,24 +1,26 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { timelinestepper, timelinestepperitem, timelinesteppercircle } from ".";
+  import { timelineStepper } from ".";
   import { type TimelineStepperProps } from "$lib";
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, steps = [], classes, contentClass, ...restProps }: TimelineStepperProps = $props();
+  let { children, steps = [], class: className, classes, contentClass, ...restProps }: TimelineStepperProps = $props();
+
+  const theme = getTheme("timelineStepper");
 
   setContext("stepperType", "timeline");
 
-  const base = timelinestepper();
+  const { base, item, circle } = $derived(timelineStepper());
 </script>
 
-<ol class={twMerge(base, clsx(classes?.timelinestepper))} {...restProps}>
+<ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
-      <li class={twMerge(timelinestepperitem({ isLast: index === steps.length - 1 }), clsx(classes?.timelinestepperitem))}>
-        <span class={twMerge(timelinesteppercircle({ status: step.status }), clsx(classes?.timelinesteppercircle))}>
+      <li class={item({ isLast: index === steps.length - 1, class: clsx(theme?.item, classes?.item) })}>
+        <span class={circle({ status: step.status, class: clsx(theme?.circle, classes?.circle) })}>
           {#if step.status === "completed"}
             {#if step.icon}
               <step.icon class={clsx(step.iconClass) || "h-3.5 w-3.5"} />
@@ -50,10 +52,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1609)
+[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1613)
 ## Props
 @prop children
 @prop steps = []
+@prop class: className
 @prop classes
 @prop contentClass
 @prop ...restProps

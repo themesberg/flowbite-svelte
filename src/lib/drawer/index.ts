@@ -1,3 +1,4 @@
 export { default as Drawer } from "./Drawer.svelte";
 export { default as Drawerhead } from "./Drawerhead.svelte";
-export { drawer, drawerhead } from "./theme";
+export { default as DrawerHandle } from "./DrawerHandle.svelte";
+export { drawer, drawerhead, drawerhandle } from "./theme";

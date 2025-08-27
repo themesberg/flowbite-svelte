@@ -1,4 +1,2 @@
-import Heading from "./Heading.svelte";
-import { heading } from "./theme";
-
-export { Heading, heading };
+export { default as Heading } from "./Heading.svelte";
+export { heading } from "./theme";

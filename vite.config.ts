@@ -3,13 +3,16 @@ import { sveltekit } from "@sveltejs/kit/vite";
 import examples from "mdsvexamples/vite";
 import path from "path";
 import pkg from "./package.json" with { type: "json" };
-
+import devtoolsJson from "vite-plugin-devtools-json";
+import tiptapPackage from "./node_modules/@tiptap/core/package.json";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
+import { enhancedImages } from "@sveltejs/enhanced-img";
+import textEditorPackage from "./node_modules/@flowbite-svelte-plugins/texteditor/package.json" with { type: "json" };
 
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
-  plugins: [sveltekit(), tailwindcss(), examples],
+  plugins: [enhancedImages(), sveltekit(), tailwindcss(), devtoolsJson(), examples],
   // test: {
   //   include: ['src/**/*.{test,spec}.{js,ts}']
   // },
@@ -34,6 +37,8 @@ export default defineConfig({
 
   define: {
     __NAME__: JSON.stringify(pkg.name),
-    __VERSION__: JSON.stringify(pkg.version)
+    __VERSION__: JSON.stringify(pkg.version),
+    __TIPTAP__: JSON.stringify(tiptapPackage.version),
+    __TEXTEDITOR__: JSON.stringify(textEditorPackage.version)
   }
 });

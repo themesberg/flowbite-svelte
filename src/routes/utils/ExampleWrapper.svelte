@@ -15,11 +15,59 @@
     meta?: any;
     example?: any;
     code?: any;
+    codeString?: string; // New prop for string code
     divClass?: string;
   };
 
+  function normalizeIndentation(code: string): string {
+    if (!code) return code;
+
+    const lines = code.split("\n");
+
+    while (lines.length && lines[0].trim() === "") {
+      lines.shift();
+    }
+    while (lines.length && lines[lines.length - 1].trim() === "") {
+      lines.pop();
+    }
+
+    if (!lines.length) return "";
+
+    const nonEmptyLines = lines.filter((line) => line.trim().length > 0);
+    const indentations = nonEmptyLines.map((line) => {
+      const match = line.match(/^(\s*)/);
+      return match ? match[1].length : 0;
+    });
+
+    const minIndent = Math.min(...indentations);
+
+    const trimmedLines = lines.map((line) => (line.trim() === "" ? "" : line.length >= minIndent ? line.slice(minIndent) : line));
+
+    return trimmedLines.join("\n").trim(); // ← Fix: Add .trim() here
+  }
+
+  // Action to normalize rendered code content
+  function normalizeRenderedCode(node: HTMLPreElement) {
+    // Wait for the content to be rendered
+    setTimeout(() => {
+      if (!codeString && node.textContent) {
+        const normalized = normalizeIndentation(node.textContent);
+        if (normalized !== node.textContent) {
+          node.textContent = normalized;
+        }
+      }
+    }, 0);
+  }
+
   // Use typed props
-  let { src = undefined, meta = undefined, example, code, divClass = "relative w-full mx-auto bg-linear-to-r p-6 bg-white dark:bg-gray-900" }: Props = $props();
+  let {
+    src = undefined,
+    meta = { hideOutput: false, hideSource: false, hideResponsiveButtons: false },
+    example,
+    code,
+    codeString = undefined, // New prop
+    divClass = "relative w-full mx-auto bg-linear-to-r p-5 bg-white dark:bg-gray-900"
+  }: Props = $props();
 
   type NotificationDirection = "ltr" | "rtl" | "auto";
 
@@ -31,8 +79,8 @@
   let showExpandButton = $state(false);
   let expand = $state(false);
   let dark = $state(false);
-  let independentDarkMode = $state(false); // Track if dark mode is independent
-  let independentDark = $state(false); // Track the independent dark mode state
+  let independentDarkMode = $state(false);
+  let independentDark = $state(false);
   let rtl: NotificationDirection = $state("auto");
   let responsiveDevice: keyof typeof responsiveSize = $state("desktop");
   let iframe: HTMLIFrameElement | undefined = $state(undefined);
@@ -48,29 +96,22 @@
 
   const gitHub = new URL("https://github.com/themesberg/flowbite-svelte/blob/main/src/routes/");
 
-  // This function will be called when document classes change
   function checkDarkMode(): void {
     if (document && document.documentElement) {
-      // Get the current dark mode state from document
       const isDark = document.documentElement.classList.contains("dark");
-      // console.log("Dark mode detected from document:", isDark);
 
-      // Reset independent mode when document dark mode changes
       if (independentDarkMode) {
         independentDarkMode = false;
         independentDark = false;
       }
 
-      // Update local dark mode
       dark = isDark;
       syncIframeDarkMode();
     }
   }
 
-  // Sync the iframe dark mode with the current dark state
   function syncIframeDarkMode(): void {
     if (iframe && iframe.contentDocument) {
-      // console.log("Syncing iframe dark mode:", dark);
       if (dark) {
         iframe.contentDocument.documentElement.classList.add("dark");
       } else {
@@ -79,28 +120,17 @@
     }
   }
 
-  // Toggle dark mode in ExampleWrapper
   function toggleDarkMode(): void {
-    // Set independent mode
     independentDarkMode = true;
-
-    // Toggle the independent dark mode state
     independentDark = !independentDark;
-
-    // Use the independent dark mode state for iframe
     dark = independentDark;
     syncIframeDarkMode();
   }
 
-  // Initialize component
   function init(node: HTMLElement) {
     browserSupport = !!window?.navigator?.clipboard;
-
-    // Initial dark mode check
     dark = document.documentElement.classList.contains("dark");
-    // console.log("Initial dark mode state:", dark);
 
-    // Set up a mutation observer to watch for class changes on documentElement
     documentObserver = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === "class") {
@@ -109,18 +139,15 @@
       });
     });
 
-    // Start observing document element for class changes
     documentObserver.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["class"]
     });
 
-    // Find sections after a small delay to ensure DOM is ready
     setTimeout(() => find_sections(node), 0);
 
     return {
       destroy() {
-        // Clean up the observer when component is destroyed
         if (documentObserver) {
           documentObserver.disconnect();
         }
@@ -129,7 +156,6 @@
   }
 
   function find_sections(node: HTMLElement): void {
-    // find closest previous section anchor
     const sections = [...node.ownerDocument.querySelectorAll("#mainContent > :where(h2, h3) > [id]")];
     const sectionData = sections.map((x: Element) => ({
       id: x.id,
@@ -138,7 +164,6 @@
     }));
 
     const filteredSections = sectionData.filter((x) => x.top < (node?.offsetTop ?? Infinity)).filter((x) => x.id);
-
     const section = filteredSections.slice(-1).shift();
 
     if (section) {
@@ -151,14 +176,21 @@
   const copyToClipboard = async (e: MouseEvent): Promise<void> => {
     if (!codeEl) return;
 
-    const REG_HEX = /&#x([a-fA-F0-9]+);/g;
-    const decodedText = codeEl.innerText.replace(REG_HEX, function (_match: string, group1: string) {
-      const num = parseInt(group1, 16);
-      return String.fromCharCode(num);
-    });
+    let textToCopy: string;
+
+    // Use codeString if available, otherwise fall back to innerText
+    if (codeString) {
+      textToCopy = normalizeIndentation(codeString);
+    } else {
+      const REG_HEX = /&#x([a-fA-F0-9]+);/g;
+      textToCopy = codeEl.innerText.replace(REG_HEX, function (_match: string, group1: string) {
+        const num = parseInt(group1, 16);
+        return String.fromCharCode(num);
+      });
+    }
 
     if (window?.navigator?.clipboard) {
-      await window.navigator.clipboard.writeText(decodedText);
+      await window.navigator.clipboard.writeText(textToCopy);
     }
 
     const button = e.target as HTMLButtonElement | null;
@@ -184,11 +216,9 @@
 
     iframeLoad = true;
 
-    // get only css and style from head
     const externalCss = document.querySelectorAll('head link[href*="https://"][rel="stylesheet"], head style');
     const internalCss = Array.from(document.styleSheets).filter((el) => el.href?.includes(document.location.hostname));
 
-    // extract style to avoid multiple network request to css
     const extractInlineCss = internalCss.reduce((acc, el) => {
       acc += Array.from(el.cssRules)
         .map((rule) => rule.cssText)
@@ -199,13 +229,10 @@
     const styleTag = document.createElement("style");
     styleTag.innerHTML = extractInlineCss;
 
-    // extract outerHtml in order to clone html
     const headContent = Array.from(externalCss).reduce((acc, el) => (acc += el.outerHTML), "");
 
-    // put the content of head in the head of the iframe
     iframe.contentDocument.head.insertAdjacentHTML("beforeend", `${headContent}${styleTag.outerHTML}` || "");
 
-    // mount component
     mount(ExampleHelper, {
       target: iframe.contentDocument.body,
       props: {
@@ -214,12 +241,9 @@
       }
     });
 
-    // Initial sync of dark mode to iframe
     syncIframeDarkMode();
-
     updateHeightContent();
 
-    // listen change on height of the iframe content and update the preview height
     if (iframe.contentDocument?.body.firstChild) {
       const resizeObserver = new ResizeObserver(updateHeightContent);
       resizeObserver.observe(iframe.contentDocument.body.firstElementChild as Element);
@@ -236,10 +260,8 @@
   };
 
   onMount(() => {
-    // Initialize dark mode on mount
     dark = document.documentElement.classList.contains("dark");
 
-    // workaround for svelte issue https://github.com/sveltejs/svelte/issues/6967
     setTimeout(() => {
       if (iframe && !iframeLoad) {
         iframe.dispatchEvent(new Event("load"));
@@ -247,7 +269,6 @@
     }, 500);
   });
 
-  // RTL effect with proper type checking
   $effect(() => {
     if (!iframe) return;
     if (!iframe.contentDocument) return;
@@ -256,15 +277,15 @@
   });
 </script>
 
-<div class="code-example mt-8" use:init>
-  {#if !meta.hideOutput}
+<div class="code-example my-8" use:init>
+  {#if !meta?.hideOutput}
     <div class="w-full rounded-t-xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700">
       <div class="grid {meta.hideResponsiveButtons ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}">
         {#if path}
           <Button size="xs" color="alternative" class="hover:text-primary-600 w-fit gap-2 dark:bg-gray-900" href={"" + path} target="_blank" rel="noreferrer">
             <GitHub size="sm" />Edit on GitHub
           </Button>
-          {#if !meta.hideResponsiveButtons}
+          {#if !meta?.hideResponsiveButtons}
             <div class="hidden justify-center gap-x-2 sm:flex">
               <Button size="xs" color="alternative" class="dark:bg-gray-900" onclick={() => (responsiveDevice = "desktop")}>
                 <DesktopPcOutline size="sm" />
@@ -301,7 +322,7 @@
       </div>
     </div>
   {/if}
-  {#if !meta.hideSource}
+  {#if !meta?.hideSource}
     <div class="code-syntax-wrapper">
       <div class="code-syntax relative border-x border-y border-gray-200 dark:border-gray-600">
         <div class="grid w-full grid-cols-2 rounded-t-md border-b border-gray-200 bg-gray-50 dark:border-gray-600 dark:bg-gray-700">
@@ -325,7 +346,7 @@
         <div class="relative">
           <div class="overflow-hidden" class:max-h-72={!expand} tabindex="-1" use:checkOverflow>
             <div class="highlight">
-              <pre bind:this={codeEl} class="language-svelte -mt-2! rounded-none!">{@render code?.()}</pre>
+              <pre bind:this={codeEl} class="language-svelte -mt-2! rounded-none!" use:normalizeRenderedCode>{#if codeString}<code>{normalizeIndentation(codeString)}</code>{:else}{@render code?.()}{/if}</pre>
             </div>
           </div>
           {#if showExpandButton && !expand}

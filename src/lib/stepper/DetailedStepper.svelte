@@ -1,24 +1,26 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { detailedstepper, detailedstepperitem, detailedstepperindicator } from ".";
+  import { detailedStepper } from ".";
   import { type DetailedStepperProps } from "$lib";
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, steps = [], contentClass, classes, ...restrorps }: DetailedStepperProps = $props();
+  let { children, steps = [], contentClass, class: className, classes, ...restrorps }: DetailedStepperProps = $props();
+
+  const theme = getTheme("detailedStepper");
 
   setContext("stepperType", "detailed");
 
-  const base = detailedstepper();
+  const { base, item, indicator } = $derived(detailedStepper());
 </script>
 
-<ol class={twMerge(base, clsx(classes?.detailedstepper))} {...restrorps}>
+<ol class={base({ class: clsx(theme?.base, className) })} {...restrorps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
-      <li class={twMerge(detailedstepperitem({ status: step.status }), clsx(classes?.detailedstepperitem))}>
-        <span class={twMerge(detailedstepperindicator({ status: step.status }), clsx(classes?.detailedstepperindicator))}>
+      <li class={item({ status: step.status, class: clsx(theme?.item, classes?.item) })}>
+        <span class={indicator({ status: step.status, class: clsx(theme?.indicator, classes?.indicator) })}>
           {#if step.status === "completed" && step.icon}
             <step.icon class={clsx(step.iconClass)} />
           {:else}
@@ -40,11 +42,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1564)
+[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1568)
 ## Props
 @prop children
 @prop steps = []
 @prop contentClass
+@prop class: className
 @prop classes
 @prop ...restrorps
 -->

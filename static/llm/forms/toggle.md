@@ -52,7 +52,7 @@ Get started with the default toggle component example as a checkbox element to r
 <Toggle size="small">Small toggle</Toggle>
 <Toggle size="default" checked>Default toggle</Toggle>
 <Toggle size="large" checked>Large toggle</Toggle>
-<Toggle size={undefined} spanClass={customSize}>Custom toggle</Toggle>
+<Toggle size={undefined} classes={{ span: customSize }}>Custom toggle</Toggle>
 ```
 
 ## Label for off state
@@ -93,7 +93,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 #### Types
 
-[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L970)
+[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L971)
 
 #### Props
 
@@ -104,6 +104,7 @@ Get started with the default toggle component example as a checkbox element to r
 - disabled
 - color: "primary"
 - class: className
+- classes
 - inputClass
 - spanClass
 - offLabel

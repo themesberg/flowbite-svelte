@@ -1,29 +1,33 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { breadcrumbstepper, breadcrumbstepperitem, breadcrumbstepperindicator } from ".";
-  import { type BreadcrumbStepperProps } from "$lib";
-  import { twMerge } from "tailwind-merge";
+  import { breadcrumbStepper } from ".";
   import clsx from "clsx";
+  import { type BreadcrumbStepperProps } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, steps = [], classes, ...restProps }: BreadcrumbStepperProps = $props();
+  let { children, steps = [], class: className, classes, ...restProps }: BreadcrumbStepperProps = $props();
+
+  const theme = getTheme("breadcrumbStepper");
 
   setContext("stepperType", "breadcrumb");
 
-  const base = breadcrumbstepper();
+  const { base, item, indicator } = $derived(breadcrumbStepper());
+  // { class: clsx(theme?.stepper) }
 </script>
 
-<ol class={base} {...restProps}>
+<ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li
-        class={breadcrumbstepperitem({
+        class={item({
           status: step.status,
-          hasChevron: index < steps.length - 1
+          hasChevron: index < steps.length - 1,
+          class: clsx(theme?.item, classes?.item)
         })}
       >
-        <span class={breadcrumbstepperindicator({ status: step.status })}>
+        <span class={indicator({ status: step.status, class: clsx(theme?.indicator, classes?.indicator) })}>
           {#if step.status === "completed" && step.icon}
             <step.icon class={step.iconClass || "h-3 w-3"} />
           {:else}
@@ -51,10 +55,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1595)
+[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1599)
 ## Props
 @prop children
 @prop steps = []
+@prop class: className
 @prop classes
 @prop ...restProps
 -->

@@ -1,4 +1,9 @@
+// utils/helpers
 export * from "./uiHelpers.svelte";
+// theme
+export { default as ThemeProvider } from "./theme/ThemeProvider.svelte";
+export { getTheme } from "./theme/themeUtils";
+// components
 export * from "./accordion";
 export * from "./alert";
 export * from "./avatar";
@@ -10,11 +15,11 @@ export * from "./button-group";
 export * from "./buttons";
 export * from "./card";
 export * from "./carousel";
-export * from "./chart";
 export * from "./clipboard";
 export * from "./darkmode";
 export * from "./datepicker";
 export * from "./device-mockups";
+export * from "./dialog";
 export * from "./dropdown";
 export * from "./drawer";
 export * from "./footer";
@@ -65,7 +70,7 @@ export * from "./forms/timepicker";
 export * from "./forms/toggle";
 
 // typography
-export * from "./typography/anchor";
+export * from "./typography/a";
 export * from "./typography/blockquote";
 export * from "./typography/descriptionlist";
 export * from "./typography/heading";
@@ -80,5 +85,3 @@ export * from "./typography/span";
 export * from "./video";
 export * from "./utils";
 export * from "./types";
-
-export { default as Theme } from "./theme/Theme.svelte";

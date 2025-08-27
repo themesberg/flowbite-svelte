@@ -95,7 +95,7 @@ ${
   <div class="mt-12 mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24" name="default_alert_color" bind:group={rangeColor} color={colorOption as RangeColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="default_alert_color" bind:group={rangeColor} color={colorOption as RangeColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

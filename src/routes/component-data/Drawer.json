@@ -6,17 +6,17 @@
   },
   "props": [
     ["children", ""],
+    ["open", "$bindable(false)"],
     ["hidden", "$bindable()"],
-    ["closeDrawer", "() => (hidden = true)"],
-    ["activateClickOutside", "true"],
-    ["position", ""],
+    ["modal", ""],
+    ["offset", ""],
     ["width", ""],
-    ["backdrop", "true"],
-    ["backdropClass", ""],
+    ["dismissable", "offset ? false : undefined"],
     ["placement", "\"left\""],
     ["class: className", ""],
     ["transitionParams", ""],
-    ["transitionType", "fly"],
-    ["bodyScrolling", "false"]
+    ["transition", "fly"],
+    ["outsideclose", ""],
+    ["activateClickOutside", ""]
   ]
 }

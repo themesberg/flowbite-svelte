@@ -2,13 +2,16 @@
   import clsx from "clsx";
   import { heading } from "./index";
   import type { HeadingProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, tag = "h1", class: className, ...restProps }: HeadingProps = $props();
 
-  let headingClass = $derived(heading({ tag, class: clsx(className) }));
+  const theme = getTheme("heading");
+
+  let headingCls = $derived(heading({ tag, class: clsx(theme, className) }));
 </script>
 
-<svelte:element this={tag} {...restProps} class={headingClass}>
+<svelte:element this={tag} {...restProps} class={headingCls}>
   {@render children()}
 </svelte:element>
 
@@ -16,7 +19,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1892)
+[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1893)
 ## Props
 @prop children
 @prop tag = "h1"

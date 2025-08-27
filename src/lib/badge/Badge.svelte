@@ -1,28 +1,37 @@
 <script lang="ts">
-  import { getContext } from "svelte";
-  import { badge } from ".";
+  import { type BadgeProps, CloseButton, type ParamsType } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   import { fade } from "svelte/transition";
-  import { type ParamsType, type BaseThemes, type BadgeProps, CloseButton, cn } from "$lib";
+  import { badge } from ".";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, border, href, target, rounded, transition = fade, params, aClass, onclose, ...restProps }: BadgeProps = $props();
+  let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, classes, border, href, target, rounded, transition = fade, params, aClass, ...restProps }: BadgeProps = $props();
 
-  // Get merged theme from context
-  const context = getContext<BaseThemes>("themeConfig");
-  // Use context theme if available, otherwise fallback to default
-  const badgeTheme = context?.badge || badge;
+  warnThemeDeprecation("Badge", { aClass }, { aClass: "linkClass" });
 
-  const { base, hrefClass } = $derived(badgeTheme({ color, size: large ? "large" : "small", rounded, border }));
+  const styling = $derived(classes ?? { linkClass: aClass });
 
-  const close = (ev: MouseEvent) => {
-    onclose?.(ev);
-    if (!ev.defaultPrevented) badgeStatus = false;
+  // Theme context
+  const theme = getTheme("badge");
+
+  const { base, linkClass } = $derived(badge({ color, size: large ? "large" : "small", rounded, border }));
+
+  let ref: HTMLDivElement | undefined = $state(undefined);
+
+  const close = (ev: Event) => {
+    if (ref?.dispatchEvent(new Event("close", { bubbles: true, cancelable: true }))) {
+      badgeStatus = false;
+    }
   };
+
+  createDismissableContext(close);
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} transition:transition={params as ParamsType} class={cn(base(), className)}>
+  <div {...restProps} bind:this={ref} transition:transition={params as ParamsType} class={base({ class: clsx(theme?.base, className) })}>
     {#if href}
-      <a {href} {target} class={cn(hrefClass(), aClass)}>
+      <a {href} {target} class={linkClass({ class: clsx(theme?.linkClass, styling.linkClass) })}>
         {@render children()}
       </a>
     {:else}
@@ -31,12 +40,11 @@
 
     {#if dismissable}
       {#if icon}
-        <button type="button" class="text-primary-500 hover:bg-primary-200 focus:ring-primary-400 dark:hover:bg-primary-800 dark:hover:text-primary-300 m-0.5 ms-1.5 -me-1.5 rounded-sm p-0.5 whitespace-normal focus:ring-1 focus:outline-hidden" aria-label="Remove badge" onclick={close}>
-          <span class="sr-only">Remove badge</span>
+        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge">
           {@render icon()}
-        </button>
+        </CloseButton>
       {:else}
-        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge" onclick={close} />
+        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge" />
       {/if}
     {/if}
   </div>
@@ -46,7 +54,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L218)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L215)
 ## Props
 @prop children
 @prop icon
@@ -55,6 +63,7 @@
 @prop large = false
 @prop dismissable = false
 @prop class: className
+@prop classes
 @prop border
 @prop href
 @prop target
@@ -62,6 +71,5 @@
 @prop transition = fade
 @prop params
 @prop aClass
-@prop onclose
 @prop ...restProps
 -->

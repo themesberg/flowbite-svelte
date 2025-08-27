@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
   import { getContext } from "svelte";
   import type { LiProps } from "$lib/types";
   import clsx from "clsx";
@@ -8,7 +7,7 @@
 
   const getCtxClass = getContext<() => string>("ctxClass");
 
-  let liCls = $derived(twMerge(getCtxClass(), icon && "flex items-center", clsx(className)));
+  let liCls = $derived(clsx(getCtxClass(), icon && "flex items-center", className));
 </script>
 
 <li {...restProps} class={liCls}>
@@ -19,7 +18,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[LiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1943)
+[LiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1957)
 ## Props
 @prop children
 @prop icon

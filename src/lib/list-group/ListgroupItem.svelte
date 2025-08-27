@@ -1,20 +1,24 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { type ListgroupItemProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type ListgroupItemProps } from "$lib";
   import { listGroupItem, type ListgroupItemVariants } from "./theme";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-15 w-15", ...restProps }: ListgroupItemProps = $props();
+
+  const theme = getTheme("listGroupItem");
 
   active = active ?? getContext("listGrpActive");
   horizontal = horizontal ?? getContext("listGrpHorizontal");
 
   let state: ListgroupItemVariants["state"] = $derived(disabled ? "disabled" : current ? "current" : "normal");
-  let itemClass = $derived(listGroupItem({ state, active, horizontal }));
+  let itemClass = $derived(listGroupItem({ state, active, horizontal, class: clsx(theme, className) }));
 </script>
 
 {#snippet nameOrChildren()}
   {#if Icon}
-    <Icon class={cn(iconClass)} />
+    <Icon class={clsx(iconClass)} />
   {/if}
   {#if children}
     {@render children()}
@@ -24,15 +28,15 @@
 {/snippet}
 
 {#if restProps.href === undefined && !active}
-  <li class={cn(itemClass, className)}>
+  <li class={itemClass}>
     {@render nameOrChildren()}
   </li>
 {:else if restProps.href === undefined}
-  <button type="button" {...restProps} class={cn(itemClass, className)} {disabled} aria-current={current}>
+  <button type="button" {...restProps} class={itemClass} {disabled} aria-current={current}>
     {@render nameOrChildren()}
   </button>
 {:else}
-  <a {...restProps} class={cn(itemClass, className)} aria-current={current}>
+  <a {...restProps} class={itemClass} aria-current={current}>
     {@render nameOrChildren()}
   </a>
 {/if}
@@ -41,7 +45,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1039)
+[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1040)
 ## Props
 @prop children
 @prop active

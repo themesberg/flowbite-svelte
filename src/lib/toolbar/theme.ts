@@ -1,6 +1,9 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type ToolbarVariants = VariantProps<typeof toolbar>;
+// Variants
+export type ToolbarVariants = VariantProps<typeof toolbar> & Classes<typeof toolbar>;
+export type ToolbarGroupVariants = VariantProps<typeof toolbarGroup>;
 
 export const toolbar = tv({
   slots: {
@@ -83,8 +86,6 @@ export const toolbar = tv({
     color: "default"
   }
 });
-
-export type ToolbarGroupVariants = VariantProps<typeof toolbarGroup>;
 
 export const toolbarGroup = tv({
   base: "flex items-center",

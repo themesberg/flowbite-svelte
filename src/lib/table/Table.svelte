@@ -1,13 +1,21 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { table as tableCls, TableHead, TableBody } from ".";
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
-  import type { TableProps, TableCtxType } from "$lib";
+  import { type TableProps, type TableCtxType } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, footerSlot, captionSlot, items, divClass = "relative overflow-x-auto", striped, hoverable, border = true, shadow, color = "default", class: className, ...restProps }: TableProps = $props();
+  let { children, footerSlot, captionSlot, items, divClass, striped, hoverable, border = true, shadow, color = "default", class: className, classes, ...restProps }: TableProps = $props();
 
-  const { base, table } = $derived(tableCls({ color, shadow }));
+  warnThemeDeprecation("Table", { divClass }, { divClass: "div" });
+  const styling = $derived(
+    classes ?? {
+      div: divClass
+    }
+  );
+  const theme = getTheme("table");
+
+  const { div, table } = $derived(tableCls({ color, shadow }));
 
   let tableCtx: TableCtxType = {
     get striped() {
@@ -30,8 +38,8 @@
   let bodyItems = $derived(items && items.length > 0 ? items.map((item) => Object.values(item)) : []);
 </script>
 
-<div class={twMerge(base(), clsx(divClass))}>
-  <table {...restProps} class={twMerge(table(), clsx(className))}>
+<div class={div({ class: clsx(theme?.div, styling.div) })}>
+  <table {...restProps} class={table({ class: clsx(theme?.table, className) })}>
     {#if captionSlot}
       {@render captionSlot()}
     {/if}
@@ -51,18 +59,19 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1641)
+[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1645)
 ## Props
 @prop children
 @prop footerSlot
 @prop captionSlot
 @prop items
-@prop divClass = "relative overflow-x-auto"
+@prop divClass
 @prop striped
 @prop hoverable
 @prop border = true
 @prop shadow
 @prop color = "default"
 @prop class: className
+@prop classes
 @prop ...restProps
 -->

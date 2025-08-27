@@ -1,6 +1,8 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type ToastVaraints = VariantProps<typeof toast>;
+// Variants
+export type ToastVaraints = VariantProps<typeof toast> & Classes<typeof toast>;
 
 export const toast = tv({
   slots: {

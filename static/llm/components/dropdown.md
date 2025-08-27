@@ -97,7 +97,7 @@ Use this example to show extra information outside of the list of menu items ins
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownDivider, DropdownGroup, DropdownHeader } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownItem, DropdownGroup, DropdownHeader } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -122,14 +122,14 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownDivider } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
 </script>
 
 <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown simple>
   <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem class="flex items-center justify-between">
+  <DropdownItem class="flex items-center justify-between" classes={{ anchor: "flex" }}>
     Dropdown<ChevronRightOutline class="text-primary-700 ms-2 h-6 w-6 dark:text-white" />
   </DropdownItem>
   <Dropdown simple placement="right-start">
@@ -152,7 +152,7 @@ When you want to control your dropdown open status via javascript code you can b
 
 ```svelte
 <script lang="ts">
-  import { Button, Dropdown, DropdownItem, DropdownDivider, P } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownItem, P } from "flowbite-svelte";
   import { ChevronDownOutline, ChevronRightOutline } from "flowbite-svelte-icons";
   let isOpen = $state(false);
 </script>
@@ -185,21 +185,23 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, Checkbox } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownGroup, Checkbox } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
 <Button>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
-<Dropdown simple class="w-44 space-y-3 p-3 text-sm">
-  <li>
-    <Checkbox>Default checkbox</Checkbox>
-  </li>
-  <li>
-    <Checkbox checked>Checked state</Checkbox>
-  </li>
-  <li>
-    <Checkbox>Default checkbox</Checkbox>
-  </li>
+<Dropdown class="w-44">
+  <DropdownGroup class="space-y-3 p-3">
+    <li>
+      <Checkbox>Default checkbox</Checkbox>
+    </li>
+    <li>
+      <Checkbox checked>Checked state</Checkbox>
+    </li>
+    <li>
+      <Checkbox>Default checkbox</Checkbox>
+    </li>
+  </DropdownGroup>
 </Dropdown>
 ```
 
@@ -215,15 +217,15 @@ Use this example to update the background color of a menu item when using a list
 
 <Button>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown simple class="w-48 space-y-1 p-3 text-sm">
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <DropdownItem class="rounded-sm px-2">
     <Checkbox>Default checkbox</Checkbox>
-  </li>
+  </DropdownItem>
   <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox checked>Checked state</Checkbox>
   </li>
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <DropdownItem class="rounded-sm px-2">
     <Checkbox>Default checkbox</Checkbox>
-  </li>
+  </DropdownItem>
 </Dropdown>
 ```
 
@@ -239,18 +241,18 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
 
 <Button>Dropdown checkbox<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown simple class="w-60 space-y-1 p-3 text-sm">
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <DropdownItem class="rounded-sm px-2">
     <Checkbox>Enable notifications</Checkbox>
-    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-  </li>
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <Helper class="ps-7">Some helpful instruction goes over here.</Helper>
+  </DropdownItem>
+  <DropdownItem class="rounded-sm px-2">
     <Checkbox checked>Enable 2FA auth</Checkbox>
-    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-  </li>
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <Helper class="ps-7">Some helpful instruction goes over here.</Helper>
+  </DropdownItem>
+  <DropdownItem class="rounded-sm px-2">
     <Checkbox>Subscribe newsletter</Checkbox>
-    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-  </li>
+    <Helper class="ps-7">Some helpful instruction goes over here.</Helper>
+  </DropdownItem>
 </Dropdown>
 ```
 
@@ -260,7 +262,7 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, Radio } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownGroup, Radio } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let group1 = $state(2);
 </script>
@@ -268,16 +270,18 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 <Button>
   Dropdown radio {group1}<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
 </Button>
-<Dropdown simple class="w-44 space-y-3 p-3 text-sm">
-  <li>
-    <Radio name="group1" bind:group={group1} value={1}>Default radio</Radio>
-  </li>
-  <li>
-    <Radio name="group1" bind:group={group1} value={2}>Checked state</Radio>
-  </li>
-  <li>
-    <Radio name="group1" bind:group={group1} value={3}>Default radio</Radio>
-  </li>
+<Dropdown class="w-44">
+  <DropdownGroup class="space-y-3 p-3">
+    <li>
+      <Radio name="group1" bind:group={group1} value={1}>Default radio</Radio>
+    </li>
+    <li>
+      <Radio name="group1" bind:group={group1} value={2}>Checked state</Radio>
+    </li>
+    <li>
+      <Radio name="group1" bind:group={group1} value={3}>Default radio</Radio>
+    </li>
+  </DropdownGroup>
 </Dropdown>
 ```
 
@@ -294,15 +298,15 @@ Use this example to update the background color of a menu item when using a list
 
 <Button>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown simple class="w-48 space-y-1 p-3">
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <DropdownItem class="rounded-sm px-2">
     <Radio name="group2" bind:group={group2} value={1}>Default radio</Radio>
-  </li>
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  </DropdownItem>
+  <DropdownItem class="rounded-sm px-2">
     <Radio name="group2" bind:group={group2} value={2}>Checked state</Radio>
-  </li>
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  </DropdownItem>
+  <DropdownItem class="rounded-sm px-2">
     <Radio name="group2" bind:group={group2} value={3}>Default radio</Radio>
-  </li>
+  </DropdownItem>
 </Dropdown>
 ```
 
@@ -319,18 +323,18 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 
 <Button>Dropdown radio<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
 <Dropdown simple class="w-60 space-y-1 p-3">
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  <DropdownItem class="rounded-sm px-2">
     <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
     <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-  </li>
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  </DropdownItem>
+  <DropdownItem class="rounded-sm px-2">
     <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
     <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-  </li>
-  <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+  </DropdownItem>
+  <DropdownItem class="rounded-sm px-2">
     <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
     <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
-  </li>
+  </DropdownItem>
 </Dropdown>
 ```
 
@@ -340,7 +344,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, Toggle } from "flowbite-svelte";
+  import { Button, Dropdown, Toggle } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -364,7 +368,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownDivider, Navbar, NavBrand, NavHamburger, NavUl, NavLi } from "flowbite-svelte";
+  import { Dropdown, DropdownItem, Navbar, NavBrand, NavHamburger, NavUl, NavLi } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -436,13 +440,16 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownHeader, DropdownGroup, Checkbox, Search } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownGroup, DropdownItem, Checkbox, Search } from "flowbite-svelte";
   import { ChevronDownOutline, UserRemoveSolid } from "flowbite-svelte-icons";
   let searchTerm = $state("");
   const people = [
     { name: "Robert Gouth", checked: false },
     { name: "Jese Leos", checked: false },
-    { name: "Bonnie Green", checked: true }
+    { name: "Bonnie Green", checked: true },
+    { name: "Joseph Mcfall", checked: false },
+    { name: "Rober Wall", checked: false },
+    { name: "Leslie Livingston", checked: false }
   ];
   let filteredItems = $derived(people.filter((person) => person.name.toLowerCase().indexOf(searchTerm?.toLowerCase()) !== -1));
 </script>
@@ -452,14 +459,14 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
   <div class="p-3">
     <Search size="md" bind:value={searchTerm} />
   </div>
-  <DropdownGroup class="h-24 overflow-y-auto">
+  <DropdownGroup class="h-36 overflow-y-auto">
     {#each filteredItems as person (person.name)}
       <li class="rounded-sm p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
         <Checkbox bind:checked={person.checked}>{person.name}</Checkbox>
       </li>
     {/each}
   </DropdownGroup>
-  <a href="/" class="-mb-1 flex items-center bg-gray-50 p-3 text-sm font-medium text-red-600 hover:bg-gray-100 hover:underline dark:bg-gray-700 dark:text-red-500 dark:hover:bg-gray-600">
+  <a href="/" class="-mb-1 flex items-center rounded-b-lg bg-gray-50 p-3 text-sm font-medium text-red-600 hover:bg-gray-100 hover:underline dark:bg-gray-700 dark:text-red-500 dark:hover:bg-gray-600">
     <UserRemoveSolid class="text-primary-700 dark:text-primary-700 me-2 h-4 w-4" />Delete user
   </a>
 </Dropdown>
@@ -471,7 +478,7 @@ Use the menu icon trigger element on components such as cards as an alternative 
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, ToolbarButton, DropdownDivider } from "flowbite-svelte";
+  import { Dropdown, DropdownItem } from "flowbite-svelte";
   import { DotsHorizontalOutline, DotsVerticalOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -491,7 +498,7 @@ Use this example to show a list of notifications inside your application by prov
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownHeader, DropdownGroup, Avatar } from "flowbite-svelte";
+  import { Dropdown, DropdownItem, DropdownGroup, Avatar } from "flowbite-svelte";
   import { BellSolid, EyeSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -502,7 +509,7 @@ Use this example to show a list of notifications inside your application by prov
   </div>
 </div>
 <Dropdown triggeredBy="#bell" class="w-full max-w-sm divide-y divide-gray-100 rounded-sm shadow-sm dark:divide-gray-700 dark:bg-gray-800">
-  <div class="py-2 text-center font-bold">Notifications</div>
+  <div class="bg-gray-50 py-2 text-center font-bold text-gray-700 dark:bg-gray-800 dark:text-white">Notifications</div>
   <DropdownGroup>
     <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
       <Avatar src="/images/profile-picture-1.webp" dot={{ color: "bg-gray-300" }} />
@@ -554,7 +561,7 @@ This example can be used to show a list of menu items and options when a user is
 
 ```svelte
 <script>
-  import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup, DropdownDivider } from "flowbite-svelte";
+  import { Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup } from "flowbite-svelte";
 </script>
 
 <Avatar class="acs" src="/images/profile-picture-3.webp" dot={{ color: "green" }} />
@@ -676,14 +683,20 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 As dropdown is implemented using the [Floating UI](https://floating-ui.com) library, placement can be further specified by using the `Placement` type defined in [Floating UI docs](https://floating-ui.com/docs/computePosition#placement)
 
 ```svelte
-<script>
+<script lang="ts">
   import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import type { Placement } from "@floating-ui/dom";
   import { ChevronDownOutline, ChevronUpOutline } from "flowbite-svelte-icons";
-  let placement = $state("left");
+  let placement: Placement | undefined = $state("left");
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
-<div onmousedown={(e) => (placement = e.target.dataset.placement)}>
+<div
+  onmousedown={(e) => {
+    const placementValue = (e.target as HTMLElement | null)?.dataset.placement;
+    if (placementValue) placement = placementValue as Placement;
+  }}
+>
   <Button data-placement="left-start">
     Left start<ChevronUpOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
   </Button>
@@ -734,7 +747,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 ```svelte
 <script lang="ts">
-  import { Button, Dropdown, DropdownItem, Checkbox } from "flowbite-svelte";
+  import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   const handleClick = (e: Event) => {
     e.preventDefault();
@@ -755,7 +768,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L598)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L597)
 
 #### Props
 
@@ -771,7 +784,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L604)
+[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L603)
 
 #### Props
 
@@ -781,7 +794,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L621)
+[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L619)
 
 #### Props
 
@@ -792,7 +805,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L606)
+[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L605)
 
 #### Props
 
@@ -803,7 +816,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L612)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L611)
 
 #### Props
 
@@ -811,6 +824,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 - children
 - activeClass
 - liClass
+- classes
 - class: className
 
 

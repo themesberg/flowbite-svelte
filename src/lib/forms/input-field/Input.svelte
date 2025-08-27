@@ -1,9 +1,19 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { CloseButton, type SizeType, type InputProps, type InputValue, cn } from "$lib";
+  import clsx from "clsx";
+  import { CloseButton, type SizeType, type InputProps, type InputValue } from "$lib";
   import { input, clampSize } from ".";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, comboItemClass, onInput, onFocus, onBlur, onKeydown, oninput, onfocus, onblur, onkeydown, ...restProps }: InputProps<InputValue> = $props();
+  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, classes, wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, comboItemClass, onInput, onFocus, onBlur, onKeydown, oninput, onfocus, onblur, onkeydown, ...restProps }: InputProps<InputValue> = $props();
+
+  // input, left, right, close, combo, comboItem, div, svg
+  warnThemeDeprecation("Input", { wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableClass, comboClass }, { wrapperClass: "wrapper", leftClass: "left", rightClass: "right", divClass: "div", clearableSvgClass: "svg", clearableClass: "close", comboClass: "comboItem" });
+
+  const styling = $derived(classes ?? { wrapper: wrapperClass, left: leftClass, right: rightClass, div: divClass, svg: clearableSvgClass, close: clearableClass, combo: comboClass, comboItem: comboItemClass });
+
+  const theme = getTheme("input");
 
   // onSelect is a custom combobox selection handler that takes a string
   // standard DOM events, onInput, onFocus, onBlur, onKeydown will be deprecated in the next minor version
@@ -26,7 +36,7 @@
   let _size = $derived(size || clampSize(group?.size) || "md");
   const _color = $derived(color === "default" && background ? "tinted" : color);
 
-  const { base, input: inputCls, left: leftCls, right: rightCls, clearbtn, combo, comboItem } = $derived(input({ size: _size, color: _color, group: isGroup }));
+  const { base, input: inputCls, left: leftCls, right: rightCls, close, combo, comboItem } = $derived(input({ size: _size, color: _color, grouped: isGroup }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -46,6 +56,8 @@
 
     if (clearableOnClick) clearableOnClick();
   };
+
+  createDismissableContext(clearAll);
 
   // Combobox functionality
   let isFocused = $state(false);
@@ -89,10 +101,10 @@
     }
   });
 
-  // Default event handlers
   function defaultHandleInput(event: Event) {
-    // Reset backspace flag if user starts typing again
-    if ((value as string).length > 0) {
+    // Ensure value is treated as a string to safely check its length
+    const currentValueAsString = String(value || "");
+    if (currentValueAsString.length > 0) {
       backspaceUsed = false;
     }
     updateSuggestions();
@@ -205,9 +217,9 @@
 {/if}
 
 {#if isCombobox}
-  <div class={cn(isCombobox ? "relative w-full" : "", wrapperClass)}>
+  <div class={clsx(isCombobox ? "relative w-full" : "", theme?.wrapper, styling.wrapper)}>
     {#if right || left || clearable}
-      <div class={cn(base(), divClass)}>
+      <div class={base({ class: clsx(theme?.base, styling.div) })}>
         {@render inputContent()}
       </div>
     {:else}
@@ -215,10 +227,10 @@
     {/if}
 
     {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-      <div class={cn(combo(), comboClass)}>
+      <div class={combo({ class: clsx(theme?.combo, styling.combo) })}>
         {#each filteredSuggestions as item, i}
           <button type="button" class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none" onclick={() => selectItem(item)} onmouseenter={() => (selectedIndex = i)}>
-            <p class={cn(comboItem(), comboItemClass)}>{item}</p>
+            <p class={comboItem({ class: clsx(theme?.comboItem, styling.comboItem) })}>{item}</p>
           </button>
         {/each}
       </div>
@@ -227,7 +239,7 @@
 {:else if group}
   {@render inputContent()}
 {:else if right || left || clearable}
-  <div class={cn(base(), divClass)}>
+  <div class={base({ class: clsx(theme?.base, styling.div) })}>
     {@render inputContent()}
   </div>
 {:else}
@@ -236,20 +248,20 @@
 
 {#snippet inputContent()}
   {#if left}
-    <div class={cn(leftCls(), leftClass)}>
+    <div class={leftCls({ class: clsx(theme?.left, styling.left) })}>
       {@render left()}
     </div>
   {/if}
   {#if children}
     {@render children({ ...restProps, class: inputCls() })}
   {:else}
-    <input {...restProps} bind:value bind:this={elementRef} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} class={cn(inputCls(), className)} />
+    <input {...restProps} bind:value bind:this={elementRef} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} class={inputCls({ class: clsx(theme?.input, className) })} />
     {#if value !== undefined && value !== "" && clearable}
-      <CloseButton onclick={clearAll} class={cn(clearbtn(), clearableClass)} color={clearableColor} aria-label="Clear search value" svgClass={cn(clearableSvgClass)} />
+      <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
     {/if}
   {/if}
   {#if right}
-    <div class={cn(rightCls(), rightClass)}>
+    <div class={rightCls({ class: clsx(theme?.right, styling.right) })}>
       {@render right()}
     </div>
   {/if}

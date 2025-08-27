@@ -119,19 +119,19 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 w-24" name="alert_reactive" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="alert_reactive" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Position</Label>
     {#each placements as option}
-      <Radio class="my-1 w-28" name="interactive_toast_position" bind:group={placement} value={option}>{option}</Radio>
+      <Radio class="my-1" classes={{ label: "w-28" }} name="interactive_toast_position" bind:group={placement} value={option}>{option}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio class="my-1 w-16" name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      <Radio class="my-1" classes={{ label: "w-16" }} name="interactive_transition" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

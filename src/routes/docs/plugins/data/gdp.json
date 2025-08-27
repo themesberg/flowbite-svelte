@@ -1,122 +1,122 @@
 [
-	{
-		"country": "United States",
-		"gdp": "$21433 billion",
-		"population": "331 million",
-		"gdpPerCapita": "$64763"
-	},
-	{
-		"country": "China",
-		"gdp": "$14342 billion",
-		"population": "1441 million",
-		"gdpPerCapita": "$9957"
-	},
-	{
-		"country": "Japan",
-		"gdp": "$5082 billion",
-		"population": "126 million",
-		"gdpPerCapita": "$40335"
-	},
-	{
-		"country": "Germany",
-		"gdp": "$3846 billion",
-		"population": "83 million",
-		"gdpPerCapita": "$46386"
-	},
-	{
-		"country": "India",
-		"gdp": "$2875 billion",
-		"population": "1380 million",
-		"gdpPerCapita": "$2083"
-	},
-	{
-		"country": "United Kingdom",
-		"gdp": "$2829 billion",
-		"population": "67 million",
-		"gdpPerCapita": "$42224"
-	},
-	{
-		"country": "France",
-		"gdp": "$2716 billion",
-		"population": "65 million",
-		"gdpPerCapita": "$41723"
-	},
-	{
-		"country": "Italy",
-		"gdp": "$2001 billion",
-		"population": "60 million",
-		"gdpPerCapita": "$33350"
-	},
-	{
-		"country": "Canada",
-		"gdp": "$1643 billion",
-		"population": "38 million",
-		"gdpPerCapita": "$43237"
-	},
-	{
-		"country": "South Korea",
-		"gdp": "$1631 billion",
-		"population": "52 million",
-		"gdpPerCapita": "$31365"
-	},
-	{
-		"country": "Russia",
-		"gdp": "$1460 billion",
-		"population": "144 million",
-		"gdpPerCapita": "$10139"
-	},
-	{
-		"country": "Brazil",
-		"gdp": "$1430 billion",
-		"population": "213 million",
-		"gdpPerCapita": "$6718"
-	},
-	{
-		"country": "Australia",
-		"gdp": "$1393 billion",
-		"population": "25 million",
-		"gdpPerCapita": "$55720"
-	},
-	{
-		"country": "Spain",
-		"gdp": "$1326 billion",
-		"population": "47 million",
-		"gdpPerCapita": "$28255"
-	},
-	{
-		"country": "Mexico",
-		"gdp": "$1194 billion",
-		"population": "129 million",
-		"gdpPerCapita": "$9255"
-	},
-	{
-		"country": "Indonesia",
-		"gdp": "$1158 billion",
-		"population": "273 million",
-		"gdpPerCapita": "$4241"
-	},
-	{
-		"country": "Netherlands",
-		"gdp": "$1010 billion",
-		"population": "17 million",
-		"gdpPerCapita": "$59412"
-	},
-	{
-		"country": "Saudi Arabia",
-		"gdp": "$804 billion",
-		"population": "35 million",
-		"gdpPerCapita": "$22914"
-	},
-	{
-		"country": "Turkey",
-		"gdp": "$761 billion",
-		"population": "84 million",
-		"gdpPerCapita": "$9060"
-	},
-	{
-		"country": "Switzerland",
-		"gdp": "$741 billion",
-		"population": "9 million",
-		"gdpPerCapita": "$82333"
-	}
+  {
+    "country": "United States",
+    "gdp": "$21433 billion",
+    "population": "331 million",
+    "gdpPerCapita": "$64763"
+  },
+  {
+    "country": "China",
+    "gdp": "$14342 billion",
+    "population": "1441 million",
+    "gdpPerCapita": "$9957"
+  },
+  {
+    "country": "Japan",
+    "gdp": "$5082 billion",
+    "population": "126 million",
+    "gdpPerCapita": "$40335"
+  },
+  {
+    "country": "Germany",
+    "gdp": "$3846 billion",
+    "population": "83 million",
+    "gdpPerCapita": "$46386"
+  },
+  {
+    "country": "India",
+    "gdp": "$2875 billion",
+    "population": "1380 million",
+    "gdpPerCapita": "$2083"
+  },
+  {
+    "country": "United Kingdom",
+    "gdp": "$2829 billion",
+    "population": "67 million",
+    "gdpPerCapita": "$42224"
+  },
+  {
+    "country": "France",
+    "gdp": "$2716 billion",
+    "population": "65 million",
+    "gdpPerCapita": "$41723"
+  },
+  {
+    "country": "Italy",
+    "gdp": "$2001 billion",
+    "population": "60 million",
+    "gdpPerCapita": "$33350"
+  },
+  {
+    "country": "Canada",
+    "gdp": "$1643 billion",
+    "population": "38 million",
+    "gdpPerCapita": "$43237"
+  },
+  {
+    "country": "South Korea",
+    "gdp": "$1631 billion",
+    "population": "52 million",
+    "gdpPerCapita": "$31365"
+  },
+  {
+    "country": "Russia",
+    "gdp": "$1460 billion",
+    "population": "144 million",
+    "gdpPerCapita": "$10139"
+  },
+  {
+    "country": "Brazil",
+    "gdp": "$1430 billion",
+    "population": "213 million",
+    "gdpPerCapita": "$6718"
+  },
+  {
+    "country": "Australia",
+    "gdp": "$1393 billion",
+    "population": "25 million",
+    "gdpPerCapita": "$55720"
+  },
+  {
+    "country": "Spain",
+    "gdp": "$1326 billion",
+    "population": "47 million",
+    "gdpPerCapita": "$28255"
+  },
+  {
+    "country": "Mexico",
+    "gdp": "$1194 billion",
+    "population": "129 million",
+    "gdpPerCapita": "$9255"
+  },
+  {
+    "country": "Indonesia",
+    "gdp": "$1158 billion",
+    "population": "273 million",
+    "gdpPerCapita": "$4241"
+  },
+  {
+    "country": "Netherlands",
+    "gdp": "$1010 billion",
+    "population": "17 million",
+    "gdpPerCapita": "$59412"
+  },
+  {
+    "country": "Saudi Arabia",
+    "gdp": "$804 billion",
+    "population": "35 million",
+    "gdpPerCapita": "$22914"
+  },
+  {
+    "country": "Turkey",
+    "gdp": "$761 billion",
+    "population": "84 million",
+    "gdpPerCapita": "$9060"
+  },
+  {
+    "country": "Switzerland",
+    "gdp": "$741 billion",
+    "population": "9 million",
+    "gdpPerCapita": "$82333"
+  }
 ]

@@ -3,8 +3,14 @@
   import Star from "./Star.svelte";
   import { rating as ratingVariants } from ".";
   import type { RatingProps } from "$lib/types";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, text, class: className, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass, ...restProps }: RatingProps = $props();
+  let { children, text, class: className, classes, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass, ...restProps }: RatingProps = $props();
+
+  warnThemeDeprecation("Rating", { pClass }, { pClass: "p" });
+  const styling = $derived(classes ?? { p: pClass });
+
+  const theme = getTheme("rating");
 
   const { base, p } = $derived(ratingVariants());
   const ratingGroupId = crypto.randomUUID();
@@ -14,10 +20,10 @@
   let grayStars: number = total - (fullStars + Math.ceil(rateDiffence));
 </script>
 
-<div {...restProps} class={base({ class: clsx(className) })}>
+<div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {#if count && children}
     <Icon fillPercent={100} {size} iconIndex={0} groupId={ratingGroupId} />
-    <p class={p({ class: clsx(pClass) })}>{rating}</p>
+    <p class={p({ class: clsx(theme?.p, styling.p) })}>{rating}</p>
     {@render children()}
   {:else}
     <!-- eslint-disable @typescript-eslint/no-unused-vars-->
@@ -41,11 +47,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1250)
+[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1249)
 ## Props
 @prop children
 @prop text
 @prop class: className
+@prop classes
 @prop size = 24
 @prop total = 5
 @prop rating = 4

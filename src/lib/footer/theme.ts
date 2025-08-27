@@ -1,6 +1,7 @@
-import { tv } from "tailwind-variants";
+import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-const footer = tv({
+export const footer = tv({
   base: "bg-white dark:bg-gray-800",
   variants: {
     footerType: {
@@ -13,7 +14,9 @@ const footer = tv({
   }
 });
 
-const footerBrand = tv({
+export type FooterBrandVariants = VariantProps<typeof footerBrand> & Classes<typeof footerBrand>;
+
+export const footerBrand = tv({
   slots: {
     base: "flex items-center",
     span: "self-center text-2xl font-semibold whitespace-nowrap dark:text-white",
@@ -21,7 +24,9 @@ const footerBrand = tv({
   }
 });
 
-const footerCopyright = tv({
+export type FooterCopyrightVariants = VariantProps<typeof footerCopyright> & Classes<typeof footerCopyright>;
+
+export const footerCopyright = tv({
   slots: {
     base: "block text-sm text-gray-500 sm:text-center dark:text-gray-400",
     link: "hover:underline",
@@ -29,19 +34,19 @@ const footerCopyright = tv({
   }
 });
 
-const footerIcon = tv({
+export const footerIcon = tv({
   base: "text-gray-500 hover:text-gray-900 dark:hover:text-white"
 });
 
-const footerLinkGroup = tv({
+export const footerLinkGroup = tv({
   base: "text-gray-600 dark:text-gray-400"
 });
 
-const footerLink = tv({
+export type FooterLinkVariants = VariantProps<typeof footerLink> & Classes<typeof footerLink>;
+
+export const footerLink = tv({
   slots: {
     base: "me-4 last:me-0 md:me-6",
     link: "hover:underline"
   }
 });
-
-export { footer, footerBrand, footerCopyright, footerIcon, footerLinkGroup, footerLink };

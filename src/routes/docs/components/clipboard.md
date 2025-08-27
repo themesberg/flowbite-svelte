@@ -84,7 +84,7 @@ Use this example to show a copy button inside the input field with a text label 
 
 ```svelte example class="flex justify-center items-center gap-2 h-56"
 <script>
-  import { Clipboard, Input, Tooltip, ButtonGroup } from "flowbite-svelte";
+  import { Clipboard, Input } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
 
   let value = $state("npm install flowbite");
@@ -219,17 +219,16 @@ This example can be used to copy and paste code inside a `<pre>` and `<code>` bl
 Use this example to show multiple input field elements that have the copy to clipboard button inside a card component for more complex applications where you need to copy API keys, account IDs and more.
 
 ```svelte example class="flex justify-center items-center gap-2"
-<script>
+<script lang="ts">
   import { Card, Clipboard, Input, Label, Tooltip, Button } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
 
   let acc_id = $state("756593826");
   let api_key = $state("f4h6sd3t-jsy63ind-hsgdt7rs-jdhf76st");
   let role_arn = $state("123456789012:user/Flowbite");
-  let value = $state("");
 </script>
 
-{#snippet children(success)}
+{#snippet children(success: boolean)}
   <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
   {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
 {/snippet}
@@ -306,6 +305,7 @@ Add a `Clipboard` to your `Textarea` using the `addon` snippet. The button appea
 ```
 
 ## Copy contact details
+
 This example can be used to copy the text content (ie. contact details) inside of the `<address>` field by clicking on the copy to clipboard button positioned inside of the address card.
 
 Make sure that you set the `id` to the trigger element to specify the source of the content that is to be copied.
@@ -352,6 +352,7 @@ Make sure that you set the `id` to the trigger element to specify the source of 
 ```
 
 ## Copy button with modal
+
 Use this example to show an input field where you can copy the URL of the current page and also show a modal with the copied URL when the copy button is clicked.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
@@ -363,10 +364,10 @@ Use this example to show an input field where you can copy the URL of the curren
   let copyModal = $state(false);
 </script>
 
-<Button color="alternative" onclick={() => (copyModal = true)}><ShareNodesOutline class="me-2"/> Share course</Button>
+<Button color="alternative" onclick={() => (copyModal = true)}><ShareNodesOutline class="me-2" /> Share course</Button>
 
-<Modal title="Share course" bind:open={copyModal} autoclose class="divide-y-0" headerClass="text-lg text-gray-500 dark:text-gray-400" footerClass="px-5 pb-5">
-  <Label for="course-url" class="text-sm font-medium mb-2 block">Share the course link below with your friends:</Label>
+<Modal title="Share course" bind:open={copyModal} autoclose class="divide-y-0" classes={{ header: "text-lg text-gray-500 dark:text-gray-400", footer: "px-5 pb-5" }}>
+  <Label for="course-url" class="mb-2 block text-sm font-medium">Share the course link below with your friends:</Label>
 
   <Input bind:value id="course-url">
     {#snippet right()}
@@ -379,7 +380,7 @@ Use this example to show an input field where you can copy the URL of the curren
     {/snippet}
   </Input>
   {#snippet footer()}
-    <Button onclick={() => copyModal = false} >Close</Button>
+    <Button onclick={() => (copyModal = false)}>Close</Button>
   {/snippet}
 </Modal>
 ```

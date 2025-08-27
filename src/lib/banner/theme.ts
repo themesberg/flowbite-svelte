@@ -1,8 +1,10 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type BannerVariants = VariantProps<typeof banner>;
+// Variants
+export type BannerVariants = VariantProps<typeof banner> & Classes<typeof banner>;
 
-const banner = tv({
+export const banner = tv({
   slots: {
     base: "fixed z-50 flex justify-between p-4 mx-auto dark:bg-gray-700 dark:border-gray-600",
     insideDiv: "flex flex-col md:flex-row md:items-center gap-2 mx-auto",
@@ -46,5 +48,3 @@ const banner = tv({
     multiline: true
   }
 });
-
-export { banner };

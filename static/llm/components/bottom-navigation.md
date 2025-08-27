@@ -26,7 +26,7 @@ Use the default bottom navigation bar example to show a list of menu items as bu
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" innerClass="grid-cols-4">
+<BottomNav position="absolute" classes={{ inner: "grid-cols-4" }}>
   <BottomNavItem btnName="Home">
     <HomeSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
@@ -59,7 +59,7 @@ By default, the `BottomNavItem` will only be set to active if the `href` and the
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" innerClass="grid-cols-4">
+<BottomNav {activeUrl} position="absolute" classes={{ inner: "grid-cols-4" }}>
   <BottomNavItem btnName="Home" href="/">
     <HomeSolid />
   </BottomNavItem>
@@ -88,7 +88,7 @@ The following example shows how to change active class, by using `activeClass` p
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" innerClass="grid-cols-4" activeClass="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300">
+<BottomNav {activeUrl} position="absolute" classes={{ inner: "grid-cols-4" }} activeClass="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300">
   <BottomNavItem btnName="Home" href="/">
     <HomeSolid />
   </BottomNavItem>
@@ -119,7 +119,7 @@ Use the following example to change the icon colors:
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" innerClass="grid-cols-4">
+<BottomNav {activeUrl} position="absolute" classes={{ inner: "grid-cols-4" }}>
   <BottomNavItem btnName="Home" href="/">
     <HomeSolid class={activeUrl === "/" ? svgActiveClass : svgClass} />
   </BottomNavItem>
@@ -148,7 +148,7 @@ This example can be used to show a border between the menu items inside the bott
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="border" innerClass="grid-cols-4">
+<BottomNav position="absolute" navType="border" classes={{ inner: "grid-cols-4" }}>
   <BottomNavItem btnName="Home">
     <HomeSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
@@ -177,7 +177,7 @@ Use this example to show a CTA button in the center of the navigation component 
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="application" innerClass="grid-cols-5">
+<BottomNav position="absolute" navType="application" classes={{ inner: "grid-cols-5" }}>
   <BottomNavItem btnName="Home" appBtnPosition="left">
     <HomeSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
@@ -187,7 +187,7 @@ Use this example to show a CTA button in the center of the navigation component 
   </BottomNavItem>
   <Tooltip arrow={false}>Wallet</Tooltip>
   <div class="flex items-center justify-center">
-    <BottomNavItem btnName="Create new item" appBtnPosition="middle" btnClass="inline-flex items-center justify-center w-10 h-10 font-medium bg-primary-600 rounded-full hover:bg-primary-700 group focus:ring-4 focus:ring-primary-300 focus:outline-hidden dark:focus:ring-primary-800">
+    <BottomNavItem btnName="Create new item" appBtnPosition="middle" class="bg-primary-600 hover:bg-primary-700 group focus:ring-primary-300 dark:focus:ring-primary-800 inline-flex h-10 w-10 items-center justify-center rounded-full font-medium focus:ring-4 focus:outline-hidden">
       <PlusOutline class="text-white" />
     </BottomNavItem>
     <Tooltip arrow={false}>Create new item</Tooltip>
@@ -216,7 +216,7 @@ This example be used to paginate multiple pages on a single view alongside other
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="pagination" innerClass="grid-cols-6">
+<BottomNav position="absolute" navType="pagination" classes={{ inner: "grid-cols-6" }}>
   <BottomNavItem btnName="New document">
     <FileCirclePlusOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
@@ -261,7 +261,7 @@ This example be used to paginate multiple pages on a single view alongside other
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
-  <BottomNav position="absolute" navType="group" innerClass="grid-cols-5">
+  <BottomNav position="absolute" navType="group" classes={{ inner: "grid-cols-5" }}>
     {#snippet header()}
       <BottomNavHeader>
         <BottomNavHeaderItem itemName="New" />
@@ -269,7 +269,7 @@ This example be used to paginate multiple pages on a single view alongside other
         <BottomNavHeaderItem itemName="Following" />
       </BottomNavHeader>
     {/snippet}
-    <BottomNavItem btnName="Home" id="group-home" innerClass="grid-cols-4">
+    <BottomNavItem btnName="Home" id="group-home" classes={{ inner: "grid-cols-4" }}>
       <HomeSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
     </BottomNavItem>
     <Tooltip arrow={false}>Home</Tooltip>
@@ -346,7 +346,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
       {/if}
     {/snippet}
   </Listgroup>
-  <BottomNav position="sticky" navType="card" innerClass="grid-cols-3 pt-2 pb-4">
+  <BottomNav position="sticky" navType="card" classes={{ inner: "grid-cols-3 pt-2 pb-4" }}>
     <BottomNavItem btnName="Latest" id="card-latest">
       <ClockSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
     </BottomNavItem>
@@ -366,7 +366,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L255)
+[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L247)
 
 #### Props
 
@@ -374,6 +374,8 @@ You can even use the other bottom navbar examples to exchange the default one pr
 - header
 - position: "fixed"
 - navType: "default"
+- class: className
+- classes
 - outerClass
 - innerClass
 - activeClass
@@ -383,11 +385,13 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L301)
+[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L266)
 
 #### Props
 
 - children
+- class: className
+- classes
 - outerClass
 - innerClass
 
@@ -395,7 +399,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L307)
+[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L272)
 
 #### Props
 
@@ -407,16 +411,16 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L266)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L256)
 
 #### Props
 
 - children
 - btnName
 - appBtnPosition: "middle"
-- target
 - activeClass
-- href: ""
+- class: className
+- classes
 - btnClass
 - spanClass
 - active: manualActive

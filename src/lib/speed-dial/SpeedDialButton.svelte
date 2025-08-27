@@ -1,23 +1,41 @@
 <script lang="ts">
-  import Button from "$lib/buttons/Button.svelte";
-  import Tooltip from "$lib/tooltip/Tooltip.svelte";
+  import { Button, Tooltip } from "$lib";
+  import type { Placement } from "@floating-ui/dom";
   import { getContext } from "svelte";
-  import { speed_dial_button } from "./theme";
+  import { speedDialButton } from "./theme";
   import type { SpeedCtxType, SpeedDialButtonProps } from "$lib/types";
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   const context = getContext<SpeedCtxType>("speed-dial");
 
-  let { children, name = "", color = "light", tooltip = context.tooltip, pill = context.pill, textOutside = context.textOutside, textClass, class: className, ...restProps }: SpeedDialButtonProps = $props();
+  let { children, name = "", color = "light", tooltip: _tooltip, pill = context.pill, textOutside = context.textOutside, textClass, class: className, classes, ...restProps }: SpeedDialButtonProps = $props();
 
-  let { base, span } = $derived(speed_dial_button({ textOutside, tooltip: tooltip == "none" }));
-  let spanClass = $derived(tooltip === "none" ? twMerge(span(), clsx(textClass)) : "sr-only");
+  warnThemeDeprecation("SpeedDialButton", { textClass }, { textClass: "span" });
+  const styling = $derived(
+    classes ?? {
+      span: textClass
+    }
+  );
+
+  let tooltip: Placement | "none" = _tooltip ?? context.tooltip;
+
+  const theme = getTheme("speedDialButton");
+
+  let { base, span } = $derived(speedDialButton({ textOutside }));
+  let spanCls = $derived(tooltip === "none" ? span({ class: clsx(theme?.span, styling.span) }) : "sr-only");
+
+  // Add flex-col when tooltip is shown
+  let buttonCls = $derived(
+    base({
+      class: clsx(theme?.base, className, tooltip !== "none" && "flex-col")
+    })
+  );
 </script>
 
-<Button {pill} {color} {...restProps} class={twMerge(base(), clsx(className))}>
+<Button {pill} {color} {...restProps} class={buttonCls}>
   {@render children?.()}
-  <span class={spanClass}>{name}</span>
+  <span class={spanCls}>{name}</span>
 </Button>
 
 {#if tooltip !== "none"}
@@ -28,15 +46,16 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1499)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1501)
 ## Props
 @prop children
 @prop name = ""
 @prop color = "light"
-@prop tooltip = context.tooltip
+@prop tooltip: _tooltip
 @prop pill = context.pill
 @prop textOutside = context.textOutside
 @prop textClass
 @prop class: className
+@prop classes
 @prop ...restProps
 -->

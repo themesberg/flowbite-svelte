@@ -2,8 +2,11 @@
   import clsx from "clsx";
   import { span } from "./index";
   import type { SpanProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, italic, underline, linethrough, uppercase, gradient, highlight, decoration, decorationColor, decorationThickness, ...restProps }: SpanProps = $props();
+
+  const theme = getTheme("span");
 
   let classSpan = $derived(
     span({
@@ -16,7 +19,7 @@
       decoration,
       decorationColor,
       decorationThickness,
-      class: clsx(className)
+      class: clsx(theme, className)
     })
   );
 </script>
@@ -31,7 +34,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpanProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1967)
+[SpanProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1981)
 ## Props
 @prop children
 @prop class: className

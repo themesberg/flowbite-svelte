@@ -1,6 +1,10 @@
 <script lang="ts" generics="T">
-  import { Badge, CloseButton, type MultiSelectProps, type SelectOptionType, cn } from "$lib";
-  import { multiselect } from "./theme";
+  import clsx from "clsx";
+  import { Badge, CloseButton, type MultiSelectProps, type SelectOptionType } from "$lib";
+  import { multiSelect } from ".";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { onMount } from "svelte";
+  import { createDismissableContext } from "$lib/utils/dismissable";
 
   // Consider reusing that component - https://svelecte.vercel.app/
 
@@ -15,6 +19,7 @@
     onchange,
     onblur,
     class: className,
+    classes,
     // Extract select-specific props
     name,
     form,
@@ -23,6 +28,11 @@
     ...restProps
   }: MultiSelectProps<T> = $props();
 
+  warnThemeDeprecation("MultiSelect", { dropdownClass }, { dropdownClass: "dropdown" });
+  const styling = $derived(classes ?? { dropdown: dropdownClass });
+
+  const theme = getTheme("multiSelect");
+
   let selectItems = $derived(items.filter((x) => value.includes(x.value)));
   let show: boolean = $state(false);
 
@@ -30,7 +40,12 @@
   let activeIndex: number | null = $state(null);
   let activeItem = $derived(activeIndex !== null ? items[((activeIndex % items.length) + items.length) % items.length] : null);
 
-  const selectOption = (select: SelectOptionType<any>) => {
+  let multiSelectContainer: HTMLDivElement; // Reference to the main div
+
+  const selectOption = (select: SelectOptionType<any>, event: MouseEvent) => {
+    // Prevent the click from propagating to the parent div
+    event.stopPropagation();
+
     if (disabled) return;
     if (select.disabled) return;
 
@@ -59,6 +74,8 @@
       triggerChange();
     }
   };
+
+  createDismissableContext(clearAll);
 
   const clearThisOption = (select: SelectOptionType<any>) => {
     if (disabled) return;
@@ -91,11 +108,23 @@
   };
 
   const closeDropdown = () => !disabled && (show = false);
-  const toggleDropdown = () => !disabled && (show = !show);
+  const toggleDropdown = (event: MouseEvent) => {
+    if (disabled) return;
+    // Prevent immediate closing if the click originated from within the component itself
+    // This is useful if the click triggers a re-render and focus is lost momentarily.
+    if (multiSelectContainer && multiSelectContainer.contains(event.target as Node)) {
+      show = !show;
+    } else {
+      show = false; // Close if clicked outside
+    }
+  };
 
   // Handle blur event for validation
   const handleBlur = (event: FocusEvent) => {
-    closeDropdown();
+    // We'll rely more on the global click listener for closing, but keep this for standard blur behavior
+    if (event.currentTarget && (event.currentTarget as HTMLElement).contains && !(event.currentTarget as HTMLElement).contains(event.relatedTarget as Node)) {
+      closeDropdown();
+    }
     if (onblur) {
       onblur(event);
     }
@@ -109,7 +138,7 @@
       show = true;
       activeIndex = 0;
     } else {
-      if (activeItem !== null) selectOption(activeItem);
+      if (activeItem !== null) selectOption(activeItem, new MouseEvent("click")); // Pass a dummy MouseEvent
     }
   }
 
@@ -130,8 +159,11 @@
 
   function handleKeyDown(event: KeyboardEvent) {
     if (disabled) return;
+    // Do not prevent default for tab key, allow it to move focus
+    if (event.key !== "Tab") {
+      event.preventDefault();
+    }
     event.stopPropagation();
-    event.preventDefault();
 
     const actions = {
       Escape: closeDropdown,
@@ -145,21 +177,34 @@
     }
   }
 
-  const { base, dropdown, dropdownitem, closebutton, select } = multiselect({ disabled });
+  // Global click listener for closing the dropdown when clicking outside
+  onMount(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (multiSelectContainer && !multiSelectContainer.contains(event.target as Node)) {
+        closeDropdown();
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  });
+
+  const { base, dropdown, item: dropdownItem, close, select, placeholder: placeholderSpan, svg } = multiSelect({ disabled });
 </script>
 
-<!-- Hidden select for form submission -->
 <select {name} {form} {required} {autocomplete} {value} hidden multiple {onchange}>
   {#each items as item}
     <option value={item.value} disabled={item.disabled}>{item.name}</option>
   {/each}
 </select>
 
-<div {...restProps} onclick={toggleDropdown} onblur={handleBlur} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={cn(base({ size }), className)}>
+<div bind:this={multiSelectContainer} {...restProps} onclick={toggleDropdown} onblur={handleBlur} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={base({ size, class: clsx(theme?.base, className) })}>
   {#if !selectItems.length}
-    <span class="text-gray-400">{placeholder}</span>
+    <span class={placeholderSpan({ class: clsx(classes?.placeholder) })}>{placeholder}</span>
   {/if}
-  <span class={select()}>
+  <span class={select({ class: clsx(theme?.select, classes?.span) })}>
     {#if selectItems.length}
       {#each selectItems as item (item.name)}
         {#if children}
@@ -174,24 +219,25 @@
   </span>
   <div class="ms-auto flex items-center gap-2">
     {#if selectItems.length}
-      <CloseButton {size} onclick={clearAll} color="none" class={closebutton()} {disabled} />
+      <CloseButton {size} color="none" class={close({ class: clsx(theme?.close, classes?.close) })} {disabled} />
     {/if}
 
-    <svg class={cn("ms-1 h-3 w-3 cursor-pointer text-gray-800 dark:text-white", disabled && "cursor-not-allowed")} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <svg class={clsx(svg(), disabled && "cursor-not-allowed", classes?.svg)} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={show ? "m1 5 4-4 4 4" : "m9 1-4 4-4-4"} />
     </svg>
   </div>
 
   {#if show}
-    <div role="presentation" class={cn(dropdown(), dropdownClass)}>
+    <div role="presentation" class={dropdown({ class: clsx(styling.dropdown) })}>
       {#each items as item (item.name)}
         <div
-          onclick={() => selectOption(item)}
+          onclick={(e) => selectOption(item, e)}
           role="presentation"
-          class={dropdownitem({
+          class={dropdownItem({
             selected: selectItems.includes(item),
             active: activeItem === item,
-            disabled: item.disabled
+            disabled: item.disabled,
+            class: clsx(classes?.item)
           })}
         >
           {item.name}

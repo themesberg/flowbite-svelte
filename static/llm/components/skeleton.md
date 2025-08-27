@@ -118,18 +118,19 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1423)
+[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1424)
 
 #### Props
 
 - size: "sm"
 - class: className
+- classes
 
 ### ImagePlaceholder
 
 #### Types
 
-[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1427)
+[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1428)
 
 #### Props
 
@@ -137,12 +138,13 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 - rounded
 - imgOnly: false
 - class: className
+- classes
 
 ### ListPlaceholder
 
 #### Types
 
-[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1433)
+[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1434)
 
 #### Props
 
@@ -150,44 +152,48 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 - size: "md"
 - rounded
 - class: className
+- classes
 
 ### Skeleton
 
 #### Types
 
-[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1439)
+[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1440)
 
 #### Props
 
 - size: "sm"
 - class: className
+- classes
 
 ### TestimonialPlaceholder
 
 #### Types
 
-[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1443)
+[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1444)
 
 #### Props
 
 - class: className
+- classes
 
 ### TextPlaceholder
 
 #### Types
 
-[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1445)
+[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1446)
 
 #### Props
 
 - size: "sm"
 - class: className
+- classes
 
 ### VideoPlaceholder
 
 #### Types
 
-[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1449)
+[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1450)
 
 #### Props
 
@@ -198,11 +204,12 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1453)
+[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1454)
 
 #### Props
 
 - class: className
+- classes
 
 
 ## References

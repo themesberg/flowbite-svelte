@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
 export const buttonToggleGroup = tv({
   base: "inline-flex border border-gray-300 overflow-hidden",
@@ -13,48 +14,115 @@ export const buttonToggleGroup = tv({
   }
 });
 
+export type ButtonToggleVariants = VariantProps<typeof buttonToggle> & Classes<typeof buttonToggle>;
+
 export const buttonToggle = tv({
-  base: "relative flex items-center transition-all duration-200  focus:outline-none border-r last:border-r-0 dark:bg-white dark:text-gray-800",
+  slots: {
+    button: "relative flex items-center transition-all duration-200 focus:outline-none border-r last:border-r-0 dark:bg-white dark:text-gray-800",
+    content: "flex items-center w-full overflow-hidden relative",
+    text: "transition-all duration-200 ml-0",
+    icon: "absolute left-0 flex-shrink-0 text-green-600"
+  },
   variants: {
     selected: {
-      true: "",
-      false: ""
+      true: {
+        text: "ml-5"
+      },
+      false: {}
     },
     size: {
-      sm: "p-1 px-2 text-sm",
-      md: "p-2 px-4 text-base",
-      lg: "p-3 px-5 text-lg",
-      xl: "p-4 px-6 text-xl"
+      sm: {
+        button: "p-1 px-2 text-sm"
+      },
+      md: {
+        button: "p-2 px-4 text-base"
+      },
+      lg: {
+        button: "p-3 px-5 text-lg"
+      },
+      xl: {
+        button: "p-4 px-6 text-xl"
+      }
     },
     roundedSize: {
-      sm: "first:rounded-s-sm last:rounded-e-sm",
-      md: "first:rounded-s-md last:rounded-e-md",
-      lg: "first:rounded-s-lg last:rounded-e-lg",
-      xl: "first:rounded-s-xl last:rounded-e-xl",
-      full: "first:rounded-s-full last:rounded-e-full"
+      sm: {
+        button: "first:rounded-s-sm last:rounded-e-sm"
+      },
+      md: {
+        button: "first:rounded-s-md last:rounded-e-md"
+      },
+      lg: {
+        button: "first:rounded-s-lg last:rounded-e-lg"
+      },
+      xl: {
+        button: "first:rounded-s-xl last:rounded-e-xl"
+      },
+      full: {
+        button: "first:rounded-s-full last:rounded-e-full"
+      }
     },
     color: {
-      primary: "data-[selected=true]:bg-primary-200 data-[selected=false]:hover:bg-gray-100",
-      secondary: "data-[selected=true]:bg-secondary-200 data-[selected=false]:hover:bg-gray-100",
-      gray: "data-[selected=true]:bg-gray-200 data-[selected=false]:hover:bg-gray-100",
-      red: "data-[selected=true]:bg-red-200 data-[selected=false]:hover:bg-red-50",
-      orange: "data-[selected=true]:bg-orange-200 data-[selected=false]:hover:bg-orange-50",
-      amber: "data-[selected=true]:bg-amber-200 data-[selected=false]:hover:bg-amber-50",
-      yellow: "data-[selected=true]:bg-yellow-200 data-[selected=false]:hover:bg-yellow-50",
-      lime: "data-[selected=true]:bg-lime-200 data-[selected=false]:hover:bg-lime-50",
-      green: "data-[selected=true]:bg-green-200 data-[selected=false]:hover:bg-green-50",
-      emerald: "data-[selected=true]:bg-emerald-200 data-[selected=false]:hover:bg-emerald-50",
-      teal: "data-[selected=true]:bg-teal-200 data-[selected=false]:hover:bg-teal-50",
-      cyan: "data-[selected=true]:bg-cyan-200 data-[selected=false]:hover:bg-cyan-50",
-      sky: "data-[selected=true]:bg-sky-200 data-[selected=false]:hover:bg-sky-50",
-      blue: "data-[selected=true]:bg-blue-200 data-[selected=false]:hover:bg-blue-50",
-      indigo: "data-[selected=true]:bg-indigo-200 data-[selected=false]:hover:bg-indigo-50",
-      violet: "data-[selected=true]:bg-violet-200 data-[selected=false]:hover:bg-violet-50",
-      purple: "data-[selected=true]:bg-purple-200 data-[selected=false]:hover:bg-purple-50",
-      fuchsia: "data-[selected=true]:bg-fuchsia-200 data-[selected=false]:hover:bg-fuchsia-50",
-      pink: "data-[selected=true]:bg-pink-200 data-[selected=false]:hover:bg-pink-50",
-      rose: "data-[selected=true]:bg-rose-200 data-[selected=false]:hover:bg-rose-50",
-      none: ""
+      primary: {
+        button: "data-[selected=true]:bg-primary-200 data-[selected=false]:hover:bg-gray-100"
+      },
+      secondary: {
+        button: "data-[selected=true]:bg-secondary-200 data-[selected=false]:hover:bg-gray-100"
+      },
+      gray: {
+        button: "data-[selected=true]:bg-gray-200 data-[selected=false]:hover:bg-gray-100"
+      },
+      red: {
+        button: "data-[selected=true]:bg-red-200 data-[selected=false]:hover:bg-red-50"
+      },
+      orange: {
+        button: "data-[selected=true]:bg-orange-200 data-[selected=false]:hover:bg-orange-50"
+      },
+      amber: {
+        button: "data-[selected=true]:bg-amber-200 data-[selected=false]:hover:bg-amber-50"
+      },
+      yellow: {
+        button: "data-[selected=true]:bg-yellow-200 data-[selected=false]:hover:bg-yellow-50"
+      },
+      lime: {
+        button: "data-[selected=true]:bg-lime-200 data-[selected=false]:hover:bg-lime-50"
+      },
+      green: {
+        button: "data-[selected=true]:bg-green-200 data-[selected=false]:hover:bg-green-50"
+      },
+      emerald: {
+        button: "data-[selected=true]:bg-emerald-200 data-[selected=false]:hover:bg-emerald-50"
+      },
+      teal: {
+        button: "data-[selected=true]:bg-teal-200 data-[selected=false]:hover:bg-teal-50"
+      },
+      cyan: {
+        button: "data-[selected=true]:bg-cyan-200 data-[selected=false]:hover:bg-cyan-50"
+      },
+      sky: {
+        button: "data-[selected=true]:bg-sky-200 data-[selected=false]:hover:bg-sky-50"
+      },
+      blue: {
+        button: "data-[selected=true]:bg-blue-200 data-[selected=false]:hover:bg-blue-50"
+      },
+      indigo: {
+        button: "data-[selected=true]:bg-indigo-200 data-[selected=false]:hover:bg-indigo-50"
+      },
+      violet: {
+        button: "data-[selected=true]:bg-violet-200 data-[selected=false]:hover:bg-violet-50"
+      },
+      purple: {
+        button: "data-[selected=true]:bg-purple-200 data-[selected=false]:hover:bg-purple-50"
+      },
+      fuchsia: {
+        button: "data-[selected=true]:bg-fuchsia-200 data-[selected=false]:hover:bg-fuchsia-50"
+      },
+      pink: {
+        button: "data-[selected=true]:bg-pink-200 data-[selected=false]:hover:bg-pink-50"
+      },
+      rose: {
+        button: "data-[selected=true]:bg-rose-200 data-[selected=false]:hover:bg-rose-50"
+      },
+      none: {}
     }
   },
   defaultVariants: {
@@ -64,24 +132,3 @@ export const buttonToggle = tv({
     roundedSize: "md"
   }
 });
-
-export const buttonToggleContent = tv({
-  base: "flex items-center w-full overflow-hidden relative"
-});
-
-export const buttonToggleText = tv({
-  base: "transition-all duration-200 ml-0",
-  variants: {
-    selected: {
-      true: "ml-5",
-      false: ""
-    }
-  },
-  defaultVariants: {
-    selected: false
-  }
-});
-
-export type ButtonToggleVariants = VariantProps<typeof buttonToggle>;
-export type ButtonToggleContentVariants = VariantProps<typeof buttonToggleContent>;
-export type ButtonToggleTextVariants = VariantProps<typeof buttonToggleText>;

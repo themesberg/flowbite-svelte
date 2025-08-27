@@ -1,14 +1,17 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type FloatingLabelInputVaratiants = VariantProps<typeof floatingLabelInput>;
+// Variants
+export type FloatingLabelInputVaratiants = VariantProps<typeof floatingLabelInput> & Classes<typeof floatingLabelInput>;
 
 export const floatingLabelInput = tv({
   slots: {
     base: "relative",
     input: "block w-full text-sm text-gray-900 bg-transparent appearance-none dark:text-white focus:outline-hidden focus:ring-0 peer",
     label: "absolute text-sm duration-300 transform scale-75 z-10 origin-left rtl:origin-right peer-placeholder-shown:scale-100 peer-focus:scale-75",
-    clearbtn: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black",
-    combo: "absolute top-full right-0 left-0 z-10 mt-1 max-h-60 overflow-y-auto rounded-md border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800"
+    close: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black",
+    combo: "absolute top-full right-0 left-0 z-10 mt-1 max-h-60 overflow-y-auto rounded-md border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800",
+    svg: ""
   },
   variants: {
     variant: {

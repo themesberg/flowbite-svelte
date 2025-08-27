@@ -1,103 +1,55 @@
 <script lang="ts">
-  import { type ParamsType, type ModalProps, CloseButton, trapFocus } from "$lib";
-  import { twMerge } from "tailwind-merge";
+  import { type ModalProps, type ParamsType, CloseButton, Dialog } from "$lib";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
-  import { modal as modalTheme } from ".";
+  import { modal as modalStyle } from ".";
 
-  let { children, oncancel, onclose, modal = true, autoclose = false, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, outsideclose = true, size = "md", placement, class: className, params, transition = fade, ...restProps }: ModalProps = $props();
+  let { children, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, size = "md", placement, class: className, classes, transitionParams, transition = fade, fullscreen = false, ...restProps }: ModalProps = $props();
+
+  // form, header, footer, body, close
+  warnThemeDeprecation("Modal", { headerClass, bodyClass, footerClass, closeBtnClass }, { bodyClass: "body", headerClass: "header", footerClass: "footer", closeBtnClass: "close" });
+  const styling = $derived(classes ?? { header: headerClass, body: bodyClass, footer: footerClass, close: closeBtnClass });
+
+  const theme = getTheme("modal");
 
   const paramsDefault = { duration: 100, easing: sineIn };
-  const paramsOptions = $derived(params ?? paramsDefault);
+  const paramsOptions = $derived(transitionParams ?? paramsDefault);
 
-  const { base, header: headerCls, footer: footerCls, body, closeBtn } = $derived(modalTheme({ placement, size }));
-
-  const closeModal = () => {
-    // Only close if not permanent
-    if (!permanent) {
-      open = false;
-      onclose?.();
-    }
-  };
-
-  function _oncancel(ev: Event & { currentTarget: HTMLDialogElement }) {
-    // this event gets called when user presses ESC key
-    // We'll handle ESC via the trapFocus action instead
-    if (ev.currentTarget instanceof HTMLDialogElement) {
-      // Stop the default ESC handling from dialog element
-      // as we're handling it in our trapFocus action
-      ev.preventDefault();
-      oncancel?.(ev); // propagate the event to the user
-    }
-  }
-
-  function _onclick(ev: Event & { currentTarget: HTMLDialogElement }) {
-    if (ev.currentTarget instanceof HTMLDialogElement) {
-      if (outsideclose && ev.target === ev.currentTarget && !permanent) {
-        closeModal();
-      }
-      if (autoclose && ev.target instanceof HTMLButtonElement && !permanent) {
-        closeModal();
-      }
-    }
-  }
-
-  let dlg: HTMLDialogElement | undefined = $state();
-
-  $effect(() => {
-    if (permanent && !open) {
-      open = true;
-    }
-  });
-
-  // Handler for Escape key that respects component state
-  const handleEscape = () => {
-    if (!permanent) {
-      oncancel?.({ currentTarget: dlg } as any);
-      // If oncancel prevented default, we don't close
-      if (oncancel && event?.defaultPrevented) return;
-      closeModal();
-    }
-  };
+  const { base, header: headerCls, footer: footerCls, body } = $derived(modalStyle({ placement, size }));
 </script>
 
-{#if open}
-  <dialog use:trapFocus={{ onEscape: handleEscape }} bind:this={dlg} {...restProps} class={twMerge(base(), clsx(className))} tabindex="-1" oncancel={_oncancel} onclick={_onclick} transition:transition={paramsOptions as ParamsType} onintrostart={() => (modal ? dlg?.showModal() : dlg?.show())} onoutroend={() => dlg?.close()}>
-    {#if title || header}
-      <div class={twMerge(headerCls(), clsx(headerClass))}>
-        {#if title}
-          <h3>{title}</h3>
-        {:else if header}
-          {@render header()}
+<Dialog bind:open {transition} dismissable={dismissable && !title && !permanent} transitionParams={paramsOptions} {classes} {...restProps} class={base({ fullscreen, class: clsx(theme?.base, className) })}>
+  {#if title || header}
+    <div class={headerCls({ class: clsx(theme?.header, styling.header) })}>
+      {#if title}
+        <h3>{title}</h3>
+        {#if dismissable && !permanent}
+          <CloseButton type="submit" formnovalidate class={clsx(styling.close)} />
         {/if}
-      </div>
-    {/if}
-    <div class={twMerge(body(), clsx(bodyClass))}>
-      {@render children?.()}
+      {:else if header}
+        {@render header()}
+      {/if}
     </div>
-    {#if footer}
-      <div class={twMerge(footerCls(), clsx(footerClass))}>
-        {@render footer()}
-      </div>
-    {/if}
-    {#if dismissable && !permanent}
-      <CloseButton onclick={closeModal} class={twMerge(closeBtn(), clsx(closeBtnClass))} />
-    {/if}
-  </dialog>
-{/if}
+  {/if}
+  <div class={body({ class: clsx(theme?.body, styling.body) })}>
+    {@render children?.()}
+  </div>
+  {#if footer}
+    <div class={footerCls({ class: clsx(theme?.footer, styling.footer) })}>
+      {@render footer()}
+    </div>
+  {/if}
+</Dialog>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1061)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1062)
 ## Props
 @prop children
-@prop oncancel
-@prop onclose
-@prop modal = true
-@prop autoclose = false
 @prop header
 @prop footer
 @prop title
@@ -108,11 +60,12 @@
 @prop headerClass
 @prop bodyClass
 @prop footerClass
-@prop outsideclose = true
 @prop size = "md"
 @prop placement
 @prop class: className
-@prop params
+@prop classes
+@prop transitionParams
 @prop transition = fade
+@prop fullscreen = false
 @prop ...restProps
 -->

@@ -72,19 +72,19 @@
     <div class="flex flex-wrap space-x-2">
       <Label class="mb-4 w-full font-bold">Color</Label>
       {#each colors as colorOption}
-        <Radio labelClass="w-24 my-1" name="color" bind:group={color} color={colorOption as IndicatorProps["color"]} value={colorOption}>{colorOption}</Radio>
+        <Radio classes={{ label: "w-24 my-1" }} name="color" bind:group={color} color={colorOption as IndicatorProps["color"]} value={colorOption}>{colorOption}</Radio>
       {/each}
     </div>
     <div class="flex flex-wrap space-x-4">
       <Label class="mb-4 w-full font-bold">Size</Label>
       {#each sizes as sizeOption}
-        <Radio class="my-1 w-24" name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
+        <Radio class="my-1" classes={{ label: "w-24" }} name="size" bind:group={size} value={sizeOption}>{sizeOption}</Radio>
       {/each}
     </div>
     <div class="flex flex-wrap space-x-4">
       <Label class="mb-4 w-full font-bold">Placement</Label>
       {#each placements as positionOption}
-        <Radio class="my-1 w-32" name="placement" bind:group={placement} value={positionOption}>{positionOption}</Radio>
+        <Radio class="my-1" classes={{ label: "w-32" }} name="placement" bind:group={placement} value={positionOption}>{positionOption}</Radio>
       {/each}
     </div>
     <Button onclick={changeBorder}>{border ? "Remove border" : "Add border"}</Button>

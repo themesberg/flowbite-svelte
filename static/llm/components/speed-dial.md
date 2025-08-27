@@ -607,7 +607,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1485)
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1486)
 
 #### Props
 
@@ -619,30 +619,32 @@ You can change the main button to any element you want.
 - trigger: "hover"
 - textOutside: false
 - class: className
+- classes
 - isOpen: $bindable(false)
 
 ### SpeedDialButton
 
 #### Types
 
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1499)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1501)
 
 #### Props
 
 - children
 - name: ""
 - color: "light"
-- tooltip: context.tooltip
+- tooltip: _tooltip
 - pill: context.pill
 - textOutside: context.textOutside
 - textClass
 - class: className
+- classes
 
 ### SpeedDialTrigger
 
 #### Types
 
-[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1483)
+[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1484)
 
 #### Props
 

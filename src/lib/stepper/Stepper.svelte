@@ -1,39 +1,37 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { stepper, stepperitem, steppercontent } from ".";
+  import { stepper } from ".";
   import { type StepperProps } from "$lib";
-  import { twMerge } from "tailwind-merge";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, steps = [], classes, ...restProps }: StepperProps = $props();
+  let { children, steps = [], class: className, classes, ...restProps }: StepperProps = $props();
+
+  const theme = getTheme("stepper");
 
   setContext("stepperType", "stepper");
 
-  const base = stepper();
+  const { base, item, content } = $derived(stepper());
 </script>
 
-<ol {...restProps} class={twMerge(stepper(), clsx(classes?.stepper))}>
+<ol {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {#if children}
     {@render children()}
   {:else if steps}
     {#each steps as step, index}
       <li
-        class={twMerge(
-          stepperitem({
-            status: step.status,
-            isLast: index === steps.length - 1
-          }),
-          clsx(classes?.stepperitem)
-        )}
+        class={item({
+          status: step.status,
+          isLast: index === steps.length - 1,
+          class: clsx(theme?.item, classes?.item)
+        })}
       >
         <span
-          class={twMerge(
-            steppercontent({
-              status: step.status,
-              isLast: index === steps.length - 1
-            }),
-            clsx(classes?.steppercontent)
-          )}
+          class={content({
+            status: step.status,
+            isLast: index === steps.length - 1,
+            class: clsx(theme?.content, classes?.content)
+          })}
         >
           {#if step.status === "completed"}
             {#if step.icon}
@@ -60,10 +58,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1537)
+[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1541)
 ## Props
 @prop children
 @prop steps = []
+@prop class: className
 @prop classes
 @prop ...restProps
 -->

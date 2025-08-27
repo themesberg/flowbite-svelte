@@ -1,12 +1,16 @@
 <script lang="ts">
   import { footerIcon } from ".";
-  import { type FooterIconProps, cn } from "$lib";
+  import clsx from "clsx";
+  import { type FooterIconProps } from "$lib";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, href, ariaLabel, class: className, ...restProps }: FooterIconProps = $props();
+
+  const theme = getTheme("footerIcon");
 </script>
 
 {#if href}
-  <a {...restProps} {href} aria-label={ariaLabel} class={cn(footerIcon(), className)}>
+  <a {...restProps} {href} aria-label={ariaLabel} class={footerIcon({ class: clsx(theme, className) })}>
     {@render children()}
   </a>
 {:else}
@@ -17,7 +21,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L654)
+[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L652)
 ## Props
 @prop children
 @prop href
