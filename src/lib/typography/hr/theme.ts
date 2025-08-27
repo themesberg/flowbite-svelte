@@ -14,7 +14,7 @@ export const hr = tv({
     withChildren: {
       true: {
         base: "w-full",
-        container: "relative"
+        div: "relative"
       }
     }
   },
