@@ -1,9 +1,0 @@
-export { default as Clearable } from "./Clearable.svelte";
-export { default as Combobox } from "./Combobox.svelte";
-export { default as Default } from "./Default.svelte";
-export { default as Disabled } from "./Disabled.svelte";
-export { default as ElementRef } from "./ElementRef.svelte";
-export { default as Event } from "./Event.svelte";
-export { default as HelperText } from "./HelperText.svelte";
-export { default as Sizes } from "./Sizes.svelte";
-export { default as Validation } from "./Validation.svelte";
