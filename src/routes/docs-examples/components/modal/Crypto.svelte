@@ -1,10 +1,10 @@
 <script>
   import { Button, Modal, Label, Input, Checkbox, P } from "flowbite-svelte";
-  import MetaMask from "../../../../utils/icons/MetaMask.svelte";
-  import CoinbaseWallet from "../../../../utils/icons/CoinbaseWallet.svelte";
-  import OperaWallet from "../../../../utils/icons/OperaWallet.svelte";
-  import Fortmatic from "../../../../utils/icons/Fortmatic.svelte";
-  import WalletConnect from "../../../../utils/icons/WalletConnect.svelte";
+  import MetaMask from "$icons/MetaMask.svelte";
+  import CoinbaseWallet from "$icons/CoinbaseWallet.svelte";
+  import OperaWallet from "$icons/OperaWallet.svelte";
+  import Fortmatic from "$icons/Fortmatic.svelte";
+  import WalletConnect from "$icons/WalletConnect.svelte";
   import { QuestionCircleOutline } from "flowbite-svelte-icons";
   let walletModal = $state(false);
 </script>

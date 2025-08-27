@@ -1,8 +1,8 @@
 <script lang="ts">
   import { page } from "$app/state";
   import { PaginationItem } from "$lib";
-  import ArrowLeft from "../utils/icons/ArrowLeft.svelte";
-  import ArrowRight from "../utils/icons/ArrowRight.svelte";
+  import ArrowLeft from "$icons/ArrowLeft.svelte";
+  import ArrowRight from "$icons/ArrowRight.svelte";
 
   let { children = undefined } = $props();
 

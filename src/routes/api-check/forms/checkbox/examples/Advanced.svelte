@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Checkbox } from "flowbite-svelte";
-  import React from "../../../../utils/icons/React.svelte";
-  import Vue from "../../../../utils/icons/Vue.svelte";
-  import Angular from "../../../../utils/icons/Angular.svelte";
+  import React from "$icons/React.svelte";
+  import Vue from "$icons/Vue.svelte";
+  import Angular from "$icons/Angular.svelte";
 </script>
 
 <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>

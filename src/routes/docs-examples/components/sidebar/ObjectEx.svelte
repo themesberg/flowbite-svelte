@@ -3,7 +3,7 @@
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from "flowbite-svelte-icons";
-  import PlusPlaceholder from "../../../../utils/PlusPlaceholder.svelte";
+  import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
   const spanClass = "flex-1 ms-3 whitespace-nowrap";
   const sidebarEx1 = [
     {

@@ -1,4 +1,5 @@
 import { mdsvex } from "mdsvex";
+import path from "path";
 import mdsvexConfig from "./mdsvex.config.js";
 import adapter from "@sveltejs/adapter-vercel";
 // import adapter from '@sveltejs/adapter-auto';
@@ -32,7 +33,10 @@ const config = {
     }
   },
   kit: {
-    adapter: adapter()
+    adapter: adapter(),
+    alias: {
+      $icons: path.resolve("./src/routes/utils/icons")
+    }
   }
 };
 

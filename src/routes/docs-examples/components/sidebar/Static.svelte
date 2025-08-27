@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, uiHelpers } from "flowbite-svelte";
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from "flowbite-svelte-icons";
-  import PlusPlaceholder from "../../../../utils/PlusPlaceholder.svelte";
+  import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
   const spanClass = "flex-1 ms-3 whitespace-nowrap";

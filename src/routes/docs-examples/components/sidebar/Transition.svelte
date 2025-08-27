@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, SidebarButton, uiHelpers } from "flowbite-svelte";
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid, ArrowRightToBracketOutline, EditSolid, ShoppingBagSolid } from "flowbite-svelte-icons";
-  import PlusPlaceholder from "../../../../utils/PlusPlaceholder.svelte";
+  import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
   import { fade } from "svelte/transition";
   import { sineIn } from "svelte/easing";
   import { page } from "$app/state";

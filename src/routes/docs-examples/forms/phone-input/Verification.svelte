@@ -1,10 +1,10 @@
 <script>
   import { PhoneInput, Label, Dropdown, DropdownItem, Helper, Button } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
-  import Usa from "../../../../utils/icons/Usa.svelte";
-  import Germany from "../../../../utils/icons/Germany.svelte";
-  import Italy from "../../../../utils/icons/Italy.svelte";
-  import China from "../../../../utils/icons/China.svelte";
+  import Usa from "$icons/Usa.svelte";
+  import Germany from "$icons/Germany.svelte";
+  import Italy from "$icons/Italy.svelte";
+  import China from "$icons/China.svelte";
 </script>
 
 <form class="mx-auto max-w-sm">
