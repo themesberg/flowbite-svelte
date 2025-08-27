@@ -21,7 +21,7 @@ The number input component can be used to introduce numeric values inside a form
 Use this component to set a number value inside a form field by applying the type="number" attribute.
 
 ```svelte example
-{@include Default.svelte}
+include Default.svelte}
 ```
 
 ## ZIP code input
@@ -29,7 +29,7 @@ Use this component to set a number value inside a form field by applying the typ
 Use this example with an icon and helper text to set a ZIP code value inside a form field by also applying the pattern attribute to validate the input using a regular expression for a 5 digit number.
 
 ```svelte example
-{@include Zip.svelte}
+include Zip.svelte}
 ```
 
 ## Phone number
@@ -37,7 +37,7 @@ Use this example with an icon and helper text to set a ZIP code value inside a f
 Use this example to set a phone number inside a form field and a dropdown menu to select the country code.
 
 ```svelte example class="h-64"
-{@include Phone.svelte}
+include Phone.svelte}
 ```
 
 ## Control buttons
@@ -45,7 +45,7 @@ Use this example to set a phone number inside a form field and a dropdown menu t
 Use this example with control buttons to increment and decrement the value inside the input field.
 
 ```svelte example
-{@include Control.svelte}
+include Control.svelte}
 ```
 
 ## Control buttons with icon
@@ -53,7 +53,7 @@ Use this example with control buttons to increment and decrement the value insid
 Use this example to also add an icon inside the input field to improve the user experience.
 
 ```svelte example
-{@include ControlIcon.svelte}
+include ControlIcon.svelte}
 ```
 
 ## Counter input
@@ -61,5 +61,5 @@ Use this example to also add an icon inside the input field to improve the user 
 Use this example as an alternative style to the control buttons example above.
 
 ```svelte example
-{@include Counter.svelte}
+include Counter.svelte}
 ```

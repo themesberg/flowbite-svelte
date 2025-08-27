@@ -5,7 +5,10 @@ Here are some guidelines we'd like you to follow before submitting a PR.
 
 ## Create a fork
 
-Create a fork from [flowbite-svelte](https://github.com/themesberg/flowbite-svelte) to your repository first.
+- Create a fork from [flowbite-svelte](https://github.com/themesberg/flowbite-svelte) to your repository first.
+
+- Change `.env.example` file name to `.env`.
+- Run `pnpm build and pnpm check`.
 
 ## Please use pnpm to install
 

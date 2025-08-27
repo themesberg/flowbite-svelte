@@ -6,13 +6,7 @@
 Use the `Label` component when you need to add a label.
 
 ```svelte
-<script>
-  import { Label, Checkbox } from "flowbite-svelte";
-</script>
-
-<Label color="red" class="mt-4 flex items-center font-bold italic">
-  <Checkbox classes={{ div: "me-2" }} /> Your Label
-</Label>
+include Default.svelte}
 ```
 
 ## Component data

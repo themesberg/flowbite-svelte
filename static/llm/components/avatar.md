@@ -18,44 +18,19 @@ Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `Dropdow
 Use this example to create a circle and rounded avatar on an image element.
 
 ```svelte
-<script>
-  import { Avatar } from "flowbite-svelte";
-</script>
-
-<div class="flex space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-2.webp" />
-  <Avatar src="/images/profile-picture-2.webp" cornerStyle="rounded" />
-</div>
+include Default.svelte}
 ```
 
 ## Icon avatar
 
 ```svelte
-<script>
-  import { Avatar } from "flowbite-svelte";
-  import { BugOutline } from "flowbite-svelte-icons";
-</script>
-
-<Avatar>
-  <BugOutline />
-</Avatar>
+include Icon.svelte}
 ```
 
 ## Custom dot
 
 ```svelte
-<script>
-  import { Avatar, Indicator } from "flowbite-svelte";
-  import { BugOutline } from "flowbite-svelte-icons";
-</script>
-
-<Avatar src="/images/profile-picture-3.webp">
-  {#snippet indicator()}
-    <Indicator color="gray" border size="xl" placement="top-right">
-      <BugOutline />
-    </Indicator>
-  {/snippet}
-</Avatar>
+include CustomDot.svelte}
 ```
 
 ## Bordered
@@ -65,12 +40,7 @@ You can apply a border around the avatar component.
 You can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
 
 ```svelte
-<script>
-  import { Avatar } from "flowbite-svelte";
-</script>
-
-<Avatar src="/images/profile-picture-2.webp" border />
-<Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300" />
+include Bordered.svelte}
 ```
 
 ## Placeholder
@@ -78,14 +48,7 @@ You can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring 
 When there is no custom image available a placeholder is displayed.
 
 ```svelte
-<script>
-  import { Avatar } from "flowbite-svelte";
-</script>
-
-<Avatar />
-<Avatar cornerStyle="rounded" />
-<Avatar border />
-<Avatar cornerStyle="rounded" border />
+include Placeholder.svelte}
 ```
 
 ## Placeholder initials
@@ -93,11 +56,7 @@ When there is no custom image available a placeholder is displayed.
 This example can be used to show the initials of the user’s first and last name as a placeholder when no profile picture is available.
 
 ```svelte
-<script>
-  import { Avatar } from "flowbite-svelte";
-</script>
-
-<Avatar>JL</Avatar>
+include PlaceholderInitial.svelte}
 ```
 
 ## Avatar tooltip
@@ -105,16 +64,7 @@ This example can be used to show the initials of the user’s first and last nam
 Use this example to show a tooltip when hovering over the avatar.
 
 ```svelte
-<script>
-  import { Avatar, Tooltip } from "flowbite-svelte";
-</script>
-
-<Avatar data-name="Jese Leos" src="/images/profile-picture-1.webp" />
-<Tooltip>Jese Leos</Tooltip>
-<Avatar data-name="Robert Gouth" src="/images/profile-picture-2.webp" />
-<Tooltip>Robert Gouth</Tooltip>
-<Avatar data-name="Bonnie Green" src="/images/profile-picture-3.webp" />
-<Tooltip>Bonnie Green</Tooltip>
+include AvatarWithTooltip.svelte}
 ```
 
 ## Dot indicator
@@ -122,16 +72,7 @@ Use this example to show a tooltip when hovering over the avatar.
 Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).
 
 ```svelte
-<script>
-  import { Avatar } from "flowbite-svelte";
-</script>
-
-<Avatar src="/images/profile-picture-3.webp" dot={{ color: "red" }} />
-<Avatar src="/images/profile-picture-3.webp" dot={{ placement: "top-right", color: "red" }} cornerStyle="rounded" />
-<Avatar src="/images/profile-picture-5.webp" dot={{ placement: "bottom-right", color: "green" }} />
-<Avatar src="/images/profile-picture-5.webp" dot={{ placement: "bottom-right" }} cornerStyle="rounded" />
-
-<Avatar dot={{}} />
+include DotIndicator.svelte}
 ```
 
 ## Stacked
@@ -139,22 +80,7 @@ Use a dot element relative to the avatar component as an indicator for the user 
 Use this example if you want to stack a group of users by overlapping the avatar components.
 
 ```svelte
-<script>
-  import { Avatar } from "flowbite-svelte";
-</script>
-
-<div class="mb-5 flex">
-  <Avatar src="/images/profile-picture-1.webp" stacked />
-  <Avatar src="/images/profile-picture-2.webp" stacked />
-  <Avatar src="/images/profile-picture-3.webp" stacked />
-  <Avatar stacked />
-</div>
-<div class="flex">
-  <Avatar src="/images/profile-picture-1.webp" stacked />
-  <Avatar src="/images/profile-picture-2.webp" stacked />
-  <Avatar src="/images/profile-picture-3.webp" stacked />
-  <Avatar stacked href="/" class="bg-gray-700 text-sm text-white hover:bg-gray-600">+99</Avatar>
-</div>
+include Stacked.svelte}
 ```
 
 ## Avatar text
@@ -162,17 +88,7 @@ Use this example if you want to stack a group of users by overlapping the avatar
 This example can be used if you want to show additional information in the form of text elements such as the user’s name and join date.
 
 ```svelte
-<script>
-  import { Avatar } from "flowbite-svelte";
-</script>
-
-<div class="flex items-center space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-1.webp" cornerStyle="rounded" />
-  <div class="space-y-1 font-medium dark:text-white">
-    <div>Jese Leos</div>
-    <div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
-  </div>
-</div>
+include AvatarText.svelte}
 ```
 
 ## User dropdown
@@ -180,25 +96,7 @@ This example can be used if you want to show additional information in the form 
 Use this example if you want to show a dropdown menu when clicking on the avatar component.
 
 ```svelte
-<script>
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownGroup } from "flowbite-svelte";
-</script>
-
-<Avatar id="user-drop" src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: "green" }} />
-<Dropdown triggeredBy="#user-drop">
-  <DropdownHeader>
-    <span class="block text-sm">Bonnie Green</span>
-    <span class="block truncate text-sm font-medium">name@flowbite.com</span>
-  </DropdownHeader>
-  <DropdownGroup>
-    <DropdownItem>Dashboard</DropdownItem>
-    <DropdownItem>Settings</DropdownItem>
-    <DropdownItem>Earnings</DropdownItem>
-  </DropdownGroup>
-  <DropdownGroup>
-    <DropdownItem>Sign out</DropdownItem>
-  </DropdownGroup>
-</Dropdown>
+include UserDropdown.svelte}
 ```
 
 ## Sizes
@@ -216,18 +114,7 @@ Preset values are equivalents of:
 |  xl  |     | `w-36 h-36` |
 
 ```svelte
-<script>
-  import { Avatar } from "flowbite-svelte";
-</script>
-
-<div class=" flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-3.webp" size="xs" />
-  <Avatar src="/images/profile-picture-3.webp" size="sm" />
-  <Avatar src="/images/profile-picture-3.webp" size="md" />
-  <Avatar src="/images/profile-picture-3.webp" size="lg" />
-  <Avatar src="/images/profile-picture-3.webp" size="xl" />
-  <Avatar src="/images/profile-picture-3.webp" class="h-28 w-28" />
-</div>
+include Sizes.svelte}
 ```
 
 ## Component data

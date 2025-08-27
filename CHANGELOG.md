@@ -1,5 +1,32 @@
 # Changelog
 
+## 1.13.2
+
+### Patch Changes
+
+- c036e2ac9 docs: badge page
+- a44fa94e7 docs: avatar page
+- cc78f6ad9 chore: cleanup
+- 8370bd045 docs: utilities pages
+- d959f0070 Drawer focus (#1736)
+- 6e0f32a4d docs: all typography pages
+- c0a6166c6 docs: all form pages
+- d72e45df6 docs: forms/radio
+- fb421ae9e fix: ensure button renders custom tag (#1645)
+- c69962f42 fix: speed-dial - layout for text inside (#1737)
+- 6418b0421 fix: #1706 hr relative (#1735)
+- f098ca241 docs: forms/radio
+- 2c140115f fix the focus bug for non-modal drawer (#1734)
+- abea35e90 tests: remove apicheck
+- 2d5e0b933 docs: add examples to docs-examples dir
+- cc21aaf43 docs: add delay to all of [slug]/+page.ts
+- e345d2aab docs(alert): use @include
+- c68f52610 fix: change delay to 2000 and add type
+- 4f3da69b1 workaround for update less dangerous
+- 448e574df reload page load after example update
+- ce094c63a fix: import path for Snapshot
+- 793e3ba70 docs(how-to-contribute): update
+
 ## 1.13.1
 
 ### Patch Changes

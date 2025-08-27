@@ -23,7 +23,7 @@ Get started with Blockquote component when quoting external sources such as quot
 Use this example to quote an external source inside a blockquote element.
 
 ```svelte example
-{@include Default.svelte}
+include Default.svelte}
 ```
 
 ## Solid background
@@ -31,7 +31,7 @@ Use this example to quote an external source inside a blockquote element.
 This example can be used as an alternative style to the default one by applying a solid background color.
 
 ```svelte example
-{@include Solid.svelte}
+include Solid.svelte}
 ```
 
 ## Blockquote icon
@@ -39,7 +39,7 @@ This example can be used as an alternative style to the default one by applying 
 Use this example to show an icon above the blockquote text content.
 
 ```svelte example
-{@include Icon.svelte}
+include Icon.svelte}
 ```
 
 ## Paragraph context
@@ -47,7 +47,7 @@ Use this example to show an icon above the blockquote text content.
 Use this example to show a blockquote component between multiple paragraph elements.
 
 ```svelte example
-{@include Paragraph.svelte}
+include Paragraph.svelte}
 ```
 
 ## User testimonial
@@ -55,7 +55,7 @@ Use this example to show a blockquote component between multiple paragraph eleme
 This example can be used for user testimonials by mentioning the author and occupation of the author.
 
 ```svelte example
-{@include Testimonial.svelte}
+include Testimonial.svelte}
 ```
 
 ## User Review
@@ -63,7 +63,7 @@ This example can be used for user testimonials by mentioning the author and occu
 Use this example to show a user review with rating stars and the name and occupation of the author.
 
 ```svelte example
-{@include Review.svelte}
+include Review.svelte}
 ```
 
 ## Alignment
@@ -75,7 +75,7 @@ Choose from the following examples the blockquote text alignment from starting f
 The default alignment of the blockquote text content is the left side of the document.
 
 ```svelte example
-{@include Left.svelte}
+include Left.svelte}
 ```
 
 ### Center
@@ -83,7 +83,7 @@ The default alignment of the blockquote text content is the left side of the doc
 Use the `alignment="center"` prop to align the text content inside the blockquote to the center.
 
 ```svelte example
-{@include Center.svelte}
+include Center.svelte}
 ```
 
 ### Right
@@ -91,7 +91,7 @@ Use the `alignment="center"` prop to align the text content inside the blockquot
 Use the `alignment="right"` prop to align the blockquote text content to the right side of the page.
 
 ```svelte example
-{@include Right.svelte}
+include Right.svelte}
 ```
 
 ## Sizes
@@ -101,7 +101,7 @@ Use the `alignment="right"` prop to align the blockquote text content to the rig
 Use the `size="lg"` prop to apply the small size for the blockquote component. You can use any size from `xs` to `9xl`. See more details in the Prop section below.
 
 ```svelte example
-{@include Small.svelte}
+include Small.svelte}
 ```
 
 ### Medium
@@ -109,7 +109,7 @@ Use the `size="lg"` prop to apply the small size for the blockquote component. Y
 Use the `size="xl"` to set the default size for the blockquote element.
 
 ```svelte example
-{@include Medium.svelte}
+include Medium.svelte}
 ```
 
 ### Large
@@ -117,7 +117,7 @@ Use the `size="xl"` to set the default size for the blockquote element.
 The `size="2xl"` prop can be used to set a large size for the blockquote component.
 
 ```svelte example
-{@include Large.svelte}
+include Large.svelte}
 ```
 
 ## See also

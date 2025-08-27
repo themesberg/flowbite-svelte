@@ -37,11 +37,6 @@ export const speedDialButton = tv({
       }
     }
   },
-  compoundVariants:[
-    {noTooltip: true,
-      textOutside: false,
-      class: {base: "flex flex-col"}
-    }
-  ],
+  compoundVariants: [{ noTooltip: true, textOutside: false, class: { base: "flex flex-col" } }],
   defaultVariants: {}
 });
