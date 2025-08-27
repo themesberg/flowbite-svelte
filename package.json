@@ -64,7 +64,7 @@
     "eslint-plugin-svelte": "^3.11.0",
     "flowbite-svelte-admin-dashboard": "^1.1.1",
     "flowbite-svelte-blocks": "^2.1.0",
-    "flowbite-svelte-icons": "^2.3.0",
+    "flowbite-svelte-icons": "^3.0.0",
     "flowbite-svelte-illustrations": "^1.0.5",
     "flowbite-typography": "^1.0.5",
     "globals": "^16.3.0",
