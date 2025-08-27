@@ -29,7 +29,7 @@ The radio component can be used to allow the user to choose a single option from
 Use the default example of a radio component with the checked and unchecked state.
 
 ```svelte example class="flex flex-col gap-4"
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## Disabled state
@@ -39,7 +39,7 @@ Apply the `disabled` attribute to the radio component to disallow the selection 
 This example can be used for the disabled state of the radio component by applying the disabled attribute to the input element.
 
 ```svelte example class="flex flex-col gap-4"
-include Disabled.svelte}
+{@include Disabled.svelte}
 ```
 
 ## Alternative syntax
@@ -47,7 +47,7 @@ include Disabled.svelte}
 If you need separate control over the label and the radio you can use the verbose syntax, but then you need to take care about aligning manually.
 
 ```svelte example class="flex flex-col gap-4"
-include AlternativeSyntax.svelte}
+{@include AlternativeSyntax.svelte}
 ```
 
 ## Radio with a link
@@ -55,7 +55,7 @@ include AlternativeSyntax.svelte}
 Use this example if you want to add an anchor link inside the label of the radio component.
 
 ```svelte example hideScript
-include Link.svelte}
+{@include Link.svelte}
 ```
 
 ## Helper text
@@ -63,7 +63,7 @@ include Link.svelte}
 Get started with this example if you want to add a secondary helper text for the radio component.
 
 ```svelte example
-include HelperText.svelte}
+{@include HelperText.svelte}
 ```
 
 ## Bordered
@@ -71,7 +71,7 @@ include HelperText.svelte}
 Use this example of a radio inside a card element to enable a larger area of clicking activation.
 
 ```svelte example
-include Bordered.svelte}
+{@include Bordered.svelte}
 ```
 
 ## Radio list group
@@ -79,7 +79,7 @@ include Bordered.svelte}
 Use this example to show a list of radio items grouped inside a card.
 
 ```svelte example
-include ListGroup.svelte}
+{@include ListGroup.svelte}
 ```
 
 ## Horizontal list group
@@ -87,7 +87,7 @@ include ListGroup.svelte}
 Use this example to show a list of radio items inside a card horizontally.
 
 ```svelte example
-include Horizontal.svelte}
+{@include Horizontal.svelte}
 ```
 
 ## Radio in dropdown
@@ -95,7 +95,7 @@ include Horizontal.svelte}
 Here’s an example of a list group that you can use right away.
 
 ```svelte example class="flex justify-center items-start h-80"
-include Dropdown.svelte}
+{@include Dropdown.svelte}
 ```
 
 ## Inline layout
@@ -103,19 +103,19 @@ include Dropdown.svelte}
 You can align the radio elements horizontally by using a wrapper tag and applying the flex class.
 
 ```svelte example
-include Inline.svelte}
+{@include Inline.svelte}
 ```
 
 You can use the property `inline` as the alternative.
 
 ```svelte example
-include Inline2.svelte}
+{@include Inline2.svelte}
 ```
 
 ## Colors
 
 ```svelte example hideResponsiveButtons
-include Colors.svelte}
+{@include Colors.svelte}
 ```
 
 ## Advanced layout
@@ -123,7 +123,7 @@ include Colors.svelte}
 Use this example of an advanced layout of radio elements where the label parent element can be styled when the radio is checked.
 
 ```svelte example
-include Advanced.svelte}
+{@include Advanced.svelte}
 ```
 
 ## RadioButton
@@ -133,7 +133,7 @@ The special case component - `RadioButton` - is the `Radio` with the [Button](/d
 This component accepts all props from the [Button](/docs/components/buttons) for styling and `Radio` for behaviour.
 
 ```svelte example class="space-y-4"
-include RadioButton.svelte}
+{@include RadioButton.svelte}
 ```
 
 ## RadioButton style
@@ -141,7 +141,7 @@ include RadioButton.svelte}
 Use `color` and `checkedClass` props to style the checked state:
 
 ```svelte example
-include RadioButtonStyle.svelte}
+{@include RadioButtonStyle.svelte}
 ```
 
 ## Component data

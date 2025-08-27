@@ -18,7 +18,7 @@ Hyperlinks are a great way to reduce bounce rate of the current page and encoura
 Use this example to set default styles to an inline link element.
 
 ```svelte
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## A Link as Button
@@ -26,7 +26,7 @@ include Default.svelte}
 This example can be used to use as a button.
 
 ```svelte
-include Button.svelte}
+{@include Button.svelte}
 ```
 
 ## Paragraph
@@ -34,7 +34,7 @@ include Button.svelte}
 Use this example to set a link inside a paragraph with an underline style.
 
 ```svelte
-include Paragraph.svelte}
+{@include Paragraph.svelte}
 ```
 
 ## Icon link
@@ -42,7 +42,7 @@ include Paragraph.svelte}
 This example can be used to set a custom SVG icon inside the hyperlink element.
 
 ```svelte
-include Icon.svelte}
+{@include Icon.svelte}
 ```
 
 ## CTA link
@@ -50,7 +50,7 @@ include Icon.svelte}
 Use this example to set a hyperlink on a CTA element with text and a custom icon.
 
 ```svelte
-include Cta.svelte}
+{@include Cta.svelte}
 ```
 
 ## Card link
@@ -58,7 +58,7 @@ include Cta.svelte}
 Use this example to set a hyperlink on a card component.
 
 ```svelte
-include Card.svelte}
+{@include Card.svelte}
 ```
 
 ## Image link
@@ -66,13 +66,13 @@ include Card.svelte}
 This example can be used to set a hyperlink on an image inside a card component.
 
 ```svelte
-include Image.svelte}
+{@include Image.svelte}
 ```
 
 ## onclick
 
 ```svelte
-include Onclick.svelte}
+{@include Onclick.svelte}
 ```
 
 ## Component data

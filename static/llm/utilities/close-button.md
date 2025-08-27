@@ -6,7 +6,7 @@
 Use `CloseButton` component to close a component.
 
 ```svelte
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## See also

@@ -30,7 +30,7 @@ Import the `StepIndicator` component in a script tag.
 Use the following example of a step indicator element to show a progress of step 2 out of 5.
 
 ```svelte example
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## Glow
@@ -38,7 +38,7 @@ include Default.svelte}
 Use the `glow` prop to add a glow effect to the current step.
 
 ```svelte example
-include Glow.svelte}
+{@include Glow.svelte}
 ```
 
 ## Hide label
@@ -46,7 +46,7 @@ include Glow.svelte}
 Use the `hideLabel` prop to hide the label of the current step.
 
 ```svelte example
-include Hidelabel.svelte}
+{@include Hidelabel.svelte}
 ```
 
 ## Sizes
@@ -54,7 +54,7 @@ include Hidelabel.svelte}
 Use the `size` prop to change the size of a step indicator.
 
 ```svelte example
-include Sizes.svelte}
+{@include Sizes.svelte}
 ```
 
 ## Colors
@@ -62,7 +62,7 @@ include Sizes.svelte}
 Use the `color` prop to change the color of a step indicator.
 
 ```svelte example
-include Colors.svelte}
+{@include Colors.svelte}
 ```
 
 ## Component data

@@ -28,7 +28,7 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 ## Default HR
 
 ```svelte example
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## Trimmed
@@ -36,7 +36,7 @@ include Default.svelte}
 Use this example to show a shorter version of the horizontal line.
 
 ```svelte example
-include Trimmed.svelte}
+{@include Trimmed.svelte}
 ```
 
 ## Icon HR
@@ -44,7 +44,7 @@ include Trimmed.svelte}
 This example can be used to set a custom SVG icon in the middle of the HR element.
 
 ```svelte example
-include Icon.svelte}
+{@include Icon.svelte}
 ```
 
 ## HR with text
@@ -52,7 +52,7 @@ include Icon.svelte}
 Use this example to add a text in the middle of the HR component.
 
 ```svelte example
-include Text.svelte}
+{@include Text.svelte}
 ```
 
 ## HR shape
@@ -60,7 +60,7 @@ include Text.svelte}
 This example can be used to separate content with a HR tag as a shape instead of a line.
 
 ```svelte example
-include Shape.svelte}
+{@include Shape.svelte}
 ```
 
 ## Component data

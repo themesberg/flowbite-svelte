@@ -27,43 +27,43 @@ Import the `Progressradial` component in a script tag.
 ## Progress
 
 ```svelte example class="grid grid-cols-2 sm:grid-cols-4"
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## Colors and labelOutside
 
 ```svelte example class="grid grid-cols-2 sm:grid-cols-4"
-include Colors.svelte}
+{@include Colors.svelte}
 ```
 
 ## Radius
 
 ```svelte example class="grid grid-cols-2 sm:grid-cols-4"
-include Radius.svelte}
+{@include Radius.svelte}
 ```
 
 ## Thickness
 
 ```svelte example class="grid grid-cols-2 sm:grid-cols-4"
-include Thickness.svelte}
+{@include Thickness.svelte}
 ```
 
 ## Size
 
 ```svelte example class="grid grid-cols-2 sm:grid-cols-4"
-include Size.svelte}
+{@include Size.svelte}
 ```
 
 ## Animation
 
 ```svelte example class="grid grid-cols-1"
-include Animation.svelte}
+{@include Animation.svelte}
 ```
 
 ## Starting position
 
 ```svelte example class="grid grid-cols-2 sm:grid-cols-4"
-include StartingPosition.svelte}
+{@include StartingPosition.svelte}
 ```
 
 ## See also

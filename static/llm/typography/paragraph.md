@@ -8,7 +8,7 @@ The paragraph element is one of the most commonly used HTML tags on a document p
 Use this example of a paragraph element to use inside article content or a landing page.
 
 ```svelte
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## contenteditable
@@ -16,7 +16,7 @@ include Default.svelte}
 Since `P.svelte` extends `HTMLAttributes<HTMLElement>`, you can use `contenteditable` attribute.
 
 ```svelte
-include ContentEditable.svelte}
+{@include ContentEditable.svelte}
 ```
 
 ## Leading paragraph
@@ -24,7 +24,7 @@ include ContentEditable.svelte}
 The leading text can be used as the first paragraph inside an article content page.
 
 ```svelte
-include Leading.svelte}
+{@include Leading.svelte}
 ```
 
 ## First letter
@@ -32,7 +32,7 @@ include Leading.svelte}
 Use `firstUpper` prop to highlight the first letter of the paragraph, often used in e-books and PDF documents.
 
 ```svelte
-include FirstLetter.svelte}
+{@include FirstLetter.svelte}
 ```
 
 ## Paragraph link
@@ -40,7 +40,7 @@ include FirstLetter.svelte}
 This example can be used to add a custom styled link element inside the paragraph.
 
 ```svelte
-include Link.svelte}
+{@include Link.svelte}
 ```
 
 ## Paragraph bold
@@ -48,7 +48,7 @@ include Link.svelte}
 Use this example to highlight a piece of text inside the paragraph by using a bolder font weight.
 
 ```svelte
-include Bold.svelte}
+{@include Bold.svelte}
 ```
 
 ## Paragraph underline
@@ -56,7 +56,7 @@ include Bold.svelte}
 This example can be used to underline a certain part of the text inside the paragraph.
 
 ```svelte
-include Underline.svelte}
+{@include Underline.svelte}
 ```
 
 ## Paragraph italic
@@ -64,7 +64,7 @@ include Underline.svelte}
 Use this example to make the font style of the text inside the paragraph italic.
 
 ```svelte
-include Italic.svelte}
+{@include Italic.svelte}
 ```
 
 ## Paragraph popover
@@ -72,7 +72,7 @@ include Italic.svelte}
 Get started with this example to show a popover with extra information inside paragraph elements.
 
 ```svelte
-include Popover.svelte}
+{@include Popover.svelte}
 ```
 
 ## Layout
@@ -84,7 +84,7 @@ Get started with examples of layouts for the paragraph component to separate con
 Use this example to show multiple paragraphs on a single line.
 
 ```svelte
-include OneColumn.svelte}
+{@include OneColumn.svelte}
 ```
 
 ### Two columns even
@@ -92,7 +92,7 @@ include OneColumn.svelte}
 Use this example to separate paragraphs into two columns for better readability.
 
 ```svelte
-include TwoEvenColumns.svelte}
+{@include TwoEvenColumns.svelte}
 ```
 
 ### Three columns even
@@ -100,7 +100,7 @@ include TwoEvenColumns.svelte}
 This example can be used to separate paragraphs into three separate columns.
 
 ```svelte
-include ThreeEvenColumns.svelte}
+{@include ThreeEvenColumns.svelte}
 ```
 
 ### Two columns uneven
@@ -108,7 +108,7 @@ include ThreeEvenColumns.svelte}
 Use this example to separate paragraphs into two uneven columns.
 
 ```svelte
-include TwoUnevenColumns.svelte}
+{@include TwoUnevenColumns.svelte}
 ```
 
 ## Text alignment
@@ -120,7 +120,7 @@ Align the paragraph component to the left (default), center or right side of the
 The default alignment of the paragraph is to the left side and you can use the `align="left"` prop to align it manually.
 
 ```svelte
-include Left.svelte}
+{@include Left.svelte}
 ```
 
 ### Center
@@ -128,7 +128,7 @@ include Left.svelte}
 Use the `align="center"` prop to align the paragraph text to the center.
 
 ```svelte
-include Center.svelte}
+{@include Center.svelte}
 ```
 
 ### Right
@@ -136,7 +136,7 @@ include Center.svelte}
 Use the `align="right"` prop to align the paragraph text the right side of the page.
 
 ```svelte
-include Right.svelte}
+{@include Right.svelte}
 ```
 
 ## Component data

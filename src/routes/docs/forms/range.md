@@ -26,13 +26,13 @@ The range component can be used as an input field to get a number from the user 
 ## Range slider example
 
 ```svelte example
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## Disabled state
 
 ```svelte example
-include Disabled.svelte}
+{@include Disabled.svelte}
 ```
 
 ## Binding value
@@ -42,19 +42,19 @@ Use bind:value to bind the range input value as seen the the following examples.
 ## Min and max
 
 ```svelte example
-include MinAndMax.svelte}
+{@include MinAndMax.svelte}
 ```
 
 ## Steps
 
 ```svelte example
-include Steps.svelte}
+{@include Steps.svelte}
 ```
 
 ## Sizes
 
 ```svelte example class="space-y-6"
-include Sizes.svelte}
+{@include Sizes.svelte}
 ```
 
 ## Unknown attributes

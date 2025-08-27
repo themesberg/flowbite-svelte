@@ -7,3 +7,4 @@ samples/
 *.html
 /src/routes/utils/highlight/*
 /.vercel
+*.md

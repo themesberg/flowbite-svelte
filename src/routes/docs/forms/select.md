@@ -29,13 +29,13 @@ The select input component can be used to gather information from users based on
 Get started with the default example of a select input component to get a single option selection.
 
 ```svelte example
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## Clearable
 
 ```svelte example
-include Clearable.svelte}
+{@include Clearable.svelte}
 ```
 
 ## Event
@@ -43,7 +43,7 @@ include Clearable.svelte}
 `onClear` is a `Select`'s prop and `onchange` is Svelte's built-in event handler for the native `<select>` element.
 
 ```svelte example
-include Event.svelte}
+{@include Event.svelte}
 ```
 
 ## Disabled state
@@ -51,7 +51,7 @@ include Event.svelte}
 Apply the disable state to the select component to disallow the selection of new options.
 
 ```svelte example
-include Disabled.svelte}
+{@include Disabled.svelte}
 ```
 
 ## Underline select
@@ -59,7 +59,7 @@ include Disabled.svelte}
 Use the underline style for the select component as an alternative appearance.
 
 ```svelte example
-include Underline.svelte}
+{@include Underline.svelte}
 ```
 
 ## Select with dropdown
@@ -67,7 +67,7 @@ include Underline.svelte}
 Use this example if you want to create a multi-level dropdown and select component combination.
 
 ```svelte example class="h-64"
-include Dropdown.svelte}
+{@include Dropdown.svelte}
 ```
 
 ## Sizes
@@ -75,7 +75,7 @@ include Dropdown.svelte}
 Get started with the small, default, and large sizes for the select component from the example below.
 
 ```svelte example
-include Sizes.svelte}
+{@include Sizes.svelte}
 ```
 
 ## Custom options
@@ -83,13 +83,13 @@ include Sizes.svelte}
 If you want custom options, put them directly inside the component and leave the `items` prop unset. Furthermore, if the default placeholder is not what you want, set the `placeholder` prop to `""`.
 
 ```svelte example
-include Custom.svelte}
+{@include Custom.svelte}
 ```
 
 ## Accessing Select Element with elementRef
 
 ```svelte example
-include ElementRef.svelte}
+{@include ElementRef.svelte}
 ```
 
 ## MultiSelect
@@ -105,31 +105,31 @@ include ElementRef.svelte}
 Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
 
 ```svelte example class="h-96"
-include Multi.svelte}
+{@include Multi.svelte}
 ```
 
 ### Placeholder
 
 ```svelte example class="h-96"
-include Placeholder.svelte}
+{@include Placeholder.svelte}
 ```
 
 ### Disabled select
 
 ```svelte example class="h-24"
-include MultiDisabled.svelte}
+{@include MultiDisabled.svelte}
 ```
 
 ### MultiSelect Disabled Option
 
 ```svelte example class="h-80"
-include MultiOption.svelte}
+{@include MultiOption.svelte}
 ```
 
 ### Pre-select values
 
 ```svelte example class="h-80"
-include Preselect.svelte}
+{@include Preselect.svelte}
 ```
 
 ### Keyboard Usage
@@ -143,7 +143,7 @@ To customize the look and feel use the `children` snippet to insert inner [`Badg
 Remember to connect the `clear` snippet's prop to trigger option removal.
 
 ```svelte example class="h-96"
-include Customization.svelte}
+{@include Customization.svelte}
 ```
 
 ## Component data

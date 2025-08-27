@@ -30,7 +30,7 @@ Get started with a collection of responsive image components coded with the util
 Use this example to show the a responsive image that won’t grow beyond the maximum original width.
 
 ```svelte example class="flex justify-center" hideScript
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## Image caption
@@ -38,7 +38,7 @@ include Default.svelte}
 This example can be used to add a caption for the image often used inside articles. <Badge large>Warning: the caption is using @html.</Badge>
 
 ```svelte example class="flex justify-center" hideScript
-include Caption.svelte}
+{@include Caption.svelte}
 ```
 
 ## Rounded corners
@@ -50,7 +50,7 @@ Apply rounded corners to the image by using the specific utility classes from Ta
 Use this example to apply rounded corners to the image by using the rounded-size class where the size can be anything from small to extra large.
 
 ```svelte example class="flex justify-center" hideScript
-include BorderRadius.svelte}
+{@include BorderRadius.svelte}
 ```
 
 ### Full circle
@@ -58,7 +58,7 @@ include BorderRadius.svelte}
 Use this example to mask the image inside a circle using the rounded-full utility class from Tailwind CSS.
 
 ```svelte example class="flex justify-center" hideScript
-include FullCircle.svelte}
+{@include FullCircle.svelte}
 ```
 
 ## Image shadow
@@ -66,7 +66,7 @@ include FullCircle.svelte}
 This example can be used to show a shadow effect for the image using the shadow-size utility class.
 
 ```svelte example class="flex justify-center" hideScript
-include Shadow.svelte}
+{@include Shadow.svelte}
 ```
 
 ## Retina-ready
@@ -74,7 +74,7 @@ include Shadow.svelte}
 Use the srcset attribute to set Retina-ready images with double resolution.
 
 ```svelte example class="flex justify-center" hideScript
-include Retina.svelte}
+{@include Retina.svelte}
 ```
 
 ## Image card
@@ -82,7 +82,7 @@ include Retina.svelte}
 Use this example to make the image a card item with a link and a short text description.
 
 ```svelte example class="flex justify-center" hideScript
-include Card.svelte}
+{@include Card.svelte}
 ```
 
 ## Image effects
@@ -94,7 +94,7 @@ Use image effects such as grayscale or blur to change the appearances of the ima
 Use the filter option and apply a grayscale to the image element using the grayscale class.
 
 ```svelte example class="flex justify-center" hideScript
-include Grayscale.svelte}
+{@include Grayscale.svelte}
 ```
 
 ### Blur
@@ -102,7 +102,7 @@ include Grayscale.svelte}
 Apply a blur by using the blur-size utility class from Tailwind CSS to an image component.
 
 ```svelte example class="flex justify-center" hideScript
-include Blur.svelte}
+{@include Blur.svelte}
 ```
 
 ## Alignment
@@ -114,7 +114,7 @@ Align the image component to the left, center or right side of the document page
 By default, the image component will be aligned to the left side of the page.
 
 ```svelte example hideScript
-include Left.svelte}
+{@include Left.svelte}
 ```
 
 ### Center
@@ -122,7 +122,7 @@ include Left.svelte}
 Horizontally align the image to the center of the page using the `mx-auto` class.
 
 ```svelte example hideScript
-include Center.svelte}
+{@include Center.svelte}
 ```
 
 ### Right
@@ -130,7 +130,7 @@ include Center.svelte}
 Use the `ms-auto` class to align the image to the right side of the page.
 
 ```svelte example hideScript
-include Right.svelte}
+{@include Right.svelte}
 ```
 
 ## Sizes
@@ -142,7 +142,7 @@ Set the size of the image using the w-size and h-size or max-w-size utility clas
 Use the `max-w-xs` class to set a small size of the image.
 
 ```svelte example class="flex justify-center" hideScript
-include Small.svelte}
+{@include Small.svelte}
 ```
 
 ### Medium
@@ -150,7 +150,7 @@ include Small.svelte}
 Use the `max-w-md` class to set a medium size of the image.
 
 ```svelte example class="flex justify-center" hideScript
-include Medium.svelte}
+{@include Medium.svelte}
 ```
 
 ### Large
@@ -158,7 +158,7 @@ include Medium.svelte}
 Use the max-w-xl class to set a large size of the image.
 
 ```svelte example class="flex justify-center" hideScript
-include Large.svelte}
+{@include Large.svelte}
 ```
 
 ### Full width
@@ -166,7 +166,7 @@ include Large.svelte}
 Use the max-w-full class to set the full width of the image as long as it doesn’t become larger than the original source.
 
 ```svelte example class="flex justify-center" hideScript
-include FullWidth.svelte}
+{@include FullWidth.svelte}
 ```
 
 ## Enhanced image
@@ -178,7 +178,7 @@ Please follow how to set up `@sveltejs/enhanced-img` at https://svelte.dev/docs/
 Use this example for an enhanced image. In this example an image is stored in `src/images` directory.
 
 ```svelte example
-include Enhanced.svelte}
+{@include Enhanced.svelte}
 ```
 
 ## Component data

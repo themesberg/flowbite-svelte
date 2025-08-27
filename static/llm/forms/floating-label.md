@@ -18,13 +18,13 @@ On this page you will find a three different input field styles including a stan
 Get started with the following three styles for the floating label component and use the label tag as a visual placeholder using the peer-placeholder-shown and peer-focus utility classes from Tailwind CSS.
 
 ```svelte
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## Clearable
 
 ```svelte
-include Clearable.svelte}
+{@include Clearable.svelte}
 ```
 
 ## Event
@@ -32,19 +32,19 @@ include Clearable.svelte}
 Use `clearable` and `clearableOnClick` props.
 
 ```svelte
-include Event.svelte}
+{@include Event.svelte}
 ```
 
 ## Accessing FloatingLabelInput Element with elementRef
 
 ```svelte
-include ElementRef.svelte}
+{@include ElementRef.svelte}
 ```
 
 ## Combobox
 
 ```svelte
-include Combobox.svelte}
+{@include Combobox.svelte}
 ```
 
 ## Disabled state
@@ -52,7 +52,7 @@ include Combobox.svelte}
 Apply the disabled attribute to the input fields to disallow the user from changing the content.
 
 ```svelte
-include Disabled.svelte}
+{@include Disabled.svelte}
 ```
 
 ## Validation
@@ -60,7 +60,7 @@ include Disabled.svelte}
 Use the following examples of input validation for the success and error messages by applying the validation text below the input field and using the green or red color classes from Tailwind CSS.
 
 ```svelte
-include Validation.svelte}
+{@include Validation.svelte}
 ```
 
 ## Sizes
@@ -68,7 +68,7 @@ include Validation.svelte}
 Use the small and default sizes of the floating label input fields from the following example.
 
 ```svelte
-include Sizes.svelte}
+{@include Sizes.svelte}
 ```
 
 ## Helper text
@@ -76,7 +76,7 @@ include Sizes.svelte}
 Add a helper text in addition to the label if you want to show more information below the input field.
 
 ```svelte
-include HelperText.svelte}
+{@include HelperText.svelte}
 ```
 
 ## See also

@@ -26,7 +26,7 @@ description: Use the button toggle to toggle on/off with the appearance of a but
 ## Default single and multiple
 
 ```svelte example class="flex flex-col space-y-4"
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## Button color
@@ -34,19 +34,19 @@ include Default.svelte}
 You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, `lime`, `green`, `emerald`, `teal`, `cyan`, `sky`, `blue`, `indigo`, `violet`, `purple`, `fuchsia`, `pink`, `rose`.
 
 ```svelte example class="grid grid-col-1 sm:grid-col-2 md:grid-col-3 space-y-4"
-include ButtonColor.svelte}
+{@include ButtonColor.svelte}
 ```
 
 ## Group color
 
 ```svelte example class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
-include GroupColor.svelte}
+{@include GroupColor.svelte}
 ```
 
 ## Rounded size
 
 ```svelte example class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
-include RoundedSize.svelte}
+{@include RoundedSize.svelte}
 ```
 
 ## ctxBtnClass, ctxIconClass, class
@@ -54,13 +54,13 @@ include RoundedSize.svelte}
 `ButtonToggle`'s `class` takes precedence over `ctxBtnClass`.
 
 ```svelte example class="flex flex-col space-y-4"
-include Ctx.svelte}
+{@include Ctx.svelte}
 ```
 
 ## Custom icon with color="none"
 
 ```svelte example class="flex flex-col space-y-4"
-include Custom.svelte}
+{@include Custom.svelte}
 ```
 
 ## See also

@@ -16,31 +16,31 @@ The toggle component can be used to receive a simple “yes” or “no” type 
 Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
 
 ```svelte
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## Colors
 
 ```svelte
-include Colors.svelte}
+{@include Colors.svelte}
 ```
 
 ## Sizes
 
 ```svelte
-include Sizes.svelte}
+{@include Sizes.svelte}
 ```
 
 ## Label for off state
 
 ```svelte
-include Label.svelte}
+{@include Label.svelte}
 ```
 
 ## Disabled
 
 ```svelte
-include Disabled.svelte}
+{@include Disabled.svelte}
 ```
 
 ## Component data

@@ -20,7 +20,7 @@ Import a badge component in the script tag.
 Use the following badge elements to indicate counts or labels inside or outside components.
 
 ```svelte
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## Large badges
@@ -28,7 +28,7 @@ include Default.svelte}
 Use the `large` prop to create a large variant of the badges.
 
 ```svelte
-include Large.svelte}
+{@include Large.svelte}
 ```
 
 ## Bordered badge
@@ -36,7 +36,7 @@ include Large.svelte}
 Use the `border` prop to add a border accent to the badge component.
 
 ```svelte
-include Bordered.svelte}
+{@include Bordered.svelte}
 ```
 
 ## Pills badge
@@ -44,7 +44,7 @@ include Bordered.svelte}
 Use the `rounded` prop to make the corners even more rounded like pills for the badge component.
 
 ```svelte
-include Pills.svelte}
+{@include Pills.svelte}
 ```
 
 ## Badges as links
@@ -52,7 +52,7 @@ include Pills.svelte}
 You can also use badges as anchor elements to link to another page.
 
 ```svelte
-include Links.svelte}
+{@include Links.svelte}
 ```
 
 ## Badges with icon
@@ -60,7 +60,7 @@ include Links.svelte}
 You can also use SVG icons inside the badge elements.
 
 ```svelte
-include Icon.svelte}
+{@include Icon.svelte}
 ```
 
 ## Notification badge
@@ -68,7 +68,7 @@ include Icon.svelte}
 To achive the functionality of the notification badge, use the sibling [`Indicator`](/docs/components/indicators) component. Remember to add the `relative` class to parent element.
 
 ```svelte
-include Notification.svelte}
+{@include Notification.svelte}
 ```
 
 ## Button with badge
@@ -76,7 +76,7 @@ include Notification.svelte}
 Use this example to add a badge inside a button component for a count indicator.
 
 ```svelte
-include ButtonBadge.svelte}
+{@include ButtonBadge.svelte}
 ```
 
 ## Badge with icon only
@@ -84,7 +84,7 @@ include ButtonBadge.svelte}
 Alternatively you can also use badges which indicate only a SVG icon.
 
 ```svelte
-include IconOnly.svelte}
+{@include IconOnly.svelte}
 ```
 
 ## Dismissable badges
@@ -92,19 +92,19 @@ include IconOnly.svelte}
 Use the `dimissable` prop to dismiss the current badge.
 
 ```svelte
-include Dismissable.svelte}
+{@include Dismissable.svelte}
 ```
 
 Use the `icon` snippet to add your desired button.
 
 ```svelte
-include Dismissable2.svelte}
+{@include Dismissable2.svelte}
 ```
 
 A `onclose` callback will be dispatched during the dismissal, listen to it if needed.
 
 ```svelte
-include Dismissable3.svelte}
+{@include Dismissable3.svelte}
 ```
 
 ## Dynamic color
@@ -112,13 +112,13 @@ include Dismissable3.svelte}
 The color can be changed dynamically.
 
 ```svelte
-include Dynamic.svelte}
+{@include Dynamic.svelte}
 ```
 
 ## Opening badge
 
 ```svelte
-include Opening.svelte}
+{@include Opening.svelte}
 ```
 
 ## Component data

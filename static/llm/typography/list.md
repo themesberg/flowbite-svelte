@@ -16,7 +16,7 @@ Get started with a collection of list components built with Tailwind CSS for ord
 Use this example to create a default unordered list of items.
 
 ```svelte
-include Unordered.svelte}
+{@include Unordered.svelte}
 ```
 
 ### Icons
@@ -24,7 +24,7 @@ include Unordered.svelte}
 This example can be used to apply custom icons instead of the default bullets for the list items.
 
 ```svelte
-include UnorderedIcons.svelte}
+{@include UnorderedIcons.svelte}
 ```
 
 ### Nested
@@ -32,7 +32,7 @@ include UnorderedIcons.svelte}
 Use this example to nested another list of items inside the parent list element.
 
 ```svelte
-include UnorderedNested.svelte}
+{@include UnorderedNested.svelte}
 ```
 
 ### Unstyled
@@ -40,7 +40,7 @@ include UnorderedNested.svelte}
 Use the `tag="dl"` prop to disable the list style bullets or numbers.
 
 ```svelte
-include UnorderedUnstyled.svelte}
+{@include UnorderedUnstyled.svelte}
 ```
 
 ## Ordered list
@@ -48,7 +48,7 @@ include UnorderedUnstyled.svelte}
 Use the `tag="ol"` prop to create an ordered list of items with numbers.
 
 ```svelte
-include Ordered.svelte}
+{@include Ordered.svelte}
 ```
 
 ### Nested
@@ -56,7 +56,7 @@ include Ordered.svelte}
 This example can be used to nest multiple lists into each other.
 
 ```svelte
-include OrderedNested.svelte}
+{@include OrderedNested.svelte}
 ```
 
 ## Description List
@@ -64,7 +64,7 @@ include OrderedNested.svelte}
 Create a description list by using the `tag="dl"` prop and set the term and name with the following example.
 
 ```svelte
-include Description.svelte}
+{@include Description.svelte}
 ```
 
 ## List with icon
@@ -72,7 +72,7 @@ include Description.svelte}
 Use this example to create a list of items with custom SVG icons instead of the default bullets.
 
 ```svelte
-include Icon.svelte}
+{@include Icon.svelte}
 ```
 
 ## Advanced layout
@@ -80,7 +80,7 @@ include Icon.svelte}
 This example can be used to show more details for each list item such as the user’s name, email and profile picture.
 
 ```svelte
-include Advanced.svelte}
+{@include Advanced.svelte}
 ```
 
 ## Horizontal List
@@ -88,7 +88,7 @@ include Advanced.svelte}
 Use this example to create a horizontally aligned list of items.
 
 ```svelte
-include Horizontal.svelte}
+{@include Horizontal.svelte}
 ```
 
 ## Component data

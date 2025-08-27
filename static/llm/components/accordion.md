@@ -20,7 +20,7 @@ Accordion uses the single selection mode by default i.e. it collapses every othe
 To prevent that behavior set `multiple` property to `true`.
 
 ```svelte
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## Always open
@@ -28,7 +28,7 @@ include Default.svelte}
 Use the `open` prop to make an item open on mount.
 
 ```svelte
-include Open.svelte}
+{@include Open.svelte}
 ```
 
 ## Color option
@@ -36,7 +36,7 @@ include Open.svelte}
 You can control the look and feel of `AccordionItems` by overwriting the `activeClass` and `inactiveClass` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
 
 ```svelte
-include Color.svelte}
+{@include Color.svelte}
 ```
 
 ## Flush accordion
@@ -44,7 +44,7 @@ include Color.svelte}
 Use `flush` prop to remove the rounded borders.
 
 ```svelte
-include Flush.svelte}
+{@include Flush.svelte}
 ```
 
 ## Arrow style
@@ -52,7 +52,7 @@ include Flush.svelte}
 Use the `arrowup` and `arrowdown` snippets to set up and down icons.
 
 ```svelte
-include ArrowStyle.svelte}
+{@include ArrowStyle.svelte}
 ```
 
 ## Icon Accordion
@@ -60,7 +60,7 @@ include ArrowStyle.svelte}
 Use `header` snippet to add your icon and title.
 
 ```svelte
-include Icon.svelte}
+{@include Icon.svelte}
 ```
 
 ## Multiple mode
@@ -68,13 +68,13 @@ include Icon.svelte}
 Use `multiple` to open all accordion items.
 
 ```svelte
-include MultipleMode.svelte}
+{@include MultipleMode.svelte}
 ```
 
 Another example how to use the `multiple` option together with expand all behavior.
 
 ```svelte
-include MultipleMode2.svelte}
+{@include MultipleMode2.svelte}
 ```
 
 ## Custom transitions
@@ -82,7 +82,7 @@ include MultipleMode2.svelte}
 The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#run-time-svelte-transition-slide">slide</A>. Use the `transitionType` and `transitionParams` prop to make custom transitions.
 
 ```svelte
-include Transitions.svelte}
+{@include Transitions.svelte}
 ```
 
 ## Nesting accordions
@@ -90,7 +90,7 @@ include Transitions.svelte}
 Accordions can be nested. All of the mentioned options are supported.
 
 ```svelte
-include Nesting.svelte}
+{@include Nesting.svelte}
 ```
 
 ## Using Svelte’s snapshot to preserve the input
@@ -98,7 +98,7 @@ include Nesting.svelte}
 Use the following example to preserve the input value. First fill out the form, navigate to a different page, and then use your browser’s back button. You’ll notice that your input is preserved automatically.
 
 ```svelte
-include Snapshot.svelte}
+{@include Snapshot.svelte}
 ```
 
 ## Using transitionType="none"
@@ -106,7 +106,7 @@ include Snapshot.svelte}
 When you set transitionType="none" on an Accordion or an AccordionItem, it disables Svelte transitions completely and instead uses CSS display properties (block/hidden) to show or hide content. It prevents Svelte from completely destroying and recreating components when toggling the accordion.
 
 ```svelte
-include TransitionNone.svelte}
+{@include TransitionNone.svelte}
 ```
 
 ## Breakpoints
@@ -118,7 +118,7 @@ Control when accordion items are open or closed based on screen size using Flowb
 Simple Media Query opens accordion item on medium screens and larger:
 
 ```svelte
-include BpBasic.svelte}
+{@include BpBasic.svelte}
 ```
 
 ### Using Breakpoints Object
@@ -126,7 +126,7 @@ include BpBasic.svelte}
 Access multiple breakpoints with a single hook:
 
 ```svelte
-include BpObject.svelte}
+{@include BpObject.svelte}
 ```
 
 ### Advanced Patterns
@@ -134,7 +134,7 @@ include BpObject.svelte}
 Current Breakpoint Display show the current breakpoint in your UI:
 
 ```svelte
-include BpAdvanced.svelte}
+{@include BpAdvanced.svelte}
 ```
 
 ### Range-Based Opening
@@ -142,13 +142,13 @@ include BpAdvanced.svelte}
 Open accordion only within specific screen size ranges:
 
 ```svelte
-include BpRange.svelte}
+{@include BpRange.svelte}
 ```
 
 ### Complex examples
 
 ```svelte
-include BpComplex.svelte}
+{@include BpComplex.svelte}
 ```
 
 ## Component data

@@ -28,25 +28,25 @@ The textarea component is a multi-line text field input that can be used to rece
 Get started with the default example of a textarea component below.
 
 ```svelte example
-include Default.svelte}
+{@include Default.svelte}
 ```
 
 ## Clearable
 
 ```svelte example
-include Clearable.svelte}
+{@include Clearable.svelte}
 ```
 
 ## Event
 
 ```svelte example
-include Event.svelte}
+{@include Event.svelte}
 ```
 
 ## Accessing Textarea Element with elementRef
 
 ```svelte example
-include ElementRef.svelte}
+{@include ElementRef.svelte}
 ```
 
 ## WYSIWYG Editor
@@ -54,7 +54,7 @@ include ElementRef.svelte}
 If you want to add other actions as buttons alongside your textarea component, such as with a WYSIWYG editor, then you can use the example below.
 
 ```svelte example
-include Editor.svelte}
+{@include Editor.svelte}
 ```
 
 ## Comment box
@@ -62,7 +62,7 @@ include Editor.svelte}
 Most often the textarea component is used as the main text field input element in comment sections. Use this example to also apply a helper text and buttons below the textarea itself.
 
 ```svelte example class="space-y-4"
-include Comment.svelte}
+{@include Comment.svelte}
 ```
 
 ## Chatroom input
@@ -70,13 +70,13 @@ include Comment.svelte}
 If you want to build a chatroom component you will usually want to use a textarea element to allow users to write multi-line chunks of text.
 
 ```svelte example class="space-y-4"
-include Chatroom.svelte}
+{@include Chatroom.svelte}
 ```
 
 ## Using Svelte's snapshot to preserve the input
 
 ```svelte example class="h-auto"
-include Snapshot.svelte}
+{@include Snapshot.svelte}
 ```
 
 ## Component data

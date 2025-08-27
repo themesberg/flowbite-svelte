@@ -14,19 +14,19 @@ The file input component can be used to upload one or more files from the device
 ## Helper text
 
 ```svelte
-include HelperText.svelte}
+{@include HelperText.svelte}
 ```
 
 ## Clearable and multiple files
 
 ```svelte
-include Clearable.svelte}
+{@include Clearable.svelte}
 ```
 
 ## Sizes
 
 ```svelte
-include Sizes.svelte}
+{@include Sizes.svelte}
 ```
 
 ## Events
@@ -34,19 +34,19 @@ include Sizes.svelte}
 Add `clearable` and `clearableOnClick` props.
 
 ```svelte
-include Events.svelte}
+{@include Events.svelte}
 ```
 
 ## Accessing Fileupload Element with elementRef
 
 ```svelte
-include ElementRef.svelte}
+{@include ElementRef.svelte}
 ```
 
 ## Dropzone
 
 ```svelte
-include Dropzone.svelte}
+{@include Dropzone.svelte}
 ```
 
 ## Component data
