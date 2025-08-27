@@ -80,7 +80,7 @@
     await tick(); // let transition start
 
     // remove shift for transition end position
-    shifted = false;
+    shifted = !open;
 
     // add offset if closed, remove it when open
     if (offset) dlg.style[placement] = open ? "" : offset;
