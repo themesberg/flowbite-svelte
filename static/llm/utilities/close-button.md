@@ -1,12 +1,11 @@
 # Svelte Close Button - Flowbite
 
-
 ## CloseButton
 
 Use `CloseButton` component to close a component.
 
 ```svelte
-include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## See also
@@ -36,4 +35,3 @@ include Default.svelte}
 - size: "md"
 - class: className
 - svgClass
-

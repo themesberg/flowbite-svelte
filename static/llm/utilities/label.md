@@ -1,12 +1,11 @@
 # Svelte Label - Flowbite
 
-
 ## Label
 
 Use the `Label` component when you need to add a label.
 
 ```svelte
-include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Component data
@@ -23,7 +22,6 @@ include Default.svelte}
 - color: "gray"
 - show: true
 - class: className
-
 
 ### Label styling
 

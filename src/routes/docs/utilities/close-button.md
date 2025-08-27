@@ -24,7 +24,7 @@ description: Get started with the CloseButton components to hide a target elemen
 Use `CloseButton` component to close a component.
 
 ```svelte example
-include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## See also

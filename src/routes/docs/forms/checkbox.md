@@ -29,7 +29,7 @@ The checkbox component can be used to receive one or more selected options from 
 Use this default example of a checbkox element in a checked, unchecked and indeterminate state.
 
 ```svelte example class="flex flex-col gap-4" hideScript
-include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Disabled state
@@ -37,7 +37,7 @@ include Default.svelte}
 This example can be used for the disabled state of the checkbox component by applying the disabled attribute to the input element.
 
 ```svelte example class="flex flex-col gap-4" hideScript
-include Disabled.svelte}
+{#include Disabled.svelte}
 ```
 
 ## Alternative syntax
@@ -45,7 +45,7 @@ include Disabled.svelte}
 If you need separate control over the label and the checkbox you can use the verbose syntax, but then you need to take care about aligning manually.
 
 ```svelte example class="flex flex-col gap-4"
-include alternative.svelte}
+{#include Alternative.svelte}
 ```
 
 ## Checkbox with a link
@@ -53,7 +53,7 @@ include alternative.svelte}
 Use this example if you want to add an anchor link inside the label of the checkbox component.
 
 ```svelte example hideScript
-include Link.svelte}
+{#include Link.svelte}
 ```
 
 ## Helper text
@@ -61,7 +61,7 @@ include Link.svelte}
 Get started with this example if you want to add a secondary helper text for the checkbox component.
 
 ```svelte example
-include HelperText.svelte}
+{#include HelperText.svelte}
 ```
 
 ## Bordered
@@ -69,7 +69,7 @@ include HelperText.svelte}
 Use this example of a checkbox inside a card element to enable a larger area of clicking activation.
 
 ```svelte example hideScript
-include Bordered.svelte}
+{#include Bordered.svelte}
 ```
 
 ## Checkbox list group
@@ -77,13 +77,13 @@ include Bordered.svelte}
 Use this example to show a list of checkbox items grouped inside a card.
 
 ```svelte example
-include ListGroup.svelte}
+{#include ListGroup.svelte}
 ```
 
 You can use the internal loop to render a list of `CheckboxItem`s.
 
 ```svelte example
-include ListGroup2.svelte}
+{#include ListGroup2.svelte}
 ```
 
 ## Horizontal list group
@@ -91,7 +91,7 @@ include ListGroup2.svelte}
 Use this example to show a list of checkbox items inside a card horizontally.
 
 ```svelte example hideScript
-include Horizontal.svelte}
+{#include Horizontal.svelte}
 ```
 
 ## Checkbox dropdown
@@ -99,7 +99,7 @@ include Horizontal.svelte}
 Use this example to show a list of checkbox items inside a dropdown menu.
 
 ```svelte example class="flex justify-center items-start h-96"
-include Dropdown.svelte}
+{#include Dropdown.svelte}
 ```
 
 ## Inline layout
@@ -107,19 +107,19 @@ include Dropdown.svelte}
 You can align the checkbox elements horizontally by using a wrapper tag and applying the flex class.
 
 ```svelte example hideScript
-include Inline.svelte}
+{#include Inline.svelte}
 ```
 
 You can use the property `inline` as the alternative.
 
 ```svelte example hideScript
-include Inline2.svelte}
+{#include Inline2.svelte}
 ```
 
 ## Colors
 
 ```svelte example hideResponsiveButtons
-include Colors.svelte}
+{#include Colors.svelte}
 ```
 
 ## CheckboxButton
@@ -129,7 +129,7 @@ The special case component - `CheckboxButton` - is the `Checkbox` with the [Butt
 This component accepts all props from the [Button](/docs/components/buttons) for styling and `Checkbox` for behaviour.
 
 ```svelte example class="space-y-4"
-include CheckboxButton.svelte}
+{#include CheckboxButton.svelte}
 ```
 
 ## Advanced layout
@@ -137,13 +137,13 @@ include CheckboxButton.svelte}
 Use this example of an advanced layout of checkbox elements where the label parent element can be styled when the checkbox is checked.
 
 ```svelte example
-include Advanced.svelte}
+{#include Advanced.svelte}
 ```
 
 ## Group variable
 
 ```svelte example
-include Group.svelte}
+{#include Group.svelte}
 ```
 
 ## Component data

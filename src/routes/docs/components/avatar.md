@@ -31,19 +31,19 @@ Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `Dropdow
 Use this example to create a circle and rounded avatar on an image element.
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
-include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Icon avatar
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
-include Icon.svelte}
+{#include Icon.svelte}
 ```
 
 ## Custom dot
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
-include CustomDot.svelte}
+{#include CustomDot.svelte}
 ```
 
 ## Bordered
@@ -53,7 +53,7 @@ You can apply a border around the avatar component.
 You can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
-include Bordered.svelte}
+{#include Bordered.svelte}
 ```
 
 ## Placeholder
@@ -61,7 +61,7 @@ include Bordered.svelte}
 When there is no custom image available a placeholder is displayed.
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
-include Placeholder.svelte}
+{#include Placeholder.svelte}
 ```
 
 ## Placeholder initials
@@ -69,7 +69,7 @@ include Placeholder.svelte}
 This example can be used to show the initials of the user’s first and last name as a placeholder when no profile picture is available.
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
-include PlaceholderInitial.svelte}
+{#include PlaceholderInitial.svelte}
 ```
 
 ## Avatar tooltip
@@ -77,7 +77,7 @@ include PlaceholderInitial.svelte}
 Use this example to show a tooltip when hovering over the avatar.
 
 ```svelte example class="flex justify-center gap-4" hideResponsiveButtons
-include AvatarWithTooltip.svelte}
+{#include AvatarWithTooltip.svelte}
 ```
 
 ## Dot indicator
@@ -85,7 +85,7 @@ include AvatarWithTooltip.svelte}
 Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).
 
 ```svelte example class="flex justify-center gap-4" hideResponsiveButtons
-include DotIndicator.svelte}
+{#include DotIndicator.svelte}
 ```
 
 ## Stacked
@@ -93,7 +93,7 @@ include DotIndicator.svelte}
 Use this example if you want to stack a group of users by overlapping the avatar components.
 
 ```svelte example class="flex flex-col justify-center gap-4" hideScript hideResponsiveButtons
-include Stacked.svelte}
+{#include Stacked.svelte}
 ```
 
 ## Avatar text
@@ -101,7 +101,7 @@ include Stacked.svelte}
 This example can be used if you want to show additional information in the form of text elements such as the user’s name and join date.
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
-include AvatarText.svelte}
+{#include AvatarText.svelte}
 ```
 
 ## User dropdown
@@ -109,7 +109,7 @@ include AvatarText.svelte}
 Use this example if you want to show a dropdown menu when clicking on the avatar component.
 
 ```svelte example class="flex justify-center h-96" hideResponsiveButtons
-include UserDropdown.svelte}
+{#include UserDropdown.svelte}
 ```
 
 ## Sizes
@@ -127,7 +127,7 @@ Preset values are equivalents of:
 |  xl  |     | `w-36 h-36` |
 
 ```svelte example class="flex flex-col gap-4" hideScript hideResponsiveButtons
-include Sizes.svelte}
+{#include Sizes.svelte}
 ```
 
 ## Component data

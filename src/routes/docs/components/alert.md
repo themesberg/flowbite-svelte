@@ -29,7 +29,7 @@ Import Alert and set variables in the script tag.
 Use the following examples of alert components to show messages as feedback to your users.
 
 ```svelte example class="flex flex-col gap-4"
-include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Alerts with icon
@@ -37,7 +37,7 @@ include Default.svelte}
 You can also include a descriptive icon to complement the message inside the alert component with the following example.
 
 ```svelte example class="flex flex-col gap-4"
-include Icon.svelte}
+{#include Icon.svelte}
 ```
 
 ## Bordered alerts
@@ -45,7 +45,7 @@ include Icon.svelte}
 Use this example to add a border accent to the alert component instead of just a plain background.
 
 ```svelte example class="flex flex-col gap-4"
-include Bordered.svelte}
+{#include Bordered.svelte}
 ```
 
 ## Alerts with list
@@ -53,7 +53,7 @@ include Bordered.svelte}
 Use this example to show a list and a description inside an alert component.
 
 ```svelte example class="flex flex-col gap-4"
-include AlertWithList.svelte}
+{#include AlertWithList.svelte}
 ```
 
 ## Dismissable alerts
@@ -65,7 +65,7 @@ You can attach the `transition` and `params` prop to control the dissimal animat
 You can use `closeIcon` prop to override the default close button. See the last example.
 
 ```svelte example class="flex flex-col gap-4"
-include Dismissable.svelte}
+{#include Dismissable.svelte}
 ```
 
 ## Border accent
@@ -73,7 +73,7 @@ include Dismissable.svelte}
 Use the following alert components with a border accent as an alternative style.
 
 ```svelte example class="flex flex-col gap-4"
-include BorderAccent.svelte}
+{#include BorderAccent.svelte}
 ```
 
 ## Additional content
@@ -81,7 +81,7 @@ include BorderAccent.svelte}
 The following alert components can be used if you wish to disclose more information inside the element.
 
 ```svelte example class="flex flex-col gap-4"
-include AdditionalContent.svelte}
+{#include AdditionalContent.svelte}
 ```
 
 ## Custom color
@@ -89,7 +89,7 @@ include AdditionalContent.svelte}
 Use `class` to add your custom colors classes.
 
 ```svelte example class="flex flex-col gap-4" hideScript
-include CustomColor.svelte}
+{#include CustomColor.svelte}
 ```
 
 ## Events
@@ -97,7 +97,7 @@ include CustomColor.svelte}
 Use the `onclick` event with `dismissable` prop.
 
 ```svelte example class="flex flex-col gap-4"
-include Event.svelte}
+{#include Event.svelte}
 ```
 
 ## Component data

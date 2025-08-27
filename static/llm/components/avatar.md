@@ -1,6 +1,5 @@
 # Svelte Avatar - Flowbite
 
-
 The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from Flowbite to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
 
 ## Setup
@@ -18,19 +17,19 @@ Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `Dropdow
 Use this example to create a circle and rounded avatar on an image element.
 
 ```svelte
-include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Icon avatar
 
 ```svelte
-include Icon.svelte}
+{#include Icon.svelte}
 ```
 
 ## Custom dot
 
 ```svelte
-include CustomDot.svelte}
+{#include CustomDot.svelte}
 ```
 
 ## Bordered
@@ -40,7 +39,7 @@ You can apply a border around the avatar component.
 You can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
 
 ```svelte
-include Bordered.svelte}
+{#include Bordered.svelte}
 ```
 
 ## Placeholder
@@ -48,7 +47,7 @@ include Bordered.svelte}
 When there is no custom image available a placeholder is displayed.
 
 ```svelte
-include Placeholder.svelte}
+{#include Placeholder.svelte}
 ```
 
 ## Placeholder initials
@@ -56,7 +55,7 @@ include Placeholder.svelte}
 This example can be used to show the initials of the user’s first and last name as a placeholder when no profile picture is available.
 
 ```svelte
-include PlaceholderInitial.svelte}
+{#include PlaceholderInitial.svelte}
 ```
 
 ## Avatar tooltip
@@ -64,7 +63,7 @@ include PlaceholderInitial.svelte}
 Use this example to show a tooltip when hovering over the avatar.
 
 ```svelte
-include AvatarWithTooltip.svelte}
+{#include AvatarWithTooltip.svelte}
 ```
 
 ## Dot indicator
@@ -72,7 +71,7 @@ include AvatarWithTooltip.svelte}
 Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).
 
 ```svelte
-include DotIndicator.svelte}
+{#include DotIndicator.svelte}
 ```
 
 ## Stacked
@@ -80,7 +79,7 @@ include DotIndicator.svelte}
 Use this example if you want to stack a group of users by overlapping the avatar components.
 
 ```svelte
-include Stacked.svelte}
+{#include Stacked.svelte}
 ```
 
 ## Avatar text
@@ -88,7 +87,7 @@ include Stacked.svelte}
 This example can be used if you want to show additional information in the form of text elements such as the user’s name and join date.
 
 ```svelte
-include AvatarText.svelte}
+{#include AvatarText.svelte}
 ```
 
 ## User dropdown
@@ -96,7 +95,7 @@ include AvatarText.svelte}
 Use this example if you want to show a dropdown menu when clicking on the avatar component.
 
 ```svelte
-include UserDropdown.svelte}
+{#include UserDropdown.svelte}
 ```
 
 ## Sizes
@@ -114,7 +113,7 @@ Preset values are equivalents of:
 |  xl  |     | `w-36 h-36` |
 
 ```svelte
-include Sizes.svelte}
+{#include Sizes.svelte}
 ```
 
 ## Component data
@@ -141,9 +140,6 @@ include Sizes.svelte}
 - size: "md"
 - onclick
 
-
 ## References
 
 - [Flowbite Avatar](https://flowbite.com/docs/components/avatar/)
-
-

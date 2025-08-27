@@ -28,7 +28,7 @@ You will also find more advanced search components on this page including dropdo
 ## Search bar example
 
 ```svelte example class="flex flex-col gap-4"
-include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Search input with clearable
@@ -36,19 +36,19 @@ include Default.svelte}
 Use the simplest form of a search input component with an icon and a search button next to the text field.
 
 ```svelte example class="flex flex-col gap-4"
-include Clearable.svelte}
+{#include Clearable.svelte}
 ```
 
 ## Event
 
 ```svelte example
-include Event.svelte}
+{#include Event.svelte}
 ```
 
 ## Accessing Search Element with elementRef
 
 ```svelte example
-include ElementRef.svelte}
+{#include ElementRef.svelte}
 ```
 
 ## Search with dropdown
@@ -56,7 +56,7 @@ include ElementRef.svelte}
 Use this search component with a dropdown to let your users select a category in which they would like the search query to be targeted in.
 
 ```svelte example class="flex flex-col gap-4 h-72"
-include Dropdown.svelte}
+{#include Dropdown.svelte}
 ```
 
 ## Location search
@@ -64,7 +64,7 @@ include Dropdown.svelte}
 Use this example where you can select a country in which you want to search for an address or city.
 
 ```svelte example class="flex flex-col gap-4 h-72"
-include Location.svelte}
+{#include Location.svelte}
 ```
 
 ## Voice Search
@@ -72,13 +72,13 @@ include Location.svelte}
 Get started with this example if you would like to enable voice search for your website and users.
 
 ```svelte example class="space-y-4"
-include Voice.svelte}
+{#include Voice.svelte}
 ```
 
 ## Example
 
 ```svelte example class="space-y-4"
-include Example.svelte}
+{#include Example.svelte}
 ```
 
 ## Component data

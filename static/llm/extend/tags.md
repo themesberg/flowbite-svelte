@@ -1,6 +1,5 @@
 # Svelte Tags
 
-
 The Tags.svelte component is a flexible tag input field that lets users add and manage multiple tags. It supports adding tags with Enter, removing them with Backspace or close buttons, and offers customizable styling options. The component handles keyboard navigation and maintains a reactive array of tag values that can be bound to a parent component.
 
 ## Setup
@@ -16,7 +15,7 @@ Import the `Tags` component in a script tag.
 ## Example
 
 ```svelte
-include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Additional Props
@@ -32,7 +31,7 @@ include Default.svelte}
 - `allowNewTags` (boolean, default: `true`): Allows users to create and add custom tags not included in availableTags when true.
 
 ```svelte
-include AdditionalProps.svelte}
+{#include AdditionalProps.svelte}
 ```
 
 ## See also
@@ -65,4 +64,3 @@ include AdditionalProps.svelte}
 - showHelper: false
 - showAvailableTags: false
 - allowNewTags: true
-

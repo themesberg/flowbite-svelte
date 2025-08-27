@@ -21,7 +21,7 @@ description: The Label components are used throughout the library and you can us
 Use the `Label` component when you need to add a label.
 
 ```svelte example
-include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Component data
