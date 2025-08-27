@@ -30,11 +30,7 @@ Get started with a collection of responsive image components coded with the util
 Use this example to show the a responsive image that won’t grow beyond the maximum original width.
 
 ```svelte example class="flex justify-center" hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" alt="sample 1" />
+{@include Default.svelte}
 ```
 
 ## Image caption
@@ -42,11 +38,7 @@ Use this example to show the a responsive image that won’t grow beyond the max
 This example can be used to add a caption for the image often used inside articles. <Badge large>Warning: the caption is using @html.</Badge>
 
 ```svelte example class="flex justify-center" hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" alt="sample 1" caption="Image caption" />
+{@include Caption.svelte}
 ```
 
 ## Rounded corners
@@ -58,11 +50,7 @@ Apply rounded corners to the image by using the specific utility classes from Ta
 Use this example to apply rounded corners to the image by using the rounded-size class where the size can be anything from small to extra large.
 
 ```svelte example class="flex justify-center" hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" alt="sample 1" class="max-w-lg rounded-lg" />
+{@include BorderRadius.svelte}
 ```
 
 ### Full circle
@@ -70,11 +58,7 @@ Use this example to apply rounded corners to the image by using the rounded-size
 Use this example to mask the image inside a circle using the rounded-full utility class from Tailwind CSS.
 
 ```svelte example class="flex justify-center" hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-4@2x.jpg" alt="sample 1" class="h-96 w-96 rounded-full" />
+{@include FullCircle.svelte}
 ```
 
 ## Image shadow
@@ -82,11 +66,7 @@ Use this example to mask the image inside a circle using the rounded-full utilit
 This example can be used to show a shadow effect for the image using the shadow-size utility class.
 
 ```svelte example class="flex justify-center" hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-2@2x.jpg" alt="sample 1" class="max-w-xl shadow-xl dark:shadow-gray-800" />
+{@include Shadow.svelte}
 ```
 
 ## Retina-ready
@@ -94,11 +74,7 @@ This example can be used to show a shadow effect for the image using the shadow-
 Use the srcset attribute to set Retina-ready images with double resolution.
 
 ```svelte example class="flex justify-center" hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img srcset="/images/examples/image-1.jpg 1x, /images/examples/image-1@2x.jpg 2x" alt="sample 1" class="w-full max-w-xl rounded-lg" />
+{@include Retina.svelte}
 ```
 
 ## Image card
@@ -106,11 +82,7 @@ Use the srcset attribute to set Retina-ready images with double resolution.
 Use this example to make the image a card item with a link and a short text description.
 
 ```svelte example class="flex justify-center" hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/content-gallery-3.png" alt="sample 1" class="rounded-lg" figClass="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" captionClass="absolute bottom-6 px-4 text-lg text-white" caption="Do you want to get notified when a new component is added to Flowbite?" />
+{@include Card.svelte}
 ```
 
 ## Image effects
@@ -122,11 +94,7 @@ Use image effects such as grayscale or blur to change the appearances of the ima
 Use the filter option and apply a grayscale to the image element using the grayscale class.
 
 ```svelte example class="flex justify-center" hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/content-gallery-3.png" alt="My gallery" class="max-w-lg cursor-pointer rounded-lg grayscale filter transition-all duration-300 hover:grayscale-0" />
+{@include Grayscale.svelte}
 ```
 
 ### Blur
@@ -134,11 +102,7 @@ Use the filter option and apply a grayscale to the image element using the grays
 Apply a blur by using the blur-size utility class from Tailwind CSS to an image component.
 
 ```svelte example class="flex justify-center" hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/content-gallery-3.png" alt="My gallery" class="max-w-lg rounded-lg blur-xs transition-all duration-300 hover:blur-none" />
+{@include Blur.svelte}
 ```
 
 ## Alignment
@@ -150,11 +114,7 @@ Align the image component to the left, center or right side of the document page
 By default, the image component will be aligned to the left side of the page.
 
 ```svelte example hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" class="max-w-lg" alt="sample 1" />
+{@include Left.svelte}
 ```
 
 ### Center
@@ -162,11 +122,7 @@ By default, the image component will be aligned to the left side of the page.
 Horizontally align the image to the center of the page using the `mx-auto` class.
 
 ```svelte example hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" class="mx-auto max-w-lg" alt="sample 1" />
+{@include Center.svelte}
 ```
 
 ### Right
@@ -174,11 +130,7 @@ Horizontally align the image to the center of the page using the `mx-auto` class
 Use the `ms-auto` class to align the image to the right side of the page.
 
 ```svelte example hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" class="ms-auto max-w-lg" alt="sample 1" />
+{@include Right.svelte}
 ```
 
 ## Sizes
@@ -190,11 +142,7 @@ Set the size of the image using the w-size and h-size or max-w-size utility clas
 Use the `max-w-xs` class to set a small size of the image.
 
 ```svelte example class="flex justify-center" hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" class="max-w-xs" alt="sample 1" />
+{@include Small.svelte}
 ```
 
 ### Medium
@@ -202,11 +150,7 @@ Use the `max-w-xs` class to set a small size of the image.
 Use the `max-w-md` class to set a medium size of the image.
 
 ```svelte example class="flex justify-center" hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" class="max-w-md" alt="sample 1" />
+{@include Medium.svelte}
 ```
 
 ### Large
@@ -214,11 +158,7 @@ Use the `max-w-md` class to set a medium size of the image.
 Use the max-w-xl class to set a large size of the image.
 
 ```svelte example class="flex justify-center" hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" class="max-w-xl" alt="sample 1" />
+{@include Large.svelte}
 ```
 
 ### Full width
@@ -226,11 +166,7 @@ Use the max-w-xl class to set a large size of the image.
 Use the max-w-full class to set the full width of the image as long as it doesn’t become larger than the original source.
 
 ```svelte example class="flex justify-center" hideScript
-<script>
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" class="max-w-full" alt="sample 1" />
+{@include FullWidth.svelte}
 ```
 
 ## Enhanced image
@@ -242,12 +178,7 @@ Please follow how to set up `@sveltejs/enhanced-img` at https://svelte.dev/docs/
 Use this example for an enhanced image. In this example an image is stored in `src/images` directory.
 
 ```svelte example
-<script lang="ts">
-  import { EnhancedImg } from "flowbite-svelte";
-  import imagePicture from "/src/images/content-gallery-3.png?enhanced";
-</script>
-
-<EnhancedImg src={imagePicture} alt="some alt text" />
+{@include Enhanced.svelte}
 ```
 
 ## Component data

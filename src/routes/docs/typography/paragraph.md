@@ -22,12 +22,7 @@ The paragraph element is one of the most commonly used HTML tags on a document p
 Use this example of a paragraph element to use inside article content or a landing page.
 
 ```svelte example
-<script>
-  import { P } from "flowbite-svelte";
-</script>
-
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-<P weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+{@include Default.svelte}
 ```
 
 ## contenteditable
@@ -35,11 +30,7 @@ Use this example of a paragraph element to use inside article content or a landi
 Since `P.svelte` extends `HTMLAttributes<HTMLElement>`, you can use `contenteditable` attribute.
 
 ```svelte example
-<script>
-  import { P } from "flowbite-svelte";
-</script>
-
-<P contenteditable>Track work across the enterprise through an open, collaborative platform.</P>
+{@include ContentEditable.svelte}
 ```
 
 ## Leading paragraph
@@ -47,12 +38,7 @@ Since `P.svelte` extends `HTMLAttributes<HTMLElement>`, you can use `contentedit
 The leading text can be used as the first paragraph inside an article content page.
 
 ```svelte example
-<script>
-  import { P } from "flowbite-svelte";
-</script>
-
-<P class="mb-3 md:text-xl" weight="light" size="lg" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work and deploy.</P>
-<P weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
+{@include Leading.svelte}
 ```
 
 ## First letter
@@ -60,12 +46,7 @@ The leading text can be used as the first paragraph inside an article content pa
 Use `firstUpper` prop to highlight the first letter of the paragraph, often used in e-books and PDF documents.
 
 ```svelte example
-<script>
-  import { P } from "flowbite-svelte";
-</script>
-
-<P class="mb-3" color="text-gray-500 dark:text-gray-400" firstUpper>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-<P weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+{@include FirstLetter.svelte}
 ```
 
 ## Paragraph link
@@ -73,13 +54,7 @@ Use `firstUpper` prop to highlight the first letter of the paragraph, often used
 This example can be used to add a custom styled link element inside the paragraph.
 
 ```svelte example
-<script>
-  import { P, A } from "flowbite-svelte";
-</script>
-
-<P weight="light" color="text-gray-500 dark:text-gray-400">
-  Track work across the enterprise through an open, collaborative platform. <A href="/">Link issues across Jira</A> and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.
-</P>
+{@include Link.svelte}
 ```
 
 ## Paragraph bold
@@ -87,14 +62,7 @@ This example can be used to add a custom styled link element inside the paragrap
 Use this example to highlight a piece of text inside the paragraph by using a bolder font weight.
 
 ```svelte example
-<script>
-  import { P } from "flowbite-svelte";
-</script>
-
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
-  Track work across the enterprise through an open, collaborative platform. <strong class="font-semibold text-gray-900 dark:text-white">Link issues across Jira</strong>
-  and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.
-</P>
+{@include Bold.svelte}
 ```
 
 ## Paragraph underline
@@ -102,14 +70,7 @@ Use this example to highlight a piece of text inside the paragraph by using a bo
 This example can be used to underline a certain part of the text inside the paragraph.
 
 ```svelte example
-<script>
-  import { P } from "flowbite-svelte";
-</script>
-
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
-  Track work across the enterprise through an open, collaborative platform. <u class="underline">Link issues across Jira</u>
-  and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.
-</P>
+{@include Underline.svelte}
 ```
 
 ## Paragraph italic
@@ -117,14 +78,7 @@ This example can be used to underline a certain part of the text inside the para
 Use this example to make the font style of the text inside the paragraph italic.
 
 ```svelte example
-<script>
-  import { P } from "flowbite-svelte";
-</script>
-
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
-  Track work across the enterprise through an open, collaborative platform. <em class="font-italic">Link issues across Jira</em>
-  and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.
-</P>
+{@include Italic.svelte}
 ```
 
 ## Paragraph popover
@@ -132,26 +86,7 @@ Use this example to make the font style of the text inside the paragraph italic.
 Get started with this example to show a popover with extra information inside paragraph elements.
 
 ```svelte example class="flex items-end h-96"
-<script>
-  import { Popover, P, A } from "flowbite-svelte";
-  import { ChevronRightOutline } from "flowbite-svelte-icons";
-</script>
-
-<P weight="light" color="text-gray-500 dark:text-gray-400">
-  Due to its central geographic location in Southern Europe, <A href="/" id="popover-image">Italy</A> has historically been home to myriad peoples and cultures. In addition to the various ancient peoples dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians founded colonies mostly in insular Italy
-</P>
-<Popover triggeredBy="#popover-image" class="w-96 text-sm font-light" defaultClass="">
-  <div class="grid grid-cols-5">
-    <div class="col-span-3 p-3">
-      <div class="space-y-2">
-        <h3 class="text-xl font-medium text-gray-900 dark:text-white">About Italy</h3>
-        <p class="text-gray-500 dark:text-gray-400">Italy is located in the middle of the Mediterranean Sea, in Southern Europe it is also considered part of Western Europe.</p>
-        <A href="/">Read more <ChevronRightOutline class="ms-1.5 h-2 w-2" /></A>
-      </div>
-    </div>
-    <img src="/images/image-1.webp" class="col-span-2 h-full rounded-e-lg" alt="Italy map" />
-  </div>
-</Popover>
+{@include Popover.svelte}
 ```
 
 ## Layout
@@ -163,12 +98,7 @@ Get started with examples of layouts for the paragraph component to separate con
 Use this example to show multiple paragraphs on a single line.
 
 ```svelte example
-<script>
-  import { P } from "flowbite-svelte";
-</script>
-
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+{@include OneColumn.svelte}
 ```
 
 ### Two columns even
@@ -176,16 +106,7 @@ Use this example to show multiple paragraphs on a single line.
 Use this example to separate paragraphs into two columns for better readability.
 
 ```svelte example
-<script>
-  import { P, Layout } from "flowbite-svelte";
-</script>
-
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-<Layout class="gap-6">
-  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
-</Layout>
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+{@include TwoEvenColumns.svelte}
 ```
 
 ### Three columns even
@@ -193,17 +114,7 @@ Use this example to separate paragraphs into two columns for better readability.
 This example can be used to separate paragraphs into three separate columns.
 
 ```svelte example
-<script>
-  import { P, Layout } from "flowbite-svelte";
-</script>
-
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-<Layout class="grid-cols-1 gap-6 sm:grid-cols-3">
-  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
-  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
-</Layout>
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+{@include ThreeEvenColumns.svelte}
 ```
 
 ### Two columns uneven
@@ -211,19 +122,7 @@ This example can be used to separate paragraphs into three separate columns.
 Use this example to separate paragraphs into two uneven columns.
 
 ```svelte example
-<script>
-  import { P, Layout } from "flowbite-svelte";
-</script>
-
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-<Layout class="grid-cols-1 gap-6 sm:grid-cols-3">
-  <div class="col-span-2">
-    <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-    <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
-  </div>
-  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
-</Layout>
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+{@include TwoUnevenColumns.svelte}
 ```
 
 ## Text alignment
@@ -235,11 +134,7 @@ Align the paragraph component to the left (default), center or right side of the
 The default alignment of the paragraph is to the left side and you can use the `align="left"` prop to align it manually.
 
 ```svelte example
-<script>
-  import { P } from "flowbite-svelte";
-</script>
-
-<P align="left">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
+{@include Left.svelte}
 ```
 
 ### Center
@@ -247,11 +142,7 @@ The default alignment of the paragraph is to the left side and you can use the `
 Use the `align="center"` prop to align the paragraph text to the center.
 
 ```svelte example
-<script>
-  import { P } from "flowbite-svelte";
-</script>
-
-<P align="center">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
+{@include Center.svelte}
 ```
 
 ### Right
@@ -259,11 +150,7 @@ Use the `align="center"` prop to align the paragraph text to the center.
 Use the `align="right"` prop to align the paragraph text the right side of the page.
 
 ```svelte example
-<script>
-  import { P } from "flowbite-svelte";
-</script>
-
-<P align="right">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
+{@include Right.svelte}
 ```
 
 ## Component data
