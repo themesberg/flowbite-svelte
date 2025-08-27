@@ -78,7 +78,7 @@ export type DrawerHandleVariants = VariantProps<typeof drawerhandle> & Classes<t
 
 export const drawerhandle = tv({
   slots: {
-    base: "p-4 absolute flex select-none cursor-grab active:cursor-grabbing focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-300 dark:focus-visible:ring-offset-gray-800",
+    base: "p-4 absolute flex select-none cursor-grab active:cursor-grabbing focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-gray-500",
     handle: "absolute rounded-lg bg-gray-300 dark:bg-gray-600"
   },
   variants: {
