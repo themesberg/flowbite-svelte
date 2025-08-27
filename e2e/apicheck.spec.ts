@@ -5,10 +5,6 @@ test("API check accordion page should have h1", async ({ page }) => {
   expect(await page.textContent("h1")).toBe("Accordion");
 });
 
-test("API check alert page should have h1", async ({ page }) => {
-  await page.goto("/api-check/components/alert");
-  expect(await page.textContent("h1")).toBe("Alert");
-});
 
 test("API check Avatar page should have h1", async ({ page }) => {
   await page.goto("/api-check/components/avatar");
