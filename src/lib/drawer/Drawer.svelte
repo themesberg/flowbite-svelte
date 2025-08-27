@@ -6,7 +6,7 @@
   import { sineIn } from "svelte/easing";
   import { fly } from "svelte/transition";
   import { drawer } from ".";
-  import { setContext } from "svelte";
+  import { setContext, tick } from "svelte";
 
   let { children, open = $bindable(false), hidden = $bindable(), modal, offset, width, dismissable = offset ? false : undefined, placement = "left", class: className, transitionParams, transition = fly, outsideclose, activateClickOutside, ...restProps }: DrawerProps = $props();
 
@@ -53,7 +53,15 @@
 
   function init(node: HTMLDialogElement) {
     // set initial offset, later it will be switched on/off by onintrostart
-    if (offset) node.style[placement] = offset;
+    if (offset) {
+      node.style[placement] = offset;
+      tick().then(() => {
+        // few borwsers give focus when dialog is open even in non-modal version
+        // to prevent that we set dialog to inert during creation and remove it
+        // as soon as ready
+        node.inert = false;
+      });
+    }
   }
 
   function onintrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
@@ -82,7 +90,7 @@
 </Dialog>
 
 {#if offset && !open}
-  <Dialog {@attach init} open modal={false} {dismissable} {outsideclose} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <Dialog {@attach init} open modal={false} {dismissable} {outsideclose} inert {...restProps} class={base({ class: clsx(theme?.base, className) })}>
     {@render children?.()}
   </Dialog>
 {/if}
