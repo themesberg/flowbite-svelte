@@ -56,7 +56,7 @@
     if (offset) {
       node.style[placement] = offset;
       tick().then(() => {
-        // few borwsers give focus when dialog is open even in non-modal version
+        // few browsers give focus when dialog is open even in non-modal version
         // to prevent that we set dialog to inert during creation and remove it
         // as soon as ready
         node.inert = false;
@@ -64,7 +64,7 @@
     }
   }
 
-  function onintrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
+  async function onintrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
     // set the values for transition start position
     const dlg = ev.currentTarget;
     const { innerWidth = 0, innerHeight = 0 } = dlg.ownerDocument.defaultView ?? {};
@@ -74,13 +74,13 @@
     x = placement === "left" ? rect.left : placement === "right" ? rect.right - innerWidth : undefined;
     y = placement === "top" ? rect.top : placement === "bottom" ? rect.bottom - innerHeight : undefined;
 
-    tick().then(() => {
-      // remove shift for transition end position
-      shifted = false;
+    await tick(); // let transition start
 
-      // add offset if closed, remove it when open
-      if (offset) dlg.style[placement] = open ? "" : offset;
-    });
+    // remove shift for transition end position
+    shifted = false;
+
+    // add offset if closed, remove it when open
+    if (offset) dlg.style[placement] = open ? "" : offset;
   }
 
   function onoutrostart(ev: CustomEvent & { currentTarget: HTMLDialogElement }) {
