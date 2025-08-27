@@ -7,6 +7,7 @@
 
 <Textarea bind:elementRef={textareaRef} bind:value={textContent} placeholder="Type something here..." class="w-full" />
 <Button
+  class="mt-2"
   onclick={() => {
     textareaRef?.focus();
     textareaRef?.setSelectionRange(0, textareaRef.value.length);
