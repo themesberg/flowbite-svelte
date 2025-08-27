@@ -11,7 +11,7 @@
   import ExampleRtl from "./ExampleRTL.svelte";
   // import { GitHub } from '$lib';
 
-  let { src = undefined, meta = undefined, example, code, divClass = "relative w-full mx-auto bg-linear-to-r bg-white dark:bg-gray-900 p-6" } = $props();
+  let { src = undefined, meta = undefined, example, code, divClass = "relative w-full mx-auto bg-linear-to-r bg-white dark:bg-gray-900 p-5" } = $props();
 
   type NotificationDirection = "ltr" | "rtl" | "auto";
 
