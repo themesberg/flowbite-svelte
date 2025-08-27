@@ -29,13 +29,7 @@ The checkbox component can be used to receive one or more selected options from 
 Use this default example of a checbkox element in a checked, unchecked and indeterminate state.
 
 ```svelte example class="flex flex-col gap-4" hideScript
-<script lang="ts">
-  import { Checkbox } from "flowbite-svelte";
-</script>
-
-<Checkbox>Default checkbox</Checkbox>
-<Checkbox checked>Checked state</Checkbox>
-<Checkbox indeterminate>Indeterminate state</Checkbox>
+{@include Default.svelte}
 ```
 
 ## Disabled state

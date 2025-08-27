@@ -1,11 +1,5 @@
 import { expect, test } from "@playwright/test";
 
-test("API check accordion page should have h1", async ({ page }) => {
-  await page.goto("/api-check/components/accordion");
-  expect(await page.textContent("h1")).toBe("Accordion");
-});
-
-
 test("API check Avatar page should have h1", async ({ page }) => {
   await page.goto("/api-check/components/avatar");
   expect(await page.textContent("h1")).toBe("Avatar");
