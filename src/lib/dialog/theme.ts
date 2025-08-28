@@ -6,7 +6,7 @@ export type DialogVariants = VariantProps<typeof dialog> & Classes<typeof dialog
 export const dialog = tv({
   slots: {
     base: "backdrop:bg-gray-900/50 open:flex flex-col bg-white dark:bg-gray-800",
-    form: "flex flex-col h-full w-full border-inherit dark:border-inherit divide-inherit dark:divide-inherit",
+    form: "flex flex-col w-full border-inherit dark:border-inherit divide-inherit dark:divide-inherit",
     close: "absolute top-2.5 end-2.5"
   },
   variants: {

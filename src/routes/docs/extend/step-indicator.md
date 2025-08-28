@@ -46,7 +46,7 @@ Use the `glow` prop to add a glow effect to the current step.
 Use the `hideLabel` prop to hide the label of the current step.
 
 ```svelte example
-{#include Hidelabel.svelte}
+{#include HideLabel.svelte}
 ```
 
 ## Sizes
