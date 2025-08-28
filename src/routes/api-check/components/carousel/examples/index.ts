@@ -1,9 +1,0 @@
-export { default as Advanced } from "./Advanced.svelte";
-export { default as Basic } from "./Basic.svelte";
-export { default as Caption } from "./Caption.svelte";
-export { default as Controls } from "./Controls.svelte";
-export { default as Default } from "./Default.svelte";
-export { default as Indicators } from "./Indicators.svelte";
-export { default as Links } from "./Links.svelte";
-export { default as Thumbnails } from "./Thumbnails.svelte";
-export { default as Transition } from "./Transition.svelte";
