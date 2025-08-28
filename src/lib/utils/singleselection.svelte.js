@@ -14,8 +14,7 @@ const SINGLE_SELECTION_KEY = Symbol("singleton");
  * @param {boolean} [nonReactive=false] - use a non-reactive placeholder to allow multiple selection and keep context shallow
  * @returns {SingleSelectionContext<T>}
  */
-export function createSingleSelectionContext(nonReactive) {
-  // @ts-ignore - $state is assumed to be a Svelte store or similar
+export function createSingleSelectionContext(nonReactive = false) {
   const context = $state({ value: undefined });
   return setContext(SINGLE_SELECTION_KEY, nonReactive ? {} : context);
 }
@@ -39,9 +38,8 @@ function setSelected(context, open, value) {
  * @returns {(open: boolean, v?: T) => SingleSelectionContext<T>}
  */
 export function useSingleSelection(callback) {
-  const context = getContext(SINGLE_SELECTION_KEY) ?? createSingleSelectionContext();
+  const context = getContext(SINGLE_SELECTION_KEY) ?? createSingleSelectionContext(false);
 
-  // @ts-ignore - $effect is assumed to be a Svelte reactive helper
   $effect(() => {
     if (context.value !== undefined) callback(context.value);
   });
