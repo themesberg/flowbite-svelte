@@ -27,11 +27,7 @@ thumnailSize: w-64
 Use this example to create a native browser video player and apply the w-full utility class from Tailwind CSS to span the full width of the parent container.
 
 ```svelte example hideScript
-<script lang="ts">
-  import { Video } from "flowbite-svelte";
-</script>
-
-<Video src="/videos/flowbite.mp4" controls trackSrc="flowbite.mp4" />
+{#include Default.svelte}
 ```
 
 ## Autoplay
@@ -39,11 +35,7 @@ Use this example to create a native browser video player and apply the w-full ut
 Use the autoplay attribute on the video component to automatically start the video when the page has been loaded.
 
 ```svelte example hideScript
-<script lang="ts">
-  import { Video } from "flowbite-svelte";
-</script>
-
-<Video src="/videos/flowbite.mp4" autoplay controls trackSrc="flowbite.mp4" />
+{#include Autoplay.svelte}
 ```
 
 ## Muted
@@ -51,11 +43,7 @@ Use the autoplay attribute on the video component to automatically start the vid
 Use the muted attribute together with the autoplay option to start the video while the sound is muted.
 
 ```svelte example hideScript
-<script lang="ts">
-  import { Video } from "flowbite-svelte";
-</script>
-
-<Video src="/videos/flowbite.mp4" autoplay muted controls trackSrc="flowbite.mp4" />
+{#include Muted.svelte}
 ```
 
 ## Sizes
@@ -67,11 +55,7 @@ Set the width and height of the video component using the `w-{size}` and `h-{siz
 Use the `w-{size}` class to set the height of the video player.
 
 ```svelte example hideScript
-<script lang="ts">
-  import { Video } from "flowbite-svelte";
-</script>
-
-<Video src="/videos/flowbite.mp4" controls class="w-96" trackSrc="flowbite.mp4" />
+{#include Width.svelte}
 ```
 
 ### Height
@@ -79,11 +63,7 @@ Use the `w-{size}` class to set the height of the video player.
 Use the `h-{size}` class to set the height of the video player.
 
 ```svelte example hideScript
-<script lang="ts">
-  import { Video } from "flowbite-svelte";
-</script>
-
-<Video src="/videos/flowbite.mp4" controls class="h-80" trackSrc="flowbite.mp4" />
+{#include Height.svelte}
 ```
 
 ### Responsive
@@ -91,11 +71,7 @@ Use the `h-{size}` class to set the height of the video player.
 Use the following example to make the video responsive across all devices and viewports.
 
 ```svelte example hideScript
-<script lang="ts">
-  import { Video } from "flowbite-svelte";
-</script>
-
-<Video src="/videos/flowbite.mp4" controls class="h-auto w-full max-w-full" trackSrc="flowbite.mp4" />
+{#include Responsive.svelte}
 ```
 
 ### Custom styles
@@ -103,11 +79,7 @@ Use the following example to make the video responsive across all devices and vi
 Customize the video player appearance using the utility classes from Tailwind CSS such as `rounded-{size}` or border to set rounded corners and border.
 
 ```svelte example hideScript
-<script lang="ts">
-  import { Video } from "flowbite-svelte";
-</script>
-
-<Video src="/videos/flowbite.mp4" controls class="h-auto w-full max-w-full rounded-lg border border-gray-200 dark:border-gray-700" trackSrc="flowbite.mp4" />
+{#include Custom.svelte}
 ```
 
 ## Component data

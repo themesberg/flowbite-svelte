@@ -4,10 +4,10 @@
 
 ### Patch Changes
 
-- - 7f0556c54 docs: spinner, stepper and table
-  - 1624b8dca (origin/main, origin/HEAD) fix #1743 (#1744)
-  - adba1c840 docs: spinner, stepper, and table
-  - a80b1a63b fix: add lang=ts to script
+- 7f0556c54 docs: spinner, stepper and table
+- 1624b8dca (origin/main, origin/HEAD) fix #1743 (#1744)
+- adba1c840 docs: spinner, stepper, and table
+- a80b1a63b fix: add lang=ts to script
 
 ## 1.13.3
 
