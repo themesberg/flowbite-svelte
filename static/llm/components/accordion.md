@@ -1,5 +1,6 @@
 # Svelte Accordion - Flowbite
 
+
 The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.
 
 A popular use case would be the “Frequently Asked Questions” section of a website or page when you can show questions and answers for each child element.
@@ -156,7 +157,7 @@ Open accordion only within specific screen size ranges:
 
 #### Types
 
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L170)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L169)
 
 #### Props
 
@@ -172,7 +173,7 @@ Open accordion only within specific screen size ranges:
 
 #### Types
 
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L178)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L177)
 
 #### Props
 
@@ -190,6 +191,9 @@ Open accordion only within specific screen size ranges:
 - headerClass
 - contentClass
 
+
 ## References
 
 - [Flowbite Accordion](https://flowbite.com/docs/components/accordion/)
+
+

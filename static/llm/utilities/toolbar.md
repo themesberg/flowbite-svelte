@@ -1,5 +1,6 @@
 # Svelte Toolbar - Flowbite
 
+
 ## Setup
 
 ```svelte
@@ -48,7 +49,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1130)
+[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1129)
 
 #### Props
 
@@ -63,7 +64,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1136)
+[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1135)
 
 #### Props
 
@@ -78,7 +79,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1134)
+[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1133)
 
 #### Props
 
@@ -87,6 +88,7 @@ Most often the textarea component is used as the main text field input element i
 - padding
 - position: "middle"
 - class: className
+
 
 ### Toolbar styling
 

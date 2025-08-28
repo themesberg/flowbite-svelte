@@ -1,5 +1,6 @@
 # Svelte Checkbox - Flowbite
 
+
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants.
 
 ## Setup
@@ -31,7 +32,7 @@ This example can be used for the disabled state of the checkbox component by app
 If you need separate control over the label and the checkbox you can use the verbose syntax, but then you need to take care about aligning manually.
 
 ```svelte
-{#include alternative.svelte}
+{#include Alternative.svelte}
 ```
 
 ## Checkbox with a link
@@ -138,7 +139,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 #### Types
 
-[CheckboxProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L678)
+[CheckboxProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L677)
 
 #### Props
 
@@ -158,6 +159,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 - disabled: false
 - value
 - labelProps: {
+
 
 ## References
 

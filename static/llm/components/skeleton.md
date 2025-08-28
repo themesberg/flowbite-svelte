@@ -1,5 +1,6 @@
 # Svelte Skeleton - Flowbite
 
+
 Use the skeleton component to indicate a loading status with placeholder elements that look very similar to the type of content that is being loaded such as paragraphs, images, videos, and more.
 
 ## Setup
@@ -13,15 +14,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 ## Default skeleton
 
 ```svelte
-<script>
-  import { Skeleton } from "flowbite-svelte";
-</script>
-
-<Skeleton size="sm" class="my-8" />
-<Skeleton size="md" class="my-8" />
-<Skeleton size="lg" class="my-8" />
-<Skeleton size="xl" class="my-8" />
-<Skeleton size="2xl" class="mt-8 mb-2.5" />
+{#include Default.svelte}
 ```
 
 ## Image placeholder
@@ -29,86 +22,43 @@ Use the skeleton component to indicate a loading status with placeholder element
 To display image placeholder without text, use `imgOnly` prop as seen in the following examples.
 
 ```svelte
-<script>
-  import { ImagePlaceholder } from "flowbite-svelte";
-</script>
-
-<ImagePlaceholder size="sm" />
-<ImagePlaceholder imgOnly />
-<ImagePlaceholder size="md" />
-<ImagePlaceholder size="lg" />
+{#include Image.svelte}
 ```
 
 ## Video placeholder
 
 ```svelte
-<script>
-  import { VideoPlaceholder } from "flowbite-svelte";
-</script>
-
-<VideoPlaceholder />
-<VideoPlaceholder size="md" class="mt-8" />
-<VideoPlaceholder size="lg" class="mt-8" />
-<VideoPlaceholder size="xl" class="mt-8" />
-<VideoPlaceholder size="2xl" class="mt-8" />
+{#include Video.svelte}
 ```
 
 ## Text placeholder
 
 ```svelte
-<script>
-  import { TextPlaceholder } from "flowbite-svelte";
-</script>
-
-<TextPlaceholder />
-<TextPlaceholder size="md" class="mt-8" />
-<TextPlaceholder size="lg" class="mt-8" />
-<TextPlaceholder size="xl" class="mt-8" />
-<TextPlaceholder size="2xl" class="mt-8" />
+{#include Text.svelte}
 ```
 
 ## Card placeholder
 
 ```svelte
-<script>
-  import { CardPlaceholder } from "flowbite-svelte";
-</script>
-
-<CardPlaceholder />
-<CardPlaceholder size="md" class="mt-8" />
-<CardPlaceholder size="lg" class="mt-8" />
-<CardPlaceholder size="xl" class="mt-8" />
-<CardPlaceholder size="2xl" class="mt-8" />
+{#include Card.svelte}
 ```
 
 ## Widget placeholder
 
 ```svelte
-<script>
-  import { WidgetPlaceholder } from "flowbite-svelte";
-</script>
-
-<WidgetPlaceholder />
+{#include Widget.svelte}
 ```
 
 ## List placeholder
 
 ```svelte
-<script>
-  import { ListPlaceholder } from "flowbite-svelte";
-</script>
-
-<ListPlaceholder />
+{#include List.svelte}
 ```
 
 ## Testimonial placeholder
 
 ```svelte
-<script>
-  import { TestimonialPlaceholder } from "flowbite-svelte";
-</script>
-
-<TestimonialPlaceholder />
+{#include Testimonial.svelte}
 ```
 
 ## Component data
@@ -117,7 +67,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1424)
+[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1423)
 
 #### Props
 
@@ -129,7 +79,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1428)
+[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1427)
 
 #### Props
 
@@ -143,7 +93,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1434)
+[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1433)
 
 #### Props
 
@@ -157,7 +107,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1440)
+[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1439)
 
 #### Props
 
@@ -169,7 +119,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1444)
+[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1443)
 
 #### Props
 
@@ -180,7 +130,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1446)
+[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1445)
 
 #### Props
 
@@ -192,7 +142,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1450)
+[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1449)
 
 #### Props
 
@@ -203,13 +153,16 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1454)
+[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1453)
 
 #### Props
 
 - class: className
 - classes
 
+
 ## References
 
 - [Flowbite Skeleton](https://flowbite.com/docs/components/sidebar/)
+
+

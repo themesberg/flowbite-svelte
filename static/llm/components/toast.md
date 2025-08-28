@@ -1,5 +1,6 @@
 # Svelte Toasts - Flowbite
 
+
 The toast component can be used to enhance your website’s interactivity by pushing notifications to your visitors. You can choose from multiple styles, colors, sizes, and positions and even dismiss the component.
 
 ## Setup
@@ -390,7 +391,7 @@ You can use `onclose` to execute custom logic when the toast is closed.
 
 #### Types
 
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1824)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1823)
 
 #### Props
 
@@ -408,6 +409,9 @@ You can use `onclose` to execute custom logic when the toast is closed.
 - class: className
 - classes
 
+
 ## References
 
 - [Flowbite Toast](https://flowbite.com/docs/components/toast/)
+
+

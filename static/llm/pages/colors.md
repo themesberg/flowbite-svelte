@@ -1,5 +1,6 @@
 # Colors - Flowbite Svelte
 
+
 ## Primary and secondary colors
 
 In the provided code, you can customize the primary and secondary color by modifying the appropriate color values.

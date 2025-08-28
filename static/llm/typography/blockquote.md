@@ -1,5 +1,6 @@
 # Svelte Blockquote - Flowbite
 
+
 Get started with Blockquote component when quoting external sources such as quotes inside an article, user reviews, and testimonials based on multiple examples of layouts, styles, and contexts.
 
 ## Default blockquote
@@ -117,7 +118,7 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 #### Types
 
-[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1877)
+[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1876)
 
 #### Props
 
@@ -128,6 +129,7 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 - bg
 - alignment: "left"
 - size: "lg"
+
 
 ## References
 

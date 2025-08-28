@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.13.3
+
+### Patch Changes
+
+- - d6ab528dc fix: #1732
+  - 5fed4f21e docs: progress, rating, sidebar, skeleton, and speed-dial pages
+  - c6f91fbab chore: cleanup
+  - 9d0065355 docs: mega-menu, modal, navbar, pagination, popover pages
+  - bcc4308e2 fix 1741 (#1742)
+  - 5fde73e4a docs: forms, gallery, indicators, kbd, and list-group pages
+  - 8a2f30013 docs: darkmode, datepicker, device-mockups, drawer, dropdown, footer, and forms
+  - a1e515581 chore: cleanup
+  - d648b1dbb docs: carousel and clipboard
+  - ec8f826b3 docs: update banner, bottom-navigation, breadcrumb, button-group, buttons and card pages
+  - 497c9bd20 docs: #1738 change @include to #include
+  - 1fe58b072 fix: drawer - remove blink before transition start (#1740)
+  - e58e0b423 docs: checkbox fix
+  - 2b8499585 fix: add \*.md to prettierignore
+  - 6ae449cb2 tests: remove redirect
+
 ## 1.13.2
 
 ### Patch Changes

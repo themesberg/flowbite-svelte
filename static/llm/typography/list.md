@@ -1,5 +1,6 @@
 # Svelte Lists - Flowbite
 
+
 Get started with a collection of list components built with Tailwind CSS for ordered and unordered lists with bullets, numbers, or icons and other styles and layouts to show a list of items inside an article or throughout your web page.
 
 ## Setup
@@ -96,7 +97,7 @@ Use this example to create a horizontally aligned list of items.
 
 #### Types
 
-[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1949)
+[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1948)
 
 #### Props
 
@@ -106,6 +107,7 @@ Use this example to create a horizontally aligned list of items.
 - position: "inside"
 - ctxClass
 - class: className
+
 
 ## References
 

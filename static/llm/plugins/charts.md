@@ -1,5 +1,6 @@
 # Svelte Charts - Flowbite
 
+
 <Badge class="p-4 w-full">
   <P class="flex items-center gap-2">
     <span class="inline-flex">
