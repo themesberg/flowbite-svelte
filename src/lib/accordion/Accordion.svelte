@@ -19,9 +19,7 @@
 
   setContext<AccordionCtxType>("ctx", ctx);
 
-  if (!multiple) {
-    createSingleSelectionContext();
-  }
+  createSingleSelectionContext(multiple);
 
   const base = $derived(accordion({ flush, class: clsx(theme, className) }));
 </script>

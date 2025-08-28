@@ -11,12 +11,13 @@ const SINGLE_SELECTION_KEY = Symbol("singleton");
 
 /**
  * @template T
+ * @param {boolean} [fake=false] - not working one - allow multiple selection
  * @returns {SingleSelectionContext<T>}
  */
-export function createSingleSelectionContext() {
+export function createSingleSelectionContext(fake) {
   // @ts-ignore - $state is assumed to be a Svelte store or similar
   const context = $state({ value: undefined });
-  return setContext(SINGLE_SELECTION_KEY, context);
+  return setContext(SINGLE_SELECTION_KEY, fake ? {} : context);
 }
 
 /**
