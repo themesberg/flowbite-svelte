@@ -88,7 +88,6 @@ import type { TagsVariants } from "$lib/forms/tags/theme";
 // utils
 import type { CloseButtonVariants } from "$lib/utils/theme";
 import type { DialogVariants } from "./dialog/theme";
-import type { Class } from "../routes/api-check/components/breadcrumb/examples";
 
 // end of component variants
 
