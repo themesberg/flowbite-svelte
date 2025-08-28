@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Timeline, TimelineItem } from "flowbite-svelte";
   import { CalendarWeekSolid } from "flowbite-svelte-icons";
 </script>

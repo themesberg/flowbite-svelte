@@ -6,7 +6,7 @@
 Import the `Progressradial` component in a script tag.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Progressradial } from "flowbite-svelte";
 </script>
 ```

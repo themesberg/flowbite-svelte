@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Choose one of these website sections to show extra content relative to the other sections on the page such as a gallery of images, description texts, and more.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Content, ContentWithImage, Section'
 </script>

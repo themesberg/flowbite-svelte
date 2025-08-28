@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Get started with the project portfolio UI components coded with Tailwind CSS to showcase your personal or company client's project specifications and results.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Portfolio, PortfolioItem, Section'
 </script>

@@ -19,7 +19,7 @@ The tabs component can be used either as an extra navigational hierarchy complem
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 ```
@@ -37,7 +37,7 @@ If your tab title is a simple string set the `title` property on `TabItem`, othe
 The last tab in that example shows not only how to show a disabled tab, but how to use the `title` slot entry as well.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
@@ -91,7 +91,7 @@ However tabs component comes with several pre-defined styles that are accessible
 Use the `tabStyle="underline"` to achieve this alternative tabs component style with an underline instead of a background when hovering and being active on a certain page.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
@@ -137,7 +137,7 @@ Use the `tabStyle="underline"` to achieve this alternative tabs component style 
 This is an example of the tabs component where you can also use a SVG powered icon to complement the text within the navigational tabs. Use icon components for a simple syntax. See <a href="/icons">Icons</a> for more details.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Tabs, TabItem } from "flowbite-svelte";
   import { UserCircleSolid, GridSolid, AdjustmentsVerticalSolid, ClipboardSolid } from "flowbite-svelte-icons";
 </script>
@@ -199,7 +199,7 @@ This is an example of the tabs component where you can also use a SVG powered ic
 If you want to use pills as a style for the tabs component use `tabStyle="pill"`.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
@@ -248,7 +248,7 @@ If you want to use pills as a style for the tabs component use `tabStyle="pill"`
 If you want to show the tabs on the full width relative to the parent element use `tabStyle="full"` prop.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
@@ -297,7 +297,7 @@ If you want to show the tabs on the full width relative to the parent element us
 You can add other components to the `TabItem` component. Here we are adding a timeline component in the tab 1:
 
 ```svelte example class="h-auto"
-<script>
+<script lang="ts">
   import { Tabs, TabItem, Timeline, TimelineItem, Button } from "flowbite-svelte";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>

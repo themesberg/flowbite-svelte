@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { PhoneInput, Label, ButtonGroup, Select, Clipboard, Tooltip, Helper, A } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
   let selected = $state("+1 234 456 7890");

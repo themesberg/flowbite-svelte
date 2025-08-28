@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Avatar, Drawer, CardPlaceholder, Button, Label, Input, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, UserAddOutline, CalendarEditSolid } from "flowbite-svelte-icons";
 

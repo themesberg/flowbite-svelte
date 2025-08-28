@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Toggle } from "flowbite-svelte";
 </script>
 

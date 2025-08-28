@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Use a collection of register pages to let your users create an account on your website based on multiple layouts, social media authentication, and more.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Register, Section'
 </script>

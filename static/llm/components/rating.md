@@ -10,7 +10,7 @@ You can find multiple examples on this page including different styles, sizes, a
 Let's import all necessary components in the script tag. We import a heart, thumb-up, and smiley icons, but you can use any icons as you like.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Rating, AdvancedRating, ScoreRating } from "flowbite-svelte";
 </script>
 ```

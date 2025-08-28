@@ -8,7 +8,7 @@ description: The blockquote component can be used to quote text content from an 
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
   import { P, A, Heading } from '$lib'; 
 

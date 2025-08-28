@@ -10,7 +10,7 @@ You can choose from multiple examples of mockups including phone, tablet, laptop
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { DeviceMockup } from "flowbite-svelte";
 </script>
 ```

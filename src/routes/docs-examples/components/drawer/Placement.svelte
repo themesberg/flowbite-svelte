@@ -1,9 +1,9 @@
-<script>
-  import { Drawer, CardPlaceholder, Button, Label, Textarea } from "flowbite-svelte";
+<script lang="ts">
+  import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
   let open5 = $state(false);
-  let placement = $state("right");
+  let placement: "right" | "left" | "top" | "bottom" = $state("right");
 </script>
 
 <div class="text-center">

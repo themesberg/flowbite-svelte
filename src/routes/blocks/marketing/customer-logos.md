@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: This website section can be used as a social proof incentive to convince your potential clients by showcasing popular companies that you've collaborated with.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'HeroHeader, Section'
 </script>
@@ -18,7 +18,7 @@ description: This website section can be used as a social proof incentive to con
 Use this example to show a list of logos of the companies that have used your product or worked with to provide strong social proof to your website visitors.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Section, HeroHeader } from "flowbite-svelte-blocks";
   import { Airbnb, Google, Mailchimp, Mashable, Microsoft, Spotify } from "../utils";
 </script>

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, Modal, Input, P } from "flowbite-svelte";
   let open = $state(false);
 </script>

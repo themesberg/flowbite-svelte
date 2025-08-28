@@ -7,7 +7,7 @@ dir: Utilities
 description: Get started with the CloseButton components to hide a target element using Svelte interactivity
 ---
 
-<script>
+<script lang="ts">
 	import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer, Seealso } from '../../utils';
 	import { A } from '$lib';
 

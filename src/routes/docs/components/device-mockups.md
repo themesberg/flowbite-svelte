@@ -8,7 +8,7 @@ description: Use the device mockups component to add content and screenshot prev
 thumnailSize: w-36
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -23,7 +23,7 @@ You can choose from multiple examples of mockups including phone, tablet, laptop
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { DeviceMockup } from "flowbite-svelte";
 </script>
 ```

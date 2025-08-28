@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { AccordionItem, Accordion } from "flowbite-svelte";
   import { CartSolid, CogOutline } from "flowbite-svelte-icons";
 </script>

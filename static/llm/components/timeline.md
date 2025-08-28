@@ -19,7 +19,7 @@ The timeline component can be used to show series of data in a chronological ord
 The default has no icon slot. If you prefer to have icons, use `order='vertical'` or `order='horizontal'`.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Timeline, TimelineItem, Button } from "flowbite-svelte";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
@@ -43,7 +43,7 @@ The default has no icon slot. If you prefer to have icons, use `order='vertical'
 Use this vertical timeline component with icons and badges to show a more advanced set of data.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Timeline, TimelineItem } from "flowbite-svelte";
   import { CalendarWeekSolid } from "flowbite-svelte-icons";
 </script>
@@ -81,7 +81,7 @@ Use this vertical timeline component with icons and badges to show a more advanc
 Use this horizontally aligned timeline component to show a series of data in a chronological order.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Timeline, TimelineItem } from "flowbite-svelte";
   import { CalendarWeekSolid } from "flowbite-svelte-icons";
 </script>
@@ -130,7 +130,7 @@ This component can be used to show the timline of a user’s activity history in
 <Badge large>Warning: the ActivityItem title and text are using @html.</Badge>
 
 ```svelte
-<script>
+<script lang="ts">
   import { Activity, ActivityItem } from "flowbite-svelte";
   let activities = [
     {
@@ -167,7 +167,7 @@ Use this component to group multiple data entries inside a single date and show 
 <Badge large>Warning: the GroupItem title is using @html.</Badge>
 
 ```svelte
-<script>
+<script lang="ts">
   import { Group, GroupItem } from "flowbite-svelte";
   let groupTimelines = [
     {

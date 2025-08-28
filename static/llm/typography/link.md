@@ -8,7 +8,7 @@ Hyperlinks are a great way to reduce bounce rate of the current page and encoura
 ## Setup
 
 ```html
-<script>
+<script lang="ts">
   import { A } from "flowbite-svelte";
 </script>
 ```

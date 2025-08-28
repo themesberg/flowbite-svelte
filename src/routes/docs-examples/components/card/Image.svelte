@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Card, Button, Toggle } from "flowbite-svelte";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
   let vCard = false;

@@ -8,7 +8,7 @@ description: Use the bottom navigation bar component to allow users to navigate 
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
 
@@ -22,7 +22,7 @@ Check out multiple examples of the bottom navigation component based on various 
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { BottomNav, BottomNavItem } from "flowbite-svelte";
 </script>
 ```

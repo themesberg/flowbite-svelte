@@ -8,7 +8,7 @@ description: Use the paragraph component to create multiple blocks of text separ
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils';
   import { Layout, P, A, Heading } from '$lib';
 

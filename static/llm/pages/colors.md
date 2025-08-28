@@ -43,7 +43,7 @@ In the provided code, you can customize the primary and secondary color by modif
 ## Examples
 
 ```svelte
-<script>
+<script lang="ts">
   import { Button, Alert, Card, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Toast } from "flowbite-svelte";
   import { FireOutline } from "flowbite-svelte-icons";
 </script>

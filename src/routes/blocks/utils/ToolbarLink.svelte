@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { ToolbarButton, Tooltip } from "flowbite-svelte";
 
   let { children, name, ...restProps } = $props();

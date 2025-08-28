@@ -8,7 +8,7 @@ description: Use the floating label style for the input field elements to replic
 thumnailSize: w-40
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, Seealso } from '../../utils'
 
   const components = 'FloatingLabelInput, Helper'

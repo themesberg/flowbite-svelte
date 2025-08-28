@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Get started with a collection of responsive website sections built with Tailwind CSS to showcase a list of features that your product or company offers.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   import componentData1 from '../component-data/HeroHeader.json'
   import componentData2 from '../component-data/FeatureDefault.json'

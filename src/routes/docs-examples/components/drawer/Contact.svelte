@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Drawer, CardPlaceholder, Button, Label, Input, Textarea, P, A, Checkbox } from "flowbite-svelte";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 

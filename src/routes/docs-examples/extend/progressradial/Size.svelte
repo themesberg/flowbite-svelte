@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Progressradial } from "flowbite-svelte";
 </script>
 

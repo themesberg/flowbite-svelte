@@ -8,7 +8,7 @@ description: The skeleton component can be used as an alternative loading indica
 thumnailSize: w-40
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -19,7 +19,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder } from "flowbite-svelte";
 </script>
 ```

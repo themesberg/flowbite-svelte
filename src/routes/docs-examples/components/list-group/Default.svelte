@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Listgroup } from "flowbite-svelte";
   let simpleList = ["Profile", "Settings", "Messages", "Download"];
 </script>

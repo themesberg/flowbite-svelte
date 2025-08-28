@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
   import { HomeOutline, ChevronDoubleRightOutline } from "flowbite-svelte-icons";
 </script>

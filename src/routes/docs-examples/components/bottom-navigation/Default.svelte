@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid } from "flowbite-svelte-icons";
 </script>

@@ -7,7 +7,7 @@ dir: Extend
 description: Use the button toggle to toggle on/off with the appearance of a button. These toggles can be configured to behave as either radio-buttons or checkboxes
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso } from '../../utils'
   import { P, A } from '$lib'
 
@@ -18,7 +18,7 @@ description: Use the button toggle to toggle on/off with the appearance of a but
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
 </script>
 ```

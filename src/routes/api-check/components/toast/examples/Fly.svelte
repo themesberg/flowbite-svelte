@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
   import { fly } from "svelte/transition";
   import { DownloadOutline } from "flowbite-svelte-icons";

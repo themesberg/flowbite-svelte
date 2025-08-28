@@ -7,7 +7,7 @@ dir: Pages
 description: Customize your project and the color of the components from Flowbite Svelte by editing the Tailwind configuration file from the root folder
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils';
   import { A, Img, P } from '$lib';
 </script>
@@ -54,7 +54,7 @@ In the provided code, you can customize the primary and secondary color by modif
 ## Examples
 
 ```svelte example class="flex flex-col gap-4"
-<script>
+<script lang="ts">
   import { Button, Alert, Card, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Toast } from "flowbite-svelte";
   import { FireOutline } from "flowbite-svelte-icons";
 </script>

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { slide } from "svelte/transition";
   import { quintOut } from "svelte/easing";
   import { Banner, Skeleton, ImagePlaceholder, A } from "flowbite-svelte";

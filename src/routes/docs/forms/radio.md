@@ -8,7 +8,7 @@ description: Get started with the radio component to let the user choose a singl
 thumnailSize: w-72
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
 
   const components = 'Radio, RadioButton, Label, Helper'
@@ -19,7 +19,7 @@ The radio component can be used to allow the user to choose a single option from
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Radio } from "flowbite-svelte";
 </script>
 ```

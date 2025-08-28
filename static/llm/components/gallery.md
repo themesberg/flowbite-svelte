@@ -10,7 +10,7 @@ This component is recommended for usage within marketing UI interfaces and websi
 Import `Gallery` in the script tag.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Gallery } from "flowbite-svelte";
 </script>
 ```

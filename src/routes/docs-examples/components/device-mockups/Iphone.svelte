@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { DeviceMockup } from "flowbite-svelte";
 </script>
 

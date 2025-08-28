@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup } from "flowbite-svelte";
 </script>
 

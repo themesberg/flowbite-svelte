@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Timeline, TimelineItem, Button } from "flowbite-svelte";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>

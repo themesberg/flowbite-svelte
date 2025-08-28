@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Alert } from "flowbite-svelte";
   let alertStatus = $state(true);
   const closeAlert = () => {

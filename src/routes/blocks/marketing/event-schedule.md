@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Get started with a collection of website sections coded with Tailwind CSS to show the schedule of an event inside a timeline featuring a title, speaker, and description.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Schedule, ScheduleItem, Section'
 </script>

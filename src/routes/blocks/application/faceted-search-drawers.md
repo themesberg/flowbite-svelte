@@ -13,7 +13,7 @@ description: Get started with a collection of drawer components using a faceted 
 Use this free example of a drawer component to show a list of checkbox, radio and input field elements to filter search results.
 
 ```svelte example hideResponsiveButtons class="h-64"
-<script>
+<script lang="ts">
   import { Drawer, Button, CloseButton, Label, Input, Checkbox, A, Heading, Rating, Radio } from "flowbite-svelte";
 
   let open = false;

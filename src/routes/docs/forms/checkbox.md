@@ -8,7 +8,7 @@ description: Get started with the checkbox component to allow the user to select
 thumnailSize: w-72
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
 
   const components = 'Checkbox, CheckboxButton'

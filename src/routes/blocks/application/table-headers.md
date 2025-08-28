@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Use the table header component to append options and controls on top of a table component to indicate titles, filters, sorting elements, and other settings.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'TableHeader, Section'
 </script>

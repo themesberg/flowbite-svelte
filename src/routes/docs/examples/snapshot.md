@@ -7,7 +7,7 @@ dir: Examples
 description: Svelte Snapshot with Flowbite svelte
 ---
 
-<script>
+<script lang="ts">
   
   import { Input, Label, A } from '$lib';
 

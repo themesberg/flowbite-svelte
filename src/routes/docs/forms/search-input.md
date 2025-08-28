@@ -7,7 +7,7 @@ dir: Forms
 description: Use the search input component as a text field to allow users to enter search queries and receive relevant page results available in multiple styles and sizes
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import componentData1 from '../../component-data/Search.json'
   const components = 'Search'
@@ -20,7 +20,7 @@ You will also find more advanced search components on this page including dropdo
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Search } from "flowbite-svelte";
 </script>
 ```

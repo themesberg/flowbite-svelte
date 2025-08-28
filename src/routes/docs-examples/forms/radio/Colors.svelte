@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Radio } from "flowbite-svelte";
   let colors = $state("text-purple-500");
 </script>

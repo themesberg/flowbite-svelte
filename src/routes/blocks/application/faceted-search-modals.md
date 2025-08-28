@@ -13,7 +13,7 @@ description: Use the faceted search component to allow users to narrow down sear
 Use this free example to show a list of checkbox components inside a modal to filter results by categories inside your application.
 
 ```svelte example hideResponsiveButtons class="h-64"
-<script>
+<script lang="ts">
   import { Button, Modal, Checkbox } from "flowbite-svelte";
   let formModal = false;
 </script>

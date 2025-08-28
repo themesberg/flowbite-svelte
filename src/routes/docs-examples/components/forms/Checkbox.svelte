@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Checkbox } from "flowbite-svelte";
 </script>
 

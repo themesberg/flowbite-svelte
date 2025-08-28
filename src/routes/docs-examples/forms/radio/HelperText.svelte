@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Radio, Helper } from "flowbite-svelte";
 </script>
 

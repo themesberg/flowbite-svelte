@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { AccordionItem, useMediaQuery, P } from "flowbite-svelte";
   const isMdAndUp = useMediaQuery("(min-width: 768px)");
 </script>

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Popover, Button } from "flowbite-svelte";
   import { DatabaseSolid, ChevronRightOutline } from "flowbite-svelte-icons";
 </script>

@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Get started with a collection of website sections related to the blog area of your website including blog posts, article pages, comments, categories, and more.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'ArticleAuthor, ArticleBody, ArticleHead, ArticleWrapper, BlogHead, BlogBodyWrapper, Section'
 </script>
@@ -18,7 +18,7 @@ description: Get started with a collection of website sections related to the bl
 Use this example to show a preview of a blog post including the title, description, category, author, publication date, and CTA link.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Section, ArticleAuthor, ArticleBody, ArticleHead, ArticleWrapper, BlogHead, BlogBodyWrapper } from "flowbite-svelte-blocks";
   import { VideoCameraSolid, ArrowRightOutline, NewspaperSolid } from "flowbite-svelte-icons";
 </script>

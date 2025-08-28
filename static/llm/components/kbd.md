@@ -6,7 +6,7 @@ The KBD (Keyboard) component can be used to indicate a textual user input from t
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Kbd } from "flowbite-svelte";
 </script>
 ```

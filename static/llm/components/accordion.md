@@ -8,7 +8,7 @@ A popular use case would be the “Frequently Asked Questions” section of a we
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { AccordionItem, Accordion } from "flowbite-svelte";
 </script>
 ```

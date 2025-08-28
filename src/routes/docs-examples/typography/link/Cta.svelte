@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { A } from "flowbite-svelte";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
   import Figma from "$icons/Figma.svelte";

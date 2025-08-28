@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Label, Fileupload } from "flowbite-svelte";
 
   let fileuploadprops = {

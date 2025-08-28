@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Dropdown, DropdownItem } from "flowbite-svelte";
   import { DotsHorizontalOutline, DotsVerticalOutline } from "flowbite-svelte-icons";
 </script>

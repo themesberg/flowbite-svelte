@@ -8,7 +8,7 @@ Get started with multiple sizes, colors, and styles built with the utility class
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Modal } from "flowbite-svelte";
 </script>
 ```

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Tooltip, Button, P } from "flowbite-svelte";
 </script>
 

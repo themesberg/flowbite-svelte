@@ -7,7 +7,7 @@ dir: Forms
 description: Get started with a collection of input fields built with Tailwind CSS to start accepting data from the user based on multiple sizes, variants, and input types
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, Seealso } from '../../utils'
   import { A } from '$lib'
 

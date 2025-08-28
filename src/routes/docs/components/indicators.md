@@ -8,7 +8,7 @@ description: Use the indicator component to show a number count, account status,
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -19,7 +19,7 @@ The indicator component can be used as a small element positioned absolutely rel
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Indicator } from "flowbite-svelte";
 </script>
 ```

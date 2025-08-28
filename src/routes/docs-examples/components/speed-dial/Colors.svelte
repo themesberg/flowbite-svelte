@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { SpeedDial, SpeedDialTrigger, SpeedDialButton } from "flowbite-svelte";
   import { ShareNodesSolid } from "flowbite-svelte-icons";
 </script>

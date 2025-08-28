@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Use this collection of CRUD modal components to show information about a data entry from your database and show a list of actions based.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Section'
 </script>

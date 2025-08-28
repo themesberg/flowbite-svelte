@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Select, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   import Usa from "$icons/Usa.svelte";

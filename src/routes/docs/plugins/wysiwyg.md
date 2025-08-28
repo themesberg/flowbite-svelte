@@ -7,7 +7,7 @@ dir: components
 description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins to create and modify content by manipulating paragraphs, headings, images and styling them using all available options
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, ExampleWrapper } from '../../utils'
   const components = 'Texteditor'
   import * as Examples from './examples';

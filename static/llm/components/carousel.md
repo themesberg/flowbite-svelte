@@ -6,7 +6,7 @@ The carousel component can be used to cycle through a set of elements using cust
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Carousel } from "flowbite-svelte";
   // ./imageData/+server.js has the following
   export const images = [

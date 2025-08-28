@@ -6,7 +6,7 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 ## Setup
 
 ```html
-<script>
+<script lang="ts">
   import { Hr } from "flowbite-svelte";
 </script>
 ```

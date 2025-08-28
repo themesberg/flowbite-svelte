@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Activity, ActivityItem } from "flowbite-svelte";
   let activities = [
     {

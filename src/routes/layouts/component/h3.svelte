@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Anchor from "./Anchor.svelte";
   let { children } = $props();
 </script>

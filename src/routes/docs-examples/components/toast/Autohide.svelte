@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Toast, Button } from "flowbite-svelte";
   import { slide } from "svelte/transition";
   import { CheckCircleSolid } from "flowbite-svelte-icons";

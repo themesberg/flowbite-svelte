@@ -8,7 +8,7 @@ description: Get started with the file input component to let the user to upload
 thumnailSize: w-48
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   const components = 'Fileupload'
 </script>
@@ -18,7 +18,7 @@ The file input component can be used to upload one or more files from the device
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Fileupload } from "flowbite-svelte";
 </script>
 ```

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
   import { blur } from "svelte/transition";
   import { BellOutline } from "flowbite-svelte-icons";

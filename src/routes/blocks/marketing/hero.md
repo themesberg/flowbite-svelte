@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Get started with a collection of hero sections coded with Tailwind CSS to showcase the most important parts of your website based on multiple styles and layouts.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'News, HeroHeader, HeroBody, Section'
 </script>
@@ -18,7 +18,7 @@ description: Get started with a collection of hero sections coded with Tailwind 
 Use this default example with an announcement badge, heading, CTA buttons, and customer logos to showcase what your website offers.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Section, News, HeroHeader, HeroBody } from "flowbite-svelte-blocks";
   import { Button } from "flowbite-svelte";
   import { ArrowRightOutline, VideoCameraSolid } from "flowbite-svelte-icons";
@@ -71,7 +71,7 @@ Use this default example with an announcement badge, heading, CTA buttons, and c
 Use this example to show an image next to the heading and CTA buttons to improve the visual impact of the website's first visit.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Section, HeroHeader } from "flowbite-svelte-blocks";
   import { Button } from "flowbite-svelte";
   import { ArrowRightOutline } from "flowbite-svelte-icons";

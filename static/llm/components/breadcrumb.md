@@ -8,7 +8,7 @@ Flowbite includes two styles of breadcrumb elements, one that has a transparent 
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
 </script>
 ```

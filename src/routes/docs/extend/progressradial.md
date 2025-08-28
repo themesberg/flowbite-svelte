@@ -7,7 +7,7 @@ dir: Extend
 description: Use the progress radial component to show the progress of a process.
 ---
 
-<script>
+<script lang="ts">
   import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso } from '../../utils'
   import { P, A } from '$lib'
   const dirName = "progress"
@@ -19,7 +19,7 @@ description: Use the progress radial component to show the progress of a process
 Import the `Progressradial` component in a script tag.
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Progressradial } from "flowbite-svelte";
 </script>
 ```

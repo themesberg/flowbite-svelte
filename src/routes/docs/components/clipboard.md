@@ -8,7 +8,7 @@ description: Use the clipboard component to copy text, data or lines of code to 
 thumnailSize: w-36
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = 'clipboard'
@@ -24,7 +24,7 @@ Use cases for websites can be found in the examples below and they include copyi
 Import Clipboard in the script tag.
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Clipboard } from "flowbite-svelte";
 </script>
 ```

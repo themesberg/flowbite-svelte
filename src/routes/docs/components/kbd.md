@@ -8,7 +8,7 @@ description: Use the KBD component as an inline element to denote textual user i
 thumnailSize: w-40
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -19,7 +19,7 @@ The KBD (Keyboard) component can be used to indicate a textual user input from t
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Kbd } from "flowbite-svelte";
 </script>
 ```

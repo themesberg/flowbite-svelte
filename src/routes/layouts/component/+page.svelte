@@ -5,7 +5,7 @@
   export { code, h2, h3 };
 </script>
 
-<script>
+<script lang="ts">
   import Footer from "../../utils/Footer.svelte";
   import MetaTag from "../../utils/MetaTag.svelte";
   import Newsletter from "../../utils/Newsletter.svelte";

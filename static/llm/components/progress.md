@@ -8,7 +8,7 @@ The progress bar component can be used as an indicator to show the completion ra
 Import the `Progressbar` component in a script tag.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Progressbar } from "flowbite-svelte";
 </script>
 ```

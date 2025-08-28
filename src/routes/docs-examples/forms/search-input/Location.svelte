@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Search, Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { SearchOutline, ChevronDownOutline } from "flowbite-svelte-icons";
 

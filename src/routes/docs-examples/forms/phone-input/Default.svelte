@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { PhoneInput, Label, Helper } from "flowbite-svelte";
 </script>
 

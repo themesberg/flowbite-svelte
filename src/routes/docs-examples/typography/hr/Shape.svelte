@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Hr, P, Blockquote } from "flowbite-svelte";
 </script>
 

@@ -4,7 +4,7 @@
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
 </script>
 ```

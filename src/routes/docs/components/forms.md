@@ -8,7 +8,7 @@ description: Use the Tailwind CSS form and input elements such as checkboxes, ra
 thumnailSize: w-40
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A, Heading } from '$lib'
   const dirName = toKebabCase(component_title)

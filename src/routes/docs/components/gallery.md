@@ -8,7 +8,7 @@ description: Use the image gallery component based on a masonry grid layout usin
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -23,7 +23,7 @@ This component is recommended for usage within marketing UI interfaces and websi
 Import `Gallery` in the script tag.
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Gallery } from "flowbite-svelte";
 </script>
 ```

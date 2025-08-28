@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Rating, AdvancedRating, ScoreRating } from "flowbite-svelte";
 </script>
 

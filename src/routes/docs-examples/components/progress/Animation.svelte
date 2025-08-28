@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Progressbar, Button } from "flowbite-svelte";
   import { sineOut } from "svelte/easing";
 

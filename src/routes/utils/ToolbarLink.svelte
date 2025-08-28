@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import ToolbarButton from "$lib/toolbar/ToolbarButton.svelte";
   import Tooltip from "$lib/tooltip/Tooltip.svelte";
 

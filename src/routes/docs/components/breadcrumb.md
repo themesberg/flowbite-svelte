@@ -8,7 +8,7 @@ description: Show the location of the current page in a hierarchical structure u
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -21,7 +21,7 @@ Flowbite includes two styles of breadcrumb elements, one that has a transparent 
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
 </script>
 ```

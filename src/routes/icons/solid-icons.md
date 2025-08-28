@@ -15,7 +15,7 @@ Use this page to easily search and configure a collection of up to 500 SVG open-
 Search by the icon name and you'll find the component name that you need to import in your Svelte app.
 
 ```svelte example hideSource hideResponsiveButtons
-<script>
+<script lang="ts">
   import { Label, Range, TabItem, Tabs, Clipboard, Tooltip } from "$lib";
   import * as Icons from "flowbite-svelte-icons";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";

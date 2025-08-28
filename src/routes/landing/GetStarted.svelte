@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Button from "$lib/buttons/Button.svelte";
   import CopyCliboardInput from "../utils/CopyCliboardInput.svelte";
   import ArrowRight from "../utils/icons/ArrowRight.svelte";

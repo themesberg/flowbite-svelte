@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Select, Label } from "flowbite-svelte";
   let selected = $state();
   let countries = [

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Clipboard } from "$lib";
 
   let clickCount = 0;

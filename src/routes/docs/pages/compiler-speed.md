@@ -7,7 +7,7 @@ dir: Pages
 description: Learn how you can manage and improve the Svelte compilation speed when using the Flowbite Svelte library by checking out this tutorial
 ---
 
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from '$lib'
   
 </script>

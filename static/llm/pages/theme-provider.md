@@ -6,7 +6,7 @@
 Wrap your components with ThemeProvider and pass a theme configuration object:
 
 ```svelte
-<script>
+<script lang="ts">
   import { ThemeProvider, Button, Card } from "flowbite-svelte";
 
   const theme = {
@@ -122,7 +122,7 @@ You can nest ThemeProvider components to apply different themes to different sec
 Component classes, when defined directly on a component, will always take precedence over any styles provided by ThemeProviders, whether from parent or nested providers. This allows for granular control and specific styling adjustments at the component level, even when a global or scoped theme is in effect.
 
 ```svelte
-<script>
+<script lang="ts">
   import { ThemeProvider, Card, Heading, P } from "flowbite-svelte";
 
   const theme1a = {

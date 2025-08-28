@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Use this collection of drawer components coded with Tailwind CSS to show details about an existing data entry from your database inside your web application.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Section'
 </script>

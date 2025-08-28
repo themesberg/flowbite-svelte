@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { TextPlaceholder } from "flowbite-svelte";
 </script>
 

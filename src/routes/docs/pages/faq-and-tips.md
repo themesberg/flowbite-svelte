@@ -35,7 +35,7 @@ For example, if you have a following group routing:
 The following example shows how to add navigation using the key blocks:
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { page } from "$app/state";
   import { Navbar, NavLi, NavUl } from "flowbite-svelte";
   let { children } = $props();

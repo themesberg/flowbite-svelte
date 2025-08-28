@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, Dropdown, Checkbox } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, Carousel, ControlButton, Controls, Indicator, CarouselIndicators, Thumbnails } from "flowbite-svelte";
   import { CaretRightOutline } from "flowbite-svelte-icons";
   import images from "./imageData/images.json";

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { CloseButton } from "flowbite-svelte";
   let visible = $state(true);
 </script>

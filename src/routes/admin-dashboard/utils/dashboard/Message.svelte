@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, Textarea, Toolbar, ToolbarButton } from "flowbite-svelte";
   import { ImageSolid, MapPinAltSolid, PaperClipOutline } from "flowbite-svelte-icons";
   import { setContext } from "svelte";

@@ -8,7 +8,7 @@ description: Use the progress bar component to show the completion rate of a dat
 thumnailSize: w-48
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -22,7 +22,7 @@ The progress bar component can be used as an indicator to show the completion ra
 Import the `Progressbar` component in a script tag.
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Progressbar } from "flowbite-svelte";
 </script>
 ```

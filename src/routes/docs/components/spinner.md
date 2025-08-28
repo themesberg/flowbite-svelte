@@ -8,7 +8,7 @@ description: Use the spinner component as a loader indicator in your projects wh
 thumnailSize: w-48
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -19,7 +19,7 @@ The spinner component can be used as a loading indicator which comes in multiple
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Spinner } from "flowbite-svelte";
 </script>
 ```
@@ -29,7 +29,7 @@ The spinner component can be used as a loading indicator which comes in multiple
 Use the following SVG element to show a loading animation:
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { Spinner } from "flowbite-svelte";
 </script>
 
@@ -41,7 +41,7 @@ Use the following SVG element to show a loading animation:
 You can change the colors of the spinner element using the `color` prop.
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { Spinner } from "flowbite-svelte";
 </script>
 
@@ -59,7 +59,7 @@ You can change the colors of the spinner element using the `color` prop.
 Change the size of the spinner component using the `size` prop.
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { Spinner } from "flowbite-svelte";
 </script>
 
@@ -73,7 +73,7 @@ Change the size of the spinner component using the `size` prop.
 Because the spinner component is an inline HTML element it can easily be aligned on the left, center, or right side using the `text-{left|center|right}` utility classes:
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { Spinner } from "flowbite-svelte";
 </script>
 
@@ -85,7 +85,7 @@ Because the spinner component is an inline HTML element it can easily be aligned
 The spinner component can also be used inside elements such as buttons when submitting form data:
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Spinner, Button } from "flowbite-svelte";
 </script>
 

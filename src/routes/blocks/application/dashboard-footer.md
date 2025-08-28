@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Get started with a collection of responsive footer components specially crafted for admin dashboard layouts and applications based on Tailwind CSS.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Section'
 </script>

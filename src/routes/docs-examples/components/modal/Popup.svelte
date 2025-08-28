@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, Modal, P } from "flowbite-svelte";
   import { ExclamationCircleOutline } from "flowbite-svelte-icons";
   import { slide } from "svelte/transition";

@@ -7,7 +7,7 @@ dir: Components
 description: Use the footer section at the bottom of every page to show valuable information to your users, such as sitemap links, a copyright notice, and a logo
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A, Footer } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -18,7 +18,7 @@ The footer is one of the most underestimated sections of a website being located
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup } from "flowbite-svelte";
 </script>
 ```

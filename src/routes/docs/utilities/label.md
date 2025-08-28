@@ -7,7 +7,7 @@ dir: Utilities
 description: The Label components are used throughout the library and you can use it for your app as well
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer } from '../../utils';
   import { A } from '$lib';
 

@@ -8,7 +8,7 @@ description: Use the banner component to show marketing messages and CTA buttons
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -21,7 +21,7 @@ Explore the following examples based on various styles, sizes, and positionings 
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Banner } from "flowbite-svelte";
 </script>
 ```

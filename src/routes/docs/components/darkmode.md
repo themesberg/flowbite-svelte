@@ -8,7 +8,7 @@ description: Learn how to configure and build a dark mode switcher for Flowbite 
 thumnailSize: w-24
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -34,7 +34,7 @@ Finally, use the dark mode component to display a switcher (that is a button) fo
 
 ```svelte example
 <!-- src/routes/+layout.svelte -->
-<script>
+<script lang="ts">
   import { DarkMode } from "flowbite-svelte";
 </script>
 

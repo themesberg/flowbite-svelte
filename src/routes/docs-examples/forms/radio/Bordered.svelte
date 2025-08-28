@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Radio } from "flowbite-svelte";
   let selectedValue3 = $state("2");
 </script>

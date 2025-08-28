@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Gallery } from "flowbite-svelte";
   const images1 = [
     { alt: "erbology", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" },

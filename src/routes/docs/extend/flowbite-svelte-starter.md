@@ -7,7 +7,7 @@ dir: Extend
 description: Flowbite Svelte Starters provide all necessary components to get started quickly
 ---
 
-<script>
+<script lang="ts">
   import { A, List, Li } from '$lib'
 </script>
 

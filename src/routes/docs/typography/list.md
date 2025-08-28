@@ -8,7 +8,7 @@ description: Use the list component to show an unordered or ordered list of item
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
  
   const components = 'List, Li, DescriptionList'
@@ -19,7 +19,7 @@ Get started with a collection of list components built with Tailwind CSS for ord
 ## Setup
 
 ```html
-<script>
+<script lang="ts">
   import { List, Li } from "flowbite-svelte";
 </script>
 ```

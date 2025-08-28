@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { ButtonGroup, Button } from "flowbite-svelte";
   import { UserCircleSolid, AdjustmentsVerticalOutline, DownloadSolid } from "flowbite-svelte-icons";
 </script>

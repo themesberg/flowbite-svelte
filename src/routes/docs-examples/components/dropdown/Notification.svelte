@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Dropdown, DropdownItem, DropdownGroup, Avatar } from "flowbite-svelte";
   import { BellSolid, EyeSolid } from "flowbite-svelte-icons";
 </script>

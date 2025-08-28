@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Toast, Avatar } from "flowbite-svelte";
 </script>
 

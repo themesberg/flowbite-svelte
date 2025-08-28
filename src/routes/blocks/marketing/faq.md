@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Get started with a collection of FAQ (frequently asked questions) sections to show a list of questions and answers to your website visitors and users.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Faq, FaqItem, Section'
 </script>

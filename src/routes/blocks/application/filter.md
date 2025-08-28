@@ -13,7 +13,7 @@ description: Get started with a collection of dropdown filter components to allo
 Use this free example of a filter component to allow your users to select which categories to filter in the search results using checkbox components.
 
 ```svelte example class="flex justify-center items-start h-[40rem]"
-<script>
+<script lang="ts">
   import { Button, Dropdown, Checkbox, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>

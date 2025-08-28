@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Popover, Button } from "flowbite-svelte";
   import { blur, fade, slide } from "svelte/transition";
 </script>

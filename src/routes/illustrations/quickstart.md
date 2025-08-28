@@ -8,7 +8,7 @@ dir: Illustrations
 description: Get started with a collection of open-source Flowbite Svelte Illustrations
 ---
 
-<script>
+<script lang="ts">
   import { Banner } from 'flowbite-svelte';
   import { A } from '$lib'
 

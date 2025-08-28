@@ -8,7 +8,7 @@ You will also find more advanced search components on this page including dropdo
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Search } from "flowbite-svelte";
 </script>
 ```

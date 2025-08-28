@@ -8,7 +8,7 @@ description: Use the stepper component to show the number of steps required to c
 thumnailSize: w-48
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -21,7 +21,7 @@ There are multiple examples that you can use including horizontal or vertical al
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { BreadcrumbStepper, DetailedStepper, ProgressStepper, Stepper, TimelineStepper, VerticalStepper } from "flowbite-svelte";
 </script>
 ```

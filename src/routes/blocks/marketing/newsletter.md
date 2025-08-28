@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: The newsletter component is an important marketing method that you can use to convince website visitors to sign up for additional news from your organization.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Newsletter, Section'
 </script>

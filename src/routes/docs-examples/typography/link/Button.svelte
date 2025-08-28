@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { A } from "flowbite-svelte";
   let show_full_link = $state(false);
 </script>

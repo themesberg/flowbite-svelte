@@ -7,7 +7,7 @@ dir: Utilities
 description: Use the following Tailwind CSS powered toolbars to show groups of tool buttons
 ---
 
-<script>
+<script lang="ts">
 	import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils';
   import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Heading, A } from '$lib'
 
@@ -17,7 +17,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
 </script>
 ```

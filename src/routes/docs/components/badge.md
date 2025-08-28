@@ -8,7 +8,7 @@ description: Use Tailwind CSS badges as elements to show counts or labels separa
 thumnailSize: w-28
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from 'flowbite-svelte'
   const dirName = toKebabCase(component_title)
@@ -23,7 +23,7 @@ Alternatively, badges can also be used as standalone elements that link to a cer
 Import a badge component in the script tag.
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Badge } from "flowbite-svelte";
 </script>
 ```

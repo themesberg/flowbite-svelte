@@ -6,7 +6,7 @@ Use the Drawer component (or “off-canvas”) to show a fixed element relative 
 ## Set up
 
 ```svelte
-<script>
+<script lang="ts">
   import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
   import { sineIn } from "svelte/easing";
 </script>

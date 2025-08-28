@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
   import { slide, scale } from "svelte/transition";
   import { quintOut, elasticOut } from "svelte/easing";

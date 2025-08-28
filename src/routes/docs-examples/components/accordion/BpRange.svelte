@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { AccordionItem, useMediaQuery, useBreakpoints, P } from "flowbite-svelte";
   const breakpoints = useBreakpoints();
 

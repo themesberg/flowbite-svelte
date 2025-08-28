@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, Modal, Label, Input, Checkbox, P } from "flowbite-svelte";
   import MetaMask from "$icons/MetaMask.svelte";
   import CoinbaseWallet from "$icons/CoinbaseWallet.svelte";

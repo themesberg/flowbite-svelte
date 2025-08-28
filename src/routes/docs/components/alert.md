@@ -7,7 +7,7 @@ dir: Components
 description: Show contextual information to your users using alert elements based on Tailwind CSS
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   const dirName = toKebabCase(component_title);
 </script>
@@ -19,7 +19,7 @@ The alert component can be used to provide information to your users such as suc
 Import Alert and set variables in the script tag.
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Alert } from "flowbite-svelte";
 </script>
 ```

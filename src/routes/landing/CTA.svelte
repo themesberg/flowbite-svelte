@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Button from "$lib/buttons/Button.svelte";
   import { DarkMode } from "$lib";
   import Li from "$lib/typography/list/Li.svelte";

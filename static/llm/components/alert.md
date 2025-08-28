@@ -8,7 +8,7 @@ The alert component can be used to provide information to your users such as suc
 Import Alert and set variables in the script tag.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Alert } from "flowbite-svelte";
 </script>
 ```

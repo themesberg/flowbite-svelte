@@ -6,7 +6,7 @@ The footer is one of the most underestimated sections of a website being located
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup } from "flowbite-svelte";
 </script>
 ```

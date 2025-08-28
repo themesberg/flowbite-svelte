@@ -6,7 +6,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder } from "flowbite-svelte";
 </script>
 ```

@@ -8,7 +8,7 @@ Check out multiple examples of the bottom navigation component based on various 
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { BottomNav, BottomNavItem } from "flowbite-svelte";
 </script>
 ```

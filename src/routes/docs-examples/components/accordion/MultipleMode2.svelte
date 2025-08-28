@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { AccordionItem, Accordion, Button, P } from "flowbite-svelte";
   const items = $state([false, false, false]);
 

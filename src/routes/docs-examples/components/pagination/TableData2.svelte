@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Pagination } from "flowbite-svelte";
 
   let helper = { start: 1, end: 10, total: 100 };
