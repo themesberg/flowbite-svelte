@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Get started with this website section to offer social proof to your website visitors by providing statistical numbers about your product's usage worldwide.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Social, Section'
 </script>

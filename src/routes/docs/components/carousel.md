@@ -8,7 +8,7 @@ description: Use the carousel component to slide through multiple elements and i
 thumnailSize: w-48
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   const dirName = toKebabCase(component_title)
 </script>
@@ -18,7 +18,7 @@ The carousel component can be used to cycle through a set of elements using cust
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Carousel } from "flowbite-svelte";
   // ./imageData/+server.js has the following
   export const images = [

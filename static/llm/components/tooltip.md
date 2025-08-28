@@ -8,7 +8,7 @@ For interactive elements that need to display additional content on click, use t
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Tooltip } from "flowbite-svelte";
 </script>
 ```
@@ -19,7 +19,7 @@ To get started with using tooltips all you need to do is to place `Tooltip` elem
 In the following example you can see the tooltip that will be trigger by the adjacent element to be shown when hovered or focused.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
@@ -31,7 +31,7 @@ In the following example you can see the tooltip that will be trigger by the adj
 If you have anything else between the button and tooltip, they won't find each other and you will need to specify the link between them by setting the property `triggeredBy` to the CSS query of the element that triggers the tooltip. Most of the time you will want to use the `id` attribute of the element to link them, but you can use any CSS query you want. See the examples further down.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Tooltip, Button, P } from "flowbite-svelte";
 </script>
 
@@ -46,7 +46,7 @@ If you have anything else between the button and tooltip, they won't find each o
 You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `type={light|dark|auto}` data attribute.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
@@ -88,7 +88,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 ## Triggering
 
 ```svelte
-<script>
+<script lang="ts">
   import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
@@ -101,7 +101,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 ## Disable arrow
 
 ```svelte
-<script>
+<script lang="ts">
   import { Tooltip, Button } from "flowbite-svelte";
 </script>
 
@@ -140,7 +140,7 @@ If you need the tooltip to be attached to the other element then the tiggering o
 Use svelte transistions to configure tooltip animations.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Tooltip, Button } from "flowbite-svelte";
   import { slide, scale, blur } from "svelte/transition";
 </script>
@@ -160,7 +160,7 @@ Various color palettes can be set for a tooltip by using the `color` property. (
 When you want to add a fully custom styles, use `type="custom"`, `defaultClass`, and `class` to modify the tooltip styling.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Tooltip, Button } from "flowbite-svelte";
 </script>
 

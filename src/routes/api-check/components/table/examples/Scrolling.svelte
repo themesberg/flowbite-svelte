@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox } from "flowbite-svelte";
 </script>
 

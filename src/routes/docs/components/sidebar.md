@@ -8,7 +8,7 @@ description: Use the sidebar component to show a list of menu items and multi-le
 thumnailSize: w-72
 ---
 
-<script>
+<script lang="ts">
   import { page } from '$app/state';
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
@@ -22,7 +22,7 @@ Disclaimer: this sidebar component is based on this <A class="text-primary-700" 
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
 </script>
 ```

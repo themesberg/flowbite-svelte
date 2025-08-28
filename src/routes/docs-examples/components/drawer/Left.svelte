@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Drawer, Button, CloseButton, Label, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 

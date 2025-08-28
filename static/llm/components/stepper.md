@@ -8,7 +8,7 @@ There are multiple examples that you can use including horizontal or vertical al
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { BreadcrumbStepper, DetailedStepper, ProgressStepper, Stepper, TimelineStepper, VerticalStepper } from "flowbite-svelte";
 </script>
 ```

@@ -20,7 +20,7 @@ Get started with multiple variants and styles of these table components.
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch } from "flowbite-svelte";
 </script>
 ```
@@ -30,7 +30,7 @@ Get started with multiple variants and styles of these table components.
 Use the following example of a responsive table component to show multiple rows and columns of text data.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
@@ -69,7 +69,7 @@ Use the following example of a responsive table component to show multiple rows 
 Set the `striped` prop to `true` to alternate background colors of every second table row.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
@@ -138,7 +138,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
 Set `hoverable` to `true` to change the background color of a data row when hovering over the element with the cursor.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
@@ -189,7 +189,7 @@ Set `hoverable` to `true` to change the background color of a data row when hove
 Checkboxes can be used inside table data rows to select multiple data sets and apply a bulk action.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox } from "flowbite-svelte";
 </script>
 
@@ -250,7 +250,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 ## Table from data
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
   let items = [
     { id: 1, maker: "Toyota", type: "ABC", make: 2017 },
@@ -305,7 +305,7 @@ Please use [DataTable](https://flowbite-svelte.com/docs/plugins/datatables)
 By default, the `<TableHead>` component will create a single `<tr>` element without any preset attributes and properties for you, and the slot of this component is implicitly required to be permitted contents of the `<tr>` element. If you want to get more controllability of the table head rows, e.g., customize the style or use multiple head rows, set the value of `defaultRow` prop to `false`, and the slot of this component is then implicitly required to be zero or more `<tr>` elements.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
@@ -354,7 +354,7 @@ By default, the `<TableHead>` component will create a single `<tr>` element with
 Use this example where the `<tfoot>` HTML element can be used in conjunction with the head and caption of the table component.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
@@ -396,7 +396,7 @@ Use this example where the `<tfoot>` HTML element can be used in conjunction wit
 Improve accessibility by using a caption inside the table as a heading to better describe what the table is about for screen readers.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
@@ -451,7 +451,7 @@ Improve accessibility by using a caption inside the table as a heading to better
 Use this example of a table component without any border between the table cells.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
@@ -490,7 +490,7 @@ Use this example of a table component without any border between the table cells
 Use this example to apply a shadow border to the table component.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
@@ -529,7 +529,7 @@ Use this example to apply a shadow border to the table component.
 Use this example to enable horizontal scrolling if the content inside the table overflows that maximum width.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox } from "flowbite-svelte";
 </script>
 
@@ -606,7 +606,7 @@ Use the following example to search in a table.
 For more advanced usage, please see [this page](https://flowbite-svelte.com/docs/plugins/datatables).
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch } from "flowbite-svelte";
   let searchTerm = $state("");
   let items = [
@@ -643,7 +643,7 @@ For more advanced usage, please see [this page](https://flowbite-svelte.com/docs
 Use one of colors from blue, green, red, yellow, purple for the `color` prop. The default color is gray. You can reset all color by using the `color="custom"`.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
@@ -678,7 +678,7 @@ Use one of colors from blue, green, red, yellow, purple for the `color` prop. Th
 ```
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 
@@ -717,7 +717,7 @@ Use one of colors from blue, green, red, yellow, purple for the `color` prop. Th
 Use this example to apply a different color to every second row inside the table.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
 </script>
 

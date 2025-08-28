@@ -8,7 +8,7 @@ description: Use the list group component to display a series of items, buttons 
 thumnailSize: w-36
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -20,7 +20,7 @@ The list group component can be used to display a series of elements, buttons or
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Listgroup, ListgroupItem } from "flowbite-svelte";
 </script>
 ```

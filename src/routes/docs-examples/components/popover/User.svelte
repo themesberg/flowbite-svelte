@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Popover, Button, Avatar } from "flowbite-svelte";
 </script>
 

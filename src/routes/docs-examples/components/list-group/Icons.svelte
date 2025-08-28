@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Listgroup } from "flowbite-svelte";
   import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from "flowbite-svelte-icons";
   let icons = [

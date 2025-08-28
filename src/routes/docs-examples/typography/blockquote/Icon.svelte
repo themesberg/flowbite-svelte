@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Blockquote } from "flowbite-svelte";
   import { QuoteSolid } from "flowbite-svelte-icons";
 </script>

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { imagesPath } from "../variables";
   import { Card, Textarea, ToolbarButton } from "flowbite-svelte";
   import { ChevronUpOutline, DotsVerticalOutline, DownloadOutline, FileLinesSolid, TableColumnOutline } from "flowbite-svelte-icons";

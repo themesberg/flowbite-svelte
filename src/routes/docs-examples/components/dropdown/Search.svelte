@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, Dropdown, DropdownGroup, Checkbox, Search } from "flowbite-svelte";
   import { ChevronDownOutline, UserRemoveSolid } from "flowbite-svelte-icons";
   let searchTerm = $state("");

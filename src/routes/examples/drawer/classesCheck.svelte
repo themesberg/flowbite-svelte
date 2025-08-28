@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Drawer, Button, CloseButton } from "$lib";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   let open1 = $state(false);

@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Get started with the popup component to overlay the main website content and showcase advertisement messages, cookie notices, and newsletter sign-ups.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Popup'
 </script>

@@ -7,7 +7,7 @@ dir: Extend
 description: A customizable tag input component that allows users to enter multiple tags, with support for keyboard navigation and tag deletion.
 ---
 
-<script>
+<script lang="ts">
   import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso } from '../../utils'
   import { P, A } from '$lib'
   const dirName = "tags"
@@ -21,7 +21,7 @@ The Tags.svelte component is a flexible tag input field that lets users add and 
 Import the `Tags` component in a script tag.
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Tags } from "flowbite-svelte";
 </script>
 ```

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { PaginationItem } from "flowbite-svelte";
   import { ArrowLeftOutline, ArrowRightOutline } from "flowbite-svelte-icons";
   const previous = () => {

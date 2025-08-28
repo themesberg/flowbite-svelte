@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Get started with maintenance pages coded with Tailwind CSS to show your users when you are currently working on an update and the website is not accessible.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Maintenance, Section'
 </script>
@@ -18,7 +18,7 @@ description: Get started with maintenance pages coded with Tailwind CSS to show 
 Use this example to let your users know that you are working on an important update and the website is down for a couple of hours.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Section, Maintenance } from "flowbite-svelte-blocks";
 </script>
 

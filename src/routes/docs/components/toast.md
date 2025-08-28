@@ -8,7 +8,7 @@ description: Push notifications to your users using the toast component and choo
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -19,7 +19,7 @@ The toast component can be used to enhance your website’s interactivity by pus
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
 </script>
 ```
@@ -29,7 +29,7 @@ The toast component can be used to enhance your website’s interactivity by pus
 Use this simple toast component with an icon, message, and dismissable close button to show alert messages to your website visitors.
 
 ```svelte example class="flex justify-center h-28"
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
   import { FireOutline } from "flowbite-svelte-icons";
 </script>
@@ -49,7 +49,7 @@ Use the `color` prop to easily change the colors of the icons. Set the `color` p
 Usually, green, red, and orange are used to show success, danger, or warning alert messages to your users. See the first three examples below.
 
 ```svelte example class="flex flex-col items-center gap-4 h-[750px]"
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
   import { CheckCircleSolid, ExclamationCircleSolid, FireOutline, CloseCircleSolid } from "flowbite-svelte-icons";
 </script>
@@ -126,7 +126,7 @@ Usually, green, red, and orange are used to show success, danger, or warning ale
 This component can be used to show simple messages and notifications without the use of a close button.
 
 ```svelte example class="flex justify-center"
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
   import { PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
@@ -146,7 +146,7 @@ For the right positioning of the icon use: `{#snippet icon()}...{/snippet}`.
 You can use any [icon components](/icons).
 
 ```svelte example class="flex flex-col items-center gap-4 h-52"
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
   import { ImageOutline } from "flowbite-svelte-icons";
 </script>
@@ -164,7 +164,7 @@ You can use any [icon components](/icons).
 ## Autohide example
 
 ```svelte example class="flex justify-center"
-<script>
+<script lang="ts">
   import { Toast, Button } from "flowbite-svelte";
   import { slide } from "svelte/transition";
   import { CheckCircleSolid } from "flowbite-svelte-icons";
@@ -200,7 +200,7 @@ You can use any [icon components](/icons).
 You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank" rel="noreferrer" >Svelte/easing</A>.
 
 ```svelte example class="flex flex-col items-center gap-4 h-80"
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
   import { slide, scale } from "svelte/transition";
   import { quintOut, elasticOut } from "svelte/easing";
@@ -232,7 +232,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 ### Blur examples
 
 ```svelte example class="flex flex-col items-center gap-4 h-52"
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
   import { blur } from "svelte/transition";
   import { BellOutline } from "flowbite-svelte-icons";
@@ -256,7 +256,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 ### Fly examples
 
 ```svelte example class="flex flex-col items-center gap-4 h-52"
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
   import { fly } from "svelte/transition";
   import { DownloadOutline } from "flowbite-svelte-icons";
@@ -282,7 +282,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 Use this toast component to also show an “undo” button to reverse the action of the user.
 
 ```svelte example class="flex justify-center h-40" hideScript
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
 </script>
 
@@ -301,7 +301,7 @@ If the toast content grows to multiple lines we need to switch off the `items-ce
 This component can be used to show messages and a CTA button when receiving chat messages, comment notifications, and other use cases.
 
 ```svelte example class="flex justify-center h-52"
-<script>
+<script lang="ts">
   import { Toast, Avatar, Button } from "flowbite-svelte";
 </script>
 
@@ -322,7 +322,7 @@ This component can be used to show messages and a CTA button when receiving chat
 This component can be used to show notifications for an action from another user such as posting a comment, receiving a like, being tagged. You can show an avatar, icon, message, and the time of the notification.
 
 ```svelte example class="flex justify-center h-52"
-<script>
+<script lang="ts">
   import { Toast, Avatar } from "flowbite-svelte";
 </script>
 
@@ -346,7 +346,7 @@ Use this interactive toast component to encourage users to make a certain action
 <p class="italic">This is an example with the icon and extra content at the same time.</p>
 
 ```svelte example class="flex justify-center h-52"
-<script>
+<script lang="ts">
   import { Toast, Button } from "flowbite-svelte";
   import { CameraPhotoOutline } from "flowbite-svelte-icons";
 </script>
@@ -372,7 +372,7 @@ Use this interactive toast component to encourage users to make a certain action
 Use the position property to position these toast components relative to the main content wrapper element from your document.
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
 </script>
 
@@ -389,7 +389,7 @@ Use the position property to position these toast components relative to the mai
 You can use `onclose` to execute custom logic when the toast is closed.
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
 </script>
 

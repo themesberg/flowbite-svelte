@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Get started with a collection of team sections built with Tailwind CSS and Flowbite to showcase your organization's team members based on multiple layouts.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'TeamWrapper, TeamHeader, TeamBody, TeamItem, Facebook, GitHub, Twitter, Section'
 </script>

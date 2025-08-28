@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: The contact section is an important part of your website where the user can reach out to your team by interacting with the form elements and submitting the data.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Contact, Section'
 </script>

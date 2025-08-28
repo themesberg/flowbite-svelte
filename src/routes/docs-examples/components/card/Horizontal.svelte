@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Card, Button, Toggle } from "flowbite-svelte";
   let hCard = false;
 </script>

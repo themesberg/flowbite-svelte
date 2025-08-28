@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
   import { fly } from "svelte/transition";
 </script>

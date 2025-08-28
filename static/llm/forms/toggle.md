@@ -6,7 +6,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Toggle } from "flowbite-svelte";
 </script>
 ```

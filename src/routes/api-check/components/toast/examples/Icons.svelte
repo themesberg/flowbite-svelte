@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Toast } from "flowbite-svelte";
   import { ImageOutline } from "flowbite-svelte-icons";
 </script>

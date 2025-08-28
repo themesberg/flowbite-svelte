@@ -8,7 +8,7 @@ Disclaimer: this sidebar component is based on this <A class="text-primary-700" 
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
 </script>
 ```

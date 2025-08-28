@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Popover } from "flowbite-svelte";
   import { QuestionCircleSolid, ChevronRightOutline } from "flowbite-svelte-icons";
 </script>

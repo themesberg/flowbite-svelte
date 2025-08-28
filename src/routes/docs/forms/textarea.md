@@ -7,7 +7,7 @@ dir: Forms
 description: Use the textarea component as a multi-line text field input and use it inside form elements available in multiple sizes, styles, and variants
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
 
   const components = 'Textarea'
@@ -18,7 +18,7 @@ The textarea component is a multi-line text field input that can be used to rece
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Textarea } from "flowbite-svelte";
 </script>
 ```

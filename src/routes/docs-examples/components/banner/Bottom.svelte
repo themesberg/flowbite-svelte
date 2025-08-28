@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Banner, Skeleton, ImagePlaceholder, A } from "flowbite-svelte";
   import { SalePercentSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 </script>

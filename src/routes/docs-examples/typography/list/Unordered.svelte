@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Li, List, Heading } from "flowbite-svelte";
 </script>
 

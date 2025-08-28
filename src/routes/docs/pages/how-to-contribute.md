@@ -7,7 +7,7 @@ dir: Pages
 description: Learn how you can start contributing to the open-source Flowbite Svelte UI component library
 ---
 
-<script>
+<script lang="ts">
   
 </script>
 

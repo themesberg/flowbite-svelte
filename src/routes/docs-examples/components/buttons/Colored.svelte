@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, GradientButton } from "flowbite-svelte";
 </script>
 

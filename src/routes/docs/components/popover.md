@@ -7,7 +7,7 @@ dir: Components
 description: Use the popover component to show detailed information inside a pop-up box relative to the element that is being clicked or hovered based on multiple styles
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -20,7 +20,7 @@ Make sure that you have the Flowbite JavaScript included in your project to enab
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Popover } from "flowbite-svelte";
 </script>
 ```

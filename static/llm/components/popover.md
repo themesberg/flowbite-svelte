@@ -8,7 +8,7 @@ Make sure that you have the Flowbite JavaScript included in your project to enab
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Popover } from "flowbite-svelte";
 </script>
 ```

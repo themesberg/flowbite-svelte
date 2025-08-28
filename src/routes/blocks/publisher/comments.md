@@ -13,7 +13,7 @@ description: Get started with a collection of comments sections coded with Tailw
 Use this example of a free comments box to show a submission form and a list of comments with the settings and reply feature.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Section, Comment, CommentItem } from "flowbite-svelte-blocks";
   import { Button, Textarea, Label, Dropdown, DropdownItem } from "flowbite-svelte";
   import { DotsHorizontalOutline } from "flowbite-svelte-icons";

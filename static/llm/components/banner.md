@@ -8,7 +8,7 @@ Explore the following examples based on various styles, sizes, and positionings 
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Banner } from "flowbite-svelte";
 </script>
 ```

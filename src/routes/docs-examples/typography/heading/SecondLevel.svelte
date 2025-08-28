@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Heading, P, A } from "flowbite-svelte";
   import { ChevronRightOutline } from "flowbite-svelte-icons";
 </script>

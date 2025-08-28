@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button } from "flowbite-svelte";
   import { EnvelopeSolid } from "flowbite-svelte-icons";
 </script>

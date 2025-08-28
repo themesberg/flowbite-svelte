@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Card, Button } from "flowbite-svelte";
   import { CheckCircleSolid } from "flowbite-svelte-icons";
 </script>

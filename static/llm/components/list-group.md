@@ -6,7 +6,7 @@ The list group component can be used to display a series of elements, buttons or
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Listgroup, ListgroupItem } from "flowbite-svelte";
 </script>
 ```

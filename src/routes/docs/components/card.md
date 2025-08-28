@@ -8,7 +8,7 @@ description: Get started with a large variety of Tailwind CSS card examples for 
 thumnailSize: w-36
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = 'card'
@@ -21,7 +21,7 @@ Use these responsive card components to show data entries and information to you
 Import Card in the script tag.
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Card } from "flowbite-svelte";
 </script>
 ```

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Listgroup, ListgroupItem, Avatar } from "flowbite-svelte";
   import { TrashBinSolid } from "flowbite-svelte-icons";
 </script>

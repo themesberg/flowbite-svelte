@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: The banner component can be used to show extra information or enable interactions with the user without affecting the main content area of the website.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   import componentData1 from '../component-data/Banner.json'
   const components = 'Banner'

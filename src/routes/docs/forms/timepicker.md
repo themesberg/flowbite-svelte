@@ -7,7 +7,7 @@ dir: Forms
 description: Use the timepicker component to allow the user to select a time using a native time input element including hours and minutes
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   const components = 'Timepicker'
 </script>
@@ -17,7 +17,7 @@ The timepicker component can be used to allow the user to select a specific time
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Timepicker } from "flowbite-svelte";
 </script>
 ```

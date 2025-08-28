@@ -10,7 +10,7 @@ Use cases for websites can be found in the examples below and they include copyi
 Import Clipboard in the script tag.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Clipboard } from "flowbite-svelte";
 </script>
 ```

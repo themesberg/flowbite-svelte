@@ -7,7 +7,7 @@ dir: Forms
 description: Get started with the select component to allow the user to choose from one or more options from a dropdown list based on multiple styles, sizes, and variants
 ---
 
-<script>
+<script lang="ts">
 import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
 import { Badge, Kbd  } from '$lib';
 import { ArrowUpOutline, ArrowDownOutline } from 'flowbite-svelte-icons';

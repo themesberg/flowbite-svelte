@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: The CTA (call to action) website sections can be used anywhere on your website to encourage your users to take any action, such as creating a new account.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Cta, Section'
 </script>

@@ -6,7 +6,7 @@ The mega menu component is a full-width dropdown that can be triggered by clicki
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { MegaMenu } from "flowbite-svelte";
 </script>
 ```

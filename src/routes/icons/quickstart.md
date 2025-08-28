@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Icons
 description: Get started with a collection of open-source Flowbite Svelte Icons built by the Flowbite community and based on the official design system
 ---
 
-<script>
+<script lang="ts">
   import { Banner } from 'flowbite-svelte';
   import { A } from '$lib'
   import { removeHyphensAndCapitalize } from './utils/utils';
@@ -62,7 +62,7 @@ To make sure the classes used by flowbite-svelte-icons are included by the Tailw
 In a svelte file:
 
 ```html
-<script>
+<script lang="ts">
   import { AddressBookOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -74,7 +74,7 @@ In a svelte file:
 If you need only a few icons from this library in your Svelte app, import them directly. This can optimize compilation speed and improve performance by reducing the amount of code processed during compilation.
 
 ```html
-<script>
+<script lang="ts">
   import AddressBookOutline from "flowbite-svelte-icons/AddressBookOutline.svelte";
 </script>
 
@@ -92,7 +92,7 @@ Since all icons have `{...restProps}` and extended <A href="https://github.com/s
 ## Using onMount
 
 ```html
-<script>
+<script lang="ts">
   import { AddressBookOutline } from "flowbite-svelte-icons";
   import { onMount } from "svelte";
   const props = {
@@ -110,7 +110,7 @@ Since all icons have `{...restProps}` and extended <A href="https://github.com/s
 Use `import * as Icon from 'flowbite-svelte-icons`.
 
 ```html
-<script>
+<script lang="ts">
   import * as Icon from "flowbite-svelte-icons";
 </script>
 
@@ -268,7 +268,7 @@ You can create global icon preferences in your Svelte application using `setCont
 In your `+layout.svelte` or `+page.svelte`, you can define and set global icon preferences as follows:
 
 ```html
-<script>
+<script lang="ts">
   import { setContext } from "svelte";
 
   // Define your global icon settings
@@ -286,7 +286,7 @@ The `size`, and `role` (for solid icons) and `size`, `role`, `strokeLinecap`, `s
 If you set `size`, icons can be customized with different color. For example:
 
 ```html
-<script>
+<script lang="ts">
   import { setContext } from "svelte";
   import { MapLocationOutline } from "flowbite-svelte-icons";
   const iconCtx = {

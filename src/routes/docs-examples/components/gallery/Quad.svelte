@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Gallery } from "flowbite-svelte";
 
   const images = [

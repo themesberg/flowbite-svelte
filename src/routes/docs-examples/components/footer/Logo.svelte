@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Footer, FooterCopyright, FooterLinkGroup, FooterBrand, FooterLink } from "flowbite-svelte";
 </script>
 

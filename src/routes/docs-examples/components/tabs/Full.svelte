@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 

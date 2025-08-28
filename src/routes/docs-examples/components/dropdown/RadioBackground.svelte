@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, Dropdown, Radio } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let group2 = $state(2);

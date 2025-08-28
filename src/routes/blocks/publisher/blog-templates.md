@@ -13,7 +13,7 @@ description: Get started with a collection of Tailwind CSS blog templates, theme
 Use this free blog template to show the content of an article using the Flowbite Typography plugin including the author, post date, and a comments section.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Section, BlogTemplate, Comment, CommentItem } from "flowbite-svelte-blocks";
   import { Button, Textarea, Label, Dropdown, DropdownItem } from "flowbite-svelte";
   import { DotsHorizontalOutline } from "flowbite-svelte-icons";

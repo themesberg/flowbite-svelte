@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Alert, Li, List } from "flowbite-svelte";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>

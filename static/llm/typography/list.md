@@ -6,7 +6,7 @@ Get started with a collection of list components built with Tailwind CSS for ord
 ## Setup
 
 ```html
-<script>
+<script lang="ts">
   import { List, Li } from "flowbite-svelte";
 </script>
 ```

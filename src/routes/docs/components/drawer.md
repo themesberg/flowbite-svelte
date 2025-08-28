@@ -7,7 +7,7 @@ dir: Components
 description: The Drawer component can be used as a hidden off-canvas sidebar for navigation and to show other information based on multiple styles and placements
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Heading, P, A } from '$lib';
   const dirName = toKebabCase(component_title)
@@ -18,7 +18,7 @@ Use the Drawer component (or “off-canvas”) to show a fixed element relative 
 ## Set up
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
   import { sineIn } from "svelte/easing";
 </script>

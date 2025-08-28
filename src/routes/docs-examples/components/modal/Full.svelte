@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, Modal, P } from "$lib";
   let defaultModal = $state(false);
 </script>

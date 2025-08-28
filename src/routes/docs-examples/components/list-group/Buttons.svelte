@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Listgroup } from "flowbite-svelte";
   let buttons = [
     { name: "Profile", mycustomfield: "data1", current: true },

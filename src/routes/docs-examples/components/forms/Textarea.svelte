@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Textarea } from "flowbite-svelte";
   let textareaprops = {
     id: "message",

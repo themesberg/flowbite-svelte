@@ -6,7 +6,7 @@ The timepicker component can be used to allow the user to select a specific time
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Timepicker } from "flowbite-svelte";
 </script>
 ```

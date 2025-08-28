@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Get started with a collection of testimonial sections built with Tailwind CSS to show a statement from a customer as an endorsement to other potential clients.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Testimonial, TestimonialCard, TestimonialCardItem, Section'
 </script>

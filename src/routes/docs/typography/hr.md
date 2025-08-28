@@ -8,7 +8,7 @@ description: Create a horizontal line using the `Hr` component to separate conte
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { A } from '$lib';
 
@@ -20,7 +20,7 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 ## Setup
 
 ```html
-<script>
+<script lang="ts">
   import { Hr } from "flowbite-svelte";
 </script>
 ```

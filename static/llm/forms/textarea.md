@@ -6,7 +6,7 @@ The textarea component is a multi-line text field input that can be used to rece
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Textarea } from "flowbite-svelte";
 </script>
 ```

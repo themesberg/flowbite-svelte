@@ -7,7 +7,7 @@ dir: Extend
 description: Use the step indicator component to show the progress of a process.
 ---
 
-<script>
+<script lang="ts">
   import {  TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
   const components = 'StepIndicator'
@@ -20,7 +20,7 @@ The Step Indicator component is a simple component to show the progress of a pro
 Import the `StepIndicator` component in a script tag.
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { StepIndicator } from "flowbite-svelte";
 </script>
 ```

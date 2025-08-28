@@ -8,7 +8,7 @@ The Step Indicator component is a simple component to show the progress of a pro
 Import the `StepIndicator` component in a script tag.
 
 ```svelte
-<script>
+<script lang="ts">
   import { StepIndicator } from "flowbite-svelte";
 </script>
 ```

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Drawer, DrawerHandle, CardPlaceholder } from "flowbite-svelte";
   import { AdjustmentsVerticalSolid, ChartPieSolid, ClipboardListSolid, GridPlusSolid, ReceiptSolid, TableRowSolid, UsersSolid } from "flowbite-svelte-icons";
 

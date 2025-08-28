@@ -8,7 +8,7 @@ description: The image component can be used to embed images inside the web page
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { A, Heading, Badge } from '$lib'
 
@@ -20,7 +20,7 @@ Get started with a collection of responsive image components coded with the util
 ## Setup
 
 ```html
-<script>
+<script lang="ts">
   import { Img } from "flowbite-svelte";
 </script>
 ```

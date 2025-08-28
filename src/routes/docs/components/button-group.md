@@ -7,7 +7,7 @@ dir: Components
 description: Button groups are a Tailwind CSS powered set of buttons sticked together in a horizontal line
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
   import { Badge, P, A } from '$lib'
   const dirName = 'buttongroup'
@@ -19,7 +19,7 @@ The button group component from flowbite-svelte can be used to stack together mu
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { ButtonGroup, Button } from "flowbite-svelte";
 </script>
 ```

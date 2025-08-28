@@ -6,7 +6,7 @@ The button group component from flowbite-svelte can be used to stack together mu
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { ButtonGroup, Button } from "flowbite-svelte";
 </script>
 ```

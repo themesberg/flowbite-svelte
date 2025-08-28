@@ -7,7 +7,7 @@ pkg: Flowbite Svelte Blocks
 description: Flowbite Svelte Blocks example website homepage.
 ---
 
-<script>
+<script lang="ts">
   import {
     Section,
     HeroHeader,

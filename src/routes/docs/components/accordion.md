@@ -7,7 +7,7 @@ dir: Components
 description: Use the accordion component to show hidden information based on the collapse and expand state of the child elements using data attribute options
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from 'flowbite-svelte'; 
   const dirName = toKebabCase(component_title)
@@ -20,7 +20,7 @@ A popular use case would be the “Frequently Asked Questions” section of a we
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { AccordionItem, Accordion } from "flowbite-svelte";
 </script>
 ```

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { ButtonGroup, Button } from "flowbite-svelte";
   const handleClick = () => {
     alert("Clicked");

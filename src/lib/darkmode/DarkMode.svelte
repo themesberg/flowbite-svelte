@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-  <script>
+  <script lang="ts">
     if ("THEME_PREFERENCE_KEY" in localStorage) {
       localStorage.getItem("THEME_PREFERENCE_KEY") === "dark" ? window.document.documentElement.classList.add("dark") : window.document.documentElement.classList.remove("dark");
     } else {

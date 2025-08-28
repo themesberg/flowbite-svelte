@@ -6,7 +6,7 @@ The file input component can be used to upload one or more files from the device
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Fileupload } from "flowbite-svelte";
 </script>
 ```

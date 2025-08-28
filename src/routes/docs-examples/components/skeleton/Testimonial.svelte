@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { TestimonialPlaceholder } from "flowbite-svelte";
 </script>
 

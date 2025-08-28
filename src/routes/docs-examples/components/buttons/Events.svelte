@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button } from "flowbite-svelte";
   const btn1 = () => {
     alert("You clicked btn1.");

@@ -8,7 +8,7 @@ description: The link component can be used to set hyperlinks from one page to a
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { A } from '$lib'
   
@@ -22,7 +22,7 @@ Hyperlinks are a great way to reduce bounce rate of the current page and encoura
 ## Setup
 
 ```html
-<script>
+<script lang="ts">
   import { A } from "flowbite-svelte";
 </script>
 ```

@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Use a collection of reset password forms based on multiple layouts to let your users change their password after going through the account recovery email.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Register, Section'
 </script>

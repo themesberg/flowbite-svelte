@@ -8,7 +8,7 @@ description: Get started with the dropdown component to show a list of menu item
 thumnailSize: w-28
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -19,7 +19,7 @@ The dropdown component can be used to show a list of menu items when clicking on
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Dropdown, DropdownItem, DropdownDivider, DropdownHeader } from "flowbite-svelte";
 </script>
 ```

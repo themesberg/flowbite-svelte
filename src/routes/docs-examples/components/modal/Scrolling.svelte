@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button, Modal, P } from "flowbite-svelte";
   let scrollingModal = $state(false);
 </script>

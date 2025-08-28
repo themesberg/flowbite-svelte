@@ -8,7 +8,7 @@ description: Use the rating component to show reviews and testimonials from your
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -23,7 +23,7 @@ You can find multiple examples on this page including different styles, sizes, a
 Let's import all necessary components in the script tag. We import a heart, thumb-up, and smiley icons, but you can use any icons as you like.
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Rating, AdvancedRating, ScoreRating } from "flowbite-svelte";
 </script>
 ```

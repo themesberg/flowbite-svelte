@@ -8,7 +8,7 @@ description: Learn how to customize text-related styles and properties such as f
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { A, Heading } from '$lib'
 

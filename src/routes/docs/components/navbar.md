@@ -7,7 +7,7 @@ dir: Components
 description: The navbar component can be used to show a list of navigation links positioned on the top side of your page based on multiple layouts, sizes, and dropdowns
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, Heading, P, A } from '$lib';
   const dirName = toKebabCase(component_title)
@@ -18,7 +18,7 @@ Get started with the responsive navbar component from Flowbite to quickly set up
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
 </script>
 ```

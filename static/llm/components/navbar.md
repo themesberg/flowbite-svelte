@@ -6,7 +6,7 @@ Get started with the responsive navbar component from Flowbite to quickly set up
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
 </script>
 ```

@@ -7,7 +7,7 @@ dir: Pages
 description: Learn more about the open-source licensing rights of the Flowbite Svelte UI component library
 ---
 
-<script>
+<script lang="ts">
   
 </script>
 

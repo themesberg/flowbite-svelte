@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: The login page can be used to allow users to authenticate inside your application based on a collection of templates from Flowbite and coded with Tailwind CSS.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Register, Section'
 </script>

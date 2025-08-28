@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Label, Input, InputAddon, ButtonGroup } from "flowbite-svelte";
   import { UserCircleSolid } from "flowbite-svelte-icons";
 </script>

@@ -8,7 +8,7 @@ At least one unique `h1` tag should be available for each page on your website w
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Heading, P, A, Mark, Secondary } from "flowbite-svelte";
 </script>
 ```

@@ -8,7 +8,7 @@ description: Use the modal component to show interactive dialogs and notificatio
 thumnailSize: w-48
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A, Alert } from '$lib'  
   const dirName = toKebabCase(component_title)
@@ -21,7 +21,7 @@ Get started with multiple sizes, colors, and styles built with the utility class
 ## Setup
 
 ```svelte example class="flex justify-center" hideOutput
-<script>
+<script lang="ts">
   import { Modal } from "flowbite-svelte";
 </script>
 ```

@@ -8,7 +8,7 @@ description: Use the typography and the utility classes from Tailwind CSS to sty
 thumnailSize: w-36
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { A } from '$lib';
   const components = 'A, Blockquote, DescriptionList, Heading, Hr, Img, Layout, Li, List, Mark, P, Secondary, Span';
@@ -97,7 +97,7 @@ Use the following leading-type utility classes to set the line height for any te
 Use the following code to create list items with ordered and unordered lists.
 
 ```svelte example hideResponsiveButtons
-<script>
+<script lang="ts">
   import { List, Li, Heading } from "flowbite-svelte";
 </script>
 
@@ -126,7 +126,7 @@ Use the following code to create list items with ordered and unordered lists.
 Use the `position="inside"` and `position="outside"` props to set the list item position inside or outside of a list component.
 
 ```svelte example hideResponsiveButtons
-<script>
+<script lang="ts">
   import { List, Li, Heading } from "flowbite-svelte";
 </script>
 

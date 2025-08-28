@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Progressbar } from "flowbite-svelte";
 </script>
 

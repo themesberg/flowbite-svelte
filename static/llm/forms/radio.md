@@ -6,7 +6,7 @@ The radio component can be used to allow the user to choose a single option from
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Radio } from "flowbite-svelte";
 </script>
 ```

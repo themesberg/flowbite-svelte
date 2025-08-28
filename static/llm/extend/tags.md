@@ -8,7 +8,7 @@ The Tags.svelte component is a flexible tag input field that lets users add and 
 Import the `Tags` component in a script tag.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Tags } from "flowbite-svelte";
 </script>
 ```

@@ -7,7 +7,7 @@ dir: components
 description: Use the chart and graph components from flowbite-svelte built with Tailwind CSS and ApexCharts to choose from line, area, bar, column, pie, and radial charts
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import componentData1 from '../../component-data/Chart.json'
   import componentData2 from '../../component-data/Card.json'

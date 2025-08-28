@@ -7,7 +7,7 @@ dir: Components
 description: Use the mega menu component as a full-width dropdown inside the navbar to show a list of menu items based on multiple sizes, variants, and styles
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils';
   import { P, A } from '$lib';
   const dirName = toKebabCase(component_title)
@@ -18,7 +18,7 @@ The mega menu component is a full-width dropdown that can be triggered by clicki
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { MegaMenu } from "flowbite-svelte";
 </script>
 ```

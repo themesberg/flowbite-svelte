@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { ScoreRating } from "flowbite-svelte";
   let headerLabel = {
     desc1: "8.7",

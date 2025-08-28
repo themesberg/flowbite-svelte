@@ -7,7 +7,7 @@ dir: Forms
 description: Use the phone number input component to set a phone number inside a form field and use a dropdown menu to select the country code based on various styles, sizes and colors
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, Seealso } from '../../utils'
   import { A } from '$lib'
 
@@ -22,7 +22,7 @@ The examples are built with the utility classes from Tailwind CSS and they are f
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { PhoneInput, Label, Helper } from "flowbite-svelte";
 </script>
 ```

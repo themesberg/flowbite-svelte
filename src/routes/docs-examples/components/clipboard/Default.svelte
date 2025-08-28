@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Clipboard, Input } from "flowbite-svelte";
   import { CheckOutline } from "flowbite-svelte-icons";
 

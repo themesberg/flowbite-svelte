@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Get started with the side nav component to show a list of menu items, dropdowns, actions, and user profile actions for your application and dashboard.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'SidebarBottomNav, SidebarBottomNavItem, Section'
 </script>

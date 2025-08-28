@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Popover, Button, Avatar } from "flowbite-svelte";
   import { GlobeOutline, HeartSolid, ThumbsUpSolid, DotsHorizontalOutline } from "flowbite-svelte-icons";
 </script>

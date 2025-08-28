@@ -6,7 +6,7 @@ The indicator component can be used as a small element positioned absolutely rel
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Indicator } from "flowbite-svelte";
 </script>
 ```

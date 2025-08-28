@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Card } from "flowbite-svelte";
   import { GiftBoxSolid, ArrowUpRightFromSquareOutline } from "flowbite-svelte-icons";
 </script>

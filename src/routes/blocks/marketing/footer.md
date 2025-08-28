@@ -8,7 +8,7 @@ pkg: Flowbite Svelte Blocks
 description: Get started with footer sections coded in Tailwind CSS to use at the bottom of every page of your website and showcase your logo, sitemap links, and more.
 ---
 
-<script>
+<script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
   const components = 'Section'
 </script>
@@ -18,7 +18,7 @@ description: Get started with footer sections coded in Tailwind CSS to use at th
 Use this example of a footer section to show the logo of your brand, a description, links, and the copyright notice.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Footer, FooterBrand, FooterLinkGroup, FooterLink } from "flowbite-svelte";
 </script>
 
@@ -48,7 +48,7 @@ Use this example of a footer section to show the logo of your brand, a descripti
 Use this footer section to show the logo of your brand, the sitemap, social media accounts, and the copyright notice.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Facebook, Instagram, GitHub, Twitter } from "flowbite-svelte-blocks";
   import { Footer, FooterBrand, FooterLinkGroup, FooterLink, FooterCopyright, FooterIcon } from "flowbite-svelte";
 </script>

@@ -8,7 +8,7 @@ description: The speed dial component can be used as a quick way to show a list 
 thumnailSize: w-64
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A, Alert } from '$lib'  
   const dirName = toKebabCase(component_title)

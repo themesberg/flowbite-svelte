@@ -7,7 +7,7 @@ dir: Forms
 description: Get started with the range component to receive a number from the user anywhere from 1 to 100 by sliding form control horizontally based on multiple options
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   const components = 'Range'
   let minmaxValue=5
@@ -18,7 +18,7 @@ The range component can be used as an input field to get a number from the user 
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Range } from "flowbite-svelte";
 </script>
 ```

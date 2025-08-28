@@ -20,7 +20,7 @@ Thanks to tailwind-merge, you can efficiently merge Tailwind CSS classes without
 In Tailwind CSS, you can make any utility class important by adding a `!` character at the beginning of the class name. Certain components may require this approach to successfully overwrite styles. Here's an example:
 
 ```svelte
-<script>
+<script lang="ts">
   import { Button } from "flowbite-svelte";
 </script>
 
@@ -35,7 +35,7 @@ While the `class` prop can be used for most components, some components with a c
 For instance, let's consider [the Banner component](https://next.flowbite-svelte.com/docs/components/banner#component-data) has two relevant props: `class` for `div` and `classInner` for `innerClass`. To overwrite the `div`, you can use the `classDiv` prop:
 
 ```svelte
-<script>
+<script lang="ts">
   import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
 </script>
 
@@ -54,7 +54,7 @@ You can observe the background color change to green.
 Instead of intrducing multiple props for component's internal element classes new prop `classes` has been introduced: an object of internal element names and desired new classes. The above example will therefore change to:
 
 ```svelte
-<script>
+<script lang="ts">
   import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte";
 </script>
 
@@ -79,7 +79,7 @@ Start by creating your own component based on flowbite-svelte.
 Create a new file for your button component in the lib directory:
 
 ```svelte
-<script>
+<script lang="ts">
   // src/lib/MyButton.svelte
   import { Button } from "flowbite-svelte";
   let { children } = $props();
@@ -95,7 +95,7 @@ Once you have created your button component, you can use it in your project.
 In your project, import your custom button component:
 
 ```js
-<script>import MyButton from "$lib/MyButton.svelte"</script>
+<script lang="ts">import MyButton from "$lib/MyButton.svelte"</script>
 ```
 
 Use the custom button component in your project by adding the following code:

@@ -8,7 +8,7 @@ description: Use the toggle component to switch between a binary state of true o
 thumbnailSize: w-72
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
   import { onMount } from 'svelte';
   import { Toggle } from '$lib'
@@ -21,7 +21,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Toggle } from "flowbite-svelte";
 </script>
 ```

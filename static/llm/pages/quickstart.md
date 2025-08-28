@@ -114,7 +114,7 @@ Now you should be able to work with the Flowbite Svelte library and import compo
 Now you are ready to go! Add the following to `src/routes/+page.svelte` and if you see the following image, then your setting is complete.
 
 ```svelte
-<script>
+<script lang="ts">
   import { Alert } from "flowbite-svelte";
 </script>
 

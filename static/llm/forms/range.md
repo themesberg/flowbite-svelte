@@ -6,7 +6,7 @@ The range component can be used as an input field to get a number from the user 
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Range } from "flowbite-svelte";
 </script>
 ```

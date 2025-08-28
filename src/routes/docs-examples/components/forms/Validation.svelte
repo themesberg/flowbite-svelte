@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Label, Input, Helper } from "flowbite-svelte";
 </script>
 

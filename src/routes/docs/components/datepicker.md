@@ -7,7 +7,7 @@ dir: Components
 description: Use the Datepicker component to allow users to select a date or date range with an interactive calendar interface
 ---
 
-<script>
+<script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
@@ -18,7 +18,7 @@ The Datepicker component provides an interactive calendar interface for selectin
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Datepicker } from "flowbite-svelte";
 </script>
 ```

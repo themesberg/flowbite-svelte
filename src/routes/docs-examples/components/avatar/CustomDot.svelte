@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Avatar, Indicator } from "flowbite-svelte";
   import { BugOutline } from "flowbite-svelte-icons";
 </script>

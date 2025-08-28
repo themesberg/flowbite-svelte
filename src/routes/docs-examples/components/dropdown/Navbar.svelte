@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Dropdown, DropdownItem, Navbar, NavBrand, NavHamburger, NavUl, NavLi } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>

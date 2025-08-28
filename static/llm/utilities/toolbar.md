@@ -4,7 +4,7 @@
 ## Setup
 
 ```svelte
-<script>
+<script lang="ts">
   import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
 </script>
 ```

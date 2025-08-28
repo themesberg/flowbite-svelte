@@ -7,7 +7,7 @@ dir: Pages
 description: Learn how to get started with the free and open-source Flowbite Svelte UI component library based on the utility classes from Tailwind CSS
 ---
 
-<script>
+<script lang="ts">
   import { A, P, List, Li } from '$lib'
   
 </script>
@@ -125,7 +125,7 @@ Now you should be able to work with the Flowbite Svelte library and import compo
 Now you are ready to go! Add the following to `src/routes/+page.svelte` and if you see the following image, then your setting is complete.
 
 ```svelte example
-<script>
+<script lang="ts">
   import { Alert } from "flowbite-svelte";
 </script>
 

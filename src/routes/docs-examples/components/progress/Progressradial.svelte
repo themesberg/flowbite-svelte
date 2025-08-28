@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Progressradial, Button } from "flowbite-svelte";
   import { sineOut } from "svelte/easing";
   let progress = $state(45);

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { browser } from "$app/environment";
   import { ButtonGroup, Button, Input } from "flowbite-svelte";
   import Mail from "../utils/icons/Mail.svelte";

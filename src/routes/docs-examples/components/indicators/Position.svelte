@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Indicator } from "flowbite-svelte";
 </script>
 

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Clipboard, Input, Tooltip, Modal, Button, Label } from "$lib";
   import { CheckOutline, ClipboardCleanSolid, ShareNodesOutline } from "flowbite-svelte-icons";
 

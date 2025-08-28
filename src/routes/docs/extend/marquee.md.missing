@@ -7,7 +7,7 @@ dir: Extend
 description: Use Marquee Banner to display a series of items
 ---
 
-<script>
+<script lang="ts">
   import {  TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { P, A } from '$lib'
   const components = 'Marquee'
@@ -16,7 +16,7 @@ description: Use Marquee Banner to display a series of items
 ## Setup
 
 ```svelte example hideOutput
-<script>
+<script lang="ts">
   import { Marquee } from 'flowbite-svelte'
 </script>
 ```
@@ -24,7 +24,7 @@ description: Use Marquee Banner to display a series of items
 ## Simple Maquee
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { Marquee } from 'flowbite-svelte'
 </script>
 
@@ -39,7 +39,7 @@ description: Use Marquee Banner to display a series of items
 ## Hover speed
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { Marquee } from 'flowbite-svelte'
 </script>
 
@@ -54,7 +54,7 @@ description: Use Marquee Banner to display a series of items
 ## Shadow
 
 ```svelte example hideScript
-<script>
+<script lang="ts">
   import { Marquee } from 'flowbite-svelte'
 </script>
 

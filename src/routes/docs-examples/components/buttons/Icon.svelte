@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button } from "flowbite-svelte";
   import { ArrowRightOutline, CartSolid } from "flowbite-svelte-icons";
 </script>
