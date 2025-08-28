@@ -37,25 +37,7 @@ Number of rows in the gallery is set by passing the `grid-cols-{n}` Tailwind cla
 Example below show a gallery with three pictures on a row.
 
 ```svelte example class="flex flex-wrap gap-2"
-<script>
-  import { Gallery } from "flowbite-svelte";
-  const images = [
-    { alt: "erbology", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" },
-    { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" },
-    { alt: "plants", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" },
-    { alt: "watch", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" },
-    { alt: "shoe", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" },
-    { alt: "cream", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg" },
-    { alt: "lamp", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg" },
-    { alt: "toiletbag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg" },
-    { alt: "playstation", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg" },
-    { alt: "bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg" }
-  ];
-</script>
-
-<Gallery items={images} class="grid-cols-2 gap-4 md:grid-cols-3" />
+{#include Default.svelte}
 ```
 
 ## Masonry grid
@@ -63,36 +45,7 @@ Example below show a gallery with three pictures on a row.
 This example can be used to show the images inside a masongry grid layouts with four columns.
 
 ```svelte example class="flex flex-wrap gap-2"
-<script>
-  import { Gallery } from "flowbite-svelte";
-  const images1 = [
-    { alt: "erbology", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" },
-    { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" }
-  ];
-  const images2 = [
-    { alt: "plants", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" },
-    { alt: "watch", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" },
-    { alt: "shoe", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" }
-  ];
-  const images3 = [
-    { alt: "cream", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" },
-    { alt: "lamp", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" }
-  ];
-  const images4 = [
-    { alt: "toiletbag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" },
-    { alt: "playstation", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" },
-    { alt: "bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" }
-  ];
-</script>
-
-<Gallery class="grid-cols-2 gap-4 md:grid-cols-4">
-  <Gallery items={images1} />
-  <Gallery items={images2} />
-  <Gallery items={images3} />
-  <Gallery items={images4} />
-</Gallery>
+{#include Masonry.svelte}
 ```
 
 ## Featured image
@@ -100,25 +53,7 @@ This example can be used to show the images inside a masongry grid layouts with 
 This example can be used to feature the most important image and show a row of five pictures below.
 
 ```svelte example class="flex flex-wrap gap-2"
-<script>
-  import { Gallery } from "flowbite-svelte";
-  const image1 = {
-    alt: "erbology",
-    src: "https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg"
-  };
-  const images2 = [
-    { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" },
-    { alt: "plants", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" },
-    { alt: "watch", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" },
-    { alt: "shoe", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" }
-  ];
-</script>
-
-<Gallery class="gap-4">
-  <img src={image1.src} alt={image1.alt} class="h-auto max-w-full rounded-lg" />
-  <Gallery class="grid-cols-5" items={images2} />
-</Gallery>
+{#include Featured.svelte}
 ```
 
 ## Quad gallery
@@ -126,18 +61,7 @@ This example can be used to feature the most important image and show a row of f
 Use this example to show four larger images with two items on a row.
 
 ```svelte example class="flex flex-wrap gap-2"
-<script>
-  import { Gallery } from "flowbite-svelte";
-
-  const images = [
-    { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" },
-    { alt: "plants", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" },
-    { alt: "watch", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" }
-  ];
-</script>
-
-<Gallery class="grid-cols-2 gap-2" items={images} />
+{#include Quad.svelte}
 ```
 
 ## Gallery with tag filters
@@ -145,33 +69,7 @@ Use this example to show four larger images with two items on a row.
 Use this example to show a list of tags and filter the images below based on the activately selected tag.
 
 ```svelte example class="flex flex-wrap gap-2"
-<script>
-  import { Gallery, Button } from "flowbite-svelte";
-  const images = [
-    { alt: "erbology", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" },
-    { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" },
-    { alt: "plants", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" },
-    { alt: "watch", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" },
-    { alt: "shoe", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" },
-    { alt: "cream", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg" },
-    { alt: "lamp", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg" },
-    { alt: "toiletbag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg" },
-    { alt: "playstation", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg" },
-    { alt: "bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg" }
-  ];
-</script>
-
-<div class="mx-auto mb-3 flex flex-wrap items-center justify-center gap-3 py-4 md:py-8">
-  <Button pill size="xl" outline>All categories</Button>
-  <Button pill size="xl" color="alternative">Shoes</Button>
-  <Button pill size="xl" color="alternative">Bags</Button>
-  <Button pill size="xl" color="alternative">Electronics</Button>
-  <Button pill size="xl" color="alternative">Gaming</Button>
-</div>
-
-<Gallery items={images} class="grid-cols-2 gap-4 md:grid-cols-3" />
+{#include Filters.svelte}
 ```
 
 ## Heterogeneous gallery
@@ -179,16 +77,7 @@ Use this example to show a list of tags and filter the images below based on the
 Gallery items don't have to be all the same but then you need to list them manually - don't set the `items` property.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
-<script>
-  import { Gallery } from "flowbite-svelte";
-</script>
-
-<Gallery class="grid-cols-2 gap-4">
-  <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="shoas" class="max-w- h-auto rounded-lg" />
-  <div class="max-w- flex h-auto items-center justify-center rounded-lg bg-red-300 text-6xl font-extrabold">Sale</div>
-  <div class="max-w- flex h-auto items-center justify-center rounded-lg bg-blue-300 text-6xl font-extrabold">Sale</div>
-  <img alt="plants" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" class="max-w- h-auto rounded-lg" />
-</Gallery>
+{#include Heterogeneous.svelte}
 ```
 
 ## Custom image rendering
@@ -196,24 +85,7 @@ Gallery items don't have to be all the same but then you need to list them manua
 This example shows how to get a complete control over the gallery images look and feel.
 
 ```svelte example class="flex flex-wrap gap-2"
-<script>
-  import { Gallery } from "flowbite-svelte";
-  const images = [
-    { alt: "shoes", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" },
-    { alt: "small bag", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" },
-    { alt: "plants", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" },
-    { alt: "watch", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" },
-    { alt: "shoe", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" }
-  ];
-</script>
-
-<Gallery class="grid-cols-3 gap-4" items={images}>
-  {#snippet figure(item)}
-    <div class="p-1 ring-4 ring-red-600 dark:ring-red-400">
-      <img src={item.src} alt={item.alt} class="h-auto max-w-full" />
-    </div>
-  {/snippet}
-</Gallery>
+{#include Custom.svelte}
 ```
 
 ## Component data
