@@ -1,5 +1,5 @@
 <script>
-  import { Drawer, Button, CloseButton, Sidebar, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, Sidebar, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
   import { ChartPieSolid, CartSolid, GridSolid, MailBoxSolid, UsersSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   let open2 = $state(false);
   let spanClass = "flex-1 ms-3 whitespace-nowrap";
@@ -7,9 +7,10 @@
 
 <div class="text-center">
   <Button onclick={() => (open2 = true)}>Show navigation</Button>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 <Drawer bind:open={open2} class="w-64 bg-gray-50 p-0 dark:bg-gray-800">
-  <h5 class="px-4 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
+  <h5 class="px-6 py-4 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
   <Sidebar disableBreakpoints={true} class="top-16">
     <SidebarWrapper class="overflow-y-auto rounded-sm px-3 py-0 dark:bg-gray-800">
       <SidebarGroup>

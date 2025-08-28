@@ -1,6 +1,5 @@
 <script lang="ts">
   import { List, Li, P, A } from "$lib";
-  import A4 from "../admin-dashboard/(no-sidebar)/pages/404.svelte";
   let { data } = $props();
 
   function convertString(path: string): string {

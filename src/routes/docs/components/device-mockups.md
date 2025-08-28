@@ -33,14 +33,7 @@ You can choose from multiple examples of mockups including phone, tablet, laptop
 Use this example to show a standard phone mockup based on Tailwind CSS and add your app screenshot inside of it with dark mode support included.
 
 ```svelte example
-<script>
-  import { DeviceMockup } from "flowbite-svelte";
-</script>
-
-<DeviceMockup>
-  <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png" class="h-[572px] w-[272px] dark:hidden" alt="default example 1" />
-  <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-dark.png" class="hidden h-[572px] w-[272px] dark:block" alt="default example 2" />
-</DeviceMockup>
+{#include Default.svelte}
 ```
 
 ## iPhone 12 mockup (iOS)
@@ -48,14 +41,7 @@ Use this example to show a standard phone mockup based on Tailwind CSS and add y
 Use this example to clearly show that the preview of your application is being used on an iPhone with iOS.
 
 ```svelte example
-<script>
-  import { DeviceMockup } from "flowbite-svelte";
-</script>
-
-<DeviceMockup device="ios">
-  <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-2-light.png" class="h-[572px] w-[272px] dark:hidden" alt="ios example 1" />
-  <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-2-dark.png" class="hidden h-[572px] w-[272px] dark:block" alt="ios example 2" />
-</DeviceMockup>
+{#include Iphone.svelte}
 ```
 
 ## Google Pixel mockup (Android)
@@ -63,14 +49,7 @@ Use this example to clearly show that the preview of your application is being u
 Use this alternative phone mockup example if you want to feature previews for android gadgets.
 
 ```svelte example
-<script>
-  import { DeviceMockup } from "flowbite-svelte";
-</script>
-
-<DeviceMockup device="android">
-  <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png" class="h-[572px] w-[272px] dark:hidden" alt="android example 1" />
-  <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-dark.png" class="hidden h-[572px] w-[272px] dark:block" alt="android example 2" />
-</DeviceMockup>
+{#include Pixel.svelte}
 ```
 
 ## Tablet mockup
@@ -78,14 +57,7 @@ Use this alternative phone mockup example if you want to feature previews for an
 This component can be used to show an application preview inside of a responsive tablet mockup.
 
 ```svelte example
-<script>
-  import { DeviceMockup } from "flowbite-svelte";
-</script>
-
-<DeviceMockup device="tablet">
-  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/tablet-mockup-image.png" class="h-[426px] md:h-[654px] dark:hidden" alt="tablet example 1" />
-  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/tablet-mockup-image-dark.png" class="hidden h-[426px] md:h-[654px] dark:block" alt="tablet example 2" />
-</DeviceMockup>
+{#include Tablet.svelte}
 ```
 
 ## Laptop mockup
@@ -93,14 +65,7 @@ This component can be used to show an application preview inside of a responsive
 This example can be used to show a screenshot of your application inside a laptop mockup.
 
 ```svelte example
-<script>
-  import { DeviceMockup } from "flowbite-svelte";
-</script>
-
-<DeviceMockup device="laptop">
-  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen.png" class="h-[156px] w-full rounded-xl md:h-[278px] dark:hidden" alt="laptop example 1" />
-  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/laptop-screen-dark.png" class="hidden h-[156px] w-full rounded-lg md:h-[278px] dark:block" alt="laptop example 2" />
-</DeviceMockup>
+{#include Laptop.svelte}
 ```
 
 ## Desktop mockup
@@ -108,14 +73,7 @@ This example can be used to show a screenshot of your application inside a lapto
 Use this example to show a preview of your applicaiton inside a desktop device such as an iMac.
 
 ```svelte example
-<script>
-  import { DeviceMockup } from "flowbite-svelte";
-</script>
-
-<DeviceMockup device="desktop">
-  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/screen-image-imac.png" class="h-[140px] w-full rounded-xl md:h-[262px] dark:hidden" alt="desktop example 1" />
-  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/screen-image-imac-dark.png" class="hidden h-[140px] w-full rounded-xl md:h-[262px] dark:block" alt="desktop example 2" />
-</DeviceMockup>
+{#include Desktop.svelte}
 ```
 
 ## Smartwatch mockup
@@ -123,14 +81,7 @@ Use this example to show a preview of your applicaiton inside a desktop device s
 This component can be used to showcase applications built for smartwatches.
 
 ```svelte example
-<script>
-  import { DeviceMockup } from "flowbite-svelte";
-</script>
-
-<DeviceMockup device="smartwatch">
-  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image.png" class="w-[188px h-[193px] dark:hidden" alt="smartwatch example 1" />
-  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image-dark.png" class="hidden h-[193px] w-[188px] dark:block" alt="smartwatch example 2" />
-</DeviceMockup>
+{#include Smartwatch.svelte}
 ```
 
 ## Component data

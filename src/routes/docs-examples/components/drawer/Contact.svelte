@@ -1,5 +1,5 @@
 <script>
-  import { Drawer, Button, CloseButton, Label, Input, Textarea, P, A, Checkbox } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, Label, Input, Textarea, P, A, Checkbox } from "flowbite-svelte";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 
   let open3 = $state(false);
@@ -7,12 +7,13 @@
 
 <div class="text-center">
   <Button onclick={() => (open3 = true)}>Show contact form</Button>
+  <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 <Drawer bind:open={open3}>
-  <h5 id="drawer-label" class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+  <h5 class="mb-6 inline-flex items-center text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
     <InfoCircleSolid class="me-2.5 h-5 w-5" />Contact us
   </h5>
-  <form action="#" class="mb-6">
+  <form method="dialog" class="mb-6">
     <div class="mb-6">
       <Label for="email" class="mb-2 block">Your email</Label>
       <Input id="email" name="email" required placeholder="name@company.com" />

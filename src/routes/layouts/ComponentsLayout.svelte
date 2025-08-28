@@ -19,7 +19,7 @@
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   const posts: Record<string, any[]> = data.posts?.posts ?? {};
   const builders: Array<{ path: string }> = data.posts?.builders ?? [];
-  const apicheck: Record<string, { path: string }[]> = data.posts.apicheck || {};
+  // const apicheck: Record<string, { path: string }[]> = data.posts.apicheck || {};
   // const blocks: Record<string, any[]> = data.posts?.blocks ?? {};
   // console.log(posts)
   const blocks = ["quickstart", "application", "marketing", "publisher"];
@@ -76,47 +76,32 @@
   <SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-2 z-40 mb-2 md:top-4" />
   <Sidebar breakpoint="lg" backdrop={true} {isOpen} {closeSidebar} classes={{ div: divClass, nonactive: nonActiveClass, active: activeClass }} activeUrl={mainSidebarUrl} class={mainClass} params={{ x: -50, duration: 50 }}>
     <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
-    {#if submenu === "api-check"}
-      <SidebarGroup>
-        <Label class="pl-4 text-xl">API Check</Label>
-        {#each Object.entries(apicheck) as [key, values] (key)}
-          <SidebarDropdownWrapper label={names_mapping[key] ?? key} classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
-            {#each values as { path }}
-              {@const href = `/api-check/${key}${path}`}
-              {@const linkLabel = convertString(path)}
-              <SidebarItem label={linkLabel} {href} {spanClass} />
-            {/each}
-          </SidebarDropdownWrapper>
-        {/each}
-      </SidebarGroup>
-    {:else}
-      <SidebarGroup>
-        {#each Object.entries(posts) as [key, values] (key)}
-          <SidebarDropdownWrapper label={names_mapping[key] ?? key} classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
-            {#each values as { meta, path }}
-              {@const href = key === "icons" || key === "illustrations" ? `/${key}${path}` : `/docs/${key}${path}`}
-              <SidebarItem label={meta.component_title} {href} {spanClass} />
-            {/each}
-          </SidebarDropdownWrapper>
-        {/each}
-        {#if builders.length}
-          <SidebarDropdownWrapper label="Builders" classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class="text-primary-700 dark:text-primary-700">
-            {#each builders as builder}
-              {@const pathWithoutSlash = builder.path.replace(/^\//, "")}
-              {@const capitalizedPath = pathWithoutSlash.charAt(0).toUpperCase() + pathWithoutSlash.slice(1)}
-              {@const href = `/builder/${builder.path}`}
-              <SidebarItem label={capitalizedPath} {href} {spanClass} />
-            {/each}
-          </SidebarDropdownWrapper>
-        {/if}
-        <SidebarDropdownWrapper label="Blocks" classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class="text-primary-700 dark:text-primary-700">
-          {#each blocks as block}
-            <SidebarItem label={capitalizeFirstLetter(block)} href="/blocks/{block}" {spanClass} />
+    <SidebarGroup>
+      {#each Object.entries(posts) as [key, values] (key)}
+        <SidebarDropdownWrapper label={names_mapping[key] ?? key} classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
+          {#each values as { meta, path }}
+            {@const href = key === "icons" || key === "illustrations" ? `/${key}${path}` : `/docs/${key}${path}`}
+            <SidebarItem label={meta.component_title} {href} {spanClass} />
           {/each}
         </SidebarDropdownWrapper>
-        <SidebarItem label="Admin Dashboard" href="/admin-dashboard" spanClass="ms-3 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass}></SidebarItem>
-      </SidebarGroup>
-    {/if}
+      {/each}
+      {#if builders.length}
+        <SidebarDropdownWrapper label="Builders" classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class="text-primary-700 dark:text-primary-700">
+          {#each builders as builder}
+            {@const pathWithoutSlash = builder.path.replace(/^\//, "")}
+            {@const capitalizedPath = pathWithoutSlash.charAt(0).toUpperCase() + pathWithoutSlash.slice(1)}
+            {@const href = `/builder/${builder.path}`}
+            <SidebarItem label={capitalizedPath} {href} {spanClass} />
+          {/each}
+        </SidebarDropdownWrapper>
+      {/if}
+      <SidebarDropdownWrapper label="Blocks" classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class="text-primary-700 dark:text-primary-700">
+        {#each blocks as block}
+          <SidebarItem label={capitalizeFirstLetter(block)} href="/blocks/{block}" {spanClass} />
+        {/each}
+      </SidebarDropdownWrapper>
+      <SidebarItem label="Admin Dashboard" href="/admin-dashboard" spanClass="ms-3 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass}></SidebarItem>
+    </SidebarGroup>
     <!-- /SidebarWrapper -->
   </Sidebar>
 {/if}

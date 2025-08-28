@@ -1,17 +1,23 @@
 <script>
-  import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, Label, Textarea } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-  import { sineIn } from "svelte/easing";
-  let open = $state(false);
+
+  let open5 = $state(false);
+  let placement = $state("right");
 </script>
 
 <div class="text-center">
-  <Button onclick={() => (open = true)}>Show drawer</Button>
+  <Button onclick={() => ((placement = "top"), (open5 = true))}>Top drawer</Button>
+  <div class="my-2 space-x-6">
+    <Button onclick={() => ((placement = "left"), (open5 = true))}>Left drawer</Button>
+    <Button onclick={() => ((placement = "right"), (open5 = true))}>Right drawer</Button>
+  </div>
+  <Button onclick={() => ((placement = "bottom"), (open5 = true))}>Bottom drawer</Button>
   <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 
-<Drawer bind:open aria-labelledby="drawer-label">
-  <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
+<Drawer {placement} bind:open={open5}>
+  <h5 class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
     <InfoCircleSolid class="me-2.5 h-5 w-5" />Info
   </h5>
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
