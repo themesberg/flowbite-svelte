@@ -1,6 +1,5 @@
 # Svelte Button Toggle
 
-
 ## Setup
 
 ```svelte
@@ -12,7 +11,7 @@
 ## Default single and multiple
 
 ```svelte
-{@include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Button color
@@ -20,19 +19,19 @@
 You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, `lime`, `green`, `emerald`, `teal`, `cyan`, `sky`, `blue`, `indigo`, `violet`, `purple`, `fuchsia`, `pink`, `rose`.
 
 ```svelte
-{@include ButtonColor.svelte}
+{#include ButtonColor.svelte}
 ```
 
 ## Group color
 
 ```svelte
-{@include GroupColor.svelte}
+{#include GroupColor.svelte}
 ```
 
 ## Rounded size
 
 ```svelte
-{@include RoundedSize.svelte}
+{#include RoundedSize.svelte}
 ```
 
 ## ctxBtnClass, ctxIconClass, class
@@ -40,13 +39,13 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 `ButtonToggle`'s `class` takes precedence over `ctxBtnClass`.
 
 ```svelte
-{@include Ctx.svelte}
+{#include Ctx.svelte}
 ```
 
 ## Custom icon with color="none"
 
 ```svelte
-{@include Custom.svelte}
+{#include Custom.svelte}
 ```
 
 ## See also
@@ -77,4 +76,3 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 - txtClass
 - contentClass
 - classes
-

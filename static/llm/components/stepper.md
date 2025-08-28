@@ -1,6 +1,5 @@
 # Svelte Stepper - Flowbite
 
-
 The stepper component can be used to show a numbered list of steps next to a form component to indicate the progress and number of steps that are required to complete and submit the form data.
 
 There are multiple examples that you can use including horizontal or vertical aligned stepper components, different sizes, styles, and showing icons or numbers all coded with the utility classes from Tailwind CSS.
@@ -328,9 +327,6 @@ Use this example to show the stepper component next to a form layout and change 
 - class: className
 - classes
 
-
 ## References
 
 - [Flowbite Sidebar](https://flowbite.com/docs/components/stepper)
-
-

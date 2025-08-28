@@ -19,7 +19,7 @@ export function includeFiles({ extensions = [], docsDir = "", examplesDir = "" }
 
       try {
         const deps = new Set();
-        const processedContent = content.replace(/{@include\s+([^\s}]+)}/g, (match, filepath) => {
+        const processedContent = content.replace(/{#include\s+([^\s}]+)}/g, (match, filepath) => {
           try {
             // Resolve path relative to the examples tree and enforce containment
             if (path.isAbsolute(filepath)) {

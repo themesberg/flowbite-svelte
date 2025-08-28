@@ -1,6 +1,5 @@
 # Quickstart - Flowbite Svelte
 
-
 You can install Flowbite Svelte by using the <A href='/docs/extend/flowbite-svelte-starter'>flowbite-svelte-start</A> or from scratch.
 
 ## Getting started

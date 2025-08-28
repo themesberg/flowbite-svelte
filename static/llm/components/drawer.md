@@ -1,6 +1,5 @@
 # Svelte Drawer (Off-canvas) - Flowbite
 
-
 Use the Drawer component (or “off-canvas”) to show a fixed element relative to the document page from any side for navigation, contact forms, informational purposes or other user actions.
 
 ## Set up
@@ -427,9 +426,6 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 - class: className
 - classes
 
-
 ## References
 
 - [Flowbite Drawer](https://flowbite.com/docs/components/drawer/)
-
-

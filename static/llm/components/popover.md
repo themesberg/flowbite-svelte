@@ -1,6 +1,5 @@
 # Svelte Popover - Flowbite
 
-
 Get started with the popover component to show any type of content inside a pop-up box when hovering or clicking over a trigger element. There are multiple examples that you can choose from, such as showing more information about a user profile, company profile, password strength, and more.
 
 Make sure that you have the Flowbite JavaScript included in your project to enable the popover interactivity by following the quickstart guide.
@@ -402,9 +401,6 @@ If you need the popover to be attached to the other element then the tiggering o
 - classes
 - isOpen: $bindable(false)
 
-
 ## References
 
 - [Flowbite Popover](https://flowbite.com/docs/components/popover/)
-
-

@@ -32,7 +32,7 @@ The examples are built with the utility classes from Tailwind CSS and they are f
 Use this component to set a phone number inside an input field.
 
 ```svelte example
-{@include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Phone input country code
@@ -40,7 +40,7 @@ Use this component to set a phone number inside an input field.
 This example can be used to select the country code from a dropdown menu and set the phone number inside an input field.
 
 ```svelte example class="h-64"
-{@include CountryCode.svelte}
+{#include CountryCode.svelte}
 ```
 
 ## Floating label input
@@ -48,7 +48,7 @@ This example can be used to select the country code from a dropdown menu and set
 Set a phone number inside an input field with a floating label inspired by Material UI from Google.
 
 ```svelte example
-{@include Floating.svelte}
+{#include Floating.svelte}
 ```
 
 ## Verification code input
@@ -56,7 +56,7 @@ Set a phone number inside an input field with a floating label inspired by Mater
 Use this example to send a verification code to the user’s phone number for authentication.
 
 ```svelte example class="h-64"
-{@include Verification.svelte}
+{#include Verification.svelte}
 ```
 
 ## Phone number select
@@ -64,7 +64,7 @@ Use this example to send a verification code to the user’s phone number for au
 Use this example to select one of your saved phone numbers from an application with a copy-paste feature.
 
 ```svelte example
-{@include Select.svelte}
+{#include Select.svelte}
 ```
 
 ## Authentication form
@@ -72,7 +72,7 @@ Use this example to select one of your saved phone numbers from an application w
 Use this example to authenticate users with a login form using a phone number instead of an email address.
 
 ```svelte example
-{@include Authentication.svelte}
+{#include Authentication.svelte}
 ```
 
 ## Advanced phone verification
@@ -80,7 +80,7 @@ Use this example to authenticate users with a login form using a phone number in
 Use this example to verify a phone number via SMS or phone call using a dropdown component.
 
 ```svelte example class="h-64"
-{@include Advanced.svelte}
+{#include Advanced.svelte}
 ```
 
 ## Classes
@@ -88,7 +88,7 @@ Use this example to verify a phone number via SMS or phone call using a dropdown
 The PhoneInput component provides customizable styling through six distinct class slots: `defaultDiv` for the icon container positioning, `phonesvg` for the phone icon styling, `defaultInput` for the standard input field appearance, `floatingSpan` for floating label positioning, `floatingInput` for the floating variant input styling, and `labelFloating` for animated label transitions. Each class can be overridden using the classes prop to customize the component's appearance.
 
 ```svelte example hideScript
-{@include Classes.svelte}
+{#include Classes.svelte}
 ```
 
 ## See also

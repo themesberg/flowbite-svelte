@@ -1,6 +1,5 @@
 # Svelte StepIndicator
 
-
 The Step Indicator component is a simple component to show the progress of a process. It can be used to show the progress of a multi-step form or a multi-step process.
 
 ## Setup
@@ -18,7 +17,7 @@ Import the `StepIndicator` component in a script tag.
 Use the following example of a step indicator element to show a progress of step 2 out of 5.
 
 ```svelte
-{@include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Glow
@@ -26,7 +25,7 @@ Use the following example of a step indicator element to show a progress of step
 Use the `glow` prop to add a glow effect to the current step.
 
 ```svelte
-{@include Glow.svelte}
+{#include Glow.svelte}
 ```
 
 ## Hide label
@@ -34,7 +33,7 @@ Use the `glow` prop to add a glow effect to the current step.
 Use the `hideLabel` prop to hide the label of the current step.
 
 ```svelte
-{@include Hidelabel.svelte}
+{#include Hidelabel.svelte}
 ```
 
 ## Sizes
@@ -42,7 +41,7 @@ Use the `hideLabel` prop to hide the label of the current step.
 Use the `size` prop to change the size of a step indicator.
 
 ```svelte
-{@include Sizes.svelte}
+{#include Sizes.svelte}
 ```
 
 ## Colors
@@ -50,7 +49,7 @@ Use the `size` prop to change the size of a step indicator.
 Use the `color` prop to change the color of a step indicator.
 
 ```svelte
-{@include Colors.svelte}
+{#include Colors.svelte}
 ```
 
 ## Component data
@@ -73,7 +72,6 @@ Use the `color` prop to change the color of a step indicator.
 - currentCustom: ""
 - class: className
 - classes
-
 
 ### StepIndicator styling
 

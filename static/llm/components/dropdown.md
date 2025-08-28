@@ -1,6 +1,5 @@
 # Svelte Dropdown - Flowbite
 
-
 The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
 
 ## Setup
@@ -827,9 +826,6 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 - classes
 - class: className
 
-
 ## References
 
 - [Flowbite Dropdown](https://flowbite.com/docs/components/drawer/)
-
-

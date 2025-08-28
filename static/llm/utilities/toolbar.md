@@ -1,6 +1,5 @@
 # Svelte Toolbar - Flowbite
 
-
 ## Setup
 
 ```svelte
@@ -12,19 +11,19 @@
 ## Default toolbar
 
 ```svelte
-{@include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Colored toolbars
 
 ```svelte
-{@include Colored.svelte}
+{#include Colored.svelte}
 ```
 
 ## Toolbar with groups
 
 ```svelte
-{@include Groups.svelte}
+{#include Groups.svelte}
 ```
 
 ## WYSIWYG Editor
@@ -32,7 +31,7 @@
 If you want to add other actions as buttons alongside your textarea component, such as with a WYSIWYG editor, then you can use the example below.
 
 ```svelte
-{@include Editor.svelte}
+{#include Editor.svelte}
 ```
 
 ## Comment box
@@ -40,7 +39,7 @@ If you want to add other actions as buttons alongside your textarea component, s
 Most often the textarea component is used as the main text field input element in comment sections. Use this example to also apply a helper text and buttons below the textarea itself.
 
 ```svelte
-{@include CommentBox.svelte}
+{#include CommentBox.svelte}
 ```
 
 ## Component data
@@ -88,7 +87,6 @@ Most often the textarea component is used as the main text field input element i
 - padding
 - position: "middle"
 - class: className
-
 
 ### Toolbar styling
 

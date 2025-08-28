@@ -1,6 +1,5 @@
 # Svelte Cards - Flowbite
 
-
 Use these responsive card components to show data entries and information to your users in multiple forms and contexts such as for your blog, application, user profiles, and more.
 
 ## Set up
@@ -428,5 +427,3 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Card](https://flowbite.com/docs/components/card/)
-
-

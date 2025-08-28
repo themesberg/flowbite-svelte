@@ -1,6 +1,5 @@
 # How to Contribute - Flowbite Svelte
 
-
 Here are some guidelines we'd like you to follow before submitting a PR.
 
 ## Create a fork

@@ -1,6 +1,5 @@
 # Svelte Video - Flowbite
 
-
 ## Setup
 
 ```svelte
@@ -115,9 +114,6 @@ Customize the video player appearance using the utility classes from Tailwind CS
 - label: "english_captions"
 - class: classname
 
-
 ## References
 
 - [Flowbite Video](https://flowbite.com/docs/components/video/)
-
-

@@ -22,7 +22,7 @@ The paragraph element is one of the most commonly used HTML tags on a document p
 Use this example of a paragraph element to use inside article content or a landing page.
 
 ```svelte example
-{@include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## contenteditable
@@ -30,7 +30,7 @@ Use this example of a paragraph element to use inside article content or a landi
 Since `P.svelte` extends `HTMLAttributes<HTMLElement>`, you can use `contenteditable` attribute.
 
 ```svelte example
-{@include ContentEditable.svelte}
+{#include ContentEditable.svelte}
 ```
 
 ## Leading paragraph
@@ -38,7 +38,7 @@ Since `P.svelte` extends `HTMLAttributes<HTMLElement>`, you can use `contentedit
 The leading text can be used as the first paragraph inside an article content page.
 
 ```svelte example
-{@include Leading.svelte}
+{#include Leading.svelte}
 ```
 
 ## First letter
@@ -46,7 +46,7 @@ The leading text can be used as the first paragraph inside an article content pa
 Use `firstUpper` prop to highlight the first letter of the paragraph, often used in e-books and PDF documents.
 
 ```svelte example
-{@include FirstLetter.svelte}
+{#include FirstLetter.svelte}
 ```
 
 ## Paragraph link
@@ -54,7 +54,7 @@ Use `firstUpper` prop to highlight the first letter of the paragraph, often used
 This example can be used to add a custom styled link element inside the paragraph.
 
 ```svelte example
-{@include Link.svelte}
+{#include Link.svelte}
 ```
 
 ## Paragraph bold
@@ -62,7 +62,7 @@ This example can be used to add a custom styled link element inside the paragrap
 Use this example to highlight a piece of text inside the paragraph by using a bolder font weight.
 
 ```svelte example
-{@include Bold.svelte}
+{#include Bold.svelte}
 ```
 
 ## Paragraph underline
@@ -70,7 +70,7 @@ Use this example to highlight a piece of text inside the paragraph by using a bo
 This example can be used to underline a certain part of the text inside the paragraph.
 
 ```svelte example
-{@include Underline.svelte}
+{#include Underline.svelte}
 ```
 
 ## Paragraph italic
@@ -78,7 +78,7 @@ This example can be used to underline a certain part of the text inside the para
 Use this example to make the font style of the text inside the paragraph italic.
 
 ```svelte example
-{@include Italic.svelte}
+{#include Italic.svelte}
 ```
 
 ## Paragraph popover
@@ -86,7 +86,7 @@ Use this example to make the font style of the text inside the paragraph italic.
 Get started with this example to show a popover with extra information inside paragraph elements.
 
 ```svelte example class="flex items-end h-96"
-{@include Popover.svelte}
+{#include Popover.svelte}
 ```
 
 ## Layout
@@ -98,7 +98,7 @@ Get started with examples of layouts for the paragraph component to separate con
 Use this example to show multiple paragraphs on a single line.
 
 ```svelte example
-{@include OneColumn.svelte}
+{#include OneColumn.svelte}
 ```
 
 ### Two columns even
@@ -106,7 +106,7 @@ Use this example to show multiple paragraphs on a single line.
 Use this example to separate paragraphs into two columns for better readability.
 
 ```svelte example
-{@include TwoEvenColumns.svelte}
+{#include TwoEvenColumns.svelte}
 ```
 
 ### Three columns even
@@ -114,7 +114,7 @@ Use this example to separate paragraphs into two columns for better readability.
 This example can be used to separate paragraphs into three separate columns.
 
 ```svelte example
-{@include ThreeEvenColumns.svelte}
+{#include ThreeEvenColumns.svelte}
 ```
 
 ### Two columns uneven
@@ -122,7 +122,7 @@ This example can be used to separate paragraphs into three separate columns.
 Use this example to separate paragraphs into two uneven columns.
 
 ```svelte example
-{@include TwoUnevenColumns.svelte}
+{#include TwoUnevenColumns.svelte}
 ```
 
 ## Text alignment
@@ -134,7 +134,7 @@ Align the paragraph component to the left (default), center or right side of the
 The default alignment of the paragraph is to the left side and you can use the `align="left"` prop to align it manually.
 
 ```svelte example
-{@include Left.svelte}
+{#include Left.svelte}
 ```
 
 ### Center
@@ -142,7 +142,7 @@ The default alignment of the paragraph is to the left side and you can use the `
 Use the `align="center"` prop to align the paragraph text to the center.
 
 ```svelte example
-{@include Center.svelte}
+{#include Center.svelte}
 ```
 
 ### Right
@@ -150,7 +150,7 @@ Use the `align="center"` prop to align the paragraph text to the center.
 Use the `align="right"` prop to align the paragraph text the right side of the page.
 
 ```svelte example
-{@include Right.svelte}
+{#include Right.svelte}
 ```
 
 ## Component data

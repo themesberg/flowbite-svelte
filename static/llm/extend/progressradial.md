@@ -1,6 +1,5 @@
 # Svelte Progressradial
 
-
 ## Setup
 
 Import the `Progressradial` component in a script tag.
@@ -14,43 +13,43 @@ Import the `Progressradial` component in a script tag.
 ## Progress
 
 ```svelte
-{@include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Colors and labelOutside
 
 ```svelte
-{@include Colors.svelte}
+{#include Colors.svelte}
 ```
 
 ## Radius
 
 ```svelte
-{@include Radius.svelte}
+{#include Radius.svelte}
 ```
 
 ## Thickness
 
 ```svelte
-{@include Thickness.svelte}
+{#include Thickness.svelte}
 ```
 
 ## Size
 
 ```svelte
-{@include Size.svelte}
+{#include Size.svelte}
 ```
 
 ## Animation
 
 ```svelte
-{@include Animation.svelte}
+{#include Animation.svelte}
 ```
 
 ## Starting position
 
 ```svelte
-{@include StartingPosition.svelte}
+{#include StartingPosition.svelte}
 ```
 
 ## See also
@@ -82,4 +81,3 @@ Import the `Progressradial` component in a script tag.
 - color: "primary"
 - class: className
 - classes
-

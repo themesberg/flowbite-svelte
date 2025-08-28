@@ -1,6 +1,5 @@
 # Svelte Select - Flowbite
 
-
 The select input component can be used to gather information from users based on multiple options in the form of a dropdown list and by browsing this page you will find multiple options, styles, sizes, and variants built with the utility classes from Tailwind CSS also available in dark mode.
 
 ## Setup
@@ -16,13 +15,13 @@ The select input component can be used to gather information from users based on
 Get started with the default example of a select input component to get a single option selection.
 
 ```svelte
-{@include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Clearable
 
 ```svelte
-{@include Clearable.svelte}
+{#include Clearable.svelte}
 ```
 
 ## Event
@@ -30,7 +29,7 @@ Get started with the default example of a select input component to get a single
 `onClear` is a `Select`'s prop and `onchange` is Svelte's built-in event handler for the native `<select>` element.
 
 ```svelte
-{@include Event.svelte}
+{#include Event.svelte}
 ```
 
 ## Disabled state
@@ -38,7 +37,7 @@ Get started with the default example of a select input component to get a single
 Apply the disable state to the select component to disallow the selection of new options.
 
 ```svelte
-{@include Disabled.svelte}
+{#include Disabled.svelte}
 ```
 
 ## Underline select
@@ -46,7 +45,7 @@ Apply the disable state to the select component to disallow the selection of new
 Use the underline style for the select component as an alternative appearance.
 
 ```svelte
-{@include Underline.svelte}
+{#include Underline.svelte}
 ```
 
 ## Select with dropdown
@@ -54,7 +53,7 @@ Use the underline style for the select component as an alternative appearance.
 Use this example if you want to create a multi-level dropdown and select component combination.
 
 ```svelte
-{@include Dropdown.svelte}
+{#include Dropdown.svelte}
 ```
 
 ## Sizes
@@ -62,7 +61,7 @@ Use this example if you want to create a multi-level dropdown and select compone
 Get started with the small, default, and large sizes for the select component from the example below.
 
 ```svelte
-{@include Sizes.svelte}
+{#include Sizes.svelte}
 ```
 
 ## Custom options
@@ -70,13 +69,13 @@ Get started with the small, default, and large sizes for the select component fr
 If you want custom options, put them directly inside the component and leave the `items` prop unset. Furthermore, if the default placeholder is not what you want, set the `placeholder` prop to `""`.
 
 ```svelte
-{@include Custom.svelte}
+{#include Custom.svelte}
 ```
 
 ## Accessing Select Element with elementRef
 
 ```svelte
-{@include ElementRef.svelte}
+{#include ElementRef.svelte}
 ```
 
 ## MultiSelect
@@ -92,31 +91,31 @@ If you want custom options, put them directly inside the component and leave the
 Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
 
 ```svelte
-{@include Multi.svelte}
+{#include Multi.svelte}
 ```
 
 ### Placeholder
 
 ```svelte
-{@include Placeholder.svelte}
+{#include Placeholder.svelte}
 ```
 
 ### Disabled select
 
 ```svelte
-{@include MultiDisabled.svelte}
+{#include MultiDisabled.svelte}
 ```
 
 ### MultiSelect Disabled Option
 
 ```svelte
-{@include MultiOption.svelte}
+{#include MultiOption.svelte}
 ```
 
 ### Pre-select values
 
 ```svelte
-{@include Preselect.svelte}
+{#include Preselect.svelte}
 ```
 
 ### Keyboard Usage
@@ -130,7 +129,7 @@ To customize the look and feel use the `children` snippet to insert inner [`Badg
 Remember to connect the `clear` snippet's prop to trigger option removal.
 
 ```svelte
-{@include Customization.svelte}
+{#include Customization.svelte}
 ```
 
 ## Component data
@@ -160,7 +159,6 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 - selectClass
 - class: className
 - classes
-
 
 ## References
 

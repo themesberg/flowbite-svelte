@@ -32,7 +32,7 @@ On this page you will find all of the input types based on multiple variants, st
 Use this example as a generic form element which includes multiple input fields types such as text, email, password, number, URL, and phone number and use the grid layout to add multiple columns and rows.
 
 ```svelte example
-{@include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Clearable
@@ -41,13 +41,13 @@ This example shows how to create an input field where the user can remove the
 text with one click.
 
 ```svelte example
-{@include Clearable.svelte}
+{#include Clearable.svelte}
 ```
 
 ## Event
 
 ```svelte example
-{@include Event.svelte}
+{#include Event.svelte}
 ```
 
 ## Event Handlers
@@ -57,25 +57,25 @@ Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
 **Migration**: `OnInput`, `onFocus`, `onBlur`, and `onKeydown` will be **deprecated** from version v1.8.0.
 
 ```svelte example
-{@include EventHandlers.svelte}
+{#include EventHandlers.svelte}
 ```
 
 ## Accessing Input Element with elementRef
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
-{@include ElementRef.svelte}
+{#include ElementRef.svelte}
 ```
 
 ## Combobox
 
 ```svelte example class="h-96 space-y-20"
-{@include Combobox.svelte}
+{#include Combobox.svelte}
 ```
 
 ## Combobox with Icon
 
 ```svelte example class="h-80"
-{@include ComboboxIcon.svelte}
+{#include ComboboxIcon.svelte}
 ```
 
 ## Input Sizes
@@ -85,7 +85,7 @@ Use the following examples to apply a small, default or large size for the input
 User the size prop to change the input size. Choose one from 'sm:text-md' | 'text-sm' | 'sm:text-xs'. The default size is text-sm.
 
 ```svelte example hideScript class="space-y-6"
-{@include Sizes.svelte}
+{#include Sizes.svelte}
 ```
 
 ## Disabled State
@@ -93,7 +93,7 @@ User the size prop to change the input size. Choose one from 'sm:text-md' | 'tex
 Get started with this example if you want to apply the disabled state to an input field. Add the disabled to change the input to disabled.
 
 ```svelte example hideScript
-{@include Disabled.svelte}
+{#include Disabled.svelte}
 ```
 
 ## Validation
@@ -101,13 +101,13 @@ Get started with this example if you want to apply the disabled state to an inpu
 Use the following example to apply validation styles for success and error messages.
 
 ```svelte example
-{@include Validation.svelte}
+{#include Validation.svelte}
 ```
 
 ## Input with Icon
 
 ```svelte example class="space-y-6"
-{@include Icon.svelte}
+{#include Icon.svelte}
 ```
 
 ## Input Group
@@ -115,7 +115,7 @@ Use the following example to apply validation styles for success and error messa
 This example can be used to add a descriptive icon or additional text inside the input field.
 
 ```svelte example class="space-y-6"
-{@include Group.svelte}
+{#include Group.svelte}
 ```
 
 ## Icon Click Handler
@@ -123,7 +123,7 @@ This example can be used to add a descriptive icon or additional text inside the
 This example shows how to add `onclick` event handler to the icon in `Input`. By clicking an icon, it toggles icon and `type`:
 
 ```svelte example class="gap-6"
-{@include IconClickHandler.svelte}
+{#include IconClickHandler.svelte}
 ```
 
 ## Helper text
@@ -131,7 +131,7 @@ This example shows how to add `onclick` event handler to the icon in `Input`. By
 Use the helper prop to add your helper text. You can use HTML in the helper text.
 
 ```svelte example
-{@include HelperText.svelte}
+{#include HelperText.svelte}
 ```
 
 ## Number input
@@ -139,13 +139,13 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 By default the `Input` component binds the `value` as `string`. If you need a variable bound as `number` you need to use a specialised version of `Input` called `NumberInput`.
 
 ```svelte example
-{@include Number.svelte}
+{#include Number.svelte}
 ```
 
 ## Search input
 
 ```svelte example
-{@include Search.svelte}
+{#include Search.svelte}
 ```
 
 ## Dropdown
@@ -153,7 +153,7 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 Use this example to show a dropdown menu right next to the input field.
 
 ```svelte example class="h-64"
-{@include Dropdown.svelte}
+{#include Dropdown.svelte}
 ```
 
 ## Advanced usage
@@ -161,13 +161,13 @@ Use this example to show a dropdown menu right next to the input field.
 If you need a full control over `input` HTML element while still re-using the Flowbite formatting, you can put the `input` element as a default slot. The example below is in fact the implementation of the above mentioned `NumberInput`.
 
 ```svelte example class="gap-4"
-{@include Advanced.svelte}
+{#include Advanced.svelte}
 ```
 
 ## Using Svelte's snapshot to preserve the input
 
 ```svelte example class="h-auto"
-{@include Snapshot.svelte}
+{#include Snapshot.svelte}
 ```
 
 ## See also

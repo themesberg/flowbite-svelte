@@ -1,6 +1,5 @@
 # Compiler Speed - Flowbite Svelte
 
-
 If your Svelte app only requires a few components, it's recommended that you import them directly. Doing so can help optimize compilation speed and improve performance by reducing the amount of code that needs to be processed during compilation.
 
 ```js

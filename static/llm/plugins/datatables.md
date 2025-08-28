@@ -1,6 +1,5 @@
 # Svelte DataTables - Flowbite
 
-
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import componentData1 from '../../component-data/Chart.json'

@@ -29,7 +29,7 @@ Import the `Tags` component in a script tag.
 ## Example
 
 ```svelte example
-{@include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Additional Props
@@ -45,7 +45,7 @@ Import the `Tags` component in a script tag.
 - `allowNewTags` (boolean, default: `true`): Allows users to create and add custom tags not included in availableTags when true.
 
 ```svelte example class="h-96"
-{@include AdditionalProps.svelte}
+{#include AdditionalProps.svelte}
 ```
 
 ## See also

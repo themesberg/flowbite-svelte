@@ -25,19 +25,19 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 ## Default toolbar
 
 ```svelte example
-{@include Default.svelte}
+{#include Default.svelte}
 ```
 
 ## Colored toolbars
 
 ```svelte example class="space-y-4"
-{@include Colored.svelte}
+{#include Colored.svelte}
 ```
 
 ## Toolbar with groups
 
 ```svelte example
-{@include Groups.svelte}
+{#include Groups.svelte}
 ```
 
 ## WYSIWYG Editor
@@ -45,7 +45,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 If you want to add other actions as buttons alongside your textarea component, such as with a WYSIWYG editor, then you can use the example below.
 
 ```svelte example
-{@include Editor.svelte}
+{#include Editor.svelte}
 ```
 
 ## Comment box
@@ -53,7 +53,7 @@ If you want to add other actions as buttons alongside your textarea component, s
 Most often the textarea component is used as the main text field input element in comment sections. Use this example to also apply a helper text and buttons below the textarea itself.
 
 ```svelte example class="space-y-4"
-{@include CommentBox.svelte}
+{#include CommentBox.svelte}
 ```
 
 ## Component data

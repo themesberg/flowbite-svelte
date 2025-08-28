@@ -1,6 +1,5 @@
 # Svelte KBD (Keyboard) - Flowbite
 
-
 The KBD (Keyboard) component can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
 
 ## Setup
@@ -218,9 +217,6 @@ This example can be used to denote function keys inside the KBD component.
 - children
 - class: className
 
-
 ## References
 
 - [Flowbite KBD (Keyboard)](https://flowbite.com/docs/components/kbd/)
-
-

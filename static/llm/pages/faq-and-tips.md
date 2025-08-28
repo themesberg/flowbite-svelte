@@ -1,6 +1,5 @@
 # FAQ and Tips - Flowbite Svelte
 
-
 ## Does flowbite-svelte work on Svelte 5?
 
 You can find [the progress report](/api-check) for flowbite-svelte on Svelte 5.

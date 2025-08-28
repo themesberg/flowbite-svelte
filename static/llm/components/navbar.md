@@ -1,6 +1,5 @@
 # Svelte Navbar - Flowbite
 
-
 Get started with the responsive navbar component from Flowbite to quickly set up a navigation menu for your website and set up the logo, list of pages, CTA button, search input, user profile options with a dropdown, and more.
 
 ## Setup
@@ -543,9 +542,6 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 - closeOnClickOutside: true
 - breakpoint: "md"
 
-
 ## References
 
 - [Flowbite Navbar](https://flowbite.com/docs/components/navbar/)
-
-
