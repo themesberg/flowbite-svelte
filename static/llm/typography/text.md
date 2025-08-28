@@ -1,6 +1,20 @@
 # Svelte Text - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { A, Heading } from '$lib'
+
+  const components = 'P, Span'
+
+  // lib files
+  // const libFilesArray = [
+  //   import.meta.glob("$lib/typography/P.svelte"),
+  //   import.meta.glob("$lib/typography/Span.svelte"),
+  // ];
+  // const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
+</script>
+
 Get started with a collection of text customization examples to learn how to update the size, font weight, style, decoration and spacing of inline text elements.
 
 ## Font size

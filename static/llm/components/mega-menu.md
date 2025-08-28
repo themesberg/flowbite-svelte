@@ -1,6 +1,12 @@
 # Svelte Mega Menu - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils';
+  import { P, A } from '$lib';
+  const dirName = toKebabCase(component_title)
+</script>
+
 The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website.
 
 ## Setup

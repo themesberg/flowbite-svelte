@@ -1,6 +1,13 @@
 # Svelte Toolbar - Flowbite
 
 
+<script lang="ts">
+	import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils';
+  import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Heading, A } from '$lib'
+
+  const components = 'Toolbar, ToolbarButton, ToolbarGroup'
+</script>
+
 ## Setup
 
 ```svelte

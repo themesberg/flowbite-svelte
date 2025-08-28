@@ -1,6 +1,15 @@
 # Svelte Label - Flowbite
 
 
+<script lang="ts">
+  import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer } from '../../utils';
+  import { A } from '$lib';
+
+  const components = 'Label'
+  let divClass = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4';
+  let theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white';
+</script>
+
 ## Label
 
 Use the `Label` component when you need to add a label.

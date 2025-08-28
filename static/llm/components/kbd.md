@@ -1,6 +1,12 @@
 # Svelte KBD (Keyboard) - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { P, A } from '$lib'
+  const dirName = toKebabCase(component_title)
+</script>
+
 The KBD (Keyboard) component can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
 
 ## Setup

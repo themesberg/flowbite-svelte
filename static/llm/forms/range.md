@@ -1,6 +1,12 @@
 # Svelte Range Slider - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  const components = 'Range'
+  let minmaxValue=5
+</script>
+
 The range component can be used as an input field to get a number from the user based on your custom selection (ie. from 1 to 100) by using a sliding animation.
 
 ## Setup

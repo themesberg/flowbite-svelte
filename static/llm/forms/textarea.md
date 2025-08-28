@@ -1,6 +1,12 @@
 # Svelte Textarea - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+
+  const components = 'Textarea'
+</script>
+
 The textarea component is a multi-line text field input that can be used to receive longer chunks of text from the user in the form of a comment box, description field, and more.
 
 ## Setup

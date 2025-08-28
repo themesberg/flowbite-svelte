@@ -1,6 +1,14 @@
 # Svelte PhoneInput - Flowbite
 
 
+<script lang="ts">
+  import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, Seealso } from '../../utils'
+  import { A } from '$lib'
+
+  const components = 'PhoneInput'
+  const relatedLinks = ['/docs/forms/input-field','/docs/forms/floating-label', '/docs/extend/tags' ]
+</script>
+
 The phone number input component can be used to set a phone number inside a form field by using the native type="tel" attribute and also use a dropdown menu to select the country code.
 
 The examples are built with the utility classes from Tailwind CSS and they are fully responsive, dark mode compatible and support RTL layouts and can be used for any type of web project.
@@ -79,9 +87,7 @@ The PhoneInput component provides customizable styling through six distinct clas
 
 ## See also
 
-- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
-- [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
-- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+<Seealso links={relatedLinks} />
 
 ## Component data
 

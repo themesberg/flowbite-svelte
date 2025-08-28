@@ -1,6 +1,12 @@
 # Svelte Datepicker - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { P, A } from '$lib'
+  const dirName = toKebabCase(component_title)
+</script>
+
 The Datepicker component provides an interactive calendar interface for selecting single dates or date ranges. It's fully integrated with flowbite-svelte's design system and offers various customization options.
 
 ## Setup

@@ -1,6 +1,12 @@
 # Svelte Sticky Banner - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { P, A } from '$lib'
+  const dirName = toKebabCase(component_title)
+</script>
+
 Get started with the sticky banner component coded with Tailwind CSS and Flowbite to show marketing, informational and CTA messages to your website visitors fixed to the top or bottom part of the page as the user scroll down the main content area.
 
 Explore the following examples based on various styles, sizes, and positionings to leverage the sticky banner component and increase marketing conversions with a responsive element supporting dark mode.

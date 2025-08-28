@@ -1,6 +1,12 @@
 # Svelte Lists - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+ 
+  const components = 'List, Li, DescriptionList'
+</script>
+
 Get started with a collection of list components built with Tailwind CSS for ordered and unordered lists with bullets, numbers, or icons and other styles and layouts to show a list of items inside an article or throughout your web page.
 
 ## Setup

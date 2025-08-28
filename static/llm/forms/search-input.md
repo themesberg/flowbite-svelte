@@ -1,6 +1,12 @@
 # Svelte Search Input - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  import componentData1 from '../../component-data/Search.json'
+  const components = 'Search'
+</script>
+
 The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS.
 
 You will also find more advanced search components on this page including dropdown category selections, search buttons positioned inside the input field, voice search fields and more.

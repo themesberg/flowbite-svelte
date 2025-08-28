@@ -1,6 +1,10 @@
 # Flowbite Svelte Starters
 
 
+<script lang="ts">
+  import { A, List, Li } from '$lib'
+</script>
+
 ## Flowbite Svelte Admin Dashboard
 
 <List tag="ul" class="space-y-1 my-4">

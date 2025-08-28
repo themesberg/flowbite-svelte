@@ -1,6 +1,13 @@
 # Svelte Horizontal Line (HR) - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { A } from '$lib';
+
+  const components = 'Hr'
+</script>
+
 The `Hr` component can be used to separate content using a horizontal line by adding space between elements based on multiple styles, variants, and layouts.
 
 ## Setup

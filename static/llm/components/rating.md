@@ -1,6 +1,12 @@
 # Svelte Rating - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { P, A } from '$lib'
+  const dirName = toKebabCase(component_title)
+</script>
+
 Get started with the rating component to show an aggregate of reviews and scores in the forms of stars or numbers.
 
 You can find multiple examples on this page including different styles, sizes, and variants of the rating component and other associated elements such as a comment or card.

@@ -1,6 +1,13 @@
 # Svelte Progress Bar - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
+  import { P, A } from '$lib'
+  const dirName = toKebabCase(component_title)
+  const relatedLinks = ['/docs/components/progress','/docs/extend/progressradial' ]
+</script>
+
 The progress bar component can be used as an indicator to show the completion rate of data sets or it can be used as an animated loader component. There are multiple sizes, colors, and styles available.
 
 ## Setup
@@ -87,8 +94,7 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 ## See also
 
-- [Progress](https://flowbite-svelte.com/llm/components/progress.md)
-- [Progressradial](https://flowbite-svelte.com/llm/extend/progressradial.md)
+<Seealso links={relatedLinks} />
 
 ## Component data
 

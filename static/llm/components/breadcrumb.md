@@ -1,6 +1,12 @@
 # Svelte Breadcrumb - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  const dirName = toKebabCase(component_title)
+</script>
+
 The breadcrumb component is an important part of any website or application that can be used to show the current location of a page in a hierarchical structure of pages.
 
 Flowbite includes two styles of breadcrumb elements, one that has a transparent background and a few more that come with a background in different colors.

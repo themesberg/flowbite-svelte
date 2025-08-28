@@ -12,6 +12,9 @@ The timeline component can be used to show series of data in a chronological ord
 ## Setup
 
 ```svelte
+<script lang="ts">
+  import { Timeline, TimelineItem, Activity, ActivityItem, Group, GroupItem } from "flowbite-svelte";
+</script>
 ```
 
 ## Default timeline

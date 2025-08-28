@@ -1,6 +1,12 @@
 # Svelte Cards - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { P, A } from '$lib'
+  const dirName = 'card'
+</script>
+
 Use these responsive card components to show data entries and information to your users in multiple forms and contexts such as for your blog, application, user profiles, and more.
 
 ## Set up

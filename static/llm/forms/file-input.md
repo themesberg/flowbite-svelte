@@ -1,6 +1,11 @@
 # Svelte File Input - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  const components = 'Fileupload'
+</script>
+
 The file input component can be used to upload one or more files from the device storage of the user available in multiple sizes, styles, variants and support for dark mode.
 
 ## Setup

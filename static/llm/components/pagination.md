@@ -12,6 +12,9 @@ The pagination component can be used to navigate across a series of content and 
 ## Setup
 
 ```svelte
+<script lang="ts">
+  import { PaginationNav, Pagination, PaginationItem } from "flowbite-svelte";
+</script>
 ```
 
 ## Default pagination

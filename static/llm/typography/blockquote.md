@@ -1,6 +1,14 @@
 # Svelte Blockquote - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
+  import { P, A, Heading } from '$lib'; 
+
+  const components = 'Blockquote'
+  const relatedLinks = ["/docs/typography/heading","/docs/typography/paragraph","/docs/typography/link","/docs/typography/list"];
+</script>
+
 Get started with Blockquote component when quoting external sources such as quotes inside an article, user reviews, and testimonials based on multiple examples of layouts, styles, and contexts.
 
 ## Default blockquote
@@ -107,10 +115,7 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 ## See also
 
-- [Heading](https://flowbite-svelte.com/llm/typography/heading.md)
-- [Paragraph](https://flowbite-svelte.com/llm/typography/paragraph.md)
-- [Link](https://flowbite-svelte.com/llm/typography/link.md)
-- [List](https://flowbite-svelte.com/llm/typography/list.md)
+<Seealso links={relatedLinks} />
 
 ## Component data
 

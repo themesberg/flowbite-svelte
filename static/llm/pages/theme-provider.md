@@ -1,6 +1,11 @@
 # ThemeProvider - Flowbite Svelte
 
 
+<script lang="ts">
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils';
+  import { A, Img, P } from '$lib';
+</script>
+
 ## Basic Usage
 
 Wrap your components with ThemeProvider and pass a theme configuration object:

@@ -1,6 +1,12 @@
 # Svelte Dropdown - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { Badge, P, A } from '$lib'
+  const dirName = toKebabCase(component_title)
+</script>
+
 The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
 
 ## Setup

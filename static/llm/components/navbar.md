@@ -1,6 +1,12 @@
 # Svelte Navbar - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { Badge, Heading, P, A } from '$lib';
+  const dirName = toKebabCase(component_title)
+</script>
+
 Get started with the responsive navbar component from Flowbite to quickly set up a navigation menu for your website and set up the logo, list of pages, CTA button, search input, user profile options with a dropdown, and more.
 
 ## Setup

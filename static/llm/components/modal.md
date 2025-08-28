@@ -1,6 +1,12 @@
 # Svelte Modal - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { P, A, Alert } from '$lib'  
+  const dirName = toKebabCase(component_title)
+</script>
+
 The modal component can be used as an interactive dialog on top of the main content area of the website to show notifications and gather information using form elements from your website users.
 
 Get started with multiple sizes, colors, and styles built with the utility classes from Tailwind CSS and the components from Flowbite.

@@ -1,6 +1,12 @@
 # Svelte Footer - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { P, A, Footer } from '$lib'
+  const dirName = toKebabCase(component_title)
+</script>
+
 The footer is one of the most underestimated sections of a website being located at the very bottom of every page, however, it can be used as a way to try to convince users to stay on your website if they haven’t found the information they’ve been looking for inside the main content area.
 
 ## Setup

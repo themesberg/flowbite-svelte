@@ -1,6 +1,13 @@
 # Svelte Progressradial
 
 
+<script lang="ts">
+  import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso } from '../../utils'
+  import { P, A } from '$lib'
+  const dirName = "progress"
+  const relatedLinks = ['/docs/components/progress','/docs/extend/progressradial' ]
+</script>
+
 ## Setup
 
 Import the `Progressradial` component in a script tag.
@@ -55,8 +62,7 @@ Import the `Progressradial` component in a script tag.
 
 ## See also
 
-- [Progress](https://flowbite-svelte.com/llm/components/progress.md)
-- [Progressradial](https://flowbite-svelte.com/llm/extend/progressradial.md)
+<Seealso links={relatedLinks} />
 
 ## Component data
 

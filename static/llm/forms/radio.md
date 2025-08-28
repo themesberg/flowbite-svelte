@@ -1,6 +1,12 @@
 # Svelte Radio - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+
+  const components = 'Radio, RadioButton, Label, Helper'
+</script>
+
 The radio component can be used to allow the user to choose a single option from one or more available options coded with the utility classes from Tailwind CSS and available in multiple styles, variants, and colors and support dark mode.
 
 ## Setup

@@ -1,6 +1,12 @@
 # Svelte Forms - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { P, A, Heading } from '$lib'
+  const dirName = toKebabCase(component_title)
+</script>
+
 The Input component allows you to change the input size, add disabled, helper text, and floating label.
 
 ## Input Sizes

@@ -1,6 +1,12 @@
 # Svelte Spinner - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { P, A } from '$lib'
+  const dirName = toKebabCase(component_title)
+</script>
+
 The spinner component can be used as a loading indicator which comes in multiple colors, sizes, and styles separately or inside elements such as buttons to improve the user experience whenever data is being fetched from your server.
 
 ## Setup
@@ -16,11 +22,7 @@ The spinner component can be used as a loading indicator which comes in multiple
 Use the following SVG element to show a loading animation:
 
 ```svelte
-<script lang="ts">
-  import { Spinner } from "flowbite-svelte";
-</script>
-
-<Spinner />
+{#include Default.svelte}
 ```
 
 ## Colors
@@ -28,17 +30,7 @@ Use the following SVG element to show a loading animation:
 You can change the colors of the spinner element using the `color` prop.
 
 ```svelte
-<script lang="ts">
-  import { Spinner } from "flowbite-svelte";
-</script>
-
-<Spinner />
-<Spinner color="gray" />
-<Spinner color="green" />
-<Spinner color="red" />
-<Spinner color="yellow" />
-<Spinner color="pink" />
-<Spinner color="purple" />
+{#include Colors.svelte}
 ```
 
 ## Sizes
@@ -46,13 +38,7 @@ You can change the colors of the spinner element using the `color` prop.
 Change the size of the spinner component using the `size` prop.
 
 ```svelte
-<script lang="ts">
-  import { Spinner } from "flowbite-svelte";
-</script>
-
-<Spinner size="4" />
-<Spinner size="6" />
-<Spinner size="8" />
+{#include Sizes.svelte}
 ```
 
 ## Alignment
@@ -60,11 +46,7 @@ Change the size of the spinner component using the `size` prop.
 Because the spinner component is an inline HTML element it can easily be aligned on the left, center, or right side using the `text-{left|center|right}` utility classes:
 
 ```svelte
-<script lang="ts">
-  import { Spinner } from "flowbite-svelte";
-</script>
-
-<div class="text-left"><Spinner /></div><div class="text-center"><Spinner /></div><div class="text-right"><Spinner /></div>
+{#include Alignment.svelte}
 ```
 
 ## Buttons
@@ -72,20 +54,7 @@ Because the spinner component is an inline HTML element it can easily be aligned
 The spinner component can also be used inside elements such as buttons when submitting form data:
 
 ```svelte
-<script lang="ts">
-  import { Spinner, Button } from "flowbite-svelte";
-</script>
-
-<div class="flex flex-wrap items-center gap-2">
-  <Button>
-    <Spinner class="me-3" size="4" color="blue" />
-    Loading ...
-  </Button>
-  <Button outline color="gray">
-    <Spinner class="me-3" size="4" />
-    Loading ...
-  </Button>
-</div>
+{#include Buttons.svelte}
 ```
 
 ## Component data

@@ -1,6 +1,12 @@
 # Svelte Speed Dial - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { P, A, Alert } from '$lib'  
+  const dirName = toKebabCase(component_title)
+</script>
+
 Get started with the speed dial component to show a list of buttons or menu items positioned relative to the body in either corner as a quick way to allow certains actions to be made by your users.
 
 ## Default speed dial

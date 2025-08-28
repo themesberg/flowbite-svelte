@@ -1,6 +1,13 @@
 # Svelte Select - Flowbite
 
 
+<script lang="ts">
+import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+import { Badge, Kbd  } from '$lib';
+import { ArrowUpOutline, ArrowDownOutline } from 'flowbite-svelte-icons';
+const components = 'Select, MultiSelect'
+</script>
+
 The select input component can be used to gather information from users based on multiple options in the form of a dropdown list and by browsing this page you will find multiple options, styles, sizes, and variants built with the utility classes from Tailwind CSS also available in dark mode.
 
 ## Setup

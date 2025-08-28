@@ -1,6 +1,12 @@
 # Svelte Checkbox - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+
+  const components = 'Checkbox, CheckboxButton'
+</script>
+
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants.
 
 ## Setup

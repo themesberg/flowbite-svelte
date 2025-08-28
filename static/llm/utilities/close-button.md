@@ -1,6 +1,18 @@
 # Svelte Close Button - Flowbite
 
 
+<script lang="ts">
+	import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer, Seealso } from '../../utils';
+	import { A } from '$lib';
+
+  const components = 'CloseButton'
+
+	let divClass = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4';
+	let theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white';
+
+  const relatedLinks = ['/docs/components/buttons','/docs/components/button-group' ,'/docs/components/list-group','/docs/utilities/close-button','/docs/forms/radio#radiobutton' , '/docs/forms/checkbox#checkboxbutton'];
+</script>
+
 ## CloseButton
 
 Use `CloseButton` component to close a component.
@@ -11,12 +23,7 @@ Use `CloseButton` component to close a component.
 
 ## See also
 
-- [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
-- [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
-- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
-- [Close button](https://flowbite-svelte.com/llm/utilities/close-button.md)
-- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
-- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+<Seealso links={relatedLinks} />
 
 ## Component data
 

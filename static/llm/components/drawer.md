@@ -1,6 +1,12 @@
 # Svelte Drawer (Off-canvas) - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { Heading, P, A } from '$lib';
+  const dirName = toKebabCase(component_title)
+</script>
+
 Use the Drawer component (or “off-canvas”) to show a fixed element relative to the document page from any side for navigation, contact forms, informational purposes or other user actions.
 
 ## Set up

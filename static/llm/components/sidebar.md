@@ -1,6 +1,13 @@
 # Svelte Sidebar - Flowbite
 
 
+<script lang="ts">
+  import { page } from '$app/state';
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { Badge, Heading, P, A } from '$lib'
+  const dirName = toKebabCase(component_title)
+</script>
+
 The sidebar component can be used as a complementary element relative to the navbar shown on either the left or right side of the page used for the navigation on your web application, including menu items, multi-level dropdown items, call to actions elements, and more.
 
 Disclaimer: this sidebar component is based on this <A class="text-primary-700" href="https://github.com/shinokada/svelte-sidebar" target="_blank" rel="noreferrer">sidebar menu</A> plugin.

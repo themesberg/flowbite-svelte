@@ -1,6 +1,11 @@
 # Svelte Carousel - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  const dirName = toKebabCase(component_title)
+</script>
+
 The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
 
 ## Setup

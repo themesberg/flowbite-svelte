@@ -12,6 +12,9 @@ The tabs component can be used either as an extra navigational hierarchy complem
 ## Setup
 
 ```svelte
+<script lang="ts">
+  import { Tabs, TabItem } from "flowbite-svelte";
+</script>
 ```
 
 ## Default tabs

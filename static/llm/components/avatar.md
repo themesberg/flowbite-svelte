@@ -1,6 +1,12 @@
 # Svelte Avatar - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { P, A } from 'flowbite-svelte'
+  const dirName = toKebabCase(component_title)
+</script>
+
 The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from Flowbite to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
 
 ## Setup

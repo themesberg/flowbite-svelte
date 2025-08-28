@@ -1,6 +1,12 @@
 # Svelte Dark Mode - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { P, A } from '$lib'
+  const dirName = toKebabCase(component_title)
+</script>
+
 In flowbite-svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Tailwind CSS:
 
 ```js example

@@ -1,6 +1,14 @@
 # Svelte Buttons - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
+  import { Badge, P, A } from '$lib'
+  const dirName = toKebabCase(component_title)
+ 
+  const relatedLinks = ['/docs/components/buttons','/docs/components/button-group' ,'/docs/components/list-group','/docs/utilities/close-button','/docs/forms/radio#radiobutton' , '/docs/forms/checkbox#checkboxbutton'];
+</script>
+
 The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages.
 
 flowbite-svelte provides a large variety of styles and sizes for the button component including outlined buttons, multiple colors, sizes, buttons with icons, and more.
@@ -145,12 +153,7 @@ Use the `loading` prop to indicate a pending action (e.g. form submission). When
 
 ## See also
 
-- [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
-- [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
-- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
-- [Close button](https://flowbite-svelte.com/llm/utilities/close-button.md)
-- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
-- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+<Seealso links={relatedLinks} />
 
 ## Component data
 

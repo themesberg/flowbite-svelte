@@ -1,6 +1,13 @@
 # Svelte List Group - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
+  import { Badge, Heading, P, A } from '$lib'
+  const dirName = toKebabCase(component_title)
+  const relatedLinks = ['/docs/extend/button-toggle','/docs/components/button-group' ,'/docs/components/list-group','/docs/forms/radio#radiobutton' , '/docs/forms/checkbox#checkboxbutton'];
+</script>
+
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
 
 ## Setup
@@ -81,11 +88,7 @@ When non standard usage is needed you can omit the `items` props and add element
 
 ## See also
 
-- [Button toggle](https://flowbite-svelte.com/llm/extend/button-toggle.md)
-- [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
-- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
-- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
-- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+<Seealso links={relatedLinks} />
 
 ## Component data
 

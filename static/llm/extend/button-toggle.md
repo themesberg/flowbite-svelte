@@ -1,6 +1,14 @@
 # Svelte Button Toggle
 
 
+<script lang="ts">
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso } from '../../utils'
+  import { P, A } from '$lib'
+
+  const components = 'ButtonToggle, ButtonToggleGroup'
+  const relatedLinks = ['/docs/extend/button-toggle','/docs/components/button-group' ,'/docs/components/list-group','/docs/forms/radio#radiobutton' , '/docs/forms/checkbox#checkboxbutton'];
+</script>
+
 ## Setup
 
 ```svelte
@@ -51,11 +59,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 
 ## See also
 
-- [Button toggle](https://flowbite-svelte.com/llm/extend/button-toggle.md)
-- [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
-- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
-- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
-- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+<Seealso links={relatedLinks} />
 
 ## Component data
 

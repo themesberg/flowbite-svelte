@@ -1,6 +1,14 @@
 # Svelte Input Fields - Flowbite
 
 
+<script lang="ts">
+  import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, Seealso } from '../../utils'
+  import { A } from '$lib'
+
+  const components = 'Input, InputAddon'
+  const relatedLinks = ['/docs/forms/input-field','/docs/forms/floating-label', '/docs/extend/tags' ]
+</script>
+
 The input field is an important part of the form element that can be used to create interactive controls to accept data from the user based on multiple input types, such as text, email, number, password, URL, phone number, and more.
 
 On this page you will find all of the input types based on multiple variants, styles, colors, and sizes built with the utility classes from Tailwind CSS and components from Flowbite.
@@ -158,9 +166,7 @@ If you need a full control over `input` HTML element while still re-using the Fl
 
 ## See also
 
-- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
-- [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
-- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+<Seealso links={relatedLinks} />
 
 ## Component data
 

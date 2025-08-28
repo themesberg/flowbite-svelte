@@ -1,6 +1,13 @@
 # Svelte Images - Flowbite
 
 
+<script lang="ts">
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { A, Heading, Badge } from '$lib'
+
+  const components = 'Img'
+</script>
+
 Get started with a collection of responsive image components coded with the utility classes from Tailwind CSS that you can use inside articles, cards, sections, and other components based on multiple styles, sizes, layouts, and hover animations.
 
 ## Setup

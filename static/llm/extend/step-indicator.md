@@ -1,6 +1,12 @@
 # Svelte StepIndicator
 
 
+<script lang="ts">
+  import {  TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { P, A } from '$lib'
+  const components = 'StepIndicator'
+</script>
+
 The Step Indicator component is a simple component to show the progress of a process. It can be used to show the progress of a multi-step form or a multi-step process.
 
 ## Setup
@@ -34,7 +40,7 @@ Use the `glow` prop to add a glow effect to the current step.
 Use the `hideLabel` prop to hide the label of the current step.
 
 ```svelte
-{#include Hidelabel.svelte}
+{#include HideLabel.svelte}
 ```
 
 ## Sizes

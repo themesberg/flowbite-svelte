@@ -1,6 +1,13 @@
 # Svelte Tags
 
 
+<script lang="ts">
+  import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso } from '../../utils'
+  import { P, A } from '$lib'
+  const dirName = "tags"
+  const relatedLinks = ['/docs/forms/input-field','/docs/forms/floating-label', '/docs/extend/tags' ]
+</script>
+
 The Tags.svelte component is a flexible tag input field that lets users add and manage multiple tags. It supports adding tags with Enter, removing them with Backspace or close buttons, and offers customizable styling options. The component handles keyboard navigation and maintains a reactive array of tag values that can be bound to a parent component.
 
 ## Setup
@@ -37,9 +44,7 @@ Import the `Tags` component in a script tag.
 
 ## See also
 
-- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
-- [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
-- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+<Seealso links={relatedLinks} />
 
 ## Component data
 
