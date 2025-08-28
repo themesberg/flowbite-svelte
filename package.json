@@ -153,7 +153,8 @@
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "flowbite": "^3.1.2",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.3.1",
+    "tailwind-variants": "3.0.0"
   },
   "files": [
     "dist",
