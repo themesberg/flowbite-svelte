@@ -18,7 +18,7 @@
     </NavUl>
   </Navbar>
   <div style="height:300px;" class="overflow-scroll pb-16">
-    <Skeleton class="mt-16 mb-8" />
+    <Skeleton class="mt-4 mb-8" />
     <ImagePlaceholder class="my-8" />
     <TextPlaceholder class="my-8" />
   </div>
