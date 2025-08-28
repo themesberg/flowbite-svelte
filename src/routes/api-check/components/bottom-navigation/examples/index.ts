@@ -1,9 +1,0 @@
-export { default as ActiveLink } from "./ActiveLink.svelte";
-export { default as Application } from "./Application.svelte";
-export { default as Border } from "./Border.svelte";
-export { default as Bottom } from "./Bottom.svelte";
-export { default as Card } from "./Card.svelte";
-export { default as Default } from "./Default.svelte";
-export { default as IconColor } from "./IconColor.svelte";
-export { default as Links } from "./Links.svelte";
-export { default as Pagination } from "./Pagination.svelte";
