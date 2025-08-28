@@ -1,9 +1,0 @@
-export { default as Animations } from "./Animations.svelte";
-export { default as Custom } from "./Custom.svelte";
-export { default as Default } from "./Default.svelte";
-export { default as Default2 } from "./Default2.svelte";
-export { default as DisableArrow } from "./DisableArrow.svelte";
-export { default as External } from "./External.svelte";
-export { default as Placement } from "./Placement.svelte";
-export { default as TooltipTypes } from "./TooltipTypes.svelte";
-export { default as Triggering } from "./Triggering.svelte";

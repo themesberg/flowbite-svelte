@@ -11,7 +11,6 @@
   interface Props {
     data: any;
     children: Snippet;
-    showapicheck?: boolean;
     submenu?: "api-check" | "blocks" | "builder" | "illustrations";
   }
 

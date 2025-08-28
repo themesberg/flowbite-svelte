@@ -1,5 +1,0 @@
-<script lang="ts">
-  import { Video } from "flowbite-svelte";
-</script>
-
-<Video src="/videos/flowbite.mp4" controls trackSrc="flowbite.mp4" />
