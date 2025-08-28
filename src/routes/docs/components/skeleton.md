@@ -27,15 +27,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 ## Default skeleton
 
 ```svelte example
-<script>
-  import { Skeleton } from "flowbite-svelte";
-</script>
-
-<Skeleton size="sm" class="my-8" />
-<Skeleton size="md" class="my-8" />
-<Skeleton size="lg" class="my-8" />
-<Skeleton size="xl" class="my-8" />
-<Skeleton size="2xl" class="mt-8 mb-2.5" />
+{#include Default.svelte}
 ```
 
 ## Image placeholder
@@ -43,86 +35,43 @@ Use the skeleton component to indicate a loading status with placeholder element
 To display image placeholder without text, use `imgOnly` prop as seen in the following examples.
 
 ```svelte example class="flex flex-col gap-8"
-<script>
-  import { ImagePlaceholder } from "flowbite-svelte";
-</script>
-
-<ImagePlaceholder size="sm" />
-<ImagePlaceholder imgOnly />
-<ImagePlaceholder size="md" />
-<ImagePlaceholder size="lg" />
+{#include Image.svelte}
 ```
 
 ## Video placeholder
 
 ```svelte example
-<script>
-  import { VideoPlaceholder } from "flowbite-svelte";
-</script>
-
-<VideoPlaceholder />
-<VideoPlaceholder size="md" class="mt-8" />
-<VideoPlaceholder size="lg" class="mt-8" />
-<VideoPlaceholder size="xl" class="mt-8" />
-<VideoPlaceholder size="2xl" class="mt-8" />
+{#include Video.svelte}
 ```
 
 ## Text placeholder
 
 ```svelte example
-<script>
-  import { TextPlaceholder } from "flowbite-svelte";
-</script>
-
-<TextPlaceholder />
-<TextPlaceholder size="md" class="mt-8" />
-<TextPlaceholder size="lg" class="mt-8" />
-<TextPlaceholder size="xl" class="mt-8" />
-<TextPlaceholder size="2xl" class="mt-8" />
+{#include Text.svelte}
 ```
 
 ## Card placeholder
 
 ```svelte example
-<script>
-  import { CardPlaceholder } from "flowbite-svelte";
-</script>
-
-<CardPlaceholder />
-<CardPlaceholder size="md" class="mt-8" />
-<CardPlaceholder size="lg" class="mt-8" />
-<CardPlaceholder size="xl" class="mt-8" />
-<CardPlaceholder size="2xl" class="mt-8" />
+{#include Card.svelte}
 ```
 
 ## Widget placeholder
 
 ```svelte example
-<script>
-  import { WidgetPlaceholder } from "flowbite-svelte";
-</script>
-
-<WidgetPlaceholder />
+{#include Widget.svelte}
 ```
 
 ## List placeholder
 
 ```svelte example
-<script>
-  import { ListPlaceholder } from "flowbite-svelte";
-</script>
-
-<ListPlaceholder />
+{#include List.svelte}
 ```
 
 ## Testimonial placeholder
 
 ```svelte example
-<script>
-  import { TestimonialPlaceholder } from "flowbite-svelte";
-</script>
-
-<TestimonialPlaceholder />
+{#include Testimonial.svelte}
 ```
 
 ## Component data

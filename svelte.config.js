@@ -35,7 +35,8 @@ const config = {
   kit: {
     adapter: adapter(),
     alias: {
-      $icons: path.resolve("./src/routes/utils/icons")
+      $icons: path.resolve("./src/routes/utils/icons"),
+      $utils: path.resolve("./src/routes/utils")
     }
   }
 };

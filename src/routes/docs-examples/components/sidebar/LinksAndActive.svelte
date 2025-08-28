@@ -3,7 +3,7 @@
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from "flowbite-svelte-icons";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  import PlusPlaceholder from "../../../utils/PlusPlaceholder.svelte";
+  import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
