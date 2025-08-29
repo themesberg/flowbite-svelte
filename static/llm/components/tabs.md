@@ -1,12 +1,6 @@
 # Svelte Tabs - Flowbite
 
 
-<script lang="ts">
-  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { Badge, P, A } from '$lib'
-  const dirName = toKebabCase(component_title)
-</script>
-
 The tabs component can be used either as an extra navigational hierarchy complementing the main navbar or you can also use it to change content inside a container just below the tabs using the data attributes from Flowbite.
 
 ## Setup
@@ -353,7 +347,7 @@ Use the following example to preserve the input value. First fill out the form, 
 ```svelte
 <script lang="ts">
   import { Tabs, TabItem, Label, Button, Input, Textarea, A } from "flowbite-svelte";
-  import type { Snapshot } from "./$types";
+  import type { Snapshot } from "../../../$types";
   let name = $state("");
   let email = $state("");
   let comment = $state("");

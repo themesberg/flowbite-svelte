@@ -1,12 +1,6 @@
 # Svelte Dark Mode - Flowbite
 
 
-<script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { P, A } from '$lib'
-  const dirName = toKebabCase(component_title)
-</script>
-
 In flowbite-svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Tailwind CSS:
 
 ```js example
@@ -47,7 +41,11 @@ Use `class="dark"` to set the initial theme to the dark mode. The default mode i
 Use `class` attribute to append classes to the default classes:
 
 ```svelte
-{#include Switcher.svelte}
+<script lang="ts">
+  import { DarkMode } from "flowbite-svelte";
+</script>
+
+<DarkMode class="text-primary-500 dark:text-primary-600 border dark:border-gray-800" />
 ```
 
 ## Mode icon
@@ -55,7 +53,19 @@ Use `class` attribute to append classes to the default classes:
 Use the `lightIcon` and `darkIcon` slots to change icons:
 
 ```svelte
-{#include Icon.svelte}
+<script lang="ts">
+  import { DarkMode } from "flowbite-svelte";
+  import { ThumbsUpSolid, ThumbsDownSolid } from "flowbite-svelte-icons";
+</script>
+
+<DarkMode class="text-lg">
+  {#snippet lightIcon()}
+    <ThumbsUpSolid color="red" />
+  {/snippet}
+  {#snippet darkIcon()}
+    <ThumbsDownSolid color="green" />
+  {/snippet}
+</DarkMode>
 ```
 
 ## Component data

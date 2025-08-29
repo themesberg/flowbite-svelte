@@ -1,12 +1,6 @@
 # Svelte Toasts - Flowbite
 
 
-<script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { P, A } from '$lib'
-  const dirName = toKebabCase(component_title)
-</script>
-
 The toast component can be used to enhance your website’s interactivity by pushing notifications to your visitors. You can choose from multiple styles, colors, sizes, and positions and even dismiss the component.
 
 ## Setup

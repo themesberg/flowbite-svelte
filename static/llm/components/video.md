@@ -1,12 +1,6 @@
 # Svelte Video - Flowbite
 
 
-<script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { Heading, P, A } from '$lib'
-  const dirName = toKebabCase(component_title)
-</script>
-
 ## Setup
 
 ```svelte

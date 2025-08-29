@@ -1,11 +1,6 @@
 # Colors - Flowbite Svelte
 
 
-<script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils';
-  import { A, Img, P } from '$lib';
-</script>
-
 ## Primary and secondary colors
 
 In the provided code, you can customize the primary and secondary color by modifying the appropriate color values.

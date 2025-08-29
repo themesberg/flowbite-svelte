@@ -1,11 +1,6 @@
 # Quickstart - Flowbite Svelte
 
 
-<script lang="ts">
-  import { A, P, List, Li } from '$lib'
-  
-</script>
-
 You can install Flowbite Svelte by using the <A href='/docs/extend/flowbite-svelte-starter'>flowbite-svelte-start</A> or from scratch.
 
 ## Getting started

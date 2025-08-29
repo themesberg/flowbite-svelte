@@ -1,13 +1,6 @@
 # Svelte Tooltip - Flowbite
 
 
-<script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
-  import { P, A } from '$lib'
-  const dirName = toKebabCase(component_title)
-  const relatedLinks = ['/docs/components/popover','/docs/components/speed-dial' ,'/docs/components/tooltip'];
-</script>
-
 flowbite-svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
 
 For interactive elements that need to display additional content on click, use the [popover](/docs/components/popover) component.

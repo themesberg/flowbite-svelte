@@ -10,10 +10,6 @@ Each component has a props section where you can find information on how to cust
 In this case, you can overwrite the outer div class by adding the `class` prop. Here's an example:
 
 ```svelte
-<script lang="ts">
-  import { Alert } from "flowbite-svelte";
-</script>
-
 <Alert class="bg-sky-500 text-white">Add a class to overwrite the default class!</Alert>
 ```
 

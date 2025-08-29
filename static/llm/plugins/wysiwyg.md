@@ -1,31 +1,6 @@
 # Svelte WYSIWYG Text Editor - Flowbite
 
 
-<script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks, ExampleWrapper } from '../../utils'
-  const components = 'Texteditor'
-  import * as Examples from './examples';
-  
-  // import Appcss from './examples/Appcss.svelte';
-  // const Markdowns = import.meta.glob('./examples/*.svelte,{query:'?raw', import: 'default'})
-  const tiptapVersion = __TIPTAP__;
-  // console.log('tiip', tiptapVersion);
-  const exampleRawModules = import.meta.glob("./examples/*.svelte", {
-    query: "?raw",
-    import: "default",
-    eager: true
-  });
-
-  const exampleModules = import.meta.glob("./examples/*.svelte", {
-    eager: true,
-  });
-  
-  import { Badge, P, Button, Accordion, AccordionItem, A } from "$lib"
-  import { InfoCircleOutline } from "flowbite-svelte-icons";
-
-  const textEditor = __TEXTEDITOR__;
-</script>
-
 <svelte:head>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />

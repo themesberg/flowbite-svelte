@@ -1,12 +1,6 @@
 # Svelte Typography - Flowbite
 
 
-<script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
-  import { A } from '$lib';
-  const components = 'A, Blockquote, DescriptionList, Heading, Hr, Img, Layout, Li, List, Mark, P, Secondary, Span';
-</script>
-
 The typography for FlowBite is completely based on the utility classes from Tailwind CSS.
 
 We have listed some of the commonly used typography classes that we use throughout the FlowBite UI, however, you can also check out all of the utility classes on the <a class="link" href="https://tailwindcss.com/docs/font-family">Tailwind CSS documentation</a> directly.

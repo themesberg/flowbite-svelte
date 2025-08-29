@@ -1,10 +1,6 @@
 # License - Flowbite Svelte
 
 
-<script lang="ts">
-  
-</script>
-
 ## MIT License
 
 #### Copyright (c) 2022 Flowbite Svelte

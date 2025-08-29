@@ -1,16 +1,6 @@
 # Svelte Charts - Flowbite
 
 
-<script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
-  import componentData1 from '../../component-data/Chart.json'
-  import componentData2 from '../../component-data/Card.json'
-  const components = 'Chart'
-
-  import { Badge, P } from "$lib"
-  import { InfoCircleOutline } from "flowbite-svelte-icons";
-</script>
-
 <Badge class="p-4 w-full">
   <P class="flex items-center gap-2">
     <span class="inline-flex">

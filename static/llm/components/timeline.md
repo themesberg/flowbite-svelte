@@ -1,12 +1,6 @@
 # Svelte Timeline - Flowbite
 
 
-<script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
-  import { Badge } from '$lib'
-  const dirName = toKebabCase(component_title)
-</script>
-
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
 
 ## Setup
