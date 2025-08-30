@@ -93,6 +93,9 @@ llms: markdown
 /docs: https://flowbite-svelte.com/llm/utilities/label.md
 /docs: https://flowbite-svelte.com/llm/utilities/toolbar.md
 
+# Icons
+/icons: https://flowbite-svelte.com/llm/icons.md
+
 # Optionally point to bundles
 /context: https://flowbite-svelte.com/llm/context-full.txt
 

@@ -14,7 +14,7 @@ description: Get started with a collection of open-source Flowbite Svelte Icons 
   import { removeHyphensAndCapitalize } from './utils/utils';
 </script>
 
-Use well over 500 SVG icons based on the open-source [Flowbite Icons](https://flowbite.com/icons/) library to power your Svelte application with optimized icons provided with both outline and solid styles. This page allows usage for Svelte 5 applications.
+Use well over 750 SVG icons based on the open-source [Flowbite Icons](https://flowbite.com/icons/) library to power your Svelte application with optimized icons provided with both outline and solid styles. This page allows usage for Svelte 5 applications.
 
 <div class="flex gap-2 my-8">
 <a href="https://github.com/sponsors/shinokada" target="_blank"><img src="https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86" alt="sponsor" ></a>
@@ -61,7 +61,7 @@ To make sure the classes used by flowbite-svelte-icons are included by the Tailw
 
 In a svelte file:
 
-```html
+```svelte
 <script lang="ts">
   import { AddressBookOutline } from "flowbite-svelte-icons";
 </script>
@@ -73,7 +73,7 @@ In a svelte file:
 
 If you need only a few icons from this library in your Svelte app, import them directly. This can optimize compilation speed and improve performance by reducing the amount of code processed during compilation.
 
-```html
+```svelte
 <script lang="ts">
   import AddressBookOutline from "flowbite-svelte-icons/AddressBookOutline.svelte";
 </script>
@@ -85,13 +85,17 @@ If you need only a few icons from this library in your Svelte app, import them d
 
 Since all icons have `{...restProps}` and extended <A href="https://github.com/sveltejs/svelte/blob/main/packages/svelte/elements.d.ts">`SVGAttributes<SVGSVGElement>`</A>, you can pass other attibutes.
 
-```html
+```svelte
+<script lang="ts">
+  import { AddressBookOutline } from "flowbite-svelte-icons";
+</script>
+
 <AddressBookOutline id="my-svg" transform="rotate(45)" class="hover:cursor-pointer dark:text-white" onclick="{()" ="">alert('hello')} /></AddressBookOutline>
 ```
 
 ## Using onMount
 
-```html
+```svelte
 <script lang="ts">
   import { AddressBookOutline } from "flowbite-svelte-icons";
   import { onMount } from "svelte";
@@ -109,7 +113,7 @@ Since all icons have `{...restProps}` and extended <A href="https://github.com/s
 
 Use `import * as Icon from 'flowbite-svelte-icons`.
 
-```html
+```svelte
 <script lang="ts">
   import * as Icon from "flowbite-svelte-icons";
 </script>
@@ -163,13 +167,13 @@ xl 'w-8 h-8'
 
 To change the size of an icon, use the `size` prop and specify the desired size. For example:
 
-```html
+```svelte
 <AddressBookOutline size="md" />
 ```
 
 If you want to override the preconfigured size, you can add a custom size using Tailwind CSS by including the desired classes in the `class` prop. For example:
 
-```html
+```svelte
 <AddressBookOutline class="mr-4 h-24 w-24 text-blue-700" />
 ```
 
@@ -177,7 +181,11 @@ If you want to override the preconfigured size, you can add a custom size using 
 
 You can apply Tailwind CSS color directly to the icon component or its parent tag using the `class` prop.
 
-```html
+```svelte
+<script lang="ts">
+  import { AddressBookOutline } from "flowbite-svelte-icons";
+</script>
+
 <AddressBookOutline size="md" class="m-1 inline text-red-700 dark:text-green-300" />
 
 <div class="m-1 inline text-red-700 dark:text-green-300">
@@ -189,7 +197,11 @@ You can apply Tailwind CSS color directly to the icon component or its parent ta
 
 Use the color attribute to change colors with HEX color code for Filled and Outlined components.
 
-```html
+```svelte
+<script lang="ts">
+  import { AddressBookOutline } from "flowbite-svelte-icons";
+</script>
+
 <AddressBookOutline color="#ff0000" size="md" />
 ```
 
@@ -199,7 +211,11 @@ If you are using the dark mode on your website with Tailwind CSS, add your dark 
 
 Let's use `dark` for the dark mode class as an example.
 
-```html
+```svelte
+<script lang="ts">
+  import { AddressBookOutline } from "flowbite-svelte-icons";
+</script>
+
 <AddressBookOutline class="text-blue-700 dark:text-red-500" />
 ```
 
@@ -207,7 +223,11 @@ Let's use `dark` for the dark mode class as an example.
 
 Use `ariaLabel` prop to add the `aria-label` value.
 
-```html
+```svelte
+<script lang="ts">
+  import { AddressBookOutline } from "flowbite-svelte-icons";
+</script>
+
 <AddressBookOutline ariaLabel="address card outline" />
 ```
 
@@ -219,7 +239,7 @@ You can create a custom default icon, by using `IconSolid` or `IconOutline`:
 
 Create a Svelte component named `src/lib/MyIcon.svelte`:
 
-```html
+```svelte
 <script lang="ts">
   import { IconOutline } from "flowbite-svelte-icons";
   import { type Component } from "svelte";
@@ -243,7 +263,7 @@ This component, `MyIcon.svelte`, accepts an `icon` prop which you can use to pas
 
 To use your custom default icon in a Svelte page, do the following:
 
-```html
+```svelte
 <script lang="ts">
   import { AngleLeftOutline } from "flowbite-svelte-icons";
   import MyIcon from "path/to/MyIcon.svelte";
@@ -267,7 +287,7 @@ You can create global icon preferences in your Svelte application using `setCont
 
 In your `+layout.svelte` or `+page.svelte`, you can define and set global icon preferences as follows:
 
-```html
+```svelte
 <script lang="ts">
   import { setContext } from "svelte";
 
@@ -285,7 +305,7 @@ The `size`, and `role` (for solid icons) and `size`, `role`, `strokeLinecap`, `s
 
 If you set `size`, icons can be customized with different color. For example:
 
-```html
+```svelte
 <script lang="ts">
   import { setContext } from "svelte";
   import { MapLocationOutline } from "flowbite-svelte-icons";
@@ -301,3 +321,45 @@ If you set `size`, icons can be customized with different color. For example:
 ### Setting more than one props
 
 Remember that you can set one or more properties, allowing you to tailor icon settings to your specific design and accessibility requirements.
+
+
+## types
+
+```ts
+import type { SVGAttributes } from 'svelte/elements';
+
+export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+
+export type TitleType =
+  | {
+      id: string;
+      title?: string;
+    }
+  | undefined;
+
+export type DescType =
+  | {
+      id: string;
+      desc?: string;
+    }
+  | undefined;
+
+export interface BaseProps extends SVGAttributes<SVGElement> {
+  size?: Size;
+  color?: string | null;
+}
+
+export interface OutlineBaseProps extends BaseProps {
+  strokeWidth?: number | `${number}`;
+}
+
+export interface AccessibleProps {
+  title?: TitleType;
+  desc?: DescType;
+  ariaLabel?: string;
+}
+
+export interface Props extends BaseProps, AccessibleProps {}
+
+export interface OutlineProps extends OutlineBaseProps, AccessibleProps {}
+```

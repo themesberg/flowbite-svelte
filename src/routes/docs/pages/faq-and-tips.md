@@ -7,10 +7,6 @@ dir: Pages
 description: Tips for your apps.
 ---
 
-## Does flowbite-svelte work on Svelte 5?
-
-You can find [the progress report](/api-check) for flowbite-svelte on Svelte 5.
-
 ## Svelte key blocks
 
 Svelte key blocks destroy and recreate their contents when the value of an expression changes. This can be useful when you are using SvelteKit (group) routing.
