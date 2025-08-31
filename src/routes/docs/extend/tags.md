@@ -8,9 +8,10 @@ description: A customizable tag input component that allows users to enter multi
 ---
 
 <script lang="ts">
-  import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso } from '../../utils'
+  import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks } from '../../utils'
   import { P, A } from '$lib'
-  const dirName = "tags"
+  const components = 'Tags'
+  const dirName = "forms/tags"
   const relatedLinks = ['/docs/forms/input-field','/docs/forms/floating-label', '/docs/extend/tags' ]
 </script>
 
@@ -57,3 +58,5 @@ Import the `Tags` component in a script tag.
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 <CompoAttributesViewer {dirName}/>
+
+<GitHubCompoLinks {components} dir="extend"/>

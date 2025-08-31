@@ -8,8 +8,9 @@ description: Use the progress radial component to show the progress of a process
 ---
 
 <script lang="ts">
-  import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso } from '../../utils'
+  import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks } from '../../utils'
   import { P, A } from '$lib'
+  const components = 'Progressradial'
   const dirName = "progress"
   const relatedLinks = ['/docs/components/progress','/docs/extend/progressradial' ]
 </script>
@@ -75,3 +76,5 @@ Import the `Progressradial` component in a script tag.
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 <CompoAttributesViewer {dirName}/>
+
+<GitHubCompoLinks {components} dir="extend"/>

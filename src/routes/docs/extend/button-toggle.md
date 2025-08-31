@@ -8,7 +8,7 @@ description: Use the button toggle to toggle on/off with the appearance of a but
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks } from '../../utils'
   import { P, A } from '$lib'
 
   const components = 'ButtonToggle, ButtonToggleGroup'
@@ -72,3 +72,5 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 <CompoAttributesViewer {components} dir="forms" />
+
+<GitHubCompoLinks {components} dir="extend"/>
