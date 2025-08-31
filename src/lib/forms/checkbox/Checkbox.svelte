@@ -14,13 +14,13 @@
   const { base, div: divStyle } = $derived(checkbox({ color, tinted, custom, rounded, inline, disabled: disabled ?? false }));
 
   $effect(() => {
-    if (value !== undefined) {
+    if (value !== undefined && Array.isArray(group)) {
       checked = group.includes(value);
     }
   });
 
   $effect(() => {
-    if (value === undefined) return;
+    if (value === undefined || !Array.isArray(group)) return;
     // There's a bug in Svelte and bind:group is not working with wrapped checkbox
     // This workaround is taken from:
     // https://svelte.dev/repl/de117399559f4e7e9e14e2fc9ab243cc?version=3.12.1
@@ -40,7 +40,7 @@
 </script>
 
 {#if choices.length > 0}
-  {#each choices as choice, i (value ?? i)}
+  {#each choices as choice, i (choice.value ?? i)}
     <Label show={!!children || !!choice.label} {...labelProps} class={divStyle({ class: clsx(theme?.div, styling.div) })}>
       <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} class={base({ class: clsx(theme?.base, className) })} />
       {#if children}
