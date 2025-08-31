@@ -19,16 +19,8 @@
     }
   });
 
-  function onchange(ev: Event & { currentTarget: HTMLInputElement }) {
-    restProps.onchange?.(ev);
-    if (ev.defaultPrevented) return;
-
-    updateGroup();
-  }
-
-  function updateGroup() {
-    if (value !== undefined) return;
-
+  $effect(() => {
+    if (value === undefined) return;
     // There's a bug in Svelte and bind:group is not working with wrapped checkbox
     // This workaround is taken from:
     // https://svelte.dev/repl/de117399559f4e7e9e14e2fc9ab243cc?version=3.12.1
@@ -38,21 +30,19 @@
     if (checked) {
       if (index < 0) {
         group.push(value);
-        group = group;
       }
     } else {
       if (index >= 0) {
         group.splice(index, 1);
-        group = group;
       }
     }
-  }
+  });
 </script>
 
 {#if choices.length > 0}
-  {#each choices as choice, i (choice.value ?? i)}
+  {#each choices as choice, i (value ?? i)}
     <Label show={!!children || !!choice.label} {...labelProps} class={divStyle({ class: clsx(theme?.div, styling.div) })}>
-      <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} {onchange} class={base({ class: clsx(theme?.base, className) })} />
+      <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} class={base({ class: clsx(theme?.base, className) })} />
       {#if children}
         {@render children({ value: choice.value, checked: choice.checked, disabled })}
       {:else}
@@ -62,7 +52,7 @@
   {/each}
 {:else}
   <Label show={!!children} {...labelProps} class={divStyle({ class: clsx(theme?.div, styling.div) })}>
-    <input type="checkbox" {value} bind:checked {disabled} {...restProps} {onchange} class={base({ class: clsx(theme?.base, className) })} />
+    <input type="checkbox" {value} bind:checked {disabled} {...restProps} class={base({ class: clsx(theme?.base, className) })} />
     {#if children}
       {@render children({ value, checked, disabled })}
     {/if}
