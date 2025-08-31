@@ -1,8 +1,6 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { Classes } from "$lib/theme/themeUtils";
 
-export type CheckboxVariants = Omit<VariantProps<typeof checkbox> & Classes<typeof checkbox>, "disabled">;
-
 export const checkbox = tv({
   slots: {
     base: "w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 me-2 rounded-sm",
@@ -102,7 +100,7 @@ export const checkbox = tv({
   }
 });
 
-export type CheckboxButtonVariants = VariantProps<typeof checkboxButton>;
+export type CheckboxVariants = Omit<VariantProps<typeof checkbox> & Classes<typeof checkbox>, "disabled">;
 
 export const checkboxButton = tv({
   base: "",
@@ -119,3 +117,5 @@ export const checkboxButton = tv({
     inline: true
   }
 });
+
+export type CheckboxButtonVariants = VariantProps<typeof checkboxButton>;

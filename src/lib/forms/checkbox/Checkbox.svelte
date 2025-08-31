@@ -27,7 +27,7 @@
   }
 
   function updateGroup() {
-    if (!value) return;
+    if (value !== undefined) return;
 
     // There's a bug in Svelte and bind:group is not working with wrapped checkbox
     // This workaround is taken from:
@@ -50,7 +50,7 @@
 </script>
 
 {#if choices.length > 0}
-  {#each choices as choice, i}
+  {#each choices as choice, i (choice.value ?? i)}
     <Label show={!!children || !!choice.label} {...labelProps} class={divStyle({ class: clsx(theme?.div, styling.div) })}>
       <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} {onchange} class={base({ class: clsx(theme?.base, className) })} />
       {#if children}

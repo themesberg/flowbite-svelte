@@ -13,7 +13,7 @@
   let buttonClass: string = $derived(checkboxButton({ inline, checked, class: clsx(theme, className) }));
 </script>
 
-<Button tag="label" {checked} {pill} {outline} {size} {color} {shadow} class={buttonClass}>
+<Button tag="label" {pill} {outline} {size} {color} {shadow} class={buttonClass}>
   <Checkbox bind:group bind:checked {...restProps} class="sr-only"></Checkbox>
   {@render children?.()}
 </Button>
