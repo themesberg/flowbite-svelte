@@ -13,13 +13,25 @@ By adopting this standard, Flowbite Svelte ensures that AI assistants can effici
 
 ## Machine-Readable Routes
 
+### llms.txt
+
+The `llms.txt` file is a **manifest** that tells large language models (LLMs) where to find your AI-friendly Markdown documentation.  
+It works like a `robots.txt` or `sitemap.xml`, but is specifically designed for LLMs to efficiently discover and consume your docs.  
+You can access it at [https://flowbite-svelte.com/llms.txt](https://flowbite-svelte.com/llms.txt).
+
+### context-full.txt
+
+The `context-full.txt` file is a **complete bundle** of all your documentation, combined into one large text file.  
+It includes full explanations, code examples, and details, making it ideal for LLMs with large context windows.  
+You can access the full text at [https://flowbite-svelte.com/llm/context-full.txt](https://flowbite-svelte.com/llm/context-full.txt).
+
 ### Markdown API Access
 
 All documentation pages can be accessed in pure markdown format by simply replacing `docs` with `llm` and appending `.md` to their URLs. For example:
 
-- `https://flowbite-svelte.com/llm/pages/introduction.md`
-- `https://flowbite-svelte.com/llm/components/buttons.md`
-- `https://flowbite-svelte.com/llm/extend/progressradial.md`
+- [https://flowbite-svelte.com/llm/pages/introduction.md](https://flowbite-svelte.com/llm/pages/introduction.md)
+- [https://flowbite-svelte.com/llm/components/buttons.md](https://flowbite-svelte.com/llm/components/buttons.md)
+- [https://flowbite-svelte.com/llm/extend/progressradial.md](https://flowbite-svelte.com/llm/extend/progressradial.md)
 
 ## Implementation Examples
 
