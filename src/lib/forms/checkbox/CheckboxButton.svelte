@@ -1,56 +1,20 @@
 <script lang="ts">
-  import Button from "$lib/buttons/Button.svelte";
-  import clsx from "clsx";
   import { type CheckboxButtonProps } from "$lib";
-  import { checkboxButton } from "./theme";
+  import Button from "$lib/buttons/Button.svelte";
   import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+  import Checkbox from "./Checkbox.svelte";
+  import { checkboxButton } from "./theme";
 
-  let { children, class: className, group = $bindable([]), value, checked, inline, pill, outline, size, color, shadow, ...restProps }: CheckboxButtonProps = $props();
+  let { children, class: className, group = $bindable(), checked = $bindable(false), inline, pill, outline, size, color, shadow, ...restProps }: CheckboxButtonProps = $props();
 
   const theme = getTheme("checkboxButton");
-
-  // react on external group changes
-  function init(_: HTMLElement, _group: (string | number)[]) {
-    group = _group ?? [];
-
-    if (checked === undefined && value !== undefined) checked = group.includes(value);
-    onChange();
-
-    $effect(() => {
-      if (value !== undefined) {
-        checked = group.includes(value);
-      }
-    });
-  }
-
-  function onChange() {
-    if (!value) return;
-
-    // There's a bug in Svelte and bind:group is not working with wrapped checkbox
-    // This workaround is taken from:
-    // https://svelte.dev/repl/de117399559f4e7e9e14e2fc9ab243cc?version=3.12.1
-    const index = group.indexOf(value);
-
-    if (checked === undefined) checked = index >= 0;
-
-    if (checked) {
-      if (index < 0) {
-        group.push(value);
-        group = group;
-      }
-    } else {
-      if (index >= 0) {
-        group.splice(index, 1);
-        group = group;
-      }
-    }
-  }
 
   let buttonClass: string = $derived(checkboxButton({ inline, checked, class: clsx(theme, className) }));
 </script>
 
-<Button tag="label" {checked} {pill} {outline} {size} {color} {shadow} class={buttonClass}>
-  <input use:init={group} type="checkbox" bind:checked {value} {...restProps} class="sr-only" onchange={onChange} />
+<Button tag="label" {pill} {outline} {size} {color} {shadow} class={buttonClass}>
+  <Checkbox bind:group bind:checked {...restProps} class="sr-only"></Checkbox>
   {@render children?.()}
 </Button>
 

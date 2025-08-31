@@ -45,7 +45,7 @@ import type { TooltipVariants } from "$lib/tooltip/theme";
 import type { closeButton } from "$lib/utils/theme";
 
 // forms component variants
-import type { CheckboxVariants } from "$lib/forms/checkbox/theme";
+import type { CheckboxButtonVariants, CheckboxVariants } from "$lib/forms/checkbox/theme";
 import type { FileuploadViariants } from "$lib/forms/fileupload/theme";
 import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label/theme";
 import type { HelperVariants } from "$lib/forms/helper/theme";
@@ -674,24 +674,19 @@ export interface CheckboxItem {
   [key: string]: any;
 }
 
-export interface CheckboxProps extends CheckboxVariants, Omit<HTMLInputAttributes, "children" | "color" | "disabled"> {
+export interface CheckboxProps extends CheckboxVariants, Omit<HTMLInputAttributes, "children" | "color"> {
   children?: Snippet<[{ value?: string | number; checked: boolean } | CheckboxItem]>;
   custom?: boolean;
   inline?: boolean;
   tinted?: boolean;
   rounded?: boolean;
-  group?: (string | number)[];
   choices?: CheckboxItem[];
-  indeterminate?: boolean;
   divClass?: ClassValue;
-  labelProps?: Record<string, any>;
+  labelProps?: Omit<LabelProps, "children">;
 }
 
 // checkbox-button
-export interface CheckboxButtonProps extends Omit<HTMLInputAttributes, "size"> {
-  group?: (string | number)[];
-  value?: string | number;
-  checked?: boolean;
+export interface CheckboxButtonProps extends CheckboxButtonVariants, Omit<HTMLInputAttributes, "size" | "checked"> {
   inline?: boolean;
   pill?: boolean;
   outline?: boolean;
@@ -941,7 +936,7 @@ export interface TimepickerProps {
   timeIntervals?: string[];
   columns?: ColumnCount;
   // Callback props instead of events
-  onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
+  onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
 }
 
 // textarea
