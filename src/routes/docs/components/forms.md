@@ -9,7 +9,7 @@ thumnailSize: w-40
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
   import { P, A, Heading } from '$lib'
   const dirName = toKebabCase(component_title)
 </script>
@@ -110,4 +110,10 @@ Get started with the default example of a select input component to get a single
 
 - [Flowbite Forms](https://flowbite.com/docs/components/forms/)
 
+## GitHub Links
+
 <GitHubCompoLinks />
+
+## Machine-Readable LLM Files
+
+<LlmLink />

@@ -8,7 +8,7 @@ description: Use the number input component to set a numeric value inside a form
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, Seealso } from '../../utils'
+  import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, Seealso, LlmLink } from '../../utils'
 
   const components = 'Input'
   const relatedLinks = ['/docs/forms/input-field','/docs/forms/floating-label', '/docs/extend/tags' ]
@@ -63,3 +63,11 @@ Use this example as an alternative style to the control buttons example above.
 ```svelte example
 {#include Counter.svelte}
 ```
+
+## GitHub Links
+
+<GitHubCompoLinks {components}/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

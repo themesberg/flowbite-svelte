@@ -165,4 +165,6 @@ Add `clearable` and `clearableOnClick` props.
 
 - [Flowbite File Input](https://flowbite.com/docs/forms/file-input/)
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>

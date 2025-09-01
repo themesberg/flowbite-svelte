@@ -9,7 +9,7 @@ thumnailSize: w-48
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
   const components = 'Fileupload'
 </script>
 
@@ -71,4 +71,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite File Input](https://flowbite.com/docs/forms/file-input/)
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

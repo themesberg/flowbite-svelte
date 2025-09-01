@@ -8,7 +8,7 @@ description: Get started with a collection of input fields built with Tailwind C
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, Seealso } from '../../utils'
+  import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, Seealso, LlmLink } from '../../utils'
   import { A } from '$lib'
 
   const components = 'Input, InputAddon'
@@ -184,4 +184,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Input Field](https://flowbite.com/docs/forms/input-field/)
 
-<GitHubCompoLinks {components}/>
+## GitHub Links
+
+<GitHubCompoLinks {components} />
+
+## Machine-Readable LLM Files
+
+<LlmLink />

@@ -9,7 +9,7 @@ thumnailSize: w-24
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
 </script>
@@ -75,4 +75,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Dark Mode](https://flowbite.com/docs/customize/dark-mode/)
 
+## GitHub Links
+
 <GitHubCompoLinks />
+
+## Machine-Readable LLM Files
+
+<LlmLink />

@@ -8,7 +8,7 @@ description: A customizable tag input component that allows users to enter multi
 ---
 
 <script lang="ts">
-  import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks } from '../../utils'
+  import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
   import { P, A } from '$lib'
   const components = 'Tags'
   const dirName = "forms/tags"
@@ -59,4 +59,10 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {dirName}/>
 
+## GitHub Links
+
 <GitHubCompoLinks {components} dir="extend"/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

@@ -8,7 +8,7 @@ description: Use the phone number input component to set a phone number inside a
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, Seealso } from '../../utils'
+  import { TableProp, TableDefaultRow,  CompoAttributesViewer, GitHubCompoLinks, Seealso, LlmLink } from '../../utils'
   import { A } from '$lib'
 
   const components = 'PhoneInput'
@@ -105,4 +105,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Phone Input](https://flowbite.com/docs/forms/phone-input/)
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

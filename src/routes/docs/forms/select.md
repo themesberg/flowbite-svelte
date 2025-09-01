@@ -8,7 +8,7 @@ description: Get started with the select component to allow the user to choose f
 ---
 
 <script lang="ts">
-import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
 import { Badge, Kbd  } from '$lib';
 import { ArrowUpOutline, ArrowDownOutline } from 'flowbite-svelte-icons';
 const components = 'Select, MultiSelect'
@@ -157,4 +157,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Select](https://flowbite.com/docs/forms/select/)
 
-<GitHubCompoLinks {components} {dirName}/>
+## GitHub Links
+
+<GitHubCompoLinks {components}/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

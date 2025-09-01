@@ -9,7 +9,7 @@ thumnailSize: w-36
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, LlmLink } from '../../utils'
   import { A } from '$lib';
   const components = 'A, Blockquote, DescriptionList, Heading, Hr, Img, Layout, Li, List, Mark, P, Secondary, Span';
 </script>
@@ -74,4 +74,11 @@ You can use the following classes to set the text decoration for any inline text
 
 - [Flowbite Typography](https://flowbite.com/docs/components/typography/)
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />
+

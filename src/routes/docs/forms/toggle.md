@@ -9,7 +9,7 @@ thumbnailSize: w-72
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
   import { onMount } from 'svelte';
   import { Toggle } from '$lib'
 
@@ -68,4 +68,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Switch (Toggle)](https://flowbite.com/docs/forms/toggle/)
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

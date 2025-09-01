@@ -4,6 +4,7 @@ export { default as CompoDescription } from "./CompoDescription.svelte";
 export { default as ExampleWrapper } from "./ExampleWrapper.svelte";
 export { default as GitHubSource } from "./GitHubSource.svelte";
 export { default as GitHubSourceList } from "./GitHubSourceList.svelte";
+export { default as LlmLink } from "./LlmLink.svelte";
 export { default as PageHeadSection } from "./PageHeadSection.svelte";
 export { default as MetaTag } from "./MetaTag.svelte";
 export { default as TableDefaultRow } from "./TableDefaultRow.svelte";

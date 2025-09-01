@@ -8,10 +8,11 @@ description: Get started with the CloseButton components to hide a target elemen
 ---
 
 <script lang="ts">
-	import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer, Seealso } from '../../utils';
+	import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils';
 	import { A } from '$lib';
 
   const components = 'CloseButton'
+	const dirName = "utilities"
 
 	let divClass = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4';
 	let theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white';
@@ -36,3 +37,11 @@ Use `CloseButton` component to close a component.
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 <CompoAttributesViewer {components}/>
+
+## GitHub Links
+
+<GitHubCompoLinks {components}/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

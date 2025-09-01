@@ -9,7 +9,7 @@ thumnailSize: w-40
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer,  GitHubCompoLinks, Seealso } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, Seealso, LlmLink } from '../../utils'
 
   const components = 'FloatingLabelInput, Helper'
   const relatedLinks = ['/docs/forms/input-field','/docs/forms/floating-label', '/docs/extend/tags' ]
@@ -107,4 +107,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Floating Label](https://flowbite.com/docs/forms/floating-label/)
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

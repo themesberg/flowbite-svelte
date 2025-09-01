@@ -31,7 +31,7 @@ import type { SidebarVariants, SidebarCtaVariants, SidebarBrandVariants, Sidebar
 import type { CardPlaceholderVariants, ImagePlaceholderVariants, ListPlaceholderVariants, SkeletonVariants, TestimonialPlaceholderVariants, TextPlaceholderVariants, VideoPlaceholderVariants, WidgetPlaceholderVariants } from "$lib/skeleton/theme";
 import type { SpeedDialVariants, SpeedDialButtonVariants } from "$lib/speed-dial/theme";
 import type { SpinnerVaraiants } from "$lib/spinner/theme";
-import type { StepIndicatorVariants } from "$lib/stepindicator/theme";
+import type { StepIndicatorVariants } from "$lib/step-indicator/theme";
 import type { StepperVariants, ProgressStepperVariants, DetailedStepperVariants, VerticalStepperVariants, BreadcrumbStepperVariants, TimelineStepperVariants } from "$lib/stepper/theme";
 import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
 import type { ProgressbarVariants, ProgressradialVariants } from "$lib/progress/theme";

@@ -283,4 +283,6 @@ The component has the following props, type, and default values. See [types page
 
 ## References
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>

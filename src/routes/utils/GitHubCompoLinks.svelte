@@ -3,19 +3,28 @@
   import { getFilteredFileNames } from "./helpers";
   import { github } from "./consts";
 
+  let { components } = $props();
+  
   const pathname = page.url.pathname;
   const parts = pathname.split("/").filter(Boolean); 
   const dirName = parts.at(-1);      // "input-field"
-  const parentDir = parts.at(-2);    // "forms"
-
-  let { components } = $props();
-
   const forms = ["Checkbox", "Dropzone", "Fileupload", "FloatingLabelInput", "Helper", "Input", "InputAddon", "Label", "MultiSelect", "NumberInput", "PhoneInput", "Radio", "Range", "Search", "Select", "Tags", "Textarea", "Timepicker", "Toggle"];
-  const typography = ["A", "Blockquote", "DesriptionList", "Heading", "Hr", "Img", "Layout", "Li", "List", "Mark", "P", "Secondary", "Span"];
+  const typography = ["A", "Blockquote", "DesriptionList", "Heading", "Hr", "Img", "Layout", "Li", "DescriptionList", "List", "Mark", "P", "Secondary", "Span"];
   
   // Special cases for components that don't follow the standard directory pattern
-  const specialCases = {
-    "MultiSelect": "forms/select"
+   const specialCases: Record<string, string> = {
+    "Input": "forms/input-field",
+    "InputAddon": "forms/input-addon",
+    "MultiSelect": "forms/select",
+    "ButtonToggle": "forms/button-toggle",
+    "ButtonToggleGroup": "forms/button-toggle",
+    "RadioButton": "forms/radio",
+    "Progressradial": "progress",
+    "Toolbar": "toolbar",
+    "ToolbarButton": "toolbar",
+    "CloseButton": "utils",
+    "P": "typography/paragraph",
+    "Li": "typography/list",
   };
   
   // default for docs/components
@@ -44,18 +53,10 @@
   }
 </script>
 
-<h2 class="relative group text-2xl leading-tight font-bold text-gray-900 dark:text-white">GitHub Links</h2>
 <ul>
   {#each fileNames as compo}
     <li>
       <a target="_blank" href="{github}/{getComponentPath(compo)}">{compo} component on GitHub</a>
     </li>
   {/each}
-</ul>
-
-<h2 class="relative group text-2xl leading-tight font-bold text-gray-900 dark:text-white mt-6">Machine-Readable LLM Files</h2>
-<ul>
-  <li>
-    <a href="/llm/{parentDir}/{dirName}.md" target="_blank" class="underline">Open LLM source for this page</a>
-  </li>
 </ul>

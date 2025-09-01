@@ -126,4 +126,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Timepicker](https://flowbite.com/docs/forms/timepicker/)
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

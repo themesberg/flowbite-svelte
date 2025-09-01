@@ -253,4 +253,6 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Search Input](https://flowbite.com/docs/forms/search-input/)
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>

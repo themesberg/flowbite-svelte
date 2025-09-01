@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils';
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils';
   import { Layout, P, A, Heading } from '$lib';
 
   const components = 'P, Layout'
@@ -161,4 +161,10 @@ The component has the following props, type, and default values. See [types page
 
 ## References
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

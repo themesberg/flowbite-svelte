@@ -663,8 +663,8 @@
       "svelte": "./dist/spinner/Spinner.svelte"
     },
     "./StepIndicator.svelte": {
-      "types": "./dist/stepindicator/StepIndicator.svelte.d.ts",
-      "svelte": "./dist/stepindicator/StepIndicator.svelte"
+      "types": "./dist/step-indicator/StepIndicator.svelte.d.ts",
+      "svelte": "./dist/step-indicator/StepIndicator.svelte"
     },
     "./BreadcrumbStepper.svelte": {
       "types": "./dist/stepper/BreadcrumbStepper.svelte.d.ts",

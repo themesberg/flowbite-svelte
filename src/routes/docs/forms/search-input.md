@@ -8,7 +8,7 @@ description: Use the search input component as a text field to allow users to en
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
   import componentData1 from '../../component-data/Search.json'
   const components = 'Search'
 </script>
@@ -91,4 +91,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Search Input](https://flowbite.com/docs/forms/search-input/)
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

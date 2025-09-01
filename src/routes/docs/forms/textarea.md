@@ -8,7 +8,7 @@ description: Use the textarea component as a multi-line text field input and use
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
 
   const components = 'Textarea'
 </script>
@@ -89,4 +89,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Textarea](https://flowbite.com/docs/forms/textarea/)
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

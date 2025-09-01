@@ -9,7 +9,7 @@ thumnailSize: w-36
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
   import { P, A } from '$lib'
   const dirName = 'clipboard'
 
@@ -125,4 +125,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Clipboard](https://flowbite.com/docs/components/clipboard/)
 
+## GitHub Links
+
 <GitHubCompoLinks />
+
+## Machine-Readable LLM Files
+
+<LlmLink />

@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
   import { P, A } from 'flowbite-svelte'
   const dirName = toKebabCase(component_title)
 </script>
@@ -140,4 +140,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Avatar](https://flowbite.com/docs/components/avatar/)
 
+## GitHub Links
+
 <GitHubCompoLinks />
+
+## Machine-Readable LLM Files
+
+<LlmLink />

@@ -8,7 +8,7 @@ description: Use the button toggle to toggle on/off with the appearance of a but
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
   import { P, A } from '$lib'
 
   const components = 'ButtonToggle, ButtonToggleGroup'
@@ -73,4 +73,10 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components} dir="forms" />
 
+## GitHub Links
+
 <GitHubCompoLinks {components} dir="extend"/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

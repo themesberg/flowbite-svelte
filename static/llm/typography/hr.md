@@ -107,4 +107,6 @@ This example can be used to separate content with a HR tag as a shape instead of
 
 ## References
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>

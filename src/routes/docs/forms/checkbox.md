@@ -9,7 +9,7 @@ thumnailSize: w-72
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
 
   const components = 'Checkbox, CheckboxButton'
 </script>
@@ -156,4 +156,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Checkbox](https://flowbite.com/docs/forms/checkbox/)
 
+## GitHub Links
+
 <GitHubCompoLinks {components} dir="forms"/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

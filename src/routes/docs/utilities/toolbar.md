@@ -8,7 +8,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 ---
 
 <script lang="ts">
-	import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils';
+	import { CompoAttributesViewer, GitHubCompoLinks, LlmLink } from '../../utils';
   import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Heading, A } from '$lib'
 
   const components = 'Toolbar, ToolbarButton, ToolbarGroup'
@@ -78,4 +78,10 @@ The component has the following props, type, and default values. See [types page
 
 ## References
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

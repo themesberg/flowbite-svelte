@@ -221,4 +221,6 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Floating Label](https://flowbite.com/docs/forms/floating-label/)
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>

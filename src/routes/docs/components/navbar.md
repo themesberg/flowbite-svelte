@@ -8,7 +8,7 @@ description: The navbar component can be used to show a list of navigation links
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
   import { Badge, Heading, P, A } from '$lib';
   const dirName = toKebabCase(component_title)
 </script>
@@ -151,4 +151,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Navbar](https://flowbite.com/docs/components/navbar/)
 
+## GitHub Links
+
 <GitHubCompoLinks />
+
+## Machine-Readable LLM Files
+
+<LlmLink />

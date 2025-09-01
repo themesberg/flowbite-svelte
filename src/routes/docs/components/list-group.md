@@ -9,7 +9,7 @@ thumnailSize: w-36
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, Seealso } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, Seealso, LlmLink } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
   const dirName = toKebabCase(component_title)
   const relatedLinks = ['/docs/extend/button-toggle','/docs/components/button-group' ,'/docs/components/list-group','/docs/forms/radio#radiobutton' , '/docs/forms/checkbox#checkboxbutton'];
@@ -107,4 +107,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite List Group](https://flowbite.com/docs/components/list-group/)
 
+## GitHub Links
+
 <GitHubCompoLinks />
+
+## Machine-Readable LLM Files
+
+<LlmLink />

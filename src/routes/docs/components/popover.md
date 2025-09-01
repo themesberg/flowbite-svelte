@@ -8,7 +8,7 @@ description: Use the popover component to show detailed information inside a pop
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
 </script>
@@ -139,4 +139,10 @@ The component inherits the following props, type, and default values from `Frame
 
 - [Flowbite Popover](https://flowbite.com/docs/components/popover/)
 
+## GitHub Links
+
 <GitHubCompoLinks />
+
+## Machine-Readable LLM Files
+
+<LlmLink />

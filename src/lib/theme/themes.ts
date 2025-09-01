@@ -31,7 +31,7 @@ export { sidebar, sidebarBrand, sidebarButton, sidebarCta, sidebarDropdownWrappe
 export { cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimonialPlaceholder, textPlaceholder, videoPlaceholder, widgetPlaceholder } from "../skeleton";
 export { speedDial, speedDialButton } from "../speed-dial";
 export { spinner } from "../spinner";
-export { stepIndicator } from "../stepindicator";
+export { stepIndicator } from "../step-indicator";
 export { stepper, progressStepper, verticalStepper, detailedStepper, breadcrumbStepper, timelineStepper } from "../stepper";
 export { table, tableBodyCell, tableBodyRow, tableHead, tableHeadCell, tableSearch } from "../table";
 export { tabs, tabItem } from "../tabs";

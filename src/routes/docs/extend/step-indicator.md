@@ -8,7 +8,7 @@ description: Use the step indicator component to show the progress of a process.
 ---
 
 <script lang="ts">
-  import {  TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import {  TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks, LlmLink } from '../../utils'
   import { P, A } from '$lib'
   const components = 'StepIndicator'
 </script>
@@ -75,4 +75,10 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
+## GitHub Links
+
 <GitHubCompoLinks {components} dir="extend"/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />

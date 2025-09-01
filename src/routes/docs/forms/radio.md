@@ -9,7 +9,7 @@ thumnailSize: w-72
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase } from '../../utils'
+  import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
 
   const components = 'Radio, RadioButton, Label, Helper'
 </script>
@@ -154,4 +154,10 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Radio](https://flowbite.com/docs/forms/radio/)
 
+## GitHub Links
+
 <GitHubCompoLinks {components}/>
+
+## Machine-Readable LLM Files
+
+<LlmLink />
