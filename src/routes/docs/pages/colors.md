@@ -8,7 +8,7 @@ description: Customize your project and the color of the components from Flowbit
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils';
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, LlmLink } from '../../utils';
   import { A, Img, P } from '$lib';
 </script>
 
@@ -86,3 +86,7 @@ In the provided code, you can customize the primary and secondary color by modif
   Dismissable user notification.
 </Toast>
 ```
+
+## LLM Link
+
+<LlmLink />

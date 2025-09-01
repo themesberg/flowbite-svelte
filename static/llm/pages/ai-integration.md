@@ -49,3 +49,7 @@ Generate a code example for a primary button with  a link to '/about'.`;
 ```
 
 These features make it easy to integrate Flowbite Svelte's documentation with modern AI systems, creating powerful, intelligent tools to enhance developer experience and productivity.
+
+## LLM Link
+
+<LlmLink />

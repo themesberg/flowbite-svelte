@@ -152,3 +152,8 @@ You can use the following classes to set the text decoration for any inline text
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
+

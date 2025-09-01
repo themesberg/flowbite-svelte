@@ -8,7 +8,7 @@ description: Use the timepicker component to allow the user to select a time usi
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, LlmLink } from '../../utils'
   const components = 'Timepicker'
 </script>
 
@@ -130,6 +130,6 @@ The component has the following props, type, and default values. See [types page
 
 <GitHubCompoLinks {components}/>
 
-## Machine-Readable LLM Files
+## LLM Link
 
 <LlmLink />

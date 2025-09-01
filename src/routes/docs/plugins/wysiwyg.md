@@ -8,7 +8,7 @@ description: Use the wysiwyg text editor component from Flowbite-Svelte-Plugins 
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks, ExampleWrapper } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, ExampleWrapper, LlmLink } from '../../utils'
   const components = 'Texteditor'
   import * as Examples from './examples';
   
@@ -408,3 +408,7 @@ Either using the above example or use button components to create your custom te
 meta={{hideOutput: true}}
 codeString={exampleRawModules['./examples/CustomEditor.svelte']}
 />
+
+## LLM Link
+
+<LlmLink />

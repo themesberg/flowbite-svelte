@@ -38,6 +38,6 @@ The component has the following props, type, and default values. See [types page
 
 <GitHubCompoLinks />
 
-## Machine-Readable LLM Files
+## LLM Link
 
 <LlmLink />

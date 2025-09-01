@@ -286,3 +286,7 @@ The component has the following props, type, and default values. See [types page
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />

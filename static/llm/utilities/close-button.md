@@ -42,3 +42,11 @@ Use `CloseButton` component to close a component.
 - class: className
 - svgClass
 
+
+## GitHub Links
+
+<GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />

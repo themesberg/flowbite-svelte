@@ -1,5 +1,5 @@
 # Flowbite Svelte Documentation - Full Context
-# Generated on 2025-08-31T06:38:42.622Z
+# Generated on 2025-09-01T18:33:25.602Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -58,6 +58,9 @@ Generate a code example for a primary button with  a link to '/about'.`;
 
 These features make it easy to integrate Flowbite Svelte's documentation with modern AI systems, creating powerful, intelligent tools to enhance developer experience and productivity.
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -140,6 +143,9 @@ In the provided code, you can customize the primary and secondary color by modif
 </Toast>
 ```
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -217,6 +223,9 @@ The above table shows examples from using `import Alert from 'flowbite-svelte/Al
   </TableBody>
 </Table>
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -233,6 +242,10 @@ Each component has a props section where you can find information on how to cust
 In this case, you can overwrite the outer div class by adding the `class` prop. Here's an example:
 
 ```svelte
+<script lang="ts">
+  import { Alert } from "flowbite-svelte";
+</script>
+
 <Alert class="bg-sky-500 text-white">Add a class to overwrite the default class!</Alert>
 ```
 
@@ -329,6 +342,9 @@ Use the custom button component in your project by adding the following code:
 
 With these steps, you can customize and use your own button component globally based on flowbite-svelte. Feel free to modify the styles and properties of the component according to your requirements.
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -360,6 +376,13 @@ For example, if you have a following group routing:
 The following example shows how to add navigation using the key blocks:
 
 ```svelte
+<script lang="ts">
+  import { page } from "$app/state";
+  import { Navbar, NavLi, NavUl } from "flowbite-svelte";
+  let { children } = $props();
+  let activeUrl = $derived(page.url.pathname);
+</script>
+
 // src/routes/(app)/+layout.svelte
 {#key activeUrl}
   <Navbar>
@@ -419,6 +442,9 @@ Run `pnpm build` and run the same command to see the compiled CSS size.
 find .svelte-kit/output/client/_app/immutable -type f -name "*.css" -exec du -h {} +
 ```
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -524,6 +550,9 @@ Test a page.
 axe http://localhost:3000/dropdowns/image
 ```
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -537,6 +566,9 @@ If you are using an LSP-compatible editor, such as VSCode, Atom, Sublime Text, o
 
 <Img src='/images/compo-doc.png' alt="component document demo" />
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -682,6 +714,9 @@ Check out [contributing guide](/docs/pages/how-to-contribute) to learn how you c
 
 Flowbite Svelte is a free and open-source UI component library licensed under the [MIT License](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE).
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -699,6 +734,9 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -840,6 +878,9 @@ You can use one of starter repo for a quick start.
 <Li><A href='https://github.com/ZekyTheWolf/LIST-Starter'>Laravel, Inertia, Svelte, Typescript with Flowbite starter</A></Li>
 </List>
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -1013,6 +1054,9 @@ This allows for granular control over theming in different parts of your compone
 - Theme configurations are merged with default component styles, allowing for partial customization.
 - Use nested ThemeProviders for section-specific styling while maintaining global themes.
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -1026,6 +1070,9 @@ Enhance the reliability and scalability of your user interface code by leveragin
 
 <pre><code>{@html TypeList}</code></pre>
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -1623,7 +1670,13 @@ Open accordion only within specific screen size ranges:
 
 - [Flowbite Accordion](https://flowbite.com/docs/components/accordion/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -1978,7 +2031,13 @@ Use the `onclick` event with `dismissable` prop.
 
 - [Flowbite Alerts](https://flowbite.com/docs/components/alerts/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -2245,7 +2304,13 @@ Preset values are equivalents of:
 
 - [Flowbite Avatar](https://flowbite.com/docs/components/avatar/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -2561,7 +2626,13 @@ The color can be changed dynamically.
 
 - [Flowbite Badge](https://flowbite.com/docs/components/badge/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -2767,7 +2838,13 @@ This example demonstrates a sliding transition using the slide transition from s
 
 - [Flowbite Banner](https://flowbite.com/docs/components/banner/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -3205,7 +3282,13 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 - [Flowbite Bottom Navigation](https://flowbite.com/docs/components/bottom-navigation/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -3357,7 +3440,13 @@ Use the `icon` snippet to change icons.
 
 - [Flowbite Breadcrumb](https://flowbite.com/docs/components/breadcrumb/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -3586,7 +3675,13 @@ You can add the `onclick` event to the `Button` component.
 
 - [Flowbite Button Group](https://flowbite.com/docs/components/button-group/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -3943,7 +4038,13 @@ Use the `loading` prop to indicate a pending action (e.g. form submission). When
 
 - [Flowbite Buttons](https://flowbite.com/docs/components/buttons/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -4382,7 +4483,13 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Card](https://flowbite.com/docs/components/card/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -4756,7 +4863,13 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 - [Flowbite Carousel](https://flowbite.com/docs/components/carousel/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -5158,7 +5271,13 @@ Use this example to show an input field where you can copy the URL of the curren
 
 - [Flowbite Clipboard](https://flowbite.com/docs/components/clipboard/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -5255,7 +5374,13 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 - [Flowbite Dark Mode](https://flowbite.com/docs/customize/dark-mode/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -5684,7 +5809,13 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. In quidem rerum, optio 
 
 - [Flowbite Datepicker (JavaScript)](https://flowbite.com/docs/plugins/Datepicker/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -5953,7 +6084,13 @@ This component can be used to showcase applications built for smartwatches.
 
 - [Flowbite Device Mockup](https://flowbite.com/docs/components/device-mockups/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -6393,7 +6530,13 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 - [Flowbite Drawer](https://flowbite.com/docs/components/drawer/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -7226,7 +7369,13 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 - [Flowbite Dropdown](https://flowbite.com/docs/components/drawer/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -7543,7 +7692,13 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 - [Flowbite Footer](https://flowbite.com/docs/components/footer/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -7785,7 +7940,13 @@ Get started with the default example of a select input component to get a single
 
 - [Flowbite Forms](https://flowbite.com/docs/components/forms/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -8018,7 +8179,13 @@ This example shows how to get a complete control over the gallery images look an
 
 - [Flowbite Gallery](https://flowbite.com/docs/components/gallery/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -8243,7 +8410,13 @@ Use these examples to position the indicator component anywhere relative to the 
 
 - [Flowbite Indicators](https://flowbite.com/docs/components/indicators/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -8474,7 +8647,13 @@ This example can be used to denote function keys inside the KBD component.
 
 - [Flowbite KBD (Keyboard)](https://flowbite.com/docs/components/kbd/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -8702,7 +8881,13 @@ When non standard usage is needed you can omit the `items` props and add element
 
 - [Flowbite List Group](https://flowbite.com/docs/components/list-group/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -9067,7 +9252,13 @@ This example can be used to also show a CTA with a backdround image inside the d
 
 - [Flowbite Mega Menu](https://flowbite.com/docs/components/list-group/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -9575,7 +9766,13 @@ Use the following example to create a full-screen modal.
 
 - [Flowbite Modal](https://flowbite.com/docs/components/modal/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -10131,7 +10328,13 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 - [Flowbite Navbar](https://flowbite.com/docs/components/navbar/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -10640,7 +10843,13 @@ You can use the following code to show the number of data shown inside a table e
 
 - [Flowbite Pagination](https://flowbite.com/docs/components/pagination/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -11055,7 +11264,13 @@ If you need the popover to be attached to the other element then the tiggering o
 
 - [Flowbite Popover](https://flowbite.com/docs/components/popover/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -11305,7 +11520,13 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 - [Flowbite Progress Bar](https://flowbite.com/docs/components/progress/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -11783,7 +12004,13 @@ Use this component to show the review content from a user alongside the avatar, 
 
 - [Flowbite Rating](https://flowbite.com/docs/components/rating/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -13129,7 +13356,13 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 - [Flowbite Sidebar](https://flowbite.com/docs/components/sidebar/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -13353,7 +13586,13 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 - [Flowbite Skeleton](https://flowbite.com/docs/components/sidebar/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -14022,7 +14261,13 @@ You can change the main button to any element you want.
 
 - [Flowbite Speed Dial](https://flowbite.com/docs/components/speed-dial/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -14141,7 +14386,13 @@ The spinner component can also be used inside elements such as buttons when subm
 
 - [Flowbite Spinner (Loader)](https://flowbite.com/docs/components/spinner/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -14482,7 +14733,13 @@ Use this example to show the stepper component next to a form layout and change 
 
 - [Flowbite Sidebar](https://flowbite.com/docs/components/stepper)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -15476,7 +15733,13 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 - [Flowbite Tables](https://flowbite.com/docs/components/tables/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -15915,7 +16178,13 @@ Use the following example to preserve the input value. First fill out the form, 
 
 - [Flowbite Tabs](https://flowbite.com/docs/components/tabs/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -16218,7 +16487,13 @@ Use this component to group multiple data entries inside a single date and show 
 
 - [Flowbite Timeline](https://flowbite.com/docs/components/timeline/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -16640,7 +16915,13 @@ You can use `onclose` to execute custom logic when the toast is closed.
 
 - [Flowbite Toast](https://flowbite.com/docs/components/toast/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -16851,7 +17132,13 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 
 - [Flowbite Tooltip](https://flowbite.com/docs/components/tooltips/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -17012,6 +17299,11 @@ You can use the following classes to set the text decoration for any inline text
 
 <GitHubCompoLinks {components}/>
 
+## LLM Link
+
+<LlmLink />
+
+
 
 ---
 
@@ -17138,7 +17430,13 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 - [Flowbite Video](https://flowbite.com/docs/components/video/)
 
+## GitHub Links
 
+
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -17535,6 +17833,10 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 <GitHubCompoLinks {components} dir="forms"/>
 
+## LLM Link
+
+<LlmLink />
+
 
 ---
 
@@ -17709,6 +18011,10 @@ Add `clearable` and `clearableOnClick` props.
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -17940,6 +18246,10 @@ The component has the following props, type, and default values. See [types page
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -18520,7 +18830,11 @@ The component has the following props, type, and default values. See [types page
 
 ## GitHub Links
 
-<GitHubCompoLinks {components}/>
+<GitHubCompoLinks {components} />
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -18701,6 +19015,13 @@ Use this example as an alternative style to the control buttons example above.
 </form>
 ```
 
+## GitHub Links
+
+<GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -19032,6 +19353,10 @@ The PhoneInput component provides customizable styling through six distinct clas
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -19386,6 +19711,10 @@ Use `color` and `checkedClass` props to style the checked state:
 
 <GitHubCompoLinks {components}/>
 
+## LLM Link
+
+<LlmLink />
+
 
 ---
 
@@ -19499,6 +19828,10 @@ Since we added `...restProps` to input field, you can contain the props which ar
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -19762,6 +20095,10 @@ The component has the following props, type, and default values. See [types page
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -20212,6 +20549,9 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 <GitHubCompoLinks {components}/>
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -20472,6 +20812,10 @@ If you want to build a chatroom component you will usually want to use a textare
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -21036,6 +21380,10 @@ The component has the following props, type, and default values. See [types page
 
 <GitHubCompoLinks {components}/>
 
+## LLM Link
+
+<LlmLink />
+
 
 ---
 
@@ -21159,6 +21507,10 @@ Get started with the default toggle component example as a checkbox element to r
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -21386,6 +21738,10 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -21643,6 +21999,10 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 <GitHubCompoLinks {components}/>
 
+## LLM Link
+
+<LlmLink />
+
 
 ---
 
@@ -21759,6 +22119,10 @@ This example can be used to separate content with a HR tag as a shape instead of
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -22014,6 +22378,10 @@ The component has the following props, type, and default values. See [types page
 
 <GitHubCompoLinks {components}/>
 
+## LLM Link
+
+<LlmLink />
+
 
 ---
 
@@ -22174,6 +22542,10 @@ The component has the following props, type, and default values. See [types page
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -22531,6 +22903,10 @@ Use this example to create a horizontally aligned list of items.
 
 <GitHubCompoLinks {components}/>
 
+## LLM Link
+
+<LlmLink />
+
 
 ---
 
@@ -22800,6 +23176,10 @@ The component has the following props, type, and default values. See [types page
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -23093,6 +23473,10 @@ The component has the following props, type, and default values. See [types page
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -23454,6 +23838,13 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 - classes
 
 
+## GitHub Links
+
+<GitHubCompoLinks {components} dir="extend"/>
+
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -23643,6 +24034,13 @@ Import the `Progressradial` component in a script tag.
 - classes
 
 
+## GitHub Links
+
+<GitHubCompoLinks {components} dir="extend"/>
+
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -23821,6 +24219,13 @@ Use the `color` prop to change the color of a step indicator.
 
 <CompoAttributesViewer {components}/>
 
+## GitHub Links
+
+<GitHubCompoLinks {components} dir="extend"/>
+
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -23928,6 +24333,13 @@ Import the `Tags` component in a script tag.
 - allowNewTags: true
 
 
+## GitHub Links
+
+<GitHubCompoLinks {components} dir="extend"/>
+
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -23980,6 +24392,13 @@ Use `CloseButton` component to close a component.
 - svgClass
 
 
+## GitHub Links
+
+<GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -24023,6 +24442,13 @@ Use the `Label` component when you need to add a label.
 
 <CompoAttributesViewer {components}/>
 
+## GitHub Links
+
+
+
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -24230,6 +24656,10 @@ Most often the textarea component is used as the main text field input element i
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />
 
 
 ---
@@ -25358,6 +25788,9 @@ The component has the following props, type, and default values. See [types page
 
 - [@flowbite-svelte-plugins/chart](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-chart/src/lib/Chart.svelte)
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -26099,6 +26532,9 @@ The component has the following props, type, and default values. See [types page
 
 - [@flowbite-svelte-plugins/datatable](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-datatable/src/lib/Table.svelte)
 
+## LLM Link
+
+<LlmLink />
 
 ---
 
@@ -26483,6 +26919,9 @@ meta={{hideOutput: true}}
 codeString={exampleRawModules['./examples/CustomEditor.svelte']}
 />
 
+## LLM Link
+
+<LlmLink />
 
 ---
 

@@ -29,8 +29,7 @@
     "gen:component-data-prop-value": "svelte-lib-helpers component-data-prop-value themesberg/flowbite-svelte",
     "copy:packagejson": "svelte-lib-helpers package",
     "lib-helpers": "pnpm gen:component-data-prop-value && pnpm gen:docspropvalue && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson && pnpm llm && pnpm update:icons-llm",
-    "llm": "svelte-doc-llm",
-    "update:icons-llm": "./scripts/update-icons-llm.sh",
+    "llm": "svelte-doc-llm && ./scripts/update-llms.sh",
     "ch": "npx changeset",
     "cv": "npx changeset version",
     "cp": "npx changeset publish"

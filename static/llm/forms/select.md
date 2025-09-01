@@ -442,3 +442,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />

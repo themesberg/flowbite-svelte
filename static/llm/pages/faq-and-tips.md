@@ -25,6 +25,13 @@ For example, if you have a following group routing:
 The following example shows how to add navigation using the key blocks:
 
 ```svelte
+<script lang="ts">
+  import { page } from "$app/state";
+  import { Navbar, NavLi, NavUl } from "flowbite-svelte";
+  let { children } = $props();
+  let activeUrl = $derived(page.url.pathname);
+</script>
+
 // src/routes/(app)/+layout.svelte
 {#key activeUrl}
   <Navbar>
@@ -83,3 +90,7 @@ Run `pnpm build` and run the same command to see the compiled CSS size.
 ```sh
 find .svelte-kit/output/client/_app/immutable -type f -name "*.css" -exec du -h {} +
 ```
+
+## LLM Link
+
+<LlmLink />

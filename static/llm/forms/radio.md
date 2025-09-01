@@ -346,3 +346,7 @@ Use `color` and `checkedClass` props to style the checked state:
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />

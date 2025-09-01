@@ -7,6 +7,10 @@ dir: Pages
 description: Learn how to integrate Flowbite Svelte with AI models, LLMs, and chatbots using our specialized documentation routes and markdown accessibility features
 ---
 
+<script lang="ts">
+  import { LlmLink } from '../../utils'
+</script>
+
 Flowbite Svelte provides powerful, built-in support for AI and Large Language Model (LLM) integration through specialized routes that expose documentation in machine-readable formats. These features enable seamless integration with ChatGPT, Claude, and other AI assistants.
 
 ## Compliance
@@ -55,3 +59,7 @@ Generate a code example for a primary button with  a link to '/about'.`;
 ```
 
 These features make it easy to integrate Flowbite Svelte's documentation with modern AI systems, creating powerful, intelligent tools to enhance developer experience and productivity.
+
+## LLM Link
+
+<LlmLink />

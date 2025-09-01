@@ -7,6 +7,10 @@ dir: Pages
 description: Tips for your apps.
 ---
 
+<script lang="ts">
+  import { LlmLink } from '../../utils'
+</script>
+
 ## Svelte key blocks
 
 Svelte key blocks destroy and recreate their contents when the value of an expression changes. This can be useful when you are using SvelteKit (group) routing.
@@ -96,3 +100,7 @@ Run `pnpm build` and run the same command to see the compiled CSS size.
 ```sh
 find .svelte-kit/output/client/_app/immutable -type f -name "*.css" -exec du -h {} +
 ```
+
+## LLM Link
+
+<LlmLink />

@@ -143,6 +143,6 @@ The component inherits the following props, type, and default values from `Frame
 
 <GitHubCompoLinks />
 
-## Machine-Readable LLM Files
+## LLM Link
 
 <LlmLink />

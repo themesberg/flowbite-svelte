@@ -100,3 +100,11 @@ Import the `Tags` component in a script tag.
 - showAvailableTags: false
 - allowNewTags: true
 
+
+## GitHub Links
+
+<GitHubCompoLinks {components} dir="extend"/>
+
+## LLM Link
+
+<LlmLink />

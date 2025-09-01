@@ -171,3 +171,11 @@ Use the `color` prop to change the color of a step indicator.
 - Use the `class` prop to overwrite the default class.
 
 <CompoAttributesViewer {components}/>
+
+## GitHub Links
+
+<GitHubCompoLinks {components} dir="extend"/>
+
+## LLM Link
+
+<LlmLink />

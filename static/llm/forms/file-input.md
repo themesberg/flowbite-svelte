@@ -168,3 +168,7 @@ Add `clearable` and `clearableOnClick` props.
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />

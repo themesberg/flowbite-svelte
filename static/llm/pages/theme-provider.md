@@ -166,3 +166,7 @@ This allows for granular control over theming in different parts of your compone
 - Each component will fall back to its default styling if no theme is provided for that specific component.
 - Theme configurations are merged with default component styles, allowing for partial customization.
 - Use nested ThemeProviders for section-specific styling while maintaining global themes.
+
+## LLM Link
+
+<LlmLink />

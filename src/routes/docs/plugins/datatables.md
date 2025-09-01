@@ -8,7 +8,7 @@ description: Use the datatable component to search, sort, filter and paginate ta
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, LlmLink } from '../../utils'
   import componentData1 from '../../component-data/Chart.json'
   import componentData2 from '../../component-data/Card.json'
   const components = 'Table'
@@ -1098,3 +1098,7 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [@flowbite-svelte-plugins/datatable](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-datatable/src/lib/Table.svelte)
+
+## LLM Link
+
+<LlmLink />

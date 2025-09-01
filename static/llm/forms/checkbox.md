@@ -385,3 +385,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 ## GitHub Links
 
 <GitHubCompoLinks {components} dir="forms"/>
+
+## LLM Link
+
+<LlmLink />

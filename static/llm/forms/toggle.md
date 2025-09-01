@@ -117,3 +117,7 @@ Get started with the default toggle component example as a checkbox element to r
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />

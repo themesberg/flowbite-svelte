@@ -78,7 +78,7 @@ You can use the following classes to set the text decoration for any inline text
 
 <GitHubCompoLinks {components}/>
 
-## Machine-Readable LLM Files
+## LLM Link
 
 <LlmLink />
 

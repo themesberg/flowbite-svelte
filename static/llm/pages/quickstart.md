@@ -134,3 +134,7 @@ You can use one of starter repo for a quick start.
 <Li><A href='https://github.com/shinokada/flowbite-svelte-starter'>Flowbite-SvelteKit starter</A></Li>
 <Li><A href='https://github.com/ZekyTheWolf/LIST-Starter'>Laravel, Inertia, Svelte, Typescript with Flowbite starter</A></Li>
 </List>
+
+## LLM Link
+
+<LlmLink />

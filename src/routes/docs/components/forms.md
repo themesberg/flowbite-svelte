@@ -114,6 +114,6 @@ Get started with the default example of a select input component to get a single
 
 <GitHubCompoLinks />
 
-## Machine-Readable LLM Files
+## LLM Link
 
 <LlmLink />

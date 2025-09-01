@@ -1,32 +1,24 @@
----
-layout: componentLayout
-title: Quickstart - Flowbite Svelte Illustrations
-breadcrumb_title: Illustrations Quickstart
-pkg: Flowbite Svelte Illustrations
-component_title: Quickstart
-dir: Illustrations
-description: Get started with a collection of open-source Flowbite Svelte Illustrations
----
+# Flowbite Svelte Illustrations
 
-<script lang="ts">
-  import { Banner } from 'flowbite-svelte';
-  import { A } from '$lib'
-  import { LlmLink } from '../utils';
-</script>
+Machine-readable metadata for the `flowbite-svelte-illustrations` package.
 
-Get started with 54 free and open-source SVG illustrations based on 3D styles, fully compatible with Flowbite and Tailwind CSS.
+## Package
 
-## Installation
-
-```bash
-pnpm i -D flowbite-svelte-illustrations
-```
+- Name: `flowbite-svelte-illustrations`
+- Description: A collection of free and open-source SVG illustrations.
+- Source: https://github.com/shinokada/flowbite-svelte-illustrations
 
 ## Requirements
 
 ```md
 - Svelte 5
-- TailwindCSS 4
+- TailwindCSS v4
+```
+
+## Installation
+
+```sh
+pnpm i -D flowbite-svelte-illustrations
 ```
 
 ## How to use
@@ -99,7 +91,3 @@ Use the following example for an accessibility-friendly illustration.
 
 <CreditCardPaymentReceipt title={{ id: "my-title", title: "Your title here" }} desc={{ id: "my-desc", desc: "Description here" }} />
 ```
-
-## LLM Link
-
-<LlmLink link="illustrations"/>

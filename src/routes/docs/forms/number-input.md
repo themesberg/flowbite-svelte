@@ -68,6 +68,6 @@ Use this example as an alternative style to the control buttons example above.
 
 <GitHubCompoLinks {components}/>
 
-## Machine-Readable LLM Files
+## LLM Link
 
 <LlmLink />

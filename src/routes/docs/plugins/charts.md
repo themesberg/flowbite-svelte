@@ -8,7 +8,7 @@ description: Use the chart and graph components from flowbite-svelte built with 
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, LlmLink } from '../../utils'
   import componentData1 from '../../component-data/Chart.json'
   import componentData2 from '../../component-data/Card.json'
   const components = 'Chart'
@@ -1089,3 +1089,7 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [@flowbite-svelte-plugins/chart](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-chart/src/lib/Chart.svelte)
+
+## LLM Link
+
+<LlmLink />

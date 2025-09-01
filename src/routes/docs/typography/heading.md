@@ -163,6 +163,6 @@ The component has the following props, type, and default values. See [types page
 
 <GitHubCompoLinks {components}/>
 
-## Machine-Readable LLM Files
+## LLM Link
 
 <LlmLink />

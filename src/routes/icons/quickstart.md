@@ -12,6 +12,7 @@ description: Get started with a collection of open-source Flowbite Svelte Icons 
   import { Banner } from 'flowbite-svelte';
   import { A } from '$lib'
   import { removeHyphensAndCapitalize } from './utils/utils';
+  import { LlmLink } from '../utils';
 </script>
 
 Use well over 750 SVG icons based on the open-source [Flowbite Icons](https://flowbite.com/icons/) library to power your Svelte application with optimized icons provided with both outline and solid styles. This page allows usage for Svelte 5 applications.
@@ -363,3 +364,7 @@ export interface Props extends BaseProps, AccessibleProps {}
 
 export interface OutlineProps extends OutlineBaseProps, AccessibleProps {}
 ```
+
+## LLM Link
+
+<LlmLink link="icons"/>

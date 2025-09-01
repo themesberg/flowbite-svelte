@@ -217,3 +217,7 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />

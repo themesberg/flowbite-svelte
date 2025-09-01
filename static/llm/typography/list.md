@@ -349,3 +349,7 @@ Use this example to create a horizontally aligned list of items.
 ## GitHub Links
 
 <GitHubCompoLinks {components}/>
+
+## LLM Link
+
+<LlmLink />

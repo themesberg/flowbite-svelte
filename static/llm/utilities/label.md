@@ -1,9 +1,5 @@
-<script lang="ts">
-  import { GitHubCompoLinks } from '../../utils';
-  const components = 'Label'
-</script>
-
 # Svelte Label - Flowbite
+
 
 ## Label
 
@@ -40,7 +36,11 @@ Use the `Label` component when you need to add a label.
 - Use the `class` prop to overwrite `defaultClass`.
 
 <CompoAttributesViewer {components}/>
-hi
+
 ## GitHub Links
 
-<GitHubCompoLinks {components}/>
+
+
+## LLM Link
+
+<LlmLink />

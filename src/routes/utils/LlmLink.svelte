@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from "$app/state";
+  let { link } = $props();
 
   const pathname = page.url.pathname;
   const parts = pathname.split("/").filter(Boolean); 
@@ -9,6 +10,10 @@
 
 <ul>
   <li>
-    <a href="/llm/{parentDir}/{dirName}.md" target="_blank" class="underline">Open LLM source for this page</a>
+    {#if link}
+      <a href="/llm/{link}.md" target="_blank" class="underline">Open LLM source for this page</a>
+    {:else}
+      <a href="/llm/{parentDir}/{dirName}.md" target="_blank" class="underline">Open LLM source for this page</a>
+    {/if}
   </li>
 </ul>
