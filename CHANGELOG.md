@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.13.5
+
+### Patch Changes
+
+- - Single-selection guard: src/lib/utils/singleselection.svelte.js
+
+    Added Object.hasOwn(context, 'value') check in setSelected; skips mutation when context lacks an own value property.
+
+  - Docs example initialization: src/routes/docs-examples/components/accordion/MultipleMode.svelte
+
+    Added open attribute to two AccordionItem components to render them initially expanded.
+
 ## 1.13.4
 
 ### Patch Changes
