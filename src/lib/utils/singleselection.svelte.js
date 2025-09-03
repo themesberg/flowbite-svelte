@@ -27,7 +27,6 @@ export function createSingleSelectionContext(nonReactive = false) {
  * @returns {SingleSelectionContext<T>}
  */
 function setSelected(context, open, value) {
-  Object.hasOwn(context, "value");
   if (open) context.value = value;
   else if (context.value === value) context.value = undefined;
 
