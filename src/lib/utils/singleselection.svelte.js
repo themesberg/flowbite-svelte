@@ -12,11 +12,11 @@ const SINGLE_SELECTION_KEY = Symbol("singleton");
 /**
  * @template T
  * @param {boolean} [nonReactive=false] - use a non-reactive placeholder to allow multiple selection and keep context shallow
- * @returns {SingleSelectionContext<T>}
+ * @returns {SingleSelectionContext<T>|null}
  */
 export function createSingleSelectionContext(nonReactive = false) {
   const context = $state({ value: undefined });
-  return setContext(SINGLE_SELECTION_KEY, nonReactive ? {} : context);
+  return setContext(SINGLE_SELECTION_KEY, nonReactive ? null : context);
 }
 
 /**
@@ -27,10 +27,10 @@ export function createSingleSelectionContext(nonReactive = false) {
  * @returns {SingleSelectionContext<T>}
  */
 function setSelected(context, open, value) {
-  if (Object.hasOwn(context, 'value')) {
-    if (open) context.value = value;
-    else if (context.value === value) context.value = undefined;
-  }
+  Object.hasOwn(context, 'value')
+  if (open) context.value = value;
+  else if (context.value === value) context.value = undefined;
+
   return context;
 }
 
