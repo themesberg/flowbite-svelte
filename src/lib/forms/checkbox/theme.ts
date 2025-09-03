@@ -91,7 +91,7 @@ export const checkbox = tv({
         base: "cursor-not-allowed opacity-50 bg-gray-200 border-gray-300",
         div: "cursor-not-allowed opacity-70"
       },
-      false: {},
+      false: {}
     }
   },
   defaultVariants: {

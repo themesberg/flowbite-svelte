@@ -369,11 +369,10 @@ Use this example of an advanced layout of checkbox elements where the label pare
 - group: $bindable([])
 - choices: []
 - checked: $bindable(false)
-- indeterminate
 - classes
 - class: className
 - divClass
-- disabled: false
+- disabled
 - value
 - labelProps: {
 

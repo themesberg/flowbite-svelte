@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.13.6
+
+### Patch Changes
+
+- fix: infinite loop while using useSingleSelection for tabs
+
 ## 1.13.5
 
 ### Patch Changes

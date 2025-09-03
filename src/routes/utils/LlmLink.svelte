@@ -3,9 +3,9 @@
   let { link } = $props();
 
   const pathname = page.url.pathname;
-  const parts = pathname.split("/").filter(Boolean); 
-  const dirName = parts.at(-1);      // "input-field"
-  const parentDir = parts.at(-2);    // "forms"
+  const parts = pathname.split("/").filter(Boolean);
+  const dirName = parts.at(-1); // "input-field"
+  const parentDir = parts.at(-2); // "forms"
 </script>
 
 <ul>

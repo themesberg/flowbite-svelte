@@ -4,29 +4,29 @@
   import { github } from "./consts";
 
   let { components } = $props();
-  
+
   const pathname = page.url.pathname;
-  const parts = pathname.split("/").filter(Boolean); 
-  const dirName = parts.at(-1);      // "input-field"
+  const parts = pathname.split("/").filter(Boolean);
+  const dirName = parts.at(-1); // "input-field"
   const forms = ["Checkbox", "Dropzone", "Fileupload", "FloatingLabelInput", "Helper", "Input", "InputAddon", "Label", "MultiSelect", "NumberInput", "PhoneInput", "Radio", "Range", "Search", "Select", "Tags", "Textarea", "Timepicker", "Toggle"];
   const typography = ["A", "Blockquote", "DesriptionList", "Heading", "Hr", "Img", "Layout", "Li", "DescriptionList", "List", "Mark", "P", "Secondary", "Span"];
-  
+
   // Special cases for components that don't follow the standard directory pattern
-   const specialCases: Record<string, string> = {
-    "Input": "forms/input-field",
-    "InputAddon": "forms/input-addon",
-    "MultiSelect": "forms/select",
-    "ButtonToggle": "forms/button-toggle",
-    "ButtonToggleGroup": "forms/button-toggle",
-    "RadioButton": "forms/radio",
-    "Progressradial": "progress",
-    "Toolbar": "toolbar",
-    "ToolbarButton": "toolbar",
-    "CloseButton": "utils",
-    "P": "typography/paragraph",
-    "Li": "typography/list",
+  const specialCases: Record<string, string> = {
+    Input: "forms/input-field",
+    InputAddon: "forms/input-addon",
+    MultiSelect: "forms/select",
+    ButtonToggle: "forms/button-toggle",
+    ButtonToggleGroup: "forms/button-toggle",
+    RadioButton: "forms/radio",
+    Progressradial: "progress",
+    Toolbar: "toolbar",
+    ToolbarButton: "toolbar",
+    CloseButton: "utils",
+    P: "typography/paragraph",
+    Li: "typography/list"
   };
-  
+
   // default for docs/components
   let fileNames = $state(getFilteredFileNames(dirName || ""));
   // if components are given in docs/forms, typography etc use it
@@ -41,7 +41,7 @@
     if (specialCases[compo]) {
       return `${specialCases[compo]}/${compo}.svelte`;
     }
-    
+
     // Default behavior
     if (forms.includes(compo)) {
       return `forms/${compo.toLowerCase()}/${compo}.svelte`;

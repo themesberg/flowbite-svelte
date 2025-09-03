@@ -14,11 +14,10 @@
     ["group", "$bindable([])"],
     ["choices", "[]"],
     ["checked", "$bindable(false)"],
-    ["indeterminate", ""],
     ["classes", ""],
     ["class: className", ""],
     ["divClass", ""],
-    ["disabled", "false"],
+    ["disabled", ""],
     ["value", ""],
     ["labelProps", "{"]
   ]
