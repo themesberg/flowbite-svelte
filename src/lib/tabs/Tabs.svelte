@@ -17,7 +17,8 @@
   const { base, content, divider: dividerClass } = $derived(tabs({ tabStyle, hasDivider: divider }));
 
   // Generate a unique ID for the tab panel
-  const panelId = `tab-panel-${Math.random().toString(36).substring(2)}`;
+  const uuid = $props.id();
+  const panelId = `tab-panel-${uuid}`;
 
   const ctx: TabCtxType = $state({
     tabStyle,
@@ -32,7 +33,7 @@
   createSingleSelectionContext<SelectedTab>();
 
   let selected: SelectedTab = $state({});
-  useSingleSelection<SelectedTab>((v) => (selected = v));
+  useSingleSelection<SelectedTab>((v) => (selected = v ?? {}));
 </script>
 
 <ul role="tablist" {...restProps} class={base({ class: clsx(theme?.base, className ?? ulClass) })}>

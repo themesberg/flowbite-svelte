@@ -1,9 +1,9 @@
-import { getContext, setContext } from "svelte";
+import { getContext, setContext, untrack } from "svelte";
 
 /**
  * @template T
  * @typedef {Object} SingleSelectionContext
- * @property {T=} value
+ * @property {T|null} value
  */
 
 /** @type {symbol} */
@@ -12,11 +12,16 @@ const SINGLE_SELECTION_KEY = Symbol("singleton");
 /**
  * @template T
  * @param {boolean} [nonReactive=false] - use a non-reactive placeholder to allow multiple selection and keep context shallow
- * @returns {SingleSelectionContext<T>|null}
+ * @returns {SingleSelectionContext<T>}
  */
 export function createSingleSelectionContext(nonReactive = false) {
-  const context = $state({ value: undefined });
-  return setContext(SINGLE_SELECTION_KEY, nonReactive ? null : context);
+  if (nonReactive) {
+    const context = { value: null };
+    return setContext(SINGLE_SELECTION_KEY, context);
+  } else {
+    const context = $state({ value: null });
+    return setContext(SINGLE_SELECTION_KEY, context);
+  }
 }
 
 /**
@@ -27,9 +32,8 @@ export function createSingleSelectionContext(nonReactive = false) {
  * @returns {SingleSelectionContext<T>}
  */
 function setSelected(context, open, value) {
-  Object.hasOwn(context, "value");
-  if (open) context.value = value;
-  else if (context.value === value) context.value = undefined;
+  if (open) context.value = value ?? null;
+  else if (context.value === value) context.value = null;
 
   return context;
 }
@@ -42,8 +46,13 @@ function setSelected(context, open, value) {
 export function useSingleSelection(callback) {
   const context = getContext(SINGLE_SELECTION_KEY) ?? createSingleSelectionContext(false);
 
+  let initialized = $state(false);
   $effect(() => {
-    if (context.value !== undefined) callback(context.value);
+    if (initialized)
+      // if (context.value !== null)
+      callback(context.value);
+    initialized = true;
   });
-  return (open, v) => setSelected(context, open, v);
+
+  return (open, v) => untrack(() => setSelected(context, open, v));
 }
