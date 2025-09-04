@@ -16,20 +16,21 @@
   const { active, inactive } = $derived(tabs({ tabStyle: compoTabStyle, hasDivider: true }));
 
   // Generate a unique ID for this tab button
-  const tabId = `tab-${Math.random().toString(36).substring(2)}`;
+  const tabId = $props.id();
+  const self = $state({ id: `tab-${tabId}`, snippet: children });
 
-  const updateSingleSelection = useSingleSelection<SelectedTab>((value) => (open = value.id === tabId));
+  const updateSingleSelection = useSingleSelection<SelectedTab>((value) => (open = value?.id === self.id));
 
   $effect(() => {
     // monitor if open changes out side of that component
-    updateSingleSelection?.(open, { snippet: children, id: tabId });
+    updateSingleSelection(open, self);
   });
 
   const { base, button } = $derived(tabItem({ open, disabled }));
 </script>
 
 <li {...restProps} class={base({ class: clsx(theme?.base, className) })} role="presentation">
-  <button type="button" onclick={() => (open = true)} role="tab" id={tabId} aria-controls={ctx.panelId} aria-selected={open} {disabled} class={button({ class: clsx(open ? (activeClass ?? active()) : (inactiveClass ?? inactive()), theme?.button, classes?.button) })}>
+  <button type="button" onclick={() => (open = true)} role="tab" id={self.id} aria-controls={ctx.panelId} aria-selected={open} {disabled} class={button({ class: clsx(open ? (activeClass ?? active()) : (inactiveClass ?? inactive()), theme?.button, classes?.button) })}>
     {#if titleSlot}
       {@render titleSlot()}
     {:else}
