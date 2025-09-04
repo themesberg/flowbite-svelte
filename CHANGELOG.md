@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.13.7
+
+### Patch Changes
+
+- fix: Removed no-op Object.hasOwn(context, "value"); from setSelected; no functional or API changes.
+
 ## 1.13.6
 
 ### Patch Changes
