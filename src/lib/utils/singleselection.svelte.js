@@ -40,7 +40,7 @@ function setSelected(context, open, value) {
 
 /**
  * @template T
- * @param {(value: T) => void} callback
+ * @param {(value: T|null) => void} callback
  * @returns {(open: boolean, v?: T) => SingleSelectionContext<T>}
  */
 export function useSingleSelection(callback) {

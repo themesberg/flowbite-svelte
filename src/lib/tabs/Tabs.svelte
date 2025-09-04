@@ -20,11 +20,7 @@
   const uuid = $props.id();
   const panelId = `tab-panel-${uuid}`;
 
-  const ctx: TabCtxType = $state({
-    tabStyle,
-    selected: undefined,
-    panelId // Add panelId to the context
-  });
+  const ctx: TabCtxType = $state({ tabStyle, panelId });
 
   let dividerBool = $derived(["full", "pill"].includes(tabStyle) ? false : divider);
 
