@@ -63,6 +63,14 @@ This example can be used to separate content with a HR tag as a shape instead of
 {#include Shape.svelte}
 ```
 
+## Gradient
+
+This example shows how to add gradients to `HR` component.
+
+```svelte example
+{#include Gradient.svelte}
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

@@ -1892,10 +1892,10 @@ export interface HeadingProps extends HTMLAttributes<HTMLElement> {
 // hr
 export interface HrProps extends HrVariants, HTMLAttributes<HTMLElement> {
   children?: Snippet;
-  divClass?: string;
-  iconDivClass?: string;
-  textSpanClass?: string;
-  innerDivClass?: string;
+  divClass?: ClassValue;
+  iconDivClass?: ClassValue;
+  textSpanClass?: ClassValue;
+  innerDivClass?: ClassValue;
 }
 
 // img

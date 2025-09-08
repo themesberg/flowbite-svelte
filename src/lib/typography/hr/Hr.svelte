@@ -21,19 +21,20 @@
   });
 
   const theme = getTheme("hr");
+  const bg = classes?.bg ?? "bg-gray-200 dark:bg-gray-700";
 
   let { base, div, content } = $derived(hr({ withChildren: !!children }));
 </script>
 
 {#if children}
   <div {...restProps} class={div({ class: clsx(theme?.div, divClass) })}>
-    <hr class={base({ class: clsx(theme?.base, className) })} />
+    <hr class={base({ class: clsx(theme?.base, className, bg) })} />
     <div class={content({ class: clsx(theme?.content, styling.content) })}>
       {@render children()}
     </div>
   </div>
 {:else}
-  <hr class={base({ class: clsx(theme?.base, className) })} {...restProps} />
+  <hr class={base({ class: clsx(theme?.base, className, bg) })} {...restProps} />
 {/if}
 
 <!--
