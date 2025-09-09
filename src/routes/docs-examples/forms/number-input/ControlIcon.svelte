@@ -10,7 +10,7 @@
 <form class="mx-auto max-w-xs">
   <Label class="mb-2 text-sm" for="quantity_input">Choose quantity:</Label>
 
-  <ButtonGroup>
+  <ButtonGroup class="relative">
     <Button type="button" onclick={() => (bedroom -= 1)} class="h-11 p-3">
       <MinusOutline />
     </Button>
