@@ -35,7 +35,7 @@ Import the `Tags` component in a script tag.
 
 ## Input Props
 
-```svelte example
+```svelte example class="h-40"
 {#include InputProps.svelte}
 ```
 
