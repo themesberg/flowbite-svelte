@@ -354,7 +354,6 @@ export type CheckIconProps = SVGAttributes<SVGSVGElement>;
 // card
 export type CardProps = Omit<CardVariants, "href"> &
   AnchorDivAttributes & {
-    children: Snippet;
     img?: string;
     imgClass?: ClassValue;
     contentClass?: string;
