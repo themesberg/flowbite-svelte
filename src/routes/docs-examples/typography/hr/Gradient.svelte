@@ -2,7 +2,6 @@
   import { Hr } from "flowbite-svelte";
 </script>
 
-<Hr style="height: 8px; background: linear-gradient(to right, #3b82f6 33.33%, #ef4444 33.33% 66.66%, #10b981 66.66%);"/>
 <Hr classes={{ bg: "h-2 bg-gradient-to-r from-pink-500 to-indigo-500" }} />
 <Hr classes={{ bg: "h-2 border-0 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500" }} />
 <Hr classes={{ bg: "h-2 border-0 bg-gradient-to-r from-blue-500 via-red-500 to-blue-500"}} />

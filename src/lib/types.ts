@@ -485,6 +485,7 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   translationLocale?: string;
   elementRef?: HTMLInputElement;
   actionSlot?: Snippet<[ActionSlotParams]>;
+  inputProps?: HTMLInputAttributes; 
 }
 
 // device-mockups
@@ -901,6 +902,7 @@ export interface TagsProps extends TagsVariants, HTMLAttributes<HTMLDivElement> 
   showHelper?: boolean;
   showAvailableTags?: boolean;
   allowNewTags?: boolean;
+  inputProps?: HTMLInputAttributes; 
 }
 
 // Timepicker
@@ -1896,6 +1898,8 @@ export interface HrProps extends HrVariants, HTMLAttributes<HTMLElement> {
   iconDivClass?: ClassValue;
   textSpanClass?: ClassValue;
   innerDivClass?: ClassValue;
+  divProps?: HTMLAttributes<HTMLDivElement>;
+  hrProps?: HTMLAttributes<HTMLHRElement>;
 }
 
 // img

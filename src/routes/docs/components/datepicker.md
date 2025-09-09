@@ -158,6 +158,12 @@ Add `actionSlot` snippet with `selectedDate`, `handleClear`, `handleApply`, `clo
 {#include ActionSlot.svelte}
 ```
 
+## Input Props
+
+```svelte example
+{#include InputProps.svelte}
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

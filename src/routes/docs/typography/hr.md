@@ -71,6 +71,10 @@ This example shows how to add gradients to `HR` component.
 {#include Gradient.svelte}
 ```
 
+## divProps and hrProps
+
+The `restProps` will be removed in the next version. Please use `divProps` and `hrProps`.
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

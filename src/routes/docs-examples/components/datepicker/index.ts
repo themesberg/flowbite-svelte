@@ -15,3 +15,4 @@ export { default as Required } from "./Required.svelte";
 export { default as Restricting } from "./Restricting.svelte";
 export { default as Title } from "./Title.svelte";
 export { default as Usage } from "./Usage.svelte";
+export { default as InputProps } from "./InputProps.svelte";

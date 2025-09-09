@@ -4,7 +4,7 @@
   import type { HrProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, divClass, innerDivClass, class: className, classes, ...restProps }: HrProps = $props();
+  let { children, divClass, innerDivClass, class: className, classes, divProps = {}, hrProps = {}, ...restProps }: HrProps = $props();
 
   // base container content
   warnThemeDeprecation(
@@ -23,18 +23,22 @@
   const theme = getTheme("hr");
   const bg = classes?.bg ?? "bg-gray-200 dark:bg-gray-700";
 
+  // for backward compatibility and ...restPorps will be removed and use only ..divProps and ...hrProps in future
+  const mergedDivProps = { ...restProps, ...divProps };
+  const mergedHrProps = { ...restProps, ...hrProps };
+
   let { base, div, content } = $derived(hr({ withChildren: !!children }));
 </script>
 
 {#if children}
-  <div {...restProps} class={div({ class: clsx(theme?.div, divClass) })}>
-    <hr class={base({ class: clsx(theme?.base, className, bg) })} />
+  <div {...mergedDivProps} class={div({ class: clsx(theme?.div, divClass) })}>
+    <hr {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
     <div class={content({ class: clsx(theme?.content, styling.content) })}>
       {@render children()}
     </div>
   </div>
 {:else}
-  <hr class={base({ class: clsx(theme?.base, className, bg) })} {...restProps} />
+  <hr {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
 {/if}
 
 <!--
