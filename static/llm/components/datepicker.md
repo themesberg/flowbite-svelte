@@ -373,6 +373,18 @@ Add `actionSlot` snippet with `selectedDate`, `handleClear`, `handleApply`, `clo
 Lorem ipsum dolor sit amet consectetur adipisicing elit. In quidem rerum, optio adipisci illum at earum fugiat eius minus quae! Quisquam cumque architecto facilis? Tempora ipsum perferendis quo explicabo minus.
 ```
 
+## Input Props
+
+```svelte
+<script lang="ts">
+  import { Label, Datepicker } from "flowbite-svelte";
+  let selectedDate = $state<Date | undefined>(undefined);
+</script>
+
+<Label class="mb-2 flex items-center font-bold italic">My Datepicker</Label>
+<Datepicker bind:value={selectedDate} inputProps={{ id: "my-datepicker" }} />
+```
+
 ## Component data
 
 ### Datepicker
@@ -415,6 +427,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. In quidem rerum, optio 
 - class: className
 - elementRef: $bindable()
 - actionSlot
+- inputProps: {
 
 
 ## References

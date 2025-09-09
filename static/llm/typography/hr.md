@@ -88,13 +88,33 @@ This example can be used to separate content with a HR tag as a shape instead of
 </Blockquote>
 ```
 
+## Gradient
+
+This example shows how to add gradients to `HR` component.
+
+```svelte
+<script lang="ts">
+  import { Hr } from "flowbite-svelte";
+</script>
+
+<Hr classes={{ bg: "h-2 bg-gradient-to-r from-pink-500 to-indigo-500" }} />
+<Hr classes={{ bg: "h-2 border-0 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500" }} />
+<Hr classes={{ bg: "h-2 border-0 bg-gradient-to-r from-blue-500 via-red-500 to-blue-500" }} />
+<Hr classes={{ bg: "h-2 border-0 bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-400" }} />
+<Hr classes={{ bg: "h-2 border-0 bg-gradient-to-r from-orange-400 via-red-400 to-pink-400" }} />
+```
+
+## divProps and hrProps
+
+The `restProps` will be removed in the next version. Please use `divProps` and `hrProps`.
+
 ## Component data
 
 ### Hr
 
 #### Types
 
-[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1893)
+[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1895)
 
 #### Props
 
@@ -103,6 +123,7 @@ This example can be used to separate content with a HR tag as a shape instead of
 - innerDivClass
 - class: className
 - classes
+- divProps: {
 
 
 ## References

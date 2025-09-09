@@ -9,7 +9,7 @@ export const hr = tv({
     base: "h-px my-8 border-0",
     div: "inline-flex items-center justify-center w-full",
     content: "absolute px-4 -translate-x-1/2 rtl:translate-x-1/2 bg-white start-1/2 dark:bg-gray-900",
-    bg: "",
+    bg: ""
   },
   variants: {
     withChildren: {

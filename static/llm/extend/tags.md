@@ -33,6 +33,17 @@ Import the `Tags` component in a script tag.
 </form>
 ```
 
+## Input Props
+
+```svelte
+<script lang="ts">
+  import { Tags } from "$lib";
+  let tags: string[] = $state([]);
+</script>
+
+<Tags bind:value={tags} inputProps={{ id: "my-tags-input" }} availableTags={["react", "svelte", "vue"]} />
+```
+
 ## Additional Props
 
 - `unique` (boolean, default: `false`): Prevents duplicate tags from being added if set to true.
@@ -81,7 +92,7 @@ Import the `Tags` component in a script tag.
 
 #### Types
 
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L890)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L891)
 
 #### Props
 
@@ -99,6 +110,7 @@ Import the `Tags` component in a script tag.
 - showHelper: false
 - showAvailableTags: false
 - allowNewTags: true
+- inputProps: {
 
 
 ## GitHub Links

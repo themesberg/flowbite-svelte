@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.13.8
+
+### Patch Changes
+
+- - 377a04be3 feat: add inputProps to Tag and Datepicker
+  - 69ae0c376 feat: add classes.bg to HR
+
 ## 1.13.7
 
 ### Patch Changes

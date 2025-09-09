@@ -485,7 +485,7 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   translationLocale?: string;
   elementRef?: HTMLInputElement;
   actionSlot?: Snippet<[ActionSlotParams]>;
-  inputProps?: HTMLInputAttributes; 
+  inputProps?: HTMLInputAttributes;
 }
 
 // device-mockups
@@ -902,7 +902,7 @@ export interface TagsProps extends TagsVariants, HTMLAttributes<HTMLDivElement> 
   showHelper?: boolean;
   showAvailableTags?: boolean;
   allowNewTags?: boolean;
-  inputProps?: HTMLInputAttributes; 
+  inputProps?: HTMLInputAttributes;
 }
 
 // Timepicker

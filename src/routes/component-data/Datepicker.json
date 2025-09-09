@@ -36,6 +36,7 @@
     ["monthBtn", "\"text-gray-700 dark:text-gray-300\""],
     ["class: className", ""],
     ["elementRef", "$bindable()"],
-    ["actionSlot", ""]
+    ["actionSlot", ""],
+    ["inputProps", "{"]
   ]
 }

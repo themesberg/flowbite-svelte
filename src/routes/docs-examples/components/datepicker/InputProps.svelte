@@ -4,4 +4,4 @@
 </script>
 
 <Label class="mb-2 flex items-center font-bold italic">My Datepicker</Label>
-<Datepicker bind:value={selectedDate} inputProps={{ id: "my-datepicker" }}/>
+<Datepicker bind:value={selectedDate} inputProps={{ id: "my-datepicker" }} />
