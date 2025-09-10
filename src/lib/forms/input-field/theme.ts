@@ -15,7 +15,6 @@ export const input = tv({
     comboItem: "text-gray-900 dark:text-gray-50",
     div: "",
     svg: "",
-    wrapper: ""
   },
   variants: {
     size: {
