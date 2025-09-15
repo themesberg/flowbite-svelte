@@ -1,9 +1,10 @@
 import { getContext, setContext, untrack } from "svelte";
+import { r } from "../../routes/admin-dashboard/utils/highlight/languages";
 
 /**
  * @template T
  * @typedef {Object} SingleSelectionContext
- * @property {T|null} value
+ * @property {T|null=} value
  */
 
 /** @type {symbol} */
@@ -15,13 +16,8 @@ const SINGLE_SELECTION_KEY = Symbol("singleton");
  * @returns {SingleSelectionContext<T>}
  */
 export function createSingleSelectionContext(nonReactive = false) {
-  if (nonReactive) {
-    const context = { value: null };
-    return setContext(SINGLE_SELECTION_KEY, context);
-  } else {
-    const context = $state({ value: null });
-    return setContext(SINGLE_SELECTION_KEY, context);
-  }
+  const context = $state({ value: null });
+  return setContext(SINGLE_SELECTION_KEY, nonReactive ? {} : context);
 }
 
 /**
@@ -45,13 +41,11 @@ function setSelected(context, open, value) {
  */
 export function useSingleSelection(callback) {
   const context = getContext(SINGLE_SELECTION_KEY) ?? createSingleSelectionContext(false);
+  if (!Object.prototype.hasOwnProperty.call(context, 'value')) return () => context; // non-reactive context, do nothing
 
-  let initialized = $state(false);
   $effect(() => {
-    if (initialized)
-      // if (context.value !== null)
+    if (context.value !== null)
       callback(context.value);
-    initialized = true;
   });
 
   return (open, v) => untrack(() => setSelected(context, open, v));
