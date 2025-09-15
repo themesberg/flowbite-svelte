@@ -1,0 +1,182 @@
+[
+  {
+    "companyName": "Apple Inc.",
+    "ticker": "AAPL",
+    "stockPrice": "$192.58",
+    "marketCapitalization": "$3.04T"
+  },
+  {
+    "companyName": "Microsoft Corporation",
+    "ticker": "MSFT",
+    "stockPrice": "$340.54",
+    "marketCapitalization": "$2.56T"
+  },
+  {
+    "companyName": "Alphabet Inc.",
+    "ticker": "GOOGL",
+    "stockPrice": "$134.12",
+    "marketCapitalization": "$1.72T"
+  },
+  {
+    "companyName": "Amazon.com Inc.",
+    "ticker": "AMZN",
+    "stockPrice": "$138.01",
+    "marketCapitalization": "$1.42T"
+  },
+  {
+    "companyName": "NVIDIA Corporation",
+    "ticker": "NVDA",
+    "stockPrice": "$466.19",
+    "marketCapitalization": "$1.16T"
+  },
+  {
+    "companyName": "Tesla Inc.",
+    "ticker": "TSLA",
+    "stockPrice": "$255.98",
+    "marketCapitalization": "$811.00B"
+  },
+  {
+    "companyName": "Meta Platforms Inc.",
+    "ticker": "META",
+    "stockPrice": "$311.71",
+    "marketCapitalization": "$816.00B"
+  },
+  {
+    "companyName": "Berkshire Hathaway Inc.",
+    "ticker": "BRK.B",
+    "stockPrice": "$354.08",
+    "marketCapitalization": "$783.00B"
+  },
+  {
+    "companyName": "TSMC",
+    "ticker": "TSM",
+    "stockPrice": "$103.51",
+    "marketCapitalization": "$538.00B"
+  },
+  {
+    "companyName": "UnitedHealth Group Incorporated",
+    "ticker": "UNH",
+    "stockPrice": "$501.96",
+    "marketCapitalization": "$466.00B"
+  },
+  {
+    "companyName": "Johnson & Johnson",
+    "ticker": "JNJ",
+    "stockPrice": "$172.85",
+    "marketCapitalization": "$452.00B"
+  },
+  {
+    "companyName": "JPMorgan Chase & Co.",
+    "ticker": "JPM",
+    "stockPrice": "$150.23",
+    "marketCapitalization": "$431.00B"
+  },
+  {
+    "companyName": "Visa Inc.",
+    "ticker": "V",
+    "stockPrice": "$246.39",
+    "marketCapitalization": "$519.00B"
+  },
+  {
+    "companyName": "Eli Lilly and Company",
+    "ticker": "LLY",
+    "stockPrice": "$582.97",
+    "marketCapitalization": "$552.00B"
+  },
+  {
+    "companyName": "Walmart Inc.",
+    "ticker": "WMT",
+    "stockPrice": "$159.67",
+    "marketCapitalization": "$429.00B"
+  },
+  {
+    "companyName": "Samsung Electronics Co., Ltd.",
+    "ticker": "005930.KS",
+    "stockPrice": "$70.22",
+    "marketCapitalization": "$429.00B"
+  },
+  {
+    "companyName": "Procter & Gamble Co.",
+    "ticker": "PG",
+    "stockPrice": "$156.47",
+    "marketCapitalization": "$366.00B"
+  },
+  {
+    "companyName": "Nestlé S.A.",
+    "ticker": "NESN.SW",
+    "stockPrice": "$120.51",
+    "marketCapitalization": "$338.00B"
+  },
+  {
+    "companyName": "Roche Holding AG",
+    "ticker": "ROG.SW",
+    "stockPrice": "$296.00",
+    "marketCapitalization": "$317.00B"
+  },
+  {
+    "companyName": "Chevron Corporation",
+    "ticker": "CVX",
+    "stockPrice": "$160.92",
+    "marketCapitalization": "$310.00B"
+  },
+  {
+    "companyName": "LVMH Moët Hennessy Louis Vuitton",
+    "ticker": "MC.PA",
+    "stockPrice": "$956.60",
+    "marketCapitalization": "$478.00B"
+  },
+  {
+    "companyName": "Pfizer Inc.",
+    "ticker": "PFE",
+    "stockPrice": "$35.95",
+    "marketCapitalization": "$200.00B"
+  },
+  {
+    "companyName": "Novo Nordisk A/S",
+    "ticker": "NVO",
+    "stockPrice": "$189.15",
+    "marketCapitalization": "$443.00B"
+  },
+  {
+    "companyName": "PepsiCo, Inc.",
+    "ticker": "PEP",
+    "stockPrice": "$182.56",
+    "marketCapitalization": "$311.00B"
+  },
+  {
+    "companyName": "ASML Holding N.V.",
+    "ticker": "ASML",
+    "stockPrice": "$665.72",
+    "marketCapitalization": "$273.00B"
+  },
+  {
+    "companyName": "The Coca-Cola Company",
+    "ticker": "KO",
+    "stockPrice": "$61.37",
+    "marketCapitalization": "$265.00B"
+  },
+  {
+    "companyName": "Oracle Corporation",
+    "ticker": "ORCL",
+    "stockPrice": "$118.36",
+    "marketCapitalization": "$319.00B"
+  },
+  {
+    "companyName": "Merck & Co., Inc.",
+    "ticker": "MRK",
+    "stockPrice": "$109.12",
+    "marketCapitalization": "$276.00B"
+  },
+  {
+    "companyName": "Broadcom Inc.",
+    "ticker": "AVGO",
+    "stockPrice": "$861.80",
+    "marketCapitalization": "$356.00B"
+  },
+  {
+    "companyName": "Mastercard Incorporated",
+    "ticker": "MA",
+    "stockPrice": "$421.44",
+    "marketCapitalization": "$396.00B"
+  }
+]
