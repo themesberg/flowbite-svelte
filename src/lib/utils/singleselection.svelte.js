@@ -1,5 +1,4 @@
 import { getContext, setContext, untrack } from "svelte";
-import { r } from "../../routes/admin-dashboard/utils/highlight/languages";
 
 /**
  * @template T
@@ -16,8 +15,10 @@ const SINGLE_SELECTION_KEY = Symbol("singleton");
  * @returns {SingleSelectionContext<T>}
  */
 export function createSingleSelectionContext(nonReactive = false) {
+  if (nonReactive)
+    return setContext(SINGLE_SELECTION_KEY, {});
   const context = $state({ value: null });
-  return setContext(SINGLE_SELECTION_KEY, nonReactive ? {} : context);
+  return setContext(SINGLE_SELECTION_KEY, context);
 }
 
 /**
