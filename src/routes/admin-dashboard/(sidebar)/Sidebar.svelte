@@ -101,7 +101,7 @@
     },
     {
       label: "Components",
-      href: "https://flowbite-svelte.com/docs/components/accordion",
+      href: "/admin-dashboard/components/productdrawer",
       Icon: LayersSolid
     },
     {
@@ -113,9 +113,9 @@
 </script>
 
 <SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-[22px] z-40 mb-2" />
-<Sidebar breakpoint="lg" backdrop={false} {isOpen} {closeSidebar} params={{ x: -50, duration: 50 }} class="top-0 left-0 mt-[69px] h-screen w-64 bg-gray-50 transition-transform lg:block dark:bg-gray-800" classes={{ div: "h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800", nonactive: "p-2 group-has-[ul]:ms-0", active: "p-2 group-has-[ul]:ms-0" }}>
+<Sidebar breakpoint="lg" backdrop={false} {isOpen} {closeSidebar} params={{ x: -50, duration: 50 }} class="top-0 left-0 mt-[69px] h-screen w-64 bg-gray-50 transition-transform lg:block dark:bg-gray-800" classes={{ div: "h-full px-1 py-1 overflow-y-auto bg-gray-50 dark:bg-gray-800", nonactive: "p-2 group-has-[ul]:ms-0", active: "p-2 group-has-[ul]:ms-0" }}>
   <h4 class="sr-only">Main menu</h4>
-  <SidebarWrapper class="scrolling-touch top-2 h-full max-w-2xs overflow-y-auto bg-white px-3 pt-20 lg:sticky lg:me-0 lg:block lg:h-[calc(100vh-4rem)] lg:pt-5 dark:bg-gray-800">
+  <SidebarWrapper class="scrolling-touch h-full max-w-2xs overflow-y-auto bg-white px-3 pt-20 lg:sticky lg:me-0 lg:block lg:h-[calc(100vh-4rem)] lg:pt-5 dark:bg-gray-800">
     <SidebarGroup class={groupClass}>
       {#each posts as { name, Icon, children, href } (name)}
         {#if children}
@@ -151,7 +151,7 @@
     </SidebarGroup>
     <SidebarGroup class={groupClass}>
       {#each links as { label, href, Icon } (label)}
-        <SidebarItem {label} {href} spanClass="ml-3" class={itemClass} target="_blank">
+        <SidebarItem {label} {href} spanClass="ml-3" class={itemClass} >
           {#snippet icon()}
             <Icon class={iconClass} />
           {/snippet}
