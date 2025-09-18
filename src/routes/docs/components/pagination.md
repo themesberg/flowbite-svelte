@@ -122,28 +122,10 @@ You can use the following code to show the number of data shown inside a table e
 
 ## Active class
 
+Use the following example to add active class.
+
 ```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
-<script lang="ts">
-  import { PaginationNav } from "flowbite-svelte";
-
-  let currentPage = $state(1);
-  const totalPages = 20;
-
-  function handlePageChange(page: number) {
-    currentPage = page;
-    // Additional logic here
-    console.log("Page changed to:", page);
-  }
-</script>
-
-<PaginationNav 
-  currentPage={currentPage} 
-  totalPages={totalPages} 
-  onPageChange={handlePageChange}
-  classes={{ 
-    active: "bg-green-100 text-green-600" 
-  }} 
-/>
+{#include ActiveClass.svelte}
 ```
 
 ## Component data

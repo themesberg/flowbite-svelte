@@ -10,6 +10,7 @@
 
   const theme = getTheme("tabItem");
 
+  const activeClasses = getContext<string>("activeClasses");
   const ctx: TabCtxType = getContext("ctx");
   let compoTabStyle = $derived(tabStyle ? tabStyle : ctx.tabStyle || "full");
 
@@ -30,7 +31,7 @@
 </script>
 
 <li {...restProps} class={base({ class: clsx(theme?.base, className) })} role="presentation">
-  <button type="button" onclick={() => (open = true)} role="tab" id={self.id} aria-controls={ctx.panelId} aria-selected={open} {disabled} class={button({ class: clsx(open ? (activeClass ?? active()) : (inactiveClass ?? inactive()), theme?.button, classes?.button) })}>
+  <button type="button" onclick={() => (open = true)} role="tab" id={self.id} aria-controls={ctx.panelId} aria-selected={open} {disabled} class={button({ class: clsx(open ? (activeClass ?? active(), activeClasses) : (inactiveClass ?? inactive()), theme?.button, classes?.button) })}>
     {#if titleSlot}
       {@render titleSlot()}
     {:else}

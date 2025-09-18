@@ -96,6 +96,16 @@ Use the following example to preserve the input value. First fill out the form, 
 {#include Snapshot.svelte}
 ```
 
+
+## Active class
+
+Use the following example to add active class.
+
+```svelte example
+{#include ActiveClass.svelte}
+```
+
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
