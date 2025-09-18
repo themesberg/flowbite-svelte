@@ -1,25 +1,60 @@
 <script lang="ts">
-  import { Breadcrumb, BreadcrumbItem, Button, Checkbox, Drawer, Heading, Input, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Toolbar, ToolbarButton } from "flowbite-svelte";
-  import { CogSolid, DotsVerticalOutline, EditOutline, ExclamationCircleSolid, TrashBinSolid } from "flowbite-svelte-icons";
-  import type { Component } from "svelte";
-  import Products from "../../../data/product.json";
-  import MetaTag from "../../../utils/MetaTag.svelte";
-  import { DeleteDrawer, ProductDrawer } from "flowbite-svelte-admin-dashboard";
+  import { Breadcrumb, BreadcrumbItem, Button, Checkbox, Heading, Input, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Toolbar, ToolbarButton } from 'flowbite-svelte';
+  import { CogSolid, DotsVerticalOutline, EditOutline, ExclamationCircleSolid, TrashBinSolid } from 'flowbite-svelte-icons';
+  import type { Component } from 'svelte';
+  import Products from '../../../data/product.json';
+  import MetaTag from '../../../utils/MetaTag.svelte';
+  import { DeleteDrawer, ProductDrawer } from 'flowbite-svelte-admin-dashboard';
 
-  // import Product from './Product.svelte';
-
-  let open: boolean = $state(false); // modal control
-  let DrawerComponent: Component = $state(ProductDrawer); // drawer component
+  let open: boolean = $state(false);
+  let DrawerComponent: Component = $state(ProductDrawer);
 
   const toggle = (component: Component) => {
     DrawerComponent = component;
     open = !open;
   };
 
-  const path: string = "/crud/products";
-  const description: string = "CRUD products examaple - Flowbite Svelte Admin Dashboard";
-  const title: string = "Flowbite Svelte Admin Dashboard - CRUD Products";
-  const subtitle: string = "CRUD Products";
+  let current_product: any = $state({});
+
+  const path: string = '/crud/products';
+  const description: string = 'CRUD products examaple - Flowbite Svelte Admin Dashboard';
+  const title: string = 'Flowbite Svelte Admin Dashboard - CRUD Products';
+  const subtitle: string = 'CRUD Products';
+
+  const additionalFields = [
+    {
+      name: 'technology',
+      label: 'Technology/Brand',
+      options: [
+        { value: 'Angular', label: 'Angular' },
+        { value: 'React JS', label: 'React JS' },
+        { value: 'Svelte', label: 'Svelte' },
+        { value: 'Vue', label: 'Vue' }
+      ]
+    },
+    {
+      name: 'category',
+      label: 'Category',
+      options: [
+        { value: 'Html templates', label: 'HTML Templates' },
+        { value: 'UI Kit', label: 'UI Kit' },
+        { value: 'Dashboard', label: 'Dashboard' },
+        { value: 'Component Library', label: 'Component Library' }
+      ]
+    },
+    {
+      name: 'discount',
+      label: 'Discount',
+      options: [
+        { value: 'No', label: 'No Discount' },
+        { value: '5%', label: '5% Off' },
+        { value: '10%', label: '10% Off' },
+        { value: '15%', label: '15% Off' },
+        { value: '20%', label: '20% Off' },
+        { value: '25%', label: '25% Off' }
+      ]
+    }
+  ];
 </script>
 
 <MetaTag {path} {description} {title} {subtitle} />
@@ -50,7 +85,7 @@
       </ToolbarButton>
       {#snippet end()}
         <div class="space-x-2">
-          <Button class="whitespace-nowrap" onclick={() => toggle(ProductDrawer)}>Add new product</Button>
+          <Button class="whitespace-nowrap" onclick={() => ((current_product = {}), toggle(ProductDrawer))}>Add new product</Button>
         </div>
       {/snippet}
     </Toolbar>
@@ -58,7 +93,7 @@
   <Table>
     <TableHead class="border-y border-gray-200 bg-gray-100 dark:border-gray-700">
       <TableHeadCell class="w-4 p-4"><Checkbox /></TableHeadCell>
-      {#each ["Product Name", "Technology", "Description", "ID", "Price", "Discount", "Actions"] as title}
+      {#each ['Product Name', 'Technology', 'Description', 'ID', 'Price', 'Discount', 'Actions'] as title}
         <TableHeadCell class="ps-4 font-normal">{title}</TableHeadCell>
       {/each}
     </TableHead>
@@ -82,7 +117,7 @@
           <TableBodyCell class="p-4">{product.price}</TableBodyCell>
           <TableBodyCell class="p-4">{product.discount}</TableBodyCell>
           <TableBodyCell class="space-x-2">
-            <Button size="sm" class="gap-2 px-3" onclick={() => toggle(ProductDrawer)}>
+            <Button size="sm" class="gap-2 px-3" onclick={() => ((current_product = product), toggle(ProductDrawer))}>
               <EditOutline size="sm" /> Update
             </Button>
             <Button color="red" size="sm" class="gap-2 px-3" onclick={() => toggle(DeleteDrawer as Component)}>
@@ -95,6 +130,4 @@
   </Table>
 </main>
 
-<Drawer placement="right" bind:open>
-  <DrawerComponent bind:open />
-</Drawer>
+<DrawerComponent bind:open data={current_product} {additionalFields} />

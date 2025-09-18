@@ -148,3 +148,18 @@ export const fetchBlocksMarkdownPosts = async () => {
 
   return Object.fromEntries(entries);
 };
+
+export const fetchDashboardMarkdownPosts = async () => {
+  const globs = {
+    components: import.meta.glob<Mdsvex>("/src/routes/admin-dashboard/\\(sidebar\\)/components/*.md")
+  };
+
+  const entries = await Promise.all(
+    Object.entries(globs).map(async ([key, files]) => {
+      const resolved = await resolveMarkdownFiles(files);
+      return [key, resolved] as const;
+    })
+  );
+
+  return Object.fromEntries(entries);
+};

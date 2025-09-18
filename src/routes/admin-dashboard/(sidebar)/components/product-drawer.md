@@ -1,3 +1,15 @@
+---
+layout: componentLayout
+title: Flowbite Svelte Admin Dashboard
+breadcrumb_title: Product drawer
+component_title: Product drawer
+dir: components
+description: product drawer
+---
+
+Example
+
+```svelte example
 <script lang="ts">
   import { ProductDrawer } from 'flowbite-svelte-admin-dashboard';
   import { Button, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
@@ -196,7 +208,7 @@
   </div>
 
   <!-- Quick templates -->
-  <div class="mb-6 rounded p-4 ">
+  <div class="mb-6 rounded bg-gray-50 p-4 dark:bg-gray-900">
     <h3 class="mb-2 font-semibold dark:text-white">Quick Templates:</h3>
     <div class="flex gap-2">
       <Button color="lime" onclick={() => createFromTemplate('SMARTPHONE', 'APPLE')}>iPhone Template</Button>
@@ -225,9 +237,9 @@
             <TableBodyCell>{product.category}</TableBodyCell>
             <TableBodyCell>{product.discount ? `${product.discount}%` : 'None'}</TableBodyCell>
             <TableBodyCell class="space-x-2">
-              <button onclick={() => editProduct(product)} class="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800"> Edit </button>
-              <button onclick={() => duplicateProduct(product)} class="text-sm text-green-600 dark:text-green-400 hover:text-green-800"> Duplicate </button>
-              <button onclick={() => deleteProduct(product.id)} class="text-sm text-red-600 dark:text-red-400 hover:text-red-800"> Delete </button>
+              <button onclick={() => editProduct(product)} class="text-sm text-blue-600 hover:text-blue-800"> Edit </button>
+              <button onclick={() => duplicateProduct(product)} class="text-sm text-green-600 hover:text-green-800"> Duplicate </button>
+              <button onclick={() => deleteProduct(product.id)} class="text-sm text-red-600 hover:text-red-800"> Delete </button>
             </TableBodyCell>
           </TableBodyRow>
         {/each}
@@ -237,3 +249,4 @@
 </div>
 
 <ProductDrawer bind:open={drawerOpen} title={drawerTitle} data={productData} {additionalFields} onsubmit={handleFormSubmit} />
+```

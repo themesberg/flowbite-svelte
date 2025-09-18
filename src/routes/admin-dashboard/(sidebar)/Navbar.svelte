@@ -96,7 +96,7 @@
       </NavUl>
     {:else}
       <form>
-        <Search size="md" class="mt-1 w-96 border focus:outline-none" />
+        <Search size="md" class="mt-1 w-96 focus:outline-none" />
       </form>
     {/if}
   </div>
