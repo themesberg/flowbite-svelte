@@ -1,5 +1,5 @@
-# Flowbite Svelte Documentation - Full Context
-# Generated on 2025-09-09T05:46:13.869Z
+# undefined Documentation - Full Context
+# Generated on 2025-09-18T15:38:10.522Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -10775,13 +10775,39 @@ You can use the following code to show the number of data shown inside a table e
 </div>
 ```
 
+## Active class
+
+```svelte
+<script lang="ts">
+  import { PaginationNav } from "flowbite-svelte";
+
+  let currentPage = $state(1);
+  const totalPages = 20;
+
+  function handlePageChange(page: number) {
+    currentPage = page;
+    // Additional logic here
+    console.log("Page changed to:", page);
+  }
+</script>
+
+<PaginationNav 
+  currentPage={currentPage} 
+  totalPages={totalPages} 
+  onPageChange={handlePageChange}
+  classes={{ 
+    active: "bg-green-100 text-green-600" 
+  }} 
+/>
+```
+
 ## Component data
 
 ### Pagination
 
 #### Types
 
-[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1185)
+[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1192)
 
 #### Props
 
@@ -10814,7 +10840,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1181)
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1188)
 
 #### Props
 
@@ -11257,7 +11283,7 @@ If you need the popover to be attached to the other element then the tiggering o
 
 #### Types
 
-[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1195)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1202)
 
 #### Props
 
@@ -11489,7 +11515,7 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1205)
+[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1212)
 
 #### Props
 
@@ -11509,7 +11535,7 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1216)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1223)
 
 #### Props
 
@@ -11853,7 +11879,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1233)
+[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1240)
 
 #### Props
 
@@ -11873,7 +11899,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1319)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1326)
 
 #### Props
 
@@ -11892,7 +11918,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1319)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1326)
 
 #### Props
 
@@ -11910,7 +11936,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1245)
+[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1252)
 
 #### Props
 
@@ -11929,7 +11955,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingCommentProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1256)
+[RatingCommentProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1263)
 
 #### Props
 
@@ -11943,7 +11969,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1292)
+[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1299)
 
 #### Props
 
@@ -11967,7 +11993,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[ScoreRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1308)
+[ScoreRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1315)
 
 #### Props
 
@@ -11980,7 +12006,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1319)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1326)
 
 #### Props
 
@@ -11998,7 +12024,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1319)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1326)
 
 #### Props
 
@@ -13230,7 +13256,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1342)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1349)
 
 #### Props
 
@@ -13259,7 +13285,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1379)
+[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1386)
 
 #### Props
 
@@ -13274,7 +13300,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1361)
+[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1368)
 
 #### Props
 
@@ -13286,7 +13312,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1366)
+[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1373)
 
 #### Props
 
@@ -13302,7 +13328,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1385)
+[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1392)
 
 #### Props
 
@@ -13326,7 +13352,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1402)
+[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1409)
 
 #### Props
 
@@ -13339,7 +13365,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1408)
+[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1415)
 
 #### Props
 
@@ -13501,7 +13527,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1420)
+[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1427)
 
 #### Props
 
@@ -13513,7 +13539,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1424)
+[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1431)
 
 #### Props
 
@@ -13527,7 +13553,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1430)
+[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1437)
 
 #### Props
 
@@ -13541,7 +13567,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1436)
+[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1443)
 
 #### Props
 
@@ -13553,7 +13579,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1440)
+[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1447)
 
 #### Props
 
@@ -13564,7 +13590,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1442)
+[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1449)
 
 #### Props
 
@@ -13576,7 +13602,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1446)
+[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1453)
 
 #### Props
 
@@ -13587,7 +13613,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1450)
+[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1457)
 
 #### Props
 
@@ -14220,7 +14246,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1482)
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1489)
 
 #### Props
 
@@ -14239,7 +14265,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1497)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1504)
 
 #### Props
 
@@ -14257,7 +14283,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1480)
+[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1487)
 
 #### Props
 
@@ -14384,7 +14410,7 @@ The spinner component can also be used inside elements such as buttons when subm
 
 #### Types
 
-[SpinnerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1507)
+[SpinnerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1514)
 
 #### Props
 
@@ -14664,7 +14690,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1595)
+[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1602)
 
 #### Props
 
@@ -14677,7 +14703,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1564)
+[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1571)
 
 #### Props
 
@@ -14691,7 +14717,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1549)
+[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1556)
 
 #### Props
 
@@ -14704,7 +14730,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1537)
+[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1544)
 
 #### Props
 
@@ -14717,7 +14743,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1609)
+[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1616)
 
 #### Props
 
@@ -14731,7 +14757,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1579)
+[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1586)
 
 #### Props
 
@@ -15629,7 +15655,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1641)
+[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1648)
 
 #### Props
 
@@ -15650,7 +15676,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1673)
+[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1680)
 
 #### Props
 
@@ -15662,7 +15688,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1662)
+[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1669)
 
 #### Props
 
@@ -15675,7 +15701,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1654)
+[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1661)
 
 #### Props
 
@@ -15690,7 +15716,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1629)
+[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1636)
 
 #### Props
 
@@ -15707,7 +15733,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1678)
+[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1685)
 
 #### Props
 
@@ -15718,7 +15744,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1693)
+[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1700)
 
 #### Props
 
@@ -16155,7 +16181,7 @@ Use the following example to preserve the input value. First fill out the form, 
 
 #### Types
 
-[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1721)
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1728)
 
 #### Props
 
@@ -16174,7 +16200,7 @@ Use the following example to preserve the input value. First fill out the form, 
 
 #### Types
 
-[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1713)
+[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1720)
 
 #### Props
 
@@ -16402,7 +16428,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1757)
+[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1764)
 
 #### Props
 
@@ -16413,7 +16439,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1761)
+[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1768)
 
 #### Props
 
@@ -16433,7 +16459,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1773)
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1780)
 
 #### Props
 
@@ -16449,7 +16475,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1781)
+[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1788)
 
 #### Props
 
@@ -16466,7 +16492,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1801)
+[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1808)
 
 #### Props
 
@@ -16478,7 +16504,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1806)
+[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1813)
 
 #### Props
 
@@ -16905,7 +16931,7 @@ You can use `onclose` to execute custom logic when the toast is closed.
 
 #### Types
 
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1820)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1827)
 
 #### Props
 
@@ -17126,7 +17152,7 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 
 #### Types
 
-[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1836)
+[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1843)
 
 #### Props
 
@@ -17426,7 +17452,7 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 #### Types
 
-[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1988)
+[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1995)
 
 #### Props
 
@@ -18960,7 +18986,7 @@ Use this example with control buttons to increment and decrement the value insid
       <Button type="button" id="decrement-button" onclick={() => (quantity -= 1)}>
         <MinusOutline />
       </Button>
-      <Input bind:value={quantity} type="number" id="quantity-input" aria-describedby="helper-text-explanation" placeholder="999" required class="w-20" />
+      <Input bind:value={quantity} type="number" id="quantity-input" aria-describedby="helper-text-explanation" placeholder="999" required class="w-20 text-center" />
       <Button type="button" id="increment-button" onclick={() => (quantity += 1)}>
         <PlusOutline />
       </Button>
@@ -18979,27 +19005,32 @@ Use this example to also add an icon inside the input field to improve the user 
   import { Input, Label, P, Button, ButtonGroup } from "flowbite-svelte";
   import { PlusOutline, MinusOutline, HomeOutline } from "flowbite-svelte-icons";
   let bedroom: number = $state(3);
+  $effect(() => {
+    bedroom = Math.min(5, Math.max(1, bedroom));
+  });
 </script>
 
 <form class="mx-auto max-w-xs">
-  <Label class="mb-2 text-sm" for="quantity-input">Choose quantity:</Label>
-  <div class="relative flex max-w-[11rem] items-center">
-    <ButtonGroup>
-      <Button type="button" id="decrement-button" onclick={() => (bedroom -= 1)} class="h-11 p-3">
-        <MinusOutline />
-      </Button>
-      <Input min="1" max="5" bind:value={bedroom} type="number" id="quantity-input" aria-describedby="helper-text-explanation" placeholder=" " required class="h-11 w-28 pb-6 text-center" />
-      <div class="absolute start-1/2 bottom-0 flex -translate-x-1/2 items-center space-x-1 text-xs text-gray-400 rtl:translate-x-1/2 rtl:space-x-reverse">
-        <HomeOutline class="h-4 w-4" />
-        <span>Bedrooms</span>
-      </div>
-      <Button type="button" id="increment-button" onclick={() => (bedroom += 1)} class="h-11 p-3">
-        <PlusOutline />
-      </Button>
-    </ButtonGroup>
-  </div>
+  <Label class="mb-2 text-sm" for="quantity_input">Choose quantity:</Label>
+
+  <ButtonGroup class="relative">
+    <Button type="button" onclick={() => (bedroom -= 1)} class="h-11 p-3">
+      <MinusOutline />
+    </Button>
+    <Input min="1" max="5" bind:value={bedroom} type="number" id="quantity_input" aria-describedby="helper-text-explanation" placeholder=" " required class="h-11 w-28 pb-6 text-center" />
+    <div class="absolute start-1/2 bottom-1 flex -translate-x-1/2 items-center space-x-1 text-xs text-gray-400 rtl:translate-x-1/2 rtl:space-x-reverse">
+      <HomeOutline class="h-4 w-4" />
+      <span>Bedrooms</span>
+    </div>
+    <Button type="button" onclick={() => (bedroom += 1)} class="h-11 p-3">
+      <PlusOutline />
+    </Button>
+  </ButtonGroup>
+
   <P id="helper-text-explanation" class="mt-2 text-sm">Please select the number of bedrooms.</P>
 </form>
+
+>
 ```
 
 ## Counter input
@@ -19011,16 +19042,19 @@ Use this example as an alternative style to the control buttons example above.
   import { Input, Label, Button, ButtonGroup } from "flowbite-svelte";
   import { PlusOutline, MinusOutline } from "flowbite-svelte-icons";
   let counterInput: number = $state(12);
+  $effect(() => {
+    counterInput = Math.max(1, counterInput);
+  });
 </script>
 
 <form class="mx-auto max-w-xs">
-  <Label for="counter-input" class="mb-1 block text-sm font-medium text-gray-900 dark:text-white">Choose quantity:</Label>
+  <Label for="counter-input" class="mb-1 text-sm text-gray-900 dark:text-white">Choose quantity:</Label>
   <div class="relative flex items-center">
-    <Button color="alternative" id="decrement-button" class="m-0 h-5 w-5 p-4" onclick={() => (counterInput -= 1)}>
+    <Button color="alternative" class="h-5 w-5 rounded p-2" onclick={() => (counterInput -= 1)}>
       <MinusOutline class="h-2.5 w-2.5" />
     </Button>
-    <Input type="number" id="counter-input" class="m-0 w-0 w-12 shrink-0 border-0 bg-transparent p-0 text-center text-sm  font-normal text-gray-900 focus:ring-0 focus:outline-none dark:text-white" placeholder="" bind:value={counterInput} required />
-    <Button color="alternative" id="increment-button" class="h-5 w-5 p-4" onclick={() => (counterInput += 1)}>
+    <Input id="counter-input" type="number" class="w-12 shrink-0 border-0 bg-transparent p-0 text-center dark:bg-transparent" placeholder="" bind:value={counterInput} required />
+    <Button color="alternative" class="h-5 w-5 rounded p-2" onclick={() => (counterInput += 1)}>
       <PlusOutline class="h-2.5 w-2.5" />
     </Button>
   </div>
@@ -21732,7 +21766,7 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 #### Types
 
-[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1873)
+[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1880)
 
 #### Props
 
@@ -21996,7 +22030,7 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 #### Types
 
-[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1889)
+[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1896)
 
 #### Props
 
@@ -22135,7 +22169,7 @@ The `restProps` will be removed in the next version. Please use `divProps` and `
 
 #### Types
 
-[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1895)
+[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1902)
 
 #### Props
 
@@ -22918,7 +22952,7 @@ Use this example to create a horizontally aligned list of items.
 
 #### Types
 
-[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1947)
+[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1954)
 
 #### Props
 
@@ -24047,7 +24081,7 @@ Import the `Progressradial` component in a script tag.
 
 #### Types
 
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1216)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1223)
 
 #### Props
 
@@ -24230,7 +24264,7 @@ Use the `color` prop to change the color of a step indicator.
 
 #### Types
 
-[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1515)
+[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1522)
 
 #### Props
 
@@ -24306,7 +24340,7 @@ Import the `Tags` component in a script tag.
   let tags: string[] = $state([]);
 </script>
 
-<Tags bind:value={tags} inputProps={{ id: "my-tags-input" }} availableTags={["react", "svelte", "vue"]} />
+<Tags bind:value={tags} inputProps={{ id: "my-tags-input" }} />
 ```
 
 ## Additional Props
@@ -25908,125 +25942,42 @@ export {};
 
 Use this example to show table data with default sorting and pagination functionalities.
 
-<Table {items} />
-
-```svelte
-<script lang="ts">
-  import { Table } from "@flowbite-svelte-plugins/datatable";
-  import items from "./data/sample.json";
-</script>
-
-<Table {items} />
-```
+<Examples.DefaultDatatable />
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/datatable/DefaultDatatable.svelte']}
+/>
 
 ## Snippets
 
 Use `captionSlot` and `footerSlot` `snippet`s.
 
-<Table {items}>
-	{#snippet captionSlot()}
-		<Heading tag="h5" class="text-left text-primary-700">Caption</Heading>
-		<P
-			>Browse a list of Flowbite products designed to help you work and play, stay organized, get
-			answers, keep in touch, grow your business, and more.</P
-		>
-	{/snippet}
-	{#snippet footerSlot()}
-		<tr>
-			<td
-				colspan={4}
-				class="whitespace-normal text-left text-base font-normal leading-normal tracking-normal text-gray-900 dark:text-white"
-			><Span highlight="red" class="bold">footerSlot:</Span>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias laboriosam placeat eum
-				facilis aliquam, adipisci consequuntur excepturi rerum distinctio illum quibusdam neque
-				magni quaerat dolorum hic labore repellat omnis? Quisquam?
-			</td>
-		</tr>
-	{/snippet}
-</Table>
-
-```svelte
-<script lang="ts">
-  import { Table } from "@flowbite-svelte-plugins/datatable";
-  import { P, Heading } from "flowbite-svelte";
-  import items from "./data/sample.json";
-</script>
-
-<Table {items}>
-  {#snippet captionSlot()}
-    <Heading tag="h5" class="text-primary-700 text-left">Caption</Heading>
-    <P>Browse a list of Flowbite products designed to help you work and play, stay organized, get answers, keep in touch, grow your business, and more.</P>
-  {/snippet}
-  {#snippet footerSlot()}
-    <tr>
-      <td colspan={4} class="text-left text-base leading-normal font-normal tracking-normal whitespace-normal text-gray-900 dark:text-white">
-        <Span highlight="red" class="bold">footerSlot:</Span>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias laboriosam placeat eum facilis aliquam, adipisci consequuntur excepturi rerum distinctio illum quibusdam neque magni quaerat dolorum hic labore repellat omnis? Quisquam?
-      </td>
-    </tr>
-  {/snippet}
-</Table>
-```
+<Examples.Slots />
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/datatable/Slots.svelte']}
+/>
 
 ## searchable and sortable
 
 `searchable` and `sortable` options are `true` as default. You can disable it as the following example.
 
-<Table {items} dataTableOptions={{searchable: false, sortable: false}} />
-
-```svelte
-<Table {items} dataTableOptions={{ searchable: false, sortable: false }} />
-```
+<Examples.TableSearch />
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/datatable/TableSearch.svelte']}
+/>
 
 ## Filtering data
 
 Use the following example to enable filtering data based on a search query for each column.
 Enabling search for each individual data column is an advanced way of letting users browse complex data.
 
-<Table items={products} dataTableOptions={filterOptions} />
-
-```svelte
-<script lang="ts">
-  import { Table } from "@flowbite-svelte-plugins/datatable";
-  import products from "./data/products.json";
-  import type { DataTableOptions } from "simple-datatables";
-
-  const filterOptions: DataTableOptions = {
-    tableRender: (data: any[], table: any, type: string) => {
-      if (type === "print") {
-        return table;
-      }
-
-      const tHead = table.childNodes[0];
-      const filterHeaders = {
-        nodeName: "TR",
-        attributes: {
-          class: "search-filtering-row"
-        },
-        childNodes: tHead.childNodes[0].childNodes.map((_th: any, index: number) => ({
-          nodeName: "TH",
-          childNodes: [
-            {
-              nodeName: "INPUT",
-              attributes: {
-                class: "datatable-input",
-                type: "search",
-                placeholder: `Filter column ${index + 1}`,
-                "data-columns": `[${index}]`
-              }
-            }
-          ]
-        }))
-      };
-
-      tHead.childNodes.push(filterHeaders);
-      return table;
-    }
-  };
-</script>
-
-<Table items={products} dataTableOptions={filterOptions} />
-```
+<Examples.FilteringData />
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/datatable/FilteringData.svelte']}
+/>
 
 ## Table pagination
 
@@ -26034,24 +25985,11 @@ Pagination is enabled by default for all datatables, however, you can disable it
 
 You can also set the perPageSelect option to set the selection options of the table.
 
-<Table items={aimodels} dataTableOptions={paginationOptions} />
-
-```svelte
-<script lang="ts">
-  import { Table } from "@flowbite-svelte-plugins/datatable";
-  import aimodels from "./data/aimodels.json";
-  import type { DataTableOptions } from "simple-datatables";
-
-  const paginationOptions: DataTableOptions = {
-    paging: true,
-    perPage: 5,
-    perPageSelect: [5, 10, 15, 20, 25],
-    sortable: false
-  };
-</script>
-
-<Table items={aimodels} dataTableOptions={paginationOptions} />
-```
+<Examples.TablePagination />
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/datatable/TablePagination.svelte']}
+/>
 
 ## Selecting rows
 
@@ -26059,299 +25997,35 @@ Use this example to enable the selection of rows by clicking anywhere one of the
 
 Use `selectable` true and `rowRender` option to enable multi selection. Use `multiSelect` false to make single selection.
 
-<Table selectable {items} dataTableOptions={selectRowsOptions} />
-
-```svelte
-<script lang="ts">
-  import { Table } from "@flowbite-svelte-plugins/datatable";
-  import items from "./data/sample.json";
-
-  const selectRowsOptions = {
-    rowRender: (row: any, tr: any, _index: number) => {
-      if (!tr.attributes) {
-        tr.attributes = {};
-      }
-      if (!tr.attributes.class) {
-        tr.attributes.class = "";
-      }
-      if (row.selected) {
-        tr.attributes.class += " selected";
-      } else {
-        tr.attributes.class = tr.attributes.class.replace(" selected", "");
-      }
-      return tr;
-    }
-  };
-</script>
-
-<Table selectable {items} dataTableOptions={selectRowsOptions} />
-```
+<Examples.SelectingRows />
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/datatable/SelectingRows.svelte']}
+/>
 
 ## Custom Cell Renderer
 
-<Table dataTableOptions={cellRendererOptions} />
-
-```svelte
-<script lang="ts">
-  import { Table } from "@flowbite-svelte-plugins/datatable";
-  import type { DataTableOptions } from "simple-datatables";
-
-  // Define types for the render function parameters
-  interface CellNode {
-    nodeName: string;
-    attributes?: Record<string, string | number>;
-    childNodes?: (CellNode | TextNode)[];
-  }
-
-  interface TextNode {
-    nodeName: "#text";
-    data: string;
-  }
-
-  interface TableCell {
-    childNodes: (CellNode | TextNode)[];
-    data: any;
-  }
-
-  interface TableRow {
-    attributes?: Record<string, string>;
-    cells: TableCell[];
-  }
-
-  // Type the render functions properly
-  const renderIcon = function (data: any, _cell: TableCell, _dataIndex: number, _cellIndex: number): string {
-    if (data === "Latte") {
-      return `☕ ${data}`;
-    } else if (data === "Green tea") {
-      return `🍵 ${data}`;
-    }
-    return `🌿 ${data}`;
-  };
-
-  // Price column cell manipulation
-  const renderButton = function (data: any, cell: TableCell, dataIndex: number, _cellIndex: number): void {
-    cell.childNodes.push({
-      nodeName: "BUTTON",
-      attributes: {
-        "data-row": dataIndex,
-        class: "buy-now"
-      },
-      childNodes: [
-        {
-          nodeName: "#text",
-          data: "Buy Now!"
-        }
-      ]
-    });
-  };
-
-  // Caffeinated column cell manipulation
-  const renderYesNo = function (data: any, cell: TableCell, _dataIndex: number, _cellIndex: number): void {
-    if ([true, false].includes(data)) {
-      cell.childNodes = [
-        {
-          nodeName: "SPAN",
-          attributes: {
-            class: data === true ? "caffeinated" : "uncaffeinated"
-          },
-          childNodes: [
-            {
-              nodeName: "#text",
-              data: data === true ? "Yes" : "No"
-            }
-          ]
-        }
-      ];
-    }
-  };
-
-  // Numbers with styling
-  const renderHighLow = function (data: any, cell: TableCell, _dataIndex: number, _cellIndex: number): void {
-    const cellTextNode = cell.childNodes[0];
-    const currencyNode: CellNode = {
-      nodeName: "SPAN",
-      attributes: {
-        class: "currency "
-      },
-      childNodes: [cellTextNode]
-    };
-    cell.childNodes = [currencyNode];
-
-    if (data < 0) {
-      currencyNode.attributes!.class += "currency--loss";
-    } else if (data > 0) {
-      currencyNode.attributes!.class += "currency--profit";
-    } else if (data === 0) {
-      currencyNode.attributes!.class += "currency--zero";
-    }
-  };
-
-  const data = {
-    headings: ["ID", "Drink", "Price", "Caffeinated", "Profit"],
-    data: [
-      [574, "Latte", 4.0, false, 0.0],
-      [984, "Herbal tea", 3.0, false, 0.56],
-      [312, "Green tea", 3.0, true, 1.72],
-      [312, "Latte", 3.0, true, -1.21],
-      [312, "Green tea", 3.0, false, 0.0],
-      [312, "Green tea", 3.0, false, 0.0],
-      [312, "Green tea", 3.0, true, 1.72],
-      [312, "Latte", 3.0, true, 1.72],
-      [312, "Green tea", 3.0, true, -1.21],
-      [312, "Green tea", 3.0, false, 0.0],
-      [312, "Green tea", 3.0, true, 1.72],
-      [312, "Green tea", 3.0, true, 1.72],
-      [312, "Latte", 3.0, false, 0.0],
-      [312, "Latte", 3.0, true, 1.72],
-      [312, "Green tea", 3.0, false, 0.0],
-      [312, "Green tea", 3.0, true, 1.72],
-      [312, "Latte", 3.0, false, 0.0],
-      [312, "Latte", 3.0, true, -1.21],
-      [312, "Latte", 3.0, true, 1.72],
-      [312, "Latte", 3.0, false, 0.0],
-      [312, "Latte", 3.0, false, 0.0],
-      [312, "Latte", 3.0, true, 1.72],
-      [312, "Green tea", 3.0, true, -1.21],
-      [312, "Green tea", 3.0, true, -1.21],
-      [312, "Green tea", 3.0, true, -1.21]
-    ]
-  } as const;
-
-  const cellRendererOptions: DataTableOptions = {
-    data,
-    rowRender: (row: TableRow, tr: TableRow, _index: number) => {
-      if ([true, false].includes(row.cells[3].data)) {
-        if (!tr.attributes) {
-          tr.attributes = {};
-        }
-        if (!tr.attributes.class) {
-          tr.attributes.class = row.cells[3].data === true ? "yes" : "no";
-        } else {
-          tr.attributes.class += row.cells[3].data === true ? " yes" : " no";
-        }
-      }
-    },
-    columns: [
-      {
-        select: 0,
-        hidden: true,
-        type: "number"
-      },
-      {
-        select: 1,
-        render: renderIcon,
-        type: "string"
-      },
-      {
-        select: 2,
-        render: renderButton,
-        type: "number"
-      },
-      {
-        select: 3,
-        render: renderYesNo,
-        type: "boolean"
-      },
-      {
-        select: 4,
-        render: renderHighLow,
-        type: "number"
-      }
-    ]
-  };
-</script>
-
-<Table dataTableOptions={cellRendererOptions} />
-```
+<Examples.CustomCellRenderer />
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/datatable/CustomCellRenderer.svelte']}
+/>
 
 ## Export
 
-<Table bind:this={tableComponent} {items} />
-
-<div class="mt-4 space-x-2">
-	<Button onclick={handleCSV}>Export CSV</Button>
-	<Button onclick={handleSQL}>Export SQL</Button>
-	<Button onclick={handleTXT}>Export TXT</Button>
-	<Button onclick={handleJSON}>Export JSON</Button>
-</div>
-
-```svelte
-<script lang="ts">
-  import { Table } from "@flowbite-svelte-plugins/datatable";
-  import { Button } from "flowbite-svelte";
-  import { exportJSON, exportCSV, exportTXT, exportSQL } from "simple-datatables";
-
-  import items from "./data/sample.json";
-
-  let tableComponent: any;
-
-  const handleCSV = () => {
-    if (tableComponent?.dataTableInstance) {
-      exportCSV(tableComponent.dataTableInstance, {
-        download: true,
-        lineDelimiter: "\n",
-        columnDelimiter: ";"
-      });
-    }
-  };
-
-  const handleSQL = () => {
-    if (tableComponent?.dataTableInstance) {
-      exportSQL(tableComponent.dataTableInstance, {
-        download: true,
-        tableName: "export_table"
-      });
-    }
-  };
-
-  const handleTXT = () => {
-    if (tableComponent?.dataTableInstance) {
-      exportTXT(tableComponent.dataTableInstance, {
-        download: true
-      });
-    }
-  };
-
-  const handleJSON = () => {
-    if (tableComponent?.dataTableInstance) {
-      exportJSON(tableComponent.dataTableInstance, {
-        download: true,
-        space: 3
-      });
-    }
-  };
-</script>
-
-<Table bind:this={tableComponent} {items} />
-
-<div class="mt-4 space-x-2">
-  <Button onclick={handleCSV}>Export CSV</Button>
-  <Button onclick={handleSQL}>Export SQL</Button>
-  <Button onclick={handleTXT}>Export TXT</Button>
-  <Button onclick={handleJSON}>Export JSON</Button>
-</div>
-```
+<Examples.Export />
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/datatable/Export.svelte']}
+/>
 
 ## Scroll Y
 
-<Table items={products} dataTableOptions={scrollyOptions}/>
-
-```svelte
-<script lang="ts">
-  import { Table } from "@flowbite-svelte-plugins/datatable";
-  import products from "./data/products.json";
-  import type { DataTableOptions } from "simple-datatables";
-
-  const scrollyOptions: DataTableOptions = {
-    paging: false,
-    scrollY: "30vh",
-    rowNavigation: true,
-    tabIndex: 1
-  };
-</script>
-
-<Table items={products} dataTableOptions={scrollyOptions} />
-```
+<Examples.Scrolly />
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/datatable/Scrolly.svelte']}
+/>
 
 ## AND Search
 
@@ -26519,53 +26193,13 @@ Called when all rows are deselected.
 typescriptonDeselectAll?: (dataTable: DataTable) => void
 ```
 
-```svelte
-<script lang="ts">
-  import { Table } from "@flowbite-svelte-plugins/datatable";
-  import items from "./data/sample.json";
-  import type { DataTable } from "simple-datatables";
-  import { Spinner } from "flowbite-svelte";
+### Example
 
-  let isTableLoading = true;
-  let tableInstance: DataTable | null = null;
-
-  function handleInitStart(): void {
-    console.log("Table initialization started");
-    isTableLoading = true;
-  }
-
-  function handleInitComplete(dataTable: DataTable): void {
-    console.log("Table ready:", dataTable);
-    isTableLoading = false;
-  }
-
-  function handleInitError(error: Error): void {
-    console.error("Table initialization failed:", error);
-    isTableLoading = false;
-  }
-
-  function handleSort(column: number, direction: string, dataTable: DataTable): void {
-    console.log(`Column ${column} sorted ${direction}`);
-  }
-
-  function handleSearch(query: string, matched: any[], dataTable: DataTable): void {
-    console.log(`Search: "${query}" found ${matched.length} results`);
-  }
-
-  function handleRowSelect(rowIndex: number, event: Event, dataTable: DataTable): void {
-    console.log(`Row ${rowIndex} selected`);
-  }
-</script>
-
-{#if isTableLoading}
-  <div class="loading-spinner">
-    <div class="h-8 w-8 animate-spin rounded-full border-b-2 border-blue-600"></div>
-    <span>Loading table...</span>
-  </div>
-{/if}
-
-<Table {items} bind:isLoading={isTableLoading} bind:dataTableInstance={tableInstance} onInitStart={handleInitStart} onInitComplete={handleInitComplete} onInitError={handleInitError} onSort={handleSort} onSearch={handleSearch} onSelectRow={handleRowSelect} selectable={true} dataTableOptions={selectRowsOptions} />
-```
+<Examples.Callback />
+<ExampleWrapper
+meta={{hideOutput: true}}
+codeString={exampleRawModules['./examples/datatable/Callback.svelte']}
+/>
 
 ## Component data
 
@@ -26633,7 +26267,7 @@ Use this example of a WYSIWYG text editor to enable basic typography styling and
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/FullFeaturedTexteditor.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/FullFeaturedTexteditor.svelte']}
 />
 
 ## Text Formatting
@@ -26644,7 +26278,7 @@ Use `FormatButtonGroup` to enable typography styling, formatting and marking suc
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Format.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Format.svelte']}
 />
 
 ## Emoji
@@ -26655,7 +26289,7 @@ Type `:` to open the autocomplete. The default value is `emoji={true}`, and you 
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Emoji.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Emoji.svelte']}
 />
 
 ## Mention
@@ -26666,7 +26300,7 @@ Trigger a mention popup by typing `@`. Provide a `mentions` array of name string
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Mention.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Mention.svelte']}
 />
 
 ## Bubble Menu
@@ -26677,7 +26311,7 @@ The bubble menu displays a contextual toolbar near selected text. Disable featur
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/BubbleMenu.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/BubbleMenu.svelte']}
 />
 
 Configure which menu items are displayed using the following examples:
@@ -26685,7 +26319,7 @@ Configure which menu items are displayed using the following examples:
 <Examples.BubbleMenu2 />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/BubbleMenu2.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/BubbleMenu2.svelte']}
 />
 
 ## Math
@@ -26696,7 +26330,7 @@ Render mathematical formulas and equations by adding the `math` prop.
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Math.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Math.svelte']}
 />
 
 ## Invisible Characters
@@ -26707,7 +26341,7 @@ The `InvisibleButtonGroup` component provides toggle, show, and hide controls fo
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Invisible.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Invisible.svelte']}
 />
 
 ## Character Count
@@ -26718,7 +26352,7 @@ The `CharacterCount` component limits the number of allowed characters to a spec
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/CharacterCount.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/CharacterCount.svelte']}
 />
 
 ## Drag Handle
@@ -26729,7 +26363,7 @@ The `dragHandle` prop allows you to easily handle dragging nodes around in the e
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/DragHandle.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/DragHandle.svelte']}
 />
 
 ## File Handler
@@ -26740,7 +26374,7 @@ The `file` prop allows you to easily handle file drops and pastes in the editor.
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Filehandler.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Filehandler.svelte']}
 />
 
 ## Floating Menu
@@ -26751,7 +26385,7 @@ Use the `floatingMenu` prop in `TextEditor` to make a menu appear on an empty li
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/FloatingMenu.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/FloatingMenu.svelte']}
 />
 
 Configure which menu items are displayed using the following examples:
@@ -26760,7 +26394,7 @@ Configure which menu items are displayed using the following examples:
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/FloatingMenu2.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/FloatingMenu2.svelte']}
 />
 
 ## Text Alignment
@@ -26771,7 +26405,7 @@ codeString={exampleRawModules['./examples/FloatingMenu2.svelte']}
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Alignment.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Alignment.svelte']}
 />
 
 ## Layout Elements
@@ -26782,7 +26416,7 @@ codeString={exampleRawModules['./examples/Alignment.svelte']}
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Layouts.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Layouts.svelte']}
 />
 
 ## Images
@@ -26792,7 +26426,7 @@ codeString={exampleRawModules['./examples/Layouts.svelte']}
 <Examples.Images />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Images.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Images.svelte']}
 />
 
 ## Lists
@@ -26802,7 +26436,7 @@ Use this example to create typography elements like bullet lists, ordered lists,
 <Examples.Lists />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Lists.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Lists.svelte']}
 />
 
 ## Fonts
@@ -26810,7 +26444,7 @@ codeString={exampleRawModules['./examples/Lists.svelte']}
 <Examples.Fonts />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Fonts.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Fonts.svelte']}
 />
 
 ## Adding Youtube Videos
@@ -26820,7 +26454,7 @@ Use `YoutubeButtonGroup` to embed videos inside the WYSIWYG text editor based on
 <Examples.Youtube />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Youtube.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Youtube.svelte']}
 />
 
 ## Editing Tables
@@ -26830,7 +26464,7 @@ Use `TableButtonGroup`s to edit table data inside the WYSIWYG text editor by add
 <Examples.Tables />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Tables.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Tables.svelte']}
 />
 
 ## Undo and Redo
@@ -26840,7 +26474,7 @@ Use the `UndoRedoButtonGroup` component to integrate undo and redo actions.
 <Examples.UndoRedo />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/UndoRedo.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/UndoRedo.svelte']}
 />
 
 ## Exporting Data
@@ -26850,7 +26484,7 @@ Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG 
 <Examples.Export />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Export.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Export.svelte']}
 />
 
 ## TaskList
@@ -26858,7 +26492,7 @@ codeString={exampleRawModules['./examples/Export.svelte']}
 <Examples.Tasklist />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Tasklist.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Tasklist.svelte']}
 />
 
 ## Details
@@ -26868,7 +26502,7 @@ Use `summary` and `detailsPlaceholder` props to change placeholders.
 <Examples.Details />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Details.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Details.svelte']}
 />
 
 ## Source and HTML
@@ -26878,7 +26512,7 @@ Use the following example to view/edit source code and insert HTML code.
 <Examples.SourceAndHtml />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/SourceAndHtml.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/SourceAndHtml.svelte']}
 />
 
 ## Table of Contents
@@ -26889,7 +26523,7 @@ Use the following example to display Table of Contents.
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Toc.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Toc.svelte']}
 />
 
 ## Placeholder
@@ -26899,7 +26533,7 @@ Use the `placeholder` prop to customize the text shown in empty editor content (
 <Examples.Placeholder />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Placeholder.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Placeholder.svelte']}
 />
 
 ## Heading
@@ -26907,7 +26541,7 @@ codeString={exampleRawModules['./examples/Placeholder.svelte']}
 <Examples.Heading />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Heading.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Heading.svelte']}
 />
 
 ## Editable Button
@@ -26917,7 +26551,7 @@ Use the `EditableButton` to enable or disable editing mode.
 <Examples.EditableButton />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/EditableButton.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/EditableButton.svelte']}
 />
 
 ## Autofocus Position
@@ -26932,7 +26566,7 @@ Type: 'start' | 'end' | 'all' | number | boolean | null
 <P>See an example at <A href="/examples/texteditor/autofocus">this page</A>.</P>
 <ExampleWrapper 
   meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Autofocus.svelte']}
+  codeString={exampleRawModules['./examples/wysiwyg/Autofocus.svelte']}
 />
 
 ## Getting and Setting Content
@@ -26942,7 +26576,7 @@ Use the following example to get and set text editor content.
 <Examples.GetSetContent />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/GetSetContent.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/GetSetContent.svelte']}
 />
 
 ## Customizing Group components
@@ -26951,7 +26585,7 @@ You can control display of buttons by adding `false` to a button group component
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/CustomGroup.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/CustomGroup.svelte']}
 />
 
 ## Customizing texteditor
@@ -26961,7 +26595,7 @@ Either using the above example or use button components to create your custom te
 <Examples.CustomEditor />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/CustomEditor.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/CustomEditor.svelte']}
 />
 
 ## LLM Link

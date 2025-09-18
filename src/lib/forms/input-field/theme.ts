@@ -14,7 +14,7 @@ export const input = tv({
     combo: "absolute top-full right-0 left-0 z-20 mt-1 max-h-60 overflow-y-auto rounded-md border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800",
     comboItem: "text-gray-900 dark:text-gray-50",
     div: "",
-    svg: "",
+    svg: ""
   },
   variants: {
     size: {

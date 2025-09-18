@@ -49,7 +49,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[EnhandedImgProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1929)
+[EnhandedImgProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1936)
 ## Props
 @prop src
 @prop href

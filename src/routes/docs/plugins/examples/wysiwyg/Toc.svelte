@@ -16,7 +16,6 @@
   <p>Most word processors can read and write files in plain text format, allowing them to open files saved from text editors. Saving these files from a word processor, however, requires ensuring the file is written in plain text format, and that any text encoding or BOM settings won't obscure the file for its intended use. Non-WYSIWYG word processors, such as WordStar, are more easily pressed into service as text editors, and in fact were commonly used as such during the 1980s.</p>
 `;
 
-
   let editorInstance = $state<Editor | null>(null);
 </script>
 

@@ -184,7 +184,7 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 
 #### Types
 
-[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1836)
+[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1843)
 
 #### Props
 

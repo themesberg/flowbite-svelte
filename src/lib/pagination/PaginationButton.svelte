@@ -13,7 +13,7 @@
   const table = getContext<boolean>("table");
   const activeClasses = getContext<string>("activeClasses");
 
-  const paginationCls = $derived.by(() => {    
+  const paginationCls = $derived.by(() => {
     if (active && activeClasses) {
       return paginationButton({
         size: getContext("size") ?? size,
@@ -24,7 +24,7 @@
         class: clsx(theme, activeClasses, className)
       });
     }
-    
+
     // Use default theme styles
     return paginationButton({
       size: getContext("size") ?? size,

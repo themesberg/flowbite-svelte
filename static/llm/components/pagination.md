@@ -420,13 +420,39 @@ You can use the following code to show the number of data shown inside a table e
 </div>
 ```
 
+## Active class
+
+```svelte
+<script lang="ts">
+  import { PaginationNav } from "flowbite-svelte";
+
+  let currentPage = $state(1);
+  const totalPages = 20;
+
+  function handlePageChange(page: number) {
+    currentPage = page;
+    // Additional logic here
+    console.log("Page changed to:", page);
+  }
+</script>
+
+<PaginationNav 
+  currentPage={currentPage} 
+  totalPages={totalPages} 
+  onPageChange={handlePageChange}
+  classes={{ 
+    active: "bg-green-100 text-green-600" 
+  }} 
+/>
+```
+
 ## Component data
 
 ### Pagination
 
 #### Types
 
-[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1185)
+[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1192)
 
 #### Props
 
@@ -459,7 +485,7 @@ You can use the following code to show the number of data shown inside a table e
 
 #### Types
 
-[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1181)
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1188)
 
 #### Props
 

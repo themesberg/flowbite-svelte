@@ -15,8 +15,7 @@ const SINGLE_SELECTION_KEY = Symbol("singleton");
  * @returns {SingleSelectionContext<T>}
  */
 export function createSingleSelectionContext(nonReactive = false) {
-  if (nonReactive)
-    return setContext(SINGLE_SELECTION_KEY, {});
+  if (nonReactive) return setContext(SINGLE_SELECTION_KEY, {});
   const context = $state({ value: null });
   return setContext(SINGLE_SELECTION_KEY, context);
 }
@@ -42,11 +41,10 @@ function setSelected(context, open, value) {
  */
 export function useSingleSelection(callback) {
   const context = getContext(SINGLE_SELECTION_KEY) ?? createSingleSelectionContext(false);
-  if (!Object.prototype.hasOwnProperty.call(context, 'value')) return () => context; // non-reactive context, do nothing
+  if (!Object.prototype.hasOwnProperty.call(context, "value")) return () => context; // non-reactive context, do nothing
 
   $effect(() => {
-    if (context.value !== null)
-      callback(context.value);
+    if (context.value !== null) callback(context.value);
   });
 
   return (open, v) => untrack(() => setSelected(context, open, v));

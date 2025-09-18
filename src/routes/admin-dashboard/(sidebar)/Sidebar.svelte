@@ -151,7 +151,7 @@
     </SidebarGroup>
     <SidebarGroup class={groupClass}>
       {#each links as { label, href, Icon } (label)}
-        <SidebarItem {label} {href} spanClass="ml-3" class={itemClass} >
+        <SidebarItem {label} {href} spanClass="ml-3" class={itemClass}>
           {#snippet icon()}
             <Icon class={iconClass} />
           {/snippet}

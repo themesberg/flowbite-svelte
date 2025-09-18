@@ -47,7 +47,7 @@ Use this example of a WYSIWYG text editor to enable basic typography styling and
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/FullFeaturedTexteditor.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/FullFeaturedTexteditor.svelte']}
 />
 
 ## Text Formatting
@@ -58,7 +58,7 @@ Use `FormatButtonGroup` to enable typography styling, formatting and marking suc
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Format.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Format.svelte']}
 />
 
 ## Emoji
@@ -69,7 +69,7 @@ Type `:` to open the autocomplete. The default value is `emoji={true}`, and you 
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Emoji.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Emoji.svelte']}
 />
 
 ## Mention
@@ -80,7 +80,7 @@ Trigger a mention popup by typing `@`. Provide a `mentions` array of name string
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Mention.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Mention.svelte']}
 />
 
 ## Bubble Menu
@@ -91,7 +91,7 @@ The bubble menu displays a contextual toolbar near selected text. Disable featur
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/BubbleMenu.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/BubbleMenu.svelte']}
 />
 
 Configure which menu items are displayed using the following examples:
@@ -99,7 +99,7 @@ Configure which menu items are displayed using the following examples:
 <Examples.BubbleMenu2 />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/BubbleMenu2.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/BubbleMenu2.svelte']}
 />
 
 ## Math
@@ -110,7 +110,7 @@ Render mathematical formulas and equations by adding the `math` prop.
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Math.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Math.svelte']}
 />
 
 ## Invisible Characters
@@ -121,7 +121,7 @@ The `InvisibleButtonGroup` component provides toggle, show, and hide controls fo
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Invisible.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Invisible.svelte']}
 />
 
 ## Character Count
@@ -132,7 +132,7 @@ The `CharacterCount` component limits the number of allowed characters to a spec
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/CharacterCount.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/CharacterCount.svelte']}
 />
 
 ## Drag Handle
@@ -143,7 +143,7 @@ The `dragHandle` prop allows you to easily handle dragging nodes around in the e
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/DragHandle.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/DragHandle.svelte']}
 />
 
 ## File Handler
@@ -154,7 +154,7 @@ The `file` prop allows you to easily handle file drops and pastes in the editor.
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Filehandler.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Filehandler.svelte']}
 />
 
 ## Floating Menu
@@ -165,7 +165,7 @@ Use the `floatingMenu` prop in `TextEditor` to make a menu appear on an empty li
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/FloatingMenu.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/FloatingMenu.svelte']}
 />
 
 Configure which menu items are displayed using the following examples:
@@ -174,7 +174,7 @@ Configure which menu items are displayed using the following examples:
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/FloatingMenu2.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/FloatingMenu2.svelte']}
 />
 
 ## Text Alignment
@@ -185,7 +185,7 @@ codeString={exampleRawModules['./examples/FloatingMenu2.svelte']}
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Alignment.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Alignment.svelte']}
 />
 
 ## Layout Elements
@@ -196,7 +196,7 @@ codeString={exampleRawModules['./examples/Alignment.svelte']}
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Layouts.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Layouts.svelte']}
 />
 
 ## Images
@@ -206,7 +206,7 @@ codeString={exampleRawModules['./examples/Layouts.svelte']}
 <Examples.Images />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Images.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Images.svelte']}
 />
 
 ## Lists
@@ -216,7 +216,7 @@ Use this example to create typography elements like bullet lists, ordered lists,
 <Examples.Lists />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Lists.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Lists.svelte']}
 />
 
 ## Fonts
@@ -224,7 +224,7 @@ codeString={exampleRawModules['./examples/Lists.svelte']}
 <Examples.Fonts />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Fonts.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Fonts.svelte']}
 />
 
 ## Adding Youtube Videos
@@ -234,7 +234,7 @@ Use `YoutubeButtonGroup` to embed videos inside the WYSIWYG text editor based on
 <Examples.Youtube />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Youtube.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Youtube.svelte']}
 />
 
 ## Editing Tables
@@ -244,7 +244,7 @@ Use `TableButtonGroup`s to edit table data inside the WYSIWYG text editor by add
 <Examples.Tables />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Tables.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Tables.svelte']}
 />
 
 ## Undo and Redo
@@ -254,7 +254,7 @@ Use the `UndoRedoButtonGroup` component to integrate undo and redo actions.
 <Examples.UndoRedo />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/UndoRedo.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/UndoRedo.svelte']}
 />
 
 ## Exporting Data
@@ -264,7 +264,7 @@ Use `ExportButtonGroup.svelte` to export the text content inside of the WYSIWYG 
 <Examples.Export />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Export.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Export.svelte']}
 />
 
 ## TaskList
@@ -272,7 +272,7 @@ codeString={exampleRawModules['./examples/Export.svelte']}
 <Examples.Tasklist />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Tasklist.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Tasklist.svelte']}
 />
 
 ## Details
@@ -282,7 +282,7 @@ Use `summary` and `detailsPlaceholder` props to change placeholders.
 <Examples.Details />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Details.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Details.svelte']}
 />
 
 ## Source and HTML
@@ -292,7 +292,7 @@ Use the following example to view/edit source code and insert HTML code.
 <Examples.SourceAndHtml />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/SourceAndHtml.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/SourceAndHtml.svelte']}
 />
 
 ## Table of Contents
@@ -303,7 +303,7 @@ Use the following example to display Table of Contents.
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Toc.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Toc.svelte']}
 />
 
 ## Placeholder
@@ -313,7 +313,7 @@ Use the `placeholder` prop to customize the text shown in empty editor content (
 <Examples.Placeholder />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Placeholder.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Placeholder.svelte']}
 />
 
 ## Heading
@@ -321,7 +321,7 @@ codeString={exampleRawModules['./examples/Placeholder.svelte']}
 <Examples.Heading />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/Heading.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/Heading.svelte']}
 />
 
 ## Editable Button
@@ -331,7 +331,7 @@ Use the `EditableButton` to enable or disable editing mode.
 <Examples.EditableButton />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/EditableButton.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/EditableButton.svelte']}
 />
 
 ## Autofocus Position
@@ -346,7 +346,7 @@ Type: 'start' | 'end' | 'all' | number | boolean | null
 <P>See an example at <A href="/examples/texteditor/autofocus">this page</A>.</P>
 <ExampleWrapper 
   meta={{hideOutput: true}}
-  codeString={exampleRawModules['./examples/Autofocus.svelte']}
+  codeString={exampleRawModules['./examples/wysiwyg/Autofocus.svelte']}
 />
 
 ## Getting and Setting Content
@@ -356,7 +356,7 @@ Use the following example to get and set text editor content.
 <Examples.GetSetContent />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/GetSetContent.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/GetSetContent.svelte']}
 />
 
 ## Customizing Group components
@@ -365,7 +365,7 @@ You can control display of buttons by adding `false` to a button group component
 
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/CustomGroup.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/CustomGroup.svelte']}
 />
 
 ## Customizing texteditor
@@ -375,7 +375,7 @@ Either using the above example or use button components to create your custom te
 <Examples.CustomEditor />
 <ExampleWrapper
 meta={{hideOutput: true}}
-codeString={exampleRawModules['./examples/CustomEditor.svelte']}
+codeString={exampleRawModules['./examples/wysiwyg/CustomEditor.svelte']}
 />
 
 ## LLM Link

@@ -106,7 +106,7 @@ Use this example with control buttons to increment and decrement the value insid
       <Button type="button" id="decrement-button" onclick={() => (quantity -= 1)}>
         <MinusOutline />
       </Button>
-      <Input bind:value={quantity} type="number" id="quantity-input" aria-describedby="helper-text-explanation" placeholder="999" required class="w-20" />
+      <Input bind:value={quantity} type="number" id="quantity-input" aria-describedby="helper-text-explanation" placeholder="999" required class="w-20 text-center" />
       <Button type="button" id="increment-button" onclick={() => (quantity += 1)}>
         <PlusOutline />
       </Button>
@@ -125,27 +125,32 @@ Use this example to also add an icon inside the input field to improve the user 
   import { Input, Label, P, Button, ButtonGroup } from "flowbite-svelte";
   import { PlusOutline, MinusOutline, HomeOutline } from "flowbite-svelte-icons";
   let bedroom: number = $state(3);
+  $effect(() => {
+    bedroom = Math.min(5, Math.max(1, bedroom));
+  });
 </script>
 
 <form class="mx-auto max-w-xs">
-  <Label class="mb-2 text-sm" for="quantity-input">Choose quantity:</Label>
-  <div class="relative flex max-w-[11rem] items-center">
-    <ButtonGroup>
-      <Button type="button" id="decrement-button" onclick={() => (bedroom -= 1)} class="h-11 p-3">
-        <MinusOutline />
-      </Button>
-      <Input min="1" max="5" bind:value={bedroom} type="number" id="quantity-input" aria-describedby="helper-text-explanation" placeholder=" " required class="h-11 w-28 pb-6 text-center" />
-      <div class="absolute start-1/2 bottom-0 flex -translate-x-1/2 items-center space-x-1 text-xs text-gray-400 rtl:translate-x-1/2 rtl:space-x-reverse">
-        <HomeOutline class="h-4 w-4" />
-        <span>Bedrooms</span>
-      </div>
-      <Button type="button" id="increment-button" onclick={() => (bedroom += 1)} class="h-11 p-3">
-        <PlusOutline />
-      </Button>
-    </ButtonGroup>
-  </div>
+  <Label class="mb-2 text-sm" for="quantity_input">Choose quantity:</Label>
+
+  <ButtonGroup class="relative">
+    <Button type="button" onclick={() => (bedroom -= 1)} class="h-11 p-3">
+      <MinusOutline />
+    </Button>
+    <Input min="1" max="5" bind:value={bedroom} type="number" id="quantity_input" aria-describedby="helper-text-explanation" placeholder=" " required class="h-11 w-28 pb-6 text-center" />
+    <div class="absolute start-1/2 bottom-1 flex -translate-x-1/2 items-center space-x-1 text-xs text-gray-400 rtl:translate-x-1/2 rtl:space-x-reverse">
+      <HomeOutline class="h-4 w-4" />
+      <span>Bedrooms</span>
+    </div>
+    <Button type="button" onclick={() => (bedroom += 1)} class="h-11 p-3">
+      <PlusOutline />
+    </Button>
+  </ButtonGroup>
+
   <P id="helper-text-explanation" class="mt-2 text-sm">Please select the number of bedrooms.</P>
 </form>
+
+>
 ```
 
 ## Counter input
@@ -157,16 +162,19 @@ Use this example as an alternative style to the control buttons example above.
   import { Input, Label, Button, ButtonGroup } from "flowbite-svelte";
   import { PlusOutline, MinusOutline } from "flowbite-svelte-icons";
   let counterInput: number = $state(12);
+  $effect(() => {
+    counterInput = Math.max(1, counterInput);
+  });
 </script>
 
 <form class="mx-auto max-w-xs">
-  <Label for="counter-input" class="mb-1 block text-sm font-medium text-gray-900 dark:text-white">Choose quantity:</Label>
+  <Label for="counter-input" class="mb-1 text-sm text-gray-900 dark:text-white">Choose quantity:</Label>
   <div class="relative flex items-center">
-    <Button color="alternative" id="decrement-button" class="m-0 h-5 w-5 p-4" onclick={() => (counterInput -= 1)}>
+    <Button color="alternative" class="h-5 w-5 rounded p-2" onclick={() => (counterInput -= 1)}>
       <MinusOutline class="h-2.5 w-2.5" />
     </Button>
-    <Input type="number" id="counter-input" class="m-0 w-0 w-12 shrink-0 border-0 bg-transparent p-0 text-center text-sm  font-normal text-gray-900 focus:ring-0 focus:outline-none dark:text-white" placeholder="" bind:value={counterInput} required />
-    <Button color="alternative" id="increment-button" class="h-5 w-5 p-4" onclick={() => (counterInput += 1)}>
+    <Input id="counter-input" type="number" class="w-12 shrink-0 border-0 bg-transparent p-0 text-center dark:bg-transparent" placeholder="" bind:value={counterInput} required />
+    <Button color="alternative" class="h-5 w-5 rounded p-2" onclick={() => (counterInput += 1)}>
       <PlusOutline class="h-2.5 w-2.5" />
     </Button>
   </div>

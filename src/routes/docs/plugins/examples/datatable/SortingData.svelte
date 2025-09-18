@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Table } from '@flowbite-svelte-plugins/datatable';
-  import items from './data/gdp.json';
+  import { Table } from "@flowbite-svelte-plugins/datatable";
+  import items from "./data/gdp.json";
 
   const dataTableOptions = {
     searchable: false,

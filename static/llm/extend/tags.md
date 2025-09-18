@@ -41,7 +41,7 @@ Import the `Tags` component in a script tag.
   let tags: string[] = $state([]);
 </script>
 
-<Tags bind:value={tags} inputProps={{ id: "my-tags-input" }} availableTags={["react", "svelte", "vue"]} />
+<Tags bind:value={tags} inputProps={{ id: "my-tags-input" }} />
 ```
 
 ## Additional Props

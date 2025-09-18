@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.13.9
+
+### Patch Changes
+
+- 7ed52f435 feat(pagination): add classes.active
+- 1b237a028 doc(admin-dashboard/crud/product): page update
+- 15b42bef9 fix: admin dashboard update
+- 50ff87702 fix: #1741 (#1761)
+- 093c8c31e docs(datatable): Export example update
+- 668d99849 Tweaks to number input examples (#1758)
+- 2917af546 Remove redundant wrapper for Input (#1757)
+- 840343d5c docs(tags): example update and add dark style
+
 ## 1.13.8
 
 ### Patch Changes

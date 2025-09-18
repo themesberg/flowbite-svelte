@@ -28,25 +28,25 @@
   }
 
   const andsearchOptions = {
-    perPageSelect: [5, 10, 15, ['All', -1]],
+    perPageSelect: [5, 10, 15, ["All", -1]],
     columns: [
       {
         select: 1,
-        searchItemSeparator: ';',
+        searchItemSeparator: ";",
         ignorePunctuation: false
       },
       {
         select: 2,
-        sortSequence: ['desc', 'asc']
+        sortSequence: ["desc", "asc"]
       },
       {
         select: 3,
-        sortSequence: ['desc']
+        sortSequence: ["desc"]
       },
       {
         select: 4,
-        cellClass: 'green',
-        headerClass: 'red'
+        cellClass: "green",
+        headerClass: "red"
       }
     ],
     template: (options: TemplateOptions, dom: TemplateDom) => `<div class='${options.classes.top}'>
@@ -56,11 +56,11 @@
             </label>
         </div>
         <div class='${options.classes.search}'>
-            <input class='${options.classes.input}' placeholder='OR search' type='search' title='${options.labels.searchTitle}'${dom.id ? ` aria-controls="${dom.id}"` : ''}>
-            <input class='${options.classes.input}' placeholder='AND search' type='search' data-and="true" title='${options.labels.searchTitle}'${dom.id ? ` aria-controls="${dom.id}"` : ''}>
+            <input class='${options.classes.input}' placeholder='OR search' type='search' title='${options.labels.searchTitle}'${dom.id ? ` aria-controls="${dom.id}"` : ""}>
+            <input class='${options.classes.input}' placeholder='AND search' type='search' data-and="true" title='${options.labels.searchTitle}'${dom.id ? ` aria-controls="${dom.id}"` : ""}>
         </div>
         </div>
-        <div class='${options.classes.container}'${options.scrollY.length ? ` style='height: ${options.scrollY}; overflow-Y: auto;'` : ''}></div>
+        <div class='${options.classes.container}'${options.scrollY.length ? ` style='height: ${options.scrollY}; overflow-Y: auto;'` : ""}></div>
         <div class='${options.classes.bottom}'>
         <div class='${options.classes.info}'></div>
         <nav class='${options.classes.pagination}'></nav>
