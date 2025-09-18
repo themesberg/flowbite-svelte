@@ -422,6 +422,8 @@ You can use the following code to show the number of data shown inside a table e
 
 ## Active class
 
+Use the following example to add active class.
+
 ```svelte
 <script lang="ts">
   import { PaginationNav } from "flowbite-svelte";
@@ -436,13 +438,13 @@ You can use the following code to show the number of data shown inside a table e
   }
 </script>
 
-<PaginationNav 
-  currentPage={currentPage} 
-  totalPages={totalPages} 
+<PaginationNav
+  {currentPage}
+  {totalPages}
   onPageChange={handlePageChange}
-  classes={{ 
-    active: "bg-green-100 text-green-600" 
-  }} 
+  classes={{
+    active: "bg-green-100 text-green-600"
+  }}
 />
 ```
 

@@ -11,11 +11,11 @@
   }
 </script>
 
-<PaginationNav 
-  currentPage={currentPage} 
-  totalPages={totalPages} 
+<PaginationNav
+  {currentPage}
+  {totalPages}
   onPageChange={handlePageChange}
-  classes={{ 
-    active: "bg-green-100 text-green-600" 
-  }} 
+  classes={{
+    active: "bg-green-100 text-green-600"
+  }}
 />

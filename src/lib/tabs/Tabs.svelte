@@ -11,7 +11,7 @@
   if (classes?.active) {
     setContext("activeClasses", classes.active);
   }
-  
+
   // base, content, divider, active, inactive
   warnThemeDeprecation("Tabs", { ulClass, contentClass }, { ulClass: "class", contentClass: "content" });
   const styling = $derived(classes ?? { content: contentClass });

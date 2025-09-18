@@ -2,7 +2,7 @@
   import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
-<Tabs classes={{active:"p-4 text-white bg-blue-300 rounded-t-lg dark:bg-blue-800 dark:text-white"}}>
+<Tabs classes={{ active: "p-4 text-white bg-blue-300 rounded-t-lg dark:bg-blue-800 dark:text-white" }}>
   <TabItem open title="Profile">
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Profile:</b>

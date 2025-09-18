@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.13.10
+
+### Patch Changes
+
+- fix(tabs): #1762 can use classes.active
+
 ## 1.13.9
 
 ### Patch Changes
