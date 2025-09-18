@@ -120,6 +120,32 @@ You can use the following code to show the number of data shown inside a table e
 {#include TableDataIcons2.svelte}
 ```
 
+## Active class
+
+```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
+<script lang="ts">
+  import { PaginationNav } from "flowbite-svelte";
+
+  let currentPage = $state(1);
+  const totalPages = 20;
+
+  function handlePageChange(page: number) {
+    currentPage = page;
+    // Additional logic here
+    console.log("Page changed to:", page);
+  }
+</script>
+
+<PaginationNav 
+  currentPage={currentPage} 
+  totalPages={totalPages} 
+  onPageChange={handlePageChange}
+  classes={{ 
+    active: "bg-green-100 text-green-600" 
+  }} 
+/>
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

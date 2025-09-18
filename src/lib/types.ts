@@ -1176,6 +1176,13 @@ export interface PaginationNavProps extends PaginationNavVariants, HTMLAttribute
   size?: "default" | "large";
   spanClass?: ClassValue;
   tableDivClass?: ClassValue;
+  classes?: {
+    prev?: ClassValue;
+    next?: ClassValue;
+    span?: ClassValue;
+    tableDiv?: ClassValue;
+    active?: ClassValue; // Add this line to support custom active classes
+  };
 }
 
 export interface PaginationItemProps extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {

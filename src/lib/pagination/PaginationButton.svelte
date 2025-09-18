@@ -11,17 +11,30 @@
 
   const group = getContext<boolean>("group");
   const table = getContext<boolean>("table");
+  const activeClasses = getContext<string>("activeClasses");
 
-  const paginationCls = $derived(
-    paginationButton({
+  const paginationCls = $derived.by(() => {    
+    if (active && activeClasses) {
+      return paginationButton({
+        size: getContext("size") ?? size,
+        active: false, // Set to false to avoid theme's active styles
+        group,
+        table,
+        disabled,
+        class: clsx(theme, activeClasses, className)
+      });
+    }
+    
+    // Use default theme styles
+    return paginationButton({
       size: getContext("size") ?? size,
-      active,
+      active: active,
       group,
       table,
       disabled,
       class: clsx(theme, className)
-    })
-  );
+    });
+  });
 
   function handleClick(e: MouseEvent) {
     if (disabled) {

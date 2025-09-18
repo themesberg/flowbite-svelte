@@ -39,6 +39,9 @@
   setContext("group", true);
   setContext("size", size);
   setContext("table", layout === "table");
+  if (classes?.active) {
+    setContext("activeClasses", classes.active);
+  }
 
   // Calculate visible pages range using Svelte 5 derived values
   const halfVisiblePages = $derived(Math.floor(visiblePages / 2));

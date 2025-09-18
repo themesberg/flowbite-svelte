@@ -12,7 +12,8 @@ export const paginationNav = tv({
     tableDiv: "flex items-center text-sm mb-4",
     span: "font-semibold mx-1",
     prev: "rounded-none",
-    next: "rounded-none"
+    next: "rounded-none",
+    active: ""
   },
   variants: {
     size: {
@@ -39,7 +40,7 @@ export const paginationButton = tv({
       large: "h-10 px-4 text-base"
     },
     active: {
-      true: "text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white",
+      true: "text-primary-600 border border-gray-300 bg-primary-50 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white",
       false: "text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
     },
     group: {
@@ -78,7 +79,7 @@ export const paginationItem = tv({
       large: "h-10 px-4 text-base"
     },
     active: {
-      true: "text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white",
+      true: "text-primary-600 border border-gray-300 bg-primary-50 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white",
       false: "text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
     },
     group: {
