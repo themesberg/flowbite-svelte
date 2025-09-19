@@ -18,7 +18,7 @@ export type ButtonToggleVariants = VariantProps<typeof buttonToggle> & Classes<t
 
 export const buttonToggle = tv({
   slots: {
-    button: "relative flex items-center transition-all duration-200 focus:outline-none border-r last:border-r-0 dark:bg-white dark:text-gray-800",
+    button: "relative flex items-center transition-all duration-200 focus:outline-none border-r last:border-r-0 dark:bg-white dark:text-gray-800 disabled:cursor-not-allowed disabled:opacity-50",
     content: "flex items-center w-full overflow-hidden relative",
     text: "transition-all duration-200 ml-0",
     icon: "absolute left-0 flex-shrink-0 text-green-600"

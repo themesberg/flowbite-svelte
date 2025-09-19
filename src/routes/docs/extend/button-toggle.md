@@ -63,6 +63,12 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 {#include Custom.svelte}
 ```
 
+## Disabled
+
+```svelte example class="flex flex-col space-y-4"
+{#include Disabled.svelte}
+```
+
 ## See also
 
 <Seealso links={relatedLinks} />

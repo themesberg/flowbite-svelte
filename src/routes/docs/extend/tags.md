@@ -39,6 +39,12 @@ Import the `Tags` component in a script tag.
 {#include InputProps.svelte}
 ```
 
+## Disabled
+
+```svelte example class="h-40"
+{#include Disabled.svelte}
+```
+
 ## Additional Props
 
 - `unique` (boolean, default: `false`): Prevents duplicate tags from being added if set to true.
