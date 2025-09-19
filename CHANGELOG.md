@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.13.12
+
+### Patch Changes
+
+- fix(NavLi): add handleClick to button
+
 ## 1.13.11
 
 ### Patch Changes
