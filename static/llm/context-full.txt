@@ -1,5 +1,5 @@
 # undefined Documentation - Full Context
-# Generated on 2025-09-18T16:18:38.191Z
+# Generated on 2025-09-19T05:50:29.405Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -10798,7 +10798,7 @@ Use the following example to add active class.
   {totalPages}
   onPageChange={handlePageChange}
   classes={{
-    active: "bg-green-100 text-green-600"
+    active: "bg-green-100 dark:bg-green-700 text-green-600 dark:text-white"
   }}
 />
 ```
@@ -16187,7 +16187,7 @@ Use the following example to add active class.
   import { Tabs, TabItem } from "flowbite-svelte";
 </script>
 
-<Tabs classes={{ active: "p-4 text-white bg-blue-300 rounded-t-lg dark:bg-blue-800 dark:text-white" }}>
+<Tabs classes={{ active: "p-4 text-white bg-blue-500 rounded-t-lg dark:bg-blue-600 dark:text-white" }}>
   <TabItem open title="Profile">
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Profile:</b>
@@ -23929,6 +23929,29 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 <p class="mt-2 dark:text-white">Selected: {singleValue || "None"}</p>
 ```
 
+## Disabled
+
+```svelte
+<script lang="ts">
+  import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
+
+  let singleValue = $state<string | null>(null);
+
+  function handleSingleSelect(value: string | null) {
+    singleValue = value;
+    console.log("Single selection:", value);
+  }
+</script>
+
+<h3 class="mb-2 text-lg font-medium dark:text-white">Single Selection</h3>
+<ButtonToggleGroup onSelect={handleSingleSelect}>
+  <ButtonToggle disabled value="one" selected={singleValue === "one"}>One</ButtonToggle>
+  <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
+  <ButtonToggle value="three" selected={singleValue === "three"}>Three</ButtonToggle>
+</ButtonToggleGroup>
+<p class="mt-2 dark:text-white">Selected: {singleValue || "None"}</p>
+```
+
 ## See also
 
 <Seealso links={relatedLinks} />
@@ -24391,6 +24414,26 @@ Import the `Tags` component in a script tag.
 </script>
 
 <Tags bind:value={tags} inputProps={{ id: "my-tags-input" }} />
+```
+
+## Disabled
+
+```svelte
+<script lang="ts">
+  import { Button, Tags } from "flowbite-svelte";
+  let tags: string[] = $state([]);
+  const handleClick = () => {
+    alert(`Submitted: ${tags}`);
+  };
+</script>
+
+<form>
+  <Tags inputProps={{ disabled: true }} class="mt-5 mb-3" bind:value={tags} />
+  {#if tags.length > 0}
+    <pre>{JSON.stringify(tags, null, 2)}</pre>
+  {/if}
+  <Button onclick={handleClick} disabled>Submit</Button>
+</form>
 ```
 
 ## Additional Props

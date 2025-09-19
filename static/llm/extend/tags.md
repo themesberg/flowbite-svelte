@@ -44,6 +44,26 @@ Import the `Tags` component in a script tag.
 <Tags bind:value={tags} inputProps={{ id: "my-tags-input" }} />
 ```
 
+## Disabled
+
+```svelte
+<script lang="ts">
+  import { Button, Tags } from "flowbite-svelte";
+  let tags: string[] = $state([]);
+  const handleClick = () => {
+    alert(`Submitted: ${tags}`);
+  };
+</script>
+
+<form>
+  <Tags inputProps={{ disabled: true }} class="mt-5 mb-3" bind:value={tags} />
+  {#if tags.length > 0}
+    <pre>{JSON.stringify(tags, null, 2)}</pre>
+  {/if}
+  <Button onclick={handleClick} disabled>Submit</Button>
+</form>
+```
+
 ## Additional Props
 
 - `unique` (boolean, default: `false`): Prevents duplicate tags from being added if set to true.
