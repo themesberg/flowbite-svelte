@@ -225,9 +225,9 @@
             <TableBodyCell>{product.category}</TableBodyCell>
             <TableBodyCell>{product.discount ? `${product.discount}%` : "None"}</TableBodyCell>
             <TableBodyCell class="space-x-2">
-              <button onclick={() => editProduct(product)} class="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400">Edit</button>
-              <button onclick={() => duplicateProduct(product)} class="text-sm text-green-600 hover:text-green-800 dark:text-green-400">Duplicate</button>
-              <button onclick={() => deleteProduct(product.id)} class="text-sm text-red-600 hover:text-red-800 dark:text-red-400">Delete</button>
+              <button onclick={() => editProduct(product)} class="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-200 bg-gray-100 dark:bg-gray-600">Edit</button>
+              <button onclick={() => duplicateProduct(product)} class="text-sm text-green-600 hover:text-green-800 dark:text-green-600 bg-gray-100 dark:bg-gray-600 ">Duplicate</button>
+              <button onclick={() => deleteProduct(product.id)} class="text-sm text-red-600 hover:text-red-800 dark:text-red-600 bg-gray-100 dark:bg-gray-600">Delete</button>
             </TableBodyCell>
           </TableBodyRow>
         {/each}
