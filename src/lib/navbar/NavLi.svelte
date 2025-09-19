@@ -30,7 +30,7 @@
 
 <li>
   {#if restProps.href === undefined}
-    <button role="presentation" {...restProps} class={liClass}>
+    <button role="presentation" onclick={handleClick} {...restProps} class={liClass}>
       {@render children?.()}
     </button>
   {:else}

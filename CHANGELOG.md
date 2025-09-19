@@ -4,10 +4,10 @@
 
 ### Patch Changes
 
-- - fix(tabs): active class
-  - fix(tags): disabled class to input
-  - fix(button-toggle): disabled class
-  - fix: #1754 #1765
+- fix(tabs): active class
+- fix(tags): disabled class to input
+- fix(button-toggle): disabled class
+- fix: #1754 #1765
 
 ## 1.13.10
 
