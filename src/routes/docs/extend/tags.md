@@ -41,6 +41,8 @@ Import the `Tags` component in a script tag.
 
 ## Disabled
 
+Use `disabled` to the `Tags` component.
+
 ```svelte example class="h-40"
 {#include Disabled.svelte}
 ```

@@ -903,6 +903,7 @@ export interface TagsProps extends TagsVariants, HTMLAttributes<HTMLDivElement> 
   showAvailableTags?: boolean;
   allowNewTags?: boolean;
   inputProps?: HTMLInputAttributes;
+  disabled?: boolean;
 }
 
 // Timepicker
