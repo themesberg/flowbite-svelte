@@ -2,7 +2,7 @@
   "name": "NavHamburger",
   "type": {
     "name": "NavHamburgerProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1100"
   },
   "props": [
     ["children", ""],

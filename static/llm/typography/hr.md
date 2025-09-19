@@ -114,7 +114,7 @@ The `restProps` will be removed in the next version. Please use `divProps` and `
 
 #### Types
 
-[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1902)
+[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1903)
 
 #### Props
 

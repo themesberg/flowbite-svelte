@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.13.13
+
+### Patch Changes
+
+- fix(Tags): add top-level disabled to CloseButton and input feild
+
 ## 1.13.12
 
 ### Patch Changes
