@@ -38,7 +38,7 @@ Use this free example of a header component that you can position on top of a he
     <Button color="light">
       Actions<ChevronDownOutline />
     </Button>
-    <Dropdown>
+    <Dropdown simple>
       <DropdownItem>Mass Edit</DropdownItem>
       <DropdownDivider />
       <DropdownItem>Delete all</DropdownItem>
@@ -49,7 +49,7 @@ Use this free example of a header component that you can position on top of a he
       </svg>
       Filter<ChevronDownOutline />
     </Button>
-    <Dropdown class="w-48 p-2 text-sm">
+    <Dropdown simple class="w-48 p-2 text-sm">
       <h6 class="mb-3 ml-1 text-sm font-medium text-gray-900 dark:text-white">Category</h6>
       <li class="rounded p-1 hover:bg-gray-100 dark:hover:bg-gray-600">
         <Checkbox>Apple (56)</Checkbox>
