@@ -8,17 +8,17 @@ export async function getDocsSlugs() {
   const blocks = await fetchBlocksMarkdownPosts();
   const dashboard = await fetchDashboardPosts();
 
-  console.log('dashboard', dashboard);
-  
+  console.log("dashboard", dashboard);
+
   const slugsByCategory: Record<string, string[]> = {};
-  
+
   // Process each category
   Object.entries(posts).forEach(([category, items]) => {
     if (Array.isArray(items)) {
-      slugsByCategory[category] = items.map(item => {
+      slugsByCategory[category] = items.map((item) => {
         // Remove leading slash from path
         // e.g., '/introduction' becomes 'introduction'
-        return item.path.startsWith('/') ? item.path.slice(1) : item.path;
+        return item.path.startsWith("/") ? item.path.slice(1) : item.path;
       });
     }
   });
@@ -27,26 +27,26 @@ export async function getDocsSlugs() {
   Object.entries(blocks).forEach(([category, items]) => {
     if (Array.isArray(items)) {
       const blocksCategoryKey = `blocks-${category}`; // e.g., 'blocks-application'
-      slugsByCategory[blocksCategoryKey] = items.map(item => {
+      slugsByCategory[blocksCategoryKey] = items.map((item) => {
         // Remove leading slash from path
-        return item.path.startsWith('/') ? item.path.slice(1) : item.path;
+        return item.path.startsWith("/") ? item.path.slice(1) : item.path;
       });
     }
   });
 
   // Process builders (simple array with path property)
   if (Array.isArray(builders)) {
-    slugsByCategory['builders'] = builders.map(item => item.path);
+    slugsByCategory["builders"] = builders.map((item) => item.path);
   }
 
   if (Array.isArray(dashboard)) {
-    slugsByCategory['dashboard'] = dashboard.map(item => {
+    slugsByCategory["dashboard"] = dashboard.map((item) => {
       // item.path is the string path from the improved fetchDashboardPosts
-      const path = typeof item === 'string' ? item : item.path;
+      const path = typeof item === "string" ? item : item.path;
       // Ensure path starts with admin-dashboard
-      return path.startsWith('admin-dashboard') ? path : `admin-dashboard/${path}`;
+      return path.startsWith("admin-dashboard") ? path : `admin-dashboard/${path}`;
     });
   }
-  
+
   return slugsByCategory;
 }

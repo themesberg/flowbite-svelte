@@ -152,47 +152,40 @@ export const fetchBlocksMarkdownPosts = async () => {
 export const fetchDashboardPosts = async () => {
   // Get all +page.svelte files
   const pageGlobs = import.meta.glob("/src/routes/admin-dashboard/**/+page.svelte");
-  
+
   // Get authentication .svelte files (these are not +page.svelte)
   const authGlobs = import.meta.glob("/src/routes/admin-dashboard/authentication/*.svelte");
-  
+
   // Extract routes from +page.svelte files
   const pageRoutes = Object.keys(pageGlobs)
     .map((path) => {
       let route = path
-        .replace('/src/routes/admin-dashboard', '')
-        .replace('/+page.svelte', '')
-        .replace(/\/\([^)]+\)/g, '') // Remove route groups
-        .replace(/^\//, '')
-        .replace(/\/$/, '');
+        .replace("/src/routes/admin-dashboard", "")
+        .replace("/+page.svelte", "")
+        .replace(/\/\([^)]+\)/g, "") // Remove route groups
+        .replace(/^\//, "")
+        .replace(/\/$/, "");
 
-      if (route === '') {
-        route = 'admin-dashboard';
+      if (route === "") {
+        route = "admin-dashboard";
       } else {
         route = `admin-dashboard/${route}`;
       }
       return route;
     })
-    .filter((route) => !route.includes('[') && !route.includes(']')); // Filter out dynamic routes
+    .filter((route) => !route.includes("[") && !route.includes("]")); // Filter out dynamic routes
 
   // Extract routes from authentication .svelte files
-  const authRoutes = Object.keys(authGlobs)
-    .map((path) => {
-      const filename = path.split('/').pop()?.replace('.svelte', '') || '';
-      return `admin-dashboard/authentication/${filename}`;
-    });
+  const authRoutes = Object.keys(authGlobs).map((path) => {
+    const filename = path.split("/").pop()?.replace(".svelte", "") || "";
+    return `admin-dashboard/authentication/${filename}`;
+  });
 
   // Add specific error routes that we know exist
-  const errorRoutes = [
-    'admin-dashboard/errors/400',
-    'admin-dashboard/errors/404', 
-    'admin-dashboard/errors/500'
-  ];
+  const errorRoutes = ["admin-dashboard/errors/400", "admin-dashboard/errors/404", "admin-dashboard/errors/500"];
 
   // Combine all routes and remove duplicates
-  const allRoutes = [...pageRoutes, ...authRoutes, ...errorRoutes]
-    .filter((route, index, self) => self.indexOf(route) === index)
-    .sort();
+  const allRoutes = [...pageRoutes, ...authRoutes, ...errorRoutes].filter((route, index, self) => self.indexOf(route) === index).sort();
 
   return allRoutes;
 };
