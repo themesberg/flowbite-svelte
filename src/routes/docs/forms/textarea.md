@@ -31,6 +31,14 @@ Get started with the default example of a textarea component below.
 {#include Default.svelte}
 ```
 
+## Disabled
+
+Get started with the default example of a textarea component below.
+
+```svelte example
+{#include Disabled.svelte}
+```
+
 ## Clearable
 
 ```svelte example

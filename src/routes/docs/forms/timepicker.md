@@ -30,6 +30,12 @@ Use this example of a default timepicker component to allow the user to select a
 {#include Default.svelte}
 ```
 
+## Disabled
+
+```svelte example
+{#include Disabled.svelte}
+```
+
 ## Using state and bind
 
 ```svelte example

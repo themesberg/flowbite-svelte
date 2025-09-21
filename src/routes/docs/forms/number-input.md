@@ -24,6 +24,12 @@ Use this component to set a number value inside a form field by applying the typ
 {#include Default.svelte}
 ```
 
+## Disabled
+
+```svelte example
+{#include Disabled.svelte}
+```
+
 ## ZIP code input
 
 Use this example with an icon and helper text to set a ZIP code value inside a form field by also applying the pattern attribute to validate the input using a regular expression for a 5 digit number.

@@ -31,6 +31,12 @@ You will also find more advanced search components on this page including dropdo
 {#include Default.svelte}
 ```
 
+## Disabled
+
+```svelte example class="flex flex-col gap-4"
+{#include Disabled.svelte}
+```
+
 ## Search input with clearable
 
 Use the simplest form of a search input component with an icon and a search button next to the text field.
