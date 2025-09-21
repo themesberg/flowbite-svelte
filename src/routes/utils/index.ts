@@ -151,15 +151,23 @@ export const fetchBlocksMarkdownPosts = async () => {
 
 export const fetchDashboardMarkdownPosts = async () => {
   const globs = {
-    components: import.meta.glob<Mdsvex>("/src/routes/admin-dashboard/\\(sidebar\\)/components/*.md")
+    dashboard: import.meta.glob("/src/routes/admin-dashboard/**/+page.svelte")
   };
 
-  const entries = await Promise.all(
-    Object.entries(globs).map(async ([key, files]) => {
-      const resolved = await resolveMarkdownFiles(files);
-      return [key, resolved] as const;
-    })
-  );
+  const allPaths = Object.keys(globs.dashboard)
+    .map((path) => ({
+      path: extractRouteName(path)
+    }))
+    .filter((item, index, self) => self.findIndex((i) => i.path === item.path) === index);
 
-  return Object.fromEntries(entries);
+  return allPaths;
+
+  // const entries = await Promise.all(
+  //   Object.entries(globs).map(async ([key, files]) => {
+  //     const resolved = await resolveMarkdownFiles(files);
+  //     return [key, resolved] as const;
+  //   })
+  // );
+
+  // return Object.fromEntries(entries);
 };

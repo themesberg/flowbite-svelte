@@ -5,7 +5,7 @@
 
   let { children, data }: LayoutProps = $props();
 
-  // console.log('data.FATHOM_ID', data.FATHOM_ID);
+  console.log('data', data);
 
   onMount(modeobserver);
 </script>

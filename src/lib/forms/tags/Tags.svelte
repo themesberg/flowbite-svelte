@@ -158,11 +158,11 @@
       <span class={spanCls({ class: clsx(theme?.span, styling.span) })}>
         {tag}
       </span>
-      <CloseButton disabled size={closeBtnSize} class={close({ class: clsx(theme?.close, styling.close) })} onclick={() => deleteField(index)} />
+      <CloseButton {disabled} size={closeBtnSize} class={close({ class: clsx(theme?.close, styling.close) })} onclick={() => deleteField(index)} />
     </div>
   {/each}
   <div class="relative w-full" bind:this={inputContainer}>
-    <input {...inputProps} disabled bind:this={inputElement} onkeydown={handleKeys} oninput={handleInput} bind:value={contents} placeholder={value.length === 0 ? placeholder : ""} type="text" autocomplete="off" class={inputCls({ class: clsx(styling.input) })} />
+    <input {...inputProps} {disabled} bind:this={inputElement} onkeydown={handleKeys} oninput={handleInput} bind:value={contents} placeholder={value.length === 0 ? placeholder : ""} type="text" autocomplete="off" class={inputCls({ class: clsx(styling.input) })} />
     {#if availableTags.length > 0 && contents.trim() !== ""}
       {@const filteredSuggestions = availableTags.filter((tag) => tag.toLowerCase().includes(contents.trim().toLowerCase()) && (!unique || !value.some((t) => t.toLowerCase() === tag.toLowerCase())))}
       {#if filteredSuggestions.length > 0}
