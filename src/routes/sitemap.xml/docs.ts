@@ -1,17 +1,13 @@
 // /src/routes/sitemap.xml/docs.ts
-import { fetchMarkdownPosts, fetchBuilders, fetchBlocksMarkdownPosts, fetchDashboardMarkdownPosts } from "../utils";
-
-// console.log('fetchBlocksMarkdownPosts', fetchBlocksMarkdownPosts());
+import { fetchMarkdownPosts, fetchBuilders, fetchBlocksMarkdownPosts, fetchDashboardPosts } from "../utils";
 
 export async function getDocsSlugs() {
   // Fetch your markdown posts
   const posts = await fetchMarkdownPosts();
   const builders = await fetchBuilders();
   const blocks = await fetchBlocksMarkdownPosts();
-  const dashboard = await fetchDashboardMarkdownPosts();
+  const dashboard = await fetchDashboardPosts();
 
-  // console.log('builders', builders);
-  // console.log('blocks', blocks);
   console.log('dashboard', dashboard);
   
   const slugsByCategory: Record<string, string[]> = {};
@@ -44,17 +40,13 @@ export async function getDocsSlugs() {
   }
 
   if (Array.isArray(dashboard)) {
-    slugsByCategory['dashboard'] = dashboard.map(item => item.path);
+    slugsByCategory['dashboard'] = dashboard.map(item => {
+      // item.path is the string path from the improved fetchDashboardPosts
+      const path = typeof item === 'string' ? item : item.path;
+      // Ensure path starts with admin-dashboard
+      return path.startsWith('admin-dashboard') ? path : `admin-dashboard/${path}`;
+    });
   }
   
   return slugsByCategory;
-}
-
-
-// Individual category functions (if you prefer separate calls)
-export async function getDocsPagesSlugs() {
-  const posts = await fetchMarkdownPosts();
-  return posts.pages?.map(item => 
-    item.path.startsWith('/') ? item.path.slice(1) : item.path
-  ) || [];
 }
