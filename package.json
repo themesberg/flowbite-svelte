@@ -84,6 +84,7 @@
     "satori": "^0.18.3",
     "satori-html": "^0.3.2",
     "simple-datatables": "^10.0.0",
+    "super-sitemap": "^1.0.5",
     "svelte": "^5.39.3",
     "svelte-check": "^4.3.1",
     "svelte-doc-llm": "^0.4.1",
