@@ -42,6 +42,17 @@ The file input component can be used to upload one or more files from the device
 <Helper color="emerald" class="mt-2">Selected files: {fileNames}</Helper>
 ```
 
+## Disabled
+
+```svelte
+<script lang="ts">
+  import { Fileupload, Label } from "flowbite-svelte";
+</script>
+
+<Label for="with_helper" class="pb-2">Upload file</Label>
+<Fileupload disabled id="with_helper" class="mb-2" />
+```
+
 ## Sizes
 
 ```svelte

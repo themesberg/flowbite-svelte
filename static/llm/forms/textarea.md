@@ -24,6 +24,18 @@ Get started with the default example of a textarea component below.
 <Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" class="w-full" />
 ```
 
+## Disabled
+
+Get started with the default example of a textarea component below.
+
+```svelte
+<script lang="ts">
+  import { Textarea } from "flowbite-svelte";
+</script>
+
+<Textarea disabled id="textarea-id" placeholder="Your message" rows={4} name="message" class="w-full" />
+```
+
 ## Clearable
 
 ```svelte

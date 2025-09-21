@@ -24,6 +24,16 @@ Use this example of a default timepicker component to allow the user to select a
 <Timepicker />
 ```
 
+## Disabled
+
+```svelte
+<script lang="ts">
+  import { Timepicker } from "flowbite-svelte";
+</script>
+
+<Timepicker disabled />
+```
+
 ## Using state and bind
 
 ```svelte

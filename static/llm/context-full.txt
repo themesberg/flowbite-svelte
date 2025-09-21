@@ -1,5 +1,5 @@
 # undefined Documentation - Full Context
-# Generated on 2025-09-19T13:09:26.440Z
+# Generated on 2025-09-21T08:07:56.350Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -17973,6 +17973,17 @@ The file input component can be used to upload one or more files from the device
 <Helper color="emerald" class="mt-2">Selected files: {fileNames}</Helper>
 ```
 
+## Disabled
+
+```svelte
+<script lang="ts">
+  import { Fileupload, Label } from "flowbite-svelte";
+</script>
+
+<Label for="with_helper" class="pb-2">Upload file</Label>
+<Fileupload disabled id="with_helper" class="mb-2" />
+```
+
 ## Sizes
 
 ```svelte
@@ -18945,6 +18956,20 @@ Use this component to set a number value inside a form field by applying the typ
 <form class="mx-auto max-w-sm">
   <Label for="number-input">Select a number:</Label>
   <Input type="number" id="number-input" aria-describedby="helper-text-explanation" placeholder="90210" required />
+</form>
+```
+
+## Disabled
+
+```svelte
+<script lang="ts">
+  import { PhoneInput, Input } from "flowbite-svelte";
+</script>
+
+<form class="mx-auto max-w-sm space-y-2">
+  <Input disabled type="number" id="number-input" aria-describedby="helper-text-explanation" placeholder="90210" required />
+
+  <PhoneInput classes={{ input: "rounded-lg" }} placeholder="123-456-7890" disabled phoneType="countryCode" />
 </form>
 ```
 
@@ -19960,6 +19985,18 @@ You will also find more advanced search components on this page including dropdo
 </Search>
 ```
 
+## Disabled
+
+```svelte
+<script lang="ts">
+  import { Search, Button } from "flowbite-svelte";
+</script>
+
+<Search disabled>
+  <Button disabled class="me-1">Search</Button>
+</Search>
+```
+
 ## Search input with clearable
 
 Use the simplest form of a search input component with an icon and a search button next to the text field.
@@ -20678,6 +20715,18 @@ Get started with the default example of a textarea component below.
 <Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" class="w-full" />
 ```
 
+## Disabled
+
+Get started with the default example of a textarea component below.
+
+```svelte
+<script lang="ts">
+  import { Textarea } from "flowbite-svelte";
+</script>
+
+<Textarea disabled id="textarea-id" placeholder="Your message" rows={4} name="message" class="w-full" />
+```
+
 ## Clearable
 
 ```svelte
@@ -20941,6 +20990,16 @@ Use this example of a default timepicker component to allow the user to select a
 
 <Label>Select Time:</Label>
 <Timepicker />
+```
+
+## Disabled
+
+```svelte
+<script lang="ts">
+  import { Timepicker } from "flowbite-svelte";
+</script>
+
+<Timepicker disabled />
 ```
 
 ## Using state and bind

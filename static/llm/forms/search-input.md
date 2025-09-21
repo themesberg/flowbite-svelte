@@ -25,6 +25,18 @@ You will also find more advanced search components on this page including dropdo
 </Search>
 ```
 
+## Disabled
+
+```svelte
+<script lang="ts">
+  import { Search, Button } from "flowbite-svelte";
+</script>
+
+<Search disabled>
+  <Button disabled class="me-1">Search</Button>
+</Search>
+```
+
 ## Search input with clearable
 
 Use the simplest form of a search input component with an icon and a search button next to the text field.

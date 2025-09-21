@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.13.14
+
+### Patch Changes
+
+- docs: disabled example to file-input
+  fix: add disabled style to FloatingLabelInput, PhoneInput, SearchInput, Textarea
+
 ## 1.13.13
 
 ### Patch Changes
