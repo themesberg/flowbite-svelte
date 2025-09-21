@@ -75,7 +75,7 @@ color utility to any element that depends on these defaults.
   }
 }
 
-@import "../static/styles/docs.css" layer(base);
+@import "../static/styles/docs.css";
 
 @layer base {
   html {

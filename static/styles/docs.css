@@ -400,7 +400,7 @@ pre.language-svelte .token.comment {
 }
 
 .DocSearch.DocSearch-Button {
-  @apply m-2! ml-0 flex h-[40px] w-[40px] items-center justify-center rounded-lg! border! bg-white p-2! shadow-none hover:bg-gray-100! hover:shadow-none focus:shadow-none focus:ring-4 focus:ring-gray-200 focus:outline-hidden md:mr-0 md:w-52 md:justify-between md:border-solid! md:border-gray-300! md:bg-gray-50! xl:w-64 xl:pl-4 dark:bg-gray-700! dark:md:border-gray-600!;
+  @apply m-2! ml-0 flex h-[26px] w-[40px] items-center justify-center rounded-lg! border! bg-white p-2! shadow-none hover:bg-gray-100! hover:shadow-none focus:shadow-none focus:ring-4 focus:ring-gray-200 focus:outline-hidden md:mr-0 md:w-52 md:justify-between md:border-solid! md:border-gray-300! md:bg-gray-50! xl:w-64 xl:pl-4 dark:bg-gray-700! dark:md:border-gray-600!;
 }
 
 .DocSearch .DocSearch-Button-Placeholder {
