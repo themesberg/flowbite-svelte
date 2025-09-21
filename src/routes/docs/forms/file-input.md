@@ -35,6 +35,12 @@ The file input component can be used to upload one or more files from the device
 {#include Clearable.svelte}
 ```
 
+## Disabled
+
+```svelte example
+{#include Disabled.svelte}
+```
+
 ## Sizes
 
 ```svelte example
