@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.13.16
+
+### Patch Changes
+
+- fix: exports types if $lib/types.ts exists
+
 ## 1.13.15
 
 ### Patch Changes
