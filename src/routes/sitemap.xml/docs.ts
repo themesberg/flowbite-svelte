@@ -40,12 +40,7 @@ export async function getDocsSlugs() {
   }
 
   if (Array.isArray(dashboard)) {
-    slugsByCategory["dashboard"] = dashboard.map((item) => {
-      // item.path is the string path from the improved fetchDashboardPosts
-      const path = typeof item === "string" ? item : item.path;
-      // Ensure path starts with admin-dashboard
-      return path.startsWith("admin-dashboard") ? path : `admin-dashboard/${path}`;
-    });
+    slugsByCategory["dashboard"] = dashboard;
   }
 
   return slugsByCategory;
