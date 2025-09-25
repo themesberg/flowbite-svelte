@@ -1,9 +1,7 @@
 import { type ThemeConfig } from "$lib";
 import type { ClassValue } from "clsx";
 import { getContext } from "svelte";
-// import { dev } from "$app/environment";
-// for svelte users not using sveltekit substitute the above line with the following line
-const dev = import.meta.env.MODE === "development";
+import { DEV } from "esm-env";
 
 export function getTheme<K extends keyof ThemeConfig>(componentKey: K) {
   const theme = getContext<ThemeConfig>("theme");
@@ -25,7 +23,7 @@ export type Classes<T extends { slots: Record<string, unknown> }> = {
  * @param replacements - Optional map of deprecated keys to their replacements (e.g., "divClass" → "div").
  */
 export function warnThemeDeprecation(component: string, names: Record<string, unknown>, replacements?: Record<string, unknown>): void {
-  if (!dev) return;
+  if (!DEV) return;
 
   const nonEmptyNames = Object.keys(names).filter((name) => names[name]);
   if (nonEmptyNames.length === 0) return;
