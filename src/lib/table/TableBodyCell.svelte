@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { tableBodyCell } from ".";
+  import { tableBodyCell } from "./theme";
   import type { TableBodyCellProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

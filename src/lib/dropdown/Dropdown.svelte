@@ -3,7 +3,7 @@
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { setContext } from "svelte";
-  import { dropdown } from "./";
+  import { dropdown } from "./theme";
 
   let { children, simple = false, placement = "bottom", offset = 2, class: className, activeUrl = "", isOpen = $bindable(false), ...restProps }: DropdownProps = $props();
 

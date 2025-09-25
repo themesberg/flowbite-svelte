@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
-  import { banner } from ".";
+  import { banner } from "./theme";
   import clsx from "clsx";
   import { type ParamsType, type BannerProps, CloseButton } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

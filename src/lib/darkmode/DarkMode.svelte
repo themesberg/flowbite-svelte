@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { darkmode } from ".";
+  import { darkmode } from "./theme";
   import clsx from "clsx";
   import type { DarkmodeProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

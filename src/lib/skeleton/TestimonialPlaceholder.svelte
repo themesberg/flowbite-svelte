@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { testimonialPlaceholder } from ".";
+  import { testimonialPlaceholder } from "./theme";
   import clsx from "clsx";
   import type { TestimonialPlaceholderProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

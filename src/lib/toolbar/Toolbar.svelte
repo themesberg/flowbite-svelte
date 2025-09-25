@@ -3,7 +3,7 @@
   import type { ToolbarProps } from "$lib/types";
   import clsx from "clsx";
   import { setContext } from "svelte";
-  import { toolbar } from "./";
+  import { toolbar } from "./theme";
 
   let { children, end, color, embedded, class: className, classes, ...restProps }: ToolbarProps = $props();
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { advancedRating } from ".";
+  import { advancedRating } from "./theme";
   import type { AdvancedRatingProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { listPlaceholder } from ".";
+  import { listPlaceholder } from "./theme";
   import type { ListPlaceholderProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

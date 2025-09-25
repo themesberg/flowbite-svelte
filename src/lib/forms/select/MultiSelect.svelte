@@ -1,7 +1,7 @@
 <script lang="ts" generics="T">
   import clsx from "clsx";
   import { Badge, CloseButton, type MultiSelectProps, type SelectOptionType } from "$lib";
-  import { multiSelect } from ".";
+  import { multiSelect } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { onMount } from "svelte";
   import { createDismissableContext } from "$lib/utils/dismissable";

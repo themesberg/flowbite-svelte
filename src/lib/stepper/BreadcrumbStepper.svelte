@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { breadcrumbStepper } from ".";
+  import { breadcrumbStepper } from "./theme";
   import clsx from "clsx";
   import type { BreadcrumbStepperProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

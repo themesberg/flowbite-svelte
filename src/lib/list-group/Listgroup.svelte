@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { listGroup } from ".";
+  import { listGroup } from "./theme";
   import clsx from "clsx";
   import { type ListgroupProps, ListgroupItem } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

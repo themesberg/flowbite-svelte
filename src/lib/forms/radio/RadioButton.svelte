@@ -1,7 +1,7 @@
 <script lang="ts" generics="T">
   import clsx from "clsx";
   import { Button, type RadioButtonProps } from "$lib";
-  import { radioButton } from ".";
+  import { radioButton } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, group = $bindable<T>(), value = $bindable<T>(), inline, pill, outline, size, color, shadow, checkedClass, class: className, ...restProps }: RadioButtonProps<T> = $props();

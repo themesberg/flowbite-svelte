@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { review as reviewVariants } from ".";
+  import { review as reviewVariants } from "./theme";
   import type { ReviewProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 

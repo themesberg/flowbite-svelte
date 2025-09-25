@@ -2,7 +2,7 @@
   import type { LaptopProps } from "$lib";
   import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
-  import { laptop } from ".";
+  import { laptop } from "./theme";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, ...restProps }: LaptopProps = $props();
 

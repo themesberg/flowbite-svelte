@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { avatar } from ".";
+  import { avatar } from "./theme";
   import clsx from "clsx";
   import { type AvatarProps, Indicator } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

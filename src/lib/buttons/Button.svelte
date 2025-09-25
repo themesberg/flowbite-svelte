@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import type { SizeType, ButtonProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
-  import { button } from ".";
+  import { button } from "./theme";
 
   const group: SizeType = getContext("group");
   const ctxDisabled: boolean | undefined = getContext("disabled");

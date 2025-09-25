@@ -1,6 +1,7 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { pagination, PaginationItem } from ".";
+  import { pagination } from "./theme";
+  import { PaginationItem } from "$lib";
   import type { PaginationProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";

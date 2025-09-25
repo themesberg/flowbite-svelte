@@ -5,7 +5,7 @@
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fly } from "svelte/transition";
-  import { drawer } from ".";
+  import { drawer } from "./theme";
   import { setContext, tick } from "svelte";
 
   let { children, open = $bindable(false), hidden = $bindable(), modal, offset, width, dismissable = offset ? false : undefined, placement = "left", class: className, transitionParams, transition = fly, outsideclose, activateClickOutside, ...restProps }: DrawerProps = $props();

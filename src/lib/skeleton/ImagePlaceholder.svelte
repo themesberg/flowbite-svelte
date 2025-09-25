@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { imagePlaceholder } from ".";
+  import { imagePlaceholder } from "./theme";
   import type { ImagePlaceholderProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

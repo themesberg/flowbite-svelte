@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { gradientButton } from ".";
+  import { gradientButton } from "./theme";
   import clsx from "clsx";
   import { type GradientButtonProps, type SizeType, Button } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

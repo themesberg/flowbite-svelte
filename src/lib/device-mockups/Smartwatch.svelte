@@ -2,7 +2,7 @@
   import type { SmartwatchProps } from "$lib";
   import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
-  import { smartwatch } from ".";
+  import { smartwatch } from "./theme";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: SmartwatchProps = $props();
 

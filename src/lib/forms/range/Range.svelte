@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { range } from "./";
+  import { range } from "./theme";
   import clsx from "clsx";
   import type { RangeProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

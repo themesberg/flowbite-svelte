@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { videoPlaceholder } from ".";
+  import { videoPlaceholder } from "./theme";
   import type { VideoPlaceholderProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

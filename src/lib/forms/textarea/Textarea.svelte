@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { textarea } from ".";
+  import { textarea } from "./theme";
   import clsx from "clsx";
   import { type TextareaProps, CloseButton } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

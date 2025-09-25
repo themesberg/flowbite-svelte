@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { footer } from ".";
+  import { footer } from "./theme";
   import clsx from "clsx";
   import type { FooterProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

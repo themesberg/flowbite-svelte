@@ -3,7 +3,7 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { setContext } from "svelte";
-  import { bottomNav } from ".";
+  import { bottomNav } from "./theme";
 
   let { children, header, position = "fixed", navType = "default", class: className, classes, outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
 

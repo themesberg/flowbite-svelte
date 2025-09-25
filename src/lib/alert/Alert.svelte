@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
-  import { alert } from ".";
+  import { alert } from "./theme";
   import clsx from "clsx";
   import { type AlertProps, type ParamsType, CloseButton } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

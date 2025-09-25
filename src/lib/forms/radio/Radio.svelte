@@ -1,6 +1,6 @@
 <script lang="ts" generics="T">
   import { getContext } from "svelte";
-  import { radio } from ".";
+  import { radio } from "./theme";
   import clsx from "clsx";
   import { type RadioProps, Label } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

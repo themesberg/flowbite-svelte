@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { TableBodyRow, TableBodyCell } from ".";
+  import { TableBodyRow, TableBodyCell } from "$lib";
   import type { TableBodyProps, CellValue, BodyRow } from "$lib/types";
 
   let { children, bodyItems, class: className, ...restProps }: TableBodyProps = $props();

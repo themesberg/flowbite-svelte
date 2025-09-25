@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { img } from ".";
+  import { img } from "./theme";
   import type { EnhandedImgProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 

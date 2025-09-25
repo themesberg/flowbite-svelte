@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { buttonGroup } from ".";
+  import { buttonGroup } from "./theme";
   import clsx from "clsx";
   import type { ButtonGroupProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

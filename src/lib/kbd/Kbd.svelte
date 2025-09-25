@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { kbd } from ".";
+  import { kbd } from "./theme";
   import clsx from "clsx";
   import type { KbdProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

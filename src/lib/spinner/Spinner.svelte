@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { spinner } from ".";
+  import { spinner } from "./theme";
   import type { SpinnerProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

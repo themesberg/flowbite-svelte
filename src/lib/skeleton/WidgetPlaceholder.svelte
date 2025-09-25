@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { widgetPlaceholder } from ".";
+  import { widgetPlaceholder } from "./theme";
   import clsx from "clsx";
   import type { WidgetPlaceholderProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

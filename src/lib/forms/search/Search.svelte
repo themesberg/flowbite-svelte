@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { search } from ".";
+  import { search } from "./theme";
   import clsx from "clsx";
   import { CloseButton, type SearchProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

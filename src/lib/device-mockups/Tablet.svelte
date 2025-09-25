@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { tablet } from ".";
+  import { tablet } from "./theme";
   import { type TabletProps, cn } from "$lib";
   import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";

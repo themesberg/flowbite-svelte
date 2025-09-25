@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { footerCopyright } from ".";
+  import { footerCopyright } from "./theme";
   import clsx from "clsx";
   import type { FooterCopyrightProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

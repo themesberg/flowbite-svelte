@@ -3,7 +3,7 @@
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { setContext } from "svelte";
-  import { accordion } from "./";
+  import { accordion } from "./theme";
   import { createSingleSelectionContext } from "$lib/utils/singleselection.svelte";
 
   let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, ...restProps }: AccordionProps = $props();

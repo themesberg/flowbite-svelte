@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { paginationButton } from ".";
+  import { paginationButton } from "./theme";
   import type { PaginationButtonProps } from "$lib/types";
   import { getContext } from "svelte";
   import { getTheme } from "$lib/theme/themeUtils";

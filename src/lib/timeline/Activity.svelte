@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { activity } from ".";
+  import { activity } from "./theme";
   import type { ActivityProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

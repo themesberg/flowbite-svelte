@@ -2,7 +2,8 @@
   import { getContext } from "svelte";
   import clsx from "clsx";
   import { CloseButton, type SizeType, type InputProps, type InputValue } from "$lib";
-  import { input, clampSize } from ".";
+  import { input } from "./theme";
+  import { clampSize } from "./index";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 

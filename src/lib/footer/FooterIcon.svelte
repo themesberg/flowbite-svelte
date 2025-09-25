@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { footerIcon } from ".";
+  import { footerIcon } from "./theme";
   import clsx from "clsx";
   import type { FooterIconProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

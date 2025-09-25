@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { gallery } from ".";
+  import { gallery } from "./theme";
   import clsx from "clsx";
   import type { GalleryProps, ImgType } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

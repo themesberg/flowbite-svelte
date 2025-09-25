@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import { Dropdown, DropdownItem, Button, Input, ButtonGroup, Select, Label, Toggle, type TimepickerProps, type TimePickerOption } from "$lib";
-  import { timepicker } from ".";
+  import { timepicker } from "./theme";
   import { parse, isValid, isBefore, isAfter } from "date-fns";
   import { getTheme } from "$lib/theme/themeUtils";
 

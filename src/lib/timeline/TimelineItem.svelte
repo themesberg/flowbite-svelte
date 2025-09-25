@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { timelineItem, type TimelineVariants } from ".";
+  import { timelineItem, type TimelineVariants } from "./theme";
   import type { TimelineItemProps, DateFormat } from "$lib/types";
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

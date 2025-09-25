@@ -4,7 +4,7 @@
   import clsx from "clsx";
   import { getContext } from "svelte";
   import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
-  import { bottomNavItem } from ".";
+  import { bottomNavItem } from "./theme";
 
   let { children, btnName, appBtnPosition = "middle", activeClass, class: className, classes, btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
 

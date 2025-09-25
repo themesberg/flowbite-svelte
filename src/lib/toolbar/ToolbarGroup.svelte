@@ -3,7 +3,7 @@
   import type { ToolbarGroupProps } from "$lib/types";
   import clsx from "clsx";
   import { getContext } from "svelte";
-  import { toolbarGroup } from ".";
+  import { toolbarGroup } from "./theme";
 
   let { children, spacing, padding, position = "middle", class: className, ...restProps }: ToolbarGroupProps = $props();
 

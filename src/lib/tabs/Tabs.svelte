@@ -4,7 +4,7 @@
   import { createSingleSelectionContext, useSingleSelection } from "$lib/utils/singleselection.svelte";
   import clsx from "clsx";
   import { setContext } from "svelte";
-  import { tabs } from ".";
+  import { tabs } from "./theme";
 
   let { children, selected = $bindable(), tabStyle = "none", ulClass, contentClass, divider = true, class: className, classes, ...restProps }: TabsProps = $props();
 

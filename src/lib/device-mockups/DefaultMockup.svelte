@@ -2,7 +2,7 @@
   import type { DefaultMockupProps } from "$lib";
   import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
-  import { defaultMockup } from ".";
+  import { defaultMockup } from "./theme";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: DefaultMockupProps = $props();
 

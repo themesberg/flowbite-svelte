@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { detailedStepper } from ".";
+  import { detailedStepper } from "./theme";
   import type { DetailedStepperProps } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";

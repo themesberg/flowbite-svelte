@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { skeleton } from ".";
+  import { skeleton } from "./theme";
   import type { SkeletonProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

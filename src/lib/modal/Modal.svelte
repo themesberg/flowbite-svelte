@@ -4,7 +4,7 @@
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
-  import { modal as modalStyle } from ".";
+  import { modal as modalStyle } from "./theme";
 
   let { children, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, size = "md", placement, class: className, classes, transitionParams, transition = fade, fullscreen = false, ...restProps }: ModalProps = $props();
 

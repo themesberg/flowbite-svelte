@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { checkbox } from ".";
+  import { checkbox } from "./theme";
   import clsx from "clsx";
   import { type CheckboxProps, Label } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

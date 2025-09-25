@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import { verticalStepper } from ".";
+  import { verticalStepper } from "./theme";
   import type { VerticalStepperProps } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";

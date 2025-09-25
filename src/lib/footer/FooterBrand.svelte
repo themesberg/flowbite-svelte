@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { footerBrand } from ".";
+  import { footerBrand } from "./theme";
   import clsx from "clsx";
   import type { FooterBrandProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

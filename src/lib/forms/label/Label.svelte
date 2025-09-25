@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { label } from ".";
+  import { label } from "./theme";
   import clsx from "clsx";
   import type { LabelProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

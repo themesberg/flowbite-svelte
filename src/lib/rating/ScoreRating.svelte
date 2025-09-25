@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { scoreRating } from ".";
+  import { scoreRating } from "./theme";
   import type { ScoreRatingProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";

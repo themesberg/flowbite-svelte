@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import { cubicOut } from "svelte/easing";
   import { Tween } from "svelte/motion";
-  import { progressbar } from ".";
+  import { progressbar } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { progress = "45", precision = 0, tweenDuration = 400, animate = false, size = "h-2.5", labelInside = false, labelOutside = "", easing = cubicOut, color = "primary", class: className, classes, ...restProps }: ProgressbarProps = $props();

@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { cardPlaceholder } from ".";
+  import { cardPlaceholder } from "./theme";
   import type { CardPlaceholderProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

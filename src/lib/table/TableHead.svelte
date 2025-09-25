@@ -1,6 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { TableHeadCell, tableHead } from ".";
+  import { TableHeadCell } from "$lib";
+  import { tableHead } from "./theme";
   import type { TableHeadProps, TableCtxType, HeadItemType } from "$lib/types";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";

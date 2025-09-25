@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import Star from "./Star.svelte";
-  import { rating as ratingVariants } from ".";
+  import { rating as ratingVariants } from "./theme";
   import type { RatingProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { CloseButton } from "$lib";
   import type { ParamsType } from "$lib/types";
-  import { toast } from ".";
+  import { toast } from "./theme";
   import type { ToastProps } from "$lib/types";
   import { fly } from "svelte/transition";
   import clsx from "clsx";

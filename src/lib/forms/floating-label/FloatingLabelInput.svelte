@@ -1,6 +1,6 @@
 <script lang="ts">
   import { idGenerator } from "../../utils";
-  import { floatingLabelInput } from ".";
+  import { floatingLabelInput } from "./theme";
   import clsx from "clsx";
   import { type FloatingLabelInputProps, CloseButton } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

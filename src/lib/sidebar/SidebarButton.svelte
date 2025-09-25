@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { sidebarButton } from ".";
+  import { sidebarButton } from "./theme";
   import type { SidebarButtonProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

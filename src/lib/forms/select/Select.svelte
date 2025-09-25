@@ -1,5 +1,5 @@
 <script lang="ts" generics="T">
-  import { select as selectCls } from ".";
+  import { select as selectCls } from "./theme";
   import clsx from "clsx";
   import { type SelectProps, CloseButton } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

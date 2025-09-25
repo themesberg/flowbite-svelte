@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { sidebarCta } from ".";
+  import { sidebarCta } from "./theme";
   import type { SidebarCtaProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 

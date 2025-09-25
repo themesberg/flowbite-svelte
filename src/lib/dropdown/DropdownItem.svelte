@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { dropdownItem } from ".";
+  import { dropdownItem } from "./theme";
   import clsx from "clsx";
   import type { DropdownItemProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

@@ -5,7 +5,7 @@
   import clsx from "clsx";
   import { getContext } from "svelte";
   import { slide } from "svelte/transition";
-  import { accordionItem } from ".";
+  import { accordionItem } from "./theme";
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, classes, headerClass, contentClass }: AccordionItemProps = $props();
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { group } from ".";
+  import { group } from "./theme";
   import type { GroupProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

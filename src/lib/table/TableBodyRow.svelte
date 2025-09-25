@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { tableBodyRow } from ".";
+  import { tableBodyRow } from "./theme";
   import type { TableBodyRowProps, TableCtxType } from "$lib/types";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { footerLink } from ".";
+  import { footerLink } from "./theme";
   import clsx from "clsx";
   import type { FooterLinkProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

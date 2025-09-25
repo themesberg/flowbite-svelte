@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { progressradial } from ".";
+  import { progressradial } from "./theme";
   import type { ProgressradialProps } from "$lib/types";
   import clsx from "clsx";
   import { cubicOut } from "svelte/easing";

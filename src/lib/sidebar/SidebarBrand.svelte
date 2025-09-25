@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { sidebarBrand } from ".";
+  import { sidebarBrand } from "./theme";
   import type { SidebarBrandProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 

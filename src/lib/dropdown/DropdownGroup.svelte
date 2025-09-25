@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { dropdownGroup } from ".";
+  import { dropdownGroup } from "./theme";
   import clsx from "clsx";
   import type { DropdownGroupProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

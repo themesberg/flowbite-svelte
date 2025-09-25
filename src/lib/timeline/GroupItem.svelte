@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { groupItem } from ".";
+  import { groupItem } from "./theme";
   import type { GroupItemProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

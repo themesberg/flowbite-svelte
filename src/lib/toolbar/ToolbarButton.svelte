@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { toolbarButton } from ".";
+  import { toolbarButton } from "./theme";
   import type { ToolbarButtonProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";

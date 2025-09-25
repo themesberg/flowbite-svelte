@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { footerLinkGroup } from ".";
+  import { footerLinkGroup } from "./theme";
   import clsx from "clsx";
   import type { FooterLinkGroupProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

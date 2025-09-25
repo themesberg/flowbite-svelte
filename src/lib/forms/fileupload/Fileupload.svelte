@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fileupload } from ".";
+  import { fileupload } from "./theme";
   import clsx from "clsx";
   import { CloseButton, type FileuploadProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import CheckIcon from "./CheckIcon.svelte";
-  import { buttonToggle } from ".";
+  import { buttonToggle } from "./theme";
   import type { ButtonToggleVariants } from "./theme";
   import clsx from "clsx";
   import type { ButtonToggleProps, ButtonToggleContext } from "$lib";

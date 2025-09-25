@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import type { StepIndicatorProps } from "$lib";
-  import { stepIndicator, getStepStateClasses, type StepIndicatorTheme } from ".";
+  import { stepIndicator, getStepStateClasses, type StepIndicatorTheme } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"], currentStep = 1, size = "md", color = "primary", glow = false, hideLabel = false, completedCustom = "", currentCustom = "", class: className, classes, ...restProps }: StepIndicatorProps = $props();

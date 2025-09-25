@@ -5,7 +5,7 @@
   import { setContext } from "svelte";
   import { sineIn } from "svelte/easing";
   import { fly } from "svelte/transition";
-  import { sidebar } from ".";
+  import { sidebar } from "./theme";
 
   let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = "md", alwaysOpen = false, position = "fixed", activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, activeUrl = "", class: className, classes, disableBreakpoints = false, ...restProps }: SidebarProps = $props();
 

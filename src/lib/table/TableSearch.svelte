@@ -2,7 +2,7 @@
   import { setContext } from "svelte";
   import type { TableSearchProps, TableSearchType } from "$lib/types";
   import clsx from "clsx";
-  import { tableSearch } from ".";
+  import { tableSearch } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, header, footer, divClass, inputValue = $bindable(), striped = false, hoverable = false, customColor = "", color = "default", innerDivClass, inputClass, searchClass, svgDivClass, svgClass, tableClass, class: className, classes, placeholder = "Search", ...restProps }: TableSearchProps = $props();

@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { DragEventHandler, ChangeEventHandler } from "svelte/elements";
-  import { dropzone } from ".";
+  import { dropzone } from "./theme";
   import clsx from "clsx";
   import type { DropzoneProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

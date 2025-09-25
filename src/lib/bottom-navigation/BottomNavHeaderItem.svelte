@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { bottomNavHeaderItem } from ".";
+  import { bottomNavHeaderItem } from "./theme";
   import clsx from "clsx";
   import type { BottomNavHeaderItemProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
