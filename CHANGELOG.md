@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.14.5
+
+### Patch Changes
+
+- fix: change to explicit import
+
 ## 1.14.4
 
 ### Patch Changes
