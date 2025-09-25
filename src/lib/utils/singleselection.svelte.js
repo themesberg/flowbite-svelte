@@ -41,7 +41,8 @@ function setSelected(context, open, value) {
  */
 export function useSingleSelection(callback) {
   const context = getContext(SINGLE_SELECTION_KEY) ?? createSingleSelectionContext(false);
-  if (!Object.prototype.hasOwnProperty.call(context, "value")) return () => context; // non-reactive context, do nothing
+  
+  if (!context.hasOwnProperty?.("value")) return () => context;
 
   $effect(() => {
     if (context.value !== null) callback(context.value);

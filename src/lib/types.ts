@@ -1720,6 +1720,7 @@ export interface TableSearchProps extends TableSearchVariants, HTMLTableAttribut
 // tabs
 export interface TabsProps extends TabsVaraints, HTMLAttributes<HTMLUListElement> {
   children: Snippet;
+  selected?: string;
   tabStyle?: TabsVaraints["tabStyle"];
   ulClass?: ClassValue;
   contentClass?: ClassValue;
@@ -1730,7 +1731,8 @@ export interface TabitemProps extends TabItemVariants, HTMLLiAttributes {
   children?: Snippet;
   titleSlot?: Snippet;
   open?: boolean;
-  title?: string;
+  title?: string; // for UI label
+  key?: string; // for identifier
   activeClass?: ClassValue;
   inactiveClass?: ClassValue;
   disabled?: boolean;
