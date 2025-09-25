@@ -1,6 +1,6 @@
 <script lang="ts">
   import { ios } from "./theme";
-  import { type IosProps, cn } from "$lib";
+  import type { IosProps } from "$lib";
   import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
 

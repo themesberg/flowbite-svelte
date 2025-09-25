@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { type CarouselProps, type CarouselState, Slide } from "$lib";
+  import { type CarouselProps, type CarouselState } from "$lib";
+  import Slide from "./Slide.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { onMount, setContext } from "svelte";

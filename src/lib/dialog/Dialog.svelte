@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { dialog, type DialogProps, type ParamsType, trapFocus } from "$lib";
+  import type { DialogProps, ParamsType } from "$lib";
+  import { trapFocus } from "$lib/utils/actions";
+  import { dialog } from "./theme";
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { createDismissableContext } from "$lib/utils/dismissable";
   import clsx from "clsx";

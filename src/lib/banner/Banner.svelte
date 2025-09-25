@@ -2,7 +2,8 @@
   import { fade } from "svelte/transition";
   import { banner } from "./theme";
   import clsx from "clsx";
-  import { type ParamsType, type BannerProps, CloseButton } from "$lib";
+  import { type ParamsType, type BannerProps } from "$lib";
+  import CloseButton from "$lib/utils/CloseButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 

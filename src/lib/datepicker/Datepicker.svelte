@@ -2,7 +2,9 @@
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
   import clsx from "clsx";
-  import { Button, ToolbarButton, type DatepickerProps } from "$lib";
+  import type { DatepickerProps } from "$lib";
+  import Button from "$lib/buttons/Button.svelte";
+  import ToolbarButton from "$lib/toolbar/ToolbarButton.svelte";
   import { datepicker } from "./theme";
   import { parse, isValid, addDays, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, isWithinInterval } from "date-fns";
   import { getTheme } from "$lib/theme/themeUtils";

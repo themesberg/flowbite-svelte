@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { type ControlsProps, type CarouselState, ControlButton } from "$lib";
+  import type { ControlsProps, CarouselState } from "$lib";
+  import ControlButton from "./ControlButton.svelte";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { getContext } from "svelte";

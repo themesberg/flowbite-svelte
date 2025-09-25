@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { type BottomNavContextType, type BottomNavProps, cn } from "$lib";
+  import { type BottomNavContextType, type BottomNavProps } from "$lib";
+  import { cn } from "$lib/utils";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { setContext } from "svelte";

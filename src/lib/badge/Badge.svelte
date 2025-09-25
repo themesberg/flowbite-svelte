@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { type BadgeProps, CloseButton, type ParamsType } from "$lib";
+  import { type BadgeProps, type ParamsType } from "$lib";
+  import CloseButton from "$lib/utils/CloseButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { fade } from "svelte/transition";

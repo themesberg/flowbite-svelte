@@ -2,7 +2,8 @@
   import { getContext } from "svelte";
   import { gradientButton } from "./theme";
   import clsx from "clsx";
-  import { type GradientButtonProps, type SizeType, Button } from "$lib";
+  import type { GradientButtonProps, SizeType } from "$lib";
+  import Button from "./Button.svelte";
   import { getTheme } from "$lib/theme/themeUtils";
 
   const group: SizeType = getContext("group");
