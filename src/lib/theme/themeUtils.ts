@@ -1,4 +1,4 @@
-import { type ThemeConfig } from "$lib";
+import type { ThemeConfig } from "$lib";
 import type { ClassValue } from "clsx";
 import { getContext } from "svelte";
 import { DEV } from "esm-env";
