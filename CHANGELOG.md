@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.14.4
+
+### Patch Changes
+
+- fix: change import from "." to import from "./theme"
+
 ## 1.14.3
 
 ### Patch Changes
