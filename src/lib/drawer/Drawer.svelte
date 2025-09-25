@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type DrawerProps } from "$lib";
+  import type { DrawerProps } from "$lib";
   import Dialog from "$lib/dialog/Dialog.svelte";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";

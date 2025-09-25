@@ -2,7 +2,7 @@
   import { setContext } from "svelte";
   import { table as tableCls, TableHead, TableBody } from ".";
   import clsx from "clsx";
-  import { type TableProps, type TableCtxType } from "$lib";
+  import type { TableProps, TableCtxType } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, footerSlot, captionSlot, items, divClass, striped, hoverable, border = true, shadow, color = "default", class: className, classes, ...restProps }: TableProps = $props();

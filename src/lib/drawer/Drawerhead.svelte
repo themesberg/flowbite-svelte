@@ -1,7 +1,7 @@
 <script lang="ts">
   import { drawerhead } from ".";
   import clsx from "clsx";
-  import { type DrawerheadProps } from "$lib";
+  import type { DrawerheadProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { closeIcon, children, buttonClass, svgClass, class: className, classes, ...restProps }: DrawerheadProps = $props();

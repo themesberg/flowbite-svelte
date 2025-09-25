@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type AccordionCtxType, type AccordionItemProps, type ParamsType } from "$lib";
+  import type { AccordionCtxType, AccordionItemProps, ParamsType } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { useSingleSelection } from "$lib/utils/singleselection.svelte";
   import clsx from "clsx";

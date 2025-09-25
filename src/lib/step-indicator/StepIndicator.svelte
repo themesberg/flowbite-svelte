@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type StepIndicatorProps } from "$lib";
+  import type { StepIndicatorProps } from "$lib";
   import { stepIndicator, getStepStateClasses, type StepIndicatorTheme } from ".";
   import { getTheme } from "$lib/theme/themeUtils";
 

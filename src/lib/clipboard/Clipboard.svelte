@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from "$lib/buttons/Button.svelte";
   import clsx from "clsx";
-  import { type ClipboardProps } from "$lib";
+  import type { ClipboardProps } from "$lib";
   import { clipboard } from "./theme";
   import type { MouseEventHandler } from "svelte/elements";
   import { getTheme } from "$lib/theme/themeUtils";

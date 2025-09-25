@@ -1,7 +1,7 @@
 <script lang="ts">
   import { dropdownHeader } from ".";
   import clsx from "clsx";
-  import { type DropdownHeaderProps } from "$lib";
+  import type { DropdownHeaderProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: DropdownHeaderProps = $props();

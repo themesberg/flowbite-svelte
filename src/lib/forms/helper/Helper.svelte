@@ -1,6 +1,6 @@
 <script lang="ts">
   import { helper } from ".";
-  import { type HelperProps } from "$lib";
+  import type { HelperProps } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { kbd } from ".";
   import clsx from "clsx";
-  import { type KbdProps } from "$lib";
+  import type { KbdProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: KbdProps = $props();

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { breadcrumb } from ".";
   import clsx from "clsx";
-  import { type BreadcrumbProps } from "$lib";
+  import type { BreadcrumbProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, solid = false, class: className, classes, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();

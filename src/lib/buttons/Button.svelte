@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import clsx from "clsx";
-  import { type SizeType, type ButtonProps } from "$lib";
+  import type { SizeType, ButtonProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import { button } from ".";
 

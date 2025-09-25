@@ -2,7 +2,7 @@
   import { setContext } from "svelte";
   import { breadcrumbStepper } from ".";
   import clsx from "clsx";
-  import { type BreadcrumbStepperProps } from "$lib";
+  import type { BreadcrumbStepperProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, steps = [], class: className, classes, ...restProps }: BreadcrumbStepperProps = $props();

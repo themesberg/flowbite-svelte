@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import clsx from "clsx";
-  import { type ListgroupItemProps } from "$lib";
+  import type { ListgroupItemProps } from "$lib";
   import { listGroupItem, type ListgroupItemVariants } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
 

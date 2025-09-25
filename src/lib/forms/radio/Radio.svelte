@@ -2,7 +2,7 @@
   import { getContext } from "svelte";
   import { radio } from ".";
   import clsx from "clsx";
-  import { type RadioProps, Label } from "$lib";
+  import type { RadioProps, Label } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   // remove inputClass in next major version

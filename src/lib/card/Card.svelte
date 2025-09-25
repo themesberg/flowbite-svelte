@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type CardProps } from "$lib";
+  import type { CardProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { card } from ".";

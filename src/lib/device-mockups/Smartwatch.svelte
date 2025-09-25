@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type SmartwatchProps } from "$lib";
+  import type { SmartwatchProps } from "$lib";
   import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { smartwatch } from ".";

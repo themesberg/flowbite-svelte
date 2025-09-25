@@ -1,7 +1,7 @@
 <script lang="ts">
   import { label } from ".";
   import clsx from "clsx";
-  import { type LabelProps } from "$lib";
+  import type { LabelProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, color = "gray", show = true, class: className, ...restProps }: LabelProps = $props();

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type LaptopProps } from "$lib";
+  import type { LaptopProps } from "$lib";
   import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { laptop } from ".";

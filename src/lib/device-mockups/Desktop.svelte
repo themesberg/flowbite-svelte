@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type DesktopProps } from "$lib";
+  import type { DesktopProps } from "$lib";
   import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { desktop } from ".";

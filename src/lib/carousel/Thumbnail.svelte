@@ -1,6 +1,6 @@
 <script lang="ts">
   import { thumbnail } from "./theme";
-  import { type ThumbnailProps } from "$lib";
+  import type { ThumbnailProps } from "$lib";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 

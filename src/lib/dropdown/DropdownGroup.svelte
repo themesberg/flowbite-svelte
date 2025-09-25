@@ -1,7 +1,7 @@
 <script lang="ts">
   import { dropdownGroup } from ".";
   import clsx from "clsx";
-  import { type DropdownGroupProps } from "$lib";
+  import type { DropdownGroupProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: DropdownGroupProps = $props();

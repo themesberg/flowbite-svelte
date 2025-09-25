@@ -1,7 +1,7 @@
 <script lang="ts">
   import { footerLink } from ".";
   import clsx from "clsx";
-  import { type FooterLinkProps } from "$lib";
+  import type { FooterLinkProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, liClass, aClass, href, classes, class: className, ...restProps }: FooterLinkProps = $props();

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { bottomNavHeaderItem } from ".";
   import clsx from "clsx";
-  import { type BottomNavHeaderItemProps } from "$lib";
+  import type { BottomNavHeaderItemProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { itemName, active, class: className, ...restProps }: BottomNavHeaderItemProps = $props();

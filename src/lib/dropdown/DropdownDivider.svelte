@@ -1,7 +1,7 @@
 <script lang="ts">
   import { dropdownDivider } from ".";
   import clsx from "clsx";
-  import { type DropdownDividerProps } from "$lib";
+  import type { DropdownDividerProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { class: className, ...restProps }: DropdownDividerProps = $props();

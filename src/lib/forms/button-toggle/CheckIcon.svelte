@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type CheckIconProps } from "$lib";
+  import type { CheckIconProps } from "$lib";
   import clsx from "clsx";
   let { class: className, ...restProps }: CheckIconProps = $props();
 </script>

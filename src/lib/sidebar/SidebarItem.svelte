@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import clsx from "clsx";
-  import { type SidebarCtxType, type SidebarItemProps } from "$lib";
+  import type { SidebarCtxType, SidebarItemProps } from "$lib";
 
   let { icon, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: SidebarItemProps = $props();
 

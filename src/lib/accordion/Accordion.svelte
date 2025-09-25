@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type AccordionCtxType, type AccordionProps } from "$lib";
+  import type { AccordionCtxType, AccordionProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { setContext } from "svelte";

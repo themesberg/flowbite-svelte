@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type SelectedTab, type TabCtxType, type TabitemProps } from "$lib";
+  import type { SelectedTab, TabCtxType, TabitemProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import { useSingleSelection } from "$lib/utils/singleselection.svelte";
   import clsx from "clsx";

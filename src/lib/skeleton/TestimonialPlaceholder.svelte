@@ -1,7 +1,7 @@
 <script lang="ts">
   import { testimonialPlaceholder } from ".";
   import clsx from "clsx";
-  import { type TestimonialPlaceholderProps } from "$lib";
+  import type { TestimonialPlaceholderProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { class: className, classes, ...restProps }: TestimonialPlaceholderProps = $props();

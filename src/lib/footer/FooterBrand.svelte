@@ -1,7 +1,7 @@
 <script lang="ts">
   import { footerBrand } from ".";
   import clsx from "clsx";
-  import { type FooterBrandProps } from "$lib";
+  import type { FooterBrandProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, aClass, spanClass, imgClass, href, src, alt, name, ...restProps }: FooterBrandProps = $props();

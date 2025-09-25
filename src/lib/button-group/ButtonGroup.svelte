@@ -2,7 +2,7 @@
   import { setContext } from "svelte";
   import { buttonGroup } from ".";
   import clsx from "clsx";
-  import { type ButtonGroupProps } from "$lib";
+  import type { ButtonGroupProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, size = "md", disabled, class: className, ...restProps }: ButtonGroupProps = $props();

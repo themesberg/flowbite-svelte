@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type SlideProps, type CarouselState } from "$lib";
+  import type { SlideProps, CarouselState } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { getContext } from "svelte";

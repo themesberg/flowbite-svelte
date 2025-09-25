@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type DefaultMockupProps } from "$lib";
+  import type { DefaultMockupProps } from "$lib";
   import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { defaultMockup } from ".";

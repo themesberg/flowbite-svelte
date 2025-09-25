@@ -1,7 +1,7 @@
 <script lang="ts">
   import { footerCopyright } from ".";
   import clsx from "clsx";
-  import { type FooterCopyrightProps } from "$lib";
+  import type { FooterCopyrightProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { spanClass, aClass, href, by, copyrightMessage = "All Rights Reserved.", year, bySpanClass, classes, class: className, ...restProps }: FooterCopyrightProps = $props();

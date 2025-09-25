@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Side } from "@floating-ui/dom";
   import { getOppositePlacement, getSide } from "@floating-ui/utils";
-  import { type ArrowProps } from "$lib";
+  import type { ArrowProps } from "$lib";
 
   let { placement = "top", cords, strategy = "absolute", class: className = "" }: ArrowProps = $props();
 

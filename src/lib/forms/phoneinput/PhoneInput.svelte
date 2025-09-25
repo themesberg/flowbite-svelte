@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type PhoneInputProps } from "$lib";
+  import type { PhoneInputProps } from "$lib";
   import { phoneInput } from ".";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";

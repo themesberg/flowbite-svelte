@@ -1,7 +1,7 @@
 <script lang="ts">
   import { footerLinkGroup } from ".";
   import clsx from "clsx";
-  import { type FooterLinkGroupProps } from "$lib";
+  import type { FooterLinkGroupProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { class: className, children, ...restProps }: FooterLinkGroupProps = $props();

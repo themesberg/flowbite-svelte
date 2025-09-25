@@ -4,7 +4,7 @@
   import { buttonToggle } from ".";
   import type { ButtonToggleVariants } from "./theme";
   import clsx from "clsx";
-  import { type ButtonToggleProps, type ButtonToggleContext } from "$lib";
+  import type { ButtonToggleProps, ButtonToggleContext } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { value, selected = false, children, iconSlot, color, class: className, iconClass, txtClass, contentClass, classes, ...restProps }: ButtonToggleProps = $props();

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type AndroidProps } from "$lib";
+  import type { AndroidProps } from "$lib";
   import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { android } from ".";

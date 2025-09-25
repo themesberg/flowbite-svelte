@@ -2,7 +2,7 @@
   import { getContext } from "svelte";
   import { dropdownItem } from ".";
   import clsx from "clsx";
-  import { type DropdownItemProps } from "$lib";
+  import type { DropdownItemProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { aClass, children, activeClass, liClass, classes, class: className, ...restProps }: DropdownItemProps = $props();

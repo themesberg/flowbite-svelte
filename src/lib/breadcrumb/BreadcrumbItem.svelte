@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type BreadcrumbItemProps } from "$lib";
+  import type { BreadcrumbItemProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { breadcrumbItem } from "./index";

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { footer } from ".";
   import clsx from "clsx";
-  import { type FooterProps } from "$lib";
+  import type { FooterProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, footerType = "default", class: className, ...restProps }: FooterProps = $props();

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { footerIcon } from ".";
   import clsx from "clsx";
-  import { type FooterIconProps } from "$lib";
+  import type { FooterIconProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, href, ariaLabel, class: className, ...restProps }: FooterIconProps = $props();
