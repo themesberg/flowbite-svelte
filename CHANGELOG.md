@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.14.1
+
+### Patch Changes
+
+- Added dependency: esm-env ^1.2.2
+- Import DEV from esm-env and replace local/dev-mode check with the imported DEV constant in warnThemeDeprecation. Removed previous inline/dev comment and related local dev logic.
+
 ## 1.14.0
 
 ### Minor Changes
