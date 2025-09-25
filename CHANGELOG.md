@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.14.2
+
+### Patch Changes
+
+- fix: Converted ThemeConfig to a type-only import (import type { ThemeConfig } from "$lib";). No changes to exports or runtime logic.
+
 ## 1.14.1
 
 ### Patch Changes
