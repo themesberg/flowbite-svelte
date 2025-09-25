@@ -443,7 +443,7 @@ Use the following example to add active class.
 
 #### Types
 
-[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1729)
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1730)
 
 #### Props
 
@@ -451,6 +451,7 @@ Use the following example to add active class.
 - titleSlot
 - open: $bindable(false)
 - title: "Tab title"
+- key
 - activeClass
 - inactiveClass
 - class: className
@@ -467,6 +468,7 @@ Use the following example to add active class.
 #### Props
 
 - children
+- selected: $bindable()
 - tabStyle: "none"
 - ulClass
 - contentClass

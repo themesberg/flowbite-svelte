@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.14.0
+
+### Minor Changes
+
+- feat(Tabs): add selected and key
+
 ## 1.13.16
 
 ### Patch Changes

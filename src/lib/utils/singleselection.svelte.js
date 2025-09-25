@@ -41,7 +41,7 @@ function setSelected(context, open, value) {
  */
 export function useSingleSelection(callback) {
   const context = getContext(SINGLE_SELECTION_KEY) ?? createSingleSelectionContext(false);
-  
+
   if (!context.hasOwnProperty?.("value")) return () => context;
 
   $effect(() => {

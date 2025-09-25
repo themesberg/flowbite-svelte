@@ -80,6 +80,14 @@ If you want to show the tabs on the full width relative to the parent element us
 {#include Full.svelte}
 ```
 
+## Tabs with selected and key
+
+You can control which tab is active using the selected prop on `<Tabs>` together with a key on each `<TabItem>`.
+
+```svelte example
+{#include BindSelected.svelte}
+```
+
 ## Components in tab contents
 
 You can add other components to the `TabItem` component. Here we are adding a timeline component in the tab 1:

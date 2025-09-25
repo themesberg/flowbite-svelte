@@ -13,7 +13,7 @@
   }
 
   warnThemeDeprecation("Tabs", { ulClass, contentClass }, { ulClass: "class", contentClass: "content" });
-  
+
   const theme = getTheme("tabs");
   const styling = $derived(classes ?? { content: contentClass });
   const { base, content, divider: dividerClass } = $derived(tabs({ tabStyle, hasDivider: divider }));
@@ -28,7 +28,7 @@
 
   const tabRegistry = $state(new Map<string, SelectedTab>());
   let selectedTab: SelectedTab = $state({});
-  
+
   const updateSelection = useSingleSelection<SelectedTab>((v) => {
     selectedTab = v ?? {};
     selected = v?.id;
@@ -75,3 +75,20 @@
 <div id={panelId} class={content({ class: clsx(theme?.content, styling.content) })} role="tabpanel" aria-labelledby={selectedTab.id}>
   {@render selectedTab.snippet?.()}
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1721)
+## Props
+@prop children
+@prop selected = $bindable()
+@prop tabStyle = "none"
+@prop ulClass
+@prop contentClass
+@prop divider = true
+@prop class: className
+@prop classes
+@prop ...restProps
+-->
