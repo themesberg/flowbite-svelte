@@ -23,6 +23,9 @@ importers:
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
+      esm-env:
+        specifier: ^1.2.2
+        version: 1.2.2
       flowbite:
         specifier: ^3.1.2
         version: 3.1.2(rollup@4.52.2)

@@ -152,6 +152,7 @@
     "apexcharts": "^5.3.5",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
+    "esm-env": "^1.2.2",
     "flowbite": "^3.1.2",
     "tailwind-merge": "^3.3.1",
     "tailwind-variants": "^3.1.1"
