@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Button, Tooltip } from "$lib";
+  import Button from "$lib/buttons/Button.svelte";
+  import Tooltip from "$lib/tooltip/Tooltip.svelte";
   import type { Placement } from "@floating-ui/dom";
   import { getContext } from "svelte";
   import { speedDialButton } from "./theme";

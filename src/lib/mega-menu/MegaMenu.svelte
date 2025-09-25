@@ -1,7 +1,8 @@
 <script lang="ts">
   import { megamenu } from "./theme";
   import clsx from "clsx";
-  import { type MegaMenuProps, type LinkType, Popper } from "$lib";
+  import type { MegaMenuProps, LinkType } from "$lib";
+  import Popper from "$lib/utils/Popper.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, extra, items = [], full, ulClass, isOpen = $bindable(false), class: className, extraClass, classes, ...restProps }: MegaMenuProps = $props();

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { uiHelpers } from "$lib";
+  import { uiHelpers } from "$lib/index";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import type { ParamsType, SidebarDropdownWrapperProps } from "$lib/types";
   import clsx from "clsx";

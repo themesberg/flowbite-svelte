@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { setContext } from "svelte";
-  import type { ThemeConfig } from "$lib";
+  import type { ThemeConfig } from "$lib/types";
 
   interface ThemeProviderProps {
     children: Snippet;

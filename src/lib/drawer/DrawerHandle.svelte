@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getTheme } from "$lib/theme/themeUtils";
-  import type { DrawerHandleProps } from "$lib/types";
+  import type { DrawerHandleProps } from "$lib";
   import clsx from "clsx";
   import { drawerhandle } from "./theme";
   import { getContext } from "svelte";

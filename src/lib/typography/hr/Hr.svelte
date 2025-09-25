@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { hr } from "./index";
+  import { hr } from "./theme";
   import type { HrProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 

@@ -1,7 +1,8 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import clsx from "clsx";
-  import { type ButtonToggleGroupProps, buttonToggleGroup } from "$lib";
+  import type { ButtonToggleGroupProps } from "$lib";
+  import { buttonToggleGroup } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { multiSelect = false, name = "toggle-group", value = multiSelect ? [] : null, color, size = "md", roundedSize = "md", onSelect = (val: any) => {}, children, ctxIconClass, ctxBtnClass, class: className, ...restProps }: ButtonToggleGroupProps = $props();

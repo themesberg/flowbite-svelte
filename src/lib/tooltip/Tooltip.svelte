@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import Popper from "../utils/Popper.svelte";
   import { tooltip } from "./theme";
-  import type { TooltipProps, TriggeredToggleEvent } from "$lib";
+  import type { TooltipProps, TriggeredToggleEvent } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { type = "dark", color = undefined, trigger = "hover", arrow = true, children, placement = "top", onbeforetoggle: _onbeforetoggle, class: className, isOpen = $bindable(false), ...restProps }: TooltipProps = $props();

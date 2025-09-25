@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { layout } from "./index";
+  import { layout } from "./theme";
   import type { LayoutProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

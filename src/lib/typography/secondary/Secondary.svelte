@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { secondary } from "./index";
+  import { secondary } from "./theme";
   import type { SecondaryProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

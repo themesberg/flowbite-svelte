@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { descriptionList } from "./index";
+  import { descriptionList } from "./theme";
   import type { DescriptionListProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

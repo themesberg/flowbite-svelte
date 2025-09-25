@@ -2,7 +2,8 @@
   import { idGenerator } from "../../utils";
   import { floatingLabelInput } from "./theme";
   import clsx from "clsx";
-  import { type FloatingLabelInputProps, CloseButton } from "$lib";
+  import type { FloatingLabelInputProps } from "$lib";
+  import CloseButton from "$lib/utils/CloseButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 

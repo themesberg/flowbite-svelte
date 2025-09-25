@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { mark } from "./index";
+  import { mark } from "./theme";
   import type { MarkProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { span } from "./index";
+  import { span } from "./theme";
   import type { SpanProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

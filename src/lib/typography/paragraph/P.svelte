@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { paragraph } from "./index";
+  import { paragraph } from "./theme";
   import type { ParagraphProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

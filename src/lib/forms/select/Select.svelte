@@ -1,7 +1,8 @@
 <script lang="ts" generics="T">
   import { select as selectCls } from "./theme";
   import clsx from "clsx";
-  import { type SelectProps, CloseButton } from "$lib";
+  import type { SelectProps } from "$lib";
+  import CloseButton from "$lib/utils/CloseButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 

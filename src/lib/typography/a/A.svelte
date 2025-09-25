@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { anchor } from "./index";
+  import { anchor } from "./theme";
   import type { AnchorProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

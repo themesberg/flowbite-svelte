@@ -1,6 +1,14 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { Dropdown, DropdownItem, Button, Input, ButtonGroup, Select, Label, Toggle, type TimepickerProps, type TimePickerOption } from "$lib";
+  import type { TimepickerProps, TimePickerOption } from "$lib";
+  import Input from "$lib/forms/input-field/Input.svelte";
+  import Select from "$lib/forms/select/Select.svelte";
+  import Button from "$lib/buttons/Button.svelte";
+  import ButtonGroup from "$lib/button-group/ButtonGroup.svelte";
+  import Dropdown from "$lib/dropdown/Dropdown.svelte";
+  import DropdownItem from "$lib/dropdown/DropdownItem.svelte";
+  import Label from "$lib/forms/label/Label.svelte";
+  import Toggle from "$lib/forms/toggle/Toggle.svelte";
   import { timepicker } from "./theme";
   import { parse, isValid, isBefore, isAfter } from "date-fns";
   import { getTheme } from "$lib/theme/themeUtils";

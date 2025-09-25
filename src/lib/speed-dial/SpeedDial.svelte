@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { Popper } from "$lib";
+  import Popper from "$lib/utils/Popper.svelte";
   import { getSideAxis } from "@floating-ui/utils";
   import { setContext } from "svelte";
   import { speedDial } from "./theme";

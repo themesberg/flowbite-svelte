@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { trapFocus, type SidebarCtxType, type SidebarProps } from "$lib";
+  import type { SidebarCtxType, SidebarProps } from "$lib/types";
+  import { trapFocus } from "$lib/utils/actions";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { setContext } from "svelte";

@@ -1,9 +1,10 @@
 <script lang="ts">
   import { setContext } from "svelte";
   import { table as tableCls } from "./theme";
-  import { TableHead, TableBody } from "$lib";
+  import TableHead from "./TableHead.svelte";
+  import TableBody from "./TableBody.svelte";
   import clsx from "clsx";
-  import type { TableProps, TableCtxType } from "$lib";
+  import type { TableProps, TableCtxType } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, footerSlot, captionSlot, items, divClass, striped, hoverable, border = true, shadow, color = "default", class: className, classes, ...restProps }: TableProps = $props();

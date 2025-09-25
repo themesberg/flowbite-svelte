@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { CloseButton } from "$lib";
-  import type { ParamsType } from "$lib/types";
+  import CloseButton from "$lib/utils/CloseButton.svelte";
+  import type { ParamsType, ToastProps } from "$lib/types";
   import { toast } from "./theme";
-  import type { ToastProps } from "$lib/types";
   import { fly } from "svelte/transition";
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

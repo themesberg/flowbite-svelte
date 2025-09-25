@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { activityItem } from "./index";
+  import { activityItem } from "./theme";
   import type { ActivityItemProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

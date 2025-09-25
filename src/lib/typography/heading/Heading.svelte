@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { heading } from "./index";
+  import { heading } from "./theme";
   import type { HeadingProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

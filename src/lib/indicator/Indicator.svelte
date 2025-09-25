@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { indicator } from "./index";
+  import { indicator } from "./theme";
   import clsx from "clsx";
   import type { IndicatorProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";

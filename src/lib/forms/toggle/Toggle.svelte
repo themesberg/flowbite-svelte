@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { toggle } from "./index";
+  import { toggle } from "./theme";
   import clsx from "clsx";
-  import { type ToggleProps, Label } from "$lib";
+  import type { ToggleProps } from "$lib";
+  import Label from "$lib/forms/label/Label.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, classes, inputClass, spanClass, offLabel, ...restProps }: ToggleProps = $props();

@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import type { CloseButtonProps } from "$lib";
+  import type { CloseButtonProps } from "$lib/types";
   import { closeButton } from "./theme";
   import { useDismiss } from "./dismissable";
 

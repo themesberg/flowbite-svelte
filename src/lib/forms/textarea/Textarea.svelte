@@ -1,7 +1,8 @@
 <script lang="ts">
   import { textarea } from "./theme";
   import clsx from "clsx";
-  import { type TextareaProps, CloseButton } from "$lib";
+  import type { TextareaProps } from "$lib";
+  import CloseButton from "$lib/utils/CloseButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 

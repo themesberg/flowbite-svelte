@@ -1,7 +1,8 @@
 <script lang="ts">
   import { checkbox } from "./theme";
   import clsx from "clsx";
-  import { type CheckboxProps, Label } from "$lib";
+  import { type CheckboxProps } from "$lib";
+  import Label from "$lib/forms/label/Label.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, color = "primary", custom, inline, tinted, rounded, group = $bindable([]), choices = [], checked = $bindable(false), classes, class: className, divClass, disabled, value, labelProps = {}, ...restProps }: CheckboxProps = $props();

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { widgetPlaceholder } from "./theme";
   import clsx from "clsx";
-  import type { WidgetPlaceholderProps } from "$lib";
+  import type { WidgetPlaceholderProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { class: className, classes }: WidgetPlaceholderProps = $props();

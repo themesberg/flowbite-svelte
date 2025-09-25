@@ -1,7 +1,8 @@
 <script lang="ts">
   import { search } from "./theme";
   import clsx from "clsx";
-  import { CloseButton, type SearchProps } from "$lib";
+  import type { SearchProps } from "$lib";
+  import CloseButton from "$lib/utils/CloseButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 

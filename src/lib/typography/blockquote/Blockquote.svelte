@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { blockquote } from "./index";
+  import { blockquote } from "./theme";
   import type { BlockquoteProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 

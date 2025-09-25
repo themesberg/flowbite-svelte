@@ -2,7 +2,7 @@
   import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
   import * as dom from "@floating-ui/dom";
   import Arrow from "./Arrow.svelte";
-  import type { ParamsType, PopperProps, TriggeredToggleEvent } from "$lib";
+  import type { ParamsType, PopperProps, TriggeredToggleEvent } from "$lib/types";
   import { fade } from "svelte/transition";
   import { sineIn } from "svelte/easing";
   import clsx from "clsx";

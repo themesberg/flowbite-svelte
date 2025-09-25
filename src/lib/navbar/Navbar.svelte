@@ -1,7 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
   import { setContext } from "svelte";
-  import { NavContainer } from "$lib";
+  import NavContainer from "./NavContainer.svelte";
   import { navbar } from "./theme";
   import type { NavbarState, NavbarProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";

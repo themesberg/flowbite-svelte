@@ -2,7 +2,8 @@
   import clsx from "clsx";
   import { setContext } from "svelte";
   import { paginationNav } from "./theme";
-  import { type PaginationNavProps, PaginationButton } from "$lib";
+  import type { PaginationNavProps } from "$lib";
+  import PaginationButton from "./PaginationButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   function paginationRange(start: number, end: number): number[] {

@@ -1,6 +1,7 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { TableBodyRow, TableBodyCell } from "$lib";
+  import TableBodyRow from "./TableBodyRow.svelte";
+  import TableBodyCell from "./TableBodyCell.svelte";
   import type { TableBodyProps, CellValue, BodyRow } from "$lib/types";
 
   let { children, bodyItems, class: className, ...restProps }: TableBodyProps = $props();

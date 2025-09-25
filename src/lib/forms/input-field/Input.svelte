@@ -1,7 +1,8 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import clsx from "clsx";
-  import { CloseButton, type SizeType, type InputProps, type InputValue } from "$lib";
+  import type { SizeType, InputProps, InputValue } from "$lib";
+  import CloseButton from "$lib/utils/CloseButton.svelte";
   import { input } from "./theme";
   import { clampSize } from "./index";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";

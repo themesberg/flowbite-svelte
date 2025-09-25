@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { DropdownGroup, type DropdownProps, Popper } from "$lib";
+  import type { DropdownProps } from "$lib";
+  import Popper from "$lib/utils/Popper.svelte";
+  import DropdownGroup from "./DropdownGroup.svelte";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { setContext } from "svelte";

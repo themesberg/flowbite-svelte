@@ -2,7 +2,8 @@
   import type { SizeType } from "$lib/types";
   import { getContext } from "svelte";
   import clsx from "clsx";
-  import { type InputAddonProps, clampSize } from "$lib";
+  import type { InputAddonProps } from "$lib";
+  import { clampSize } from "$lib/forms/input-field";
 
   let { children, class: className, size, ...restProps }: InputAddonProps = $props();
 

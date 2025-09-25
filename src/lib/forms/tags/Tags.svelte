@@ -1,6 +1,8 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { type TagsProps, CloseButton, P } from "$lib";
+  import type { TagsProps } from "$lib";
+  import P from "$lib/typography/paragraph/P.svelte";
+  import CloseButton from "$lib/utils/CloseButton.svelte";
   import { tags } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { computePosition, offset, flip, shift, autoUpdate } from "@floating-ui/dom";
