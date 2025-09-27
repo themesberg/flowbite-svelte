@@ -1813,6 +1813,8 @@ export interface TimelineProps extends HTMLOlAttributes {
   order?: TimelineVariants["order"];
 }
 
+type ColorVariant = "primary" | "green" | "orange" | "red" | "blue" | "purple" | "gray";
+
 export interface TimelineItemProps extends TimelineItemVariants, HTMLLiAttributes {
   children: Snippet;
   orientationSlot?: Snippet;
@@ -1824,6 +1826,10 @@ export interface TimelineItemProps extends TimelineItemVariants, HTMLLiAttribute
   timeClass?: string;
   h3Class?: string;
   dateFormat?: DateFormat;
+  color?: ColorVariant;
+  isLast?: boolean;
+  connectorClass?: string;
+  datePrefix?: string;
 }
 
 // toast

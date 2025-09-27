@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.15.0
+
+### Minor Changes
+
+- feat(Timeline): add color depends on state
+
 ## 1.14.6
 
 ### Patch Changes

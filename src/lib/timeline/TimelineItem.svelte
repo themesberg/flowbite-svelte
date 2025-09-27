@@ -5,31 +5,33 @@
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, orientationSlot, title, date, dateFormat = "month-year", svgClass, liClass, divClass, timeClass, h3Class, class: className, classes, ...restProps }: TimelineItemProps = $props();
+  let { children, orientationSlot, title, date, dateFormat = "month-year", color = "primary", isLast = false, svgClass, liClass, divClass, timeClass, h3Class, connectorClass, datePrefix, class: className, classes, ...restProps }: TimelineItemProps = $props();
 
   warnThemeDeprecation(
     "TimelineItem",
-    { svgClass, liClass, divClass, timeClass, h3Class },
+    { svgClass, liClass, divClass, timeClass, h3Class, connectorClass },
     {
       liClass: "class",
       svgClass: "svg",
       divClass: "div",
       timeClass: "time",
-      h3Class: "h3"
+      h3Class: "h3",
+      connectorClass: "connector"
     }
   );
+
   const styling = $derived({
     svg: svgClass,
     div: divClass,
     time: timeClass,
-    h3: h3Class
+    h3: h3Class,
+    connector: connectorClass
   });
 
   const theme = getTheme("timelineItem");
-
   let order = getContext<TimelineVariants["order"]>("order");
 
-  const { base, div, time, h3, svg } = $derived(timelineItem({ order }));
+  const { base, div, time, h3, svg, connector } = $derived(timelineItem({ order, color, isLast }));
 
   function formatDisplayDate(dateStr: string, format: DateFormat) {
     const date = new Date(dateStr);
@@ -61,6 +63,11 @@
 </script>
 
 <li {...restProps} class={base({ class: clsx(theme?.base, className ?? liClass) })}>
+  <!-- Individual connector line for vertical/activity layouts -->
+  {#if !isLast && (order === "vertical" || order === "activity")}
+    <div class={connector({ class: clsx(theme?.connector, styling.connector) })} aria-hidden="true"></div>
+  {/if}
+
   {#if order !== "default"}
     {#if orientationSlot && (order === "vertical" || order === "horizontal")}
       {@render orientationSlot()}
@@ -73,9 +80,11 @@
     {/if}
   {:else if date}
     <time datetime={date} class={time({ class: clsx(theme?.time, styling.time) })}>
+      {datePrefix}
       {formatDisplayDate(date, dateFormat)}
     </time>
   {/if}
+
   {#if title}
     <h3 class={h3({ class: clsx(theme?.h3, styling.h3) })}>
       {title}
@@ -84,7 +93,8 @@
 
   {#if order !== "default"}
     {#if date}
-      <time datetime={date} class={time({ class: clsx(theme?.time, timeClass) })}>
+      <time datetime={date} class={time({ class: clsx(theme?.time, styling.time) })}>
+        {datePrefix}
         {formatDisplayDate(date, dateFormat)}
       </time>
     {/if}
@@ -97,18 +107,22 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1816)
+[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1818)
 ## Props
 @prop children
 @prop orientationSlot
 @prop title
 @prop date
 @prop dateFormat = "month-year"
+@prop color = "primary"
+@prop isLast = false
 @prop svgClass
 @prop liClass
 @prop divClass
 @prop timeClass
 @prop h3Class
+@prop connectorClass
+@prop datePrefix
 @prop class: className
 @prop classes
 @prop ...restProps

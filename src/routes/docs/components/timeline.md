@@ -48,6 +48,14 @@ Use this horizontally aligned timeline component to show a series of data in a c
 {#include Horizontal.svelte}
 ```
 
+## TimelineItem color depends on state 
+
+Use the following example to add different colors depends on state (past, current, future, etc.) to the timeline:
+
+```svelte example
+{#include TimelineColor.svelte}
+```
+
 ## Activity Log
 
 This component can be used to show the timline of a user’s activity history inside your application by using an avatar, datetime, description, and links to specific pages.

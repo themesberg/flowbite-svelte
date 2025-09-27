@@ -2,7 +2,7 @@
   "name": "TimelineItem",
   "type": {
     "name": "TimelineItemProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1816"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1818"
   },
   "props": [
     ["children", ""],
@@ -10,11 +10,15 @@
     ["title", ""],
     ["date", ""],
     ["dateFormat", "\"month-year\""],
+    ["color", "\"primary\""],
+    ["isLast", "false"],
     ["svgClass", ""],
     ["liClass", ""],
     ["divClass", ""],
     ["timeClass", ""],
     ["h3Class", ""],
+    ["connectorClass", ""],
+    ["datePrefix", ""],
     ["class: className", ""],
     ["classes", ""]
   ]
