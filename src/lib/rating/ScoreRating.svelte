@@ -69,7 +69,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ScoreRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1316)
+[ScoreRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1323)
 ## Props
 @prop ratings
 @prop ratings2

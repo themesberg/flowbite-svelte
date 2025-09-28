@@ -574,6 +574,7 @@ export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
   outsideclose?: boolean;
   transition?: TransitionFunc;
   transitionParams?: ParamsType;
+  count?: number;
 }
 
 // drawer
@@ -1056,6 +1057,11 @@ export interface MegaMenuProps extends MegaMenuVariants, Omit<PopperProps, "chil
 }
 
 // modal
+export type CountdownType = {
+  number: number;
+  text?: string | ((remaining: number) => string);
+};
+
 export interface ModalProps extends ModalVariants, Omit<DialogProps, "classes"> {
   header?: Snippet;
   footer?: Snippet;
@@ -1064,6 +1070,7 @@ export interface ModalProps extends ModalVariants, Omit<DialogProps, "classes"> 
   footerClass?: ClassValue;
   closeBtnClass?: ClassValue;
   fullscreen?: boolean;
+  countdown?: CountdownType;
 }
 
 // navbar

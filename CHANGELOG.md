@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.16.0
+
+### Minor Changes
+
+- feat(modal): add countdown timer
+
 ## 1.15.0
 
 ### Minor Changes

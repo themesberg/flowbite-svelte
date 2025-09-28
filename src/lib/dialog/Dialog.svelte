@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onDestroy } from "svelte";
   import type { DialogProps, ParamsType } from "$lib";
   import { trapFocus } from "$lib/utils/actions";
   import { dialog } from "./theme";
@@ -8,7 +9,7 @@
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
 
-  let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, open = $bindable(false), permanent = false, dismissable = true, outsideclose = true, class: className, classes, transition = fade, transitionParams, ...restProps }: DialogProps = $props();
+  let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, open = $bindable(false), permanent = false, dismissable = true, outsideclose = true, class: className, classes, transition = fade, transitionParams, count, ...restProps }: DialogProps = $props();
 
   const paramsOptions = $derived(transitionParams ?? { duration: 100, easing: sineIn });
 
@@ -115,6 +116,31 @@
   }
 
   createDismissableContext(close_handler);
+
+  let escHandler: ((e: KeyboardEvent) => void) | null = null;
+
+  $effect(() => {
+    if (escHandler) {
+      window.removeEventListener("keydown", escHandler);
+      escHandler = null;
+    }
+
+    if (open && typeof count === "number" && count > 0) {
+      escHandler = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      };
+      window.addEventListener("keydown", escHandler);
+    }
+  });
+
+  onDestroy(() => {
+    if (escHandler) {
+      window.removeEventListener("keydown", escHandler);
+    }
+  });
 </script>
 
 {#snippet content()}
@@ -159,5 +185,6 @@
 @prop classes
 @prop transition = fade
 @prop transitionParams
+@prop count
 @prop ...restProps
 -->

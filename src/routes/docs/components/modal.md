@@ -171,6 +171,18 @@ Use the following example to create a full-screen modal.
 {#include Full.svelte}
 ```
 
+## Modal with Countdown
+
+Enhance user engagement and ensure content visibility by adding countdown timers to modals. During the countdown period, users cannot dismiss the modal through outside clicks, ESC key, or the close button, forcing interaction with the content.
+
+This is perfect for advertisements, terms of service, or important announcements.
+
+The `countdown` prop accepts a `CountdownType` object with `number` (seconds), and `text` (display function/template).
+
+```svelte example hideResponsiveButtons
+{#include Countdown.svelte}
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

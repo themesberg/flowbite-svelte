@@ -21,6 +21,7 @@
     ["class: className", ""],
     ["classes", ""],
     ["transition", "fade"],
-    ["transitionParams", ""]
+    ["transitionParams", ""],
+    ["count", ""]
   ]
 }
