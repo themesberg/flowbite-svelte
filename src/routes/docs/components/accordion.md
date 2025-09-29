@@ -129,7 +129,7 @@ Control when accordion items are open or closed based on screen size using Flowb
 
 Simple Media Query opens accordion item on medium screens and larger:
 
-```svelte example
+```svelte example hideResponsiveButtons
 {#include BpBasic.svelte}
 ```
 
@@ -137,7 +137,7 @@ Simple Media Query opens accordion item on medium screens and larger:
 
 Access multiple breakpoints with a single hook:
 
-```svelte example
+```svelte example hideResponsiveButtons
 {#include BpObject.svelte}
 ```
 
@@ -145,7 +145,7 @@ Access multiple breakpoints with a single hook:
 
 Current Breakpoint Display show the current breakpoint in your UI:
 
-```svelte example
+```svelte example hideResponsiveButtons
 {#include BpAdvanced.svelte}
 ```
 
@@ -153,13 +153,13 @@ Current Breakpoint Display show the current breakpoint in your UI:
 
 Open accordion only within specific screen size ranges:
 
-```svelte example
+```svelte example hideResponsiveButtons
 {#include BpRange.svelte}
 ```
 
 ### Complex examples
 
-```svelte example class="space-y-4"
+```svelte example hideResponsiveButtons class="space-y-4"
 {#include BpComplex.svelte}
 ```
 
