@@ -26,10 +26,21 @@
 
 {#snippet childSlot()}
   {#if img}
-    <img class={image({ class: clsx(theme?.image, styling.image) })} src={img} alt={img} />
-    {@render children()}
+    <img
+      class={image({ class: clsx(theme?.image, styling.image) })}
+      src={img}
+      alt=""
+      loading="lazy"
+      onerror={(e) => {
+        const target = e.currentTarget as HTMLImageElement;
+        if (target) {
+          target.style.display = "none";
+        }
+      }}
+    />
+    {@render children?.()}
   {:else}
-    {@render children()}
+    {@render children?.()}
   {/if}
 {/snippet}
 
