@@ -91,9 +91,10 @@ export const input = tv({
       }
     },
     grouped: {
-      false: { input: "rounded-lg" },
+      false: { base: "rounded-lg", input: "rounded-lg" },
       true: {
-        input: "first:rounded-s-lg last:rounded-e-lg not-first:-ms-px"
+        base: "first:rounded-s-lg last:rounded-e-lg not-first:-ms-px group",
+        input: "group-first:rounded-s-lg group-last:rounded-e-lg group-not-first:-ms-px"
       }
     }
   },

@@ -225,7 +225,7 @@
         {@render left()}
       </div>
     {/if}
-    {@render inputContent()}
+    {@render inputContent(true)}
     {#if right}
       <div class={rightCls({ class: clsx(theme?.right, styling.right) })}>
         {@render right()}
@@ -243,14 +243,14 @@
     {/if}
   </div>
 {:else}
-  {@render inputContent()}
+  {@render inputContent(false)}
 {/if}
 
-{#snippet inputContent()}
+{#snippet inputContent(wrapped: boolean)}
   {#if children}
     {@render children({ ...restProps, class: inputCls() })}
   {:else}
-    <input {...restProps} bind:value bind:this={elementRef} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} class={inputCls({ class: clsx(theme?.input, className) })} />
+    <input {...restProps} bind:value bind:this={elementRef} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} class={[wrapped || base(), inputCls({ class: clsx(theme?.input, className) })]} />
     {#if value !== undefined && value !== "" && clearable}
       <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
     {/if}
