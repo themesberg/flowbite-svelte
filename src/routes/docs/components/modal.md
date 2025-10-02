@@ -177,8 +177,6 @@ Enhance user engagement and ensure content visibility by adding countdown timers
 
 This is perfect for advertisements, terms of service, or important announcements.
 
-The `countdown` prop accepts a `CountdownType` object with `number` (seconds), and `text` (display function/template).
-
 ```svelte example hideResponsiveButtons
 {#include Countdown.svelte}
 ```
