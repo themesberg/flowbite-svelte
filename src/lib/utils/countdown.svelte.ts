@@ -4,7 +4,6 @@ export function createCountdown(initialSeconds = 60) {
   let animationId: number | null = null;
   let lastTimestamp: DOMHighResTimeStamp | null = null;
 
-
   function tick(timestamp: DOMHighResTimeStamp) {
     if (!lastTimestamp) {
       lastTimestamp = timestamp;
@@ -62,8 +61,12 @@ export function createCountdown(initialSeconds = 60) {
   });
 
   return {
-    get timeLeft() { return timeLeft; },
-    get isRunning() { return isRunning; },
+    get timeLeft() {
+      return timeLeft;
+    },
+    get isRunning() {
+      return isRunning;
+    },
     start,
     stop,
     reset,

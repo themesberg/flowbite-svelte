@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.17.0
+
+### Minor Changes
+
+- - feat(Modal):
+    - Add createCountdown utility function for managing timed modal interactions
+    - Support countdown display in modal headers with automatic timer management
+    - Add outsideclose prop to control backdrop click behavior during countdown
+    - Add count prop to Dialog for ESC key prevention during active countdown
+    - Countdown automatically starts when modal opens and resets on close
+    - Prevents modal dismissal (ESC key, outside clicks) while countdown is active
+  - fix(Input):
+    - Changes snippet signature to inputContent(wrapped: boolean). Replaces inputContent() calls with `inputContent(true)`.
+    - Refactors grouped variant to separate base and input classes. For false: { base: "rounded-lg", input: "rounded-lg" }. For true: { base: "first:rounded-s-lg last:rounded-e-lg not-first:-ms-px group", input: "group-first:rounded-s-lg group-last:rounded-e-lg group-not-first:-ms-px" }.
+
 ## 1.16.0
 
 ### Minor Changes
