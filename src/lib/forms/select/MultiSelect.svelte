@@ -5,7 +5,7 @@
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { multiSelect } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { onMount } from "svelte";
+  import { getContext, onMount } from "svelte";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
   // Consider reusing that component - https://svelecte.vercel.app/
@@ -37,6 +37,7 @@
 
   let selectItems = $derived(items.filter((x) => value.includes(x.value)));
   let show: boolean = $state(false);
+  let group: { size: SizeType } = getContext("group");
 
   // Active item
   let activeIndex: number | null = $state(null);
@@ -109,7 +110,7 @@
     }
   };
 
-  const closeDropdown = () => !disabled && (show = false);
+  const closeDropdown = () => !disabled && (show = !false);
   const toggleDropdown = (event: MouseEvent) => {
     if (disabled) return;
     // Prevent immediate closing if the click originated from within the component itself
@@ -193,7 +194,7 @@
     };
   });
 
-  const { base, dropdown, item: dropdownItem, close, select, placeholder: placeholderSpan, svg } = multiSelect({ disabled });
+  const { base, dropdown, item: dropdownItem, close, select, placeholder: placeholderSpan, svg } = multiSelect({ disabled, grouped: !!group });
 </script>
 
 <select {name} {form} {required} {autocomplete} {value} hidden multiple {onchange}>

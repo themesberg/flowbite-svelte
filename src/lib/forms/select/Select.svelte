@@ -5,6 +5,7 @@
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
+  import { getContext } from "svelte";
 
   let { children, items, value = $bindable(), elementRef = $bindable(), underline, size = "md", disabled, placeholder = "Choose option ...", clearable, clearableColor = "none", clearableOnClick, onClear, clearableSvgClass, clearableClass, selectClass, class: className, classes, ...restProps }: SelectProps<T> = $props();
 
@@ -14,7 +15,8 @@
 
   const theme = getTheme("select");
 
-  const { base, select, close } = $derived(selectCls({ underline, size, disabled }));
+  let group: { size: SizeType } = getContext("group");
+  const { base, select, close } = $derived(selectCls({ underline, size, disabled, grouped: !!group }));
 
   const clearAll = () => {
     if (elementRef) {
