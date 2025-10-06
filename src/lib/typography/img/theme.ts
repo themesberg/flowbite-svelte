@@ -39,9 +39,9 @@ export const img = tv({
       }
     },
     align: {
-      left: { base: "mx-0" },
-      center: { base: "mx-auto" },
-      right: { base: "ml-auto mr-0" }
+      left: { base: "mx-0", figure: "mx-0" },
+      center: { base: "mx-auto", figure: "mx-auto" },
+      right: { base: "ml-auto mr-0", figure: "ml-auto mr-0" }
     }
   }
 });

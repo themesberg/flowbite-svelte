@@ -1934,7 +1934,7 @@ export interface Picture {
 }
 // export type EnhancedImgAttributes = Omit<HTMLImgAttributes, "src"> & { src: string };
 
-export interface ImgProps extends ImgVariants, Omit<HTMLImgAttributes, 'children'> {
+export interface ImgProps extends ImgVariants, Omit<HTMLImgAttributes, "children"> {
   children?: Snippet<[{ class: string; restProps: any }]>;
   size?: ImgVariants["size"];
   effect?: ImgVariants["effect"];

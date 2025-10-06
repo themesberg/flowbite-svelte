@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.17.2
+
+### Patch Changes
+
+- fix(Img): add children for enhanded:img
+
 ## 1.17.1
 
 ### Patch Changes

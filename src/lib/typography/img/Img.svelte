@@ -42,12 +42,10 @@
         {@html caption}
       </figcaption>
     </figure>
+  {:else if useSlot}
+    {@render children?.({ class: imgClass, restProps })}
   {:else}
-    {#if useSlot}
-      {@render children?.({ class: imgClass, restProps })}
-    {:else}
-      <img {...restProps} class={imgClass} />
-    {/if}
+    <img {...restProps} class={imgClass} />
   {/if}
 {/snippet}
 
@@ -65,8 +63,10 @@
 ## Type
 [ImgProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1937)
 ## Props
-@prop size = "none"
-@prop effect = "none"
+@prop children
+@prop size
+@prop effect
+@prop align
 @prop caption
 @prop class: className
 @prop classes

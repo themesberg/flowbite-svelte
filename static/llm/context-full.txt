@@ -1,5 +1,5 @@
 # undefined Documentation - Full Context
-# Generated on 2025-10-03T13:05:48.530Z
+# Generated on 2025-10-06T09:14:16.818Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -17819,7 +17819,7 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 #### Types
 
-[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2005)
+[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2007)
 
 #### Props
 
@@ -22648,7 +22648,7 @@ Use this example to show the a responsive image that won’t grow beyond the max
 
 ## Image caption
 
-This example can be used to add a caption for the image often used inside articles. <Badge large>Warning: the caption is using @html.</Badge>
+This example can be used to add a caption for the image often used inside articles. <Span underline class="decoration-primary-500">Warning: the caption is using @html.</Span>
 
 ```svelte
 <script lang="ts">
@@ -22719,127 +22719,81 @@ Use this example to make the image a card item with a link and a short text desc
   import { Img } from "flowbite-svelte";
 </script>
 
-<Img src="/images/examples/content-gallery-3.png" alt="sample 1" class="rounded-lg" figClass="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" captionClass="absolute bottom-6 px-4 text-lg text-white" caption="Do you want to get notified when a new component is added to Flowbite?" />
+<Img src="/images/examples/content-gallery-3.png" alt="sample 1" class="rounded-lg" classes={{ figure: "relative", caption: "absolute bottom-6 px-4 text-lg text-white" }} caption="Do you want to get notified when a new component is added to Flowbite?" effect="grayscale" size="sm" />
 ```
 
 ## Image effects
 
-Use image effects such as grayscale or blur to change the appearances of the image when being hovered.
-
-### Grayscale
-
-Use the filter option and apply a grayscale to the image element using the grayscale class.
+Use `effect="grayscale"|"blur"|"invert"|"sepia"|"saturate"|"hue-rotate"` props to change the appearances of the image when being hovered.
 
 ```svelte
 <script lang="ts">
-  import { Img } from "flowbite-svelte";
+  import { Img, img, Radio, Label, type ImgProps } from "flowbite-svelte";
+
+  const effects = Object.keys(img.variants.effect);
+  let imgEffect: ImgProps["effect"] = $state(undefined);
 </script>
 
-<Img src="/images/examples/content-gallery-3.png" alt="My gallery" class="max-w-lg cursor-pointer rounded-lg grayscale filter transition-all duration-300 hover:grayscale-0" />
-```
-
-### Blur
-
-Apply a blur by using the blur-size utility class from Tailwind CSS to an image component.
-
-```svelte
-<script lang="ts">
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/content-gallery-3.png" alt="My gallery" class="max-w-lg rounded-lg blur-xs transition-all duration-300 hover:blur-none" />
+<div class="flex flex-col items-center">
+  <Img src="/images/examples/content-gallery-3.png" alt="sample 1" size="md" effect={imgEffect} />
+  <div class="mt-4 flex flex-wrap space-x-2">
+    <Label class="mb-4 w-full font-bold">Effect</Label>
+    {#each effects as effect}
+      <Radio class="my-1" classes={{ label: "w-24" }} name="img_effect" bind:group={imgEffect} value={effect}>{effect}</Radio>
+    {/each}
+  </div>
+</div>
 ```
 
 ## Alignment
 
-Align the image component to the left, center or right side of the document page using margin styles.
-
-### Left
+Align the image component to the left, center or right side of the document page using the `align="left"|"center"|"right"` props.
 
 By default, the image component will be aligned to the left side of the page.
 
 ```svelte
 <script lang="ts">
-  import { Img } from "flowbite-svelte";
+  import { Img, img, Radio, Label, type ImgProps } from "$lib";
+
+  const alignments = Object.keys(img.variants.align);
+  let imgAlign: ImgProps["align"] = $state(undefined);
 </script>
 
-<Img src="/images/examples/image-1@2x.jpg" class="max-w-lg" alt="sample 1" />
-```
+<div class="flex flex-col">
+  <Img src="/images/examples/image-1@2x.jpg" size="sm" align={imgAlign} alt="sample 1" />
 
-### Center
-
-Horizontally align the image to the center of the page using the `mx-auto` class.
-
-```svelte
-<script lang="ts">
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" class="mx-auto max-w-lg" alt="sample 1" />
-```
-
-### Right
-
-Use the `ms-auto` class to align the image to the right side of the page.
-
-```svelte
-<script lang="ts">
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" class="ms-auto max-w-lg" alt="sample 1" />
+  <div class="mt-4 flex flex-wrap space-x-2">
+    <Label class="mb-4 w-full font-bold">Alignment</Label>
+    {#each alignments as option}
+      <Radio class="my-1" classes={{ label: "w-16" }} name="alignment" bind:group={imgAlign} value={option}>{option}</Radio>
+    {/each}
+  </div>
+</div>
 ```
 
 ## Sizes
 
-Set the size of the image using the w-size and h-size or max-w-size utility classes from Tailwind CSS to set the width and height of the element.
-
-### Small
-
-Use the `max-w-xs` class to set a small size of the image.
+Set the `size="xs"|"sm"|"md"|"lg"|"xl"|"2xl"|"full"|"none"` props to change the size of image.
 
 ```svelte
 <script lang="ts">
-  import { Img } from "flowbite-svelte";
+  import { Img, img, Radio, Label, type ImgProps } from "flowbite-svelte";
+
+  const sizes = Object.keys(img.variants.size);
+  let imgSize: ImgProps["size"] = $state("md");
 </script>
 
-<Img src="/images/examples/image-1@2x.jpg" class="max-w-xs" alt="sample 1" />
-```
-
-### Medium
-
-Use the `max-w-md` class to set a medium size of the image.
-
-```svelte
-<script lang="ts">
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" class="max-w-md" alt="sample 1" />
-```
-
-### Large
-
-Use the max-w-xl class to set a large size of the image.
-
-```svelte
-<script lang="ts">
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" class="max-w-xl" alt="sample 1" />
-```
-
-### Full width
-
-Use the max-w-full class to set the full width of the image as long as it doesn’t become larger than the original source.
-
-```svelte
-<script lang="ts">
-  import { Img } from "flowbite-svelte";
-</script>
-
-<Img src="/images/examples/image-1@2x.jpg" class="max-w-full" alt="sample 1" />
+<div class="flex flex-col items-center">
+  <div class="md:h-[500px]">
+    <Img src="/images/examples/image-1@2x.jpg" size={imgSize} class="mx-auto" alt="sample 1" />
+  </div>
+  <div class="mt-4 flex flex-wrap space-x-2">
+    <Label class="mb-4 w-full font-bold">Size</Label>
+    {#each sizes as option}
+      <Radio class="my-1" classes={{ label: "w-16" }} name="img_size" bind:group={imgSize} value={option}>{option}</Radio>
+    {/each}
+  </div>
+</div>
 ```
 
 ## Enhanced image
@@ -22852,11 +22806,21 @@ Use this example for an enhanced image. In this example an image is stored in `s
 
 ```svelte
 <script lang="ts">
-  import { EnhancedImg } from "flowbite-svelte";
+  import { Img } from "flowbite-svelte";
   import imagePicture from "/src/images/content-gallery-3.png?enhanced";
 </script>
 
-<EnhancedImg src={imagePicture} alt="some alt text" />
+<div class="flex flex-col items-center space-y-4">
+  <Img caption="Default enhanced image" size="md">
+    <enhanced:img src={imagePicture} alt="Default enhanced example" />
+  </Img>
+
+  <Img caption="Sepia effect with enhanced image" size="md" effect="sepia">
+    {#snippet children({ class: imgClass, restProps })}
+      <enhanced:img src={imagePicture} alt="Sepia effect with enhanced" class={imgClass} {...restProps} />
+    {/snippet}
+  </Img>
+</div>
 ```
 
 ## Component data
@@ -23378,7 +23342,7 @@ Use this example to create a horizontally aligned list of items.
 
 #### Types
 
-[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1964)
+[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1966)
 
 #### Props
 

@@ -123,6 +123,12 @@ Use this example for an enhanced image. In this example an image is stored in `s
 {#include Enhanced.svelte}
 ```
 
+Use `effect`, `size`, `align` props for enhanced image as the following:
+
+```svelte example
+{#include EnhancedEffect.svelte}
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

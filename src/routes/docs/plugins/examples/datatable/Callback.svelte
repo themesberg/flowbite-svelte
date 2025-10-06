@@ -1,24 +1,24 @@
 <script lang="ts">
-  import { Table } from '@flowbite-svelte-plugins/datatable';
-  import items from './data/sample.json';
-  import type { DataTable } from '@flowbite-svelte-plugins/datatable';
-  import { Spinner } from 'flowbite-svelte';
+  import { Table } from "@flowbite-svelte-plugins/datatable";
+  import items from "./data/sample.json";
+  import type { DataTable } from "@flowbite-svelte-plugins/datatable";
+  import { Spinner } from "flowbite-svelte";
 
   let isTableLoading = $state(true);
   let tableInstance: DataTable | null = $state(null);
 
   function handleInitStart(): void {
-    console.log('Table initialization started');
+    console.log("Table initialization started");
     isTableLoading = true;
   }
 
   function handleInitComplete(dataTable: DataTable): void {
-    console.log('Table ready:', dataTable);
+    console.log("Table ready:", dataTable);
     isTableLoading = false;
   }
 
   function handleInitError(error: Error): void {
-    console.error('Table initialization failed:', error);
+    console.error("Table initialization failed:", error);
     isTableLoading = false;
   }
 
@@ -40,12 +40,12 @@
         tr.attributes = {};
       }
       if (!tr.attributes.class) {
-        tr.attributes.class = '';
+        tr.attributes.class = "";
       }
       if (row.selected) {
-        tr.attributes.class += ' selected';
+        tr.attributes.class += " selected";
       } else {
-        tr.attributes.class = tr.attributes.class.replace(' selected', '');
+        tr.attributes.class = tr.attributes.class.replace(" selected", "");
       }
       return tr;
     }
