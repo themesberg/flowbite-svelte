@@ -27,7 +27,7 @@
     USA
     <ChevronDownOutline class="ms-2 h-6 w-6" />
   </Button>
-  <Dropdown simple triggeredBy="#states-button">
+  <Dropdown simple>
     <DropdownItem class="flex items-center">
       <Usa />
       United States
