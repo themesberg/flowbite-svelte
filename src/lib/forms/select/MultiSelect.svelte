@@ -110,7 +110,7 @@
     }
   };
 
-  const closeDropdown = () => !disabled && (show = !false);
+  const closeDropdown = () => !disabled && (show = false);
   const toggleDropdown = (event: MouseEvent) => {
     if (disabled) return;
     // Prevent immediate closing if the click originated from within the component itself
