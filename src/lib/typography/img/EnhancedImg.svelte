@@ -22,6 +22,7 @@
   const theme = getTheme("img");
 
   let { base, figure, caption: figureCaption } = $derived(img({ size }));
+  console.warn("EnhancedImg is deprecated. Please use Img instead.");
 </script>
 
 {#snippet imageSlot()}

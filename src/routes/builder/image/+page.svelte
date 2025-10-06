@@ -13,11 +13,11 @@
   let dir = "builder";
 
   const sizes = Object.keys(img.variants.size);
-  let imgSize: ImgProps["size"] = $state("none");
+  let imgSize: ImgProps["size"] = $state(undefined);
   // const alignments = Object.keys(img.variants.alignment);
   // let imgAlignment: ImgProps['alignment'] = $state('left');
   const effects = Object.keys(img.variants.effect);
-  let imgEffect: ImgProps["effect"] = $state("none");
+  let imgEffect: ImgProps["effect"] = $state(undefined);
 
   // const shadows = Object.keys(img.variants.shadow);
   // let imgShadow: ImgProps['shadow'] = $state('none');
@@ -33,8 +33,8 @@
     imgHref = imgHref === "" ? "/" : "";
   };
   $effect(() => {
-    if (imgSize !== "none") {
-      imgEffect = "none";
+    if (imgSize !== undefined) {
+      imgEffect = undefined;
     }
   });
 
@@ -43,13 +43,13 @@
     (() => {
       // size, alignment, effect, shadow, rounded, caption, imgClass, figClass, captionClass,
       let props = [];
-      if (imgSize !== "none") props.push(` size="${imgSize}"`);
+      if (imgSize !== undefined) props.push(` size="${imgSize}"`);
       // if (imgAlignment !== 'left') props.push(` alignment="${imgAlignment}"`);
-      if (imgEffect !== "none") props.push(` effect="${imgEffect}"`);
+      if (imgEffect !== undefined) props.push(` effect="${imgEffect}"`);
       // if (imgShadow !== 'none') props.push(` shadow="${imgShadow}"`);
       // if (imgRounded !== 'none') props.push(` rounded="${imgRounded}"`);
-      if (imgEffect !== "none" && imgCaption) props.push(` figClass="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"`);
-      if (imgEffect !== "none" && imgCaption) props.push(` captionClass="absolute bottom-6 px-4 text-lg text-white"`);
+      if (imgEffect !== undefined && imgCaption) props.push(` figClass="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"`);
+      if (imgEffect !== undefined && imgCaption) props.push(` captionClass="absolute bottom-6 px-4 text-lg text-white"`);
       if (imgCaption) props.push(` caption="Image caption"`);
       if (imgHref) props.push(` href="/"`);
 
@@ -82,7 +82,7 @@
 <H1>Image Builder</H1>
 <CodeWrapper>
   <div class="relative mb-4 overflow-y-auto md:h-[700px]">
-    <Img src={imgEffect !== "none" ? "/images/examples/content-gallery-3.png" : imgClass.includes("full") ? "/images/examples/image-4@2x.jpg" : "/images/examples/image-1@2x.jpg"} size={imgSize} class={imgClass} alt="sample 1" effect={imgEffect} figClass={imgEffect !== "none" && imgCaption ? "relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" : ""} captionClass={imgEffect !== "none" && imgCaption ? "absolute bottom-6 px-4 text-lg text-white mx-auto" : ""} caption={imgEffect !== "none" ? "Do you want to get notified when a new component is added to Flowbite?" : imgCaption ? "Image caption" : ""} href={imgHref} />
+    <Img src={imgEffect !== undefined ? "/images/examples/content-gallery-3.png" : imgClass.includes("full") ? "/images/examples/image-4@2x.jpg" : "/images/examples/image-1@2x.jpg"} size={imgSize} class={imgClass} alt="sample 1" effect={imgEffect} figClass={imgEffect !== undefined && imgCaption ? "relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" : ""} captionClass={imgEffect !== undefined && imgCaption ? "absolute bottom-6 px-4 text-lg text-white mx-auto" : ""} caption={imgEffect !== undefined ? "Do you want to get notified when a new component is added to Flowbite?" : imgCaption ? "Image caption" : ""} href={imgHref} />
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size</Label>

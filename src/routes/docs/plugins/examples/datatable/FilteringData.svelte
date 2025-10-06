@@ -1,29 +1,30 @@
 <script lang="ts">
-  import { Table } from "@flowbite-svelte-plugins/datatable";
-  import products from "./data/products.json";
+  import { Table } from '@flowbite-svelte-plugins/datatable';
+  import products from './data/products.json';
+  import type { DataTableOptions } from '@flowbite-svelte-plugins/datatable';
 
-  const filterOptions = {
+  const filterOptions: DataTableOptions = {
     tableRender: (data: any[], table: any, type: string) => {
-      if (type === "print") {
+      if (type === 'print') {
         return table;
       }
 
       const tHead = table.childNodes[0];
       const filterHeaders = {
-        nodeName: "TR",
+        nodeName: 'TR',
         attributes: {
-          class: "search-filtering-row"
+          class: 'search-filtering-row'
         },
         childNodes: tHead.childNodes[0].childNodes.map((_th: any, index: number) => ({
-          nodeName: "TH",
+          nodeName: 'TH',
           childNodes: [
             {
-              nodeName: "INPUT",
+              nodeName: 'INPUT',
               attributes: {
-                class: "datatable-input",
-                type: "search",
+                class: 'datatable-input',
+                type: 'search',
                 placeholder: `Filter column ${index + 1}`,
-                "data-columns": `[${index}]`
+                'data-columns': `[${index}]`
               }
             }
           ]

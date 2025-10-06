@@ -4,36 +4,50 @@
   import type { ImgProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { size = "none", effect = "none", caption, class: className, classes, figClass, captionClass, href, ...restProps }: ImgProps = $props();
+  let { children, size, effect, align, caption, class: className, classes, figClass, captionClass, href, ...restProps }: ImgProps = $props();
 
   warnThemeDeprecation(
     "Img",
     { figClass, captionClass },
     {
-      figClass: "fig",
+      figClass: "figure",
       captionClass: "caption"
     }
   );
+
   const styling = $derived({
-    fig: figClass,
-    caption: captionClass
+    figure: figClass || classes?.figure,
+    caption: captionClass || classes?.caption
   });
 
   const theme = getTheme("img");
 
-  let { base, figure, caption: figureCaption } = $derived(img({ size, effect }));
+  let { base, figure, caption: figureCaption } = $derived(img({ size, effect, align }));
+
+  // Determine if using slot or traditional props
+  const useSlot = $derived(!!children);
+  // Compute the final class string to pass to children
+  const imgClass = $derived(base({ class: clsx(theme?.base, className) }));
 </script>
 
 {#snippet imageSlot()}
   {#if caption}
-    <figure class={figure({ class: clsx(theme?.figure, styling.fig) })}>
-      <img {...restProps} class={base({ class: clsx(theme?.base, className) })} />
+    <figure class={figure({ class: clsx(theme?.figure, styling.figure) })}>
+      {#if useSlot}
+        {@render children?.({ class: imgClass, restProps })}
+      {:else}
+        <img {...restProps} class={imgClass} />
+      {/if}
       <figcaption class={figureCaption({ class: clsx(theme?.caption, styling.caption) })}>
         {@html caption}
       </figcaption>
     </figure>
   {:else}
-    <img {...restProps} class={base({ class: clsx(theme?.base, className) })} />
+    {#if useSlot}
+      {@render children?.({ class: imgClass, restProps })}
+    {:else}
+      <img {...restProps} class={imgClass} />
+    {/if}
   {/if}
 {/snippet}
 

@@ -10,7 +10,7 @@ thumnailSize: w-64
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import { A, Heading, Badge } from '$lib'
+  import { A, Heading, Span } from '$lib'
 
   const components = 'Img'
 </script>
@@ -35,7 +35,7 @@ Use this example to show the a responsive image that won’t grow beyond the max
 
 ## Image caption
 
-This example can be used to add a caption for the image often used inside articles. <Badge large>Warning: the caption is using @html.</Badge>
+This example can be used to add a caption for the image often used inside articles. <Span underline class="decoration-primary-500">Warning: the caption is using @html.</Span>
 
 ```svelte example class="flex justify-center" hideScript
 {#include Caption.svelte}
@@ -87,86 +87,28 @@ Use this example to make the image a card item with a link and a short text desc
 
 ## Image effects
 
-Use image effects such as grayscale or blur to change the appearances of the image when being hovered.
+Use `effect="grayscale"|"blur"|"invert"|"sepia"|"saturate"|"hue-rotate"` props to change the appearances of the image when being hovered.
 
-### Grayscale
-
-Use the filter option and apply a grayscale to the image element using the grayscale class.
-
-```svelte example class="flex justify-center" hideScript
-{#include Grayscale.svelte}
-```
-
-### Blur
-
-Apply a blur by using the blur-size utility class from Tailwind CSS to an image component.
-
-```svelte example class="flex justify-center" hideScript
-{#include Blur.svelte}
+```svelte example class="flex justify-center"
+{#include Effects.svelte}
 ```
 
 ## Alignment
 
-Align the image component to the left, center or right side of the document page using margin styles.
-
-### Left
+Align the image component to the left, center or right side of the document page using the `align="left"|"center"|"right"` props.
 
 By default, the image component will be aligned to the left side of the page.
 
 ```svelte example hideScript
-{#include Left.svelte}
-```
-
-### Center
-
-Horizontally align the image to the center of the page using the `mx-auto` class.
-
-```svelte example hideScript
-{#include Center.svelte}
-```
-
-### Right
-
-Use the `ms-auto` class to align the image to the right side of the page.
-
-```svelte example hideScript
-{#include Right.svelte}
+{#include Alignments.svelte}
 ```
 
 ## Sizes
 
-Set the size of the image using the w-size and h-size or max-w-size utility classes from Tailwind CSS to set the width and height of the element.
-
-### Small
-
-Use the `max-w-xs` class to set a small size of the image.
+Set the `size="xs"|"sm"|"md"|"lg"|"xl"|"2xl"|"full"|"none"` props to change the size of image.
 
 ```svelte example class="flex justify-center" hideScript
-{#include Small.svelte}
-```
-
-### Medium
-
-Use the `max-w-md` class to set a medium size of the image.
-
-```svelte example class="flex justify-center" hideScript
-{#include Medium.svelte}
-```
-
-### Large
-
-Use the max-w-xl class to set a large size of the image.
-
-```svelte example class="flex justify-center" hideScript
-{#include Large.svelte}
-```
-
-### Full width
-
-Use the max-w-full class to set the full width of the image as long as it doesn’t become larger than the original source.
-
-```svelte example class="flex justify-center" hideScript
-{#include FullWidth.svelte}
+{#include Sizes.svelte}
 ```
 
 ## Enhanced image

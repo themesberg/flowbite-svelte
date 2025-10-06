@@ -1,4 +1,4 @@
-export { default as Alignment } from "./Alignment.svelte";
+export { default as Alignments } from "./Alignments.svelte";
 export { default as Caption } from "./Caption.svelte";
 export { default as Card } from "./Card.svelte";
 export { default as Default } from "./Default.svelte";

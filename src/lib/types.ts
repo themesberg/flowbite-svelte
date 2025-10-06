@@ -1934,13 +1934,15 @@ export interface Picture {
 }
 // export type EnhancedImgAttributes = Omit<HTMLImgAttributes, "src"> & { src: string };
 
-export interface ImgProps extends ImgVariants, HTMLImgAttributes {
+export interface ImgProps extends ImgVariants, Omit<HTMLImgAttributes, 'children'> {
+  children?: Snippet<[{ class: string; restProps: any }]>;
   size?: ImgVariants["size"];
   effect?: ImgVariants["effect"];
   caption?: string;
   figClass?: string;
   captionClass?: string;
   href?: HTMLAnchorElement["href"];
+  align?: ImgVariants["align"];
 }
 
 export interface EnhandedImgProps extends ImgVariants, Omit<HTMLImgAttributes, "src"> {
