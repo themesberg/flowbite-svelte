@@ -1,11 +1,11 @@
 <script lang="ts" generics="T">
   import clsx from "clsx";
-  import type { MultiSelectProps, SelectOptionType } from "$lib";
+  import type { MultiSelectProps, SelectOptionType, SizeType } from "$lib";
   import Badge from "$lib/badge/Badge.svelte";
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { multiSelect } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { onMount } from "svelte";
+  import { getContext, onMount } from "svelte";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
   // Consider reusing that component - https://svelecte.vercel.app/
@@ -37,6 +37,7 @@
 
   let selectItems = $derived(items.filter((x) => value.includes(x.value)));
   let show: boolean = $state(false);
+  let group: { size: SizeType } = getContext("group");
 
   // Active item
   let activeIndex: number | null = $state(null);
@@ -193,7 +194,7 @@
     };
   });
 
-  const { base, dropdown, item: dropdownItem, close, select, placeholder: placeholderSpan, svg } = multiSelect({ disabled });
+  const { base, dropdown, item: dropdownItem, close, select, placeholder: placeholderSpan, svg } = multiSelect({ disabled, grouped: !!group });
 </script>
 
 <select {name} {form} {required} {autocomplete} {value} hidden multiple {onchange}>
@@ -212,7 +213,7 @@
         {#if children}
           {@render children({ item, clear: () => clearThisOption(item) })}
         {:else}
-          <Badge color="gray" large={size === "lg"} dismissable params={{ duration: 100 }} onclose={() => clearThisOption(item)} class={[disabled && "pointer-events-none"]}>
+          <Badge color="gray" large={size === "lg"} dismissable params={{ duration: 100 }} onclose={() => clearThisOption(item)} class={["py-0 px-2 mx-0.5", disabled && "pointer-events-none"]}>
             {item.name}
           </Badge>
         {/if}
