@@ -5,7 +5,7 @@ export type TimepickerVariants = VariantProps<typeof timepicker> & Classes<typeo
 
 export const timepicker = tv({
   slots: {
-    buttonGroup: "inline-flex rounded-lg shadow-sm",
+    buttonGroup: "inline-flex rounded-lg shadow-sm relative",
     input: "block disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:ring-0 focus:outline-none",
     inputWithIcon: "relative px-2 pr-8",
     iconWrapper: "pointer-events-none absolute inset-y-0 end-0 top-0 flex items-center pe-3.5",
