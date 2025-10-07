@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.17.3
+
+### Patch Changes
+
+- fix Reads an optional group context in Select and MultiSelect to enable grouped styling; extends select/multiSelect theme with grouped and size variants and full-width defaults; updates a docs example to use Flowbite Button and ButtonGroup as the dropdown trigger.
+  - Context-based grouping src/lib/forms/select/Select.svelte, src/lib/forms/select/MultiSelect.svelte:
+    Import and call getContext("group") to read a { size: SizeType } group context; pass grouped: !!group into styling construction (selectCls / multiSelect) to enable grouped variants.
+  - Theme variants & sizing src/lib/forms/select/theme.ts:
+    Add w-full to base slots; introduce grouped variant (first/last rounding, group container classes); adjust underline vs non-underline rounding rules; add size variants (sm, md, lg) and update multiSelect base/select slot defaults.
+  - Docs example markup src/routes/docs-examples/forms/select/Dropdown.svelte: 
+    Replace native <button>/container with Flowbite Button inside ButtonGroup; add Button and ButtonGroup imports; simplify Dropdown trigger usage and adjust Select markup/classes accordingly.
+
 ## 1.17.2
 
 ### Patch Changes

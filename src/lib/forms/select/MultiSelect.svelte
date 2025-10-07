@@ -213,7 +213,7 @@
         {#if children}
           {@render children({ item, clear: () => clearThisOption(item) })}
         {:else}
-          <Badge color="gray" large={size === "lg"} dismissable params={{ duration: 100 }} onclose={() => clearThisOption(item)} class={["py-0 px-2 mx-0.5", disabled && "pointer-events-none"]}>
+          <Badge color="gray" large={size === "lg"} dismissable params={{ duration: 100 }} onclose={() => clearThisOption(item)} class={["mx-0.5 px-2 py-0", disabled && "pointer-events-none"]}>
             {item.name}
           </Badge>
         {/if}

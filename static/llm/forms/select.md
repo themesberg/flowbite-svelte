@@ -127,7 +127,7 @@ Use this example if you want to create a multi-level dropdown and select compone
 
 ```svelte
 <script lang="ts">
-  import { Select, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { Select, Button, ButtonGroup, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   import Usa from "$icons/Usa.svelte";
   import Germany from "$icons/Germany.svelte";
@@ -149,13 +149,13 @@ Use this example if you want to create a multi-level dropdown and select compone
   ];
 </script>
 
-<div class="flex">
-  <button id="states-button" class="z-10 inline-flex shrink-0 items-center rounded-s-lg border border-gray-300 bg-gray-100 px-4 py-1.5 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 focus:outline-hidden dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700" type="button">
+<ButtonGroup class="w-full">
+  <Button class="bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-500 focus:ring-gray-100 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700">
     <Usa />
     USA
     <ChevronDownOutline class="ms-2 h-6 w-6" />
-  </button>
-  <Dropdown simple triggeredBy="#states-button">
+  </Button>
+  <Dropdown simple>
     <DropdownItem class="flex items-center">
       <Usa />
       United States
@@ -173,8 +173,8 @@ Use this example if you want to create a multi-level dropdown and select compone
       China
     </DropdownItem>
   </Dropdown>
-  <Select items={states} placeholder="Choose the state" selectClass="rounded-s-none!" class="w-full" />
-</div>
+  <Select items={states} placeholder="Choose the state" />
+</ButtonGroup>
 ```
 
 ## Sizes

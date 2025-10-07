@@ -11,12 +11,12 @@
 
 <div class="flex flex-col">
   <div class="md:h-[500px]">
-  <Img caption="Effect with enhanced image" size={imgSize} align={imgAlign} effect={imgEffect} >
-    {#snippet children({ class: imgClass, restProps })}
-      <enhanced:img src="/src/images/content-gallery-3.png"  alt="Sepia effect with enhanced" class={imgClass} {...restProps} />
-    {/snippet}
-  </Img>
-</div>
+    <Img caption="Effect with enhanced image" size={imgSize} align={imgAlign} effect={imgEffect}>
+      {#snippet children({ class: imgClass, restProps })}
+        <enhanced:img src="/src/images/content-gallery-3.png" alt="Sepia effect with enhanced" class={imgClass} {...restProps} />
+      {/snippet}
+    </Img>
+  </div>
   <div class="mt-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Effect</Label>
     {#each effects as effect}
