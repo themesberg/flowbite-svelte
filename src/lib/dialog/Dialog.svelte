@@ -1,13 +1,12 @@
 <script lang="ts">
-  import { onDestroy } from "svelte";
   import type { DialogProps, ParamsType } from "$lib";
   import { trapFocus } from "$lib/utils/actions";
-  import { dialog } from "./theme";
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { createDismissableContext } from "$lib/utils/dismissable";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
+  import { dialog } from "./theme";
 
   let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, open = $bindable(false), permanent = false, dismissable = true, outsideclose = true, class: className, classes, transition = fade, transitionParams, count, ...restProps }: DialogProps = $props();
 
@@ -60,7 +59,7 @@
     if (ev.defaultPrevented) return;
 
     // When dialog contains the <form method="dialog"> and when child with type="submit" was pressed
-    if (!(ev.target instanceof HTMLFormElement) || ev.target.method != "dialog") {
+    if (!(ev.target instanceof HTMLFormElement) || ev.target.method !== "dialog") {
       return;
     }
 
