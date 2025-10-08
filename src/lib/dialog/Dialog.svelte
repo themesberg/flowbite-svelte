@@ -69,7 +69,7 @@
 
     if (ev.submitter && "value" in ev.submitter) {
       // this is done by the system but after the submit event
-      dlg.returnValue = String(ev.submitter.value);
+      dlg.returnValue = String(ev.submitter.value ?? "");
     }
 
     if (!dlg.returnValue) {
