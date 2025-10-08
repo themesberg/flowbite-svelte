@@ -1,13 +1,12 @@
 <script lang="ts">
-  import { onDestroy } from "svelte";
   import type { DialogProps, ParamsType } from "$lib";
   import { trapFocus } from "$lib/utils/actions";
-  import { dialog } from "./theme";
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { createDismissableContext } from "$lib/utils/dismissable";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
+  import { dialog } from "./theme";
 
   let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, open = $bindable(false), permanent = false, dismissable = true, outsideclose = true, class: className, classes, transition = fade, transitionParams, count, ...restProps }: DialogProps = $props();
 
@@ -56,25 +55,32 @@
   }
 
   function _onsubmit(ev: SubmitEvent & { currentTarget: HTMLDialogElement }) {
-    // When dialog contains the <form method="dialog"> and when child with type="submit" was pressed
-
     onsubmit?.(ev);
     if (ev.defaultPrevented) return;
+
+    // When dialog contains the <form method="dialog"> and when child with type="submit" was pressed
+    if (!(ev.target instanceof HTMLFormElement) || ev.target.method !== "dialog") {
+      return;
+    }
 
     ev.preventDefault(); // stop dialog.close()
 
     const dlg: HTMLDialogElement = ev.currentTarget;
 
-    if (ev.submitter instanceof HTMLButtonElement || ev.submitter instanceof HTMLInputElement) {
-      dlg.returnValue = ev.submitter.value;
+    if (ev.submitter && "value" in ev.submitter) {
+      // this is done by the system but after the submit event
+      dlg.returnValue = String(ev.submitter.value ?? "");
     }
 
     if (!dlg.returnValue) {
       return cancel(dlg); // if no action - treat that as cancel
     }
 
-    // explicit false from onaction blocks the form closing
-    if (typeof onaction === "function" && onaction({ action: dlg.returnValue, data: new FormData(ev.target as HTMLFormElement) }) === false) return;
+    if (typeof onaction === "function") {
+      const result = onaction({ action: dlg.returnValue, data: new FormData(ev.target) });
+      // explicit false from onaction blocks the form closing
+      if (result === false) return;
+    }
 
     close(dlg);
   }
@@ -116,31 +122,6 @@
   }
 
   createDismissableContext(close_handler);
-
-  let escHandler: ((e: KeyboardEvent) => void) | null = null;
-
-  $effect(() => {
-    if (escHandler) {
-      window.removeEventListener("keydown", escHandler);
-      escHandler = null;
-    }
-
-    if (open && typeof count === "number" && count > 0) {
-      escHandler = (e: KeyboardEvent) => {
-        if (e.key === "Escape") {
-          e.preventDefault();
-          e.stopPropagation();
-        }
-      };
-      window.addEventListener("keydown", escHandler);
-    }
-  });
-
-  onDestroy(() => {
-    if (escHandler) {
-      window.removeEventListener("keydown", escHandler);
-    }
-  });
 </script>
 
 {#snippet content()}
