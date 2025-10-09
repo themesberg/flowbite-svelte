@@ -8,7 +8,7 @@
   import { fade } from "svelte/transition";
   import { dialog } from "./theme";
 
-  let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, open = $bindable(false), permanent = false, dismissable = true, outsideclose = true, class: className, classes, transition = fade, transitionParams, count, ...restProps }: DialogProps = $props();
+  let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, open = $bindable(false), permanent = false, dismissable = true, outsideclose = true, class: className, classes, transition = fade, transitionParams, ...restProps }: DialogProps = $props();
 
   const paramsOptions = $derived(transitionParams ?? { duration: 100, easing: sineIn });
 
@@ -166,6 +166,5 @@
 @prop classes
 @prop transition = fade
 @prop transitionParams
-@prop count
 @prop ...restProps
 -->
