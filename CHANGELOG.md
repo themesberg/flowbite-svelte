@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.17.4
+
+### Patch Changes
+
+- fix:
+  - ea8f7d16b removal of obsolete 'count' property for Dialog (#1786)
+  - d251243a7 minor tweaks for card (#1755)
+  - 11ec2a8e7 fix #1784 - dialog checks if underlying form has method dialog (#1785)
+  - 09de92369 chore: workflow playwright version update
+  - bd16bd957 chore: dependencies update
+  - b3013dc77 Timepicker addition of relative class (#1783)
+  - 11c622e52 scale-xx removal from ButtonGroup (#1782)
+
 ## 1.17.3
 
 ### Patch Changes
@@ -9,7 +22,7 @@
     Import and call getContext("group") to read a { size: SizeType } group context; pass grouped: !!group into styling construction (selectCls / multiSelect) to enable grouped variants.
   - Theme variants & sizing src/lib/forms/select/theme.ts:
     Add w-full to base slots; introduce grouped variant (first/last rounding, group container classes); adjust underline vs non-underline rounding rules; add size variants (sm, md, lg) and update multiSelect base/select slot defaults.
-  - Docs example markup src/routes/docs-examples/forms/select/Dropdown.svelte: 
+  - Docs example markup src/routes/docs-examples/forms/select/Dropdown.svelte:
     Replace native <button>/container with Flowbite Button inside ButtonGroup; add Button and ButtonGroup imports; simplify Dropdown trigger usage and adjust Select markup/classes accordingly.
 
 ## 1.17.2
