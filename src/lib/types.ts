@@ -739,6 +739,7 @@ export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, O
   maxSuggestions?: number;
   onSelect?: (item: string) => void;
   comboClass?: ClassValue;
+  placeholder?: string; // this will filter out placeholder from restProps
 }
 
 // helper
