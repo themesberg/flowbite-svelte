@@ -225,7 +225,7 @@ export interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivEl
 }
 
 // banner
-export interface BannerProps extends BannerVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+export interface BannerProps extends BannerVariants, Omit<HTMLAttributes<HTMLDivElement>, "color" | "onclose"> {
   header?: Snippet;
   open?: boolean;
   dismissable?: boolean;
@@ -233,6 +233,7 @@ export interface BannerProps extends BannerVariants, Omit<HTMLAttributes<HTMLDiv
   transition?: TransitionFunc;
   params?: object;
   closeClass?: ClassValue;
+  onclose?: (ev: MouseEvent) => void;
 }
 
 // bottom-navigation
