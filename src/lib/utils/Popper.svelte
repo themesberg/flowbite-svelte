@@ -7,7 +7,7 @@
   import { sineIn } from "svelte/easing";
   import clsx from "clsx";
 
-  let { triggeredBy, triggerDelay = 200, trigger = "click", placement = "top", offset = 8, arrow = false, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, class: className = "", arrowClass = "", isOpen = $bindable(false), transitionParams, transition = fade, children, ...restProps }: PopperProps = $props();
+  let { triggeredBy, triggerDelay = 200, trigger = "click", placement = "top", offset = 8, arrow = false, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, onclose: _onclose, class: className = "", arrowClass = "", isOpen = $bindable(false), transitionParams, transition = fade, children, ...restProps }: PopperProps = $props();
 
   let focusable: boolean = true;
   let clickable: boolean = $derived(trigger === "click");
@@ -137,6 +137,10 @@
 
     (ev as TriggeredToggleEvent).trigger = invoker;
     _ontoggle?.(ev as TriggeredToggleEvent);
+
+    if (ev.newState === "closed") {
+      _onclose?.(ev as TriggeredToggleEvent);
+    }
   }
 
   function set_triggers(node: HTMLElement) {

@@ -2016,7 +2016,7 @@ export interface TriggeredToggleEvent extends ToggleEvent {
   trigger: HTMLElement;
 }
 
-export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbeforetoggle" | "ontoggle"> {
+export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbeforetoggle" | "ontoggle" | "onclose"> {
   triggeredBy?: string;
   triggerDelay?: number;
   trigger?: "hover" | "click";
@@ -2031,6 +2031,7 @@ export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbef
   children: Snippet;
   onbeforetoggle?: (ev: TriggeredToggleEvent) => void;
   ontoggle?: (ev: TriggeredToggleEvent) => void;
+  onclose?: (ev: TriggeredToggleEvent) => void;
   transition?: TransitionFunc;
   transitionParams?: ParamsType;
   isOpen?: boolean;
