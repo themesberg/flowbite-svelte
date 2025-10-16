@@ -2,6 +2,4 @@
   import { Toast } from "flowbite-svelte";
 </script>
 
-<div class="relative h-56">
-  <Toast onclick={() => alert("Toast closed")}>Click the close button to see the event.</Toast>
-</div>
+  <Toast onclick={() => alert("Toast clicked")} onclose={()=>alert("Toast closing")}>Click this toast or the close button to trigger an event.</Toast>

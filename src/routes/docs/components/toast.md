@@ -134,7 +134,7 @@ Use the position property to position these toast components relative to the mai
 
 ## Events
 
-You can use `onclose` to execute custom logic when the toast is closed.
+The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to use standard DOM events. The following example demonstrates using `onclick` to handle clicks on the toast and `onclose` to execute logic when the toast is dismissed.
 
 ```svelte example hideScript
 {#include Events.svelte}
