@@ -230,8 +230,18 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 `DropdownItem` renders to link or button or div wrapped with `<li/>` element depending whether you supplied the `href` or `onclick` property.
 
-```svelte example class="flex justify-center items-start h-40" hideResponsiveButtons
+```svelte example class="flex justify-center items-start h-44" hideResponsiveButtons
 {#include Events.svelte}
+```
+
+### onclose and ontoggle
+
+```svelte example class="flex justify-center items-start h-44" hideResponsiveButtons
+{#include Onclose.svelte}
+```
+
+```svelte example class="flex justify-center items-start h-44" hideResponsiveButtons
+{#include Ontoggle.svelte}
 ```
 
 ## Component data
