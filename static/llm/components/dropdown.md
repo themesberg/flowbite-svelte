@@ -757,14 +757,17 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 ### onclose and ontoggle
 
+Use `onclose` to run a callback when the dropdown closes. For more control over state changes, use `ontoggle` which fires on both open and close events.
+
 ```svelte
 <script lang="ts">
   import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
+  // onclose fires only when closing
 </script>
 
 <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
-<Dropdown simple onclose={(ev) => console.log("closed by onclose")}>
+<Dropdown simple onclose={(ev) => console.log("Dropdown closed", ev)}>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
 </Dropdown>
@@ -780,6 +783,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 <Dropdown
   simple
   ontoggle={(ev) => {
+    // ontoggle fires on all state changes (open/closed), requiring the state check
     if (ev.newState === "closed") {
       console.log("closed by ontoggle");
     }

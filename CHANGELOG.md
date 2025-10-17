@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.18.0
+
+### Minor Changes
+
+- feat: add onclose support for Dropdown, Banner, and Popper components
+
 ## 1.17.4
 
 ### Patch Changes

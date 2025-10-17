@@ -1,5 +1,5 @@
 # undefined Documentation - Full Context
-# Generated on 2025-10-17T08:36:22.956Z
+# Generated on 2025-10-17T14:40:08.139Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -7356,14 +7356,17 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 ### onclose and ontoggle
 
+Use `onclose` to run a callback when the dropdown closes. For more control over state changes, use `ontoggle` which fires on both open and close events.
+
 ```svelte
 <script lang="ts">
   import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
+  // onclose fires only when closing
 </script>
 
 <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
-<Dropdown simple onclose={(ev) => console.log("closed by onclose")}>
+<Dropdown simple onclose={(ev) => console.log("Dropdown closed", ev)}>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
 </Dropdown>
@@ -7379,6 +7382,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 <Dropdown
   simple
   ontoggle={(ev) => {
+    // ontoggle fires on all state changes (open/closed), requiring the state check
     if (ev.newState === "closed") {
       console.log("closed by ontoggle");
     }
@@ -17358,7 +17362,7 @@ Use the position property to position these toast components relative to the mai
 
 ## Events
 
-The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to use standard DOM events. The following example demonstrates using `onclick` to handle clicks on the toast and `onclose` to execute logic when the toast is dismissed.
+The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to use standard DOM events like `onclick`. Additionally, Toast provides a custom `onclose` prop to execute logic when the toast is dismissed. The following example demonstrates both.
 
 ```svelte
 <script lang="ts">
