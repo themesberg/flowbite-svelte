@@ -391,7 +391,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. In quidem rerum, optio 
 
 #### Types
 
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L456)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L457)
 
 #### Props
 

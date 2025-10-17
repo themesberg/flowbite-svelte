@@ -4,11 +4,15 @@
 </script>
 
 <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
-<Dropdown simple ontoggle={(ev) => {
-  if (ev.newState === 'closed') {
-    console.log('closed by ontoggle');
-  }
-}}>
+<Dropdown
+  simple
+  ontoggle={(ev) => {
+    // ontoggle fires on all state changes (open/closed), requiring the state check
+    if (ev.newState === "closed") {
+      console.log("closed by ontoggle");
+    }
+  }}
+>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
 </Dropdown>

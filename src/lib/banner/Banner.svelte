@@ -60,5 +60,6 @@
 @prop transition = fade
 @prop params
 @prop closeClass
+@prop onclose
 @prop ...restProps
 -->

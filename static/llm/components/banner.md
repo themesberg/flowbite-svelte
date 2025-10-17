@@ -170,6 +170,47 @@ This example demonstrates a sliding transition using the slide transition from s
 </Banner>
 ```
 
+## onclose
+
+A reusable function that manages banner dismissal state with localStorage persistence using the onclose callback. It checks if the banner was previously dismissed on mount, provides two-way binding for the open state, and automatically saves dismissal to localStorage. Use the following example for a reusable function that keeps announcement banners hidden after dismissal across page refreshes.
+
+```svelte
+<script lang="ts">
+  import { onMount } from "svelte";
+  import { Banner, P } from "flowbite-svelte";
+
+  // reusable logic for dismissable banner with localStorage
+  function useDismissableBanner(storageKey: string) {
+    let open = $state(false);
+
+    onMount(() => {
+      open = !localStorage.getItem(storageKey);
+    });
+
+    function onclose(event: MouseEvent) {
+      localStorage.setItem(storageKey, "true");
+      open = false;
+    }
+
+    return {
+      get open() {
+        return open;
+      },
+      set open(value) {
+        open = value;
+      },
+      onclose
+    };
+  }
+
+  const banner = useDismissableBanner("announcement-example");
+</script>
+
+<Banner bind:open={banner.open} onclose={banner.onclose}>
+  <P>This keeps announcement banners hidden after dismissal across page refreshes!</P>
+</Banner>
+```
+
 ## Component data
 
 ### Banner
@@ -192,6 +233,7 @@ This example demonstrates a sliding transition using the slide transition from s
 - transition: fade
 - params
 - closeClass
+- onclose
 
 
 ## References

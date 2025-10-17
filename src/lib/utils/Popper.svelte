@@ -217,7 +217,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2018)
+[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2020)
 ## Props
 @prop triggeredBy
 @prop triggerDelay = 200
@@ -231,6 +231,7 @@
 @prop middlewares = [dom.flip(), dom.shift()]
 @prop onbeforetoggle: _onbeforetoggle
 @prop ontoggle: _ontoggle
+@prop onclose: _onclose
 @prop class: className = ""
 @prop arrowClass = ""
 @prop isOpen = $bindable(false)

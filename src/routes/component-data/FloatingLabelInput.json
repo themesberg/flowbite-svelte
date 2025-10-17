@@ -2,7 +2,7 @@
   "name": "FloatingLabelInput",
   "type": {
     "name": "FloatingLabelInputProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L722"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L723"
   },
   "props": [
     ["children", ""],
@@ -24,6 +24,7 @@
     ["data", "[]"],
     ["maxSuggestions", "5"],
     ["onSelect", ""],
-    ["comboClass", ""]
+    ["comboClass", ""],
+    ["placeholder", ""]
   ]
 }

@@ -236,6 +236,8 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 ### onclose and ontoggle
 
+Use `onclose` to run a callback when the dropdown closes. For more control over state changes, use `ontoggle` which fires on both open and close events.
+
 ```svelte example class="flex justify-center items-start h-44" hideResponsiveButtons
 {#include Onclose.svelte}
 ```
