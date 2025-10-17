@@ -16,6 +16,7 @@
     ["innerClass", ""],
     ["transition", "fade"],
     ["params", ""],
-    ["closeClass", ""]
+    ["closeClass", ""],
+    ["onclose", ""]
   ]
 }

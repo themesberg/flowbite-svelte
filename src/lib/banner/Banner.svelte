@@ -7,7 +7,7 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, classes, innerClass, transition = fade, params, closeClass, ...restProps }: BannerProps = $props();
+  let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, classes, innerClass, transition = fade, params, closeClass, onclose, ...restProps }: BannerProps = $props();
 
   warnThemeDeprecation("Banner", { innerClass, closeClass }, { innerClass: "insideDiv", closeClass: "dismissable" });
 
@@ -22,6 +22,7 @@
   function close(event: MouseEvent) {
     if (ref?.dispatchEvent(new Event("close", { bubbles: true, cancelable: true }))) {
       open = false;
+      onclose?.(event);
     }
   }
   createDismissableContext(close);
@@ -59,5 +60,6 @@
 @prop transition = fade
 @prop params
 @prop closeClass
+@prop onclose
 @prop ...restProps
 -->

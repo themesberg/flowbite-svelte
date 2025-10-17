@@ -76,6 +76,14 @@ This example demonstrates a sliding transition using the slide transition from s
 {#include Transition.svelte}
 ```
 
+## onclose
+
+A reusable function that manages banner dismissal state with localStorage persistence using the onclose callback. It checks if the banner was previously dismissed on mount, provides two-way binding for the open state, and automatically saves dismissal to localStorage. Use the following example for a reusable function that keeps announcement banners hidden after dismissal across page refreshes.
+
+```svelte example class="h-48"
+{#include Onclose.svelte}
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

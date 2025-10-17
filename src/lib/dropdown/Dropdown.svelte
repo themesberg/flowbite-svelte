@@ -7,7 +7,7 @@
   import { setContext } from "svelte";
   import { dropdown } from "./theme";
 
-  let { children, simple = false, placement = "bottom", offset = 2, class: className, activeUrl = "", isOpen = $bindable(false), ...restProps }: DropdownProps = $props();
+  let { children, simple = false, placement = "bottom", offset = 2, class: className, activeUrl = "", isOpen = $bindable(false), onclose, ...restProps }: DropdownProps = $props();
 
   const theme = getTheme("dropdown");
 
@@ -36,7 +36,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L596)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L597)
 ## Props
 @prop children
 @prop simple = false
@@ -45,5 +45,6 @@
 @prop class: className
 @prop activeUrl = ""
 @prop isOpen = $bindable(false)
+@prop onclose
 @prop ...restProps
 -->

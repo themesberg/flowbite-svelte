@@ -373,16 +373,14 @@ Use the position property to position these toast components relative to the mai
 
 ## Events
 
-You can use `onclose` to execute custom logic when the toast is closed.
+The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to use standard DOM events. The following example demonstrates using `onclick` to handle clicks on the toast and `onclose` to execute logic when the toast is dismissed.
 
 ```svelte
 <script lang="ts">
   import { Toast } from "flowbite-svelte";
 </script>
 
-<div class="relative h-56">
-  <Toast onclick={() => alert("Toast closed")}>Click the close button to see the event.</Toast>
-</div>
+<Toast onclick={() => alert("Toast clicked")} onclose={() => alert("Toast closing")}>Click this toast or the close button to trigger an event.</Toast>
 ```
 
 ## Component data
@@ -391,7 +389,7 @@ You can use `onclose` to execute custom logic when the toast is closed.
 
 #### Types
 
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1835)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1837)
 
 #### Props
 

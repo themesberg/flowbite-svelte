@@ -755,13 +755,48 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 </Dropdown>
 ```
 
+### onclose and ontoggle
+
+```svelte
+<script lang="ts">
+  import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
+</script>
+
+<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown simple onclose={(ev) => console.log("closed by onclose")}>
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+</Dropdown>
+```
+
+```svelte
+<script lang="ts">
+  import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
+  import { ChevronDownOutline } from "flowbite-svelte-icons";
+</script>
+
+<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Dropdown
+  simple
+  ontoggle={(ev) => {
+    if (ev.newState === "closed") {
+      console.log("closed by ontoggle");
+    }
+  }}
+>
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+</Dropdown>
+```
+
 ## Component data
 
 ### Dropdown
 
 #### Types
 
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L596)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L597)
 
 #### Props
 
@@ -772,12 +807,13 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 - class: className
 - activeUrl: ""
 - isOpen: $bindable(false)
+- onclose
 
 ### DropdownDivider
 
 #### Types
 
-[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L602)
+[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L603)
 
 #### Props
 
@@ -787,7 +823,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L618)
+[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L619)
 
 #### Props
 
@@ -798,7 +834,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L604)
+[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L605)
 
 #### Props
 
@@ -809,7 +845,7 @@ Since the `Dropdown` component extends `Popper`, it also supports the `transitio
 
 #### Types
 
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L610)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L611)
 
 #### Props
 
