@@ -209,7 +209,7 @@
   {/if}
   <span class={select({ class: clsx(theme?.select, classes?.span) })}>
     {#if selectItems.length}
-      {#each selectItems as item (item.name)}
+      {#each selectItems as item (item.value)}
         {#if children}
           {@render children({ item, clear: () => clearThisOption(item) })}
         {:else}
@@ -232,7 +232,7 @@
 
   {#if show}
     <div role="presentation" class={dropdown({ class: clsx(styling.dropdown) })}>
-      {#each items as item (item.name)}
+      {#each items as item (item.value)}
         <div
           onclick={(e) => selectOption(item, e)}
           role="presentation"
