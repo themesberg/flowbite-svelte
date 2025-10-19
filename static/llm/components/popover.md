@@ -363,7 +363,7 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
 ## External reference
 
-If you need the popover to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
+If you need the popover to be attached to the other element then the triggering one you can pass a CSS query to `reference` prop.
 
 ```svelte
 <script lang="ts">
