@@ -15,7 +15,7 @@ For interactive elements that need to display additional content on click, use t
 
 ## Default tooltip example
 
-To get started with using tooltips all you need to do is to place `Tooltip` element directly after tiggering element (usually `Button`).
+To get started with using tooltips all you need to do is to place `Tooltip` element directly after triggering element (usually `Button`).
 In the following example you can see the tooltip that will be trigger by the adjacent element to be shown when hovered or focused.
 
 ```svelte
@@ -111,7 +111,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 ## External reference
 
-If you need the tooltip to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
+If you need the tooltip to be attached to the other element then the triggering one you can pass a CSS query to `reference` prop.
 
 ```svelte
 <script lang="ts">

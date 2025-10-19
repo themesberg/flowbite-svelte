@@ -123,7 +123,7 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
 ## External reference
 
-If you need the popover to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
+If you need the popover to be attached to the other element then the triggering one you can pass a CSS query to `reference` prop.
 
 ```svelte example class="flex gap-4 flex-col justify-end items-center h-64" hideResponsiveButtons
 {#include External.svelte}
