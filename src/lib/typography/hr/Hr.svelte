@@ -15,7 +15,7 @@
       innerDivClass: "content"
     }
   );
-  const styling = $derived({
+  const styling = $derived(classes ?? {
     div: divClass,
     content: innerDivClass
   });
@@ -31,7 +31,7 @@
 </script>
 
 {#if children}
-  <div {...mergedDivProps} class={div({ class: clsx(theme?.div, divClass) })}>
+  <div {...mergedDivProps} class={div({ class: clsx(theme?.div, styling.div) })}>
     <hr {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
     <div class={content({ class: clsx(theme?.content, styling.content) })}>
       {@render children()}
