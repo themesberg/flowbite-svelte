@@ -25,13 +25,13 @@
   const base = $derived(buttonToggleGroup({ roundedSize, class: clsx(theme, className) }));
   type SelectedValue = string | null | string[];
 
-  // FIX: Initialize selectedValues FROM the value prop
-  // Handle type mismatches between multiSelect mode and value type
+  // Normalize incoming prop `value` to internal SelectedValue
+  // Clones arrays to prevent external mutations affecting internal state
   function getInitialValue(): SelectedValue {
     if (multiSelect) {
       // Multi-select mode expects array
       if (Array.isArray(value)) {
-        return value;
+        return [...value]; // Clone to prevent aliasing
       } else if (value === null || value === undefined) {
         return [];
       } else {
@@ -56,8 +56,8 @@
     isSelected: (toggleValue: string) => boolean;
   }
 
+  // Notify parent when selection changes
   $effect(() => {
-    value = selectedValues;
     onSelect(selectedValues);
   });
 
