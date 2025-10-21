@@ -4,14 +4,18 @@
   let singleValue = $state<string | null>(null);
   let multiValues = $state<string[]>([]);
 
-  function handleSingleSelect(value: string | null) {
-    singleValue = value;
-    console.log("Single selection:", value);
+  function handleSingleSelect(value: string | null | string[]) {
+    if (typeof value === "string" || value === null) {
+      singleValue = value;
+      console.log("Single selection:", value);
+    }
   }
 
-  function handleMultiSelect(values: string[]) {
-    multiValues = values;
-    console.log("Multi selection:", values);
+  function handleMultiSelect(values: string | null | string[]) {
+    if (Array.isArray(values)) {
+      multiValues = values;
+      console.log("Multi selection:", values);
+    }
   }
 </script>
 

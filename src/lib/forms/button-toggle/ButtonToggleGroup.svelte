@@ -5,20 +5,7 @@
   import { buttonToggleGroup } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { 
-    multiSelect = false, 
-    name = "toggle-group", 
-    value = multiSelect ? [] : null, 
-    color, 
-    size = "md", 
-    roundedSize = "md", 
-    onSelect = () => {}, 
-    children, 
-    ctxIconClass, 
-    ctxBtnClass, 
-    class: className, 
-    ...restProps 
-  }: ButtonToggleGroupProps = $props();
+  let { multiSelect = false, name = "toggle-group", value = multiSelect ? [] : null, color, size = "md", roundedSize = "md", onSelect = () => {}, children, ctxIconClass, ctxBtnClass, class: className, ...restProps }: ButtonToggleGroupProps = $props();
 
   const theme = getTheme("buttonToggleGroup");
 
@@ -56,14 +43,8 @@
     isSelected: (toggleValue: string) => boolean;
   }
 
-  // Notify parent when selection changes
-  $effect(() => {
-    onSelect(selectedValues);
-  });
-
   function toggleSelected(toggleValue: string) {
     if (multiSelect) {
-      // Handle multi-select mode
       const currentSelected = [...(selectedValues as string[])];
       const index = currentSelected.indexOf(toggleValue);
 
@@ -74,9 +55,9 @@
         selectedValues = currentSelected;
       }
     } else {
-      // Handle single-select mode
       selectedValues = toggleValue === selectedValues ? null : toggleValue;
     }
+    onSelect(selectedValues); // ✅ ADD THIS LINE - call onSelect here
   }
 
   function isSelected(toggleValue: string): boolean {
