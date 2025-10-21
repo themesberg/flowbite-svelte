@@ -12,7 +12,7 @@
     color, 
     size = "md", 
     roundedSize = "md", 
-    onSelect = (val: any) => {}, 
+    onSelect = () => {}, 
     children, 
     ctxIconClass, 
     ctxBtnClass, 

@@ -327,7 +327,7 @@ export type ButtonToggleGroupProps = HTMLAttributes<HTMLDivElement> & {
   color?: ButtonToggleVariants["color"];
   size?: ButtonToggleVariants["size"];
   roundedSize?: ButtonToggleVariants["roundedSize"];
-  onSelect?: (val: any) => void;
+  onSelect?: (val: string | null | string[]) => void; 
   children: Snippet;
   ctxIconClass?: ClassValue;
   ctxBtnClass?: ClassValue;
