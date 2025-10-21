@@ -5,14 +5,51 @@
   import { buttonToggleGroup } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { multiSelect = false, name = "toggle-group", value = multiSelect ? [] : null, color, size = "md", roundedSize = "md", onSelect = (val: any) => {}, children, ctxIconClass, ctxBtnClass, class: className, ...restProps }: ButtonToggleGroupProps = $props();
+  let { 
+    multiSelect = false, 
+    name = "toggle-group", 
+    value = multiSelect ? [] : null, 
+    color, 
+    size = "md", 
+    roundedSize = "md", 
+    onSelect = (val: any) => {}, 
+    children, 
+    ctxIconClass, 
+    ctxBtnClass, 
+    class: className, 
+    ...restProps 
+  }: ButtonToggleGroupProps = $props();
 
   const theme = getTheme("buttonToggleGroup");
 
   const base = $derived(buttonToggleGroup({ roundedSize, class: clsx(theme, className) }));
   type SelectedValue = string | null | string[];
 
-  let selectedValues = $state<SelectedValue>(multiSelect ? [] : null);
+  // FIX: Initialize selectedValues FROM the value prop
+  // Handle type mismatches between multiSelect mode and value type
+  function getInitialValue(): SelectedValue {
+    if (multiSelect) {
+      // Multi-select mode expects array
+      if (Array.isArray(value)) {
+        return value;
+      } else if (value === null || value === undefined) {
+        return [];
+      } else {
+        // Single string passed but multiSelect is true - wrap in array
+        return [value as string];
+      }
+    } else {
+      // Single-select mode expects string or null
+      if (Array.isArray(value)) {
+        // Array passed but multiSelect is false - take first item
+        return value[0] ?? null;
+      } else {
+        return value;
+      }
+    }
+  }
+
+  let selectedValues = $state<SelectedValue>(getInitialValue());
 
   interface ButtonToggleContext {
     toggleSelected: (toggleValue: string) => void;
