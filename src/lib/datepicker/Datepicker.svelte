@@ -107,8 +107,9 @@
         rangeFrom = day;
         rangeTo = undefined;
       } else if (day < rangeFrom) {
+        const oldRangeFrom = rangeFrom;
         rangeFrom = day;
-        rangeTo = rangeFrom;
+        rangeTo = oldRangeFrom;
       } else {
         rangeTo = day;
       }
