@@ -18,14 +18,18 @@
   let singleValue = $state<string | null>(null);
   let multiValues = $state<string[]>([]);
 
-  function handleSingleSelect(value: string | null) {
-    singleValue = value;
-    console.log("Single selection:", value);
+  function handleSingleSelect(value: string | null | string[]) {
+    if (typeof value === "string" || value === null) {
+      singleValue = value;
+      console.log("Single selection:", value);
+    }
   }
 
-  function handleMultiSelect(values: string[]) {
-    multiValues = values;
-    console.log("Multi selection:", values);
+  function handleMultiSelect(values: string | null | string[]) {
+    if (Array.isArray(values)) {
+      multiValues = values;
+      console.log("Multi selection:", values);
+    }
   }
 </script>
 
@@ -46,6 +50,50 @@
 <p class="mt-2 dark:text-white">Selected: {multiValues.length ? multiValues.join(", ") : "None"}</p>
 ```
 
+## Controlled Component with Initial State
+
+Pass the `value` prop to `ButtonToggleGroup` to enable initial selections and external state control. Set `singleValue = "two"` or `multiValues = ["one", "three"]` before rendering, and the buttons will reflect these selections immediately without manually managing each button's `selected` prop.
+
+```svelte
+<script lang="ts">
+  import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
+
+  let singleValue = $state<string | null>("two");
+  let multiValues = $state<string[]>(["one", "three"]);
+</script>
+
+<h3 class="mb-2 text-lg font-medium dark:text-white">Single Selection</h3>
+<ButtonToggleGroup
+  value={singleValue}
+  onSelect={(v) => {
+    if (typeof v === "string" || v === null) {
+      singleValue = v;
+    }
+  }}
+>
+  <ButtonToggle value="one">One</ButtonToggle>
+  <ButtonToggle value="two">Two</ButtonToggle>
+  <ButtonToggle value="three">Three</ButtonToggle>
+</ButtonToggleGroup>
+<p class="mt-2 dark:text-white">Selected: {singleValue || "None"}</p>
+
+<h3 class="mb-2 text-lg font-medium dark:text-white">Multi Selection</h3>
+<ButtonToggleGroup
+  multiSelect={true}
+  value={multiValues}
+  onSelect={(v) => {
+    if (Array.isArray(v)) {
+      multiValues = v;
+    }
+  }}
+>
+  <ButtonToggle value="one">One</ButtonToggle>
+  <ButtonToggle value="two">Two</ButtonToggle>
+  <ButtonToggle value="three">Three</ButtonToggle>
+</ButtonToggleGroup>
+<p class="mt-2 dark:text-white">Selected: {multiValues.length ? multiValues.join(", ") : "None"}</p>
+```
+
 ## Button color
 
 You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, `lime`, `green`, `emerald`, `teal`, `cyan`, `sky`, `blue`, `indigo`, `violet`, `purple`, `fuchsia`, `pink`, `rose`.
@@ -57,9 +105,11 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
   let singleValue = $state<string | null>(null);
   let multiValues = $state<string[]>([]);
 
-  function handleSingleSelect(value: string | null) {
-    singleValue = value;
-    console.log("Single selection:", value);
+  function handleSingleSelect(value: string | null | string[]) {
+    if (typeof value === "string" || value === null) {
+      singleValue = value;
+      console.log("Single selection:", value);
+    }
   }
 </script>
 
@@ -82,9 +132,11 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 
   let singleValue = $state<string | null>(null);
 
-  function handleSingleSelect(value: string | null) {
-    singleValue = value;
-    console.log("Single selection:", value);
+  function handleSingleSelect(value: string | null | string[]) {
+    if (typeof value === "string" || value === null) {
+      singleValue = value;
+      console.log("Single selection:", value);
+    }
   }
 </script>
 
@@ -211,9 +263,11 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 
   let singleValue = $state<string | null>(null);
 
-  function handleSingleSelect(value: string | null) {
-    singleValue = value;
-    console.log("Single selection:", value);
+  function handleSingleSelect(value: string | null | string[]) {
+    if (typeof value === "string" || value === null) {
+      singleValue = value;
+      console.log("Single selection:", value);
+    }
   }
 </script>
 
@@ -273,9 +327,11 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 
   let singleValue = $state<string | null>(null);
 
-  function handleSingleSelect(value: string | null) {
-    singleValue = value;
-    console.log("Single selection:", value);
+  function handleSingleSelect(value: string | null | string[]) {
+    if (typeof value === "string" || value === null) {
+      singleValue = value;
+      console.log("Single selection:", value);
+    }
   }
 </script>
 
@@ -296,9 +352,11 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 
   let singleValue = $state<string | null>(null);
 
-  function handleSingleSelect(value: string | null) {
-    singleValue = value;
-    console.log("Single selection:", value);
+  function handleSingleSelect(value: string | null | string[]) {
+    if (typeof value === "string" || value === null) {
+      singleValue = value;
+      console.log("Single selection:", value);
+    }
   }
 </script>
 
@@ -333,9 +391,11 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 
   let singleValue = $state<string | null>(null);
 
-  function handleSingleSelect(value: string | null) {
-    singleValue = value;
-    console.log("Single selection:", value);
+  function handleSingleSelect(value: string | null | string[]) {
+    if (typeof value === "string" || value === null) {
+      singleValue = value;
+      console.log("Single selection:", value);
+    }
   }
 </script>
 

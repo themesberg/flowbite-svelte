@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.18.1
+
+### Patch Changes
+
+- fix: #1797 correct date range swap when selecting earlier end date (#1798)
+- d0e6b4112 fix: respect initial value prop in ButtonToggleGroup (#1796)
+- 00114a79d fix: removed mistakenly added text from doc components and llm files. (#1791)
+- a941a7d28 fix: update HR to use classes prop for styling (#1795)
+- a42d17332 docs: correct "tiggering" typo (#1794)
+
 ## 1.18.0
 
 ### Minor Changes

@@ -11,6 +11,6 @@
     ["color", ""],
     ["size", "\"md\""],
     ["roundedSize", "\"md\""],
-    ["onSelect", "(val: any) => {"]
+    ["onSelect", "() => {"]
   ]
 }
