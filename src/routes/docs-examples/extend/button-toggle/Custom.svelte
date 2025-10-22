@@ -4,9 +4,11 @@
 
   let singleValue = $state<string | null>(null);
 
-  function handleSingleSelect(value: string | null) {
-    singleValue = value;
-    console.log("Single selection:", value);
+  function handleSingleSelect(value: string | null | string[]) {
+    if (typeof value === "string" || value === null) {
+      singleValue = value;
+      console.log("Single selection:", value);
+    }
   }
 </script>
 

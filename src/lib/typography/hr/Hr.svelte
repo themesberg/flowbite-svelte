@@ -15,10 +15,12 @@
       innerDivClass: "content"
     }
   );
-  const styling = $derived(classes ?? {
-    div: divClass,
-    content: innerDivClass
-  });
+  const styling = $derived(
+    classes ?? {
+      div: divClass,
+      content: innerDivClass
+    }
+  );
 
   const theme = getTheme("hr");
   const bg = classes?.bg ?? "bg-gray-200 dark:bg-gray-700";

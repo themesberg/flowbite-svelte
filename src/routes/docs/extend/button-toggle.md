@@ -29,6 +29,14 @@ description: Use the button toggle to toggle on/off with the appearance of a but
 {#include Default.svelte}
 ```
 
+## Controlled Component with Initial State
+
+Pass the `value` prop to `ButtonToggleGroup` to enable initial selections and external state control. Set `singleValue = "two"` or `multiValues = ["one", "three"]` before rendering, and the buttons will reflect these selections immediately without manually managing each button's `selected` prop.
+
+```svelte example class="flex flex-col space-y-4"
+{#include InitialValue.svelte}
+```
+
 ## Button color
 
 You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, `lime`, `green`, `emerald`, `teal`, `cyan`, `sky`, `blue`, `indigo`, `violet`, `purple`, `fuchsia`, `pink`, `rose`.
