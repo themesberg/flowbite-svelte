@@ -1,5 +1,5 @@
 # undefined Documentation - Full Context
-# Generated on 2025-10-22T15:09:59.641Z
+# Generated on 2025-10-24T14:22:40.558Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -21001,7 +21001,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 <MultiSelect items={colorCountries} value={preselected}>
   {#snippet children({ item, clear })}
-    <Badge color={item.color} dismissable params={{ duration: 100 }} onclose={clear}>
+    <Badge color={item.color} dismissable params={{ duration: 100 }} onclose={clear} class="mx-0.5">
       {item.name}
     </Badge>
   {/snippet}
@@ -21034,7 +21034,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 <MultiSelect items={countries} value={selected}>
   {#snippet children({ item, clear })}
-    <Badge color={item.color} dismissable params={{ duration: 100 }} onclose={clear}>
+    <Badge color={item.color} dismissable params={{ duration: 100 }} onclose={clear} class="mx-0.5">
       {item.name}
     </Badge>
   {/snippet}
