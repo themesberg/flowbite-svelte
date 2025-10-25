@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.18.2
+
+### Patch Changes
+
+- fix: change both #each blocks from using (item.name) to (item.value) as the key:
+
+      - Line 212 (selected items badges): {#each selectItems as item (item.value)}
+      - Line 233 (dropdown items): {#each items as item (item.value)}
+
 ## 1.18.1
 
 ### Patch Changes
