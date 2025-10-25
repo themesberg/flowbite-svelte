@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.19.0
+
+### Minor Changes
+
+- feat: VirtualList component
+
 ## 1.18.2
 
 ### Patch Changes

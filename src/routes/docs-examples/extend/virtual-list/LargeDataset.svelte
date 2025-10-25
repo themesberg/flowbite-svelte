@@ -44,22 +44,17 @@
     {/if}
   </div>
 
-  <VirtualList {items} minItemHeight={45} height={500} class="border rounded-lg">
+  <VirtualList {items} minItemHeight={45} height={500} class="rounded-lg border">
     {#snippet children(item, index)}
       {@const record = item as Record}
-      <div 
-        class="flex items-center justify-between p-3 border-b hover:bg-gray-50 dark:hover:bg-gray-800"
-        style="height:45px"
-      >
+      <div class="flex items-center justify-between border-b p-3 hover:bg-gray-50 dark:hover:bg-gray-800" style="height:45px">
         <span class="text-gray-900 dark:text-white">{record.title}</span>
-        <span class="text-sm font-mono text-gray-600 dark:text-gray-400">
+        <span class="font-mono text-sm text-gray-600 dark:text-gray-400">
           ${record.value.toLocaleString()}
         </span>
       </div>
     {/snippet}
   </VirtualList>
 
-  <p class="text-xs text-gray-500 dark:text-gray-400">
-    💡 Try scrolling through 100,000 items - notice how smooth it remains!
-  </p>
+  <p class="text-xs text-gray-500 dark:text-gray-400">💡 Try scrolling through 100,000 items - notice how smooth it remains!</p>
 </div>

@@ -53,6 +53,7 @@ llms: markdown
 /docs: undefined/extend/progressradial.md
 /docs: undefined/extend/step-indicator.md
 /docs: undefined/extend/tags.md
+/docs: undefined/extend/virtual-list.md
 /docs: undefined/forms/checkbox.md
 /docs: undefined/forms/file-input.md
 /docs: undefined/forms/floating-label.md

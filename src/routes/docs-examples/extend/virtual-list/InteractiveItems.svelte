@@ -8,25 +8,27 @@
     completed: boolean;
   }
 
-  let items = $state<Task[]>(Array.from({ length: 2000 }, (_, i) => ({
-    id: i + 1,
-    text: `Task ${i + 1}`,
-    completed: false
-  })));
+  let items = $state<Task[]>(
+    Array.from({ length: 2000 }, (_, i) => ({
+      id: i + 1,
+      text: `Task ${i + 1}`,
+      completed: false
+    }))
+  );
 
-  let selectedCount = $derived(items.filter(item => item.completed).length);
+  let selectedCount = $derived(items.filter((item) => item.completed).length);
 
   function toggleItem(id: number) {
-    const item = items.find(i => i.id === id);
+    const item = items.find((i) => i.id === id);
     if (item) item.completed = !item.completed;
   }
 
   function deleteItem(id: number) {
-    items = items.filter(item => item.id !== id);
+    items = items.filter((item) => item.id !== id);
   }
 
   function clearCompleted() {
-    items = items.filter(item => !item.completed);
+    items = items.filter((item) => !item.completed);
   }
 </script>
 
@@ -36,35 +38,20 @@
       {selectedCount} of {items.length} completed
     </span>
     {#if selectedCount > 0}
-      <Button size="xs" color="red" onclick={clearCompleted}>
-        Clear Completed
-      </Button>
+      <Button size="xs" color="red" onclick={clearCompleted}>Clear Completed</Button>
     {/if}
   </div>
 
-  <VirtualList {items} minItemHeight={50} height={400} class="border rounded-lg">
+  <VirtualList {items} minItemHeight={50} height={400} class="rounded-lg border">
     {#snippet children(item, index)}
       {@const task = item as Task}
-      <div 
-        class="flex items-center gap-3 p-3 border-b hover:bg-gray-50 dark:hover:bg-gray-800"
-        style="height:50px"
-      >
-        <Checkbox 
-          checked={task.completed}
-          onchange={() => toggleItem(task.id)}
-        />
-        <span 
-          class="flex-1 {task.completed ? 'line-through text-gray-400' : 'text-gray-900 dark:text-white'}"
-        >
+      <div class="flex items-center gap-3 border-b p-3 hover:bg-gray-50 dark:hover:bg-gray-800" style="height:50px">
+        <Checkbox checked={task.completed} onchange={() => toggleItem(task.id)} />
+        <span class="flex-1 {task.completed ? 'text-gray-400 line-through' : 'text-gray-900 dark:text-white'}">
           {task.text}
         </span>
-        <Button 
-          size="xs" 
-          color="red" 
-          class="!p-2"
-          onclick={() => deleteItem(task.id)}
-        >
-          <TrashBinSolid class="w-3 h-3" />
+        <Button size="xs" color="red" class="!p-2" onclick={() => deleteItem(task.id)}>
+          <TrashBinSolid class="h-3 w-3" />
         </Button>
       </div>
     {/snippet}
