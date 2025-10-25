@@ -85,3 +85,6 @@ export * from "./typography/span";
 export * from "./video";
 export * from "./utils";
 export * from "./types";
+
+// extend
+export * from "./virtuallist";

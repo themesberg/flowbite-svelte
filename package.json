@@ -853,6 +853,10 @@
       "types": "./dist/video/Video.svelte.d.ts",
       "svelte": "./dist/video/Video.svelte"
     },
+    "./VirtualList.svelte": {
+      "types": "./dist/virtuallist/VirtualList.svelte.d.ts",
+      "svelte": "./dist/virtuallist/VirtualList.svelte"
+    },
     "./package.json": "./package.json"
   }
 }

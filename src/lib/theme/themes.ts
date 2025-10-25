@@ -1,3 +1,4 @@
+// components
 export { accordion, accordionItem } from "../accordion";
 export { alert } from "../alert";
 export { avatar } from "../avatar";
@@ -75,3 +76,6 @@ export { mark } from "../typography/mark";
 export { paragraph } from "../typography/paragraph";
 export { secondary } from "../typography/secondary";
 export { span } from "../typography/span";
+
+// extend
+export { virtualList } from "$lib/virtuallist";

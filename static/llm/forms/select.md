@@ -366,7 +366,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 <MultiSelect items={colorCountries} value={preselected}>
   {#snippet children({ item, clear })}
-    <Badge color={item.color} dismissable params={{ duration: 100 }} onclose={clear}>
+    <Badge color={item.color} dismissable params={{ duration: 100 }} onclose={clear} class="mx-0.5">
       {item.name}
     </Badge>
   {/snippet}
@@ -399,7 +399,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 <MultiSelect items={countries} value={selected}>
   {#snippet children({ item, clear })}
-    <Badge color={item.color} dismissable params={{ duration: 100 }} onclose={clear}>
+    <Badge color={item.color} dismissable params={{ duration: 100 }} onclose={clear} class="mx-0.5">
       {item.name}
     </Badge>
   {/snippet}
@@ -412,7 +412,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 #### Types
 
-[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L858)
+[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L859)
 
 #### Props
 
