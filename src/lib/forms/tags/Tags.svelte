@@ -51,10 +51,6 @@
     });
   }
 
-  const checkDropdownPosition = () => {
-    if (!inputContainer) return;
-  };
-
   const handleKeys = (event: KeyboardEvent) => {
     if (event.key === "Enter") {
       event.preventDefault();
@@ -102,10 +98,6 @@
     }
   };
 
-  const handleInput = () => {
-    checkDropdownPosition();
-  };
-
   const deleteField = (index: number) => {
     value = value.filter((_, i) => i !== index);
     errorMessage = "";
@@ -135,7 +127,7 @@
   });
 </script>
 
-<svelte:window on:scroll={checkDropdownPosition} on:resize={checkDropdownPosition} />
+<svelte:window />
 
 {#if showAvailableTags && availableTags.length > 0}
   <P class={clsx(info(), classes?.info)}>Available tags: {availableTags.join(", ")}</P>
@@ -168,7 +160,7 @@
     </div>
   {/each}
   <div class="relative w-full" bind:this={inputContainer}>
-    <input {...inputProps} {disabled} bind:this={inputElement} onkeydown={handleKeys} oninput={handleInput} bind:value={contents} placeholder={value.length === 0 ? placeholder : ""} type="text" autocomplete="off" class={inputCls({ class: clsx(styling.input) })} />
+    <input {...inputProps} {disabled} bind:this={inputElement} onkeydown={handleKeys} bind:value={contents} placeholder={value.length === 0 ? placeholder : ""} type="text" autocomplete="off" class={inputCls({ class: clsx(styling.input) })} />
     {#if availableTags.length > 0 && contents.trim() !== ""}
       {@const filteredSuggestions = availableTags.filter((tag) => tag.toLowerCase().includes(contents.trim().toLowerCase()) && (!unique || !value.some((t) => t.toLowerCase() === tag.toLowerCase())))}
       {#if filteredSuggestions.length > 0}

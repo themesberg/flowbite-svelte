@@ -6,7 +6,6 @@
 
   interface Props {
     drawerHidden: boolean;
-    docsRoute?: string[];
   }
   let { drawerHidden = $bindable(false) }: Props = $props();
   const closeDrawer = () => {

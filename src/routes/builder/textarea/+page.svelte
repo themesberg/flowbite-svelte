@@ -39,7 +39,7 @@
     maxlength = maxlength !== undefined ? undefined : 20;
     value = maxlength === 20 ? "" : "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
   };
-  let textAreaClass: TextareaProps["class"] = $state("w-full");
+  let textAreaClass: TextareaProps["class"] = $state("");
   const changeClass = () => {
     textAreaClass = textAreaClass === "w-full" ? "w-48" : "w-full";
   };
@@ -93,7 +93,7 @@
     <Button class="w-48" color="red" onclick={changePlaceholder}>{placeholder ? "Remove placeholder" : "Add placeholder"}</Button>
     <Button class="w-48" color="yellow" onclick={changeRows}>{rows !== undefined ? "Remove rows" : "Add rows"}</Button>
     <Button class="w-48" color="green" onclick={changeMaxlength}>{maxlength ? "Remove maxlength" : "Add maxlength"}</Button>
-    <Button class="w-48" color="pink" onclick={changeClass}>{textAreaClass !== "" ? "Remove class" : "Add class"}</Button>
+    <Button class="w-48" color="pink" onclick={changeClass}>{textAreaClass === "w-full" ? "Use narrow width" : "Use full width"}</Button>
     <Button class="w-48" color="purple" onclick={changeDisabled}>{disabled ? "Remove disabled" : "Add disabled"}</Button>
     <Button class="w-48" color="orange" onclick={changeValue}>{value ? "Remove value" : "Add value"}</Button>
   </div>

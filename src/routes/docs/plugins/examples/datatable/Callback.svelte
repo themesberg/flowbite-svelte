@@ -26,7 +26,7 @@
     console.log(`Column ${column} sorted ${direction}`);
   }
 
-  function handleSearch(query: string, matched: any[]): void {
+  function handleSearch(query: string, matched: typeof items): void {
     console.log(`Search: "${query}" found ${matched.length} results`);
   }
 
