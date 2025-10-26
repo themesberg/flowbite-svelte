@@ -113,8 +113,8 @@ Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
 <Input
   bind:value
   oninput={(e) => console.log("Custom input:", e)}
-  onfocus={(e) => console.log("Input focused")}
-  onblur={(e) => console.log("Input blurred")}
+  onfocus={() => console.log("Input focused")}
+  onblur={() => console.log("Input blurred")}
   onkeydown={(e) => {
     if (e.key === "Tab") {
       console.log("Tab pressed");
@@ -270,7 +270,7 @@ Use the following example to apply validation styles for success and error messa
 
 ```svelte
 <script lang="ts">
-  import { Label, Input, Button, CloseButton } from "flowbite-svelte";
+  import { Label, Input, CloseButton } from "flowbite-svelte";
   import { EnvelopeSolid } from "flowbite-svelte-icons";
 </script>
 

@@ -13,7 +13,7 @@
 
 ```svelte
 <script lang="ts">
-  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
+  import { Toolbar, ToolbarButton } from "flowbite-svelte";
   import { HomeOutline, EnvelopeOutline, ImageOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -28,7 +28,7 @@
 
 ```svelte
 <script lang="ts">
-  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
+  import { Toolbar, ToolbarButton } from "flowbite-svelte";
   import { HomeOutline, EnvelopeOutline, ImageOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -109,7 +109,7 @@ Most often the textarea component is used as the main text field input element i
 
 ```svelte
 <script lang="ts">
-  import { Toolbar, ToolbarButton, ToolbarGroup, Textarea, Button } from "flowbite-svelte";
+  import { Toolbar, ToolbarButton, Textarea, Button } from "flowbite-svelte";
   import { PaperClipOutline, MapPinAltSolid, ImageOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -139,7 +139,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1129)
+[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1128)
 
 #### Props
 
@@ -154,7 +154,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1135)
+[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1134)
 
 #### Props
 
@@ -169,7 +169,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1133)
+[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1132)
 
 #### Props
 

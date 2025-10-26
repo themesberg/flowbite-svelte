@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.19.1
+
+### Patch Changes
+
+- fix: cleanups for noUnusedLocals and noUnusedParameters
+
 ## 1.19.0
 
 ### Minor Changes

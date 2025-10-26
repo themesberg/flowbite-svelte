@@ -129,7 +129,7 @@ These beautiful button elements with color shadows can be used since the release
 
 ```svelte
 <script lang="ts">
-  import { Button, GradientButton } from "flowbite-svelte";
+  import { GradientButton } from "flowbite-svelte";
 </script>
 
 <GradientButton shadow color="blue">Blue</GradientButton>
@@ -310,7 +310,7 @@ Use the `loading` prop to indicate a pending action (e.g. form submission). When
 
 #### Types
 
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L307)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L306)
 
 #### Props
 
@@ -329,7 +329,7 @@ Use the `loading` prop to indicate a pending action (e.g. form submission). When
 
 #### Types
 
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L316)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L315)
 
 #### Props
 

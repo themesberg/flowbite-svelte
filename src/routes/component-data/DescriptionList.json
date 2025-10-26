@@ -2,7 +2,7 @@
   "name": "DescriptionList",
   "type": {
     "name": "DescriptionListProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1901"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1900"
   },
   "props": [
     ["children", ""],

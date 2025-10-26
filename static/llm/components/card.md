@@ -103,7 +103,7 @@ If you want to spice up your cards you can use the following card which has its 
 
 ```svelte
 <script lang="ts">
-  import { Card, Button, Toggle } from "flowbite-svelte";
+  import { Card, Toggle } from "flowbite-svelte";
   let hCard = false;
 </script>
 

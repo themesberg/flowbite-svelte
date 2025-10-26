@@ -173,7 +173,7 @@ Use this example as an alternative style to the control buttons example above.
 
 ```svelte
 <script lang="ts">
-  import { Input, Label, Button, ButtonGroup } from "flowbite-svelte";
+  import { Input, Label, Button } from "flowbite-svelte";
   import { PlusOutline, MinusOutline } from "flowbite-svelte-icons";
   let counterInput: number = $state(12);
   $effect(() => {

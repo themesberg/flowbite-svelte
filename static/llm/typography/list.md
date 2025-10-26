@@ -169,7 +169,7 @@ Create a description list by using the `tag="dl"` prop and set the term and name
 
 ```svelte
 <script lang="ts">
-  import { List, Li, DescriptionList } from "flowbite-svelte";
+  import { List, DescriptionList } from "flowbite-svelte";
 </script>
 
 <List tag="dl" class="divide-y divide-gray-200 text-gray-900 dark:divide-gray-700  dark:text-white">
@@ -332,7 +332,7 @@ Use this example to create a horizontally aligned list of items.
 
 #### Types
 
-[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1967)
+[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1966)
 
 #### Props
 

@@ -104,7 +104,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[VirtualListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2049)
+[VirtualListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2048)
 ## Props
 @prop items = []
 @prop minItemHeight = 50

@@ -63,7 +63,6 @@
   let divClass = "overflow-y-auto px-4 pt-20 lg:pt-4 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block lg:me-0 lg:sticky top-20 bg-white dark:bg-gray-900";
   // const blockCls = "px-4 mx-auto max-w-8xl";
   const nonBlockCls = "min-w-0 lg:static lg:container lg:mx-auto lg:max-h-full lg:overflow-visible";
-
 </script>
 
 {#if submenu !== "blocks"}

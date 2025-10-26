@@ -40,11 +40,6 @@ Use this example of a default timepicker component to allow the user to select a
 <script lang="ts">
   import { Label, Timepicker } from "$lib";
   let selectedTime = $state("09:00");
-  function handleChange(data: { time: string; endTime: string; [key: string]: string }): void {
-    if (data) {
-      selectedTime = data.time;
-    }
-  }
 </script>
 
 <Label>Select Time: {selectedTime}</Label>
@@ -413,7 +408,7 @@ Use this example to show multiple time interval selections inside of a drawer co
 ```svelte
 <script lang="ts">
   import { Button, Drawer, Label, Select, Toggle, Checkbox, Timepicker, Card, P, Heading, Span } from "flowbite-svelte";
-  import { InfoCircleSolid, ClockSolid, PlusOutline, TrashBinSolid, CloseOutline } from "flowbite-svelte-icons";
+  import { InfoCircleSolid, ClockSolid, PlusOutline, TrashBinSolid } from "flowbite-svelte-icons";
 
   let open = $state(false);
   let businessHoursEnabled = $state(true);

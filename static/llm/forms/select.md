@@ -133,11 +133,7 @@ Use this example if you want to create a multi-level dropdown and select compone
   import Germany from "$icons/Germany.svelte";
   import Italy from "$icons/Italy.svelte";
   import China from "$icons/China.svelte";
-  let countries = [
-    { value: "us", name: "United States" },
-    { value: "ca", name: "Canada" },
-    { value: "fr", name: "France" }
-  ];
+
   let states = [
     { value: "CA", name: "California" },
     { value: "TX", name: "Texas" },
@@ -412,7 +408,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 #### Types
 
-[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L859)
+[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L858)
 
 #### Props
 

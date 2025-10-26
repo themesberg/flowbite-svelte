@@ -71,8 +71,6 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 ```svelte
 <script lang="ts">
   import { Tooltip, Button } from "flowbite-svelte";
-  import type { Placement } from "@floating-ui/utils";
-  let placement: Placement = "left";
 </script>
 
 <Button>Tooltip left</Button>
@@ -184,7 +182,7 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 
 #### Types
 
-[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1854)
+[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1853)
 
 #### Props
 

@@ -190,7 +190,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 <script lang="ts">
   import { Toast } from "flowbite-svelte";
   import { slide, scale } from "svelte/transition";
-  import { quintOut, elasticOut } from "svelte/easing";
+  import { quintOut } from "svelte/easing";
   import { CheckCircleSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -389,7 +389,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1838)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1837)
 
 #### Props
 

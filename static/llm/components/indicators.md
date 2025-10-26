@@ -75,7 +75,7 @@ Use this example to show a status indicator for the currently logged in user by 
 
 ```svelte
 <script lang="ts">
-  import { Indicator, Avatar } from "flowbite-svelte";
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <Avatar src="/images/profile-picture-5.webp" dot={{ color: "green", size: "lg", placement: "top-right" }} />
@@ -199,7 +199,7 @@ Use these examples to position the indicator component anywhere relative to the 
 
 #### Types
 
-[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L998)
+[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L997)
 
 #### Props
 

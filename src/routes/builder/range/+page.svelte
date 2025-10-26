@@ -40,7 +40,7 @@
   const changeLabelStatus = () => {
     labelStatus = !labelStatus;
   };
- 
+
   // code generator
   let generatedCode = $derived(
     (() => {

@@ -5,7 +5,7 @@
   import Germany from "$icons/Germany.svelte";
   import Italy from "$icons/Italy.svelte";
   import China from "$icons/China.svelte";
-  
+
   let states = [
     { value: "CA", name: "California" },
     { value: "TX", name: "Texas" },

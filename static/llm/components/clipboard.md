@@ -70,7 +70,7 @@ Use this example to show a copy button inside the input field with a text label 
 
 ```svelte
 <script lang="ts">
-  import { Clipboard, Input, Tooltip, ButtonGroup } from "flowbite-svelte";
+  import { Clipboard, Input } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
 
   let value = $state("npm install flowbite");
@@ -176,12 +176,6 @@ This example can be used to copy and paste code inside a `<pre>` and `<code>` bl
         &#x3C;ButtonGroup&#x3E;
         &#x3C;Button color="primary"&#x3E;Generate&#x3C;/Button&#x3E;
         &#x3C;Input id="url-shortener" bind:value readonly disabled class="w-64" /&#x3E;
-            &#x3C;Clipboard bind:value&#x3E;
-                {#snippet children(success: boolean)}
-            &#x3C;Tooltip class="whitespace-nowrap"&#x3E;{success ? "Copied" : "Copy link"}&#x3C;/Tooltip&#x3E;
-                {#if success}&#x3C;CheckOutline /&#x3E;{:else}&#x3C;ClipboardCleanSolid /&#x3E;{/if}
-          {/snippet}
-            &#x3C;/Clipboard&#x3E;
         &#x3C;/ButtonGroup&#x3E;
         &#x3C;Helper&#x3E;Make sure that your URL is valid&#x3C;/Helper&#x3E;
     &#x3C;/div&#x3E;
@@ -212,7 +206,6 @@ Use this example to show multiple input field elements that have the copy to cli
   let acc_id = $state("756593826");
   let api_key = $state("f4h6sd3t-jsy63ind-hsgdt7rs-jdhf76st");
   let role_arn = $state("123456789012:user/Flowbite");
-  let value = $state("");
 </script>
 
 {#snippet children(success: boolean)}
@@ -378,7 +371,7 @@ Use this example to show an input field where you can copy the URL of the curren
 
 #### Types
 
-[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L432)
+[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L431)
 
 #### Props
 

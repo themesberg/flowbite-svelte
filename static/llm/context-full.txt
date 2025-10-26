@@ -1,5 +1,5 @@
 # undefined Documentation - Full Context
-# Generated on 2025-10-25T15:53:27.347Z
+# Generated on 2025-10-26T09:47:24.913Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -1631,7 +1631,7 @@ Open accordion only within specific screen size ranges:
 
 #### Types
 
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L170)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L169)
 
 #### Props
 
@@ -1647,7 +1647,7 @@ Open accordion only within specific screen size ranges:
 
 #### Types
 
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L178)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L177)
 
 #### Props
 
@@ -2009,7 +2009,7 @@ Use the `onclick` event with `dismissable` prop.
 
 #### Types
 
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L192)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L191)
 
 #### Props
 
@@ -2280,7 +2280,7 @@ Preset values are equivalents of:
 
 #### Types
 
-[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L203)
+[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L202)
 
 #### Props
 
@@ -2600,7 +2600,7 @@ The color can be changed dynamically.
 
 #### Types
 
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L215)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L214)
 
 #### Props
 
@@ -2826,7 +2826,7 @@ A reusable function that manages banner dismissal state with localStorage persis
       open = !localStorage.getItem(storageKey);
     });
 
-    function onclose(event: MouseEvent) {
+    function onclose(_event: MouseEvent) {
       localStorage.setItem(storageKey, "true");
       open = false;
     }
@@ -2856,7 +2856,7 @@ A reusable function that manages banner dismissal state with localStorage persis
 
 #### Types
 
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L229)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L228)
 
 #### Props
 
@@ -3259,7 +3259,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L248)
+[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L247)
 
 #### Props
 
@@ -3278,7 +3278,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L267)
+[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L266)
 
 #### Props
 
@@ -3292,7 +3292,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L273)
+[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L272)
 
 #### Props
 
@@ -3304,7 +3304,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L257)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L256)
 
 #### Props
 
@@ -3447,7 +3447,7 @@ Use the `icon` snippet to change icons.
 
 #### Types
 
-[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L279)
+[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L278)
 
 #### Props
 
@@ -3462,7 +3462,7 @@ Use the `icon` snippet to change icons.
 
 #### Types
 
-[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L286)
+[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L285)
 
 #### Props
 
@@ -3702,7 +3702,7 @@ You can add the `onclick` event to the `Button` component.
 
 #### Types
 
-[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L297)
+[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L296)
 
 #### Props
 
@@ -3859,7 +3859,7 @@ These beautiful button elements with color shadows can be used since the release
 
 ```svelte
 <script lang="ts">
-  import { Button, GradientButton } from "flowbite-svelte";
+  import { GradientButton } from "flowbite-svelte";
 </script>
 
 <GradientButton shadow color="blue">Blue</GradientButton>
@@ -4040,7 +4040,7 @@ Use the `loading` prop to indicate a pending action (e.g. form submission). When
 
 #### Types
 
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L307)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L306)
 
 #### Props
 
@@ -4059,7 +4059,7 @@ Use the `loading` prop to indicate a pending action (e.g. form submission). When
 
 #### Types
 
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L316)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L315)
 
 #### Props
 
@@ -4196,7 +4196,7 @@ If you want to spice up your cards you can use the following card which has its 
 
 ```svelte
 <script lang="ts">
-  import { Card, Button, Toggle } from "flowbite-svelte";
+  import { Card, Toggle } from "flowbite-svelte";
   let hCard = false;
 </script>
 
@@ -4674,7 +4674,6 @@ The `Carousel` exposes the `change` event containing info about the currently di
   import images from "./imageData/images.json";
   import type { HTMLImgAttributes } from "svelte/elements";
 
-  let index = $state(0);
   let image: HTMLImgAttributes | undefined = $state();
 </script>
 
@@ -4800,7 +4799,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L375)
+[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L374)
 
 #### Props
 
@@ -4824,7 +4823,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L390)
+[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L389)
 
 #### Props
 
@@ -4838,7 +4837,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L397)
+[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L396)
 
 #### Props
 
@@ -4852,7 +4851,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L403)
+[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L402)
 
 #### Props
 
@@ -4863,7 +4862,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L420)
+[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L419)
 
 #### Props
 
@@ -4876,7 +4875,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L407)
+[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L406)
 
 #### Props
 
@@ -4887,7 +4886,7 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 #### Types
 
-[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L411)
+[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L410)
 
 #### Props
 
@@ -4988,7 +4987,7 @@ Use this example to show a copy button inside the input field with a text label 
 
 ```svelte
 <script lang="ts">
-  import { Clipboard, Input, Tooltip, ButtonGroup } from "flowbite-svelte";
+  import { Clipboard, Input } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
 
   let value = $state("npm install flowbite");
@@ -5094,12 +5093,6 @@ This example can be used to copy and paste code inside a `<pre>` and `<code>` bl
         &#x3C;ButtonGroup&#x3E;
         &#x3C;Button color="primary"&#x3E;Generate&#x3C;/Button&#x3E;
         &#x3C;Input id="url-shortener" bind:value readonly disabled class="w-64" /&#x3E;
-            &#x3C;Clipboard bind:value&#x3E;
-                {#snippet children(success: boolean)}
-            &#x3C;Tooltip class="whitespace-nowrap"&#x3E;{success ? "Copied" : "Copy link"}&#x3C;/Tooltip&#x3E;
-                {#if success}&#x3C;CheckOutline /&#x3E;{:else}&#x3C;ClipboardCleanSolid /&#x3E;{/if}
-          {/snippet}
-            &#x3C;/Clipboard&#x3E;
         &#x3C;/ButtonGroup&#x3E;
         &#x3C;Helper&#x3E;Make sure that your URL is valid&#x3C;/Helper&#x3E;
     &#x3C;/div&#x3E;
@@ -5130,7 +5123,6 @@ Use this example to show multiple input field elements that have the copy to cli
   let acc_id = $state("756593826");
   let api_key = $state("f4h6sd3t-jsy63ind-hsgdt7rs-jdhf76st");
   let role_arn = $state("123456789012:user/Flowbite");
-  let value = $state("");
 </script>
 
 {#snippet children(success: boolean)}
@@ -5296,7 +5288,7 @@ Use this example to show an input field where you can copy the URL of the curren
 
 #### Types
 
-[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L432)
+[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L431)
 
 #### Props
 
@@ -5400,7 +5392,7 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 #### Types
 
-[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L441)
+[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L440)
 
 #### Props
 
@@ -5694,7 +5686,7 @@ Set `translationLocale` to change translation. The following example shows Germa
 
 ```svelte
 <script lang="ts">
-  import { Datepicker, P } from "flowbite-svelte";
+  import { Datepicker } from "flowbite-svelte";
 </script>
 
 <div class="mb-64 md:w-1/2">
@@ -5787,7 +5779,7 @@ Add `actionSlot` snippet with `selectedDate`, `handleClear`, `handleApply`, `clo
 
 <div class="mb-64 md:w-1/2">
   <Datepicker bind:value={selectedDate} autohide={false}>
-    {#snippet actionSlot({ selectedDate, handleClear, handleApply, close })}
+    {#snippet actionSlot({ selectedDate, handleClear, handleApply })}
       <div class="mt-2 flex gap-2">
         <Button size="sm" onclick={handleClear}>Clear</Button>
         <Button size="sm" onclick={() => selectedDate && handleApply(selectedDate)} disabled={!selectedDate}>Apply</Button>
@@ -5820,7 +5812,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. In quidem rerum, optio 
 
 #### Types
 
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L458)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L457)
 
 #### Props
 
@@ -6003,7 +5995,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L514)
+[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L513)
 
 #### Props
 
@@ -6022,7 +6014,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L525)
+[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L524)
 
 #### Props
 
@@ -6040,7 +6032,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[DesktopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L498)
+[DesktopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L497)
 
 #### Props
 
@@ -6056,7 +6048,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[DeviceMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L493)
+[DeviceMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L492)
 
 #### Props
 
@@ -6067,7 +6059,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L535)
+[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L534)
 
 #### Props
 
@@ -6085,7 +6077,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L506)
+[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L505)
 
 #### Props
 
@@ -6101,7 +6093,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L545)
+[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L544)
 
 #### Props
 
@@ -6119,7 +6111,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L555)
+[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L554)
 
 #### Props
 
@@ -6172,7 +6164,6 @@ Since `Drawer` component extend Svelte's `HTMLAttributes<HTMLDivElement>`, you c
 <script lang="ts">
   import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-  import { sineIn } from "svelte/easing";
   let open = $state(false);
 </script>
 
@@ -6278,7 +6269,7 @@ Use this example to show a contact form inside the drawer component.
 
 ```svelte
 <script lang="ts">
-  import { Drawer, CardPlaceholder, Button, Label, Input, Textarea, P, A, Checkbox } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, Label, Input, Textarea, P, A } from "flowbite-svelte";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 
   let open3 = $state(false);
@@ -6422,7 +6413,7 @@ Drawer is `modal` by default (see `dialog`). You can set `modal={false}` to open
 
 ```svelte
 <script lang="ts">
-  import { Drawer, CardPlaceholder, Button, A } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
   let openNonModal = $state(false);
@@ -6532,7 +6523,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L581)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L580)
 
 #### Props
 
@@ -6554,7 +6545,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L589)
+[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L588)
 
 #### Props
 
@@ -6568,7 +6559,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L591)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L590)
 
 #### Props
 
@@ -7398,7 +7389,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L598)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L597)
 
 #### Props
 
@@ -7415,7 +7406,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L604)
+[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L603)
 
 #### Props
 
@@ -7425,7 +7416,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L620)
+[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L619)
 
 #### Props
 
@@ -7436,7 +7427,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L606)
+[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L605)
 
 #### Props
 
@@ -7447,7 +7438,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L612)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L611)
 
 #### Props
 
@@ -7699,7 +7690,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L627)
+[FooterProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L626)
 
 #### Props
 
@@ -7711,7 +7702,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L632)
+[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L631)
 
 #### Props
 
@@ -7728,7 +7719,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L643)
+[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L642)
 
 #### Props
 
@@ -7746,7 +7737,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L653)
+[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L652)
 
 #### Props
 
@@ -7759,7 +7750,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L663)
+[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L662)
 
 #### Props
 
@@ -7774,7 +7765,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L659)
+[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L658)
 
 #### Props
 
@@ -8257,7 +8248,7 @@ This example shows how to get a complete control over the gallery images look an
 
 #### Types
 
-[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L987)
+[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L986)
 
 #### Props
 
@@ -8362,7 +8353,7 @@ Use this example to show a status indicator for the currently logged in user by 
 
 ```svelte
 <script lang="ts">
-  import { Indicator, Avatar } from "flowbite-svelte";
+  import { Avatar } from "flowbite-svelte";
 </script>
 
 <Avatar src="/images/profile-picture-5.webp" dot={{ color: "green", size: "lg", placement: "top-right" }} />
@@ -8486,7 +8477,7 @@ Use these examples to position the indicator component anywhere relative to the 
 
 #### Types
 
-[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L998)
+[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L997)
 
 #### Props
 
@@ -8729,7 +8720,7 @@ This example can be used to denote function keys inside the KBD component.
 
 #### Types
 
-[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1009)
+[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1008)
 
 #### Props
 
@@ -8937,7 +8928,7 @@ When non standard usage is needed you can omit the `items` props and add element
 
 #### Types
 
-[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1028)
+[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1027)
 
 #### Props
 
@@ -8956,7 +8947,7 @@ When non standard usage is needed you can omit the `items` props and add element
 
 #### Types
 
-[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1039)
+[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1038)
 
 #### Props
 
@@ -9021,7 +9012,6 @@ Use this example to show a list of links aligned on three columns inside the meg
     { name: "Pro Version", href: "/pro" },
     { name: "License", href: "/license" }
   ];
-  let open = $state();
 </script>
 
 <Navbar>
@@ -9032,7 +9022,7 @@ Use this example to show a list of links aligned on three columns inside the meg
   <NavHamburger />
   <NavUl>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer" onclick={() => (open = true)}>
+    <NavLi class="cursor-pointer">
       Mega menu<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
     <MegaMenu items={menu}>
@@ -9117,7 +9107,6 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
     { name: "Pro Version", href: "/pro" },
     { name: "License", href: "/license" }
   ];
-  let open = $state();
   import { blur, slide, scale } from "svelte/transition";
 </script>
 
@@ -9129,7 +9118,7 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
   <NavHamburger />
   <NavUl>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer" onclick={() => (open = true)}>
+    <NavLi class="cursor-pointer">
       Slide<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
     <MegaMenu items={menu} transition={slide} transitionParams={{ duration: 1000 }}>
@@ -9137,7 +9126,7 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
         <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
       {/snippet}
     </MegaMenu>
-    <NavLi class="cursor-pointer" onclick={() => (open = true)}>
+    <NavLi class="cursor-pointer">
       Blur<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
     <MegaMenu items={menu} transition={blur} transitionParams={{ duration: 1000 }}>
@@ -9145,7 +9134,7 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
         <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
       {/snippet}
     </MegaMenu>
-    <NavLi class="cursor-pointer" onclick={() => (open = true)}>
+    <NavLi class="cursor-pointer">
       Scale<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
     <MegaMenu items={menu} transition={scale} transitionParams={{ duration: 1000 }}>
@@ -9327,7 +9316,7 @@ This example can be used to also show a CTA with a backdround image inside the d
 
 #### Types
 
-[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1050)
+[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1049)
 
 #### Props
 
@@ -9430,7 +9419,7 @@ Notice as well the lack of the `footer` snippet and the transition set to `slide
 
 ```svelte
 <script lang="ts">
-  import { Button, Modal, P } from "flowbite-svelte";
+  import { Button, Modal } from "flowbite-svelte";
   import { ExclamationCircleOutline } from "flowbite-svelte-icons";
   import { slide } from "svelte/transition";
   let popupModal = $state(false);
@@ -9505,7 +9494,7 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 
 ```svelte
 <script lang="ts">
-  import { Button, Modal, Label, Input, Checkbox, P } from "flowbite-svelte";
+  import { Button, Modal, P } from "flowbite-svelte";
   import MetaMask from "$icons/MetaMask.svelte";
   import CoinbaseWallet from "$icons/CoinbaseWallet.svelte";
   import OperaWallet from "$icons/OperaWallet.svelte";
@@ -9798,7 +9787,7 @@ You can as well use the `onsubmit` event handler which is bubbled event from the
 
 <Button onclick={() => (open = true)}>Default modal</Button>
 
-<Modal form bind:open onsubmit={(ev) => alert(`SUBMIT: Form is about to be submitted.`)} oncancel={(ev) => alert("CANCEL: User canceled the dialog")} onclose={(ev) => alert(`CLOSE: Dialog closed with "${(ev.target as HTMLDialogElement)?.returnValue || "no"}" action.`)} title="Terms of Service">
+<Modal form bind:open onsubmit={() => alert(`SUBMIT: Form is about to be submitted.`)} oncancel={() => alert("CANCEL: User canceled the dialog")} onclose={(ev) => alert(`CLOSE: Dialog closed with "${(ev.target as HTMLDialogElement)?.returnValue || "no"}" action.`)} title="Terms of Service">
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
   <P>The European Union's General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
   {#snippet footer()}
@@ -9905,7 +9894,7 @@ This is perfect for advertisements, terms of service, or important announcements
 
 #### Types
 
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1061)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1060)
 
 #### Props
 
@@ -10205,7 +10194,7 @@ Use this example of a navbar element to also show a search input element that yo
 </script>
 
 <Navbar>
-  {#snippet children({ hidden, toggle, NavContainer })}
+  {#snippet children({ hidden, toggle })}
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
       <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
@@ -10393,7 +10382,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1072)
+[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1071)
 
 #### Props
 
@@ -10407,7 +10396,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1096)
+[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1095)
 
 #### Props
 
@@ -10418,7 +10407,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1098)
+[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1097)
 
 #### Props
 
@@ -10430,7 +10419,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1102)
+[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1101)
 
 #### Props
 
@@ -10445,7 +10434,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1123)
+[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1122)
 
 #### Props
 
@@ -10459,7 +10448,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1108)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1107)
 
 #### Props
 
@@ -10479,7 +10468,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1088)
+[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1087)
 
 #### Props
 
@@ -10963,7 +10952,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1195)
+[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1194)
 
 #### Props
 
@@ -10980,7 +10969,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1159)
+[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1158)
 
 #### Props
 
@@ -10996,7 +10985,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1191)
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1190)
 
 #### Props
 
@@ -11010,7 +10999,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1165)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1164)
 
 #### Props
 
@@ -11439,7 +11428,7 @@ If you need the popover to be attached to the other element then the triggering 
 
 #### Types
 
-[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1205)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1204)
 
 #### Props
 
@@ -11671,7 +11660,7 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1215)
+[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1214)
 
 #### Props
 
@@ -11691,7 +11680,7 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1226)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1225)
 
 #### Props
 
@@ -11809,7 +11798,7 @@ Aggregate more results by using this example to show the amount of reviews and t
 
 ```svelte
 <script lang="ts">
-  import { Rating, AdvancedRating, ScoreRating } from "flowbite-svelte";
+  import { Rating } from "flowbite-svelte";
 </script>
 
 <Rating count rating={4.95} id="example-4">
@@ -12035,7 +12024,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1243)
+[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1242)
 
 #### Props
 
@@ -12055,7 +12044,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1329)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1328)
 
 #### Props
 
@@ -12074,7 +12063,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1329)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1328)
 
 #### Props
 
@@ -12092,7 +12081,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1255)
+[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1254)
 
 #### Props
 
@@ -12111,7 +12100,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingCommentProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1266)
+[RatingCommentProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1265)
 
 #### Props
 
@@ -12125,7 +12114,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1302)
+[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1301)
 
 #### Props
 
@@ -12135,7 +12124,6 @@ Use this component to show the review content from a user alongside the avatar, 
 - item2
 - item3
 - review
-- class: className
 - classes
 - articleClass
 - divClass
@@ -12149,7 +12137,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[ScoreRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1318)
+[ScoreRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1317)
 
 #### Props
 
@@ -12162,7 +12150,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1329)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1328)
 
 #### Props
 
@@ -12180,7 +12168,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1329)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1328)
 
 #### Props
 
@@ -12429,7 +12417,7 @@ You can control icon class by changing the `class` prop in the `Icon` component.
 
 ```svelte
 <script lang="ts">
-  import { Sidebar, SidebarGroup, SidebarItem, SidebarButton, uiHelpers } from "flowbite-svelte";
+  import { Sidebar, SidebarGroup, SidebarItem, uiHelpers } from "flowbite-svelte";
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from "flowbite-svelte-icons";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
@@ -13373,7 +13361,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 <script lang="ts">
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from "flowbite-svelte";
   import { ChartPieSolid, CartSolid, ChevronDoubleUpOutline, ChevronDoubleDownOutline } from "flowbite-svelte-icons";
-  let spanClass = "flex-1 ms-3 whitespace-nowrap";
+
   const handleClick = () => {
     alert("Hello from SidebarDropdownWrapper.");
   };
@@ -13412,7 +13400,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1352)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1351)
 
 #### Props
 
@@ -13441,7 +13429,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1389)
+[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1388)
 
 #### Props
 
@@ -13456,7 +13444,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1371)
+[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1370)
 
 #### Props
 
@@ -13468,7 +13456,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1376)
+[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1375)
 
 #### Props
 
@@ -13484,7 +13472,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1395)
+[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1394)
 
 #### Props
 
@@ -13508,7 +13496,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1412)
+[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1411)
 
 #### Props
 
@@ -13521,7 +13509,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1418)
+[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1417)
 
 #### Props
 
@@ -13683,7 +13671,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1430)
+[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1429)
 
 #### Props
 
@@ -13695,7 +13683,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1434)
+[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1433)
 
 #### Props
 
@@ -13709,7 +13697,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1440)
+[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1439)
 
 #### Props
 
@@ -13723,7 +13711,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1446)
+[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1445)
 
 #### Props
 
@@ -13735,7 +13723,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1450)
+[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1449)
 
 #### Props
 
@@ -13746,7 +13734,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1452)
+[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1451)
 
 #### Props
 
@@ -13758,7 +13746,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1456)
+[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1455)
 
 #### Props
 
@@ -13769,7 +13757,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1460)
+[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1459)
 
 #### Props
 
@@ -14402,7 +14390,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1492)
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1491)
 
 #### Props
 
@@ -14421,7 +14409,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1507)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1506)
 
 #### Props
 
@@ -14439,7 +14427,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1490)
+[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1489)
 
 #### Props
 
@@ -14566,7 +14554,7 @@ The spinner component can also be used inside elements such as buttons when subm
 
 #### Types
 
-[SpinnerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1517)
+[SpinnerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1516)
 
 #### Props
 
@@ -14846,7 +14834,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1605)
+[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1604)
 
 #### Props
 
@@ -14859,7 +14847,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1574)
+[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1573)
 
 #### Props
 
@@ -14873,7 +14861,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1559)
+[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1558)
 
 #### Props
 
@@ -14886,7 +14874,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1547)
+[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1546)
 
 #### Props
 
@@ -14899,7 +14887,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1619)
+[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1618)
 
 #### Props
 
@@ -14913,7 +14901,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1589)
+[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1588)
 
 #### Props
 
@@ -15193,7 +15181,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 
 ```svelte
 <script lang="ts">
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
+  import { Table } from "flowbite-svelte";
   let items = [
     { id: 1, maker: "Toyota", type: "ABC", make: 2017 },
     { id: 2, maker: "Ford", type: "CDE", make: 2018 },
@@ -15549,7 +15537,7 @@ For more advanced usage, please see [this page](https://flowbite-svelte.com/docs
 
 ```svelte
 <script lang="ts">
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch } from "flowbite-svelte";
+  import { TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch } from "flowbite-svelte";
   let searchTerm = $state("");
   let items = [
     { id: 1, maker: "Toyota", type: "ABC", make: 2017 },
@@ -15811,7 +15799,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1651)
+[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1650)
 
 #### Props
 
@@ -15832,7 +15820,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1683)
+[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1682)
 
 #### Props
 
@@ -15844,7 +15832,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1672)
+[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1671)
 
 #### Props
 
@@ -15857,7 +15845,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1664)
+[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1663)
 
 #### Props
 
@@ -15872,7 +15860,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1639)
+[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1638)
 
 #### Props
 
@@ -15889,7 +15877,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1688)
+[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1687)
 
 #### Props
 
@@ -15900,7 +15888,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1703)
+[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1702)
 
 #### Props
 
@@ -16429,7 +16417,7 @@ Use the following example to add active class.
 
 #### Types
 
-[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1732)
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1731)
 
 #### Props
 
@@ -16449,7 +16437,7 @@ Use the following example to add active class.
 
 #### Types
 
-[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1723)
+[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1722)
 
 #### Props
 
@@ -16872,7 +16860,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1769)
+[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1768)
 
 #### Props
 
@@ -16883,7 +16871,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1773)
+[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1772)
 
 #### Props
 
@@ -16903,7 +16891,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1785)
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1784)
 
 #### Props
 
@@ -16919,7 +16907,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1793)
+[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1792)
 
 #### Props
 
@@ -16936,7 +16924,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1813)
+[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1812)
 
 #### Props
 
@@ -16948,7 +16936,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1820)
+[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1819)
 
 #### Props
 
@@ -17178,7 +17166,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 <script lang="ts">
   import { Toast } from "flowbite-svelte";
   import { slide, scale } from "svelte/transition";
-  import { quintOut, elasticOut } from "svelte/easing";
+  import { quintOut } from "svelte/easing";
   import { CheckCircleSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -17377,7 +17365,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1838)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1837)
 
 #### Props
 
@@ -17485,8 +17473,6 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 ```svelte
 <script lang="ts">
   import { Tooltip, Button } from "flowbite-svelte";
-  import type { Placement } from "@floating-ui/utils";
-  let placement: Placement = "left";
 </script>
 
 <Button>Tooltip left</Button>
@@ -17598,7 +17584,7 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 
 #### Types
 
-[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1854)
+[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1853)
 
 #### Props
 
@@ -17898,7 +17884,7 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 #### Types
 
-[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2008)
+[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2007)
 
 #### Props
 
@@ -18288,7 +18274,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 #### Types
 
-[CheckboxProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L679)
+[CheckboxProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L678)
 
 #### Props
 
@@ -18482,7 +18468,7 @@ Add `clearable` and `clearableOnClick` props.
 
 #### Types
 
-[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L710)
+[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L709)
 
 #### Props
 
@@ -18865,8 +18851,8 @@ Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
 <Input
   bind:value
   oninput={(e) => console.log("Custom input:", e)}
-  onfocus={(e) => console.log("Input focused")}
-  onblur={(e) => console.log("Input blurred")}
+  onfocus={() => console.log("Input focused")}
+  onblur={() => console.log("Input blurred")}
   onkeydown={(e) => {
     if (e.key === "Tab") {
       console.log("Tab pressed");
@@ -19022,7 +19008,7 @@ Use the following example to apply validation styles for success and error messa
 
 ```svelte
 <script lang="ts">
-  import { Label, Input, Button, CloseButton } from "flowbite-svelte";
+  import { Label, Input, CloseButton } from "flowbite-svelte";
   import { EnvelopeSolid } from "flowbite-svelte-icons";
 </script>
 
@@ -19510,7 +19496,7 @@ Use this example as an alternative style to the control buttons example above.
 
 ```svelte
 <script lang="ts">
-  import { Input, Label, Button, ButtonGroup } from "flowbite-svelte";
+  import { Input, Label, Button } from "flowbite-svelte";
   import { PlusOutline, MinusOutline } from "flowbite-svelte-icons";
   let counterInput: number = $state(12);
   $effect(() => {
@@ -19690,7 +19676,7 @@ Use this example to select one of your saved phone numbers from an application w
 
 ```svelte
 <script lang="ts">
-  import { PhoneInput, Label, ButtonGroup, Select, Clipboard, Tooltip, Helper, A } from "flowbite-svelte";
+  import { Label, ButtonGroup, Select, Clipboard, Tooltip, Helper, A } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
   let selected = $state("+1 234 456 7890");
   const phonenumbers = [
@@ -19854,7 +19840,7 @@ The PhoneInput component provides customizable styling through six distinct clas
 
 #### Types
 
-[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L796)
+[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L795)
 
 #### Props
 
@@ -20203,7 +20189,7 @@ Use `color` and `checkedClass` props to style the checked state:
 
 #### Types
 
-[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L812)
+[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L811)
 
 #### Props
 
@@ -20326,7 +20312,7 @@ Since we added `...restProps` to input field, you can contain the props which ar
 
 #### Types
 
-[RangeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L833)
+[RangeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L832)
 
 #### Props
 
@@ -20768,11 +20754,7 @@ Use this example if you want to create a multi-level dropdown and select compone
   import Germany from "$icons/Germany.svelte";
   import Italy from "$icons/Italy.svelte";
   import China from "$icons/China.svelte";
-  let countries = [
-    { value: "us", name: "United States" },
-    { value: "ca", name: "Canada" },
-    { value: "fr", name: "France" }
-  ];
+
   let states = [
     { value: "CA", name: "California" },
     { value: "TX", name: "Texas" },
@@ -21047,7 +21029,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 #### Types
 
-[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L859)
+[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L858)
 
 #### Props
 
@@ -21216,7 +21198,7 @@ Most often the textarea component is used as the main text field input element i
 
 ```svelte
 <script lang="ts">
-  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from "flowbite-svelte";
+  import { Textarea, Toolbar, ToolbarButton, Button } from "flowbite-svelte";
   import { PaperClipOutline, MapPinAltSolid, ImageOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -21246,7 +21228,7 @@ If you want to build a chatroom component you will usually want to use a textare
 
 ```svelte
 <script lang="ts">
-  import { Textarea, Alert, ToolbarButton, Label } from "flowbite-svelte";
+  import { Textarea, ToolbarButton } from "flowbite-svelte";
   import { ImageOutline, FaceGrinOutline, PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -21321,7 +21303,7 @@ If you want to build a chatroom component you will usually want to use a textare
 
 #### Types
 
-[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L948)
+[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L947)
 
 #### Props
 
@@ -21404,11 +21386,6 @@ Use this example of a default timepicker component to allow the user to select a
 <script lang="ts">
   import { Label, Timepicker } from "$lib";
   let selectedTime = $state("09:00");
-  function handleChange(data: { time: string; endTime: string; [key: string]: string }): void {
-    if (data) {
-      selectedTime = data.time;
-    }
-  }
 </script>
 
 <Label>Select Time: {selectedTime}</Label>
@@ -21777,7 +21754,7 @@ Use this example to show multiple time interval selections inside of a drawer co
 ```svelte
 <script lang="ts">
   import { Button, Drawer, Label, Select, Toggle, Checkbox, Timepicker, Card, P, Heading, Span } from "flowbite-svelte";
-  import { InfoCircleSolid, ClockSolid, PlusOutline, TrashBinSolid, CloseOutline } from "flowbite-svelte-icons";
+  import { InfoCircleSolid, ClockSolid, PlusOutline, TrashBinSolid } from "flowbite-svelte-icons";
 
   let open = $state(false);
   let businessHoursEnabled = $state(true);
@@ -22015,7 +21992,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte
 <script lang="ts">
-  import { Input, Label, Button, Toggle } from "flowbite-svelte";
+  import { Button, Toggle } from "flowbite-svelte";
   let isDisabled = $state(false);
   let checked: boolean = $state(false);
   const handleClick = () => {
@@ -22034,7 +22011,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 #### Types
 
-[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L970)
+[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L969)
 
 #### Props
 
@@ -22271,7 +22248,7 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 #### Types
 
-[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1891)
+[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1890)
 
 #### Props
 
@@ -22535,7 +22512,7 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 #### Types
 
-[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1907)
+[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1906)
 
 #### Props
 
@@ -22674,7 +22651,7 @@ The `restProps` will be removed in the next version. Please use `divProps` and `
 
 #### Types
 
-[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1913)
+[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1912)
 
 #### Props
 
@@ -23292,7 +23269,7 @@ Create a description list by using the `tag="dl"` prop and set the term and name
 
 ```svelte
 <script lang="ts">
-  import { List, Li, DescriptionList } from "flowbite-svelte";
+  import { List, DescriptionList } from "flowbite-svelte";
 </script>
 
 <List tag="dl" class="divide-y divide-gray-200 text-gray-900 dark:divide-gray-700  dark:text-white">
@@ -23455,7 +23432,7 @@ Use this example to create a horizontally aligned list of items.
 
 #### Types
 
-[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1967)
+[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1966)
 
 #### Props
 
@@ -24160,7 +24137,6 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
   import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
 
   let singleValue = $state<string | null>(null);
-  let multiValues = $state<string[]>([]);
 
   function handleSingleSelect(value: string | null | string[]) {
     if (typeof value === "string" || value === null) {
@@ -24475,7 +24451,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 
 #### Types
 
-[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L337)
+[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L336)
 
 #### Props
 
@@ -24667,7 +24643,7 @@ Import the `Progressradial` component in a script tag.
 
 #### Types
 
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1226)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1225)
 
 #### Props
 
@@ -24850,7 +24826,7 @@ Use the `color` prop to change the color of a step indicator.
 
 #### Types
 
-[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1525)
+[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1524)
 
 #### Props
 
@@ -24996,7 +24972,7 @@ Use `disabled` to the `Tags` component.
 
 #### Types
 
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L893)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L892)
 
 #### Props
 
@@ -25129,7 +25105,7 @@ Dynamically adjust item heights based on content using the `getItemHeight` prop.
 </script>
 
 <VirtualList {items} minItemHeight={100} {getItemHeight} height={400}>
-  {#snippet children(item, index)}
+  {#snippet children(item, _index)}
     {@const typedItem = item as Item}
     <div class="border-b p-3 hover:bg-gray-50 dark:hover:bg-gray-800" style="height:{getItemHeight(typedItem)}px">
       <div class="font-semibold text-gray-900 dark:text-white">{typedItem.title}</div>
@@ -25293,7 +25269,7 @@ Add checkboxes, buttons, and other interactive elements to virtual list items.
   </div>
 
   <VirtualList {items} minItemHeight={50} height={400} class="rounded-lg border">
-    {#snippet children(item, index)}
+    {#snippet children(item, _index)}
       {@const task = item as Task}
       <div class="flex items-center gap-3 border-b p-3 hover:bg-gray-50 dark:hover:bg-gray-800" style="height:50px">
         <Checkbox checked={task.completed} onchange={() => toggleItem(task.id)} />
@@ -25361,7 +25337,7 @@ Demonstrates smooth scrolling and rendering performance with 100,000 items.
   </div>
 
   <VirtualList {items} minItemHeight={45} height={500} class="rounded-lg border">
-    {#snippet children(item, index)}
+    {#snippet children(item, _index)}
       {@const record = item as Record}
       <div class="flex items-center justify-between border-b p-3 hover:bg-gray-50 dark:hover:bg-gray-800" style="height:45px">
         <span class="text-gray-900 dark:text-white">{record.title}</span>
@@ -25413,7 +25389,7 @@ Use `CloseButton` component to close a component.
 
 #### Types
 
-[CloseButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L113)
+[CloseButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L112)
 
 #### Props
 
@@ -25461,7 +25437,7 @@ Use the `Label` component when you need to add a label.
 
 #### Types
 
-[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L805)
+[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L804)
 
 #### Props
 
@@ -25503,7 +25479,7 @@ Use the `Label` component when you need to add a label.
 
 ```svelte
 <script lang="ts">
-  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
+  import { Toolbar, ToolbarButton } from "flowbite-svelte";
   import { HomeOutline, EnvelopeOutline, ImageOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -25518,7 +25494,7 @@ Use the `Label` component when you need to add a label.
 
 ```svelte
 <script lang="ts">
-  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
+  import { Toolbar, ToolbarButton } from "flowbite-svelte";
   import { HomeOutline, EnvelopeOutline, ImageOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -25599,7 +25575,7 @@ Most often the textarea component is used as the main text field input element i
 
 ```svelte
 <script lang="ts">
-  import { Toolbar, ToolbarButton, ToolbarGroup, Textarea, Button } from "flowbite-svelte";
+  import { Toolbar, ToolbarButton, Textarea, Button } from "flowbite-svelte";
   import { PaperClipOutline, MapPinAltSolid, ImageOutline } from "flowbite-svelte-icons";
 </script>
 
@@ -25629,7 +25605,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1129)
+[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1128)
 
 #### Props
 
@@ -25644,7 +25620,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1135)
+[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1134)
 
 #### Props
 
@@ -25659,7 +25635,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1133)
+[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1132)
 
 #### Props
 

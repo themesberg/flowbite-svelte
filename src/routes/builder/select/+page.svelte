@@ -69,7 +69,7 @@
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
- 
+
   $effect(() => {
     builderExpand = builder.isOpen;
   });

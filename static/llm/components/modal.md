@@ -70,7 +70,7 @@ Notice as well the lack of the `footer` snippet and the transition set to `slide
 
 ```svelte
 <script lang="ts">
-  import { Button, Modal, P } from "flowbite-svelte";
+  import { Button, Modal } from "flowbite-svelte";
   import { ExclamationCircleOutline } from "flowbite-svelte-icons";
   import { slide } from "svelte/transition";
   let popupModal = $state(false);
@@ -145,7 +145,7 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 
 ```svelte
 <script lang="ts">
-  import { Button, Modal, Label, Input, Checkbox, P } from "flowbite-svelte";
+  import { Button, Modal, P } from "flowbite-svelte";
   import MetaMask from "$icons/MetaMask.svelte";
   import CoinbaseWallet from "$icons/CoinbaseWallet.svelte";
   import OperaWallet from "$icons/OperaWallet.svelte";
@@ -438,7 +438,7 @@ You can as well use the `onsubmit` event handler which is bubbled event from the
 
 <Button onclick={() => (open = true)}>Default modal</Button>
 
-<Modal form bind:open onsubmit={(ev) => alert(`SUBMIT: Form is about to be submitted.`)} oncancel={(ev) => alert("CANCEL: User canceled the dialog")} onclose={(ev) => alert(`CLOSE: Dialog closed with "${(ev.target as HTMLDialogElement)?.returnValue || "no"}" action.`)} title="Terms of Service">
+<Modal form bind:open onsubmit={() => alert(`SUBMIT: Form is about to be submitted.`)} oncancel={() => alert("CANCEL: User canceled the dialog")} onclose={(ev) => alert(`CLOSE: Dialog closed with "${(ev.target as HTMLDialogElement)?.returnValue || "no"}" action.`)} title="Terms of Service">
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
   <P>The European Union's General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
   {#snippet footer()}
@@ -545,7 +545,7 @@ This is perfect for advertisements, terms of service, or important announcements
 
 #### Types
 
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1061)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1060)
 
 #### Props
 

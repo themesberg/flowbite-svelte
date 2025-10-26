@@ -74,7 +74,7 @@ ${helperSlot ? `<Helper class="ps-6" color="${helperColor}">Helper text</Helper>
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
- 
+
   $effect(() => {
     builderExpand = builder.isOpen;
   });

@@ -99,7 +99,7 @@ Dynamically adjust item heights based on content using the `getItemHeight` prop.
 </script>
 
 <VirtualList {items} minItemHeight={100} {getItemHeight} height={400}>
-  {#snippet children(item, index)}
+  {#snippet children(item, _index)}
     {@const typedItem = item as Item}
     <div class="border-b p-3 hover:bg-gray-50 dark:hover:bg-gray-800" style="height:{getItemHeight(typedItem)}px">
       <div class="font-semibold text-gray-900 dark:text-white">{typedItem.title}</div>
@@ -263,7 +263,7 @@ Add checkboxes, buttons, and other interactive elements to virtual list items.
   </div>
 
   <VirtualList {items} minItemHeight={50} height={400} class="rounded-lg border">
-    {#snippet children(item, index)}
+    {#snippet children(item, _index)}
       {@const task = item as Task}
       <div class="flex items-center gap-3 border-b p-3 hover:bg-gray-50 dark:hover:bg-gray-800" style="height:50px">
         <Checkbox checked={task.completed} onchange={() => toggleItem(task.id)} />
@@ -331,7 +331,7 @@ Demonstrates smooth scrolling and rendering performance with 100,000 items.
   </div>
 
   <VirtualList {items} minItemHeight={45} height={500} class="rounded-lg border">
-    {#snippet children(item, index)}
+    {#snippet children(item, _index)}
       {@const record = item as Record}
       <div class="flex items-center justify-between border-b p-3 hover:bg-gray-50 dark:hover:bg-gray-800" style="height:45px">
         <span class="text-gray-900 dark:text-white">{record.title}</span>

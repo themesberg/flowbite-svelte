@@ -103,7 +103,6 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
   import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
 
   let singleValue = $state<string | null>(null);
-  let multiValues = $state<string[]>([]);
 
   function handleSingleSelect(value: string | null | string[]) {
     if (typeof value === "string" || value === null) {
@@ -418,7 +417,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 
 #### Types
 
-[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L337)
+[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L336)
 
 #### Props
 

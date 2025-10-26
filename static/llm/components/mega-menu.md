@@ -32,7 +32,6 @@ Use this example to show a list of links aligned on three columns inside the meg
     { name: "Pro Version", href: "/pro" },
     { name: "License", href: "/license" }
   ];
-  let open = $state();
 </script>
 
 <Navbar>
@@ -43,7 +42,7 @@ Use this example to show a list of links aligned on three columns inside the meg
   <NavHamburger />
   <NavUl>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer" onclick={() => (open = true)}>
+    <NavLi class="cursor-pointer">
       Mega menu<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
     <MegaMenu items={menu}>
@@ -128,7 +127,6 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
     { name: "Pro Version", href: "/pro" },
     { name: "License", href: "/license" }
   ];
-  let open = $state();
   import { blur, slide, scale } from "svelte/transition";
 </script>
 
@@ -140,7 +138,7 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
   <NavHamburger />
   <NavUl>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer" onclick={() => (open = true)}>
+    <NavLi class="cursor-pointer">
       Slide<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
     <MegaMenu items={menu} transition={slide} transitionParams={{ duration: 1000 }}>
@@ -148,7 +146,7 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
         <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
       {/snippet}
     </MegaMenu>
-    <NavLi class="cursor-pointer" onclick={() => (open = true)}>
+    <NavLi class="cursor-pointer">
       Blur<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
     <MegaMenu items={menu} transition={blur} transitionParams={{ duration: 1000 }}>
@@ -156,7 +154,7 @@ Since the `MegaMenu` component extends `Popper`, it also supports the `transitio
         <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
       {/snippet}
     </MegaMenu>
-    <NavLi class="cursor-pointer" onclick={() => (open = true)}>
+    <NavLi class="cursor-pointer">
       Scale<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
     <MegaMenu items={menu} transition={scale} transitionParams={{ duration: 1000 }}>
@@ -338,7 +336,7 @@ This example can be used to also show a CTA with a backdround image inside the d
 
 #### Types
 
-[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1050)
+[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1049)
 
 #### Props
 

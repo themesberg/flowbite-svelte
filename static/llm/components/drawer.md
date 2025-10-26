@@ -20,7 +20,6 @@ Since `Drawer` component extend Svelte's `HTMLAttributes<HTMLDivElement>`, you c
 <script lang="ts">
   import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-  import { sineIn } from "svelte/easing";
   let open = $state(false);
 </script>
 
@@ -126,7 +125,7 @@ Use this example to show a contact form inside the drawer component.
 
 ```svelte
 <script lang="ts">
-  import { Drawer, CardPlaceholder, Button, Label, Input, Textarea, P, A, Checkbox } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, Label, Input, Textarea, P, A } from "flowbite-svelte";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 
   let open3 = $state(false);
@@ -270,7 +269,7 @@ Drawer is `modal` by default (see `dialog`). You can set `modal={false}` to open
 
 ```svelte
 <script lang="ts">
-  import { Drawer, CardPlaceholder, Button, A } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
   let openNonModal = $state(false);
@@ -380,7 +379,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L581)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L580)
 
 #### Props
 
@@ -402,7 +401,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L589)
+[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L588)
 
 #### Props
 
@@ -416,7 +415,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L591)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L590)
 
 #### Props
 

@@ -187,7 +187,7 @@ A reusable function that manages banner dismissal state with localStorage persis
       open = !localStorage.getItem(storageKey);
     });
 
-    function onclose(event: MouseEvent) {
+    function onclose(_event: MouseEvent) {
       localStorage.setItem(storageKey, "true");
       open = false;
     }
@@ -217,7 +217,7 @@ A reusable function that manages banner dismissal state with localStorage persis
 
 #### Types
 
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L229)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L228)
 
 #### Props
 

@@ -145,7 +145,7 @@ Use this example to select one of your saved phone numbers from an application w
 
 ```svelte
 <script lang="ts">
-  import { PhoneInput, Label, ButtonGroup, Select, Clipboard, Tooltip, Helper, A } from "flowbite-svelte";
+  import { Label, ButtonGroup, Select, Clipboard, Tooltip, Helper, A } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
   let selected = $state("+1 234 456 7890");
   const phonenumbers = [
@@ -309,7 +309,7 @@ The PhoneInput component provides customizable styling through six distinct clas
 
 #### Types
 
-[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L796)
+[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L795)
 
 #### Props
 
