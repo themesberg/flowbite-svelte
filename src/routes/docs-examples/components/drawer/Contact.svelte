@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Drawer, CardPlaceholder, Button, Label, Input, Textarea, P, A, Checkbox } from "flowbite-svelte";
+  import { Drawer, CardPlaceholder, Button, Label, Input, Textarea, P, A } from "flowbite-svelte";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 
   let open3 = $state(false);

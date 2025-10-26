@@ -25,7 +25,7 @@
 
   let ref: HTMLDivElement | undefined = $state(undefined);
 
-  function close(event: MouseEvent) {
+  function close() {
     if (ref?.dispatchEvent(new Event("close", { bubbles: true, cancelable: true }))) {
       alertStatus = false;
     }

@@ -33,14 +33,7 @@
 </Headin>`;
     })()
   );
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the svelteCode content.
-  let codeBlock = uiHelpers();
-  let expand = $state(false);
-
-  $effect(() => {
-    expand = codeBlock.isOpen;
-  });
-  // end of DynamicCodeBlock setup
+  
   // for interactive builder
   let builder = uiHelpers();
   let builderExpand = $state(false);

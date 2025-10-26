@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { List, Li, DescriptionList } from "flowbite-svelte";
+  import { List, DescriptionList } from "flowbite-svelte";
 </script>
 
 <List tag="dl" class="divide-y divide-gray-200 text-gray-900 dark:divide-gray-700  dark:text-white">

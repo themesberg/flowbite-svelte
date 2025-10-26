@@ -1,17 +1,9 @@
 <script lang="ts">
-  // import '../../app.css';
   import Navbar from "./Navbar.svelte";
   import Sidebar from "./Sidebar.svelte";
   import type { LayoutProps } from "./$types";
 
-  interface Route {
-    path: string;
-  }
-
-  let { children, data }: LayoutProps = $props();
-  // const routes: Route[] = data.posts.adminDashboard;
-  // const docsRoute = routes.filter((route) => route.path !== '').map((route) => route.path);
-
+  let { children }: LayoutProps = $props();
   let drawerHidden = $state(false);
 </script>
 

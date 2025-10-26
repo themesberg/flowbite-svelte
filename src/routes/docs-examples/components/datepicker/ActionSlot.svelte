@@ -6,7 +6,7 @@
 
 <div class="mb-64 md:w-1/2">
   <Datepicker bind:value={selectedDate} autohide={false}>
-    {#snippet actionSlot({ selectedDate, handleClear, handleApply, close })}
+    {#snippet actionSlot({ selectedDate, handleClear, handleApply })}
       <div class="mt-2 flex gap-2">
         <Button size="sm" onclick={handleClear}>Clear</Button>
         <Button size="sm" onclick={() => selectedDate && handleApply(selectedDate)} disabled={!selectedDate}>Apply</Button>

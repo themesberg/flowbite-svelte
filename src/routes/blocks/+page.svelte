@@ -1,9 +1,6 @@
 <script lang="ts">
-  // import { MetaTag } from './utils';
   import { MetaTags } from "svelte-meta-tags";
-  import type { PageData } from "./$types";
   import Sectioncompo from "./utils/Sectioncompo.svelte";
-
   import type { PageProps } from "./$types";
 
   let { data }: PageProps = $props();

@@ -25,10 +25,6 @@
   // use the components string
   let componentArray = components ? components.split(", ") : [];
 
-  if (components) {
-    // Split the components into an array
-    const componentArray = components.split(", ");
-  }
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   let importPromises: Promise<any>[] = [];
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, GradientButton } from "flowbite-svelte";
+  import { GradientButton } from "flowbite-svelte";
 </script>
 
 <GradientButton shadow color="blue">Blue</GradientButton>

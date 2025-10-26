@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Drawer, Button, CloseButton } from "flowbite-svelte";
+  import { Drawer, Button } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
   let open9 = false;

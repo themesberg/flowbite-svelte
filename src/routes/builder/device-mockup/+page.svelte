@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { DeviceMockup, Label, Radio, uiHelpers } from "$lib";
+  import { DeviceMockup, Label, Radio } from "$lib";
   import type { DeviceVariantType } from "$lib/types";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
@@ -12,8 +12,6 @@
   let description = "A quick way to create Device mockup component";
   let title = "Device mockup builder";
   let dir = "builder";
-
-  const dirName = "device-mockup";
 
   const devices = [
     {
@@ -131,7 +129,6 @@
     })()
   );
 
-  let builder = uiHelpers();
   let builderExpand = $state(false);
   let showBuilderExpandButton = $derived(isGeneratedCodeOverflow(generatedCode));
   const handleBuilderExpandClick = () => {

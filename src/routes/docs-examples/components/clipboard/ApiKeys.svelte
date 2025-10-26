@@ -5,7 +5,6 @@
   let acc_id = $state("756593826");
   let api_key = $state("f4h6sd3t-jsy63ind-hsgdt7rs-jdhf76st");
   let role_arn = $state("123456789012:user/Flowbite");
-  let value = $state("");
 </script>
 
 {#snippet children(success: boolean)}

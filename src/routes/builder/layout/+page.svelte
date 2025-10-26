@@ -15,7 +15,7 @@
   let dir = "builder";
   // for Props table
   // import CompoAttributesViewer from '../utils/CompoAttributesViewer.svelte';
-  const dirName = "typography/layout";
+
   // for examples section that dynamically changes the svelte component and svelteCode content
   import * as ExampleComponents from "../layoutExamples/index";
   const exampleModules = import.meta.glob("../layoutExamples/*.svelte", {

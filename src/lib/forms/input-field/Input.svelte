@@ -103,7 +103,7 @@
     }
   });
 
-  function defaultHandleInput(event: Event) {
+  function defaultHandleInput(_event: Event) {
     // Ensure value is treated as a string to safely check its length
     const currentValueAsString = String(value || "");
     if (currentValueAsString.length > 0) {
@@ -112,12 +112,12 @@
     updateSuggestions();
   }
 
-  function defaultHandleFocus(event: FocusEvent) {
+  function defaultHandleFocus() {
     isFocused = true;
     updateSuggestions();
   }
 
-  function defaultHandleBlur(event: FocusEvent) {
+  function defaultHandleBlur() {
     // Small delay to allow click on suggestion to fire first
     setTimeout(() => {
       isFocused = false;
@@ -174,14 +174,14 @@
     if (resolvedOnFocus) {
       resolvedOnFocus(event);
     }
-    defaultHandleFocus(event);
+    defaultHandleFocus();
   }
 
   function handleBlur(event: FocusEvent) {
     if (resolvedOnBlur) {
       resolvedOnBlur(event);
     }
-    defaultHandleBlur(event);
+    defaultHandleBlur();
   }
 
   function handleKeydown(event: KeyboardEvent) {

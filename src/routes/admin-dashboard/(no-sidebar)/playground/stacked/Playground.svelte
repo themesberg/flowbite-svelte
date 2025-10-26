@@ -23,7 +23,7 @@
     </div>
   </div>
   <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-    {#each Array(4) as _, i}
+    {#each Array(4) as _}
       <EmptyCard size="xl" class="h-60 w-full space-y-6 sm:p-6"></EmptyCard>
     {/each}
   </div>

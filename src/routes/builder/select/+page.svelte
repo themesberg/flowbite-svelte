@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { type Component } from "svelte";
   import { Select, Label, Radio, Helper, uiHelpers, Button } from "$lib";
   import type { SelectSize } from "../types";
-  import HighlightCompo from "../utils/HighlightCompo.svelte";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -71,15 +69,8 @@
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the svelteCode content.
-
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-
-  // end of DynamicCodeBlock setup
+ 
   $effect(() => {
-    exampleExpand = codeBlock.isOpen;
     builderExpand = builder.isOpen;
   });
 </script>

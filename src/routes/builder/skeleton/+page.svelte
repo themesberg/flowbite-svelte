@@ -41,7 +41,6 @@
   let cardPlaceholderClass: CardPlaceholderProps["class"] = $state("");
   let widgetPlaceholderClass: string = $state("");
   let listPlaceholderClass: ListPlaceholderProps["class"] = $state("");
-  let TestimonialPlaceholderClass: string = $state("");
 
   // code generator
   const generatePlaceholderCode = (componentName: string, size: string, classes: string): string => {
@@ -67,7 +66,7 @@
   let generatedCodeImage = $derived(generatePlaceholderCode("ImagePlaceholder", imagePlaceholderSize, imagePlaceholderClass));
   let generatedCodeWidget = $derived(generatePlaceholderCode("WidgetPlaceholder", "md", widgetPlaceholderClass));
   let generatedCodeList = $derived(generatePlaceholderCode("ListPlaceholder", listPlaceholderSize, listPlaceholderClass));
-  let generatedCodeTestimonial = $derived(generatePlaceholderCode("TestimonialPlaceholder", "md", TestimonialPlaceholderClass));
+
   // for interactive builder
   let builder = uiHelpers();
   let builderExpand = $state(false);

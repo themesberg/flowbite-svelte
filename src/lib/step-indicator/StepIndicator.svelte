@@ -33,7 +33,7 @@
   {/if}
 
   <div class={container({ class: clsx((theme as StepIndicatorTheme)?.container, classes?.container) })}>
-    {#each steps as step, i}
+    {#each steps as _step, i}
       {#if i === currentStep - 1}
         <div class={wrapper({ class: clsx((theme as StepIndicatorTheme)?.wrapper, classes?.wrapper) })}>
           <div class={stepCls({ class: clsx(getStepStateClasses(i, currentStep), getCustomStepClass(i), (theme as StepIndicatorTheme)?.step, classes?.step) })} data-state="current"></div>

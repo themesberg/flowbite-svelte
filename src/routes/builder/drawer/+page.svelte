@@ -1,23 +1,15 @@
 <script lang="ts">
-  import { Drawer, Drawerhead, Button, uiHelpers, Label, Radio, type DrawerProps, CloseButton } from "$lib";
+  import { Drawer, Drawerhead, Button, uiHelpers, Label, Radio, type DrawerProps } from "$lib";
   import { InfoCircleSolid } from "flowbite-svelte-icons";
   import { blur, fly, slide, scale, fade } from "svelte/transition";
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from "svelte/transition";
   import { linear, sineIn } from "svelte/easing";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
-  import HighlightCompo from "../utils/HighlightCompo.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
-  import H2 from "../utils/H2.svelte";
   import { isGeneratedCodeOverflow } from "../utils/helpers";
 
-  const drawerTransition = uiHelpers();
   let open = $state(false);
-  const closeDrawerTransition = drawerTransition.close;
-
-  // $effect(() => {
-  // 	drawerStatusTransition = drawerTransition.isOpen;
-  // });
 
   // transition
   type TransitionOption = {
@@ -86,8 +78,6 @@
       if (currentTransition !== transitions[0]) {
         props.push(` transitionType={${currentTransition.transition.name}}`);
 
-        // Generate params string without quotes and handle functions
-        let paramValues = currentPlacement.placement === "left" ? currentTransition.params : currentPlacement.params;
         const paramsString = Object.entries(currentTransition.params)
           .map(([key, value]) => {
             if (key === "easing") {

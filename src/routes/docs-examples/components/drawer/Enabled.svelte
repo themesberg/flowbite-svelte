@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
+  import { Drawer, Button } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
   let openBackdropTrue = $state(false);

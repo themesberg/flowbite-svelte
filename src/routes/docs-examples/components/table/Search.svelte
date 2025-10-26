@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch } from "flowbite-svelte";
+  import { TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch } from "flowbite-svelte";
   let searchTerm = $state("");
   let items = [
     { id: 1, maker: "Toyota", type: "ABC", make: 2017 },

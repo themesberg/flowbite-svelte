@@ -7,10 +7,7 @@
     dir?: string;
   }
   let { breadcrumb_title, description, title, dir }: Props = $props();
-
-  // title = title.replaceAll(' ', '-');
   let imgsrc = `flowbite-svelte.com/og?package=Flowbite%20Svelte%20Blocks?title=${encodeURIComponent(breadcrumb_title || "")}`;
-  let url: string = "https://flowbite-svelte.com/blocks";
 
   let dirstring = dir?.toLowerCase();
   let breadcrumb = breadcrumb_title?.toLowerCase().replaceAll(" ", "-");

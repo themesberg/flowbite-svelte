@@ -35,7 +35,7 @@
   };
 
   // Price column cell manipulation
-  const renderButton = function (data: any, cell: TableCell, dataIndex: number, _cellIndex: number): void {
+  const renderButton = function (_data: any, cell: TableCell, dataIndex: number, _cellIndex: number): void {
     cell.childNodes.push({
       nodeName: "BUTTON",
       attributes: {

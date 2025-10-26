@@ -24,12 +24,6 @@
         &#x3C;ButtonGroup&#x3E;
         &#x3C;Button color="primary"&#x3E;Generate&#x3C;/Button&#x3E;
         &#x3C;Input id="url-shortener" bind:value readonly disabled class="w-64" /&#x3E;
-            &#x3C;Clipboard bind:value&#x3E;
-                {#snippet children(success: boolean)}
-            &#x3C;Tooltip class="whitespace-nowrap"&#x3E;{success ? "Copied" : "Copy link"}&#x3C;/Tooltip&#x3E;
-                {#if success}&#x3C;CheckOutline /&#x3E;{:else}&#x3C;ClipboardCleanSolid /&#x3E;{/if}
-          {/snippet}
-            &#x3C;/Clipboard&#x3E;
         &#x3C;/ButtonGroup&#x3E;
         &#x3C;Helper&#x3E;Make sure that your URL is valid&#x3C;/Helper&#x3E;
     &#x3C;/div&#x3E;

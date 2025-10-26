@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Rating, AdvancedRating, ScoreRating } from "flowbite-svelte";
+  import { Rating } from "flowbite-svelte";
 </script>
 
 <Rating count rating={4.95} id="example-4">

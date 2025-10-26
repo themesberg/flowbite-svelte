@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from "flowbite-svelte";
   import { ChartPieSolid, CartSolid, ChevronDoubleUpOutline, ChevronDoubleDownOutline } from "flowbite-svelte-icons";
-  let spanClass = "flex-1 ms-3 whitespace-nowrap";
+  
   const handleClick = () => {
     alert("Hello from SidebarDropdownWrapper.");
   };

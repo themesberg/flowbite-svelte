@@ -40,8 +40,7 @@
   const changeLabelStatus = () => {
     labelStatus = !labelStatus;
   };
-  const rangeSizes = Object.keys(range.variants.size);
-  let rangeSize: RangeProps["size"] = $state("md" as RangeProps["size"]);
+ 
   // code generator
   let generatedCode = $derived(
     (() => {

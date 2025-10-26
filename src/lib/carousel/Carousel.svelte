@@ -57,7 +57,7 @@
   const nextSlide = () => changeSlide(_state.index + 1);
   const prevSlide = () => changeSlide(_state.index - 1);
 
-  const loop = (node: HTMLElement) => {
+  const loop = () => {
     // loop timer
     /* eslint-disable  @typescript-eslint/no-explicit-any */
     let intervalId: any;
@@ -127,7 +127,7 @@
   let onDragStop = $derived(
     activeDragGesture === undefined
       ? undefined
-      : (evt: MouseEvent | TouchEvent) => {
+      : () => {
           // These might be exposed one day, keep them safely tucked away as constants.
           const SWIPE_MAX_DURATION = 250;
           const SWIPE_MIN_DISTANCE = 30;

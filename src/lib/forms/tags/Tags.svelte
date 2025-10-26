@@ -149,6 +149,10 @@
   {/if}
 {/if}
 
+{#if errorMessage}
+  <P class={clsx(error(), classes?.error)}>{errorMessage}</P>
+{/if}
+
 <div
   {...restProps}
   class={base({

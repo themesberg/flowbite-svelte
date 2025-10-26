@@ -1,7 +1,5 @@
 <script lang="ts">
   import { Tooltip, Button } from "flowbite-svelte";
-  import type { Placement } from "@floating-ui/utils";
-  let placement: Placement = "left";
 </script>
 
 <Button>Tooltip left</Button>

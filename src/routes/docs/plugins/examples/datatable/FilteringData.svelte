@@ -4,7 +4,7 @@
   import type { DataTableOptions } from "@flowbite-svelte-plugins/datatable";
 
   const filterOptions: DataTableOptions = {
-    tableRender: (data: any[], table: any, type: string) => {
+    tableRender: (_data: any[], table: any, type: string) => {
       if (type === "print") {
         return table;
       }

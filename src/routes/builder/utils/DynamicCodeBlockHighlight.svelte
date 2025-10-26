@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { HighlightSvelte, Highlight } from "svelte-rune-highlight";
+  import { Highlight } from "svelte-rune-highlight";
   import markdown from "highlight.js/lib/languages/markdown";
   import { Button, Badge } from "$lib";
   import { copyToClipboard, replaceLibImport } from "./helpers";

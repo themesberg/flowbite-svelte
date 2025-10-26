@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, uiHelpers, Radio, Textarea, Button, Helper, type TextareaProps } from "$lib";
+  import { Label, uiHelpers, Textarea, Button, Helper, type TextareaProps } from "$lib";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -39,7 +39,7 @@
     maxlength = maxlength !== undefined ? undefined : 20;
     value = maxlength === 20 ? "" : "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
   };
-  let textAreaClass: TextareaProps["class"] = $state("");
+  let textAreaClass: TextareaProps["class"] = $state("w-full");
   const changeClass = () => {
     textAreaClass = textAreaClass === "w-full" ? "w-48" : "w-full";
   };
@@ -69,15 +69,8 @@
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the svelteCode content.
-
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-
-  // end of DynamicCodeBlock setup
+  
   $effect(() => {
-    exampleExpand = codeBlock.isOpen;
     builderExpand = builder.isOpen;
   });
 </script>

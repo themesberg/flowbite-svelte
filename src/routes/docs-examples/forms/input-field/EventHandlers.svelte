@@ -7,8 +7,8 @@
 <Input
   bind:value
   oninput={(e) => console.log("Custom input:", e)}
-  onfocus={(e) => console.log("Input focused")}
-  onblur={(e) => console.log("Input blurred")}
+  onfocus={() => console.log("Input focused")}
+  onblur={() => console.log("Input blurred")}
   onkeydown={(e) => {
     if (e.key === "Tab") {
       console.log("Tab pressed");

@@ -18,7 +18,7 @@
   const navBreakpoint = getContext<NavbarBreakpoint>("breakpoint");
   const { base, menu } = navbarHamburger({ breakpoint: navBreakpoint });
 
-  const toggle: MouseEventHandler<HTMLButtonElement> = (ev) => {
+  const toggle: MouseEventHandler<HTMLButtonElement> = () => {
     navState.hidden = !navState.hidden;
   };
 </script>

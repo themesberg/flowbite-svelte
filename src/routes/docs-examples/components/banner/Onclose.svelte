@@ -10,7 +10,7 @@
       open = !localStorage.getItem(storageKey);
     });
 
-    function onclose(event: MouseEvent) {
+    function onclose(_event: MouseEvent) {
       localStorage.setItem(storageKey, "true");
       open = false;
     }

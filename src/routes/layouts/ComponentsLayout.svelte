@@ -1,7 +1,7 @@
 <script lang="ts">
   import { afterNavigate } from "$app/navigation";
   import { page } from "$app/state";
-  import { Sidebar, SidebarGroup, SidebarItem, uiHelpers, Label, SidebarButton, SidebarDropdownWrapper } from "$lib";
+  import { Sidebar, SidebarGroup, SidebarItem, uiHelpers, SidebarButton, SidebarDropdownWrapper } from "$lib";
   import { getContext, type Snippet } from "svelte";
   import type { Writable } from "svelte/store";
   import Toc from "../utils/Toc.svelte";
@@ -64,11 +64,6 @@
   // const blockCls = "px-4 mx-auto max-w-8xl";
   const nonBlockCls = "min-w-0 lg:static lg:container lg:mx-auto lg:max-h-full lg:overflow-visible";
 
-  function convertString(path: string): string {
-    return path.replace(/^\/(\w)(\w*)/, (match, firstChar, restOfString) => {
-      return firstChar.toUpperCase() + restOfString;
-    });
-  }
 </script>
 
 {#if submenu !== "blocks"}

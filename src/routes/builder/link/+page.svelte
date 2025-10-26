@@ -16,7 +16,6 @@
   // for Props table
   // import CompoAttributesViewer from '../utils/CompoAttributesViewer.svelte';
   let { text = $bindable("Read more") } = $props();
-  const dirName = "typography/anchor";
 
   const colors = Object.keys(anchor.variants.color);
   let anchorColor: AnchorProps["color"] = $state("primary");
@@ -55,15 +54,8 @@
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the svelteCode content.
 
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-
-  // end of DynamicCodeBlock setup
   $effect(() => {
-    exampleExpand = codeBlock.isOpen;
     builderExpand = builder.isOpen;
   });
 </script>

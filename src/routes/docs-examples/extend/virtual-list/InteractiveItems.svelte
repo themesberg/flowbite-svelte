@@ -43,7 +43,7 @@
   </div>
 
   <VirtualList {items} minItemHeight={50} height={400} class="rounded-lg border">
-    {#snippet children(item, index)}
+    {#snippet children(item, _index)}
       {@const task = item as Task}
       <div class="flex items-center gap-3 border-b p-3 hover:bg-gray-50 dark:hover:bg-gray-800" style="height:50px">
         <Checkbox checked={task.completed} onchange={() => toggleItem(task.id)} />
