@@ -42,7 +42,6 @@ import type { TimelineVariants, ActivityItemVariants, GroupVariants, GroupItemVa
 import type { ToastVaraints } from "$lib/toast/theme";
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "$lib/toolbar/theme";
 import type { TooltipVariants } from "$lib/tooltip/theme";
-import type { closeButton } from "$lib/utils/theme";
 
 // forms component variants
 import type { CheckboxButtonVariants, CheckboxVariants } from "$lib/forms/checkbox/theme";
@@ -793,7 +792,7 @@ export interface InputAddonProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 // phoneInput
-export interface PhoneInputProps<T extends InputValue = number> extends PhoneInputVariants, Omit<HTMLInputAttributes, "size" | "children" | "value"> {
+export interface PhoneInputProps extends PhoneInputVariants, Omit<HTMLInputAttributes, "size" | "children" | "value"> {
   phoneType?: "default" | "floating" | "countryCode" | "copy" | "advanced";
   children?: Snippet;
   floatingLabel?: string;

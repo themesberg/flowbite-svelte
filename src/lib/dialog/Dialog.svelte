@@ -14,7 +14,7 @@
 
   let { base, form: formCls, close: closeCls } = dialog();
 
-  const close = (dlg: HTMLDialogElement) => (open = false);
+  const close = () => (open = false);
 
   // Prefer requestClose when available to trigger a cancellable "cancel" event; otherwise synthesize it.
   const cancel = (dlg: HTMLDialogElement) => {
@@ -34,7 +34,7 @@
     if (ev.defaultPrevented) return;
 
     ev.preventDefault(); // prevent anyway, we need clean close
-    if (!permanent) close(ev.currentTarget);
+    if (!permanent) close();
   }
 
   function _onclick(ev: MouseEvent & { currentTarget: HTMLDialogElement }) {
@@ -50,7 +50,7 @@
     }
 
     if (autoclose && ev.target instanceof HTMLButtonElement && !permanent) {
-      return close(dlg);
+      return close();
     }
   }
 
@@ -82,7 +82,7 @@
       if (result === false) return;
     }
 
-    close(dlg);
+    close();
   }
 
   function _ontoggle(ev: ToggleEvent & { currentTarget: HTMLDialogElement }) {
@@ -112,7 +112,7 @@
 
   let ref: HTMLDialogElement | undefined = $state(undefined);
 
-  function close_handler(ev: MouseEvent) {
+  function close_handler() {
     if (form) {
       // dialog/form mechanism will close the dialog
       return;

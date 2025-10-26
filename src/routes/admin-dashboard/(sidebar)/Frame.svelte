@@ -28,7 +28,7 @@
   import { twMerge } from "tailwind-merge";
 
   import type { Action } from "svelte/action";
-  import type { HTMLAnchorAttributes, HTMLAttributes } from "svelte/elements";
+  import type { HTMLAttributes } from "svelte/elements";
   import { type TransitionConfig } from "svelte/transition";
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
   const noop = () => {};

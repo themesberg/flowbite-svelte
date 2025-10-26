@@ -22,15 +22,15 @@
     isTableLoading = false;
   }
 
-  function handleSort(column: number, direction: string, dataTable: DataTable): void {
+  function handleSort(column: number, direction: string): void {
     console.log(`Column ${column} sorted ${direction}`);
   }
 
-  function handleSearch(query: string, matched: any[], dataTable: DataTable): void {
+  function handleSearch(query: string, matched: typeof items): void {
     console.log(`Search: "${query}" found ${matched.length} results`);
   }
 
-  function handleRowSelect(rowIndex: number, event: Event, dataTable: DataTable): void {
+  function handleRowSelect(rowIndex: number): void {
     console.log(`Row ${rowIndex} selected`);
   }
 

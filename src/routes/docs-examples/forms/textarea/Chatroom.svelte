@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Textarea, Alert, ToolbarButton, Label } from "flowbite-svelte";
+  import { Textarea, ToolbarButton } from "flowbite-svelte";
   import { ImageOutline, FaceGrinOutline, PaperPlaneOutline } from "flowbite-svelte-icons";
 </script>
 

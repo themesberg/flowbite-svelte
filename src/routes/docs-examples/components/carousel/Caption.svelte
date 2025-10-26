@@ -3,7 +3,6 @@
   import images from "./imageData/images.json";
   import type { HTMLImgAttributes } from "svelte/elements";
 
-  let index = $state(0);
   let image: HTMLImgAttributes | undefined = $state();
 </script>
 

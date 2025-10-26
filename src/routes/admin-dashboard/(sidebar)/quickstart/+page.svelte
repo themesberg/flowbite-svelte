@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { Breadcrumb, BreadcrumbItem, Heading, List, Li } from "flowbite-svelte";
-  import { CheckCircleSolid } from "flowbite-svelte-icons";
+  import { Breadcrumb, BreadcrumbItem, Heading } from "flowbite-svelte";
   import { HighlightCompo } from "../../utils";
 
   const modules = import.meta.glob("./md/*.md", {

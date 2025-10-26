@@ -72,11 +72,11 @@
   {/if}
 
   <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-    {#each components.slice(0, INIT_COUNT) as { path, meta: { dir, breadcrumb_title, no_of_components } } (dir + path)}
+    {#each components.slice(0, INIT_COUNT) as { path, meta: { dir, breadcrumb_title } } (dir + path)}
       <CompoCard name={breadcrumb_title} dir={"blocks/" + dir} {path} />
     {/each}
     {#if expanded}
-      {#each components.slice(INIT_COUNT) as { path, meta: { dir, breadcrumb_title, no_of_components } } (dir + path)}
+      {#each components.slice(INIT_COUNT) as { path, meta: { dir, breadcrumb_title } } (dir + path)}
         <CompoCard name={breadcrumb_title} dir={"blocks/" + dir} {path} />
       {/each}
     {/if}

@@ -55,9 +55,6 @@
       if (horizontal) props.push(` horizontal`);
       if (reverse) props.push(` reverse`);
       if (cardImage && typeof cardImage === "object") {
-        const imgString = Object.entries(cardImage)
-          .map(([key, value]) => `${key}:"${value}"`)
-          .join(",");
         props.push(` img=${cardImage.src}`);
       }
 

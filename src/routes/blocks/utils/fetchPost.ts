@@ -14,7 +14,6 @@ const filePath = (path: string) => "/" + basename(path);
 
 export const fetchMarkdownPosts = async () => {
   const applicationFiles = import.meta.glob<Mdsvex>("/src/routes/application/*.md");
-  const exampleFiles = import.meta.glob<Mdsvex>("/src/routes/example/*.md");
   const marketingFiles = import.meta.glob<Mdsvex>("/src/routes/marketing/*.md");
   const publisherFiles = import.meta.glob<Mdsvex>("/src/routes/publisher/*.md");
 
@@ -22,7 +21,6 @@ export const fetchMarkdownPosts = async () => {
   const iterableApplicationFiles = Object.entries(applicationFiles);
   const iterableMarketingFiles = Object.entries(marketingFiles);
   const iterablePublisherFiles = Object.entries(publisherFiles);
-  // const iterableExampleFiles = Object.entries(exampleFiles);
 
   const allApplications = await Promise.all(
     iterableApplicationFiles.map(async ([path, resolver]) => {

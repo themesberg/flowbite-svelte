@@ -25,7 +25,7 @@
 </script>
 
 <VirtualList {items} minItemHeight={100} {getItemHeight} height={400}>
-  {#snippet children(item, index)}
+  {#snippet children(item, _index)}
     {@const typedItem = item as Item}
     <div class="border-b p-3 hover:bg-gray-50 dark:hover:bg-gray-800" style="height:{getItemHeight(typedItem)}px">
       <div class="font-semibold text-gray-900 dark:text-white">{typedItem.title}</div>

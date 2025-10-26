@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { PageProps } from "../$types";
   import FlowbiteSvelteLayout from "../layouts/FlowbiteSvelteLayout.svelte";
   import ComponentsLayout from "../layouts/ComponentsLayout.svelte";
 

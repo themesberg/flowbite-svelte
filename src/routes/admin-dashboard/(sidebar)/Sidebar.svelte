@@ -1,16 +1,13 @@
 <script lang="ts">
   import { afterNavigate } from "$app/navigation";
-  import { page } from "$app/state";
 
   import { Sidebar, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper, SidebarButton, uiHelpers } from "flowbite-svelte";
-  import { AngleDownOutline, AngleUpOutline, ClipboardListSolid, CogOutline, FileChartBarSolid, GithubSolid, LayersSolid, LifeSaverSolid, LockSolid, WandMagicSparklesOutline, ChartPieOutline, RectangleListSolid, TableColumnSolid, GridSolid, FireOutline, BookOpenOutline } from "flowbite-svelte-icons";
+  import { AngleDownOutline, AngleUpOutline, ClipboardListSolid, CogOutline, FileChartBarSolid, GithubSolid, LayersSolid, LifeSaverSolid, LockSolid, WandMagicSparklesOutline, ChartPieOutline, RectangleListSolid, TableColumnSolid, GridSolid } from "flowbite-svelte-icons";
 
   interface Props {
     drawerHidden: boolean;
-    docsRoute?: string[];
   }
-  let { drawerHidden = $bindable(false), docsRoute }: Props = $props();
-  // console.log('data in Sidebar docsRoute:', docsRoute)
+  let { drawerHidden = $bindable(false) }: Props = $props();
   const closeDrawer = () => {
     drawerHidden = true;
   };
@@ -19,23 +16,17 @@
   let itemClass = "flex items-center p-0 text-base text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700 w-full";
   let groupClass = "space-y-2";
 
-  let activeUrl = $derived(page.url.pathname);
-  let activeMainSidebar: string;
-
   const sidebarUi = uiHelpers();
   let isOpen = $state(false);
   const closeSidebar = sidebarUi.close;
   $effect(() => {
     isOpen = sidebarUi.isOpen;
-    activeUrl = page.url.pathname;
   });
 
-  afterNavigate((navigation) => {
+  afterNavigate(() => {
     // this fixes https://github.com/themesberg/flowbite-svelte/issues/364
     document.getElementById("svelte")?.scrollTo({ top: 0 });
     closeDrawer();
-
-    activeMainSidebar = navigation.to?.url.pathname ?? "";
   });
 
   let posts = [

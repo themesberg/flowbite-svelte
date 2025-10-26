@@ -1,5 +1,3 @@
-import type { Component } from "svelte";
-
 export function excludeIconsByKeyword(icons: { [key: string]: any }, keyword: string) {
   const filteredIcons: { [key: string]: any } = {};
   for (const key in icons) {

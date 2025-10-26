@@ -1,7 +1,6 @@
 <script lang="ts">
   import { type Component } from "svelte";
   import { Label, Radio, uiHelpers } from "$lib";
-  // import HighlightCompo from '../utils/HighlightCompo.svelte';
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -15,7 +14,7 @@
   let dir = "builder";
   // for Props table
   // import CompoAttributesViewer from '../utils/CompoAttributesViewer.svelte';
-  const dirName = "typography/layout";
+
   // for examples section that dynamically changes the svelte component and svelteCode content
   import * as ExampleComponents from "../layoutExamples/index";
   const exampleModules = import.meta.glob("../layoutExamples/*.svelte", {

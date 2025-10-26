@@ -1,7 +1,6 @@
 <script lang="ts">
   import { Drawer, CardPlaceholder, Button } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
-  import { sineIn } from "svelte/easing";
   let open = $state(false);
 </script>
 

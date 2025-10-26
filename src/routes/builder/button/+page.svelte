@@ -1,7 +1,6 @@
 <script lang="ts">
   import { Button, GradientButton, gradientButton, button, Radio, Label, uiHelpers, type ButtonProps, type GradientButtonProps } from "$lib";
   import type { RadioColorType } from "../types";
-  import HighlightCompo from "../utils/HighlightCompo.svelte";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -124,7 +123,6 @@
     builderExpand = !builderExpand;
   };
   // gradient button
-  let gradientBuilder = uiHelpers();
   let gradientBuilderExpand = $state(false);
   let showGradientBuilderExpandButton = $derived(isGeneratedCodeOverflow(gradientGeneratedCode));
   const handleGradientBuilderExpandClick = () => {

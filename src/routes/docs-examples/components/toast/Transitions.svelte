@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Toast } from "flowbite-svelte";
   import { slide, scale } from "svelte/transition";
-  import { quintOut, elasticOut } from "svelte/easing";
+  import { quintOut } from "svelte/easing";
   import { CheckCircleSolid } from "flowbite-svelte-icons";
 </script>
 

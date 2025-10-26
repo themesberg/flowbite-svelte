@@ -21,9 +21,7 @@
   let color: BannerProps["color"] = $state("primary");
 
   let bannerClass: BannerProps["class"] = $state("absolute");
-  const changeClass = () => {
-    bannerClass = bannerClass === "" ? "mt-4" : "";
-  };
+
   let bannerStatus = $state(true);
   const changeStatus = () => {
     bannerStatus = true;

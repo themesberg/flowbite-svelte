@@ -61,7 +61,6 @@
 
   // Use typed props
   let {
-    src = undefined,
     meta = { hideOutput: false, hideSource: false, hideResponsiveButtons: false },
     example,
     code,

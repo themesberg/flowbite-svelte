@@ -24,14 +24,6 @@
   let dir = "builder";
 
   let dropdownDividerHeaderFooter = uiHelpers();
-  let dropdownDividerHeaderFooterStatus = $state(false);
-  let closeDropdownDividerHeaderFooter = dropdownDividerHeaderFooter.close;
-
-  $effect(() => {
-    // this can be done adding nav.navStatus directly to DOM element
-    // without using effect
-    dropdownDividerHeaderFooterStatus = dropdownDividerHeaderFooter.isOpen;
-  });
 
   let dividerStatus = $state(false);
   const changeDividerStatus = () => {

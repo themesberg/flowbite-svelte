@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Drawer, Button, CloseButton, Label, Textarea } from "flowbite-svelte";
+  import { Drawer, Button } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
   let open5 = $state(false);

@@ -23,18 +23,6 @@
 
   const sizes = Object.keys(modal.variants.size);
   let modalSize: ModalProps["size"] = $state("md");
-  let backdrop = $state(true);
-  const changeBackdrop = () => {
-    backdrop = !backdrop;
-  };
-  let outsideClose = $state(true);
-  const changeOutsideClose = () => {
-    outsideClose = !outsideClose;
-  };
-  let rounded = $state(true);
-  const changeRounded = () => {
-    rounded = !rounded;
-  };
 
   // transition
   // let transitionStatus = $state(false);

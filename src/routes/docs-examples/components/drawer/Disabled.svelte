@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { findAllByTestId } from "@testing-library/svelte";
-  import { Drawer, Button, CloseButton, A } from "flowbite-svelte";
+  import { Drawer, Button } from "flowbite-svelte";
   import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 
   let openBackdropFalse = $state(false);

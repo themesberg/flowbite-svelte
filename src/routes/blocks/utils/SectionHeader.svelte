@@ -8,7 +8,7 @@
     breadcrumb_title?: string;
     headerClass?: string;
   }
-  let { home = "Blocks", category, title, description, breadcrumb_title, ...restProps }: Props = $props();
+  let { home = "Blocks", category, title, description, breadcrumb_title }: Props = $props();
 
   let headerCls = breadcrumb_title ? "" : "mx-auto max-w-8xl pt-8 px-4 lg:px-20 mx-auto max-w-8xl col-span-2 mb-2 lg:mb-0";
   let capitalized = $state();

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from "flowbite-svelte";
+  import { Table } from "flowbite-svelte";
   let items = [
     { id: 1, maker: "Toyota", type: "ABC", make: 2017 },
     { id: 2, maker: "Ford", type: "CDE", make: 2018 },

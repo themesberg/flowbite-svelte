@@ -2,7 +2,6 @@
   import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
 
   let singleValue = $state<string | null>(null);
-  let multiValues = $state<string[]>([]);
 
   function handleSingleSelect(value: string | null | string[]) {
     if (typeof value === "string" || value === null) {

@@ -7,7 +7,7 @@
     title?: string;
     description?: string;
   }
-  let { dir, breadcrumb_title, title, description }: Props = $props();
+  let { title, description }: Props = $props();
 </script>
 
 <div class="pb-8">

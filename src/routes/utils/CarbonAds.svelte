@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { page, navigating } from "$app/state";
+  import { navigating } from "$app/state";
   interface WindowWithCarbonAds extends Window {
     _carbonads: {
       refresh: () => void;

@@ -68,8 +68,6 @@
       if (currentTransition !== transitions[0]) {
         props.push(` transition={${currentTransition.name.toLowerCase()}}`);
 
-        // Generate params string without quotes and handle functions
-        let paramValues = currentTransition.params;
         const paramsString = Object.entries(currentTransition.params)
           .map(([key, value]) => {
             if (key === "easing") {

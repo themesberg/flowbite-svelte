@@ -5,11 +5,7 @@
   import Germany from "$icons/Germany.svelte";
   import Italy from "$icons/Italy.svelte";
   import China from "$icons/China.svelte";
-  let countries = [
-    { value: "us", name: "United States" },
-    { value: "ca", name: "Canada" },
-    { value: "fr", name: "France" }
-  ];
+  
   let states = [
     { value: "CA", name: "California" },
     { value: "TX", name: "Texas" },

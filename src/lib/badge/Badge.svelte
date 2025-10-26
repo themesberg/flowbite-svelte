@@ -20,7 +20,7 @@
 
   let ref: HTMLDivElement | undefined = $state(undefined);
 
-  const close = (ev: Event) => {
+  const close = () => {
     if (ref?.dispatchEvent(new Event("close", { bubbles: true, cancelable: true }))) {
       badgeStatus = false;
     }

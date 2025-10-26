@@ -22,7 +22,6 @@
 
   // State
   let selectedOption = $state("");
-  let dropdownOpen = $state(false);
   let showTimerange = $state(false);
 
   // Helper functions using date-fns
@@ -117,7 +116,6 @@
   }
 
   function handleDropdownSelect(option: TimePickerOption): void {
-    dropdownOpen = false;
     selectedOption = option.value;
     notifyChange();
   }
@@ -133,7 +131,6 @@
   }
 
   function applyTimerange(): void {
-    dropdownOpen = false;
     notifyChange();
   }
 

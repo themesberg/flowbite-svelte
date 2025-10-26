@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Label, uiHelpers, Radio, Textarea, Button, Helper, type TextareaProps } from "$lib";
+  import { Label, uiHelpers, Textarea, Button, Helper, type TextareaProps } from "$lib";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -69,15 +69,8 @@
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
-  // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the svelteCode content.
-
-  // for examples DynamicCodeBlockHighlight
-  let codeBlock = uiHelpers();
-  let exampleExpand = $state(false);
-
-  // end of DynamicCodeBlock setup
+  
   $effect(() => {
-    exampleExpand = codeBlock.isOpen;
     builderExpand = builder.isOpen;
   });
 </script>
@@ -100,7 +93,7 @@
     <Button class="w-48" color="red" onclick={changePlaceholder}>{placeholder ? "Remove placeholder" : "Add placeholder"}</Button>
     <Button class="w-48" color="yellow" onclick={changeRows}>{rows !== undefined ? "Remove rows" : "Add rows"}</Button>
     <Button class="w-48" color="green" onclick={changeMaxlength}>{maxlength ? "Remove maxlength" : "Add maxlength"}</Button>
-    <Button class="w-48" color="pink" onclick={changeClass}>{textAreaClass !== "" ? "Remove class" : "Add class"}</Button>
+    <Button class="w-48" color="pink" onclick={changeClass}>{textAreaClass === "w-full" ? "Use narrow width" : "Use full width"}</Button>
     <Button class="w-48" color="purple" onclick={changeDisabled}>{disabled ? "Remove disabled" : "Add disabled"}</Button>
     <Button class="w-48" color="orange" onclick={changeValue}>{value ? "Remove value" : "Add value"}</Button>
   </div>

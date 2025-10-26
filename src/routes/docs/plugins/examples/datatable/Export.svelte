@@ -3,7 +3,6 @@
   import { Button } from "flowbite-svelte";
   import items from "./data/sample.json";
 
-  let tableComponent: any;
   let dataTableInstance = $state<any>(null);
 
   const getDataTableInstance = () => {
@@ -86,7 +85,7 @@
   };
 </script>
 
-<Table bind:this={tableComponent} {items} bind:dataTableInstance />
+<Table {items} bind:dataTableInstance />
 
 <div class="mt-4 space-x-2">
   <Button onclick={handleCSV}>Export CSV</Button>

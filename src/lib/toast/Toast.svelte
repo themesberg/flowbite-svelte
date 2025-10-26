@@ -30,7 +30,7 @@
 
   let ref: HTMLDivElement | undefined = $state(undefined);
 
-  function _close(event: MouseEvent) {
+  function _close() {
     if (ref?.dispatchEvent(new Event("close", { bubbles: true, cancelable: true }))) {
       toastStatus = false;
     }

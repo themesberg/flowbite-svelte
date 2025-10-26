@@ -1,7 +1,7 @@
 <script lang="ts">
   import { megamenu } from "./theme";
   import clsx from "clsx";
-  import type { MegaMenuProps, LinkType } from "$lib";
+  import type { MegaMenuProps } from "$lib";
   import Popper from "$lib/utils/Popper.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
@@ -10,14 +10,7 @@
   //  ulClass, extraClass
   warnThemeDeprecation("MegaMenu", { ulClass, extraClass }, { ulClass: "ul", extraClass: "extra" });
   const styling = $derived(classes ?? { ul: ulClass, extra: extraClass });
-
   const theme = getTheme("megamenu");
-
-  /* eslint-disable  @typescript-eslint/no-explicit-any */
-  interface LinkTypeLike extends LinkType {
-    [propName: string]: any;
-  }
-
   const { base, div, ul, extra: extraCls } = $derived(megamenu({ full, hasExtra: !!extra }));
 </script>
 

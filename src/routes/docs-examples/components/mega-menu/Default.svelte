@@ -14,7 +14,6 @@
     { name: "Pro Version", href: "/pro" },
     { name: "License", href: "/license" }
   ];
-  let open = $state();
 </script>
 
 <Navbar>
@@ -25,7 +24,7 @@
   <NavHamburger />
   <NavUl>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer" onclick={() => (open = true)}>
+    <NavLi class="cursor-pointer">
       Mega menu<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
     </NavLi>
     <MegaMenu items={menu}>

@@ -26,10 +26,6 @@
   // use the components string
   let componentArray = components ? components.split(", ") : [];
 
-  if (components) {
-    // Split the components into an array
-    const componentArray = components.split(", ");
-  }
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   let importPromises: Promise<any>[] = [];
 
@@ -90,7 +86,13 @@
   });
 </script>
 
-{#if compoData}
+{#if loading}
+  <div>Loading...</div>
+{:else if error}
+  <div class="text-red-600 dark:text-red-400">
+    Error: {error}
+  </div>
+{:else if compoData}
   <div id="compoData">
     {#each compoData as compo}
       <JSONView data={compo.data.default} />
