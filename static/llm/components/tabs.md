@@ -3,14 +3,6 @@
 
 The tabs component can be used either as an extra navigational hierarchy complementing the main navbar or you can also use it to change content inside a container just below the tabs using the data attributes from Flowbite.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Tabs, TabItem } from "flowbite-svelte";
-</script>
-```
-
 ## Default tabs
 
 Use the following default tabs component example to show a dynamic content in your webpage.
@@ -524,11 +516,3 @@ Use the following example to add active class.
 ## References
 
 - [Flowbite Tabs](https://flowbite.com/docs/components/tabs/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

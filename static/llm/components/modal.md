@@ -5,14 +5,6 @@ The modal component can be used as an interactive dialog on top of the main cont
 
 Get started with multiple sizes, colors, and styles built with the utility classes from Tailwind CSS and the components from Flowbite.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Modal } from "flowbite-svelte";
-</script>
-```
-
 ## Default modal
 
 Modal visibility (open/close) is controlled by the `open` property. You can bind it to a variable that other element (usually button) will toggle.
@@ -572,11 +564,3 @@ This is perfect for advertisements, terms of service, or important announcements
 ## References
 
 - [Flowbite Modal](https://flowbite.com/docs/components/modal/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

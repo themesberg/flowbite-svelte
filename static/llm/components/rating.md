@@ -5,16 +5,6 @@ Get started with the rating component to show an aggregate of reviews and scores
 
 You can find multiple examples on this page including different styles, sizes, and variants of the rating component and other associated elements such as a comment or card.
 
-## Setup
-
-Let's import all necessary components in the script tag. We import a heart, thumb-up, and smiley icons, but you can use any icons as you like.
-
-```svelte
-<script lang="ts">
-  import { Rating, AdvancedRating, ScoreRating } from "flowbite-svelte";
-</script>
-```
-
 ## Default rating
 
 The default rating icon is a star. Set the total and rating props. The `id` prop is required. Use a unique name.
@@ -468,11 +458,3 @@ Use this component to show the review content from a user alongside the avatar, 
 ## References
 
 - [Flowbite Rating](https://flowbite.com/docs/components/rating/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

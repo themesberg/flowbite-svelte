@@ -3,14 +3,6 @@
 
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Checkbox } from "flowbite-svelte";
-</script>
-```
-
 ## Checkbox examples
 
 Use this default example of a checbkox element in a checked, unchecked and indeterminate state.
@@ -380,11 +372,3 @@ Use this example of an advanced layout of checkbox elements where the label pare
 ## References
 
 - [Flowbite Checkbox](https://flowbite.com/docs/forms/checkbox/)
-
-## GitHub Links
-
-<GitHubCompoLinks {components} dir="forms"/>
-
-## LLM Link
-
-<LlmLink />

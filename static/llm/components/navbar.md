@@ -3,14 +3,6 @@
 
 Get started with the responsive navbar component from Flowbite to quickly set up a navigation menu for your website and set up the logo, list of pages, CTA button, search input, user profile options with a dropdown, and more.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
-</script>
-```
-
 ## Default navbar
 
 Use this example of a navigation bar built with the utility classes from Tailwind CSS to enable users to navigate across the pages of your website.
@@ -547,11 +539,3 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 ## References
 
 - [Flowbite Navbar](https://flowbite.com/docs/components/navbar/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

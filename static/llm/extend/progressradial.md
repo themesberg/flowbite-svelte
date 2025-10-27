@@ -1,16 +1,6 @@
 # Svelte Progressradial
 
 
-## Setup
-
-Import the `Progressradial` component in a script tag.
-
-```svelte
-<script lang="ts">
-  import { Progressradial } from "flowbite-svelte";
-</script>
-```
-
 ## Progress
 
 ```svelte
@@ -147,11 +137,3 @@ Import the `Progressradial` component in a script tag.
 - class: className
 - classes
 
-
-## GitHub Links
-
-<GitHubCompoLinks {components} dir="extend"/>
-
-## LLM Link
-
-<LlmLink />

@@ -75,7 +75,3 @@ In the provided code, you can customize the primary and secondary color by modif
   Dismissable user notification.
 </Toast>
 ```
-
-## LLM Link
-
-<LlmLink />

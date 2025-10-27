@@ -12,33 +12,6 @@ The markup and styles provided by Flowbite-Svelte are all built with the utility
 
 All examples provided on this page have support for dark mode, RTL (right-to-left) styles, responsiveness on mobile devices and you can easily add your own functionality using JavaScript.
 
-## Installation
-
-<P class="text-red-500 text-xl">UPDATE: @flowbite-svelte-plugins/texteditor@{textEditor} uses @tiptap{tiptapVersion}.</P>
-
-<Examples.InstallCommand />
-
-### app.css
-
-Use the following example or create your own.
-
-<Accordion flush>
-  <AccordionItem classes={{ content: "customstyle" }}>
-  {#snippet header()}Example style{/snippet}
-  <Examples.Appcss />
-  </AccordionItem>
-</Accordion>
-
-### Code Block Styling
-
-To add syntax highlighting styles to your code blocks, include a highlight.js theme. You can browse available themes at cdnjs.com/libraries/highlight.js or preview them at https://highlightjs.org/demo.
-
-```svelte
-<svelte:head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />
-</svelte:head>
-```
-
 ## Full-featured Text Editor
 
 Use this example of a WYSIWYG text editor to enable basic typography styling and formatting, adding lists, links, images, videos, code blocks, aligning text, blockquotes, setting headers and paragraphs and more.
@@ -377,7 +350,3 @@ Either using the above example or use button components to create your custom te
 meta={{hideOutput: true}}
 codeString={exampleRawModules['./examples/wysiwyg/CustomEditor.svelte']}
 />
-
-## LLM Link
-
-<LlmLink />

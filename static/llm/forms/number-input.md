@@ -194,11 +194,3 @@ Use this example as an alternative style to the control buttons example above.
   </div>
 </form>
 ```
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

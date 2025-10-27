@@ -5,14 +5,6 @@ The search input component can be used to let your users search through your web
 
 You will also find more advanced search components on this page including dropdown category selections, search buttons positioned inside the input field, voice search fields and more.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Search } from "flowbite-svelte";
-</script>
-```
-
 ## Search bar example
 
 ```svelte
@@ -264,11 +256,3 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Search Input](https://flowbite.com/docs/forms/search-input/)
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

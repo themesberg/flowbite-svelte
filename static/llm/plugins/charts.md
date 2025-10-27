@@ -13,18 +13,6 @@
   </P>
 </Badge>
 
-## Installation
-
-```svelte
-pnpm i -D @flowbite-svelte-plugins/chart
-```
-
-Update `app.css`:
-
-```svelte
-@source "../node_modules/@flowbite-svelte-plugins/chart/dist";
-```
-
 ## Area chart
 
 Use this example to show a basic area chart.
@@ -1073,7 +1061,3 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [@flowbite-svelte-plugins/chart](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-chart/src/lib/Chart.svelte)
-
-## LLM Link
-
-<LlmLink />

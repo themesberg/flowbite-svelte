@@ -5,14 +5,6 @@ The sidebar component can be used as a complementary element relative to the nav
 
 Disclaimer: this sidebar component is based on this <A class="text-primary-700" href="https://github.com/shinokada/svelte-sidebar" target="_blank" rel="noreferrer">sidebar menu</A> plugin.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
-</script>
-```
-
 ## Default sidebar
 
 Use this example to show a responsive list of menu items inside the sidebar with icons and labels.
@@ -1337,11 +1329,3 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 ## References
 
 - [Flowbite Sidebar](https://flowbite.com/docs/components/sidebar/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

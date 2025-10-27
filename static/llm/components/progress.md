@@ -3,16 +3,6 @@
 
 The progress bar component can be used as an indicator to show the completion rate of data sets or it can be used as an animated loader component. There are multiple sizes, colors, and styles available.
 
-## Setup
-
-Import the `Progressbar` component in a script tag.
-
-```svelte
-<script lang="ts">
-  import { Progressbar } from "flowbite-svelte";
-</script>
-```
-
 ## Default progress bar
 
 Use the following example of a progress bar element to show a completion rate of 45% by using an inline style and the utility classes from Tailwind CSS.
@@ -241,11 +231,3 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 ## References
 
 - [Flowbite Progress Bar](https://flowbite.com/docs/components/progress/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

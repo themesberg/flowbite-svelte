@@ -3,14 +3,6 @@
 
 The timepicker component can be used to allow the user to select a specific time using a custom time input element and provides flexibility in styling and icon usage.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Timepicker } from "flowbite-svelte";
-</script>
-```
-
 ## Default timepicker
 
 Use this example of a default timepicker component to allow the user to select a time value.
@@ -557,11 +549,3 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Timepicker](https://flowbite.com/docs/forms/timepicker/)
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

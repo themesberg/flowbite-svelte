@@ -386,11 +386,3 @@ Use this example to show an input field where you can copy the URL of the curren
 ## References
 
 - [Flowbite Clipboard](https://flowbite.com/docs/components/clipboard/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

@@ -5,16 +5,6 @@ The button component is probably the most widely used element in any user interf
 
 flowbite-svelte provides a large variety of styles and sizes for the button component including outlined buttons, multiple colors, sizes, buttons with icons, and more.
 
-## Setup
-
-Import a button component in the script tag.
-
-```svelte
-<script lang="ts">
-  import { Button } from "flowbite-svelte";
-</script>
-```
-
 ## Default button
 
 Use these default button styles with multiple colors to indicate an action or link within your website.
@@ -348,11 +338,3 @@ Use the `loading` prop to indicate a pending action (e.g. form submission). When
 ## References
 
 - [Flowbite Buttons](https://flowbite.com/docs/components/buttons/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

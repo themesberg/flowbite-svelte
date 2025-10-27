@@ -3,14 +3,6 @@
 
 The range component can be used as an input field to get a number from the user based on your custom selection (ie. from 1 to 100) by using a sliding animation.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Range } from "flowbite-svelte";
-</script>
-```
-
 ## Range slider example
 
 ```svelte
@@ -103,11 +95,3 @@ Since we added `...restProps` to input field, you can contain the props which ar
 ## References
 
 - [Flowbite Range Slider](https://flowbite.com/docs/forms/range/)
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

@@ -3,14 +3,6 @@
 
 The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Dropdown, DropdownItem, DropdownDivider, DropdownHeader } from "flowbite-svelte";
-</script>
-```
-
 ## Examples
 
 If you want to show a dropdown menu when clicking on an element add the `Dropdown` and `DropdownItem` components.
@@ -864,11 +856,3 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 ## References
 
 - [Flowbite Dropdown](https://flowbite.com/docs/components/drawer/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

@@ -3,14 +3,6 @@
 
 The `Hr` component can be used to separate content using a horizontal line by adding space between elements based on multiple styles, variants, and layouts.
 
-## Setup
-
-```html
-<script lang="ts">
-  import { Hr } from "flowbite-svelte";
-</script>
-```
-
 ## Default HR
 
 ```svelte
@@ -127,11 +119,3 @@ The `restProps` will be removed in the next version. Please use `divProps` and `
 
 
 ## References
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

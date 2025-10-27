@@ -3,14 +3,6 @@
 
 The indicator component can be used as a small element positioned absolutely relative to another component such as a button or card and show a number count, account status (red for offline, green for online) and other useful information.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Indicator } from "flowbite-svelte";
-</script>
-```
-
 ## Default indicator
 
 Use this example to create a simple indicator with multiple colors and position it anywhere on the website.
@@ -216,11 +208,3 @@ Use these examples to position the indicator component anywhere relative to the 
 ## References
 
 - [Flowbite Indicators](https://flowbite.com/docs/components/indicators/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

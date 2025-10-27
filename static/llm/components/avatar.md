@@ -3,16 +3,6 @@
 
 The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from Flowbite to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
 
-## Setup
-
-Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `DropdownHeader`, `DropdownItem`. If you are using tooltip for avatar import `Tooltip`.
-
-```svelte
-<script lang="ts">
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, Tooltip } from "flowbite-svelte";
-</script>
-```
-
 ## Default avatar
 
 Use this example to create a circle and rounded avatar on an image element.
@@ -258,11 +248,3 @@ Preset values are equivalents of:
 ## References
 
 - [Flowbite Avatar](https://flowbite.com/docs/components/avatar/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

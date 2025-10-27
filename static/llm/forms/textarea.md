@@ -3,14 +3,6 @@
 
 The textarea component is a multi-line text field input that can be used to receive longer chunks of text from the user in the form of a comment box, description field, and more.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Textarea } from "flowbite-svelte";
-</script>
-```
-
 ## Textarea example
 
 Get started with the default example of a textarea component below.
@@ -262,11 +254,3 @@ If you want to build a chatroom component you will usually want to use a textare
 ## References
 
 - [Flowbite Textarea](https://flowbite.com/docs/forms/textarea/)
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

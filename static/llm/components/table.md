@@ -17,14 +17,6 @@ Get started with multiple variants and styles of these table components.
   </P>
 </Badge>
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch } from "flowbite-svelte";
-</script>
-```
-
 ## Default table
 
 Use the following example of a responsive table component to show multiple rows and columns of text data.
@@ -985,11 +977,3 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 ## References
 
 - [Flowbite Tables](https://flowbite.com/docs/components/tables/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

@@ -3,14 +3,6 @@
 
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Timeline, TimelineItem, Activity, ActivityItem, Group, GroupItem } from "flowbite-svelte";
-</script>
-```
-
 ## Default timeline
 
 The default has no icon slot. If you prefer to have icons, use `order='vertical'` or `order='horizontal'`.
@@ -492,11 +484,3 @@ Use this component to group multiple data entries inside a single date and show 
 ## References
 
 - [Flowbite Timeline](https://flowbite.com/docs/components/timeline/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

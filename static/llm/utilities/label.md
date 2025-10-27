@@ -36,11 +36,3 @@ Use the `Label` component when you need to add a label.
 - Use the `class` prop to overwrite `defaultClass`.
 
 <CompoAttributesViewer {components}/>
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

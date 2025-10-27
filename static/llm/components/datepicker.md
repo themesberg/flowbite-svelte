@@ -3,14 +3,6 @@
 
 The Datepicker component provides an interactive calendar interface for selecting single dates or date ranges. It's fully integrated with flowbite-svelte's design system and offers various customization options.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Datepicker } from "flowbite-svelte";
-</script>
-```
-
 ## Default Datepicker
 
 Use the Datepicker for single date selection. The selected date is bound to the `value` prop.
@@ -433,11 +425,3 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. In quidem rerum, optio 
 ## References
 
 - [Flowbite Datepicker (JavaScript)](https://flowbite.com/docs/plugins/Datepicker/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

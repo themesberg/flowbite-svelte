@@ -1,5 +1,5 @@
-# undefined Documentation - Full Context
-# Generated on 2025-10-26T09:47:24.913Z
+# Flowbite Svelte Documentation - Full Context
+# Generated on 2025-10-27T05:38:41.760Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -58,9 +58,6 @@ Generate a code example for a primary button with  a link to '/about'.`;
 
 These features make it easy to integrate Flowbite Svelte's documentation with modern AI systems, creating powerful, intelligent tools to enhance developer experience and productivity.
 
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -143,9 +140,6 @@ In the provided code, you can customize the primary and secondary color by modif
 </Toast>
 ```
 
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -223,9 +217,6 @@ The above table shows examples from using `import Alert from 'flowbite-svelte/Al
   </TableBody>
 </Table>
 
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -342,9 +333,6 @@ Use the custom button component in your project by adding the following code:
 
 With these steps, you can customize and use your own button component globally based on flowbite-svelte. Feel free to modify the styles and properties of the component according to your requirements.
 
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -415,12 +403,6 @@ find .svelte-kit/output/client/_app/immutable -type f -name "*.css" -exec du -h 
 
 To purge the CSS files, you can use `vite-plugin-tailwind-purgecss`.
 
-### Installation
-
-```sh
-pnpm i -D vite-plugin-tailwind-purgecss
-```
-
 ### vite.config.ts
 
 ```js
@@ -442,9 +424,6 @@ Run `pnpm build` and run the same command to see the compiled CSS size.
 find .svelte-kit/output/client/_app/immutable -type f -name "*.css" -exec du -h {} +
 ```
 
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -550,9 +529,6 @@ Test a page.
 axe http://localhost:3000/dropdowns/image
 ```
 
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -566,9 +542,6 @@ If you are using an LSP-compatible editor, such as VSCode, Atom, Sublime Text, o
 
 <Img src='/images/compo-doc.png' alt="component document demo" />
 
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -714,9 +687,6 @@ Check out [contributing guide](/docs/pages/how-to-contribute) to learn how you c
 
 Flowbite Svelte is a free and open-source UI component library licensed under the [MIT License](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE).
 
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -734,9 +704,6 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -878,9 +845,6 @@ You can use one of starter repo for a quick start.
 <Li><A href='https://github.com/ZekyTheWolf/LIST-Starter'>Laravel, Inertia, Svelte, Typescript with Flowbite starter</A></Li>
 </List>
 
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -1054,9 +1018,6 @@ This allows for granular control over theming in different parts of your compone
 - Theme configurations are merged with default component styles, allowing for partial customization.
 - Use nested ThemeProviders for section-specific styling while maintaining global themes.
 
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -1070,9 +1031,6 @@ Enhance the reliability and scalability of your user interface code by leveragin
 
 <pre><code>{@html TypeList}</code></pre>
 
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -1086,14 +1044,6 @@ Enhance the reliability and scalability of your user interface code by leveragin
 The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.
 
 A popular use case would be the “Frequently Asked Questions” section of a website or page when you can show questions and answers for each child element.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { AccordionItem, Accordion } from "flowbite-svelte";
-</script>
-```
 
 ## Default accordion
 
@@ -1670,14 +1620,6 @@ Open accordion only within specific screen size ranges:
 
 - [Flowbite Accordion](https://flowbite.com/docs/components/accordion/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -2030,14 +1972,6 @@ Use the `onclick` event with `dismissable` prop.
 
 - [Flowbite Alerts](https://flowbite.com/docs/components/alerts/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -2046,16 +1980,6 @@ Use the `onclick` event with `dismissable` prop.
 
 
 The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from Flowbite to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
-
-## Setup
-
-Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `DropdownHeader`, `DropdownItem`. If you are using tooltip for avatar import `Tooltip`.
-
-```svelte
-<script lang="ts">
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, Tooltip } from "flowbite-svelte";
-</script>
-```
 
 ## Default avatar
 
@@ -2303,14 +2227,6 @@ Preset values are equivalents of:
 
 - [Flowbite Avatar](https://flowbite.com/docs/components/avatar/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -2321,16 +2237,6 @@ Preset values are equivalents of:
 The badge component can be used to complement other elements such as buttons or text elements as a label or to show the count of a given data, such as the number of comments for an article or how much time has passed by since a comment has been made.
 
 Alternatively, badges can also be used as standalone elements that link to a certain page.
-
-## Setup
-
-Import a badge component in the script tag.
-
-```svelte
-<script lang="ts">
-  import { Badge } from "flowbite-svelte";
-</script>
-```
 
 ## Default badge
 
@@ -2625,14 +2531,6 @@ The color can be changed dynamically.
 
 - [Flowbite Badge](https://flowbite.com/docs/components/badge/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -2643,14 +2541,6 @@ The color can be changed dynamically.
 Get started with the sticky banner component coded with Tailwind CSS and Flowbite to show marketing, informational and CTA messages to your website visitors fixed to the top or bottom part of the page as the user scroll down the main content area.
 
 Explore the following examples based on various styles, sizes, and positionings to leverage the sticky banner component and increase marketing conversions with a responsive element supporting dark mode.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Banner } from "flowbite-svelte";
-</script>
-```
 
 ## Default sticky banner
 
@@ -2879,14 +2769,6 @@ A reusable function that manages banner dismissal state with localStorage persis
 
 - [Flowbite Banner](https://flowbite.com/docs/components/banner/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -2897,14 +2779,6 @@ A reusable function that manages banner dismissal state with localStorage persis
 The bottom bar component can be used to allow menu items and certain control actions to be performed by the user through the usage of a fixed bar positioning to the bottom side of your page.
 
 Check out multiple examples of the bottom navigation component based on various styles, controls, sizes, content and leverage the utility classes from Tailwind CSS to integrate into your own project.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { BottomNav, BottomNavItem } from "flowbite-svelte";
-</script>
-```
 
 ## Default bottom navigation
 
@@ -3323,14 +3197,6 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 - [Flowbite Bottom Navigation](https://flowbite.com/docs/components/bottom-navigation/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -3341,14 +3207,6 @@ You can even use the other bottom navbar examples to exchange the default one pr
 The breadcrumb component is an important part of any website or application that can be used to show the current location of a page in a hierarchical structure of pages.
 
 Flowbite includes two styles of breadcrumb elements, one that has a transparent background and a few more that come with a background in different colors.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Breadcrumb, BreadcrumbItem } from "flowbite-svelte";
-</script>
-```
 
 ## Default Breadcrumb
 
@@ -3481,14 +3339,6 @@ Use the `icon` snippet to change icons.
 
 - [Flowbite Breadcrumb](https://flowbite.com/docs/components/breadcrumb/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -3497,14 +3347,6 @@ Use the `icon` snippet to change icons.
 
 
 The button group component from flowbite-svelte can be used to stack together multiple buttons and links inside a single element.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { ButtonGroup, Button } from "flowbite-svelte";
-</script>
-```
 
 ## Default
 
@@ -3716,14 +3558,6 @@ You can add the `onclick` event to the `Button` component.
 
 - [Flowbite Button Group](https://flowbite.com/docs/components/button-group/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -3734,16 +3568,6 @@ You can add the `onclick` event to the `Button` component.
 The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages.
 
 flowbite-svelte provides a large variety of styles and sizes for the button component including outlined buttons, multiple colors, sizes, buttons with icons, and more.
-
-## Setup
-
-Import a button component in the script tag.
-
-```svelte
-<script lang="ts">
-  import { Button } from "flowbite-svelte";
-</script>
-```
 
 ## Default button
 
@@ -4078,14 +3902,6 @@ Use the `loading` prop to indicate a pending action (e.g. form submission). When
 ## References
 
 - [Flowbite Buttons](https://flowbite.com/docs/components/buttons/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
 
 
 ---
@@ -4524,14 +4340,6 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Card](https://flowbite.com/docs/components/card/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -4540,57 +4348,6 @@ The component has the following props, type, and default values. See [types page
 
 
 The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Carousel } from "flowbite-svelte";
-  // ./imageData/+server.js has the following
-  export const images = [
-    {
-      alt: "Cosmic timetraveler",
-      src: "/images/carousel/cosmic-timetraveler-pYyOZ8q7AII-unsplash.webp",
-      title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
-    },
-    {
-      alt: "Cristina Gottardi",
-      src: "/images/carousel/cristina-gottardi-CSpjU6hYo_0-unsplash.webp",
-      title: "cristina-gottardi-CSpjU6hYo_0-unsplash.com"
-    },
-    {
-      alt: "Johannes Plenio",
-      src: "/images/carousel/johannes-plenio-RwHv7LgeC7s-unsplash.webp",
-      title: "johannes-plenio-RwHv7LgeC7s-unsplash.com"
-    },
-    {
-      alt: "Jonatan Pie",
-      src: "/images/carousel/jonatan-pie-3l3RwQdHRHg-unsplash.webp",
-      title: "jonatan-pie-3l3RwQdHRHg-unsplash.com"
-    },
-    {
-      alt: "Mark Harpur",
-      src: "/images/carousel/mark-harpur-K2s_YE031CA-unsplash.webp",
-      title: "mark-harpur-K2s_YE031CA-unsplash"
-    },
-    {
-      alt: "Pietro De Grandi",
-      src: "/images/carousel/pietro-de-grandi-T7K4aEPoGGk-unsplash.webp",
-      title: "pietro-de-grandi-T7K4aEPoGGk-unsplash"
-    },
-    {
-      alt: "Sergey Pesterev",
-      src: "/images/carousel/sergey-pesterev-tMvuB9se2uQ-unsplash.webp",
-      title: "sergey-pesterev-tMvuB9se2uQ-unsplash"
-    },
-    {
-      alt: "Solo travel goals",
-      src: "/images/carousel/solotravelgoals-7kLufxYoqWk-unsplash.webp",
-      title: "solotravelgoals-7kLufxYoqWk-unsplash"
-    }
-  ];
-</script>
-```
 
 ## Default Carousel
 
@@ -4902,14 +4659,6 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 ## References
 
 - [Flowbite Carousel](https://flowbite.com/docs/components/carousel/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
 
 
 ---
@@ -5304,14 +5053,6 @@ Use this example to show an input field where you can copy the URL of the curren
 
 - [Flowbite Clipboard](https://flowbite.com/docs/components/clipboard/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -5407,14 +5148,6 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 - [Flowbite Dark Mode](https://flowbite.com/docs/customize/dark-mode/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -5423,14 +5156,6 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 
 The Datepicker component provides an interactive calendar interface for selecting single dates or date ranges. It's fully integrated with flowbite-svelte's design system and offers various customization options.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Datepicker } from "flowbite-svelte";
-</script>
-```
 
 ## Default Datepicker
 
@@ -5855,14 +5580,6 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. In quidem rerum, optio 
 
 - [Flowbite Datepicker (JavaScript)](https://flowbite.com/docs/plugins/Datepicker/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -5875,14 +5592,6 @@ The device mockup component can be used to feature a preview and screenshot of y
 This component is built using only the utility classes from Tailwind CSS and has built-in dark mode support so it’s easy to customize, it loads very fast and integrates perfectly with Tailwind CSS and Flowbite.
 
 You can choose from multiple examples of mockups including phone, tablet, laptop, and even desktop devices with iOS or Android support.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { DeviceMockup } from "flowbite-svelte";
-</script>
-```
 
 ## Default mockup
 
@@ -6129,14 +5838,6 @@ This component can be used to showcase applications built for smartwatches.
 ## References
 
 - [Flowbite Device Mockup](https://flowbite.com/docs/components/device-mockups/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
 
 
 ---
@@ -6575,14 +6276,6 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 - [Flowbite Drawer](https://flowbite.com/docs/components/drawer/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -6591,14 +6284,6 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 
 The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Dropdown, DropdownItem, DropdownDivider, DropdownHeader } from "flowbite-svelte";
-</script>
-```
 
 ## Examples
 
@@ -7454,14 +7139,6 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 - [Flowbite Dropdown](https://flowbite.com/docs/components/drawer/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -7470,14 +7147,6 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 
 The footer is one of the most underestimated sections of a website being located at the very bottom of every page, however, it can be used as a way to try to convince users to stay on your website if they haven’t found the information they’ve been looking for inside the main content area.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup } from "flowbite-svelte";
-</script>
-```
 
 ## Default footer
 
@@ -7777,14 +7446,6 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 - [Flowbite Footer](https://flowbite.com/docs/components/footer/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -8025,14 +7686,6 @@ Get started with the default example of a select input component to get a single
 
 - [Flowbite Forms](https://flowbite.com/docs/components/forms/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -8264,14 +7917,6 @@ This example shows how to get a complete control over the gallery images look an
 
 - [Flowbite Gallery](https://flowbite.com/docs/components/gallery/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -8280,14 +7925,6 @@ This example shows how to get a complete control over the gallery images look an
 
 
 The indicator component can be used as a small element positioned absolutely relative to another component such as a button or card and show a number count, account status (red for offline, green for online) and other useful information.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Indicator } from "flowbite-svelte";
-</script>
-```
 
 ## Default indicator
 
@@ -8495,14 +8132,6 @@ Use these examples to position the indicator component anywhere relative to the 
 
 - [Flowbite Indicators](https://flowbite.com/docs/components/indicators/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -8511,14 +8140,6 @@ Use these examples to position the indicator component anywhere relative to the 
 
 
 The KBD (Keyboard) component can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Kbd } from "flowbite-svelte";
-</script>
-```
 
 ## Default KBD
 
@@ -8732,14 +8353,6 @@ This example can be used to denote function keys inside the KBD component.
 
 - [Flowbite KBD (Keyboard)](https://flowbite.com/docs/components/kbd/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -8748,14 +8361,6 @@ This example can be used to denote function keys inside the KBD component.
 
 
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Listgroup, ListgroupItem } from "flowbite-svelte";
-</script>
-```
 
 ## Default list group
 
@@ -8966,14 +8571,6 @@ When non standard usage is needed you can omit the `items` props and add element
 
 - [Flowbite List Group](https://flowbite.com/docs/components/list-group/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -8982,14 +8579,6 @@ When non standard usage is needed you can omit the `items` props and add element
 
 
 The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { MegaMenu } from "flowbite-svelte";
-</script>
-```
 
 ## Default mega menu
 
@@ -9335,14 +8924,6 @@ This example can be used to also show a CTA with a backdround image inside the d
 
 - [Flowbite Mega Menu](https://flowbite.com/docs/components/list-group/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -9353,14 +8934,6 @@ This example can be used to also show a CTA with a backdround image inside the d
 The modal component can be used as an interactive dialog on top of the main content area of the website to show notifications and gather information using form elements from your website users.
 
 Get started with multiple sizes, colors, and styles built with the utility classes from Tailwind CSS and the components from Flowbite.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Modal } from "flowbite-svelte";
-</script>
-```
 
 ## Default modal
 
@@ -9922,14 +9495,6 @@ This is perfect for advertisements, terms of service, or important announcements
 
 - [Flowbite Modal](https://flowbite.com/docs/components/modal/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -9938,14 +9503,6 @@ This is perfect for advertisements, terms of service, or important announcements
 
 
 Get started with the responsive navbar component from Flowbite to quickly set up a navigation menu for your website and set up the logo, list of pages, CTA button, search input, user profile options with a dropdown, and more.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-svelte";
-</script>
-```
 
 ## Default navbar
 
@@ -10484,14 +10041,6 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 - [Flowbite Navbar](https://flowbite.com/docs/components/navbar/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -10500,14 +10049,6 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 
 The pagination component can be used to navigate across a series of content and data sets for various pages such as blog posts, products, and more. You can use multiple variants of this component with or without icons and even for paginating table data entries.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { PaginationNav, Pagination, PaginationItem } from "flowbite-svelte";
-</script>
-```
 
 ## Default pagination
 
@@ -11027,14 +10568,6 @@ Use the following example to add active class.
 
 - [Flowbite Pagination](https://flowbite.com/docs/components/pagination/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -11045,14 +10578,6 @@ Use the following example to add active class.
 Get started with the popover component to show any type of content inside a pop-up box when hovering or clicking over a trigger element. There are multiple examples that you can choose from, such as showing more information about a user profile, company profile, password strength, and more.
 
 Make sure that you have the Flowbite JavaScript included in your project to enable the popover interactivity by following the quickstart guide.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Popover } from "flowbite-svelte";
-</script>
-```
 
 ## Default popover
 
@@ -11448,14 +10973,6 @@ If you need the popover to be attached to the other element then the triggering 
 
 - [Flowbite Popover](https://flowbite.com/docs/components/popover/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -11464,16 +10981,6 @@ If you need the popover to be attached to the other element then the triggering 
 
 
 The progress bar component can be used as an indicator to show the completion rate of data sets or it can be used as an animated loader component. There are multiple sizes, colors, and styles available.
-
-## Setup
-
-Import the `Progressbar` component in a script tag.
-
-```svelte
-<script lang="ts">
-  import { Progressbar } from "flowbite-svelte";
-</script>
-```
 
 ## Default progress bar
 
@@ -11704,14 +11211,6 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 - [Flowbite Progress Bar](https://flowbite.com/docs/components/progress/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -11722,16 +11221,6 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 Get started with the rating component to show an aggregate of reviews and scores in the forms of stars or numbers.
 
 You can find multiple examples on this page including different styles, sizes, and variants of the rating component and other associated elements such as a comment or card.
-
-## Setup
-
-Let's import all necessary components in the script tag. We import a heart, thumb-up, and smiley icons, but you can use any icons as you like.
-
-```svelte
-<script lang="ts">
-  import { Rating, AdvancedRating, ScoreRating } from "flowbite-svelte";
-</script>
-```
 
 ## Default rating
 
@@ -12187,14 +11676,6 @@ Use this component to show the review content from a user alongside the avatar, 
 
 - [Flowbite Rating](https://flowbite.com/docs/components/rating/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -12205,14 +11686,6 @@ Use this component to show the review content from a user alongside the avatar, 
 The sidebar component can be used as a complementary element relative to the navbar shown on either the left or right side of the page used for the navigation on your web application, including menu items, multi-level dropdown items, call to actions elements, and more.
 
 Disclaimer: this sidebar component is based on this <A class="text-primary-700" href="https://github.com/shinokada/svelte-sidebar" target="_blank" rel="noreferrer">sidebar menu</A> plugin.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from "flowbite-svelte";
-</script>
-```
 
 ## Default sidebar
 
@@ -13539,14 +13012,6 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 - [Flowbite Sidebar](https://flowbite.com/docs/components/sidebar/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -13555,14 +13020,6 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 
 Use the skeleton component to indicate a loading status with placeholder elements that look very similar to the type of content that is being loaded such as paragraphs, images, videos, and more.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder } from "flowbite-svelte";
-</script>
-```
 
 ## Default skeleton
 
@@ -13768,14 +13225,6 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 ## References
 
 - [Flowbite Skeleton](https://flowbite.com/docs/components/sidebar/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
 
 
 ---
@@ -14444,14 +13893,6 @@ You can change the main button to any element you want.
 
 - [Flowbite Speed Dial](https://flowbite.com/docs/components/speed-dial/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -14460,14 +13901,6 @@ You can change the main button to any element you want.
 
 
 The spinner component can be used as a loading indicator which comes in multiple colors, sizes, and styles separately or inside elements such as buttons to improve the user experience whenever data is being fetched from your server.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Spinner } from "flowbite-svelte";
-</script>
-```
 
 ## Default spinner
 
@@ -14569,14 +14002,6 @@ The spinner component can also be used inside elements such as buttons when subm
 
 - [Flowbite Spinner (Loader)](https://flowbite.com/docs/components/spinner/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -14587,14 +14012,6 @@ The spinner component can also be used inside elements such as buttons when subm
 The stepper component can be used to show a numbered list of steps next to a form component to indicate the progress and number of steps that are required to complete and submit the form data.
 
 There are multiple examples that you can use including horizontal or vertical aligned stepper components, different sizes, styles, and showing icons or numbers all coded with the utility classes from Tailwind CSS.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { BreadcrumbStepper, DetailedStepper, ProgressStepper, Stepper, TimelineStepper, VerticalStepper } from "flowbite-svelte";
-</script>
-```
 
 ## Default stepper
 
@@ -14916,14 +14333,6 @@ Use this example to show the stepper component next to a form layout and change 
 
 - [Flowbite Sidebar](https://flowbite.com/docs/components/stepper)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -14946,14 +14355,6 @@ Get started with multiple variants and styles of these table components.
     </span>
   </P>
 </Badge>
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch } from "flowbite-svelte";
-</script>
-```
 
 ## Default table
 
@@ -15916,14 +15317,6 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 - [Flowbite Tables](https://flowbite.com/docs/components/tables/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -15932,14 +15325,6 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 
 The tabs component can be used either as an extra navigational hierarchy complementing the main navbar or you can also use it to change content inside a container just below the tabs using the data attributes from Flowbite.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Tabs, TabItem } from "flowbite-svelte";
-</script>
-```
 
 ## Default tabs
 
@@ -16455,14 +15840,6 @@ Use the following example to add active class.
 
 - [Flowbite Tabs](https://flowbite.com/docs/components/tabs/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -16471,14 +15848,6 @@ Use the following example to add active class.
 
 
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Timeline, TimelineItem, Activity, ActivityItem, Group, GroupItem } from "flowbite-svelte";
-</script>
-```
 
 ## Default timeline
 
@@ -16962,14 +16331,6 @@ Use this component to group multiple data entries inside a single date and show 
 
 - [Flowbite Timeline](https://flowbite.com/docs/components/timeline/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -16978,14 +16339,6 @@ Use this component to group multiple data entries inside a single date and show 
 
 
 The toast component can be used to enhance your website’s interactivity by pushing notifications to your visitors. You can choose from multiple styles, colors, sizes, and positions and even dismiss the component.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Toast } from "flowbite-svelte";
-</script>
-```
 
 ## Default toast
 
@@ -17388,14 +16741,6 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 - [Flowbite Toast](https://flowbite.com/docs/components/toast/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -17406,14 +16751,6 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 flowbite-svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
 
 For interactive elements that need to display additional content on click, use the [popover](/docs/components/popover) component.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Tooltip } from "flowbite-svelte";
-</script>
-```
 
 ## Default tooltip example
 
@@ -17603,14 +16940,6 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 
 - [Flowbite Tooltip](https://flowbite.com/docs/components/tooltips/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -17766,29 +17095,12 @@ You can use the following classes to set the text decoration for any inline text
 
 - [Flowbite Typography](https://flowbite.com/docs/components/typography/)
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
-
 
 ---
 
 <!-- Source: components/video.md -->
 # Svelte Video - Flowbite
 
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Video } from "flowbite-svelte";
-</script>
-```
 
 ## Video player
 
@@ -17901,14 +17213,6 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 - [Flowbite Video](https://flowbite.com/docs/components/video/)
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -17920,14 +17224,6 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Checkbox } from "flowbite-svelte";
-</script>
-```
 
 ## Checkbox examples
 
@@ -18299,14 +17595,6 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 - [Flowbite Checkbox](https://flowbite.com/docs/forms/checkbox/)
 
-## GitHub Links
-
-<GitHubCompoLinks {components} dir="forms"/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -18315,14 +17603,6 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 
 The file input component can be used to upload one or more files from the device storage of the user available in multiple sizes, styles, variants and support for dark mode.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Fileupload } from "flowbite-svelte";
-</script>
-```
 
 ## Helper text
 
@@ -18489,14 +17769,6 @@ Add `clearable` and `clearableOnClick` props.
 
 - [Flowbite File Input](https://flowbite.com/docs/forms/file-input/)
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -18507,14 +17779,6 @@ Add `clearable` and `clearableOnClick` props.
 The floating label style was first pioneered by Google in its infamous Material UI design system and it’s basically a label tag which floats just above the input field when it is being focused or already has content inside.
 
 On this page you will find a three different input field styles including a standard, outlined, and filled style including validation styles and sizes coded with Tailwind CSS and supported for dark mode.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { FloatingLabelInput, Helper } from "flowbite-svelte";
-</script>
-```
 
 ## Floating label examples
 
@@ -18724,14 +17988,6 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Floating Label](https://flowbite.com/docs/forms/floating-label/)
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -18742,14 +17998,6 @@ The component has the following props, type, and default values. See [types page
 The input field is an important part of the form element that can be used to create interactive controls to accept data from the user based on multiple input types, such as text, email, number, password, URL, phone number, and more.
 
 On this page you will find all of the input types based on multiple variants, styles, colors, and sizes built with the utility classes from Tailwind CSS and components from Flowbite.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Input, Label, Helper } from "flowbite-svelte";
-</script>
-```
 
 ## Input Fields
 
@@ -19309,14 +18557,6 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Input Field](https://flowbite.com/docs/forms/input-field/)
 
-## GitHub Links
-
-<GitHubCompoLinks {components} />
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -19518,13 +18758,6 @@ Use this example as an alternative style to the control buttons example above.
 </form>
 ```
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -19535,14 +18768,6 @@ Use this example as an alternative style to the control buttons example above.
 The phone number input component can be used to set a phone number inside a form field by using the native type="tel" attribute and also use a dropdown menu to select the country code.
 
 The examples are built with the utility classes from Tailwind CSS and they are fully responsive, dark mode compatible and support RTL layouts and can be used for any type of web project.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { PhoneInput, Label, Helper } from "flowbite-svelte";
-</script>
-```
 
 ## Default phone input
 
@@ -19853,14 +19078,6 @@ The PhoneInput component provides customizable styling through six distinct clas
 
 - [Flowbite Phone Input](https://flowbite.com/docs/forms/phone-input/)
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -19869,14 +19086,6 @@ The PhoneInput component provides customizable styling through six distinct clas
 
 
 The radio component can be used to allow the user to choose a single option from one or more available options coded with the utility classes from Tailwind CSS and available in multiple styles, variants, and colors and support dark mode.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Radio } from "flowbite-svelte";
-</script>
-```
 
 ## Radio examples
 
@@ -20210,14 +19419,6 @@ Use `color` and `checkedClass` props to style the checked state:
 
 - [Flowbite Radio](https://flowbite.com/docs/forms/radio/)
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -20226,14 +19427,6 @@ Use `color` and `checkedClass` props to style the checked state:
 
 
 The range component can be used as an input field to get a number from the user based on your custom selection (ie. from 1 to 100) by using a sliding animation.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Range } from "flowbite-svelte";
-</script>
-```
 
 ## Range slider example
 
@@ -20328,14 +19521,6 @@ Since we added `...restProps` to input field, you can contain the props which ar
 
 - [Flowbite Range Slider](https://flowbite.com/docs/forms/range/)
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -20346,14 +19531,6 @@ Since we added `...restProps` to input field, you can contain the props which ar
 The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS.
 
 You will also find more advanced search components on this page including dropdown category selections, search buttons positioned inside the input field, voice search fields and more.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Search } from "flowbite-svelte";
-</script>
-```
 
 ## Search bar example
 
@@ -20607,14 +19784,6 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Search Input](https://flowbite.com/docs/forms/search-input/)
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -20623,14 +19792,6 @@ The component has the following props, type, and default values. See [types page
 
 
 The select input component can be used to gather information from users based on multiple options in the form of a dropdown list and by browsing this page you will find multiple options, styles, sizes, and variants built with the utility classes from Tailwind CSS also available in dark mode.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Select } from "flowbite-svelte";
-</script>
-```
 
 ## Select input example
 
@@ -21056,13 +20217,6 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 - [Flowbite Select](https://flowbite.com/docs/forms/select/)
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -21071,14 +20225,6 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 
 The textarea component is a multi-line text field input that can be used to receive longer chunks of text from the user in the form of a comment box, description field, and more.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Textarea } from "flowbite-svelte";
-</script>
-```
 
 ## Textarea example
 
@@ -21332,14 +20478,6 @@ If you want to build a chatroom component you will usually want to use a textare
 
 - [Flowbite Textarea](https://flowbite.com/docs/forms/textarea/)
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -21348,14 +20486,6 @@ If you want to build a chatroom component you will usually want to use a textare
 
 
 The timepicker component can be used to allow the user to select a specific time using a custom time input element and provides flexibility in styling and icon usage.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Timepicker } from "flowbite-svelte";
-</script>
-```
 
 ## Default timepicker
 
@@ -21904,14 +21034,6 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Timepicker](https://flowbite.com/docs/forms/timepicker/)
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -21920,14 +21042,6 @@ The component has the following props, type, and default values. See [types page
 
 
 The toggle component can be used to receive a simple “yes” or “no” type of answer from the user by choosing a single option from two options available in multiple sizes, styles, and colors coded with the utility classes from Tailwind CSS and with dark mode support.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Toggle } from "flowbite-svelte";
-</script>
-```
 
 ## Toggle examples
 
@@ -22031,14 +21145,6 @@ Get started with the default toggle component example as a checkbox element to r
 ## References
 
 - [Flowbite Switch (Toggle)](https://flowbite.com/docs/forms/toggle/)
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
 
 
 ---
@@ -22263,14 +21369,6 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 ## References
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -22281,14 +21379,6 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 Get started with the heading component to define titles and subtitles on a web page and also improve the on-page SEO metrics of your website by targeting high-traffic keywords on Google.
 
 At least one unique `h1` tag should be available for each page on your website with the next tags starting from H2 to H6 for each section. Choose from a collection of custom heading components based on multiple styles and layouts built with the utility classes from Tailwind CSS.
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Heading, P, A, Mark, Secondary } from "flowbite-svelte";
-</script>
-```
 
 ## Default heading
 
@@ -22523,14 +21613,6 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 ## References
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -22539,14 +21621,6 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 
 The `Hr` component can be used to separate content using a horizontal line by adding space between elements based on multiple styles, variants, and layouts.
-
-## Setup
-
-```html
-<script lang="ts">
-  import { Hr } from "flowbite-svelte";
-</script>
-```
 
 ## Default HR
 
@@ -22665,14 +21739,6 @@ The `restProps` will be removed in the next version. Please use `divProps` and `
 
 ## References
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -22681,14 +21747,6 @@ The `restProps` will be removed in the next version. Please use `divProps` and `
 
 
 Get started with a collection of responsive image components coded with the utility classes from Tailwind CSS that you can use inside articles, cards, sections, and other components based on multiple styles, sizes, layouts, and hover animations.
-
-## Setup
-
-```html
-<script lang="ts">
-  import { Img } from "flowbite-svelte";
-</script>
-```
 
 ## Default image
 
@@ -22921,14 +21979,6 @@ The component has the following props, type, and default values. See [types page
 
 ## References
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -22939,14 +21989,6 @@ The component has the following props, type, and default values. See [types page
 Get started with the link component to enable hyperlinks across pages and external websites applied to elements such as inline text, buttons, cards, inside paragraphs, and more.
 
 Hyperlinks are a great way to reduce bounce rate of the current page and encourage visitors to browse your website and become a returning user.
-
-## Setup
-
-```html
-<script lang="ts">
-  import { A } from "flowbite-svelte";
-</script>
-```
 
 ## Default link
 
@@ -23086,14 +22128,6 @@ The component has the following props, type, and default values. See [types page
 
 ## References
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -23102,14 +22136,6 @@ The component has the following props, type, and default values. See [types page
 
 
 Get started with a collection of list components built with Tailwind CSS for ordered and unordered lists with bullets, numbers, or icons and other styles and layouts to show a list of items inside an article or throughout your web page.
-
-## Setup
-
-```html
-<script lang="ts">
-  import { List, Li } from "flowbite-svelte";
-</script>
-```
 
 ## Unordored list
 
@@ -23446,14 +22472,6 @@ Use this example to create a horizontally aligned list of items.
 
 ## References
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -23719,14 +22737,6 @@ The component has the following props, type, and default values. See [types page
 <CompoAttributesViewer {components}/>
 
 ## References
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
 
 
 ---
@@ -24017,14 +23027,6 @@ The component has the following props, type, and default values. See [types page
 
 ## References
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -24034,14 +23036,6 @@ The component has the following props, type, and default values. See [types page
 <!-- Source: extend/button-toggle.md -->
 # Svelte Button Toggle
 
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
-</script>
-```
 
 ## Default single and multiple
 
@@ -24467,13 +23461,6 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 - classes
 
 
-## GitHub Links
-
-<GitHubCompoLinks {components} dir="extend"/>
-
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -24515,16 +23502,6 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 <!-- Source: extend/progressradial.md -->
 # Svelte Progressradial
 
-
-## Setup
-
-Import the `Progressradial` component in a script tag.
-
-```svelte
-<script lang="ts">
-  import { Progressradial } from "flowbite-svelte";
-</script>
-```
 
 ## Progress
 
@@ -24663,13 +23640,6 @@ Import the `Progressradial` component in a script tag.
 - classes
 
 
-## GitHub Links
-
-<GitHubCompoLinks {components} dir="extend"/>
-
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -24678,16 +23648,6 @@ Import the `Progressradial` component in a script tag.
 
 
 The Step Indicator component is a simple component to show the progress of a process. It can be used to show the progress of a multi-step form or a multi-step process.
-
-## Setup
-
-Import the `StepIndicator` component in a script tag.
-
-```svelte
-<script lang="ts">
-  import { StepIndicator } from "flowbite-svelte";
-</script>
-```
 
 ## Default step indicator
 
@@ -24848,13 +23808,6 @@ Use the `color` prop to change the color of a step indicator.
 
 <CompoAttributesViewer {components}/>
 
-## GitHub Links
-
-<GitHubCompoLinks {components} dir="extend"/>
-
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -24863,16 +23816,6 @@ Use the `color` prop to change the color of a step indicator.
 
 
 The Tags.svelte component is a flexible tag input field that lets users add and manage multiple tags. It supports adding tags with Enter, removing them with Backspace or close buttons, and offers customizable styling options. The component handles keyboard navigation and maintains a reactive array of tag values that can be bound to a parent component.
-
-## Setup
-
-Import the `Tags` component in a script tag.
-
-```svelte
-<script lang="ts">
-  import { Tags } from "flowbite-svelte";
-</script>
-```
 
 ## Example
 
@@ -24993,27 +23936,12 @@ Use `disabled` to the `Tags` component.
 - inputProps: {
 
 
-## GitHub Links
-
-<GitHubCompoLinks {components} dir="extend"/>
-
-## LLM Link
-
-<LlmLink />
 
 ---
 
 <!-- Source: extend/virtual-list.md -->
 # Svelte Virtual List
 
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { VirtualList } from "flowbite-svelte";
-</script>
-```
 
 ## Default single and multiple
 Basic virtual list displaying 5,000 items with variable text lengths. Only visible items are rendered for optimal performance.
@@ -25403,13 +24331,6 @@ Use `CloseButton` component to close a component.
 - svgClass
 
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -25453,27 +24374,12 @@ Use the `Label` component when you need to add a label.
 
 <CompoAttributesViewer {components}/>
 
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
 
 ---
 
 <!-- Source: utilities/toolbar.md -->
 # Svelte Toolbar - Flowbite
 
-
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
-</script>
-```
 
 ## Default toolbar
 
@@ -25664,14 +24570,6 @@ Most often the textarea component is used as the main text field input element i
 
 ## References
 
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
 
 ---
 
@@ -25737,18 +24635,6 @@ You can achieve this by using <A href="https://kit.svelte.dev/docs/snapshots">Sv
     </span>
   </P>
 </Badge>
-
-## Installation
-
-```svelte
-pnpm i -D @flowbite-svelte-plugins/chart
-```
-
-Update `app.css`:
-
-```svelte
-@source "../node_modules/@flowbite-svelte-plugins/chart/dist";
-```
 
 ## Area chart
 
@@ -26799,9 +25685,6 @@ The component has the following props, type, and default values. See [types page
 
 - [@flowbite-svelte-plugins/chart](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-chart/src/lib/Chart.svelte)
 
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -26814,61 +25697,6 @@ The datatable component examples from Flowbite are open-source under the MIT Lic
 This page provides multiple examples of datatable components where you can search, sort, filter, and paginate table data up to thousands of entries.
 
 All examples are responsive, dark mode and RTL support included and by installing the Flowbite-Svelte-DataTable plugin the custom styles will automatically be applied to the datatable components using Tailwind CSS.
-
-## Installation
-
-```svelte
-pnpm i -D @flowbite-svelte-plugins/datatable
-```
-
-### app.d.ts
-
-Update `app.d.ts` as the following:
-
-```ts
-declare global {
-  namespace App {}
-}
-
-declare module "simple-datatables" {
-  export { DataTable } from "simple-datatables/dist/dts/datatable";
-  export { convertCSV, convertJSON } from "simple-datatables/dist/dts/convert";
-  export { exportCSV, exportJSON, exportSQL, exportTXT } from "simple-datatables/dist/dts/export";
-  export { createElement, isJson, isObject } from "simple-datatables/dist/dts/helpers";
-  export { makeEditable } from "simple-datatables/dist/dts/editing";
-  export { addColumnFilter } from "simple-datatables/dist/dts/column_filter";
-
-  export type { DataTableOptions, DataTableConfiguration, ColumnOption, cellType, inputCellType, dataRowType, inputRowType, headerCellType, inputHeaderCellType, TableDataType, DataOption, renderType, nodeType, elementNodeType, textNodeType, cellDataType } from "simple-datatables/dist/dts/datatable";
-
-  export interface SelectableDataRow {
-    selected?: boolean;
-    [key: string]: any;
-  }
-}
-
-export {};
-```
-
-### app.css
-
-```css
-@source "../node_modules/simple-datatables/dist";
-@source "../node_modules/@flowbite-svelte-plugins/datatable/dist";
-
-.datatable-pagination .datatable-active a,
-.datatable-pagination .datatable-active a:focus,
-.datatable-pagination .datatable-active a:hover,
-.datatable-pagination .datatable-active button,
-.datatable-pagination .datatable-active button:focus,
-.datatable-pagination .datatable-active button:hover {
-  background-color: #ffe4de;
-  cursor: default;
-}
-
-.datatable-wrapper .datatable-table tbody tr.selected {
-  background-color: #fff1ee !important;
-}
-```
 
 ## Default datatable
 
@@ -27143,9 +25971,6 @@ The component has the following props, type, and default values. See [types page
 
 - [@flowbite-svelte-plugins/datatable](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-datatable/src/lib/Table.svelte)
 
-## LLM Link
-
-<LlmLink />
 
 ---
 
@@ -27163,33 +25988,6 @@ The WYSIWYG text editor from Flowbite-Svelte is open-source under the MIT licens
 The markup and styles provided by Flowbite-Svelte are all built with the utility classes from Tailwind CSS and the styles for the content inside the WYSIWYG text editor are based on the Flowbite Typography plugin.
 
 All examples provided on this page have support for dark mode, RTL (right-to-left) styles, responsiveness on mobile devices and you can easily add your own functionality using JavaScript.
-
-## Installation
-
-<P class="text-red-500 text-xl">UPDATE: @flowbite-svelte-plugins/texteditor@{textEditor} uses @tiptap{tiptapVersion}.</P>
-
-<Examples.InstallCommand />
-
-### app.css
-
-Use the following example or create your own.
-
-<Accordion flush>
-  <AccordionItem classes={{ content: "customstyle" }}>
-  {#snippet header()}Example style{/snippet}
-  <Examples.Appcss />
-  </AccordionItem>
-</Accordion>
-
-### Code Block Styling
-
-To add syntax highlighting styles to your code blocks, include a highlight.js theme. You can browse available themes at cdnjs.com/libraries/highlight.js or preview them at https://highlightjs.org/demo.
-
-```svelte
-<svelte:head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/google-dark.min.css" />
-</svelte:head>
-```
 
 ## Full-featured Text Editor
 
@@ -27530,9 +26328,6 @@ meta={{hideOutput: true}}
 codeString={exampleRawModules['./examples/wysiwyg/CustomEditor.svelte']}
 />
 
-## LLM Link
-
-<LlmLink />
 
 ---
 

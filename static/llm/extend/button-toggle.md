@@ -1,14 +1,6 @@
 # Svelte Button Toggle
 
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
-</script>
-```
-
 ## Default single and multiple
 
 ```svelte
@@ -432,11 +424,3 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 - contentClass
 - classes
 
-
-## GitHub Links
-
-<GitHubCompoLinks {components} dir="extend"/>
-
-## LLM Link
-
-<LlmLink />

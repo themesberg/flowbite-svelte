@@ -5,14 +5,6 @@ The floating label style was first pioneered by Google in its infamous Material 
 
 On this page you will find a three different input field styles including a standard, outlined, and filled style including validation styles and sizes coded with Tailwind CSS and supported for dark mode.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { FloatingLabelInput, Helper } from "flowbite-svelte";
-</script>
-```
-
 ## Floating label examples
 
 Get started with the following three styles for the floating label component and use the label tag as a visual placeholder using the peer-placeholder-shown and peer-focus utility classes from Tailwind CSS.
@@ -220,11 +212,3 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Floating Label](https://flowbite.com/docs/forms/floating-label/)
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

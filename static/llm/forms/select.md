@@ -3,14 +3,6 @@
 
 The select input component can be used to gather information from users based on multiple options in the form of a dropdown list and by browsing this page you will find multiple options, styles, sizes, and variants built with the utility classes from Tailwind CSS also available in dark mode.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { Select } from "flowbite-svelte";
-</script>
-```
-
 ## Select input example
 
 Get started with the default example of a select input component to get a single option selection.
@@ -434,11 +426,3 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 ## References
 
 - [Flowbite Select](https://flowbite.com/docs/forms/select/)
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

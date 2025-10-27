@@ -5,14 +5,6 @@ The bottom bar component can be used to allow menu items and certain control act
 
 Check out multiple examples of the bottom navigation component based on various styles, controls, sizes, content and leverage the utility classes from Tailwind CSS to integrate into your own project.
 
-## Setup
-
-```svelte
-<script lang="ts">
-  import { BottomNav, BottomNavItem } from "flowbite-svelte";
-</script>
-```
-
 ## Default bottom navigation
 
 Use the default bottom navigation bar example to show a list of menu items as buttons to allow the user to navigate through your website based on a fixed position. You can also use anchor tags instead of buttons.
@@ -429,11 +421,3 @@ You can even use the other bottom navbar examples to exchange the default one pr
 ## References
 
 - [Flowbite Bottom Navigation](https://flowbite.com/docs/components/bottom-navigation/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

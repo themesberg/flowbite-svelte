@@ -3,14 +3,6 @@
 
 Get started with a collection of list components built with Tailwind CSS for ordered and unordered lists with bullets, numbers, or icons and other styles and layouts to show a list of items inside an article or throughout your web page.
 
-## Setup
-
-```html
-<script lang="ts">
-  import { List, Li } from "flowbite-svelte";
-</script>
-```
-
 ## Unordored list
 
 Use this example to create a default unordered list of items.
@@ -345,11 +337,3 @@ Use this example to create a horizontally aligned list of items.
 
 
 ## References
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

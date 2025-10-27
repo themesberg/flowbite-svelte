@@ -148,12 +148,3 @@ You can use the following classes to set the text decoration for any inline text
 ## References
 
 - [Flowbite Typography](https://flowbite.com/docs/components/typography/)
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />
-
