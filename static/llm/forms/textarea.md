@@ -262,11 +262,3 @@ If you want to build a chatroom component you will usually want to use a textare
 ## References
 
 - [Flowbite Textarea](https://flowbite.com/docs/forms/textarea/)
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

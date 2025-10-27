@@ -219,11 +219,3 @@ When non standard usage is needed you can omit the `items` props and add element
 ## References
 
 - [Flowbite List Group](https://flowbite.com/docs/components/list-group/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

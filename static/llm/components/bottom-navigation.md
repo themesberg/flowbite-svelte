@@ -429,11 +429,3 @@ You can even use the other bottom navbar examples to exchange the default one pr
 ## References
 
 - [Flowbite Bottom Navigation](https://flowbite.com/docs/components/bottom-navigation/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

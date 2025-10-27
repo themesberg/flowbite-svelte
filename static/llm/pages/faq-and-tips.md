@@ -90,7 +90,3 @@ Run `pnpm build` and run the same command to see the compiled CSS size.
 ```sh
 find .svelte-kit/output/client/_app/immutable -type f -name "*.css" -exec du -h {} +
 ```
-
-## LLM Link
-
-<LlmLink />

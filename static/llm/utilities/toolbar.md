@@ -197,11 +197,3 @@ Most often the textarea component is used as the main text field input element i
 <CompoAttributesViewer {components}/>
 
 ## References
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

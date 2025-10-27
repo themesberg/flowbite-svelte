@@ -1337,11 +1337,3 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 ## References
 
 - [Flowbite Sidebar](https://flowbite.com/docs/components/sidebar/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

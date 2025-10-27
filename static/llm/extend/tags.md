@@ -131,11 +131,3 @@ Use `disabled` to the `Tags` component.
 - allowNewTags: true
 - inputProps: {
 
-
-## GitHub Links
-
-<GitHubCompoLinks {components} dir="extend"/>
-
-## LLM Link
-
-<LlmLink />

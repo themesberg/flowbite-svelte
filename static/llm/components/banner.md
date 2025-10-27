@@ -239,11 +239,3 @@ A reusable function that manages banner dismissal state with localStorage persis
 ## References
 
 - [Flowbite Banner](https://flowbite.com/docs/components/banner/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

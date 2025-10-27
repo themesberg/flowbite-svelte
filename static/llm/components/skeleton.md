@@ -215,11 +215,3 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 ## References
 
 - [Flowbite Skeleton](https://flowbite.com/docs/components/sidebar/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

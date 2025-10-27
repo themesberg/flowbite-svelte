@@ -143,11 +143,3 @@ Use the `icon` snippet to change icons.
 ## References
 
 - [Flowbite Breadcrumb](https://flowbite.com/docs/components/breadcrumb/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

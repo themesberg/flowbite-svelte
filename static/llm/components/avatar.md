@@ -258,11 +258,3 @@ Preset values are equivalents of:
 ## References
 
 - [Flowbite Avatar](https://flowbite.com/docs/components/avatar/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

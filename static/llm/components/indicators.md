@@ -216,11 +216,3 @@ Use these examples to position the indicator component anywhere relative to the 
 ## References
 
 - [Flowbite Indicators](https://flowbite.com/docs/components/indicators/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

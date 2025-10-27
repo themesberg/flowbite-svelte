@@ -113,11 +113,3 @@ Get started with the default toggle component example as a checkbox element to r
 ## References
 
 - [Flowbite Switch (Toggle)](https://flowbite.com/docs/forms/toggle/)
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

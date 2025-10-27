@@ -200,11 +200,3 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 ## References
 
 - [Flowbite Tooltip](https://flowbite.com/docs/components/tooltips/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

@@ -233,11 +233,3 @@ Get started with the default example of a select input component to get a single
 ## References
 
 - [Flowbite Forms](https://flowbite.com/docs/components/forms/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

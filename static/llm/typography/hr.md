@@ -127,11 +127,3 @@ The `restProps` will be removed in the next version. Please use `divProps` and `
 
 
 ## References
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

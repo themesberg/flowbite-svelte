@@ -245,11 +245,3 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 
 ## References
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

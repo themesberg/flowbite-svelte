@@ -332,11 +332,3 @@ Use this example to show the stepper component next to a form layout and change 
 ## References
 
 - [Flowbite Sidebar](https://flowbite.com/docs/components/stepper)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

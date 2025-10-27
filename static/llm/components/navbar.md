@@ -547,11 +547,3 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 ## References
 
 - [Flowbite Navbar](https://flowbite.com/docs/components/navbar/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

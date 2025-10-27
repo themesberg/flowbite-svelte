@@ -321,11 +321,3 @@ The PhoneInput component provides customizable styling through six distinct clas
 ## References
 
 - [Flowbite Phone Input](https://flowbite.com/docs/forms/phone-input/)
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

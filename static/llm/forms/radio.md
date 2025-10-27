@@ -342,11 +342,3 @@ Use `color` and `checkedClass` props to style the checked state:
 ## References
 
 - [Flowbite Radio](https://flowbite.com/docs/forms/radio/)
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

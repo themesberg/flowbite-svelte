@@ -524,11 +524,3 @@ Use the following example to add active class.
 ## References
 
 - [Flowbite Tabs](https://flowbite.com/docs/components/tabs/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

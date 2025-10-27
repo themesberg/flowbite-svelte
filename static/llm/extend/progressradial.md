@@ -147,11 +147,3 @@ Import the `Progressradial` component in a script tag.
 - class: className
 - classes
 
-
-## GitHub Links
-
-<GitHubCompoLinks {components} dir="extend"/>
-
-## LLM Link
-
-<LlmLink />

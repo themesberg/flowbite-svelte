@@ -220,11 +220,3 @@ You can add the `onclick` event to the `Button` component.
 ## References
 
 - [Flowbite Button Group](https://flowbite.com/docs/components/button-group/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

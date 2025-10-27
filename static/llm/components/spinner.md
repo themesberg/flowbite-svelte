@@ -110,11 +110,3 @@ The spinner component can also be used inside elements such as buttons when subm
 ## References
 
 - [Flowbite Spinner (Loader)](https://flowbite.com/docs/components/spinner/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

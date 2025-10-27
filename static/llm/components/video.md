@@ -119,11 +119,3 @@ Customize the video player appearance using the utility classes from Tailwind CS
 ## References
 
 - [Flowbite Video](https://flowbite.com/docs/components/video/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

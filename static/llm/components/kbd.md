@@ -222,11 +222,3 @@ This example can be used to denote function keys inside the KBD component.
 ## References
 
 - [Flowbite KBD (Keyboard)](https://flowbite.com/docs/components/kbd/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

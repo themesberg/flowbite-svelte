@@ -307,11 +307,3 @@ The color can be changed dynamically.
 ## References
 
 - [Flowbite Badge](https://flowbite.com/docs/components/badge/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

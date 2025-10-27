@@ -377,7 +377,3 @@ Either using the above example or use button components to create your custom te
 meta={{hideOutput: true}}
 codeString={exampleRawModules['./examples/wysiwyg/CustomEditor.svelte']}
 />
-
-## LLM Link
-
-<LlmLink />

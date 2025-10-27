@@ -587,11 +587,3 @@ Open accordion only within specific screen size ranges:
 ## References
 
 - [Flowbite Accordion](https://flowbite.com/docs/components/accordion/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

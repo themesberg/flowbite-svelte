@@ -434,11 +434,3 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 ## References
 
 - [Flowbite Select](https://flowbite.com/docs/forms/select/)
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

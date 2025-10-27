@@ -308,11 +308,3 @@ Use this example to set create a sticky footer by using a fixed position to the 
 ## References
 
 - [Flowbite Footer](https://flowbite.com/docs/components/footer/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

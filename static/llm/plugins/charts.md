@@ -1073,7 +1073,3 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [@flowbite-svelte-plugins/chart](https://github.com/shinokada/flowbite-svelte-plugins/blob/main/apps/flowbite-svelte-chart/src/lib/Chart.svelte)
-
-## LLM Link
-
-<LlmLink />

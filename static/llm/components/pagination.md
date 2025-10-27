@@ -528,11 +528,3 @@ Use the following example to add active class.
 ## References
 
 - [Flowbite Pagination](https://flowbite.com/docs/components/pagination/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

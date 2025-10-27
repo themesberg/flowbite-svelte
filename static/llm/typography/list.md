@@ -345,11 +345,3 @@ Use this example to create a horizontally aligned list of items.
 
 
 ## References
-
-## GitHub Links
-
-<GitHubCompoLinks {components}/>
-
-## LLM Link
-
-<LlmLink />

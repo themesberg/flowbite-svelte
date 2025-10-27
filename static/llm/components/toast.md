@@ -411,11 +411,3 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 ## References
 
 - [Flowbite Toast](https://flowbite.com/docs/components/toast/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

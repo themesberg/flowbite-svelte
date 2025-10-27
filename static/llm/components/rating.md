@@ -468,11 +468,3 @@ Use this component to show the review content from a user alongside the avatar, 
 ## References
 
 - [Flowbite Rating](https://flowbite.com/docs/components/rating/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

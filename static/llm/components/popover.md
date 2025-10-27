@@ -406,11 +406,3 @@ If you need the popover to be attached to the other element then the triggering 
 ## References
 
 - [Flowbite Popover](https://flowbite.com/docs/components/popover/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

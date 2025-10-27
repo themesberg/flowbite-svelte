@@ -345,11 +345,3 @@ Use the `onclick` event with `dismissable` prop.
 ## References
 
 - [Flowbite Alerts](https://flowbite.com/docs/components/alerts/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

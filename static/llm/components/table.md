@@ -985,11 +985,3 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 ## References
 
 - [Flowbite Tables](https://flowbite.com/docs/components/tables/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />

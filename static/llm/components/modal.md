@@ -572,11 +572,3 @@ This is perfect for advertisements, terms of service, or important announcements
 ## References
 
 - [Flowbite Modal](https://flowbite.com/docs/components/modal/)
-
-## GitHub Links
-
-
-
-## LLM Link
-
-<LlmLink />
