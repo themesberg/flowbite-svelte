@@ -3,6 +3,14 @@
 
 The footer is one of the most underestimated sections of a website being located at the very bottom of every page, however, it can be used as a way to try to convince users to stay on your website if they haven’t found the information they’ve been looking for inside the main content area.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup } from "flowbite-svelte";
+</script>
+```
+
 ## Default footer
 
 <p>Use this footer component to show a copyright notice and some helpful website links.</p>

@@ -5,6 +5,14 @@ The input field is an important part of the form element that can be used to cre
 
 On this page you will find all of the input types based on multiple variants, styles, colors, and sizes built with the utility classes from Tailwind CSS and components from Flowbite.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { Input, Label, Helper } from "flowbite-svelte";
+</script>
+```
+
 ## Input Fields
 
 Use this example as a generic form element which includes multiple input fields types such as text, email, password, number, URL, and phone number and use the grid layout to add multiple columns and rows.

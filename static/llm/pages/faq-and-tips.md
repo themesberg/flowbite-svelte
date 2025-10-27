@@ -64,6 +64,12 @@ find .svelte-kit/output/client/_app/immutable -type f -name "*.css" -exec du -h 
 
 To purge the CSS files, you can use `vite-plugin-tailwind-purgecss`.
 
+### Installation
+
+```sh
+pnpm i -D vite-plugin-tailwind-purgecss
+```
+
 ### vite.config.ts
 
 ```js

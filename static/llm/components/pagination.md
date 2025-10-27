@@ -3,6 +3,14 @@
 
 The pagination component can be used to navigate across a series of content and data sets for various pages such as blog posts, products, and more. You can use multiple variants of this component with or without icons and even for paginating table data entries.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { PaginationNav, Pagination, PaginationItem } from "flowbite-svelte";
+</script>
+```
+
 ## Default pagination
 
 Use the following list of pagination items to indicate a series of content for your website.

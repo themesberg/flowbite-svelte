@@ -3,6 +3,14 @@
 
 The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { MegaMenu } from "flowbite-svelte";
+</script>
+```
+
 ## Default mega menu
 
 Use this example to show a list of links aligned on three columns inside the mega menu dropdown.

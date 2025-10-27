@@ -1,6 +1,14 @@
 # Svelte Video - Flowbite
 
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { Video } from "flowbite-svelte";
+</script>
+```
+
 ## Video player
 
 Use this example to create a native browser video player and apply the w-full utility class from Tailwind CSS to span the full width of the parent container.

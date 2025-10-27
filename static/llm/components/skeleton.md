@@ -3,6 +3,14 @@
 
 Use the skeleton component to indicate a loading status with placeholder elements that look very similar to the type of content that is being loaded such as paragraphs, images, videos, and more.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder } from "flowbite-svelte";
+</script>
+```
+
 ## Default skeleton
 
 ```svelte

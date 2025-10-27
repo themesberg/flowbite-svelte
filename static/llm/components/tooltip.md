@@ -5,6 +5,14 @@ flowbite-svelte allows you to show extra information when hovering or focusing o
 
 For interactive elements that need to display additional content on click, use the [popover](/docs/components/popover) component.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { Tooltip } from "flowbite-svelte";
+</script>
+```
+
 ## Default tooltip example
 
 To get started with using tooltips all you need to do is to place `Tooltip` element directly after triggering element (usually `Button`).

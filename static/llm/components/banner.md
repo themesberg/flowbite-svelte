@@ -5,6 +5,14 @@ Get started with the sticky banner component coded with Tailwind CSS and Flowbit
 
 Explore the following examples based on various styles, sizes, and positionings to leverage the sticky banner component and increase marketing conversions with a responsive element supporting dark mode.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { Banner } from "flowbite-svelte";
+</script>
+```
+
 ## Default sticky banner
 
 Use this example to show a text message for announcement with a CTA link, an icon element and a close button to dismiss the banner.

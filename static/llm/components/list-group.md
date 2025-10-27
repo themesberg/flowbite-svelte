@@ -3,6 +3,14 @@
 
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { Listgroup, ListgroupItem } from "flowbite-svelte";
+</script>
+```
+
 ## Default list group
 
 Here’s an example of a list group that you can use right away.

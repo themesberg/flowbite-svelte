@@ -3,6 +3,14 @@
 
 Get started with a collection of responsive image components coded with the utility classes from Tailwind CSS that you can use inside articles, cards, sections, and other components based on multiple styles, sizes, layouts, and hover animations.
 
+## Setup
+
+```html
+<script lang="ts">
+  import { Img } from "flowbite-svelte";
+</script>
+```
+
 ## Default image
 
 Use this example to show the a responsive image that won’t grow beyond the maximum original width.

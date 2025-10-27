@@ -1,6 +1,14 @@
 # Svelte Toolbar - Flowbite
 
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { Toolbar, ToolbarButton, ToolbarGroup } from "flowbite-svelte";
+</script>
+```
+
 ## Default toolbar
 
 ```svelte

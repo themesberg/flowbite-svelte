@@ -5,6 +5,14 @@ The stepper component can be used to show a numbered list of steps next to a for
 
 There are multiple examples that you can use including horizontal or vertical aligned stepper components, different sizes, styles, and showing icons or numbers all coded with the utility classes from Tailwind CSS.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { BreadcrumbStepper, DetailedStepper, ProgressStepper, Stepper, TimelineStepper, VerticalStepper } from "flowbite-svelte";
+</script>
+```
+
 ## Default stepper
 
 Use this example to show a list of form steps with a number and title of the step in a horizontal alignment.

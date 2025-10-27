@@ -5,6 +5,16 @@ The badge component can be used to complement other elements such as buttons or 
 
 Alternatively, badges can also be used as standalone elements that link to a certain page.
 
+## Setup
+
+Import a badge component in the script tag.
+
+```svelte
+<script lang="ts">
+  import { Badge } from "flowbite-svelte";
+</script>
+```
+
 ## Default badge
 
 Use the following badge elements to indicate counts or labels inside or outside components.

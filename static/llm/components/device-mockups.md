@@ -7,6 +7,14 @@ This component is built using only the utility classes from Tailwind CSS and has
 
 You can choose from multiple examples of mockups including phone, tablet, laptop, and even desktop devices with iOS or Android support.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { DeviceMockup } from "flowbite-svelte";
+</script>
+```
+
 ## Default mockup
 
 Use this example to show a standard phone mockup based on Tailwind CSS and add your app screenshot inside of it with dark mode support included.

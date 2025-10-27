@@ -3,6 +3,16 @@
 
 The Step Indicator component is a simple component to show the progress of a process. It can be used to show the progress of a multi-step form or a multi-step process.
 
+## Setup
+
+Import the `StepIndicator` component in a script tag.
+
+```svelte
+<script lang="ts">
+  import { StepIndicator } from "flowbite-svelte";
+</script>
+```
+
 ## Default step indicator
 
 Use the following example of a step indicator element to show a progress of step 2 out of 5.

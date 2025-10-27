@@ -5,6 +5,14 @@ The accordion component is a collection of vertically collapsing header and body
 
 A popular use case would be the “Frequently Asked Questions” section of a website or page when you can show questions and answers for each child element.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { AccordionItem, Accordion } from "flowbite-svelte";
+</script>
+```
+
 ## Default accordion
 
 Accordion uses the single selection mode by default i.e. it collapses every other child element when expanding a one.

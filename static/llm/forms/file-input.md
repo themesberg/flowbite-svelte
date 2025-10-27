@@ -3,6 +3,14 @@
 
 The file input component can be used to upload one or more files from the device storage of the user available in multiple sizes, styles, variants and support for dark mode.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { Fileupload } from "flowbite-svelte";
+</script>
+```
+
 ## Helper text
 
 ```svelte

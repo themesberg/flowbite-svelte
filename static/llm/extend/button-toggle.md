@@ -1,6 +1,14 @@
 # Svelte Button Toggle
 
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { ButtonToggleGroup, ButtonToggle } from "flowbite-svelte";
+</script>
+```
+
 ## Default single and multiple
 
 ```svelte

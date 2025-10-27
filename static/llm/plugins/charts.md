@@ -13,6 +13,18 @@
   </P>
 </Badge>
 
+## Installation
+
+```svelte
+pnpm i -D @flowbite-svelte-plugins/chart
+```
+
+Update `app.css`:
+
+```svelte
+@source "../node_modules/@flowbite-svelte-plugins/chart/dist";
+```
+
 ## Area chart
 
 Use this example to show a basic area chart.

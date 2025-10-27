@@ -3,6 +3,14 @@
 
 The toast component can be used to enhance your website’s interactivity by pushing notifications to your visitors. You can choose from multiple styles, colors, sizes, and positions and even dismiss the component.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { Toast } from "flowbite-svelte";
+</script>
+```
+
 ## Default toast
 
 Use this simple toast component with an icon, message, and dismissable close button to show alert messages to your website visitors.

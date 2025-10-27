@@ -5,6 +5,14 @@ The phone number input component can be used to set a phone number inside a form
 
 The examples are built with the utility classes from Tailwind CSS and they are fully responsive, dark mode compatible and support RTL layouts and can be used for any type of web project.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { PhoneInput, Label, Helper } from "flowbite-svelte";
+</script>
+```
+
 ## Default phone input
 
 Use this component to set a phone number inside an input field.

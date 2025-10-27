@@ -5,6 +5,14 @@ Get started with the link component to enable hyperlinks across pages and extern
 
 Hyperlinks are a great way to reduce bounce rate of the current page and encourage visitors to browse your website and become a returning user.
 
+## Setup
+
+```html
+<script lang="ts">
+  import { A } from "flowbite-svelte";
+</script>
+```
+
 ## Default link
 
 Use this example to set default styles to an inline link element.

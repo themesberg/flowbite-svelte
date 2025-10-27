@@ -3,6 +3,14 @@
 
 The button group component from flowbite-svelte can be used to stack together multiple buttons and links inside a single element.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { ButtonGroup, Button } from "flowbite-svelte";
+</script>
+```
+
 ## Default
 
 Use the following code to stack together buttons into a single group.

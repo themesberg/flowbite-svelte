@@ -3,6 +3,14 @@
 
 The KBD (Keyboard) component can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { Kbd } from "flowbite-svelte";
+</script>
+```
+
 ## Default KBD
 
 Here’s a list of KBD components that you can use inside any other element.

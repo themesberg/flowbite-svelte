@@ -5,6 +5,14 @@ Get started with the popover component to show any type of content inside a pop-
 
 Make sure that you have the Flowbite JavaScript included in your project to enable the popover interactivity by following the quickstart guide.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { Popover } from "flowbite-svelte";
+</script>
+```
+
 ## Default popover
 
 ```svelte

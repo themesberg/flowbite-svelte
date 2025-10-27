@@ -16,8 +16,6 @@ export default {
   
   // Sections to ignore (can be string or array)
   ignore: [
-    "Installation",
-    "Setup",
     "GitHub Links",
     "LLM Link"
   ],

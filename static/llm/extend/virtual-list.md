@@ -1,6 +1,14 @@
 # Svelte Virtual List
 
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { VirtualList } from "flowbite-svelte";
+</script>
+```
+
 ## Default single and multiple
 Basic virtual list displaying 5,000 items with variable text lengths. Only visible items are rendered for optimal performance.
 

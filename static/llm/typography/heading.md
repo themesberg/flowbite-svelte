@@ -5,6 +5,14 @@ Get started with the heading component to define titles and subtitles on a web p
 
 At least one unique `h1` tag should be available for each page on your website with the next tags starting from H2 to H6 for each section. Choose from a collection of custom heading components based on multiple styles and layouts built with the utility classes from Tailwind CSS.
 
+## Setup
+
+```svelte
+<script lang="ts">
+  import { Heading, P, A, Mark, Secondary } from "flowbite-svelte";
+</script>
+```
+
 ## Default heading
 
 Use this example of a `h1` heading in the context of a paragraph and CTA button for landing pages.

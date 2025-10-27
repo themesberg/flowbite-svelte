@@ -7,6 +7,61 @@ This page provides multiple examples of datatable components where you can searc
 
 All examples are responsive, dark mode and RTL support included and by installing the Flowbite-Svelte-DataTable plugin the custom styles will automatically be applied to the datatable components using Tailwind CSS.
 
+## Installation
+
+```svelte
+pnpm i -D @flowbite-svelte-plugins/datatable
+```
+
+### app.d.ts
+
+Update `app.d.ts` as the following:
+
+```ts
+declare global {
+  namespace App {}
+}
+
+declare module "simple-datatables" {
+  export { DataTable } from "simple-datatables/dist/dts/datatable";
+  export { convertCSV, convertJSON } from "simple-datatables/dist/dts/convert";
+  export { exportCSV, exportJSON, exportSQL, exportTXT } from "simple-datatables/dist/dts/export";
+  export { createElement, isJson, isObject } from "simple-datatables/dist/dts/helpers";
+  export { makeEditable } from "simple-datatables/dist/dts/editing";
+  export { addColumnFilter } from "simple-datatables/dist/dts/column_filter";
+
+  export type { DataTableOptions, DataTableConfiguration, ColumnOption, cellType, inputCellType, dataRowType, inputRowType, headerCellType, inputHeaderCellType, TableDataType, DataOption, renderType, nodeType, elementNodeType, textNodeType, cellDataType } from "simple-datatables/dist/dts/datatable";
+
+  export interface SelectableDataRow {
+    selected?: boolean;
+    [key: string]: any;
+  }
+}
+
+export {};
+```
+
+### app.css
+
+```css
+@source "../node_modules/simple-datatables/dist";
+@source "../node_modules/@flowbite-svelte-plugins/datatable/dist";
+
+.datatable-pagination .datatable-active a,
+.datatable-pagination .datatable-active a:focus,
+.datatable-pagination .datatable-active a:hover,
+.datatable-pagination .datatable-active button,
+.datatable-pagination .datatable-active button:focus,
+.datatable-pagination .datatable-active button:hover {
+  background-color: #ffe4de;
+  cursor: default;
+}
+
+.datatable-wrapper .datatable-table tbody tr.selected {
+  background-color: #fff1ee !important;
+}
+```
+
 ## Default datatable
 
 Use this example to show table data with default sorting and pagination functionalities.
