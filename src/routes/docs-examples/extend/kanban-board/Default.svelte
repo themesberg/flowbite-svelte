@@ -98,7 +98,7 @@
 	}
 </script>
 
-<div class="min-h-screen bg-gray-100 py-4 md:py-8">
+<div class="bg-gray-100 py-4 md:py-8">
 	<div class="max-w-7xl mx-auto px-2 sm:px-4">
 		<div class="mb-4 md:mb-6">
 			<h1 class="text-2xl md:text-3xl font-bold text-gray-900">Project Kanban Board</h1>
