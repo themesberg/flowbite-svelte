@@ -39,7 +39,7 @@
   {:else}
     <VirtualList {items} minItemHeight={40} height={400} class="rounded-lg border">
       {#snippet children(item, index)}
-        <div class="border-b p-2 hover:bg-gray-50 dark:hover:bg-gray-800">
+        <div class="border-b p-2 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">
           {index + 1}: {item}
         </div>
       {/snippet}

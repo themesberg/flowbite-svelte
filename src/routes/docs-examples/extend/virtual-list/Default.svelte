@@ -17,7 +17,7 @@
 
 <VirtualList {items} minItemHeight={40} height={400} class="border p-4">
   {#snippet children(item, index)}
-    <div class="border-b p-2">
+    <div class="border-b p-2 text-gray-900 dark:text-white">
       {index + 1}: {item}
     </div>
   {/snippet}
