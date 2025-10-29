@@ -1,5 +1,14 @@
-// src/routes/api/kanban/mockData.ts
-export let mockColumns = [
+/**
+ * WARNING: This is a simple in-memory mock data store for demonstration purposes only.
+ * 
+ * LIMITATIONS:
+ * - Data resets when server restarts
+ * - Not safe for concurrent requests (race conditions possible)
+ * - Not suitable for production use
+ * 
+ * For production, use a proper database with transactions (PostgreSQL, MongoDB, etc.)
+ */
+export const mockColumns = [
   {
     id: 'todo',
     title: 'To Do',

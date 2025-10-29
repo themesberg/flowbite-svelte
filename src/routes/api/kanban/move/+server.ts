@@ -6,6 +6,10 @@ import { mockColumns } from '../mockData';
 export const POST: RequestHandler = async ({ request }) => {
   const { cardId, fromColumnId, toColumnId } = await request.json();
 
+  if (cardId == null || !fromColumnId || !toColumnId) {
+    return json({ error: 'Missing required fields' }, { status: 400 });
+  }
+  
   // Simulate network delay
   await new Promise(resolve => setTimeout(resolve, 300));
 

@@ -32,11 +32,11 @@
 
   function handleAddCard(col: KanbanColumnType) {
     const title = prompt(`Add card to ${col.title}:`);
-    if (!title) return;
+    if (!title?.trim()) return;
     
     columns = columns.map((column) =>
       column.id === col.id
-        ? { ...column, cards: [...column.cards, { id: Date.now(), title }] }
+        ? { ...column, cards: [...column.cards, { id: Date.now(), title: title.trim() }] }
         : column
     );
   }

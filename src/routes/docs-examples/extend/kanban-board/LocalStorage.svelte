@@ -29,7 +29,7 @@
 
   function handleMove(card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) {
     console.log(`Moved "${card.title}" from "${from.title}" to "${to.title}"`);
-    columns = [...columns]; // Trigger reactivity
+    columns = [...columns]; // Trigger reactivity and persistence (card already moved by component)
   }
 
   function handleAddCard(col: KanbanColumnType) {

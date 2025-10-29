@@ -42,7 +42,15 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
 {#include LocalStorage.svelte}
 ```
 
-## API Integration
+## With API Integration (Demo Only)
+
+**⚠️ Note:** The API endpoints in this example use simple in-memory storage for demonstration purposes. This is **not suitable for production** as it has limitations:
+ - Data resets on server restart
+ - Not safe for concurrent requests
+ - Doesn't scale across multiple server instances
+
+For production, use a proper database (PostgreSQL, MongoDB, Supabase, etc.) with proper transaction handling.
+
 
 ```svelte example class="flex flex-col space-y-4"
 {#include ApiIntegration.svelte}
