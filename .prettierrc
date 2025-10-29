@@ -3,7 +3,7 @@
   "tabWidth": 2,
   "singleQuote": false,
   "trailingComma": "none",
-  "printWidth": 1000,
+  "printWidth": 200,
   "htmlWhitespaceSensitivity": "ignore",
   "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
   "overrides": [

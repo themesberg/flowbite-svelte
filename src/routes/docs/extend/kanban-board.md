@@ -20,7 +20,7 @@ description: A fully responsive, drag-and-drop Kanban board component built with
 
 ```svelte example hideOutput
 <script lang="ts">
-  import { KanbanBoard } from "flowbite-svelte";
+  import { type KanbanCardType, type KanbanColumnType, KanbanBoard } from  'flowbite-svelte';
 </script>
 ```
 ## Default Kanban Board
@@ -28,4 +28,22 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
 
 ```svelte example class="flex flex-col space-y-4"
 {#include Default.svelte}
+```
+
+## Custom Styling
+
+```svelte example class="flex flex-col space-y-4"
+{#include CustomStyling.svelte}
+```
+
+## Using LocalStorage
+
+```svelte example class="flex flex-col space-y-4"
+{#include LocalStorage.svelte}
+```
+
+## API Integration
+
+```svelte example class="flex flex-col space-y-4"
+{#include ApiIntegration.svelte}
 ```
