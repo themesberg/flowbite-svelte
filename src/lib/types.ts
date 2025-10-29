@@ -84,7 +84,7 @@ import type { ApexOptions } from "apexcharts";
 import type { ButtonToggleVariants } from "$lib/forms/button-toggle/theme";
 import type { TagsVariants } from "$lib/forms/tags/theme";
 import type { VirtualListVariants } from "$lib/virtuallist/theme";
-import type { KanbanBoardVariants } from "$lib/kanban/theme";
+import type { KanbanBoardVariants, KanbanCardVariants } from "$lib/kanban/theme";
 
 // utils
 import type { CloseButtonVariants } from "$lib/utils/theme";
@@ -2058,23 +2058,31 @@ export interface VirtualListProps<T = unknown> extends VirtualListVariants, Omit
 }
 
 // Kanbanboard
-export interface KanbanCard {
+export interface KanbanCardType {
   id: string | number;
   title: string;
   description?: string;
   tags?: string[];
 }
 
-export interface KanbanColumn {
+export interface KanbanColumnType {
   id: string | number;
   title: string;
-  cards: KanbanCard[];
+  cards: KanbanCardType[];
   color?: string;
 }
 
 export interface KanbanBoardProps extends KanbanBoardVariants, HTMLAttributes<HTMLDivElement> {
-  columns?: KanbanColumn[];
-  onMove?: (card: KanbanCard, from: KanbanColumn, to: KanbanColumn) => void;
-  onAddCard?: (col: KanbanColumn) => void;
+  columns?: KanbanColumnType[];
+  onMove?: (card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) => void;
+  onAddCard?: (col: KanbanColumnType) => void;
+  class?: ClassValue | null;
+}
+
+export interface KanbanCardProps extends KanbanCardVariants, HTMLAttributes<HTMLElement> {
+  card: KanbanCardType;
+  isDragging?: boolean;
+  onDragStart?: (card: KanbanCardType) => void;
+  onDragEnd?: () => void;
   class?: ClassValue | null;
 }

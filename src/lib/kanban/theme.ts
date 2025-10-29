@@ -2,6 +2,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 import type { Classes } from "$lib/theme/themeUtils";
 
 export type KanbanBoardVariants = VariantProps<typeof kanbanBoard> & Classes<typeof kanbanBoard>;
+export type KanbanCardVariants = VariantProps<typeof kanbanCard> & Classes<typeof kanbanCard>;
 
 export const kanbanBoard = tv({
 	slots: {
@@ -22,6 +23,23 @@ export const kanbanBoard = tv({
 				column: "ring-2 ring-primary"
 			}
 		},
+		isDragging: {
+			true: {
+				card: "opacity-50"
+			}
+		}
+	}
+});
+
+export const kanbanCard = tv({
+	slots: {
+		card: "bg-surface text-surface-foreground rounded-lg p-2.5 md:p-3 shadow-sm cursor-grab active:cursor-grabbing transition-all hover:bg-surface-hover hover:shadow-md",
+		cardTitle: "font-medium text-sm md:text-base",
+		cardDescription: "text-xs md:text-sm text-muted mt-1",
+		cardTags: "flex flex-wrap gap-1 mt-2",
+		cardTag: "text-[10px] md:text-xs bg-primary/10 text-primary px-1.5 md:px-2 py-0.5 rounded-full"
+	},
+	variants: {
 		isDragging: {
 			true: {
 				card: "opacity-50"

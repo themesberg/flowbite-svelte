@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { type KanbanCard, type KanbanColumn, KanbanBoard } from  'flowbite-svelte';
+	import { type KanbanCardType, type KanbanColumnType, KanbanBoard } from  'flowbite-svelte';
 
-	let columns = $state<KanbanColumn[]>([
+	let columns = $state<KanbanColumnType[]>([
 		{
 			id: 'todo',
 			title: 'To Do',
@@ -66,7 +66,7 @@
 		}
 	]);
 
-	function handleMove(card: KanbanCard, from: KanbanColumn, to: KanbanColumn) {
+	function handleMove(card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) {
 		console.log(`Moved "${card.title}" from "${from.title}" to "${to.title}"`);
 		
 		// The KanbanBoard component already mutated the columns.
@@ -77,11 +77,13 @@
 		// await fetch('/api/cards/move', { method: 'POST', body: JSON.stringify({ cardId: card.id, fromId: from.id, toId: to.id }) })
 	}
 
-	function handleAddCard(col: KanbanColumn) {
+	function handleAddCard(col: KanbanColumnType) {
+		// Note: Using prompt() for demo - use proper form UI in production
 		const cardTitle = prompt(`Add a new card to "${col.title}":`);
 		if (!cardTitle?.trim()) return;
 
-		const newCard: KanbanCard = {
+		const newCard: KanbanCardType = {
+			// Note: Using timestamp for demo - use proper ID generation in production
 			id: Date.now(),
 			title: cardTitle.trim(),
 			tags: ['new']

@@ -79,4 +79,4 @@ export { span } from "../typography/span";
 
 // extend
 export { virtualList } from "$lib/virtuallist";
-export { kanbanBoard } from "$lib/kanban/theme";
+export { kanbanBoard, kanbanCard } from "$lib/kanban/theme";
