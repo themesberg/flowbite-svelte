@@ -1,10 +1,9 @@
-<script lang="ts">
+<script lang="ts" generics="T">
   import type { VirtualListProps } from "$lib/types";
   import { virtualList } from "./theme";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  // Destructure props with defaults
   let {
     items = [],
     minItemHeight = 50,
@@ -13,9 +12,10 @@
     getItemHeight,
     scrollToIndex, // Bind function to parent
     children,
+    contained = false,
     class: className,
     classes
-  }: VirtualListProps = $props();
+  }: VirtualListProps<T> = $props();
 
   const theme = getTheme("virtualList");
 
@@ -23,7 +23,11 @@
   let scrollTop = $state(0);
   let rafId: number | undefined;
 
-  const styles = virtualList();
+  const styles = virtualList({ contained });
+
+  const containStyle = $derived(
+    contained && !classes?.item ? "contain: layout style paint;" : ""
+  );
 
   // Total height of all items
   const totalHeight = $derived.by(() => items.reduce((sum: number, item, i) => sum + (getItemHeight ? getItemHeight(item, i) : (minItemHeight ?? 50)), 0));
@@ -94,7 +98,12 @@
   <div class={styles.spacer({ class: clsx(theme?.spacer, classes?.spacer) })} style={`height:${totalHeight}px;`}>
     <div class={styles.content({ class: clsx(theme?.content, classes?.content) })} style={`transform:translateY(${offsetY}px); will-change:transform;`}>
       {#each visibleItems as item, i (startIndex + i)}
-        {@render children?.(item, startIndex + i)}
+         <div 
+          class={styles.item({ class: clsx(theme?.item, classes?.item) })}
+          style={containStyle}
+        >
+          {@render children?.(item, startIndex + i)}
+        </div>
       {/each}
     </div>
   </div>
