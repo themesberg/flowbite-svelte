@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.20.1
+
+### Patch Changes
+
+- fix: VirtualList and update docs
+
 ## 1.20.0
 
 ### Minor Changes

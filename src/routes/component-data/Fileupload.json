@@ -2,7 +2,7 @@
   "name": "Fileupload",
   "type": {
     "name": "FileuploadProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L710"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L744"
   },
   "props": [
     ["files", "$bindable()"],

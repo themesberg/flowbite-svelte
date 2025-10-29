@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { VirtualList } from 'flowbite-svelte';
+  import { VirtualList } from "flowbite-svelte";
   const items = Array.from({ length: 5000 }, (_, i) => `Item ${i + 1}`);
 </script>
 

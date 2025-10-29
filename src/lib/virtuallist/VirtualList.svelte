@@ -15,7 +15,7 @@
     ariaLabel = "Virtual scrolling list",
     class: className,
     classes,
-    contained = false,
+    contained = false
   }: VirtualListProps<T> = $props();
 
   const theme = getTheme("virtualList");
@@ -106,17 +106,18 @@
   });
 </script>
 
-<div bind:this={container} onscroll={handleScroll} role="list" aria-label={ariaLabel} class={styles.container({ class: clsx(theme?.container, className) })} style={`height:${height}px; position:relative;`}>
+<div
+  bind:this={container}
+  onscroll={handleScroll}
+  role="list"
+  aria-label={ariaLabel}
+  class={styles.container({ class: clsx(theme?.container, className) })}
+  style={`height:${height}px; position:relative;`}
+>
   <div class={styles.spacer({ class: clsx(theme?.spacer, classes?.spacer) })} style={`height:${totalHeight}px;`}>
     <div class={styles.content({ class: clsx(theme?.content, classes?.content) })} style={`transform:translateY(${offsetY}px); will-change:transform;`}>
       {#each visibleItems as item, i (startIndex + i)}
-         <div 
-          role="listitem"
-          aria-setsize={items.length}
-          aria-posinset={startIndex + i + 1}
-          class={styles.item({ class: clsx(theme?.item, classes?.item) })}
-          style={containStyle}
-        >
+        <div role="listitem" aria-setsize={items.length} aria-posinset={startIndex + i + 1} class={styles.item({ class: clsx(theme?.item, classes?.item) })} style={containStyle}>
           {@render children?.(item, startIndex + i)}
         </div>
       {/each}
