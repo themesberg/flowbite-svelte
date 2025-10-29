@@ -2090,6 +2090,7 @@ export interface VirtualListProps<T = unknown> extends VirtualListVariants, Omit
   getItemHeight?: (item: T, index: number) => number;
   scrollToIndex?: (fn: (index: number) => void) => void;
   contained?: boolean;
+  ariaLabel?: string;
   class?: ClassValue | null;
 }
 

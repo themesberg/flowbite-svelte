@@ -10,11 +10,12 @@
     height = 400,
     overscan = 5,
     getItemHeight,
-    scrollToIndex, // Bind function to parent
+    scrollToIndex,
     children,
-    contained = false,
+    ariaLabel = "Virtual scrolling list",
     class: className,
-    classes
+    classes,
+    contained = false,
   }: VirtualListProps<T> = $props();
 
   const theme = getTheme("virtualList");
@@ -23,12 +24,18 @@
   let scrollTop = $state(0);
   let rafId: number | undefined;
 
+  /**
+   * Whether to apply CSS containment for performance optimization.
+   * Defaults to false. This prop value takes precedence over any theme defaults.
+   * @default false
+   */
   const styles = virtualList({ contained });
 
   const containStyle = $derived.by(() => {
     if (!contained) return "";
-    const itemClasses = (classes?.item ?? "").toString();
-    const hasCustomContain = itemClasses.includes("[contain:");
+    // Flatten potential string | string[] | Record<string, boolean> via clsx
+    const itemClasses = clsx(classes?.item);
+    const hasCustomContain = /\[contain:[^\]]+\]/.test(itemClasses);
     return hasCustomContain ? "" : "contain: layout style paint;";
   });
 
@@ -99,6 +106,7 @@
   });
 </script>
 
+<<<<<<< HEAD
 <div
   bind:this={container}
   onscroll={handleScroll}
@@ -107,11 +115,16 @@
   class={styles.container({ class: clsx(theme?.container, className) })}
   style={`height:${height}px; position:relative;`}
 >
+=======
+<div bind:this={container} onscroll={handleScroll} role="list" aria-label={ariaLabel} class={styles.container({ class: clsx(theme?.container, className) })} style={`height:${height}px; position:relative;`}>
+>>>>>>> 0c73137dd (docs: for contained document which source wins)
   <div class={styles.spacer({ class: clsx(theme?.spacer, classes?.spacer) })} style={`height:${totalHeight}px;`}>
     <div class={styles.content({ class: clsx(theme?.content, classes?.content) })} style={`transform:translateY(${offsetY}px); will-change:transform;`}>
       {#each visibleItems as item, i (startIndex + i)}
          <div 
           role="listitem"
+          aria-setsize={items.length}
+          aria-posinset={startIndex + i + 1}
           class={styles.item({ class: clsx(theme?.item, classes?.item) })}
           style={containStyle}
         >
@@ -135,6 +148,8 @@
 @prop getItemHeight
 @prop scrollToIndex
 @prop children
+@prop ariaLabel = "Virtual scrolling list"
+@prop contained = false
 @prop class: className
 @prop classes
 -->
