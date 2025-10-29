@@ -2080,14 +2080,17 @@ export interface ArrowProps {
   class?: ClassValue | null;
 }
 
+// VirtualList
 export interface VirtualListProps<T = unknown> extends VirtualListVariants, Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   children: Snippet<[item: T, index: number]>;
   items?: T[];
   minItemHeight?: number;
   height?: number;
-  overscan?: number; //number of extra items you render above and below the currently visible window. When the user scrolls a bit, the new items are already rendered, avoiding flicker or empty space.
+  overscan?: number;
   getItemHeight?: (item: T, index: number) => number;
   scrollToIndex?: (fn: (index: number) => void) => void;
+  contained?: boolean;
+  ariaLabel?: string;
   class?: ClassValue | null;
 }
 

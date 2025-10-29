@@ -1,21 +1,22 @@
-<script lang="ts">
+<script lang="ts" generics="T">
   import type { VirtualListProps } from "$lib/types";
   import { virtualList } from "./theme";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  // Destructure props with defaults
   let {
     items = [],
     minItemHeight = 50,
     height = 400,
     overscan = 5,
     getItemHeight,
-    scrollToIndex, // Bind function to parent
+    scrollToIndex,
     children,
+    ariaLabel = "Virtual scrolling list",
     class: className,
-    classes
-  }: VirtualListProps = $props();
+    classes,
+    contained = false,
+  }: VirtualListProps<T> = $props();
 
   const theme = getTheme("virtualList");
 
@@ -23,17 +24,32 @@
   let scrollTop = $state(0);
   let rafId: number | undefined;
 
-  const styles = virtualList();
+  /**
+   * Whether to apply CSS containment for performance optimization.
+   * Defaults to false. This prop value takes precedence over any theme defaults.
+   * @default false
+   */
+  const styles = virtualList({ contained });
+
+  const containStyle = $derived.by(() => {
+    if (!contained) return "";
+    // Flatten potential string | string[] | Record<string, boolean> via clsx
+    const itemClasses = clsx(classes?.item);
+    const hasCustomContain = /\[contain:[^\]]+\]/.test(itemClasses);
+    return hasCustomContain ? "" : "contain: layout style paint;";
+  });
 
   // Total height of all items
   const totalHeight = $derived.by(() => items.reduce((sum: number, item, i) => sum + (getItemHeight ? getItemHeight(item, i) : (minItemHeight ?? 50)), 0));
 
+  // Sanitize and use the safe value in index calculations.
+  const overscanSafe = $derived(Math.max(0, Math.floor(overscan ?? 0)));
   // Find the first visible index
   const startIndex = $derived.by(() => {
     let y = 0;
     for (let i = 0; i < items.length; i++) {
       const h = getItemHeight ? getItemHeight(items[i], i) : (minItemHeight ?? 50);
-      if (y + h > scrollTop) return Math.max(0, i - overscan);
+      if (y + h > scrollTop) return Math.max(0, i - overscanSafe);
       y += h;
     }
     return 0;
@@ -45,7 +61,7 @@
     for (let i = 0; i < items.length; i++) {
       const h = getItemHeight ? getItemHeight(items[i], i) : (minItemHeight ?? 50);
       y += h;
-      if (y >= scrollTop + height) return Math.min(items.length, i + overscan + 1);
+      if (y >= scrollTop + height) return Math.min(items.length, i + overscanSafe + 1);
     }
     return items.length;
   });
@@ -90,18 +106,19 @@
   });
 </script>
 
-<div
-  bind:this={container}
-  onscroll={handleScroll}
-  role="list"
-  aria-label="Virtual scrolling list"
-  class={styles.container({ class: clsx(theme?.container, className) })}
-  style={`height:${height}px; position:relative;`}
->
+<div bind:this={container} onscroll={handleScroll} role="list" aria-label={ariaLabel} class={styles.container({ class: clsx(theme?.container, className) })} style={`height:${height}px; position:relative;`}>
   <div class={styles.spacer({ class: clsx(theme?.spacer, classes?.spacer) })} style={`height:${totalHeight}px;`}>
     <div class={styles.content({ class: clsx(theme?.content, classes?.content) })} style={`transform:translateY(${offsetY}px); will-change:transform;`}>
       {#each visibleItems as item, i (startIndex + i)}
-        {@render children?.(item, startIndex + i)}
+         <div 
+          role="listitem"
+          aria-setsize={items.length}
+          aria-posinset={startIndex + i + 1}
+          class={styles.item({ class: clsx(theme?.item, classes?.item) })}
+          style={containStyle}
+        >
+          {@render children?.(item, startIndex + i)}
+        </div>
       {/each}
     </div>
   </div>
@@ -120,6 +137,8 @@
 @prop getItemHeight
 @prop scrollToIndex
 @prop children
+@prop ariaLabel = "Virtual scrolling list"
+@prop contained = false
 @prop class: className
 @prop classes
 -->

@@ -26,14 +26,14 @@ description: A performant Svelte 5 virtual list component that efficiently rende
 ## Default single and multiple
 Basic virtual list displaying 5,000 items with variable text lengths. Only visible items are rendered for optimal performance.
 
-```svelte example class="flex flex-col space-y-4"
+```svelte example
 {#include Default.svelte}
 ```
 
 ## Jump to item
 Demonstrates programmatic scrolling with buttons to jump to specific items by index.
 
-```svelte example class="flex flex-col space-y-4"
+```svelte example
 {#include Jump.svelte}
 ```
 
@@ -41,7 +41,7 @@ Demonstrates programmatic scrolling with buttons to jump to specific items by in
 
 Dynamically adjust item heights based on content using the `getItemHeight` prop.
 
-```svelte example class="flex flex-col space-y-4"
+```svelte example
 {#include VariableHeights.svelte}
 ```
 
@@ -49,7 +49,7 @@ Dynamically adjust item heights based on content using the `getItemHeight` prop.
 
 Apply custom styles, alternating row colors, and hover effects for enhanced visual design.
 
-```svelte example class="flex flex-col space-y-4"
+```svelte example
 {#include CustomStyling.svelte}
 ```
 
@@ -57,7 +57,7 @@ Apply custom styles, alternating row colors, and hover effects for enhanced visu
 
 Handle empty states and loading indicators while data is being fetched.
 
-```svelte example class="flex flex-col space-y-4"
+```svelte example
 {#include LoadingState.svelte}
 ```
 
@@ -65,7 +65,7 @@ Handle empty states and loading indicators while data is being fetched.
 
 Add checkboxes, buttons, and other interactive elements to virtual list items.
 
-```svelte example class="flex flex-col space-y-4"
+```svelte example
 {#include InteractiveItems.svelte}
 ```
 
@@ -73,6 +73,31 @@ Add checkboxes, buttons, and other interactive elements to virtual list items.
 
 Demonstrates smooth scrolling and rendering performance with 100,000 items.
 
-```svelte example class="flex flex-col space-y-4"
+```svelte example
 {#include LargeDataset.svelte}
+```
+
+## CSS containment to allow better optimization
+CSS containment tells the browser that an element's internal layout is independent from the rest of the page, allowing better optimization and prevents layout thrashing when items are added/removed from the virtualized viewport. The browser can skip rendering work for contained elements that are off-screen.
+
+### No containment
+
+```svelte example
+{#include NoContainment.svelte}
+```
+
+### With containment
+
+Note: Containment may change behavior of position: sticky, overflow, and z-index stacking contexts inside items. 
+
+Enable with `<VirtualList contained …>` or override via `classes.item`. 
+
+```svelte example class="h-[600px]"
+{#include OptinContainment.svelte}
+```
+
+### Override via classes
+
+```svelte example
+{#include ClassOverride.svelte}
 ```
