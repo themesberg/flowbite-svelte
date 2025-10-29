@@ -36,7 +36,7 @@
     
     columns = columns.map((column) =>
       column.id === col.id
-        ? { ...column, cards: [...column.cards, { id: Date.now(), title: title.trim() }] }
+        ? { ...column, cards: [...column.cards, { id: crypto.randomUUID(), title: title.trim() }] }
         : column
     );
   }

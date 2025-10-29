@@ -19,7 +19,7 @@
   });
 
   async function handleMove(card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) {
-    // Trigger reactivity (card already moved by KanbanBoard component)
+    // Trigger reactivity to reflect the card move performed by KanbanBoard
     columns = [...columns];
 
     try {

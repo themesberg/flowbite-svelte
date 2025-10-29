@@ -45,9 +45,9 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
 ## With API Integration (Demo Only)
 
 **⚠️ Note:** The API endpoints in this example use simple in-memory storage for demonstration purposes. This is **not suitable for production** as it has limitations:
- - Data resets on server restart
- - Not safe for concurrent requests
- - Doesn't scale across multiple server instances
+- Data resets on server restart
+- Not safe for concurrent requests
+- Doesn't scale across multiple server instances
 
 For production, use a proper database (PostgreSQL, MongoDB, Supabase, etc.) with proper transaction handling.
 
