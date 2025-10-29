@@ -25,7 +25,7 @@
 
   const styles = virtualList({ contained });
 
-  const containStyle = $derived(() => {
+  const containStyle = $derived.by(() => {
     if (!contained) return "";
     const itemClasses = (classes?.item ?? "").toString();
     const hasCustomContain = itemClasses.includes("[contain:");
