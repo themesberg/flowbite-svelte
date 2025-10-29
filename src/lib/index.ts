@@ -88,3 +88,4 @@ export * from "./types";
 
 // extend
 export * from "./virtuallist";
+export * from "./kanban";

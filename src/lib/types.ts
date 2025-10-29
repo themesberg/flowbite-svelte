@@ -84,6 +84,7 @@ import type { ApexOptions } from "apexcharts";
 import type { ButtonToggleVariants } from "$lib/forms/button-toggle/theme";
 import type { TagsVariants } from "$lib/forms/tags/theme";
 import type { VirtualListVariants } from "$lib/virtuallist/theme";
+import type { KanbanBoardVariants, KanbanCardVariants } from "$lib/kanban/theme";
 
 // utils
 import type { CloseButtonVariants } from "$lib/utils/theme";
@@ -2053,5 +2054,35 @@ export interface VirtualListProps<T = unknown> extends VirtualListVariants, Omit
   overscan?: number; //number of extra items you render above and below the currently visible window. When the user scrolls a bit, the new items are already rendered, avoiding flicker or empty space.
   getItemHeight?: (item: T, index: number) => number;
   scrollToIndex?: (fn: (index: number) => void) => void;
+  class?: ClassValue | null;
+}
+
+// Kanbanboard
+export interface KanbanCardType {
+  id: string | number;
+  title: string;
+  description?: string;
+  tags?: string[];
+}
+
+export interface KanbanColumnType {
+  id: string | number;
+  title: string;
+  cards: KanbanCardType[];
+  color?: string;
+}
+
+export interface KanbanBoardProps extends KanbanBoardVariants, HTMLAttributes<HTMLDivElement> {
+  columns?: KanbanColumnType[];
+  onMove?: (card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) => void;
+  onAddCard?: (col: KanbanColumnType) => void;
+  class?: ClassValue | null;
+}
+
+export interface KanbanCardProps extends KanbanCardVariants, HTMLAttributes<HTMLElement> {
+  card: KanbanCardType;
+  isDragging?: boolean;
+  onDragStart?: (card: KanbanCardType, ev?: DragEvent) => void;
+  onDragEnd?: (ev?: DragEvent) => void;
   class?: ClassValue | null;
 }
