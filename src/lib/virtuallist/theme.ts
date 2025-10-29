@@ -13,7 +13,7 @@ export const virtualList = tv({
   },
   variants: {
     contained: {
-      true: {},
+      true: {item: "[contain:layout_style_paint]"},
       false: {}
     }
   },

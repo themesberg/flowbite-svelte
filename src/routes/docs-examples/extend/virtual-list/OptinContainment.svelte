@@ -30,6 +30,8 @@
       <img 
         src={item.thumbnail} 
         alt={item.title}
+        loading="lazy"
+        decoding="async"
         class="w-full h-48 object-cover rounded-md mb-3"
       />
       <h3 class="text-xl font-bold mb-2">{item.title}</h3>

@@ -25,19 +25,24 @@
 
   const styles = virtualList({ contained });
 
-  const containStyle = $derived(
-    contained && !classes?.item ? "contain: layout style paint;" : ""
-  );
+  const containStyle = $derived(() => {
+    if (!contained) return "";
+    const itemClasses = (classes?.item ?? "").toString();
+    const hasCustomContain = itemClasses.includes("[contain:");
+    return hasCustomContain ? "" : "contain: layout style paint;";
+  });
 
   // Total height of all items
   const totalHeight = $derived.by(() => items.reduce((sum: number, item, i) => sum + (getItemHeight ? getItemHeight(item, i) : (minItemHeight ?? 50)), 0));
 
+  // Sanitize once and use the safe value in index calculations.
+  const overscanSafe = Math.max(0, Math.floor(overscan ?? 0));
   // Find the first visible index
   const startIndex = $derived.by(() => {
     let y = 0;
     for (let i = 0; i < items.length; i++) {
       const h = getItemHeight ? getItemHeight(items[i], i) : (minItemHeight ?? 50);
-      if (y + h > scrollTop) return Math.max(0, i - overscan);
+      if (y + h > scrollTop) return Math.max(0, i - overscanSafe);
       y += h;
     }
     return 0;
@@ -49,7 +54,7 @@
     for (let i = 0; i < items.length; i++) {
       const h = getItemHeight ? getItemHeight(items[i], i) : (minItemHeight ?? 50);
       y += h;
-      if (y >= scrollTop + height) return Math.min(items.length, i + overscan + 1);
+      if (y >= scrollTop + height) return Math.min(items.length, i + overscanSafe + 1);
     }
     return items.length;
   });
@@ -99,6 +104,7 @@
     <div class={styles.content({ class: clsx(theme?.content, classes?.content) })} style={`transform:translateY(${offsetY}px); will-change:transform;`}>
       {#each visibleItems as item, i (startIndex + i)}
          <div 
+          role="listitem"
           class={styles.item({ class: clsx(theme?.item, classes?.item) })}
           style={containStyle}
         >

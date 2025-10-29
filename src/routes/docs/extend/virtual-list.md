@@ -88,6 +88,10 @@ CSS containment tells the browser that an element's internal layout is independe
 
 ### With containment
 
+Note: Containment may change behavior of position: sticky, overflow, and z-index stacking contexts inside items. 
+
+Enable with `<VirtualList contained …>` or override via `classes.item`. 
+
 ```svelte example class="h-[600px]"
 {#include OptinContainment.svelte}
 ```

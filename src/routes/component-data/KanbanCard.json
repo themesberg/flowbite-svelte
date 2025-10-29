@@ -1,0 +1,14 @@
+{
+  "name": "KanbanCard",
+  "type": {
+    "name": "KanbanCardProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2118"
+  },
+  "props": [
+    ["card", ""],
+    ["isDragging", "false"],
+    ["onDragStart", ""],
+    ["onDragEnd", ""],
+    ["classes", ""]
+  ]
+}
