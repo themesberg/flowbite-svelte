@@ -68,7 +68,7 @@
 
 <div {...restProps} class={styles.container({ class: clsx(theme?.container, className) })}>
   {#each columns as col (col.id)}
-    <div role="group" aria-label={`${col.title} column drop zone`} class={styles.column({ isDragOver: dragOverColumnId === col.id, class: clsx(theme?.column, classes?.column) })} ondragover={(e) => handleDragOver(e, col.id)} ondragleave={(e) => handleDragLeave(e)} ondrop={(e) => handleDrop(e, col.id)} style={col.color ? `--column-color: ${col.color}` : ''}>
+    <div role="group" aria-label={`${col.title} column drop zone`} class={styles.column({ isDragOver: dragOverColumnId === col.id, class: clsx(theme?.column, classes?.column) })} ondragover={(e) => handleDragOver(e, col.id)} ondragleave={(e) => handleDragLeave(e)} ondrop={(e) => handleDrop(e, col.id)} style={col.color ? `border-top: 4px solid ${col.color}` : ''}>
       <h2 class={styles.columnTitle({ class: clsx(theme?.columnTitle, classes?.columnTitle) })}>{col.title}</h2>
 
       <div class={styles.cardList({ class: clsx(theme?.cardList, classes?.cardList) })} role="list" aria-label={`${col.title} cards`}>

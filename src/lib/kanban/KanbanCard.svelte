@@ -22,8 +22,8 @@
   role="listitem"
   draggable="true"
   {...restProps}
-  ondragstart={() => onDragStart?.(card)}
-  ondragend={() => onDragEnd?.()}
+  ondragstart={(ev) => onDragStart?.(card, ev)}
+  ondragend={(ev) => onDragEnd?.(ev)}
   tabindex="0"
   aria-grabbed={isDragging}
   aria-label={card.title}
