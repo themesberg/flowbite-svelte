@@ -42,8 +42,8 @@
   // Total height of all items
   const totalHeight = $derived.by(() => items.reduce((sum: number, item, i) => sum + (getItemHeight ? getItemHeight(item, i) : (minItemHeight ?? 50)), 0));
 
-  // Sanitize once and use the safe value in index calculations.
-  const overscanSafe = Math.max(0, Math.floor(overscan ?? 0));
+  // Sanitize and use the safe value in index calculations.
+  const overscanSafe = $derived(Math.max(0, Math.floor(overscan ?? 0)));
   // Find the first visible index
   const startIndex = $derived.by(() => {
     let y = 0;
