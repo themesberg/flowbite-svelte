@@ -106,18 +106,7 @@
   });
 </script>
 
-<<<<<<< HEAD
-<div
-  bind:this={container}
-  onscroll={handleScroll}
-  role="list"
-  aria-label="Virtual scrolling list"
-  class={styles.container({ class: clsx(theme?.container, className) })}
-  style={`height:${height}px; position:relative;`}
->
-=======
 <div bind:this={container} onscroll={handleScroll} role="list" aria-label={ariaLabel} class={styles.container({ class: clsx(theme?.container, className) })} style={`height:${height}px; position:relative;`}>
->>>>>>> 0c73137dd (docs: for contained document which source wins)
   <div class={styles.spacer({ class: clsx(theme?.spacer, classes?.spacer) })} style={`height:${totalHeight}px;`}>
     <div class={styles.content({ class: clsx(theme?.content, classes?.content) })} style={`transform:translateY(${offsetY}px); will-change:transform;`}>
       {#each visibleItems as item, i (startIndex + i)}
