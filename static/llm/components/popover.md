@@ -134,7 +134,8 @@ Use this example to trigger a popover component with detailed information and an
 
 <p class="font-light text-gray-500 dark:text-gray-400">
   Due to its central geographic location in Southern Europe, <a href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline" id="href_1">Italy</a>
-  has historically been home to myriad peoples and cultures. In addition to the various ancient peoples dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians founded colonies mostly in insular Italy
+  has historically been home to myriad peoples and cultures. In addition to the various ancient peoples dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic
+  peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians founded colonies mostly in insular Italy
 </p>
 <Popover triggeredBy="#href_1" class="w-96 text-sm font-light" defaultClass="p-0">
   <div class="grid grid-cols-5">
@@ -143,7 +144,10 @@ Use this example to trigger a popover component with detailed information and an
         <h3 class="font-semibold text-gray-900 dark:text-white">
           About Italy
           <span>
-            <p class="text-gray-500 dark:text-gray-500">Italy is located in the middle of the Mediterranean Sea, in Southern Europe it is also considered part of Western Europe. A unitary parliamentary republic with Rome as its capital and largest city.</p>
+            <p class="text-gray-500 dark:text-gray-500">
+              Italy is located in the middle of the Mediterranean Sea, in Southern Europe it is also considered part of Western Europe. A unitary parliamentary republic with Rome as its capital and
+              largest city.
+            </p>
             <a href="/" class="text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700 flex items-center font-medium">
               Read more <ChevronRightOutline class="text-primary-600 dark:text-primary-500 ms-1.5 h-2 w-2" />
             </a>
@@ -301,7 +305,9 @@ Set the position of the popover component relative to the trigger element by usi
   <Button id="placement-right">Right popover</Button>
 </div>
 <Button id="placement-bottom">Bottom popover</Button>
-<Popover triggeredBy="[id^='placement-']" placement={placement as PopoverProps["placement"]} class="w-64 text-sm font-light " title="Popover {placement}" {onbeforetoggle}>And here's some amazing content. It's very engaging. Right?</Popover>
+<Popover triggeredBy="[id^='placement-']" placement={placement as PopoverProps["placement"]} class="w-64 text-sm font-light " title="Popover {placement}" {onbeforetoggle}>
+  And here's some amazing content. It's very engaging. Right?
+</Popover>
 ```
 
 ## Triggering
@@ -387,7 +393,7 @@ If you need the popover to be attached to the other element then the triggering 
 
 #### Types
 
-[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1204)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1205)
 
 #### Props
 

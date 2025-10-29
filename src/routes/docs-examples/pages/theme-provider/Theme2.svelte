@@ -1,5 +1,23 @@
 <script lang="ts">
-  import { ThemeProvider, Accordion, AccordionItem, Alert, Avatar, Badge, Heading, Banner, P, BottomNav, BottomNavItem, Breadcrumb, BreadcrumbItem, ButtonGroup, Button, GradientButton, Card } from "$lib";
+  import {
+    ThemeProvider,
+    Accordion,
+    AccordionItem,
+    Alert,
+    Avatar,
+    Badge,
+    Heading,
+    Banner,
+    P,
+    BottomNav,
+    BottomNavItem,
+    Breadcrumb,
+    BreadcrumbItem,
+    ButtonGroup,
+    Button,
+    GradientButton,
+    Card
+  } from "$lib";
   // theme types
   import type { ThemeConfig } from "$lib";
 
@@ -85,11 +103,17 @@
         <P>Content</P>
       </ThemeProvider>
     </Banner>
-    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde ratione voluptatibus ex nobis nostrum eum aliquid sit vitae odio tempora a impedit ducimus omnis, itaque illo? Illo, voluptas natus!</P>
+    <P>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde ratione voluptatibus ex nobis nostrum eum aliquid sit vitae odio tempora a impedit ducimus omnis, itaque illo? Illo,
+      voluptas natus!
+    </P>
   </div>
   <Heading tag="h2">Bottom Navigation</Heading>
   <div class="relative h-96 w-96 border p-4">
-    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde ratione voluptatibus ex nobis nostrum eum aliquid sit vitae odio tempora a impedit ducimus omnis, itaque illo? Illo, voluptas natus!</P>
+    <P>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde ratione voluptatibus ex nobis nostrum eum aliquid sit vitae odio tempora a impedit ducimus omnis, itaque illo? Illo,
+      voluptas natus!
+    </P>
     <BottomNav position="absolute" classes={{ inner: "grid-cols-4" }}>
       <BottomNavItem btnName="Home">
         <HomeSolid />

@@ -2,4 +2,6 @@
   import { Blockquote } from "flowbite-svelte";
 </script>
 
-<Blockquote alignment="right" size="xl">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</Blockquote>
+<Blockquote alignment="right" size="xl">
+  "Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."
+</Blockquote>

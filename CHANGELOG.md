@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.20.0
+
+### Minor Changes
+
+- feat: kanban board
+
 ## 1.19.1
 
 ### Patch Changes

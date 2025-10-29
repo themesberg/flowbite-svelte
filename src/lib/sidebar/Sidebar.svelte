@@ -8,7 +8,29 @@
   import { fly } from "svelte/transition";
   import { sidebar } from "./theme";
 
-  let { children, isOpen = false, closeSidebar, isSingle = true, breakpoint = "md", alwaysOpen = false, position = "fixed", activateClickOutside = true, backdrop = true, backdropClass, transition = fly, params, divClass, ariaLabel, nonActiveClass, activeClass, activeUrl = "", class: className, classes, disableBreakpoints = false, ...restProps }: SidebarProps = $props();
+  let {
+    children,
+    isOpen = false,
+    closeSidebar,
+    isSingle = true,
+    breakpoint = "md",
+    alwaysOpen = false,
+    position = "fixed",
+    activateClickOutside = true,
+    backdrop = true,
+    backdropClass,
+    transition = fly,
+    params,
+    divClass,
+    ariaLabel,
+    nonActiveClass,
+    activeClass,
+    activeUrl = "",
+    class: className,
+    classes,
+    disableBreakpoints = false,
+    ...restProps
+  }: SidebarProps = $props();
 
   warnThemeDeprecation("Sidebar", { backdropClass, divClass, nonActiveClass, activeClass }, { backdropClass: "backdrop", divClass: "div", nonActiveClass: "nonactive", activeClass: "active" });
   const styling = $derived(
@@ -81,7 +103,13 @@
         <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full"></div>
       {/if}
     {/if}
-    <aside use:trapFocus={!isLargeScreen && isOpen && !alwaysOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} transition:transition={!alwaysOpen ? transitionParams : undefined} {...restProps} class={base({ class: clsx(theme?.base, className) })} aria-label={ariaLabel}>
+    <aside
+      use:trapFocus={!isLargeScreen && isOpen && !alwaysOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null}
+      transition:transition={!alwaysOpen ? transitionParams : undefined}
+      {...restProps}
+      class={base({ class: clsx(theme?.base, className) })}
+      aria-label={ariaLabel}
+    >
       <div class={div({ class: clsx(theme?.base, styling.div) })}>
         {@render children()}
       </div>
@@ -99,7 +127,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1351)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1352)
 ## Props
 @prop children
 @prop isOpen = false

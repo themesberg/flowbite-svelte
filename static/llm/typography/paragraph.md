@@ -12,8 +12,14 @@ Use this example of a paragraph element to use inside article content or a landi
   import { P } from "flowbite-svelte";
 </script>
 
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-<P weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+  Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have
+  richer contextual information to rapidly respond to requests, incidents, and changes.
+</P>
+<P weight="light" color="text-gray-500 dark:text-gray-400">
+  Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete
+  audit trail for every change.
+</P>
 ```
 
 ## contenteditable
@@ -37,8 +43,13 @@ The leading text can be used as the first paragraph inside an article content pa
   import { P } from "flowbite-svelte";
 </script>
 
-<P class="mb-3 md:text-xl" weight="light" size="lg" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work and deploy.</P>
-<P weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
+<P class="mb-3 md:text-xl" weight="light" size="lg" color="text-gray-500 dark:text-gray-400">
+  Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work and deploy.
+</P>
+<P weight="light" color="text-gray-500 dark:text-gray-400">
+  Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have
+  richer contextual information to rapidly respond to requests, incidents, and changes.
+</P>
 ```
 
 ## First letter
@@ -50,8 +61,14 @@ Use `firstUpper` prop to highlight the first letter of the paragraph, often used
   import { P } from "flowbite-svelte";
 </script>
 
-<P class="mb-3" color="text-gray-500 dark:text-gray-400" firstUpper>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-<P weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+<P class="mb-3" color="text-gray-500 dark:text-gray-400" firstUpper>
+  Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have
+  richer contextual information to rapidly respond to requests, incidents, and changes.
+</P>
+<P weight="light" color="text-gray-500 dark:text-gray-400">
+  Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete
+  audit trail for every change.
+</P>
 ```
 
 ## Paragraph link
@@ -64,7 +81,8 @@ This example can be used to add a custom styled link element inside the paragrap
 </script>
 
 <P weight="light" color="text-gray-500 dark:text-gray-400">
-  Track work across the enterprise through an open, collaborative platform. <A href="/">Link issues across Jira</A> and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.
+  Track work across the enterprise through an open, collaborative platform. <A href="/">Link issues across Jira</A> and ingest data from other software development tools, so your IT support and operations
+  teams have richer contextual information to rapidly respond to requests, incidents, and changes.
 </P>
 ```
 
@@ -124,7 +142,9 @@ Get started with this example to show a popover with extra information inside pa
 </script>
 
 <P weight="light" color="text-gray-500 dark:text-gray-400">
-  Due to its central geographic location in Southern Europe, <A href="/" id="popover-image">Italy</A> has historically been home to myriad peoples and cultures. In addition to the various ancient peoples dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians founded colonies mostly in insular Italy
+  Due to its central geographic location in Southern Europe, <A href="/" id="popover-image">Italy</A> has historically been home to myriad peoples and cultures. In addition to the various ancient peoples
+  dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians
+  founded colonies mostly in insular Italy
 </P>
 <Popover triggeredBy="#popover-image" class="w-96 text-sm font-light" defaultClass="">
   <div class="grid grid-cols-5">
@@ -153,8 +173,14 @@ Use this example to show multiple paragraphs on a single line.
   import { P } from "flowbite-svelte";
 </script>
 
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+  Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have
+  richer contextual information to rapidly respond to requests, incidents, and changes.
+</P>
+<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+  Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete
+  audit trail for every change.
+</P>
 ```
 
 ### Two columns even
@@ -166,12 +192,24 @@ Use this example to separate paragraphs into two columns for better readability.
   import { P, Layout } from "flowbite-svelte";
 </script>
 
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
+<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+  Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have
+  richer contextual information to rapidly respond to requests, incidents, and changes.
+</P>
 <Layout class="gap-6">
-  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+    Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams
+    have richer contextual information to rapidly respond to requests, incidents, and changes.
+  </P>
+  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+    Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete
+    audit trail for every change.
+  </P>
 </Layout>
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+  Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete
+  audit trail for every change.
+</P>
 ```
 
 ### Three columns even
@@ -183,13 +221,28 @@ This example can be used to separate paragraphs into three separate columns.
   import { P, Layout } from "flowbite-svelte";
 </script>
 
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
+<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+  Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have
+  richer contextual information to rapidly respond to requests, incidents, and changes.
+</P>
 <Layout class="grid-cols-1 gap-6 sm:grid-cols-3">
-  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
-  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+    Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams
+    have richer contextual information to rapidly respond to requests, incidents, and changes.
+  </P>
+  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+    Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete
+    audit trail for every change.
+  </P>
+  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+    Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete
+    audit trail for every change.
+  </P>
 </Layout>
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+  Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete
+  audit trail for every change.
+</P>
 ```
 
 ### Two columns uneven
@@ -201,15 +254,30 @@ Use this example to separate paragraphs into two uneven columns.
   import { P, Layout } from "flowbite-svelte";
 </script>
 
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
+<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+  Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have
+  richer contextual information to rapidly respond to requests, incidents, and changes.
+</P>
 <Layout class="grid-cols-1 gap-6 sm:grid-cols-3">
   <div class="col-span-2">
-    <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-    <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+    <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+      Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams
+      have richer contextual information to rapidly respond to requests, incidents, and changes.
+    </P>
+    <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+      Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete
+      audit trail for every change.
+    </P>
   </div>
-  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+    Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete
+    audit trail for every change.
+  </P>
 </Layout>
-<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+<P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
+  Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete
+  audit trail for every change.
+</P>
 ```
 
 ## Text alignment
@@ -225,7 +293,10 @@ The default alignment of the paragraph is to the left side and you can use the `
   import { P } from "flowbite-svelte";
 </script>
 
-<P align="left">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
+<P align="left">
+  Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have
+  richer contextual information to rapidly respond to requests, incidents, and changes.
+</P>
 ```
 
 ### Center
@@ -237,7 +308,10 @@ Use the `align="center"` prop to align the paragraph text to the center.
   import { P } from "flowbite-svelte";
 </script>
 
-<P align="center">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
+<P align="center">
+  Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have
+  richer contextual information to rapidly respond to requests, incidents, and changes.
+</P>
 ```
 
 ### Right
@@ -249,7 +323,10 @@ Use the `align="right"` prop to align the paragraph text the right side of the p
   import { P } from "flowbite-svelte";
 </script>
 
-<P align="right">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
+<P align="right">
+  Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have
+  richer contextual information to rapidly respond to requests, incidents, and changes.
+</P>
 ```
 
 ## Component data

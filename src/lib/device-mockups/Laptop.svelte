@@ -6,7 +6,11 @@
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, ...restProps }: LaptopProps = $props();
 
-  warnThemeDeprecation("Laptop", { divClass, div2Class, div3Class, div4Class }, { divClass: "class", div2Class: "top", div3Class: "lefttop", div4Class: "leftBot", div5Class: "right", div6Class: "slot" });
+  warnThemeDeprecation(
+    "Laptop",
+    { divClass, div2Class, div3Class, div4Class },
+    { divClass: "class", div2Class: "top", div3Class: "lefttop", div4Class: "leftBot", div5Class: "right", div6Class: "slot" }
+  );
   const styling = $derived(
     classes ?? {
       inner: div2Class,
@@ -36,7 +40,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L505)
+[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L506)
 ## Props
 @prop children
 @prop class: className

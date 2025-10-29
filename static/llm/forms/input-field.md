@@ -141,7 +141,9 @@ Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
   {#snippet header()}
     Form title
   {/snippet}
-  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cumque quisquam dolores doloribus. Aperiam perferendis quod ea repudiandae odit libero tempore error?</p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cumque quisquam dolores doloribus. Aperiam perferendis quod ea repudiandae odit libero tempore error?
+  </p>
   <form>
     <div class="mb-6 grid gap-6 md:grid-cols-2">
       <div>
@@ -175,7 +177,88 @@ Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
 ```svelte
 <script lang="ts">
   import { Input } from "flowbite-svelte";
-  const carMakers = ["Toyota", "Ford", "Honda", "Chevrolet", "Nissan", "BMW", "Mercedes-Benz", "Volkswagen", "Hyundai", "Kia", "Mazda", "Subaru", "Lexus", "Audi", "Jeep", "Dodge", "Ram", "GMC", "Cadillac", "Chrysler", "Buick", "Infiniti", "Acura", "Volvo", "Porsche", "Jaguar", "Land Rover", "Mini", "Mitsubishi", "Genesis", "Tesla", "Fiat", "Peugeot", "Renault", "Alfa Romeo", "Citroën", "SEAT", "Skoda", "Saab", "Suzuki", "Isuzu", "Scion", "Hummer", "Lincoln", "Opel", "Daewoo", "Rivian", "Lucid", "Polestar", "Bugatti", "Maserati", "Ferrari", "Lamborghini", "Bentley", "Rolls-Royce", "Aston Martin", "McLaren", "Pagani", "Koenigsegg", "Maybach", "Tata", "Mahindra", "Perodua", "Proton", "Chery", "Geely", "Great Wall", "BYD", "NIO", "XPeng", "VinFast", "Zotye", "FAW", "BAIC", "Lancia", "Dacia", "Cupra", "Roewe", "Holden", "Smart"];
+  const carMakers = [
+    "Toyota",
+    "Ford",
+    "Honda",
+    "Chevrolet",
+    "Nissan",
+    "BMW",
+    "Mercedes-Benz",
+    "Volkswagen",
+    "Hyundai",
+    "Kia",
+    "Mazda",
+    "Subaru",
+    "Lexus",
+    "Audi",
+    "Jeep",
+    "Dodge",
+    "Ram",
+    "GMC",
+    "Cadillac",
+    "Chrysler",
+    "Buick",
+    "Infiniti",
+    "Acura",
+    "Volvo",
+    "Porsche",
+    "Jaguar",
+    "Land Rover",
+    "Mini",
+    "Mitsubishi",
+    "Genesis",
+    "Tesla",
+    "Fiat",
+    "Peugeot",
+    "Renault",
+    "Alfa Romeo",
+    "Citroën",
+    "SEAT",
+    "Skoda",
+    "Saab",
+    "Suzuki",
+    "Isuzu",
+    "Scion",
+    "Hummer",
+    "Lincoln",
+    "Opel",
+    "Daewoo",
+    "Rivian",
+    "Lucid",
+    "Polestar",
+    "Bugatti",
+    "Maserati",
+    "Ferrari",
+    "Lamborghini",
+    "Bentley",
+    "Rolls-Royce",
+    "Aston Martin",
+    "McLaren",
+    "Pagani",
+    "Koenigsegg",
+    "Maybach",
+    "Tata",
+    "Mahindra",
+    "Perodua",
+    "Proton",
+    "Chery",
+    "Geely",
+    "Great Wall",
+    "BYD",
+    "NIO",
+    "XPeng",
+    "VinFast",
+    "Zotye",
+    "FAW",
+    "BAIC",
+    "Lancia",
+    "Dacia",
+    "Cupra",
+    "Roewe",
+    "Holden",
+    "Smart"
+  ];
 </script>
 
 <Input data={carMakers} placeholder="Type to search cars..." />
@@ -189,7 +272,18 @@ Use lowercase event handlers: `oninput`, `onfocus`, `onblur`, `onkeydown`.
 <script lang="ts">
   import { Input } from "flowbite-svelte";
   import { EnvelopeSolid } from "flowbite-svelte-icons";
-  const fakeEmails = ["alex.jones@example.com", "maria.smith@example.com", "john.doe@example.com", "emma.wilson@example.com", "liam.brown@example.com", "olivia.johnson@example.com", "noah.miller@example.com", "ava.davis@example.com", "elijah.garcia@example.com", "sophia.martinez@example.com"];
+  const fakeEmails = [
+    "alex.jones@example.com",
+    "maria.smith@example.com",
+    "john.doe@example.com",
+    "emma.wilson@example.com",
+    "liam.brown@example.com",
+    "olivia.johnson@example.com",
+    "noah.miller@example.com",
+    "ava.davis@example.com",
+    "elijah.garcia@example.com",
+    "sophia.martinez@example.com"
+  ];
 </script>
 
 <Input data={fakeEmails} placeholder="name@flowbite.com" clearable type="email" size="md" class="ps-9">
@@ -478,7 +572,10 @@ Use this example to show a dropdown menu right next to the input field.
 </script>
 
 <ButtonGroup class="w-full">
-  <Button color={undefined} class="shrink-0 border border-gray-300 bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-300 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+  <Button
+    color={undefined}
+    class="shrink-0 border border-gray-300 bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-300 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+  >
     All categories<ChevronDownOutline class="ms-2 h-6 w-6" />
   </Button>
   <Dropdown simple>

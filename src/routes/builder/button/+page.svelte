@@ -140,7 +140,18 @@
 
 <CodeWrapper innerClass="flex flex-wrap gap-2">
   <div class="h-16">
-    <Button color={btnColor as ButtonProps["color"]} class={btnClass} outline={btnOutline} shadow={btnShadow} pill={btnPill} disabled={btnDisabled} size={btnSize as ButtonProps["size"]} href={btnLink ? btnLink : ""}>Button</Button>
+    <Button
+      color={btnColor as ButtonProps["color"]}
+      class={btnClass}
+      outline={btnOutline}
+      shadow={btnShadow}
+      pill={btnPill}
+      disabled={btnDisabled}
+      size={btnSize as ButtonProps["size"]}
+      href={btnLink ? btnLink : ""}
+    >
+      Button
+    </Button>
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
@@ -171,7 +182,17 @@
 
 <CodeWrapper>
   <div class="h-16">
-    <GradientButton outline={gradientOutline} shadow={gradientShadow} pill={graidentPill} class={gradientClass} disabled={gradientDisabled} color={gradientColor as GradientButtonProps["color"]} size={gradientSize as GradientButtonProps["size"]}>{capitalizeFirstLetter(gradientColor)}</GradientButton>
+    <GradientButton
+      outline={gradientOutline}
+      shadow={gradientShadow}
+      pill={graidentPill}
+      class={gradientClass}
+      disabled={gradientDisabled}
+      color={gradientColor as GradientButtonProps["color"]}
+      size={gradientSize as GradientButtonProps["size"]}
+    >
+      {capitalizeFirstLetter(gradientColor)}
+    </GradientButton>
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>

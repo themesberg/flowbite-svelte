@@ -8,7 +8,26 @@
   import { fade } from "svelte/transition";
   import { dialog } from "./theme";
 
-  let { children, onaction = () => true, oncancel, onsubmit, ontoggle, form = false, modal = true, autoclose = false, focustrap = false, open = $bindable(false), permanent = false, dismissable = true, outsideclose = true, class: className, classes, transition = fade, transitionParams, ...restProps }: DialogProps = $props();
+  let {
+    children,
+    onaction = () => true,
+    oncancel,
+    onsubmit,
+    ontoggle,
+    form = false,
+    modal = true,
+    autoclose = false,
+    focustrap = false,
+    open = $bindable(false),
+    permanent = false,
+    dismissable = true,
+    outsideclose = true,
+    class: className,
+    classes,
+    transition = fade,
+    transitionParams,
+    ...restProps
+  }: DialogProps = $props();
 
   const paramsOptions = $derived(transitionParams ?? { duration: 100, easing: sineIn });
 
@@ -132,7 +151,19 @@
 {/snippet}
 
 {#if open}
-  <dialog {@attach init} bind:this={ref} use:focusTrap tabindex="-1" onsubmit={_onsubmit} oncancel={_oncancel} onclick={_onclick} ontoggle={_ontoggle} transition:transition|global={paramsOptions as ParamsType} {...restProps} class={base({ class: clsx(className) })}>
+  <dialog
+    {@attach init}
+    bind:this={ref}
+    use:focusTrap
+    tabindex="-1"
+    onsubmit={_onsubmit}
+    oncancel={_oncancel}
+    onclick={_onclick}
+    ontoggle={_ontoggle}
+    transition:transition|global={paramsOptions as ParamsType}
+    {...restProps}
+    class={base({ class: clsx(className) })}
+  >
     {#if form}
       <form method="dialog" class={formCls({ class: clsx(classes?.form) })}>
         {@render content()}
@@ -147,7 +178,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DialogProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L566)
+[DialogProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L567)
 ## Props
 @prop children
 @prop onaction = ()

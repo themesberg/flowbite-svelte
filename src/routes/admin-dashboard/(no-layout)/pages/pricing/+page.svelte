@@ -36,7 +36,9 @@
 <main class="mx-auto bg-gray-50 dark:bg-gray-900">
   <div class="container mx-auto px-4 pt-24 md:pt-32 lg:px-0 dark:bg-gray-900">
     <h1 class="mb-3 text-3xl font-bold text-gray-900 sm:text-4xl sm:leading-none sm:tracking-tight dark:text-white">Our pricing plan made simple</h1>
-    <p class="mb-6 text-lg font-normal text-gray-500 sm:text-xl dark:text-gray-300">All types of businesses need access to development resources, so we give you the option to decide how much you need to use.</p>
+    <p class="mb-6 text-lg font-normal text-gray-500 sm:text-xl dark:text-gray-300">
+      All types of businesses need access to development resources, so we give you the option to decide how much you need to use.
+    </p>
     <div class="flex items-center">
       <span class="text-base font-medium text-gray-900 dark:text-white">Monthly</span>
       <Toggle class="ms-3 peer-focus:ring-0" bind:checked={yearly} />

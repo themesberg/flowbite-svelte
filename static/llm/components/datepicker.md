@@ -80,7 +80,12 @@ The `classes` prop has the following `class` for disposal: `base`, `input`, `tit
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker color="blue" classes={{ polite: "hover:text-blue-700!", dayButton: "hover:text-blue-400", titleVariant: "text-blue-800", monthButton: "text-blue-700" }} title="Select your preferred date" monthBtnSelected="bg-blue-200" />
+  <Datepicker
+    color="blue"
+    classes={{ polite: "hover:text-blue-700!", dayButton: "hover:text-blue-400", titleVariant: "text-blue-800", monthButton: "text-blue-700" }}
+    title="Select your preferred date"
+    monthBtnSelected="bg-blue-200"
+  />
 </div>
 ```
 
@@ -370,7 +375,8 @@ Add `actionSlot` snippet with `selectedDate`, `handleClear`, `handleApply`, `clo
   <P class="mt-2">Last action: {lastAction}</P>
 </div>
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. In quidem rerum, optio adipisci illum at earum fugiat eius minus quae! Quisquam cumque architecto facilis? Tempora ipsum perferendis quo explicabo minus.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. In quidem rerum, optio adipisci illum at earum fugiat eius minus quae! Quisquam cumque architecto facilis? Tempora ipsum perferendis quo
+explicabo minus.
 ```
 
 ## Input Props
@@ -391,7 +397,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. In quidem rerum, optio 
 
 #### Types
 
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L457)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L458)
 
 #### Props
 

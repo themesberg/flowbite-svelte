@@ -2,7 +2,18 @@
   import clsx from "clsx";
   import type { RatingIconProps } from "$lib/types";
 
-  let { fillPercent = 100, fillColor = "#F5CA14", strokeColor = "#F5CA14", size = 24, ariaLabel = "star", iconIndex = 0, groupId = "star", role = "img", svgClass, ...restProps }: RatingIconProps = $props();
+  let {
+    fillPercent = 100,
+    fillColor = "#F5CA14",
+    strokeColor = "#F5CA14",
+    size = 24,
+    ariaLabel = "star",
+    iconIndex = 0,
+    groupId = "star",
+    role = "img",
+    svgClass,
+    ...restProps
+  }: RatingIconProps = $props();
 
   const uniqueId = `${groupId}-${iconIndex}`;
 </script>
@@ -35,7 +46,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1328)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1329)
 ## Props
 @prop fillPercent = 100
 @prop fillColor = "#F5CA14"

@@ -32,7 +32,7 @@ Basic virtual list displaying 5,000 items with variable text lengths. Only visib
 
 <VirtualList {items} minItemHeight={40} height={400} class="border p-4">
   {#snippet children(item, index)}
-    <div class="border-b p-2">
+    <div class="border-b p-2 text-gray-900 dark:text-white">
       {index + 1}: {item}
     </div>
   {/snippet}
@@ -59,7 +59,7 @@ Demonstrates programmatic scrolling with buttons to jump to specific items by in
   <Button onclick={() => jumpToItem(0)}>Jump to top item</Button>
   <VirtualList {items} minItemHeight={40} height={400} scrollToIndex={(fn) => (scrollToFn = fn)}>
     {#snippet children(item, index)}
-      <div class="border-b p-2" style="height:40px; line-height:40px;">
+      <div class="border-b p-2 text-gray-900 dark:text-white" style="height:40px; line-height:40px;">
         {index + 1}: {item}
       </div>
     {/snippet}
@@ -87,7 +87,12 @@ Dynamically adjust item heights based on content using the `getItemHeight` prop.
     const type = types[i % 3];
     return {
       title: `Item ${i + 1}`,
-      description: type === "small" ? "Short description" : type === "medium" ? "Medium length description with more details about this item" : "Large description with lots of content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. This item has much more information to display and takes up more vertical space.",
+      description:
+        type === "small"
+          ? "Short description"
+          : type === "medium"
+            ? "Medium length description with more details about this item"
+            : "Large description with lots of content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. This item has much more information to display and takes up more vertical space.",
       type
     };
   });
@@ -149,7 +154,11 @@ Apply custom styles, alternating row colors, and hover effects for enhanced visu
       </div>
       <span
         class="rounded-full px-3 py-1 text-xs font-semibold
-               {user.status === 'active' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : user.status === 'pending' ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'}"
+               {user.status === 'active'
+          ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+          : user.status === 'pending'
+            ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
+            : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'}"
       >
         {user.status}
       </span>
@@ -204,7 +213,7 @@ Handle empty states and loading indicators while data is being fetched.
   {:else}
     <VirtualList {items} minItemHeight={40} height={400} class="rounded-lg border">
       {#snippet children(item, index)}
-        <div class="border-b p-2 hover:bg-gray-50 dark:hover:bg-gray-800">
+        <div class="border-b p-2 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
           {index + 1}: {item}
         </div>
       {/snippet}

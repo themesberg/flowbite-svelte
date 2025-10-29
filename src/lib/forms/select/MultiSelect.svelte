@@ -203,7 +203,16 @@
   {/each}
 </select>
 
-<div bind:this={multiSelectContainer} {...restProps} onclick={toggleDropdown} onblur={handleBlur} onkeydown={handleKeyDown} tabindex="0" role="listbox" class={base({ size, class: clsx(theme?.base, className) })}>
+<div
+  bind:this={multiSelectContainer}
+  {...restProps}
+  onclick={toggleDropdown}
+  onblur={handleBlur}
+  onkeydown={handleKeyDown}
+  tabindex="0"
+  role="listbox"
+  class={base({ size, class: clsx(theme?.base, className) })}
+>
   {#if !selectItems.length}
     <span class={placeholderSpan({ class: clsx(classes?.placeholder) })}>{placeholder}</span>
   {/if}

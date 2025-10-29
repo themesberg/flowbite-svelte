@@ -63,7 +63,11 @@ export function warnThemeDeprecation(component: string, names: Record<string, un
   const stack = new Error().stack;
   const externalCaller = getExternalCaller(stack);
 
-  console.warn(`⚠️ The following "${component}" props are deprecated: ${nonEmptyNames.map((n) => `"${n}"`).join(", ")}.\n` + `💡 Please use the ${propText} prop instead.${migrationHint}\n` + (externalCaller ? `🔍 Used at: ${externalCaller}` : ""));
+  console.warn(
+    `⚠️ The following "${component}" props are deprecated: ${nonEmptyNames.map((n) => `"${n}"`).join(", ")}.\n` +
+      `💡 Please use the ${propText} prop instead.${migrationHint}\n` +
+      (externalCaller ? `🔍 Used at: ${externalCaller}` : "")
+  );
 }
 
 // Extracts the first file in the stack trace that is NOT the current component file

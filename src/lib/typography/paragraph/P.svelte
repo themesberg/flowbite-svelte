@@ -4,7 +4,20 @@
   import type { ParagraphProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, class: className = "text-gray-900 dark:text-white", height = "normal", align = "left", justify = false, italic, firstUpper = false, whitespace = "normal", size = "base", space = "normal", weight = "normal", ...restProps }: ParagraphProps = $props();
+  let {
+    children,
+    class: className = "text-gray-900 dark:text-white",
+    height = "normal",
+    align = "left",
+    justify = false,
+    italic,
+    firstUpper = false,
+    whitespace = "normal",
+    size = "base",
+    space = "normal",
+    weight = "normal",
+    ...restProps
+  }: ParagraphProps = $props();
 
   const theme = getTheme("paragraph");
 
@@ -19,7 +32,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ParagraphProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1985)
+[ParagraphProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1986)
 ## Props
 @prop children
 @prop class: className = "text-gray-900 dark:text-white"

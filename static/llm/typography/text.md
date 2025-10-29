@@ -92,7 +92,17 @@ Update the text decoration style using the `underline` and `class` props.
 </script>
 
 <P>
-  Track work across the enterprise through an open, collaborative platform. <Span underline>Link issues across Jira</Span> and ingest data from other <Span underline class="decoration-blue-500 decoration-double">software development</Span> tools, so your IT support and operations teams have richer contextual information to rapidly respond to <Span underline class="decoration-green-500 decoration-dotted">requests</Span>, <Span underline class="decoration-red-500 decoration-dashed decoration-4">incidents</Span>, and <Span underline class="decoration-sky-500 decoration-wavy">changes</Span>.
+  Track work across the enterprise through an open, collaborative platform. <Span underline>Link issues across Jira</Span> and ingest data from other <Span
+    underline
+    class="decoration-blue-500 decoration-double"
+  >
+    software development
+  </Span> tools, so your IT support and operations teams have richer contextual information to rapidly respond to <Span underline class="decoration-green-500 decoration-dotted">requests</Span>, <Span
+    underline
+    class="decoration-red-500 decoration-dashed decoration-4"
+  >
+    incidents
+  </Span>, and <Span underline class="decoration-sky-500 decoration-wavy">changes</Span>.
 </P>
 ```
 
@@ -197,7 +207,10 @@ Use the `height="loose"` prop to set a large amount of space between text lines.
   import { P } from "flowbite-svelte";
 </script>
 
-<P align="left">Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</P>
+<P align="left">
+  Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind
+  CSS and based on the Flowbite component library
+</P>
 ```
 
 ### Center
@@ -207,7 +220,10 @@ Use the `height="loose"` prop to set a large amount of space between text lines.
   import { P } from "flowbite-svelte";
 </script>
 
-<P align="center">Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</P>
+<P align="center">
+  Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind
+  CSS and based on the Flowbite component library
+</P>
 ```
 
 ### Right
@@ -219,7 +235,10 @@ Use the `align="right"` prop to align the text element to the right side of the 
   import { P } from "flowbite-svelte";
 </script>
 
-<P align="right">Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</P>
+<P align="right">
+  Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind
+  CSS and based on the Flowbite component library
+</P>
 ```
 
 ### Text justify
@@ -231,8 +250,14 @@ Use the `justify` prop to justify the text content.
   import { P } from "flowbite-svelte";
 </script>
 
-<P justify>Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</P>
-<P>Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</P>
+<P justify>
+  Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind
+  CSS and based on the Flowbite component library
+</P>
+<P>
+  Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind
+  CSS and based on the Flowbite component library
+</P>
 ```
 
 ## Whitespace

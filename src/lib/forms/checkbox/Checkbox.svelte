@@ -5,7 +5,24 @@
   import Label from "$lib/forms/label/Label.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, color = "primary", custom, inline, tinted, rounded, group = $bindable([]), choices = [], checked = $bindable(false), classes, class: className, divClass, disabled, value, labelProps = {}, ...restProps }: CheckboxProps = $props();
+  let {
+    children,
+    color = "primary",
+    custom,
+    inline,
+    tinted,
+    rounded,
+    group = $bindable([]),
+    choices = [],
+    checked = $bindable(false),
+    classes,
+    class: className,
+    divClass,
+    disabled,
+    value,
+    labelProps = {},
+    ...restProps
+  }: CheckboxProps = $props();
 
   warnThemeDeprecation("Checkbox", { divClass }, { divClass: "div" });
   const styling = $derived(classes ?? { div: divClass });

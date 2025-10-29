@@ -14,7 +14,9 @@
             <span class="block1 xl:inline">Speed up your web development with</span>
             <span class="block1 text-primary-700 dark:text-primary-700 xl:inline">Flowbite Svelte</span>
           </h1>
-          <p class="text-lg leading-normal text-gray-500 lg:text-xl dark:text-gray-400">Flowbite Svelte is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.</p>
+          <p class="text-lg leading-normal text-gray-500 lg:text-xl dark:text-gray-400">
+            Flowbite Svelte is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
+          </p>
           <div class="mt-4 justify-center sm:flex sm:justify-start md:mt-5">
             <div class="mx-0 flex max-w-2xl flex-row items-center gap-4 sm:gap-6">
               <CopyCliboardInput />

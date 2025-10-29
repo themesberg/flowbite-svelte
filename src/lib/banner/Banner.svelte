@@ -7,7 +7,22 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { children, header, open = $bindable(true), dismissable = true, color = "gray", type, class: className, classes, innerClass, transition = fade, params, closeClass, onclose, ...restProps }: BannerProps = $props();
+  let {
+    children,
+    header,
+    open = $bindable(true),
+    dismissable = true,
+    color = "gray",
+    type,
+    class: className,
+    classes,
+    innerClass,
+    transition = fade,
+    params,
+    closeClass,
+    onclose,
+    ...restProps
+  }: BannerProps = $props();
 
   warnThemeDeprecation("Banner", { innerClass, closeClass }, { innerClass: "insideDiv", closeClass: "dismissable" });
 
@@ -46,7 +61,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L228)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L229)
 ## Props
 @prop children
 @prop header

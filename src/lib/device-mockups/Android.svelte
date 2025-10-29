@@ -6,7 +6,11 @@
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class, ...restProps }: AndroidProps = $props();
 
-  warnThemeDeprecation("Android", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class }, { divClass: "class", div2Class: "top", div3Class: "leftTop", div4Class: "leftMid", div5Class: "leftBot", div6Class: "right", div7Class: "slot" });
+  warnThemeDeprecation(
+    "Android",
+    { divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class },
+    { divClass: "class", div2Class: "top", div3Class: "leftTop", div4Class: "leftMid", div5Class: "leftBot", div6Class: "right", div7Class: "slot" }
+  );
 
   const styling = $derived(
     classes ?? {
@@ -39,7 +43,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L513)
+[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L514)
 ## Props
 @prop children
 @prop class: className

@@ -99,7 +99,14 @@
   });
 </script>
 
-<div bind:this={container} onscroll={handleScroll} role="list" aria-label="Virtual scrolling list" class={styles.container({ class: clsx(theme?.container, className) })} style={`height:${height}px; position:relative;`}>
+<div
+  bind:this={container}
+  onscroll={handleScroll}
+  role="list"
+  aria-label="Virtual scrolling list"
+  class={styles.container({ class: clsx(theme?.container, className) })}
+  style={`height:${height}px; position:relative;`}
+>
   <div class={styles.spacer({ class: clsx(theme?.spacer, classes?.spacer) })} style={`height:${totalHeight}px;`}>
     <div class={styles.content({ class: clsx(theme?.content, classes?.content) })} style={`transform:translateY(${offsetY}px); will-change:transform;`}>
       {#each visibleItems as item, i (startIndex + i)}
@@ -119,7 +126,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[VirtualListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2048)
+[VirtualListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2049)
 ## Props
 @prop items = []
 @prop minItemHeight = 50

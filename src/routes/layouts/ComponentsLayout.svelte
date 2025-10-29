@@ -56,9 +56,11 @@
 
   let spanClass = "";
   let mainClass = "fixed inset-0 z-40 lg:z-39 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:pt-0 lg:block bg-white dark:bg-gray-900";
-  let nonActiveClass = "text-sm transition-colors duration-200 relative font-medium hover:text-gray-900 hover:bg-transparent dark:hover:bg-transparent hover:cursor-pointer text-gray-500 dark:text-gray-400 dark:hover:text-white";
+  let nonActiveClass =
+    "text-sm transition-colors duration-200 relative font-medium hover:text-gray-900 hover:bg-transparent dark:hover:bg-transparent hover:cursor-pointer text-gray-500 dark:text-gray-400 dark:hover:text-white";
   let activeClass = "text-sm relative font-medium cursor-default bg-transparent dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent text-primary-700 dark:text-primary-700";
-  let btnClass = "my-0 text-sm font-semibold tracking-wide uppercase text-gray-700 dark:text-gray-200 hover:bg-transparent dark:hover:bg-transparent hover:text-primary-700 dark:hover:text-primary-600";
+  let btnClass =
+    "my-0 text-sm font-semibold tracking-wide uppercase text-gray-700 dark:text-gray-200 hover:bg-transparent dark:hover:bg-transparent hover:text-primary-700 dark:hover:text-primary-600";
   let dropdowns = Object.fromEntries(Object.keys(posts).map((x) => [x, false]));
   let divClass = "overflow-y-auto px-4 pt-20 lg:pt-4 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block lg:me-0 lg:sticky top-20 bg-white dark:bg-gray-900";
   // const blockCls = "px-4 mx-auto max-w-8xl";
@@ -67,11 +69,24 @@
 
 {#if submenu !== "blocks"}
   <SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-2 z-40 mb-2 md:top-4" />
-  <Sidebar breakpoint="lg" backdrop={true} {isOpen} {closeSidebar} classes={{ div: divClass, nonactive: nonActiveClass, active: activeClass }} activeUrl={mainSidebarUrl} class={mainClass} params={{ x: -50, duration: 50 }}>
+  <Sidebar
+    breakpoint="lg"
+    backdrop={true}
+    {isOpen}
+    {closeSidebar}
+    classes={{ div: divClass, nonactive: nonActiveClass, active: activeClass }}
+    activeUrl={mainSidebarUrl}
+    class={mainClass}
+    params={{ x: -50, duration: 50 }}
+  >
     <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
     <SidebarGroup>
       {#each Object.entries(posts) as [key, values] (key)}
-        <SidebarDropdownWrapper label={names_mapping[key] ?? key} classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}>
+        <SidebarDropdownWrapper
+          label={names_mapping[key] ?? key}
+          classes={{ btn: btnClass, ul: "space-y-0 p-0" }}
+          class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}
+        >
           {#each values as { meta, path }}
             {@const href = key === "icons" || key === "illustrations" ? `/${key}${path}` : `/docs/${key}${path}`}
             <SidebarItem label={meta.component_title} {href} {spanClass} />
@@ -93,7 +108,12 @@
           <SidebarItem label={capitalizeFirstLetter(block)} href="/blocks/{block}" {spanClass} />
         {/each}
       </SidebarDropdownWrapper>
-      <SidebarItem label="Admin Dashboard" href="/admin-dashboard" spanClass="ms-3 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" {activeClass}></SidebarItem>
+      <SidebarItem
+        label="Admin Dashboard"
+        href="/admin-dashboard"
+        spanClass="ms-3 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200"
+        {activeClass}
+      ></SidebarItem>
     </SidebarGroup>
     <!-- /SidebarWrapper -->
   </Sidebar>

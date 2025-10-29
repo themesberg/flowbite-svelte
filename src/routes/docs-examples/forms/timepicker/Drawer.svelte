@@ -118,7 +118,15 @@
             </Checkbox>
           </div>
           <div class="flex flex-1 items-center">
-            <Timepicker type="range" value={startTime} endValue={endTime} onselect={(e) => handleTimeChange(index, true, e)} divClass={timepickerClasses.divClass} inputClass={timepickerClasses.inputClass} size="sm" />
+            <Timepicker
+              type="range"
+              value={startTime}
+              endValue={endTime}
+              onselect={(e) => handleTimeChange(index, true, e)}
+              divClass={timepickerClasses.divClass}
+              inputClass={timepickerClasses.inputClass}
+              size="sm"
+            />
             <Button color="red" size="xs" pill={true} onclick={() => removeInterval(index)} class="shrink-0 p-2 hover:bg-red-600">
               <TrashBinSolid class="h-2 w-2 sm:h-3 sm:w-3" />
             </Button>

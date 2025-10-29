@@ -38,7 +38,10 @@
     try {
       loading = true;
 
-      const [chartResponse, tableResponse] = await Promise.all([fetch("https://raw.githubusercontent.com/shinokada/flowbite-svelte-plugins/main/apps/flowbite-svelte-chart/src/routes/component-data/Chart.json"), fetch("https://raw.githubusercontent.com/shinokada/flowbite-svelte-plugins/main/apps/flowbite-svelte-datatable/src/routes/component-data/Table.json")]);
+      const [chartResponse, tableResponse] = await Promise.all([
+        fetch("https://raw.githubusercontent.com/shinokada/flowbite-svelte-plugins/main/apps/flowbite-svelte-chart/src/routes/component-data/Chart.json"),
+        fetch("https://raw.githubusercontent.com/shinokada/flowbite-svelte-plugins/main/apps/flowbite-svelte-datatable/src/routes/component-data/Table.json")
+      ]);
 
       if (!chartResponse.ok || !tableResponse.ok) {
         throw new Error("Failed to fetch one or more data sources");

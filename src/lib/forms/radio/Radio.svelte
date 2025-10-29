@@ -7,7 +7,20 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   // remove inputClass in next major version
-  let { children, "aria-describedby": ariaDescribedby, inline = false, labelClass, color = "primary", custom = false, group = $bindable<T>(), value = $bindable<T>(), class: className, inputClass, classes, ...restProps }: RadioProps<T> = $props();
+  let {
+    children,
+    "aria-describedby": ariaDescribedby,
+    inline = false,
+    labelClass,
+    color = "primary",
+    custom = false,
+    group = $bindable<T>(),
+    value = $bindable<T>(),
+    class: className,
+    inputClass,
+    classes,
+    ...restProps
+  }: RadioProps<T> = $props();
 
   warnThemeDeprecation("Radio", { inputClass, labelClass }, { inputClass: "class", labelClass: "label" });
   const styling = $derived(classes ?? { label: labelClass });

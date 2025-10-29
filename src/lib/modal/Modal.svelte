@@ -8,7 +8,27 @@
   import { fade } from "svelte/transition";
   import { modal as modalStyle } from "./theme";
 
-  let { children, header, footer, title, open = $bindable(false), permanent = false, dismissable = true, closeBtnClass, headerClass, bodyClass, footerClass, size = "md", placement, class: className, classes, transitionParams, transition = fade, fullscreen = false, ...restProps }: ModalProps = $props();
+  let {
+    children,
+    header,
+    footer,
+    title,
+    open = $bindable(false),
+    permanent = false,
+    dismissable = true,
+    closeBtnClass,
+    headerClass,
+    bodyClass,
+    footerClass,
+    size = "md",
+    placement,
+    class: className,
+    classes,
+    transitionParams,
+    transition = fade,
+    fullscreen = false,
+    ...restProps
+  }: ModalProps = $props();
 
   // form, header, footer, body, close
   warnThemeDeprecation("Modal", { headerClass, bodyClass, footerClass, closeBtnClass }, { bodyClass: "body", headerClass: "header", footerClass: "footer", closeBtnClass: "close" });
@@ -22,7 +42,15 @@
   const { base, header: headerCls, footer: footerCls, body } = $derived(modalStyle({ placement, size }));
 </script>
 
-<Dialog bind:open {transition} dismissable={dismissable && !title && !permanent} transitionParams={paramsOptions} {classes} {...restProps} class={base({ fullscreen, class: clsx(theme?.base, className) })}>
+<Dialog
+  bind:open
+  {transition}
+  dismissable={dismissable && !title && !permanent}
+  transitionParams={paramsOptions}
+  {classes}
+  {...restProps}
+  class={base({ fullscreen, class: clsx(theme?.base, className) })}
+>
   {#if title || header}
     <div class={headerCls({ class: clsx(theme?.header, styling.header) })}>
       {#if title}
@@ -49,7 +77,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1060)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1061)
 ## Props
 @prop children
 @prop header

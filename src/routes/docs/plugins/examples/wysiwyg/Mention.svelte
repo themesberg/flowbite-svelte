@@ -20,7 +20,33 @@
         <p>I have a meeting with <span data-type="mention" data-id="Christina Applegate"></span> and don’t want to come late.</p>
         <p>– Thanks, your big boss</p>
       `;
-  const mentions = ["Lea Thompson", "Cyndi Lauper", "Tom Cruise", "Madonna", "Jerry Hall", "Joan Collins", "Winona Ryder", "Christina Applegate", "Alyssa Milano", "Molly Ringwald", "Ally Sheedy", "Debbie Harry", "Olivia Newton-John", "Elton John", "Michael J. Fox", "Axl Rose", "Emilio Estevez", "Ralph Macchio", "Rob Lowe", "Jennifer Grey", "Mickey Rourke", "John Cusack", "Matthew Broderick", "Justine Bateman", "Lisa Bonet"];
+  const mentions = [
+    "Lea Thompson",
+    "Cyndi Lauper",
+    "Tom Cruise",
+    "Madonna",
+    "Jerry Hall",
+    "Joan Collins",
+    "Winona Ryder",
+    "Christina Applegate",
+    "Alyssa Milano",
+    "Molly Ringwald",
+    "Ally Sheedy",
+    "Debbie Harry",
+    "Olivia Newton-John",
+    "Elton John",
+    "Michael J. Fox",
+    "Axl Rose",
+    "Emilio Estevez",
+    "Ralph Macchio",
+    "Rob Lowe",
+    "Jennifer Grey",
+    "Mickey Rourke",
+    "John Cusack",
+    "Matthew Broderick",
+    "Justine Bateman",
+    "Lisa Bonet"
+  ];
 </script>
 
 <TextEditor bind:editor={editorInstance} {content} {mentions} contentprops={{ id: "mention-ex" }}>

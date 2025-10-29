@@ -1,6 +1,17 @@
 <script lang="ts">
   import { MegaMenu, ToolbarButton } from "flowbite-svelte";
-  import { ArchiveSolid, ArrowRightToBracketOutline, CogOutline, DollarOutline, GridSolid, InboxOutline, ProfileCardOutline, SalePercentOutline, ShoppingBagSolid, UsersGroupSolid } from "flowbite-svelte-icons";
+  import {
+    ArchiveSolid,
+    ArrowRightToBracketOutline,
+    CogOutline,
+    DollarOutline,
+    GridSolid,
+    InboxOutline,
+    ProfileCardOutline,
+    SalePercentOutline,
+    ShoppingBagSolid,
+    UsersGroupSolid
+  } from "flowbite-svelte-icons";
 
   const menu = [
     { name: "Sales", href: "/", icon: ShoppingBagSolid },

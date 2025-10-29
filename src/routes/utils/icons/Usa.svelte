@@ -4,7 +4,12 @@
     <rect x="0.5" width="14" height="12" rx="2" fill="white" />
   </mask>
   <g mask="url(#mask0_12694_49953)">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 0H0.5V0.8H14.5V0ZM14.5 1.6H0.5V2.4H14.5V1.6ZM0.5 3.2H14.5V4H0.5V3.2ZM14.5 4.8H0.5V5.6H14.5V4.8ZM0.5 6.4H14.5V7.2H0.5V6.4ZM14.5 8H0.5V8.8H14.5V8ZM0.5 9.6H14.5V10.4H0.5V9.6ZM14.5 11.2H0.5V12H14.5V11.2Z" fill="#D02F44" />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M14.5 0H0.5V0.8H14.5V0ZM14.5 1.6H0.5V2.4H14.5V1.6ZM0.5 3.2H14.5V4H0.5V3.2ZM14.5 4.8H0.5V5.6H14.5V4.8ZM0.5 6.4H14.5V7.2H0.5V6.4ZM14.5 8H0.5V8.8H14.5V8ZM0.5 9.6H14.5V10.4H0.5V9.6ZM14.5 11.2H0.5V12H14.5V11.2Z"
+      fill="#D02F44"
+    />
     <rect x="0.5" width="6" height="5.6" fill="#46467F" />
     <g filter="url(#filter0_d_12694_49953)">
       <path

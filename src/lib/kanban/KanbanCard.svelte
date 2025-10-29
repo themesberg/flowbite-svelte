@@ -1,17 +1,10 @@
 <script lang="ts">
   import clsx from "clsx";
   import type { KanbanCardProps } from "$lib/types";
-  import { kanbanCard } from './theme';
+  import { kanbanCard } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let {
-    card,
-    isDragging = false,
-    onDragStart,
-    onDragEnd,
-    classes,
-    ...restProps
-  }: KanbanCardProps = $props();
+  let { card, isDragging = false, onDragStart, onDragEnd, classes, ...restProps }: KanbanCardProps = $props();
 
   const theme = getTheme("kanbanCard");
   const styles = kanbanCard();
@@ -49,3 +42,17 @@
     </div>
   {/if}
 </article>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[KanbanCardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2082)
+## Props
+@prop card
+@prop isDragging = false
+@prop onDragStart
+@prop onDragEnd
+@prop classes
+@prop ...restProps
+-->

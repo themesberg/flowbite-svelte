@@ -6,7 +6,8 @@
   let { data }: PageProps = $props();
 
   let title = "Flowbite Svelte Blocks - UI Component Library";
-  const description = "Get started with free UI components built with the utility classes from Tailwind CSS to upgrade your web development stack and customize the colors, fonts, and dark mode using the configurator.";
+  const description =
+    "Get started with free UI components built with the utility classes from Tailwind CSS to upgrade your web development stack and customize the colors, fonts, and dark mode using the configurator.";
   let default_title = "Svelte UI Components";
   const image = `flowbite-svelte.com/og?package=Flowbite%20Svelte%20Blocks&title=${default_title}`;
 </script>
@@ -36,7 +37,9 @@
 <div class="max-w-8xl mx-auto pt-8 lg:px-20">
   <div class="col-span-2 mb-2 lg:mb-0">
     <h1 class="mb-2 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Flowbite Blocks in Svelte</h1>
-    <p class="text-lg text-gray-500 lg:mb-0 dark:text-gray-400">Get started with free UI components built with the utility classes from Tailwind CSS to upgrade your web development stack and customize the colors, fonts, and dark mode using the configurator.</p>
+    <p class="text-lg text-gray-500 lg:mb-0 dark:text-gray-400">
+      Get started with free UI components built with the utility classes from Tailwind CSS to upgrade your web development stack and customize the colors, fonts, and dark mode using the configurator.
+    </p>
   </div>
 </div>
 

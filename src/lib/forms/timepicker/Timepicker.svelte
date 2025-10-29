@@ -13,7 +13,32 @@
   import { parse, isValid, isBefore, isAfter } from "date-fns";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { id = "time", endId = "end-time", value = $bindable("00:00"), endValue = $bindable("00:00"), min = "", max = "", required = true, disabled = false, inputColor, buttonColor = "primary", Icon, iconClass = "h-5 w-5 text-gray-500 dark:text-gray-400", type = "default", optionLabel = "Options", options = [], size = "md", divClass, inputClass, selectClass, timerangeLabel = "Choose time range", timerangeButtonLabel = "Save time", timeIntervals = [], columns = 2, onselect }: TimepickerProps = $props();
+  let {
+    id = "time",
+    endId = "end-time",
+    value = $bindable("00:00"),
+    endValue = $bindable("00:00"),
+    min = "",
+    max = "",
+    required = true,
+    disabled = false,
+    inputColor,
+    buttonColor = "primary",
+    Icon,
+    iconClass = "h-5 w-5 text-gray-500 dark:text-gray-400",
+    type = "default",
+    optionLabel = "Options",
+    options = [],
+    size = "md",
+    divClass,
+    inputClass,
+    selectClass,
+    timerangeLabel = "Choose time range",
+    timerangeButtonLabel = "Save time",
+    timeIntervals = [],
+    columns = 2,
+    onselect
+  }: TimepickerProps = $props();
 
   const theme = getTheme("timepicker");
 
@@ -162,7 +187,19 @@
 {#if type !== "inline-buttons"}
   <ButtonGroup {size} class={styles.buttonGroup({ class: clsx(theme?.buttonGroup, divClass) })}>
     {#if type === "default"}
-      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={styles.input({ class: clsx(styles.inputWithIcon(), theme?.input, inputClass) })} bind:value oninput={(e) => handleTimeChange(e)} onchange={(e) => handleTimeChange(e)} />
+      <Input
+        {id}
+        color={inputColor}
+        type="time"
+        {min}
+        {max}
+        {required}
+        {disabled}
+        class={styles.input({ class: clsx(styles.inputWithIcon(), theme?.input, inputClass) })}
+        bind:value
+        oninput={(e) => handleTimeChange(e)}
+        onchange={(e) => handleTimeChange(e)}
+      />
       <div class={styles.iconWrapper({ class: clsx(theme?.iconWrapper) })}>
         {#if Icon}
           <Icon class={iconClass} />
@@ -173,10 +210,34 @@
         {/if}
       </div>
     {:else if type === "select"}
-      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={styles.input({ class: clsx(theme?.input, inputClass) })} bind:value oninput={(e) => handleTimeChange(e)} onchange={(e) => handleTimeChange(e)} />
+      <Input
+        {id}
+        color={inputColor}
+        type="time"
+        {min}
+        {max}
+        {required}
+        {disabled}
+        class={styles.input({ class: clsx(theme?.input, inputClass) })}
+        bind:value
+        oninput={(e) => handleTimeChange(e)}
+        onchange={(e) => handleTimeChange(e)}
+      />
       <Select selectClass={styles.select({ class: clsx(theme?.select, selectClass) })} onchange={handleOptionSelect} items={options} value={selectedOption} />
     {:else if type === "dropdown"}
-      <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={styles.input({ class: clsx(theme?.input, inputClass) })} bind:value oninput={(e) => handleTimeChange(e)} onchange={(e) => handleTimeChange(e)} />
+      <Input
+        {id}
+        color={inputColor}
+        type="time"
+        {min}
+        {max}
+        {required}
+        {disabled}
+        class={styles.input({ class: clsx(theme?.input, inputClass) })}
+        bind:value
+        oninput={(e) => handleTimeChange(e)}
+        onchange={(e) => handleTimeChange(e)}
+      />
       <Button color={buttonColor} class={styles.button({ class: clsx(theme?.button) })}>
         {optionLabel}
         <svg class={styles.buttonIcon({ class: clsx(theme?.buttonIcon) })} aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -192,7 +253,19 @@
       </Dropdown>
     {:else if type === "range"}
       <div class={styles.rangeInputWrapper({ class: clsx(theme?.rangeInputWrapper) })}>
-        <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={styles.input({ class: clsx(theme?.rangeInput, styles.rangeInput(), inputClass) })} bind:value oninput={(e) => handleTimeChange(e)} onchange={(e) => handleTimeChange(e)} />
+        <Input
+          {id}
+          color={inputColor}
+          type="time"
+          {min}
+          {max}
+          {required}
+          {disabled}
+          class={styles.input({ class: clsx(theme?.rangeInput, styles.rangeInput(), inputClass) })}
+          bind:value
+          oninput={(e) => handleTimeChange(e)}
+          onchange={(e) => handleTimeChange(e)}
+        />
         <button type="button" class={styles.rangeButton({ class: clsx(theme?.rangeButton) })} onclick={() => document.getElementById(id)?.click()} aria-label="Open time picker">
           {#if Icon}
             <Icon class={iconClass} />
@@ -205,7 +278,19 @@
       </div>
       <span class={styles.rangeSeparator({ class: clsx(theme?.rangeSeparator) })}>-</span>
       <div class={styles.rangeInputWrapper({ class: clsx(theme?.rangeInputWrapper) })}>
-        <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class={styles.input({ class: clsx(styles.rangeInput(), theme?.rangeInput, inputClass) })} bind:value={endValue} oninput={(e) => handleTimeChange(e, true)} onchange={(e) => handleTimeChange(e, true)} />
+        <Input
+          id={endId}
+          color={inputColor}
+          type="time"
+          {min}
+          {max}
+          {required}
+          {disabled}
+          class={styles.input({ class: clsx(styles.rangeInput(), theme?.rangeInput, inputClass) })}
+          bind:value={endValue}
+          oninput={(e) => handleTimeChange(e, true)}
+          onchange={(e) => handleTimeChange(e, true)}
+        />
         <button type="button" class={styles.rangeButton({ class: clsx(theme?.rangeButton) })} onclick={() => document.getElementById(endId)?.click()} aria-label="Open end time picker">
           {#if Icon}
             <Icon class={iconClass} />
@@ -228,11 +313,35 @@
           <div class={styles.dropdownTimeRow({ class: clsx(theme?.dropdownTimeRow) })}>
             <div class={styles.dropdownTimeCol({ class: clsx(theme?.dropdownTimeCol) })}>
               <Label for={id}>Start time:</Label>
-              <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={styles.dropdownTimeInput({ class: clsx(theme?.dropdownTimeInput, inputClass) })} bind:value oninput={(e) => handleTimeChange(e)} onchange={(e) => handleTimeChange(e)} />
+              <Input
+                {id}
+                color={inputColor}
+                type="time"
+                {min}
+                {max}
+                {required}
+                {disabled}
+                class={styles.dropdownTimeInput({ class: clsx(theme?.dropdownTimeInput, inputClass) })}
+                bind:value
+                oninput={(e) => handleTimeChange(e)}
+                onchange={(e) => handleTimeChange(e)}
+              />
             </div>
             <div class={styles.dropdownTimeCol({ class: clsx(theme?.dropdownTimeCol) })}>
               <Label for={endId}>End time:</Label>
-              <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class={styles.dropdownTimeInput({ class: clsx(theme?.dropdownTimeInput, inputClass) })} bind:value={endValue} oninput={(e) => handleTimeChange(e, true)} onchange={(e) => handleTimeChange(e, true)} />
+              <Input
+                id={endId}
+                color={inputColor}
+                type="time"
+                {min}
+                {max}
+                {required}
+                {disabled}
+                class={styles.dropdownTimeInput({ class: clsx(theme?.dropdownTimeInput, inputClass) })}
+                bind:value={endValue}
+                oninput={(e) => handleTimeChange(e, true)}
+                onchange={(e) => handleTimeChange(e, true)}
+              />
             </div>
           </div>
           <Button color={buttonColor} class={styles.dropdownButton({ class: clsx(theme?.dropdownButton) })} onclick={applyTimerange}>
@@ -249,11 +358,35 @@
           <div class={styles.toggleTimeRow({ class: clsx(theme?.toggleTimeRow) })}>
             <div class={styles.toggleTimeCol({ class: clsx(theme?.toggleTimeCol) })}>
               <Label for={id}>Start time:</Label>
-              <Input {id} color={inputColor} type="time" {min} {max} {required} {disabled} class={styles.toggleTimeInput({ class: clsx(theme?.toggleTimeInput, inputClass) })} bind:value oninput={(e) => handleTimeChange(e)} onchange={(e) => handleTimeChange(e)} />
+              <Input
+                {id}
+                color={inputColor}
+                type="time"
+                {min}
+                {max}
+                {required}
+                {disabled}
+                class={styles.toggleTimeInput({ class: clsx(theme?.toggleTimeInput, inputClass) })}
+                bind:value
+                oninput={(e) => handleTimeChange(e)}
+                onchange={(e) => handleTimeChange(e)}
+              />
             </div>
             <div class={styles.toggleTimeCol({ class: clsx(theme?.toggleTimeCol) })}>
               <Label for={endId}>End time:</Label>
-              <Input id={endId} color={inputColor} type="time" {min} {max} {required} {disabled} class={styles.toggleTimeInput({ class: clsx(theme?.toggleTimeInput, inputClass) })} bind:value={endValue} oninput={(e) => handleTimeChange(e, true)} onchange={(e) => handleTimeChange(e, true)} />
+              <Input
+                id={endId}
+                color={inputColor}
+                type="time"
+                {min}
+                {max}
+                {required}
+                {disabled}
+                class={styles.toggleTimeInput({ class: clsx(theme?.toggleTimeInput, inputClass) })}
+                bind:value={endValue}
+                oninput={(e) => handleTimeChange(e, true)}
+                onchange={(e) => handleTimeChange(e, true)}
+              />
             </div>
           </div>
         {/if}
@@ -274,7 +407,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TimepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L918)
+[TimepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L919)
 ## Props
 @prop id = "time"
 @prop endId = "end-time"

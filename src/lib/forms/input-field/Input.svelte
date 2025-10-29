@@ -8,10 +8,47 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { children, left, right, value = $bindable(), elementRef = $bindable(), clearable = false, size, color = "default", class: className, classes, wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, data = [], maxSuggestions = 5, onSelect, comboClass, comboItemClass, onInput, onFocus, onBlur, onKeydown, oninput, onfocus, onblur, onkeydown, ...restProps }: InputProps<InputValue> = $props();
+  let {
+    children,
+    left,
+    right,
+    value = $bindable(),
+    elementRef = $bindable(),
+    clearable = false,
+    size,
+    color = "default",
+    class: className,
+    classes,
+    wrapperClass,
+    leftClass,
+    rightClass,
+    divClass,
+    clearableSvgClass,
+    clearableColor = "none",
+    clearableClass,
+    clearableOnClick,
+    data = [],
+    maxSuggestions = 5,
+    onSelect,
+    comboClass,
+    comboItemClass,
+    onInput,
+    onFocus,
+    onBlur,
+    onKeydown,
+    oninput,
+    onfocus,
+    onblur,
+    onkeydown,
+    ...restProps
+  }: InputProps<InputValue> = $props();
 
   // input, left, right, close, combo, comboItem, div, svg
-  warnThemeDeprecation("Input", { wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableClass, comboClass }, { wrapperClass: "wrapper", leftClass: "left", rightClass: "right", divClass: "div", clearableSvgClass: "svg", clearableClass: "close", comboClass: "comboItem" });
+  warnThemeDeprecation(
+    "Input",
+    { wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableClass, comboClass },
+    { wrapperClass: "wrapper", leftClass: "left", rightClass: "right", divClass: "div", clearableSvgClass: "svg", clearableClass: "close", comboClass: "comboItem" }
+  );
 
   const styling = $derived(classes ?? { left: leftClass, right: rightClass, div: divClass, svg: clearableSvgClass, close: clearableClass, combo: comboClass, comboItem: comboItemClass });
 
@@ -235,7 +272,12 @@
     {#if isCombobox && isFocused && filteredSuggestions.length > 0}
       <div class={combo({ class: clsx(theme?.combo, styling.combo) })}>
         {#each filteredSuggestions as item, i (item)}
-          <button type="button" class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none" onclick={() => selectItem(item)} onmouseenter={() => (selectedIndex = i)}>
+          <button
+            type="button"
+            class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none"
+            onclick={() => selectItem(item)}
+            onmouseenter={() => (selectedIndex = i)}
+          >
             <p class={comboItem({ class: clsx(theme?.comboItem, styling.comboItem) })}>{item}</p>
           </button>
         {/each}
@@ -250,7 +292,16 @@
   {#if children}
     {@render children({ ...restProps, class: inputCls() })}
   {:else}
-    <input {...restProps} bind:value bind:this={elementRef} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} class={[wrapped || base(), inputCls({ class: clsx(theme?.input, className) })]} />
+    <input
+      {...restProps}
+      bind:value
+      bind:this={elementRef}
+      oninput={handleInput}
+      onfocus={handleFocus}
+      onblur={handleBlur}
+      onkeydown={handleKeydown}
+      class={[wrapped || base(), inputCls({ class: clsx(theme?.input, className) })]}
+    />
     {#if value !== undefined && value !== "" && clearable}
       <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
     {/if}

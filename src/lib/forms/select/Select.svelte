@@ -7,7 +7,26 @@
   import { createDismissableContext } from "$lib/utils/dismissable";
   import { getContext } from "svelte";
 
-  let { children, items, value = $bindable(), elementRef = $bindable(), underline, size = "md", disabled, placeholder = "Choose option ...", clearable, clearableColor = "none", clearableOnClick, onClear, clearableSvgClass, clearableClass, selectClass, class: className, classes, ...restProps }: SelectProps<T> = $props();
+  let {
+    children,
+    items,
+    value = $bindable(),
+    elementRef = $bindable(),
+    underline,
+    size = "md",
+    disabled,
+    placeholder = "Choose option ...",
+    clearable,
+    clearableColor = "none",
+    clearableOnClick,
+    onClear,
+    clearableSvgClass,
+    clearableClass,
+    selectClass,
+    class: className,
+    classes,
+    ...restProps
+  }: SelectProps<T> = $props();
 
   // clearableSvgClass, clearableClass, selectClass
   warnThemeDeprecation("Select", { selectClass, clearableSvgClass, clearableClass }, { selectClass: "select", clearableSvgClass: "svg", clearableClass: "close" });

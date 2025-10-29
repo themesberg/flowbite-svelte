@@ -1,7 +1,29 @@
 import type { fade, fly, scale, slide } from "svelte/transition";
 import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
 import type { Component, Snippet } from "svelte";
-import type { ClassValue, HTMLAnchorAttributes, HTMLAttributes, HTMLBlockquoteAttributes, HTMLButtonAttributes, HTMLDialogAttributes, HTMLImgAttributes, HTMLInputAttributes, HTMLLabelAttributes, HTMLLiAttributes, HTMLOlAttributes, HTMLSelectAttributes, HTMLSourceAttributes, HTMLTableAttributes, HTMLTdAttributes, HTMLTextareaAttributes, HTMLThAttributes, HTMLTrackAttributes, HTMLVideoAttributes, SVGAttributes, FullAutoFill } from "svelte/elements";
+import type {
+  ClassValue,
+  HTMLAnchorAttributes,
+  HTMLAttributes,
+  HTMLBlockquoteAttributes,
+  HTMLButtonAttributes,
+  HTMLDialogAttributes,
+  HTMLImgAttributes,
+  HTMLInputAttributes,
+  HTMLLabelAttributes,
+  HTMLLiAttributes,
+  HTMLOlAttributes,
+  HTMLSelectAttributes,
+  HTMLSourceAttributes,
+  HTMLTableAttributes,
+  HTMLTdAttributes,
+  HTMLTextareaAttributes,
+  HTMLThAttributes,
+  HTMLTrackAttributes,
+  HTMLVideoAttributes,
+  SVGAttributes,
+  FullAutoFill
+} from "svelte/elements";
 import type { Writable } from "svelte/store";
 import type { BlurParams, EasingFunction, FadeParams, FlyParams, ScaleParams, SlideParams, TransitionConfig } from "svelte/transition";
 import type { VariantProps } from "tailwind-variants";
@@ -28,7 +50,16 @@ import type { NavbarUlVariants, NavbarHamburgerVariants } from "$lib/navbar/them
 import type { PaginationNavVariants } from "$lib/pagination/theme";
 import type { PopoverVariants } from "$lib/popover/theme";
 import type { SidebarVariants, SidebarCtaVariants, SidebarBrandVariants, SidebarDropdownWrapperVariants, SidebarButtonVariants } from "$lib/sidebar/theme";
-import type { CardPlaceholderVariants, ImagePlaceholderVariants, ListPlaceholderVariants, SkeletonVariants, TestimonialPlaceholderVariants, TextPlaceholderVariants, VideoPlaceholderVariants, WidgetPlaceholderVariants } from "$lib/skeleton/theme";
+import type {
+  CardPlaceholderVariants,
+  ImagePlaceholderVariants,
+  ListPlaceholderVariants,
+  SkeletonVariants,
+  TestimonialPlaceholderVariants,
+  TextPlaceholderVariants,
+  VideoPlaceholderVariants,
+  WidgetPlaceholderVariants
+} from "$lib/skeleton/theme";
 import type { SpeedDialVariants, SpeedDialButtonVariants } from "$lib/speed-dial/theme";
 import type { SpinnerVaraiants } from "$lib/spinner/theme";
 import type { StepIndicatorVariants } from "$lib/step-indicator/theme";
@@ -157,7 +188,10 @@ export type AnchorButtonAttributes = ({ href: string } & HTMLAnchorAttributes) |
 
 export type AnchorDivAttributes = ({ href: string } & HTMLAnchorAttributes) | ({ href?: undefined } & HTMLAttributes<HTMLDivElement>);
 
-export type AnchorButtonDivAttributes = ({ href: string } & HTMLAnchorAttributes) | ({ href?: undefined; onclick: Function } & HTMLButtonAttributes) | ({ href?: undefined; onclick?: undefined } & HTMLAttributes<HTMLDivElement>);
+export type AnchorButtonDivAttributes =
+  | ({ href: string } & HTMLAnchorAttributes)
+  | ({ href?: undefined; onclick: Function } & HTMLButtonAttributes)
+  | ({ href?: undefined; onclick?: undefined } & HTMLAttributes<HTMLDivElement>);
 
 // accordion
 export interface AccordionCtxType {

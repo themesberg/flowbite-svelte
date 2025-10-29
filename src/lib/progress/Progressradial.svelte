@@ -6,7 +6,23 @@
   import { Tween } from "svelte/motion";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { progress = 45, radius = 42, startingPosition = "top", precision = 0, tweenDuration = 400, animate = false, size = "h-24 w-24", thickness = 4, labelInside = false, labelOutside = "", easing = cubicOut, color = "primary", class: className, classes, ...restProps }: ProgressradialProps = $props();
+  let {
+    progress = 45,
+    radius = 42,
+    startingPosition = "top",
+    precision = 0,
+    tweenDuration = 400,
+    animate = false,
+    size = "h-24 w-24",
+    thickness = 4,
+    labelInside = false,
+    labelOutside = "",
+    easing = cubicOut,
+    color = "primary",
+    class: className,
+    classes,
+    ...restProps
+  }: ProgressradialProps = $props();
 
   const theme = getTheme("progressradial");
 
@@ -50,7 +66,17 @@
       <circle cx="50" cy="50" r={radius} class={background({ class: clsx(theme?.background, classes?.background) })} fill="none" stroke-width={thickness} />
 
       <!-- Foreground circle (progress indicator) -->
-      <circle cx="50" cy="50" r={radius} class={foreground({ class: clsx(theme?.foreground, classes?.foreground) })} fill="none" stroke-width={thickness} stroke-dasharray={circumference} stroke-dashoffset={strokeDashoffset} stroke-linecap="round" />
+      <circle
+        cx="50"
+        cy="50"
+        r={radius}
+        class={foreground({ class: clsx(theme?.foreground, classes?.foreground) })}
+        fill="none"
+        stroke-width={thickness}
+        stroke-dasharray={circumference}
+        stroke-dashoffset={strokeDashoffset}
+        stroke-linecap="round"
+      />
     </svg>
 
     {#if labelInside}
@@ -65,7 +91,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1225)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1226)
 ## Props
 @prop progress = 45
 @prop radius = 42

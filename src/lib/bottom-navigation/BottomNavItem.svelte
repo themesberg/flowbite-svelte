@@ -23,7 +23,13 @@
   // Determine active state based on manual prop or URL matching
   let isActive = $derived.by(() => {
     const href = restProps.href ?? "";
-    return manualActive !== undefined ? !!manualActive : navUrl ? (href === "/" ? navUrl === "/" : href && (navUrl === href || navUrl.startsWith(href + "/") || (href !== "/" && navUrl.replace(/^https?:\/\/[^/]+/, "").startsWith(href)))) : false;
+    return manualActive !== undefined
+      ? !!manualActive
+      : navUrl
+        ? href === "/"
+          ? navUrl === "/"
+          : href && (navUrl === href || navUrl.startsWith(href + "/") || (href !== "/" && navUrl.replace(/^https?:\/\/[^/]+/, "").startsWith(href)))
+        : false;
   });
 
   function getCommonClass() {
@@ -67,7 +73,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L256)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L257)
 ## Props
 @prop children
 @prop btnName

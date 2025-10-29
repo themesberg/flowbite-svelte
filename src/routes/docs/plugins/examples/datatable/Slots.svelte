@@ -11,7 +11,10 @@
   {/snippet}
   {#snippet footerSlot()}
     <tr>
-      <td colspan={4} class="text-left text-base leading-normal font-normal tracking-normal whitespace-normal text-gray-900 dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias laboriosam placeat eum facilis aliquam, adipisci consequuntur excepturi rerum distinctio illum quibusdam neque magni quaerat dolorum hic labore repellat omnis? Quisquam?</td>
+      <td colspan={4} class="text-left text-base leading-normal font-normal tracking-normal whitespace-normal text-gray-900 dark:text-white">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias laboriosam placeat eum facilis aliquam, adipisci consequuntur excepturi rerum distinctio illum quibusdam neque magni quaerat
+        dolorum hic labore repellat omnis? Quisquam?
+      </td>
     </tr>
   {/snippet}
 </Table>

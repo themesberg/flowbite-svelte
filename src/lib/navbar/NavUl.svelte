@@ -11,7 +11,20 @@
   let navState = getContext<NavbarState>("navState");
   let navBreakpoint = getContext<NavbarBreakpoint>("breakpoint");
 
-  let { children, activeUrl = $bindable(), ulClass, slideParams, transition = slide, transitionParams, activeClass, nonActiveClass, respectMotionPreference = true, class: clasName, classes, ...restProps }: NavUlProps = $props();
+  let {
+    children,
+    activeUrl = $bindable(),
+    ulClass,
+    slideParams,
+    transition = slide,
+    transitionParams,
+    activeClass,
+    nonActiveClass,
+    respectMotionPreference = true,
+    class: clasName,
+    classes,
+    ...restProps
+  }: NavUlProps = $props();
 
   warnThemeDeprecation("NavUl", { ulClass, activeClass, nonActiveClass }, { ulClass: "ul", activeClass: "active", nonActiveClass: "nonActive" });
   const styling = $derived(classes ?? { ul: ulClass, active: activeClass, nonActive: nonActiveClass });
@@ -71,7 +84,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1107)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1108)
 ## Props
 @prop children
 @prop activeUrl = $bindable()

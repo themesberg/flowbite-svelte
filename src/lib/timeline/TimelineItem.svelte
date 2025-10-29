@@ -5,7 +5,25 @@
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, orientationSlot, title, date, dateFormat = "month-year", color = "primary", isLast = false, svgClass, liClass, divClass, timeClass, h3Class, connectorClass, datePrefix, class: className, classes, ...restProps }: TimelineItemProps = $props();
+  let {
+    children,
+    orientationSlot,
+    title,
+    date,
+    dateFormat = "month-year",
+    color = "primary",
+    isLast = false,
+    svgClass,
+    liClass,
+    divClass,
+    timeClass,
+    h3Class,
+    connectorClass,
+    datePrefix,
+    class: className,
+    classes,
+    ...restProps
+  }: TimelineItemProps = $props();
 
   warnThemeDeprecation(
     "TimelineItem",
@@ -74,7 +92,11 @@
     {:else}
       <div class={div({ class: clsx(theme?.div, styling.div) })}>
         <svg aria-hidden="true" class={svg({ class: clsx(theme?.svg, styling.svg) })} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+          <path
+            fill-rule="evenodd"
+            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+            clip-rule="evenodd"
+          />
         </svg>
       </div>
     {/if}
@@ -107,7 +129,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1819)
+[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1820)
 ## Props
 @prop children
 @prop orientationSlot

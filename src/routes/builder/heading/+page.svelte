@@ -16,7 +16,10 @@
   let headingTag: HeadingProps["tag"] = $state("h1");
   let headingCls = $state("text-primary-700 dark:text-primary-500");
   const changeHeadingCls = () => {
-    headingCls = headingCls === "text-primary-700 dark:text-primary-500" ? "text-blue-500 dark:text-blue-400 uppercase italic underline text-center font-semibold bg-gray-50 dark:bg-gray-700 p-4" : "text-primary-700 dark:text-primary-500";
+    headingCls =
+      headingCls === "text-primary-700 dark:text-primary-500"
+        ? "text-blue-500 dark:text-blue-400 uppercase italic underline text-center font-semibold bg-gray-50 dark:bg-gray-700 p-4"
+        : "text-primary-700 dark:text-primary-500";
   };
 
   let { text = $bindable("My heading") } = $props();

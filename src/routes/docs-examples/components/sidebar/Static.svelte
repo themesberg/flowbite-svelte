@@ -18,7 +18,16 @@
   <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700">
     <div class="flex w-full flex-row pb-4">
       <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
-      <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50" position="static" classes={{ nonactive: "p-2", active: "p-2" }}>
+      <Sidebar
+        {activeUrl}
+        backdrop={false}
+        isOpen={isDemoOpen}
+        closeSidebar={closeDemoSidebar}
+        params={{ x: -50, duration: 50 }}
+        class="z-50"
+        position="static"
+        classes={{ nonactive: "p-2", active: "p-2" }}
+      >
         <SidebarGroup>
           <SidebarItem label="Dashboard" href="/">
             {#snippet icon()}

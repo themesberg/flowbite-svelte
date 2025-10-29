@@ -31,7 +31,18 @@
   // size: explicit, inherited, default
   let _size = size || clampSize(group?.size) || "md";
 
-  let divClass: string = clsx(textSizes[_size], prefixPadding[_size], "text-gray-500 bg-gray-200", background ? darkBgClasses.tinted : darkBgClasses.base, background ? divider.tinted : divider.base, background ? borderClasses["tinted"] : borderClasses["base"], "inline-flex items-center border", group && "not-first:-ms-px", "first:rounded-s-lg last:rounded-e-lg", className);
+  let divClass: string = clsx(
+    textSizes[_size],
+    prefixPadding[_size],
+    "text-gray-500 bg-gray-200",
+    background ? darkBgClasses.tinted : darkBgClasses.base,
+    background ? divider.tinted : divider.base,
+    background ? borderClasses["tinted"] : borderClasses["base"],
+    "inline-flex items-center border",
+    group && "not-first:-ms-px",
+    "first:rounded-s-lg last:rounded-e-lg",
+    className
+  );
 </script>
 
 <div {...restProps} class={divClass}>
@@ -42,7 +53,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[InputAddonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L789)
+[InputAddonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L790)
 ## Props
 @prop children
 @prop class: className

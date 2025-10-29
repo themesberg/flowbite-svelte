@@ -5,7 +5,19 @@
   import type { PopoverProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { title: titleSlot, color = "default", trigger = "hover", defaultClass, arrow = true, children, placement = "top", class: className, classes, isOpen = $bindable(false), ...restProps }: PopoverProps = $props();
+  let {
+    title: titleSlot,
+    color = "default",
+    trigger = "hover",
+    defaultClass,
+    arrow = true,
+    children,
+    placement = "top",
+    class: className,
+    classes,
+    isOpen = $bindable(false),
+    ...restProps
+  }: PopoverProps = $props();
 
   // content, title, h3
   warnThemeDeprecation("Popover", { defaultClass }, { defaultClass: "content" });
@@ -33,7 +45,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1204)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1205)
 ## Props
 @prop title: titleSlot
 @prop color = "default"

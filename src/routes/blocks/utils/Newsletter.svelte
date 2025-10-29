@@ -16,7 +16,16 @@
       {#if browser}
         <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
       {/if}
-      <form action="https://app.convertkit.com/forms/4692392/subscriptions" class="seva-form formkit-form self-stretch" method="post" data-sv-form="4692392" data-uid="344e3b5c48" data-format="inline" data-version="5" data-options={JSON.stringify(data)}>
+      <form
+        action="https://app.convertkit.com/forms/4692392/subscriptions"
+        class="seva-form formkit-form self-stretch"
+        method="post"
+        data-sv-form="4692392"
+        data-uid="344e3b5c48"
+        data-format="inline"
+        data-version="5"
+        data-options={JSON.stringify(data)}
+      >
         <div data-style="clean" class="mb-3 flex items-end">
           <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
           <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields flex w-full max-w-md items-center">
@@ -25,7 +34,16 @@
               <Mail class="absolute top-1/2 left-4 -translate-y-1/2" />
             </div>
             <ButtonGroup>
-              <Input size="lg" id="member_email" class="formkit-input focus:ring-primary-600 focus:border-primary-600 pl-12 text-gray-900 sm:!w-96" name="email_address" aria-label="Email Address" placeholder="Your email address..." required type="email" />
+              <Input
+                size="lg"
+                id="member_email"
+                class="formkit-input focus:ring-primary-600 focus:border-primary-600 pl-12 text-gray-900 sm:!w-96"
+                name="email_address"
+                aria-label="Email Address"
+                placeholder="Your email address..."
+                required
+                type="email"
+              />
               <Button type="submit" color="primary" size="xl" class="formkit-submit self-stretch" data-element="submit">
                 <div class="formkit-spinner">
                   <div></div>

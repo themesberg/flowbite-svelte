@@ -49,7 +49,16 @@ Use this example with an icon and helper text to set a ZIP code value inside a f
     <div class="pointer-events-none absolute inset-y-0 start-0 top-0 flex items-center ps-3.5">
       <MapPinAltSolid />
     </div>
-    <Input type="text" pattern={zipPattern} title="Enter ZIP code: 12345 or 12345-6789" inputmode="numeric" placeholder="12345 or 12345-6789" class="ps-10" aria-describedby="helper-text-explanation" required />
+    <Input
+      type="text"
+      pattern={zipPattern}
+      title="Enter ZIP code: 12345 or 12345-6789"
+      inputmode="numeric"
+      placeholder="12345 or 12345-6789"
+      class="ps-10"
+      aria-describedby="helper-text-explanation"
+      required
+    />
   </div>
   <P id="helper-text-explanation" class="mt-2 text-sm">Enter either a standard 5-digit ZIP code or the extended ZIP+4.</P>
 </form>
@@ -71,7 +80,11 @@ Use this example to set a phone number inside a form field and a dropdown menu t
 
 <form class="mx-auto max-w-sm">
   <div class="flex items-center">
-    <button id="states-button" class="z-10 inline-flex shrink-0 items-center rounded-s-lg border border-r-0 border-gray-300 bg-gray-100 px-3 py-2 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 focus:outline-hidden dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700" type="button">
+    <button
+      id="states-button"
+      class="z-10 inline-flex shrink-0 items-center rounded-s-lg border border-r-0 border-gray-300 bg-gray-100 px-3 py-2 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 focus:outline-hidden dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+      type="button"
+    >
       <Usa />
       +1
       <ChevronDownOutline class="ms-2 h-6 w-6" />

@@ -6,7 +6,11 @@
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: SmartwatchProps = $props();
 
-  warnThemeDeprecation("Smartwatch", { divClass, div2Class, div3Class, div4Class, div5Class, div6Class }, { divClass: "class", div2Class: "top", div3Class: "rightTop", div4Class: "rightBot", div5Class: "bot", div6Class: "slot" });
+  warnThemeDeprecation(
+    "Smartwatch",
+    { divClass, div2Class, div3Class, div4Class, div5Class, div6Class },
+    { divClass: "class", div2Class: "top", div3Class: "rightTop", div4Class: "rightBot", div5Class: "bot", div6Class: "slot" }
+  );
   const styling = $derived(
     classes ?? {
       top: div2Class,
@@ -37,7 +41,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L544)
+[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L545)
 ## Props
 @prop children
 @prop class: className

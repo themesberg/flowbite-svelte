@@ -16,7 +16,16 @@
 
 <SidebarButton onclick={demoSidebarUi.toggle} class="mb-2" />
 <div class="relative">
-  <Sidebar {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" classes={{ nonactive: "p-2", active: "p-2" }}>
+  <Sidebar
+    {activeUrl}
+    backdrop={false}
+    isOpen={isDemoOpen}
+    closeSidebar={closeDemoSidebar}
+    params={{ x: -50, duration: 50 }}
+    class="z-50 h-full"
+    position="absolute"
+    classes={{ nonactive: "p-2", active: "p-2" }}
+  >
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet icon()}
@@ -46,7 +55,12 @@
       </SidebarItem>
       <SidebarCta label="Beta">
         {#snippet icon()}
-          <button type="button" class="bg-primary-50 text-primary-900 hover:bg-primary-200 focus:ring-primary-400 dark:bg-primary-900 dark:text-primary-400 dark:hover:bg-primary-800 -mx-1.5 -my-1.5 ms-auto inline-flex h-6 w-6 rounded-lg p-1 focus:ring-2" data-collapse-toggle="dropdown-cta" aria-label="Close">
+          <button
+            type="button"
+            class="bg-primary-50 text-primary-900 hover:bg-primary-200 focus:ring-primary-400 dark:bg-primary-900 dark:text-primary-400 dark:hover:bg-primary-800 -mx-1.5 -my-1.5 ms-auto inline-flex h-6 w-6 rounded-lg p-1 focus:ring-2"
+            data-collapse-toggle="dropdown-cta"
+            aria-label="Close"
+          >
             <span class="sr-only">Close</span>
             <CloseOutline class="h-4 w-4" />
           </button>

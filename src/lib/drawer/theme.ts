@@ -69,7 +69,8 @@ export type DrawerheadVariants = VariantProps<typeof drawerhead> & Classes<typeo
 export const drawerhead = tv({
   slots: {
     base: "flex items-center justify-between",
-    button: "ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white",
+    button:
+      "ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white",
     svg: "h-4 w-4"
   }
 });

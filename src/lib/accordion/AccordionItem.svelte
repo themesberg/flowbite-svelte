@@ -7,7 +7,21 @@
   import { slide } from "svelte/transition";
   import { accordionItem } from "./theme";
 
-  let { children, header, arrowup, arrowdown, open = $bindable(false), activeClass, inactiveClass, transitionType = slide, transitionParams, class: className, classes, headerClass, contentClass }: AccordionItemProps = $props();
+  let {
+    children,
+    header,
+    arrowup,
+    arrowdown,
+    open = $bindable(false),
+    activeClass,
+    inactiveClass,
+    transitionType = slide,
+    transitionParams,
+    class: className,
+    classes,
+    headerClass,
+    contentClass
+  }: AccordionItemProps = $props();
 
   warnThemeDeprecation(
     "AccordionItem",
@@ -97,7 +111,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L177)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L178)
 ## Props
 @prop children
 @prop header

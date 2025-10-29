@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.19.1",
+  "version": "1.20.0",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -472,6 +472,14 @@
     "./Indicator.svelte": {
       "types": "./dist/indicator/Indicator.svelte.d.ts",
       "svelte": "./dist/indicator/Indicator.svelte"
+    },
+    "./KanbanBoard.svelte": {
+      "types": "./dist/kanban/KanbanBoard.svelte.d.ts",
+      "svelte": "./dist/kanban/KanbanBoard.svelte"
+    },
+    "./KanbanCard.svelte": {
+      "types": "./dist/kanban/KanbanCard.svelte.d.ts",
+      "svelte": "./dist/kanban/KanbanCard.svelte"
     },
     "./Kbd.svelte": {
       "types": "./dist/kbd/Kbd.svelte.d.ts",

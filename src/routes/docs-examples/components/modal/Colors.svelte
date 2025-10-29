@@ -18,7 +18,9 @@
 </div>
 
 <Modal title="Terms of Service" form bind:open={openColor} {color}>
-  <div class="text-base leading-relaxed">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</div>
+  <div class="text-base leading-relaxed">
+    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+  </div>
   {#snippet footer()}
     <Button type="submit" color={color as ButtonProps["color"]}>I accept</Button>
     <Button type="submit" color="alternative">Decline</Button>

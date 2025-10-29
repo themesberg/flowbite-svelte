@@ -17,7 +17,9 @@
       <span class="sr-only">Light bulb</span>
     </span>
     <span>
-      New brand identity has been launched for the <A href="https://flowbite.com" class="font-medium underline decoration-solid decoration-2 underline-offset-2 hover:no-underline dark:decoration-1">Flowbite Library</A>
+      New brand identity has been launched for the <A href="https://flowbite.com" class="font-medium underline decoration-solid decoration-2 underline-offset-2 hover:no-underline dark:decoration-1">
+        Flowbite Library
+      </A>
     </span>
   </p>
 </Banner>

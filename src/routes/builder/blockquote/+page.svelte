@@ -12,7 +12,11 @@
   let title = "Blockquote builder";
   let dir = "builder";
 
-  let { text = $bindable("Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quas commodi accusamus dignissimos qui totam iste rem necessitatibus? Cumque minus et animi nostrum deserunt provident excepturi laboriosam ipsum minima nisi!") } = $props();
+  let {
+    text = $bindable(
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quas commodi accusamus dignissimos qui totam iste rem necessitatibus? Cumque minus et animi nostrum deserunt provident excepturi laboriosam ipsum minima nisi!"
+    )
+  } = $props();
 
   const sizes = Object.keys(blockquote.variants.size);
   let selectedSize: BlockquoteProps["size"] = $state("lg");

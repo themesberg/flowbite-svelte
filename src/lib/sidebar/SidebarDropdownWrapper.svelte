@@ -13,7 +13,24 @@
     isSingle: boolean;
   };
 
-  let { children, arrowup, arrowdown, icon, isOpen = $bindable(false), btnClass, label, spanClass, ulClass, transition = slide, params, svgClass, class: className, classes, onclick, ...restProps }: SidebarDropdownWrapperProps = $props();
+  let {
+    children,
+    arrowup,
+    arrowdown,
+    icon,
+    isOpen = $bindable(false),
+    btnClass,
+    label,
+    spanClass,
+    ulClass,
+    transition = slide,
+    params,
+    svgClass,
+    class: className,
+    classes,
+    onclick,
+    ...restProps
+  }: SidebarDropdownWrapperProps = $props();
 
   warnThemeDeprecation("SidebarDropdownWrapper", { btnClass, spanClass, ulClass, svgClass }, { btnClass: "btn", spanClass: "span", ulClass: "ul", svgClass: "svg" });
   const styling = $derived(
@@ -94,7 +111,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1394)
+[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1395)
 ## Props
 @prop children
 @prop arrowup

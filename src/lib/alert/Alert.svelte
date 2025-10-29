@@ -7,7 +7,20 @@
   import { getTheme } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { children, icon, alertStatus = $bindable(true), closeIcon: CloseIcon, color = "primary", rounded = true, border, class: className, dismissable, transition = fade, params, ...restProps }: AlertProps = $props();
+  let {
+    children,
+    icon,
+    alertStatus = $bindable(true),
+    closeIcon: CloseIcon,
+    color = "primary",
+    rounded = true,
+    border,
+    class: className,
+    dismissable,
+    transition = fade,
+    params,
+    ...restProps
+  }: AlertProps = $props();
 
   // Theme context
   const theme = getTheme("alert");
@@ -64,7 +77,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L191)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L192)
 ## Props
 @prop children
 @prop icon

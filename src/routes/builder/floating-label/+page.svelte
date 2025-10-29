@@ -91,7 +91,17 @@
     <Button class="mb-4 w-48" color="secondary" onclick={changeHelperSlot}>{helperSlot ? "Remove helper slot" : "Add helper slot"}</Button>
     <Label class="mb-4 w-full font-bold">Helper Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 {helperSlot ? '' : 'cursor-not-allowed opacity-30'}" classes={{ label: "w-24" }} disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio
+        class="my-1 {helperSlot ? '' : 'cursor-not-allowed opacity-30'}"
+        classes={{ label: "w-24" }}
+        disabled={helperSlot ? false : true}
+        name="helper_color"
+        bind:group={helperColor}
+        color={colorOption as RadioColorType}
+        value={colorOption}
+      >
+        {colorOption}
+      </Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
