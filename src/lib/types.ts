@@ -2082,7 +2082,7 @@ export interface KanbanBoardProps extends KanbanBoardVariants, HTMLAttributes<HT
 export interface KanbanCardProps extends KanbanCardVariants, HTMLAttributes<HTMLElement> {
   card: KanbanCardType;
   isDragging?: boolean;
-  onDragStart?: (card: KanbanCardType) => void;
-  onDragEnd?: () => void;
+  onDragStart?: (card: KanbanCardType, ev?: DragEvent) => void;
+  onDragEnd?: (ev?: DragEvent) => void;
   class?: ClassValue | null;
 }

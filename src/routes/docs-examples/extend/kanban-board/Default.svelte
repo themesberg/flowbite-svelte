@@ -111,7 +111,7 @@
 
 		<!-- Optional: Show stats -->
 		<div class="mt-6 md:mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-			{#each columns as col}
+			{#each columns as col (col.id)}
 				<div class="bg-white rounded-lg p-3 md:p-4 shadow-sm">
 					<div class="text-xs md:text-sm text-gray-600">{col.title}</div>
 					<div class="text-xl md:text-2xl font-bold text-gray-900 mt-1">{col.cards.length}</div>

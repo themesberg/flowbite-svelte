@@ -17,12 +17,16 @@
   const styles = kanbanCard();
 </script>
 
+<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 <article
   role="listitem"
   draggable="true"
   {...restProps}
   ondragstart={() => onDragStart?.(card)}
   ondragend={() => onDragEnd?.()}
+  tabindex="0"
+  aria-grabbed={isDragging}
+  aria-label={card.title}
   class={styles.card({ isDragging, class: clsx(theme?.card, classes?.card) })}
 >
   <p class={styles.cardTitle({ class: clsx(theme?.cardTitle, classes?.cardTitle) })}>
@@ -37,7 +41,7 @@
 
   {#if card.tags?.length}
     <div class={styles.cardTags({ class: clsx(theme?.cardTags, classes?.cardTags) })}>
-      {#each card.tags as tag}
+      {#each card.tags as tag, i (i)}
         <span class={styles.cardTag({ class: clsx(theme?.cardTag, classes?.cardTag) })}>
           {tag}
         </span>
