@@ -10,7 +10,18 @@
 
   const context = getContext<SpeedCtxType>("speed-dial");
 
-  let { children, name = "", color = "light", tooltip: _tooltip, pill = context.pill, textOutside = context.textOutside, textClass, class: className, classes, ...restProps }: SpeedDialButtonProps = $props();
+  let {
+    children,
+    name = "",
+    color = "light",
+    tooltip: _tooltip,
+    pill = context.pill,
+    textOutside = context.textOutside,
+    textClass,
+    class: className,
+    classes,
+    ...restProps
+  }: SpeedDialButtonProps = $props();
 
   warnThemeDeprecation("SpeedDialButton", { textClass }, { textClass: "span" });
   const styling = $derived(
@@ -42,7 +53,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1506)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1507)
 ## Props
 @prop children
 @prop name = ""

@@ -187,7 +187,11 @@ Use this example to show a CTA button in the center of the navigation component 
   </BottomNavItem>
   <Tooltip arrow={false}>Wallet</Tooltip>
   <div class="flex items-center justify-center">
-    <BottomNavItem btnName="Create new item" appBtnPosition="middle" class="bg-primary-600 hover:bg-primary-700 group focus:ring-primary-300 dark:focus:ring-primary-800 inline-flex h-10 w-10 items-center justify-center rounded-full font-medium focus:ring-4 focus:outline-hidden">
+    <BottomNavItem
+      btnName="Create new item"
+      appBtnPosition="middle"
+      class="bg-primary-600 hover:bg-primary-700 group focus:ring-primary-300 dark:focus:ring-primary-800 inline-flex h-10 w-10 items-center justify-center rounded-full font-medium focus:ring-4 focus:outline-hidden"
+    >
       <PlusOutline class="text-white" />
     </BottomNavItem>
     <Tooltip arrow={false}>Create new item</Tooltip>
@@ -227,12 +231,18 @@ This example be used to paginate multiple pages on a single view alongside other
   <Tooltip arrow={false}>Bookmark</Tooltip>
   <div class="col-span-2 flex items-center justify-center">
     <div class="mx-2 flex w-full max-w-[128px] items-center justify-between rounded-lg bg-gray-100 text-gray-600 dark:bg-gray-600 dark:text-gray-400">
-      <button type="button" class="inline-flex h-8 items-center justify-center rounded-s-lg bg-gray-100 px-1 hover:bg-gray-200 focus:ring-2 focus:ring-gray-200 focus:outline-hidden dark:bg-gray-600 dark:hover:bg-gray-800 dark:focus:ring-gray-800">
+      <button
+        type="button"
+        class="inline-flex h-8 items-center justify-center rounded-s-lg bg-gray-100 px-1 hover:bg-gray-200 focus:ring-2 focus:ring-gray-200 focus:outline-hidden dark:bg-gray-600 dark:hover:bg-gray-800 dark:focus:ring-gray-800"
+      >
         <AngleLeftOutline class="ms-1 h-2 w-2" />
         <span class="sr-only">Previous page</span>
       </button>
       <span class="mx-1 shrink-0 text-sm font-medium">1 of 345</span>
-      <button type="button" class="inline-flex h-8 items-center justify-center rounded-e-lg bg-gray-100 px-1 hover:bg-gray-200 focus:ring-2 focus:ring-gray-200 focus:outline-hidden dark:bg-gray-600 dark:hover:bg-gray-800 dark:focus:ring-gray-800">
+      <button
+        type="button"
+        class="inline-flex h-8 items-center justify-center rounded-e-lg bg-gray-100 px-1 hover:bg-gray-200 focus:ring-2 focus:ring-gray-200 focus:outline-hidden dark:bg-gray-600 dark:hover:bg-gray-800 dark:focus:ring-gray-800"
+      >
         <AngleRightOutline class="me-1 h-2 w-2" />
         <span class="sr-only">Next page</span>
       </button>
@@ -366,7 +376,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L247)
+[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L248)
 
 #### Props
 
@@ -385,7 +395,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L266)
+[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L267)
 
 #### Props
 
@@ -399,7 +409,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L272)
+[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L273)
 
 #### Props
 
@@ -411,7 +421,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 #### Types
 
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L256)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L257)
 
 #### Props
 

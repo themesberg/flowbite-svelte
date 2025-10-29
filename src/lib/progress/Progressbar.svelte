@@ -6,7 +6,20 @@
   import { progressbar } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { progress = "45", precision = 0, tweenDuration = 400, animate = false, size = "h-2.5", labelInside = false, labelOutside = "", easing = cubicOut, color = "primary", class: className, classes, ...restProps }: ProgressbarProps = $props();
+  let {
+    progress = "45",
+    precision = 0,
+    tweenDuration = 400,
+    animate = false,
+    size = "h-2.5",
+    labelInside = false,
+    labelOutside = "",
+    easing = cubicOut,
+    color = "primary",
+    class: className,
+    classes,
+    ...restProps
+  }: ProgressbarProps = $props();
 
   const theme = getTheme("progressbar");
 
@@ -53,7 +66,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1214)
+[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1215)
 ## Props
 @prop progress = "45"
 @prop precision = 0

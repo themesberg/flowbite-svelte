@@ -9,7 +9,41 @@
   import { parse, isValid, addDays, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, isWithinInterval } from "date-fns";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { value = $bindable(), defaultDate = null, range = false, rangeFrom = $bindable(), rangeTo = $bindable(), availableFrom = null, availableTo = null, locale = "default", translationLocale = locale, firstDayOfWeek = 0, dateFormat, placeholder = "Select date", disabled = false, required = false, inputClass = "", color = "primary", inline = false, autohide = true, showActionButtons = false, title = "", onselect, onclear, onapply, btnClass, inputmode = "none", classes, monthColor = "alternative", monthBtnSelected = "bg-primary-500 text-white", monthBtn = "text-gray-700 dark:text-gray-300", class: className, elementRef = $bindable(), actionSlot, inputProps = {} }: DatepickerProps = $props();
+  let {
+    value = $bindable(),
+    defaultDate = null,
+    range = false,
+    rangeFrom = $bindable(),
+    rangeTo = $bindable(),
+    availableFrom = null,
+    availableTo = null,
+    locale = "default",
+    translationLocale = locale,
+    firstDayOfWeek = 0,
+    dateFormat,
+    placeholder = "Select date",
+    disabled = false,
+    required = false,
+    inputClass = "",
+    color = "primary",
+    inline = false,
+    autohide = true,
+    showActionButtons = false,
+    title = "",
+    onselect,
+    onclear,
+    onapply,
+    btnClass,
+    inputmode = "none",
+    classes,
+    monthColor = "alternative",
+    monthBtnSelected = "bg-primary-500 text-white",
+    monthBtn = "text-gray-700 dark:text-gray-300",
+    class: className,
+    elementRef = $bindable(),
+    actionSlot,
+    inputProps = {}
+  }: DatepickerProps = $props();
 
   const theme = getTheme("datepicker");
 
@@ -326,7 +360,9 @@
 
     // Use translationLocale for aria-label
     setTimeout(() => {
-      const focusedButton = calendarRef?.querySelector(`button[aria-label="${focusedDate!.toLocaleDateString(translationLocale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}"]`) as HTMLButtonElement | null;
+      const focusedButton = calendarRef?.querySelector(
+        `button[aria-label="${focusedDate!.toLocaleDateString(translationLocale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}"]`
+      ) as HTMLButtonElement | null;
       focusedButton?.focus();
     }, 0);
   }
@@ -377,10 +413,32 @@
 <div bind:this={datepickerContainerElement} class={["relative", inline && "inline-block"]}>
   {#if !inline}
     <div class="relative">
-      <input {...inputProps} bind:this={inputElement} type="text" class={input({ color, class: clsx(theme?.input, inputClass) })} {placeholder} value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)} onfocus={() => (isOpen = true)} onchange={handleInputChangeWithDateFns} onkeydown={handleInputKeydown} {disabled} {required} {inputmode} aria-haspopup="dialog" />
-      <button type="button" class={button({ class: clsx(btnClass, theme?.button, classes?.button) })} onclick={() => (isOpen = !isOpen)} {disabled} aria-label={isOpen ? "Close date picker" : "Open date picker"}>
+      <input
+        {...inputProps}
+        bind:this={inputElement}
+        type="text"
+        class={input({ color, class: clsx(theme?.input, inputClass) })}
+        {placeholder}
+        value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)}
+        onfocus={() => (isOpen = true)}
+        onchange={handleInputChangeWithDateFns}
+        onkeydown={handleInputKeydown}
+        {disabled}
+        {required}
+        {inputmode}
+        aria-haspopup="dialog"
+      />
+      <button
+        type="button"
+        class={button({ class: clsx(btnClass, theme?.button, classes?.button) })}
+        onclick={() => (isOpen = !isOpen)}
+        {disabled}
+        aria-label={isOpen ? "Close date picker" : "Open date picker"}
+      >
         <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"></path>
+          <path
+            d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
+          ></path>
         </svg>
       </button>
     </div>
@@ -418,7 +476,12 @@
       {:else}
         <div class={nav({ class: clsx(classes?.nav) })}>
           {@render navButton(false)}
-          <Button type="button" class={polite({ class: clsx("cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700", classes?.polite) })} aria-live="polite" onclick={(event: MouseEvent) => toggleMonthSelector(event)}>
+          <Button
+            type="button"
+            class={polite({ class: clsx("cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700", classes?.polite) })}
+            aria-live="polite"
+            onclick={(event: MouseEvent) => toggleMonthSelector(event)}
+          >
             {currentMonth.toLocaleString(translationLocale, { month: "long", year: "numeric" })}
           </Button>
           {@render navButton(true)}

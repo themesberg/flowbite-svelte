@@ -126,7 +126,14 @@
   <div class="text-center">
     <Button onclick={() => (open = true)}>Drawer</Button>
   </div>
-  <Drawer bind:open transition={currentTransition.transition} placement={currentPlacement.placement as DrawerProps["placement"]} width={currentPlacement.width as DrawerProps["width"]} transitionParams={currentPlacement.placement === "left" ? currentTransition.params : currentPlacement.params} outsideclose={outsideclickStatus}>
+  <Drawer
+    bind:open
+    transition={currentTransition.transition}
+    placement={currentPlacement.placement as DrawerProps["placement"]}
+    width={currentPlacement.width as DrawerProps["width"]}
+    transitionParams={currentPlacement.placement === "left" ? currentTransition.params : currentPlacement.params}
+    outsideclose={outsideclickStatus}
+  >
     <Drawerhead onclick={() => (open = false)} class="mb-4">
       <h5 id="drawer-label" class="inline-flex items-center text-xl font-semibold text-gray-500 dark:text-gray-400">
         <InfoCircleSolid class="me-2.5 h-5 w-5" />{selectedTransition} drawer

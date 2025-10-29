@@ -13,7 +13,9 @@
   const theme = getTheme("navbarLi");
 
   let active = $derived(navState.activeUrl ? restProps.href === navState.activeUrl : false);
-  let liClass = $derived(navbarLi({ breakpoint: navBreakpoint, hidden: navState.hidden, class: clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), theme, className) }));
+  let liClass = $derived(
+    navbarLi({ breakpoint: navBreakpoint, hidden: navState.hidden, class: clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), theme, className) })
+  );
 
   function handleClick(event: any) {
     // Close the mobile menu when a link is clicked
@@ -44,7 +46,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1122)
+[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1123)
 ## Props
 @prop children
 @prop onclick

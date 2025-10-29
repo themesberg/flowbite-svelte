@@ -76,7 +76,17 @@
 <H1>Image Builder</H1>
 <CodeWrapper>
   <div class="relative mb-4 overflow-y-auto md:h-[700px]">
-    <Img src={imgEffect !== undefined ? "/images/examples/content-gallery-3.png" : imgClass.includes("full") ? "/images/examples/image-4@2x.jpg" : "/images/examples/image-1@2x.jpg"} size={imgSize} class={imgClass} alt="sample 1" effect={imgEffect} figClass={imgEffect !== undefined && imgCaption ? "relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" : ""} captionClass={imgEffect !== undefined && imgCaption ? "absolute bottom-6 px-4 text-lg text-white mx-auto" : ""} caption={imgEffect !== undefined ? "Do you want to get notified when a new component is added to Flowbite?" : imgCaption ? "Image caption" : ""} href={imgHref} />
+    <Img
+      src={imgEffect !== undefined ? "/images/examples/content-gallery-3.png" : imgClass.includes("full") ? "/images/examples/image-4@2x.jpg" : "/images/examples/image-1@2x.jpg"}
+      size={imgSize}
+      class={imgClass}
+      alt="sample 1"
+      effect={imgEffect}
+      figClass={imgEffect !== undefined && imgCaption ? "relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" : ""}
+      captionClass={imgEffect !== undefined && imgCaption ? "absolute bottom-6 px-4 text-lg text-white mx-auto" : ""}
+      caption={imgEffect !== undefined ? "Do you want to get notified when a new component is added to Flowbite?" : imgCaption ? "Image caption" : ""}
+      href={imgHref}
+    />
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Size</Label>

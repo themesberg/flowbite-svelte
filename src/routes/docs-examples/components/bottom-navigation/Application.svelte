@@ -16,7 +16,11 @@
   </BottomNavItem>
   <Tooltip arrow={false}>Wallet</Tooltip>
   <div class="flex items-center justify-center">
-    <BottomNavItem btnName="Create new item" appBtnPosition="middle" class="bg-primary-600 hover:bg-primary-700 group focus:ring-primary-300 dark:focus:ring-primary-800 inline-flex h-10 w-10 items-center justify-center rounded-full font-medium focus:ring-4 focus:outline-hidden">
+    <BottomNavItem
+      btnName="Create new item"
+      appBtnPosition="middle"
+      class="bg-primary-600 hover:bg-primary-700 group focus:ring-primary-300 dark:focus:ring-primary-800 inline-flex h-10 w-10 items-center justify-center rounded-full font-medium focus:ring-4 focus:outline-hidden"
+    >
       <PlusOutline class="text-white" />
     </BottomNavItem>
     <Tooltip arrow={false}>Create new item</Tooltip>

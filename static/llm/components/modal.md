@@ -30,7 +30,10 @@ Modal can me dismissed (canceled) by pressing `Esc` key, clicking outside of it 
 <Button onclick={() => (defaultModal = true)}>Default modal</Button>
 <Modal title="Terms of Service" form bind:open={defaultModal} onaction={({ action }) => alert(`Handle "${action}"`)}>
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
-  <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
+  <P>
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to
+    notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </P>
 
   {#snippet footer()}
     <Button type="submit" value="success">I accept</Button>
@@ -223,7 +226,10 @@ This example shows the `header` customization as well.
     </h3>
   {/snippet}
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
-  <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
+  <P>
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to
+    notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </P>
   {#snippet footer()}
     <Button type="submit" value="accept">I accept</Button>
     <Button type="submit" color="alternative">Decline</Button>
@@ -290,7 +296,10 @@ You can use five different modal sizing options starting from extra small to ext
 
 <Modal form title="Terms of Service" bind:open={openModal} {size}>
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
-  <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
+  <P>
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to
+    notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </P>
   {#snippet footer()}
     <Button type="submit">I accept</Button>
     <Button type="submit" color="alternative">Decline</Button>
@@ -330,7 +339,10 @@ You can use five different modal sizing options starting from extra small to ext
 
 <Modal title="Terms of Service" form bind:open={openPlacement} {placement}>
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
-  <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
+  <P>
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to
+    notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </P>
   {#snippet footer()}
     <Button type="submit">I accept</Button>
     <Button type="submit" color="alternative">Decline</Button>
@@ -350,19 +362,40 @@ You can use five different modal sizing options starting from extra small to ext
 
 <Modal title="Terms of Service" form bind:open={scrollingModal}>
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
-  <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
+  <P>
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to
+    notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </P>
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
-  <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
+  <P>
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to
+    notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </P>
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
-  <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
+  <P>
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to
+    notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </P>
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
-  <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
+  <P>
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to
+    notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </P>
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
-  <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
+  <P>
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to
+    notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </P>
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
-  <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
+  <P>
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to
+    notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </P>
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
-  <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
+  <P>
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to
+    notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </P>
   {#snippet footer()}
     <Button type="submit">I accept</Button>
     <Button type="submit" color="alternative">Decline</Button>
@@ -383,7 +416,10 @@ Rarely you would need a non-modal dialog. You can get it by setting `modal` prop
 <Button onclick={() => (defaultModal = true)}>Non modal</Button>
 <Modal title="Terms of Service" form bind:open={defaultModal} modal={false} class="z-10 border shadow-xl">
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
-  <P>The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
+  <P>
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to
+    notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </P>
   {#snippet footer()}
     <Button type="submit">I accept</Button>
     <Button type="submit" color="alternative">Decline</Button>
@@ -438,9 +474,19 @@ You can as well use the `onsubmit` event handler which is bubbled event from the
 
 <Button onclick={() => (open = true)}>Default modal</Button>
 
-<Modal form bind:open onsubmit={() => alert(`SUBMIT: Form is about to be submitted.`)} oncancel={() => alert("CANCEL: User canceled the dialog")} onclose={(ev) => alert(`CLOSE: Dialog closed with "${(ev.target as HTMLDialogElement)?.returnValue || "no"}" action.`)} title="Terms of Service">
+<Modal
+  form
+  bind:open
+  onsubmit={() => alert(`SUBMIT: Form is about to be submitted.`)}
+  oncancel={() => alert("CANCEL: User canceled the dialog")}
+  onclose={(ev) => alert(`CLOSE: Dialog closed with "${(ev.target as HTMLDialogElement)?.returnValue || "no"}" action.`)}
+  title="Terms of Service"
+>
   <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
-  <P>The European Union's General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</P>
+  <P>
+    The European Union's General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to
+    notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </P>
   {#snippet footer()}
     <Button type="submit" value="accept">I accept</Button>
     <Button type="submit" value="decline" color="alternative">Decline</Button>
@@ -528,7 +574,9 @@ This is perfect for advertisements, terms of service, or important announcements
         {/if}
       </div>
     {/snippet}
-    <P>With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</P>
+    <P>
+      With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+    </P>
     <P>The European Union's General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union.</P>
 
     {#snippet footer()}
@@ -545,7 +593,7 @@ This is perfect for advertisements, terms of service, or important announcements
 
 #### Types
 
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1060)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1061)
 
 #### Props
 

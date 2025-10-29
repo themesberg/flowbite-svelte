@@ -15,7 +15,17 @@
 </script>
 
 <div class="relative">
-  <Sidebar alwaysOpen {activeUrl} backdrop={false} isOpen={isDemoOpen} closeSidebar={closeDemoSidebar} params={{ x: -50, duration: 50 }} class="z-50 h-full" position="absolute" classes={{ nonactive: "p-2", active: "p-2" }}>
+  <Sidebar
+    alwaysOpen
+    {activeUrl}
+    backdrop={false}
+    isOpen={isDemoOpen}
+    closeSidebar={closeDemoSidebar}
+    params={{ x: -50, duration: 50 }}
+    class="z-50 h-full"
+    position="absolute"
+    classes={{ nonactive: "p-2", active: "p-2" }}
+  >
     <SidebarGroup>
       <SidebarItem label="Dashboard" href="/">
         {#snippet icon()}

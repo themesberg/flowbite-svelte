@@ -7,7 +7,24 @@
   import { badge } from "./theme";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { children, icon, badgeStatus = $bindable(true), color = "primary", large = false, dismissable = false, class: className, classes, border, href, target, rounded, transition = fade, params, aClass, ...restProps }: BadgeProps = $props();
+  let {
+    children,
+    icon,
+    badgeStatus = $bindable(true),
+    color = "primary",
+    large = false,
+    dismissable = false,
+    class: className,
+    classes,
+    border,
+    href,
+    target,
+    rounded,
+    transition = fade,
+    params,
+    aClass,
+    ...restProps
+  }: BadgeProps = $props();
 
   warnThemeDeprecation("Badge", { aClass }, { aClass: "linkClass" });
 
@@ -55,7 +72,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L214)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L215)
 ## Props
 @prop children
 @prop icon

@@ -147,7 +147,18 @@
 
 <CodeWrapper>
   <div class="mb-4 h-10">
-    <Badge {color} large={badgeSize} dismissable={badgeDismissable} class={badgeClass} bind:badgeStatus={badgeStatus2} {border} {rounded} transition={currentTransition.transition} params={currentTransition.params} href={link}>
+    <Badge
+      {color}
+      large={badgeSize}
+      dismissable={badgeDismissable}
+      class={badgeClass}
+      bind:badgeStatus={badgeStatus2}
+      {border}
+      {rounded}
+      transition={currentTransition.transition}
+      params={currentTransition.params}
+      href={link}
+    >
       {#if iconSlot}
         <ClockSolid class="my-1 me-1.5 h-4 w-4" />
       {/if}
@@ -166,7 +177,15 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Transition</Label>
     {#each transitions as transition}
-      <Radio disabled={badgeDismissable ? false : true} classes={{ label: "w-16 my-1 {badgeDismissable ? '' : 'opacity-30 cursor-not-allowed'}" }} name="transition_interactive" bind:group={selectedTransition} value={transition.name}>{transition.name}</Radio>
+      <Radio
+        disabled={badgeDismissable ? false : true}
+        classes={{ label: "w-16 my-1 {badgeDismissable ? '' : 'opacity-30 cursor-not-allowed'}" }}
+        name="transition_interactive"
+        bind:group={selectedTransition}
+        value={transition.name}
+      >
+        {transition.name}
+      </Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

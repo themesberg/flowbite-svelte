@@ -56,4 +56,16 @@
   <Spinner />
 {/if}
 
-<Table {items} bind:isLoading={isTableLoading} bind:dataTableInstance={tableInstance} onInitStart={handleInitStart} onInitComplete={handleInitComplete} onInitError={handleInitError} onSort={handleSort} onSearch={handleSearch} onSelectRow={handleRowSelect} selectable={true} dataTableOptions={selectRowsOptions} />
+<Table
+  {items}
+  bind:isLoading={isTableLoading}
+  bind:dataTableInstance={tableInstance}
+  onInitStart={handleInitStart}
+  onInitComplete={handleInitComplete}
+  onInitError={handleInitError}
+  onSort={handleSort}
+  onSearch={handleSearch}
+  onSelectRow={handleRowSelect}
+  selectable={true}
+  dataTableOptions={selectRowsOptions}
+/>

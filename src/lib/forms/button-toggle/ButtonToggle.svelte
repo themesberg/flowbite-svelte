@@ -35,7 +35,15 @@
   });
 </script>
 
-<button type="button" class={button({ selected, color: actualColor, size, roundedSize, class: clsx(theme?.button, ctxBtnClass, className) })} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
+<button
+  type="button"
+  class={button({ selected, color: actualColor, size, roundedSize, class: clsx(theme?.button, ctxBtnClass, className) })}
+  data-selected={selected}
+  onclick={handleClick}
+  role={multiSelect ? "checkbox" : "radio"}
+  aria-checked={selected}
+  {...restProps}
+>
   <div class={content({ class: clsx(theme?.content, styling.content) })}>
     {#if selected}
       {#if iconSlot}
@@ -54,7 +62,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L336)
+[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L337)
 ## Props
 @prop value
 @prop selected = false

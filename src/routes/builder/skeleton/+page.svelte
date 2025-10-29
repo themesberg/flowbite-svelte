@@ -1,5 +1,25 @@
 <script lang="ts">
-  import { Skeleton, skeleton, CardPlaceholder, ImagePlaceholder, imagePlaceholder, VideoPlaceholder, TextPlaceholder, ListPlaceholder, Label, Radio, WidgetPlaceholder, Button, uiHelpers, type SkeletonProps, type CardPlaceholderProps, type ListPlaceholderProps, type TextPlaceholderProps, type ImagePlaceholderProps, type VideoPlaceholderProps } from "$lib";
+  import {
+    Skeleton,
+    skeleton,
+    CardPlaceholder,
+    ImagePlaceholder,
+    imagePlaceholder,
+    VideoPlaceholder,
+    TextPlaceholder,
+    ListPlaceholder,
+    Label,
+    Radio,
+    WidgetPlaceholder,
+    Button,
+    uiHelpers,
+    type SkeletonProps,
+    type CardPlaceholderProps,
+    type ListPlaceholderProps,
+    type TextPlaceholderProps,
+    type ImagePlaceholderProps,
+    type VideoPlaceholderProps
+  } from "$lib";
   import HighlightCompo from "../utils/HighlightCompo.svelte";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
@@ -173,7 +193,9 @@
 <H2>Widget placeholder</H2>
 <CodeWrapper>
   <WidgetPlaceholder class={widgetPlaceholderClass} />
-  <Button class="mt-4 w-36" onclick={() => (widgetPlaceholderClass === "" ? (widgetPlaceholderClass = "ml-4") : (widgetPlaceholderClass = ""))}>{widgetPlaceholderClass ? "Remove class" : "Add class"}</Button>
+  <Button class="mt-4 w-36" onclick={() => (widgetPlaceholderClass === "" ? (widgetPlaceholderClass = "ml-4") : (widgetPlaceholderClass = ""))}>
+    {widgetPlaceholderClass ? "Remove class" : "Add class"}
+  </Button>
   {#snippet codeblock()}
     <HighlightCompo code={generatedCodeWidget} />
   {/snippet}

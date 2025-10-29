@@ -6,9 +6,34 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { header, footer, addon, value = $bindable(), elementRef = $bindable(), divClass, innerClass, headerClass, footerClass, addonClass, disabled, class: className, classes, clearable, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, textareaClass, ...restProps }: TextareaProps = $props();
+  let {
+    header,
+    footer,
+    addon,
+    value = $bindable(),
+    elementRef = $bindable(),
+    divClass,
+    innerClass,
+    headerClass,
+    footerClass,
+    addonClass,
+    disabled,
+    class: className,
+    classes,
+    clearable,
+    clearableSvgClass,
+    clearableColor = "none",
+    clearableClass,
+    clearableOnClick,
+    textareaClass,
+    ...restProps
+  }: TextareaProps = $props();
 
-  warnThemeDeprecation("Textarea", { divClass, innerClass, headerClass, footerClass, addonClass, textareaClass, clearableClass, clearableSvgClass }, { divClass: "div", innerClass: "inner", headerClass: "header", footerClass: "footer", addonClass: "addon", textareaClass: "class", clearableClass: "close", clearableSvgClass: "svg" });
+  warnThemeDeprecation(
+    "Textarea",
+    { divClass, innerClass, headerClass, footerClass, addonClass, textareaClass, clearableClass, clearableSvgClass },
+    { divClass: "div", innerClass: "inner", headerClass: "header", footerClass: "footer", addonClass: "addon", textareaClass: "class", clearableClass: "close", clearableSvgClass: "svg" }
+  );
   const styling = $derived(
     classes ?? {
       div: divClass,
@@ -76,7 +101,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L947)
+[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L948)
 ## Props
 @prop header
 @prop footer

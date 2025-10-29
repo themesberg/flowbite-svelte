@@ -105,9 +105,45 @@
 
 <CodeWrapper>
   <div class="mb-4 flex h-36 justify-center">
-    <Avatar src="/images/profile-picture-1.webp" alt="Profile picture 1" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} href={hrefStatus ? "/" : ""} dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined} target={targetStatus ? "_blank" : undefined} onclick={eventStatus ? () => alert("Clicked!") : undefined} />
-    <Avatar src="/images/profile-picture-2.webp" alt="Profile picture 2" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} href={hrefStatus ? "/" : ""} dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined} target={targetStatus ? "_blank" : undefined} onclick={eventStatus ? () => alert("Clicked!") : undefined} />
-    <Avatar src="/images/profile-picture-3.webp" alt="Profile picture 3" cornerStyle={isRounded ? "rounded" : undefined} {border} {stacked} class={avatarClass} size={avatarSize} href={hrefStatus ? "/" : ""} dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined} target={targetStatus ? "_blank" : undefined} onclick={eventStatus ? () => alert("Clicked!") : undefined} />
+    <Avatar
+      src="/images/profile-picture-1.webp"
+      alt="Profile picture 1"
+      cornerStyle={isRounded ? "rounded" : undefined}
+      {border}
+      {stacked}
+      class={avatarClass}
+      size={avatarSize}
+      href={hrefStatus ? "/" : ""}
+      dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined}
+      target={targetStatus ? "_blank" : undefined}
+      onclick={eventStatus ? () => alert("Clicked!") : undefined}
+    />
+    <Avatar
+      src="/images/profile-picture-2.webp"
+      alt="Profile picture 2"
+      cornerStyle={isRounded ? "rounded" : undefined}
+      {border}
+      {stacked}
+      class={avatarClass}
+      size={avatarSize}
+      href={hrefStatus ? "/" : ""}
+      dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined}
+      target={targetStatus ? "_blank" : undefined}
+      onclick={eventStatus ? () => alert("Clicked!") : undefined}
+    />
+    <Avatar
+      src="/images/profile-picture-3.webp"
+      alt="Profile picture 3"
+      cornerStyle={isRounded ? "rounded" : undefined}
+      {border}
+      {stacked}
+      class={avatarClass}
+      size={avatarSize}
+      href={hrefStatus ? "/" : ""}
+      dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined}
+      target={targetStatus ? "_blank" : undefined}
+      onclick={eventStatus ? () => alert("Clicked!") : undefined}
+    />
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Size</Label>

@@ -8,7 +8,25 @@
   import { computePosition, offset, flip, shift, autoUpdate } from "@floating-ui/dom";
   import { onDestroy } from "svelte";
 
-  let { value = $bindable([]), placeholder = "Enter tags", class: className, classes, itemClass, spanClass, closeClass, inputClass, closeBtnSize = "xs", unique = false, availableTags = [], showHelper = false, showAvailableTags = false, allowNewTags = true, inputProps = {}, disabled, ...restProps }: TagsProps = $props();
+  let {
+    value = $bindable([]),
+    placeholder = "Enter tags",
+    class: className,
+    classes,
+    itemClass,
+    spanClass,
+    closeClass,
+    inputClass,
+    closeBtnSize = "xs",
+    unique = false,
+    availableTags = [],
+    showHelper = false,
+    showAvailableTags = false,
+    allowNewTags = true,
+    inputProps = {},
+    disabled,
+    ...restProps
+  }: TagsProps = $props();
 
   warnThemeDeprecation("Tags", { itemClass, spanClass, closeClass, inputClass }, { itemClass: "tag", spanClass: "span", closeClass: "close", inputClass: "input" });
   const styling = $derived(
@@ -160,7 +178,17 @@
     </div>
   {/each}
   <div class="relative w-full" bind:this={inputContainer}>
-    <input {...inputProps} {disabled} bind:this={inputElement} onkeydown={handleKeys} bind:value={contents} placeholder={value.length === 0 ? placeholder : ""} type="text" autocomplete="off" class={inputCls({ class: clsx(styling.input) })} />
+    <input
+      {...inputProps}
+      {disabled}
+      bind:this={inputElement}
+      onkeydown={handleKeys}
+      bind:value={contents}
+      placeholder={value.length === 0 ? placeholder : ""}
+      type="text"
+      autocomplete="off"
+      class={inputCls({ class: clsx(styling.input) })}
+    />
     {#if availableTags.length > 0 && contents.trim() !== ""}
       {@const filteredSuggestions = availableTags.filter((tag) => tag.toLowerCase().includes(contents.trim().toLowerCase()) && (!unique || !value.some((t) => t.toLowerCase() === tag.toLowerCase())))}
       {#if filteredSuggestions.length > 0}

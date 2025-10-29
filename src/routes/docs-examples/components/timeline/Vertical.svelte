@@ -10,7 +10,9 @@
         <CalendarWeekSolid class="text-primary-600 dark:text-primary-400 h-4 w-4" />
       </span>
     {/snippet}
-    <p class="mb-4 pl-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
+    <p class="mb-4 pl-4 text-base font-normal text-gray-500 dark:text-gray-400">
+      Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.
+    </p>
   </TimelineItem>
   <TimelineItem title="Flowbite Figma v1.3.0" date="Released on December 7th, 2021">
     {#snippet orientationSlot()}
@@ -18,7 +20,9 @@
         <CalendarWeekSolid class="text-primary-600 dark:text-primary-400 h-4 w-4" />
       </span>
     {/snippet}
-    <p class="pl-4 text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
+    <p class="pl-4 text-base font-normal text-gray-500 dark:text-gray-400">
+      All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.
+    </p>
   </TimelineItem>
   <TimelineItem title="Flowbite Library v1.2.2" date="Released on December 2nd, 2021">
     {#snippet orientationSlot()}

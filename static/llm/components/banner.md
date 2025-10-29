@@ -33,7 +33,12 @@ Use this example to show a text message for announcement with a CTA link, an ico
       <span class="sr-only">Light bulb</span>
     </span>
     <span>
-      New brand identity has been launched for the <a href="https://flowbite.com" class="text-primary-600 dark:text-primary-500 inline font-medium underline decoration-solid decoration-2 underline-offset-2 hover:no-underline dark:decoration-1">Flowbite Library</a>
+      New brand identity has been launched for the <a
+        href="https://flowbite.com"
+        class="text-primary-600 dark:text-primary-500 inline font-medium underline decoration-solid decoration-2 underline-offset-2 hover:no-underline dark:decoration-1"
+      >
+        Flowbite Library
+      </a>
     </span>
   </p>
 </Banner>
@@ -125,7 +130,9 @@ This example can be used to share important information with your website visito
 <Banner class="absolute">
   <div class="mb-4 md:me-4 md:mb-0">
     <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Integration is the key</h2>
-    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">You can integrate Flowbite with many tools to make your work even more efficient and lightning fast based on Tailwind CSS.</p>
+    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
+      You can integrate Flowbite with many tools to make your work even more efficient and lightning fast based on Tailwind CSS.
+    </p>
   </div>
   <div class="flex shrink-0 items-center gap-3">
     <Button href="/" size="sm" color="alternative">
@@ -164,7 +171,9 @@ This example demonstrates a sliding transition using the slide transition from s
       <span class="sr-only">Light bulb</span>
     </span>
     <span>
-      New brand identity has been launched for the <A href="https://flowbite.com" class="font-medium underline decoration-solid decoration-2 underline-offset-2 hover:no-underline dark:decoration-1">Flowbite Library</A>
+      New brand identity has been launched for the <A href="https://flowbite.com" class="font-medium underline decoration-solid decoration-2 underline-offset-2 hover:no-underline dark:decoration-1">
+        Flowbite Library
+      </A>
     </span>
   </p>
 </Banner>
@@ -217,7 +226,7 @@ A reusable function that manages banner dismissal state with localStorage persis
 
 #### Types
 
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L228)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L229)
 
 #### Props
 

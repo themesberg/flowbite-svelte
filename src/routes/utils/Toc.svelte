@@ -7,7 +7,8 @@
   import type { LinkType } from "$lib/types";
   import { tick } from "svelte";
 
-  const aClass = "inline-block border-s border-white duration-200 hover:text-gray-900 transition-none dark:hover:text-white hover:border-gray-300 after:content-['#'] after:text-primary-700 dark:after:text-primary-700 dark:border-gray-900 dark:hover:border-gray-700 after:ms-2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-100";
+  const aClass =
+    "inline-block border-s border-white duration-200 hover:text-gray-900 transition-none dark:hover:text-white hover:border-gray-300 after:content-['#'] after:text-primary-700 dark:after:text-primary-700 dark:border-gray-900 dark:hover:border-gray-700 after:ms-2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-100";
 
   let { extract = (x: HTMLElement) => ({ name: x.textContent ?? "" }), headingSelector }: { extract: (x: HTMLElement) => LinkType; headingSelector: string } = $props();
 

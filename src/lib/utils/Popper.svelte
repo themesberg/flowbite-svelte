@@ -7,7 +7,28 @@
   import { sineIn } from "svelte/easing";
   import clsx from "clsx";
 
-  let { triggeredBy, triggerDelay = 200, trigger = "click", placement = "top", offset = 8, arrow = false, yOnly = false, strategy = "absolute", reference, middlewares = [dom.flip(), dom.shift()], onbeforetoggle: _onbeforetoggle, ontoggle: _ontoggle, onclose: _onclose, class: className = "", arrowClass = "", isOpen = $bindable(false), transitionParams, transition = fade, children, ...restProps }: PopperProps = $props();
+  let {
+    triggeredBy,
+    triggerDelay = 200,
+    trigger = "click",
+    placement = "top",
+    offset = 8,
+    arrow = false,
+    yOnly = false,
+    strategy = "absolute",
+    reference,
+    middlewares = [dom.flip(), dom.shift()],
+    onbeforetoggle: _onbeforetoggle,
+    ontoggle: _ontoggle,
+    onclose: _onclose,
+    class: className = "",
+    arrowClass = "",
+    isOpen = $bindable(false),
+    transitionParams,
+    transition = fade,
+    children,
+    ...restProps
+  }: PopperProps = $props();
 
   let focusable: boolean = true;
   let clickable: boolean = $derived(trigger === "click");
@@ -205,7 +226,22 @@
 <div use:set_triggers hidden></div>
 
 {#if isOpen}
-  <div popover="manual" role="tooltip" bind:this={popover} class:overflow-visible={true} onfocusout={close_popover} onmouseleave={hoverable ? close_popover : undefined} onmouseenter={hoverable ? open_popover : undefined} onbeforetoggle={on_before_toggle} ontoggle={on_toggle} class={clsx(className)} transition:transition={paramsOptions as ParamsType} onintrostart={() => popover?.showPopover()} onoutroend={() => popover?.hidePopover()} {...restProps}>
+  <div
+    popover="manual"
+    role="tooltip"
+    bind:this={popover}
+    class:overflow-visible={true}
+    onfocusout={close_popover}
+    onmouseleave={hoverable ? close_popover : undefined}
+    onmouseenter={hoverable ? open_popover : undefined}
+    onbeforetoggle={on_before_toggle}
+    ontoggle={on_toggle}
+    class={clsx(className)}
+    transition:transition={paramsOptions as ParamsType}
+    onintrostart={() => popover?.showPopover()}
+    onoutroend={() => popover?.hidePopover()}
+    {...restProps}
+  >
     {@render children()}
     {#if arrow}
       <Arrow {...arrowParams} class={arrowClass} />
@@ -217,7 +253,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2020)
+[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2021)
 ## Props
 @prop triggeredBy
 @prop triggerDelay = 200

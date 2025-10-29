@@ -8,7 +8,27 @@
   const pathname = page.url.pathname;
   const parts = pathname.split("/").filter(Boolean);
   const dirName = parts.at(-1); // "input-field"
-  const forms = ["Checkbox", "Dropzone", "Fileupload", "FloatingLabelInput", "Helper", "Input", "InputAddon", "Label", "MultiSelect", "NumberInput", "PhoneInput", "Radio", "Range", "Search", "Select", "Tags", "Textarea", "Timepicker", "Toggle"];
+  const forms = [
+    "Checkbox",
+    "Dropzone",
+    "Fileupload",
+    "FloatingLabelInput",
+    "Helper",
+    "Input",
+    "InputAddon",
+    "Label",
+    "MultiSelect",
+    "NumberInput",
+    "PhoneInput",
+    "Radio",
+    "Range",
+    "Search",
+    "Select",
+    "Tags",
+    "Textarea",
+    "Timepicker",
+    "Toggle"
+  ];
   const typography = ["A", "Blockquote", "DesriptionList", "Heading", "Hr", "Img", "Layout", "Li", "DescriptionList", "List", "Mark", "P", "Secondary", "Span"];
 
   // Special cases for components that don't follow the standard directory pattern

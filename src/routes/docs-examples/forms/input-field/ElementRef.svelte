@@ -13,7 +13,9 @@
   {#snippet header()}
     Form title
   {/snippet}
-  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cumque quisquam dolores doloribus. Aperiam perferendis quod ea repudiandae odit libero tempore error?</p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cumque quisquam dolores doloribus. Aperiam perferendis quod ea repudiandae odit libero tempore error?
+  </p>
   <form>
     <div class="mb-6 grid gap-6 md:grid-cols-2">
       <div>

@@ -5,9 +5,33 @@
   import { tableSearch } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, header, footer, divClass, inputValue = $bindable(), striped = false, hoverable = false, customColor = "", color = "default", innerDivClass, inputClass, searchClass, svgDivClass, svgClass, tableClass, class: className, classes, placeholder = "Search", ...restProps }: TableSearchProps = $props();
+  let {
+    children,
+    header,
+    footer,
+    divClass,
+    inputValue = $bindable(),
+    striped = false,
+    hoverable = false,
+    customColor = "",
+    color = "default",
+    innerDivClass,
+    inputClass,
+    searchClass,
+    svgDivClass,
+    svgClass,
+    tableClass,
+    class: className,
+    classes,
+    placeholder = "Search",
+    ...restProps
+  }: TableSearchProps = $props();
 
-  warnThemeDeprecation("TableSearch", { divClass, innerDivClass, inputClass, searchClass, svgDivClass, svgClass, tableClass }, { divClass: "root", innerDivClass: "inner", inputClass: "input", searchClass: "search", svgDivClass: "svgDiv", svgClass: "svg", tableClass: "table" });
+  warnThemeDeprecation(
+    "TableSearch",
+    { divClass, innerDivClass, inputClass, searchClass, svgDivClass, svgClass, tableClass },
+    { divClass: "root", innerDivClass: "inner", inputClass: "input", searchClass: "search", svgDivClass: "svgDiv", svgClass: "svg", tableClass: "table" }
+  );
   const styling = $derived(
     classes ?? {
       root: divClass,
@@ -70,7 +94,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1702)
+[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1703)
 ## Props
 @prop children
 @prop header

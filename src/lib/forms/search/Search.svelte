@@ -6,7 +6,22 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { children, inputClass, size, placeholder = "Search", value = $bindable(), elementRef = $bindable(), clearable = false, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, class: className, classes, ...restProps }: SearchProps = $props();
+  let {
+    children,
+    inputClass,
+    size,
+    placeholder = "Search",
+    value = $bindable(),
+    elementRef = $bindable(),
+    clearable = false,
+    clearableSvgClass,
+    clearableColor = "none",
+    clearableClass,
+    clearableOnClick,
+    class: className,
+    classes,
+    ...restProps
+  }: SearchProps = $props();
 
   warnThemeDeprecation("Search", { inputClass, clearableSvgClass, clearableClass }, { inputClass: "input", clearableSvgClass: "svg", clearableClass: "close" });
   const styling = $derived(classes ?? { input: inputClass, svg: clearableSvgClass, close: clearableClass });
@@ -47,7 +62,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L838)
+[SearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L839)
 ## Props
 @prop children
 @prop inputClass

@@ -19,7 +19,11 @@
     <div class="relative w-full">
       <Select id="phone-numbers" classes={{ select: "rounded-none rounded-s-lg border-r-0" }} items={phonenumbers} bind:value={selected} aria-describedby="helper-text-explanation" />
     </div>
-    <Clipboard color="alternative" bind:value={selected} class="z-10 inline-flex shrink-0 items-center rounded-e-lg border border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 hover:text-gray-900 focus:ring-4 focus:ring-gray-100 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-700">
+    <Clipboard
+      color="alternative"
+      bind:value={selected}
+      class="z-10 inline-flex shrink-0 items-center rounded-e-lg border border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 hover:text-gray-900 focus:ring-4 focus:ring-gray-100 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-700"
+    >
       {#snippet children(success)}
         <Tooltip class="whitespace-nowrap">{success ? "Copied" : "Copy to clipboard"}</Tooltip>
         {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}

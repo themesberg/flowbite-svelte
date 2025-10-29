@@ -6,7 +6,11 @@
 
   let { rating, globalText, ratings, divClass, spanClass, div2Class, div3Class, span2Class, class: className, classes, unit }: AdvancedRatingProps = $props();
 
-  warnThemeDeprecation("AdvancedRating", { divClass, spanClass, div2Class, div3Class, span2Class }, { divClass: "class", spanClass: "span", div2Class: "div2", div3Class: "div3", span2Class: "span2" });
+  warnThemeDeprecation(
+    "AdvancedRating",
+    { divClass, spanClass, div2Class, div3Class, span2Class },
+    { divClass: "class", spanClass: "span", div2Class: "div2", div3Class: "div3", span2Class: "span2" }
+  );
   const styling = $derived(
     classes ?? {
       span: spanClass,
@@ -41,7 +45,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1242)
+[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1243)
 ## Props
 @prop rating
 @prop globalText

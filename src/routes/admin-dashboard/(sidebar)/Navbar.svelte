@@ -1,7 +1,22 @@
 <script lang="ts">
   import { AppsMenu, UserMenu, NotificationList } from "flowbite-svelte-admin-dashboard";
   import { DarkMode, Dropdown, DropdownItem, NavBrand, NavLi, NavUl, Navbar, Search, DropdownDivider } from "flowbite-svelte";
-  import { ArchiveSolid, ArrowRightToBracketOutline, CogOutline, DollarOutline, InboxOutline, ProfileCardOutline, SalePercentOutline, ShoppingBagSolid, UsersGroupSolid, AnnotationSolid, CameraPhotoOutline, DownloadSolid, HeartSolid, ChevronDownOutline } from "flowbite-svelte-icons";
+  import {
+    ArchiveSolid,
+    ArrowRightToBracketOutline,
+    CogOutline,
+    DollarOutline,
+    InboxOutline,
+    ProfileCardOutline,
+    SalePercentOutline,
+    ShoppingBagSolid,
+    UsersGroupSolid,
+    AnnotationSolid,
+    CameraPhotoOutline,
+    DownloadSolid,
+    HeartSolid,
+    ChevronDownOutline
+  } from "flowbite-svelte-icons";
 
   // import '../../app.css';
   import Users from "../data/users.json";

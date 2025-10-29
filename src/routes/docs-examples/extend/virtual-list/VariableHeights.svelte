@@ -13,7 +13,12 @@
     const type = types[i % 3];
     return {
       title: `Item ${i + 1}`,
-      description: type === "small" ? "Short description" : type === "medium" ? "Medium length description with more details about this item" : "Large description with lots of content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. This item has much more information to display and takes up more vertical space.",
+      description:
+        type === "small"
+          ? "Short description"
+          : type === "medium"
+            ? "Medium length description with more details about this item"
+            : "Large description with lots of content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. This item has much more information to display and takes up more vertical space.",
       type
     };
   });

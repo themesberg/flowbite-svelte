@@ -6,7 +6,20 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, classes, clearableSvgClass, clearableColor = "none", clearableClass, clearableOnClick, wrapperClass, ...restProps }: FileuploadProps = $props();
+  let {
+    files = $bindable(),
+    size = "md",
+    clearable = false,
+    elementRef = $bindable(),
+    class: className,
+    classes,
+    clearableSvgClass,
+    clearableColor = "none",
+    clearableClass,
+    clearableOnClick,
+    wrapperClass,
+    ...restProps
+  }: FileuploadProps = $props();
 
   warnThemeDeprecation("Fileupload", { wrapperClass, clearableClass, clearableSvgClass }, { wrapperClass: "wrapper", clearableClass: "close", clearableSvgClass: "svg" });
   const styling = $derived(classes ?? { wrapper: wrapperClass, close: clearableClass, svg: clearableSvgClass });
@@ -37,7 +50,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L709)
+[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L710)
 ## Props
 @prop files = $bindable()
 @prop size = "md"

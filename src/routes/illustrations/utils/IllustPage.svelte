@@ -125,8 +125,23 @@
         <div class={twMerge(classDiv3, div3Class)}>
           {#each filteredEntries as [name, Component] (name)}
             {#if name !== "Icon"}
-              <button class="group relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-gray-100 p-4 hover:scale-105 dark:border-gray-800 dark:bg-gray-800" onclick={() => updateIllust(name)} aria-label="modal-button">
-                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24" width="24" xmlns="http://www.w3.org/2000/svg" class="absolute top-2 right-2 hidden group-hover:block">
+              <button
+                class="group relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-gray-200 bg-gray-100 p-4 hover:scale-105 dark:border-gray-800 dark:bg-gray-800"
+                onclick={() => updateIllust(name)}
+                aria-label="modal-button"
+              >
+                <svg
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  height="24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="absolute top-2 right-2 hidden group-hover:block"
+                >
                   <path d="M7 8l-4 4l4 4"></path>
                   <path d="M17 8l4 4l-4 4"></path>
                   <path d="M14 4l-4 16"></path>

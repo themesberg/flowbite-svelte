@@ -23,11 +23,15 @@ The default has no icon slot. If you prefer to have icons, use `order='vertical'
 
 <Timeline>
   <TimelineItem title="Application UI code in Tailwind CSS" date="February 2022">
-    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
+    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+      Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.
+    </p>
     <Button color="alternative">Learn more<ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </TimelineItem>
   <TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">
-    <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
+    <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+      All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.
+    </p>
   </TimelineItem>
   <TimelineItem title="Application UI code in Tailwind CSS" date="April 2022">
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
@@ -52,7 +56,9 @@ Use this vertical timeline component with icons and badges to show a more advanc
         <CalendarWeekSolid class="text-primary-600 dark:text-primary-400 h-4 w-4" />
       </span>
     {/snippet}
-    <p class="mb-4 pl-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
+    <p class="mb-4 pl-4 text-base font-normal text-gray-500 dark:text-gray-400">
+      Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.
+    </p>
   </TimelineItem>
   <TimelineItem title="Flowbite Figma v1.3.0" date="Released on December 7th, 2021">
     {#snippet orientationSlot()}
@@ -60,7 +66,9 @@ Use this vertical timeline component with icons and badges to show a more advanc
         <CalendarWeekSolid class="text-primary-600 dark:text-primary-400 h-4 w-4" />
       </span>
     {/snippet}
-    <p class="pl-4 text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
+    <p class="pl-4 text-base font-normal text-gray-500 dark:text-gray-400">
+      All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.
+    </p>
   </TimelineItem>
   <TimelineItem title="Flowbite Library v1.2.2" date="Released on December 2nd, 2021">
     {#snippet orientationSlot()}
@@ -237,15 +245,39 @@ Use the following example to add different colors depends on state (past, curren
 
     <TimelineItem title={appointment.title} date={appointment.date} color={itemColor} isLast={isLastItem} dateFormat="full-date" classes={{ h3: "ml-4" }} datePrefix="Released on">
       {#snippet orientationSlot()}
-        <span class="absolute -left-4 flex h-6 w-6 items-center justify-center rounded-full ring-8 ring-white dark:ring-gray-900 {appointment.status === 'completed' ? 'bg-green-200 dark:bg-green-900' : appointment.status === 'in-progress' ? 'bg-orange-200 dark:bg-orange-900' : appointment.status === 'upcoming' ? 'bg-blue-200 dark:bg-blue-900' : 'bg-gray-200 dark:bg-gray-900'}">
-          <IconComponent class="h-4 w-4 {appointment.status === 'completed' ? 'text-green-600 dark:text-green-400' : appointment.status === 'in-progress' ? 'text-orange-600 dark:text-orange-400' : appointment.status === 'upcoming' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-400'}" />
+        <span
+          class="absolute -left-4 flex h-6 w-6 items-center justify-center rounded-full ring-8 ring-white dark:ring-gray-900 {appointment.status === 'completed'
+            ? 'bg-green-200 dark:bg-green-900'
+            : appointment.status === 'in-progress'
+              ? 'bg-orange-200 dark:bg-orange-900'
+              : appointment.status === 'upcoming'
+                ? 'bg-blue-200 dark:bg-blue-900'
+                : 'bg-gray-200 dark:bg-gray-900'}"
+        >
+          <IconComponent
+            class="h-4 w-4 {appointment.status === 'completed'
+              ? 'text-green-600 dark:text-green-400'
+              : appointment.status === 'in-progress'
+                ? 'text-orange-600 dark:text-orange-400'
+                : appointment.status === 'upcoming'
+                  ? 'text-blue-600 dark:text-blue-400'
+                  : 'text-gray-600 dark:text-gray-400'}"
+          />
         </span>
       {/snippet}
       <div class="pl-4">
         <p class="mb-2 text-base font-normal text-gray-500 dark:text-gray-400">
           {appointment.description}
         </p>
-        <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium {appointment.status === 'completed' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' : appointment.status === 'in-progress' ? 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300' : appointment.status === 'upcoming' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300' : 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300'}">
+        <span
+          class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium {appointment.status === 'completed'
+            ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
+            : appointment.status === 'in-progress'
+              ? 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300'
+              : appointment.status === 'upcoming'
+                ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'
+                : 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300'}"
+        >
           {appointment.status.replace("-", " ")}
         </span>
       </div>
@@ -278,8 +310,24 @@ Use the following example to add different colors depends on state (past, curren
     <TimelineItem title={release.title} date={release.date} color={itemColor} isLast={isLastItem} datePrefix="Released on">
       {#snippet orientationSlot()}
         <div class="flex items-center">
-          <div class="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full ring-0 ring-white sm:ring-8 dark:ring-gray-900 {release.status === 'completed' ? 'bg-green-200 dark:bg-green-900' : release.status === 'in-progress' ? 'bg-orange-200 dark:bg-orange-900' : release.status === 'upcoming' ? 'bg-blue-200 dark:bg-blue-900' : 'bg-gray-200 dark:bg-gray-900'}">
-            <CalendarWeekSolid class="h-4 w-4 {release.status === 'completed' ? 'text-green-600 dark:text-green-400' : release.status === 'in-progress' ? 'text-orange-600 dark:text-orange-400' : release.status === 'upcoming' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-400'}" />
+          <div
+            class="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full ring-0 ring-white sm:ring-8 dark:ring-gray-900 {release.status === 'completed'
+              ? 'bg-green-200 dark:bg-green-900'
+              : release.status === 'in-progress'
+                ? 'bg-orange-200 dark:bg-orange-900'
+                : release.status === 'upcoming'
+                  ? 'bg-blue-200 dark:bg-blue-900'
+                  : 'bg-gray-200 dark:bg-gray-900'}"
+          >
+            <CalendarWeekSolid
+              class="h-4 w-4 {release.status === 'completed'
+                ? 'text-green-600 dark:text-green-400'
+                : release.status === 'in-progress'
+                  ? 'text-orange-600 dark:text-orange-400'
+                  : release.status === 'upcoming'
+                    ? 'text-blue-600 dark:text-blue-400'
+                    : 'text-gray-600 dark:text-gray-400'}"
+            />
           </div>
           {#if !isLastItem}
             <div class="hidden h-0.5 w-full sm:flex {connectorColor}"></div>
@@ -291,7 +339,15 @@ Use the following example to add different colors depends on state (past, curren
         {release.description}
       </p>
 
-      <span class="mt-2 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium {release.status === 'completed' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' : release.status === 'in-progress' ? 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300' : release.status === 'upcoming' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300' : 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300'}">
+      <span
+        class="mt-2 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium {release.status === 'completed'
+          ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
+          : release.status === 'in-progress'
+            ? 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300'
+            : release.status === 'upcoming'
+              ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'
+              : 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300'}"
+      >
         {release.status.replace("-", " ")}
       </span>
     </TimelineItem>
@@ -325,7 +381,8 @@ This component can be used to show the timline of a user’s activity history in
   import { Activity, ActivityItem } from "flowbite-svelte";
   let activities = [
     {
-      title: 'Bonnie moved <a href="/" class="font-semibold text-primary-600 dark:text-primary-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
+      title:
+        'Bonnie moved <a href="/" class="font-semibold text-primary-600 dark:text-primary-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
       date: "just now",
       alt: "image alt here",
       src: "/images/profile-picture-2.webp"
@@ -362,7 +419,8 @@ Use this component to group multiple data entries inside a single date and show 
   import { Group, GroupItem } from "flowbite-svelte";
   let groupTimelines = [
     {
-      title: '<span class="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie Green\'s</span> post in <span class="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span>',
+      title:
+        '<span class="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie Green\'s</span> post in <span class="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span>',
       src: "/images/profile-picture-1.webp",
       alt: "alt here",
       href: "/",
@@ -391,7 +449,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1768)
+[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1769)
 
 #### Props
 
@@ -402,7 +460,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1772)
+[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1773)
 
 #### Props
 
@@ -422,7 +480,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1784)
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1785)
 
 #### Props
 
@@ -438,7 +496,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1792)
+[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1793)
 
 #### Props
 
@@ -455,7 +513,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1812)
+[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1813)
 
 #### Props
 
@@ -467,7 +525,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1819)
+[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1820)
 
 #### Props
 

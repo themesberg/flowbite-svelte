@@ -8,7 +8,22 @@
   import { drawer } from "./theme";
   import { setContext, tick } from "svelte";
 
-  let { children, open = $bindable(false), hidden = $bindable(), modal, offset, width, dismissable = offset ? false : undefined, placement = "left", class: className, transitionParams, transition = fly, outsideclose, activateClickOutside, ...restProps }: DrawerProps = $props();
+  let {
+    children,
+    open = $bindable(false),
+    hidden = $bindable(),
+    modal,
+    offset,
+    width,
+    dismissable = offset ? false : undefined,
+    placement = "left",
+    class: className,
+    transitionParams,
+    transition = fly,
+    outsideclose,
+    activateClickOutside,
+    ...restProps
+  }: DrawerProps = $props();
 
   setContext("drawer", {
     get placement() {
@@ -94,7 +109,19 @@
   }
 </script>
 
-<Dialog {@attach init} bind:open {modal} {dismissable} {transition} {outsideclose} transitionParams={transition_params} {...restProps} {onintrostart} {onoutrostart} class={base({ class: clsx(theme?.base, className) })}>
+<Dialog
+  {@attach init}
+  bind:open
+  {modal}
+  {dismissable}
+  {transition}
+  {outsideclose}
+  transitionParams={transition_params}
+  {...restProps}
+  {onintrostart}
+  {onoutrostart}
+  class={base({ class: clsx(theme?.base, className) })}
+>
   {@render children?.()}
 </Dialog>
 
@@ -108,7 +135,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L580)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L581)
 ## Props
 @prop children
 @prop open = $bindable(false)

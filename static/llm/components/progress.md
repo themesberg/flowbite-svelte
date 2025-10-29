@@ -167,7 +167,18 @@ By default progress bar has animation disabled, you can activate with `animate`,
   let progress = "45";
 </script>
 
-<Progressbar {progress} animate precision={2} labelOutside="With animation" labelInside tweenDuration={1500} easing={sineOut} size="h-6" classes={{ label: "bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" }} class="mb-8" />
+<Progressbar
+  {progress}
+  animate
+  precision={2}
+  labelOutside="With animation"
+  labelInside
+  tweenDuration={1500}
+  easing={sineOut}
+  size="h-6"
+  classes={{ label: "bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" }}
+  class="mb-8"
+/>
 <Progressbar {progress} labelOutside="Without animation" labelInside size="h-6" classes={{ label: "bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" }} />
 <Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">Randomize</Button>
 ```
@@ -198,7 +209,7 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1214)
+[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1215)
 
 #### Props
 
@@ -218,7 +229,7 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1225)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1226)
 
 #### Props
 

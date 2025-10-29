@@ -135,7 +135,11 @@ You can also use the indicators inside of a stepper component when completing a 
   {#each [1, 2, 2, 3] as step, i}
     <li class="relative mb-6 w-full">
       <div class="flex items-center">
-        <Indicator size="xl" color={i < 3 ? undefined : "gray"} class={`z-10 shrink-0 ring-0 ring-white sm:ring-8 ${i < 3 ? "bg-primary-200 dark:bg-primary-900" : "dark:bg-gray-700 dark:ring-gray-900"}`}>
+        <Indicator
+          size="xl"
+          color={i < 3 ? undefined : "gray"}
+          class={`z-10 shrink-0 ring-0 ring-white sm:ring-8 ${i < 3 ? "bg-primary-200 dark:bg-primary-900" : "dark:bg-gray-700 dark:ring-gray-900"}`}
+        >
           {#if i === 3}
             <CheckCircleSolid class="h-6 w-6 text-gray-800 dark:text-gray-300" />
           {:else}
@@ -156,7 +160,11 @@ You can also use the indicators inside of a stepper component when completing a 
   {#each [1, 2, 2, 3] as step, i}
     <li class="relative mb-6 w-full">
       <div class="flex items-center">
-        <Indicator size="xl" color={i < 3 ? undefined : "gray"} class={`z-10 shrink-0 ring-0 ring-white sm:ring-8 ${i < 3 ? "bg-primary-200 dark:bg-primary-900" : "dark:bg-gray-700 dark:ring-gray-900"}`}>
+        <Indicator
+          size="xl"
+          color={i < 3 ? undefined : "gray"}
+          class={`z-10 shrink-0 ring-0 ring-white sm:ring-8 ${i < 3 ? "bg-primary-200 dark:bg-primary-900" : "dark:bg-gray-700 dark:ring-gray-900"}`}
+        >
           <Indicator color={i < 3 ? "orange" : "secondary"} class={i === 3 ? "dark:bg-gray-300!" : ""} />
         </Indicator>
         {#if i < 3}
@@ -199,7 +207,7 @@ Use these examples to position the indicator component anywhere relative to the 
 
 #### Types
 
-[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L997)
+[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L998)
 
 #### Props
 

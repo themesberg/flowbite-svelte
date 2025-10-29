@@ -5,7 +5,20 @@
   import { buttonToggleGroup } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { multiSelect = false, name = "toggle-group", value = multiSelect ? [] : null, color, size = "md", roundedSize = "md", onSelect = () => {}, children, ctxIconClass, ctxBtnClass, class: className, ...restProps }: ButtonToggleGroupProps = $props();
+  let {
+    multiSelect = false,
+    name = "toggle-group",
+    value = multiSelect ? [] : null,
+    color,
+    size = "md",
+    roundedSize = "md",
+    onSelect = () => {},
+    children,
+    ctxIconClass,
+    ctxBtnClass,
+    class: className,
+    ...restProps
+  }: ButtonToggleGroupProps = $props();
 
   const theme = getTheme("buttonToggleGroup");
 

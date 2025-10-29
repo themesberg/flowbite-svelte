@@ -7,7 +7,22 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { children, icon, toastStatus = $bindable(true), dismissable = true, color = "primary", position, iconClass, contentClass, align = true, params, transition = fly, class: className, classes, ...restProps }: ToastProps = $props();
+  let {
+    children,
+    icon,
+    toastStatus = $bindable(true),
+    dismissable = true,
+    color = "primary",
+    position,
+    iconClass,
+    contentClass,
+    align = true,
+    params,
+    transition = fly,
+    class: className,
+    classes,
+    ...restProps
+  }: ToastProps = $props();
 
   warnThemeDeprecation(
     "Toast",
@@ -61,7 +76,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1837)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1838)
 ## Props
 @prop children
 @prop icon

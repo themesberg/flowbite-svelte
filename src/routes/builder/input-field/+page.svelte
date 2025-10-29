@@ -105,7 +105,17 @@ ${closeBtnStatus ? `</Input>` : ""}${helperSlot ? `<Helper class="ps-6" color="$
     <Button class="mb-4 w-40" color="secondary" onclick={changeHelperSlot}>{helperSlot ? "Remove helper" : "Add helper"}</Button>
     <Label class="mb-4 w-full font-bold">Helper Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1 {helperSlot ? '' : 'cursor-not-allowed opacity-30'}" classes={{ label: "w-20" }} disabled={helperSlot ? false : true} name="helper_color" bind:group={helperColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio
+        class="my-1 {helperSlot ? '' : 'cursor-not-allowed opacity-30'}"
+        classes={{ label: "w-20" }}
+        disabled={helperSlot ? false : true}
+        name="helper_color"
+        bind:group={helperColor}
+        color={colorOption as RadioColorType}
+        value={colorOption}
+      >
+        {colorOption}
+      </Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

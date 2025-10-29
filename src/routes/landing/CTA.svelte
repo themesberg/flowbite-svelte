@@ -12,7 +12,13 @@
   import Row from "./utils/Row.svelte";
   import Section from "./utils/Section.svelte";
 
-  const features = ["Huge collection of UI components", "Open-source under the MIT License", "Interactivity handled by Svelte", "Utility classes based on Tailwind CSS", "Based on the Flowbite ecosystem and design"];
+  const features = [
+    "Huge collection of UI components",
+    "Open-source under the MIT License",
+    "Interactivity handled by Svelte",
+    "Utility classes based on Tailwind CSS",
+    "Based on the Flowbite ecosystem and design"
+  ];
 </script>
 
 <Section class="lg:py-24" tinted>
@@ -22,7 +28,10 @@
       <p class="text-lg text-gray-500 dark:text-gray-400">
         <A href="/docs/pages/introduction">Flowbite Svelte</A> is a free and open-source UI component library built using Svelte based on Flowbite and Tailwind CSS.
       </p>
-      <p class="text-lg text-gray-500 dark:text-gray-400">By installing the package via NPM you will be able to build modern looking web applications fast by leveraging Svelte, Tailwind CSS and Flowbite using ready-made UI components like dropdowns, navbars, modals, and more.</p>
+      <p class="text-lg text-gray-500 dark:text-gray-400">
+        By installing the package via NPM you will be able to build modern looking web applications fast by leveraging Svelte, Tailwind CSS and Flowbite using ready-made UI components like dropdowns,
+        navbars, modals, and more.
+      </p>
     </div>
 
     <div class="flex flex-col items-start self-stretch pt-8">
@@ -62,7 +71,9 @@
       <p class="mb-2 text-lg text-gray-500 dark:text-gray-400">
         Flowbite Svelte supports <A href="/docs/components/darkmode">dark mode</A> and can be easily integrated into your project by following the official documentation based on Svelte.
       </p>
-      <p class="text-lg text-gray-500 dark:text-gray-400">Enabling dark mode will allow users to either select the preferred method (light or dark) or automatically switch based on the operating system settings.</p>
+      <p class="text-lg text-gray-500 dark:text-gray-400">
+        Enabling dark mode will allow users to either select the preferred method (light or dark) or automatically switch based on the operating system settings.
+      </p>
     </div>
     <List tag="ul" class="space-y-4 self-stretch border-t pt-8 font-medium text-gray-900 dark:border-gray-700 dark:text-white">
       <Li icon class="gap-2">
@@ -86,7 +97,10 @@
   <Row image="bg-[url('/images/tailwind-code.png')] dark:bg-[url('/images/tailwind-code-dark.png')]" divide>
     <div class="flex flex-col items-start gap-4 self-stretch">
       <H2>Works with Tailwind CSS</H2>
-      <p class="text-lg text-gray-500 dark:text-gray-400">Flowbite Svelte uses the Tailwind CSS utility classes under the hood which means it will be easy to customize the appearance and specifications of the UI components directly from the HTML code.</p>
+      <p class="text-lg text-gray-500 dark:text-gray-400">
+        Flowbite Svelte uses the Tailwind CSS utility classes under the hood which means it will be easy to customize the appearance and specifications of the UI components directly from the HTML
+        code.
+      </p>
       <p class="text-lg text-gray-500 dark:text-gray-400">
         <A href="https://tailwindcss.com">Tailwind CSS</A> is a popular and open-source utility-first CSS framework that you can use to speed up the development of your front-end projects.
       </p>

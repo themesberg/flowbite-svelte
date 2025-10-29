@@ -174,7 +174,9 @@
       {/snippet}
       <Timeline>
         <TimelineItem title="Application UI design in Figma" date="April 2025">
-          <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-300">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
+          <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-300">
+            Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.
+          </p>
           <Button color="alternative">Learn more<ArrowRightOutline class="ms-2" size="sm" /></Button>
         </TimelineItem>
         <TimelineItem title="Marketing UI code in Flowbite" date="March 2025">

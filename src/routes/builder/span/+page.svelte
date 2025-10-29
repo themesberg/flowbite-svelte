@@ -107,7 +107,22 @@
         {/snippet}
       </Input>
     </div>
-    <P size="xl" weight="bold">Lorem ipsum <Span italic={spanItalic} underline={spanUnderline} linethrough={spanLinethrough} uppercase={spanUppercase} gradient={spanGradient} decoration={spanDecoration} decorationColor={spanDecorationColor} decorationThickness={spanDecorationThickness} highlight={spanHighlight} class={opacityClass}>{editableContent}</Span> consectetur elit.</P>
+    <P size="xl" weight="bold">
+      Lorem ipsum <Span
+        italic={spanItalic}
+        underline={spanUnderline}
+        linethrough={spanLinethrough}
+        uppercase={spanUppercase}
+        gradient={spanGradient}
+        decoration={spanDecoration}
+        decorationColor={spanDecorationColor}
+        decorationThickness={spanDecorationThickness}
+        highlight={spanHighlight}
+        class={opacityClass}
+      >
+        {editableContent}
+      </Span> consectetur elit.
+    </P>
   </div>
   <div class="mt-4 mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Highlight</Label>

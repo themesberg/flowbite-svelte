@@ -78,7 +78,16 @@
               <Mail class="absolute start-4 top-1/2 -translate-y-1/2" />
             </div>
             <ButtonGroup>
-              <Input size="lg" id="member_email" class="focus:ring-primary-600 focus:border-primary-600 ps-12 text-gray-900 sm:w-96!" bind:value={email} aria-label="Email Address" placeholder="Your email address..." required type="email" />
+              <Input
+                size="lg"
+                id="member_email"
+                class="focus:ring-primary-600 focus:border-primary-600 ps-12 text-gray-900 sm:w-96!"
+                bind:value={email}
+                aria-label="Email Address"
+                placeholder="Your email address..."
+                required
+                type="email"
+              />
               <Button type="submit" color="primary" size="xl" class="self-stretch" disabled={isSubmitting}>
                 {#if isSubmitting}
                   <div class="flex items-center">

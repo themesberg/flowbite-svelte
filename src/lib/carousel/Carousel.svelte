@@ -9,7 +9,24 @@
 
   const SLIDE_DURATION_RATIO = 0.25;
 
-  let { children, slide, images, index = $bindable(0), slideDuration = 1000, slideFit, transition, duration = 0, "aria-label": ariaLabel = "Draggable Carousel", disableSwipe = false, imgClass = "", class: className, classes, onchange, isPreload = false, ...restProps }: CarouselProps = $props();
+  let {
+    children,
+    slide,
+    images,
+    index = $bindable(0),
+    slideDuration = 1000,
+    slideFit,
+    transition,
+    duration = 0,
+    "aria-label": ariaLabel = "Draggable Carousel",
+    disableSwipe = false,
+    imgClass = "",
+    class: className,
+    classes,
+    onchange,
+    isPreload = false,
+    ...restProps
+  }: CarouselProps = $props();
 
   warnThemeDeprecation("Carousel", { imgClass }, { imgClass: "slide" });
 
@@ -173,7 +190,21 @@
 
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} />
-<div bind:this={carouselDiv} onmousedown={onDragStart} ontouchstart={onDragStart} onmousemove={onDragMove} onmouseup={onDragStop} ontouchmove={onDragMove} ontouchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0" {...restProps} class={base({ class: clsx(activeDragGesture === undefined ? "transition-transform" : "", theme?.base, className) })} {@attach loop}>
+<div
+  bind:this={carouselDiv}
+  onmousedown={onDragStart}
+  ontouchstart={onDragStart}
+  onmousemove={onDragMove}
+  onmouseup={onDragStop}
+  ontouchmove={onDragMove}
+  ontouchend={onDragStop}
+  role="button"
+  aria-label={ariaLabel}
+  tabindex="0"
+  {...restProps}
+  class={base({ class: clsx(activeDragGesture === undefined ? "transition-transform" : "", theme?.base, className) })}
+  {@attach loop}
+>
   {#if slide}
     {@render slide({ index: _state.index, Slide })}
   {:else}
@@ -187,7 +218,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L374)
+[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L375)
 ## Props
 @prop children
 @prop slide

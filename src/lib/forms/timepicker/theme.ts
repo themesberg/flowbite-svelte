@@ -10,7 +10,8 @@ export const timepicker = tv({
     inputWithIcon: "relative px-2 pr-8",
     iconWrapper: "pointer-events-none absolute inset-y-0 end-0 top-0 flex items-center pe-3.5",
     icon: "h-4 w-4 text-gray-500 dark:text-gray-400",
-    select: "text-gray-900 disabled:text-gray-400 bg-gray-50 border border-gray-300 focus:ring-0 focus:outline-none block w-full border-l-1 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:disabled:text-gray-500 dark:focus:ring-primary-500 dark:focus:border-primary-500",
+    select:
+      "text-gray-900 disabled:text-gray-400 bg-gray-50 border border-gray-300 focus:ring-0 focus:outline-none block w-full border-l-1 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:disabled:text-gray-500 dark:focus:ring-primary-500 dark:focus:border-primary-500",
     button: "!rounded-r-lg",
     buttonIcon: "ml-2 h-4 w-4",
     rangeSeparator: "flex items-center justify-center px-2 text-gray-500 dark:text-gray-400",

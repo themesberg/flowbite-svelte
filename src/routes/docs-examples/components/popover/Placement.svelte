@@ -16,4 +16,6 @@
   <Button id="placement-right">Right popover</Button>
 </div>
 <Button id="placement-bottom">Bottom popover</Button>
-<Popover triggeredBy="[id^='placement-']" placement={placement as PopoverProps["placement"]} class="w-64 text-sm font-light " title="Popover {placement}" {onbeforetoggle}>And here's some amazing content. It's very engaging. Right?</Popover>
+<Popover triggeredBy="[id^='placement-']" placement={placement as PopoverProps["placement"]} class="w-64 text-sm font-light " title="Popover {placement}" {onbeforetoggle}>
+  And here's some amazing content. It's very engaging. Right?
+</Popover>

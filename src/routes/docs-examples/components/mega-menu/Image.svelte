@@ -34,7 +34,11 @@
         </a>
       {/snippet}
       {#snippet extra()}
-        <a href="/" class="mt-4 block rounded-lg bg-gray-500 bg-cover bg-local bg-center bg-no-repeat p-4 text-left bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken" style="background-image: url(/images/dashboard-overview.png)">
+        <a
+          href="/"
+          class="mt-4 block rounded-lg bg-gray-500 bg-cover bg-local bg-center bg-no-repeat p-4 text-left bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken"
+          style="background-image: url(/images/dashboard-overview.png)"
+        >
           <p class="mb-5 max-w-xl p-0 text-sm leading-tight font-extrabold tracking-tight text-white">Preview the new Flowbite dashboard navigation.</p>
           <Button>Get started</Button>
         </a>

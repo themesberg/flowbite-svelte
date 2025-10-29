@@ -1,5 +1,26 @@
 <script lang="ts">
-  import { TextEditor, ToolbarRowWrapper, AlignmentButtonGroup, CharacterCount, DetailsButtonGroup, Divider, EditableButton, ExportButtonGroup, FormatButtonGroup, HeadingButtonGroup, ImageButtonGroup, InvisibleButtonGroup, LayoutButtonGroup, ListButtonGroup, SourceButtonGroup, TableButtonGroup1, TableButtonGroup2, TaskListButtonGroup, UndoRedoButtonGroup, YoutubeButtonGroup } from "@flowbite-svelte-plugins/texteditor";
+  import {
+    TextEditor,
+    ToolbarRowWrapper,
+    AlignmentButtonGroup,
+    CharacterCount,
+    DetailsButtonGroup,
+    Divider,
+    EditableButton,
+    ExportButtonGroup,
+    FormatButtonGroup,
+    HeadingButtonGroup,
+    ImageButtonGroup,
+    InvisibleButtonGroup,
+    LayoutButtonGroup,
+    ListButtonGroup,
+    SourceButtonGroup,
+    TableButtonGroup1,
+    TableButtonGroup2,
+    TaskListButtonGroup,
+    UndoRedoButtonGroup,
+    YoutubeButtonGroup
+  } from "@flowbite-svelte-plugins/texteditor";
   import type { Editor } from "@tiptap/core";
   import { Button } from "flowbite-svelte";
 
@@ -32,7 +53,33 @@
     console.log("Editor is now:", editable ? "editable" : "read-only");
   }
 
-  const mentions = ["Lea Thompson", "Cyndi Lauper", "Tom Cruise", "Madonna", "Jerry Hall", "Joan Collins", "Winona Ryder", "Christina Applegate", "Alyssa Milano", "Molly Ringwald", "Ally Sheedy", "Debbie Harry", "Olivia Newton-John", "Elton John", "Michael J. Fox", "Axl Rose", "Emilio Estevez", "Ralph Macchio", "Rob Lowe", "Jennifer Grey", "Mickey Rourke", "John Cusack", "Matthew Broderick", "Justine Bateman", "Lisa Bonet"];
+  const mentions = [
+    "Lea Thompson",
+    "Cyndi Lauper",
+    "Tom Cruise",
+    "Madonna",
+    "Jerry Hall",
+    "Joan Collins",
+    "Winona Ryder",
+    "Christina Applegate",
+    "Alyssa Milano",
+    "Molly Ringwald",
+    "Ally Sheedy",
+    "Debbie Harry",
+    "Olivia Newton-John",
+    "Elton John",
+    "Michael J. Fox",
+    "Axl Rose",
+    "Emilio Estevez",
+    "Ralph Macchio",
+    "Rob Lowe",
+    "Jennifer Grey",
+    "Mickey Rourke",
+    "John Cusack",
+    "Matthew Broderick",
+    "Justine Bateman",
+    "Lisa Bonet"
+  ];
 </script>
 
 <TextEditor bind:editor={editorInstance} {content} {mentions} file {isEditable} contentprops={{ id: "drag-handle-editable" }}>
