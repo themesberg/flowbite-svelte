@@ -24,6 +24,12 @@ test("Progressradial page should have h1", async ({ page }) => {
   expect(await page.textContent("h1")).toBe("Svelte Progressradial");
 });
 
+// Progressradial
+test("Split Pane page should have h1", async ({ page }) => {
+  await page.goto("/docs/extend/split-pane");
+  expect(await page.textContent("h1")).toBe("Svelte Split Pane");
+});
+
 // StepIndicator
 test("StepIndicator page should have h1", async ({ page }) => {
   await page.goto("/docs/extend/step-indicator");
