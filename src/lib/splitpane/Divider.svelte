@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { DividerProps } from '$lib/types';
+  import { divider, dividerHitArea } from './theme';
 
   let {
     direction,
@@ -20,15 +21,9 @@
   tabindex="0"
   aria-orientation={isHorizontal ? 'vertical' : 'horizontal'}
   aria-label={`Resize ${isHorizontal ? 'horizontal' : 'vertical'} panes`}
-  class="
-    bg-gray-300 shrink-0 relative z-10 transition-colors duration-200
-    hover:bg-gray-400 focus:bg-gray-400 focus:outline focus:outline-2 focus:outline-blue-500 focus:-outline-offset-2
-    {isDragging ? 'bg-blue-500' : ''}
-    {isHorizontal ? 'w-1 cursor-col-resize' : 'h-1 cursor-row-resize'}
-    {className}
-  "
+  class={divider({ direction, isDragging, class: className })}
   onmousedown={(e) => onMouseDown(e, index)}
   onkeydown={(e) => onKeyDown(e, index)}
 >
-  <div class="absolute bg-transparent {isHorizontal ? 'w-3 h-full -left-1 top-0' : 'h-3 w-full -top-1 left-0'}"></div>
+  <div class={dividerHitArea({ direction })}></div>
 </div>

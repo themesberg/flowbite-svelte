@@ -24,6 +24,7 @@
 
 <script lang="ts">
   import type { SplitPaneProps } from "$lib/types";
+  import { splitpane } from './theme';
 
   let {
     direction = "horizontal",
@@ -250,6 +251,6 @@
   }
 </script>
 
-<div bind:this={container} class="relative flex h-full w-full overflow-hidden select-none {currentDirection === 'vertical' ? 'flex-col' : ''} {className}">
+<div bind:this={container} class={splitpane({ direction: currentDirection, class: className })}>
   {@render children()}
 </div>

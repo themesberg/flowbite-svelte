@@ -2,6 +2,7 @@
   import type { PaneProps } from '$lib/types';
   import { getSplitPaneContext } from './SplitPane.svelte';
   import Divider from './Divider.svelte';
+  import { pane } from './theme';
   
   let { 
     children, 
@@ -26,7 +27,7 @@
   const isDragging = $derived(context?.getIsDragging() ?? false);
 </script>
 
-<div class="flex flex-col relative overflow-hidden shrink-0 min-w-0 min-h-0 {className}" style={paneStyle()}>
+<div class={pane({ class: className })} style={paneStyle()}>
   {@render children?.()}
 </div>
 
