@@ -182,31 +182,29 @@
     {/if}
     <div class="h-96 rounded border" bind:this={basicContainerElement}>
       <SplitPane responsive={false} onResize={handleBasicResize}>
-        {#snippet children()}
-          <Pane>
-            <div class="h-full bg-blue-50 p-4">
-              <h3 class="font-semibold">Left Pane</h3>
-              <p>This is the left pane content. Drag the divider to resize!</p>
-              {#if basicSizes.length > 0 && basicContainerWidth > 0}
-                <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
-                  Width: {basicSizes[0].toFixed(2)}% = {getPixels(basicSizes[0], basicContainerWidth)}px
-                </div>
-              {/if}
-            </div>
-          </Pane>
+        <Pane>
+          <div class="h-full bg-blue-50 p-4">
+            <h3 class="font-semibold">Left Pane</h3>
+            <p>This is the left pane content. Drag the divider to resize!</p>
+            {#if basicSizes.length > 0 && basicContainerWidth > 0}
+              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+                Width: {basicSizes[0].toFixed(2)}% = {getPixels(basicSizes[0], basicContainerWidth)}px
+              </div>
+            {/if}
+          </div>
+        </Pane>
 
-          <Pane>
-            <div class="h-full bg-green-50 p-4">
-              <h3 class="font-semibold">Right Pane</h3>
-              <p>This is the right pane content.</p>
-              {#if basicSizes.length > 0 && basicContainerWidth > 0}
-                <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
-                  Width: {basicSizes[1].toFixed(2)}% = {getPixels(basicSizes[1], basicContainerWidth)}px
-                </div>
-              {/if}
-            </div>
-          </Pane>
-        {/snippet}
+        <Pane>
+          <div class="h-full bg-green-50 p-4">
+            <h3 class="font-semibold">Right Pane</h3>
+            <p>This is the right pane content.</p>
+            {#if basicSizes.length > 0 && basicContainerWidth > 0}
+              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+                Width: {basicSizes[1].toFixed(2)}% = {getPixels(basicSizes[1], basicContainerWidth)}px
+              </div>
+            {/if}
+          </div>
+        </Pane>
       </SplitPane>
     </div>
   </div>
@@ -229,31 +227,29 @@
     {/if}
     <div class="h-96 rounded border" bind:this={verticalContainerElement}>
       <SplitPane direction="vertical" initialSizes={[30, 70]} minSize={50} responsive={false} onResize={handleVerticalResize}>
-        {#snippet children()}
-          <Pane>
-            <div class="h-full bg-purple-50 p-4">
-              <h3 class="font-semibold">Top Pane (30%)</h3>
-              <p>Tab to the divider and use arrow keys (↑/↓) for keyboard control.</p>
-              {#if verticalSizes.length > 0 && verticalContainerHeight > 0}
-                <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
-                  Height: {verticalSizes[0].toFixed(2)}% = {getPixels(verticalSizes[0], verticalContainerHeight)}px
-                </div>
-              {/if}
-            </div>
-          </Pane>
+        <Pane>
+          <div class="h-full bg-purple-50 p-4">
+            <h3 class="font-semibold">Top Pane (30%)</h3>
+            <p>Tab to the divider and use arrow keys (↑/↓) for keyboard control.</p>
+            {#if verticalSizes.length > 0 && verticalContainerHeight > 0}
+              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+                Height: {verticalSizes[0].toFixed(2)}% = {getPixels(verticalSizes[0], verticalContainerHeight)}px
+              </div>
+            {/if}
+          </div>
+        </Pane>
 
-          <Pane>
-            <div class="h-full bg-yellow-50 p-4">
-              <h3 class="font-semibold">Bottom Pane (70%)</h3>
-              <p>Press Enter or Space on divider to reset to equal sizes.</p>
-              {#if verticalSizes.length > 0 && verticalContainerHeight > 0}
-                <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
-                  Height: {verticalSizes[1].toFixed(2)}% = {getPixels(verticalSizes[1], verticalContainerHeight)}px
-                </div>
-              {/if}
-            </div>
-          </Pane>
-        {/snippet}
+        <Pane>
+          <div class="h-full bg-yellow-50 p-4">
+            <h3 class="font-semibold">Bottom Pane (70%)</h3>
+            <p>Press Enter or Space on divider to reset to equal sizes.</p>
+            {#if verticalSizes.length > 0 && verticalContainerHeight > 0}
+              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+                Height: {verticalSizes[1].toFixed(2)}% = {getPixels(verticalSizes[1], verticalContainerHeight)}px
+              </div>
+            {/if}
+          </div>
+        </Pane>
       </SplitPane>
     </div>
   </div>
@@ -279,43 +275,41 @@
     {/if}
     <div class="h-96 rounded border" bind:this={threePaneContainerElement}>
       <SplitPane minSize={80} responsive={false} onResize={handleThreePaneResize}>
-        {#snippet children()}
-          <Pane>
-            <div class="h-full bg-red-50 p-4">
-              <h3 class="font-semibold">Pane 1</h3>
-              <p>First pane</p>
-              {#if threePaneSizes.length > 0 && threePaneContainerWidth > 0}
-                <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
-                  Width: {threePaneSizes[0].toFixed(2)}% = {getPixels(threePaneSizes[0], threePaneContainerWidth)}px
-                </div>
-              {/if}
-            </div>
-          </Pane>
+        <Pane>
+          <div class="h-full bg-red-50 p-4">
+            <h3 class="font-semibold">Pane 1</h3>
+            <p>First pane</p>
+            {#if threePaneSizes.length > 0 && threePaneContainerWidth > 0}
+              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+                Width: {threePaneSizes[0].toFixed(2)}% = {getPixels(threePaneSizes[0], threePaneContainerWidth)}px
+              </div>
+            {/if}
+          </div>
+        </Pane>
 
-          <Pane>
-            <div class="h-full bg-blue-50 p-4">
-              <h3 class="font-semibold">Pane 2</h3>
-              <p>Middle pane</p>
-              {#if threePaneSizes.length > 0 && threePaneContainerWidth > 0}
-                <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
-                  Width: {threePaneSizes[1].toFixed(2)}% = {getPixels(threePaneSizes[1], threePaneContainerWidth)}px
-                </div>
-              {/if}
-            </div>
-          </Pane>
+        <Pane>
+          <div class="h-full bg-blue-50 p-4">
+            <h3 class="font-semibold">Pane 2</h3>
+            <p>Middle pane</p>
+            {#if threePaneSizes.length > 0 && threePaneContainerWidth > 0}
+              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+                Width: {threePaneSizes[1].toFixed(2)}% = {getPixels(threePaneSizes[1], threePaneContainerWidth)}px
+              </div>
+            {/if}
+          </div>
+        </Pane>
 
-          <Pane>
-            <div class="h-full bg-green-50 p-4">
-              <h3 class="font-semibold">Pane 3</h3>
-              <p>Last pane</p>
-              {#if threePaneSizes.length > 0 && threePaneContainerWidth > 0}
-                <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
-                  Width: {threePaneSizes[2].toFixed(2)}% = {getPixels(threePaneSizes[2], threePaneContainerWidth)}px
-                </div>
-              {/if}
-            </div>
-          </Pane>
-        {/snippet}
+        <Pane>
+          <div class="h-full bg-green-50 p-4">
+            <h3 class="font-semibold">Pane 3</h3>
+            <p>Last pane</p>
+            {#if threePaneSizes.length > 0 && threePaneContainerWidth > 0}
+              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+                Width: {threePaneSizes[2].toFixed(2)}% = {getPixels(threePaneSizes[2], threePaneContainerWidth)}px
+              </div>
+            {/if}
+          </div>
+        </Pane>
       </SplitPane>
     </div>
   </div>
@@ -338,31 +332,29 @@
     {/if}
     <div class="h-96 rounded border" bind:this={responsiveContainerElement}>
       <SplitPane responsive={true} breakpoint={768} onResize={handleResponsiveResize}>
-        {#snippet children()}
-          <Pane>
-            <div class="h-full bg-indigo-50 p-4">
-              <h3 class="font-semibold">Pane A</h3>
-              <p>Resize your browser window to see the layout change from horizontal to vertical at 768px.</p>
-              {#if responsiveSizes.length > 0 && responsiveContainerWidth > 0}
-                <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
-                  Size: {responsiveSizes[0].toFixed(2)}% = {getPixels(responsiveSizes[0], responsiveContainerWidth)}px
-                </div>
-              {/if}
-            </div>
-          </Pane>
+        <Pane>
+          <div class="h-full bg-indigo-50 p-4">
+            <h3 class="font-semibold">Pane A</h3>
+            <p>Resize your browser window to see the layout change from horizontal to vertical at 768px.</p>
+            {#if responsiveSizes.length > 0 && responsiveContainerWidth > 0}
+              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+                Size: {responsiveSizes[0].toFixed(2)}% = {getPixels(responsiveSizes[0], responsiveContainerWidth)}px
+              </div>
+            {/if}
+          </div>
+        </Pane>
 
-          <Pane>
-            <div class="h-full bg-pink-50 p-4">
-              <h3 class="font-semibold">Pane B</h3>
-              <p>The onResize callback tracks size changes shown above.</p>
-              {#if responsiveSizes.length > 0 && responsiveContainerWidth > 0}
-                <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
-                  Size: {responsiveSizes[1].toFixed(2)}% = {getPixels(responsiveSizes[1], responsiveContainerWidth)}px
-                </div>
-              {/if}
-            </div>
-          </Pane>
-        {/snippet}
+        <Pane>
+          <div class="h-full bg-pink-50 p-4">
+            <h3 class="font-semibold">Pane B</h3>
+            <p>The onResize callback tracks size changes shown above.</p>
+            {#if responsiveSizes.length > 0 && responsiveContainerWidth > 0}
+              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+                Size: {responsiveSizes[1].toFixed(2)}% = {getPixels(responsiveSizes[1], responsiveContainerWidth)}px
+              </div>
+            {/if}
+          </div>
+        </Pane>
       </SplitPane>
     </div>
   </div>
@@ -385,39 +377,36 @@
     {/if}
     <div class="h-96 rounded border" bind:this={nestedContainerElement}>
       <SplitPane responsive={false} onResize={handleNestedResize}>
-        {#snippet children()}
-          <Pane>
-            <div class="h-full bg-gray-50 p-4">
-              <h3 class="font-semibold">Sidebar</h3>
-              <p>Navigation or tools</p>
-              {#if nestedSizes.length > 0 && nestedContainerWidth > 0}
-                <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
-                  Width: {nestedSizes[0].toFixed(2)}% = {getPixels(nestedSizes[0], nestedContainerWidth)}px
-                </div>
-              {/if}
-            </div>
-          </Pane>
+        \
+        <Pane>
+          <div class="h-full bg-gray-50 p-4">
+            <h3 class="font-semibold">Sidebar</h3>
+            <p>Navigation or tools</p>
+            {#if nestedSizes.length > 0 && nestedContainerWidth > 0}
+              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+                Width: {nestedSizes[0].toFixed(2)}% = {getPixels(nestedSizes[0], nestedContainerWidth)}px
+              </div>
+            {/if}
+          </div>
+        </Pane>
 
-          <Pane>
-            <SplitPane direction="vertical" transition={false} responsive={false}>
-              {#snippet children()}
-                <Pane>
-                  <div class="h-full bg-blue-50 p-4">
-                    <h3 class="font-semibold">Top Content</h3>
-                    <p>Main content area</p>
-                  </div>
-                </Pane>
+        <Pane>
+          <SplitPane direction="vertical" transition={false} responsive={false}>
+            <Pane>
+              <div class="h-full bg-blue-50 p-4">
+                <h3 class="font-semibold">Top Content</h3>
+                <p>Main content area</p>
+              </div>
+            </Pane>
 
-                <Pane>
-                  <div class="h-full bg-green-50 p-4">
-                    <h3 class="font-semibold">Bottom Content</h3>
-                    <p>Footer or additional info</p>
-                  </div>
-                </Pane>
-              {/snippet}
-            </SplitPane>
-          </Pane>
-        {/snippet}
+            <Pane>
+              <div class="h-full bg-green-50 p-4">
+                <h3 class="font-semibold">Bottom Content</h3>
+                <p>Footer or additional info</p>
+              </div>
+            </Pane>
+          </SplitPane>
+        </Pane>
       </SplitPane>
     </div>
   </div>
@@ -444,36 +433,34 @@
     {/if}
     <div class="h-96 rounded border" bind:this={constrainedContainerElement}>
       <SplitPane minSize={300} initialSizes={[25, 75]} responsive={false} onResize={handleConstrainedResize}>
-        {#snippet children()}
-          <Pane>
-            <div class="h-full bg-orange-50 p-4">
-              <h3 class="font-semibold">Constrained Pane</h3>
-              <p class="mt-2 text-sm">This pane has:</p>
-              <ul class="ml-5 list-disc text-sm">
-                <li>
-                  Min size: <strong>100px</strong>
-                </li>
-              </ul>
-              {#if constrainedSizes.length > 0 && constrainedContainerWidth > 0}
-                <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
-                  Width: {constrainedSizes[0].toFixed(2)}% = {getPixels(constrainedSizes[0], constrainedContainerWidth)}px
-                </div>
-              {/if}
-            </div>
-          </Pane>
+        <Pane>
+          <div class="h-full bg-orange-50 p-4">
+            <h3 class="font-semibold">Constrained Pane</h3>
+            <p class="mt-2 text-sm">This pane has:</p>
+            <ul class="ml-5 list-disc text-sm">
+              <li>
+                Min size: <strong>100px</strong>
+              </li>
+            </ul>
+            {#if constrainedSizes.length > 0 && constrainedContainerWidth > 0}
+              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+                Width: {constrainedSizes[0].toFixed(2)}% = {getPixels(constrainedSizes[0], constrainedContainerWidth)}px
+              </div>
+            {/if}
+          </div>
+        </Pane>
 
-          <Pane>
-            <div class="h-full bg-teal-50 p-4">
-              <h3 class="font-semibold">Flexible Pane</h3>
-              <p>This pane takes up the remaining space.</p>
-              {#if constrainedSizes.length > 0 && constrainedContainerWidth > 0}
-                <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
-                  Width: {constrainedSizes[1].toFixed(2)}% = {getPixels(constrainedSizes[1], constrainedContainerWidth)}px
-                </div>
-              {/if}
-            </div>
-          </Pane>
-        {/snippet}
+        <Pane>
+          <div class="h-full bg-teal-50 p-4">
+            <h3 class="font-semibold">Flexible Pane</h3>
+            <p>This pane takes up the remaining space.</p>
+            {#if constrainedSizes.length > 0 && constrainedContainerWidth > 0}
+              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+                Width: {constrainedSizes[1].toFixed(2)}% = {getPixels(constrainedSizes[1], constrainedContainerWidth)}px
+              </div>
+            {/if}
+          </div>
+        </Pane>
       </SplitPane>
     </div>
   </div>
@@ -496,56 +483,52 @@
     {/if}
     <div class="h-[600px] overflow-hidden rounded border" bind:this={editorContainerElement}>
       <SplitPane initialSizes={[20, 80]} minSize={150} responsive={false} onResize={handleEditorResize}>
-        {#snippet children()}
-          <Pane>
-            <div class="h-full overflow-auto bg-gray-900 p-4 text-white">
-              <h3 class="mb-4 font-semibold">📁 Explorer</h3>
-              <ul class="space-y-1 text-sm">
-                <li class="cursor-pointer rounded p-1 hover:bg-gray-800">📄 index.html</li>
-                <li class="cursor-pointer rounded p-1 hover:bg-gray-800">📄 styles.css</li>
-                <li class="cursor-pointer rounded p-1 hover:bg-gray-800">📄 script.js</li>
-                <li class="cursor-pointer rounded p-1 hover:bg-gray-800">📄 App.svelte</li>
-              </ul>
-              {#if editorSizes.length > 0 && editorContainerWidth > 0}
-                <div class="mt-4 rounded border border-gray-700 bg-gray-800 p-2 font-mono text-xs">
-                  Width: {editorSizes[0].toFixed(2)}% = {getPixels(editorSizes[0], editorContainerWidth)}px
-                </div>
-              {/if}
-            </div>
-          </Pane>
+        <Pane>
+          <div class="h-full overflow-auto bg-gray-900 p-4 text-white">
+            <h3 class="mb-4 font-semibold">📁 Explorer</h3>
+            <ul class="space-y-1 text-sm">
+              <li class="cursor-pointer rounded p-1 hover:bg-gray-800">📄 index.html</li>
+              <li class="cursor-pointer rounded p-1 hover:bg-gray-800">📄 styles.css</li>
+              <li class="cursor-pointer rounded p-1 hover:bg-gray-800">📄 script.js</li>
+              <li class="cursor-pointer rounded p-1 hover:bg-gray-800">📄 App.svelte</li>
+            </ul>
+            {#if editorSizes.length > 0 && editorContainerWidth > 0}
+              <div class="mt-4 rounded border border-gray-700 bg-gray-800 p-2 font-mono text-xs">
+                Width: {editorSizes[0].toFixed(2)}% = {getPixels(editorSizes[0], editorContainerWidth)}px
+              </div>
+            {/if}
+          </div>
+        </Pane>
 
-          <Pane>
-            <SplitPane direction="vertical" initialSizes={[70, 30]} responsive={false}>
-              {#snippet children()}
-                <Pane>
-                  <div class="h-full overflow-auto bg-gray-800 p-4 font-mono text-sm text-green-400">
-                    <div class="mb-2 flex items-center justify-between">
-                      <h3 class="font-semibold text-white">script.js</h3>
-                      <span class="text-xs text-gray-400">JavaScript</span>
-                    </div>
-                    <pre class="text-xs">function hello() {`{`}
+        <Pane>
+          <SplitPane direction="vertical" initialSizes={[70, 30]} responsive={false}>
+            <Pane>
+              <div class="h-full overflow-auto bg-gray-800 p-4 font-mono text-sm text-green-400">
+                <div class="mb-2 flex items-center justify-between">
+                  <h3 class="font-semibold text-white">script.js</h3>
+                  <span class="text-xs text-gray-400">JavaScript</span>
+                </div>
+                <pre class="text-xs">function hello() &#123;
   console.log('Hello World');
   return 'Welcome to SplitPane!';
-{`}`}
+&#125;
 
 hello();</pre>
-                  </div>
-                </Pane>
+              </div>
+            </Pane>
 
-                <Pane>
-                  <div class="h-full overflow-auto bg-black p-4 font-mono text-sm text-gray-300">
-                    <h3 class="mb-2 font-semibold text-white">Terminal</h3>
-                    <div class="space-y-1 text-xs">
-                      <p>$ npm run dev</p>
-                      <p class="text-green-400">✓ Server running on http://localhost:5173</p>
-                      <p class="text-gray-500">Press h to show help</p>
-                    </div>
-                  </div>
-                </Pane>
-              {/snippet}
-            </SplitPane>
-          </Pane>
-        {/snippet}
+            <Pane>
+              <div class="h-full overflow-auto bg-black p-4 font-mono text-sm text-gray-300">
+                <h3 class="mb-2 font-semibold text-white">Terminal</h3>
+                <div class="space-y-1 text-xs">
+                  <p>$ npm run dev</p>
+                  <p class="text-green-400">✓ Server running on http://localhost:5173</p>
+                  <p class="text-gray-500">Press h to show help</p>
+                </div>
+              </div>
+            </Pane>
+          </SplitPane>
+        </Pane>
       </SplitPane>
     </div>
   </div>

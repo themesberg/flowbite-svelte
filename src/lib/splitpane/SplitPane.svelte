@@ -83,29 +83,37 @@
   });
 
   // Initialize sizes
-  $effect(() => {
-    if (registeredPanes > 0 && sizes.length === 0) {
-      let newSizes: number[];
-      
-      if (initialSizes && initialSizes.length === registeredPanes) {
-        newSizes = [...initialSizes];
-      } else {
-        const equal = 100 / registeredPanes;
-        newSizes = Array.from({ length: registeredPanes }, () => equal);
-      }
-      
-      sizes = newSizes;
+   $effect(() => {
+    if (registeredPanes === 0) {
+      sizes = [];
+      return;
+    }
+
+    if (initialSizes && initialSizes.length === registeredPanes) {
+      sizes = [...initialSizes];
+      return;
+    }
+
+    if (sizes.length !== registeredPanes) {
+      const equal = 100 / registeredPanes;
+      sizes = Array.from({ length: registeredPanes }, () => equal);
     }
   });
 
   // Responsive direction handling
-  $effect(() => {
+    $effect(() => {
     if (!responsive) {
       currentDirection = direction;
       return;
     }
 
+    if (typeof window === 'undefined') {
+      currentDirection = direction;
+      return;
+    }
+
     const mq = window.matchMedia(`(max-width: ${breakpoint}px)`);
+
     
     const handleResize = () => {
       currentDirection = mq.matches ? 'vertical' : 'horizontal';

@@ -19,8 +19,6 @@
   role="separator"
   tabindex="0"
   aria-orientation={isHorizontal ? 'vertical' : 'horizontal'}
-  aria-valuemin={0}
-  aria-valuemax={100}
   aria-label={`Resize ${isHorizontal ? 'horizontal' : 'vertical'} panes`}
   class="
     bg-gray-300 shrink-0 relative z-10 transition-colors duration-200
