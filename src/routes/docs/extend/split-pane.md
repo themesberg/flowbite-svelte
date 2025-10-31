@@ -26,7 +26,7 @@ description: A flexible Svelte 5 component for creating resizable split panes wi
 
 ## Usage Examples
 
-See [examples](/docs-examples/extend/split-pane)
+See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/themesberg/flowbite-svelte/tree/main/src/routes/docs-examples/extend/split-pane).
 
 
 ## Component data
