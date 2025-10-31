@@ -1,32 +1,32 @@
 <script lang="ts" module>
-  import { setContext, getContext } from 'svelte';
-  
-  const SPLIT_PANE_KEY = Symbol('SPLIT_PANE');
-  
+  import { setContext, getContext } from "svelte";
+
+  const SPLIT_PANE_KEY = Symbol("SPLIT_PANE");
+
   interface SplitPaneContext {
     registerPane: () => number;
     getPaneStyle: (index: number) => string;
     shouldRenderDivider: (index: number) => boolean;
-    getDirection: () => 'horizontal' | 'vertical';
+    getDirection: () => "horizontal" | "vertical";
     getIsDragging: () => boolean;
     onMouseDown: (e: MouseEvent, index: number) => void;
     onKeyDown: (e: KeyboardEvent, index: number) => void;
   }
-  
+
   export function setSplitPaneContext(ctx: SplitPaneContext) {
     setContext(SPLIT_PANE_KEY, ctx);
   }
-  
+
   export function getSplitPaneContext(): SplitPaneContext | undefined {
     return getContext(SPLIT_PANE_KEY);
   }
 </script>
 
 <script lang="ts">
-  import type { SplitPaneProps } from '$lib/types';
+  import type { SplitPaneProps } from "$lib/types";
 
   let {
-    direction = 'horizontal',
+    direction = "horizontal",
     minSize = 100,
     responsive = true,
     breakpoint = 768,
@@ -35,7 +35,7 @@
     initialSizes,
     onResize,
     children,
-    class: className = ''
+    class: className = ""
   }: SplitPaneProps = $props();
 
   let isDragging = $state(false);
@@ -53,14 +53,12 @@
   }
 
   function getPaneStyle(index: number): string {
-    if (!sizes[index]) return '';
-    
-    const size = `${sizes[index]}%`;
-    const transitionStyle = transition 
-      ? `${currentDirection === 'horizontal' ? 'width' : 'height'} ${transitionDuration}ms ease` 
-      : 'none';
+    if (!sizes[index]) return "";
 
-    if (currentDirection === 'horizontal') {
+    const size = `${sizes[index]}%`;
+    const transitionStyle = transition ? `${currentDirection === "horizontal" ? "width" : "height"} ${transitionDuration}ms ease` : "none";
+
+    if (currentDirection === "horizontal") {
       return `width: ${size}; height: 100%; transition: ${transitionStyle};`;
     } else {
       return `height: ${size}; width: 100%; transition: ${transitionStyle};`;
@@ -83,14 +81,16 @@
   });
 
   // Initialize sizes
-   $effect(() => {
+  $effect(() => {
     if (registeredPanes === 0) {
       sizes = [];
       return;
     }
 
     if (initialSizes && initialSizes.length === registeredPanes) {
-      sizes = [...initialSizes];
+      // validating initialSizes
+      const sum = initialSizes.reduce((a, b) => a + b, 0);
+      sizes = sum > 0 ? initialSizes.map((s) => (s / sum) * 100) : [...initialSizes];
       return;
     }
 
@@ -101,28 +101,30 @@
   });
 
   // Responsive direction handling
-    $effect(() => {
+  $effect(() => {
     if (!responsive) {
       currentDirection = direction;
       return;
     }
 
-    if (typeof window === 'undefined') {
+    if (typeof window === "undefined") {
       currentDirection = direction;
       return;
     }
 
     const mq = window.matchMedia(`(max-width: ${breakpoint}px)`);
 
-    
     const handleResize = () => {
-      currentDirection = mq.matches ? 'vertical' : 'horizontal';
+      // deferring the direction switch until the drag completes
+      if (!isDragging) {
+        currentDirection = mq.matches ? "vertical" : "horizontal";
+      }
     };
 
     handleResize();
-    mq.addEventListener('change', handleResize);
-    
-    return () => mq.removeEventListener('change', handleResize);
+    mq.addEventListener("change", handleResize);
+
+    return () => mq.removeEventListener("change", handleResize);
   });
 
   // Notify parent of size changes
@@ -135,39 +137,39 @@
   function startResize(e: MouseEvent, index: number) {
     e.preventDefault();
     isDragging = true;
-    startPos = currentDirection === 'horizontal' ? e.clientX : e.clientY;
+    transition = false;
+    startPos = currentDirection === "horizontal" ? e.clientX : e.clientY;
 
     const moveHandler = (ev: MouseEvent) => resize(ev, index);
     const upHandler = () => stopResize(moveHandler, upHandler);
 
-    window.addEventListener('mousemove', moveHandler);
-    window.addEventListener('mouseup', upHandler);
-    
-    document.body.style.cursor = currentDirection === 'horizontal' ? 'col-resize' : 'row-resize';
-    document.body.style.userSelect = 'none';
+    window.addEventListener("mousemove", moveHandler);
+    window.addEventListener("mouseup", upHandler);
+
+    document.body.style.cursor = currentDirection === "horizontal" ? "col-resize" : "row-resize";
+    document.body.style.userSelect = "none";
   }
 
   function stopResize(moveHandler: (e: MouseEvent) => void, upHandler: () => void) {
     isDragging = false;
-    window.removeEventListener('mousemove', moveHandler);
-    window.removeEventListener('mouseup', upHandler);
-    
-    document.body.style.cursor = '';
-    document.body.style.userSelect = '';
+    transition = true;
+    window.removeEventListener("mousemove", moveHandler);
+    window.removeEventListener("mouseup", upHandler);
+
+    document.body.style.cursor = "";
+    document.body.style.userSelect = "";
   }
 
   function resize(e: MouseEvent, index: number) {
     if (!isDragging || !container) return;
 
-    const currentPos = currentDirection === 'horizontal' ? e.clientX : e.clientY;
+    const currentPos = currentDirection === "horizontal" ? e.clientX : e.clientY;
     const delta = currentPos - startPos;
-    
+
     if (Math.abs(delta) < 1) return; // Ignore very small movements
-    
-    const containerSize = currentDirection === 'horizontal' 
-      ? container.offsetWidth 
-      : container.offsetHeight;
-    
+
+    const containerSize = currentDirection === "horizontal" ? container.offsetWidth : container.offsetHeight;
+
     const deltaPercent = (delta / containerSize) * 100;
 
     // Calculate min as percentage based on current container size
@@ -185,7 +187,7 @@
     // Apply minimum constraints - clamp to valid range
     newSize1 = Math.max(minPercent, newSize1);
     newSize2 = totalSize - newSize1;
-    
+
     // Check if second pane violates minimum constraint after first pane clamping
     if (newSize2 < minPercent) {
       newSize2 = minPercent;
@@ -206,9 +208,9 @@
     const step = 2; // percentage
     let handled = false;
 
-    const isHorizontal = currentDirection === 'horizontal';
-    const increaseKeys = isHorizontal ? ['ArrowRight'] : ['ArrowDown'];
-    const decreaseKeys = isHorizontal ? ['ArrowLeft'] : ['ArrowUp'];
+    const isHorizontal = currentDirection === "horizontal";
+    const increaseKeys = isHorizontal ? ["ArrowRight"] : ["ArrowDown"];
+    const decreaseKeys = isHorizontal ? ["ArrowLeft"] : ["ArrowUp"];
 
     const containerSize = isHorizontal ? container.offsetWidth : container.offsetHeight;
     const minPercent = (minSize / containerSize) * 100;
@@ -235,7 +237,7 @@
       applyClamp(sizes[index] + step);
     } else if (decreaseKeys.includes(e.key)) {
       applyClamp(sizes[index] - step);
-    } else if (e.key === 'Enter' || e.key === ' ') {
+    } else if (e.key === "Enter" || e.key === " ") {
       // Reset to equal sizes
       const equal = 100 / registeredPanes;
       sizes = sizes.map(() => equal);
@@ -248,9 +250,6 @@
   }
 </script>
 
-<div
-  bind:this={container}
-  class="flex h-full w-full overflow-hidden select-none relative {currentDirection === 'vertical' ? 'flex-col' : ''} {className}"
->
+<div bind:this={container} class="relative flex h-full w-full overflow-hidden select-none {currentDirection === 'vertical' ? 'flex-col' : ''} {className}">
   {@render children()}
 </div>
