@@ -6,9 +6,7 @@
   let { 
     children, 
     class: className = '', 
-    style = '',
-    minSize,
-    maxSize 
+    style = ''
   }: PaneProps = $props();
 
   const context = getSplitPaneContext();
@@ -20,8 +18,6 @@
       const contextStyle = context.getPaneStyle(paneIndex);
       styles.push(contextStyle);
     }
-    if (minSize) styles.push(`min-width: ${minSize}px; min-height: ${minSize}px`);
-    if (maxSize) styles.push(`max-width: ${maxSize}px; max-height: ${maxSize}px`);
     return styles.filter(Boolean).join('; ');
   });
 
@@ -30,7 +26,7 @@
   const isDragging = $derived(context?.getIsDragging() ?? false);
 </script>
 
-<div class="pane split-pane-pane {className}" style={paneStyle()}>
+<div class="flex flex-col relative overflow-hidden shrink-0 min-w-0 min-h-0 {className}" style={paneStyle()}>
   {@render children?.()}
 </div>
 
@@ -43,12 +39,3 @@
     onKeyDown={context.onKeyDown}
   />
 {/if}
-
-<style>
-  .pane {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-  }
-</style>

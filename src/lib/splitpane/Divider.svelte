@@ -22,61 +22,15 @@
   aria-valuemin={0}
   aria-valuemax={100}
   aria-label={`Resize ${isHorizontal ? 'horizontal' : 'vertical'} panes`}
-  class="divider {className}"
-  class:horizontal={isHorizontal}
-  class:vertical={!isHorizontal}
-  class:dragging={isDragging}
+  class="
+    bg-gray-300 shrink-0 relative z-10 transition-colors duration-200
+    hover:bg-gray-400 focus:bg-gray-400 focus:outline focus:outline-2 focus:outline-blue-500 focus:-outline-offset-2
+    {isDragging ? 'bg-blue-500' : ''}
+    {isHorizontal ? 'w-1 cursor-col-resize' : 'h-1 cursor-row-resize'}
+    {className}
+  "
   onmousedown={(e) => onMouseDown(e, index)}
   onkeydown={(e) => onKeyDown(e, index)}
-></div>
-
-<style>
-  .divider {
-    background: rgb(229, 231, 235);
-    flex-shrink: 0;
-    position: relative;
-    z-index: 10;
-    transition: background 0.2s ease;
-  }
-
-  .divider:hover,
-  .divider:focus {
-    background: rgb(209, 213, 219);
-    outline: 2px solid rgb(59, 130, 246);
-    outline-offset: -2px;
-  }
-
-  .divider.dragging {
-    background: rgb(59, 130, 246);
-  }
-
-  .divider.horizontal {
-    width: 4px;
-    cursor: col-resize;
-  }
-
-  .divider.vertical {
-    height: 4px;
-    cursor: row-resize;
-  }
-
-  .divider::after {
-    content: '';
-    position: absolute;
-    background: transparent;
-  }
-
-  .divider.horizontal::after {
-    width: 12px;
-    height: 100%;
-    left: -4px;
-    top: 0;
-  }
-
-  .divider.vertical::after {
-    height: 12px;
-    width: 100%;
-    top: -4px;
-    left: 0;
-  }
-</style>
+>
+  <div class="absolute bg-transparent {isHorizontal ? 'w-3 h-full -left-1 top-0' : 'h-3 w-full -top-1 left-0'}"></div>
+</div>

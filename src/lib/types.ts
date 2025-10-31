@@ -2125,11 +2125,9 @@ export interface KanbanCardProps extends KanbanCardVariants, HTMLAttributes<HTML
 }
 
 // splitpane
-
 export interface SplitPaneProps {
   direction?: 'horizontal' | 'vertical';
   minSize?: number;
-  maxSize?: number;
   responsive?: boolean;
   breakpoint?: number;
   transition?: boolean;
@@ -2144,8 +2142,6 @@ export interface PaneProps {
   children?: Snippet;
   class?: string;
   style?: string;
-  minSize?: number;
-  maxSize?: number;
 }
 
 export interface DividerProps {

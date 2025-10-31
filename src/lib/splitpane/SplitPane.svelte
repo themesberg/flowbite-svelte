@@ -28,7 +28,6 @@
   let {
     direction = 'horizontal',
     minSize = 100,
-    maxSize,
     responsive = true,
     breakpoint = 768,
     transition = true,
@@ -85,11 +84,7 @@
 
   // Initialize sizes
   $effect(() => {
-    if (registeredPanes > 0 && sizes.length === 0 && container) {
-      const containerSize = currentDirection === 'horizontal' 
-        ? container.offsetWidth 
-        : container.offsetHeight;
-      
+    if (registeredPanes > 0 && sizes.length === 0) {
       let newSizes: number[];
       
       if (initialSizes && initialSizes.length === registeredPanes) {
@@ -97,25 +92,6 @@
       } else {
         const equal = 100 / registeredPanes;
         newSizes = Array.from({ length: registeredPanes }, () => equal);
-      }
-      
-      // Apply max constraints during initialization if needed
-      if (maxSize && containerSize > 0) {
-        const maxPercent = (maxSize / containerSize) * 100;
-        newSizes = newSizes.map((size, i) => {
-          if (size > maxPercent) {
-            return maxPercent;
-          }
-          return size;
-        });
-        
-        // Redistribute excess to other panes
-        const total = newSizes.reduce((sum, s) => sum + s, 0);
-        if (total < 100) {
-          const excess = 100 - total;
-          const lastIndex = newSizes.length - 1;
-          newSizes[lastIndex] += excess;
-        }
       }
       
       sizes = newSizes;
@@ -178,50 +154,38 @@
     const currentPos = currentDirection === 'horizontal' ? e.clientX : e.clientY;
     const delta = currentPos - startPos;
     
+    if (Math.abs(delta) < 1) return; // Ignore very small movements
+    
     const containerSize = currentDirection === 'horizontal' 
       ? container.offsetWidth 
       : container.offsetHeight;
     
     const deltaPercent = (delta / containerSize) * 100;
 
-    // Calculate min/max as percentages based on current container size
+    // Calculate min as percentage based on current container size
     const minPercent = (minSize / containerSize) * 100;
-    const maxPercent = maxSize ? (maxSize / containerSize) * 100 : Infinity;
 
-    // Store original total
-    const totalSize = sizes[index] + sizes[index + 1];
+    // Store original sizes
+    const oldSize1 = sizes[index];
+    const oldSize2 = sizes[index + 1];
+    const totalSize = oldSize1 + oldSize2;
 
-    // Calculate new sizes with delta
-    let newSize1 = sizes[index] + deltaPercent;
-    let newSize2 = totalSize - newSize1;
+    // Calculate desired new sizes
+    let newSize1 = oldSize1 + deltaPercent;
+    let newSize2 = oldSize2 - deltaPercent;
 
-    // Apply constraints to first pane
-    if (newSize1 < minPercent) {
-      newSize1 = minPercent;
-    } else if (maxPercent !== Infinity && newSize1 > maxPercent) {
-      newSize1 = maxPercent;
-    }
-    
-    // Recalculate second pane
+    // Apply minimum constraints - clamp to valid range
+    newSize1 = Math.max(minPercent, newSize1);
     newSize2 = totalSize - newSize1;
     
-    // Apply constraints to second pane (if it violates, adjust first pane back)
+    // Check if second pane violates minimum constraint after first pane clamping
     if (newSize2 < minPercent) {
       newSize2 = minPercent;
-      newSize1 = totalSize - newSize2;
-      // Re-check first pane constraints after adjustment
-      if (maxPercent !== Infinity && newSize1 > maxPercent) {
-        // Both constraints can't be satisfied, prioritize min
-        newSize1 = maxPercent;
-        newSize2 = totalSize - newSize1;
-      }
-    } else if (maxPercent !== Infinity && newSize2 > maxPercent) {
-      newSize2 = maxPercent;
       newSize1 = totalSize - newSize2;
     }
 
     // Only update if changed significantly
-    if (Math.abs(newSize1 - sizes[index]) > 0.1) {
+    if (Math.abs(newSize1 - oldSize1) > 0.01) {
       sizes[index] = newSize1;
       sizes[index + 1] = newSize2;
       startPos = currentPos;
@@ -238,19 +202,16 @@
     const increaseKeys = isHorizontal ? ['ArrowRight'] : ['ArrowDown'];
     const decreaseKeys = isHorizontal ? ['ArrowLeft'] : ['ArrowUp'];
 
+    const containerSize = isHorizontal ? container.offsetWidth : container.offsetHeight;
+    const minPercent = (minSize / containerSize) * 100;
+
     if (increaseKeys.includes(e.key)) {
-      const containerSize = isHorizontal ? container.offsetWidth : container.offsetHeight;
-      const minPercent = (minSize / containerSize) * 100;
-      
       if (sizes[index] + step <= 100 - minPercent) {
         sizes[index] += step;
         sizes[index + 1] -= step;
         handled = true;
       }
     } else if (decreaseKeys.includes(e.key)) {
-      const containerSize = isHorizontal ? container.offsetWidth : container.offsetHeight;
-      const minPercent = (minSize / containerSize) * 100;
-      
       if (sizes[index] - step >= minPercent) {
         sizes[index] -= step;
         sizes[index + 1] += step;
@@ -271,36 +232,7 @@
 
 <div
   bind:this={container}
-  class="split-pane {className}"
-  class:horizontal={currentDirection === 'horizontal'}
-  class:vertical={currentDirection === 'vertical'}
-  class:dragging={isDragging}
+  class="flex h-full w-full overflow-hidden select-none relative {currentDirection === 'vertical' ? 'flex-col' : ''} {className}"
 >
   {@render children()}
 </div>
-
-<style>
-  .split-pane {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    user-select: none;
-    position: relative;
-  }
-
-  .split-pane.vertical {
-    flex-direction: column;
-  }
-
-  .split-pane.dragging {
-    cursor: inherit;
-  }
-
-  :global(.split-pane-pane) {
-    overflow: auto;
-    flex-shrink: 0;
-    min-width: 0;
-    min-height: 0;
-  }
-</style>
