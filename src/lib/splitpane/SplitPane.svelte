@@ -24,7 +24,9 @@
 
 <script lang="ts">
   import type { SplitPaneProps } from "$lib/types";
-  import { splitpane } from './theme';
+  import { splitpane } from "./theme";
+  import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
 
   let {
     direction = "horizontal",
@@ -38,6 +40,8 @@
     children,
     class: className = ""
   }: SplitPaneProps = $props();
+
+  const theme = getTheme("splitpane");
 
   let isDragging = $state(false);
   let startPos = $state(0);
@@ -89,9 +93,28 @@
     }
 
     if (initialSizes && initialSizes.length === registeredPanes) {
-      // validating initialSizes
+      // Validate and sanitize initialSizes
+      const hasInvalidValues = initialSizes.some((s) => s < 0 || !isFinite(s));
+
+      if (hasInvalidValues) {
+        console.warn("initialSizes contains invalid values (negative or non-finite). Using equal distribution instead.");
+        const equal = 100 / registeredPanes;
+        sizes = Array.from({ length: registeredPanes }, () => equal);
+        return;
+      }
+
       const sum = initialSizes.reduce((a, b) => a + b, 0);
-      sizes = sum > 0 ? initialSizes.map((s) => (s / sum) * 100) : [...initialSizes];
+
+      // If sum is 0 or near-zero, fall back to equal distribution
+      if (sum <= 0 || sum < 0.01) {
+        console.warn("initialSizes sum to zero or near-zero. Using equal distribution instead.");
+        const equal = 100 / registeredPanes;
+        sizes = Array.from({ length: registeredPanes }, () => equal);
+        return;
+      }
+
+      // Normalize to percentages
+      sizes = initialSizes.map((s) => (s / sum) * 100);
       return;
     }
 
@@ -251,6 +274,6 @@
   }
 </script>
 
-<div bind:this={container} class={splitpane({ direction: currentDirection, class: className })}>
+<div bind:this={container} class={splitpane({ direction: currentDirection, class: clsx(theme, className) })}>
   {@render children()}
 </div>

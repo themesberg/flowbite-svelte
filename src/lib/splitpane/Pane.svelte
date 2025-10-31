@@ -3,6 +3,8 @@
   import { getSplitPaneContext } from './SplitPane.svelte';
   import Divider from './Divider.svelte';
   import { pane } from './theme';
+  import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   
   let { 
     children, 
@@ -10,10 +12,12 @@
     style = ''
   }: PaneProps = $props();
 
+  const theme = getTheme("divider");
+
   const context = getSplitPaneContext();
   const paneIndex = context ? context.registerPane() : 0;
   
-  const paneStyle = $derived(() => {
+  const paneStyle = $derived.by(() => {
     const styles = [style];
     if (context) {
       const contextStyle = context.getPaneStyle(paneIndex);
@@ -27,7 +31,7 @@
   const isDragging = $derived(context?.getIsDragging() ?? false);
 </script>
 
-<div class={pane({ class: className })} style={paneStyle()}>
+<div class={pane({ class: clsx(theme, className) })} style={paneStyle}>
   {@render children?.()}
 </div>
 
