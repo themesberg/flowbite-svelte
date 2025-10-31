@@ -4,7 +4,7 @@ title: Svelte Split Pane
 breadcrumb_title: Split Pane
 component_title: Split Pane
 dir: Extend
-description: AAA.
+description: A flexible Svelte 5 component for creating resizable split panes with drag-to-resize, keyboard navigation, responsive layouts, and nested configurations. Perfect for dashboards, editors, and complex layouts requiring adjustable content areas.
 
 ---
 
@@ -27,3 +27,18 @@ description: AAA.
 ## Usage Examples
 
 See [examples](/docs-examples/extend/split-pane)
+
+
+## Component data
+
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+<CompoAttributesViewer {components} dir="extend" />
+
+## GitHub Links
+
+<GitHubCompoLinks {components} dir="extend"/>
+
+## LLM Link
+
+<LlmLink />

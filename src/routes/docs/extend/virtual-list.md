@@ -101,3 +101,18 @@ Enable with `<VirtualList contained …>` or override via `classes.item`.
 ```svelte example
 {#include ClassOverride.svelte}
 ```
+
+
+## Component data
+
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+<CompoAttributesViewer {components} dir="extend" />
+
+## GitHub Links
+
+<GitHubCompoLinks {components} dir="extend"/>
+
+## LLM Link
+
+<LlmLink />

@@ -167,6 +167,7 @@
   <!-- Example 1: Basic Horizontal Split -->
   <div class="mb-8 bg-white p-8">
     <h2 class="mb-4 text-xl font-bold">Basic Horizontal Split</h2>
+    <p class="dark:text-white">Simple two-pane horizontal layout with draggable divider. Demonstrates core resizing functionality with visual feedback showing percentage and pixel widths.</p>
     {#if basicSizes.length > 0 && basicContainerWidth > 0}
       <div class="mb-2 text-sm text-gray-600">
         <strong>Container:</strong>
@@ -212,6 +213,7 @@
   <!-- Example 2: Vertical Split with Custom Sizes -->
   <div class="mb-8 bg-white p-8">
     <h2 class="mb-4 text-xl font-bold">Vertical Split (30/70)</h2>
+    <p class="dark:text-white">Vertical layout with custom initial sizes and keyboard controls. Use arrow keys to adjust, Enter/Space to reset to equal distribution.</p>
     {#if verticalSizes.length > 0 && verticalContainerHeight > 0}
       <div class="mb-2 text-sm text-gray-600">
         <strong>Container:</strong>
@@ -257,6 +259,7 @@
   <!-- Example 3: Three Panes -->
   <div class="mb-8 bg-white p-8">
     <h2 class="mb-4 text-xl font-bold">Three Panes</h2>
+    <p class="dark:text-white">Multiple panes in single container with individual dividers. Each pane can be resized independently while maintaining minimum size constraints.</p>
     {#if threePaneSizes.length > 0 && threePaneContainerWidth > 0}
       <div class="mb-2 text-sm text-gray-600">
         <strong>Container:</strong>
@@ -317,6 +320,7 @@
   <!-- Example 4: Responsive with Callback -->
   <div class="mb-8 bg-white p-8">
     <h2 class="mb-4 text-xl font-bold">Responsive (switches to vertical on mobile)</h2>
+    <p class="dark:text-white">Automatically switches between horizontal and vertical layouts based on viewport width. Features callback tracking for size change monitoring.</p>
     {#if responsiveSizes.length > 0 && responsiveContainerWidth > 0}
       <div class="mb-2 text-sm text-gray-600">
         <strong>Container:</strong>
@@ -362,6 +366,7 @@
   <!-- Example 5: Nested Split Panes -->
   <div class="mb-8 bg-white p-8">
     <h2 class="mb-4 text-xl font-bold">Nested Split Panes</h2>
+    <p class="dark:text-white">Complex layout combining horizontal and vertical splits. Creates sidebar with vertically-split main content area for advanced dashboard layouts.</p>
     {#if nestedSizes.length > 0 && nestedContainerWidth > 0}
       <div class="mb-2 text-sm text-gray-600">
         <strong>Container:</strong>
@@ -414,6 +419,7 @@
   <!-- Example 6: With Min Constraints -->
   <div class="mb-8 bg-white p-8">
     <h2 class="mb-4 text-xl font-bold">With Min Constraints (300px minimum)</h2>
+    <p class="dark:text-white">Demonstrates minimum size enforcement. Panes cannot be resized below 300px, preventing content from becoming unusable during aggressive resizing.</p>
     {#if constrainedSizes.length > 0 && constrainedContainerWidth > 0}
       <div class="mb-2 text-sm text-gray-600">
         <strong>Container:</strong>
@@ -468,6 +474,7 @@
   <!-- Example 7: Code Editor Layout -->
   <div class="mb-8 bg-white p-8">
     <h2 class="mb-4 text-xl font-bold">Code Editor Layout</h2>
+    <p class="dark:text-white">Production-ready IDE-style interface with file explorer, code editor, and terminal. Shows practical implementation with nested panes and dark theme.</p>
     {#if editorSizes.length > 0 && editorContainerWidth > 0}
       <div class="mb-2 text-sm text-gray-600">
         <strong>Container:</strong>
