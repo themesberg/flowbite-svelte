@@ -2123,3 +2123,36 @@ export interface KanbanCardProps extends KanbanCardVariants, HTMLAttributes<HTML
   onDragEnd?: (ev?: DragEvent) => void;
   class?: ClassValue | null;
 }
+
+// splitpane
+
+export interface SplitPaneProps {
+  direction?: 'horizontal' | 'vertical';
+  minSize?: number;
+  maxSize?: number;
+  responsive?: boolean;
+  breakpoint?: number;
+  transition?: boolean;
+  transitionDuration?: number;
+  initialSizes?: number[];
+  onResize?: (sizes: number[]) => void;
+  children: Snippet;
+  class?: string;
+}
+
+export interface PaneProps {
+  children?: Snippet;
+  class?: string;
+  style?: string;
+  minSize?: number;
+  maxSize?: number;
+}
+
+export interface DividerProps {
+  direction: 'horizontal' | 'vertical';
+  index: number;
+  onMouseDown: (e: MouseEvent, index: number) => void;
+  onKeyDown: (e: KeyboardEvent, index: number) => void;
+  isDragging: boolean;
+  class?: string;
+}
