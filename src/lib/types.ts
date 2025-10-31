@@ -2151,4 +2151,5 @@ export interface DividerProps {
   onKeyDown: (e: KeyboardEvent, index: number) => void;
   isDragging: boolean;
   class?: string;
+  currentSize: number; 
 }

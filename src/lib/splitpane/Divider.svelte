@@ -10,13 +10,15 @@
     onMouseDown,
     onKeyDown,
     isDragging,
+    currentSize,
     class: className = ''
   }: DividerProps = $props();
 
-  const themePane = getTheme("pane");
+  const themePane = getTheme("divider");
   const themeDividerHitArea = getTheme("dividerHitArea");
 
   const isHorizontal = $derived(direction === 'horizontal');
+  const roundedSize = $derived(Math.round(currentSize));
 </script>
 
 <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
@@ -26,6 +28,10 @@
   tabindex="0"
   aria-orientation={isHorizontal ? 'vertical' : 'horizontal'}
   aria-label={`Resize ${isHorizontal ? 'horizontal' : 'vertical'} panes`}
+  aria-valuenow={roundedSize}
+  aria-valuemin="0"
+  aria-valuemax="100"
+  aria-valuetext={`${roundedSize} percent`}
   class={divider({ direction, isDragging, class: clsx(themePane, className) })}
   onmousedown={(e) => onMouseDown(e, index)}
   onkeydown={(e) => onKeyDown(e, index)}

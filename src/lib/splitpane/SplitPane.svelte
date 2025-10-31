@@ -6,6 +6,7 @@
   interface SplitPaneContext {
     registerPane: () => number;
     getPaneStyle: (index: number) => string;
+    getPaneSize: (index: number) => number; 
     shouldRenderDivider: (index: number) => boolean;
     getDirection: () => "horizontal" | "vertical";
     getIsDragging: () => boolean;
@@ -33,7 +34,7 @@
     minSize = 100,
     responsive = true,
     breakpoint = 768,
-    transition = true,
+    transition: transitionProp = true,
     transitionDuration = 150,
     initialSizes,
     onResize,
@@ -41,6 +42,7 @@
     class: className = ""
   }: SplitPaneProps = $props();
 
+  let transition = $state(transitionProp);
   const theme = getTheme("splitpane");
 
   let isDragging = $state(false);
@@ -78,6 +80,7 @@
   setSplitPaneContext({
     registerPane,
     getPaneStyle,
+    getPaneSize: (index: number) => sizes[index] ?? 50, 
     shouldRenderDivider,
     getDirection: () => currentDirection,
     getIsDragging: () => isDragging,

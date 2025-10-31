@@ -40,6 +40,7 @@
     {direction}
     index={paneIndex}
     {isDragging}
+    currentSize={context.getPaneSize(paneIndex)}
     onMouseDown={context.onMouseDown}
     onKeyDown={context.onKeyDown}
   />
