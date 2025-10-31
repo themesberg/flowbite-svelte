@@ -213,18 +213,28 @@
     const containerSize = isHorizontal ? container.offsetWidth : container.offsetHeight;
     const minPercent = (minSize / containerSize) * 100;
 
+    const total = sizes[index] + sizes[index + 1];
+
+    const applyClamp = (target: number) => {
+      let newSize1 = Math.min(total - minPercent, Math.max(minPercent, target));
+      let newSize2 = total - newSize1;
+
+      if (newSize2 < minPercent) {
+        newSize2 = minPercent;
+        newSize1 = total - newSize2;
+      }
+
+      if (Math.abs(newSize1 - sizes[index]) > 0.01) {
+        sizes[index] = newSize1;
+        sizes[index + 1] = newSize2;
+        handled = true;
+      }
+    };
+
     if (increaseKeys.includes(e.key)) {
-      if (sizes[index] + step <= 100 - minPercent) {
-        sizes[index] += step;
-        sizes[index + 1] -= step;
-        handled = true;
-      }
+      applyClamp(sizes[index] + step);
     } else if (decreaseKeys.includes(e.key)) {
-      if (sizes[index] - step >= minPercent) {
-        sizes[index] -= step;
-        sizes[index + 1] += step;
-        handled = true;
-      }
+      applyClamp(sizes[index] - step);
     } else if (e.key === 'Enter' || e.key === ' ') {
       // Reset to equal sizes
       const equal = 100 / registeredPanes;
