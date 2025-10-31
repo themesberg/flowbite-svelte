@@ -12,7 +12,7 @@
     style = ''
   }: PaneProps = $props();
 
-  const theme = getTheme("divider");
+  const theme = getTheme("pane");
 
   const context = getSplitPaneContext();
   const paneIndex = context ? context.registerPane() : 0;

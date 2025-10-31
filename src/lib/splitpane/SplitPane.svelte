@@ -179,7 +179,7 @@
 
   function stopResize(moveHandler: (e: MouseEvent) => void, upHandler: () => void) {
     isDragging = false;
-    transition = true;
+    transition = transitionProp;
     window.removeEventListener("mousemove", moveHandler);
     window.removeEventListener("mouseup", upHandler);
 
