@@ -61,7 +61,7 @@
   }
 
   function getPaneStyle(index: number): string {
-    if (!sizes[index]) return "";
+    if (sizes[index] === undefined) return "";
 
     const size = `${sizes[index]}%`;
     const transitionStyle = transition ? `${currentDirection === "horizontal" ? "width" : "height"} ${transitionDuration}ms ease` : "none";
