@@ -6,7 +6,7 @@
   interface SplitPaneContext {
     registerPane: () => number;
     getPaneStyle: (index: number) => string;
-    getPaneSize: (index: number) => number; 
+    getPaneSize: (index: number) => number;
     shouldRenderDivider: (index: number) => boolean;
     getDirection: () => "horizontal" | "vertical";
     getIsDragging: () => boolean;
@@ -42,6 +42,16 @@
     children,
     class: className = ""
   }: SplitPaneProps = $props();
+
+  // Validate numeric props
+  if (minSize <= 0) {
+    console.warn(`minSize must be positive, got ${minSize}. Using default 100.`);
+    minSize = 100;
+  }
+  if (keyboardStep <= 0) {
+    console.warn(`keyboardStep must be positive, got ${keyboardStep}. Using default 2.`);
+    keyboardStep = 2;
+  }
 
   let transition = $state(transitionProp);
   const theme = getTheme("splitpane");
@@ -81,7 +91,7 @@
   setSplitPaneContext({
     registerPane,
     getPaneStyle,
-    getPaneSize: (index: number) => sizes[index] ?? 50, 
+    getPaneSize: (index: number) => sizes[index] ?? 50,
     shouldRenderDivider,
     getDirection: () => currentDirection,
     getIsDragging: () => isDragging,
@@ -198,6 +208,9 @@
 
     const containerSize = currentDirection === "horizontal" ? container.offsetWidth : container.offsetHeight;
 
+    // Bail out if container has zero or near-zero dimensions
+    if (containerSize < 1) return;
+
     const deltaPercent = (delta / containerSize) * 100;
 
     // Calculate min as percentage based on current container size
@@ -241,6 +254,9 @@
     const decreaseKeys = isHorizontal ? ["ArrowLeft"] : ["ArrowUp"];
 
     const containerSize = isHorizontal ? container.offsetWidth : container.offsetHeight;
+    // Bail out if container has zero or near-zero dimensions
+    if (containerSize < 1) return;
+    
     const minPercent = (minSize / containerSize) * 100;
 
     const total = sizes[index] + sizes[index + 1];
