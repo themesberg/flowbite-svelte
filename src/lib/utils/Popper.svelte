@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ParamsType, PopperProps } from "$lib/types";
+  import type { ParamsType, PopperProps, TriggeredToggleEvent } from "$lib/types";
   import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
   import * as dom from "@floating-ui/dom";
   import clsx from "clsx";
@@ -89,7 +89,7 @@
     });
   }
 
-  const [open_popover, close_popover] = createMutualDebounce(_open_popover, _close_popover, triggerDelay);
+  const [open_popover, close_popover] = createMutualDebounce(_open_popover, _close_popover, () => triggerDelay);
 
   async function _open_popover(ev: Event) {
     ev.preventDefault();
@@ -140,7 +140,8 @@
 
   function on_before_toggle(ev: ToggleEvent) {
     if (!invoker || !popover) return;
-    onbeforetoggle?.({ ...ev, trigger: invoker });
+    const evWithTrigger: TriggeredToggleEvent = Object.assign(ev, { trigger: invoker });
+    onbeforetoggle?.(evWithTrigger);
   }
 
   $effect(() => {
@@ -167,10 +168,11 @@
     // Update isOpen value when popover state changes through other means
     isOpen = ev.newState === "open";
 
-    ontoggle?.({ ...ev, trigger: invoker });
+    const evWithTrigger: TriggeredToggleEvent = Object.assign(ev, { trigger: invoker });
+    ontoggle?.(evWithTrigger);
 
     if (ev.newState === "closed") {
-      onclose?.({ ...ev, trigger: invoker });
+      onclose?.(evWithTrigger);
     }
   }
 

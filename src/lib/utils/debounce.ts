@@ -16,14 +16,14 @@
 
 type Func = (...args: any[]) => any;
 
-export function createMutualDebounce<A extends Func, B extends Func>(actionA: A, actionB: B, delay: number = 300) {
+export function createMutualDebounce<A extends Func, B extends Func>(actionA: A, actionB: B, delayFunc: () => number) {
     let rafId: number | null = null;
 
     function scheduleExecution(func: Func, args: any[], startTime: number): void {
         rafId = requestAnimationFrame((currentTime) => {
             const elapsed = currentTime - (startTime || 0);
 
-            if (elapsed < delay)
+            if (elapsed < delayFunc())
                 return scheduleExecution(func, args, startTime);
 
             func(...args);
