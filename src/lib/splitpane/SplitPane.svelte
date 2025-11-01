@@ -54,6 +54,12 @@
   }
 
   let transition = $state(transitionProp);
+  $effect(() => {
+  // syncing local transition state with prop changes
+    if (!isDragging) {
+      transition = transitionProp;
+    }
+  });
   const theme = getTheme("splitpane");
 
   let isDragging = $state(false);
@@ -91,7 +97,7 @@
   setSplitPaneContext({
     registerPane,
     getPaneStyle,
-    getPaneSize: (index: number) => sizes[index] ?? 50,
+    getPaneSize: (index: number) => sizes[index] ?? (100 / registeredPanes),
     shouldRenderDivider,
     getDirection: () => currentDirection,
     getIsDragging: () => isDragging,
@@ -211,90 +217,6 @@
     }
   });
 
-  // Initialize sizes
-  $effect(() => {
-    if (registeredPanes === 0) {
-      sizes = [];
-      return;
-    }
-
-    const containerSize = currentDirection === "horizontal" ? (container?.offsetWidth ?? 0) : (container?.offsetHeight ?? 0);
-
-    // If container not ready yet, use equal distribution and let it recalculate
-    if (containerSize < 1) {
-      if (sizes.length !== registeredPanes) {
-        const equal = 100 / registeredPanes;
-        sizes = Array.from({ length: registeredPanes }, () => equal);
-      }
-      return;
-    }
-
-    const minPercent = (minSize / containerSize) * 100;
-
-    // ⭐ ADD THIS: Check if minSize is achievable for all panes
-    const totalMinRequired = minPercent * registeredPanes;
-    if (totalMinRequired > 100) {
-      console.error(
-        `Cannot satisfy minSize=${minSize}px for ${registeredPanes} panes in ${containerSize}px container. ` + `Required: ${(minSize * registeredPanes).toFixed(0)}px. Using equal distribution.`
-      );
-      const equal = 100 / registeredPanes;
-      sizes = Array.from({ length: registeredPanes }, () => equal);
-      return;
-    }
-    // ⭐ END OF NEW CODE
-
-    if (initialSizes && initialSizes.length === registeredPanes) {
-      // Validate initialSizes
-      const hasInvalidValues = initialSizes.some((s) => s < 0 || !isFinite(s));
-
-      if (hasInvalidValues) {
-        console.warn("initialSizes contains invalid values. Using equal distribution.");
-        const equal = Math.max(100 / registeredPanes, minPercent);
-        sizes = Array.from({ length: registeredPanes }, () => equal);
-        return;
-      }
-
-      const sum = initialSizes.reduce((a, b) => a + b, 0);
-
-      if (sum <= 0 || sum < 0.01) {
-        console.warn("initialSizes sum to zero. Using equal distribution.");
-        const equal = Math.max(100 / registeredPanes, minPercent);
-        sizes = Array.from({ length: registeredPanes }, () => equal);
-        return;
-      }
-
-      // Normalize to percentages
-      let normalizedSizes = initialSizes.map((s) => (s / sum) * 100);
-
-      // Enforce minSize constraints
-      const violatesConstraints = normalizedSizes.some((size) => size < minPercent);
-
-      if (violatesConstraints) {
-        console.warn(
-          `initialSizes [${normalizedSizes.map((s) => s.toFixed(1)).join("%, ")}%] ` +
-            `violate minSize constraint (${minSize}px = ${minPercent.toFixed(1)}%). ` +
-            `Adjusting to respect minimum constraints.`
-        );
-
-        // Clamp all sizes to minimum
-        normalizedSizes = normalizedSizes.map((size) => Math.max(size, minPercent));
-
-        // Renormalize to 100%
-        const newSum = normalizedSizes.reduce((a, b) => a + b, 0);
-        normalizedSizes = normalizedSizes.map((size) => (size / newSum) * 100);
-      }
-
-      sizes = normalizedSizes;
-      return;
-    }
-
-    // Default: equal distribution respecting minSize
-    if (sizes.length !== registeredPanes) {
-      const equal = Math.max(100 / registeredPanes, minPercent);
-      sizes = Array.from({ length: registeredPanes }, () => equal);
-    }
-  });
-
   // Responsive direction handling
   $effect(() => {
     if (!responsive) {
@@ -357,6 +279,7 @@
 
   function resize(e: MouseEvent, index: number) {
     if (!isDragging || !container) return;
+    if (index < 0 || index + 1 >= sizes.length) return;
 
     const currentPos = currentDirection === "horizontal" ? e.clientX : e.clientY;
     const delta = currentPos - startPos;
@@ -402,6 +325,7 @@
 
   function handleKeyResize(e: KeyboardEvent, index: number) {
     if (!container) return;
+    if (index < 0 || index + 1 >= sizes.length) return;
 
     const step = keyboardStep;
     let handled = false;
