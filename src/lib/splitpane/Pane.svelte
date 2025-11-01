@@ -1,0 +1,47 @@
+<script lang="ts">
+  import type { PaneProps } from '$lib/types';
+  import { getSplitPaneContext } from './SplitPane.svelte';
+  import Divider from './Divider.svelte';
+  import { pane } from './theme';
+  import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+  
+  let { 
+    children, 
+    class: className = '', 
+    style = ''
+  }: PaneProps = $props();
+
+  const theme = getTheme("pane");
+
+  const context = getSplitPaneContext();
+  const paneIndex = context ? context.registerPane() : 0;
+  
+  const paneStyle = $derived.by(() => {
+    const styles = [style];
+    if (context) {
+      const contextStyle = context.getPaneStyle(paneIndex);
+      styles.push(contextStyle);
+    }
+    return styles.filter(Boolean).join('; ');
+  });
+
+  const showDivider = $derived(context?.shouldRenderDivider(paneIndex) ?? false);
+  const direction = $derived(context?.getDirection() ?? 'horizontal');
+  const isDragging = $derived(context?.getIsDragging() ?? false);
+</script>
+
+<div class={pane({ class: clsx(theme, className) })} style={paneStyle}>
+  {@render children?.()}
+</div>
+
+{#if showDivider && context}
+  <Divider
+    {direction}
+    index={paneIndex}
+    {isDragging}
+    currentSize={context.getPaneSize(paneIndex)}
+    onMouseDown={context.onMouseDown}
+    onKeyDown={context.onKeyDown}
+  />
+{/if}
