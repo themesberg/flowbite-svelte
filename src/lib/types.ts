@@ -2060,6 +2060,7 @@ export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbef
   arrow?: boolean;
   arrowClass?: string;
   offset?: number;
+  role?: "tooltip" | "menu" | "dialog" | "listbox" | "combobox";
   yOnly?: boolean; // special case for megamenu - only move on y axis
   strategy?: Strategy;
   reference?: string;

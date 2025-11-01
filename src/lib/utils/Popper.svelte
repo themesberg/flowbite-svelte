@@ -2,30 +2,35 @@
   import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
   import * as dom from "@floating-ui/dom";
   import Arrow from "./Arrow.svelte";
-  import type { ParamsType, PopperProps, TriggeredToggleEvent } from "$lib/types";
+  import type { ParamsType, PopperProps } from "$lib/types";
   import { fade } from "svelte/transition";
   import { sineIn } from "svelte/easing";
   import clsx from "clsx";
+  import { createMutualDebounce } from "./debounce";
+
+  const DEFAULT_TRIGGER_DELAY = 200;
+  const DEFAULT_OFFSET = 8;
 
   let {
     triggeredBy,
-    triggerDelay = 200,
+    triggerDelay = DEFAULT_TRIGGER_DELAY,
     trigger = "click",
     placement = "top",
-    offset = 8,
+    offset = DEFAULT_OFFSET,
     arrow = false,
     yOnly = false,
     strategy = "absolute",
+    role = "tooltip",
     reference,
     middlewares = [dom.flip(), dom.shift()],
-    onbeforetoggle: _onbeforetoggle,
-    ontoggle: _ontoggle,
-    onclose: _onclose,
     class: className = "",
     arrowClass = "",
     isOpen = $bindable(false),
     transitionParams,
     transition = fade,
+    onbeforetoggle,
+    ontoggle,
+    onclose,
     children,
     ...restProps
   }: PopperProps = $props();
@@ -44,6 +49,25 @@
     strategy
   });
 
+  $effect(() => {
+    if (reference && popover) {
+      referenceElement = popover.ownerDocument.querySelector<HTMLElement>(reference);
+    }
+  });
+
+  let arrowEl: HTMLElement | null = $state(null);
+  $effect(() => {
+    if (popover) {
+      arrowEl = popover.querySelector<HTMLElement>(".popover-arrow");
+    }
+  });
+
+  let middleware: Middleware[] = $derived.by(() => {
+    const base = [...middlewares, dom.offset(offset)];
+    if (arrowEl) base.push(dom.arrow({ element: arrowEl }));
+    return base;
+  });
+
   const paramsDefault = { duration: 100, easing: sineIn };
   const paramsOptions = $derived(transitionParams ?? paramsDefault);
 
@@ -53,11 +77,6 @@
     if (!invoker || !popover) {
       return;
     }
-
-    const arrowEl: HTMLElement | null = popover.querySelector(".popover-arrow");
-
-    let middleware: Middleware[] = [...middlewares, dom.offset(offset)];
-    if (arrowEl) middleware.push(dom.arrow({ element: arrowEl }));
 
     return dom.computePosition(referenceElement ?? invoker, popover, { placement, middleware, strategy }).then(({ x, y, middlewareData: { arrow }, placement: pl, strategy }) => {
       if (popover) {
@@ -70,6 +89,7 @@
     });
   }
 
+  // const debounce = createMutualDebounce(open_popover, )
   let isTriggered: boolean = false;
 
   async function open_popover(ev: Event) {
@@ -129,26 +149,28 @@
     isOpen = false;
   }
 
-  let autoUpdateDestroy = () => {};
-
   function on_before_toggle(ev: ToggleEvent) {
     if (!invoker || !popover) return;
+    onbeforetoggle?.({ ...ev, trigger: invoker });
+  }
 
-    (ev as TriggeredToggleEvent).trigger = invoker;
-    _onbeforetoggle?.(ev as TriggeredToggleEvent);
-
+  $effect(() => {
     // Floating UI instance when it's closed we need to keep a autoUpdate destroy function
+    let autoUpdateDestroy: (() => void) | null = null;
 
-    if (ev.newState === "open") {
+    if (isOpen && popover && invoker) {
       autoUpdateDestroy = dom.autoUpdate(referenceElement ?? invoker, popover, updatePopoverPosition);
       popover.ownerDocument.addEventListener("click", closeOnClickOutside);
       popover.ownerDocument.addEventListener("keydown", closeOnEscape);
-    } else {
-      autoUpdateDestroy();
-      popover.ownerDocument.removeEventListener("click", closeOnClickOutside);
-      popover.ownerDocument.removeEventListener("keydown", closeOnEscape);
     }
-  }
+
+    return () => {
+      autoUpdateDestroy?.();
+      autoUpdateDestroy = null;
+      popover?.ownerDocument.removeEventListener("click", closeOnClickOutside);
+      popover?.ownerDocument.removeEventListener("keydown", closeOnEscape);
+    };
+  });
 
   function on_toggle(ev: ToggleEvent) {
     if (!invoker) return;
@@ -156,11 +178,10 @@
     // Update isOpen value when popover state changes through other means
     isOpen = ev.newState === "open";
 
-    (ev as TriggeredToggleEvent).trigger = invoker;
-    _ontoggle?.(ev as TriggeredToggleEvent);
+    ontoggle?.({ ...ev, trigger: invoker });
 
     if (ev.newState === "closed") {
-      _onclose?.(ev as TriggeredToggleEvent);
+      onclose?.({ ...ev, trigger: invoker });
     }
   }
 
@@ -182,7 +203,6 @@
       return;
     }
 
-    if (reference) referenceElement = node.ownerDocument.querySelector<HTMLElement>(reference);
     invoker = triggerEls[0];
 
     triggerEls.forEach((element: HTMLElement) => {
@@ -228,17 +248,17 @@
 {#if isOpen}
   <div
     popover="manual"
-    role="tooltip"
+    {role}
     bind:this={popover}
     class:overflow-visible={true}
     onfocusout={close_popover}
     onmouseleave={hoverable ? close_popover : undefined}
     onmouseenter={hoverable ? open_popover : undefined}
-    onbeforetoggle={on_before_toggle}
-    ontoggle={on_toggle}
     class={clsx(className)}
     transition:transition={paramsOptions as ParamsType}
     onintrostart={() => popover?.showPopover()}
+    onbeforetoggle={on_before_toggle}
+    ontoggle={on_toggle}
     onoutroend={() => popover?.hidePopover()}
     {...restProps}
   >
