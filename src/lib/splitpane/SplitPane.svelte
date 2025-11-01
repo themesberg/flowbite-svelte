@@ -36,6 +36,7 @@
     breakpoint = 768,
     transition: transitionProp = true,
     transitionDuration = 150,
+    keyboardStep = 2,
     initialSizes,
     onResize,
     children,
@@ -232,7 +233,7 @@
   function handleKeyResize(e: KeyboardEvent, index: number) {
     if (!container) return;
 
-    const step = 2; // percentage
+    const step = keyboardStep;
     let handled = false;
 
     const isHorizontal = currentDirection === "horizontal";

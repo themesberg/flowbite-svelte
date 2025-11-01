@@ -2132,6 +2132,7 @@ export interface SplitPaneProps {
   breakpoint?: number;
   transition?: boolean;
   transitionDuration?: number;
+  keyboardStep?: number;
   initialSizes?: number[];
   onResize?: (sizes: number[]) => void;
   children: Snippet;
