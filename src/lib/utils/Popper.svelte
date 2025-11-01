@@ -1,11 +1,11 @@
 <script lang="ts">
+  import type { ParamsType, PopperProps } from "$lib/types";
   import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
   import * as dom from "@floating-ui/dom";
-  import Arrow from "./Arrow.svelte";
-  import type { ParamsType, PopperProps } from "$lib/types";
-  import { fade } from "svelte/transition";
-  import { sineIn } from "svelte/easing";
   import clsx from "clsx";
+  import { sineIn } from "svelte/easing";
+  import { fade } from "svelte/transition";
+  import Arrow from "./Arrow.svelte";
   import { createMutualDebounce } from "./debounce";
 
   const DEFAULT_TRIGGER_DELAY = 200;
@@ -89,24 +89,19 @@
     });
   }
 
-  // const debounce = createMutualDebounce(open_popover, )
-  let isTriggered: boolean = false;
+  const [open_popover, close_popover] = createMutualDebounce(_open_popover, _close_popover, triggerDelay);
 
-  async function open_popover(ev: Event) {
-    // throttle
-    isTriggered = true;
-    await new Promise((resolve) => setTimeout(resolve, triggerDelay));
-    if (!isTriggered) {
-      return;
-    }
-
+  async function _open_popover(ev: Event) {
     ev.preventDefault();
 
     if (ev.target !== invoker && triggerEls.includes(ev.target as HTMLElement)) {
       invoker = ev.target as HTMLElement;
-      // if (invoker) invoker.popoverTargetElement = popover;
-      isOpen = false;
-      await new Promise((resolve) => setTimeout(resolve, triggerDelay));
+      if (isOpen) {
+        // invoker changed but the popover is open and stays open; pretend as if it toggles
+        popover?.dispatchEvent(new ToggleEvent("beforetoggle", { newState: "open", oldState: "open" }));
+        await updatePopoverPosition();
+        popover?.dispatchEvent(new ToggleEvent("toggle", { newState: "open", oldState: "open" }));
+      }
     }
 
     if (ev.type === "mousedown") {
@@ -116,7 +111,7 @@
     }
   }
 
-  async function close_popover(ev: Event) {
+  async function _close_popover(ev: Event) {
     // For click triggers, don't close on focusout events from inside the popover
     if (trigger === "click" && ev.type === "focusout") {
       const relatedTarget = (ev as FocusEvent).relatedTarget as HTMLElement;
@@ -130,12 +125,6 @@
       if (!relatedTarget) {
         return;
       }
-    }
-
-    isTriggered = false;
-    await new Promise((resolve) => setTimeout(resolve, triggerDelay));
-    if (isTriggered) {
-      return;
     }
 
     // if popover has focus don't close when leaving the invoker
