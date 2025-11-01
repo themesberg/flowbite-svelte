@@ -99,6 +99,118 @@
     onKeyDown: handleKeyResize
   });
 
+  let containerSize = $state(0);
+
+  // Track container size changes
+  $effect(() => {
+    if (!container) return;
+
+    const updateSize = () => {
+      containerSize = currentDirection === "horizontal" ? container.offsetWidth : container.offsetHeight;
+    };
+
+    updateSize();
+
+    const resizeObserver = new ResizeObserver(updateSize);
+    resizeObserver.observe(container);
+
+    return () => resizeObserver.disconnect();
+  });
+
+  // Initialize and maintain sizes
+  $effect(() => {
+    if (registeredPanes === 0) {
+      sizes = [];
+      return;
+    }
+
+    // If container not ready yet, use equal distribution
+    if (containerSize < 1) {
+      if (sizes.length !== registeredPanes) {
+        const equal = 100 / registeredPanes;
+        sizes = Array.from({ length: registeredPanes }, () => equal);
+      }
+      return;
+    }
+
+    const minPercent = (minSize / containerSize) * 100;
+
+    // Check if minSize is achievable for all panes
+    const totalMinRequired = minPercent * registeredPanes;
+    if (totalMinRequired > 100) {
+      console.error(
+        `Cannot satisfy minSize=${minSize}px for ${registeredPanes} panes in ${containerSize}px container. ` + `Required: ${(minSize * registeredPanes).toFixed(0)}px. Using equal distribution.`
+      );
+      const equal = 100 / registeredPanes;
+      sizes = Array.from({ length: registeredPanes }, () => equal);
+      return;
+    }
+
+    // Check if current sizes violate minSize constraints
+    const currentPixelSizes = sizes.map((s) => (s / 100) * containerSize);
+    const violatesMinSize = currentPixelSizes.some((pixelSize) => pixelSize < minSize - 0.5); // small tolerance
+
+    if (violatesMinSize) {
+      // Recalculate sizes to respect minSize
+      let newSizes = sizes.map((s) => Math.max((s / 100) * containerSize, minSize));
+      const totalPixels = newSizes.reduce((a, b) => a + b, 0);
+
+      // Convert back to percentages
+      if (totalPixels > containerSize) {
+        // If we can't fit all panes at minSize, distribute proportionally
+        newSizes = newSizes.map((s) => (s / totalPixels) * containerSize);
+      }
+
+      sizes = newSizes.map((pixelSize) => (pixelSize / containerSize) * 100);
+    }
+
+    // Handle initialSizes (only on first initialization)
+    if (initialSizes && initialSizes.length === registeredPanes && sizes.length !== registeredPanes) {
+      const hasInvalidValues = initialSizes.some((s) => s < 0 || !isFinite(s));
+
+      if (hasInvalidValues) {
+        console.warn("initialSizes contains invalid values. Using equal distribution.");
+        const equal = Math.max(100 / registeredPanes, minPercent);
+        sizes = Array.from({ length: registeredPanes }, () => equal);
+        return;
+      }
+
+      const sum = initialSizes.reduce((a, b) => a + b, 0);
+
+      if (sum <= 0 || sum < 0.01) {
+        console.warn("initialSizes sum to zero. Using equal distribution.");
+        const equal = Math.max(100 / registeredPanes, minPercent);
+        sizes = Array.from({ length: registeredPanes }, () => equal);
+        return;
+      }
+
+      let normalizedSizes = initialSizes.map((s) => (s / sum) * 100);
+
+      const violatesConstraints = normalizedSizes.some((size) => size < minPercent);
+
+      if (violatesConstraints) {
+        console.warn(
+          `initialSizes [${normalizedSizes.map((s) => s.toFixed(1)).join("%, ")}%] ` +
+            `violate minSize constraint (${minSize}px = ${minPercent.toFixed(1)}%). ` +
+            `Adjusting to respect minimum constraints.`
+        );
+
+        normalizedSizes = normalizedSizes.map((size) => Math.max(size, minPercent));
+        const newSum = normalizedSizes.reduce((a, b) => a + b, 0);
+        normalizedSizes = normalizedSizes.map((size) => (size / newSum) * 100);
+      }
+
+      sizes = normalizedSizes;
+      return;
+    }
+
+    // Default: equal distribution respecting minSize
+    if (sizes.length !== registeredPanes) {
+      const equal = Math.max(100 / registeredPanes, minPercent);
+      sizes = Array.from({ length: registeredPanes }, () => equal);
+    }
+  });
+
   // Initialize sizes
   $effect(() => {
     if (registeredPanes === 0) {
@@ -106,34 +218,79 @@
       return;
     }
 
+    const containerSize = currentDirection === "horizontal" ? (container?.offsetWidth ?? 0) : (container?.offsetHeight ?? 0);
+
+    // If container not ready yet, use equal distribution and let it recalculate
+    if (containerSize < 1) {
+      if (sizes.length !== registeredPanes) {
+        const equal = 100 / registeredPanes;
+        sizes = Array.from({ length: registeredPanes }, () => equal);
+      }
+      return;
+    }
+
+    const minPercent = (minSize / containerSize) * 100;
+
+    // ⭐ ADD THIS: Check if minSize is achievable for all panes
+    const totalMinRequired = minPercent * registeredPanes;
+    if (totalMinRequired > 100) {
+      console.error(
+        `Cannot satisfy minSize=${minSize}px for ${registeredPanes} panes in ${containerSize}px container. ` + `Required: ${(minSize * registeredPanes).toFixed(0)}px. Using equal distribution.`
+      );
+      const equal = 100 / registeredPanes;
+      sizes = Array.from({ length: registeredPanes }, () => equal);
+      return;
+    }
+    // ⭐ END OF NEW CODE
+
     if (initialSizes && initialSizes.length === registeredPanes) {
-      // Validate and sanitize initialSizes
+      // Validate initialSizes
       const hasInvalidValues = initialSizes.some((s) => s < 0 || !isFinite(s));
 
       if (hasInvalidValues) {
-        console.warn("initialSizes contains invalid values (negative or non-finite). Using equal distribution instead.");
-        const equal = 100 / registeredPanes;
+        console.warn("initialSizes contains invalid values. Using equal distribution.");
+        const equal = Math.max(100 / registeredPanes, minPercent);
         sizes = Array.from({ length: registeredPanes }, () => equal);
         return;
       }
 
       const sum = initialSizes.reduce((a, b) => a + b, 0);
 
-      // If sum is 0 or near-zero, fall back to equal distribution
       if (sum <= 0 || sum < 0.01) {
-        console.warn("initialSizes sum to zero or near-zero. Using equal distribution instead.");
-        const equal = 100 / registeredPanes;
+        console.warn("initialSizes sum to zero. Using equal distribution.");
+        const equal = Math.max(100 / registeredPanes, minPercent);
         sizes = Array.from({ length: registeredPanes }, () => equal);
         return;
       }
 
       // Normalize to percentages
-      sizes = initialSizes.map((s) => (s / sum) * 100);
+      let normalizedSizes = initialSizes.map((s) => (s / sum) * 100);
+
+      // Enforce minSize constraints
+      const violatesConstraints = normalizedSizes.some((size) => size < minPercent);
+
+      if (violatesConstraints) {
+        console.warn(
+          `initialSizes [${normalizedSizes.map((s) => s.toFixed(1)).join("%, ")}%] ` +
+            `violate minSize constraint (${minSize}px = ${minPercent.toFixed(1)}%). ` +
+            `Adjusting to respect minimum constraints.`
+        );
+
+        // Clamp all sizes to minimum
+        normalizedSizes = normalizedSizes.map((size) => Math.max(size, minPercent));
+
+        // Renormalize to 100%
+        const newSum = normalizedSizes.reduce((a, b) => a + b, 0);
+        normalizedSizes = normalizedSizes.map((size) => (size / newSum) * 100);
+      }
+
+      sizes = normalizedSizes;
       return;
     }
 
+    // Default: equal distribution respecting minSize
     if (sizes.length !== registeredPanes) {
-      const equal = 100 / registeredPanes;
+      const equal = Math.max(100 / registeredPanes, minPercent);
       sizes = Array.from({ length: registeredPanes }, () => equal);
     }
   });
@@ -256,7 +413,7 @@
     const containerSize = isHorizontal ? container.offsetWidth : container.offsetHeight;
     // Bail out if container has zero or near-zero dimensions
     if (containerSize < 1) return;
-    
+
     const minPercent = (minSize / containerSize) * 100;
 
     const total = sizes[index] + sizes[index + 1];
