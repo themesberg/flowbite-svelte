@@ -12,7 +12,7 @@ description: A flexible Svelte 5 component for creating resizable split panes wi
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
   import { P, A } from '$lib'
 
-  const components = 'SplitPane, Pane'
+  const components = 'SplitPane, Pane, Divider'
   // const relatedLinks = [''];
 </script>
 
