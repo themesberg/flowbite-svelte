@@ -435,3 +435,27 @@ Enable with `<VirtualList contained …>` or override via `classes.item`.
   {/snippet}
 </VirtualList>
 ```
+
+
+## Component data
+
+### VirtualList
+
+#### Types
+
+[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2081)
+
+#### Props
+
+- items: []
+- minItemHeight: 50
+- height: 400
+- overscan: 5
+- getItemHeight
+- scrollToIndex
+- children
+- ariaLabel: "Virtual scrolling list"
+- class: className
+- classes
+- contained: false
+

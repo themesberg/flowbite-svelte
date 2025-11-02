@@ -293,7 +293,10 @@
         <Pane>
           <div class="h-full bg-green-50 p-4">
             <h3 class="font-semibold">Right Pane</h3>
-            <p>This is the right pane content. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit nulla ipsum inventore nihil labore in velit dolores consequatur, voluptas praesentium perferendis nobis sequi culpa laboriosam natus! Dignissimos exercitationem vitae necessitatibus.</p>
+            <p>
+              This is the right pane content. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit nulla ipsum inventore nihil labore in velit dolores consequatur, voluptas praesentium
+              perferendis nobis sequi culpa laboriosam natus! Dignissimos exercitationem vitae necessitatibus.
+            </p>
           </div>
         </Pane>
       </SplitPane>

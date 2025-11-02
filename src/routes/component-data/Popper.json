@@ -2,27 +2,28 @@
   "name": "Popper",
   "type": {
     "name": "PopperProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2055"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2051"
   },
   "props": [
     ["triggeredBy", ""],
-    ["triggerDelay", "200"],
+    ["triggerDelay", "DEFAULT_TRIGGER_DELAY"],
     ["trigger", "\"click\""],
     ["placement", "\"top\""],
-    ["offset", "8"],
+    ["offset", "DEFAULT_OFFSET"],
     ["arrow", "false"],
     ["yOnly", "false"],
     ["strategy", "\"absolute\""],
+    ["role", "\"tooltip\""],
     ["reference", ""],
     ["middlewares", "[dom.flip(), dom.shift()]"],
-    ["onbeforetoggle: _onbeforetoggle", ""],
-    ["ontoggle: _ontoggle", ""],
-    ["onclose: _onclose", ""],
     ["class: className", "\"\""],
     ["arrowClass", "\"\""],
     ["isOpen", "$bindable(false)"],
     ["transitionParams", ""],
     ["transition", "fade"],
+    ["onbeforetoggle", ""],
+    ["ontoggle", ""],
+    ["onclose", ""],
     ["children", ""]
   ]
 }

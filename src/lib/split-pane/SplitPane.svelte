@@ -59,7 +59,7 @@
 
   let transition = $state(transitionProp);
   $effect(() => {
-  // syncing local transition state with prop changes
+    // syncing local transition state with prop changes
     if (!isDragging) {
       transition = transitionProp;
     }
@@ -382,3 +382,22 @@
 <div bind:this={container} class={splitpane({ direction: currentDirection, class: clsx(theme, className) })}>
   {@render children()}
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2125)
+## Props
+@prop direction = "horizontal"
+@prop minSize = 100
+@prop responsive = true
+@prop breakpoint = 768
+@prop transition: transitionProp = true
+@prop transitionDuration = 150
+@prop keyboardStep = 2
+@prop initialSizes
+@prop onResize
+@prop children
+@prop class: className = ""
+-->
