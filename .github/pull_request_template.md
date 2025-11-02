@@ -43,7 +43,7 @@ Closes #<!-- Issue number here, e.g. #123 -->
 
 - [ ] My code follows the existing code style
 - [ ] I have run `pnpm check && pnpm test:e2e` and all tests pass
-- [ ] CoderabbitAI review has been completed and **all actionable suggestions were addressed**
+- [ ] CoderabbitAI review has been completed and **actionable suggestions were reviewed**
 - [ ] I have updated documentation if my changes require it
 - [ ] I have updated the `api-check` directory if a component API changed
 - [ ] My PR is based on the latest `main` branch (not the published npm version)
