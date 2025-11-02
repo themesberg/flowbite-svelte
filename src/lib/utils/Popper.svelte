@@ -49,8 +49,6 @@
     strategy
   });
 
-  let initialized: boolean = $state(false);
-
   $effect(() => {
     if (reference && popover) {
       referenceElement = popover.ownerDocument.querySelector<HTMLElement>(reference);
@@ -203,10 +201,7 @@
       for (const [name, handler, cond] of events) if (cond) element.addEventListener(name, handler);
     });
 
-    // initialized = true;
-
     return () => {
-      console.log("removing handlers");
       triggerEls.forEach((element: HTMLElement) => {
         for (const [name, handler, cond] of events) if (cond) element.removeEventListener(name, handler);
       });
@@ -237,9 +232,7 @@
   }
 </script>
 
-{#if !initialized}
-  <div {@attach set_triggers} hidden></div>
-{/if}
+<div {@attach set_triggers} hidden></div>
 
 {#if isOpen}
   <div
