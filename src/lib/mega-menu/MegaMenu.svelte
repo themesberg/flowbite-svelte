@@ -14,7 +14,7 @@
   const { base, div, ul, extra: extraCls } = $derived(megamenu({ full, hasExtra: !!extra }));
 </script>
 
-<Popper color={full ? "default" : "dropdown"} arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<Popper arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   <div class={div({ class: clsx(theme?.div, classes?.div) })}>
     <ul class={ul({ class: clsx(theme?.ul, styling.ul) })}>
       {#each items as item, index}
