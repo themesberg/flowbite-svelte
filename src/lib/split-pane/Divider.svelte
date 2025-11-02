@@ -43,5 +43,5 @@
 @prop onKeyDown
 @prop isDragging
 @prop currentSize
-@prop class: className = ''
+@prop class: className = ""
 -->

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.21.1
+
+### Patch Changes
+
+- fix: megamenu
+
 ## 1.21.0
 
 ### Minor Changes

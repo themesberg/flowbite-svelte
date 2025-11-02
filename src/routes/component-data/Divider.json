@@ -11,6 +11,6 @@
     ["onKeyDown", ""],
     ["isDragging", ""],
     ["currentSize", ""],
-    ["class: className", "''"]
+    ["class: className", "\"\""]
   ]
 }

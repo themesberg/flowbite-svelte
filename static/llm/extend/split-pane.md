@@ -16,6 +16,34 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 ## Component data
 
+### Divider
+
+#### Types
+
+[DividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2145)
+
+#### Props
+
+- direction
+- index
+- onMouseDown
+- onKeyDown
+- isDragging
+- currentSize
+- class: className: ""
+
+### Pane
+
+#### Types
+
+[PaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2139)
+
+#### Props
+
+- children
+- class: className: ""
+- style: ""
+
 ### SplitPane
 
 #### Types

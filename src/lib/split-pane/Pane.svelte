@@ -42,6 +42,6 @@
 [PaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2139)
 ## Props
 @prop children
-@prop class: className = ''
-@prop style = ''
+@prop class: className = ""
+@prop style = ""
 -->
