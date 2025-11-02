@@ -1,42 +1,108 @@
-name: "\U0001F41E Bug report"
-description: Report an issue with Flowbite-Svelte
+name: "🐞 Bug report"
+description: Report a bug or unexpected behavior in Flowbite-Svelte
 labels: ["triage: bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        👋 Thanks for reporting a bug!
+
+        Please fill out all required fields. Incomplete issues may be labeled as `needs reproduction` and closed if no response is provided.
+
   - type: textarea
     id: bug-description
     attributes:
-      label: Describe the bug
-      description: A clear and concise description of what the bug is. If you intend to submit a PR for this issue, tell us in the description. Thanks!
-      placeholder: Bug description
+      label: Description
+      description: |
+        Clearly describe the issue.  
+        - What is happening?  
+        - What did you expect to happen instead?  
+        - If you're planning to submit a PR, mention it here.
+      placeholder: "Example: When using <Button> inside <Modal>, the click event does not fire..."
     validations:
       required: true
-  - type: textarea
+
+    - type: textarea
     id: reproduction
     attributes:
-      label: Reproduction
+      label: Minimal Reproduction
       description: |
-        Please provide a **minimal code example** that demonstrates the problem. This should be self-contained, minimal, and runnable.
+        Provide a ***copy-paste-ready*** minimal example that reproduces the bug.  
+        ✅ Preferred: Fork this template and modify it to show the issue:  
+        https://svelte.dev/playground/47df97f4370f43fbb008c708fd5a7b8a?version=5.43.2  
+        ✅ OK: Full code sample in the box below  
+        ❌ Not accepted: screenshots of code, descriptions without code, full repositories
 
-        Include:
-        - What you expected to happen
-        - What actually happens instead
-        - Complete code example (copy/paste ready)
-        - Any specific steps to trigger the issue
-
-        Issues with vague descriptions and no reproduction code will receive a "needs reproduction" label and may be closed if not provided within a reasonable timeframe.
-      placeholder: "Provide your minimal code example here..."
+        Issues without a working reproduction may be closed.
+      placeholder: |
+        // Your minimal code example here...
+        // or paste your modified REPL link:
+        // https://svelte.dev/playground/...
+      render: typescript
     validations:
       required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: "List the exact actions needed to trigger the bug."
+      placeholder: |
+        1. Install flowbite-svelte@latest
+        2. Use Button inside Modal
+        3. Click button → nothing happens
+      validations:
+        required: true
+
   - type: textarea
     id: system-info
     attributes:
-      label: Version and System Info
-      description: Output of `npx envinfo --system --npmPackages svelte,@sveltejs/kit,flowbite-svelte,vite,rollup,webpack --binaries --browsers`
+      label: Environment
+      description: |
+        Run the following command and paste the output:
+
+        ```
+        npx envinfo --system --npmPackages svelte,@sveltejs/kit,flowbite-svelte,vite,rollup,webpack --binaries --browsers
+        ```
       render: shell
-      placeholder: Version, System, Binaries, Browsers
+      placeholder: |
+        System:
+        Binaries:
+        Browsers:
+        Packages:
     validations:
       required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs / Console Output
+      description: "Paste any error output or warnings (if any). Use code blocks."
+      render: shell
+      placeholder: |
+        [vite] Error: ...
+        Uncaught TypeError: ...
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / GIF (optional)
+      description: "If visual, attach screenshots or a short screen recording."
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context (optional)
+      description: "Anything else that might help us diagnose the issue."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: "I have searched existing issues and discussions"
+          required: true
+        - label: "I have provided a minimal and runnable reproduction"
+          required: true
+        - label: "I am using the latest version of Flowbite-Svelte"
+          required: true

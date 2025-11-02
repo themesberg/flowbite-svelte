@@ -69,10 +69,6 @@
   function handleMove(card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) {
     console.log(`Moved "${card.title}" from "${from.title}" to "${to.title}"`);
 
-    // The KanbanBoard component already mutated the columns.
-    // We just need to trigger reactivity by creating a new reference
-    columns = [...columns];
-
     // Here you could make an API call to persist the change
     // await fetch('/api/cards/move', { method: 'POST', body: JSON.stringify({ cardId: card.id, fromId: from.id, toId: to.id }) })
   }
