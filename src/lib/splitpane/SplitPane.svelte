@@ -101,7 +101,7 @@
   setSplitPaneContext({
     registerPane,
     getPaneStyle,
-    getPaneSize: (index: number) => sizes[index] ?? (100 / registeredPanes),
+    getPaneSize: (index: number) => sizes[index] ?? (registeredPanes > 0 ? 100 / registeredPanes : 0),
     shouldRenderDivider,
     getDirection: () => currentDirection,
     getIsDragging: () => isDragging,
