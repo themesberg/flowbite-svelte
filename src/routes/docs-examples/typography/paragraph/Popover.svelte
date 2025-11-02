@@ -8,7 +8,7 @@
   dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians
   founded colonies mostly in insular Italy
 </P>
-<Popover triggeredBy="#popover-image" class="w-96 text-sm font-light" defaultClass="">
+<Popover triggeredBy="#popover-image" class="w-96 text-sm font-light" classes={{ content: "p-0" }}>
   <div class="grid grid-cols-5">
     <div class="col-span-3 p-3">
       <div class="space-y-2">

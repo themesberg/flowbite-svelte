@@ -49,6 +49,8 @@
     strategy
   });
 
+  let initialized: boolean = $state(false);
+
   $effect(() => {
     if (reference && popover) {
       referenceElement = popover.ownerDocument.querySelector<HTMLElement>(reference);
@@ -88,8 +90,6 @@
       }
     });
   }
-
-  const [open_popover, close_popover] = createMutualDebounce(_open_popover, _close_popover, () => triggerDelay);
 
   async function _open_popover(ev: Event) {
     ev.preventDefault();
@@ -137,6 +137,8 @@
 
     isOpen = false;
   }
+
+  const [open_popover, close_popover] = createMutualDebounce(_open_popover, _close_popover, () => triggerDelay);
 
   function on_before_toggle(ev: ToggleEvent) {
     if (!invoker || !popover) return;
@@ -201,13 +203,14 @@
       for (const [name, handler, cond] of events) if (cond) element.addEventListener(name, handler);
     });
 
-    $effect(() => {
-      return () => {
-        triggerEls.forEach((element: HTMLElement) => {
-          for (const [name, handler, cond] of events) if (cond) element.removeEventListener(name, handler);
-        });
-      };
-    });
+    // initialized = true;
+
+    return () => {
+      console.log("removing handlers");
+      triggerEls.forEach((element: HTMLElement) => {
+        for (const [name, handler, cond] of events) if (cond) element.removeEventListener(name, handler);
+      });
+    };
   }
 
   function closeOnEscape(event: KeyboardEvent) {
@@ -234,7 +237,9 @@
   }
 </script>
 
-<div use:set_triggers hidden></div>
+{#if !initialized}
+  <div {@attach set_triggers} hidden></div>
+{/if}
 
 {#if isOpen}
   <div

@@ -9,4 +9,4 @@
 <Tooltip color="yellow">Tooltip content</Tooltip>
 
 <Button>Custom type</Button>
-<Tooltip placement="right" type={undefined} class="bg-purple-500 p-4 text-lg font-medium text-gray-100" arrow={false}>Tooltip content</Tooltip>
+<Tooltip placement="right" type="custom" class="border-none bg-purple-500 p-4 text-lg font-medium text-gray-100 dark:bg-purple-600" arrow={false}>Tooltip content</Tooltip>

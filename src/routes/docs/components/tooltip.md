@@ -96,7 +96,7 @@ Use svelte transistions to configure tooltip animations.
 
 Various color palettes can be set for a tooltip by using the `color` property. (Setting `color` prop sets the `type` to `custom` implicitly.)
 
-When you want to add a fully custom styles, use `type="custom"`, `defaultClass`, and `class` to modify the tooltip styling.
+When you want to add a fully custom styles, use `type="custom"`, and `class` to modify the tooltip styling.
 
 ```svelte example class="flex items-center h-64 gap-2" hideResponsiveButtons
 {#include Custom.svelte}

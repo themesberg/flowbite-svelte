@@ -5,29 +5,33 @@
  *
  * @param actionA - First action (e.g., openDialog)
  * @param actionB - Second action (e.g., closeDialog)
- * @param delay - Delay in milliseconds (default: 300ms)
+ * @param delayFunc - Function returning delay in milliseconds (default: 300ms)
  * @returns Object with mutual debounce control methods
  *
  * @example
- * const [actionA, actionB] = createMutualDebounce(openDialog, closeDialog, 300);
- * actionA(); // Schedule open
- * actionB(); // Cancel open, schedule close
+ * const [openDialogDeb, closeDialogDeb] = createMutualDebounce(openDialog, closeDialog, () => 300);
+ * openDialogDeb(); // Schedule open
+ * closeDialogDeb(); // Cancel open, schedule close
  */
 
 type Func = (...args: any[]) => any;
 
-export function createMutualDebounce<A extends Func, B extends Func>(actionA: A, actionB: B, delayFunc: () => number) {
+export function createMutualDebounce<A extends Func, B extends Func>(
+    actionA: A,
+    actionB: B,
+    delayFunc: () => number
+): [(...args: Parameters<A>) => void, (...args: Parameters<B>) => void] {
     let rafId: number | null = null;
 
-    function scheduleExecution(func: Func, args: any[], startTime: number): void {
+    function scheduleExecution(func: (...args: any[]) => any, args: any[], startTime: number): void {
         rafId = requestAnimationFrame((currentTime) => {
             const elapsed = currentTime - (startTime || 0);
 
             if (elapsed < delayFunc())
                 return scheduleExecution(func, args, startTime);
 
-            func(...args);
             rafId = null;
+            func(...args);
         });
     }
 
@@ -39,21 +43,15 @@ export function createMutualDebounce<A extends Func, B extends Func>(actionA: A,
         }
     }
 
-    return [
-        /**
-         * Execute action A. Cancels any pending execution of action B.
-         */
-        (...args: Parameters<A>): void => {
-            cancel();
-            scheduleExecution(actionA, args, performance.now());
-        },
+    const debouncedA = ((...args: Parameters<A>): void => {
+        cancel();
+        scheduleExecution(actionA, args as any[], performance.now());
+    });
 
-        /**
-         * Execute action B. Cancels any pending execution of action A.
-         */
-        (...args: Parameters<B>): void => {
-            cancel();
-            scheduleExecution(actionB, args, performance.now());
-        },
-    ];
+    const debouncedB = ((...args: Parameters<B>): void => {
+        cancel();
+        scheduleExecution(actionB, args as any[], performance.now());
+    });
+
+    return [debouncedA, debouncedB];
 }
