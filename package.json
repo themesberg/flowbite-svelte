@@ -674,16 +674,16 @@
       "svelte": "./dist/spinner/Spinner.svelte"
     },
     "./Divider.svelte": {
-      "types": "./dist/splitpane/Divider.svelte.d.ts",
-      "svelte": "./dist/splitpane/Divider.svelte"
+      "types": "./dist/split-pane/Divider.svelte.d.ts",
+      "svelte": "./dist/split-pane/Divider.svelte"
     },
     "./Pane.svelte": {
-      "types": "./dist/splitpane/Pane.svelte.d.ts",
-      "svelte": "./dist/splitpane/Pane.svelte"
+      "types": "./dist/split-pane/Pane.svelte.d.ts",
+      "svelte": "./dist/split-pane/Pane.svelte"
     },
     "./SplitPane.svelte": {
-      "types": "./dist/splitpane/SplitPane.svelte.d.ts",
-      "svelte": "./dist/splitpane/SplitPane.svelte"
+      "types": "./dist/split-pane/SplitPane.svelte.d.ts",
+      "svelte": "./dist/split-pane/SplitPane.svelte"
     },
     "./StepIndicator.svelte": {
       "types": "./dist/step-indicator/StepIndicator.svelte.d.ts",

@@ -80,4 +80,4 @@ export { span } from "../typography/span";
 // extend
 export { virtualList } from "$lib/virtuallist";
 export { kanbanBoard, kanbanCard } from "$lib/kanban/theme";
-export { splitpane, pane, divider, dividerHitArea } from "$lib/splitpane/theme";
+export { splitpane, pane, divider, dividerHitArea } from "$lib/split-pane/theme";
