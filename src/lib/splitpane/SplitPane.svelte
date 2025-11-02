@@ -43,6 +43,10 @@
     class: className = ""
   }: SplitPaneProps = $props();
 
+  const TOLERANCE = 0.5; // For pixel comparisons (minSize - TOLERANCE)
+  const MIN_CHANGE_THRESHOLD = 0.01; // For percentage changes (size deltas)
+  const MIN_DELTA = 1; // For mouse movement (Math.abs(delta) < MIN_DELTA)
+
   // Validate numeric props
   if (minSize <= 0) {
     console.warn(`minSize must be positive, got ${minSize}. Using default 100.`);
@@ -154,7 +158,7 @@
 
     // Check if current sizes violate minSize constraints
     const currentPixelSizes = sizes.map((s) => (s / 100) * containerSize);
-    const violatesMinSize = currentPixelSizes.some((pixelSize) => pixelSize < minSize - 0.5); // small tolerance
+    const violatesMinSize = currentPixelSizes.some((pixelSize) => pixelSize < minSize - TOLERANCE); // small tolerance
 
     if (violatesMinSize) {
       // Recalculate sizes to respect minSize
@@ -284,7 +288,7 @@
     const currentPos = currentDirection === "horizontal" ? e.clientX : e.clientY;
     const delta = currentPos - startPos;
 
-    if (Math.abs(delta) < 1) return; // Ignore very small movements
+    if (Math.abs(delta) < MIN_DELTA) return; // Ignore very small movements
 
     const containerSize = currentDirection === "horizontal" ? container.offsetWidth : container.offsetHeight;
 
@@ -316,7 +320,7 @@
     }
 
     // Only update if changed significantly
-    if (Math.abs(newSize1 - oldSize1) > 0.01) {
+    if (Math.abs(newSize1 - oldSize1) > MIN_CHANGE_THRESHOLD) {
       sizes[index] = newSize1;
       sizes[index + 1] = newSize2;
       startPos = currentPos;
@@ -351,7 +355,7 @@
         newSize1 = total - newSize2;
       }
 
-      if (Math.abs(newSize1 - sizes[index]) > 0.01) {
+      if (Math.abs(newSize1 - sizes[index]) > MIN_CHANGE_THRESHOLD) {
         sizes[index] = newSize1;
         sizes[index + 1] = newSize2;
         handled = true;
