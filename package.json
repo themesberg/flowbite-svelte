@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.20.1",
+  "version": "1.21.0",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -672,6 +672,18 @@
     "./Spinner.svelte": {
       "types": "./dist/spinner/Spinner.svelte.d.ts",
       "svelte": "./dist/spinner/Spinner.svelte"
+    },
+    "./Divider.svelte": {
+      "types": "./dist/splitpane/Divider.svelte.d.ts",
+      "svelte": "./dist/splitpane/Divider.svelte"
+    },
+    "./Pane.svelte": {
+      "types": "./dist/splitpane/Pane.svelte.d.ts",
+      "svelte": "./dist/splitpane/Pane.svelte"
+    },
+    "./SplitPane.svelte": {
+      "types": "./dist/splitpane/SplitPane.svelte.d.ts",
+      "svelte": "./dist/splitpane/SplitPane.svelte"
     },
     "./StepIndicator.svelte": {
       "types": "./dist/step-indicator/StepIndicator.svelte.d.ts",

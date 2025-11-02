@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.21.0
+
+### Minor Changes
+
+- feat: Split pane
+
 ## 1.20.1
 
 ### Patch Changes

@@ -262,26 +262,27 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2055)
+[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2051)
 ## Props
 @prop triggeredBy
-@prop triggerDelay = 200
+@prop triggerDelay = DEFAULT_TRIGGER_DELAY
 @prop trigger = "click"
 @prop placement = "top"
-@prop offset = 8
+@prop offset = DEFAULT_OFFSET
 @prop arrow = false
 @prop yOnly = false
 @prop strategy = "absolute"
+@prop role = "tooltip"
 @prop reference
 @prop middlewares = [dom.flip(), dom.shift()]
-@prop onbeforetoggle: _onbeforetoggle
-@prop ontoggle: _ontoggle
-@prop onclose: _onclose
 @prop class: className = ""
 @prop arrowClass = ""
 @prop isOpen = $bindable(false)
 @prop transitionParams
 @prop transition = fade
+@prop onbeforetoggle
+@prop ontoggle
+@prop onclose
 @prop children
 @prop ...restProps
 -->
