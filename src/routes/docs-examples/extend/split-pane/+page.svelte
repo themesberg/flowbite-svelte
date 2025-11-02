@@ -472,7 +472,6 @@
     {/if}
     <div class="h-96 rounded border" bind:this={nestedContainerElement}>
       <SplitPane responsive={false} onResize={handleNestedResize}>
-        \
         <Pane>
           <div class="h-full bg-gray-50 p-4">
             <h3 class="font-semibold">Sidebar</h3>
@@ -523,7 +522,7 @@
         </span>
         <span class="ml-4 text-blue-600">
           <strong>Min:</strong>
-          {((100 / constrainedContainerWidth) * 100).toFixed(2)}%
+          {((300 / constrainedContainerWidth) * 100).toFixed(2)}%
         </span>
       </div>
     {/if}
@@ -535,7 +534,7 @@
             <p class="mt-2 text-sm">This pane has:</p>
             <ul class="ml-5 list-disc text-sm">
               <li>
-                Min size: <strong>100px</strong>
+                Min size: <strong>300px</strong>
               </li>
             </ul>
             {#if constrainedSizes.length > 0 && constrainedContainerWidth > 0}
