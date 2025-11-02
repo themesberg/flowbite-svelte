@@ -9,7 +9,8 @@ export const tooltip = tv({
     type: {
       light: "bg-white text-gray-800 dark:bg-white dark:text-gray-800 border border-gray-200 dark:border-gray-200",
       auto: "bg-white text-gray-800 dark:bg-gray-800 dark:text-white border border-gray-200 dark:border-gray-700",
-      dark: "bg-gray-800 text-white dark:bg-gray-800 dark:text-white dark:border dark:border-gray-700"
+      dark: "bg-gray-800 text-white dark:bg-gray-800 dark:text-white dark:border dark:border-gray-700",
+      custom: ""
     },
     color: {
       // default: "bg-gray-800 dark:bg-gray-300 dark:text-gray-800",
@@ -35,6 +36,12 @@ export const tooltip = tv({
       rose: "bg-rose-800 dark:bg-rose-800"
     }
   },
+  compoundVariants: [
+    {
+      color: ["primary", "secondary", "gray", "red", "orange", "amber", "yellow", "lime", "green", "emerald", "teal", "cyan", "sky", "blue", "indigo", "violet", "purple", "fuchsia", "pink", "rose"],
+      class: "border-0 dark:border-0"
+    }
+  ],
   defaultVariants: {
     type: "dark",
     color: undefined
