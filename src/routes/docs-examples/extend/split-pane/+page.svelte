@@ -1,7 +1,9 @@
 <script lang="ts">
-  import { SplitPane, Pane } from "$lib";
+  import { SplitPane, Pane, SidebarGroup, SidebarItem } from "$lib";
+  import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from "flowbite-svelte-icons";
 
   let basicSizes = $state<number[]>([]);
+  let basicWithSidebarSizes = $state<number[]>([]);
   let verticalSizes = $state<number[]>([]);
   let threePaneSizes = $state<number[]>([]);
   let responsiveSizes = $state<number[]>([]);
@@ -10,6 +12,7 @@
   let editorSizes = $state<number[]>([]);
 
   let basicContainerWidth = $state<number>(0);
+  let basicWithSidebarWidth = $state<number>(0);
   let verticalContainerHeight = $state<number>(0);
   let threePaneContainerWidth = $state<number>(0);
   let responsiveContainerWidth = $state<number>(0);
@@ -18,6 +21,7 @@
   let editorContainerWidth = $state<number>(0);
 
   let basicContainerElement: HTMLDivElement;
+  let basicWithSidebarElement: HTMLDivElement;
   let verticalContainerElement: HTMLDivElement;
   let threePaneContainerElement: HTMLDivElement;
   let responsiveContainerElement: HTMLDivElement;
@@ -25,9 +29,16 @@
   let constrainedContainerElement: HTMLDivElement;
   let editorContainerElement: HTMLDivElement;
 
+  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+
   function handleBasicResize(newSizes: number[]) {
     basicSizes = newSizes;
     updateBasicContainerWidth();
+  }
+
+  function handleBasicWithSidebarResize(newSizes: number[]) {
+    basicWithSidebarSizes = newSizes;
+    updateBasicWithSidebarWidth();
   }
 
   function handleVerticalResize(newSizes: number[]) {
@@ -63,6 +74,12 @@
   function updateBasicContainerWidth() {
     if (basicContainerElement) {
       basicContainerWidth = basicContainerElement.offsetWidth;
+    }
+  }
+
+  function updateBasicWithSidebarWidth() {
+    if (basicWithSidebarElement) {
+      basicWithSidebarWidth = basicWithSidebarElement.offsetWidth;
     }
   }
 
@@ -107,6 +124,14 @@
       updateBasicContainerWidth();
       window.addEventListener("resize", updateBasicContainerWidth);
       return () => window.removeEventListener("resize", updateBasicContainerWidth);
+    }
+  });
+
+  $effect(() => {
+    if (basicWithSidebarElement) {
+      updateBasicWithSidebarWidth();
+      window.addEventListener("resize", updateBasicWithSidebarWidth);
+      return () => window.removeEventListener("resize", updateBasicWithSidebarWidth);
     }
   });
 
@@ -204,6 +229,71 @@
                 Width: {basicSizes[1].toFixed(2)}% = {getPixels(basicSizes[1], basicContainerWidth)}px
               </div>
             {/if}
+          </div>
+        </Pane>
+      </SplitPane>
+    </div>
+  </div>
+
+  <!-- Example 1b: Basic Horizontal Split with Sidebar -->
+  <div class="mb-8 bg-white p-8">
+    <h2 class="mb-4 text-xl font-bold">Basic Horizontal Split with Sidebar</h2>
+    <p class="dark:text-white">Two-pane horizontal layout with minSize of 200 and initialSizes of [25,75] and Sidebar components on the left pane.</p>
+    {#if basicWithSidebarSizes.length > 0 && basicWithSidebarWidth > 0}
+      <div class="mb-2 text-sm text-gray-600">
+        <strong>Container:</strong>
+        {basicWithSidebarWidth}px
+        <span class="ml-4"><strong>Sizes:</strong></span>
+        <span class="ml-2">
+          Left: {basicWithSidebarSizes[0].toFixed(1)}% ({getPixels(basicWithSidebarSizes[0], basicWithSidebarWidth)}px)
+        </span>
+        <span class="ml-3">
+          Right: {basicWithSidebarSizes[1].toFixed(1)}% ({getPixels(basicWithSidebarSizes[1], basicWithSidebarWidth)}px)
+        </span>
+      </div>
+    {/if}
+    <div class="h-96 rounded border" bind:this={basicWithSidebarElement}>
+      <SplitPane minSize={200} initialSizes={[25, 75]} responsive={false} onResize={handleBasicWithSidebarResize}>
+        <Pane>
+          <div class="h-full bg-blue-50 p-4">
+            <h3 class="font-semibold">Left Pane</h3>
+            <SidebarGroup>
+              <SidebarItem label="Dashboard" href="/">
+                {#snippet icon()}
+                  <ChartOutline class="inline h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                {/snippet}
+              </SidebarItem>
+              <SidebarItem label="Kanban" {spanClass} href="/">
+                {#snippet icon()}
+                  <GridSolid class="inline h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                {/snippet}
+                {#snippet subtext()}
+                  <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
+                {/snippet}
+              </SidebarItem>
+              <SidebarItem label="Inbox" {spanClass} href="/">
+                {#snippet icon()}
+                  <MailBoxSolid class="inline h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                {/snippet}
+                {#snippet subtext()}
+                  <span class="bg-primary-200 text-primary-600 dark:bg-primary-900 dark:text-primary-200 ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full p-3 text-sm font-medium">
+                    3
+                  </span>
+                {/snippet}
+              </SidebarItem>
+              <SidebarItem label="Sidebar" href="/components/sidebar">
+                {#snippet icon()}
+                  <UserSolid class="inline h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                {/snippet}
+              </SidebarItem>
+            </SidebarGroup>
+          </div>
+        </Pane>
+
+        <Pane>
+          <div class="h-full bg-green-50 p-4">
+            <h3 class="font-semibold">Right Pane</h3>
+            <p>This is the right pane content. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit nulla ipsum inventore nihil labore in velit dolores consequatur, voluptas praesentium perferendis nobis sequi culpa laboriosam natus! Dignissimos exercitationem vitae necessitatibus.</p>
           </div>
         </Pane>
       </SplitPane>
