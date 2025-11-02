@@ -1,71 +1,69 @@
 <!--
-Thanks for creating this pull request 🤗
+Thanks for contributing to Flowbite-Svelte! 🤗
 
-Please make sure that the pull request is limited to one type (docs, feature, etc.) and keep it as small as possible. You can open multiple prs instead of opening a huge one.
+Please keep pull requests focused and scoped to a single change (feature, fix, docs, refactor, etc.).
+If you have multiple unrelated changes, open multiple PRs instead of one large one.
 -->
 
-<!-- If this pull request closes an issue, please mention the issue number below -->
+### 🔗 Related issue (optional)
 
-Closes #<!-- Issue # here -->
+Closes #<!-- Issue number here, e.g. #123 -->
+
+---
 
 ## 📑 Description
 
-<!-- Add a brief description of the PR -->
+<!-- Briefly describe the purpose of this PR and what it changes. -->
 
-## Status
+---
 
-- [x] Not Completed
-- [ ] Completed
+## 🔍 PR Type
 
-## ✅ Checks
+<!-- Select the type of change this PR introduces. -->
 
-<!-- Make sure your PR passes the tests and do check the following fields as needed - -->
+- [ ] Bug fix
+- [ ] Feature
+- [ ] Documentation
+- [ ] Refactor / Code cleanup
+- [ ] Build / Tooling
+- [ ] Other (please describe)
 
-- [ ] My pull request adheres to the code style of this project
-- [ ] My code requires changes to the documentation
-- [ ] I have updated the documentation and `api-check` directory as required
-- [ ] All the tests and check have passed by running `pnpm check && pnpm test:e2e`
-- [ ] My pull request is based on the latest commit (not the npm version).
-- [ ] I have checked the page with https://validator.unl.edu/
+---
 
-<!--
+## 🚦 PR Status
 
-Sync fork from GitHub dropdown and update your local branch.
+- [ ] Draft (work in progress, not ready for review)
+- [ ] Ready for review ✅
 
-```sh
-git pull origin main
-git checkout your-branch
-git rebase main
-npm run test
-git push
-```
+---
 
-Then create a PR from your GitHub repo.
+## ✅ Checklist
 
-Or if you are using the command line:
+<!-- Please confirm the following before requesting a review. -->
 
-```sh
-git checkout main
-git fetch upstream // I'm assuming you set the upstream
-git merge upstream/main
-```
+- [ ] My code follows the existing code style
+- [ ] I have run `pnpm check && pnpm test:e2e` and all tests pass
+- [ ] CoderabbitAI review has been completed and **all actionable suggestions were addressed**
+- [ ] I have updated documentation if my changes require it
+- [ ] I have updated the `api-check` directory if a component API changed
+- [ ] My PR is based on the latest `main` branch (not the published npm version)
+- [ ] I have checked accessibility where applicable (ARIA, keyboard nav, etc.)
+- [ ] I have reviewed the rendered component in the browser
 
-Then change to your branch:
+---
 
-```sh
-git checkout my-new-feature
-git merge main
-```
+## 🧪 Screenshots / Demos (optional)
 
-If you may need to resolve merge conficts if your local branch had unique commits.
+<!-- UI changes? Add screenshots, GIFs, or REPL links here. -->
 
-Now you are ready to submit your PR.
+---
 
-It’s a good idea to sync from time to
-time, so you aren’t left too far behind the parent branch.
+## ⚠️ Breaking Changes (optional)
 
--->
+<!-- Does this PR introduce any breaking changes? If yes, explain why and how to migrate. -->
 
-## ℹ Additional Information
+---
 
-<!-- Any additional information like breaking changes, dependencies added, screenshots, comparisons between new and old behavior, etc. -->
+## ℹ️ Additional Information
+
+<!-- Anything else reviewers should know: dependencies added, motivations, notes, etc. -->
