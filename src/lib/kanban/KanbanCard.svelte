@@ -47,7 +47,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[KanbanCardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2116)
+[KanbanCardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2117)
 ## Props
 @prop card
 @prop isDragging = false

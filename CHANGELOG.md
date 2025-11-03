@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.22.0
+
+### Minor Changes
+
+- feat: Tour component
+
 ## 1.21.1
 
 ### Patch Changes

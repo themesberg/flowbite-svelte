@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.21.1",
+  "version": "1.22.0",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -796,6 +796,10 @@
     "./Tooltip.svelte": {
       "types": "./dist/tooltip/Tooltip.svelte.d.ts",
       "svelte": "./dist/tooltip/Tooltip.svelte"
+    },
+    "./Tour.svelte": {
+      "types": "./dist/tour/Tour.svelte.d.ts",
+      "svelte": "./dist/tour/Tour.svelte"
     },
     "./A.svelte": {
       "types": "./dist/typography/a/A.svelte.d.ts",

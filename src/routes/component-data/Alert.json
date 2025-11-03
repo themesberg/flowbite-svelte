@@ -2,7 +2,7 @@
   "name": "Alert",
   "type": {
     "name": "AlertProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L226"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L227"
   },
   "props": [
     ["children", ""],
