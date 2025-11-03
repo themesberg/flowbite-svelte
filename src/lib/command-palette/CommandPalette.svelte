@@ -1,24 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-
-  interface CommandItem {
-    id: string;
-    label: string;
-    description?: string;
-    icon?: string;
-    keywords?: string[];
-    onselect: () => void;
-  }
-
-  interface Props {
-    open?: boolean;
-    items?: CommandItem[];
-    placeholder?: string;
-    emptyMessage?: string;
-    shortcutKey?: string;
-    vim?: boolean;
-    onclose?: () => void;
-  }
+  import type { CommandPaletteProps, CommandItem } from '$lib/types';
 
   let {
     open = $bindable(false),
@@ -28,7 +10,7 @@
     shortcutKey = 'k',
     vim = false,
     onclose
-  }: Props = $props();
+  }: CommandPaletteProps = $props();
 
   let search = $state('');
   let selectedIndex = $state(0);

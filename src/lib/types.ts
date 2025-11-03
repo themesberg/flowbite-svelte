@@ -2172,3 +2172,23 @@ export interface TourProps extends TourVariants, Omit<HTMLAttributes<HTMLDivElem
   tooltipOffset?: number;
   highlightClass?: string;
 }
+
+// command palette
+export interface CommandItem {
+    id: string;
+    label: string;
+    description?: string;
+    icon?: string;
+    keywords?: string[];
+    onselect: () => void;
+  }
+
+export interface CommandPaletteProps {
+    open?: boolean;
+    items?: CommandItem[];
+    placeholder?: string;
+    emptyMessage?: string;
+    shortcutKey?: string;
+    vim?: boolean;
+    onclose?: () => void;
+  }
