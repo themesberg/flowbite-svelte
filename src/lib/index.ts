@@ -90,3 +90,4 @@ export * from "./types";
 export * from "./virtuallist";
 export * from "./kanban";
 export * from "./split-pane";
+export * from "./tour";
