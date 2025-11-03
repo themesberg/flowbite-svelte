@@ -117,6 +117,7 @@ import type { TagsVariants } from "$lib/forms/tags/theme";
 import type { VirtualListVariants } from "$lib/virtuallist/theme";
 import type { KanbanBoardVariants, KanbanCardVariants } from "$lib/kanban/theme";
 import type { TourVariants } from "$lib/tour/theme";
+import type { CommandPaletteVariants } from "$lib/command-palette/theme";
 
 // utils
 import type { CloseButtonVariants } from "$lib/utils/theme";
@@ -2183,7 +2184,7 @@ export interface CommandItem {
     onselect: () => void;
   }
 
-export interface CommandPaletteProps {
+export interface CommandPaletteProps extends CommandPaletteVariants, HTMLAttributes<HTMLDivElement> {
     open?: boolean;
     items?: CommandItem[];
     placeholder?: string;

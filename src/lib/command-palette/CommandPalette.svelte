@@ -1,6 +1,11 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import type { CommandPaletteProps, CommandItem } from '$lib/types';
+  import { commandPalette } from './theme';
+  import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
+
+  const styles = commandPalette();
 
   let {
     open = $bindable(false),
@@ -9,8 +14,11 @@
     emptyMessage = 'No results found.',
     shortcutKey = 'k',
     vim = false,
-    onclose
+    onclose,
+    classes
   }: CommandPaletteProps = $props();
+
+  const theme = getTheme("commandPalette");
 
   let search = $state('');
   let selectedIndex = $state(0);
@@ -83,17 +91,14 @@
     const selectedElement = containerElement.querySelector(
       `#${CSS.escape(filteredItems[selectedIndex]?.id)}`
     ) as HTMLElement;
-    
+
     if (selectedElement && listElement) {
       const listRect = listElement.getBoundingClientRect();
       const elementRect = selectedElement.getBoundingClientRect();
-      
-      // Check if element is below the visible area
+
       if (elementRect.bottom > listRect.bottom) {
         selectedElement.scrollIntoView({ block: 'end', behavior: 'auto' });
-      }
-      // Check if element is above the visible area
-      else if (elementRect.top < listRect.top) {
+      } else if (elementRect.top < listRect.top) {
         selectedElement.scrollIntoView({ block: 'start', behavior: 'auto' });
       }
     }
@@ -140,7 +145,7 @@
 
 {#if open}
   <div
-    class="fixed inset-0 z-50 flex items-start justify-center bg-gray-900/50 dark:bg-gray-900/80 p-4 sm:p-6 md:p-20"
+    class={styles.backdrop({ class: clsx(theme?.backdrop, classes?.backdrop) })}
     onclick={handleBackdropClick}
     onkeydown={handleBackdropKeydown}
     role="dialog"
@@ -148,18 +153,10 @@
     aria-labelledby="command-palette-label"
     tabindex="-1"
   >
-    <div
-      class="w-full max-w-2xl bg-white dark:bg-gray-800 rounded-lg shadow-2xl ring-1 ring-black/5 dark:ring-white/10 overflow-hidden transform transition-all"
-      bind:this={containerElement}
-    >
+    <div class={styles.panel({ class: clsx(theme?.panel, classes?.panel)})} bind:this={containerElement}>
       <!-- Search Input -->
-      <div class="relative">
-        <svg
-          class="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-gray-400 dark:text-gray-500"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
+      <div class={styles.inputWrapper({ class: clsx(theme?.inputWrapper, classes?.inputWrapper)})}>
+        <svg class={styles.icon({ class: clsx(theme?.icon, classes?.icon)})} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -171,7 +168,7 @@
           bind:this={inputElement}
           bind:value={search}
           type="text"
-          class="w-full border-0 bg-transparent pl-11 pr-4 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-0 focus:outline-none text-sm"
+          class={styles.input({ class: clsx(theme?.input, classes?.input)})}
           placeholder={placeholder}
           role="combobox"
           aria-expanded="true"
@@ -182,20 +179,14 @@
 
       <!-- Results -->
       {#if filteredItems.length > 0}
-        <ul
-          id="command-palette-options"
-          class="max-h-80 scroll-py-2 overflow-y-auto border-t border-gray-200 dark:border-gray-700"
-          role="listbox"
-        >
+        <ul id="command-palette-options" class={styles.list({ class: clsx(theme?.list, classes?.list)})} role="listbox">
           {#each filteredItems as item, index (item.id)}
             <li
               data-index={index}
               id={item.id}
               role="option"
               aria-selected={index === selectedIndex}
-              class="cursor-pointer select-none px-4 py-2 {index === selectedIndex
-                ? 'bg-primary-600 text-white'
-                : 'text-gray-900 dark:text-gray-100'}"
+              class={styles.item({ selected: index === selectedIndex, class: clsx(theme?.item, classes?.item)})}
               onclick={() => selectItem(item)}
               onkeydown={(e) => e.key === 'Enter' && selectItem(item)}
               onmouseenter={() => (selectedIndex = index)}
@@ -206,15 +197,9 @@
                   <span class="text-lg">{item.icon}</span>
                 {/if}
                 <div class="flex-1 min-w-0">
-                  <div class="font-medium text-sm truncate">
-                    {item.label}
-                  </div>
+                  <div class="font-medium text-sm truncate">{item.label}</div>
                   {#if item.description}
-                    <div
-                      class="text-xs truncate {index === selectedIndex
-                        ? 'text-primary-100'
-                        : 'text-gray-500 dark:text-gray-400'}"
-                    >
+                    <div class={styles.itemDescription()}>
                       {item.description}
                     </div>
                   {/if}
@@ -224,23 +209,15 @@
           {/each}
         </ul>
       {:else if search}
-        <div
-          class="px-4 py-14 text-center border-t border-gray-200 dark:border-gray-700"
-        >
-          <p class="text-sm text-gray-500 dark:text-gray-400">
-            {emptyMessage}
-          </p>
+        <div class={styles.empty({ class: clsx(theme?.empty, classes?.empty)})}>
+          <p>{emptyMessage}</p>
         </div>
       {/if}
 
       <!-- Footer -->
-      <div
-        class="flex flex-wrap items-center justify-between gap-2 bg-gray-50 dark:bg-gray-900/50 px-4 py-2.5 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700"
-      >
+      <div class={styles.footer({ class: clsx(theme?.footer, classes?.footer)})}>
         <div class="flex items-center gap-4">
-          <kbd
-            class="inline-flex items-center gap-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-1 font-sans text-xs"
-          >
+          <kbd class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd)})}>
             {#if vim}
               <span>j/k</span>
             {:else}
@@ -248,16 +225,12 @@
             {/if}
             <span>Navigate</span>
           </kbd>
-          <kbd
-            class="inline-flex items-center gap-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-1 font-sans text-xs"
-          >
+          <kbd class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd)})}>
             <span>↵</span>
             <span>Select</span>
           </kbd>
         </div>
-        <kbd
-          class="inline-flex items-center gap-1 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-2 py-1 font-sans text-xs"
-        >
+        <kbd class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd)})}>
           <span>ESC</span>
           <span>Close</span>
         </kbd>
