@@ -1,6 +1,6 @@
 <script lang="ts">
   import {CommandPalette} from '$lib';
-  import { goto } from '$app/navigation';
+  import { goto, resolve } from '$app/navigation';
 
   let paletteOpen = $state(false);
   
@@ -35,7 +35,9 @@
       description: 'Open application settings',
       icon: '⚙️',
       keywords: ['preferences', 'config', 'options'],
-      onselect: () => (goto('/'))
+      onselect: () => {
+        void goto(resolve('/'));
+      }
     },
     {
       id: 'search',
@@ -67,7 +69,9 @@
       description: 'View help documentation',
       icon: '❓',
       keywords: ['docs', 'support', 'guide'],
-      onselect: () => goto('/docs/pages/introduction')
+      onselect: () => {
+        void goto(resolve('/docs/pages/introduction'));
+      }
     },
     {
       id: 'shortcuts',
@@ -153,7 +157,7 @@
       </h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {#each commands as command}
+        {#each commands as command (command.id)}
           <div class="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
             <div class="flex items-start gap-3">
               <span class="text-2xl">{command.icon}</span>
@@ -166,7 +170,7 @@
                 </p>
                 {#if command.keywords}
                   <div class="flex flex-wrap gap-1 mt-2">
-                    {#each command.keywords as keyword}
+                    {#each command.keywords as keyword (keyword)}
                       <span class="text-xs px-2 py-0.5 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded">
                         {keyword}
                       </span>

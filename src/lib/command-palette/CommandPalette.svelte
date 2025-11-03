@@ -117,6 +117,12 @@
     }
   }
 
+  function handleBackdropKeydown(e: KeyboardEvent) {
+    if (e.key === 'Enter' && e.target === e.currentTarget) {
+      closeCommandPalette();
+    }
+  }
+
   onMount(() => {
     const handleGlobalKeydown = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === shortcutKey) {
@@ -136,7 +142,7 @@
   <div
     class="fixed inset-0 z-50 flex items-start justify-center bg-gray-900/50 dark:bg-gray-900/80 p-4 sm:p-6 md:p-20"
     onclick={handleBackdropClick}
-    onkeydown={(e) => e.key === 'Enter' && handleBackdropClick(e as any)}
+    onkeydown={handleBackdropKeydown}
     role="dialog"
     aria-modal="true"
     aria-labelledby="command-palette-label"
