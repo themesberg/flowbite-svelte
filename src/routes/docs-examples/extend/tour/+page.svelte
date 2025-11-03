@@ -1,7 +1,7 @@
 <!-- App.svelte -->
 <script lang="ts">
-  import { Tour, type TourStep } from "$lib";
-  import { FireOutline, BellRingOutline, GlobeOutline, GridOutline } from "flowbite-svelte-icons";
+  import { Tour, type TourStep, Button, Avatar } from "$lib";
+  import { FireOutline, BellRingOutline, BellOutline, GlobeOutline, GridOutline, QuestionCircleOutline } from "flowbite-svelte-icons";
 
   let tourActive = $state<boolean>(false);
   let currentStep = $state<number>(0);
@@ -96,30 +96,16 @@
 
         <div class="flex items-center gap-4">
           <button id="notifications" class="relative rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900" aria-label="Notifications">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-              />
-            </svg>
+            <BellOutline class="h-6 w-6" />
             <span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-red-500"></span>
           </button>
 
           <button id="help-center" class="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900" aria-label="Help">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
+            <QuestionCircleOutline class="h-6 w-6" />
           </button>
 
           <button id="profile-button" class="flex items-center gap-2 rounded-lg px-3 py-2 transition-colors hover:bg-gray-100">
-            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-500 font-semibold text-white">JD</div>
+            <Avatar class="bg-blue-400 text-white">JD</Avatar>
             <span class="hidden text-sm font-medium text-gray-700 sm:block">John Doe</span>
           </button>
         </div>
@@ -132,8 +118,7 @@
     <div class="mb-8 rounded-lg bg-white p-8 shadow-sm">
       <h2 class="mb-4 text-2xl font-bold text-gray-900">Welcome Back! 👋</h2>
       <p class="mb-6 text-gray-600">Ready to explore? Start the interactive tour to learn about all the features.</p>
-
-      <button onclick={startTour} class="rounded-lg bg-blue-500 px-6 py-3 font-medium text-white shadow-sm transition-colors hover:bg-blue-600 hover:shadow-md">Start Tour</button>
+      <Button onclick={startTour}>Start Tour</Button>
     </div>
 
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
