@@ -1,6 +1,6 @@
 <script lang="ts">
   import {CommandPalette} from '$lib';
-  import { goto, resolve } from '$app/navigation';
+  import { goto } from '$app/navigation';
 
   let paletteOpen = $state(false);
   
@@ -35,9 +35,7 @@
       description: 'Open application settings',
       icon: '⚙️',
       keywords: ['preferences', 'config', 'options'],
-      onselect: () => {
-        void goto(resolve('/'));
-      }
+      onselect: () => goto('/')
     },
     {
       id: 'search',
@@ -69,9 +67,7 @@
       description: 'View help documentation',
       icon: '❓',
       keywords: ['docs', 'support', 'guide'],
-      onselect: () => {
-        void goto(resolve('/docs/pages/introduction'));
-      }
+      onselect: () => goto('/docs/pages/introduction')
     },
     {
       id: 'shortcuts',
