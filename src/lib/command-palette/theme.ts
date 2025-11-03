@@ -14,7 +14,7 @@ export const commandPalette = tv({
       "pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-gray-400 dark:text-gray-500",
     input:
       "w-full border-0 bg-transparent pl-11 pr-4 py-3 text-gray-900 dark:text-white " +
-      "placeholder-gray-400 dark:placeholder-gray-500 focus:ring-0 focus:outline-none text-sm",
+      "placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:ring-offset-0 text-sm",
     list:
       "max-h-80 scroll-py-2 overflow-y-auto border-t border-gray-200 dark:border-gray-700",
     item:
@@ -32,12 +32,6 @@ export const commandPalette = tv({
       "bg-white dark:bg-gray-800 px-2 py-1 font-sans text-xs"
   },
 
-  variants: {
-    selected: {
-      true: "bg-primary-600 text-white",
-      false: "text-gray-900 dark:text-gray-100"
-    }
-  },
-
+  variants: {},
   defaultVariants: {}
 });
