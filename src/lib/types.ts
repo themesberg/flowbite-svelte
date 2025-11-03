@@ -2165,8 +2165,8 @@ export interface TourProps extends TourVariants, Omit<HTMLAttributes<HTMLDivElem
   steps?: TourStep[];
   active?: boolean;
   currentStep?: number;
-  onComplete?: () => void;
-  onSkip?: () => void;
+  oncomplete?: () => void;
+  onskip?: () => void;
   showOverlay?: boolean;
   scrollBehavior?: ScrollBehavior;
   tooltipOffset?: number;

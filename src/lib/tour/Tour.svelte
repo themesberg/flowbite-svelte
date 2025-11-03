@@ -10,8 +10,8 @@
     steps = [],
     active = $bindable(false),
     currentStep = $bindable(0),
-    onComplete = () => {},
-    onSkip = () => {},
+    oncomplete = () => {},
+    onskip = () => {},
     showOverlay = true,
     scrollBehavior = "smooth",
     tooltipOffset = 12,
@@ -99,7 +99,7 @@
           fallbackPlacements: ["top", "bottom", "left", "right"]
         }),
         shift({ padding: 16 }),
-        arrow({ element: arrowElement! })
+        ...(arrowElement ? [arrow({ element: arrowElement })] : [])
       ]
     });
 
@@ -147,12 +147,12 @@
 
   function skip(): void {
     active = false;
-    onSkip();
+    onskip();
   }
 
   function complete(): void {
     active = false;
-    onComplete();
+    oncomplete();
   }
 
   function goToStep(index: number): void {

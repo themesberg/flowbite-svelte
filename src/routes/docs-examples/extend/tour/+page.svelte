@@ -172,5 +172,5 @@
   </main>
 
   <!-- Tour Component -->
-  <Tour bind:active={tourActive} bind:currentStep steps={tourSteps} onComplete={handleTourComplete} onSkip={handleTourSkip} />
+  <Tour bind:active={tourActive} bind:currentStep steps={tourSteps} oncomplete={handleTourComplete} onskip={handleTourSkip} />
 </div>
