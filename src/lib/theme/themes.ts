@@ -81,3 +81,4 @@ export { span } from "../typography/span";
 export { virtualList } from "$lib/virtuallist";
 export { kanbanBoard, kanbanCard } from "$lib/kanban/theme";
 export { splitpane, pane, divider, dividerHitArea } from "$lib/split-pane/theme";
+export { tour } from "$lib/tour/theme";

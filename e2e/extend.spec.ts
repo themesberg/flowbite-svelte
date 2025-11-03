@@ -42,6 +42,12 @@ test("Tags page should have h1", async ({ page }) => {
   expect(await page.textContent("h1")).toBe("Svelte Tags");
 });
 
+// Tour
+test("Tour page should have h1", async ({ page }) => {
+  await page.goto("/docs/extend/tour");
+  expect(await page.textContent("h1")).toBe("Svelte Tour");
+});
+
 // VirtualList
 test("VirtualList page should have h1", async ({ page }) => {
   await page.goto("/docs/extend/virtual-list");
