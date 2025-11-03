@@ -4,7 +4,7 @@ title: Svelte Tour
 breadcrumb_title: Tour
 component_title: Tour
 dir: Extend
-description: A guided product tour component that highlights elements, positions tooltips with Floating UI, supports step navigation, overlay masking, scrolling, theming, and callbacks for skip and completion.
+description: A guided product tour component that highlights elements, supports step navigation with keyboard controls, overlay masking, smooth scrolling, theming, and callbacks for skipping or completing the tour.
 
 ---
 
