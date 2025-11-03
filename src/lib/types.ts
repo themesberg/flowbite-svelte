@@ -2162,7 +2162,7 @@ export type TourStep = {
 };
 
 export interface TourProps extends TourVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
-  steps?: TourStep[];
+  steps: TourStep[];
   active?: boolean;
   currentStep?: number;
   oncomplete?: () => void;
