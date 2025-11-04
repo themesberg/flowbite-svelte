@@ -2185,7 +2185,7 @@ export interface CommandItem {
   onselect: () => void;
 }
 
-export interface CommandPaletteProps extends CommandPaletteVariants, HTMLDialogAttributes {
+export interface CommandPaletteProps extends CommandPaletteVariants, DialogProps {
   items?: CommandItem[];
   placeholder?: string;
   emptyMessage?: string;
