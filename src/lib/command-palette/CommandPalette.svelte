@@ -25,7 +25,6 @@
 
   let search = $state("");
   let selectedIndex = $state(0);
-  let inputElement = $state<HTMLInputElement>();
   let containerElement = $state<HTMLDialogElement>();
   let gid = $props.id();
   let ulId = "command-palette-options-" + gid;
@@ -123,7 +122,6 @@
     size="md"
     {placeholder}
     bind:value={search}
-    bind:elementRef={inputElement}
     classes={{ input: styles.search({ class: clsx(theme?.search, classes?.search) }) }}
     autofocus
     role="combobox"
