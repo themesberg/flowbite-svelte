@@ -55,7 +55,7 @@
       // falls through
       case "ArrowDown":
         e.preventDefault();
-        selectedIndex = Math.min(selectedIndex + 1, filteredItems.length - 1);
+        selectedIndex = Math.max(Math.min(selectedIndex + 1, filteredItems.length - 1), 0);
         scrollToSelected();
         break;
       case "k":
