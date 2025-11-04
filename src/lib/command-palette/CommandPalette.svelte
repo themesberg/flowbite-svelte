@@ -49,6 +49,7 @@
     switch (e.key) {
       case "j":
         if (!vim || e.ctrlKey) break;
+      // falls through
       case "ArrowDown":
         e.preventDefault();
         selectedIndex = Math.min(selectedIndex + 1, filteredItems.length - 1);
@@ -56,6 +57,7 @@
         break;
       case "k":
         if (!vim || e.ctrlKey) break;
+      // falls through
       case "ArrowUp":
         e.preventDefault();
         selectedIndex = Math.max(selectedIndex - 1, 0);
