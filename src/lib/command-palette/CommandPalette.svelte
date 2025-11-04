@@ -186,7 +186,7 @@
               id={item.id}
               role="option"
               aria-selected={index === selectedIndex}
-              class={styles.item({ selected: index === selectedIndex, class: clsx(theme?.item, classes?.item)})}
+              class={styles.item({ class: clsx(theme?.item, classes?.item)})}
               onclick={() => selectItem(item)}
               onkeydown={(e) => e.key === 'Enter' && selectItem(item)}
               onmouseenter={() => (selectedIndex = index)}
