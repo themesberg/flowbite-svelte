@@ -34,9 +34,8 @@
     const searchLower = search.trim().toLowerCase();
     if (searchLower === "") return items;
 
-    return items.filter((item) => {
-      return item.label.toLowerCase().includes(searchLower) || item.description?.toLowerCase().includes(searchLower) || item.keywords?.some((kw) => kw.toLowerCase().includes(searchLower));
-    });
+    const check = (x?: string) => x?.toLowerCase().includes(searchLower);
+    return items.filter((item) => check(item.label) || check(item.description) || item.keywords?.some(check));
   });
 
   $effect(() => {
@@ -48,18 +47,16 @@
   function handleKeydown(e: KeyboardEvent) {
     if (!open) return;
     switch (e.key) {
-      case "ArrowDown":
       case "j":
-        if (e.key === "j" && !vim) break;
-        if (e.key === "j" && e.ctrlKey) break;
+        if (!vim || e.ctrlKey) break;
+      case "ArrowDown":
         e.preventDefault();
         selectedIndex = Math.min(selectedIndex + 1, filteredItems.length - 1);
         scrollToSelected();
         break;
-      case "ArrowUp":
       case "k":
-        if (e.key === "k" && !vim) break;
-        if (e.key === "k" && e.ctrlKey) break;
+        if (!vim || e.ctrlKey) break;
+      case "ArrowUp":
         e.preventDefault();
         selectedIndex = Math.max(selectedIndex - 1, 0);
         scrollToSelected();
@@ -78,18 +75,20 @@
 
   function scrollToSelected() {
     if (!containerElement) return;
+
     const listElement = containerElement.querySelector("ul");
-    const selectedElement = containerElement.querySelector(`#${CSS.escape(filteredItems[selectedIndex]?.id)}`) as HTMLElement;
+    if (!listElement) return;
 
-    if (selectedElement && listElement) {
-      const listRect = listElement.getBoundingClientRect();
-      const elementRect = selectedElement.getBoundingClientRect();
+    const selectedElement = listElement.querySelector(`#${CSS.escape(filteredItems[selectedIndex]?.id)}`) as HTMLElement;
+    if (!selectedElement) return;
 
-      if (elementRect.bottom > listRect.bottom) {
-        selectedElement.scrollIntoView({ block: "end", behavior: "auto" });
-      } else if (elementRect.top < listRect.top) {
-        selectedElement.scrollIntoView({ block: "start", behavior: "auto" });
-      }
+    const listRect = listElement.getBoundingClientRect();
+    const elementRect = selectedElement.getBoundingClientRect();
+
+    if (elementRect.bottom > listRect.bottom) {
+      selectedElement.scrollIntoView({ block: "end", behavior: "auto" });
+    } else if (elementRect.top < listRect.top) {
+      selectedElement.scrollIntoView({ block: "start", behavior: "auto" });
     }
   }
 
