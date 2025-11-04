@@ -94,19 +94,26 @@
     }
   }
 
-  function selectItem(item: CommandItem) {
-    item.onselect();
+  function close() {
     open = false;
     search = "";
     selectedIndex = 0;
     onclose?.();
   }
 
+  function selectItem(item: CommandItem) {
+    item.onselect();
+    close();
+  }
+
   const handleGlobalKeydown = (e: KeyboardEvent) => {
     if ((e.metaKey || e.ctrlKey) && e.key === shortcutKey) {
       e.preventDefault();
-      open = !open;
-      selectedIndex = 0;
+      if (open) close();
+      else {
+        open = true;
+        selectedIndex = 0;
+      }
       return true;
     }
   };
