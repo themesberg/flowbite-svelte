@@ -2178,7 +2178,10 @@ export interface TourProps extends TourVariants, Omit<HTMLAttributes<HTMLDivElem
 export interface CommandItem {
     id: string;
     label: string;
-    description?: string;
+  description?: string;
+  /**
+ * Icon can be a Svelte Component or a string representing an icon class/name
+ */
     icon?: string | Component;
     keywords?: string[];
     onselect: () => void;
