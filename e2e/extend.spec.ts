@@ -6,6 +6,12 @@ test("ButtonToggle page should have h1", async ({ page }) => {
   expect(await page.textContent("h1")).toBe("Svelte Button Toggle");
 });
 
+// CommandPalette
+test("CommandPalette page should have h1", async ({ page }) => {
+  await page.goto("/docs/extend/command-palette");
+  expect(await page.textContent("h1")).toBe("Svelte Command Palette");
+});
+
 // flowbite-svelte-starter
 test("Flowbite Svelte Starter page should have h1", async ({ page }) => {
   await page.goto("/docs/extend/flowbite-svelte-starter");

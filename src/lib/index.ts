@@ -87,6 +87,7 @@ export * from "./utils";
 export * from "./types";
 
 // extend
+export * from "./command-palette";
 export * from "./virtuallist";
 export * from "./kanban";
 export * from "./split-pane";
