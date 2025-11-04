@@ -1,12 +1,10 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import type { CommandPaletteProps, CommandItem } from "$lib/types";
-  import { commandPalette } from "./theme";
-  import { getTheme } from "$lib/theme/themeUtils";
-  import clsx from "clsx";
   import Dialog from "$lib/dialog/Dialog.svelte";
   import Search from "$lib/forms/search/Search.svelte";
-  import { ssrModuleExportsKey } from "vite/module-runner";
+  import { getTheme } from "$lib/theme/themeUtils";
+  import type { CommandItem, CommandPaletteProps } from "$lib/types";
+  import clsx from "clsx";
+  import { commandPalette } from "./theme";
 
   const styles = commandPalette();
 
