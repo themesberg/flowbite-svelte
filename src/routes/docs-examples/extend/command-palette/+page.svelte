@@ -1,8 +1,13 @@
 <script lang="ts">
-  import {CommandPalette} from '$lib';
+  import { CommandPalette, Toggle } from '$lib';
   import { goto } from '$app/navigation';
 
   let paletteOpen = $state(false);
+  let vimMode = $state(false);
+
+  const handleVimToggle = () => {
+    vimMode = !vimMode;
+  };
   
   const commands = [
     {
@@ -133,20 +138,19 @@
     <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
       Command Palette Demo
     </h1>
-    
     <p class="text-gray-600 dark:text-gray-400 mb-8">
-      Press <kbd class="px-2 py-1 bg-gray-200 dark:bg-gray-800 rounded text-sm font-mono">⌘p (default ⌘k)</kbd> or 
-      <kbd class="px-2 py-1 bg-gray-200 dark:bg-gray-800 rounded text-sm font-mono">Ctrl+p (default Ctrl+k)</kbd> to open 
+      Press <kbd class="px-2 py-1 bg-gray-200 dark:bg-gray-800 rounded text-sm font-mono">⌘P (default ⌘K)</kbd> or 
+      <kbd class="px-2 py-1 bg-gray-200 dark:bg-gray-800 rounded text-sm font-mono">Ctrl+P (default Ctrl+K)</kbd> to open 
       the command palette, or click the button below.
     </p>
 
     <button
       onclick={() => (paletteOpen = true)}
-      class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors"
+      class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors mb-4"
     >
       Open Command Palette
     </button>
-
+    <Toggle checked={vimMode} onclick={handleVimToggle}>Vim mode is {vimMode ? 'on' : 'off'}</Toggle>
     <div class="mt-12 space-y-6">
       <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
         Available Commands
@@ -182,4 +186,4 @@
   </div>
 </div>
 
-<CommandPalette bind:open={paletteOpen} items={commands} shortcutKey="p" vim={true}/>
+<CommandPalette bind:open={paletteOpen} items={commands} shortcutKey="p" vim={vimMode}/>
