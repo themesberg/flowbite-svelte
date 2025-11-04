@@ -2179,9 +2179,7 @@ export interface CommandItem {
   id: string;
   label: string;
   description?: string;
-  /**
- * Icon can be a Svelte Component or a string representing an icon class/name
- */
+  /** Icon can be a Svelte Component or a string representing an icon class/name */
   icon?: string | Component;
   keywords?: string[];
   onselect: () => void;
