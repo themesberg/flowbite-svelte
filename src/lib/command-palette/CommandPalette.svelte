@@ -46,6 +46,9 @@
 
   function handleKeydown(e: KeyboardEvent) {
     if (!open) return;
+
+    if (handleGlobalKeydown(e)) return;
+
     switch (e.key) {
       case "j":
         if (!vim || e.ctrlKey) break;
@@ -68,9 +71,6 @@
         if (filteredItems[selectedIndex]) {
           selectItem(filteredItems[selectedIndex]);
         }
-        break;
-      case shortcutKey:
-        handleGlobalKeydown(e);
         break;
     }
   }
@@ -107,6 +107,7 @@
       e.preventDefault();
       open = !open;
       selectedIndex = 0;
+      return true;
     }
   };
 
