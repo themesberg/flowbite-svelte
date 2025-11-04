@@ -16,9 +16,9 @@
     shortcutKey = "k",
     vim = false,
     "aria-labelledby": ariaLabelledby,
-    onclose,
     class: className,
-    classes
+    classes,
+    ...restProps
   }: CommandPaletteProps = $props();
 
   const theme = getTheme("commandPalette");
@@ -94,26 +94,18 @@
     }
   }
 
-  function close() {
+  function selectItem(item: CommandItem) {
+    item.onselect();
     open = false;
     search = "";
     selectedIndex = 0;
-    onclose?.();
-  }
-
-  function selectItem(item: CommandItem) {
-    item.onselect();
-    close();
   }
 
   const handleGlobalKeydown = (e: KeyboardEvent) => {
     if ((e.metaKey || e.ctrlKey) && e.key === shortcutKey) {
       e.preventDefault();
-      if (open) close();
-      else {
-        open = true;
-        selectedIndex = 0;
-      }
+      open = !open;
+      selectedIndex = 0;
       return true;
     }
   };
@@ -125,7 +117,7 @@
 
 <svelte:window onkeydown={open ? handleKeydown : handleGlobalKeydown} />
 
-<Dialog bind:open dismissable={false} {@attach init} aria-modal="true" aria-labelledby={ariaLabelledby} tabindex={-1} class={styles.base({ class: clsx(theme?.base, className) })}>
+<Dialog bind:open dismissable={false} {@attach init} aria-modal="true" aria-labelledby={ariaLabelledby} tabindex={-1} class={styles.base({ class: clsx(theme?.base, className) })} {...restProps}>
   <!-- Search Input -->
   <Search
     size="md"
