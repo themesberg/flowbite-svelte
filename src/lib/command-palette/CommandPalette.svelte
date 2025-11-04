@@ -15,7 +15,7 @@
     emptyMessage = "No results found.",
     shortcutKey = "k",
     vim = false,
-    "aria-labelledby": ariaLabeledBy,
+    "aria-labelledby": ariaLabelledby,
     onclose,
     class: className,
     classes
@@ -27,6 +27,8 @@
   let selectedIndex = $state(0);
   let inputElement = $state<HTMLInputElement>();
   let containerElement = $state<HTMLDialogElement>();
+  let gid = $props.id();
+  let ulId = "command-palette-options-" + gid;
 
   const filteredItems = $derived.by(() => {
     const searchLower = search.trim().toLowerCase();
@@ -114,7 +116,7 @@
 
 <svelte:window onkeydown={open ? handleKeydown : handleGlobalKeydown} />
 
-<Dialog bind:open dismissable={false} {@attach init} aria-modal="true" aria-labelledby={ariaLabeledBy} tabindex={-1} class={styles.base({ class: clsx(theme?.base, className) })}>
+<Dialog bind:open dismissable={false} {@attach init} aria-modal="true" aria-labelledby={ariaLabelledby} tabindex={-1} class={styles.base({ class: clsx(theme?.base, className) })}>
   <!-- Search Input -->
   <Search
     size="md"
@@ -125,13 +127,13 @@
     autofocus
     role="combobox"
     aria-expanded="true"
-    aria-controls="command-palette-options"
+    aria-controls={ulId}
     aria-activedescendant={filteredItems[selectedIndex]?.id}
   />
 
   <!-- Results -->
   {#if filteredItems.length > 0}
-    <ul id="command-palette-options" class={styles.list({ class: clsx(theme?.list, classes?.list) })} role="listbox">
+    <ul id={ulId} class={styles.list({ class: clsx(theme?.list, classes?.list) })} role="listbox">
       {#each filteredItems as item, index (item.id)}
         <li
           data-index={index}
