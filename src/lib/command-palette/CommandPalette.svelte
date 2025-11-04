@@ -40,7 +40,7 @@
 
   $effect(() => {
     if (filteredItems.length > 0 && selectedIndex >= filteredItems.length) {
-      selectedIndex = Math.min(filteredItems.length - 1, 0);
+      selectedIndex = Math.max(filteredItems.length - 1, 0);
     }
   });
 
