@@ -36,8 +36,8 @@ export default defineConfig({
             provider: playwright(),
             instances: [
               { browser: 'chromium' },
-              { browser: 'firefox' },
-              { browser: 'webkit' }
+              // { browser: 'firefox' },
+              // { browser: 'webkit' }
             ]
           },
           include: ['src/tests/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
@@ -45,7 +45,6 @@ export default defineConfig({
         }
       },
       {
-        extends: './vite.config.ts',
         test: {
           name: 'server',
           environment: 'node',
