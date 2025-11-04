@@ -6,16 +6,13 @@ import pkg from "./package.json" with { type: "json" };
 import devtoolsJson from "vite-plugin-devtools-json";
 import tiptapPackage from "./node_modules/@tiptap/core/package.json";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import { enhancedImages } from "@sveltejs/enhanced-img";
 import textEditorPackage from "./node_modules/@flowbite-svelte-plugins/texteditor/package.json" with { type: "json" };
+import { playwright } from '@vitest/browser-playwright'; 
 
-/** @type {import('vite').UserConfig} */
 export default defineConfig({
   plugins: [enhancedImages(), sveltekit(), tailwindcss(), devtoolsJson(), examples],
-  // test: {
-  //   include: ['src/**/*.{test,spec}.{js,ts}']
-  // },
   build: {
     chunkSizeWarningLimit: 1600
   },
@@ -26,15 +23,35 @@ export default defineConfig({
   resolve: {
     alias: {
       "flowbite-svelte": path.resolve(process.cwd(), "./src/lib/index.ts")
-    },
-    conditions: process.env.VITEST ? ["browser"] : undefined
+    }
   },
   test: {
-    environment: "jsdom",
-    setupFiles: ["./vitest-setup-client.ts"],
-    include: ["src/tests/**/*.{test,spec}.?(c|m)[jt]s?(x)"]
+    projects: [
+      {
+        extends: './vite.config.ts',
+        test: {
+          name: 'client',
+          environment: 'browser',
+          browser: {
+            enabled: true,
+            provider: playwright(),
+            instances: [{ browser: 'chromium' }]
+          },
+          include: ['src/tests/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
+          setupFiles: ['./vitest-setup-client.ts']
+        }
+      },
+      {
+        extends: './vite.config.ts',
+        test: {
+          name: 'server',
+          environment: 'node',
+          include: ['src/**/*.{test,spec}.{js,ts}'],
+          exclude: ['src/tests/**/*.{test,spec}.?(c|m)[jt]s?(x)']
+        }
+      }
+    ]
   },
-
   define: {
     __NAME__: JSON.stringify(pkg.name),
     __VERSION__: JSON.stringify(pkg.version),
