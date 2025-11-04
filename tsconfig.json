@@ -11,7 +11,7 @@
     "strict": true,
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "types": ["vitest/globals", "@testing-library/jest-dom/vitest"],
+    "types": ["vitest/globals", "@testing-library/jest-dom/vitest", "@vitest/browser/matchers"],
     "noUnusedLocals": true,
     "noUnusedParameters": true
   }
