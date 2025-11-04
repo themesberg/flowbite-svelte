@@ -31,11 +31,14 @@ export default defineConfig({
         extends: './vite.config.ts',
         test: {
           name: 'client',
-          environment: 'browser',
           browser: {
             enabled: true,
             provider: playwright(),
-            instances: [{ browser: 'chromium' }]
+            instances: [
+              { browser: 'chromium' },
+              { browser: 'firefox' },
+              { browser: 'webkit' }
+            ]
           },
           include: ['src/tests/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
           setupFiles: ['./vitest-setup-client.ts']
