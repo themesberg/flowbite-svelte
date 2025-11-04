@@ -121,7 +121,7 @@
     {placeholder}
     bind:value={search}
     bind:elementRef={inputElement}
-    classes={{ input: styles.search() }}
+    classes={{ input: styles.search({ class: clsx(theme?.search, classes?.search) }) }}
     autofocus
     role="combobox"
     aria-expanded="true"
@@ -151,7 +151,7 @@
             <div class="min-w-0 flex-1">
               <div class="truncate text-sm font-medium">{item.label}</div>
               {#if item.description}
-                <div class={styles.itemDescription()}>
+                <div class={styles.itemDescription({ class: clsx(theme?.itemDescription, classes?.itemDescription) })}>
                   {item.description}
                 </div>
               {/if}
