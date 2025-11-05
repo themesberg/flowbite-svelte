@@ -4,7 +4,7 @@ title: Svelte Command Palette
 breadcrumb_title: Command Palette
 component_title: Command Palette
 dir: Extend
-description: AAA.
+description: A keyboard-driven command palette component with fuzzy search, vim-style navigation support, and customizable theming. Features include shortcut key activation (Cmd/Ctrl+K), arrow/vim key navigation, item filtering by label/description/keywords, and accessible ARIA markup for screen readers.
 
 ---
 
