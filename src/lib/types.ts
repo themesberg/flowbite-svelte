@@ -2185,12 +2185,10 @@ export interface CommandItem {
   onselect: () => void;
 }
 
-export interface CommandPaletteProps extends CommandPaletteVariants, HTMLAttributes<HTMLDivElement> {
-  open?: boolean;
+export interface CommandPaletteProps extends CommandPaletteVariants, Omit<DialogProps, "classes"> {
   items?: CommandItem[];
   placeholder?: string;
   emptyMessage?: string;
   shortcutKey?: string;
   vim?: boolean;
-  onclose?: () => void;
 }

@@ -56,6 +56,8 @@
     "@testing-library/svelte": "^5.2.8",
     "@testing-library/user-event": "^14.6.1",
     "@tiptap/core": "3.7.2",
+    "@vitest/browser": "^4.0.6",
+    "@vitest/browser-playwright": "^4.0.6",
     "dayjs": "^1.11.19",
     "deepmerge": "^4.3.1",
     "eslint": "^9.39.0",
@@ -73,6 +75,7 @@
     "lowlight": "^3.3.0",
     "mdsvex": "^0.12.6",
     "mdsvexamples": "^0.5.0",
+    "playwright": "^1.56.1",
     "prettier": "^3.6.2",
     "prettier-plugin-svelte": "^3.4.0",
     "prettier-plugin-tailwindcss": "^0.7.1",
@@ -95,7 +98,8 @@
     "typescript-eslint": "^8.46.2",
     "vite": "^7.1.12",
     "vite-plugin-devtools-json": "^1.0.0",
-    "vitest": "^4.0.6"
+    "vitest": "^4.0.6",
+    "vitest-browser-svelte": "^2.0.1"
   },
   "peerDependencies": {
     "svelte": "^5.29.0",

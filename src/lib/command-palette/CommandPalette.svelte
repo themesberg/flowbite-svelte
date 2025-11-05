@@ -1,82 +1,71 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import type { CommandPaletteProps, CommandItem } from '$lib/types';
-  import { commandPalette } from './theme';
+  import Dialog from "$lib/dialog/Dialog.svelte";
+  import Search from "$lib/forms/search/Search.svelte";
   import { getTheme } from "$lib/theme/themeUtils";
+  import type { CommandItem, CommandPaletteProps } from "$lib/types";
   import clsx from "clsx";
+  import { commandPalette } from "./theme";
 
   const styles = commandPalette();
 
   let {
     open = $bindable(false),
     items = [],
-    placeholder = 'Type a command or search keywords ...',
-    emptyMessage = 'No results found.',
-    shortcutKey = 'k',
+    placeholder = "Type a command or search keywords ...",
+    emptyMessage = "No results found.",
+    shortcutKey = "k",
     vim = false,
-    onclose,
-    classes
+    "aria-labelledby": ariaLabelledby,
+    class: className,
+    classes,
+    ...restProps
   }: CommandPaletteProps = $props();
 
   const theme = getTheme("commandPalette");
 
-  let search = $state('');
+  let search = $state("");
   let selectedIndex = $state(0);
-  let inputElement = $state<HTMLInputElement>();
-  let containerElement = $state<HTMLDivElement>();
+  let containerElement = $state<HTMLDialogElement>();
+  let gid = $props.id();
+  let ulId = "command-palette-options-" + gid;
 
-  const filteredItems = $derived(
-    search.trim() === ''
-      ? items
-      : items.filter((item) => {
-          const searchLower = search.toLowerCase();
-          const labelMatch = item.label.toLowerCase().includes(searchLower);
-          const descMatch = item.description?.toLowerCase().includes(searchLower);
-          const keywordMatch = item.keywords?.some((kw) =>
-            kw.toLowerCase().includes(searchLower)
-          );
-          return labelMatch || descMatch || keywordMatch;
-        })
-  );
+  const filteredItems = $derived.by(() => {
+    const searchLower = search.trim().toLowerCase();
+    if (searchLower === "") return items;
 
-  $effect(() => {
-    if (open && inputElement) {
-      inputElement.focus();
-      selectedIndex = 0;
-    }
+    const check = (x?: string) => x?.toLowerCase().includes(searchLower);
+    return items.filter((item) => check(item.label) || check(item.description) || item.keywords?.some(check));
   });
 
   $effect(() => {
     if (filteredItems.length > 0 && selectedIndex >= filteredItems.length) {
-      selectedIndex = filteredItems.length - 1;
+      selectedIndex = Math.max(filteredItems.length - 1, 0);
     }
   });
 
   function handleKeydown(e: KeyboardEvent) {
     if (!open) return;
 
+    if (handleGlobalKeydown(e)) return;
+
     switch (e.key) {
-      case 'Escape':
+      case "j":
+        if (!vim || e.ctrlKey) break;
+      // falls through
+      case "ArrowDown":
         e.preventDefault();
-        closeCommandPalette();
-        break;
-      case 'ArrowDown':
-      case 'j':
-        if (e.key === 'j' && !vim) break;
-        if (e.key === 'j' && e.ctrlKey) break;
-        e.preventDefault();
-        selectedIndex = Math.min(selectedIndex + 1, filteredItems.length - 1);
+        selectedIndex = Math.max(Math.min(selectedIndex + 1, filteredItems.length - 1), 0);
         scrollToSelected();
         break;
-      case 'ArrowUp':
-      case 'k':
-        if (e.key === 'k' && !vim) break;
-        if (e.key === 'k' && e.ctrlKey) break;
+      case "k":
+        if (!vim || e.ctrlKey) break;
+      // falls through
+      case "ArrowUp":
         e.preventDefault();
         selectedIndex = Math.max(selectedIndex - 1, 0);
         scrollToSelected();
         break;
-      case 'Enter':
+      case "Enter":
         e.preventDefault();
         if (filteredItems[selectedIndex]) {
           selectItem(filteredItems[selectedIndex]);
@@ -87,154 +76,116 @@
 
   function scrollToSelected() {
     if (!containerElement) return;
-    const listElement = containerElement.querySelector('ul');
-    const selectedElement = containerElement.querySelector(
-      `#${CSS.escape(filteredItems[selectedIndex]?.id)}`
-    ) as HTMLElement;
 
-    if (selectedElement && listElement) {
-      const listRect = listElement.getBoundingClientRect();
-      const elementRect = selectedElement.getBoundingClientRect();
+    const listElement = containerElement.querySelector("ul");
+    if (!listElement) return;
 
-      if (elementRect.bottom > listRect.bottom) {
-        selectedElement.scrollIntoView({ block: 'end', behavior: 'auto' });
-      } else if (elementRect.top < listRect.top) {
-        selectedElement.scrollIntoView({ block: 'start', behavior: 'auto' });
-      }
+    const selectedElement = listElement.querySelector(`#${CSS.escape(filteredItems[selectedIndex]?.id)}`) as HTMLElement;
+    if (!selectedElement) return;
+
+    const listRect = listElement.getBoundingClientRect();
+    const elementRect = selectedElement.getBoundingClientRect();
+
+    if (elementRect.bottom > listRect.bottom) {
+      selectedElement.scrollIntoView({ block: "end", behavior: "auto" });
+    } else if (elementRect.top < listRect.top) {
+      selectedElement.scrollIntoView({ block: "start", behavior: "auto" });
     }
   }
 
   function selectItem(item: CommandItem) {
     item.onselect();
-    closeCommandPalette();
-  }
-
-  function closeCommandPalette() {
     open = false;
-    search = '';
+    search = "";
     selectedIndex = 0;
-    onclose?.();
   }
 
-  function handleBackdropClick(e: MouseEvent) {
-    if (e.target === e.currentTarget) {
-      closeCommandPalette();
+  const handleGlobalKeydown = (e: KeyboardEvent) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === shortcutKey) {
+      e.preventDefault();
+      open = !open;
+      selectedIndex = 0;
+      return true;
     }
+  };
+
+  function init(dlg: HTMLDialogElement) {
+    containerElement = dlg;
   }
-
-  function handleBackdropKeydown(e: KeyboardEvent) {
-    if (e.key === 'Enter' && e.target === e.currentTarget) {
-      closeCommandPalette();
-    }
-  }
-
-  onMount(() => {
-    const handleGlobalKeydown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === shortcutKey) {
-        e.preventDefault();
-        open = !open;
-      }
-    };
-
-    window.addEventListener('keydown', handleGlobalKeydown);
-    return () => window.removeEventListener('keydown', handleGlobalKeydown);
-  });
 </script>
 
-<svelte:window onkeydown={handleKeydown} />
+<svelte:window onkeydown={open ? handleKeydown : handleGlobalKeydown} />
 
-{#if open}
-  <div
-    class={styles.backdrop({ class: clsx(theme?.backdrop, classes?.backdrop) })}
-    onclick={handleBackdropClick}
-    onkeydown={handleBackdropKeydown}
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="command-palette-label"
-    tabindex="-1"
-  >
-    <div class={styles.panel({ class: clsx(theme?.panel, classes?.panel)})} bind:this={containerElement}>
-      <!-- Search Input -->
-      <div class={styles.inputWrapper({ class: clsx(theme?.inputWrapper, classes?.inputWrapper)})}>
-        <svg class={styles.icon({ class: clsx(theme?.icon, classes?.icon)})} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-          />
-        </svg>
-        <input
-          bind:this={inputElement}
-          bind:value={search}
-          type="text"
-          class={styles.input({ class: clsx(theme?.input, classes?.input)})}
-          placeholder={placeholder}
-          role="combobox"
-          aria-expanded="true"
-          aria-controls="command-palette-options"
-          aria-activedescendant={filteredItems[selectedIndex]?.id}
-        />
-      </div>
+<Dialog bind:open dismissable={false} {@attach init} aria-modal="true" aria-labelledby={ariaLabelledby} tabindex={-1} class={styles.base({ class: clsx(theme?.base, className) })} {...restProps}>
+  <!-- Search Input -->
+  <Search
+    size="md"
+    {placeholder}
+    bind:value={search}
+    classes={{ input: styles.search({ class: clsx(theme?.search, classes?.search) }) }}
+    autofocus
+    role="combobox"
+    aria-expanded="true"
+    aria-controls={ulId}
+    aria-activedescendant={filteredItems[selectedIndex]?.id}
+  />
 
-      <!-- Results -->
-      {#if filteredItems.length > 0}
-        <ul id="command-palette-options" class={styles.list({ class: clsx(theme?.list, classes?.list)})} role="listbox">
-          {#each filteredItems as item, index (item.id)}
-            <li
-              data-index={index}
-              id={item.id}
-              role="option"
-              aria-selected={index === selectedIndex}
-              class={styles.item({ selected: index === selectedIndex, class: clsx(theme?.item, classes?.item)})}
-              onclick={() => selectItem(item)}
-              onkeydown={(e) => e.key === 'Enter' && selectItem(item)}
-              onmouseenter={() => (selectedIndex = index)}
-              tabindex="-1"
-            >
-              <div class="flex items-center gap-3">
-                {#if item.icon}
-                  <span class="text-lg">{item.icon}</span>
-                {/if}
-                <div class="flex-1 min-w-0">
-                  <div class="font-medium text-sm truncate">{item.label}</div>
-                  {#if item.description}
-                    <div class={styles.itemDescription()}>
-                      {item.description}
-                    </div>
-                  {/if}
-                </div>
-              </div>
-            </li>
-          {/each}
-        </ul>
-      {:else if search}
-        <div class={styles.empty({ class: clsx(theme?.empty, classes?.empty)})}>
-          <p>{emptyMessage}</p>
-        </div>
-      {/if}
-
-      <!-- Footer -->
-      <div class={styles.footer({ class: clsx(theme?.footer, classes?.footer)})}>
-        <div class="flex items-center gap-4">
-          <kbd class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd)})}>
-            {#if vim}
-              <span>j/k</span>
-            {:else}
-              <span>↑↓</span>
+  <!-- Results -->
+  {#if filteredItems.length > 0}
+    <ul id={ulId} class={styles.list({ class: clsx(theme?.list, classes?.list) })} role="listbox">
+      {#each filteredItems as item, index (item.id)}
+        <li
+          data-index={index}
+          id={item.id}
+          role="option"
+          aria-selected={index === selectedIndex}
+          class={styles.item({ selected: index === selectedIndex, class: clsx(theme?.item, classes?.item) })}
+          onclick={() => selectItem(item)}
+          onkeydown={(e) => e.key === "Enter" && selectItem(item)}
+          onmouseenter={() => (selectedIndex = index)}
+          tabindex="-1"
+        >
+          <div class="flex items-center gap-3">
+            {#if item.icon}
+              <span class="text-lg">{item.icon}</span>
             {/if}
-            <span>Navigate</span>
-          </kbd>
-          <kbd class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd)})}>
-            <span>↵</span>
-            <span>Select</span>
-          </kbd>
-        </div>
-        <kbd class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd)})}>
-          <span>ESC</span>
-          <span>Close</span>
-        </kbd>
-      </div>
+            <div class="min-w-0 flex-1">
+              <div class="truncate text-sm font-medium">{item.label}</div>
+              {#if item.description}
+                <div class={styles.itemDescription({ class: clsx(theme?.itemDescription, classes?.itemDescription) })}>
+                  {item.description}
+                </div>
+              {/if}
+            </div>
+          </div>
+        </li>
+      {/each}
+    </ul>
+  {:else if search}
+    <div class={styles.empty({ class: clsx(theme?.empty, classes?.empty) })}>
+      <p>{emptyMessage}</p>
     </div>
+  {/if}
+
+  <!-- Footer -->
+  <div class={styles.footer({ class: clsx(theme?.footer, classes?.footer) })}>
+    <div class="flex items-center gap-4">
+      <kbd class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd) })}>
+        {#if vim}
+          <span>j/k</span>
+        {:else}
+          <span>↑↓</span>
+        {/if}
+        <span>Navigate</span>
+      </kbd>
+      <kbd class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd) })}>
+        <span>↵</span>
+        <span>Select</span>
+      </kbd>
+    </div>
+    <kbd class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd) })}>
+      <span>ESC</span>
+      <span>Close</span>
+    </kbd>
   </div>
-{/if}
+</Dialog>

@@ -1,20 +1,14 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import type { Classes } from "$lib/theme/themeUtils";
 
+
 export type CommandPaletteVariants = VariantProps<typeof commandPalette> & Classes<typeof commandPalette>;
 
 export const commandPalette = tv({
   slots: {
-    backdrop:
-      "fixed inset-0 z-50 flex items-start justify-center bg-gray-900/50 dark:bg-gray-900/80 p-4 sm:p-6 md:p-20",
-    panel:
-      "w-full max-w-2xl bg-white dark:bg-gray-800 rounded-lg shadow-2xl ring-1 ring-black/5 dark:ring-white/10 overflow-hidden transform transition-all",
-    inputWrapper: "relative",
-    icon:
-      "pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-gray-400 dark:text-gray-500",
-    input:
-      "w-full border-0 bg-transparent pl-11 pr-4 py-3 text-gray-900 dark:text-white " +
-      "placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:ring-offset-0 text-sm",
+    base:
+      "w-full mx-auto mt-20 max-w-2xl bg-white dark:bg-gray-800 rounded-lg shadow-2xl ring-1 ring-black/5 dark:ring-white/10 overflow-hidden transform transition-all",
+    search: "rounded-b-none border-0 py-3",
     list:
       "max-h-80 scroll-py-2 overflow-y-auto border-t border-gray-200 dark:border-gray-700",
     item:
@@ -32,6 +26,8 @@ export const commandPalette = tv({
       "bg-white dark:bg-gray-800 px-2 py-1 font-sans text-xs"
   },
 
-  variants: {},
+  variants: {
+    selected: { true: {} }
+  },
   defaultVariants: {}
 });
