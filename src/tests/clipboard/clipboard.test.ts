@@ -8,7 +8,7 @@ import ClipboardCopyTest from "./clipboard-copy.test.svelte";
 
 // Mock the clipboard API
 const mockWriteText = vi.fn();
-Object.defineProperty(navigator, 'clipboard', {
+Object.defineProperty(navigator, "clipboard", {
   value: {
     writeText: mockWriteText
   },

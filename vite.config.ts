@@ -9,7 +9,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vitest/config";
 import { enhancedImages } from "@sveltejs/enhanced-img";
 import textEditorPackage from "./node_modules/@flowbite-svelte-plugins/texteditor/package.json" with { type: "json" };
-import { playwright } from '@vitest/browser-playwright'; 
+import { playwright } from "@vitest/browser-playwright";
 
 export default defineConfig({
   plugins: [enhancedImages(), sveltekit(), tailwindcss(), devtoolsJson(), examples],
@@ -28,28 +28,28 @@ export default defineConfig({
   test: {
     projects: [
       {
-        extends: './vite.config.ts',
+        extends: "./vite.config.ts",
         test: {
-          name: 'client',
+          name: "client",
           browser: {
             enabled: true,
             provider: playwright(),
             instances: [
-              { browser: 'chromium' },
+              { browser: "chromium" }
               // { browser: 'firefox' },
               // { browser: 'webkit' }
             ]
           },
-          include: ['src/tests/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
-          setupFiles: ['./vitest-setup-client.ts']
+          include: ["src/tests/**/*.{test,spec}.?(c|m)[jt]s?(x)"],
+          setupFiles: ["./vitest-setup-client.ts"]
         }
       },
       {
         test: {
-          name: 'server',
-          environment: 'node',
-          include: ['src/**/*.{test,spec}.{js,ts}'],
-          exclude: ['src/tests/**/*.{test,spec}.?(c|m)[jt]s?(x)']
+          name: "server",
+          environment: "node",
+          include: ["src/**/*.{test,spec}.{js,ts}"],
+          exclude: ["src/tests/**/*.{test,spec}.?(c|m)[jt]s?(x)"]
         }
       }
     ]

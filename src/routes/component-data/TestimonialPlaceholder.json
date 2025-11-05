@@ -2,7 +2,7 @@
   "name": "TestimonialPlaceholder",
   "type": {
     "name": "TestimonialPlaceholderProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1485"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1486"
   },
   "props": [
     ["class: className", ""],

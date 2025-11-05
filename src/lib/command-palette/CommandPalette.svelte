@@ -189,3 +189,21 @@
     </kbd>
   </div>
 </Dialog>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2188)
+## Props
+@prop open = $bindable(false)
+@prop items = []
+@prop placeholder = "Type a command or search keywords ..."
+@prop emptyMessage = "No results found."
+@prop shortcutKey = "k"
+@prop vim = false
+@prop "aria-labelledby": ariaLabelledby
+@prop class: className
+@prop classes
+@prop ...restProps
+-->

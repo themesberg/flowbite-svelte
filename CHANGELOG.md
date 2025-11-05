@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.23.0
+
+### Minor Changes
+
+- feat: CommandPalette component
+
 ## 1.22.0
 
 ### Minor Changes
