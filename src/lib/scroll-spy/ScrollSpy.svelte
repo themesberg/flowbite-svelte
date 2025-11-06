@@ -32,13 +32,12 @@
   let intersectingSections = $state<Map<string, IntersectionObserverEntry>>(new Map());
 
   const theme = $derived(() => {
-    // const isStickyAllowed = sticky && position === 'top';
     const { base, container, list, link, li } = scrollspy({
       position,
       sticky,
       isSticky
     });
-    // class="{styles.overlay({ class: clsx(theme?.overlay, classes?.overlay) })} z-[9998]"
+
     return {
       base: base({ class: clsx(styles?.base, className) }),
       container: container({ class: clsx(styles?.container, classes?.container) }),
@@ -152,8 +151,8 @@
     }
 
     const rootMargin = `-${offset}px 0px -40% 0px`;
-    // Use full threshold range 0.0 → 1.0 in 0.01 steps for smooth updates
-    const thresholds = Array.from({ length: 101 }, (_, i) => i / 100);
+    // Use threshold range 0.0 → 1.0 in 0.1 steps for smooth updates with better performance
+    const thresholds = Array.from({ length: 11 }, (_, i) => i / 10);
 
     const observer = new IntersectionObserver(
       (entries) => {
