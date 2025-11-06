@@ -2192,3 +2192,4 @@ export interface CommandPaletteProps extends CommandPaletteVariants, Omit<Dialog
   shortcutKey?: string;
   vim?: boolean;
 }
+

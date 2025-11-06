@@ -1,0 +1,1 @@
+export { default as ScrollSpy } from "./ScrollSpy.svelte";
