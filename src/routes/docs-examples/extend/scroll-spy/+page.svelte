@@ -1,6 +1,6 @@
 <script lang="ts">
   import { ScrollSpy, Radio, P, Heading } from "$lib";
-  import type { ScrollSpyItem } from "$lib/scroll-spy/ScrollSpy.svelte";
+  import type { ScrollSpyItem } from "$lib/types";
   import { HighlightSvelte } from 'svelte-rune-highlight';
   import 'highlight.js/styles/github-dark.css';
 
@@ -18,9 +18,11 @@
     { id: "props", label: "Props" },
     { id: "accessibility", label: "Accessibility" }
   ];
+
+  const TOP_OFFSET = 80;
+  const SIDE_OFFSET = 20;
   let isFlex = $state(false);
   let position = $state<"top" | "left" | "right">("top");
-  let currentSection = $state("introduction");
   let offsetValue = $state(80);
   let isSticky = $state(true);
 
@@ -35,17 +37,8 @@
   };
 
   const handleOffsetChange = () => {
-    // if position is top, set offset to 60, else set to 20
-    offsetValue = position === "top" ? 60 : 20;
+    offsetValue = position === "top" ? TOP_OFFSET : SIDE_OFFSET;
   };
-
-  function handleActiveChange(itemId: string) {
-    currentSection = itemId;
-  }
-
-  function handleNavigate(itemId: string) {
-    currentSection = itemId;
-  }
 
   const handlePositionChange = (newPosition: "top" | "left" | "right") => {
     position = newPosition;
@@ -60,13 +53,13 @@
 
 <div class="{isFlex ? 'flex' : ''} dark:bg-gray-900">
   <!-- ScrollSpy Navigation -->
-  <ScrollSpy items={navigationItems} {position} offset={offsetValue} sticky={isSticky} smoothScroll={true} onActiveChange={handleActiveChange} onNavigate={handleNavigate} />
+  <ScrollSpy items={navigationItems} {position} offset={offsetValue} sticky={isSticky} smoothScroll={true} />
 
   <!-- Main Content -->
   <main class="container mx-auto px-4 pb-8 {mainMarginClass}">
     <!-- Radio buttons to change position -->
-    <div class="my-4 p-4">
-      <P class="mb-4 font-semibold">
+    <div class="my-1 flex p-2">
+      <P class="me-2 font-semibold text-xl">
         Position:
       </P>
       <div class="flex gap-3">
@@ -79,6 +72,7 @@
     <section id="introduction" class="p-4">
       <Heading tag="h1" class="text-4xl" >ScrollSpy Component</Heading>
       <P class="mb-4 text-lg">A navigation component that tracks scroll position and highlights the currently visible section. Supports smooth scrolling, sticky positioning, custom scroll containers, offset handling, and active state callbacks for building interactive page or documentation navigation.</P>
+      
     </section>
 
     <!-- Installation Section -->
@@ -86,11 +80,11 @@
       <Heading tag="h2" class="mb-6 text-3xl font-bold">Installation</Heading>
       <P>Install the required packages:</P>
       <HighlightSvelte code={exampleModules['./md/installation.md'] as string} langtag --langtag-color="orange" class="mb-4"/>
-      <P>+This installs `flowbite-svelte` (Svelte components) and `flowbite` as development dependencies.</P>
+      <P>This installs `flowbite-svelte` (Svelte components) and `flowbite` as development dependencies.</P>
     </section>
 
     <!-- Basic Usage Section -->
-    <section id="basic-usage" class="px-4 pt-20 pb-16">
+    <section id="basic-usage" class="px-4 pb-16">
       <Heading tag="h2" class="mb-6 text-3xl font-bold">Basic Usage</Heading>
       <P class="mb-6 text-gray-700 dark:text-gray-300">The simplest way to use ScrollSpy is to provide an array of navigation items:</P>
       <HighlightSvelte code={exampleModules['./md/usage.md'] as string} langtag --langtag-color="orange" class="mb-4"/>
@@ -107,7 +101,7 @@
     </section>
 
     <!-- Advanced Features Section -->
-    <section id="features" class="px-4 pt-20 pb-16">
+    <section id="features" class="px-4 pb-16">
       <Heading tag="h2" class="mb-6 text-3xl font-bold">Features</Heading>
 
       <h3 class="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-200">Custom Positioning</h3>
@@ -127,7 +121,7 @@
     </section>
 
     <!-- Props Section -->
-    <section id="props" class="px-4 pt-20 pb-16">
+    <section id="props" class="px-4 pb-16">
       <Heading tag="h2" class="mb-6 text-3xl font-bold">Props Reference</Heading>
       <div class="overflow-x-auto">
         <table class="w-full border-collapse text-left">
@@ -200,7 +194,7 @@
     </section>
 
     <!-- Accessibility Section -->
-    <section id="accessibility" class="px-4 pt-20 pb-16">
+    <section id="accessibility" class="px-4 pb-16">
       <Heading tag="h2" class="mb-6 text-3xl font-bold">Accessibility</Heading>
       <p class="mb-6 text-gray-700 dark:text-gray-300">The ScrollSpy component is built with accessibility in mind:</p>
       <ul class="space-y-4 text-gray-700 dark:text-gray-300">

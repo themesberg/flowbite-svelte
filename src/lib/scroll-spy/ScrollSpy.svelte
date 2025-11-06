@@ -1,42 +1,8 @@
 <script lang="ts">
   import { scrollspy } from './theme';
-  import { twMerge } from 'tailwind-merge';
-  import { browser } from '$app/environment';
-  
-  export interface ScrollSpyItem {
-    id: string;
-    label: string;
-    href?: string;
-  }
-  
-  interface Props {
-    /** Array of navigation items */
-    items: ScrollSpyItem[];
-    /** Position of the navigation bar */
-    position?: 'top' | 'left' | 'right';
-    /** Offset from top when calculating active section (useful for fixed headers) */
-    offset?: number;
-    /** Enable sticky positioning */
-    sticky?: boolean;
-    /** Custom class for active item */
-    activeClass?: string;
-    /** Custom class for inactive item */
-    inactiveClass?: string;
-    /** Custom class for nav container */
-    class?: string;
-    /** Custom classes for different slots */
-    classContainer?: string;
-    classList?: string;
-    classLink?: string;
-    /** Enable smooth scroll behavior */
-    smoothScroll?: boolean;
-    /** Scroll container selector (if scrolling within a container instead of window) */
-    scrollContainer?: string;
-    /** Callback when active section changes */
-    onActiveChange?: (itemId: string) => void;
-    /** Callback when navigation item is clicked */
-    onNavigate?: (itemId: string) => void;
-  }
+  import type { ScrollSpyProps } from '$lib/types';
+  import { getTheme } from "$lib/theme/themeUtils";
+  import clsx from "clsx";
   
   let {
     items,
@@ -46,14 +12,16 @@
     activeClass = '',
     inactiveClass = '',
     class: className = '',
-    classContainer = '',
-    classList = '',
-    classLink = '',
     smoothScroll = true,
     scrollContainer,
     onActiveChange,
-    onNavigate
-  }: Props = $props();
+    onNavigate,
+    classes,
+    ...restProps
+  }: ScrollSpyProps = $props();
+
+  const browser = typeof window !== 'undefined';
+  const styles = getTheme("scrollspy");
   
   let activeId = $state<string>(items[0]?.id || '');
   let isSticky = $state(false);
@@ -70,13 +38,13 @@
       sticky: isStickyAllowed,
       isSticky 
     });
-    
+    // class="{styles.overlay({ class: clsx(theme?.overlay, classes?.overlay) })} z-[9998]"
     return {
-      base: twMerge(base(), className),
-      container: twMerge(container(), classContainer),
-      list: twMerge(list(), classList),
-      link: link(),
-      li: li()
+      base: base({ class: clsx(styles?.base, className)}),
+      container: container({ class: clsx(styles?.container, classes?.container)}),
+      list: list({ class: clsx(styles?.list, classes?.list)}),
+      link: link({ class: clsx(styles?.link, classes?.link)}),
+      li: li({ class: clsx(styles?.li, classes?.li)}),
     };
   });
   
@@ -86,7 +54,7 @@
     
     const customClass = isActive ? activeClass : inactiveClass;
     
-    return twMerge(theme().link, link(), customClass, classLink);
+    return clsx(theme().link, link(), customClass, classes?.link);
   }
   
   function scrollToSection(itemId: string, event?: MouseEvent) {
@@ -242,18 +210,19 @@
     const observer = setupIntersectionObserver();
     
     const container = scrollElement instanceof Window ? window : scrollElement;
-    container.addEventListener('scroll', handleScroll, { passive: true } as any);
+    container.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     
     return () => {
       observer.disconnect();
-      container.removeEventListener('scroll', handleScroll as any);
+      container.removeEventListener('scroll', handleScroll);
     };
   });
   
 </script>
 
 <nav
+  {...restProps}
   bind:this={navElement}
   class={theme().base}
   aria-label="Scroll spy navigation"
