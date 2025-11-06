@@ -51,7 +51,7 @@
 
 </script>
 
-<div class="{isFlex ? 'flex' : ''} dark:bg-gray-900">
+<div class="{isFlex ? 'flex' : ''} dark:bg-gray-900 pb-32">
   <!-- ScrollSpy Navigation -->
   <ScrollSpy items={navigationItems} {position} offset={offsetValue} sticky={isSticky} smoothScroll={true} />
 
