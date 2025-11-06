@@ -22,6 +22,9 @@
 
   const browser = typeof window !== "undefined";
   const styles = getTheme("scrollspy");
+  const INTERSECTION_RATIO_EPSILON = 0.01;
+  // Bottom margin determines how far up the viewport a section must scroll before becoming inactive
+  const ROOT_MARGIN_BOTTOM = "-40%";
 
   let activeId = $state<string>(items.length > 0 ? items[0].id : "");
   let isSticky = $state(false);
@@ -130,7 +133,7 @@
       const ratioA = a[1].intersectionRatio;
       const ratioB = b[1].intersectionRatio;
 
-      if (Math.abs(ratioA - ratioB) > 0.01) {
+      if (Math.abs(ratioA - ratioB) > INTERSECTION_RATIO_EPSILON) {
         return ratioB - ratioA;
       }
 
@@ -146,7 +149,7 @@
       onActiveChange?.(newActiveId);
     }
   }
-
+  
   function setupIntersectionObserver() {
     if (!browser) return { disconnect: () => {} };
 
@@ -155,7 +158,7 @@
       console.warn("ScrollSpy: Scroll container not found:", scrollContainer);
     }
 
-    const rootMargin = `-${offset}px 0px -40% 0px`;
+    const rootMargin = `-${offset}px 0px ${ROOT_MARGIN_BOTTOM} 0px`;
     // Use threshold range 0.0 → 1.0 in 0.1 steps for smooth updates with better performance
     const thresholds = Array.from({ length: 11 }, (_, i) => i / 10);
 
@@ -231,7 +234,6 @@
     <ul class={theme.list} role="list">
       {#each items as item (item.id)}
         <li class={theme.li}>
-          <!-- svelte-ignore a11y_invalid_attribute -->
           <a
             href={item.href || `#${item.id}`}
             class={getItemClass(item.id)}
