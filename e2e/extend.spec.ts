@@ -30,6 +30,12 @@ test("Progressradial page should have h1", async ({ page }) => {
   expect(await page.textContent("h1")).toBe("Svelte Progressradial");
 });
 
+// Scroll Spy
+test("Scroll Spy page should have h1", async ({ page }) => {
+  await page.goto("/docs/extend/scroll-spy");
+  expect(await page.textContent("h1")).toBe("Svelte Scroll Spy");
+});
+
 // Split Pane
 test("Split Pane page should have h1", async ({ page }) => {
   await page.goto("/docs/extend/split-pane");
