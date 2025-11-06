@@ -23,7 +23,7 @@
   const browser = typeof window !== "undefined";
   const styles = getTheme("scrollspy");
 
-  let activeId = $state<string>(items[0]?.id || "");
+  let activeId = $state<string>(items.length > 0 ? items[0].id : "");
   let isSticky = $state(false);
   let navElement: HTMLElement | null = $state(null);
   let scrollElement: Window | HTMLElement | null = $state(browser ? window : null);
@@ -32,28 +32,32 @@
   let intersectingSections = $state<Map<string, IntersectionObserverEntry>>(new Map());
 
   const theme = $derived.by(() => {
-    const { base, container, list, link, li } = scrollspy({
+    const { base, container, list, li } = scrollspy({
       position,
       sticky,
       isSticky
     });
 
+    const { link: activeLink } = scrollspy({ active: true });
+    const { link: inactiveLink } = scrollspy({ active: false });
+
     return {
       base: base({ class: clsx(styles?.base, className) }),
       container: container({ class: clsx(styles?.container, classes?.container) }),
       list: list({ class: clsx(styles?.list, classes?.list) }),
-      link: link({ class: clsx(styles?.link, classes?.link) }),
+      activeLink: activeLink({ class: clsx(styles?.link, classes?.link) }),
+      inactiveLink: inactiveLink({ class: clsx(styles?.link, classes?.link) }),
       li: li({ class: clsx(styles?.li, classes?.li) })
     };
   });
 
   function getItemClass(itemId: string): string {
     const isActive = activeId === itemId;
-    const { link } = scrollspy({ active: isActive });
+    const link = isActive ? theme.activeLink : theme.inactiveLink;
 
     const customClass = isActive ? activeClass : inactiveClass;
 
-    return clsx(theme.link, link(), customClass, classes?.link);
+    return clsx(link, customClass);
   }
 
   function scrollToSection(itemId: string, event?: MouseEvent) {
@@ -217,7 +221,6 @@
 
     return () => {
       observer.disconnect();
-      intersectingSections.clear();
       container.removeEventListener("scroll", handleScroll);
     };
   });
