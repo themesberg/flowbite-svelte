@@ -121,6 +121,7 @@
     }
 
     // Sort by intersection ratio descending, then by items order ascending
+    const itemIndexMap = new Map(items.map((item, index) => [item.id, index]));
     const sorted = Array.from(intersectingSections.entries()).sort((a, b) => {
       const ratioA = a[1].intersectionRatio;
       const ratioB = b[1].intersectionRatio;
@@ -128,9 +129,9 @@
       if (Math.abs(ratioA - ratioB) > 0.01) {
         return ratioB - ratioA;
       }
-
-      const indexA = items.findIndex((item) => item.id === a[0]);
-      const indexB = items.findIndex((item) => item.id === b[0]);
+      
+      const indexA = itemIndexMap.get(a[0]) ?? -1;
+      const indexB = itemIndexMap.get(b[0]) ?? -1;
       return indexA - indexB;
     });
 
