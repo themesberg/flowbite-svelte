@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ScrollSpy, Radio, P, Heading } from "$lib";
+  import { ScrollSpy, Radio, P, Heading, Alert } from "$lib";
   import type { ScrollSpyItem } from "$lib/types";
   import { HighlightSvelte } from 'svelte-rune-highlight';
   import 'highlight.js/styles/github-dark.css';
@@ -58,7 +58,7 @@
   <!-- Main Content -->
   <main class="container mx-auto px-4 pb-8 {mainMarginClass}">
     <!-- Radio buttons to change position -->
-    <div class="my-1 flex p-2">
+    <div class="my-4 flex p-2">
       <P class="me-2 font-semibold text-xl">
         Position:
       </P>
@@ -88,16 +88,14 @@
       <Heading tag="h2" class="mb-6 text-3xl font-bold">Basic Usage</Heading>
       <P class="mb-6 text-gray-700 dark:text-gray-300">The simplest way to use ScrollSpy is to provide an array of navigation items:</P>
       <HighlightSvelte code={exampleModules['./md/usage.md'] as string} langtag --langtag-color="orange" class="mb-4"/>
-      <div class="rounded-lg border border-yellow-200 bg-yellow-50 p-6 dark:border-yellow-800 dark:bg-yellow-900/20">
-        <p class="text-yellow-800 dark:text-yellow-200">
-          <strong>Note:</strong>
-          Make sure each section has an
-          <code>id</code>
-          attribute that matches the
-          <code>id</code>
-          in your items array.
-        </p>
-      </div>
+      <Alert color="red" class="p-6 text-md">
+        <strong>Note:</strong>
+        Make sure each section has an
+        <code>id</code>
+        attribute that matches the
+        <code>id</code>
+        in your items array.
+      </Alert>
     </section>
 
     <!-- Advanced Features Section -->

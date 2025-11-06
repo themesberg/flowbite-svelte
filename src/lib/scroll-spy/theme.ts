@@ -32,7 +32,7 @@ export const scrollspy = tv({
     },
     sticky: {
       true: {
-         base: "sticky" 
+         base: "" 
       },
       false: {
         base: ""
@@ -61,5 +61,11 @@ export const scrollspy = tv({
     isSticky: false,
     active: false
   },
-  compoundVariants: []
+  compoundVariants: [
+    {
+      position: "top",
+      sticky: true,
+      class: { base: "sticky" }
+    }
+  ]
 });
