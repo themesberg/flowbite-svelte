@@ -12,25 +12,39 @@
   ];
 
   let currentSection = $state("introduction");
+  let position = $state<"top" | "left" | "right">("right");
 
   function handleActiveChange(itemId: string) {
-    // console.log("Active section changed to:", itemId);
     currentSection = itemId;
   }
 
   function handleNavigate(itemId: string) {
-    // console.log("Navigated to:", itemId);
     currentSection = itemId;
   }
-  $inspect('Current section: ',currentSection);
+  
+  $inspect('Current section: ', currentSection);
+  
+  // Compute the margin class based on position
+  const mainMarginClass = $derived(
+    position === "left" ? "ml-64" : 
+    position === "right" ? "mr-64" : 
+    ""
+  );
 </script>
 
-<div class="min-h-screen dark:bg-gray-900">
+<div class="flex dark:bg-gray-900">
   <!-- ScrollSpy Navigation -->
-  <ScrollSpy items={navigationItems} sticky={true} offset={120} threshold={0.5} smoothScroll={true} onActiveChange={handleActiveChange} onNavigate={handleNavigate} />
+  <ScrollSpy 
+    items={navigationItems} 
+    {position}
+    offset={20}
+    smoothScroll={true} 
+    onActiveChange={handleActiveChange} 
+    onNavigate={handleNavigate} 
+  />
 
-  <!-- Main Content -->
-  <main class="container mx-auto px-4 py-8">
+  <!-- Main Content with dynamic margin -->
+  <main class="container mx-auto px-4 py-8 {mainMarginClass}">
     <!-- Introduction Section -->
     <section id="introduction" class="min-h-screen border">
       <h1 class="mb-6 text-4xl font-bold text-gray-900 dark:text-white">ScrollSpy Component</h1>

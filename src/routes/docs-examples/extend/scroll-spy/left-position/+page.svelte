@@ -37,8 +37,7 @@
   <ScrollSpy 
     items={navigationItems} 
     {position}
-    sticky={true} 
-    offset={80}
+    offset={20}
     smoothScroll={true} 
     onActiveChange={handleActiveChange} 
     onNavigate={handleNavigate} 

@@ -9,8 +9,8 @@ export const scrollspy = tv({
     base: "bg-white dark:bg-gray-900 p-4 transition-all duration-300 z-40",
     container: "",
     list: "",
-    link: "px-4 py-2.5 transition-all duration-200 cursor-pointer rounded-sm",
-    li: "p-2"
+    link: "px-4 py-2.5 transition-all duration-200 cursor-pointer rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900",
+    li: "p-2 m-2"
   },
   variants: {
     position: {
@@ -49,7 +49,7 @@ export const scrollspy = tv({
     },
     active: {
       true: {
-        link: "text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 font-semibold"
+        link: "text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 font-semibold focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900"
       },
       false: {
         link: "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
