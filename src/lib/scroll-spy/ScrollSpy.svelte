@@ -31,7 +31,7 @@
   // Track intersecting sections and their IntersectionObserverEntries
   let intersectingSections = $state<Map<string, IntersectionObserverEntry>>(new Map());
 
-  const theme = $derived(() => {
+  const theme = $derived.by(() => {
     const { base, container, list, link, li } = scrollspy({
       position,
       sticky,
@@ -53,7 +53,7 @@
 
     const customClass = isActive ? activeClass : inactiveClass;
 
-    return clsx(theme().link, link(), customClass, classes?.link);
+    return clsx(theme.link, link(), customClass, classes?.link);
   }
 
   function scrollToSection(itemId: string, event?: MouseEvent) {
@@ -129,7 +129,7 @@
       if (Math.abs(ratioA - ratioB) > 0.01) {
         return ratioB - ratioA;
       }
-      
+
       const indexA = itemIndexMap.get(a[0]) ?? -1;
       const indexB = itemIndexMap.get(b[0]) ?? -1;
       return indexA - indexB;
@@ -222,11 +222,11 @@
   });
 </script>
 
-<nav {...restProps} bind:this={navElement} class={theme().base} aria-label="Scroll spy navigation">
-  <div class={theme().container}>
-    <ul class={theme().list} role="list">
+<nav {...restProps} bind:this={navElement} class={theme.base} aria-label="Scroll spy navigation">
+  <div class={theme.container}>
+    <ul class={theme.list} role="list">
       {#each items as item (item.id)}
-        <li class={theme().li}>
+        <li class={theme.li}>
           <a
             href={item.href || `#${item.id}`}
             class={getItemClass(item.id)}
