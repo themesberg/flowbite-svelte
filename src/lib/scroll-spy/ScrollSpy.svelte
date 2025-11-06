@@ -217,6 +217,7 @@
 
     return () => {
       observer.disconnect();
+      intersectingSections.clear();
       container.removeEventListener("scroll", handleScroll);
     };
   });
@@ -227,6 +228,7 @@
     <ul class={theme.list} role="list">
       {#each items as item (item.id)}
         <li class={theme.li}>
+          <!-- svelte-ignore a11y_invalid_attribute -->
           <a
             href={item.href || `#${item.id}`}
             class={getItemClass(item.id)}
