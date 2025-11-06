@@ -15,7 +15,7 @@ export const scrollspy = tv({
   variants: {
     position: {
       top: {
-        base: "top-0 left-0 right-0 w-full sticky",
+        base: "top-0 left-0 right-0 w-full",
         container: "container mx-auto px-4",
         list: "flex space-x-1 overflow-x-auto scrollbar-none"
       },
@@ -28,15 +28,6 @@ export const scrollspy = tv({
         base: "fixed right-0 top-0 bottom-0 h-full w-64 overflow-y-auto",
         container: "px-4 py-4",
         list: "flex flex-col space-y-1"
-      }
-    },
-    sticky: {
-      true: {
-        // Sticky is now built into the top position variant
-        base: ""
-      },
-      false: {
-        base: ""
       }
     },
     isSticky: {
@@ -62,5 +53,11 @@ export const scrollspy = tv({
     isSticky: false,
     active: false
   },
-  compoundVariants: []
+  compoundVariants: [
+    {
+      position: "top",
+      sticky: true,
+      classes: { base: "sticky" }
+    }
+  ]
 });

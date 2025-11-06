@@ -56,7 +56,6 @@
 
   const mainMarginClass = $derived(position === "left" ? "ml-64" : position === "right" ? "mr-64" : "");
 
-  $inspect("Current section: ", currentSection);
 </script>
 
 <div class="{isFlex ? 'flex' : ''} dark:bg-gray-900">
@@ -85,8 +84,9 @@
     <!-- Installation Section -->
     <section id="installation" class="border-t border-gray-200 px-4 py-8 dark:border-gray-700">
       <Heading tag="h2" class="mb-6 text-3xl font-bold">Installation</Heading>
-      <!-- content -->
+      <P>Install the required packages:</P>
       <HighlightSvelte code={exampleModules['./md/installation.md'] as string} langtag --langtag-color="orange" class="mb-4"/>
+      <P>+This installs `flowbite-svelte` (Svelte components) and `flowbite` as development dependencies.</P>
     </section>
 
     <!-- Basic Usage Section -->

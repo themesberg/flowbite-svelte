@@ -177,12 +177,6 @@
   function setupIntersectionObserver() {
     if (!browser) return { disconnect: () => {} };
     
-    // Disconnect existing observer if any
-    const existingObserver = (window as any).__scrollSpyObserver;
-    if (existingObserver) {
-      existingObserver.disconnect();
-    }
-    
     const root = scrollContainer ? document.querySelector(scrollContainer) : null;
     if (scrollContainer && !root) {
       console.warn('ScrollSpy: Scroll container not found:', scrollContainer);
@@ -207,8 +201,6 @@
       rootMargin,
       threshold: thresholds
     });
-    
-    (window as any).__scrollSpyObserver = observer;
     
     items.forEach(item => {
       const element = document.getElementById(item.id);
