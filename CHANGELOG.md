@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.24.0
+
+### Minor Changes
+
+- feat: ScrollSpy component
+
 ## 1.23.0
 
 ### Minor Changes

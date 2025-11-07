@@ -32,7 +32,7 @@ export const scrollspy = tv({
     },
     sticky: {
       true: {
-         base: "" 
+        base: ""
       },
       false: {
         base: ""
