@@ -15,9 +15,9 @@
   const items = Array.from({ length: 5000 }, (_, i) => `Item ${i + 1}: ${getRandomLorem(10, 70)}`);
 </script>
 
-<VirtualList {items} minItemHeight={40} height={400} class="border p-4">
+<VirtualList {items} minItemHeight={40} height={400}>
   {#snippet children(item, index)}
-    <div class="border-b p-2 text-gray-900 dark:text-white">
+    <div class="border-b p-2 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">
       {index + 1}: {item}
     </div>
   {/snippet}
