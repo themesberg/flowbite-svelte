@@ -287,7 +287,7 @@
     e.preventDefault();
     isDragging = true;
     transition = false;
-    
+
     const touch = e.touches[0];
     startPos = currentDirection === "horizontal" ? touch.clientX : touch.clientY;
 
@@ -362,7 +362,7 @@
     if (index < 0 || index + 1 >= sizes.length) return;
 
     e.preventDefault(); // Prevent scrolling while dragging
-    
+
     const touch = e.touches[0];
     const currentPos = currentDirection === "horizontal" ? touch.clientX : touch.clientY;
     const delta = currentPos - startPos;

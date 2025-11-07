@@ -27,6 +27,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 - direction
 - index
 - onMouseDown
+- onTouchStart
 - onKeyDown
 - isDragging
 - currentSize

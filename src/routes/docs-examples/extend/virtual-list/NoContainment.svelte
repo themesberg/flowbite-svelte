@@ -5,6 +5,6 @@
 
 <VirtualList {items}>
   {#snippet children(item, index)}
-    <div class="text-gray-900 dark:text-white border-b p-3 hover:bg-gray-50 dark:hover:bg-gray-800">{index + 1}: {item}</div>
+    <div class="border-b p-3 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">{index + 1}: {item}</div>
   {/snippet}
 </VirtualList>

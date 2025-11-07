@@ -31,3 +31,19 @@
 >
   <div class={dividerHitArea({ direction, class: clsx(themeDividerHitArea, className) })}></div>
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[DividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2148)
+## Props
+@prop direction
+@prop index
+@prop onMouseDown
+@prop onTouchStart
+@prop onKeyDown
+@prop isDragging
+@prop currentSize
+@prop class: className = ""
+-->

@@ -30,9 +30,9 @@ Basic virtual list displaying 5,000 items with variable text lengths. Only visib
   const items = Array.from({ length: 5000 }, (_, i) => `Item ${i + 1}: ${getRandomLorem(10, 70)}`);
 </script>
 
-<VirtualList {items} minItemHeight={40} height={400} class="border p-4">
+<VirtualList {items} minItemHeight={40} height={400}>
   {#snippet children(item, index)}
-    <div class="border-b p-2 text-gray-900 dark:text-white">
+    <div class="border-b p-2 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
       {index + 1}: {item}
     </div>
   {/snippet}
@@ -59,7 +59,7 @@ Demonstrates programmatic scrolling with buttons to jump to specific items by in
   <Button onclick={() => jumpToItem(0)}>Jump to top item</Button>
   <VirtualList {items} minItemHeight={40} height={400} scrollToIndex={(fn) => (scrollToFn = fn)}>
     {#snippet children(item, index)}
-      <div class="border-b p-2 text-gray-900 dark:text-white" style="height:40px; line-height:40px;">
+      <div class="h-[40px] border-b p-2 leading-[40px] text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
         {index + 1}: {item}
       </div>
     {/snippet}
@@ -368,7 +368,7 @@ CSS containment tells the browser that an element's internal layout is independe
 
 <VirtualList {items}>
   {#snippet children(item, index)}
-    <div>{index + 1}: {item}</div>
+    <div class="border-b p-3 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">{index + 1}: {item}</div>
   {/snippet}
 </VirtualList>
 ```
@@ -431,7 +431,9 @@ Enable with `<VirtualList contained …>` or override via `classes.item`.
 
 <VirtualList {items} classes={{ item: "[contain:layout_style_paint] h-12" }}>
   {#snippet children(item, index)}
-    {index + 1}: {item}
+    <div class="p-3 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+      {index + 1}: {item}
+    </div>
   {/snippet}
 </VirtualList>
 ```

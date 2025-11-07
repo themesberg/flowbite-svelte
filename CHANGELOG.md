@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.24.1
+
+### Patch Changes
+
+- fix: add touch event handler to split-pane components
+
 ## 1.24.0
 
 ### Minor Changes

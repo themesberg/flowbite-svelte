@@ -8,6 +8,7 @@
     ["direction", ""],
     ["index", ""],
     ["onMouseDown", ""],
+    ["onTouchStart", ""],
     ["onKeyDown", ""],
     ["isDragging", ""],
     ["currentSize", ""],
