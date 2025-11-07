@@ -3,6 +3,7 @@
   import { divider, dividerHitArea } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
+  import { nonPassiveTouch } from "$lib/utils/nonPassiveTouch";
 
   let { direction, index, onMouseDown, onTouchStart, onKeyDown, isDragging, currentSize, class: className = "" }: DividerProps = $props();
 
@@ -26,7 +27,7 @@
   aria-valuetext={`${roundedSize} percent`}
   class={divider({ direction, isDragging, class: clsx(themePane, className) })}
   onmousedown={(e) => onMouseDown(e, index)}
-  ontouchstart={(e) => onTouchStart(e, index)}
+  use:nonPassiveTouch={(e) => onTouchStart(e, index)}
   onkeydown={(e) => onKeyDown(e, index)}
 >
   <div class={dividerHitArea({ direction, class: clsx(themeDividerHitArea, className) })}></div>

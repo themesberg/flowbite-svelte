@@ -530,7 +530,7 @@
       </div>
     {/if}
     <div class="h-96 rounded border" bind:this={constrainedContainerElement}>
-      <SplitPane minSize={300} initialSizes={[25, 75]} responsive={false} onResize={handleConstrainedResize}>
+      <SplitPane minSize={300} initialSizes={[30, 70]} responsive={false} onResize={handleConstrainedResize}>
         <Pane>
           <div class="h-full bg-orange-50 p-4">
             <h3 class="font-semibold">Constrained Pane</h3>
