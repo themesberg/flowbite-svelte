@@ -63,7 +63,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[RatingCommentProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1302)
+[RatingCommentProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1303)
 ## Props
 @prop children
 @prop evaluation

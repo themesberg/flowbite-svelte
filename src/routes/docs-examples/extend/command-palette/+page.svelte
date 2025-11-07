@@ -140,7 +140,7 @@
       Press <kbd class="rounded bg-gray-200 px-2 py-1 font-mono text-sm dark:bg-gray-800">⌘P (default ⌘K)</kbd>
       or
       <kbd class="rounded bg-gray-200 px-2 py-1 font-mono text-sm dark:bg-gray-800">Ctrl+P (default Ctrl+K)</kbd>
-       to open the command palette, or click the button below.
+      to open the command palette, or click the button below.
     </p>
 
     <button onclick={() => (paletteOpen = true)} class="bg-primary-600 hover:bg-primary-700 mb-4 rounded-lg px-6 py-3 font-medium text-white transition-colors">Open Command Palette</button>

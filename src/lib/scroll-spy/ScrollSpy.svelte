@@ -149,7 +149,7 @@
       onActiveChange?.(newActiveId);
     }
   }
-  
+
   function setupIntersectionObserver() {
     if (!browser) return { disconnect: () => {} };
 
@@ -250,3 +250,24 @@
     </ul>
   </div>
 </nav>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2204)
+## Props
+@prop items
+@prop position = "top"
+@prop offset = 0
+@prop sticky = true
+@prop activeClass = ""
+@prop inactiveClass = ""
+@prop class: className = ""
+@prop smoothScroll = true
+@prop scrollContainer
+@prop onActiveChange
+@prop onNavigate
+@prop classes
+@prop ...restProps
+-->

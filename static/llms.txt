@@ -53,6 +53,7 @@ llms: markdown
 /docs: https://flowbite-svelte.com/llm/extend/flowbite-svelte-starter.md
 /docs: https://flowbite-svelte.com/llm/extend/kanban-board.md
 /docs: https://flowbite-svelte.com/llm/extend/progressradial.md
+/docs: https://flowbite-svelte.com/llm/extend/scroll-spy.md
 /docs: https://flowbite-svelte.com/llm/extend/split-pane.md
 /docs: https://flowbite-svelte.com/llm/extend/step-indicator.md
 /docs: https://flowbite-svelte.com/llm/extend/tags.md

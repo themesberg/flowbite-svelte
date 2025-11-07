@@ -52,7 +52,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1486)
+[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1487)
 ## Props
 @prop class: className
 @prop classes

@@ -1,12 +1,12 @@
 <script lang="ts">
   import { ScrollSpy, Radio, P, Heading, Alert } from "$lib";
   import type { ScrollSpyItem } from "$lib/types";
-  import { HighlightSvelte } from 'svelte-rune-highlight';
-  import 'highlight.js/styles/github-dark.css';
+  import { HighlightSvelte } from "svelte-rune-highlight";
+  import "highlight.js/styles/github-dark.css";
 
-  const exampleModules = import.meta.glob('./md/*.*', {
-    query: '?raw',
-    import: 'default',
+  const exampleModules = import.meta.glob("./md/*.*", {
+    query: "?raw",
+    import: "default",
     eager: true
   }) as Record<string, string>;
 
@@ -48,10 +48,9 @@
   };
 
   const mainMarginClass = $derived(position === "left" ? "ml-64" : position === "right" ? "mr-64" : "");
-
 </script>
 
-<div class="{isFlex ? 'flex' : ''} dark:bg-gray-900 pb-32">
+<div class="{isFlex ? 'flex' : ''} pb-32 dark:bg-gray-900">
   <!-- ScrollSpy Navigation -->
   <ScrollSpy items={navigationItems} {position} offset={offsetValue} sticky={isSticky} smoothScroll={true} />
 
@@ -59,9 +58,7 @@
   <main class="container mx-auto px-4 pb-8 {mainMarginClass}">
     <!-- Radio buttons to change position -->
     <div class="my-4 flex p-2">
-      <P class="me-2 font-semibold text-xl">
-        Position:
-      </P>
+      <P class="me-2 text-xl font-semibold">Position:</P>
       <div class="flex gap-3">
         <Radio bind:group={position} value="top" onchange={() => handlePositionChange("top")}>Top</Radio>
         <Radio bind:group={position} value="left" onchange={() => handlePositionChange("left")}>Left</Radio>
@@ -70,16 +67,18 @@
     </div>
     <!-- Introduction Section -->
     <section id="introduction" class="p-4">
-      <Heading tag="h1" class="text-4xl" >ScrollSpy Component</Heading>
-      <P class="mb-4 text-lg">A navigation component that tracks scroll position and highlights the currently visible section. Supports smooth scrolling, sticky positioning, custom scroll containers, offset handling, and active state callbacks for building interactive page or documentation navigation.</P>
-      
+      <Heading tag="h1" class="text-4xl">ScrollSpy Component</Heading>
+      <P class="mb-4 text-lg">
+        A navigation component that tracks scroll position and highlights the currently visible section. Supports smooth scrolling, sticky positioning, custom scroll containers, offset handling, and
+        active state callbacks for building interactive page or documentation navigation.
+      </P>
     </section>
 
     <!-- Installation Section -->
     <section id="installation" class="border-t border-gray-200 px-4 py-8 dark:border-gray-700">
       <Heading tag="h2" class="mb-6 text-3xl font-bold">Installation</Heading>
       <P>Install the required packages:</P>
-      <HighlightSvelte code={exampleModules['./md/installation.md'] as string} langtag --langtag-color="orange" class="mb-4"/>
+      <HighlightSvelte code={exampleModules["./md/installation.md"] as string} langtag --langtag-color="orange" class="mb-4" />
       <P>This installs `flowbite-svelte` (Svelte components) and `flowbite` as development dependencies.</P>
     </section>
 
@@ -87,8 +86,8 @@
     <section id="basic-usage" class="px-4 pb-16">
       <Heading tag="h2" class="mb-6 text-3xl font-bold">Basic Usage</Heading>
       <P class="mb-6 text-gray-700 dark:text-gray-300">The simplest way to use ScrollSpy is to provide an array of navigation items:</P>
-      <HighlightSvelte code={exampleModules['./md/usage.md'] as string} langtag --langtag-color="orange" class="mb-4"/>
-      <Alert color="red" class="p-6 text-md">
+      <HighlightSvelte code={exampleModules["./md/usage.md"] as string} langtag --langtag-color="orange" class="mb-4" />
+      <Alert color="red" class="text-md p-6">
         <strong>Note:</strong>
         Make sure each section has an
         <code>id</code>
@@ -104,18 +103,18 @@
 
       <h3 class="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-200">Custom Positioning</h3>
       <p class="mb-4 text-gray-700 dark:text-gray-300">You can position the navigation on the top, left, or right:</p>
-      <HighlightSvelte code={exampleModules['./md/position.md'] as string} langtag --langtag-color="orange" class="mb-4"/>
+      <HighlightSvelte code={exampleModules["./md/position.md"] as string} langtag --langtag-color="orange" class="mb-4" />
 
       <h3 class="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-200">Offset for Fixed Headers</h3>
       <p class="mb-4 text-gray-700 dark:text-gray-300">
         If you have a fixed header, use the <code>offset</code>
         prop to adjust when sections are considered "active":
       </p>
-      <HighlightSvelte code={exampleModules['./md/offset.md'] as string} langtag --langtag-color="orange" class="mb-4"/>
+      <HighlightSvelte code={exampleModules["./md/offset.md"] as string} langtag --langtag-color="orange" class="mb-4" />
 
       <h3 class="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-200">Custom Active Styling</h3>
       <p class="mb-4 text-gray-700 dark:text-gray-300">Customize the appearance of active navigation items:</p>
-      <HighlightSvelte code={exampleModules['./md/style.md'] as string} langtag --langtag-color="orange" class="mb-4"/>
+      <HighlightSvelte code={exampleModules["./md/style.md"] as string} langtag --langtag-color="orange" class="mb-4" />
     </section>
 
     <!-- Props Section -->
