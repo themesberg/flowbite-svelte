@@ -4,7 +4,8 @@ title: Svelte Virtual Masonry
 breadcrumb_title: Virtual Masonry
 component_title: Virtual Masonry
 dir: Extend
-description: AAA
+description: A virtualized Svelte component rendering an efficient masonry/Pinterest layout. It calculates item positions and uses windowing (overscan) to display only visible items from a large dataset, optimizing performance.
+
 ---
 
 <script lang="ts">
@@ -12,7 +13,7 @@ description: AAA
   import { P, A } from '$lib'
 
   const components = 'VirtualMasonry'
-  
+  const relatedLinks = ['/docs/components/gallery']
 </script>
 
 ## Setup
@@ -27,3 +28,20 @@ description: AAA
 
 See [examples](/docs-examples/extend/virtual-masonry) and [code](https://github.com/themesberg/flowbite-svelte/tree/main/src/routes/docs-examples/extend/virtual-masonry).
 
+## See also
+
+<Seealso links={relatedLinks} />
+
+## Component data
+
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+<CompoAttributesViewer {components} dir="extend" />
+
+## GitHub Links
+
+<GitHubCompoLinks {components} dir="extend"/>
+
+## LLM Link
+
+<LlmLink />

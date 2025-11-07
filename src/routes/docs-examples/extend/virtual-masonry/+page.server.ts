@@ -15,7 +15,19 @@ export const load: PageServerLoad = async ({ fetch }) => {
     if (!res.ok) throw new Error('Failed to fetch images');
 
     const data = await res.json();
-    const images: Image[] = data.map((img: any) => ({
+    if (!Array.isArray(data)) {
+      throw new Error('Unexpected image payload');
+    }
+
+    type PicsumImage = {
+      id: string;
+      download_url: string;
+      width: number;
+      height: number;
+      author: string;
+    };
+
+    const images: Image[] = (data as PicsumImage[]).map((img) => ({
       id: img.id,
       url: img.download_url,
       width: img.width,
