@@ -11,6 +11,7 @@
     getDirection: () => "horizontal" | "vertical";
     getIsDragging: () => boolean;
     onMouseDown: (e: MouseEvent, index: number) => void;
+    onTouchStart: (e: TouchEvent, index: number) => void;
     onKeyDown: (e: KeyboardEvent, index: number) => void;
   }
 
@@ -106,6 +107,7 @@
     getDirection: () => currentDirection,
     getIsDragging: () => isDragging,
     onMouseDown: startResize,
+    onTouchStart: startTouchResize,
     onKeyDown: handleKeyResize
   });
 
@@ -281,11 +283,88 @@
     document.body.style.userSelect = "";
   }
 
+  function startTouchResize(e: TouchEvent, index: number) {
+    e.preventDefault();
+    isDragging = true;
+    transition = false;
+    
+    const touch = e.touches[0];
+    startPos = currentDirection === "horizontal" ? touch.clientX : touch.clientY;
+
+    const moveHandler = (ev: TouchEvent) => resizeTouch(ev, index);
+    const endHandler = () => stopTouchResize(moveHandler, endHandler);
+
+    window.addEventListener("touchmove", moveHandler, { passive: false });
+    window.addEventListener("touchend", endHandler);
+    window.addEventListener("touchcancel", endHandler);
+
+    document.body.style.userSelect = "none";
+  }
+
+  function stopTouchResize(moveHandler: (e: TouchEvent) => void, endHandler: () => void) {
+    isDragging = false;
+    transition = transitionProp;
+    window.removeEventListener("touchmove", moveHandler);
+    window.removeEventListener("touchend", endHandler);
+    window.removeEventListener("touchcancel", endHandler);
+
+    document.body.style.userSelect = "";
+  }
+
   function resize(e: MouseEvent, index: number) {
     if (!isDragging || !container) return;
     if (index < 0 || index + 1 >= sizes.length) return;
 
     const currentPos = currentDirection === "horizontal" ? e.clientX : e.clientY;
+    const delta = currentPos - startPos;
+
+    if (Math.abs(delta) < MIN_DELTA) return; // Ignore very small movements
+
+    const containerSize = currentDirection === "horizontal" ? container.offsetWidth : container.offsetHeight;
+
+    // Bail out if container has zero or near-zero dimensions
+    if (containerSize < 1) return;
+
+    const deltaPercent = (delta / containerSize) * 100;
+
+    // Calculate min as percentage based on current container size
+    const minPercent = (minSize / containerSize) * 100;
+
+    // Store original sizes
+    const oldSize1 = sizes[index];
+    const oldSize2 = sizes[index + 1];
+    const totalSize = oldSize1 + oldSize2;
+
+    // Calculate desired new sizes
+    let newSize1 = oldSize1 + deltaPercent;
+    let newSize2 = oldSize2 - deltaPercent;
+
+    // Apply minimum constraints - clamp to valid range
+    newSize1 = Math.max(minPercent, newSize1);
+    newSize2 = totalSize - newSize1;
+
+    // Check if second pane violates minimum constraint after first pane clamping
+    if (newSize2 < minPercent) {
+      newSize2 = minPercent;
+      newSize1 = totalSize - newSize2;
+    }
+
+    // Only update if changed significantly
+    if (Math.abs(newSize1 - oldSize1) > MIN_CHANGE_THRESHOLD) {
+      sizes[index] = newSize1;
+      sizes[index + 1] = newSize2;
+      startPos = currentPos;
+    }
+  }
+
+  function resizeTouch(e: TouchEvent, index: number) {
+    if (!isDragging || !container) return;
+    if (index < 0 || index + 1 >= sizes.length) return;
+
+    e.preventDefault(); // Prevent scrolling while dragging
+    
+    const touch = e.touches[0];
+    const currentPos = currentDirection === "horizontal" ? touch.clientX : touch.clientY;
     const delta = currentPos - startPos;
 
     if (Math.abs(delta) < MIN_DELTA) return; // Ignore very small movements

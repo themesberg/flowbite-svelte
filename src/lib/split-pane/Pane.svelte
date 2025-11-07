@@ -32,7 +32,7 @@
 </div>
 
 {#if showDivider && context}
-  <Divider {direction} index={paneIndex} {isDragging} currentSize={context.getPaneSize(paneIndex)} onMouseDown={context.onMouseDown} onKeyDown={context.onKeyDown} />
+  <Divider {direction} index={paneIndex} {isDragging} currentSize={context.getPaneSize(paneIndex)} onMouseDown={context.onMouseDown} onTouchStart={context.onTouchStart} onKeyDown={context.onKeyDown} />
 {/if}
 
 <!--

@@ -2149,6 +2149,7 @@ export interface DividerProps {
   direction: "horizontal" | "vertical";
   index: number;
   onMouseDown: (e: MouseEvent, index: number) => void;
+  onTouchStart: (e: TouchEvent, index: number) => void; 
   onKeyDown: (e: KeyboardEvent, index: number) => void;
   isDragging: boolean;
   class?: string;
