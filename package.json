@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.24.1",
+  "version": "1.25.0",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -888,6 +888,10 @@
     "./Video.svelte": {
       "types": "./dist/video/Video.svelte.d.ts",
       "svelte": "./dist/video/Video.svelte"
+    },
+    "./VirtualMasonry.svelte": {
+      "types": "./dist/virtual-masonry/VirtualMasonry.svelte.d.ts",
+      "svelte": "./dist/virtual-masonry/VirtualMasonry.svelte"
     },
     "./VirtualList.svelte": {
       "types": "./dist/virtuallist/VirtualList.svelte.d.ts",

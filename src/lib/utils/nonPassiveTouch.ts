@@ -1,8 +1,4 @@
-export function nonPassiveTouch(
-  node: HTMLElement,
-  handler: (event: TouchEvent) => void
-) {
-
+export function nonPassiveTouch(node: HTMLElement, handler: (event: TouchEvent) => void) {
   node.addEventListener("touchstart", handler, { passive: false });
 
   return {

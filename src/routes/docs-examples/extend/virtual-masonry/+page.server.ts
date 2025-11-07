@@ -1,4 +1,4 @@
-import type { PageServerLoad } from './$types';
+import type { PageServerLoad } from "./$types";
 
 export interface Image {
   id: string;
@@ -11,12 +11,12 @@ export interface Image {
 
 export const load: PageServerLoad = async ({ fetch }) => {
   try {
-    const res = await fetch('/api/images');
-    if (!res.ok) throw new Error('Failed to fetch images');
+    const res = await fetch("/api/images");
+    if (!res.ok) throw new Error("Failed to fetch images");
 
     const data = await res.json();
     if (!Array.isArray(data)) {
-      throw new Error('Unexpected image payload');
+      throw new Error("Unexpected image payload");
     }
 
     type PicsumImage = {
@@ -33,12 +33,12 @@ export const load: PageServerLoad = async ({ fetch }) => {
       width: img.width,
       height: img.height,
       alt: `Photo by ${img.author}`,
-      author: img.author,
+      author: img.author
     }));
 
     return { images };
   } catch (err) {
-    console.error('Error fetching images:', err);
+    console.error("Error fetching images:", err);
     return { images: [] };
   }
 };

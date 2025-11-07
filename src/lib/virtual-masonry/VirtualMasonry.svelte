@@ -80,7 +80,7 @@
   // Total height is the tallest column
   const totalHeight = $derived.by(() => {
     if (positionedItems.length === 0) return 0;
-    return Math.max(...positionedItems.map(item => item.y + item.height));
+    return Math.max(...positionedItems.map((item) => item.y + item.height));
   });
 
   // Visible items based on scroll position with overscan
@@ -88,7 +88,7 @@
     const viewportTop = scrollTop - overscan;
     const viewportBottom = scrollTop + height + overscan;
 
-    return positionedItems.filter(item => {
+    return positionedItems.filter((item) => {
       const itemTop = item.y;
       const itemBottom = item.y + item.height;
       return itemBottom >= viewportTop && itemTop <= viewportBottom;

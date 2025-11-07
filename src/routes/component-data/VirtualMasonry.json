@@ -1,0 +1,21 @@
+{
+  "name": "VirtualMasonry",
+  "type": {
+    "name": "VirtualMasonryProps<T>",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2232"
+  },
+  "props": [
+    ["items", "[]"],
+    ["columns", "3"],
+    ["gap", "16"],
+    ["height", "600"],
+    ["overscan", "200"],
+    ["getItemHeight", ""],
+    ["scrollToIndex", ""],
+    ["children", ""],
+    ["ariaLabel", "\"Virtual masonry grid\""],
+    ["class: className", ""],
+    ["classes", ""],
+    ["contained", "false"]
+  ]
+}

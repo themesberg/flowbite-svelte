@@ -59,6 +59,7 @@ llms: markdown
 /docs: https://flowbite-svelte.com/llm/extend/tags.md
 /docs: https://flowbite-svelte.com/llm/extend/tour.md
 /docs: https://flowbite-svelte.com/llm/extend/virtual-list.md
+/docs: https://flowbite-svelte.com/llm/extend/virtual-masonry.md
 /docs: https://flowbite-svelte.com/llm/forms/checkbox.md
 /docs: https://flowbite-svelte.com/llm/forms/file-input.md
 /docs: https://flowbite-svelte.com/llm/forms/floating-label.md

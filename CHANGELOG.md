@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.25.0
+
+### Minor Changes
+
+- feat: VirtualMasonry component
+
 ## 1.24.1
 
 ### Patch Changes
