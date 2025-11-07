@@ -2226,3 +2226,19 @@ export interface ScrollSpyProps extends ScrollSpyVariants, HTMLAttributes<HTMLEl
   /** Callback when navigation item is clicked */
   onNavigate?: (itemId: string) => void;
 }
+
+import type { VirtualMasonryVariants } from "$lib/virtual-masonry/theme";
+// VirtualMasonry
+export interface VirtualMasonryProps<T = unknown> extends VirtualMasonryVariants, Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+  children: Snippet<[item: T, index: number]>;
+  items?: T[];
+  columns?: number;
+  gap?: number;
+  height?: number;
+  overscan?: number;
+  getItemHeight?: (item: T, index: number) => number;
+  scrollToIndex?: (fn: (index: number) => void) => void;
+  contained?: boolean;
+  ariaLabel?: string;
+  class?: ClassValue | null;
+}
