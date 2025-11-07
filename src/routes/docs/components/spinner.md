@@ -32,6 +32,12 @@ Use the following SVG element to show a loading animation:
 {#include Default.svelte}
 ```
 
+## Spinner Type
+
+```svelte example class="space-x-4"
+{#include Type.svelte}
+```
+
 ## Colors
 
 You can change the colors of the spinner element using the `color` prop.

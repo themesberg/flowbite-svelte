@@ -3,30 +3,36 @@ import { tv, type VariantProps } from "tailwind-variants";
 export type SpinnerVaraiants = VariantProps<typeof spinner>;
 
 export const spinner = tv({
-  base: "inline-block animate-spin text-gray-300",
+  base: "inline-block",
   variants: {
+    type: {
+      default: "animate-spin",
+      dots: "inline-flex items-center justify-center",
+      bars: "inline-flex items-center justify-center",
+      pulse: "animate-pulse",
+      orbit: ""
+    },
     color: {
-      // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
-      primary: "fill-primary-600",
-      secondary: "fill-secondary-600",
-      gray: "fill-gray-600 dark:fill-gray-300",
-      red: "fill-red-600",
-      orange: "fill-orange-500",
-      amber: "fill-amber-500",
-      yellow: "fill-yellow-400",
-      lime: "fill-lime-500",
-      green: "fill-green-500",
-      emerald: "fill-emerald-500",
-      teal: "fill-teal-500",
-      cyan: "fill-cyan-500",
-      sky: "fill-sky-500",
-      blue: "fill-blue-600",
-      indigo: "fill-indigo-600",
-      violet: "fill-violet-600",
-      purple: "fill-purple-600",
-      fuchsia: "fill-fuchsia-600",
-      pink: "fill-pink-600",
-      rose: "fill-rose-600"
+      primary: "fill-primary-600 text-gray-300",
+      secondary: "fill-secondary-600 text-gray-300",
+      gray: "fill-gray-600 dark:fill-gray-300 text-gray-300",
+      red: "fill-red-600 text-gray-300",
+      orange: "fill-orange-500 text-gray-300",
+      amber: "fill-amber-500 text-gray-300",
+      yellow: "fill-yellow-400 text-gray-300",
+      lime: "fill-lime-500 text-gray-300",
+      green: "fill-green-500 text-gray-300",
+      emerald: "fill-emerald-500 text-gray-300",
+      teal: "fill-teal-500 text-gray-300",
+      cyan: "fill-cyan-500 text-gray-300",
+      sky: "fill-sky-500 text-gray-300",
+      blue: "fill-blue-600 text-gray-300",
+      indigo: "fill-indigo-600 text-gray-300",
+      violet: "fill-violet-600 text-gray-300",
+      purple: "fill-purple-600 text-gray-300",
+      fuchsia: "fill-fuchsia-600 text-gray-300",
+      pink: "fill-pink-600 text-gray-300",
+      rose: "fill-rose-600 text-gray-300"
     },
     size: {
       "4": "w-4 h-4",
@@ -39,6 +45,7 @@ export const spinner = tv({
     }
   },
   defaultVariants: {
+    type: "default",
     color: "primary",
     size: "8"
   }

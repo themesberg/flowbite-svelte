@@ -1552,6 +1552,7 @@ export type SpeedDialButtonProps = ButtonProps &
 
 // spinner
 export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
+  type?: "default" | "dots" | "bars" | "pulse" | "orbit";
   color?: SpinnerVaraiants["color"];
   size?: SpinnerVaraiants["size"];
   currentFill?: string;
