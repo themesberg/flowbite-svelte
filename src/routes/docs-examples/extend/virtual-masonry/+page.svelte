@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { VirtualMasonry } from '$lib';
+  import { VirtualMasonry, Heading, P } from '$lib';
   import { Spinner } from 'flowbite-svelte';
   import type { PageData } from './$types';
   
@@ -23,7 +23,8 @@
 </script>
 
 <div class="container mx-auto max-w-5xl px-4 py-8">
-  <h1 class="text-3xl font-bold mb-6">Virtual Masonry Image Gallery (limit: 50)</h1>
+  <Heading tag="h1" class="text-3xl font-bold mb-6">Virtual Masonry Image Gallery (50 images)</Heading>
+  <P>A virtualized Svelte component rendering an efficient masonry/Pinterest layout. It calculates item positions and uses windowing (overscan) to display only visible items from a large dataset, optimizing performance.</P>
   
   {#if !imagesLoaded || data.images.length === 0}
     <div class="flex items-center justify-center h-96">
