@@ -2,11 +2,19 @@ import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async ({ fetch }) => {
   try {
-    const res = await fetch('https://picsum.photos/v2/list?page=1&limit=50');
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5s timeout
+    const res = await fetch('https://picsum.photos/v2/list?page=1&limit=50', {
+      signal: controller.signal
+    });
+    clearTimeout(timeoutId);
     if (!res.ok) {
       return new Response(JSON.stringify({ images: [] }), {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        status: 502,
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'public, max-age=60' // short cache on errors
+        }
       });
     }
 
@@ -20,8 +28,11 @@ export const GET: RequestHandler = async ({ fetch }) => {
   } catch (error) {
     console.error('Failed to fetch images from picsum.photos', error);
     return new Response(JSON.stringify({ images: [] }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' }
+      status: 502,
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'public, max-age=60' // short cache on errors
+      }
     });
   }
 };
