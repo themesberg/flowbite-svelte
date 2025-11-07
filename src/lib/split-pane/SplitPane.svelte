@@ -311,89 +311,72 @@
     document.body.style.userSelect = "";
   }
 
+  function clampPaneSizes(index: number, targetSize: number, minPercent: number, total: number): boolean {
+    if (index < 0 || index + 1 >= sizes.length) return false;
+
+    let newSize1 = Math.min(total - minPercent, Math.max(minPercent, targetSize));
+    let newSize2 = total - newSize1;
+
+    if (newSize2 < minPercent) {
+      newSize2 = minPercent;
+      newSize1 = total - newSize2;
+    }
+
+    if (Math.abs(newSize1 - sizes[index]) > MIN_CHANGE_THRESHOLD) {
+      sizes[index] = newSize1;
+      sizes[index + 1] = newSize2;
+      return true;
+    }
+
+    return false;
+  }
+
   function applyResize(currentPos: number, index: number) {
-  if (!isDragging || !container) return;
-  if (index < 0 || index + 1 >= sizes.length) return;
+    if (!isDragging || !container) return;
+    if (index < 0 || index + 1 >= sizes.length) return;
 
-  const delta = currentPos - startPos;
-  if (Math.abs(delta) < MIN_DELTA) return;
+    const delta = currentPos - startPos;
+    if (Math.abs(delta) < MIN_DELTA) return;
 
-  const currentContainerSize = currentDirection === "horizontal" ? container.offsetWidth : container.offsetHeight;
-  if (currentContainerSize < 1) return;
+    const currentContainerSize = currentDirection === "horizontal" ? container.offsetWidth : container.offsetHeight;
+    if (currentContainerSize < 1) return;
 
-  const deltaPercent = (delta / currentContainerSize) * 100;
-  const minPercent = (minSize / currentContainerSize) * 100;
+    const deltaPercent = (delta / currentContainerSize) * 100;
+    const minPercent = (minSize / currentContainerSize) * 100;
 
-  const oldSize1 = sizes[index];
-  const oldSize2 = sizes[index + 1];
-  const totalSize = oldSize1 + oldSize2;
+    const oldSize1 = sizes[index];
+    const oldSize2 = sizes[index + 1];
+    const totalSize = oldSize1 + oldSize2;
 
-  let newSize1 = Math.max(minPercent, oldSize1 + deltaPercent);
-  let newSize2 = totalSize - newSize1;
+    const targetSize = oldSize1 + deltaPercent;
 
-  if (newSize2 < minPercent) {
-    newSize2 = minPercent;
-    newSize1 = totalSize - newSize2;
-  }
-
-  if (Math.abs(newSize1 - oldSize1) > MIN_CHANGE_THRESHOLD) {
-    sizes[index] = newSize1;
-    sizes[index + 1] = newSize2;
-    startPos = currentPos;
-  }
-}
-  
-  function resize(e: MouseEvent, index: number) {
-    const currentPos = currentDirection === "horizontal" ? e.clientX : e.clientY;
-    applyResize(currentPos, index);
-  }
-
-  function resizeTouch(e: TouchEvent, index: number) {
-    e.preventDefault(); // Prevent scrolling while dragging
-    const touch = e.touches[0];
-    const currentPos = currentDirection === "horizontal" ? touch.clientX : touch.clientY;
-    applyResize(currentPos, index);
+    if (clampPaneSizes(index, targetSize, minPercent, totalSize)) {
+      startPos = currentPos;
+    }
   }
 
   function handleKeyResize(e: KeyboardEvent, index: number) {
     if (!container) return;
     if (index < 0 || index + 1 >= sizes.length) return;
 
-    const step = keyboardStep;
-    let handled = false;
-
     const isHorizontal = currentDirection === "horizontal";
     const increaseKeys = isHorizontal ? ["ArrowRight"] : ["ArrowDown"];
     const decreaseKeys = isHorizontal ? ["ArrowLeft"] : ["ArrowUp"];
 
     const containerSize = isHorizontal ? container.offsetWidth : container.offsetHeight;
-    // Bail out if container has zero or near-zero dimensions
     if (containerSize < 1) return;
 
     const minPercent = (minSize / containerSize) * 100;
-
     const total = sizes[index] + sizes[index + 1];
 
-    const applyClamp = (target: number) => {
-      let newSize1 = Math.min(total - minPercent, Math.max(minPercent, target));
-      let newSize2 = total - newSize1;
-
-      if (newSize2 < minPercent) {
-        newSize2 = minPercent;
-        newSize1 = total - newSize2;
-      }
-
-      if (Math.abs(newSize1 - sizes[index]) > MIN_CHANGE_THRESHOLD) {
-        sizes[index] = newSize1;
-        sizes[index + 1] = newSize2;
-        handled = true;
-      }
-    };
+    let handled = false;
 
     if (increaseKeys.includes(e.key)) {
-      applyClamp(sizes[index] + step);
+      const targetSize = sizes[index] + keyboardStep;
+      handled = clampPaneSizes(index, targetSize, minPercent, total);
     } else if (decreaseKeys.includes(e.key)) {
-      applyClamp(sizes[index] - step);
+      const targetSize = sizes[index] - keyboardStep;
+      handled = clampPaneSizes(index, targetSize, minPercent, total);
     } else if (e.key === "Enter" || e.key === " ") {
       // Reset to equal sizes
       const equal = 100 / registeredPanes;
@@ -404,6 +387,18 @@
     if (handled) {
       e.preventDefault();
     }
+  }
+
+  function resize(e: MouseEvent, index: number) {
+    const currentPos = currentDirection === "horizontal" ? e.clientX : e.clientY;
+    applyResize(currentPos, index);
+  }
+
+  function resizeTouch(e: TouchEvent, index: number) {
+    e.preventDefault(); // Prevent scrolling while dragging
+    const touch = e.touches[0];
+    const currentPos = currentDirection === "horizontal" ? touch.clientX : touch.clientY;
+    applyResize(currentPos, index);
   }
 </script>
 
