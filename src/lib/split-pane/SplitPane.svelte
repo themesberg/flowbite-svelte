@@ -318,11 +318,11 @@
   const delta = currentPos - startPos;
   if (Math.abs(delta) < MIN_DELTA) return;
 
-  const containerSize = currentDirection === "horizontal" ? container.offsetWidth : container.offsetHeight;
-  if (containerSize < 1) return;
+  const currentContainerSize = currentDirection === "horizontal" ? container.offsetWidth : container.offsetHeight;
+  if (currentContainerSize < 1) return;
 
-  const deltaPercent = (delta / containerSize) * 100;
-  const minPercent = (minSize / containerSize) * 100;
+  const deltaPercent = (delta / currentContainerSize) * 100;
+  const minPercent = (minSize / currentContainerSize) * 100;
 
   const oldSize1 = sizes[index];
   const oldSize2 = sizes[index + 1];
