@@ -65,3 +65,9 @@ test("VirtualList page should have h1", async ({ page }) => {
   await page.goto("/docs/extend/virtual-list");
   expect(await page.textContent("h1")).toBe("Svelte Virtual List");
 });
+
+// VirtualMasonry
+test("VirtualMasonry page should have h1", async ({ page }) => {  
+  await page.goto("/docs/extend/virtual-masonry");
+  expect(await page.textContent("h1")).toBe("Svelte Virtual Masonry");
+});

@@ -93,3 +93,4 @@ export * from "./kanban";
 export * from "./split-pane";
 export * from "./tour";
 export * from "./scroll-spy";
+export * from "./virtual-masonry"
