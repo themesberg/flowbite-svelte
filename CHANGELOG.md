@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.26.0
+
+### Minor Changes
+
+- feat: Spinner now supports multiple visual variants: dots, bars, pulse, orbit, plus the existing default
+
 ## 1.25.0
 
 ### Minor Changes

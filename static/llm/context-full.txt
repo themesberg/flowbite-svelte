@@ -1,5 +1,5 @@
 # Flowbite Svelte Documentation - Full Context
-# Generated on 2025-11-07T19:17:38.411Z
+# Generated on 2025-11-08T05:48:52.150Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -14476,6 +14476,22 @@ Use the following SVG element to show a loading animation:
 <Spinner />
 ```
 
+## Spinner Type
+
+The Spinner component offers five animation types: default (rotating ring), dots (pulsing circles), bars (vertical waves), pulse (expanding ripples), and orbit (synchronized rotating dots).
+
+```svelte
+<script lang="ts">
+  import { Spinner } from "$lib";
+</script>
+
+<Spinner type="default" color="primary" />
+<Spinner type="dots" color="emerald" />
+<Spinner type="bars" color="blue" />
+<Spinner type="orbit" color="rose" />
+<Spinner type="pulse" color="green" />
+```
+
 ## Colors
 
 You can change the colors of the spinner element using the `color` prop.
@@ -14553,10 +14569,11 @@ The spinner component can also be used inside elements such as buttons when subm
 
 #### Props
 
+- type: "default"
 - color: "primary"
 - size: "8"
 - class: className
-- currentFill: "currentFill"
+- currentFill: "inherit"
 - currentColor: "currentColor"
 
 
@@ -14821,7 +14838,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1642)
+[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1643)
 
 #### Props
 
@@ -14834,7 +14851,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1611)
+[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1612)
 
 #### Props
 
@@ -14848,7 +14865,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1596)
+[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1597)
 
 #### Props
 
@@ -14861,7 +14878,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1584)
+[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1585)
 
 #### Props
 
@@ -14874,7 +14891,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1656)
+[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1657)
 
 #### Props
 
@@ -14888,7 +14905,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1626)
+[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1627)
 
 #### Props
 
@@ -15780,7 +15797,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1688)
+[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1689)
 
 #### Props
 
@@ -15801,7 +15818,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1720)
+[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1721)
 
 #### Props
 
@@ -15813,7 +15830,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1709)
+[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1710)
 
 #### Props
 
@@ -15826,7 +15843,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1701)
+[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1702)
 
 #### Props
 
@@ -15841,7 +15858,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1676)
+[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1677)
 
 #### Props
 
@@ -15858,7 +15875,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1725)
+[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1726)
 
 #### Props
 
@@ -15869,7 +15886,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1740)
+[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1741)
 
 #### Props
 
@@ -16394,7 +16411,7 @@ Use the following example to add active class.
 
 #### Types
 
-[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1769)
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1770)
 
 #### Props
 
@@ -16414,7 +16431,7 @@ Use the following example to add active class.
 
 #### Types
 
-[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1760)
+[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1761)
 
 #### Props
 
@@ -16887,7 +16904,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1806)
+[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1807)
 
 #### Props
 
@@ -16898,7 +16915,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1810)
+[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1811)
 
 #### Props
 
@@ -16918,7 +16935,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1822)
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1823)
 
 #### Props
 
@@ -16934,7 +16951,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1830)
+[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1831)
 
 #### Props
 
@@ -16951,7 +16968,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1850)
+[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1851)
 
 #### Props
 
@@ -16963,7 +16980,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1857)
+[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1858)
 
 #### Props
 
@@ -17384,7 +17401,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1875)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1876)
 
 #### Props
 
@@ -17595,7 +17612,7 @@ When you want to add a fully custom styles, use `type="custom"`, and `class` to 
 
 #### Types
 
-[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1891)
+[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1892)
 
 #### Props
 
@@ -17878,7 +17895,7 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 #### Types
 
-[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2041)
+[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2042)
 
 #### Props
 
@@ -22405,7 +22422,7 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 #### Types
 
-[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1924)
+[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1925)
 
 #### Props
 
@@ -22663,7 +22680,7 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 #### Types
 
-[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1940)
+[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1941)
 
 #### Props
 
@@ -22821,7 +22838,7 @@ The `restProps` will be removed in the next version. Please use `divProps` and `
 
 #### Types
 
-[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1946)
+[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1947)
 
 #### Props
 
@@ -23590,7 +23607,7 @@ Use this example to create a horizontally aligned list of items.
 
 #### Types
 
-[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2000)
+[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2001)
 
 #### Props
 
@@ -24729,7 +24746,7 @@ See [examples](/docs-examples/extend/command-palette) and [code](https://github.
 
 #### Types
 
-[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2190)
+[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2191)
 
 #### Props
 
@@ -25318,7 +25335,7 @@ See [examples](/docs-examples/extend/scroll-spy) and [code](https://github.com/t
 
 #### Types
 
-[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2205)
+[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2206)
 
 #### Props
 
@@ -25362,7 +25379,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[DividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2148)
+[DividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2149)
 
 #### Props
 
@@ -25379,7 +25396,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[PaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2142)
+[PaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2143)
 
 #### Props
 
@@ -25391,7 +25408,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2128)
+[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2129)
 
 #### Props
 
@@ -25564,7 +25581,7 @@ Use the `color` prop to change the color of a step indicator.
 
 #### Types
 
-[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1562)
+[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1563)
 
 #### Props
 
@@ -25750,7 +25767,7 @@ See [examples](/docs-examples/extend/tour) and [code](https://github.com/themesb
 
 #### Types
 
-[TourProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2167)
+[TourProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2168)
 
 #### Props
 
@@ -26211,7 +26228,7 @@ Enable with `<VirtualList contained …>` or override via `classes.item`.
 
 #### Types
 
-[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2084)
+[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2085)
 
 #### Props
 
@@ -26257,7 +26274,7 @@ See [examples](/docs-examples/extend/virtual-masonry) and [code](https://github.
 
 #### Types
 
-[VirtualMasonryProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2232)
+[VirtualMasonryProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2233)
 
 #### Props
 

@@ -78,3 +78,18 @@
     </g>
   </svg>
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[SpinnerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1554)
+## Props
+@prop type = "default"
+@prop color = "primary"
+@prop size = "8"
+@prop class: className
+@prop currentFill = "inherit"
+@prop currentColor = "currentColor"
+@prop ...restProps
+-->

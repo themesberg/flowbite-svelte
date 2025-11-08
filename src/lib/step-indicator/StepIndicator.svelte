@@ -66,7 +66,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1562)
+[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1563)
 ## Props
 @prop steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"]
 @prop currentStep = 1

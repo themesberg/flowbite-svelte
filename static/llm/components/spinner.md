@@ -23,6 +23,22 @@ Use the following SVG element to show a loading animation:
 <Spinner />
 ```
 
+## Spinner Type
+
+The Spinner component offers five animation types: default (rotating ring), dots (pulsing circles), bars (vertical waves), pulse (expanding ripples), and orbit (synchronized rotating dots).
+
+```svelte
+<script lang="ts">
+  import { Spinner } from "$lib";
+</script>
+
+<Spinner type="default" color="primary" />
+<Spinner type="dots" color="emerald" />
+<Spinner type="bars" color="blue" />
+<Spinner type="orbit" color="rose" />
+<Spinner type="pulse" color="green" />
+```
+
 ## Colors
 
 You can change the colors of the spinner element using the `color` prop.
@@ -100,10 +116,11 @@ The spinner component can also be used inside elements such as buttons when subm
 
 #### Props
 
+- type: "default"
 - color: "primary"
 - size: "8"
 - class: className
-- currentFill: "currentFill"
+- currentFill: "inherit"
 - currentColor: "currentColor"
 
 
