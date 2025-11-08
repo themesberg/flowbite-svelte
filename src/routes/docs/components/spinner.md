@@ -32,6 +32,14 @@ Use the following SVG element to show a loading animation:
 {#include Default.svelte}
 ```
 
+## Spinner Type
+
+The Spinner component offers five animation types: default (rotating ring), dots (pulsing circles), bars (vertical waves), pulse (expanding ripples), and orbit (synchronized rotating dots).
+
+```svelte example class="space-x-4"
+{#include Type.svelte}
+```
+
 ## Colors
 
 You can change the colors of the spinner element using the `color` prop.
