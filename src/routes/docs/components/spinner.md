@@ -36,7 +36,7 @@ Use the following SVG element to show a loading animation:
 
 The Spinner component offers five animation types: default (rotating ring), dots (pulsing circles), bars (vertical waves), pulse (expanding ripples), and orbit (synchronized rotating dots).
 
-```svelte example class="space-x-4"
+```svelte example hideScript class="space-x-4"
 {#include Type.svelte}
 ```
 
