@@ -85,3 +85,4 @@ export { splitpane, pane, divider, dividerHitArea } from "$lib/split-pane/theme"
 export { tour } from "$lib/tour/theme";
 export { scrollspy } from "$lib/scroll-spy/theme";
 export { virtualMasonry } from "$lib/virtual-masonry/theme";
+export { clipboardManager } from "$lib/clipboard-manager/theme"

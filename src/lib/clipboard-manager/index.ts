@@ -1,0 +1,1 @@
+export { default as ClipboardManager } from "./ClipboardManager.svelte"
