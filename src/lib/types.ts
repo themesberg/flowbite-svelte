@@ -2114,6 +2114,7 @@ export interface KanbanBoardProps extends KanbanBoardVariants, HTMLAttributes<HT
   columns?: KanbanColumnType[];
   onMove?: (card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) => void;
   onAddCard?: (col: KanbanColumnType) => void;
+  cardProps?: Partial<Omit<KanbanCardProps, 'card' | 'isDragging' | 'onDragStart' | 'onDragEnd'>>; 
   class?: ClassValue | null;
 }
 

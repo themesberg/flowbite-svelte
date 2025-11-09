@@ -19,9 +19,6 @@
   });
 
   async function handleMove(card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) {
-    // Trigger reactivity to reflect the card move performed by KanbanBoard
-    columns = [...columns];
-
     try {
       const response = await fetch("/api/kanban/move", {
         method: "POST",
@@ -68,6 +65,7 @@
   }
 </script>
 
+<div class="p-4 bg-white dark:bg-gray-800">
 {#if loading}
   <div class="flex h-64 items-center justify-center">
     <div class="text-gray-600">Loading board...</div>
@@ -79,3 +77,4 @@
 {:else}
   <KanbanBoard bind:columns onMove={handleMove} onAddCard={handleAddCard} />
 {/if}
+</div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type KanbanCardType, type KanbanColumnType, KanbanBoard } from "flowbite-svelte";
+  import { type KanbanCardType, type KanbanColumnType, KanbanBoard, Button } from "flowbite-svelte";
   import { onMount } from "svelte";
 
   const STORAGE_KEY = "my-kanban-board";
@@ -29,7 +29,6 @@
 
   function handleMove(card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) {
     console.log(`Moved "${card.title}" from "${from.title}" to "${to.title}"`);
-    columns = [...columns]; // Trigger reactivity and persistence (card already moved by component)
   }
 
   function handleAddCard(col: KanbanColumnType) {
@@ -62,9 +61,16 @@
 
 <div class="p-4">
   <div class="mb-4 flex items-center justify-between">
-    <h1 class="text-2xl font-bold">My Tasks</h1>
-    <button onclick={clearBoard} class="rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600">Clear Board</button>
+    <h1 class="text-2xl font-bold dark:text-white">My Tasks</h1>
+    <Button onclick={clearBoard} >Clear Board</Button>
   </div>
 
-  <KanbanBoard bind:columns onMove={handleMove} onAddCard={handleAddCard} />
+  <KanbanBoard bind:columns onMove={handleMove} onAddCard={handleAddCard} 
+    classes={{
+    column: "dark:bg-gray-800 shadow-lg",
+    card: "hover:shadow-xl transition-shadow",
+    cardTitle: "dark:text-white font-bold",
+    addButton: "bg-primary-500 hover:bg-primary-600 text-white dark:text-white"
+  }}
+  />
 </div>
