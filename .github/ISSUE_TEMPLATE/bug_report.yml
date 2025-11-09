@@ -46,8 +46,8 @@ body:
         1. Install flowbite-svelte@latest
         2. Use Button inside Modal
         3. Click button → nothing happens
-      validations:
-        required: true
+    validations:
+      required: true
   - type: textarea
     id: system-info
     attributes:
