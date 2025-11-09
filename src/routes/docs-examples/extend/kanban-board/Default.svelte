@@ -102,14 +102,7 @@
     <KanbanBoard 
       bind:columns 
       onMove={handleMove} 
-      onAddCard={handleAddCard} 
-      cardProps={{
-        classes:{
-          cardTitle:"dark:text-white",
-          cardDescription: "dark:text-white",
-          cardTag: "dark:text-white"
-        }
-      }}
+      onAddCard={handleAddCard}
     />
 
     <!-- Optional: Show stats -->

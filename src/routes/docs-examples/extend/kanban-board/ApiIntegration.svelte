@@ -65,7 +65,7 @@
   }
 </script>
 
-<div class="p-4 bg-white">
+<div class="p-4 bg-white dark:bg-gray-800">
 {#if loading}
   <div class="flex h-64 items-center justify-center">
     <div class="text-gray-600">Loading board...</div>

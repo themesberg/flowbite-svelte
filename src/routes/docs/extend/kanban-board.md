@@ -31,7 +31,7 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
 {#include Default.svelte}
 ```
 
-## Custom Styling
+## Using Modal
 
 ```svelte example class="flex flex-col space-y-4"
 {#include UsingModal.svelte}

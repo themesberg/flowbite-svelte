@@ -34,11 +34,11 @@ export const kanbanBoard = tv({
 
 export const kanbanCard = tv({
   slots: {
-    card: "bg-surface text-surface-foreground rounded-lg p-2.5 md:p-3 shadow-sm cursor-grab active:cursor-grabbing transition-all hover:bg-surface-hover hover:shadow-md",
-    cardTitle: "font-medium text-sm md:text-base",
-    cardDescription: "text-xs md:text-sm text-muted mt-1",
+    card: "bg-surface text-surface-foreground rounded-lg p-2.5 md:p-3 shadow-sm shadow-black/20 dark:shadow-white/10 cursor-grab active:cursor-grabbing transition-all hover:bg-surface-hover hover:shadow-md",
+    cardTitle: "font-medium text-sm md:text-base dark:text-white",
+    cardDescription: "text-xs md:text-sm text-muted mt-1 dark:text-white",
     cardTags: "flex flex-wrap gap-1 mt-2 dark:text-white",
-    cardTag: "text-[10px] md:text-xs bg-primary/10 text-primary px-1.5 md:px-2 py-0.5 rounded-full"
+    cardTag: "text-[10px] md:text-xs bg-primary/10 text-primary px-1.5 md:px-2 py-0.5 rounded-full dark:text-white"
   },
   variants: {
     isDragging: {

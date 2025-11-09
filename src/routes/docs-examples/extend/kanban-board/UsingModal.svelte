@@ -86,11 +86,11 @@
   onMove={handleMove}
   onAddCard={handleAddCard}
   classes={{
-    column: "bg-white shadow-lg",
+    column: "dark:bg-gray-800 shadow-lg",
     card: "hover:shadow-xl transition-shadow",
     cardTitle: "text-blue-600 font-bold",
-    addButton: "bg-blue-500 hover:bg-blue-600 text-white",
-    cardTags: "text-gray-900 dark:text-gray-900"
+    addButton: "bg-blue-500 hover:bg-blue-600 text-white dark:text-white",
+    cardTags: "text-gray-900"
   }}
 />
 
