@@ -1,6 +1,6 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
-export type ClipboardVariants = VariantProps<typeof clipboardManager>;
+export type ClipboardManagerVariants = VariantProps<typeof clipboardManager>;
 
 export const clipboardManager = tv({
   slots: {
@@ -35,8 +35,8 @@ export const clipboardManager = tv({
     
     // Actions
     itemActions: "flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity",
-    actionButton: "p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition",
-    actionIcon: "w-4 h-4",
+    actionButton: "p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition flex items-center justify-center",
+actionIcon: "w-4 h-4 flex-shrink-0",
     pinButton: "p-1.5 rounded transition",
     deleteButton: "p-1.5 rounded text-red-500 hover:bg-red-100 dark:hover:bg-red-900/20 transition",
     
