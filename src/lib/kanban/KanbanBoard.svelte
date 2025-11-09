@@ -9,6 +9,7 @@
     columns = $bindable([]),
     onMove = (_card: KanbanCardType, _from: KanbanColumnType, _to: KanbanColumnType) => {},
     onAddCard = (_col: KanbanColumnType) => {},
+    cardProps,
     class: className,
     classes,
     ...restProps
@@ -73,6 +74,7 @@
   }
 </script>
 
+
 <div {...restProps} class={styles.container({ class: clsx(theme?.container, className) })}>
   {#each columns as col (col.id)}
     <div
@@ -88,7 +90,14 @@
 
       <div class={styles.cardList({ class: clsx(theme?.cardList, classes?.cardList) })} role="list" aria-label={`${col.title} cards`}>
         {#each col.cards as card (card.id)}
-          <KanbanCard {card} {classes} isDragging={draggedCard?.id === card.id} onDragStart={() => handleDragStart(card, col.id)} onDragEnd={handleDragEnd} />
+          <KanbanCard 
+            {card} 
+            {classes} 
+            {...cardProps}
+            isDragging={draggedCard?.id === card.id} 
+            onDragStart={() => handleDragStart(card, col.id)} 
+            onDragEnd={handleDragEnd} 
+          />
         {/each}
       </div>
 

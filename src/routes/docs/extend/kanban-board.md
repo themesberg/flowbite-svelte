@@ -12,6 +12,7 @@ description: A fully responsive, drag-and-drop Kanban board component built with
   import { TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
   import { P, A } from '$lib'
 
+  const dirName = 'kanban'
   const components = 'KanbanBoard'
   // const relatedLinks = [''];
 </script>
@@ -33,7 +34,7 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
 ## Custom Styling
 
 ```svelte example class="flex flex-col space-y-4"
-{#include CustomStyling.svelte}
+{#include UsingModal.svelte}
 ```
 
 ## Using LocalStorage
@@ -55,3 +56,17 @@ For production, use a proper database (PostgreSQL, MongoDB, Supabase, etc.) with
 ```svelte example class="flex flex-col space-y-4"
 {#include ApiIntegration.svelte}
 ```
+
+## Component data
+
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+<CompoAttributesViewer {dirName}/>
+
+## GitHub Links
+
+<GitHubCompoLinks {components} dir="extend"/>
+
+## LLM Link
+
+<LlmLink />

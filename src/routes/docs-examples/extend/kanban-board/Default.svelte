@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type KanbanCardType, type KanbanColumnType, KanbanBoard } from "flowbite-svelte";
+  import { type KanbanCardType, type KanbanColumnType, KanbanBoard, Heading, P } from "flowbite-svelte";
 
   let columns = $state<KanbanColumnType[]>([
     {
@@ -69,10 +69,6 @@
   function handleMove(card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) {
     console.log(`Moved "${card.title}" from "${from.title}" to "${to.title}"`);
 
-    // The KanbanBoard component already mutated the columns.
-    // We just need to trigger reactivity by creating a new reference
-    columns = [...columns];
-
     // Here you could make an API call to persist the change
     // await fetch('/api/cards/move', { method: 'POST', body: JSON.stringify({ cardId: card.id, fromId: from.id, toId: to.id }) })
   }
@@ -96,14 +92,25 @@
   }
 </script>
 
-<div class="bg-gray-100 py-4 md:py-8">
+<div class="bg-gray-100 dark:bg-gray-800 py-4 md:py-8">
   <div class="mx-auto max-w-7xl px-2 sm:px-4">
     <div class="mb-4 md:mb-6">
-      <h1 class="text-2xl font-bold text-gray-900 md:text-3xl">Project Kanban Board</h1>
-      <p class="mt-1 text-sm text-gray-600 md:mt-2 md:text-base">Drag cards between columns to update their status</p>
+      <Heading tag="h1" class="text-2xl md:text-3xl">Project Kanban Board</Heading>
+      <P class="mt-1 text-sm text-gray-600 md:mt-2 md:text-base">Drag cards between columns to update their status</P>
     </div>
 
-    <KanbanBoard bind:columns onMove={handleMove} onAddCard={handleAddCard} />
+    <KanbanBoard 
+      bind:columns 
+      onMove={handleMove} 
+      onAddCard={handleAddCard} 
+      cardProps={{
+        classes:{
+          cardTitle:"dark:text-white",
+          cardDescription: "dark:text-white",
+          cardTag: "dark:text-white"
+        }
+      }}
+    />
 
     <!-- Optional: Show stats -->
     <div class="mt-6 grid grid-cols-2 gap-3 md:mt-8 md:grid-cols-4 md:gap-4">
