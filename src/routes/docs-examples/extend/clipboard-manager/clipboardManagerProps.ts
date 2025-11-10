@@ -1,4 +1,4 @@
-export let clipboardManagerProps = [
+export const clipboardManagerProps = [
   {
     prop: "items",
     type: "ClipboardItem[]",
@@ -30,10 +30,10 @@ export let clipboardManagerProps = [
     description: "Max items to store"
   },
   {
-    prop: "persist",
+    prop: "saveToStorage",
     type: "boolean",
     default: "true",
-    description: "Save to localStorage"
+    description: "Persist items to localStorage"
   },
   {
     prop: "toastDuration",

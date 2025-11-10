@@ -87,11 +87,11 @@ export * from "./utils";
 export * from "./types";
 
 // extend
+export * from "./clipboard-manager";
 export * from "./command-palette";
-export * from "./virtuallist";
 export * from "./kanban";
+export * from "./scroll-spy";
 export * from "./split-pane";
 export * from "./tour";
-export * from "./scroll-spy";
+export * from "./virtuallist";
 export * from "./virtual-masonry";
-export * from "./clipboard-manager";

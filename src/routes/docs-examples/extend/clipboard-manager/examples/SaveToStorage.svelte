@@ -20,7 +20,7 @@
       enableSelectionMenu={true}
       selectionTarget="#persist-ex"
       placeholder="Add your own notes..."
-      persist={false}
+      saveToStorage={false}
       storageKey="persist-ex"
     />
   </div>

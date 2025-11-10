@@ -10,5 +10,5 @@
 <ClipboardManager 
   enableSelectionMenu={true}
   selectionTarget="#article-content"
-  storageKey="sepecific-target"
+  storageKey="specific-target"
 />

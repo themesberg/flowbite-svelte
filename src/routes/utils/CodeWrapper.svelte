@@ -9,12 +9,12 @@
     class?: string;
     codeClass?: string;
   }
-  let { children, codeblock, innerClass, codeClass, class: classname }: Props = $props();
+  let { children, codeblock, innerClass, codeClass, class: classname, ...restProps }: Props = $props();
   const { base, inner } = $derived(codewrapper());
   const codeCls = children ? 'border-t border-gray-200 dark:border-gray-600' : '';
 </script>
 
-<div class={base({ class: classname })}>
+<div {...restProps} class={base({ class: classname })}>
   {#if children}
     <div class={inner({ class: innerClass })}>
       {@render children()}

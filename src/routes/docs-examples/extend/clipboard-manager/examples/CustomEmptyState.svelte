@@ -12,7 +12,7 @@
   selectionTarget="#custom-empty-state"
   storageKey="custom-empty"
 >
-  {#snippet empty()}
+  {#snippet emptyState()}
     <div class="text-center py-12">
       <div class="text-6xl mb-4">👆</div>
       <h3 class="text-lg font-semibold mb-2">

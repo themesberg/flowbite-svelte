@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { ClipboardManager, Table } from "$lib";
-  import type { ClipboardItem } from "$lib/types";
+  import { Table } from "$lib";
   import { clipboardManagerProps } from "./clipboardManagerProps";
 
   import { List, Li, P, Heading } from "$lib";
@@ -44,7 +43,7 @@
     <div class="space-y-3 rounded-lg p-6 shadow">
       <div class="flex items-center gap-3">
         <span class="rounded bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-800">Targeted</span>
-        <Heading tag="h3" class="my-4 text-lg font-semibold">Targe Specific Area</Heading>
+        <Heading tag="h3" class="my-4 text-lg font-semibold">Target Specific Area</Heading>
       </div>
       <P class="text-sm">
         Limit selection menu to specific content area using CSS selector using <code class="text-primary-700 font-bold">selectionTarget</code>

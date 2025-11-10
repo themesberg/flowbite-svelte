@@ -2270,7 +2270,7 @@ export interface ClipboardManagerProps extends ClipboardManagerVariants {
   enableSelectionMenu?: boolean;
   selectionTarget?: string;
   showInput?: boolean; // NEW!
-  empty?: any,
+  emptyState?: Snippet;
   storageKey?: string;
   open?: boolean;
 }

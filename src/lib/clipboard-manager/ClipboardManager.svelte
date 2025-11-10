@@ -20,7 +20,7 @@
     class: className = "",
     storageKey,
     children,
-    empty,
+    emptyState,
     open = $bindable() // If undefined, renders inline; if defined, renders as modal
   }: ClipboardManagerProps = $props();
 
@@ -180,7 +180,7 @@
       timestamp: Date.now()
     };
 
-    items = sortItems([item, ...items].slice(0, limit));
+    items = sortItems([item, ...items]).slice(0, limit);
     showToast("Saved to clipboard manager");
     selectionMenu = { show: false, x: 0, y: 0, text: "" };
   };
@@ -214,7 +214,7 @@
       timestamp: Date.now()
     };
 
-    items = sortItems([item, ...items].slice(0, limit));
+    items = sortItems([item, ...items]).slice(0, limit);
     newText = "";
 
     try {
@@ -309,8 +309,8 @@
   <!-- Items list -->
   <div class={styles.itemsList()}>
     {#if filteredItems.length === 0}
-      {#if empty}
-        {@render empty()}
+      {#if emptyState}
+        {@render emptyState()}
       {:else}
         <div class={styles.emptyState()}>
           {#if items.length === 0}
