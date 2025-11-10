@@ -324,38 +324,38 @@ describe("ClipboardManager Search", () => {
 });
 
 describe("ClipboardManager Storage", () => {
-  // test("saves items to localStorage", async () => {
-  //   const user = userEvent.setup();
-  //   render(ClipboardManagerTest);
+  test("saves items to localStorage", async () => {
+    const user = userEvent.setup();
+    render(ClipboardManagerTest);
 
-  //   const input = screen.getByPlaceholderText("Type and save to clipboard");
-  //   const saveButton = screen.getByText("Save");
+    const input = screen.getByPlaceholderText("Type and save to clipboard");
+    const saveButton = screen.getByText("Save");
 
-  //   await user.type(input, "Storage test");
-  //   await user.click(saveButton);
+    await user.type(input, "Storage test");
+    await user.click(saveButton);
 
-  //   // First wait for the item to appear in the UI
-  //   await waitFor(() => {
-  //     expect(screen.getByText("Storage test")).toBeInTheDocument();
-  //   });
+    // First wait for the item to appear in the UI
+    await waitFor(() => {
+      expect(screen.getByText("Storage test")).toBeInTheDocument();
+    });
 
-  //   // Then wait a bit longer for the $effect to save to localStorage
-  //   await waitFor(() => {
-  //     const stored = localStorage.getItem("flowbite-clipboard-manager");
-  //     expect(stored).toBeTruthy();
-  //   }, { timeout: 3000 });
+    // Then wait a bit longer for the $effect to save to localStorage
+    await waitFor(() => {
+      const stored = localStorage.getItem("flowbite-clipboard-manager");
+      expect(stored).toBeTruthy();
+    }, { timeout: 3000 });
 
-  //   const stored = localStorage.getItem("flowbite-clipboard-manager");
-  //   const items = JSON.parse(stored!);
-  //   expect(items).toHaveLength(1);
-  //   expect(items[0].text).toBe("Storage test");
-  // });
+    const stored = localStorage.getItem("flowbite-clipboard-manager");
+    const items = JSON.parse(stored!);
+    expect(items).toHaveLength(1);
+    expect(items[0].text).toBe("Storage test");
+  });
 
   test("loads items from localStorage on mount", async () => {
     // Pre-populate localStorage
     const testItems = [
-      { id: 1, text: "Stored item 1", timestamp: Date.now() },
-      { id: 2, text: "Stored item 2", timestamp: Date.now() - 1000 }
+      { id: Date.now(), text: "Stored item 1", timestamp: Date.now() },
+      { id: Date.now() + 1, text: "Stored item 2", timestamp: Date.now() - 1000 }
     ];
     localStorage.setItem("flowbite-clipboard-manager", JSON.stringify(testItems));
 
