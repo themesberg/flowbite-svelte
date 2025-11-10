@@ -10,7 +10,7 @@
     saveLabel = "Save",
     clearLabel = "Clear All",
     limit = 20,
-    persist = true,
+    saveToStorage = true,
     toastDuration = 2000,
     filterSensitive = true,
     maxLength = 10000,
@@ -21,7 +21,7 @@
     storageKey,
     children,
     empty,
-    open = $bindable()
+    open = $bindable() // If undefined, renders inline; if defined, renders as modal
   }: ClipboardManagerProps = $props();
 
   const isModal = $derived(open !== undefined);
@@ -44,21 +44,38 @@
   // --- Persistence ---
   const STORAGE_KEY = storageKey ? storageKey : "flowbite-clipboard-manager";
 
+  // Load from localStorage on mount, but only if no initial items provided
   $effect(() => {
-    if (persist && typeof window !== "undefined") {
+    if (saveToStorage && typeof window !== "undefined") {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         try {
-          items = JSON.parse(saved);
+          const parsed = JSON.parse(saved);
+          // Only use localStorage if we don't have initial items
+          if (initialItems.length === 0) {
+            items = parsed;
+          } else if (items === initialItems) {
+            // First load: use initial items and save them
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+          }
         } catch (e) {
           console.error("Failed to parse clipboard data:", e);
         }
+      } else if (initialItems.length > 0) {
+        // No saved data, but we have initial items - save them
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
       }
     }
   });
 
+  // Save to localStorage whenever items change (but skip the initial load)
+  let isFirstLoad = true;
   $effect(() => {
-    if (persist && typeof window !== "undefined") {
+    if (saveToStorage && typeof window !== "undefined") {
+      if (isFirstLoad) {
+        isFirstLoad = false;
+        return;
+      }
       localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
     }
   });

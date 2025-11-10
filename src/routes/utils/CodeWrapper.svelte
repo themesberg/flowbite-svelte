@@ -11,7 +11,7 @@
   }
   let { children, codeblock, innerClass, codeClass, class: classname }: Props = $props();
   const { base, inner } = $derived(codewrapper());
-  const codeCls = children ? 'border-t border-gray-600' : '';
+  const codeCls = children ? 'border-t border-gray-200 dark:border-gray-600' : '';
 </script>
 
 <div class={base({ class: classname })}>

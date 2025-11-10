@@ -4,7 +4,7 @@ title: Svelte Clipboard Manager
 breadcrumb_title: Clipboard Manager
 component_title: Clipboard Manager
 dir: Extend
-description: AAA.
+description: A versatile clipboard manager component for saving, organizing, and reusing text snippets. Features include persistent storage, search, pinning, text selection menu, sensitive data filtering, and optional modal display. Fully customizable with snippets and Tailwind styling.
 
 ---
 

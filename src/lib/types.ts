@@ -2262,7 +2262,7 @@ export interface ClipboardManagerProps extends ClipboardManagerVariants {
   saveLabel?: string;
   clearLabel?: string;
   limit?: number;
-  persist?: boolean;
+  saveToStorage?: boolean;
   class?: string;
   toastDuration?: number;
   filterSensitive?: boolean;
