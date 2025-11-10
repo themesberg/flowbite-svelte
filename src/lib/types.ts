@@ -2275,4 +2275,5 @@ export interface ClipboardManagerProps extends ClipboardManagerVariants {
   open?: boolean;
   badgeProps?: Omit<BadgeProps, "children">;
   modalProps?: ModalProps;
+  detectSensitiveData?: (text: string) => boolean;
 }

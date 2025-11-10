@@ -12,6 +12,8 @@
     import: "default",
     eager: true
   }) as Record<string, string>;
+
+  const sentitiveEx = "detectSensitiveData=(text) => (/confidential|secret/i).test(text)"
 </script>
 
 <div class="mx-auto max-w-7xl space-y-8 p-6">
@@ -29,7 +31,7 @@
 
   <!-- Usage Examples -->
   <section class="space-y-6">
-    <h2 class="text-2xl font-semibold">📚 Usage Examples</h2>
+    <Heading tag="h2" class="text-2xl font-semibold">📚 Usage Examples</Heading>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
       <div class="flex items-center gap-3">
@@ -164,10 +166,10 @@
         <Li>Data is lost when you close the tab</Li>
       </List>
 
-      <CodeWrapper>
+      <CodeWrapper class="max-w-7xl">
         <ExampleComponents.SaveToStorage />
         {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/SaveToStorage.svelte"] as string} />
+          <HighlightCompo codeLang="ts" code={exampleModules["./examples/SaveToStorage.svelte"] as string} class="max-w-7xl bg-white" />
         {/snippet}
       </CodeWrapper>
     </div>
@@ -180,12 +182,22 @@
       <P class="text-sm">Save frequently used code patterns directly from the editor.</P>
       <P class="text-sm">
         Use <code class="text-primary-700">filterSensitive={false}</code>
-         to unblock sensitive data such as password pattern, api token pattern, etc.
+        to unblock sensitive data such as password pattern, api token pattern, etc. The component provide default function (see below) to detect sensitive data. However use the <code class="text-primary-700">detectSensitiveData</code> prop to provide your own logic. 
+        <HighlightCompo codeLang="ts" code={sentitiveEx} class="max-w-7xl bg-white my-2" />
+        This will block texts containing "confidential" or "secret". 
       </P>
-      <CodeWrapper>
+      <List>
+        <Li>Detects common sensitive information (credit cards, passwords, API keys, credentials).</Li>
+        <Li>⚠️ Note: These patterns are heuristic and may produce false positives/negatives.</Li>
+        <Li>Credit card regex may match any 16-digit sequence, not just valid card numbers</Li>
+        <Li>Password regex is intentionally strict (12+ chars, mixed case, digits) and misses many real passwords</Li>
+        <Li>API key regex matches any long alphanumeric token (32+ chars), which may catch legitimate IDs</Li>
+        <Li>Credential keyword regex may trigger on non-secret words like "token = false"</Li>
+      </List>
+      <CodeWrapper class="max-w-7xl">
         <ExampleComponents.CodeEditor />
         {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/CodeEditor.svelte"] as string} />
+          <HighlightCompo codeLang="ts" code={exampleModules["./examples/CodeEditor.svelte"] as string} class="max-w-7xl bg-white" />
         {/snippet}
       </CodeWrapper>
     </div>
@@ -196,10 +208,10 @@
         <Heading tag="h3" class="text-lg font-semibold">Multiple Content Areas</Heading>
       </div>
       <P class="text-sm">Use class selector to enable selection across multiple elements</P>
-      <CodeWrapper>
+      <CodeWrapper class="max-w-7xl">
         <ExampleComponents.MultipleContent />
         {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/MultipleContent.svelte"] as string} />
+          <HighlightCompo codeLang="ts" code={exampleModules["./examples/MultipleContent.svelte"] as string} class="max-w-7xl bg-white" />
         {/snippet}
       </CodeWrapper>
     </div>
@@ -209,11 +221,14 @@
         <span class="rounded bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-800">Selection Only</span>
         <Heading tag="h3" class="text-lg font-semibold">No Manual Input</Heading>
       </div>
-      <P class="text-sm">Use <code class="text-primary-700">showInput={false}</code> to hide the input box and use only selection menu with custom rendering</P>
-      <CodeWrapper>
+      <P class="text-sm">
+        Use <code class="text-primary-700">showInput={false}</code>
+         to hide the input box and use only selection menu with custom rendering
+      </P>
+      <CodeWrapper class="max-w-7xl">
         <ExampleComponents.NoManualInput />
         {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/NoManualInput.svelte"] as string} />
+          <HighlightCompo codeLang="ts" code={exampleModules["./examples/NoManualInput.svelte"] as string} class="max-w-7xl bg-white" />
         {/snippet}
       </CodeWrapper>
     </div>
@@ -224,92 +239,92 @@
         <Heading tag="h3" class="text-lg font-semibold">Custom Empty State</Heading>
       </div>
       <P class="text-sm">Provide clear instructions for first-time users</P>
-      <CodeWrapper>
+      <CodeWrapper class="max-w-7xl">
         <ExampleComponents.CustomEmptyState />
         {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/CustomEmptyState.svelte"] as string} />
+          <HighlightCompo codeLang="ts" code={exampleModules["./examples/CustomEmptyState.svelte"] as string} class="max-w-7xl bg-white" />
         {/snippet}
       </CodeWrapper>
     </div>
   </section>
 
   <section class="space-y-4 rounded-lg p-6 shadow">
-    <h2 class="text-2xl font-semibold">💡 Best Practices</h2>
+    <Heading tag="h2" class="text-2xl font-semibold">💡 Best Practices</Heading>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
       <div class="border-l-4 border-green-500 pl-4">
         <Heading tag="h3" class="mb-2 font-semibold text-green-900">✅ Do</Heading>
-        <ul class="space-y-1 text-sm text-gray-700">
-          <li>• Target specific content areas</li>
-          <li>• Use for text-heavy interfaces</li>
-          <li>• Combine with manual input option</li>
-          <li>• Show clear visual feedback</li>
-          <li>• Test on mobile/touch devices</li>
-        </ul>
+        <List class="space-y-1 text-sm text-gray-700 dark:text-gray-50">
+          <Li>• Target specific content areas</Li>
+          <Li>• Use for text-heavy interfaces</Li>
+          <Li>• Combine with manual input option</Li>
+          <Li>• Show clear visual feedback</Li>
+          <Li>• Test on mobile/touch devices</Li>
+        </List>
       </div>
       <div class="border-l-4 border-red-500 pl-4">
         <Heading tag="h3" class="mb-2 font-semibold text-red-900">❌ Don't</Heading>
-        <ul class="space-y-1 text-sm text-gray-700">
-          <li>• Enable on form inputs</li>
-          <li>• Use for tiny text snippets</li>
-          <li>• Forget mobile considerations</li>
-          <li>• Overwhelm with too many features</li>
-          <li>• Target entire page unnecessarily</li>
-        </ul>
+        <List class="space-y-1 text-sm text-gray-700 dark:text-gray-50">
+          <Li>• Enable on form inputs</Li>
+          <Li>• Use for tiny text snippets</Li>
+          <Li>• Forget mobile considerations</Li>
+          <Li>• Overwhelm with too many features</Li>
+          <Li>• Target entire page unnecessarily</Li>
+        </List>
       </div>
     </div>
   </section>
 
   <!-- Comparison -->
   <section class="rounded-lg bg-gradient-to-r from-green-50 to-blue-50 p-6">
-    <h2 class="mb-4 text-2xl font-semibold">🔄 Selection Menu vs Manual Input</h2>
+    <Heading tag="h2" class="mb-4 text-2xl font-semibold">🔄 Selection Menu vs Manual Input</Heading>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
       <div class="rounded-lg p-4">
         <Heading tag="h3" class="mb-3 flex items-center gap-2 font-semibold">
           <span class="text-2xl">👆</span>
           Selection Menu
         </Heading>
-        <ul class="space-y-2 text-sm">
-          <li class="flex items-start gap-2">
+        <List class="space-y-2 text-sm">
+          <Li class="flex items-start gap-2">
             <span class="text-green-500">✓</span>
             <span>Faster for existing content</span>
-          </li>
-          <li class="flex items-start gap-2">
+          </Li>
+          <Li class="flex items-start gap-2">
             <span class="text-green-500">✓</span>
             <span>No context switching</span>
-          </li>
-          <li class="flex items-start gap-2">
+          </Li>
+          <Li class="flex items-start gap-2">
             <span class="text-green-500">✓</span>
             <span>Natural workflow</span>
-          </li>
-          <li class="flex items-start gap-2">
+          </Li>
+          <Li class="flex items-start gap-2">
             <span class="text-green-500">✓</span>
             <span>Works on mobile</span>
-          </li>
-        </ul>
+          </Li>
+        </List>
       </div>
       <div class="rounded-lg p-4">
         <Heading tag="h3" class="mb-3 flex items-center gap-2 font-semibold">
           <span class="text-2xl">⌨️</span>
           Manual Input
         </Heading>
-        <ul class="space-y-2 text-sm">
-          <li class="flex items-start gap-2">
+        <List class="space-y-2 text-sm">
+          <Li class="flex items-start gap-2">
             <span class="text-green-500">✓</span>
             <span>Create new snippets</span>
-          </li>
-          <li class="flex items-start gap-2">
+          </Li>
+          <Li class="flex items-start gap-2">
             <span class="text-green-500">✓</span>
             <span>Edit before saving</span>
-          </li>
-          <li class="flex items-start gap-2">
+          </Li>
+          <Li class="flex items-start gap-2">
             <span class="text-green-500">✓</span>
             <span>Paste from external sources</span>
-          </li>
-          <li class="flex items-start gap-2">
+          </Li>
+          <Li class="flex items-start gap-2">
             <span class="text-green-500">✓</span>
             <span>More control</span>
-          </li>
-        </ul>
+          </Li>
+        </List>
       </div>
     </div>
     <p class="mt-4 text-center text-sm text-gray-600">
@@ -319,7 +334,7 @@
   </section>
 
   <section class="space-y-6">
-    <h2 class="text-2xl font-semibold">Props</h2>
+    <Heading tag="h2" class="text-2xl font-semibold">Props</Heading>
     <Table items={clipboardManagerProps} hoverable />
   </section>
 </div>
