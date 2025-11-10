@@ -1,6 +1,7 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type ClipboardManagerVariants = VariantProps<typeof clipboardManager>;
+export type ClipboardManagerVariants = VariantProps<typeof clipboardManager> & Classes<typeof clipboardManager>;
 
 export const clipboardManager = tv({
   slots: {
@@ -45,6 +46,15 @@ actionIcon: "w-4 h-4 flex-shrink-0",
     toast: "flex items-center gap-2 px-4 py-2 rounded-lg shadow-lg",
     toastIcon: "w-5 h-5",
     toastText: "text-sm font-medium",
+    // buttons
+    addToClipboard: "whitespace-nowrap rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:opacity-50",
+    clearAll: "rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700",
+    // Selection bubble menu
+    selectionMenu: "selection-menu fixed z-50 -translate-x-1/2 -translate-y-full",
+    selectionBubble: "mb-2 flex items-center gap-2 rounded-lg bg-gray-900 px-3 py-2 text-white shadow-xl",
+    selectionText: "max-w-[200px] truncate text-xs",
+    selectionButton: "rounded bg-primary-700 px-2 py-1 text-xs font-medium whitespace-nowrap transition hover:bg-primary-500",
+    selectionArrow: "absolute bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-gray-900",
   },
   variants: {
     pinned: {

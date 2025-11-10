@@ -2138,12 +2138,12 @@ export interface SplitPaneProps {
   initialSizes?: number[];
   onResize?: (sizes: number[]) => void;
   children: Snippet;
-  class?: string;
+  class?: ClassValue | null;
 }
 
 export interface PaneProps {
   children?: Snippet;
-  class?: string;
+  class?: ClassValue | null;
   style?: string;
 }
 
@@ -2154,7 +2154,7 @@ export interface DividerProps {
   onTouchStart: (e: TouchEvent, index: number) => void;
   onKeyDown: (e: KeyboardEvent, index: number) => void;
   isDragging: boolean;
-  class?: string;
+  class?: ClassValue | null;
   currentSize: number;
 }
 
@@ -2263,7 +2263,7 @@ export interface ClipboardManagerProps extends ClipboardManagerVariants {
   clearLabel?: string;
   limit?: number;
   saveToStorage?: boolean;
-  class?: string;
+  class?: ClassValue | null;
   toastDuration?: number;
   filterSensitive?: boolean;
   maxLength?: number;
@@ -2273,4 +2273,6 @@ export interface ClipboardManagerProps extends ClipboardManagerVariants {
   emptyState?: Snippet;
   storageKey?: string;
   open?: boolean;
+  badgeProps?: Omit<BadgeProps, "children">;
+  modalProps?: ModalProps;
 }

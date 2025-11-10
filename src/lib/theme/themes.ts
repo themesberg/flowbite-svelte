@@ -32,7 +32,6 @@ export { sidebar, sidebarBrand, sidebarButton, sidebarCta, sidebarDropdownWrappe
 export { cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimonialPlaceholder, textPlaceholder, videoPlaceholder, widgetPlaceholder } from "../skeleton";
 export { speedDial, speedDialButton } from "../speed-dial";
 export { spinner } from "../spinner";
-export { stepIndicator } from "../step-indicator";
 export { stepper, progressStepper, verticalStepper, detailedStepper, breadcrumbStepper, timelineStepper } from "../stepper";
 export { table, tableBodyCell, tableBodyRow, tableHead, tableHeadCell, tableSearch } from "../table";
 export { tabs, tabItem } from "../tabs";
@@ -44,8 +43,6 @@ export { tooltip } from "../tooltip";
 // export {} from "../video";
 
 // forms
-// export {addon} from "../forms/input-addon";
-export { buttonToggle, buttonToggleGroup } from "../forms/button-toggle";
 export { checkbox, checkboxButton } from "../forms/checkbox";
 export { dropzone } from "../forms/dropzone";
 export { fileupload } from "../forms/fileupload";
@@ -58,7 +55,6 @@ export { radio, radioButton } from "../forms/radio";
 export { range } from "../forms/range";
 export { search } from "../forms/search";
 export { select, multiSelect } from "../forms/select";
-export { tags } from "../forms/tags";
 export { textarea } from "../forms/textarea";
 export { timepicker } from "../forms/timepicker";
 export { toggle } from "../forms/toggle";
@@ -78,11 +74,15 @@ export { secondary } from "../typography/secondary";
 export { span } from "../typography/span";
 
 // extend
-export { commandPalette } from "$lib/command-palette/theme";
-export { virtualList } from "$lib/virtuallist";
-export { kanbanBoard, kanbanCard } from "$lib/kanban/theme";
-export { splitpane, pane, divider, dividerHitArea } from "$lib/split-pane/theme";
-export { tour } from "$lib/tour/theme";
-export { scrollspy } from "$lib/scroll-spy/theme";
-export { virtualMasonry } from "$lib/virtual-masonry/theme";
+export { buttonToggle, buttonToggleGroup } from "../forms/button-toggle";
 export { clipboardManager } from "$lib/clipboard-manager/theme"
+export { commandPalette } from "$lib/command-palette/theme";
+export { kanbanBoard, kanbanCard } from "$lib/kanban/theme";
+export { scrollspy } from "$lib/scroll-spy/theme";
+export { splitpane, pane, divider, dividerHitArea } from "$lib/split-pane/theme";
+export { stepIndicator } from "../step-indicator";
+export { tags } from "../forms/tags";
+export { tour } from "$lib/tour/theme";
+export { virtualList } from "$lib/virtuallist";
+export { virtualMasonry } from "$lib/virtual-masonry/theme";
+

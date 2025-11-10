@@ -2,8 +2,8 @@
   import { ClipboardManager } from "flowbite-svelte";
 
   let snippets = [
-    { id: 1, text: "console.log()", pinned: true, timestamp: Date.now() },
-    { id: 2, text: "async function", pinned: true, timestamp: Date.now() }
+    { id: 1, text: "console.log()", pinned: true, timestamp: Date.now() - 20 * 60 * 1000},
+    { id: 2, text: "async function", pinned: true, timestamp: Date.now() - 30 * 60 * 1000 }
   ];
 </script>
 
