@@ -74,7 +74,6 @@
   }
 </script>
 
-
 <div {...restProps} class={styles.container({ class: clsx(theme?.container, className) })}>
   {#each columns as col (col.id)}
     <div
@@ -90,14 +89,7 @@
 
       <div class={styles.cardList({ class: clsx(theme?.cardList, classes?.cardList) })} role="list" aria-label={`${col.title} cards`}>
         {#each col.cards as card (card.id)}
-          <KanbanCard 
-            {card} 
-            {classes} 
-            {...cardProps}
-            isDragging={draggedCard?.id === card.id} 
-            onDragStart={() => handleDragStart(card, col.id)} 
-            onDragEnd={handleDragEnd} 
-          />
+          <KanbanCard {card} {classes} {...cardProps} isDragging={draggedCard?.id === card.id} onDragStart={() => handleDragStart(card, col.id)} onDragEnd={handleDragEnd} />
         {/each}
       </div>
 

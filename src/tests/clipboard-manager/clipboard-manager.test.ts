@@ -340,10 +340,13 @@ describe("ClipboardManager Storage", () => {
     });
 
     // Then wait a bit longer for the $effect to save to localStorage
-    await waitFor(() => {
-      const stored = localStorage.getItem("flowbite-clipboard-manager");
-      expect(stored).toBeTruthy();
-    }, { timeout: 3000 });
+    await waitFor(
+      () => {
+        const stored = localStorage.getItem("flowbite-clipboard-manager");
+        expect(stored).toBeTruthy();
+      },
+      { timeout: 3000 }
+    );
 
     const stored = localStorage.getItem("flowbite-clipboard-manager");
     const items = JSON.parse(stored!);

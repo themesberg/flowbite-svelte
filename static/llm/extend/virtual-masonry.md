@@ -23,7 +23,7 @@ See [examples](/docs-examples/extend/virtual-masonry) and [code](https://github.
 
 #### Types
 
-[VirtualMasonryProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2233)
+[VirtualMasonryProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2234)
 
 #### Props
 

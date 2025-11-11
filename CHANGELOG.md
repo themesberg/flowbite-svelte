@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.27.0
+
+### Minor Changes
+
+- feat: ClipboardManager
+
 ## 1.26.0
 
 ### Minor Changes

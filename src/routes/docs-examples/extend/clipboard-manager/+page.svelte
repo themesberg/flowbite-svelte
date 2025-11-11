@@ -13,7 +13,7 @@
     eager: true
   }) as Record<string, string>;
 
-  const sentitiveEx = "detectSensitiveData=(text) => (/confidential|secret/i).test(text)"
+  const sentitiveEx = "detectSensitiveData=(text) => (/confidential|secret/i).test(text)";
 </script>
 
 <div class="mx-auto max-w-7xl space-y-8 p-6">
@@ -182,9 +182,12 @@
       <P class="text-sm">Save frequently used code patterns directly from the editor.</P>
       <P class="text-sm">
         Use <code class="text-primary-700">filterSensitive={false}</code>
-        to unblock sensitive data such as password pattern, api token pattern, etc. The component provide default function (see below) to detect sensitive data. However use the <code class="text-primary-700">detectSensitiveData</code> prop to provide your own logic.</P>
-      <HighlightCompo codeLang="ts" code={sentitiveEx} class="max-w-7xl bg-white my-2" />
-       <P>This will block texts containing "confidential" or "secret".</P>
+        to unblock sensitive data such as password pattern, api token pattern, etc. The component provide default function (see below) to detect sensitive data. However use the
+        <code class="text-primary-700">detectSensitiveData</code>
+         prop to provide your own logic.
+      </P>
+      <HighlightCompo codeLang="ts" code={sentitiveEx} class="my-2 max-w-7xl bg-white" />
+      <P>This will block texts containing "confidential" or "secret".</P>
       <List>
         <Li>Detects common sensitive information (credit cards, passwords, API keys, credentials).</Li>
         <Li>⚠️ Note: These patterns are heuristic and may produce false positives/negatives.</Li>
@@ -222,7 +225,7 @@
       </div>
       <P class="text-sm">
         Use <code class="text-primary-700">showInput={false}</code>
-         to hide the input box and use only selection menu with custom rendering
+        to hide the input box and use only selection menu with custom rendering
       </P>
       <CodeWrapper class="max-w-7xl">
         <ExampleComponents.NoManualInput />

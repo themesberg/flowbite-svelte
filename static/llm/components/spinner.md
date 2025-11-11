@@ -29,7 +29,7 @@ The Spinner component offers five animation types: default (rotating ring), dots
 
 ```svelte
 <script lang="ts">
-  import { Spinner } from "$lib";
+  import { Spinner } from "flowbite-svelte";
 </script>
 
 <Spinner type="default" color="primary" />

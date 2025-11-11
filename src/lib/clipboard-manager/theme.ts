@@ -54,7 +54,7 @@ export const clipboardManager = tv({
     selectionBubble: "mb-2 flex items-center gap-2 rounded-lg bg-gray-900 px-3 py-2 text-white shadow-xl",
     selectionText: "max-w-[200px] truncate text-xs",
     selectionButton: "rounded bg-primary-700 px-2 py-1 text-xs font-medium whitespace-nowrap transition hover:bg-primary-500",
-    selectionArrow: "absolute bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-gray-900",
+    selectionArrow: "absolute bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-gray-900"
   },
   variants: {
     pinned: {

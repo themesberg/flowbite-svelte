@@ -13,7 +13,7 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
 
 ```svelte
 <script lang="ts">
-  import { type KanbanCardType, type KanbanColumnType, KanbanBoard } from "flowbite-svelte";
+  import { type KanbanCardType, type KanbanColumnType, KanbanBoard, Heading, P } from "flowbite-svelte";
 
   let columns = $state<KanbanColumnType[]>([
     {
@@ -83,10 +83,6 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
   function handleMove(card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) {
     console.log(`Moved "${card.title}" from "${from.title}" to "${to.title}"`);
 
-    // The KanbanBoard component already mutated the columns.
-    // We just need to trigger reactivity by creating a new reference
-    columns = [...columns];
-
     // Here you could make an API call to persist the change
     // await fetch('/api/cards/move', { method: 'POST', body: JSON.stringify({ cardId: card.id, fromId: from.id, toId: to.id }) })
   }
@@ -110,11 +106,11 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
   }
 </script>
 
-<div class="bg-gray-100 py-4 md:py-8">
+<div class="bg-gray-100 py-4 md:py-8 dark:bg-gray-800">
   <div class="mx-auto max-w-7xl px-2 sm:px-4">
     <div class="mb-4 md:mb-6">
-      <h1 class="text-2xl font-bold text-gray-900 md:text-3xl">Project Kanban Board</h1>
-      <p class="mt-1 text-sm text-gray-600 md:mt-2 md:text-base">Drag cards between columns to update their status</p>
+      <Heading tag="h1" class="text-2xl md:text-3xl">Project Kanban Board</Heading>
+      <P class="mt-1 text-sm text-gray-600 md:mt-2 md:text-base">Drag cards between columns to update their status</P>
     </div>
 
     <KanbanBoard bind:columns onMove={handleMove} onAddCard={handleAddCard} />
@@ -132,11 +128,11 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
 </div>
 ```
 
-## Custom Styling
+## Using Modal
 
 ```svelte
 <script lang="ts">
-  import { type KanbanColumnType, KanbanBoard } from "flowbite-svelte";
+  import { type KanbanColumnType, KanbanBoard, Modal, Label, Input, Textarea, Button } from "flowbite-svelte";
 
   let columns = $state<KanbanColumnType[]>([
     {
@@ -159,15 +155,65 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
     }
   ]);
 
+  let formModal = $state(false);
+  let currentColumn = $state<KanbanColumnType | null>(null);
+  let error = $state("");
+
   function handleMove() {
     columns = [...columns];
   }
 
   function handleAddCard(col: KanbanColumnType) {
-    const title = prompt(`Add card to ${col.title}:`);
-    if (!title?.trim()) return;
+    currentColumn = col;
+    formModal = true;
+    error = "";
+  }
 
-    columns = columns.map((column) => (column.id === col.id ? { ...column, cards: [...column.cards, { id: crypto.randomUUID(), title: title.trim() }] } : column));
+  function onaction({ action, data }: { action: string; data: FormData }) {
+    error = "";
+
+    if (action === "addCard") {
+      const title = data.get("title") as string;
+      const description = data.get("description") as string;
+      const tagsInput = data.get("tags") as string;
+
+      // Validate title
+      if (!title?.trim()) {
+        error = "Title is required";
+        return false;
+      }
+
+      // Parse tags
+      const tags = tagsInput?.trim()
+        ? tagsInput
+            .split(",")
+            .map((tag) => tag.trim())
+            .filter(Boolean)
+        : undefined;
+
+      // Add card to column
+      if (currentColumn) {
+        columns = columns.map((column) =>
+          column.id === currentColumn!.id
+            ? {
+                ...column,
+                cards: [
+                  ...column.cards,
+                  {
+                    id: crypto.randomUUID(),
+                    title: title.trim(),
+                    description: description?.trim() || undefined,
+                    tags
+                  }
+                ]
+              }
+            : column
+        );
+      }
+
+      // Reset current column
+      currentColumn = null;
+    }
   }
 </script>
 
@@ -176,19 +222,50 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
   onMove={handleMove}
   onAddCard={handleAddCard}
   classes={{
-    column: "bg-white shadow-lg",
+    column: "dark:bg-gray-800 shadow-lg",
     card: "hover:shadow-xl transition-shadow",
     cardTitle: "text-blue-600 font-bold",
-    addButton: "bg-blue-500 hover:bg-blue-600 text-white"
+    addButton: "bg-blue-500 hover:bg-blue-600 text-white dark:text-white",
+    cardTags: "text-gray-900"
   }}
 />
+
+<Modal form bind:open={formModal} size="sm" {onaction}>
+  <div class="flex flex-col space-y-6">
+    <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
+      Add Card to {currentColumn?.title}
+    </h3>
+
+    {#if error}
+      <Label color="red">{error}</Label>
+    {/if}
+
+    <Label class="space-y-2">
+      <span>Title *</span>
+      <Input type="text" name="title" placeholder="Enter card title" required />
+    </Label>
+
+    <Label class="space-y-2">
+      <span>Description</span>
+      <Textarea name="description" placeholder="Enter description (optional)" rows={3} class="w-full" />
+    </Label>
+
+    <Label class="space-y-2">
+      <span>Tags</span>
+      <Input type="text" name="tags" placeholder="tag1, tag2, tag3" />
+      <p class="text-sm text-gray-500 dark:text-gray-400">Separate tags with commas</p>
+    </Label>
+
+    <Button type="submit" value="addCard" class="w-full">Add Card</Button>
+  </div>
+</Modal>
 ```
 
 ## Using LocalStorage
 
 ```svelte
 <script lang="ts">
-  import { type KanbanCardType, type KanbanColumnType, KanbanBoard } from "flowbite-svelte";
+  import { type KanbanCardType, type KanbanColumnType, KanbanBoard, Button } from "flowbite-svelte";
   import { onMount } from "svelte";
 
   const STORAGE_KEY = "my-kanban-board";
@@ -218,7 +295,6 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
 
   function handleMove(card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) {
     console.log(`Moved "${card.title}" from "${from.title}" to "${to.title}"`);
-    columns = [...columns]; // Trigger reactivity and persistence (card already moved by component)
   }
 
   function handleAddCard(col: KanbanColumnType) {
@@ -251,11 +327,21 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
 
 <div class="p-4">
   <div class="mb-4 flex items-center justify-between">
-    <h1 class="text-2xl font-bold">My Tasks</h1>
-    <button onclick={clearBoard} class="rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600">Clear Board</button>
+    <h1 class="text-2xl font-bold dark:text-white">My Tasks</h1>
+    <Button onclick={clearBoard}>Clear Board</Button>
   </div>
 
-  <KanbanBoard bind:columns onMove={handleMove} onAddCard={handleAddCard} />
+  <KanbanBoard
+    bind:columns
+    onMove={handleMove}
+    onAddCard={handleAddCard}
+    classes={{
+      column: "dark:bg-gray-800 shadow-lg",
+      card: "hover:shadow-xl transition-shadow",
+      cardTitle: "dark:text-white font-bold",
+      addButton: "bg-primary-500 hover:bg-primary-600 text-white dark:text-white"
+    }}
+  />
 </div>
 ```
 
@@ -291,9 +377,6 @@ For production, use a proper database (PostgreSQL, MongoDB, Supabase, etc.) with
   });
 
   async function handleMove(card: KanbanCardType, from: KanbanColumnType, to: KanbanColumnType) {
-    // Trigger reactivity to reflect the card move performed by KanbanBoard
-    columns = [...columns];
-
     try {
       const response = await fetch("/api/kanban/move", {
         method: "POST",
@@ -340,15 +423,31 @@ For production, use a proper database (PostgreSQL, MongoDB, Supabase, etc.) with
   }
 </script>
 
-{#if loading}
-  <div class="flex h-64 items-center justify-center">
-    <div class="text-gray-600">Loading board...</div>
-  </div>
-{:else if error}
-  <div class="rounded border border-red-200 bg-red-50 p-4 text-red-800">
-    Error: {error}
-  </div>
-{:else}
-  <KanbanBoard bind:columns onMove={handleMove} onAddCard={handleAddCard} />
-{/if}
+<div class="bg-white p-4 dark:bg-gray-800">
+  {#if loading}
+    <div class="flex h-64 items-center justify-center">
+      <div class="text-gray-600">Loading board...</div>
+    </div>
+  {:else if error}
+    <div class="rounded border border-red-200 bg-red-50 p-4 text-red-800">
+      Error: {error}
+    </div>
+  {:else}
+    <KanbanBoard bind:columns onMove={handleMove} onAddCard={handleAddCard} />
+  {/if}
+</div>
 ```
+
+## Component data
+
+### KanbanBoard
+
+#### Types
+
+[KanbanBoardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2113)
+
+#### Props
+
+- columns: $bindable([])
+- onMove: (_card: KanbanCardType, _from: KanbanColumnType, _to: KanbanColumnType) => {
+

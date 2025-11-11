@@ -38,7 +38,7 @@
 
   function onaction({ action, data }: { action: string; data: FormData }) {
     error = "";
-    
+
     if (action === "addCard") {
       const title = data.get("title") as string;
       const description = data.get("description") as string;
@@ -51,26 +51,29 @@
       }
 
       // Parse tags
-      const tags = tagsInput?.trim() 
-        ? tagsInput.split(",").map(tag => tag.trim()).filter(Boolean) 
+      const tags = tagsInput?.trim()
+        ? tagsInput
+            .split(",")
+            .map((tag) => tag.trim())
+            .filter(Boolean)
         : undefined;
 
       // Add card to column
       if (currentColumn) {
-        columns = columns.map((column) => 
-          column.id === currentColumn!.id 
-            ? { 
-                ...column, 
+        columns = columns.map((column) =>
+          column.id === currentColumn!.id
+            ? {
+                ...column,
                 cards: [
-                  ...column.cards, 
-                  { 
-                    id: crypto.randomUUID(), 
+                  ...column.cards,
+                  {
+                    id: crypto.randomUUID(),
                     title: title.trim(),
                     description: description?.trim() || undefined,
                     tags
                   }
-                ] 
-              } 
+                ]
+              }
             : column
         );
       }
@@ -99,27 +102,27 @@
     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
       Add Card to {currentColumn?.title}
     </h3>
-    
+
     {#if error}
       <Label color="red">{error}</Label>
     {/if}
-    
+
     <Label class="space-y-2">
       <span>Title *</span>
       <Input type="text" name="title" placeholder="Enter card title" required />
     </Label>
-    
+
     <Label class="space-y-2">
       <span>Description</span>
       <Textarea name="description" placeholder="Enter description (optional)" rows={3} class="w-full" />
     </Label>
-    
+
     <Label class="space-y-2">
       <span>Tags</span>
       <Input type="text" name="tags" placeholder="tag1, tag2, tag3" />
       <p class="text-sm text-gray-500 dark:text-gray-400">Separate tags with commas</p>
     </Label>
-    
+
     <Button type="submit" value="addCard" class="w-full">Add Card</Button>
   </div>
 </Modal>

@@ -62,15 +62,18 @@
 <div class="p-4">
   <div class="mb-4 flex items-center justify-between">
     <h1 class="text-2xl font-bold dark:text-white">My Tasks</h1>
-    <Button onclick={clearBoard} >Clear Board</Button>
+    <Button onclick={clearBoard}>Clear Board</Button>
   </div>
 
-  <KanbanBoard bind:columns onMove={handleMove} onAddCard={handleAddCard} 
+  <KanbanBoard
+    bind:columns
+    onMove={handleMove}
+    onAddCard={handleAddCard}
     classes={{
-    column: "dark:bg-gray-800 shadow-lg",
-    card: "hover:shadow-xl transition-shadow",
-    cardTitle: "dark:text-white font-bold",
-    addButton: "bg-primary-500 hover:bg-primary-600 text-white dark:text-white"
-  }}
+      column: "dark:bg-gray-800 shadow-lg",
+      card: "hover:shadow-xl transition-shadow",
+      cardTitle: "dark:text-white font-bold",
+      addButton: "bg-primary-500 hover:bg-primary-600 text-white dark:text-white"
+    }}
   />
 </div>

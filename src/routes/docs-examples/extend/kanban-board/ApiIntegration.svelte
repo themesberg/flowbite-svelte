@@ -65,16 +65,16 @@
   }
 </script>
 
-<div class="p-4 bg-white dark:bg-gray-800">
-{#if loading}
-  <div class="flex h-64 items-center justify-center">
-    <div class="text-gray-600">Loading board...</div>
-  </div>
-{:else if error}
-  <div class="rounded border border-red-200 bg-red-50 p-4 text-red-800">
-    Error: {error}
-  </div>
-{:else}
-  <KanbanBoard bind:columns onMove={handleMove} onAddCard={handleAddCard} />
-{/if}
+<div class="bg-white p-4 dark:bg-gray-800">
+  {#if loading}
+    <div class="flex h-64 items-center justify-center">
+      <div class="text-gray-600">Loading board...</div>
+    </div>
+  {:else if error}
+    <div class="rounded border border-red-200 bg-red-50 p-4 text-red-800">
+      Error: {error}
+    </div>
+  {:else}
+    <KanbanBoard bind:columns onMove={handleMove} onAddCard={handleAddCard} />
+  {/if}
 </div>

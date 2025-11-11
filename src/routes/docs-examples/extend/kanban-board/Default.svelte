@@ -92,18 +92,14 @@
   }
 </script>
 
-<div class="bg-gray-100 dark:bg-gray-800 py-4 md:py-8">
+<div class="bg-gray-100 py-4 md:py-8 dark:bg-gray-800">
   <div class="mx-auto max-w-7xl px-2 sm:px-4">
     <div class="mb-4 md:mb-6">
       <Heading tag="h1" class="text-2xl md:text-3xl">Project Kanban Board</Heading>
       <P class="mt-1 text-sm text-gray-600 md:mt-2 md:text-base">Drag cards between columns to update their status</P>
     </div>
 
-    <KanbanBoard 
-      bind:columns 
-      onMove={handleMove} 
-      onAddCard={handleAddCard}
-    />
+    <KanbanBoard bind:columns onMove={handleMove} onAddCard={handleAddCard} />
 
     <!-- Optional: Show stats -->
     <div class="mt-6 grid grid-cols-2 gap-3 md:mt-8 md:grid-cols-4 md:gap-4">

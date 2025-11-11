@@ -16,12 +16,6 @@
   <!-- Student notes -->
   <div class="notes-panel">
     <h3>My Notes</h3>
-    <ClipboardManager 
-      enableSelectionMenu={true}
-      selectionTarget="#persist-ex"
-      placeholder="Add your own notes..."
-      saveToStorage={false}
-      storageKey="persist-ex"
-    />
+    <ClipboardManager enableSelectionMenu={true} selectionTarget="#persist-ex" placeholder="Add your own notes..." saveToStorage={false} storageKey="persist-ex" />
   </div>
 </div>

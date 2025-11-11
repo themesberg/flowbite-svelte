@@ -1,9 +1,7 @@
 <script lang="ts">
   import { ClipboardManager } from "flowbite-svelte";
-  
- let items = [
-    { id: 1, text: "npm install package", pinned: true, timestamp: Date.now() }
-  ];
+
+  let items = [{ id: 1, text: "npm install package", pinned: true, timestamp: Date.now() }];
 </script>
 
 <div class="docs-layout">
@@ -16,13 +14,6 @@
 
   <!-- Sidebar with clipboard -->
   <aside class="sidebar">
-    <ClipboardManager 
-      {items}
-      enableSelectionMenu={true}
-      selectionTarget="#docs-content"
-      placeholder="Or paste a command..."
-      limit={30}
-      storageKey="documentation-site"
-    />
+    <ClipboardManager {items} enableSelectionMenu={true} selectionTarget="#docs-content" placeholder="Or paste a command..." limit={30} storageKey="documentation-site" />
   </aside>
 </div>

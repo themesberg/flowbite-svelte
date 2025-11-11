@@ -7,9 +7,4 @@
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 </div>
 
-<ClipboardManager 
-  enableSelectionMenu={true}
-  selectionTarget="#no-manual-input"
-  showInput={false}
-  storageKey="no-manual-input"
-/>
+<ClipboardManager enableSelectionMenu={true} selectionTarget="#no-manual-input" showInput={false} storageKey="no-manual-input" />

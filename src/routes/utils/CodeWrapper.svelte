@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import type { HTMLAttributes } from 'svelte/elements';
-  import { codewrapper } from './theme';
+  import type { Snippet } from "svelte";
+  import type { HTMLAttributes } from "svelte/elements";
+  import { codewrapper } from "./theme";
   interface Props extends HTMLAttributes<HTMLDivElement> {
     children?: Snippet;
     codeblock?: Snippet;
@@ -11,7 +11,7 @@
   }
   let { children, codeblock, innerClass, codeClass, class: classname, ...restProps }: Props = $props();
   const { base, inner } = $derived(codewrapper());
-  const codeCls = children ? 'border-t border-gray-200 dark:border-gray-600' : '';
+  const codeCls = children ? "border-t border-gray-200 dark:border-gray-600" : "";
 </script>
 
 <div {...restProps} class={base({ class: classname })}>

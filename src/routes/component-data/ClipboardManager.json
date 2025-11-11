@@ -1,0 +1,30 @@
+{
+  "name": "ClipboardManager",
+  "type": {
+    "name": "ClipboardManagerProps",
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2258"
+  },
+  "props": [
+    ["items: initialItems", "[]"],
+    ["placeholder", "\"Type and save to clipboard\""],
+    ["saveLabel", "\"Save\""],
+    ["clearLabel", "\"Clear All\""],
+    ["limit", "20"],
+    ["saveToStorage", "true"],
+    ["toastDuration", "2000"],
+    ["filterSensitive", "true"],
+    ["maxLength", "10000"],
+    ["enableSelectionMenu", "false"],
+    ["selectionTarget", "\"body\""],
+    ["showInput", "true"],
+    ["class: className", "\"\""],
+    ["classes", ""],
+    ["storageKey", ""],
+    ["children", ""],
+    ["emptyState", ""],
+    ["open", "$bindable()"],
+    ["// If undefined", ""],
+    ["renders inline; if defined", ""],
+    ["renders as modal\n    badgeProps", "{ color: \"blue\", class: \"text-xs\""]
+  ]
+}

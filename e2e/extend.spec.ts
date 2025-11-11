@@ -12,7 +12,6 @@ test("ClipboardManager page should have h1", async ({ page }) => {
   expect(await page.textContent("h1")).toBe("Svelte Clipboard Manager");
 });
 
-
 // CommandPalette
 test("CommandPalette page should have h1", async ({ page }) => {
   await page.goto("/docs/extend/command-palette");

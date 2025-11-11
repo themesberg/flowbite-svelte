@@ -75,7 +75,7 @@ export { span } from "../typography/span";
 
 // extend
 export { buttonToggle, buttonToggleGroup } from "../forms/button-toggle";
-export { clipboardManager } from "$lib/clipboard-manager/theme"
+export { clipboardManager } from "$lib/clipboard-manager/theme";
 export { commandPalette } from "$lib/command-palette/theme";
 export { kanbanBoard, kanbanCard } from "$lib/kanban/theme";
 export { scrollspy } from "$lib/scroll-spy/theme";
@@ -85,4 +85,3 @@ export { tags } from "../forms/tags";
 export { tour } from "$lib/tour/theme";
 export { virtualList } from "$lib/virtuallist";
 export { virtualMasonry } from "$lib/virtual-masonry/theme";
-

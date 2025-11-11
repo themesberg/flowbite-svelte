@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.26.0",
+  "version": "1.27.0",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -277,6 +277,10 @@
     "./Clipboard.svelte": {
       "types": "./dist/clipboard/Clipboard.svelte.d.ts",
       "svelte": "./dist/clipboard/Clipboard.svelte"
+    },
+    "./ClipboardManager.svelte": {
+      "types": "./dist/clipboard-manager/ClipboardManager.svelte.d.ts",
+      "svelte": "./dist/clipboard-manager/ClipboardManager.svelte"
     },
     "./CommandPalette.svelte": {
       "types": "./dist/command-palette/CommandPalette.svelte.d.ts",

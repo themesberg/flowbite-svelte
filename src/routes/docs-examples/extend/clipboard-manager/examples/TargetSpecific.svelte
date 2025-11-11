@@ -7,8 +7,4 @@
   <p>Users can select any text to save it.</p>
 </div>
 
-<ClipboardManager 
-  enableSelectionMenu={true}
-  selectionTarget="#article-content"
-  storageKey="specific-target"
-/>
+<ClipboardManager enableSelectionMenu={true} selectionTarget="#article-content" storageKey="specific-target" />
