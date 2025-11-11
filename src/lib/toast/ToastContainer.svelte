@@ -1,4 +1,3 @@
-<!-- ToastContainer.svelte -->
 <script lang="ts">
   import type { ToastContainerProps } from "$lib/types";
   

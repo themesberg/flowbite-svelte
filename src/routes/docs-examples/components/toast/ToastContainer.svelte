@@ -8,7 +8,7 @@
     id: number;
     message: string;
     color: ToastColor;
-    timeoutId?: NodeJS.Timeout | number;
+    timeoutId?: ReturnType<typeof setTimeout>;
   }
 
   let toasts = $state<ToastItem[]>([]);
