@@ -26,3 +26,26 @@ export function getFilteredFileNames(dirName: string) {
 export function toKebabCase(inputString: string) {
   return inputString.toLowerCase().replace(/\s+/g, "-");
 }
+
+export function copyToClipboard(text: string): Promise<void> {
+  if (!navigator.clipboard) {
+		return Promise.reject(new Error('Clipboard API not available'));
+  }
+  
+	return navigator.clipboard
+		.writeText(text)
+		.then(() => {
+			console.log('Text copied to clipboard');
+		})
+		.catch((err) => {
+			console.error('Failed to copy: ', err);
+			throw err; // Re-throw the error so the caller can handle it if needed
+		});
+}
+
+
+export function replaceLibImport(componentString: string): string {
+	return componentString
+		.replace(/from ["']\$lib["']/g, "from 'flowbite-svelte'")
+		.replace(/from ["']\$lib\//g, "from 'flowbite-svelte/");
+}

@@ -623,7 +623,7 @@ export interface DrawerProps extends DrawerVariants, Omit<DialogProps, "hidden" 
   offset?: string;
 }
 
-export interface DrawerHandleProps extends DrawerHandleVariants, HTMLButtonAttributes {}
+export interface DrawerHandleProps extends DrawerHandleVariants, HTMLButtonAttributes { }
 
 export interface DrawerheadProps extends DrawerheadVariants, HTMLButtonAttributes {
   closeIcon?: Snippet;
@@ -782,7 +782,7 @@ export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, O
 }
 
 // helper
-export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> {}
+export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> { }
 
 // input
 export type InputValue = string | number | string[] | undefined;
@@ -978,7 +978,7 @@ export interface TimepickerProps {
   timeIntervals?: string[];
   columns?: ColumnCount;
   // Callback props instead of events
-  onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
+  onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
 }
 
 // textarea
@@ -1167,7 +1167,7 @@ export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLD
   end?: Snippet;
 }
 
-export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
+export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> { }
 
 export type ToolbarButtonProps = ToolbarButtonVariants &
   AnchorButtonAttributes & {
@@ -1484,7 +1484,7 @@ export interface SkeletonProps extends SkeletonVariants, HTMLAttributes<HTMLDivE
   size?: SkeletonVariants["size"];
 }
 
-export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
+export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
 
 export interface TextPlaceholderProps extends TextPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
   size?: TextPlaceholderVariants["size"];
@@ -1494,7 +1494,7 @@ export interface VideoPlaceholderProps extends VideoPlaceholderVariants, HTMLAtt
   size?: VideoPlaceholderVariants["size"];
 }
 
-export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
+export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
 
 // speeddial
 export interface SpeedCtxType {
@@ -1889,7 +1889,7 @@ export interface ToastProps extends ToastVaraints, HTMLAttributes<HTMLDivElement
 }
 
 // tooltip
-export interface TooltipProps extends TooltipVariants, PopperProps {}
+export interface TooltipProps extends TooltipVariants, PopperProps { }
 
 // typography
 // anchor
@@ -2138,12 +2138,12 @@ export interface SplitPaneProps {
   initialSizes?: number[];
   onResize?: (sizes: number[]) => void;
   children: Snippet;
-  class?: string;
+  class?: ClassValue | null;
 }
 
 export interface PaneProps {
   children?: Snippet;
-  class?: string;
+  class?: ClassValue | null;
   style?: string;
 }
 
@@ -2154,7 +2154,7 @@ export interface DividerProps {
   onTouchStart: (e: TouchEvent, index: number) => void;
   onKeyDown: (e: KeyboardEvent, index: number) => void;
   isDragging: boolean;
-  class?: string;
+  class?: ClassValue | null;
   currentSize: number;
 }
 
@@ -2243,4 +2243,37 @@ export interface VirtualMasonryProps<T = unknown> extends VirtualMasonryVariants
   contained?: boolean;
   ariaLabel?: string;
   class?: ClassValue | null;
+}
+
+// clipboard-manager
+import type { ClipboardManagerVariants } from "$lib/clipboard-manager/theme"
+
+export interface ClipboardItem {
+  id: number;
+  text: string;
+  pinned?: boolean;
+  timestamp: number;
+}
+
+export interface ClipboardManagerProps extends ClipboardManagerVariants {
+  children?: Snippet<[{ item: ClipboardItem; copyItem: (item: ClipboardItem) => Promise<void>; deleteItem: (id: number) => void; togglePin: (id: number) => void }]>;
+  items?: ClipboardItem[];
+  placeholder?: string;
+  saveLabel?: string;
+  clearLabel?: string;
+  limit?: number;
+  saveToStorage?: boolean;
+  class?: ClassValue | null;
+  toastDuration?: number;
+  filterSensitive?: boolean;
+  maxLength?: number;
+  enableSelectionMenu?: boolean;
+  selectionTarget?: string;
+  showInput?: boolean; // NEW!
+  emptyState?: Snippet;
+  storageKey?: string;
+  open?: boolean;
+  badgeProps?: Omit<BadgeProps, "children">;
+  modalProps?: ModalProps;
+  detectSensitiveData?: (text: string) => boolean;
 }
