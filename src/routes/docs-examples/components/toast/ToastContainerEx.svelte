@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Toast, ToastContainer, P, Button, Heading } from "flowbite-svelte";
   import { fly } from "svelte/transition";
+  import { onDestroy } from "svelte";
 
   type ToastColor = "green" | "red" | "yellow" | "blue";
 
@@ -9,6 +10,7 @@
     message: string;
     color: ToastColor;
     timeoutId?: ReturnType<typeof setTimeout>;
+    visible: boolean; // Add this to control visibility
   }
 
   let toasts = $state<ToastItem[]>([]);
@@ -26,18 +28,18 @@
     const newToast: ToastItem = {
       id: nextId,
       message: messages[selectedColor],
-      color: selectedColor
+      color: selectedColor,
+      visible: true // Start visible
     };
-
-    toasts = [...toasts, newToast];
-    nextId++;
 
     // Auto-dismiss after 5 seconds
     const timeoutId = setTimeout(() => {
       dismissToast(newToast.id);
     }, 5000);
-    // Store timeout ID for cleanup
-    toasts = toasts.map((t) => (t.id === newToast.id ? { ...t, timeoutId } : t));
+    newToast.timeoutId = timeoutId;
+
+    toasts = [...toasts, newToast];
+    nextId++;
   }
 
   function dismissToast(id: number) {
@@ -46,7 +48,14 @@
     if (toast?.timeoutId) {
       clearTimeout(toast.timeoutId);
     }
-    toasts = toasts.filter((toast) => toast.id !== id);
+    
+    // Set visible to false to trigger outro transition
+    toasts = toasts.map((t) => (t.id === id ? { ...t, visible: false } : t));
+    
+    // Remove from array after transition completes (default fly duration is 200ms)
+    setTimeout(() => {
+      toasts = toasts.filter((t) => t.id !== id);
+    }, 300); // Slightly longer than transition duration
   }
 
   function handleClose(id: number) {
@@ -54,6 +63,15 @@
       dismissToast(id);
     };
   }
+
+  onDestroy(() => {
+    // Clear all pending timeouts on unmount
+    toasts.forEach((toast) => {
+      if (toast.timeoutId) {
+        clearTimeout(toast.timeoutId);
+      }
+    });
+  });
 </script>
 
 <ToastContainer position="top-right">
@@ -62,9 +80,10 @@
       color={toast.color} 
       dismissable={true} 
       transition={fly} 
-      params={{ x: 400, duration: 300 }} 
+      params={{ x: 200, duration: 800 }} 
       class="w-64" 
       onclose={handleClose(toast.id)}
+      bind:toastStatus={toast.visible}
     >
       {toast.message}
     </Toast>
