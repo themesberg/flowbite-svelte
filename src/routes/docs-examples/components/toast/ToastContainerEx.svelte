@@ -10,13 +10,13 @@
     message: string;
     color: ToastColor;
     timeoutId?: ReturnType<typeof setTimeout>;
-    visible: boolean; // Add this to control visibility
+    visible: boolean;
   }
 
   let toasts = $state<ToastItem[]>([]);
   let nextId = $state(1);
 
-  const messages = {
+  const messages: Record<ToastColor, string> = {
     green: "Successfully saved!",
     blue: "New message received",
     yellow: "Please review your changes",
@@ -29,7 +29,7 @@
       id: nextId,
       message: messages[selectedColor],
       color: selectedColor,
-      visible: true // Start visible
+      visible: true
     };
 
     // Auto-dismiss after 5 seconds
@@ -51,8 +51,7 @@
     
     // Set visible to false to trigger outro transition
     toasts = toasts.map((t) => (t.id === id ? { ...t, visible: false } : t));
-    
-    // Remove from array after transition completes (default fly duration is 200ms)
+
     setTimeout(() => {
       toasts = toasts.filter((t) => t.id !== id);
     }, 300); // Slightly longer than transition duration
