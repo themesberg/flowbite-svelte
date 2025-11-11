@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Toast, P, Button, Heading } from "flowbite-svelte";
+  import { Toast, ToastContainer, P, Button, Heading } from "flowbite-svelte";
   import { fly } from "svelte/transition";
 
   type ToastColor = "green" | "red" | "yellow" | "blue";
@@ -56,15 +56,23 @@
   }
 </script>
 
-<div class="relative min-h-screen p-8">
-  <div class="z-50 space-y-3" style="position: absolute; top: 1rem; right: 1rem;">
-    {#each toasts as toast (toast.id)}
-      <Toast color={toast.color} dismissable={true} transition={fly} params={{ x: 400, duration: 300 }} class="w-64" onclose={handleClose(toast.id)}>
-        {toast.message}
-      </Toast>
-    {/each}
-  </div>
+<!-- Much cleaner with ToastContainer! -->
+<ToastContainer position="bottom-left">
+  {#each toasts as toast (toast.id)}
+    <Toast 
+      color={toast.color} 
+      dismissable={true} 
+      transition={fly} 
+      params={{ x: 400, duration: 300 }} 
+      class="w-64" 
+      onclose={handleClose(toast.id)}
+    >
+      {toast.message}
+    </Toast>
+  {/each}
+</ToastContainer>
 
+<div class="relative min-h-screen p-8">
   <div class="mx-auto max-w-2xl">
     <div class="rounded-xl p-8 shadow-lg">
       <div class="mb-6 flex items-center gap-3">
