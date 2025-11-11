@@ -56,8 +56,7 @@
   }
 </script>
 
-<!-- Much cleaner with ToastContainer! -->
-<ToastContainer position="bottom-left">
+<ToastContainer position="top-right">
   {#each toasts as toast (toast.id)}
     <Toast 
       color={toast.color} 

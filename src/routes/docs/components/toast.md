@@ -32,16 +32,11 @@ Use this simple toast component with an icon, message, and dismissable close but
 {#include Default.svelte}
 ```
 
-## Toasts stack vertically
-
-```svelte example class="h-[500px]"
-{#include StackVertical.svelte}
-```
-
 ## ToastContainer
+Use the following example with `ToastContainer` to stack toasts vertically on the screen.
 
 ```svelte example class="h-[500px]"
-{#include ToastContainer.svelte}
+{#include ToastContainerEx.svelte}
 ```
 
 ## Colors
