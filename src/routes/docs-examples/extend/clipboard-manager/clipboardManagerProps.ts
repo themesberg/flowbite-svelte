@@ -9,96 +9,120 @@ export const clipboardManagerProps = [
     prop: "placeholder",
     type: "string",
     default: '"Type and save to clipboard"',
-    description: "Input placeholder"
+    description: "Input placeholder text"
   },
   {
     prop: "saveLabel",
     type: "string",
     default: '"Save"',
-    description: "Save button label"
+    description: "Label for the save button"
   },
   {
     prop: "clearLabel",
     type: "string",
     default: '"Clear All"',
-    description: "Clear button label"
+    description: "Label for the clear all button"
   },
   {
     prop: "limit",
     type: "number",
     default: "20",
-    description: "Max items to store"
+    description: "Maximum number of clipboard items to store"
   },
   {
     prop: "saveToStorage",
     type: "boolean",
     default: "true",
-    description: "Persist items to localStorage"
+    description: "Whether to persist clipboard items to localStorage"
   },
   {
     prop: "toastDuration",
     type: "number",
     default: "2000",
-    description: "Toast duration (ms)"
+    description: "Duration in milliseconds to show toast notifications"
   },
   {
     prop: "filterSensitive",
     type: "boolean",
     default: "true",
-    description: "Block sensitive data"
+    description: "Whether to filter out sensitive data (credit cards, passwords, etc.)"
   },
   {
     prop: "maxLength",
     type: "number",
     default: "10000",
-    description: "Max chars per item"
+    description: "Maximum character length for clipboard items"
   },
   {
     prop: "enableSelectionMenu",
     type: "boolean",
     default: "false",
-    description: "Show selection bubble"
+    description: "Enable text selection menu for saving selected text"
   },
   {
     prop: "selectionTarget",
     type: "string",
     default: '"body"',
-    description: "Selection menu target"
+    description: "CSS selector for elements where selection menu should be enabled"
   },
   {
     prop: "showInput",
     type: "boolean",
     default: "true",
-    description: "Show input field"
+    description: "Whether to show the input field for adding new clipboard items"
   },
   {
     prop: "class",
-    type: "string",
+    type: "ClassValue",
     default: '""',
-    description: "Additional classes"
+    description: "Additional CSS classes for the component container"
+  },
+  {
+    prop: "classes",
+    type: "ClipboardManagerVariants",
+    default: "undefined",
+    description: "Object containing CSS classes for component parts"
   },
   {
     prop: "storageKey",
-    type: "string | undefined",
+    type: "string",
     default: "undefined",
-    description: "localStorage key"
-  },
-  {
-    prop: "children",
-    type: "Snippet | undefined",
-    default: "undefined",
-    description: "Custom item renderer"
-  },
-  {
-    prop: "empty",
-    type: "Snippet | undefined",
-    default: "undefined",
-    description: "Custom empty state"
+    description: "Custom localStorage key (defaults to 'flowbite-clipboard-manager')"
   },
   {
     prop: "open",
-    type: "boolean | undefined",
+    type: "boolean",
     default: "undefined",
-    description: "Modal state (bindable)"
+    description: "Control modal state. If undefined, renders inline; if defined, renders as modal"
+  },
+  {
+    prop: "badgeProps",
+    type: "Omit<BadgeProps, 'children'>",
+    default: "{ color: 'blue', class: 'text-xs' }",
+    description: "Props to pass to the pinned badge component"
+  },
+  {
+    prop: "modalProps",
+    type: "ModalProps",
+    default: "undefined",
+    description: "Props to pass to the modal component when rendering as modal"
+  },
+  {
+    prop: "detectSensitiveData",
+    type: "(text: string) => boolean",
+    default: "undefined",
+    description: "Custom function to detect sensitive data. Overrides default detection"
+  },
+  {
+    prop: "children",
+    type: "Snippet",
+    default: "undefined",
+    description: "Custom render function for clipboard items. Receives item, copyItem, deleteItem, and togglePin"
+  },
+  {
+    prop: "emptyState",
+    type: "Snippet",
+    default: "undefined",
+    description: "Custom render function for the empty state"
   }
-]
+];
