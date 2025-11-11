@@ -32,6 +32,12 @@ Use this simple toast component with an icon, message, and dismissable close but
 {#include Default.svelte}
 ```
 
+## Toasts stack vertically
+
+```svelte example class="h-[500px]"
+{#include StackVertical.svelte}
+```
+
 ## Colors
 
 Use the `color` prop to easily change the colors of the icons. Set the `color` prop to `undefined` and use the `class` prop to customize your desired icon styles.

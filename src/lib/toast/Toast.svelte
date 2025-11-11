@@ -41,7 +41,7 @@
 
   const theme = getTheme("toast");
 
-  const { base, icon: iconVariants, content, close } = $derived(toast({ color, position, align }));
+  const { base, icon: iconVariants, content, close } = $derived(toast({ color, position: position || undefined, align }));
 
   let ref: HTMLDivElement | undefined = $state(undefined);
 

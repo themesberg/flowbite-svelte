@@ -17,7 +17,8 @@ export const toast = tv({
       "top-left": { base: "absolute top-5 start-5" },
       "top-right": { base: "absolute top-5 end-5" },
       "bottom-left": { base: "absolute bottom-5 start-5" },
-      "bottom-right": { base: "absolute bottom-5 end-5" }
+      "bottom-right": { base: "absolute bottom-5 end-5" },
+      none: { base: "relative" }
     },
     color: {
       // primary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
