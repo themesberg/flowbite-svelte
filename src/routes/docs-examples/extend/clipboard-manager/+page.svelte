@@ -182,10 +182,9 @@
       <P class="text-sm">Save frequently used code patterns directly from the editor.</P>
       <P class="text-sm">
         Use <code class="text-primary-700">filterSensitive={false}</code>
-        to unblock sensitive data such as password pattern, api token pattern, etc. The component provide default function (see below) to detect sensitive data. However use the <code class="text-primary-700">detectSensitiveData</code> prop to provide your own logic. 
-        <HighlightCompo codeLang="ts" code={sentitiveEx} class="max-w-7xl bg-white my-2" />
-        This will block texts containing "confidential" or "secret". 
-      </P>
+        to unblock sensitive data such as password pattern, api token pattern, etc. The component provide default function (see below) to detect sensitive data. However use the <code class="text-primary-700">detectSensitiveData</code> prop to provide your own logic.</P>
+      <HighlightCompo codeLang="ts" code={sentitiveEx} class="max-w-7xl bg-white my-2" />
+       <P>This will block texts containing "confidential" or "secret".</P>
       <List>
         <Li>Detects common sensitive information (credit cards, passwords, API keys, credentials).</Li>
         <Li>⚠️ Note: These patterns are heuristic and may produce false positives/negatives.</Li>
