@@ -4,7 +4,7 @@
   import { toastContainer } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
   
-  let { children, position = "top-right", class:className }: ToastContainerProps = $props();
+  let { children, position = "top-right", class: className, ...restProps }: ToastContainerProps = $props();
 
   const theme = getTheme("toastContainer");
   
@@ -19,6 +19,6 @@
 
 </script>
 
-<div class={base}>
+<div {...restProps} class={base}>
   {@render children()}
 </div>

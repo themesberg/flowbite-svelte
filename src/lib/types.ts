@@ -1888,7 +1888,7 @@ export interface ToastProps extends ToastVaraints, HTMLAttributes<HTMLDivElement
   class?: string;
 }
 
-export interface ToastContainerProps {
+export interface ToastContainerProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
   position?: ToastVaraints["position"];
   class?: ClassValue | null;
