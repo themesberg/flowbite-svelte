@@ -10,5 +10,6 @@ export { default as Positioning } from "./Positioning.svelte";
 export { default as Push } from "./Push.svelte";
 export { default as Simple } from "./Simple.svelte";
 export { default as Toast } from "./Toast.svelte";
+export { default as ToastContainerEx } from "./ToastContainerEx.svelte";
 export { default as Transitions } from "./Transitions.svelte";
 export { default as Undo } from "./Undo.svelte";

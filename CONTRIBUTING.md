@@ -2,6 +2,20 @@
 
 Here are some guidelines we'd like you to follow before submitting a PR.
 
+## Respectful Communication
+
+We welcome feedback and discussions about the project, but all communication must remain respectful and professional.
+
+- Project-related discussions should take place in public channels such as GitHub issues, discussions, or pull requests.
+
+- Personal emails, DMs, or other private contact should not be used to criticize, pressure, or personally address maintainers or contributors.
+
+- If you have feedback, please share it constructively and publicly, so others can participate and learn.
+
+- Harassment, personal attacks, or abusive messages — whether public or private — will not be tolerated and may result in being blocked or reported.
+
+Maintainers reserve the right to decide when communication crosses the line and to take appropriate action.
+
 ## Frontend pages
 
 <p><a href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. Instead of this:</p>

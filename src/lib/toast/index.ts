@@ -1,2 +1,3 @@
 export { default as Toast } from "./Toast.svelte";
-export { toast } from "./theme";
+export { default as ToastContainer } from "./ToastContainer.svelte";
+export { toast, toastContainer } from "./theme";
