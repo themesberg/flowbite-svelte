@@ -1,5 +1,5 @@
 # Flowbite Svelte Documentation - Full Context
-# Generated on 2025-11-11T05:08:59.848Z
+# Generated on 2025-11-12T10:21:39.689Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -17041,6 +17041,122 @@ Use this simple toast component with an icon, message, and dismissable close but
 </Toast>
 ```
 
+## ToastContainer
+Use the following example with `ToastContainer` to stack toasts vertically on the screen.
+
+```svelte
+<script lang="ts">
+  import { Toast, ToastContainer, P, Button, Heading } from "flowbite-svelte";
+  import { fly } from "svelte/transition";
+  import { onDestroy } from "svelte";
+
+  type ToastColor = "green" | "red" | "yellow" | "blue";
+
+  interface ToastItem {
+    id: number;
+    message: string;
+    color: ToastColor;
+    timeoutId?: ReturnType<typeof setTimeout>;
+    visible: boolean;
+  }
+
+  let toasts = $state<ToastItem[]>([]);
+  let nextId = $state(1);
+
+  const messages: Record<ToastColor, string> = {
+    green: "Successfully saved!",
+    blue: "New message received",
+    yellow: "Please review your changes",
+    red: "Operation failed"
+  };
+
+  function addToast(color?: ToastColor) {
+    const selectedColor = color || (["green", "blue", "yellow", "red"][Math.floor(Math.random() * 4)] as ToastColor);
+    const newToast: ToastItem = {
+      id: nextId,
+      message: messages[selectedColor],
+      color: selectedColor,
+      visible: true
+    };
+
+    // Auto-dismiss after 5 seconds
+    const timeoutId = setTimeout(() => {
+      dismissToast(newToast.id);
+    }, 5000);
+    newToast.timeoutId = timeoutId;
+
+    toasts = [...toasts, newToast];
+    nextId++;
+  }
+
+  function dismissToast(id: number) {
+    // Clear timeout if it exists
+    const toast = toasts.find((t) => t.id === id);
+    if (toast?.timeoutId) {
+      clearTimeout(toast.timeoutId);
+    }
+
+    // Set visible to false to trigger outro transition
+    toasts = toasts.map((t) => (t.id === id ? { ...t, visible: false } : t));
+
+    setTimeout(() => {
+      toasts = toasts.filter((t) => t.id !== id);
+    }, 300); // Slightly longer than transition duration
+  }
+
+  function handleClose(id: number) {
+    return () => {
+      dismissToast(id);
+    };
+  }
+
+  onDestroy(() => {
+    // Clear all pending timeouts on unmount
+    toasts.forEach((toast) => {
+      if (toast.timeoutId) {
+        clearTimeout(toast.timeoutId);
+      }
+    });
+  });
+</script>
+
+<ToastContainer position="top-right">
+  {#each toasts as toast (toast.id)}
+    <Toast color={toast.color} dismissable={true} transition={fly} params={{ x: 200, duration: 800 }} class="w-64" onclose={handleClose(toast.id)} bind:toastStatus={toast.visible}>
+      {toast.message}
+    </Toast>
+  {/each}
+</ToastContainer>
+
+<div class="relative min-h-screen p-8">
+  <div class="mx-auto max-w-2xl">
+    <div class="rounded-xl p-8 shadow-lg">
+      <div class="mb-6 flex items-center gap-3">
+        <svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+          />
+        </svg>
+        <Heading tag="h1" class="text-3xl">Toast Notifications Demo</Heading>
+      </div>
+      <P class="mb-8">Click the buttons below to trigger toast notifications. Each toast will appear in the top-right corner and automatically dismiss after 5 seconds.</P>
+      <div class="space-y-4">
+        <div class="grid grid-cols-2 gap-3">
+          <Button onclick={() => addToast("green")} color="green">Success Toast</Button>
+          <Button onclick={() => addToast("blue")} color="blue">Info Toast</Button>
+          <Button onclick={() => addToast("yellow")} color="yellow">Warning Toast</Button>
+          <Button onclick={() => addToast("red")} color="red">Error Toast</Button>
+        </div>
+        <Button onclick={() => addToast()} color="dark" class="w-full">Random Toast</Button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
 ## Colors
 
 Use the `color` prop to easily change the colors of the icons. Set the `color` prop to `undefined` and use the `class` prop to customize your desired icon styles.
@@ -17419,6 +17535,18 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 - class: className
 - classes
 
+### ToastContainer
+
+#### Types
+
+[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1891)
+
+#### Props
+
+- children
+- position: "top-right"
+- class: className
+
 
 ## References
 
@@ -17612,7 +17740,7 @@ When you want to add a fully custom styles, use `type="custom"`, and `class` to 
 
 #### Types
 
-[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1892)
+[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1898)
 
 #### Props
 
@@ -17895,7 +18023,7 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 #### Types
 
-[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2042)
+[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2048)
 
 #### Props
 
@@ -22422,7 +22550,7 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 #### Types
 
-[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1925)
+[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1931)
 
 #### Props
 
@@ -22680,7 +22808,7 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 #### Types
 
-[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1941)
+[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1947)
 
 #### Props
 
@@ -22838,7 +22966,7 @@ The `restProps` will be removed in the next version. Please use `divProps` and `
 
 #### Types
 
-[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1947)
+[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1953)
 
 #### Props
 
@@ -23607,7 +23735,7 @@ Use this example to create a horizontally aligned list of items.
 
 #### Types
 
-[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2001)
+[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2007)
 
 #### Props
 
@@ -24749,7 +24877,7 @@ See [examples](/docs-examples/extend/clipboard-manager) and [code](https://githu
 
 #### Types
 
-[ClipboardManagerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2258)
+[ClipboardManagerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2264)
 
 #### Props
 
@@ -24803,7 +24931,7 @@ See [examples](/docs-examples/extend/command-palette) and [code](https://github.
 
 #### Types
 
-[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2192)
+[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2198)
 
 #### Props
 
@@ -25303,7 +25431,7 @@ For production, use a proper database (PostgreSQL, MongoDB, Supabase, etc.) with
 
 #### Types
 
-[KanbanBoardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2113)
+[KanbanBoardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2119)
 
 #### Props
 
@@ -25491,7 +25619,7 @@ See [examples](/docs-examples/extend/scroll-spy) and [code](https://github.com/t
 
 #### Types
 
-[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2207)
+[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2213)
 
 #### Props
 
@@ -25535,7 +25663,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[DividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2150)
+[DividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2156)
 
 #### Props
 
@@ -25552,7 +25680,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[PaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2144)
+[PaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2150)
 
 #### Props
 
@@ -25564,7 +25692,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2130)
+[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2136)
 
 #### Props
 
@@ -25923,7 +26051,7 @@ See [examples](/docs-examples/extend/tour) and [code](https://github.com/themesb
 
 #### Types
 
-[TourProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2169)
+[TourProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2175)
 
 #### Props
 
@@ -26384,7 +26512,7 @@ Enable with `<VirtualList contained …>` or override via `classes.item`.
 
 #### Types
 
-[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2085)
+[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2091)
 
 #### Props
 
@@ -26430,7 +26558,7 @@ See [examples](/docs-examples/extend/virtual-masonry) and [code](https://github.
 
 #### Types
 
-[VirtualMasonryProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2234)
+[VirtualMasonryProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2240)
 
 #### Props
 

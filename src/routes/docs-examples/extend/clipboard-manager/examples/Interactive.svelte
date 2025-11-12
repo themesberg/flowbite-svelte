@@ -12,7 +12,7 @@
       <div class="prose prose-sm" id="demo-content">
         <p>
           <strong>Try selecting this text!</strong>
-           Highlight any portion and watch the bubble menu appear above your selection.
+          Highlight any portion and watch the bubble menu appear above your selection.
         </p>
         <p>Here are some useful things to save:</p>
         <ul>

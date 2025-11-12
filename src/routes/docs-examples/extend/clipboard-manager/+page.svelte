@@ -184,7 +184,7 @@
         Use <code class="text-primary-700">filterSensitive={false}</code>
         to unblock sensitive data such as password pattern, api token pattern, etc. The component provide default function (see below) to detect sensitive data. However use the
         <code class="text-primary-700">detectSensitiveData</code>
-         prop to provide your own logic.
+        prop to provide your own logic.
       </P>
       <HighlightCompo codeLang="ts" code={sentitiveEx} class="my-2 max-w-7xl bg-white" />
       <P>This will block texts containing "confidential" or "secret".</P>

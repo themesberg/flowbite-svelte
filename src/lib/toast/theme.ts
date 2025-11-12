@@ -106,5 +106,5 @@ export const toast = tv({
 });
 
 export const toastContainer = tv({
-  base:"fixed z-50 space-y-3"
-})
+  base: "fixed z-50 space-y-3"
+});

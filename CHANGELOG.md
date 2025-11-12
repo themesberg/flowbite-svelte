@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.28.0
+
+### Minor Changes
+
+- feat: ToastContainer
+
 ## 1.27.0
 
 ### Minor Changes

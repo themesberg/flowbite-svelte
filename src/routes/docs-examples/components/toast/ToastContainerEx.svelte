@@ -48,7 +48,7 @@
     if (toast?.timeoutId) {
       clearTimeout(toast.timeoutId);
     }
-    
+
     // Set visible to false to trigger outro transition
     toasts = toasts.map((t) => (t.id === id ? { ...t, visible: false } : t));
 
@@ -75,15 +75,7 @@
 
 <ToastContainer position="top-right">
   {#each toasts as toast (toast.id)}
-    <Toast 
-      color={toast.color} 
-      dismissable={true} 
-      transition={fly} 
-      params={{ x: 200, duration: 800 }} 
-      class="w-64" 
-      onclose={handleClose(toast.id)}
-      bind:toastStatus={toast.visible}
-    >
+    <Toast color={toast.color} dismissable={true} transition={fly} params={{ x: 200, duration: 800 }} class="w-64" onclose={handleClose(toast.id)} bind:toastStatus={toast.visible}>
       {toast.message}
     </Toast>
   {/each}

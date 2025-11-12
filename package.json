@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.27.0",
+  "version": "1.28.0",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -797,6 +797,10 @@
     "./Toast.svelte": {
       "types": "./dist/toast/Toast.svelte.d.ts",
       "svelte": "./dist/toast/Toast.svelte"
+    },
+    "./ToastContainer.svelte": {
+      "types": "./dist/toast/ToastContainer.svelte.d.ts",
+      "svelte": "./dist/toast/ToastContainer.svelte"
     },
     "./Toolbar.svelte": {
       "types": "./dist/toolbar/Toolbar.svelte.d.ts",
