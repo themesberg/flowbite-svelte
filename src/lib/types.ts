@@ -1891,6 +1891,7 @@ export interface ToastProps extends ToastVaraints, HTMLAttributes<HTMLDivElement
 export interface ToastContainerProps {
   children: Snippet;
   position?: ToastVaraints["position"];
+  class?: ClassValue | null;
 }
 
 // tooltip

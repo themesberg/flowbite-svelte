@@ -36,7 +36,7 @@ export { stepper, progressStepper, verticalStepper, detailedStepper, breadcrumbS
 export { table, tableBodyCell, tableBodyRow, tableHead, tableHeadCell, tableSearch } from "../table";
 export { tabs, tabItem } from "../tabs";
 export { timeline, activity, activityItem, group, groupItem, timelineItem } from "../timeline";
-export { toast } from "../toast";
+export { toast, toastContainer } from "../toast";
 export { toolbar, toolbarButton, toolbarGroup } from "../toolbar";
 export { tooltip } from "../tooltip";
 // export {utils} from "../utils";
