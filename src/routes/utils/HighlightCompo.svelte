@@ -25,7 +25,7 @@
     wrapLines?: boolean;
     startingLineNumber?: number;
     highlightedLines?: number[];
-    backgroudColor?: string;
+    backgroundColor?: string;
     position?: "static" | "relative" | "absolute" | "sticky" | undefined;
   }
 
