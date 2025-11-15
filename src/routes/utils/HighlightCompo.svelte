@@ -4,18 +4,32 @@
   import { Button, Badge } from "$lib";
   import { copyToClipboard, replaceLibImport } from "./helpers";
   import { highlightcompo } from "./theme";
+  import type { LanguageFn } from "highlight.js";
+
+  type HighlightLanguage = {
+    name: string;
+    register: LanguageFn;
+  };
 
   interface Props {
-    // componentStatus: boolean;
     code: string;
     badgeClass?: string;
     buttonClass?: string;
-    codeLang?: string;
+    language: HighlightLanguage;
     class?: string;
     replaceLib?: boolean;
+    // Highlight.svelte props
+    numberLine?: boolean;
+    langtag?: boolean;
+    hideBorder?: boolean;
+    wrapLines?: boolean;
+    startingLineNumber?: number;
+    highlightedLines?: number[];
+    backgroudColor?: string;
+    position?: "static" | "relative" | "absolute" | "sticky" | undefined;
   }
 
-  let { code, codeLang, badgeClass, buttonClass, replaceLib = true, class: className }: Props = $props();
+  let { code, language, badgeClass, buttonClass, replaceLib = true, class: className, ...restProps }: Props = $props();
 
   const mdLang = {
     name: "markdown",
@@ -23,7 +37,6 @@
   };
 
   const processedCode = $derived(replaceLib ? replaceLibImport(code) : code);
-  // console.log('code: ', code)
 
   let showExpandButton: boolean = $state(false);
   let expand: boolean = $state(false);
@@ -60,10 +73,10 @@
       {#if copiedStatus}
         <Badge class={badge({ class: badgeClass })} color="green">Copied to clipboard</Badge>
       {/if}
-      {#if codeLang === "md"}
-        <Highlight language={mdLang} code={processedCode} />
+      {#if ["markdown", "md"].includes(language.name)}
+        <Highlight language={mdLang} code={processedCode} {...restProps} />
       {:else if code}
-        <HighlightSvelte code={processedCode} />
+        <HighlightSvelte code={processedCode} {...restProps} />
       {:else}
         no code is provided
       {/if}

@@ -9,6 +9,7 @@ description: Learn more about the value types and class interfaces that you can 
 
 <script lang="ts">
   import { LlmLink } from '../../utils';
+  import { Highlight } from 'svelte-rune-highlight';
   import HighlightCompo from "../../utils/HighlightCompo.svelte";
   import typescript from 'highlight.js/lib/languages/typescript';
   const examples = import.meta.glob('../../../lib/types.ts', {
@@ -26,7 +27,8 @@ description: Learn more about the value types and class interfaces that you can 
 
 Enhance the reliability and scalability of your user interface code by leveraging data types. The following excerpt shows you the full list of TypeScript types and interfaces that are being used with the Flowbite Svelte library.
 
-<HighlightCompo codeLang={tsLang} code={examples["../../../lib/types.ts"] as string} class="max-w-7xl bg-white"  numberLine/>
+<HighlightCompo language={tsLang} code={examples["../../../lib/types.ts"] as string} class="max-w-7xl bg-white" />
+
 
 ## LLM Link
 
