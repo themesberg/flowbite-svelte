@@ -8,7 +8,7 @@
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker range bind:rangeFrom={dateRange.from} bind:rangeTo={dateRange.to} color="pink" />
+  <Datepicker range bind:rangeFrom={dateRange.from} bind:rangeTo={dateRange.to} color="blue" />
   <P class="mt-4">
     Selected range:
     {dateRange.from ? dateRange.from.toLocaleDateString() : "None"} -

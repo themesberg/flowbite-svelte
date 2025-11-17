@@ -61,7 +61,7 @@ import type {
   WidgetPlaceholderVariants
 } from "$lib/skeleton/theme";
 import type { SpeedDialVariants, SpeedDialButtonVariants } from "$lib/speed-dial/theme";
-import type { SpinnerVaraiants } from "$lib/spinner/theme";
+import type { SpinnerVariants } from "$lib/spinner/theme";
 import type { StepIndicatorVariants } from "$lib/step-indicator/theme";
 import type { StepperVariants, ProgressStepperVariants, DetailedStepperVariants, VerticalStepperVariants, BreadcrumbStepperVariants, TimelineStepperVariants } from "$lib/stepper/theme";
 import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
@@ -348,6 +348,7 @@ export type ButtonProps = ButtonVariants &
     outline?: boolean;
     shadow?: boolean;
     loading?: boolean;
+    spinnerProps?: SpinnerProps;
   };
 
 export interface GradientButtonProps extends GradientButtonVariantes, HTMLButtonOrAnchorAttributes {
@@ -623,7 +624,7 @@ export interface DrawerProps extends DrawerVariants, Omit<DialogProps, "hidden" 
   offset?: string;
 }
 
-export interface DrawerHandleProps extends DrawerHandleVariants, HTMLButtonAttributes {}
+export interface DrawerHandleProps extends DrawerHandleVariants, HTMLButtonAttributes { }
 
 export interface DrawerheadProps extends DrawerheadVariants, HTMLButtonAttributes {
   closeIcon?: Snippet;
@@ -782,7 +783,7 @@ export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, O
 }
 
 // helper
-export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> {}
+export interface HelperProps extends HelperVariants, Omit<HTMLAttributes<HTMLParagraphElement>, "color"> { }
 
 // input
 export type InputValue = string | number | string[] | undefined;
@@ -978,7 +979,7 @@ export interface TimepickerProps {
   timeIntervals?: string[];
   columns?: ColumnCount;
   // Callback props instead of events
-  onselect?: (data: { time: string; endTime: string; [key: string]: string }) => void;
+  onselect?: (data: { time: string; endTime: string;[key: string]: string }) => void;
 }
 
 // textarea
@@ -1167,7 +1168,7 @@ export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLD
   end?: Snippet;
 }
 
-export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> {}
+export interface ToolbarGroupProps extends ToolbarGroupVariants, HTMLAttributes<HTMLDivElement> { }
 
 export type ToolbarButtonProps = ToolbarButtonVariants &
   AnchorButtonAttributes & {
@@ -1484,7 +1485,7 @@ export interface SkeletonProps extends SkeletonVariants, HTMLAttributes<HTMLDivE
   size?: SkeletonVariants["size"];
 }
 
-export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
+export interface TestimonialPlaceholderProps extends TestimonialPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
 
 export interface TextPlaceholderProps extends TextPlaceholderVariants, HTMLAttributes<HTMLDivElement> {
   size?: TextPlaceholderVariants["size"];
@@ -1494,7 +1495,7 @@ export interface VideoPlaceholderProps extends VideoPlaceholderVariants, HTMLAtt
   size?: VideoPlaceholderVariants["size"];
 }
 
-export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> {}
+export interface WidgetPlaceholderProps extends WidgetPlaceholderVariants, HTMLAttributes<HTMLDivElement> { }
 
 // speeddial
 export interface SpeedCtxType {
@@ -1553,8 +1554,8 @@ export type SpeedDialButtonProps = ButtonProps &
 // spinner
 export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
   type?: "default" | "dots" | "bars" | "pulse" | "orbit";
-  color?: SpinnerVaraiants["color"];
-  size?: SpinnerVaraiants["size"];
+  color?: SpinnerVariants["color"];
+  size?: SpinnerVariants["size"];
   currentFill?: string;
   currentColor?: string;
 }
@@ -1895,7 +1896,7 @@ export interface ToastContainerProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 // tooltip
-export interface TooltipProps extends TooltipVariants, PopperProps {}
+export interface TooltipProps extends TooltipVariants, PopperProps { }
 
 // typography
 // anchor
