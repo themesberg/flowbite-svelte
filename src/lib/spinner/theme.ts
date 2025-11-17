@@ -10,7 +10,8 @@ export const spinner = tv({
       dots: "inline-flex items-center justify-center",
       bars: "inline-flex items-center justify-center",
       pulse: "animate-pulse",
-      orbit: ""
+      orbit: "",
+      loading: "animate-spin"
     },
     color: {
       primary: "fill-primary-600 text-gray-300",
@@ -32,7 +33,10 @@ export const spinner = tv({
       purple: "fill-purple-600 text-gray-300",
       fuchsia: "fill-fuchsia-600 text-gray-300",
       pink: "fill-pink-600 text-gray-300",
-      rose: "fill-rose-600 text-gray-300"
+      rose: "fill-rose-600 text-gray-300",
+      light: "fill-white text-gray-900",
+      dark: "fill-gray-800 text-white",
+      alternative: "fill-transparent text-gray-900"
     },
     size: {
       "4": "w-4 h-4",
