@@ -29,7 +29,7 @@
   <button type="button" {...restProps} class={btnCls} disabled={isDisabled}>
     {@render children?.()}
     {#if loading}
-      <Spinner size="4" class="ms-2" type="loading" {color} />
+      <Spinner size="4" class="ms-2" type="loading" color={actualColor} />
     {/if}
   </button>
 {:else}
