@@ -1,11 +1,9 @@
 <script lang="ts">
-  import { ExampleWrapper, transformComponents, transformModules } from 'svelte-rune-highlight';
+  import { ExampleWrapper, HighlightCompo, transformComponents, transformModules } from 'svelte-rune-highlight';
   import type { Component } from 'svelte';
   import { Table } from "$lib";
   import { clipboardManagerProps } from "./clipboardManagerProps";
-
   import { List, Li, P, Heading } from "$lib";
-  import { HighlightCompo } from "svelte-rune-highlight";
 
   const componentModules = import.meta.glob('./examples/*.svelte', {
     eager: true
