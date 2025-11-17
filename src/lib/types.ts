@@ -61,7 +61,7 @@ import type {
   WidgetPlaceholderVariants
 } from "$lib/skeleton/theme";
 import type { SpeedDialVariants, SpeedDialButtonVariants } from "$lib/speed-dial/theme";
-import type { SpinnerVaraiants } from "$lib/spinner/theme";
+import type { SpinnerVariants } from "$lib/spinner/theme";
 import type { StepIndicatorVariants } from "$lib/step-indicator/theme";
 import type { StepperVariants, ProgressStepperVariants, DetailedStepperVariants, VerticalStepperVariants, BreadcrumbStepperVariants, TimelineStepperVariants } from "$lib/stepper/theme";
 import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
@@ -1554,8 +1554,8 @@ export type SpeedDialButtonProps = ButtonProps &
 // spinner
 export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
   type?: "default" | "dots" | "bars" | "pulse" | "orbit";
-  color?: SpinnerVaraiants["color"];
-  size?: SpinnerVaraiants["size"];
+  color?: SpinnerVariants["color"];
+  size?: SpinnerVariants["size"];
   currentFill?: string;
   currentColor?: string;
 }

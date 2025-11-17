@@ -9,7 +9,7 @@
   const group: SizeType = getContext("group");
   const ctxDisabled: boolean | undefined = getContext("disabled");
 
-  let { children, pill, outline = false, size = "md", color, shadow = false, tag = "button", disabled, loading = false, spinnerProps = {size:"4"}, class: className, ...restProps }: ButtonProps = $props();
+  let { children, pill, outline = false, size = "md", color, shadow = false, tag = "button", disabled, loading = false, spinnerProps = { size: "4" }, class: className, ...restProps }: ButtonProps = $props();
 
   const theme = getTheme("button");
 
@@ -54,6 +54,7 @@
 @prop tag = "button"
 @prop disabled
 @prop loading = false
+@prop spinnerProps = { size: "4" }
 @prop class: className
 @prop ...restProps
 -->

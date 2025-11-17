@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Breadcrumb, BreadcrumbItem, Heading } from "flowbite-svelte";
-  import { HighlightCompo } from "svelte-rune-highlight";
+  import { HighlightAuto } from "svelte-rune-highlight";
 
   const modules = import.meta.glob("./md/*.md", {
     query: "?raw",
@@ -18,6 +18,6 @@
     <Heading tag="h1" class="mb-8 text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Flowbite Svelte Admin Dashboard</Heading>
 
     <Heading tag="h2" class="my-8 text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Installation</Heading>
-    <HighlightCompo class="mb-8" code={modules["./md/installation.md"] as string} />
+    <HighlightAuto class="mb-8" code={modules["./md/installation.md"] as string} />
   </div>
 </main>
