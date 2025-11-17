@@ -2,12 +2,11 @@
   "name": "Arrow",
   "type": {
     "name": "ArrowProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2083"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2084"
   },
   "props": [
     ["placement", "\"top\""],
     ["cords", ""],
-    ["strategy", "\"absolute\""],
     ["class: className", "\"\""]
   ]
 }

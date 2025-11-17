@@ -242,6 +242,8 @@ Use the spinner components to indicate a loader animation inside buttons.
   import { Button, Spinner } from "flowbite-svelte";
 </script>
 
+<Button loading>Loading ...</Button>
+<Button loading spinnerProps={{ size: "4", color: "green" }}>Loading ...</Button>
 <Button>
   <Spinner class="me-3" size="4" color="gray" />Loading ...
 </Button>
@@ -323,13 +325,13 @@ Use the `loading` prop to indicate a pending action (e.g. form submission). When
 - tag: "button"
 - disabled
 - loading: false
-- class: className
+- spinnerProps: { size: "4"
 
 ### GradientButton
 
 #### Types
 
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L353)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L354)
 
 #### Props
 

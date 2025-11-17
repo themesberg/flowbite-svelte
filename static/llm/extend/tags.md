@@ -27,7 +27,7 @@ Import the `Tags` component in a script tag.
 <form>
   <Tags class="mt-5 mb-3" bind:value={tags} />
   {#if tags.length > 0}
-    <pre>{JSON.stringify(tags, null, 2)}</pre>
+    <pre class="dark:text-white">{JSON.stringify(tags, null, 2)}</pre>
   {/if}
   <Button onclick={handleClick}>Submit</Button>
 </form>
@@ -111,7 +111,7 @@ Use `disabled` to the `Tags` component.
 
 #### Types
 
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L930)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L931)
 
 #### Props
 

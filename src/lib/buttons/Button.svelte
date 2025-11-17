@@ -9,7 +9,20 @@
   const group: SizeType = getContext("group");
   const ctxDisabled: boolean | undefined = getContext("disabled");
 
-  let { children, pill, outline = false, size = "md", color, shadow = false, tag = "button", disabled, loading = false, spinnerProps = { size: "4" }, class: className, ...restProps }: ButtonProps = $props();
+  let {
+    children,
+    pill,
+    outline = false,
+    size = "md",
+    color,
+    shadow = false,
+    tag = "button",
+    disabled,
+    loading = false,
+    spinnerProps = { size: "4" },
+    class: className,
+    ...restProps
+  }: ButtonProps = $props();
 
   const theme = getTheme("button");
 
@@ -30,7 +43,7 @@
   <button type="button" {...restProps} class={btnCls} disabled={isDisabled}>
     {@render children?.()}
     {#if loading}
-      <Spinner {...spinnerProps} class={spinner()}/>
+      <Spinner {...spinnerProps} class={spinner()} />
     {/if}
   </button>
 {:else}

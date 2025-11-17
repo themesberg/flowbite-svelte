@@ -255,7 +255,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2213)
+[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2214)
 ## Props
 @prop items
 @prop position = "top"

@@ -80,7 +80,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1761)
+[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1762)
 ## Props
 @prop children
 @prop selected = $bindable()

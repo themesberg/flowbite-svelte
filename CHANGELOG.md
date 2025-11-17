@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.28.1
+
+### Patch Changes
+
+- fix: DatePicker, Dropdown RTL, Button loading spinner
+
 ## 1.28.0
 
 ### Minor Changes

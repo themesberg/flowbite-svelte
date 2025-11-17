@@ -2,7 +2,7 @@
   "name": "CustomIcon",
   "type": {
     "name": "RatingIconProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1366"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1367"
   },
   "props": [
     ["fillPercent", "100"],

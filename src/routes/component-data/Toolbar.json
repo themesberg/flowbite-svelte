@@ -2,7 +2,7 @@
   "name": "Toolbar",
   "type": {
     "name": "ToolbarProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1166"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1167"
   },
   "props": [
     ["children", ""],

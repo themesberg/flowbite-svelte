@@ -2,7 +2,7 @@
   "name": "Stepper",
   "type": {
     "name": "StepperProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1585"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1586"
   },
   "props": [
     ["children", ""],
