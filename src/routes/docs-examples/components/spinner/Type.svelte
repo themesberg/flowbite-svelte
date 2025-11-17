@@ -7,3 +7,4 @@
 <Spinner type="bars" color="blue" />
 <Spinner type="orbit" color="rose" />
 <Spinner type="pulse" color="green" />
+<Spinner type="loading" color="light" />
