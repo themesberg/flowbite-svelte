@@ -10,7 +10,7 @@ description: Learn more about the value types and class interfaces that you can 
 <script lang="ts">
   import { LlmLink } from '../../utils';
   import { Highlight } from 'svelte-rune-highlight';
-  import HighlightCompo from "../../utils/HighlightCompo.svelte";
+  import { HighlightCompo } from "svelte-rune-highlight";
   import typescript from 'highlight.js/lib/languages/typescript';
   const examples = import.meta.glob('../../../lib/types.ts', {
     query: '?raw',

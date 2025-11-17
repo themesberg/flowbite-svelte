@@ -7,6 +7,7 @@ export { default as GitHubSourceList } from "./GitHubSourceList.svelte";
 export { default as LlmLink } from "./LlmLink.svelte";
 export { default as PageHeadSection } from "./PageHeadSection.svelte";
 export { default as MetaTag } from "./MetaTag.svelte";
+export { default as MyExampleWrapper } from "./MyExampleWrapper.svelte";
 export { default as TableDefaultRow } from "./TableDefaultRow.svelte";
 export { default as TableProp } from "./TableProp.svelte";
 export { default as CompoAttributesViewer } from "./CompoAttributesViewer.svelte";

@@ -348,6 +348,7 @@ export type ButtonProps = ButtonVariants &
     outline?: boolean;
     shadow?: boolean;
     loading?: boolean;
+    spinnerColor?: SpinnerVaraiants["color"];
   };
 
 export interface GradientButtonProps extends GradientButtonVariantes, HTMLButtonOrAnchorAttributes {

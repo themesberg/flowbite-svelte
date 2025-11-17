@@ -1,17 +1,26 @@
 <script lang="ts">
+  import { ExampleWrapper, transformComponents, transformModules } from 'svelte-rune-highlight';
+  import type { Component } from 'svelte';
   import { Table } from "$lib";
   import { clipboardManagerProps } from "./clipboardManagerProps";
 
   import { List, Li, P, Heading } from "$lib";
-  import HighlightCompo from "../../../utils/HighlightCompo.svelte";
-  import CodeWrapper from "../../../utils/CodeWrapper.svelte";
-  import * as ExampleComponents from "./examples";
+  import { HighlightCompo } from "svelte-rune-highlight";
 
-  const exampleModules = import.meta.glob("./examples/*.svelte", {
-    query: "?raw",
-    import: "default",
+  const componentModules = import.meta.glob('./examples/*.svelte', {
+    eager: true
+  }) as Record<string, { default: Component }>;
+
+  // Import source code
+  const exampleModules = import.meta.glob('./examples/*.svelte', {
+    query: '?raw',
+    import: 'default',
     eager: true
   }) as Record<string, string>;
+
+  // Transform both using helper functions
+  const components = transformComponents(componentModules);
+  const modules = transformModules(exampleModules);
 
   const sentitiveEx = "detectSensitiveData=(text) => (/confidential|secret/i).test(text)";
 </script>
@@ -22,12 +31,7 @@
     <P>Real-world examples showing how to use the selection bubble menu feature</P>
   </div>
 
-  <CodeWrapper class="max-w-7xl">
-    <ExampleComponents.Interactive />
-    {#snippet codeblock()}
-      <HighlightCompo codeLang="ts" code={exampleModules["./examples/Interactive.svelte"] as string} class="max-w-7xl bg-white" />
-    {/snippet}
-  </CodeWrapper>
+  <ExampleWrapper component={components['Interactive']} code={modules['Interactive']} />
 
   <!-- Usage Examples -->
   <section class="space-y-6">
@@ -39,7 +43,7 @@
         <Heading tag="h3" class="text-lg font-semibold">Enable Selection Menu</Heading>
       </div>
       <P class="text-sm">Simplest setup - enable selection on entire page</P>
-      <HighlightCompo codeLang="ts" code={exampleModules["./examples/EnableSelectionMenu.svelte"] as string} class="max-w-7xl bg-white" />
+       <HighlightCompo code={exampleModules["./examples/EnableSelectionMenu.svelte"] as string} class="max-w-7xl bg-white" />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -55,12 +59,7 @@
         Use <code class="text-primary-700 font-bold">enableSelectionMenu</code>
         to show selection bubble menu.
       </P>
-      <CodeWrapper class="max-w-7xl">
-        <ExampleComponents.TargetSpecific />
-        {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/TargetSpecific.svelte"] as string} class="max-w-7xl bg-white" />
-        {/snippet}
-      </CodeWrapper>
+      <ExampleWrapper component={components['TargetSpecific']} code={modules['TargetSpecific']} />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -73,12 +72,7 @@
         Set <code class="text-primary-700 font-bold">storageKey</code>
         to customize the localStorage key name.
       </P>
-      <CodeWrapper class="max-w-7xl">
-        <ExampleComponents.WithModal />
-        {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/WithModal.svelte"] as string} class="max-w-7xl bg-white" />
-        {/snippet}
-      </CodeWrapper>
+      <ExampleWrapper component={components['WithModal']} code={modules['WithModal']} />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -93,12 +87,7 @@
         <code class="text-primary-700 font-bold">limit</code>
         prop to set max items to store.
       </P>
-      <CodeWrapper class="max-w-7xl">
-        <ExampleComponents.DocumentationSite />
-        {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/DocumentationSite.svelte"] as string} class="max-w-7xl bg-white" />
-        {/snippet}
-      </CodeWrapper>
+      <ExampleWrapper component={components['DocumentationSite']} code={modules['DocumentationSite']} />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -113,12 +102,7 @@
         <code class="text-primary-700 font-bold">clearLabel</code>
         to change labels.
       </P>
-      <CodeWrapper class="max-w-7xl">
-        <ExampleComponents.BlogReader />
-        {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/BlogReader.svelte"] as string} class="max-w-7xl bg-white" />
-        {/snippet}
-      </CodeWrapper>
+      <ExampleWrapper component={components['BlogReader']} code={modules['BlogReader']} />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -127,12 +111,7 @@
         <Heading tag="h3" class="text-lg font-semibold">Email Client / Support Dashboard</Heading>
       </div>
       <P class="text-sm">Quick responses with ability to save new ones from actual emails</P>
-      <CodeWrapper class="max-w-7xl">
-        <ExampleComponents.EmailClient />
-        {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/EmailClient.svelte"] as string} class="max-w-7xl bg-white" />
-        {/snippet}
-      </CodeWrapper>
+      <ExampleWrapper component={components['EmailClient']} code={modules['EmailClient']} />
     </div>
 
     <!-- Example 6 -->
@@ -165,13 +144,7 @@
         <Li>Refreshing the page clears all clipboard items</Li>
         <Li>Data is lost when you close the tab</Li>
       </List>
-
-      <CodeWrapper class="max-w-7xl">
-        <ExampleComponents.SaveToStorage />
-        {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/SaveToStorage.svelte"] as string} class="max-w-7xl bg-white" />
-        {/snippet}
-      </CodeWrapper>
+      <ExampleWrapper component={components['SaveToStorage']} code={modules['SaveToStorage']} />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -186,7 +159,7 @@
         <code class="text-primary-700">detectSensitiveData</code>
         prop to provide your own logic.
       </P>
-      <HighlightCompo codeLang="ts" code={sentitiveEx} class="my-2 max-w-7xl bg-white" />
+      <HighlightCompo code={sentitiveEx} class="my-2 max-w-7xl bg-white" />
       <P>This will block texts containing "confidential" or "secret".</P>
       <List>
         <Li>Detects common sensitive information (credit cards, passwords, API keys, credentials).</Li>
@@ -196,12 +169,7 @@
         <Li>API key regex matches any long alphanumeric token (32+ chars), which may catch legitimate IDs</Li>
         <Li>Credential keyword regex may trigger on non-secret words like "token = false"</Li>
       </List>
-      <CodeWrapper class="max-w-7xl">
-        <ExampleComponents.CodeEditor />
-        {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/CodeEditor.svelte"] as string} class="max-w-7xl bg-white" />
-        {/snippet}
-      </CodeWrapper>
+      <ExampleWrapper component={components['CodeEditor']} code={modules['CodeEditor']} />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -210,12 +178,7 @@
         <Heading tag="h3" class="text-lg font-semibold">Multiple Content Areas</Heading>
       </div>
       <P class="text-sm">Use class selector to enable selection across multiple elements</P>
-      <CodeWrapper class="max-w-7xl">
-        <ExampleComponents.MultipleContent />
-        {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/MultipleContent.svelte"] as string} class="max-w-7xl bg-white" />
-        {/snippet}
-      </CodeWrapper>
+      <ExampleWrapper component={components['MultipleContent']} code={modules['MultipleContent']} />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -227,12 +190,7 @@
         Use <code class="text-primary-700">showInput={false}</code>
         to hide the input box and use only selection menu with custom rendering
       </P>
-      <CodeWrapper class="max-w-7xl">
-        <ExampleComponents.NoManualInput />
-        {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/NoManualInput.svelte"] as string} class="max-w-7xl bg-white" />
-        {/snippet}
-      </CodeWrapper>
+      <ExampleWrapper component={components['NoManualInput']} code={modules['NoManualInput']} />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -241,12 +199,7 @@
         <Heading tag="h3" class="text-lg font-semibold">Custom Empty State</Heading>
       </div>
       <P class="text-sm">Provide clear instructions for first-time users</P>
-      <CodeWrapper class="max-w-7xl">
-        <ExampleComponents.CustomEmptyState />
-        {#snippet codeblock()}
-          <HighlightCompo codeLang="ts" code={exampleModules["./examples/CustomEmptyState.svelte"] as string} class="max-w-7xl bg-white" />
-        {/snippet}
-      </CodeWrapper>
+      <ExampleWrapper component={components['CustomEmptyState']} code={modules['CustomEmptyState']} />
     </div>
   </section>
 
