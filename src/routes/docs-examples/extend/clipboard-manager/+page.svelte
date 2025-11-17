@@ -57,7 +57,7 @@
         Use <code class="text-primary-700 font-bold">enableSelectionMenu</code>
         to show selection bubble menu.
       </P>
-      <ExampleWrapper component={components['TargetSpecific']} code={modules['TargetSpecific']} />
+      <ExampleWrapper component={components['TargetSpecific']} code={modules['TargetSpecific']} innerClass="p-4"/>
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -70,7 +70,7 @@
         Set <code class="text-primary-700 font-bold">storageKey</code>
         to customize the localStorage key name.
       </P>
-      <ExampleWrapper component={components['WithModal']} code={modules['WithModal']} />
+      <ExampleWrapper component={components['WithModal']} code={modules['WithModal']} innerClass="p-4"/>
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -85,7 +85,7 @@
         <code class="text-primary-700 font-bold">limit</code>
         prop to set max items to store.
       </P>
-      <ExampleWrapper component={components['DocumentationSite']} code={modules['DocumentationSite']} />
+      <ExampleWrapper component={components['DocumentationSite']} code={modules['DocumentationSite']} innerClass="p-4" />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -100,7 +100,7 @@
         <code class="text-primary-700 font-bold">clearLabel</code>
         to change labels.
       </P>
-      <ExampleWrapper component={components['BlogReader']} code={modules['BlogReader']} />
+      <ExampleWrapper component={components['BlogReader']} code={modules['BlogReader']} innerClass="p-4" />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -109,7 +109,7 @@
         <Heading tag="h3" class="text-lg font-semibold">Email Client / Support Dashboard</Heading>
       </div>
       <P class="text-sm">Quick responses with ability to save new ones from actual emails</P>
-      <ExampleWrapper component={components['EmailClient']} code={modules['EmailClient']} />
+      <ExampleWrapper component={components['EmailClient']} code={modules['EmailClient']} innerClass="p-4" />
     </div>
 
     <!-- Example 6 -->
@@ -142,7 +142,7 @@
         <Li>Refreshing the page clears all clipboard items</Li>
         <Li>Data is lost when you close the tab</Li>
       </List>
-      <ExampleWrapper component={components['SaveToStorage']} code={modules['SaveToStorage']} />
+      <ExampleWrapper component={components['SaveToStorage']} code={modules['SaveToStorage']} innerClass="p-4" />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -167,7 +167,7 @@
         <Li>API key regex matches any long alphanumeric token (32+ chars), which may catch legitimate IDs</Li>
         <Li>Credential keyword regex may trigger on non-secret words like "token = false"</Li>
       </List>
-      <ExampleWrapper component={components['CodeEditor']} code={modules['CodeEditor']} />
+      <ExampleWrapper component={components['CodeEditor']} code={modules['CodeEditor']} innerClass="p-4" />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -176,7 +176,7 @@
         <Heading tag="h3" class="text-lg font-semibold">Multiple Content Areas</Heading>
       </div>
       <P class="text-sm">Use class selector to enable selection across multiple elements</P>
-      <ExampleWrapper component={components['MultipleContent']} code={modules['MultipleContent']} />
+      <ExampleWrapper component={components['MultipleContent']} code={modules['MultipleContent']} innerClass="p-4" />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -188,7 +188,7 @@
         Use <code class="text-primary-700">showInput={false}</code>
         to hide the input box and use only selection menu with custom rendering
       </P>
-      <ExampleWrapper component={components['NoManualInput']} code={modules['NoManualInput']} />
+      <ExampleWrapper component={components['NoManualInput']} code={modules['NoManualInput']} innerClass="p-4" />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -197,7 +197,7 @@
         <Heading tag="h3" class="text-lg font-semibold">Custom Empty State</Heading>
       </div>
       <P class="text-sm">Provide clear instructions for first-time users</P>
-      <ExampleWrapper component={components['CustomEmptyState']} code={modules['CustomEmptyState']} />
+      <ExampleWrapper component={components['CustomEmptyState']} code={modules['CustomEmptyState']} innerClass="p-4" />
     </div>
   </section>
 
