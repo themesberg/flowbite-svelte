@@ -1,7 +1,7 @@
 <script lang="ts">
   type NotificationDirection = "ltr" | "rtl" | "auto";
 
-  let { rtl = $bindable() }: { rtl?: NotificationDirection } = $props();
+  let { rtl = $bindable("auto") }: { rtl?: NotificationDirection } = $props();
 
   if (rtl === "auto" && document.dir) {
     rtl = document.dir as NotificationDirection;
