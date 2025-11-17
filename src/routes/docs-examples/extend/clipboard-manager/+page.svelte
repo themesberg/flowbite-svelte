@@ -20,7 +20,7 @@
   const components = transformComponents(componentModules);
   const modules = transformModules(exampleModules);
 
-  const sentitiveEx = "detectSensitiveData=(text) => (/confidential|secret/i).test(text)";
+  const sensitiveEx = "detectSensitiveData=(text) => (/confidential|secret/i).test(text)";
 </script>
 
 <div class="mx-auto max-w-7xl space-y-8 p-6">
@@ -41,7 +41,7 @@
         <Heading tag="h3" class="text-lg font-semibold">Enable Selection Menu</Heading>
       </div>
       <P class="text-sm">Simplest setup - enable selection on entire page</P>
-       <HighlightCompo code={exampleModules["./examples/EnableSelectionMenu.svelte"] as string} class="max-w-7xl bg-white" />
+       <HighlightCompo code={modules["EnableSelectionMenu"] as string} class="max-w-7xl bg-white" />
     </div>
 
     <div class="space-y-3 rounded-lg p-6 shadow">
@@ -157,7 +157,7 @@
         <code class="text-primary-700">detectSensitiveData</code>
         prop to provide your own logic.
       </P>
-      <HighlightCompo code={sentitiveEx} class="my-2 max-w-7xl bg-white" />
+      <HighlightCompo code={sensitiveEx} class="my-2 max-w-7xl bg-white" />
       <P>This will block texts containing "confidential" or "secret".</P>
       <List>
         <Li>Detects common sensitive information (credit cards, passwords, API keys, credentials).</Li>
