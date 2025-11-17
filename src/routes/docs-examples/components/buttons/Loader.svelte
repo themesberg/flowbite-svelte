@@ -2,7 +2,10 @@
   import { Button, Spinner } from "flowbite-svelte";
 </script>
 
-<Button loading={true} spinnerColor="green">
+<Button loading>
+    Loading ...
+</Button>
+<Button loading spinnerProps={{size:"4", color:"green"}}>
     Loading ...
 </Button>
 <Button>
