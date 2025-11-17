@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { ParamsType, PopperProps, TriggeredToggleEvent } from "$lib/types";
-  import type { Coords, Middleware, Placement, Strategy } from "@floating-ui/dom";
+  import type { Coords, Middleware, Placement } from "@floating-ui/dom";
   import * as dom from "@floating-ui/dom";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
@@ -43,10 +43,9 @@
   let invoker: HTMLElement | null = null;
   let referenceElement: HTMLElement | null = null;
   let triggerEls: HTMLElement[] = [];
-  let arrowParams: { placement: Placement; cords: Partial<Coords>; strategy: Strategy } = $state({
+  let arrowParams: { placement: Placement; cords: Partial<Coords> } = $state({
     placement,
-    cords: { x: 0, y: 0 },
-    strategy
+    cords: { x: 0, y: 0 }
   });
 
   $effect(() => {
@@ -80,10 +79,9 @@
 
     return dom.computePosition(referenceElement ?? invoker, popover, { placement, middleware, strategy }).then(({ x, y, middlewareData: { arrow }, placement: pl, strategy }) => {
       if (popover) {
-        Object.assign(popover.style, { position: strategy, left: yOnly ? "0" : px(x), top: px(y) });
-
+        Object.assign(popover.style, { position: strategy, left: yOnly ? "0" : px(x), right: "auto", top: px(y) });
         if (arrow && arrowEl) {
-          arrowParams = { placement: pl, cords: { x: arrow.x, y: arrow.y }, strategy };
+          arrowParams = { placement: pl, cords: { x: arrow.x, y: arrow.y } };
         }
       }
     });

@@ -4,7 +4,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 export type TooltipVariants = VariantProps<typeof tooltip>;
 
 export const tooltip = tv({
-  base: "absolute px-3 py-2 rounded-lg text-sm z-50 pointer-events-none",
+  base: "px-3 py-2 rounded-lg text-sm z-50 pointer-events-none",
   variants: {
     type: {
       light: "bg-white text-gray-800 dark:bg-white dark:text-gray-800 border border-gray-200 dark:border-gray-200",

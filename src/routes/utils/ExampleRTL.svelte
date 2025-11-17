@@ -3,7 +3,7 @@
 
   let { rtl = $bindable() }: { rtl?: NotificationDirection } = $props();
 
-  if (rtl === undefined && document.dir) {
+  if (rtl === "auto" && document.dir) {
     rtl = document.dir as NotificationDirection;
   }
 
