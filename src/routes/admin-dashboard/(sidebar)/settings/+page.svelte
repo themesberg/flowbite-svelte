@@ -1,18 +1,15 @@
 <script lang="ts">
   import { DesktopPcOutline, MobilePhoneOutline } from "flowbite-svelte-icons";
-  // import Accounts from '../../utils/settings/Accounts.svelte';
   import PasswordInfo from "../../utils/settings/PasswordInfo.svelte";
-  // import UserProfile from '../../utils/settings/UserProfile.svelte';
-  // import Sessions from '../../utils/settings/Sessions.svelte';
   import SocialAccounts from "../../utils/settings/SocialAccounts.svelte";
   import { Breadcrumb, BreadcrumbItem, Heading, Button } from "flowbite-svelte";
-  import { NotificationCard, GeneralInfo, LanguageTime, Sessions, UserProfile, Accounts } from "flowbite-svelte-admin-dashboard";
+  import { NotificationCard, GeneralInfo, LanguageTime, Sessions, UserProfile, Accounts, mapUsersWithAvatars } from "flowbite-svelte-admin-dashboard";
   import type { InputField, SessionProps } from "flowbite-svelte-admin-dashboard";
   import Footer from "../Footer.svelte";
-
-  import { imagesPath } from "../../utils/variables";
   import Users from "../../data/users.json";
   import MetaTag from "../../utils/MetaTag.svelte";
+
+  const users = mapUsersWithAvatars(Users);
 
   const items = [
     {
@@ -138,10 +135,10 @@
       <Heading tag="h1" class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">User settings</Heading>
     </div>
     <div class="col-span-full space-y-4 xl:col-auto">
-      <UserProfile src={imagesPath(Users[4].avatar, "users")} />
+      <UserProfile src={users[4].avatar} />
       <LanguageTime {languages} {timezones} />
       <SocialAccounts />
-      <Accounts users={Users.slice(0, 4)}>
+      <Accounts users={users.slice(0, 4)}>
         <Button class="mt-2 w-fit">Save all</Button>
       </Accounts>
     </div>

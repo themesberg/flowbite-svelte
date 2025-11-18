@@ -1,17 +1,15 @@
 <script lang="ts">
-  import { Avatar, Breadcrumb, BreadcrumbItem, Button, Checkbox, Heading, Indicator } from "flowbite-svelte";
-  import { Input, Table, TableBody, TableBodyCell, TableBodyRow, TableHead } from "flowbite-svelte";
-  import { TableHeadCell, Toolbar, ToolbarButton } from "flowbite-svelte";
-  import { CogSolid, DotsVerticalOutline, DownloadSolid } from "flowbite-svelte-icons";
-  import { EditOutline, ExclamationCircleSolid, PlusOutline, TrashBinSolid } from "flowbite-svelte-icons";
+  import { Avatar, Breadcrumb, BreadcrumbItem, Button, Checkbox, Heading, Indicator, Input, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Toolbar, ToolbarButton } from "flowbite-svelte";
+  import { CogSolid, DotsVerticalOutline, DownloadSolid, EditOutline, ExclamationCircleSolid, PlusOutline, TrashBinSolid } from "flowbite-svelte-icons";
   import Users from "../../../data/users.json";
-  import { imagesPath, DeleteModal, UserModal } from "flowbite-svelte-admin-dashboard";
+  import { DeleteModal, UserModal, mapUsersWithAvatars } from "flowbite-svelte-admin-dashboard";
   import MetaTag from "../../../utils/MetaTag.svelte";
 
   let openUser: boolean = $state(false); // modal control
   let openDelete: boolean = $state(false); // modal control
-
   let current_user: any = $state({});
+
+  const users = mapUsersWithAvatars(Users);
   const path: string = "/crud/users";
   const description: string = "CRUD users examaple - Flowbite Svelte Admin Dashboard";
   const title: string = "Flowbite Svelte Admin Dashboard - CRUD Users";
@@ -66,11 +64,11 @@
       {/each}
     </TableHead>
     <TableBody>
-      {#each Users as user}
+      {#each users as user}
         <TableBodyRow class="text-base">
           <TableBodyCell class="w-4 p-4"><Checkbox /></TableBodyCell>
           <TableBodyCell class="mr-12 flex items-center space-x-6 p-4 whitespace-nowrap">
-            <Avatar src={imagesPath(user.avatar, "users")} />
+            <Avatar src={user.avatar} />
             <div class="text-sm font-normal text-gray-500 dark:text-gray-300">
               <div class="text-base font-semibold text-gray-900 dark:text-white">{user.name}</div>
               <div class="text-sm font-normal text-gray-500 dark:text-gray-300">{user.email}</div>

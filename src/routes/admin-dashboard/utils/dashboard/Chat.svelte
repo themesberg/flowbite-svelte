@@ -1,9 +1,8 @@
 <script lang="ts">
-  import { imagesPath } from "../variables";
   import { Card, Textarea, ToolbarButton } from "flowbite-svelte";
   import { ChevronUpOutline, DotsVerticalOutline, DownloadOutline, FileLinesSolid, TableColumnOutline } from "flowbite-svelte-icons";
   import Users from "../../data/users.json";
-  import { ChatMsg } from "flowbite-svelte-admin-dashboard";
+  import { ChatMsg, imagesPath } from "flowbite-svelte-admin-dashboard";
   import Message from "./Message.svelte";
 </script>
 
