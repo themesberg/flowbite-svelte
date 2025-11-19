@@ -8,7 +8,7 @@ description: Use the accordion component to show hidden information based on the
 ---
 
 <script lang="ts">
-  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink, Seealso } from '../../utils'
   import { P, A } from 'flowbite-svelte'; 
   const dirName = toKebabCase(component_title);
   const relatedLinks = ['/docs/components/tabs','/docs/components/dropdown','/docs/components/modal'];
@@ -106,7 +106,7 @@ You can use any Svelte transition function such as `fade`, `blur`, `fly`, or `sc
 
 ## Nesting accordions
 
-Accordions can be nested to create hierarchical content structures. All of the mentioned options (colors, icons, transitions, etc.) are supported for nested accordions.
+Accordions can be nested to create hierarchical content structures. All mentioned options (colors, icons, transitions, etc.) are supported for nested accordions.
 
 This is useful for complex documentation, multi-level settings, or categorized FAQs.
 
@@ -126,7 +126,7 @@ To test: Fill out the form, navigate to a different page, and then use your brow
 
 ## Using transitionType="none"
 
-When you set `transitionType="none"` on an Accordion or an AccordionItem, it disables Svelte transitions completely and instead uses CSS display properties (block/hidden) to show or hide content. This prevents Svelte from completely destroying and recreating components when toggling the accordion.
++When you set `transitionType="none"` on an Accordion or an AccordionItem, it disables Svelte transitions completely and instead uses CSS display properties (block/hidden) to show or hide content. This prevents Svelte from destroying and recreating components when toggling the accordion.
 
 This approach is useful when:
 - You want to preserve form state or component lifecycle
@@ -191,7 +191,7 @@ The Accordion component is built with accessibility in mind:
 - **ARIA Attributes**: Proper ARIA labels and states are automatically applied for screen readers
 - **Focus Management**: Clear focus indicators help keyboard users navigate
 - **Screen Reader Support**: Expanded/collapsed states are announced to screen reader users
-- 
+
 ## See also
 
 <Seealso links={relatedLinks} />
