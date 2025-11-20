@@ -45,7 +45,6 @@ Closes #<!-- Issue number here, e.g. #123 -->
 - [ ] I have run `pnpm check && pnpm test:e2e` and all tests pass
 - [ ] CoderabbitAI review has been completed and **actionable suggestions were reviewed**
 - [ ] I have updated documentation if my changes require it
-- [ ] I have updated the `api-check` directory if a component API changed
 - [ ] My PR is based on the latest `main` branch (not the published npm version)
 - [ ] I have checked accessibility where applicable (ARIA, keyboard nav, etc.)
 - [ ] I have reviewed the rendered component in the browser
