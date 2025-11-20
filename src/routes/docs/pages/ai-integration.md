@@ -56,7 +56,7 @@ This server uses stdio transport, making it compatible with MCP clients that lau
 
 Note: For Windows, use the appropriate path format, e.g., "C:\\Users\\your-user-name\\..."
 
-3. Restart Claude Desktop, e.g., `pnpm build` and `pnpm start` commands.
+3. Restart Claude Desktop for the configuration changes to take effect.
 
 4. Ask Claude:
 
@@ -72,7 +72,7 @@ Tip: The LLM uses these tools to precisely and instantly answer questions about 
 
 | Tool name          | Description                                                          |
 | ------------------ | -------------------------------------------------------------------- |
-| `fincComponent`    | Find a Flowbite-Svelte component and its documentation path.         |
+| `findComponent`    | Find a Flowbite-Svelte component and its documentation path.         |
 | `getComponentList` | Returns a list of component names + filename                         |
 | `getComponentDoc`  | Returns the documentation (markdown / text) for a specific component |
 | `searchDocs`       | Full-text search over the `context-full.txt` of Flowbite-Svelte      |
@@ -123,7 +123,7 @@ Here's how you might leverage these features in your AI integration:
 
 ```ts
 // Accessing component documentation in markdown format
-const buttonDocs = await fetch("https://flowbite-svelte.com/docs/components/buttons.md").then((res) => res.text());
+const buttonDocs = await fetch("https://flowbite-svelte.com/llm/components/buttons.md").then((res) => res.text());
 
 // Using markdown documentation in a ChatGPT prompt
 const chatGptPrompt = `Based on this Flowbite Svelte Button component documentation:
