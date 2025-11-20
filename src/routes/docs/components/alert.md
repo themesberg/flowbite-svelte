@@ -11,10 +11,10 @@ description: Show contextual information to your users using alert elements base
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink, Seealso } from '../../utils'
   const dirName = toKebabCase(component_title);
   const relatedLinks = [
-    'docs/components/toast',
-    'docs/components/modal',
-    'docs/components/banner',
-    'docs/components/badge'
+    '/docs/components/toast',
+    '/docs/components/modal',
+    '/docs/components/banner',
+    '/docs/components/badge'
   ];
 </script>
 

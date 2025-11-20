@@ -14,10 +14,10 @@ thumnailSize: w-64
 
   const dirName = toKebabCase(component_title)
   const relatedLinks = [
-    'docs/components/navbar',
-    'docs/components/sidebar',
-    'docs/components/tabs',
-    'docs/components/button-group'
+    '/docs/components/navbar',
+    '/docs/components/sidebar',
+    '/docs/components/tabs',
+    '/docs/components/button-group'
   ];
 </script>
 
@@ -55,7 +55,7 @@ The fixed positioning ensures the navigation remains accessible as users scroll 
 
 Utilize the `href` prop within the `BottomNavItem` component to incorporate a hyperlink. To initiate the application of the active class, include the `activeUrl` prop within the `BottomNav` component.
 
-By default, the `BottomNavItem` will only be set to active if the `href` and the `activeUrl` are exactly the same. This ensures precise highlighting of the current page.
+By default, the `BottomNavItem` will only be set to active if the `href` and the `activeUrl` match. This ensures precise highlighting of the current page.
 
 Active states are crucial for:
 - **User orientation** - showing where they are in the app
@@ -204,9 +204,8 @@ The component has the following props, type, and default values. See [types page
 - `innerClass`: Custom classes for the inner container
 
 **BottomNavItem:**
-- `href`: Link destination for navigation items
+- `href`: Link destination for navigation items when it's only available via ...restProps
 - `activeClass`: Custom classes for active state
-- `exact`: Whether URL matching should be exact (default: true)
 - `btnName`: Accessible label for the button/link
 
 <CompoAttributesViewer {dirName}/>

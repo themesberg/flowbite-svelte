@@ -12,10 +12,10 @@ thumnailSize: w-48
   import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase, LlmLink, Seealso } from '../../utils'
   const dirName = toKebabCase(component_title)
   const relatedLinks = [
-    'docs/components/gallery',
-    'docs/components/modal',
-    'docs/components/tabs',
-    'docs/components/card'
+    '/docs/components/gallery',
+    '/docs/components/modal',
+    '/docs/components/tabs',
+    '/docs/components/card'
   ];
 </script>
 

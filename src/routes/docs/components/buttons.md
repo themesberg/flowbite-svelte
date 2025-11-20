@@ -14,11 +14,11 @@ thumnailSize: w-24
   const dirName = toKebabCase(component_title)
  
   const relatedLinks = [
-    'docs/components/button-group',
+    '/docs/components/button-group',
     'docs/utilities/close-button',
     'docs/forms/radio#radiobutton',
     'docs/forms/checkbox#checkboxbutton',
-    'docs/components/badge'
+    '/docs/components/badge'
   ];
 </script>
 
@@ -51,7 +51,7 @@ Import a button component in the script tag.
 Use these default button styles with multiple colors to indicate an action or link within your website. Each color conveys different semantic meanings:
 
 - **Default/Primary Blue**: Primary actions and main CTAs
-- **Alternative/Dark**: Secondary actions or alternative choices
+- **Alternative/Dark**: Secondary actions or secondary options
 - **Red**: Destructive actions (delete, remove, cancel)
 - **Green**: Positive actions (confirm, approve, submit)
 - **Yellow**: Warning actions or cautionary operations

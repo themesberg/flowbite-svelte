@@ -13,10 +13,10 @@ thumnailSize: w-64
   import { P, A } from '$lib'
   const dirName = toKebabCase(component_title)
   const relatedLinks = [
-    'docs/components/alert',
-    'docs/components/toast',
-    'docs/components/modal',
-    'docs/components/navbar'
+    '/docs/components/alert',
+    '/docs/components/toast',
+    '/docs/components/modal',
+    '/docs/components/navbar'
   ];
 </script>
 

@@ -13,10 +13,10 @@ thumnailSize: w-28
   import { P, A } from 'flowbite-svelte'
   const dirName = toKebabCase(component_title)
   const relatedLinks = [
-    'docs/components/avatar',
-    'docs/components/buttons',
-    'docs/components/indicators',
-    'docs/components/alert'
+    '/docs/components/avatar',
+    '/docs/components/buttons',
+    '/docs/components/indicators',
+    '/docs/components/alert'
   ];
 </script>
 

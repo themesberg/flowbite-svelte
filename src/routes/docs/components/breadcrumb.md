@@ -13,9 +13,9 @@ thumnailSize: w-64
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   const dirName = toKebabCase(component_title)
   const relatedLinks = [
-    'docs/components/navbar',
-    'docs/components/sidebar',
-    'docs/components/pagination',
+    '/docs/components/navbar',
+    '/docs/components/sidebar',
+    '/docs/components/pagination',
     'docs/typography/heading'
   ];
 </script>

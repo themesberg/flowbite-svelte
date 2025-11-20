@@ -13,11 +13,11 @@ thumnailSize: w-36
   import { P, A } from '$lib'
   const dirName = 'card'
   const relatedLinks = [
-    'docs/components/badge',
-    'docs/components/buttons',
-    'docs/components/avatar',
-    'docs/components/list-group',
-    'docs/components/modal'
+    '/docs/components/badge',
+    '/docs/components/buttons',
+    '/docs/components/avatar',
+    '/docs/components/list-group',
+    '/docs/components/modal'
   ];
 </script>
 
@@ -254,7 +254,7 @@ Social proof is powerful; testimonial cards make it scannable and credible.
 
 ## Custom size
 
-Use `class="max-w-[250px]` to create a custom size card. Custom sizing allows:
+Use `class="max-w-[250px]` to create a custom-sized card. Custom sizing allows:
 - **Flexible layouts** - adapting to different contexts
 - **Grid systems** - consistent column-based layouts
 - **Responsive design** - different sizes at different breakpoints
