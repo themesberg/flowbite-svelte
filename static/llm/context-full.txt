@@ -1,5 +1,5 @@
 # Flowbite Svelte Documentation - Full Context
-# Generated on 2025-11-21T12:26:03.543Z
+# Generated on 2025-11-21T13:12:21.604Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -2142,17 +2142,6 @@ When using alerts, consider these guidelines:
 - params
 
 
-### Key Props
-
-- `color`: Set the alert color variant (info, danger, success, warning, dark)
-- `dismissable`: Enable close button for dismissing the alert
-- `border`: Add border styling
-- `rounded`: Control border radius
-- `transition`: Custom Svelte transition function (default: fade)
-- `params`: Parameters for the transition (duration, easing, etc.)
-
-<CompoAttributesViewer {dirName}/>
-
 ## References
 
 - [Flowbite Alerts](https://flowbite.com/docs/components/alerts/)
@@ -2485,17 +2474,6 @@ When implementing avatars, consider these guidelines:
 - size: "md"
 - onclick
 
-
-### Key Props
-
-- `src`: URL of the avatar image
-- `size`: Preset size (xs, sm, md, lg, xl) or custom classes
-- `rounded`: Enable rounded corners (default: true for circle)
-- `border`: Add border around avatar
-- `alt`: Alternative text for the image (important for accessibility)
-- `dot`: Status indicator configuration
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -2904,18 +2882,6 @@ When using badges, consider these guidelines:
 - aClass
 
 
-### Key Props
-
-- `color`: Set the badge color variant (default, dark, red, green, yellow, etc.)
-- `large`: Enable larger badge size
-- `border`: Add border styling
-- `rounded`: Enable pill-shaped rounded corners
-- `href`: Make badge a clickable link
-- `dismissable`: Add close button for dismissing badge
-- `icon`: Custom icon snippet
-
-<CompoAttributesViewer {dirName}/>
-
 ## References
 
 - [Flowbite Badge](https://flowbite.com/docs/components/badge/)
@@ -3266,17 +3232,6 @@ When implementing sticky banners, consider these guidelines:
 - closeClass
 - onclose
 
-
-### Key Props
-
-- `position`: Position banner at top or bottom of viewport (default: 'top')
-- `dismissable`: Enable close button for dismissing banner (default: true)
-- `transition`: Custom Svelte transition function for appear/disappear effects
-- `params`: Parameters for the transition (duration, easing, etc.)
-- `bannerType`: Style variant for different banner types
-- `divClass`: Custom classes for the banner container
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -3811,22 +3766,6 @@ When implementing bottom navigation, consider these guidelines:
 - active: manualActive
 
 
-### Key Props
-
-**BottomNav:**
-- `activeUrl`: Current page URL for highlighting active items
-- `position`: Position of the navigation (default: 'fixed')
-- `navType`: Style variant for the navigation bar
-- `outerClass`: Custom classes for the outer container
-- `innerClass`: Custom classes for the inner container
-
-**BottomNavItem:**
-- `href`: Link destination for navigation items when it's only available via ...restProps
-- `activeClass`: Custom classes for active state
-- `btnName`: Accessible label for the button/link
-
-<CompoAttributesViewer {dirName}/>
-
 ## References
 
 - [Flowbite Bottom Navigation](https://flowbite.com/docs/components/bottom-navigation/)
@@ -4088,23 +4027,6 @@ For mobile devices, consider these patterns:
 - class: className
 - classes
 
-
-### Key Props
-
-**Breadcrumb:**
-- `solid`: Enable solid background style
-- `navClass`: Custom classes for the nav element
-- `olClass`: Custom classes for the ordered list
-- `ariaLabel`: ARIA label for the navigation (default: 'breadcrumb')
-
-**BreadcrumbItem:**
-- `home`: Mark this item as the home/root item
-- `href`: Link destination (omit for current page)
-- `linkClass`: Custom classes for the link element
-- `spanClass`: Custom classes for the span (non-linked current page)
-- `homeClass`: Custom classes specifically for home item
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -4463,19 +4385,6 @@ When implementing button groups, consider these guidelines:
 - disabled
 - class: className
 
-
-### Key Props
-
-**ButtonGroup:**
-- `size`: Set size for all buttons in group (xs, sm, md, lg, xl)
-- `divClass`: Custom classes for the container div
-- `class`: Additional CSS classes for the wrapper
-
-**Individual Buttons:**
-- All standard Button props apply to buttons within the group
-- Styling is automatically adjusted to create seamless group appearance
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -4996,21 +4905,6 @@ Establish clear visual hierarchy with different button types:
 - size
 - btnClass
 
-
-### Key Props
-
-- `color`: Button color variant (primary, alternative, dark, red, green, etc.)
-- `size`: Button size (xs, sm, md, lg, xl)
-- `href`: Creates a link button (uses `<a>` tag)
-- `pill`: Enable fully rounded pill style
-- `outline`: Use outline style instead of filled
-- `gradient`: Enable gradient styling (monochrome or duotone)
-- `shadow`: Add colored shadow effect
-- `disabled`: Disable the button
-- `loading`: Show loading spinner and disable button
-- `type`: Button type attribute (button, submit, reset)
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -5629,16 +5523,6 @@ When implementing cards, consider these guidelines:
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Key Props
-
-- `href`: Makes entire card clickable link
-- `horizontal`: Enable horizontal layout
-- `reverse`: Reverse order of image and content
-- `img`: Image source URL
-- `padding`: Control internal padding (none, sm, md, lg, xl)
-- `size`: Control card width constraints
-- `class`: Custom classes for styling
-
 <CompoAttributesViewer {dirName}/>
 
 ## References
@@ -6209,32 +6093,6 @@ Alternatives to consider:
 - throttleDelay: 650
 - class: className
 
-
-### Key Props
-
-**Carousel:**
-- `images`: Array of image objects with src, alt, and optional title
-- `duration`: Auto-advance interval in milliseconds (0 = manual only)
-- `index`: Current slide index (bindable for external control)
-- `showControls`: Show/hide previous/next buttons
-- `showIndicators`: Show/hide position indicators
-- `showThumbnails`: Show/hide thumbnail navigation
-- `transition`: Custom transition function
-- `transitionParams`: Parameters for transition (duration, easing)
-
-**Controls:**
-- `class`: Custom classes for control buttons
-- Position customization through slots
-
-**Indicators:**
-- `class`: Custom classes for indicator dots
-- Active state styling
-
-**Thumbnails:**
-- `class`: Custom classes for thumbnail container
-- Active thumbnail highlighting
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 

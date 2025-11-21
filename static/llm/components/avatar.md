@@ -323,17 +323,6 @@ When implementing avatars, consider these guidelines:
 - onclick
 
 
-### Key Props
-
-- `src`: URL of the avatar image
-- `size`: Preset size (xs, sm, md, lg, xl) or custom classes
-- `rounded`: Enable rounded corners (default: true for circle)
-- `border`: Add border around avatar
-- `alt`: Alternative text for the image (important for accessibility)
-- `dot`: Status indicator configuration
-
-<CompoAttributesViewer {dirName}/>
-
 ## References
 
 - [Flowbite Avatar](https://flowbite.com/docs/components/avatar/)

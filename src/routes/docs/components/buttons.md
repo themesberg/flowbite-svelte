@@ -335,19 +335,6 @@ Establish clear visual hierarchy with different button types:
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Key Props
-
-- `color`: Button color variant (primary, alternative, dark, red, green, etc.)
-- `size`: Button size (xs, sm, md, lg, xl)
-- `href`: Creates a link button (uses `<a>` tag)
-- `pill`: Enable fully rounded pill style
-- `outline`: Use outline style instead of filled
-- `gradient`: Enable gradient styling (monochrome or duotone)
-- `shadow`: Add colored shadow effect
-- `disabled`: Disable the button
-- `loading`: Show loading spinner and disable button
-- `type`: Button type attribute (button, submit, reset)
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

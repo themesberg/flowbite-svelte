@@ -397,18 +397,6 @@ When using badges, consider these guidelines:
 - aClass
 
 
-### Key Props
-
-- `color`: Set the badge color variant (default, dark, red, green, yellow, etc.)
-- `large`: Enable larger badge size
-- `border`: Add border styling
-- `rounded`: Enable pill-shaped rounded corners
-- `href`: Make badge a clickable link
-- `dismissable`: Add close button for dismissing badge
-- `icon`: Custom icon snippet
-
-<CompoAttributesViewer {dirName}/>
-
 ## References
 
 - [Flowbite Badge](https://flowbite.com/docs/components/badge/)

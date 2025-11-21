@@ -233,16 +233,6 @@ When using badges, consider these guidelines:
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Key Props
-
-- `color`: Set the badge color variant (default, dark, red, green, yellow, etc.)
-- `large`: Enable larger badge size
-- `border`: Add border styling
-- `rounded`: Enable pill-shaped rounded corners
-- `href`: Make badge a clickable link
-- `dismissable`: Add close button for dismissing badge
-- `icon`: Custom icon snippet
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

@@ -392,17 +392,6 @@ When using alerts, consider these guidelines:
 - params
 
 
-### Key Props
-
-- `color`: Set the alert color variant (info, danger, success, warning, dark)
-- `dismissable`: Enable close button for dismissing the alert
-- `border`: Add border styling
-- `rounded`: Control border radius
-- `transition`: Custom Svelte transition function (default: fade)
-- `params`: Parameters for the transition (duration, easing, etc.)
-
-<CompoAttributesViewer {dirName}/>
-
 ## References
 
 - [Flowbite Alerts](https://flowbite.com/docs/components/alerts/)

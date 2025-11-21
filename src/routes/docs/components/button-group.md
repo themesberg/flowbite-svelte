@@ -229,17 +229,6 @@ When implementing button groups, consider these guidelines:
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Key Props
-
-**ButtonGroup:**
-- `size`: Set size for all buttons in group (xs, sm, md, lg, xl)
-- `divClass`: Custom classes for the container div
-- `class`: Additional CSS classes for the wrapper
-
-**Individual Buttons:**
-- All standard Button props apply to buttons within the group
-- Styling is automatically adjusted to create seamless group appearance
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

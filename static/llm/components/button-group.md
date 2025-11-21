@@ -348,19 +348,6 @@ When implementing button groups, consider these guidelines:
 - class: className
 
 
-### Key Props
-
-**ButtonGroup:**
-- `size`: Set size for all buttons in group (xs, sm, md, lg, xl)
-- `divClass`: Custom classes for the container div
-- `class`: Additional CSS classes for the wrapper
-
-**Individual Buttons:**
-- All standard Button props apply to buttons within the group
-- Styling is automatically adjusted to create seamless group appearance
-
-<CompoAttributesViewer {dirName}/>
-
 ## References
 
 - [Flowbite Button Group](https://flowbite.com/docs/components/button-group/)
