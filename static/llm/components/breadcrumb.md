@@ -217,7 +217,7 @@ For mobile devices, consider these patterns:
 - [Navbar](https://flowbite-svelte.com/llm/components/navbar.md)
 - [Sidebar](https://flowbite-svelte.com/llm/components/sidebar.md)
 - [Pagination](https://flowbite-svelte.com/llm/components/pagination.md)
-- [Heading](docs/typography/heading.md)
+- [Heading](https://flowbite-svelte.com/llm/typography/heading.md)
 
 
 ## Component data

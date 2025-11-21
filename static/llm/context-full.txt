@@ -1,5 +1,5 @@
 # Flowbite Svelte Documentation - Full Context
-# Generated on 2025-11-21T20:07:02.065Z
+# Generated on 2025-11-21T20:39:40.695Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -4016,7 +4016,7 @@ For mobile devices, consider these patterns:
 - [Navbar](https://flowbite-svelte.com/llm/components/navbar.md)
 - [Sidebar](https://flowbite-svelte.com/llm/components/sidebar.md)
 - [Pagination](https://flowbite-svelte.com/llm/components/pagination.md)
-- [Heading](docs/typography/heading.md)
+- [Heading](https://flowbite-svelte.com/llm/typography/heading.md)
 
 
 ## Component data
@@ -4395,11 +4395,11 @@ When implementing button groups, consider these guidelines:
 
 ## See also
 
-- [Button toggle](docs/extend/button-toggle.md)
+- [Button toggle](https://flowbite-svelte.com/llm/extend/button-toggle.md)
 - [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
 - [List group](https://flowbite-svelte.com/llm/components/list-group.md)
-- [Radio#radiobutton](docs/forms/radio#radiobutton.md)
-- [Checkbox#checkboxbutton](docs/forms/checkbox#checkboxbutton.md)
+- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
+- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
 
 
 ## Component data
@@ -4896,9 +4896,9 @@ Establish clear visual hierarchy with different button types:
 ## See also
 
 - [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
-- [Close button](docs/utilities/close-button.md)
-- [Radio#radiobutton](docs/forms/radio#radiobutton.md)
-- [Checkbox#checkboxbutton](docs/forms/checkbox#checkboxbutton.md)
+- [Close button](https://flowbite-svelte.com/llm/utilities/close-button.md)
+- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
+- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
 - [Badge](https://flowbite-svelte.com/llm/components/badge.md)
 
 
@@ -20925,7 +20925,6 @@ If you need a full control over `input` HTML element while still re-using the Fl
 
 ## See also
 
-- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
 - [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
 - [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
 
@@ -27377,7 +27376,6 @@ Use `disabled` to the `Tags` component.
 
 - [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
 - [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
-- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
 
 
 ## Component data
