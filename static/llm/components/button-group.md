@@ -328,10 +328,6 @@ When implementing button groups, consider these guidelines:
 - **Responsive**: Adapt layout for different screen sizes
 - **Z-index**: Manage layering for hover/focus states
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### ButtonGroup

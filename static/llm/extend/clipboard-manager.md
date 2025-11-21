@@ -13,10 +13,6 @@
 
 See [examples](/docs-examples/extend/clipboard-manager) and [code](https://github.com/themesberg/flowbite-svelte/tree/main/src/routes/docs-examples/extend/clipboard-manager).
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### ClipboardManager

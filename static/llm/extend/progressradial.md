@@ -118,10 +118,6 @@ Import the `Progressradial` component in a script tag.
 <Progressradial progress={50} startingPosition="left" />
 ```
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### Progressradial

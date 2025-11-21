@@ -574,10 +574,6 @@ The Accordion component is built with accessibility in mind:
 - **Focus Management**: Clear focus indicators help keyboard users navigate
 - **Screen Reader Support**: Expanded/collapsed states are announced to screen reader users
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### Accordion

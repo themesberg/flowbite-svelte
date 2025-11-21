@@ -449,10 +449,6 @@ Alternatives to consider:
 - Simple image galleries with modal zoom
 - Static hero images with focused messaging
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### Carousel

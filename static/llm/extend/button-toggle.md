@@ -407,10 +407,6 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 <p class="mt-2 dark:text-white">Selected: {singleValue || "None"}</p>
 ```
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### ButtonToggle

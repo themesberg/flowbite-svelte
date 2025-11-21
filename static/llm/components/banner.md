@@ -312,10 +312,6 @@ When implementing sticky banners, consider these guidelines:
 - **Toast**: Temporary feedback, success/error messages, auto-dismissing notifications
 - **Modal**: Critical information requiring user action, complex forms, focused tasks
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### Banner

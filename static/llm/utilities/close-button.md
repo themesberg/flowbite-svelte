@@ -26,10 +26,6 @@ Use `CloseButton` component to close a component.
 {/if}
 ```
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### CloseButton

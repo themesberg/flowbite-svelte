@@ -15,7 +15,7 @@ export default {
   dataDir: "./src/routes/component-data",
 
   // Sections to ignore (can be string or array)
-  ignore: ["GitHub Links", "LLM Link"],
+  ignore: ["GitHub Links", "LLM Link", "See also"],
 
   // Strip this prefix from output paths
   stripPrefix: "docs",

@@ -453,10 +453,6 @@ When implementing bottom navigation, consider these guidelines:
 - **Icon + Label**: Combine icons with text labels for clarity
 - **Responsive Design**: Consider hiding or adapting for tablet/desktop views
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### BottomNav

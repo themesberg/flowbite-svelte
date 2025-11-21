@@ -465,10 +465,6 @@ Establish clear visual hierarchy with different button types:
 **Wizards**: Back (outline) + Next (primary) + Cancel (text)
 **CRUD Operations**: Create (green) + Edit (blue) + Delete (red)
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### Button

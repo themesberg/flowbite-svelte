@@ -212,10 +212,6 @@ For mobile devices, consider these patterns:
 - **Vertical Stack**: Stack breadcrumb items vertically if appropriate
 - **Icon Only**: Use just a home icon and back arrow on narrow screens
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### Breadcrumb

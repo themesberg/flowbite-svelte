@@ -654,10 +654,6 @@ If you need a full control over `input` HTML element while still re-using the Fl
 </Tabs>
 ```
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

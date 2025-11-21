@@ -365,10 +365,6 @@ When using alerts, consider these guidelines:
 - **Allow Dismissal**: For non-critical alerts, enable dismissal to reduce clutter
 - **Position Wisely**: Place alerts where they're most relevant to the action or content
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### Alert

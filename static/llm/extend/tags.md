@@ -101,10 +101,6 @@ Use `disabled` to the `Tags` component.
 </form>
 ```
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### Tags

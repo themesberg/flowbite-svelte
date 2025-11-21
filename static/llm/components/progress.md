@@ -199,10 +199,6 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 </div>
 ```
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### Progressbar

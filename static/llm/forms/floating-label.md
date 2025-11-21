@@ -288,10 +288,6 @@ Add a helper text in addition to the label if you want to show more information 
 </Helper>
 ```
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

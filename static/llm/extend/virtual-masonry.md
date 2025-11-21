@@ -13,10 +13,6 @@
 
 See [examples](/docs-examples/extend/virtual-masonry) and [code](https://github.com/themesberg/flowbite-svelte/tree/main/src/routes/docs-examples/extend/virtual-masonry).
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### VirtualMasonry

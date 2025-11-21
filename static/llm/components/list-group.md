@@ -172,10 +172,6 @@ When non-standard usage is needed you can omit the `items` props and add element
 </Listgroup>
 ```
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### Listgroup

@@ -226,10 +226,6 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 </Blockquote>
 ```
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### Blockquote

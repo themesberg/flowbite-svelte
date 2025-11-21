@@ -366,10 +366,6 @@ When using badges, consider these guidelines:
 - **Consider Context**: Place badges near related content for clarity
 - **Readable Contrast**: Ensure text has sufficient contrast against badge background
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### Badge

@@ -599,10 +599,6 @@ When implementing cards, consider these guidelines:
 **Featured + Grid**: Large featured card with smaller cards
 **Sidebar**: Narrow cards in sidebar context
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

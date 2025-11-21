@@ -294,10 +294,6 @@ When implementing avatars, consider these guidelines:
 - **Clickable Areas**: Ensure clickable avatars have adequate touch targets (minimum 44x44px)
 - **Privacy**: Consider user privacy preferences when displaying profile pictures
 
-## See also
-
-<Seealso links={relatedLinks} />
-
 ## Component data
 
 ### Avatar
