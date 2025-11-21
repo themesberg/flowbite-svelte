@@ -312,6 +312,14 @@ When implementing sticky banners, consider these guidelines:
 - **Toast**: Temporary feedback, success/error messages, auto-dismissing notifications
 - **Modal**: Critical information requiring user action, complex forms, focused tasks
 
+## See also
+
+- [Alert](https://flowbite-svelte.com/llm/components/alert.md)
+- [Toast](https://flowbite-svelte.com/llm/components/toast.md)
+- [Modal](https://flowbite-svelte.com/llm/components/modal.md)
+- [Navbar](https://flowbite-svelte.com/llm/components/navbar.md)
+
+
 ## Component data
 
 ### Banner

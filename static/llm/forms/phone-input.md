@@ -326,6 +326,13 @@ The PhoneInput component provides customizable styling through six distinct clas
 <PhoneInput aria-describedby="helper-text-explanation" id="phone-input" placeholder="123-456-7890" required classes={{ input: "border-blue-500", div: "ps-4" }} />
 ```
 
+## See also
+
+- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
+- [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
+- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+
+
 ## Component data
 
 ### PhoneInput

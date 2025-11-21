@@ -89,7 +89,7 @@
     "super-sitemap": "^1.0.5",
     "svelte": "^5.43.10",
     "svelte-check": "^4.3.4",
-    "svelte-doc-llm": "^0.5.1",
+    "svelte-doc-llm": "^0.6.0",
     "svelte-lib-helpers": "^0.4.31",
     "svelte-meta-tags": "^4.5.0",
     "svelte-rune-highlight": "^0.11.1",

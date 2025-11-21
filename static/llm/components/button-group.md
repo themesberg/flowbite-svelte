@@ -328,6 +328,15 @@ When implementing button groups, consider these guidelines:
 - **Responsive**: Adapt layout for different screen sizes
 - **Z-index**: Manage layering for hover/focus states
 
+## See also
+
+- [Button toggle](docs/extend/button-toggle.md)
+- [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
+- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
+- [Radio#radiobutton](docs/forms/radio#radiobutton.md)
+- [Checkbox#checkboxbutton](docs/forms/checkbox#checkboxbutton.md)
+
+
 ## Component data
 
 ### ButtonGroup

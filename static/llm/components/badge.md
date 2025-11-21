@@ -366,6 +366,14 @@ When using badges, consider these guidelines:
 - **Consider Context**: Place badges near related content for clarity
 - **Readable Contrast**: Ensure text has sufficient contrast against badge background
 
+## See also
+
+- [Avatar](https://flowbite-svelte.com/llm/components/avatar.md)
+- [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
+- [Indicators](https://flowbite-svelte.com/llm/components/indicators.md)
+- [Alert](https://flowbite-svelte.com/llm/components/alert.md)
+
+
 ## Component data
 
 ### Badge

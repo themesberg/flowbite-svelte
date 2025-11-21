@@ -599,6 +599,15 @@ When implementing cards, consider these guidelines:
 **Featured + Grid**: Large featured card with smaller cards
 **Sidebar**: Narrow cards in sidebar context
 
+## See also
+
+- [Badge](https://flowbite-svelte.com/llm/components/badge.md)
+- [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
+- [Avatar](https://flowbite-svelte.com/llm/components/avatar.md)
+- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
+- [Modal](https://flowbite-svelte.com/llm/components/modal.md)
+
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

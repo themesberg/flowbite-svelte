@@ -118,6 +118,12 @@ Import the `Progressradial` component in a script tag.
 <Progressradial progress={50} startingPosition="left" />
 ```
 
+## See also
+
+- [Progress](https://flowbite-svelte.com/llm/components/progress.md)
+- [Progressradial](https://flowbite-svelte.com/llm/extend/progressradial.md)
+
+
 ## Component data
 
 ### Progressradial

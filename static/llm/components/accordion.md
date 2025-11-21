@@ -574,6 +574,13 @@ The Accordion component is built with accessibility in mind:
 - **Focus Management**: Clear focus indicators help keyboard users navigate
 - **Screen Reader Support**: Expanded/collapsed states are announced to screen reader users
 
+## See also
+
+- [Tabs](https://flowbite-svelte.com/llm/components/tabs.md)
+- [Dropdown](https://flowbite-svelte.com/llm/components/dropdown.md)
+- [Modal](https://flowbite-svelte.com/llm/components/modal.md)
+
+
 ## Component data
 
 ### Accordion

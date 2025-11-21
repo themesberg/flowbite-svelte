@@ -65,3 +65,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 - children
 - class: className: ""
 
+
+## See also
+
+

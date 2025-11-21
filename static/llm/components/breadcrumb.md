@@ -212,6 +212,14 @@ For mobile devices, consider these patterns:
 - **Vertical Stack**: Stack breadcrumb items vertically if appropriate
 - **Icon Only**: Use just a home icon and back arrow on narrow screens
 
+## See also
+
+- [Navbar](https://flowbite-svelte.com/llm/components/navbar.md)
+- [Sidebar](https://flowbite-svelte.com/llm/components/sidebar.md)
+- [Pagination](https://flowbite-svelte.com/llm/components/pagination.md)
+- [Heading](docs/typography/heading.md)
+
+
 ## Component data
 
 ### Breadcrumb

@@ -365,6 +365,14 @@ When using alerts, consider these guidelines:
 - **Allow Dismissal**: For non-critical alerts, enable dismissal to reduce clutter
 - **Position Wisely**: Place alerts where they're most relevant to the action or content
 
+## See also
+
+- [Toast](https://flowbite-svelte.com/llm/components/toast.md)
+- [Modal](https://flowbite-svelte.com/llm/components/modal.md)
+- [Banner](https://flowbite-svelte.com/llm/components/banner.md)
+- [Badge](https://flowbite-svelte.com/llm/components/badge.md)
+
+
 ## Component data
 
 ### Alert

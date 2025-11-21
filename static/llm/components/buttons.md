@@ -465,6 +465,15 @@ Establish clear visual hierarchy with different button types:
 **Wizards**: Back (outline) + Next (primary) + Cancel (text)
 **CRUD Operations**: Create (green) + Edit (blue) + Delete (red)
 
+## See also
+
+- [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
+- [Close button](docs/utilities/close-button.md)
+- [Radio#radiobutton](docs/forms/radio#radiobutton.md)
+- [Checkbox#checkboxbutton](docs/forms/checkbox#checkboxbutton.md)
+- [Badge](https://flowbite-svelte.com/llm/components/badge.md)
+
+
 ## Component data
 
 ### Button

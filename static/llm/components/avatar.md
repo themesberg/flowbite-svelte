@@ -294,6 +294,14 @@ When implementing avatars, consider these guidelines:
 - **Clickable Areas**: Ensure clickable avatars have adequate touch targets (minimum 44x44px)
 - **Privacy**: Consider user privacy preferences when displaying profile pictures
 
+## See also
+
+- [Badge](https://flowbite-svelte.com/llm/components/badge.md)
+- [Dropdown](https://flowbite-svelte.com/llm/components/dropdown.md)
+- [Tooltip](https://flowbite-svelte.com/llm/components/tooltip.md)
+- [Indicators](https://flowbite-svelte.com/llm/components/indicators.md)
+
+
 ## Component data
 
 ### Avatar

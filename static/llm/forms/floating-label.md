@@ -288,6 +288,13 @@ Add a helper text in addition to the label if you want to show more information 
 </Helper>
 ```
 
+## See also
+
+- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
+- [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
+- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

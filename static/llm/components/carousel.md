@@ -449,6 +449,14 @@ Alternatives to consider:
 - Simple image galleries with modal zoom
 - Static hero images with focused messaging
 
+## See also
+
+- [Gallery](https://flowbite-svelte.com/llm/components/gallery.md)
+- [Modal](https://flowbite-svelte.com/llm/components/modal.md)
+- [Tabs](https://flowbite-svelte.com/llm/components/tabs.md)
+- [Card](https://flowbite-svelte.com/llm/components/card.md)
+
+
 ## Component data
 
 ### Carousel

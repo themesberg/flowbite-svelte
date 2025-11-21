@@ -101,6 +101,13 @@ Use `disabled` to the `Tags` component.
 </form>
 ```
 
+## See also
+
+- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
+- [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
+- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+
+
 ## Component data
 
 ### Tags

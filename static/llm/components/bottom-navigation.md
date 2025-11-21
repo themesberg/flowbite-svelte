@@ -453,6 +453,14 @@ When implementing bottom navigation, consider these guidelines:
 - **Icon + Label**: Combine icons with text labels for clarity
 - **Responsive Design**: Consider hiding or adapting for tablet/desktop views
 
+## See also
+
+- [Navbar](https://flowbite-svelte.com/llm/components/navbar.md)
+- [Sidebar](https://flowbite-svelte.com/llm/components/sidebar.md)
+- [Tabs](https://flowbite-svelte.com/llm/components/tabs.md)
+- [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
+
+
 ## Component data
 
 ### BottomNav

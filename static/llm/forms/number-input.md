@@ -207,3 +207,11 @@ Use this example as an alternative style to the control buttons example above.
   </div>
 </form>
 ```
+
+
+## See also
+
+- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
+- [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
+- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+

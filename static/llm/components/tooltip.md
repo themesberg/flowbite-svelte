@@ -172,6 +172,13 @@ When you want to add a fully custom styles, use `type="custom"`, and `class` to 
 <Tooltip placement="right" type="custom" class="border-none bg-purple-500 p-4 text-lg font-medium text-gray-100 dark:bg-purple-600" arrow={false}>Tooltip content</Tooltip>
 ```
 
+## See also
+
+- [Popover](https://flowbite-svelte.com/llm/components/popover.md)
+- [Speed dial](https://flowbite-svelte.com/llm/components/speed-dial.md)
+- [Tooltip](https://flowbite-svelte.com/llm/components/tooltip.md)
+
+
 ## Component data
 
 ### Tooltip
