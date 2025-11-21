@@ -15,9 +15,9 @@ thumnailSize: w-24
  
   const relatedLinks = [
     '/docs/components/button-group',
-    'docs/utilities/close-button',
-    'docs/forms/radio#radiobutton',
-    'docs/forms/checkbox#checkboxbutton',
+    '/docs/utilities/close-button',
+    '/docs/forms/radio#radiobutton',
+    '/docs/forms/checkbox#checkboxbutton',
     '/docs/components/badge'
   ];
 </script>

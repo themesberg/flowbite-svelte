@@ -12,7 +12,7 @@ description: A customizable tag input component that allows users to enter multi
   import { P, A } from '$lib'
   const components = 'Tags'
   const dirName = "forms/tags"
-  const relatedLinks = ['/docs/forms/input-field','/docs/forms/floating-label', '/docs/extend/tags' ]
+  const relatedLinks = ['/docs/forms/input-field','/docs/forms/floating-label' ]
 </script>
 
 The Tags.svelte component is a flexible tag input field that lets users add and manage multiple tags. It supports adding tags with Enter, removing them with Backspace or close buttons, and offers customizable styling options. The component handles keyboard navigation and maintains a reactive array of tag values that can be bound to a parent component.

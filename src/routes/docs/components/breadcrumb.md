@@ -16,7 +16,7 @@ thumnailSize: w-64
     '/docs/components/navbar',
     '/docs/components/sidebar',
     '/docs/components/pagination',
-    'docs/typography/heading'
+    '/docs/typography/heading'
   ];
 </script>
 

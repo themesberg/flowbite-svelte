@@ -12,11 +12,11 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
   import { Badge, P, A } from '$lib'
   const dirName = 'buttongroup'
   const relatedLinks = [
-    'docs/extend/button-toggle',
+    '/docs/extend/button-toggle',
     '/docs/components/buttons',
     '/docs/components/list-group',
-    'docs/forms/radio#radiobutton',
-    'docs/forms/checkbox#checkboxbutton'
+    '/docs/forms/radio#radiobutton',
+    '/docs/forms/checkbox#checkboxbutton'
   ];
 </script>
 
