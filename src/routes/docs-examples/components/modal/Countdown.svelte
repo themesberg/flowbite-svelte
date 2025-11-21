@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { Button, Modal, P, A } from "$lib";
-  import { createCountdown } from "$lib/utils/countdown.svelte";
+  import { Button, Modal, P, A, createCountdown } from "flowbite-svelte";
 
   const adCountdown = createCountdown(4);
   const termsCountdown = createCountdown(5);

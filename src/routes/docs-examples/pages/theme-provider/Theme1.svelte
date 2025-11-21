@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ThemeProvider, Heading, P, Card } from "$lib";
+  import { ThemeProvider, Heading, P, Card } from "flowbite-svelte";
 
   const theme1a = {
     card: {

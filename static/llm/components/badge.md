@@ -128,7 +128,7 @@ You can also use SVG icons inside the badge elements.
 
 ## Notification badge
 
-To achive the functionality of the notification badge, use the sibling [`Indicator`](/docs/components/indicators) component. Remember to add the `relative` class to parent element.
+To achieve the functionality of the notification badge, use the sibling [`Indicator`](/docs/components/indicators) component. Remember to add the `relative` class to parent element.
 
 ```svelte
 <script lang="ts">
@@ -192,7 +192,7 @@ Alternatively you can also use badges which indicate only a SVG icon.
 
 ## Dismissable badges
 
-Use the `dimissable` prop to dismiss the current badge.
+Use the `dismissable` prop to dismiss the current badge.
 
 ```svelte
 <script lang="ts">
