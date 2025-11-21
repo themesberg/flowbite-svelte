@@ -228,7 +228,11 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Heading](https://flowbite-svelte.com/llm/typography/heading.md)
+- [Paragraph](https://flowbite-svelte.com/llm/typography/paragraph.md)
+- [Link](https://flowbite-svelte.com/llm/typography/link.md)
+- [List](https://flowbite-svelte.com/llm/typography/list.md)
+
 
 ## Component data
 

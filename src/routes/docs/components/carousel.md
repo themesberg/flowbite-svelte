@@ -350,30 +350,6 @@ Alternatives to consider:
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Key Props
-
-**Carousel:**
-- `images`: Array of image objects with src, alt, and optional title
-- `duration`: Auto-advance interval in milliseconds (0 = manual only)
-- `index`: Current slide index (bindable for external control)
-- `showControls`: Show/hide previous/next buttons
-- `showIndicators`: Show/hide position indicators
-- `showThumbnails`: Show/hide thumbnail navigation
-- `transition`: Custom transition function
-- `transitionParams`: Parameters for transition (duration, easing)
-
-**Controls:**
-- `class`: Custom classes for control buttons
-- Position customization through slots
-
-**Indicators:**
-- `class`: Custom classes for indicator dots
-- Active state styling
-
-**Thumbnails:**
-- `class`: Custom classes for thumbnail container
-- Active thumbnail highlighting
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

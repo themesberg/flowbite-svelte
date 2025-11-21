@@ -314,7 +314,11 @@ When implementing sticky banners, consider these guidelines:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Alert](https://flowbite-svelte.com/llm/components/alert.md)
+- [Toast](https://flowbite-svelte.com/llm/components/toast.md)
+- [Modal](https://flowbite-svelte.com/llm/components/modal.md)
+- [Navbar](https://flowbite-svelte.com/llm/components/navbar.md)
+
 
 ## Component data
 
@@ -340,17 +344,6 @@ When implementing sticky banners, consider these guidelines:
 - closeClass
 - onclose
 
-
-### Key Props
-
-- `position`: Position banner at top or bottom of viewport (default: 'top')
-- `dismissable`: Enable close button for dismissing banner (default: true)
-- `transition`: Custom Svelte transition function for appear/disappear effects
-- `params`: Parameters for the transition (duration, easing, etc.)
-- `bannerType`: Style variant for different banner types
-- `divClass`: Custom classes for the banner container
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 

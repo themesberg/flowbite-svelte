@@ -451,3 +451,7 @@ For production, use a proper database (PostgreSQL, MongoDB, Supabase, etc.) with
 - columns: $bindable([])
 - onMove: (_card: KanbanCardType, _from: KanbanColumnType, _to: KanbanColumnType) => {
 
+
+## See also
+
+

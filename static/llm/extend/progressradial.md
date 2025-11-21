@@ -120,7 +120,9 @@ Import the `Progressradial` component in a script tag.
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Progress](https://flowbite-svelte.com/llm/components/progress.md)
+- [Progressradial](https://flowbite-svelte.com/llm/extend/progressradial.md)
+
 
 ## Component data
 

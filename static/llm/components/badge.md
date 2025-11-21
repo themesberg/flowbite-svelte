@@ -368,7 +368,11 @@ When using badges, consider these guidelines:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Avatar](https://flowbite-svelte.com/llm/components/avatar.md)
+- [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
+- [Indicators](https://flowbite-svelte.com/llm/components/indicators.md)
+- [Alert](https://flowbite-svelte.com/llm/components/alert.md)
+
 
 ## Component data
 
@@ -396,18 +400,6 @@ When using badges, consider these guidelines:
 - params
 - aClass
 
-
-### Key Props
-
-- `color`: Set the badge color variant (default, dark, red, green, yellow, etc.)
-- `large`: Enable larger badge size
-- `border`: Add border styling
-- `rounded`: Enable pill-shaped rounded corners
-- `href`: Make badge a clickable link
-- `dismissable`: Add close button for dismissing badge
-- `icon`: Custom icon snippet
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 

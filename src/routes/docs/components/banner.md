@@ -190,15 +190,6 @@ When implementing sticky banners, consider these guidelines:
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Key Props
-
-- `position`: Position banner at top or bottom of viewport (default: 'top')
-- `dismissable`: Enable close button for dismissing banner (default: true)
-- `transition`: Custom Svelte transition function for appear/disappear effects
-- `params`: Parameters for the transition (duration, easing, etc.)
-- `bannerType`: Style variant for different banner types
-- `divClass`: Custom classes for the banner container
-
 <CompoAttributesViewer {dirName}/>
 
 ## References

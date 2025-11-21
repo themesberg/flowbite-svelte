@@ -12,11 +12,11 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
   import { Badge, P, A } from '$lib'
   const dirName = 'buttongroup'
   const relatedLinks = [
-    'docs/extend/button-toggle',
+    '/docs/extend/button-toggle',
     '/docs/components/buttons',
     '/docs/components/list-group',
-    'docs/forms/radio#radiobutton',
-    'docs/forms/checkbox#checkboxbutton'
+    '/docs/forms/radio#radiobutton',
+    '/docs/forms/checkbox#checkboxbutton'
   ];
 </script>
 
@@ -228,17 +228,6 @@ When implementing button groups, consider these guidelines:
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### Key Props
-
-**ButtonGroup:**
-- `size`: Set size for all buttons in group (xs, sm, md, lg, xl)
-- `divClass`: Custom classes for the container div
-- `class`: Additional CSS classes for the wrapper
-
-**Individual Buttons:**
-- All standard Button props apply to buttons within the group
-- Styling is automatically adjusted to create seamless group appearance
 
 <CompoAttributesViewer {dirName}/>
 

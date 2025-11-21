@@ -174,7 +174,10 @@ When you want to add a fully custom styles, use `type="custom"`, and `class` to 
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Popover](https://flowbite-svelte.com/llm/components/popover.md)
+- [Speed dial](https://flowbite-svelte.com/llm/components/speed-dial.md)
+- [Tooltip](https://flowbite-svelte.com/llm/components/tooltip.md)
+
 
 ## Component data
 

@@ -16,7 +16,7 @@ thumnailSize: w-64
     '/docs/components/navbar',
     '/docs/components/sidebar',
     '/docs/components/pagination',
-    'docs/typography/heading'
+    '/docs/typography/heading'
   ];
 </script>
 
@@ -177,21 +177,6 @@ For mobile devices, consider these patterns:
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### Key Props
-
-**Breadcrumb:**
-- `solid`: Enable solid background style
-- `navClass`: Custom classes for the nav element
-- `olClass`: Custom classes for the ordered list
-- `ariaLabel`: ARIA label for the navigation (default: 'breadcrumb')
-
-**BreadcrumbItem:**
-- `home`: Mark this item as the home/root item
-- `href`: Link destination (omit for current page)
-- `linkClass`: Custom classes for the link element
-- `spanClass`: Custom classes for the span (non-linked current page)
-- `homeClass`: Custom classes specifically for home item
 
 <CompoAttributesViewer {dirName}/>
 

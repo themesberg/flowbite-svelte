@@ -467,7 +467,12 @@ Establish clear visual hierarchy with different button types:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
+- [Close button](docs/utilities/close-button.md)
+- [Radio#radiobutton](docs/forms/radio#radiobutton.md)
+- [Checkbox#checkboxbutton](docs/forms/checkbox#checkboxbutton.md)
+- [Badge](https://flowbite-svelte.com/llm/components/badge.md)
+
 
 ## Component data
 
@@ -509,21 +514,6 @@ Establish clear visual hierarchy with different button types:
 - size
 - btnClass
 
-
-### Key Props
-
-- `color`: Button color variant (primary, alternative, dark, red, green, etc.)
-- `size`: Button size (xs, sm, md, lg, xl)
-- `href`: Creates a link button (uses `<a>` tag)
-- `pill`: Enable fully rounded pill style
-- `outline`: Use outline style instead of filled
-- `gradient`: Enable gradient styling (monochrome or duotone)
-- `shadow`: Add colored shadow effect
-- `disabled`: Disable the button
-- `loading`: Show loading spinner and disable button
-- `type`: Button type attribute (button, submit, reset)
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 

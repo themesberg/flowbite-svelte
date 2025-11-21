@@ -201,7 +201,9 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Progress](https://flowbite-svelte.com/llm/components/progress.md)
+- [Progressradial](https://flowbite-svelte.com/llm/extend/progressradial.md)
+
 
 ## Component data
 

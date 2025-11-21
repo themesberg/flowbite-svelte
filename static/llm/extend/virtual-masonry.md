@@ -15,7 +15,8 @@ See [examples](/docs-examples/extend/virtual-masonry) and [code](https://github.
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Gallery](https://flowbite-svelte.com/llm/components/gallery.md)
+
 
 ## Component data
 

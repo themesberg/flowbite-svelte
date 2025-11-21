@@ -367,7 +367,11 @@ When using alerts, consider these guidelines:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Toast](https://flowbite-svelte.com/llm/components/toast.md)
+- [Modal](https://flowbite-svelte.com/llm/components/modal.md)
+- [Banner](https://flowbite-svelte.com/llm/components/banner.md)
+- [Badge](https://flowbite-svelte.com/llm/components/badge.md)
+
 
 ## Component data
 
@@ -391,17 +395,6 @@ When using alerts, consider these guidelines:
 - transition: fade
 - params
 
-
-### Key Props
-
-- `color`: Set the alert color variant (info, danger, success, warning, dark)
-- `dismissable`: Enable close button for dismissing the alert
-- `border`: Add border styling
-- `rounded`: Control border radius
-- `transition`: Custom Svelte transition function (default: fade)
-- `params`: Parameters for the transition (duration, easing, etc.)
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 

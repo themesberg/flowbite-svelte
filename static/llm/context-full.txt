@@ -1,5 +1,5 @@
 # Flowbite Svelte Documentation - Full Context
-# Generated on 2025-11-21T12:26:03.543Z
+# Generated on 2025-11-21T20:07:02.065Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -1697,7 +1697,10 @@ The Accordion component is built with accessibility in mind:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Tabs](https://flowbite-svelte.com/llm/components/tabs.md)
+- [Dropdown](https://flowbite-svelte.com/llm/components/dropdown.md)
+- [Modal](https://flowbite-svelte.com/llm/components/modal.md)
+
 
 ## Component data
 
@@ -2117,7 +2120,11 @@ When using alerts, consider these guidelines:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Toast](https://flowbite-svelte.com/llm/components/toast.md)
+- [Modal](https://flowbite-svelte.com/llm/components/modal.md)
+- [Banner](https://flowbite-svelte.com/llm/components/banner.md)
+- [Badge](https://flowbite-svelte.com/llm/components/badge.md)
+
 
 ## Component data
 
@@ -2141,17 +2148,6 @@ When using alerts, consider these guidelines:
 - transition: fade
 - params
 
-
-### Key Props
-
-- `color`: Set the alert color variant (info, danger, success, warning, dark)
-- `dismissable`: Enable close button for dismissing the alert
-- `border`: Add border styling
-- `rounded`: Control border radius
-- `transition`: Custom Svelte transition function (default: fade)
-- `params`: Parameters for the transition (duration, easing, etc.)
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -2459,7 +2455,11 @@ When implementing avatars, consider these guidelines:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Badge](https://flowbite-svelte.com/llm/components/badge.md)
+- [Dropdown](https://flowbite-svelte.com/llm/components/dropdown.md)
+- [Tooltip](https://flowbite-svelte.com/llm/components/tooltip.md)
+- [Indicators](https://flowbite-svelte.com/llm/components/indicators.md)
+
 
 ## Component data
 
@@ -2485,17 +2485,6 @@ When implementing avatars, consider these guidelines:
 - size: "md"
 - onclick
 
-
-### Key Props
-
-- `src`: URL of the avatar image
-- `size`: Preset size (xs, sm, md, lg, xl) or custom classes
-- `rounded`: Enable rounded corners (default: true for circle)
-- `border`: Add border around avatar
-- `alt`: Alternative text for the image (important for accessibility)
-- `dot`: Status indicator configuration
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -2875,7 +2864,11 @@ When using badges, consider these guidelines:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Avatar](https://flowbite-svelte.com/llm/components/avatar.md)
+- [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
+- [Indicators](https://flowbite-svelte.com/llm/components/indicators.md)
+- [Alert](https://flowbite-svelte.com/llm/components/alert.md)
+
 
 ## Component data
 
@@ -2903,18 +2896,6 @@ When using badges, consider these guidelines:
 - params
 - aClass
 
-
-### Key Props
-
-- `color`: Set the badge color variant (default, dark, red, green, yellow, etc.)
-- `large`: Enable larger badge size
-- `border`: Add border styling
-- `rounded`: Enable pill-shaped rounded corners
-- `href`: Make badge a clickable link
-- `dismissable`: Add close button for dismissing badge
-- `icon`: Custom icon snippet
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -3240,7 +3221,11 @@ When implementing sticky banners, consider these guidelines:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Alert](https://flowbite-svelte.com/llm/components/alert.md)
+- [Toast](https://flowbite-svelte.com/llm/components/toast.md)
+- [Modal](https://flowbite-svelte.com/llm/components/modal.md)
+- [Navbar](https://flowbite-svelte.com/llm/components/navbar.md)
+
 
 ## Component data
 
@@ -3266,17 +3251,6 @@ When implementing sticky banners, consider these guidelines:
 - closeClass
 - onclose
 
-
-### Key Props
-
-- `position`: Position banner at top or bottom of viewport (default: 'top')
-- `dismissable`: Enable close button for dismissing banner (default: true)
-- `transition`: Custom Svelte transition function for appear/disappear effects
-- `params`: Parameters for the transition (duration, easing, etc.)
-- `bannerType`: Style variant for different banner types
-- `divClass`: Custom classes for the banner container
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -3743,7 +3717,11 @@ When implementing bottom navigation, consider these guidelines:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Navbar](https://flowbite-svelte.com/llm/components/navbar.md)
+- [Sidebar](https://flowbite-svelte.com/llm/components/sidebar.md)
+- [Tabs](https://flowbite-svelte.com/llm/components/tabs.md)
+- [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
+
 
 ## Component data
 
@@ -3810,22 +3788,6 @@ When implementing bottom navigation, consider these guidelines:
 - spanClass
 - active: manualActive
 
-
-### Key Props
-
-**BottomNav:**
-- `activeUrl`: Current page URL for highlighting active items
-- `position`: Position of the navigation (default: 'fixed')
-- `navType`: Style variant for the navigation bar
-- `outerClass`: Custom classes for the outer container
-- `innerClass`: Custom classes for the inner container
-
-**BottomNavItem:**
-- `href`: Link destination for navigation items when it's only available via ...restProps
-- `activeClass`: Custom classes for active state
-- `btnName`: Accessible label for the button/link
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -4051,7 +4013,11 @@ For mobile devices, consider these patterns:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Navbar](https://flowbite-svelte.com/llm/components/navbar.md)
+- [Sidebar](https://flowbite-svelte.com/llm/components/sidebar.md)
+- [Pagination](https://flowbite-svelte.com/llm/components/pagination.md)
+- [Heading](docs/typography/heading.md)
+
 
 ## Component data
 
@@ -4088,23 +4054,6 @@ For mobile devices, consider these patterns:
 - class: className
 - classes
 
-
-### Key Props
-
-**Breadcrumb:**
-- `solid`: Enable solid background style
-- `navClass`: Custom classes for the nav element
-- `olClass`: Custom classes for the ordered list
-- `ariaLabel`: ARIA label for the navigation (default: 'breadcrumb')
-
-**BreadcrumbItem:**
-- `home`: Mark this item as the home/root item
-- `href`: Link destination (omit for current page)
-- `linkClass`: Custom classes for the link element
-- `spanClass`: Custom classes for the span (non-linked current page)
-- `homeClass`: Custom classes specifically for home item
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -4446,7 +4395,12 @@ When implementing button groups, consider these guidelines:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Button toggle](docs/extend/button-toggle.md)
+- [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
+- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
+- [Radio#radiobutton](docs/forms/radio#radiobutton.md)
+- [Checkbox#checkboxbutton](docs/forms/checkbox#checkboxbutton.md)
+
 
 ## Component data
 
@@ -4463,19 +4417,6 @@ When implementing button groups, consider these guidelines:
 - disabled
 - class: className
 
-
-### Key Props
-
-**ButtonGroup:**
-- `size`: Set size for all buttons in group (xs, sm, md, lg, xl)
-- `divClass`: Custom classes for the container div
-- `class`: Additional CSS classes for the wrapper
-
-**Individual Buttons:**
-- All standard Button props apply to buttons within the group
-- Styling is automatically adjusted to create seamless group appearance
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -4954,7 +4895,12 @@ Establish clear visual hierarchy with different button types:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
+- [Close button](docs/utilities/close-button.md)
+- [Radio#radiobutton](docs/forms/radio#radiobutton.md)
+- [Checkbox#checkboxbutton](docs/forms/checkbox#checkboxbutton.md)
+- [Badge](https://flowbite-svelte.com/llm/components/badge.md)
+
 
 ## Component data
 
@@ -4996,21 +4942,6 @@ Establish clear visual hierarchy with different button types:
 - size
 - btnClass
 
-
-### Key Props
-
-- `color`: Button color variant (primary, alternative, dark, red, green, etc.)
-- `size`: Button size (xs, sm, md, lg, xl)
-- `href`: Creates a link button (uses `<a>` tag)
-- `pill`: Enable fully rounded pill style
-- `outline`: Use outline style instead of filled
-- `gradient`: Enable gradient styling (monochrome or duotone)
-- `shadow`: Add colored shadow effect
-- `disabled`: Disable the button
-- `loading`: Show loading spinner and disable button
-- `type`: Button type attribute (button, submit, reset)
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -5623,21 +5554,16 @@ When implementing cards, consider these guidelines:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Badge](https://flowbite-svelte.com/llm/components/badge.md)
+- [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
+- [Avatar](https://flowbite-svelte.com/llm/components/avatar.md)
+- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
+- [Modal](https://flowbite-svelte.com/llm/components/modal.md)
+
 
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### Key Props
-
-- `href`: Makes entire card clickable link
-- `horizontal`: Enable horizontal layout
-- `reverse`: Reverse order of image and content
-- `img`: Image source URL
-- `padding`: Control internal padding (none, sm, md, lg, xl)
-- `size`: Control card width constraints
-- `class`: Custom classes for styling
 
 <CompoAttributesViewer {dirName}/>
 
@@ -6102,7 +6028,11 @@ Alternatives to consider:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Gallery](https://flowbite-svelte.com/llm/components/gallery.md)
+- [Modal](https://flowbite-svelte.com/llm/components/modal.md)
+- [Tabs](https://flowbite-svelte.com/llm/components/tabs.md)
+- [Card](https://flowbite-svelte.com/llm/components/card.md)
+
 
 ## Component data
 
@@ -6209,32 +6139,6 @@ Alternatives to consider:
 - throttleDelay: 650
 - class: className
 
-
-### Key Props
-
-**Carousel:**
-- `images`: Array of image objects with src, alt, and optional title
-- `duration`: Auto-advance interval in milliseconds (0 = manual only)
-- `index`: Current slide index (bindable for external control)
-- `showControls`: Show/hide previous/next buttons
-- `showIndicators`: Show/hide position indicators
-- `showThumbnails`: Show/hide thumbnail navigation
-- `transition`: Custom transition function
-- `transitionParams`: Parameters for transition (duration, easing)
-
-**Controls:**
-- `class`: Custom classes for control buttons
-- Position customization through slots
-
-**Indicators:**
-- `class`: Custom classes for indicator dots
-- Active state styling
-
-**Thumbnails:**
-- `class`: Custom classes for thumbnail container
-- Active thumbnail highlighting
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -10175,7 +10079,12 @@ When non-standard usage is needed you can omit the `items` props and add element
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Button toggle](https://flowbite-svelte.com/llm/extend/button-toggle.md)
+- [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
+- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
+- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
+- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+
 
 ## Component data
 
@@ -12946,7 +12855,9 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Progress](https://flowbite-svelte.com/llm/components/progress.md)
+- [Progressradial](https://flowbite-svelte.com/llm/extend/progressradial.md)
+
 
 ## Component data
 
@@ -19152,7 +19063,10 @@ When you want to add a fully custom styles, use `type="custom"`, and `class` to 
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Popover](https://flowbite-svelte.com/llm/components/popover.md)
+- [Speed dial](https://flowbite-svelte.com/llm/components/speed-dial.md)
+- [Tooltip](https://flowbite-svelte.com/llm/components/tooltip.md)
+
 
 ## Component data
 
@@ -20334,7 +20248,10 @@ Add a helper text in addition to the label if you want to show more information 
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
+- [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
+- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+
 
 ## Component data
 
@@ -21008,7 +20925,10 @@ If you need a full control over `input` HTML element while still re-using the Fl
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
+- [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
+- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+
 
 ## Component data
 
@@ -21233,6 +21153,14 @@ Use this example as an alternative style to the control buttons example above.
   </div>
 </form>
 ```
+
+
+## See also
+
+- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
+- [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
+- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+
 
 
 ---
@@ -21568,7 +21496,10 @@ The PhoneInput component provides customizable styling through six distinct clas
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
+- [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
+- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+
 
 ## Component data
 
@@ -23962,7 +23893,11 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Heading](https://flowbite-svelte.com/llm/typography/heading.md)
+- [Paragraph](https://flowbite-svelte.com/llm/typography/paragraph.md)
+- [Link](https://flowbite-svelte.com/llm/typography/link.md)
+- [List](https://flowbite-svelte.com/llm/typography/list.md)
+
 
 ## Component data
 
@@ -26244,7 +26179,12 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Button toggle](https://flowbite-svelte.com/llm/extend/button-toggle.md)
+- [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
+- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
+- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
+- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+
 
 ## Component data
 
@@ -26289,7 +26229,8 @@ See [examples](/docs-examples/extend/clipboard-manager) and [code](https://githu
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Clipboard](https://flowbite-svelte.com/llm/components/clipboard.md)
+
 
 ## Component data
 
@@ -26364,6 +26305,10 @@ See [examples](/docs-examples/extend/command-palette) and [code](https://github.
 - "aria-labelledby": ariaLabelledby
 - class: className
 - classes
+
+
+## See also
+
 
 
 
@@ -26859,6 +26804,10 @@ For production, use a proper database (PostgreSQL, MongoDB, Supabase, etc.) with
 - onMove: (_card: KanbanCardType, _from: KanbanColumnType, _to: KanbanColumnType) => {
 
 
+## See also
+
+
+
 
 ---
 
@@ -26985,7 +26934,9 @@ Import the `Progressradial` component in a script tag.
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Progress](https://flowbite-svelte.com/llm/components/progress.md)
+- [Progressradial](https://flowbite-svelte.com/llm/extend/progressradial.md)
+
 
 ## Component data
 
@@ -27055,6 +27006,10 @@ See [examples](/docs-examples/extend/scroll-spy) and [code](https://github.com/t
 - onActiveChange
 - onNavigate
 - classes
+
+
+## See also
+
 
 
 
@@ -27127,6 +27082,10 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 - onResize
 - children
 - class: className: ""
+
+
+## See also
+
 
 
 
@@ -27416,7 +27375,10 @@ Use `disabled` to the `Tags` component.
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
+- [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
+- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+
 
 ## Component data
 
@@ -27479,6 +27441,10 @@ See [examples](/docs-examples/extend/tour) and [code](https://github.com/themesb
 - active: $bindable(false)
 - currentStep: $bindable(0)
 - oncomplete: () => {
+
+
+## See also
+
 
 
 
@@ -27949,6 +27915,11 @@ Enable with `<VirtualList contained …>` or override via `classes.item`.
 - contained: false
 
 
+## See also
+
+- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
+
+
 
 ---
 
@@ -27970,7 +27941,8 @@ See [examples](/docs-examples/extend/virtual-masonry) and [code](https://github.
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Gallery](https://flowbite-svelte.com/llm/components/gallery.md)
+
 
 ## Component data
 
@@ -28033,7 +28005,13 @@ Use `CloseButton` component to close a component.
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
+- [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
+- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
+- [Close button](https://flowbite-svelte.com/llm/utilities/close-button.md)
+- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
+- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+
 
 ## Component data
 

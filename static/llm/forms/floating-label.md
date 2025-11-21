@@ -290,7 +290,10 @@ Add a helper text in addition to the label if you want to show more information 
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Input field](https://flowbite-svelte.com/llm/forms/input-field.md)
+- [Floating label](https://flowbite-svelte.com/llm/forms/floating-label.md)
+- [Tags](https://flowbite-svelte.com/llm/extend/tags.md)
+
 
 ## Component data
 

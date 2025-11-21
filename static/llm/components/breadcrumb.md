@@ -214,7 +214,11 @@ For mobile devices, consider these patterns:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Navbar](https://flowbite-svelte.com/llm/components/navbar.md)
+- [Sidebar](https://flowbite-svelte.com/llm/components/sidebar.md)
+- [Pagination](https://flowbite-svelte.com/llm/components/pagination.md)
+- [Heading](docs/typography/heading.md)
+
 
 ## Component data
 
@@ -251,23 +255,6 @@ For mobile devices, consider these patterns:
 - class: className
 - classes
 
-
-### Key Props
-
-**Breadcrumb:**
-- `solid`: Enable solid background style
-- `navClass`: Custom classes for the nav element
-- `olClass`: Custom classes for the ordered list
-- `ariaLabel`: ARIA label for the navigation (default: 'breadcrumb')
-
-**BreadcrumbItem:**
-- `home`: Mark this item as the home/root item
-- `href`: Link destination (omit for current page)
-- `linkClass`: Custom classes for the link element
-- `spanClass`: Custom classes for the span (non-linked current page)
-- `homeClass`: Custom classes specifically for home item
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 

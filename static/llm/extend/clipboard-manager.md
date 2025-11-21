@@ -15,7 +15,8 @@ See [examples](/docs-examples/extend/clipboard-manager) and [code](https://githu
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Clipboard](https://flowbite-svelte.com/llm/components/clipboard.md)
+
 
 ## Component data
 

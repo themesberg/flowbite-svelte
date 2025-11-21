@@ -455,7 +455,11 @@ When implementing bottom navigation, consider these guidelines:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Navbar](https://flowbite-svelte.com/llm/components/navbar.md)
+- [Sidebar](https://flowbite-svelte.com/llm/components/sidebar.md)
+- [Tabs](https://flowbite-svelte.com/llm/components/tabs.md)
+- [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
+
 
 ## Component data
 
@@ -522,22 +526,6 @@ When implementing bottom navigation, consider these guidelines:
 - spanClass
 - active: manualActive
 
-
-### Key Props
-
-**BottomNav:**
-- `activeUrl`: Current page URL for highlighting active items
-- `position`: Position of the navigation (default: 'fixed')
-- `navType`: Style variant for the navigation bar
-- `outerClass`: Custom classes for the outer container
-- `innerClass`: Custom classes for the inner container
-
-**BottomNavItem:**
-- `href`: Link destination for navigation items when it's only available via ...restProps
-- `activeClass`: Custom classes for active state
-- `btnName`: Accessible label for the button/link
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 

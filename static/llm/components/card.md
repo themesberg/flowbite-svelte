@@ -601,21 +601,16 @@ When implementing cards, consider these guidelines:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Badge](https://flowbite-svelte.com/llm/components/badge.md)
+- [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
+- [Avatar](https://flowbite-svelte.com/llm/components/avatar.md)
+- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
+- [Modal](https://flowbite-svelte.com/llm/components/modal.md)
+
 
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### Key Props
-
-- `href`: Makes entire card clickable link
-- `horizontal`: Enable horizontal layout
-- `reverse`: Reverse order of image and content
-- `img`: Image source URL
-- `padding`: Control internal padding (none, sm, md, lg, xl)
-- `size`: Control card width constraints
-- `class`: Custom classes for styling
 
 <CompoAttributesViewer {dirName}/>
 

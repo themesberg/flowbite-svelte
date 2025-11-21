@@ -461,3 +461,8 @@ Enable with `<VirtualList contained …>` or override via `classes.item`.
 - classes
 - contained: false
 
+
+## See also
+
+- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
+

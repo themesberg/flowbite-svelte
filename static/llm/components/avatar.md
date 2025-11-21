@@ -296,7 +296,11 @@ When implementing avatars, consider these guidelines:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Badge](https://flowbite-svelte.com/llm/components/badge.md)
+- [Dropdown](https://flowbite-svelte.com/llm/components/dropdown.md)
+- [Tooltip](https://flowbite-svelte.com/llm/components/tooltip.md)
+- [Indicators](https://flowbite-svelte.com/llm/components/indicators.md)
+
 
 ## Component data
 
@@ -322,17 +326,6 @@ When implementing avatars, consider these guidelines:
 - size: "md"
 - onclick
 
-
-### Key Props
-
-- `src`: URL of the avatar image
-- `size`: Preset size (xs, sm, md, lg, xl) or custom classes
-- `rounded`: Enable rounded corners (default: true for circle)
-- `border`: Add border around avatar
-- `alt`: Alternative text for the image (important for accessibility)
-- `dot`: Status indicator configuration
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 

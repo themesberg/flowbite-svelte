@@ -576,7 +576,10 @@ The Accordion component is built with accessibility in mind:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Tabs](https://flowbite-svelte.com/llm/components/tabs.md)
+- [Dropdown](https://flowbite-svelte.com/llm/components/dropdown.md)
+- [Modal](https://flowbite-svelte.com/llm/components/modal.md)
+
 
 ## Component data
 

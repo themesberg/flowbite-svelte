@@ -330,7 +330,12 @@ When implementing button groups, consider these guidelines:
 
 ## See also
 
-<Seealso links={relatedLinks} />
+- [Button toggle](docs/extend/button-toggle.md)
+- [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
+- [List group](https://flowbite-svelte.com/llm/components/list-group.md)
+- [Radio#radiobutton](docs/forms/radio#radiobutton.md)
+- [Checkbox#checkboxbutton](docs/forms/checkbox#checkboxbutton.md)
+
 
 ## Component data
 
@@ -347,19 +352,6 @@ When implementing button groups, consider these guidelines:
 - disabled
 - class: className
 
-
-### Key Props
-
-**ButtonGroup:**
-- `size`: Set size for all buttons in group (xs, sm, md, lg, xl)
-- `divClass`: Custom classes for the container div
-- `class`: Additional CSS classes for the wrapper
-
-**Individual Buttons:**
-- All standard Button props apply to buttons within the group
-- Styling is automatically adjusted to create seamless group appearance
-
-<CompoAttributesViewer {dirName}/>
 
 ## References
 
