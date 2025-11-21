@@ -1,5 +1,5 @@
 # Flowbite Svelte Documentation - Full Context
-# Generated on 2025-11-21T08:40:14.987Z
+# Generated on 2025-11-21T11:36:42.096Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -1506,7 +1506,7 @@ To test: Fill out the form, navigate to a different page, and then use your brow
 
 ## Using transitionType="none"
 
-+When you set `transitionType="none"` on an Accordion or an AccordionItem, it disables Svelte transitions completely and instead uses CSS display properties (block/hidden) to show or hide content. This prevents Svelte from destroying and recreating components when toggling the accordion.
+When you set `transitionType="none"` on an Accordion or an AccordionItem, it disables Svelte transitions completely and instead uses CSS display properties (block/hidden) to show or hide content. This prevents Svelte from destroying and recreating components when toggling the accordion.
 
 This approach is useful when:
 - You want to preserve form state or component lifecycle
@@ -1739,26 +1739,6 @@ The Accordion component is built with accessibility in mind:
 - headerClass
 - contentClass
 
-
-### Accordion Props
-
-- `flush`: Remove rounded borders
-- `activeClass`: CSS classes for active/expanded items
-- `inactiveClass`: CSS classes for inactive/collapsed items  
-- `multiple`: Allow multiple items to be open simultaneously (default: false)
-- `transitionType`: Transition effect type (default: 'slide')
-
-### AccordionItem Props
-
-- `open`: Control whether item is expanded (bindable)
-- `activeClass`: Override parent's activeClass for this item
-- `inactiveClass`: Override parent's inactiveClass for this item
-- `transitionType`: Override parent's transitionType for this item
-- `transitionParams`: Customize transition parameters (duration, easing, etc.)
-- `headerClass`: CSS classes for the header element
-- `contentClass`: CSS classes for the content element
-
-<CompoAttributesViewer {dirName} />
 
 ## References
 
@@ -7316,7 +7296,7 @@ This component can be used to showcase applications built for smartwatches.
 
 <DeviceMockup device="smartwatch">
   <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image.png" class="w-[188px] h-[193px] dark:hidden" alt="smartwatch example 1" />
-  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image-dark.png" class="hidden h-[193px] w-[188px] dark:block" alt="smartwatch example 2" />
+  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image-dark.png" class="w-[188px] h-[193px] hidden  dark:block" alt="smartwatch example 2" />
 </DeviceMockup>
 ```
 
@@ -8767,7 +8747,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 ## References
 
-- [Flowbite Dropdown](https://flowbite.com/docs/components/drawer/)
+- [Flowbite Dropdown](https://flowbite.com/docs/components/dropdown/)
 
 
 ---
@@ -17427,7 +17407,7 @@ The last tab in that example shows not only how to show a disabled tab, but how 
 
 ## Tabs with underline
 
-You can control the style of tabs component by setting the `activeClasses` and `inactiveClasses` on the `TabItem` elements. See the `Custom style` section below for more details.
+You can control the style of tabs component by setting the `activeClasses` and `inactiveClasses` on the `TabItem` elements.
 
 <p class="my-2"></p>
 

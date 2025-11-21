@@ -254,7 +254,7 @@ The component has the following props, type, and default values. See [types page
 
 ## References
 
-- [Flowbite Dropdown](https://flowbite.com/docs/components/drawer/)
+- [Flowbite Dropdown](https://flowbite.com/docs/components/dropdown/)
 
 ## GitHub Links
 

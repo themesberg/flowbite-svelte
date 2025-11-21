@@ -385,7 +385,7 @@ To test: Fill out the form, navigate to a different page, and then use your brow
 
 ## Using transitionType="none"
 
-+When you set `transitionType="none"` on an Accordion or an AccordionItem, it disables Svelte transitions completely and instead uses CSS display properties (block/hidden) to show or hide content. This prevents Svelte from destroying and recreating components when toggling the accordion.
+When you set `transitionType="none"` on an Accordion or an AccordionItem, it disables Svelte transitions completely and instead uses CSS display properties (block/hidden) to show or hide content. This prevents Svelte from destroying and recreating components when toggling the accordion.
 
 This approach is useful when:
 - You want to preserve form state or component lifecycle
@@ -618,26 +618,6 @@ The Accordion component is built with accessibility in mind:
 - headerClass
 - contentClass
 
-
-### Accordion Props
-
-- `flush`: Remove rounded borders
-- `activeClass`: CSS classes for active/expanded items
-- `inactiveClass`: CSS classes for inactive/collapsed items  
-- `multiple`: Allow multiple items to be open simultaneously (default: false)
-- `transitionType`: Transition effect type (default: 'slide')
-
-### AccordionItem Props
-
-- `open`: Control whether item is expanded (bindable)
-- `activeClass`: Override parent's activeClass for this item
-- `inactiveClass`: Override parent's inactiveClass for this item
-- `transitionType`: Override parent's transitionType for this item
-- `transitionParams`: Customize transition parameters (duration, easing, etc.)
-- `headerClass`: CSS classes for the header element
-- `contentClass`: CSS classes for the content element
-
-<CompoAttributesViewer {dirName} />
 
 ## References
 

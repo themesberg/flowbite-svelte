@@ -67,7 +67,7 @@ The last tab in that example shows not only how to show a disabled tab, but how 
 
 ## Tabs with underline
 
-You can control the style of tabs component by setting the `activeClasses` and `inactiveClasses` on the `TabItem` elements. See the `Custom style` section below for more details.
+You can control the style of tabs component by setting the `activeClasses` and `inactiveClasses` on the `TabItem` elements.
 
 <p class="my-2"></p>
 
