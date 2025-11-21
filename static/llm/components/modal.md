@@ -500,7 +500,7 @@ Use the following example to create a full-screen modal.
 
 ```svelte
 <script lang="ts">
-  import { Button, Modal, P } from "$lib";
+  import { Button, Modal, P } from "flowbite-svelte";
   let defaultModal = $state(false);
 </script>
 
@@ -520,8 +520,7 @@ This is perfect for advertisements, terms of service, or important announcements
 
 ```svelte
 <script lang="ts">
-  import { Button, Modal, P, A } from "$lib";
-  import { createCountdown } from "$lib/utils/countdown.svelte";
+  import { Button, Modal, P, A, createCountdown } from "flowbite-svelte";
 
   const adCountdown = createCountdown(4);
   const termsCountdown = createCountdown(5);

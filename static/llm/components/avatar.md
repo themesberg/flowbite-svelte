@@ -1,7 +1,9 @@
 # Svelte Avatar - Flowbite
 
 
-The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from Flowbite to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
+The avatar component can be used as a visual identifier for a user profile on your website. Avatars help users quickly recognize individuals in lists, comments, navigation, and throughout your application. You can use the examples to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
+
+Common use cases include user profile headers, comment sections, team member displays, chat interfaces, and navigation menus.
 
 ## Setup
 
@@ -15,7 +17,7 @@ Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `Dropdow
 
 ## Default avatar
 
-Use this example to create a circle and rounded avatar on an image element.
+Use this example to create circle and rounded avatar on an image element. The rounded style provides a softer, more modern appearance, while the circular style is the most common and recognizable avatar format.
 
 ```svelte
 <script lang="ts">
@@ -30,6 +32,8 @@ Use this example to create a circle and rounded avatar on an image element.
 
 ## Icon avatar
 
+When no user image is available, you can use an icon as a placeholder. This provides a consistent fallback that maintains visual balance in your UI while still being recognizable as a user avatar.
+
 ```svelte
 <script lang="ts">
   import { Avatar } from "flowbite-svelte";
@@ -42,6 +46,8 @@ Use this example to create a circle and rounded avatar on an image element.
 ```
 
 ## Custom dot
+
+Customize the status indicator dot to match your design requirements. You can change colors, sizes, and positioning to indicate different states like online, offline, busy, away, or custom statuses specific to your application.
 
 ```svelte
 <script lang="ts">
@@ -60,9 +66,9 @@ Use this example to create a circle and rounded avatar on an image element.
 
 ## Bordered
 
-You can apply a border around the avatar component.
+You can apply a border around the avatar component to create visual separation and emphasis. This is particularly useful when avatars are placed on colored backgrounds or need to stand out more prominently.
 
-You can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
+You can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify the ring color and match your brand or UI theme.
 
 ```svelte
 <script lang="ts">
@@ -75,7 +81,7 @@ You can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring 
 
 ## Placeholder
 
-When there is no custom image available a placeholder is displayed.
+When there is no custom image available, a placeholder is displayed. Placeholders ensure your layout remains consistent and professional even when user profile images haven't been uploaded yet.
 
 ```svelte
 <script lang="ts">
@@ -90,7 +96,13 @@ When there is no custom image available a placeholder is displayed.
 
 ## Placeholder initials
 
-This example can be used to show the initials of the user’s first and last name as a placeholder when no profile picture is available.
+This example can be used to show the initials of the user's first and last name as a placeholder when no profile picture is available. This creates a more personalized experience than generic icons and helps users identify individuals even without photos.
+
+Initial-based avatars are particularly useful in:
+- Business applications where photos may not be required
+- Team directories with many members
+- Comment sections or collaborative tools
+- Administrative interfaces
 
 ```svelte
 <script lang="ts">
@@ -102,7 +114,7 @@ This example can be used to show the initials of the user’s first and last nam
 
 ## Avatar tooltip
 
-Use this example to show a tooltip when hovering over the avatar.
+Use this example to show a tooltip when hovering over the avatar. Tooltips can display additional information such as full names, job titles, status messages, or other relevant user details without cluttering the interface.
 
 ```svelte
 <script lang="ts">
@@ -119,7 +131,13 @@ Use this example to show a tooltip when hovering over the avatar.
 
 ## Dot indicator
 
-Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).
+Use a dot element relative to the avatar component as an indicator for the user's status (e.g., online, offline, busy, away). Status indicators help users understand availability in real-time communication tools, collaboration platforms, and social applications.
+
+Different colors typically represent:
+- **Green**: Online/Available
+- **Yellow/Orange**: Away/Idle
+- **Red**: Busy/Do Not Disturb
+- **Gray**: Offline
 
 ```svelte
 <script lang="ts">
@@ -136,7 +154,14 @@ Use a dot element relative to the avatar component as an indicator for the user 
 
 ## Stacked
 
-Use this example if you want to stack a group of users by overlapping the avatar components.
+Use this example if you want to stack a group of users by overlapping the avatar components. Stacked avatars are perfect for showing:
+
+- Team members on a project
+- Participants in a meeting or chat
+- Contributors to a document or task
+- Multiple assignees without taking up excessive space
+
+This pattern saves space while still providing visual representation of all involved users. Include a count indicator when there are more users than can be displayed.
 
 ```svelte
 <script lang="ts">
@@ -159,7 +184,13 @@ Use this example if you want to stack a group of users by overlapping the avatar
 
 ## Avatar text
 
-This example can be used if you want to show additional information in the form of text elements such as the user’s name and join date.
+This example can be used if you want to show additional information in the form of text elements such as the user's name and join date. Combining avatars with descriptive text provides full context about the user, making it ideal for:
+
+- User profile cards
+- Directory listings
+- Comment headers
+- Team member displays
+- Author bylines
 
 ```svelte
 <script lang="ts">
@@ -177,7 +208,13 @@ This example can be used if you want to show additional information in the form 
 
 ## User dropdown
 
-Use this example if you want to show a dropdown menu when clicking on the avatar component.
+Use this example if you want to show a dropdown menu when clicking on the avatar component. Avatar dropdowns are commonly used in navigation headers for:
+
+- Quick access to profile settings
+- Account management options
+- User-specific actions (sign out, preferences, etc.)
+- Status changes
+- Switching between accounts or workspaces
 
 ```svelte
 <script lang="ts">
@@ -203,7 +240,13 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
 
 ## Sizes
 
-You can set `size` property to preset values of `xs | sm | md | lg | xl`. Custom size can be achieved by adding any of the Tailwind Css size classes like `w-[x] h-[x]`.
+You can set the `size` property to preset values of `xs | sm | md | lg | xl`. Custom sizes can be achieved by adding any of the Tailwind CSS size classes like `w-[x] h-[x]`.
+
+Choose the appropriate size based on context:
+- **xs/sm**: Compact lists, inline mentions, small UI elements
+- **md**: Default size for most use cases, comment avatars
+- **lg**: Profile cards, team pages, prominent displays
+- **xl**: Profile headers, feature sections, landing pages
 
 Preset values are equivalents of:
 
@@ -230,6 +273,31 @@ Preset values are equivalents of:
 </div>
 ```
 
+## Accessibility
+
+The Avatar component is built with accessibility in mind:
+
+- **Alt Text**: Always provide descriptive alt text for profile images
+- **Semantic HTML**: Uses appropriate HTML elements for proper structure
+- **Keyboard Navigation**: Interactive avatars (with dropdowns/tooltips) are fully keyboard accessible
+- **Screen Reader Support**: Status indicators and additional information are announced to screen readers
+- **Color Contrast**: Status dots and text meet WCAG contrast requirements
+
+## Best Practices
+
+When implementing avatars, consider these guidelines:
+
+- **Image Optimization**: Use appropriately sized images to avoid unnecessary bandwidth
+- **Fallback Strategy**: Always provide fallbacks (initials or icons) for missing images
+- **Consistent Sizing**: Use consistent avatar sizes within the same context
+- **Loading States**: Show loading indicators for slowly loading images
+- **Clickable Areas**: Ensure clickable avatars have adequate touch targets (minimum 44x44px)
+- **Privacy**: Consider user privacy preferences when displaying profile pictures
+
+## See also
+
+<Seealso links={relatedLinks} />
+
 ## Component data
 
 ### Avatar
@@ -254,6 +322,17 @@ Preset values are equivalents of:
 - size: "md"
 - onclick
 
+
+### Key Props
+
+- `src`: URL of the avatar image
+- `size`: Preset size (xs, sm, md, lg, xl) or custom classes
+- `rounded`: Enable rounded corners (default: true for circle)
+- `border`: Add border around avatar
+- `alt`: Alternative text for the image (important for accessibility)
+- `dot`: Status indicator configuration
+
+<CompoAttributesViewer {dirName}/>
 
 ## References
 

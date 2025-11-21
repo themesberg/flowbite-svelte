@@ -109,7 +109,7 @@ Controls whether the navbar dropdown respects the user's motion preferences set 
 
 ## Transitions
 
-Use slide (default), fly, fade, or scale transtion.
+Use slide (default), fly, fade, or scale transition.
 
 ### Fly transition
 
@@ -496,7 +496,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 - children
 - fluid
-- class: clasName
+- class: className
 
 ### NavHamburger
 
@@ -544,7 +544,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 - activeClass
 - nonActiveClass
 - respectMotionPreference: true
-- class: clasName
+- class: className
 - classes
 
 ### Navbar

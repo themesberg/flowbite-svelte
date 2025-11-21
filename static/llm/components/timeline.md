@@ -372,7 +372,7 @@ Use the following example to add different colors depends on state (past, curren
 
 ## Activity Log
 
-This component can be used to show the timline of a user’s activity history inside your application by using an avatar, datetime, description, and links to specific pages.
+This component can be used to show the timeline of a user’s activity history inside your application by using an avatar, datetime, description, and links to specific pages.
 
 <Badge large>Warning: the ActivityItem title and text are using @html.</Badge>
 

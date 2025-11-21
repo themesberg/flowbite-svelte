@@ -38,7 +38,7 @@ Use this example of a default timepicker component to allow the user to select a
 
 ```svelte
 <script lang="ts">
-  import { Label, Timepicker } from "$lib";
+  import { Label, Timepicker } from "flowbite-svelte";
   let selectedTime = $state("09:00");
 </script>
 

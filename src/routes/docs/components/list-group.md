@@ -41,7 +41,7 @@ You need to set the list to `active` mode to enable hovering, focus and links.
 
 If list is active and data items contain `href` field entries are presented as `<a>` elements.
 
-You can pass extra properties to the `<a>` element by setting the `attrs` atrribute in the items list.
+You can pass extra properties to the `<a>` element by setting the `attrs` attribute in the items list.
 
 ```svelte example class="flex justify-center"
 {#include Links.svelte}
@@ -55,7 +55,7 @@ You need to set the list to `active` mode to enable hovering, focus and `onclick
 
 If list is active and data items do not contain `href` field entries are presented as `<button>` elements triggering `onclick` events.
 
-You can pass extra properties to the `<button>` element by setting the `attrs` atrribute in the items list.
+You can pass extra properties to the `<button>` element by setting the `attrs` attribute in the items list.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 {#include Buttons.svelte}
@@ -87,7 +87,7 @@ Use the following example when you want to use `Tooltip` with a horizontal list.
 
 ## Advanced
 
-When non standard usage is needed you can omit the `items` props and add elements directly to the list. Usage of hidden so far `ListgroupItem` helps you with proper layout.
+When non-standard usage is needed you can omit the `items` props and add elements directly to the list. Usage of hidden so far `ListgroupItem` helps you with proper layout.
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 {#include Advanced.svelte}

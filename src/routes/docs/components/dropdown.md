@@ -74,7 +74,7 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 
 Use `Tab` and `Shift+Tab` to navigate between buttons or links in the dropdown. Press `ESC` to close it.
 
-## Programatic open/close
+## Programmatic open/close
 
 When you want to control your dropdown open status via javascript code you can bind to `open` property.
 
@@ -254,7 +254,7 @@ The component has the following props, type, and default values. See [types page
 
 ## References
 
-- [Flowbite Dropdown](https://flowbite.com/docs/components/drawer/)
+- [Flowbite Dropdown](https://flowbite.com/docs/components/dropdown/)
 
 ## GitHub Links
 

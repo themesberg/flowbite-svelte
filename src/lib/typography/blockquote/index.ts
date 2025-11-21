@@ -1,4 +1,2 @@
-import Blockquote from "./Blockquote.svelte";
-import { blockquote } from "./theme";
-
-export { Blockquote, blockquote };
+export { default as Blockquote } from "./Blockquote.svelte";
+export { blockquote } from "./theme";

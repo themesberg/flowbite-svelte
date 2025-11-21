@@ -22,7 +22,7 @@
         <Checkbox />
       </TableBodyCell>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>Yes</TableBodyCell>
       <TableBodyCell>Yes</TableBodyCell>

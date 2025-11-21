@@ -14,7 +14,7 @@
     ["activeClass", ""],
     ["nonActiveClass", ""],
     ["respectMotionPreference", "true"],
-    ["class: clasName", ""],
+    ["class: className", ""],
     ["classes", ""]
   ]
 }

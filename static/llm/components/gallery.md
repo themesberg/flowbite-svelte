@@ -1,4 +1,4 @@
-# Svelte Gallery (Mansonry) - Flowbite
+# Svelte Gallery (Masonry) - Flowbite
 
 
 The gallery component can be used to show multiple images inside a masonry grid layout styles with the utility-first classes from Tailwind CSS to show a collection of pictures to your users based on various layouts, styles, sizes, and colors.
@@ -47,7 +47,7 @@ Example below show a gallery with three pictures on a row.
 
 ## Masonry grid
 
-This example can be used to show the images inside a masongry grid layouts with four columns.
+This example can be used to show the images inside a masonry grid layouts with four columns.
 
 ```svelte
 <script lang="ts">

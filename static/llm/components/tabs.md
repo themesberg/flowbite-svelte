@@ -67,7 +67,7 @@ The last tab in that example shows not only how to show a disabled tab, but how 
 
 ## Tabs with underline
 
-You can control the style of tabs component by settings the `activeClasses` and `inactiveClasses` on the `TabItem` elements. See the `Custom style` section below for more details.
+You can control the style of tabs component by setting the `activeClasses` and `inactiveClasses` on the `TabItem` elements.
 
 <p class="my-2"></p>
 
@@ -121,7 +121,7 @@ Use the `tabStyle="underline"` to achieve this alternative tabs component style 
 
 ## Tabs with icons
 
-This is an example of the tabs component where you can also use a SVG powered icon to complement the text within the navigational tabs. Use icon components for a simple syntax. See <a href="/icons">Icons</a> for more details.
+This is an example of the tabs component where you can also use an SVG‑powered icon to complement the text within the navigational tabs. Use icon components for a simple syntax. See <a href="/icons">Icons</a> for more details.
 
 ```svelte
 <script lang="ts">
@@ -230,7 +230,7 @@ If you want to use pills as a style for the tabs component use `tabStyle="pill"`
 </Tabs>
 ```
 
-## Full width tabs
+## Full‑width tabs
 
 If you want to show the tabs on the full width relative to the parent element use `tabStyle="full"` prop.
 

@@ -138,7 +138,7 @@ By default, the image component will be aligned to the left side of the page.
 
 ```svelte
 <script lang="ts">
-  import { Img, img, Radio, Label, type ImgProps } from "$lib";
+  import { Img, img, Radio, Label, type ImgProps } from "flowbite-svelte";
 
   const alignments = Object.keys(img.variants.align);
   let imgAlign: ImgProps["align"] = $state(undefined);

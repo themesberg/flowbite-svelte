@@ -4,12 +4,12 @@
   import type { NavContainerProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, fluid, class: clasName, ...restProps }: NavContainerProps = $props();
+  let { children, fluid, class: className, ...restProps }: NavContainerProps = $props();
 
   const theme = getTheme("navbarContainer");
 </script>
 
-<div {...restProps} class={navbarContainer({ fluid, class: clsx(theme, clasName) })}>
+<div {...restProps} class={navbarContainer({ fluid, class: clsx(theme, className) })}>
   {@render children?.()}
 </div>
 
@@ -21,6 +21,6 @@
 ## Props
 @prop children
 @prop fluid
-@prop class: clasName
+@prop class: className
 @prop ...restProps
 -->

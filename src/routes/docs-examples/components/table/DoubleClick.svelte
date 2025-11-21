@@ -11,7 +11,7 @@
   const items: ItemType[] = [
     {
       name: 'Apple MacBook Pro 17"',
-      color: "Sliver",
+      color: "Silver",
       type: "Laptop",
       price: "$2999"
     },

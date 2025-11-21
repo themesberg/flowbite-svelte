@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Modal, P } from "$lib";
+  import { Button, Modal, P } from "flowbite-svelte";
   let defaultModal = $state(false);
 </script>
 

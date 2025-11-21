@@ -15,5 +15,5 @@
   {#snippet icon()}
     <BellOutline class="h-6 w-6" />
   {/snippet}
-  Transition type: blur, amount: 50, delay 1000
+  Transition type: blur, amount: 50, delay: 1000
 </Toast>

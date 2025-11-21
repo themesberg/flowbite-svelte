@@ -103,7 +103,7 @@ Use this toast component to also show an “undo” button to reverse the action
 
 ## Advanced examples
 
-If the toast content grows to multiple lines we need to switch off the `items-center` alignment. Notice how the examples below achieve that by setting `align={flase}` property.
+If the toast content grows to multiple lines we need to switch off the `items-center` alignment. Notice how the examples below achieve that by setting `align={false}` property.
 
 ### Toast message
 
