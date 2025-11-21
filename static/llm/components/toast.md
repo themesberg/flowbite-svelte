@@ -352,7 +352,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
   {#snippet icon()}
     <BellOutline class="h-6 w-6" />
   {/snippet}
-  Transition type: blur, amount: 50, delay 1000
+  Transition type: blur, amount: 50, delay: 1000
 </Toast>
 ```
 
@@ -397,7 +397,7 @@ Use this toast component to also show an “undo” button to reverse the action
 
 ## Advanced examples
 
-If the toast content grows to multiple lines we need to switch off the `items-center` alignment. Notice how the examples below achieve that by setting `align={flase}` property.
+If the toast content grows to multiple lines we need to switch off the `items-center` alignment. Notice how the examples below achieve that by setting `align={false}` property.
 
 ### Toast message
 

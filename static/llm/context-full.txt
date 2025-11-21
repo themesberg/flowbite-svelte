@@ -5877,7 +5877,7 @@ This component can be used to showcase applications built for smartwatches.
 </script>
 
 <DeviceMockup device="smartwatch">
-  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image.png" class="w-[188px h-[193px] dark:hidden" alt="smartwatch example 1" />
+  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image.png" class="w-[188px] h-[193px] dark:hidden" alt="smartwatch example 1" />
   <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image-dark.png" class="hidden h-[193px] w-[188px] dark:block" alt="smartwatch example 2" />
 </DeviceMockup>
 ```
@@ -6612,7 +6612,7 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 
 Use `Tab` and `Shift+Tab` to navigate between buttons or links in the dropdown. Press `ESC` to close it.
 
-## Programatic open/close
+## Programmatic open/close
 
 When you want to control your dropdown open status via javascript code you can bind to `open` property.
 
@@ -7890,7 +7890,7 @@ Get started with the default example of a select input component to get a single
 ---
 
 <!-- Source: components/gallery.md -->
-# Svelte Gallery (Mansonry) - Flowbite
+# Svelte Gallery (Masonry) - Flowbite
 
 
 The gallery component can be used to show multiple images inside a masonry grid layout styles with the utility-first classes from Tailwind CSS to show a collection of pictures to your users based on various layouts, styles, sizes, and colors.
@@ -7939,7 +7939,7 @@ Example below show a gallery with three pictures on a row.
 
 ## Masonry grid
 
-This example can be used to show the images inside a masongry grid layouts with four columns.
+This example can be used to show the images inside a masonry grid layouts with four columns.
 
 ```svelte
 <script lang="ts">
@@ -8615,7 +8615,7 @@ You need to set the list to `active` mode to enable hovering, focus and links.
 
 If list is active and data items contain `href` field entries are presented as `<a>` elements.
 
-You can pass extra properties to the `<a>` element by setting the `attrs` atrribute in the items list.
+You can pass extra properties to the `<a>` element by setting the `attrs` attribute in the items list.
 
 ```svelte
 <script lang="ts">
@@ -8639,7 +8639,7 @@ You need to set the list to `active` mode to enable hovering, focus and `onclick
 
 If list is active and data items do not contain `href` field entries are presented as `<button>` elements triggering `onclick` events.
 
-You can pass extra properties to the `<button>` element by setting the `attrs` atrribute in the items list.
+You can pass extra properties to the `<button>` element by setting the `attrs` attribute in the items list.
 
 ```svelte
 <script lang="ts">
@@ -8729,7 +8729,7 @@ Use the following example when you want to use `Tooltip` with a horizontal list.
 
 ## Advanced
 
-When non standard usage is needed you can omit the `items` props and add elements directly to the list. Usage of hidden so far `ListgroupItem` helps you with proper layout.
+When non-standard usage is needed you can omit the `items` props and add elements directly to the list. Usage of hidden so far `ListgroupItem` helps you with proper layout.
 
 ```svelte
 <script lang="ts">
@@ -9910,7 +9910,7 @@ Controls whether the navbar dropdown respects the user's motion preferences set 
 
 ## Transitions
 
-Use slide (default), fly, fade, or scale transtion.
+Use slide (default), fly, fade, or scale transition.
 
 ### Fly transition
 
@@ -10297,7 +10297,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 - children
 - fluid
-- class: clasName
+- class: className
 
 ### NavHamburger
 
@@ -10345,7 +10345,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 - activeClass
 - nonActiveClass
 - respectMotionPreference: true
-- class: clasName
+- class: className
 - classes
 
 ### Navbar
@@ -11412,7 +11412,7 @@ Use the `labelInside` prop to add the progress in a progress bar.
 
 ## With label outside
 
-Use the `labelOutside` prop to add the progress outside of a progress bar.
+Use the `labelOutside` prop to add the progress outside a progress bar.
 
 ```svelte
 <script lang="ts">
@@ -11485,7 +11485,7 @@ Use `labelInsideDiv` prop to style your progressbar.
 
 ## Animation
 
-By default progress bar has animation disabled, you can activate with `animate`, you can custumize with `tweenDuration` and `easing`. By changing `precision` you can custumize the precision inside the progress bar.
+By default progress bar has animation disabled, you can activate with `animate`, you can customize with `tweenDuration` and `easing`. By changing `precision` you can customize the precision inside the progress bar.
 
 ```svelte
 <script lang="ts">
@@ -13781,7 +13781,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 ## References
 
-- [Flowbite Skeleton](https://flowbite.com/docs/components/sidebar/)
+- [Flowbite Skeleton](https://flowbite.com/docs/components/skeleton/)
 
 
 ---
@@ -14973,7 +14973,7 @@ Use the following example of a responsive table component to show multiple rows 
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
     </TableBodyRow>
@@ -15015,7 +15015,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
@@ -15084,7 +15084,7 @@ Set `hoverable` to `true` to change the background color of a data row when hove
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
@@ -15141,7 +15141,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
         <Checkbox />
       </TableBodyCell>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
@@ -15256,7 +15256,7 @@ By default, the `<TableHead>` component will create a single `<tr>` element with
     <TableBodyRow>
       <TableBodyCell>Apple</TableBodyCell>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
     </TableBodyRow>
@@ -15348,7 +15348,7 @@ Improve accessibility by using a caption inside the table as a heading to better
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
@@ -15396,7 +15396,7 @@ Use this example of a table component without any border between the table cells
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
     </TableBodyRow>
@@ -15435,7 +15435,7 @@ Use this example to apply a shadow border to the table component.
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
     </TableBodyRow>
@@ -15484,7 +15484,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
         <Checkbox />
       </TableBodyCell>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>Yes</TableBodyCell>
       <TableBodyCell>Yes</TableBodyCell>
@@ -15588,7 +15588,7 @@ Use one of colors from blue, green, red, yellow, purple for the `color` prop. Th
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
     </TableBodyRow>
@@ -15623,7 +15623,7 @@ Use one of colors from blue, green, red, yellow, purple for the `color` prop. Th
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
     </TableBodyRow>
@@ -15665,7 +15665,7 @@ Use this example to apply a different color to every second row inside the table
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
@@ -15730,7 +15730,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
   const items: ItemType[] = [
     {
       name: 'Apple MacBook Pro 17"',
-      color: "Sliver",
+      color: "Silver",
       type: "Laptop",
       price: "$2999"
     },
@@ -15990,7 +15990,7 @@ The last tab in that example shows not only how to show a disabled tab, but how 
 
 ## Tabs with underline
 
-You can control the style of tabs component by settings the `activeClasses` and `inactiveClasses` on the `TabItem` elements. See the `Custom style` section below for more details.
+You can control the style of tabs component by setting the `activeClasses` and `inactiveClasses` on the `TabItem` elements. See the `Custom style` section below for more details.
 
 <p class="my-2"></p>
 
@@ -16044,7 +16044,7 @@ Use the `tabStyle="underline"` to achieve this alternative tabs component style 
 
 ## Tabs with icons
 
-This is an example of the tabs component where you can also use a SVG powered icon to complement the text within the navigational tabs. Use icon components for a simple syntax. See <a href="/icons">Icons</a> for more details.
+This is an example of the tabs component where you can also use an SVG‑powered icon to complement the text within the navigational tabs. Use icon components for a simple syntax. See <a href="/icons">Icons</a> for more details.
 
 ```svelte
 <script lang="ts">
@@ -16153,7 +16153,7 @@ If you want to use pills as a style for the tabs component use `tabStyle="pill"`
 </Tabs>
 ```
 
-## Full width tabs
+## Full‑width tabs
 
 If you want to show the tabs on the full width relative to the parent element use `tabStyle="full"` prop.
 
@@ -16830,7 +16830,7 @@ Use the following example to add different colors depends on state (past, curren
 
 ## Activity Log
 
-This component can be used to show the timline of a user’s activity history inside your application by using an avatar, datetime, description, and links to specific pages.
+This component can be used to show the timeline of a user’s activity history inside your application by using an avatar, datetime, description, and links to specific pages.
 
 <Badge large>Warning: the ActivityItem title and text are using @html.</Badge>
 
@@ -17367,7 +17367,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
   {#snippet icon()}
     <BellOutline class="h-6 w-6" />
   {/snippet}
-  Transition type: blur, amount: 50, delay 1000
+  Transition type: blur, amount: 50, delay: 1000
 </Toast>
 ```
 
@@ -17412,7 +17412,7 @@ Use this toast component to also show an “undo” button to reverse the action
 
 ## Advanced examples
 
-If the toast content grows to multiple lines we need to switch off the `items-center` alignment. Notice how the examples below achieve that by setting `align={flase}` property.
+If the toast content grows to multiple lines we need to switch off the `items-center` alignment. Notice how the examples below achieve that by setting `align={false}` property.
 
 ### Toast message
 

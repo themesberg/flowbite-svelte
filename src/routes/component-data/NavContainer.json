@@ -7,6 +7,6 @@
   "props": [
     ["children", ""],
     ["fluid", ""],
-    ["class: clasName", ""]
+    ["class: className", ""]
   ]
 }

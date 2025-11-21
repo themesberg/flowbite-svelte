@@ -44,7 +44,7 @@ Use the following example of a responsive table component to show multiple rows 
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
     </TableBodyRow>
@@ -86,7 +86,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
@@ -155,7 +155,7 @@ Set `hoverable` to `true` to change the background color of a data row when hove
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
@@ -212,7 +212,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
         <Checkbox />
       </TableBodyCell>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
@@ -327,7 +327,7 @@ By default, the `<TableHead>` component will create a single `<tr>` element with
     <TableBodyRow>
       <TableBodyCell>Apple</TableBodyCell>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
     </TableBodyRow>
@@ -419,7 +419,7 @@ Improve accessibility by using a caption inside the table as a heading to better
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
@@ -467,7 +467,7 @@ Use this example of a table component without any border between the table cells
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
     </TableBodyRow>
@@ -506,7 +506,7 @@ Use this example to apply a shadow border to the table component.
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
     </TableBodyRow>
@@ -555,7 +555,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
         <Checkbox />
       </TableBodyCell>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>Yes</TableBodyCell>
       <TableBodyCell>Yes</TableBodyCell>
@@ -659,7 +659,7 @@ Use one of colors from blue, green, red, yellow, purple for the `color` prop. Th
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
     </TableBodyRow>
@@ -694,7 +694,7 @@ Use one of colors from blue, green, red, yellow, purple for the `color` prop. Th
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
     </TableBodyRow>
@@ -736,7 +736,7 @@ Use this example to apply a different color to every second row inside the table
   <TableBody>
     <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Silver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
@@ -801,7 +801,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
   const items: ItemType[] = [
     {
       name: 'Apple MacBook Pro 17"',
-      color: "Sliver",
+      color: "Silver",
       type: "Laptop",
       price: "$2999"
     },

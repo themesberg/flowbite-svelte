@@ -1,6 +1,6 @@
 ---
 layout: componentLayout
-title: Svelte Gallery (Mansonry) - Flowbite
+title: Svelte Gallery (Masonry) - Flowbite
 breadcrumb_title: Svelte Gallery (Masonry)
 component_title: Gallery
 dir: Components
@@ -42,7 +42,7 @@ Example below show a gallery with three pictures on a row.
 
 ## Masonry grid
 
-This example can be used to show the images inside a masongry grid layouts with four columns.
+This example can be used to show the images inside a masonry grid layouts with four columns.
 
 ```svelte example class="flex flex-wrap gap-2"
 {#include Masonry.svelte}

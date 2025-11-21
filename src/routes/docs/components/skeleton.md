@@ -82,7 +82,7 @@ The component has the following props, type, and default values. See [types page
 
 ## References
 
-- [Flowbite Skeleton](https://flowbite.com/docs/components/sidebar/)
+- [Flowbite Skeleton](https://flowbite.com/docs/components/skeleton/)
 
 ## GitHub Links
 

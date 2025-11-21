@@ -84,7 +84,7 @@ Use the `labelInside` prop to add the progress in a progress bar.
 
 ## With label outside
 
-Use the `labelOutside` prop to add the progress outside of a progress bar.
+Use the `labelOutside` prop to add the progress outside a progress bar.
 
 ```svelte
 <script lang="ts">
@@ -157,7 +157,7 @@ Use `labelInsideDiv` prop to style your progressbar.
 
 ## Animation
 
-By default progress bar has animation disabled, you can activate with `animate`, you can custumize with `tweenDuration` and `easing`. By changing `precision` you can custumize the precision inside the progress bar.
+By default progress bar has animation disabled, you can activate with `animate`, you can customize with `tweenDuration` and `easing`. By changing `precision` you can customize the precision inside the progress bar.
 
 ```svelte
 <script lang="ts">

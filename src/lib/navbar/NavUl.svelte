@@ -21,7 +21,7 @@
     activeClass,
     nonActiveClass,
     respectMotionPreference = true,
-    class: clasName,
+    class: className,
     classes,
     ...restProps
   }: NavUlProps = $props();
@@ -62,7 +62,7 @@
     navState.activeUrl = activeUrl;
   });
 
-  let divCls: string = $derived(base({ class: clsx(theme?.base, clasName) }));
+  let divCls: string = $derived(base({ class: clsx(theme?.base, className) }));
   let ulCls: string = $derived(ul({ class: clsx(theme?.ul, styling.ul) }));
 </script>
 
@@ -95,7 +95,7 @@
 @prop activeClass
 @prop nonActiveClass
 @prop respectMotionPreference = true
-@prop class: clasName
+@prop class: className
 @prop classes
 @prop ...restProps
 -->

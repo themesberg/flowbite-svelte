@@ -3,7 +3,7 @@
   import Check from "./icons/Check.svelte";
   import Clipboard from "./icons/Clipboard.svelte";
 
-  let { class: clasName = "" } = $props();
+  let { class: className = "" } = $props();
   const show = (ev: ToggleEvent) => ev.newState == "open" || set_tooltip(false);
   const text_copied = "Copied!";
   const text_not_copied = "Copy to clipboard";
@@ -30,7 +30,7 @@
   };
 </script>
 
-<Input size="lg" {placeholder} readonly class="focus:ring-primary-600 focus:border-primary-600 py-3 text-sm sm:text-sm md:min-w-[315px] {clasName}">
+<Input size="lg" {placeholder} readonly class="focus:ring-primary-600 focus:border-primary-600 py-3 text-sm sm:text-sm md:min-w-[315px] {className}">
   {#snippet right()}
     <div class="flex items-center ps-32">
       <button onclick={copyToClipboard} class="hover:text-primary-700 px-1 py-2">
