@@ -1,9 +1,83 @@
 # AI and LLM Integration with Flowbite Svelte
 
 
-Flowbite Svelte provides powerful, built-in support for AI and Large Language Model (LLM) integration through specialized routes that expose documentation in machine-readable formats. These features enable seamless integration with ChatGPT, Claude, and other AI assistants.
+Flowbite-Svelte integrates with Large Language Models (LLMs) like Claude to provide AI-powered documentation, component discovery, and code snippets. This seamless integration leverages the tmcp server to offer interactive, natural language assistance for developers.
 
-## Compliance
+## Flowbite-Svelte MCP Server
+
+This **Model Context Protocol (MCP) server** for Flowbite-Svelte documentation enables **AI-powered component discovery and documentation querying**. It exposes tools to find components, query documentation, list components, and perform full-text search, all communicated via **stdio transport**.
+
+### Getting Started
+
+To set up and build the server:
+
+```bash
+git clone git@github.com:shinokada/flowbite-svelte-mcp.git
+cd flowbite-svelte-mcp
+pnpm install
+pnpm run build
+pnpm run start
+```
+
+### Usage
+This server uses stdio transport, making it compatible with MCP clients that launch servers via stdin/stdout (e.g., Claude Desktop, ChatGPT Desktop, MCP Inspector).
+
+#### Claude Desktop
+1. Locate your configuration file:
+
+- macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
+
+- Windows: %APPDATA%\Claude\claude_desktop_config.json
+
+2. Edit the file. If the file doesn't exist, create it. Add your server like this (using the absolute path to your built server.js):
+
+```json
+{
+  "mcpServers": {
+    "flowbite-svelte": {
+      "command": "node",
+      "args": [
+        "/Users/your-user-name/path/to/flowbite-svelte-mcp/build/server.js"
+      ]
+    }
+  }
+}
+```
+
+Note: For Windows, use the appropriate path format, e.g., "C:\\Users\\your-user-name\\..."
+
+3. Restart Claude Desktop for the configuration changes to take effect.
+
+4. Ask Claude:
+
+- Search the flowbite-svelte docs for how to use an Accordion, then give me the component details.
+
+- How do I use the flowbite-svelte accordion component?
+
+- What components are available in flowbite-svelte?
+
+Tip: The LLM uses these tools to precisely and instantly answer questions about Flowbite-Svelte components, avoiding generalized or outdated information.
+
+#### Tools
+
+| Tool name          | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| `findComponent`    | Find a Flowbite-Svelte component and its documentation path.         |
+| `getComponentList` | Returns a list of component names + filename                         |
+| `getComponentDoc`  | Returns the documentation (markdown / text) for a specific component |
+| `searchDocs`       | Full-text search over the `context-full.txt` of Flowbite-Svelte      |
+
+### Notes
+#### MCP Client Integration
+
+- Once built (pnpm build), you run the server (pnpm start).
+
+- In a client like Claude Desktop, you configure it to execute your server process.
+
+- Because it uses stdio transport, the client communicates with your server via its standard input/output streams.
+
+
+## AI-Friendly Documentation Formats
 
 Flowbite Svelte follows the [llms.txt standard](https://llmstxt.org/), a community-driven proposal initiated by Jeremy Howard that standardizes how websites provide LLM-friendly information.
 
@@ -39,7 +113,7 @@ Here's how you might leverage these features in your AI integration:
 
 ```ts
 // Accessing component documentation in markdown format
-const buttonDocs = await fetch("https://flowbite-svelte.com/docs/components/buttons.md").then((res) => res.text());
+const buttonDocs = await fetch("https://flowbite-svelte.com/llm/components/buttons.md").then((res) => res.text());
 
 // Using markdown documentation in a ChatGPT prompt
 const chatGptPrompt = `Based on this Flowbite Svelte Button component documentation:

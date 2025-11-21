@@ -1,5 +1,5 @@
 # Flowbite Svelte Documentation - Full Context
-# Generated on 2025-11-17T16:15:19.811Z
+# Generated on 2025-11-21T08:40:14.987Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -9,9 +9,83 @@
 # AI and LLM Integration with Flowbite Svelte
 
 
-Flowbite Svelte provides powerful, built-in support for AI and Large Language Model (LLM) integration through specialized routes that expose documentation in machine-readable formats. These features enable seamless integration with ChatGPT, Claude, and other AI assistants.
+Flowbite-Svelte integrates with Large Language Models (LLMs) like Claude to provide AI-powered documentation, component discovery, and code snippets. This seamless integration leverages the tmcp server to offer interactive, natural language assistance for developers.
 
-## Compliance
+## Flowbite-Svelte MCP Server
+
+This **Model Context Protocol (MCP) server** for Flowbite-Svelte documentation enables **AI-powered component discovery and documentation querying**. It exposes tools to find components, query documentation, list components, and perform full-text search, all communicated via **stdio transport**.
+
+### Getting Started
+
+To set up and build the server:
+
+```bash
+git clone git@github.com:shinokada/flowbite-svelte-mcp.git
+cd flowbite-svelte-mcp
+pnpm install
+pnpm run build
+pnpm run start
+```
+
+### Usage
+This server uses stdio transport, making it compatible with MCP clients that launch servers via stdin/stdout (e.g., Claude Desktop, ChatGPT Desktop, MCP Inspector).
+
+#### Claude Desktop
+1. Locate your configuration file:
+
+- macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
+
+- Windows: %APPDATA%\Claude\claude_desktop_config.json
+
+2. Edit the file. If the file doesn't exist, create it. Add your server like this (using the absolute path to your built server.js):
+
+```json
+{
+  "mcpServers": {
+    "flowbite-svelte": {
+      "command": "node",
+      "args": [
+        "/Users/your-user-name/path/to/flowbite-svelte-mcp/build/server.js"
+      ]
+    }
+  }
+}
+```
+
+Note: For Windows, use the appropriate path format, e.g., "C:\\Users\\your-user-name\\..."
+
+3. Restart Claude Desktop for the configuration changes to take effect.
+
+4. Ask Claude:
+
+- Search the flowbite-svelte docs for how to use an Accordion, then give me the component details.
+
+- How do I use the flowbite-svelte accordion component?
+
+- What components are available in flowbite-svelte?
+
+Tip: The LLM uses these tools to precisely and instantly answer questions about Flowbite-Svelte components, avoiding generalized or outdated information.
+
+#### Tools
+
+| Tool name          | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| `findComponent`    | Find a Flowbite-Svelte component and its documentation path.         |
+| `getComponentList` | Returns a list of component names + filename                         |
+| `getComponentDoc`  | Returns the documentation (markdown / text) for a specific component |
+| `searchDocs`       | Full-text search over the `context-full.txt` of Flowbite-Svelte      |
+
+### Notes
+#### MCP Client Integration
+
+- Once built (pnpm build), you run the server (pnpm start).
+
+- In a client like Claude Desktop, you configure it to execute your server process.
+
+- Because it uses stdio transport, the client communicates with your server via its standard input/output streams.
+
+
+## AI-Friendly Documentation Formats
 
 Flowbite Svelte follows the [llms.txt standard](https://llmstxt.org/), a community-driven proposal initiated by Jeremy Howard that standardizes how websites provide LLM-friendly information.
 
@@ -47,7 +121,7 @@ Here's how you might leverage these features in your AI integration:
 
 ```ts
 // Accessing component documentation in markdown format
-const buttonDocs = await fetch("https://flowbite-svelte.com/docs/components/buttons.md").then((res) => res.text());
+const buttonDocs = await fetch("https://flowbite-svelte.com/llm/components/buttons.md").then((res) => res.text());
 
 // Using markdown documentation in a ChatGPT prompt
 const chatGptPrompt = `Based on this Flowbite Svelte Button component documentation:
@@ -1048,9 +1122,9 @@ Enhance the reliability and scalability of your user interface code by leveragin
 # Svelte Accordion - Flowbite
 
 
-The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.
+The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript.
 
-A popular use case would be the “Frequently Asked Questions” section of a website or page when you can show questions and answers for each child element.
+A popular use case would be the "Frequently Asked Questions" section of a website or page when you can show questions and answers for each child element. Other common uses include settings panels, product feature showcases, navigation menus, and multi-step forms.
 
 ## Setup
 
@@ -1062,9 +1136,9 @@ A popular use case would be the “Frequently Asked Questions” section of a we
 
 ## Default accordion
 
-Accordion uses the single selection mode by default i.e. it collapses every other child element when expanding a one.
+By default, the accordion uses single selection mode, which means opening one accordion item automatically closes all others. This ensures only one section is expanded at a time, keeping the interface clean and focused.
 
-To prevent that behavior set `multiple` property to `true`.
+To allow multiple items to remain open simultaneously, set the `multiple` property to `true`.
 
 ```svelte
 <script lang="ts">
@@ -1099,7 +1173,7 @@ To prevent that behavior set `multiple` property to `true`.
 
 ## Always open
 
-Use the `open` prop to make an item open on mount.
+Use the `open` prop to make an item open on mount. This is useful for highlighting important content or the most frequently accessed section.
 
 ```svelte
 <script lang="ts">
@@ -1121,6 +1195,8 @@ Use the `open` prop to make an item open on mount.
 ## Color option
 
 You can control the look and feel of `AccordionItems` by overwriting the `activeClass` and `inactiveClass` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
+
+This allows you to match the accordion to your brand colors or create visual hierarchy between different accordion sections.
 
 ```svelte
 <script lang="ts">
@@ -1144,7 +1220,7 @@ You can control the look and feel of `AccordionItems` by overwriting the `active
 
 ## Flush accordion
 
-Use `flush` prop to remove the rounded borders.
+Use `flush` prop to remove the rounded borders. This creates a cleaner, more minimal design that works well in tight layouts or when embedded within cards.
 
 ```svelte
 <script lang="ts">
@@ -1165,7 +1241,7 @@ Use `flush` prop to remove the rounded borders.
 
 ## Arrow style
 
-Use the `arrowup` and `arrowdown` snippets to set up and down icons.
+Use the `arrowup` and `arrowdown` snippets to customize the expand/collapse icons. You can use any icon library or custom SVG icons.
 
 ```svelte
 <script lang="ts">
@@ -1199,7 +1275,7 @@ Use the `arrowup` and `arrowdown` snippets to set up and down icons.
 
 ## Icon Accordion
 
-Use `header` snippet to add your icon and title.
+Use `header` snippet to add icons and create visually enhanced accordion headers. This helps users quickly identify sections and improves scanability.
 
 ```svelte
 <script lang="ts">
@@ -1235,7 +1311,7 @@ Use `header` snippet to add your icon and title.
 
 ## Multiple mode
 
-Use `multiple` to open all accordion items.
+Use `multiple` prop to allow multiple accordion items to be open at the same time. This is useful when users need to compare information across different sections or when content in one section doesn't affect another.
 
 ```svelte
 <script lang="ts">
@@ -1258,7 +1334,9 @@ Use `multiple` to open all accordion items.
 </Accordion>
 ```
 
-Another example how to use the `multiple` option together with expand all behavior.
+### Expand/Collapse All
+
+Here's an example of how to use the `multiple` option together with "expand all" and "collapse all" functionality. This pattern is helpful for long forms or documentation pages where users may want to see everything at once.
 
 ```svelte
 <script lang="ts">
@@ -1295,7 +1373,9 @@ Another example how to use the `multiple` option together with expand all behavi
 
 ## Custom transitions
 
-The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#run-time-svelte-transition-slide">slide</A>. Use the `transitionType` and `transitionParams` prop to make custom transitions.
+The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#run-time-svelte-transition-slide">slide</A>. Use the `transitionType` and `transitionParams` prop to create custom transitions.
+
+You can use any Svelte transition function such as `fade`, `blur`, `fly`, or `scale` from the `svelte/transition` module, and customize them with parameters like duration and easing.
 
 ```svelte
 <script lang="ts">
@@ -1321,7 +1401,9 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 
 ## Nesting accordions
 
-Accordions can be nested. All of the mentioned options are supported.
+Accordions can be nested to create hierarchical content structures. All mentioned options (colors, icons, transitions, etc.) are supported for nested accordions.
+
+This is useful for complex documentation, multi-level settings, or categorized FAQs.
 
 ```svelte
 <script lang="ts">
@@ -1365,9 +1447,11 @@ Accordions can be nested. All of the mentioned options are supported.
 </Accordion>
 ```
 
-## Using Svelte’s snapshot to preserve the input
+## Using Svelte's snapshot to preserve the input
 
-Use the following example to preserve the input value. First fill out the form, navigate to a different page, and then use your browser’s back button. You’ll notice that your input is preserved automatically.
+Use the following example to preserve the input value when navigating between pages. This leverages SvelteKit's snapshot feature to maintain form state.
+
+To test: Fill out the form, navigate to a different page, and then use your browser's back button. You'll notice that your input is preserved automatically.
 
 ```svelte
 <script lang="ts">
@@ -1422,7 +1506,12 @@ Use the following example to preserve the input value. First fill out the form, 
 
 ## Using transitionType="none"
 
-When you set transitionType="none" on an Accordion or an AccordionItem, it disables Svelte transitions completely and instead uses CSS display properties (block/hidden) to show or hide content. It prevents Svelte from completely destroying and recreating components when toggling the accordion.
++When you set `transitionType="none"` on an Accordion or an AccordionItem, it disables Svelte transitions completely and instead uses CSS display properties (block/hidden) to show or hide content. This prevents Svelte from destroying and recreating components when toggling the accordion.
+
+This approach is useful when:
+- You want to preserve form state or component lifecycle
+- You need better performance with many accordion items
+- You want instant show/hide without animation
 
 ```svelte
 <script lang="ts">
@@ -1454,7 +1543,9 @@ When you set transitionType="none" on an Accordion or an AccordionItem, it disab
 
 ## Breakpoints
 
-Control when accordion items are open or closed based on screen size using Flowbite Svelte's responsive utilities.
+Control when accordion items are open or closed based on screen size using Flowbite Svelte's responsive utilities. This enables you to create adaptive user experiences where accordions behave differently on mobile versus desktop.
+
+For example, you might want to keep sections expanded on desktop for easy scanning, but collapse them on mobile to save space.
 
 ### Basic Usage
 
@@ -1474,7 +1565,7 @@ Simple Media Query opens accordion item on medium screens and larger:
 
 ### Using Breakpoints Object
 
-Access multiple breakpoints with a single hook:
+Access multiple breakpoints with a single hook for cleaner, more maintainable code:
 
 ```svelte
 <script lang="ts">
@@ -1490,7 +1581,7 @@ Access multiple breakpoints with a single hook:
 
 ### Advanced Patterns
 
-Current Breakpoint Display show the current breakpoint in your UI:
+Current Breakpoint Display shows the current breakpoint in your UI, useful for debugging responsive behavior:
 
 ```svelte
 <script lang="ts">
@@ -1508,7 +1599,7 @@ Current Breakpoint Display show the current breakpoint in your UI:
 
 ### Range-Based Opening
 
-Open accordion only within specific screen size ranges:
+Open accordion only within specific screen size ranges. This is useful when you want different behavior for phones, tablets, and desktops:
 
 ```svelte
 <script lang="ts">
@@ -1542,6 +1633,8 @@ Open accordion only within specific screen size ranges:
 ```
 
 ### Complex examples
+
+Combining multiple responsive patterns for sophisticated adaptive layouts:
 
 ```svelte
 <script lang="ts">
@@ -1593,6 +1686,19 @@ Open accordion only within specific screen size ranges:
 </Accordion>
 ```
 
+## Accessibility
+
+The Accordion component is built with accessibility in mind:
+
+- **Keyboard Navigation**: Use Tab to navigate between accordion headers, Enter or Space to toggle items
+- **ARIA Attributes**: Proper ARIA labels and states are automatically applied for screen readers
+- **Focus Management**: Clear focus indicators help keyboard users navigate
+- **Screen Reader Support**: Expanded/collapsed states are announced to screen reader users
+
+## See also
+
+<Seealso links={relatedLinks} />
+
 ## Component data
 
 ### Accordion
@@ -1634,6 +1740,26 @@ Open accordion only within specific screen size ranges:
 - contentClass
 
 
+### Accordion Props
+
+- `flush`: Remove rounded borders
+- `activeClass`: CSS classes for active/expanded items
+- `inactiveClass`: CSS classes for inactive/collapsed items  
+- `multiple`: Allow multiple items to be open simultaneously (default: false)
+- `transitionType`: Transition effect type (default: 'slide')
+
+### AccordionItem Props
+
+- `open`: Control whether item is expanded (bindable)
+- `activeClass`: Override parent's activeClass for this item
+- `inactiveClass`: Override parent's inactiveClass for this item
+- `transitionType`: Override parent's transitionType for this item
+- `transitionParams`: Customize transition parameters (duration, easing, etc.)
+- `headerClass`: CSS classes for the header element
+- `contentClass`: CSS classes for the content element
+
+<CompoAttributesViewer {dirName} />
+
 ## References
 
 - [Flowbite Accordion](https://flowbite.com/docs/components/accordion/)
@@ -1645,7 +1771,9 @@ Open accordion only within specific screen size ranges:
 # Svelte Alert - Flowbite
 
 
-The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page. Flowbite also includes dismissable alerts which can be hidden by the users by clicking on the close icon.
+The alert component can be used to provide important information to your users such as success or error messages, warnings, or highlighted information that complements the normal flow of content on a page. Alerts are perfect for displaying feedback after form submissions, system notifications, or drawing attention to critical information.
+
+It also includes dismissable alerts which can be hidden by users by clicking on the close icon, allowing for a cleaner interface once the message has been acknowledged.
 
 ## Set up
 
@@ -1659,7 +1787,13 @@ Import Alert and set variables in the script tag.
 
 ## Default alert
 
-Use the following examples of alert components to show messages as feedback to your users.
+Use the following examples of alert components to show messages as feedback to your users. Each color variant conveys different semantic meanings:
+
+- **Info** (blue): General information or tips
+- **Danger** (red): Errors or critical warnings
+- **Success** (green): Successful operations or confirmations
+- **Warning** (yellow): Caution messages or important notices
+- **Dark** (gray): Neutral information or less critical messages
 
 ```svelte
 <script lang="ts">
@@ -1694,7 +1828,7 @@ Use the following examples of alert components to show messages as feedback to y
 
 ## Alerts with icon
 
-You can also include a descriptive icon to complement the message inside the alert component with the following example.
+You can also include a descriptive icon to complement the message inside the alert component. Icons help users quickly identify the type of message and improve visual scanning, especially useful in applications with multiple alerts.
 
 ```svelte
 <script lang="ts">
@@ -1736,7 +1870,7 @@ You can also include a descriptive icon to complement the message inside the ale
 
 ## Bordered alerts
 
-Use this example to add a border accent to the alert component instead of just a plain background.
+Use this example to add a border accent to the alert component instead of just a plain background. Bordered alerts provide a more subtle appearance while still maintaining clear visual distinction, making them ideal for less intrusive notifications.
 
 ```svelte
 <script lang="ts">
@@ -1778,7 +1912,12 @@ Use this example to add a border accent to the alert component instead of just a
 
 ## Alerts with list
 
-Use this example to show a list and a description inside an alert component.
+Use this example to show a list and a description inside an alert component. This is particularly useful for displaying:
+
+- Multiple error messages from form validation
+- Step-by-step instructions or requirements
+- Lists of affected items or changes
+- Grouped information that requires user attention
 
 ```svelte
 <script lang="ts">
@@ -1816,11 +1955,11 @@ Use this example to show a list and a description inside an alert component.
 
 ## Dismissable alerts
 
-Use the following alert elements that are also dismissable.
+Use the following alert elements that are also dismissable. Dismissable alerts are useful for temporary messages that users can acknowledge and remove from view, such as cookie notices, promotional banners, or one-time tips.
 
-You can attach the `transition` and `params` prop to control the dissimal animation. By default `fade` svelte function is used. See the example below.
+You can attach the `transition` and `params` prop to control the dismissal animation. By default the `fade` Svelte transition function is used. You can customize the animation with different transition types (slide, blur, fly) and parameters (duration, easing).
 
-You can use `closeIcon` prop to override the default close button. See the last example.
+You can use the `closeIcon` snippet to override the default close button with your own custom icon or element. See the last example below.
 
 ```svelte
 <script lang="ts">
@@ -1865,7 +2004,7 @@ You can use `closeIcon` prop to override the default close button. See the last 
 
 ## Border accent
 
-Use the following alert components with a border accent as an alternative style.
+Use the following alert components with a border accent as an alternative style. The left border accent provides a clean, modern look that draws attention without being overwhelming, perfect for sidebars or embedded notifications.
 
 ```svelte
 <script lang="ts">
@@ -1902,7 +2041,12 @@ Use the following alert components with a border accent as an alternative style.
 
 ## Additional content
 
-The following alert components can be used if you wish to disclose more information inside the element.
+The following alert components can be used if you wish to disclose more information inside the element. This pattern is useful for:
+
+- Expandable help text or documentation
+- Detailed error explanations with suggested solutions
+- Rich content with links and formatting
+- Multi-paragraph announcements or updates
 
 ```svelte
 <script lang="ts">
@@ -1940,7 +2084,7 @@ The following alert components can be used if you wish to disclose more informat
 
 ## Custom color
 
-Use `class` to add your custom colors classes.
+Use the `class` prop to add your custom color classes and create alerts that match your brand or design system. You can combine Tailwind CSS background, border, and text color utilities to achieve any desired appearance.
 
 ```svelte
 <script lang="ts">
@@ -1952,7 +2096,12 @@ Use `class` to add your custom colors classes.
 
 ## Events
 
-Use the `onclick` event with `dismissable` prop.
+Use the `onclick` event with the `dismissable` prop to handle user interactions when the alert is dismissed. This allows you to:
+
+- Track which alerts users are dismissing
+- Save dismissal state to prevent showing the same alert again
+- Trigger other actions when an alert is closed
+- Log analytics events
 
 ```svelte
 <script lang="ts">
@@ -1966,6 +2115,29 @@ Use the `onclick` event with `dismissable` prop.
 
 <Alert dismissable onclick={closeAlert} bind:alertStatus>Close me</Alert>
 ```
+
+## Accessibility
+
+The Alert component follows accessibility best practices:
+
+- **ARIA Roles**: Alerts use appropriate ARIA roles to announce important messages to screen readers
+- **Color Independence**: Never rely on color alone to convey meaning; always include text or icons
+- **Keyboard Navigation**: Dismissable alerts can be closed using keyboard interactions
+- **Focus Management**: When dismissing alerts, focus is properly managed to maintain usability
+
+## Best Practices
+
+When using alerts, consider these guidelines:
+
+- **Be Concise**: Keep alert messages brief and actionable
+- **Use Appropriately**: Don't overuse alerts as they can overwhelm users
+- **Provide Context**: Include enough information for users to understand and act
+- **Allow Dismissal**: For non-critical alerts, enable dismissal to reduce clutter
+- **Position Wisely**: Place alerts where they're most relevant to the action or content
+
+## See also
+
+<Seealso links={relatedLinks} />
 
 ## Component data
 
@@ -1990,6 +2162,17 @@ Use the `onclick` event with `dismissable` prop.
 - params
 
 
+### Key Props
+
+- `color`: Set the alert color variant (info, danger, success, warning, dark)
+- `dismissable`: Enable close button for dismissing the alert
+- `border`: Add border styling
+- `rounded`: Control border radius
+- `transition`: Custom Svelte transition function (default: fade)
+- `params`: Parameters for the transition (duration, easing, etc.)
+
+<CompoAttributesViewer {dirName}/>
+
 ## References
 
 - [Flowbite Alerts](https://flowbite.com/docs/components/alerts/)
@@ -2001,7 +2184,9 @@ Use the `onclick` event with `dismissable` prop.
 # Svelte Avatar - Flowbite
 
 
-The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from Flowbite to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
+The avatar component can be used as a visual identifier for a user profile on your website. Avatars help users quickly recognize individuals in lists, comments, navigation, and throughout your application. You can use the examples to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
+
+Common use cases include user profile headers, comment sections, team member displays, chat interfaces, and navigation menus.
 
 ## Setup
 
@@ -2015,7 +2200,7 @@ Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `Dropdow
 
 ## Default avatar
 
-Use this example to create a circle and rounded avatar on an image element.
+Use this example to create circle and rounded avatar on an image element. The rounded style provides a softer, more modern appearance, while the circular style is the most common and recognizable avatar format.
 
 ```svelte
 <script lang="ts">
@@ -2030,6 +2215,8 @@ Use this example to create a circle and rounded avatar on an image element.
 
 ## Icon avatar
 
+When no user image is available, you can use an icon as a placeholder. This provides a consistent fallback that maintains visual balance in your UI while still being recognizable as a user avatar.
+
 ```svelte
 <script lang="ts">
   import { Avatar } from "flowbite-svelte";
@@ -2042,6 +2229,8 @@ Use this example to create a circle and rounded avatar on an image element.
 ```
 
 ## Custom dot
+
+Customize the status indicator dot to match your design requirements. You can change colors, sizes, and positioning to indicate different states like online, offline, busy, away, or custom statuses specific to your application.
 
 ```svelte
 <script lang="ts">
@@ -2060,9 +2249,9 @@ Use this example to create a circle and rounded avatar on an image element.
 
 ## Bordered
 
-You can apply a border around the avatar component.
+You can apply a border around the avatar component to create visual separation and emphasis. This is particularly useful when avatars are placed on colored backgrounds or need to stand out more prominently.
 
-You can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
+You can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify the ring color and match your brand or UI theme.
 
 ```svelte
 <script lang="ts">
@@ -2075,7 +2264,7 @@ You can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring 
 
 ## Placeholder
 
-When there is no custom image available a placeholder is displayed.
+When there is no custom image available, a placeholder is displayed. Placeholders ensure your layout remains consistent and professional even when user profile images haven't been uploaded yet.
 
 ```svelte
 <script lang="ts">
@@ -2090,7 +2279,13 @@ When there is no custom image available a placeholder is displayed.
 
 ## Placeholder initials
 
-This example can be used to show the initials of the user’s first and last name as a placeholder when no profile picture is available.
+This example can be used to show the initials of the user's first and last name as a placeholder when no profile picture is available. This creates a more personalized experience than generic icons and helps users identify individuals even without photos.
+
+Initial-based avatars are particularly useful in:
+- Business applications where photos may not be required
+- Team directories with many members
+- Comment sections or collaborative tools
+- Administrative interfaces
 
 ```svelte
 <script lang="ts">
@@ -2102,7 +2297,7 @@ This example can be used to show the initials of the user’s first and last nam
 
 ## Avatar tooltip
 
-Use this example to show a tooltip when hovering over the avatar.
+Use this example to show a tooltip when hovering over the avatar. Tooltips can display additional information such as full names, job titles, status messages, or other relevant user details without cluttering the interface.
 
 ```svelte
 <script lang="ts">
@@ -2119,7 +2314,13 @@ Use this example to show a tooltip when hovering over the avatar.
 
 ## Dot indicator
 
-Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).
+Use a dot element relative to the avatar component as an indicator for the user's status (e.g., online, offline, busy, away). Status indicators help users understand availability in real-time communication tools, collaboration platforms, and social applications.
+
+Different colors typically represent:
+- **Green**: Online/Available
+- **Yellow/Orange**: Away/Idle
+- **Red**: Busy/Do Not Disturb
+- **Gray**: Offline
 
 ```svelte
 <script lang="ts">
@@ -2136,7 +2337,14 @@ Use a dot element relative to the avatar component as an indicator for the user 
 
 ## Stacked
 
-Use this example if you want to stack a group of users by overlapping the avatar components.
+Use this example if you want to stack a group of users by overlapping the avatar components. Stacked avatars are perfect for showing:
+
+- Team members on a project
+- Participants in a meeting or chat
+- Contributors to a document or task
+- Multiple assignees without taking up excessive space
+
+This pattern saves space while still providing visual representation of all involved users. Include a count indicator when there are more users than can be displayed.
 
 ```svelte
 <script lang="ts">
@@ -2159,7 +2367,13 @@ Use this example if you want to stack a group of users by overlapping the avatar
 
 ## Avatar text
 
-This example can be used if you want to show additional information in the form of text elements such as the user’s name and join date.
+This example can be used if you want to show additional information in the form of text elements such as the user's name and join date. Combining avatars with descriptive text provides full context about the user, making it ideal for:
+
+- User profile cards
+- Directory listings
+- Comment headers
+- Team member displays
+- Author bylines
 
 ```svelte
 <script lang="ts">
@@ -2177,7 +2391,13 @@ This example can be used if you want to show additional information in the form 
 
 ## User dropdown
 
-Use this example if you want to show a dropdown menu when clicking on the avatar component.
+Use this example if you want to show a dropdown menu when clicking on the avatar component. Avatar dropdowns are commonly used in navigation headers for:
+
+- Quick access to profile settings
+- Account management options
+- User-specific actions (sign out, preferences, etc.)
+- Status changes
+- Switching between accounts or workspaces
 
 ```svelte
 <script lang="ts">
@@ -2203,7 +2423,13 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
 
 ## Sizes
 
-You can set `size` property to preset values of `xs | sm | md | lg | xl`. Custom size can be achieved by adding any of the Tailwind Css size classes like `w-[x] h-[x]`.
+You can set the `size` property to preset values of `xs | sm | md | lg | xl`. Custom sizes can be achieved by adding any of the Tailwind CSS size classes like `w-[x] h-[x]`.
+
+Choose the appropriate size based on context:
+- **xs/sm**: Compact lists, inline mentions, small UI elements
+- **md**: Default size for most use cases, comment avatars
+- **lg**: Profile cards, team pages, prominent displays
+- **xl**: Profile headers, feature sections, landing pages
 
 Preset values are equivalents of:
 
@@ -2230,6 +2456,31 @@ Preset values are equivalents of:
 </div>
 ```
 
+## Accessibility
+
+The Avatar component is built with accessibility in mind:
+
+- **Alt Text**: Always provide descriptive alt text for profile images
+- **Semantic HTML**: Uses appropriate HTML elements for proper structure
+- **Keyboard Navigation**: Interactive avatars (with dropdowns/tooltips) are fully keyboard accessible
+- **Screen Reader Support**: Status indicators and additional information are announced to screen readers
+- **Color Contrast**: Status dots and text meet WCAG contrast requirements
+
+## Best Practices
+
+When implementing avatars, consider these guidelines:
+
+- **Image Optimization**: Use appropriately sized images to avoid unnecessary bandwidth
+- **Fallback Strategy**: Always provide fallbacks (initials or icons) for missing images
+- **Consistent Sizing**: Use consistent avatar sizes within the same context
+- **Loading States**: Show loading indicators for slowly loading images
+- **Clickable Areas**: Ensure clickable avatars have adequate touch targets (minimum 44x44px)
+- **Privacy**: Consider user privacy preferences when displaying profile pictures
+
+## See also
+
+<Seealso links={relatedLinks} />
+
 ## Component data
 
 ### Avatar
@@ -2255,6 +2506,17 @@ Preset values are equivalents of:
 - onclick
 
 
+### Key Props
+
+- `src`: URL of the avatar image
+- `size`: Preset size (xs, sm, md, lg, xl) or custom classes
+- `rounded`: Enable rounded corners (default: true for circle)
+- `border`: Add border around avatar
+- `alt`: Alternative text for the image (important for accessibility)
+- `dot`: Status indicator configuration
+
+<CompoAttributesViewer {dirName}/>
+
 ## References
 
 - [Flowbite Avatar](https://flowbite.com/docs/components/avatar/)
@@ -2266,9 +2528,16 @@ Preset values are equivalents of:
 # Svelte Badge - Flowbite
 
 
-The badge component can be used to complement other elements such as buttons or text elements as a label or to show the count of a given data, such as the number of comments for an article or how much time has passed by since a comment has been made.
+The badge component can be used to complement other elements such as buttons or text elements as a label or to show the count of a given data, such as the number of comments for an article or how much time has passed since a comment has been made.
 
-Alternatively, badges can also be used as standalone elements that link to a certain page.
+Badges are perfect for:
+- Showing notification counts on navigation items
+- Displaying status labels (new, featured, beta)
+- Highlighting categories or tags
+- Indicating numerical values or metrics
+- Drawing attention to specific elements
+
+Alternatively, badges can also be used as standalone elements that link to a certain page, functioning as interactive tags or category filters.
 
 ## Setup
 
@@ -2282,7 +2551,14 @@ Import a badge component in the script tag.
 
 ## Default badge
 
-Use the following badge elements to indicate counts or labels inside or outside components.
+Use the following badge elements to indicate counts or labels inside or outside components. Each color variant conveys different semantic meanings:
+
+- **Default/Blue**: General information or neutral labels
+- **Dark**: Subtle or secondary information
+- **Red**: Errors, warnings, or critical items
+- **Green**: Success, active, or positive states
+- **Yellow**: Warnings or items requiring attention
+- **Indigo/Purple**: Special features or premium content
 
 ```svelte
 <script lang="ts">
@@ -2301,7 +2577,11 @@ Use the following badge elements to indicate counts or labels inside or outside 
 
 ## Large badges
 
-Use the `large` prop to create a large variant of the badges.
+Use the `large` prop to create a large variant of the badges. Larger badges are more prominent and work well for:
+- Hero sections or featured content
+- Dashboard metrics and KPIs
+- Primary navigation elements
+- Call-to-action labels
 
 ```svelte
 <script lang="ts">
@@ -2320,7 +2600,11 @@ Use the `large` prop to create a large variant of the badges.
 
 ## Bordered badge
 
-Use the `border` prop to add a border accent to the badge component.
+Use the `border` prop to add a border accent to the badge component. Bordered badges provide a more subtle, refined appearance that works well:
+- On colored backgrounds where filled badges might clash
+- In minimalist designs
+- When you need visual distinction without heavy styling
+- For secondary or less critical information
 
 ```svelte
 <script lang="ts">
@@ -2339,7 +2623,11 @@ Use the `border` prop to add a border accent to the badge component.
 
 ## Pills badge
 
-Use the `rounded` prop to make the corners even more rounded like pills for the badge component.
+Use the `rounded` prop to make the corners even more rounded like pills for the badge component. Pill-shaped badges offer a modern, friendly appearance and are commonly used in:
+- Tag systems and filters
+- Social media interfaces
+- Modern web applications
+- Anywhere a softer, more approachable design is desired
 
 ```svelte
 <script lang="ts">
@@ -2358,7 +2646,13 @@ Use the `rounded` prop to make the corners even more rounded like pills for the 
 
 ## Badges as links
 
-You can also use badges as anchor elements to link to another page.
+You can also use badges as anchor elements to link to another page. Interactive badges are useful for:
+- Category navigation
+- Tag filtering systems
+- Quick navigation to related content
+- Clickable status indicators that show more details
+
+Make sure linked badges have appropriate hover states and are keyboard accessible.
 
 ```svelte
 <script lang="ts">
@@ -2373,7 +2667,11 @@ You can also use badges as anchor elements to link to another page.
 
 ## Badges with icon
 
-You can also use SVG icons inside the badge elements.
+You can also use SVG icons inside the badge elements. Icons enhance badges by:
+- Adding visual meaning (checkmarks for verified, stars for featured)
+- Making badges more scannable
+- Reducing the need for text in some cases
+- Creating a more polished, professional appearance
 
 ```svelte
 <script lang="ts">
@@ -2393,7 +2691,13 @@ You can also use SVG icons inside the badge elements.
 
 ## Notification badge
 
-To achieve the functionality of the notification badge, use the sibling [`Indicator`](/docs/components/indicators) component. Remember to add the `relative` class to parent element.
+To achieve the functionality of the notification badge, use the sibling [`Indicator`](/docs/components/indicators) component. Remember to add the `relative` class to the parent element.
+
+Notification badges are commonly used to:
+- Show unread message counts
+- Indicate pending notifications
+- Display cart item quantities
+- Alert users to updates or changes
 
 ```svelte
 <script lang="ts">
@@ -2422,7 +2726,11 @@ To achieve the functionality of the notification badge, use the sibling [`Indica
 
 ## Button with badge
 
-Use this example to add a badge inside a button component for a count indicator.
+Use this example to add a badge inside a button component for a count indicator. This pattern is frequently seen in:
+- Inbox or message buttons showing unread counts
+- Shopping cart buttons displaying item quantities
+- Filter buttons showing the number of active filters
+- Action buttons with pending item counts
 
 ```svelte
 <script lang="ts">
@@ -2437,7 +2745,11 @@ Use this example to add a badge inside a button component for a count indicator.
 
 ## Badge with icon only
 
-Alternatively you can also use badges which indicate only a SVG icon.
+Alternatively you can also use badges which indicate only a SVG icon. Icon-only badges work well when:
+- Space is limited
+- The icon meaning is universally understood
+- Used consistently throughout the interface
+- Paired with tooltips for additional context
 
 ```svelte
 <script lang="ts">
@@ -2457,7 +2769,11 @@ Alternatively you can also use badges which indicate only a SVG icon.
 
 ## Dismissable badges
 
-Use the `dismissable` prop to dismiss the current badge.
+Use the `dismissable` prop to dismiss the current badge. Dismissable badges are useful for:
+- User-applied filters or tags that can be removed
+- Temporary labels or notifications
+- Selected items in multi-select interfaces
+- Dynamic tag management systems
 
 ```svelte
 <script lang="ts">
@@ -2474,7 +2790,7 @@ Use the `dismissable` prop to dismiss the current badge.
 <Badge dismissable large color="pink">Pink</Badge>
 ```
 
-Use the `icon` snippet to add your desired button.
+Use the `icon` snippet to add your desired custom close button icon.
 
 ```svelte
 <script lang="ts">
@@ -2497,7 +2813,11 @@ Use the `icon` snippet to add your desired button.
 </Badge>
 ```
 
-A `onclose` callback will be dispatched during the dismissal, listen to it if needed.
+A `onclose` callback will be dispatched during the dismissal, listen to it if needed. This allows you to:
+- Update application state when badges are removed
+- Track user interactions for analytics
+- Trigger related actions (like removing filters)
+- Sync badge state with backend data
 
 ```svelte
 <script lang="ts">
@@ -2514,7 +2834,11 @@ A `onclose` callback will be dispatched during the dismissal, listen to it if ne
 
 ## Dynamic color
 
-The color can be changed dynamically.
+The color can be changed dynamically based on application state or user interactions. Dynamic coloring is useful for:
+- Status indicators that change based on real-time data
+- Interactive elements that respond to user actions
+- Conditional styling based on business logic
+- Creating responsive, data-driven interfaces
 
 ```svelte
 <script lang="ts">
@@ -2533,6 +2857,8 @@ The color can be changed dynamically.
 
 ## Opening badge
 
+This example demonstrates badges with transition effects, creating a smooth animation when badges appear or change state.
+
 ```svelte
 <script lang="ts">
   import { Badge, Button } from "flowbite-svelte";
@@ -2545,6 +2871,31 @@ The color can be changed dynamically.
 <Button onclick={openBadge}>Open badge</Button>
 <Badge class="ml-4" color="blue" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
 ```
+
+## Accessibility
+
+The Badge component follows accessibility best practices:
+
+- **Semantic HTML**: Uses appropriate HTML elements for different badge types (links, buttons, spans)
+- **Color Independence**: Don't rely solely on color to convey meaning; include text or icons
+- **Keyboard Navigation**: Interactive badges are fully keyboard accessible
+- **Focus Indicators**: Clear focus states for keyboard users
+- **ARIA Labels**: Consider adding ARIA labels for icon-only badges
+
+## Best Practices
+
+When using badges, consider these guidelines:
+
+- **Be Concise**: Keep badge text short (1-3 words or numbers)
+- **Use Sparingly**: Too many badges can create visual clutter
+- **Consistent Meaning**: Use colors consistently throughout your application
+- **Appropriate Size**: Match badge size to its context and importance
+- **Consider Context**: Place badges near related content for clarity
+- **Readable Contrast**: Ensure text has sufficient contrast against badge background
+
+## See also
+
+<Seealso links={relatedLinks} />
 
 ## Component data
 
@@ -2573,6 +2924,18 @@ The color can be changed dynamically.
 - aClass
 
 
+### Key Props
+
+- `color`: Set the badge color variant (default, dark, red, green, yellow, etc.)
+- `large`: Enable larger badge size
+- `border`: Add border styling
+- `rounded`: Enable pill-shaped rounded corners
+- `href`: Make badge a clickable link
+- `dismissable`: Add close button for dismissing badge
+- `icon`: Custom icon snippet
+
+<CompoAttributesViewer {dirName}/>
+
 ## References
 
 - [Flowbite Badge](https://flowbite.com/docs/components/badge/)
@@ -2584,7 +2947,15 @@ The color can be changed dynamically.
 # Svelte Sticky Banner - Flowbite
 
 
-Get started with the sticky banner component coded with Tailwind CSS and Flowbite to show marketing, informational and CTA messages to your website visitors fixed to the top or bottom part of the page as the user scroll down the main content area.
+Get started with the sticky banner component coded with Tailwind CSS and Flowbite to show marketing, informational and CTA messages to your website visitors fixed to the top or bottom part of the page as the user scrolls down the main content area.
+
+Sticky banners are perfect for:
+- **Marketing campaigns** and promotional announcements
+- **Important updates** or system notifications
+- **Cookie consent** notices and privacy disclosures
+- **Newsletter signups** and lead generation
+- **App download** prompts for mobile users
+- **Time-sensitive offers** and limited-time deals
 
 Explore the following examples based on various styles, sizes, and positionings to leverage the sticky banner component and increase marketing conversions with a responsive element supporting dark mode.
 
@@ -2598,7 +2969,9 @@ Explore the following examples based on various styles, sizes, and positionings 
 
 ## Default sticky banner
 
-Use this example to show a text message for announcement with a CTA link, an icon element and a close button to dismiss the banner.
+Use this example to show a text message for announcement with a CTA link, an icon element, and a close button to dismiss the banner. This is the most common banner pattern, providing essential information with a clear action.
+
+The close button allows users to dismiss the banner, improving user experience by giving them control over the interface.
 
 ```svelte
 <script lang="ts">
@@ -2629,7 +3002,13 @@ Use this example to show a text message for announcement with a CTA link, an ico
 
 ## Bottom banner position
 
-This example can be used to position the sticky banner to the bottom side of the page instead of the top side.
+This example can be used to position the sticky banner to the bottom side of the page instead of the top side. Bottom banners are ideal for:
+- **Cookie consent** notices (standard practice)
+- **App install prompts** on mobile devices
+- **Chat support** widgets or help options
+- **Non-intrusive notifications** that don't block primary navigation
+
+Bottom positioning is generally less intrusive and allows users to focus on main content while still being aware of the banner.
 
 ```svelte
 <script lang="ts">
@@ -2657,7 +3036,13 @@ This example can be used to position the sticky banner to the bottom side of the
 
 ## Marketing CTA banner
 
-Use this example to show a text message for announcement with a CTA link.
+Use this example to show a text message for announcement with a CTA link. This streamlined design focuses attention on the call-to-action, making it perfect for:
+- **Sales promotions** with specific discount codes
+- **Event announcements** with registration links
+- **Product launches** with "Learn More" actions
+- **Feature announcements** directing to documentation
+
+Keep the message concise and the CTA clear to maximize conversion rates.
 
 ```svelte
 <script lang="ts">
@@ -2680,6 +3065,18 @@ Use this example to show a text message for announcement with a CTA link.
 
 This example can be used to encourage your website visitors to sign up to your email newsletter by showing an inline form inside the sticky banner on the top side of your page.
 
+Newsletter banners are effective for:
+- **Growing your email list** with minimal friction
+- **Content marketing** campaigns
+- **Blog subscriptions** and update notifications
+- **Community building** initiatives
+
+Best practices:
+- Keep form fields minimal (usually just email)
+- Clearly communicate the value of subscribing
+- Include privacy reassurance
+- Make the close button easily accessible
+
 ```svelte
 <script lang="ts">
   import { Banner, Skeleton, ImagePlaceholder, Input, Label, Button } from "flowbite-svelte";
@@ -2700,6 +3097,14 @@ This example can be used to encourage your website visitors to sign up to your e
 ## Informational banner
 
 This example can be used to share important information with your website visitors by showing a heading and a paragraph inside the sticky banner and two CTA buttons with links.
+
+Informational banners work well for:
+- **System maintenance** announcements
+- **Policy updates** requiring user attention
+- **Security alerts** or important notifications
+- **Multi-option decisions** (e.g., "Learn More" vs "Update Now")
+
+The two-button layout provides users with choice, allowing them to take immediate action or learn more before deciding.
 
 ```svelte
 <script lang="ts">
@@ -2730,9 +3135,15 @@ This example can be used to share important information with your website visito
 
 ## Transition
 
-The `transition` and `params` props allow you to apply transition effects to components when they enter or leave the view. Svelte provides built-in transitions like `fly`, `slide`, `blur-sm`, `fade`, and `scale`.
+The `transition` and `params` props allow you to apply transition effects to components when they enter or leave the view. Svelte provides built-in transitions like `fly`, `slide`, `blur`, `fade`, and `scale`.
 
-This example demonstrates a sliding transition using the slide transition from svelte/transition:
+This example demonstrates a sliding transition using the slide transition from svelte/transition. Smooth transitions:
+- Create a more polished, professional feel
+- Reduce jarring sudden appearances
+- Provide visual continuity
+- Can be customized with duration and easing
+
+Choose transitions that match your site's overall animation style and don't distract from the banner's message.
 
 ```svelte
 <script lang="ts">
@@ -2764,7 +3175,19 @@ This example demonstrates a sliding transition using the slide transition from s
 
 ## onclose
 
-A reusable function that manages banner dismissal state with localStorage persistence using the onclose callback. It checks if the banner was previously dismissed on mount, provides two-way binding for the open state, and automatically saves dismissal to localStorage. Use the following example for a reusable function that keeps announcement banners hidden after dismissal across page refreshes.
+A reusable function that manages banner dismissal state with localStorage persistence using the onclose callback. It checks if the banner was previously dismissed on mount, provides two-way binding for the open state, and automatically saves dismissal to localStorage.
+
+Use the following example for a reusable function that keeps announcement banners hidden after dismissal across page refreshes. This is essential for:
+- **Cookie consent** banners (legal requirement)
+- **One-time announcements** that shouldn't repeatedly bother users
+- **Promotional messages** where user preference should be respected
+- **Improving user experience** by not showing the same message repeatedly
+
+Implementation tips:
+- Use unique keys for different banners
+- Consider time-based expiration for some banners
+- Allow re-showing critical banners after significant updates
+- Test across different browsers and private browsing modes
 
 ```svelte
 <script lang="ts">
@@ -2803,6 +3226,42 @@ A reusable function that manages banner dismissal state with localStorage persis
 </Banner>
 ```
 
+## Accessibility
+
+The Banner component follows accessibility best practices:
+
+- **Keyboard Navigation**: Close buttons are fully keyboard accessible
+- **Focus Management**: Proper focus indicators for interactive elements
+- **Screen Readers**: Appropriate ARIA labels and roles for announcements
+- **Dismissible**: Always provide a way to close banners
+- **Non-Intrusive**: Banners should not trap focus or prevent page interaction
+- **Color Contrast**: Text and buttons meet WCAG contrast requirements
+
+## Best Practices
+
+When implementing sticky banners, consider these guidelines:
+
+- **Respect User Choice**: Always include a dismiss option for non-critical banners
+- **Prioritize Content**: Don't let banners dominate the viewport, especially on mobile
+- **Timing Matters**: Consider delaying banner appearance slightly after page load
+- **One at a Time**: Avoid showing multiple banners simultaneously
+- **Mobile First**: Test banner layouts on small screens
+- **Performance**: Ensure banners don't impact page load performance
+- **Legal Compliance**: For cookie banners, follow regional regulations (GDPR, CCPA)
+- **Clear Actions**: Make CTAs obvious and easy to click
+- **A/B Testing**: Test different messages and designs for optimal conversion
+
+## When to Use Banners vs. Other Components
+
+- **Banner**: Site-wide announcements, marketing messages, persistent notifications
+- **Alert**: Contextual feedback, form validation, inline messages
+- **Toast**: Temporary feedback, success/error messages, auto-dismissing notifications
+- **Modal**: Critical information requiring user action, complex forms, focused tasks
+
+## See also
+
+<Seealso links={relatedLinks} />
+
 ## Component data
 
 ### Banner
@@ -2828,6 +3287,17 @@ A reusable function that manages banner dismissal state with localStorage persis
 - onclose
 
 
+### Key Props
+
+- `position`: Position banner at top or bottom of viewport (default: 'top')
+- `dismissable`: Enable close button for dismissing banner (default: true)
+- `transition`: Custom Svelte transition function for appear/disappear effects
+- `params`: Parameters for the transition (duration, easing, etc.)
+- `bannerType`: Style variant for different banner types
+- `divClass`: Custom classes for the banner container
+
+<CompoAttributesViewer {dirName}/>
+
 ## References
 
 - [Flowbite Banner](https://flowbite.com/docs/components/banner/)
@@ -2839,7 +3309,15 @@ A reusable function that manages banner dismissal state with localStorage persis
 # Svelte Bottom Navigation - Flowbite
 
 
-The bottom bar component can be used to allow menu items and certain control actions to be performed by the user through the usage of a fixed bar positioning to the bottom side of your page.
+The bottom navigation bar component can be used to allow menu items and certain control actions to be performed by the user through the usage of a fixed bar positioning to the bottom side of your page.
+
+Bottom navigation is particularly effective for:
+- **Mobile applications** and mobile-first designs where thumb-reach is important
+- **Progressive web apps (PWAs)** mimicking native mobile app patterns
+- **Multi-view applications** with 3-5 primary sections
+- **Media players** and content viewers with playback controls
+- **Quick access menus** for frequently used actions
+- **Dashboard controls** and filter panels
 
 Check out multiple examples of the bottom navigation component based on various styles, controls, sizes, content and leverage the utility classes from Tailwind CSS to integrate into your own project.
 
@@ -2853,7 +3331,9 @@ Check out multiple examples of the bottom navigation component based on various 
 
 ## Default bottom navigation
 
-Use the default bottom navigation bar example to show a list of menu items as buttons to allow the user to navigate through your website based on a fixed position. You can also use anchor tags instead of buttons.
+Use the default bottom navigation bar example to show a list of menu items as buttons to allow the user to navigate through your website based on a fixed position. You can also use anchor tags instead of buttons for better semantic HTML and SEO.
+
+The fixed positioning ensures the navigation remains accessible as users scroll through content, providing consistent access to key actions and navigation.
 
 ```svelte
 <script lang="ts">
@@ -2884,7 +3364,13 @@ Use the default bottom navigation bar example to show a list of menu items as bu
 
 Utilize the `href` prop within the `BottomNavItem` component to incorporate a hyperlink. To initiate the application of the active class, include the `activeUrl` prop within the `BottomNav` component.
 
-By default, the `BottomNavItem` will only be set to active if the `href` and the `activeUrl` are exactly the same.
+By default, the `BottomNavItem` will only be set to active if the `href` and the `activeUrl` match. This ensures precise highlighting of the current page.
+
+Active states are crucial for:
+- **User orientation** - showing where they are in the app
+- **Visual feedback** - confirming navigation actions
+- **Improved UX** - reducing confusion about current location
+- **Accessibility** - helping screen reader users understand context
 
 ```svelte
 <script lang="ts">
@@ -2913,7 +3399,7 @@ By default, the `BottomNavItem` will only be set to active if the `href` and the
 </BottomNav>
 ```
 
-The following example shows how to change active class, by using `activeClass` prop.
+The following example shows how to change the active class styling using the `activeClass` prop. This allows you to customize the appearance of active navigation items to match your brand or design system.
 
 ```svelte
 <script lang="ts">
@@ -2942,7 +3428,11 @@ The following example shows how to change active class, by using `activeClass` p
 </BottomNav>
 ```
 
-Use the following example to change the icon colors:
+Use the following example to change the icon colors. Customizing icon colors helps:
+- Match your brand identity
+- Provide better visual hierarchy
+- Improve contrast for accessibility
+- Create distinct hover and active states
 
 ```svelte
 <script lang="ts">
@@ -2975,7 +3465,11 @@ Use the following example to change the icon colors:
 
 ## Menu items with border
 
-This example can be used to show a border between the menu items inside the bottom navbar.
+This example can be used to show a border between the menu items inside the bottom navbar. Borders help:
+- **Visually separate** different sections or actions
+- **Create clear boundaries** between interactive elements
+- **Improve scannability** of menu options
+- **Add structure** to the navigation layout
 
 ```svelte
 <script lang="ts">
@@ -3004,7 +3498,13 @@ This example can be used to show a border between the menu items inside the bott
 
 ## Application bar example
 
-Use this example to show a CTA button in the center of the navigation component to create new items.
+Use this example to show a CTA button in the center of the navigation component to create new items. This pattern is commonly used in:
+- **Social media apps** - for creating posts or content
+- **Task managers** - for adding new tasks or items
+- **Note-taking apps** - for creating new notes
+- **E-commerce apps** - for adding items to cart
+
+The centered primary action draws attention and makes the most important action easily accessible.
 
 ```svelte
 <script lang="ts">
@@ -3047,7 +3547,13 @@ Use this example to show a CTA button in the center of the navigation component 
 
 ## Example with pagination
 
-This example be used to paginate multiple pages on a single view alongside other menu items.
+This example can be used to paginate multiple pages on a single view alongside other menu items. Pagination controls in the bottom navigation are useful for:
+- **Content browsers** - galleries, articles, products
+- **Step-by-step processes** - forms, tutorials, onboarding
+- **Document viewers** - PDFs, presentations, reports
+- **Feed navigation** - social media, news, updates
+
+This keeps pagination accessible without requiring users to scroll to the bottom of content.
 
 ```svelte
 <script lang="ts">
@@ -3099,6 +3605,12 @@ This example be used to paginate multiple pages on a single view alongside other
 
 ## Button group bottom bar
 
+This example demonstrates a button group layout in the bottom bar, perfect for:
+- **Toggle controls** - switching between view modes
+- **Filter options** - showing different data sets
+- **Action groups** - related actions grouped together
+- **Selection tools** - choosing options or modes
+
 ```svelte
 <script lang="ts">
   import { BottomNav, BottomNavItem, BottomNavHeader, BottomNavHeaderItem, Tooltip, Skeleton, ImagePlaceholder } from "flowbite-svelte";
@@ -3146,6 +3658,13 @@ This example be used to paginate multiple pages on a single view alongside other
 This example can be used to position a bottom navigation bar inside of a card element with scroll enabled on the Y axis to allow changing the content inside of the card, enable certain actions or show a list of menu items.
 
 You can even use the other bottom navbar examples to exchange the default one presented here.
+
+This pattern is excellent for:
+- **Modal dialogs** with multiple sections
+- **Embedded widgets** or mini-applications
+- **Dashboard panels** with internal navigation
+- **Content cards** with action controls
+- **Collapsible sections** with persistent controls
 
 ```svelte
 <script lang="ts">
@@ -3207,6 +3726,44 @@ You can even use the other bottom navbar examples to exchange the default one pr
   </BottomNav>
 </Card>
 ```
+
+## Accessibility
+
+The Bottom Navigation component follows accessibility best practices:
+
+- **Keyboard Navigation**: All items are keyboard accessible using Tab and Enter/Space
+- **ARIA Landmarks**: Use appropriate ARIA roles like `navigation` for the container
+- **Focus Indicators**: Clear focus states for keyboard users
+- **Screen Reader Support**: Link text and labels are announced properly
+- **Touch Targets**: Minimum 44x44px tap targets for mobile usability
+- **Contrast**: Text and icons meet WCAG contrast requirements
+
+## Best Practices
+
+When implementing bottom navigation, consider these guidelines:
+
+- **Limit Items**: Use 3-5 items maximum; more creates clutter and confusion
+- **Mobile First**: Bottom navigation is primarily for mobile; consider alternatives for desktop
+- **Clear Labels**: Use concise, understandable labels (1-2 words)
+- **Meaningful Icons**: Choose recognizable icons that match their labels
+- **Avoid Scrolling**: Items should all be visible without horizontal scrolling
+- **Primary Actions**: Place the most important actions centrally or on the left
+- **Consistent Placement**: Keep bottom navigation in the same position across all pages
+- **Fixed Position**: Always use fixed positioning so navigation remains accessible
+- **Test on Devices**: Ensure comfortable thumb reach on actual mobile devices
+
+## Design Considerations
+
+- **Safe Area**: Account for notches and home indicators on modern phones
+- **Elevation/Shadow**: Add subtle shadow to distinguish from content
+- **Background Color**: Ensure sufficient contrast with page content
+- **Active State**: Make the active item clearly distinguishable
+- **Icon + Label**: Combine icons with text labels for clarity
+- **Responsive Design**: Consider hiding or adapting for tablet/desktop views
+
+## See also
+
+<Seealso links={relatedLinks} />
 
 ## Component data
 
@@ -3274,6 +3831,22 @@ You can even use the other bottom navbar examples to exchange the default one pr
 - active: manualActive
 
 
+### Key Props
+
+**BottomNav:**
+- `activeUrl`: Current page URL for highlighting active items
+- `position`: Position of the navigation (default: 'fixed')
+- `navType`: Style variant for the navigation bar
+- `outerClass`: Custom classes for the outer container
+- `innerClass`: Custom classes for the inner container
+
+**BottomNavItem:**
+- `href`: Link destination for navigation items when it's only available via ...restProps
+- `activeClass`: Custom classes for active state
+- `btnName`: Accessible label for the button/link
+
+<CompoAttributesViewer {dirName}/>
+
 ## References
 
 - [Flowbite Bottom Navigation](https://flowbite.com/docs/components/bottom-navigation/)
@@ -3287,6 +3860,16 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 The breadcrumb component is an important part of any website or application that can be used to show the current location of a page in a hierarchical structure of pages.
 
+Breadcrumbs are essential for:
+- **User orientation** - helping users understand where they are in the site structure
+- **Navigation efficiency** - allowing users to quickly jump back to parent pages
+- **SEO benefits** - search engines use breadcrumbs to understand site structure
+- **Reduced bounce rate** - providing multiple navigation paths keeps users engaged
+- **Mobile navigation** - offering compact navigation on small screens
+- **E-commerce sites** - showing product category hierarchy
+- **Documentation sites** - displaying content organization
+- **Multi-level applications** - navigating through complex hierarchies
+
 Flowbite includes two styles of breadcrumb elements, one that has a transparent background and a few more that come with a background in different colors.
 
 ## Setup
@@ -3299,7 +3882,14 @@ Flowbite includes two styles of breadcrumb elements, one that has a transparent 
 
 ## Default Breadcrumb
 
-Use the following breadcrumb example to show the hierarchical structure of pages.
+Use the following breadcrumb example to show the hierarchical structure of pages. The default style has a transparent background that works well in most contexts and doesn't distract from the main content.
+
+Best practices for default breadcrumbs:
+- Start with the home page or root level
+- Display the full path to the current page
+- Make all parent levels clickable except the current page
+- Use clear, concise labels that match page titles
+- Consider truncating very long paths on mobile
 
 ```svelte
 <script lang="ts">
@@ -3315,7 +3905,14 @@ Use the following breadcrumb example to show the hierarchical structure of pages
 
 ## Solid Breadcrumb
 
-You can alternatively also use the breadcrumb components with a solid background.
+You can alternatively also use the breadcrumb components with a solid background. Solid breadcrumbs are useful when:
+- You need more visual separation from page content
+- Working with busy backgrounds or images
+- Creating a distinct header section
+- Matching a specific design system
+- Improving contrast for accessibility
+
+The colored background helps the breadcrumb stand out and can be customized to match your brand colors.
 
 ```svelte
 <script lang="ts">
@@ -3331,7 +3928,18 @@ You can alternatively also use the breadcrumb components with a solid background
 
 ## Icons
 
-Use the `icon` snippet to change icons.
+Use the `icon` snippet to change icons. Custom icons can:
+- **Match your brand** identity and design system
+- **Improve recognition** with familiar symbols
+- **Add visual interest** to the navigation
+- **Clarify hierarchy** with directional or category icons
+- **Support internationalization** by providing visual cues beyond text
+
+Common icon patterns:
+- Home icon for the first item
+- Chevrons or arrows between items
+- Category-specific icons (shopping cart, document, folder)
+- Custom brand icons
 
 ```svelte
 <script lang="ts">
@@ -3362,6 +3970,16 @@ Use the `icon` snippet to change icons.
 
 ## Class and olClass
 
+This example demonstrates customizing the breadcrumb styling using the `class` prop for the container and `olClass` for the ordered list element. Customization allows you to:
+- Adjust spacing and padding
+- Change colors and backgrounds
+- Modify typography (font size, weight)
+- Add borders or shadows
+- Create responsive layouts
+- Match your design system
+
+The ordered list (`<ol>`) element provides semantic HTML structure that's beneficial for accessibility and SEO.
+
 ```svelte
 <script lang="ts">
   import { Breadcrumb, BreadcrumbItem, Button, type BreadcrumbProps } from "flowbite-svelte";
@@ -3387,6 +4005,73 @@ Use the `icon` snippet to change icons.
   <Button class="w-48" color="green" onclick={changeOlClass}>{olClass ? "Remove olClass" : "Add olClass"}</Button>
 </div>
 ```
+
+## Accessibility
+
+The Breadcrumb component follows accessibility best practices:
+
+- **Semantic HTML**: Uses `<nav>` and `<ol>` elements for proper structure
+- **ARIA Labels**: Includes `aria-label="breadcrumb"` on the navigation element
+- **Keyboard Navigation**: All links are keyboard accessible
+- **Screen Readers**: The hierarchical structure is properly announced
+- **Current Page**: The last item (current page) should not be a link
+- **Clear Labels**: Each breadcrumb item should have descriptive text
+- **Focus Indicators**: Clear focus states for keyboard users
+
+## Best Practices
+
+When implementing breadcrumbs, consider these guidelines:
+
+- **Placement**: Position breadcrumbs near the top of the page, below the main navigation
+- **Hierarchy**: Reflect the true information architecture of your site
+- **Consistency**: Use breadcrumbs on all pages where they add value
+- **Length**: Keep labels concise (1-3 words ideal)
+- **Current Page**: The last item should not be clickable
+- **Home Link**: Start with "Home" or your site name
+- **Separator**: Use clear separators (arrows, chevrons, slashes)
+- **Mobile**: Consider abbreviating or hiding middle items on small screens
+- **Categories**: For e-commerce, show category hierarchy clearly
+- **Don't Replace**: Breadcrumbs supplement, not replace, primary navigation
+
+## When to Use Breadcrumbs
+
+**Good Use Cases:**
+- E-commerce product pages
+- Documentation sites with deep hierarchies
+- Content management systems
+- Multi-step processes or workflows
+- Large websites with complex structure
+- Enterprise applications
+
+**When to Avoid:**
+- Single-level websites or apps
+- Linear flows where back button suffices
+- Apps with flat navigation structure
+- When the hierarchy is unclear or confusing
+
+## SEO Benefits
+
+Breadcrumbs provide significant SEO advantages:
+- **Rich Snippets**: Search engines display breadcrumbs in search results
+- **Internal Linking**: Improves site crawlability and link equity distribution
+- **Keyword Context**: Provides additional keyword context for pages
+- **User Experience Signals**: Lower bounce rates and better engagement
+- **Schema Markup**: Can be enhanced with structured data (JSON-LD)
+
+Consider implementing schema.org breadcrumb markup for maximum SEO benefit.
+
+## Responsive Design
+
+For mobile devices, consider these patterns:
+- **Truncation**: Show only "Home > ... > Current Page" for very long paths
+- **Horizontal Scroll**: Allow scrolling for paths that don't fit
+- **Collapse Middle Items**: Hide intermediate levels with an ellipsis
+- **Vertical Stack**: Stack breadcrumb items vertically if appropriate
+- **Icon Only**: Use just a home icon and back arrow on narrow screens
+
+## See also
+
+<Seealso links={relatedLinks} />
 
 ## Component data
 
@@ -3424,6 +4109,23 @@ Use the `icon` snippet to change icons.
 - classes
 
 
+### Key Props
+
+**Breadcrumb:**
+- `solid`: Enable solid background style
+- `navClass`: Custom classes for the nav element
+- `olClass`: Custom classes for the ordered list
+- `ariaLabel`: ARIA label for the navigation (default: 'breadcrumb')
+
+**BreadcrumbItem:**
+- `home`: Mark this item as the home/root item
+- `href`: Link destination (omit for current page)
+- `linkClass`: Custom classes for the link element
+- `spanClass`: Custom classes for the span (non-linked current page)
+- `homeClass`: Custom classes specifically for home item
+
+<CompoAttributesViewer {dirName}/>
+
 ## References
 
 - [Flowbite Breadcrumb](https://flowbite.com/docs/components/breadcrumb/)
@@ -3437,6 +4139,16 @@ Use the `icon` snippet to change icons.
 
 The button group component from flowbite-svelte can be used to stack together multiple buttons and links inside a single element.
 
+Button groups are perfect for:
+- **Segmented controls** - choosing between mutually exclusive options
+- **Toolbars** - grouping related actions (text formatting, alignment)
+- **View switchers** - toggling between list, grid, or table views
+- **Social sharing** - organizing share buttons for different platforms
+- **Pagination controls** - previous, numbers, next buttons together
+- **Filter groups** - related filter options in a cohesive unit
+- **Action menus** - primary and secondary actions grouped logically
+- **Navigation tabs** - compact tab navigation for smaller spaces
+
 ## Setup
 
 ```svelte
@@ -3447,7 +4159,13 @@ The button group component from flowbite-svelte can be used to stack together mu
 
 ## Default
 
-Use the following code to stack together buttons into a single group.
+Use the following code to stack together buttons into a single group. Grouped buttons provide visual cohesion and make it clear that actions are related. The first and last buttons have rounded corners while middle buttons have square edges, creating a unified appearance.
+
+This pattern is especially effective for:
+- Creating a visual hierarchy of related actions
+- Saving space by removing gaps between buttons
+- Improving scannability of available options
+- Reducing visual clutter in dense interfaces
 
 ```svelte
 <script lang="ts">
@@ -3462,6 +4180,14 @@ Use the following code to stack together buttons into a single group.
 ```
 
 ## Disabled
+
+Disable individual buttons within a group to indicate unavailable actions while maintaining the group's visual integrity. This is useful for:
+- **Conditional actions** - showing options that aren't currently available
+- **Progressive disclosure** - revealing actions as prerequisites are met
+- **Permission-based UI** - displaying actions user lacks permission for
+- **State-dependent controls** - disabling actions based on current state
+
+Disabled buttons should remain visible to maintain predictable UI layout and help users understand all available options, even if temporarily unavailable.
 
 ```svelte
 <script lang="ts">
@@ -3482,6 +4208,15 @@ Use the following code to stack together buttons into a single group.
 ```
 
 ## More examples
+
+Multiple button group variations demonstrating different color schemes and styles. Different visual treatments can:
+- **Distinguish groups** by purpose or importance
+- **Match brand colors** and design systems
+- **Provide visual hierarchy** between primary and secondary groups
+- **Create emphasis** for critical action groups
+- **Support theming** across light and dark modes
+
+Choose color combinations that maintain sufficient contrast and clearly communicate the relationship between grouped buttons.
 
 ```svelte
 <script lang="ts">
@@ -3530,7 +4265,14 @@ Use the following code to stack together buttons into a single group.
 
 ## Button group as links
 
-You can also use the button group component as links.
+You can also use the button group component as links. Link-based button groups are ideal for:
+- **Navigation menus** - related navigation options
+- **Category filters** - linking to different filtered views
+- **Language switchers** - switching between locale versions
+- **Tab navigation** - navigating between different sections
+- **Breadcrumb alternatives** - showing hierarchical navigation paths
+
+Using semantic `<a>` tags instead of buttons improves SEO and provides native browser navigation features like "open in new tab" and proper link handling.
 
 ```svelte
 <script lang="ts">
@@ -3546,7 +4288,18 @@ You can also use the button group component as links.
 
 ## Group buttons with icons
 
-You can also use SVG icons inside the grouped buttons.
+You can also use SVG icons inside the grouped buttons. Icons enhance button groups by:
+- **Improving recognition** - visual symbols are processed faster than text
+- **Saving space** - icons can replace or supplement text labels
+- **Supporting internationalization** - reducing text translation needs
+- **Creating visual patterns** - consistent icons help users scan quickly
+- **Adding personality** - unique icons reinforce brand identity
+
+Best practices:
+- Use consistent icon style (outlined or filled)
+- Ensure icons clearly represent their actions
+- Combine with text labels when meaning isn't obvious
+- Maintain adequate touch target size (minimum 44x44px)
 
 ```svelte
 <script lang="ts">
@@ -3572,7 +4325,14 @@ You can also use SVG icons inside the grouped buttons.
 
 ## Outline
 
-Group a series of buttons together on a single line or stack them in a vertical column.
+Group a series of buttons together on a single line or stack them in a vertical column. Outline buttons provide a more subtle appearance that works well for:
+- **Secondary actions** - less emphasis than filled buttons
+- **Dense interfaces** - reducing visual weight
+- **Light backgrounds** - maintaining contrast without heavy fills
+- **Multiple groups** - distinguishing from primary action groups
+- **Hover states** - providing clear interactive feedback
+
+Outline style maintains button hierarchy while keeping the interface feeling lighter and less cluttered.
 
 ```svelte
 <script lang="ts">
@@ -3588,7 +4348,14 @@ Group a series of buttons together on a single line or stack them in a vertical 
 
 ## Outline with icon
 
-Group a series of buttons together on a single line or stack them in a vertical column.
+Combine outline styling with icons for a refined, modern appearance. This combination is particularly effective in:
+- **Toolbars** - professional software interfaces
+- **Media controls** - playback, volume, settings
+- **Text editors** - formatting and editing tools
+- **Dashboard controls** - filtering and view options
+- **Settings panels** - configuration toggles
+
+The outline style with icons strikes a balance between clarity and subtlety, making it ideal for frequently accessed controls that shouldn't dominate the interface.
 
 ```svelte
 <script lang="ts">
@@ -3614,7 +4381,14 @@ Group a series of buttons together on a single line or stack them in a vertical 
 
 ## Events
 
-You can add the `onclick` event to the `Button` component.
+You can add the `onclick` event to the `Button` component. Event handling allows you to:
+- **Track interactions** for analytics and metrics
+- **Trigger actions** like API calls or state updates
+- **Provide feedback** through toast notifications or modals
+- **Implement toggles** for segmented controls
+- **Manage selections** in button toggle groups
+
+Each button in a group can have its own event handler, enabling sophisticated interaction patterns while maintaining visual cohesion.
 
 ```svelte
 <script lang="ts">
@@ -3630,6 +4404,65 @@ You can add the `onclick` event to the `Button` component.
   <Button>Messages</Button>
 </ButtonGroup>
 ```
+
+## Accessibility
+
+The Button Group component follows accessibility best practices:
+
+- **Keyboard Navigation**: All buttons are keyboard accessible using Tab and Enter/Space
+- **Focus Indicators**: Clear focus states show which button is selected
+- **ARIA Roles**: Use appropriate ARIA roles for button groups (like `role="group"`)
+- **Label Association**: Ensure all buttons have clear, descriptive labels
+- **Touch Targets**: Maintain minimum 44x44px target size for mobile
+- **Semantic HTML**: Use `<button>` for actions, `<a>` for navigation
+- **Screen Readers**: Button text or aria-labels are properly announced
+
+## Best Practices
+
+When implementing button groups, consider these guidelines:
+
+- **Limit Group Size**: Keep groups to 3-5 buttons for optimal usability
+- **Consistent Sizing**: All buttons in a group should have the same height
+- **Clear Labels**: Use concise, action-oriented labels (1-3 words)
+- **Logical Order**: Arrange buttons in order of importance or workflow
+- **Visual Separation**: Use button groups to separate distinct action sets
+- **Responsive Design**: Consider stacking buttons vertically on mobile
+- **Single Action**: Only one button should trigger per click
+- **Avoid Mixing**: Don't mix buttons and links in the same group
+- **Color Consistency**: Use consistent colors within each group
+- **Active States**: Clearly indicate which button is currently selected (for toggles)
+
+## Common Patterns
+
+**Segmented Control**: Single-select toggle where one button is always active
+- Text alignment (left, center, right)
+- View modes (list, grid, map)
+- Time ranges (day, week, month, year)
+
+**Toolbar**: Multiple independent actions grouped together
+- Text formatting (bold, italic, underline)
+- Undo/redo controls
+- Zoom controls
+
+**Pagination**: Sequential navigation controls
+- Previous, page numbers, next
+- First, previous, next, last
+- Load more patterns
+
+**Social Sharing**: Multiple sharing options
+- Share to different platforms
+- Copy link, email, print options
+
+## Design Considerations
+
+- **Spacing**: Buttons share borders, creating seamless appearance
+- **Corner Radius**: First and last buttons maintain rounded corners
+- **Hover States**: Individual buttons should respond to hover
+- **Active States**: Selected buttons need distinct visual treatment
+- **Dividers**: Consider adding subtle dividers between buttons
+- **Orientation**: Support both horizontal and vertical layouts
+- **Responsive**: Adapt layout for different screen sizes
+- **Z-index**: Manage layering for hover/focus states
 
 ## See also
 
@@ -3651,6 +4484,19 @@ You can add the `onclick` event to the `Button` component.
 - class: className
 
 
+### Key Props
+
+**ButtonGroup:**
+- `size`: Set size for all buttons in group (xs, sm, md, lg, xl)
+- `divClass`: Custom classes for the container div
+- `class`: Additional CSS classes for the wrapper
+
+**Individual Buttons:**
+- All standard Button props apply to buttons within the group
+- Styling is automatically adjusted to create seamless group appearance
+
+<CompoAttributesViewer {dirName}/>
+
 ## References
 
 - [Flowbite Button Group](https://flowbite.com/docs/components/button-group/)
@@ -3663,6 +4509,16 @@ You can add the `onclick` event to the `Button` component.
 
 
 The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages.
+
+Buttons are essential for:
+- **Form submissions** - submitting user input and data
+- **Navigation** - linking to other pages or sections
+- **Actions** - triggering operations like save, delete, or edit
+- **Dialogs** - opening modals, popovers, or dropdowns
+- **Calls to action** - encouraging user engagement and conversions
+- **Social interactions** - likes, shares, and follows
+- **E-commerce** - add to cart, checkout, payment actions
+- **Media controls** - play, pause, and playback controls
 
 flowbite-svelte provides a large variety of styles and sizes for the button component including outlined buttons, multiple colors, sizes, buttons with icons, and more.
 
@@ -3678,7 +4534,16 @@ Import a button component in the script tag.
 
 ## Default button
 
-Use these default button styles with multiple colors to indicate an action or link within your website.
+Use these default button styles with multiple colors to indicate an action or link within your website. Each color conveys different semantic meanings:
+
+- **Default/Primary Blue**: Primary actions and main CTAs
+- **Alternative/Dark**: Secondary actions or secondary options
+- **Red**: Destructive actions (delete, remove, cancel)
+- **Green**: Positive actions (confirm, approve, submit)
+- **Yellow**: Warning actions or cautionary operations
+- **Purple**: Special features or premium actions
+
+Choose colors that align with user expectations and provide clear visual hierarchy.
 
 ```svelte
 <script lang="ts">
@@ -3698,7 +4563,13 @@ Use these default button styles with multiple colors to indicate an action or li
 
 ## Button with link
 
-You can add a link to a Button component:
+You can add a link to a Button component. Link buttons are useful for:
+- **Navigation CTAs** - prominent links styled as buttons
+- **External links** - directing users to external resources
+- **Download links** - file downloads styled as buttons
+- **Anchor links** - jumping to page sections
+
+Using `href` creates a semantic `<a>` tag with button styling, providing proper browser behavior (right-click, open in new tab) and SEO benefits.
 
 ```svelte
 <script lang="ts">
@@ -3710,7 +4581,13 @@ You can add a link to a Button component:
 
 ## Button pills
 
-The button pills can be used as an alternative style by using fully rounded edges.
+The button pills can be used as an alternative style by using fully rounded edges. Pill buttons offer:
+- **Modern aesthetic** - contemporary, friendly appearance
+- **Visual distinction** - standing out from standard buttons
+- **Brand personality** - softer, more approachable feel
+- **Mobile-friendly** - rounder shapes feel natural on touch screens
+
+Pill buttons work especially well in modern web apps, social platforms, and consumer-facing products.
 
 ```svelte
 <script lang="ts">
@@ -3732,6 +4609,15 @@ The button pills can be used as an alternative style by using fully rounded edge
 
 These beautifully colored buttons built with the gradient color stops utility classes from Tailwind CSS can be used as a creative alternative to the default button styles.
 
+Gradient buttons are perfect for:
+- **Hero sections** - eye-catching primary CTAs
+- **Landing pages** - premium feel and visual interest
+- **Marketing campaigns** - standing out and grabbing attention
+- **Premium features** - indicating special or paid features
+- **Brand differentiation** - creating memorable visual identity
+
+Use sparingly to maintain impact and avoid overwhelming users.
+
 ```svelte
 <script lang="ts">
   import { GradientButton } from "flowbite-svelte";
@@ -3749,7 +4635,13 @@ These beautifully colored buttons built with the gradient color stops utility cl
 
 ## Gradient duotone
 
-These buttons use a style that includes two contrasted colors creating an impressive mesh gradient effect.
+These buttons use a style that includes two contrasted colors creating an impressive mesh gradient effect. Duotone gradients offer:
+- **Visual depth** - dimensional appearance
+- **Brand colors** - incorporating multiple brand colors
+- **Modern design** - contemporary gradient trends
+- **Attention-grabbing** - higher visual impact than solid colors
+
+Ideal for promotional content, featured actions, and creative industries.
 
 ```svelte
 <script lang="ts">
@@ -3769,6 +4661,14 @@ These buttons use a style that includes two contrasted colors creating an impres
 
 This is a special button style that incorporates a gradient color for the outline that can be used as a secondary style to the fully colored gradient buttons.
 
+Gradient outline buttons provide:
+- **Subtle premium feel** - sophisticated without being overwhelming
+- **Visual hierarchy** - secondary to filled gradient buttons
+- **Background versatility** - works on various backgrounds
+- **Hover states** - can transition to filled on interaction
+
+Use for secondary CTAs that still need visual interest.
+
 ```svelte
 <script lang="ts">
   import { GradientButton } from "flowbite-svelte";
@@ -3786,7 +4686,13 @@ This is a special button style that incorporates a gradient color for the outlin
 
 ## Colored shadows
 
-These beautiful button elements with color shadows can be used since the release of Tailwind v3.0.
+These beautiful button elements with color shadows can be used since the release of Tailwind v3.0. Shadow effects create:
+- **Depth and elevation** - buttons appear lifted from page
+- **Visual prominence** - drawing attention to important actions
+- **Brand reinforcement** - shadows matching brand colors
+- **Modern aesthetic** - contemporary design trends
+
+Best for hero CTAs and primary actions where you want maximum visual impact.
 
 ```svelte
 <script lang="ts">
@@ -3805,7 +4711,14 @@ These beautiful button elements with color shadows can be used since the release
 
 ## Outline buttons
 
-Use the following button styles to show the colors only for the border of the element.
+Use the following button styles to show the colors only for the border of the element. Outline buttons are excellent for:
+- **Secondary actions** - less visual weight than filled buttons
+- **Multiple options** - reducing visual clutter with many buttons
+- **Light backgrounds** - maintaining clarity without heavy fills
+- **Cancel actions** - de-emphasizing dismissive actions
+- **Ghost buttons** - minimal, modern appearance
+
+Outline buttons provide clear hierarchy while maintaining a clean, uncluttered interface.
 
 ```svelte
 <script lang="ts">
@@ -3824,7 +4737,14 @@ Use the following button styles to show the colors only for the border of the el
 
 ## Button sizes with icons
 
-Use these examples if you want to use smaller or larger buttons.
+Use these examples if you want to use smaller or larger buttons. Size variations serve different purposes:
+- **xs**: Compact interfaces, inline actions, dense tables
+- **sm**: Secondary actions, toolbar buttons, form controls
+- **md**: Default size for most use cases
+- **lg**: Primary CTAs, prominent actions, hero sections
+- **xl**: Extra emphasis, landing pages, marketing campaigns
+
+Icons help users quickly identify button purpose and improve scannability.
 
 ```svelte
 <script lang="ts">
@@ -3841,7 +4761,14 @@ Use these examples if you want to use smaller or larger buttons.
 
 ## Button with icon
 
-Use the following examples to add a SVG icon inside the button either on the left or right side.
+Use the following examples to add a SVG icon inside the button either on the left or right side. Icons enhance buttons by:
+- **Improving recognition** - visual symbols processed faster than text
+- **Providing context** - clarifying action purpose
+- **Supporting internationalization** - reducing text dependencies
+- **Creating consistency** - matching icon usage across the app
+- **Adding polish** - professional, refined appearance
+
+Position icons based on reading direction and action type (left for actions, right for navigation).
 
 ```svelte
 <script lang="ts">
@@ -3859,7 +4786,13 @@ Use the following examples to add a SVG icon inside the button either on the lef
 
 ## Button with label
 
-This example can be used to show a notification count or helper text inside a button using the badge element.
+This example can be used to show a notification count or helper text inside a button using the badge element. Labels within buttons are useful for:
+- **Notification counts** - unread messages, pending items
+- **Status indicators** - new, beta, pro features
+- **Quantities** - cart items, selected filters
+- **Contextual info** - providing additional context without clutter
+
+Badges help users make informed decisions about clicking buttons.
 
 ```svelte
 <script lang="ts">
@@ -3874,7 +4807,13 @@ This example can be used to show a notification count or helper text inside a bu
 
 ## Icon buttons
 
-Sometimes you need a button to indicate an action using only an icon.
+Sometimes you need a button to indicate an action using only an icon. Icon-only buttons work well when:
+- **Space is limited** - toolbars, compact layouts
+- **Icons are universal** - commonly understood symbols (search, close, menu)
+- **Used consistently** - patterns established throughout app
+- **Tooltips provided** - additional context on hover
+
+Always include accessible labels (aria-label) for screen readers even when text isn't visible.
 
 ```svelte
 <script lang="ts">
@@ -3896,7 +4835,13 @@ Sometimes you need a button to indicate an action using only an icon.
 
 ## Loader
 
-Use the spinner components to indicate a loader animation inside buttons.
+Use the spinner components to indicate a loader animation inside buttons. Loading states are critical for:
+- **Form submissions** - preventing duplicate submissions
+- **API calls** - showing pending operations
+- **User feedback** - confirming action is processing
+- **Error prevention** - disabling button during processing
+
+Always disable buttons during loading to prevent multiple submissions.
 
 ```svelte
 <script lang="ts">
@@ -3915,7 +4860,13 @@ Use the spinner components to indicate a loader animation inside buttons.
 
 ## Disabled
 
-You can add any additional button attributes. The following example shows adding the `disabled` attribute.
+You can add any additional button attributes. The following example shows adding the `disabled` attribute. Disabled buttons should:
+- **Remain visible** - showing all available options
+- **Indicate unavailability** - clear visual difference from enabled state
+- **Provide context** - tooltips explaining why disabled (when helpful)
+- **Maintain layout** - preventing UI shifts
+
+Use disabled states for conditional features, permission-based actions, or form validation feedback.
 
 ```svelte
 <script lang="ts">
@@ -3927,7 +4878,13 @@ You can add any additional button attributes. The following example shows adding
 
 ## Events
 
-You can use `onclick` or any standard `on*` to listen to the event.
+You can use `onclick` or any standard `on*` to listen to the event. Event handling enables:
+- **Action triggering** - executing functions on click
+- **State management** - updating application state
+- **Analytics tracking** - measuring user interactions
+- **Form validation** - checking inputs before submission
+- **Navigation** - programmatic routing
+- **Feedback** - showing notifications or alerts
 
 ```svelte
 <script lang="ts">
@@ -3948,6 +4905,14 @@ You can use `onclick` or any standard `on*` to listen to the event.
 
 Use the `loading` prop to indicate a pending action (e.g. form submission). When `true`, the button is automatically disabled and shows a built-in spinner. This improves user feedback and prevents duplicate submissions.
 
+Benefits of the loading prop:
+- **Automatic disabling** - prevents duplicate clicks
+- **Built-in spinner** - no need to manage separate loading UI
+- **User feedback** - clear indication of processing
+- **State management** - simple boolean control
+
+This pattern is essential for any async operation triggered by a button.
+
 ```svelte
 <script lang="ts">
   import { Button } from "flowbite-svelte";
@@ -3962,6 +4927,50 @@ Use the `loading` prop to indicate a pending action (e.g. form submission). When
 
 <Button class="w-32" onclick={handleSubmit} {loading}>Submit</Button>
 ```
+
+## Accessibility
+
+The Button component follows accessibility best practices:
+
+- **Keyboard Navigation**: All buttons are accessible using Tab and Enter/Space
+- **Focus Indicators**: Clear focus states for keyboard users
+- **ARIA Labels**: Use aria-label for icon-only buttons
+- **Semantic HTML**: Uses `<button>` for actions, `<a>` for links
+- **Disabled State**: Properly marked with disabled attribute and aria-disabled
+- **Loading State**: Announces loading status to screen readers
+- **Color Contrast**: All color variants meet WCAG contrast requirements
+- **Touch Targets**: Minimum 44x44px for mobile usability
+
+## Best Practices
+
+When implementing buttons, consider these guidelines:
+
+- **Clear Labels**: Use action-oriented verbs (Save, Delete, Submit, Cancel)
+- **Consistent Sizing**: Maintain size consistency within the same context
+- **Visual Hierarchy**: Primary actions should stand out from secondary ones
+- **Spacing**: Provide adequate space between buttons (minimum 8px)
+- **Loading States**: Always show feedback for async operations
+- **Confirmation**: Require confirmation for destructive actions
+- **Mobile Touch**: Ensure adequate touch target size (44x44px minimum)
+- **Color Meaning**: Use colors consistently (red for delete, green for confirm)
+- **Limit CTAs**: Focus on 1-2 primary actions per view
+- **Descriptive Text**: Avoid vague labels like "Click here" or "Submit"
+
+## Button Hierarchy
+
+Establish clear visual hierarchy with different button types:
+
+1. **Primary** - Main action (filled, prominent color)
+2. **Secondary** - Alternative action (outline or subtle color)
+3. **Tertiary** - Less important action (text button or ghost)
+4. **Destructive** - Dangerous action (red, requires confirmation)
+
+## Common Patterns
+
+**Form Actions**: Submit (primary) + Cancel (secondary)
+**Confirmation Dialogs**: Confirm (red/destructive) + Cancel (outline)
+**Wizards**: Back (outline) + Next (primary) + Cancel (text)
+**CRUD Operations**: Create (green) + Edit (blue) + Delete (red)
 
 ## See also
 
@@ -4008,6 +5017,21 @@ Use the `loading` prop to indicate a pending action (e.g. form submission). When
 - btnClass
 
 
+### Key Props
+
+- `color`: Button color variant (primary, alternative, dark, red, green, etc.)
+- `size`: Button size (xs, sm, md, lg, xl)
+- `href`: Creates a link button (uses `<a>` tag)
+- `pill`: Enable fully rounded pill style
+- `outline`: Use outline style instead of filled
+- `gradient`: Enable gradient styling (monochrome or duotone)
+- `shadow`: Add colored shadow effect
+- `disabled`: Disable the button
+- `loading`: Show loading spinner and disable button
+- `type`: Button type attribute (button, submit, reset)
+
+<CompoAttributesViewer {dirName}/>
+
 ## References
 
 - [Flowbite Buttons](https://flowbite.com/docs/components/buttons/)
@@ -4020,6 +5044,20 @@ Use the `loading` prop to indicate a pending action (e.g. form submission). When
 
 
 Use these responsive card components to show data entries and information to your users in multiple forms and contexts such as for your blog, application, user profiles, and more.
+
+Cards are one of the most versatile UI components, perfect for:
+- **Blog posts** - article previews with images and excerpts
+- **Product listings** - e-commerce product displays
+- **User profiles** - team members, social profiles, contact cards
+- **Dashboards** - metrics, statistics, and data widgets
+- **Portfolios** - project showcases and case studies
+- **Pricing tables** - service plans and subscription tiers
+- **Testimonials** - customer reviews and feedback
+- **Feature highlights** - product features and benefits
+- **Media galleries** - image and video collections
+- **Notifications** - alerts, updates, and messages
+
+Cards provide a contained, organized way to present related information and actions, making them essential for modern web interfaces.
 
 ## Set up
 
@@ -4035,6 +5073,14 @@ Import Card in the script tag.
 
 Use the following simple card component with a title and description. Notice the `href` prop set, as that card is one big `<a/>` element.
 
+This pattern is ideal for:
+- **Clickable content cards** - entire card acts as navigation
+- **Article previews** - linking to full articles
+- **Product cards** - navigating to product details
+- **Category tiles** - browsing different sections
+
+When the entire card is clickable, it provides a larger, more accessible target area and clearer user intent.
+
 ```svelte
 <script lang="ts">
   import { Card } from "flowbite-svelte";
@@ -4048,7 +5094,15 @@ Use the following simple card component with a title and description. Notice the
 
 ## Card with action button
 
-Use the following example of a card element if you also want to have an action button.
+Use the following example of a card element if you also want to have an action button. This pattern separates:
+- **Information display** - card content remains non-interactive
+- **Specific actions** - clear, focused call-to-action button
+
+This is better than full-card links when:
+- Multiple actions are possible per card
+- You want to emphasize a specific action
+- The card contains selectable text or other interactive elements
+- Users need to preview content without navigating away
 
 ```svelte
 <script lang="ts">
@@ -4067,7 +5121,13 @@ Use the following example of a card element if you also want to have an action b
 
 ## Card with link
 
-This example can be used to show a CTA as a link instead of a button inside the card.
+This example can be used to show a CTA as a link instead of a button inside the card. Link-style CTAs are appropriate when:
+- **Secondary actions** - less emphasis than button CTAs
+- **Inline navigation** - naturally flowing with text content
+- **Multiple navigation options** - several links within one card
+- **Subtle calls-to-action** - when a button feels too heavy
+
+Links provide a lighter visual weight while still offering clear navigation.
 
 ```svelte
 <script lang="ts">
@@ -4092,7 +5152,18 @@ This example can be used to show a CTA as a link instead of a button inside the 
 
 Use <code>reverse={true}</code> to reverse the position of an image.
 
-You can use the following example of a card element with an image for blog posts, user cards, and many more.
+You can use the following example of a card element with an image for blog posts, user cards, and many more. Images in cards:
+- **Provide visual context** - quickly communicate topic or subject
+- **Increase engagement** - visual content attracts attention
+- **Improve scannability** - help users identify content faster
+- **Create visual hierarchy** - break up text-heavy interfaces
+- **Support branding** - reinforce visual identity
+
+Best practices:
+- Use consistent aspect ratios across cards
+- Optimize images for web performance
+- Provide meaningful alt text for accessibility
+- Consider lazy loading for better performance
 
 ```svelte
 <script lang="ts">
@@ -4119,6 +5190,15 @@ You can use the following example of a card element with an image for blog posts
 
 If you want to spice up your cards you can use the following card which has its child elements aligned horizontally.
 
+Horizontal cards work particularly well for:
+- **Featured content** - spotlight important items
+- **List views** - compact display of multiple items
+- **Media objects** - combining images with substantial text
+- **Mobile layouts** - better use of horizontal space
+- **Author bylines** - profile info with content
+
+The horizontal layout provides visual variety and can make better use of wide viewports.
+
 ```svelte
 <script lang="ts">
   import { Card, Toggle } from "flowbite-svelte";
@@ -4139,6 +5219,15 @@ If you want to spice up your cards you can use the following card which has its 
 ## User profile card
 
 Use this user profile card example if you want to show a dropdown menu and buttons to enable multiple actions from your user.
+
+Profile cards are essential for:
+- **Team pages** - displaying staff members
+- **User directories** - browsing community members
+- **Social platforms** - user profiles and connections
+- **Contact management** - organizing people and relationships
+- **Admin panels** - user management interfaces
+
+This pattern combines information display with action controls in a cohesive package.
 
 ```svelte
 <script lang="ts">
@@ -4170,6 +5259,16 @@ Use this user profile card example if you want to show a dropdown menu and butto
 ## Card with form inputs
 
 Use this card example where you can add form input elements that can be used for authentication actions or any other context where you need to receive information from your users.
+
+Form cards are perfect for:
+- **Login/signup** - authentication flows
+- **Settings panels** - configuration options
+- **Quick actions** - inline editing or updates
+- **Search filters** - refined data queries
+- **Comment forms** - user-generated content
+- **Contact forms** - inquiry submissions
+
+Cards provide visual containment that makes forms feel less intimidating and more approachable.
 
 ```svelte
 <script lang="ts">
@@ -4203,6 +5302,15 @@ Use this card example where you can add form input elements that can be used for
 
 Use this card for your e-commerce websites and show information about the products and enable actions such as adding a review and adding the product to the cart.
 
+E-commerce cards should include:
+- **Product images** - high-quality visuals
+- **Pricing information** - clear, prominent prices
+- **Key details** - specifications, ratings, availability
+- **Action buttons** - add to cart, wishlist, compare
+- **Status indicators** - sale, new, out of stock
+
+This comprehensive pattern balances information display with purchase actions.
+
 ```svelte
 <script lang="ts">
   import { Card, Button, Rating, Badge } from "flowbite-svelte";
@@ -4233,6 +5341,16 @@ Use this card for your e-commerce websites and show information about the produc
 
 Use this CTA card example to encourage your users to visit a certain page such as downloading the iOS or Android application for your project.
 
+CTA cards are effective for:
+- **App downloads** - mobile app promotion
+- **Newsletter signups** - email list growth
+- **Free trials** - service conversions
+- **Account upgrades** - premium features
+- **Content downloads** - ebooks, whitepapers, resources
+- **Event registration** - webinars, conferences
+
+CTA cards should be visually distinct and clearly communicate value proposition.
+
 ```svelte
 <script lang="ts">
   import { Card, Button } from "flowbite-svelte";
@@ -4250,7 +5368,15 @@ Use this CTA card example to encourage your users to visit a certain page such a
 
 ## Card with list
 
-Use this card example if you want to show a list of data:
+Use this card example if you want to show a list of data. Lists within cards work well for:
+- **Feature comparisons** - product capabilities
+- **Step-by-step guides** - instructions or processes
+- **Menu items** - navigation or options
+- **Specifications** - technical details
+- **Todo lists** - tasks and checkboxes
+- **Recent activity** - feeds and timelines
+
+The card boundary creates clear grouping for related list items.
 
 ```svelte
 <script lang="ts">
@@ -4307,7 +5433,17 @@ Use this card example if you want to show a list of data:
 
 ## Pricing card
 
-Show detailed information to potential customers about your product’s pricing plan, list of features, and a purchase button.
+Show detailed information to potential customers about your product's pricing plan, list of features, and a purchase button.
+
+Effective pricing cards include:
+- **Clear pricing** - prominent price display
+- **Feature lists** - what's included
+- **Emphasis** - highlighting recommended plans
+- **CTA buttons** - clear purchase/signup actions
+- **Billing terms** - monthly, annual options
+- **Trial information** - free trial details if applicable
+
+Design pricing cards to facilitate easy comparison between tiers.
 
 ```svelte
 <script lang="ts">
@@ -4360,6 +5496,15 @@ Show detailed information to potential customers about your product’s pricing 
 ## Testimonial card
 
 Use this example to split cards into multiple sections such as for testimonials or reviews.
+
+Testimonial cards build trust by showcasing:
+- **Customer quotes** - authentic feedback
+- **Author information** - name, photo, title, company
+- **Ratings** - star ratings or scores
+- **Context** - use case or industry
+- **Results** - specific outcomes or metrics
+
+Social proof is powerful; testimonial cards make it scannable and credible.
 
 ```svelte
 <script lang="ts">
@@ -4426,7 +5571,14 @@ Use this example to split cards into multiple sections such as for testimonials 
 
 ## Custom size
 
-Use `class="max-w-[250px]` to create a custom size card.
+Use `class="max-w-[250px]` to create a custom-sized card. Custom sizing allows:
+- **Flexible layouts** - adapting to different contexts
+- **Grid systems** - consistent column-based layouts
+- **Responsive design** - different sizes at different breakpoints
+- **Specialized displays** - sidebar widgets, compact lists
+- **Visual hierarchy** - varying card sizes for emphasis
+
+Always consider content requirements when constraining card dimensions.
 
 ```svelte
 <script lang="ts">
@@ -4441,9 +5593,71 @@ Use `class="max-w-[250px]` to create a custom size card.
 </div>
 ```
 
+## Accessibility
+
+The Card component follows accessibility best practices:
+
+- **Semantic HTML**: Uses appropriate elements (article, section, div)
+- **Keyboard Navigation**: Interactive cards are keyboard accessible
+- **Focus Indicators**: Clear focus states for clickable cards
+- **Alt Text**: Images should have descriptive alt attributes
+- **Heading Hierarchy**: Use proper heading levels within cards
+- **Color Contrast**: Text meets WCAG contrast requirements
+- **Link Purpose**: Clear indication when entire card is clickable
+- **Touch Targets**: Adequate size for mobile interaction (44x44px minimum)
+
+## Best Practices
+
+When implementing cards, consider these guidelines:
+
+- **Consistent Sizing**: Use uniform card heights within groups (or justify content strategy)
+- **Clear Hierarchy**: Title, description, action in logical order
+- **Whitespace**: Adequate padding and spacing for readability
+- **Loading States**: Show skeletons or placeholders while loading
+- **Error States**: Handle missing images or data gracefully
+- **Responsive Layout**: Stack on mobile, grid on desktop
+- **Image Aspect Ratios**: Maintain consistency across similar cards
+- **Action Clarity**: Make it obvious what happens when clicking
+- **Information Density**: Don't overcrowd; prioritize key information
+- **Visual Balance**: Distribute content weight evenly
+
+## Design Considerations
+
+- **Elevation**: Use shadows to create depth and hierarchy
+- **Borders**: Subtle borders or shadows for definition
+- **Hover States**: Provide feedback on interactive cards
+- **Card Spacing**: Consistent gaps between cards in grids
+- **Mobile Adaptation**: Single column on small screens
+- **Content Overflow**: Handle long titles and descriptions gracefully
+- **Empty States**: Design for when cards have minimal content
+- **Skeleton Screens**: Show loading structure before content arrives
+
+## Common Card Layouts
+
+**Grid Layout**: Equal-height cards in responsive grid
+**Masonry Layout**: Variable-height cards in Pinterest-style layout
+**List Layout**: Full-width cards stacked vertically
+**Carousel**: Horizontally scrolling cards
+**Featured + Grid**: Large featured card with smaller cards
+**Sidebar**: Narrow cards in sidebar context
+
+## See also
+
+<Seealso links={relatedLinks} />
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+### Key Props
+
+- `href`: Makes entire card clickable link
+- `horizontal`: Enable horizontal layout
+- `reverse`: Reverse order of image and content
+- `img`: Image source URL
+- `padding`: Control internal padding (none, sm, md, lg, xl)
+- `size`: Control card width constraints
+- `class`: Custom classes for styling
 
 <CompoAttributesViewer {dirName}/>
 
@@ -4459,6 +5673,20 @@ The component has the following props, type, and default values. See [types page
 
 
 The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
+
+Carousels are versatile UI components perfect for:
+- **Image galleries** - showcasing photos, artwork, or product images
+- **Hero sections** - rotating banner content on landing pages
+- **Testimonials** - cycling through customer reviews
+- **Product showcases** - highlighting multiple products or features
+- **Portfolio displays** - presenting creative work
+- **News rotators** - featuring latest articles or updates
+- **Before/after comparisons** - showing transformations
+- **Tutorial slides** - step-by-step guides and onboarding
+- **Promotional banners** - rotating marketing messages
+- **Feature highlights** - demonstrating product capabilities
+
+Carousels help conserve screen space while presenting multiple pieces of content in an engaging, interactive format.
 
 ## Setup
 
@@ -4513,9 +5741,22 @@ The carousel component can be used to cycle through a set of elements using cust
 
 ## Default Carousel
 
-Set the `duration` prop (in milliseconds) to define the auto‑advance interval between slides.
+Set the `duration` prop (in milliseconds) to define the auto-advance interval between slides.
 
-The default value of `duration` is `0` (no auto‑advance). In that case, control the visible slide with the `index` prop.
+The default value of `duration` is `0` (no auto-advance). In that case, control the visible slide with the `index` prop.
+
+Auto-advance considerations:
+- **User control** - Allow users to pause/resume automatic rotation
+- **Duration timing** - Give users enough time to read content (typically 5-7 seconds)
+- **Accessibility** - Provide pause controls for users who need more time
+- **Content type** - Images can rotate faster than text-heavy slides
+- **User preference** - Some users find auto-rotation distracting
+
+Manual control (duration=0) is better for:
+- Content requiring extended viewing time
+- Interactive elements within slides
+- User-driven exploration
+- Accessibility compliance
 
 ```svelte
 <script lang="ts">
@@ -4531,6 +5772,20 @@ The default value of `duration` is `0` (no auto‑advance). In that case, contro
 Use the internal `Controls` component to listen to click events which will trigger the slide event from the carousel component to each direction.
 
 You can customize the control elements with the `class` property.
+
+Navigation controls are essential for:
+- **User agency** - letting users control their browsing experience
+- **Skipping content** - moving past uninteresting slides quickly
+- **Reviewing content** - going back to previous slides
+- **Accessibility** - keyboard navigation support
+- **Mobile interaction** - touch-friendly navigation areas
+
+Best practices for controls:
+- Make controls large enough for easy clicking/tapping (44x44px minimum)
+- Position controls consistently (typically on sides)
+- Ensure sufficient contrast against background images
+- Provide keyboard alternatives (arrow keys)
+- Consider hiding controls on touch devices (swipe instead)
 
 ```svelte
 <script lang="ts">
@@ -4549,6 +5804,19 @@ You can customize the control elements with the `class` property.
 
 Show the carousel indicators by adding the internal `Indicators` component.
 
+Indicators (also called dots or pagination) provide:
+- **Position awareness** - showing current slide and total count
+- **Direct navigation** - jumping to specific slides
+- **Progress indication** - how much content remains
+- **Visual feedback** - confirming user navigation
+- **Scannable overview** - quick sense of carousel length
+
+Indicator patterns:
+- **Dots**: Most common, minimal design
+- **Thumbnails**: Preview of each slide
+- **Numbers**: Explicit count (3 of 8)
+- **Progress bar**: Linear progression indicator
+
 ```svelte
 <script lang="ts">
   import { Carousel, CarouselIndicators } from "flowbite-svelte";
@@ -4565,6 +5833,19 @@ Show the carousel indicators by adding the internal `Indicators` component.
 ## Thumbnails
 
 You can control the `Carousel` component externally by the `index` prop. Here is an example how to use the `Thumbnails` component to achieve that.
+
+Thumbnail navigation offers:
+- **Content preview** - seeing what's in each slide before navigating
+- **Faster navigation** - directly accessing desired content
+- **Better UX** - eliminating guesswork about slide contents
+- **Visual appeal** - more engaging than simple dots
+- **E-commerce optimization** - crucial for product image galleries
+
+Thumbnails work best when:
+- Images are the primary content
+- Users need to find specific content
+- Visual distinction between slides is clear
+- Screen space allows for thumbnail strip
 
 ```svelte
 <script lang="ts">
@@ -4586,6 +5867,20 @@ You can control the `Carousel` component externally by the `index` prop. Here is
 ## Caption
 
 The `Carousel` exposes the `change` event containing info about the currently displayed image. You can use it to build custom caption for the carousel.
+
+Captions enhance carousels by providing:
+- **Context** - explaining what's shown in the image
+- **Attribution** - crediting photographers or sources
+- **Additional information** - details not visible in the image
+- **Accessibility** - text alternative for visual content
+- **SEO benefits** - searchable text content
+
+Caption best practices:
+- Keep captions concise and relevant
+- Ensure sufficient contrast for readability
+- Consider caption positioning (below, overlay, sidebar)
+- Make captions responsive to screen size
+- Include essential information without overwhelming
 
 ```svelte
 <script lang="ts">
@@ -4612,6 +5907,20 @@ The `Carousel` exposes the `change` event containing info about the currently di
 
 You can use `slide` snippet and internal component `Slide` to control the image display. Here's an example how to wrap images with the anchor element.
 
+Linking carousel slides enables:
+- **Click-through functionality** - navigating to related content
+- **Product pages** - linking gallery images to detail pages
+- **Article previews** - connecting images to full articles
+- **Campaign landing** - directing users to promotional content
+- **Portfolio cases** - linking to project details
+
+When making slides clickable:
+- Ensure the entire slide area is clickable
+- Provide visual feedback on hover (cursor change, overlay)
+- Consider how controls and indicators interact with click areas
+- Include accessible labels for screen readers
+- Don't conflict with navigation controls
+
 ```svelte
 <script lang="ts">
   import { Carousel } from "flowbite-svelte";
@@ -4634,9 +5943,38 @@ You can use `slide` snippet and internal component `Slide` to control the image 
 
 Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thumbnails`.
 
+Accessibility considerations for carousels:
+
+**Keyboard Navigation:**
+- Arrow keys to navigate between slides
+- Tab to reach controls and indicators
+- Enter/Space to activate controls
+- Escape to pause auto-rotation
+
+**Screen Readers:**
+- Announce current slide number and total
+- Describe images with meaningful alt text
+- Label controls clearly (Previous, Next, Pause)
+- Announce slide changes
+
+**Best Practices:**
+- Provide pause/play controls for auto-rotating carousels
+- Ensure sufficient color contrast
+- Don't rely solely on color to convey information
+- Make interactive elements large enough (44x44px)
+- Allow users to control timing and navigation
+- Avoid motion that could trigger vestibular disorders
+
 ## Customization
 
 ### Basic customization
+
+Basic customization allows you to adjust visual appearance while maintaining core functionality. Common customizations include:
+- **Colors** - matching brand palette
+- **Sizing** - adjusting dimensions for context
+- **Spacing** - controlling gaps and padding
+- **Borders** - adding frames or separators
+- **Shadows** - creating depth and emphasis
 
 ```svelte
 <script lang="ts">
@@ -4657,6 +5995,13 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 ```
 
 ### Advanced customization
+
+Advanced customization provides deeper control over carousel behavior and appearance:
+- **Custom transitions** - unique slide animations
+- **Control positioning** - relocating navigation elements
+- **Overlay effects** - gradients, text overlays, filters
+- **Responsive behavior** - different layouts at breakpoints
+- **Custom indicators** - unique pagination styles
 
 ```svelte
 <script lang="ts">
@@ -4694,6 +6039,20 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 
 ### Custom Carousel transition
 
+Custom transitions can create distinctive experiences:
+- **Fade**: Smooth crossfade between slides
+- **Slide**: Traditional horizontal movement
+- **Zoom**: Scale and fade effects
+- **Cube/3D**: Three-dimensional rotations
+- **Creative**: Unique brand-specific animations
+
+Transition considerations:
+- Match transition to content type and brand
+- Keep transitions subtle and smooth
+- Consider performance on mobile devices
+- Test across different browsers
+- Avoid transitions that could cause motion sickness
+
 ```svelte
 <script lang="ts">
   import { Carousel, Controls, CarouselIndicators } from "flowbite-svelte";
@@ -4711,6 +6070,59 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
   </Carousel>
 </div>
 ```
+
+## Best Practices
+
+When implementing carousels, consider these guidelines:
+
+**Content:**
+- Limit carousel to 5-7 slides maximum for optimal engagement
+- Use high-quality, optimized images
+- Ensure consistent image dimensions across slides
+- Include alt text for all images
+- Make slide content scannable and concise
+
+**Performance:**
+- Lazy load images not currently visible
+- Optimize image file sizes
+- Preload next/previous slides for smooth transitions
+- Consider reducing auto-play on mobile for data savings
+- Test performance across devices
+
+**User Experience:**
+- Always provide manual navigation controls
+- Make it obvious that content is a carousel (show partial next slide)
+- Avoid placing critical content in carousels
+- Don't auto-advance too quickly (5-7 seconds minimum)
+- Pause on hover or focus
+- Show progress indicators
+
+**Mobile Optimization:**
+- Support swipe gestures for navigation
+- Ensure touch targets are large enough (44x44px)
+- Consider disabling auto-play on mobile
+- Test on various screen sizes
+- Simplify controls for small screens
+
+## When to Avoid Carousels
+
+Carousels aren't always the best choice:
+- **Critical content**: Users often ignore carousel slides after the first
+- **SEO-important content**: Hidden slides aren't indexed as effectively
+- **Mobile-first sites**: Carousels can be awkward on small screens
+- **Simple content**: If you only have 2-3 items, consider other layouts
+- **Performance concerns**: Multiple large images can slow page load
+
+Alternatives to consider:
+- Grid layouts for products or galleries
+- Accordion for content that doesn't need images
+- Tabs for organizing related content
+- Simple image galleries with modal zoom
+- Static hero images with focused messaging
+
+## See also
+
+<Seealso links={relatedLinks} />
 
 ## Component data
 
@@ -4817,6 +6229,32 @@ Use `Tab` and `Shift+Tab` to navigate between `Controls`, `Indicators`, and `Thu
 - throttleDelay: 650
 - class: className
 
+
+### Key Props
+
+**Carousel:**
+- `images`: Array of image objects with src, alt, and optional title
+- `duration`: Auto-advance interval in milliseconds (0 = manual only)
+- `index`: Current slide index (bindable for external control)
+- `showControls`: Show/hide previous/next buttons
+- `showIndicators`: Show/hide position indicators
+- `showThumbnails`: Show/hide thumbnail navigation
+- `transition`: Custom transition function
+- `transitionParams`: Parameters for transition (duration, easing)
+
+**Controls:**
+- `class`: Custom classes for control buttons
+- Position customization through slots
+
+**Indicators:**
+- `class`: Custom classes for indicator dots
+- Active state styling
+
+**Thumbnails:**
+- `class`: Custom classes for thumbnail container
+- Active thumbnail highlighting
+
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
@@ -5120,7 +6558,7 @@ Make sure that you set the `id` to the trigger element to specify the source of 
 
 ```svelte
 <script lang="ts">
-  import { Card, Clipboard, Tooltip } from "$lib";
+  import { Card, Clipboard, Tooltip } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
 
   let value = $state("");
@@ -5165,7 +6603,7 @@ Use this example to show an input field where you can copy the URL of the curren
 
 ```svelte
 <script lang="ts">
-  import { Clipboard, Input, Tooltip, Modal, Button, Label } from "$lib";
+  import { Clipboard, Input, Tooltip, Modal, Button, Label } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid, ShareNodesOutline } from "flowbite-svelte-icons";
 
   let value = $state("npm install flowbite-svelte");
@@ -5672,7 +7110,7 @@ Add `actionSlot` snippet with `selectedDate`, `handleClear`, `handleApply`, `clo
 
 ```svelte
 <script lang="ts">
-  import { Datepicker, P, Button } from "$lib";
+  import { Datepicker, P, Button } from "flowbite-svelte";
   let selectedDate = $state<Date | undefined>(undefined);
   let lastAction = $state<string | undefined>();
 </script>
@@ -9674,7 +11112,7 @@ Use the following example to create a full-screen modal.
 
 ```svelte
 <script lang="ts">
-  import { Button, Modal, P } from "$lib";
+  import { Button, Modal, P } from "flowbite-svelte";
   let defaultModal = $state(false);
 </script>
 
@@ -9694,8 +11132,7 @@ This is perfect for advertisements, terms of service, or important announcements
 
 ```svelte
 <script lang="ts">
-  import { Button, Modal, P, A } from "$lib";
-  import { createCountdown } from "$lib/utils/countdown.svelte";
+  import { Button, Modal, P, A, createCountdown } from "flowbite-svelte";
 
   const adCountdown = createCountdown(4);
   const termsCountdown = createCountdown(5);
@@ -21660,7 +23097,7 @@ Use this example of a default timepicker component to allow the user to select a
 
 ```svelte
 <script lang="ts">
-  import { Label, Timepicker } from "$lib";
+  import { Label, Timepicker } from "flowbite-svelte";
   let selectedTime = $state("09:00");
 </script>
 
@@ -23127,7 +24564,7 @@ By default, the image component will be aligned to the left side of the page.
 
 ```svelte
 <script lang="ts">
-  import { Img, img, Radio, Label, type ImgProps } from "$lib";
+  import { Img, img, Radio, Label, type ImgProps } from "flowbite-svelte";
 
   const alignments = Object.keys(img.variants.align);
   let imgAlign: ImgProps["align"] = $state(undefined);

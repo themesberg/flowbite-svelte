@@ -292,7 +292,7 @@ Make sure that you set the `id` to the trigger element to specify the source of 
 
 ```svelte
 <script lang="ts">
-  import { Card, Clipboard, Tooltip } from "$lib";
+  import { Card, Clipboard, Tooltip } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
 
   let value = $state("");
@@ -337,7 +337,7 @@ Use this example to show an input field where you can copy the URL of the curren
 
 ```svelte
 <script lang="ts">
-  import { Clipboard, Input, Tooltip, Modal, Button, Label } from "$lib";
+  import { Clipboard, Input, Tooltip, Modal, Button, Label } from "flowbite-svelte";
   import { CheckOutline, ClipboardCleanSolid, ShareNodesOutline } from "flowbite-svelte-icons";
 
   let value = $state("npm install flowbite-svelte");

@@ -356,7 +356,7 @@ Add `actionSlot` snippet with `selectedDate`, `handleClear`, `handleApply`, `clo
 
 ```svelte
 <script lang="ts">
-  import { Datepicker, P, Button } from "$lib";
+  import { Datepicker, P, Button } from "flowbite-svelte";
   let selectedDate = $state<Date | undefined>(undefined);
   let lastAction = $state<string | undefined>();
 </script>
