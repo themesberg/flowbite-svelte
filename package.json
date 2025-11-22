@@ -47,7 +47,6 @@
     "@playwright/test": "^1.56.1",
     "@resvg/resvg-js": "^2.6.2",
     "@sveltejs/adapter-vercel": "^6.1.1",
-    "@sveltejs/enhanced-img": "0.8.3",
     "@sveltejs/kit": "^2.48.5",
     "@sveltejs/package": "^2.5.4",
     "@sveltejs/vite-plugin-svelte": "^6.2.1",
@@ -841,10 +840,6 @@
     "./Hr.svelte": {
       "types": "./dist/typography/hr/Hr.svelte.d.ts",
       "svelte": "./dist/typography/hr/Hr.svelte"
-    },
-    "./EnhancedImg.svelte": {
-      "types": "./dist/typography/img/EnhancedImg.svelte.d.ts",
-      "svelte": "./dist/typography/img/EnhancedImg.svelte"
     },
     "./Img.svelte": {
       "types": "./dist/typography/img/Img.svelte.d.ts",
