@@ -1,30 +1,41 @@
 import { error } from '@sveltejs/kit';
 import fs from 'fs';
 import path from 'path';
+import type { RequestEvent } from '@sveltejs/kit';
 
-export function GET({ params }) {
+export async function GET({ params }: RequestEvent) {
   const parts = Array.isArray(params.slug)
     ? params.slug
     : [params.slug];
 
   const filePath = parts.join('/');
-  
+  // Sanitize path to prevent directory traversal
+  if (filePath.includes('..') || path.isAbsolute(filePath)) {
+    throw error(400, 'Invalid file path');
+  }
+
   // Construct the full path to the static directory
   const staticDir = path.join(process.cwd(), 'static', 'llm');
-  
-  // Try .md first, then .txt
-  const mdPath = path.join(staticDir, `${filePath}.md`);
-  const txtPath = path.join(staticDir, `${filePath}.txt`);
+  const fullPath = path.join(staticDir, filePath);
 
-  let content: string;
+  // Verify the resolved path is still within staticDir
+  if (!fullPath.startsWith(staticDir)) {
+    throw error(400, 'Invalid file path');
+  }
+  // Try .md first, then .txt
+  const mdPath = `${fullPath}.md`;
+  const txtPath = `${fullPath}.txt`;
 
   try {
-    if (fs.existsSync(mdPath)) {
-      content = fs.readFileSync(mdPath, 'utf-8');
-    } else if (fs.existsSync(txtPath)) {
-      content = fs.readFileSync(txtPath, 'utf-8');
-    } else {
-      throw error(404, `LLM file not found: ${filePath}`);
+    let content: string;
+    try {
+      content = await fs.promises.readFile(mdPath, 'utf-8');
+    } catch {
+      try {
+        content = await fs.promises.readFile(txtPath, 'utf-8');
+      } catch {
+        throw error(404, `LLM file not found: ${filePath}`);
+      }
     }
 
     return new Response(content, {
@@ -36,6 +47,7 @@ export function GET({ params }) {
     if (err && typeof err === 'object' && 'status' in err) {
       throw err;
     }
+    console.error('Error reading LLM file:', filePath, err);
     throw error(500, 'Error reading file');
   }
 }
