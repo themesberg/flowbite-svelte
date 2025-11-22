@@ -333,8 +333,8 @@ When implementing button groups, consider these guidelines:
 - [Button toggle](https://flowbite-svelte.com/llm/extend/button-toggle.md)
 - [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
 - [List group](https://flowbite-svelte.com/llm/components/list-group.md)
-- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
-- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+- [Radio](https://flowbite-svelte.com/llm/forms/radio.md)
+- [Checkbox](https://flowbite-svelte.com/llm/forms/checkbox.md)
 
 
 ## Component data

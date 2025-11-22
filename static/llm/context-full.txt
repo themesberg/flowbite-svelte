@@ -1,5 +1,5 @@
 # Flowbite Svelte Documentation - Full Context
-# Generated on 2025-11-21T20:39:40.695Z
+# Generated on 2025-11-22T05:14:08.578Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -4398,8 +4398,8 @@ When implementing button groups, consider these guidelines:
 - [Button toggle](https://flowbite-svelte.com/llm/extend/button-toggle.md)
 - [Buttons](https://flowbite-svelte.com/llm/components/buttons.md)
 - [List group](https://flowbite-svelte.com/llm/components/list-group.md)
-- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
-- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+- [Radio](https://flowbite-svelte.com/llm/forms/radio.md)
+- [Checkbox](https://flowbite-svelte.com/llm/forms/checkbox.md)
 
 
 ## Component data
@@ -4897,8 +4897,8 @@ Establish clear visual hierarchy with different button types:
 
 - [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
 - [Close button](https://flowbite-svelte.com/llm/utilities/close-button.md)
-- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
-- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+- [Radio](https://flowbite-svelte.com/llm/forms/radio.md)
+- [Checkbox](https://flowbite-svelte.com/llm/forms/checkbox.md)
 - [Badge](https://flowbite-svelte.com/llm/components/badge.md)
 
 
@@ -10082,8 +10082,8 @@ When non-standard usage is needed you can omit the `items` props and add element
 - [Button toggle](https://flowbite-svelte.com/llm/extend/button-toggle.md)
 - [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
 - [List group](https://flowbite-svelte.com/llm/components/list-group.md)
-- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
-- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+- [Radio](https://flowbite-svelte.com/llm/forms/radio.md)
+- [Checkbox](https://flowbite-svelte.com/llm/forms/checkbox.md)
 
 
 ## Component data
@@ -26181,8 +26181,8 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 - [Button toggle](https://flowbite-svelte.com/llm/extend/button-toggle.md)
 - [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
 - [List group](https://flowbite-svelte.com/llm/components/list-group.md)
-- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
-- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+- [Radio](https://flowbite-svelte.com/llm/forms/radio.md)
+- [Checkbox](https://flowbite-svelte.com/llm/forms/checkbox.md)
 
 
 ## Component data
@@ -28007,8 +28007,8 @@ Use `CloseButton` component to close a component.
 - [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
 - [List group](https://flowbite-svelte.com/llm/components/list-group.md)
 - [Close button](https://flowbite-svelte.com/llm/utilities/close-button.md)
-- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
-- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+- [Radio](https://flowbite-svelte.com/llm/forms/radio.md)
+- [Checkbox](https://flowbite-svelte.com/llm/forms/checkbox.md)
 
 
 ## Component data

@@ -469,8 +469,8 @@ Establish clear visual hierarchy with different button types:
 
 - [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
 - [Close button](https://flowbite-svelte.com/llm/utilities/close-button.md)
-- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
-- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+- [Radio](https://flowbite-svelte.com/llm/forms/radio.md)
+- [Checkbox](https://flowbite-svelte.com/llm/forms/checkbox.md)
 - [Badge](https://flowbite-svelte.com/llm/components/badge.md)
 
 
