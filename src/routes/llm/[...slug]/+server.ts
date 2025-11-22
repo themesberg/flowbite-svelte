@@ -8,8 +8,29 @@ export async function GET({ params }: RequestEvent) {
     ? params.slug
     : [params.slug];
 
-  const staticDir = path.join(process.cwd(), 'static', 'llm');
   const filePath = parts.join('/');
+
+  // In production, static files might be in a different location
+  // Try multiple possible locations for the static directory
+  const possibleStaticDirs = [
+    path.join(process.cwd(), 'static', 'llm'),
+    path.join(process.cwd(), 'build', 'client', 'static', 'llm'),
+    path.join(process.cwd(), '.svelte-kit', 'output', 'client', 'static', 'llm'),
+    path.join(process.cwd(), 'client', 'static', 'llm'),
+  ];
+
+  let staticDir: string | null = null;
+  for (const dir of possibleStaticDirs) {
+    if (fs.existsSync(dir)) {
+      staticDir = dir;
+      break;
+    }
+  }
+
+  if (!staticDir) {
+    console.error('Static directory not found. Tried:', possibleStaticDirs);
+    throw error(500, 'Static directory not found');
+  }
 
   const resolvedPath = path.resolve(staticDir, filePath);
   const relative = path.relative(staticDir, resolvedPath);
@@ -19,6 +40,7 @@ export async function GET({ params }: RequestEvent) {
     throw error(400, 'Invalid file path');
   }
 
+  // Try .md first, then .txt
   const mdPath = `${resolvedPath}.md`;
   const txtPath = `${resolvedPath}.txt`;
 
@@ -32,6 +54,7 @@ export async function GET({ params }: RequestEvent) {
         content = await fs.promises.readFile(txtPath, 'utf-8');
       } catch (err2: any) {
         if (err2?.code !== 'ENOENT') throw err2;
+        console.error('File not found in:', { mdPath, txtPath, staticDir });
         throw error(404, `LLM file not found: ${filePath}`);
       }
     }
