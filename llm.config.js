@@ -6,7 +6,7 @@ export default {
   srcDir: "./src/routes/docs",
 
   // Output directory for processed files
-  outDir: "./static/llm",
+  outDir: "./src/routes/llm",
 
   // Output file format
   format: "md",

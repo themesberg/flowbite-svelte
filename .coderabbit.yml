@@ -1,2 +1,4 @@
 reviews:
-  timeout_ms: 900000
+  tools:
+    github-checks:
+      timeout_ms: 300000

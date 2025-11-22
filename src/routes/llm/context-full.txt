@@ -1,5 +1,5 @@
 # Flowbite Svelte Documentation - Full Context
-# Generated on 2025-11-22T15:06:36.723Z
+# Generated on 2025-11-22T16:15:59.848Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -7199,8 +7199,8 @@ This component can be used to showcase applications built for smartwatches.
 </script>
 
 <DeviceMockup device="smartwatch">
-  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image.png" class="w-[188px] h-[193px] dark:hidden" alt="smartwatch example 1" />
-  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image-dark.png" class="w-[188px] h-[193px] hidden dark:block" alt="smartwatch example 2" />
+  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image.png" class="h-[193px] w-[188px] dark:hidden" alt="smartwatch example 1" />
+  <img src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image-dark.png" class="hidden h-[193px] w-[188px] dark:block" alt="smartwatch example 2" />
 </DeviceMockup>
 ```
 
@@ -11022,7 +11022,7 @@ This is perfect for advertisements, terms of service, or important announcements
 ```svelte
 <script lang="ts">
   import { Button, Modal, P, A } from "flowbite-svelte";
-  import {createCountdown} from "$utils/countdown.svelte.ts";
+  import { createCountdown } from "$utils/countdown.svelte.ts";
 
   const adCountdown = createCountdown(4);
   const termsCountdown = createCountdown(5);
