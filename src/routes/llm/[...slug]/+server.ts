@@ -8,32 +8,30 @@ export async function GET({ params }: RequestEvent) {
     ? params.slug
     : [params.slug];
 
-  const filePath = parts.join('/');
-  // Sanitize path to prevent directory traversal
-  if (filePath.includes('..') || path.isAbsolute(filePath)) {
-    throw error(400, 'Invalid file path');
-  }
-
-  // Construct the full path to the static directory
   const staticDir = path.join(process.cwd(), 'static', 'llm');
-  const fullPath = path.join(staticDir, filePath);
+  const filePath = parts.join('/');
+
+  const resolvedPath = path.resolve(staticDir, filePath);
+  const relative = path.relative(staticDir, resolvedPath);
 
   // Verify the resolved path is still within staticDir
-  if (!fullPath.startsWith(staticDir)) {
+  if (relative.startsWith('..') || path.isAbsolute(relative)) {
     throw error(400, 'Invalid file path');
   }
-  // Try .md first, then .txt
-  const mdPath = `${fullPath}.md`;
-  const txtPath = `${fullPath}.txt`;
+
+  const mdPath = `${resolvedPath}.md`;
+  const txtPath = `${resolvedPath}.txt`;
 
   try {
     let content: string;
     try {
       content = await fs.promises.readFile(mdPath, 'utf-8');
-    } catch {
+    } catch (err: any) {
+      if (err?.code !== 'ENOENT') throw err;
       try {
         content = await fs.promises.readFile(txtPath, 'utf-8');
-      } catch {
+      } catch (err2: any) {
+        if (err2?.code !== 'ENOENT') throw err2;
         throw error(404, `LLM file not found: ${filePath}`);
       }
     }
