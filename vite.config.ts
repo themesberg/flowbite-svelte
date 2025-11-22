@@ -11,12 +11,7 @@ import textEditorPackage from "./node_modules/@flowbite-svelte-plugins/textedito
 import { playwright } from "@vitest/browser-playwright";
 
 export default defineConfig({
-  plugins: [
-    sveltekit(),
-    tailwindcss(),
-    devtoolsJson(),
-    examples
-  ],
+  plugins: [sveltekit(), tailwindcss(), devtoolsJson(), examples],
   build: {
     chunkSizeWarningLimit: 1600
   },
