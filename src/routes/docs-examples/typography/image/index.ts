@@ -3,7 +3,6 @@ export { default as Caption } from "./Caption.svelte";
 export { default as Card } from "./Card.svelte";
 export { default as Default } from "./Default.svelte";
 export { default as Effects } from "./Effects.svelte";
-export { default as Enhanced } from "./Enhanced.svelte";
 export { default as Retina } from "./Retina.svelte";
 export { default as RoundedCorners } from "./RoundedCorners.svelte";
 export { default as Shadow } from "./Shadow.svelte";

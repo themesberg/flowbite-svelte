@@ -21,7 +21,11 @@
     <HighlightCompo class="mb-8" code={modules["./md/installation.md"] as string} />
 
     <Heading tag="h2" class="my-8 text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">.env File</Heading>
-    <P>Create <code>.env</code> file and add your image url or directory to <code>VITE_IMG_DIR</code></P>
+    <P>
+      Create <code>.env</code>
+      file and add your image url or directory to
+      <code>VITE_IMG_DIR</code>
+    </P>
     <HighlightCompo class="mb-8" code={modules["./md/env.md"] as string} />
   </div>
 </main>

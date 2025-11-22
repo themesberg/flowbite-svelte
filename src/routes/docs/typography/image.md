@@ -115,18 +115,12 @@ Set the `size="xs"|"sm"|"md"|"lg"|"xl"|"2xl"|"full"|"none"` props to change the 
 
 **Warning: ** Since `@sveltejs/enhanced-img` uses pre-1.0 versioning and may introduce breaking changes with every minor version release.
 
-Please follow how to set up `@sveltejs/enhanced-img` at https://svelte.dev/docs/kit/images#sveltejs-enhanced-img and install `v0.6.1`.
+Please follow how to set up `@sveltejs/enhanced-img` at https://svelte.dev/docs/kit/images#sveltejs-enhanced-img.
 
 Use this example for an enhanced image. In this example an image is stored in `src/images` directory.
 
-```svelte example
+```svelte example hideOutput
 {#include Enhanced.svelte}
-```
-
-Use `effect`, `size`, `align` props for enhanced image as the following:
-
-```svelte example
-{#include EnhancedEffect.svelte}
 ```
 
 ## Component data
