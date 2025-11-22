@@ -111,6 +111,18 @@ Set the `size="xs"|"sm"|"md"|"lg"|"xl"|"2xl"|"full"|"none"` props to change the 
 {#include Sizes.svelte}
 ```
 
+## Enhanced image
+
+**Warning: ** Since `@sveltejs/enhanced-img` uses pre-1.0 versioning and may introduce breaking changes with every minor version release.
+
+Please follow how to set up `@sveltejs/enhanced-img` at https://svelte.dev/docs/kit/images#sveltejs-enhanced-img.
+
+Use this example for an enhanced image. In this example an image is stored in `src/images` directory.
+
+```svelte example hideOutput
+{#include Enhanced.svelte}
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
