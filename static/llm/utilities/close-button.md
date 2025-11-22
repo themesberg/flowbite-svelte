@@ -32,8 +32,8 @@ Use `CloseButton` component to close a component.
 - [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
 - [List group](https://flowbite-svelte.com/llm/components/list-group.md)
 - [Close button](https://flowbite-svelte.com/llm/utilities/close-button.md)
-- [Radio#radiobutton](https://flowbite-svelte.com/llm/forms/radio#radiobutton.md)
-- [Checkbox#checkboxbutton](https://flowbite-svelte.com/llm/forms/checkbox#checkboxbutton.md)
+- [Radio](https://flowbite-svelte.com/llm/forms/radio.md)
+- [Checkbox](https://flowbite-svelte.com/llm/forms/checkbox.md)
 
 
 ## Component data

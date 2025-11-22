@@ -196,8 +196,8 @@ importers:
         specifier: ^4.3.4
         version: 4.3.4(picomatch@4.0.3)(svelte@5.43.10)(typescript@5.9.3)
       svelte-doc-llm:
-        specifier: ^0.6.0
-        version: 0.6.0
+        specifier: ^0.6.1
+        version: 0.6.1
       svelte-lib-helpers:
         specifier: ^0.4.31
         version: 0.4.31
@@ -3329,8 +3329,8 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: '>=5.0.0'
 
-  svelte-doc-llm@0.6.0:
-    resolution: {integrity: sha512-EZoDavkXi9Pz1Lj9ILrpePGyT6J3r9muCtgOS2Pa+zTLOWsGMDRvWsHSpI0WQy2e72QcCw86ejLsdxsskZw6Dw==}
+  svelte-doc-llm@0.6.1:
+    resolution: {integrity: sha512-4jaNosRooVz7OQrp5A9nsrNYvpnwgLJtjlJJCPowEubVeM1VT8M3d1aXP9vYoUdHSr6xScK8BmPt0/Kh+0JL2g==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -6877,7 +6877,7 @@ snapshots:
     transitivePeerDependencies:
       - picomatch
 
-  svelte-doc-llm@0.6.0:
+  svelte-doc-llm@0.6.1:
     dependencies:
       glob: 11.1.0
       gray-matter: 4.0.3
