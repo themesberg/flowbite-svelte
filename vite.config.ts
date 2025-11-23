@@ -7,12 +7,11 @@ import devtoolsJson from "vite-plugin-devtools-json";
 import tiptapPackage from "./node_modules/@tiptap/core/package.json";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vitest/config";
-import { enhancedImages } from "@sveltejs/enhanced-img";
 import textEditorPackage from "./node_modules/@flowbite-svelte-plugins/texteditor/package.json" with { type: "json" };
 import { playwright } from "@vitest/browser-playwright";
 
 export default defineConfig({
-  plugins: [enhancedImages(), sveltekit(), tailwindcss(), devtoolsJson(), examples],
+  plugins: [sveltekit(), tailwindcss(), devtoolsJson(), examples],
   build: {
     chunkSizeWarningLimit: 1600
   },
