@@ -20,6 +20,11 @@ const dirsToSkip = ["/docs/", "/blocks/", "/api/"];
 export const handle = async ({ event, resolve }) => {
   const pathname = event.url.pathname;
 
+  // Redirect old AI integration page to new MCP overview
+  if (pathname === '/docs/pages/ai-integration') {
+    return Response.redirect(`${event.url.origin}/docs/mcp/overview`, 301);
+  }
+
   if (pathname !== "/" && !dirsToSkip.some((x) => pathname.startsWith(x))) {
     const parts = pathname.split("/"),
       file = parts.pop(),
