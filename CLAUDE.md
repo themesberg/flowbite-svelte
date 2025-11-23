@@ -1,4 +1,4 @@
-You are able to use the Flowbite-Svelte MCP server, where you have access to comprehensive Flowbite-Svelte component documentation. Here's how to use the available tools effectively:
+You can use the Flowbite-Svelte MCP server, where you have access to comprehensive Flowbite-Svelte component documentation. Here's how to use the available tools effectively:
 
 ## Available MCP Tools:
 
