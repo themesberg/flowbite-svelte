@@ -74,6 +74,7 @@ export const fetchMarkdownPosts = async () => {
     typography: import.meta.glob<Mdsvex>("/src/routes/docs/typography/*.md"),
     utilities: import.meta.glob<Mdsvex>("/src/routes/docs/utilities/*.md"),
     pages: import.meta.glob<Mdsvex>("/src/routes/docs/pages/*.md"),
+    mcp: import.meta.glob<Mdsvex>("/src/routes/docs/mcp/*.md"),
     extend: import.meta.glob<Mdsvex>("/src/routes/docs/extend/*.md"),
     examples: import.meta.glob<Mdsvex>("/src/routes/docs/examples/*.md"),
     plugins: import.meta.glob<Mdsvex>("/src/routes/docs/plugins/*.md"),
@@ -82,6 +83,8 @@ export const fetchMarkdownPosts = async () => {
   };
 
   const pageOrder = ["introduction", "quickstart", "colors", "customization", "typescript", "compiler-speed", "how-to-contribute", "license"];
+
+  const mcpOrder = ["overview", "local-setup", "remote-setup", "prompts"];
 
   const pages = await Promise.all(
     Object.entries(globs.pages)
@@ -92,9 +95,18 @@ export const fetchMarkdownPosts = async () => {
       })
   );
 
+  const mcp = await Promise.all(
+    Object.entries(globs.mcp)
+      .sort(sortByList(mcpOrder))
+      .map(async ([path, resolver]) => {
+        const { metadata } = await resolver();
+        return { meta: metadata, path: toSlug(path) };
+      })
+  );
+
   const otherSections = await Promise.all(
     Object.entries(globs)
-      .filter(([key]) => key !== "pages")
+      .filter(([key]) => key !== "pages" && key !== "mcp")
       .map(async ([key, files]) => {
         const entries = await resolveMarkdownFiles(files);
         return [key, entries] as const;
@@ -103,6 +115,7 @@ export const fetchMarkdownPosts = async () => {
 
   return {
     pages,
+    mcp,
     ...Object.fromEntries(otherSections)
   };
 };
