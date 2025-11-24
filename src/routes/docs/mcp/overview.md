@@ -13,7 +13,7 @@ The Flowbite-Svelte MCP (__Model Context Protocol__) server can help your LLM or
 
 ## Usage
 
-To get the most out of the MCP server we recommend including the following prompt in your `AGENTS.md` (or `CLAUDE.md`, if using Claude Code. Or `GEMINI.md`, if using Gemini). Place this file in the **root of your project directory** so it's automatically loaded by your AI coding assistant. This will tell the LLM which tools are available and when it's appropriate to use them.
+To get the most out of the MCP server we recommend including the following prompt in your `AGENTS.md` (or `CLAUDE.md`, if using Claude Code. Or `GEMINI.md`, if using Gemini). Place this file in the __root of your project directory__ so it's automatically loaded by your AI coding assistant. This will tell the LLM which tools are available and when it's appropriate to use them.
 
 ```md
 You are able to use the Flowbite-Svelte MCP server, where you have access to comprehensive Flowbite-Svelte component documentation. Here's how to use the available tools effectively:

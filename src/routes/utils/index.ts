@@ -14,6 +14,7 @@ export { default as GitHubCompoLinks } from "./GitHubCompoLinks.svelte";
 export { default as Toc } from "./Toc.svelte";
 export { toKebabCase, getFilteredFileNames } from "./helpers";
 export { default as Seealso } from "./Seealso.svelte";
+export { createMarkdownDocLoader, type MarkdownModule } from "./markdown-loader";
 
 // src/utils/posts.ts
 type Metadata = Record<string, any>;

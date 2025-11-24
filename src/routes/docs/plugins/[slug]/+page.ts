@@ -1,54 +1,10 @@
 import type { PageLoad } from "./$types";
-import { error } from "@sveltejs/kit";
-
-interface MarkdownModule {
-  default: any;
-  metadata: {
-    title: string;
-    dir: string;
-    [key: string]: any;
-  };
-}
+import { createMarkdownDocLoader } from "$utils/markdown-loader";
 
 // Create a whitelist of allowed plugins markdown files
 const pluginsFiles = import.meta.glob("../*.md");
+const loadPluginsDoc = createMarkdownDocLoader(pluginsFiles, "Plugins");
 
 export const load: PageLoad = async ({ params }) => {
-  const { slug } = params;
-  
-  // Construct the file path
-  const filePath = `../${slug}.md`;
-  
-  // Check if the file exists in our whitelist
-  if (!pluginsFiles[filePath]) {
-    throw error(404, {
-      message: `Plugins documentation page "${slug}" not found`
-    });
-  }
-  
-  // Safely import the file
-  const post = await pluginsFiles[filePath]() as MarkdownModule;
-  
-  // Validate metadata exists
-  if (!post.metadata || typeof post.metadata !== 'object') {
-    throw error(500, {
-      message: `Invalid metadata for plugins doc: ${slug}`
-    });
-  }
-  
-  const { title, dir } = post.metadata;
-  const content = post.default;
-
-  // Validate required fields
-  if (!title || !dir) {
-    throw error(500, {
-      message: `Missing required metadata fields (title, dir) for: ${slug}`
-    });
-  }
-
-  return {
-    content,
-    title,
-    dir
-  };
+  return loadPluginsDoc(params.slug);
 };

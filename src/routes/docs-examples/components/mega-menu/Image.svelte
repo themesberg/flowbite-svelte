@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, Button } from "flowbite-svelte";
+  import { resolve } from "$app/paths";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let menu = [
     { name: "About us", href: "/about" },
@@ -35,7 +36,7 @@
       {/snippet}
       {#snippet extra()}
         <a
-          href="/"
+          href={resolve("/")}
           class="mt-4 block rounded-lg bg-gray-500 bg-cover bg-local bg-center bg-no-repeat p-4 text-left bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken"
           style="background-image: url(/images/dashboard-overview.png)"
         >
