@@ -27,7 +27,7 @@
     {@render children()}
   {:else}
     <!-- eslint-disable @typescript-eslint/no-unused-vars-->
-    {#each Array(fullStars) as _, i (i + rating)}
+    {#each Array(fullStars) as _, i (i)}
       <Icon {size} fillPercent={100} iconIndex={i} groupId={`rating-${ratingGroupId}-full`} />
     {/each}
     {#if percentRating}

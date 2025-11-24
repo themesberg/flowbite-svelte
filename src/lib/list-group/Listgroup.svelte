@@ -16,10 +16,9 @@
   setContext("listGrpActive", active);
   setContext("listGrpHorizontal", horizontal);
 
-  function createItemClickHandler(_: unknown) {
+  function createItemClickHandler() {
     return function (event: MouseEvent) {
       if (onclick) {
-        // Call onclick with the mouse event, passing item data separately if needed
         onclick(event);
       }
     };
@@ -32,9 +31,9 @@
       {#if children}
         {@render children(item)}
       {:else if typeof item === "string"}
-        <ListgroupItem href={undefined} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} onclick={createItemClickHandler(item)}>{item}</ListgroupItem>
+        <ListgroupItem href={undefined} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} onclick={createItemClickHandler()}>{item}</ListgroupItem>
       {:else}
-        <ListgroupItem href={item.href} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} {...item} onclick={item.onclick ?? createItemClickHandler(item)} />
+        <ListgroupItem href={item.href} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} {...item} onclick={item.onclick ?? createItemClickHandler()} />
       {/if}
     {/each}
   {:else}

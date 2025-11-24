@@ -25,8 +25,8 @@
 
     // Call original onclick handler if provided
     if (onclick) {
-      // Cast to appropriate event type for the handler
-      onclick(event as never);
+      // Cast the handler to accept a standard MouseEvent
+      (onclick as (event: MouseEvent) => void)(event);
     }
   }
 </script>

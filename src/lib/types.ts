@@ -38,7 +38,6 @@ import type { CardVariants } from "$lib/card/theme";
 import type Slide from "$lib/carousel/Slide.svelte";
 import type { CarouselVariants, SlideVariants } from "$lib/carousel/theme";
 import type { DrawerHandleVariants, DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
-import type { DropdownItemVariants } from "$lib/dropdown/theme";
 import type { DatepickerVariants } from "$lib/datepicker/theme";
 import type { FooterCopyrightVariants, FooterLinkVariants } from "$lib/footer/theme";
 import type { GalleryVariants } from "$lib/gallery/theme";
@@ -645,15 +644,21 @@ export interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
 }
 
-export type DropdownItemAnchorButtonAttributes = HTMLAnchorAttributes & Omit<HTMLButtonAttributes, keyof HTMLAnchorAttributes | "type">;
-
-export type DropdownItemProps = DropdownItemVariants &
-  AnchorButtonDivAttributes & {
-    children: Snippet;
-    aClass?: ClassValue;
-    activeClass?: ClassValue;
-    liClass?: ClassValue;
+export interface DropdownItemProps {
+  children: Snippet;
+  aClass?: ClassValue;
+  activeClass?: ClassValue;
+  liClass?: ClassValue;
+  classes?: {
+    active?: ClassValue;
+    base?: ClassValue;
+    li?: ClassValue;
   };
+  class?: ClassValue;
+  href?: string;
+  onclick?: (e: MouseEvent) => void;
+  [key: string]: any;
+}
 
 export interface DropdownGroupProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
@@ -1590,6 +1595,7 @@ export interface StepperProps extends HTMLOlAttributes, StepperVariants {
 
 // ProgressStepper
 export interface ProgressStep {
+  id?: string | number;
   status?: "completed" | "current" | "pending";
   icon?: Component;
   iconClass?: ClassValue;
@@ -1648,6 +1654,7 @@ export interface BreadcrumbStepperProps extends BreadcrumbStepperVariants, HTMLO
 
 // TimelineStepper
 export interface TimelineStep {
+  id?: string | number;
   label: string;
   description?: string;
   status?: "completed" | "current" | "pending";
@@ -1717,7 +1724,7 @@ export interface TableBodyCellProps extends HTMLTdAttributes {
 
 export type CellValue = string | number | boolean | null | undefined;
 
-export type BodyRow = CellValue[] | Record<string, CellValue>;
+export type BodyRow = CellValue[] | (Record<string, CellValue> & { id: string | number });
 
 export interface TableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
   children?: Snippet;
@@ -1798,6 +1805,7 @@ export type { ThemeConfig } from "$lib/theme";
 
 // timeline
 export interface ActivityType {
+  id?: string | number;
   title: HTMLElement | string;
   date: Date | string;
   src: string;
@@ -1839,6 +1847,7 @@ export interface GroupItemProps extends GroupItemVariants, HTMLLiAttributes {
 }
 
 export interface GroupTimelineType {
+  id?: string | number;
   name?: string | HTMLElement;
   src?: string;
   alt?: string;

@@ -31,7 +31,7 @@
 {#if globalText}
   {@render globalText()}
 {/if}
-{#each ratings as { label, rating }, i (i)}
+{#each ratings as { label, rating } (label)}
   <div class={base({ class: clsx(theme?.base, className) })}>
     <span class={span({ class: clsx(theme?.span, styling.span) })}>{label}</span>
     <div class={div2({ class: clsx(theme?.div2, styling.div2) })}>

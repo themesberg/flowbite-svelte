@@ -37,7 +37,7 @@
   const { li, span, img, outer, inner, time, title, text } = $derived(activityItem());
 </script>
 
-{#each activities as { title: name, date, src, alt, text: activity }, i (i)}
+{#each activities as { title: name, date, src, alt, text: activity, id } (id)}
   <li {...restProps} class={li({ class: clsx(theme?.li, className ?? liClass) })}>
     <span class={span({ class: clsx(theme?.span, styling.span) })}>
       <img class={img({ class: clsx(theme?.img, styling.img) })} {src} {alt} />
