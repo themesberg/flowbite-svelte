@@ -1,7 +1,8 @@
 import { error } from "@sveltejs/kit";
+import type { SvelteComponent } from 'svelte';
 
 export interface MarkdownModule {
-  default: any;
+  default: typeof SvelteComponent;
   metadata: {
     title: string;
     dir: string;
