@@ -193,7 +193,7 @@
 
   {#if isCombobox && isFocused && filteredSuggestions.length > 0}
     <div class={combo({ class: clsx(theme?.combo, styling.combo) })}>
-      {#each filteredSuggestions as item, i}
+      {#each filteredSuggestions as item, i (i)}
         <button
           type="button"
           class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none"

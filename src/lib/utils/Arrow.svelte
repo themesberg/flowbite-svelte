@@ -7,9 +7,9 @@
 
   const px = (n: number | undefined) => (n ? `${n}px` : "");
 
-  // calming down the warnings
-  getSide;
-  getOppositePlacement;
+  // Prevent unused import warnings - these functions are used in the $effect below
+  void getSide;
+  void getOppositePlacement;
 
   function getBorderWidth(element: HTMLElement) {
     const computedStyle = window.getComputedStyle(element);

@@ -30,7 +30,7 @@
         </PaginationItem>
       </li>
     {/if}
-    {#each pages as { name, href, active, size }}
+    {#each pages as { name, href, active, size }, i (i)}
       <li {...restProps}>
         <PaginationItem {size} {active} {href}>
           {name}

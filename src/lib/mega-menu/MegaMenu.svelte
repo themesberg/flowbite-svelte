@@ -17,7 +17,7 @@
 <Popper arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   <div class={div({ class: clsx(theme?.div, classes?.div) })}>
     <ul class={ul({ class: clsx(theme?.ul, styling.ul) })}>
-      {#each items as item, index}
+      {#each items as item, index (index)}
         <li>
           {@render children({ item, index })}
         </li>

@@ -16,12 +16,11 @@
   setContext("listGrpActive", active);
   setContext("listGrpHorizontal", horizontal);
 
-  function createItemClickHandler(item: any) {
+  function createItemClickHandler(_: unknown) {
     return function (event: MouseEvent) {
       if (onclick) {
-        // Create an event with the item data in the detail property
-        const itemClickEvent = { ...event, detail: item };
-        onclick(itemClickEvent);
+        // Call onclick with the mouse event, passing item data separately if needed
+        onclick(event);
       }
     };
   }
@@ -29,7 +28,7 @@
 
 <svelte:element this={tag} {...restProps} class={base}>
   {#if items?.length}
-    {#each items as item}
+    {#each items as item, i (i)}
       {#if children}
         {@render children(item)}
       {:else if typeof item === "string"}

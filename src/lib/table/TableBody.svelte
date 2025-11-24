@@ -17,9 +17,9 @@
 
 <tbody {...restProps} class={clsx(className)}>
   {#if bodyItems}
-    {#each bodyItems as row}
+    {#each bodyItems as row, i (i)}
       <TableBodyRow>
-        {#each getCellValues(row) as cellValue}
+        {#each getCellValues(row) as cellValue, j (j)}
           <TableBodyCell>{cellValue ?? ""}</TableBodyCell>
         {/each}
       </TableBodyRow>

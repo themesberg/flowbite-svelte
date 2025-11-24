@@ -18,7 +18,7 @@
   {#if children}
     {@render children()}
   {:else if steps}
-    {#each steps as step, index}
+    {#each steps as step, index (index)}
       <li
         class={item({
           status: step.status,

@@ -193,7 +193,7 @@ export type AnchorDivAttributes = ({ href: string } & HTMLAnchorAttributes) | ({
 
 export type AnchorButtonDivAttributes =
   | ({ href: string } & HTMLAnchorAttributes)
-  | ({ href?: undefined; onclick: Function } & HTMLButtonAttributes)
+  | ({ href?: undefined; onclick: () => void } & HTMLButtonAttributes)
   | ({ href?: undefined; onclick?: undefined } & HTMLAttributes<HTMLDivElement>);
 
 // accordion
@@ -243,7 +243,7 @@ export interface AvatarProps extends AvatarVariants, HTMLAttributes<HTMLDivEleme
   href?: HTMLAnchorAttributes["href"];
   target?: HTMLAnchorAttributes["target"];
   src?: string;
-  dot?: object;
+  dot?: Record<string, unknown>;
   alt?: string;
   onclick?: () => void;
 }
@@ -269,7 +269,7 @@ export interface BannerProps extends BannerVariants, Omit<HTMLAttributes<HTMLDiv
   dismissable?: boolean;
   innerClass?: ClassValue;
   transition?: TransitionFunc;
-  params?: object;
+  params?: ParamsType;
   closeClass?: ClassValue;
   onclose?: (ev: MouseEvent) => void;
 }
@@ -420,7 +420,7 @@ export interface CarouselProps extends CarouselVariants, Omit<HTMLAttributes<HTM
   duration?: number;
   disableSwipe?: boolean;
   imgClass?: ClassValue;
-  onchange?: (x: HTMLImgAttributes) => {};
+  onchange?: (x: HTMLImgAttributes) => void;
   isPreload?: boolean;
   slideFit?: SlideProps["fit"];
 }

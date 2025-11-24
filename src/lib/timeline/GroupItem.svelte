@@ -31,7 +31,7 @@
   const { base, a, img, div, title, span, svg } = $derived(groupItem());
 </script>
 
-{#each timelines as { name, src, alt, isPrivate, href, comment }}
+{#each timelines as { name, src, alt, isPrivate, href, comment }, i (i)}
   <li class={base({ class: clsx(theme?.base, className) })} {...restProps}>
     <a {href} class={a({ class: clsx(theme?.a, styling.a) })}>
       <img class={img({ class: clsx(theme?.img, styling.img) })} {src} {alt} />

@@ -19,7 +19,7 @@
 </script>
 
 <div class={base({ class: clsx(theme?.base, className) })} {...restProps}>
-  {#each _state.images as _, idx}
+  {#each _state.images as _, idx (idx)}
     {@const selected = _state.index === idx}
     <button type="button" onclick={() => goToIndex(idx)} aria-current={selected ? "true" : undefined} aria-label={`Go to slide ${idx + 1}`}>
       {#if children}

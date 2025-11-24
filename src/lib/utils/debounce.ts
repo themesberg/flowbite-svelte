@@ -13,12 +13,13 @@
  * closeDialogDeb(); // Cancel open, schedule close
  */
 
-type Func = (...args: any[]) => any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Func = (...args: any[]) => unknown;
 
 export function createMutualDebounce<A extends Func, B extends Func>(actionA: A, actionB: B, delayFunc: () => number): [(...args: Parameters<A>) => void, (...args: Parameters<B>) => void] {
   let rafId: number | null = null;
 
-  function scheduleExecution(func: (...args: any[]) => any, args: any[], startTime: number): void {
+  function scheduleExecution(func: (...args: unknown[]) => unknown, args: unknown[], startTime: number): void {
     rafId = requestAnimationFrame((currentTime) => {
       const elapsed = currentTime - (startTime || 0);
 
@@ -38,12 +39,12 @@ export function createMutualDebounce<A extends Func, B extends Func>(actionA: A,
 
   const debouncedA = (...args: Parameters<A>): void => {
     cancel();
-    scheduleExecution(actionA, args as any[], performance.now());
+    scheduleExecution(actionA, args as unknown[], performance.now());
   };
 
   const debouncedB = (...args: Parameters<B>): void => {
     cancel();
-    scheduleExecution(actionB, args as any[], performance.now());
+    scheduleExecution(actionB, args as unknown[], performance.now());
   };
 
   return [debouncedA, debouncedB];

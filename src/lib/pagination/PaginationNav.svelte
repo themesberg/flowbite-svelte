@@ -85,7 +85,7 @@
       </PaginationButton>
     </li>
     {#if layout === "pagination" && pageNumbers.length > 0}
-      {#each pageNumbers as page}
+      {#each pageNumbers as page (page)}
         <li aria-current={page === currentPage ? "page" : undefined}>
           <PaginationButton active={page === currentPage} onclick={() => onPageChange(page)}>
             {page}

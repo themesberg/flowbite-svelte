@@ -31,7 +31,7 @@
 </script>
 
 <div class={thumbnails({ class: clsx(theme, className) })}>
-  {#each images as image, idx}
+  {#each images as image, idx (image.src || idx)}
     {@const selected = index === idx}
     <button onclick={() => btnClick(idx)} aria-label={ariaLabel} aria-current={selected ? "true" : undefined}>
       {#if children}

@@ -18,7 +18,7 @@
   {#if children}
     {@render children()}
   {:else if steps}
-    {#each steps as step, index}
+    {#each steps as step, index (index)}
       <li class={item({ isLast: index === steps.length - 1, class: clsx(theme?.item, classes?.item) })}>
         <span class={circle({ status: step.status, class: clsx(theme?.circle, classes?.circle) })}>
           {#if step.status === "completed"}

@@ -27,15 +27,15 @@
     {@render children()}
   {:else}
     <!-- eslint-disable @typescript-eslint/no-unused-vars-->
-    {#each Array(fullStars) as _, index}
-      <Icon {size} fillPercent={100} iconIndex={index} groupId={`rating-${ratingGroupId}-full`} />
+    {#each Array(fullStars) as _, i (i + rating)}
+      <Icon {size} fillPercent={100} iconIndex={i} groupId={`rating-${ratingGroupId}-full`} />
     {/each}
     {#if percentRating}
       <Icon {size} fillPercent={percentRating} iconIndex={fullStars} groupId={`rating-${ratingGroupId}-partial`} />
     {/if}
     <!-- eslint-disable @typescript-eslint/no-unused-vars-->
-    {#each Array(grayStars) as _, index}
-      <Icon {size} fillPercent={0} iconIndex={index} groupId={`rating-${ratingGroupId}-empty`} />
+    {#each Array(grayStars) as _, i (i)}
+      <Icon {size} fillPercent={0} iconIndex={i} groupId={`rating-${ratingGroupId}-empty`} />
     {/each}
     {#if text}
       {@render text()}
