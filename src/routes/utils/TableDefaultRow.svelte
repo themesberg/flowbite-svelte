@@ -24,10 +24,10 @@
 </script>
 
 {#if category === "props"}
-  {#each items as item, i}
+  {#each items as item, i (i)}
     {#if i === items.length - 1}
       <tr class={trLastClass}>
-        {#each item as cell, j}
+        {#each item as cell, j (j)}
           {#if j === 0}
             <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-white">
               {#if html}
@@ -49,7 +49,7 @@
       </tr>
     {:else}
       <tr class={trClass}>
-        {#each item as cell, j}
+        {#each item as cell, j (j)}
           {#if j === 0}
             <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-white">
               {#if html}

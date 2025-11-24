@@ -1,18 +1,10 @@
 import type { PageLoad } from "./$types";
+import { createMarkdownDocLoader } from "$utils/markdown-loader";
 
-const delay = (ms: number) => new Promise<void>((res) => setTimeout(res, ms));
+// Create a whitelist of allowed form markdown files
+const formFiles = import.meta.glob("../*.md");
+const loadFormDoc = createMarkdownDocLoader(formFiles, "Form");
 
 export const load: PageLoad = async ({ params }) => {
-  const post = await import(`../${params.slug}.md`);
-  if (!post.metadata) {
-    await delay(2000);
-  }
-  const { title, dir } = post.metadata;
-  const content = post.default;
-
-  return {
-    content,
-    title,
-    dir
-  };
+  return loadFormDoc(params.slug);
 };

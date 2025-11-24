@@ -117,7 +117,7 @@
     {/if}
 
     <ul class={list()}>
-      {#each visibleLinks as link}
+      {#each visibleLinks as link (link.url)}
         <li class={item()}>
           <a href={link.url} class={linkcls()}>{link.title}</a>
           {#if showDescriptions && link.description}

@@ -1,18 +1,10 @@
 import type { PageLoad } from "./$types";
+import { createMarkdownDocLoader } from "$utils/markdown-loader";
 
-const delay = (ms: number) => new Promise<void>((res) => setTimeout(res, ms));
+// Create a whitelist of allowed plugins markdown files
+const pluginsFiles = import.meta.glob("../*.md");
+const loadPluginsDoc = createMarkdownDocLoader(pluginsFiles, "Plugins");
 
 export const load: PageLoad = async ({ params }) => {
-  const post = await import(`../${params.slug}.md`);
-  if (!post.metadata) {
-    await delay(2000);
-  }
-  const { title, dir } = post.metadata;
-  const content = post.default;
-
-  return {
-    content,
-    title,
-    dir
-  };
+  return loadPluginsDoc(params.slug);
 };
