@@ -14,7 +14,7 @@
 </script>
 
 <div role="status" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-  {#each items as _, i}
+  {#each items as _, i (i)}
     <div
       class={item({
         class: clsx(i > 0 ? "pt-4" : "", theme?.item, classes?.item)

@@ -18,7 +18,7 @@
   {#if children}
     {@render children()}
   {:else if steps}
-    {#each steps as step}
+    {#each steps as step (step.id)}
       <li class={item({ status: step.status, class: clsx(theme?.item, classes?.item) })}>
         <span class={indicator({ status: step.status, class: clsx(theme?.indicator, classes?.indicator) })}>
           {#if step.status === "completed" && step.icon}

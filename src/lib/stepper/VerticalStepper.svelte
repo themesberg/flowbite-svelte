@@ -18,7 +18,7 @@
   {#if children}
     {@render children()}
   {:else if steps}
-    {#each steps as step}
+    {#each steps as step (step.id)}
       <li class={clsx(liClass)}>
         <div class={card({ status: step.status, class: clsx(theme?.card, classes?.card) })} role="alert">
           <div class={content({ class: clsx(theme?.content, classes?.content) })}>

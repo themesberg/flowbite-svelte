@@ -175,7 +175,7 @@
   }
 
   function set_triggers(node: HTMLElement) {
-    const events: [string, any, boolean][] = [
+    const events: [string, (ev: Event) => void, boolean][] = [
       ["focusin", open_popover, focusable],
       ["focusout", close_popover, focusable],
       ["mousedown", open_popover, clickable],

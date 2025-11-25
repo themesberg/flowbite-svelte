@@ -31,7 +31,7 @@
 <div class="gap-8 sm:grid sm:grid-cols-2">
   <div>
     {#if ratings}
-      {#each ratings as { label, rating }}
+      {#each ratings as { label, rating } (label)}
         <dl>
           <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">
             {label}
@@ -48,7 +48,7 @@
   </div>
   <div>
     {#if ratings2}
-      {#each ratings2 as { label, rating }}
+      {#each ratings2 as { label, rating } (label)}
         <dl>
           <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">
             {label}

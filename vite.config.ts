@@ -19,6 +19,9 @@ export default defineConfig({
     port: 8080,
     strictPort: false
   },
+  optimizeDeps: {
+    exclude: ["flowbite-svelte"]
+  },
   resolve: {
     alias: {
       "flowbite-svelte": path.resolve(process.cwd(), "./src/lib/index.ts")

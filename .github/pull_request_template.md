@@ -42,7 +42,7 @@ Closes #<!-- Issue number here, e.g. #123 -->
 <!-- Please confirm the following before requesting a review. -->
 
 - [ ] My code follows the existing code style
-- [ ] I have run `pnpm check && pnpm test:e2e` and all tests pass
+- [ ] I have run `pnpm lint && pnpm check && pnpm test:e2e` and all tests pass
 - [ ] CoderabbitAI review has been completed and **actionable suggestions were reviewed**
 - [ ] I have updated documentation if my changes require it
 - [ ] My PR is based on the latest `main` branch (not the published npm version)

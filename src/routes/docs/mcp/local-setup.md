@@ -17,6 +17,7 @@ The local (or stdio) version of the Flowbite-Svelte MCP server runs directly on 
 git clone git@github.com:shinokada/flowbite-svelte-mcp.git
 cd flowbite-svelte-mcp
 pnpm install
+pnpm run copy:llm  # Fetch latest Flowbite-Svelte docs
 pnpm run build
 ```
 

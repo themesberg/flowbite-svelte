@@ -169,7 +169,7 @@
     class: clsx(theme?.base, className)
   })}
 >
-  {#each value as tag, index}
+  {#each value as tag, index (index)}
     <div class={tagCls({ class: clsx(theme?.tag, styling.tag) })}>
       <span class={spanCls({ class: clsx(theme?.span, styling.span) })}>
         {tag}
@@ -193,7 +193,7 @@
       {@const filteredSuggestions = availableTags.filter((tag) => tag.toLowerCase().includes(contents.trim().toLowerCase()) && (!unique || !value.some((t) => t.toLowerCase() === tag.toLowerCase())))}
       {#if filteredSuggestions.length > 0}
         <ul bind:this={dropdownElement} class="z-10 max-h-48 w-full overflow-auto rounded border border-gray-300 bg-white shadow" style="position: absolute;">
-          {#each filteredSuggestions as suggestion}
+          {#each filteredSuggestions as suggestion (suggestion)}
             <li>
               <button
                 type="button"

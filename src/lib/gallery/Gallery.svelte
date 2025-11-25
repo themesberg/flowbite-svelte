@@ -25,7 +25,7 @@
 {/snippet}
 
 <div class={div({ class: clsx(theme?.div, className) })} use:init>
-  {#each items as item}
+  {#each items as item, i (item.src || i)}
     {#if figure}
       {@render figure(item as ImgType)}
     {:else}

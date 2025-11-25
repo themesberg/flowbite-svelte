@@ -17,7 +17,7 @@
     navbarLi({ breakpoint: navBreakpoint, hidden: navState.hidden, class: clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), theme, className) })
   );
 
-  function handleClick(event: any) {
+  function handleClick(event: MouseEvent) {
     // Close the mobile menu when a link is clicked
     if (restProps.href !== undefined && !navState.hidden) {
       navState.hidden = true;
@@ -25,7 +25,8 @@
 
     // Call original onclick handler if provided
     if (onclick) {
-      onclick(event);
+      // Cast the handler to accept a standard MouseEvent
+      (onclick as (event: MouseEvent) => void)(event);
     }
   }
 </script>

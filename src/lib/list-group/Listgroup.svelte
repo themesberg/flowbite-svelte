@@ -16,12 +16,10 @@
   setContext("listGrpActive", active);
   setContext("listGrpHorizontal", horizontal);
 
-  function createItemClickHandler(item: any) {
+  function createItemClickHandler() {
     return function (event: MouseEvent) {
       if (onclick) {
-        // Create an event with the item data in the detail property
-        const itemClickEvent = { ...event, detail: item };
-        onclick(itemClickEvent);
+        onclick(event);
       }
     };
   }
@@ -29,13 +27,13 @@
 
 <svelte:element this={tag} {...restProps} class={base}>
   {#if items?.length}
-    {#each items as item}
+    {#each items as item, i (i)}
       {#if children}
         {@render children(item)}
       {:else if typeof item === "string"}
-        <ListgroupItem href={undefined} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} onclick={createItemClickHandler(item)}>{item}</ListgroupItem>
+        <ListgroupItem href={undefined} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} onclick={createItemClickHandler()}>{item}</ListgroupItem>
       {:else}
-        <ListgroupItem href={item.href} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} {...item} onclick={item.onclick ?? createItemClickHandler(item)} />
+        <ListgroupItem href={item.href} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} {...item} onclick={item.onclick ?? createItemClickHandler()} />
       {/if}
     {/each}
   {:else}

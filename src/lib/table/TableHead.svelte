@@ -32,7 +32,7 @@
       {@render headerSlot()}
     {/if}
     <tr>
-      {#each headItems as item}
+      {#each headItems as item, i (i)}
         <TableHeadCell>
           {getItemText(item)}
         </TableHeadCell>

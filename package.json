@@ -21,7 +21,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:ignore": "npx sv check --ignore 'src/routes/testdir,dist,build' --no-tsconfig",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --check . && eslint .",
+    "lint": "pnpm format && prettier --check . && eslint .",
     "format": "prettier --write .",
     "test:e2e": "playwright test",
     "test:unit": "vitest",

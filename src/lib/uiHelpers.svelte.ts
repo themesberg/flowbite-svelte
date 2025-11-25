@@ -1,4 +1,3 @@
-// @ts-nocheck
 export function uiHelpers() {
   let isOpen = $state(false);
 
@@ -28,10 +27,10 @@ export function uiHelpers() {
   };
 }
 
-export function clickOutside(element, callbackFunction) {
-  const onClick = (event) => {
+export function clickOutside(element: HTMLElement, callbackFunction: (event: MouseEvent) => void) {
+  const onClick = (event: MouseEvent) => {
     if (typeof callbackFunction === "function") {
-      const targetNode = event.target;
+      const targetNode = event.target as Node;
       if (!element.contains(targetNode)) {
         callbackFunction(event);
       }
@@ -43,7 +42,7 @@ export function clickOutside(element, callbackFunction) {
   element.ownerDocument.body.addEventListener("click", onClick);
 
   return {
-    update(newCallbackFunction) {
+    update(newCallbackFunction: (event: MouseEvent) => void) {
       if (typeof newCallbackFunction === "function") {
         callbackFunction = newCallbackFunction;
       } else {

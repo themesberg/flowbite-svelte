@@ -37,7 +37,6 @@
 
   // Prefer requestClose when available to trigger a cancellable "cancel" event; otherwise synthesize it.
   const cancel = (dlg: HTMLDialogElement) => {
-    // @ts-ignore
     if (typeof dlg.requestClose === "function") return dlg.requestClose();
     dlg.dispatchEvent(new Event("cancel", { bubbles: true, cancelable: true }));
   };

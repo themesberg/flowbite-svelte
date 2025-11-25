@@ -460,7 +460,7 @@
           {@render yearNavButton(true)}
         </div>
         <div class="grid grid-cols-4 gap-2 p-4">
-          {#each monthNames as month, index}
+          {#each monthNames as month, index (index)}
             <Button
               type="button"
               color={monthColor}
@@ -487,10 +487,10 @@
           {@render navButton(true)}
         </div>
         <div class={grid({ class: clsx(theme?.grid, classes?.grid) })} role="grid">
-          {#each weekdays as day}
+          {#each weekdays as day (day)}
             <div class={columnHeader({ class: clsx(theme?.columnHeader, classes?.columnHeader) })} role="columnheader">{day}</div>
           {/each}
-          {#each daysInMonth as day}
+          {#each daysInMonth as day (day)}
             {@const current = day.getMonth() !== currentMonth.getMonth()}
             {@const available = isDateAvailable(day)}
             <Button

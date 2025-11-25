@@ -245,7 +245,7 @@
         </svg>
       </Button>
       <Dropdown simple>
-        {#each options as option}
+        {#each options as option (option.value)}
           <DropdownItem onclick={() => handleDropdownSelect(option)}>
             {option.name}
           </DropdownItem>
@@ -395,7 +395,7 @@
   </ButtonGroup>
 {:else}
   <div class={styles.inlineGrid({ class: clsx(theme?.inlineGrid) })}>
-    {#each timeIntervals as time}
+    {#each timeIntervals as time (time)}
       <Button {size} color={value === time ? buttonColor : "light"} class={styles.inlineButton({ class: clsx(theme?.inlineButton) })} onclick={() => handleInlineButtonSelect(time)}>
         {time}
       </Button>

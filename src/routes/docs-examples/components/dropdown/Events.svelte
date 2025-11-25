@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Button, Dropdown, DropdownItem } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
-  const handleClick = (e: Event) => {
+  const handleClick = (e: MouseEvent) => {
     e.preventDefault();
     alert("Clicked on: " + e.target);
   };

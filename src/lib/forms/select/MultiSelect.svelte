@@ -45,7 +45,7 @@
 
   let multiSelectContainer: HTMLDivElement; // Reference to the main div
 
-  const selectOption = (select: SelectOptionType<any>, event: MouseEvent) => {
+  const selectOption = (select: SelectOptionType<T>, event: MouseEvent) => {
     // Prevent the click from propagating to the parent div
     event.stopPropagation();
 
@@ -80,12 +80,12 @@
 
   createDismissableContext(clearAll);
 
-  const clearThisOption = (select: SelectOptionType<any>) => {
+  const clearThisOption = (select: SelectOptionType<T>) => {
     if (disabled) return;
 
     if (value.includes(select.value)) {
       const oldValue = [...value];
-      value = value.filter((o: any) => o !== select.value);
+      value = value.filter((o: T) => o !== select.value);
 
       if (oldValue.length !== value.length) {
         triggerChange();
@@ -106,7 +106,7 @@
         value: { value: value },
         enumerable: true
       });
-      onchange(changeEvent as any);
+      onchange(changeEvent as Event);
     }
   };
 
@@ -198,7 +198,7 @@
 </script>
 
 <select {name} {form} {required} {autocomplete} {value} hidden multiple {onchange}>
-  {#each items as item}
+  {#each items as item (item.value)}
     <option value={item.value} disabled={item.disabled}>{item.name}</option>
   {/each}
 </select>

@@ -32,7 +32,7 @@
   const theme = getTheme("navbarUl");
 
   // Default parameters for different transitions
-  const getDefaultParams = (transitionFn: any) => {
+  const getDefaultParams = (transitionFn: typeof slide | typeof fly | typeof fade | typeof scale) => {
     if (transitionFn === slide) return { delay: 0, duration: 200, easing: sineIn };
     if (transitionFn === fly) return { delay: 0, duration: 200, y: -10, easing: sineIn };
     if (transitionFn === fade) return { delay: 0, duration: 200, easing: sineIn };

@@ -182,7 +182,7 @@
 
 <svelte:head>
   {#if isPreload && images.length > 0}
-    {#each images as image}
+    {#each images as image (image.src)}
       <link rel="preload" href={image.src} as="image" />
     {/each}
   {/if}
