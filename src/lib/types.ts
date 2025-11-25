@@ -1724,7 +1724,7 @@ export interface TableBodyCellProps extends HTMLTdAttributes {
 
 export type CellValue = string | number | boolean | null | undefined;
 
-export type BodyRow = CellValue[] | (Record<string, CellValue> & { id: string | number });
+export type BodyRow = CellValue[] | (Record<string, CellValue> & { id?: string | number });
 
 export interface TableBodyProps extends HTMLAttributes<HTMLTableSectionElement> {
   children?: Snippet;

@@ -5,17 +5,7 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import type { DropdownItemProps } from "$lib/types";
 
-  let {
-    aClass,
-    children,
-    activeClass,
-    liClass,
-    classes,
-    class: className,
-    href,
-    onclick,
-    ...restProps
-  }: DropdownItemProps = $props();
+  let { aClass, children, activeClass, liClass, classes, class: className, href, onclick, ...restProps }: DropdownItemProps = $props();
 
   warnThemeDeprecation("DropdownItem", { aClass, activeClass, liClass }, { aClass: "class", activeClass: "active", liClass: "li" });
   const styling = $derived(classes ?? { active: activeClass, li: liClass });
@@ -27,11 +17,7 @@
   let isActive = $derived(activeUrl?.value && href ? href === activeUrl.value : false);
 
   const { base, active, li } = dropdownItem();
-  let finalClass = $derived([
-    isActive 
-      ? active({ class: clsx(theme?.active, styling.active) }) 
-      : base({ class: clsx(theme?.base, className) })
-  ]);
+  let finalClass = $derived(isActive ? active({ class: clsx(theme?.active, styling.active) }) : base({ class: clsx(theme?.base, className) }));
 </script>
 
 <li class={li({ class: clsx(styling.li) })}>
