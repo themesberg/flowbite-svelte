@@ -15,4 +15,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh pr ready --undo ${{ github.event.pull_request.number }} --repo ${{ github.repository }}
+          gh pr ready --undo ${{ github.event.pull_request.number }} --repo ${{ github.repository }} || {
+            echo "Warning: Failed to auto-convert PR to draft. Please manually mark as draft if needed." 
+            exit 0; 
+          }
