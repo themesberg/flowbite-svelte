@@ -1,5 +1,5 @@
 // utils/helpers
-export * from "./uiHelpers.svelte";
+export * from "./uiHelpers.svelte.ts";
 // utils
 export * from "./utils";
 // theme
