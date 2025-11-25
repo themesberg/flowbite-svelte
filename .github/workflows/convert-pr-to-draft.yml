@@ -1,0 +1,18 @@
+name: Convert PR to Draft
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  convert-to-draft:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Convert PR to Draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr ready --undo ${{ github.event.pull_request.number }} --repo ${{ github.repository }}
