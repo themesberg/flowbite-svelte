@@ -315,6 +315,8 @@ You can control icon class by changing the `class` prop in the `Icon` component.
 
 Use this sidebar example to create multi-level menu items by using the SidebarDropdownWrapper and SidebarDropdownItem components.
 
+The `isOpen` prop controls whether the dropdown is expanded or collapsed. In this example, it's bound to `matchesRoute`, which is a derived value that checks if the current URL matches the specified path pattern. This ensures the dropdown automatically opens when navigating to relevant pages.
+
 ```svelte
 <script lang="ts">
   import { Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, SidebarButton, uiHelpers } from "flowbite-svelte";

@@ -18,13 +18,9 @@
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   const posts: Record<string, any[]> = data.posts?.posts ?? {};
   const builders: Array<{ path: string }> = data.posts?.builders ?? [];
-  // const apicheck: Record<string, { path: string }[]> = data.posts.apicheck || {};
-  // const blocks: Record<string, any[]> = data.posts?.blocks ?? {};
-  // console.log(posts)
   const blocks = ["quickstart", "application", "marketing", "publisher"];
   const drawerHidden: Writable<boolean> = getContext("drawer");
   let noToc = ["blocks", "builder"].includes(submenu ?? "");
-  // const isBlockLike = ["blocks", "builder"].includes(submenu ?? "");
 
   const sidebarUi = uiHelpers();
   let isOpen = $state(true);
@@ -37,21 +33,38 @@
     pages: "Getting Started"
   };
 
-  const fileDir = (path: string) => path.split("/").slice(0, -1).pop() ?? "";
-
   let mainSidebarUrl = $derived(page.url.pathname);
-  let activeMainSidebar: string;
 
-  afterNavigate((navigation) => {
+  // Create state variables for each dropdown
+  let dropdownStates: Record<string, boolean> = $state({});
+
+  // Update dropdown states based on current route
+  $effect(() => {
+    const states: Record<string, boolean> = {};
+
+    // Check each post category
+    for (const key in posts) {
+      const paths = posts[key].map((item: any) => (key === "icons" || key === "illustrations" ? `/${key}${item.path}` : `/docs/${key}${item.path}`));
+
+      states[key] = paths.some((path: string) => mainSidebarUrl.startsWith(path));
+    }
+
+    // Check builders
+    if (builders.length) {
+      const builderPaths = builders.map((b) => `/builder/${b.path}`);
+      states["builders"] = builderPaths.some((path) => mainSidebarUrl.startsWith(path));
+    }
+
+    // Check blocks
+    states["blocks"] = blocks.some((block) => mainSidebarUrl.startsWith(`/blocks/${block}`));
+
+    dropdownStates = states;
+  });
+
+  afterNavigate(() => {
     // this fixes https://github.com/themesberg/flowbite-svelte/issues/364
     document.getElementById("svelte")?.scrollTo({ top: 0 });
     closeSidebar();
-
-    activeMainSidebar = navigation.to?.url.pathname ?? "";
-
-    const key = fileDir(activeMainSidebar);
-    for (const k in dropdowns) dropdowns[k] = false;
-    dropdowns[key] = true;
   });
 
   let spanClass = "";
@@ -61,7 +74,6 @@
   let activeClass = "text-sm relative font-medium cursor-default bg-transparent dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent text-primary-700 dark:text-primary-700";
   let btnClass =
     "my-0 text-sm font-semibold tracking-wide uppercase text-gray-700 dark:text-gray-200 hover:bg-transparent dark:hover:bg-transparent hover:text-primary-700 dark:hover:text-primary-600";
-  let dropdowns = Object.fromEntries(Object.keys(posts).map((x) => [x, false]));
   let divClass = "overflow-y-auto px-4 pt-20 lg:pt-4 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block lg:me-0 lg:sticky top-20 bg-white dark:bg-gray-900";
   // const blockCls = "px-4 mx-auto max-w-8xl";
   const nonBlockCls = "min-w-0 lg:static lg:container lg:mx-auto lg:max-h-full lg:overflow-visible";
@@ -72,6 +84,7 @@
   <Sidebar
     breakpoint="lg"
     backdrop={true}
+    isSingle={false}
     {isOpen}
     {closeSidebar}
     classes={{ div: divClass, nonactive: nonActiveClass, active: activeClass }}
@@ -85,16 +98,24 @@
         <SidebarDropdownWrapper
           label={names_mapping[key] ?? key}
           classes={{ btn: btnClass, ul: "space-y-0 p-0" }}
-          class={dropdowns[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}
+          class={dropdownStates[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}
+          bind:isOpen={dropdownStates[key]}
         >
           {#each values as { meta, path }}
-            {@const href = key === "icons" || key === "illustrations" ? `/${key}${path}` : `/docs/${key}${path}`}
-            <SidebarItem label={meta.component_title} {href} {spanClass} />
+            {#if meta?.component_title}
+              {@const href = key === "icons" || key === "illustrations" ? `/${key}${path}` : `/docs/${key}${path}`}
+              <SidebarItem label={meta.component_title} {href} {spanClass} />
+            {/if}
           {/each}
         </SidebarDropdownWrapper>
       {/each}
       {#if builders.length}
-        <SidebarDropdownWrapper label="Builders" classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class="text-primary-700 dark:text-primary-700">
+        <SidebarDropdownWrapper
+          label="Builders"
+          classes={{ btn: btnClass, ul: "space-y-0 p-0" }}
+          class={dropdownStates["builders"] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}
+          bind:isOpen={dropdownStates["builders"]}
+        >
           {#each builders as builder}
             {@const pathWithoutSlash = builder.path.replace(/^\//, "")}
             {@const capitalizedPath = pathWithoutSlash.charAt(0).toUpperCase() + pathWithoutSlash.slice(1)}
@@ -103,7 +124,12 @@
           {/each}
         </SidebarDropdownWrapper>
       {/if}
-      <SidebarDropdownWrapper label="Blocks" classes={{ btn: btnClass, ul: "space-y-0 p-0" }} class="text-primary-700 dark:text-primary-700">
+      <SidebarDropdownWrapper
+        label="Blocks"
+        classes={{ btn: btnClass, ul: "space-y-0 p-0" }}
+        class={dropdownStates["blocks"] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}
+        bind:isOpen={dropdownStates["blocks"]}
+      >
         {#each blocks as block}
           <SidebarItem label={capitalizeFirstLetter(block)} href="/blocks/{block}" {spanClass} />
         {/each}

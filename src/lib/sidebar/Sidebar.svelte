@@ -5,6 +5,7 @@
   import clsx from "clsx";
   import { setContext } from "svelte";
   import { sineIn } from "svelte/easing";
+  import { writable } from "svelte/store";
   import { fly } from "svelte/transition";
   import { sidebar } from "./theme";
 
@@ -53,7 +54,6 @@
   };
 
   let innerWidth: number = $state(-1);
-  // isLargeScreen should only be true if not disabling breakpoints and it meets the criteria
   let isLargeScreen = $derived(disableBreakpoints ? false : alwaysOpen || innerWidth >= breakpointValues[breakpoint]);
 
   const activeUrlStore = $state({ value: "" });
@@ -75,7 +75,8 @@
     get nonActiveClass() {
       return nonactive({ class: clsx(theme?.nonactive, styling.nonactive) });
     },
-    isSingle
+    isSingle,
+    selected: isSingle ? writable<object | null>(null) : undefined
   };
 
   let transitionParams = params ? params : { x: -320, duration: 200, easing: sineIn };

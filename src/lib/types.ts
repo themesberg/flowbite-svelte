@@ -1388,7 +1388,7 @@ export type SidebarCtxType = {
   activeClass?: string;
   nonActiveClass?: string;
   isSingle?: boolean;
-  selected?: Writable<object>;
+  selected?: Writable<object | null>;
   activeUrl?: string;
 };
 
@@ -1434,6 +1434,11 @@ export interface SidebarBrandProps extends SidebarBrandVariants, HTMLAnchorAttri
   imgClass?: ClassValue;
   spanClass?: ClassValue;
 }
+
+export type Bindable<T> = {
+  get(): T;
+  set(value: T): void;
+};
 
 export interface SidebarDropdownWrapperProps extends SidebarDropdownWrapperVariants, HTMLButtonAttributes {
   children: Snippet;
