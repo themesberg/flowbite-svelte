@@ -8,7 +8,7 @@
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
 
-  let sidebarMatch: string | string[] = "docs/components/sidebar";
+  const sidebarMatch: string | string[] = "docs/components/sidebar";
   const matchesRoute = $derived.by(() => {
     const list = Array.isArray(sidebarMatch) ? sidebarMatch : [sidebarMatch];
     return list.some((p) => activeUrl.startsWith(`/${p}`));
