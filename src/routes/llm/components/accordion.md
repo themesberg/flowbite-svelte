@@ -587,7 +587,7 @@ The Accordion component is built with accessibility in mind:
 
 #### Types
 
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L207)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L206)
 
 #### Props
 
@@ -603,7 +603,7 @@ The Accordion component is built with accessibility in mind:
 
 #### Types
 
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L215)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L214)
 
 #### Props
 

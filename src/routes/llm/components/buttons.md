@@ -480,7 +480,7 @@ Establish clear visual hierarchy with different button types:
 
 #### Types
 
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L344)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L343)
 
 #### Props
 
@@ -499,7 +499,7 @@ Establish clear visual hierarchy with different button types:
 
 #### Types
 
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L354)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L353)
 
 #### Props
 

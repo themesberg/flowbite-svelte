@@ -518,7 +518,7 @@ Use this example to show multiple time interval selections inside of a drawer co
     </div>
 
     <div class="space-y-2 sm:space-y-4">
-      {#each sortedWorkingDays as { day, enabled, startTime, endTime }, index}
+      {#each sortedWorkingDays as { day, enabled, startTime, endTime }, index (day)}
         <div class="flex flex-col gap-2 rounded-lg bg-white p-2 shadow-sm transition-shadow hover:shadow-md dark:bg-gray-700">
           <div class="flex min-w-[65px] items-center">
             <Checkbox onchange={() => toggleDay(index)} checked={enabled} class="scale-100">

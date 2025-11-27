@@ -283,6 +283,7 @@ This example can be used to also show a CTA with a backdround image inside the d
 ```svelte
 <script lang="ts">
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, Button } from "flowbite-svelte";
+  import { resolve } from "$app/paths";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let menu = [
     { name: "About us", href: "/about" },
@@ -300,7 +301,7 @@ This example can be used to also show a CTA with a backdround image inside the d
 </script>
 
 <Navbar>
-  <NavBrand href="/">
+  <NavBrand href={resolve("/")}>
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </NavBrand>
@@ -318,7 +319,7 @@ This example can be used to also show a CTA with a backdround image inside the d
       {/snippet}
       {#snippet extra()}
         <a
-          href="/"
+          href={resolve("/")}
           class="mt-4 block rounded-lg bg-gray-500 bg-cover bg-local bg-center bg-no-repeat p-4 text-left bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken"
           style="background-image: url(/images/dashboard-overview.png)"
         >
@@ -340,7 +341,7 @@ This example can be used to also show a CTA with a backdround image inside the d
 
 #### Types
 
-[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1088)
+[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1093)
 
 #### Props
 

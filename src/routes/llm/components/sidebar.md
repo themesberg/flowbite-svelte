@@ -315,8 +315,6 @@ You can control icon class by changing the `class` prop in the `Icon` component.
 
 Use this sidebar example to create multi-level menu items by using the SidebarDropdownWrapper and SidebarDropdownItem components.
 
-The `isOpen` prop controls whether the dropdown is expanded or collapsed. In this example, it's bound to `matchesRoute`, which is a derived value that checks if the current URL matches the specified path pattern. This ensures the dropdown automatically opens when navigating to relevant pages.
-
 ```svelte
 <script lang="ts">
   import { Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, SidebarButton, uiHelpers } from "flowbite-svelte";
@@ -328,6 +326,13 @@ The `isOpen` prop controls whether the dropdown is expanded or collapsed. In thi
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
+
+  const sidebarMatch: string | string[] = "docs/components/sidebar";
+  const matchesRoute = $derived.by(() => {
+    const list = Array.isArray(sidebarMatch) ? sidebarMatch : [sidebarMatch];
+    return list.some((p) => activeUrl.startsWith(`/${p}`));
+  });
+
   $effect(() => {
     isDemoOpen = demoSidebarUi.isOpen;
     activeUrl = page.url.pathname;
@@ -340,6 +345,7 @@ The `isOpen` prop controls whether the dropdown is expanded or collapsed. In thi
     {activeUrl}
     backdrop={false}
     isOpen={isDemoOpen}
+    isSingle={false}
     closeSidebar={closeDemoSidebar}
     params={{ x: -50, duration: 50 }}
     position="absolute"
@@ -352,7 +358,7 @@ The `isOpen` prop controls whether the dropdown is expanded or collapsed. In thi
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="E-commerce" btnClass="p-2">
+      <SidebarDropdownWrapper label="E-commerce" classes={{ btn: "p-2" }} isOpen={matchesRoute}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -418,6 +424,13 @@ You can change the icons using `arrowup` and `arrowdown` slots.
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
+
+  const sidebarMatch: string | string[] = "docs/components/sidebar";
+  const matchesRoute = $derived.by(() => {
+    const list = Array.isArray(sidebarMatch) ? sidebarMatch : [sidebarMatch];
+    return list.some((p) => activeUrl.startsWith(`/${p}`));
+  });
+
   $effect(() => {
     isDemoOpen = demoSidebarUi.isOpen;
     activeUrl = page.url.pathname;
@@ -442,7 +455,7 @@ You can change the icons using `arrowup` and `arrowdown` slots.
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="E-commerce" btnClass="p-2">
+      <SidebarDropdownWrapper label="E-commerce" classes={{ btn: "p-2" }} isOpen={matchesRoute}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -663,7 +676,6 @@ Show the logo of your brand and link back to the homepage from the top part of t
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
   const spanClass = "flex-1 ms-3 whitespace-nowrap";
-  const imgClass = "h-6 w-6";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -692,7 +704,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
   >
     <CloseButton onclick={closeDemoSidebar} color="gray" class="absolute top-3 right-1 p-2 md:hidden" />
     <SidebarGroup>
-      <SidebarBrand {site} {imgClass} />
+      <SidebarBrand {site} classes={{ img: "h-6 w-6" }} />
       <SidebarItem label="Dashboard" href="/">
         {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
@@ -1014,13 +1026,13 @@ The following example shows to open only one dropdown when you click another dro
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="Shop" btnClass="p-2">
+      <SidebarDropdownWrapper label="Shop" classes={{ btn: "p-2" }}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Products" href="" />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper label="Profile" btnClass="p-2">
+      <SidebarDropdownWrapper label="Profile" classes={{ btn: "p-2" }}>
         {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1033,7 +1045,7 @@ The following example shows to open only one dropdown when you click another dro
       </SidebarItem>
     </SidebarGroup>
     <SidebarGroup border>
-      <SidebarDropdownWrapper label="Setting" btnClass="p-2">
+      <SidebarDropdownWrapper label="Setting" classes={{ btn: "p-2" }}>
         {#snippet icon()}
           <EditSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1094,13 +1106,13 @@ To open all dropdown menus, set `isSingle={false}`.
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="Shop" btnClass="p-2">
+      <SidebarDropdownWrapper label="Shop" classes={{ btn: "p-2" }}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Products" href="" />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper label="Profile" btnClass="p-2">
+      <SidebarDropdownWrapper label="Profile" classes={{ btn: "p-2" }}>
         {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1113,7 +1125,7 @@ To open all dropdown menus, set `isSingle={false}`.
       </SidebarItem>
     </SidebarGroup>
     <SidebarGroup border>
-      <SidebarDropdownWrapper label="Setting" btnClass="p-2">
+      <SidebarDropdownWrapper label="Setting" classes={{ btn: "p-2" }}>
         {#snippet icon()}
           <EditSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1179,7 +1191,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="E-commerce" btnClass="p-2" transition={fade} {params}>
+      <SidebarDropdownWrapper label="E-commerce" classes={{ btn: "p-2" }} transition={fade} {params}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1352,7 +1364,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1390)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1395)
 
 #### Props
 
@@ -1381,7 +1393,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1427)
+[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1432)
 
 #### Props
 
@@ -1396,7 +1408,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1409)
+[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1414)
 
 #### Props
 
@@ -1408,7 +1420,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1414)
+[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1419)
 
 #### Props
 
@@ -1424,7 +1436,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1433)
+[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1443)
 
 #### Props
 
@@ -1432,7 +1444,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 - arrowup
 - arrowdown
 - icon
-- isOpen: $bindable(false)
+- isOpen: $bindable()
 - btnClass
 - label
 - spanClass
@@ -1448,7 +1460,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1450)
+[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1460)
 
 #### Props
 
@@ -1461,7 +1473,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1456)
+[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1466)
 
 #### Props
 

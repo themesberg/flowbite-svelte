@@ -339,7 +339,7 @@ The PhoneInput component provides customizable styling through six distinct clas
 
 #### Types
 
-[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L834)
+[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L839)
 
 #### Props
 

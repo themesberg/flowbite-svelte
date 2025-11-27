@@ -74,7 +74,10 @@ llms: markdown
 /docs: https://flowbite-svelte.com/llm/forms/textarea.md
 /docs: https://flowbite-svelte.com/llm/forms/timepicker.md
 /docs: https://flowbite-svelte.com/llm/forms/toggle.md
-/docs: https://flowbite-svelte.com/llm/pages/ai-integration.md
+/docs: https://flowbite-svelte.com/llm/mcp/local-setup.md
+/docs: https://flowbite-svelte.com/llm/mcp/overview.md
+/docs: https://flowbite-svelte.com/llm/mcp/prompts.md
+/docs: https://flowbite-svelte.com/llm/mcp/remote-setup.md
 /docs: https://flowbite-svelte.com/llm/pages/colors.md
 /docs: https://flowbite-svelte.com/llm/pages/compiler-speed.md
 /docs: https://flowbite-svelte.com/llm/pages/customization.md

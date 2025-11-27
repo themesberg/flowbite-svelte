@@ -23,7 +23,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L843)
+[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L848)
 ## Props
 @prop children
 @prop color = "gray"

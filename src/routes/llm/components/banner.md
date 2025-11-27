@@ -326,7 +326,7 @@ When implementing sticky banners, consider these guidelines:
 
 #### Types
 
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L266)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L265)
 
 #### Props
 

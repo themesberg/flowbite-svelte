@@ -39,14 +39,16 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
+## Type
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L647)
 ## Props
-@prop children - Content to render inside the dropdown item
-@prop href - URL for anchor element (makes it an anchor)
-@prop onclick - Click handler (makes it a button if no href)
-@prop aClass - (Deprecated) Use `class` instead
-@prop activeClass - (Deprecated) Use `classes.active` instead
-@prop liClass - (Deprecated) Use `classes.li` instead
-@prop classes - Object with active, base, and li class overrides
-@prop class - Custom class for the item
-@prop ...restProps - Additional HTML attributes
+@prop aClass
+@prop children
+@prop activeClass
+@prop liClass
+@prop classes
+@prop class: className
+@prop href
+@prop onclick
+@prop ...restProps
 -->

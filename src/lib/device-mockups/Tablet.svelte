@@ -40,7 +40,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L593)
+[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L592)
 ## Props
 @prop children
 @prop class: className

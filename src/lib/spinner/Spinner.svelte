@@ -83,7 +83,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpinnerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1555)
+[SpinnerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1565)
 ## Props
 @prop type = "default"
 @prop color = "primary"

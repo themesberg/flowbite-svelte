@@ -2,14 +2,14 @@
   "name": "SidebarDropdownWrapper",
   "type": {
     "name": "SidebarDropdownWrapperProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1433"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1443"
   },
   "props": [
     ["children", ""],
     ["arrowup", ""],
     ["arrowdown", ""],
     ["icon", ""],
-    ["isOpen", "$bindable(false)"],
+    ["isOpen", "$bindable()"],
     ["btnClass", ""],
     ["label", ""],
     ["spanClass", ""],

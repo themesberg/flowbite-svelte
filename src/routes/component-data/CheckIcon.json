@@ -2,7 +2,7 @@
   "name": "CheckIcon",
   "type": {
     "name": "CheckIconProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L392"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L391"
   },
   "props": [["class: className", ""]]
 }

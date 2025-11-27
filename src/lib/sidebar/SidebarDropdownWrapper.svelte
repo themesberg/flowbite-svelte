@@ -99,3 +99,27 @@
     </ul>
   {/if}
 </li>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1443)
+## Props
+@prop children
+@prop arrowup
+@prop arrowdown
+@prop icon
+@prop isOpen = $bindable()
+@prop btnClass
+@prop label
+@prop spanClass
+@prop ulClass
+@prop transition = slide
+@prop params
+@prop svgClass
+@prop class: className
+@prop classes
+@prop onclick
+@prop ...restProps
+-->

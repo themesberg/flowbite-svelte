@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.28.2
+
+### Patch Changes
+
+- fix: Sidebar
+
 ## 1.28.1
 
 ### Patch Changes

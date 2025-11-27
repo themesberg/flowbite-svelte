@@ -326,7 +326,7 @@ Use `color` and `checkedClass` props to style the checked state:
 
 #### Types
 
-[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L850)
+[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L855)
 
 #### Props
 
