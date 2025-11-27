@@ -8,6 +8,13 @@
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
+
+  const sidebarMatch: string | string[] = "docs/components/sidebar";
+  const matchesRoute = $derived.by(() => {
+    const list = Array.isArray(sidebarMatch) ? sidebarMatch : [sidebarMatch];
+    return list.some((p) => activeUrl.startsWith(`/${p}`));
+  });
+
   $effect(() => {
     isDemoOpen = demoSidebarUi.isOpen;
     activeUrl = page.url.pathname;
@@ -20,6 +27,7 @@
     {activeUrl}
     backdrop={false}
     isOpen={isDemoOpen}
+    isSingle={false}
     closeSidebar={closeDemoSidebar}
     params={{ x: -50, duration: 50 }}
     position="absolute"
@@ -32,7 +40,7 @@
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="E-commerce" btnClass="p-2">
+      <SidebarDropdownWrapper label="E-commerce" classes={{ btn: "p-2" }} isOpen={matchesRoute}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { uiHelpers } from "$lib/index";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import type { ParamsType, SidebarDropdownWrapperProps } from "$lib/types";
   import clsx from "clsx";
@@ -18,7 +17,7 @@
     arrowup,
     arrowdown,
     icon,
-    isOpen = $bindable(false),
+    isOpen = $bindable(),
     btnClass,
     label,
     spanClass,
@@ -43,35 +42,29 @@
   );
 
   const theme = getTheme("sidebarDropdownWrapper");
-
   const { base, btn, span, svg, ul } = sidebarDropdownWrapper();
+  const isControlled = $derived(isOpen !== undefined);
 
-  let sidebarDropdown = uiHelpers();
-  sidebarDropdown.isOpen = isOpen;
   let ctx = getContext<SidebarContext>("sidebarContext") || { isSingle: false };
+
   let self = {};
 
-  // Create a new Writable store for tracking the selected dropdown if it doesn't exist in the context
   if (ctx.isSingle && !ctx.selected) {
     ctx.selected = writable<object | null>(null);
   }
 
-  // Use the shared selected store if in single mode, otherwise use the local isOpen state
-  let selected: Writable<object | null> = ctx.isSingle ? ctx.selected! : writable(self);
+  const selectedStore = $derived(ctx.selected);
+  let localOpen = $state(false);
 
-  $effect(() => {
-    if (ctx.isSingle) {
-      isOpen = $selected === self;
-    } else {
-      isOpen = sidebarDropdown.isOpen;
-    }
-  });
+  const openState = $derived(isControlled ? isOpen : ctx.isSingle ? $selectedStore === self : localOpen);
 
   function handleDropdown() {
-    if (ctx.isSingle) {
-      selected.update((current) => (current === self ? null : self));
+    if (isControlled) {
+      isOpen = !isOpen;
+    } else if (ctx.isSingle) {
+      ctx.selected!.update((current) => (current === self ? null : self));
     } else {
-      sidebarDropdown.toggle();
+      localOpen = !localOpen;
     }
 
     if (onclick) onclick();
@@ -84,7 +77,7 @@
       {@render icon()}
     {/if}
     <span class={span({ class: clsx(theme?.span, styling.span) })}>{label}</span>
-    {#if isOpen}
+    {#if openState}
       {#if arrowup}
         {@render arrowup()}
       {:else}
@@ -100,33 +93,9 @@
       </svg>
     {/if}
   </button>
-  {#if isOpen}
+  {#if openState}
     <ul class={ul({ class: clsx(theme?.ul, styling.ul) })} transition:transition={params as ParamsType}>
       {@render children()}
     </ul>
   {/if}
 </li>
-
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1433)
-## Props
-@prop children
-@prop arrowup
-@prop arrowdown
-@prop icon
-@prop isOpen = $bindable(false)
-@prop btnClass
-@prop label
-@prop spanClass
-@prop ulClass
-@prop transition = slide
-@prop params
-@prop svgClass
-@prop class: className
-@prop classes
-@prop onclick
-@prop ...restProps
--->
