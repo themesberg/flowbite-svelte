@@ -7,7 +7,7 @@ export const list = tv({
   variants: {
     tag: {
       ul: "list-disc",
-      dl: "list-none",
+      dl: "[&>*]:list-none list-none",
       ol: "list-decimal"
     },
     position: {

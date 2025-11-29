@@ -55,7 +55,7 @@ body:
       description: |
         Run the following command and paste the output:
         ```
-        npx envinfo --system --npmPackages svelte,@sveltejs/kit,flowbite-svelte,vite,rollup,webpack --binaries --browsers
+        npx envinfo --system --npmPackages svelte,@sveltejs/kit,flowbite,flowbite-svelte,vite,rollup,webpack --binaries --browsers
         ```
       render: shell
       placeholder: |
