@@ -1611,20 +1611,24 @@ export interface ProgressStepperProps extends HTMLOlAttributes, ProgressStepperV
   steps?: ProgressStep[];
 }
 
-// DetailedStepper
 export interface DetailedStep {
   id: number;
   label: string;
   description?: string;
-  status?: "completed" | "current" | "pending";
-  icon?: Component;
+  status?: "completed" | "current" | "pending"; // Optional: Override auto-status
+  icon?: Component; // Custom icon for completed state
   iconClass?: ClassValue;
+  descriptionClass?: ClassValue;
 }
 
 export interface DetailedStepperProps extends HTMLOlAttributes, DetailedStepperVariants {
   children?: Snippet;
   steps?: DetailedStep[];
   contentClass?: ClassValue;
+  current?: number; // Current step index (bindable)
+  clickable?: boolean; // Allow clicking steps to navigate (default: true)
+  showCheckmarkForCompleted?: boolean;
+  onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
 }
 
 // VerticalStepper

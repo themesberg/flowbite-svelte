@@ -46,8 +46,29 @@ This example can be used to show the progress of the stepper component based onl
 
 Use this example to show an extra subtitle next to the number and the title of the steppper component based on an ordered list element.
 
+- `onStepClick` prop can be used for an event handler.
+- `clickable` prop allows clicking steps to navigate (default: true)
+
 ```svelte example
-{#include Detailed.svelte}
+{#include DetailedBasic.svelte}
+```
+
+### showCheckmarkForCompleted
+`showCheckmarkForCompleted` shows checkmark for completed steps instead of icons (default: true).
+
+```svelte example
+{#include DetailedIcon.svelte}
+```
+
+### Custom status
+
+Following example shows how to override `current` prop using custom status.
+
+- Use `status: "completed" | "current" | "pending"` to override.
+- Use `false` for `clickable`.
+
+```svelte example
+{#include DetailedOverride.svelte}
 ```
 
 ## VerticalStepper
