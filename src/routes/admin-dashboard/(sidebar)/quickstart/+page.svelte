@@ -20,7 +20,8 @@
     <Heading tag="h2" class="my-8 text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Installation</Heading>
     <HighlightCompo class="mb-8" code={modules["./md/installation.md"] as string} />
 
-    <P>If you use SvelteKit and the main css file is `src/routes/layout.css` or `src/app.css`, add the following depends on the file location:</P>
+    <P>If you use SvelteKit and the main css file is `src/routes/layout.css` or `src/app.css`, add one of the following based on the file location:</P>
+
     <HighlightCompo class="mb-8" code={modules["./md/css.md"] as string} />
 
     <Heading tag="h2" class="my-8 text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">.env File</Heading>
