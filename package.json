@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "1.28.3",
+  "version": "1.29.0",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -76,7 +76,7 @@
     "mdsvex": "^0.12.6",
     "mdsvexamples": "^0.5.0",
     "playwright": "^1.57.0",
-    "prettier": "^3.6.2",
+    "prettier": "3.6.2",
     "prettier-plugin-svelte": "^3.4.0",
     "prettier-plugin-tailwindcss": "^0.7.1",
     "prism-themes": "^1.9.0",
@@ -88,7 +88,7 @@
     "super-sitemap": "^1.0.5",
     "svelte": "^5.45.2",
     "svelte-check": "^4.3.4",
-    "svelte-doc-llm": "^0.7.0",
+    "svelte-doc-llm": "^0.8.0",
     "svelte-lib-helpers": "^0.4.31",
     "svelte-meta-tags": "^4.5.0",
     "svelte-rune-highlight": "^0.11.1",

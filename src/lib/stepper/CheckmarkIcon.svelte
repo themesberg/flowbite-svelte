@@ -79,3 +79,14 @@
     <path d={iconProps.pathData} />
   {/if}
 </svg>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+Props
+## Props
+@prop class: className
+@prop variant = "default"
+@prop ...restProps
+-->

@@ -152,15 +152,14 @@ The `current` prop is 1-based:
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1609)
+[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1614)
 ## Props
-@prop children
 @prop steps = []
 @prop class: className
 @prop classes
-@prop current = 0 - The current step index (bindable, 1-based; 0 means no step active)
-@prop clickable = true - Whether steps can be clicked to navigate
-@prop showCheckmarkForCompleted = true - Show checkmark for completed steps instead of numbers/icons
-@prop onStepClick - Callback fired when a step is clicked: (event: { current: number; last: number }) => void
+@prop current = $bindable(0)
+@prop clickable = true
+@prop showCheckmarkForCompleted = true
+@prop onStepClick
 @prop ...restProps
 -->

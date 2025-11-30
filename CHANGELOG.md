@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.29.0
+
+### Minor Changes
+
+- feat: add click navigation to all stepper components
+
 ## 1.28.3
 
 ### Patch Changes

@@ -109,28 +109,14 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1596)
+[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1598)
 ## Props
-@prop children
 @prop steps = []
 @prop class: className
 @prop classes
-@prop current = 1 - The current step index (bindable, 1-based)
-@prop clickable = true - Whether steps can be clicked to navigate
-@prop showCheckmarkForCompleted = true - Show checkmark for completed steps instead of icons
-@prop onStepClick - Callback fired when a step is clicked: (event: { current: number; last: number }) => void
+@prop current = $bindable(1)
+@prop clickable = true
+@prop showCheckmarkForCompleted = true
+@prop onStepClick
 @prop ...restProps
-
-## Features
-- **Clickable navigation**: Click or press Enter/Space on steps to navigate
-- **Auto status**: Automatically determines completed/current/pending status based on current index
-- **Custom icons**: Support for custom icons on completed steps
-- **Accessible**: Keyboard navigation with proper ARIA attributes
-
-## Note
-The `current` prop is 1-based:
-- current=0 means no step is active (all pending)
-- current=1 means first step is active
-- current=2 means first step is completed, second step is active
-- etc.
 -->

@@ -22,3 +22,13 @@
 >
   <path d="m7 9 4-4-4-4M1 9l4-4-4-4" />
 </svg>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+Props
+## Props
+@prop class: className
+@prop ...restProps
+-->
