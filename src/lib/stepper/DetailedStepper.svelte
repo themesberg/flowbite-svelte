@@ -1,5 +1,6 @@
 <script lang="ts">
   import { setContext } from "svelte";
+  import CheckmarkIcon from "./CheckmarkIcon.svelte";
   import { detailedStepper } from "./theme";
   import type { DetailedStepperProps } from "$lib/types";
   import clsx from "clsx";
@@ -74,28 +75,11 @@
     {@const status = step.status ?? getStepStatus(index)}
     <li class={item({ status, class: clsx(theme?.item, classes?.item) })}>
       {#if clickable}
-        <button
-          type="button"
-          class="flex w-full cursor-pointer items-center space-x-2.5 text-left transition-opacity hover:opacity-75 rtl:space-x-reverse"
-          onclick={() => handleStepClick(index)}
-        >
+        <button type="button" class="flex w-full cursor-pointer items-center space-x-2.5 text-left transition-opacity hover:opacity-75 rtl:space-x-reverse" onclick={() => handleStepClick(index)}>
           <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })}>
             {#if status === "completed" && showCheckmarkForCompleted}
               <!-- Checkmark for completed steps -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-4 w-4"
-              >
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
+              <CheckmarkIcon variant="tick" />
             {:else if step.icon}
               <!-- Show icon if provided -->
               <step.icon class={clsx(step.iconClass)} />
@@ -116,20 +100,7 @@
           <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })}>
             {#if status === "completed" && showCheckmarkForCompleted}
               <!-- Checkmark for completed steps -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-4 w-4"
-              >
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
+              <CheckmarkIcon variant="tick" />
             {:else if step.icon}
               <!-- Show icon if provided -->
               <step.icon class={clsx(step.iconClass)} />
@@ -181,4 +152,3 @@ The `current` prop is 1-based:
 @prop onStepClick - Callback fired when a step is clicked: (event: { current: number; last: number }) => void
 @prop ...restProps
 -->
-

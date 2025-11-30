@@ -5,5 +5,7 @@ export { default as VerticalStepper } from "./VerticalStepper.svelte";
 export { default as BreadcrumbStepper } from "./BreadcrumbStepper.svelte";
 export { default as TimelineStepper } from "./TimelineStepper.svelte";
 export { default as CheckmarkIcon } from "./CheckmarkIcon.svelte";
+export { default as DoubleArrowIcon } from "./DoubleArrowIcon.svelte";
+export { default as ProfileCardIcon } from "./ProfileCardIcon.svelte";
 
 export { stepper, progressStepper, detailedStepper, verticalStepper, breadcrumbStepper, timelineStepper } from "./theme";

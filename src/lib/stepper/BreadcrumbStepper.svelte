@@ -1,5 +1,7 @@
 <script lang="ts">
   import { setContext } from "svelte";
+  import CheckmarkIcon from "./CheckmarkIcon.svelte";
+  import DoubleArrowIcon from "./DoubleArrowIcon.svelte";
   import { breadcrumbStepper } from "./theme";
   import clsx from "clsx";
   import type { BreadcrumbStepperProps } from "$lib/types";
@@ -64,17 +66,16 @@
         {#if clickable}
           <button
             type="button"
-            class="flex items-center cursor-pointer transition-opacity hover:opacity-75"
+            class="flex cursor-pointer items-center transition-opacity hover:opacity-75"
             onclick={() => handleStepClick(index)}
+            aria-current={status === "current" ? "step" : undefined}
           >
             <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })}>
               {#if status === "completed" && showCheckmarkForCompleted}
                 {#if step.icon}
                   <step.icon class={step.iconClass || "h-3 w-3"} />
                 {:else}
-                  <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                  </svg>
+                  <CheckmarkIcon variant="simple" class="h-3 w-3" />
                 {/if}
               {:else if step.icon}
                 <step.icon class={step.iconClass || "h-3 w-3"} />
@@ -95,9 +96,7 @@
               {#if step.icon}
                 <step.icon class={step.iconClass || "h-3 w-3"} />
               {:else}
-                <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                </svg>
+                <CheckmarkIcon variant="simple" class="h-3 w-3" />
               {/if}
             {:else if step.icon}
               <step.icon class={step.iconClass || "h-3 w-3"} />
@@ -114,9 +113,7 @@
         {/if}
 
         {#if index < steps.length - 1}
-          <svg class="ms-2 h-3 w-3 sm:ms-4 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 9 4-4-4-4M1 9l4-4-4-4" />
-          </svg>
+          <DoubleArrowIcon />
         {/if}
       </li>
     {/each}

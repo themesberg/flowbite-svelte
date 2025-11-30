@@ -31,7 +31,7 @@
   ];
 </script>
 
-<ProgressStepper bind:current {steps} class="mb-8" clickable={false}/>
+<ProgressStepper bind:current {steps} class="mb-8" clickable={false} />
 <form action="#">
   <h3 class="mb-4 text-lg leading-none font-medium text-gray-900 dark:text-white">Invoice details</h3>
   <div class="mb-4 grid gap-4 sm:grid-cols-2">

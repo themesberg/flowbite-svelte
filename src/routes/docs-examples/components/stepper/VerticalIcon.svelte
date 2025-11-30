@@ -8,31 +8,31 @@
       id: 1,
       label: "User Info",
       icon: UserCircleOutline,
-      iconClass: "h-4 w-4"
+      iconClass: "h-5 w-5"
     },
     {
       id: 2,
       label: "Account Info",
       icon: ApiKeyOutline,
-      iconClass: "h-4 w-4"
+      iconClass: "h-5 w-5"
     },
     {
       id: 3,
       label: "Social Accounts",
       icon: ShareNodesOutline,
-      iconClass: "h-4 w-4"
+      iconClass: "h-5 w-5"
     },
     {
       id: 4,
       label: "Review",
       icon: EyeOutline,
-      iconClass: "h-4 w-4"
+      iconClass: "h-5 w-5"
     },
     {
       id: 5,
       label: "Confirmation",
       icon: CheckCircleOutline,
-      iconClass: "h-4 w-4"
+      iconClass: "h-5 w-5"
     }
   ];
 </script>

@@ -9,28 +9,28 @@
       label: "Profile",
       description: "Setup your profile",
       icon: UserCircleOutline,
-      iconClass: "h-3.5 w-3.5"
+      iconClass: "h-5 w-5"
     },
     {
       id: 2,
       label: "Settings",
       description: "Configure your settings",
       icon: CogOutline,
-      iconClass: "h-3.5 w-3.5"
+      iconClass: "h-5 w-5"
     },
     {
       id: 3,
       label: "Review",
       description: "Review your information",
       icon: EyeOutline,
-      iconClass: "h-3.5 w-3.5"
+      iconClass: "h-5 w-5"
     },
     {
       id: 4,
       label: "Complete",
       description: "All done!",
       icon: CheckCircleOutline,
-      iconClass: "h-3.5 w-3.5"
+      iconClass: "h-5 w-5"
     }
   ];
 </script>

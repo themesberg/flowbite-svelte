@@ -1,11 +1,23 @@
 <script lang="ts">
   import { setContext } from "svelte";
+  import CheckmarkIcon from "./CheckmarkIcon.svelte";
   import { verticalStepper } from "./theme";
   import type { VerticalStepperProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, steps = [], liClass, class: className, classes, current = $bindable(1), clickable = true, showCheckmarkForCompleted = true, onStepClick, ...restProps }: VerticalStepperProps = $props();
+  let {
+    children,
+    steps = [],
+    liClass,
+    class: className,
+    classes,
+    current = $bindable(1),
+    clickable = true,
+    showCheckmarkForCompleted = true,
+    onStepClick,
+    ...restProps
+  }: VerticalStepperProps = $props();
 
   // Ensure current is within valid bounds
   $effect(() => {
@@ -52,50 +64,42 @@
   {#if children}
     {@render children()}
   {:else if steps}
-    {#each steps as step (step.id)}
-      {@const status = step.status ?? getStepStatus(steps.findIndex(s => s.id === step.id))}
+    {#each steps as step, index (step.id)}
+      {@const status = step.status ?? getStepStatus(index)}
       <li class={clsx(liClass)}>
         {#if clickable}
           <button
             type="button"
-            class="w-full text-left cursor-pointer transition-opacity hover:opacity-75 {card({ status, class: clsx(theme?.card, classes?.card) })}"
-            role="alert"
-            onclick={() => handleStepClick(steps.findIndex(s => s.id === step.id))}
+            class="w-full cursor-pointer text-left transition-opacity hover:opacity-75 {card({ status, class: clsx(theme?.card, classes?.card) })}"
+            aria-current={status === "current" ? "step" : undefined}
+            onclick={() => handleStepClick(index)}
           >
             <div class={content({ class: clsx(theme?.content, classes?.content) })}>
               <span class="sr-only">{step.label}</span>
               <h3 class="font-medium">{step.id}. {step.label}</h3>
               {#if status === "completed" && showCheckmarkForCompleted}
-                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                </svg>
+                <CheckmarkIcon variant="simple" />
               {:else if status === "current"}
                 {#if step.icon}
                   <step.icon class={step.iconClass || "h-4 w-4"} />
                 {:else}
-                  <svg class="h-4 w-4 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                  </svg>
+                  <CheckmarkIcon variant="simple" />
                 {/if}
               {/if}
             </div>
           </button>
         {:else}
-          <div class={card({ status, class: clsx(theme?.card, classes?.card) })} role="alert">
+          <div class={card({ status, class: clsx(theme?.card, classes?.card) })} aria-current={status === "current" ? "step" : undefined}>
             <div class={content({ class: clsx(theme?.content, classes?.content) })}>
               <span class="sr-only">{step.label}</span>
               <h3 class="font-medium">{step.id}. {step.label}</h3>
               {#if status === "completed" && showCheckmarkForCompleted}
-                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                </svg>
+                <CheckmarkIcon variant="simple" />
               {:else if status === "current"}
                 {#if step.icon}
                   <step.icon class={step.iconClass || "h-4 w-4"} />
                 {:else}
-                  <svg class="h-4 w-4 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                  </svg>
+                  <CheckmarkIcon variant="simple" />
                 {/if}
               {/if}
             </div>

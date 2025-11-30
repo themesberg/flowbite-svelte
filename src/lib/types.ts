@@ -1596,7 +1596,7 @@ export interface Step {
 export interface StepperProps extends HTMLOlAttributes, StepperVariants {
   children?: Snippet;
   steps?: Step[];
-  current?: number; // Current step index (bindable, 1-based)
+  current?: number; // Current step index (bindable, 1-based; 0 means no step active)
   clickable?: boolean; // Allow clicking steps to navigate (default: true)
   showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps (default: true)
   onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
@@ -1624,7 +1624,7 @@ export interface DetailedStep {
   label: string;
   description?: string;
   status?: "completed" | "current" | "pending"; // Optional: Override auto-status
-  icon?: Component; // Custom icon for completed state
+  icon?: Component; // Custom icon for this step (may be replaced by checkmark if step is completed and showCheckmarkForCompleted is true)
   iconClass?: ClassValue;
   descriptionClass?: ClassValue;
 }

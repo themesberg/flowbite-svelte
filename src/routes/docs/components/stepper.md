@@ -5,7 +5,7 @@ breadcrumb_title: Svelte Stepper
 component_title: Stepper
 dir: Components
 description: Use the stepper component to show the number of steps required to complete a form inside your application
-thumnailSize: w-48
+thumbnailSize: w-48
 ---
 
 <script lang="ts">

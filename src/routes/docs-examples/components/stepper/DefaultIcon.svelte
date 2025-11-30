@@ -35,7 +35,7 @@
   <Button onclick={() => (current = Math.min(steps.length, current + 1))} disabled={current === steps.length} class="rounded bg-blue-600 px-4 py-2 text-white disabled:opacity-50">Next</Button>
 </div>
 
-<div class="mt-4 rounded bg-gray-50 dark:bg-gray-800 p-4">
+<div class="mt-4 rounded bg-gray-50 p-4 dark:bg-gray-800">
   <Heading tag="h4" class="font-bold">Current State</Heading>
   <P>
     <strong>current =</strong>

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { setContext } from "svelte";
+  import CheckmarkIcon from "./CheckmarkIcon.svelte";
   import { progressStepper } from "./theme";
   import type { ProgressStepperProps } from "$lib/types";
   import clsx from "clsx";
@@ -70,20 +71,12 @@
 
   // Calculate line positions and progress
   // Lines should start from center of first circle and end at center of last circle
-  const lineStart = $derived(
-    steps.length <= 1 ? "0" : `${(1 / steps.length) * 50}%`
-  );
+  const lineStart = $derived(steps.length <= 1 ? "0" : `${(1 / steps.length) * 50}%`);
 
-  const lineWidth = $derived(
-    steps.length <= 1 ? "0" : `${100 - (1 / steps.length) * 100}%`
-  );
+  const lineWidth = $derived(steps.length <= 1 ? "0" : `${100 - (1 / steps.length) * 100}%`);
 
   // Calculate progress width using animated value
-   const progressWidth = $derived(
-    steps.length <= 1 || lineWidth === "0"
-      ? "0"
-      : `${(animatedProgress.current / 100) * parseFloat(lineWidth)}%`
-  );
+  const progressWidth = $derived(steps.length <= 1 || lineWidth === "0" ? "0" : `${(animatedProgress.current / 100) * parseFloat(lineWidth)}%`);
 </script>
 
 <ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
@@ -105,33 +98,10 @@
         })}
       >
         {#if clickable}
-          <button
-            type="button"
-            class={circle({ status, class: clsx(theme?.circle, classes?.circle, "cursor-pointer transition-all hover:brightness-110") })}
-            onclick={() => handleStepClick(index)}
-            onkeydown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                handleStepClick(index);
-              }
-            }}
-          >
+          <button type="button" class={circle({ status, class: clsx(theme?.circle, classes?.circle, "cursor-pointer transition-all hover:brightness-110") })} onclick={() => handleStepClick(index)}>
             {#if status === "completed" && showCheckmarkForCompleted}
               <!-- Checkmark for completed steps -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-4 w-4"
-              >
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
+              <CheckmarkIcon variant="tick" />
             {:else if step.icon}
               <!-- Show icon if provided -->
               <step.icon class={clsx(step.iconClass) || "h-5 w-5 lg:h-6 lg:w-6"} />
@@ -144,20 +114,7 @@
           <span class={circle({ status, class: clsx(theme?.circle, classes?.circle) })}>
             {#if status === "completed" && showCheckmarkForCompleted}
               <!-- Checkmark for completed steps -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-4 w-4"
-              >
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
+              <CheckmarkIcon variant="tick" />
             {:else if step.icon}
               <!-- Show icon if provided -->
               <step.icon class={clsx(step.iconClass) || "h-5 w-5 lg:h-6 lg:w-6"} />
@@ -206,4 +163,3 @@ The `current` prop is 1-based:
 @prop onStepClick - Callback fired when a step is clicked: (event: { current: number; last: number }) => void
 @prop ...restProps
 -->
-

@@ -5,7 +5,7 @@ breadcrumb_title: Svelte Device Mockups
 component_title: Device Mockups
 dir: Components
 description: Use the device mockups component to add content and screenshot previews of your application inside phone and tablet frames coded with Tailwind CSS and Flowbite
-thumnailSize: w-36
+thumbnailSize: w-36
 ---
 
 <script lang="ts">

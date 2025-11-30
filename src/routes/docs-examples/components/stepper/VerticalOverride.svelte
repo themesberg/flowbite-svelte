@@ -43,7 +43,7 @@
     }
   ];
 
-  const stepLabels = ["User Info", "Account Info", "Social Accounts", "Review", "Confirmation"];
+  const stepLabels = steps.map((s) => s.label);
 </script>
 
 <Heading tag="h3" class="mb-4 text-lg font-semibold">Vertical Stepper with Status Override</Heading>
@@ -75,7 +75,5 @@
     {/each}
   </List>
 
-  <P class="mt-4 text-sm text-gray-600 dark:text-gray-400">
-    Note: Step 1 is forced to "completed" and Step 5 is forced to "pending" regardless of the current value.
-  </P>
+  <P class="mt-4 text-sm text-gray-600 dark:text-gray-400">Note: Step 1 is forced to "completed" and Step 5 is forced to "pending" regardless of the current value.</P>
 </div>

@@ -74,6 +74,7 @@
               class: clsx(theme?.content, classes?.content, "w-full cursor-pointer text-left transition-opacity hover:opacity-75")
             })}
             onclick={() => handleStepClick(index)}
+            aria-current={status === "current" ? "step" : undefined}
           >
             {#if status === "completed" && showCheckmarkForCompleted}
               <CheckmarkIcon />

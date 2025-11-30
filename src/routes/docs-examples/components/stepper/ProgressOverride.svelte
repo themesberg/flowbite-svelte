@@ -45,7 +45,6 @@
   <Button onclick={() => (current = Math.max(0, current - 1))} disabled={current === 0} class="rounded bg-gray-500 px-4 py-2 disabled:opacity-50">Previous</Button>
 
   <Button onclick={() => (current = Math.min(steps.length, current + 1))} disabled={current === steps.length} class="rounded bg-blue-600 px-4 py-2 text-white disabled:opacity-50">Next</Button>
-
 </div>
 
 <div class="mt-4 rounded bg-gray-50 p-4 dark:bg-gray-800">
@@ -61,7 +60,7 @@
       <Li>
         {stepLabels[i]}:
         <Span class="font-mono">
-           {step.status ?? (i + 1 < current ? "completed" : i + 1 === current ? "current" : "pending")}
+          {step.status ?? (i + 1 < current ? "completed" : i + 1 === current ? "current" : "pending")}
         </Span>
       </Li>
     {/each}
