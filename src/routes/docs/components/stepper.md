@@ -36,11 +36,26 @@ Use this example to show a list of form steps with a number and title of the ste
 
 ## ProgressStepper
 
-This example can be used to show the progress of the stepper component based only on icons and showing a checkmark when the step has been finished.
+This example can be used to show the progress of the stepper component based on numbers or icons and showing a checkmark when the step has been finished.
+
+Steps show numbers by default. Completed steps show checkmarks.
 
 ```svelte example class="space-y-4"
-{#include Progress.svelte}
+{#include ProgressBasic.svelte}
 ```
+
+When icons are provided, they replace the default numbers. Completed steps still show checkmarks by default.
+
+```svelte example class="space-y-4"
+{#include ProgressIcon.svelte}
+```
+
+This example shows how you can manually override the status of specific steps. The first step is forced to `completed` and the last step is forced to `pending`.
+
+```svelte example class="space-y-4"
+{#include ProgressOverride.svelte}
+```
+
 
 ## DetailedStepper
 

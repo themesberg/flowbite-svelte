@@ -48,37 +48,32 @@ export const stepper = tv({
 // ProgressStepper
 export const progressStepper = tv({
   slots: {
-    base: "flex items-center w-full",
-    item: "flex items-center w-full",
-    circle: "flex items-center justify-center w-10 h-10 rounded-full lg:h-12 lg:w-12 shrink-0"
+    base: "flex items-center w-full relative",
+    item: "flex items-center justify-center z-10",
+    circle: "flex items-center justify-center w-10 h-10 rounded-full lg:h-12 lg:w-12 shrink-0",
+    line: "absolute h-1 top-1/2 -translate-y-1/2 bg-gray-100 dark:bg-gray-700",
+    progressLine: "absolute h-1 top-1/2 -translate-y-1/2 bg-primary-100 dark:bg-primary-800 transition-all duration-300 ease-in-out"
   },
 
   variants: {
     status: {
       completed: {
-        item: "text-primary-600 dark:text-primary-500 after:content-[''] after:w-full after:h-1 after:border-b after:border-primary-100 after:border-4 after:inline-block dark:after:border-primary-800",
+        item: "text-primary-600 dark:text-primary-500 flex-1",
         circle: "bg-primary-100 dark:bg-primary-800"
       },
       current: {
-        item: "after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block dark:after:border-gray-700",
-        circle: "bg-gray-100 dark:bg-gray-700"
+        item: "flex-1",
+        circle: "bg-primary-100 dark:bg-primary-800"
       },
       pending: {
-        item: "after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block dark:after:border-gray-700",
+        item: "flex-1",
         circle: "bg-gray-100 dark:bg-gray-700"
       }
-    },
-    isLast: {
-      true: {
-        item: "after:content-none"
-      },
-      false: {}
     }
   },
 
   defaultVariants: {
-    status: "pending",
-    isLast: false
+    status: "pending"
   }
 });
 
