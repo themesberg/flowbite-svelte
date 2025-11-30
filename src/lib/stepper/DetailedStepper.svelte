@@ -78,12 +78,6 @@
           type="button"
           class="flex w-full cursor-pointer items-center space-x-2.5 text-left transition-opacity hover:opacity-75 rtl:space-x-reverse"
           onclick={() => handleStepClick(index)}
-          onkeydown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              handleStepClick(index);
-            }
-          }}
         >
           <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })}>
             {#if status === "completed" && showCheckmarkForCompleted}
@@ -157,21 +151,6 @@
 </ol>
 
 <!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1624)
-## Props
-@prop steps = []
-@prop contentClass
-@prop class: className
-@prop classes
-@prop current = 0 - The current step index (bindable, 0-based)
-@prop clickable = true - Whether steps can be clicked to navigate
-@prop showCheckmarkForCompleted = true - Show checkmark for completed steps instead of icons
-@prop onStepClick - Callback fired when a step is clicked: (event: { current: number; last: number }) => void
-@prop ...restProps
-
 ## Features
 - **Clickable navigation**: Click or press Enter/Space on steps to navigate
 - **Auto status**: Automatically determines completed/current/pending status based on current index
@@ -185,3 +164,21 @@ The `current` prop is 1-based:
 - current=2 means first step is completed, second step is active
 - etc.
 -->
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1624)
+## Props
+@prop steps = []
+@prop contentClass
+@prop class: className
+@prop classes
+@prop current = 0 - The current step index (bindable, 1-based; 0 means no step active)
+@prop clickable = true - Whether steps can be clicked to navigate
+@prop showCheckmarkForCompleted = true - Show checkmark for completed steps instead of icons
+@prop onStepClick - Callback fired when a step is clicked: (event: { current: number; last: number }) => void
+@prop ...restProps
+-->
+

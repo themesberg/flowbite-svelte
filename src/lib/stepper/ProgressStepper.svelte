@@ -17,7 +17,7 @@
 
   // Animated progress with tweened store
   const animatedProgress = tweened(0, {
-    duration: 400,
+    duration: 100,
     easing: cubicOut
   });
 
@@ -70,26 +70,20 @@
 
   // Calculate line positions and progress
   // Lines should start from center of first circle and end at center of last circle
-  const lineStart = $derived(() => {
-    if (steps.length <= 1) return "0";
-    // Start from center of first item (each item is flex-1, so 50% of first item width)
-    return `${(1 / steps.length) * 50}%`;
-  });
+  const lineStart = $derived(
+    steps.length <= 1 ? "0" : `${(1 / steps.length) * 50}%`
+  );
 
-  const lineWidth = $derived(() => {
-    if (steps.length <= 1) return "0";
-    // Total width from center of first to center of last
-    return `${100 - (1 / steps.length) * 100}%`;
-  });
+  const lineWidth = $derived(
+    steps.length <= 1 ? "0" : `${100 - (1 / steps.length) * 100}%`
+  );
 
   // Calculate progress width using animated value
-  const progressWidth = $derived(() => {
-    if (steps.length <= 1) return "0";
-    const width = lineWidth();
-    if (width === "0") return "0";
-    // Scale animated progress to actual line width
-    return `${($animatedProgress / 100) * parseFloat(width)}%`;
-  });
+   const progressWidth = $derived(
+    steps.length <= 1 || lineWidth === "0"
+      ? "0"
+      : `${($animatedProgress / 100) * parseFloat(lineWidth)}%`
+  );
 </script>
 
 <ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
@@ -97,10 +91,10 @@
     {@render children()}
   {:else if steps}
     <!-- Background line (gray) - from center of first to center of last circle -->
-    <div class={line({ class: clsx(theme?.line, classes?.line) })} style="left: {lineStart()}; width: {lineWidth()}" aria-hidden="true"></div>
+    <div class={line({ class: clsx(theme?.line, classes?.line) })} style="left: {lineStart}; width: {lineWidth}" aria-hidden="true"></div>
 
     <!-- Progress line (colored, overlays the background) -->
-    <div class={progressLine({ class: clsx(theme?.progressLine, classes?.progressLine) })} style="left: {lineStart()}; width: {progressWidth()}" aria-hidden="true"></div>
+    <div class={progressLine({ class: clsx(theme?.progressLine, classes?.progressLine) })} style="left: {lineStart}; width: {progressWidth}" aria-hidden="true"></div>
 
     {#each steps as step, index (step.id)}
       {@const status = step.status ?? getStepStatus(index)}
@@ -179,21 +173,6 @@
 </ol>
 
 <!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Type
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1609)
-## Props
-@prop children
-@prop steps = []
-@prop class: className
-@prop classes
-@prop current = 0 - The current step index (bindable, 0-based)
-@prop clickable = true - Whether steps can be clicked to navigate
-@prop showCheckmarkForCompleted = true - Show checkmark for completed steps instead of numbers/icons
-@prop onStepClick - Callback fired when a step is clicked: (event: { current: number; last: number }) => void
-@prop ...restProps
-
 ## Features
 - **Clickable navigation**: Click or press Enter/Space on steps to navigate
 - **Auto status**: Automatically determines completed/current/pending status based on current index
@@ -210,3 +189,21 @@ The `current` prop is 1-based:
 - current=2 means first step is completed, second step is active
 - etc.
 -->
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1609)
+## Props
+@prop children
+@prop steps = []
+@prop class: className
+@prop classes
+@prop current = 0 - The current step index (bindable, 1-based; 0 means no step active)
+@prop clickable = true - Whether steps can be clicked to navigate
+@prop showCheckmarkForCompleted = true - Show checkmark for completed steps instead of numbers/icons
+@prop onStepClick - Callback fired when a step is clicked: (event: { current: number; last: number }) => void
+@prop ...restProps
+-->
+

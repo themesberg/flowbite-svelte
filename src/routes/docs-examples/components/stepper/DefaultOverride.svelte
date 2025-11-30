@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Stepper, P, Heading } from "flowbite-svelte";
   import { CheckOutline, UserCircleOutline, BadgeCheckOutline } from "flowbite-svelte-icons";
+  let current = $state(1);
 </script>
 
 <Heading tag="h3" class="mb-2 text-lg font-semibold">Example 5: With custom status override</Heading>
@@ -11,5 +12,6 @@
     { label: "Account", description: "Info", status: "current", icon: BadgeCheckOutline },
     { label: "Confirmation", status: "pending", icon: CheckOutline }
   ]}
+  bind:current
   clickable={false}
 />

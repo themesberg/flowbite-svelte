@@ -66,7 +66,8 @@ This example shows how you can manually override the status of specific steps. T
 
 ## DetailedStepper
 
-Use this example to show an extra subtitle next to the number and the title of the steppper component based on an ordered list element.
+Use this example to show an extra subtitle next to the number and the title of the stepper component based on an ordered list element.
+
 
 - `onStepClick` prop can be used for an event handler.
 - `clickable` prop allows clicking steps to navigate (default: true)
