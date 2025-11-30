@@ -98,10 +98,13 @@ This example can be used to show a list of steps aligned vertically where you ca
 ```svelte example
 {#include VerticalBasic.svelte}
 ```
+This example shows how to use custom icons:
 
 ```svelte example
 {#include VerticalIcon.svelte}
 ```
+
+This example shows how to overide using custom status:
 
 ```svelte example
 {#include VerticalOverride.svelte}
@@ -115,9 +118,13 @@ This example can be used to show the number of steps similar to how a breadcrumb
 {#include BreadcrumbBasic.svelte}
 ```
 
+This example shows how to use custom icons:
+
 ```svelte example
 {#include BreadcrumbIcon.svelte}
 ```
+
+This example shows how to overide using custom status:
 
 ```svelte example
 {#include BreadcrumbOverride.svelte}
@@ -131,9 +138,13 @@ Use this example to show the number of steps inside a timeline component using i
 {#include TimelineBasic.svelte}
 ```
 
+This example shows how to use custom icons:
+
 ```svelte example
 {#include TimelineIcon.svelte}
 ```
+
+This example shows how to overide using custom status:
 
 ```svelte example
 {#include TimelineOverride.svelte}
