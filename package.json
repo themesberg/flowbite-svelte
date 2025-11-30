@@ -709,9 +709,21 @@
       "types": "./dist/stepper/BreadcrumbStepper.svelte.d.ts",
       "svelte": "./dist/stepper/BreadcrumbStepper.svelte"
     },
+    "./CheckmarkIcon.svelte": {
+      "types": "./dist/stepper/CheckmarkIcon.svelte.d.ts",
+      "svelte": "./dist/stepper/CheckmarkIcon.svelte"
+    },
     "./DetailedStepper.svelte": {
       "types": "./dist/stepper/DetailedStepper.svelte.d.ts",
       "svelte": "./dist/stepper/DetailedStepper.svelte"
+    },
+    "./DoubleArrowIcon.svelte": {
+      "types": "./dist/stepper/DoubleArrowIcon.svelte.d.ts",
+      "svelte": "./dist/stepper/DoubleArrowIcon.svelte"
+    },
+    "./ProfileCardIcon.svelte": {
+      "types": "./dist/stepper/ProfileCardIcon.svelte.d.ts",
+      "svelte": "./dist/stepper/ProfileCardIcon.svelte"
     },
     "./ProgressStepper.svelte": {
       "types": "./dist/stepper/ProgressStepper.svelte.d.ts",

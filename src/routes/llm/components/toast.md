@@ -505,7 +505,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1891)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1911)
 
 #### Props
 
@@ -527,7 +527,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1906)
+[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1926)
 
 #### Props
 

@@ -871,7 +871,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1702)
+[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1722)
 
 #### Props
 
@@ -892,7 +892,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1734)
+[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1754)
 
 #### Props
 
@@ -904,7 +904,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1723)
+[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1743)
 
 #### Props
 
@@ -917,7 +917,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1715)
+[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1735)
 
 #### Props
 
@@ -932,7 +932,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1690)
+[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1710)
 
 #### Props
 
@@ -949,7 +949,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1739)
+[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1759)
 
 #### Props
 
@@ -960,7 +960,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1754)
+[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1774)
 
 #### Props
 

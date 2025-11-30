@@ -20,7 +20,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[DividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2171)
+[DividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2191)
 
 #### Props
 
@@ -37,7 +37,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[PaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2165)
+[PaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2185)
 
 #### Props
 
@@ -49,7 +49,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2151)
+[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2171)
 
 #### Props
 
