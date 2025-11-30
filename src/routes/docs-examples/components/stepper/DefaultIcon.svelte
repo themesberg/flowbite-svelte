@@ -1,22 +1,33 @@
 <script lang="ts">
-  import { DetailedStepper, Button, P, Heading } from "flowbite-svelte";
-  import { BellOutline, ClipboardOutline, CogOutline } from "flowbite-svelte-icons";
+  import { Stepper, Button, P, Heading } from "flowbite-svelte";
+  import { CheckOutline, UserCircleOutline, BadgeCheckOutline } from "flowbite-svelte-icons";
 
   let current = $state(1);
   const steps = [
-    { id: 1, label: "Account Info", description: "Enter your account details", icon: BellOutline },
-    { id: 2, label: "Company Info", description: "Provide company information", icon: ClipboardOutline },
-    { id: 3, label: "Review", description: "Review and submit", icon: CogOutline }
+    {
+      label: "Personal",
+      description: "Info",
+      icon: UserCircleOutline
+    },
+    {
+      label: "Account",
+      description: "Info",
+      icon: BadgeCheckOutline
+    },
+    {
+      label: "Confirmation",
+      icon: CheckOutline
+    }
   ];
 </script>
 
-<Heading tag="h3" class="mt-8 mb-2 text-lg font-semibold">Example 3: With icons - Checkmark for completed ✓</Heading>
+<Heading tag="h3" class="mb-2 text-lg font-semibold">Example 3: With icons - Checkmark for completed ✓</Heading>
 <P class="mb-2 text-sm text-gray-600">When you click step 2 or 3, previous steps show checkmarks (default: showCheckmarkForCompleted=true)</P>
-<DetailedStepper {steps} bind:current />
+<Stepper {steps} bind:current />
 
 <Heading tag="h3" class="mt-8 mb-2 text-lg font-semibold">Example 4: With icons - Keep icons for completed</Heading>
 <P class="mb-2 text-sm text-gray-600">All steps keep their icons (showCheckmarkForCompleted=false)</P>
-<DetailedStepper {steps} bind:current showCheckmarkForCompleted={false} />
+<Stepper {steps} bind:current showCheckmarkForCompleted={false} />
 
 <div class="mt-8 flex gap-4">
   <Button onclick={() => (current = Math.max(0, current - 1))} disabled={current === 0} class="rounded bg-gray-500 px-4 py-2 disabled:opacity-50">Previous</Button>

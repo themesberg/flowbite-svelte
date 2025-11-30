@@ -22,7 +22,7 @@ export const stepper = tv({
         content: "after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500"
       },
       current: {
-        item: "md:w-full sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700",
+        item: "text-primary-600 dark:text-primary-500 md:w-full sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700",
         content: "after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500"
       },
       pending: {
@@ -32,8 +32,8 @@ export const stepper = tv({
     },
     isLast: {
       true: {
-        item: "after:content-none after:hidden",
-        content: "after:content-none"
+        item: "after:!hidden",
+        content: "after:!hidden"
       },
       false: {}
     }
@@ -51,23 +51,23 @@ export const progressStepper = tv({
     base: "flex items-center w-full relative",
     item: "flex items-center justify-center z-10",
     circle: "flex items-center justify-center w-10 h-10 rounded-full lg:h-12 lg:w-12 shrink-0",
-    line: "absolute h-1 top-1/2 -translate-y-1/2 bg-gray-100 dark:bg-gray-700",
-    progressLine: "absolute h-1 top-1/2 -translate-y-1/2 bg-primary-100 dark:bg-primary-800 transition-all duration-300 ease-in-out"
+    line: "absolute h-1 top-1/2 -translate-y-1/2 bg-gray-200 dark:bg-gray-700",
+    progressLine: "absolute h-1 top-1/2 -translate-y-1/2 bg-primary-600 dark:bg-primary-500 transition-all duration-300 ease-in-out"
   },
 
   variants: {
     status: {
       completed: {
-        item: "text-primary-600 dark:text-primary-500 flex-1",
-        circle: "bg-primary-100 dark:bg-primary-800"
+        item: "text-primary-600 dark:text-primary-400 flex-1",
+        circle: "bg-primary-600 dark:bg-primary-500 text-white"
       },
       current: {
         item: "flex-1",
-        circle: "bg-primary-100 dark:bg-primary-800"
+        circle: "bg-primary-600 dark:bg-primary-500 text-white"
       },
       pending: {
         item: "flex-1",
-        circle: "bg-gray-100 dark:bg-gray-700"
+        circle: "bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400"
       }
     }
   },

@@ -31,7 +31,15 @@ There are multiple examples that you can use including horizontal or vertical al
 Use this example to show a list of form steps with a number and title of the step in a horizontal alignment.
 
 ```svelte example class="space-y-4"
-{#include Default.svelte}
+{#include DefaultBasic.svelte}
+```
+
+```svelte example class="space-y-4"
+{#include DefaultIcon.svelte}
+```
+
+```svelte example class="space-y-4"
+{#include DefaultOverride.svelte}
 ```
 
 ## ProgressStepper
@@ -56,7 +64,6 @@ This example shows how you can manually override the status of specific steps. T
 {#include ProgressOverride.svelte}
 ```
 
-
 ## DetailedStepper
 
 Use this example to show an extra subtitle next to the number and the title of the steppper component based on an ordered list element.
@@ -68,14 +75,11 @@ Use this example to show an extra subtitle next to the number and the title of t
 {#include DetailedBasic.svelte}
 ```
 
-### showCheckmarkForCompleted
 `showCheckmarkForCompleted` shows checkmark for completed steps instead of icons (default: true).
 
 ```svelte example
 {#include DetailedIcon.svelte}
 ```
-
-### Custom status
 
 Following example shows how to override `current` prop using custom status.
 

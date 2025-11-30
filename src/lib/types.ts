@@ -1596,6 +1596,10 @@ export interface Step {
 export interface StepperProps extends HTMLOlAttributes, StepperVariants {
   children?: Snippet;
   steps?: Step[];
+  current?: number; // Current step index (bindable, 1-based)
+  clickable?: boolean; // Allow clicking steps to navigate (default: true)
+  showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps (default: true)
+  onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
 }
 
 // ProgressStepper
