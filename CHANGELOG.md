@@ -1,10 +1,20 @@
 # Changelog
 
+## 1.29.1
+
+### Patch Changes
+
+- fix: add DropdownItem onclick on anchor element
+
+  Dropdown item component updated with explicit onclick attribute handling on anchor elements. Theme definitions modified to enforce full-width, left-aligned layout for dropdown items. Minor end-of-file formatting adjustment to package.json.
+
 ## 1.29.0
 
 ### Minor Changes
 
 - feat: add click navigation to all stepper components
+
+Converted steppers to data-driven, interactive components: added a bindable 1-based current (some allow 0), clickable, showCheckmarkForCompleted, and onStepClick; per-step status computation, checkmark/icon rendering, theme updates, new icons, types adjustments, and many docs/examples added.
 
 ## 1.28.3
 
