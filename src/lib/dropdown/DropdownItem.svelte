@@ -22,7 +22,7 @@
 
 <li class={li({ class: clsx(styling.li) })}>
   {#if href}
-    <a {href} {...restProps} class={finalClass}>
+    <a {href} {onclick} {...restProps} class={finalClass}>
       {@render children()}
     </a>
   {:else if onclick}
