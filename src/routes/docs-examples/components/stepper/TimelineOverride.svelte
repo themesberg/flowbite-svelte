@@ -12,7 +12,7 @@
       description: "Browse our products",
       icon: HomeOutline,
       status: "completed" as const, // Explicitly completed
-      iconClass: "h-3.5 w-3.5"
+      iconClass: "h-5 w-5"
     },
     {
       id: 2,
@@ -20,7 +20,7 @@
       description: "Review your cart",
       icon: CartOutline,
       // status will be auto-determined based on current
-      iconClass: "h-3.5 w-3.5"
+      iconClass: "h-5 w-5"
     },
     {
       id: 3,
@@ -28,7 +28,7 @@
       description: "Complete payment",
       icon: DollarOutline,
       // status will be auto-determined based on current
-      iconClass: "h-3.5 w-3.5"
+      iconClass: "h-5 w-5"
     },
     {
       id: 4,
@@ -36,7 +36,7 @@
       description: "Track your order",
       icon: TruckOutline,
       status: "pending" as const, // Force pending regardless of current
-      iconClass: "h-3.5 w-3.5"
+      iconClass: "h-5 w-5"
     }
   ];
 

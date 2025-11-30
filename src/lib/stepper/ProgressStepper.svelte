@@ -113,7 +113,7 @@
           {/if}
         </button>
       {:else}
-        <span class={circle({ status, class: clsx(theme?.circle, classes?.circle) })}>
+        <span class={circle({ status, class: clsx(theme?.circle, classes?.circle) })} aria-current={status === "current" ? "step" : undefined}>
           {#if status === "completed" && showCheckmarkForCompleted}
             <!-- Checkmark for completed steps -->
             <CheckmarkIcon variant="tick" />

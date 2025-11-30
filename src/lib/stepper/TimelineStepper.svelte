@@ -1,5 +1,6 @@
 <script lang="ts">
   import { setContext } from "svelte";
+  import type { StepStatus, TimelineStep } from "$lib/types";
   import CheckmarkIcon from "./CheckmarkIcon.svelte";
   import ProfileCardIcon from "./ProfileCardIcon.svelte";
   import { timelineStepper } from "./theme";
@@ -50,6 +51,16 @@
   }
 </script>
 
+{#snippet stepIcon(status: StepStatus, step: TimelineStep)}
+  {#if status === "completed" && showCheckmarkForCompleted}
+    <CheckmarkIcon class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
+  {:else if step.icon}
+    <step.icon class={clsx(step.iconClass) || "h-3.5 w-3.5"} />
+  {:else}
+    <ProfileCardIcon />
+  {/if}
+{/snippet}
+
 <ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
   {#each steps as step, index (step.id)}
     {@const status = step.status ?? getStepStatus(index)}
@@ -64,23 +75,11 @@
           onclick={() => handleStepClick(index)}
           aria-current={status === "current" ? "step" : undefined}
         >
-          {#if status === "completed" && showCheckmarkForCompleted}
-            <CheckmarkIcon class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
-          {:else if step.icon}
-            <step.icon class={clsx(step.iconClass) || "h-3.5 w-3.5"} />
-          {:else}
-            <ProfileCardIcon />
-          {/if}
+          {@render stepIcon(status, step)}
         </button>
       {:else}
-        <span class={circle({ status, class: clsx(theme?.circle, classes?.circle) })}>
-          {#if status === "completed" && showCheckmarkForCompleted}
-            <CheckmarkIcon class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
-          {:else if step.icon}
-            <step.icon class={clsx(step.iconClass) || "h-3.5 w-3.5"} />
-          {:else}
-            <ProfileCardIcon />
-          {/if}
+        <span class={circle({ status, class: clsx(theme?.circle, classes?.circle) })} aria-current={status === "current" ? "step" : undefined}>
+          {@render stepIcon(status, step)}
         </span>
       {/if}
       <div class={clsx(contentClass)}>

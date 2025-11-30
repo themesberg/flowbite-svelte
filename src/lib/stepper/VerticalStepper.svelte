@@ -1,5 +1,6 @@
 <script lang="ts">
   import { setContext } from "svelte";
+  import type { StepStatus, Step } from "$lib/types";
   import CheckmarkIcon from "./CheckmarkIcon.svelte";
   import { verticalStepper } from "./theme";
   import type { VerticalStepperProps } from "$lib/types";
@@ -49,6 +50,18 @@
   }
 </script>
 
+{#snippet stepIcon(status: StepStatus, step: Step)}
+  {#if status === "completed" && showCheckmarkForCompleted}
+    <CheckmarkIcon variant="simple" />
+  {:else if status === "current"}
+    {#if step.icon}
+      <step.icon class={step.iconClass || "h-4 w-4"} />
+    {:else}
+      <CheckmarkIcon variant="simple" />
+    {/if}
+  {/if}
+{/snippet}
+
 <ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
   {#each steps as step, index (step.id)}
     {@const status = step.status ?? getStepStatus(index)}
@@ -63,16 +76,7 @@
           <div class={content({ class: clsx(theme?.content, classes?.content) })}>
             <span class="sr-only">{step.label}</span>
             <h3 class="font-medium">{step.id}. {step.label}</h3>
-            {#if status === "completed" && showCheckmarkForCompleted}
-              <CheckmarkIcon variant="simple" />
-            {:else if status === "current"}
-              {#if step.icon}
-                <step.icon class={step.iconClass || "h-4 w-4"} />
-              {:else}
-                <!-- Show checkmark for visual consistency, though step is not yet completed -->
-                <CheckmarkIcon variant="simple" />
-              {/if}
-            {/if}
+            {@render stepIcon(status, step)}
           </div>
         </button>
       {:else}
@@ -80,16 +84,7 @@
           <div class={content({ class: clsx(theme?.content, classes?.content) })}>
             <span class="sr-only">{step.label}</span>
             <h3 class="font-medium">{step.id}. {step.label}</h3>
-            {#if status === "completed" && showCheckmarkForCompleted}
-              <CheckmarkIcon variant="simple" />
-            {:else if status === "current"}
-              {#if step.icon}
-                <step.icon class={step.iconClass || "h-4 w-4"} />
-              {:else}
-                <!-- Show checkmark for visual consistency, though step is not yet completed -->
-                <CheckmarkIcon variant="simple" />
-              {/if}
-            {/if}
+            {@render stepIcon(status, step)}
           </div>
         </div>
       {/if}

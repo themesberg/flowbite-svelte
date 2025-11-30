@@ -88,25 +88,27 @@
           {/if}
         </button>
       {:else}
-        <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })}>
-          {#if status === "completed" && showCheckmarkForCompleted}
-            {#if step.icon}
+        <span aria-current={status === "current" ? "step" : undefined} class="flex items-center">
+          <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })}>
+            {#if status === "completed" && showCheckmarkForCompleted}
+              {#if step.icon}
+                <step.icon class={step.iconClass || "h-3 w-3"} />
+              {:else}
+                <CheckmarkIcon variant="simple" class="h-3 w-3" />
+              {/if}
+            {:else if step.icon}
               <step.icon class={step.iconClass || "h-3 w-3"} />
             {:else}
-              <CheckmarkIcon variant="simple" class="h-3 w-3" />
+              {step.id}
             {/if}
-          {:else if step.icon}
-            <step.icon class={step.iconClass || "h-3 w-3"} />
-          {:else}
-            {step.id}
+          </span>
+
+          {step.label}
+
+          {#if step.shortLabel}
+            <span class="hidden sm:ms-2 sm:inline-flex">{step.shortLabel}</span>
           {/if}
         </span>
-
-        {step.label}
-
-        {#if step.shortLabel}
-          <span class="hidden sm:ms-2 sm:inline-flex">{step.shortLabel}</span>
-        {/if}
       {/if}
 
       {#if index < steps.length - 1}

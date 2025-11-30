@@ -101,8 +101,8 @@
           </span>
         </button>
       {:else}
-        <div class="flex items-center space-x-2.5 rtl:space-x-reverse">
-          <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })} aria-current={status === "current" ? "step" : undefined}>
+        <div class="flex items-center space-x-2.5 rtl:space-x-reverse" aria-current={status === "current" ? "step" : undefined}>
+          <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })}>
             {#if status === "completed" && showCheckmarkForCompleted}
               <!-- Checkmark for completed steps -->
               <CheckmarkIcon variant="tick" />
