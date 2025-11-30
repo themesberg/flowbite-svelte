@@ -8,7 +8,7 @@
   import { Tween } from "svelte/motion";
   import { cubicOut } from "svelte/easing";
 
-  let { children, steps = [], class: className, classes, current = $bindable(0), clickable = true, showCheckmarkForCompleted = true, onStepClick, ...restProps }: ProgressStepperProps = $props();
+  let { steps = [], class: className, classes, current = $bindable(0), clickable = true, showCheckmarkForCompleted = true, onStepClick, ...restProps }: ProgressStepperProps = $props();
 
   // Ensure current is within valid bounds
   $effect(() => {
@@ -80,53 +80,54 @@
 </script>
 
 <ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
-  {#if children}
-    {@render children()}
-  {:else if steps}
-    <!-- Background line (gray) - from center of first to center of last circle -->
-    <div class={line({ class: clsx(theme?.line, classes?.line) })} style="left: {lineStart}; width: {lineWidth}" aria-hidden="true"></div>
+  <!-- Background line (gray) - from center of first to center of last circle -->
+  <div class={line({ class: clsx(theme?.line, classes?.line) })} style="left: {lineStart}; width: {lineWidth}" aria-hidden="true"></div>
 
-    <!-- Progress line (colored, overlays the background) -->
-    <div class={progressLine({ class: clsx(theme?.progressLine, classes?.progressLine) })} style="left: {lineStart}; width: {progressWidth}" aria-hidden="true"></div>
+  <!-- Progress line (colored, overlays the background) -->
+  <div class={progressLine({ class: clsx(theme?.progressLine, classes?.progressLine) })} style="left: {lineStart}; width: {progressWidth}" aria-hidden="true"></div>
 
-    {#each steps as step, index (step.id)}
-      {@const status = step.status ?? getStepStatus(index)}
-      <li
-        class={item({
-          status,
-          class: clsx(theme?.item, classes?.item)
-        })}
-      >
-        {#if clickable}
-          <button type="button" class={circle({ status, class: clsx(theme?.circle, classes?.circle, "cursor-pointer transition-all hover:brightness-110") })} onclick={() => handleStepClick(index)}>
-            {#if status === "completed" && showCheckmarkForCompleted}
-              <!-- Checkmark for completed steps -->
-              <CheckmarkIcon variant="tick" />
-            {:else if step.icon}
-              <!-- Show icon if provided -->
-              <step.icon class={clsx(step.iconClass) || "h-5 w-5 lg:h-6 lg:w-6"} />
-            {:else}
-              <!-- Show number for steps without icon -->
-              <span class="text-sm font-semibold">{step.id}</span>
-            {/if}
-          </button>
-        {:else}
-          <span class={circle({ status, class: clsx(theme?.circle, classes?.circle) })}>
-            {#if status === "completed" && showCheckmarkForCompleted}
-              <!-- Checkmark for completed steps -->
-              <CheckmarkIcon variant="tick" />
-            {:else if step.icon}
-              <!-- Show icon if provided -->
-              <step.icon class={clsx(step.iconClass) || "h-5 w-5 lg:h-6 lg:w-6"} />
-            {:else}
-              <!-- Show number for steps without icon -->
-              <span class="text-sm font-semibold">{step.id}</span>
-            {/if}
-          </span>
-        {/if}
-      </li>
-    {/each}
-  {/if}
+  {#each steps as step, index (step.id)}
+    {@const status = step.status ?? getStepStatus(index)}
+    <li
+      class={item({
+        status,
+        class: clsx(theme?.item, classes?.item)
+      })}
+    >
+      {#if clickable}
+        <button
+          type="button"
+          class={circle({ status, class: clsx(theme?.circle, classes?.circle, "cursor-pointer transition-all hover:brightness-110") })}
+          onclick={() => handleStepClick(index)}
+          aria-current={status === "current" ? "step" : undefined}
+        >
+          {#if status === "completed" && showCheckmarkForCompleted}
+            <!-- Checkmark for completed steps -->
+            <CheckmarkIcon variant="tick" />
+          {:else if step.icon}
+            <!-- Show icon if provided -->
+            <step.icon class={clsx(step.iconClass) || "h-5 w-5 lg:h-6 lg:w-6"} />
+          {:else}
+            <!-- Show number for steps without icon -->
+            <span class="text-sm font-semibold">{step.id}</span>
+          {/if}
+        </button>
+      {:else}
+        <span class={circle({ status, class: clsx(theme?.circle, classes?.circle) })}>
+          {#if status === "completed" && showCheckmarkForCompleted}
+            <!-- Checkmark for completed steps -->
+            <CheckmarkIcon variant="tick" />
+          {:else if step.icon}
+            <!-- Show icon if provided -->
+            <step.icon class={clsx(step.iconClass) || "h-5 w-5 lg:h-6 lg:w-6"} />
+          {:else}
+            <!-- Show number for steps without icon -->
+            <span class="text-sm font-semibold">{step.id}</span>
+          {/if}
+        </span>
+      {/if}
+    </li>
+  {/each}
 </ol>
 
 <!--

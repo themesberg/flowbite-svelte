@@ -7,7 +7,7 @@
   import type { BreadcrumbStepperProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, steps = [], class: className, classes, current = $bindable(1), clickable = true, showCheckmarkForCompleted = true, onStepClick, ...restProps }: BreadcrumbStepperProps = $props();
+  let { steps = [], class: className, classes, current = $bindable(1), clickable = true, showCheckmarkForCompleted = true, onStepClick, ...restProps }: BreadcrumbStepperProps = $props();
 
   // Ensure current is within valid bounds
   $effect(() => {
@@ -51,46 +51,22 @@
 </script>
 
 <ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
-  {#if children}
-    {@render children()}
-  {:else if steps}
-    {#each steps as step, index (step.id)}
-      {@const status = step.status ?? getStepStatus(index)}
-      <li
-        class={item({
-          status,
-          hasChevron: index < steps.length - 1,
-          class: clsx(theme?.item, classes?.item)
-        })}
-      >
-        {#if clickable}
-          <button
-            type="button"
-            class="flex cursor-pointer items-center transition-opacity hover:opacity-75"
-            onclick={() => handleStepClick(index)}
-            aria-current={status === "current" ? "step" : undefined}
-          >
-            <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })}>
-              {#if status === "completed" && showCheckmarkForCompleted}
-                {#if step.icon}
-                  <step.icon class={step.iconClass || "h-3 w-3"} />
-                {:else}
-                  <CheckmarkIcon variant="simple" class="h-3 w-3" />
-                {/if}
-              {:else if step.icon}
-                <step.icon class={step.iconClass || "h-3 w-3"} />
-              {:else}
-                {step.id}
-              {/if}
-            </span>
-
-            {step.label}
-
-            {#if step.shortLabel}
-              <span class="hidden sm:ms-2 sm:inline-flex">{step.shortLabel}</span>
-            {/if}
-          </button>
-        {:else}
+  {#each steps as step, index (step.id)}
+    {@const status = step.status ?? getStepStatus(index)}
+    <li
+      class={item({
+        status,
+        hasChevron: index < steps.length - 1,
+        class: clsx(theme?.item, classes?.item)
+      })}
+    >
+      {#if clickable}
+        <button
+          type="button"
+          class="flex cursor-pointer items-center transition-opacity hover:opacity-75"
+          onclick={() => handleStepClick(index)}
+          aria-current={status === "current" ? "step" : undefined}
+        >
           <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })}>
             {#if status === "completed" && showCheckmarkForCompleted}
               {#if step.icon}
@@ -110,14 +86,34 @@
           {#if step.shortLabel}
             <span class="hidden sm:ms-2 sm:inline-flex">{step.shortLabel}</span>
           {/if}
-        {/if}
+        </button>
+      {:else}
+        <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })}>
+          {#if status === "completed" && showCheckmarkForCompleted}
+            {#if step.icon}
+              <step.icon class={step.iconClass || "h-3 w-3"} />
+            {:else}
+              <CheckmarkIcon variant="simple" class="h-3 w-3" />
+            {/if}
+          {:else if step.icon}
+            <step.icon class={step.iconClass || "h-3 w-3"} />
+          {:else}
+            {step.id}
+          {/if}
+        </span>
 
-        {#if index < steps.length - 1}
-          <DoubleArrowIcon />
+        {step.label}
+
+        {#if step.shortLabel}
+          <span class="hidden sm:ms-2 sm:inline-flex">{step.shortLabel}</span>
         {/if}
-      </li>
-    {/each}
-  {/if}
+      {/if}
+
+      {#if index < steps.length - 1}
+        <DoubleArrowIcon />
+      {/if}
+    </li>
+  {/each}
 </ol>
 
 <!--

@@ -1,12 +1,13 @@
 <script lang="ts">
   import { setContext } from "svelte";
+  import type { StepStatus, Step } from "$lib/types";
   import CheckmarkIcon from "./CheckmarkIcon.svelte";
   import { stepper } from "./theme";
   import type { StepperProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, steps = [], class: className, classes, current = $bindable(1), clickable = true, showCheckmarkForCompleted = true, onStepClick, ...restProps }: StepperProps = $props();
+  let { steps = [], class: className, classes, current = $bindable(1), clickable = true, showCheckmarkForCompleted = true, onStepClick, ...restProps }: StepperProps = $props();
 
   // Ensure current is within valid bounds
   $effect(() => {
@@ -52,66 +53,56 @@
   }
 </script>
 
-<ol {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-  {#if children}
-    {@render children()}
-  {:else if steps}
-    {#each steps as step, index (step.id ?? index)}
-      {@const status = step.status ?? getStepStatus(index)}
-      <li
-        class={item({
-          status,
-          isLast: index === steps.length - 1,
-          class: clsx(theme?.item, classes?.item)
-        })}
-      >
-        {#if clickable}
-          <button
-            type="button"
-            class={content({
-              status,
-              isLast: index === steps.length - 1,
-              class: clsx(theme?.content, classes?.content, "w-full cursor-pointer text-left transition-opacity hover:opacity-75")
-            })}
-            onclick={() => handleStepClick(index)}
-            aria-current={status === "current" ? "step" : undefined}
-          >
-            {#if status === "completed" && showCheckmarkForCompleted}
-              <CheckmarkIcon />
-            {:else if step.icon}
-              <step.icon class={clsx(step.iconClass) || "me-2.5 h-3.5 w-3.5 sm:h-4 sm:w-4"} />
-            {:else}
-              <span class="me-2">{step.id || index + 1}</span>
-            {/if}
-            {step.label}
-            {#if step.description}
-              <span class={clsx(step.descriptionClass) || "hidden sm:ms-2 sm:inline-flex"}>{step.description}</span>
-            {/if}
-          </button>
-        {:else}
-          <span
-            class={content({
-              status,
-              isLast: index === steps.length - 1,
-              class: clsx(theme?.content, classes?.content)
-            })}
-          >
-            {#if status === "completed" && showCheckmarkForCompleted}
-              <CheckmarkIcon />
-            {:else if step.icon}
-              <step.icon class={clsx(step.iconClass) || "me-2.5 h-3.5 w-3.5 sm:h-4 sm:w-4"} />
-            {:else}
-              <span class="me-2">{step.id || index + 1}</span>
-            {/if}
-            {step.label}
-            {#if step.description}
-              <span class={clsx(step.descriptionClass) || "hidden sm:ms-2 sm:inline-flex"}>{step.description}</span>
-            {/if}
-          </span>
-        {/if}
-      </li>
-    {/each}
+{#snippet stepContent(step: Step, status: StepStatus, index: number)}
+  {#if status === "completed" && showCheckmarkForCompleted}
+    <CheckmarkIcon />
+  {:else if step.icon}
+    <step.icon class={clsx(step.iconClass) || "me-2.5 h-3.5 w-3.5 sm:h-4 sm:w-4"} />
+  {:else}
+    <span class="me-2">{step.id || index + 1}</span>
   {/if}
+  {step.label}
+  {#if step.description}
+    <span class={clsx(step.descriptionClass) || "hidden sm:ms-2 sm:inline-flex"}>{step.description}</span>
+  {/if}
+{/snippet}
+
+<ol {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  {#each steps as step, index (step.id ?? index)}
+    {@const status = step.status ?? getStepStatus(index)}
+    <li
+      class={item({
+        status,
+        isLast: index === steps.length - 1,
+        class: clsx(theme?.item, classes?.item)
+      })}
+    >
+      {#if clickable}
+        <button
+          type="button"
+          class={content({
+            status,
+            isLast: index === steps.length - 1,
+            class: clsx(theme?.content, classes?.content, "w-full cursor-pointer text-left transition-opacity hover:opacity-75")
+          })}
+          onclick={() => handleStepClick(index)}
+          aria-current={status === "current" ? "step" : undefined}
+        >
+          {@render stepContent(step, status, index)}
+        </button>
+      {:else}
+        <span
+          class={content({
+            status,
+            isLast: index === steps.length - 1,
+            class: clsx(theme?.content, classes?.content)
+          })}
+        >
+          {@render stepContent(step, status, index)}
+        </span>
+      {/if}
+    </li>
+  {/each}
 </ol>
 
 <!--

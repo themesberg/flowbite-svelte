@@ -7,18 +7,7 @@
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let {
-    children,
-    steps = [],
-    class: className,
-    classes,
-    contentClass,
-    current = $bindable(1),
-    clickable = true,
-    showCheckmarkForCompleted = true,
-    onStepClick,
-    ...restProps
-  }: TimelineStepperProps = $props();
+  let { steps = [], class: className, classes, contentClass, current = $bindable(1), clickable = true, showCheckmarkForCompleted = true, onStepClick, ...restProps }: TimelineStepperProps = $props();
 
   // Ensure current is within valid bounds
   $effect(() => {
@@ -62,50 +51,46 @@
 </script>
 
 <ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
-  {#if children}
-    {@render children()}
-  {:else if steps}
-    {#each steps as step, index (step.id)}
-      {@const status = step.status ?? getStepStatus(index)}
-      <li class={item({ isLast: index === steps.length - 1, class: clsx(theme?.item, classes?.item) })}>
-        {#if clickable}
-          <button
-            type="button"
-            class="absolute -start-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full ring-4 ring-white transition-opacity hover:opacity-75 dark:ring-gray-900 {circle({
-              status,
-              class: clsx(theme?.circle, classes?.circle)
-            })}"
-            onclick={() => handleStepClick(index)}
-            aria-current={status === "current" ? "step" : undefined}
-          >
-            {#if status === "completed" && showCheckmarkForCompleted}
-              <CheckmarkIcon class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
-            {:else if step.icon}
-              <step.icon class={clsx(step.iconClass) || "h-3.5 w-3.5"} />
-            {:else}
-              <ProfileCardIcon />
-            {/if}
-          </button>
-        {:else}
-          <span class={circle({ status, class: clsx(theme?.circle, classes?.circle) })}>
-            {#if status === "completed" && showCheckmarkForCompleted}
-              <CheckmarkIcon class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
-            {:else if step.icon}
-              <step.icon class={clsx(step.iconClass) || "h-3.5 w-3.5"} />
-            {:else}
-              <ProfileCardIcon />
-            {/if}
-          </span>
-        {/if}
-        <div class={clsx(contentClass)}>
-          <h3 class="leading-tight font-medium">{step.label}</h3>
-          {#if step.description}
-            <p class="text-sm">{step.description}</p>
+  {#each steps as step, index (step.id)}
+    {@const status = step.status ?? getStepStatus(index)}
+    <li class={item({ isLast: index === steps.length - 1, class: clsx(theme?.item, classes?.item) })}>
+      {#if clickable}
+        <button
+          type="button"
+          class="absolute -start-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full ring-4 ring-white transition-opacity hover:opacity-75 dark:ring-gray-900 {circle({
+            status,
+            class: clsx(theme?.circle, classes?.circle)
+          })}"
+          onclick={() => handleStepClick(index)}
+          aria-current={status === "current" ? "step" : undefined}
+        >
+          {#if status === "completed" && showCheckmarkForCompleted}
+            <CheckmarkIcon class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
+          {:else if step.icon}
+            <step.icon class={clsx(step.iconClass) || "h-3.5 w-3.5"} />
+          {:else}
+            <ProfileCardIcon />
           {/if}
-        </div>
-      </li>
-    {/each}
-  {/if}
+        </button>
+      {:else}
+        <span class={circle({ status, class: clsx(theme?.circle, classes?.circle) })}>
+          {#if status === "completed" && showCheckmarkForCompleted}
+            <CheckmarkIcon class="h-3.5 w-3.5 text-green-500 dark:text-green-400" />
+          {:else if step.icon}
+            <step.icon class={clsx(step.iconClass) || "h-3.5 w-3.5"} />
+          {:else}
+            <ProfileCardIcon />
+          {/if}
+        </span>
+      {/if}
+      <div class={clsx(contentClass)}>
+        <h3 class="leading-tight font-medium">{step.label}</h3>
+        {#if step.description}
+          <p class="text-sm">{step.description}</p>
+        {/if}
+      </div>
+    </li>
+  {/each}
 </ol>
 
 <!--

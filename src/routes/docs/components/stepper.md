@@ -26,6 +26,13 @@ There are multiple examples that you can use including horizontal or vertical al
 </script>
 ```
 
+## Default Active Step
+
+- Stepper, BreadcrumbStepper, VerticalStepper: Default current = 1 (first step active)
+- ProgressStepper, DetailedStepper: Default current = 0 (no step active)
+
+Set current = 0 on any component to start with all steps pending.
+
 ## Default stepper
 
 Use this example to show a list of form steps with a number and title of the step in a horizontal alignment.
@@ -104,7 +111,7 @@ This example shows how to use custom icons:
 {#include VerticalIcon.svelte}
 ```
 
-This example shows how to overide using custom status:
+This example shows how to override using custom status:
 
 ```svelte example
 {#include VerticalOverride.svelte}
@@ -124,7 +131,7 @@ This example shows how to use custom icons:
 {#include BreadcrumbIcon.svelte}
 ```
 
-This example shows how to overide using custom status:
+This example shows how to override using custom status:
 
 ```svelte example
 {#include BreadcrumbOverride.svelte}
@@ -144,7 +151,7 @@ This example shows how to use custom icons:
 {#include TimelineIcon.svelte}
 ```
 
-This example shows how to overide using custom status:
+This example shows how to override using custom status:
 
 ```svelte example
 {#include TimelineOverride.svelte}

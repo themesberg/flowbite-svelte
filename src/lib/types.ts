@@ -1583,19 +1583,20 @@ export interface StepIndicatorProps extends StepIndicatorVariants, HTMLAttribute
 }
 
 // stepper
+export type StepStatus = "completed" | "current" | "pending";
+
 export interface Step {
   id?: number;
   label: string;
   description?: string;
-  status?: "completed" | "current" | "pending";
+  status?: StepStatus;
   icon?: Component;
   iconClass?: ClassValue;
   descriptionClass?: ClassValue;
 }
 
 export interface StepperProps extends HTMLOlAttributes, StepperVariants {
-  children?: Snippet;
-  steps?: Step[];
+  steps: Step[];
   current?: number; // Current step index (bindable, 1-based; 0 means no step active)
   clickable?: boolean; // Allow clicking steps to navigate (default: true)
   showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps (default: true)
@@ -1605,14 +1606,13 @@ export interface StepperProps extends HTMLOlAttributes, StepperVariants {
 // ProgressStepper
 export interface ProgressStep {
   id?: string | number;
-  status?: "completed" | "current" | "pending";
+  status?: StepStatus;
   icon?: Component;
   iconClass?: ClassValue;
 }
 
 export interface ProgressStepperProps extends HTMLOlAttributes, ProgressStepperVariants {
-  children?: Snippet;
-  steps?: ProgressStep[];
+  steps: ProgressStep[];
   current?: number; // Current step index (bindable)
   clickable?: boolean; // Allow clicking steps to navigate (default: true)
   showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps (default: true)
@@ -1630,8 +1630,7 @@ export interface DetailedStep {
 }
 
 export interface DetailedStepperProps extends HTMLOlAttributes, DetailedStepperVariants {
-  children?: Snippet;
-  steps?: DetailedStep[];
+  steps: DetailedStep[];
   contentClass?: ClassValue;
   current?: number; // Current step index (bindable)
   clickable?: boolean; // Allow clicking steps to navigate (default: true)
@@ -1649,8 +1648,7 @@ export interface VerticalStep {
 }
 
 export interface VerticalStepperProps extends HTMLOlAttributes, VerticalStepperVariants {
-  children?: Snippet;
-  steps?: VerticalStep[];
+  steps: VerticalStep[];
   liClass?: ClassValue;
   current?: number; // Current step index (bindable, 1-based; 0 means no step active)
   clickable?: boolean; // Allow clicking steps to navigate (default: true)
@@ -1669,8 +1667,7 @@ export interface BreadcrumbStep {
 }
 
 export interface BreadcrumbStepperProps extends BreadcrumbStepperVariants, HTMLOlAttributes {
-  children?: Snippet;
-  steps?: BreadcrumbStep[];
+  steps: BreadcrumbStep[];
   current?: number; // Current step index (bindable, 1-based; 0 means no step active)
   clickable?: boolean; // Allow clicking steps to navigate (default: true)
   showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps instead of icons
@@ -1688,8 +1685,7 @@ export interface TimelineStep {
 }
 
 export interface TimelineStepperProps extends HTMLOlAttributes, TimelineStepperVariants {
-  children?: Snippet;
-  steps?: TimelineStep[];
+  steps: TimelineStep[];
   contentClass?: ClassValue;
   current?: number; // Current step index (bindable, 1-based; 0 means no step active)
   clickable?: boolean; // Allow clicking steps to navigate (default: true)

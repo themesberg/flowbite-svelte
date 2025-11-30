@@ -1,19 +1,15 @@
 <script lang="ts">
   import type { SVGAttributes } from "svelte/elements";
 
-  // Define the allowed variants for the icon
   type IconVariant = "default" | "simple" | "tick";
 
-  // Define a custom type that includes all potential attributes (path/points)
-  // and makes stroke attributes nullable to satisfy SVGAttributes type checks.
   interface IconPropsType {
     viewBox: string;
     fill: string | "none";
-    pathData?: string; // Used for <path> element
-    pointsData?: string; // Used for <polyline> element
+    pathData?: string;
+    pointsData?: string;
     stroke?: string;
     "stroke-width"?: string;
-    // Use the actual literal types for stroke properties to match SVGAttributes
     "stroke-linecap"?: "round" | "butt" | "square" | "inherit";
     "stroke-linejoin"?: "round" | "bevel" | "miter" | "inherit";
   }
@@ -24,8 +20,6 @@
   }
 
   let { class: className, variant = "default", ...restProps }: Props = $props();
-
-  // --- Icon Property Definitions ---
 
   // 1. 'default' (Check inside a circle) - FILL ICON
   const defaultIconProps: IconPropsType = {
@@ -38,7 +32,7 @@
     "stroke-width": undefined
   };
 
-  // 2. 'simple' (Basic check stroke path) - STROKE ICON (from first request)
+  // 2. 'simple' (Basic check stroke path) - STROKE ICON
   const simpleIconProps: IconPropsType = {
     viewBox: "0 0 16 12",
     fill: "none",
@@ -49,7 +43,7 @@
     "stroke-width": "2"
   };
 
-  // 3. 'polyline' (New V-shaped check stroke) - STROKE ICON (from last request)
+  // 3. 'tick' (New V-shaped check stroke) - STROKE ICON
   const polylineIconProps: IconPropsType = {
     viewBox: "0 0 24 24",
     fill: "none",

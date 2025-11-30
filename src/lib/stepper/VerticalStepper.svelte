@@ -6,18 +6,7 @@
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let {
-    children,
-    steps = [],
-    liClass,
-    class: className,
-    classes,
-    current = $bindable(1),
-    clickable = true,
-    showCheckmarkForCompleted = true,
-    onStepClick,
-    ...restProps
-  }: VerticalStepperProps = $props();
+  let { steps = [], liClass, class: className, classes, current = $bindable(1), clickable = true, showCheckmarkForCompleted = true, onStepClick, ...restProps }: VerticalStepperProps = $props();
 
   // Ensure current is within valid bounds
   $effect(() => {
@@ -61,53 +50,51 @@
 </script>
 
 <ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
-  {#if children}
-    {@render children()}
-  {:else if steps}
-    {#each steps as step, index (step.id)}
-      {@const status = step.status ?? getStepStatus(index)}
-      <li class={clsx(liClass)}>
-        {#if clickable}
-          <button
-            type="button"
-            class="w-full cursor-pointer text-left transition-opacity hover:opacity-75 {card({ status, class: clsx(theme?.card, classes?.card) })}"
-            aria-current={status === "current" ? "step" : undefined}
-            onclick={() => handleStepClick(index)}
-          >
-            <div class={content({ class: clsx(theme?.content, classes?.content) })}>
-              <span class="sr-only">{step.label}</span>
-              <h3 class="font-medium">{step.id}. {step.label}</h3>
-              {#if status === "completed" && showCheckmarkForCompleted}
+  {#each steps as step, index (step.id)}
+    {@const status = step.status ?? getStepStatus(index)}
+    <li class={clsx(liClass)}>
+      {#if clickable}
+        <button
+          type="button"
+          class="w-full cursor-pointer text-left transition-opacity hover:opacity-75 {card({ status, class: clsx(theme?.card, classes?.card) })}"
+          aria-current={status === "current" ? "step" : undefined}
+          onclick={() => handleStepClick(index)}
+        >
+          <div class={content({ class: clsx(theme?.content, classes?.content) })}>
+            <span class="sr-only">{step.label}</span>
+            <h3 class="font-medium">{step.id}. {step.label}</h3>
+            {#if status === "completed" && showCheckmarkForCompleted}
+              <CheckmarkIcon variant="simple" />
+            {:else if status === "current"}
+              {#if step.icon}
+                <step.icon class={step.iconClass || "h-4 w-4"} />
+              {:else}
+                <!-- Show checkmark for visual consistency, though step is not yet completed -->
                 <CheckmarkIcon variant="simple" />
-              {:else if status === "current"}
-                {#if step.icon}
-                  <step.icon class={step.iconClass || "h-4 w-4"} />
-                {:else}
-                  <CheckmarkIcon variant="simple" />
-                {/if}
               {/if}
-            </div>
-          </button>
-        {:else}
-          <div class={card({ status, class: clsx(theme?.card, classes?.card) })} aria-current={status === "current" ? "step" : undefined}>
-            <div class={content({ class: clsx(theme?.content, classes?.content) })}>
-              <span class="sr-only">{step.label}</span>
-              <h3 class="font-medium">{step.id}. {step.label}</h3>
-              {#if status === "completed" && showCheckmarkForCompleted}
-                <CheckmarkIcon variant="simple" />
-              {:else if status === "current"}
-                {#if step.icon}
-                  <step.icon class={step.iconClass || "h-4 w-4"} />
-                {:else}
-                  <CheckmarkIcon variant="simple" />
-                {/if}
-              {/if}
-            </div>
+            {/if}
           </div>
-        {/if}
-      </li>
-    {/each}
-  {/if}
+        </button>
+      {:else}
+        <div class={card({ status, class: clsx(theme?.card, classes?.card) })} aria-current={status === "current" ? "step" : undefined}>
+          <div class={content({ class: clsx(theme?.content, classes?.content) })}>
+            <span class="sr-only">{step.label}</span>
+            <h3 class="font-medium">{step.id}. {step.label}</h3>
+            {#if status === "completed" && showCheckmarkForCompleted}
+              <CheckmarkIcon variant="simple" />
+            {:else if status === "current"}
+              {#if step.icon}
+                <step.icon class={step.iconClass || "h-4 w-4"} />
+              {:else}
+                <!-- Show checkmark for visual consistency, though step is not yet completed -->
+                <CheckmarkIcon variant="simple" />
+              {/if}
+            {/if}
+          </div>
+        </div>
+      {/if}
+    </li>
+  {/each}
 </ol>
 
 <!--
