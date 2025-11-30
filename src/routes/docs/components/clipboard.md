@@ -5,7 +5,7 @@ breadcrumb_title: Svelte Clipboard
 component_title: Clipboard
 dir: Components
 description: Use the clipboard component to copy text, data or lines of code to the clipboard with a single click based on various styles and examples coded with Tailwind CSS and Flowbite
-thumnailSize: w-36
+thumbnailSize: w-36
 ---
 
 <script lang="ts">

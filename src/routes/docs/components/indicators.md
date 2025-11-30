@@ -5,7 +5,7 @@ breadcrumb_title: Svelte Indicators
 component_title: Indicator
 dir: Components
 description: Use the indicator component to show a number count, account status, or as a loading label positioned relative to the parent component coded with Tailwind CSS
-thumnailSize: w-64
+thumbnailSize: w-64
 ---
 
 <script lang="ts">

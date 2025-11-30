@@ -1,7 +1,7 @@
 <script lang="ts">
   import Card from "$lib/card/Card.svelte";
 
-  let { name, dir, path, thumnailSize, ...restProps }: { name: string; dir: string; path: string; thumnailSize: string } = $props();
+  let { name, dir, path, thumbnailSize, ...restProps }: { name: string; dir: string; path: string; thumbnailSize: string } = $props();
 
   path = path.toLowerCase();
   dir = dir.toLowerCase();
@@ -17,7 +17,7 @@
     </span>
   </div>
   <div class="flex h-52 items-center justify-center">
-    <div class="relative block h-5/6 dark:hidden {thumnailSize ? thumnailSize : 'w-56'}">
+    <div class="relative block h-5/6 dark:hidden {thumbnailSize ? thumbnailSize : 'w-56'}">
       <span
         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
       >
@@ -33,7 +33,7 @@
         <noscript></noscript>
       </span>
     </div>
-    <div class="relative hidden h-5/6 dark:block {thumnailSize ? thumnailSize : 'w-56'}">
+    <div class="relative hidden h-5/6 dark:block {thumbnailSize ? thumbnailSize : 'w-56'}">
       <span
         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
       >

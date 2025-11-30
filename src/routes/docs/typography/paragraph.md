@@ -5,7 +5,7 @@ breadcrumb_title: Svelte Paragraph
 component_title: Paragraph
 dir: Typography
 description: Use the paragraph component to create multiple blocks of text separated by blank lines and write content based on multiple layouts and styles
-thumnailSize: w-64
+thumbnailSize: w-64
 ---
 
 <script lang="ts">
