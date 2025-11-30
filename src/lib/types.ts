@@ -1652,6 +1652,10 @@ export interface VerticalStepperProps extends HTMLOlAttributes, VerticalStepperV
   children?: Snippet;
   steps?: VerticalStep[];
   liClass?: ClassValue;
+  current?: number; // Current step index (bindable, 1-based; 0 means no step active)
+  clickable?: boolean; // Allow clicking steps to navigate (default: true)
+  showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps instead of icons
+  onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
 }
 
 // BreadcrumbStepper
@@ -1667,6 +1671,10 @@ export interface BreadcrumbStep {
 export interface BreadcrumbStepperProps extends BreadcrumbStepperVariants, HTMLOlAttributes {
   children?: Snippet;
   steps?: BreadcrumbStep[];
+  current?: number; // Current step index (bindable, 1-based; 0 means no step active)
+  clickable?: boolean; // Allow clicking steps to navigate (default: true)
+  showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps instead of icons
+  onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
 }
 
 // TimelineStepper
@@ -1683,6 +1691,10 @@ export interface TimelineStepperProps extends HTMLOlAttributes, TimelineStepperV
   children?: Snippet;
   steps?: TimelineStep[];
   contentClass?: ClassValue;
+  current?: number; // Current step index (bindable, 1-based; 0 means no step active)
+  clickable?: boolean; // Allow clicking steps to navigate (default: true)
+  showCheckmarkForCompleted?: boolean; // Show checkmark for completed steps instead of icons
+  onStepClick?: (event: { current: number; last: number }) => void; // Step click event handler
 }
 
 // tables

@@ -144,8 +144,8 @@ export const breadcrumbStepper = tv({
         indicator: "border border-primary-600 dark:border-primary-500 bg-primary-600 dark:bg-primary-500 text-white"
       },
       current: {
-        item: "text-gray-500 dark:text-gray-400",
-        indicator: "border border-gray-500 dark:border-gray-400 text-gray-500 dark:text-gray-400"
+        item: "text-primary-600 dark:text-primary-500",
+        indicator: "border border-primary-600 dark:border-primary-500 bg-primary-600 dark:bg-primary-500 text-white"
       },
       pending: {
         item: "text-gray-500 dark:text-gray-400",
@@ -175,7 +175,7 @@ export const timelineStepper = tv({
         circle: "bg-green-200 dark:bg-green-900"
       },
       current: {
-        circle: "bg-gray-100 dark:bg-gray-700"
+        circle: "bg-primary-200 dark:bg-primary-900"
       },
       pending: {
         circle: "bg-gray-100 dark:bg-gray-700"

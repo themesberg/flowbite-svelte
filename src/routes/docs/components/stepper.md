@@ -96,7 +96,15 @@ Following example shows how to override `current` prop using custom status.
 This example can be used to show a list of steps aligned vertically where you can indicate the completed, currently active, and the unexplored steps.
 
 ```svelte example
-{#include Vertical.svelte}
+{#include VerticalBasic.svelte}
+```
+
+```svelte example
+{#include VerticalIcon.svelte}
+```
+
+```svelte example
+{#include VerticalOverride.svelte}
 ```
 
 ## BreadcrumbStepper
@@ -104,7 +112,15 @@ This example can be used to show a list of steps aligned vertically where you ca
 This example can be used to show the number of steps similar to how a breadcrumb component looks like by using double chevron icons between the items.
 
 ```svelte example
-{#include Breadcrumb.svelte}
+{#include BreadcrumbBasic.svelte}
+```
+
+```svelte example
+{#include BreadcrumbIcon.svelte}
+```
+
+```svelte example
+{#include BreadcrumbOverride.svelte}
 ```
 
 ## TimelineStepper
@@ -112,7 +128,15 @@ This example can be used to show the number of steps similar to how a breadcrumb
 Use this example to show the number of steps inside a timeline component using icons, title, and subtitle for each step.
 
 ```svelte example
-{#include Timeline.svelte}
+{#include TimelineBasic.svelte}
+```
+
+```svelte example
+{#include TimelineIcon.svelte}
+```
+
+```svelte example
+{#include TimelineOverride.svelte}
 ```
 
 ## Stepper with form

@@ -4,7 +4,7 @@
   import type { ProgressStepperProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
-  import { tweened } from "svelte/motion";
+  import { Tween } from "svelte/motion";
   import { cubicOut } from "svelte/easing";
 
   let { children, steps = [], class: className, classes, current = $bindable(0), clickable = true, showCheckmarkForCompleted = true, onStepClick, ...restProps }: ProgressStepperProps = $props();
@@ -15,8 +15,8 @@
     if (current > steps.length && steps.length > 0) current = steps.length;
   });
 
-  // Animated progress with tweened store
-  const animatedProgress = tweened(0, {
+  // Animated progress with Tween
+  const animatedProgress = new Tween(0, {
     duration: 100,
     easing: cubicOut
   });
@@ -24,10 +24,10 @@
   // Update animated progress when current changes
   $effect(() => {
     if (steps.length <= 1 || current === 0) {
-      animatedProgress.set(0);
+      animatedProgress.target = 0;
     } else {
       const progressPercent = ((current - 1) / (steps.length - 1)) * 100;
-      animatedProgress.set(progressPercent);
+      animatedProgress.target = progressPercent;
     }
   });
 
@@ -82,7 +82,7 @@
    const progressWidth = $derived(
     steps.length <= 1 || lineWidth === "0"
       ? "0"
-      : `${($animatedProgress / 100) * parseFloat(lineWidth)}%`
+      : `${(animatedProgress.current / 100) * parseFloat(lineWidth)}%`
   );
 </script>
 

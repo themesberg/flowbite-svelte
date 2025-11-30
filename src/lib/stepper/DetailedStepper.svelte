@@ -22,12 +22,12 @@
     const baseTheme = detailedStepper();
     return {
       base: baseTheme.base,
-      item: (props: any) => {
+      item: (props: { status: "completed" | "current" | "pending"; class?: string }) => {
         // Make current status use the same styling as completed
         const status = props.status === "current" ? "completed" : props.status;
         return baseTheme.item({ ...props, status });
       },
-      indicator: (props: any) => {
+      indicator: (props: { status: "completed" | "current" | "pending"; class?: string }) => {
         // Make current status use the same styling as completed
         const status = props.status === "current" ? "completed" : props.status;
         return baseTheme.indicator({ ...props, status });
