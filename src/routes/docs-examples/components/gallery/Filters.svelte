@@ -25,12 +25,12 @@
   );
 </script>
 
-<div class="mx-auto mb-3 flex flex-wrap items-center justify-center gap-3 py-4 md:py-8">
-  <Button pill size="xl" outline={selectedCategory !== "All"} onclick={() => (selectedCategory = "All")}>All categories</Button>
-  <Button pill size="xl" color="alternative" outline={selectedCategory !== "Shoes"} onclick={() => (selectedCategory = "Shoes")}>Shoes</Button>
-  <Button pill size="xl" color="alternative" outline={selectedCategory !== "Bags"} onclick={() => (selectedCategory = "Bags")}>Bags</Button>
-  <Button pill size="xl" color="alternative" outline={selectedCategory !== "Electronics"} onclick={() => (selectedCategory = "Electronics")}>Electronics</Button>
-  <Button pill size="xl" color="alternative" outline={selectedCategory !== "Gaming"} onclick={() => (selectedCategory = "Gaming")}>Gaming</Button>
+<div class="mx-auto mb-3 flex flex-wrap items-center justify-center gap-2 py-2 md:py-4">
+  <Button outline={selectedCategory !== "All"} onclick={() => (selectedCategory = "All")}>All categories</Button>
+  <Button color="alternative" outline={selectedCategory !== "Shoes"} onclick={() => (selectedCategory = "Shoes")}>Shoes</Button>
+  <Button color="alternative" outline={selectedCategory !== "Bags"} onclick={() => (selectedCategory = "Bags")}>Bags</Button>
+  <Button color="alternative" outline={selectedCategory !== "Electronics"} onclick={() => (selectedCategory = "Electronics")}>Electronics</Button>
+  <Button color="alternative" outline={selectedCategory !== "Gaming"} onclick={() => (selectedCategory = "Gaming")}>Gaming</Button>
 </div>
 
 <Gallery items={filteredImages} class="grid-cols-2 gap-4 md:grid-cols-3" />
