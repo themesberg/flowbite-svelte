@@ -51,7 +51,7 @@ This example can be used to show more information about a company profile.
 
 Use this example to trigger a popover component with detailed information and an image when hovering over a portion of highlighted text inspired by Wikipedia and other large news outlets.
 
-```svelte example class="flex h-96 items-end" hideResponsiveButtons
+```svelte example class="flex h-[550px] md:h-96 items-end" hideResponsiveButtons
 {#include Image.svelte}
 ```
 
@@ -109,7 +109,7 @@ Increase or decrease the default offset by adding the `offset` attribute where t
 
 Customize the animation of the popover component by using the transition functions from Svelte.
 
-```svelte example class="flex h-44 items-end justify-center gap-8" hideResponsiveButtons
+```svelte example class="flex h-52 items-end justify-center gap-2" hideResponsiveButtons
 {#include Animation.svelte}
 ```
 

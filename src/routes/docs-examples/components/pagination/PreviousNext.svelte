@@ -9,6 +9,6 @@
     console.log("Page changed to:", page);
   }
 </script>
-<P>Showing {currentPage} of {totalPages} Entries</P>
+<P class="text-sm">Showing {currentPage} of {totalPages} Entries</P>
 <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation" />
 <PaginationNav size="large" {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation" />
