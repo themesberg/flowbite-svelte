@@ -16,6 +16,8 @@
   <ButtonToggle color="red" value="red" selected={singleValue === "red"}>Red</ButtonToggle>
   <ButtonToggle color="green" value="green" selected={singleValue === "green"}>Green</ButtonToggle>
   <ButtonToggle color="blue" value="blue" selected={singleValue === "blue"}>Blue</ButtonToggle>
+  </ButtonToggleGroup>
+  <ButtonToggleGroup onSelect={handleSingleSelect}>
   <ButtonToggle color="gray" value="gray" selected={singleValue === "gray"}>Gray</ButtonToggle>
   <ButtonToggle color="lime" value="lime" selected={singleValue === "lime"}>Lime</ButtonToggle>
   <ButtonToggle color="purple" value="purple" selected={singleValue === "purple"}>Purple</ButtonToggle>

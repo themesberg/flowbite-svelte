@@ -7,7 +7,7 @@
 
 <Datepicker bind:elementRef={datepickerRef} bind:value={selectedDate} placeholder="Select a date" />
 
-<div class="my-4">
+<div class="mt-4 flex flex-wrap gap-2">
   <Button onclick={() => datepickerRef?.focus()}>Focus Datepicker</Button>
 
   <Button onclick={() => datepickerRef?.select()}>Select All Text</Button>

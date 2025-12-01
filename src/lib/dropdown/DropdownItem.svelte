@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getContext } from "svelte";
+  import { getDropdownContext } from "$lib/context";
   import { dropdownItem } from "./theme";
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -12,9 +12,9 @@
 
   const theme = getTheme("dropdownItem");
 
-  const activeUrl: { value: string } = getContext("activeUrl");
+  const ctx = getDropdownContext();
 
-  let isActive = $derived(activeUrl?.value && href ? href === activeUrl.value : false);
+  let isActive = $derived(ctx?.activeUrl && href ? href === ctx.activeUrl : false);
 
   const { base, active, li } = dropdownItem();
   let finalClass = $derived(isActive ? active({ class: clsx(theme?.active, styling.active) }) : base({ class: clsx(theme?.base, className) }));

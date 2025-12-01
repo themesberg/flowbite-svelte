@@ -1,31 +1,31 @@
 <script lang="ts">
-  import type { SlideProps, CarouselState } from "$lib";
+  import type { SlideProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
-  import { getContext } from "svelte";
+  import { getCarouselContext } from "$lib/context";
   import { fly } from "svelte/transition";
   import { slide } from "./theme";
 
-  const _state = getContext<CarouselState>("state");
+  const _state = getCarouselContext();
 
   let { image, transition, fit, class: className, ...restProps }: SlideProps = $props();
 
   const theme = getTheme("slide");
 
   let transitionSlideIn = $derived({
-    x: _state.forward ? "100%" : "-100%",
+    x: _state?.forward ? "100%" : "-100%",
     opacity: 1,
     width: "100%",
     height: "100%",
-    duration: _state.slideDuration
+    duration: _state?.slideDuration ?? 1000
   });
 
   let transitionSlideOut = $derived({
-    x: _state.forward ? "-100%" : "100%",
+    x: _state?.forward ? "-100%" : "100%",
     opacity: 0.9,
     width: "100%",
     height: "100%",
-    duration: _state.slideDuration
+    duration: _state?.slideDuration ?? 1000
   });
 
   let imgClass = $derived(slide({ fit, class: clsx(theme, className) }));

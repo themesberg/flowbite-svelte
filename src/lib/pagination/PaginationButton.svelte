@@ -2,35 +2,34 @@
   import clsx from "clsx";
   import { paginationButton } from "./theme";
   import type { PaginationButtonProps } from "$lib/types";
-  import { getContext } from "svelte";
+  import { getPaginationContext } from "$lib/context";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, size, onclick, disabled = false, class: className, href, active = false, ...restProps }: PaginationButtonProps = $props();
 
   const theme = getTheme("paginationButton");
 
-  const group = getContext<boolean>("group");
-  const table = getContext<boolean>("table");
-  const activeClasses = getContext<string>("activeClasses");
+  // Get context - it will be undefined if used outside Pagination
+  const ctx = getPaginationContext();
 
   const paginationCls = $derived.by(() => {
-    if (active && activeClasses) {
+    if (active && ctx?.activeClasses) {
       return paginationButton({
-        size: getContext("size") ?? size,
+        size: ctx?.size ?? size,
         active: false, // Set to false to avoid theme's active styles
-        group,
-        table,
+        group: ctx?.group ?? false,
+        table: ctx?.table ?? false,
         disabled,
-        class: clsx(theme, activeClasses, className)
+        class: clsx(theme, ctx.activeClasses, className)
       });
     }
 
     // Use default theme styles
     return paginationButton({
-      size: getContext("size") ?? size,
+      size: ctx?.size ?? size,
       active: active,
-      group,
-      table,
+      group: ctx?.group ?? false,
+      table: ctx?.table ?? false,
       disabled,
       class: clsx(theme, className)
     });

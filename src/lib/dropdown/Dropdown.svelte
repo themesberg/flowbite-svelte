@@ -4,7 +4,7 @@
   import DropdownGroup from "./DropdownGroup.svelte";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
-  import { setContext } from "svelte";
+  import { setDropdownContext } from "$lib/context";
   import { dropdown } from "./theme";
 
   let { children, simple = false, placement = "bottom", offset = 2, class: className, activeUrl = "", isOpen = $bindable(false), onclose, ...restProps }: DropdownProps = $props();
@@ -12,12 +12,13 @@
   const theme = getTheme("dropdown");
 
   const base = $derived(dropdown({ class: clsx(theme, className) }));
-  const activeUrlStore = $state({ value: "" });
-  setContext("activeUrl", activeUrlStore);
 
-  $effect(() => {
-    activeUrlStore.value = activeUrl ?? "";
-  });
+  // Create reactive context using getter
+  const context = {
+    get activeUrl() { return activeUrl ?? ""; }
+  };
+
+  setDropdownContext(context);
 </script>
 
 <!-- Dropdown menu -->

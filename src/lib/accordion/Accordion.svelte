@@ -2,7 +2,7 @@
   import type { AccordionCtxType, AccordionProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
-  import { setContext } from "svelte";
+  import { setAccordionContext } from "$lib/context";
   import { accordion } from "./theme";
   import { createSingleSelectionContext } from "$lib/utils/singleselection.svelte";
 
@@ -10,14 +10,16 @@
 
   const theme = getTheme("accordion");
 
-  const ctx: AccordionCtxType = $state({
-    flush,
-    activeClass,
-    inactiveClass,
-    transitionType
-  });
+  // Simple reactive state object
+  const ctx: AccordionCtxType = {
+    get flush() { return flush; },
+    get activeClass() { return activeClass; },
+    get inactiveClass() { return inactiveClass; },
+    get transitionType() { return transitionType; }
+  };
 
-  setContext<AccordionCtxType>("ctx", ctx);
+  // Set context during initialization
+  setAccordionContext(ctx);
 
   createSingleSelectionContext(multiple);
 

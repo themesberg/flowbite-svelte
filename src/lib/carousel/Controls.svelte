@@ -1,17 +1,18 @@
 <script lang="ts">
-  import type { ControlsProps, CarouselState } from "$lib";
+  import type { ControlsProps } from "$lib";
   import ControlButton from "./ControlButton.svelte";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
-  import { getContext } from "svelte";
+  import { getCarouselContext } from "$lib/context";
 
   let { children, class: className, ...restProps }: ControlsProps = $props();
 
   const theme = getTheme("controlButton");
 
-  const _state = getContext<CarouselState>("state");
+  const _state = getCarouselContext();
 
   function changeSlide(forward: boolean) {
+    if (!_state) return;
     _state.changeSlide(forward ? _state.index + 1 : _state.index - 1);
   }
 </script>

@@ -102,7 +102,7 @@
     "vitest-browser-svelte": "^2.0.1"
   },
   "peerDependencies": {
-    "svelte": "^5.29.0",
+    "svelte": "^5.40.0",
     "tailwindcss": "^4.1.4"
   },
   "type": "module",

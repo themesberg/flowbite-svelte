@@ -3,7 +3,8 @@
   import Slide from "./Slide.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
-  import { onMount, setContext } from "svelte";
+  import { onMount } from "svelte";
+  import { setCarouselContext } from "$lib/context";
   import { canChangeSlide } from "./CarouselSlide";
   import { carousel } from "./theme";
 
@@ -54,7 +55,7 @@
 
   const _state: CarouselState = $state({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: Date.now(), changeSlide });
 
-  setContext("state", _state);
+  setCarouselContext(_state);
 
   let initialized = false;
 
