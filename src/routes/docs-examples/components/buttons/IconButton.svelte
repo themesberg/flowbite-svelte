@@ -11,4 +11,3 @@
 <Button pill={true} outline={true} class="p-2!" size="xl">
   <ThumbsUpSolid class="text-primary-700 h-6 w-6" />
 </Button>
-

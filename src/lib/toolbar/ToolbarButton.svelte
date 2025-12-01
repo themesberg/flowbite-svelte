@@ -1,11 +1,9 @@
 <script lang="ts">
-  import { getContext } from "svelte";
   import { toolbarButton } from "./theme";
   import type { ToolbarButtonProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  const background = getContext("background");
   let { children, color, name, "aria-label": ariaLabel, size, class: className, ...restProps }: ToolbarButtonProps = $props();
 
   const theme = getTheme("toolbarButton");
@@ -14,7 +12,7 @@
     toolbarButton({
       color,
       size,
-      background: !!background,
+      background: false,
       class: clsx(theme, className)
     })
   );

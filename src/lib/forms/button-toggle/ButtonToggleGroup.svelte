@@ -78,14 +78,30 @@
 
   // Create context object with all button toggle related values
   const ctx: ButtonToggleContextType = {
-    get toggleSelected() { return toggleSelected; },
-    get isSelected() { return isSelected; },
-    get multiSelect() { return multiSelect; },
-    get color() { return color; },
-    get size() { return size; },
-    get roundedSize() { return roundedSize; },
-    get ctxIconClass() { return clsx(ctxIconClass); },
-    get ctxBtnClass() { return clsx(ctxBtnClass); }
+    get toggleSelected() {
+      return toggleSelected;
+    },
+    get isSelected() {
+      return isSelected;
+    },
+    get multiSelect() {
+      return multiSelect;
+    },
+    get color() {
+      return color;
+    },
+    get size() {
+      return size;
+    },
+    get roundedSize() {
+      return roundedSize;
+    },
+    get ctxIconClass() {
+      return clsx(ctxIconClass);
+    },
+    get ctxBtnClass() {
+      return clsx(ctxBtnClass);
+    }
   };
 
   // Set context during initialization

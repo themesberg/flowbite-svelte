@@ -18,11 +18,7 @@
 
   let selectedCategory = $state("All");
 
-  const filteredImages = $derived(
-    selectedCategory === "All"
-      ? images
-      : images.filter((img) => img.category === selectedCategory)
-  );
+  const filteredImages = $derived(selectedCategory === "All" ? images : images.filter((img) => img.category === selectedCategory));
 </script>
 
 <div class="mx-auto mb-3 flex flex-wrap items-center justify-center gap-2 py-2 md:py-4">

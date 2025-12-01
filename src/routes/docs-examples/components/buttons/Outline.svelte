@@ -8,4 +8,3 @@
 <Button outline color="red">Red</Button>
 <Button outline color="yellow">Yellow</Button>
 <Button outline color="purple">Purple</Button>
-

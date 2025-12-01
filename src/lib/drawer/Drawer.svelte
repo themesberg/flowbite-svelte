@@ -28,7 +28,9 @@
 
   // Create reactive context using getter
   const context = {
-    get placement() { return placement; }
+    get placement() {
+      return placement;
+    }
   };
 
   setDrawerContext(context);

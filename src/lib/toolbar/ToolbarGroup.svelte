@@ -2,7 +2,7 @@
   import { getTheme } from "$lib/theme/themeUtils";
   import type { ToolbarGroupProps } from "$lib/types";
   import clsx from "clsx";
-  import { getContext } from "svelte";
+  import { getToolbarContext } from "$lib/context";
   import { toolbarGroup } from "./theme";
 
   let { children, spacing, padding, position = "middle", class: className, ...restProps }: ToolbarGroupProps = $props();
@@ -11,9 +11,9 @@
 
   const groupCls = $derived(toolbarGroup({ spacing, padding, position, class: clsx(theme, className) }));
 
-  const context = getContext<Record<string, boolean>>("toolbar");
+  const ctx = getToolbarContext();
 
-  if (context) context.separators = true;
+  if (ctx) ctx.separators = true;
 </script>
 
 <div {...restProps} class={groupCls}>

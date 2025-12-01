@@ -2,7 +2,7 @@
   import { getTheme } from "$lib/theme/themeUtils";
   import type { ToolbarProps } from "$lib/types";
   import clsx from "clsx";
-  import { setContext } from "svelte";
+  import { setToolbarContext } from "$lib/context";
   import { toolbar } from "./theme";
 
   let { children, end, color, embedded, class: className, classes, ...restProps }: ToolbarProps = $props();
@@ -10,7 +10,19 @@
   const theme = getTheme("toolbar");
 
   const context = $state({ separators: false });
-  setContext("toolbar", context);
+
+  // Create context object with getter
+  const ctx = {
+    get separators() {
+      return context.separators;
+    },
+    set separators(value: boolean) {
+      context.separators = value;
+    }
+  };
+
+  // Set context during initialization
+  setToolbarContext(ctx);
 
   let frameColor = $derived(embedded ? "default" : color);
 

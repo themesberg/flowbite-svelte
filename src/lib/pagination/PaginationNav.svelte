@@ -38,10 +38,18 @@
 
   // Create context object
   const ctx: PaginationContextType = {
-    get group() { return true; },
-    get size() { return size; },
-    get table() { return layout === "table"; },
-    get activeClasses() { return classes?.active; }
+    get group() {
+      return true;
+    },
+    get size() {
+      return size;
+    },
+    get table() {
+      return layout === "table";
+    },
+    get activeClasses() {
+      return classes?.active;
+    }
   };
 
   // Set context during initialization

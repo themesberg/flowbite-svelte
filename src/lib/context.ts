@@ -1,5 +1,7 @@
-import { createContext } from 'svelte';
-import type { AccordionCtxType, BottomNavContextType, CarouselState } from './types';
+import { createContext } from "svelte";
+import type { AccordionCtxType, BottomNavContextType, CarouselState } from "./types";
+import type { ThemeConfig } from "./theme";
+import type { ClassValue } from "clsx";
 
 const [getAccordionContextRaw, setAccordionContext] = createContext<AccordionCtxType>();
 
@@ -13,7 +15,7 @@ function getAccordionContext(): AccordionCtxType | undefined {
 }
 
 export { getAccordionContext, setAccordionContext };
-  
+
 // BottomNav
 const [getBottomNavContextRaw, setBottomNavContext] = createContext<BottomNavContextType>();
 
@@ -42,7 +44,7 @@ export { getCarouselContext, setCarouselContext };
 
 // Drawer
 export type DrawerContextType = {
-  placement: 'left' | 'right' | 'top' | 'bottom';
+  placement: "left" | "right" | "top" | "bottom";
 };
 
 const [getDrawerContextRaw, setDrawerContext] = createContext<DrawerContextType>();
@@ -78,8 +80,8 @@ export { getDropdownContext, setDropdownContext };
 export type PaginationContextType = {
   group: boolean;
   table?: boolean;
-  size?: 'default' | 'large';
-  activeClasses?: string;
+  size?: "default" | "large";
+  activeClasses?: ClassValue; // Changed from string to ClassValue
 };
 
 const [getPaginationContextRaw, setPaginationContext] = createContext<PaginationContextType>();
@@ -100,8 +102,8 @@ export type ButtonToggleContextType = {
   isSelected: (toggleValue: string) => boolean;
   multiSelect: boolean;
   color?: string;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  roundedSize?: 'sm' | 'md' | 'lg' | 'none';
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  roundedSize?: "sm" | "md" | "lg" | "none" | "xl" | "full"; // Added missing values
   ctxIconClass?: string;
   ctxBtnClass?: string;
 };
@@ -117,3 +119,50 @@ function getButtonToggleContext(): ButtonToggleContextType | undefined {
 }
 
 export { getButtonToggleContext, setButtonToggleContext };
+
+// List
+export type ListContextType = {
+  ctxClass: string;
+};
+
+const [getListContextRaw, setListContext] = createContext<ListContextType>();
+
+function getListContext(): ListContextType | undefined {
+  try {
+    return getListContextRaw();
+  } catch {
+    return undefined;
+  }
+}
+
+export { getListContext, setListContext };
+
+// Toolbar
+export type ToolbarContextType = {
+  separators: boolean;
+};
+
+const [getToolbarContextRaw, setToolbarContext] = createContext<ToolbarContextType>();
+
+function getToolbarContext(): ToolbarContextType | undefined {
+  try {
+    return getToolbarContextRaw();
+  } catch {
+    return undefined;
+  }
+}
+
+export { getToolbarContext, setToolbarContext };
+
+// Theme
+const [getThemeContextRaw, setThemeContext] = createContext<ThemeConfig>();
+
+function getThemeContext(): ThemeConfig | undefined {
+  try {
+    return getThemeContextRaw();
+  } catch {
+    return undefined;
+  }
+}
+
+export { getThemeContext, setThemeContext };

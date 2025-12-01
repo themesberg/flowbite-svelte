@@ -1,10 +1,10 @@
 import type { ThemeConfig } from "$lib";
 import type { ClassValue } from "clsx";
-import { getContext } from "svelte";
+import { getThemeContext } from "$lib/context";
 import { DEV } from "esm-env";
 
 export function getTheme<K extends keyof ThemeConfig>(componentKey: K) {
-  const theme = getContext<ThemeConfig>("theme");
+  const theme = getThemeContext();
   return theme?.[componentKey];
 }
 

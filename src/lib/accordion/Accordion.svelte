@@ -12,10 +12,18 @@
 
   // Simple reactive state object
   const ctx: AccordionCtxType = {
-    get flush() { return flush; },
-    get activeClass() { return activeClass; },
-    get inactiveClass() { return inactiveClass; },
-    get transitionType() { return transitionType; }
+    get flush() {
+      return flush;
+    },
+    get activeClass() {
+      return activeClass;
+    },
+    get inactiveClass() {
+      return inactiveClass;
+    },
+    get transitionType() {
+      return transitionType;
+    }
   };
 
   // Set context during initialization

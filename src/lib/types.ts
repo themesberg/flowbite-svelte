@@ -358,13 +358,15 @@ export interface GradientButtonProps extends GradientButtonVariantes, HTMLButton
 }
 
 // button-toggle
+export type { ButtonToggleContextType } from "$lib/context";
+
 export type ButtonToggleGroupProps = HTMLAttributes<HTMLDivElement> & {
   multiSelect?: boolean;
   name?: string;
   value?: string | null | string[];
   color?: ButtonToggleVariants["color"];
   size?: ButtonToggleVariants["size"];
-  roundedSize?: ButtonToggleVariants["roundedSize"];
+  roundedSize?: "sm" | "md" | "lg" | "xl" | "full"; // buttonToggleGroup roundedSize values
   onSelect?: (val: string | null | string[]) => void;
   children: Snippet;
   ctxIconClass?: ClassValue;
@@ -615,6 +617,8 @@ export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
 }
 
 // drawer
+export type { DrawerContextType } from "$lib/context";
+
 export interface DrawerProps extends DrawerVariants, Omit<DialogProps, "hidden" | "classes" | "shifted"> {
   /** @deprecated Use `outsideclose` instead. Will be removed in next minor version. */
   activateClickOutside?: boolean;
@@ -632,6 +636,8 @@ export interface DrawerheadProps extends DrawerheadVariants, HTMLButtonAttribute
 }
 
 // dropdown
+export type { DropdownContextType } from "$lib/context";
+
 export interface DropdownProps extends PopperProps {
   simple?: boolean;
   activeUrl?: string;
@@ -1181,6 +1187,8 @@ export type ToolbarButtonProps = ToolbarButtonVariants &
   };
 
 // pagination
+export type { PaginationContextType } from "$lib/context";
+
 export type PaginationItemType = {
   size?: "default" | "large";
   active?: boolean | null;

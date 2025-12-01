@@ -15,7 +15,7 @@
     { alt: "shoe", src: "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" }
   ];
 
-   let main = $state<ImgType>({
+  let main = $state<ImgType>({
     alt: image1.alt,
     src: image1.src
   });
@@ -23,26 +23,14 @@
 
 <Gallery class="gap-4">
   <!-- MAIN IMAGE -->
-  <img
-    src={main.src}
-    alt={main.alt}
-    class="w-full h-[450px] object-cover rounded-lg bg-gray-100"
-  />
+  <img src={main.src} alt={main.alt} class="h-[450px] w-full rounded-lg bg-gray-100 object-cover" />
 
   <!-- THUMBNAILS -->
-  <Gallery
-    class="grid-cols-5"
-    items={images2}
-    {figure} />
+  <Gallery class="grid-cols-5" items={images2} {figure} />
 
-{#snippet figure(item)}
-  <button
-    type="button"
-    class="rounded-lg p-0 border-0 bg-transparent cursor-pointer hover:opacity-80"
-    onclick={() => (main = item)}
-  >
-    <img src={item.src} alt={item.alt} class="rounded-lg" />
-  </button>
-{/snippet}
-
+  {#snippet figure(item)}
+    <button type="button" class="cursor-pointer rounded-lg border-0 bg-transparent p-0 hover:opacity-80" onclick={() => (main = item)}>
+      <img src={item.src} alt={item.alt} class="rounded-lg" />
+    </button>
+  {/snippet}
 </Gallery>

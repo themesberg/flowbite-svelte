@@ -18,9 +18,15 @@
 
   // Create reactive context using getters
   const context: BottomNavContextType = {
-    get activeClass() { return activeCls; },
-    get activeUrl() { return activeUrl; },
-    get navType() { return navType; }
+    get activeClass() {
+      return activeCls;
+    },
+    get activeUrl() {
+      return activeUrl;
+    },
+    get navType() {
+      return navType;
+    }
   };
 
   setBottomNavContext(context);

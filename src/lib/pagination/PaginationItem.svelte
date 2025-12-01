@@ -11,14 +11,16 @@
 
   // Get context - it will be undefined if used outside Pagination
   const ctx = getPaginationContext();
-  
-  const paginationCls = $derived(paginationItem({ 
-    size: ctx?.size ?? size, 
-    active, 
-    group: ctx?.group ?? false, 
-    table: ctx?.table ?? false, 
-    class: clsx(theme, className) 
-  }));
+
+  const paginationCls = $derived(
+    paginationItem({
+      size: ctx?.size ?? size,
+      active,
+      group: ctx?.group ?? false,
+      table: ctx?.table ?? false,
+      class: clsx(theme, className)
+    })
+  );
 </script>
 
 {#if href}

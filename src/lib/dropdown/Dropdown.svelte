@@ -15,7 +15,9 @@
 
   // Create reactive context using getter
   const context = {
-    get activeUrl() { return activeUrl ?? ""; }
+    get activeUrl() {
+      return activeUrl ?? "";
+    }
   };
 
   setDropdownContext(context);

@@ -1,7 +1,7 @@
 <script lang="ts">
   import CheckIcon from "./CheckIcon.svelte";
   import { buttonToggle } from "./theme";
-  import type { ButtonToggleVariants } from "./theme";
+  import type { VariantProps } from "tailwind-variants";
   import clsx from "clsx";
   import type { ButtonToggleProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -30,14 +30,19 @@
   };
 
   // Use context color if available, otherwise use prop color, otherwise default to "primary"
-  const actualColor = ctx?.color ?? color ?? "primary";
+  const actualColor = (ctx?.color ?? color ?? "primary") as VariantProps<typeof buttonToggle>["color"];
   const actualIconClass = ctxIconClass;
+
+  // Filter size to only valid buttonToggle sizes (no 'xs')
+  const actualSize = (size === "xs" ? "sm" : size) as VariantProps<typeof buttonToggle>["size"];
+  // Filter roundedSize to only valid buttonToggle roundedSize values (remove 'none')
+  const actualRoundedSize = (roundedSize === "none" ? "md" : roundedSize) as VariantProps<typeof buttonToggle>["roundedSize"];
 
   function handleClick() {
     toggleSelected(value);
   }
 
-  const { button, content, text, icon } = $derived(buttonToggle({ selected, color, size }));
+  const { button, content, text, icon } = $derived(buttonToggle({ selected, color: actualColor, size: actualSize }));
 
   $effect(() => {
     selected = isSelected(value);
@@ -46,7 +51,7 @@
 
 <button
   type="button"
-  class={button({ selected, color: actualColor, size, roundedSize, class: clsx(theme?.button, ctxBtnClass, className) })}
+  class={button({ selected, color: actualColor, size: actualSize, roundedSize: actualRoundedSize, class: clsx(theme?.button, ctxBtnClass, className) })}
   data-selected={selected}
   onclick={handleClick}
   role={multiSelect ? "checkbox" : "radio"}
