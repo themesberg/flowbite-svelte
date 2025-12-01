@@ -26,7 +26,7 @@
   <img
     src={main.src}
     alt={main.alt}
-    class="h-auto max-w-full rounded-lg"
+    class="w-full h-[450px] object-cover rounded-lg bg-gray-100"
   />
 
   <!-- THUMBNAILS -->
