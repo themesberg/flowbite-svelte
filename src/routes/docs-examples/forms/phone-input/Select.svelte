@@ -16,9 +16,7 @@
   </div>
 
   <ButtonGroup class="flex">
-    <div class="relative w-full">
-      <Select id="phone-numbers" classes={{ select: "rounded-none rounded-s-lg border-r-0" }} items={phonenumbers} bind:value={selected} aria-describedby="helper-text-explanation" />
-    </div>
+    <Select id="phone-numbers" classes={{ select: "border-r-0" }} items={phonenumbers} bind:value={selected} aria-describedby="helper-text-explanation" />
     <Clipboard
       color="alternative"
       bind:value={selected}

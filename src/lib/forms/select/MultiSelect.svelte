@@ -1,12 +1,13 @@
 <script lang="ts" generics="T">
   import clsx from "clsx";
-  import type { MultiSelectProps, SelectOptionType, SizeType } from "$lib";
+  import type { MultiSelectProps, SelectOptionType } from "$lib";
   import Badge from "$lib/badge/Badge.svelte";
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { multiSelect } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { getContext, onMount } from "svelte";
+  import { onMount } from "svelte";
   import { createDismissableContext } from "$lib/utils/dismissable";
+  import { getButtonGroupContext } from "$lib/context";
 
   // Consider reusing that component - https://svelecte.vercel.app/
 
@@ -37,7 +38,8 @@
 
   let selectItems = $derived(items.filter((x) => value.includes(x.value)));
   let show: boolean = $state(false);
-  let group: { size: SizeType } = getContext("group");
+  const groupCtx = getButtonGroupContext();
+  const group = groupCtx;
 
   // Active item
   let activeIndex: number | null = $state(null);

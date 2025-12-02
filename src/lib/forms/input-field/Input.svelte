@@ -1,7 +1,8 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import clsx from "clsx";
-  import type { SizeType, InputProps, InputValue } from "$lib";
+  import type { InputProps, InputValue } from "$lib";
+  import { getButtonGroupContext } from "$lib/context";
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { input } from "./theme";
   import { clampSize } from "./index";
@@ -70,9 +71,10 @@
   // svelte-ignore non_reactive_update
   let dummyFocusDiv: HTMLDivElement;
 
-  let group: { size: SizeType } = getContext("group");
+  const groupCtx = getButtonGroupContext();
+  const group = groupCtx;
   let isGroup = !!group;
-  let _size = $derived(size || clampSize(group?.size) || "md");
+  let _size = $derived(size || (group?.size ? clampSize(group.size) : undefined) || "md");
   const _color = $derived(color === "default" && background ? "tinted" : color);
 
   const { base, input: inputCls, left: leftCls, right: rightCls, close, combo, comboItem } = $derived(input({ size: _size, color: _color, grouped: isGroup }));

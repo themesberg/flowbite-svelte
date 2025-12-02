@@ -6,12 +6,12 @@
 
 <form class="mx-auto max-w-xs">
   <Label class="mb-2 text-sm" for="quantity-input">Choose quantity:</Label>
-  <div class="relative flex max-w-[8rem] items-center">
+  <div class="relative flex max-w-[14rem] items-center">
     <ButtonGroup>
       <Button type="button" id="decrement-button" onclick={() => (quantity -= 1)}>
         <MinusOutline />
       </Button>
-      <Input bind:value={quantity} type="number" id="quantity-input" aria-describedby="helper-text-explanation" placeholder="999" required class="w-20 text-center" />
+      <Input bind:value={quantity} type="number" id="quantity-input" aria-describedby="helper-text-explanation" placeholder="999" required class="!w-32 text-center" />
       <Button type="button" id="increment-button" onclick={() => (quantity += 1)}>
         <PlusOutline />
       </Button>
