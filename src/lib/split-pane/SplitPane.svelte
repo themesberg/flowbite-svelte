@@ -1,31 +1,6 @@
-<script lang="ts" module>
-  import { setContext, getContext } from "svelte";
-
-  const SPLIT_PANE_KEY = Symbol("SPLIT_PANE");
-
-  interface SplitPaneContext {
-    registerPane: () => number;
-    getPaneStyle: (index: number) => string;
-    getPaneSize: (index: number) => number;
-    shouldRenderDivider: (index: number) => boolean;
-    getDirection: () => "horizontal" | "vertical";
-    getIsDragging: () => boolean;
-    onMouseDown: (e: MouseEvent, index: number) => void;
-    onTouchStart: (e: TouchEvent, index: number) => void;
-    onKeyDown: (e: KeyboardEvent, index: number) => void;
-  }
-
-  export function setSplitPaneContext(ctx: SplitPaneContext) {
-    setContext(SPLIT_PANE_KEY, ctx);
-  }
-
-  export function getSplitPaneContext(): SplitPaneContext | undefined {
-    return getContext(SPLIT_PANE_KEY);
-  }
-</script>
-
 <script lang="ts">
   import type { SplitPaneProps } from "$lib/types";
+  import { setSplitPaneContext } from "$lib/context";
   import { splitpane } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";

@@ -8,8 +8,8 @@
   import { navbarUl } from "./theme";
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
-  let navState = getNavbarStateContext()!;
-  let navBreakpoint = getNavbarBreakpointContext()!;
+  let navState = getNavbarStateContext();
+  let navBreakpoint = getNavbarBreakpointContext();
 
   let {
     children,
@@ -52,11 +52,12 @@
     return finalParams;
   });
 
-  let hidden: boolean = $derived(navState.hidden ?? true);
+  let hidden: boolean = $derived(navState?.hidden ?? true);
 
-  let { base, ul, active, nonActive } = $derived(navbarUl({ hidden, breakpoint: navBreakpoint }));
+  let { base, ul, active, nonActive } = $derived(navbarUl({ hidden, breakpoint: navBreakpoint ?? "md" }));
 
   $effect(() => {
+    if (!navState) return;
     navState.activeClass = active({ class: clsx(theme?.active, styling.active) });
     navState.nonActiveClass = nonActive({ class: clsx(theme?.nonActive, styling.nonActive) });
     navState.activeUrl = activeUrl;

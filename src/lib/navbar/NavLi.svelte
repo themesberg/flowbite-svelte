@@ -5,21 +5,25 @@
   import { navbarLi } from "./theme";
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
-  let navState = getNavbarStateContext()!;
-  let navBreakpoint = getNavbarBreakpointContext()!;
+  let navState = getNavbarStateContext();
+  let navBreakpoint = getNavbarBreakpointContext();
 
   let { children, onclick, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
 
   const theme = getTheme("navbarLi");
 
-  let active = $derived(navState.activeUrl ? restProps.href === navState.activeUrl : false);
+  let active = $derived(navState?.activeUrl ? restProps.href === navState.activeUrl : false);
   let liClass = $derived(
-    navbarLi({ breakpoint: navBreakpoint, hidden: navState.hidden, class: clsx(active ? (activeClass ?? navState.activeClass) : (nonActiveClass ?? navState.nonActiveClass), theme, className) })
+    navbarLi({
+      breakpoint: navBreakpoint ?? "md",
+      hidden: navState?.hidden ?? true,
+      class: clsx(active ? (activeClass ?? navState?.activeClass) : (nonActiveClass ?? navState?.nonActiveClass), theme, className)
+    })
   );
 
   function handleClick(event: MouseEvent) {
     // Close the mobile menu when a link is clicked
-    if (restProps.href !== undefined && !navState.hidden) {
+    if (navState && restProps.href !== undefined && !navState.hidden) {
       navState.hidden = true;
     }
 

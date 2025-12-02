@@ -14,11 +14,12 @@
   const styling = $derived(classes ?? { menu: menuClass });
 
   const theme = getTheme("navbarHamburger");
-  const navState = getNavbarStateContext()!;
-  const navBreakpoint = getNavbarBreakpointContext()!;
-  const { base, menu } = navbarHamburger({ breakpoint: navBreakpoint });
+  const navState = getNavbarStateContext();
+  const navBreakpoint = getNavbarBreakpointContext();
+  const { base, menu } = navbarHamburger({ breakpoint: navBreakpoint ?? "md" });
 
   const toggle: MouseEventHandler<HTMLButtonElement> = () => {
+    if (!navState) return;
     navState.hidden = !navState.hidden;
   };
 </script>

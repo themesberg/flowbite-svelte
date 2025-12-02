@@ -15,8 +15,9 @@ import type {
   NavbarBreakpoint,
   SidebarCtxType,
   TableCtxType,
-  TableSearchType
+  TabsContextType
 } from "./types";
+import type { SplitPaneContext } from "./types";
 import type { ThemeConfig } from "./theme";
 
 /**
@@ -103,6 +104,10 @@ export { getActiveUrlContext, setActiveUrlContext };
 const [getTableContext, setTableContext] = createSafeContext<TableCtxType>();
 export { getTableContext, setTableContext };
 
-// TableSearch (also uses tableCtx key for compatibility)
-const [getTableSearchContext, setTableSearchContext] = createSafeContext<TableSearchType>();
-export { getTableSearchContext, setTableSearchContext };
+// SplitPane
+const [getSplitPaneContext, setSplitPaneContext] = createSafeContext<SplitPaneContext>();
+export { getSplitPaneContext, setSplitPaneContext };
+
+// Tabs
+const [getTabsContext, setTabsContext] = createSafeContext<TabsContextType>();
+export { getTabsContext, setTabsContext };

@@ -9,13 +9,13 @@
 
   const activeUrl = getActiveUrlContext();
 
-  let activeItem = $derived(active !== undefined ? active : activeUrl?.value ? href === activeUrl?.value : false);
+  let activeItem = $derived(active !== undefined ? active : activeUrl?.value ? href === activeUrl.value : false);
 
-  let aCls = $derived((activeItem ?? activeUrl?.value === href) ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));
+  let aCls = $derived(activeItem ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));
 </script>
 
 <li class={clsx(className)}>
-  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={(activeItem ?? activeUrl?.value === href) ? "page" : undefined} class={clsx(aCls, aClass)}>
+  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={activeItem ? "page" : undefined} class={clsx(aCls, aClass)}>
     {#if icon}
       {@render icon()}
     {/if}

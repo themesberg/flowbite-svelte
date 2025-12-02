@@ -3,14 +3,12 @@
   import type { SelectedTab, TabCtxType, TabsProps } from "$lib/types";
   import { createSingleSelectionContext, useSingleSelection } from "$lib/utils/singleselection.svelte";
   import clsx from "clsx";
-  import { setContext } from "svelte";
   import { tabs } from "./theme";
+  import { setTabsContext } from "$lib/context";
 
   let { children, selected = $bindable(), tabStyle = "none", ulClass, contentClass, divider = true, class: className, classes, ...restProps }: TabsProps = $props();
 
-  if (classes?.active) {
-    setContext("activeClasses", classes.active);
-  }
+  const activeClasses = typeof classes?.active === "string" ? classes.active : undefined;
 
   warnThemeDeprecation("Tabs", { ulClass, contentClass }, { ulClass: "class", contentClass: "content" });
 
@@ -23,7 +21,6 @@
   const ctx: TabCtxType = $state({ tabStyle, panelId });
   const dividerBool = $derived(["full", "pill"].includes(tabStyle) ? false : divider);
 
-  setContext("ctx", ctx);
   createSingleSelectionContext<SelectedTab>();
 
   const tabRegistry = $state(new Map<string, SelectedTab>());
@@ -54,15 +51,17 @@
     }
   });
 
-  setContext("registerTab", (tabData: SelectedTab) => {
+  const registerFn = (tabData: SelectedTab) => {
     if (tabData.id) {
       tabRegistry.set(tabData.id, tabData);
     }
-  });
+  };
 
-  setContext("unregisterTab", (tabId: string) => {
+  const unregisterFn = (tabId: string) => {
     tabRegistry.delete(tabId);
-  });
+  };
+
+  setTabsContext({ activeClasses, ctx, registerTab: registerFn, unregisterTab: unregisterFn });
 </script>
 
 <ul role="tablist" {...restProps} class={base({ class: clsx(theme?.base, className ?? ulClass) })}>

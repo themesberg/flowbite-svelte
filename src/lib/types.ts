@@ -1880,6 +1880,13 @@ export interface TabCtxType {
 
 export type SelectedTab = { snippet?: Snippet; id?: string };
 
+export interface TabsContextType {
+  activeClasses?: string;
+  ctx: TabCtxType;
+  registerTab: (tab: SelectedTab) => void;
+  unregisterTab: (tabId: string) => void;
+}
+
 // theme
 //export interface ThemeConfig {
 //  [key: string]: ClassValue | ThemeConfig;
@@ -2256,6 +2263,18 @@ export interface DividerProps {
   isDragging: boolean;
   class?: ClassValue | null;
   currentSize: number;
+}
+
+export interface SplitPaneContext {
+  registerPane: () => number;
+  getPaneStyle: (index: number) => string;
+  getPaneSize: (index: number) => number;
+  shouldRenderDivider: (index: number) => boolean;
+  getDirection: () => "horizontal" | "vertical";
+  getIsDragging: () => boolean;
+  onMouseDown: (e: MouseEvent, index: number) => void;
+  onTouchStart: (e: TouchEvent, index: number) => void;
+  onKeyDown: (e: KeyboardEvent, index: number) => void;
 }
 
 // tour

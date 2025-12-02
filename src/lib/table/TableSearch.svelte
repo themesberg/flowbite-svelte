@@ -1,7 +1,6 @@
 <script lang="ts">
   import { setTableContext } from "$lib/context";
   import type { TableSearchProps, TableCtxType } from "$lib/types";
-  import type { TableVariants } from "./theme";
   import clsx from "clsx";
   import { tableSearch } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -47,7 +46,6 @@
 
   const theme = getTheme("tableSearch");
 
-  // Generate theme styles - handle custom color case
   const themeColor = color === "custom" ? "default" : (color as "default" | "blue" | "green" | "red" | "yellow" | "purple" | "indigo" | "pink");
 
   const { root, inner, search, svgDiv, svg, input, table } = $derived(tableSearch({ color: themeColor, striped, hoverable }));
@@ -60,7 +58,7 @@
   const tableSearchCtx: TableCtxType = {
     striped,
     hoverable,
-    color: color === "custom" ? "default" : (color as TableVariants["color"])
+    color: themeColor
   };
 
   setTableContext(tableSearchCtx);
