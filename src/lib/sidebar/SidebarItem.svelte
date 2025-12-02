@@ -5,7 +5,7 @@
 
   let { icon, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: SidebarItemProps = $props();
 
-  const context = getSidebarContext() ?? {};
+  const context = getSidebarContext() ?? { closeSidebar: undefined, activeClass: undefined, nonActiveClass: undefined };
 
   const activeUrl = getActiveUrlContext();
 
@@ -15,7 +15,7 @@
 </script>
 
 <li class={clsx(className)}>
-  <a onclick={context.closeSidebar} {...restProps} {href} aria-current={activeItem ? "page" : undefined} class={clsx(aCls, aClass)}>
+  <a onclick={context.closeSidebar ?? undefined} {...restProps} {href} aria-current={activeItem ? "page" : undefined} class={clsx(aCls, aClass)}>
     {#if icon}
       {@render icon()}
     {/if}

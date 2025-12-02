@@ -35,8 +35,8 @@
 
   // Filter size to only valid buttonToggle sizes (no 'xs')
   const actualSize = (size === "xs" ? "sm" : size) as VariantProps<typeof buttonToggle>["size"];
-  // Filter roundedSize to only valid buttonToggle roundedSize values (remove 'none')
-  const actualRoundedSize = (roundedSize === "none" ? "md" : roundedSize) as VariantProps<typeof buttonToggle>["roundedSize"];
+  // roundedSize is already validated by type system
+  const actualRoundedSize = roundedSize as VariantProps<typeof buttonToggle>["roundedSize"];
 
   function handleClick() {
     toggleSelected(value);

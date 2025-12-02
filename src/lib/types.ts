@@ -397,7 +397,7 @@ export interface ButtonToggleContextType {
   multiSelect: boolean;
   color?: string;
   size?: "xs" | "sm" | "md" | "lg" | "xl";
-  roundedSize?: "sm" | "md" | "lg" | "none" | "xl" | "full";
+  roundedSize?: "sm" | "md" | "lg" | "xl" | "full"; // Aligned with ButtonToggleGroupProps
   ctxIconClass?: string;
   ctxBtnClass?: string;
 }

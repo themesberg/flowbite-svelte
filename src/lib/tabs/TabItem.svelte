@@ -9,7 +9,12 @@
   let { children, titleSlot, open = $bindable(false), title = "Tab title", key, activeClass, inactiveClass, class: className, classes, disabled, tabStyle, ...restProps }: TabitemProps = $props();
 
   const theme = getTheme("tabItem");
-  const tabsCtx = getTabsContext()!;
+  const tabsCtx = getTabsContext();
+
+  if (!tabsCtx) {
+    throw new Error("TabItem must be used within a Tabs component");
+  }
+
   const activeClasses = tabsCtx.activeClasses;
   const ctx: TabCtxType = tabsCtx.ctx;
 
