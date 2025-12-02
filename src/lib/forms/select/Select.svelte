@@ -33,9 +33,7 @@
   const styling = $derived(classes ?? { select: selectClass, svg: clearableSvgClass, close: clearableClass });
 
   const theme = getTheme("select");
-
-  const groupCtx = getButtonGroupContext();
-  const group = groupCtx;
+  const group = getButtonGroupContext();
   const { base, select, close } = $derived(selectCls({ underline, size, disabled, grouped: !!group }));
 
   const clearAll = () => {

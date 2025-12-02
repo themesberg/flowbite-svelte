@@ -6,8 +6,7 @@
   import { getTheme } from "$lib/theme/themeUtils";
   import { getButtonGroupContext } from "$lib/context";
 
-  const groupCtx = getButtonGroupContext();
-  const group = groupCtx?.size;
+  const group = getButtonGroupContext()?.size;
 
   let { children, outline, pill, color = "blue", shadow, class: className, href, disabled, size, btnClass, ...restProps }: GradientButtonProps = $props();
 

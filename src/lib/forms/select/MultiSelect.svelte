@@ -38,8 +38,8 @@
 
   let selectItems = $derived(items.filter((x) => value.includes(x.value)));
   let show: boolean = $state(false);
-  const groupCtx = getButtonGroupContext();
-  const group = groupCtx;
+
+  const group = getButtonGroupContext();
 
   // Active item
   let activeIndex: number | null = $state(null);

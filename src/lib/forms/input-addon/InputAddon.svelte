@@ -8,8 +8,7 @@
   let { children, class: className, size, ...restProps }: InputAddonProps = $props();
 
   let background: boolean = getContext("background");
-  const groupCtx = getButtonGroupContext();
-  const group = groupCtx;
+  const group = getButtonGroupContext();
 
   const borderClasses = {
     base: "border-gray-300 dark:border-gray-600",

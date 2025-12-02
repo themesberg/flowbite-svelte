@@ -13,7 +13,7 @@
     <Button color="alternative" class="h-5 w-5 rounded-xl p-2" onclick={() => (counterInput -= 1)}>
       <MinusOutline class="h-2.5 w-2.5" />
     </Button>
-    <Input id="counter-input" type="number" class="!w-12 shrink-0 border-0 bg-transparent p-0 text-center dark:bg-transparent" placeholder="" bind:value={counterInput} required />
+    <Input id="counter-input" type="number" class="w-12! shrink-0 border-0 bg-transparent p-0 text-center dark:bg-transparent" placeholder="" bind:value={counterInput} required />
     <Button color="alternative" class="h-5 w-5 rounded-xl p-2" onclick={() => (counterInput += 1)}>
       <PlusOutline class="h-2.5 w-2.5" />
     </Button>

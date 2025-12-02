@@ -71,8 +71,7 @@
   // svelte-ignore non_reactive_update
   let dummyFocusDiv: HTMLDivElement;
 
-  const groupCtx = getButtonGroupContext();
-  const group = groupCtx;
+  const group = getButtonGroupContext();
   let isGroup = !!group;
   let _size = $derived(size || (group?.size ? clampSize(group.size) : undefined) || "md");
   const _color = $derived(color === "default" && background ? "tinted" : color);

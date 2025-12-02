@@ -11,7 +11,7 @@
       <Button type="button" id="decrement-button" onclick={() => (quantity -= 1)}>
         <MinusOutline />
       </Button>
-      <Input bind:value={quantity} type="number" id="quantity-input" aria-describedby="helper-text-explanation" placeholder="999" required class="!w-32 text-center" />
+      <Input bind:value={quantity} type="number" id="quantity-input" aria-describedby="helper-text-explanation" placeholder="999" required class="w-32! text-center" />
       <Button type="button" id="increment-button" onclick={() => (quantity += 1)}>
         <PlusOutline />
       </Button>

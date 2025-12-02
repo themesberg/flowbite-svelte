@@ -13,8 +13,8 @@ export const drawer = tv({
     placement: {
       left: { base: "me-auto h-full" },
       right: { base: "ms-auto h-full" },
-      top: { base: "mb-auto !w-full" },
-      bottom: { base: "mt-auto !w-full" }
+      top: { base: "mb-auto w-full!" },
+      bottom: { base: "mt-auto w-full!" }
     },
     width: {
       default: { base: "w-80" },
