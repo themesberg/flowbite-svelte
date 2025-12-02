@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { setContext } from "svelte";
   import CheckmarkIcon from "./CheckmarkIcon.svelte";
   import DoubleArrowIcon from "./DoubleArrowIcon.svelte";
   import { breadcrumbStepper } from "./theme";
@@ -16,8 +15,6 @@
   });
 
   const theme = getTheme("breadcrumbStepper");
-
-  setContext("stepperType", "breadcrumb");
 
   const { base, item, indicator } = $derived(breadcrumbStepper());
 

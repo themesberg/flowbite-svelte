@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { setContext } from "svelte";
   import CheckmarkIcon from "./CheckmarkIcon.svelte";
   import { detailedStepper } from "./theme";
   import type { DetailedStepperProps } from "$lib/types";
@@ -15,8 +14,6 @@
   });
 
   const theme = getTheme("detailedStepper");
-
-  setContext("stepperType", "detailed");
 
   // Override the theme to make current step also highlighted
   const stepperTheme = $derived(() => {

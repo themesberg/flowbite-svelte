@@ -2,7 +2,7 @@
   import { ButtonGroup, Button } from "flowbite-svelte";
 </script>
 
-<dis class="flex flex-col gap-4">
+<div class="flex flex-col gap-4">
   <ButtonGroup>
     <Button disabled>Profile</Button>
     <Button>Settings</Button>
@@ -14,4 +14,4 @@
     <Button>Settings</Button>
     <Button>Messages</Button>
   </ButtonGroup>
-</dis>
+</div>
