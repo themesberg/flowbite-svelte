@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { getContext } from "svelte";
+  import { getTableContext } from "$lib/context";
   import { tableBodyRow } from "./theme";
-  import type { TableBodyRowProps, TableCtxType } from "$lib/types";
+  import type { TableBodyRowProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -9,12 +9,12 @@
 
   const theme = getTheme("tableBodyRow");
 
-  const tableCtx = getContext<TableCtxType>("tableCtx");
+  const tableCtx = getTableContext();
   // for reactivity with svelte context
-  let compoColor = $derived(color || tableCtx.color || "default");
-  let compoHoverable = $derived(hoverable || tableCtx.hoverable || false);
-  let compoStriped = $derived(striped || tableCtx.striped || false);
-  let compoBorder = $derived(border || tableCtx.border || false);
+  let compoColor = $derived(color || tableCtx?.color || "default");
+  let compoHoverable = $derived(hoverable || tableCtx?.hoverable || false);
+  let compoStriped = $derived(striped || tableCtx?.striped || false);
+  let compoBorder = $derived(border || tableCtx?.border || false);
 
   const base = $derived(tableBodyRow({ color: compoColor, hoverable: compoHoverable, striped: compoStriped, border: compoBorder, class: clsx(theme, className) }));
 </script>

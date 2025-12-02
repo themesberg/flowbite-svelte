@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { setContext } from "svelte";
+  import { setTableContext } from "$lib/context";
   import { table as tableCls } from "./theme";
   import TableHead from "./TableHead.svelte";
   import TableBody from "./TableBody.svelte";
@@ -34,7 +34,7 @@
     }
   };
 
-  setContext("tableCtx", tableCtx);
+  setTableContext(tableCtx);
   let headItems = $derived(items && items.length > 0 ? Object.keys(items[0]).map((key) => ({ text: key.charAt(0).toUpperCase() + key.slice(1) })) : []);
 
   let bodyItems = $derived(items && items.length > 0 ? items.map((item) => Object.values(item)) : []);

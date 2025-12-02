@@ -1,12 +1,12 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { getContext } from "svelte";
   import ToolbarButton from "../toolbar/ToolbarButton.svelte";
   import Menu from "./Menu.svelte";
   import { navbarHamburger } from "./theme";
-  import type { NavbarState, NavHamburgerProps, NavbarBreakpoint } from "$lib/types";
+  import type { NavHamburgerProps } from "$lib/types";
   import type { MouseEventHandler } from "svelte/elements";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
   let { children, onclick, menuClass, class: className, classes, name = "Open main menu", ...restProps }: NavHamburgerProps = $props();
 
@@ -14,8 +14,8 @@
   const styling = $derived(classes ?? { menu: menuClass });
 
   const theme = getTheme("navbarHamburger");
-  const navState = getContext<NavbarState>("navState");
-  const navBreakpoint = getContext<NavbarBreakpoint>("breakpoint");
+  const navState = getNavbarStateContext()!;
+  const navBreakpoint = getNavbarBreakpointContext()!;
   const { base, menu } = navbarHamburger({ breakpoint: navBreakpoint });
 
   const toggle: MouseEventHandler<HTMLButtonElement> = () => {

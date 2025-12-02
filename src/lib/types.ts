@@ -418,6 +418,12 @@ export interface ListGroupContextType {
   horizontal?: boolean;
 }
 
+// ButtonGroup Context
+export interface ButtonGroupContextType {
+  size: SizeType;
+  disabled?: boolean;
+}
+
 // button-toggle
 
 export type ButtonToggleGroupProps = HTMLAttributes<HTMLDivElement> & {

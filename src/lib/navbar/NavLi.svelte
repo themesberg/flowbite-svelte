@@ -1,12 +1,12 @@
 <script lang="ts">
   import { getTheme } from "$lib/theme/themeUtils";
-  import type { NavbarState, NavLiProps, NavbarBreakpoint } from "$lib/types";
+  import type { NavLiProps } from "$lib/types";
   import clsx from "clsx";
-  import { getContext } from "svelte";
   import { navbarLi } from "./theme";
+  import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
-  let navState = getContext<NavbarState>("navState");
-  let navBreakpoint = getContext<NavbarBreakpoint>("breakpoint");
+  let navState = getNavbarStateContext()!;
+  let navBreakpoint = getNavbarBreakpointContext()!;
 
   let { children, onclick, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
 

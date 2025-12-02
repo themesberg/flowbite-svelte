@@ -9,7 +9,13 @@ import type {
   ButtonToggleContextType,
   ListContextType,
   ToolbarContextType,
-  ListGroupContextType
+  ListGroupContextType,
+  ButtonGroupContextType,
+  NavbarState,
+  NavbarBreakpoint,
+  SidebarCtxType,
+  TableCtxType,
+  TableSearchType
 } from "./types";
 import type { ThemeConfig } from "./theme";
 
@@ -74,3 +80,29 @@ export { getThemeContext, setThemeContext };
 // ListGroup
 const [getListGroupContext, setListGroupContext] = createSafeContext<ListGroupContextType>();
 export { getListGroupContext, setListGroupContext };
+
+// ButtonGroup
+const [getButtonGroupContext, setButtonGroupContext] = createSafeContext<ButtonGroupContextType>();
+export { getButtonGroupContext, setButtonGroupContext };
+
+// Navbar
+const [getNavbarStateContext, setNavbarStateContext] = createSafeContext<NavbarState>();
+export { getNavbarStateContext, setNavbarStateContext };
+
+const [getNavbarBreakpointContext, setNavbarBreakpointContext] = createSafeContext<NavbarBreakpoint>();
+export { getNavbarBreakpointContext, setNavbarBreakpointContext };
+
+// Sidebar
+const [getSidebarContext, setSidebarContext] = createSafeContext<SidebarCtxType>();
+export { getSidebarContext, setSidebarContext };
+
+const [getActiveUrlContext, setActiveUrlContext] = createSafeContext<{ value: string }>();
+export { getActiveUrlContext, setActiveUrlContext };
+
+// Table
+const [getTableContext, setTableContext] = createSafeContext<TableCtxType>();
+export { getTableContext, setTableContext };
+
+// TableSearch (also uses tableCtx key for compatibility)
+const [getTableSearchContext, setTableSearchContext] = createSafeContext<TableSearchType>();
+export { getTableSearchContext, setTableSearchContext };

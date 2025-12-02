@@ -3,7 +3,7 @@
   import { trapFocus } from "$lib/utils/actions";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
-  import { setContext } from "svelte";
+  import { setSidebarContext, setActiveUrlContext } from "$lib/context";
   import { sineIn } from "svelte/easing";
   import { writable } from "svelte/store";
   import { fly } from "svelte/transition";
@@ -57,7 +57,7 @@
   let isLargeScreen = $derived(disableBreakpoints ? false : alwaysOpen || innerWidth >= breakpointValues[breakpoint]);
 
   const activeUrlStore = $state({ value: "" });
-  setContext("activeUrl", activeUrlStore);
+  setActiveUrlContext(activeUrlStore);
   $effect(() => {
     activeUrlStore.value = activeUrl;
   });
@@ -81,7 +81,7 @@
 
   let transitionParams = params ? params : { x: -320, duration: 200, easing: sineIn };
 
-  setContext("sidebarContext", sidebarCtx);
+  setSidebarContext(sidebarCtx);
 
   // Handler for Escape key
   const handleEscape = () => {

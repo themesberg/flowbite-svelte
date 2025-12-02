@@ -1,15 +1,15 @@
 <script lang="ts">
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import type { NavbarState, NavUlProps, NavbarBreakpoint } from "$lib/types";
+  import type { NavUlProps } from "$lib/types";
   import clsx from "clsx";
-  import { getContext } from "svelte";
   import { sineIn } from "svelte/easing";
   import { prefersReducedMotion } from "svelte/motion";
   import { fade, fly, scale, slide } from "svelte/transition";
   import { navbarUl } from "./theme";
+  import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
-  let navState = getContext<NavbarState>("navState");
-  let navBreakpoint = getContext<NavbarBreakpoint>("breakpoint");
+  let navState = getNavbarStateContext()!;
+  let navBreakpoint = getNavbarBreakpointContext()!;
 
   let {
     children,

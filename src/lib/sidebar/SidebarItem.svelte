@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { getContext } from "svelte";
+  import { getSidebarContext, getActiveUrlContext } from "$lib/context";
   import clsx from "clsx";
-  import type { SidebarCtxType, SidebarItemProps } from "$lib";
+  import type { SidebarItemProps } from "$lib/types";
 
   let { icon, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: SidebarItemProps = $props();
 
-  const context = getContext<SidebarCtxType>("sidebarContext") ?? {};
+  const context = getSidebarContext() ?? {};
 
-  const activeUrl: { value: string } = getContext("activeUrl");
+  const activeUrl = getActiveUrlContext();
 
   let activeItem = $derived(active !== undefined ? active : activeUrl?.value ? href === activeUrl?.value : false);
 
