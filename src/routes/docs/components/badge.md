@@ -204,6 +204,13 @@ This example demonstrates badges with transition effects, creating a smooth anim
 {#include Opening.svelte}
 ```
 
+## Persistent Dismissible Badge with Reset (localStorage)
+This example shows how to make a Flowbite-Svelte `<Badge>` stay hidden after dismissal using localStorage. When the user clicks the dismiss (×) button, the badge is hidden across page reloads. A Reset button is provided to clear the stored state and show the badge again. Suitable for announcements, notifications, or one-time hints.
+
+```svelte example
+{#include BadgeLocalStorage.svelte}
+```
+
 ## Accessibility
 
 The Badge component follows accessibility best practices:
