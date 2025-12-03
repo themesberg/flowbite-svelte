@@ -6,8 +6,9 @@
   import { button } from "./theme";
   import { getButtonGroupContext } from "$lib/context";
 
-  const group = getButtonGroupContext()?.size;
-  const ctxDisabled = getButtonGroupContext()?.disabled;
+  const groupCtx = getButtonGroupContext();
+  const group = groupCtx?.size;
+  const ctxDisabled = groupCtx?.disabled;
 
   let {
     children,

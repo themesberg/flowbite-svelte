@@ -29,19 +29,21 @@
   const prefixPadding = { sm: "px-2", md: "px-3", lg: "px-4" };
 
   // size: explicit, inherited, default
-  let _size = size || (group?.size ? clampSize(group.size) : undefined) || "md";
+  let _size = $derived(size || (group?.size ? clampSize(group.size) : undefined) || "md");
 
-  let divClass: string = clsx(
-    textSizes[_size],
-    prefixPadding[_size],
-    "text-gray-500 bg-gray-200",
-    background ? darkBgClasses.tinted : darkBgClasses.base,
-    background ? divider.tinted : divider.base,
-    background ? borderClasses["tinted"] : borderClasses["base"],
-    "inline-flex items-center border",
-    group && "not-first:-ms-px",
-    "first:rounded-s-lg last:rounded-e-lg",
-    className
+  let divClass: string = $derived(
+    clsx(
+      textSizes[_size],
+      prefixPadding[_size],
+      "text-gray-500 bg-gray-200",
+      background ? darkBgClasses.tinted : darkBgClasses.base,
+      background ? divider.tinted : divider.base,
+      background ? borderClasses["tinted"] : borderClasses["base"],
+      "inline-flex items-center border",
+      group && "not-first:-ms-px",
+      "first:rounded-s-lg last:rounded-e-lg",
+      className
+    )
   );
 </script>
 
