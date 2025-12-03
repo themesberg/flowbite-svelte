@@ -37,7 +37,7 @@
               <Input
                 size="lg"
                 id="member_email"
-                class="formkit-input focus:ring-primary-600 focus:border-primary-600 pl-12 text-gray-900 sm:!w-96"
+                class="formkit-input focus:ring-primary-600 focus:border-primary-600 pl-12 text-gray-900 sm:w-96!"
                 name="email_address"
                 aria-label="Email Address"
                 placeholder="Your email address..."

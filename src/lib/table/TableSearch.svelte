@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { setContext } from "svelte";
-  import type { TableSearchProps, TableSearchType } from "$lib/types";
+  import { setTableContext } from "$lib/context";
+  import type { TableSearchProps, TableCtxType } from "$lib/types";
   import clsx from "clsx";
   import { tableSearch } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -46,7 +46,6 @@
 
   const theme = getTheme("tableSearch");
 
-  // Generate theme styles - handle custom color case
   const themeColor = color === "custom" ? "default" : (color as "default" | "blue" | "green" | "red" | "yellow" | "purple" | "indigo" | "pink");
 
   const { root, inner, search, svgDiv, svg, input, table } = $derived(tableSearch({ color: themeColor, striped, hoverable }));
@@ -56,13 +55,13 @@
   // Handle custom color
   const finalTableClass = $derived(color === "custom" && customColor ? clsx(tableCls, customColor) : tableCls);
 
-  const tableSearchCtx: TableSearchType = {
+  const tableSearchCtx: TableCtxType = {
     striped,
     hoverable,
-    color
+    color: themeColor
   };
 
-  setContext("tableCtx", tableSearchCtx);
+  setTableContext(tableSearchCtx);
 </script>
 
 <div class={root({ class: clsx(theme?.root, styling.root) })}>

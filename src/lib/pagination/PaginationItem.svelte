@@ -2,16 +2,25 @@
   import clsx from "clsx";
   import { paginationItem } from "./theme";
   import type { PaginationItemProps } from "$lib/types";
-  import { getContext } from "svelte";
+  import { getPaginationContext } from "$lib/context";
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, size, class: className, href, active, ...restProps }: PaginationItemProps = $props();
 
   const theme = getTheme("paginationItem");
 
-  const group = getContext<boolean>("group");
-  const table = getContext<boolean>("table");
-  const paginationCls = $derived(paginationItem({ size: getContext("size") ?? size, active, group, table, class: clsx(theme, className) }));
+  // Get context - it will be undefined if used outside Pagination
+  const ctx = getPaginationContext();
+
+  const paginationCls = $derived(
+    paginationItem({
+      size: ctx?.size ?? size,
+      active,
+      group: ctx?.group ?? false,
+      table: ctx?.table ?? false,
+      class: clsx(theme, className)
+    })
+  );
 </script>
 
 {#if href}

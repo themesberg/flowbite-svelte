@@ -1,11 +1,11 @@
 <script lang="ts" generics="T">
   import { select as selectCls } from "./theme";
   import clsx from "clsx";
-  import type { SelectProps, SizeType } from "$lib";
+  import type { SelectProps } from "$lib";
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
-  import { getContext } from "svelte";
+  import { getButtonGroupContext } from "$lib/context";
 
   let {
     children,
@@ -33,8 +33,7 @@
   const styling = $derived(classes ?? { select: selectClass, svg: clearableSvgClass, close: clearableClass });
 
   const theme = getTheme("select");
-
-  let group: { size: SizeType } = getContext("group");
+  const group = getButtonGroupContext();
   const { base, select, close } = $derived(selectCls({ underline, size, disabled, grouped: !!group }));
 
   const clearAll = () => {

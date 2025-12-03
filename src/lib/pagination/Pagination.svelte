@@ -1,18 +1,30 @@
 <script lang="ts">
-  import { setContext } from "svelte";
   import { pagination } from "./theme";
   import PaginationItem from "./PaginationItem.svelte";
-  import type { PaginationProps } from "$lib/types";
+  import type { PaginationProps, PaginationContextType } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
+  import { setPaginationContext } from "$lib/context";
   import clsx from "clsx";
 
   let { pages = [], previous, next, prevContent, nextContent, table, size, ariaLabel, ...restProps }: PaginationProps = $props();
 
   const theme = getTheme("pagination");
 
-  setContext("group", true);
-  setContext("table", table);
-  setContext("size", size);
+  // Create context object
+  const ctx: PaginationContextType = {
+    get group() {
+      return true;
+    },
+    get table() {
+      return table;
+    },
+    get size() {
+      return size;
+    }
+  };
+
+  // Set context during initialization
+  setPaginationContext(ctx);
 
   const paginationCls = $derived(pagination({ table, size, class: clsx(theme) }));
 </script>

@@ -3,14 +3,20 @@
   import { getTheme } from "$lib/theme/themeUtils";
   import { useSingleSelection } from "$lib/utils/singleselection.svelte";
   import clsx from "clsx";
-  import { getContext } from "svelte";
   import { tabItem, tabs } from "./theme";
+  import { getTabsContext } from "$lib/context";
 
   let { children, titleSlot, open = $bindable(false), title = "Tab title", key, activeClass, inactiveClass, class: className, classes, disabled, tabStyle, ...restProps }: TabitemProps = $props();
 
   const theme = getTheme("tabItem");
-  const activeClasses = getContext<string>("activeClasses");
-  const ctx: TabCtxType = getContext("ctx");
+  const tabsCtx = getTabsContext();
+
+  if (!tabsCtx) {
+    throw new Error("TabItem must be used within a Tabs component");
+  }
+
+  const activeClasses = tabsCtx.activeClasses;
+  const ctx: TabCtxType = tabsCtx.ctx;
 
   const compoTabStyle = $derived(tabStyle ?? ctx.tabStyle ?? "full");
   const { active, inactive } = $derived(tabs({ tabStyle: compoTabStyle, hasDivider: true }));
@@ -19,8 +25,8 @@
   const tabIdentifier = key ?? tabId;
   const self: SelectedTab = { id: tabIdentifier, snippet: children };
 
-  const registerTab = getContext<(tab: SelectedTab) => void>("registerTab");
-  const unregisterTab = getContext<(tabId: string) => void>("unregisterTab");
+  const registerTab = tabsCtx.registerTab;
+  const unregisterTab = tabsCtx.unregisterTab;
 
   const updateSingleSelection = useSingleSelection<SelectedTab>((value) => (open = value?.id === self.id));
 

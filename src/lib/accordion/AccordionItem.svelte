@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { AccordionCtxType, AccordionItemProps, ParamsType } from "$lib";
+  import type { AccordionItemProps, ParamsType } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { useSingleSelection } from "$lib/utils/singleselection.svelte";
   import clsx from "clsx";
-  import { getContext } from "svelte";
+  import { getAccordionContext } from "$lib/context";
   import { slide } from "svelte/transition";
   import { accordionItem } from "./theme";
 
@@ -41,9 +41,10 @@
 
   let styling: typeof classes = $derived(classes ?? { button: headerClass, content: contentClass, active: activeClass, inactive: inactiveClass });
 
-  const ctx: AccordionCtxType = getContext("ctx") ?? {};
+  // Get context - it will be undefined if used outside Accordion
+  const ctx = getAccordionContext();
 
-  const ctxTransitionType = ctx.transitionType ?? transitionType;
+  const ctxTransitionType = ctx?.transitionType ?? transitionType;
   // Check if transitionType is explicitly set to undefined in props
   const useTransition = transitionType === "none" ? false : ctxTransitionType === "none" ? false : true;
 
@@ -63,9 +64,9 @@
     open = !open;
   };
 
-  const { base, button, content, active, inactive } = $derived(accordionItem({ flush: ctx.flush, open }));
+  const { base, button, content, active, inactive } = $derived(accordionItem({ flush: ctx?.flush, open }));
 
-  let buttonClass = $derived(clsx(open && !ctx.flush && (styling.active || ctx.activeClass || active()), !open && !ctx.flush && (styling.inactive || ctx.inactiveClass || inactive())));
+  let buttonClass = $derived(clsx(open && !ctx?.flush && (styling.active || ctx?.activeClass || active()), !open && !ctx?.flush && (styling.inactive || ctx?.inactiveClass || inactive())));
 </script>
 
 <h2 class={base({ class: clsx(theme?.base, className) })}>

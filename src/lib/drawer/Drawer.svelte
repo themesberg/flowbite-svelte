@@ -6,7 +6,8 @@
   import { sineIn } from "svelte/easing";
   import { fly } from "svelte/transition";
   import { drawer } from "./theme";
-  import { setContext, tick } from "svelte";
+  import { setDrawerContext } from "$lib/context";
+  import { tick } from "svelte";
 
   let {
     children,
@@ -25,11 +26,14 @@
     ...restProps
   }: DrawerProps = $props();
 
-  setContext("drawer", {
+  // Create reactive context using getter
+  const context = {
     get placement() {
       return placement;
     }
-  });
+  };
+
+  setDrawerContext(context);
 
   // back compatibility
   if (hidden !== undefined) console.warn("'hidden' property is deprecated. Please use the 'open' property to manage 'Drawer'.");

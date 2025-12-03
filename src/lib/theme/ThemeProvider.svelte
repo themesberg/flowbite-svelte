@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import { setContext } from "svelte";
+  import { setThemeContext } from "$lib/context";
   import type { ThemeConfig } from "$lib/types";
 
   interface ThemeProviderProps {
@@ -11,7 +11,7 @@
   let { children, theme }: ThemeProviderProps = $props();
 
   if (theme) {
-    setContext("theme", theme);
+    setThemeContext(theme);
   } else {
     console.log("ThemeProvider: No theme provided");
   }

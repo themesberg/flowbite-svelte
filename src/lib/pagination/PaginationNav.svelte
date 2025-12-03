@@ -1,10 +1,10 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { setContext } from "svelte";
   import { paginationNav } from "./theme";
-  import type { PaginationNavProps } from "$lib";
+  import type { PaginationNavProps, PaginationContextType } from "$lib";
   import PaginationButton from "./PaginationButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { setPaginationContext } from "$lib/context";
 
   function paginationRange(start: number, end: number): number[] {
     return Array.from({ length: end - start + 1 }, (_, i) => start + i);
@@ -36,13 +36,24 @@
 
   const theme = getTheme("paginationNav");
 
-  // Set context values for child components
-  setContext("group", true);
-  setContext("size", size);
-  setContext("table", layout === "table");
-  if (classes?.active) {
-    setContext("activeClasses", classes.active);
-  }
+  // Create context object
+  const ctx: PaginationContextType = {
+    get group() {
+      return true;
+    },
+    get size() {
+      return size;
+    },
+    get table() {
+      return layout === "table";
+    },
+    get activeClasses() {
+      return classes?.active;
+    }
+  };
+
+  // Set context during initialization
+  setPaginationContext(ctx);
 
   // Calculate visible pages range using Svelte 5 derived values
   const halfVisiblePages = $derived(Math.floor(visiblePages / 2));

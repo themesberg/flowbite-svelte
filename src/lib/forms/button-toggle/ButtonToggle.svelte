@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { getContext } from "svelte";
   import CheckIcon from "./CheckIcon.svelte";
   import { buttonToggle } from "./theme";
-  import type { ButtonToggleVariants } from "./theme";
+  import type { VariantProps } from "tailwind-variants";
   import clsx from "clsx";
-  import type { ButtonToggleProps, ButtonToggleContext } from "$lib";
+  import type { ButtonToggleProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getButtonToggleContext } from "$lib/context";
 
   let { value, selected = false, children, iconSlot, color, class: className, iconClass, txtClass, contentClass, classes, ...restProps }: ButtonToggleProps = $props();
 
@@ -15,20 +15,34 @@
 
   const theme = getTheme("buttonToggle");
 
-  const { toggleSelected, isSelected } = getContext<ButtonToggleContext>("button-toggle-group");
-  const multiSelect = getContext<boolean>("multiSelect");
-  const actualColor = getContext<ButtonToggleVariants["color"]>("buttonToggleColor") ? getContext<ButtonToggleVariants["color"]>("buttonToggleColor") : color ? color : "primary";
-  const size = getContext<ButtonToggleVariants["size"]>("buttonToggleSize");
-  const roundedSize = getContext<ButtonToggleVariants["roundedSize"]>("buttonToggleRounded");
-  const ctxIconClass = getContext<string | undefined>("ctxIconClass");
+  // Get context - it will be undefined if used outside ButtonToggleGroup
+  const ctx = getButtonToggleContext();
+
+  // Extract context values with fallbacks
+  const { toggleSelected, isSelected, multiSelect, size, roundedSize, ctxIconClass, ctxBtnClass } = {
+    toggleSelected: ctx?.toggleSelected ?? (() => {}),
+    isSelected: ctx?.isSelected ?? (() => false),
+    multiSelect: ctx?.multiSelect ?? false,
+    size: ctx?.size,
+    roundedSize: ctx?.roundedSize,
+    ctxIconClass: ctx?.ctxIconClass,
+    ctxBtnClass: ctx?.ctxBtnClass
+  };
+
+  // Use context color if available, otherwise use prop color, otherwise default to "primary"
+  const actualColor = (ctx?.color ?? color ?? "primary") as VariantProps<typeof buttonToggle>["color"];
   const actualIconClass = ctxIconClass;
-  const ctxBtnClass = getContext<string | undefined>("ctxBtnClass");
+
+  // Filter size to only valid buttonToggle sizes (no 'xs')
+  const actualSize = (size === "xs" ? "sm" : size) as VariantProps<typeof buttonToggle>["size"];
+  // roundedSize is already validated by type system
+  const actualRoundedSize = roundedSize as VariantProps<typeof buttonToggle>["roundedSize"];
 
   function handleClick() {
     toggleSelected(value);
   }
 
-  const { button, content, text, icon } = $derived(buttonToggle({ selected, color, size }));
+  const { button, content, text, icon } = $derived(buttonToggle({ selected, color: actualColor, size: actualSize }));
 
   $effect(() => {
     selected = isSelected(value);
@@ -37,7 +51,7 @@
 
 <button
   type="button"
-  class={button({ selected, color: actualColor, size, roundedSize, class: clsx(theme?.button, ctxBtnClass, className) })}
+  class={button({ selected, color: actualColor, size: actualSize, roundedSize: actualRoundedSize, class: clsx(theme?.button, ctxBtnClass, className) })}
   data-selected={selected}
   onclick={handleClick}
   role={multiSelect ? "checkbox" : "radio"}

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { setContext } from "svelte";
   import type { StepStatus, TimelineStep } from "$lib/types";
   import CheckmarkIcon from "./CheckmarkIcon.svelte";
   import ProfileCardIcon from "./ProfileCardIcon.svelte";
@@ -17,8 +16,6 @@
   });
 
   const theme = getTheme("timelineStepper");
-
-  setContext("stepperType", "timeline");
 
   const { base, item, circle } = $derived(timelineStepper());
 

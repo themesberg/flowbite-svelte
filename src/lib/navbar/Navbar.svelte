@@ -1,18 +1,18 @@
 <script lang="ts">
   import clsx from "clsx";
-  import { setContext } from "svelte";
   import NavContainer from "./NavContainer.svelte";
   import { navbar } from "./theme";
   import type { NavbarState, NavbarProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
+  import { setNavbarStateContext, setNavbarBreakpointContext } from "$lib/context";
 
   let { children, fluid, navContainerClass, class: className, closeOnClickOutside = true, breakpoint = "md", ...restProps }: NavbarProps = $props();
 
   const theme = getTheme("navbar");
 
-  let navState = $state({ hidden: true });
-  setContext<NavbarState>("navState", navState);
-  setContext("breakpoint", breakpoint);
+  let navState = $state<NavbarState>({ hidden: true });
+  setNavbarStateContext(navState);
+  setNavbarBreakpointContext(breakpoint);
 
   // Add reference to the navbar element
   let navbarElement: HTMLElement;

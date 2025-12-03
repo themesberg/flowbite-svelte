@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { setContext } from "svelte";
   import type { StepStatus, Step } from "$lib/types";
   import CheckmarkIcon from "./CheckmarkIcon.svelte";
   import { verticalStepper } from "./theme";
@@ -16,8 +15,6 @@
   });
 
   const theme = getTheme("verticalStepper");
-
-  setContext("stepperType", "vertical");
 
   const { base, card, content } = $derived(verticalStepper());
 

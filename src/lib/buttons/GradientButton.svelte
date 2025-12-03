@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { getContext } from "svelte";
   import { gradientButton } from "./theme";
   import clsx from "clsx";
-  import type { GradientButtonProps, SizeType } from "$lib";
+  import type { GradientButtonProps } from "$lib";
   import Button from "./Button.svelte";
   import { getTheme } from "$lib/theme/themeUtils";
+  import { getButtonGroupContext } from "$lib/context";
 
-  const group: SizeType = getContext("group");
+  const group = getButtonGroupContext()?.size;
 
   let { children, outline, pill, color = "blue", shadow, class: className, href, disabled, size, btnClass, ...restProps }: GradientButtonProps = $props();
 

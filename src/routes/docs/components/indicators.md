@@ -36,7 +36,7 @@ Use this example to create a simple indicator with multiple colors and position 
 
 This example can be used as a legend indicator for charts to also add a text next to the bullet point.
 
-```svelte example class="text-sm font-medium text-gray-900 dark:text-white flex gap-2"
+```svelte example class="text-sm font-medium text-gray-900 dark:text-white flex flex-wrap gap-2"
 {#include Legend.svelte}
 ```
 

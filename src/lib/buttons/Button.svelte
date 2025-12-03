@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { getContext } from "svelte";
   import clsx from "clsx";
   import { Spinner } from "$lib";
-  import type { SizeType, ButtonProps } from "$lib";
+  import type { ButtonProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import { button } from "./theme";
+  import { getButtonGroupContext } from "$lib/context";
 
-  const group: SizeType = getContext("group");
-  const ctxDisabled: boolean | undefined = getContext("disabled");
+  const groupCtx = getButtonGroupContext();
+  const group = groupCtx?.size;
+  const ctxDisabled = groupCtx?.disabled;
 
   let {
     children,

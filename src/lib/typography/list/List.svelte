@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { setContext } from "svelte";
   import { list } from "./theme";
   import type { ListProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
+  import { setListContext } from "$lib/context";
 
   let { children, tag = "ul", isContenteditable = false, position = "inside", ctxClass, class: className, ...restProps }: ListProps = $props();
 
@@ -11,7 +11,15 @@
 
   let contextClass = $state(ctxClass || "");
 
-  setContext("ctxClass", () => contextClass);
+  // Create context object
+  const ctx = {
+    get ctxClass() {
+      return contextClass;
+    }
+  };
+
+  // Set context during initialization
+  setListContext(ctx);
 
   $effect(() => {
     contextClass = ctxClass || "";

@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { setContext } from "svelte";
   import { listGroup } from "./theme";
   import clsx from "clsx";
   import type { ListgroupProps } from "$lib";
   import ListgroupItem from "./ListgroupItem.svelte";
   import { getTheme } from "$lib/theme/themeUtils";
+  import { setListGroupContext } from "$lib/context";
 
   let { children, items, active, onclick, horizontal, rounded, border, class: className, itemClass, iconClass, ...restProps }: ListgroupProps = $props();
 
@@ -13,8 +13,7 @@
   const base = $derived(listGroup({ rounded, border, horizontal, class: clsx(theme, className) }));
 
   let tag = active ? "div" : "ul";
-  setContext("listGrpActive", active);
-  setContext("listGrpHorizontal", horizontal);
+  setListGroupContext({ active, horizontal });
 
   function createItemClickHandler() {
     return function (event: MouseEvent) {

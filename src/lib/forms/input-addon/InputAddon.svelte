@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { SizeType } from "$lib/types";
   import { getContext } from "svelte";
   import clsx from "clsx";
   import type { InputAddonProps } from "$lib";
   import { clampSize } from "$lib/forms/input-field";
+  import { getButtonGroupContext } from "$lib/context";
 
   let { children, class: className, size, ...restProps }: InputAddonProps = $props();
 
   let background: boolean = getContext("background");
-  let group: { size: SizeType } = getContext("group");
+  const group = getButtonGroupContext();
 
   const borderClasses = {
     base: "border-gray-300 dark:border-gray-600",
@@ -29,19 +29,21 @@
   const prefixPadding = { sm: "px-2", md: "px-3", lg: "px-4" };
 
   // size: explicit, inherited, default
-  let _size = size || clampSize(group?.size) || "md";
+  let _size = $derived(size || (group?.size ? clampSize(group.size) : undefined) || "md");
 
-  let divClass: string = clsx(
-    textSizes[_size],
-    prefixPadding[_size],
-    "text-gray-500 bg-gray-200",
-    background ? darkBgClasses.tinted : darkBgClasses.base,
-    background ? divider.tinted : divider.base,
-    background ? borderClasses["tinted"] : borderClasses["base"],
-    "inline-flex items-center border",
-    group && "not-first:-ms-px",
-    "first:rounded-s-lg last:rounded-e-lg",
-    className
+  let divClass: string = $derived(
+    clsx(
+      textSizes[_size],
+      prefixPadding[_size],
+      "text-gray-500 bg-gray-200",
+      background ? darkBgClasses.tinted : darkBgClasses.base,
+      background ? divider.tinted : divider.base,
+      background ? borderClasses["tinted"] : borderClasses["base"],
+      "inline-flex items-center border",
+      group && "not-first:-ms-px",
+      "first:rounded-s-lg last:rounded-e-lg",
+      className
+    )
   );
 </script>
 

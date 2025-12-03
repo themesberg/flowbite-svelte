@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PaneProps } from "$lib/types";
-  import { getSplitPaneContext } from "./SplitPane.svelte";
+  import { getSplitPaneContext } from "$lib/context";
   import Divider from "./Divider.svelte";
   import { pane } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";

@@ -81,7 +81,7 @@ Use the `horizontal` property to change the direction of list items.
 
 Use the following example when you want to use `Tooltip` with a horizontal list.
 
-```svelte example class="space-x-8 h-64 flex justify-center items-center" hideResponsiveButtons
+```svelte example class="gap-4 flex flex-wrap justify-center items-center" hideResponsiveButtons
 {#include Tooltip.svelte}
 ```
 

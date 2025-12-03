@@ -221,7 +221,7 @@ Sometimes you need a button to indicate an action using only an icon. Icon-only 
 
 Always include accessible labels (aria-label) for screen readers even when text isn't visible.
 
-```svelte example class="flex justify-center gap-2" hideResponsiveButtons
+```svelte example class="flex flex-wrap items-center gap-2" hideResponsiveButtons
 {#include IconButton.svelte}
 ```
 
@@ -235,7 +235,7 @@ Use the spinner components to indicate a loader animation inside buttons. Loadin
 
 Always disable buttons during loading to prevent multiple submissions.
 
-```svelte example class="flex justify-center gap-2" hideResponsiveButtons
+```svelte example class="flex flex-wrap justify-center gap-2" hideResponsiveButtons
 {#include Loader.svelte}
 ```
 

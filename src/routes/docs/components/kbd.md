@@ -28,7 +28,7 @@ The KBD (Keyboard) component can be used to indicate a textual user input from t
 
 Here’s a list of KBD components that you can use inside any other element.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript hideResponsiveButtons class="flex flex-wrap gap-2"
 {#include Default.svelte}
 ```
 
@@ -60,7 +60,7 @@ Use this example to show arrow keys inside the KBD styled element.
 
 Use this example if you need to show a key from the latin alphabet
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript hideResponsiveButtons class="flex flex-wrap gap-2"
 {#include Letter.svelte}
 ```
 
@@ -68,7 +68,7 @@ Use this example if you need to show a key from the latin alphabet
 
 Use this example to show a key inside a KBD component from the english numeral system.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript hideResponsiveButtons class="flex flex-wrap gap-2"
 {#include Number.svelte}
 ```
 
@@ -76,7 +76,7 @@ Use this example to show a key inside a KBD component from the english numeral s
 
 This example can be used to denote function keys inside the KBD component.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript hideResponsiveButtons class="flex flex-wrap gap-2"
 {#include Function.svelte}
 ```
 

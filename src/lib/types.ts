@@ -196,13 +196,6 @@ export type AnchorButtonDivAttributes =
   | ({ href?: undefined; onclick?: undefined } & HTMLAttributes<HTMLDivElement>);
 
 // accordion
-export interface AccordionCtxType {
-  flush?: boolean;
-  activeClass?: string | null;
-  inactiveClass?: string | null;
-  transitionType?: TransitionFunc | "none";
-}
-
 export interface AccordionProps extends AccordionVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   children: Snippet;
   multiple?: boolean;
@@ -274,12 +267,6 @@ export interface BannerProps extends BannerVariants, Omit<HTMLAttributes<HTMLDiv
 }
 
 // bottom-navigation
-
-export type BottomNavContextType = {
-  activeClass?: string | null;
-  activeUrl?: string;
-  navType?: BottomNavVariants["navType"];
-};
 
 export interface BottomNavProps extends BottomNavVariants, HTMLAttributes<HTMLDivElement> {
   children: Snippet;
@@ -357,14 +344,95 @@ export interface GradientButtonProps extends GradientButtonVariantes, HTMLButton
   btnClass?: ClassValue;
 }
 
+// Context Types
+// These types are used by the context system in $lib/context.ts
+
+// Accordion Context
+export interface AccordionCtxType {
+  flush?: boolean;
+  activeClass?: string | null;
+  inactiveClass?: string | null;
+  transitionType?: TransitionFunc | "none";
+}
+
+// BottomNav Context
+export interface BottomNavContextType {
+  activeClass?: string | null;
+  activeUrl?: string;
+  navType?: BottomNavVariants["navType"];
+}
+
+// Carousel Context
+export interface CarouselState {
+  images: HTMLImgAttributes[];
+  index: number;
+  lastSlideChange: number; // ms
+  slideDuration: number; // ms
+  forward: boolean;
+  changeSlide: (newIndex: number) => void;
+}
+
+// Drawer Context
+export interface DrawerContextType {
+  placement: "left" | "right" | "top" | "bottom";
+}
+
+// Dropdown Context
+export interface DropdownContextType {
+  activeUrl: string;
+}
+
+// Pagination Context
+export interface PaginationContextType {
+  group: boolean;
+  table?: boolean;
+  size?: "default" | "large";
+  activeClasses?: ClassValue;
+}
+
+// ButtonToggle Context
+export interface ButtonToggleContextType {
+  toggleSelected: (toggleValue: string) => void;
+  isSelected: (toggleValue: string) => boolean;
+  multiSelect: boolean;
+  color?: string;
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  roundedSize?: "sm" | "md" | "lg" | "xl" | "full"; // Aligned with ButtonToggleGroupProps
+  ctxIconClass?: string;
+  ctxBtnClass?: string;
+}
+
+// List Context
+export interface ListContextType {
+  ctxClass: string;
+}
+
+// Toolbar Context
+export interface ToolbarContextType {
+  separators: boolean;
+}
+
+// ListGroup Context
+export interface ListGroupContextType {
+  active?: boolean;
+  horizontal?: boolean;
+}
+
+// ButtonGroup Context
+export interface ButtonGroupContextType {
+  size: SizeType;
+  disabled?: boolean;
+}
+
 // button-toggle
+
 export type ButtonToggleGroupProps = HTMLAttributes<HTMLDivElement> & {
   multiSelect?: boolean;
   name?: string;
   value?: string | null | string[];
   color?: ButtonToggleVariants["color"];
   size?: ButtonToggleVariants["size"];
-  roundedSize?: ButtonToggleVariants["roundedSize"];
+  roundedSize?: "sm" | "md" | "lg" | "xl" | "full"; // buttonToggleGroup roundedSize values
   onSelect?: (val: string | null | string[]) => void;
   children: Snippet;
   ctxIconClass?: ClassValue;
@@ -399,15 +467,6 @@ export type CardProps = Omit<CardVariants, "href"> &
   };
 
 // carousel
-
-export type CarouselState = {
-  images: HTMLImgAttributes[];
-  index: number;
-  lastSlideChange: number; // ms
-  slideDuration: number; // ms
-  forward: boolean;
-  changeSlide: (newIndex: number) => void;
-};
 
 export interface CarouselProps extends CarouselVariants, Omit<HTMLAttributes<HTMLDivElement>, "children" | "onchange"> {
   children?: Snippet<[number]>;
@@ -1821,6 +1880,13 @@ export interface TabCtxType {
 
 export type SelectedTab = { snippet?: Snippet; id?: string };
 
+export interface TabsContextType {
+  activeClasses?: string;
+  ctx: TabCtxType;
+  registerTab: (tab: SelectedTab) => void;
+  unregisterTab: (tabId: string) => void;
+}
+
 // theme
 //export interface ThemeConfig {
 //  [key: string]: ClassValue | ThemeConfig;
@@ -2197,6 +2263,18 @@ export interface DividerProps {
   isDragging: boolean;
   class?: ClassValue | null;
   currentSize: number;
+}
+
+export interface SplitPaneContext {
+  registerPane: () => number;
+  getPaneStyle: (index: number) => string;
+  getPaneSize: (index: number) => number;
+  shouldRenderDivider: (index: number) => boolean;
+  getDirection: () => "horizontal" | "vertical";
+  getIsDragging: () => boolean;
+  onMouseDown: (e: MouseEvent, index: number) => void;
+  onTouchStart: (e: TouchEvent, index: number) => void;
+  onKeyDown: (e: KeyboardEvent, index: number) => void;
 }
 
 // tour

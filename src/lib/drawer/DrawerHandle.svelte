@@ -3,11 +3,11 @@
   import type { DrawerHandleProps } from "$lib";
   import clsx from "clsx";
   import { drawerhandle } from "./theme";
-  import { getContext } from "svelte";
+  import { getDrawerContext } from "$lib/context";
 
   let { children, placement, "aria-label": ariaLabel, class: className, classes, ...restProps }: DrawerHandleProps = $props();
 
-  const ctx = getContext<{ placement: DrawerHandleProps["placement"] } | undefined>("drawer");
+  const ctx = getDrawerContext();
 
   const theme = getTheme("drawerhandle");
   let { base, handle } = $derived(drawerhandle({ placement: placement ?? ctx?.placement ?? "left" }));

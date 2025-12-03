@@ -1,16 +1,17 @@
 <script lang="ts">
-  import { getContext } from "svelte";
   import clsx from "clsx";
   import type { ListgroupItemProps } from "$lib";
   import { listGroupItem, type ListgroupItemVariants } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
+  import { getListGroupContext } from "$lib/context";
 
   let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-15 w-15", ...restProps }: ListgroupItemProps = $props();
 
   const theme = getTheme("listGroupItem");
 
-  active = active ?? getContext("listGrpActive");
-  horizontal = horizontal ?? getContext("listGrpHorizontal");
+  const listGroupCtx = getListGroupContext();
+  active = active ?? listGroupCtx?.active;
+  horizontal = horizontal ?? listGroupCtx?.horizontal;
 
   let state: ListgroupItemVariants["state"] = $derived(disabled ? "disabled" : current ? "current" : "normal");
   let itemClass = $derived(listGroupItem({ state, active, horizontal, class: clsx(theme, className) }));

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { getContext } from "svelte";
+  import { getTableContext } from "$lib/context";
   import TableHeadCell from "./TableHeadCell.svelte";
   import { tableHead } from "./theme";
-  import type { TableHeadProps, TableCtxType, HeadItemType } from "$lib/types";
+  import type { TableHeadProps, HeadItemType } from "$lib/types";
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
@@ -10,11 +10,11 @@
 
   const theme = getTheme("tableHead");
 
-  const tableCtx = getContext<TableCtxType>("tableCtx");
+  const tableCtx = getTableContext();
   // for reactivity with svelte context
-  let compoColor = $derived(color ? color : tableCtx.color || "default");
-  let compoStriped = $derived(striped ? striped : tableCtx.striped || false);
-  let compoBorder = $derived(border ? border : tableCtx.border || false);
+  let compoColor = $derived(color ? color : tableCtx?.color || "default");
+  let compoStriped = $derived(striped ? striped : tableCtx?.striped || false);
+  let compoBorder = $derived(border ? border : tableCtx?.border || false);
 
   const base = $derived(tableHead({ color: compoColor, border: compoBorder, striped: compoStriped, class: clsx(theme, className) }));
 

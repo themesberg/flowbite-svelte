@@ -15,7 +15,7 @@ export const tour = tv({
     description: "text-sm leading-relaxed text-gray-600 mb-4",
     progressContainer: "flex gap-2 justify-center",
     progressDot: ["w-2 h-2 rounded-full bg-gray-300", "hover:bg-gray-400 transition-all duration-200 hover:scale-110"],
-    progressDotActive: "!bg-blue-500 !w-6 rounded",
+    progressDotActive: "!bg-blue-500 w-6! rounded",
     actions: ["flex justify-between items-center px-5 py-4", "border-t border-gray-200 relative z-10 bg-white rounded-b-xl"],
     navigation: "flex gap-2",
     button: ["px-4 py-2 rounded-md text-sm font-medium", "transition-all duration-200"],

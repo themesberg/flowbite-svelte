@@ -1,6 +1,9 @@
 <script lang="ts">
   import { page } from "$app/state";
   import { Pagination } from "flowbite-svelte";
+  import { onMount } from "svelte";
+
+  let isMobile = $state(false);
 
   let activeUrl = $derived(page.url.searchParams.get("page"));
   let pages = $state([
@@ -32,7 +35,19 @@
   const next = () => {
     alert("Next btn clicked. Make a call to your server to fetch data.");
   };
+
+  function checkMobile() {
+    isMobile = window.innerWidth <= 640;
+  }
+
+  onMount(() => {
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  });
 </script>
 
 <Pagination {pages} {previous} {next} />
-<Pagination {pages} size="large" {previous} {next} />
+{#if !isMobile}
+  <Pagination {pages} size="large" {previous} {next} />
+{/if}

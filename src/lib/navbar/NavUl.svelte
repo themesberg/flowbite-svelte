@@ -1,15 +1,15 @@
 <script lang="ts">
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import type { NavbarState, NavUlProps, NavbarBreakpoint } from "$lib/types";
+  import type { NavUlProps } from "$lib/types";
   import clsx from "clsx";
-  import { getContext } from "svelte";
   import { sineIn } from "svelte/easing";
   import { prefersReducedMotion } from "svelte/motion";
   import { fade, fly, scale, slide } from "svelte/transition";
   import { navbarUl } from "./theme";
+  import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
-  let navState = getContext<NavbarState>("navState");
-  let navBreakpoint = getContext<NavbarBreakpoint>("breakpoint");
+  let navState = getNavbarStateContext();
+  let navBreakpoint = getNavbarBreakpointContext();
 
   let {
     children,
@@ -52,11 +52,12 @@
     return finalParams;
   });
 
-  let hidden: boolean = $derived(navState.hidden ?? true);
+  let hidden: boolean = $derived(navState?.hidden ?? true);
 
-  let { base, ul, active, nonActive } = $derived(navbarUl({ hidden, breakpoint: navBreakpoint }));
+  let { base, ul, active, nonActive } = $derived(navbarUl({ hidden, breakpoint: navBreakpoint ?? "md" }));
 
   $effect(() => {
+    if (!navState) return;
     navState.activeClass = active({ class: clsx(theme?.active, styling.active) });
     navState.nonActiveClass = nonActive({ class: clsx(theme?.nonActive, styling.nonActive) });
     navState.activeUrl = activeUrl;

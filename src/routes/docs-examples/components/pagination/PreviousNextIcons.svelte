@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { PaginationNav } from "flowbite-svelte";
+  import { PaginationNav, P } from "flowbite-svelte";
   import { ArrowLeftOutline, ArrowRightOutline } from "flowbite-svelte-icons";
   let currentPage = $state(1);
   const totalPages = 20;
@@ -11,6 +11,7 @@
   }
 </script>
 
+<P class="text-sm">Showing {currentPage} of {totalPages} Entries</P>
 <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation">
   {#snippet prevContent()}
     <ArrowLeftOutline class="h-5 w-5" />

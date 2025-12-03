@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { setContext } from "svelte";
   import clsx from "clsx";
-  import type { ButtonToggleGroupProps } from "$lib";
+  import type { ButtonToggleGroupProps, ButtonToggleContextType } from "$lib";
   import { buttonToggleGroup } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
+  import { setButtonToggleContext } from "$lib/context";
 
   let {
     multiSelect = false,
@@ -51,11 +51,6 @@
 
   let selectedValues = $state<SelectedValue>(getInitialValue());
 
-  interface ButtonToggleContext {
-    toggleSelected: (toggleValue: string) => void;
-    isSelected: (toggleValue: string) => boolean;
-  }
-
   function toggleSelected(toggleValue: string) {
     if (multiSelect) {
       const currentSelected = [...(selectedValues as string[])];
@@ -81,19 +76,36 @@
     }
   }
 
-  const buttonToggleContext: ButtonToggleContext = {
-    toggleSelected,
-    isSelected
+  // Create context object with all button toggle related values
+  const ctx: ButtonToggleContextType = {
+    get toggleSelected() {
+      return toggleSelected;
+    },
+    get isSelected() {
+      return isSelected;
+    },
+    get multiSelect() {
+      return multiSelect;
+    },
+    get color() {
+      return color;
+    },
+    get size() {
+      return size;
+    },
+    get roundedSize() {
+      return roundedSize;
+    },
+    get ctxIconClass() {
+      return clsx(ctxIconClass);
+    },
+    get ctxBtnClass() {
+      return clsx(ctxBtnClass);
+    }
   };
 
-  // Set all the contexts separately
-  setContext("button-toggle-group", buttonToggleContext);
-  setContext("multiSelect", multiSelect);
-  setContext("buttonToggleColor", color);
-  setContext("buttonToggleSize", size);
-  setContext("buttonToggleRounded", roundedSize);
-  setContext("ctxIconClass", clsx(ctxIconClass));
-  setContext("ctxBtnClass", clsx(ctxBtnClass));
+  // Set context during initialization
+  setButtonToggleContext(ctx);
 </script>
 
 <div class="inline">

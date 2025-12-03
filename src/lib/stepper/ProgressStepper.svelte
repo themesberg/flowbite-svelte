@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { setContext } from "svelte";
   import CheckmarkIcon from "./CheckmarkIcon.svelte";
   import { progressStepper } from "./theme";
   import type { ProgressStepperProps } from "$lib/types";
@@ -33,8 +32,6 @@
   });
 
   const theme = getTheme("progressStepper");
-
-  setContext("stepperType", "progress");
 
   const { base, item, circle, line, progressLine } = $derived(progressStepper());
 

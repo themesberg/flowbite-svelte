@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { PaginationNav } from "flowbite-svelte";
+  import { PaginationNav, P } from "flowbite-svelte";
   let currentPage = $state(1);
   const totalPages = 20;
 
@@ -10,5 +10,6 @@
   }
 </script>
 
+<P class="text-sm">Showing {currentPage} of {totalPages} Entries</P>
 <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation" />
 <PaginationNav size="large" {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation" />
