@@ -73,11 +73,10 @@
   // svelte-ignore non_reactive_update
   let dummyFocusDiv: HTMLDivElement;
 
-  const group = getButtonGroupContext();
-  let isGroup = !!group;
+  let group = $derived(getButtonGroupContext());
+  let isGroup = $derived(!!group);
   let _size = $derived(size || (group?.size ? clampSize(group.size) : undefined) || "md");
   const _color = $derived(color === "default" && background ? "tinted" : color);
-
   const { base, input: inputCls, left: leftCls, right: rightCls, close, combo, comboItem } = $derived(input({ size: _size, color: _color, grouped: isGroup }));
 
   const clearAll = () => {

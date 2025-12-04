@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { AccordionCtxType, AccordionProps } from "$lib";
+  import type { AccordionContextType, AccordionProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { setAccordionContext } from "$lib/context";
@@ -11,7 +11,7 @@
   const theme = getTheme("accordion");
 
   // Simple reactive state object
-  const ctx: AccordionCtxType = {
+  const reactivecCtx: AccordionContextType = {
     get flush() {
       return flush;
     },
@@ -27,7 +27,7 @@
   };
 
   // Set context during initialization
-  setAccordionContext(ctx);
+  setAccordionContext(reactivecCtx);
 
   $effect(() => {
     createSingleSelectionContext(multiple);

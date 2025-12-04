@@ -346,9 +346,8 @@ export interface GradientButtonProps extends GradientButtonVariantes, HTMLButton
 
 // Context Types
 // These types are used by the context system in $lib/context.ts
-
 // Accordion Context
-export interface AccordionCtxType {
+export interface AccordionContextType {
   flush?: boolean;
   activeClass?: string | null;
   inactiveClass?: string | null;
@@ -363,11 +362,11 @@ export interface BottomNavContextType {
 }
 
 // Carousel Context
-export interface CarouselState {
+export interface CarouselContextType {
   images: HTMLImgAttributes[];
   index: number;
-  lastSlideChange: number; // ms
-  slideDuration: number; // ms
+  lastSlideChange: number;
+  slideDuration: number;
   forward: boolean;
   changeSlide: (newIndex: number) => void;
 }
@@ -1442,7 +1441,7 @@ export interface RatingIconProps extends SVGAttributes<SVGSVGElement> {
 }
 
 // sidebar
-export type SidebarCtxType = {
+export type SidebarContextType = {
   closeSidebar?: () => void;
   activeClass?: string;
   nonActiveClass?: string;
@@ -1755,7 +1754,7 @@ export interface TimelineStepperProps extends HTMLOlAttributes, TimelineStepperV
 }
 
 // tables
-export type TableCtxType = {
+export type TableContextType = {
   striped?: boolean;
   hoverable?: boolean;
   border?: boolean;

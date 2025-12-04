@@ -13,9 +13,18 @@
   const base = $derived(listGroup({ rounded, border, horizontal, class: clsx(theme, className) }));
 
   let tag = $derived(active ? "div" : "ul");
-  $effect(() => {
-    setListGroupContext({ active, horizontal });
-  });
+
+  // Create reactive context using getters
+  const context = {
+    get active() {
+      return active;
+    },
+    get horizontal() {
+      return horizontal;
+    }
+  };
+
+  setListGroupContext(context);
 
   function createItemClickHandler() {
     return function (event: MouseEvent) {

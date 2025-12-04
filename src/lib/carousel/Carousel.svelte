@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type CarouselProps, type CarouselState } from "$lib";
+  import { type CarouselProps, type CarouselContextType } from "$lib";
   import Slide from "./Slide.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
@@ -55,11 +55,23 @@
     onchange?.(images[_state.index]);
   };
 
-  const _state: CarouselState = $state({ images: [], index: 0, forward: true, slideDuration: 500, lastSlideChange: Date.now(), changeSlide });
+  const _state: CarouselContextType = $state({ images: [], index: 0, forward: true, slideDuration: 500, lastSlideChange: Date.now(), changeSlide });
   $effect(() => {
     _state.images = images;
     _state.slideDuration = slideDuration;
   });
+  // const reactivecCtx
+  // const reactivecCtx: BottomNavContextType = {
+  //   get activeClass() {
+  //     return activeCls;
+  //   },
+  //   get activeUrl() {
+  //     return activeUrl;
+  //   },
+  //   get navType() {
+  //     return navType;
+  //   }
+  // };
 
   setCarouselContext(_state);
 

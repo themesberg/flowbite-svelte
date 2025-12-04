@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SidebarCtxType, SidebarProps } from "$lib/types";
+  import type { SidebarContextType, SidebarProps } from "$lib/types";
   import { trapFocus } from "$lib/utils/actions";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
@@ -58,18 +58,20 @@
   let innerWidth: number = $state(-1);
   let isLargeScreen = $derived(disableBreakpoints ? false : alwaysOpen || innerWidth >= breakpointValues[breakpoint]);
 
-  const activeUrlStore = $state({ value: "" });
-  setActiveUrlContext(activeUrlStore);
-  $effect(() => {
-    activeUrlStore.value = activeUrl;
-  });
+  // Create reactive context for activeUrl using getter
+  const activeUrlContext = {
+    get value() {
+      return activeUrl;
+    }
+  };
+  setActiveUrlContext(activeUrlContext);
 
   $effect(() => {
     if (disableBreakpoints) isOpen = true;
   });
   const { base, active, nonactive, div, backdrop: backdropCls } = $derived(sidebar({ isOpen, breakpoint, position, backdrop, alwaysOpen: alwaysOpen && !disableBreakpoints }));
 
-  let sidebarCtx: SidebarCtxType = {
+  let sidebarCtx: SidebarContextType = {
     get closeSidebar() {
       return closeSidebar;
     },

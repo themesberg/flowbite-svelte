@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setTableContext } from "$lib/context";
-  import type { TableSearchProps, TableCtxType } from "$lib/types";
+  import type { TableSearchProps, TableContextType } from "$lib/types";
   import clsx from "clsx";
   import { tableSearch } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -57,7 +57,7 @@
   // Handle custom color
   const finalTableClass = $derived(color === "custom" && customColor ? clsx(tableCls, customColor) : tableCls);
 
-  const tableSearchCtx = $derived<TableCtxType>({
+  const tableSearchCtx = $derived<TableContextType>({
     striped,
     hoverable,
     color: themeColor
