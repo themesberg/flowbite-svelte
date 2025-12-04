@@ -48,6 +48,7 @@
   dismissable={dismissable && !title && !permanent}
   transitionParams={paramsOptions}
   {classes}
+  {permanent}
   {...restProps}
   class={base({ fullscreen, class: clsx(theme?.base, className) })}
 >
