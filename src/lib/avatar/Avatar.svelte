@@ -10,8 +10,7 @@
   // Theme context
   const theme = getTheme("avatar");
 
-  // Remove unused variable - dot props are spread directly in the component
-  // const finalDot = $derived(dot && { placement: "top-right", color: "gray", size: "lg", ...dot });
+  let dotProps = $derived(dot ? { placement: "top-right" as const, color: "gray" as const, size: "lg" as const, ...dot } : undefined);
 
   let avatarClass = $derived(
     avatar({
@@ -35,8 +34,8 @@
         <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
       </svg>
     {/if}
-    {#if dot}
-      <Indicator border offset={cornerStyle === "circular" ? true : false} {...dot} />
+    {#if dotProps}
+      <Indicator border offset={cornerStyle === "circular" ? true : false} {...dotProps} />
     {/if}
     {#if indicator}
       {@render indicator()}

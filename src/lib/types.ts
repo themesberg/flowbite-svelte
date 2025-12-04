@@ -235,7 +235,7 @@ export interface AvatarProps extends AvatarVariants, HTMLAttributes<HTMLDivEleme
   href?: HTMLAnchorAttributes["href"];
   target?: HTMLAnchorAttributes["target"];
   src?: string;
-  dot?: Record<string, unknown>;
+  dot?: Partial<Omit<IndicatorProps, "children">>;
   alt?: string;
   onclick?: () => void;
 }
