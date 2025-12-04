@@ -6,7 +6,6 @@
   // title = title.replaceAll(' ', '-');
   let imgsrc = $derived(`https://flowbite-svelte.com/og?title=${encodeURIComponent(breadcrumb_title)}&package=${encodeURIComponent(pkg)}`);
 
-
   let dirstring = $derived(dir.toLowerCase());
   let breadcrumb = $derived(breadcrumb_title.toLowerCase().replaceAll(" ", "-"));
 </script>

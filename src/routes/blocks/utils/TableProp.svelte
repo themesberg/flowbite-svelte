@@ -22,10 +22,10 @@
 
   $effect(() => {
     $effect(() => {
-    $effect(() => {
-    setContext("category", category);
-  });
-  });
+      $effect(() => {
+        setContext("category", category);
+      });
+    });
   });
 
   const headerNames = {

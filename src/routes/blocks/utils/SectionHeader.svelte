@@ -11,7 +11,7 @@
   let { home = "Blocks", category, title, description, breadcrumb_title }: Props = $props();
 
   let headerCls = $derived(breadcrumb_title ? "" : "mx-auto max-w-8xl pt-8 px-4 lg:px-20 mx-auto max-w-8xl col-span-2 mb-2 lg:mb-0");
-  
+
   let capitalized = $derived(() => {
     if (category !== undefined) {
       const [first, ...rest] = category;
@@ -19,7 +19,7 @@
     }
     return undefined;
   });
-  
+
   const allowedDirs = ["application", "marketing", "publisher"];
 </script>
 

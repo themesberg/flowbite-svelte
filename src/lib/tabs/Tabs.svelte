@@ -63,8 +63,17 @@
     tabRegistry.delete(tabId);
   };
 
-  $effect(() => {
-    setTabsContext({ activeClasses, ctx, registerTab: registerFn, unregisterTab: unregisterFn });
+  // Set context synchronously for SSR compatibility
+  // Use getters to make the context reactive
+  setTabsContext({
+    get activeClasses() {
+      return activeClasses;
+    },
+    get ctx() {
+      return ctx;
+    },
+    registerTab: registerFn,
+    unregisterTab: unregisterFn
   });
 </script>
 

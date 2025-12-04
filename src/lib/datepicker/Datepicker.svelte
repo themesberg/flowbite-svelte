@@ -18,7 +18,7 @@
     availableFrom = null,
     availableTo = null,
     locale = "default",
-    translationLocale,  
+    translationLocale,
     firstDayOfWeek = 0,
     dateFormat,
     placeholder = "Select date",

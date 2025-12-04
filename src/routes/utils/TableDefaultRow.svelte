@@ -9,7 +9,7 @@
   let { items, html, rowState }: Props = $props();
 
   const category = getContext("category");
-  
+
   let trClass = $derived<string>(
     rowState === "striped"
       ? "border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700"
@@ -17,7 +17,7 @@
         ? "bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
         : "bg-white border-b dark:bg-gray-800 dark:border-gray-700"
   );
-  
+
   let trLastClass = $derived<string>(
     rowState === "striped"
       ? "odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700"

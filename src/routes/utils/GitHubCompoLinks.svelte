@@ -49,7 +49,7 @@
 
   // default for docs/components
   let fileNames = $state(getFilteredFileNames(dirName || ""));
-  
+
   // if components are given in docs/forms, typography etc use it
   $effect(() => {
     if (components) {

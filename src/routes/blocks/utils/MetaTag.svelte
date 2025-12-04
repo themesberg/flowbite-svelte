@@ -7,7 +7,7 @@
     dir?: string;
   }
   let { breadcrumb_title, description, title, dir }: Props = $props();
-  
+
   let imgsrc = $derived(`flowbite-svelte.com/og?package=Flowbite%20Svelte%20Blocks?title=${encodeURIComponent(breadcrumb_title || "")}`);
   let dirstring = $derived(dir?.toLowerCase());
   let breadcrumb = $derived(breadcrumb_title?.toLowerCase().replaceAll(" ", "-"));
