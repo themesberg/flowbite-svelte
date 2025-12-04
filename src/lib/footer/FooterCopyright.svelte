@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { SvelteDate } from 'svelte/reactivity';
   import { footerCopyright } from "./theme";
   import clsx from "clsx";
   import type { FooterCopyrightProps } from "$lib";
@@ -14,15 +15,13 @@
 
   const theme = getTheme("footerCopyright");
 
-  $effect(() => {
-    if (!year) year = new Date().getFullYear();
-  });
+  const effectiveYear = $derived(year ?? new SvelteDate().getFullYear());
 
   const { base, link, bySpan } = footerCopyright();
 </script>
 
 <span class={base({ class: clsx(theme?.base, className ?? spanClass) })}>
-  &copy; {year}
+  &copy; {effectiveYear}
   {#if href}
     <a {...restProps} {href} class={link({ class: clsx(theme?.link, styling.link) })}>
       {by}

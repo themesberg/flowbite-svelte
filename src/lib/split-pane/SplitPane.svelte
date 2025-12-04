@@ -33,10 +33,7 @@
     }
   });
 
-  let transition = $state(true);
-  $effect(() => {
-    transition = transitionProp;
-  });
+  let transition = $derived(transitionProp);
   $effect(() => {
     // syncing local transition state with prop changes
     if (!isDragging) {

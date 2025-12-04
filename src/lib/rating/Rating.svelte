@@ -18,9 +18,9 @@
   const ratingGroupId = crypto.randomUUID();
   let clampedRating = $derived(Math.max(0, Math.min(rating, total)));
   let fullStars = $derived(Math.floor(clampedRating));
-  let rateDiffence = $derived(clampedRating - fullStars);
-  let percentRating = $derived(Math.round(rateDiffence * 100));
-  let grayStars = $derived(total - (fullStars + Math.ceil(rateDiffence)));
+  let rateDifference = $derived(clampedRating - fullStars);
+  let percentRating = $derived(Math.round(rateDifference * 100));
+  let grayStars = $derived(total - (fullStars + Math.ceil(rateDifference)));
 </script>
 
 <div {...restProps} class={base({ class: clsx(theme?.base, className) })}>

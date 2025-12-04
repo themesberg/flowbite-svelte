@@ -30,15 +30,16 @@
 
   // Handle step click
   function handleStepClick(stepIndex: number) {
-    if (clickable && stepIndex < steps.length) {
-      const last = currentStep;
-      // Convert 0-based array index to 1-based currentStep value
-      currentStep = stepIndex + 1;
+    if (!clickable || stepIndex < 0 || stepIndex >= steps.length) return;
 
-      // Call custom onStepClick if provided
-      if (onStepClick) {
-        onStepClick({ current: currentStep, last });
-      }
+    const next = stepIndex + 1;
+    if (next === currentStep) return;
+
+    const last = currentStep;
+    currentStep = next;
+
+    if (onStepClick) {
+      onStepClick({ current: currentStep, last });
     }
   }
 
@@ -69,6 +70,7 @@
             class={wrapper({ class: clsx((theme as StepIndicatorTheme)?.wrapper, classes?.wrapper, "cursor-pointer transition-opacity hover:opacity-75") })}
             onclick={() => handleStepClick(i)}
             aria-current="step"
+            aria-label={`Current step: ${steps[i]}`}
           >
             <div class={stepCls({ class: clsx(getStepStateClasses(i, currentStep), getCustomStepClass(i), (theme as StepIndicatorTheme)?.step, classes?.step) })} data-state="current"></div>
             {#if glow}

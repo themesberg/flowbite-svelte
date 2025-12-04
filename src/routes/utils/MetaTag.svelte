@@ -6,8 +6,12 @@
   // title = title.replaceAll(' ', '-');
   let imgsrc = $derived(`https://flowbite-svelte.com/og?title=${encodeURIComponent(breadcrumb_title)}&package=${encodeURIComponent(pkg)}`);
 
-  let dirstring = $derived(dir.toLowerCase());
-  let breadcrumb = $derived(breadcrumb_title ? breadcrumb_title.toLowerCase().replaceAll(" ", "-") : undefined);
+  let dirstring = $derived(dir ? dir.toLowerCase() : "");
+  let breadcrumb = $derived(
+    breadcrumb_title && breadcrumb_title.length > 0
+      ? breadcrumb_title.toLowerCase().replaceAll(" ", "-")
+      : ""
+  );
 </script>
 
 <MetaTags
@@ -19,7 +23,7 @@
   }}
   openGraph={{
     type: "website",
-    url: `https://flowbite-svelte.com/${dirstring}/${breadcrumb}`,
+    url: `https://flowbite-svelte-blocks.codewithshin.com/${dirstring}${breadcrumb ? `/${breadcrumb}` : ""}`,
     title: `${title}`,
     description: `${description}`,
     images: [
