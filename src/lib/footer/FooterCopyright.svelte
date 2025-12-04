@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { SvelteDate } from 'svelte/reactivity';
+  import { SvelteDate } from "svelte/reactivity";
   import { footerCopyright } from "./theme";
   import clsx from "clsx";
   import type { FooterCopyrightProps } from "$lib";

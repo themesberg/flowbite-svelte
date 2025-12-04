@@ -11,11 +11,7 @@
   let imgsrc = $derived(`https://flowbite-svelte.com/og?package=Flowbite%20Svelte%20Blocks&title=${encodeURIComponent(breadcrumb_title || "")}`);
   let dirstring = $derived(dir?.toLowerCase());
   let breadcrumb = $derived(breadcrumb_title?.toLowerCase().replaceAll(" ", "-"));
-  let finalBreadcrumbTitle = $derived(
-    breadcrumb_title && breadcrumb_title.length > 0
-      ? breadcrumb_title
-      : title?.split("-")[0] ?? "Flowbite Svelte Blocks"
-  );
+  let finalBreadcrumbTitle = $derived(breadcrumb_title && breadcrumb_title.length > 0 ? breadcrumb_title : (title?.split("-")[0] ?? "Flowbite Svelte Blocks"));
 </script>
 
 <MetaTags
