@@ -12,8 +12,10 @@
 
   const base = $derived(listGroup({ rounded, border, horizontal, class: clsx(theme, className) }));
 
-  let tag = active ? "div" : "ul";
-  setListGroupContext({ active, horizontal });
+  let tag = $derived(active ? "div" : "ul");
+  $effect(() => {
+    setListGroupContext({ active, horizontal });
+  });
 
   function createItemClickHandler() {
     return function (event: MouseEvent) {

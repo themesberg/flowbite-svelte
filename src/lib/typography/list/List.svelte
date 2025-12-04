@@ -9,7 +9,7 @@
 
   const theme = getTheme("list");
 
-  let contextClass = $state(ctxClass || "");
+  let contextClass = $derived(ctxClass || "");
 
   // Create context object
   const ctx = {

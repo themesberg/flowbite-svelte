@@ -33,6 +33,30 @@ Use the following example of a step indicator element to show a progress of step
 {#include Default.svelte}
 ```
 
+## Clickable navigation
+
+The step indicator supports clickable navigation by default. Click on any step to navigate to it. Use the `onStepClick` callback to handle navigation events.
+
+```svelte example
+{#include Clickable.svelte}
+```
+
+## Clickable multi-step form
+
+Here's a complete example of using the step indicator with a multi-step form. Users can click on any completed step to go back and edit their information.
+
+```svelte example class="max-w-2xl"
+{#include ClickableForm.svelte}
+```
+
+## Non-clickable
+
+Set `clickable={false}` to disable click navigation on the step indicators.
+
+```svelte example
+{#include NonClickable.svelte}
+```
+
 ## Glow
 
 Use the `glow` prop to add a glow effect to the current step.

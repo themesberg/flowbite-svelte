@@ -10,7 +10,8 @@
   // Theme context
   const theme = getTheme("avatar");
 
-  dot = dot && { placement: "top-right", color: "gray", size: "lg", ...dot };
+  // Remove unused variable - dot props are spread directly in the component
+  // const finalDot = $derived(dot && { placement: "top-right", color: "gray", size: "lg", ...dot });
 
   let avatarClass = $derived(
     avatar({

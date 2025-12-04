@@ -26,7 +26,9 @@
     ...restProps
   }: SidebarDropdownWrapperProps = $props();
 
-  warnThemeDeprecation("SidebarDropdownWrapper", { btnClass, spanClass, ulClass, svgClass }, { btnClass: "btn", spanClass: "span", ulClass: "ul", svgClass: "svg" });
+  $effect(() => {
+    warnThemeDeprecation("SidebarDropdownWrapper", { btnClass, spanClass, ulClass, svgClass }, { btnClass: "btn", spanClass: "span", ulClass: "ul", svgClass: "svg" });
+  });
   const styling = $derived(
     classes ?? {
       btn: btnClass,

@@ -10,12 +10,16 @@
   }
   let { home = "Blocks", category, title, description, breadcrumb_title }: Props = $props();
 
-  let headerCls = breadcrumb_title ? "" : "mx-auto max-w-8xl pt-8 px-4 lg:px-20 mx-auto max-w-8xl col-span-2 mb-2 lg:mb-0";
-  let capitalized = $state();
-  if (category !== undefined) {
-    const [first, ...rest] = category;
-    capitalized = `${first.toUpperCase()}${rest.join("")}`;
-  }
+  let headerCls = $derived(breadcrumb_title ? "" : "mx-auto max-w-8xl pt-8 px-4 lg:px-20 mx-auto max-w-8xl col-span-2 mb-2 lg:mb-0");
+  
+  let capitalized = $derived(() => {
+    if (category !== undefined) {
+      const [first, ...rest] = category;
+      return `${first.toUpperCase()}${rest.join("")}`;
+    }
+    return undefined;
+  });
+  
   const allowedDirs = ["application", "marketing", "publisher"];
 </script>
 
@@ -24,7 +28,7 @@
     <Breadcrumb class="mb-3 flex">
       <BreadcrumbItem href="/blocks" home>{home}</BreadcrumbItem>
       {#if category && allowedDirs.includes(category)}
-        <BreadcrumbItem href="/blocks/{category}">{capitalized} UI</BreadcrumbItem>
+        <BreadcrumbItem href="/blocks/{category}">{capitalized()} UI</BreadcrumbItem>
       {/if}
       {#if breadcrumb_title}
         <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>

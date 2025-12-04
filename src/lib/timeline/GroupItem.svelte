@@ -6,17 +6,19 @@
 
   let { timelines, aClass, imgClass, divClass, titleClass, spanClass, class: className, classes, ...restProps }: GroupItemProps = $props();
 
-  warnThemeDeprecation(
-    "GroupItem",
-    { aClass, imgClass, divClass, titleClass, spanClass },
-    {
-      aClass: "class",
-      imgClass: "img",
-      divClass: "div",
-      titleClass: "title",
-      spanClass: "span"
-    }
-  );
+  $effect(() => {
+    warnThemeDeprecation(
+      "GroupItem",
+      { aClass, imgClass, divClass, titleClass, spanClass },
+      {
+        aClass: "class",
+        imgClass: "img",
+        divClass: "div",
+        titleClass: "title",
+        spanClass: "span"
+      }
+    );
+  });
   const styling = $derived(
     classes ?? {
       img: imgClass,

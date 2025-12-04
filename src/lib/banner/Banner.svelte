@@ -24,7 +24,9 @@
     ...restProps
   }: BannerProps = $props();
 
-  warnThemeDeprecation("Banner", { innerClass, closeClass }, { innerClass: "insideDiv", closeClass: "dismissable" });
+  $effect(() => {
+    warnThemeDeprecation("Banner", { innerClass, closeClass }, { innerClass: "insideDiv", closeClass: "dismissable" });
+  });
 
   const styling = $derived(classes ?? { insideDiv: innerClass, dismissable: closeClass });
 

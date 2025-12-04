@@ -26,7 +26,10 @@
   // Bottom margin determines how far up the viewport a section must scroll before becoming inactive
   const ROOT_MARGIN_BOTTOM = "-40%";
 
-  let activeId = $state<string>(items.length > 0 ? items[0].id : "");
+  let activeId = $state<string>("");
+  $effect(() => {
+    activeId = items.length > 0 ? items[0].id : "";
+  });
   let isSticky = $state(false);
   let navElement: HTMLElement | null = $state(null);
   let scrollElement: Window | HTMLElement | null = $state(browser ? window : null);

@@ -7,7 +7,9 @@
 
   let { aClass, children, activeClass, liClass, classes, class: className, href, onclick, ...restProps }: DropdownItemProps = $props();
 
-  warnThemeDeprecation("DropdownItem", { aClass, activeClass, liClass }, { aClass: "class", activeClass: "active", liClass: "li" });
+  $effect(() => {
+    warnThemeDeprecation("DropdownItem", { aClass, activeClass, liClass }, { aClass: "class", activeClass: "active", liClass: "li" });
+  });
   const styling = $derived(classes ?? { active: activeClass, li: liClass });
 
   const theme = getTheme("dropdownItem");

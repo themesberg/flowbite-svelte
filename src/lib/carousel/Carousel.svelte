@@ -29,7 +29,9 @@
     ...restProps
   }: CarouselProps = $props();
 
-  warnThemeDeprecation("Carousel", { imgClass }, { imgClass: "slide" });
+  $effect(() => {
+    warnThemeDeprecation("Carousel", { imgClass }, { imgClass: "slide" });
+  });
 
   const styling = $derived(classes ?? { slide: imgClass });
 
@@ -53,7 +55,11 @@
     onchange?.(images[_state.index]);
   };
 
-  const _state: CarouselState = $state({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: Date.now(), changeSlide });
+  const _state: CarouselState = $state({ images: [], index: 0, forward: true, slideDuration: 500, lastSlideChange: Date.now(), changeSlide });
+  $effect(() => {
+    _state.images = images;
+    _state.slideDuration = slideDuration;
+  });
 
   setCarouselContext(_state);
 

@@ -8,7 +8,7 @@
   function calculateGridItems() {
     return colnum * rownum;
   }
-  const colclass = `grid-cols-${colnum}`;
+  const colclass = $derived(`grid-cols-${colnum}`);
 </script>
 
 {#snippet figure()}

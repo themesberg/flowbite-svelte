@@ -7,17 +7,15 @@
     dir?: string;
   }
   let { breadcrumb_title, description, title, dir }: Props = $props();
-  let imgsrc = `flowbite-svelte.com/og?package=Flowbite%20Svelte%20Blocks?title=${encodeURIComponent(breadcrumb_title || "")}`;
-
-  let dirstring = dir?.toLowerCase();
-  let breadcrumb = breadcrumb_title?.toLowerCase().replaceAll(" ", "-");
-  if (breadcrumb_title === "") {
-    breadcrumb_title = title?.split("-")[0];
-  }
+  
+  let imgsrc = $derived(`flowbite-svelte.com/og?package=Flowbite%20Svelte%20Blocks?title=${encodeURIComponent(breadcrumb_title || "")}`);
+  let dirstring = $derived(dir?.toLowerCase());
+  let breadcrumb = $derived(breadcrumb_title?.toLowerCase().replaceAll(" ", "-"));
+  let finalBreadcrumbTitle = $derived(breadcrumb_title === "" ? title?.split("-")[0] : breadcrumb_title);
 </script>
 
 <MetaTags
-  title={breadcrumb_title}
+  title={finalBreadcrumbTitle}
   titleTemplate="%s - Flowbite Svelte Blocks"
   {description}
   facebook={{

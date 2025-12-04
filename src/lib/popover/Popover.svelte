@@ -20,7 +20,9 @@
   }: PopoverProps = $props();
 
   // content, title, h3
-  warnThemeDeprecation("Popover", { defaultClass }, { defaultClass: "content" });
+  $effect(() => {
+    warnThemeDeprecation("Popover", { defaultClass }, { defaultClass: "content" });
+  });
   const styling = $derived(classes ?? { content: defaultClass });
 
   const theme = getTheme("popover");

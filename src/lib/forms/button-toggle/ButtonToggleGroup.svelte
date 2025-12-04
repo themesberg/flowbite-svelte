@@ -8,7 +8,7 @@
   let {
     multiSelect = false,
     name = "toggle-group",
-    value = multiSelect ? [] : null,
+    value,
     color,
     size = "md",
     roundedSize = "md",
@@ -44,7 +44,7 @@
         // Array passed but multiSelect is false - take first item
         return value[0] ?? null;
       } else {
-        return value;
+        return value ?? null; // Handle undefined case
       }
     }
   }

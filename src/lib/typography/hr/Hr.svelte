@@ -7,14 +7,16 @@
   let { children, divClass, innerDivClass, class: className, classes, divProps = {}, hrProps = {}, ...restProps }: HrProps = $props();
 
   // base container content
-  warnThemeDeprecation(
-    "Hr",
-    { divClass, innerDivClass },
-    {
-      divClass: "div",
-      innerDivClass: "content"
-    }
-  );
+  $effect(() => {
+    warnThemeDeprecation(
+      "Hr",
+      { divClass, innerDivClass },
+      {
+        divClass: "div",
+        innerDivClass: "content"
+      }
+    );
+  });
   const styling = $derived(
     classes ?? {
       div: divClass,
@@ -23,11 +25,11 @@
   );
 
   const theme = getTheme("hr");
-  const bg = classes?.bg ?? "bg-gray-200 dark:bg-gray-700";
+  const bg = $derived(classes?.bg ?? "bg-gray-200 dark:bg-gray-700");
 
   // for backward compatibility and ...restPorps will be removed and use only ..divProps and ...hrProps in future
-  const mergedDivProps = { ...restProps, ...divProps };
-  const mergedHrProps = { ...restProps, ...hrProps };
+  const mergedDivProps = $derived({ ...restProps, ...divProps });
+  const mergedHrProps = $derived({ ...restProps, ...hrProps });
 
   let { base, div, content } = $derived(hr({ withChildren: !!children }));
 </script>

@@ -6,20 +6,22 @@
 
   let { activities, liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass, class: className, classes, ...restProps }: ActivityItemProps = $props();
 
-  warnThemeDeprecation(
-    "ActivityItem",
-    { liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass },
-    {
-      liClass: "class",
-      spanClass: "span",
-      imgClass: "img",
-      outerDivClass: "outer",
-      innerDivClass: "inner",
-      timeClass: "time",
-      titleClass: "title",
-      textClass: "text"
-    }
-  );
+  $effect(() => {
+    warnThemeDeprecation(
+      "ActivityItem",
+      { liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass },
+      {
+        liClass: "class",
+        spanClass: "span",
+        imgClass: "img",
+        outerDivClass: "outer",
+        innerDivClass: "inner",
+        timeClass: "time",
+        titleClass: "title",
+        textClass: "text"
+      }
+    );
+  });
   const styling = $derived(
     classes ?? {
       span: spanClass,

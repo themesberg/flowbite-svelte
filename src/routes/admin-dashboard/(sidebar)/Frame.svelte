@@ -53,7 +53,7 @@
 
   let { children, tag, href, color = "default", rounded, border, shadow, node, use = noop, options = {}, role, transition, params, open = true, class: className, ...restProps }: Props = $props();
 
-  tag = href ? "a" : "div";
+  let computedTag = $derived(href ? "a" : "div");
 
   setContext("background", true);
 
@@ -62,7 +62,9 @@
   // $: dispatch('show', open);
 
   // $: color = color ?? 'default'; // for cases when undefined
-  setContext("color", color);
+  $effect(() => {
+    setContext("color", color);
+  });
 
   // your script goes here
 
@@ -112,11 +114,11 @@
 </script>
 
 {#if transition && open}
-  <svelte:element this={tag} transition:transition={params} use:use={options} bind:this={node} {role} {...restProps} class={divClass}>
+  <svelte:element this={computedTag} transition:transition={params} use:use={options} bind:this={node} {role} {...restProps} class={divClass}>
     {@render children()}
   </svelte:element>
 {:else if open}
-  <svelte:element this={tag} use:use={options} bind:this={node} {role} {...restProps} class={divClass}>
+  <svelte:element this={computedTag} use:use={options} bind:this={node} {role} {...restProps} class={divClass}>
     {@render children()}
   </svelte:element>
 {/if}

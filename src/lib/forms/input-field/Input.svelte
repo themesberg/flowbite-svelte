@@ -45,11 +45,13 @@
   }: InputProps<InputValue> = $props();
 
   // input, left, right, close, combo, comboItem, div, svg
-  warnThemeDeprecation(
-    "Input",
-    { wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableClass, comboClass },
-    { wrapperClass: "wrapper", leftClass: "left", rightClass: "right", divClass: "div", clearableSvgClass: "svg", clearableClass: "close", comboClass: "comboItem" }
-  );
+  $effect(() => {
+    warnThemeDeprecation(
+      "Input",
+      { wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableClass, comboClass },
+      { wrapperClass: "wrapper", leftClass: "left", rightClass: "right", divClass: "div", clearableSvgClass: "svg", clearableClass: "close", comboClass: "comboItem" }
+    );
+  });
 
   const styling = $derived(classes ?? { left: leftClass, right: rightClass, div: divClass, svg: clearableSvgClass, close: clearableClass, combo: comboClass, comboItem: comboItemClass });
 

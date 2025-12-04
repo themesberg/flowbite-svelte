@@ -21,7 +21,9 @@
     ...restProps
   }: FileuploadProps = $props();
 
-  warnThemeDeprecation("Fileupload", { wrapperClass, clearableClass, clearableSvgClass }, { wrapperClass: "wrapper", clearableClass: "close", clearableSvgClass: "svg" });
+  $effect(() => {
+    warnThemeDeprecation("Fileupload", { wrapperClass, clearableClass, clearableSvgClass }, { wrapperClass: "wrapper", clearableClass: "close", clearableSvgClass: "svg" });
+  });
   const styling = $derived(classes ?? { wrapper: wrapperClass, close: clearableClass, svg: clearableSvgClass });
 
   const theme = getTheme("fileupload");

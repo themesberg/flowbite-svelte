@@ -28,17 +28,15 @@
 </script>
 
 {#if hasSeen}
-  <div class="flex items-center gap-3 text-sm text-gray-600 mb-3">
+  <div class="mb-3 flex items-center gap-3 text-sm text-gray-600">
     <span>
-      Badge is hidden because you dismissed it earlier.
-      Remove <code>{STORAGE_KEY}</code> from localStorage or click Reset:
+      Badge is hidden because you dismissed it earlier. Remove <code>{STORAGE_KEY}</code>
+      from localStorage or click Reset:
     </span>
     <Button size="xs" onclick={reset}>Reset</Button>
   </div>
 {/if}
 
 {#if badgeVisible}
-  <Badge dismissable onclose={dismiss} color="primary" class="cursor-pointer">
-    Example badge (click × to dismiss)
-  </Badge>
+  <Badge dismissable onclose={dismiss} color="primary" class="cursor-pointer">Example badge (click × to dismiss)</Badge>
 {/if}

@@ -21,7 +21,9 @@
     ...restProps
   }: SpeedDialProps = $props();
 
-  warnThemeDeprecation("SpeedDial", { popperClass }, { popperClass: "popper" });
+  $effect(() => {
+    warnThemeDeprecation("SpeedDial", { popperClass }, { popperClass: "popper" });
+  });
   const styling = $derived(
     classes ?? {
       popper: popperClass
@@ -30,7 +32,9 @@
 
   const theme = getTheme("speedDial");
 
-  setContext<SpeedCtxType>("speed-dial", { pill, tooltip, textOutside });
+  $effect(() => {
+    setContext<SpeedCtxType>("speed-dial", { pill, tooltip, textOutside });
+  });
 
   let vertical: boolean = $derived(getSideAxis(placement) === "y");
 

@@ -9,7 +9,9 @@
 
   let { children, footerSlot, captionSlot, items, divClass, striped, hoverable, border = true, shadow, color = "default", class: className, classes, ...restProps }: TableProps = $props();
 
-  warnThemeDeprecation("Table", { divClass }, { divClass: "div" });
+  $effect(() => {
+    warnThemeDeprecation("Table", { divClass }, { divClass: "div" });
+  });
   const styling = $derived(
     classes ?? {
       div: divClass

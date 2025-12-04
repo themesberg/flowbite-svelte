@@ -28,7 +28,9 @@
     ...restProps
   }: TagsProps = $props();
 
-  warnThemeDeprecation("Tags", { itemClass, spanClass, closeClass, inputClass }, { itemClass: "tag", spanClass: "span", closeClass: "close", inputClass: "input" });
+  $effect(() => {
+    warnThemeDeprecation("Tags", { itemClass, spanClass, closeClass, inputClass }, { itemClass: "tag", spanClass: "span", closeClass: "close", inputClass: "input" });
+  });
   const styling = $derived(
     classes ?? {
       tag: itemClass,

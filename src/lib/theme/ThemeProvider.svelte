@@ -10,11 +10,13 @@
 
   let { children, theme }: ThemeProviderProps = $props();
 
-  if (theme) {
-    setThemeContext(theme);
-  } else {
-    console.log("ThemeProvider: No theme provided");
-  }
+  $effect(() => {
+    if (theme) {
+      setThemeContext(theme);
+    } else {
+      console.log("ThemeProvider: No theme provided");
+    }
+  });
 </script>
 
 {@render children()}

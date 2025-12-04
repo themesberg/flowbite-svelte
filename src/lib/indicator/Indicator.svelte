@@ -8,7 +8,7 @@
 
   const theme = getTheme("indicator");
 
-  let hasChildren = !!children;
+  let hasChildren = $derived(!!children);
   const base = $derived(
     indicator({
       color,

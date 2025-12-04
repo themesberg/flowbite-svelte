@@ -9,7 +9,9 @@
 
   const theme = getTheme("timeline");
 
-  setContext<TimelineVariants["order"]>("order", order);
+  $effect(() => {
+    setContext<TimelineVariants["order"]>("order", order);
+  });
   const olCls = $derived(timeline({ order, class: clsx(theme, className) }));
 </script>
 

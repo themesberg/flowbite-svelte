@@ -6,12 +6,14 @@
 
   let { children, solid = false, class: className, classes, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
 
-  warnThemeDeprecation("Breadcrumb", { olClass }, { olClass: "list" });
+  $effect(() => {
+    warnThemeDeprecation("Breadcrumb", { olClass }, { olClass: "list" });
+  });
   const styling = $derived(classes ?? { list: olClass });
 
   const theme = getTheme("breadcrumb");
 
-  const { base, list } = breadcrumb({ solid });
+  const { base, list } = $derived(breadcrumb({ solid }));
   let classNav = $derived(base({ class: clsx(theme?.base, className) }));
   let classList = $derived(list({ class: clsx(theme?.list, styling.list) }));
 </script>

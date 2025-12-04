@@ -27,11 +27,13 @@
     ...restProps
   }: TableSearchProps = $props();
 
-  warnThemeDeprecation(
-    "TableSearch",
-    { divClass, innerDivClass, inputClass, searchClass, svgDivClass, svgClass, tableClass },
-    { divClass: "root", innerDivClass: "inner", inputClass: "input", searchClass: "search", svgDivClass: "svgDiv", svgClass: "svg", tableClass: "table" }
-  );
+  $effect(() => {
+    warnThemeDeprecation(
+      "TableSearch",
+      { divClass, innerDivClass, inputClass, searchClass, svgDivClass, svgClass, tableClass },
+      { divClass: "root", innerDivClass: "inner", inputClass: "input", searchClass: "search", svgDivClass: "svgDiv", svgClass: "svg", tableClass: "table" }
+    );
+  });
   const styling = $derived(
     classes ?? {
       root: divClass,
@@ -46,7 +48,7 @@
 
   const theme = getTheme("tableSearch");
 
-  const themeColor = color === "custom" ? "default" : (color as "default" | "blue" | "green" | "red" | "yellow" | "purple" | "indigo" | "pink");
+  const themeColor = $derived(color === "custom" ? "default" : (color as "default" | "blue" | "green" | "red" | "yellow" | "purple" | "indigo" | "pink"));
 
   const { root, inner, search, svgDiv, svg, input, table } = $derived(tableSearch({ color: themeColor, striped, hoverable }));
 
@@ -55,13 +57,15 @@
   // Handle custom color
   const finalTableClass = $derived(color === "custom" && customColor ? clsx(tableCls, customColor) : tableCls);
 
-  const tableSearchCtx: TableCtxType = {
+  const tableSearchCtx = $derived<TableCtxType>({
     striped,
     hoverable,
     color: themeColor
-  };
+  });
 
-  setTableContext(tableSearchCtx);
+  $effect(() => {
+    setTableContext(tableSearchCtx);
+  });
 </script>
 
 <div class={root({ class: clsx(theme?.root, styling.root) })}>

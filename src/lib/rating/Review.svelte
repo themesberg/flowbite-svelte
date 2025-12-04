@@ -6,11 +6,13 @@
 
   let { children, address, item1, item2, item3, review, classes, articleClass, divClass, div2Class, div3Class, imgClass, ulClass, liClass }: ReviewProps = $props();
 
-  warnThemeDeprecation(
-    "Review",
-    { articleClass, divClass, div2Class, div3Class, imgClass, ulClass, liClass },
-    { articleClass: "article", divClass: "div", div2Class: "div2", div3Class: "div3", imgClass: "img", ulClass: "ul", liClass: "li" }
-  );
+  $effect(() => {
+    warnThemeDeprecation(
+      "Review",
+      { articleClass, divClass, div2Class, div3Class, imgClass, ulClass, liClass },
+      { articleClass: "article", divClass: "div", div2Class: "div2", div3Class: "div3", imgClass: "img", ulClass: "ul", liClass: "li" }
+    );
+  });
   const styling = $derived(
     classes ?? {
       article: articleClass,

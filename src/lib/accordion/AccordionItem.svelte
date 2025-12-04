@@ -23,30 +23,32 @@
     contentClass
   }: AccordionItemProps = $props();
 
-  warnThemeDeprecation(
-    "AccordionItem",
-    {
-      headerClass,
-      contentClass,
-      activeClass,
-      inactiveClass
-    },
-    {
-      headerClass: "button",
-      contentClass: "content",
-      activeClass: "active",
-      inactiveClass: "inactive"
-    }
-  );
+  $effect(() => {
+    warnThemeDeprecation(
+      "AccordionItem",
+      {
+        headerClass,
+        contentClass,
+        activeClass,
+        inactiveClass
+      },
+      {
+        headerClass: "button",
+        contentClass: "content",
+        activeClass: "active",
+        inactiveClass: "inactive"
+      }
+    );
+  });
 
   let styling: typeof classes = $derived(classes ?? { button: headerClass, content: contentClass, active: activeClass, inactive: inactiveClass });
 
   // Get context - it will be undefined if used outside Accordion
   const ctx = getAccordionContext();
 
-  const ctxTransitionType = ctx?.transitionType ?? transitionType;
+  const ctxTransitionType = $derived(ctx?.transitionType ?? transitionType);
   // Check if transitionType is explicitly set to undefined in props
-  const useTransition = transitionType === "none" ? false : ctxTransitionType === "none" ? false : true;
+  const useTransition = $derived(transitionType === "none" ? false : ctxTransitionType === "none" ? false : true);
 
   // Theme context
   const theme = getTheme("accordionItem");

@@ -6,7 +6,9 @@
 
   let { children, figure, items = [], imgClass, class: className, classes, ...restProps }: GalleryProps = $props();
 
-  warnThemeDeprecation("Gallery", { imgClass }, { imgClass: "image" });
+  $effect(() => {
+    warnThemeDeprecation("Gallery", { imgClass }, { imgClass: "image" });
+  });
   const styling = $derived(classes ?? { image: imgClass });
 
   const theme = getTheme("gallery");

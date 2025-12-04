@@ -12,14 +12,20 @@
     class: className
   }: { children: Snippet; category?: "props" | "events" | "slots"; tableClass?: string; theadClass?: string; thClass?: string; divClass?: string; class?: string } = $props();
 
-  setContext("category", category);
+  $effect(() => {
+    $effect(() => {
+    $effect(() => {
+    setContext("category", category);
+  });
+  });
+  });
 
   const headerNames = {
     props: ["Name", "Default"],
     events: ["Names"],
     slots: ["Names"]
   };
-  let header = headerNames[category];
+  let header = $derived(headerNames[category]);
 </script>
 
 <div class={divClass}>

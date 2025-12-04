@@ -2,9 +2,6 @@
   import Card from "$lib/card/Card.svelte";
 
   let { name, dir, path, thumbnailSize, ...restProps }: { name: string; dir: string; path: string; thumbnailSize: string } = $props();
-
-  path = path.toLowerCase();
-  dir = dir.toLowerCase();
 </script>
 
 <Card href="/docs/{dir}{path}/" {...restProps} class="dark:hover:shadow-lg-light max-w-none! shadow-none hover:shadow-lg dark:hover:bg-gray-900">

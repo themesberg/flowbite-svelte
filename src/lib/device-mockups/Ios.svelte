@@ -6,11 +6,13 @@
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: IosProps = $props();
 
-  warnThemeDeprecation(
-    "Ios",
-    { divClass, div2Class, div3Class, div4Class, div5Class, div6Class },
-    { divClass: "class", div2Class: "top", div3Class: "lefttop", div4Class: "leftBot", div5Class: "right", div6Class: "slot" }
-  );
+  $effect(() => {
+    warnThemeDeprecation(
+      "Ios",
+      { divClass, div2Class, div3Class, div4Class, div5Class, div6Class },
+      { divClass: "class", div2Class: "top", div3Class: "lefttop", div4Class: "leftBot", div5Class: "right", div6Class: "slot" }
+    );
+  });
   const styling = $derived(
     classes ?? {
       top: div2Class,

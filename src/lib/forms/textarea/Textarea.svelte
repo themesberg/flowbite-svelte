@@ -29,11 +29,13 @@
     ...restProps
   }: TextareaProps = $props();
 
-  warnThemeDeprecation(
-    "Textarea",
-    { divClass, innerClass, headerClass, footerClass, addonClass, textareaClass, clearableClass, clearableSvgClass },
-    { divClass: "div", innerClass: "inner", headerClass: "header", footerClass: "footer", addonClass: "addon", textareaClass: "class", clearableClass: "close", clearableSvgClass: "svg" }
-  );
+  $effect(() => {
+    warnThemeDeprecation(
+      "Textarea",
+      { divClass, innerClass, headerClass, footerClass, addonClass, textareaClass, clearableClass, clearableSvgClass },
+      { divClass: "div", innerClass: "inner", headerClass: "header", footerClass: "footer", addonClass: "addon", textareaClass: "class", clearableClass: "close", clearableSvgClass: "svg" }
+    );
+  });
   const styling = $derived(
     classes ?? {
       div: divClass,

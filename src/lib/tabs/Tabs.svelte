@@ -8,9 +8,11 @@
 
   let { children, selected = $bindable(), tabStyle = "none", ulClass, contentClass, divider = true, class: className, classes, ...restProps }: TabsProps = $props();
 
-  const activeClasses = typeof classes?.active === "string" ? classes.active : undefined;
+  const activeClasses = $derived(typeof classes?.active === "string" ? classes.active : undefined);
 
-  warnThemeDeprecation("Tabs", { ulClass, contentClass }, { ulClass: "class", contentClass: "content" });
+  $effect(() => {
+    warnThemeDeprecation("Tabs", { ulClass, contentClass }, { ulClass: "class", contentClass: "content" });
+  });
 
   const theme = getTheme("tabs");
   const styling = $derived(classes ?? { content: contentClass });
@@ -18,7 +20,7 @@
 
   const uuid = $props.id();
   const panelId = `tab-panel-${uuid}`;
-  const ctx: TabCtxType = $state({ tabStyle, panelId });
+  const ctx = $derived<TabCtxType>({ tabStyle, panelId });
   const dividerBool = $derived(["full", "pill"].includes(tabStyle) ? false : divider);
 
   createSingleSelectionContext<SelectedTab>();
@@ -61,7 +63,9 @@
     tabRegistry.delete(tabId);
   };
 
-  setTabsContext({ activeClasses, ctx, registerTab: registerFn, unregisterTab: unregisterFn });
+  $effect(() => {
+    setTabsContext({ activeClasses, ctx, registerTab: registerFn, unregisterTab: unregisterFn });
+  });
 </script>
 
 <ul role="tablist" {...restProps} class={base({ class: clsx(theme?.base, className ?? ulClass) })}>

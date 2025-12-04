@@ -6,8 +6,11 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, classes, inputClass, spanClass, offLabel, ...restProps }: ToggleProps = $props();
-
-  warnThemeDeprecation("Toggle", { inputClass, spanClass }, { inputClass: "input", spanClass: "span" });
+  
+  $effect(() => {
+    warnThemeDeprecation("Toggle", { inputClass, spanClass }, { inputClass: "input", spanClass: "span" });
+  });
+  
   const styling = $derived(classes ?? { input: inputClass, span: spanClass });
 
   const theme = getTheme("toggle");

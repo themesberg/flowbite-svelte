@@ -23,10 +23,10 @@
 
   const theme = getTheme("progressbar");
 
-  let _progress = new Tween(0, {
+  let _progress = $derived(new Tween(0, {
     duration: animate ? tweenDuration : 0,
     easing
-  });
+  }));
   const {
     base,
     label: labelInsideCls,

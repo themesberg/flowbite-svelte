@@ -16,11 +16,11 @@
 
   let { data, children, submenu }: Props = $props();
   /* eslint-disable  @typescript-eslint/no-explicit-any */
-  const posts: Record<string, any[]> = data.posts?.posts ?? {};
-  const builders: Array<{ path: string }> = data.posts?.builders ?? [];
+  const posts = $derived<Record<string, any[]>>(data.posts?.posts ?? {});
+  const builders = $derived<Array<{ path: string }>>(data.posts?.builders ?? []);
   const blocks = ["quickstart", "application", "marketing", "publisher"];
   const drawerHidden: Writable<boolean> = getContext("drawer");
-  let noToc = ["blocks", "builder"].includes(submenu ?? "");
+  let noToc = $derived(["blocks", "builder"].includes(submenu ?? ""));
 
   const sidebarUi = uiHelpers();
   let isOpen = $state(true);

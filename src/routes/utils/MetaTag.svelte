@@ -4,10 +4,11 @@
   let { breadcrumb_title = "", description = "", title = "", dir = "", pkg = "Flowbite Svelte" } = $props();
 
   // title = title.replaceAll(' ', '-');
-  let imgsrc = `https://flowbite-svelte.com/og?title=${encodeURIComponent(breadcrumb_title)}&package=${encodeURIComponent(pkg)}`;
+  let imgsrc = $derived(`https://flowbite-svelte.com/og?title=${encodeURIComponent(breadcrumb_title)}&package=${encodeURIComponent(pkg)}`);
 
-  let dirstring = dir.toLowerCase();
-  let breadcrumb = breadcrumb_title.toLowerCase().replaceAll(" ", "-");
+
+  let dirstring = $derived(dir.toLowerCase());
+  let breadcrumb = $derived(breadcrumb_title.toLowerCase().replaceAll(" ", "-"));
 </script>
 
 <MetaTags

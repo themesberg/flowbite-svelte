@@ -6,15 +6,17 @@
 
   let { children, divClass, timeClass, date, olClass, class: className, classes, ...restProps }: GroupProps = $props();
 
-  warnThemeDeprecation(
-    "Group",
-    { divClass, timeClass, olClass },
-    {
-      divClass: "class",
-      timeClass: "time",
-      olClass: "ol"
-    }
-  );
+  $effect(() => {
+    warnThemeDeprecation(
+      "Group",
+      { divClass, timeClass, olClass },
+      {
+        divClass: "class",
+        timeClass: "time",
+        olClass: "ol"
+      }
+    );
+  });
   const styling = $derived({
     time: timeClass,
     ol: olClass

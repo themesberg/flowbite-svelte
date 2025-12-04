@@ -24,7 +24,9 @@
     ...restProps
   }: CheckboxProps = $props();
 
-  warnThemeDeprecation("Checkbox", { divClass }, { divClass: "div" });
+  $effect(() => {
+    warnThemeDeprecation("Checkbox", { divClass }, { divClass: "div" });
+  });
   const styling = $derived(classes ?? { div: divClass });
 
   const theme = getTheme("checkbox");

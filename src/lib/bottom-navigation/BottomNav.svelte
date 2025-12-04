@@ -8,13 +8,15 @@
 
   let { children, header, position = "fixed", navType = "default", class: className, classes, outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
 
-  warnThemeDeprecation("BottomNav", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
+  $effect(() => {
+    warnThemeDeprecation("BottomNav", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
+  });
   const styling = $derived(classes ?? { inner: innerClass });
 
   // Theme context
   const theme = getTheme("bottomNav");
 
-  const activeCls = cn("text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900", activeClass);
+  const activeCls = $derived(cn("text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900", activeClass));
 
   // Create reactive context using getters
   const context: BottomNavContextType = {

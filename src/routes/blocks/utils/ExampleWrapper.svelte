@@ -15,11 +15,13 @@
 
   type NotificationDirection = "ltr" | "rtl" | "auto";
 
-  // suppress vite-plugin-svelte warning about unused props
-  // the source of the example, if you want it
-  src;
-  // all meta tags of the code block
-  meta;
+  // suppress vite-plugin-svelte warning about unused props by using them in $effect
+  $effect(() => {
+    // the source of the example, if you want it
+    src;
+    // all meta tags of the code block
+    meta;
+  });
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
 

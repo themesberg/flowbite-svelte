@@ -55,10 +55,10 @@
   };
 
   // Select the appropriate props based on the variant
-  const iconProps = variant === "simple" ? simpleIconProps : variant === "tick" ? polylineIconProps : defaultIconProps;
+  const iconProps = $derived(variant === "simple" ? simpleIconProps : variant === "tick" ? polylineIconProps : defaultIconProps);
 
   // Determine the base class for the SVG
-  const baseClass = className || (variant !== "default" ? "h-4 w-4" : "me-2.5 h-3.5 w-3.5 sm:h-4 sm:w-4");
+  const baseClass = $derived(className || (variant !== "default" ? "h-4 w-4" : "me-2.5 h-3.5 w-3.5 sm:h-4 sm:w-4"));
 </script>
 
 <svg

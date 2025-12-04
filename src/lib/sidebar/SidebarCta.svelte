@@ -6,7 +6,9 @@
 
   let { children, icon, divClass, spanClass, label, class: className, classes, ...restProps }: SidebarCtaProps = $props();
 
-  warnThemeDeprecation("SidebarCta", { divClass, spanClass }, { divClass: "div", spanClass: "span" });
+  $effect(() => {
+    warnThemeDeprecation("SidebarCta", { divClass, spanClass }, { divClass: "div", spanClass: "span" });
+  });
   const styling = $derived(
     classes ?? {
       div: divClass,

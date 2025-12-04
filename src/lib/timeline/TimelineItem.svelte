@@ -25,18 +25,20 @@
     ...restProps
   }: TimelineItemProps = $props();
 
-  warnThemeDeprecation(
-    "TimelineItem",
-    { svgClass, liClass, divClass, timeClass, h3Class, connectorClass },
-    {
-      liClass: "class",
-      svgClass: "svg",
-      divClass: "div",
-      timeClass: "time",
-      h3Class: "h3",
-      connectorClass: "connector"
-    }
-  );
+  $effect(() => {
+    warnThemeDeprecation(
+      "TimelineItem",
+      { svgClass, liClass, divClass, timeClass, h3Class, connectorClass },
+      {
+        liClass: "class",
+        svgClass: "svg",
+        divClass: "div",
+        timeClass: "time",
+        h3Class: "h3",
+        connectorClass: "connector"
+      }
+    );
+  });
 
   const styling = $derived({
     svg: svgClass,

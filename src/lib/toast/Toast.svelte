@@ -24,14 +24,16 @@
     ...restProps
   }: ToastProps = $props();
 
-  warnThemeDeprecation(
-    "Toast",
-    { iconClass, contentClass },
-    {
-      iconClass: "icon",
-      contentClass: "content"
-    }
-  );
+  $effect(() => {
+    warnThemeDeprecation(
+      "Toast",
+      { iconClass, contentClass },
+      {
+        iconClass: "icon",
+        contentClass: "content"
+      }
+    );
+  });
   const styling = $derived(
     classes ?? {
       icon: iconClass,

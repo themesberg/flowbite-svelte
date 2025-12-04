@@ -12,7 +12,9 @@
 
   let navState = $state<NavbarState>({ hidden: true });
   setNavbarStateContext(navState);
-  setNavbarBreakpointContext(breakpoint);
+  $effect(() => {
+    setNavbarBreakpointContext(breakpoint);
+  });
 
   // Add reference to the navbar element
   let navbarElement: HTMLElement;

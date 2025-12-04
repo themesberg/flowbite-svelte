@@ -15,7 +15,7 @@
     ...restProps
   }: RatingIconProps = $props();
 
-  const uniqueId = `${groupId}-${iconIndex}`;
+  const uniqueId = $derived(`${groupId}-${iconIndex}`);
 </script>
 
 <svg width={size} height={size} {...restProps} class={clsx(svgClass)} aria-label={ariaLabel} viewBox="100 100 120 120" {role}>

@@ -22,7 +22,9 @@
     ...restProps
   }: RadioProps<T> = $props();
 
-  warnThemeDeprecation("Radio", { inputClass, labelClass }, { inputClass: "class", labelClass: "label" });
+  $effect(() => {
+    warnThemeDeprecation("Radio", { inputClass, labelClass }, { inputClass: "class", labelClass: "label" });
+  });
   const styling = $derived(classes ?? { label: labelClass });
 
   const theme = getTheme("radio");

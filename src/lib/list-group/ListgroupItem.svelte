@@ -10,11 +10,11 @@
   const theme = getTheme("listGroupItem");
 
   const listGroupCtx = getListGroupContext();
-  active = active ?? listGroupCtx?.active;
-  horizontal = horizontal ?? listGroupCtx?.horizontal;
+  const finalActive = $derived(active ?? listGroupCtx?.active);
+  const finalHorizontal = $derived(horizontal ?? listGroupCtx?.horizontal);
 
   let state: ListgroupItemVariants["state"] = $derived(disabled ? "disabled" : current ? "current" : "normal");
-  let itemClass = $derived(listGroupItem({ state, active, horizontal, class: clsx(theme, className) }));
+  let itemClass = $derived(listGroupItem({ state, active: finalActive, horizontal: finalHorizontal, class: clsx(theme, className) }));
 </script>
 
 {#snippet nameOrChildren()}

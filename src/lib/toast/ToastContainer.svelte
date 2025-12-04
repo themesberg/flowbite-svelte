@@ -15,7 +15,7 @@
     "bottom-right": "bottom-4 right-4"
   };
 
-  const base = toastContainer({ class: clsx(positionClasses[position], theme, className) });
+  const base = $derived(toastContainer({ class: clsx(positionClasses[position], theme, className) }));
 </script>
 
 <div {...restProps} class={base}>

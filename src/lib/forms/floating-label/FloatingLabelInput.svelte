@@ -32,11 +32,13 @@
     ...restProps
   }: FloatingLabelInputProps = $props();
 
-  warnThemeDeprecation(
-    "FloatingLabelInput",
-    { inputClass, labelClass, clearableSvgClass, clearableClass, comboClass },
-    { inputClass: "input", labelClass: "label", clearableSvgClass: "svg", clearableClass: "close", comboClass: "combo" }
-  );
+  $effect(() => {
+    warnThemeDeprecation(
+      "FloatingLabelInput",
+      { inputClass, labelClass, clearableSvgClass, clearableClass, comboClass },
+      { inputClass: "input", labelClass: "label", clearableSvgClass: "svg", clearableClass: "close", comboClass: "combo" }
+    );
+  });
   const styling = $derived(classes ?? { input: inputClass, label: labelClass, svg: clearableSvgClass, close: clearableClass, combo: comboClass });
 
   const theme = getTheme("floatingLabelInput");

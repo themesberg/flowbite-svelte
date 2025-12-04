@@ -43,10 +43,10 @@
 </script>
 
 {#if banner.hasSeen}
-  <div class="flex items-center gap-3 text-sm text-gray-600 mb-3">
+  <div class="mb-3 flex items-center gap-3 text-sm text-gray-600">
     <span>
-      Banner is hidden because you dismissed it earlier.
-      Remove <code>announcement-example</code> from localStorage to show it again or click the reset button.
+      Banner is hidden because you dismissed it earlier. Remove <code>announcement-example</code>
+      from localStorage to show it again or click the reset button.
     </span>
     <Button size="xs" onclick={banner.reset}>Reset</Button>
   </div>

@@ -1633,12 +1633,14 @@ export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
 export interface StepIndicatorProps extends StepIndicatorVariants, HTMLAttributes<HTMLElement> {
   steps?: string[];
   currentStep?: number;
-  // size?: StepIndicatorVariants["size"];
+  size?: StepIndicatorVariants["size"];
   color?: StepIndicatorVariants["color"] | "custom";
-  // glow?: StepIndicatorVariants["glow"];
-  // hideLabel?: StepIndicatorVariants["hideLabel"];
+  glow?: boolean;
+  hideLabel?: boolean;
+  clickable?: boolean;
   completedCustom?: string;
   currentCustom?: string;
+  onStepClick?: (event: { current: number; last: number }) => void;
 }
 
 // stepper

@@ -26,7 +26,9 @@
     ...restProps
   }: BadgeProps = $props();
 
-  warnThemeDeprecation("Badge", { aClass }, { aClass: "linkClass" });
+  $effect(() => {
+    warnThemeDeprecation("Badge", { aClass }, { aClass: "linkClass" });
+  });
 
   const styling = $derived(classes ?? { linkClass: aClass });
 

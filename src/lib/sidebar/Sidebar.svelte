@@ -33,7 +33,9 @@
     ...restProps
   }: SidebarProps = $props();
 
-  warnThemeDeprecation("Sidebar", { backdropClass, divClass, nonActiveClass, activeClass }, { backdropClass: "backdrop", divClass: "div", nonActiveClass: "nonactive", activeClass: "active" });
+  $effect(() => {
+    warnThemeDeprecation("Sidebar", { backdropClass, divClass, nonActiveClass, activeClass }, { backdropClass: "backdrop", divClass: "div", nonActiveClass: "nonactive", activeClass: "active" });
+  });
   const styling = $derived(
     classes ?? {
       backdrop: backdropClass,
@@ -62,7 +64,9 @@
     activeUrlStore.value = activeUrl;
   });
 
-  if (disableBreakpoints) isOpen = true;
+  $effect(() => {
+    if (disableBreakpoints) isOpen = true;
+  });
   const { base, active, nonactive, div, backdrop: backdropCls } = $derived(sidebar({ isOpen, breakpoint, position, backdrop, alwaysOpen: alwaysOpen && !disableBreakpoints }));
 
   let sidebarCtx: SidebarCtxType = {
@@ -75,11 +79,15 @@
     get nonActiveClass() {
       return nonactive({ class: clsx(theme?.nonactive, styling.nonactive) });
     },
-    isSingle,
-    selected: isSingle ? writable<object | null>(null) : undefined
+    get isSingle() {
+      return isSingle;
+    },
+    get selected() {
+      return isSingle ? writable<object | null>(null) : undefined;
+    }
   };
 
-  let transitionParams = params ? params : { x: -320, duration: 200, easing: sineIn };
+  let transitionParams = $derived(params ? params : { x: -320, duration: 200, easing: sineIn });
 
   setSidebarContext(sidebarCtx);
 

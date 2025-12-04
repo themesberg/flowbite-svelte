@@ -10,7 +10,9 @@
 
   let { children, onclick, menuClass, class: className, classes, name = "Open main menu", ...restProps }: NavHamburgerProps = $props();
 
-  warnThemeDeprecation("NavHamburger", { menuClass }, { menuClass: "menu" });
+  $effect(() => {
+    warnThemeDeprecation("NavHamburger", { menuClass }, { menuClass: "menu" });
+  });
   const styling = $derived(classes ?? { menu: menuClass });
 
   const theme = getTheme("navbarHamburger");

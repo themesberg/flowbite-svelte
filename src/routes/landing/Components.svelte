@@ -5,7 +5,7 @@
 
   let { data } = $props();
 
-  let components = [...data.posts.forms, ...data.posts.components, ...data.posts.typography].sort((a, b) => a.meta.component_title.localeCompare(b.meta.component_title));
+  let components = $derived([...data.posts.forms, ...data.posts.components, ...data.posts.typography].sort((a, b) => a.meta.component_title.localeCompare(b.meta.component_title)));
 
   const INIT_COUNT = 18;
   let expanded: boolean = $state(false);
