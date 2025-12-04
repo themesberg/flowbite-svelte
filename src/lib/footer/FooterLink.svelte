@@ -6,9 +6,9 @@
 
   let { children, liClass, aClass, href, classes, class: className, ...restProps }: FooterLinkProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("FooterLink", { liClass, aClass }, { liClass: "class", aClass: "link" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("FooterLink", { liClass, aClass }, { liClass: "class", aClass: "link" });
+
   // link, bySpan
   const styling = $derived(classes ?? { link: aClass });
 

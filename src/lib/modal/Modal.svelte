@@ -30,10 +30,9 @@
     ...restProps
   }: ModalProps = $props();
 
-  // form, header, footer, body, close
-  $effect(() => {
-    warnThemeDeprecation("Modal", { headerClass, bodyClass, footerClass, closeBtnClass }, { bodyClass: "body", headerClass: "header", footerClass: "footer", closeBtnClass: "close" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("Modal", { headerClass, bodyClass, footerClass, closeBtnClass }, { bodyClass: "body", headerClass: "header", footerClass: "footer", closeBtnClass: "close" });
+
   const styling = $derived(classes ?? { header: headerClass, body: bodyClass, footer: footerClass, close: closeBtnClass });
 
   const theme = getTheme("modal");

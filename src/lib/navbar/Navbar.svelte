@@ -13,10 +13,6 @@
   let navState = $state<NavbarState>({ hidden: true });
   setNavbarStateContext(navState);
 
-  // Set breakpoint context directly - it's just a string type
-  // const contextValue = {
-  //   get breakpoint() { return breakpoint; },
-  // }
   $effect(() => {
     setNavbarBreakpointContext(breakpoint);
   });

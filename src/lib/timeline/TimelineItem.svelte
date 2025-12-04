@@ -25,20 +25,19 @@
     ...restProps
   }: TimelineItemProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation(
-      "TimelineItem",
-      { svgClass, liClass, divClass, timeClass, h3Class, connectorClass },
-      {
-        liClass: "class",
-        svgClass: "svg",
-        divClass: "div",
-        timeClass: "time",
-        h3Class: "h3",
-        connectorClass: "connector"
-      }
-    );
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation(
+    "TimelineItem",
+    { svgClass, liClass, divClass, timeClass, h3Class, connectorClass },
+    {
+      liClass: "class",
+      svgClass: "svg",
+      divClass: "div",
+      timeClass: "time",
+      h3Class: "h3",
+      connectorClass: "connector"
+    }
+  );
 
   const styling = $derived({
     svg: svgClass,

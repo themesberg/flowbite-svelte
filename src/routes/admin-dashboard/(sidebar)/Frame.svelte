@@ -53,7 +53,7 @@
 
   let { children, tag, href, color = "default", rounded, border, shadow, node, use = noop, options = {}, role, transition, params, open = true, class: className, ...restProps }: Props = $props();
 
-  let computedTag = $derived(href ? "a" : "div");
+  let computedTag = $derived(tag ?? (href ? "a" : "div"));
 
   setContext("background", true);
 

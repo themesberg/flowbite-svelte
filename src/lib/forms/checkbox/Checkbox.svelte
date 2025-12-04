@@ -24,9 +24,9 @@
     ...restProps
   }: CheckboxProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("Checkbox", { divClass }, { divClass: "div" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("Checkbox", { divClass }, { divClass: "div" });
+
   const styling = $derived(classes ?? { div: divClass });
 
   const theme = getTheme("checkbox");

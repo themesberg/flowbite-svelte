@@ -13,11 +13,7 @@
   }: { children: Snippet; category?: "props" | "events" | "slots"; tableClass?: string; theadClass?: string; thClass?: string; divClass?: string; class?: string } = $props();
 
   $effect(() => {
-    $effect(() => {
-      $effect(() => {
-        setContext("category", category);
-      });
-    });
+    setContext("category", category);
   });
 
   const headerNames = {

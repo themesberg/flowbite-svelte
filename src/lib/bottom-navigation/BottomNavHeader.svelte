@@ -6,9 +6,8 @@
 
   let { children, class: className, classes, outerClass, innerClass, ...restProps }: BottomNavHeaderProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("BottomNavHeader", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("BottomNavHeader", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
 
   const styling = $derived(classes ?? { innerDiv: innerClass });
 

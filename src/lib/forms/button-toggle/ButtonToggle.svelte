@@ -9,9 +9,9 @@
 
   let { value, selected = false, children, iconSlot, color, class: className, iconClass, txtClass, contentClass, classes, ...restProps }: ButtonToggleProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("ButtonToggle", { iconClass, txtClass, contentClass }, { iconClass: "icon", txtClass: "text", contentClass: "content" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("ButtonToggle", { iconClass, txtClass, contentClass }, { iconClass: "icon", txtClass: "text", contentClass: "content" });
+
   // button(className), content, text, icon
   const styling = $derived(classes ?? { icon: iconClass, text: txtClass, content: contentClass });
 

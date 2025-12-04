@@ -27,13 +27,13 @@
     ...restProps
   }: TableSearchProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation(
-      "TableSearch",
-      { divClass, innerDivClass, inputClass, searchClass, svgDivClass, svgClass, tableClass },
-      { divClass: "root", innerDivClass: "inner", inputClass: "input", searchClass: "search", svgDivClass: "svgDiv", svgClass: "svg", tableClass: "table" }
-    );
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation(
+    "TableSearch",
+    { divClass, innerDivClass, inputClass, searchClass, svgDivClass, svgClass, tableClass },
+    { divClass: "root", innerDivClass: "inner", inputClass: "input", searchClass: "search", svgDivClass: "svgDiv", svgClass: "svg", tableClass: "table" }
+  );
+
   const styling = $derived(
     classes ?? {
       root: divClass,

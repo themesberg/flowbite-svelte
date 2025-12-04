@@ -7,17 +7,18 @@
 
   let { children, text, class: className, classes, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass, ...restProps }: RatingProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("Rating", { pClass }, { pClass: "p" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("Rating", { pClass }, { pClass: "p" });
+
   const styling = $derived(classes ?? { p: pClass });
 
   const theme = getTheme("rating");
 
   const { base, p } = $derived(ratingVariants());
   const ratingGroupId = crypto.randomUUID();
-  let fullStars = $derived(Math.floor(rating));
-  let rateDiffence = $derived(rating - fullStars);
+  let clampedRating = $derived(Math.max(0, Math.min(rating, total)));
+  let fullStars = $derived(Math.floor(clampedRating));
+  let rateDiffence = $derived(clampedRating - fullStars);
   let percentRating = $derived(Math.round(rateDiffence * 100));
   let grayStars = $derived(total - (fullStars + Math.ceil(rateDiffence)));
 </script>

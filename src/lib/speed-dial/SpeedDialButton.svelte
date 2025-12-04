@@ -23,9 +23,9 @@
     ...restProps
   }: SpeedDialButtonProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("SpeedDialButton", { textClass }, { textClass: "span" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("SpeedDialButton", { textClass }, { textClass: "span" });
+
   const styling = $derived(
     classes ?? {
       span: textClass

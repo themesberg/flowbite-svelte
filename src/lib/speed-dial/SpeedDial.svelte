@@ -21,9 +21,9 @@
     ...restProps
   }: SpeedDialProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("SpeedDial", { popperClass }, { popperClass: "popper" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("SpeedDial", { popperClass }, { popperClass: "popper" });
+
   const styling = $derived(
     classes ?? {
       popper: popperClass

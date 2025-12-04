@@ -6,17 +6,17 @@
 
   let { children, divClass, timeClass, date, olClass, class: className, classes, ...restProps }: GroupProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation(
-      "Group",
-      { divClass, timeClass, olClass },
-      {
-        divClass: "class",
-        timeClass: "time",
-        olClass: "ol"
-      }
-    );
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation(
+    "Group",
+    { divClass, timeClass, olClass },
+    {
+      divClass: "class",
+      timeClass: "time",
+      olClass: "ol"
+    }
+  );
+
   const styling = $derived({
     time: timeClass,
     ol: olClass

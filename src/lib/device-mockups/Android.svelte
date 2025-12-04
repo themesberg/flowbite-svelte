@@ -6,13 +6,12 @@
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class, ...restProps }: AndroidProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation(
-      "Android",
-      { divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class },
-      { divClass: "class", div2Class: "top", div3Class: "leftTop", div4Class: "leftMid", div5Class: "leftBot", div6Class: "right", div7Class: "slot" }
-    );
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation(
+    "Android",
+    { divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class },
+    { divClass: "class", div2Class: "top", div3Class: "leftTop", div4Class: "leftMid", div5Class: "leftBot", div6Class: "right", div7Class: "slot" }
+  );
 
   const styling = $derived(
     classes ?? {

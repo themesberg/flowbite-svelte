@@ -78,8 +78,7 @@
         {:else if i < currentStep - 1}
           <button
             type="button"
-            aria-current="step"
-            aria-label={`Current step: ${steps[i]}`}
+            aria-label={`Go to ${steps[i]} (completed)`}
             class={stepCls({
               class: clsx(getStepStateClasses(i, currentStep), getCustomStepClass(i), (theme as StepIndicatorTheme)?.step, classes?.step, "cursor-pointer transition-opacity hover:opacity-75")
             })}

@@ -6,9 +6,9 @@
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, ...restProps }: DesktopProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("Desktop", { divClass, div2Class, div3Class, div4Class }, { divClass: "class", div2Class: "inner", div3Class: "bot", div4Class: "botUnder" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("Desktop", { divClass, div2Class, div3Class, div4Class }, { divClass: "class", div2Class: "inner", div3Class: "bot", div4Class: "botUnder" });
+
   const styling = $derived(
     classes ?? {
       inner: div2Class,

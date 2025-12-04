@@ -6,13 +6,13 @@
 
   let { rating, globalText, ratings, divClass, spanClass, div2Class, div3Class, span2Class, class: className, classes, unit }: AdvancedRatingProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation(
-      "AdvancedRating",
-      { divClass, spanClass, div2Class, div3Class, span2Class },
-      { divClass: "class", spanClass: "span", div2Class: "div2", div3Class: "div3", span2Class: "span2" }
-    );
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation(
+    "AdvancedRating",
+    { divClass, spanClass, div2Class, div3Class, span2Class },
+    { divClass: "class", spanClass: "span", div2Class: "div2", div3Class: "div3", span2Class: "span2" }
+  );
+
   const styling = $derived(
     classes ?? {
       span: spanClass,

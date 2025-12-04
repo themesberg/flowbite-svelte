@@ -6,19 +6,19 @@
 
   let { timelines, aClass, imgClass, divClass, titleClass, spanClass, class: className, classes, ...restProps }: GroupItemProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation(
-      "GroupItem",
-      { aClass, imgClass, divClass, titleClass, spanClass },
-      {
-        aClass: "class",
-        imgClass: "img",
-        divClass: "div",
-        titleClass: "title",
-        spanClass: "span"
-      }
-    );
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation(
+    "GroupItem",
+    { aClass, imgClass, divClass, titleClass, spanClass },
+    {
+      aClass: "class",
+      imgClass: "img",
+      divClass: "div",
+      titleClass: "title",
+      spanClass: "span"
+    }
+  );
+
   const styling = $derived(
     classes ?? {
       img: imgClass,

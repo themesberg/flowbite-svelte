@@ -29,13 +29,12 @@
     ...restProps
   }: CarouselProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("Carousel", { imgClass }, { imgClass: "slide" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("Carousel", { imgClass }, { imgClass: "slide" });
 
   const styling = $derived(classes ?? { slide: imgClass });
 
-  // // Theme context
+  // Theme context
   const theme = getTheme("carousel");
 
   let { base, slide: slideCls } = $derived(carousel());
@@ -59,31 +58,12 @@
   $effect(() => {
     _state.images = images;
     _state.slideDuration = slideDuration;
+    changeSlide(index);
   });
-  // const reactivecCtx
-  // const reactivecCtx: BottomNavContextType = {
-  //   get activeClass() {
-  //     return activeCls;
-  //   },
-  //   get activeUrl() {
-  //     return activeUrl;
-  //   },
-  //   get navType() {
-  //     return navType;
-  //   }
-  // };
 
   setCarouselContext(_state);
 
   let initialized = false;
-
-  $effect(() => {
-    changeSlide(index);
-  });
-
-  $effect(() => {
-    _state.slideDuration = slideDuration;
-  });
 
   onMount(() => {
     onchange?.(images[index]);

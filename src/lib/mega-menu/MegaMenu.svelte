@@ -7,10 +7,9 @@
 
   let { children, extra, items = [], full, ulClass, isOpen = $bindable(false), class: className, extraClass, classes, ...restProps }: MegaMenuProps = $props();
 
-  //  ulClass, extraClass
-  $effect(() => {
-    warnThemeDeprecation("MegaMenu", { ulClass, extraClass }, { ulClass: "ul", extraClass: "extra" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("MegaMenu", { ulClass, extraClass }, { ulClass: "ul", extraClass: "extra" });
+
   const styling = $derived(classes ?? { ul: ulClass, extra: extraClass });
   const theme = getTheme("megamenu");
   const { base, div, ul, extra: extraCls } = $derived(megamenu({ full, hasExtra: !!extra }));

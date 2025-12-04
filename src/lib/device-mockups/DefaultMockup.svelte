@@ -6,13 +6,13 @@
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: DefaultMockupProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation(
-      "DefaultMockup",
-      { divClass, div2Class, div3Class, div4Class, div5Class, div6Class },
-      { divClass: "class", div2Class: "top", div3Class: "leftTop", div4Class: "leftBot", div5Class: "right", div6Class: "slot" }
-    );
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation(
+    "DefaultMockup",
+    { divClass, div2Class, div3Class, div4Class, div5Class, div6Class },
+    { divClass: "class", div2Class: "top", div3Class: "leftTop", div4Class: "leftBot", div5Class: "right", div6Class: "slot" }
+  );
+
   const styling = $derived(
     classes ?? {
       top: div2Class,

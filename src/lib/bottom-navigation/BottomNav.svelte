@@ -8,9 +8,9 @@
 
   let { children, header, position = "fixed", navType = "default", class: className, classes, outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("BottomNav", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("BottomNav", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
+
   const styling = $derived(classes ?? { inner: innerClass });
 
   // Theme context
@@ -19,7 +19,7 @@
   const activeCls = $derived(cn("text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900", activeClass));
 
   // Create reactive context using getters
-  const reactivecCtx: BottomNavContextType = {
+  const reactiveCtx: BottomNavContextType = {
     get activeClass() {
       return activeCls;
     },
@@ -31,7 +31,7 @@
     }
   };
 
-  setBottomNavContext(reactivecCtx);
+  setBottomNavContext(reactiveCtx);
 
   const { base, inner } = $derived(bottomNav({ position, navType }));
 </script>

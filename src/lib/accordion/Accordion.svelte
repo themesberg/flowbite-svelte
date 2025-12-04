@@ -11,7 +11,7 @@
   const theme = getTheme("accordion");
 
   // Simple reactive state object
-  const reactivecCtx: AccordionContextType = {
+  const reactiveCtx: AccordionContextType = {
     get flush() {
       return flush;
     },
@@ -27,7 +27,7 @@
   };
 
   // Set context during initialization
-  setAccordionContext(reactivecCtx);
+  setAccordionContext(reactiveCtx);
 
   $effect(() => {
     createSingleSelectionContext(multiple);

@@ -33,9 +33,9 @@
     ...restProps
   }: SidebarProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("Sidebar", { backdropClass, divClass, nonActiveClass, activeClass }, { backdropClass: "backdrop", divClass: "div", nonActiveClass: "nonactive", activeClass: "active" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("Sidebar", { backdropClass, divClass, nonActiveClass, activeClass }, { backdropClass: "backdrop", divClass: "div", nonActiveClass: "nonactive", activeClass: "active" });
+
   const styling = $derived(
     classes ?? {
       backdrop: backdropClass,
@@ -71,6 +71,7 @@
   });
   const { base, active, nonactive, div, backdrop: backdropCls } = $derived(sidebar({ isOpen, breakpoint, position, backdrop, alwaysOpen: alwaysOpen && !disableBreakpoints }));
 
+  const selectedStore = $derived(isSingle ? writable<object | null>(null) : undefined);
   let sidebarCtx: SidebarContextType = {
     get closeSidebar() {
       return closeSidebar;
@@ -85,7 +86,7 @@
       return isSingle;
     },
     get selected() {
-      return isSingle ? writable<object | null>(null) : undefined;
+      return selectedStore;
     }
   };
 

@@ -24,16 +24,16 @@
     ...restProps
   }: ToastProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation(
-      "Toast",
-      { iconClass, contentClass },
-      {
-        iconClass: "icon",
-        contentClass: "content"
-      }
-    );
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation(
+    "Toast",
+    { iconClass, contentClass },
+    {
+      iconClass: "icon",
+      contentClass: "content"
+    }
+  );
+
   const styling = $derived(
     classes ?? {
       icon: iconClass,

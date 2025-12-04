@@ -6,9 +6,9 @@
 
   let { children, solid = false, class: className, classes, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("Breadcrumb", { olClass }, { olClass: "list" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("Breadcrumb", { olClass }, { olClass: "list" });
+
   const styling = $derived(classes ?? { list: olClass });
 
   const theme = getTheme("breadcrumb");

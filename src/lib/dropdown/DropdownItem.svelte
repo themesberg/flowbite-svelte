@@ -7,9 +7,9 @@
 
   let { aClass, children, activeClass, liClass, classes, class: className, href, onclick, ...restProps }: DropdownItemProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("DropdownItem", { aClass, activeClass, liClass }, { aClass: "class", activeClass: "active", liClass: "li" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("DropdownItem", { aClass, activeClass, liClass }, { aClass: "class", activeClass: "active", liClass: "li" });
+
   const styling = $derived(classes ?? { active: activeClass, li: liClass });
 
   const theme = getTheme("dropdownItem");

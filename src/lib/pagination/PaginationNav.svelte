@@ -31,9 +31,9 @@
     ...restProps
   }: PaginationNavProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("PaginationNav", { prevClass, nextClass, spanClass, tableDivClass }, { prevClass: "prev", nextClass: "next", spanClass: "span", tableDivClass: "tableDiv" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("PaginationNav", { prevClass, nextClass, spanClass, tableDivClass }, { prevClass: "prev", nextClass: "next", spanClass: "span", tableDivClass: "tableDiv" });
+
   const styling = $derived(classes ?? { prev: prevClass, next: nextClass, span: spanClass, tableDiv: tableDivClass });
 
   const theme = getTheme("paginationNav");

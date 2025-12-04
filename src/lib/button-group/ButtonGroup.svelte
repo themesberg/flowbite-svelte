@@ -13,7 +13,7 @@
 
   // Create a reactive context object
   // The object itself stays the same, but its properties are reactive
-  const reactivecCtx = {
+  const reactiveCtx = {
     get size() {
       return size;
     },
@@ -22,7 +22,7 @@
     }
   };
 
-  setButtonGroupContext(reactivecCtx);
+  setButtonGroupContext(reactiveCtx);
 </script>
 
 <div {...restProps} class={groupClass} role="group">

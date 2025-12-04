@@ -6,9 +6,9 @@
 
   let { children, figure, items = [], imgClass, class: className, classes, ...restProps }: GalleryProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("Gallery", { imgClass }, { imgClass: "image" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("Gallery", { imgClass }, { imgClass: "image" });
+
   const styling = $derived(classes ?? { image: imgClass });
 
   const theme = getTheme("gallery");

@@ -23,23 +23,22 @@
     contentClass
   }: AccordionItemProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation(
-      "AccordionItem",
-      {
-        headerClass,
-        contentClass,
-        activeClass,
-        inactiveClass
-      },
-      {
-        headerClass: "button",
-        contentClass: "content",
-        activeClass: "active",
-        inactiveClass: "inactive"
-      }
-    );
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation(
+    "AccordionItem",
+    {
+      headerClass,
+      contentClass,
+      activeClass,
+      inactiveClass
+    },
+    {
+      headerClass: "button",
+      contentClass: "content",
+      activeClass: "active",
+      inactiveClass: "inactive"
+    }
+  );
 
   let styling: typeof classes = $derived(classes ?? { button: headerClass, content: contentClass, active: activeClass, inactive: inactiveClass });
 

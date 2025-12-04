@@ -10,9 +10,8 @@
 
   const activeClasses = $derived(typeof classes?.active === "string" ? classes.active : undefined);
 
-  $effect(() => {
-    warnThemeDeprecation("Tabs", { ulClass, contentClass }, { ulClass: "class", contentClass: "content" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("Tabs", { ulClass, contentClass }, { ulClass: "class", contentClass: "content" });
 
   const theme = getTheme("tabs");
   const styling = $derived(classes ?? { content: contentClass });

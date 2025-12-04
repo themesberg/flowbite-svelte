@@ -6,9 +6,9 @@
 
   let { closeIcon, children, buttonClass, svgClass, class: className, classes, ...restProps }: DrawerheadProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("Drawerhead", { buttonClass, svgClass }, { buttonClass: "button", svgClass: "svg" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("Drawerhead", { buttonClass, svgClass }, { buttonClass: "button", svgClass: "svg" });
+
   const styling = $derived(classes ?? { button: buttonClass, svg: svgClass });
 
   const theme = getTheme("drawer");

@@ -6,17 +6,16 @@
 
   let { children, divClass, innerDivClass, class: className, classes, divProps = {}, hrProps = {}, ...restProps }: HrProps = $props();
 
-  // base container content
-  $effect(() => {
-    warnThemeDeprecation(
-      "Hr",
-      { divClass, innerDivClass },
-      {
-        divClass: "div",
-        innerDivClass: "content"
-      }
-    );
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation(
+    "Hr",
+    { divClass, innerDivClass },
+    {
+      divClass: "div",
+      innerDivClass: "content"
+    }
+  );
+
   const styling = $derived(
     classes ?? {
       div: divClass,

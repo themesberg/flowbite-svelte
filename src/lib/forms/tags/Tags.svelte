@@ -28,9 +28,9 @@
     ...restProps
   }: TagsProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("Tags", { itemClass, spanClass, closeClass, inputClass }, { itemClass: "tag", spanClass: "span", closeClass: "close", inputClass: "input" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("Tags", { itemClass, spanClass, closeClass, inputClass }, { itemClass: "tag", spanClass: "span", closeClass: "close", inputClass: "input" });
+
   const styling = $derived(
     classes ?? {
       tag: itemClass,

@@ -6,9 +6,8 @@
 
   let { children, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, classes, imgClass, ...restProps }: CardProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("Card", { imgClass }, { imgClass: "image" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("Card", { imgClass }, { imgClass: "image" });
 
   const styling = $derived(classes ?? { image: imgClass });
 

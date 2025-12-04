@@ -23,9 +23,9 @@
     ...restProps
   }: SearchProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("Search", { inputClass, clearableSvgClass, clearableClass }, { inputClass: "input", clearableSvgClass: "svg", clearableClass: "close" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("Search", { inputClass, clearableSvgClass, clearableClass }, { inputClass: "input", clearableSvgClass: "svg", clearableClass: "close" });
+
   const styling = $derived(classes ?? { input: inputClass, svg: clearableSvgClass, close: clearableClass });
 
   const theme = getTheme("search");

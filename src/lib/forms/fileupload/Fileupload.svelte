@@ -21,9 +21,9 @@
     ...restProps
   }: FileuploadProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation("Fileupload", { wrapperClass, clearableClass, clearableSvgClass }, { wrapperClass: "wrapper", clearableClass: "close", clearableSvgClass: "svg" });
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation("Fileupload", { wrapperClass, clearableClass, clearableSvgClass }, { wrapperClass: "wrapper", clearableClass: "close", clearableSvgClass: "svg" });
+
   const styling = $derived(classes ?? { wrapper: wrapperClass, close: clearableClass, svg: clearableSvgClass });
 
   const theme = getTheme("fileupload");

@@ -6,16 +6,15 @@
 
   let { children, size, effect: imgEffect, align, caption, class: className, classes, figClass, captionClass, href, ...restProps }: ImgProps = $props();
 
-  $effect(() => {
-    warnThemeDeprecation(
-      "Img",
-      { figClass, captionClass },
-      {
-        figClass: "figure",
-        captionClass: "caption"
-      }
-    );
-  });
+  // svelte-ignore state_referenced_locally
+  warnThemeDeprecation(
+    "Img",
+    { figClass, captionClass },
+    {
+      figClass: "figure",
+      captionClass: "caption"
+    }
+  );
 
   const styling = $derived({
     figure: figClass || classes?.figure,

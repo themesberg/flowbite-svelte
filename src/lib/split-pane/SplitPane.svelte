@@ -26,10 +26,10 @@
   // Validate numeric props
   $effect(() => {
     if (minSize <= 0) {
-      console.warn(`minSize must be positive, got ${minSize}. Using default 100.`);
+      console.warn(`minSize must be positive, got ${minSize}.`);
     }
     if (keyboardStep <= 0) {
-      console.warn(`keyboardStep must be positive, got ${keyboardStep}. Using default 2.`);
+      console.warn(`keyboardStep must be positive, got ${keyboardStep}.`);
     }
   });
 
