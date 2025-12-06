@@ -117,6 +117,8 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
   <ButtonToggle color="red" value="red" selected={singleValue === "red"}>Red</ButtonToggle>
   <ButtonToggle color="green" value="green" selected={singleValue === "green"}>Green</ButtonToggle>
   <ButtonToggle color="blue" value="blue" selected={singleValue === "blue"}>Blue</ButtonToggle>
+</ButtonToggleGroup>
+<ButtonToggleGroup onSelect={handleSingleSelect}>
   <ButtonToggle color="gray" value="gray" selected={singleValue === "gray"}>Gray</ButtonToggle>
   <ButtonToggle color="lime" value="lime" selected={singleValue === "lime"}>Lime</ButtonToggle>
   <ButtonToggle color="purple" value="purple" selected={singleValue === "purple"}>Purple</ButtonToggle>
@@ -422,7 +424,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 
 #### Types
 
-[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L374)
+[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L441)
 
 #### Props
 

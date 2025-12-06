@@ -20,8 +20,10 @@ Use the following list of pagination items to indicate a series of content for y
 ```svelte
 <script lang="ts">
   import { PaginationNav } from "flowbite-svelte";
+  import { onMount } from "svelte";
 
   let currentPage = $state(1);
+  let isMobile = $state(false);
   const totalPages = 20;
 
   function handlePageChange(page: number) {
@@ -29,13 +31,24 @@ Use the following list of pagination items to indicate a series of content for y
     // Additional logic here
     console.log("Page changed to:", page);
   }
+
+  function checkMobile() {
+    isMobile = window.innerWidth <= 640;
+  }
+
+  onMount(() => {
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  });
 </script>
 
 <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} />
 
-<PaginationNav {currentPage} {totalPages} visiblePages={7} onPageChange={handlePageChange} />
-
-<PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} size="large" />
+{#if !isMobile}
+  <PaginationNav {currentPage} {totalPages} visiblePages={7} onPageChange={handlePageChange} />
+  <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} size="large" />
+{/if}
 ```
 
 ### Pagination, PaginationItem
@@ -44,6 +57,9 @@ Use the following list of pagination items to indicate a series of content for y
 <script lang="ts">
   import { page } from "$app/state";
   import { Pagination } from "flowbite-svelte";
+  import { onMount } from "svelte";
+
+  let isMobile = $state(false);
 
   let activeUrl = $derived(page.url.searchParams.get("page"));
   let pages = $state([
@@ -75,10 +91,22 @@ Use the following list of pagination items to indicate a series of content for y
   const next = () => {
     alert("Next btn clicked. Make a call to your server to fetch data.");
   };
+
+  function checkMobile() {
+    isMobile = window.innerWidth <= 640;
+  }
+
+  onMount(() => {
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  });
 </script>
 
 <Pagination {pages} {previous} {next} />
-<Pagination {pages} size="large" {previous} {next} />
+{#if !isMobile}
+  <Pagination {pages} size="large" {previous} {next} />
+{/if}
 ```
 
 ## Pagination with icons
@@ -168,7 +196,7 @@ Use the following markup to show simple previous and next elements.
 
 ```svelte
 <script lang="ts">
-  import { PaginationNav } from "flowbite-svelte";
+  import { PaginationNav, P } from "flowbite-svelte";
   let currentPage = $state(1);
   const totalPages = 20;
 
@@ -179,6 +207,7 @@ Use the following markup to show simple previous and next elements.
   }
 </script>
 
+<P class="text-sm">Showing {currentPage} of {totalPages} Entries</P>
 <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation" />
 <PaginationNav size="large" {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation" />
 ```
@@ -214,7 +243,7 @@ Use the following code to show simple previous and next elements with icons.
 
 ```svelte
 <script lang="ts">
-  import { PaginationNav } from "flowbite-svelte";
+  import { PaginationNav, P } from "flowbite-svelte";
   import { ArrowLeftOutline, ArrowRightOutline } from "flowbite-svelte-icons";
   let currentPage = $state(1);
   const totalPages = 20;
@@ -226,6 +255,7 @@ Use the following code to show simple previous and next elements with icons.
   }
 </script>
 
+<P class="text-sm">Showing {currentPage} of {totalPages} Entries</P>
 <PaginationNav {currentPage} {totalPages} onPageChange={handlePageChange} layout="navigation">
   {#snippet prevContent()}
     <ArrowLeftOutline class="h-5 w-5" />
@@ -454,7 +484,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1238)
+[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1296)
 
 #### Props
 
@@ -471,7 +501,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1202)
+[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1260)
 
 #### Props
 
@@ -487,7 +517,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1234)
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1292)
 
 #### Props
 
@@ -501,7 +531,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1208)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1266)
 
 #### Props
 

@@ -58,17 +58,19 @@ Disabled buttons should remain visible to maintain predictable UI layout and hel
   import { ButtonGroup, Button } from "flowbite-svelte";
 </script>
 
-<ButtonGroup>
-  <Button disabled>Profile</Button>
-  <Button>Settings</Button>
-  <Button>Messages</Button>
-</ButtonGroup>
+<div class="flex flex-col gap-4">
+  <ButtonGroup>
+    <Button disabled>Profile</Button>
+    <Button>Settings</Button>
+    <Button>Messages</Button>
+  </ButtonGroup>
 
-<ButtonGroup disabled>
-  <Button>Profile</Button>
-  <Button>Settings</Button>
-  <Button>Messages</Button>
-</ButtonGroup>
+  <ButtonGroup disabled>
+    <Button>Profile</Button>
+    <Button>Settings</Button>
+    <Button>Messages</Button>
+  </ButtonGroup>
+</div>
 ```
 
 ## More examples
@@ -343,7 +345,7 @@ When implementing button groups, consider these guidelines:
 
 #### Types
 
-[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L333)
+[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L320)
 
 #### Props
 

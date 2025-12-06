@@ -218,14 +218,12 @@ Outline buttons provide clear hierarchy while maintaining a clean, uncluttered i
   import { Button } from "flowbite-svelte";
 </script>
 
-<div class="flex justify-center gap-2">
-  <Button outline>Default</Button>
-  <Button outline color="dark">Dark</Button>
-  <Button outline color="green">Green</Button>
-  <Button outline color="red">Red</Button>
-  <Button outline color="yellow">Yellow</Button>
-  <Button outline color="purple">Purple</Button>
-</div>
+<Button outline>Default</Button>
+<Button outline color="dark">Dark</Button>
+<Button outline color="green">Green</Button>
+<Button outline color="red">Red</Button>
+<Button outline color="yellow">Yellow</Button>
+<Button outline color="purple">Purple</Button>
 ```
 
 ## Button sizes with icons
@@ -314,16 +312,14 @@ Always include accessible labels (aria-label) for screen readers even when text 
   import { ThumbsUpSolid, ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
-<div class="flex flex-wrap items-center gap-2">
-  <Button class="p-2!"><ArrowRightOutline class="h-6 w-6" /></Button>
-  <Button pill={true} class="p-2!"><ArrowRightOutline class="h-6 w-6" /></Button>
-  <Button outline={true} class="p-2!" size="lg">
-    <ThumbsUpSolid class="text-primary-700 h-7 w-7" />
-  </Button>
-  <Button pill={true} outline={true} class="p-2!" size="xl">
-    <ThumbsUpSolid class="text-primary-700 h-6 w-6" />
-  </Button>
-</div>
+<Button class="p-2!"><ArrowRightOutline class="h-6 w-6" /></Button>
+<Button pill={true} class="p-2!"><ArrowRightOutline class="h-6 w-6" /></Button>
+<Button outline={true} class="p-2!" size="lg">
+  <ThumbsUpSolid class="text-primary-700 h-7 w-7" />
+</Button>
+<Button pill={true} outline={true} class="p-2!" size="xl">
+  <ThumbsUpSolid class="text-primary-700 h-6 w-6" />
+</Button>
 ```
 
 ## Loader
@@ -480,7 +476,7 @@ Establish clear visual hierarchy with different button types:
 
 #### Types
 
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L343)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L330)
 
 #### Props
 
@@ -499,7 +495,7 @@ Establish clear visual hierarchy with different button types:
 
 #### Types
 
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L353)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L340)
 
 #### Props
 

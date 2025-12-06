@@ -2,7 +2,7 @@
   "name": "Clipboard",
   "type": {
     "name": "ClipboardProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L469"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L527"
   },
   "props": [
     ["children", ""],

@@ -290,7 +290,7 @@ Set `translationLocale` to change translation. The following example shows Germa
 
 <Datepicker bind:elementRef={datepickerRef} bind:value={selectedDate} placeholder="Select a date" />
 
-<div class="my-4">
+<div class="mt-4 flex flex-wrap gap-2">
   <Button onclick={() => datepickerRef?.focus()}>Focus Datepicker</Button>
 
   <Button onclick={() => datepickerRef?.select()}>Select All Text</Button>
@@ -397,7 +397,7 @@ explicabo minus.
 
 #### Types
 
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L495)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L553)
 
 #### Props
 
@@ -409,7 +409,7 @@ explicabo minus.
 - availableFrom: null
 - availableTo: null
 - locale: "default"
-- translationLocale: locale
+- translationLocale
 - firstDayOfWeek: 0
 - dateFormat
 - placeholder: "Select date"

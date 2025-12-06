@@ -128,12 +128,12 @@ Use this example with control buttons to increment and decrement the value insid
 
 <form class="mx-auto max-w-xs">
   <Label class="mb-2 text-sm" for="quantity-input">Choose quantity:</Label>
-  <div class="relative flex max-w-[8rem] items-center">
+  <div class="relative flex max-w-[14rem] items-center">
     <ButtonGroup>
       <Button type="button" id="decrement-button" onclick={() => (quantity -= 1)}>
         <MinusOutline />
       </Button>
-      <Input bind:value={quantity} type="number" id="quantity-input" aria-describedby="helper-text-explanation" placeholder="999" required class="w-20 text-center" />
+      <Input bind:value={quantity} type="number" id="quantity-input" aria-describedby="helper-text-explanation" placeholder="999" required class="w-32! text-center" />
       <Button type="button" id="increment-button" onclick={() => (quantity += 1)}>
         <PlusOutline />
       </Button>
@@ -164,7 +164,7 @@ Use this example to also add an icon inside the input field to improve the user 
     <Button type="button" onclick={() => (bedroom -= 1)} class="h-11 p-3">
       <MinusOutline />
     </Button>
-    <Input min="1" max="5" bind:value={bedroom} type="number" id="quantity_input" aria-describedby="helper-text-explanation" placeholder=" " required class="h-11 w-28 pb-6 text-center" />
+    <Input min="1" max="5" bind:value={bedroom} type="number" id="quantity_input" aria-describedby="helper-text-explanation" placeholder=" " required class="h-11 w-40! pb-6 text-center" />
     <div class="absolute start-1/2 bottom-1 flex -translate-x-1/2 items-center space-x-1 text-xs text-gray-400 rtl:translate-x-1/2 rtl:space-x-reverse">
       <HomeOutline class="h-4 w-4" />
       <span>Bedrooms</span>
@@ -176,8 +176,6 @@ Use this example to also add an icon inside the input field to improve the user 
 
   <P id="helper-text-explanation" class="mt-2 text-sm">Please select the number of bedrooms.</P>
 </form>
-
->
 ```
 
 ## Counter input
@@ -196,12 +194,12 @@ Use this example as an alternative style to the control buttons example above.
 
 <form class="mx-auto max-w-xs">
   <Label for="counter-input" class="mb-1 text-sm text-gray-900 dark:text-white">Choose quantity:</Label>
-  <div class="relative flex items-center">
-    <Button color="alternative" class="h-5 w-5 rounded p-2" onclick={() => (counterInput -= 1)}>
+  <div class="relative flex items-center gap-2">
+    <Button color="alternative" class="h-5 w-5 rounded-xl p-2" onclick={() => (counterInput -= 1)}>
       <MinusOutline class="h-2.5 w-2.5" />
     </Button>
-    <Input id="counter-input" type="number" class="w-12 shrink-0 border-0 bg-transparent p-0 text-center dark:bg-transparent" placeholder="" bind:value={counterInput} required />
-    <Button color="alternative" class="h-5 w-5 rounded p-2" onclick={() => (counterInput += 1)}>
+    <Input id="counter-input" type="number" class="w-12! shrink-0 border-0 bg-transparent p-0 text-center dark:bg-transparent" placeholder="" bind:value={counterInput} required />
+    <Button color="alternative" class="h-5 w-5 rounded-xl p-2" onclick={() => (counterInput += 1)}>
       <PlusOutline class="h-2.5 w-2.5" />
     </Button>
   </div>

@@ -19,7 +19,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[LayoutProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2037)
+[LayoutProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2104)
 ## Props
 @prop children
 @prop class: className

@@ -62,11 +62,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ImgProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2013)
+[ImgProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2080)
 ## Props
 @prop children
 @prop size
-@prop effect
+@prop effect: imgEffect
 @prop align
 @prop caption
 @prop class: className

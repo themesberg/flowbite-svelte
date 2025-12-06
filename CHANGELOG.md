@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.30.0
+
+### Minor Changes
+
+- New Features
+
+  Persistent dismissible banners and badges with a Reset button; banner dismissal tracking exposed.
+  - Enhancements
+
+  StepIndicator: clickable steps with onStepClick callback.
+  - Documentation
+
+  Added example and docs for the persistent dismissible Badge with Reset.
+  - Refactor
+
+  Broad reactivity and context updates to improve update timing and SSR stability (no UI changes).
+  - Chores
+
+  Dev dependency version bumps.
+
 ## 1.29.1
 
 ### Patch Changes
