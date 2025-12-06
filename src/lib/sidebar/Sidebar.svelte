@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SidebarCtxType, SidebarProps } from "$lib/types";
+  import type { SidebarContextType, SidebarProps } from "$lib/types";
   import { trapFocus } from "$lib/utils/actions";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
@@ -33,7 +33,9 @@
     ...restProps
   }: SidebarProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("Sidebar", { backdropClass, divClass, nonActiveClass, activeClass }, { backdropClass: "backdrop", divClass: "div", nonActiveClass: "nonactive", activeClass: "active" });
+
   const styling = $derived(
     classes ?? {
       backdrop: backdropClass,
@@ -56,16 +58,21 @@
   let innerWidth: number = $state(-1);
   let isLargeScreen = $derived(disableBreakpoints ? false : alwaysOpen || innerWidth >= breakpointValues[breakpoint]);
 
-  const activeUrlStore = $state({ value: "" });
-  setActiveUrlContext(activeUrlStore);
-  $effect(() => {
-    activeUrlStore.value = activeUrl;
-  });
+  // Create reactive context for activeUrl using getter
+  const activeUrlContext = {
+    get value() {
+      return activeUrl;
+    }
+  };
+  setActiveUrlContext(activeUrlContext);
 
-  if (disableBreakpoints) isOpen = true;
+  $effect(() => {
+    if (disableBreakpoints) isOpen = true;
+  });
   const { base, active, nonactive, div, backdrop: backdropCls } = $derived(sidebar({ isOpen, breakpoint, position, backdrop, alwaysOpen: alwaysOpen && !disableBreakpoints }));
 
-  let sidebarCtx: SidebarCtxType = {
+  const selectedStore = $derived(isSingle ? writable<object | null>(null) : undefined);
+  let sidebarCtx: SidebarContextType = {
     get closeSidebar() {
       return closeSidebar;
     },
@@ -75,11 +82,15 @@
     get nonActiveClass() {
       return nonactive({ class: clsx(theme?.nonactive, styling.nonactive) });
     },
-    isSingle,
-    selected: isSingle ? writable<object | null>(null) : undefined
+    get isSingle() {
+      return isSingle;
+    },
+    get selected() {
+      return selectedStore;
+    }
   };
 
-  let transitionParams = params ? params : { x: -320, duration: 200, easing: sineIn };
+  let transitionParams = $derived(params ? params : { x: -320, duration: 200, easing: sineIn });
 
   setSidebarContext(sidebarCtx);
 

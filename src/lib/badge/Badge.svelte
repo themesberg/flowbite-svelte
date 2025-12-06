@@ -26,6 +26,7 @@
     ...restProps
   }: BadgeProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("Badge", { aClass }, { aClass: "linkClass" });
 
   const styling = $derived(classes ?? { linkClass: aClass });

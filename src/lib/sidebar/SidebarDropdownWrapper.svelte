@@ -26,7 +26,9 @@
     ...restProps
   }: SidebarDropdownWrapperProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("SidebarDropdownWrapper", { btnClass, spanClass, ulClass, svgClass }, { btnClass: "btn", spanClass: "span", ulClass: "ul", svgClass: "svg" });
+
   const styling = $derived(
     classes ?? {
       btn: btnClass,

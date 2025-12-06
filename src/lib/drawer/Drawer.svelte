@@ -16,7 +16,7 @@
     modal,
     offset,
     width,
-    dismissable = offset ? false : undefined,
+    dismissable,
     placement = "left",
     class: className,
     transitionParams,
@@ -25,6 +25,9 @@
     activateClickOutside,
     ...restProps
   }: DrawerProps = $props();
+
+  // Set dismissable based on offset if not explicitly provided
+  const finalDismissable = $derived(dismissable ?? (offset ? false : undefined));
 
   // Create reactive context using getter
   const context = {
@@ -38,7 +41,9 @@
   // back compatibility
   if (hidden !== undefined) console.warn("'hidden' property is deprecated. Please use the 'open' property to manage 'Drawer'.");
 
-  if (activateClickOutside !== undefined) console.warn("'activateClickOutside' property is deprecated. Please use the 'outsideclose' property to manage 'Drawer' behaviour.");
+  $effect(() => {
+    if (activateClickOutside !== undefined) console.warn("'activateClickOutside' property is deprecated. Please use the 'outsideclose' property to manage 'Drawer' behaviour.");
+  });
 
   $effect(() => {
     if (activateClickOutside !== undefined && outsideclose === undefined) {
@@ -117,7 +122,7 @@
   {@attach init}
   bind:open
   {modal}
-  {dismissable}
+  dismissable={finalDismissable}
   {transition}
   {outsideclose}
   transitionParams={transition_params}
@@ -130,7 +135,7 @@
 </Dialog>
 
 {#if offset && !open}
-  <Dialog {@attach init} open modal={false} {dismissable} {outsideclose} inert {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <Dialog {@attach init} open modal={false} dismissable={finalDismissable} {outsideclose} inert {...restProps} class={base({ class: clsx(theme?.base, className) })}>
     {@render children?.()}
   </Dialog>
 {/if}

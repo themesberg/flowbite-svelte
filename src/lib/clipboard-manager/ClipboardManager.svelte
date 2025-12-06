@@ -36,7 +36,12 @@
 
   const styles = $derived(clipboardManager());
 
-  let items = $state<ClipboardItem[]>(initialItems);
+  let items = $state<ClipboardItem[]>([]);
+  $effect(() => {
+    if (initialItems.length > 0) {
+      items = initialItems;
+    }
+  });
   let newText = $state("");
   let searchQuery = $state("");
   let toast = $state<{ message: string; type: "success" | "error" | "info" } | null>(null);
@@ -49,7 +54,7 @@
     text: string;
   }>({ show: false, x: 0, y: 0, text: "" });
 
-  const STORAGE_KEY = storageKey ?? "flowbite-clipboard-manager";
+  const STORAGE_KEY = $derived(storageKey ?? "flowbite-clipboard-manager");
 
   // Save to localStorage whenever items change (but skip the initial load)
   let isFirstLoad = true;

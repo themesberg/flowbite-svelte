@@ -4,12 +4,14 @@
   import TableHead from "./TableHead.svelte";
   import TableBody from "./TableBody.svelte";
   import clsx from "clsx";
-  import type { TableProps, TableCtxType } from "$lib/types";
+  import type { TableProps, TableContextType } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
   let { children, footerSlot, captionSlot, items, divClass, striped, hoverable, border = true, shadow, color = "default", class: className, classes, ...restProps }: TableProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("Table", { divClass }, { divClass: "div" });
+
   const styling = $derived(
     classes ?? {
       div: divClass
@@ -19,7 +21,7 @@
 
   const { div, table } = $derived(tableCls({ color, shadow }));
 
-  let tableCtx: TableCtxType = {
+  let tableCtx: TableContextType = {
     get striped() {
       return striped;
     },

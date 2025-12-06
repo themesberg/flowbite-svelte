@@ -235,7 +235,7 @@ export interface AvatarProps extends AvatarVariants, HTMLAttributes<HTMLDivEleme
   href?: HTMLAnchorAttributes["href"];
   target?: HTMLAnchorAttributes["target"];
   src?: string;
-  dot?: Record<string, unknown>;
+  dot?: Partial<Omit<IndicatorProps, "children">>;
   alt?: string;
   onclick?: () => void;
 }
@@ -346,9 +346,8 @@ export interface GradientButtonProps extends GradientButtonVariantes, HTMLButton
 
 // Context Types
 // These types are used by the context system in $lib/context.ts
-
 // Accordion Context
-export interface AccordionCtxType {
+export interface AccordionContextType {
   flush?: boolean;
   activeClass?: string | null;
   inactiveClass?: string | null;
@@ -363,11 +362,11 @@ export interface BottomNavContextType {
 }
 
 // Carousel Context
-export interface CarouselState {
+export interface CarouselContextType {
   images: HTMLImgAttributes[];
   index: number;
-  lastSlideChange: number; // ms
-  slideDuration: number; // ms
+  lastSlideChange: number;
+  slideDuration: number;
   forward: boolean;
   changeSlide: (newIndex: number) => void;
 }
@@ -1442,7 +1441,7 @@ export interface RatingIconProps extends SVGAttributes<SVGSVGElement> {
 }
 
 // sidebar
-export type SidebarCtxType = {
+export type SidebarContextType = {
   closeSidebar?: () => void;
   activeClass?: string;
   nonActiveClass?: string;
@@ -1633,12 +1632,14 @@ export interface SpinnerProps extends SVGAttributes<SVGSVGElement> {
 export interface StepIndicatorProps extends StepIndicatorVariants, HTMLAttributes<HTMLElement> {
   steps?: string[];
   currentStep?: number;
-  // size?: StepIndicatorVariants["size"];
+  size?: StepIndicatorVariants["size"];
   color?: StepIndicatorVariants["color"] | "custom";
-  // glow?: StepIndicatorVariants["glow"];
-  // hideLabel?: StepIndicatorVariants["hideLabel"];
+  glow?: boolean;
+  hideLabel?: boolean;
+  clickable?: boolean;
   completedCustom?: string;
   currentCustom?: string;
+  onStepClick?: (event: { current: number; last: number }) => void;
 }
 
 // stepper
@@ -1753,7 +1754,7 @@ export interface TimelineStepperProps extends HTMLOlAttributes, TimelineStepperV
 }
 
 // tables
-export type TableCtxType = {
+export type TableContextType = {
   striped?: boolean;
   hoverable?: boolean;
   border?: boolean;

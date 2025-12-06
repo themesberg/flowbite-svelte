@@ -24,6 +24,7 @@
     ...restProps
   }: ToastProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "Toast",
     { iconClass, contentClass },
@@ -32,6 +33,7 @@
       contentClass: "content"
     }
   );
+
   const styling = $derived(
     classes ?? {
       icon: iconClass,

@@ -26,7 +26,7 @@
   let scrollTop = $state(0);
   let rafId: number | undefined;
 
-  const styles = virtualMasonry({ contained });
+  const styles = $derived(virtualMasonry({ contained }));
 
   const containStyle = $derived.by(() => {
     if (!contained) return "";

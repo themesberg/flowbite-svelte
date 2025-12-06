@@ -1,8 +1,8 @@
 import { createContext } from "svelte";
 import type {
-  AccordionCtxType,
+  AccordionContextType,
   BottomNavContextType,
-  CarouselState,
+  CarouselContextType,
   DrawerContextType,
   DropdownContextType,
   PaginationContextType,
@@ -13,8 +13,8 @@ import type {
   ButtonGroupContextType,
   NavbarState,
   NavbarBreakpoint,
-  SidebarCtxType,
-  TableCtxType,
+  SidebarContextType,
+  TableContextType,
   TabsContextType
 } from "./types";
 import type { SplitPaneContext } from "./types";
@@ -39,7 +39,7 @@ function createSafeContext<T>() {
 }
 
 // Accordion
-const [getAccordionContext, setAccordionContext] = createSafeContext<AccordionCtxType>();
+const [getAccordionContext, setAccordionContext] = createSafeContext<AccordionContextType>();
 export { getAccordionContext, setAccordionContext };
 
 // BottomNav
@@ -47,7 +47,7 @@ const [getBottomNavContext, setBottomNavContext] = createSafeContext<BottomNavCo
 export { getBottomNavContext, setBottomNavContext };
 
 // Carousel
-const [getCarouselContext, setCarouselContext] = createSafeContext<CarouselState>();
+const [getCarouselContext, setCarouselContext] = createSafeContext<CarouselContextType>();
 export { getCarouselContext, setCarouselContext };
 
 // Drawer
@@ -94,14 +94,14 @@ const [getNavbarBreakpointContext, setNavbarBreakpointContext] = createSafeConte
 export { getNavbarBreakpointContext, setNavbarBreakpointContext };
 
 // Sidebar
-const [getSidebarContext, setSidebarContext] = createSafeContext<SidebarCtxType>();
+const [getSidebarContext, setSidebarContext] = createSafeContext<SidebarContextType>();
 export { getSidebarContext, setSidebarContext };
 
 const [getActiveUrlContext, setActiveUrlContext] = createSafeContext<{ value: string }>();
 export { getActiveUrlContext, setActiveUrlContext };
 
 // Table
-const [getTableContext, setTableContext] = createSafeContext<TableCtxType>();
+const [getTableContext, setTableContext] = createSafeContext<TableContextType>();
 export { getTableContext, setTableContext };
 
 // SplitPane

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type CarouselProps, type CarouselState } from "$lib";
+  import { type CarouselProps, type CarouselContextType } from "$lib";
   import Slide from "./Slide.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
@@ -29,11 +29,12 @@
     ...restProps
   }: CarouselProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("Carousel", { imgClass }, { imgClass: "slide" });
 
   const styling = $derived(classes ?? { slide: imgClass });
 
-  // // Theme context
+  // Theme context
   const theme = getTheme("carousel");
 
   let { base, slide: slideCls } = $derived(carousel());
@@ -53,19 +54,16 @@
     onchange?.(images[_state.index]);
   };
 
-  const _state: CarouselState = $state({ images, index: index ?? 0, forward: true, slideDuration, lastSlideChange: Date.now(), changeSlide });
+  const _state: CarouselContextType = $state({ images: [], index: 0, forward: true, slideDuration: 500, lastSlideChange: Date.now(), changeSlide });
+  $effect(() => {
+    _state.images = images;
+    _state.slideDuration = slideDuration;
+    changeSlide(index);
+  });
 
   setCarouselContext(_state);
 
   let initialized = false;
-
-  $effect(() => {
-    changeSlide(index);
-  });
-
-  $effect(() => {
-    _state.slideDuration = slideDuration;
-  });
 
   onMount(() => {
     onchange?.(images[index]);

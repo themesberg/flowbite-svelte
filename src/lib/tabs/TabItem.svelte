@@ -22,8 +22,8 @@
   const { active, inactive } = $derived(tabs({ tabStyle: compoTabStyle, hasDivider: true }));
 
   const tabId = $props.id();
-  const tabIdentifier = key ?? tabId;
-  const self: SelectedTab = { id: tabIdentifier, snippet: children };
+  const tabIdentifier = $derived(key ?? tabId);
+  const self = $derived<SelectedTab>({ id: tabIdentifier, snippet: children });
 
   const registerTab = tabsCtx.registerTab;
   const unregisterTab = tabsCtx.unregisterTab;

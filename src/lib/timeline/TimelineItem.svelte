@@ -25,6 +25,7 @@
     ...restProps
   }: TimelineItemProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "TimelineItem",
     { svgClass, liClass, divClass, timeClass, h3Class, connectorClass },

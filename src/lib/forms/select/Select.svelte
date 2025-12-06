@@ -28,8 +28,9 @@
     ...restProps
   }: SelectProps<T> = $props();
 
-  // clearableSvgClass, clearableClass, selectClass
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("Select", { selectClass, clearableSvgClass, clearableClass }, { selectClass: "select", clearableSvgClass: "svg", clearableClass: "close" });
+
   const styling = $derived(classes ?? { select: selectClass, svg: clearableSvgClass, close: clearableClass });
 
   const theme = getTheme("select");

@@ -29,7 +29,7 @@
    * Defaults to false. This prop value takes precedence over any theme defaults.
    * @default false
    */
-  const styles = virtualList({ contained });
+  const styles = $derived(virtualList({ contained }));
 
   const containStyle = $derived.by(() => {
     if (!contained) return "";

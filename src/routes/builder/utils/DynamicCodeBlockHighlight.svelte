@@ -21,21 +21,13 @@
 
   let { code, handleExpandClick, showExpandButton, expand, codeLang, badgeClass, buttonClass, replaceLib, class: className }: Props = $props();
 
-  if (replaceLib) {
-    code = replaceLibImport(code);
-  }
-
-  $effect(() => {
-    if (replaceLib) {
-      code = replaceLibImport(code);
-    }
-  });
+  let processedCode = $derived(replaceLib ? replaceLibImport(code) : code);
 
   const { base, badge, button } = $derived(highlightcompo());
   let copiedStatus = $state(false);
 
   function handleCopyClick() {
-    copyToClipboard(code)
+    copyToClipboard(processedCode)
       .then(() => {
         copiedStatus = true;
         setTimeout(() => {
@@ -61,10 +53,10 @@
         <Badge class={badge({ class: badgeClass })} color="green">Copied to clipboard</Badge>
       {/if}
       {#if codeLang === "md"}
-        <Highlight language={mdLang} {code} />
-      {:else if code}
+        <Highlight language={mdLang} code={processedCode} />
+      {:else if processedCode}
         <div class="highlight">
-          <pre class="language-svelte !-mt-2 mb-0 !rounded-none">{code}</pre>
+          <pre class="language-svelte !-mt-2 mb-0 !rounded-none">{processedCode}</pre>
         </div>
       {:else}
         no code is provided

@@ -8,8 +8,9 @@
 
   let { children, selected = $bindable(), tabStyle = "none", ulClass, contentClass, divider = true, class: className, classes, ...restProps }: TabsProps = $props();
 
-  const activeClasses = typeof classes?.active === "string" ? classes.active : undefined;
+  const activeClasses = $derived(typeof classes?.active === "string" ? classes.active : undefined);
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("Tabs", { ulClass, contentClass }, { ulClass: "class", contentClass: "content" });
 
   const theme = getTheme("tabs");
@@ -18,7 +19,7 @@
 
   const uuid = $props.id();
   const panelId = `tab-panel-${uuid}`;
-  const ctx: TabCtxType = $state({ tabStyle, panelId });
+  const ctx = $derived<TabCtxType>({ tabStyle, panelId });
   const dividerBool = $derived(["full", "pill"].includes(tabStyle) ? false : divider);
 
   createSingleSelectionContext<SelectedTab>();
@@ -61,7 +62,18 @@
     tabRegistry.delete(tabId);
   };
 
-  setTabsContext({ activeClasses, ctx, registerTab: registerFn, unregisterTab: unregisterFn });
+  // Set context synchronously for SSR compatibility
+  // Use getters to make the context reactive
+  setTabsContext({
+    get activeClasses() {
+      return activeClasses;
+    },
+    get ctx() {
+      return ctx;
+    },
+    registerTab: registerFn,
+    unregisterTab: unregisterFn
+  });
 </script>
 
 <ul role="tablist" {...restProps} class={base({ class: clsx(theme?.base, className ?? ulClass) })}>

@@ -6,7 +6,9 @@
 
   let { children, site, imgClass, spanClass, class: className, classes, ...restProps }: SidebarBrandProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("SidebarBrand", { imgClass, spanClass }, { imgClass: "img", spanClass: "span" });
+
   const styling = $derived(
     classes ?? {
       img: imgClass,

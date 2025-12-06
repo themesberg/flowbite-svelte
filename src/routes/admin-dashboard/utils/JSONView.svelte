@@ -16,7 +16,10 @@
   }>();
 
   // State
-  let expanded = $state(initiallyExpanded);
+  let expanded = $state(false);
+  $effect(() => {
+    expanded = initiallyExpanded;
+  });
 
   // Toggle expanded state
   function toggle() {

@@ -43,7 +43,7 @@
   const theme = getTheme("timepicker");
 
   // Generate theme classes
-  const styles = timepicker({ type, columns, disabled });
+  const styles = $derived(timepicker({ type, columns, disabled }));
 
   // State
   let selectedOption = $state("");

@@ -49,7 +49,7 @@ Search by the icon name and you'll find the component name that you need to impo
         <span>Mono</span>
       {/snippet}
       <div class={tabItemDivcls}>
-        {#each filteredEntries as [name, component], i}
+        {#each filteredEntries as [name, component], i (i)}
           {@const iconValue = `<${filteredEntries[i][0]} class="shrink-0 h-${size} w-${size}" />`}
           <div class="flex items-center gap-4">
             <IconSolid Icon={component} class="shrink-0 h-{size} w-{size}" />
@@ -69,7 +69,7 @@ Search by the icon name and you'll find the component name that you need to impo
         <span>Random Hex Colors</span>
       {/snippet}
       <div class={tabItemDivcls}>
-        {#each filteredEntries as [name, component], i}
+        {#each filteredEntries as [name, component], i (i)}
           {@const color = random_hex_color_code()}
           {@const iconValue = `<${filteredEntries[i][0]} class="shrink-0 h-${size} w-${size}" color="${color}"/>`}
           <div class="flex items-center gap-4">
@@ -90,7 +90,7 @@ Search by the icon name and you'll find the component name that you need to impo
         <span>Random Tailwind CSS Colors</span>
       {/snippet}
       <div class={tabItemDivcls}>
-        {#each filteredEntries as [name, component], i}
+        {#each filteredEntries as [name, component], i (i)}
           {@const color = random_tailwind_color()}
           {@const iconValue = `<${filteredEntries[i][0]} class="h-${size} w-${size} ${color}"/>`}
           <div class="flex items-center gap-4">

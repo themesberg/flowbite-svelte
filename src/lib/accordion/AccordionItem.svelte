@@ -23,6 +23,7 @@
     contentClass
   }: AccordionItemProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "AccordionItem",
     {
@@ -44,9 +45,9 @@
   // Get context - it will be undefined if used outside Accordion
   const ctx = getAccordionContext();
 
-  const ctxTransitionType = ctx?.transitionType ?? transitionType;
+  const ctxTransitionType = $derived(ctx?.transitionType ?? transitionType);
   // Check if transitionType is explicitly set to undefined in props
-  const useTransition = transitionType === "none" ? false : ctxTransitionType === "none" ? false : true;
+  const useTransition = $derived(transitionType === "none" ? false : ctxTransitionType === "none" ? false : true);
 
   // Theme context
   const theme = getTheme("accordionItem");

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { SvelteDate } from "svelte/reactivity";
   import { footerCopyright } from "./theme";
   import clsx from "clsx";
   import type { FooterCopyrightProps } from "$lib";
@@ -6,19 +7,21 @@
 
   let { spanClass, aClass, href, by, copyrightMessage = "All Rights Reserved.", year, bySpanClass, classes, class: className, ...restProps }: FooterCopyrightProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("FooterCopyright", { aClass, spanClass, bySpanClass }, { aClass: "link", spanClass: "class", bySpanClass: "bySpan" });
+
   // link, bySpan
   const styling = $derived(classes ?? { bySpan: bySpanClass, link: aClass });
 
   const theme = getTheme("footerCopyright");
 
-  if (!year) year = new Date().getFullYear();
+  const effectiveYear = $derived(year ?? new SvelteDate().getFullYear());
 
   const { base, link, bySpan } = footerCopyright();
 </script>
 
 <span class={base({ class: clsx(theme?.base, className ?? spanClass) })}>
-  &copy; {year}
+  &copy; {effectiveYear}
   {#if href}
     <a {...restProps} {href} class={link({ class: clsx(theme?.link, styling.link) })}>
       {by}

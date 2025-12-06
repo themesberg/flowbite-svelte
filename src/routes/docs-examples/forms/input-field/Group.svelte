@@ -28,21 +28,21 @@
 </div>
 
 <div class="pt-8">
-  <Label for="input-addon" class="mb-2">Grouped with button</Label>
+  <Label for="input-addon-button" class="mb-2">Grouped with button</Label>
   <ButtonGroup class="w-full">
     <InputAddon>@</InputAddon>
-    <Input id="input-addon" type="email" placeholder="john.doe@mail.com" />
+    <Input id="input-addon-button" type="email" placeholder="john.doe@mail.com" />
     <Button color="primary">Search</Button>
   </ButtonGroup>
 </div>
 
 <div>
-  <Label for="input-addon" class="mb-2">Crazy example</Label>
+  <Label for="input-addon-crazy" class="mb-2">Crazy example</Label>
   <ButtonGroup class="w-full">
     <InputAddon><Checkbox /></InputAddon>
     <Button color="primary">Search</Button>
     <InputAddon>http://</InputAddon>
-    <Input id="input-addon" type="email" placeholder="john.doe@mail.com" />
+    <Input id="input-addon-crazy" type="email" placeholder="john.doe@mail.com" />
     <InputAddon>@</InputAddon>
     <InputAddon><Checkbox /></InputAddon>
     <Button color="blue">Send</Button>

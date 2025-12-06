@@ -6,6 +6,7 @@
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class, ...restProps }: AndroidProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "Android",
     { divClass, div2Class, div3Class, div4Class, div5Class, div6Class, div7Class },

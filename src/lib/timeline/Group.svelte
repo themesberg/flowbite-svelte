@@ -6,6 +6,7 @@
 
   let { children, divClass, timeClass, date, olClass, class: className, classes, ...restProps }: GroupProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "Group",
     { divClass, timeClass, olClass },
@@ -15,6 +16,7 @@
       olClass: "ol"
     }
   );
+
   const styling = $derived({
     time: timeClass,
     ol: olClass

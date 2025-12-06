@@ -23,14 +23,16 @@
     ...restProps
   }: SpeedDialButtonProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("SpeedDialButton", { textClass }, { textClass: "span" });
+
   const styling = $derived(
     classes ?? {
       span: textClass
     }
   );
 
-  let tooltip: Placement | "none" = _tooltip ?? context.tooltip;
+  let tooltip = $derived<Placement | "none">(_tooltip ?? context.tooltip);
 
   const theme = getTheme("speedDialButton");
 

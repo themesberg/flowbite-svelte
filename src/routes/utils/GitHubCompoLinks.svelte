@@ -49,12 +49,15 @@
 
   // default for docs/components
   let fileNames = $state(getFilteredFileNames(dirName || ""));
+
   // if components are given in docs/forms, typography etc use it
-  if (components) {
-    // Split the components into an array
-    const componentArray = components.split(", ");
-    fileNames = componentArray;
-  }
+  $effect(() => {
+    if (components) {
+      // Split the components into an array
+      const componentArray = components.split(", ");
+      fileNames = componentArray;
+    }
+  });
 
   function getComponentPath(compo: string): string {
     // Check for special cases first

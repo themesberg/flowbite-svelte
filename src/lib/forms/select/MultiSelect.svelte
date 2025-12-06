@@ -31,7 +31,9 @@
     ...restProps
   }: MultiSelectProps<T> = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("MultiSelect", { dropdownClass }, { dropdownClass: "dropdown" });
+
   const styling = $derived(classes ?? { dropdown: dropdownClass });
 
   const theme = getTheme("multiSelect");
@@ -196,7 +198,7 @@
     };
   });
 
-  const { base, dropdown, item: dropdownItem, close, select, placeholder: placeholderSpan, svg } = multiSelect({ disabled, grouped: !!group });
+  const { base, dropdown, item: dropdownItem, close, select, placeholder: placeholderSpan, svg } = $derived(multiSelect({ disabled, grouped: !!group }));
 </script>
 
 <select {name} {form} {required} {autocomplete} {value} hidden multiple {onchange}>

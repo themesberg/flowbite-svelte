@@ -6,6 +6,7 @@
 
   let { timelines, aClass, imgClass, divClass, titleClass, spanClass, class: className, classes, ...restProps }: GroupItemProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "GroupItem",
     { aClass, imgClass, divClass, titleClass, spanClass },
@@ -17,6 +18,7 @@
       spanClass: "span"
     }
   );
+
   const styling = $derived(
     classes ?? {
       img: imgClass,

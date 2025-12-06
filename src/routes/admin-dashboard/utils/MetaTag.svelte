@@ -9,9 +9,8 @@
   }
   let { path, description, title, subtitle }: Props = $props();
 
-  let imgsrc = `https://flowbite-svelte.com/og?package=Flowbite%20Svelte%20Admin%20Dashboard&title=${subtitle}`;
-
-  let og_url: string = `https://flowbite-svelte.com/admin-dashboard${path}`;
+  let imgsrc = $derived(`https://flowbite-svelte.com/og?package=Flowbite%20Svelte%20Admin%20Dashboard&title=${subtitle}`);
+  let og_url = $derived(`https://flowbite-svelte.com/admin-dashboard${path}`);
 </script>
 
 <RunesMetaTags

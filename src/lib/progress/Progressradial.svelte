@@ -26,10 +26,12 @@
 
   const theme = getTheme("progressradial");
 
-  const _progress = new Tween(0, {
-    duration: animate ? tweenDuration : 0,
-    easing
-  });
+  const _progress = $derived(
+    new Tween(0, {
+      duration: animate ? tweenDuration : 0,
+      easing
+    })
+  );
 
   const { base, label, background, foreground, outside, span, progressCls } = $derived(
     progressradial({
@@ -43,7 +45,7 @@
   });
 
   // Calculate the circle properties
-  let circumference = 2 * Math.PI * radius;
+  let circumference = $derived(2 * Math.PI * radius);
   // let strokeDashoffset = $state()
   // Calculate the stroke-dashoffset based on progress
   let strokeDashoffset = $derived(circumference - (_progress.current / 100) * circumference);

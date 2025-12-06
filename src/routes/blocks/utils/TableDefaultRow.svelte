@@ -14,18 +14,22 @@
 
   const category = getContext("category");
   // console.log('category: ', category)
-  let trClass: string = $state("");
-  let trLastClass: string = $state("");
-  if (rowState === "striped") {
-    trClass = "border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700";
-    trLastClass = "odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700";
-  } else if (rowState === "hover") {
-    trClass = "bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600";
-    trLastClass = "bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600";
-  } else {
-    trClass = "bg-white border-b dark:bg-gray-800 dark:border-gray-700";
-    trLastClass = "bg-white dark:bg-gray-800";
-  }
+
+  let trClass = $derived<string>(
+    rowState === "striped"
+      ? "border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700"
+      : rowState === "hover"
+        ? "bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+        : "bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+  );
+
+  let trLastClass = $derived<string>(
+    rowState === "striped"
+      ? "odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700"
+      : rowState === "hover"
+        ? "bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600"
+        : "bg-white dark:bg-gray-800"
+  );
 </script>
 
 {#if category === "props"}

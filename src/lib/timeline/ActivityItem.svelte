@@ -6,6 +6,7 @@
 
   let { activities, liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass, class: className, classes, ...restProps }: ActivityItemProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "ActivityItem",
     { liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass },
@@ -20,6 +21,7 @@
       textClass: "text"
     }
   );
+
   const styling = $derived(
     classes ?? {
       span: spanClass,

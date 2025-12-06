@@ -19,8 +19,9 @@
     ...restProps
   }: PopoverProps = $props();
 
-  // content, title, h3
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("Popover", { defaultClass }, { defaultClass: "content" });
+
   const styling = $derived(classes ?? { content: defaultClass });
 
   const theme = getTheme("popover");

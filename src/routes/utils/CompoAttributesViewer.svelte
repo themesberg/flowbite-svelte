@@ -20,11 +20,11 @@
 
   let compoData: TCompoData[] = $state([]);
   // default is find fileName using dirName
-  const fileNames = getFilteredFileNames(dirName);
+  const fileNames = $derived(getFilteredFileNames(dirName));
 
   // if components are given (e.g. checkbox, etc in forms, typography, utils)
   // use the components string
-  let componentArray = components ? components.split(", ") : [];
+  let componentArray = $derived(components ? components.split(", ") : []);
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   let importPromises: Promise<any>[] = [];

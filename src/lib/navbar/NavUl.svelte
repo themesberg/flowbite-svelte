@@ -26,7 +26,9 @@
     ...restProps
   }: NavUlProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("NavUl", { ulClass, activeClass, nonActiveClass }, { ulClass: "ul", activeClass: "active", nonActiveClass: "nonActive" });
+
   const styling = $derived(classes ?? { ul: ulClass, active: activeClass, nonActive: nonActiveClass });
 
   const theme = getTheme("navbarUl");

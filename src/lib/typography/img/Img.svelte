@@ -4,8 +4,9 @@
   import type { ImgProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
 
-  let { children, size, effect, align, caption, class: className, classes, figClass, captionClass, href, ...restProps }: ImgProps = $props();
+  let { children, size, effect: imgEffect, align, caption, class: className, classes, figClass, captionClass, href, ...restProps }: ImgProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "Img",
     { figClass, captionClass },
@@ -22,7 +23,7 @@
 
   const theme = getTheme("img");
 
-  let { base, figure, caption: figureCaption } = $derived(img({ size, effect, align }));
+  let { base, figure, caption: figureCaption } = $derived(img({ size, effect: imgEffect, align }));
 
   // Determine if using slot or traditional props
   const useSlot = $derived(!!children);

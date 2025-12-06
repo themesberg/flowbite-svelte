@@ -9,7 +9,9 @@
 
   let { value, selected = false, children, iconSlot, color, class: className, iconClass, txtClass, contentClass, classes, ...restProps }: ButtonToggleProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("ButtonToggle", { iconClass, txtClass, contentClass }, { iconClass: "icon", txtClass: "text", contentClass: "content" });
+
   // button(className), content, text, icon
   const styling = $derived(classes ?? { icon: iconClass, text: txtClass, content: contentClass });
 
@@ -30,7 +32,7 @@
   };
 
   // Use context color if available, otherwise use prop color, otherwise default to "primary"
-  const actualColor = (ctx?.color ?? color ?? "primary") as VariantProps<typeof buttonToggle>["color"];
+  const actualColor = $derived((ctx?.color ?? color ?? "primary") as VariantProps<typeof buttonToggle>["color"]);
   const actualIconClass = ctxIconClass;
 
   // Filter size to only valid buttonToggle sizes (no 'xs')

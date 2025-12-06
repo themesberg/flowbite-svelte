@@ -18,7 +18,7 @@
     availableFrom = null,
     availableTo = null,
     locale = "default",
-    translationLocale = locale,
+    translationLocale,
     firstDayOfWeek = 0,
     dateFormat,
     placeholder = "Select date",
@@ -48,9 +48,12 @@
   const theme = getTheme("datepicker");
 
   // If translationLocale is not explicitly provided, it will default to the value of locale. This ensures reactivity as both are directly exposed as props.
-  translationLocale = translationLocale ?? locale;
+  const finalTranslationLocale = $derived(translationLocale ?? locale);
 
-  let isOpen: boolean = $state(inline);
+  let isOpen: boolean = $state(false);
+  $effect(() => {
+    isOpen = inline;
+  });
   let showMonthSelector: boolean = $state(false);
   let inputElement: HTMLInputElement | null = $state(null);
 
@@ -60,7 +63,10 @@
     }
   });
   let datepickerContainerElement: HTMLDivElement;
-  let currentMonth: Date = $state(value || defaultDate || new Date());
+  let currentMonth: Date = $state(new Date());
+  $effect(() => {
+    currentMonth = value || defaultDate || new Date();
+  });
   let focusedDate: Date | null = null;
   let calendarRef: HTMLDivElement | null = $state(null);
 
@@ -86,13 +92,13 @@
 
   const getWeekdayNames = (): string[] => {
     const referenceDate = new Date(1970, 0, 4 + firstDayOfWeek);
-    return Array.from({ length: 7 }, (_, i) => addDays(referenceDate, i).toLocaleDateString(translationLocale, { weekday: "short" }));
+    return Array.from({ length: 7 }, (_, i) => addDays(referenceDate, i).toLocaleDateString(finalTranslationLocale, { weekday: "short" }));
   };
 
   let weekdays = $derived(getWeekdayNames());
 
   const getMonthNames = (): string[] => {
-    return Array.from({ length: 12 }, (_, i) => new Date(2000, i, 1).toLocaleDateString(translationLocale, { month: "short" }));
+    return Array.from({ length: 12 }, (_, i) => new Date(2000, i, 1).toLocaleDateString(finalTranslationLocale, { month: "short" }));
   };
   let monthNames = $derived(getMonthNames());
 
@@ -304,7 +310,7 @@
     }
   }
 
-  // Use locale for formatting (not translationLocale)
+  // Use locale for formatting (not finalTranslationLocale)
   const formatDate = (date?: Date): string => date?.toLocaleDateString(locale, dateFormat) ?? "";
   const isSameDate = (date1?: Date, date2?: Date): boolean => (date1 && date2 ? isSameDay(date1, date2) : false);
   const isToday = (day: Date): boolean => isSameDate(day, new Date());
@@ -358,10 +364,10 @@
       currentMonth = new Date(focusedDate.getFullYear(), focusedDate.getMonth(), 1);
     }
 
-    // Use translationLocale for aria-label
+    // Use finalTranslationLocale for aria-label
     setTimeout(() => {
       const focusedButton = calendarRef?.querySelector(
-        `button[aria-label="${focusedDate!.toLocaleDateString(translationLocale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}"]`
+        `button[aria-label="${focusedDate!.toLocaleDateString(finalTranslationLocale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}"]`
       ) as HTMLButtonElement | null;
       focusedButton?.focus();
     }, 0);
@@ -482,7 +488,7 @@
             aria-live="polite"
             onclick={(event: MouseEvent) => toggleMonthSelector(event)}
           >
-            {currentMonth.toLocaleString(translationLocale, { month: "long", year: "numeric" })}
+            {currentMonth.toLocaleString(finalTranslationLocale, { month: "long", year: "numeric" })}
           </Button>
           {@render navButton(true)}
         </div>
@@ -505,7 +511,7 @@
               })}
               onclick={() => handleDaySelect(day)}
               onkeydown={handleCalendarKeydown}
-              aria-label={day.toLocaleDateString(translationLocale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}
+              aria-label={day.toLocaleDateString(finalTranslationLocale, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}
               aria-selected={isSelected(day)}
               aria-disabled={!available}
               disabled={!available}

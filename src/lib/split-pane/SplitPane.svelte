@@ -24,16 +24,16 @@
   const MIN_DELTA = 1; // For mouse movement (Math.abs(delta) < MIN_DELTA)
 
   // Validate numeric props
-  if (minSize <= 0) {
-    console.warn(`minSize must be positive, got ${minSize}. Using default 100.`);
-    minSize = 100;
-  }
-  if (keyboardStep <= 0) {
-    console.warn(`keyboardStep must be positive, got ${keyboardStep}. Using default 2.`);
-    keyboardStep = 2;
-  }
+  $effect(() => {
+    if (minSize <= 0) {
+      console.warn(`minSize must be positive, got ${minSize}.`);
+    }
+    if (keyboardStep <= 0) {
+      console.warn(`keyboardStep must be positive, got ${keyboardStep}.`);
+    }
+  });
 
-  let transition = $state(transitionProp);
+  let transition = $derived(transitionProp);
   $effect(() => {
     // syncing local transition state with prop changes
     if (!isDragging) {
@@ -46,7 +46,7 @@
   let startPos = $state(0);
   let sizes = $state<number[]>([]);
   let container: HTMLDivElement;
-  let currentDirection = $state(direction);
+  let currentDirection = $derived(direction);
   let registeredPanes = $state(0);
 
   // Register panes as they mount

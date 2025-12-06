@@ -8,7 +8,9 @@
 
   let { children, btnName, appBtnPosition = "middle", activeClass, class: className, classes, btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
 
+  // svelte-ignore state_referenced_locally
   warnThemeDeprecation("BottomNavItem", { spanClass, btnClass }, { spanClass: "span", btnClass: "class" });
+
   const styling = $derived(classes ?? { span: spanClass });
 
   // Theme context

@@ -18,10 +18,7 @@
 
   let { code, codeLang, contentClass = "overflow-hidden", replaceLib = "runes-webkit", class: className }: Props = $props();
 
-  let value = $state(code);
-  if (replaceLib) {
-    code = replaceLibImport(code, replaceLib);
-  }
+  let value = $derived(replaceLib ? replaceLibImport(code, replaceLib) : code);
 
   let showExpandButton: boolean = $state(false);
   let expand: boolean = $state(false);
@@ -55,9 +52,9 @@
       {/snippet}
     </Clipboard>
     {#if codeLang === "md"}
-      <Highlight language={mdLang} {code} class="m-0 p-0" />
-    {:else if code}
-      <HighlightSvelte {code} class="m-0 p-0" />
+      <Highlight language={mdLang} code={value} class="m-0 p-0" />
+    {:else if value}
+      <HighlightSvelte code={value} class="m-0 p-0" />
     {:else}
       no code is provided
     {/if}

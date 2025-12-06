@@ -6,7 +6,7 @@
 
   let { children, forward, name, class: className, spanClass, ...restProps }: ControlButtonProps = $props();
 
-  const { base, span } = controlButton({ forward });
+  const { base, span } = $derived(controlButton({ forward }));
 
   const theme = getTheme("controlButton");
 </script>

@@ -43,9 +43,12 @@
   let invoker: HTMLElement | null = null;
   let referenceElement: HTMLElement | null = null;
   let triggerEls: HTMLElement[] = [];
-  let arrowParams: { placement: Placement; cords: Partial<Coords> } = $state({
-    placement,
-    cords: { x: 0, y: 0 }
+  let arrowParams = $state<{ placement: Placement; cords: Partial<Coords> }>({ placement: "top", cords: { x: 0, y: 0 } });
+  $effect(() => {
+    arrowParams = {
+      placement,
+      cords: { x: 0, y: 0 }
+    };
   });
 
   $effect(() => {
