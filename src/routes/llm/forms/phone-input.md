@@ -170,9 +170,7 @@ Use this example to select one of your saved phone numbers from an application w
   </div>
 
   <ButtonGroup class="flex">
-    <div class="relative w-full">
-      <Select id="phone-numbers" classes={{ select: "rounded-none rounded-s-lg border-r-0" }} items={phonenumbers} bind:value={selected} aria-describedby="helper-text-explanation" />
-    </div>
+    <Select id="phone-numbers" classes={{ select: "border-r-0" }} items={phonenumbers} bind:value={selected} aria-describedby="helper-text-explanation" />
     <Clipboard
       color="alternative"
       bind:value={selected}
@@ -339,7 +337,7 @@ The PhoneInput component provides customizable styling through six distinct clas
 
 #### Types
 
-[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L839)
+[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L897)
 
 #### Props
 

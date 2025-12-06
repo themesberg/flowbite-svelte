@@ -505,7 +505,7 @@ Use this example to show a list of notifications inside your application by prov
   <div class="py-2 text-center font-bold">Notifications</div>
   <DropdownGroup>
     <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-      <Avatar src="/images/profile-picture-1.webp" dot={{ color: "bg-gray-300" }} />
+      <Avatar src="/images/profile-picture-1.webp" dot={{ color: "gray" }} />
       <div class="w-full ps-3">
         <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
           New message from <span class="font-semibold text-gray-900 dark:text-white">Jese Leos</span>
@@ -515,7 +515,7 @@ Use this example to show a list of notifications inside your application by prov
       </div>
     </DropdownItem>
     <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-      <Avatar src="/images/profile-picture-2.webp" dot={{ color: "bg-red-400" }} />
+      <Avatar src="/images/profile-picture-2.webp" dot={{ color: "red" }} />
       <div class="w-full ps-3">
         <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
           <span class="font-semibold text-gray-900 dark:text-white">Joseph Mcfall</span>
@@ -527,7 +527,7 @@ Use this example to show a list of notifications inside your application by prov
       </div>
     </DropdownItem>
     <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-      <Avatar src="/images/profile-picture-3.webp" dot={{ color: "bg-green-400" }} />
+      <Avatar src="/images/profile-picture-3.webp" dot={{ color: "green" }} />
       <div class="w-full ps-3">
         <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
           <span class="font-semibold text-gray-900 dark:text-white">Bonnie Green</span>
@@ -800,7 +800,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L635)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L693)
 
 #### Props
 
@@ -817,7 +817,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L641)
+[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L699)
 
 #### Props
 
@@ -827,7 +827,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L663)
+[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L721)
 
 #### Props
 
@@ -838,7 +838,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L643)
+[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L701)
 
 #### Props
 
@@ -849,7 +849,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L647)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L705)
 
 #### Props
 

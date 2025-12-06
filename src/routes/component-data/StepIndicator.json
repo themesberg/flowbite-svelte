@@ -2,17 +2,19 @@
   "name": "StepIndicator",
   "type": {
     "name": "StepIndicatorProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1574"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1632"
   },
   "props": [
     ["steps", "[\"Step 1\", \"Step 2\", \"Step 3\", \"Step 4\", \"Step 5\"]"],
-    ["currentStep", "1"],
-    ["size", "\"md\""],
-    ["color", "\"primary\""],
+    ["currentStep", "$bindable(1)"],
+    ["size", "$bindable(\"md\")"],
+    ["color", "$bindable(\"primary\")"],
     ["glow", "false"],
     ["hideLabel", "false"],
+    ["clickable", "true"],
     ["completedCustom", "\"\""],
     ["currentCustom", "\"\""],
+    ["onStepClick", ""],
     ["class: className", ""],
     ["classes", ""]
   ]

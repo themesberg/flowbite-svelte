@@ -345,6 +345,54 @@ This example demonstrates badges with transition effects, creating a smooth anim
 <Badge class="ml-4" color="blue" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
 ```
 
+## Persistent Dismissible Badge with Reset (localStorage)
+This example shows how to make a Flowbite-Svelte `<Badge>` stay hidden after dismissal using localStorage. When the user clicks the dismiss (×) button, the badge is hidden across page reloads. A Reset button is provided to clear the stored state and show the badge again. Suitable for announcements, notifications, or one-time hints.
+
+```svelte
+<script lang="ts">
+  import { Badge } from "$lib";
+  import { Button } from "flowbite-svelte";
+  import { onMount } from "svelte";
+
+  const STORAGE_KEY = "example-badge-hidden";
+
+  let badgeVisible = $state(true);
+  let hasSeen = $state(false);
+
+  onMount(() => {
+    const exists = localStorage.getItem(STORAGE_KEY);
+    hasSeen = Boolean(exists);
+    badgeVisible = !exists; // hide if localStorage says so
+  });
+
+  function dismiss() {
+    localStorage.setItem(STORAGE_KEY, "true");
+    badgeVisible = false;
+    hasSeen = true;
+  }
+
+  function reset() {
+    localStorage.removeItem(STORAGE_KEY);
+    badgeVisible = true;
+    hasSeen = false;
+  }
+</script>
+
+{#if hasSeen}
+  <div class="mb-3 flex items-center gap-3 text-sm text-gray-600">
+    <span>
+      Badge is hidden because you dismissed it earlier. Remove <code>{STORAGE_KEY}</code>
+      from localStorage or click Reset:
+    </span>
+    <Button size="xs" onclick={reset}>Reset</Button>
+  </div>
+{/if}
+
+{#if badgeVisible}
+  <Badge dismissable onclose={dismiss} color="primary" class="cursor-pointer">Example badge (click × to dismiss)</Badge>
+{/if}
+```
+
 ## Accessibility
 
 The Badge component follows accessibility best practices:
@@ -380,7 +428,7 @@ When using badges, consider these guidelines:
 
 #### Types
 
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L251)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L244)
 
 #### Props
 

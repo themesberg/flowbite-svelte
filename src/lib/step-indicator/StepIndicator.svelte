@@ -116,12 +116,12 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1574)
+[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1632)
 ## Props
 @prop steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"]
 @prop currentStep = $bindable(1)
-@prop size = "md"
-@prop color = "primary"
+@prop size = $bindable("md")
+@prop color = $bindable("primary")
 @prop glow = false
 @prop hideLabel = false
 @prop clickable = true

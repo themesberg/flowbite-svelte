@@ -2,7 +2,7 @@
   "name": "Datepicker",
   "type": {
     "name": "DatepickerProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L495"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L553"
   },
   "props": [
     ["value", "$bindable()"],
@@ -13,7 +13,7 @@
     ["availableFrom", "null"],
     ["availableTo", "null"],
     ["locale", "\"default\""],
-    ["translationLocale", "locale"],
+    ["translationLocale", ""],
     ["firstDayOfWeek", "0"],
     ["dateFormat", ""],
     ["placeholder", "\"Select date\""],
