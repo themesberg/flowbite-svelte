@@ -45,7 +45,7 @@ The step indicator supports clickable navigation by default. Click on any step t
 
 Here's a complete example of using the step indicator with a multi-step form. Users can click on any completed step to go back and edit their information.
 
-```svelte example class="max-w-2xl"
+```svelte example class="max-w-2xl h-[430px]"
 {#include ClickableForm.svelte}
 ```
 
