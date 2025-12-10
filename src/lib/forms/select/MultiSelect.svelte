@@ -255,6 +255,8 @@
             disabled: item.disabled,
             class: clsx(classes?.item)
           })}
+          data-selected={selectItems.includes(item)}
+          data-active={activeItem === item}
         >
           {item.name}
         </div>
