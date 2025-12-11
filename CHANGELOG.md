@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.30.1
+
+### Patch Changes
+
+- fix:mcp overview update
+  - feat: Add data attributes for selected and active items in MulitSelect
+  - fix: Move createSingleSelectionContext(multiple) out of the $effect() and call it synchronously during component initialization
+  - fix: Added import statement: import { untrack } from "svelte" to each file (or modified existing imports from svelte to include untrack)
+  - fix: Removed comment line: Deleted the // svelte-ignore state_referenced_locally comment
+  - fix: Wrapped object in untrack: Changed the second parameter of warnThemeDeprecation from a plain object to untrack(() => ({ ... }))
+
 ## 1.30.0
 
 ### Minor Changes
