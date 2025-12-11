@@ -7,11 +7,15 @@
   import type { MouseEventHandler } from "svelte/elements";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
+  import { untrack } from "svelte";
 
   let { children, onclick, menuClass, class: className, classes, name = "Open main menu", ...restProps }: NavHamburgerProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("NavHamburger", { menuClass }, { menuClass: "menu" });
+  warnThemeDeprecation(
+    "NavHamburger",
+    untrack(() => ({ menuClass })),
+    { menuClass: "menu" }
+  );
 
   const styling = $derived(classes ?? { menu: menuClass });
 

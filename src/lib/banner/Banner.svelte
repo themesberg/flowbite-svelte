@@ -6,6 +6,7 @@
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
+  import { untrack } from "svelte";
 
   let {
     children,
@@ -24,8 +25,11 @@
     ...restProps
   }: BannerProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Banner", { innerClass, closeClass }, { innerClass: "insideDiv", closeClass: "dismissable" });
+  warnThemeDeprecation(
+    "Banner",
+    untrack(() => ({ innerClass, closeClass })),
+    { innerClass: "insideDiv", closeClass: "dismissable" }
+  );
 
   const styling = $derived(classes ?? { insideDiv: innerClass, dismissable: closeClass });
 

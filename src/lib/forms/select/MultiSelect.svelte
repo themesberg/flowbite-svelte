@@ -5,7 +5,7 @@
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { multiSelect } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { onMount } from "svelte";
+  import { onMount, untrack } from "svelte";
   import { createDismissableContext } from "$lib/utils/dismissable";
   import { getButtonGroupContext } from "$lib/context";
 
@@ -31,8 +31,11 @@
     ...restProps
   }: MultiSelectProps<T> = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("MultiSelect", { dropdownClass }, { dropdownClass: "dropdown" });
+  warnThemeDeprecation(
+    "MultiSelect",
+    untrack(() => ({ dropdownClass })),
+    { dropdownClass: "dropdown" }
+  );
 
   const styling = $derived(classes ?? { dropdown: dropdownClass });
 

@@ -8,6 +8,7 @@
   import { writable } from "svelte/store";
   import { fly } from "svelte/transition";
   import { sidebar } from "./theme";
+  import { untrack } from "svelte";
 
   let {
     children,
@@ -33,8 +34,11 @@
     ...restProps
   }: SidebarProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Sidebar", { backdropClass, divClass, nonActiveClass, activeClass }, { backdropClass: "backdrop", divClass: "div", nonActiveClass: "nonactive", activeClass: "active" });
+  warnThemeDeprecation(
+    "Sidebar",
+    untrack(() => ({ backdropClass, divClass, nonActiveClass, activeClass })),
+    { backdropClass: "backdrop", divClass: "div", nonActiveClass: "nonactive", activeClass: "active" }
+  );
 
   const styling = $derived(
     classes ?? {

@@ -3,11 +3,15 @@
   import { sidebarBrand } from "./theme";
   import type { SidebarBrandProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { children, site, imgClass, spanClass, class: className, classes, ...restProps }: SidebarBrandProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("SidebarBrand", { imgClass, spanClass }, { imgClass: "img", spanClass: "span" });
+  warnThemeDeprecation(
+    "SidebarBrand",
+    untrack(() => ({ imgClass, spanClass })),
+    { imgClass: "img", spanClass: "span" }
+  );
 
   const styling = $derived(
     classes ?? {

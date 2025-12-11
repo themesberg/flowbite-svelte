@@ -3,11 +3,15 @@
   import clsx from "clsx";
   import type { FooterLinkProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { children, liClass, aClass, href, classes, class: className, ...restProps }: FooterLinkProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("FooterLink", { liClass, aClass }, { liClass: "class", aClass: "link" });
+  warnThemeDeprecation(
+    "FooterLink",
+    untrack(() => ({ liClass, aClass })),
+    { liClass: "class", aClass: "link" }
+  );
 
   // link, bySpan
   const styling = $derived(classes ?? { link: aClass });

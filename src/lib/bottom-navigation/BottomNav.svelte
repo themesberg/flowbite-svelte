@@ -5,11 +5,15 @@
   import clsx from "clsx";
   import { setBottomNavContext } from "$lib/context";
   import { bottomNav } from "./theme";
+  import { untrack } from "svelte";
 
   let { children, header, position = "fixed", navType = "default", class: className, classes, outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("BottomNav", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
+  warnThemeDeprecation(
+    "BottomNav",
+    untrack(() => ({ innerClass, outerClass })),
+    { innerClass: "inner", outerClass: "class" }
+  );
 
   const styling = $derived(classes ?? { inner: innerClass });
 

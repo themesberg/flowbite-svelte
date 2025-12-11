@@ -6,11 +6,15 @@
   import type { ButtonToggleProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { getButtonToggleContext } from "$lib/context";
+  import { untrack } from "svelte";
 
   let { value, selected = false, children, iconSlot, color, class: className, iconClass, txtClass, contentClass, classes, ...restProps }: ButtonToggleProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("ButtonToggle", { iconClass, txtClass, contentClass }, { iconClass: "icon", txtClass: "text", contentClass: "content" });
+  warnThemeDeprecation(
+    "ButtonToggle",
+    untrack(() => ({ iconClass, txtClass, contentClass })),
+    { iconClass: "icon", txtClass: "text", contentClass: "content" }
+  );
 
   // button(className), content, text, icon
   const styling = $derived(classes ?? { icon: iconClass, text: txtClass, content: contentClass });

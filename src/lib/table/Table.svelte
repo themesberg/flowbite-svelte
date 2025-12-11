@@ -6,11 +6,15 @@
   import clsx from "clsx";
   import type { TableProps, TableContextType } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { children, footerSlot, captionSlot, items, divClass, striped, hoverable, border = true, shadow, color = "default", class: className, classes, ...restProps }: TableProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Table", { divClass }, { divClass: "div" });
+  warnThemeDeprecation(
+    "Table",
+    untrack(() => ({ divClass })),
+    { divClass: "div" }
+  );
 
   const styling = $derived(
     classes ?? {

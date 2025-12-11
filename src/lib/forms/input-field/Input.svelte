@@ -8,6 +8,7 @@
   import { clampSize } from "./index";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
+  import { untrack } from "svelte";
 
   let {
     children,
@@ -44,11 +45,9 @@
     ...restProps
   }: InputProps<InputValue> = $props();
 
-  // input, left, right, close, combo, comboItem, div, svg
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "Input",
-    { wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableClass, comboClass },
+    untrack(() => ({ wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableClass, comboClass })),
     { wrapperClass: "wrapper", leftClass: "left", rightClass: "right", divClass: "div", clearableSvgClass: "svg", clearableClass: "close", comboClass: "comboItem" }
   );
 

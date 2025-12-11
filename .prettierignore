@@ -3,8 +3,9 @@ pnpm-lock.yaml
 package-lock.json
 yarn.lock
 samples/
-/src/routes/md/
+src/routes/md/
+src/routes/testdir
 *.html
-/src/routes/utils/highlight/*
+src/routes/utils/highlight
 /.vercel
 *.md

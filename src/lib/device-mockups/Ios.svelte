@@ -3,13 +3,13 @@
   import type { IosProps } from "$lib";
   import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
+  import { untrack } from "svelte";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: IosProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "Ios",
-    { divClass, div2Class, div3Class, div4Class, div5Class, div6Class },
+    untrack(() => ({ divClass, div2Class, div3Class, div4Class, div5Class, div6Class })),
     { divClass: "class", div2Class: "top", div3Class: "lefttop", div4Class: "leftBot", div5Class: "right", div6Class: "slot" }
   );
 

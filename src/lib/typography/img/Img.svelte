@@ -3,13 +3,13 @@
   import { img } from "./theme";
   import type { ImgProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { children, size, effect: imgEffect, align, caption, class: className, classes, figClass, captionClass, href, ...restProps }: ImgProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "Img",
-    { figClass, captionClass },
+    untrack(() => ({ figClass, captionClass })),
     {
       figClass: "figure",
       captionClass: "caption"

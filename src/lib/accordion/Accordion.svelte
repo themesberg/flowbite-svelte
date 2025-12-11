@@ -5,6 +5,7 @@
   import { setAccordionContext } from "$lib/context";
   import { accordion } from "./theme";
   import { createSingleSelectionContext } from "$lib/utils/singleselection.svelte";
+  import { untrack } from "svelte";
 
   let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, ...restProps }: AccordionProps = $props();
 
@@ -30,7 +31,8 @@
   setAccordionContext(reactiveCtx);
 
   // Create selection context synchronously for proper nesting
-  createSingleSelectionContext(multiple);
+  // Use untrack to explicitly capture only the initial value
+  createSingleSelectionContext(untrack(() => multiple));
 
   const base = $derived(accordion({ flush, class: clsx(theme, className) }));
 </script>

@@ -3,13 +3,13 @@
   import { advancedRating } from "./theme";
   import type { AdvancedRatingProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { rating, globalText, ratings, divClass, spanClass, div2Class, div3Class, span2Class, class: className, classes, unit }: AdvancedRatingProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "AdvancedRating",
-    { divClass, spanClass, div2Class, div3Class, span2Class },
+    untrack(() => ({ divClass, spanClass, div2Class, div3Class, span2Class })),
     { divClass: "class", spanClass: "span", div2Class: "div2", div3Class: "div3", span2Class: "span2" }
   );
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { RunesMetaTags } from "runes-meta-tags";
+  import { MetaTags } from "runes-meta-tags";
 
   interface Props {
     path: string;
@@ -13,7 +13,7 @@
   let og_url = $derived(`https://flowbite-svelte.com/admin-dashboard${path}`);
 </script>
 
-<RunesMetaTags
+<MetaTags
   {title}
   {description}
   og={{

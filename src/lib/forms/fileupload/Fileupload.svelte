@@ -5,6 +5,7 @@
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
+  import { untrack } from "svelte";
 
   let {
     files = $bindable(),
@@ -21,8 +22,11 @@
     ...restProps
   }: FileuploadProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Fileupload", { wrapperClass, clearableClass, clearableSvgClass }, { wrapperClass: "wrapper", clearableClass: "close", clearableSvgClass: "svg" });
+  warnThemeDeprecation(
+    "Fileupload",
+    untrack(() => ({ wrapperClass, clearableClass, clearableSvgClass })),
+    { wrapperClass: "wrapper", clearableClass: "close", clearableSvgClass: "svg" }
+  );
 
   const styling = $derived(classes ?? { wrapper: wrapperClass, close: clearableClass, svg: clearableSvgClass });
 

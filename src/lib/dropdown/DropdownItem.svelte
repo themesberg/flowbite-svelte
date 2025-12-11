@@ -4,11 +4,15 @@
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import type { DropdownItemProps } from "$lib/types";
+  import { untrack } from "svelte";
 
   let { aClass, children, activeClass, liClass, classes, class: className, href, onclick, ...restProps }: DropdownItemProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("DropdownItem", { aClass, activeClass, liClass }, { aClass: "class", activeClass: "active", liClass: "li" });
+  warnThemeDeprecation(
+    "DropdownItem",
+    untrack(() => ({ aClass, activeClass, liClass })),
+    { aClass: "class", activeClass: "active", liClass: "li" }
+  );
 
   const styling = $derived(classes ?? { active: activeClass, li: liClass });
 

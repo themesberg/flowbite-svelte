@@ -6,6 +6,7 @@
   import { writable } from "svelte/store";
   import { slide } from "svelte/transition";
   import { sidebarDropdownWrapper } from "./theme";
+  import { untrack } from "svelte";
 
   let {
     children,
@@ -26,8 +27,11 @@
     ...restProps
   }: SidebarDropdownWrapperProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("SidebarDropdownWrapper", { btnClass, spanClass, ulClass, svgClass }, { btnClass: "btn", spanClass: "span", ulClass: "ul", svgClass: "svg" });
+  warnThemeDeprecation(
+    "SidebarDropdownWrapper",
+    untrack(() => ({ btnClass, spanClass, ulClass, svgClass })),
+    { btnClass: "btn", spanClass: "span", ulClass: "ul", svgClass: "svg" }
+  );
 
   const styling = $derived(
     classes ?? {

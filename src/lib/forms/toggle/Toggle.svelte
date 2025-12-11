@@ -4,11 +4,15 @@
   import type { ToggleProps } from "$lib";
   import Label from "$lib/forms/label/Label.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, classes, inputClass, spanClass, offLabel, ...restProps }: ToggleProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Toggle", { inputClass, spanClass }, { inputClass: "input", spanClass: "span" });
+  warnThemeDeprecation(
+    "Toggle",
+    untrack(() => ({ inputClass, spanClass })),
+    { inputClass: "input", spanClass: "span" }
+  );
 
   const styling = $derived(classes ?? { input: inputClass, span: spanClass });
 

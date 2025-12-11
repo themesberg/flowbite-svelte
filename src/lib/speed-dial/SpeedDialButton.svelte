@@ -2,7 +2,7 @@
   import Button from "$lib/buttons/Button.svelte";
   import Tooltip from "$lib/tooltip/Tooltip.svelte";
   import type { Placement } from "@floating-ui/dom";
-  import { getContext } from "svelte";
+  import { getContext, untrack } from "svelte";
   import { speedDialButton } from "./theme";
   import type { SpeedCtxType, SpeedDialButtonProps } from "$lib/types";
   import clsx from "clsx";
@@ -23,8 +23,11 @@
     ...restProps
   }: SpeedDialButtonProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("SpeedDialButton", { textClass }, { textClass: "span" });
+  warnThemeDeprecation(
+    "SpeedDialButton",
+    untrack(() => ({ textClass })),
+    { textClass: "span" }
+  );
 
   const styling = $derived(
     classes ?? {

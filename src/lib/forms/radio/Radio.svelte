@@ -5,6 +5,7 @@
   import type { RadioProps } from "$lib";
   import Label from "$lib/forms/label/Label.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   // remove inputClass in next major version
   let {
@@ -22,8 +23,11 @@
     ...restProps
   }: RadioProps<T> = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Radio", { inputClass, labelClass }, { inputClass: "class", labelClass: "label" });
+  warnThemeDeprecation(
+    "Radio",
+    untrack(() => ({ inputClass, labelClass })),
+    { inputClass: "class", labelClass: "label" }
+  );
 
   const styling = $derived(classes ?? { label: labelClass });
 

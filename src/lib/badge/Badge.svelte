@@ -6,6 +6,7 @@
   import { fade } from "svelte/transition";
   import { badge } from "./theme";
   import { createDismissableContext } from "$lib/utils/dismissable";
+  import { untrack } from "svelte";
 
   let {
     children,
@@ -26,8 +27,11 @@
     ...restProps
   }: BadgeProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Badge", { aClass }, { aClass: "linkClass" });
+  warnThemeDeprecation(
+    "Badge",
+    untrack(() => ({ aClass })),
+    { aClass: "linkClass" }
+  );
 
   const styling = $derived(classes ?? { linkClass: aClass });
 

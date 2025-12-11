@@ -7,6 +7,7 @@
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
   import { modal as modalStyle } from "./theme";
+  import { untrack } from "svelte";
 
   let {
     children,
@@ -30,8 +31,11 @@
     ...restProps
   }: ModalProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Modal", { headerClass, bodyClass, footerClass, closeBtnClass }, { bodyClass: "body", headerClass: "header", footerClass: "footer", closeBtnClass: "close" });
+  warnThemeDeprecation(
+    "Modal",
+    untrack(() => ({ headerClass, bodyClass, footerClass, closeBtnClass })),
+    { bodyClass: "body", headerClass: "header", footerClass: "footer", closeBtnClass: "close" }
+  );
 
   const styling = $derived(classes ?? { header: headerClass, body: bodyClass, footer: footerClass, close: closeBtnClass });
 

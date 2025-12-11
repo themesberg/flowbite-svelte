@@ -5,6 +5,7 @@
   import PaginationButton from "./PaginationButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { setPaginationContext } from "$lib/context";
+  import { untrack } from "svelte";
 
   function paginationRange(start: number, end: number): number[] {
     return Array.from({ length: end - start + 1 }, (_, i) => start + i);
@@ -31,8 +32,11 @@
     ...restProps
   }: PaginationNavProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("PaginationNav", { prevClass, nextClass, spanClass, tableDivClass }, { prevClass: "prev", nextClass: "next", spanClass: "span", tableDivClass: "tableDiv" });
+  warnThemeDeprecation(
+    "PaginationNav",
+    untrack(() => ({ prevClass, nextClass, spanClass, tableDivClass })),
+    { prevClass: "prev", nextClass: "next", spanClass: "span", tableDivClass: "tableDiv" }
+  );
 
   const styling = $derived(classes ?? { prev: prevClass, next: nextClass, span: spanClass, tableDiv: tableDivClass });
 

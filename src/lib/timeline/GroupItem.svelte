@@ -3,13 +3,13 @@
   import type { GroupItemProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { timelines, aClass, imgClass, divClass, titleClass, spanClass, class: className, classes, ...restProps }: GroupItemProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "GroupItem",
-    { aClass, imgClass, divClass, titleClass, spanClass },
+    untrack(() => ({ aClass, imgClass, divClass, titleClass, spanClass })),
     {
       aClass: "class",
       imgClass: "img",

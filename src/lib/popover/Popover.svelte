@@ -4,6 +4,7 @@
   import { popover } from "./theme";
   import type { PopoverProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let {
     title: titleSlot,
@@ -19,8 +20,11 @@
     ...restProps
   }: PopoverProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Popover", { defaultClass }, { defaultClass: "content" });
+  warnThemeDeprecation(
+    "Popover",
+    untrack(() => ({ defaultClass })),
+    { defaultClass: "content" }
+  );
 
   const styling = $derived(classes ?? { content: defaultClass });
 

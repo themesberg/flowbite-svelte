@@ -7,6 +7,7 @@
   import { fade, fly, scale, slide } from "svelte/transition";
   import { navbarUl } from "./theme";
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
+  import { untrack } from "svelte";
 
   let navState = getNavbarStateContext();
   let navBreakpoint = getNavbarBreakpointContext();
@@ -26,8 +27,11 @@
     ...restProps
   }: NavUlProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("NavUl", { ulClass, activeClass, nonActiveClass }, { ulClass: "ul", activeClass: "active", nonActiveClass: "nonActive" });
+  warnThemeDeprecation(
+    "NavUl",
+    untrack(() => ({ ulClass, activeClass, nonActiveClass })),
+    { ulClass: "ul", activeClass: "active", nonActiveClass: "nonActive" }
+  );
 
   const styling = $derived(classes ?? { ul: ulClass, active: activeClass, nonActive: nonActiveClass });
 

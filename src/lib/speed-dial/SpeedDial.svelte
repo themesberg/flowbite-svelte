@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import Popper from "$lib/utils/Popper.svelte";
   import { getSideAxis } from "@floating-ui/utils";
-  import { setContext } from "svelte";
+  import { setContext, untrack } from "svelte";
   import { speedDial } from "./theme";
   import type { SpeedDialProps, SpeedCtxType } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
@@ -21,8 +21,11 @@
     ...restProps
   }: SpeedDialProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("SpeedDial", { popperClass }, { popperClass: "popper" });
+  warnThemeDeprecation(
+    "SpeedDial",
+    untrack(() => ({ popperClass })),
+    { popperClass: "popper" }
+  );
 
   const styling = $derived(
     classes ?? {

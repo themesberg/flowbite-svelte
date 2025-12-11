@@ -4,6 +4,7 @@
   import { type CheckboxProps } from "$lib";
   import Label from "$lib/forms/label/Label.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let {
     children,
@@ -24,8 +25,11 @@
     ...restProps
   }: CheckboxProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Checkbox", { divClass }, { divClass: "div" });
+  warnThemeDeprecation(
+    "Checkbox",
+    untrack(() => ({ divClass })),
+    { divClass: "div" }
+  );
 
   const styling = $derived(classes ?? { div: divClass });
 

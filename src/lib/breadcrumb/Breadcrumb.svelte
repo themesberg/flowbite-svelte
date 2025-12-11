@@ -3,11 +3,15 @@
   import clsx from "clsx";
   import type { BreadcrumbProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { children, solid = false, class: className, classes, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Breadcrumb", { olClass }, { olClass: "list" });
+  warnThemeDeprecation(
+    "Breadcrumb",
+    untrack(() => ({ olClass })),
+    { olClass: "list" }
+  );
 
   const styling = $derived(classes ?? { list: olClass });
 

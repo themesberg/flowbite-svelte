@@ -3,13 +3,13 @@
   import { review as reviewVariants } from "./theme";
   import type { ReviewProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { children, address, item1, item2, item3, review, classes, articleClass, divClass, div2Class, div3Class, imgClass, ulClass, liClass }: ReviewProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "Review",
-    { articleClass, divClass, div2Class, div3Class, imgClass, ulClass, liClass },
+    untrack(() => ({ articleClass, divClass, div2Class, div3Class, imgClass, ulClass, liClass })),
     { articleClass: "article", divClass: "div", div2Class: "div2", div3Class: "div3", imgClass: "img", ulClass: "ul", liClass: "li" }
   );
 

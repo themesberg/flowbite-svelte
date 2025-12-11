@@ -4,6 +4,7 @@
   import clsx from "clsx";
   import { tableSearch } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let {
     children,
@@ -27,10 +28,9 @@
     ...restProps
   }: TableSearchProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "TableSearch",
-    { divClass, innerDivClass, inputClass, searchClass, svgDivClass, svgClass, tableClass },
+    untrack(() => ({ divClass, innerDivClass, inputClass, searchClass, svgDivClass, svgClass, tableClass })),
     { divClass: "root", innerDivClass: "inner", inputClass: "input", searchClass: "search", svgDivClass: "svgDiv", svgClass: "svg", tableClass: "table" }
   );
 

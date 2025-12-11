@@ -3,13 +3,13 @@
   import type { TabletProps } from "$lib";
   import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
+  import { untrack } from "svelte";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: TabletProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "Tablet",
-    { divClass, div2Class, div3Class, div4Class, div5Class, div6Class },
+    untrack(() => ({ divClass, div2Class, div3Class, div4Class, div5Class, div6Class })),
     { divClass: "class", div2Class: "leftTop", div3Class: "leftMid", div4Class: "leftBot", div5Class: "right", div6Class: "slot" }
   );
 
