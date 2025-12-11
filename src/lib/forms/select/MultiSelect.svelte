@@ -246,8 +246,8 @@
   {#if show}
     <div role="presentation" class={dropdown({ class: clsx(styling.dropdown) })}>
       {#each items as item (item.value)}
-        {#let isSelected = selectItems.includes(item)}
-        {#let isActive = activeItem === item}
+        {@const isSelected = selectItems.includes(item)}
+        {@const isActive = activeItem === item}
         <div
           onclick={(e) => selectOption(item, e)}
           role="presentation"
