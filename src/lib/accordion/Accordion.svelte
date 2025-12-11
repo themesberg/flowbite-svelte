@@ -29,9 +29,8 @@
   // Set context during initialization
   setAccordionContext(reactiveCtx);
 
-  $effect(() => {
-    createSingleSelectionContext(multiple);
-  });
+  // Create selection context synchronously for proper nesting
+  createSingleSelectionContext(multiple);
 
   const base = $derived(accordion({ flush, class: clsx(theme, className) }));
 </script>
