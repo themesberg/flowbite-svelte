@@ -3,11 +3,15 @@
   import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { desktop } from "./theme";
+  import { untrack } from "svelte";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, ...restProps }: DesktopProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Desktop", { divClass, div2Class, div3Class, div4Class }, { divClass: "class", div2Class: "inner", div3Class: "bot", div4Class: "botUnder" });
+  warnThemeDeprecation(
+    "Desktop",
+    untrack(() => ({ divClass, div2Class, div3Class, div4Class })),
+    { divClass: "class", div2Class: "inner", div3Class: "bot", div4Class: "botUnder" }
+  );
 
   const styling = $derived(
     classes ?? {

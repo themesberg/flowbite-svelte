@@ -6,7 +6,7 @@
   import { tags } from "./theme";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { computePosition, offset, flip, shift, autoUpdate } from "@floating-ui/dom";
-  import { onDestroy } from "svelte";
+  import { onDestroy, untrack } from "svelte";
 
   let {
     value = $bindable([]),
@@ -28,8 +28,11 @@
     ...restProps
   }: TagsProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Tags", { itemClass, spanClass, closeClass, inputClass }, { itemClass: "tag", spanClass: "span", closeClass: "close", inputClass: "input" });
+  warnThemeDeprecation(
+    "Tags",
+    untrack(() => ({ itemClass, spanClass, closeClass, inputClass })),
+    { itemClass: "tag", spanClass: "span", closeClass: "close", inputClass: "input" }
+  );
 
   const styling = $derived(
     classes ?? {

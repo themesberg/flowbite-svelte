@@ -6,6 +6,7 @@
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
+  import { untrack } from "svelte";
 
   let {
     children,
@@ -24,10 +25,9 @@
     ...restProps
   }: ToastProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "Toast",
-    { iconClass, contentClass },
+    untrack(() => ({ iconClass, contentClass })),
     {
       iconClass: "icon",
       contentClass: "content"

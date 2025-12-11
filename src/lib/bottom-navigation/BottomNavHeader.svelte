@@ -3,11 +3,15 @@
   import clsx from "clsx";
   import type { BottomNavHeaderProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { children, class: className, classes, outerClass, innerClass, ...restProps }: BottomNavHeaderProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("BottomNavHeader", { innerClass, outerClass }, { innerClass: "inner", outerClass: "class" });
+  warnThemeDeprecation(
+    "BottomNavHeader",
+    untrack(() => ({ innerClass, outerClass })),
+    { innerClass: "inner", outerClass: "class" }
+  );
 
   const styling = $derived(classes ?? { innerDiv: innerClass });
 

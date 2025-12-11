@@ -6,6 +6,7 @@
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
+  import { untrack } from "svelte";
 
   let {
     children,
@@ -32,10 +33,9 @@
     ...restProps
   }: FloatingLabelInputProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "FloatingLabelInput",
-    { inputClass, labelClass, clearableSvgClass, clearableClass, comboClass },
+    untrack(() => ({ inputClass, labelClass, clearableSvgClass, clearableClass, comboClass })),
     { inputClass: "input", labelClass: "label", clearableSvgClass: "svg", clearableClass: "close", comboClass: "combo" }
   );
 

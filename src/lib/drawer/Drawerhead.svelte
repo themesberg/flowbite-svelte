@@ -3,11 +3,15 @@
   import clsx from "clsx";
   import type { DrawerheadProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { closeIcon, children, buttonClass, svgClass, class: className, classes, ...restProps }: DrawerheadProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Drawerhead", { buttonClass, svgClass }, { buttonClass: "button", svgClass: "svg" });
+  warnThemeDeprecation(
+    "Drawerhead",
+    untrack(() => ({ buttonClass, svgClass })),
+    { buttonClass: "button", svgClass: "svg" }
+  );
 
   const styling = $derived(classes ?? { button: buttonClass, svg: svgClass });
 

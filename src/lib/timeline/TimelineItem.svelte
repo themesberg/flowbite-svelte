@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getContext } from "svelte";
+  import { getContext, untrack } from "svelte";
   import { timelineItem, type TimelineVariants } from "./theme";
   import type { TimelineItemProps, DateFormat } from "$lib/types";
   import clsx from "clsx";
@@ -25,10 +25,9 @@
     ...restProps
   }: TimelineItemProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "TimelineItem",
-    { svgClass, liClass, divClass, timeClass, h3Class, connectorClass },
+    untrack(() => ({ svgClass, liClass, divClass, timeClass, h3Class, connectorClass })),
     {
       liClass: "class",
       svgClass: "svg",

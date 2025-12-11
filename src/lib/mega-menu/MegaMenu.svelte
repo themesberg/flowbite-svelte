@@ -4,11 +4,15 @@
   import type { MegaMenuProps } from "$lib";
   import Popper from "$lib/utils/Popper.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { children, extra, items = [], full, ulClass, isOpen = $bindable(false), class: className, extraClass, classes, ...restProps }: MegaMenuProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("MegaMenu", { ulClass, extraClass }, { ulClass: "ul", extraClass: "extra" });
+  warnThemeDeprecation(
+    "MegaMenu",
+    untrack(() => ({ ulClass, extraClass })),
+    { ulClass: "ul", extraClass: "extra" }
+  );
 
   const styling = $derived(classes ?? { ul: ulClass, extra: extraClass });
   const theme = getTheme("megamenu");

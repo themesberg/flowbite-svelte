@@ -5,6 +5,7 @@
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
+  import { untrack } from "svelte";
 
   let {
     children,
@@ -23,8 +24,11 @@
     ...restProps
   }: SearchProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Search", { inputClass, clearableSvgClass, clearableClass }, { inputClass: "input", clearableSvgClass: "svg", clearableClass: "close" });
+  warnThemeDeprecation(
+    "Search",
+    untrack(() => ({ inputClass, clearableSvgClass, clearableClass })),
+    { inputClass: "input", clearableSvgClass: "svg", clearableClass: "close" }
+  );
 
   const styling = $derived(classes ?? { input: inputClass, svg: clearableSvgClass, close: clearableClass });
 

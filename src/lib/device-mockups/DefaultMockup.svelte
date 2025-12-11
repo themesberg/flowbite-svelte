@@ -3,13 +3,13 @@
   import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { defaultMockup } from "./theme";
+  import { untrack } from "svelte";
 
   let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, div5Class, div6Class, ...restProps }: DefaultMockupProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "DefaultMockup",
-    { divClass, div2Class, div3Class, div4Class, div5Class, div6Class },
+    untrack(() => ({ divClass, div2Class, div3Class, div4Class, div5Class, div6Class })),
     { divClass: "class", div2Class: "top", div3Class: "leftTop", div4Class: "leftBot", div5Class: "right", div6Class: "slot" }
   );
 

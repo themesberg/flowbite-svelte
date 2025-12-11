@@ -6,6 +6,7 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
   import { getButtonGroupContext } from "$lib/context";
+  import { untrack } from "svelte";
 
   let {
     children,
@@ -28,8 +29,11 @@
     ...restProps
   }: SelectProps<T> = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Select", { selectClass, clearableSvgClass, clearableClass }, { selectClass: "select", clearableSvgClass: "svg", clearableClass: "close" });
+  warnThemeDeprecation(
+    "Select",
+    untrack(() => ({ selectClass, clearableSvgClass, clearableClass })),
+    { selectClass: "select", clearableSvgClass: "svg", clearableClass: "close" }
+  );
 
   const styling = $derived(classes ?? { select: selectClass, svg: clearableSvgClass, close: clearableClass });
 

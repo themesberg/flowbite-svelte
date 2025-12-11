@@ -4,11 +4,15 @@
   import { rating as ratingVariants } from "./theme";
   import type { RatingProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { children, text, class: className, classes, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass, ...restProps }: RatingProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Rating", { pClass }, { pClass: "p" });
+  warnThemeDeprecation(
+    "Rating",
+    untrack(() => ({ pClass })),
+    { pClass: "p" }
+  );
 
   const styling = $derived(classes ?? { p: pClass });
 

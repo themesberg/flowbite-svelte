@@ -7,6 +7,7 @@
   import { setCarouselContext } from "$lib/context";
   import { canChangeSlide } from "./CarouselSlide";
   import { carousel } from "./theme";
+  import { untrack } from "svelte";
 
   const SLIDE_DURATION_RATIO = 0.25;
 
@@ -29,8 +30,11 @@
     ...restProps
   }: CarouselProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Carousel", { imgClass }, { imgClass: "slide" });
+  warnThemeDeprecation(
+    "Carousel",
+    untrack(() => ({ imgClass })),
+    { imgClass: "slide" }
+  );
 
   const styling = $derived(classes ?? { slide: imgClass });
 

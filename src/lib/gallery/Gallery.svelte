@@ -3,11 +3,15 @@
   import clsx from "clsx";
   import type { GalleryProps, ImgType } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { children, figure, items = [], imgClass, class: className, classes, ...restProps }: GalleryProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Gallery", { imgClass }, { imgClass: "image" });
+  warnThemeDeprecation(
+    "Gallery",
+    untrack(() => ({ imgClass })),
+    { imgClass: "image" }
+  );
 
   const styling = $derived(classes ?? { image: imgClass });
 

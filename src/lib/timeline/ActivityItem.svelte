@@ -3,13 +3,13 @@
   import type { ActivityItemProps } from "$lib/types";
   import clsx from "clsx";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { activities, liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass, class: className, classes, ...restProps }: ActivityItemProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "ActivityItem",
-    { liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass },
+    untrack(() => ({ liClass, spanClass, imgClass, outerDivClass, innerDivClass, timeClass, titleClass, textClass })),
     {
       liClass: "class",
       spanClass: "span",

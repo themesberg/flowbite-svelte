@@ -5,6 +5,7 @@
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
+  import { untrack } from "svelte";
 
   let {
     header,
@@ -29,10 +30,9 @@
     ...restProps
   }: TextareaProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "Textarea",
-    { divClass, innerClass, headerClass, footerClass, addonClass, textareaClass, clearableClass, clearableSvgClass },
+    untrack(() => ({ divClass, innerClass, headerClass, footerClass, addonClass, textareaClass, clearableClass, clearableSvgClass })),
     { divClass: "div", innerClass: "inner", headerClass: "header", footerClass: "footer", addonClass: "addon", textareaClass: "class", clearableClass: "close", clearableSvgClass: "svg" }
   );
 

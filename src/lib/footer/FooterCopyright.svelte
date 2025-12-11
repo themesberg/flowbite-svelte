@@ -4,11 +4,15 @@
   import clsx from "clsx";
   import type { FooterCopyrightProps } from "$lib";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { spanClass, aClass, href, by, copyrightMessage = "All Rights Reserved.", year, bySpanClass, classes, class: className, ...restProps }: FooterCopyrightProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("FooterCopyright", { aClass, spanClass, bySpanClass }, { aClass: "link", spanClass: "class", bySpanClass: "bySpan" });
+  warnThemeDeprecation(
+    "FooterCopyright",
+    untrack(() => ({ aClass, spanClass, bySpanClass })),
+    { aClass: "link", spanClass: "class", bySpanClass: "bySpan" }
+  );
 
   // link, bySpan
   const styling = $derived(classes ?? { bySpan: bySpanClass, link: aClass });

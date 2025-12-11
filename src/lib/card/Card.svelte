@@ -3,11 +3,15 @@
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { card } from "./theme";
+  import { untrack } from "svelte";
 
   let { children, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, classes, imgClass, ...restProps }: CardProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Card", { imgClass }, { imgClass: "image" });
+  warnThemeDeprecation(
+    "Card",
+    untrack(() => ({ imgClass })),
+    { imgClass: "image" }
+  );
 
   const styling = $derived(classes ?? { image: imgClass });
 

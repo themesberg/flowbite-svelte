@@ -5,11 +5,15 @@
   import { getBottomNavContext } from "$lib/context";
   import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
   import { bottomNavItem } from "./theme";
+  import { untrack } from "svelte";
 
   let { children, btnName, appBtnPosition = "middle", activeClass, class: className, classes, btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("BottomNavItem", { spanClass, btnClass }, { spanClass: "span", btnClass: "class" });
+  warnThemeDeprecation(
+    "BottomNavItem",
+    untrack(() => ({ spanClass, btnClass })),
+    { spanClass: "span", btnClass: "class" }
+  );
 
   const styling = $derived(classes ?? { span: spanClass });
 

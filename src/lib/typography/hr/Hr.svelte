@@ -3,13 +3,13 @@
   import { hr } from "./theme";
   import type { HrProps } from "$lib/types";
   import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { children, divClass, innerDivClass, class: className, classes, divProps = {}, hrProps = {}, ...restProps }: HrProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "Hr",
-    { divClass, innerDivClass },
+    untrack(() => ({ divClass, innerDivClass })),
     {
       divClass: "div",
       innerDivClass: "content"

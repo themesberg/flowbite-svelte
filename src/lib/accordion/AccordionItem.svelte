@@ -6,6 +6,7 @@
   import { getAccordionContext } from "$lib/context";
   import { slide } from "svelte/transition";
   import { accordionItem } from "./theme";
+  import { untrack } from "svelte";
 
   let {
     children,
@@ -23,15 +24,14 @@
     contentClass
   }: AccordionItemProps = $props();
 
-  // svelte-ignore state_referenced_locally
   warnThemeDeprecation(
     "AccordionItem",
-    {
+    untrack(() => ({
       headerClass,
       contentClass,
       activeClass,
       inactiveClass
-    },
+    })),
     {
       headerClass: "button",
       contentClass: "content",

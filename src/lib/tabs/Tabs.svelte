@@ -5,13 +5,17 @@
   import clsx from "clsx";
   import { tabs } from "./theme";
   import { setTabsContext } from "$lib/context";
+  import { untrack } from "svelte";
 
   let { children, selected = $bindable(), tabStyle = "none", ulClass, contentClass, divider = true, class: className, classes, ...restProps }: TabsProps = $props();
 
   const activeClasses = $derived(typeof classes?.active === "string" ? classes.active : undefined);
 
-  // svelte-ignore state_referenced_locally
-  warnThemeDeprecation("Tabs", { ulClass, contentClass }, { ulClass: "class", contentClass: "content" });
+  warnThemeDeprecation(
+    "Tabs",
+    untrack(() => ({ ulClass, contentClass })),
+    { ulClass: "class", contentClass: "content" }
+  );
 
   const theme = getTheme("tabs");
   const styling = $derived(classes ?? { content: contentClass });
