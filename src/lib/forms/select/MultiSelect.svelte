@@ -246,15 +246,19 @@
   {#if show}
     <div role="presentation" class={dropdown({ class: clsx(styling.dropdown) })}>
       {#each items as item (item.value)}
+        {@const isSelected = selectItems.includes(item)}
+        {@const isActive = activeItem === item}
         <div
           onclick={(e) => selectOption(item, e)}
           role="presentation"
           class={dropdownItem({
-            selected: selectItems.includes(item),
-            active: activeItem === item,
+            selected: isSelected,
+            active: isActive,
             disabled: item.disabled,
             class: clsx(classes?.item)
           })}
+          data-selected={isSelected ? "true" : undefined}
+          data-active={isActive ? "true" : undefined}
         >
           {item.name}
         </div>
