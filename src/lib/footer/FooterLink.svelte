@@ -16,13 +16,14 @@
   // link, bySpan
   const styling = $derived(classes ?? { link: aClass });
 
-  const theme = getTheme("footerLink");
-
   const { base, link } = footerLink();
+
+  const baseCls = $derived(base({ class: clsx(getTheme("footerLink")?.base, className ?? liClass) }));
+  const linkCls = $derived(link({ class: clsx(getTheme("footerLink")?.link, styling.link) }));
 </script>
 
-<li class={base({ class: clsx(theme?.base, className ?? liClass) })}>
-  <a {...restProps} {href} class={link({ class: clsx(theme?.link, styling.link) })}>
+<li class={baseCls}>
+  <a {...restProps} {href} class={linkCls}>
     {@render children()}
   </a>
 </li>

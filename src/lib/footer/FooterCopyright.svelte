@@ -17,21 +17,23 @@
   // link, bySpan
   const styling = $derived(classes ?? { bySpan: bySpanClass, link: aClass });
 
-  const theme = getTheme("footerCopyright");
-
   const effectiveYear = $derived(year ?? new SvelteDate().getFullYear());
 
   const { base, link, bySpan } = footerCopyright();
+
+  const baseCls = $derived(base({ class: clsx(getTheme("footerCopyright")?.base, className ?? spanClass) }));
+  const linkCls = $derived(link({ class: clsx(getTheme("footerCopyright")?.link, styling.link) }));
+  const bySpanCls = $derived(bySpan({ class: clsx(getTheme("footerCopyright")?.bySpan, styling.bySpan) }));
 </script>
 
-<span class={base({ class: clsx(theme?.base, className ?? spanClass) })}>
+<span class={baseCls}>
   &copy; {effectiveYear}
   {#if href}
-    <a {...restProps} {href} class={link({ class: clsx(theme?.link, styling.link) })}>
+    <a {...restProps} {href} class={linkCls}>
       {by}
     </a>
   {:else}
-    <span class={bySpan({ class: clsx(theme?.bySpan, styling.bySpan) })}>{by}</span>
+    <span class={bySpanCls}>{by}</span>
   {/if}
   {copyrightMessage}
 </span>

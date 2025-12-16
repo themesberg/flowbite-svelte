@@ -37,9 +37,12 @@
 
   const styling = $derived(classes ?? { select: selectClass, svg: clearableSvgClass, close: clearableClass });
 
-  const theme = getTheme("select");
   const group = getButtonGroupContext();
   const { base, select, close } = $derived(selectCls({ underline, size, disabled, grouped: !!group }));
+
+  const baseCls = $derived(base({ class: clsx(getTheme("select")?.base, className) }));
+  const selectClsFull = $derived(select({ class: clsx(getTheme("select")?.select, styling.select) }));
+  const closeCls = $derived(close({ class: clsx(getTheme("select")?.close, styling.close) }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -60,8 +63,8 @@
   createDismissableContext(clearAll);
 </script>
 
-<div class={base({ class: clsx(theme?.base, className) })}>
-  <select {disabled} {...restProps} bind:value bind:this={elementRef} class={select({ class: clsx(theme?.select, styling.select) })}>
+<div class={baseCls}>
+  <select {disabled} {...restProps} bind:value bind:this={elementRef} class={selectClsFull}>
     {#if placeholder}
       <option disabled selected={value === "" || value === undefined} value="">{placeholder}</option>
     {/if}
@@ -77,6 +80,6 @@
     {/if}
   </select>
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} {disabled} />
+    <CloseButton class={closeCls} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} {disabled} />
   {/if}
 </div>

@@ -28,20 +28,23 @@
 
   const styling = $derived(classes ?? { content: defaultClass });
 
-  const theme = getTheme("popover");
-
   let { base, title, h3, content } = $derived(popover({ color }));
+
+  const baseCls = $derived(base({ class: clsx(getTheme("popover")?.base, className) }));
+  const titleCls = $derived(title({ class: clsx(getTheme("popover")?.title, classes?.title) }));
+  const h3Cls = $derived(h3({ class: clsx(getTheme("popover")?.h3, classes?.h3) }));
+  const contentCls = $derived(content({ class: clsx(getTheme("popover")?.content, styling.content) }));
 </script>
 
-<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={base({ class: clsx(theme?.base, className) })}>
+<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={baseCls}>
   {#if typeof titleSlot === "string"}
-    <div class={title({ class: clsx(theme?.title, classes?.title) })}>
-      <h3 class={h3({ class: clsx(theme?.h3, classes?.h3) })}>{titleSlot}</h3>
+    <div class={titleCls}>
+      <h3 class={h3Cls}>{titleSlot}</h3>
     </div>
   {:else if titleSlot}
     {@render titleSlot()}
   {/if}
-  <div class={content({ class: clsx(theme?.content, styling.content) })}>
+  <div class={contentCls}>
     {@render children()}
   </div>
 </Popper>

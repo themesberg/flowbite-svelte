@@ -8,8 +8,6 @@
 
   let { children, fluid, navContainerClass, class: className, closeOnClickOutside = true, breakpoint = "md", ...restProps }: NavbarProps = $props();
 
-  const theme = getTheme("navbar");
-
   let navState = $state<NavbarState>({ hidden: true });
   setNavbarStateContext(navState);
 
@@ -36,7 +34,7 @@
 <svelte:document onclick={handleDocumentClick} />
 
 <nav bind:this={navbarElement}>
-  <div {...restProps} class={navbar({ class: clsx(theme, className) })}>
+  <div {...restProps} class={navbar({ class: clsx(getTheme("navbar"), className) })}>
     <NavContainer {fluid} class={clsx(navContainerClass)}>
       {@render children({ hidden: navState.hidden, toggle, NavContainer })}
     </NavContainer>

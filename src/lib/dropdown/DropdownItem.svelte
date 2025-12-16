@@ -16,14 +16,12 @@
 
   const styling = $derived(classes ?? { active: activeClass, li: liClass });
 
-  const theme = getTheme("dropdownItem");
-
   const ctx = getDropdownContext();
 
   let isActive = $derived(ctx?.activeUrl && href ? href === ctx.activeUrl : false);
 
   const { base, active, li } = dropdownItem();
-  let finalClass = $derived(isActive ? active({ class: clsx(theme?.active, styling.active) }) : base({ class: clsx(theme?.base, className) }));
+  let finalClass = $derived(isActive ? active({ class: clsx(getTheme("dropdownItem")?.active, styling.active) }) : base({ class: clsx(getTheme("dropdownItem")?.base, className) }));
 </script>
 
 <li class={li({ class: clsx(styling.li) })}>

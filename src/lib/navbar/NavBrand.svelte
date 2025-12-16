@@ -5,11 +5,9 @@
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: NavBrandProps = $props();
-
-  const theme = getTheme("navbarBrand");
 </script>
 
-<a {...restProps} class={navbarBrand({ class: clsx(theme, className) })}>
+<a {...restProps} class={navbarBrand({ class: clsx(getTheme("navbarBrand"), className) })}>
   {@render children?.()}
 </a>
 

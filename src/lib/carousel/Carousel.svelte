@@ -38,9 +38,6 @@
 
   const styling = $derived(classes ?? { slide: imgClass });
 
-  // Theme context
-  const theme = getTheme("carousel");
-
   let { base, slide: slideCls } = $derived(carousel());
 
   const changeSlide = (n: number) => {
@@ -181,6 +178,9 @@
           touchEvent = null;
         }
   );
+
+  const divCls = $derived(base({ class: clsx(activeDragGesture === undefined ? "transition-transform" : "", getTheme("carousel")?.base, className) }));
+  const slideClass = $derived(slideCls({ class: clsx(getTheme("carousel")?.slide, styling.slide) }));
 </script>
 
 <svelte:head>
@@ -205,13 +205,13 @@
   aria-label={ariaLabel}
   tabindex="0"
   {...restProps}
-  class={base({ class: clsx(activeDragGesture === undefined ? "transition-transform" : "", theme?.base, className) })}
+  class={divCls}
   {@attach loop}
 >
   {#if slide}
     {@render slide({ index: _state.index, Slide })}
   {:else}
-    <Slide image={images[_state.index]} fit={slideFit} class={slideCls({ class: clsx(theme?.slide, styling.slide) })} {transition} />
+    <Slide image={images[_state.index]} fit={slideFit} class={slideClass} {transition} />
   {/if}
 
   {@render children?.(_state.index)}

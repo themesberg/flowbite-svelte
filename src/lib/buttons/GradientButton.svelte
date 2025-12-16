@@ -10,19 +10,20 @@
 
   let { children, outline, pill, color = "blue", shadow, class: className, href, disabled, size, btnClass, ...restProps }: GradientButtonProps = $props();
 
-  const theme = getTheme("gradientButton");
-
   const { base, outlineWrapper } = $derived(gradientButton({ color, outline, pill, shadow, disabled, size, group: !!group }));
+
+  let baseClass = $derived(base({ class: clsx(getTheme("gradientButton")?.base, className) }));
+  let outlineWrapperClass = $derived(outlineWrapper({ class: clsx(getTheme("gradientButton")?.outlineWrapper, btnClass) }));
 </script>
 
 {#if outline}
-  <div class={base({ class: clsx(theme?.base, className) })}>
-    <Button {...restProps} class={outlineWrapper({ class: clsx(theme?.outlineWrapper, btnClass) })} {disabled} {href} {size}>
+  <div class={baseClass}>
+    <Button {...restProps} class={outlineWrapperClass} {disabled} {href} {size}>
       {@render children?.()}
     </Button>
   </div>
 {:else}
-  <Button {...restProps} class={base({ class: clsx(theme?.base, className) })} {disabled} {href} {size}>
+  <Button {...restProps} class={baseClass} {disabled} {href} {size}>
     {@render children?.()}
   </Button>
 {/if}

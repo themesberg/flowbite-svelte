@@ -6,9 +6,7 @@
 
   let { children, class: className, ...restProps }: KbdProps = $props();
 
-  const theme = getTheme("kbd");
-
-  const kbdCls = $derived(kbd({ class: clsx(theme, className) }));
+  const kbdCls = $derived(kbd({ class: clsx(getTheme("kbd"), className) }));
 </script>
 
 <kbd {...restProps} class={kbdCls}>

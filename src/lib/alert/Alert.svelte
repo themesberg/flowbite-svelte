@@ -22,9 +22,6 @@
     ...restProps
   }: AlertProps = $props();
 
-  // Theme context
-  const theme = getTheme("alert");
-
   let divCls = $derived(
     alert({
       color,
@@ -32,7 +29,7 @@
       border,
       icon: !!icon,
       dismissable,
-      class: clsx(theme, className)
+      class: clsx(getTheme("alert"), className)
     })
   );
 

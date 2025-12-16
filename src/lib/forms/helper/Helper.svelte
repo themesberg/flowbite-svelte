@@ -6,9 +6,7 @@
 
   let { children, class: className, color = "gray", ...restProps }: HelperProps = $props();
 
-  const theme = getTheme("helper");
-
-  const base = $derived(helper({ color, class: clsx(theme, className) }));
+  const base = $derived(helper({ color, class: clsx(getTheme("helper"), className) }));
 </script>
 
 <p {...restProps} class={base}>

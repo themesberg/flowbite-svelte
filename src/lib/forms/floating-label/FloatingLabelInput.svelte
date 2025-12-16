@@ -41,9 +41,15 @@
 
   const styling = $derived(classes ?? { input: inputClass, label: labelClass, svg: clearableSvgClass, close: clearableClass, combo: comboClass });
 
-  const theme = getTheme("floatingLabelInput");
-
   const { base, input, label, close, combo } = $derived(floatingLabelInput({ variant, size, color }));
+
+  const isCombobox = $derived(Array.isArray(data) && data.length > 0);
+
+  const baseCls = $derived(base({ class: clsx(isCombobox ? "relative" : "", getTheme("floatingLabelInput")?.base, className) }));
+  const inputCls = $derived(input({ class: clsx(getTheme("floatingLabelInput")?.input, styling.input) }));
+  const closeCls = $derived(close({ class: clsx(getTheme("floatingLabelInput")?.close, styling.close) }));
+  const labelCls = $derived(label({ class: clsx(getTheme("floatingLabelInput")?.label, styling.label) }));
+  const comboCls = $derived(combo({ class: clsx(getTheme("floatingLabelInput")?.combo, styling.combo) }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -58,8 +64,6 @@
     }
     if (clearableOnClick) clearableOnClick();
   };
-
-  const isCombobox = $derived(Array.isArray(data) && data.length > 0);
 
   // svelte-ignore non_reactive_update
   let dummyFocusDiv: HTMLDivElement;
@@ -173,28 +177,17 @@
   <div tabindex="-1" bind:this={dummyFocusDiv} class="sr-only"></div>
 {/if}
 
-<div class={base({ class: clsx(isCombobox ? "relative" : "", theme?.base, className) })}>
-  <input
-    {id}
-    placeholder=" "
-    bind:value
-    bind:this={elementRef}
-    {...restProps}
-    class={input({ class: clsx(theme?.input, styling.input) })}
-    oninput={handleInput}
-    onfocus={handleFocus}
-    onblur={handleBlur}
-    onkeydown={handleKeydown}
-  />
+<div class={baseCls}>
+  <input {id} placeholder=" " bind:value bind:this={elementRef} {...restProps} class={inputCls} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} />
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
+    <CloseButton class={closeCls} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
   {/if}
-  <label for={id} class={label({ class: clsx(theme?.label, styling.label) })}>
+  <label for={id} class={labelCls}>
     {@render children()}
   </label>
 
   {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-    <div class={combo({ class: clsx(theme?.combo, styling.combo) })}>
+    <div class={comboCls}>
       {#each filteredSuggestions as item, i (item)}
         <button
           type="button"

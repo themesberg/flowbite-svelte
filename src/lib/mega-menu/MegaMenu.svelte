@@ -15,13 +15,17 @@
   );
 
   const styling = $derived(classes ?? { ul: ulClass, extra: extraClass });
-  const theme = getTheme("megamenu");
   const { base, div, ul, extra: extraCls } = $derived(megamenu({ full, hasExtra: !!extra }));
+
+  const baseCls = $derived(base({ class: clsx(getTheme("megamenu")?.base, className) }));
+  const divCls = $derived(div({ class: clsx(getTheme("megamenu")?.div, classes?.div) }));
+  const ulCls = $derived(ul({ class: clsx(getTheme("megamenu")?.ul, styling.ul) }));
+  const extraClsFull = $derived(extraCls({ class: clsx(getTheme("megamenu")?.extra, styling.extra) }));
 </script>
 
-<Popper arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-  <div class={div({ class: clsx(theme?.div, classes?.div) })}>
-    <ul class={ul({ class: clsx(theme?.ul, styling.ul) })}>
+<Popper arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={baseCls}>
+  <div class={divCls}>
+    <ul class={ulCls}>
       {#each items as item, index (item.name)}
         <li>
           {@render children({ item, index })}
@@ -30,7 +34,7 @@
         {@render children({ item: items[0], index: 0 })}
       {/each}
     </ul>
-    {#if full && extra}<div class={extraCls({ class: clsx(theme?.extra, styling.extra) })}>{@render extra()}</div>{/if}
+    {#if full && extra}<div class={extraClsFull}>{@render extra()}</div>{/if}
   </div>
 </Popper>
 

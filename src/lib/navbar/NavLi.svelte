@@ -10,14 +10,12 @@
 
   let { children, onclick, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
 
-  const theme = getTheme("navbarLi");
-
   let active = $derived(navState?.activeUrl ? restProps.href === navState.activeUrl : false);
   let liClass = $derived(
     navbarLi({
       breakpoint: navBreakpoint ?? "md",
       hidden: navState?.hidden ?? true,
-      class: clsx(active ? (activeClass ?? navState?.activeClass) : (nonActiveClass ?? navState?.nonActiveClass), theme, className)
+      class: clsx(active ? (activeClass ?? navState?.activeClass) : (nonActiveClass ?? navState?.nonActiveClass), getTheme("navbarLi"), className)
     })
   );
 

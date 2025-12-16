@@ -31,13 +31,14 @@
 
   const styling = $derived(classes ?? { label: labelClass });
 
-  const theme = getTheme("radio");
-
   const { input, label } = $derived(radio({ color, tinted: !!getContext("background"), custom, inline }));
+
+  const labelCls = $derived(label({ class: clsx(getTheme("radio")?.label, styling.label) }));
+  const inputCls = $derived(input({ class: clsx(getTheme("radio")?.input, className ?? inputClass) }));
 </script>
 
-<Label class={label({ class: clsx(theme?.label, styling.label) })}>
-  <input type="radio" bind:group {value} aria-describedby={ariaDescribedby} {...restProps} class={input({ class: clsx(theme?.input, className ?? inputClass) })} />
+<Label class={labelCls}>
+  <input type="radio" bind:group {value} aria-describedby={ariaDescribedby} {...restProps} class={inputCls} />
   {@render children?.()}
 </Label>
 

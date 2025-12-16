@@ -5,12 +5,10 @@
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, href, ariaLabel, class: className, ...restProps }: FooterIconProps = $props();
-
-  const theme = getTheme("footerIcon");
 </script>
 
 {#if href}
-  <a {...restProps} {href} aria-label={ariaLabel} class={footerIcon({ class: clsx(theme, className) })}>
+  <a {...restProps} {href} aria-label={ariaLabel} class={footerIcon({ class: clsx(getTheme("footerIcon"), className) })}>
     {@render children()}
   </a>
 {:else}

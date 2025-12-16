@@ -9,8 +9,6 @@
 
   let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, ...restProps }: AccordionProps = $props();
 
-  const theme = getTheme("accordion");
-
   // Simple reactive state object
   const reactiveCtx: AccordionContextType = {
     get flush() {
@@ -34,7 +32,7 @@
   // Use untrack to explicitly capture only the initial value
   createSingleSelectionContext(untrack(() => multiple));
 
-  const base = $derived(accordion({ flush, class: clsx(theme, className) }));
+  const base = $derived(accordion({ flush, class: clsx(getTheme("accordion"), className) }));
 </script>
 
 <div {...restProps} class={base}>

@@ -15,22 +15,23 @@
 
   const styling = $derived(classes ?? { image: imgClass });
 
-  const theme = getTheme("gallery");
-
   function init(node: HTMLElement) {
     if (getComputedStyle(node).gap === "normal") node.style.gap = "inherit";
   }
 
   const { image, div } = gallery();
+
+  let imageClass = $derived(image({ class: clsx(getTheme("gallery")?.image, styling.image) }));
+  let divClass = $derived(div({ class: clsx(getTheme("gallery")?.div, className) }));
 </script>
 
 {#snippet _figure(item: ImgType)}
   <div>
-    <img src={item.src} alt={item.alt} class={image({ class: clsx(theme?.image, styling.image) })} {...restProps} />
+    <img src={item.src} alt={item.alt} class={imageClass} {...restProps} />
   </div>
 {/snippet}
 
-<div class={div({ class: clsx(theme?.div, className) })} use:init>
+<div class={divClass} use:init>
   {#each items as item, i (item.src || i)}
     {#if figure}
       {@render figure(item as ImgType)}

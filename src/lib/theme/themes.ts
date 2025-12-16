@@ -9,7 +9,7 @@ export { breadcrumb, breadcrumbItem } from "../breadcrumb";
 export { buttonGroup } from "../button-group";
 export { button, gradientButton } from "../buttons";
 export { card } from "../card";
-export { carousel, carouselIndicators, controlButton, slide, thumbnail, thumbnails } from "../carousel";
+export { carousel, carouselIndicators, controlButton, controls, slide, thumbnail, thumbnails } from "../carousel";
 export { clipboard } from "../clipboard";
 export { darkmode } from "../darkmode";
 export { datepicker } from "../datepicker";

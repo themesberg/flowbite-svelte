@@ -45,8 +45,6 @@
     inputProps = {}
   }: DatepickerProps = $props();
 
-  const theme = getTheme("datepicker");
-
   // If translationLocale is not explicitly provided, it will default to the value of locale. This ensures reactivity as both are directly exposed as props.
   const finalTranslationLocale = $derived(translationLocale ?? locale);
 
@@ -423,7 +421,7 @@
         {...inputProps}
         bind:this={inputElement}
         type="text"
-        class={input({ color, class: clsx(theme?.input, inputClass) })}
+        class={input({ color, class: clsx(getTheme("datepicker")?.input, inputClass) })}
         {placeholder}
         value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)}
         onfocus={() => (isOpen = true)}
@@ -436,7 +434,7 @@
       />
       <button
         type="button"
-        class={button({ class: clsx(btnClass, theme?.button, classes?.button) })}
+        class={button({ class: clsx(btnClass, getTheme("datepicker")?.button, classes?.button) })}
         onclick={() => (isOpen = !isOpen)}
         {disabled}
         aria-label={isOpen ? "Close date picker" : "Open date picker"}
@@ -451,16 +449,23 @@
   {/if}
 
   {#if isOpen || inline}
-    <div bind:this={calendarRef} id="datepicker-dropdown" class={base({ inline, class: clsx(theme?.base, className) })} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
+    <div
+      bind:this={calendarRef}
+      id="datepicker-dropdown"
+      class={base({ inline, class: clsx(getTheme("datepicker")?.base, className) })}
+      transition:fade={{ duration: 100 }}
+      role="dialog"
+      aria-label="Calendar"
+    >
       {#if title}
-        <h2 class={titleVariant({ class: clsx(theme?.titleVariant, classes?.titleVariant) })}>{title}</h2>
+        <h2 class={titleVariant({ class: clsx(getTheme("datepicker")?.titleVariant, classes?.titleVariant) })}>{title}</h2>
       {/if}
 
       {#if showMonthSelector}
         <!-- Month/Year Selector View -->
-        <div class={nav({ class: clsx(theme?.nav, classes?.nav) })}>
+        <div class={nav({ class: clsx(getTheme("datepicker")?.nav, classes?.nav) })}>
           {@render yearNavButton(false)}
-          <h3 class={polite({ class: clsx(theme?.polite, classes?.polite) })} aria-live="polite">
+          <h3 class={polite({ class: clsx(getTheme("datepicker")?.polite, classes?.polite) })} aria-live="polite">
             {currentMonth.getFullYear()}
           </h3>
           {@render yearNavButton(true)}
@@ -471,7 +476,7 @@
               type="button"
               color={monthColor}
               class={monthButton({
-                class: clsx(currentMonth.getMonth() === index ? monthBtnSelected : monthBtn, classes?.monthButton, theme?.monthButton)
+                class: clsx(currentMonth.getMonth() === index ? monthBtnSelected : monthBtn, classes?.monthButton, getTheme("datepicker")?.monthButton)
               })}
               onclick={(event: MouseEvent) => selectMonth(index, event)}
             >
@@ -492,9 +497,9 @@
           </Button>
           {@render navButton(true)}
         </div>
-        <div class={grid({ class: clsx(theme?.grid, classes?.grid) })} role="grid">
+        <div class={grid({ class: clsx(getTheme("datepicker")?.grid, classes?.grid) })} role="grid">
           {#each weekdays as day (day)}
-            <div class={columnHeader({ class: clsx(theme?.columnHeader, classes?.columnHeader) })} role="columnheader">{day}</div>
+            <div class={columnHeader({ class: clsx(getTheme("datepicker")?.columnHeader, classes?.columnHeader) })} role="columnheader">{day}</div>
           {/each}
           {#each daysInMonth as day (day)}
             {@const current = day.getMonth() !== currentMonth.getMonth()}
@@ -507,7 +512,7 @@
                 today: isToday(day),
                 color: isInRange(day) ? color : undefined,
                 unavailable: !available,
-                class: clsx(theme?.dayButton, classes?.dayButton, !available && "cursor-not-allowed opacity-50")
+                class: clsx(getTheme("datepicker")?.dayButton, classes?.dayButton, !available && "cursor-not-allowed opacity-50")
               })}
               onclick={() => handleDaySelect(day)}
               onkeydown={handleCalendarKeydown}
@@ -524,7 +529,7 @@
       {/if}
 
       {#if showActionButtons && !showMonthSelector}
-        <div class={actionButtons({ class: clsx(theme?.actionButtons, classes?.actionButtons) })}>
+        <div class={actionButtons({ class: clsx(getTheme("datepicker")?.actionButtons, classes?.actionButtons) })}>
           <Button onclick={() => handleDaySelect(new Date())} {color} size="sm" disabled={!isDateAvailable(new Date())}>Today</Button>
           <Button onclick={handleClear} color="red" size="sm">Clear</Button>
           <Button onclick={handleApply} {color} size="sm">Apply</Button>
@@ -532,7 +537,7 @@
       {/if}
 
       {#if actionSlot}
-        <div class={clsx(classes?.actionSlot, theme?.actionSlot)}>
+        <div class={clsx(classes?.actionSlot, getTheme("datepicker")?.actionSlot)}>
           {@render actionSlot({
             selectedDate: range ? { from: rangeFrom, to: rangeTo } : value,
             handleClear,

@@ -25,15 +25,13 @@
     ...restProps
   }: ButtonProps = $props();
 
-  const theme = getTheme("button");
-
   let actualSize = $derived(group ? "sm" : size);
   let actualColor = $derived(color ?? (group ? (outline ? "dark" : "alternative") : "primary"));
   let isDisabled = $derived(Boolean(ctxDisabled) || Boolean(disabled) || loading);
 
   const { base, outline: outline_, shadow: shadow_, spinner } = $derived(button({ color: actualColor, size: actualSize, disabled: isDisabled, pill, group: !!group }));
 
-  let btnCls = $derived(base({ class: clsx(outline && outline_(), shadow && shadow_(), theme?.base, className) }));
+  let btnCls = $derived(base({ class: clsx(outline && outline_(), shadow && shadow_(), getTheme("button")?.base, className) }));
 </script>
 
 {#if restProps.href !== undefined}

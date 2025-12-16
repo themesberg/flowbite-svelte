@@ -5,11 +5,9 @@
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: DropdownHeaderProps = $props();
-
-  const theme = getTheme("dropdownHeader");
 </script>
 
-<div {...restProps} class={dropdownHeader({ class: clsx(theme, className) })}>
+<div {...restProps} class={dropdownHeader({ class: clsx(getTheme("dropdownHeader"), className) })}>
   {@render children()}
 </div>
 

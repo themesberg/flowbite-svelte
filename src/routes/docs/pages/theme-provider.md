@@ -12,6 +12,10 @@ description: The ThemeProvider component allows you to customize the styling of 
   import { A, Img, P } from '$lib';
 </script>
 
+## How It Works
+
+ThemeProvider uses Svelte's context API to pass theme configurations to child components. The theme is reactive - when you change the `theme` prop, all child components automatically re-render with the new theme values.
+
 ## Basic Usage
 
 Wrap your components with ThemeProvider and pass a theme configuration object:
@@ -170,13 +174,51 @@ Component classes, when defined directly on a component, will always take preced
 
 This allows for granular control over theming in different parts of your component tree.
 
+## Reactive Theme
+
+```svelte example
+{#include ThemeReactive.svelte}
+```
+
 ## Notes
 
-- If no theme is provided, the component will log a message to the console but won't break functionality.
 - The theme configuration is passed through Svelte's context system, making it available to all child components.
 - Each component will fall back to its default styling if no theme is provided for that specific component.
 - Theme configurations are merged with default component styles, allowing for partial customization.
 - Use nested ThemeProviders for section-specific styling while maintaining global themes.
+
+## Dynamic Theme Switching
+
+Theme changes are reactive. Simply update the `theme` prop and components will automatically re-render:
+
+```svelte
+<script>
+  let isDark = $state(false);
+  
+  const lightTheme = {
+    button: { base: "bg-blue-500" },
+    card: { base: "bg-white" }
+  };
+  
+  const darkTheme = {
+    button: { base: "bg-gray-700" },
+    card: { base: "bg-gray-800" }
+  };
+  
+  let currentTheme = $derived(isDark ? darkTheme : lightTheme);
+</script>
+
+<button onclick={() => isDark = !isDark}>
+  Toggle Theme
+</button>
+
+<ThemeProvider theme={currentTheme}>
+  <Button>Themed Button</Button>
+  <Card>Themed Card</Card>
+</ThemeProvider>
+```
+
+Components inside ThemeProvider will automatically update when `currentTheme` changes.
 
 ## LLM Link
 

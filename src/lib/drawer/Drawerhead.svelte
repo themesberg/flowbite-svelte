@@ -15,12 +15,12 @@
 
   const styling = $derived(classes ?? { button: buttonClass, svg: svgClass });
 
-  const theme = getTheme("drawer");
-
   const { base, button, svg } = $derived(drawerhead());
+
+  let baseClass = $derived(base({ class: clsx(getTheme("drawer")?.base, className) }));
 </script>
 
-<div class={base({ class: clsx(theme?.base, className) })}>
+<div class={baseClass}>
   {#if children}
     {@render children()}
   {/if}

@@ -7,8 +7,6 @@
 
   let { children, size, class: className, href, active, ...restProps }: PaginationItemProps = $props();
 
-  const theme = getTheme("paginationItem");
-
   // Get context - it will be undefined if used outside Pagination
   const ctx = getPaginationContext();
 
@@ -18,7 +16,7 @@
       active,
       group: ctx?.group ?? false,
       table: ctx?.table ?? false,
-      class: clsx(theme, className)
+      class: clsx(getTheme("paginationItem"), className)
     })
   );
 </script>

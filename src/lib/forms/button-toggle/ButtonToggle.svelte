@@ -19,8 +19,6 @@
   // button(className), content, text, icon
   const styling = $derived(classes ?? { icon: iconClass, text: txtClass, content: contentClass });
 
-  const theme = getTheme("buttonToggle");
-
   // Get context - it will be undefined if used outside ButtonToggleGroup
   const ctx = getButtonToggleContext();
 
@@ -50,29 +48,26 @@
 
   const { button, content, text, icon } = $derived(buttonToggle({ selected, color: actualColor, size: actualSize }));
 
+  const buttonCls = $derived(button({ selected, color: actualColor, size: actualSize, roundedSize: actualRoundedSize, class: clsx(getTheme("buttonToggle")?.button, ctxBtnClass, className) }));
+  const contentCls = $derived(content({ class: clsx(getTheme("buttonToggle")?.content, styling.content) }));
+  const iconCls = $derived(icon({ class: clsx(getTheme("buttonToggle")?.icon ?? actualIconClass, styling.icon) }));
+  const textCls = $derived(text({ selected, class: clsx(getTheme("buttonToggle")?.text, styling.text) }));
+
   $effect(() => {
     selected = isSelected(value);
   });
 </script>
 
-<button
-  type="button"
-  class={button({ selected, color: actualColor, size: actualSize, roundedSize: actualRoundedSize, class: clsx(theme?.button, ctxBtnClass, className) })}
-  data-selected={selected}
-  onclick={handleClick}
-  role={multiSelect ? "checkbox" : "radio"}
-  aria-checked={selected}
-  {...restProps}
->
-  <div class={content({ class: clsx(theme?.content, styling.content) })}>
+<button type="button" class={buttonCls} data-selected={selected} onclick={handleClick} role={multiSelect ? "checkbox" : "radio"} aria-checked={selected} {...restProps}>
+  <div class={contentCls}>
     {#if selected}
       {#if iconSlot}
         {@render iconSlot()}
       {:else}
-        <CheckIcon class={icon({ class: clsx(theme?.icon ?? actualIconClass, styling.icon) })} />
+        <CheckIcon class={iconCls} />
       {/if}
     {/if}
-    <span class={text({ selected, class: clsx(theme?.text, styling.text) })}>
+    <span class={textCls}>
       {@render children()}
     </span>
   </div>

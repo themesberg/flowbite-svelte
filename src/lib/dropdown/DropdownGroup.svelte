@@ -5,11 +5,9 @@
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { children, class: className, ...restProps }: DropdownGroupProps = $props();
-
-  const theme = getTheme("dropdownGroup");
 </script>
 
-<ul {...restProps} class={dropdownGroup({ class: clsx(theme, className) })}>
+<ul {...restProps} class={dropdownGroup({ class: clsx(getTheme("dropdownGroup"), className) })}>
   {@render children()}
 </ul>
 

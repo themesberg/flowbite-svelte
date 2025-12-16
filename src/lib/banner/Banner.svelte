@@ -33,9 +33,6 @@
 
   const styling = $derived(classes ?? { insideDiv: innerClass, dismissable: closeClass });
 
-  // Theme context
-  const theme = getTheme("banner");
-
   const { base, insideDiv, dismissable: dismissableClass } = $derived(banner({ type, color }));
 
   let ref: HTMLDivElement | undefined = $state(undefined);
@@ -49,14 +46,14 @@
 </script>
 
 {#if open}
-  <div tabindex="-1" bind:this={ref} class={base({ class: clsx(theme?.base, className) })} {...restProps} transition:transition={params as ParamsType}>
-    <div class={insideDiv({ class: clsx(theme?.insideDiv, styling.insideDiv) })}>
+  <div tabindex="-1" bind:this={ref} class={base({ class: clsx(getTheme("banner")?.base, className) })} {...restProps} transition:transition={params as ParamsType}>
+    <div class={insideDiv({ class: clsx(getTheme("banner")?.insideDiv, styling.insideDiv) })}>
       {@render children?.()}
     </div>
 
     {#if dismissable}
       <div class="flex items-center justify-end">
-        <CloseButton class={dismissableClass({ class: clsx(theme?.dismissable, styling.dismissable) })} {color} ariaLabel="Remove banner" />
+        <CloseButton class={dismissableClass({ class: clsx(getTheme("banner")?.dismissable, styling.dismissable) })} {color} ariaLabel="Remove banner" />
       </div>
     {/if}
   </div>

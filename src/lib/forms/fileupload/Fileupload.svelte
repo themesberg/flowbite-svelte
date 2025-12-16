@@ -30,9 +30,11 @@
 
   const styling = $derived(classes ?? { wrapper: wrapperClass, close: clearableClass, svg: clearableSvgClass });
 
-  const theme = getTheme("fileupload");
-
   const { base, wrapper, close } = fileupload();
+
+  const wrapperCls = $derived(wrapper({ class: clsx(getTheme("fileupload")?.wrapper, styling.wrapper) }));
+  const baseCls = $derived(base({ size, class: clsx(getTheme("fileupload")?.base, className) }));
+  const closeCls = $derived(close({ class: clsx(getTheme("fileupload")?.close, styling.close) }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -45,10 +47,10 @@
   createDismissableContext(clearAll);
 </script>
 
-<div class={wrapper({ class: clsx(theme?.wrapper, styling.wrapper) })}>
-  <input type="file" bind:files bind:this={elementRef} {...restProps} class={base({ size, class: clsx(theme?.base, className) })} />
+<div class={wrapperCls}>
+  <input type="file" bind:files bind:this={elementRef} {...restProps} class={baseCls} />
   {#if files && files.length > 0 && clearable}
-    <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear selected files" svgClass={clsx(styling.svg)} />
+    <CloseButton class={closeCls} color={clearableColor} aria-label="Clear selected files" svgClass={clsx(styling.svg)} />
   {/if}
 </div>
 

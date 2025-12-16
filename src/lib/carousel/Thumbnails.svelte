@@ -7,8 +7,6 @@
 
   let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass, throttleDelay = 650, class: className }: ThumbnailsProps = $props();
 
-  const theme = getTheme("thumbnails");
-
   // Initialize so the first click is never throttled
   let lastClickedAt = -Infinity;
 
@@ -30,7 +28,7 @@
   });
 </script>
 
-<div class={thumbnails({ class: clsx(theme, className) })}>
+<div class={thumbnails({ class: clsx(getTheme("thumbnails"), className) })}>
   {#each images as image, idx (image.src || idx)}
     {@const selected = index === idx}
     <button onclick={() => btnClick(idx)} aria-label={ariaLabel} aria-current={selected ? "true" : undefined}>

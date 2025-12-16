@@ -39,26 +39,20 @@
 
   const styling = $derived(classes ?? { header: headerClass, body: bodyClass, footer: footerClass, close: closeBtnClass });
 
-  const theme = getTheme("modal");
-
   const paramsDefault = { duration: 100, easing: sineIn };
   const paramsOptions = $derived(transitionParams ?? paramsDefault);
 
   const { base, header: headerCls, footer: footerCls, body } = $derived(modalStyle({ placement, size }));
+
+  const baseCls = $derived(base({ fullscreen, class: clsx(getTheme("modal")?.base, className) }));
+  const headerClsFull = $derived(headerCls({ class: clsx(getTheme("modal")?.header, styling.header) }));
+  const bodyCls = $derived(body({ class: clsx(getTheme("modal")?.body, styling.body) }));
+  const footerClsFull = $derived(footerCls({ class: clsx(getTheme("modal")?.footer, styling.footer) }));
 </script>
 
-<Dialog
-  bind:open
-  {transition}
-  dismissable={dismissable && !title && !permanent}
-  transitionParams={paramsOptions}
-  {classes}
-  {permanent}
-  {...restProps}
-  class={base({ fullscreen, class: clsx(theme?.base, className) })}
->
+<Dialog bind:open {transition} dismissable={dismissable && !title && !permanent} transitionParams={paramsOptions} {classes} {permanent} {...restProps} class={baseCls}>
   {#if title || header}
-    <div class={headerCls({ class: clsx(theme?.header, styling.header) })}>
+    <div class={headerClsFull}>
       {#if title}
         <h3>{title}</h3>
         {#if dismissable && !permanent}
@@ -69,11 +63,11 @@
       {/if}
     </div>
   {/if}
-  <div class={body({ class: clsx(theme?.body, styling.body) })}>
+  <div class={bodyCls}>
     {@render children?.()}
   </div>
   {#if footer}
-    <div class={footerCls({ class: clsx(theme?.footer, styling.footer) })}>
+    <div class={footerClsFull}>
       {@render footer()}
     </div>
   {/if}

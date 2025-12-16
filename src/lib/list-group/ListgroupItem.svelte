@@ -7,14 +7,12 @@
 
   let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-15 w-15", ...restProps }: ListgroupItemProps = $props();
 
-  const theme = getTheme("listGroupItem");
-
   const listGroupCtx = getListGroupContext();
   const finalActive = $derived(active ?? listGroupCtx?.active);
   const finalHorizontal = $derived(horizontal ?? listGroupCtx?.horizontal);
 
   let state: ListgroupItemVariants["state"] = $derived(disabled ? "disabled" : current ? "current" : "normal");
-  let itemClass = $derived(listGroupItem({ state, active: finalActive, horizontal: finalHorizontal, class: clsx(theme, className) }));
+  let itemClass = $derived(listGroupItem({ state, active: finalActive, horizontal: finalHorizontal, class: clsx(getTheme("listGroupItem"), className) }));
 </script>
 
 {#snippet nameOrChildren()}

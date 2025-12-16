@@ -8,9 +8,7 @@
 
   let { children, class: className, group = $bindable(), checked = $bindable(false), inline, pill, outline, size, color, shadow, ...restProps }: CheckboxButtonProps = $props();
 
-  const theme = getTheme("checkboxButton");
-
-  let buttonClass: string = $derived(checkboxButton({ inline, checked, class: clsx(theme, className) }));
+  let buttonClass: string = $derived(checkboxButton({ inline, checked, class: clsx(getTheme("checkboxButton"), className) }));
 </script>
 
 <Button tag="label" {pill} {outline} {size} {color} {shadow} class={buttonClass}>

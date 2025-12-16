@@ -7,8 +7,6 @@
 
   let { children, class: className, ...restProps }: ControlsProps = $props();
 
-  const theme = getTheme("controlButton");
-
   const _state = getCarouselContext();
 
   function changeSlide(forward: boolean) {
@@ -21,8 +19,8 @@
 {#if children}
   {@render children(changeSlide)}
 {:else}
-  <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={clsx(theme, className)} {...restProps} />
-  <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={clsx(theme, className)} {...restProps} />
+  <ControlButton name="Previous" forward={false} onclick={() => changeSlide(false)} class={clsx(getTheme("controls")?.previous, className)} {...restProps} />
+  <ControlButton name="Next" forward={true} onclick={() => changeSlide(true)} class={clsx(getTheme("controls")?.next, className)} {...restProps} />
 {/if}
 
 <!--

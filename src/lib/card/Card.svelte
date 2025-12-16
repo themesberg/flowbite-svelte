@@ -15,8 +15,6 @@
 
   const styling = $derived(classes ?? { image: imgClass });
 
-  const theme = getTheme("card");
-
   const { base, image } = $derived(
     card({
       size,
@@ -27,12 +25,16 @@
       href: !!restProps.href
     })
   );
+
+  // Get theme reactively inside derived expressions
+  const baseClass = $derived(base({ class: clsx(getTheme("card")?.base, className) }));
+  const imageClass = $derived(image({ class: clsx(getTheme("card")?.image, styling.image) }));
 </script>
 
 {#snippet childSlot()}
   {#if img}
     <img
-      class={image({ class: clsx(theme?.image, styling.image) })}
+      class={imageClass}
       src={img}
       alt=""
       loading="lazy"
@@ -50,11 +52,11 @@
 {/snippet}
 
 {#if restProps.href === undefined}
-  <div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <div {...restProps} class={baseClass}>
     {@render childSlot()}
   </div>
 {:else}
-  <a {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <a {...restProps} class={baseClass}>
     {@render childSlot()}
   </a>
 {/if}

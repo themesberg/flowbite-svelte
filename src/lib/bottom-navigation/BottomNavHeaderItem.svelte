@@ -6,10 +6,7 @@
 
   let { itemName, active, class: className, ...restProps }: BottomNavHeaderItemProps = $props();
 
-  // Theme context
-  const theme = getTheme("bottomNavHeaderItem");
-
-  let base = $derived(bottomNavHeaderItem({ active, class: clsx(theme, className) }));
+  let base = $derived(bottomNavHeaderItem({ active, class: clsx(getTheme("bottomNavHeaderItem"), className) }));
 </script>
 
 <button {...restProps} class={base}>

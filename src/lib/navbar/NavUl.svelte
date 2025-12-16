@@ -35,8 +35,6 @@
 
   const styling = $derived(classes ?? { ul: ulClass, active: activeClass, nonActive: nonActiveClass });
 
-  const theme = getTheme("navbarUl");
-
   // Default parameters for different transitions
   const getDefaultParams = (transitionFn: typeof slide | typeof fly | typeof fade | typeof scale) => {
     if (transitionFn === slide) return { delay: 0, duration: 200, easing: sineIn };
@@ -62,15 +60,18 @@
 
   let { base, ul, active, nonActive } = $derived(navbarUl({ hidden, breakpoint: navBreakpoint ?? "md" }));
 
+  let activeCls = $derived(active({ class: clsx(getTheme("navbarUl")?.active, styling.active) }));
+  let nonActiveCls = $derived(nonActive({ class: clsx(getTheme("navbarUl")?.nonActive, styling.nonActive) }));
+
   $effect(() => {
     if (!navState) return;
-    navState.activeClass = active({ class: clsx(theme?.active, styling.active) });
-    navState.nonActiveClass = nonActive({ class: clsx(theme?.nonActive, styling.nonActive) });
+    navState.activeClass = activeCls;
+    navState.nonActiveClass = nonActiveCls;
     navState.activeUrl = activeUrl;
   });
 
-  let divCls: string = $derived(base({ class: clsx(theme?.base, className) }));
-  let ulCls: string = $derived(ul({ class: clsx(theme?.ul, styling.ul) }));
+  let divCls: string = $derived(base({ class: clsx(getTheme("navbarUl")?.base, className) }));
+  let ulCls: string = $derived(ul({ class: clsx(getTheme("navbarUl")?.ul, styling.ul) }));
 </script>
 
 {#if !hidden}

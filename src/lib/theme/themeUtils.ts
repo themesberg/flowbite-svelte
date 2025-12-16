@@ -4,8 +4,14 @@ import { getThemeContext } from "$lib/context";
 import { DEV } from "esm-env";
 
 export function getTheme<K extends keyof ThemeConfig>(componentKey: K) {
-  const theme = getThemeContext();
-  return theme?.[componentKey];
+  // Access the theme context - this will be reactive when called inside $derived
+  const themeState = getThemeContext();
+  // If themeState is a reactive wrapper, access .value, otherwise use it directly
+  const theme = themeState && "value" in themeState ? themeState.value : themeState;
+
+  // The fix: Assert that `theme` is ThemeConfig or undefined after the conditional check
+  const finalTheme = theme as ThemeConfig | undefined;
+  return finalTheme?.[componentKey];
 }
 
 type Slots<T extends { slots: Record<string, unknown> }> = Omit<T["slots"], "base">;

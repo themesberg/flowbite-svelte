@@ -9,8 +9,6 @@
 
   let { children, files = $bindable<FileList | null>(), class: className, onDrop, onDragOver, onChange, ...restProps }: DropzoneProps = $props();
 
-  const theme = getTheme("dropzone");
-
   let inputElement: HTMLInputElement;
 
   const handleDrop: DragEventHandler<HTMLLabelElement> = function (this: Window, event) {
@@ -42,7 +40,7 @@
   };
 </script>
 
-<label class={dropzone({ class: clsx(theme, className) })} ondrop={handleDrop} ondragover={handleDragOver}>
+<label class={dropzone({ class: clsx(getTheme("dropzone"), className) })} ondrop={handleDrop} ondragover={handleDragOver}>
   {@render children()}
 
   <input {...restProps} bind:files bind:this={inputElement} onchange={handleChange} type="file" class="hidden" />

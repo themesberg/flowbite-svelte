@@ -21,8 +21,6 @@
     ...restProps
   }: ProgressbarProps = $props();
 
-  const theme = getTheme("progressbar");
-
   let _progress = $derived(
     new Tween(0, {
       duration: animate ? tweenDuration : 0,
@@ -43,24 +41,31 @@
     })
   );
 
+  const outsideCls = $derived(outside({ class: clsx(getTheme("progressbar")?.outside, classes?.outside) }));
+  const spanCls = $derived(span({ class: clsx(getTheme("progressbar")?.span, classes?.span) }));
+  const progressClsFull = $derived(progressCls({ class: clsx(getTheme("progressbar")?.progressCls, classes?.progressCls) }));
+  const baseCls = $derived(base({ class: clsx(size, getTheme("progressbar")?.base, className) }));
+  const labelInsideClsFull = $derived(labelInsideCls({ class: clsx(size, getTheme("progressbar")?.label, classes?.label) }));
+  const insideCls = $derived(inside({ class: clsx(size, getTheme("progressbar")?.inside, classes?.label) }));
+
   $effect(() => {
     _progress.set(Number(progress));
   });
 </script>
 
 {#if labelOutside}
-  <div {...restProps} class={outside({ class: clsx(theme?.outside, classes?.outside) })}>
-    <span class={span({ class: clsx(theme?.span, classes?.span) })}>{labelOutside}</span>
-    <span class={progressCls({ class: clsx(theme?.progressCls, classes?.progressCls) })}>{progress}%</span>
+  <div {...restProps} class={outsideCls}>
+    <span class={spanCls}>{labelOutside}</span>
+    <span class={progressClsFull}>{progress}%</span>
   </div>
 {/if}
-<div {...restProps} class={base({ class: clsx(size, theme?.base, className) })}>
+<div {...restProps} class={baseCls}>
   {#if labelInside}
-    <div class={labelInsideCls({ class: clsx(size, theme?.label, classes?.label) })} style="width: {_progress.current}%">
+    <div class={labelInsideClsFull} style="width: {_progress.current}%">
       {_progress.current.toFixed(precision)}%
     </div>
   {:else}
-    <div class={inside({ class: clsx(size, theme?.inside, classes?.label) })} style="width: {_progress.current}%"></div>
+    <div class={insideCls} style="width: {_progress.current}%"></div>
   {/if}
 </div>
 

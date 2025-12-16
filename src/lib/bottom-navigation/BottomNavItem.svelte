@@ -17,9 +17,6 @@
 
   const styling = $derived(classes ?? { span: spanClass });
 
-  // Theme context
-  const theme = getTheme("bottomNavItem");
-
   const context = getBottomNavContext();
 
   let navUrl = $derived(context?.activeUrl || "");
@@ -39,11 +36,11 @@
   });
 
   function getCommonClass() {
-    return base({ class: clsx(isActive && (activeClass ?? context?.activeClass), theme?.base, className ?? btnClass) });
+    return base({ class: clsx(isActive && (activeClass ?? context?.activeClass), getTheme("bottomNavItem")?.base, className ?? btnClass) });
   }
 
   function getSpanClass() {
-    return span({ class: clsx(isActive && (activeClass ?? context?.activeClass), theme?.span, styling.span) });
+    return span({ class: clsx(isActive && (activeClass ?? context?.activeClass), getTheme("bottomNavItem")?.span, styling.span) });
   }
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */

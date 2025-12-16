@@ -9,9 +9,7 @@
 
   let { children, simple = false, placement = "bottom", offset = 2, class: className, activeUrl = "", isOpen = $bindable(false), onclose, ...restProps }: DropdownProps = $props();
 
-  const theme = getTheme("dropdown");
-
-  const base = $derived(dropdown({ class: clsx(theme, className) }));
+  const base = $derived(dropdown({ class: clsx(getTheme("dropdown"), className) }));
 
   // Create reactive context using getter
   const context = {

@@ -15,14 +15,14 @@
 
   const styling = $derived(classes ?? { innerDiv: innerClass });
 
-  // Theme context
-  const theme = getTheme("bottomNavHeader");
-
   const { innerDiv, base } = $derived(bottomNavHeader());
+
+  let baseClass = $derived(base({ class: clsx(getTheme("bottomNavHeader")?.base, className ?? outerClass) }));
+  let innerDivClass = $derived(innerDiv({ class: clsx(getTheme("bottomNavHeader")?.innerDiv, styling.innerDiv) }));
 </script>
 
-<div {...restProps} class={base({ class: clsx(theme?.base, className ?? outerClass) })}>
-  <div class={innerDiv({ class: clsx(theme?.innerDiv, styling.innerDiv) })} role="group">
+<div {...restProps} class={baseClass}>
+  <div class={innerDivClass} role="group">
     {@render children()}
   </div>
 </div>

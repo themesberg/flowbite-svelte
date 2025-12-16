@@ -53,8 +53,6 @@
 
   const styling = $derived(classes ?? { left: leftClass, right: rightClass, div: divClass, svg: clearableSvgClass, close: clearableClass, combo: comboClass, comboItem: comboItemClass });
 
-  const theme = getTheme("input");
-
   // onSelect is a custom combobox selection handler that takes a string
   // standard DOM events, onInput, onFocus, onBlur, onKeydown will be deprecated in the next minor version
   const resolvedOnInput = $derived(oninput || onInput);
@@ -76,6 +74,14 @@
   let _size = $derived(size || (group?.size ? clampSize(group.size) : undefined) || "md");
   const _color = $derived(color === "default" && background ? "tinted" : color);
   const { base, input: inputCls, left: leftCls, right: rightCls, close, combo, comboItem } = $derived(input({ size: _size, color: _color, grouped: isGroup }));
+
+  const baseCls = $derived(base({ class: clsx(getTheme("input")?.base, styling.div) }));
+  const leftClsFull = $derived(leftCls({ class: clsx(getTheme("input")?.left, styling.left) }));
+  const rightClsFull = $derived(rightCls({ class: clsx(getTheme("input")?.right, styling.right) }));
+  const closeCls = $derived(close({ class: clsx(getTheme("input")?.close, styling.close) }));
+  const comboCls = $derived(combo({ class: clsx(getTheme("input")?.combo, styling.combo) }));
+  const comboItemCls = $derived(comboItem({ class: clsx(getTheme("input")?.comboItem, styling.comboItem) }));
+  const inputClsFull = $derived(inputCls({ class: clsx(getTheme("input")?.input, className) }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -256,21 +262,21 @@
 {/if}
 
 {#if isCombobox || right || left || clearable}
-  <div class={base({ class: clsx(theme?.base, styling.div) })}>
+  <div class={baseCls}>
     {#if left}
-      <div class={leftCls({ class: clsx(theme?.left, styling.left) })}>
+      <div class={leftClsFull}>
         {@render left()}
       </div>
     {/if}
     {@render inputContent(true)}
     {#if right}
-      <div class={rightCls({ class: clsx(theme?.right, styling.right) })}>
+      <div class={rightClsFull}>
         {@render right()}
       </div>
     {/if}
 
     {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-      <div class={combo({ class: clsx(theme?.combo, styling.combo) })}>
+      <div class={comboCls}>
         {#each filteredSuggestions as item, i (item)}
           <button
             type="button"
@@ -278,7 +284,7 @@
             onclick={() => selectItem(item)}
             onmouseenter={() => (selectedIndex = i)}
           >
-            <p class={comboItem({ class: clsx(theme?.comboItem, styling.comboItem) })}>{item}</p>
+            <p class={comboItemCls}>{item}</p>
           </button>
         {/each}
       </div>
@@ -292,18 +298,9 @@
   {#if children}
     {@render children({ ...restProps, class: inputCls() })}
   {:else}
-    <input
-      {...restProps}
-      bind:value
-      bind:this={elementRef}
-      oninput={handleInput}
-      onfocus={handleFocus}
-      onblur={handleBlur}
-      onkeydown={handleKeydown}
-      class={[wrapped || base(), inputCls({ class: clsx(theme?.input, className) })]}
-    />
+    <input {...restProps} bind:value bind:this={elementRef} oninput={handleInput} onfocus={handleFocus} onblur={handleBlur} onkeydown={handleKeydown} class={[wrapped || base(), inputClsFull]} />
     {#if value !== undefined && value !== "" && clearable}
-      <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
+      <CloseButton class={closeCls} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
     {/if}
   {/if}
 {/snippet}

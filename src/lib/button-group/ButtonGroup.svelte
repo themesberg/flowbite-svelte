@@ -7,9 +7,7 @@
 
   let { children, size = "md", disabled, class: className, ...restProps }: ButtonGroupProps = $props();
 
-  const theme = getTheme("buttonGroup");
-
-  let groupClass = $derived(buttonGroup({ size, class: clsx(theme, className) }));
+  let groupClass = $derived(buttonGroup({ size, class: clsx(getTheme("buttonGroup"), className) }));
 
   // Create a reactive context object
   // The object itself stays the same, but its properties are reactive

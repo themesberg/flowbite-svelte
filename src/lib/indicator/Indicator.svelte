@@ -6,8 +6,6 @@
 
   let { children, color = "primary", cornerStyle = "circular", size = "md", border = false, placement, offset = true, class: className, ...restProps }: IndicatorProps = $props();
 
-  const theme = getTheme("indicator");
-
   let hasChildren = $derived(!!children);
   const base = $derived(
     indicator({
@@ -18,7 +16,7 @@
       placement,
       offset,
       hasChildren,
-      class: clsx(theme, className)
+      class: clsx(getTheme("indicator"), className)
     })
   );
 </script>

@@ -16,17 +16,19 @@
 
   const styling = $derived(classes ?? { input: inputClass, span: spanClass });
 
-  const theme = getTheme("toggle");
-
   const { input, label, span } = $derived(toggle({ color, checked, size, disabled, off_state_label: !!offLabel }));
+
+  const labelCls = $derived(label({ class: clsx(getTheme("toggle")?.label, className) }));
+  const inputCls = $derived(input({ class: clsx(getTheme("toggle")?.input, styling.input) }));
+  const spanCls = $derived(span({ class: clsx(getTheme("toggle")?.span, styling.span) }));
 </script>
 
-<Label class={label({ class: clsx(theme?.label, className) })}>
+<Label class={labelCls}>
   {#if offLabel}
     {@render offLabel()}
   {/if}
-  <input type="checkbox" bind:checked {value} {...restProps} {disabled} class={input({ class: clsx(theme?.input, styling.input) })} />
-  <span class={span({ class: clsx(theme?.span, styling.span) })}></span>
+  <input type="checkbox" bind:checked {value} {...restProps} {disabled} class={inputCls} />
+  <span class={spanCls}></span>
   {#if children}
     {@render children()}
   {/if}

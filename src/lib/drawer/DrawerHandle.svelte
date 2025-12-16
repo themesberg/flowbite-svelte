@@ -9,13 +9,15 @@
 
   const ctx = getDrawerContext();
 
-  const theme = getTheme("drawerhandle");
   let { base, handle } = $derived(drawerhandle({ placement: placement ?? ctx?.placement ?? "left" }));
+
+  let baseClass = $derived(base({ class: clsx(getTheme("drawerhandle")?.base, className) }));
+  let handleClass = $derived(handle({ class: clsx(getTheme("drawerhandle")?.handle, classes?.handle) }));
 </script>
 
-<button type="button" aria-label={ariaLabel} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<button type="button" aria-label={ariaLabel} {...restProps} class={baseClass}>
   {@render children?.()}
-  <span class={handle({ class: clsx(theme?.handle, classes?.handle) })}></span>
+  <span class={handleClass}></span>
 </button>
 
 <!--

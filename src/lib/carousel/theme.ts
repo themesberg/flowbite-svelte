@@ -2,6 +2,7 @@ import type { Classes } from "$lib/theme/themeUtils";
 import { tv, type VariantProps } from "tailwind-variants";
 
 export type CarouselVariants = VariantProps<typeof carousel> & Classes<typeof carousel>;
+export type ControlButtonVariants = VariantProps<typeof controlButton> & Classes<typeof controlButton>;
 
 export const carousel = tv({
   slots: {
@@ -40,6 +41,13 @@ export const controlButton = tv({
       true: "end-0",
       false: "start-0"
     }
+  }
+});
+
+export const controls = tv({
+  slots: {
+    previous: "",
+    next: ""
   }
 });
 

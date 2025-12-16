@@ -8,8 +8,6 @@
 
   let { children, embedded = false, value = $bindable(""), success = $bindable(false), onclick, class: className = "", ...restProps }: ClipboardProps = $props();
 
-  const theme = getTheme("clipboard");
-
   const copyToClipboard: MouseEventHandler<HTMLButtonElement> = async (ev) => {
     onclick?.(ev);
     if (ev.defaultPrevented) return;
@@ -36,9 +34,11 @@
       success = false;
     }, 2000);
   };
+
+  let buttonClass = $derived(clipboard({ embedded, class: clsx(getTheme("clipboard"), className) }));
 </script>
 
-<Button onclick={copyToClipboard} {...restProps} class={clipboard({ embedded, class: clsx(theme, className) })}>
+<Button onclick={copyToClipboard} {...restProps} class={buttonClass}>
   {@render children?.(success)}
 </Button>
 

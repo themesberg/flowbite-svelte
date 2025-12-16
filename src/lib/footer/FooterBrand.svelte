@@ -6,18 +6,16 @@
 
   let { children, aClass, spanClass, imgClass, href, src, alt, name, ...restProps }: FooterBrandProps = $props();
 
-  const theme = getTheme("footerBrand");
-
-  const { base, span, img } = $derived(footerBrand());
+  const { base, span, img } = footerBrand();
 </script>
 
 {#if href}
-  <a {...restProps} {href} class={base({ class: clsx(theme?.base, aClass) })}>
+  <a {...restProps} {href} class={base({ class: clsx(getTheme("footerBrand")?.base, aClass) })}>
     {#if src}
-      <img {src} class={img({ class: clsx(theme?.img, imgClass) })} {alt} />
+      <img {src} class={img({ class: clsx(getTheme("footerBrand")?.img, imgClass) })} {alt} />
     {/if}
     {#if name}
-      <span class={span({ class: clsx(theme?.span, spanClass) })}>{name}</span>
+      <span class={span({ class: clsx(getTheme("footerBrand")?.span, spanClass) })}>{name}</span>
     {/if}
     {#if children}
       {@render children()}

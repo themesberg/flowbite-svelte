@@ -17,9 +17,6 @@
 
   const styling = $derived(classes ?? { inner: innerClass });
 
-  // Theme context
-  const theme = getTheme("bottomNav");
-
   const activeCls = $derived(cn("text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900", activeClass));
 
   // Create reactive context using getters
@@ -38,14 +35,17 @@
   setBottomNavContext(reactiveCtx);
 
   const { base, inner } = $derived(bottomNav({ position, navType }));
+
+  let baseClass = $derived(base({ class: clsx(getTheme("bottomNav")?.base, className ?? outerClass) }));
+  let innerClass2 = $derived(inner({ class: clsx(getTheme("bottomNav")?.inner, styling.inner) }));
 </script>
 
-<div {...restProps} class={base({ class: clsx(theme?.base, className ?? outerClass) })}>
+<div {...restProps} class={baseClass}>
   {#if header}
     {@render header()}
   {/if}
 
-  <div class={inner({ class: clsx(theme?.inner, styling.inner) })}>
+  <div class={innerClass2}>
     {@render children()}
   </div>
 </div>

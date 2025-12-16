@@ -2,16 +2,22 @@
   import { controlButton } from "./theme";
   import clsx from "clsx";
   import type { ControlButtonProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { untrack } from "svelte";
 
   let { children, forward, name, class: className, spanClass, ...restProps }: ControlButtonProps = $props();
 
-  const { base, span } = $derived(controlButton({ forward }));
+  warnThemeDeprecation(
+    "ControlButton",
+    untrack(() => ({ spanClass })),
+    { spanClass: "span" }
+  );
 
-  const theme = getTheme("controlButton");
+  const { base, span } = $derived(controlButton({ forward }));
+  let buttonCls = $derived(base({ class: clsx(getTheme("controlButton")?.base, className) }));
 </script>
 
-<button type="button" class={base({ class: clsx(className, theme) })} {...restProps}>
+<button type="button" class={buttonCls} {...restProps}>
   {#if children}
     {@render children()}
   {:else}

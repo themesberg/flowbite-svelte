@@ -49,9 +49,6 @@
   // Check if transitionType is explicitly set to undefined in props
   const useTransition = $derived(transitionType === "none" ? false : ctxTransitionType === "none" ? false : true);
 
-  // Theme context
-  const theme = getTheme("accordionItem");
-
   // single selection
   const self = Symbol("accordion-item");
 
@@ -68,10 +65,14 @@
   const { base, button, content, active, inactive } = $derived(accordionItem({ flush: ctx?.flush, open }));
 
   let buttonClass = $derived(clsx(open && !ctx?.flush && (styling.active || ctx?.activeClass || active()), !open && !ctx?.flush && (styling.inactive || ctx?.inactiveClass || inactive())));
+
+  let baseClass = $derived(base({ class: clsx(getTheme("accordionItem")?.base, className) }));
+  let buttonCls = $derived(button({ class: clsx(buttonClass, getTheme("accordionItem")?.button, styling.button) }));
+  let contentCls = $derived(content({ class: clsx(getTheme("accordionItem")?.content, styling.content) }));
 </script>
 
-<h2 class={base({ class: clsx(theme?.base, className) })}>
-  <button type="button" onclick={handleToggle} class={button({ class: clsx(buttonClass, theme?.button, styling.button) })} aria-expanded={open}>
+<h2 class={baseClass}>
+  <button type="button" onclick={handleToggle} class={buttonCls} aria-expanded={open}>
     {#if header}
       {@render header()}
       {#if open}
@@ -96,14 +97,14 @@
 {#if useTransition}
   {#if open && transitionType !== "none"}
     <div transition:transitionType={transitionParams as ParamsType}>
-      <div class={content({ class: clsx(theme?.content, styling.content) })}>
+      <div class={contentCls}>
         {@render children()}
       </div>
     </div>
   {/if}
 {:else}
   <div class={open ? "block" : "hidden"}>
-    <div class={content({ class: clsx(theme?.content, styling.content) })}>
+    <div class={contentCls}>
       {@render children()}
     </div>
   </div>

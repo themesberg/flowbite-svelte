@@ -5,11 +5,9 @@
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { class: className, ...restProps }: DropdownDividerProps = $props();
-
-  const theme = getTheme("dropdownDivider");
 </script>
 
-<div {...restProps} class={dropdownDivider({ class: clsx(theme, className) })}></div>
+<div {...restProps} class={dropdownDivider({ class: clsx(getTheme("dropdownDivider"), className) })}></div>
 
 <!--
 @component

@@ -5,11 +5,9 @@
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { class: className, children, ...restProps }: FooterLinkGroupProps = $props();
-
-  const theme = getTheme("footerLinkGroup");
 </script>
 
-<ul {...restProps} class={footerLinkGroup({ class: clsx(theme, className) })}>
+<ul {...restProps} class={footerLinkGroup({ class: clsx(getTheme("footerLinkGroup"), className) })}>
   {@render children()}
 </ul>
 

@@ -8,19 +8,23 @@
 
   const styling = $derived(classes ?? {});
 
-  const theme = getTheme("breadcrumbItem");
-
   const { base, separator } = $derived(
     breadcrumbItem({
       home,
       hasHref: !!href
     })
   );
+
+  let liClass = $derived(base({ class: clsx(getTheme("breadcrumbItem")?.base, className) }));
+  let homeAnchorClass = $derived(base({ home: true, class: clsx(getTheme("breadcrumbItem")?.base, homeClass) }));
+  let linkAnchorClass = $derived(base({ home: false, hasHref: true, class: clsx(getTheme("breadcrumbItem")?.base, linkClass) }));
+  let spanElClass = $derived(base({ home: false, hasHref: false, class: clsx(getTheme("breadcrumbItem")?.base, spanClass) }));
+  let separatorClass = $derived(separator({ class: clsx(getTheme("breadcrumbItem")?.separator, styling.separator) }));
 </script>
 
-<li {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<li {...restProps} class={liClass}>
   {#if home}
-    <a class={base({ home: true, class: clsx(theme?.base, homeClass) })} {href}>
+    <a class={homeAnchorClass} {href}>
       {#if icon}
         {@render icon()}
       {:else}
@@ -37,17 +41,17 @@
     {#if icon}
       {@render icon()}
     {:else}
-      <svg class={separator({ class: clsx(theme?.separator, styling.separator) })} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <svg class={separatorClass} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
       </svg>
     {/if}
 
     {#if href}
-      <a class={base({ home: false, hasHref: true, class: clsx(theme?.base, linkClass) })} {href}>
+      <a class={linkAnchorClass} {href}>
         {@render children()}
       </a>
     {:else}
-      <span class={base({ home: false, hasHref: false, class: clsx(theme?.base, spanClass) })}>
+      <span class={spanElClass}>
         {@render children()}
       </span>
     {/if}

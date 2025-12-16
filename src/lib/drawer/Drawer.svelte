@@ -64,8 +64,6 @@
   });
   // end
 
-  const theme = getTheme("drawer");
-
   let shifted = $state(true);
 
   const { base } = $derived(drawer({ placement, width, modal: offset && !open ? false : modal, shifted }));
@@ -129,13 +127,13 @@
   {...restProps}
   {onintrostart}
   {onoutrostart}
-  class={base({ class: clsx(theme?.base, className) })}
+  class={base({ class: clsx(getTheme("drawer")?.base, className) })}
 >
   {@render children?.()}
 </Dialog>
 
 {#if offset && !open}
-  <Dialog {@attach init} open modal={false} dismissable={finalDismissable} {outsideclose} inert {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <Dialog {@attach init} open modal={false} dismissable={finalDismissable} {outsideclose} inert {...restProps} class={base({ class: clsx(getTheme("drawer")?.base, className) })}>
     {@render children?.()}
   </Dialog>
 {/if}

@@ -35,9 +35,6 @@
 
   const styling = $derived(classes ?? { linkClass: aClass });
 
-  // Theme context
-  const theme = getTheme("badge");
-
   const { base, linkClass } = $derived(badge({ color, size: large ? "large" : "small", rounded, border }));
 
   let ref: HTMLDivElement | undefined = $state(undefined);
@@ -52,9 +49,9 @@
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} bind:this={ref} transition:transition={params as ParamsType} class={base({ class: clsx(theme?.base, className) })}>
+  <div {...restProps} bind:this={ref} transition:transition={params as ParamsType} class={base({ class: clsx(getTheme("badge")?.base, className) })}>
     {#if href}
-      <a {href} {target} class={linkClass({ class: clsx(theme?.linkClass, styling.linkClass) })}>
+      <a {href} {target} class={linkClass({ class: clsx(getTheme("badge")?.linkClass, styling.linkClass) })}>
         {@render children()}
       </a>
     {:else}

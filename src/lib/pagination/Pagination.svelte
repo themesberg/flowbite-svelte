@@ -8,8 +8,6 @@
 
   let { pages = [], previous, next, prevContent, nextContent, table, size, ariaLabel, ...restProps }: PaginationProps = $props();
 
-  const theme = getTheme("pagination");
-
   // Create context object
   const ctx: PaginationContextType = {
     get group() {
@@ -26,7 +24,7 @@
   // Set context during initialization
   setPaginationContext(ctx);
 
-  const paginationCls = $derived(pagination({ table, size, class: clsx(theme) }));
+  const paginationCls = $derived(pagination({ table, size, class: clsx(getTheme("pagination")) }));
 </script>
 
 <nav aria-label={ariaLabel}>

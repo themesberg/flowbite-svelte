@@ -10,8 +10,6 @@
 
   let { image, transition, fit, class: className, ...restProps }: SlideProps = $props();
 
-  const theme = getTheme("slide");
-
   let transitionSlideIn = $derived({
     x: _state?.forward ? "100%" : "-100%",
     opacity: 1,
@@ -28,7 +26,7 @@
     duration: _state?.slideDuration ?? 1000
   });
 
-  let imgClass = $derived(slide({ fit, class: clsx(theme, className) }));
+  let imgClass = $derived(slide({ fit, class: clsx(getTheme("slide"), className) }));
 </script>
 
 {#if transition}
