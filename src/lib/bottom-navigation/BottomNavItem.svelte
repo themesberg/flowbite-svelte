@@ -18,7 +18,7 @@
   const styling = $derived(classes ?? { span: spanClass });
 
   // Theme context
-  const theme = getTheme("bottomNavItem");
+  const theme = $derived(getTheme("bottomNavItem"));
 
   const context = getBottomNavContext();
 

@@ -8,7 +8,7 @@
   let { children, indicator, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: AvatarProps = $props();
 
   // Theme context
-  const theme = getTheme("avatar");
+  const theme = $derived(getTheme("avatar"));
 
   let dotProps = $derived(dot ? { placement: "top-right" as const, color: "gray" as const, size: "lg" as const, ...dot } : undefined);
 

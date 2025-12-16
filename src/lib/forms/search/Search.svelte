@@ -32,7 +32,7 @@
 
   const styling = $derived(classes ?? { input: inputClass, svg: clearableSvgClass, close: clearableClass });
 
-  const theme = getTheme("search");
+  const theme = $derived(getTheme("search"));
 
   const { base, content, icon, close, input: inputCls, left } = $derived(search({ size }));
 

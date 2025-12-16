@@ -6,7 +6,7 @@
 
   let { selected, class: className, ...restProps }: ThumbnailProps = $props();
 
-  const theme = getTheme("thumbnail");
+  const theme = $derived(getTheme("thumbnail"));
 </script>
 
 <img {...restProps} class={thumbnail({ selected, class: clsx(theme, className) })} />

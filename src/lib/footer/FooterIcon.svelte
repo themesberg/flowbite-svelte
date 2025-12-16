@@ -6,7 +6,7 @@
 
   let { children, href, ariaLabel, class: className, ...restProps }: FooterIconProps = $props();
 
-  const theme = getTheme("footerIcon");
+  const theme = $derived(getTheme("footerIcon"));
 </script>
 
 {#if href}

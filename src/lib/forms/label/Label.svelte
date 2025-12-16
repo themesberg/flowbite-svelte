@@ -6,7 +6,7 @@
 
   let { children, color = "gray", show = true, class: className, ...restProps }: LabelProps = $props();
 
-  const theme = getTheme("label");
+  const theme = $derived(getTheme("label"));
 
   let base = $derived(label({ color, class: clsx(theme, className) }));
 </script>

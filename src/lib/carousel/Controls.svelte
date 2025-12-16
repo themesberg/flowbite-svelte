@@ -7,7 +7,7 @@
 
   let { children, class: className, ...restProps }: ControlsProps = $props();
 
-  const theme = getTheme("controlButton");
+  const theme = $derived(getTheme("controlButton"));
 
   const _state = getCarouselContext();
 

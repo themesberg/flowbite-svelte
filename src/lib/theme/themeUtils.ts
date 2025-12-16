@@ -4,8 +4,12 @@ import { getThemeContext } from "$lib/context";
 import { DEV } from "esm-env";
 
 export function getTheme<K extends keyof ThemeConfig>(componentKey: K) {
-  const theme = getThemeContext();
-  return theme?.[componentKey];
+  const themeState = getThemeContext();
+
+  const theme = themeState && "value" in themeState ? themeState.value : themeState;
+
+  const finalTheme = theme as ThemeConfig | undefined;
+  return finalTheme?.[componentKey];
 }
 
 type Slots<T extends { slots: Record<string, unknown> }> = Omit<T["slots"], "base">;

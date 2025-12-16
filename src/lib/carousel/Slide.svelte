@@ -10,7 +10,7 @@
 
   let { image, transition, fit, class: className, ...restProps }: SlideProps = $props();
 
-  const theme = getTheme("slide");
+  const theme = $derived(getTheme("slide"));
 
   let transitionSlideIn = $derived({
     x: _state?.forward ? "100%" : "-100%",

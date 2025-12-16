@@ -64,7 +64,7 @@
   });
   // end
 
-  const theme = getTheme("drawer");
+  const theme = $derived(getTheme("drawer"));
 
   let shifted = $state(true);
 

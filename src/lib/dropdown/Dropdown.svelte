@@ -9,7 +9,7 @@
 
   let { children, simple = false, placement = "bottom", offset = 2, class: className, activeUrl = "", isOpen = $bindable(false), onclose, ...restProps }: DropdownProps = $props();
 
-  const theme = getTheme("dropdown");
+  const theme = $derived(getTheme("dropdown"));
 
   const base = $derived(dropdown({ class: clsx(theme, className) }));
 

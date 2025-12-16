@@ -15,7 +15,7 @@
 
   const styling = $derived(classes ?? { list: olClass });
 
-  const theme = getTheme("breadcrumb");
+  const theme = $derived(getTheme("breadcrumb"));
 
   const { base, list } = $derived(breadcrumb({ solid }));
   let classNav = $derived(base({ class: clsx(theme?.base, className) }));

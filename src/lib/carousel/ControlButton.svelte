@@ -8,7 +8,7 @@
 
   const { base, span } = $derived(controlButton({ forward }));
 
-  const theme = getTheme("controlButton");
+  const theme = $derived(getTheme("controlButton"));
 </script>
 
 <button type="button" class={base({ class: clsx(className, theme) })} {...restProps}>

@@ -53,7 +53,7 @@
 
   const styling = $derived(classes ?? { left: leftClass, right: rightClass, div: divClass, svg: clearableSvgClass, close: clearableClass, combo: comboClass, comboItem: comboItemClass });
 
-  const theme = getTheme("input");
+  const theme = $derived(getTheme("input"));
 
   // onSelect is a custom combobox selection handler that takes a string
   // standard DOM events, onInput, onFocus, onBlur, onKeydown will be deprecated in the next minor version

@@ -16,7 +16,7 @@
 
   const styling = $derived(classes ?? { active: activeClass, li: liClass });
 
-  const theme = getTheme("dropdownItem");
+  const theme = $derived(getTheme("dropdownItem"));
 
   const ctx = getDropdownContext();
 

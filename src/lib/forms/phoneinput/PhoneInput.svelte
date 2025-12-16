@@ -16,7 +16,7 @@
     ...restProps
   }: PhoneInputProps = $props();
 
-  const theme = getTheme("phoneInput");
+  const theme = $derived(getTheme("phoneInput"));
 
   const { div, svg, input, span, floatingInput, label } = $derived(phoneInput({ phoneType, phoneIcon }));
 </script>

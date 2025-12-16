@@ -41,7 +41,7 @@
 
   const styling = $derived(classes ?? { input: inputClass, label: labelClass, svg: clearableSvgClass, close: clearableClass, combo: comboClass });
 
-  const theme = getTheme("floatingLabelInput");
+  const theme = $derived(getTheme("floatingLabelInput"));
 
   const { base, input, label, close, combo } = $derived(floatingLabelInput({ variant, size, color }));
 

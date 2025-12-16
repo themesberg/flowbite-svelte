@@ -16,7 +16,7 @@
   // link, bySpan
   const styling = $derived(classes ?? { link: aClass });
 
-  const theme = getTheme("footerLink");
+  const theme = $derived(getTheme("footerLink"));
 
   const { base, link } = footerLink();
 </script>

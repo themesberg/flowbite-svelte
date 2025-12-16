@@ -45,7 +45,7 @@
     inputProps = {}
   }: DatepickerProps = $props();
 
-  const theme = getTheme("datepicker");
+  const theme = $derived(getTheme("datepicker"));
 
   // If translationLocale is not explicitly provided, it will default to the value of locale. This ensures reactivity as both are directly exposed as props.
   const finalTranslationLocale = $derived(translationLocale ?? locale);

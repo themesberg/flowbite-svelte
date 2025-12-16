@@ -50,7 +50,7 @@
   const useTransition = $derived(transitionType === "none" ? false : ctxTransitionType === "none" ? false : true);
 
   // Theme context
-  const theme = getTheme("accordionItem");
+  const theme = $derived(getTheme("accordionItem"));
 
   // single selection
   const self = Symbol("accordion-item");

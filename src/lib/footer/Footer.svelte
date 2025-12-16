@@ -6,7 +6,7 @@
 
   let { children, footerType = "default", class: className, ...restProps }: FooterProps = $props();
 
-  const theme = getTheme("footer");
+  const theme = $derived(getTheme("footer"));
 
   const footerCls = $derived(footer({ footerType, class: clsx(theme, className) }));
 </script>

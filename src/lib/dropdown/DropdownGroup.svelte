@@ -6,7 +6,7 @@
 
   let { children, class: className, ...restProps }: DropdownGroupProps = $props();
 
-  const theme = getTheme("dropdownGroup");
+  const theme = $derived(getTheme("dropdownGroup"));
 </script>
 
 <ul {...restProps} class={dropdownGroup({ class: clsx(theme, className) })}>

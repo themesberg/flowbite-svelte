@@ -9,7 +9,7 @@
 
   let { children, files = $bindable<FileList | null>(), class: className, onDrop, onDragOver, onChange, ...restProps }: DropzoneProps = $props();
 
-  const theme = getTheme("dropzone");
+  const theme = $derived(getTheme("dropzone"));
 
   let inputElement: HTMLInputElement;
 

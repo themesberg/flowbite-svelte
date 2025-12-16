@@ -6,7 +6,7 @@
 
   let { value = $bindable(), appearance = "none", color = "blue", size = "md", inputClass, class: className, ...restProps }: RangeProps = $props();
 
-  const theme = getTheme("range");
+  const theme = $derived(getTheme("range"));
   // remove inputClass in next major version
   const inputCls = $derived(range({ appearance, color, size, class: clsx(theme, inputClass, className) }));
 </script>

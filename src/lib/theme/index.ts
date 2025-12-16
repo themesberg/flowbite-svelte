@@ -1,4 +1,3 @@
-// export {getTheme} from './themeUtils'
 import type { ClassValue } from "clsx";
 import * as themes from "./themes";
 export { default as ThemeProvider } from "./ThemeProvider.svelte";

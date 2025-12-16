@@ -17,7 +17,7 @@
     { ulClass: "class", contentClass: "content" }
   );
 
-  const theme = getTheme("tabs");
+  const theme = $derived(getTheme("tabs"));
   const styling = $derived(classes ?? { content: contentClass });
   const { base, content, divider: dividerClass } = $derived(tabs({ tabStyle, hasDivider: divider }));
 

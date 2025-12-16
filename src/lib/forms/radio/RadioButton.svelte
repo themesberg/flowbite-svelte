@@ -7,7 +7,7 @@
 
   let { children, group = $bindable<T>(), value = $bindable<T>(), inline, pill, outline, size, color, shadow, checkedClass, class: className, ...restProps }: RadioButtonProps<T> = $props();
 
-  const theme = getTheme("radioButton");
+  const theme = $derived(getTheme("radioButton"));
 
   let isChecked = $derived(value == group);
   let base = $derived(radioButton({ inline, class: clsx(isChecked && checkedClass, theme, className) }));

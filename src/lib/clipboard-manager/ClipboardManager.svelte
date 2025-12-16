@@ -30,7 +30,7 @@
     detectSensitiveData
   }: ClipboardManagerProps = $props();
 
-  const theme = getTheme("clipboardManager");
+  const theme = $derived(getTheme("clipboardManager"));
 
   const isModal = $derived(open !== undefined);
 

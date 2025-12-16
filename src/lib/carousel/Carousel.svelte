@@ -39,7 +39,7 @@
   const styling = $derived(classes ?? { slide: imgClass });
 
   // Theme context
-  const theme = getTheme("carousel");
+  const theme = $derived(getTheme("carousel"));
 
   let { base, slide: slideCls } = $derived(carousel());
 

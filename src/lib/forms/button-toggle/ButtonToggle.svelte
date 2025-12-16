@@ -19,7 +19,7 @@
   // button(className), content, text, icon
   const styling = $derived(classes ?? { icon: iconClass, text: txtClass, content: contentClass });
 
-  const theme = getTheme("buttonToggle");
+  const theme = $derived(getTheme("buttonToggle"));
 
   // Get context - it will be undefined if used outside ButtonToggleGroup
   const ctx = getButtonToggleContext();

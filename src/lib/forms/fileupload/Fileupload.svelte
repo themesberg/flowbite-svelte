@@ -30,7 +30,7 @@
 
   const styling = $derived(classes ?? { wrapper: wrapperClass, close: clearableClass, svg: clearableSvgClass });
 
-  const theme = getTheme("fileupload");
+  const theme = $derived(getTheme("fileupload"));
 
   const { base, wrapper, close } = fileupload();
 

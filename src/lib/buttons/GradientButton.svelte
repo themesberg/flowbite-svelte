@@ -10,7 +10,7 @@
 
   let { children, outline, pill, color = "blue", shadow, class: className, href, disabled, size, btnClass, ...restProps }: GradientButtonProps = $props();
 
-  const theme = getTheme("gradientButton");
+  const theme = $derived(getTheme("gradientButton"));
 
   const { base, outlineWrapper } = $derived(gradientButton({ color, outline, pill, shadow, disabled, size, group: !!group }));
 </script>

@@ -39,7 +39,7 @@
 
   const styling = $derived(classes ?? { dropdown: dropdownClass });
 
-  const theme = getTheme("multiSelect");
+  const theme = $derived(getTheme("multiSelect"));
 
   let selectItems = $derived(items.filter((x) => value.includes(x.value)));
   let show: boolean = $state(false);

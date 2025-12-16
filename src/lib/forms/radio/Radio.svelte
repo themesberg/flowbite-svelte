@@ -31,7 +31,7 @@
 
   const styling = $derived(classes ?? { label: labelClass });
 
-  const theme = getTheme("radio");
+  const theme = $derived(getTheme("radio"));
 
   const { input, label } = $derived(radio({ color, tinted: !!getContext("background"), custom, inline }));
 </script>
