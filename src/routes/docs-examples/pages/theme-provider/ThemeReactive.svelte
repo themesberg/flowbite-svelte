@@ -29,6 +29,12 @@
   const currentTheme = $derived(themes[selectedColor]);
 
   const colors: ThemeColor[] = ["purple", "green", "blue", "red"];
+  const colorClasses: Record<ThemeColor, string> = {
+    purple: "bg-purple-700",
+    green: "bg-green-700",
+    blue: "bg-blue-700",
+    red: "bg-red-700"
+  };
 </script>
 
 <div class="mx-auto max-w-4xl p-8">
@@ -49,7 +55,7 @@
       <div class="flex flex-wrap gap-2">
         {#each colors as color}
           <button
-            class="rounded px-4 py-2 capitalize transition-colors {selectedColor === color ? `bg-${color}-700 text-white` : 'bg-gray-200 hover:bg-gray-300'}"
+            class="rounded px-4 py-2 capitalize transition-colors {selectedColor === color ? `${colorClasses[color]} text-white` : 'bg-gray-200 hover:bg-gray-300'}"
             onclick={() => (selectedColor = color)}
           >
             {color}

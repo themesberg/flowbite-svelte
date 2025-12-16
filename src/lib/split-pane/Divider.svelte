@@ -7,7 +7,7 @@
 
   let { direction, index, onMouseDown, onTouchStart, onKeyDown, isDragging, currentSize, class: className = "" }: DividerProps = $props();
 
-  const themePane = $derived(getTheme("divider"));
+  const themeDivider = $derived(getTheme("divider"));
   const themeDividerHitArea = $derived(getTheme("dividerHitArea"));
 
   const isHorizontal = $derived(direction === "horizontal");
@@ -25,7 +25,7 @@
   aria-valuemin="0"
   aria-valuemax="100"
   aria-valuetext={`${roundedSize} percent`}
-  class={divider({ direction, isDragging, class: clsx(themePane, className) })}
+  class={divider({ direction, isDragging, class: clsx(themeDivider, className) })}
   onmousedown={(e) => onMouseDown(e, index)}
   use:nonPassiveTouch={(e) => onTouchStart(e, index)}
   onkeydown={(e) => onKeyDown(e, index)}
