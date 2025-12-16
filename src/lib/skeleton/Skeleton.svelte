@@ -6,35 +6,40 @@
 
   let { size = "sm", class: className, classes, ...restProps }: SkeletonProps = $props();
 
-  const theme = getTheme("skeleton");
-
   const { wrapper, line } = $derived(skeleton({ size }));
+  let wrapperCls = $derived(wrapper({ class: clsx(getTheme("skeleton")?.wrapper, className) }));
+  let lineCls = $derived(
+    line({
+      class: clsx("mb-4 h-2.5 w-1/2", getTheme("skeleton")?.line, classes?.line)
+    })
+  );
+  let lineCls2 = $derived(
+    line({
+      class: clsx("mb-2.5 h-2 w-9/12", getTheme("skeleton")?.line, classes?.line)
+    })
+  );
+  let lineCls3 = $derived(line({ class: clsx("mb-2.5 h-2", getTheme("skeleton")?.line, classes?.line) }));
+  let lineCls4 = $derived(
+    line({
+      class: clsx("mb-2.5 h-2 w-10/12", getTheme("skeleton")?.line, classes?.line)
+    })
+  );
+  let lineCls5 = $derived(
+    line({
+      class: clsx("mb-2.5 h-2 w-11/12", getTheme("skeleton")?.line, classes?.line)
+    })
+  );
+  let lineCls6 = $derived(line({ class: clsx("h-2 w-9/12", getTheme("skeleton")?.line, classes?.line) }));
 </script>
 
-<div role="status" {...restProps} class={wrapper({ class: clsx(theme?.wrapper, className) })}>
-  <div
-    class={line({
-      class: clsx("mb-4 h-2.5 w-1/2", theme?.line, classes?.line)
-    })}
-  ></div>
-  <div
-    class={line({
-      class: clsx("mb-2.5 h-2 w-9/12", theme?.line, classes?.line)
-    })}
-  ></div>
-  <div class={line({ class: clsx("mb-2.5 h-2", theme?.line, classes?.line) })}></div>
-  <div class={line({ class: clsx("mb-2.5 h-2", theme?.line, classes?.line) })}></div>
-  <div
-    class={line({
-      class: clsx("mb-2.5 h-2 w-10/12", theme?.line, classes?.line)
-    })}
-  ></div>
-  <div
-    class={line({
-      class: clsx("mb-2.5 h-2 w-11/12", theme?.line, classes?.line)
-    })}
-  ></div>
-  <div class={line({ class: clsx("h-2 w-9/12", theme?.line, classes?.line) })}></div>
+<div role="status" {...restProps} class={wrapperCls}>
+  <div class={lineCls}></div>
+  <div class={lineCls2}></div>
+  <div class={lineCls3}></div>
+  <div class={lineCls3}></div>
+  <div class={lineCls4}></div>
+  <div class={lineCls5}></div>
+  <div class={lineCls6}></div>
   <span class="sr-only">Loading...</span>
 </div>
 

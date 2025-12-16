@@ -46,7 +46,7 @@
   const progressClsFull = $derived(progressCls({ class: clsx(getTheme("progressbar")?.progressCls, classes?.progressCls) }));
   const baseCls = $derived(base({ class: clsx(size, getTheme("progressbar")?.base, className) }));
   const labelInsideClsFull = $derived(labelInsideCls({ class: clsx(size, getTheme("progressbar")?.label, classes?.label) }));
-  const insideCls = $derived(inside({ class: clsx(size, getTheme("progressbar")?.inside, classes?.label) }));
+  const insideCls = $derived(inside({ class: clsx(size, getTheme("progressbar")?.inside, classes?.inside) }));
 
   $effect(() => {
     _progress.set(Number(progress));

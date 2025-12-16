@@ -277,7 +277,6 @@
       addToClipboard();
     }
   };
-
 </script>
 
 {#snippet inputArea()}
