@@ -7,7 +7,7 @@
 
   let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-15 w-15", ...restProps }: ListgroupItemProps = $props();
 
-  const theme = getTheme("listGroupItem");
+  const theme = $derived(getTheme("listGroupItem"));
 
   const listGroupCtx = getListGroupContext();
   const finalActive = $derived(active ?? listGroupCtx?.active);

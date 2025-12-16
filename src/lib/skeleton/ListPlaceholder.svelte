@@ -6,7 +6,7 @@
 
   let { itemNumber = 5, size = "md", rounded, class: className, classes, ...restProps }: ListPlaceholderProps = $props();
 
-  const theme = getTheme("listPlaceholder");
+  const theme = $derived(getTheme("listPlaceholder"));
 
   const { base, item, content, title, subTitle, extra } = $derived(listPlaceholder({ size, rounded }));
 

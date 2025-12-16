@@ -7,8 +7,8 @@
 
   let { direction, index, onMouseDown, onTouchStart, onKeyDown, isDragging, currentSize, class: className = "" }: DividerProps = $props();
 
-  const themePane = getTheme("divider");
-  const themeDividerHitArea = getTheme("dividerHitArea");
+  const themePane = $derived(getTheme("divider"));
+  const themeDividerHitArea = $derived(getTheme("dividerHitArea"));
 
   const isHorizontal = $derived(direction === "horizontal");
   const roundedSize = $derived(Math.round(currentSize));

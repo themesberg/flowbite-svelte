@@ -49,7 +49,7 @@
     }
   );
 
-  const theme = getTheme("sidebar");
+  const theme = $derived(getTheme("sidebar"));
 
   const breakpointValues = {
     sm: 640,

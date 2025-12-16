@@ -19,7 +19,7 @@
     contained = false
   }: VirtualMasonryProps<T> = $props();
 
-  const theme = getTheme("virtualMasonry");
+  const theme = $derived(getTheme("virtualMasonry"));
 
   let container: HTMLDivElement | undefined;
   let containerWidth = $state(0);

@@ -19,7 +19,7 @@
 
   const styling = $derived(classes ?? { menu: menuClass });
 
-  const theme = getTheme("navbarHamburger");
+  const theme = $derived(getTheme("navbarHamburger"));
   const navState = getNavbarStateContext();
   const navBreakpoint = getNavbarBreakpointContext();
   const { base, menu } = navbarHamburger({ breakpoint: navBreakpoint ?? "md" });

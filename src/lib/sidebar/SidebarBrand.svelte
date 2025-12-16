@@ -20,7 +20,7 @@
     }
   );
 
-  const theme = getTheme("sidebarBrand");
+  const theme = $derived(getTheme("sidebarBrand"));
 
   const { base, img, span } = $derived(sidebarBrand());
 </script>

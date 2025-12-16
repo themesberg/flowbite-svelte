@@ -6,7 +6,7 @@
 
   let { children, class: className, border, italic = true, bg, alignment = "left", size = "lg", ...restProps }: BlockquoteProps = $props();
 
-  const theme = getTheme("blockquote");
+  const theme = $derived(getTheme("blockquote"));
 
   let blockquoteCls = $derived(
     blockquote({

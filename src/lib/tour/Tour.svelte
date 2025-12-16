@@ -23,7 +23,7 @@
     ...restProps
   }: TourProps = $props();
 
-  const theme = getTheme("tour");
+  const theme = $derived(getTheme("tour"));
 
   let highlightStyle = $state<string>("");
   let tooltipStyle = $state<string>("");

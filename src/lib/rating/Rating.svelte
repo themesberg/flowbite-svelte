@@ -16,7 +16,7 @@
 
   const styling = $derived(classes ?? { p: pClass });
 
-  const theme = getTheme("rating");
+  const theme = $derived(getTheme("rating"));
 
   const { base, p } = $derived(ratingVariants());
   const ratingGroupId = crypto.randomUUID();

@@ -21,7 +21,7 @@
     ...restProps
   }: ProgressbarProps = $props();
 
-  const theme = getTheme("progressbar");
+  const theme = $derived(getTheme("progressbar"));
 
   let _progress = $derived(
     new Tween(0, {

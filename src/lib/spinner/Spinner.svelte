@@ -6,7 +6,7 @@
 
   let { type = "default", color = "primary", size = "8", class: className, currentFill = "inherit", currentColor = "currentColor", ...restProps }: SpinnerProps = $props();
 
-  const theme = getTheme("spinner");
+  const theme = $derived(getTheme("spinner"));
   let spinnerClass = $derived(spinner({ type, color, size, class: clsx(theme, className) }));
 </script>
 

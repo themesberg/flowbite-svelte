@@ -7,7 +7,7 @@
 
   let { children, size, class: className, href, active, ...restProps }: PaginationItemProps = $props();
 
-  const theme = getTheme("paginationItem");
+  const theme = $derived(getTheme("paginationItem"));
 
   // Get context - it will be undefined if used outside Pagination
   const ctx = getPaginationContext();

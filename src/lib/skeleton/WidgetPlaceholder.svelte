@@ -6,7 +6,7 @@
 
   let { class: className, classes }: WidgetPlaceholderProps = $props();
 
-  const theme = getTheme("widgetPlaceholder");
+  const theme = $derived(getTheme("widgetPlaceholder"));
 
   const { base, wrapper, vLine, hLine } = widgetPlaceholder({});
 </script>

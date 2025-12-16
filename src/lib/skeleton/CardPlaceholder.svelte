@@ -6,7 +6,7 @@
 
   let { size = "sm", class: className, classes, ...restProps }: CardPlaceholderProps = $props();
 
-  const theme = getTheme("cardPlaceholder");
+  const theme = $derived(getTheme("cardPlaceholder"));
 
   const { base, area, icon, line, footer } = $derived(cardPlaceholder({ size }));
 </script>

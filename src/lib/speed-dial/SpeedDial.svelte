@@ -33,7 +33,7 @@
     }
   );
 
-  const theme = getTheme("speedDial");
+  const theme = $derived(getTheme("speedDial"));
 
   $effect(() => {
     setContext<SpeedCtxType>("speed-dial", { pill, tooltip, textOutside });

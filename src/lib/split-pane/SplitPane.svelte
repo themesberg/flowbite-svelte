@@ -40,7 +40,7 @@
       transition = transitionProp;
     }
   });
-  const theme = getTheme("splitpane");
+  const theme = $derived(getTheme("splitpane"));
 
   let isDragging = $state(false);
   let startPos = $state(0);

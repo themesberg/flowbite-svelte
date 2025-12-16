@@ -40,7 +40,7 @@
 
   const styling = $derived(classes ?? { prev: prevClass, next: nextClass, span: spanClass, tableDiv: tableDivClass });
 
-  const theme = getTheme("paginationNav");
+  const theme = $derived(getTheme("paginationNav"));
 
   // Create context object
   const ctx: PaginationContextType = {

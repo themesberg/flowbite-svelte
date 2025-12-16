@@ -15,7 +15,7 @@
 
   const styling = $derived(classes ?? { image: imgClass });
 
-  const theme = getTheme("gallery");
+  const theme = $derived(getTheme("gallery"));
 
   function init(node: HTMLElement) {
     if (getComputedStyle(node).gap === "normal") node.style.gap = "inherit";

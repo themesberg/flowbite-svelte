@@ -6,7 +6,7 @@
 
   let { children, class: className, ...restProps }: SecondaryProps = $props();
 
-  const theme = getTheme("secondary");
+  const theme = $derived(getTheme("secondary"));
 </script>
 
 <small {...restProps} class={secondary({ class: clsx(theme, className) })}>

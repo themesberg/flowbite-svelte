@@ -20,7 +20,7 @@
     }
   );
 
-  const theme = getTheme("sidebarCta");
+  const theme = $derived(getTheme("sidebarCta"));
 
   const { base, div, span } = $derived(sidebarCta());
 </script>

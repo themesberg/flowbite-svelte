@@ -20,7 +20,7 @@
     ...restProps
   }: StepIndicatorProps = $props();
 
-  const theme = getTheme("stepIndicator");
+  const theme = $derived(getTheme("stepIndicator"));
 
   const { base, label, container, wrapper, step: stepCls, glow: stepGlow, incomplete } = $derived(stepIndicator({ size, color, glow, hideLabel }));
 

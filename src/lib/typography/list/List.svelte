@@ -7,7 +7,7 @@
 
   let { children, tag = "ul", isContenteditable = false, position = "inside", ctxClass, class: className, ...restProps }: ListProps = $props();
 
-  const theme = getTheme("list");
+  const theme = $derived(getTheme("list"));
 
   let contextClass = $derived(ctxClass || "");
 

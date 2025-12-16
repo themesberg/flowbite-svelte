@@ -21,7 +21,7 @@
       div: divClass
     }
   );
-  const theme = getTheme("table");
+  const theme = $derived(getTheme("table"));
 
   const { div, table } = $derived(tableCls({ color, shadow }));
 

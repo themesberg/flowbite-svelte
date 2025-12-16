@@ -21,7 +21,7 @@
     caption: captionClass || classes?.caption
   });
 
-  const theme = getTheme("img");
+  const theme = $derived(getTheme("img"));
 
   let { base, figure, caption: figureCaption } = $derived(img({ size, effect: imgEffect, align }));
 

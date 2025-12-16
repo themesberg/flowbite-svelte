@@ -8,7 +8,7 @@
 
   let { children, titleSlot, open = $bindable(false), title = "Tab title", key, activeClass, inactiveClass, class: className, classes, disabled, tabStyle, ...restProps }: TabitemProps = $props();
 
-  const theme = getTheme("tabItem");
+  const theme = $derived(getTheme("tabItem"));
   const tabsCtx = getTabsContext();
 
   if (!tabsCtx) {

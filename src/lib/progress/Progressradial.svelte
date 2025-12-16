@@ -24,7 +24,7 @@
     ...restProps
   }: ProgressradialProps = $props();
 
-  const theme = getTheme("progressradial");
+  const theme = $derived(getTheme("progressradial"));
 
   const _progress = $derived(
     new Tween(0, {

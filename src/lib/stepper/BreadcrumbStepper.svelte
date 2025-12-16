@@ -14,7 +14,7 @@
     if (current > steps.length && steps.length > 0) current = steps.length;
   });
 
-  const theme = getTheme("breadcrumbStepper");
+  const theme = $derived(getTheme("breadcrumbStepper"));
 
   const { base, item, indicator } = $derived(breadcrumbStepper());
 

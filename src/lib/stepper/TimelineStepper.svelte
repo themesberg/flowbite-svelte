@@ -15,7 +15,7 @@
     if (current > steps.length && steps.length > 0) current = steps.length;
   });
 
-  const theme = getTheme("timelineStepper");
+  const theme = $derived(getTheme("timelineStepper"));
 
   const { base, item, circle } = $derived(timelineStepper());
 

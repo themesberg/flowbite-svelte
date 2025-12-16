@@ -7,7 +7,7 @@
 
   let { children, order = "default", class: className, ...restProps }: TimelineProps = $props();
 
-  const theme = getTheme("timeline");
+  const theme = $derived(getTheme("timeline"));
 
   $effect(() => {
     setContext<TimelineVariants["order"]>("order", order);

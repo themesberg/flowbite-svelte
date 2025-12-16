@@ -6,7 +6,7 @@
 
   let { children, fluid, class: className, ...restProps }: NavContainerProps = $props();
 
-  const theme = getTheme("navbarContainer");
+  const theme = $derived(getTheme("navbarContainer"));
 </script>
 
 <div {...restProps} class={navbarContainer({ fluid, class: clsx(theme, className) })}>

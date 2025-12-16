@@ -46,7 +46,7 @@
     }
   );
 
-  const theme = getTheme("tableSearch");
+  const theme = $derived(getTheme("tableSearch"));
 
   const themeColor = $derived(color === "custom" ? "default" : (color as "default" | "blue" | "green" | "red" | "yellow" | "purple" | "indigo" | "pink"));
 

@@ -7,7 +7,7 @@
 
   let { children, spacing, padding, position = "middle", class: className, ...restProps }: ToolbarGroupProps = $props();
 
-  const theme = getTheme("toolbarGroup");
+  const theme = $derived(getTheme("toolbarGroup"));
 
   const groupCls = $derived(toolbarGroup({ spacing, padding, position, class: clsx(theme, className) }));
 

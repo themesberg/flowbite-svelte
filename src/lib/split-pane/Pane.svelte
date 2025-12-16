@@ -8,7 +8,7 @@
 
   let { children, class: className = "", style = "" }: PaneProps = $props();
 
-  const theme = getTheme("pane");
+  const theme = $derived(getTheme("pane"));
 
   const context = getSplitPaneContext();
   const paneIndex = context ? context.registerPane() : 0;

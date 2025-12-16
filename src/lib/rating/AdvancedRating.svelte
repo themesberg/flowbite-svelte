@@ -22,7 +22,7 @@
     }
   );
 
-  const theme = getTheme("advancedRating");
+  const theme = $derived(getTheme("advancedRating"));
 
   const { base, span, div2, div3, span2 } = $derived(advancedRating());
 </script>

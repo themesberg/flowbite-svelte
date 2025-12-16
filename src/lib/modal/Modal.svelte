@@ -39,7 +39,7 @@
 
   const styling = $derived(classes ?? { header: headerClass, body: bodyClass, footer: footerClass, close: closeBtnClass });
 
-  const theme = getTheme("modal");
+  const theme = $derived(getTheme("modal"));
 
   const paramsDefault = { duration: 100, easing: sineIn };
   const paramsOptions = $derived(transitionParams ?? paramsDefault);

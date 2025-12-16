@@ -13,7 +13,7 @@
     if (current > steps.length && steps.length > 0) current = steps.length;
   });
 
-  const theme = getTheme("detailedStepper");
+  const theme = $derived(getTheme("detailedStepper"));
 
   // Override the theme to make current step also highlighted
   const stepperTheme = $derived(() => {

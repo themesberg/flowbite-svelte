@@ -23,7 +23,7 @@
     }
   );
 
-  const theme = getTheme("hr");
+  const theme = $derived(getTheme("hr"));
   const bg = $derived(classes?.bg ?? "bg-gray-200 dark:bg-gray-700");
 
   // for backward compatibility and ...restPorps will be removed and use only ..divProps and ...hrProps in future

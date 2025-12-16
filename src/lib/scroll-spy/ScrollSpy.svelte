@@ -21,7 +21,7 @@
   }: ScrollSpyProps = $props();
 
   const browser = typeof window !== "undefined";
-  const styles = getTheme("scrollspy");
+  const styles = $derived(getTheme("scrollspy"));
   const INTERSECTION_RATIO_EPSILON = 0.01;
   // Bottom margin determines how far up the viewport a section must scroll before becoming inactive
   const ROOT_MARGIN_BOTTOM = "-40%";

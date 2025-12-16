@@ -6,7 +6,7 @@
 
   let { children, tag, class: className, ...restProps }: DescriptionListProps = $props();
 
-  const theme = getTheme("descriptionList");
+  const theme = $derived(getTheme("descriptionList"));
 
   let descCls = $derived(
     descriptionList({

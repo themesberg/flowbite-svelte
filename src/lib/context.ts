@@ -74,8 +74,9 @@ export { getListContext, setListContext };
 const [getToolbarContext, setToolbarContext] = createSafeContext<ToolbarContextType>();
 export { getToolbarContext, setToolbarContext };
 
-// Theme
-const [getThemeContext, setThemeContext] = createSafeContext<ThemeConfig>();
+// Theme - use a wrapper type that supports reactive access
+type ThemeContextValue = ThemeConfig | { value?: ThemeConfig };
+const [getThemeContext, setThemeContext] = createSafeContext<ThemeContextValue>();
 export { getThemeContext, setThemeContext };
 
 // ListGroup

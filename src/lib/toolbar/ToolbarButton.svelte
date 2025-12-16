@@ -6,7 +6,7 @@
 
   let { children, color, name, "aria-label": ariaLabel, size, class: className, ...restProps }: ToolbarButtonProps = $props();
 
-  const theme = getTheme("toolbarButton");
+  const theme = $derived(getTheme("toolbarButton"));
 
   const buttonCls = $derived(
     toolbarButton({

@@ -42,7 +42,7 @@
     }
   );
 
-  const theme = getTheme("sidebarDropdownWrapper");
+  const theme = $derived(getTheme("sidebarDropdownWrapper"));
   const { base, btn, span, svg, ul } = sidebarDropdownWrapper();
   const isControlled = $derived(isOpen !== undefined);
 

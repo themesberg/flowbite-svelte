@@ -49,7 +49,7 @@
     }
   );
 
-  const theme = getTheme("textarea");
+  const theme = $derived(getTheme("textarea"));
 
   let hasHeader = $derived(!!header);
   let hasFooter = $derived(!!footer);

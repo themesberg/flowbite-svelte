@@ -8,7 +8,7 @@
 
   let { children, headerSlot, color, striped, border, class: className, headItems, defaultRow = true, ...restProps }: TableHeadProps = $props();
 
-  const theme = getTheme("tableHead");
+  const theme = $derived(getTheme("tableHead"));
 
   const tableCtx = getTableContext();
   // for reactivity with svelte context

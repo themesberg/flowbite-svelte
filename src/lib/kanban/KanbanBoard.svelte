@@ -15,7 +15,7 @@
     ...restProps
   }: KanbanBoardProps = $props();
 
-  const theme = getTheme("kanbanBoard");
+  const theme = $derived(getTheme("kanbanBoard"));
 
   // Changed from KanbanCard to KanbanCardType
   let draggedCard = $state<KanbanCardType | null>(null);

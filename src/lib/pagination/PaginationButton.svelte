@@ -7,7 +7,7 @@
 
   let { children, size, onclick, disabled = false, class: className, href, active = false, ...restProps }: PaginationButtonProps = $props();
 
-  const theme = getTheme("paginationButton");
+  const theme = $derived(getTheme("paginationButton"));
 
   // Get context - it will be undefined if used outside Pagination
   const ctx = getPaginationContext();

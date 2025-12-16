@@ -6,7 +6,7 @@
 
   let { children, class: className, colspan, onclick, ...restProps }: TableBodyCellProps = $props();
 
-  const theme = getTheme("tableBodyCell");
+  const theme = $derived(getTheme("tableBodyCell"));
 </script>
 
 <td {...restProps} class={tableBodyCell({ class: clsx(theme, className) })} colspan={colspan ?? 1}>

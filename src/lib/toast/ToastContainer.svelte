@@ -6,7 +6,7 @@
 
   let { children, position = "top-right", class: className, ...restProps }: ToastContainerProps = $props();
 
-  const theme = getTheme("toastContainer");
+  const theme = $derived(getTheme("toastContainer"));
 
   const positionClasses = {
     "top-left": "top-4 left-4",

@@ -6,7 +6,7 @@
 
   let { children, class: className, ...restProps }: ActivityProps = $props();
 
-  const theme = getTheme("activity");
+  const theme = $derived(getTheme("activity"));
 </script>
 
 <ol {...restProps} class={activity({ class: clsx(theme, className) })}>
