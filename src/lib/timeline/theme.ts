@@ -109,7 +109,7 @@ export const timelineItem = tv({
   slots: {
     base: "relative",
     div: "",
-    defaultDiv: "absolute w-2 h-2 bg-gray-200 rounded-full mt-1.5 -start-5 border border-buffer bg-gray-200",
+    defaultDiv: "absolute w-2 h-2 bg-gray-200 rounded-full mt-1.5 -start-5 border border-buffer",
     time: "",
     h3: "",
     svg: "w-4 h-4",

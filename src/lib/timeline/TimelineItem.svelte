@@ -106,7 +106,7 @@
       </div>
     {/if}
   {:else if date}
-    <div class={defaultDivCls}></div>
+    <div class={defaultDivCls} aria-hidden="true"></div>
     <time datetime={date} class={time({ class: clsx(theme?.time, styling.time) })}>
       {datePrefix}
       {formatDisplayDate(date, dateFormat)}
