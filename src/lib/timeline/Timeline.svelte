@@ -8,10 +8,8 @@
   let { children, order = "default", class: className, ...restProps }: TimelineProps = $props();
 
   const theme = $derived(getTheme("timeline"));
-
-  $effect(() => {
-    setContext<TimelineVariants["order"]>("order", order);
-  });
+  // svelte-ignore state_referenced_locally
+  setContext<TimelineVariants["order"]>("order", order);
   const olCls = $derived(timeline({ order, class: clsx(theme, className) }));
 </script>
 
@@ -23,7 +21,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1953)
+[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1811)
 ## Props
 @prop children
 @prop order = "default"

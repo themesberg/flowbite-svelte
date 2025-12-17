@@ -40,7 +40,7 @@ export const groupItem = tv({
     img: "me-3 mb-3 w-12 h-12 rounded-full sm:mb-0",
     div: "text-gray-600 dark:text-gray-400",
     title: "text-base font-normal",
-    span: "inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400",
+    span: "inline-flex items-center bg-gray-100 border border-gray-200 text-xs font-medium px-1.5 py-0.5 rounded",
     svg: "me-1 h-3 w-3"
   }
 });
@@ -109,6 +109,7 @@ export const timelineItem = tv({
   slots: {
     base: "relative",
     div: "",
+    defaultDiv: "absolute w-2 h-2 bg-gray-200 rounded-full mt-1.5 -start-5 border border-buffer",
     time: "",
     h3: "",
     svg: "w-4 h-4",

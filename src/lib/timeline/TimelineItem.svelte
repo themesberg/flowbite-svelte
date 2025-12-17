@@ -1,3 +1,4 @@
+
 <script lang="ts">
   import { getContext, untrack } from "svelte";
   import { timelineItem, type TimelineVariants } from "./theme";
@@ -15,6 +16,7 @@
     isLast = false,
     svgClass,
     liClass,
+    defaultDivClass,
     divClass,
     timeClass,
     h3Class,
@@ -46,10 +48,13 @@
     connector: connectorClass
   });
 
+
   const theme = $derived(getTheme("timelineItem"));
   let order = getContext<TimelineVariants["order"]>("order");
 
-  const { base, div, time, h3, svg, connector } = $derived(timelineItem({ order, color, isLast }));
+  const { base, div, defaultDiv, time, h3, svg, connector } = $derived(timelineItem({ order, color, isLast }));
+
+  const defaultDivCls = $derived(defaultDivClass ? defaultDivClass : defaultDiv());
 
   function formatDisplayDate(dateStr: string, format: DateFormat) {
     const date = new Date(dateStr);
@@ -101,6 +106,7 @@
       </div>
     {/if}
   {:else if date}
+    <div class={defaultDivCls} aria-hidden="true"></div>
     <time datetime={date} class={time({ class: clsx(theme?.time, styling.time) })}>
       {datePrefix}
       {formatDisplayDate(date, dateFormat)}
