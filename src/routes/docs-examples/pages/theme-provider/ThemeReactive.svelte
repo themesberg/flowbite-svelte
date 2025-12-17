@@ -35,11 +35,11 @@
     blue: "bg-blue-700",
     red: "bg-red-700"
   };
-  
+
   const widthOptions = ["w-32", "w-48", "w-64"] as const;
   const widthLabels: Record<string, string> = {
     "w-32": "Small (w-32)",
-    "w-48": "Medium (w-48)", 
+    "w-48": "Medium (w-48)",
     "w-64": "Large (w-64)"
   };
 </script>
@@ -75,10 +75,7 @@
       <p class="mb-2 text-sm font-semibold">Button Width:</p>
       <div class="flex gap-2">
         {#each widthOptions as width}
-          <button 
-            class="rounded px-4 py-2 {buttonWidth === width ? 'bg-gray-700 text-white' : 'bg-gray-200 hover:bg-gray-300'}" 
-            onclick={() => (buttonWidth = width)}
-          >
+          <button class="rounded px-4 py-2 {buttonWidth === width ? 'bg-gray-700 text-white' : 'bg-gray-200 hover:bg-gray-300'}" onclick={() => (buttonWidth = width)}>
             {widthLabels[width]}
           </button>
         {/each}
