@@ -6,7 +6,7 @@
 
   let { class: className, ...restProps }: DropdownDividerProps = $props();
 
-  const theme = getTheme("dropdownDivider");
+  const theme = $derived(getTheme("dropdownDivider"));
 </script>
 
 <div {...restProps} class={dropdownDivider({ class: clsx(theme, className) })}></div>

@@ -15,7 +15,7 @@
 
   const styling = $derived(classes ?? { image: imgClass });
 
-  const theme = getTheme("card");
+  const theme = $derived(getTheme("card"));
 
   const { base, image } = $derived(
     card({

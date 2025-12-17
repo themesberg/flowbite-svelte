@@ -6,7 +6,7 @@
 
   let { children, class: className, ...restProps }: TableHeadCellProps = $props();
 
-  const theme = getTheme("tableHeadCell");
+  const theme = $derived(getTheme("tableHeadCell"));
 </script>
 
 <th {...restProps} class={tableHeadCell({ class: clsx(theme, className) })}>

@@ -46,7 +46,7 @@
     connector: connectorClass
   });
 
-  const theme = getTheme("timelineItem");
+  const theme = $derived(getTheme("timelineItem"));
   let order = getContext<TimelineVariants["order"]>("order");
 
   const { base, div, time, h3, svg, connector } = $derived(timelineItem({ order, color, isLast }));

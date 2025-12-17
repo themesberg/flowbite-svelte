@@ -25,7 +25,7 @@
     ...restProps
   }: ButtonProps = $props();
 
-  const theme = getTheme("button");
+  const theme = $derived(getTheme("button"));
 
   let actualSize = $derived(group ? "sm" : size);
   let actualColor = $derived(color ?? (group ? (outline ? "dark" : "alternative") : "primary"));

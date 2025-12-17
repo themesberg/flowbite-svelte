@@ -16,7 +16,7 @@
   const styling = $derived(classes ?? { innerDiv: innerClass });
 
   // Theme context
-  const theme = getTheme("bottomNavHeader");
+  const theme = $derived(getTheme("bottomNavHeader"));
 
   const { innerDiv, base } = $derived(bottomNavHeader());
 </script>

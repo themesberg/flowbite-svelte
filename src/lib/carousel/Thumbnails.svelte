@@ -7,7 +7,7 @@
 
   let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass, throttleDelay = 650, class: className }: ThumbnailsProps = $props();
 
-  const theme = getTheme("thumbnails");
+  const theme = $derived(getTheme("thumbnails"));
 
   // Initialize so the first click is never throttled
   let lastClickedAt = -Infinity;

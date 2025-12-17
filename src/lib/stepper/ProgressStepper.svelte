@@ -31,7 +31,7 @@
     }
   });
 
-  const theme = getTheme("progressStepper");
+  const theme = $derived(getTheme("progressStepper"));
 
   const { base, item, circle, line, progressLine } = $derived(progressStepper());
 

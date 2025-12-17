@@ -7,7 +7,7 @@
 
   let { children, end, color, embedded, class: className, classes, ...restProps }: ToolbarProps = $props();
 
-  const theme = getTheme("toolbar");
+  const theme = $derived(getTheme("toolbar"));
 
   const context = $state({ separators: false });
 

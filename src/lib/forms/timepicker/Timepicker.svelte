@@ -40,7 +40,7 @@
     onselect
   }: TimepickerProps = $props();
 
-  const theme = getTheme("timepicker");
+  const theme = $derived(getTheme("timepicker"));
 
   // Generate theme classes
   const styles = $derived(timepicker({ type, columns, disabled }));

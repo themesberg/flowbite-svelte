@@ -6,7 +6,7 @@
 
   let { children, tag = "h1", class: className, ...restProps }: HeadingProps = $props();
 
-  const theme = getTheme("heading");
+  const theme = $derived(getTheme("heading"));
 
   let headingCls = $derived(heading({ tag, class: clsx(theme, className) }));
 </script>

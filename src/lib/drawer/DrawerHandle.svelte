@@ -9,7 +9,7 @@
 
   const ctx = getDrawerContext();
 
-  const theme = getTheme("drawerhandle");
+  const theme = $derived(getTheme("drawerhandle"));
   let { base, handle } = $derived(drawerhandle({ placement: placement ?? ctx?.placement ?? "left" }));
 </script>
 

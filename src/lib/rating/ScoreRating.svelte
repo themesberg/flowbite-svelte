@@ -6,7 +6,7 @@
 
   let { ratings, ratings2, headerLabel, classes }: ScoreRatingProps = $props();
 
-  const theme = getTheme("scoreRating");
+  const theme = $derived(getTheme("scoreRating"));
 
   const { desc1, desc2, desc3span, desc3p, link, bar } = $derived(scoreRating());
 </script>

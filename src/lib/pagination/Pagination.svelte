@@ -8,7 +8,7 @@
 
   let { pages = [], previous, next, prevContent, nextContent, table, size, ariaLabel, ...restProps }: PaginationProps = $props();
 
-  const theme = getTheme("pagination");
+  const theme = $derived(getTheme("pagination"));
 
   // Create context object
   const ctx: PaginationContextType = {

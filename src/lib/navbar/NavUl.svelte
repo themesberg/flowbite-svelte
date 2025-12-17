@@ -35,7 +35,7 @@
 
   const styling = $derived(classes ?? { ul: ulClass, active: activeClass, nonActive: nonActiveClass });
 
-  const theme = getTheme("navbarUl");
+  const theme = $derived(getTheme("navbarUl"));
 
   // Default parameters for different transitions
   const getDefaultParams = (transitionFn: typeof slide | typeof fly | typeof fade | typeof scale) => {

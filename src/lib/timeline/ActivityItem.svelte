@@ -34,7 +34,7 @@
     }
   );
 
-  const theme = getTheme("activityItem");
+  const theme = $derived(getTheme("activityItem"));
 
   const { li, span, img, outer, inner, time, title, text } = $derived(activityItem());
 </script>

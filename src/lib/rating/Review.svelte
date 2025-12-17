@@ -25,7 +25,7 @@
     }
   );
 
-  const theme = getTheme("review");
+  const theme = $derived(getTheme("review"));
 
   const { article, div, div2, div3, img, ul, li } = $derived(reviewVariants());
 </script>

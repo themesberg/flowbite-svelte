@@ -6,7 +6,7 @@
 
   let { children, aClass, spanClass, imgClass, href, src, alt, name, ...restProps }: FooterBrandProps = $props();
 
-  const theme = getTheme("footerBrand");
+  const theme = $derived(getTheme("footerBrand"));
 
   const { base, span, img } = $derived(footerBrand());
 </script>

@@ -8,7 +8,7 @@
 
   let { children, fluid, navContainerClass, class: className, closeOnClickOutside = true, breakpoint = "md", ...restProps }: NavbarProps = $props();
 
-  const theme = getTheme("navbar");
+  const theme = $derived(getTheme("navbar"));
 
   let navState = $state<NavbarState>({ hidden: true });
   setNavbarStateContext(navState);

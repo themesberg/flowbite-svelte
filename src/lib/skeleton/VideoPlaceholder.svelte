@@ -6,7 +6,7 @@
 
   let { size = "sm", class: className }: VideoPlaceholderProps = $props();
 
-  const theme = getTheme("videoPlaceholder");
+  const theme = $derived(getTheme("videoPlaceholder"));
 
   const base = $derived(videoPlaceholder({ size, class: clsx(theme, className) }));
 </script>

@@ -6,7 +6,7 @@
 
   let { size = "md", rounded, imgOnly = false, class: className, classes, ...restProps }: ImagePlaceholderProps = $props();
 
-  const theme = getTheme("imagePlaceholder");
+  const theme = $derived(getTheme("imagePlaceholder"));
 
   const { base, image, svg, content, line } = $derived(
     imagePlaceholder({

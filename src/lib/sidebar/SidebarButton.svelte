@@ -6,7 +6,7 @@
 
   let { breakpoint = "md", class: className, classes, ...restProps }: SidebarButtonProps = $props();
 
-  const theme = getTheme("sidebarButton");
+  const theme = $derived(getTheme("sidebarButton"));
 
   const { base, svg } = $derived(sidebarButton({ breakpoint }));
 </script>

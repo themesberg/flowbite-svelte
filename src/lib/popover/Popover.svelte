@@ -28,7 +28,7 @@
 
   const styling = $derived(classes ?? { content: defaultClass });
 
-  const theme = getTheme("popover");
+  const theme = $derived(getTheme("popover"));
 
   let { base, title, h3, content } = $derived(popover({ color }));
 </script>

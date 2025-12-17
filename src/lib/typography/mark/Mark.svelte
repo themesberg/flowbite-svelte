@@ -6,7 +6,7 @@
 
   let { children, class: className, ...restProps }: MarkProps = $props();
 
-  const theme = getTheme("mark");
+  const theme = $derived(getTheme("mark"));
 </script>
 
 <mark {...restProps} class={mark({ class: clsx(theme, className) })}>

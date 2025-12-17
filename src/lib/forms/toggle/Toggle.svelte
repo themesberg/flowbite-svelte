@@ -16,7 +16,7 @@
 
   const styling = $derived(classes ?? { input: inputClass, span: spanClass });
 
-  const theme = getTheme("toggle");
+  const theme = $derived(getTheme("toggle"));
 
   const { input, label, span } = $derived(toggle({ color, checked, size, disabled, off_state_label: !!offLabel }));
 </script>

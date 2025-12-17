@@ -17,7 +17,7 @@
   // link, bySpan
   const styling = $derived(classes ?? { bySpan: bySpanClass, link: aClass });
 
-  const theme = getTheme("footerCopyright");
+  const theme = $derived(getTheme("footerCopyright"));
 
   const effectiveYear = $derived(year ?? new SvelteDate().getFullYear());
 

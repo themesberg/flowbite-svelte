@@ -6,7 +6,7 @@
 
   let { size = "sm", class: className, classes, ...restProps }: TextPlaceholderProps = $props();
 
-  const theme = getTheme("textPlaceholder");
+  const theme = $derived(getTheme("textPlaceholder"));
 
   const { base, div, lineA, lineB } = $derived(
     textPlaceholder({

@@ -5,7 +5,7 @@
 
   let { children, type = "video/mp4", trackSrc, src, srclang = "en", label = "english_captions", class: classname, ...restProps }: VideoProps = $props();
 
-  const theme = getTheme("span");
+  const theme = $derived(getTheme("span"));
 </script>
 
 <video {...restProps} class={clsx(theme, classname)}>

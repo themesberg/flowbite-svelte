@@ -8,7 +8,7 @@
 
   let { children, embedded = false, value = $bindable(""), success = $bindable(false), onclick, class: className = "", ...restProps }: ClipboardProps = $props();
 
-  const theme = getTheme("clipboard");
+  const theme = $derived(getTheme("clipboard"));
 
   const copyToClipboard: MouseEventHandler<HTMLButtonElement> = async (ev) => {
     onclick?.(ev);

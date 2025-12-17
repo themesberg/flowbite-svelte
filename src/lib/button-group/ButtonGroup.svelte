@@ -7,7 +7,7 @@
 
   let { children, size = "md", disabled, class: className, ...restProps }: ButtonGroupProps = $props();
 
-  const theme = getTheme("buttonGroup");
+  const theme = $derived(getTheme("buttonGroup"));
 
   let groupClass = $derived(buttonGroup({ size, class: clsx(theme, className) }));
 

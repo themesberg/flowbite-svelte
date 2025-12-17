@@ -7,7 +7,7 @@
   // const THEME_PREFERENCE_KEY = 'color-theme';
   let { class: className, lightIcon, darkIcon, size = "md", ariaLabel = "Dark mode", ...restProps }: DarkmodeProps = $props();
 
-  const theme = getTheme("darkmode");
+  const theme = $derived(getTheme("darkmode"));
 
   const sizes = {
     sm: "w-4 h-4",

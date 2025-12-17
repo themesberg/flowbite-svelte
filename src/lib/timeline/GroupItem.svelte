@@ -28,7 +28,7 @@
       a: aClass
     }
   );
-  const theme = getTheme("groupItem");
+  const theme = $derived(getTheme("groupItem"));
 
   const { base, a, img, div, title, span, svg } = $derived(groupItem());
 </script>

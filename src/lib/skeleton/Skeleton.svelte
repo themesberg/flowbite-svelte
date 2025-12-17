@@ -6,7 +6,7 @@
 
   let { size = "sm", class: className, classes, ...restProps }: SkeletonProps = $props();
 
-  const theme = getTheme("skeleton");
+  const theme = $derived(getTheme("skeleton"));
 
   const { wrapper, line } = $derived(skeleton({ size }));
 </script>

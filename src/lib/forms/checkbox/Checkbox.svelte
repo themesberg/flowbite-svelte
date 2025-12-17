@@ -33,7 +33,7 @@
 
   const styling = $derived(classes ?? { div: divClass });
 
-  const theme = getTheme("checkbox");
+  const theme = $derived(getTheme("checkbox"));
 
   const { base, div: divStyle } = $derived(checkbox({ color, tinted, custom, rounded, inline, disabled: disabled ?? false }));
 

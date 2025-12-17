@@ -15,7 +15,7 @@
   );
 
   const styling = $derived(classes ?? { ul: ulClass, extra: extraClass });
-  const theme = getTheme("megamenu");
+  const theme = $derived(getTheme("megamenu"));
   const { base, div, ul, extra: extraCls } = $derived(megamenu({ full, hasExtra: !!extra }));
 </script>
 

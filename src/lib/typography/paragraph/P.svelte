@@ -19,7 +19,7 @@
     ...restProps
   }: ParagraphProps = $props();
 
-  const theme = getTheme("paragraph");
+  const theme = $derived(getTheme("paragraph"));
 
   let classP = $derived(paragraph({ height, size, weight, space, align, justify, italic, firstUpper, whitespace, class: clsx(theme, className) }));
 </script>

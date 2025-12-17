@@ -10,7 +10,7 @@
 
   let { children, onclick, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
 
-  const theme = getTheme("navbarLi");
+  const theme = $derived(getTheme("navbarLi"));
 
   let active = $derived(navState?.activeUrl ? restProps.href === navState.activeUrl : false);
   let liClass = $derived(

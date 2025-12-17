@@ -7,7 +7,7 @@
 
   let { children, class: className, color, striped, hoverable, border, ...restProps }: TableBodyRowProps = $props();
 
-  const theme = getTheme("tableBodyRow");
+  const theme = $derived(getTheme("tableBodyRow"));
 
   const tableCtx = getTableContext();
   // for reactivity with svelte context

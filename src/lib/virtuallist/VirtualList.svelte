@@ -18,7 +18,7 @@
     contained = false
   }: VirtualListProps<T> = $props();
 
-  const theme = getTheme("virtualList");
+  const theme = $derived(getTheme("virtualList"));
 
   let container: HTMLDivElement | undefined;
   let scrollTop = $state(0);

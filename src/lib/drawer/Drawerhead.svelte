@@ -15,7 +15,7 @@
 
   const styling = $derived(classes ?? { button: buttonClass, svg: svgClass });
 
-  const theme = getTheme("drawer");
+  const theme = $derived(getTheme("drawer"));
 
   const { base, button, svg } = $derived(drawerhead());
 </script>

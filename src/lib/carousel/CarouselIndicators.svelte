@@ -8,7 +8,7 @@
 
   let { children, activeClass, inactiveClass, position = "bottom", class: className, ...restProps }: IndicatorsProps = $props();
 
-  const theme = getTheme("carouselIndicators");
+  const theme = $derived(getTheme("carouselIndicators"));
 
   const _state = getCarouselContext();
   const { base, indicator } = $derived(carouselIndicators({ position }));

@@ -6,7 +6,7 @@
 
   let { class: className, children, ...restProps }: FooterLinkGroupProps = $props();
 
-  const theme = getTheme("footerLinkGroup");
+  const theme = $derived(getTheme("footerLinkGroup"));
 </script>
 
 <ul {...restProps} class={footerLinkGroup({ class: clsx(theme, className) })}>

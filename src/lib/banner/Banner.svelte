@@ -34,7 +34,7 @@
   const styling = $derived(classes ?? { insideDiv: innerClass, dismissable: closeClass });
 
   // Theme context
-  const theme = getTheme("banner");
+  const theme = $derived(getTheme("banner"));
 
   const { base, insideDiv, dismissable: dismissableClass } = $derived(banner({ type, color }));
 

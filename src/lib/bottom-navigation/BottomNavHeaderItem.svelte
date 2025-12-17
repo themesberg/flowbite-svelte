@@ -7,7 +7,7 @@
   let { itemName, active, class: className, ...restProps }: BottomNavHeaderItemProps = $props();
 
   // Theme context
-  const theme = getTheme("bottomNavHeaderItem");
+  const theme = $derived(getTheme("bottomNavHeaderItem"));
 
   let base = $derived(bottomNavHeaderItem({ active, class: clsx(theme, className) }));
 </script>

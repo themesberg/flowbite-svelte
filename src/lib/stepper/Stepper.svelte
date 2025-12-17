@@ -14,7 +14,7 @@
     if (current > steps.length && steps.length > 0) current = steps.length;
   });
 
-  const theme = getTheme("stepper");
+  const theme = $derived(getTheme("stepper"));
 
   const { base, item, content } = $derived(stepper());
 

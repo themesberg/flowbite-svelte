@@ -36,7 +36,7 @@
   const styling = $derived(classes ?? { linkClass: aClass });
 
   // Theme context
-  const theme = getTheme("badge");
+  const theme = $derived(getTheme("badge"));
 
   const { base, linkClass } = $derived(badge({ color, size: large ? "large" : "small", rounded, border }));
 

@@ -43,7 +43,7 @@
     }
   );
 
-  const theme = getTheme("tags");
+  const theme = $derived(getTheme("tags"));
 
   const { base, tag: tagCls, span: spanCls, close, input: inputCls, info, warning, error } = $derived(tags());
 

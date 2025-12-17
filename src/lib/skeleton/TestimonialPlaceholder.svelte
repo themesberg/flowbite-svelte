@@ -6,7 +6,7 @@
 
   let { class: className, classes, ...restProps }: TestimonialPlaceholderProps = $props();
 
-  const theme = getTheme("testimonialPlaceholder");
+  const theme = $derived(getTheme("testimonialPlaceholder"));
 
   const { base, lineA, lineB, svg, content } = testimonialPlaceholder();
 </script>

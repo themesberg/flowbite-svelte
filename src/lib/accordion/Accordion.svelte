@@ -9,7 +9,7 @@
 
   let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, ...restProps }: AccordionProps = $props();
 
-  const theme = getTheme("accordion");
+  const theme = $derived(getTheme("accordion"));
 
   // Simple reactive state object
   const reactiveCtx: AccordionContextType = {

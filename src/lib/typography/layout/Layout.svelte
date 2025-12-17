@@ -6,7 +6,7 @@
 
   let { children, class: className, ...restProps }: LayoutProps = $props();
 
-  const theme = getTheme("layout");
+  const theme = $derived(getTheme("layout"));
 
   let divCls = $derived(layout({ class: clsx(theme, className) }));
 </script>

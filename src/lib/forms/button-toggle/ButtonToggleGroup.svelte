@@ -20,7 +20,7 @@
     ...restProps
   }: ButtonToggleGroupProps = $props();
 
-  const theme = getTheme("buttonToggleGroup");
+  const theme = $derived(getTheme("buttonToggleGroup"));
 
   const base = $derived(buttonToggleGroup({ roundedSize, class: clsx(theme, className) }));
   type SelectedValue = string | null | string[];

@@ -6,7 +6,7 @@
 
   let { card, isDragging = false, onDragStart, onDragEnd, classes, ...restProps }: KanbanCardProps = $props();
 
-  const theme = getTheme("kanbanCard");
+  const theme = $derived(getTheme("kanbanCard"));
   const styles = kanbanCard();
 </script>
 

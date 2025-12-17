@@ -6,7 +6,7 @@
 
   let { children, class: className, italic, underline, linethrough, uppercase, gradient, highlight, decoration, decorationColor, decorationThickness, ...restProps }: SpanProps = $props();
 
-  const theme = getTheme("span");
+  const theme = $derived(getTheme("span"));
 
   let classSpan = $derived(
     span({

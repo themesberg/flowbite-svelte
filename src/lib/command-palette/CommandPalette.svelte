@@ -21,7 +21,7 @@
     ...restProps
   }: CommandPaletteProps = $props();
 
-  const theme = getTheme("commandPalette");
+  const theme = $derived(getTheme("commandPalette"));
 
   let search = $state("");
   let selectedIndex = $state(0);

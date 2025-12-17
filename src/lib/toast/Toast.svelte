@@ -41,7 +41,7 @@
     }
   );
 
-  const theme = getTheme("toast");
+  const theme = $derived(getTheme("toast"));
 
   const { base, icon: iconVariants, content, close } = $derived(toast({ color, position, align }));
 

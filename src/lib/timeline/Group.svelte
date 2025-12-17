@@ -22,7 +22,7 @@
     ol: olClass
   });
 
-  const theme = getTheme("group");
+  const theme = $derived(getTheme("group"));
 
   const { div, time, ol } = $derived(group());
 </script>

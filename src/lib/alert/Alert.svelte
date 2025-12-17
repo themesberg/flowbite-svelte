@@ -23,7 +23,7 @@
   }: AlertProps = $props();
 
   // Theme context
-  const theme = getTheme("alert");
+  const theme = $derived(getTheme("alert"));
 
   let divCls = $derived(
     alert({

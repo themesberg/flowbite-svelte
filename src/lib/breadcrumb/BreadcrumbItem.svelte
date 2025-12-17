@@ -8,7 +8,7 @@
 
   const styling = $derived(classes ?? {});
 
-  const theme = getTheme("breadcrumbItem");
+  const theme = $derived(getTheme("breadcrumbItem"));
 
   const { base, separator } = $derived(
     breadcrumbItem({

@@ -14,7 +14,7 @@
     if (current > steps.length && steps.length > 0) current = steps.length;
   });
 
-  const theme = getTheme("verticalStepper");
+  const theme = $derived(getTheme("verticalStepper"));
 
   const { base, card, content } = $derived(verticalStepper());
 
