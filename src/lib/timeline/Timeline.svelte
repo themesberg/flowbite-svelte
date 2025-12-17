@@ -7,7 +7,7 @@
 
   let { children, order = "default", class: className, ...restProps }: TimelineProps = $props();
 
-  const theme = getTheme("timeline");
+  const theme = $derived(getTheme("timeline"));
   // svelte-ignore state_referenced_locally
   setContext<TimelineVariants["order"]>("order", order);
   const olCls = $derived(timeline({ order, class: clsx(theme, className) }));

@@ -51,7 +51,7 @@
 
   const theme = $derived(getTheme("timelineItem"));
   let order = getContext<TimelineVariants["order"]>("order");
-  $inspect('order: ', order);
+
   const { base, div, defaultDiv, time, h3, svg, connector } = $derived(timelineItem({ order, color, isLast }));
 
   const defaultDivCls = $derived(defaultDivClass ? defaultDivClass : defaultDiv());
