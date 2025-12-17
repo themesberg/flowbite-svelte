@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.31.0
+
+### Minor Changes
+
+- feat: reactive theme provider
+
 ## 1.30.1
 
 ### Patch Changes

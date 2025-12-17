@@ -1,5 +1,5 @@
 # Flowbite Svelte Documentation - Full Context
-# Generated on 2025-12-11T12:52:21.046Z
+# Generated on 2025-12-17T07:26:03.308Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -843,6 +843,10 @@ You can use one of starter repo for a quick start.
 # ThemeProvider - Flowbite Svelte
 
 
+## How It Works
+
+ThemeProvider uses Svelte's context API to pass theme configurations to child components. The theme is reactive - when you change the `theme` prop, all child components automatically re-render with the new theme values.
+
 ## Basic Usage
 
 Wrap your components with ThemeProvider and pass a theme configuration object:
@@ -1001,13 +1005,167 @@ Component classes, when defined directly on a component, will always take preced
 
 This allows for granular control over theming in different parts of your component tree.
 
+## Reactive Theme
+
+```svelte
+<script lang="ts">
+  import { ThemeProvider, Button, Card, Alert } from "flowbite-svelte";
+
+  type ThemeColor = "purple" | "green" | "blue" | "red";
+
+  let selectedColor = $state<ThemeColor>("purple");
+  let buttonWidth = $state("w-48");
+
+  // Make themes a derived value so it reacts to buttonWidth changes
+  const themes = $derived({
+    purple: {
+      button: { base: `${buttonWidth} bg-purple-500 hover:bg-purple-600` },
+      card: { base: "bg-purple-100 w-72" }
+    },
+    green: {
+      button: { base: `${buttonWidth} bg-green-500 hover:bg-green-600` },
+      card: { base: "bg-green-100 w-72" }
+    },
+    blue: {
+      button: { base: `${buttonWidth} bg-blue-500 hover:bg-blue-600` },
+      card: { base: "bg-blue-100 w-72" }
+    },
+    red: {
+      button: { base: `${buttonWidth} bg-red-500 hover:bg-red-600` },
+      card: { base: "bg-red-100 w-72" }
+    }
+  });
+
+  const currentTheme = $derived(themes[selectedColor]);
+
+  const colors: ThemeColor[] = ["purple", "green", "blue", "red"];
+  const colorClasses: Record<ThemeColor, string> = {
+    purple: "bg-purple-700",
+    green: "bg-green-700",
+    blue: "bg-blue-700",
+    red: "bg-red-700"
+  };
+
+  const widthOptions = ["w-32", "w-48", "w-64"] as const;
+  const widthLabels: Record<string, string> = {
+    "w-32": "Small (w-32)",
+    "w-48": "Medium (w-48)",
+    "w-64": "Large (w-64)"
+  };
+</script>
+
+<div class="mx-auto max-w-4xl p-8">
+  <h1 class="mb-6 text-3xl font-bold">ThemeProvider Reactivity Test</h1>
+
+  <Alert class="mb-6">
+    <span class="font-medium">Testing Instructions:</span>
+    <ul class="mt-2 list-inside list-disc">
+      <li>Click different color buttons to change the theme</li>
+      <li>Toggle button width to see reactive updates</li>
+      <li>Both button and card should update immediately</li>
+    </ul>
+  </Alert>
+
+  <div class="mb-6 space-y-4">
+    <div>
+      <p class="mb-2 text-sm font-semibold">Color Theme:</p>
+      <div class="flex flex-wrap gap-2">
+        {#each colors as color}
+          <button
+            class="rounded px-4 py-2 capitalize transition-colors {selectedColor === color ? `${colorClasses[color]} text-white` : 'bg-gray-200 hover:bg-gray-300'}"
+            onclick={() => (selectedColor = color)}
+          >
+            {color}
+          </button>
+        {/each}
+      </div>
+    </div>
+
+    <div>
+      <p class="mb-2 text-sm font-semibold">Button Width:</p>
+      <div class="flex gap-2">
+        {#each widthOptions as width}
+          <button class="rounded px-4 py-2 {buttonWidth === width ? 'bg-gray-700 text-white' : 'bg-gray-200 hover:bg-gray-300'}" onclick={() => (buttonWidth = width)}>
+            {widthLabels[width]}
+          </button>
+        {/each}
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-4 rounded border bg-gray-50 p-4">
+    <p class="text-sm">
+      <strong>Current State:</strong>
+      <br />
+      Color:
+      <span class="font-mono text-blue-600">{selectedColor}</span>
+      <br />
+      Button Width:
+      <span class="font-mono text-blue-600">{buttonWidth}</span>
+    </p>
+  </div>
+
+  <ThemeProvider theme={currentTheme}>
+    <div class="space-y-6">
+      <div>
+        <h3 class="mb-2 text-lg font-semibold">Themed Button:</h3>
+        <Button>Click Me!</Button>
+      </div>
+
+      <div>
+        <h3 class="mb-2 text-lg font-semibold">Themed Card:</h3>
+        <Card class="p-6">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Reactive Theme Card</h5>
+          <p class="leading-tight font-normal text-gray-700 dark:text-gray-400">
+            This card's background should change reactively when you select different color themes above. The button should also update its color and width based on your selections.
+          </p>
+          <p class="mt-4 text-sm text-gray-600">If you see the colors and sizes changing instantly, the ThemeProvider reactivity is working correctly! 🎉</p>
+        </Card>
+      </div>
+    </div>
+  </ThemeProvider>
+</div>
+```
+
 ## Notes
 
-- If no theme is provided, the component will log a message to the console but won't break functionality.
 - The theme configuration is passed through Svelte's context system, making it available to all child components.
 - Each component will fall back to its default styling if no theme is provided for that specific component.
 - Theme configurations are merged with default component styles, allowing for partial customization.
 - Use nested ThemeProviders for section-specific styling while maintaining global themes.
+
+## Dynamic Theme Switching
+
+Theme changes are reactive. Simply update the `theme` prop and components will automatically re-render:
+
+```svelte
+<script>
+  let isDark = $state(false);
+  
+  const lightTheme = {
+    button: { base: "bg-blue-500" },
+    card: { base: "bg-white" }
+  };
+  
+  const darkTheme = {
+    button: { base: "bg-gray-700" },
+    card: { base: "bg-gray-800" }
+  };
+  
+  let currentTheme = $derived(isDark ? darkTheme : lightTheme);
+</script>
+
+<button onclick={() => isDark = !isDark}>
+  Toggle Theme
+</button>
+
+<ThemeProvider theme={currentTheme}>
+  <Button>Themed Button</Button>
+  <Card>Themed Card</Card>
+</ThemeProvider>
+```
+
+Components inside ThemeProvider will automatically update when `currentTheme` changes.
 
 
 ---
@@ -19218,6 +19376,7 @@ This component can be used to show the timeline of a user’s activity history i
   import { Activity, ActivityItem } from "flowbite-svelte";
   let activities = [
     {
+      id: "activity-1",
       title:
         'Bonnie moved <a href="/" class="font-semibold text-primary-600 dark:text-primary-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
       date: "just now",
@@ -19225,6 +19384,7 @@ This component can be used to show the timeline of a user’s activity history i
       src: "/images/profile-picture-2.webp"
     },
     {
+      id: "activity-2",
       title: "We don’t serve their kind here! What? Your droids. ",
       date: "2 hours ago",
       alt: "image alt here",
@@ -19232,6 +19392,7 @@ This component can be used to show the timeline of a user’s activity history i
       text: "The approach will not be easy. You are required to maneuver straight down this trench and skim the surface to this point. The target area is only two meters wide. "
     },
     {
+      id: "activity-3",
       title: "They’ll have to wait outside. We don’t want them here. ",
       date: "1 day ago",
       alt: "image alt here",
@@ -19256,6 +19417,8 @@ Use this component to group multiple data entries inside a single date and show 
   import { Group, GroupItem } from "flowbite-svelte";
   let groupTimelines = [
     {
+      id: "group-1",
+      name: '<span class="font-medium">Laura Romeros</span> likes <span class="font-medium">Bonnie Green\'s</span> post in <span class="font-medium"> How to start with Flowbite library</span>',
       title:
         '<span class="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie Green\'s</span> post in <span class="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span>',
       src: "/images/profile-picture-1.webp",
@@ -19265,6 +19428,8 @@ Use this component to group multiple data entries inside a single date and show 
       comment: '"I wanted to share a webinar zeroheight."'
     },
     {
+      id: "group-2",
+      name: '<span class="font-medium">Jese Leos</span> likes <span class="font-medium">Bonnie Green\'s</span> post in <span class="font-medium"> How to start with Flowbite library</span>',
       title: '<span class="font-medium text-gray-900 dark:text-white">Bonnie Green</span> react to <span class="font-medium text-gray-900 dark:text-white">Thomas Lean\'s</span> comment',
       src: "/images/profile-picture-2.webp",
       alt: "alt here",
@@ -19375,6 +19540,7 @@ Use this component to group multiple data entries inside a single date and show 
 - isLast: false
 - svgClass
 - liClass
+- defaultDivClass
 - divClass
 - timeClass
 - h3Class
@@ -19899,7 +20065,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1978)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1979)
 
 #### Props
 
@@ -19921,7 +20087,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1993)
+[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1994)
 
 #### Props
 
@@ -20125,7 +20291,7 @@ When you want to add a fully custom styles, use `type="custom"`, and `class` to 
 
 #### Types
 
-[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2000)
+[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2001)
 
 #### Props
 
@@ -20408,7 +20574,7 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 #### Types
 
-[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2150)
+[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2151)
 
 #### Props
 
@@ -24951,7 +25117,7 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 #### Types
 
-[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2033)
+[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2034)
 
 #### Props
 
@@ -25209,7 +25375,7 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 #### Types
 
-[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2049)
+[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2050)
 
 #### Props
 
@@ -25367,7 +25533,7 @@ The `restProps` will be removed in the next version. Please use `divProps` and `
 
 #### Types
 
-[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2055)
+[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2056)
 
 #### Props
 
@@ -26093,7 +26259,7 @@ Use this example to create a horizontally aligned list of items.
 
 #### Types
 
-[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2109)
+[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2110)
 
 #### Props
 
@@ -27243,7 +27409,7 @@ See [examples](/docs-examples/extend/clipboard-manager) and [code](https://githu
 
 #### Types
 
-[ClipboardManagerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2378)
+[ClipboardManagerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2379)
 
 #### Props
 
@@ -27297,7 +27463,7 @@ See [examples](/docs-examples/extend/command-palette) and [code](https://github.
 
 #### Types
 
-[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2312)
+[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2313)
 
 #### Props
 
@@ -27801,7 +27967,7 @@ For production, use a proper database (PostgreSQL, MongoDB, Supabase, etc.) with
 
 #### Types
 
-[KanbanBoardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2221)
+[KanbanBoardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2222)
 
 #### Props
 
@@ -27995,7 +28161,7 @@ See [examples](/docs-examples/extend/scroll-spy) and [code](https://github.com/t
 
 #### Types
 
-[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2327)
+[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2328)
 
 #### Props
 
@@ -28043,7 +28209,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[DividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2258)
+[DividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2259)
 
 #### Props
 
@@ -28060,7 +28226,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[PaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2252)
+[PaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2253)
 
 #### Props
 
@@ -28072,7 +28238,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2238)
+[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2239)
 
 #### Props
 
@@ -28604,7 +28770,7 @@ See [examples](/docs-examples/extend/tour) and [code](https://github.com/themesb
 
 #### Types
 
-[TourProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2289)
+[TourProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2290)
 
 #### Props
 
@@ -29069,7 +29235,7 @@ Enable with `<VirtualList contained …>` or override via `classes.item`.
 
 #### Types
 
-[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2193)
+[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2194)
 
 #### Props
 
@@ -29121,7 +29287,7 @@ See [examples](/docs-examples/extend/virtual-masonry) and [code](https://github.
 
 #### Types
 
-[VirtualMasonryProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2354)
+[VirtualMasonryProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2355)
 
 #### Props
 

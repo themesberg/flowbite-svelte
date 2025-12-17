@@ -263,7 +263,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2163)
+[PopperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2164)
 ## Props
 @prop triggeredBy
 @prop triggerDelay = DEFAULT_TRIGGER_DELAY

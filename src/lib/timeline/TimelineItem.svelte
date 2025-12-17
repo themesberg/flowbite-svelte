@@ -1,4 +1,3 @@
-
 <script lang="ts">
   import { getContext, untrack } from "svelte";
   import { timelineItem, type TimelineVariants } from "./theme";
@@ -47,7 +46,6 @@
     h3: h3Class,
     connector: connectorClass
   });
-
 
   const theme = $derived(getTheme("timelineItem"));
   let order = getContext<TimelineVariants["order"]>("order");
@@ -146,6 +144,7 @@
 @prop isLast = false
 @prop svgClass
 @prop liClass
+@prop defaultDivClass
 @prop divClass
 @prop timeClass
 @prop h3Class

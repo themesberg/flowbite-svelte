@@ -381,6 +381,7 @@ This component can be used to show the timeline of a user’s activity history i
   import { Activity, ActivityItem } from "flowbite-svelte";
   let activities = [
     {
+      id: "activity-1",
       title:
         'Bonnie moved <a href="/" class="font-semibold text-primary-600 dark:text-primary-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
       date: "just now",
@@ -388,6 +389,7 @@ This component can be used to show the timeline of a user’s activity history i
       src: "/images/profile-picture-2.webp"
     },
     {
+      id: "activity-2",
       title: "We don’t serve their kind here! What? Your droids. ",
       date: "2 hours ago",
       alt: "image alt here",
@@ -395,6 +397,7 @@ This component can be used to show the timeline of a user’s activity history i
       text: "The approach will not be easy. You are required to maneuver straight down this trench and skim the surface to this point. The target area is only two meters wide. "
     },
     {
+      id: "activity-3",
       title: "They’ll have to wait outside. We don’t want them here. ",
       date: "1 day ago",
       alt: "image alt here",
@@ -419,6 +422,8 @@ Use this component to group multiple data entries inside a single date and show 
   import { Group, GroupItem } from "flowbite-svelte";
   let groupTimelines = [
     {
+      id: "group-1",
+      name: '<span class="font-medium">Laura Romeros</span> likes <span class="font-medium">Bonnie Green\'s</span> post in <span class="font-medium"> How to start with Flowbite library</span>',
       title:
         '<span class="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie Green\'s</span> post in <span class="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span>',
       src: "/images/profile-picture-1.webp",
@@ -428,6 +433,8 @@ Use this component to group multiple data entries inside a single date and show 
       comment: '"I wanted to share a webinar zeroheight."'
     },
     {
+      id: "group-2",
+      name: '<span class="font-medium">Jese Leos</span> likes <span class="font-medium">Bonnie Green\'s</span> post in <span class="font-medium"> How to start with Flowbite library</span>',
       title: '<span class="font-medium text-gray-900 dark:text-white">Bonnie Green</span> react to <span class="font-medium text-gray-900 dark:text-white">Thomas Lean\'s</span> comment',
       src: "/images/profile-picture-2.webp",
       alt: "alt here",
@@ -538,6 +545,7 @@ Use this component to group multiple data entries inside a single date and show 
 - isLast: false
 - svgClass
 - liClass
+- defaultDivClass
 - divClass
 - timeClass
 - h3Class

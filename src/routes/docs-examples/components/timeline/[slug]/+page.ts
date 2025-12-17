@@ -7,7 +7,7 @@ export const load: PageLoad = async ({ params }) => {
     const content = post.default;
 
     return {
-      content,
+      content
     };
   } catch (err) {
     throw error(404, `Timeline example "${params.slug}" not found`);
