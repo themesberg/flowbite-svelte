@@ -91,7 +91,7 @@
     "svelte-doc-llm": "^0.8.0",
     "svelte-lib-helpers": "^0.4.31",
     "svelte-meta-tags": "^4.5.0",
-    "svelte-rune-highlight": "^0.11.3",
+    "svelte-rune-highlight": "^0.12.1",
     "tailwindcss": "^4.1.18",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
