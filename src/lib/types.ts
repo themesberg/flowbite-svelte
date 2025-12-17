@@ -1964,6 +1964,7 @@ export interface TimelineItemProps extends TimelineItemVariants, HTMLLiAttribute
   date: string;
   svgClass?: string;
   liClass?: string;
+  defaultDivClass?: string;
   divClass?: string;
   timeClass?: string;
   h3Class?: string;
