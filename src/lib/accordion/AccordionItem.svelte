@@ -9,11 +9,10 @@
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), transitionType = slide, transitionParams, class: className, classes }: AccordionItemProps = $props();
 
-  // let styling: typeof classes = $derived(classes);
-
   // Get context - it will be undefined if used outside Accordion
   const ctx = getAccordionContext();
-  // Priority: theme < context < local classes
+  // Merge context and local classes (local overrides context).
+  // Theme is applied in template via clsx with lowest priority.
   const finalClasses = $derived({
     button: classes?.button,
     contentWrapper: classes?.contentWrapper,

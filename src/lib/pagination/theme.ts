@@ -59,13 +59,7 @@ export const paginationButton = tv({
       false: ""
     }
   },
-  compoundVariants: [
-    {
-      group: false,
-      table: false,
-      class: "rounded-base"
-    }
-  ],
+  compoundVariants: [],
   defaultVariants: {
     size: "default",
     active: false,

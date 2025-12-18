@@ -10,6 +10,6 @@ export const load: PageLoad = async ({ params }) => {
       content
     };
   } catch (err) {
-    throw error(404, `Timeline example "${params.slug}" not found`);
+    throw error(404, `Accordion example "${params.slug}" not found`);
   }
 };

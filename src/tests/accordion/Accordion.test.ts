@@ -255,11 +255,11 @@ describe("Accordion - Edge Cases", () => {
     await user.click(button);
     await user.click(button);
 
-    // Should end up closed (odd number of clicks from closed state)
+    // Should end up open (odd number of clicks from closed state)
     expect(button).toHaveAttribute("aria-expanded", "true");
   });
 
-  test("handles empty accordion gracefully", () => {
+  test("renders accordion container", () => {
     const { container } = render(BasicAccordionTest);
     expect(container.firstChild).toBeInTheDocument();
   });
