@@ -30,7 +30,7 @@ export const alert = tv({
       rose: "bg-rose-100 text-rose-500 focus:ring-rose-400 dark:bg-rose-200 dark:text-rose-600"
     },
     rounded: {
-      true: "rounded-lg"
+      true: "rounded-base"
     },
     border: {
       true: "border"

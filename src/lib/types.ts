@@ -199,9 +199,16 @@ export type AnchorButtonDivAttributes =
 export interface AccordionProps extends AccordionVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   children: Snippet;
   multiple?: boolean;
-  activeClass?: string;
-  inactiveClass?: string;
+  activeClass?: ClassValue;
+  inactiveClass?: ClassValue;
   transitionType?: TransitionFunc | "none";
+  classes?: Partial<{
+    button?: ClassValue;
+    contentWrapper?: ClassValue;
+    content?: ClassValue;
+    active?: ClassValue;
+    inactive?: ClassValue;
+  }>;
 }
 
 export interface AccordionItemProps extends AccordionItemVariants, HTMLAttributes<HTMLDivElement> {
@@ -209,12 +216,8 @@ export interface AccordionItemProps extends AccordionItemVariants, HTMLAttribute
   header?: Snippet;
   arrowup?: Snippet;
   arrowdown?: Snippet;
-  activeClass?: string;
-  inactiveClass?: string;
   transitionType?: TransitionFunc | "none";
   transitionParams?: ParamsType;
-  headerClass?: string;
-  contentClass?: string;
 }
 
 // alert
@@ -344,14 +347,17 @@ export interface GradientButtonProps extends GradientButtonVariantes, HTMLButton
   btnClass?: ClassValue;
 }
 
-// Context Types
-// These types are used by the context system in $lib/context.ts
-// Accordion Context
+// Context - pass classes through
 export interface AccordionContextType {
   flush?: boolean;
-  activeClass?: string | null;
-  inactiveClass?: string | null;
   transitionType?: TransitionFunc | "none";
+  classes?: Partial<{
+    button?: ClassValue;
+    contentWrapper?: ClassValue;
+    content?: ClassValue;
+    active?: ClassValue;
+    inactive?: ClassValue;
+  }>;
 }
 
 // BottomNav Context

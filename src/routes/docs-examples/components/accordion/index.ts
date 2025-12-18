@@ -1,5 +1,6 @@
 export { default as Default } from "./Default.svelte";
 export { default as Color } from "./Color.svelte";
+export { default as AdvancedClasses } from "./AdvancedClasses.svelte";
 export { default as Flush } from "./Flush.svelte";
 export { default as ArrowStyle } from "./ArrowStyle.svelte";
 export { default as Icon } from "./Icon.svelte";
@@ -10,6 +11,7 @@ export { default as TransitionNone } from "./TransitionNone.svelte";
 export { default as Nesting } from "./Nesting.svelte";
 export { default as Open } from "./Open.svelte";
 export { default as OpenMultiple } from "./OpenMultiple.svelte";
+export { default as Snapshot } from "./Snapshot.svelte";
 export { default as BpBasic } from "./BpBasic.svelte";
 export { default as BpObject } from "./BpObject.svelte";
 export { default as BpAdvanced } from "./BpAdvanced.svelte";

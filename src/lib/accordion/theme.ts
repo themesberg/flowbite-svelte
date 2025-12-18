@@ -4,17 +4,27 @@ import { tv, type VariantProps } from "tailwind-variants";
 // Variants
 export type AccordionVariants = VariantProps<typeof accordion>;
 export type AccordionItemVariants = VariantProps<typeof accordionItem> & Classes<typeof accordionItem>;
+/**
+ AccordionItemVariants:
+{
+  flush?: boolean;
+  open?: boolean;
+  classes?: {
+    button?: string;
+    contentWrapper?: string;
+    content?: string;
+    active?: string;
+    inactive?: string;
+  }
+}
+  */
 
 export const accordion = tv({
-  base: "w-full",
+  base: "rounded-base border border-default overflow-hidden ",
   variants: {
-    color: {
-      primary: "text-primary-500 dark:text-primary-400",
-      secondary: "text-secondary-500 dark:text-secondary-400"
-    },
     flush: {
-      true: "",
-      false: "border border-gray-200 dark:border-gray-700 rounded-t-xl"
+      true: "border-0",
+      false: "shadow-xs"
     }
   }
 });
@@ -22,19 +32,22 @@ export const accordion = tv({
 export const accordionItem = tv({
   slots: {
     base: "group",
-    button: "flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700 border-b",
-    content: "border-b border-gray-200 dark:border-gray-700",
-    active: "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800",
-    inactive: "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+    button: "flex items-center justify-between w-full font-medium rtl:text-right text-body group-first:rounded-t-base border border-t-0 border-x-0 border-b-default gap-3",
+    contentWrapper: "",
+    content: "p-4 md:p-5 group-last:border group-last:border-t-default group-last:border-x-0",
+    active: "",
+    inactive: ""
   },
   variants: {
     flush: {
       true: {
-        button: "py-5",
-        content: "py-5"
+        button: "flex items-center justify-between w-full p-5 font-medium rtl:text-right text-body border-0 border-b border-default gap-3",
+        contentWrapper: "",
+        content: "py-5 border-b border-default text-body"
       },
       false: {
-        button: "p-5 border-s border-e group-first:border-t",
+        button: "p-5 border-s border-e group-first:border-t hover:text-heading hover:bg-neutral-secondary-medium",
+        contentWrapper: "border border-s-0 border-e-0 border-t-0 border-b-default",
         content: "p-5 border-s border-e"
       }
     },

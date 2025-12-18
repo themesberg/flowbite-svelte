@@ -33,7 +33,7 @@
   <ul class={paginationCls}>
     {#if typeof previous === "function"}
       <li {...restProps}>
-        <PaginationItem {size} onclick={() => previous()} class={table ? "rounded-none rounded-l" : "rounded-none  rounded-s-lg"}>
+        <PaginationItem {size} onclick={() => previous()} class={table ? "rounded-none rounded-l" : "rounded-s-base  rounded-none"}>
           {#if prevContent}
             {@render prevContent()}
           {:else}
@@ -51,7 +51,7 @@
     {/each}
     {#if typeof next === "function"}
       <li {...restProps}>
-        <PaginationItem {size} onclick={() => next()} class={table ? "rounded-none rounded-r" : "rounded-none rounded-e-lg"}>
+        <PaginationItem {size} onclick={() => next()} class={table ? "rounded-none rounded-r" : "rounded-e-base rounded-none"}>
           {#if nextContent}
             {@render nextContent()}
           {:else}

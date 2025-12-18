@@ -27,8 +27,8 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2
       flowbite:
-        specifier: ^3.1.2
-        version: 3.1.2(rollup@4.53.5)
+        specifier: ^4.0.1
+        version: 4.0.1(rollup@4.53.5)
       tailwind-merge:
         specifier: ^3.4.0
         version: 3.4.0
@@ -236,6 +236,10 @@ packages:
 
   '@adobe/css-tools@4.4.4':
     resolution: {integrity: sha512-Elp+iwUx5rN5+Y8xLt5/GRoG20WGoDCQ/1Fb+1LiGtvwbDavuSk0jhD/eZdckHAuzcDzccnkv+rEjyWfRx18gg==}
+
+  '@alloc/quick-lru@5.2.0':
+    resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
+    engines: {node: '>=10'}
 
   '@asamuzakjp/css-color@4.1.1':
     resolution: {integrity: sha512-B0Hv6G3gWGMn0xKJ0txEi/jM5iFpT3MfDxmhZFb4W047GvytCf1DHQ1D69W3zHI4yWe2aTZAA0JnbMZ7Xc8DuQ==}
@@ -1213,6 +1217,9 @@ packages:
   '@tailwindcss/oxide@4.1.18':
     resolution: {integrity: sha512-EgCR5tTS5bUSKQgzeMClT6iCY3ToqE1y+ZB0AKldj809QXk1Y+3jB0upOYZrn9aGIzPtUsP7sX4QQ4XtjBB95A==}
     engines: {node: '>= 10'}
+
+  '@tailwindcss/postcss@4.1.18':
+    resolution: {integrity: sha512-Ce0GFnzAOuPyfV5SxjXGn0CubwGcuDB0zcdaPuCSzAa/2vII24JTkH+I6jcbXLb1ctjZMZZI6OjDaLPJQL1S0g==}
 
   '@tailwindcss/vite@4.1.18':
     resolution: {integrity: sha512-jVA+/UpKL1vRLg6Hkao5jldawNmRo7mQYrZtNHMIVpLfLhDml5nMRUo/8MwoX2vNXvnaXNNMedrMfMugAVX1nA==}
@@ -2273,6 +2280,9 @@ packages:
   flowbite-datepicker@1.3.2:
     resolution: {integrity: sha512-6Nfm0MCVX3mpaR7YSCjmEO2GO8CDt6CX8ZpQnGdeu03WUCWtEPQ/uy0PUiNtIJjJZWnX0Cm3H55MOhbD1g+E/g==}
 
+  flowbite-datepicker@2.0.0:
+    resolution: {integrity: sha512-m81hl0Bimq45MUg4maJLOnXrX+C9lZ0AkjMb9uotuVUSr729k/YiymWDfVAm63AYDH7g7y3rI3ke3XaBzWWqLw==}
+
   flowbite-svelte-admin-dashboard@2.1.1:
     resolution: {integrity: sha512-5AY0DnfksOymdxyTfYMZ/9ndnSSSox+4uG5nem4h1Bo6QVQyQDFmndLpB0pIsmVbowIR+3h/y3FXQlyWOk3Ndw==}
     peerDependencies:
@@ -2303,8 +2313,8 @@ packages:
       svelte: ^5.0.0
       tailwindcss: ^4.0.0
 
-  flowbite-svelte@1.30.1:
-    resolution: {integrity: sha512-Qnwo7ybiTmBvkmSaQ9j7u8lIGOE+Zv1kn43AkTlIttNx4YiMSuuAFMJjV3GuMugD1skhsUT3gihOl3CTVC+2xQ==}
+  flowbite-svelte@1.31.0:
+    resolution: {integrity: sha512-A7Ts/R5GsL8DbgRf+8+1wdrIOOK0nq4ggEkv4RuY0oGuzH1PLBAH+bvC1L8AgQ5li9mj3o8eE9tHW7Md8yjPsw==}
     peerDependencies:
       svelte: ^5.40.0
       tailwindcss: ^4.1.4
@@ -2317,6 +2327,9 @@ packages:
 
   flowbite@3.1.2:
     resolution: {integrity: sha512-MkwSgbbybCYgMC+go6Da5idEKUFfMqc/AmSjm/2ZbdmvoKf5frLPq/eIhXc9P+rC8t9boZtUXzHDgt5whZ6A/Q==}
+
+  flowbite@4.0.1:
+    resolution: {integrity: sha512-UwUjvnqrQTiFm3uMJ0WWnzKXKoDyNyfyEzoNnxmZo6KyDzCedjqZw1UW0Oqdn+E0iYVdPu0fizydJN6e4pP9Rw==}
 
   foreground-child@3.3.1:
     resolution: {integrity: sha512-gIXjKqtFuWEgzFRJA9WCQeSJLZDjgJUOMCMzxtvFq/37KojM1BFGufqsCy0r4qSQmYLsZYMeyRqzIWOMup03sw==}
@@ -3757,6 +3770,8 @@ snapshots:
 
   '@adobe/css-tools@4.4.4': {}
 
+  '@alloc/quick-lru@5.2.0': {}
+
   '@asamuzakjp/css-color@4.1.1':
     dependencies:
       '@csstools/css-calc': 2.1.4(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)
@@ -4671,6 +4686,14 @@ snapshots:
       '@tailwindcss/oxide-wasm32-wasi': 4.1.18
       '@tailwindcss/oxide-win32-arm64-msvc': 4.1.18
       '@tailwindcss/oxide-win32-x64-msvc': 4.1.18
+
+  '@tailwindcss/postcss@4.1.18':
+    dependencies:
+      '@alloc/quick-lru': 5.2.0
+      '@tailwindcss/node': 4.1.18
+      '@tailwindcss/oxide': 4.1.18
+      postcss: 8.5.6
+      tailwindcss: 4.1.18
 
   '@tailwindcss/vite@4.1.18(vite@7.3.0(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))':
     dependencies:
@@ -5810,11 +5833,18 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
+  flowbite-datepicker@2.0.0(rollup@4.53.5):
+    dependencies:
+      '@rollup/plugin-node-resolve': 15.3.1(rollup@4.53.5)
+      '@tailwindcss/postcss': 4.1.18
+    transitivePeerDependencies:
+      - rollup
+
   flowbite-svelte-admin-dashboard@2.1.1(@sveltejs/kit@2.49.2(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.46.0)(vite@7.3.0(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)))(svelte@5.46.0)(vite@7.3.0(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)))(rollup@4.53.5)(svelte@5.46.0)(tailwindcss@4.1.18):
     dependencies:
       '@flowbite-svelte-plugins/chart': 0.2.4(svelte@5.46.0)(tailwindcss@4.1.18)
       '@sveltejs/kit': 2.49.2(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.46.0)(vite@7.3.0(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)))(svelte@5.46.0)(vite@7.3.0(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))
-      flowbite-svelte: 1.30.1(rollup@4.53.5)(svelte@5.46.0)(tailwindcss@4.1.18)
+      flowbite-svelte: 1.31.0(rollup@4.53.5)(svelte@5.46.0)(tailwindcss@4.1.18)
       flowbite-svelte-icons: 3.0.1(svelte@5.46.0)
       svelte: 5.46.0
       tailwind-merge: 3.4.0
@@ -5826,7 +5856,7 @@ snapshots:
     dependencies:
       '@sveltejs/kit': 2.49.2(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.46.0)(vite@7.3.0(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)))(svelte@5.46.0)(vite@7.3.0(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))
       flowbite: 3.1.2(rollup@4.53.5)
-      flowbite-svelte: 1.30.1(rollup@4.53.5)(svelte@5.46.0)(tailwindcss@4.1.18)
+      flowbite-svelte: 1.31.0(rollup@4.53.5)(svelte@5.46.0)(tailwindcss@4.1.18)
       flowbite-svelte-icons: 2.3.0(svelte@5.46.0)
       svelte: 5.46.0
       tailwind-merge: 3.4.0
@@ -5851,7 +5881,7 @@ snapshots:
       svelte: 5.46.0
       tailwindcss: 4.1.18
 
-  flowbite-svelte@1.30.1(rollup@4.53.5)(svelte@5.46.0)(tailwindcss@4.1.18):
+  flowbite-svelte@1.31.0(rollup@4.53.5)(svelte@5.46.0)(tailwindcss@4.1.18):
     dependencies:
       '@floating-ui/dom': 1.7.4
       '@floating-ui/utils': 0.2.10
@@ -5887,6 +5917,16 @@ snapshots:
       flowbite-datepicker: 1.3.2(rollup@4.53.5)
       mini-svg-data-uri: 1.4.4
       postcss: 8.5.6
+    transitivePeerDependencies:
+      - rollup
+
+  flowbite@4.0.1(rollup@4.53.5):
+    dependencies:
+      '@popperjs/core': 2.11.8
+      flowbite-datepicker: 2.0.0(rollup@4.53.5)
+      mini-svg-data-uri: 1.4.4
+      postcss: 8.5.6
+      tailwindcss: 4.1.18
     transitivePeerDependencies:
       - rollup
 

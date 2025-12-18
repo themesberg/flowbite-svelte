@@ -1,49 +1,26 @@
 <script lang="ts">
   import type { AccordionItemProps, ParamsType } from "$lib";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import { useSingleSelection } from "$lib/utils/singleselection.svelte";
   import clsx from "clsx";
   import { getAccordionContext } from "$lib/context";
   import { slide } from "svelte/transition";
   import { accordionItem } from "./theme";
-  import { untrack } from "svelte";
 
-  let {
-    children,
-    header,
-    arrowup,
-    arrowdown,
-    open = $bindable(false),
-    activeClass,
-    inactiveClass,
-    transitionType = slide,
-    transitionParams,
-    class: className,
-    classes,
-    headerClass,
-    contentClass
-  }: AccordionItemProps = $props();
+  let { children, header, arrowup, arrowdown, open = $bindable(false), transitionType = slide, transitionParams, class: className, classes }: AccordionItemProps = $props();
 
-  warnThemeDeprecation(
-    "AccordionItem",
-    untrack(() => ({
-      headerClass,
-      contentClass,
-      activeClass,
-      inactiveClass
-    })),
-    {
-      headerClass: "button",
-      contentClass: "content",
-      activeClass: "active",
-      inactiveClass: "inactive"
-    }
-  );
-
-  let styling: typeof classes = $derived(classes ?? { button: headerClass, content: contentClass, active: activeClass, inactive: inactiveClass });
+  // let styling: typeof classes = $derived(classes);
 
   // Get context - it will be undefined if used outside Accordion
   const ctx = getAccordionContext();
+  // Priority: theme < context < local classes
+  const finalClasses = $derived({
+    button: classes?.button,
+    contentWrapper: classes?.contentWrapper,
+    content: classes?.content,
+    active: classes?.active || ctx?.classes?.active,
+    inactive: classes?.inactive || ctx?.classes?.inactive
+  });
 
   const ctxTransitionType = $derived(ctx?.transitionType ?? transitionType);
   // Check if transitionType is explicitly set to undefined in props
@@ -65,13 +42,15 @@
     open = !open;
   };
 
-  const { base, button, content, active, inactive } = $derived(accordionItem({ flush: ctx?.flush, open }));
+  const { base, button, contentWrapper, content, active, inactive } = $derived(accordionItem({ flush: ctx?.flush, open }));
 
-  let buttonClass = $derived(clsx(open && !ctx?.flush && (styling.active || ctx?.activeClass || active()), !open && !ctx?.flush && (styling.inactive || ctx?.inactiveClass || inactive())));
+  let buttonClass = $derived(clsx(open && !ctx?.flush && (finalClasses.active || active()), !open && !ctx?.flush && (finalClasses.inactive || inactive())));
+
+  let contentWrapperCls = $derived(clsx(contentWrapper(), open ? "block" : "hidden"));
 </script>
 
 <h2 class={base({ class: clsx(theme?.base, className) })}>
-  <button type="button" onclick={handleToggle} class={button({ class: clsx(buttonClass, theme?.button, styling.button) })} aria-expanded={open}>
+  <button type="button" onclick={handleToggle} class={button({ class: clsx(buttonClass, theme?.button, finalClasses.button) })} aria-expanded={open}>
     {#if header}
       {@render header()}
       {#if open}
@@ -95,15 +74,15 @@
 
 {#if useTransition}
   {#if open && transitionType !== "none"}
-    <div transition:transitionType={transitionParams as ParamsType}>
-      <div class={content({ class: clsx(theme?.content, styling.content) })}>
+    <div class={contentWrapperCls} transition:transitionType={transitionParams as ParamsType}>
+      <div class={content({ class: clsx(theme?.content, finalClasses.content) })}>
         {@render children()}
       </div>
     </div>
   {/if}
 {:else}
-  <div class={open ? "block" : "hidden"}>
-    <div class={content({ class: clsx(theme?.content, styling.content) })}>
+  <div class={contentWrapperCls}>
+    <div class={content({ class: clsx(theme?.content, finalClasses.content) })}>
       {@render children()}
     </div>
   </div>
