@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Checkbox, checkbox, Helper, Label, Radio, Button, uiHelpers, type CheckboxProps } from "$lib";
-  import type { RadioColorType } from "../types";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -79,7 +78,7 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ""}`;
   <div class="mt-4 mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1" classes={{ label: "w-24" }} name="checkbox_color" bind:group={checkboxColor} color={colorOption as RadioColorType} onchange={() => (checkedState = true)} value={colorOption}>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="checkbox_color" bind:group={checkboxColor} onchange={() => (checkedState = true)} value={colorOption}>
         {colorOption}
       </Radio>
     {/each}

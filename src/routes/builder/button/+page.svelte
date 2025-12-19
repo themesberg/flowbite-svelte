@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Button, GradientButton, gradientButton, button, Radio, Label, uiHelpers, type ButtonProps, type GradientButtonProps } from "$lib";
-  import type { RadioColorType } from "../types";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -156,7 +155,7 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each btnColors as colorOption}
-      <Radio class="my-1" classes={{ label: "w-24" }} name="btn_color" bind:group={btnColor as ButtonProps["color"]} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="btn_color" bind:group={btnColor as ButtonProps["color"]} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">

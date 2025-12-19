@@ -3,7 +3,6 @@
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from "svelte/transition";
   import { sineIn, linear } from "svelte/easing";
   import { Popover, popover, Button, Label, Radio, uiHelpers, type PopoverProps } from "$lib";
-  import type { RadioColorType } from "../types";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -117,7 +116,7 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1" classes={{ label: "w-24" }} name="alert_reactive" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="alert_reactive" bind:group={color} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">

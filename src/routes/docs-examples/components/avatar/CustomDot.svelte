@@ -5,7 +5,7 @@
 
 <Avatar src="/images/profile-picture-3.webp">
   {#snippet indicator()}
-    <Indicator color="gray" border size="xl" placement="top-right">
+    <Indicator color="purple" border size="xl" placement="top-right">
       <BugOutline />
     </Indicator>
   {/snippet}

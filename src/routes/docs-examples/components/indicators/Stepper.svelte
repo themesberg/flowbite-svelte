@@ -9,7 +9,7 @@
       <div class="flex items-center">
         <Indicator
           size="xl"
-          color={i < 3 ? undefined : "gray"}
+          color={i < 3 ? undefined : "dark"}
           class={`z-10 shrink-0 ring-0 ring-white sm:ring-8 ${i < 3 ? "bg-primary-200 dark:bg-primary-900" : "dark:bg-gray-700 dark:ring-gray-900"}`}
         >
           {#if i === 3}
@@ -34,10 +34,10 @@
       <div class="flex items-center">
         <Indicator
           size="xl"
-          color={i < 3 ? undefined : "gray"}
+          color={i < 3 ? undefined : "dark"}
           class={`z-10 shrink-0 ring-0 ring-white sm:ring-8 ${i < 3 ? "bg-primary-200 dark:bg-primary-900" : "dark:bg-gray-700 dark:ring-gray-900"}`}
         >
-          <Indicator color={i < 3 ? "orange" : "secondary"} class={i === 3 ? "dark:bg-gray-300!" : ""} />
+          <Indicator color={i < 3 ? "warning" : "success"} class={i === 3 ? "dark:bg-gray-300!" : ""} />
         </Indicator>
         {#if i < 3}
           <div class="flex h-0.5 w-full bg-gray-200 dark:bg-gray-700"></div>

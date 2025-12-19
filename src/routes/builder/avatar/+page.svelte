@@ -114,7 +114,7 @@
       class={avatarClass}
       size={avatarSize}
       href={hrefStatus ? "/" : ""}
-      dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined}
+      dot={dotStatus ? { placement: "bottom-right", color: "success" } : undefined}
       target={targetStatus ? "_blank" : undefined}
       onclick={eventStatus ? () => alert("Clicked!") : undefined}
     />
@@ -127,7 +127,7 @@
       class={avatarClass}
       size={avatarSize}
       href={hrefStatus ? "/" : ""}
-      dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined}
+      dot={dotStatus ? { placement: "bottom-right", color: "success" } : undefined}
       target={targetStatus ? "_blank" : undefined}
       onclick={eventStatus ? () => alert("Clicked!") : undefined}
     />
@@ -140,7 +140,7 @@
       class={avatarClass}
       size={avatarSize}
       href={hrefStatus ? "/" : ""}
-      dot={dotStatus ? { placement: "bottom-right", color: "green" } : undefined}
+      dot={dotStatus ? { placement: "bottom-right", color: "success" } : undefined}
       target={targetStatus ? "_blank" : undefined}
       onclick={eventStatus ? () => alert("Clicked!") : undefined}
     />

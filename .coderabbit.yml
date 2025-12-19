@@ -2,7 +2,7 @@ reviews:
   auto_review:
     enabled: true
     base_branches:
-      - "*"
+      - ".*"
   tools:
     github-checks:
       timeout_ms: 300000

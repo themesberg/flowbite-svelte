@@ -93,7 +93,7 @@
   <Heading tag="h2">Alert</Heading>
   <Alert dismissable>Danger!</Alert>
   <Heading tag="h2">Avatar</Heading>
-  <Avatar dot={{ color: "red" }} border />
+  <Avatar dot={{ color: "danger" }} border />
   <Heading tag="h2">Badge</Heading>
   <Badge dismissable rounded>Default</Badge>
   <Heading tag="h2">Banner</Heading>

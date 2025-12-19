@@ -26,7 +26,7 @@ The indicator component can be used as a small element positioned absolutely rel
 
 ## Default indicator
 
-Use this example to create a simple indicator with multiple colors and position it anywhere on the website.
+Use this example to create a simple indicator with multiple colors and position it anywhere on the website. Pre-set colors are `'brand'(default) | 'neutral' | 'dark' | 'success' | 'danger' | 'purple' | 'indigo' | 'warning' | 'teal' `. Use `class` prop to add a preferred color.
 
 ```svelte example class="flex gap-2"
 {#include Default.svelte}

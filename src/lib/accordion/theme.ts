@@ -10,11 +10,11 @@ export type AccordionItemVariants = VariantProps<typeof accordionItem> & Classes
   flush?: boolean;
   open?: boolean;
   classes?: {
-    button?: string;
-    contentWrapper?: string;
-    content?: string;
-    active?: string;
-    inactive?: string;
+    button?: ClassValue;
+    contentWrapper?: ClassValue;
+    content?: ClassValue;
+    active?: ClassValue;
+    inactive?: ClassValue;
   }
 }
   */
@@ -61,14 +61,14 @@ export const accordionItem = tv({
       flush: true,
       open: true,
       class: {
-        button: "text-gray-900 dark:text-white"
+        button: "text-heading"
       }
     },
     {
       flush: true,
       open: false,
       class: {
-        button: "text-gray-500 dark:text-gray-400"
+        button: "text-body"
       }
     }
   ],

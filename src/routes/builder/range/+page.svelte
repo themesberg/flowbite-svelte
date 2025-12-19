@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Range, range, Label, Button, Radio, uiHelpers, type RangeProps } from "$lib";
-  import type { RangeColorType } from "../types";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -94,7 +93,7 @@ ${
   <div class="mt-12 mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1" classes={{ label: "w-24" }} name="default_alert_color" bind:group={rangeColor} color={colorOption as RangeColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="default_alert_color" bind:group={rangeColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

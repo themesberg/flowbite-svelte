@@ -13,7 +13,7 @@
     "aria-describedby": ariaDescribedby,
     inline = false,
     labelClass,
-    color = "primary",
+    color = "brand",
     custom = false,
     group = $bindable<T>(),
     value = $bindable<T>(),

@@ -16,7 +16,7 @@
   const sizes = Object.keys(indicator.variants.size) as IndicatorProps["size"][];
   const colors = Object.keys(indicator.variants.color) as IndicatorProps["color"][];
   const placements = Object.keys(indicator.variants.placement) as IndicatorProps["placement"][];
-  let color: IndicatorProps["color"] = $state("primary");
+  let color: IndicatorProps["color"] = $state("brand");
   let size: IndicatorProps["size"] = $state("md");
   let border: IndicatorProps["border"] = $state(false);
   const changeBorder = () => {
@@ -35,7 +35,7 @@
       // {color} {size} {border} {placement} {cornerStyle}
       // color = 'primary', cornerStyle = 'circular', size = 'md', border = false, placement, offset = true,
       // if (color) props.push(` color="${color}"`);
-      if (color !== "primary") props.push(` color="${color}"`);
+      if (color !== "brand") props.push(` color="${color}"`);
       if (size !== "md") props.push(` size="${size}"`);
       if (border) props.push(" border");
       if (placement !== "default") props.push(` placement="${placement}"`);

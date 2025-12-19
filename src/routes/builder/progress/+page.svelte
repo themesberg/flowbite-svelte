@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Progressbar, progressbar, Button, Label, Radio, uiHelpers, type ProgressbarProps } from "$lib";
-  import type { RadioColorType } from "../types";
   import { sineOut } from "svelte/easing";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
@@ -117,7 +116,7 @@
   <div class="mb-8 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as color}
-      <Radio class="my-1" classes={{ label: "w-24" }} name="interactive_progress_color" bind:group={progressColor} color={color as RadioColorType} value={color}>{color}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="interactive_progress_color" bind:group={progressColor} value={color}>{color}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">

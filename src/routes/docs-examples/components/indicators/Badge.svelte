@@ -11,7 +11,7 @@
         <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
       </div>
       <Badge color="green" class="px-2.5 py-0.5">
-        <Indicator color="green" size="xs" class="me-1" />Available
+        <Indicator color="success" size="xs" class="me-1" />Available
       </Badge>
     </div>
   </li>
@@ -25,7 +25,7 @@
         <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
       </div>
       <Badge color="red" class="px-2.5 py-0.5">
-        <Indicator color="red" size="xs" class="me-1" />Unavailable
+        <Indicator color="danger" size="xs" class="me-1" />Unavailable
       </Badge>
     </div>
   </li>
