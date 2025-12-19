@@ -3,7 +3,7 @@
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
-<Alert class="items-start!">
+<Alert color="brand" class="items-start!">
   {#snippet icon()}<span>
       <InfoCircleSolid class="h-5 w-5" />
       <span class="sr-only">Info</span>
@@ -16,7 +16,7 @@
     <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
   </ul>
 </Alert>
-<Alert color="blue" class="items-start!">
+<Alert color="danger" class="items-start!">
   {#snippet icon()}<span>
       <InfoCircleSolid class="h-5 w-5" />
       <span class="sr-only">Info</span>

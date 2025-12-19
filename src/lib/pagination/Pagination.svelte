@@ -33,7 +33,7 @@
   <ul class={paginationCls}>
     {#if typeof previous === "function"}
       <li {...restProps}>
-        <PaginationItem {size} onclick={() => previous()} class={table ? "rounded-none rounded-l" : "rounded-none rounded-s-base"}>
+        <PaginationItem {size} onclick={() => previous()} class={table ? "rounded-none rounded-l" : "rounded-s-base rounded-none"}>
           {#if prevContent}
             {@render prevContent()}
           {:else}

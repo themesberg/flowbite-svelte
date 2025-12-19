@@ -87,7 +87,7 @@
       <Heading tag="h2" class="mb-6 text-3xl font-bold">Basic Usage</Heading>
       <P class="mb-6 text-gray-700 dark:text-gray-300">The simplest way to use ScrollSpy is to provide an array of navigation items:</P>
       <HighlightSvelte code={exampleModules["./md/usage.md"] as string} langtag --langtag-color="orange" class="mb-4" />
-      <Alert color="red" class="text-md p-6">
+      <Alert color="danger" class="text-md p-6">
         <strong>Note:</strong>
         Make sure each section has an
         <code>id</code>

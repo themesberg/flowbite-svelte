@@ -226,6 +226,7 @@ export interface AlertProps extends Omit<AlertVariants, "icon">, Omit<HTMLAttrib
   icon?: Snippet;
   alertStatus?: boolean;
   closeIcon?: Component;
+  closeColor?: CloseButtonVariants["color"];
   transition?: TransitionFunc;
   params?: ParamsType;
   onclick?: () => void;

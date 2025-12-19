@@ -12,7 +12,8 @@
     icon,
     alertStatus = $bindable(true),
     closeIcon: CloseIcon,
-    color = "primary",
+    color = "brand",
+    closeColor,
     rounded = true,
     border,
     class: className,
@@ -63,11 +64,11 @@
 
     {#if dismissable}
       {#if CloseIcon}
-        <CloseButton class="-my-1.5 ms-auto -me-1.5" {color} ariaLabel="Remove alert">
+        <CloseButton class="-my-1.5 ms-auto -me-1.5" color={closeColor ?? color} ariaLabel="Remove alert">
           <CloseIcon />
         </CloseButton>
       {:else}
-        <CloseButton class="-my-1.5 ms-auto -me-1.5" {color} ariaLabel="Remove alert" />
+        <CloseButton class="-my-1.5 ms-auto -me-1.5" color={closeColor ?? color} ariaLabel="Remove alert" />
       {/if}
     {/if}
   </div>
@@ -83,7 +84,8 @@
 @prop icon
 @prop alertStatus = $bindable(true)
 @prop closeIcon: CloseIcon
-@prop color = "primary"
+@prop color = "brand"
+@prop closeColor
 @prop rounded = true
 @prop border
 @prop class: className
