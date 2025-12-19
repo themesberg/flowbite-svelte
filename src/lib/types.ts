@@ -230,6 +230,8 @@ export interface AlertProps extends Omit<AlertVariants, "icon">, Omit<HTMLAttrib
   transition?: TransitionFunc;
   params?: ParamsType;
   onclick?: () => void;
+  listContent?: boolean;
+  borderAccent?: boolean;
 }
 
 // avatar

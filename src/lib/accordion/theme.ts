@@ -20,7 +20,7 @@ export type AccordionItemVariants = VariantProps<typeof accordionItem> & Classes
   */
 
 export const accordion = tv({
-  base: "rounded-base border border-default overflow-hidden ",
+  base: "rounded-base border border-default overflow-hidden",
   variants: {
     flush: {
       true: "border-0",
@@ -32,7 +32,7 @@ export const accordion = tv({
 export const accordionItem = tv({
   slots: {
     base: "group",
-    button: "flex items-center justify-between w-full font-medium rtl:text-right text-body group-first:rounded-t-base border border-t-0 border-x-0 border-b-default gap-3",
+    button: "flex items-center justify-between w-full p-5 font-medium rtl:text-right text-body group-first:rounded-t-base border border-t-0 border-x-0 border-b-default gap-3",
     contentWrapper: "",
     content: "p-4 md:p-5 group-last:border group-last:border-t-default group-last:border-x-0",
     active: "",
@@ -41,14 +41,14 @@ export const accordionItem = tv({
   variants: {
     flush: {
       true: {
-        button: "flex items-center justify-between w-full p-5 font-medium rtl:text-right text-body border-0 border-b border-default gap-3",
+        button: "border-0 border-b border-default",
         contentWrapper: "",
         content: "py-5 border-b border-default text-body"
       },
       false: {
-        button: "p-5 border-s border-e group-first:border-t hover:text-heading hover:bg-neutral-secondary-medium",
+        button: "rounded-t-base border border-t-0 border-x-0 border-b-default hover:text-heading hover:bg-neutral-secondary-medium",
         contentWrapper: "border border-s-0 border-e-0 border-t-0 border-b-default",
-        content: "p-5 border-s border-e"
+        content: "p-4 md:p-5"
       }
     },
     open: {

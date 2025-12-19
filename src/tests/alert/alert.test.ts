@@ -12,6 +12,7 @@ import CustomCloseIconAlertTest from "./custom-close-icon-alert.test.svelte";
 import BorderAccentAlertTest from "./border-accent-alert.test.svelte";
 import CustomColorAlertTest from "./custom-color-alert.test.svelte";
 import CloseEventAlertTest from "./close-event-alert.test.svelte";
+import CloseColorAlertTest from "./close-color-alert.test.svelte";
 
 afterEach(() => {
   cleanup();
@@ -174,4 +175,17 @@ describe("Alert Component", () => {
       expect(screen.getByTestId("close-indicator")).toHaveTextContent("Close event fired");
     });
   });
+
+  describe("Close Button Color", () => {
+    test("renders close button with specified closeColor classes", () => {
+      // Create a test component that uses Alert with closeColor prop
+      render(CloseColorAlertTest);
+      const closeButton = screen.getByRole("button");
+
+      // Verify closeButton has the appropriate color classes
+      expect(closeButton).toHaveClass("text-fg-success-strong");
+      expect(closeButton).toHaveClass("bg-success-soft");
+    });
+  });
 });
+

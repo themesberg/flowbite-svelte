@@ -147,7 +147,7 @@ export const button = tv({
     },
     pill: {
       true: "rounded-full",
-      false: "rounded-lg"
+      false: "rounded-base"
     },
     checked: {
       true: "",
@@ -195,8 +195,8 @@ export const gradientButton = tv({
         outlineWrapper: "rounded-full"
       },
       false: {
-        base: "rounded-lg",
-        outlineWrapper: "rounded-lg"
+        base: "rounded-base",
+        outlineWrapper: "rounded-base"
       }
     },
     size: {
@@ -303,7 +303,7 @@ export const gradientButton = tv({
     {
       group: true,
       pill: false,
-      class: "first:rounded-s-lg last:rounded-e-lg"
+      class: "first:rounded-s-base last:rounded-e-base"
     }
   ]
 });

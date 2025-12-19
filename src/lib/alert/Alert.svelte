@@ -20,6 +20,8 @@
     dismissable,
     transition = fade,
     params,
+    listContent,
+    borderAccent,
     ...restProps
   }: AlertProps = $props();
 
@@ -29,6 +31,8 @@
   let divCls = $derived(
     alert({
       color,
+      listContent,
+      borderAccent,
       rounded,
       border,
       icon: !!icon,

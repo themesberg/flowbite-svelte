@@ -92,7 +92,7 @@ Include expandable content for help text, detailed explanations, or rich content
 
 ## Custom color
 
-Use the `class` prop with `color="none"` to create fully custom styled alerts. The `closeColor` prop allows independent control of the close button styling, letting you mix custom alert colors with predefined close button colors or use `closeColor="none"` for complete customization.
+Use the `class` prop with `color="none"` to create fully custom-styled alerts. The `closeColor` prop allows independent control of the close button styling, letting you mix custom alert colors with predefined close button colors or use `closeColor="none"` for complete customization.
 
 ```svelte example class="flex flex-col gap-4"
 {#include CustomColor.svelte}
@@ -112,14 +112,6 @@ Handle dismissal interactions with the `onclick` event to track dismissals, save
 - Never relies on color alone—always includes text or icons
 - Dismissable alerts support keyboard interactions
 - Proper focus management when dismissing
-
-## Best Practices
-
-- **Be Concise**: Keep messages brief and actionable
-- **Use Appropriately**: Avoid overusing alerts
-- **Provide Context**: Include enough information to understand and act
-- **Allow Dismissal**: Enable dismissal for non-critical alerts
-- **Position Wisely**: Place alerts relevant to the action or content
 
 ## See also
 
