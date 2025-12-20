@@ -196,7 +196,7 @@ describe("Alert Component", () => {
 
       expect(alert).toBeInTheDocument();
       expect(alert).toHaveTextContent("List content alert");
-      
+
       // Verify listContent adds border and color-specific border classes
       expect(alert).toHaveClass("border");
       expect(alert).toHaveClass("border-success-subtle");

@@ -2,7 +2,7 @@
   import { Indicator } from "flowbite-svelte";
 </script>
 
-<div class="border relative h-56 w-56 rounded-lg border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
+<div class="relative h-56 w-56 rounded-lg border border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
   <Indicator placement="top-left" color="danger" />
   <Indicator placement="top-center" color="warning" />
   <Indicator placement="top-right" color="success" />

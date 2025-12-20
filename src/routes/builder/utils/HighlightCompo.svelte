@@ -57,7 +57,7 @@
   <div class="relative">
     <div class="overflow-hidden {showExpandButton ? 'pb-8' : ''}" class:max-h-72={!expand} tabindex="-1" use:checkOverflow>
       {#if copiedStatus}
-        <Badge class={badge({ class: badgeClass })} color="green">Copied to clipboard</Badge>
+        <Badge class={badge({ class: badgeClass })} color="success">Copied to clipboard</Badge>
       {/if}
       {#if codeLang === "md"}
         <Highlight language={mdLang} code={processedCode} />

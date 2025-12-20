@@ -18,7 +18,7 @@
 
   // interactive example
   const colors = Object.keys(badge.variants.color);
-  let color: BadgeProps["color"] = $state("primary");
+  let color: BadgeProps["color"] = $state("brand");
   let badgeSize: BadgeProps["large"] = $state(false);
   const changeSize = () => {
     badgeSize = !badgeSize;
@@ -88,7 +88,7 @@
 				import { ${currentTransition} } from 'svelte/transition'`
           : "";
       let props = [];
-      if (color !== "primary") props.push(` color="${color}"`);
+      if (color !== "brand") props.push(` color="${color}"`);
       if (badgeSize) props.push(" large");
       if (badgeDismissable) props.push(" dismissable");
       if (badgeClass) props.push(` class="${badgeClass}"`);

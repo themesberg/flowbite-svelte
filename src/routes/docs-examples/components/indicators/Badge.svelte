@@ -10,7 +10,7 @@
         <p class="truncate text-sm font-semibold text-gray-900 dark:text-white">Neil Sims</p>
         <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
       </div>
-      <Badge color="green" class="px-2.5 py-0.5">
+      <Badge color="success" class="px-2.5 py-0.5">
         <Indicator color="success" size="xs" class="me-1" />Available
       </Badge>
     </div>
@@ -24,7 +24,7 @@
         <p class="truncate text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</p>
         <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
       </div>
-      <Badge color="red" class="px-2.5 py-0.5">
+      <Badge color="danger" class="px-2.5 py-0.5">
         <Indicator color="danger" size="xs" class="me-1" />Unavailable
       </Badge>
     </div>

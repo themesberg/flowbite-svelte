@@ -3,9 +3,9 @@
 
   setInterval(handleHover, 500);
 
-  let color: BadgeProps["color"] = $state("primary");
+  let color: BadgeProps["color"] = $state("brand");
   function handleHover() {
-    color = color === "primary" ? "secondary" : "primary";
+    color = color === "brand" ? "alternative" : "brand";
   }
 </script>
 

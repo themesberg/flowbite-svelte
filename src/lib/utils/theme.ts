@@ -5,7 +5,7 @@ import type { Classes } from "$lib/theme/themeUtils";
 export type CloseButtonVariants = VariantProps<typeof closeButton> & Classes<typeof closeButton>;
 
 export const closeButton = tv({
-  base: "focus:outline-hidden whitespace-normal disabled:cursor-not-allowed disabled:opacity-50 ms-auto -mx-1.5 -my-1.5 rounded focus:ring-2 inline-flex items-center justify-center shrink-0",
+  base: "focus:outline-hidden whitespace-normal disabled:cursor-not-allowed disabled:opacity-50 ms-auto rounded focus:ring-2 inline-flex items-center justify-center shrink-0",
   variants: {
     color: {
       brand: "bg-brand-softer text-fg-brand-strong focus:ring-brand-medium hover:bg-brand-medium",
@@ -37,8 +37,8 @@ export const closeButton = tv({
       none: ""
     },
     size: {
-      xs: "p-0.5 h-6 w-6",
-      sm: "p-0.5 h-7 w-7",
+      xs: "p-0 h-4 w-4",
+      sm: "p-0.5 h-6 w-6",
       md: "p-1.5 h-8 w-8",
       lg: "p-2.5 h-10 w-10"
     }
@@ -55,7 +55,7 @@ export const closeButton = tv({
     {
       size: "xs",
       class: {
-        svg: "w-3 h-3"
+        svg: "w-2.5 h-2.5"
       }
     },
     {

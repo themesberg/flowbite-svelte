@@ -247,7 +247,7 @@ export interface AvatarProps extends AvatarVariants, HTMLAttributes<HTMLDivEleme
 }
 
 // badge
-export interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
+export interface BadgeProps extends Omit<BadgeVariants, "href">, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   children: Snippet;
   icon?: Snippet;
   badgeStatus?: boolean;
@@ -257,7 +257,10 @@ export interface BadgeProps extends BadgeVariants, Omit<HTMLAttributes<HTMLDivEl
   target?: HTMLAnchorAttributes["target"];
   transition?: TransitionFunc;
   params?: ParamsType;
-  aClass?: ClassValue;
+  closeBtnColor?: CloseButtonVariants["color"];
+  classes?: Partial<{
+    linkClass?: ClassValue;
+  }>;
 }
 
 // banner
