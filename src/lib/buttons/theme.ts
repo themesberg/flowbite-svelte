@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import { brand } from "../../routes/admin-dashboard/(no-layout)/pages/pricing/data";
 
 // Variants
 export type ButtonVariants = VariantProps<typeof button>;
@@ -13,17 +14,53 @@ export const button = tv({
   },
   variants: {
     color: {
-      // "primary" | "dark" | "alternative" | "light" | "secondary" | "gray" | "red" | "orange" | "amber" | "yellow" | "lime" | "green" | "emerald" | "teal" | "cyan" | "sky" | "blue" | "indigo" | "violet" | "purple" | "fuchsia" | "pink" | "rose"
-      primary: {
-        base: "text-white bg-primary-700 hover:bg-primary-800 dark:bg-primary-600 dark:hover:bg-primary-700 focus-within:ring-primary-300 dark:focus-within:ring-primary-800",
-        outline: "text-primary-700 border-primary-700 hover:bg-primary-800 dark:border-primary-500 dark:text-primary-500 dark:hover:bg-primary-600",
-        shadow: "shadow-primary-500/50 dark:shadow-primary-800/80"
+      brand: {
+        base: "text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none",
+        outline: "",
+        shadow: ""
+      },
+      alternative: {
+        base: "text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none",
+        outline: "",
+        shadow: ""
+      },
+      gray: {
+        base: "text-body bg-neutral-primary-soft border border-default hover:bg-neutral-secondary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary-soft shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none",
+        outline: "",
+        shadow: ""
+      },
+      success: {
+        base: "",
+        outline: "",
+        shadow: ""
+      },
+      danger: {
+        base: "",
+        outline: "",
+        shadow: ""
+      },
+      warning: {
+        base: "",
+        outline: "",
+        shadow: ""
+      },
+      transparent: {
+        base: "",
+        outline: "",
+        shadow: ""
       },
       dark: {
         base: "text-white bg-gray-800 hover:bg-gray-900 dark:bg-gray-800 dark:hover:bg-gray-700 focus-within:ring-gray-300 dark:focus-within:ring-gray-700",
         outline: "text-gray-900 border-gray-800 hover:bg-gray-900 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-600",
         shadow: "shadow-gray-500/50 gray:shadow-gray-800/80"
       },
+      // legacy colors
+      primary: {
+        base: "text-white bg-primary-700 hover:bg-primary-800 dark:bg-primary-600 dark:hover:bg-primary-700 focus-within:ring-primary-300 dark:focus-within:ring-primary-800",
+        outline: "text-primary-700 border-primary-700 hover:bg-primary-800 dark:border-primary-500 dark:text-primary-500 dark:hover:bg-primary-600",
+        shadow: "shadow-primary-500/50 dark:shadow-primary-800/80"
+      },
+
       alternative: {
         base: "text-gray-900 bg-transparent border border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-400 hover:text-primary-700 focus-within:text-primary-700 dark:focus-within:text-white dark:hover:text-white dark:hover:bg-gray-700 focus-within:ring-gray-200 dark:focus-within:ring-gray-700",
         outline: "text-gray-700 border-gray-700 hover:bg-gray-800 dark:border-gray-400 dark:text-gray-400 dark:hover:bg-gray-500",

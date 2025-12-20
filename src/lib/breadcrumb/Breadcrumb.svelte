@@ -31,7 +31,6 @@
 @prop solid = false
 @prop class: className
 @prop classes
-@prop olClass
 @prop ariaLabel = "Breadcrumb"
 @prop ...restProps
 -->

@@ -4,7 +4,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 export type ButtonGroupVariants = VariantProps<typeof buttonGroup>;
 
 export const buttonGroup = tv({
-  base: "inline-flex rounded-lg shadow-xs",
+  base: "inline-flex rounded-base shadow-xs -space-x-px",
   variants: {
     size: {
       sm: "",

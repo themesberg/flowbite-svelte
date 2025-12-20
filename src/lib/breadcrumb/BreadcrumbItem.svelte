@@ -5,7 +5,7 @@
   import { breadcrumbItem } from "./theme";
 
   let { children, icon, home = false, href, class: className, classes, ...restProps }: BreadcrumbItemProps = $props();
-  // linkClass, spanClass, homeClass,
+  
   const styling = $derived(classes);
 
   const theme = $derived(getTheme("breadcrumbItem"));
@@ -51,7 +51,7 @@
         {@render children()}
       </a>
     {:else}
-      <span class={span({ home: false, hasHref: false, class: clsx(theme?.base, classes?.span) })}>
+      <span class={span({ home: false, hasHref: false, class: clsx(theme?.span, classes?.span) })}>
         {@render children()}
       </span>
     {/if}
