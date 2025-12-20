@@ -36,7 +36,7 @@
 [IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099)
 ## Props
 @prop children
-@prop color = "primary"
+@prop color = "brand"
 @prop cornerStyle = "circular"
 @prop size = "md"
 @prop border = false

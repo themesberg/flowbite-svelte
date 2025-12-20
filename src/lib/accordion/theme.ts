@@ -46,7 +46,7 @@ export const accordionItem = tv({
         content: "py-5 border-b border-default text-body"
       },
       false: {
-        button: "rounded-t-base border border-t-0 border-x-0 border-b-default hover:text-heading hover:bg-neutral-secondary-medium",
+        button: "rounded-t-base hover:text-heading hover:bg-neutral-secondary-medium",
         contentWrapper: "border border-s-0 border-e-0 border-t-0 border-b-default",
         content: "p-4 md:p-5"
       }

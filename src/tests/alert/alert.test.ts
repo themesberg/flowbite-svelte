@@ -13,6 +13,7 @@ import BorderAccentAlertTest from "./border-accent-alert.test.svelte";
 import CustomColorAlertTest from "./custom-color-alert.test.svelte";
 import CloseEventAlertTest from "./close-event-alert.test.svelte";
 import CloseColorAlertTest from "./close-color-alert.test.svelte";
+import ListContentAlertTest from "./list-content-alert.test.svelte";
 
 afterEach(() => {
   cleanup();
@@ -185,6 +186,21 @@ describe("Alert Component", () => {
       // Verify closeButton has the appropriate color classes
       expect(closeButton).toHaveClass("text-fg-success-strong");
       expect(closeButton).toHaveClass("bg-success-soft");
+    });
+  });
+
+  describe("List Content", () => {
+    test("renders alert with list content styling", () => {
+      render(ListContentAlertTest);
+      const alert = screen.getByRole("alert");
+
+      expect(alert).toBeInTheDocument();
+      expect(alert).toHaveTextContent("List content alert");
+      
+      // Verify listContent adds border and color-specific border classes
+      expect(alert).toHaveClass("border");
+      expect(alert).toHaveClass("border-success-subtle");
+      expect(alert).toHaveClass("bg-success-soft");
     });
   });
 });
