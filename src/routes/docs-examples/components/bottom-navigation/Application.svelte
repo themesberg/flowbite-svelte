@@ -1,6 +1,6 @@
 <script lang="ts">
   import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from "flowbite-svelte";
-  import { HomeSolid, WalletSolid, AdjustmentsVerticalOutline, UserCircleSolid, PlusOutline } from "flowbite-svelte-icons";
+  import { HomeOutline, WalletOutline, AdjustmentsVerticalOutline, UserCircleOutline, PlusOutline } from "flowbite-svelte-icons";
 </script>
 
 <Skeleton class="py-4" />
@@ -8,11 +8,11 @@
 
 <BottomNav position="absolute" navType="application" classes={{ inner: "grid-cols-5" }}>
   <BottomNavItem btnName="Home" appBtnPosition="left">
-    <HomeSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <HomeOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
   <Tooltip arrow={false}>Home</Tooltip>
   <BottomNavItem btnName="Wallet" appBtnPosition="middle">
-    <WalletSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <WalletOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
   <Tooltip arrow={false}>Wallet</Tooltip>
   <div class="flex items-center justify-center">
@@ -30,7 +30,7 @@
   </BottomNavItem>
   <Tooltip arrow={false}>Settings</Tooltip>
   <BottomNavItem btnName="Profile" appBtnPosition="right">
-    <UserCircleSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <UserCircleOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
   <Tooltip arrow={false}>Profile</Tooltip>
 </BottomNav>

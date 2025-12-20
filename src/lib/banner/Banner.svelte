@@ -19,7 +19,7 @@
     transition = fade,
     params,
     onclose,
-    closeBtnColor = 'gray',
+    closeBtnColor = "gray",
     ...restProps
   }: BannerProps = $props();
 
@@ -68,10 +68,9 @@
 @prop type
 @prop class: className
 @prop classes
-@prop innerClass
 @prop transition = fade
 @prop params
-@prop closeClass
 @prop onclose
+closeBtnColor = "gray",
 @prop ...restProps
 -->

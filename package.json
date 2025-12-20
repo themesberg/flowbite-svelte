@@ -25,6 +25,7 @@
     "format": "prettier --write .",
     "test:e2e": "playwright test",
     "test:unit": "vitest",
+    "test:unit-t": "vitest run -t",
     "gen:exports": "svelte-lib-helpers exports",
     "gen:docspropvalue": "svelte-lib-helpers docspropvalue themesberg/flowbite-svelte",
     "gen:component-data-prop-value": "svelte-lib-helpers component-data-prop-value themesberg/flowbite-svelte",

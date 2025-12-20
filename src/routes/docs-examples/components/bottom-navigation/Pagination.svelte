@@ -1,6 +1,6 @@
 <script lang="ts">
   import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from "flowbite-svelte";
-  import { FileCirclePlusOutline, BookmarkSolid, AngleLeftOutline, AngleRightOutline, AdjustmentsVerticalOutline, UserCircleSolid } from "flowbite-svelte-icons";
+  import { FileCirclePlusOutline, BookmarkOutline, AngleLeftOutline, AngleRightOutline, AdjustmentsVerticalOutline, UserCircleOutline } from "flowbite-svelte-icons";
 </script>
 
 <Skeleton class="py-4" />
@@ -12,7 +12,7 @@
   </BottomNavItem>
   <Tooltip arrow={false}>New document</Tooltip>
   <BottomNavItem btnName="Bookmark">
-    <BookmarkSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <BookmarkOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
   <Tooltip arrow={false}>Bookmark</Tooltip>
   <div class="col-span-2 flex items-center justify-center">
@@ -39,7 +39,7 @@
   </BottomNavItem>
   <Tooltip arrow={false}>Settings</Tooltip>
   <BottomNavItem btnName="Profile">
-    <UserCircleSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <UserCircleOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
   <Tooltip arrow={false}>Profile</Tooltip>
 </BottomNav>

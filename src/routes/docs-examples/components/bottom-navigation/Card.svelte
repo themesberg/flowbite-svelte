@@ -1,6 +1,6 @@
 <script lang="ts">
   import { BottomNav, BottomNavItem, Card, Listgroup, Avatar, type ListGroupItemType } from "flowbite-svelte";
-  import { ClockSolid, UsersGroupOutline, StarSolid } from "flowbite-svelte-icons";
+  import { ClockOutline, UsersGroupOutline, StarOutline } from "flowbite-svelte-icons";
   let list: ListGroupItemType[] = [
     {
       img: { src: "/images/profile-picture-1.webp", alt: "Neil Sims" },
@@ -46,13 +46,13 @@
   </Listgroup>
   <BottomNav position="sticky" navType="card" classes={{ inner: "grid-cols-3 pt-2 pb-4" }}>
     <BottomNavItem btnName="Latest" id="card-latest">
-      <ClockSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+      <ClockOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
     </BottomNavItem>
     <BottomNavItem btnName="Following" id="card-following">
       <UsersGroupOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
     </BottomNavItem>
     <BottomNavItem btnName="Favorites" id="card-favorites">
-      <StarSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+      <StarOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
     </BottomNavItem>
   </BottomNav>
 </Card>

@@ -22,7 +22,7 @@
     rounded,
     transition = fade,
     params,
-    closeBtnColor = 'gray',
+    closeBtnColor = "gray",
     ...restProps
   }: BadgeProps = $props();
 
@@ -86,6 +86,6 @@
 @prop rounded
 @prop transition = fade
 @prop params
-@prop aClass
+@prop closeBtnColor = 'gray'
 @prop ...restProps
 -->

@@ -20,7 +20,11 @@ export const banner = tv({
       }
     },
     color: {
-      // 'primary' secondary, | 'gray' | 'red' | 'orange' | 'amber' | 'yellow' | 'lime' | 'green' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'blue' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose'
+      brand: { base: "bg-brand-softer" },
+      danger: { base: "bg-danger-soft" },
+      success: { base: "bg-success-soft" },
+      warning: { base: "bg-warning-soft" },
+      // Legacy colors for backward compatibility
       primary: { base: "bg-primary-50 dark:bg-primary-900" },
       secondary: { base: "bg-secondary-50 dark:bg-secondary-900" },
       gray: { base: "bg-gray-50 dark:bg-gray-700" },

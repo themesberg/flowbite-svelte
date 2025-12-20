@@ -9,8 +9,9 @@ export type BottomNavHeaderItemVariants = VariantProps<typeof bottomNavHeaderIte
 
 export const bottomNav = tv({
   slots: {
-    base: "w-full z-30 border-gray-200 dark:bg-gray-700 dark:border-gray-600",
-    inner: "grid h-full max-w-lg mx-auto"
+    base: "w-full z-30 border-default bg-neutral-primary-soft",
+    inner: "grid h-full max-w-lg mx-auto",
+    active: ""
   },
   variants: {
     position: {
@@ -21,24 +22,24 @@ export const bottomNav = tv({
       sticky: { base: "sticky" }
     },
     navType: {
-      default: { base: "bottom-0 start-0 h-16 bg-white border-t" },
-      border: { base: "bottom-0 start-0 h-16 bg-white border-t" },
+      default: { base: "h-16 bottom-0 start-0 border-t" },
+      border: { base: "h-16 bottom-0 start-0 border-t" },
       application: {
-        base: "h-16 max-w-lg -translate-x-1/2 rtl:translate-x-1/2 bg-white border rounded-full bottom-4 start-1/2"
+        base: "h-16 max-w-lg -translate-x-1/2 rtl:translate-x-1/2 border rounded-full bottom-4 start-1/2"
       },
       pagination: {
-        base: "bottom-0 h-16 -translate-x-1/2 rtl:translate-x-1/2 bg-white border-t start-1/2"
+        base: "bottom-0 h-16 -translate-x-1/2 rtl:translate-x-1/2 border-t start-1/2"
       },
       group: {
-        base: "bottom-0 -translate-x-1/2 rtl:translate-x-1/2 bg-white border-t start-1/2"
+        base: "bottom-0 -translate-x-1/2 rtl:translate-x-1/2 border-t start-1/2"
       },
-      card: { base: "bottom-0 start-0 h-16 bg-white border-t" },
+      card: { base: "bottom-0 start-0 h-16 border-t" },
       meeting: {
-        base: "bottom-0 start-0 grid h-16 grid-cols-1 px-8 bg-white border-t md:grid-cols-3",
+        base: "bottom-0 start-0 grid h-16 grid-cols-1 px-8 border-t md:grid-cols-3",
         inner: "flex items-center justify-center mx-auto"
       },
       video: {
-        base: "bottom-0 start-0 grid h-24 grid-cols-1 px-8 bg-white border-t md:grid-cols-3",
+        base: "bottom-0 start-0 grid h-24 grid-cols-1 px-8 border-t md:grid-cols-3",
         inner: "flex items-center w-full"
       }
     }
@@ -57,28 +58,28 @@ export const bottomNavItem = tv({
   variants: {
     navType: {
       default: {
-        base: "px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group",
-        span: "text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500"
+        base: "px-5 hover:bg-neutral-secondary-medium group",
+        span: "text-body group-hover:text-fg-brand"
       },
       border: {
-        base: "px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600",
-        span: "text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500"
+        base: "px-5 border-default hover:bg-neutral-secondary-medium group border-x",
+        span: "text-body group-hover:text-fg-brand"
       },
       application: {
-        base: "",
+        base: "hover:bg-neutral-secondary-medium group",
         span: "sr-only"
       },
       pagination: {
-        base: "px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group",
+        base: "px-5 hover:bg-neutral-secondary-medium group",
         span: "sr-only"
       },
       group: {
-        base: "p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group",
+        base: "p-4 hover:bg-neutral-secondary-medium group",
         span: "sr-only"
       },
       card: {
-        base: "px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group",
-        span: "text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500"
+        base: "px-5 hover:bg-neutral-secondary-medium group",
+        span: "text-body group-hover:text-fg-brand"
       },
       meeting: {
         base: "",
@@ -91,11 +92,11 @@ export const bottomNavItem = tv({
     },
     appBtnPosition: {
       left: {
-        base: "px-5 rounded-s-full hover:bg-gray-50 dark:hover:bg-gray-800 group"
+        base: "px-5 rounded-s-full"
       },
-      middle: { base: "px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group" },
+      middle: { base: "px-5" },
       right: {
-        base: "px-5 rounded-e-full hover:bg-gray-50 dark:hover:bg-gray-800 group"
+        base: "px-5 rounded-e-full"
       }
     }
   },

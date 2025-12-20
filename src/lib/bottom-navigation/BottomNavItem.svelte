@@ -1,21 +1,15 @@
 <script lang="ts">
   import type { BottomNavItemProps } from "$lib";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { getBottomNavContext } from "$lib/context";
   import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
   import { bottomNavItem } from "./theme";
-  import { untrack } from "svelte";
 
-  let { children, btnName, appBtnPosition = "middle", activeClass, class: className, classes, btnClass, spanClass, active: manualActive, ...restProps }: BottomNavItemProps = $props();
+  let { children, btnName, appBtnPosition = "middle", activeClass, class: className, classes, active: manualActive, btnClass, spanClass, ...restProps }: BottomNavItemProps = $props();
 
-  warnThemeDeprecation(
-    "BottomNavItem",
-    untrack(() => ({ spanClass, btnClass })),
-    { spanClass: "span", btnClass: "class" }
-  );
-
-  const styling = $derived(classes ?? { span: spanClass });
+  // Support for deprecated props with fallback to new props
+  const styling = $derived(classes);
 
   // Theme context
   const theme = $derived(getTheme("bottomNavItem"));
@@ -39,11 +33,26 @@
   });
 
   function getCommonClass() {
-    return base({ class: clsx(isActive && (activeClass ?? context?.activeClass), theme?.base, className ?? btnClass) });
+    // Priority: theme (lowest) -> className/btnClass (highest)
+    // Note: Classes<T> type intentionally omits "base" - use class prop for base element
+    return base({
+      class: clsx(
+        theme?.base,
+        className ?? btnClass, // Support deprecated btnClass
+        isActive && (activeClass ?? context?.activeClass)
+      )
+    });
   }
 
   function getSpanClass() {
-    return span({ class: clsx(isActive && (activeClass ?? context?.activeClass), theme?.span, styling.span) });
+    // Priority: theme (lowest) -> classes.span/spanClass (highest)
+    return span({
+      class: clsx(
+        theme?.span,
+        styling?.span ?? spanClass, // Support deprecated spanClass
+        isActive && (activeClass ?? context?.activeClass)
+      )
+    });
   }
 
   /* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -85,10 +94,10 @@
 @prop btnName
 @prop appBtnPosition = "middle"
 @prop activeClass
-@prop class: className
-@prop classes
-@prop btnClass
-@prop spanClass
+@prop class: className - For the base button/anchor element
+@prop classes - For other slots (span) - automatically provided by BottomNavItemVariants
+@prop btnClass - DEPRECATED: Use class instead
+@prop spanClass - DEPRECATED: Use classes.span instead
 @prop active: manualActive
 @prop ...restProps
 -->

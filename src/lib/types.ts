@@ -277,9 +277,6 @@ export interface BottomNavProps extends BottomNavVariants, HTMLAttributes<HTMLDi
   children: Snippet;
   header?: Snippet;
   activeUrl?: string;
-  outerClass?: ClassValue;
-  innerClass?: ClassValue;
-  activeClass?: ClassValue;
 }
 
 export type BottomNavItemProps = BottomNavItemVariants &
@@ -287,15 +284,15 @@ export type BottomNavItemProps = BottomNavItemVariants &
     children: Snippet;
     btnName?: string;
     activeClass?: ClassValue;
+    /** @deprecated Use `class` prop instead */
     btnClass?: ClassValue;
+    /** @deprecated Use `classes.span` instead */
     spanClass?: ClassValue;
     active?: boolean;
   };
 
 export interface BottomNavHeaderProps extends BottomNavHeaderVariants, HTMLAttributes<HTMLDivElement> {
   children: Snippet;
-  outerClass?: ClassValue;
-  innerClass?: ClassValue;
 }
 
 export interface BottomNavHeaderItemProps extends BottomNavHeaderItemVariants, HTMLButtonAttributes {
