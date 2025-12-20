@@ -4,9 +4,8 @@
   import clsx from "clsx";
   import { type ParamsType, type BannerProps } from "$lib";
   import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
-  import { untrack } from "svelte";
 
   let {
     children,
@@ -17,21 +16,14 @@
     type,
     class: className,
     classes,
-    innerClass,
     transition = fade,
     params,
-    closeClass,
     onclose,
+    closeBtnColor = 'gray',
     ...restProps
   }: BannerProps = $props();
 
-  warnThemeDeprecation(
-    "Banner",
-    untrack(() => ({ innerClass, closeClass })),
-    { innerClass: "insideDiv", closeClass: "dismissable" }
-  );
-
-  const styling = $derived(classes ?? { insideDiv: innerClass, dismissable: closeClass });
+  const styling = $derived(classes);
 
   // Theme context
   const theme = $derived(getTheme("banner"));
@@ -50,13 +42,13 @@
 
 {#if open}
   <div tabindex="-1" bind:this={ref} class={base({ class: clsx(theme?.base, className) })} {...restProps} transition:transition={params as ParamsType}>
-    <div class={insideDiv({ class: clsx(theme?.insideDiv, styling.insideDiv) })}>
+    <div class={insideDiv({ class: clsx(theme?.insideDiv, styling?.insideDiv) })}>
       {@render children?.()}
     </div>
 
     {#if dismissable}
       <div class="flex items-center justify-end">
-        <CloseButton class={dismissableClass({ class: clsx(theme?.dismissable, styling.dismissable) })} {color} ariaLabel="Remove banner" />
+        <CloseButton class={dismissableClass({ class: clsx(theme?.dismissable, styling?.dismissable) })} color={closeBtnColor} ariaLabel="Remove banner" />
       </div>
     {/if}
   </div>

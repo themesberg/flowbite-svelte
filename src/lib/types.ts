@@ -258,9 +258,6 @@ export interface BadgeProps extends Omit<BadgeVariants, "href">, Omit<HTMLAttrib
   transition?: TransitionFunc;
   params?: ParamsType;
   closeBtnColor?: CloseButtonVariants["color"];
-  classes?: Partial<{
-    linkClass?: ClassValue;
-  }>;
 }
 
 // banner
@@ -268,10 +265,9 @@ export interface BannerProps extends BannerVariants, Omit<HTMLAttributes<HTMLDiv
   header?: Snippet;
   open?: boolean;
   dismissable?: boolean;
-  innerClass?: ClassValue;
   transition?: TransitionFunc;
   params?: ParamsType;
-  closeClass?: ClassValue;
+  closeBtnColor?: CloseButtonVariants["color"];
   onclose?: (ev: MouseEvent) => void;
 }
 

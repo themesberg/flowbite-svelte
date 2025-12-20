@@ -18,6 +18,13 @@ export const badge = tv({
       danger: { base: "bg-danger-soft text-fg-danger-strong" },
       success: { base: "bg-success-soft text-fg-success-strong" },
       warning: { base: "bg-warning-soft text-fg-warning" },
+      // Legacy colors for backward compatibility
+      primary: { base: "bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300" },
+      secondary: { base: "bg-secondary-100 text-secondary-800 dark:bg-secondary-900 dark:text-secondary-300" },
+      red: { base: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300" },
+      yellow: { base: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300" },
+      green: { base: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300" },
+      // end of legacy colors
       orange: { base: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300" },
       amber: { base: "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-300" },
       lime: { base: "bg-lime-100 text-lime-800 dark:bg-lime-900 dark:text-lime-300" },
