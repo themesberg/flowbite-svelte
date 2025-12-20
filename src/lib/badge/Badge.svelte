@@ -6,7 +6,6 @@
   import { fade } from "svelte/transition";
   import { badge } from "./theme";
   import { createDismissableContext } from "$lib/utils/dismissable";
-  // import { untrack } from "svelte";
 
   let {
     children,
@@ -23,7 +22,7 @@
     rounded,
     transition = fade,
     params,
-    closeBtnColor,
+    closeBtnColor = 'gray',
     ...restProps
   }: BadgeProps = $props();
 

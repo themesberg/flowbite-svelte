@@ -45,8 +45,7 @@ export const closeButton = tv({
   },
   defaultVariants: {
     color: "gray",
-    size: "md",
-    href: null
+    size: "md"
   },
   slots: {
     svg: ""

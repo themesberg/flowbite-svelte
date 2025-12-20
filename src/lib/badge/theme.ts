@@ -43,6 +43,7 @@ export const badge = tv({
     rounded: {
       true: { base: "rounded-full" }
     },
+    // Used for compound variant matching (hover states)
     href: {
       true: {},
       false: {}
@@ -152,7 +153,7 @@ export const badge = tv({
     {
       href: true,
       color: "brand",
-      class: "hover:bg-primary-200"
+      class: "hover:bg-brand-medium"
     },
     {
       href: true,

@@ -16,7 +16,7 @@
   <Badge border large>Brand</Badge>
   <Badge border large color="alternative">Alternative</Badge>
   <Badge border large color="gray">Gray</Badge>
-  <Badge border color="danger">Danger</Badge>
+  <Badge border large color="danger">Danger</Badge>
   <Badge border large color="success">Success</Badge>
   <Badge border large color="warning">Warning</Badge>
   <Badge border large color="purple">Purple</Badge>
