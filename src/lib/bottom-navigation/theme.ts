@@ -110,16 +110,16 @@ export const bottomNavItem = tv({
 export const bottomNavHeader = tv({
   slots: {
     base: "w-full",
-    innerDiv: "grid max-w-xs grid-cols-3 gap-1 p-1 mx-auto my-2 bg-gray-100 rounded-lg dark:bg-gray-600"
+    innerDiv: "grid max-w-xs grid-cols-3 gap-1 p-1 mx-auto my-2 bg-neutral-tertiary rounded-base"
   }
 });
 
 export const bottomNavHeaderItem = tv({
-  base: "px-5 py-1.5 text-xs font-medium rounded-lg",
+  base: "px-5 py-1.5 text-xs font-medium rounded-base",
   variants: {
     active: {
-      true: "text-white bg-gray-900 dark:bg-gray-300 dark:text-gray-900",
-      false: "text-gray-900 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700"
+      true: "text-white bg-dark-strong",
+      false: "text-body hover:bg-dark-strong hover:text-white"
     }
   }
 });
