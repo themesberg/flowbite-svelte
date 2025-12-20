@@ -124,12 +124,11 @@ describe("Banner Component", () => {
       expect(innerDiv).toBeInTheDocument();
     });
 
-    test("dismissable banner has close button container", () => {
-      const { container } = render(BasicBannerTest);
-      const banner = container.querySelector("div[tabindex='-1']");
-      const closeContainer = banner?.querySelector("div.flex.items-center.justify-end");
+    test("dismissable banner has close button", () => {
+      render(BasicBannerTest);
+      const closeButton = screen.getByRole("button", { name: /remove banner/i });
 
-      expect(closeContainer).toBeInTheDocument();
+      expect(closeButton).toBeInTheDocument();
     });
   });
 });

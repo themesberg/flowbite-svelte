@@ -11,7 +11,7 @@ export const badge = tv({
   },
   variants: {
     color: {
-      // brand, alternative, gray, danger, success, warning, orange, amber, lime, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
+      // Semantic colors
       brand: { base: "bg-brand-softer text-fg-brand-strong " },
       alternative: { base: "bg-neutral-primary-soft text-heading" },
       gray: { base: "bg-neutral-secondary-medium text-heading " },

@@ -114,7 +114,7 @@ describe("BottomNavItem Component", () => {
     expect(screen.getByText("Profile")).toBeInTheDocument();
   });
 
-  test("applies active state correctly", () => {
+  test("renders buttons when active state is set", () => {
     render(BottomNavItemActiveTest);
 
     const homeButton = screen.getByLabelText("Home");
@@ -122,10 +122,10 @@ describe("BottomNavItem Component", () => {
 
     expect(homeButton).toBeInTheDocument();
     expect(walletButton).toBeInTheDocument();
-
-    // Active state is applied through classes, we just verify the buttons exist
     expect(homeButton.tagName).toBe("BUTTON");
     expect(walletButton.tagName).toBe("BUTTON");
+    // Note: Active state styling is controlled by parent component
+    // and would need integration testing to verify visual changes
   });
 
   test("has proper accessibility attributes", () => {
@@ -210,7 +210,7 @@ describe("BottomNav Integration", () => {
     expect(screen.getByLabelText("Profile")).toBeInTheDocument();
   });
 
-  test("activeUrl prop affects link rendering", () => {
+  test("renders links with correct href attributes", () => {
     render(BottomNavItemLinkTest);
 
     const homeLink = screen.getByLabelText("Home");

@@ -4,13 +4,13 @@
   import clsx from "clsx";
   import { breadcrumbItem } from "./theme";
 
-  let { children, icon, home = false, href, linkClass, spanClass, homeClass, class: className, classes, ...restProps }: BreadcrumbItemProps = $props();
-
-  const styling = $derived(classes ?? {});
+  let { children, icon, home = false, href, class: className, classes, ...restProps }: BreadcrumbItemProps = $props();
+  // linkClass, spanClass, homeClass,
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("breadcrumbItem"));
 
-  const { base, separator } = $derived(
+  const { base, link, separator, span } = $derived(
     breadcrumbItem({
       home,
       hasHref: !!href
@@ -20,13 +20,17 @@
 
 <li {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {#if home}
-    <a class={base({ home: true, class: clsx(theme?.base, homeClass) })} {href}>
+    <a class={link({ home: true, class: clsx(theme?.link, classes?.link) })} {href}>
       {#if icon}
         {@render icon()}
       {:else}
-        <svg class="me-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <svg class="me-1.5 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
           <path
-            d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"
           />
         </svg>
       {/if}
@@ -37,17 +41,17 @@
     {#if icon}
       {@render icon()}
     {:else}
-      <svg class={separator({ class: clsx(theme?.separator, styling.separator) })} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+      <svg class={separator({ class: clsx(theme?.separator, styling?.separator) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />
       </svg>
     {/if}
 
     {#if href}
-      <a class={base({ home: false, hasHref: true, class: clsx(theme?.base, linkClass) })} {href}>
+      <a class={link({ home: false, hasHref: true, class: clsx(theme?.link, classes?.link) })} {href}>
         {@render children()}
       </a>
     {:else}
-      <span class={base({ home: false, hasHref: false, class: clsx(theme?.base, spanClass) })}>
+      <span class={span({ home: false, hasHref: false, class: clsx(theme?.base, classes?.span) })}>
         {@render children()}
       </span>
     {/if}

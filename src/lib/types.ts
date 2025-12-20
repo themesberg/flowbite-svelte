@@ -304,7 +304,6 @@ export interface BottomNavHeaderItemProps extends BottomNavHeaderItemVariants, H
 export interface BreadcrumbProps extends BreadcrumbVariants, HTMLAttributes<HTMLElement> {
   children: Snippet;
   solid?: boolean;
-  olClass?: ClassValue;
   ariaLabel?: string;
 }
 
@@ -313,9 +312,6 @@ export interface BreadcrumbItemProps extends BreadcrumbItemVariants, HTMLLiAttri
   icon?: Snippet;
   home?: boolean;
   href?: string;
-  linkClass?: ClassValue;
-  spanClass?: ClassValue;
-  homeClass?: ClassValue;
 }
 
 // buttongroup

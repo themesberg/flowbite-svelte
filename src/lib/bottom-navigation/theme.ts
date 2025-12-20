@@ -102,8 +102,7 @@ export const bottomNavItem = tv({
   },
   defaultVariants: {
     navType: "default",
-    appBtnPosition: "middle",
-    active: false
+    appBtnPosition: "middle"
   }
 });
 

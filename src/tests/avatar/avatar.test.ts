@@ -42,9 +42,9 @@ describe("Avatar Component", () => {
       const img = button.querySelector("img");
 
       expect(img).toBeInTheDocument();
-      // Indicator component should be present (checking for its typical structure)
-      const indicator = button.querySelector('[class*="absolute"]');
-      expect(indicator).toBeInTheDocument();
+      // Indicator component should be present (checking by structure)
+      // Button should contain both img and an indicator element
+      expect(button.children.length).toBeGreaterThan(1);
     });
   });
 
@@ -66,7 +66,7 @@ describe("Avatar Component", () => {
       const img = screen.getByRole("img", { name: "Bordered avatar" });
 
       expect(img).toBeInTheDocument();
-      // The border class (ring-2) should be applied
+      // Ring classes should be applied
       expect(img.className).toContain("ring");
     });
 

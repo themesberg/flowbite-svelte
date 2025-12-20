@@ -2,24 +2,17 @@
   import { breadcrumb } from "./theme";
   import clsx from "clsx";
   import type { BreadcrumbProps } from "$lib";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, solid = false, class: className, classes, olClass, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
+  let { children, solid = false, class: className, classes, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
 
-  warnThemeDeprecation(
-    "Breadcrumb",
-    untrack(() => ({ olClass })),
-    { olClass: "list" }
-  );
-
-  const styling = $derived(classes ?? { list: olClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("breadcrumb"));
 
   const { base, list } = $derived(breadcrumb({ solid }));
   let classNav = $derived(base({ class: clsx(theme?.base, className) }));
-  let classList = $derived(list({ class: clsx(theme?.list, styling.list) }));
+  let classList = $derived(list({ class: clsx(theme?.list, styling?.list) }));
 </script>
 
 <nav aria-label={ariaLabel} {...restProps} class={classNav}>

@@ -44,7 +44,7 @@
 </script>
 
 <header class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900">
-  <Navbar color="default" fluid class="mx-auto flex w-full items-center justify-between px-4 py-1.5">
+  <Navbar color="default" fluid class="mx-auto flex w-full items-center justify-between px-4 py-0">
     <NavBrand href="/" class="pl-8 lg:pl-0">
       <img src={logo} class="me-3 h-8" alt="Flowbite Svelte Logo" />
       <span class="hidden self-center text-2xl font-semibold whitespace-nowrap text-gray-900 lg:block dark:text-white">Flowbite Svelte</span>

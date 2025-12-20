@@ -8,12 +8,12 @@ export type BreadcrumbItemVariants = VariantProps<typeof breadcrumbItem> & Class
 export const breadcrumb = tv({
   slots: {
     base: "flex",
-    list: "inline-flex items-center space-x-1 rtl:space-x-reverse md:space-x-3 rtl:space-x-reverse"
+    list: "inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"
   },
   variants: {
     solid: {
       true: {
-        base: "px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
+        base: "p-3 bg-neutral-secondary-medium border border-default-medium rounded-base"
       },
       false: ""
     }
@@ -25,40 +25,24 @@ export const breadcrumb = tv({
 
 export const breadcrumbItem = tv({
   slots: {
-    base: "inline-flex items-center",
-    separator: "h-6 w-6 text-gray-400 rtl:-scale-x-100"
+    base: "",
+    link: "inline-flex items-center text-sm font-medium text-body hover:text-fg-brand",
+    separator: "w-3.5 h-3.5 rtl:rotate-180 text-body",
+    span: "inline-flex items-center text-sm font-medium text-body-subtle"
   },
   variants: {
     home: {
-      true: "",
-      false: ""
+      true: {
+        base: "inline-flex items-center"
+      },
+      false: {
+        base: "flex items-center space-x-1.5"
+      }
     },
     hasHref: {
       true: "",
       false: ""
     }
   },
-  compoundVariants: [
-    {
-      home: true,
-      class: {
-        base: "inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white",
-        separator: "me-2 h-4 w-4"
-      }
-    },
-    {
-      home: false,
-      hasHref: true,
-      class: {
-        base: "ms-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ms-2 dark:text-gray-400 dark:hover:text-white"
-      }
-    },
-    {
-      home: false,
-      hasHref: false,
-      class: {
-        base: "ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400"
-      }
-    }
-  ]
+  compoundVariants: []
 });
