@@ -2,9 +2,17 @@
   import { Button } from "flowbite-svelte";
 </script>
 
-<Button outline>Default</Button>
-<Button outline color="dark">Dark</Button>
-<Button outline color="green">Green</Button>
-<Button outline color="red">Red</Button>
-<Button outline color="yellow">Yellow</Button>
-<Button outline color="purple">Purple</Button>
+<Button outline>Brand</Button>
+<Button color="alternative" outline>Alternative</Button>
+<Button color="gray" outline>Gray</Button>
+<Button color="success" outline>Success</Button>
+<Button color="danger" outline>Danger</Button>
+<Button color="warning" outline>Warning</Button>
+<Button color="transparent" outline>Transparent</Button>
+<Button color="dark" outline>Dark</Button>
+<Button color="light" outline>Light</Button>
+<Button color="blue" outline>Blue</Button>
+<Button color="green" outline>Green</Button>
+<Button color="red" outline>Red</Button>
+<Button color="yellow" outline>Yellow</Button>
+<Button color="purple" outline>Purple</Button>

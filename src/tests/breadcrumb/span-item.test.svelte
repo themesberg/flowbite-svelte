@@ -4,12 +4,6 @@
 </script>
 
 <Breadcrumb>
-  {#snippet children()}
-    <BreadcrumbItem home href="/">
-      {#snippet children()}Home{/snippet}
-    </BreadcrumbItem>
-    <BreadcrumbItem data-testid="span-item">
-      {#snippet children()}Current Page{/snippet}
-    </BreadcrumbItem>
-  {/snippet}
+  <BreadcrumbItem home href="/">Home</BreadcrumbItem>
+  <BreadcrumbItem data-testid="span-item">Current Page</BreadcrumbItem>
 </Breadcrumb>

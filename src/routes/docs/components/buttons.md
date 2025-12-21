@@ -64,6 +64,12 @@ Pill buttons work especially well in modern web apps, social platforms, and cons
 {#include Pills.svelte}
 ```
 
+## Shadow
+
+```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
+{#include Shadow.svelte}
+```
+
 ## Gradient monochrome
 
 These beautifully colored buttons built with the gradient color stops utility classes from Tailwind CSS can be used as a creative alternative to the default button styles.

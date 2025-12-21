@@ -4,9 +4,5 @@
 </script>
 
 <Breadcrumb class="custom-breadcrumb" ariaLabel="Custom navigation">
-  {#snippet children()}
-    <BreadcrumbItem home href="/">
-      {#snippet children()}Home{/snippet}
-    </BreadcrumbItem>
-  {/snippet}
+  <BreadcrumbItem home href="/">Home</BreadcrumbItem>
 </Breadcrumb>

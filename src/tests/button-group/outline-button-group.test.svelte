@@ -4,9 +4,7 @@
 </script>
 
 <ButtonGroup data-testid="outline-group">
-  {#snippet children()}
-    <Button outline>One</Button>
-    <Button outline>Two</Button>
-    <Button outline>Three</Button>
-  {/snippet}
+  <Button outline>One</Button>
+  <Button outline>Two</Button>
+  <Button outline>Three</Button>
 </ButtonGroup>

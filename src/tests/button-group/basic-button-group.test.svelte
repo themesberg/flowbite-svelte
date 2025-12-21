@@ -4,9 +4,7 @@
 </script>
 
 <ButtonGroup>
-  {#snippet children()}
-    <Button>Profile</Button>
-    <Button>Settings</Button>
-    <Button>Messages</Button>
-  {/snippet}
+  <Button>Profile</Button>
+  <Button>Settings</Button>
+  <Button>Messages</Button>
 </ButtonGroup>

@@ -80,12 +80,6 @@ When there is no custom image available, a placeholder is displayed. Placeholder
 
 This example can be used to show the initials of the user's first and last name as a placeholder when no profile picture is available. This creates a more personalized experience than generic icons and helps users identify individuals even without photos.
 
-Initial-based avatars are particularly useful in:
-- Business applications where photos may not be required
-- Team directories with many members
-- Comment sections or collaborative tools
-- Administrative interfaces
-
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 {#include PlaceholderInitial.svelte}
 ```
@@ -102,24 +96,13 @@ Use this example to show a tooltip when hovering over the avatar. Tooltips can d
 
 Use a dot element relative to the avatar component as an indicator for the user's status (e.g., online, offline, busy, away). Status indicators help users understand availability in real-time communication tools, collaboration platforms, and social applications.
 
-Different colors typically represent:
-- **Green**: Online/Available
-- **Yellow/Orange**: Away/Idle
-- **Red**: Busy/Do Not Disturb
-- **Gray**: Offline
-
 ```svelte example class="flex justify-center gap-4" hideResponsiveButtons
 {#include DotIndicator.svelte}
 ```
 
 ## Stacked
 
-Use this example if you want to stack a group of users by overlapping the avatar components. Stacked avatars are perfect for showing:
-
-- Team members on a project
-- Participants in a meeting or chat
-- Contributors to a document or task
-- Multiple assignees without taking up excessive space
+Use this example if you want to stack a group of users by overlapping the avatar components. 
 
 This pattern saves space while still providing visual representation of all involved users. Include a count indicator when there are more users than can be displayed.
 
@@ -129,13 +112,7 @@ This pattern saves space while still providing visual representation of all invo
 
 ## Avatar text
 
-This example can be used if you want to show additional information in the form of text elements such as the user's name and join date. Combining avatars with descriptive text provides full context about the user, making it ideal for:
-
-- User profile cards
-- Directory listings
-- Comment headers
-- Team member displays
-- Author bylines
+This example can be used if you want to show additional information in the form of text elements such as the user's name and join date. 
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 {#include AvatarText.svelte}
@@ -143,13 +120,7 @@ This example can be used if you want to show additional information in the form 
 
 ## User dropdown
 
-Use this example if you want to show a dropdown menu when clicking on the avatar component. Avatar dropdowns are commonly used in navigation headers for:
-
-- Quick access to profile settings
-- Account management options
-- User-specific actions (sign out, preferences, etc.)
-- Status changes
-- Switching between accounts or workspaces
+Use this example if you want to show a dropdown menu when clicking on the avatar component. 
 
 ```svelte example class="flex justify-center h-96" hideResponsiveButtons
 {#include UserDropdown.svelte}
@@ -188,17 +159,6 @@ The Avatar component is built with accessibility in mind:
 - **Keyboard Navigation**: Interactive avatars (with dropdowns/tooltips) are fully keyboard accessible
 - **Screen Reader Support**: Status indicators and additional information are announced to screen readers
 - **Color Contrast**: Status dots and text meet WCAG contrast requirements
-
-## Best Practices
-
-When implementing avatars, consider these guidelines:
-
-- **Image Optimization**: Use appropriately sized images to avoid unnecessary bandwidth
-- **Fallback Strategy**: Always provide fallbacks (initials or icons) for missing images
-- **Consistent Sizing**: Use consistent avatar sizes within the same context
-- **Loading States**: Show loading indicators for slowly loading images
-- **Clickable Areas**: Ensure clickable avatars have adequate touch targets (minimum 44x44px)
-- **Privacy**: Consider user privacy preferences when displaying profile pictures
 
 ## See also
 

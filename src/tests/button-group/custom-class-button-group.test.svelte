@@ -4,8 +4,6 @@
 </script>
 
 <ButtonGroup class="custom-group-class" data-testid="custom-class-group">
-  {#snippet children()}
-    <Button>First</Button>
-    <Button>Second</Button>
-  {/snippet}
+  <Button>First</Button>
+  <Button>Second</Button>
 </ButtonGroup>

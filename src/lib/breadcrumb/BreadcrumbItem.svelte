@@ -5,7 +5,7 @@
   import { breadcrumbItem } from "./theme";
 
   let { children, icon, home = false, href, class: className, classes, ...restProps }: BreadcrumbItemProps = $props();
-  
+
   const styling = $derived(classes);
 
   const theme = $derived(getTheme("breadcrumbItem"));

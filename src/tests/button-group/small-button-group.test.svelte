@@ -4,8 +4,6 @@
 </script>
 
 <ButtonGroup size="sm" data-testid="small-group">
-  {#snippet children()}
-    <Button>Small 1</Button>
-    <Button>Small 2</Button>
-  {/snippet}
+  <Button>Small 1</Button>
+  <Button>Small 2</Button>
 </ButtonGroup>

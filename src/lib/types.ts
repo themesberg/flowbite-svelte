@@ -339,7 +339,6 @@ export interface GradientButtonProps extends GradientButtonVariantes, HTMLButton
   tag?: string;
   disabled?: boolean;
   href?: string;
-  btnClass?: ClassValue;
 }
 
 // Context - pass classes through
@@ -462,12 +461,9 @@ export type CheckIconProps = SVGAttributes<SVGSVGElement>;
 export type CardProps = Omit<CardVariants, "href"> &
   AnchorDivAttributes & {
     img?: string;
-    imgClass?: ClassValue;
-    contentClass?: string;
   };
 
 // carousel
-
 export interface CarouselProps extends CarouselVariants, Omit<HTMLAttributes<HTMLDivElement>, "children" | "onchange"> {
   children?: Snippet<[number]>;
   slide?: Snippet<[{ index: number; Slide: typeof Slide }]>;

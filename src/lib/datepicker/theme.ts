@@ -22,17 +22,47 @@ export const datepicker = tv({
   },
   variants: {
     color: {
+      brand: {
+        input: "focus:ring-brand-medium",
+        dayButton: "bg-brand-subtle"
+      },
+      alternative: {
+        input: "focus:ring-neutral-tertiary",
+        dayButton: "bg-neutral-secondary-medium"
+      },
+      gray: {
+        input: "focus:ring-neutral-tertiary-soft",
+        dayButton: "bg-neutral-secondary-soft"
+      },
+      success: {
+        input: "focus:ring-success-medium",
+        dayButton: "bg-success-subtle"
+      },
+      danger: {
+        input: "focus:ring-danger-medium",
+        dayButton: "bg-danger-subtle"
+      },
+      warning: {
+        input: "focus:ring-warning-medium",
+        dayButton: "bg-warning-subtle"
+      },
+      transparent: {
+        input: "focus:ring-neutral-tertiary",
+        dayButton: "bg-transparent"
+      },
+      dark: {
+        input: "focus:ring-neutral-tertiary",
+        dayButton: "bg-neutral-secondary-medium"
+      },
+      // legacy colors
       primary: { input: "focus:ring-primary-500 dark:focus:ring-primary-400", dayButton: "bg-primary-300 dark:bg-primary-900" },
       blue: { input: "focus:ring-blue-500 dark:focus:ring-blue-400", dayButton: "bg-blue-300 dark:bg-blue-900" },
       red: { input: "focus:ring-red-500 dark:focus:ring-red-400", dayButton: "bg-red-300 dark:bg-red-900" },
       green: { input: "focus:ring-green-500 dark:focus:ring-green-400", dayButton: "bg-green-300 dark:bg-green-900" },
       yellow: { input: "focus:ring-yellow-500 dark:focus:ring-yellow-400", dayButton: "bg-yellow-300 dark:bg-yellow-900" },
       purple: { input: "focus:ring-purple-500 dark:focus:ring-purple-400", dayButton: "bg-purple-300 dark:bg-purple-900" },
-      dark: { input: "focus:ring-gray-500 dark:focus:ring-gray-400", dayButton: "bg-gray-300 dark:bg-gray-900" },
       light: { input: "focus:ring-gray-500 dark:focus:ring-gray-400", dayButton: "bg-gray-300 dark:bg-gray-900" },
-      alternative: { input: "focus:ring-alternative-500 dark:focus:ring-alternative-400", dayButton: "bg-alternative-300 dark:bg-alternative-900" },
       secondary: { input: "focus:ring-secondary-500 dark:focus:ring-secondary-400", dayButton: "bg-secondary-300 dark:bg-secondary-900" },
-      gray: { input: "focus:ring-gray-500 dark:focus:ring-gray-400", dayButton: "bg-gray-300 dark:bg-gray-900" },
       orange: { input: "focus:ring-orange-500 dark:focus:ring-orange-400", dayButton: "bg-orange-300 dark:bg-orange-900" },
       amber: { input: "focus:ring-amber-500 dark:focus:ring-amber-400", dayButton: "bg-amber-300 dark:bg-amber-900" },
       lime: { input: "focus:ring-lime-500 dark:focus:ring-lime-400", dayButton: "bg-lime-300 dark:bg-lime-900" },

@@ -4,8 +4,6 @@
 </script>
 
 <ButtonGroup size="lg" data-testid="large-group">
-  {#snippet children()}
-    <Button>Large 1</Button>
-    <Button>Large 2</Button>
-  {/snippet}
+  <Button>Large 1</Button>
+  <Button>Large 2</Button>
 </ButtonGroup>

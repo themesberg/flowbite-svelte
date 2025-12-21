@@ -4,15 +4,7 @@
 </script>
 
 <Breadcrumb>
-  {#snippet children()}
-    <BreadcrumbItem home href="/">
-      {#snippet children()}Home{/snippet}
-    </BreadcrumbItem>
-    <BreadcrumbItem href="/projects">
-      {#snippet children()}Projects{/snippet}
-    </BreadcrumbItem>
-    <BreadcrumbItem>
-      {#snippet children()}Current Page{/snippet}
-    </BreadcrumbItem>
-  {/snippet}
+  <BreadcrumbItem home href="/">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/projects">Projects</BreadcrumbItem>
+  <BreadcrumbItem>Current Page</BreadcrumbItem>
 </Breadcrumb>
