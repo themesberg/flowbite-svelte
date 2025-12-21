@@ -32,16 +32,7 @@ describe("DarkMode Component", () => {
       render(BasicDarkmodeTest);
       const button = screen.getByRole("button");
 
-      expect(button).toHaveClass(
-        "text-gray-500",
-        "dark:text-gray-400",
-        "hover:bg-gray-100",
-        "dark:hover:bg-gray-700",
-        "focus:outline-hidden",
-        "rounded-lg",
-        "text-sm",
-        "p-2.5"
-      );
+      expect(button).toHaveClass("text-gray-500", "dark:text-gray-400", "hover:bg-gray-100", "dark:hover:bg-gray-700", "focus:outline-hidden", "rounded-lg", "text-sm", "p-2.5");
     });
 
     test("renders default dark mode icon in light mode", () => {
@@ -94,7 +85,7 @@ describe("DarkMode Component", () => {
   describe("Custom Icons", () => {
     test("renders custom light and dark icons", () => {
       render(DarkmodeCustomIconsTest);
-      
+
       // In light mode, dark icon should be visible
       const customDarkIcon = screen.getByTestId("custom-dark-icon");
       expect(customDarkIcon).toBeInTheDocument();
@@ -103,11 +94,11 @@ describe("DarkMode Component", () => {
     test("custom icons have correct testid attributes", () => {
       render(DarkmodeCustomIconsTest);
       const button = screen.getByRole("button");
-      
+
       // Check that custom icons are in the DOM (one is hidden, one is visible)
       const darkIcon = button.querySelector('[data-testid="custom-dark-icon"]');
       const lightIcon = button.querySelector('[data-testid="custom-light-icon"]');
-      
+
       expect(darkIcon).toBeInTheDocument();
       expect(lightIcon).toBeInTheDocument();
     });
@@ -183,7 +174,7 @@ describe("DarkMode Component", () => {
 
     test("SVG icons have proper aria-label attributes", () => {
       render(BasicDarkmodeTest);
-      
+
       // Check for the dark mode icon (visible in light mode)
       const darkIcon = screen.getByRole("img", { name: "Dark mode" });
       expect(darkIcon).toBeInTheDocument();
@@ -194,10 +185,10 @@ describe("DarkMode Component", () => {
     test("shows dark icon in light mode", () => {
       // Ensure we're in light mode
       document.documentElement.classList.remove("dark");
-      
+
       render(BasicDarkmodeTest);
       const darkIcon = screen.getByRole("img", { name: "Dark mode" });
-      
+
       expect(darkIcon).toBeInTheDocument();
       expect(darkIcon.parentElement).toHaveClass("block", "dark:hidden");
     });
@@ -205,10 +196,10 @@ describe("DarkMode Component", () => {
     test("shows light icon in dark mode", () => {
       // Set dark mode before rendering
       document.documentElement.classList.add("dark");
-      
+
       render(BasicDarkmodeTest);
       const lightIcon = screen.getByRole("img", { name: "Light mode" });
-      
+
       expect(lightIcon).toBeInTheDocument();
       expect(lightIcon.parentElement).toHaveClass("hidden", "dark:block");
     });

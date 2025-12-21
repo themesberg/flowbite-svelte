@@ -2,7 +2,6 @@
   "name": "flowbite-svelte",
   "version": "1.31.0",
   "description": "Flowbite components for Svelte",
-  "main": "dist/index.js",
   "author": {
     "name": "Shinichi Okada",
     "email": "connect@codewithshin.com",
@@ -26,10 +25,11 @@
     "test:e2e": "playwright test",
     "test:unit": "vitest",
     "test:unit-t": "vitest run -t",
-    "gen:exports": "svelte-lib-helpers exports",
+    "gen:exports": "svelte-lib-helpers exports && pnpm sync:exports",
     "gen:docspropvalue": "svelte-lib-helpers docspropvalue themesberg/flowbite-svelte",
     "gen:component-data-prop-value": "svelte-lib-helpers component-data-prop-value themesberg/flowbite-svelte",
     "copy:packagejson": "svelte-lib-helpers package",
+    "sync:exports": "./scripts/sync-plugin-utilities-export.sh",
     "lib-helpers": "pnpm gen:component-data-prop-value && pnpm gen:docspropvalue && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson && pnpm llm",
     "llm": "svelte-doc-llm && ./scripts/update-llms.sh",
     "ch": "npx changeset",
@@ -914,6 +914,12 @@
       "types": "./dist/virtuallist/VirtualList.svelte.d.ts",
       "svelte": "./dist/virtuallist/VirtualList.svelte"
     },
+  "./plugin-utilities": {
+    "types": "./dist/plugin-utilities.d.ts",
+    "import": "./dist/plugin-utilities.js",
+    "default": "./dist/plugin-utilities.js"
+  },
+
     "./package.json": "./package.json"
   }
 }

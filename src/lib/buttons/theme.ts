@@ -145,7 +145,7 @@ export const button = tv({
         shadow: "shadow-fuchsia-500/50 dark:shadow-fuchsia-800/80"
       },
       pink: {
-        base: "text-white bg-pink-700 enabled:hover:bg-pink-800 dark:bg-pink-600 dark:enabled:hover:bg-pink-700  focus:ring-pink-300 dark:focus:ring-pink-800",
+        base: "text-white bg-pink-700 enabled:hover:bg-pink-800 dark:bg-pink-600 dark:enabled:hover:bg-pink-700 focus:ring-pink-300 dark:focus:ring-pink-800",
         outline: "text-pink-700 border-pink-700 enabled:hover:bg-pink-800 dark:border-pink-400 dark:text-pink-400 dark:enabled:hover:bg-pink-500",
         shadow: "shadow-pink-500/50 dark:shadow-pink-800/80"
       },

@@ -59,13 +59,14 @@
 [CardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L461)
 ## Props
 @prop children
+@prop hoverable = false
 @prop horizontal = false
 @prop shadow = "md"
 @prop reverse = false
 @prop img
+prop imgAlt
 @prop size = "sm"
 @prop class: className
 @prop classes
-@prop imgClass
 @prop ...restProps
 -->

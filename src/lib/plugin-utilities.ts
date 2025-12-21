@@ -7,7 +7,7 @@ import plugin from "tailwindcss/plugin";
  * In Tailwind v4, CSS custom properties defined in @theme are not automatically
  * converted to utility classes, so this plugin explicitly creates them.
  */
-export default plugin(function ({ addUtilities }) {
+const flowbitePlugin = plugin(function ({ addUtilities }) {
   const colorUtilities = {
     // ===========================
     // TEXT/BODY COLORS
@@ -296,3 +296,6 @@ export default plugin(function ({ addUtilities }) {
 
   addUtilities(colorUtilities);
 });
+
+// Export with type assertion to avoid Tailwind internal type issues
+export default flowbitePlugin as any;

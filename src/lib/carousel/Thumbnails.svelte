@@ -54,7 +54,6 @@
 @prop images = []
 @prop index = $bindable()
 @prop ariaLabel = "Click to view image"
-@prop imgClass
 @prop throttleDelay = 650
 @prop class: className
 -->
