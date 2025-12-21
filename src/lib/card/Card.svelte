@@ -1,13 +1,10 @@
 <script lang="ts">
-  /**
-   * @prop classes: image
-   */
   import type { CardProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { card } from "./theme";
 
-  let { children, horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, classes, ...restProps }: CardProps = $props();
+  let { children, hoverable = false, horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, classes, ...restProps }: CardProps = $props();
 
   const styling = $derived(classes);
 
@@ -19,6 +16,7 @@
       shadow,
       horizontal,
       reverse,
+      hoverable,
       href: !!restProps.href
     })
   );

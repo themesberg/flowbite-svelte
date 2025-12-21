@@ -461,6 +461,7 @@ export type CheckIconProps = SVGAttributes<SVGSVGElement>;
 export type CardProps = Omit<CardVariants, "href"> &
   AnchorDivAttributes & {
     img?: string;
+    hoverable?: boolean;
   };
 
 // carousel

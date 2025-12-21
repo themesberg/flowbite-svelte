@@ -1,7 +1,4 @@
 <script lang="ts">
-  /**
-    @prop classes: outline, shadow, spinner
-  */
   import clsx from "clsx";
   import { Spinner } from "$lib";
   import type { ButtonProps } from "$lib";

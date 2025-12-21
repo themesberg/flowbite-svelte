@@ -6,8 +6,6 @@
 
   let { children, icon, home = false, href, class: className, classes, ...restProps }: BreadcrumbItemProps = $props();
 
-  const styling = $derived(classes);
-
   const theme = $derived(getTheme("breadcrumbItem"));
 
   const { base, link, separator, span } = $derived(
@@ -41,7 +39,7 @@
     {#if icon}
       {@render icon()}
     {:else}
-      <svg class={separator({ class: clsx(theme?.separator, styling?.separator) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+      <svg class={separator({ class: clsx(theme?.separator, classes?.separator) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />
       </svg>
     {/if}

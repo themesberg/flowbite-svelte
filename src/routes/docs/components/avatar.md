@@ -112,7 +112,7 @@ This pattern saves space while still providing visual representation of all invo
 
 ## Avatar text
 
-This example can be used if you want to show additional information in the form of text elements such as the user's name and join date. 
+Display additional information alongside avatars, such as the user's name and join date.
 
 ```svelte example class="flex justify-center gap-4" hideScript hideResponsiveButtons
 {#include AvatarText.svelte}
@@ -120,7 +120,7 @@ This example can be used if you want to show additional information in the form 
 
 ## User dropdown
 
-Use this example if you want to show a dropdown menu when clicking on the avatar component. 
+Enable interactive dropdown menus triggered by clicking the avatar component.
 
 ```svelte example class="flex justify-center h-96" hideResponsiveButtons
 {#include UserDropdown.svelte}

@@ -9,7 +9,7 @@ export const load: PageLoad = async ({ params }) => {
     return {
       content
     };
-  } catch (err) {
+  } catch (_err) {
     throw error(404, `Button example "${params.slug}" not found`);
   }
 };

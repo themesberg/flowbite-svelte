@@ -32,7 +32,7 @@
   <div class="mb-4 flex">
     <Avatar src="/images/profile-picture-1.webp" stacked size="sm" />
     <Avatar src="/images/profile-picture-2.webp" stacked size="sm" />
-    <Avatar src="/images/profile-picture-3.webp" stacked size="sm" />
+    <Avatar src="/images/people/profile-picture-5.jpg" stacked size="sm" />
     <Avatar src="/images/profile-picture-4.webp" stacked size="sm" />
   </div>
   <Button type="submit" class="w-full">

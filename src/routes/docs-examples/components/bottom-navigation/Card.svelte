@@ -13,7 +13,7 @@
       message: "10 minutes ago"
     },
     {
-      img: { src: "/images/profile-picture-3.webp", alt: "Leslie Livingston" },
+      img: { src: "/images/people/profile-picture-5.jpg", alt: "Leslie Livingston" },
       comment: 'Bonnie Green and <span class="font-medium text-gray-900 dark:text-white">141 others</span> love your story. See it and view more stories.',
       message: "23 minutes ago"
     },

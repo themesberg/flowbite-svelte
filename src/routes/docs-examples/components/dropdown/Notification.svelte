@@ -35,7 +35,7 @@
       </div>
     </DropdownItem>
     <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-      <Avatar src="/images/profile-picture-3.webp" dot={{ color: "success" }} />
+      <Avatar src="/images/people/profile-picture-5.jpg" dot={{ color: "success" }} />
       <div class="w-full ps-3">
         <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
           <span class="font-semibold text-gray-900 dark:text-white">Bonnie Green</span>

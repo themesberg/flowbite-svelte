@@ -3,6 +3,6 @@
 </script>
 
 <div class="flex space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-2.webp" />
-  <Avatar src="/images/profile-picture-2.webp" cornerStyle="rounded" />
+  <Avatar src="/images/people/profile-picture-5.jpg" />
+  <Avatar src="/images/people/profile-picture-5.jpg" cornerStyle="rounded" />
 </div>

@@ -157,7 +157,7 @@ Social proof is powerful; testimonial cards make it scannable and credible.
 
 ## Custom size
 
-Use `class="max-w-[250px]` to create a custom-sized card.
+Use `class="max-w-[250px]"` to create a custom-sized card.
 
 Always consider content requirements when constraining card dimensions.
 

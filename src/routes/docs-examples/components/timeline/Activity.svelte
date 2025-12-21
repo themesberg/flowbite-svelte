@@ -22,7 +22,7 @@
       title: "They’ll have to wait outside. We don’t want them here. ",
       date: "1 day ago",
       alt: "image alt here",
-      src: "/images/profile-picture-3.webp"
+      src: "/images/people/profile-picture-5.jpg"
     }
   ];
 </script>

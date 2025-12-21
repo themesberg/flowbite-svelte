@@ -14,7 +14,7 @@
       value: "$3467"
     },
     {
-      img: { src: "/images/profile-picture-3.webp", alt: "Michael Gough" },
+      img: { src: "/images/people/profile-picture-5.jpg", alt: "Michael Gough" },
       name: "Michael Gough",
       email: "email@windster.com",
       value: "$67"

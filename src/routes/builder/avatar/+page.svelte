@@ -132,7 +132,7 @@
       onclick={eventStatus ? () => alert("Clicked!") : undefined}
     />
     <Avatar
-      src="/images/profile-picture-3.webp"
+      src="/images/people/profile-picture-5.jpg"
       alt="Profile picture 3"
       cornerStyle={isRounded ? "rounded" : undefined}
       {border}

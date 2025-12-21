@@ -30,7 +30,7 @@
   <Li class="py-3 sm:py-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
       <div class="shrink-0">
-        <img class="h-8 w-8 rounded-full" src="/images/profile-picture-3.webp" alt="Michael profile" />
+        <img class="h-8 w-8 rounded-full" src="/images/people/profile-picture-5.jpg" alt="Michael profile" />
       </div>
       <div class="min-w-0 flex-1">
         <p class="truncate text-sm font-medium text-gray-900 dark:text-white">Michael Gough</p>

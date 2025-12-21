@@ -6,10 +6,14 @@ export type CardVariants = VariantProps<typeof card> & Classes<typeof card>;
 
 export const card = tv({
   slots: {
-    base: "w-full flex max-w-sm bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700",
-    image: "rounded-t-lg"
+    base: "w-full flex max-w-sm bg-neutral-primary-soft border border-default rounded-base",
+    image: "rounded-base"
   },
   variants: {
+    hoverable: {
+      true: { base: "hover:bg-neutral-secondary-medium" },
+      false: {}
+    },
     size: {
       xs: { base: "max-w-xs" },
       sm: { base: "max-w-sm" },
@@ -30,12 +34,12 @@ export const card = tv({
     horizontal: {
       true: {
         base: "md:flex-row",
-        image: "object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none"
+        image: "object-cover w-full h-96 md:h-auto md:w-48"
       }
     },
     reverse: {
-      true: { base: "flex-col-reverse", image: "rounded-b-lg rounded-tl-none" },
-      false: { base: "flex-col", image: "rounded-t-lg" }
+      true: { base: "flex-col-reverse" },
+      false: { base: "flex-col" }
     },
     href: {
       true: "",
@@ -50,12 +54,12 @@ export const card = tv({
     {
       horizontal: true,
       reverse: true,
-      class: { base: "md:flex-row-reverse", image: "md:rounded-e-lg" }
+      class: { base: "md:flex-row-reverse", image: "md:rounded-e-base" }
     },
     {
       horizontal: true,
       reverse: false,
-      class: { base: "md:flex-row", image: "md:rounded-s-lg" }
+      class: { base: "md:flex-row", image: "md:rounded-s-base" }
     },
     // gray, primary, secondary, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
     {
