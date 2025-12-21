@@ -298,4 +298,5 @@ const flowbitePlugin = plugin(function ({ addUtilities }) {
 });
 
 // Export with type assertion to avoid Tailwind internal type issues
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default flowbitePlugin as any;

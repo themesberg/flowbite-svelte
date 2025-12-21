@@ -914,12 +914,11 @@
       "types": "./dist/virtuallist/VirtualList.svelte.d.ts",
       "svelte": "./dist/virtuallist/VirtualList.svelte"
     },
-  "./plugin-utilities": {
-    "types": "./dist/plugin-utilities.d.ts",
-    "import": "./dist/plugin-utilities.js",
-    "default": "./dist/plugin-utilities.js"
-  },
-
+    "./plugin-utilities": {
+      "types": "./dist/plugin-utilities.d.ts",
+      "import": "./dist/plugin-utilities.js",
+      "default": "./dist/plugin-utilities.js"
+    },
     "./package.json": "./package.json"
   }
 }
