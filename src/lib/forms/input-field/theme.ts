@@ -24,8 +24,7 @@ export const input = tv({
     },
     color: {
       default: {
-        input:
-          "bg-neutral-secondary-medium border border-default-medium"
+        input: "bg-neutral-secondary-medium border border-default-medium"
       },
       tinted: {
         input: "border border-gray-300 dark:border-gray-500 bg-gray-50 text-gray-900 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"

@@ -81,7 +81,7 @@ describe("Button Component", () => {
       render(OutlineButtonTest);
       const button = screen.getByRole("button");
 
-      expect(button).toHaveClass("bg-transparent", "border");
+      expect(button).toHaveClass("bg-neutral-primary", "border", "border-brand");
     });
 
     test("pill button renders with rounded-full class", () => {
