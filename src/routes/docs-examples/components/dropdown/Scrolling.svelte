@@ -7,19 +7,19 @@
 <Dropdown class="h-48 w-48 overflow-y-auto py-1">
   <DropdownGroup>
     <DropdownItem class="flex items-center gap-2 text-base font-semibold">
-      <Avatar src="/images/profile-picture-1.webp" size="xs" />Jese Leos
+      <Avatar src="/images/people/profile-picture-1.jpg" size="xs" />Jese Leos
     </DropdownItem>
     <DropdownItem class="flex items-center gap-2 text-base font-semibold">
-      <Avatar src="/images/profile-picture-2.webp" size="xs" />Robert Gouth
+      <Avatar src="/images/people/profile-picture-2.jpg" size="xs" />Robert Gouth
     </DropdownItem>
     <DropdownItem class="flex items-center gap-2 text-base font-semibold">
       <Avatar src="/images/people/profile-picture-5.jpg" size="xs" />Bonnie Green
     </DropdownItem>
     <DropdownItem class="flex items-center gap-2 text-base font-semibold">
-      <Avatar src="/images/profile-picture-1.webp" size="xs" />Robert Wall
+      <Avatar src="/images/people/profile-picture-1.jpg" size="xs" />Robert Wall
     </DropdownItem>
     <DropdownItem class="flex items-center gap-2 text-base font-semibold">
-      <Avatar src="/images/profile-picture-2.webp" size="xs" />Joseph Mcfall
+      <Avatar src="/images/people/profile-picture-2.jpg" size="xs" />Joseph Mcfall
     </DropdownItem>
     <DropdownItem class="flex items-center gap-2 text-base font-semibold">
       <Avatar src="/images/people/profile-picture-5.jpg" size="xs" />Leslie Livingston

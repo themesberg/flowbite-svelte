@@ -2,13 +2,13 @@
   import { Card, Listgroup, Avatar } from "flowbite-svelte";
   let list = [
     {
-      img: { src: "/images/profile-picture-1.webp", alt: "Neil Sims" },
+      img: { src: "/images/people/profile-picture-1.jpg", alt: "Neil Sims" },
       name: "Neil Sims",
       email: "email@windster.com",
       value: "$320"
     },
     {
-      img: { src: "/images/profile-picture-2.webp", alt: "Bonnie Green" },
+      img: { src: "/images/people/profile-picture-2.jpg", alt: "Bonnie Green" },
       name: "Bonnie Green",
       email: "email@windster.com",
       value: "$3467"

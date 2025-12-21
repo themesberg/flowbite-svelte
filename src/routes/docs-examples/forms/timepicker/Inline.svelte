@@ -9,8 +9,8 @@
   let eventDuration = $state("30 min");
   let eventType = $state("Web conference");
   let participants = [
-    { img: "/images/profile-picture-1.webp", alt: "Participant 1" },
-    { img: "/images/profile-picture-2.webp", alt: "Participant 2" },
+    { img: "/images/people/profile-picture-1.jpg", alt: "Participant 1" },
+    { img: "/images/people/profile-picture-2.jpg", alt: "Participant 2" },
     { img: "/images/people/profile-picture-5.jpg", alt: "Participant 3" }
   ];
 

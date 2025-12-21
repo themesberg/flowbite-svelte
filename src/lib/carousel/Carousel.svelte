@@ -1,13 +1,12 @@
 <script lang="ts">
   import { type CarouselProps, type CarouselContextType } from "$lib";
   import Slide from "./Slide.svelte";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { onMount } from "svelte";
   import { setCarouselContext } from "$lib/context";
   import { canChangeSlide } from "./CarouselSlide";
   import { carousel } from "./theme";
-  import { untrack } from "svelte";
 
   const SLIDE_DURATION_RATIO = 0.25;
 
@@ -22,7 +21,6 @@
     duration = 0,
     "aria-label": ariaLabel = "Draggable Carousel",
     disableSwipe = false,
-    imgClass = "",
     class: className,
     classes,
     onchange,
@@ -30,13 +28,7 @@
     ...restProps
   }: CarouselProps = $props();
 
-  warnThemeDeprecation(
-    "Carousel",
-    untrack(() => ({ imgClass })),
-    { imgClass: "slide" }
-  );
-
-  const styling = $derived(classes ?? { slide: imgClass });
+  const styling = $derived(classes);
 
   // Theme context
   const theme = $derived(getTheme("carousel"));
@@ -211,7 +203,7 @@
   {#if slide}
     {@render slide({ index: _state.index, Slide })}
   {:else}
-    <Slide image={images[_state.index]} fit={slideFit} class={slideCls({ class: clsx(theme?.slide, styling.slide) })} {transition} />
+    <Slide image={images[_state.index]} fit={slideFit} class={slideCls({ class: clsx(theme?.slide, styling?.slide) })} {transition} />
   {/if}
 
   {@render children?.(_state.index)}

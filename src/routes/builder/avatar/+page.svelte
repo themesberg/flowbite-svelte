@@ -82,7 +82,7 @@
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
-      return `<Avatar src="/images/profile-picture-1.webp" alt="Profile picture 1"${propsString} />`;
+      return `<Avatar src="/images/people/profile-picture-1.jpg" alt="Profile picture 1"${propsString} />`;
     })()
   );
 
@@ -106,7 +106,7 @@
 <CodeWrapper>
   <div class="mb-4 flex h-36 justify-center">
     <Avatar
-      src="/images/profile-picture-1.webp"
+      src="/images/people/profile-picture-1.jpg"
       alt="Profile picture 1"
       cornerStyle={isRounded ? "rounded" : undefined}
       {border}
@@ -119,7 +119,7 @@
       onclick={eventStatus ? () => alert("Clicked!") : undefined}
     />
     <Avatar
-      src="/images/profile-picture-2.webp"
+      src="/images/people/profile-picture-2.jpg"
       alt="Profile picture 2"
       cornerStyle={isRounded ? "rounded" : undefined}
       {border}

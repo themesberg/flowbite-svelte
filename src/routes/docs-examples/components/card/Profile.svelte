@@ -7,9 +7,9 @@
   <div class="flex justify-end">
     <DotsHorizontalOutline />
     <Dropdown class="w-36" simple>
-      <DropdownItem href="#">Edit</DropdownItem>
-      <DropdownItem href="#">Export data</DropdownItem>
-      <DropdownItem href="#">Delete</DropdownItem>
+      <DropdownItem href="javascript:void(0)">Edit</DropdownItem>
+      <DropdownItem href="javascript:void(0)">Export data</DropdownItem>
+      <DropdownItem href="javascript:void(0)">Delete</DropdownItem>
     </Dropdown>
   </div>
   <div class="flex flex-col items-center pb-4">

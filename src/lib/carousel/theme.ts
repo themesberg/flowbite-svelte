@@ -2,6 +2,9 @@ import type { Classes } from "$lib/theme/themeUtils";
 import { tv, type VariantProps } from "tailwind-variants";
 
 export type CarouselVariants = VariantProps<typeof carousel> & Classes<typeof carousel>;
+export type CarouselIndicatorsVariants = VariantProps<typeof carouselIndicators> & Classes<typeof carouselIndicators>;
+export type ControlButtonVariants = VariantProps<typeof controlButton> & Classes<typeof controlButton>;
+export type ThumbnailsVariants = VariantProps<typeof thumbnails> & Classes<typeof thumbnails>;
 
 export const carousel = tv({
   slots: {
@@ -16,7 +19,9 @@ export const carousel = tv({
 export const carouselIndicators = tv({
   slots: {
     base: "absolute start-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:translate-x-1/2 rtl:space-x-reverse",
-    indicator: "bg-gray-100 hover:bg-gray-300"
+    indicator: "bg-gray-100 hover:bg-gray-300",
+    active: "",
+    inactive: ""
   },
   variants: {
     selected: {
@@ -44,7 +49,10 @@ export const controlButton = tv({
 });
 
 export const thumbnails = tv({
-  base: "flex flex-row justify-center bg-gray-100 w-full"
+  slots: {
+    base: "flex flex-row justify-center bg-gray-100 w-full",
+    img: ""
+  }
 });
 
 export const thumbnail = tv({

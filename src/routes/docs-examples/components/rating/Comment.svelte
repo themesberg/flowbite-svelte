@@ -5,7 +5,7 @@
     user: {
       name: "Jese Leos",
       img: {
-        src: "/images/profile-picture-2.webp",
+        src: "/images/people/profile-picture-2.jpg",
         alt: "Jese Leos"
       },
       joined: "Joined on August 2014"

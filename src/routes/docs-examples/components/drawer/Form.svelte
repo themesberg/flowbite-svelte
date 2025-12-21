@@ -30,10 +30,10 @@
     {/snippet}
   </Input>
   <div class="mb-4 flex">
-    <Avatar src="/images/profile-picture-1.webp" stacked size="sm" />
-    <Avatar src="/images/profile-picture-2.webp" stacked size="sm" />
+    <Avatar src="/images/people/profile-picture-1.jpg" stacked size="sm" />
+    <Avatar src="/images/people/profile-picture-2.jpg" stacked size="sm" />
     <Avatar src="/images/people/profile-picture-5.jpg" stacked size="sm" />
-    <Avatar src="/images/profile-picture-4.webp" stacked size="sm" />
+    <Avatar src="/images/people/profile-picture-4.jpg" stacked size="sm" />
   </div>
   <Button type="submit" class="w-full">
     <CalendarEditSolid class="me-2.5 h-3.5 w-3.5 text-white" /> Create event

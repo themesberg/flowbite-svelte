@@ -5,8 +5,9 @@
   import clsx from "clsx";
   import { thumbnails } from "./theme";
 
-  let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", imgClass, throttleDelay = 650, class: className }: ThumbnailsProps = $props();
+  let { children, images = [], index = $bindable(), ariaLabel = "Click to view image", throttleDelay = 650, class: className, classes }: ThumbnailsProps = $props();
 
+  const styling = $derived(classes);
   const theme = $derived(getTheme("thumbnails"));
 
   // Initialize so the first click is never throttled
@@ -30,14 +31,20 @@
   });
 </script>
 
-<div class={thumbnails({ class: clsx(theme, className) })}>
+<div
+  class={clsx(
+    thumbnails().base(),
+    theme?.base,
+    className
+  )}
+>
   {#each images as image, idx (image.src || idx)}
     {@const selected = index === idx}
     <button onclick={() => btnClick(idx)} aria-label={ariaLabel} aria-current={selected ? "true" : undefined}>
       {#if children}
-        {@render children({ image, selected, imgClass: clsx(imgClass), Thumbnail })}
+        {@render children({ image, selected, imgClass: clsx(theme?.img, styling?.img), Thumbnail })}
       {:else}
-        <Thumbnail {...image} {selected} class={clsx(imgClass)} />
+        <Thumbnail {...image} {selected} class={clsx(styling?.img)} />
       {/if}
     </button>
   {/each}

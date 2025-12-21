@@ -33,10 +33,10 @@ import type { Day } from "date-fns";
 import type { AlertVariants } from "$lib/alert/theme";
 import type { BadgeVariants } from "$lib/badge/theme";
 import type { BannerVariants } from "$lib/banner/theme";
-import type { ButtonVariants, GradientButtonVariantes, gradientButton } from "$lib/buttons/theme";
+import type { ButtonVariants, GradientButtonVariants, gradientButton } from "$lib/buttons/theme";
 import type { CardVariants } from "$lib/card/theme";
 import type Slide from "$lib/carousel/Slide.svelte";
-import type { CarouselVariants, SlideVariants } from "$lib/carousel/theme";
+import type { CarouselVariants, SlideVariants, CarouselIndicatorsVariants, ControlButtonVariants, ThumbnailsVariants } from "$lib/carousel/theme";
 import type { DrawerHandleVariants, DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
 import type { DatepickerVariants } from "$lib/datepicker/theme";
 import type { FooterCopyrightVariants, FooterLinkVariants } from "$lib/footer/theme";
@@ -335,7 +335,7 @@ export type ButtonProps = ButtonVariants &
     spinnerProps?: SpinnerProps;
   };
 
-export interface GradientButtonProps extends GradientButtonVariantes, HTMLButtonOrAnchorAttributes {
+export interface GradientButtonProps extends GradientButtonVariants, HTMLButtonOrAnchorAttributes {
   tag?: string;
   disabled?: boolean;
   href?: string;
@@ -474,20 +474,19 @@ export interface CarouselProps extends CarouselVariants, Omit<HTMLAttributes<HTM
   transition?: TransitionFunc;
   duration?: number;
   disableSwipe?: boolean;
-  imgClass?: ClassValue;
   onchange?: (x: HTMLImgAttributes) => void;
   isPreload?: boolean;
   slideFit?: SlideProps["fit"];
 }
 
-export interface IndicatorsProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+export interface IndicatorsProps extends CarouselIndicatorsVariants, Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   children?: Snippet<[{ selected: boolean; index: number }]>;
   activeClass?: ClassValue;
   inactiveClass?: ClassValue;
   position?: "top" | "bottom";
 }
 
-export interface ControlButtonProps extends HTMLButtonAttributes {
+export interface ControlButtonProps extends ControlButtonVariants, HTMLButtonAttributes {
   forward: boolean;
   name?: string | null;
   spanClass?: ClassValue;
@@ -501,12 +500,11 @@ export interface ThumbnailProps extends HTMLImgAttributes {
   selected?: boolean;
 }
 
-export interface ThumbnailsProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+export interface ThumbnailsProps extends ThumbnailsVariants,Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   children?: Snippet<[{ image: HTMLImgAttributes; selected: boolean; imgClass: string; Thumbnail: Component }]>;
   images: HTMLImgAttributes[];
   index: number;
   ariaLabel?: string;
-  imgClass?: ClassValue;
   throttleDelay?: number;
 }
 

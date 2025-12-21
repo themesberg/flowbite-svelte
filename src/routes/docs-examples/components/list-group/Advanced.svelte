@@ -6,10 +6,10 @@
 <Listgroup active class="w-48">
   <h3 class="p-1 text-center text-xl font-medium text-gray-900 dark:text-white">User list</h3>
   <ListgroupItem class="gap-2 text-base font-semibold">
-    <Avatar src="/images/profile-picture-1.webp" size="xs" />Jese Leos
+    <Avatar src="/images/people/profile-picture-1.jpg" size="xs" />Jese Leos
   </ListgroupItem>
   <ListgroupItem class="gap-2 text-base font-semibold">
-    <Avatar src="/images/profile-picture-2.webp" size="xs" />Robert Gouth
+    <Avatar src="/images/people/profile-picture-2.jpg" size="xs" />Robert Gouth
   </ListgroupItem>
   <ListgroupItem class="gap-2 text-base font-semibold">
     <Avatar src="/images/people/profile-picture-5.jpg" size="xs" />Bonnie Green

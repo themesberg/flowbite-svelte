@@ -13,7 +13,7 @@
   <div class="py-2 text-center font-bold">Notifications</div>
   <DropdownGroup>
     <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-      <Avatar src="/images/profile-picture-1.webp" dot={{ color: "neutral" }} />
+      <Avatar src="/images/people/profile-picture-1.jpg" dot={{ color: "neutral" }} />
       <div class="w-full ps-3">
         <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
           New message from <span class="font-semibold text-gray-900 dark:text-white">Jese Leos</span>
@@ -23,7 +23,7 @@
       </div>
     </DropdownItem>
     <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-      <Avatar src="/images/profile-picture-2.webp" dot={{ color: "danger" }} />
+      <Avatar src="/images/people/profile-picture-2.jpg" dot={{ color: "danger" }} />
       <div class="w-full ps-3">
         <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
           <span class="font-semibold text-gray-900 dark:text-white">Joseph Mcfall</span>

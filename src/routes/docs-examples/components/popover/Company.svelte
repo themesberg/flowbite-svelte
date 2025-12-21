@@ -28,8 +28,8 @@
         </li>
       </ul>
       <div class="ms-4 mb-3 flex">
-        <Avatar src="/images/profile-picture-1.webp" stacked />
-        <Avatar src="/images/profile-picture-2.webp" stacked />
+        <Avatar src="/images/people/profile-picture-1.jpg" stacked />
+        <Avatar src="/images/people/profile-picture-2.jpg" stacked />
         <Avatar src="/images/people/profile-picture-5.jpg" stacked />
         <Avatar stacked href="/" class="bg-gray-700 text-white hover:bg-gray-600 dark:bg-gray-700">+3</Avatar>
       </div>
