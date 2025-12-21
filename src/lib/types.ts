@@ -461,6 +461,7 @@ export type CheckIconProps = SVGAttributes<SVGSVGElement>;
 export type CardProps = Omit<CardVariants, "href"> &
   AnchorDivAttributes & {
     img?: string;
+    imgAlt?: string;
     hoverable?: boolean;
   };
 
@@ -500,7 +501,7 @@ export interface ThumbnailProps extends HTMLImgAttributes {
   selected?: boolean;
 }
 
-export interface ThumbnailsProps extends ThumbnailsVariants,Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+export interface ThumbnailsProps extends ThumbnailsVariants, Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   children?: Snippet<[{ image: HTMLImgAttributes; selected: boolean; imgClass: string; Thumbnail: Component }]>;
   images: HTMLImgAttributes[];
   index: number;

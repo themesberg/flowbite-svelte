@@ -55,102 +55,102 @@ export const button = tv({
       },
       // legacy colors
       primary: {
-        base: "text-white bg-primary-700 enabled:hover:bg-primary-800 dark:bg-primary-600 dark:enabled:hover:bg-primary-700 focus-within:ring-primary-300 dark:focus-within:ring-primary-800",
+        base: "text-white bg-primary-700 enabled:hover:bg-primary-800 dark:bg-primary-600 dark:enabled:hover:bg-primary-700 focus:ring-primary-300 dark:focus:ring-primary-800",
         outline: "text-primary-700 border-primary-700 enabled:hover:bg-primary-800 dark:border-primary-500 dark:text-primary-500 dark:enabled:hover:bg-primary-600",
         shadow: "shadow-primary-500/50 dark:shadow-primary-800/80"
       },
       light: {
-        base: "text-gray-900 bg-white border border-gray-300 enabled:hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:enabled:hover:bg-gray-700 dark:enabled:hover:border-gray-600 focus-within:ring-gray-200 dark:focus-within:ring-gray-700",
+        base: "text-gray-900 bg-white border border-gray-300 enabled:hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:enabled:hover:bg-gray-700 dark:enabled:hover:border-gray-600 focus:ring-gray-200 dark:focus:ring-gray-700",
         outline: "text-gray-700 border-gray-700 enabled:hover:bg-gray-800 dark:border-gray-400 dark:text-gray-400 dark:enabled:hover:bg-gray-500",
         shadow: "shadow-gray-500/50 dark:shadow-gray-800/80"
       },
       secondary: {
-        base: "text-white bg-secondary-700 enabled:hover:bg-secondary-800 dark:bg-secondary-600 dark:enabled:hover:bg-secondary-700 focus-within:ring-secondary-300 dark:focus-within:ring-secondary-800",
+        base: "text-white bg-secondary-700 enabled:hover:bg-secondary-800 dark:bg-secondary-600 dark:enabled:hover:bg-secondary-700 focus:ring-secondary-300 dark:focus:ring-secondary-800",
         outline: "text-secondary-700 border-secondary-700 enabled:hover:bg-secondary-800 dark:border-secondary-400 dark:text-secondary-400 dark:enabled:hover:bg-secondary-500",
         shadow: "shadow-secondary-500/50 dark:shadow-secondary-800/80"
       },
       red: {
-        base: "text-white bg-red-700 enabled:hover:bg-red-800 dark:bg-red-600 dark:enabled:hover:bg-red-700 focus-within:ring-red-300 dark:focus-within:ring-red-900",
+        base: "text-white bg-red-700 enabled:hover:bg-red-800 dark:bg-red-600 dark:enabled:hover:bg-red-700 focus:ring-red-300 dark:focus:ring-red-900",
         outline: "text-red-700 border-red-700 enabled:hover:bg-red-800 dark:border-red-500 dark:text-red-500 dark:enabled:hover:bg-red-600",
         shadow: "shadow-red-500/50 dark:shadow-red-800/80"
       },
       orange: {
-        base: "text-white bg-orange-700 enabled:hover:bg-orange-800 dark:bg-orange-600 dark:enabled:hover:bg-orange-700 focus-within:ring-orange-300 dark:focus-within:ring-orange-900",
+        base: "text-white bg-orange-700 enabled:hover:bg-orange-800 dark:bg-orange-600 dark:enabled:hover:bg-orange-700 focus:ring-orange-300 dark:focus:ring-orange-900",
         outline: "text-orange-700 border-orange-700 enabled:hover:bg-orange-800 dark:border-orange-400 dark:text-orange-400 dark:enabled:hover:bg-orange-500",
         shadow: "shadow-orange-500/50 dark:shadow-orange-800/80"
       },
       amber: {
-        base: "text-white bg-amber-700 enabled:hover:bg-amber-800 dark:bg-amber-600 dark:enabled:hover:bg-amber-700 focus-within:ring-amber-300 dark:focus-within:ring-amber-900",
+        base: "text-white bg-amber-700 enabled:hover:bg-amber-800 dark:bg-amber-600 dark:enabled:hover:bg-amber-700 focus:ring-amber-300 dark:focus:ring-amber-900",
         outline: "text-amber-700 border-amber-700 enabled:hover:bg-amber-800 dark:border-amber-400 dark:text-amber-400 dark:enabled:hover:bg-amber-500",
         shadow: "shadow-amber-500/50 dark:shadow-amber-800/80"
       },
       yellow: {
-        base: "text-white bg-yellow-400 enabled:hover:bg-yellow-500 focus-within:ring-yellow-300 dark:focus-within:ring-yellow-900",
+        base: "text-white bg-yellow-400 enabled:hover:bg-yellow-500 focus:ring-yellow-300 dark:focus:ring-yellow-900",
         outline: "text-yellow-400 border-yellow-400 enabled:hover:bg-yellow-500 dark:border-yellow-300 dark:text-yellow-300 dark:enabled:hover:bg-yellow-400",
         shadow: "shadow-yellow-500/50 dark:shadow-yellow-800/80"
       },
       lime: {
-        base: "text-white bg-lime-700 enabled:hover:bg-lime-800 dark:bg-lime-600 dark:enabled:hover:bg-lime-700 focus-within:ring-lime-300 dark:focus-within:ring-lime-800",
+        base: "text-white bg-lime-700 enabled:hover:bg-lime-800 dark:bg-lime-600 dark:enabled:hover:bg-lime-700 focus:ring-lime-300 dark:focus:ring-lime-800",
         outline: "text-lime-700 border-lime-700 enabled:hover:bg-lime-800 dark:border-lime-400 dark:text-lime-400 dark:enabled:hover:bg-lime-500",
         shadow: "shadow-lime-500/50 dark:shadow-lime-800/80"
       },
       green: {
-        base: "text-white bg-green-700 enabled:hover:bg-green-800 dark:bg-green-600 dark:enabled:hover:bg-green-700 focus-within:ring-green-300 dark:focus-within:ring-green-800",
+        base: "text-white bg-green-700 enabled:hover:bg-green-800 dark:bg-green-600 dark:enabled:hover:bg-green-700 focus:ring-green-300 dark:focus:ring-green-800",
         outline: "text-green-700 border-green-700 enabled:hover:bg-green-800 dark:border-green-500 dark:text-green-500 dark:enabled:hover:bg-green-600",
         shadow: "shadow-green-500/50 dark:shadow-green-800/80"
       },
       emerald: {
-        base: "text-white bg-emerald-700 enabled:hover:bg-emerald-800 dark:bg-emerald-600 dark:enabled:hover:bg-emerald-700 focus-within:ring-emerald-300 dark:focus-within:ring-emerald-800",
+        base: "text-white bg-emerald-700 enabled:hover:bg-emerald-800 dark:bg-emerald-600 dark:enabled:hover:bg-emerald-700 focus:ring-emerald-300 dark:focus:ring-emerald-800",
         outline: "text-emerald-700 border-emerald-700 enabled:hover:bg-emerald-800 dark:border-emerald-400 dark:text-emerald-400 dark:enabled:hover:bg-emerald-500",
         shadow: "shadow-emerald-500/50 dark:shadow-emerald-800/80"
       },
       teal: {
-        base: "text-white bg-teal-700 enabled:hover:bg-teal-800 dark:bg-teal-600 dark:enabled:hover:bg-teal-700 focus-within:ring-teal-300 dark:focus-within:ring-teal-800",
+        base: "text-white bg-teal-700 enabled:hover:bg-teal-800 dark:bg-teal-600 dark:enabled:hover:bg-teal-700 focus:ring-teal-300 dark:focus:ring-teal-800",
         outline: "text-teal-700 border-teal-700 enabled:hover:bg-teal-800 dark:border-teal-400 dark:text-teal-400 dark:enabled:hover:bg-teal-500",
         shadow: "shadow-teal-500/50 dark:shadow-teal-800/80"
       },
       cyan: {
-        base: "text-white bg-cyan-700 enabled:hover:bg-cyan-800 dark:bg-cyan-600 dark:enabled:hover:bg-cyan-700 focus-within:ring-cyan-300 dark:focus-within:ring-cyan-800",
+        base: "text-white bg-cyan-700 enabled:hover:bg-cyan-800 dark:bg-cyan-600 dark:enabled:hover:bg-cyan-700 focus:ring-cyan-300 dark:focus:ring-cyan-800",
         outline: "text-cyan-700 border-cyan-700 enabled:hover:bg-cyan-800 dark:border-cyan-400 dark:text-cyan-400 dark:enabled:hover:bg-cyan-500",
         shadow: "shadow-cyan-500/50 dark:shadow-cyan-800/80"
       },
       sky: {
-        base: "text-white bg-sky-700 enabled:hover:bg-sky-800 dark:bg-sky-600 dark:enabled:hover:bg-sky-700 focus-within:ring-sky-300 dark:focus-within:ring-sky-800",
+        base: "text-white bg-sky-700 enabled:hover:bg-sky-800 dark:bg-sky-600 dark:enabled:hover:bg-sky-700 focus:ring-sky-300 dark:focus:ring-sky-800",
         outline: "text-sky-700 border-sky-700 enabled:hover:bg-sky-800 dark:border-sky-400 dark:text-sky-400 dark:enabled:hover:bg-sky-500",
         shadow: "shadow-sky-500/50 dark:shadow-sky-800/80"
       },
       blue: {
-        base: "text-white bg-blue-700 enabled:hover:bg-blue-800 dark:bg-blue-600 dark:enabled:hover:bg-blue-700 focus-within:ring-blue-300 dark:focus-within:ring-blue-800",
+        base: "text-white bg-blue-700 enabled:hover:bg-blue-800 dark:bg-blue-600 dark:enabled:hover:bg-blue-700 focus:ring-blue-300 dark:focus:ring-blue-800",
         outline: "text-blue-700 border-blue-700 enabled:hover:bg-blue-800 dark:border-blue-500 dark:text-blue-500 dark:enabled:hover:bg-blue-500",
         shadow: "shadow-blue-500/50 dark:shadow-blue-800/80"
       },
       indigo: {
-        base: "text-white bg-indigo-700 enabled:hover:bg-indigo-800 dark:bg-indigo-600 dark:enabled:hover:bg-indigo-700 focus-within:ring-indigo-300 dark:focus-within:ring-indigo-800",
+        base: "text-white bg-indigo-700 enabled:hover:bg-indigo-800 dark:bg-indigo-600 dark:enabled:hover:bg-indigo-700 focus:ring-indigo-300 dark:focus:ring-indigo-800",
         outline: "text-indigo-700 border-indigo-700 enabled:hover:bg-indigo-800 dark:border-indigo-400 dark:text-indigo-400 dark:enabled:hover:bg-indigo-500",
         shadow: "shadow-indigo-500/50 dark:shadow-indigo-800/80"
       },
       violet: {
-        base: "text-white bg-violet-700 enabled:hover:bg-violet-800 dark:bg-violet-600 dark:enabled:hover:bg-violet-700 focus-within:ring-violet-300 dark:focus-within:ring-violet-800",
+        base: "text-white bg-violet-700 enabled:hover:bg-violet-800 dark:bg-violet-600 dark:enabled:hover:bg-violet-700 focus:ring-violet-300 dark:focus:ring-violet-800",
         outline: "text-violet-700 border-violet-700 enabled:hover:bg-violet-800 dark:border-violet-400 dark:text-violet-400 dark:enabled:hover:bg-violet-500",
         shadow: "shadow-violet-500/50 dark:shadow-violet-800/80"
       },
       purple: {
-        base: "text-white bg-purple-700 enabled:hover:bg-purple-800 dark:bg-purple-600 dark:enabled:hover:bg-purple-700 focus-within:ring-purple-300 dark:focus-within:ring-purple-800",
+        base: "text-white bg-purple-700 enabled:hover:bg-purple-800 dark:bg-purple-600 dark:enabled:hover:bg-purple-700 focus:ring-purple-300 dark:focus:ring-purple-800",
         outline: "text-purple-700 border-purple-700 enabled:hover:bg-purple-800 dark:border-purple-400 dark:text-purple-400 dark:enabled:hover:bg-purple-500",
         shadow: "shadow-purple-500/50 dark:shadow-purple-800/80"
       },
       fuchsia: {
-        base: "text-white bg-fuchsia-700 enabled:hover:bg-fuchsia-800 dark:bg-fuchsia-600 dark:enabled:hover:bg-fuchsia-700 focus-within:ring-fuchsia-300 dark:focus-within:ring-fuchsia-800",
+        base: "text-white bg-fuchsia-700 enabled:hover:bg-fuchsia-800 dark:bg-fuchsia-600 dark:enabled:hover:bg-fuchsia-700 focus:ring-fuchsia-300 dark:focus:ring-fuchsia-800",
         outline: "text-fuchsia-700 border-fuchsia-700 enabled:hover:bg-fuchsia-800 dark:border-fuchsia-400 dark:text-fuchsia-400 dark:enabled:hover:bg-fuchsia-500",
         shadow: "shadow-fuchsia-500/50 dark:shadow-fuchsia-800/80"
       },
       pink: {
-        base: "text-white bg-pink-700 enabled:hover:bg-pink-800 dark:bg-pink-600 dark:enabled:hover:bg-pink-700  focus-within:ring-pink-300 dark:focus-within:ring-pink-800",
+        base: "text-white bg-pink-700 enabled:hover:bg-pink-800 dark:bg-pink-600 dark:enabled:hover:bg-pink-700  focus:ring-pink-300 dark:focus:ring-pink-800",
         outline: "text-pink-700 border-pink-700 enabled:hover:bg-pink-800 dark:border-pink-400 dark:text-pink-400 dark:enabled:hover:bg-pink-500",
         shadow: "shadow-pink-500/50 dark:shadow-pink-800/80"
       },
       rose: {
-        base: "text-white bg-rose-700 enabled:hover:bg-rose-800 dark:bg-rose-600 dark:enabled:hover:bg-rose-700 focus-within:ring-rose-300 dark:focus-within:ring-rose-800",
+        base: "text-white bg-rose-700 enabled:hover:bg-rose-800 dark:bg-rose-600 dark:enabled:hover:bg-rose-700 focus:ring-rose-300 dark:focus:ring-rose-800",
         outline: "text-rose-700 border-rose-700 enabled:hover:bg-rose-800 dark:border-rose-400 dark:text-rose-400 dark:enabled:hover:bg-rose-500",
         shadow: "shadow-rose-500/50 dark:shadow-rose-800/80"
       }
@@ -163,8 +163,8 @@ export const button = tv({
       xl: "px-6 py-3.5 text-base"
     },
     group: {
-      true: "focus-within:ring-2 focus-within:z-10 [&:not(:first-child)]:rounded-s-none [&:not(:last-child)]:rounded-e-none [&:not(:last-child)]:border-e-0",
-      false: "focus-within:ring-4 focus-within:outline-hidden"
+      true: "focus:ring-2 focus:z-10 [&:not(:first-child)]:rounded-s-none [&:not(:last-child)]:rounded-e-none [&:not(:last-child)]:border-e-0",
+      false: "focus:ring-4 focus:outline-hidden"
     },
     disabled: {
       true: "cursor-not-allowed text-fg-disabled bg-disabled box-border border border-default-medium font-medium rounded-base text-sm px-4 py-2.5",

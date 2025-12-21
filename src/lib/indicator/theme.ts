@@ -6,7 +6,6 @@ export const indicator = tv({
   base: "shrink-0",
   variants: {
     color: {
-      // 'neutral' | 'dark' | 'brand' | 'success' | 'danger' | 'purple' | 'indigo' | 'warning' | 'teal'
       brand: "bg-brand",
       neutral: "bg-neutral-quaternary",
       dark: "bg-dark",
@@ -15,7 +14,25 @@ export const indicator = tv({
       purple: "bg-purple",
       indigo: "bg-indigo",
       warning: "bg-warning",
-      teal: "bg-teal"
+      teal: "bg-teal",
+      // legacy colors
+      primary: "bg-primary-500",
+      secondary: "bg-secondary-500",
+      gray: "bg-gray-200",
+      red: "bg-red-500",
+      orange: "bg-orange-600",
+      amber: "bg-amber-500",
+      yellow: "bg-yellow-300",
+      lime: "bg-lime-500",
+      green: "bg-green-500",
+      emerald: "bg-emerald-500",
+      cyan: "bg-cyan-500",
+      sky: "bg-sky-500",
+      blue: "bg-blue-500",
+      violet: "bg-violet-500",
+      fuchsia: "bg-fuchsia-500",
+      pink: "bg-pink-500",
+      rose: "bg-rose-500"
     },
     size: {
       xs: "w-2 h-2",

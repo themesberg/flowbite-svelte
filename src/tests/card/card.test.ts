@@ -1,5 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
+import { TEST_IMAGE_SVG } from "../fixtures/test-images";
 
 import BasicCardTest from "./basic-card.test.svelte";
 import CardLinkTest from "./card-link.test.svelte";
@@ -73,8 +74,8 @@ describe("Card Component", () => {
       const img = container.querySelector("img");
 
       expect(img).toBeInTheDocument();
-      expect(img).toHaveAttribute("src", "https://flowbite.com/docs/images/blog/image-1.jpg");
-      expect(img).toHaveAttribute("alt", "");
+      expect(img).toHaveAttribute("src", TEST_IMAGE_SVG);
+      expect(img).toHaveAttribute("alt", "Card image");
       expect(img).toHaveAttribute("loading", "lazy");
     });
 
@@ -252,11 +253,11 @@ describe("Card Component", () => {
   describe("Custom Styling", () => {
     test("applies custom classes to card", () => {
       const { container } = render(CardCustomClassTest);
-      const card = container.querySelector("div");
+      const card = container.querySelector(".custom-card-class");
 
       expect(card).toBeInTheDocument();
-      expect(card?.className).toContain("custom-card-class");
-      expect(card?.className).toContain("bg-red-100");
+      expect(card).toHaveClass("custom-card-class");
+      expect(card).toHaveClass("bg-red-100");
     });
 
     test("custom classes don't override essential classes", () => {
@@ -270,20 +271,20 @@ describe("Card Component", () => {
   });
 
   describe("Accessibility", () => {
-  test("card content is readable", () => {
-  render(BasicCardTest);
+    test("card content is readable", () => {
+      render(BasicCardTest);
 
-  expect(screen.getByText("Basic Card Title")).toBeInTheDocument();
-  expect(screen.getByText("Basic card content goes here.")).toBeInTheDocument();
-  });
+      expect(screen.getByText("Basic Card Title")).toBeInTheDocument();
+      expect(screen.getByText("Basic card content goes here.")).toBeInTheDocument();
+    });
 
-  test("card link has proper href attribute", () => {
-  const { container } = render(CardLinkTest);
-  const link = container.querySelector("a");
+    test("card link has proper href attribute", () => {
+      const { container } = render(CardLinkTest);
+      const link = container.querySelector("a");
 
       expect(link).toBeInTheDocument();
-  expect(link).toHaveAttribute("href", "/test-link");
-  });
+      expect(link).toHaveAttribute("href", "/test-link");
+    });
 
     test("images have alt attributes", () => {
       const { container } = render(CardWithImageTest);

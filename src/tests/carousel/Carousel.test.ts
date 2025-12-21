@@ -53,16 +53,13 @@ describe("Carousel Component", () => {
     test("control buttons are present and functional", async () => {
       const user = userEvent.setup();
       render(CarouselWithControlsTest);
-      
+
       const buttons = screen.getAllByRole("button");
       // Find next and previous buttons (they should be at the end of the array)
-      const controlButtons = buttons.filter(btn => 
-        btn.classList.contains("flex") && 
-        btn.classList.contains("absolute")
-      );
+      const controlButtons = buttons.filter((btn) => btn.classList.contains("flex") && btn.classList.contains("absolute"));
 
       expect(controlButtons.length).toBe(2);
-      
+
       // Click should not throw error
       await user.click(controlButtons[0]);
       expect(controlButtons[0]).toBeInTheDocument();
@@ -72,10 +69,10 @@ describe("Carousel Component", () => {
   describe("Indicators", () => {
     test("carousel renders with indicators", () => {
       render(CarouselWithIndicatorsTest);
-      const carousel = screen.getByRole("button");
-      
+      const carousel = screen.getByRole("button", { name: /draggable carousel/i });
+
       expect(carousel).toBeInTheDocument();
-      
+
       // Indicators should be rendered as buttons within the carousel
       const indicatorButtons = screen.getAllByRole("button");
       expect(indicatorButtons.length).toBeGreaterThan(1);
@@ -83,10 +80,10 @@ describe("Carousel Component", () => {
 
     test("indicators reflect the number of images", () => {
       render(CarouselWithIndicatorsTest);
-      
+
       // Get all buttons - first is carousel, rest are indicators
       const buttons = screen.getAllByRole("button");
-      
+
       // Should have 1 carousel button + 3 indicator buttons for 3 test images
       expect(buttons.length).toBe(4);
     });
@@ -94,12 +91,10 @@ describe("Carousel Component", () => {
     test("indicator has correct accessibility attributes", () => {
       render(CarouselWithIndicatorsTest);
       const buttons = screen.getAllByRole("button");
-      
+
       // Check if any button has aria-current (the active indicator)
-      const activeIndicator = buttons.find(btn => 
-        btn.hasAttribute("aria-current") && btn.getAttribute("aria-current") === "true"
-      );
-      
+      const activeIndicator = buttons.find((btn) => btn.hasAttribute("aria-current") && btn.getAttribute("aria-current") === "true");
+
       expect(activeIndicator).toBeDefined();
     });
   });
@@ -107,11 +102,11 @@ describe("Carousel Component", () => {
   describe("Thumbnails", () => {
     test("carousel renders with thumbnails", () => {
       render(CarouselWithThumbnailsTest);
-      
+
       // Main carousel
       const carousel = screen.getByRole("button", { name: /draggable carousel/i });
       expect(carousel).toBeInTheDocument();
-      
+
       // Thumbnail buttons
       const thumbnailButtons = screen.getAllByRole("button", { name: /click to view image/i });
       expect(thumbnailButtons.length).toBe(3);
@@ -120,7 +115,7 @@ describe("Carousel Component", () => {
     test("thumbnails show all images", () => {
       render(CarouselWithThumbnailsTest);
       const images = screen.getAllByRole("img");
-      
+
       // Should have images for both carousel and thumbnails (at least 4: 1 main + 3 thumbnails)
       expect(images.length).toBeGreaterThanOrEqual(4);
     });
@@ -128,12 +123,12 @@ describe("Carousel Component", () => {
     test("clicking thumbnail button works", async () => {
       const user = userEvent.setup();
       render(CarouselWithThumbnailsTest);
-      
+
       const thumbnailButtons = screen.getAllByRole("button", { name: /click to view image/i });
-      
+
       // Click second thumbnail
       await user.click(thumbnailButtons[1]);
-      
+
       // Button should still be in document
       expect(thumbnailButtons[1]).toBeInTheDocument();
     });
@@ -143,7 +138,7 @@ describe("Carousel Component", () => {
     test("carousel with autoplay has correct props", () => {
       render(CarouselAutoplayTest);
       const carousel = screen.getByTestId("autoplay-carousel");
-      
+
       expect(carousel).toBeInTheDocument();
     });
   });
@@ -152,7 +147,7 @@ describe("Carousel Component", () => {
     test("carousel with disableSwipe prop renders", () => {
       render(CarouselNoSwipeTest);
       const carousel = screen.getByTestId("no-swipe-carousel");
-      
+
       expect(carousel).toBeInTheDocument();
     });
   });
@@ -161,7 +156,7 @@ describe("Carousel Component", () => {
     test("custom class is applied to carousel", () => {
       render(CarouselCustomClassTest);
       const carousel = screen.getByTestId("custom-class-carousel");
-      
+
       expect(carousel).toHaveClass("custom-carousel-class");
     });
   });
@@ -170,22 +165,20 @@ describe("Carousel Component", () => {
     test("onchange callback is triggered", async () => {
       const user = userEvent.setup();
       render(CarouselOnChangeTest);
-      
+
       // Get control buttons
       const buttons = screen.getAllByRole("button");
-      const controlButtons = buttons.filter(btn => 
-        btn.classList.contains("flex") && 
-        btn.classList.contains("absolute")
-      );
-      
+      const controlButtons = buttons.filter((btn) => btn.classList.contains("flex") && btn.classList.contains("absolute"));
+
+      // Ensure control buttons are present
+      expect(controlButtons.length).toBeGreaterThanOrEqual(2);
+
       // Click next button
-      if (controlButtons.length >= 2) {
-        await user.click(controlButtons[1]);
-        
-        // The component should still be in the document
-        const carousel = screen.getByTestId("onchange-carousel");
-        expect(carousel).toBeInTheDocument();
-      }
+      await user.click(controlButtons[1]);
+
+      // The component should still be in the document
+      const carousel = screen.getByTestId("onchange-carousel");
+      expect(carousel).toBeInTheDocument();
     });
   });
 
@@ -193,26 +186,24 @@ describe("Carousel Component", () => {
     test("carousel has correct ARIA label", () => {
       render(BasicCarouselTest);
       const carousel = screen.getByRole("button");
-      
+
       expect(carousel).toHaveAttribute("aria-label", "Draggable Carousel");
     });
 
     test("carousel is keyboard accessible", () => {
       render(BasicCarouselTest);
       const carousel = screen.getByRole("button");
-      
+
       expect(carousel).toHaveAttribute("tabindex", "0");
     });
 
     test("indicators have correct aria-current attribute", () => {
       render(CarouselWithIndicatorsTest);
       const buttons = screen.getAllByRole("button");
-      
+
       // Find the active indicator
-      const activeIndicator = buttons.find(btn => 
-        btn.getAttribute("aria-current") === "true"
-      );
-      
+      const activeIndicator = buttons.find((btn) => btn.getAttribute("aria-current") === "true");
+
       expect(activeIndicator).toBeDefined();
     });
   });

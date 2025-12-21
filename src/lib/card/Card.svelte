@@ -4,7 +4,7 @@
   import clsx from "clsx";
   import { card } from "./theme";
 
-  let { children, hoverable = false, horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, classes, ...restProps }: CardProps = $props();
+  let { children, hoverable = false, horizontal = false, shadow = "md", reverse = false, img, imgAlt, size = "sm", class: className, classes, ...restProps }: CardProps = $props();
 
   const styling = $derived(classes);
 
@@ -27,7 +27,7 @@
     <img
       class={image({ class: clsx(theme?.image, styling?.image) })}
       src={img}
-      alt=""
+      alt={imgAlt || "Card image"}
       loading="lazy"
       onerror={(e) => {
         const target = e.currentTarget as HTMLImageElement;
