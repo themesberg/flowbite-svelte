@@ -7,7 +7,7 @@ export type InputVariants = VariantProps<typeof input> & Classes<typeof input>;
 export const input = tv({
   slots: {
     base: "relative w-full",
-    input: "block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:outline-hidden",
+    input: "text-heading text-sm focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body",
     left: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 pointer-events-none start-0 p-2.5",
     right: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 end-0 p-2.5",
     close: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black",
@@ -25,7 +25,7 @@ export const input = tv({
     color: {
       default: {
         input:
-          "border border-gray-300 dark:border-gray-600 focus:border-primary-500 focus:ring-primary-500 dark:focus:border-primary-500 dark:focus:ring-primary-500 bg-gray-50 text-gray-900 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 bg-gray-50 text-gray-900 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
+          "bg-neutral-secondary-medium border border-default-medium"
       },
       tinted: {
         input: "border border-gray-300 dark:border-gray-500 bg-gray-50 text-gray-900 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
@@ -112,10 +112,10 @@ export const input = tv({
       }
     },
     grouped: {
-      false: { base: "rounded-lg", input: "rounded-lg" },
+      false: { base: "rounded-base", input: "rounded-base" },
       true: {
-        base: "first:rounded-s-lg last:rounded-e-lg not-first:-ms-px",
-        input: "first:rounded-s-lg last:rounded-e-lg not-first:-ms-px h-full"
+        base: "first:rounded-s-base last:rounded-e-base not-first:-ms-px",
+        input: "first:rounded-s-base last:rounded-e-base not-first:-ms-px h-full"
       }
     }
   },

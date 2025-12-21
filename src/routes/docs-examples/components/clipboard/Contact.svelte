@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Card, Clipboard, Tooltip } from "flowbite-svelte";
-  import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
+  import { CheckOutline, ClipboardCleanOutline } from "flowbite-svelte-icons";
 
   let value = $state("");
 
@@ -29,10 +29,10 @@
       + 12 345 67890
     </div>
   </address>
-  <Clipboard {onclick} bind:value embedded class="absolute end-2 top-2 h-8 px-2.5 font-medium focus:ring-0">
+  <Clipboard {onclick} bind:value embedded color="alternative" class="absolute end-2 top-2 h-8 px-2.5 font-medium focus:ring-0">
     {#snippet children(success)}
       <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
-      {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+      {#if success}<CheckOutline class="h-4 w-4" />{:else}<ClipboardCleanOutline class="h-4 w-4" />{/if}
     {/snippet}
   </Clipboard>
 </Card>

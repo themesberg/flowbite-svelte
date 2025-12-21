@@ -72,30 +72,23 @@
   --color-secondary-800: #075985;
   --color-secondary-900: #0c4a6e;
 
-  /* Override Flowbite brand colors with primary colors */
-  --color-brand-softer: var(--color-primary-50);
+  /* Uncomment following lines to override Flowbite brand colors with primary colors */
+  /* --color-brand-softer: var(--color-primary-50);
   --color-brand-soft: var(--color-primary-100);
   --color-brand: var(--color-primary-700);
   --color-brand-medium: var(--color-primary-200);
-  --color-brand-strong: var(--color-primary-800);
+  --color-brand-strong: var(--color-primary-800); */
 
-  /* Override brand foreground (text) colors */
-  --color-fg-brand-subtle: var(--color-primary-200);
+  /* Uncomment following lines to override brand foreground (text) colors */
+  /* --color-fg-brand-subtle: var(--color-primary-200);
   --color-fg-brand: var(--color-primary-700);
-  --color-fg-brand-strong: var(--color-primary-900);
+  --color-fg-brand-strong: var(--color-primary-900); */
 
-  /* Override brand border colors */
-  --color-brand-subtle: var(--color-primary-200);
-  --color-brand-light: var(--color-primary-600);
+  /* Uncomment following lines to override brand border colors */
+  /* --color-brand-subtle: var(--color-primary-200);
+  --color-brand-light: var(--color-primary-600); */
 }
-/*
-The default border color has changed to `currentColor` in Tailwind CSS v4,
-so we've added these compatibility styles to make sure everything still
-looks the same as it did with Tailwind CSS v3.
 
-If we ever want to remove these styles, we need to add an explicit border
-color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,

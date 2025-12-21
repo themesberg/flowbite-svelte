@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Clipboard, Input, Tooltip, Modal, Button, Label } from "flowbite-svelte";
-  import { CheckOutline, ClipboardCleanSolid, ShareNodesOutline } from "flowbite-svelte-icons";
+  import { CheckOutline, ClipboardCleanOutline, ShareNodesOutline } from "flowbite-svelte-icons";
 
   let value = $state("npm install flowbite-svelte");
   let copyModal = $state(false);
@@ -16,7 +16,7 @@
       <Clipboard bind:value embedded>
         {#snippet children(success)}
           <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
-          {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+          {#if success}<CheckOutline class="h-4 w-4" />{:else}<ClipboardCleanOutline class="h-4 w-4" />{/if}
         {/snippet}
       </Clipboard>
     {/snippet}

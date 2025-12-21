@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Card, Clipboard, Input, Label, Tooltip, Button } from "flowbite-svelte";
-  import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
+  import { CheckOutline, ClipboardCleanOutline } from "flowbite-svelte-icons";
 
   let acc_id = $state("756593826");
   let api_key = $state("f4h6sd3t-jsy63ind-hsgdt7rs-jdhf76st");
@@ -9,7 +9,7 @@
 
 {#snippet children(success: boolean)}
   <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
-  {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+  {#if success}<CheckOutline class="h-4 w-4" />{:else}<ClipboardCleanOutline class="h-4 w-4" />{/if}
 {/snippet}
 
 <Card size="md" class="p-4 sm:p-6 md:p-8">
