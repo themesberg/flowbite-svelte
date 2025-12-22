@@ -64,7 +64,7 @@
 @prop shadow = "md"
 @prop reverse = false
 @prop img
-prop imgAlt
+@prop imgAlt
 @prop size = "sm"
 @prop class: className
 @prop classes

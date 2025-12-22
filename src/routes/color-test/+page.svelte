@@ -1,9 +1,14 @@
 <script lang="ts">
   const colors = [
+    "brand",
+    "danger",
+    "success",
+    "warning",
+    "dark",
+    "neutral",
     "slate",
     "gray",
     "zinc",
-    "neutral",
     "stone",
     "red",
     "orange",
@@ -29,10 +34,15 @@
   type ColorName = (typeof colors)[number];
 
   const colorClasses: Record<ColorName, { border: string; text: string }> = {
+    brand: { border: "border-brand", text: "text-brand-soft" },
+    danger: { border: "border-danger", text: "text-danger-soft" },
+    success: { border: "border-success", text: "text-success-soft" },
+    warning: { border: "border-warning", text: "text-warning-soft" },
+    dark: { border: "border-dark", text: "text-dark-soft" },
+    neutral: { border: "border-neutral-primary", text: "text-neutral-primary" },
     slate: { border: "border-slate-600", text: "text-slate-500" },
     gray: { border: "border-gray-600", text: "text-gray-500" },
     zinc: { border: "border-zinc-600", text: "text-zinc-500" },
-    neutral: { border: "border-neutral-600", text: "text-neutral-500" },
     stone: { border: "border-stone-600", text: "text-stone-500" },
     red: { border: "border-red-600", text: "text-red-500" },
     orange: { border: "border-orange-600", text: "text-orange-500" },
@@ -53,10 +63,15 @@
     rose: { border: "border-rose-600", text: "text-rose-500" }
   };
   const bgColorClasses: Record<ColorName, string> = {
+    brand: "bg-brand-soft",
+    danger: "bg-danger-soft",
+    success: "bg-success-soft",
+    warning: "bg-warning-soft",
+    dark: "bg-dark-soft",
+    neutral: "bg-neutral-primary",
     slate: "bg-slate-100",
     gray: "bg-gray-100",
     zinc: "bg-zinc-100",
-    neutral: "bg-neutral-100",
     stone: "bg-stone-100",
     red: "bg-red-100",
     orange: "bg-orange-100",

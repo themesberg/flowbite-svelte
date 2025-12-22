@@ -468,7 +468,7 @@
               type="button"
               color={monthColor}
               class={monthButton({
-                class: clsx(currentMonth.getMonth() === index ? "bg-brand text-white" : "text-gray-700 dark:text-gray-300", styling?.monthButton, theme?.monthButton)
+                class: clsx(currentMonth.getMonth() === index ? "bg-brand text-white" : "text-gray-700 dark:text-gray-300", theme?.monthButton, styling?.monthButton)
               })}
               onclick={(event: MouseEvent) => selectMonth(index, event)}
             >
@@ -477,11 +477,11 @@
           {/each}
         </div>
       {:else}
-        <div class={nav({ class: clsx(styling?.nav) })}>
+        <div class={nav({ class: clsx(theme?.nav, styling?.nav) })}>
           {@render navButton(false)}
           <Button
             type="button"
-            class={polite({ class: clsx("cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700", styling?.polite) })}
+            class={polite({ class: clsx("cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700", theme?.polite, styling?.polite) })}
             aria-live="polite"
             onclick={(event: MouseEvent) => toggleMonthSelector(event)}
           >
@@ -529,7 +529,7 @@
       {/if}
 
       {#if actionSlot}
-        <div class={clsx(styling?.actionSlot, theme?.actionSlot)}>
+        <div class={clsx(theme?.actionSlot, styling?.actionSlot)}>
           {@render actionSlot({
             selectedDate: range ? { from: rangeFrom, to: rangeTo } : value,
             handleClear,

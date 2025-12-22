@@ -10,7 +10,7 @@
 /* PLAYFUL THEME
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
 */
-
+@import "../../static/styles/docs.css";
 @import "tailwindcss";
 @import "flowbite/src/themes/default";
 /* @import "flowbite/src/themes/minimal"; */
@@ -19,8 +19,8 @@
 /* @import "flowbite/src/themes/mono"; */
 
 @plugin "flowbite/plugin";
-/* @plugin "./lib/plugin-utilities"; */
-/* @plugin "flowbite-typography"; */
+/* @plugin "./plugin-utilities"; */
+@plugin "flowbite-typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -47,6 +47,9 @@
   --border-width-2: 2px;
   --border-width-4: 4px;
   --border-width-8: 8px;
+
+  /* Missing white color that Flowbite theme references */
+  --color-white: #ffffff;
 
   --color-primary-50: #fff5f2;
   --color-primary-100: #fff1ee;
@@ -116,8 +119,6 @@
     --color-brand-light: var(--color-primary-600);
   } */
 }
-
-@import "../../static/styles/docs.css";
 
 @layer base {
   html {
@@ -246,6 +247,7 @@
     --yellow-light: #fffae5;
     --red: #ff5c33;
     --red-light: #ffebe5;
+    --red-dark: #cc3300;
     --shadow: 0px 12px 33px 0px rgba(0, 0, 0, 0.06), 0px 3.618px 9.949px 0px rgba(0, 0, 0, 0.04);
   }
 
