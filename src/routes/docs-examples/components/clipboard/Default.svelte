@@ -8,7 +8,7 @@
 
 <div class="grid w-full max-w-[23rem] grid-cols-8 gap-2">
   <Label for="npm-install" class="sr-only">NPM Install Command</Label>
-  <Input bind:value class="text-body col-span-6" />
+  <Input bind:value id="npm-install" class="text-body col-span-6" />
   <Clipboard bind:value bind:success class="w-24">
     {#if success}<CheckOutline />{:else}Copy{/if}
   </Clipboard>

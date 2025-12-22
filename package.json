@@ -25,7 +25,7 @@
     "test:e2e": "playwright test",
     "test:unit": "vitest",
     "test:unit-t": "vitest run -t",
-    "gen:exports": "svelte-lib-helpers exports && pnpm sync:exports",
+    "gen:exports": "svelte-lib-helpers exports",
     "gen:docspropvalue": "svelte-lib-helpers docspropvalue themesberg/flowbite-svelte",
     "gen:component-data-prop-value": "svelte-lib-helpers component-data-prop-value themesberg/flowbite-svelte",
     "copy:packagejson": "svelte-lib-helpers package",
@@ -913,11 +913,6 @@
     "./VirtualList.svelte": {
       "types": "./dist/virtuallist/VirtualList.svelte.d.ts",
       "svelte": "./dist/virtuallist/VirtualList.svelte"
-    },
-    "./plugin-utilities": {
-      "types": "./dist/plugin-utilities.d.ts",
-      "import": "./dist/plugin-utilities.js",
-      "default": "./dist/plugin-utilities.js"
     },
     "./package.json": "./package.json"
   }

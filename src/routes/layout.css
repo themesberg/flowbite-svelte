@@ -19,8 +19,8 @@
 /* @import "flowbite/src/themes/mono"; */
 
 @plugin "flowbite/plugin";
-@plugin "./lib/plugin-utilities";
-@plugin "flowbite-typography";
+/* @plugin "./lib/plugin-utilities"; */
+/* @plugin "flowbite-typography"; */
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -117,7 +117,7 @@
   } */
 }
 
-@import "../static/styles/docs.css";
+@import "../../static/styles/docs.css";
 
 @layer base {
   html {

@@ -27,7 +27,7 @@
     <img
       class={image({ class: clsx(theme?.image, styling?.image) })}
       src={img}
-      alt={imgAlt || "Card image"}
+      alt={imgAlt || ""}
       loading="lazy"
       onerror={(e) => {
         const target = e.currentTarget as HTMLImageElement;

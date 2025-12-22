@@ -1,5 +1,6 @@
 <script lang="ts">
-  import "../app.css";
+  // import "../app.css";
+  import "./layout.css";
   import FathomAnalytics from "./utils/FathomAnalytics.svelte";
   import CarbonAds from "./utils/CarbonAds.svelte";
 

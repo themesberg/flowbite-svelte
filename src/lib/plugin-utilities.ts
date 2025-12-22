@@ -1,4 +1,4 @@
-import plugin from "tailwindcss/plugin";
+import plugin, { type PluginCreator } from "tailwindcss/plugin";
 
 /**
  * Flowbite Utilities Plugin for Tailwind CSS v4
@@ -295,8 +295,6 @@ const flowbitePlugin = plugin(function ({ addUtilities }) {
   };
 
   addUtilities(colorUtilities);
-});
+} satisfies PluginCreator);
 
-// Export with type assertion to avoid Tailwind internal type issues
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default flowbitePlugin as any;
+export default flowbitePlugin;
