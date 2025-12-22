@@ -8,14 +8,14 @@
   let { children, placement, "aria-label": ariaLabel, class: className, classes, ...restProps }: DrawerHandleProps = $props();
 
   const ctx = getDrawerContext();
-
+  const styling = $derived(classes);
   const theme = $derived(getTheme("drawerhandle"));
   let { base, handle } = $derived(drawerhandle({ placement: placement ?? ctx?.placement ?? "left" }));
 </script>
 
 <button type="button" aria-label={ariaLabel} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {@render children?.()}
-  <span class={handle({ class: clsx(theme?.handle, classes?.handle) })}></span>
+  <span class={handle({ class: clsx(theme?.handle, styling?.handle) })}></span>
 </button>
 
 <!--
