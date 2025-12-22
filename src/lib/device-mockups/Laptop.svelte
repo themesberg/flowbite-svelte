@@ -1,40 +1,29 @@
 <script lang="ts">
   import type { LaptopProps } from "$lib";
-  import { warnThemeDeprecation } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { laptop } from "./theme";
-  import { untrack } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, class: className, classes, divClass, div2Class, div3Class, div4Class, ...restProps }: LaptopProps = $props();
+  let { children, class: className, classes, ...restProps }: LaptopProps = $props();
 
-  warnThemeDeprecation(
-    "Laptop",
-    untrack(() => ({ divClass, div2Class, div3Class, div4Class })),
-    { divClass: "class", div2Class: "top", div3Class: "lefttop", div4Class: "leftBot", div5Class: "right", div6Class: "slot" }
-  );
+  const theme = $derived(getTheme("laptop"));
 
-  const styling = $derived(
-    classes ?? {
-      inner: div2Class,
-      bot: div3Class,
-      botCen: div4Class
-    }
-  );
+  const styling = $derived(classes);
 
   const { base, inner, bot, botCen } = laptop();
 </script>
 
 <div {...restProps}>
-  <div class={base({ class: clsx(className ?? divClass) })}>
-    <div class={inner({ class: clsx(styling.inner) })}>
+  <div class={base({ class: clsx(theme?.base, className) })}>
+    <div class={inner({ class: clsx(theme?.inner, styling?.inner) })}>
       {#if children}
         {@render children()}
       {/if}
     </div>
   </div>
 
-  <div class={bot({ class: clsx(styling.bot) })}>
-    <div class={botCen({ class: clsx(styling.botCen) })}></div>
+  <div class={bot({ class: clsx(theme?.bot, styling?.bot) })}>
+    <div class={botCen({ class: clsx(theme?.botCen, styling?.botCen) })}></div>
   </div>
 </div>
 
@@ -47,9 +36,5 @@
 @prop children
 @prop class: className
 @prop classes
-@prop divClass
-@prop div2Class
-@prop div3Class
-@prop div4Class
 @prop ...restProps
 -->

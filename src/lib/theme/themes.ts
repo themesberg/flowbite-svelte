@@ -13,7 +13,7 @@ export { carousel, carouselIndicators, controlButton, slide, thumbnail, thumbnai
 export { clipboard } from "../clipboard";
 export { darkmode } from "../darkmode";
 export { datepicker } from "../datepicker";
-export { android, desktop, ios, tablet } from "../device-mockups";
+export { android, defaultMockup, desktop, ios, laptop, smartwatch, tablet } from "../device-mockups";
 export { drawer, drawerhandle } from "../drawer";
 export { dropdown, dropdownDivider, dropdownGroup, dropdownHeader, dropdownItem } from "../dropdown";
 export { footer, footerBrand, footerCopyright, footerIcon, footerLink, footerLinkGroup } from "../footer";

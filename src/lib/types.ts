@@ -571,10 +571,6 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   onapply?: (x: DateOrRange) => void;
   inputmode?: HTMLInputAttributes["inputmode"];
   monthColor?: ButtonProps["color"];
-  btnClass?: ClassValue;
-  inputClass?: ClassValue;
-  monthBtnSelected?: ClassValue;
-  monthBtn?: ClassValue;
   translationLocale?: string;
   elementRef?: HTMLInputElement;
   actionSlot?: Snippet<[ActionSlotParams]>;
@@ -605,53 +601,22 @@ export interface LaptopProps extends LaptopVariants, HTMLAttributes<HTMLDivEleme
 
 export interface AndroidProps extends AndroidVariants, HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
-  divClass?: ClassValue;
-  div2Class?: ClassValue;
-  div3Class?: ClassValue;
-  div4Class?: ClassValue;
-  div5Class?: ClassValue;
-  div6Class?: ClassValue;
-  div7Class?: ClassValue;
 }
 
 export interface DefaultMockupProps extends DefaultMockupVariants, HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
-  divClass?: ClassValue;
-  div2Class?: ClassValue;
-  div3Class?: ClassValue;
-  div4Class?: ClassValue;
-  div5Class?: ClassValue;
-  div6Class?: ClassValue;
 }
 
 export interface IosProps extends IosVariants, HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
-  divClass?: ClassValue;
-  div2Class?: ClassValue;
-  div3Class?: ClassValue;
-  div4Class?: ClassValue;
-  div5Class?: ClassValue;
-  div6Class?: ClassValue;
 }
 
 export interface SmartwatchProps extends SmartwatchVariants, HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
-  divClass?: ClassValue;
-  div2Class?: ClassValue;
-  div3Class?: ClassValue;
-  div4Class?: ClassValue;
-  div5Class?: ClassValue;
-  div6Class?: ClassValue;
 }
 
 export interface TabletProps extends TabletVariants, HTMLAttributes<HTMLDivElement> {
   children?: Snippet;
-  divClass?: ClassValue;
-  div2Class?: ClassValue;
-  div3Class?: ClassValue;
-  div4Class?: ClassValue;
-  div5Class?: ClassValue;
-  div6Class?: ClassValue;
 }
 
 // dialog
