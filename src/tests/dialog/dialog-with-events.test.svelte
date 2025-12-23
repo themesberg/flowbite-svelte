@@ -5,11 +5,11 @@
   let cancelCount = $state(0);
   let toggleCount = $state(0);
 
-  const handleCancel = (e: Event) => {
+  const handleCancel = (_e: Event) => {
     cancelCount++;
   };
 
-  const handleToggle = (e: ToggleEvent) => {
+  const handleToggle = (_e: ToggleEvent) => {
     toggleCount++;
   };
 </script>

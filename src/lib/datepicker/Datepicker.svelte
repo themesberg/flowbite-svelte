@@ -468,7 +468,7 @@
               type="button"
               color={monthColor}
               class={monthButton({
-                class: clsx(currentMonth.getMonth() === index ? "bg-brand text-white" : "text-gray-700 dark:text-gray-300", theme?.monthButton, styling?.monthButton)
+                class: clsx(theme?.monthButton, styling?.monthButton, currentMonth.getMonth() === index ? styling?.monthBtnSelected : styling?.monthBtn)
               })}
               onclick={(event: MouseEvent) => selectMonth(index, event)}
             >

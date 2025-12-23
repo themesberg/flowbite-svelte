@@ -2,27 +2,19 @@
   import { footerLink } from "./theme";
   import clsx from "clsx";
   import type { FooterLinkProps } from "$lib";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, liClass, aClass, href, classes, class: className, ...restProps }: FooterLinkProps = $props();
+  let { children, href, classes, class: className, ...restProps }: FooterLinkProps = $props();
 
-  warnThemeDeprecation(
-    "FooterLink",
-    untrack(() => ({ liClass, aClass })),
-    { liClass: "class", aClass: "link" }
-  );
-
-  // link, bySpan
-  const styling = $derived(classes ?? { link: aClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("footerLink"));
 
   const { base, link } = footerLink();
 </script>
 
-<li class={base({ class: clsx(theme?.base, className ?? liClass) })}>
-  <a {...restProps} {href} class={link({ class: clsx(theme?.link, styling.link) })}>
+<li class={base({ class: clsx(theme?.base, className) })}>
+  <a {...restProps} {href} class={link({ class: clsx(theme?.link, styling?.link) })}>
     {@render children()}
   </a>
 </li>
@@ -34,8 +26,6 @@
 [FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L764)
 ## Props
 @prop children
-@prop liClass
-@prop aClass
 @prop href
 @prop classes
 @prop class: className

@@ -18,7 +18,9 @@ export const datepicker = tv({
     nav: "mb-4 flex items-center justify-between",
     dayButton: "h-8 w-full block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center font-semibold text-sm day p-0",
     monthButton: "rounded-lg px-3 py-2 text-sm hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:hover:bg-gray-700",
-    actionSlot: ""
+    actionSlot: "",
+    monthBtnSelected: "bg-brand text-white",
+    monthBtn: "text-gray-700 dark:text-gray-300"
   },
   variants: {
     color: {

@@ -50,7 +50,7 @@
         </Dropdown>
       </div>
       <div class="flex items-center space-x-4">
-        <Datepicker range bind:rangeFrom={dateRange.from} bind:rangeTo={dateRange.to} color="pink" inputClass="w-64" />
+        <Datepicker range bind:rangeFrom={dateRange.from} bind:rangeTo={dateRange.to} color="pink" classes={{ input: "w-64" }} />
       </div>
     </div>
   </div>

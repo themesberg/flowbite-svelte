@@ -4,27 +4,28 @@
   import type { FooterBrandProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, aClass, spanClass, imgClass, href, src, alt, name, ...restProps }: FooterBrandProps = $props();
+  let { children, class: className, classes, href, src, alt, name, ...restProps }: FooterBrandProps = $props();
 
+  const styling = $derived(classes);
   const theme = $derived(getTheme("footerBrand"));
 
   const { base, span, img } = $derived(footerBrand());
 </script>
 
 {#if href}
-  <a {...restProps} {href} class={base({ class: clsx(theme?.base, aClass) })}>
+  <a {...restProps} {href} class={base({ class: clsx(theme?.base, className) })}>
     {#if src}
-      <img {src} class={img({ class: clsx(theme?.img, imgClass) })} {alt} />
+      <img {src} class={img({ class: clsx(theme?.img, styling?.img) })} {alt} />
     {/if}
     {#if name}
-      <span class={span({ class: clsx(theme?.span, spanClass) })}>{name}</span>
+      <span class={span({ class: clsx(theme?.span, styling?.span) })}>{name}</span>
     {/if}
     {#if children}
       {@render children()}
     {/if}
   </a>
 {:else}
-  <img {src} class={img({ class: clsx(imgClass) })} {alt} />
+  <img {src} class={img({ class: clsx(theme?.img, styling?.img) })} {alt} />
 {/if}
 
 <!--
@@ -34,9 +35,6 @@
 [FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L733)
 ## Props
 @prop children
-@prop aClass
-@prop spanClass
-@prop imgClass
 @prop href
 @prop src
 @prop alt

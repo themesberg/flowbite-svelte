@@ -4,7 +4,7 @@
   let open = $state(true);
   let submitted = $state(false);
 
-  const handleSubmit = (e: SubmitEvent) => {
+  const handleSubmit = (_e: SubmitEvent) => {
     submitted = true;
   };
 </script>

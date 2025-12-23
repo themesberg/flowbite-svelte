@@ -39,7 +39,7 @@ import type Slide from "$lib/carousel/Slide.svelte";
 import type { CarouselVariants, SlideVariants, CarouselIndicatorsVariants, ControlButtonVariants, ThumbnailsVariants } from "$lib/carousel/theme";
 import type { DrawerHandleVariants, DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
 import type { DatepickerVariants } from "$lib/datepicker/theme";
-import type { FooterCopyrightVariants, FooterLinkVariants } from "$lib/footer/theme";
+import type { FooterBrandVariants, FooterCopyrightVariants, FooterLinkVariants } from "$lib/footer/theme";
 import type { GalleryVariants } from "$lib/gallery/theme";
 import type { IndicatorVariants } from "$lib/indicator/theme";
 import type { ListgroupItemVariants, ListgroupVariants } from "$lib/list-group/theme";
@@ -686,11 +686,9 @@ export interface FooterProps extends HTMLAttributes<HTMLElement> {
   footerType?: FooterType;
 }
 
-export interface FooterBrandProps extends HTMLAnchorAttributes {
+export interface FooterBrandProps extends FooterBrandVariants, HTMLAnchorAttributes {
   children?: Snippet;
-  aClass?: ClassValue;
-  spanClass?: ClassValue;
-  imgClass?: ClassValue;
+  class?: ClassValue;
   href?: string;
   src?: string;
   alt?: string;
@@ -698,13 +696,10 @@ export interface FooterBrandProps extends HTMLAnchorAttributes {
 }
 
 export interface FooterCopyrightProps extends FooterCopyrightVariants, HTMLAnchorAttributes {
-  spanClass?: ClassValue;
-  aClass?: ClassValue;
   href?: string;
   by?: string;
   copyrightMessage?: string;
   year?: number;
-  bySpanClass?: ClassValue;
 }
 
 export interface FooterIconProps extends HTMLAnchorAttributes {
@@ -719,8 +714,6 @@ export interface FooterLinkGroupProps extends HTMLAttributes<HTMLUListElement> {
 
 export interface FooterLinkProps extends FooterLinkVariants, HTMLAnchorAttributes {
   children: Snippet;
-  liClass?: ClassValue;
-  aClass?: ClassValue;
   href?: string;
 }
 

@@ -2,19 +2,12 @@
   import { getDropdownContext } from "$lib/context";
   import { dropdownItem } from "./theme";
   import clsx from "clsx";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import type { DropdownItemProps } from "$lib/types";
-  import { untrack } from "svelte";
 
-  let { aClass, children, activeClass, liClass, classes, class: className, href, onclick, ...restProps }: DropdownItemProps = $props();
+  let { children, classes, class: className, href, onclick, ...restProps }: DropdownItemProps = $props();
 
-  warnThemeDeprecation(
-    "DropdownItem",
-    untrack(() => ({ aClass, activeClass, liClass })),
-    { aClass: "class", activeClass: "active", liClass: "li" }
-  );
-
-  const styling = $derived(classes ?? { active: activeClass, li: liClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("dropdownItem"));
 
@@ -23,10 +16,10 @@
   let isActive = $derived(ctx?.activeUrl && href ? href === ctx.activeUrl : false);
 
   const { base, active, li } = dropdownItem();
-  let finalClass = $derived(isActive ? active({ class: clsx(theme?.active, styling.active) }) : base({ class: clsx(theme?.base, className) }));
+  let finalClass = $derived(isActive ? active({ class: clsx(theme?.active, styling?.active) }) : base({ class: clsx(theme?.base, className) }));
 </script>
 
-<li class={li({ class: clsx(styling.li) })}>
+<li class={li({ class: clsx(theme?.li, styling?.li) })}>
   {#if href}
     <a {href} {onclick} {...restProps} class={finalClass}>
       {@render children()}
@@ -48,10 +41,7 @@
 ## Type
 [DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L705)
 ## Props
-@prop aClass
 @prop children
-@prop activeClass
-@prop liClass
 @prop classes
 @prop class: className
 @prop href

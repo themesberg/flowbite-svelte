@@ -7,7 +7,6 @@
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
   import { dialog } from "./theme";
-  import { getTheme } from "$lib/theme/themeUtils";
 
   let {
     children,
