@@ -20,21 +20,19 @@
   });
 </script>
 
-<Button color="gray" class="gap-2 rounded-xl border-0 focus:ring-gray-100 dark:focus:ring-gray-700 shadow-none" aria-haspopup="true">
+<Button color="gray" class="gap-2 rounded-xl border-0 shadow-none focus:ring-gray-100 dark:focus:ring-gray-700" aria-haspopup="true">
   <PaletteOutline class="h-5 w-5" />
   <span>{selectedTheme?.name ?? "Theme"}</span>
 </Button>
 <Dropdown class="w-52 px-2" simple>
   {#each themes as theme}
-    <DropdownItem onclick={handleThemeChange(theme.id)} class="inline-flex w-full items-center justify-between rounded-xl mb-1 {theme.id === currentTheme ? 'bg-brand-50 dark:bg-brand-900/20' : ''}">
+    <DropdownItem onclick={handleThemeChange(theme.id)} class="mb-1 inline-flex w-full items-center justify-between rounded-xl {theme.id === currentTheme ? 'bg-brand-50 dark:bg-brand-900/20' : ''}">
       <span class="theme-select-button inline-flex w-full items-center justify-between rounded">{theme.name}</span>
       <div class="flex items-center rounded-xs">
         {#each theme.colors as color, index}
-           <div class="h-3.5 w-[1.125rem] {color} {index === 0 ? 'rounded-s-xs' : ''} {index === theme.colors.length - 1 ? 'rounded-e-xs' : ''}"></div>
+          <div class="h-3.5 w-[1.125rem] {color} {index === 0 ? 'rounded-s-xs' : ''} {index === theme.colors.length - 1 ? 'rounded-e-xs' : ''}"></div>
         {/each}
       </div>
     </DropdownItem>
   {/each}
 </Dropdown>
-
-

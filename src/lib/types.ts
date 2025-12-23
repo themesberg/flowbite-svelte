@@ -760,11 +760,8 @@ export interface FileuploadProps extends FileuploadViariants, Omit<HTMLInputAttr
   color?: InputProps<never>["color"];
   elementRef?: HTMLInputElement;
   clearable?: boolean;
-  clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];
   clearableOnClick?: () => void;
-  clearableClass?: ClassValue;
-  wrapperClass?: ClassValue;
 }
 
 // floatinglabel-input

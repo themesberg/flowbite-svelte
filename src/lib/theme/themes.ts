@@ -49,6 +49,7 @@ export { fileupload } from "../forms/fileupload";
 export { floatingLabelInput } from "../forms/floating-label";
 export { helper } from "../forms/helper";
 export { input } from "../forms/input-field";
+export { inputAddon } from "../forms/input-addon";
 export { label } from "../forms/label";
 export { phoneInput } from "../forms/phoneinput";
 export { radio, radioButton } from "../forms/radio";

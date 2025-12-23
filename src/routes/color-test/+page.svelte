@@ -1,6 +1,6 @@
 <script lang="ts">
   const fgBrand = ["fg-brand", "fg-brand-subtle", "fg-brand-strong"];
-  const shikiFgBrand = [ "shiki-fg-brand", "shiki-fg-brand-subtle"];
+  const shikiFgBrand = ["shiki-fg-brand", "shiki-fg-brand-subtle"];
   const textVariables = [
     "text-2xs",
     "spacing-8xl",
@@ -16,15 +16,7 @@
     "tracking-tight"
   ];
 
-  const borderRadiusVariables = [
-    "rounded-0",
-    "rounded-xxs",
-    "rounded-xs",
-    "rounded-sm",
-    "rounded",
-    "rounded-base",
-    "rounded-lg"
-  ];
+  const borderRadiusVariables = ["rounded-0", "rounded-xxs", "rounded-xs", "rounded-sm", "rounded", "rounded-base", "rounded-lg"];
   const colors = [
     "brand",
     "danger",
@@ -121,14 +113,14 @@
 
 <div class="flex flex-wrap gap-4 p-8">
   {#each fgBrand as token}
-  <p class={`mb-2 text-${token}`}>text-{token}</p>
-{/each}
+    <p class={`mb-2 text-${token}`}>text-{token}</p>
+  {/each}
 </div>
 
 <div class="flex flex-wrap gap-4 p-8">
-{#each shikiFgBrand as token}
-  <p class={`mb-2 text-${token}`}>text-{token}</p>
-{/each}
+  {#each shikiFgBrand as token}
+    <p class={`mb-2 text-${token}`}>text-{token}</p>
+  {/each}
 </div>
 
 <!-- textVariables classes -->
@@ -151,7 +143,7 @@
       <h3 class="mb-2 text-xl font-bold capitalize">{color}</h3>
 
       {#each borders as borderSize}
-         <div class={`m-2 flex h-24 w-24 items-center justify-center font-semibold ${borderSize} ${colorClasses[color].border} ${colorClasses[color].text}`}>
+        <div class={`m-2 flex h-24 w-24 items-center justify-center font-semibold ${borderSize} ${colorClasses[color].border} ${colorClasses[color].text}`}>
           {color}
         </div>
       {/each}

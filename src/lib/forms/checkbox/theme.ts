@@ -17,8 +17,6 @@ export const checkbox = tv({
       gray: {
         base: "border border-default-medium bg-neutral-secondary-medium focus:ring-gray-soft"
       },
-
-
       // legacy colors
       primary: {
         base: "text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600"

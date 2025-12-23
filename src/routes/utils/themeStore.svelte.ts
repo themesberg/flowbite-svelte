@@ -78,10 +78,8 @@ export function loadTheme(themeId: string): void {
   if (dev) console.log(`Loading theme: ${themeId}`);
 
   // Remove ALL existing theme links
-  const existingLinks = document.querySelectorAll(
-    '#dynamic-theme-css, #initial-theme-css, #dynamic-theme-font'
-  );
-  existingLinks.forEach(link => link.remove());
+  const existingLinks = document.querySelectorAll("#dynamic-theme-css, #initial-theme-css, #dynamic-theme-font");
+  existingLinks.forEach((link) => link.remove());
 
   // Add new font
   const fontLink = document.createElement("link");
@@ -107,7 +105,7 @@ export function loadTheme(themeId: string): void {
     // Also trigger recalculation by temporarily modifying a style
     const html = document.documentElement;
     const originalTransition = html.style.transition;
-    html.style.transition = 'none';
+    html.style.transition = "none";
     void html.offsetHeight;
     html.style.transition = originalTransition;
   };
