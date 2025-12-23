@@ -80,7 +80,7 @@
 </script>
 
 {#if submenu !== "blocks"}
-  <SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-2 z-40 mb-2 md:top-4" />
+  <SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-0 z-40 md:top-4" />
   <Sidebar
     breakpoint="lg"
     backdrop={true}

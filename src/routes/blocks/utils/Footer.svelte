@@ -47,7 +47,7 @@
             </h2>
             <FooterLinkGroup>
               {#each Object.entries(links) as [name, href]}
-                <FooterLink liClass="mb-4" {href}>{name}</FooterLink>
+                <FooterLink classes={{ link: "mb-4" }} {href}>{name}</FooterLink>
               {/each}
             </FooterLinkGroup>
           </div>

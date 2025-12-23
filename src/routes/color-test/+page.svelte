@@ -99,13 +99,13 @@
       <h3 class="mb-2 text-xl font-bold capitalize">{color}</h3>
 
       {#each borders as borderSize}
-        <div class={["m-2 flex h-24 w-24 items-center justify-center font-semibold", borderSize, colorClasses[color].border, colorClasses[color].text].join(" ")}>
+         <div class={`m-2 flex h-24 w-24 items-center justify-center font-semibold ${borderSize} ${colorClasses[color].border} ${colorClasses[color].text}`}>
           {color}
         </div>
       {/each}
 
       <div class="mt-4 flex flex-wrap">
-        <div class={["m-2 flex h-24 w-24 items-center justify-center font-semibold", bgColorClasses[color], "text-gray-900"].join(" ")}>bg</div>
+        <div class={`m-2 flex h-24 w-24 items-center justify-center font-semibold ${bgColorClasses[color]} text-gray-900`}>bg</div>
       </div>
     </div>
   {/each}

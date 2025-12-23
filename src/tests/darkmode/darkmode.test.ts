@@ -32,7 +32,9 @@ describe("DarkMode Component", () => {
       render(BasicDarkmodeTest);
       const button = screen.getByRole("button");
 
-      expect(button).toHaveClass("text-gray-500", "dark:text-gray-400", "hover:bg-gray-100", "dark:hover:bg-gray-700", "focus:outline-hidden", "rounded-lg", "text-sm", "p-2.5");
+      expect(button).toHaveClass(
+        "inline-flex hover:text-heading items-center justify-center text-body w-10 h-10 hover:bg-neutral-secondary-soft focus:outline-none focus:ring-2 focus:ring-neutral-tertiary rounded-xl text-sm p-2"
+      );
     });
 
     test("renders default dark mode icon in light mode", () => {
@@ -40,7 +42,7 @@ describe("DarkMode Component", () => {
       const darkIcon = screen.getByRole("img", { name: "Dark mode" });
 
       expect(darkIcon).toBeInTheDocument();
-      expect(darkIcon).toHaveClass("w-5", "h-5");
+      expect(darkIcon).toHaveClass("w-4", "h-4");
     });
 
     test("custom aria-label is applied", () => {

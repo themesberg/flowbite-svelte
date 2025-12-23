@@ -32,7 +32,7 @@
   const paramsOptions = $derived(transitionParams ?? { duration: 100, easing: sineIn });
 
   const styling = $derived(classes);
-  let { base, form: formCls, close: closeCls } = dialog();
+  let { base, form: formCls, close: closeCls } = $derived(dialog());
 
   const close = () => (open = false);
 

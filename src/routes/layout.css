@@ -19,7 +19,6 @@
 /* @import "flowbite/src/themes/mono"; */
 
 @plugin "flowbite/plugin";
-/* @plugin "./plugin-utilities"; */
 @plugin "flowbite-typography";
 
 @custom-variant dark (&:where(.dark, .dark *));

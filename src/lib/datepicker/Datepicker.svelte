@@ -523,7 +523,7 @@
       {#if showActionButtons && !showMonthSelector}
         <div class={actionButtons({ class: clsx(theme?.actionButtons, styling?.actionButtons) })}>
           <Button onclick={() => handleDaySelect(new Date())} {color} size="sm" disabled={!isDateAvailable(new Date())}>Today</Button>
-          <Button onclick={handleClear} color="red" size="sm">Clear</Button>
+          <Button onclick={handleClear} color="danger" size="sm">Clear</Button>
           <Button onclick={handleApply} {color} size="sm">Apply</Button>
         </div>
       {/if}

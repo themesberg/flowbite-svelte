@@ -5,7 +5,7 @@
   import { getTheme } from "$lib/theme/themeUtils";
 
   // const THEME_PREFERENCE_KEY = 'color-theme';
-  let { class: className, lightIcon, darkIcon, size = "md", ariaLabel = "Dark mode", ...restProps }: DarkmodeProps = $props();
+  let { class: className, lightIcon, darkIcon, size = "sm", ariaLabel = "Dark mode", ...restProps }: DarkmodeProps = $props();
 
   const theme = $derived(getTheme("darkmode"));
 
@@ -39,13 +39,14 @@
     {#if lightIcon}
       {@render lightIcon()}
     {:else}
-      <svg role="img" aria-label="Light mode" class={sizes[size]} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <svg role="img" aria-label="Light mode" class={sizes[size]} fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path
-          d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1
-    0 100-2H3a1 1 0 000 2h1z"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-        />
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 5V3m0 18v-2M7.05 7.05 5.636 5.636m12.728 12.728L16.95 16.95M5 12H3m18 0h-2M7.05 16.95l-1.414 1.414M18.364 5.636 16.95 7.05M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"
+        ></path>
       </svg>
     {/if}
   </span>
@@ -53,8 +54,14 @@
     {#if darkIcon}
       {@render darkIcon()}
     {:else}
-      <svg role="img" aria-label="Dark mode" class={sizes[size]} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+      <svg role="img" aria-label="Dark mode" class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 21a9 9 0 0 1-.5-17.986V3c-.354.966-.5 1.911-.5 3a9 9 0 0 0 9 9c.239 0 .254.018.488 0A9.004 9.004 0 0 1 12 21Z"
+        ></path>
       </svg>
     {/if}
   </span>

@@ -6,7 +6,7 @@
   import { getTheme } from "$lib/theme/themeUtils";
 
   let { href, by, copyrightMessage = "All Rights Reserved.", year, classes, class: className, ...restProps }: FooterCopyrightProps = $props();
-  
+
   const styling = $derived(classes);
 
   const theme = $derived(getTheme("footerCopyright"));

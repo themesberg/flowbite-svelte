@@ -3,7 +3,6 @@ export * from "./uiHelpers.svelte.js";
 export * from "./utils";
 // theme
 // export { default as ThemeProvider } from "./theme/ThemeProvider.svelte";
-// export { default as plugin } from "./plugin-utilities.js";
 export * from "./theme";
 export { getTheme } from "./theme/themeUtils";
 // components

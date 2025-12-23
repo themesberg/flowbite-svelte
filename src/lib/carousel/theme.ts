@@ -8,7 +8,7 @@ export type ThumbnailsVariants = VariantProps<typeof thumbnails> & Classes<typeo
 
 export const carousel = tv({
   slots: {
-    base: "grid overflow-hidden relative rounded-lg h-56 sm:h-64 xl:h-80 2xl:h-96",
+    base: "grid overflow-hidden relative rounded-base h-56 sm:h-64 xl:h-80 2xl:h-96",
     slide: ""
   },
   variants: {},
@@ -38,7 +38,7 @@ export const carouselIndicators = tv({
 export const controlButton = tv({
   slots: {
     base: "flex absolute top-0 z-30 justify-center items-center px-4 h-full group focus:outline-hidden text-white dark:text-gray-300",
-    span: "inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-hidden sm:h-10 sm:w-10 dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70"
+    span: "inline-flex h-8 w-8 items-center justify-center rounded-base bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-hidden sm:h-10 sm:w-10 dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70"
   },
   variants: {
     forward: {

@@ -445,9 +445,6 @@ export type ButtonToggleProps = ButtonToggleVariants &
     children: Snippet;
     iconSlot?: Snippet;
     color?: ButtonToggleVariants["color"];
-    iconClass?: ClassValue;
-    contentClass?: ClassValue;
-    txtClass?: ClassValue;
   };
 
 export interface ButtonToggleContext {

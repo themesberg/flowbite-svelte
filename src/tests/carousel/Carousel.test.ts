@@ -37,7 +37,7 @@ describe("Carousel Component", () => {
       render(BasicCarouselTest);
       const carousel = screen.getByRole("button");
 
-      expect(carousel).toHaveClass("grid", "overflow-hidden", "relative", "rounded-lg");
+      expect(carousel).toHaveClass("grid", "overflow-hidden", "relative", "rounded-base");
     });
   });
 
