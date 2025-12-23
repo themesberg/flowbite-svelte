@@ -730,7 +730,7 @@ export interface CheckboxProps extends CheckboxVariants, Omit<HTMLInputAttribute
   tinted?: boolean;
   rounded?: boolean;
   choices?: CheckboxItem[];
-  divClass?: ClassValue;
+  color?: CheckboxVariants["color"];
   labelProps?: Omit<LabelProps, "children">;
 }
 

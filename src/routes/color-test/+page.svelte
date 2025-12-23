@@ -1,4 +1,30 @@
 <script lang="ts">
+  const fgBrand = ["fg-brand", "fg-brand-subtle", "fg-brand-strong"];
+  const shikiFgBrand = [ "shiki-fg-brand", "shiki-fg-brand-subtle"];
+  const textVariables = [
+    "text-2xs",
+    "spacing-8xl",
+    "leading-9",
+    "leading-8",
+    "leading-7",
+    "leading-6",
+    "leading-5",
+    "leading-4",
+    "leading-none",
+    "leading-heading-none",
+    "tracking-tighter",
+    "tracking-tight"
+  ];
+
+  const borderRadiusVariables = [
+    "rounded-0",
+    "rounded-xxs",
+    "rounded-xs",
+    "rounded-sm",
+    "rounded",
+    "rounded-base",
+    "rounded-lg"
+  ];
   const colors = [
     "brand",
     "danger",
@@ -92,6 +118,32 @@
     rose: "bg-rose-100"
   };
 </script>
+
+<div class="flex flex-wrap gap-4 p-8">
+  {#each fgBrand as token}
+  <p class={`mb-2 text-${token}`}>text-{token}</p>
+{/each}
+</div>
+
+<div class="flex flex-wrap gap-4 p-8">
+{#each shikiFgBrand as token}
+  <p class={`mb-2 text-${token}`}>text-{token}</p>
+{/each}
+</div>
+
+<!-- textVariables classes -->
+<div class="flex flex-wrap gap-4 p-8">
+  {#each textVariables as textVariable}
+    <p class={`mb-2 ${textVariable} bg-gray-200`}>{textVariable} - The quick brown fox jumps over the lazy dog.</p>
+  {/each}
+</div>
+
+<!-- borderRadiusVariables classes -->
+<div class="flex flex-wrap gap-4 p-8">
+  {#each borderRadiusVariables as borderRadiusVariable}
+    <p class={`leading-heading-none mb-2 ${borderRadiusVariable} bg-gray-200`}>{borderRadiusVariable} - The quick brown fox jumps over the lazy dog.</p>
+  {/each}
+</div>
 
 <div class="flex flex-wrap gap-4 p-8">
   {#each colors as color}

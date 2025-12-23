@@ -54,7 +54,7 @@
     {#if darkIcon}
       {@render darkIcon()}
     {:else}
-      <svg role="img" aria-label="Dark mode" class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+      <svg role="img" aria-label="Dark mode" class={sizes[size]} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
         <path
           stroke="currentColor"
           stroke-linecap="round"
@@ -76,7 +76,7 @@
 @prop class: className
 @prop lightIcon
 @prop darkIcon
-@prop size = "md"
+@prop size = "sm"
 @prop ariaLabel = "Dark mode"
 @prop ...restProps
 -->

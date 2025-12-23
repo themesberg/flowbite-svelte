@@ -1,20 +1,20 @@
 import { browser } from "$app/environment";
+import { dev } from "$app/environment";
 
+export type ThemeId = "default" | "minimal" | "enterprise" | "playful" | "mono";
 export interface Theme {
-  id: string;
+  id: ThemeId;
   name: string;
   cssPath: string;
   fontUrl: string;
   colors: string[];
 }
 
-export type ThemeId = "default" | "minimal" | "enterprise" | "playful" | "mono";
-
 const themes: Theme[] = [
   {
     id: "default",
     name: "Default",
-    cssPath: "/themes/default.css",
+    cssPath: "/themes/default-runtime.css",
     fontUrl: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap",
     colors: ["bg-gray-100 dark:bg-gray-700", "bg-blue-50 dark:bg-blue-900", "bg-blue-200 dark:bg-blue-800", "bg-blue-700 dark:bg-blue-700"]
   },
@@ -28,22 +28,22 @@ const themes: Theme[] = [
   {
     id: "enterprise",
     name: "Enterprise",
-    cssPath: "/themes/enterprise.css",
-    fontUrl: "https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap",
+    cssPath: "/themes/enterprise-runtime.css",
+    fontUrl: "https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap",
     colors: ["bg-zinc-100 dark:bg-zinc-700", "bg-cyan-50 dark:bg-cyan-900", "bg-cyan-100 dark:bg-cyan-800", "bg-cyan-700 dark:bg-cyan-700"]
   },
   {
     id: "playful",
     name: "Playful",
     cssPath: "/themes/playful.css",
-    fontUrl: "https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap",
+    fontUrl: "https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap",
     colors: ["bg-slate-100 dark:bg-slate-700", "bg-pink-50 dark:bg-pink-900", "bg-pink-100 dark:bg-pink-800", "bg-pink-700 dark:bg-pink-700"]
   },
   {
     id: "mono",
     name: "Mono",
     cssPath: "/themes/mono.css",
-    fontUrl: "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap",
+    fontUrl: "https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@300;400;500;600;700&display=swap",
     colors: ["bg-neutral-100 dark:bg-neutral-700", "bg-indigo-50 dark:bg-indigo-900", "bg-indigo-100 dark:bg-indigo-800", "bg-indigo-700 dark:bg-indigo-700"]
   }
 ];
@@ -53,7 +53,7 @@ const getInitialTheme = (): string => {
     try {
       return localStorage.getItem("flowbite-svelte-theme") || "default";
     } catch (e) {
-      console.warn("localStorage not available:", e);
+      // console.warn("localStorage not available:", e);
       return "default";
     }
   }
@@ -75,48 +75,45 @@ export function loadTheme(themeId: string): void {
     return;
   }
 
-  console.log(`Loading theme: ${themeId}`);
+  if (dev) console.log(`Loading theme: ${themeId}`);
 
-  // Remove existing theme CSS (including initial theme)
-  const existingThemeLink = document.getElementById("dynamic-theme-css");
-  const initialThemeLink = document.getElementById("initial-theme-css");
+  // Remove ALL existing theme links
+  const existingLinks = document.querySelectorAll(
+    '#dynamic-theme-css, #initial-theme-css, #dynamic-theme-font'
+  );
+  existingLinks.forEach(link => link.remove());
 
-  if (existingThemeLink) {
-    existingThemeLink.remove();
-  }
-  if (initialThemeLink) {
-    initialThemeLink.remove();
-  }
-
-  // Remove existing font link
-  const existingFontLink = document.getElementById("dynamic-theme-font");
-  if (existingFontLink) {
-    existingFontLink.remove();
-  }
-
-  // Add new font with cache busting
+  // Add new font
   const fontLink = document.createElement("link");
   fontLink.id = "dynamic-theme-font";
   fontLink.rel = "stylesheet";
   fontLink.href = theme.fontUrl;
+  fontLink.onerror = () => {
+    console.warn(`Failed to load font for theme ${themeId}`);
+  };
   document.head.appendChild(fontLink);
 
-  // Add new theme CSS with cache busting
+  // Add new theme CSS
   const themeLink = document.createElement("link");
   themeLink.id = "dynamic-theme-css";
   themeLink.rel = "stylesheet";
-  // Add timestamp to prevent caching issues
-  themeLink.href = `${theme.cssPath}?t=${Date.now()}`;
+  themeLink.href = theme.cssPath;
 
-  // Add onload handler to ensure CSS is loaded
+  // Add onload handler
   themeLink.onload = () => {
-    console.log(`✓ Theme ${themeId} CSS loaded successfully`);
-    // Force a reflow to apply the new styles
-    document.body.offsetHeight;
+    if (dev) console.log(`✓ Theme ${themeId} loaded successfully`);
+    // Reading offsetHeight triggers synchronous layout recalculation
+    void document.body.offsetHeight;
+    // Also trigger recalculation by temporarily modifying a style
+    const html = document.documentElement;
+    const originalTransition = html.style.transition;
+    html.style.transition = 'none';
+    void html.offsetHeight;
+    html.style.transition = originalTransition;
   };
 
   themeLink.onerror = () => {
-    console.error(`✗ Failed to load theme ${themeId} CSS from ${theme.cssPath}`);
+    console.error(`✗ Failed to load theme ${themeId} from ${theme.cssPath}`);
   };
 
   document.head.appendChild(themeLink);
@@ -128,9 +125,9 @@ export function loadTheme(themeId: string): void {
     console.warn("Could not save theme:", e);
   }
 
-  // Update state (this is reactive!)
+  // Update state
   currentTheme = themeId;
-  console.log(`Current theme state updated to: ${currentTheme}`);
+  if (dev) console.log(`Theme state updated to: ${currentTheme}`);
 }
 
 // Export getter functions to access the state

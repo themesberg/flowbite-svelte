@@ -7,15 +7,18 @@
 
   let { children, data } = $props();
 
+  // Get the saved theme from localStorage (or default)
+  const savedTheme = getCurrentTheme();
+
   // Load the theme as early as possible
   onMount(() => {
-    loadTheme(getCurrentTheme());
+    loadTheme(savedTheme);
   });
 </script>
 
 <svelte:head>
-  <!-- Load default theme initially -->
-  <link rel="stylesheet" href="/themes/default.css" id="initial-theme-css" />
+  <!-- Load the saved theme initially for SSR/initial render -->
+  <link rel="stylesheet" href="/themes/{savedTheme}.css" id="initial-theme-css" />
 </svelte:head>
 
 <FathomAnalytics FATHOM_ID={data.FATHOM_ID} />

@@ -39,10 +39,10 @@ describe("DarkMode Component", () => {
 
     test("renders default dark mode icon in light mode", () => {
       render(BasicDarkmodeTest);
-      const darkIcon = screen.getByRole("img", { name: "Dark mode" });
+      const button = screen.getByRole("button", { name: "Dark mode" });
 
-      expect(darkIcon).toBeInTheDocument();
-      expect(darkIcon).toHaveClass("w-4", "h-4");
+      const darkIconWrapper = button.querySelector("span.block.dark\\:hidden");
+      expect(darkIconWrapper).toBeInTheDocument();
     });
 
     test("custom aria-label is applied", () => {
@@ -178,8 +178,8 @@ describe("DarkMode Component", () => {
       render(BasicDarkmodeTest);
 
       // Check for the dark mode icon (visible in light mode)
-      const darkIcon = screen.getByRole("img", { name: "Dark mode" });
-      expect(darkIcon).toBeInTheDocument();
+      const button = screen.getByRole("button", { name: "Dark mode" });
+      expect(button).toBeInTheDocument();
     });
   });
 
@@ -189,10 +189,10 @@ describe("DarkMode Component", () => {
       document.documentElement.classList.remove("dark");
 
       render(BasicDarkmodeTest);
-      const darkIcon = screen.getByRole("img", { name: "Dark mode" });
+      const button = screen.getByRole("button", { name: "Dark mode" });
+      const darkIconWrapper = button.querySelector("span.block.dark\\:hidden");
 
-      expect(darkIcon).toBeInTheDocument();
-      expect(darkIcon.parentElement).toHaveClass("block", "dark:hidden");
+      expect(darkIconWrapper).toBeInTheDocument();
     });
 
     test("shows light icon in dark mode", () => {

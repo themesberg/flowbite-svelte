@@ -9,13 +9,6 @@
 
   let { value, selected = false, children, iconSlot, color, class: className, classes, ...restProps }: ButtonToggleProps = $props();
 
-  // warnThemeDeprecation(
-  //   "ButtonToggle",
-  //   untrack(() => ({ iconClass, txtClass, contentClass })),
-  //   { iconClass: "icon", txtClass: "text", contentClass: "content" }
-  // );
-
-  // button(className), content, text, icon
   const styling = $derived(classes);
 
   const theme = $derived(getTheme("buttonToggle"));
