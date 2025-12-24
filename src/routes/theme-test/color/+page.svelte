@@ -1,23 +1,6 @@
 <script lang="ts">
   import ThemeSelector from "../../utils/ThemeSelector.svelte";
-  const fgBrand = ["text-fg-brand", "text-fg-brand-subtle", "text-fg-brand-strong"];
-  const shikiFgBrand = ["text-shiki-fg-brand", "text-shiki-fg-brand-subtle"];
-  const textVariables = [
-    "text-2xs",
-    "spacing-8xl",
-    "leading-9",
-    "leading-8",
-    "leading-7",
-    "leading-6",
-    "leading-5",
-    "leading-4",
-    "leading-none",
-    "leading-heading-none",
-    "tracking-tighter",
-    "tracking-tight"
-  ];
-
-  const borderRadiusVariables = ["rounded-0", "rounded-xxs", "rounded-xs", "rounded-sm", "rounded", "rounded-base", "rounded-lg"];
+  
   const colors = [
     "brand",
     "danger",

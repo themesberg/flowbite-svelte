@@ -20,8 +20,8 @@
   });
 </script>
 
-<Button color="gray" class="gap-2 rounded-xl border-0 shadow-none focus:ring-gray-100 dark:focus:ring-gray-700" aria-haspopup="true">
-  <PaletteOutline class="h-5 w-5" />
+<Button color="gray" class="gap-2 rounded-xl border-0 px-1.5 py-1.5 shadow-none focus:ring-gray-100 dark:focus:ring-gray-700" aria-haspopup="true">
+  <PaletteOutline class="h-6 w-6" />
   <span>{selectedTheme?.name ?? "Theme"}</span>
 </Button>
 <Dropdown class="w-52 px-2" simple>
