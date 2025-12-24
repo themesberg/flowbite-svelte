@@ -88,16 +88,16 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L280)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L282)
 ## Props
 @prop children
 @prop btnName
 @prop appBtnPosition = "middle"
 @prop activeClass
-@prop class: className - For the base button/anchor element
-@prop classes - For other slots (span) - automatically provided by BottomNavItemVariants
-@prop btnClass - DEPRECATED: Use class instead
-@prop spanClass - DEPRECATED: Use classes.span instead
+@prop class: className
+@prop classes
 @prop active: manualActive
+@prop btnClass
+@prop spanClass
 @prop ...restProps
 -->

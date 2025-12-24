@@ -11,9 +11,6 @@
     ["iconSlot", ""],
     ["color", ""],
     ["class: className", ""],
-    ["iconClass", ""],
-    ["txtClass", ""],
-    ["contentClass", ""],
     ["classes", ""]
   ]
 }

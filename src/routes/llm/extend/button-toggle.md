@@ -434,8 +434,5 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 - iconSlot
 - color
 - class: className
-- iconClass
-- txtClass
-- contentClass
 - classes
 

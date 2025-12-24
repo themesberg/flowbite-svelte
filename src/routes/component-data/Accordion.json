@@ -11,6 +11,7 @@
     ["inactiveClass", ""],
     ["multiple", "false"],
     ["class: className", ""],
-    ["transitionType", ""]
+    ["transitionType", ""],
+    ["classes", ""]
   ]
 }

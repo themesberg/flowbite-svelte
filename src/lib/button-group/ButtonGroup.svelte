@@ -33,7 +33,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L320)
+[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L318)
 ## Props
 @prop children
 @prop size = "md"

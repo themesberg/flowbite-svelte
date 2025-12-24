@@ -2,7 +2,7 @@
   "name": "FloatingLabelInput",
   "type": {
     "name": "FloatingLabelInputProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L825"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L768"
   },
   "props": [
     ["children", ""],
@@ -11,20 +11,17 @@
     ["elementRef", "$bindable()"],
     ["variant", "\"standard\""],
     ["size", "\"default\""],
-    ["color", "\"default\""],
+    ["validation", "\"none\""],
+    ["disabled", "false"],
+    ["withIcon", "false"],
     ["class: className", ""],
     ["classes", ""],
-    ["inputClass", ""],
-    ["labelClass", ""],
     ["clearable", ""],
-    ["clearableSvgClass", ""],
     ["clearableColor", "\"none\""],
-    ["clearableClass", ""],
     ["clearableOnClick", ""],
     ["data", "[]"],
     ["maxSuggestions", "5"],
     ["onSelect", ""],
-    ["comboClass", ""],
     ["placeholder", ""]
   ]
 }

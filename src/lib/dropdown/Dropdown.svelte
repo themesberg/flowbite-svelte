@@ -39,7 +39,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L693)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L646)
 ## Props
 @prop children
 @prop simple = false

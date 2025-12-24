@@ -37,7 +37,7 @@ Use this example to show more information about a user profile when hovering ove
 <Popover class="w-64 bg-white text-sm font-light text-gray-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
   <div class="p-3">
     <div class="mb-2 flex items-center justify-between">
-      <Avatar href="/" src="/images/profile-picture-1.webp" alt="Jese Leos" />
+      <Avatar href="/" src="/images/people/profile-picture-1.jpg" alt="Jese Leos" />
       <Button size="xs">Follow</Button>
     </div>
     <div class="text-base leading-none font-semibold text-gray-900 dark:text-white">
@@ -103,9 +103,9 @@ This example can be used to show more information about a company profile.
         </li>
       </ul>
       <div class="ms-4 mb-3 flex">
-        <Avatar src="/images/profile-picture-1.webp" stacked />
-        <Avatar src="/images/profile-picture-2.webp" stacked />
-        <Avatar src="/images/profile-picture-3.webp" stacked />
+        <Avatar src="/images/people/profile-picture-1.jpg" stacked />
+        <Avatar src="/images/people/profile-picture-2.jpg" stacked />
+        <Avatar src="/images/people/profile-picture-5.jpg" stacked />
         <Avatar stacked href="/" class="bg-gray-700 text-white hover:bg-gray-600 dark:bg-gray-700">+3</Avatar>
       </div>
       <div class="flex">
@@ -250,7 +250,7 @@ Dynamically show the password strength progress when creating a new password pos
     <Label for="password" class="mb-2">Your password</Label>
     <Input type="password" id="password" />
   </div>
-  <Checkbox classes={{ div: "mb-6" }}>Remember me</Checkbox>
+  <Checkbox classes={{ label: "mb-6" }}>Remember me</Checkbox>
   <Button type="submit">Submit</Button>
 </form>
 <Popover class="text-sm" triggeredBy="#password" placement="bottom">
@@ -393,7 +393,7 @@ If you need the popover to be attached to the other element then the triggering 
 
 #### Types
 
-[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1306)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1246)
 
 #### Props
 

@@ -103,7 +103,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1049)
+[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L989)
 ## Props
 @prop header
 @prop footer

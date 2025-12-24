@@ -406,22 +406,22 @@ This example can be used when you want to show a long list of items that won’t
 <Dropdown class="h-48 w-48 overflow-y-auto py-1">
   <DropdownGroup>
     <DropdownItem class="flex items-center gap-2 text-base font-semibold">
-      <Avatar src="/images/profile-picture-1.webp" size="xs" />Jese Leos
+      <Avatar src="/images/people/profile-picture-1.jpg" size="xs" />Jese Leos
     </DropdownItem>
     <DropdownItem class="flex items-center gap-2 text-base font-semibold">
-      <Avatar src="/images/profile-picture-2.webp" size="xs" />Robert Gouth
+      <Avatar src="/images/people/profile-picture-2.jpg" size="xs" />Robert Gouth
     </DropdownItem>
     <DropdownItem class="flex items-center gap-2 text-base font-semibold">
-      <Avatar src="/images/profile-picture-3.webp" size="xs" />Bonnie Green
+      <Avatar src="/images/people/profile-picture-5.jpg" size="xs" />Bonnie Green
     </DropdownItem>
     <DropdownItem class="flex items-center gap-2 text-base font-semibold">
-      <Avatar src="/images/profile-picture-1.webp" size="xs" />Robert Wall
+      <Avatar src="/images/people/profile-picture-1.jpg" size="xs" />Robert Wall
     </DropdownItem>
     <DropdownItem class="flex items-center gap-2 text-base font-semibold">
-      <Avatar src="/images/profile-picture-2.webp" size="xs" />Joseph Mcfall
+      <Avatar src="/images/people/profile-picture-2.jpg" size="xs" />Joseph Mcfall
     </DropdownItem>
     <DropdownItem class="flex items-center gap-2 text-base font-semibold">
-      <Avatar src="/images/profile-picture-3.webp" size="xs" />Leslie Livingston
+      <Avatar src="/images/people/profile-picture-5.jpg" size="xs" />Leslie Livingston
     </DropdownItem>
   </DropdownGroup>
   <a href="/" class="text-primary-600 dark:text-primary-500 -mb-1 flex items-center bg-gray-50 px-3 py-2 text-sm font-medium hover:bg-gray-100 hover:underline dark:bg-gray-700 dark:hover:bg-gray-600">
@@ -505,7 +505,7 @@ Use this example to show a list of notifications inside your application by prov
   <div class="py-2 text-center font-bold">Notifications</div>
   <DropdownGroup>
     <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-      <Avatar src="/images/profile-picture-1.webp" dot={{ color: "gray" }} />
+      <Avatar src="/images/people/profile-picture-1.jpg" dot={{ color: "neutral" }} />
       <div class="w-full ps-3">
         <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
           New message from <span class="font-semibold text-gray-900 dark:text-white">Jese Leos</span>
@@ -515,7 +515,7 @@ Use this example to show a list of notifications inside your application by prov
       </div>
     </DropdownItem>
     <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-      <Avatar src="/images/profile-picture-2.webp" dot={{ color: "red" }} />
+      <Avatar src="/images/people/profile-picture-2.jpg" dot={{ color: "danger" }} />
       <div class="w-full ps-3">
         <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
           <span class="font-semibold text-gray-900 dark:text-white">Joseph Mcfall</span>
@@ -527,7 +527,7 @@ Use this example to show a list of notifications inside your application by prov
       </div>
     </DropdownItem>
     <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
-      <Avatar src="/images/profile-picture-3.webp" dot={{ color: "green" }} />
+      <Avatar src="/images/people/profile-picture-5.jpg" dot={{ color: "success" }} />
       <div class="w-full ps-3">
         <div class="mb-1.5 text-sm text-gray-500 dark:text-gray-400">
           <span class="font-semibold text-gray-900 dark:text-white">Bonnie Green</span>
@@ -557,7 +557,7 @@ This example can be used to show a list of menu items and options when a user is
   import { Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup } from "flowbite-svelte";
 </script>
 
-<Avatar class="acs" src="/images/profile-picture-3.webp" dot={{ color: "green" }} />
+<Avatar class="acs" src="/images/people/profile-picture-5.jpg" dot={{ color: "neutral" }} />
 <Dropdown triggeredBy=".acs">
   <DropdownHeader>
     <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
@@ -582,7 +582,7 @@ Use this example to also show the name or email of the user next to the avatar f
 </script>
 
 <Button pill color="light" id="avatar_with_name" class="p-1!">
-  <Avatar src="/images/profile-picture-3.webp" class="me-2" />
+  <Avatar src="/images/people/profile-picture-5.jpg" class="me-2" />
   Bonnie Green
 </Button>
 <Dropdown triggeredBy="#avatar_with_name">
@@ -800,7 +800,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L693)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L646)
 
 #### Props
 
@@ -817,7 +817,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L699)
+[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L652)
 
 #### Props
 
@@ -827,7 +827,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L721)
+[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L674)
 
 #### Props
 
@@ -838,7 +838,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L701)
+[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L654)
 
 #### Props
 
@@ -849,14 +849,11 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L705)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L658)
 
 #### Props
 
-- aClass
 - children
-- activeClass
-- liClass
 - classes
 - class: className
 - href

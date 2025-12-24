@@ -2,7 +2,7 @@
   "name": "Tags",
   "type": {
     "name": "TagsProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L994"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L934"
   },
   "props": [
     ["value", "$bindable([])"],

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0-next.0
+
+### Major Changes
+
+- feat: use flowbite@v4, remove classes warning, themes
+
 ## 1.31.0
 
 ### Minor Changes

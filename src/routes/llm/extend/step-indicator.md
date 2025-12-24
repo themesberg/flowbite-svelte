@@ -292,7 +292,6 @@ Use the `color` prop to change the color of a step indicator.
   let color: StepIndicatorProps["color"] = $state("green");
   let currentStep = 2;
   let steps = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
-  type SimpleRadioColor = "primary" | "secondary" | "gray" | "red" | "yellow" | "green" | "indigo" | "purple" | "pink" | "blue";
 </script>
 
 <div class="my-4">
@@ -302,7 +301,7 @@ Use the `color` prop to change the color of a step indicator.
 <div class="flex flex-wrap space-x-2">
   <Label class="mb-4 w-full font-bold">Color</Label>
   {#each colors as colorOption}
-    <Radio class="my-1" classes={{ label: "w-24" }} name="color" bind:group={color} color={colorOption as SimpleRadioColor} value={colorOption as StepIndicatorProps["color"]}>
+    <Radio class="my-1" classes={{ label: "w-24" }} name="color" bind:group={color} value={colorOption as StepIndicatorProps["color"]}>
       {colorOption}
     </Radio>
   {/each}
@@ -315,7 +314,7 @@ Use the `color` prop to change the color of a step indicator.
 
 #### Types
 
-[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1632)
+[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1572)
 
 #### Props
 

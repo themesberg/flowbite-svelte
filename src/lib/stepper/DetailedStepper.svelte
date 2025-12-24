@@ -142,7 +142,7 @@ The `current` prop is 1-based:
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1692)
+[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1632)
 ## Props
 @prop steps = []
 @prop contentClass

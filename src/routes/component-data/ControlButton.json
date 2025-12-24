@@ -2,13 +2,13 @@
   "name": "ControlButton",
   "type": {
     "name": "ControlButtonProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L492"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L487"
   },
   "props": [
     ["children", ""],
     ["forward", ""],
     ["name", ""],
     ["class: className", ""],
-    ["spanClass", ""]
+    ["classes", ""]
   ]
 }

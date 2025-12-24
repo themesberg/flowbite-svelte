@@ -213,7 +213,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L470)
+[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L466)
 ## Props
 @prop children
 @prop slide
@@ -225,7 +225,6 @@
 @prop duration = 0
 @prop "aria-label": ariaLabel = "Draggable Carousel"
 @prop disableSwipe = false
-@prop imgClass = ""
 @prop class: className
 @prop classes
 @prop onchange

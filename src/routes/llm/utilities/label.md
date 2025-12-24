@@ -11,7 +11,7 @@ Use the `Label` component when you need to add a label.
 </script>
 
 <Label color="red" class="mt-4 flex items-center font-bold italic">
-  <Checkbox classes={{ div: "me-2" }} /> Your Label
+  <Checkbox classes={{ label: "me-2" }} /> Your Label
 </Label>
 ```
 
@@ -21,7 +21,7 @@ Use the `Label` component when you need to add a label.
 
 #### Types
 
-[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L906)
+[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L846)
 
 #### Props
 

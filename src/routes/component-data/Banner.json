@@ -2,7 +2,7 @@
   "name": "Banner",
   "type": {
     "name": "BannerProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L258"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L264"
   },
   "props": [
     ["children", ""],
@@ -13,10 +13,9 @@
     ["type", ""],
     ["class: className", ""],
     ["classes", ""],
-    ["innerClass", ""],
     ["transition", "fade"],
     ["params", ""],
-    ["closeClass", ""],
-    ["onclose", ""]
+    ["onclose", ""],
+    ["closeBtnColor", "\"gray\""]
   ]
 }

@@ -2,7 +2,7 @@
   "name": "Range",
   "type": {
     "name": "RangeProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L934"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L874"
   },
   "props": [
     ["value", "$bindable()"],

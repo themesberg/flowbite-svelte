@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "flowbite-svelte": "1.31.0"
+  },
+  "changesets": ["slick-keys-study"]
+}

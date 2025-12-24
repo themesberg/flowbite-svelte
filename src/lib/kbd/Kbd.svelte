@@ -19,7 +19,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1110)
+[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1050)
 ## Props
 @prop children
 @prop class: className

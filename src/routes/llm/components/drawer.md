@@ -200,10 +200,10 @@ Use this example if you want to add form elements inside the drawer component in
     {/snippet}
   </Input>
   <div class="mb-4 flex">
-    <Avatar src="/images/profile-picture-1.webp" stacked size="sm" />
-    <Avatar src="/images/profile-picture-2.webp" stacked size="sm" />
-    <Avatar src="/images/profile-picture-3.webp" stacked size="sm" />
-    <Avatar src="/images/profile-picture-4.webp" stacked size="sm" />
+    <Avatar src="/images/people/profile-picture-1.jpg" stacked size="sm" />
+    <Avatar src="/images/people/profile-picture-2.jpg" stacked size="sm" />
+    <Avatar src="/images/people/profile-picture-5.jpg" stacked size="sm" />
+    <Avatar src="/images/people/profile-picture-4.jpg" stacked size="sm" />
   </div>
   <Button type="submit" class="w-full">
     <CalendarEditSolid class="me-2.5 h-3.5 w-3.5 text-white" /> Create event
@@ -379,13 +379,12 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L676)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L635)
 
 #### Props
 
 - children
 - open: $bindable(false)
-- hidden: $bindable()
 - modal
 - offset
 - width
@@ -395,13 +394,12 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 - transitionParams
 - transition: fly
 - outsideclose
-- activateClickOutside
 
 ### DrawerHandle
 
 #### Types
 
-[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L684)
+[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L639)
 
 #### Props
 
@@ -415,14 +413,12 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L686)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L641)
 
 #### Props
 
 - closeIcon
 - children
-- buttonClass
-- svgClass
 - class: className
 - classes
 

@@ -410,7 +410,7 @@ This component can be used to show messages and a CTA button when receiving chat
 
 <Toast align={false} color={undefined}>
   {#snippet icon()}
-    <Avatar src="/images/profile-picture-1.webp" class="h-8" />
+    <Avatar src="/images/people/profile-picture-1.jpg" class="h-8" />
   {/snippet}
   <div class="ms-3 text-sm font-normal">
     <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>
@@ -432,7 +432,7 @@ This component can be used to show notifications for an action from another user
 <Toast align={false}>
   <span class="font-semibold text-gray-900 dark:text-white">New notification</span>
   <div class="mt-3 flex items-center">
-    <Avatar src="/images/profile-picture-3.webp" />
+    <Avatar src="/images/people/profile-picture-5.jpg" />
     <div class="ms-3">
       <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</h4>
       <div class="text-sm font-normal">commented on your photo</div>
@@ -505,7 +505,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1979)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1919)
 
 #### Props
 
@@ -527,7 +527,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1994)
+[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1934)
 
 #### Props
 

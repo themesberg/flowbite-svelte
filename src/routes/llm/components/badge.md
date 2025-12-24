@@ -3,13 +3,6 @@
 
 The badge component can be used to complement other elements such as buttons or text elements as a label or to show the count of a given data, such as the number of comments for an article or how much time has passed since a comment has been made.
 
-Badges are perfect for:
-- Showing notification counts on navigation items
-- Displaying status labels (new, featured, beta)
-- Highlighting categories or tags
-- Indicating numerical values or metrics
-- Drawing attention to specific elements
-
 Alternatively, badges can also be used as standalone elements that link to a certain page, functioning as interactive tags or category filters.
 
 ## Setup
@@ -24,106 +17,95 @@ Import a badge component in the script tag.
 
 ## Default badge
 
-Use the following badge elements to indicate counts or labels inside or outside components. Each color variant conveys different semantic meanings:
-
-- **Default/Blue**: General information or neutral labels
-- **Dark**: Subtle or secondary information
-- **Red**: Errors, warnings, or critical items
-- **Green**: Success, active, or positive states
-- **Yellow**: Warnings or items requiring attention
-- **Indigo/Purple**: Special features or premium content
+Use the following badge elements to indicate counts or labels inside or outside components.
 
 ```svelte
 <script lang="ts">
   import { Badge } from "flowbite-svelte";
 </script>
 
-<Badge>Default</Badge>
+<Badge>Brand</Badge>
+<Badge color="alternative">Alternative</Badge>
 <Badge color="gray">Gray</Badge>
-<Badge color="red">Red</Badge>
-<Badge color="green">Green</Badge>
-<Badge color="yellow">Yellow</Badge>
-<Badge color="indigo">Indigo</Badge>
+<Badge color="danger">Danger</Badge>
+<Badge color="success">Success</Badge>
+<Badge color="warning">Warning</Badge>
 <Badge color="purple">Purple</Badge>
 <Badge color="pink">Pink</Badge>
 ```
 
 ## Large badges
 
-Use the `large` prop to create a large variant of the badges. Larger badges are more prominent and work well for:
-- Hero sections or featured content
-- Dashboard metrics and KPIs
-- Primary navigation elements
-- Call-to-action labels
+Use the `large` prop to create a large variant of the badges.
 
 ```svelte
 <script lang="ts">
   import { Badge } from "flowbite-svelte";
 </script>
 
-<Badge large>Default</Badge>
+<Badge large>Brand</Badge>
+<Badge large color="alternative">Alternative</Badge>
 <Badge large color="gray">Gray</Badge>
-<Badge large color="red">Red</Badge>
-<Badge large color="green">Green</Badge>
-<Badge large color="yellow">Yellow</Badge>
-<Badge large color="indigo">Indigo</Badge>
+<Badge large color="danger">Danger</Badge>
+<Badge large color="success">Success</Badge>
+<Badge large color="warning">Warning</Badge>
 <Badge large color="purple">Purple</Badge>
 <Badge large color="pink">Pink</Badge>
 ```
 
 ## Bordered badge
 
-Use the `border` prop to add a border accent to the badge component. Bordered badges provide a more subtle, refined appearance that works well:
-- On colored backgrounds where filled badges might clash
-- In minimalist designs
-- When you need visual distinction without heavy styling
-- For secondary or less critical information
+Use the `border` prop to add a border accent to the badge component. 
 
 ```svelte
 <script lang="ts">
   import { Badge } from "flowbite-svelte";
 </script>
 
-<Badge border>Default</Badge>
-<Badge border color="gray">Gray</Badge>
-<Badge border color="red">Red</Badge>
-<Badge border color="green">Green</Badge>
-<Badge border color="yellow">Yellow</Badge>
-<Badge border color="indigo">Indigo</Badge>
-<Badge border color="purple">Purple</Badge>
-<Badge border color="pink">Pink</Badge>
+<div class="flex flex-wrap gap-2">
+  <Badge border>Brand</Badge>
+  <Badge border color="alternative">Alternative</Badge>
+  <Badge border color="gray">Gray</Badge>
+  <Badge border color="danger">Danger</Badge>
+  <Badge border color="success">Success</Badge>
+  <Badge border color="warning">Warning</Badge>
+  <Badge border color="purple">Purple</Badge>
+  <Badge border color="pink">Pink</Badge>
+</div>
+<div class="flex flex-wrap gap-2">
+  <Badge border large>Brand</Badge>
+  <Badge border large color="alternative">Alternative</Badge>
+  <Badge border large color="gray">Gray</Badge>
+  <Badge border large color="danger">Danger</Badge>
+  <Badge border large color="success">Success</Badge>
+  <Badge border large color="warning">Warning</Badge>
+  <Badge border large color="purple">Purple</Badge>
+  <Badge border large color="pink">Pink</Badge>
+</div>
 ```
 
 ## Pills badge
 
-Use the `rounded` prop to make the corners even more rounded like pills for the badge component. Pill-shaped badges offer a modern, friendly appearance and are commonly used in:
-- Tag systems and filters
-- Social media interfaces
-- Modern web applications
-- Anywhere a softer, more approachable design is desired
+Use the `rounded` prop to make the corners even more rounded like pills for the badge component.
 
 ```svelte
 <script lang="ts">
   import { Badge } from "flowbite-svelte";
 </script>
 
-<Badge rounded>Default</Badge>
+<Badge rounded>Brand</Badge>
+<Badge rounded color="alternative">Alternative</Badge>
 <Badge rounded color="gray">Gray</Badge>
-<Badge rounded color="red">Red</Badge>
-<Badge rounded color="green">Green</Badge>
-<Badge rounded color="yellow">Yellow</Badge>
-<Badge rounded color="indigo">Indigo</Badge>
+<Badge rounded color="danger">Danger</Badge>
+<Badge rounded color="success">Success</Badge>
+<Badge rounded color="warning">Warning</Badge>
 <Badge rounded color="purple">Purple</Badge>
 <Badge rounded color="pink">Pink</Badge>
 ```
 
 ## Badges as links
 
-You can also use badges as anchor elements to link to another page. Interactive badges are useful for:
-- Category navigation
-- Tag filtering systems
-- Quick navigation to related content
-- Clickable status indicators that show more details
+You can also use badges as anchor elements to link to another page. 
 
 Make sure linked badges have appropriate hover states and are keyboard accessible.
 
@@ -140,11 +122,7 @@ Make sure linked badges have appropriate hover states and are keyboard accessibl
 
 ## Badges with icon
 
-You can also use SVG icons inside the badge elements. Icons enhance badges by:
-- Adding visual meaning (checkmarks for verified, stars for featured)
-- Making badges more scannable
-- Reducing the need for text in some cases
-- Creating a more polished, professional appearance
+You can also use SVG icons inside the badge elements.
 
 ```svelte
 <script lang="ts">
@@ -166,12 +144,6 @@ You can also use SVG icons inside the badge elements. Icons enhance badges by:
 
 To achieve the functionality of the notification badge, use the sibling [`Indicator`](/docs/components/indicators) component. Remember to add the `relative` class to the parent element.
 
-Notification badges are commonly used to:
-- Show unread message counts
-- Indicate pending notifications
-- Display cart item quantities
-- Alert users to updates or changes
-
 ```svelte
 <script lang="ts">
   import { Button, Indicator } from "flowbite-svelte";
@@ -181,29 +153,25 @@ Notification badges are commonly used to:
 <Button class="relative" size="sm">
   <EnvelopeSolid class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
-  <Indicator color="blue" border size="xl" placement="top-right" class="text-xs font-bold">18</Indicator>
+  <Indicator border size="xl" placement="top-right" class="bg-blue-500 text-xs font-bold">18</Indicator>
 </Button>
 
 <Button class="relative" size="sm">
   <EnvelopeSolid class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
-  <Indicator color="red" border size="xl" placement="top-right" class="text-xs font-bold">20</Indicator>
+  <Indicator color="danger" border size="xl" placement="top-right" class="text-xs font-bold">20</Indicator>
 </Button>
 
 <Button class="relative" size="sm">
   <EnvelopeSolid class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
-  <Indicator color="gray" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
+  <Indicator color="dark" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
 </Button>
 ```
 
 ## Button with badge
 
-Use this example to add a badge inside a button component for a count indicator. This pattern is frequently seen in:
-- Inbox or message buttons showing unread counts
-- Shopping cart buttons displaying item quantities
-- Filter buttons showing the number of active filters
-- Action buttons with pending item counts
+Use this example to add a badge inside a button component for a count indicator.
 
 ```svelte
 <script lang="ts">
@@ -218,11 +186,7 @@ Use this example to add a badge inside a button component for a count indicator.
 
 ## Badge with icon only
 
-Alternatively you can also use badges which indicate only a SVG icon. Icon-only badges work well when:
-- Space is limited
-- The icon meaning is universally understood
-- Used consistently throughout the interface
-- Paired with tooltips for additional context
+Alternatively you can also use badges which indicate only a SVG icon. 
 
 ```svelte
 <script lang="ts">
@@ -242,25 +206,21 @@ Alternatively you can also use badges which indicate only a SVG icon. Icon-only 
 
 ## Dismissable badges
 
-Use the `dismissable` prop to dismiss the current badge. Dismissable badges are useful for:
-- User-applied filters or tags that can be removed
-- Temporary labels or notifications
-- Selected items in multi-select interfaces
-- Dynamic tag management systems
+Use the `dismissable` prop to dismiss the current badge.
 
 ```svelte
 <script lang="ts">
   import { Badge } from "flowbite-svelte";
 </script>
 
-<Badge dismissable large>Default</Badge>
-<Badge dismissable large color="gray">Gray</Badge>
-<Badge dismissable large color="red">Red</Badge>
-<Badge dismissable large color="green">Green</Badge>
-<Badge dismissable large color="yellow">Yellow</Badge>
-<Badge dismissable large color="indigo">Indigo</Badge>
-<Badge dismissable large color="purple">Purple</Badge>
-<Badge dismissable large color="pink">Pink</Badge>
+<Badge dismissable border>Brand</Badge>
+<Badge dismissable border color="alternative">Alternative</Badge>
+<Badge dismissable border color="gray">Gray</Badge>
+<Badge dismissable border color="danger">Danger</Badge>
+<Badge dismissable border color="success">Success</Badge>
+<Badge dismissable border color="warning">Warning</Badge>
+<Badge dismissable border color="purple">Purple</Badge>
+<Badge dismissable border color="pink">Pink</Badge>
 ```
 
 Use the `icon` snippet to add your desired custom close button icon.
@@ -271,7 +231,7 @@ Use the `icon` snippet to add your desired custom close button icon.
   import { CloseCircleSolid } from "flowbite-svelte-icons";
 </script>
 
-<Badge dismissable>
+<Badge dismissable large>
   Default
   {#snippet icon()}
     <button
@@ -286,11 +246,7 @@ Use the `icon` snippet to add your desired custom close button icon.
 </Badge>
 ```
 
-A `onclose` callback will be dispatched during the dismissal, listen to it if needed. This allows you to:
-- Update application state when badges are removed
-- Track user interactions for analytics
-- Trigger related actions (like removing filters)
-- Sync badge state with backend data
+A `onclose` callback will be dispatched during the dismissal, listen to it if needed.
 
 ```svelte
 <script lang="ts">
@@ -307,11 +263,7 @@ A `onclose` callback will be dispatched during the dismissal, listen to it if ne
 
 ## Dynamic color
 
-The color can be changed dynamically based on application state or user interactions. Dynamic coloring is useful for:
-- Status indicators that change based on real-time data
-- Interactive elements that respond to user actions
-- Conditional styling based on business logic
-- Creating responsive, data-driven interfaces
+The color can be changed dynamically based on application state or user interactions.
 
 ```svelte
 <script lang="ts">
@@ -319,9 +271,9 @@ The color can be changed dynamically based on application state or user interact
 
   setInterval(handleHover, 500);
 
-  let color: BadgeProps["color"] = $state("primary");
+  let color: BadgeProps["color"] = $state("brand");
   function handleHover() {
-    color = color === "primary" ? "secondary" : "primary";
+    color = color === "brand" ? "alternative" : "brand";
   }
 </script>
 
@@ -389,7 +341,7 @@ This example shows how to make a Flowbite-Svelte `<Badge>` stay hidden after dis
 {/if}
 
 {#if badgeVisible}
-  <Badge dismissable onclose={dismiss} color="primary" class="cursor-pointer">Example badge (click × to dismiss)</Badge>
+  <Badge dismissable onclose={dismiss} class="cursor-pointer">Example badge (click × to dismiss)</Badge>
 {/if}
 ```
 
@@ -402,17 +354,6 @@ The Badge component follows accessibility best practices:
 - **Keyboard Navigation**: Interactive badges are fully keyboard accessible
 - **Focus Indicators**: Clear focus states for keyboard users
 - **ARIA Labels**: Consider adding ARIA labels for icon-only badges
-
-## Best Practices
-
-When using badges, consider these guidelines:
-
-- **Be Concise**: Keep badge text short (1-3 words or numbers)
-- **Use Sparingly**: Too many badges can create visual clutter
-- **Consistent Meaning**: Use colors consistently throughout your application
-- **Appropriate Size**: Match badge size to its context and importance
-- **Consider Context**: Place badges near related content for clarity
-- **Readable Contrast**: Ensure text has sufficient contrast against badge background
 
 ## See also
 
@@ -428,14 +369,14 @@ When using badges, consider these guidelines:
 
 #### Types
 
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L244)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L250)
 
 #### Props
 
 - children
 - icon
 - badgeStatus: $bindable(true)
-- color: "primary"
+- color: "brand"
 - large: false
 - dismissable: false
 - class: className
@@ -446,7 +387,7 @@ When using badges, consider these guidelines:
 - rounded
 - transition: fade
 - params
-- aClass
+- closeBtnColor: "gray"
 
 
 ## References

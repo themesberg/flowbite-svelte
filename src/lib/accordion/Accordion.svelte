@@ -51,5 +51,6 @@
 @prop multiple = false
 @prop class: className
 @prop transitionType
+@prop classes
 @prop ...restProps
 -->

@@ -58,7 +58,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L258)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L264)
 ## Props
 @prop children
 @prop header
@@ -71,6 +71,6 @@
 @prop transition = fade
 @prop params
 @prop onclose
-closeBtnColor = "gray",
+@prop closeBtnColor = "gray"
 @prop ...restProps
 -->

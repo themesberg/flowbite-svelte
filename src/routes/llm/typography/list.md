@@ -235,7 +235,7 @@ This example can be used to show more details for each list item such as the use
   <Li class="pb-3 sm:pb-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
       <div class="shrink-0">
-        <img class="h-8 w-8 rounded-full" src="/images/profile-picture-1.webp" alt="Neil profile" />
+        <img class="h-8 w-8 rounded-full" src="/images/people/profile-picture-1.jpg" alt="Neil profile" />
       </div>
       <div class="min-w-0 flex-1">
         <p class="truncate text-sm font-medium text-gray-900 dark:text-white">Neil Sims</p>
@@ -247,7 +247,7 @@ This example can be used to show more details for each list item such as the use
   <Li class="py-3 sm:py-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
       <div class="shrink-0">
-        <img class="h-8 w-8 rounded-full" src="/images/profile-picture-2.webp" alt="Bonnie profile" />
+        <img class="h-8 w-8 rounded-full" src="/images/people/profile-picture-2.jpg" alt="Bonnie profile" />
       </div>
       <div class="min-w-0 flex-1">
         <p class="truncate text-sm font-medium text-gray-900 dark:text-white">Bonnie Green</p>
@@ -259,7 +259,7 @@ This example can be used to show more details for each list item such as the use
   <Li class="py-3 sm:py-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
       <div class="shrink-0">
-        <img class="h-8 w-8 rounded-full" src="/images/profile-picture-3.webp" alt="Michael profile" />
+        <img class="h-8 w-8 rounded-full" src="/images/people/profile-picture-5.jpg" alt="Michael profile" />
       </div>
       <div class="min-w-0 flex-1">
         <p class="truncate text-sm font-medium text-gray-900 dark:text-white">Michael Gough</p>
@@ -271,7 +271,7 @@ This example can be used to show more details for each list item such as the use
   <Li class="py-3 sm:py-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
       <div class="shrink-0">
-        <img class="h-8 w-8 rounded-full" src="/images/profile-picture-4.webp" alt="Thomas profile" />
+        <img class="h-8 w-8 rounded-full" src="/images/people/profile-picture-4.jpg" alt="Thomas profile" />
       </div>
       <div class="min-w-0 flex-1">
         <p class="truncate text-sm font-medium text-gray-900 dark:text-white">Thomas Lean</p>
@@ -283,7 +283,7 @@ This example can be used to show more details for each list item such as the use
   <Li class="py-3 sm:py-4">
     <div class="flex items-center space-x-4 rtl:space-x-reverse">
       <div class="shrink-0">
-        <img class="h-8 w-8 rounded-full" src="/images/profile-picture-5.webp" alt="Lana profile" />
+        <img class="h-8 w-8 rounded-full" src="/images/people/profile-picture-5.jpg" alt="Lana profile" />
       </div>
       <div class="min-w-0 flex-1">
         <p class="truncate text-sm font-medium text-gray-900 dark:text-white">Lana Byrd</p>
@@ -332,7 +332,7 @@ Use this example to create a horizontally aligned list of items.
 
 #### Types
 
-[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2110)
+[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2050)
 
 #### Props
 
