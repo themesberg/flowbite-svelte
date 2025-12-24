@@ -1,10 +1,10 @@
-/* Enterprise Theme - Runtime CSS Variables */
 :root {
   --font-sans: "STIX Two Text", serif;
   --font-body: "STIX Two Text", serif;
 
   /* Flowbite variables */
-  --leading-9: 36px;
+
+  --leading-9: 36px; /* rem pls */
   --leading-7: 28px;
   --leading-8: 32px;
   --leading-6: 24px;
@@ -23,6 +23,7 @@
   --radius-xxs: 1px;
   --radius-xs: 1px;
   --radius-sm: 1px;
+  --radius: 4px;
   --radius: 4px;
   --radius-md: 4px;
   --radius-base: 4px;
@@ -48,7 +49,7 @@
   --color-fg-disabled: var(--color-zinc-400);
   --color-fg-purple: var(--color-purple-600);
   --color-fg-cyan: var(--color-cyan-600);
-  --color-fg-indigo: var(--color-indigo-600);
+  --color-fg-indigo: var(--color-cyan-600);
   --color-fg-pink: var(--color-pink-600);
   --color-fg-lime: var(--color-lime-600);
 
@@ -57,26 +58,22 @@
   --color-neutral-primary: var(--color-white);
   --color-neutral-primary-medium: var(--color-white);
   --color-neutral-primary-strong: var(--color-white);
-  --color-neutral-secondary-soft: var(--color-zinc-50);
-  --color-neutral-secondary: var(--color-zinc-50);
-  --color-neutral-secondary-medium: var(--color-zinc-50);
-  --color-neutral-secondary-strong: var(--color-zinc-50);
-  --color-neutral-secondary-strongest: var(--color-zinc-50);
+  --color-neutral-secondary-soft: var(--color-white);
+  --color-neutral-secondary: var(--color-white);
+  --color-neutral-secondary-medium: var(--color-white);
+  --color-neutral-secondary-strong: var(--color-white);
+  --color-neutral-secondary-strongest: var(--color-white);
   --color-neutral-tertiary-soft: var(--color-zinc-100);
   --color-neutral-tertiary: var(--color-zinc-100);
   --color-neutral-tertiary-medium: var(--color-zinc-100);
   --color-neutral-quaternary: var(--color-zinc-200);
   --color-neutral-quaternary-medium: var(--color-zinc-200);
   --color-gray: var(--color-zinc-300);
-
-  /* brand colors */
   --color-brand-softer: var(--color-cyan-50);
   --color-brand-soft: var(--color-cyan-100);
-  --color-brand: var(--color-cyan-700);
+  --color-brand: var(--color-cyan-900);
   --color-brand-medium: var(--color-cyan-200);
   --color-brand-strong: var(--color-cyan-800);
-
-  /* status colors */
   --color-success-soft: var(--color-green-50);
   --color-success: var(--color-green-700);
   --color-success-medium: var(--color-green-100);
@@ -99,7 +96,7 @@
   --color-pink: var(--color-pink-600);
   --color-cyan: var(--color-cyan-500);
   --color-fuchsia: var(--color-fuchsia-600);
-  --color-indigo: var(--color-indigo-600);
+  --color-indigo: var(--color-cyan-600);
   --color-orange: var(--color-orange-400);
 
   /* border color variables */
@@ -141,7 +138,7 @@
   --color-fg-disabled: var(--color-zinc-600);
   --color-fg-purple: var(--color-purple-500);
   --color-fg-cyan: var(--color-cyan-500);
-  --color-fg-indigo: var(--color-indigo-500);
+  --color-fg-indigo: var(--color-cyan-500);
   --color-fg-pink: var(--color-pink-500);
   --color-fg-lime: var(--color-lime-500);
 
@@ -188,7 +185,7 @@
   --color-pink: var(--color-pink-500);
   --color-cyan: var(--color-cyan-500);
   --color-fuchsia: var(--color-fuchsia-500);
-  --color-indigo: var(--color-indigo-500);
+  --color-indigo: var(--color-cyan-500);
   --color-orange: var(--color-orange-400);
 
   /* border color variables */

@@ -4,7 +4,7 @@
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, class: className, color = "gray", ...restProps }: HelperProps = $props();
+  let { children, class: className, color = "brand", ...restProps }: HelperProps = $props();
 
   const theme = $derived(getTheme("helper"));
 

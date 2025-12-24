@@ -21,7 +21,7 @@ const themes: Theme[] = [
   {
     id: "minimal",
     name: "Minimal",
-    cssPath: "/themes/minimal.css",
+    cssPath: "/themes/minimal-runtime.css",
     fontUrl: "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap",
     colors: ["bg-stone-50 dark:bg-stone-600", "bg-stone-100 dark:bg-stone-700", "bg-stone-300 dark:bg-stone-800", "bg-stone-900 dark:bg-stone-900"]
   },
@@ -35,14 +35,14 @@ const themes: Theme[] = [
   {
     id: "playful",
     name: "Playful",
-    cssPath: "/themes/playful.css",
+    cssPath: "/themes/playful-runtime.css",
     fontUrl: "https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap",
     colors: ["bg-slate-100 dark:bg-slate-700", "bg-pink-50 dark:bg-pink-900", "bg-pink-100 dark:bg-pink-800", "bg-pink-700 dark:bg-pink-700"]
   },
   {
     id: "mono",
     name: "Mono",
-    cssPath: "/themes/mono.css",
+    cssPath: "/themes/mono-runtime.css",
     fontUrl: "https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@300;400;500;600;700&display=swap",
     colors: ["bg-neutral-100 dark:bg-neutral-700", "bg-indigo-50 dark:bg-indigo-900", "bg-indigo-100 dark:bg-indigo-800", "bg-indigo-700 dark:bg-indigo-700"]
   }

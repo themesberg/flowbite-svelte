@@ -12,10 +12,10 @@ export const checkbox = tv({
         base: "border border-default-medium bg-neutral-secondary-medium focus:ring-brand-soft"
       },
       alternative: {
-        base: "border border-default-medium bg-neutral-secondary-medium focus:ring-alternative-soft"
+        base: "border border-default-medium bg-neutral-secondary-medium focus:ring-neutral-tertiary"
       },
       gray: {
-        base: "border border-default-medium bg-neutral-secondary-medium focus:ring-gray-soft"
+        base: "border border-default-medium bg-neutral-secondary-medium focus:ring-neutral-tertiary-soft"
       },
       // legacy colors
       primary: {
@@ -91,8 +91,10 @@ export const checkbox = tv({
     },
     inline: {
       true: {
-        label: "inline-flex",
-        false: "flex items-center"
+        label: "inline-flex"
+      },
+      false: {
+        label: "flex items-center"
       }
     },
     disabled: {
@@ -104,7 +106,7 @@ export const checkbox = tv({
     }
   },
   defaultVariants: {
-    color: "primary",
+    color: "brand",
     disabled: false
   }
 });

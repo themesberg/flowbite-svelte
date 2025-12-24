@@ -1,6 +1,6 @@
 <script lang="ts">
-  const fgBrand = ["fg-brand", "fg-brand-subtle", "fg-brand-strong"];
-  const shikiFgBrand = ["shiki-fg-brand", "shiki-fg-brand-subtle"];
+  const fgBrand = ["text-fg-brand", "text-fg-brand-subtle", "text-fg-brand-strong"];
+  const shikiFgBrand = ["text-shiki-fg-brand", "text-shiki-fg-brand-subtle"];
   const textVariables = [
     "text-2xs",
     "spacing-8xl",
@@ -113,13 +113,13 @@
 
 <div class="flex flex-wrap gap-4 p-8">
   {#each fgBrand as token}
-    <p class={`mb-2 text-${token}`}>text-{token}</p>
+    <p class={`mb-2 ${token}`}>{token}</p>
   {/each}
 </div>
 
 <div class="flex flex-wrap gap-4 p-8">
   {#each shikiFgBrand as token}
-    <p class={`mb-2 text-${token}`}>text-{token}</p>
+    <p class={`mb-2 ${token}`}>{token}</p>
   {/each}
 </div>
 

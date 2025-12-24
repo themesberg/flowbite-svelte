@@ -82,9 +82,6 @@
 @prop iconSlot
 @prop color
 @prop class: className
-@prop iconClass
-@prop txtClass
-@prop contentClass
 @prop classes
 @prop ...restProps
 -->

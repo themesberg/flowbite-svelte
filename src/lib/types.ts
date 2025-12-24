@@ -773,18 +773,15 @@ export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, O
   "aria-describedby"?: string;
   variant?: FloatingLabelInputVaratiants["variant"];
   size?: FloatingLabelInputVaratiants["size"];
-  color?: FloatingLabelInputVaratiants["color"];
-  inputClass?: ClassValue;
-  labelClass?: ClassValue;
+  validation?: FloatingLabelInputVaratiants["validation"];
+  disabled?: FloatingLabelInputVaratiants["disabled"];
+  withIcon?: FloatingLabelInputVaratiants["withIcon"];
   clearable?: boolean;
-  clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];
-  clearableClass?: ClassValue;
   clearableOnClick?: () => void;
   data?: string[];
   maxSuggestions?: number;
   onSelect?: (item: string) => void;
-  comboClass?: ClassValue;
   placeholder?: string; // this will filter out placeholder from restProps
 }
 
