@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Spinner, spinner, Button, Label, Radio, uiHelpers, type SpinnerProps } from "$lib";
-  import type { RadioColorType } from "../types";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -76,7 +75,7 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as color}
-      <Radio class="my-1" classes={{ label: "w-24" }} name="spinnercolor" bind:group={spinnerColor} color={color as RadioColorType} value={color}>{color}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="spinnercolor" bind:group={spinnerColor} value={color}>{color}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

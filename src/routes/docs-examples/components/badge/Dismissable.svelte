@@ -2,11 +2,11 @@
   import { Badge } from "flowbite-svelte";
 </script>
 
-<Badge dismissable large>Default</Badge>
-<Badge dismissable large color="gray">Gray</Badge>
-<Badge dismissable large color="red">Red</Badge>
-<Badge dismissable large color="green">Green</Badge>
-<Badge dismissable large color="yellow">Yellow</Badge>
-<Badge dismissable large color="indigo">Indigo</Badge>
-<Badge dismissable large color="purple">Purple</Badge>
-<Badge dismissable large color="pink">Pink</Badge>
+<Badge dismissable border>Brand</Badge>
+<Badge dismissable border color="alternative">Alternative</Badge>
+<Badge dismissable border color="gray">Gray</Badge>
+<Badge dismissable border color="danger">Danger</Badge>
+<Badge dismissable border color="success">Success</Badge>
+<Badge dismissable border color="warning">Warning</Badge>
+<Badge dismissable border color="purple">Purple</Badge>
+<Badge dismissable border color="pink">Pink</Badge>

@@ -9,7 +9,7 @@
   <Carousel {images} bind:index>
     <CarouselIndicators>
       {#snippet children({ selected, index })}
-        <Indicator color={selected ? "red" : "green"} class="h-5 w-5 border border-white text-white {selected ? 'opacity-100' : 'opacity-80'}">
+        <Indicator color={selected ? "danger" : "success"} class="h-5 w-5 border border-white text-white {selected ? 'opacity-100' : 'opacity-80'}">
           {index}
         </Indicator>
       {/snippet}

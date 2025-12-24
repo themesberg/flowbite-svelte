@@ -3,12 +3,11 @@
   import clsx from "clsx";
   import { type CheckboxProps } from "$lib";
   import Label from "$lib/forms/label/Label.svelte";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let {
     children,
-    color = "primary",
+    color = "brand",
     custom,
     inline,
     tinted,
@@ -18,24 +17,17 @@
     checked = $bindable(false),
     classes,
     class: className,
-    divClass,
     disabled,
     value,
     labelProps = {},
     ...restProps
   }: CheckboxProps = $props();
 
-  warnThemeDeprecation(
-    "Checkbox",
-    untrack(() => ({ divClass })),
-    { divClass: "div" }
-  );
-
-  const styling = $derived(classes ?? { div: divClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("checkbox"));
 
-  const { base, div: divStyle } = $derived(checkbox({ color, tinted, custom, rounded, inline, disabled: disabled ?? false }));
+  const { base, label: labelStyle } = $derived(checkbox({ color, tinted, custom, rounded, inline, disabled: disabled ?? false }));
 
   $effect(() => {
     if (value !== undefined && Array.isArray(group)) {
@@ -45,9 +37,6 @@
 
   $effect(() => {
     if (value === undefined || !Array.isArray(group)) return;
-    // There's a bug in Svelte and bind:group is not working with wrapped checkbox
-    // This workaround is taken from:
-    // https://svelte.dev/repl/de117399559f4e7e9e14e2fc9ab243cc?version=3.12.1
     const index = group.indexOf(value);
     if (checked === undefined) checked = index >= 0;
 
@@ -65,7 +54,7 @@
 
 {#if choices.length > 0}
   {#each choices as choice, i (choice.value ?? i)}
-    <Label show={!!children || !!choice.label} {...labelProps} class={divStyle({ class: clsx(theme?.div, styling.div) })}>
+    <Label show={!!children || !!choice.label} {...labelProps} class={labelStyle({ class: clsx(theme?.label, styling?.label) })}>
       <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} class={base({ class: clsx(theme?.base, className) })} />
       {#if children}
         {@render children({ value: choice.value, checked: choice.checked, disabled })}
@@ -75,7 +64,7 @@
     </Label>
   {/each}
 {:else}
-  <Label show={!!children} {...labelProps} class={divStyle({ class: clsx(theme?.div, styling.div) })}>
+  <Label show={!!children} {...labelProps} class={labelStyle({ class: clsx(theme?.label, styling?.label) })}>
     <input type="checkbox" {value} bind:checked {disabled} {...restProps} class={base({ class: clsx(theme?.base, className) })} />
     {#if children}
       {@render children({ value, checked, disabled })}

@@ -38,5 +38,5 @@
 {/if}
 
 {#if badgeVisible}
-  <Badge dismissable onclose={dismiss} color="primary" class="cursor-pointer">Example badge (click × to dismiss)</Badge>
+  <Badge dismissable onclose={dismiss} class="cursor-pointer">Example badge (click × to dismiss)</Badge>
 {/if}

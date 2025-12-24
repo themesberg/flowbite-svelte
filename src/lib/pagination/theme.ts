@@ -25,8 +25,8 @@ export const paginationNav = tv({
         prev: "rounded-s bg-gray-800 hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white text-white  hover:text-gray-200",
         next: "text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 hover:text-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
       },
-      navigation: { prev: "rounded-s-lg", next: "rounded-e-lg" },
-      pagination: { prev: "rounded-s-lg", next: "rounded-e-lg" }
+      navigation: { prev: "rounded-s-base", next: "rounded-e-base" },
+      pagination: { prev: "rounded-s-base", next: "rounded-e-base" }
     }
   },
   defaultVariants: {
@@ -48,7 +48,7 @@ export const paginationButton = tv({
     },
     group: {
       true: "",
-      false: "rounded-lg"
+      false: "rounded-base"
     },
     table: {
       true: "rounded-sm",
@@ -59,13 +59,7 @@ export const paginationButton = tv({
       false: ""
     }
   },
-  compoundVariants: [
-    {
-      group: false,
-      table: false,
-      class: "rounded-lg"
-    }
-  ],
+  compoundVariants: [],
   defaultVariants: {
     size: "default",
     active: false,
@@ -87,7 +81,7 @@ export const paginationItem = tv({
     },
     group: {
       true: "",
-      false: "rounded-lg"
+      false: "rounded-base"
     },
     table: {
       true: "rounded-sm",
@@ -98,7 +92,7 @@ export const paginationItem = tv({
     {
       group: false,
       table: false,
-      class: "rounded-lg"
+      class: "rounded-base"
     }
   ],
   defaultVariants: {

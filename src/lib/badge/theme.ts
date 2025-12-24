@@ -6,21 +6,28 @@ export type BadgeVariants = VariantProps<typeof badge> & Classes<typeof badge>;
 
 export const badge = tv({
   slots: {
-    linkClass: "flex align-middle",
-    base: "font-medium inline-flex items-center justify-center px-2.5 py-0.5"
+    linkClass: "flex items-center",
+    base: "inline-flex items-center justify-center font-medium rounded leading-none"
   },
   variants: {
     color: {
-      // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
+      // Semantic colors
+      brand: { base: "bg-brand-softer text-fg-brand-strong " },
+      alternative: { base: "bg-neutral-primary-soft text-heading" },
+      gray: { base: "bg-neutral-secondary-medium text-heading " },
+      danger: { base: "bg-danger-soft text-fg-danger-strong" },
+      success: { base: "bg-success-soft text-fg-success-strong" },
+      warning: { base: "bg-warning-soft text-fg-warning" },
+      // Legacy colors for backward compatibility
       primary: { base: "bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300" },
       secondary: { base: "bg-secondary-100 text-secondary-800 dark:bg-secondary-900 dark:text-secondary-300" },
-      gray: { base: "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300" },
       red: { base: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300" },
+      yellow: { base: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300" },
+      green: { base: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300" },
+      // end of legacy colors
       orange: { base: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300" },
       amber: { base: "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-300" },
-      yellow: { base: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300" },
       lime: { base: "bg-lime-100 text-lime-800 dark:bg-lime-900 dark:text-lime-300" },
-      green: { base: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300" },
       emerald: { base: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-300" },
       teal: { base: "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300" },
       cyan: { base: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-300" },
@@ -34,37 +41,51 @@ export const badge = tv({
       rose: { base: "bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-300" }
     },
     size: {
-      small: "text-xs",
-      large: "text-sm"
+      small: "text-xs px-1.5 py-0.5",
+      large: "text-sm px-2 py-1"
     },
     border: {
       true: { base: "border" }
     },
     rounded: {
-      true: { base: "rounded-full" },
-      false: "rounded-sm"
+      true: { base: "rounded-full" }
+    },
+    // Used for compound variant matching (hover states)
+    href: {
+      true: {},
+      false: {}
     }
   },
   compoundVariants: [
     {
       border: true,
-      color: "primary",
-      class: "dark:bg-transparent dark:text-primary-400 border-primary-400 dark:border-primary-400"
+      color: "brand",
+      class: "border border-brand-subtle"
     },
     {
       border: true,
-      color: "secondary",
-      class: "dark:bg-transparent dark:text-secondary-400 border-secondary-400 dark:border-secondary-400"
+      color: "alternative",
+      class: "border border-default"
     },
     {
       border: true,
       color: "gray",
-      class: "dark:bg-transparent dark:text-gray-400 border-gray-400 dark:border-gray-400"
+      class: "border border-default-medium"
     },
     {
       border: true,
-      color: "red",
-      class: "dark:bg-transparent dark:text-red-400 border-red-400 dark:border-red-400"
+      color: "danger",
+      class: "border border-danger-subtle"
+    },
+    {
+      border: true,
+      color: "success",
+      class: "border border-success-subtle"
+    },
+    {
+      border: true,
+      color: "warning",
+      class: "border border-warning-subtle"
     },
     {
       border: true,
@@ -78,18 +99,8 @@ export const badge = tv({
     },
     {
       border: true,
-      color: "yellow",
-      class: "dark:bg-transparent dark:text-yellow-300 border-yellow-300 dark:border-yellow-300"
-    },
-    {
-      border: true,
       color: "lime",
       class: "dark:bg-transparent dark:text-lime-400 border-lime-400 dark:border-lime-400"
-    },
-    {
-      border: true,
-      color: "green",
-      class: "dark:bg-transparent dark:text-green-400 border-green-400 dark:border-green-400"
     },
     {
       border: true,
@@ -148,23 +159,33 @@ export const badge = tv({
     },
     {
       href: true,
-      color: "primary",
-      class: "hover:bg-primary-200"
+      color: "brand",
+      class: "hover:bg-brand-medium"
     },
     {
       href: true,
-      color: "secondary",
-      class: "hover:bg-secondary-200"
+      color: "alternative",
+      class: "hover:bg-neutral-secondary-medium"
     },
     {
       href: true,
       color: "gray",
-      class: "hover:bg-gray-200"
+      class: "hover:bg-neutral-tertiary-medium"
     },
     {
       href: true,
-      color: "red",
-      class: "hover:bg-red-200"
+      color: "danger",
+      class: "hover:bg-danger-medium"
+    },
+    {
+      href: true,
+      color: "success",
+      class: "hover:bg-success-medium"
+    },
+    {
+      href: true,
+      color: "warning",
+      class: "hover:bg-warning-medium"
     },
     {
       href: true,
@@ -176,20 +197,11 @@ export const badge = tv({
       color: "amber",
       class: "hover:bg-amber-200"
     },
-    {
-      href: true,
-      color: "yellow",
-      class: "hover:bg-yellow-200"
-    },
+
     {
       href: true,
       color: "lime",
       class: "hover:bg-lime-200"
-    },
-    {
-      href: true,
-      color: "green",
-      class: "hover:bg-green-200"
     },
     {
       href: true,
@@ -248,7 +260,7 @@ export const badge = tv({
     }
   ],
   defaultVariants: {
-    color: "primary",
+    color: "brand",
     size: "small",
     rounded: false
   }

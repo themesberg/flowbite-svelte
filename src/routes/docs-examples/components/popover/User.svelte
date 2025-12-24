@@ -6,7 +6,7 @@
 <Popover class="w-64 bg-white text-sm font-light text-gray-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
   <div class="p-3">
     <div class="mb-2 flex items-center justify-between">
-      <Avatar href="/" src="/images/profile-picture-1.webp" alt="Jese Leos" />
+      <Avatar href="/" src="/images/people/profile-picture-1.jpg" alt="Jese Leos" />
       <Button size="xs">Follow</Button>
     </div>
     <div class="text-base leading-none font-semibold text-gray-900 dark:text-white">

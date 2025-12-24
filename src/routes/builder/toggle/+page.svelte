@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Toggle, toggle, Radio, Label, Button, uiHelpers, type ToggleProps } from "$lib";
-  import type { ToggleColor } from "../types";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -84,7 +83,7 @@
   <div class="mb-4 flex flex-wrap">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="m-2" classes={{ label: "w-24" }} name="toggle_color" bind:group={toggleColor} color={colorOption as ToggleColor} value={colorOption}>{colorOption}</Radio>
+      <Radio class="m-2" classes={{ label: "w-24" }} name="toggle_color" bind:group={toggleColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

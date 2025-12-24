@@ -1,29 +1,29 @@
 <script lang="ts">
   import { BottomNav, BottomNavItem, Card, Listgroup, Avatar, type ListGroupItemType } from "flowbite-svelte";
-  import { ClockSolid, UsersGroupOutline, StarSolid } from "flowbite-svelte-icons";
+  import { ClockOutline, UsersGroupOutline, StarOutline } from "flowbite-svelte-icons";
   let list: ListGroupItemType[] = [
     {
-      img: { src: "/images/profile-picture-1.webp", alt: "Neil Sims" },
+      img: { src: "/images/people/profile-picture-1.jpg", alt: "Neil Sims" },
       comment: 'New message from <span class="font-medium text-gray-900 dark:text-white">Jese Leos</span>: "Hey, what\'s up? All set for the presentation?"',
       message: "a few moments ago"
     },
     {
-      img: { src: "/images/profile-picture-2.webp", alt: "Bonnie Green" },
+      img: { src: "/images/people/profile-picture-2.jpg", alt: "Bonnie Green" },
       comment: 'Joseph McFall and <span class="font-medium text-gray-900 dark:text-white">5 others</span> started following you.',
       message: "10 minutes ago"
     },
     {
-      img: { src: "/images/profile-picture-3.webp", alt: "Leslie Livingston" },
+      img: { src: "/images/people/profile-picture-5.jpg", alt: "Leslie Livingston" },
       comment: 'Bonnie Green and <span class="font-medium text-gray-900 dark:text-white">141 others</span> love your story. See it and view more stories.',
       message: "23 minutes ago"
     },
     {
-      img: { src: "/images/profile-picture-4.webp", alt: "Robert Brown" },
+      img: { src: "/images/people/profile-picture-4.jpg", alt: "Robert Brown" },
       comment: 'Leslie Livingston mentioned you in a comment: <span class="font-medium text-primary-600 dark:text-primary-500 hover:underline">@bonnie.green</span> what do you say?',
       message: "23 minutes ago"
     },
     {
-      img: { src: "/images/profile-picture-5.webp", alt: "Michael Gough" },
+      img: { src: "/images/people/profile-picture-5.jpg", alt: "Michael Gough" },
       comment: "Robert Brown</span> posted a new video: Glassmorphism - learn how to implement the new design trend.",
       message: "23 minutes ago"
     }
@@ -46,13 +46,13 @@
   </Listgroup>
   <BottomNav position="sticky" navType="card" classes={{ inner: "grid-cols-3 pt-2 pb-4" }}>
     <BottomNavItem btnName="Latest" id="card-latest">
-      <ClockSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+      <ClockOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
     </BottomNavItem>
     <BottomNavItem btnName="Following" id="card-following">
       <UsersGroupOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
     </BottomNavItem>
     <BottomNavItem btnName="Favorites" id="card-favorites">
-      <StarSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+      <StarOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
     </BottomNavItem>
   </BottomNav>
 </Card>

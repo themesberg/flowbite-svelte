@@ -1,6 +1,5 @@
 <script lang="ts">
   import { P, Span, span, Button, Label, Radio, Input, CloseButton, uiHelpers, type SpanProps } from "$lib";
-  import type { RadioColorType } from "../types";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -136,7 +135,6 @@
           spanGradient = "none";
           opacityClass = "";
         }}
-        color={highlight as RadioColorType}
         value={highlight}
       >
         {highlight}
@@ -179,7 +177,6 @@
           spanUnderline = false;
           spanLinethrough = false;
         }}
-        color={color as RadioColorType}
         value={color}
       >
         {color}

@@ -49,7 +49,7 @@
   <div class="relative">
     <div class="overflow-hidden pb-4" class:max-h-56={!expand} tabindex="-1">
       {#if copiedStatus}
-        <Badge class={badge({ class: badgeClass })} color="green">Copied to clipboard</Badge>
+        <Badge class={badge({ class: badgeClass })} color="success">Copied to clipboard</Badge>
       {/if}
       {#if codeLang === "md"}
         <Highlight language={mdLang} code={processedCode} class="mb-4" />

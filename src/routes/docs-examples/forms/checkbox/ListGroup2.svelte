@@ -11,5 +11,5 @@
 
 <p class="my-2">Choices: {group.join(", ")}</p>
 <Listgroup class="w-48">
-  <Checkbox bind:group {choices} classes={{ div: "p-3" }} />
+  <Checkbox bind:group {choices} classes={{ label: "p-3" }} />
 </Listgroup>

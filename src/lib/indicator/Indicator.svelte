@@ -4,7 +4,7 @@
   import type { IndicatorProps } from "$lib";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, color = "primary", cornerStyle = "circular", size = "md", border = false, placement, offset = true, class: className, ...restProps }: IndicatorProps = $props();
+  let { children, color = "brand", cornerStyle = "circular", size = "md", border = false, placement, offset = true, class: className, ...restProps }: IndicatorProps = $props();
 
   const theme = $derived(getTheme("indicator"));
 
@@ -36,7 +36,7 @@
 [IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099)
 ## Props
 @prop children
-@prop color = "primary"
+@prop color = "brand"
 @prop cornerStyle = "circular"
 @prop size = "md"
 @prop border = false

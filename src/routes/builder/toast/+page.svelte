@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Toast, toast, Button, Label, Radio, uiHelpers, type ToastProps } from "$lib";
-  import type { RadioColorType } from "../types";
   import { CheckCircleSolid } from "flowbite-svelte-icons";
   import { linear } from "svelte/easing";
   import { blur, fly, slide, scale, fade } from "svelte/transition";
@@ -105,7 +104,7 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1" classes={{ label: "w-24" }} name="interactive_toast_color" bind:group={toastColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="interactive_toast_color" bind:group={toastColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

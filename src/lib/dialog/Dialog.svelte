@@ -31,7 +31,8 @@
 
   const paramsOptions = $derived(transitionParams ?? { duration: 100, easing: sineIn });
 
-  let { base, form: formCls, close: closeCls } = dialog();
+  const styling = $derived(classes);
+  let { base, form: formCls, close: closeCls } = $derived(dialog());
 
   const close = () => (open = false);
 
@@ -145,7 +146,7 @@
 {#snippet content()}
   {@render children?.()}
   {#if dismissable && !permanent}
-    <CloseButton type="submit" formnovalidate class={closeCls({ class: clsx(classes?.close) })} />
+    <CloseButton type="submit" formnovalidate class={closeCls({ class: clsx(styling?.close) })} />
   {/if}
 {/snippet}
 
@@ -164,7 +165,7 @@
     class={base({ class: clsx(className) })}
   >
     {#if form}
-      <form method="dialog" class={formCls({ class: clsx(classes?.form) })}>
+      <form method="dialog" class={formCls({ class: clsx(styling?.form) })}>
         {@render content()}
       </form>
     {:else}

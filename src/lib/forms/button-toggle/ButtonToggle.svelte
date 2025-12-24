@@ -4,20 +4,12 @@
   import type { VariantProps } from "tailwind-variants";
   import clsx from "clsx";
   import type { ButtonToggleProps } from "$lib";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import { getButtonToggleContext } from "$lib/context";
-  import { untrack } from "svelte";
 
-  let { value, selected = false, children, iconSlot, color, class: className, iconClass, txtClass, contentClass, classes, ...restProps }: ButtonToggleProps = $props();
+  let { value, selected = false, children, iconSlot, color, class: className, classes, ...restProps }: ButtonToggleProps = $props();
 
-  warnThemeDeprecation(
-    "ButtonToggle",
-    untrack(() => ({ iconClass, txtClass, contentClass })),
-    { iconClass: "icon", txtClass: "text", contentClass: "content" }
-  );
-
-  // button(className), content, text, icon
-  const styling = $derived(classes ?? { icon: iconClass, text: txtClass, content: contentClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("buttonToggle"));
 
@@ -64,15 +56,15 @@
   aria-checked={selected}
   {...restProps}
 >
-  <div class={content({ class: clsx(theme?.content, styling.content) })}>
+  <div class={content({ class: clsx(theme?.content, styling?.content) })}>
     {#if selected}
       {#if iconSlot}
         {@render iconSlot()}
       {:else}
-        <CheckIcon class={icon({ class: clsx(theme?.icon ?? actualIconClass, styling.icon) })} />
+        <CheckIcon class={icon({ class: clsx(theme?.icon ?? actualIconClass, styling?.icon) })} />
       {/if}
     {/if}
-    <span class={text({ selected, class: clsx(theme?.text, styling.text) })}>
+    <span class={text({ selected, class: clsx(theme?.text, styling?.text) })}>
       {@render children()}
     </span>
   </div>
@@ -90,9 +82,6 @@
 @prop iconSlot
 @prop color
 @prop class: className
-@prop iconClass
-@prop txtClass
-@prop contentClass
 @prop classes
 @prop ...restProps
 -->

@@ -3,21 +3,30 @@ import type { Classes } from "$lib/theme/themeUtils";
 
 export const checkbox = tv({
   slots: {
-    base: "w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 me-2 rounded-sm",
-    div: "flex items-center"
+    base: "w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 me-2 rounded-xs",
+    label: "flex items-center"
   },
   variants: {
     color: {
-      // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
+      brand: {
+        base: "border border-default-medium bg-neutral-secondary-medium focus:ring-brand-soft"
+      },
+      alternative: {
+        base: "border border-default-medium bg-neutral-secondary-medium focus:ring-neutral-tertiary"
+      },
+      gray: {
+        base: "border border-default-medium bg-neutral-secondary-medium focus:ring-neutral-tertiary-soft"
+      },
+      // legacy colors
       primary: {
         base: "text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600"
       },
       secondary: {
         base: "text-secondary-600 focus:ring-secondary-500 dark:focus:ring-secondary-600"
       },
-      gray: {
-        base: "text-gray-600 focus:ring-gray-600 dark:ring-offset-gray-800 dark:focus:ring-gray-600"
-      },
+      // gray: {
+      //   base: "text-gray-600 focus:ring-gray-600 dark:ring-offset-gray-800 dark:focus:ring-gray-600"
+      // },
       red: {
         base: "text-red-600 focus:ring-red-600 dark:ring-offset-red-600 dark:focus:ring-red-600"
       },
@@ -82,20 +91,22 @@ export const checkbox = tv({
     },
     inline: {
       true: {
-        div: "inline-flex",
-        false: "flex items-center"
+        label: "inline-flex"
+      },
+      false: {
+        label: "flex items-center"
       }
     },
     disabled: {
       true: {
         base: "cursor-not-allowed opacity-50 bg-gray-200 border-gray-300",
-        div: "cursor-not-allowed opacity-70"
+        label: "cursor-not-allowed opacity-70"
       },
       false: {}
     }
   },
   defaultVariants: {
-    color: "primary",
+    color: "brand",
     disabled: false
   }
 });

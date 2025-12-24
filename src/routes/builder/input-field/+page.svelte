@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Input, input, Radio, Label, Helper, Button, CloseButton, uiHelpers, type InputProps, type HelperProps, type LabelProps } from "$lib";
-  import type { RadioColorType } from "../types";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -92,7 +91,7 @@ ${closeBtnStatus ? `</Input>` : ""}${helperSlot ? `<Helper class="ps-6" color="$
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1" classes={{ label: "w-20" }} name="input_color" bind:group={inputColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-20" }} name="input_color" bind:group={inputColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
@@ -111,7 +110,6 @@ ${closeBtnStatus ? `</Input>` : ""}${helperSlot ? `<Helper class="ps-6" color="$
         disabled={helperSlot ? false : true}
         name="helper_color"
         bind:group={helperColor}
-        color={colorOption as RadioColorType}
         value={colorOption}
       >
         {colorOption}

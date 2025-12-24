@@ -13,8 +13,8 @@ export { carousel, carouselIndicators, controlButton, slide, thumbnail, thumbnai
 export { clipboard } from "../clipboard";
 export { darkmode } from "../darkmode";
 export { datepicker } from "../datepicker";
-export { android, desktop, ios, tablet } from "../device-mockups";
-export { drawer, drawerhandle } from "../drawer";
+export { android, defaultMockup, desktop, ios, laptop, smartwatch, tablet } from "../device-mockups";
+export { drawer, drawerhandle, drawerhead } from "../drawer";
 export { dropdown, dropdownDivider, dropdownGroup, dropdownHeader, dropdownItem } from "../dropdown";
 export { footer, footerBrand, footerCopyright, footerIcon, footerLink, footerLinkGroup } from "../footer";
 export { gallery } from "../gallery";
@@ -49,6 +49,7 @@ export { fileupload } from "../forms/fileupload";
 export { floatingLabelInput } from "../forms/floating-label";
 export { helper } from "../forms/helper";
 export { input } from "../forms/input-field";
+export { inputAddon } from "../forms/input-addon";
 export { label } from "../forms/label";
 export { phoneInput } from "../forms/phoneinput";
 export { radio, radioButton } from "../forms/radio";

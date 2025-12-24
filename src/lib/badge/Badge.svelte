@@ -1,18 +1,17 @@
 <script lang="ts">
   import { type BadgeProps, type ParamsType } from "$lib";
   import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { fade } from "svelte/transition";
   import { badge } from "./theme";
   import { createDismissableContext } from "$lib/utils/dismissable";
-  import { untrack } from "svelte";
 
   let {
     children,
     icon,
     badgeStatus = $bindable(true),
-    color = "primary",
+    color = "brand",
     large = false,
     dismissable = false,
     class: className,
@@ -23,22 +22,16 @@
     rounded,
     transition = fade,
     params,
-    aClass,
+    closeBtnColor = "gray",
     ...restProps
   }: BadgeProps = $props();
 
-  warnThemeDeprecation(
-    "Badge",
-    untrack(() => ({ aClass })),
-    { aClass: "linkClass" }
-  );
-
-  const styling = $derived(classes ?? { linkClass: aClass });
+  const styling = $derived(classes);
 
   // Theme context
   const theme = $derived(getTheme("badge"));
 
-  const { base, linkClass } = $derived(badge({ color, size: large ? "large" : "small", rounded, border }));
+  const { base, linkClass } = $derived(badge({ color, size: large ? "large" : "small", rounded, border, href: !!href }));
 
   let ref: HTMLDivElement | undefined = $state(undefined);
 
@@ -54,7 +47,7 @@
 {#if badgeStatus}
   <div {...restProps} bind:this={ref} transition:transition={params as ParamsType} class={base({ class: clsx(theme?.base, className) })}>
     {#if href}
-      <a {href} {target} class={linkClass({ class: clsx(theme?.linkClass, styling.linkClass) })}>
+      <a {href} {target} class={linkClass({ class: clsx(theme?.linkClass, styling?.linkClass) })}>
         {@render children()}
       </a>
     {:else}
@@ -63,11 +56,11 @@
 
     {#if dismissable}
       {#if icon}
-        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge">
+        <CloseButton class="ms-1" color={closeBtnColor} size={large ? "sm" : "xs"} ariaLabel="Remove badge">
           {@render icon()}
         </CloseButton>
       {:else}
-        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge" />
+        <CloseButton class="ms-1" color={closeBtnColor} size={large ? "sm" : "xs"} ariaLabel="Remove badge" />
       {/if}
     {/if}
   </div>
@@ -82,7 +75,7 @@
 @prop children
 @prop icon
 @prop badgeStatus = $bindable(true)
-@prop color = "primary"
+@prop color = "brand"
 @prop large = false
 @prop dismissable = false
 @prop class: className
@@ -93,6 +86,6 @@
 @prop rounded
 @prop transition = fade
 @prop params
-@prop aClass
+@prop closeBtnColor = 'gray'
 @prop ...restProps
 -->

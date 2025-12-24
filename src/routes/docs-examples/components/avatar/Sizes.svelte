@@ -3,10 +3,10 @@
 </script>
 
 <div class=" flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-3.webp" size="xs" />
-  <Avatar src="/images/profile-picture-3.webp" size="sm" />
-  <Avatar src="/images/profile-picture-3.webp" size="md" />
-  <Avatar src="/images/profile-picture-3.webp" size="lg" />
-  <Avatar src="/images/profile-picture-3.webp" size="xl" />
-  <Avatar src="/images/profile-picture-3.webp" class="h-28 w-28" />
+  <Avatar src="/images/people/profile-picture-5.jpg" size="xs" />
+  <Avatar src="/images/people/profile-picture-5.jpg" size="sm" />
+  <Avatar src="/images/people/profile-picture-5.jpg" size="md" />
+  <Avatar src="/images/people/profile-picture-5.jpg" size="lg" />
+  <Avatar src="/images/people/profile-picture-5.jpg" size="xl" />
+  <Avatar src="/images/people/profile-picture-5.jpg" class="h-28 w-28" />
 </div>

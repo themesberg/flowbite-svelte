@@ -3,7 +3,7 @@
   import { CloseCircleSolid } from "flowbite-svelte-icons";
 </script>
 
-<Badge dismissable>
+<Badge dismissable large>
   Default
   {#snippet icon()}
     <button

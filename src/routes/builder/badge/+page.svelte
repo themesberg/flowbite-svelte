@@ -18,7 +18,7 @@
 
   // interactive example
   const colors = Object.keys(badge.variants.color);
-  let color: BadgeProps["color"] = $state("primary");
+  let color: BadgeProps["color"] = $state("brand");
   let badgeSize: BadgeProps["large"] = $state(false);
   const changeSize = () => {
     badgeSize = !badgeSize;
@@ -88,7 +88,7 @@
 				import { ${currentTransition} } from 'svelte/transition'`
           : "";
       let props = [];
-      if (color !== "primary") props.push(` color="${color}"`);
+      if (color !== "brand") props.push(` color="${color}"`);
       if (badgeSize) props.push(" large");
       if (badgeDismissable) props.push(" dismissable");
       if (badgeClass) props.push(` class="${badgeClass}"`);
@@ -171,7 +171,7 @@
   <div class="flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color 1</Label>
     {#each colors as colorOption}
-      <Radio class="my-1" classes={{ label: "w-24" }} name="color" bind:group={color} color={colorOption as BadgeProps["color"]} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="color" bind:group={color} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

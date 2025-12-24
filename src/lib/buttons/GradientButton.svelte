@@ -8,7 +8,7 @@
 
   const group = getButtonGroupContext()?.size;
 
-  let { children, outline, pill, color = "blue", shadow, class: className, href, disabled, size, btnClass, ...restProps }: GradientButtonProps = $props();
+  let { children, outline, pill, color = "blue", shadow, class: className, href, disabled, size, ...restProps }: GradientButtonProps = $props();
 
   const theme = $derived(getTheme("gradientButton"));
 
@@ -17,7 +17,7 @@
 
 {#if outline}
   <div class={base({ class: clsx(theme?.base, className) })}>
-    <Button {...restProps} class={outlineWrapper({ class: clsx(theme?.outlineWrapper, btnClass) })} {disabled} {href} {size}>
+    <Button {...restProps} class={outlineWrapper({ class: clsx(theme?.outlineWrapper) })} {disabled} {href} {size}>
       {@render children?.()}
     </Button>
   </div>

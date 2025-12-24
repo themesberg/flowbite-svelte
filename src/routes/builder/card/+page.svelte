@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Card, card, Button, Toggle, Label, Radio, uiHelpers, type CardProps, type ImgType } from "$lib";
-  import type { RadioColorType } from "../types";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -17,8 +16,6 @@
 
   const sizes = Object.keys(card.variants.size);
   let cardSize: CardProps["size"] = $state("sm");
-  const colors = Object.keys(card.variants.color);
-  let color: CardProps["color"] = $state("gray");
   const shadows = Object.keys(card.variants.shadow);
   let cardShadow: CardProps["shadow"] = $state("md");
   let horizontal = $state(false);
@@ -48,7 +45,6 @@
     (() => {
       let props = [];
       if (cardSize !== "sm") props.push(` size="${cardSize}"`);
-      if (color !== "gray") props.push(` color="${color}"`);
       if (cardShadow !== "md") props.push(` shadow="${cardShadow}"`);
       if (cardClass) props.push(` class="${cardClass}"`);
       if (link) props.push(` href="${link}"`);
@@ -87,7 +83,7 @@
 
 <CodeWrapper>
   <div class="flex justify-center">
-    <Card size={cardSize} {color} shadow={cardShadow} href={link ? link : ""} class={cardClass} img={cardImage?.src} {horizontal} {reverse}>
+    <Card size={cardSize} shadow={cardShadow} href={link ? link : ""} class={cardClass} img={cardImage?.src} {horizontal} {reverse}>
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
       <p class="leading-tight font-normal text-gray-700 dark:text-gray-300">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
     </Card>
@@ -96,12 +92,6 @@
     <Label class="mb-4 w-full font-bold">Size</Label>
     {#each sizes as size}
       <Radio class="my-1" classes={{ label: "w-16" }} name="interactive_card_size" bind:group={cardSize} value={size}>{size}</Radio>
-    {/each}
-  </div>
-  <div class="flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Color</Label>
-    {#each colors as colorOption}
-      <Radio class="my-1" classes={{ label: "w-24" }} name="alert_reactive" bind:group={color} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="my-4 flex flex-wrap space-x-4">

@@ -9,9 +9,9 @@
   let eventDuration = $state("30 min");
   let eventType = $state("Web conference");
   let participants = [
-    { img: "/images/profile-picture-1.webp", alt: "Participant 1" },
-    { img: "/images/profile-picture-2.webp", alt: "Participant 2" },
-    { img: "/images/profile-picture-3.webp", alt: "Participant 3" }
+    { img: "/images/people/profile-picture-1.jpg", alt: "Participant 1" },
+    { img: "/images/people/profile-picture-2.jpg", alt: "Participant 2" },
+    { img: "/images/people/profile-picture-5.jpg", alt: "Participant 3" }
   ];
 
   const timeIntervals = ["10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30"];

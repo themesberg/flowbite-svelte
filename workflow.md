@@ -1,14 +1,14 @@
 
 ```sh
-git fetch origin --tags    # Fetch latest tags
+git fetch origin --tags
 pnpm ch 
 pnpm cv 
 pnpm lib-helpers 
 pnpm cp 
 git add . 
 git commit --message 'v1.x.x' 
-git push origin main        # Push your commits
-git push origin --tags      # Push your new tag
+git push origin main
+git push origin --tags
 At https://github.com/themesberg/flowbite-svelte/releases publish a new version
 ```
 

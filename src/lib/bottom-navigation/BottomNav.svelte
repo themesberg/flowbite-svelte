@@ -1,28 +1,23 @@
 <script lang="ts">
   import type { BottomNavContextType, BottomNavProps } from "$lib/types";
   import { cn } from "$lib/utils";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { setBottomNavContext } from "$lib/context";
   import { bottomNav } from "./theme";
-  import { untrack } from "svelte";
 
-  let { children, header, position = "fixed", navType = "default", class: className, classes, outerClass, innerClass, activeClass, activeUrl = "", ...restProps }: BottomNavProps = $props();
+  let { children, header, position = "fixed", navType = "default", class: className, classes, activeUrl = "", ...restProps }: BottomNavProps = $props();
 
-  warnThemeDeprecation(
-    "BottomNav",
-    untrack(() => ({ innerClass, outerClass })),
-    { innerClass: "inner", outerClass: "class" }
-  );
-
-  const styling = $derived(classes ?? { inner: innerClass });
+  const styling = $derived(classes);
 
   // Theme context
   const theme = $derived(getTheme("bottomNav"));
 
-  const activeCls = $derived(cn("text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900", activeClass));
+  const activeCls = $derived(cn("text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900", styling?.active));
 
   // Create reactive context using getters
+  // Note: context.classes is for item styling, not BottomNav styling
+  // BottomNav's classes prop only affects its own elements (inner, active)
   const reactiveCtx: BottomNavContextType = {
     get activeClass() {
       return activeCls;
@@ -33,6 +28,7 @@
     get navType() {
       return navType;
     }
+    // classes is intentionally omitted - items use their own classes prop
   };
 
   setBottomNavContext(reactiveCtx);
@@ -40,12 +36,12 @@
   const { base, inner } = $derived(bottomNav({ position, navType }));
 </script>
 
-<div {...restProps} class={base({ class: clsx(theme?.base, className ?? outerClass) })}>
+<div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {#if header}
     {@render header()}
   {/if}
 
-  <div class={inner({ class: clsx(theme?.inner, styling.inner) })}>
+  <div class={inner({ class: clsx(theme?.inner, styling?.inner) })}>
     {@render children()}
   </div>
 </div>
@@ -60,11 +56,8 @@
 @prop header
 @prop position = "fixed"
 @prop navType = "default"
-@prop class: className
-@prop classes
-@prop outerClass
-@prop innerClass
-@prop activeClass
+@prop class: className - For the base container element
+@prop classes - For other slots (inner, active)
 @prop activeUrl = ""
 @prop ...restProps
 -->

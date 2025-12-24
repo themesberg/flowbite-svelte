@@ -3,7 +3,7 @@
 </script>
 
 <Button pill color="light" id="avatar_with_name" class="p-1!">
-  <Avatar src="/images/profile-picture-3.webp" class="me-2" />
+  <Avatar src="/images/people/profile-picture-5.jpg" class="me-2" />
   Bonnie Green
 </Button>
 <Dropdown triggeredBy="#avatar_with_name">

@@ -2,7 +2,7 @@
   import { Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup } from "flowbite-svelte";
 </script>
 
-<Avatar class="acs" src="/images/profile-picture-3.webp" dot={{ color: "green" }} />
+<Avatar class="acs" src="/images/people/profile-picture-5.jpg" dot={{ color: "neutral" }} />
 <Dropdown triggeredBy=".acs">
   <DropdownHeader>
     <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>

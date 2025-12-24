@@ -10,7 +10,7 @@
   // Theme context
   const theme = $derived(getTheme("avatar"));
 
-  let dotProps = $derived(dot ? { placement: "top-right" as const, color: "gray" as const, size: "lg" as const, ...dot } : undefined);
+  let dotProps = $derived(dot ? { placement: "top-right" as const, color: "neutral" as const, size: "lg" as const, ...dot } : undefined);
 
   let avatarClass = $derived(
     avatar({

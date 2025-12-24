@@ -1,29 +1,22 @@
 <script lang="ts">
   import type { CardProps } from "$lib";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { card } from "./theme";
-  import { untrack } from "svelte";
 
-  let { children, color = "gray", horizontal = false, shadow = "md", reverse = false, img, size = "sm", class: className, classes, imgClass, ...restProps }: CardProps = $props();
+  let { children, hoverable = false, horizontal = false, shadow = "md", reverse = false, img, imgAlt, size = "sm", class: className, classes, ...restProps }: CardProps = $props();
 
-  warnThemeDeprecation(
-    "Card",
-    untrack(() => ({ imgClass })),
-    { imgClass: "image" }
-  );
-
-  const styling = $derived(classes ?? { image: imgClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("card"));
 
   const { base, image } = $derived(
     card({
       size,
-      color,
       shadow,
       horizontal,
       reverse,
+      hoverable,
       href: !!restProps.href
     })
   );
@@ -32,9 +25,9 @@
 {#snippet childSlot()}
   {#if img}
     <img
-      class={image({ class: clsx(theme?.image, styling.image) })}
+      class={image({ class: clsx(theme?.image, styling?.image) })}
       src={img}
-      alt=""
+      alt={imgAlt || ""}
       loading="lazy"
       onerror={(e) => {
         const target = e.currentTarget as HTMLImageElement;
@@ -66,14 +59,14 @@
 [CardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L461)
 ## Props
 @prop children
-@prop color = "gray"
+@prop hoverable = false
 @prop horizontal = false
 @prop shadow = "md"
 @prop reverse = false
 @prop img
+@prop imgAlt
 @prop size = "sm"
 @prop class: className
 @prop classes
-@prop imgClass
 @prop ...restProps
 -->

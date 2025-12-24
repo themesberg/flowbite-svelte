@@ -3,7 +3,7 @@
   import { LandmarkSolid, CalendarMonthSolid, UsersGroupOutline, ThumbsUpSolid, ThumbsDownSolid } from "flowbite-svelte-icons";
   let review = {
     name: "Jese Leos",
-    imgSrc: "/images/profile-picture-2.webp",
+    imgSrc: "/images/people/profile-picture-2.jpg",
     imgAlt: "jese leos",
     address: "United States",
     reviewDate: "January 20, 2022",

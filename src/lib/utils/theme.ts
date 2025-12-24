@@ -5,10 +5,15 @@ import type { Classes } from "$lib/theme/themeUtils";
 export type CloseButtonVariants = VariantProps<typeof closeButton> & Classes<typeof closeButton>;
 
 export const closeButton = tv({
-  base: "focus:outline-hidden whitespace-normal disabled:cursor-not-allowed disabled:opacity-50",
+  base: "focus:outline-hidden whitespace-normal disabled:cursor-not-allowed disabled:opacity-50 ms-auto rounded focus:ring-2 inline-flex items-center justify-center shrink-0",
   variants: {
-    // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
     color: {
+      brand: "bg-brand-softer text-fg-brand-strong focus:ring-brand-medium hover:bg-brand-medium",
+      danger: "bg-danger-soft text-fg-danger-strong focus:ring-danger-medium hover:bg-danger-medium",
+      success: "bg-success-soft text-fg-success-strong focus:ring-success-medium hover:bg-success-medium",
+      warning: "bg-warning-soft text-fg-warning focus:ring-warning-medium hover:bg-warning-medium",
+      dark: "bg-neutral-secondary-medium text-heading focus:ring-gray hover:bg-neutral-tertiary",
+      // Legacy colors for backward compatibility
       primary: "text-primary-500 focus:ring-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800 dark:hover:text-primary-300",
       secondary: "text-secondary-500 focus:ring-secondary-400 hover:bg-secondary-200 dark:hover:bg-secondary-800 dark:hover:text-secondary-300",
       gray: "text-gray-500 focus:ring-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 dark:hover:text-gray-300",
@@ -32,16 +37,15 @@ export const closeButton = tv({
       none: ""
     },
     size: {
-      xs: "m-0.5 rounded-xs focus:ring-1 p-0.5",
-      sm: "m-0.5 rounded-sm focus:ring-1 p-0.5",
-      md: "m-0.5 rounded-lg focus:ring-2 p-1.5",
-      lg: "m-0.5 rounded-lg focus:ring-2 p-2.5"
+      xs: "p-0 h-4 w-4",
+      sm: "p-0.5 h-6 w-6",
+      md: "p-1.5 h-8 w-8",
+      lg: "p-2.5 h-10 w-10"
     }
   },
   defaultVariants: {
     color: "gray",
-    size: "md",
-    href: null
+    size: "md"
   },
   slots: {
     svg: ""
@@ -50,7 +54,7 @@ export const closeButton = tv({
     {
       size: "xs",
       class: {
-        svg: "w-3 h-3"
+        svg: "w-2.5 h-2.5"
       }
     },
     {
@@ -60,7 +64,13 @@ export const closeButton = tv({
       }
     },
     {
-      size: ["md", "lg"],
+      size: "md",
+      class: {
+        svg: "w-4 h-4"
+      }
+    },
+    {
+      size: "lg",
       class: {
         svg: "w-5 h-5"
       }

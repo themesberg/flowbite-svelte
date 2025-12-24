@@ -14,3 +14,4 @@ export { default as Monochrome } from "./Monochrome.svelte";
 export { default as Outline } from "./Outline.svelte";
 export { default as Pills } from "./Pills.svelte";
 export { default as Sizes } from "./Sizes.svelte";
+export { default as Shadow } from "./Shadow.svelte";

@@ -3,9 +3,9 @@
   import { BugOutline } from "flowbite-svelte-icons";
 </script>
 
-<Avatar src="/images/profile-picture-3.webp">
+<Avatar src="/images/people/profile-picture-5.jpg">
   {#snippet indicator()}
-    <Indicator color="gray" border size="xl" placement="top-right">
+    <Indicator color="purple" border size="xl" placement="top-right">
       <BugOutline />
     </Indicator>
   {/snippet}

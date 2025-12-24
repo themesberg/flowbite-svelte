@@ -4,10 +4,16 @@ import { tv, type VariantProps } from "tailwind-variants";
 export type AlertVariants = VariantProps<typeof alert>;
 
 export const alert = tv({
-  base: "p-4 gap-3 text-sm",
+  base: "flex items-start sm:items-center p-4 gap-3 text-sm",
   variants: {
     color: {
-      // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
+      brand: "text-fg-brand-strong bg-brand-softer",
+      danger: "text-fg-danger-strong bg-danger-soft",
+      success: "text-fg-success-strong bg-success-soft",
+      warning: "text-fg-warning bg-warning-soft",
+      dark: "text-heading bg-neutral-secondary-medium",
+      none: "", // For custom colors via class prop
+      // Legacy colors for backward compatibility
       primary: "bg-primary-50 dark:bg-gray-800 text-primary-800 dark:text-primary-400",
       secondary: "bg-secondary-50 dark:bg-secondary-800 text-secondary-800 dark:text-secondary-400",
       gray: "bg-gray-100 text-gray-500 focus:ring-gray-400 dark:bg-gray-700 dark:text-gray-300",
@@ -29,8 +35,14 @@ export const alert = tv({
       pink: "bg-pink-100 text-pink-500 focus:ring-pink-400 dark:bg-pink-200 dark:text-pink-600",
       rose: "bg-rose-100 text-rose-500 focus:ring-rose-400 dark:bg-rose-200 dark:text-rose-600"
     },
+    listContent: {
+      true: ""
+    },
+    borderAccent: {
+      true: "border-t-4"
+    },
     rounded: {
-      true: "rounded-lg"
+      true: "rounded-base"
     },
     border: {
       true: "border"
@@ -43,111 +55,84 @@ export const alert = tv({
     }
   },
   compoundVariants: [
-    // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
     {
-      border: true,
-      color: "primary",
-      class: "border-primary-500 dark:border-primary-200 divide-primary-500 dark:divide-primary-200"
+      listContent: true,
+      color: "brand",
+      class: "bg-brand-softer border border-brand-subtle"
+    },
+    {
+      listContent: true,
+      color: "danger",
+      class: "bg-danger-soft border border-danger-subtle"
+    },
+    {
+      listContent: true,
+      color: "success",
+      class: "bg-success-soft border border-success-subtle"
+    },
+    {
+      listContent: true,
+      color: "warning",
+      class: "bg-warning-soft border border-warning-subtle"
+    },
+    {
+      listContent: true,
+      color: "dark",
+      class: "bg-dark-soft border border-dark-subtle"
     },
     {
       border: true,
-      color: "secondary",
-      class: "border-secondary-500 dark:border-secondary-200 divide-secondary-500 dark:divide-secondary-200"
+      color: "brand",
+      class: "border-brand-subtle"
     },
     {
       border: true,
-      color: "gray",
-      class: "border-gray-300 dark:border-gray-800 divide-gray-300 dark:divide-gray-800"
+      color: "danger",
+      class: "border-danger-subtle"
     },
     {
       border: true,
-      color: "red",
-      class: "border-red-300 dark:border-red-800 divide-red-300 dark:divide-red-800"
+      color: "success",
+      class: "border-success-subtle"
     },
     {
       border: true,
-      color: "orange",
-      class: "border-orange-300 dark:border-orange-800 divide-orange-300 dark:divide-orange-800"
+      color: "warning",
+      class: "border-warning-subtle"
     },
     {
       border: true,
-      color: "amber",
-      class: "border-amber-300 dark:border-amber-800 divide-amber-300 dark:divide-amber-800"
+      color: "dark",
+      class: "border-dark-subtle"
     },
     {
-      border: true,
-      color: "yellow",
-      class: "border-yellow-300 dark:border-yellow-800 divide-yellow-300 dark:divide-yellow-800"
+      borderAccent: true,
+      color: "brand",
+      class: "border-brand-subtle"
     },
     {
-      border: true,
-      color: "lime",
-      class: "border-lime-300 dark:border-lime-800 divide-lime-300 dark:divide-lime-800"
+      borderAccent: true,
+      color: "danger",
+      class: "border-danger-subtle"
     },
     {
-      border: true,
-      color: "green",
-      class: "border-green-300 dark:border-green-800 divide-green-300 dark:divide-green-800"
+      borderAccent: true,
+      color: "success",
+      class: "border-success-subtle"
     },
     {
-      border: true,
-      color: "emerald",
-      class: "border-emerald-300 dark:border-emerald-800 divide-emerald-300 dark:divide-emerald-800"
+      borderAccent: true,
+      color: "warning",
+      class: "border-warning-subtle"
     },
     {
-      border: true,
-      color: "teal",
-      class: "border-teal-300 dark:border-teal-800 divide-teal-300 dark:divide-teal-800"
-    },
-    {
-      border: true,
-      color: "cyan",
-      class: "border-cyan-300 dark:border-cyan-800 divide-cyan-300 dark:divide-cyan-800"
-    },
-    {
-      border: true,
-      color: "sky",
-      class: "border-sky-300 dark:border-sky-800 divide-sky-300 dark:divide-sky-800"
-    },
-    {
-      border: true,
-      color: "blue",
-      class: "border-blue-300 dark:border-blue-800 divide-blue-300 dark:divide-blue-800"
-    },
-    {
-      border: true,
-      color: "indigo",
-      class: "border-indigo-300 dark:border-indigo-800 divide-indigo-300 dark:divide-indigo-800"
-    },
-    //  violet, purple, fuchsia, pink, rose
-    {
-      border: true,
-      color: "violet",
-      class: "border-violet-300 dark:border-violet-800 divide-violet-300 dark:divide-violet-800"
-    },
-    {
-      border: true,
-      color: "purple",
-      class: "border-purple-300 dark:border-purple-800 divide-purple-300 dark:divide-purple-800"
-    },
-    {
-      border: true,
-      color: "fuchsia",
-      class: "border-fuchsia-300 dark:border-fuchsia-800 divide-fuchsia-300 dark:divide-fuchsia-800"
-    },
-    {
-      border: true,
-      color: "pink",
-      class: "border-pink-300 dark:border-pink-800 divide-pink-300 dark:divide-pink-800"
-    },
-    {
-      border: true,
-      color: "rose",
-      class: "border-rose-300 dark:border-rose-800 divide-rose-300 dark:divide-rose-800"
+      borderAccent: true,
+      color: "dark",
+      class: "border-dark-subtle"
     }
   ],
   defaultVariants: {
-    color: "primary",
+    color: "brand",
     rounded: true
   }
 });

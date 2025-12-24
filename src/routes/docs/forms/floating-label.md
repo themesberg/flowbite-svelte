@@ -35,6 +35,21 @@ Get started with the following three styles for the floating label component and
 {#include Default.svelte}
 ```
 
+## Floating label with icons
+Use these examples of floating label input fields with a descriptive SVG icon.
+
+```svelte example
+{#include WithIcon.svelte}
+```
+
+## Disabled state
+
+Apply the disabled attribute to the input fields to disallow the user from changing the content.
+
+```svelte example hideScript
+{#include Disabled.svelte}
+```
+
 ## Clearable
 
 ```svelte example
@@ -55,18 +70,12 @@ Use `clearable` and `clearableOnClick` props.
 {#include ElementRef.svelte}
 ```
 
+
+
 ## Combobox
 
 ```svelte example class="h-96 space-y-24"
 {#include Combobox.svelte}
-```
-
-## Disabled state
-
-Apply the disabled attribute to the input fields to disallow the user from changing the content.
-
-```svelte example hideScript
-{#include Disabled.svelte}
 ```
 
 ## Validation

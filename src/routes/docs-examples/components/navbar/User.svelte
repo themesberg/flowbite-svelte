@@ -8,7 +8,7 @@
     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </NavBrand>
   <div class="flex items-center md:order-2">
-    <Avatar id="avatar-menu" src="/images/profile-picture-3.webp" />
+    <Avatar id="avatar-menu" src="/images/people/profile-picture-5.jpg" />
     <NavHamburger />
   </div>
   <Dropdown placement="bottom" triggeredBy="#avatar-menu">

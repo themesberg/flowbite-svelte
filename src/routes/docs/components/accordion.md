@@ -32,7 +32,7 @@ By default, the accordion uses single selection mode, which means opening one ac
 
 To allow multiple items to remain open simultaneously, set the `multiple` property to `true`.
 
-```svelte example
+```svelte example class="h-96"
 {#include Default.svelte}
 ```
 
@@ -40,25 +40,31 @@ To allow multiple items to remain open simultaneously, set the `multiple` proper
 
 Use the `open` prop to make an item open on mount. This is useful for highlighting important content or the most frequently accessed section.
 
-```svelte example
+```svelte example class="h-64"
 {#include Open.svelte}
 ```
 
 ## Color option
 
-You can control the look and feel of `AccordionItems` by overwriting the `activeClass` and `inactiveClass` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
+Customize accordion styling using the `classes` prop with properties like `active`, `inactive`, `button`, `content`, and `contentWrapper`. Define them in `Accordion` to apply globally, or set them per `AccordionItem` to override.
 
-This allows you to match the accordion to your brand colors or create visual hierarchy between different accordion sections.
-
-```svelte example
+```svelte example class="h-64"
 {#include Color.svelte}
+```
+
+### Advanced styling
+
+You can customize all aspects including button font, content padding, and both active/inactive states:
+
+```svelte example class="h-64"
+{#include AdvancedClasses.svelte}
 ```
 
 ## Flush accordion
 
 Use `flush` prop to remove the rounded borders. This creates a cleaner, more minimal design that works well in tight layouts or when embedded within cards.
 
-```svelte example
+```svelte example class="h-64"
 {#include Flush.svelte}
 ```
 
@@ -66,7 +72,7 @@ Use `flush` prop to remove the rounded borders. This creates a cleaner, more min
 
 Use the `arrowup` and `arrowdown` snippets to customize the expand/collapse icons. You can use any icon library or custom SVG icons.
 
-```svelte example
+```svelte example class="h-64"
 {#include ArrowStyle.svelte}
 ```
 
@@ -74,7 +80,7 @@ Use the `arrowup` and `arrowdown` snippets to customize the expand/collapse icon
 
 Use `header` snippet to add icons and create visually enhanced accordion headers. This helps users quickly identify sections and improves scanability.
 
-```svelte example
+```svelte example class="h-64"
 {#include Icon.svelte}
 ```
 
@@ -82,7 +88,7 @@ Use `header` snippet to add icons and create visually enhanced accordion headers
 
 Use `multiple` prop to allow multiple accordion items to be open at the same time. This is useful when users need to compare information across different sections or when content in one section doesn't affect another.
 
-```svelte example
+```svelte example class="h-80"
 {#include MultipleMode.svelte}
 ```
 
@@ -90,7 +96,7 @@ Use `multiple` prop to allow multiple accordion items to be open at the same tim
 
 Here's an example of how to use the `multiple` option together with "expand all" and "collapse all" functionality. This pattern is helpful for long forms or documentation pages where users may want to see everything at once.
 
-```svelte example class="space-y-4"
+```svelte example class="space-y-4 h-[500px]"
 {#include MultipleMode2.svelte}
 ```
 
@@ -100,7 +106,7 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 
 You can use any Svelte transition function such as `fade`, `blur`, `fly`, or `scale` from the `svelte/transition` module, and customize them with parameters like duration and easing.
 
-```svelte example
+```svelte example class="h-80"
 {#include Transitions.svelte}
 ```
 
@@ -110,7 +116,7 @@ Accordions can be nested to create hierarchical content structures. All mentione
 
 This is useful for complex documentation, multi-level settings, or categorized FAQs.
 
-```svelte example hideScript
+```svelte example hideScript class="h-[400px]"
 {#include Nesting.svelte}
 ```
 
@@ -120,7 +126,7 @@ Use the following example to preserve the input value when navigating between pa
 
 To test: Fill out the form, navigate to a different page, and then use your browser's back button. You'll notice that your input is preserved automatically.
 
-```svelte example hideOutput
+```svelte example hideOutput class="h-64"
 {#include Snapshot.svelte}
 ```
 
@@ -133,7 +139,7 @@ This approach is useful when:
 - You need better performance with many accordion items
 - You want instant show/hide without animation
 
-```svelte example class="h-96 space-y-4"
+```svelte example class="h-[450px] space-y-4"
 {#include TransitionNone.svelte}
 ```
 
@@ -147,7 +153,7 @@ For example, you might want to keep sections expanded on desktop for easy scanni
 
 Simple Media Query opens accordion item on medium screens and larger:
 
-```svelte example hideResponsiveButtons
+```svelte example hideResponsiveButtons class="h-48"
 {#include BpBasic.svelte}
 ```
 
@@ -155,7 +161,7 @@ Simple Media Query opens accordion item on medium screens and larger:
 
 Access multiple breakpoints with a single hook for cleaner, more maintainable code:
 
-```svelte example hideResponsiveButtons
+```svelte example hideResponsiveButtons class="h-48"
 {#include BpObject.svelte}
 ```
 
@@ -163,7 +169,7 @@ Access multiple breakpoints with a single hook for cleaner, more maintainable co
 
 Current Breakpoint Display shows the current breakpoint in your UI, useful for debugging responsive behavior:
 
-```svelte example hideResponsiveButtons
+```svelte example hideResponsiveButtons class="h-48"
 {#include BpAdvanced.svelte}
 ```
 
@@ -171,7 +177,7 @@ Current Breakpoint Display shows the current breakpoint in your UI, useful for d
 
 Open accordion only within specific screen size ranges. This is useful when you want different behavior for phones, tablets, and desktops:
 
-```svelte example hideResponsiveButtons
+```svelte example hideResponsiveButtons class="h-[450px]"
 {#include BpRange.svelte}
 ```
 
@@ -179,9 +185,27 @@ Open accordion only within specific screen size ranges. This is useful when you 
 
 Combining multiple responsive patterns for sophisticated adaptive layouts:
 
-```svelte example hideResponsiveButtons class="space-y-4"
+```svelte example hideResponsiveButtons class="space-y-4 h-[550px]"
 {#include BpComplex.svelte}
 ```
+
+## Component Props
+
+### Accordion
+
+- `multiple`: Allow multiple items open simultaneously (default: `false`)
+- `flush`: Remove rounded borders for minimal design
+- `transitionType`: Control transitions (`TransitionFunc` or `"none"`)
+- `classes`: Customize styling with `active`, `inactive`, `button`, `contentWrapper`, `content` properties
+
+### AccordionItem
+
+- `open`: Control open state (bindable)
+- `header`: Snippet for header content
+- `arrowup` / `arrowdown`: Snippets for custom icons
+- `transitionType`: Override parent transition (`TransitionFunc` or `"none"`)
+- `transitionParams`: Custom transition parameters
+- `classes`: Item-specific styling overrides
 
 ## Accessibility
 

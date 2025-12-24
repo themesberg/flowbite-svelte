@@ -15,7 +15,7 @@
     pill,
     outline = false,
     size = "md",
-    color,
+    color = "brand",
     shadow = false,
     tag = "button",
     disabled,
@@ -28,7 +28,7 @@
   const theme = $derived(getTheme("button"));
 
   let actualSize = $derived(group ? "sm" : size);
-  let actualColor = $derived(color ?? (group ? (outline ? "dark" : "alternative") : "primary"));
+  let actualColor = $derived(color ?? (group ? (outline ? "dark" : "alternative") : "brand"));
   let isDisabled = $derived(Boolean(ctxDisabled) || Boolean(disabled) || loading);
 
   const { base, outline: outline_, shadow: shadow_, spinner } = $derived(button({ color: actualColor, size: actualSize, disabled: isDisabled, pill, group: !!group }));

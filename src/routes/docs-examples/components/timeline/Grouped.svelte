@@ -6,7 +6,7 @@
       name: '<span class="font-medium">Laura Romeros</span> likes <span class="font-medium">Bonnie Green\'s</span> post in <span class="font-medium"> How to start with Flowbite library</span>',
       title:
         '<span class="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie Green\'s</span> post in <span class="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span>',
-      src: "/images/profile-picture-1.webp",
+      src: "/images/people/profile-picture-1.jpg",
       alt: "alt here",
       href: "/",
       isPrivate: true,
@@ -16,7 +16,7 @@
       id: "group-2",
       name: '<span class="font-medium">Jese Leos</span> likes <span class="font-medium">Bonnie Green\'s</span> post in <span class="font-medium"> How to start with Flowbite library</span>',
       title: '<span class="font-medium text-gray-900 dark:text-white">Bonnie Green</span> react to <span class="font-medium text-gray-900 dark:text-white">Thomas Lean\'s</span> comment',
-      src: "/images/profile-picture-2.webp",
+      src: "/images/people/profile-picture-2.jpg",
       alt: "alt here",
       href: "/",
       isPrivate: true,

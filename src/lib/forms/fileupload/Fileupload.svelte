@@ -3,32 +3,12 @@
   import clsx from "clsx";
   import type { FileuploadProps } from "$lib";
   import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
-  import { untrack } from "svelte";
 
-  let {
-    files = $bindable(),
-    size = "md",
-    clearable = false,
-    elementRef = $bindable(),
-    class: className,
-    classes,
-    clearableSvgClass,
-    clearableColor = "none",
-    clearableClass,
-    clearableOnClick,
-    wrapperClass,
-    ...restProps
-  }: FileuploadProps = $props();
+  let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, classes, clearableColor = "none", clearableOnClick, ...restProps }: FileuploadProps = $props();
 
-  warnThemeDeprecation(
-    "Fileupload",
-    untrack(() => ({ wrapperClass, clearableClass, clearableSvgClass })),
-    { wrapperClass: "wrapper", clearableClass: "close", clearableSvgClass: "svg" }
-  );
-
-  const styling = $derived(classes ?? { wrapper: wrapperClass, close: clearableClass, svg: clearableSvgClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("fileupload"));
 
@@ -37,18 +17,31 @@
   const clearAll = () => {
     if (elementRef) {
       elementRef.value = "";
-      files = undefined;
+      // Manually trigger the change event to update files
+      const event = new Event("change", { bubbles: true });
+      elementRef.dispatchEvent(event);
     }
+    files = undefined;
+
     if (clearableOnClick) clearableOnClick();
   };
 
+  // Handle file changes via event instead of two-way binding
+  function handleChange(event: Event) {
+    const target = event.target as HTMLInputElement;
+    files = target.files ?? undefined;
+  }
+
   createDismissableContext(clearAll);
+
+  // Check if we should show the clear button
+  const showClearButton = $derived(clearable && files && files.length > 0);
 </script>
 
-<div class={wrapper({ class: clsx(theme?.wrapper, styling.wrapper) })}>
-  <input type="file" bind:files bind:this={elementRef} {...restProps} class={base({ size, class: clsx(theme?.base, className) })} />
-  {#if files && files.length > 0 && clearable}
-    <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear selected files" svgClass={clsx(styling.svg)} />
+<div class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })}>
+  <input type="file" onchange={handleChange} bind:this={elementRef} {...restProps} class={base({ size, class: clsx(theme?.base, className) })} />
+  {#if showClearButton}
+    <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} color={clearableColor} ariaLabel="Clear selected files" svgClass={clsx(theme?.svg, styling?.svg)} />
   {/if}
 </div>
 
@@ -64,10 +57,7 @@
 @prop elementRef = $bindable()
 @prop class: className
 @prop classes
-@prop clearableSvgClass
 @prop clearableColor = "none"
-@prop clearableClass
 @prop clearableOnClick
-@prop wrapperClass
 @prop ...restProps
 -->

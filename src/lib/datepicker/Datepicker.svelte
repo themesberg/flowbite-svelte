@@ -24,8 +24,7 @@
     placeholder = "Select date",
     disabled = false,
     required = false,
-    inputClass = "",
-    color = "primary",
+    color = "brand",
     inline = false,
     autohide = true,
     showActionButtons = false,
@@ -33,18 +32,16 @@
     onselect,
     onclear,
     onapply,
-    btnClass,
     inputmode = "none",
     classes,
     monthColor = "alternative",
-    monthBtnSelected = "bg-primary-500 text-white",
-    monthBtn = "text-gray-700 dark:text-gray-300",
     class: className,
     elementRef = $bindable(),
     actionSlot,
     inputProps = {}
   }: DatepickerProps = $props();
 
+  const styling = $derived(classes);
   const theme = $derived(getTheme("datepicker"));
 
   // If translationLocale is not explicitly provided, it will default to the value of locale. This ensures reactivity as both are directly exposed as props.
@@ -423,7 +420,7 @@
         {...inputProps}
         bind:this={inputElement}
         type="text"
-        class={input({ color, class: clsx(theme?.input, inputClass) })}
+        class={input({ color, class: clsx(theme?.input, styling?.input) })}
         {placeholder}
         value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)}
         onfocus={() => (isOpen = true)}
@@ -436,7 +433,7 @@
       />
       <button
         type="button"
-        class={button({ class: clsx(btnClass, theme?.button, classes?.button) })}
+        class={button({ class: clsx(theme?.button, styling?.button) })}
         onclick={() => (isOpen = !isOpen)}
         {disabled}
         aria-label={isOpen ? "Close date picker" : "Open date picker"}
@@ -453,14 +450,14 @@
   {#if isOpen || inline}
     <div bind:this={calendarRef} id="datepicker-dropdown" class={base({ inline, class: clsx(theme?.base, className) })} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
       {#if title}
-        <h2 class={titleVariant({ class: clsx(theme?.titleVariant, classes?.titleVariant) })}>{title}</h2>
+        <h2 class={titleVariant({ class: clsx(theme?.titleVariant, styling?.titleVariant) })}>{title}</h2>
       {/if}
 
       {#if showMonthSelector}
         <!-- Month/Year Selector View -->
-        <div class={nav({ class: clsx(theme?.nav, classes?.nav) })}>
+        <div class={nav({ class: clsx(theme?.nav, styling?.nav) })}>
           {@render yearNavButton(false)}
-          <h3 class={polite({ class: clsx(theme?.polite, classes?.polite) })} aria-live="polite">
+          <h3 class={polite({ class: clsx(theme?.polite, styling?.polite) })} aria-live="polite">
             {currentMonth.getFullYear()}
           </h3>
           {@render yearNavButton(true)}
@@ -471,7 +468,7 @@
               type="button"
               color={monthColor}
               class={monthButton({
-                class: clsx(currentMonth.getMonth() === index ? monthBtnSelected : monthBtn, classes?.monthButton, theme?.monthButton)
+                class: clsx(theme?.monthButton, styling?.monthButton, currentMonth.getMonth() === index ? styling?.monthBtnSelected : styling?.monthBtn)
               })}
               onclick={(event: MouseEvent) => selectMonth(index, event)}
             >
@@ -480,11 +477,11 @@
           {/each}
         </div>
       {:else}
-        <div class={nav({ class: clsx(classes?.nav) })}>
+        <div class={nav({ class: clsx(theme?.nav, styling?.nav) })}>
           {@render navButton(false)}
           <Button
             type="button"
-            class={polite({ class: clsx("cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700", classes?.polite) })}
+            class={polite({ class: clsx("cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700", theme?.polite, styling?.polite) })}
             aria-live="polite"
             onclick={(event: MouseEvent) => toggleMonthSelector(event)}
           >
@@ -492,9 +489,9 @@
           </Button>
           {@render navButton(true)}
         </div>
-        <div class={grid({ class: clsx(theme?.grid, classes?.grid) })} role="grid">
+        <div class={grid({ class: clsx(theme?.grid, styling?.grid) })} role="grid">
           {#each weekdays as day (day)}
-            <div class={columnHeader({ class: clsx(theme?.columnHeader, classes?.columnHeader) })} role="columnheader">{day}</div>
+            <div class={columnHeader({ class: clsx(theme?.columnHeader, styling?.columnHeader) })} role="columnheader">{day}</div>
           {/each}
           {#each daysInMonth as day (day)}
             {@const current = day.getMonth() !== currentMonth.getMonth()}
@@ -507,7 +504,7 @@
                 today: isToday(day),
                 color: isInRange(day) ? color : undefined,
                 unavailable: !available,
-                class: clsx(theme?.dayButton, classes?.dayButton, !available && "cursor-not-allowed opacity-50")
+                class: clsx(theme?.dayButton, styling?.dayButton, !available && "cursor-not-allowed opacity-50")
               })}
               onclick={() => handleDaySelect(day)}
               onkeydown={handleCalendarKeydown}
@@ -524,15 +521,15 @@
       {/if}
 
       {#if showActionButtons && !showMonthSelector}
-        <div class={actionButtons({ class: clsx(theme?.actionButtons, classes?.actionButtons) })}>
+        <div class={actionButtons({ class: clsx(theme?.actionButtons, styling?.actionButtons) })}>
           <Button onclick={() => handleDaySelect(new Date())} {color} size="sm" disabled={!isDateAvailable(new Date())}>Today</Button>
-          <Button onclick={handleClear} color="red" size="sm">Clear</Button>
+          <Button onclick={handleClear} color="danger" size="sm">Clear</Button>
           <Button onclick={handleApply} {color} size="sm">Apply</Button>
         </div>
       {/if}
 
       {#if actionSlot}
-        <div class={clsx(classes?.actionSlot, theme?.actionSlot)}>
+        <div class={clsx(theme?.actionSlot, styling?.actionSlot)}>
           {@render actionSlot({
             selectedDate: range ? { from: rangeFrom, to: rangeTo } : value,
             handleClear,
@@ -568,8 +565,7 @@
 @prop placeholder = "Select date"
 @prop disabled = false
 @prop required = false
-@prop inputClass = ""
-@prop color = "primary"
+@prop color = "brand"
 @prop inline = false
 @prop autohide = true
 @prop showActionButtons = false
@@ -577,12 +573,9 @@
 @prop onselect
 @prop onclear
 @prop onapply
-@prop btnClass
 @prop inputmode = "none"
 @prop classes
 @prop monthColor = "alternative"
-@prop monthBtnSelected = "bg-primary-500 text-white"
-@prop monthBtn = "text-gray-700 dark:text-gray-300"
 @prop class: className
 @prop elementRef = $bindable()
 @prop actionSlot

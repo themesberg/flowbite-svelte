@@ -8,11 +8,10 @@
   import { drawer } from "./theme";
   import { setDrawerContext } from "$lib/context";
   import { tick } from "svelte";
-
+  // Use outsideclose for activateClickOutside, open for hidden
   let {
     children,
     open = $bindable(false),
-    hidden = $bindable(),
     modal,
     offset,
     width,
@@ -22,7 +21,6 @@
     transitionParams,
     transition = fly,
     outsideclose,
-    activateClickOutside,
     ...restProps
   }: DrawerProps = $props();
 
@@ -37,32 +35,6 @@
   };
 
   setDrawerContext(context);
-
-  // back compatibility
-  if (hidden !== undefined) console.warn("'hidden' property is deprecated. Please use the 'open' property to manage 'Drawer'.");
-
-  $effect(() => {
-    if (activateClickOutside !== undefined) console.warn("'activateClickOutside' property is deprecated. Please use the 'outsideclose' property to manage 'Drawer' behaviour.");
-  });
-
-  $effect(() => {
-    if (activateClickOutside !== undefined && outsideclose === undefined) {
-      outsideclose = activateClickOutside;
-    }
-  });
-  $effect(() => {
-    if (hidden !== undefined) {
-      const nextOpen = !hidden;
-      if (open !== nextOpen) open = nextOpen;
-    }
-  });
-  $effect(() => {
-    if (hidden !== undefined) {
-      const nextHidden = !open;
-      if (hidden !== nextHidden) hidden = nextHidden;
-    }
-  });
-  // end
 
   const theme = $derived(getTheme("drawer"));
 

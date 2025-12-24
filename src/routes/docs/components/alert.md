@@ -18,13 +18,9 @@ description: Show contextual information to your users using alert elements base
   ];
 </script>
 
-The alert component can be used to provide important information to your users such as success or error messages, warnings, or highlighted information that complements the normal flow of content on a page. Alerts are perfect for displaying feedback after form submissions, system notifications, or drawing attention to critical information.
-
-It also includes dismissable alerts which can be hidden by users by clicking on the close icon, allowing for a cleaner interface once the message has been acknowledged.
+The alert component provides contextual feedback messages for user actions. Use alerts for success messages, errors, warnings, and informational content.
 
 ## Set up
-
-Import Alert and set variables in the script tag.
 
 ```svelte example hideOutput
 <script lang="ts">
@@ -34,13 +30,13 @@ Import Alert and set variables in the script tag.
 
 ## Default alert
 
-Use the following examples of alert components to show messages as feedback to your users. Each color variant conveys different semantic meanings:
+Use semantic color variants to convey meaning:
 
-- **Info** (blue): General information or tips
-- **Danger** (red): Errors or critical warnings
-- **Success** (green): Successful operations or confirmations
-- **Warning** (yellow): Caution messages or important notices
-- **Dark** (gray): Neutral information or less critical messages
+- **brand**: General information or tips
+- **danger**: Errors or critical warnings  
+- **success**: Successful operations
+- **warning**: Caution messages
+- **dark**: Neutral information
 
 ```svelte example class="flex flex-col gap-4"
 {#include Default.svelte}
@@ -48,7 +44,7 @@ Use the following examples of alert components to show messages as feedback to y
 
 ## Alerts with icon
 
-You can also include a descriptive icon to complement the message inside the alert component. Icons help users quickly identify the type of message and improve visual scanning, especially useful in applications with multiple alerts.
+Include descriptive icons to improve visual scanning and quick identification.
 
 ```svelte example class="flex flex-col gap-4"
 {#include Icon.svelte}
@@ -56,7 +52,7 @@ You can also include a descriptive icon to complement the message inside the ale
 
 ## Bordered alerts
 
-Use this example to add a border accent to the alert component instead of just a plain background. Bordered alerts provide a more subtle appearance while still maintaining clear visual distinction, making them ideal for less intrusive notifications.
+Add border accents for a more subtle appearance while maintaining visual distinction.
 
 ```svelte example class="flex flex-col gap-4"
 {#include Bordered.svelte}
@@ -64,12 +60,7 @@ Use this example to add a border accent to the alert component instead of just a
 
 ## Alerts with list
 
-Use this example to show a list and a description inside an alert component. This is particularly useful for displaying:
-
-- Multiple error messages from form validation
-- Step-by-step instructions or requirements
-- Lists of affected items or changes
-- Grouped information that requires user attention
+Display lists for multiple error messages, instructions, or grouped information.
 
 ```svelte example class="flex flex-col gap-4"
 {#include AlertWithList.svelte}
@@ -77,11 +68,7 @@ Use this example to show a list and a description inside an alert component. Thi
 
 ## Dismissable alerts
 
-Use the following alert elements that are also dismissable. Dismissable alerts are useful for temporary messages that users can acknowledge and remove from view, such as cookie notices, promotional banners, or one-time tips.
-
-You can attach the `transition` and `params` prop to control the dismissal animation. By default the `fade` Svelte transition function is used. You can customize the animation with different transition types (slide, blur, fly) and parameters (duration, easing).
-
-You can use the `closeIcon` snippet to override the default close button with your own custom icon or element. See the last example below.
+Enable dismissal for temporary messages like notices or one-time tips. Customize the animation using the `transition` and `params` props. Use the `closeIcon` snippet to override the default close button.
 
 ```svelte example class="flex flex-col gap-4"
 {#include Dismissable.svelte}
@@ -89,7 +76,7 @@ You can use the `closeIcon` snippet to override the default close button with yo
 
 ## Border accent
 
-Use the following alert components with a border accent as an alternative style. The left border accent provides a clean, modern look that draws attention without being overwhelming, perfect for sidebars or embedded notifications.
+Use left border accents for a clean, modern look ideal for sidebars or embedded notifications.
 
 ```svelte example class="flex flex-col gap-4"
 {#include BorderAccent.svelte}
@@ -97,12 +84,7 @@ Use the following alert components with a border accent as an alternative style.
 
 ## Additional content
 
-The following alert components can be used if you wish to disclose more information inside the element. This pattern is useful for:
-
-- Expandable help text or documentation
-- Detailed error explanations with suggested solutions
-- Rich content with links and formatting
-- Multi-paragraph announcements or updates
+Include expandable content for help text, detailed explanations, or rich content with links.
 
 ```svelte example class="flex flex-col gap-4"
 {#include AdditionalContent.svelte}
@@ -110,20 +92,15 @@ The following alert components can be used if you wish to disclose more informat
 
 ## Custom color
 
-Use the `class` prop to add your custom color classes and create alerts that match your brand or design system. You can combine Tailwind CSS background, border, and text color utilities to achieve any desired appearance.
+Use the `class` prop with `color="none"` to create fully custom-styled alerts. The `closeColor` prop allows independent control of the close button styling, letting you mix custom alert colors with predefined close button colors or use `closeColor="none"` for complete customization.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4"
 {#include CustomColor.svelte}
 ```
 
 ## Events
 
-Use the `onclick` event with the `dismissable` prop to handle user interactions when the alert is dismissed. This allows you to:
-
-- Track which alerts users are dismissing
-- Save dismissal state to prevent showing the same alert again
-- Trigger other actions when an alert is closed
-- Log analytics events
+Handle dismissal interactions with the `onclick` event to track dismissals, save state, or trigger actions.
 
 ```svelte example class="flex flex-col gap-4"
 {#include Event.svelte}
@@ -131,30 +108,16 @@ Use the `onclick` event with the `dismissable` prop to handle user interactions 
 
 ## Accessibility
 
-The Alert component follows accessibility best practices:
-
-- **ARIA Roles**: Alerts use appropriate ARIA roles to announce important messages to screen readers
-- **Color Independence**: Never rely on color alone to convey meaning; always include text or icons
-- **Keyboard Navigation**: Dismissable alerts can be closed using keyboard interactions
-- **Focus Management**: When dismissing alerts, focus is properly managed to maintain usability
-
-## Best Practices
-
-When using alerts, consider these guidelines:
-
-- **Be Concise**: Keep alert messages brief and actionable
-- **Use Appropriately**: Don't overuse alerts as they can overwhelm users
-- **Provide Context**: Include enough information for users to understand and act
-- **Allow Dismissal**: For non-critical alerts, enable dismissal to reduce clutter
-- **Position Wisely**: Place alerts where they're most relevant to the action or content
+- Uses ARIA roles to announce messages to screen readers
+- Never relies on color alone—always includes text or icons
+- Dismissable alerts support keyboard interactions
+- Proper focus management when dismissing
 
 ## See also
 
 <Seealso links={relatedLinks} />
 
 ## Component data
-
-The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 <CompoAttributesViewer {dirName}/>
 

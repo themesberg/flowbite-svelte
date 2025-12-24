@@ -4,7 +4,7 @@
 
 <Toast align={false} color={undefined}>
   {#snippet icon()}
-    <Avatar src="/images/profile-picture-1.webp" class="h-8" />
+    <Avatar src="/images/people/profile-picture-1.jpg" class="h-8" />
   {/snippet}
   <div class="ms-3 text-sm font-normal">
     <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>

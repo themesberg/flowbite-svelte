@@ -4,9 +4,8 @@
   import clsx from "clsx";
   import type { FloatingLabelInputProps } from "$lib";
   import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
-  import { untrack } from "svelte";
 
   let {
     children,
@@ -15,35 +14,26 @@
     elementRef = $bindable(),
     variant = "standard",
     size = "default",
-    color = "default",
+    validation = "none",
+    disabled = false,
+    withIcon = false,
     class: className,
     classes,
-    inputClass,
-    labelClass,
     clearable,
-    clearableSvgClass,
     clearableColor = "none",
-    clearableClass,
     clearableOnClick,
     data = [],
     maxSuggestions = 5,
     onSelect,
-    comboClass,
     placeholder,
     ...restProps
   }: FloatingLabelInputProps = $props();
 
-  warnThemeDeprecation(
-    "FloatingLabelInput",
-    untrack(() => ({ inputClass, labelClass, clearableSvgClass, clearableClass, comboClass })),
-    { inputClass: "input", labelClass: "label", clearableSvgClass: "svg", clearableClass: "close", comboClass: "combo" }
-  );
-
-  const styling = $derived(classes ?? { input: inputClass, label: labelClass, svg: clearableSvgClass, close: clearableClass, combo: comboClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("floatingLabelInput"));
 
-  const { base, input, label, close, combo } = $derived(floatingLabelInput({ variant, size, color }));
+  const { base, input, label, close, combo } = $derived(floatingLabelInput({ variant, size, validation, disabled, withIcon }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -176,25 +166,26 @@
 <div class={base({ class: clsx(isCombobox ? "relative" : "", theme?.base, className) })}>
   <input
     {id}
+    {disabled}
     placeholder=" "
     bind:value
     bind:this={elementRef}
     {...restProps}
-    class={input({ class: clsx(theme?.input, styling.input) })}
+    class={input({ class: clsx(theme?.input, styling?.input) })}
     oninput={handleInput}
     onfocus={handleFocus}
     onblur={handleBlur}
     onkeydown={handleKeydown}
   />
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
+    <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling?.svg)} />
   {/if}
-  <label for={id} class={label({ class: clsx(theme?.label, styling.label) })}>
+  <label for={id} class={label({ class: clsx(theme?.label, styling?.label) })}>
     {@render children()}
   </label>
 
   {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-    <div class={combo({ class: clsx(theme?.combo, styling.combo) })}>
+    <div class={combo({ class: clsx(theme?.combo, styling?.combo) })}>
       {#each filteredSuggestions as item, i (item)}
         <button
           type="button"
@@ -221,20 +212,17 @@
 @prop elementRef = $bindable()
 @prop variant = "standard"
 @prop size = "default"
-@prop color = "default"
+@prop validation = "none"
+@prop disabled = false
+@prop withIcon = false
 @prop class: className
 @prop classes
-@prop inputClass
-@prop labelClass
 @prop clearable
-@prop clearableSvgClass
 @prop clearableColor = "none"
-@prop clearableClass
 @prop clearableOnClick
 @prop data = []
 @prop maxSuggestions = 5
 @prop onSelect
-@prop comboClass
 @prop placeholder
 @prop ...restProps
 -->

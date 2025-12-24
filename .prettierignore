@@ -6,6 +6,7 @@ samples/
 src/routes/md/
 src/routes/testdir
 *.html
-src/routes/utils/highlight
+**/utils/highlight/**
 /.vercel
 *.md
+

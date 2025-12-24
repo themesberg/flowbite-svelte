@@ -5,9 +5,9 @@
   import { onMount } from "svelte";
   import Discord from "../utils/icons/Discord.svelte";
   import GitHub from "../utils/icons/GitHub.svelte";
-  import YouTube from "../utils/icons/YouTube.svelte";
   import ToolbarLink from "../utils/ToolbarLink.svelte";
   import AlgoliaSearch from "../utils/AlgoliaSearch.svelte";
+  import ThemeSelector from "../utils/ThemeSelector.svelte";
   import Badge from "$lib/badge/Badge.svelte";
 
   let { children } = $props();
@@ -44,7 +44,7 @@
 </script>
 
 <header class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900">
-  <Navbar color="default" fluid class="mx-auto flex w-full items-center justify-between px-4 py-1.5">
+  <Navbar color="default" fluid class="mx-auto flex w-full items-center justify-between px-4 py-0">
     <NavBrand href="/" class="pl-8 lg:pl-0">
       <img src={logo} class="me-3 h-8" alt="Flowbite Svelte Logo" />
       <span class="hidden self-center text-2xl font-semibold whitespace-nowrap text-gray-900 lg:block dark:text-white">Flowbite Svelte</span>
@@ -58,7 +58,11 @@
       </div>
     {/if}
 
-    <NavUl {activeUrl} class="order-1 ml-auto w-full lg:order-none lg:block lg:w-auto" classes={{ ul: "flex flex-col lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4" }}>
+    <NavUl
+      {activeUrl}
+      class="order-1 ml-auto w-full lg:order-none lg:block lg:w-auto"
+      classes={{ ul: "flex flex-col lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-2 md:gap-4" }}
+    >
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/pages/introduction">Docs</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/components/accordion">Components</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/blocks">Blocks</NavLi>
@@ -74,11 +78,9 @@
       <ToolbarLink class="hidden hover:text-gray-900 xl:inline-block dark:hover:text-white" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
         <Discord />
       </ToolbarLink>
-      <ToolbarLink class="hidden hover:text-gray-900 xl:inline-block dark:hover:text-white" name="Subscribe to YouTube channel" href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
-        <YouTube />
-      </ToolbarLink>
-      <DarkMode size="lg" class="inline-block hover:text-gray-900 dark:hover:text-white" />
+      <DarkMode size="lg" class="inline-block hover:text-gray-900 focus:ring-gray-100 dark:hover:text-white dark:focus:ring-gray-700" />
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
+      <ThemeSelector />
     </div>
     <a href="https://www.npmjs.com/package/flowbite-svelte" class="order-4 hidden xl:block">
       <Badge large class="hover:bg-primary-600 dark:hover:bg-primary-800 ms-2 hover:text-white xl:ms-6 dark:hover:text-white">

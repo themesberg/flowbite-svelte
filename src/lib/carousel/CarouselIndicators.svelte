@@ -6,8 +6,9 @@
   import { getCarouselContext } from "$lib/context";
   import { carouselIndicators } from "./theme";
 
-  let { children, activeClass, inactiveClass, position = "bottom", class: className, ...restProps }: IndicatorsProps = $props();
+  let { children, position = "bottom", class: className, classes, ...restProps }: IndicatorsProps = $props();
 
+  const styling = $derived(classes);
   const theme = $derived(getTheme("carouselIndicators"));
 
   const _state = getCarouselContext();
@@ -26,7 +27,7 @@
         {#if children}
           {@render children({ selected, index: idx })}
         {:else}
-          <Indicator class={indicator({ selected, class: clsx(selected ? activeClass : inactiveClass, theme?.indicator) })} />
+          <Indicator class={indicator({ selected, class: clsx(theme?.indicator, selected ? styling?.active : styling?.inactive) })} />
         {/if}
       </button>
     {/each}

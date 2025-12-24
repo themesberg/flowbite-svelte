@@ -6,17 +6,17 @@
 <Button class="relative" size="sm">
   <EnvelopeSolid class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
-  <Indicator color="blue" border size="xl" placement="top-right" class="text-xs font-bold">18</Indicator>
+  <Indicator border size="xl" placement="top-right" class="bg-blue-500 text-xs font-bold">18</Indicator>
 </Button>
 
 <Button class="relative" size="sm">
   <EnvelopeSolid class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
-  <Indicator color="red" border size="xl" placement="top-right" class="text-xs font-bold">20</Indicator>
+  <Indicator color="danger" border size="xl" placement="top-right" class="text-xs font-bold">20</Indicator>
 </Button>
 
 <Button class="relative" size="sm">
   <EnvelopeSolid class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
-  <Indicator color="gray" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
+  <Indicator color="dark" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
 </Button>

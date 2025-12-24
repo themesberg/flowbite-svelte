@@ -1,10 +1,23 @@
 <script lang="ts">
-  import { Alert } from "flowbite-svelte";
+  import { Alert, Button } from "flowbite-svelte";
   let alertStatus = $state(true);
+
   const closeAlert = () => {
-    alert("Clicked closeAlert.");
-    alertStatus = !alertStatus;
+    alertStatus = false;
+  };
+
+  const showAlert = () => {
+    alertStatus = true;
   };
 </script>
 
-<Alert dismissable onclick={closeAlert} bind:alertStatus>Close me</Alert>
+{#if alertStatus}
+  <Alert dismissable onclick={closeAlert}>
+    <span class="font-medium">Info alert!</span>
+    You can close this alert by clicking the close button.
+  </Alert>
+{:else}
+  <div class="mt-4">
+    <Button onclick={showAlert}>Show Alert Again</Button>
+  </div>
+{/if}

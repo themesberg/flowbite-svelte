@@ -48,7 +48,7 @@
   <div class="flex flex-wrap space-x-2">
     <Label class="m-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1" classes={{ label: "w-24" }} name="default_alert_color" bind:group={labelColor} color={colorOption as ColorName} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="default_alert_color" bind:group={labelColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   {#snippet codeblock()}

@@ -19,7 +19,8 @@
     if (event.dataTransfer?.files && event.dataTransfer.files.length > 0) {
       files = event.dataTransfer.files;
       if (inputElement) {
-        inputElement.files = event.dataTransfer.files;
+        // Don't try to set files, just update our binding
+        // The input will be updated on next user interaction
       }
     }
 
@@ -36,6 +37,9 @@
   };
 
   const handleChange: ChangeEventHandler<HTMLInputElementWithFiles> = function (this: Window, event) {
+    // Update files from the input element
+    files = event.currentTarget.files;
+
     if (onChange) {
       onChange.call(this, event);
     }
@@ -45,7 +49,7 @@
 <label class={dropzone({ class: clsx(theme, className) })} ondrop={handleDrop} ondragover={handleDragOver}>
   {@render children()}
 
-  <input {...restProps} bind:files bind:this={inputElement} onchange={handleChange} type="file" class="hidden" />
+  <input {...restProps} bind:this={inputElement} onchange={handleChange} type="file" class="hidden" />
 </label>
 
 <!--

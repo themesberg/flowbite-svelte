@@ -18,7 +18,7 @@
   // for interactive code builder
   let alertMessage = $state("My Alert!");
   const colors = Object.keys(fsalert.variants.color);
-  let color: AlertProps["color"] = $state("primary");
+  let color: AlertProps["color"] = $state("brand");
   let iconSlot = $state(false);
   const changeIconSlot = () => {
     iconSlot = !iconSlot;
@@ -74,7 +74,7 @@
       // const importScript = `  // script tag \n  import { Alert } from "flowbite-svelte";\n  // script tag \n`;
 
       let props = [];
-      if (color !== "primary") props.push(` color="${color}"`);
+      if (color !== "brand") props.push(` color="${color}"`);
       if (rounded) props.push(" rounded");
       if (border) props.push(" border");
       if (dismissable) props.push(" dismissable");
@@ -153,7 +153,7 @@
   <div class="mb-4 flex flex-wrap space-x-4">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1" classes={{ label: "w-24" }} name="alert_reactive" bind:group={color} color={colorOption as AlertProps["color"]} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="alert_reactive" bind:group={color} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-4">

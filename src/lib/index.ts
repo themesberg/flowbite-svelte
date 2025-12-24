@@ -1,4 +1,3 @@
-// utils/helpers
 export * from "./uiHelpers.svelte.js";
 // utils
 export * from "./utils";

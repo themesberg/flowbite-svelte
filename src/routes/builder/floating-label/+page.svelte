@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { FloatingLabelInput, Helper, Label, Radio, Toggle, floatingLabelInput, Button, type FloatingLabelInputProps, type HelperProps } from "$lib";
-  import type { RadioColorType } from "../types";
+  import { FloatingLabelInput, Helper, Label, Radio, Toggle, floatingLabelInput, Button, type FloatingLabelInputProps } from "$lib";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
@@ -16,9 +15,9 @@
   const inputStyles = ["standard", "filled", "outlined"];
   let inputStyle: FloatingLabelInputProps["variant"] = $state("standard");
   let floatingSize: FloatingLabelInputProps["size"] = $state("default");
-  const colors = Object.keys(floatingLabelInput.variants.color);
-  let floatingColor: FloatingLabelInputProps["color"] = $state("default");
-  let helperColor: FloatingLabelInputProps["color"] = $state("default");
+  const validations = Object.keys(floatingLabelInput.variants.validation);
+  let floatingValidation = $state<FloatingLabelInputProps["validation"]>("none");
+  let helperValidation = $state<"none" | "success" | "error">("none");
   let disabled = $state(false);
   const changeDisabled = () => {
     disabled = !disabled;
@@ -26,28 +25,29 @@
   let helperSlot = $state(false);
   const changeHelperSlot = () => {
     helperSlot = !helperSlot;
-    helperColor = "default";
+    helperValidation = "none";
   };
 
   // code generator
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (floatingColor !== "default") props.push(` color="${floatingColor}"`);
+      if (floatingValidation !== "none") props.push(` validation="${floatingValidation}"`);
       if (disabled) props.push(" disabled");
-      if (inputStyle !== "standard") props.push(` inputStyle="${inputStyle}"`);
+      if (inputStyle !== "standard") props.push(` variant="${inputStyle}"`);
       if (floatingSize !== "default") props.push(` size="${floatingSize}"`);
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
       let helperCode = "";
       if (helperSlot) {
+        const helperClass = helperValidation === "success" ? "text-fg-success-strong" : helperValidation === "error" ? "text-fg-danger-strong" : "";
         helperCode = `
-<Helper class="pt-2" color="${helperColor}">
+<Helper class="pt-2${helperClass ? ` ${helperClass}` : ""}">
   Helper text
 </Helper>`;
       }
-      return `<FloatingLabelInput ${propsString}>
+      return `<FloatingLabelInput${propsString}>
   Floating label
 </FloatingLabelInput>${helperCode}`;
     })()
@@ -59,6 +59,13 @@
   const handleBuilderExpandClick = () => {
     builderExpand = !builderExpand;
   };
+
+  // Get helper class based on validation state
+  const getHelperClass = (validation: string) => {
+    if (validation === "success") return "text-fg-success-strong";
+    if (validation === "error") return "text-fg-danger-strong";
+    return "";
+  };
 </script>
 
 <MetaTag {breadcrumb_title} {description} {title} {dir} />
@@ -67,9 +74,9 @@
 
 <CodeWrapper>
   <div class="mb-4 md:h-20">
-    <FloatingLabelInput variant={inputStyle} {disabled} size={floatingSize} color={floatingColor} id="floating_filled" type="text">Floating {inputStyle}</FloatingLabelInput>
+    <FloatingLabelInput variant={inputStyle} {disabled} size={floatingSize} validation={floatingValidation} id="floating_filled" type="text">Floating {inputStyle}</FloatingLabelInput>
     {#if helperSlot}
-      <Helper class="pt-2" color={helperColor as HelperProps["color"]}>
+      <Helper class="pt-2 {getHelperClass(helperValidation)}">
         Remember, contributions to this topic should follow our <a href="/">Community Guidelines</a>
         .
       </Helper>
@@ -82,25 +89,24 @@
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Label class="mb-4 w-full font-bold">Color</Label>
-    {#each colors as colorOption}
-      <Radio class="my-1" classes={{ label: "w-24" }} name="floating_color" bind:group={floatingColor} color={colorOption as RadioColorType} value={colorOption}>{colorOption}</Radio>
+    <Label class="mb-4 w-full font-bold">Validation</Label>
+    {#each validations as validationOption}
+      <Radio class="my-1" classes={{ label: "w-24" }} name="floating_validation" bind:group={floatingValidation} value={validationOption}>{validationOption}</Radio>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
     <Button class="mb-4 w-48" color="secondary" onclick={changeHelperSlot}>{helperSlot ? "Remove helper slot" : "Add helper slot"}</Button>
-    <Label class="mb-4 w-full font-bold">Helper Color</Label>
-    {#each colors as colorOption}
+    <Label class="mb-4 w-full font-bold">Helper Validation</Label>
+    {#each validations as validationOption}
       <Radio
         class="my-1 {helperSlot ? '' : 'cursor-not-allowed opacity-30'}"
         classes={{ label: "w-24" }}
-        disabled={helperSlot ? false : true}
-        name="helper_color"
-        bind:group={helperColor}
-        color={colorOption as RadioColorType}
-        value={colorOption}
+        disabled={!helperSlot}
+        name="helper_validation"
+        bind:group={helperValidation}
+        value={validationOption}
       >
-        {colorOption}
+        {validationOption}
       </Radio>
     {/each}
   </div>

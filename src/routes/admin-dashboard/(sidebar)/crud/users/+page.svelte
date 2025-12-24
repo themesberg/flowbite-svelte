@@ -98,7 +98,7 @@
           <TableBodyCell class="p-4">{user.country}</TableBodyCell>
           <TableBodyCell class="p-4 font-normal">
             <div class="flex items-center gap-2">
-              <Indicator color={user.status === "Active" ? "green" : "red"} />
+              <Indicator color={user.status === "Active" ? "success" : "danger"} />
               {user.status}
             </div>
           </TableBodyCell>

@@ -10,9 +10,9 @@
     <div class="flex items-center gap-8">
       <div class="flex flex-col justify-start gap-10">
         <div class="flex flex-col gap-4 text-left lg:gap-6">
-          <h1 class="max-w-2xl text-4xl leading-none font-extrabold text-gray-900 lg:text-6xl dark:text-white">
-            <span class="block1 xl:inline">Speed up your web development with</span>
-            <span class="block1 text-primary-700 dark:text-primary-700 xl:inline">Flowbite Svelte</span>
+          <h1 class="text-heading max-w-2xl text-4xl font-extrabold lg:text-6xl dark:text-white">
+            <span class="block">Speed up your web development with</span>
+            <span class="text-primary-700 dark:text-primary-700 block">Flowbite Svelte</span>
           </h1>
           <p class="text-lg leading-normal text-gray-500 lg:text-xl dark:text-gray-400">
             Flowbite Svelte is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.

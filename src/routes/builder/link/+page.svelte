@@ -1,6 +1,5 @@
 <script lang="ts">
   import { A, Button, anchor, Label, Radio, Input, CloseButton, uiHelpers, type AnchorProps } from "$lib";
-  import type { AnchorColorType } from "../types";
   import { ArrowRightOutline } from "flowbite-svelte-icons";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
   import CodeWrapper from "../utils/CodeWrapper.svelte";
@@ -79,7 +78,7 @@
   <div class="mb-4 flex flex-wrap space-x-2">
     <Label class="mb-4 w-full font-bold">Color</Label>
     {#each colors as colorOption}
-      <Radio class="my-1" classes={{ label: "w-24" }} name="anchor_color" bind:group={anchorColor} color={colorOption as AnchorColorType} value={colorOption}>{colorOption}</Radio>
+      <Radio class="my-1" classes={{ label: "w-24" }} name="anchor_color" bind:group={anchorColor} value={colorOption}>{colorOption}</Radio>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
