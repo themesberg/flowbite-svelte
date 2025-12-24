@@ -101,7 +101,7 @@
       <Radio
         class="my-1 {helperSlot ? '' : 'cursor-not-allowed opacity-30'}"
         classes={{ label: "w-24" }}
-        disabled={helperSlot ? false : true}
+        disabled={!helperSlot}
         name="helper_validation"
         bind:group={helperValidation}
         value={validationOption}
