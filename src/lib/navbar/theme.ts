@@ -7,9 +7,13 @@ export type NavbarBreakpoint = "sm" | "md" | "lg" | "xl";
 // Variants
 export type NavbarUlVariants = VariantProps<typeof navbarUl> & Classes<typeof navbarUl>;
 export type NavbarHamburgerVariants = VariantProps<typeof navbarHamburger> & Classes<typeof navbarHamburger>;
+export type NavbarVariants = VariantProps<typeof navbar> & Classes<typeof navbar>;
 
 export const navbar = tv({
-  base: "relative w-full px-2 py-2.5 sm:px-4"
+  slots: {
+    base: "relative w-full px-2 py-2.5 sm:px-4",
+    container: ""
+  }
 });
 
 export const navbarBrand = tv({

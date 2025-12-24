@@ -1,28 +1,33 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import type { Classes } from "$lib/theme/themeUtils";
 
-export type ListgroupVariants = VariantProps<typeof listGroup>;
-export type ListgroupItemVariants = VariantProps<typeof listGroupItem>;
+export type ListgroupVariants = VariantProps<typeof listGroup> & Classes<typeof listGroup>;
+export type ListgroupItemVariants = VariantProps<typeof listGroupItem> & Classes<typeof listGroupItem>;
 
 export const listGroup = tv({
-  base: "flex bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 divide-gray-200 dark:divide-gray-600",
+  slots: {
+    base: "flex bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 divide-gray-200 dark:divide-gray-600",
+    item: "",
+    icon: ""
+  },
   variants: {
     rounded: {
-      true: "rounded-lg",
-      false: ""
+      true: { base: "rounded-lg" },
+      false: { base: "" }
     },
     border: {
-      true: "border border-gray-200 dark:border-gray-700",
-      false: ""
+      true: { base: "border border-gray-200 dark:border-gray-700" },
+      false: { base: "" }
     },
     horizontal: {
-      true: "flex-row divide-x",
-      false: "flex-col divide-y"
+      true: { base: "flex-row divide-x" },
+      false: { base: "flex-col divide-y" }
     }
   },
   compoundVariants: [
     {
       border: true,
-      class: "divide-gray-200 dark:divide-gray-700"
+      class: { base: "divide-gray-200 dark:divide-gray-700" }
     }
   ],
   defaultVariants: {
@@ -33,7 +38,10 @@ export const listGroup = tv({
 });
 
 export const listGroupItem = tv({
-  base: "py-2 px-4 w-full text-sm font-medium list-none flex items-center text-left gap-2",
+  slots: {
+    base: "py-2 px-4 w-full text-sm font-medium list-none flex items-center text-left gap-2",
+    icon: "me-2.5 h-15 w-15"
+  },
   variants: {
     state: {
       normal: "",

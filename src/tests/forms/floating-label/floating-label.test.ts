@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/svelte";
+import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
 import { userEvent } from "@testing-library/user-event";
 
@@ -226,13 +226,20 @@ describe("FloatingLabelInput - Clearable", () => {
     expect(clearButton).not.toBeInTheDocument();
   });
 
-  test("shows clear button when input has value", () => {
+  test("shows clear button when input has value", async () => {
     render(FloatingLabelClearableTest);
     const input = screen.getByLabelText("Clearable Input") as HTMLInputElement;
 
     expect(input.value).toBe("Clearable text");
-    const clearButton = input.parentElement?.querySelector('[aria-label="Clear search value"]');
-    expect(clearButton).toBeInTheDocument();
+    
+    // Wait for Svelte reactivity to update the DOM
+    await waitFor(
+      () => {
+        const clearButton = input.parentElement?.querySelector('[aria-label="Clear search value"]');
+        expect(clearButton).toBeInTheDocument();
+      },
+      { timeout: 3000 }
+    );
   });
 
   test("clears value when clear button is clicked", async () => {
@@ -242,13 +249,25 @@ describe("FloatingLabelInput - Clearable", () => {
 
     expect(input.value).toBe("Clearable text");
 
+    // Wait for clear button to appear
+    await waitFor(
+      () => {
+        const clearButton = input.parentElement?.querySelector('[aria-label="Clear search value"]');
+        expect(clearButton).toBeInTheDocument();
+      },
+      { timeout: 3000 }
+    );
+
     const clearButton = input.parentElement?.querySelector('[aria-label="Clear search value"]') as HTMLElement;
     await user.click(clearButton);
 
-    // Wait for the update
-    await new Promise((resolve) => setTimeout(resolve, 150));
-
-    expect(input.value).toBe("");
+    // Wait for the value to be cleared
+    await waitFor(
+      () => {
+        expect(input.value).toBe("");
+      },
+      { timeout: 3000 }
+    );
   });
 });
 

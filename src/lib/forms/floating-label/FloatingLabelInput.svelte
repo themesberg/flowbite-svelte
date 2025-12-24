@@ -35,7 +35,10 @@
 
   const { base, input, label, close, combo } = $derived(floatingLabelInput({ variant, size, validation, disabled, withIcon }));
 
-  const clearAll = () => {
+  // Track if clear button should be shown
+  const showClearButton = $derived(clearable && value !== undefined && value !== "");
+
+  const clearAll = (event?: MouseEvent) => {
     if (elementRef) {
       elementRef.value = "";
       value = "";
@@ -177,7 +180,7 @@
     onblur={handleBlur}
     onkeydown={handleKeydown}
   />
-  {#if value !== undefined && value !== "" && clearable}
+  {#if showClearButton}
     <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling?.svg)} />
   {/if}
   <label for={id} class={label({ class: clsx(theme?.label, styling?.label) })}>

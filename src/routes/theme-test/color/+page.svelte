@@ -1,6 +1,6 @@
 <script lang="ts">
   import ThemeSelector from "../../utils/ThemeSelector.svelte";
-  
+
   const colors = [
     "brand",
     "danger",

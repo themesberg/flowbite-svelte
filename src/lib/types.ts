@@ -45,7 +45,7 @@ import type { IndicatorVariants } from "$lib/indicator/theme";
 import type { ListgroupItemVariants, ListgroupVariants } from "$lib/list-group/theme";
 import type { MegaMenuVariants } from "$lib/mega-menu/theme";
 import type { ModalVariants } from "$lib/modal/theme";
-import type { NavbarUlVariants, NavbarHamburgerVariants } from "$lib/navbar/theme";
+import type { NavbarVariants, NavbarUlVariants, NavbarHamburgerVariants } from "$lib/navbar/theme";
 import type { PaginationNavVariants } from "$lib/pagination/theme";
 import type { PopoverVariants } from "$lib/popover/theme";
 import type { SidebarVariants, SidebarCtaVariants, SidebarBrandVariants, SidebarDropdownWrapperVariants, SidebarButtonVariants } from "$lib/sidebar/theme";
@@ -1029,7 +1029,6 @@ export interface GalleryProps extends GalleryVariants, HTMLAttributes<HTMLDivEle
   children?: Snippet;
   figure?: Snippet<[item: ImgType]>;
   items?: HTMLImgAttributes[];
-  imgClass?: ClassValue;
   height?: string;
   rowHeight?: number;
   columns?: number;
@@ -1071,10 +1070,6 @@ export interface ListgroupProps extends ListgroupVariants, Omit<HTMLAttributes<H
   items?: (ListGroupItemType | string)[];
   active?: boolean;
   onclick?: (event?: MouseEvent) => void;
-  itemClass?: ClassValue;
-  aClasss?: ClassValue;
-  btnClass?: ClassValue;
-  iconClass?: ClassValue;
 }
 
 export type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> &
@@ -1082,7 +1077,6 @@ export type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> &
     current?: boolean;
     disabled?: boolean;
     Icon?: Component;
-    iconClass?: ClassValue;
     name?: string;
     children?: Snippet;
   };
@@ -1093,8 +1087,6 @@ export interface MegaMenuProps extends MegaMenuVariants, Omit<PopperProps, "chil
   extra?: Snippet;
   items?: LinkType[];
   full?: boolean;
-  ulClass?: ClassValue;
-  extraClass?: ClassValue;
   isOpen?: boolean;
 }
 
@@ -1102,10 +1094,6 @@ export interface MegaMenuProps extends MegaMenuVariants, Omit<PopperProps, "chil
 export interface ModalProps extends ModalVariants, Omit<DialogProps, "classes"> {
   header?: Snippet;
   footer?: Snippet;
-  headerClass?: ClassValue;
-  bodyClass?: ClassValue;
-  footerClass?: ClassValue;
-  closeBtnClass?: ClassValue;
   fullscreen?: boolean;
 }
 
@@ -1126,10 +1114,9 @@ export type NavbarState = {
 
 export type NavbarBreakpoint = "sm" | "md" | "lg" | "xl";
 
-export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+export interface NavbarProps extends NavbarVariants, Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   children: Snippet<[{ hidden: boolean; toggle: () => void; NavContainer: Component }]>;
   fluid?: boolean;
-  navContainerClass?: ClassValue;
   closeOnClickOutside?: boolean;
   breakpoint?: NavbarBreakpoint;
 }
@@ -1143,20 +1130,16 @@ export interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
 export type NavHamburgerProps = ToolbarButtonProps &
   NavbarHamburgerVariants & {
     href?: undefined;
-    menuClass?: ClassValue;
   };
 
 export interface NavUlProps extends NavbarUlVariants, Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   activeUrl?: string;
-  ulClass?: ClassValue;
   hidden?: boolean;
   // Legacy support
   slideParams?: SlideParams;
   // New transition props
   transition?: typeof slide | typeof fly | typeof fade | typeof scale;
   transitionParams?: SlideParams | FlyParams | FadeParams | ScaleParams;
-  activeClass?: ClassValue;
-  nonActiveClass?: ClassValue;
   respectMotionPreference?: boolean;
   class?: ClassValue;
 }

@@ -5,19 +5,12 @@
   import { navbarHamburger } from "./theme";
   import type { NavHamburgerProps } from "$lib/types";
   import type { MouseEventHandler } from "svelte/elements";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
-  import { untrack } from "svelte";
 
-  let { children, onclick, menuClass, class: className, classes, name = "Open main menu", ...restProps }: NavHamburgerProps = $props();
+  let { children, onclick, class: className, classes, name = "Open main menu", ...restProps }: NavHamburgerProps = $props();
 
-  warnThemeDeprecation(
-    "NavHamburger",
-    untrack(() => ({ menuClass })),
-    { menuClass: "menu" }
-  );
-
-  const styling = $derived(classes ?? { menu: menuClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("navbarHamburger"));
   const navState = getNavbarStateContext();
@@ -31,7 +24,7 @@
 </script>
 
 <ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-  <Menu class={menu({ class: clsx(theme?.menu, styling.menu) })} />
+  <Menu class={menu({ class: clsx(theme?.menu, styling?.menu) })} />
 </ToolbarButton>
 
 <!--
@@ -42,7 +35,6 @@
 ## Props
 @prop children
 @prop onclick
-@prop menuClass
 @prop class: className
 @prop classes
 @prop name = "Open main menu"

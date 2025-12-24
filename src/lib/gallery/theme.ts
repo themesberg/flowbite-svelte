@@ -6,7 +6,7 @@ export type GalleryVariants = VariantProps<typeof gallery> & Classes<typeof gall
 
 export const gallery = tv({
   slots: {
-    image: "h-auto max-w-full rounded-lg",
+    image: "h-auto max-w-full rounded-base",
     div: "grid"
   }
 });
