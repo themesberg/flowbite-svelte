@@ -74,14 +74,14 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 #### Types
 
-[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L536)
+[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L530)
 
 #### Props
 
 - class: className
 - lightIcon
 - darkIcon
-- size: "md"
+- size: "sm"
 - ariaLabel: "Dark mode"
 
 

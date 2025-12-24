@@ -116,11 +116,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L676)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L635)
 ## Props
 @prop children
 @prop open = $bindable(false)
-@prop hidden = $bindable()
 @prop modal
 @prop offset
 @prop width
@@ -130,6 +129,5 @@
 @prop transitionParams
 @prop transition = fly
 @prop outsideclose
-@prop activateClickOutside
 @prop ...restProps
 -->

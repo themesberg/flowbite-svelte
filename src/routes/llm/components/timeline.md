@@ -386,14 +386,14 @@ This component can be used to show the timeline of a user’s activity history i
         'Bonnie moved <a href="/" class="font-semibold text-primary-600 dark:text-primary-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
       date: "just now",
       alt: "image alt here",
-      src: "/images/profile-picture-2.webp"
+      src: "/images/people/profile-picture-2.jpg"
     },
     {
       id: "activity-2",
       title: "We don’t serve their kind here! What? Your droids. ",
       date: "2 hours ago",
       alt: "image alt here",
-      src: "/images/profile-picture-2.webp",
+      src: "/images/people/profile-picture-2.jpg",
       text: "The approach will not be easy. You are required to maneuver straight down this trench and skim the surface to this point. The target area is only two meters wide. "
     },
     {
@@ -401,7 +401,7 @@ This component can be used to show the timeline of a user’s activity history i
       title: "They’ll have to wait outside. We don’t want them here. ",
       date: "1 day ago",
       alt: "image alt here",
-      src: "/images/profile-picture-3.webp"
+      src: "/images/people/profile-picture-5.jpg"
     }
   ];
 </script>
@@ -426,7 +426,7 @@ Use this component to group multiple data entries inside a single date and show 
       name: '<span class="font-medium">Laura Romeros</span> likes <span class="font-medium">Bonnie Green\'s</span> post in <span class="font-medium"> How to start with Flowbite library</span>',
       title:
         '<span class="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie Green\'s</span> post in <span class="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span>',
-      src: "/images/profile-picture-1.webp",
+      src: "/images/people/profile-picture-1.jpg",
       alt: "alt here",
       href: "/",
       isPrivate: true,
@@ -436,7 +436,7 @@ Use this component to group multiple data entries inside a single date and show 
       id: "group-2",
       name: '<span class="font-medium">Jese Leos</span> likes <span class="font-medium">Bonnie Green\'s</span> post in <span class="font-medium"> How to start with Flowbite library</span>',
       title: '<span class="font-medium text-gray-900 dark:text-white">Bonnie Green</span> react to <span class="font-medium text-gray-900 dark:text-white">Thomas Lean\'s</span> comment',
-      src: "/images/profile-picture-2.webp",
+      src: "/images/people/profile-picture-2.jpg",
       alt: "alt here",
       href: "/",
       isPrivate: true,
@@ -456,7 +456,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1908)
+[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1848)
 
 #### Props
 
@@ -467,7 +467,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1912)
+[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1852)
 
 #### Props
 
@@ -487,7 +487,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1924)
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1864)
 
 #### Props
 
@@ -503,7 +503,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1932)
+[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1872)
 
 #### Props
 
@@ -520,7 +520,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1953)
+[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1893)
 
 #### Props
 
@@ -532,7 +532,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1960)
+[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1900)
 
 #### Props
 

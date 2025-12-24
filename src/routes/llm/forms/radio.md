@@ -229,12 +229,12 @@ You can use the property `inline` as the alternative.
 
 <p class="mb-4 font-semibold {colors}">Select color</p>
 <div class="flex gap-4">
-  <Radio bind:group={colors} color="red" value="text-red-500">Red</Radio>
-  <Radio bind:group={colors} color="green" value="text-green-500">Green</Radio>
+  <Radio bind:group={colors} color="danger" value="text-red-500">Red</Radio>
+  <Radio bind:group={colors} color="success" value="text-green-500">Green</Radio>
   <Radio bind:group={colors} color="purple" value="text-purple-500">Purple</Radio>
   <Radio bind:group={colors} color="teal" value="text-teal-500">Teal</Radio>
-  <Radio bind:group={colors} color="yellow" value="text-yellow-500">Yellow</Radio>
-  <Radio bind:group={colors} color="orange" value="text-orange-500">Orange</Radio>
+  <Radio bind:group={colors} color="warning" value="text-yellow-500">Yellow</Radio>
+  <Radio bind:group={colors} color="warning" value="text-orange-500">Orange</Radio>
 </div>
 ```
 
@@ -326,7 +326,7 @@ Use `color` and `checkedClass` props to style the checked state:
 
 #### Types
 
-[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L913)
+[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L853)
 
 #### Props
 
@@ -334,7 +334,7 @@ Use `color` and `checkedClass` props to style the checked state:
 - "aria-describedby": ariaDescribedby
 - inline: false
 - labelClass
-- color: "primary"
+- color: "brand"
 - custom: false
 - group: $bindable<T>()
 - value: $bindable<T>()

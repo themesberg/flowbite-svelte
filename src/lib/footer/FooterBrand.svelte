@@ -32,9 +32,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L733)
+[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L686)
 ## Props
 @prop children
+@prop class: className
+@prop classes
 @prop href
 @prop src
 @prop alt

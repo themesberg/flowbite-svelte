@@ -23,17 +23,20 @@ String variable `value` is the source of the text copied to the clipboard. Boole
 
 ```svelte
 <script lang="ts">
-  import { Clipboard, Input } from "flowbite-svelte";
+  import { Clipboard, Input, Label } from "flowbite-svelte";
   import { CheckOutline } from "flowbite-svelte-icons";
 
   let value = $state("npm install flowbite");
   let success = $state(false);
 </script>
 
-<Input bind:value class="w-64" />
-<Clipboard bind:value bind:success class="w-24">
-  {#if success}<CheckOutline />{:else}Copy{/if}
-</Clipboard>
+<div class="grid w-full max-w-[23rem] grid-cols-8 gap-2">
+  <Label for="npm-install" class="sr-only">NPM Install Command</Label>
+  <Input bind:value id="npm-install" class="text-body col-span-6" />
+  <Clipboard bind:value bind:success class="w-24">
+    {#if success}<CheckOutline />{:else}Copy{/if}
+  </Clipboard>
+</div>
 ```
 
 ## Input with copy button
@@ -45,18 +48,18 @@ Notice the different style of monitoring the `success` state by using the parame
 ```svelte
 <script lang="ts">
   import { Clipboard, Input, Tooltip } from "flowbite-svelte";
-  import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
+  import { CheckOutline, ClipboardCleanOutline } from "flowbite-svelte-icons";
 
   let value = $state("npm install flowbite");
 </script>
 
-<div class="w-64">
+<div class="max-w-[16rem]">
   <Input bind:value>
     {#snippet right()}
-      <Clipboard bind:value embedded>
+      <Clipboard bind:value embedded color="alternative" class="rounded-sm">
         {#snippet children(success)}
           <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
-          {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+          {#if success}<CheckOutline class="h-4 w-4" />{:else}<ClipboardCleanOutline class="h-4 w-4" />{/if}
         {/snippet}
       </Clipboard>
     {/snippet}
@@ -71,7 +74,7 @@ Use this example to show a copy button inside the input field with a text label 
 ```svelte
 <script lang="ts">
   import { Clipboard, Input } from "flowbite-svelte";
-  import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
+  import { CheckOutline, ClipboardCleanOutline } from "flowbite-svelte-icons";
 
   let value = $state("npm install flowbite");
 </script>
@@ -82,9 +85,9 @@ Use this example to show a copy button inside the input field with a text label 
       <Clipboard size="xs" color="alternative" bind:value class="-mr-1 w-20 focus:ring-0">
         {#snippet children(success)}
           {#if success}
-            <CheckOutline class="h-3 w-3" /> Copied
+            <CheckOutline class="h-4 w-4" /> Copied
           {:else}
-            <ClipboardCleanSolid class="h-3 w-3" /> Copy
+            <ClipboardCleanOutline class="h-4 w-4" /> Copy
           {/if}
         {/snippet}
       </Clipboard>
@@ -99,22 +102,26 @@ This example can be used to show a copy to clipboard button inside an input grou
 
 ```svelte
 <script lang="ts">
-  import { Clipboard, Input, InputAddon, Tooltip, ButtonGroup } from "flowbite-svelte";
-  import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
+  import { Clipboard, Label, Input, InputAddon, Tooltip, ButtonGroup, Helper } from "flowbite-svelte";
+  import { CheckOutline, ClipboardCleanOutline } from "flowbite-svelte-icons";
 
   let value = $state("https://flowbite.com");
 </script>
 
-<ButtonGroup>
-  <InputAddon>URL</InputAddon>
-  <Input bind:value readonly disabled class="w-64" />
-  <Clipboard color="primary" bind:value>
-    {#snippet children(success)}
-      <Tooltip class="whitespace-nowrap">{success ? "Copied" : "Copy to clipboard"}</Tooltip>
-      {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
-    {/snippet}
-  </Clipboard>
-</ButtonGroup>
+<div class="space-y-2">
+  <ButtonGroup class="w-96">
+    <InputAddon>URL</InputAddon>
+    <Label for="website-url" class="sr-only">URL Input with Clipboard</Label>
+    <Input id="website-url" bind:value readonly disabled />
+    <Clipboard color="brand" bind:value>
+      {#snippet children(success)}
+        <Tooltip class="whitespace-nowrap">{success ? "Copied" : "Copy to clipboard"}</Tooltip>
+        {#if success}<CheckOutline class="h-4 w-4" />{:else}<ClipboardCleanOutline class="h-4 w-4" />{/if}
+      {/snippet}
+    </Clipboard>
+  </ButtonGroup>
+  <Helper class="text-body mt-2 text-sm">Security certificate is required for approval</Helper>
+</div>
 ```
 
 ## URL shortener input group
@@ -124,7 +131,7 @@ Use this example to copy a shortened URL to the clipboard by clicking on a butto
 ```svelte
 <script lang="ts">
   import { Clipboard, Input, Label, Helper, Button, Tooltip, ButtonGroup } from "flowbite-svelte";
-  import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
+  import { CheckOutline, ClipboardCleanOutline } from "flowbite-svelte-icons";
 
   let value = $state("https://bit.ly/3U2SXcF");
 </script>
@@ -132,12 +139,12 @@ Use this example to copy a shortened URL to the clipboard by clicking on a butto
 <div class="space-y-2">
   <Label for="url-shortener">Shorten URL:</Label>
   <ButtonGroup>
-    <Button color="primary">Generate</Button>
+    <Button>Generate</Button>
     <Input id="url-shortener" bind:value readonly disabled class="w-64" />
     <Clipboard bind:value>
       {#snippet children(success)}
         <Tooltip class="whitespace-nowrap">{success ? "Copied" : "Copy link"}</Tooltip>
-        {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+        {#if success}<CheckOutline class="h-4 w-4" />{:else}<ClipboardCleanOutline class="h-4 w-4" />{/if}
       {/snippet}
     </Clipboard>
   </ButtonGroup>
@@ -152,7 +159,7 @@ This example can be used to copy and paste code inside a `<pre>` and `<code>` bl
 ```svelte
 <script lang="ts">
   import { Clipboard, Label, Helper } from "flowbite-svelte";
-  import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
+  import { CheckOutline, ClipboardCleanOutline } from "flowbite-svelte-icons";
 
   let value = $state("");
   let success = $state(false);
@@ -168,7 +175,7 @@ This example can be used to copy and paste code inside a `<pre>` and `<code>` bl
 
 <div class="w-full max-w-lg space-y-1">
   <Label>Copy source code block:</Label>
-  <div class="relative h-64 rounded-lg bg-gray-50 p-4 dark:bg-gray-700">
+  <div class="rounded-base relative h-64 bg-gray-50 p-4 dark:bg-gray-700">
     <div class="max-h-full overflow-scroll">
       <pre><code id="code-block" class="text-sm whitespace-pre text-gray-500 dark:text-gray-400">  
     &#x3C;div class="space-y-2"&#x3E;
@@ -182,11 +189,13 @@ This example can be used to copy and paste code inside a `<pre>` and `<code>` bl
             </code></pre>
     </div>
 
-    <Clipboard color={success ? "alternative" : "light"} bind:value bind:success size="sm" class="absolute end-2 top-2 h-8 px-2.5 font-medium focus:ring-0" {onclick}>
+    <Clipboard color={success ? "alternative" : "light"} bind:value bind:success size="sm" {onclick}>
       {#if success}
-        <CheckOutline class="h-3 w-3" /> Copied
+        <CheckOutline class="h-4 w-4" />
+        <span class="text-fg-brand text-xs font-semibold">Copied</span>
       {:else}
-        <ClipboardCleanSolid class="h-3 w-3" /> Copy code
+        <ClipboardCleanOutline class="h-4 w-4" />
+        <span class="text-xs font-semibold">Copy</span>
       {/if}
     </Clipboard>
   </div>
@@ -201,7 +210,7 @@ Use this example to show multiple input field elements that have the copy to cli
 ```svelte
 <script lang="ts">
   import { Card, Clipboard, Input, Label, Tooltip, Button } from "flowbite-svelte";
-  import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
+  import { CheckOutline, ClipboardCleanOutline } from "flowbite-svelte-icons";
 
   let acc_id = $state("756593826");
   let api_key = $state("f4h6sd3t-jsy63ind-hsgdt7rs-jdhf76st");
@@ -210,7 +219,7 @@ Use this example to show multiple input field elements that have the copy to cli
 
 {#snippet children(success: boolean)}
   <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
-  {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+  {#if success}<CheckOutline class="h-4 w-4" />{:else}<ClipboardCleanOutline class="h-4 w-4" />{/if}
 {/snippet}
 
 <Card size="md" class="p-4 sm:p-6 md:p-8">
@@ -263,7 +272,7 @@ Add a `Clipboard` to your `Textarea` using the `addon` snippet. The button appea
 ```svelte
 <script lang="ts">
   import { Clipboard, Textarea } from "flowbite-svelte";
-  import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
+  import { CheckOutline, ClipboardCleanOutline } from "flowbite-svelte-icons";
 
   let value = $state("");
   let success = $state(false);
@@ -274,9 +283,11 @@ Add a `Clipboard` to your `Textarea` using the `addon` snippet. The button appea
     {#if value.length > 0}
       <Clipboard color={success ? "alternative" : "light"} bind:value bind:success size="sm" class="absolute end-2 top-2 h-8 w-32 px-2.5 font-medium focus:ring-0">
         {#if success}
-          <CheckOutline class="h-3 w-3" /> Copied
+          <CheckOutline class="h-4 w-4" />
+          <span class="text-fg-brand text-xs font-semibold">Copied</span>
         {:else}
-          <ClipboardCleanSolid class="h-3 w-3" /> Copy text
+          <ClipboardCleanOutline class="h-4 w-4" />
+          <span class="text-xs font-semibold">Copy</span>
         {/if}
       </Clipboard>
     {/if}
@@ -293,7 +304,7 @@ Make sure that you set the `id` to the trigger element to specify the source of 
 ```svelte
 <script lang="ts">
   import { Card, Clipboard, Tooltip } from "flowbite-svelte";
-  import { CheckOutline, ClipboardCleanSolid } from "flowbite-svelte-icons";
+  import { CheckOutline, ClipboardCleanOutline } from "flowbite-svelte-icons";
 
   let value = $state("");
 
@@ -322,10 +333,10 @@ Make sure that you set the `id` to the trigger element to specify the source of 
       + 12 345 67890
     </div>
   </address>
-  <Clipboard {onclick} bind:value embedded class="absolute end-2 top-2 h-8 px-2.5 font-medium focus:ring-0">
+  <Clipboard {onclick} bind:value embedded color="alternative" class="absolute end-2 top-2 h-8 px-2.5 font-medium focus:ring-0">
     {#snippet children(success)}
       <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
-      {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+      {#if success}<CheckOutline class="h-4 w-4" />{:else}<ClipboardCleanOutline class="h-4 w-4" />{/if}
     {/snippet}
   </Clipboard>
 </Card>
@@ -338,7 +349,7 @@ Use this example to show an input field where you can copy the URL of the curren
 ```svelte
 <script lang="ts">
   import { Clipboard, Input, Tooltip, Modal, Button, Label } from "flowbite-svelte";
-  import { CheckOutline, ClipboardCleanSolid, ShareNodesOutline } from "flowbite-svelte-icons";
+  import { CheckOutline, ClipboardCleanOutline, ShareNodesOutline } from "flowbite-svelte-icons";
 
   let value = $state("npm install flowbite-svelte");
   let copyModal = $state(false);
@@ -354,7 +365,7 @@ Use this example to show an input field where you can copy the URL of the curren
       <Clipboard bind:value embedded>
         {#snippet children(success)}
           <Tooltip isOpen={success}>{success ? "Copied" : "Copy to clipboard"}</Tooltip>
-          {#if success}<CheckOutline />{:else}<ClipboardCleanSolid />{/if}
+          {#if success}<CheckOutline class="h-4 w-4" />{:else}<ClipboardCleanOutline class="h-4 w-4" />{/if}
         {/snippet}
       </Clipboard>
     {/snippet}
@@ -371,7 +382,7 @@ Use this example to show an input field where you can copy the URL of the curren
 
 #### Types
 
-[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L527)
+[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L521)
 
 #### Props
 

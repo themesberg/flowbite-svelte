@@ -126,60 +126,43 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L609)
+[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L599)
 
 #### Props
 
 - children
 - class: className
 - classes
-- divClass
-- div2Class
-- div3Class
-- div4Class
-- div5Class
-- div6Class
-- div7Class
 
 ### DefaultMockup
 
 #### Types
 
-[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L620)
+[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L603)
 
 #### Props
 
 - children
 - class: className
 - classes
-- divClass
-- div2Class
-- div3Class
-- div4Class
-- div5Class
-- div6Class
 
 ### Desktop
 
 #### Types
 
-[DesktopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L593)
+[DesktopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L583)
 
 #### Props
 
 - children
 - class: className
 - classes
-- divClass
-- div2Class
-- div3Class
-- div4Class
 
 ### DeviceMockup
 
 #### Types
 
-[DeviceMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L588)
+[DeviceMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L578)
 
 #### Props
 
@@ -190,71 +173,49 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L630)
+[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L607)
 
 #### Props
 
 - children
 - class: className
 - classes
-- divClass
-- div2Class
-- div3Class
-- div4Class
-- div5Class
-- div6Class
 
 ### Laptop
 
 #### Types
 
-[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L601)
+[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L591)
 
 #### Props
 
 - children
 - class: className
 - classes
-- divClass
-- div2Class
-- div3Class
-- div4Class
 
 ### Smartwatch
 
 #### Types
 
-[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L640)
+[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L611)
 
 #### Props
 
 - children
 - class: className
 - classes
-- divClass
-- div2Class
-- div3Class
-- div4Class
-- div5Class
-- div6Class
 
 ### Tablet
 
 #### Types
 
-[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L650)
+[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L615)
 
 #### Props
 
 - children
 - class: className
 - classes
-- divClass
-- div2Class
-- div3Class
-- div4Class
-- div5Class
-- div6Class
 
 
 ## References

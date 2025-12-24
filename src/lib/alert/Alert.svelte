@@ -82,7 +82,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L221)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L224)
 ## Props
 @prop children
 @prop icon
@@ -96,5 +96,7 @@
 @prop dismissable
 @prop transition = fade
 @prop params
+@prop listContent
+@prop borderAccent
 @prop ...restProps
 -->

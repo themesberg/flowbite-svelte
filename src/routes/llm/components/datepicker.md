@@ -84,7 +84,6 @@ The `classes` prop has the following `class` for disposal: `base`, `input`, `tit
     color="blue"
     classes={{ polite: "hover:text-blue-700!", dayButton: "hover:text-blue-400", titleVariant: "text-blue-800", monthButton: "text-blue-700" }}
     title="Select your preferred date"
-    monthBtnSelected="bg-blue-200"
   />
 </div>
 ```
@@ -397,7 +396,7 @@ explicabo minus.
 
 #### Types
 
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L553)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L547)
 
 #### Props
 
@@ -415,8 +414,7 @@ explicabo minus.
 - placeholder: "Select date"
 - disabled: false
 - required: false
-- inputClass: ""
-- color: "primary"
+- color: "brand"
 - inline: false
 - autohide: true
 - showActionButtons: false
@@ -424,12 +422,9 @@ explicabo minus.
 - onselect
 - onclear
 - onapply
-- btnClass
 - inputmode: "none"
 - classes
 - monthColor: "alternative"
-- monthBtnSelected: "bg-primary-500 text-white"
-- monthBtn: "text-gray-700 dark:text-gray-300"
 - class: className
 - elementRef: $bindable()
 - actionSlot

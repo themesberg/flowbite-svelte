@@ -13,23 +13,24 @@ The indicator component can be used as a small element positioned absolutely rel
 
 ## Default indicator
 
-Use this example to create a simple indicator with multiple colors and position it anywhere on the website.
+Use this example to create a simple indicator with multiple colors and position it anywhere on the website. Pre-set colors are `'brand'(default) | 'neutral' | 'dark' | 'success' | 'danger' | 'purple' | 'indigo' | 'warning' | 'teal' `. Use `class` prop to add a preferred color.
 
 ```svelte
 <script lang="ts">
   import { Indicator } from "flowbite-svelte";
 </script>
 
-<Indicator color="gray" />
-<Indicator color="secondary" />
-<Indicator color="orange" />
-<Indicator color="blue" />
-<Indicator color="green" />
-<Indicator color="red" />
+<Indicator />
+<Indicator color="neutral" />
+<Indicator color="dark" />
+<Indicator color="success" />
+<Indicator color="danger" />
 <Indicator color="purple" />
 <Indicator color="indigo" />
-<Indicator color="yellow" />
+<Indicator color="warning" />
 <Indicator color="teal" />
+<Indicator class="bg-yellow-400" />
+<Indicator class="bg-orange-400" />
 ```
 
 ## Legend indicator
@@ -41,7 +42,7 @@ This example can be used as a legend indicator for charts to also add a text nex
   import { Indicator } from "flowbite-svelte";
 </script>
 
-<span class="flex items-center"><Indicator size="sm" color="orange" class="me-1.5" />Visitors</span>
+<span class="flex items-center"><Indicator size="sm" class="me-1.5 bg-orange-400" />Visitors</span>
 <span class="flex items-center"><Indicator size="sm" color="purple" class="me-1.5" />Sessions</span>
 <span class="flex items-center"><Indicator size="sm" color="indigo" class="me-1.5" />Customers</span>
 <span class="flex items-center"><Indicator size="sm" color="teal" class="me-1.5" />Revenue</span>
@@ -61,7 +62,7 @@ This example can be used to show a number count inside the indicator and positio
   <EnvelopeSolid class="me-2 h-6 w-6 text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
   Messages
-  <Indicator color="red" border size="xl" placement="top-right">
+  <Indicator color="danger" border size="xl" placement="top-right">
     <span class="text-xs font-bold text-white">8</span>
   </Indicator>
 </Button>
@@ -78,8 +79,8 @@ Use this example to show a status indicator for the currently logged in user by 
   import { Avatar } from "flowbite-svelte";
 </script>
 
-<Avatar src="/images/profile-picture-5.webp" dot={{ color: "green", size: "lg", placement: "top-right" }} />
-<Avatar src="/images/profile-picture-5.webp" dot={{ color: "red", size: "lg", placement: "top-right" }} />
+<Avatar src="/images/people/profile-picture-5.jpg" dot={{ color: "success", size: "lg", placement: "top-right" }} />
+<Avatar src="/images/people/profile-picture-5.jpg" dot={{ color: "danger", size: "lg", placement: "top-right" }} />
 ```
 
 ## Badge indicator
@@ -94,27 +95,27 @@ This example can be used to add an indicator inside of a badge component.
 <ul class="w-full max-w-sm divide-y divide-gray-200 dark:divide-gray-700">
   <li class="py-3 sm:py-4">
     <div class="flex items-center space-x-3 rtl:space-x-reverse">
-      <Avatar src="/images/profile-picture-5.webp" alt="Neil image" />
+      <Avatar src="/images/people/profile-picture-5.jpg" alt="Neil image" />
       <div class="min-w-0 flex-1">
         <p class="truncate text-sm font-semibold text-gray-900 dark:text-white">Neil Sims</p>
         <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
       </div>
-      <Badge color="green" class="px-2.5 py-0.5">
-        <Indicator color="green" size="xs" class="me-1" />Available
+      <Badge color="success" class="px-2.5 py-0.5">
+        <Indicator color="success" size="xs" class="me-1" />Available
       </Badge>
     </div>
   </li>
   <li class="py-3 sm:py-4">
     <div class="flex items-center space-x-3 rtl:space-x-reverse">
       <div class="shrink-0">
-        <Avatar src="/images/profile-picture-4.webp" alt="Bonnie image" />
+        <Avatar src="/images/people/profile-picture-4.jpg" alt="Bonnie image" />
       </div>
       <div class="min-w-0 flex-1">
         <p class="truncate text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</p>
         <p class="truncate text-sm text-gray-500 dark:text-gray-400">email@flowbite.com</p>
       </div>
-      <Badge color="red" class="px-2.5 py-0.5">
-        <Indicator color="red" size="xs" class="me-1" />Unavailable
+      <Badge color="danger" class="px-2.5 py-0.5">
+        <Indicator color="danger" size="xs" class="me-1" />Unavailable
       </Badge>
     </div>
   </li>
@@ -135,13 +136,9 @@ You can also use the indicators inside of a stepper component when completing a 
   {#each [1, 2, 2, 3] as step, i}
     <li class="relative mb-6 w-full">
       <div class="flex items-center">
-        <Indicator
-          size="xl"
-          color={i < 3 ? undefined : "gray"}
-          class={`z-10 shrink-0 ring-0 ring-white sm:ring-8 ${i < 3 ? "bg-primary-200 dark:bg-primary-900" : "dark:bg-gray-700 dark:ring-gray-900"}`}
-        >
+        <Indicator size="xl" color={i < 3 ? undefined : "neutral"} class={`z-10 shrink-0 ring-0 ring-white ${i < 3 ? "bg-primary-200 dark:bg-primary-600" : "dark:bg-gray-500 dark:ring-gray-600"}`}>
           {#if i === 3}
-            <CheckCircleSolid class="h-6 w-6 text-gray-800 dark:text-gray-300" />
+            <CheckCircleSolid class="h-6 w-6" />
           {:else}
             <CheckCircleSolid class="text-primary-600 dark:text-primary-300 h-6 w-6" />
           {/if}
@@ -160,12 +157,8 @@ You can also use the indicators inside of a stepper component when completing a 
   {#each [1, 2, 2, 3] as step, i}
     <li class="relative mb-6 w-full">
       <div class="flex items-center">
-        <Indicator
-          size="xl"
-          color={i < 3 ? undefined : "gray"}
-          class={`z-10 shrink-0 ring-0 ring-white sm:ring-8 ${i < 3 ? "bg-primary-200 dark:bg-primary-900" : "dark:bg-gray-700 dark:ring-gray-900"}`}
-        >
-          <Indicator color={i < 3 ? "orange" : "secondary"} class={i === 3 ? "dark:bg-gray-300!" : ""} />
+        <Indicator size="xl" color={i < 3 ? undefined : "neutral"} class={`z-10 shrink-0 ring-0 ring-white ${i < 3 ? "bg-primary-200 dark:bg-primary-900" : "dark:bg-gray-700 dark:ring-gray-900"}`}>
+          <Indicator color={i < 3 ? "warning" : "success"} class={i === 3 ? "dark:bg-gray-300!" : ""} />
         </Indicator>
         {#if i < 3}
           <div class="flex h-0.5 w-full bg-gray-200 dark:bg-gray-700"></div>
@@ -188,15 +181,15 @@ Use these examples to position the indicator component anywhere relative to the 
   import { Indicator } from "flowbite-svelte";
 </script>
 
-<div class="border relative h-56 w-56 rounded-lg border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
-  <Indicator placement="top-left" color="primary" />
-  <Indicator placement="top-center" color="secondary" />
-  <Indicator placement="top-right" color="orange" />
-  <Indicator placement="center-left" color="green" />
-  <Indicator placement="center" color="red" />
+<div class="relative h-56 w-56 rounded-lg border border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
+  <Indicator placement="top-left" color="danger" />
+  <Indicator placement="top-center" color="warning" />
+  <Indicator placement="top-right" color="success" />
+  <Indicator placement="center-left" color="dark" />
+  <Indicator placement="center" color="neutral" />
   <Indicator placement="center-right" color="purple" />
   <Indicator placement="bottom-left" color="indigo" />
-  <Indicator placement="bottom-center" color="yellow" />
+  <Indicator placement="bottom-center" class="bg-yellow-400" />
   <Indicator placement="bottom-right" color="teal" />
 </div>
 ```
@@ -207,12 +200,12 @@ Use these examples to position the indicator component anywhere relative to the 
 
 #### Types
 
-[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099)
+[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1039)
 
 #### Props
 
 - children
-- color: "primary"
+- color: "brand"
 - cornerStyle: "circular"
 - size: "md"
 - border: false

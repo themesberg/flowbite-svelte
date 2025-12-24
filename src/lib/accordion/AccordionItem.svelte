@@ -91,19 +91,15 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L207)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L214)
 ## Props
 @prop children
 @prop header
 @prop arrowup
 @prop arrowdown
 @prop open = $bindable(false)
-@prop activeClass
-@prop inactiveClass
 @prop transitionType = slide
 @prop transitionParams
 @prop class: className
 @prop classes
-@prop headerClass
-@prop contentClass
 -->

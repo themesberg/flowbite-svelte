@@ -73,9 +73,39 @@ Use the `open` prop to make an item open on mount. This is useful for highlighti
 
 ## Color option
 
-You can control the look and feel of `AccordionItems` by overwriting the `activeClass` and `inactiveClass` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
+Customize accordion styling using the `classes` prop with properties like `active`, `inactive`, `button`, `content`, and `contentWrapper`. Define them in `Accordion` to apply globally, or set them per `AccordionItem` to override.
 
-This allows you to match the accordion to your brand colors or create visual hierarchy between different accordion sections.
+```svelte
+<script lang="ts">
+  import { AccordionItem, Accordion } from "flowbite-svelte";
+</script>
+
+<!-- Global styling via Accordion -->
+<Accordion
+  classes={{
+    active: "bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white",
+    inactive: "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+  }}
+>
+  <AccordionItem>
+    {#snippet header()}Uses Accordion classes{/snippet}
+    <p class="mb-2 text-gray-500 dark:text-gray-400">This item uses the active/inactive classes defined in the parent Accordion.</p>
+  </AccordionItem>
+  <AccordionItem
+    classes={{
+      active: "bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300",
+      inactive: "text-green-500 hover:bg-green-50 dark:hover:bg-green-950"
+    }}
+  >
+    {#snippet header()}Custom item classes{/snippet}
+    <p class="mb-2 text-gray-500 dark:text-gray-400">This item overrides the parent classes with its own green theme.</p>
+  </AccordionItem>
+</Accordion>
+```
+
+### Advanced styling
+
+You can customize all aspects including button font, content padding, and both active/inactive states:
 
 ```svelte
 <script lang="ts">
@@ -83,16 +113,20 @@ This allows you to match the accordion to your brand colors or create visual hie
 </script>
 
 <Accordion
-  activeClass="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800"
-  inactiveClass="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800"
+  classes={{
+    button: "font-semibold",
+    content: "rounded-b-lg p-6 bg-purple-50/50 dark:bg-purple-950/30",
+    active: "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/40",
+    inactive: "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+  }}
 >
-  <AccordionItem>
-    {#snippet header()}Header 2-1{/snippet}
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+  <AccordionItem open>
+    {#snippet header()}Open to See Purple Styling{/snippet}
+    <p class="text-gray-700 dark:text-gray-300">This item is open, showing the purple active state with custom button font and content styling.</p>
   </AccordionItem>
   <AccordionItem>
-    {#snippet header()}Header 2-2{/snippet}
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    {#snippet header()}Closed Item (Inactive State){/snippet}
+    <p class="text-gray-700 dark:text-gray-300">When closed, items use the inactive gray styling.</p>
   </AccordionItem>
 </Accordion>
 ```
@@ -170,7 +204,6 @@ Use `header` snippet to add icons and create visually enhanced accordion headers
         <span>My Header 1</span>
       </div>
     {/snippet}
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo...</p>
     <p class="text-gray-500 dark:text-gray-400">
       Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">get started</a>
       and start websites even faster with components on top of Tailwind CSS.
@@ -231,17 +264,11 @@ Here's an example of how to use the `multiple` option together with "expand all"
 <Accordion multiple>
   <AccordionItem bind:open={items[0]}>
     {#snippet header()}My Header 1{/snippet}
-    <P class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</P>
-    <P class="text-gray-500 dark:text-gray-400">
-      Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">get started</a>
-      and start developing websites even faster with components on top of Tailwind CSS.
-    </P>
+    <P class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab ...</P>
   </AccordionItem>
   <AccordionItem bind:open={items[1]}>
     {#snippet header()}My Header 2{/snippet}
-    <P class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</P>
-    <P class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</P>
-    <P class="mb-2">Learn more about these technologies:</P>
+    <P class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit ...</P>
   </AccordionItem>
   <AccordionItem bind:open={items[2]}>
     {#snippet header()}My Header 3{/snippet}
@@ -286,6 +313,7 @@ This is useful for complex documentation, multi-level settings, or categorized F
 
 ```svelte
 <script lang="ts">
+  import { P } from "$lib";
   import { AccordionItem, Accordion } from "flowbite-svelte";
 </script>
 
@@ -295,33 +323,17 @@ This is useful for complex documentation, multi-level settings, or categorized F
     <Accordion>
       <AccordionItem>
         {#snippet header()}My Header 1{/snippet}
-        <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-        <p class="text-gray-500 dark:text-gray-400">
-          Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">get started</a>
-          and start developing websites even faster with components on top of Tailwind CSS.
-        </p>
+        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit ...</P>
       </AccordionItem>
       <AccordionItem>
         {#snippet header()}My Header 2{/snippet}
-        <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-        <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-        <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-        <ul class="list-disc ps-5 text-gray-500 dark:text-gray-400">
-          <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">Lorem ipsum</a></li>
-          <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Tailwind UI</a></li>
-        </ul>
+        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit ...</P>
       </AccordionItem>
     </Accordion>
   </AccordionItem>
   <AccordionItem>
     {#snippet header()}My Header 2{/snippet}
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-    <ul class="list-disc ps-5 text-gray-500 dark:text-gray-400">
-      <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 hover:underline dark:text-blue-500">Lorem ipsum</a></li>
-      <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Tailwind UI</a></li>
-    </ul>
+    <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit ...</P>
   </AccordionItem>
 </Accordion>
 ```
@@ -565,6 +577,24 @@ Combining multiple responsive patterns for sophisticated adaptive layouts:
 </Accordion>
 ```
 
+## Component Props
+
+### Accordion
+
+- `multiple`: Allow multiple items open simultaneously (default: `false`)
+- `flush`: Remove rounded borders for minimal design
+- `transitionType`: Control transitions (`TransitionFunc` or `"none"`)
+- `classes`: Customize styling with `active`, `inactive`, `button`, `contentWrapper`, `content` properties
+
+### AccordionItem
+
+- `open`: Control open state (bindable)
+- `header`: Snippet for header content
+- `arrowup` / `arrowdown`: Snippets for custom icons
+- `transitionType`: Override parent transition (`TransitionFunc` or `"none"`)
+- `transitionParams`: Custom transition parameters
+- `classes`: Item-specific styling overrides
+
 ## Accessibility
 
 The Accordion component is built with accessibility in mind:
@@ -598,12 +628,13 @@ The Accordion component is built with accessibility in mind:
 - multiple: false
 - class: className
 - transitionType
+- classes
 
 ### AccordionItem
 
 #### Types
 
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L207)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L214)
 
 #### Props
 
@@ -612,14 +643,10 @@ The Accordion component is built with accessibility in mind:
 - arrowup
 - arrowdown
 - open: $bindable(false)
-- activeClass
-- inactiveClass
 - transitionType: slide
 - transitionParams
 - class: className
 - classes
-- headerClass
-- contentClass
 
 
 ## References

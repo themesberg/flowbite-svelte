@@ -1,13 +1,9 @@
 # Svelte Alert - Flowbite
 
 
-The alert component can be used to provide important information to your users such as success or error messages, warnings, or highlighted information that complements the normal flow of content on a page. Alerts are perfect for displaying feedback after form submissions, system notifications, or drawing attention to critical information.
-
-It also includes dismissable alerts which can be hidden by users by clicking on the close icon, allowing for a cleaner interface once the message has been acknowledged.
+The alert component provides contextual feedback messages for user actions. Use alerts for success messages, errors, warnings, and informational content.
 
 ## Set up
-
-Import Alert and set variables in the script tag.
 
 ```svelte
 <script lang="ts">
@@ -17,40 +13,36 @@ Import Alert and set variables in the script tag.
 
 ## Default alert
 
-Use the following examples of alert components to show messages as feedback to your users. Each color variant conveys different semantic meanings:
+Use semantic color variants to convey meaning:
 
-- **Info** (blue): General information or tips
-- **Danger** (red): Errors or critical warnings
-- **Success** (green): Successful operations or confirmations
-- **Warning** (yellow): Caution messages or important notices
-- **Dark** (gray): Neutral information or less critical messages
+- **brand**: General information or tips
+- **danger**: Errors or critical warnings  
+- **success**: Successful operations
+- **warning**: Caution messages
+- **dark**: Neutral information
 
 ```svelte
 <script lang="ts">
   import { Alert } from "flowbite-svelte";
 </script>
 
-<Alert>
-  <span class="font-medium">Default alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
-<Alert color="blue">
+<Alert color="brand">
   <span class="font-medium">Info alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="red">
+<Alert color="danger">
   <span class="font-medium">Danger alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="green">
+<Alert color="success">
   <span class="font-medium">Success alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="yellow">
+<Alert color="warning">
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="secondary">
+<Alert color="dark">
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
 </Alert>
@@ -58,7 +50,7 @@ Use the following examples of alert components to show messages as feedback to y
 
 ## Alerts with icon
 
-You can also include a descriptive icon to complement the message inside the alert component. Icons help users quickly identify the type of message and improve visual scanning, especially useful in applications with multiple alerts.
+Include descriptive icons to improve visual scanning and quick identification.
 
 ```svelte
 <script lang="ts">
@@ -66,32 +58,27 @@ You can also include a descriptive icon to complement the message inside the ale
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
-<Alert>
-  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
-  <span class="font-medium">Default alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
-<Alert color="blue">
+<Alert color="brand">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Info alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="red">
+<Alert color="danger">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Danger alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="green">
+<Alert color="success">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Success alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="yellow">
+<Alert color="warning">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="secondary">
+<Alert color="dark">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
@@ -100,7 +87,7 @@ You can also include a descriptive icon to complement the message inside the ale
 
 ## Bordered alerts
 
-Use this example to add a border accent to the alert component instead of just a plain background. Bordered alerts provide a more subtle appearance while still maintaining clear visual distinction, making them ideal for less intrusive notifications.
+Add border accents for a more subtle appearance while maintaining visual distinction.
 
 ```svelte
 <script lang="ts">
@@ -108,32 +95,27 @@ Use this example to add a border accent to the alert component instead of just a
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
-<Alert border>
-  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
-  <span class="font-medium">Default alert!</span>
-  Change a few things up and try submitting again.
-</Alert>
-<Alert border color="blue">
+<Alert border color="brand">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Info alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert border color="red">
+<Alert border color="danger">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Danger alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert border color="green">
+<Alert border color="success">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Success alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert border color="yellow">
+<Alert border color="warning">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert border color="secondary">
+<Alert border color="dark">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
@@ -142,12 +124,7 @@ Use this example to add a border accent to the alert component instead of just a
 
 ## Alerts with list
 
-Use this example to show a list and a description inside an alert component. This is particularly useful for displaying:
-
-- Multiple error messages from form validation
-- Step-by-step instructions or requirements
-- Lists of affected items or changes
-- Grouped information that requires user attention
+Display lists for multiple error messages, instructions, or grouped information.
 
 ```svelte
 <script lang="ts">
@@ -155,7 +132,7 @@ Use this example to show a list and a description inside an alert component. Thi
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
-<Alert class="items-start!">
+<Alert color="brand" listContent class="items-start!">
   {#snippet icon()}<span>
       <InfoCircleSolid class="h-5 w-5" />
       <span class="sr-only">Info</span>
@@ -168,7 +145,7 @@ Use this example to show a list and a description inside an alert component. Thi
     <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
   </ul>
 </Alert>
-<Alert color="blue" class="items-start!">
+<Alert color="danger" listContent class="items-start!">
   {#snippet icon()}<span>
       <InfoCircleSolid class="h-5 w-5" />
       <span class="sr-only">Info</span>
@@ -185,11 +162,7 @@ Use this example to show a list and a description inside an alert component. Thi
 
 ## Dismissable alerts
 
-Use the following alert elements that are also dismissable. Dismissable alerts are useful for temporary messages that users can acknowledge and remove from view, such as cookie notices, promotional banners, or one-time tips.
-
-You can attach the `transition` and `params` prop to control the dismissal animation. By default the `fade` Svelte transition function is used. You can customize the animation with different transition types (slide, blur, fly) and parameters (duration, easing).
-
-You can use the `closeIcon` snippet to override the default close button with your own custom icon or element. See the last example below.
+Enable dismissal for temporary messages like notices or one-time tips. Customize the animation using the `transition` and `params` props. Use the `closeIcon` snippet to override the default close button.
 
 ```svelte
 <script lang="ts">
@@ -198,43 +171,37 @@ You can use the `closeIcon` snippet to override the default close button with yo
   import { fly } from "svelte/transition";
 </script>
 
-<Alert dismissable>
-  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
-  A simple default alert with an
-  <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>
-  . Give it a click if you like.
-</Alert>
-<Alert color="blue" dismissable>
+<Alert color="brand" dismissable>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   A simple info alert with an
   <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>
   . Give it a click if you like.
 </Alert>
-<Alert color="red" dismissable>
+<Alert color="danger" dismissable>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
-  A simple info alert with an
+  A simple danger alert with an
   <a href="/" class="font-semibold underline hover:text-red-800 dark:hover:text-red-900">example link</a>
   . Give it a click if you like.
 </Alert>
-<Alert color="green" dismissable>
+<Alert color="success" dismissable>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
-  A simple info alert with an
+  A simple success alert with an
   <a href="/" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900">example link</a>
   . Give it a click if you like.
 </Alert>
-<Alert color="yellow" dismissable transition={fly} params={{ x: 200 }}>
+<Alert color="warning" dismissable transition={fly} params={{ x: 200 }}>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   An alert with non default animation - fly away.
 </Alert>
-<Alert color="purple" dismissable closeIcon={EnvelopeSolid}>
+<Alert color="dark" dismissable closeIcon={EnvelopeSolid}>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
-  An alert with the custom dismissal button. slot
+  An alert with the custom dismissal button.
 </Alert>
 ```
 
 ## Border accent
 
-Use the following alert components with a border accent as an alternative style. The left border accent provides a clean, modern look that draws attention without being overwhelming, perfect for sidebars or embedded notifications.
+Use left border accents for a clean, modern look ideal for sidebars or embedded notifications.
 
 ```svelte
 <script lang="ts">
@@ -242,27 +209,27 @@ Use the following alert components with a border accent as an alternative style.
   import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
-<Alert rounded={false} class="border-t-4">
+<Alert color="brand" borderAccent rounded={false}>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Info alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="red" rounded={false} class="border-t-4">
+<Alert color="danger" borderAccent rounded={false}>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Danger alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="green" rounded={false} class="border-t-4">
+<Alert color="success" borderAccent rounded={false}>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Success alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="yellow" rounded={false} class="border-t-4">
+<Alert color="warning" borderAccent rounded={false}>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="secondary" rounded={false} class="flex-row-reverse border-t-4">
+<Alert color="dark" borderAccent rounded={false}>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
@@ -271,12 +238,7 @@ Use the following alert components with a border accent as an alternative style.
 
 ## Additional content
 
-The following alert components can be used if you wish to disclose more information inside the element. This pattern is useful for:
-
-- Expandable help text or documentation
-- Detailed error explanations with suggested solutions
-- Rich content with links and formatting
-- Multi-paragraph announcements or updates
+Include expandable content for help text, detailed explanations, or rich content with links.
 
 ```svelte
 <script lang="ts">
@@ -284,86 +246,106 @@ The following alert components can be used if you wish to disclose more informat
   import { InfoCircleSolid, EyeSolid } from "flowbite-svelte-icons";
 </script>
 
-<Alert>
-  <div class="flex items-center gap-3">
-    <InfoCircleSolid class="h-5 w-5" />
-    <span class="text-lg font-medium">This is a info alert</span>
+<Alert listContent color="brand" class="block">
+  <div class="flex items-center justify-between">
+    <div class="flex items-center">
+      <InfoCircleSolid class="h-5 w-5" />
+      <span class="text-lg font-medium">This is an info alert</span>
+    </div>
   </div>
-  <p class="mt-2 mb-4 text-sm">
-    More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
-  </p>
-  <div class="flex gap-2">
-    <Button size="xs"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
-    <Button size="xs" outline>Go to Home</Button>
-  </div>
+  <p class="mt-2 mb-4">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+  <Button size="xs"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
 </Alert>
-<Alert color="green">
+<Alert listContent color="success" class="block">
   <div class="flex items-center gap-3">
     <InfoCircleSolid class="h-5 w-5" />
-    <span class="text-lg font-medium">This is a info alert</span>
+    <span class="text-lg font-medium">This is a success alert</span>
   </div>
   <p class="mt-2 mb-4 text-sm">
-    More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
+    More info about this success alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
   </p>
-  <div class="flex gap-2">
-    <Button size="xs" color="green"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
-    <Button size="xs" outline color="green">Go to Home</Button>
-  </div>
+  <Button size="xs" color="green"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
 </Alert>
 ```
 
 ## Custom color
 
-Use the `class` prop to add your custom color classes and create alerts that match your brand or design system. You can combine Tailwind CSS background, border, and text color utilities to achieve any desired appearance.
+Use the `class` prop with `color="none"` to create fully custom-styled alerts. The `closeColor` prop allows independent control of the close button styling, letting you mix custom alert colors with predefined close button colors or use `closeColor="none"` for complete customization.
 
 ```svelte
 <script lang="ts">
   import { Alert } from "flowbite-svelte";
+  import { InfoCircleSolid } from "flowbite-svelte-icons";
 </script>
 
-<Alert class="bg-sky-500 text-white">Your content</Alert>
+<!-- Simple custom color override -->
+<Alert class="bg-sky-500 text-white">Simple custom colored alert</Alert>
+
+<!-- Custom color with icon -->
+<Alert class="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
+  <span class="font-medium">Custom purple alert!</span>
+  With icon and custom styling.
+</Alert>
+
+<!-- Custom color with border -->
+<Alert border class="border-teal-300 bg-teal-50 text-teal-900 dark:border-teal-700 dark:bg-teal-900 dark:text-teal-100">
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
+  <span class="font-medium">Custom teal alert!</span>
+  With border styling.
+</Alert>
+
+<!-- Dismissable with color="none" for full custom control -->
+<Alert dismissable color="none" closeColor="none" class="bg-indigo-100 text-indigo-900 dark:bg-indigo-900 dark:text-indigo-100">
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
+  <span class="font-medium">Custom dismissable!</span>
+  Use color="none" and closeColor="none" for full control.
+</Alert>
+
+<!-- Dismissable with predefined closeColor -->
+<Alert dismissable color="none" closeColor="danger" class="bg-pink-100 text-pink-900 dark:bg-pink-900 dark:text-pink-100">
+  {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
+  <span class="font-medium">Custom alert with danger close button!</span>
+  Mix custom colors with predefined closeColor.
+</Alert>
 ```
 
 ## Events
 
-Use the `onclick` event with the `dismissable` prop to handle user interactions when the alert is dismissed. This allows you to:
-
-- Track which alerts users are dismissing
-- Save dismissal state to prevent showing the same alert again
-- Trigger other actions when an alert is closed
-- Log analytics events
+Handle dismissal interactions with the `onclick` event to track dismissals, save state, or trigger actions.
 
 ```svelte
 <script lang="ts">
-  import { Alert } from "flowbite-svelte";
+  import { Alert, Button } from "flowbite-svelte";
   let alertStatus = $state(true);
+
   const closeAlert = () => {
-    alert("Clicked closeAlert.");
-    alertStatus = !alertStatus;
+    alertStatus = false;
+  };
+
+  const showAlert = () => {
+    alertStatus = true;
   };
 </script>
 
-<Alert dismissable onclick={closeAlert} bind:alertStatus>Close me</Alert>
+{#if alertStatus}
+  <Alert dismissable onclick={closeAlert}>
+    <span class="font-medium">Info alert!</span>
+    You can close this alert by clicking the close button.
+  </Alert>
+{:else}
+  <div class="mt-4">
+    <Button onclick={showAlert}>Show Alert Again</Button>
+  </div>
+{/if}
 ```
 
 ## Accessibility
 
-The Alert component follows accessibility best practices:
-
-- **ARIA Roles**: Alerts use appropriate ARIA roles to announce important messages to screen readers
-- **Color Independence**: Never rely on color alone to convey meaning; always include text or icons
-- **Keyboard Navigation**: Dismissable alerts can be closed using keyboard interactions
-- **Focus Management**: When dismissing alerts, focus is properly managed to maintain usability
-
-## Best Practices
-
-When using alerts, consider these guidelines:
-
-- **Be Concise**: Keep alert messages brief and actionable
-- **Use Appropriately**: Don't overuse alerts as they can overwhelm users
-- **Provide Context**: Include enough information for users to understand and act
-- **Allow Dismissal**: For non-critical alerts, enable dismissal to reduce clutter
-- **Position Wisely**: Place alerts where they're most relevant to the action or content
+- Uses ARIA roles to announce messages to screen readers
+- Never relies on color alone—always includes text or icons
+- Dismissable alerts support keyboard interactions
+- Proper focus management when dismissing
 
 ## See also
 
@@ -379,7 +361,7 @@ When using alerts, consider these guidelines:
 
 #### Types
 
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L221)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L224)
 
 #### Props
 
@@ -387,13 +369,16 @@ When using alerts, consider these guidelines:
 - icon
 - alertStatus: $bindable(true)
 - closeIcon: CloseIcon
-- color: "primary"
+- color: "brand"
+- closeColor
 - rounded: true
 - border
 - class: className
 - dismissable
 - transition: fade
 - params
+- listContent
+- borderAccent
 
 
 ## References

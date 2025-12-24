@@ -3,16 +3,6 @@
 
 The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages.
 
-Buttons are essential for:
-- **Form submissions** - submitting user input and data
-- **Navigation** - linking to other pages or sections
-- **Actions** - triggering operations like save, delete, or edit
-- **Dialogs** - opening modals, popovers, or dropdowns
-- **Calls to action** - encouraging user engagement and conversions
-- **Social interactions** - likes, shares, and follows
-- **E-commerce** - add to cart, checkout, payment actions
-- **Media controls** - play, pause, and playback controls
-
 flowbite-svelte provides a large variety of styles and sizes for the button component including outlined buttons, multiple colors, sizes, buttons with icons, and more.
 
 ## Setup
@@ -29,13 +19,6 @@ Import a button component in the script tag.
 
 Use these default button styles with multiple colors to indicate an action or link within your website. Each color conveys different semantic meanings:
 
-- **Default/Primary Blue**: Primary actions and main CTAs
-- **Alternative/Dark**: Secondary actions or secondary options
-- **Red**: Destructive actions (delete, remove, cancel)
-- **Green**: Positive actions (confirm, approve, submit)
-- **Yellow**: Warning actions or cautionary operations
-- **Purple**: Special features or premium actions
-
 Choose colors that align with user expectations and provide clear visual hierarchy.
 
 ```svelte
@@ -43,8 +26,13 @@ Choose colors that align with user expectations and provide clear visual hierarc
   import { Button } from "flowbite-svelte";
 </script>
 
-<Button>Default</Button>
+<Button>Brand</Button>
 <Button color="alternative">Alternative</Button>
+<Button color="gray">Gray</Button>
+<Button color="success">Success</Button>
+<Button color="danger">Danger</Button>
+<Button color="warning">Warning</Button>
+<Button color="transparent">Transparent</Button>
 <Button color="dark">Dark</Button>
 <Button color="light">Light</Button>
 <Button color="blue">Blue</Button>
@@ -55,12 +43,6 @@ Choose colors that align with user expectations and provide clear visual hierarc
 ```
 
 ## Button with link
-
-You can add a link to a Button component. Link buttons are useful for:
-- **Navigation CTAs** - prominent links styled as buttons
-- **External links** - directing users to external resources
-- **Download links** - file downloads styled as buttons
-- **Anchor links** - jumping to page sections
 
 Using `href` creates a semantic `<a>` tag with button styling, providing proper browser behavior (right-click, open in new tab) and SEO benefits.
 
@@ -74,11 +56,7 @@ Using `href` creates a semantic `<a>` tag with button styling, providing proper 
 
 ## Button pills
 
-The button pills can be used as an alternative style by using fully rounded edges. Pill buttons offer:
-- **Modern aesthetic** - contemporary, friendly appearance
-- **Visual distinction** - standing out from standard buttons
-- **Brand personality** - softer, more approachable feel
-- **Mobile-friendly** - rounder shapes feel natural on touch screens
+The button pills can be used as an alternative style by using fully rounded edges.
 
 Pill buttons work especially well in modern web apps, social platforms, and consumer-facing products.
 
@@ -87,8 +65,13 @@ Pill buttons work especially well in modern web apps, social platforms, and cons
   import { Button } from "flowbite-svelte";
 </script>
 
-<Button pill>Default</Button>
+<Button pill>Brand</Button>
 <Button color="alternative" pill>Alternative</Button>
+<Button color="gray" pill>Gray</Button>
+<Button color="success" pill>Success</Button>
+<Button color="danger" pill>Danger</Button>
+<Button color="warning" pill>Warning</Button>
+<Button color="transparent" pill>Transparent</Button>
 <Button color="dark" pill>Dark</Button>
 <Button color="light" pill>Light</Button>
 <Button color="blue" pill>Blue</Button>
@@ -98,16 +81,32 @@ Pill buttons work especially well in modern web apps, social platforms, and cons
 <Button color="purple" pill>Purple</Button>
 ```
 
+## Shadow
+
+```svelte
+<script lang="ts">
+  import { Button } from "flowbite-svelte";
+</script>
+
+<Button shadow>Brand</Button>
+<Button color="alternative" shadow>Alternative</Button>
+<Button color="gray" shadow>Gray</Button>
+<Button color="success" shadow>Success</Button>
+<Button color="danger" shadow>Danger</Button>
+<Button color="warning" shadow>Warning</Button>
+<Button color="transparent" shadow>Transparent</Button>
+<Button color="dark" shadow>Dark</Button>
+<Button color="light" shadow>Light</Button>
+<Button color="blue" shadow>Blue</Button>
+<Button color="green" shadow>Green</Button>
+<Button color="red" shadow>Red</Button>
+<Button color="yellow" shadow>Yellow</Button>
+<Button color="purple" shadow>Purple</Button>
+```
+
 ## Gradient monochrome
 
 These beautifully colored buttons built with the gradient color stops utility classes from Tailwind CSS can be used as a creative alternative to the default button styles.
-
-Gradient buttons are perfect for:
-- **Hero sections** - eye-catching primary CTAs
-- **Landing pages** - premium feel and visual interest
-- **Marketing campaigns** - standing out and grabbing attention
-- **Premium features** - indicating special or paid features
-- **Brand differentiation** - creating memorable visual identity
 
 Use sparingly to maintain impact and avoid overwhelming users.
 
@@ -128,11 +127,7 @@ Use sparingly to maintain impact and avoid overwhelming users.
 
 ## Gradient duotone
 
-These buttons use a style that includes two contrasted colors creating an impressive mesh gradient effect. Duotone gradients offer:
-- **Visual depth** - dimensional appearance
-- **Brand colors** - incorporating multiple brand colors
-- **Modern design** - contemporary gradient trends
-- **Attention-grabbing** - higher visual impact than solid colors
+These buttons use a style that includes two contrasted colors creating an impressive mesh gradient effect.
 
 Ideal for promotional content, featured actions, and creative industries.
 
@@ -154,12 +149,6 @@ Ideal for promotional content, featured actions, and creative industries.
 
 This is a special button style that incorporates a gradient color for the outline that can be used as a secondary style to the fully colored gradient buttons.
 
-Gradient outline buttons provide:
-- **Subtle premium feel** - sophisticated without being overwhelming
-- **Visual hierarchy** - secondary to filled gradient buttons
-- **Background versatility** - works on various backgrounds
-- **Hover states** - can transition to filled on interaction
-
 Use for secondary CTAs that still need visual interest.
 
 ```svelte
@@ -179,11 +168,7 @@ Use for secondary CTAs that still need visual interest.
 
 ## Colored shadows
 
-These beautiful button elements with color shadows can be used since the release of Tailwind v3.0. Shadow effects create:
-- **Depth and elevation** - buttons appear lifted from page
-- **Visual prominence** - drawing attention to important actions
-- **Brand reinforcement** - shadows matching brand colors
-- **Modern aesthetic** - contemporary design trends
+These beautiful button elements with color shadows can be used since the release of Tailwind v3.0.
 
 Best for hero CTAs and primary actions where you want maximum visual impact.
 
@@ -204,12 +189,7 @@ Best for hero CTAs and primary actions where you want maximum visual impact.
 
 ## Outline buttons
 
-Use the following button styles to show the colors only for the border of the element. Outline buttons are excellent for:
-- **Secondary actions** - less visual weight than filled buttons
-- **Multiple options** - reducing visual clutter with many buttons
-- **Light backgrounds** - maintaining clarity without heavy fills
-- **Cancel actions** - de-emphasizing dismissive actions
-- **Ghost buttons** - minimal, modern appearance
+Use the following button styles to show the colors only for the border of the element. 
 
 Outline buttons provide clear hierarchy while maintaining a clean, uncluttered interface.
 
@@ -218,22 +198,25 @@ Outline buttons provide clear hierarchy while maintaining a clean, uncluttered i
   import { Button } from "flowbite-svelte";
 </script>
 
-<Button outline>Default</Button>
-<Button outline color="dark">Dark</Button>
-<Button outline color="green">Green</Button>
-<Button outline color="red">Red</Button>
-<Button outline color="yellow">Yellow</Button>
-<Button outline color="purple">Purple</Button>
+<Button outline>Brand</Button>
+<Button color="alternative" outline>Alternative</Button>
+<Button color="gray" outline>Gray</Button>
+<Button color="success" outline>Success</Button>
+<Button color="danger" outline>Danger</Button>
+<Button color="warning" outline>Warning</Button>
+<Button color="transparent" outline>Transparent</Button>
+<Button color="dark" outline>Dark</Button>
+<Button color="light" outline>Light</Button>
+<Button color="blue" outline>Blue</Button>
+<Button color="green" outline>Green</Button>
+<Button color="red" outline>Red</Button>
+<Button color="yellow" outline>Yellow</Button>
+<Button color="purple" outline>Purple</Button>
 ```
 
 ## Button sizes with icons
 
-Use these examples if you want to use smaller or larger buttons. Size variations serve different purposes:
-- **xs**: Compact interfaces, inline actions, dense tables
-- **sm**: Secondary actions, toolbar buttons, form controls
-- **md**: Default size for most use cases
-- **lg**: Primary CTAs, prominent actions, hero sections
-- **xl**: Extra emphasis, landing pages, marketing campaigns
+Use these examples if you want to use smaller or larger buttons.
 
 Icons help users quickly identify button purpose and improve scannability.
 
@@ -252,12 +235,7 @@ Icons help users quickly identify button purpose and improve scannability.
 
 ## Button with icon
 
-Use the following examples to add a SVG icon inside the button either on the left or right side. Icons enhance buttons by:
-- **Improving recognition** - visual symbols processed faster than text
-- **Providing context** - clarifying action purpose
-- **Supporting internationalization** - reducing text dependencies
-- **Creating consistency** - matching icon usage across the app
-- **Adding polish** - professional, refined appearance
+Use the following examples to add a SVG icon inside the button either on the left or right side.
 
 Position icons based on reading direction and action type (left for actions, right for navigation).
 
@@ -277,11 +255,7 @@ Position icons based on reading direction and action type (left for actions, rig
 
 ## Button with label
 
-This example can be used to show a notification count or helper text inside a button using the badge element. Labels within buttons are useful for:
-- **Notification counts** - unread messages, pending items
-- **Status indicators** - new, beta, pro features
-- **Quantities** - cart items, selected filters
-- **Contextual info** - providing additional context without clutter
+This example can be used to show a notification count or helper text inside a button using the badge element.
 
 Badges help users make informed decisions about clicking buttons.
 
@@ -298,11 +272,7 @@ Badges help users make informed decisions about clicking buttons.
 
 ## Icon buttons
 
-Sometimes you need a button to indicate an action using only an icon. Icon-only buttons work well when:
-- **Space is limited** - toolbars, compact layouts
-- **Icons are universal** - commonly understood symbols (search, close, menu)
-- **Used consistently** - patterns established throughout app
-- **Tooltips provided** - additional context on hover
+Sometimes you need a button to indicate an action using only an icon. 
 
 Always include accessible labels (aria-label) for screen readers even when text isn't visible.
 
@@ -324,11 +294,7 @@ Always include accessible labels (aria-label) for screen readers even when text 
 
 ## Loader
 
-Use the spinner components to indicate a loader animation inside buttons. Loading states are critical for:
-- **Form submissions** - preventing duplicate submissions
-- **API calls** - showing pending operations
-- **User feedback** - confirming action is processing
-- **Error prevention** - disabling button during processing
+Use the spinner components to indicate a loader animation inside buttons.
 
 Always disable buttons during loading to prevent multiple submissions.
 
@@ -349,11 +315,7 @@ Always disable buttons during loading to prevent multiple submissions.
 
 ## Disabled
 
-You can add any additional button attributes. The following example shows adding the `disabled` attribute. Disabled buttons should:
-- **Remain visible** - showing all available options
-- **Indicate unavailability** - clear visual difference from enabled state
-- **Provide context** - tooltips explaining why disabled (when helpful)
-- **Maintain layout** - preventing UI shifts
+You can add any additional button attributes. The following example shows adding the `disabled` attribute.
 
 Use disabled states for conditional features, permission-based actions, or form validation feedback.
 
@@ -367,13 +329,7 @@ Use disabled states for conditional features, permission-based actions, or form 
 
 ## Events
 
-You can use `onclick` or any standard `on*` to listen to the event. Event handling enables:
-- **Action triggering** - executing functions on click
-- **State management** - updating application state
-- **Analytics tracking** - measuring user interactions
-- **Form validation** - checking inputs before submission
-- **Navigation** - programmatic routing
-- **Feedback** - showing notifications or alerts
+You can use `onclick` or any standard `on*` to listen to the event. 
 
 ```svelte
 <script lang="ts">
@@ -393,12 +349,6 @@ You can use `onclick` or any standard `on*` to listen to the event. Event handli
 ## Loading State with Spinner
 
 Use the `loading` prop to indicate a pending action (e.g. form submission). When `true`, the button is automatically disabled and shows a built-in spinner. This improves user feedback and prevents duplicate submissions.
-
-Benefits of the loading prop:
-- **Automatic disabling** - prevents duplicate clicks
-- **Built-in spinner** - no need to manage separate loading UI
-- **User feedback** - clear indication of processing
-- **State management** - simple boolean control
 
 This pattern is essential for any async operation triggered by a button.
 
@@ -430,37 +380,6 @@ The Button component follows accessibility best practices:
 - **Color Contrast**: All color variants meet WCAG contrast requirements
 - **Touch Targets**: Minimum 44x44px for mobile usability
 
-## Best Practices
-
-When implementing buttons, consider these guidelines:
-
-- **Clear Labels**: Use action-oriented verbs (Save, Delete, Submit, Cancel)
-- **Consistent Sizing**: Maintain size consistency within the same context
-- **Visual Hierarchy**: Primary actions should stand out from secondary ones
-- **Spacing**: Provide adequate space between buttons (minimum 8px)
-- **Loading States**: Always show feedback for async operations
-- **Confirmation**: Require confirmation for destructive actions
-- **Mobile Touch**: Ensure adequate touch target size (44x44px minimum)
-- **Color Meaning**: Use colors consistently (red for delete, green for confirm)
-- **Limit CTAs**: Focus on 1-2 primary actions per view
-- **Descriptive Text**: Avoid vague labels like "Click here" or "Submit"
-
-## Button Hierarchy
-
-Establish clear visual hierarchy with different button types:
-
-1. **Primary** - Main action (filled, prominent color)
-2. **Secondary** - Alternative action (outline or subtle color)
-3. **Tertiary** - Less important action (text button or ghost)
-4. **Destructive** - Dangerous action (red, requires confirmation)
-
-## Common Patterns
-
-**Form Actions**: Submit (primary) + Cancel (secondary)
-**Confirmation Dialogs**: Confirm (red/destructive) + Cancel (outline)
-**Wizards**: Back (outline) + Next (primary) + Cancel (text)
-**CRUD Operations**: Create (green) + Edit (blue) + Delete (red)
-
 ## See also
 
 - [Button group](https://flowbite-svelte.com/llm/components/button-group.md)
@@ -476,7 +395,7 @@ Establish clear visual hierarchy with different button types:
 
 #### Types
 
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L330)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L328)
 
 #### Props
 
@@ -484,7 +403,7 @@ Establish clear visual hierarchy with different button types:
 - pill
 - outline: false
 - size: "md"
-- color
+- color: "brand"
 - shadow: false
 - tag: "button"
 - disabled
@@ -495,7 +414,7 @@ Establish clear visual hierarchy with different button types:
 
 #### Types
 
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L340)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L338)
 
 #### Props
 
@@ -508,7 +427,6 @@ Establish clear visual hierarchy with different button types:
 - href
 - disabled
 - size
-- btnClass
 
 
 ## References

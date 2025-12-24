@@ -25,8 +25,8 @@ Use this example to create circle and rounded avatar on an image element. The ro
 </script>
 
 <div class="flex space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-2.webp" />
-  <Avatar src="/images/profile-picture-2.webp" cornerStyle="rounded" />
+  <Avatar src="/images/people/profile-picture-5.jpg" />
+  <Avatar src="/images/people/profile-picture-5.jpg" cornerStyle="rounded" />
 </div>
 ```
 
@@ -55,9 +55,9 @@ Customize the status indicator dot to match your design requirements. You can ch
   import { BugOutline } from "flowbite-svelte-icons";
 </script>
 
-<Avatar src="/images/profile-picture-3.webp">
+<Avatar src="/images/people/profile-picture-5.jpg">
   {#snippet indicator()}
-    <Indicator color="gray" border size="xl" placement="top-right">
+    <Indicator color="purple" border size="xl" placement="top-right">
       <BugOutline />
     </Indicator>
   {/snippet}
@@ -75,8 +75,8 @@ You can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify the r
   import { Avatar } from "flowbite-svelte";
 </script>
 
-<Avatar src="/images/profile-picture-2.webp" border />
-<Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300" />
+<Avatar src="/images/people/profile-picture-5.jpg" border />
+<Avatar src="/images/people/profile-picture-5.jpg" border class="ring-red-400 dark:ring-red-300" />
 ```
 
 ## Placeholder
@@ -98,12 +98,6 @@ When there is no custom image available, a placeholder is displayed. Placeholder
 
 This example can be used to show the initials of the user's first and last name as a placeholder when no profile picture is available. This creates a more personalized experience than generic icons and helps users identify individuals even without photos.
 
-Initial-based avatars are particularly useful in:
-- Business applications where photos may not be required
-- Team directories with many members
-- Comment sections or collaborative tools
-- Administrative interfaces
-
 ```svelte
 <script lang="ts">
   import { Avatar } from "flowbite-svelte";
@@ -121,11 +115,11 @@ Use this example to show a tooltip when hovering over the avatar. Tooltips can d
   import { Avatar, Tooltip } from "flowbite-svelte";
 </script>
 
-<Avatar data-name="Jese Leos" src="/images/profile-picture-1.webp" />
+<Avatar data-name="Jese Leos" src="/images/people/profile-picture-5.jpg" />
 <Tooltip>Jese Leos</Tooltip>
-<Avatar data-name="Robert Gouth" src="/images/profile-picture-2.webp" />
+<Avatar data-name="Robert Gouth" src="/images/people/profile-picture-4.jpg" />
 <Tooltip>Robert Gouth</Tooltip>
-<Avatar data-name="Bonnie Green" src="/images/profile-picture-3.webp" />
+<Avatar data-name="Bonnie Green" src="/images/people/profile-picture-3.jpg" />
 <Tooltip>Bonnie Green</Tooltip>
 ```
 
@@ -133,33 +127,22 @@ Use this example to show a tooltip when hovering over the avatar. Tooltips can d
 
 Use a dot element relative to the avatar component as an indicator for the user's status (e.g., online, offline, busy, away). Status indicators help users understand availability in real-time communication tools, collaboration platforms, and social applications.
 
-Different colors typically represent:
-- **Green**: Online/Available
-- **Yellow/Orange**: Away/Idle
-- **Red**: Busy/Do Not Disturb
-- **Gray**: Offline
-
 ```svelte
 <script lang="ts">
   import { Avatar } from "flowbite-svelte";
 </script>
 
-<Avatar src="/images/profile-picture-3.webp" dot={{ color: "red" }} />
-<Avatar src="/images/profile-picture-3.webp" dot={{ placement: "top-right", color: "red" }} cornerStyle="rounded" />
-<Avatar src="/images/profile-picture-5.webp" dot={{ placement: "bottom-right", color: "green" }} />
-<Avatar src="/images/profile-picture-5.webp" dot={{ placement: "bottom-right" }} cornerStyle="rounded" />
+<Avatar src="/images/people/profile-picture-5.jpg" dot={{ color: "danger" }} />
+<Avatar src="/images/people/profile-picture-5.jpg" dot={{ placement: "top-right", color: "warning" }} cornerStyle="rounded" />
+<Avatar src="/images/people/profile-picture-5.jpg" dot={{ placement: "bottom-right", color: "success" }} />
+<Avatar src="/images/people/profile-picture-5.jpg" dot={{ placement: "bottom-right" }} cornerStyle="rounded" />
 
 <Avatar dot={{}} />
 ```
 
 ## Stacked
 
-Use this example if you want to stack a group of users by overlapping the avatar components. Stacked avatars are perfect for showing:
-
-- Team members on a project
-- Participants in a meeting or chat
-- Contributors to a document or task
-- Multiple assignees without taking up excessive space
+Use this example if you want to stack a group of users by overlapping the avatar components. 
 
 This pattern saves space while still providing visual representation of all involved users. Include a count indicator when there are more users than can be displayed.
 
@@ -169,28 +152,22 @@ This pattern saves space while still providing visual representation of all invo
 </script>
 
 <div class="mb-5 flex">
-  <Avatar src="/images/profile-picture-1.webp" stacked />
-  <Avatar src="/images/profile-picture-2.webp" stacked />
-  <Avatar src="/images/profile-picture-3.webp" stacked />
-  <Avatar stacked />
+  <Avatar src="/images/people/profile-picture-5.jpg" stacked />
+  <Avatar src="/images/people/profile-picture-2.jpg" stacked />
+  <Avatar src="/images/people/profile-picture-3.jpg" stacked />
+  <Avatar src="/images/people/profile-picture-4.jpg" stacked />
 </div>
 <div class="flex">
-  <Avatar src="/images/profile-picture-1.webp" stacked />
-  <Avatar src="/images/profile-picture-2.webp" stacked />
-  <Avatar src="/images/profile-picture-3.webp" stacked />
+  <Avatar src="/images/people/profile-picture-5.jpg" stacked />
+  <Avatar src="/images/people/profile-picture-2.jpg" stacked />
+  <Avatar src="/images/people/profile-picture-3.jpg" stacked />
   <Avatar stacked href="/" class="bg-gray-700 text-sm text-white hover:bg-gray-600">+99</Avatar>
 </div>
 ```
 
 ## Avatar text
 
-This example can be used if you want to show additional information in the form of text elements such as the user's name and join date. Combining avatars with descriptive text provides full context about the user, making it ideal for:
-
-- User profile cards
-- Directory listings
-- Comment headers
-- Team member displays
-- Author bylines
+Display additional information alongside avatars, such as the user's name and join date.
 
 ```svelte
 <script lang="ts">
@@ -198,7 +175,7 @@ This example can be used if you want to show additional information in the form 
 </script>
 
 <div class="flex items-center space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-1.webp" cornerStyle="rounded" />
+  <Avatar src="/images/people/profile-picture-5.jpg" cornerStyle="rounded" />
   <div class="space-y-1 font-medium dark:text-white">
     <div>Jese Leos</div>
     <div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
@@ -208,20 +185,14 @@ This example can be used if you want to show additional information in the form 
 
 ## User dropdown
 
-Use this example if you want to show a dropdown menu when clicking on the avatar component. Avatar dropdowns are commonly used in navigation headers for:
-
-- Quick access to profile settings
-- Account management options
-- User-specific actions (sign out, preferences, etc.)
-- Status changes
-- Switching between accounts or workspaces
+Enable interactive dropdown menus triggered by clicking the avatar component.
 
 ```svelte
 <script lang="ts">
   import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownGroup } from "flowbite-svelte";
 </script>
 
-<Avatar id="user-drop" src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: "green" }} />
+<Avatar id="user-drop" src="/images/people/profile-picture-5.jpg" class="cursor-pointer" dot={{ color: "success" }} />
 <Dropdown triggeredBy="#user-drop">
   <DropdownHeader>
     <span class="block text-sm">Bonnie Green</span>
@@ -264,12 +235,12 @@ Preset values are equivalents of:
 </script>
 
 <div class=" flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
-  <Avatar src="/images/profile-picture-3.webp" size="xs" />
-  <Avatar src="/images/profile-picture-3.webp" size="sm" />
-  <Avatar src="/images/profile-picture-3.webp" size="md" />
-  <Avatar src="/images/profile-picture-3.webp" size="lg" />
-  <Avatar src="/images/profile-picture-3.webp" size="xl" />
-  <Avatar src="/images/profile-picture-3.webp" class="h-28 w-28" />
+  <Avatar src="/images/people/profile-picture-5.jpg" size="xs" />
+  <Avatar src="/images/people/profile-picture-5.jpg" size="sm" />
+  <Avatar src="/images/people/profile-picture-5.jpg" size="md" />
+  <Avatar src="/images/people/profile-picture-5.jpg" size="lg" />
+  <Avatar src="/images/people/profile-picture-5.jpg" size="xl" />
+  <Avatar src="/images/people/profile-picture-5.jpg" class="h-28 w-28" />
 </div>
 ```
 
@@ -282,17 +253,6 @@ The Avatar component is built with accessibility in mind:
 - **Keyboard Navigation**: Interactive avatars (with dropdowns/tooltips) are fully keyboard accessible
 - **Screen Reader Support**: Status indicators and additional information are announced to screen readers
 - **Color Contrast**: Status dots and text meet WCAG contrast requirements
-
-## Best Practices
-
-When implementing avatars, consider these guidelines:
-
-- **Image Optimization**: Use appropriately sized images to avoid unnecessary bandwidth
-- **Fallback Strategy**: Always provide fallbacks (initials or icons) for missing images
-- **Consistent Sizing**: Use consistent avatar sizes within the same context
-- **Loading States**: Show loading indicators for slowly loading images
-- **Clickable Areas**: Ensure clickable avatars have adequate touch targets (minimum 44x44px)
-- **Privacy**: Consider user privacy preferences when displaying profile pictures
 
 ## See also
 
@@ -308,7 +268,7 @@ When implementing avatars, consider these guidelines:
 
 #### Types
 
-[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L232)
+[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L238)
 
 #### Props
 
