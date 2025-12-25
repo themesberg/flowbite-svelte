@@ -81,7 +81,7 @@
   {/if}
 
   <ul class={base({ class: clsx(theme?.base, className) })}>
-    <li {...restProps}>
+    <li>
       <PaginationButton onclick={goToPreviousPage} disabled={currentPage === 1} class={prev({ class: clsx(theme?.prev, styling?.prev) })}>
         {#if prevContent}
           {@render prevContent()}
@@ -99,7 +99,7 @@
         </li>
       {/each}
     {/if}
-    <li {...restProps}>
+    <li>
       <PaginationButton onclick={goToNextPage} disabled={currentPage === totalPages} class={next({ class: clsx(theme?.next, styling?.next) })}>
         {#if nextContent}
           {@render nextContent()}

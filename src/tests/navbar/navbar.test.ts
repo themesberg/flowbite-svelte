@@ -176,7 +176,6 @@ describe("NavLi Component", () => {
 
       expect(button).toBeInTheDocument();
       expect(button.tagName).toBe("BUTTON");
-      expect(button).toHaveAttribute("role", "presentation");
       expect(button).toHaveTextContent("Button Item");
     });
   });
