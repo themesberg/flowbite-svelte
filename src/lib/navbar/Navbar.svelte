@@ -55,6 +55,7 @@
 @prop children
 @prop fluid
 @prop class: className
+@prop classes
 @prop closeOnClickOutside = true
 @prop breakpoint = "md"
 @prop ...restProps

@@ -15,7 +15,7 @@
   const finalHorizontal = $derived(horizontal ?? listGroupCtx?.horizontal);
 
   let state: ListgroupItemVariants["state"] = $derived(disabled ? "disabled" : current ? "current" : "normal");
-  const { base, icon } = $derived(listGroupItem({ state, active: finalActive, horizontal: finalHorizontal, class: clsx(theme, className) }));
+  const { base, icon } = $derived(listGroupItem({ state, active: finalActive, horizontal: finalHorizontal }));
 </script>
 
 {#snippet nameOrChildren()}
@@ -30,7 +30,7 @@
 {/snippet}
 
 {#if restProps.href === undefined && !active}
-  <li class={base({ class: clsx(theme?.base, className) })}>
+  <li {...restProps} class={base({ class: clsx(theme?.base, className) })}>
     {@render nameOrChildren()}
   </li>
 {:else if restProps.href === undefined}
@@ -57,6 +57,5 @@
 @prop name
 @prop Icon
 @prop class: className
-@prop iconClass = "me-2.5 h-15 w-15"
 @prop ...restProps
 -->

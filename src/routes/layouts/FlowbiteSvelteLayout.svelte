@@ -72,10 +72,10 @@
     </NavUl>
 
     <div class="order-1 ml-auto flex items-center lg:order-2">
-      <ToolbarLink class="hidden hover:text-gray-900 2xl:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
+      <ToolbarLink class="hidden hover:text-gray-900 xl:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
         <GitHub />
       </ToolbarLink>
-      <ToolbarLink class="hidden hover:text-gray-900 2xl:inline-block dark:hover:text-white" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
+      <ToolbarLink class="hidden hover:text-gray-900 xl:inline-block dark:hover:text-white" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
         <Discord />
       </ToolbarLink>
       <DarkMode size="lg" class="inline-block hover:text-gray-900 focus:ring-gray-100 dark:hover:text-white dark:focus:ring-gray-700" />

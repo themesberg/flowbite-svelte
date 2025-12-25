@@ -78,5 +78,6 @@
 @prop rounded
 @prop border
 @prop class: className
+@prop classes
 @prop ...restProps
 -->

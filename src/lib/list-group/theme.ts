@@ -46,7 +46,7 @@ export const listGroupItem = tv({
     state: {
       normal: "",
       current: "text-white bg-primary-700 dark:text-white dark:bg-gray-800",
-      disabled: "text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400"
+      disabled: "text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400 opacity-50"
     },
     active: {
       true: "",

@@ -66,7 +66,7 @@
         <h3 class="text-xl font-medium text-gray-900 dark:text-white">Heading 3</h3>
         <p class="text-gray-700 dark:text-gray-300">Regular paragraph text.</p>
         <p class="text-sm text-gray-600 dark:text-gray-400">Small caption text.</p>
-        <a href="/" class="text-primary-600 hover:text-primary-700 dark:text-primary-500">Link example</a>
+        <a href="/theme-test" class="text-primary-600 hover:text-primary-700 dark:text-primary-500">Link example</a>
       </div>
     </Card>
 
@@ -241,7 +241,7 @@
         <div>
           <p class="mb-2 text-sm text-gray-600 dark:text-gray-400">Breadcrumb:</p>
           <Breadcrumb class="text-sm">
-            <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
+            <BreadcrumbItem href="/theme-test" home>Home</BreadcrumbItem>
             <BreadcrumbItem href="/projects">Projects</BreadcrumbItem>
             <BreadcrumbItem>Test</BreadcrumbItem>
           </Breadcrumb>

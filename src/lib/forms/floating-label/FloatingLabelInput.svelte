@@ -181,7 +181,7 @@
     onkeydown={handleKeydown}
   />
   {#if showClearButton}
-    <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling?.svg)} />
+    <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} color={clearableColor} ariaLabel="Clear search value" svgClass={clsx(styling?.svg)} />
   {/if}
   <label for={id} class={label({ class: clsx(theme?.label, styling?.label) })}>
     {@render children()}

@@ -9,6 +9,7 @@ import FloatingLabelDisabledTest from "./floating-label-disabled.test.svelte";
 import FloatingLabelIconTest from "./floating-label-icon.test.svelte";
 import FloatingLabelValueTest from "./floating-label-value.test.svelte";
 import FloatingLabelClearableTest from "./floating-label-clearable.test.svelte";
+import FloatingLabelClearableEmptyTest from "./floating-label-clearable-empty.test.svelte";
 import FloatingLabelSuggestionsTest from "./floating-label-suggestions.test.svelte";
 import FloatingLabelSizesTest from "./floating-label-sizes.test.svelte";
 
@@ -215,12 +216,10 @@ describe("FloatingLabelInput - Value Binding", () => {
 
 describe("FloatingLabelInput - Clearable", () => {
   test("does not show clear button when input is empty", () => {
-    render(FloatingLabelClearableTest);
+    render(FloatingLabelClearableEmptyTest);
     const input = screen.getByLabelText("Clearable Input") as HTMLInputElement;
 
-    // Clear the input first
-    input.value = "";
-    input.dispatchEvent(new Event("input", { bubbles: true }));
+    expect(input.value).toBe("");
 
     const clearButton = input.parentElement?.querySelector('[aria-label="Clear search value"]');
     expect(clearButton).not.toBeInTheDocument();
