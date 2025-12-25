@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Navbar, NavLi, NavUl, NavHamburger } from "$lib";
-  
+
   let activeUrl = $state("/about");
 </script>
 

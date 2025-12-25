@@ -16,6 +16,12 @@
 
   let state: ListgroupItemVariants["state"] = $derived(disabled ? "disabled" : current ? "current" : "normal");
   const { base, icon } = $derived(listGroupItem({ state, active: finalActive, horizontal: finalHorizontal }));
+
+  // Filter out button-specific props when rendering as li
+  const liProps = $derived.by(() => {
+    const { href, ...props } = restProps;
+    return props;
+  });
 </script>
 
 {#snippet nameOrChildren()}
@@ -30,7 +36,7 @@
 {/snippet}
 
 {#if restProps.href === undefined && !active}
-  <li {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <li {...liProps} class={base({ class: clsx(theme?.base, className) })}>
     {@render nameOrChildren()}
   </li>
 {:else if restProps.href === undefined}

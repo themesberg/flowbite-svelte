@@ -26,10 +26,12 @@ describe("Gallery - Basic", () => {
   test("images have correct src attributes", () => {
     render(BasicGallery);
     const images = screen.getAllByRole("img");
-    expect(images[0]).toHaveAttribute("src", "/test-image-1.jpg");
-    expect(images[1]).toHaveAttribute("src", "/test-image-2.jpg");
-    expect(images[2]).toHaveAttribute("src", "/test-image-3.jpg");
+
+    images.forEach((img) => {
+      expect(img.getAttribute("src")).toMatch(/^data:image\//);
+    });
   });
+
 
   test("images have correct alt attributes", () => {
     render(BasicGallery);
@@ -78,14 +80,15 @@ describe("Gallery - Custom Class", () => {
   test("applies custom class to container", () => {
     render(CustomClassGallery);
     const gallery = screen.getByTestId("gallery-container");
-    const galleryDiv = gallery.querySelector('div');
+    const galleryDiv = gallery.querySelector("div");
+    expect(galleryDiv).not.toBeNull();
     expect(galleryDiv).toHaveClass("custom-gallery-class");
   });
 
   test("applies custom class to images", () => {
     render(CustomClassGallery);
     const images = screen.getAllByRole("img");
-    images.forEach(img => {
+    images.forEach((img) => {
       expect(img).toHaveClass("custom-image-class");
     });
   });

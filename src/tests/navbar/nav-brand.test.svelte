@@ -3,10 +3,8 @@
 </script>
 
 <Navbar>
-  {#snippet children()}
-    <NavBrand href="/" data-testid="nav-brand">
-      <img src="/logo.svg" alt="Logo" class="h-8" />
-      <span class="text-xl">Brand Name</span>
-    </NavBrand>
-  {/snippet}
+  <NavBrand href="/" data-testid="nav-brand">
+    <img src="https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg" alt="Logo" class="h-8" />
+    <span class="text-xl">Brand Name</span>
+  </NavBrand>
 </Navbar>

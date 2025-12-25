@@ -1,9 +1,7 @@
 <script lang="ts">
   import { MegaMenu, Button } from "$lib";
 
-  const items = [
-    { name: "Full Width Item" }
-  ];
+  const items = [{ name: "Full Width Item" }];
 </script>
 
 <Button data-testid="full-mega-menu-trigger" id="full-mega-menu-trigger-btn">Open Full Menu</Button>

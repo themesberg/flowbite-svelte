@@ -25,11 +25,8 @@ describe("MegaMenu - Basic", () => {
   test("opens menu on trigger click", async () => {
     const user = userEvent.setup();
     render(BasicMegaMenu);
-    
-    // Wait for component to mount and set up event listeners
-    await new Promise(resolve => setTimeout(resolve, 50));
-    
-    const trigger = screen.getByTestId("mega-menu-trigger");
+
+    const trigger = await screen.findByTestId("mega-menu-trigger");
     await user.click(trigger);
 
     // Wait for the menu to open
@@ -51,10 +48,10 @@ describe("MegaMenu - Full Width", () => {
   test("opens full width menu", async () => {
     const user = userEvent.setup();
     render(FullMegaMenu);
-    
+
     // Wait for component to mount
-    await new Promise(resolve => setTimeout(resolve, 50));
-    
+    await new Promise((resolve) => setTimeout(resolve, 50));
+
     const trigger = screen.getByTestId("full-mega-menu-trigger");
     await user.click(trigger);
 
@@ -69,10 +66,10 @@ describe("MegaMenu - Full Width", () => {
   test("renders extra content in full width mode", async () => {
     const user = userEvent.setup();
     render(FullMegaMenu);
-    
+
     // Wait for component to mount
-    await new Promise(resolve => setTimeout(resolve, 50));
-    
+    await new Promise((resolve) => setTimeout(resolve, 50));
+
     const trigger = screen.getByTestId("full-mega-menu-trigger");
     await user.click(trigger);
 
@@ -89,10 +86,10 @@ describe("MegaMenu - Custom Content", () => {
   test("renders custom item content", async () => {
     const user = userEvent.setup();
     render(CustomMegaMenu);
-    
+
     // Wait for component to mount
-    await new Promise(resolve => setTimeout(resolve, 50));
-    
+    await new Promise((resolve) => setTimeout(resolve, 50));
+
     const trigger = screen.getByTestId("custom-mega-menu-trigger");
     await user.click(trigger);
 

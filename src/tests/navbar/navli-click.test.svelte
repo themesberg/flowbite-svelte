@@ -6,9 +6,9 @@
 
 <script lang="ts">
   import { Navbar, NavLi, NavUl, NavHamburger } from "$lib";
-  
+
   let clickCount = $state(0);
-  
+
   function handleClick() {
     clickCount++;
     testState.clickCount = clickCount;
@@ -19,9 +19,7 @@
   {#snippet children({ hidden, toggle })}
     <NavHamburger onclick={toggle} data-testid="hamburger" />
     <NavUl {hidden}>
-      <NavLi href="/page" onclick={handleClick} data-testid="clickable-link">
-        Clickable
-      </NavLi>
+      <NavLi href="/docs/pages/introduction" onclick={handleClick} data-testid="clickable-link">Clickable</NavLi>
     </NavUl>
   {/snippet}
 </Navbar>

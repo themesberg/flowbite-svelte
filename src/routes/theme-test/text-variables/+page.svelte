@@ -2,20 +2,9 @@
   import ThemeSelector from "../../utils/ThemeSelector.svelte";
   const fgBrand = ["text-fg-brand", "text-fg-brand-subtle", "text-fg-brand-strong"];
   const shikiFgBrand = ["text-shiki-fg-brand", "text-shiki-fg-brand-subtle"];
-  const fontSizeVariables = [
-    "text-2xs",
-  ];
-  const spacingVariables = [
-    "spacing-8xl",
-  ];
-  const leadingVariables = ["leading-9",
-    "leading-8",
-    "leading-7",
-    "leading-6",
-    "leading-5",
-    "leading-4",
-    "leading-none",
-    "leading-heading-none"]
+  const fontSizeVariables = ["text-2xs"];
+  const spacingVariables = ["spacing-8xl"];
+  const leadingVariables = ["leading-9", "leading-8", "leading-7", "leading-6", "leading-5", "leading-4", "leading-none", "leading-heading-none"];
 
   const trackingVariables = ["tracking-tighter", "tracking-tight"];
 

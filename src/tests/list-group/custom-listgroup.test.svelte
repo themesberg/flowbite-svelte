@@ -9,8 +9,10 @@
 
 <Listgroup {items} class="custom-list-class">
   {#snippet children(item)}
-    <ListgroupItem data-testid="custom-item-{item.value}">
-      {item.name} - Value: {item.value}
-    </ListgroupItem>
+    {#if typeof item === "object" && "value" in item && "name" in item}
+      <ListgroupItem data-testid="custom-item-{item.value}">
+        {item.name} - Value: {item.value}
+      </ListgroupItem>
+    {/if}
   {/snippet}
 </Listgroup>

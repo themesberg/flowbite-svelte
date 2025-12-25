@@ -93,6 +93,7 @@ describe("Listgroup - Links", () => {
   test("links have correct href attributes", () => {
     render(LinkListgroup);
     const link1 = screen.getByText("Link 1").closest("a");
+    expect(link1).not.toBeNull();
     expect(link1).toHaveAttribute("href", "/link1");
   });
 });

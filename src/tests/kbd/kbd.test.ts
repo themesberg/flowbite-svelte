@@ -33,10 +33,14 @@ describe("Kbd - Multiple Keys", () => {
     expect(screen.getByText("S")).toBeInTheDocument();
   });
 
-  test("all kbd elements have correct tag", () => {
+    test("all kbd elements have correct tag", () => {
     render(MultipleKbd);
-    const kbds = document.querySelectorAll("kbd");
-    expect(kbds.length).toBeGreaterThanOrEqual(3);
+    const ctrlKbd = screen.getByText("Ctrl");
+    const shiftKbd = screen.getByText("Shift");
+    const sKbd = screen.getByText("S");
+    expect(ctrlKbd.tagName).toBe("KBD");
+    expect(shiftKbd.tagName).toBe("KBD");
+    expect(sKbd.tagName).toBe("KBD");
   });
 });
 

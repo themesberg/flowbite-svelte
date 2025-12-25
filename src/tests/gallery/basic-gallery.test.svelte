@@ -1,10 +1,10 @@
 <script lang="ts">
   import { Gallery } from "$lib";
-
+  
   const items = [
-    { src: "/test-image-1.jpg", alt: "Image 1" },
-    { src: "/test-image-2.jpg", alt: "Image 2" },
-    { src: "/test-image-3.jpg", alt: "Image 3" }
+    { src: "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=1", alt: "Image 1" },
+    { src: "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=2", alt: "Image 2" },
+    { src: "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=3", alt: "Image 3" },
   ];
 </script>
 

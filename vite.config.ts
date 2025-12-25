@@ -15,13 +15,9 @@ process.env.VITEST = "true";
 
 // Suppress SvelteKit cleanup errors
 const originalStderr = process.stderr.write;
-process.stderr.write = function(chunk, encoding, callback) {
+process.stderr.write = function (chunk: string | Uint8Array, encoding?: BufferEncoding | ((err?: Error) => void), callback?: (err?: Error) => void): boolean {
   const str = chunk.toString();
-  if (
-    str.includes("wrapDynamicImport") ||
-    str.includes("get_hooks") ||
-    str.includes(".svelte-kit/generated/server/internal.js")
-  ) {
+  if (str.includes("wrapDynamicImport") || str.includes("get_hooks") || str.includes(".svelte-kit/generated/server/internal.js")) {
     // Silently ignore these specific errors
     if (typeof encoding === "function") {
       encoding();
@@ -32,8 +28,17 @@ process.stderr.write = function(chunk, encoding, callback) {
     }
     return true;
   }
-  return originalStderr.apply(process.stderr, arguments);
-};
+  // Call original with proper overload handling
+  if (typeof encoding === "function") {
+    return originalStderr.call(process.stderr, chunk, encoding);
+  } else if (callback) {
+    return originalStderr.call(process.stderr, chunk, encoding as BufferEncoding, callback);
+  } else if (encoding) {
+    return originalStderr.call(process.stderr, chunk, encoding as BufferEncoding);
+  } else {
+    return originalStderr.call(process.stderr, chunk);
+  }
+} as typeof process.stderr.write;
 
 export default defineConfig({
   plugins: [sveltekit(), tailwindcss(), devtoolsJson(), examples],
@@ -93,11 +98,7 @@ export default defineConfig({
     ],
     // Suppress console output for specific errors
     onConsoleLog(log) {
-      if (
-        log.includes("wrapDynamicImport") ||
-        log.includes("get_hooks") ||
-        log.includes(".svelte-kit/generated/server/internal.js")
-      ) {
+      if (log.includes("wrapDynamicImport") || log.includes("get_hooks") || log.includes(".svelte-kit/generated/server/internal.js")) {
         return false;
       }
     }

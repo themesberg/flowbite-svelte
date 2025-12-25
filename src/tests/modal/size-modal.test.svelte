@@ -5,8 +5,8 @@
   let largeOpen = $state(false);
 </script>
 
-<Button onclick={() => smallOpen = true}>Open Small Modal</Button>
-<Button onclick={() => largeOpen = true}>Open Large Modal</Button>
+<Button onclick={() => (smallOpen = true)}>Open Small Modal</Button>
+<Button onclick={() => (largeOpen = true)}>Open Large Modal</Button>
 
 <Modal bind:open={smallOpen} size="sm">
   <div>Small Modal</div>

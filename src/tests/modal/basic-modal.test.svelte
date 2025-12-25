@@ -4,8 +4,8 @@
   let open = $state(false);
 </script>
 
-<Button onclick={() => open = true}>Open Modal</Button>
+<Button data-testid="open-modal-button" onclick={() => (open = true)}>Open Modal</Button>
 
-<Modal bind:open>
+<Modal data-testid="basic-modal" bind:open>
   <div>Modal Content</div>
 </Modal>

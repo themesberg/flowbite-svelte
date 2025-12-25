@@ -23,7 +23,7 @@ describe("Modal - Basic", () => {
   test("opens modal when triggered", async () => {
     const user = userEvent.setup();
     render(BasicModal);
-    
+
     const trigger = screen.getByText("Open Modal");
     await user.click(trigger);
 
@@ -35,7 +35,7 @@ describe("Modal - Basic", () => {
   test("closes modal with close button", async () => {
     const user = userEvent.setup();
     render(BasicModal);
-    
+
     const trigger = screen.getByText("Open Modal");
     await user.click(trigger);
 
@@ -56,7 +56,7 @@ describe("Modal - Title", () => {
   test("renders modal with title", async () => {
     const user = userEvent.setup();
     render(TitleModal);
-    
+
     const trigger = screen.getByText("Open Modal");
     await user.click(trigger);
 
@@ -68,7 +68,7 @@ describe("Modal - Title", () => {
   test("title modal has close button", async () => {
     const user = userEvent.setup();
     render(TitleModal);
-    
+
     const trigger = screen.getByText("Open Modal");
     await user.click(trigger);
 
@@ -83,7 +83,7 @@ describe("Modal - Sizes", () => {
   test("renders small modal", async () => {
     const user = userEvent.setup();
     render(SizeModal);
-    
+
     const trigger = screen.getByText("Open Small Modal");
     await user.click(trigger);
 
@@ -95,7 +95,7 @@ describe("Modal - Sizes", () => {
   test("renders large modal", async () => {
     const user = userEvent.setup();
     render(SizeModal);
-    
+
     const trigger = screen.getByText("Open Large Modal");
     await user.click(trigger);
 
@@ -109,7 +109,7 @@ describe("Modal - Dismissable", () => {
   test("dismissable modal has close button", async () => {
     const user = userEvent.setup();
     render(DismissableModal);
-    
+
     const trigger = screen.getByText("Open Modal");
     await user.click(trigger);
 
@@ -124,7 +124,7 @@ describe("Modal - Dismissable", () => {
   test("dismissable modal can be closed with close button", async () => {
     const user = userEvent.setup();
     render(DismissableModal);
-    
+
     const trigger = screen.getByText("Open Modal");
     await user.click(trigger);
 
@@ -148,7 +148,7 @@ describe("Modal - Permanent", () => {
   test("permanent modal opens when triggered", async () => {
     const user = userEvent.setup();
     render(PermanentModal);
-    
+
     const trigger = screen.getByText("Open Modal");
     await user.click(trigger);
 
@@ -160,7 +160,7 @@ describe("Modal - Permanent", () => {
   test("permanent modal does not have close button", async () => {
     const user = userEvent.setup();
     render(PermanentModal);
-    
+
     const trigger = screen.getByText("Open Modal");
     await user.click(trigger);
 
@@ -177,7 +177,7 @@ describe("Modal - Footer", () => {
   test("renders modal with footer", async () => {
     const user = userEvent.setup();
     render(FooterModal);
-    
+
     const trigger = screen.getByText("Open Modal");
     await user.click(trigger);
 
@@ -191,7 +191,7 @@ describe("Modal - Fullscreen", () => {
   test("renders fullscreen modal", async () => {
     const user = userEvent.setup();
     render(FullscreenModal);
-    
+
     const trigger = screen.getByText("Open Modal");
     await user.click(trigger);
 

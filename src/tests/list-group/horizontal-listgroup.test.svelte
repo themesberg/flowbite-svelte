@@ -4,4 +4,4 @@
   const items = ["Item 1", "Item 2", "Item 3"];
 </script>
 
-<Listgroup {items} horizontal />
+<Listgroup data-testid="horizontal-listgroup" {items} horizontal />

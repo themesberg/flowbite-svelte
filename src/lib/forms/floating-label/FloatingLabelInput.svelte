@@ -38,7 +38,7 @@
   // Track if clear button should be shown
   const showClearButton = $derived(clearable && value !== undefined && value !== "");
 
-  const clearAll = (event?: MouseEvent) => {
+  const clearAll = (_event?: MouseEvent) => {
     if (elementRef) {
       elementRef.value = "";
       value = "";

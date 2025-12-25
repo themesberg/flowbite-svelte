@@ -21,7 +21,14 @@
   let isOpen = $state(false);
 </script>
 
-<Button onclick={() => (isOpen = true)} color="gray" class="gap-2 rounded-xl border-0 px-1.5 py-1.5 shadow-none focus:ring-gray-100 dark:focus:ring-gray-700" aria-haspopup="true" aria-expanded={isOpen} aria-label="Select Theme">
+<Button
+  onclick={() => (isOpen = true)}
+  color="gray"
+  class="gap-2 rounded-xl border-0 px-1.5 py-1.5 shadow-none focus:ring-gray-100 dark:focus:ring-gray-700"
+  aria-haspopup="true"
+  aria-expanded={isOpen}
+  aria-label="Select Theme"
+>
   <PaletteOutline class="h-6 w-6" />
   <span>{selectedTheme?.name ?? "Theme"}</span>
 </Button>

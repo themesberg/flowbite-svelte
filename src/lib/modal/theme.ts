@@ -12,7 +12,8 @@ export const modal = tv({
     form: "rounded-lg divide-y",
     header: "flex items-center p-4 md:p-5 justify-between rounded-t-lg shrink-0 text-xl font-semibold text-gray-900 dark:text-white",
     footer: "flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse rounded-b-lg shrink-0",
-    body: "p-4 md:p-5 space-y-4 overflow-y-auto overscroll-contain"
+    body: "p-4 md:p-5 space-y-4 overflow-y-auto overscroll-contain",
+    close: ""
   },
   variants: {
     fullscreen: {

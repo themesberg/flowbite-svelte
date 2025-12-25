@@ -40,7 +40,7 @@ export const listGroup = tv({
 export const listGroupItem = tv({
   slots: {
     base: "py-2 px-4 w-full text-sm font-medium list-none flex items-center text-left gap-2",
-    icon: "me-2.5 h-15 w-15"
+    icon: "w-4 h-4 me-1.5"
   },
   variants: {
     state: {

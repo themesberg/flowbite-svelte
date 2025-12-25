@@ -1,6 +1,6 @@
 import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 
 import BasicNavbarTest from "./basic-navbar.test.svelte";
 import FluidNavbarTest from "./fluid-navbar.test.svelte";
@@ -249,7 +249,7 @@ describe("NavHamburger Component", () => {
   });
 
   test("hamburger contains menu icon", () => {
-    const { container } = render(BasicNavbarTest);
+    render(BasicNavbarTest);
     const hamburger = screen.getByRole("button", { name: /open main menu/i });
     const svg = hamburger.querySelector("svg");
 
@@ -278,7 +278,7 @@ describe("NavHamburger Component", () => {
   });
 
   test("hamburger icon has correct accessibility attributes", () => {
-    const { container } = render(BasicNavbarTest);
+    render(BasicNavbarTest);
     const hamburger = screen.getByRole("button", { name: /open main menu/i });
     const svg = hamburger.querySelector("svg");
 

@@ -4,8 +4,8 @@
   let open = $state(false);
 </script>
 
-<Button onclick={() => open = true}>Open Modal</Button>
+<Button data-testid="open-dismissable-modal-button" onclick={() => (open = true)}>Open Modal</Button>
 
-<Modal bind:open dismissable={true}>
+<Modal data-testid="dismissable-modal" bind:open dismissable>
   <div>Dismissable Modal</div>
 </Modal>

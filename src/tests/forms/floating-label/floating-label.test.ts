@@ -230,7 +230,7 @@ describe("FloatingLabelInput - Clearable", () => {
     const input = screen.getByLabelText("Clearable Input") as HTMLInputElement;
 
     expect(input.value).toBe("Clearable text");
-    
+
     // Wait for Svelte reactivity to update the DOM
     await waitFor(
       () => {

@@ -1189,8 +1189,6 @@ export interface PaginationButtonProps extends PaginationItemVariants, Paginatio
 export interface PaginationNavProps extends PaginationNavVariants, HTMLAttributes<HTMLElement>, PaginationVariants {
   prevContent?: Snippet;
   nextContent?: Snippet;
-  prevClass?: ClassValue;
-  nextClass?: ClassValue;
   currentPage: number;
   totalPages: number;
   visiblePages?: number;
@@ -1201,8 +1199,6 @@ export interface PaginationNavProps extends PaginationNavVariants, HTMLAttribute
   showIcons?: boolean;
   ariaLabel?: string;
   size?: "default" | "large";
-  spanClass?: ClassValue;
-  tableDivClass?: ClassValue;
   classes?: {
     prev?: ClassValue;
     next?: ClassValue;
