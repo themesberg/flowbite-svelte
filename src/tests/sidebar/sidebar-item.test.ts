@@ -80,11 +80,15 @@ describe("SidebarItem Component", () => {
   });
 
   describe("Interaction", () => {
-    test("sidebar item link is clickable", async () => {
+    test("sidebar item link is clickable and has correct href", async () => {
       const user = userEvent.setup();
       render(BasicSidebarTest);
       const dashboardLink = screen.getByRole("link", { name: /dashboard/i });
 
+      // Verify href is correct before click
+      expect(dashboardLink).toHaveAttribute("href", "/dashboard");
+      
+      // Verify link is clickable (preventDefault in test prevents actual navigation)
       await user.click(dashboardLink);
       expect(dashboardLink).toBeInTheDocument();
     });

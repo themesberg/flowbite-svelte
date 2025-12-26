@@ -15,7 +15,6 @@
 
   let navState = $state<NavbarState>({ hidden: true });
   setNavbarStateContext(navState);
-  setNavbarBreakpointContext(breakpoint);
 
   // Update context when breakpoint prop changes
   $effect(() => {

@@ -40,13 +40,13 @@ export const extractRouteName = (path: string): string => path.split("/").at(-2)
 
 export const sortByList =
   (order: string[]) =>
-  ([aKey]: [string, unknown], [bKey]: [string, unknown]) => {
-    const aIndex = order.indexOf(basename(aKey));
-    const bIndex = order.indexOf(basename(bKey));
-    if (aIndex === -1) return 1;
-    if (bIndex === -1) return -1;
-    return aIndex - bIndex;
-  };
+    ([aKey]: [string, unknown], [bKey]: [string, unknown]) => {
+      const aIndex = order.indexOf(basename(aKey));
+      const bIndex = order.indexOf(basename(bKey));
+      if (aIndex === -1) return 1;
+      if (bIndex === -1) return -1;
+      return aIndex - bIndex;
+    };
 
 const resolveMarkdownFiles = async (files: Record<string, () => Promise<{ metadata: Metadata }>>): Promise<MarkdownEntry[]> => {
   const results = await Promise.all(
@@ -96,35 +96,29 @@ export const fetchMarkdownPosts = async () => {
 
     const mcpOrder = ["overview", "local-setup", "remote-setup", "prompts"];
 
-    const pagesResults = await Promise.all(
-      Object.entries(globs.pages)
-        .sort(sortByList(pageOrder))
-        .map(async ([path, resolver]) => {
-          try {
-            const { metadata } = await resolver();
-            return { meta: metadata, path: toSlug(path) };
-          } catch (error) {
-            console.error(`Failed to resolve page markdown file: ${path}`, error);
-            return null;
-          }
-        })
-    );
-    const pages = pagesResults.filter((entry): entry is MarkdownEntry => entry !== null);
+    const resolveOrderedMarkdownFiles = async (
+      files: Record<string, () => Promise<{ metadata: Metadata }>>,
+      order: string[]
+    ): Promise<MarkdownEntry[]> => {
+      const results = await Promise.all(
+        Object.entries(files)
+          .sort(sortByList(order))
+          .map(async ([path, resolver]) => {
+            try {
+              const { metadata } = await resolver();
+              return { meta: metadata, path: toSlug(path) };
+            } catch (error) {
+              console.error(`Failed to resolve markdown file: ${path}`, error);
+              return null;
+            }
+          })
+      );
+      return results.filter((entry): entry is MarkdownEntry => entry !== null);
+    };
 
-    const mcpResults = await Promise.all(
-      Object.entries(globs.mcp)
-        .sort(sortByList(mcpOrder))
-        .map(async ([path, resolver]) => {
-          try {
-            const { metadata } = await resolver();
-            return { meta: metadata, path: toSlug(path) };
-          } catch (error) {
-            console.error(`Failed to resolve MCP markdown file: ${path}`, error);
-            return null;
-          }
-        })
-    );
-    const mcp = mcpResults.filter((entry): entry is MarkdownEntry => entry !== null);
+    const pages = await resolveOrderedMarkdownFiles(globs.pages, pageOrder);
+
+    const mcp = await resolveOrderedMarkdownFiles(globs.mcp, mcpOrder);
 
     const otherSections = await Promise.all(
       Object.entries(globs)

@@ -43,6 +43,8 @@ describe("Pagination Component", () => {
       // First page link should have text "1"
       const firstPageLink = links[0];
       expect(firstPageLink).toHaveTextContent("1");
+      // Active pages are styled via the 'active' prop and CSS classes
+      expect(firstPageLink).toBeInTheDocument();
     });
   });
 
@@ -75,17 +77,17 @@ describe("Pagination Component", () => {
       expect(screen.getByText("Next Page")).toBeInTheDocument();
     });
 
-    test("applies large size classes", () => {
+    test("renders active page with correct styling", () => {
       render(CustomContentPaginationTest);
       const links = screen.getAllByRole("link");
 
-      // Check that pagination items are rendered with active class
+      // Check that active pagination item has correct styling
       expect(links[0]).toHaveClass("text-primary-600");
     });
   });
 
   describe("Interaction", () => {
-    test("previous button is clickable", async () => {
+    test("previous button remains functional after click", async () => {
       const user = userEvent.setup();
       render(BasicPaginationTest);
 
@@ -93,10 +95,11 @@ describe("Pagination Component", () => {
       await user.click(prevButton);
 
       // Button should still be in the document after click
+      // This verifies the component doesn't crash on interaction
       expect(prevButton).toBeInTheDocument();
     });
 
-    test("next button is clickable", async () => {
+    test("next button remains functional after click", async () => {
       const user = userEvent.setup();
       render(BasicPaginationTest);
 
@@ -104,7 +107,41 @@ describe("Pagination Component", () => {
       await user.click(nextButton);
 
       // Button should still be in the document after click
+      // This verifies the component doesn't crash on interaction
       expect(nextButton).toBeInTheDocument();
+    });
+
+    test("page links are clickable without errors", async () => {
+      const user = userEvent.setup();
+      render(BasicPaginationTest);
+
+      const pageLinks = screen.getAllByRole("link");
+      const secondPageLink = pageLinks[1]; // Click page 2
+
+      await user.click(secondPageLink);
+
+      // Component should remain stable after page click
+      expect(secondPageLink).toBeInTheDocument();
+    });
+  });
+
+  describe("Accessibility", () => {
+    test("navigation has correct ARIA role", () => {
+      render(BasicPaginationTest);
+      const nav = screen.getByRole("navigation");
+
+      expect(nav).toBeInTheDocument();
+    });
+
+    test("page links are accessible", () => {
+      render(BasicPaginationTest);
+      const links = screen.getAllByRole("link");
+      
+      // All page links should be accessible elements
+      expect(links.length).toBeGreaterThan(0);
+      links.forEach(link => {
+        expect(link).toBeInTheDocument();
+      });
     });
   });
 });

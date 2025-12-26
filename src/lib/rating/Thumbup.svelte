@@ -55,6 +55,5 @@
 @prop iconIndex = 0
 @prop groupId = "star"
 @prop role = "img"
-@prop svgClass
 @prop ...restProps
 -->

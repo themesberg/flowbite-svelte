@@ -1276,7 +1276,6 @@ export interface RatingProps extends RatingVariants, HTMLAttributes<HTMLDivEleme
   rating?: number;
   icon?: Component;
   count?: boolean;
-  pClass?: ClassValue;
 }
 
 export interface RatingCommentProps {

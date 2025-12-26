@@ -4,7 +4,7 @@
   let isOpen = $state(true);
 </script>
 
-<button id="trigger">Hover me</button>
+<button id="trigger">Click me</button>
 
 <Popover title="Popover Title" bind:isOpen trigger="click" triggeredBy="#trigger">
   <p>This is the popover content.</p>

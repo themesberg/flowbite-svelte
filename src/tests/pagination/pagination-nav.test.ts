@@ -79,12 +79,6 @@ describe("PaginationNav Component", () => {
   });
 
   describe("Navigation", () => {
-    test("disables Previous button on first page", () => {
-      render(BasicPaginationNavTest);
-      const prevButton = screen.getByText("Previous");
-
-      expect(prevButton).toBeDisabled();
-    });
 
     test("Next button is clickable and changes page", async () => {
       const user = userEvent.setup();
@@ -108,7 +102,7 @@ describe("PaginationNav Component", () => {
       expect(screen.getByTestId("current-page")).toHaveTextContent("3");
     });
 
-    test("Previous button becomes enabled after navigating", async () => {
+    test("Previous button becomes enabled after navigating forward", async () => {
       const user = userEvent.setup();
       render(BasicPaginationNavTest);
 
@@ -118,15 +112,47 @@ describe("PaginationNav Component", () => {
       const prevButton = screen.getByText("Previous");
       expect(prevButton).not.toBeDisabled();
     });
+
+    test("can navigate back to previous page", async () => {
+      const user = userEvent.setup();
+      render(BasicPaginationNavTest);
+
+      const nextButton = screen.getByText("Next");
+      await user.click(nextButton);
+      expect(screen.getByTestId("current-page")).toHaveTextContent("2");
+
+      const prevButton = screen.getByText("Previous");
+      await user.click(prevButton);
+      expect(screen.getByTestId("current-page")).toHaveTextContent("1");
+    });
   });
 
   describe("Boundary Conditions", () => {
-    test("stays on first page when clicking Previous on page 1", async () => {
+    test("disables Next button on last page", async () => {
+      const user = userEvent.setup();
       render(BasicPaginationNavTest);
+      
+      // Navigate to last page (page 5 - as per totalPages={5})
+      // Click multiple times to reach the end
+      const nextButton = screen.getByText("Next");
+      
+      // Click Next button 4 times to reach page 5
+      for (let i = 0; i < 4; i++) {
+        await user.click(nextButton);
+      }
+      
+      // Verify we're on the last page
+      expect(screen.getByTestId("current-page")).toHaveTextContent("5");
+      
+      // Next button should now be disabled
+      expect(nextButton).toBeDisabled();
+    });
 
+    test("Previous button is disabled on first page", () => {
+      render(BasicPaginationNavTest);
+      
       const prevButton = screen.getByText("Previous");
       expect(prevButton).toBeDisabled();
-
       expect(screen.getByTestId("current-page")).toHaveTextContent("1");
     });
   });

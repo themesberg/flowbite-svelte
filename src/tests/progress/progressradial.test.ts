@@ -12,6 +12,17 @@ afterEach(() => {
   cleanup();
 });
 
+/**
+ * Helper function to calculate expected stroke-dashoffset for a given progress
+ * Formula: circumference - (progress / 100) * circumference
+ * Where circumference = 2 * PI * radius
+ * Default radius for Progressradial is 42
+ */
+function calculateStrokeDashoffset(progress: number, radius: number = 42): number {
+  const circumference = 2 * Math.PI * radius;
+  return circumference - (progress / 100) * circumference;
+}
+
 describe("Progressradial Component", () => {
   describe("Basic Functionality", () => {
     test("renders progressradial", () => {
@@ -67,11 +78,17 @@ describe("Progressradial Component", () => {
   });
 
   describe("Customization", () => {
-    test("applies custom color", () => {
+    test("applies custom green color to circles", () => {
       const { container } = render(ColoredProgressradialTest);
-      const svg = container.querySelector("svg");
+      const circles = container.querySelectorAll("circle");
 
-      expect(svg).toBeInTheDocument();
+      // Should have 2 circles: background and foreground
+      expect(circles.length).toBe(2);
+      
+      // Check that the foreground circle has green stroke color class
+      const foregroundCircle = circles[1];
+      const classes = foregroundCircle.getAttribute("class") || "";
+      expect(classes).toMatch(/stroke-green/);
     });
 
     test("applies custom size", () => {
@@ -136,24 +153,51 @@ describe("Progressradial Component", () => {
   });
 
   describe("Progress Values", () => {
-    test("handles low progress value", () => {
+    test("handles low progress value (50%) with correct stroke-dashoffset", () => {
       const { container } = render(BasicProgressradialTest);
-      const svg = container.querySelector("svg");
+      const circles = container.querySelectorAll("circle");
+      const foregroundCircle = circles[1];
 
-      expect(svg).toBeInTheDocument();
+      expect(foregroundCircle).toBeInTheDocument();
+      
+      // For medium progress, stroke-dashoffset should be close to half circumference
+      const dashoffset = foregroundCircle.getAttribute("stroke-dashoffset");
+      expect(dashoffset).toBeTruthy();
+      
+      // With 50% progress and default radius 42, we expect specific dashoffset
+      const expectedOffset = calculateStrokeDashoffset(50, 42);
+      expect(parseFloat(dashoffset!)).toBeCloseTo(expectedOffset, 1);
     });
 
-    test("handles high progress value", () => {
-      const { container } = render(AnimatedProgressradialTest);
-      const svg = container.querySelector("svg");
+    test("handles high progress value (75%) with correct stroke-dashoffset", () => {
+      const { container } = render(LabelInsideProgressradialTest);
+      const circles = container.querySelectorAll("circle");
+      const foregroundCircle = circles[1];
 
-      expect(svg).toBeInTheDocument();
+      expect(foregroundCircle).toBeInTheDocument();
+      
+      // For high progress, stroke-dashoffset should be lower
+      const dashoffset = foregroundCircle.getAttribute("stroke-dashoffset");
+      expect(dashoffset).toBeTruthy();
+      
+      // With 75% progress and default radius 42, we expect specific dashoffset
+      const expectedOffset = calculateStrokeDashoffset(75, 42);
+      expect(parseFloat(dashoffset!)).toBeCloseTo(expectedOffset, 1);
     });
 
-    test("handles custom progress with label", () => {
+    test("handles custom progress (65%) with label", () => {
       render(CustomSizeProgressradialTest);
 
       expect(screen.getByText("65%")).toBeInTheDocument();
+      
+      const { container } = render(CustomSizeProgressradialTest);
+      const circles = container.querySelectorAll("circle");
+      const foregroundCircle = circles[1];
+      
+      // Verify stroke-dashoffset reflects 65% progress with custom radius 38
+      const dashoffset = foregroundCircle.getAttribute("stroke-dashoffset");
+      const expectedOffset = calculateStrokeDashoffset(65, 38);
+      expect(parseFloat(dashoffset!)).toBeCloseTo(expectedOffset, 1);
     });
   });
 });

@@ -34,8 +34,7 @@
   let expanded = $state(true);
   const INIT_COUNT = 18;
 
-  const sectionPosts = $derived(section !== undefined ? data.blocks[section] : Object.values(data.blocks).flat());
-  // $inspect('sectionPosts',sectionPosts)
+  const sectionPosts = $derived<Post[]>((section !== undefined ? data.blocks[section] : Object.values(data.blocks).flat()) as Post[]);
 
   const searchTermLower = $derived(searchTerm.toLowerCase());
   let blockSelected = $state("");
@@ -44,10 +43,11 @@
     { value: "marketing", name: "Marketing UI" },
     { value: "publisher", name: "Publisher UI" }
   ];
-  const filteredSectionPosts = $derived(blockSelected ? (sectionPosts as Post[]).filter((post) => post.meta?.dir === blockSelected) : sectionPosts);
+
+  const filteredSectionPosts = $derived(blockSelected ? sectionPosts.filter((post) => post.meta?.dir === blockSelected) : sectionPosts);
 
   const components = $derived(
-    (filteredSectionPosts as Post[]).filter((post) => {
+    filteredSectionPosts.filter((post) => {
       if (!post.meta || !post.meta.breadcrumb_title) return false;
 
       const breadcrumbTitleLower = post.meta.breadcrumb_title.toLowerCase();
@@ -77,11 +77,11 @@
   {/if}
 
   <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-    {#each components.slice(0, INIT_COUNT) as component (component.meta.dir + component.path)}
+    {#each components.slice(0, INIT_COUNT) as component ((component.meta.dir || "") + component.path)}
       <CompoCard name={component.meta.breadcrumb_title || ""} dir={"blocks/" + (component.meta.dir || "")} path={component.path} />
     {/each}
     {#if expanded}
-      {#each components.slice(INIT_COUNT) as component (component.meta.dir + component.path)}
+      {#each components.slice(INIT_COUNT) as component ((component.meta.dir || "") + component.path)}
         <CompoCard name={component.meta.breadcrumb_title || ""} dir={"blocks/" + (component.meta.dir || "")} path={component.path} />
       {/each}
     {/if}

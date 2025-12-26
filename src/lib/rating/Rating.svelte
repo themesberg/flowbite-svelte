@@ -5,7 +5,7 @@
   import type { RatingProps } from "$lib/types";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, text, class: className, classes, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, pClass, ...restProps }: RatingProps = $props();
+  let { children, text, class: className, classes, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, ...restProps }: RatingProps = $props();
 
   const styling = $derived(classes);
 
@@ -58,6 +58,5 @@
 @prop rating = 4
 @prop icon: Icon = Star
 @prop count = false
-@prop pClass
 @prop ...restProps
 -->

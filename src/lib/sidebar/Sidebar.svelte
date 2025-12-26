@@ -108,14 +108,14 @@
       class={base({ class: clsx(theme?.base, className) })}
       aria-label={ariaLabel}
     >
-      <div class={div({ class: clsx(theme?.base, styling?.div) })}>
+      <div class={div({ class: clsx(theme?.div, styling?.div) })}>
         {@render children()}
       </div>
     </aside>
   {/if}
 {:else}
   <aside use:trapFocus={isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} {...restProps} class={base({ class: clsx(theme?.base, className) })} aria-label={ariaLabel}>
-    <div class={div({ class: clsx(theme?.base, styling?.div) })}>
+    <div class={div({ class: clsx(theme?.div, styling?.div) })}>
       {@render children()}
     </div>
   </aside>

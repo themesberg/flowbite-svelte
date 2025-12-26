@@ -192,7 +192,6 @@ describe("Sidebar Component", () => {
 
   describe("SidebarGroup Component", () => {
     test("renders sidebar group", () => {
-      render(BasicSidebarTest);
       const { container } = render(BasicSidebarTest);
       const groups = container.querySelectorAll("ul");
 

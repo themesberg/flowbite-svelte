@@ -16,7 +16,7 @@ describe("Popover Component", () => {
   describe("Basic Functionality", () => {
     test("renders trigger button", () => {
       render(BasicPopoverTest);
-      const button = screen.getByRole("button", { name: "Hover me" });
+      const button = screen.getByRole("button", { name: "Click me" });
 
       expect(button).toBeInTheDocument();
     });
@@ -45,7 +45,7 @@ describe("Popover Component", () => {
   describe("Trigger Types", () => {
     test("renders with click trigger", () => {
       render(BasicPopoverTest);
-      const button = screen.getByRole("button", { name: "Hover me" });
+      const button = screen.getByRole("button", { name: "Click me" });
 
       expect(button).toBeInTheDocument();
     });
@@ -83,22 +83,33 @@ describe("Popover Component", () => {
   });
 
   describe("Placement", () => {
-    test("applies bottom placement", () => {
+    test("renders popover with bottom placement prop", () => {
       render(ColoredPopoverTest);
       const button = screen.getByRole("button", { name: "Click me" });
+      const popover = screen.getByRole("tooltip", { hidden: true });
 
       expect(button).toBeInTheDocument();
+      expect(popover).toBeInTheDocument();
+      // Note: Actual placement styling is handled by Popper.js at runtime
+      // and may not be testable without browser simulation
     });
   });
 
   describe("Interaction", () => {
-    test("trigger button is clickable", async () => {
+    test("trigger button is clickable and popover is rendered", async () => {
       const user = userEvent.setup();
       render(BasicPopoverTest);
 
-      const button = screen.getByRole("button", { name: "Hover me" });
+      const button = screen.getByRole("button", { name: "Click me" });
+      const popover = screen.getByRole("tooltip", { hidden: true });
+      
+      // Verify popover content is accessible
+      expect(popover).toBeInTheDocument();
+      expect(screen.getByText("This is the popover content.")).toBeInTheDocument();
+      
       await user.click(button);
 
+      // Verify button remains functional after click
       expect(button).toBeInTheDocument();
     });
   });

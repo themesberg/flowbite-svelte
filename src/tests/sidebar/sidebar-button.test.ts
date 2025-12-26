@@ -37,11 +37,13 @@ describe("SidebarButton Component", () => {
   });
 
   describe("Interaction", () => {
-    test("button is clickable", async () => {
+    test("button is clickable without errors", async () => {
       const user = userEvent.setup();
       render(BasicSidebarButtonTest);
       const button = screen.getByRole("button");
 
+      // This is a smoke test - verifies button doesn't crash on click
+      // In a real app, you would test for sidebar visibility toggle
       await user.click(button);
       expect(button).toBeInTheDocument();
     });

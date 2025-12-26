@@ -1,6 +1,6 @@
-import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
+import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
-import { tick } from 'svelte';
+// import { tick } from 'svelte';
 import { userEvent } from "@testing-library/user-event";
 
 import BasicNavbarTest from "./basic-navbar.test.svelte";
@@ -75,6 +75,7 @@ describe("Navbar Component", () => {
     });
   });
 
+  // for now, commenting out until we can stabilize Svelte 5 state/DOM sync issues
   // describe("Navbar Toggle", () => {
     // test("hamburger toggles menu visibility", async () => {
     //   const user = userEvent.setup();
@@ -205,6 +206,7 @@ describe("NavLi Component", () => {
       expect(testState.clickCount).toBe(1);
     });
 
+    // for now, commenting out until we can stabilize Svelte 5 state/DOM sync issues
     // test("closes mobile menu on link click", async () => {
     //   const user = userEvent.setup();
     //   render(NavLiClickTest);
@@ -337,6 +339,7 @@ describe("Navbar Responsive Behavior", () => {
     expect(hamburger).toBeInTheDocument();
   });
 
+  // for now, commenting out until we can stabilize Svelte 5 state/DOM sync issues
   // test("menu toggles on hamburger click", async () => {
   //   const user = userEvent.setup();
   //   render(BasicNavbarTest);
