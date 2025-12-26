@@ -9,7 +9,9 @@
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
   let navState = getNavbarStateContext();
-  let navBreakpoint = getNavbarBreakpointContext();
+  
+  // Reactively get the breakpoint - use $derived to ensure it updates
+  let navBreakpoint = $derived(getNavbarBreakpointContext());
 
   let { children, activeUrl = $bindable(), slideParams, transition = slide, transitionParams, respectMotionPreference = true, class: className, classes, ...restProps }: NavUlProps = $props();
 

@@ -4,16 +4,17 @@
   import clsx from "clsx";
   import { navbarLi } from "./theme";
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
-  import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
 
   let navState = getNavbarStateContext();
-  let navBreakpoint = getNavbarBreakpointContext();
+  
+  // Reactively get the breakpoint - use $derived to ensure it updates
+  let navBreakpoint = $derived(getNavbarBreakpointContext());
 
-  let { children, onclick, href, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
+  let { children, onclick, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
 
   const theme = $derived(getTheme("navbarLi"));
 
-  let active = $derived(navState?.activeUrl ? href === navState.activeUrl : false);
+  let active = $derived(navState?.activeUrl ? restProps.href === navState.activeUrl : false);
   let liClass = $derived(
     navbarLi({
       breakpoint: navBreakpoint ?? "md",
@@ -22,73 +23,27 @@
     })
   );
 
-  // Anchor-specific attributes to exclude from button
-  const anchorOnlyAttrs = new Set([
-    'download',
-    'hreflang',
-    'media',
-    'ping',
-    'referrerpolicy',
-    'rel',
-    'target'
-  ]);
-
-  // Button-specific attributes to exclude from anchor
-  const buttonOnlyAttrs = new Set([
-    'disabled',
-    'form',
-    'formaction',
-    'formenctype',
-    'formmethod',
-    'formnovalidate',
-    'formtarget',
-    'name',
-    'type',
-    'value'
-  ]);
-
-  // Filter props appropriately for button vs anchor elements
-  const buttonProps = $derived.by(() => {
-    const props: Record<string, any> = {};
-    for (const [key, value] of Object.entries(restProps)) {
-      if (!anchorOnlyAttrs.has(key)) {
-        props[key] = value;
-      }
-    }
-    return props as Partial<HTMLButtonAttributes>;
-  });
-
-  const anchorProps = $derived.by(() => {
-    const props: Record<string, any> = {};
-    for (const [key, value] of Object.entries(restProps)) {
-      if (!buttonOnlyAttrs.has(key)) {
-        props[key] = value;
-      }
-    }
-    return props as Partial<HTMLAnchorAttributes>;
-  });
-
   function handleClick(event: MouseEvent) {
-    event.stopPropagation();
-    // Call original onclick handler first if provided
-    if (onclick) {
-      (onclick as (event: MouseEvent) => void)(event);
+    // Close the mobile menu when a link is clicked
+    if (navState && restProps.href !== undefined && !navState.hidden) {
+      navState.hidden = true;
     }
 
-    // Always close the mobile menu when clicked
-    if (navState) {
-      navState.hidden = true;
+    // Call original onclick handler if provided
+    if (onclick) {
+      // Cast the handler to accept a standard MouseEvent
+      (onclick as (event: MouseEvent) => void)(event);
     }
   }
 </script>
 
 <li>
-  {#if href === undefined}
-    <button class={liClass} {...buttonProps} onclick={handleClick}>
+  {#if restProps.href === undefined}
+    <button role="presentation" onclick={handleClick} {...restProps} class={liClass}>
       {@render children?.()}
     </button>
   {:else}
-    <a {href} class={liClass} {...anchorProps} onclick={handleClick}>
+    <a {...restProps} class={liClass} onclick={handleClick}>
       {@render children?.()}
     </a>
   {/if}

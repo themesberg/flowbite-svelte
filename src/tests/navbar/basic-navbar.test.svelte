@@ -7,15 +7,13 @@
 </script>
 
 <Navbar>
-  {#snippet children({ hidden: _hidden, toggle })}
     <NavBrand href="/" onclick={preventDefault}>
       <span class="text-xl font-semibold">Flowbite</span>
     </NavBrand>
-    <NavHamburger onclick={toggle} />
+    <NavHamburger />
     <NavUl>
       <NavLi href="/" onclick={preventDefault}>Home</NavLi>
       <NavLi href="/about" onclick={preventDefault}>About</NavLi>
       <NavLi href="/contact" onclick={preventDefault}>Contact</NavLi>
     </NavUl>
-  {/snippet}
 </Navbar>
