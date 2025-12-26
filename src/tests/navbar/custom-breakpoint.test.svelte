@@ -3,9 +3,9 @@
 </script>
 
 <Navbar breakpoint="lg" data-testid="navbar-lg">
-  {#snippet children({ hidden, toggle })}
+  {#snippet children({ hidden: _hidden, toggle })}
     <NavHamburger onclick={toggle} />
-    <NavUl {hidden}>
+    <NavUl>
       <NavLi href="/">Home</NavLi>
     </NavUl>
   {/snippet}

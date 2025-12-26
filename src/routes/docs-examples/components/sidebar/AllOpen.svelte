@@ -45,7 +45,7 @@
         {/snippet}
         <SidebarItem label="Projects" href="/" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Sidebar" {spanClass} href="/components/sidebar">
+      <SidebarItem label="Sidebar" classes={{ span: spanClass }} href="/components/sidebar">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}

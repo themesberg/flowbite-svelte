@@ -10,36 +10,6 @@ import { defineConfig } from "vitest/config";
 import textEditorPackage from "./node_modules/@flowbite-svelte-plugins/texteditor/package.json" with { type: "json" };
 import { playwright } from "@vitest/browser-playwright";
 
-// Set VITEST env var for hooks.server.js to detect test mode
-process.env.VITEST = "true";
-
-// Suppress SvelteKit cleanup errors
-const originalStderr = process.stderr.write;
-process.stderr.write = function (chunk: string | Uint8Array, encoding?: BufferEncoding | ((err?: Error) => void), callback?: (err?: Error) => void): boolean {
-  const str = chunk.toString();
-  if (str.includes("wrapDynamicImport") || str.includes("get_hooks") || str.includes(".svelte-kit/generated/server/internal.js")) {
-    // Silently ignore these specific errors
-    if (typeof encoding === "function") {
-      encoding();
-      return true;
-    }
-    if (callback) {
-      callback();
-    }
-    return true;
-  }
-  // Call original with proper overload handling
-  if (typeof encoding === "function") {
-    return originalStderr.call(process.stderr, chunk, encoding);
-  } else if (callback) {
-    return originalStderr.call(process.stderr, chunk, encoding as BufferEncoding, callback);
-  } else if (encoding) {
-    return originalStderr.call(process.stderr, chunk, encoding as BufferEncoding);
-  } else {
-    return originalStderr.call(process.stderr, chunk);
-  }
-} as typeof process.stderr.write;
-
 export default defineConfig({
   plugins: [sveltekit(), tailwindcss(), devtoolsJson(), examples],
   build: {
@@ -97,11 +67,9 @@ export default defineConfig({
       }
     ],
     // Suppress console output for specific errors
-    onConsoleLog(log) {
-      if (log.includes("wrapDynamicImport") || log.includes("get_hooks") || log.includes(".svelte-kit/generated/server/internal.js")) {
-        return false;
-      }
-    }
+    onConsoleLog(log: string, type: 'stdout' | 'stderr'): boolean | void {
+      return !(log === 'message from third party library' && type === 'stdout')
+    },
   },
   define: {
     __NAME__: JSON.stringify(pkg.name),

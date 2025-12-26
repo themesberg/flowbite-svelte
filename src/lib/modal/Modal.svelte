@@ -52,7 +52,6 @@
         <h3>{title}</h3>
         {#if dismissable && !permanent}
           <CloseButton type="submit" formnovalidate class={clsx(theme?.close, styling?.close)} />
-
         {/if}
       {:else if header}
         {@render header()}

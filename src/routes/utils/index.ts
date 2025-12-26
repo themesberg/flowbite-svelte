@@ -49,15 +49,23 @@ export const sortByList =
   };
 
 const resolveMarkdownFiles = async (files: Record<string, () => Promise<{ metadata: Metadata }>>): Promise<MarkdownEntry[]> => {
-  return Promise.all(
+  const results = await Promise.all(
     Object.entries(files).map(async ([path, resolver]) => {
-      const { metadata } = await resolver();
-      return {
-        meta: metadata,
-        path: toSlug(path)
-      };
+      try {
+        const { metadata } = await resolver();
+        return {
+          meta: metadata,
+          path: toSlug(path)
+        };
+      } catch (error) {
+        console.error(`Failed to resolve markdown file: ${path}`, error);
+        return null; // Return null for failed files
+      }
     })
   );
+
+  // Filter out failed files and return successful ones
+  return results.filter((entry): entry is MarkdownEntry => entry !== null);
 };
 
 const resolvePaths = async (files: Record<string, unknown>, pathFn: (path: string) => string = toSlug): Promise<PathEntry[]> => {
@@ -69,56 +77,86 @@ const resolvePaths = async (files: Record<string, unknown>, pathFn: (path: strin
 };
 
 export const fetchMarkdownPosts = async () => {
-  const globs = {
-    components: import.meta.glob<Mdsvex>("/src/routes/docs/components/*.md"),
-    forms: import.meta.glob<Mdsvex>("/src/routes/docs/forms/*.md"),
-    typography: import.meta.glob<Mdsvex>("/src/routes/docs/typography/*.md"),
-    utilities: import.meta.glob<Mdsvex>("/src/routes/docs/utilities/*.md"),
-    pages: import.meta.glob<Mdsvex>("/src/routes/docs/pages/*.md"),
-    mcp: import.meta.glob<Mdsvex>("/src/routes/docs/mcp/*.md"),
-    extend: import.meta.glob<Mdsvex>("/src/routes/docs/extend/*.md"),
-    examples: import.meta.glob<Mdsvex>("/src/routes/docs/examples/*.md"),
-    plugins: import.meta.glob<Mdsvex>("/src/routes/docs/plugins/*.md"),
-    icons: import.meta.glob<Mdsvex>("/src/routes/icons/*.md"),
-    illustrations: import.meta.glob<Mdsvex>("/src/routes/illustrations/*.md")
-  };
+  try {
+    const globs = {
+      components: import.meta.glob<Mdsvex>("/src/routes/docs/components/*.md"),
+      forms: import.meta.glob<Mdsvex>("/src/routes/docs/forms/*.md"),
+      typography: import.meta.glob<Mdsvex>("/src/routes/docs/typography/*.md"),
+      utilities: import.meta.glob<Mdsvex>("/src/routes/docs/utilities/*.md"),
+      pages: import.meta.glob<Mdsvex>("/src/routes/docs/pages/*.md"),
+      mcp: import.meta.glob<Mdsvex>("/src/routes/docs/mcp/*.md"),
+      extend: import.meta.glob<Mdsvex>("/src/routes/docs/extend/*.md"),
+      examples: import.meta.glob<Mdsvex>("/src/routes/docs/examples/*.md"),
+      plugins: import.meta.glob<Mdsvex>("/src/routes/docs/plugins/*.md"),
+      icons: import.meta.glob<Mdsvex>("/src/routes/icons/*.md"),
+      illustrations: import.meta.glob<Mdsvex>("/src/routes/illustrations/*.md")
+    };
 
-  const pageOrder = ["introduction", "quickstart", "colors", "customization", "typescript", "compiler-speed", "how-to-contribute", "license"];
+    const pageOrder = ["introduction", "quickstart", "colors", "customization", "typescript", "compiler-speed", "how-to-contribute", "license"];
 
-  const mcpOrder = ["overview", "local-setup", "remote-setup", "prompts"];
+    const mcpOrder = ["overview", "local-setup", "remote-setup", "prompts"];
 
-  const pages = await Promise.all(
-    Object.entries(globs.pages)
-      .sort(sortByList(pageOrder))
-      .map(async ([path, resolver]) => {
-        const { metadata } = await resolver();
-        return { meta: metadata, path: toSlug(path) };
-      })
-  );
+    const pagesResults = await Promise.all(
+      Object.entries(globs.pages)
+        .sort(sortByList(pageOrder))
+        .map(async ([path, resolver]) => {
+          try {
+            const { metadata } = await resolver();
+            return { meta: metadata, path: toSlug(path) };
+          } catch (error) {
+            console.error(`Failed to resolve page markdown file: ${path}`, error);
+            return null;
+          }
+        })
+    );
+    const pages = pagesResults.filter((entry): entry is MarkdownEntry => entry !== null);
 
-  const mcp = await Promise.all(
-    Object.entries(globs.mcp)
-      .sort(sortByList(mcpOrder))
-      .map(async ([path, resolver]) => {
-        const { metadata } = await resolver();
-        return { meta: metadata, path: toSlug(path) };
-      })
-  );
+    const mcpResults = await Promise.all(
+      Object.entries(globs.mcp)
+        .sort(sortByList(mcpOrder))
+        .map(async ([path, resolver]) => {
+          try {
+            const { metadata } = await resolver();
+            return { meta: metadata, path: toSlug(path) };
+          } catch (error) {
+            console.error(`Failed to resolve MCP markdown file: ${path}`, error);
+            return null;
+          }
+        })
+    );
+    const mcp = mcpResults.filter((entry): entry is MarkdownEntry => entry !== null);
 
-  const otherSections = await Promise.all(
-    Object.entries(globs)
-      .filter(([key]) => key !== "pages" && key !== "mcp")
-      .map(async ([key, files]) => {
-        const entries = await resolveMarkdownFiles(files);
-        return [key, entries] as const;
-      })
-  );
+    const otherSections = await Promise.all(
+      Object.entries(globs)
+        .filter(([key]) => key !== "pages" && key !== "mcp")
+        .map(async ([key, files]) => {
+          const entries = await resolveMarkdownFiles(files);
+          return [key, entries] as const;
+        })
+    );
 
-  return {
-    pages,
-    mcp,
-    ...Object.fromEntries(otherSections)
-  };
+    return {
+      pages,
+      mcp,
+      ...Object.fromEntries(otherSections)
+    };
+  } catch (error) {
+    console.error("Error in fetchMarkdownPosts:", error);
+    // Return empty structure for this category
+    return {
+      forms: [],
+      components: [],
+      typography: [],
+      utilities: [],
+      pages: [],
+      mcp: [],
+      extend: [],
+      examples: [],
+      plugins: [],
+      icons: [],
+      illustrations: []
+    };
+  }
 };
 
 export const fetchBuilders = async () => {
@@ -148,21 +186,26 @@ export const fetchApiCheck = async () => {
 };
 
 export const fetchBlocksMarkdownPosts = async () => {
-  const globs = {
-    application: import.meta.glob<Mdsvex>("/src/routes/blocks/application/*.md"),
-    quickstart: import.meta.glob<Mdsvex>("/src/routes/blocks/quickstart/*.md"),
-    marketing: import.meta.glob<Mdsvex>("/src/routes/blocks/marketing/*.md"),
-    publisher: import.meta.glob<Mdsvex>("/src/routes/blocks/publisher/*.md")
-  };
+  try {
+    const globs = {
+      application: import.meta.glob<Mdsvex>("/src/routes/blocks/application/*.md"),
+      quickstart: import.meta.glob<Mdsvex>("/src/routes/blocks/quickstart/*.md"),
+      marketing: import.meta.glob<Mdsvex>("/src/routes/blocks/marketing/*.md"),
+      publisher: import.meta.glob<Mdsvex>("/src/routes/blocks/publisher/*.md")
+    };
 
-  const entries = await Promise.all(
-    Object.entries(globs).map(async ([key, files]) => {
-      const resolved = await resolveMarkdownFiles(files);
-      return [key, resolved] as const;
-    })
-  );
+    const entries = await Promise.all(
+      Object.entries(globs).map(async ([key, files]) => {
+        const resolved = await resolveMarkdownFiles(files);
+        return [key, resolved] as const;
+      })
+    );
 
-  return Object.fromEntries(entries);
+    return Object.fromEntries(entries);
+  } catch (error) {
+    console.error("Error in fetchBlocksMarkdownPosts:", error);
+    return { application: [], quickstart: [], marketing: [], publisher: [] };
+  }
 };
 
 export const fetchDashboardPosts = async () => {

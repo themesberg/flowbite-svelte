@@ -9,17 +9,17 @@
 
   let clickCount = $state(0);
 
-  function handleClick() {
+  function handleClick(e: Event) {
+    e.preventDefault();
+    e.stopPropagation();
     clickCount++;
     testState.clickCount = clickCount;
   }
 </script>
 
 <Navbar>
-  {#snippet children({ hidden, toggle })}
-    <NavHamburger onclick={toggle} data-testid="hamburger" />
-    <NavUl {hidden}>
-      <NavLi href="/docs/pages/introduction" onclick={handleClick} data-testid="clickable-link">Clickable</NavLi>
-    </NavUl>
-  {/snippet}
+  <NavHamburger data-testid="hamburger" />
+  <NavUl>
+    <NavLi onclick={handleClick} data-testid="clickable-link">Clickable</NavLi>
+  </NavUl>
 </Navbar>

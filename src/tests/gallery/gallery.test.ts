@@ -32,7 +32,6 @@ describe("Gallery - Basic", () => {
     });
   });
 
-
   test("images have correct alt attributes", () => {
     render(BasicGallery);
     const images = screen.getAllByRole("img");

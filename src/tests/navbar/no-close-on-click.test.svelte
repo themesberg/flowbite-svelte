@@ -3,10 +3,10 @@
 </script>
 
 <Navbar closeOnClickOutside={false}>
-  {#snippet children({ hidden, toggle })}
+  {#snippet children({ hidden: _hidden, toggle })}
     <NavBrand href="/">Flowbite</NavBrand>
     <NavHamburger onclick={toggle} />
-    <NavUl {hidden}>
+    <NavUl>
       <NavLi href="/">Home</NavLi>
     </NavUl>
   {/snippet}

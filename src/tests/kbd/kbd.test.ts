@@ -33,7 +33,7 @@ describe("Kbd - Multiple Keys", () => {
     expect(screen.getByText("S")).toBeInTheDocument();
   });
 
-    test("all kbd elements have correct tag", () => {
+  test("all kbd elements have correct tag", () => {
     render(MultipleKbd);
     const ctrlKbd = screen.getByText("Ctrl");
     const shiftKbd = screen.getByText("Shift");

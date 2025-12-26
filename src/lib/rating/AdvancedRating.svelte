@@ -2,25 +2,11 @@
   import clsx from "clsx";
   import { advancedRating } from "./theme";
   import type { AdvancedRatingProps } from "$lib/types";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { rating, globalText, ratings, divClass, spanClass, div2Class, div3Class, span2Class, class: className, classes, unit }: AdvancedRatingProps = $props();
+  let { rating, globalText, ratings, class: className, classes, unit }: AdvancedRatingProps = $props();
 
-  warnThemeDeprecation(
-    "AdvancedRating",
-    untrack(() => ({ divClass, spanClass, div2Class, div3Class, span2Class })),
-    { divClass: "class", spanClass: "span", div2Class: "div2", div3Class: "div3", span2Class: "span2" }
-  );
-
-  const styling = $derived(
-    classes ?? {
-      span: spanClass,
-      div2: div2Class,
-      div3: div3Class,
-      span2: span2Class
-    }
-  );
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("advancedRating"));
 
@@ -35,11 +21,11 @@
 {/if}
 {#each ratings as { label, rating }, i (label ?? i)}
   <div class={base({ class: clsx(theme?.base, className) })}>
-    <span class={span({ class: clsx(theme?.span, styling.span) })}>{label}</span>
-    <div class={div2({ class: clsx(theme?.div2, styling.div2) })}>
-      <div class={div3({ class: clsx(theme?.div3, styling.div3) })} style="width: {rating}%"></div>
+    <span class={span({ class: clsx(theme?.span, styling?.span) })}>{label}</span>
+    <div class={div2({ class: clsx(theme?.div2, styling?.div2) })}>
+      <div class={div3({ class: clsx(theme?.div3, styling?.div3) })} style="width: {rating}%"></div>
     </div>
-    <span class={span2({ class: clsx(theme?.span2, styling.span2) })}>{rating}{unit}</span>
+    <span class={span2({ class: clsx(theme?.span2, styling?.span2) })}>{rating}{unit}</span>
   </div>
 {/each}
 

@@ -2,10 +2,10 @@
   import clsx from "clsx";
   import type { SidebarGroupProps } from "$lib/types";
 
-  let { children, class: className = "space-y-2", borderClass = "pt-4 mt-4 border-t border-gray-200 dark:border-gray-700", border = false, ...restProps }: SidebarGroupProps = $props();
+  let { children, class: className = "space-y-2", border = false, ...restProps }: SidebarGroupProps = $props();
 </script>
 
-<ul {...restProps} class={border ? clsx(borderClass) : clsx(className)}>
+<ul {...restProps} class={border ? clsx("mt-4 border-t border-gray-200 pt-4 dark:border-gray-700", className) : clsx(className)}>
   {@render children()}
 </ul>
 
@@ -17,7 +17,7 @@
 ## Props
 @prop children
 @prop class: className = "space-y-2"
-@prop borderClass = "pt-4 mt-4 border-t border-gray-200 dark:border-gray-700"
+dark:border-gray-700"
 @prop border = false
 @prop ...restProps
 -->

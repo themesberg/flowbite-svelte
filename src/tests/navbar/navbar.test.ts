@@ -1,5 +1,6 @@
 import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
+import { tick } from 'svelte';
 import { userEvent } from "@testing-library/user-event";
 
 import BasicNavbarTest from "./basic-navbar.test.svelte";
@@ -77,20 +78,26 @@ describe("Navbar Component", () => {
   describe("Navbar Toggle", () => {
     test("hamburger toggles menu visibility", async () => {
       const user = userEvent.setup();
-      const { container } = render(BasicNavbarTest);
+      render(BasicNavbarTest);
       const hamburger = screen.getByRole("button", { name: /open main menu/i });
 
-      // Menu should be hidden initially
-      const menuContainer = container.querySelector("[class*='hidden']");
-      expect(menuContainer).toBeTruthy();
+      // Menu should be collapsed initially
+      expect(hamburger).toHaveAttribute("aria-expanded", "false");
 
-      // Click to show menu
+      // Click to expand menu
       await user.click(hamburger);
 
-      // Wait for menu to be visible
+      // Menu should now be expanded
       await waitFor(() => {
-        const visibleMenu = container.querySelector("ul");
-        expect(visibleMenu).toBeInTheDocument();
+        expect(hamburger).toHaveAttribute("aria-expanded", "true");
+      });
+
+      // Click again to collapse
+      await user.click(hamburger);
+
+      // Menu should be collapsed again
+      await waitFor(() => {
+        expect(hamburger).toHaveAttribute("aria-expanded", "false");
       });
     });
   });
@@ -200,20 +207,21 @@ describe("NavLi Component", () => {
 
     test("closes mobile menu on link click", async () => {
       const user = userEvent.setup();
-      const { container } = render(NavLiClickTest);
+      render(NavLiClickTest);
+
       const hamburger = screen.getByTestId("hamburger");
       const clickableLink = screen.getByTestId("clickable-link");
 
-      // Open mobile menu
       await user.click(hamburger);
+      await waitFor(() => expect(hamburger).toHaveAttribute("aria-expanded", "true"));
 
-      // Click the link
       await user.click(clickableLink);
 
-      // Menu should close (check for hidden state)
+      // Force Svelte to process all pending state changes
+      await tick();
+
       await waitFor(() => {
-        const menuContainer = container.querySelector("[class*='hidden']");
-        expect(menuContainer).toBeTruthy();
+        expect(hamburger).toHaveAttribute("aria-expanded", "false");
       });
     });
   });
@@ -282,8 +290,9 @@ describe("NavHamburger Component", () => {
     const svg = hamburger.querySelector("svg");
 
     expect(svg).toBeInTheDocument();
-    expect(svg).toHaveAttribute("role", "button");
-    expect(svg).toHaveAttribute("tabindex", "0");
+    // SVG is inside a button, so it should not have role="button" or tabindex
+    // The button itself provides the accessibility
+    expect(svg).toHaveAttribute("aria-hidden", "true");
   });
 });
 
@@ -323,23 +332,24 @@ describe("Navbar Responsive Behavior", () => {
 
   test("menu toggles on hamburger click", async () => {
     const user = userEvent.setup();
-    const { container } = render(BasicNavbarTest);
+    render(BasicNavbarTest);
     const hamburger = screen.getByRole("button", { name: /open main menu/i });
 
-    // Click to toggle
+    // Initially collapsed
+    expect(hamburger).toHaveAttribute("aria-expanded", "false");
+
+    // Click to expand
     await user.click(hamburger);
 
     await waitFor(() => {
-      const ul = container.querySelector("ul");
-      expect(ul).toBeInTheDocument();
+      expect(hamburger).toHaveAttribute("aria-expanded", "true");
     });
 
-    // Click again to toggle back
+    // Click again to collapse
     await user.click(hamburger);
 
     await waitFor(() => {
-      const menuContainer = container.querySelector("[class*='hidden']");
-      expect(menuContainer).toBeTruthy();
+      expect(hamburger).toHaveAttribute("aria-expanded", "false");
     });
   });
 });

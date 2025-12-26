@@ -13,7 +13,26 @@
 
   let { base, container: navContainerClass } = $derived(navbar());
 
-  let navState = $state<NavbarState>({ hidden: true });
+  // Create reactive state that properly tracks mutations from any depth
+  let state = $state({
+    hidden: true,
+    activeClass: undefined as string | undefined,
+    nonActiveClass: undefined as string | undefined,
+    activeUrl: undefined as string | undefined
+  });
+
+  // Use an object with getters/setters that reference the raw state
+  const navState: NavbarState = {
+    get hidden() { return state.hidden; },
+    set hidden(v) { state.hidden = v; },
+    get activeClass() { return state.activeClass; },
+    set activeClass(v) { state.activeClass = v; },
+    get nonActiveClass() { return state.nonActiveClass; },
+    set nonActiveClass(v) { state.nonActiveClass = v; },
+    get activeUrl() { return state.activeUrl; },
+    set activeUrl(v) { state.activeUrl = v; }
+  };
+
   setNavbarStateContext(navState);
 
   $effect(() => {
@@ -29,8 +48,13 @@
 
   function handleDocumentClick(event: MouseEvent) {
     if (!closeOnClickOutside) return;
-    // Check if the click was outside the navbar AND the dropdown is open
-    if (!navState.hidden && navbarElement && !navbarElement.contains(event.target as Node)) {
+    
+    const target = event.target as Node;
+
+    // 1. Only run if the menu is actually open
+    // 2. Only run if the click is outside the navbar
+    // 3. Ensure the target is still in the DOM (Svelte sometimes unmounts elements mid-click)
+    if (!navState.hidden && navbarElement && !navbarElement.contains(target)) {
       navState.hidden = true;
     }
   }

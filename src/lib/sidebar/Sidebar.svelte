@@ -1,14 +1,13 @@
 <script lang="ts">
   import type { SidebarContextType, SidebarProps } from "$lib/types";
   import { trapFocus } from "$lib/utils/actions";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { setSidebarContext, setActiveUrlContext } from "$lib/context";
   import { sineIn } from "svelte/easing";
   import { writable } from "svelte/store";
   import { fly } from "svelte/transition";
   import { sidebar } from "./theme";
-  import { untrack } from "svelte";
 
   let {
     children,
@@ -20,13 +19,9 @@
     position = "fixed",
     activateClickOutside = true,
     backdrop = true,
-    backdropClass,
     transition = fly,
     params,
-    divClass,
     ariaLabel,
-    nonActiveClass,
-    activeClass,
     activeUrl = "",
     class: className,
     classes,
@@ -34,20 +29,7 @@
     ...restProps
   }: SidebarProps = $props();
 
-  warnThemeDeprecation(
-    "Sidebar",
-    untrack(() => ({ backdropClass, divClass, nonActiveClass, activeClass })),
-    { backdropClass: "backdrop", divClass: "div", nonActiveClass: "nonactive", activeClass: "active" }
-  );
-
-  const styling = $derived(
-    classes ?? {
-      backdrop: backdropClass,
-      div: divClass,
-      nonactive: nonActiveClass,
-      active: activeClass
-    }
-  );
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("sidebar"));
 
@@ -81,10 +63,10 @@
       return closeSidebar;
     },
     get activeClass() {
-      return active({ class: clsx(theme?.active, styling.active) });
+      return active({ class: clsx(theme?.active, styling?.active) });
     },
     get nonActiveClass() {
-      return nonactive({ class: clsx(theme?.nonactive, styling.nonactive) });
+      return nonactive({ class: clsx(theme?.nonactive, styling?.nonactive) });
     },
     get isSingle() {
       return isSingle;
@@ -110,9 +92,9 @@
   {#if isOpen || isLargeScreen}
     {#if isOpen && !alwaysOpen}
       {#if backdrop && activateClickOutside}
-        <div role="presentation" class={backdropCls({ class: clsx(theme?.backdrop, styling.backdrop) })} onclick={closeSidebar}></div>
+        <div role="presentation" class={backdropCls({ class: clsx(theme?.backdrop, styling?.backdrop) })} onclick={closeSidebar}></div>
       {:else if backdrop && !activateClickOutside}
-        <div role="presentation" class={backdropCls({ class: clsx(theme?.backdrop, styling.backdrop) })}></div>
+        <div role="presentation" class={backdropCls({ class: clsx(theme?.backdrop, styling?.backdrop) })}></div>
       {:else if !backdrop && activateClickOutside}
         <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full" onclick={closeSidebar}></div>
       {:else if !backdrop && !activateClickOutside}
@@ -126,14 +108,14 @@
       class={base({ class: clsx(theme?.base, className) })}
       aria-label={ariaLabel}
     >
-      <div class={div({ class: clsx(theme?.base, styling.div) })}>
+      <div class={div({ class: clsx(theme?.base, styling?.div) })}>
         {@render children()}
       </div>
     </aside>
   {/if}
 {:else}
   <aside use:trapFocus={isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} {...restProps} class={base({ class: clsx(theme?.base, className) })} aria-label={ariaLabel}>
-    <div class={div({ class: clsx(theme?.base, styling.div) })}>
+    <div class={div({ class: clsx(theme?.base, styling?.div) })}>
       {@render children()}
     </div>
   </aside>
@@ -154,13 +136,9 @@
 @prop position = "fixed"
 @prop activateClickOutside = true
 @prop backdrop = true
-@prop backdropClass
 @prop transition = fly
 @prop params
-@prop divClass
 @prop ariaLabel
-@prop nonActiveClass
-@prop activeClass
 @prop activeUrl = ""
 @prop class: className
 @prop classes

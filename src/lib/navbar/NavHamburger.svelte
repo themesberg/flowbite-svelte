@@ -4,7 +4,7 @@
   import Menu from "./Menu.svelte";
   import { navbarHamburger } from "./theme";
   import type { NavHamburgerProps } from "$lib/types";
-  import type { MouseEventHandler } from "svelte/elements";
+  // import type { MouseEventHandler } from "svelte/elements";
   import { getTheme } from "$lib/theme/themeUtils";
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
@@ -17,13 +17,25 @@
   const navBreakpoint = getNavbarBreakpointContext();
   const { base, menu } = navbarHamburger({ breakpoint: navBreakpoint ?? "md" });
 
-  const toggle: MouseEventHandler<HTMLButtonElement> = () => {
+  // Explicitly access the property inside a function to ensure 
+  // Svelte's reactivity system tracks the 'hidden' getter.
+  const isExpanded = $derived.by(() => {
+    return navState ? !navState.hidden : false;
+  });
+
+  const toggle = (event: MouseEvent) => {
+    event.stopPropagation(); // Prevent document click from firing here too
     if (!navState) return;
     navState.hidden = !navState.hidden;
   };
 </script>
-
-<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<ToolbarButton 
+  {name} 
+  onclick={onclick || toggle} 
+  aria-expanded={isExpanded} 
+  {...restProps} 
+  class={base({ class: clsx(theme?.base, className) })}
+>
   <Menu class={menu({ class: clsx(theme?.menu, styling?.menu) })} />
 </ToolbarButton>
 

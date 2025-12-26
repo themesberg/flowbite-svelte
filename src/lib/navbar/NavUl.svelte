@@ -38,7 +38,11 @@
     return finalParams;
   });
 
-  let hidden: boolean = $derived(navState?.hidden ?? true);
+  // Use $derived.by for proper reactivity tracking across component boundaries
+  let hidden: boolean = $derived.by(() => {
+    if (!navState) return true;
+    return navState.hidden;
+  });
 
   let { base, ul, active, nonActive } = $derived(navbarUl({ hidden, breakpoint: navBreakpoint ?? "md" }));
 
