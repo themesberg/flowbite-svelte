@@ -2,23 +2,11 @@
   import clsx from "clsx";
   import { sidebarCta } from "./theme";
   import type { SidebarCtaProps } from "$lib/types";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, icon, divClass, spanClass, label, class: className, classes, ...restProps }: SidebarCtaProps = $props();
+  let { children, icon, label, class: className, classes, ...restProps }: SidebarCtaProps = $props();
 
-  warnThemeDeprecation(
-    "SidebarCta",
-    untrack(() => ({ divClass, spanClass })),
-    { divClass: "div", spanClass: "span" }
-  );
-
-  const styling = $derived(
-    classes ?? {
-      div: divClass,
-      span: spanClass
-    }
-  );
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("sidebarCta"));
 
@@ -26,8 +14,8 @@
 </script>
 
 <div {...restProps} id="dropdown-cta" class={base({ class: clsx(theme?.base, className) })} role="alert">
-  <div class={div({ class: clsx(theme?.div, styling.div) })}>
-    <span class={span({ class: clsx(theme?.span, styling.span) })}>{label}</span>
+  <div class={div({ class: clsx(theme?.div, styling?.div) })}>
+    <span class={span({ class: clsx(theme?.span, styling?.span) })}>{label}</span>
     {#if icon}
       {@render icon()}
     {/if}
@@ -43,8 +31,6 @@
 ## Props
 @prop children
 @prop icon
-@prop divClass
-@prop spanClass
 @prop label
 @prop class: className
 @prop classes

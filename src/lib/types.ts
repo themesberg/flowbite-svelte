@@ -45,10 +45,10 @@ import type { IndicatorVariants } from "$lib/indicator/theme";
 import type { ListgroupItemVariants, ListgroupVariants } from "$lib/list-group/theme";
 import type { MegaMenuVariants } from "$lib/mega-menu/theme";
 import type { ModalVariants } from "$lib/modal/theme";
-import type { NavbarUlVariants, NavbarHamburgerVariants } from "$lib/navbar/theme";
+import type { NavbarVariants, NavbarUlVariants, NavbarHamburgerVariants } from "$lib/navbar/theme";
 import type { PaginationNavVariants } from "$lib/pagination/theme";
 import type { PopoverVariants } from "$lib/popover/theme";
-import type { SidebarVariants, SidebarCtaVariants, SidebarBrandVariants, SidebarDropdownWrapperVariants, SidebarButtonVariants } from "$lib/sidebar/theme";
+import type { SidebarVariants, SidebarCtaVariants, SidebarBrandVariants, SidebarDropdownWrapperVariants, SidebarButtonVariants, SidebarItemVariants } from "$lib/sidebar/theme";
 import type {
   CardPlaceholderVariants,
   ImagePlaceholderVariants,
@@ -1029,7 +1029,6 @@ export interface GalleryProps extends GalleryVariants, HTMLAttributes<HTMLDivEle
   children?: Snippet;
   figure?: Snippet<[item: ImgType]>;
   items?: HTMLImgAttributes[];
-  imgClass?: ClassValue;
   height?: string;
   rowHeight?: number;
   columns?: number;
@@ -1071,18 +1070,16 @@ export interface ListgroupProps extends ListgroupVariants, Omit<HTMLAttributes<H
   items?: (ListGroupItemType | string)[];
   active?: boolean;
   onclick?: (event?: MouseEvent) => void;
-  itemClass?: ClassValue;
-  aClasss?: ClassValue;
-  btnClass?: ClassValue;
-  iconClass?: ClassValue;
 }
 
+// Create a union of the possible element attributes
+type ElementProps = HTMLAnchorAttributes & HTMLButtonAttributes & HTMLLiAttributes;
+
 export type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> &
-  AnchorButtonAttributes & {
+  ElementProps & {
     current?: boolean;
     disabled?: boolean;
     Icon?: Component;
-    iconClass?: ClassValue;
     name?: string;
     children?: Snippet;
   };
@@ -1093,8 +1090,6 @@ export interface MegaMenuProps extends MegaMenuVariants, Omit<PopperProps, "chil
   extra?: Snippet;
   items?: LinkType[];
   full?: boolean;
-  ulClass?: ClassValue;
-  extraClass?: ClassValue;
   isOpen?: boolean;
 }
 
@@ -1102,10 +1097,6 @@ export interface MegaMenuProps extends MegaMenuVariants, Omit<PopperProps, "chil
 export interface ModalProps extends ModalVariants, Omit<DialogProps, "classes"> {
   header?: Snippet;
   footer?: Snippet;
-  headerClass?: ClassValue;
-  bodyClass?: ClassValue;
-  footerClass?: ClassValue;
-  closeBtnClass?: ClassValue;
   fullscreen?: boolean;
 }
 
@@ -1114,22 +1105,20 @@ export interface MenuProps extends SVGAttributes<SVGSVGElement> {
   size?: string;
   color?: string;
   variation?: "solid" | "outline";
-  ariaLabel?: string;
 }
 
 export type NavbarState = {
   hidden: boolean;
-  activeClass?: string;
-  nonActiveClass?: string;
+  activeClass?: ClassValue;
+  nonActiveClass?: ClassValue;
   activeUrl?: string;
 };
 
 export type NavbarBreakpoint = "sm" | "md" | "lg" | "xl";
 
-export interface NavbarProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
+export interface NavbarProps extends NavbarVariants, Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   children: Snippet<[{ hidden: boolean; toggle: () => void; NavContainer: Component }]>;
   fluid?: boolean;
-  navContainerClass?: ClassValue;
   closeOnClickOutside?: boolean;
   breakpoint?: NavbarBreakpoint;
 }
@@ -1143,20 +1132,16 @@ export interface NavContainerProps extends HTMLAttributes<HTMLDivElement> {
 export type NavHamburgerProps = ToolbarButtonProps &
   NavbarHamburgerVariants & {
     href?: undefined;
-    menuClass?: ClassValue;
   };
 
 export interface NavUlProps extends NavbarUlVariants, Omit<HTMLAttributes<HTMLDivElement>, "class"> {
   activeUrl?: string;
-  ulClass?: ClassValue;
   hidden?: boolean;
   // Legacy support
   slideParams?: SlideParams;
   // New transition props
   transition?: typeof slide | typeof fly | typeof fade | typeof scale;
   transitionParams?: SlideParams | FlyParams | FadeParams | ScaleParams;
-  activeClass?: ClassValue;
-  nonActiveClass?: ClassValue;
   respectMotionPreference?: boolean;
   class?: ClassValue;
 }
@@ -1206,8 +1191,6 @@ export interface PaginationButtonProps extends PaginationItemVariants, Paginatio
 export interface PaginationNavProps extends PaginationNavVariants, HTMLAttributes<HTMLElement>, PaginationVariants {
   prevContent?: Snippet;
   nextContent?: Snippet;
-  prevClass?: ClassValue;
-  nextClass?: ClassValue;
   currentPage: number;
   totalPages: number;
   visiblePages?: number;
@@ -1218,8 +1201,6 @@ export interface PaginationNavProps extends PaginationNavVariants, HTMLAttribute
   showIcons?: boolean;
   ariaLabel?: string;
   size?: "default" | "large";
-  spanClass?: ClassValue;
-  tableDivClass?: ClassValue;
   classes?: {
     prev?: ClassValue;
     next?: ClassValue;
@@ -1247,7 +1228,6 @@ export interface PopoverProps extends PopoverVariants, Omit<PopperProps, "title"
   title?: Snippet | string;
   color?: PopoverVariants["color"];
   params?: ParamsType;
-  defaultClass?: ClassValue;
   transition?: TransitionFunc;
   isOpen?: boolean;
 }
@@ -1285,11 +1265,6 @@ export interface AdvancedRatingProps extends AdvancedRatingVariants, HTMLAttribu
   rating?: Snippet;
   globalText?: Snippet;
   ratings: RatingItem[];
-  divClass?: ClassValue;
-  spanClass?: ClassValue;
-  div2Class?: ClassValue;
-  div3Class?: ClassValue;
-  span2Class?: ClassValue;
   unit?: string;
 }
 
@@ -1301,7 +1276,6 @@ export interface RatingProps extends RatingVariants, HTMLAttributes<HTMLDivEleme
   rating?: number;
   icon?: Component;
   count?: boolean;
-  pClass?: ClassValue;
 }
 
 export interface RatingCommentProps {
@@ -1347,13 +1321,6 @@ export interface ReviewProps extends ReviewVariants, HTMLAttributes<HTMLElement>
   item2?: Snippet;
   item3?: Snippet;
   review?: ReviewType;
-  articleClass?: ClassValue;
-  divClass?: ClassValue;
-  div2Class?: ClassValue;
-  div3Class?: ClassValue;
-  imgClass?: ClassValue;
-  ulClass?: ClassValue;
-  liClass?: ClassValue;
 }
 
 export interface ScoreRatingProps extends ScoreRatingVariants {
@@ -1374,10 +1341,10 @@ export interface RatingIconProps extends SVGAttributes<SVGSVGElement> {
   size?: number;
   ariaLabel?: string;
   role?: string;
-  svgClass?: ClassValue;
   iconIndex?: number;
   groupId?: string;
   pathd?: string;
+  class?: ClassValue;
 }
 
 // sidebar
@@ -1397,13 +1364,9 @@ export interface SidebarProps extends SidebarVariants, HTMLAttributes<HTMLElemen
   activateClickOutside?: boolean;
   isSingle?: boolean;
   ariaLabel?: string;
-  divClass?: ClassValue;
-  nonActiveClass?: ClassValue;
-  activeClass?: ClassValue;
   params?: ParamsType;
   transition?: TransitionFunc;
   backdrop?: boolean;
-  backdropClass?: ClassValue;
   activeUrl?: string;
   alwaysOpen?: boolean;
   disableBreakpoints?: boolean;
@@ -1411,13 +1374,10 @@ export interface SidebarProps extends SidebarVariants, HTMLAttributes<HTMLElemen
 
 export interface SidebarButtonProps extends SidebarButtonVariants, HTMLButtonAttributes {
   breakpoint?: SidebarVariants["breakpoint"];
-  svgClass?: ClassValue;
 }
 
 export interface SidebarCtaProps extends SidebarCtaVariants, HTMLAttributes<HTMLDivElement> {
   icon?: Snippet;
-  divClass?: ClassValue;
-  spanClass?: ClassValue;
   label: string;
 }
 
@@ -1429,8 +1389,6 @@ export interface SiteType {
 
 export interface SidebarBrandProps extends SidebarBrandVariants, HTMLAnchorAttributes {
   site?: SiteType;
-  imgClass?: ClassValue;
-  spanClass?: ClassValue;
 }
 
 export type Bindable<T> = {
@@ -1444,31 +1402,22 @@ export interface SidebarDropdownWrapperProps extends SidebarDropdownWrapperVaria
   arrowdown?: Snippet;
   icon?: Snippet;
   isOpen?: boolean;
-  btnClass?: ClassValue;
   label?: string;
-  spanClass?: ClassValue;
-  ulClass?: ClassValue;
   params?: ParamsType;
   transition?: TransitionFunc;
-  svgClass?: ClassValue;
   onclick?: () => void;
   isSingle?: boolean;
 }
 
 export interface SidebarGroupProps extends HTMLAttributes<HTMLUListElement> {
   children: Snippet;
-  borderClass?: ClassValue;
   border?: boolean;
 }
 
-export interface SidebarItemProps extends HTMLAnchorAttributes {
+export interface SidebarItemProps extends SidebarItemVariants, HTMLAnchorAttributes {
   icon?: Snippet;
   subtext?: Snippet;
   label?: string;
-  spanClass?: ClassValue;
-  activeClass?: ClassValue;
-  nonActiveClass?: ClassValue;
-  aClass?: ClassValue;
   active?: boolean;
 }
 

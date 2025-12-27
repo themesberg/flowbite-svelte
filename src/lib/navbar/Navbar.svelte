@@ -6,13 +6,17 @@
   import { getTheme } from "$lib/theme/themeUtils";
   import { setNavbarStateContext, setNavbarBreakpointContext } from "$lib/context";
 
-  let { children, fluid, navContainerClass, class: className, closeOnClickOutside = true, breakpoint = "md", ...restProps }: NavbarProps = $props();
+  let { children, fluid, class: className, classes, closeOnClickOutside = true, breakpoint = "md", ...restProps }: NavbarProps = $props();
 
+  const styling = $derived(classes);
   const theme = $derived(getTheme("navbar"));
+
+  let { base, container: navContainerClass } = $derived(navbar());
 
   let navState = $state<NavbarState>({ hidden: true });
   setNavbarStateContext(navState);
 
+  // Update context when breakpoint prop changes
   $effect(() => {
     setNavbarBreakpointContext(breakpoint);
   });
@@ -36,8 +40,8 @@
 <svelte:document onclick={handleDocumentClick} />
 
 <nav bind:this={navbarElement}>
-  <div {...restProps} class={navbar({ class: clsx(theme, className) })}>
-    <NavContainer {fluid} class={clsx(navContainerClass)}>
+  <div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+    <NavContainer {fluid} class={navContainerClass({ class: clsx(theme?.container, styling?.container) })}>
       {@render children({ hidden: navState.hidden, toggle, NavContainer })}
     </NavContainer>
   </div>
@@ -51,8 +55,8 @@
 ## Props
 @prop children
 @prop fluid
-@prop navContainerClass
 @prop class: className
+@prop classes
 @prop closeOnClickOutside = true
 @prop breakpoint = "md"
 @prop ...restProps

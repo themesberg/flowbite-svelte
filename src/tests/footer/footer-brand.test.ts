@@ -26,7 +26,7 @@ describe("FooterBrand Component", () => {
       const image = screen.getByRole("img");
 
       expect(image).toBeInTheDocument();
-      expect(image).toHaveAttribute("src", "https://flowbite.com/logo.svg");
+      expect(image).toHaveAttribute("src", "https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg");
       expect(image).toHaveAttribute("alt", "Flowbite Logo");
     });
 
@@ -46,7 +46,7 @@ describe("FooterBrand Component", () => {
 
       expect(image).toBeInTheDocument();
       expect(image.tagName.toLowerCase()).toBe("img");
-      expect(image).toHaveAttribute("src", "https://flowbite.com/logo.svg");
+      expect(image).toHaveAttribute("src", "https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg");
       expect(image).toHaveAttribute("alt", "Flowbite Logo");
     });
 

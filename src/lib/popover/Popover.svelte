@@ -3,14 +3,12 @@
   import Popper from "../utils/Popper.svelte";
   import { popover } from "./theme";
   import type { PopoverProps } from "$lib/types";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let {
     title: titleSlot,
     color = "default",
     trigger = "hover",
-    defaultClass,
     arrow = true,
     children,
     placement = "top",
@@ -20,13 +18,7 @@
     ...restProps
   }: PopoverProps = $props();
 
-  warnThemeDeprecation(
-    "Popover",
-    untrack(() => ({ defaultClass })),
-    { defaultClass: "content" }
-  );
-
-  const styling = $derived(classes ?? { content: defaultClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("popover"));
 
@@ -35,13 +27,13 @@
 
 <Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={base({ class: clsx(theme?.base, className) })}>
   {#if typeof titleSlot === "string"}
-    <div class={title({ class: clsx(theme?.title, classes?.title) })}>
-      <h3 class={h3({ class: clsx(theme?.h3, classes?.h3) })}>{titleSlot}</h3>
+    <div class={title({ class: clsx(theme?.title, styling?.title) })}>
+      <h3 class={h3({ class: clsx(theme?.h3, styling?.h3) })}>{titleSlot}</h3>
     </div>
   {:else if titleSlot}
     {@render titleSlot()}
   {/if}
-  <div class={content({ class: clsx(theme?.content, styling.content) })}>
+  <div class={content({ class: clsx(theme?.content, styling?.content) })}>
     {@render children()}
   </div>
 </Popper>

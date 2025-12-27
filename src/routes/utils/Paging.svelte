@@ -23,7 +23,9 @@
     meta: PostMeta;
   }
 
-  const components = (Object.values(data.posts.posts) as Post[][])
+  const all_posts = { ...(data.posts ?? {}), ...(data.blocks ?? {}) };
+
+  const components = (Object.values(all_posts) as Post[][])
     .flat()
     .filter((x): x is Post => x.meta && x.meta.dir === data.dir)
     .map(({ path, meta }) => ({ path, name: meta.component_title }));
@@ -56,7 +58,7 @@
       </div>
       {#if index < components.length - 1}
         {@const { name, href } = sibling(true)}
-        <PaginationItem {href} class="hover:text-primary-700 dark: dark:hover:text-primary-700 flex items-center gap-2.5">
+        <PaginationItem {href} class="hover:text-primary-700 dark:hover:text-primary-700 flex items-center gap-2.5">
           {name}
           <ArrowRight />
         </PaginationItem>

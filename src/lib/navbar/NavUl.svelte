@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import type { NavUlProps } from "$lib/types";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
@@ -7,33 +7,15 @@
   import { fade, fly, scale, slide } from "svelte/transition";
   import { navbarUl } from "./theme";
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
-  import { untrack } from "svelte";
 
   let navState = getNavbarStateContext();
-  let navBreakpoint = getNavbarBreakpointContext();
 
-  let {
-    children,
-    activeUrl = $bindable(),
-    ulClass,
-    slideParams,
-    transition = slide,
-    transitionParams,
-    activeClass,
-    nonActiveClass,
-    respectMotionPreference = true,
-    class: className,
-    classes,
-    ...restProps
-  }: NavUlProps = $props();
+  // Reactively get the breakpoint - use $derived to ensure it updates
+  let navBreakpoint = $derived(getNavbarBreakpointContext());
 
-  warnThemeDeprecation(
-    "NavUl",
-    untrack(() => ({ ulClass, activeClass, nonActiveClass })),
-    { ulClass: "ul", activeClass: "active", nonActiveClass: "nonActive" }
-  );
+  let { children, activeUrl = $bindable(), slideParams, transition = slide, transitionParams, respectMotionPreference = true, class: className, classes, ...restProps }: NavUlProps = $props();
 
-  const styling = $derived(classes ?? { ul: ulClass, active: activeClass, nonActive: nonActiveClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("navbarUl"));
 
@@ -58,19 +40,23 @@
     return finalParams;
   });
 
-  let hidden: boolean = $derived(navState?.hidden ?? true);
+  // Use $derived.by for proper reactivity tracking across component boundaries
+  let hidden: boolean = $derived.by(() => {
+    if (!navState) return true;
+    return navState.hidden;
+  });
 
   let { base, ul, active, nonActive } = $derived(navbarUl({ hidden, breakpoint: navBreakpoint ?? "md" }));
 
   $effect(() => {
     if (!navState) return;
-    navState.activeClass = active({ class: clsx(theme?.active, styling.active) });
-    navState.nonActiveClass = nonActive({ class: clsx(theme?.nonActive, styling.nonActive) });
+    navState.activeClass = active({ class: clsx(theme?.active, styling?.active) });
+    navState.nonActiveClass = nonActive({ class: clsx(theme?.nonActive, styling?.nonActive) });
     navState.activeUrl = activeUrl;
   });
 
   let divCls: string = $derived(base({ class: clsx(theme?.base, className) }));
-  let ulCls: string = $derived(ul({ class: clsx(theme?.ul, styling.ul) }));
+  let ulCls: string = $derived(ul({ class: clsx(theme?.ul, styling?.ul) }));
 </script>
 
 {#if !hidden}
@@ -95,12 +81,9 @@
 ## Props
 @prop children
 @prop activeUrl = $bindable()
-@prop ulClass
 @prop slideParams
 @prop transition = slide
 @prop transitionParams
-@prop activeClass
-@prop nonActiveClass
 @prop respectMotionPreference = true
 @prop class: className
 @prop classes

@@ -138,7 +138,7 @@ export const toolbarButton = tv({
     size: {
       xs: "m-0.5 rounded-xs focus:ring-1 p-0.5",
       sm: "m-0.5 rounded-sm focus:ring-1 p-0.5",
-      md: "m-0.5 rounded-lg focus:ring-2 p-1.5",
+      md: "m-0.5 rounded-base focus:ring-2 p-1.5",
       lg: "m-0.5 rounded-lg focus:ring-2 p-2.5"
     },
     background: {

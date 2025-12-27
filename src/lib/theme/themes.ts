@@ -28,7 +28,7 @@ export { pagination, paginationButton, paginationItem, paginationNav } from "../
 export { popover } from "../popover";
 export { progressbar, progressradial } from "../progress";
 export { advancedRating, rating, review, scoreRating } from "../rating";
-export { sidebar, sidebarBrand, sidebarButton, sidebarCta, sidebarDropdownWrapper } from "../sidebar";
+export { sidebar, sidebarBrand, sidebarButton, sidebarCta, sidebarItem, sidebarDropdownWrapper } from "../sidebar";
 export { cardPlaceholder, imagePlaceholder, listPlaceholder, skeleton, testimonialPlaceholder, textPlaceholder, videoPlaceholder, widgetPlaceholder } from "../skeleton";
 export { speedDial, speedDialButton } from "../speed-dial";
 export { spinner } from "../spinner";

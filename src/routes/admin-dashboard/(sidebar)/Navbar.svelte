@@ -94,7 +94,7 @@
   </NavBrand>
   <div class="hidden lg:block lg:ps-3">
     {#if list}
-      <NavUl class="ml-2" activeUrl="/" activeClass="text-primary-600 dark:text-primary-500">
+      <NavUl class="ml-2" activeUrl="/">
         <NavLi href="/">Home</NavLi>
         <NavLi href="#top">Messages</NavLi>
         <NavLi href="#top">Profile</NavLi>

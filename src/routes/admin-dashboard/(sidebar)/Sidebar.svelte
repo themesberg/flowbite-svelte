@@ -144,11 +144,11 @@
               <Icon class={iconClass} />
             {/snippet}
             {#each Object.entries(children) as [title, href]}
-              <SidebarItem label={title} {href} spanClass="ml-9" class={itemClass} aClass="w-full" />
+              <SidebarItem label={title} {href} classes={{ span: "ml-9", link: "w-full" }} class={itemClass} />
             {/each}
           </SidebarDropdownWrapper>
         {:else}
-          <SidebarItem label={name} {href} spanClass="ml-3" class={itemClass} aClass="w-full p-0 py-2">
+          <SidebarItem label={name} {href} classes={{ span: "ml-3", link: "w-full p-0 py-2" }} class={itemClass}>
             {#snippet icon()}
               <Icon class={iconClass} />
             {/snippet}
@@ -157,7 +157,7 @@
       {/each}
     </SidebarGroup>
     <SidebarGroup class={groupClass}>
-      <SidebarItem label="Quickstart" spanClass="ms-3" href="/admin-dashboard/quickstart">
+      <SidebarItem label="Quickstart" classes={{ span: "ml-3" }} href="/admin-dashboard/quickstart">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-white" />
         {/snippet}
@@ -165,7 +165,7 @@
     </SidebarGroup>
     <SidebarGroup class={groupClass}>
       {#each links as { label, href, Icon } (label)}
-        <SidebarItem {label} {href} spanClass="ml-3" class={itemClass}>
+        <SidebarItem {label} {href} classes={{ span: "ml-3" }} class={itemClass}>
           {#snippet icon()}
             <Icon class={iconClass} />
           {/snippet}

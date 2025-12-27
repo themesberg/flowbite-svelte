@@ -11,14 +11,14 @@
     iconIndex = 0,
     groupId = "star",
     role = "img",
-    svgClass,
+    class: className,
     ...restProps
   }: RatingIconProps = $props();
 
   const uniqueId = $derived(`${groupId}-${iconIndex}`);
 </script>
 
-<svg width={size} height={size} {...restProps} class={clsx(svgClass)} aria-label={ariaLabel} viewBox="100 100 120 120" {role}>
+<svg width={size} height={size} {...restProps} class={clsx(className)} aria-label={ariaLabel} viewBox="100 100 120 120" {role}>
   <defs>
     <linearGradient id={uniqueId}>
       {#if fillPercent !== 100}
@@ -56,6 +56,5 @@
 @prop iconIndex = 0
 @prop groupId = "star"
 @prop role = "img"
-@prop svgClass
 @prop ...restProps
 -->

@@ -80,7 +80,7 @@
 </script>
 
 {#if submenu !== "blocks"}
-  <SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-0 z-40 md:top-4" />
+  <SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-2 z-40 md:top-4" />
   <Sidebar
     breakpoint="lg"
     backdrop={true}
@@ -104,7 +104,7 @@
           {#each values as { meta, path }}
             {#if meta?.component_title}
               {@const href = key === "icons" || key === "illustrations" ? `/${key}${path}` : `/docs/${key}${path}`}
-              <SidebarItem label={meta.component_title} {href} {spanClass} />
+              <SidebarItem label={meta.component_title} {href} classes={{ span: spanClass }} />
             {/if}
           {/each}
         </SidebarDropdownWrapper>
@@ -120,7 +120,7 @@
             {@const pathWithoutSlash = builder.path.replace(/^\//, "")}
             {@const capitalizedPath = pathWithoutSlash.charAt(0).toUpperCase() + pathWithoutSlash.slice(1)}
             {@const href = `/builder/${builder.path}`}
-            <SidebarItem label={capitalizedPath} {href} {spanClass} />
+            <SidebarItem label={capitalizedPath} {href} classes={{ span: spanClass }} />
           {/each}
         </SidebarDropdownWrapper>
       {/if}
@@ -131,14 +131,13 @@
         bind:isOpen={dropdownStates["blocks"]}
       >
         {#each blocks as block}
-          <SidebarItem label={capitalizeFirstLetter(block)} href="/blocks/{block}" {spanClass} />
+          <SidebarItem label={capitalizeFirstLetter(block)} href="/blocks/{block}" classes={{ span: spanClass }} />
         {/each}
       </SidebarDropdownWrapper>
       <SidebarItem
         label="Admin Dashboard"
         href="/admin-dashboard"
-        spanClass="ms-3 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200"
-        {activeClass}
+        classes={{ span: "ms-3 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" }}
       ></SidebarItem>
     </SidebarGroup>
     <!-- /SidebarWrapper -->

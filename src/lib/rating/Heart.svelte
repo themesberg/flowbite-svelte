@@ -11,14 +11,14 @@
     iconIndex = 0,
     groupId = "star",
     role = "img",
-    svgClass,
+    class: className,
     ...restProps
   }: RatingIconProps = $props();
 
   const uniqueId = $derived(`${groupId}-${iconIndex}`);
 </script>
 
-<svg width={size} height={size} class={clsx(svgClass)} {...restProps} aria-label={ariaLabel} viewBox="0 0 24 24" {role} stroke-width="1.5" stroke="currentColor" fill="none">
+<svg width={size} height={size} class={clsx(className)} {...restProps} aria-label={ariaLabel} viewBox="0 0 24 24" {role} stroke-width="1.5" stroke="currentColor" fill="none">
   <defs>
     <linearGradient id={uniqueId}>
       {#if fillPercent !== 100}

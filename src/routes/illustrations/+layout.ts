@@ -1,4 +1,7 @@
 import type { LayoutLoad } from "./$types";
+
+export const prerender = false;
+
 export const load: LayoutLoad = async ({ fetch }) => {
   try {
     const response = await fetch("/api/posts");

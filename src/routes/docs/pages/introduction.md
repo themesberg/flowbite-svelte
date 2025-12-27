@@ -80,41 +80,36 @@ Update your main CSS file to support Tailwind CSS and the Flowbite plugin. You c
 
 The location of your main CSS file determines the correct path for `@source` directives:
 
-**If your CSS file is at `src/app.css`:**
+**Your CSS file is at `src/routes/+layout.css`:**
 
 ```css
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+/* MINIMAL THEME
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+*/
 
-@plugin 'flowbite/plugin';
+/* ENTERPRISE THEME
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+*/
+
+/* PLAYFUL THEME
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+*/
+
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+/* @import "flowbite/src/themes/minimal"; */
+/* @import "flowbite/src/themes/enterprise"; */
+/* @import "flowbite/src/themes/playful"; */
+/* @import "flowbite/src/themes/mono"; */
+
+@plugin "flowbite/plugin";
+@plugin "flowbite-typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --color-primary-50: #fff5f2;
-  --color-primary-100: #fff1ee;
-  --color-primary-200: #ffe4de;
-  --color-primary-300: #ffd5cc;
-  --color-primary-400: #ffbcad;
-  --color-primary-500: #fe795d;
-  --color-primary-600: #ef562f;
-  --color-primary-700: #eb4f27;
-  --color-primary-800: #cc4522;
-  --color-primary-900: #a5371b;
-
-  --color-secondary-50: #f0f9ff;
-  --color-secondary-100: #e0f2fe;
-  --color-secondary-200: #bae6fd;
-  --color-secondary-300: #7dd3fc;
-  --color-secondary-400: #38bdf8;
-  --color-secondary-500: #0ea5e9;
-  --color-secondary-600: #0284c7;
-  --color-secondary-700: #0369a1;
-  --color-secondary-800: #075985;
-  --color-secondary-900: #0c4a6e;
-}
-
-@source "../node_modules/flowbite-svelte/dist";
-@source "../node_modules/flowbite-svelte-icons/dist";
+@source "../../node_modules/flowbite-svelte/dist";
+@source "../../node_modules/flowbite-svelte-icons/dist";
 
 @layer base {
   /* disable chrome cancel button */
@@ -124,14 +119,9 @@ The location of your main CSS file determines the correct path for `@source` dir
 }
 ```
 
-**If your CSS file is at `src/routes/+layout.css`:**
+The following lines can be used to override the brand colors:
+
 ```css
-@import "tailwindcss";
-
-@plugin 'flowbite/plugin';
-
-@custom-variant dark (&:where(.dark, .dark *));
-
 @theme {
   --color-primary-50: #fff5f2;
   --color-primary-100: #fff1ee;
@@ -154,15 +144,35 @@ The location of your main CSS file determines the correct path for `@source` dir
   --color-secondary-700: #0369a1;
   --color-secondary-800: #075985;
   --color-secondary-900: #0c4a6e;
+
+  --color-brand-softer: var(--color-primary-50);
+  --color-brand-soft: var(--color-primary-100);
+  --color-brand: var(--color-primary-700);
+  --color-brand-medium: var(--color-primary-200);
+  --color-brand-strong: var(--color-primary-800);
+
+  --color-fg-brand-subtle: var(--color-primary-200);
+  --color-fg-brand: var(--color-primary-700);
+  --color-fg-brand-strong: var(--color-primary-900); 
+  
+  --color-brand-subtle: var(--color-primary-200);
+  --color-brand-light: var(--color-primary-600);
 }
 
-@source "../../node_modules/flowbite-svelte/dist";
-@source "../../node_modules/flowbite-svelte-icons/dist";
-
 @layer base {
-  /* disable chrome cancel button */
-  input[type="search"]::-webkit-search-cancel-button {
-    display: none;
+  .dark {
+    --color-brand-softer: var(--color-primary-900);
+    --color-brand-soft: var(--color-primary-800);
+    --color-brand: var(--color-primary-600);
+    --color-brand-medium: var(--color-primary-800);
+    --color-brand-strong: var(--color-primary-700);
+
+    --color-fg-brand-subtle: var(--color-primary-200);
+    --color-fg-brand: var(--color-primary-500);
+    --color-fg-brand-strong: var(--color-primary-400);
+
+    --color-brand-subtle: var(--color-primary-800);
+    --color-brand-light: var(--color-primary-600);
   }
 }
 ```

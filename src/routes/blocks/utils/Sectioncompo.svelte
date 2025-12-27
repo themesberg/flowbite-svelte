@@ -1,26 +1,30 @@
 <script lang="ts">
   import { Button, Select } from "flowbite-svelte";
-  import type { PageData } from "../../$types";
   import CompoCard from "./CompoCard.svelte";
   import Section from "./Section.svelte";
   import { Search } from "flowbite-svelte";
   import type { Snippet } from "svelte";
 
-  interface Post {
-    meta: {
-      layout: string;
-      title: string;
+  import type { MarkdownEntry } from "../../utils";
+
+  interface Post extends MarkdownEntry {
+    meta: MarkdownEntry["meta"] & {
+      layout?: string;
+      title?: string;
       breadcrumb_title?: string;
-      no_of_components: string;
-      dir: string;
+      no_of_components?: string;
+      dir?: string;
       description?: string;
     };
-    path: string;
+  }
+
+  interface SectionData {
+    blocks: Record<string, MarkdownEntry[]>;
   }
 
   interface Props {
     header?: Snippet;
-    data: PageData;
+    data: SectionData;
     section?: string;
   }
 
@@ -29,8 +33,7 @@
   let expanded = $state(true);
   const INIT_COUNT = 18;
 
-  const sectionPosts = $derived(section !== undefined ? data.posts.blocks[section] : Object.values(data.posts.blocks).flat());
-  // $inspect('sectionPosts',sectionPosts)
+  const sectionPosts = $derived<Post[]>((section !== undefined ? data.blocks[section] : Object.values(data.blocks).flat()) as Post[]);
 
   const searchTermLower = $derived(searchTerm.toLowerCase());
   let blockSelected = $state("");
@@ -39,10 +42,11 @@
     { value: "marketing", name: "Marketing UI" },
     { value: "publisher", name: "Publisher UI" }
   ];
-  const filteredSectionPosts = $derived(blockSelected ? sectionPosts.filter((post: Post) => post.meta?.dir === blockSelected) : sectionPosts);
+
+  const filteredSectionPosts = $derived(blockSelected ? sectionPosts.filter((post) => post.meta?.dir === blockSelected) : sectionPosts);
 
   const components = $derived(
-    filteredSectionPosts.filter((post: Post) => {
+    filteredSectionPosts.filter((post) => {
       if (!post.meta || !post.meta.breadcrumb_title) return false;
 
       const breadcrumbTitleLower = post.meta.breadcrumb_title.toLowerCase();
@@ -72,12 +76,12 @@
   {/if}
 
   <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-    {#each components.slice(0, INIT_COUNT) as { path, meta: { dir, breadcrumb_title } } (dir + path)}
-      <CompoCard name={breadcrumb_title} dir={"blocks/" + dir} {path} />
+    {#each components.slice(0, INIT_COUNT) as component ((component.meta.dir || "") + component.path)}
+      <CompoCard name={component.meta.breadcrumb_title || ""} dir={"blocks/" + (component.meta.dir || "")} path={component.path} />
     {/each}
     {#if expanded}
-      {#each components.slice(INIT_COUNT) as { path, meta: { dir, breadcrumb_title } } (dir + path)}
-        <CompoCard name={breadcrumb_title} dir={"blocks/" + dir} {path} />
+      {#each components.slice(INIT_COUNT) as component ((component.meta.dir || "") + component.path)}
+        <CompoCard name={component.meta.breadcrumb_title || ""} dir={"blocks/" + (component.meta.dir || "")} path={component.path} />
       {/each}
     {/if}
   </div>

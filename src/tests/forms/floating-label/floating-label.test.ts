@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/svelte";
+import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
 import { userEvent } from "@testing-library/user-event";
 
@@ -9,6 +9,7 @@ import FloatingLabelDisabledTest from "./floating-label-disabled.test.svelte";
 import FloatingLabelIconTest from "./floating-label-icon.test.svelte";
 import FloatingLabelValueTest from "./floating-label-value.test.svelte";
 import FloatingLabelClearableTest from "./floating-label-clearable.test.svelte";
+import FloatingLabelClearableEmptyTest from "./floating-label-clearable-empty.test.svelte";
 import FloatingLabelSuggestionsTest from "./floating-label-suggestions.test.svelte";
 import FloatingLabelSizesTest from "./floating-label-sizes.test.svelte";
 
@@ -215,24 +216,29 @@ describe("FloatingLabelInput - Value Binding", () => {
 
 describe("FloatingLabelInput - Clearable", () => {
   test("does not show clear button when input is empty", () => {
-    render(FloatingLabelClearableTest);
+    render(FloatingLabelClearableEmptyTest);
     const input = screen.getByLabelText("Clearable Input") as HTMLInputElement;
 
-    // Clear the input first
-    input.value = "";
-    input.dispatchEvent(new Event("input", { bubbles: true }));
+    expect(input.value).toBe("");
 
     const clearButton = input.parentElement?.querySelector('[aria-label="Clear search value"]');
     expect(clearButton).not.toBeInTheDocument();
   });
 
-  test("shows clear button when input has value", () => {
+  test("shows clear button when input has value", async () => {
     render(FloatingLabelClearableTest);
     const input = screen.getByLabelText("Clearable Input") as HTMLInputElement;
 
     expect(input.value).toBe("Clearable text");
-    const clearButton = input.parentElement?.querySelector('[aria-label="Clear search value"]');
-    expect(clearButton).toBeInTheDocument();
+
+    // Wait for Svelte reactivity to update the DOM
+    await waitFor(
+      () => {
+        const clearButton = input.parentElement?.querySelector('[aria-label="Clear search value"]');
+        expect(clearButton).toBeInTheDocument();
+      },
+      { timeout: 3000 }
+    );
   });
 
   test("clears value when clear button is clicked", async () => {
@@ -242,13 +248,25 @@ describe("FloatingLabelInput - Clearable", () => {
 
     expect(input.value).toBe("Clearable text");
 
+    // Wait for clear button to appear
+    await waitFor(
+      () => {
+        const clearButton = input.parentElement?.querySelector('[aria-label="Clear search value"]');
+        expect(clearButton).toBeInTheDocument();
+      },
+      { timeout: 3000 }
+    );
+
     const clearButton = input.parentElement?.querySelector('[aria-label="Clear search value"]') as HTMLElement;
     await user.click(clearButton);
 
-    // Wait for the update
-    await new Promise((resolve) => setTimeout(resolve, 150));
-
-    expect(input.value).toBe("");
+    // Wait for the value to be cleared
+    await waitFor(
+      () => {
+        expect(input.value).toBe("");
+      },
+      { timeout: 3000 }
+    );
   });
 });
 

@@ -1,12 +1,14 @@
 <script lang="ts">
+  import type { HTMLLiAttributes } from "svelte/elements";
   import clsx from "clsx";
   import type { ListgroupItemProps } from "$lib";
   import { listGroupItem, type ListgroupItemVariants } from "./theme";
   import { getTheme } from "$lib/theme/themeUtils";
   import { getListGroupContext } from "$lib/context";
 
-  let { children, active, current, disabled, horizontal, name, Icon, class: className, iconClass = "me-2.5 h-15 w-15", ...restProps }: ListgroupItemProps = $props();
+  let { children, active, current, disabled, horizontal, name, Icon, class: className, classes, href, type, ...restProps }: ListgroupItemProps = $props();
 
+  const styling = $derived(classes);
   const theme = $derived(getTheme("listGroupItem"));
 
   const listGroupCtx = getListGroupContext();
@@ -14,12 +16,12 @@
   const finalHorizontal = $derived(horizontal ?? listGroupCtx?.horizontal);
 
   let state: ListgroupItemVariants["state"] = $derived(disabled ? "disabled" : current ? "current" : "normal");
-  let itemClass = $derived(listGroupItem({ state, active: finalActive, horizontal: finalHorizontal, class: clsx(theme, className) }));
+  const { base, icon } = $derived(listGroupItem({ state, active: finalActive, horizontal: finalHorizontal }));
 </script>
 
 {#snippet nameOrChildren()}
   {#if Icon}
-    <Icon class={clsx(iconClass)} />
+    <Icon class={icon({ class: clsx(theme?.icon, styling?.icon) })} />
   {/if}
   {#if children}
     {@render children()}
@@ -28,16 +30,16 @@
   {/if}
 {/snippet}
 
-{#if restProps.href === undefined && !active}
-  <li class={itemClass}>
+{#if href === undefined && !active}
+  <li {...restProps as HTMLLiAttributes} class={base({ class: clsx(theme?.base, className) })}>
     {@render nameOrChildren()}
   </li>
-{:else if restProps.href === undefined}
-  <button type="button" {...restProps} class={itemClass} {disabled} aria-current={current}>
+{:else if href === undefined}
+  <button type={type ?? "button"} {...restProps} class={base({ class: clsx(theme?.base, className) })} {disabled} aria-current={current}>
     {@render nameOrChildren()}
   </button>
 {:else}
-  <a {...restProps} class={itemClass} aria-current={current}>
+  <a {href} {...restProps} class={base({ class: clsx(theme?.base, className) })} aria-current={current}>
     {@render nameOrChildren()}
   </a>
 {/if}
@@ -56,6 +58,5 @@
 @prop name
 @prop Icon
 @prop class: className
-@prop iconClass = "me-2.5 h-15 w-15"
 @prop ...restProps
 -->

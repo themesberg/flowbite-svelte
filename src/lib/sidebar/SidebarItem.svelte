@@ -1,9 +1,14 @@
 <script lang="ts">
   import { getSidebarContext, getActiveUrlContext } from "$lib/context";
   import clsx from "clsx";
+  import { getTheme } from "$lib/theme/themeUtils";
+  import { sidebarItem } from "./theme";
   import type { SidebarItemProps } from "$lib/types";
 
-  let { icon, subtext, href, label, spanClass = "ms-3", activeClass, nonActiveClass, aClass, active, class: className, ...restProps }: SidebarItemProps = $props();
+  let { icon, subtext, href, label, active, class: className, classes, ...restProps }: SidebarItemProps = $props();
+
+  const styling = $derived(classes);
+  const theme = $derived(getTheme("sidebarItem"));
 
   const context = getSidebarContext() ?? { closeSidebar: undefined, activeClass: undefined, nonActiveClass: undefined };
 
@@ -11,15 +16,15 @@
 
   let activeItem = $derived(active !== undefined ? active : activeUrl?.value ? href === activeUrl.value : false);
 
-  let aCls = $derived(activeItem ? (activeClass ?? context.activeClass) : (nonActiveClass ?? context.nonActiveClass));
+  const { base, link, span } = $derived(sidebarItem({ active: activeItem }));
 </script>
 
-<li class={clsx(className)}>
-  <a onclick={context.closeSidebar ?? undefined} {...restProps} {href} aria-current={activeItem ? "page" : undefined} class={clsx(aCls, aClass)}>
+<li class={base({ class: clsx(theme?.base, className) })}>
+  <a onclick={context.closeSidebar ?? undefined} {...restProps} {href} aria-current={activeItem ? "page" : undefined} class={link({ class: clsx(theme?.link, styling?.link) })}>
     {#if icon}
       {@render icon()}
     {/if}
-    <span class={clsx(spanClass)}>{label}</span>
+    <span class={span({ class: clsx(theme?.span, styling?.span) })}>{label}</span>
     {#if subtext}
       {@render subtext()}
     {/if}
@@ -36,11 +41,8 @@
 @prop subtext
 @prop href
 @prop label
-@prop spanClass = "ms-3"
-@prop activeClass
-@prop nonActiveClass
-@prop aClass
 @prop active
 @prop class: className
+@prop classes
 @prop ...restProps
 -->

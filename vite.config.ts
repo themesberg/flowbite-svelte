@@ -46,7 +46,11 @@ export default defineConfig({
             ]
           },
           include: ["src/tests/**/*.{test,spec}.?(c|m)[jt]s?(x)"],
-          setupFiles: ["./vitest-setup-client.ts"]
+          setupFiles: ["./vitest-setup-client.ts"],
+          env: {
+            VITEST: "true",
+            NODE_ENV: "test"
+          }
         }
       },
       {
@@ -54,15 +58,20 @@ export default defineConfig({
           name: "server",
           environment: "node",
           include: ["src/**/*.{test,spec}.{js,ts}"],
-          exclude: ["src/tests/**/*.{test,spec}.?(c|m)[jt]s?(x)"]
+          exclude: ["src/tests/**/*.{test,spec}.?(c|m)[jt]s?(x)"],
+          env: {
+            VITEST: "true",
+            NODE_ENV: "test"
+          }
         }
       }
-    ]
+    ],
   },
   define: {
     __NAME__: JSON.stringify(pkg.name),
     __VERSION__: JSON.stringify(pkg.version),
     __TIPTAP__: JSON.stringify(tiptapPackage.version),
-    __TEXTEDITOR__: JSON.stringify(textEditorPackage.version)
+    __TEXTEDITOR__: JSON.stringify(textEditorPackage.version),
+    "process.env.VITEST": JSON.stringify("true")
   }
 });

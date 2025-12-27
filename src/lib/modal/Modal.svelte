@@ -2,12 +2,11 @@
   import type { ModalProps } from "$lib";
   import Dialog from "$lib/dialog/Dialog.svelte";
   import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
   import { modal as modalStyle } from "./theme";
-  import { untrack } from "svelte";
 
   let {
     children,
@@ -17,10 +16,6 @@
     open = $bindable(false),
     permanent = false,
     dismissable = true,
-    closeBtnClass,
-    headerClass,
-    bodyClass,
-    footerClass,
     size = "md",
     placement,
     class: className,
@@ -31,13 +26,7 @@
     ...restProps
   }: ModalProps = $props();
 
-  warnThemeDeprecation(
-    "Modal",
-    untrack(() => ({ headerClass, bodyClass, footerClass, closeBtnClass })),
-    { bodyClass: "body", headerClass: "header", footerClass: "footer", closeBtnClass: "close" }
-  );
-
-  const styling = $derived(classes ?? { header: headerClass, body: bodyClass, footer: footerClass, close: closeBtnClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("modal"));
 
@@ -58,22 +47,22 @@
   class={base({ fullscreen, class: clsx(theme?.base, className) })}
 >
   {#if title || header}
-    <div class={headerCls({ class: clsx(theme?.header, styling.header) })}>
+    <div class={headerCls({ class: clsx(theme?.header, styling?.header) })}>
       {#if title}
         <h3>{title}</h3>
         {#if dismissable && !permanent}
-          <CloseButton type="submit" formnovalidate class={clsx(styling.close)} />
+          <CloseButton type="submit" formnovalidate class={clsx(theme?.close, styling?.close)} />
         {/if}
       {:else if header}
         {@render header()}
       {/if}
     </div>
   {/if}
-  <div class={body({ class: clsx(theme?.body, styling.body) })}>
+  <div class={body({ class: clsx(theme?.body, styling?.body) })}>
     {@render children?.()}
   </div>
   {#if footer}
-    <div class={footerCls({ class: clsx(theme?.footer, styling.footer) })}>
+    <div class={footerCls({ class: clsx(theme?.footer, styling?.footer) })}>
       {@render footer()}
     </div>
   {/if}
@@ -92,10 +81,6 @@
 @prop open = $bindable(false)
 @prop permanent = false
 @prop dismissable = true
-@prop closeBtnClass
-@prop headerClass
-@prop bodyClass
-@prop footerClass
 @prop size = "md"
 @prop placement
 @prop class: className

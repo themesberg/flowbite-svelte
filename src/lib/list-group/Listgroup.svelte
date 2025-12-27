@@ -6,13 +6,16 @@
   import { getTheme } from "$lib/theme/themeUtils";
   import { setListGroupContext } from "$lib/context";
 
-  let { children, items, active, onclick, horizontal, rounded, border, class: className, itemClass, iconClass, ...restProps }: ListgroupProps = $props();
+  let { children, items, active, onclick, horizontal, rounded, border, class: className, classes, ...restProps }: ListgroupProps = $props();
 
+  const styling = $derived(classes);
   const theme = $derived(getTheme("listGroup"));
 
-  const base = $derived(listGroup({ rounded, border, horizontal, class: clsx(theme, className) }));
+  const { base, item: listItem, icon: listIcon } = $derived(listGroup({ rounded, border, horizontal }));
 
   let tag = $derived(active ? "div" : "ul");
+
+  let listIconCls = $derived(listIcon({ class: clsx(theme?.icon, styling?.icon) }));
 
   // Create reactive context using getters
   const context = {
@@ -35,15 +38,25 @@
   }
 </script>
 
-<svelte:element this={tag} {...restProps} class={base}>
+<svelte:element this={tag} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {#if items?.length}
     {#each items as item, i (i)}
       {#if children}
         {@render children(item)}
       {:else if typeof item === "string"}
-        <ListgroupItem href={undefined} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} onclick={createItemClickHandler()}>{item}</ListgroupItem>
+        <ListgroupItem href={undefined} class={listItem({ class: clsx(theme?.item, styling?.item) })} classes={{ icon: listIconCls }} {active} {horizontal} onclick={createItemClickHandler()}>
+          {item}
+        </ListgroupItem>
       {:else}
-        <ListgroupItem href={item.href} class={clsx(itemClass)} iconClass={clsx(iconClass)} {active} {horizontal} {...item} onclick={item.onclick ?? createItemClickHandler()} />
+        <ListgroupItem
+          href={item.href}
+          class={listItem({ class: clsx(theme?.item, styling?.item) })}
+          classes={{ icon: listIconCls }}
+          {active}
+          {horizontal}
+          {...item}
+          onclick={item.onclick ?? createItemClickHandler()}
+        />
       {/if}
     {/each}
   {:else}
@@ -65,7 +78,6 @@
 @prop rounded
 @prop border
 @prop class: className
-@prop itemClass
-@prop iconClass
+@prop classes
 @prop ...restProps
 -->

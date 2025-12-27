@@ -2,18 +2,11 @@
   import { gallery } from "./theme";
   import clsx from "clsx";
   import type { GalleryProps, ImgType } from "$lib";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, figure, items = [], imgClass, class: className, classes, ...restProps }: GalleryProps = $props();
+  let { children, figure, items = [], class: className, classes, ...restProps }: GalleryProps = $props();
 
-  warnThemeDeprecation(
-    "Gallery",
-    untrack(() => ({ imgClass })),
-    { imgClass: "image" }
-  );
-
-  const styling = $derived(classes ?? { image: imgClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("gallery"));
 
@@ -26,7 +19,7 @@
 
 {#snippet _figure(item: ImgType)}
   <div>
-    <img src={item.src} alt={item.alt} class={image({ class: clsx(theme?.image, styling.image) })} {...restProps} />
+    <img src={item.src} alt={item.alt} class={image({ class: clsx(theme?.image, styling?.image) })} {...restProps} />
   </div>
 {/snippet}
 
@@ -53,7 +46,6 @@
 @prop children
 @prop figure
 @prop items = []
-@prop imgClass
 @prop class: className
 @prop classes
 @prop ...restProps

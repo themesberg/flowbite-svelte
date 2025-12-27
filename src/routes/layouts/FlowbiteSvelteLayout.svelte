@@ -43,7 +43,7 @@
   });
 </script>
 
-<header class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900">
+<header class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white py-2 md:py-0 dark:border-gray-600 dark:bg-gray-900">
   <Navbar color="default" fluid class="mx-auto flex w-full items-center justify-between px-4 py-0">
     <NavBrand href="/" class="pl-8 lg:pl-0">
       <img src={logo} class="me-3 h-8" alt="Flowbite Svelte Logo" />
@@ -61,7 +61,7 @@
     <NavUl
       {activeUrl}
       class="order-1 ml-auto w-full lg:order-none lg:block lg:w-auto"
-      classes={{ ul: "flex flex-col lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-2 md:gap-4" }}
+      classes={{ ul: "flex flex-col lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-1 lg:gap-4" }}
     >
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/pages/introduction">Docs</NavLi>
       <NavLi class="lg:mb-0 lg:px-2" href="/docs/components/accordion">Components</NavLi>
@@ -82,8 +82,8 @@
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
       <ThemeSelector />
     </div>
-    <a href="https://www.npmjs.com/package/flowbite-svelte" class="order-4 hidden xl:block">
-      <Badge large class="hover:bg-primary-600 dark:hover:bg-primary-800 ms-2 hover:text-white xl:ms-6 dark:hover:text-white">
+    <a href="https://www.npmjs.com/package/flowbite-svelte" class="order-4 hidden 2xl:block">
+      <Badge large class="hover:bg-primary-600 dark:hover:bg-primary-800 ms-2 hover:text-white xl:ms-4 dark:hover:text-white">
         v{version}
       </Badge>
     </a>
