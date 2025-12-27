@@ -20,6 +20,6 @@
 <Navbar>
   <NavHamburger data-testid="hamburger" />
   <NavUl>
-    <NavLi onclick={handleClick} data-testid="clickable-link">Clickable</NavLi>
+    <NavLi href="/" onclick={handleClick} data-testid="clickable-link">Clickable</NavLi>
   </NavUl>
 </Navbar>

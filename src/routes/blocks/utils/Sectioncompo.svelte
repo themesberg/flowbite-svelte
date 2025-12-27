@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Button, Select } from "flowbite-svelte";
-  // import type { PageData } from "../../$types";
   import CompoCard from "./CompoCard.svelte";
   import Section from "./Section.svelte";
   import { Search } from "flowbite-svelte";

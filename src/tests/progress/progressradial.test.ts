@@ -84,7 +84,7 @@ describe("Progressradial Component", () => {
 
       // Should have 2 circles: background and foreground
       expect(circles.length).toBe(2);
-      
+
       // Check that the foreground circle has green stroke color class
       const foregroundCircle = circles[1];
       const classes = foregroundCircle.getAttribute("class") || "";
@@ -159,11 +159,11 @@ describe("Progressradial Component", () => {
       const foregroundCircle = circles[1];
 
       expect(foregroundCircle).toBeInTheDocument();
-      
+
       // For medium progress, stroke-dashoffset should be close to half circumference
       const dashoffset = foregroundCircle.getAttribute("stroke-dashoffset");
       expect(dashoffset).toBeTruthy();
-      
+
       // With 50% progress and default radius 42, we expect specific dashoffset
       const expectedOffset = calculateStrokeDashoffset(50, 42);
       expect(parseFloat(dashoffset!)).toBeCloseTo(expectedOffset, 1);
@@ -175,25 +175,24 @@ describe("Progressradial Component", () => {
       const foregroundCircle = circles[1];
 
       expect(foregroundCircle).toBeInTheDocument();
-      
+
       // For high progress, stroke-dashoffset should be lower
       const dashoffset = foregroundCircle.getAttribute("stroke-dashoffset");
       expect(dashoffset).toBeTruthy();
-      
+
       // With 75% progress and default radius 42, we expect specific dashoffset
       const expectedOffset = calculateStrokeDashoffset(75, 42);
       expect(parseFloat(dashoffset!)).toBeCloseTo(expectedOffset, 1);
     });
 
     test("handles custom progress (65%) with label", () => {
-      render(CustomSizeProgressradialTest);
+      const { container } = render(CustomSizeProgressradialTest);
 
       expect(screen.getByText("65%")).toBeInTheDocument();
-      
-      const { container } = render(CustomSizeProgressradialTest);
+
       const circles = container.querySelectorAll("circle");
       const foregroundCircle = circles[1];
-      
+
       // Verify stroke-dashoffset reflects 65% progress with custom radius 38
       const dashoffset = foregroundCircle.getAttribute("stroke-dashoffset");
       const expectedOffset = calculateStrokeDashoffset(65, 38);

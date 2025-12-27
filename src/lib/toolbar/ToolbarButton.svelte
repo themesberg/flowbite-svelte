@@ -4,7 +4,7 @@
   import clsx from "clsx";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, color, name, "aria-label": ariaLabel, size, class: className, ...restProps }: ToolbarButtonProps = $props();
+  let { children, color, name, "aria-label": ariaLabel, "aria-expanded": ariaExpanded, size, class: className, ...restProps }: ToolbarButtonProps = $props();
 
   const theme = $derived(getTheme("toolbarButton"));
 
@@ -19,12 +19,12 @@
 </script>
 
 {#if restProps.href === undefined}
-  <button type="button" {...restProps} class={buttonCls} aria-label={ariaLabel ?? name}>
+  <button type="button" {...restProps} class={buttonCls} aria-label={ariaLabel ?? name} aria-expanded={ariaExpanded}>
     {#if name}<span class="sr-only">{name}</span>{/if}
     {@render children?.()}
   </button>
 {:else}
-  <a {...restProps} class={buttonCls} aria-label={ariaLabel ?? name}>
+  <a {...restProps} class={buttonCls} aria-label={ariaLabel ?? name} aria-expanded={ariaExpanded}>
     {#if name}<span class="sr-only">{name}</span>{/if}
     {@render children?.()}
   </a>

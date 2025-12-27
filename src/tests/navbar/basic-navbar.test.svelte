@@ -7,13 +7,13 @@
 </script>
 
 <Navbar>
-    <NavBrand href="/" onclick={preventDefault}>
-      <span class="text-xl font-semibold">Flowbite</span>
-    </NavBrand>
-    <NavHamburger />
-    <NavUl>
-      <NavLi href="/" onclick={preventDefault}>Home</NavLi>
-      <NavLi href="/about" onclick={preventDefault}>About</NavLi>
-      <NavLi href="/contact" onclick={preventDefault}>Contact</NavLi>
-    </NavUl>
+  <NavBrand href="/" onclick={preventDefault}>
+    <span class="text-xl font-semibold">Flowbite</span>
+  </NavBrand>
+  <NavHamburger />
+  <NavUl>
+    <NavLi href="/" onclick={preventDefault}>Home</NavLi>
+    <NavLi href="/about" onclick={preventDefault}>About</NavLi>
+    <NavLi href="/contact" onclick={preventDefault}>Contact</NavLi>
+  </NavUl>
 </Navbar>

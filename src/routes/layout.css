@@ -142,6 +142,17 @@
     tab-size: 4;
   }
 
+  body {
+    font-family: var(--font-sans), sans-serif;
+  }
+
+  /* If you use specific body variables */
+  p,
+  span,
+  div {
+    font-family: var(--font-body, var(--font-sans)), sans-serif;
+  }
+
   .related-components,
   .references {
     @apply flex w-full flex-wrap;

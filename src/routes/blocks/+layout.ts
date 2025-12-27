@@ -52,7 +52,7 @@ export const load: LayoutLoad = async ({ fetch, parent }) => {
       dashboard: data.dashboard
     };
   } catch (error) {
-    console.error(`Error in load function for /: ${error}`);
+    console.error(`Error in load function for /blocks: ${error}`);
     return {
       ...parentData,
       posts: {},

@@ -67,9 +67,9 @@ export default defineConfig({
       }
     ],
     // Suppress console output for specific errors
-    onConsoleLog(log: string, type: 'stdout' | 'stderr'): boolean | void {
-      return !(log === 'message from third party library' && type === 'stdout')
-    },
+    onConsoleLog(log: string, type: "stdout" | "stderr"): boolean | void {
+      return !(log === "message from third party library" && type === "stdout");
+    }
   },
   define: {
     __NAME__: JSON.stringify(pkg.name),

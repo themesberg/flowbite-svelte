@@ -1,6 +1,5 @@
 import { cleanup, render, screen } from "@testing-library/svelte";
-import { expect, test, afterEach, describe } from "vitest";
-// import { tick } from 'svelte';
+import { expect, test, afterEach, describe, beforeEach } from "vitest";
 import { userEvent } from "@testing-library/user-event";
 
 import BasicNavbarTest from "./basic-navbar.test.svelte";
@@ -75,33 +74,28 @@ describe("Navbar Component", () => {
     });
   });
 
-  // for now, commenting out until we can stabilize Svelte 5 state/DOM sync issues
-  // describe("Navbar Toggle", () => {
-    // test("hamburger toggles menu visibility", async () => {
-    //   const user = userEvent.setup();
-    //   render(BasicNavbarTest);
-    //   const hamburger = screen.getByRole("button", { name: /open main menu/i });
+  describe("Navbar Toggle", () => {
+    test("hamburger toggles menu visibility", async () => {
+      const user = userEvent.setup();
+      render(BasicNavbarTest);
+      const hamburger = screen.getByRole("button", { name: /open main menu/i });
 
-    //   // Menu should be collapsed initially
-    //   expect(hamburger).toHaveAttribute("aria-expanded", "false");
+      // Menu should be collapsed initially
+      expect(hamburger).toHaveAttribute("aria-expanded", "false");
 
-    //   // Click to expand menu
-    //   await user.click(hamburger);
+      // Click to expand menu
+      await user.click(hamburger);
 
-    //   // Menu should now be expanded
-    //   await waitFor(() => {
-    //     expect(hamburger).toHaveAttribute("aria-expanded", "true");
-    //   });
+      // Menu should now be expanded
+      expect(hamburger).toHaveAttribute("aria-expanded", "true");
 
-    //   // Click again to collapse
-    //   await user.click(hamburger);
+      // Click again to collapse
+      await user.click(hamburger);
 
-    //   // Menu should be collapsed again
-    //   await waitFor(() => {
-    //     expect(hamburger).toHaveAttribute("aria-expanded", "false");
-    //   });
-    // });
-  // });
+      // Menu should be collapsed again
+      expect(hamburger).toHaveAttribute("aria-expanded", "false");
+    });
+  });
 
   describe("Custom Classes", () => {
     test("applies custom classes to navbar components", () => {
@@ -153,7 +147,9 @@ describe("NavUl Component", () => {
     const aboutLink = screen.getByTestId("about-link");
 
     expect(aboutLink).toBeInTheDocument();
-    // Active link should have active styling
+    // Active link should have active styling (activeUrl="/about" in test component)
+    expect(aboutLink).toHaveClass("text-white");
+    expect(aboutLink).toHaveClass("bg-primary-700");
   });
 
   test("supports custom active classes", () => {
@@ -161,6 +157,8 @@ describe("NavUl Component", () => {
     const customLink = screen.getByTestId("custom-class-link");
 
     expect(customLink).toBeInTheDocument();
+    // Custom classes should be applied (this link has href="/home", activeUrl="/about")
+    expect(customLink).toHaveClass("custom-non-active");
   });
 });
 
@@ -189,10 +187,12 @@ describe("NavLi Component", () => {
   });
 
   describe("Interactions", () => {
+    beforeEach(() => {
+      testState.clickCount = 0;
+    });
+
     test("handles click events", async () => {
       const user = userEvent.setup();
-      // Reset state before test
-      testState.clickCount = 0;
       render(NavLiClickTest);
       const clickableLink = screen.getByTestId("clickable-link");
 
@@ -206,33 +206,23 @@ describe("NavLi Component", () => {
       expect(testState.clickCount).toBe(1);
     });
 
-    // for now, commenting out until we can stabilize Svelte 5 state/DOM sync issues
-    // test("closes mobile menu on link click", async () => {
-    //   const user = userEvent.setup();
-    //   render(NavLiClickTest);
+    test("closes mobile menu on link click", async () => {
+      const user = userEvent.setup();
+      render(NavLiClickTest);
 
-    //   const hamburger = screen.getByTestId("hamburger");
-    //   const clickableLink = screen.getByTestId("clickable-link");
+      const hamburger = screen.getByTestId("hamburger");
+      const clickableLink = screen.getByTestId("clickable-link");
 
-    //   // 1. Open
-    //   await user.click(hamburger);
-    //   await waitFor(() => {
-    //     expect(hamburger).toHaveAttribute("aria-expanded", "true");
-    //   });
+      // 1. Open the menu
+      await user.click(hamburger);
+      expect(hamburger).toHaveAttribute("aria-expanded", "true");
 
-    //   // 2. Click the link
-    //   // Use fireEvent if userEvent is being swallowed by the browser runner
-    //   await user.click(clickableLink);
+      // 2. Click the link
+      await user.click(clickableLink);
 
-    //   // 3. CRITICAL: Svelte 5 state changes are sync, but DOM updates are microtasks
-    //   await tick();
-
-    //   // 4. Verification with a longer window
-    //   await waitFor(() => {
-    //     const attr = hamburger.getAttribute("aria-expanded");
-    //     expect(attr).toBe("false");
-    //   }, { timeout: 2000 });
-    // });
+      // 3. Menu should close
+      expect(hamburger).toHaveAttribute("aria-expanded", "false");
+    });
   });
 
   describe("Active State", () => {
@@ -242,6 +232,8 @@ describe("NavLi Component", () => {
 
       expect(aboutLink).toBeInTheDocument();
       // About link should have active styling since activeUrl="/about"
+      expect(aboutLink).toHaveClass("text-white");
+      expect(aboutLink).toHaveClass("bg-primary-700");
     });
 
     test("applies non-active class to non-matching URLs", () => {
@@ -251,7 +243,9 @@ describe("NavLi Component", () => {
 
       expect(homeLink).toBeInTheDocument();
       expect(contactLink).toBeInTheDocument();
-      // These should have non-active styling
+      // These should have non-active styling (activeUrl="/about")
+      expect(homeLink).toHaveClass("text-gray-700");
+      expect(contactLink).toHaveClass("text-gray-700");
     });
   });
 });
@@ -320,13 +314,15 @@ describe("Navbar Accessibility", () => {
     expect(hamburger).toHaveAccessibleName();
   });
 
-  test("navigation links are keyboard accessible", () => {
+  test("navigation links have valid href attributes", () => {
     render(BasicNavbarTest);
     const links = screen.getAllByRole("link");
 
+    // Verify all links have href attributes (makes them keyboard accessible)
     links.forEach((link) => {
       expect(link).toBeInTheDocument();
       expect(link).toHaveAttribute("href");
+      // Links with href are automatically keyboard accessible (can be focused/activated with Enter)
     });
   });
 });
@@ -339,29 +335,24 @@ describe("Navbar Responsive Behavior", () => {
     expect(hamburger).toBeInTheDocument();
   });
 
-  // for now, commenting out until we can stabilize Svelte 5 state/DOM sync issues
-  // test("menu toggles on hamburger click", async () => {
-  //   const user = userEvent.setup();
-  //   render(BasicNavbarTest);
-  //   const hamburger = screen.getByRole("button", { name: /open main menu/i });
+  test("menu toggles on hamburger click", async () => {
+    const user = userEvent.setup();
+    render(BasicNavbarTest);
+    const hamburger = screen.getByRole("button", { name: /open main menu/i });
 
-  //   // Initially collapsed
-  //   expect(hamburger).toHaveAttribute("aria-expanded", "false");
+    // Initially collapsed
+    expect(hamburger).toHaveAttribute("aria-expanded", "false");
 
-  //   // Click to expand
-  //   await user.click(hamburger);
+    // Click to expand
+    await user.click(hamburger);
 
-  //   await waitFor(() => {
-  //     expect(hamburger).toHaveAttribute("aria-expanded", "true");
-  //   });
+    expect(hamburger).toHaveAttribute("aria-expanded", "true");
 
-  //   // Click again to collapse
-  //   await user.click(hamburger);
+    // Click again to collapse
+    await user.click(hamburger);
 
-  //   await waitFor(() => {
-  //     expect(hamburger).toHaveAttribute("aria-expanded", "false");
-  //   });
-  // });
+    expect(hamburger).toHaveAttribute("aria-expanded", "false");
+  });
 });
 
 describe("NavContainer Component", () => {

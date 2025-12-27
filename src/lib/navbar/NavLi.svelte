@@ -6,7 +6,7 @@
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
   let navState = getNavbarStateContext();
-  
+
   // Reactively get the breakpoint - use $derived to ensure it updates
   let navBreakpoint = $derived(getNavbarBreakpointContext());
 
@@ -24,9 +24,11 @@
   );
 
   function handleClick(event: MouseEvent) {
+    const tagName = (event.currentTarget as HTMLElement).tagName;
     // Close the mobile menu when a link is clicked
-    if (navState && restProps.href !== undefined && !navState.hidden) {
-      navState.hidden = true;
+    const state = navState;
+    if (state && (tagName === "A" || tagName === "a") && !state.hidden) {
+      state.hidden = true;
     }
 
     // Call original onclick handler if provided

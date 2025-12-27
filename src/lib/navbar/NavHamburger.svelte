@@ -14,7 +14,7 @@
 
   const theme = $derived(getTheme("navbarHamburger"));
   const navState = getNavbarStateContext();
-  
+
   // Reactively get the breakpoint - use $derived to ensure it updates
   const navBreakpoint = $derived(getNavbarBreakpointContext());
   const { base, menu } = $derived(navbarHamburger({ breakpoint: navBreakpoint ?? "md" }));
@@ -25,7 +25,7 @@
   };
 </script>
 
-<ToolbarButton {name} onclick={onclick || toggle} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<ToolbarButton {name} onclick={onclick || toggle} aria-expanded={navState ? !navState.hidden : undefined} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   <Menu class={menu({ class: clsx(theme?.menu, styling?.menu) })} />
 </ToolbarButton>
 

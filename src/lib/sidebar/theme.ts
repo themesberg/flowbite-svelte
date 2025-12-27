@@ -12,8 +12,9 @@ export type SidebarItemVariants = VariantProps<typeof sidebarItem> & Classes<typ
 export const sidebar = tv({
   slots: {
     base: "top-0 left-0 z-50 w-64 transition-transform bg-gray-50 dark:bg-gray-800",
-    active: "flex items-center group-has-[ul]:ms-6 p-2 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
-    nonactive: "flex items-center group-has-[ul]:ms-6 p-2 text-base font-normal text-gray-900 rounded-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
+    active:
+      "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
+    nonactive: "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal text-gray-900 rounded-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
     div: "overflow-y-auto px-3 py-4 bg-gray-50 dark:bg-gray-800",
     backdrop: "fixed top-0 start-0 z-40 w-full h-full"
   },
@@ -97,7 +98,7 @@ export const sidebarDropdownWrapper = tv({
 export const sidebarItem = tv({
   slots: {
     base: "",
-    link: "flex items-center group-has-[ul]:ms-6 p-2 text-base font-normal rounded-sm",
+    link: "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal rounded-sm",
     span: "ms-3"
   },
   variants: {

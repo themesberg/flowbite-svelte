@@ -9,7 +9,7 @@
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
   let navState = getNavbarStateContext();
-  
+
   // Reactively get the breakpoint - use $derived to ensure it updates
   let navBreakpoint = $derived(getNavbarBreakpointContext());
 

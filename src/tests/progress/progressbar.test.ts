@@ -27,9 +27,9 @@ describe("Progressbar Component", () => {
       const progressFill = container.querySelector('div[style*="width"]');
 
       expect(progressFill).toBeInTheDocument();
-      
+
       // Verify actual width value
-      const style = progressFill?.getAttribute('style');
+      const style = progressFill?.getAttribute("style");
       expect(style).toMatch(/width:\s*50%/);
     });
 
@@ -77,8 +77,8 @@ describe("Progressbar Component", () => {
     test("verifies colored progressbar has correct width (80%)", () => {
       const { container } = render(ColoredProgressbarTest);
       const progressFill = container.querySelector('div[style*="width"]');
-      
-      const style = progressFill?.getAttribute('style');
+
+      const style = progressFill?.getAttribute("style");
       expect(style).toMatch(/width:\s*80%/);
     });
   });
@@ -107,7 +107,7 @@ describe("Progressbar Component", () => {
       const progressFill = container.querySelector('div[style*="width"]');
 
       expect(progressFill).toBeInTheDocument();
-      const style = progressFill?.getAttribute('style');
+      const style = progressFill?.getAttribute("style");
       expect(style).toMatch(/width:\s*10%/);
     });
 
@@ -116,7 +116,7 @@ describe("Progressbar Component", () => {
       const progressFill = container.querySelector('div[style*="width"]');
 
       expect(progressFill).toBeInTheDocument();
-      const style = progressFill?.getAttribute('style');
+      const style = progressFill?.getAttribute("style");
       expect(style).toMatch(/width:\s*50%/);
     });
 
@@ -125,7 +125,7 @@ describe("Progressbar Component", () => {
       const progressFill = container.querySelector('div[style*="width"]');
 
       expect(progressFill).toBeInTheDocument();
-      const style = progressFill?.getAttribute('style');
+      const style = progressFill?.getAttribute("style");
       expect(style).toMatch(/width:\s*95%/);
     });
   });

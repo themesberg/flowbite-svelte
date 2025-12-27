@@ -68,7 +68,7 @@ describe("SidebarItem Component", () => {
       render(BasicSidebarTest);
       const dashboardLink = screen.getByRole("link", { name: /dashboard/i });
 
-      expect(dashboardLink).toHaveClass("flex", "items-center", "p-2");
+      expect(dashboardLink).toHaveClass("flex", "items-center", "px-2", "py-1.5");
     });
 
     test("label has margin class", () => {
@@ -87,7 +87,7 @@ describe("SidebarItem Component", () => {
 
       // Verify href is correct before click
       expect(dashboardLink).toHaveAttribute("href", "/dashboard");
-      
+
       // Verify link is clickable (preventDefault in test prevents actual navigation)
       await user.click(dashboardLink);
       expect(dashboardLink).toBeInTheDocument();

@@ -102,11 +102,11 @@ describe("Popover Component", () => {
 
       const button = screen.getByRole("button", { name: "Click me" });
       const popover = screen.getByRole("tooltip", { hidden: true });
-      
+
       // Verify popover content is accessible
       expect(popover).toBeInTheDocument();
       expect(screen.getByText("This is the popover content.")).toBeInTheDocument();
-      
+
       await user.click(button);
 
       // Verify button remains functional after click

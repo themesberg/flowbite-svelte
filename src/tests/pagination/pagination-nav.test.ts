@@ -79,7 +79,6 @@ describe("PaginationNav Component", () => {
   });
 
   describe("Navigation", () => {
-
     test("Next button is clickable and changes page", async () => {
       const user = userEvent.setup();
       render(BasicPaginationNavTest);
@@ -131,26 +130,26 @@ describe("PaginationNav Component", () => {
     test("disables Next button on last page", async () => {
       const user = userEvent.setup();
       render(BasicPaginationNavTest);
-      
+
       // Navigate to last page (page 5 - as per totalPages={5})
       // Click multiple times to reach the end
       const nextButton = screen.getByText("Next");
-      
+
       // Click Next button 4 times to reach page 5
       for (let i = 0; i < 4; i++) {
         await user.click(nextButton);
       }
-      
+
       // Verify we're on the last page
       expect(screen.getByTestId("current-page")).toHaveTextContent("5");
-      
+
       // Next button should now be disabled
       expect(nextButton).toBeDisabled();
     });
 
     test("Previous button is disabled on first page", () => {
       render(BasicPaginationNavTest);
-      
+
       const prevButton = screen.getByText("Previous");
       expect(prevButton).toBeDisabled();
       expect(screen.getByTestId("current-page")).toHaveTextContent("1");

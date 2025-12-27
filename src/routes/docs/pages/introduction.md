@@ -109,6 +109,8 @@ The location of your main CSS file determines the correct path for `@source` dir
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  /* Uncomment following lines to override Flowbite brand colors with primary colors */
+  /*
   --color-primary-50: #fff5f2;
   --color-primary-100: #fff1ee;
   --color-primary-200: #ffe4de;
@@ -131,20 +133,17 @@ The location of your main CSS file determines the correct path for `@source` dir
   --color-secondary-800: #075985;
   --color-secondary-900: #0c4a6e;
 
-  /* Uncomment following lines to override Flowbite brand colors with primary colors */
-  /* --color-brand-softer: var(--color-primary-50);
+  --color-brand-softer: var(--color-primary-50);
   --color-brand-soft: var(--color-primary-100);
   --color-brand: var(--color-primary-700);
   --color-brand-medium: var(--color-primary-200);
-  --color-brand-strong: var(--color-primary-800); */
+  --color-brand-strong: var(--color-primary-800);
 
-  /* Uncomment following lines to override brand foreground (text) colors */
-  /* --color-fg-brand-subtle: var(--color-primary-200);
+  --color-fg-brand-subtle: var(--color-primary-200);
   --color-fg-brand: var(--color-primary-700);
-  --color-fg-brand-strong: var(--color-primary-900); */
-
-  /* Uncomment following lines to override brand border colors */
-  /* --color-brand-subtle: var(--color-primary-200);
+  --color-fg-brand-strong: var(--color-primary-900); 
+  
+  --color-brand-subtle: var(--color-primary-200);
   --color-brand-light: var(--color-primary-600); */
 }
 
@@ -152,6 +151,14 @@ The location of your main CSS file determines the correct path for `@source` dir
 @source "../node_modules/flowbite-svelte-icons/dist";
 
 @layer base {
+  body {
+    font-family: var(--font-sans), sans-serif;
+  }
+  
+  p, span, div {
+    font-family: var(--font-body, var(--font-sans)), sans-serif;
+  }
+
   /* Uncomment following lines to override brand colors in dark mode */
   /* .dark {
     --color-brand-softer: var(--color-primary-900);
@@ -203,6 +210,8 @@ The location of your main CSS file determines the correct path for `@source` dir
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  /* Uncomment following lines to override Flowbite brand colors with primary colors */
+  /*
   --color-primary-50: #fff5f2;
   --color-primary-100: #fff1ee;
   --color-primary-200: #ffe4de;
@@ -225,20 +234,17 @@ The location of your main CSS file determines the correct path for `@source` dir
   --color-secondary-800: #075985;
   --color-secondary-900: #0c4a6e;
 
-  /* Uncomment following lines to override Flowbite brand colors with primary colors */
-  /* --color-brand-softer: var(--color-primary-50);
+  --color-brand-softer: var(--color-primary-50);
   --color-brand-soft: var(--color-primary-100);
   --color-brand: var(--color-primary-700);
   --color-brand-medium: var(--color-primary-200);
-  --color-brand-strong: var(--color-primary-800); */
+  --color-brand-strong: var(--color-primary-800);
 
-  /* Uncomment following lines to override brand foreground (text) colors */
-  /* --color-fg-brand-subtle: var(--color-primary-200);
+  --color-fg-brand-subtle: var(--color-primary-200);
   --color-fg-brand: var(--color-primary-700);
-  --color-fg-brand-strong: var(--color-primary-900); */
-
-  /* Uncomment following lines to override brand border colors */
-  /* --color-brand-subtle: var(--color-primary-200);
+  --color-fg-brand-strong: var(--color-primary-900); 
+  
+  --color-brand-subtle: var(--color-primary-200);
   --color-brand-light: var(--color-primary-600); */
 }
 

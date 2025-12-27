@@ -136,10 +136,10 @@ describe("Pagination Component", () => {
     test("page links are accessible", () => {
       render(BasicPaginationTest);
       const links = screen.getAllByRole("link");
-      
+
       // All page links should be accessible elements
       expect(links.length).toBeGreaterThan(0);
-      links.forEach(link => {
+      links.forEach((link) => {
         expect(link).toBeInTheDocument();
       });
     });

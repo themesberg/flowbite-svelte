@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { HTMLLiAttributes } from "svelte/elements";
   import clsx from "clsx";
   import type { ListgroupItemProps } from "$lib";
   import { listGroupItem, type ListgroupItemVariants } from "./theme";
@@ -30,26 +31,15 @@
 {/snippet}
 
 {#if href === undefined && !active}
-  <li {...restProps as any} class={base({ class: clsx(theme?.base, className) })}>
+  <li {...restProps as HTMLLiAttributes} class={base({ class: clsx(theme?.base, className) })}>
     {@render nameOrChildren()}
   </li>
 {:else if href === undefined}
-  <button 
-    type={type ?? "button"} 
-    {...restProps} 
-    class={base({ class: clsx(theme?.base, className) })} 
-    {disabled} 
-    aria-current={current}
-  >
+  <button type={type ?? "button"} {...restProps} class={base({ class: clsx(theme?.base, className) })} {disabled} aria-current={current}>
     {@render nameOrChildren()}
   </button>
 {:else}
-  <a 
-    {href} 
-    {...restProps} 
-    class={base({ class: clsx(theme?.base, className) })} 
-    aria-current={current}
-  >
+  <a {href} {...restProps} class={base({ class: clsx(theme?.base, className) })} aria-current={current}>
     {@render nameOrChildren()}
   </a>
 {/if}
