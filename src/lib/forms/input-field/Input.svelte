@@ -6,9 +6,8 @@
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { input } from "./theme";
   import { clampSize } from "./index";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
-  import { untrack } from "svelte";
 
   let {
     children,
@@ -21,23 +20,11 @@
     color = "default",
     class: className,
     classes,
-    wrapperClass,
-    leftClass,
-    rightClass,
-    divClass,
-    clearableSvgClass,
     clearableColor = "none",
-    clearableClass,
     clearableOnClick,
     data = [],
     maxSuggestions = 5,
     onSelect,
-    comboClass,
-    comboItemClass,
-    onInput,
-    onFocus,
-    onBlur,
-    onKeydown,
     oninput,
     onfocus,
     onblur,
@@ -45,22 +32,16 @@
     ...restProps
   }: InputProps<InputValue> = $props();
 
-  warnThemeDeprecation(
-    "Input",
-    untrack(() => ({ wrapperClass, leftClass, rightClass, divClass, clearableSvgClass, clearableClass, comboClass })),
-    { wrapperClass: "wrapper", leftClass: "left", rightClass: "right", divClass: "div", clearableSvgClass: "svg", clearableClass: "close", comboClass: "comboItem" }
-  );
-
-  const styling = $derived(classes ?? { left: leftClass, right: rightClass, div: divClass, svg: clearableSvgClass, close: clearableClass, combo: comboClass, comboItem: comboItemClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("input"));
 
   // onSelect is a custom combobox selection handler that takes a string
   // standard DOM events, onInput, onFocus, onBlur, onKeydown will be deprecated in the next minor version
-  const resolvedOnInput = $derived(oninput || onInput);
-  const resolvedOnFocus = $derived(onfocus || onFocus);
-  const resolvedOnBlur = $derived(onblur || onBlur);
-  const resolvedOnKeydown = $derived(onkeydown || onKeydown);
+  const resolvedOnInput = $derived(oninput);
+  const resolvedOnFocus = $derived(onfocus);
+  const resolvedOnBlur = $derived(onblur);
+  const resolvedOnKeydown = $derived(onkeydown);
 
   // Automatically enable combobox when data is provided
   const isCombobox = $derived(Array.isArray(data) && data.length > 0);
@@ -256,21 +237,21 @@
 {/if}
 
 {#if isCombobox || right || left || clearable}
-  <div class={base({ class: clsx(theme?.base, styling.div) })}>
+  <div class={base({ class: clsx(theme?.base, styling?.div) })}>
     {#if left}
-      <div class={leftCls({ class: clsx(theme?.left, styling.left) })}>
+      <div class={leftCls({ class: clsx(theme?.left, styling?.left) })}>
         {@render left()}
       </div>
     {/if}
     {@render inputContent(true)}
     {#if right}
-      <div class={rightCls({ class: clsx(theme?.right, styling.right) })}>
+      <div class={rightCls({ class: clsx(theme?.right, styling?.right) })}>
         {@render right()}
       </div>
     {/if}
 
     {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-      <div class={combo({ class: clsx(theme?.combo, styling.combo) })}>
+      <div class={combo({ class: clsx(theme?.combo, styling?.combo) })}>
         {#each filteredSuggestions as item, i (item)}
           <button
             type="button"
@@ -278,7 +259,7 @@
             onclick={() => selectItem(item)}
             onmouseenter={() => (selectedIndex = i)}
           >
-            <p class={comboItem({ class: clsx(theme?.comboItem, styling.comboItem) })}>{item}</p>
+            <p class={comboItem({ class: clsx(theme?.comboItem, styling?.comboItem) })}>{item}</p>
           </button>
         {/each}
       </div>
@@ -303,7 +284,7 @@
       class={[wrapped || base(), inputCls({ class: clsx(theme?.input, className) })]}
     />
     {#if value !== undefined && value !== "" && clearable}
-      <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
+      <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling?.svg)} />
     {/if}
   {/if}
 {/snippet}
