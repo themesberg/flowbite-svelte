@@ -112,22 +112,6 @@ The location of your main CSS file determines the correct path for `@source` dir
 @source "../../node_modules/flowbite-svelte-icons/dist";
 
 @layer base {
-  /* Uncomment following lines to override brand colors in dark mode */
-  /* .dark {
-    --color-brand-softer: var(--color-primary-900);
-    --color-brand-soft: var(--color-primary-800);
-    --color-brand: var(--color-primary-600);
-    --color-brand-medium: var(--color-primary-800);
-    --color-brand-strong: var(--color-primary-700);
-
-    --color-fg-brand-subtle: var(--color-primary-200);
-    --color-fg-brand: var(--color-primary-500);
-    --color-fg-brand-strong: var(--color-primary-400);
-
-    --color-brand-subtle: var(--color-primary-800);
-    --color-brand-light: var(--color-primary-600);
-  } */
-
   /* disable chrome cancel button */
   input[type="search"]::-webkit-search-cancel-button {
     display: none;

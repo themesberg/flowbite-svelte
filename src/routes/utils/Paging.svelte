@@ -23,7 +23,7 @@
     meta: PostMeta;
   }
 
-  const all_posts = { ...data.posts, ...data.blocks };
+  const all_posts = { ...(data.posts ?? {}), ...(data.blocks ?? {}) };
 
   const components = (Object.values(all_posts) as Post[][])
     .flat()
