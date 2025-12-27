@@ -143,11 +143,14 @@ describe("SpeedDial - Interactions", () => {
 
       await user.unhover(shareButton);
       await act(() => vi.advanceTimersByTime(300));
+      // Extra time for tooltip to fully disappear
+      await act(() => vi.advanceTimersByTime(200));
 
       // Tooltip should be hidden, only button text remains
       const shareTexts = screen.queryAllByText(/share/i);
-      // Should have fewer instances after unhover
-      expect(shareTexts).toBeDefined();
+      // Should have only 1 instance (button text) after tooltip is hidden
+      // expect(shareTexts).toBeDefined();
+      expect(shareTexts.length).toBe(1);
     });
   });
 

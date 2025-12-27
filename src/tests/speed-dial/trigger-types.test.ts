@@ -4,6 +4,9 @@ import userEvent from "@testing-library/user-event";
 
 import ClickTriggerTest from "./click-trigger.test.svelte";
 
+const TRANSITION_DURATION = 300;
+const CLOSE_ANIMATION_BUFFER = 200;
+
 beforeEach(() => {
   vi.useFakeTimers();
 });
@@ -28,7 +31,7 @@ describe("SpeedDial - Trigger Types", () => {
       const trigger = screen.getByTestId("click-trigger");
 
       await user.click(trigger);
-      await act(() => vi.advanceTimersByTime(300));
+      await act(() => vi.advanceTimersByTime(TRANSITION_DURATION));
 
       const shareButton = screen.queryByRole("button", { name: /share/i });
       expect(shareButton).toBeInTheDocument();
@@ -41,14 +44,14 @@ describe("SpeedDial - Trigger Types", () => {
 
       // Open
       await user.click(trigger);
-      await act(() => vi.advanceTimersByTime(300));
+      await act(() => vi.advanceTimersByTime(TRANSITION_DURATION));
       expect(screen.queryByRole("button", { name: /share/i })).toBeInTheDocument();
 
       // Close
       await user.click(trigger);
-      await act(() => vi.advanceTimersByTime(300));
+      await act(() => vi.advanceTimersByTime(TRANSITION_DURATION));
       // Extra time for transition
-      await act(() => vi.advanceTimersByTime(200));
+      await act(() => vi.advanceTimersByTime(CLOSE_ANIMATION_BUFFER));
       expect(screen.queryByRole("button", { name: /share/i })).not.toBeInTheDocument();
     });
 
@@ -58,7 +61,7 @@ describe("SpeedDial - Trigger Types", () => {
       const trigger = screen.getByTestId("click-trigger");
 
       await user.hover(trigger);
-      await act(() => vi.advanceTimersByTime(300));
+      await act(() => vi.advanceTimersByTime(TRANSITION_DURATION));
 
       const shareButton = screen.queryByRole("button", { name: /share/i });
       expect(shareButton).not.toBeInTheDocument();
@@ -70,7 +73,7 @@ describe("SpeedDial - Trigger Types", () => {
       const trigger = screen.getByTestId("click-trigger");
 
       await user.click(trigger);
-      await act(() => vi.advanceTimersByTime(300));
+      await act(() => vi.advanceTimersByTime(TRANSITION_DURATION));
 
       const shareButton = screen.getByRole("button", { name: /share/i });
       await user.click(shareButton);

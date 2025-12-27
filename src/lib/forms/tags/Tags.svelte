@@ -4,19 +4,15 @@
   import P from "$lib/typography/paragraph/P.svelte";
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { tags } from "./theme";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import { computePosition, offset, flip, shift, autoUpdate } from "@floating-ui/dom";
-  import { onDestroy, untrack } from "svelte";
+  import { onDestroy } from "svelte";
 
   let {
     value = $bindable([]),
     placeholder = "Enter tags",
     class: className,
     classes,
-    itemClass,
-    spanClass,
-    closeClass,
-    inputClass,
     closeBtnSize = "xs",
     unique = false,
     availableTags = [],
@@ -28,20 +24,7 @@
     ...restProps
   }: TagsProps = $props();
 
-  warnThemeDeprecation(
-    "Tags",
-    untrack(() => ({ itemClass, spanClass, closeClass, inputClass })),
-    { itemClass: "tag", spanClass: "span", closeClass: "close", inputClass: "input" }
-  );
-
-  const styling = $derived(
-    classes ?? {
-      tag: itemClass,
-      span: spanClass,
-      close: closeClass,
-      input: inputClass
-    }
-  );
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("tags"));
 
@@ -175,11 +158,11 @@
   })}
 >
   {#each value as tag, index (index)}
-    <div class={tagCls({ class: clsx(theme?.tag, styling.tag) })}>
-      <span class={spanCls({ class: clsx(theme?.span, styling.span) })}>
+    <div class={tagCls({ class: clsx(theme?.tag, styling?.tag) })}>
+      <span class={spanCls({ class: clsx(theme?.span, styling?.span) })}>
         {tag}
       </span>
-      <CloseButton {disabled} size={closeBtnSize} class={close({ class: clsx(theme?.close, styling.close) })} onclick={() => deleteField(index)} />
+      <CloseButton {disabled} size={closeBtnSize} class={close({ class: clsx(theme?.close, styling?.close) })} onclick={() => deleteField(index)} />
     </div>
   {/each}
   <div class="relative w-full" bind:this={inputContainer}>
@@ -192,7 +175,7 @@
       placeholder={value.length === 0 ? placeholder : ""}
       type="text"
       autocomplete="off"
-      class={inputCls({ class: clsx(styling.input) })}
+      class={inputCls({ class: clsx(styling?.input) })}
     />
     {#if availableTags.length > 0 && contents.trim() !== ""}
       {@const filteredSuggestions = availableTags.filter((tag) => tag.toLowerCase().includes(contents.trim().toLowerCase()) && (!unique || !value.some((t) => t.toLowerCase() === tag.toLowerCase())))}

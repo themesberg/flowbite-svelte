@@ -42,10 +42,6 @@ describe("ImagePlaceholder Component", () => {
 
   describe("Rounded Variant", () => {
     test("renders rounded image placeholder", () => {
-      // Assuming 'rounded' passed purely as prop or class?
-      // The original test `image-placeholder-rounded.test.svelte` didn't show props clearly but let's assume class or specific prop.
-      // Based on typical flowbite-svelte, 'imgOnly' or just class application.
-      // Checking library expectation: usually class.
       const { container } = render(ImagePlaceholder, { props: { class: "rounded-lg" } });
       const placeholder = container.querySelector('[role="status"]');
       expect(placeholder).toBeInTheDocument();

@@ -3,10 +3,9 @@
   import clsx from "clsx";
   import type { SelectProps } from "$lib";
   import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
   import { getButtonGroupContext } from "$lib/context";
-  import { untrack } from "svelte";
 
   let {
     children,
@@ -21,21 +20,12 @@
     clearableColor = "none",
     clearableOnClick,
     onClear,
-    clearableSvgClass,
-    clearableClass,
-    selectClass,
     class: className,
     classes,
     ...restProps
   }: SelectProps<T> = $props();
 
-  warnThemeDeprecation(
-    "Select",
-    untrack(() => ({ selectClass, clearableSvgClass, clearableClass })),
-    { selectClass: "select", clearableSvgClass: "svg", clearableClass: "close" }
-  );
-
-  const styling = $derived(classes ?? { select: selectClass, svg: clearableSvgClass, close: clearableClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("select"));
   const group = getButtonGroupContext();
@@ -61,7 +51,7 @@
 </script>
 
 <div class={base({ class: clsx(theme?.base, className) })}>
-  <select {disabled} {...restProps} bind:value bind:this={elementRef} class={select({ class: clsx(theme?.select, styling.select) })}>
+  <select {disabled} {...restProps} bind:value bind:this={elementRef} class={select({ class: clsx(theme?.select, styling?.select) })}>
     {#if placeholder}
       <option disabled selected={value === "" || value === undefined} value="">{placeholder}</option>
     {/if}
@@ -77,6 +67,6 @@
     {/if}
   </select>
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} {disabled} />
+    <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling?.svg)} {disabled} />
   {/if}
 </div>

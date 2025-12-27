@@ -1,7 +1,7 @@
 import { cleanup, render, screen, act } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
-
+import TestWrapper from "./bindable-state-wrapper.test.svelte";
 import BindableStateTest from "./bindable-state.test.svelte";
 
 beforeEach(() => {
@@ -66,8 +66,6 @@ describe("SpeedDial - Bindable State", () => {
 
   test("programmatic state changes are reflected in UI", async () => {
     const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
-    // Create a wrapper component to control isOpen state
-    const TestWrapper = (await import("./bindable-state-wrapper.test.svelte")).default;
 
     render(TestWrapper);
 

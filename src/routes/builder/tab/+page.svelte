@@ -75,7 +75,7 @@
 
 <H1>Tab Builder</H1>
 <CodeWrapper>
-  <Tabs {tabStyle} ulClass={tabStyle === "full" ? "flex flex-nowrap rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow dark:divide-gray-700 space-x-0" : ""}>
+  <Tabs {tabStyle} class={tabStyle === "full" ? "flex flex-nowrap space-x-0 divide-x divide-gray-200 rounded-lg shadow rtl:divide-x-reverse dark:divide-gray-700" : ""}>
     <TabItem open title={tabStyle === "full" ? "" : "Profile"} class={tabStyle === "full" ? "w-full" : ""}>
       {#snippet titleSlot()}Profile{/snippet}
       <p class="text-sm text-gray-500 dark:text-gray-400">

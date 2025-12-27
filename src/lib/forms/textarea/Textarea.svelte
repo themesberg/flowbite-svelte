@@ -3,9 +3,8 @@
   import clsx from "clsx";
   import type { TextareaProps } from "$lib";
   import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
-  import { untrack } from "svelte";
 
   let {
     header,
@@ -13,41 +12,16 @@
     addon,
     value = $bindable(),
     elementRef = $bindable(),
-    divClass,
-    innerClass,
-    headerClass,
-    footerClass,
-    addonClass,
     disabled,
     class: className,
     classes,
     clearable,
-    clearableSvgClass,
     clearableColor = "none",
-    clearableClass,
     clearableOnClick,
-    textareaClass,
     ...restProps
   }: TextareaProps = $props();
 
-  warnThemeDeprecation(
-    "Textarea",
-    untrack(() => ({ divClass, innerClass, headerClass, footerClass, addonClass, textareaClass, clearableClass, clearableSvgClass })),
-    { divClass: "div", innerClass: "inner", headerClass: "header", footerClass: "footer", addonClass: "addon", textareaClass: "class", clearableClass: "close", clearableSvgClass: "svg" }
-  );
-
-  const styling = $derived(
-    classes ?? {
-      div: divClass,
-      inner: innerClass,
-      header: headerClass,
-      footer: footerClass,
-      addon: addonClass,
-      textarea: textareaClass,
-      close: clearableClass,
-      svg: clearableSvgClass
-    }
-  );
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("textarea"));
 
@@ -69,33 +43,33 @@
   createDismissableContext(clearAll);
 </script>
 
-<div class={div({ class: clsx(theme?.div, styling.div) })}>
+<div class={div({ class: clsx(theme?.div, className) })}>
   {#if !wrapped}
-    <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={wrapper({ class: clsx(className, classes?.wrapper) })}></textarea>
+    <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })}></textarea>
   {:else}
-    <div class={wrapper({ class: clsx(theme?.wrapper, classes?.wrapper) })}>
+    <div class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })}>
       {#if header}
-        <div class={headerCls({ class: clsx(theme?.header, styling.header) })}>
+        <div class={headerCls({ class: clsx(theme?.header, styling?.header) })}>
           {@render header()}
         </div>
       {/if}
-      <div class={inner({ class: clsx(theme?.inner, styling.inner) })}>
+      <div class={inner({ class: clsx(theme?.inner, styling?.inner) })}>
         {#if addon}
-          <div class={addonCls({ class: clsx(theme?.addon, styling.addon) })}>
+          <div class={addonCls({ class: clsx(theme?.addon, styling?.addon) })}>
             {@render addon()}
           </div>
         {/if}
-        <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={base({ class: clsx(theme?.base, className) })}></textarea>
+        <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={base({ class: clsx(theme?.base) })}></textarea>
       </div>
       {#if footer}
-        <div class={footerCls({ class: clsx(theme?.footer, styling.footer) })}>
+        <div class={footerCls({ class: clsx(theme?.footer, styling?.footer) })}>
           {@render footer()}
         </div>
       {/if}
     </div>
   {/if}
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton class={close({ class: clsx(theme?.close, styling.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling.svg)} />
+    <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling?.svg)} />
   {/if}
 </div>
 

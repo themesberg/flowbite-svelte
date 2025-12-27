@@ -3,18 +3,11 @@
   import clsx from "clsx";
   import type { ToggleProps } from "$lib";
   import Label from "$lib/forms/label/Label.svelte";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, classes, inputClass, spanClass, offLabel, ...restProps }: ToggleProps = $props();
+  let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, classes, offLabel, ...restProps }: ToggleProps = $props();
 
-  warnThemeDeprecation(
-    "Toggle",
-    untrack(() => ({ inputClass, spanClass })),
-    { inputClass: "input", spanClass: "span" }
-  );
-
-  const styling = $derived(classes ?? { input: inputClass, span: spanClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("toggle"));
 
@@ -25,8 +18,8 @@
   {#if offLabel}
     {@render offLabel()}
   {/if}
-  <input type="checkbox" bind:checked {value} {...restProps} {disabled} class={input({ class: clsx(theme?.input, styling.input) })} />
-  <span class={span({ class: clsx(theme?.span, styling.span) })}></span>
+  <input type="checkbox" bind:checked {value} {...restProps} {disabled} class={input({ class: clsx(theme?.input, styling?.input) })} />
+  <span class={span({ class: clsx(theme?.span, styling?.span) })}></span>
   {#if children}
     {@render children()}
   {/if}

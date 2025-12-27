@@ -54,6 +54,7 @@ describe("CardPlaceholder Component", () => {
     test("card placeholder svg has aria-hidden", () => {
       const { container } = render(CardPlaceholder);
       const svg = container.querySelector("svg");
+      expect(svg).toBeInTheDocument();
       expect(svg).toHaveAttribute("aria-hidden", "true");
     });
 

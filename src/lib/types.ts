@@ -837,8 +837,6 @@ export interface LabelProps extends HTMLLabelAttributes {
 export interface RadioProps<T> extends RadioVariants, Omit<HTMLInputAttributes, "color"> {
   group?: T;
   value?: T;
-  inputClass?: ClassValue;
-  labelClass?: ClassValue;
 }
 
 // raido-button
@@ -866,11 +864,8 @@ export interface SearchProps extends SearchVariants, Omit<HTMLInputAttributes, "
   value?: string;
   elementRef?: HTMLInputElement;
   clearable?: boolean;
-  clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];
-  clearableClass?: ClassValue;
   clearableOnClick?: () => void;
-  inputClass?: ClassValue;
 }
 
 // select
@@ -886,11 +881,8 @@ export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttribute
   items?: SelectOptionType<T>[];
   elementRef?: HTMLSelectElement;
   placeholder?: string;
-  selectClass?: ClassValue;
   clearable?: boolean;
-  clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];
-  clearableClass?: ClassValue;
   // remove this in next major version
   clearableOnClick?: () => void;
   onClear?: () => void;
@@ -901,7 +893,6 @@ export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLAttri
   children?: Snippet<[{ item: SelectOptionType<T>; clear: () => void }]>;
   items: SelectOptionType<T>[];
   value: T[];
-  dropdownClass?: ClassValue;
   placeholder?: string;
   disabled?: boolean | undefined;
   size?: "sm" | "md" | "lg";
@@ -917,11 +908,7 @@ export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLAttri
 // Tags
 export interface TagsProps extends TagsVariants, HTMLAttributes<HTMLDivElement> {
   value: string[];
-  itemClass?: ClassValue;
   placeholder?: string;
-  spanClass?: ClassValue;
-  closeClass?: ClassValue;
-  inputClass?: ClassValue;
   closeBtnSize?: CloseButtonVariants["size"];
   unique?: boolean;
   availableTags?: string[];
@@ -977,18 +964,9 @@ export interface TextareaProps extends TextareaVariants, HTMLTextareaAttributes 
   value?: string;
   elementRef?: HTMLTextAreaElement;
   wrapped?: boolean;
-  divClass?: ClassValue;
-  innerClass?: ClassValue;
-  headerClass?: ClassValue;
-  footerClass?: ClassValue;
-  addonClass?: ClassValue;
-  // cols?: number;
   clearable?: boolean;
-  clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];
-  clearableClass?: ClassValue;
   clearableOnClick?: () => void;
-  textareaClass?: ClassValue;
 }
 
 // toggle
@@ -997,8 +975,6 @@ export interface ToggleProps extends Omit<ToggleVariants, "off_state_label">, Om
   value?: string | number;
   checked?: boolean;
   disabled?: boolean;
-  spanClass?: ClassValue;
-  inputClass?: ClassValue;
 }
 
 // end of forms
@@ -1654,7 +1630,6 @@ export interface TableProps extends TableVariants, Omit<HTMLTableAttributes, "bo
   children?: Snippet;
   footerSlot?: Snippet;
   captionSlot?: Snippet;
-  divClass?: ClassValue;
   striped?: boolean;
   hoverable?: boolean;
   border?: boolean;
@@ -1706,18 +1681,11 @@ export interface TableSearchProps extends TableSearchVariants, HTMLTableAttribut
   children?: Snippet;
   header?: Snippet;
   footer?: Snippet;
-  divClass?: ClassValue;
   inputValue?: string;
   striped?: boolean;
   hoverable?: boolean;
   customColor?: string;
   color?: TableSearchColor;
-  innerDivClass?: ClassValue;
-  inputClass?: ClassValue;
-  searchClass?: ClassValue;
-  svgDivClass?: ClassValue;
-  svgClass?: ClassValue;
-  tableClass?: ClassValue;
   placeholder?: string;
 }
 
@@ -1726,8 +1694,6 @@ export interface TabsProps extends TabsVaraints, HTMLAttributes<HTMLUListElement
   children: Snippet;
   selected?: string;
   tabStyle?: TabsVaraints["tabStyle"];
-  ulClass?: ClassValue;
-  contentClass?: ClassValue;
   divider?: boolean;
 }
 
@@ -1782,31 +1748,15 @@ export interface ActivityProps extends HTMLOlAttributes {
 
 export interface ActivityItemProps extends ActivityItemVariants, HTMLLiAttributes {
   activities: ActivityType[];
-  liClass?: string;
-  spanClass?: string;
-  imgClass?: string;
-  outerDivClass?: string;
-  innerDivClass?: string;
-  timeClass?: string;
-  titleClass?: string;
-  textClass?: string;
 }
 
 export interface GroupProps extends GroupVariants, HTMLOlAttributes {
   children: Snippet;
-  divClass?: string;
-  timeClass?: string;
   date?: Date | string;
-  olClass?: string;
 }
 
 export interface GroupItemProps extends GroupItemVariants, HTMLLiAttributes {
   timelines: GroupTimelineType[];
-  aClass?: string;
-  imgClass?: string;
-  divClass?: string;
-  titleClass?: string;
-  spanClass?: string;
 }
 
 export interface GroupTimelineType {
@@ -1833,16 +1783,9 @@ export interface TimelineItemProps extends TimelineItemVariants, HTMLLiAttribute
   orientationSlot?: Snippet;
   title: string;
   date: string;
-  svgClass?: string;
-  liClass?: string;
-  defaultDivClass?: string;
-  divClass?: string;
-  timeClass?: string;
-  h3Class?: string;
   dateFormat?: DateFormat;
   color?: ColorVariant;
   isLast?: boolean;
-  connectorClass?: string;
   datePrefix?: string;
 }
 
@@ -1854,8 +1797,6 @@ export interface ToastProps extends ToastVaraints, HTMLAttributes<HTMLDivElement
   dismissable?: boolean;
   color?: ToastVaraints["color"];
   position?: ToastVaraints["position"];
-  iconClass?: string;
-  contentClass?: string;
   align?: boolean;
   params?: ParamsType;
   transition?: TransitionFunc;
@@ -1926,10 +1867,6 @@ export interface HeadingProps extends HTMLAttributes<HTMLElement> {
 // hr
 export interface HrProps extends HrVariants, HTMLAttributes<HTMLElement> {
   children?: Snippet;
-  divClass?: ClassValue;
-  iconDivClass?: ClassValue;
-  textSpanClass?: ClassValue;
-  innerDivClass?: ClassValue;
   divProps?: HTMLAttributes<HTMLDivElement>;
   hrProps?: HTMLAttributes<HTMLHRElement>;
 }
@@ -1954,8 +1891,6 @@ export interface ImgProps extends ImgVariants, Omit<HTMLImgAttributes, "children
   size?: ImgVariants["size"];
   effect?: ImgVariants["effect"];
   caption?: string;
-  figClass?: string;
-  captionClass?: string;
   href?: HTMLAnchorElement["href"];
   align?: ImgVariants["align"];
 }

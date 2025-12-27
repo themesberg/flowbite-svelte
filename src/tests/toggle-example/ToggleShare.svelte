@@ -6,10 +6,8 @@
   }
 </script>
 
-<button on:click={toggle}>
-  Toggle
-</button>
+<button type="button" aria-label="Toggle share button visibility" on:click={toggle}>Toggle</button>
 
 {#if show}
-  <button>Share</button>
+  <button type="button">Share</button>
 {/if}

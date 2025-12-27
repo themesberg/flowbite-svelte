@@ -2,46 +2,29 @@
   import clsx from "clsx";
   import { hr } from "./theme";
   import type { HrProps } from "$lib/types";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, divClass, innerDivClass, class: className, classes, divProps = {}, hrProps = {}, ...restProps }: HrProps = $props();
+  let { children, class: className, classes, divProps = {}, hrProps = {} }: HrProps = $props();
 
-  warnThemeDeprecation(
-    "Hr",
-    untrack(() => ({ divClass, innerDivClass })),
-    {
-      divClass: "div",
-      innerDivClass: "content"
-    }
-  );
-
-  const styling = $derived(
-    classes ?? {
-      div: divClass,
-      content: innerDivClass
-    }
-  );
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("hr"));
-  const bg = $derived(classes?.bg ?? "bg-gray-200 dark:bg-gray-700");
 
-  // for backward compatibility and ...restPorps will be removed and use only ..divProps and ...hrProps in future
-  const mergedDivProps = $derived({ ...restProps, ...divProps });
-  const mergedHrProps = $derived({ ...restProps, ...hrProps });
+  const mergedDivProps = $derived({ ...divProps });
+  const mergedHrProps = $derived({ ...hrProps });
 
   let { base, div, content } = $derived(hr({ withChildren: !!children }));
 </script>
 
 {#if children}
-  <div {...mergedDivProps} class={div({ class: clsx(theme?.div, styling.div) })}>
-    <hr {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
-    <div class={content({ class: clsx(theme?.content, styling.content) })}>
+  <div {...mergedDivProps} class={div({ class: clsx(theme?.div, className) })}>
+    <hr {...mergedHrProps} class={base({ class: clsx(theme?.base, styling?.bg ?? "bg-gray-200 dark:bg-gray-700") })} />
+    <div class={content({ class: clsx(theme?.content, styling?.content) })}>
       {@render children()}
     </div>
   </div>
 {:else}
-  <hr {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
+  <hr {...mergedHrProps} class={base({ class: clsx(theme?.base, styling?.bg ?? "bg-gray-200 dark:bg-gray-700") })} />
 {/if}
 
 <!--

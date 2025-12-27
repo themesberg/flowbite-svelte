@@ -69,6 +69,8 @@
   $effect(() => {
     builderExpand = builder.isOpen;
   });
+  let figClass = $derived(imgEffect !== undefined && imgCaption ? "relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" : "");
+  let captionClass = $derived(imgEffect !== undefined && imgCaption ? "absolute bottom-6 px-4 text-lg text-white mx-auto" : "");
 </script>
 
 <MetaTag {breadcrumb_title} {description} {title} {dir} />
@@ -82,8 +84,7 @@
       class={imgClass}
       alt="sample 1"
       effect={imgEffect}
-      figClass={imgEffect !== undefined && imgCaption ? "relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" : ""}
-      captionClass={imgEffect !== undefined && imgCaption ? "absolute bottom-6 px-4 text-lg text-white mx-auto" : ""}
+      classes={{ figure: figClass, caption: captionClass }}
       caption={imgEffect !== undefined ? "Do you want to get notified when a new component is added to Flowbite?" : imgCaption ? "Image caption" : ""}
       href={imgHref}
     />

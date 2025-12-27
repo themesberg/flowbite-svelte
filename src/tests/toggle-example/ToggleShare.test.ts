@@ -10,22 +10,16 @@ describe("ToggleShare", () => {
     render(ToggleShare);
 
     // Initially hidden
-    expect(
-      screen.queryByRole("button", { name: /share/i })
-    ).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /^share$/i })).not.toBeInTheDocument();
 
     // Click to show
     await user.click(screen.getByRole("button", { name: /toggle/i }));
 
-    expect(
-      screen.getByRole("button", { name: /share/i })
-    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /^share$/i })).toBeInTheDocument();
 
     // Click again to hide
     await user.click(screen.getByRole("button", { name: /toggle/i }));
 
-    expect(
-      screen.queryByRole("button", { name: /share/i })
-    ).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /^share$/i })).not.toBeInTheDocument();
   });
 });

@@ -34,7 +34,7 @@ describe("SpeedDial - Basic Functionality", () => {
 
     await user.hover(trigger);
 
-    // SpeedDial has a 200ms delay by default
+    // SpeedDial has a 200ms delay by default + ~100ms transition
     await act(() => vi.advanceTimersByTime(300));
 
     // Now it should be visible/in document

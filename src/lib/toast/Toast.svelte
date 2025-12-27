@@ -4,9 +4,8 @@
   import { toast } from "./theme";
   import { fly } from "svelte/transition";
   import clsx from "clsx";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
-  import { untrack } from "svelte";
 
   let {
     children,
@@ -15,8 +14,6 @@
     dismissable = true,
     color = "primary",
     position,
-    iconClass,
-    contentClass,
     align = true,
     params,
     transition = fly,
@@ -25,21 +22,7 @@
     ...restProps
   }: ToastProps = $props();
 
-  warnThemeDeprecation(
-    "Toast",
-    untrack(() => ({ iconClass, contentClass })),
-    {
-      iconClass: "icon",
-      contentClass: "content"
-    }
-  );
-
-  const styling = $derived(
-    classes ?? {
-      icon: iconClass,
-      content: contentClass
-    }
-  );
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("toast"));
 
@@ -59,17 +42,17 @@
 {#if toastStatus}
   <div role="alert" bind:this={ref} transition:transition={params as ParamsType} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
     {#if icon}
-      <div class={iconVariants({ class: clsx(theme?.icon, styling.icon) })}>
+      <div class={iconVariants({ class: clsx(theme?.icon, styling?.icon) })}>
         {@render icon()}
       </div>
     {/if}
 
-    <div class={content({ class: clsx(theme?.content, styling.content) })}>
+    <div class={content({ class: clsx(theme?.content, styling?.content) })}>
       {@render children()}
     </div>
 
     {#if dismissable}
-      <CloseButton class={close({ class: clsx(theme?.close, classes?.close) })} ariaLabel="Remove toast" {color} />
+      <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} ariaLabel="Remove toast" {color} />
     {/if}
   </div>
 {/if}
@@ -86,8 +69,6 @@
 @prop dismissable = true
 @prop color = "primary"
 @prop position
-@prop iconClass
-@prop contentClass
 @prop align = true
 @prop params
 @prop transition = fly

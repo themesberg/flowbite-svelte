@@ -175,8 +175,8 @@ describe("SpeedDial - Keyboard Accessibility", () => {
       await user.keyboard("{Escape}");
       await act(() => vi.advanceTimersByTime(300));
 
-      // Focus should return to trigger or be manageable
-      expect(document.activeElement).toBeTruthy();
+      // Focus should return to trigger
+      expect(trigger).toHaveFocus();
     });
 
     test("trigger remains focusable when speed dial is open", async () => {
