@@ -10,7 +10,7 @@
 
 <Sidebar disableBreakpoints={true}>
   <SidebarGroup>
-    <SidebarItem label="Dashboard" href="/dashboard" active={true} onclick={handleClick} />
-    <SidebarItem label="Settings" href="/settings" onclick={handleClick} />
+    <SidebarItem label="Dashboard" href="https://flowbite-svelte.com/dashboard" active={true} onclick={handleClick} />
+    <SidebarItem label="Settings" href="https://flowbite-svelte.com/settings" onclick={handleClick} />
   </SidebarGroup>
 </Sidebar>

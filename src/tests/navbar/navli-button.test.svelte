@@ -10,6 +10,6 @@
   <NavHamburger />
   <NavUl>
     <NavLi data-testid="button-item">Button Item</NavLi>
-    <NavLi href="/link" data-testid="link-item" onclick={preventDefault}>Link Item</NavLi>
+    <NavLi href="https://flowbite-svelte.com/link" data-testid="link-item" onclick={preventDefault}>Link Item</NavLi>
   </NavUl>
 </Navbar>

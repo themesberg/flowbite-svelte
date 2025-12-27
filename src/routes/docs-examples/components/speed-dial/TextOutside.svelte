@@ -5,7 +5,7 @@
 
 <SpeedDialTrigger class="absolute end-24 bottom-6" />
 <SpeedDial tooltip="none" textOutside>
-  <SpeedDialButton name="Share" textClass="text-pink-500">
+  <SpeedDialButton name="Share" classes={{ span: "text-pink-500" }}>
     <ShareNodesSolid class="h-6 w-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">
@@ -21,7 +21,7 @@
 
 <SpeedDialTrigger class="absolute end-6 bottom-6" />
 <SpeedDial pill={false} tooltip="none" textOutside>
-  <SpeedDialButton name="Share" textClass="text-purple-500">
+  <SpeedDialButton name="Share" classes={{ span: "text-purple-500" }}>
     <ShareNodesSolid class="h-6 w-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">

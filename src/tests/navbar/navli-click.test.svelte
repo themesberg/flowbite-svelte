@@ -20,6 +20,6 @@
 <Navbar>
   <NavHamburger data-testid="hamburger" />
   <NavUl>
-    <NavLi href="/" onclick={handleClick} data-testid="clickable-link">Clickable</NavLi>
+    <NavLi href="https://flowbite-svelte.com/" onclick={handleClick} data-testid="clickable-link">Clickable</NavLi>
   </NavUl>
 </Navbar>

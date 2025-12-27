@@ -4,10 +4,10 @@
 
 <Navbar fluid>
   {#snippet children({ hidden: _hidden, toggle })}
-    <NavBrand href="/">Flowbite</NavBrand>
+    <NavBrand href="https://flowbite-svelte.com/">Flowbite</NavBrand>
     <NavHamburger onclick={toggle} />
     <NavUl>
-      <NavLi href="/">Home</NavLi>
+      <NavLi href="https://flowbite-svelte.com/">Home</NavLi>
     </NavUl>
   {/snippet}
 </Navbar>

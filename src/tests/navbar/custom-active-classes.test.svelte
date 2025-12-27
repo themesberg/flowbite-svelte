@@ -9,9 +9,9 @@
 <Navbar>
   {#snippet children({ hidden: _hidden, toggle })}
     <NavHamburger onclick={toggle} />
-    <NavUl activeUrl="/about">
-      <NavLi href="/home" activeClass="custom-active" nonActiveClass="custom-non-active" data-testid="custom-class-link" onclick={preventDefault}>Home</NavLi>
-      <NavLi href="/about" data-testid="about-link" onclick={preventDefault}>About</NavLi>
+    <NavUl activeUrl="https://flowbite-svelte.com/about">
+      <NavLi href="https://flowbite-svelte.com/home" activeClass="custom-active" nonActiveClass="custom-non-active" data-testid="custom-class-link" onclick={preventDefault}>Home</NavLi>
+      <NavLi href="https://flowbite-svelte.com/about" data-testid="about-link" onclick={preventDefault}>About</NavLi>
     </NavUl>
   {/snippet}
 </Navbar>

@@ -799,32 +799,16 @@ export interface InputProps<T extends InputValue = string> extends InputVariants
   value?: T;
   elementRef?: HTMLInputElement;
   color?: InputVariants["color"];
-  leftClass?: ClassValue;
-  rightClass?: ClassValue;
-  divClass?: ClassValue;
-  wrapperClass?: ClassValue;
   clearable?: boolean;
-  clearableSvgClass?: ClassValue;
   clearableColor?: CloseButtonVariants["color"];
-  clearableClass?: ClassValue;
   clearableOnClick?: () => void;
   data?: string[];
   maxSuggestions?: number;
   onSelect?: (item: string) => void;
-  comboClass?: ClassValue;
-  comboItemClass?: ClassValue;
   oninput?: (event: Event) => void;
   onfocus?: (event: FocusEvent) => void;
   onblur?: (event: FocusEvent) => void;
   onkeydown?: (event: KeyboardEvent) => void;
-  /** @deprecated Use `oninput` instead. Will be removed in next minor version. */
-  onInput?: (event: Event) => void;
-  /** @deprecated Use `onfocus` instead. Will be removed in next minor version. */
-  onFocus?: (event: FocusEvent) => void;
-  /** @deprecated Use `onblur` instead. Will be removed in next minor version. */
-  onBlur?: (event: FocusEvent) => void;
-  /** @deprecated Use `onkeydown` instead. Will be removed in next minor version. */
-  onKeydown?: (event: KeyboardEvent) => void;
 }
 
 // input-addon
@@ -1488,7 +1472,6 @@ export type SpeedDialProps = PopperProps &
   SpeedDialVariants & {
     children: Snippet;
     button?: Snippet;
-    popperClass?: ClassValue;
     placement?: Placement;
     tooltip?: Placement | "none";
     trigger?: PopperProps["trigger"];
@@ -1505,7 +1488,6 @@ export type SpeedDialButtonProps = ButtonProps &
     tooltip?: Placement | "none";
     pill?: boolean;
     textOutside?: boolean;
-    textClass?: ClassValue;
   };
 
 // spinner
