@@ -2,14 +2,13 @@
   import clsx from "clsx";
   import Popper from "$lib/utils/Popper.svelte";
   import { getSideAxis } from "@floating-ui/utils";
-  import { setContext, untrack } from "svelte";
+  import { setSpeedDialContext } from "$lib/context";
   import { speedDial } from "./theme";
-  import type { SpeedDialProps, SpeedCtxType } from "$lib/types";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import type { SpeedDialProps } from "$lib/types";
+  import { getTheme } from "$lib/theme/themeUtils";
 
   let {
     children,
-    popperClass,
     placement = "top",
     pill = true,
     tooltip = "left",
@@ -21,22 +20,12 @@
     ...restProps
   }: SpeedDialProps = $props();
 
-  warnThemeDeprecation(
-    "SpeedDial",
-    untrack(() => ({ popperClass })),
-    { popperClass: "popper" }
-  );
-
-  const styling = $derived(
-    classes ?? {
-      popper: popperClass
-    }
-  );
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("speedDial"));
 
   $effect(() => {
-    setContext<SpeedCtxType>("speed-dial", { pill, tooltip, textOutside });
+    setSpeedDialContext({ pill, tooltip, textOutside });
   });
 
   let vertical: boolean = $derived(getSideAxis(placement) === "y");
@@ -45,7 +34,7 @@
 </script>
 
 <Popper {...restProps} bind:isOpen {trigger} arrow={false} {placement} class={base({ class: clsx(theme?.base, className) })}>
-  <div class={popper({ class: clsx(theme?.popper, styling.popper) })}>
+  <div class={popper({ class: clsx(theme?.popper, styling?.popper) })}>
     {@render children()}
   </div>
 </Popper>
@@ -57,7 +46,6 @@
 [SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1487)
 ## Props
 @prop children
-@prop popperClass
 @prop placement = "top"
 @prop pill = true
 @prop tooltip = "left"
