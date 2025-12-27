@@ -27,7 +27,7 @@
     const tagName = (event.currentTarget as HTMLElement).tagName;
     // Close the mobile menu when a link is clicked
     const state = navState;
-    if (state && (tagName === "A" || tagName === "a") && !state.hidden) {
+    if (state && tagName === "A" && !state.hidden) {
       state.hidden = true;
     }
 

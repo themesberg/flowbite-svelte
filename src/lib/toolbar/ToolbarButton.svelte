@@ -40,6 +40,7 @@
 @prop color
 @prop name
 @prop "aria-label": ariaLabel
+@prop "aria-expanded": ariaExpanded
 @prop size
 @prop class: className
 @prop ...restProps
