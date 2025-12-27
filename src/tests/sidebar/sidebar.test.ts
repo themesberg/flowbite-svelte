@@ -34,8 +34,8 @@ describe("Sidebar Component", () => {
       const dashboardLink = screen.getByRole("link", { name: /dashboard/i });
       const settingsLink = screen.getByRole("link", { name: /settings/i });
 
-      expect(dashboardLink).toHaveAttribute("href", "/dashboard");
-      expect(settingsLink).toHaveAttribute("href", "/settings");
+      expect(dashboardLink).toHaveAttribute("href", "https://flowbite-svelte.com/dashboard");
+      expect(settingsLink).toHaveAttribute("href", "https://flowbite-svelte.com/settings");
     });
 
     test("sidebar has proper ARIA structure", () => {
@@ -197,7 +197,7 @@ describe("Sidebar Component", () => {
       // Links should be clickable without errors
       await user.click(dashboardLink);
       expect(dashboardLink).toBeInTheDocument();
-      expect(dashboardLink).toHaveAttribute("href", "/dashboard");
+      expect(dashboardLink).toHaveAttribute("href", "https://flowbite-svelte.com/dashboard");
       // Note: Navigation behavior is handled by the router, not tested here
     });
   });
