@@ -385,7 +385,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2179)
+[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2128)
 ## Props
 @prop direction = "horizontal"
 @prop minSize = 100

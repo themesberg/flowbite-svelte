@@ -8,7 +8,6 @@
     ["children", ""],
     ["figure", ""],
     ["items", "[]"],
-    ["imgClass", ""],
     ["class: className", ""],
     ["classes", ""]
   ]

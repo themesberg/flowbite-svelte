@@ -52,7 +52,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -60,7 +60,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -128,7 +128,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -136,7 +136,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -202,7 +202,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} active={false}>
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} active={false}>
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -210,7 +210,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} active={false}>
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} active={false}>
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -276,7 +276,7 @@ You can control icon class by changing the `class` prop in the `Icon` component.
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -284,7 +284,7 @@ You can control icon class by changing the `class` prop in the `Icon` component.
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -366,7 +366,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
         <SidebarItem label="Billing" />
         <SidebarItem label="Invoice" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -374,7 +374,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -523,7 +523,7 @@ Separate the content inside the sidebar component by applying a border separator
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -531,7 +531,7 @@ Separate the content inside the sidebar component by applying a border separator
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -614,7 +614,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -622,7 +622,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -710,7 +710,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -718,7 +718,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -789,7 +789,7 @@ The following example shows how to use children for your branding.
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -797,7 +797,7 @@ The following example shows how to use children for your branding.
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -868,7 +868,7 @@ Use the following example to show a close button in the sidebar for a small scre
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -876,7 +876,7 @@ Use the following example to show a close button in the sidebar for a small scre
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -962,7 +962,7 @@ You can use object for the sidebar items as the following example.
   >
     <SidebarGroup>
       {#each sidebarEx1 as { label, href, icon: Icon, subContent }}
-        <SidebarItem {label} {href} {spanClass}>
+        <SidebarItem {label} {href} classes={{ span: spanClass }}>
           {#snippet icon()}
             <Icon class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"></Icon>
           {/snippet}
@@ -1038,7 +1038,7 @@ The following example shows to open only one dropdown when you click another dro
         {/snippet}
         <SidebarItem label="Projects" href="/" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Sidebar" {spanClass} href="/components/sidebar">
+      <SidebarItem label="Sidebar" classes={{ span: spanClass }} href="/components/sidebar">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1118,7 +1118,7 @@ To open all dropdown menus, set `isSingle={false}`.
         {/snippet}
         <SidebarItem label="Projects" href="/" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Sidebar" {spanClass} href="/components/sidebar">
+      <SidebarItem label="Sidebar" classes={{ span: spanClass }} href="/components/sidebar">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1199,7 +1199,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
         <SidebarItem label="Billing" />
         <SidebarItem label="Invoice" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1207,7 +1207,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1284,7 +1284,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
               <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
           </SidebarItem>
-          <SidebarItem label="Kanban" {spanClass} href="/">
+          <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
             {#snippet icon()}
               <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
@@ -1292,7 +1292,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
               <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
             {/snippet}
           </SidebarItem>
-          <SidebarItem label="Inbox" {spanClass} href="/">
+          <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
             {#snippet icon()}
               <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
@@ -1364,7 +1364,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1393)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1360)
 
 #### Props
 
@@ -1377,13 +1377,9 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 - position: "fixed"
 - activateClickOutside: true
 - backdrop: true
-- backdropClass
 - transition: fly
 - params
-- divClass
 - ariaLabel
-- nonActiveClass
-- activeClass
 - activeUrl: ""
 - class: className
 - classes
@@ -1393,14 +1389,12 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1430)
+[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1390)
 
 #### Props
 
 - children
 - site
-- imgClass
-- spanClass
 - class: className
 - classes
 
@@ -1408,7 +1402,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1412)
+[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1375)
 
 #### Props
 
@@ -1420,14 +1414,12 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1417)
+[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1379)
 
 #### Props
 
 - children
 - icon
-- divClass
-- spanClass
 - label
 - class: className
 - classes
@@ -1436,7 +1428,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1441)
+[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1399)
 
 #### Props
 
@@ -1445,13 +1437,9 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 - arrowdown
 - icon
 - isOpen: $bindable()
-- btnClass
 - label
-- spanClass
-- ulClass
 - transition: slide
 - params
-- svgClass
 - class: className
 - classes
 - onclick
@@ -1460,20 +1448,19 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1458)
+[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1412)
 
 #### Props
 
 - children
 - class: className: "space-y-2"
-- borderClass: "pt-4 mt-4 border-t border-gray-200 dark:border-gray-700"
 - border: false
 
 ### SidebarItem
 
 #### Types
 
-[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1464)
+[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1417)
 
 #### Props
 
@@ -1481,12 +1468,9 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 - subtext
 - href
 - label
-- spanClass: "ms-3"
-- activeClass
-- nonActiveClass
-- aClass
 - active
 - class: className
+- classes
 
 ### SidebarWrapper
 

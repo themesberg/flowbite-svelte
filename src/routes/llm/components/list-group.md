@@ -187,7 +187,7 @@ When non-standard usage is needed you can omit the `items` props and add element
 
 #### Types
 
-[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1069)
+[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1068)
 
 #### Props
 
@@ -199,14 +199,13 @@ When non-standard usage is needed you can omit the `items` props and add element
 - rounded
 - border
 - class: className
-- itemClass
-- iconClass
+- classes
 
 ### ListgroupItem
 
 #### Types
 
-[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1080)
+[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1078)
 
 #### Props
 
@@ -218,7 +217,9 @@ When non-standard usage is needed you can omit the `items` props and add element
 - name
 - Icon
 - class: className
-- iconClass: "me-2.5 h-15 w-15"
+- classes
+- href
+- type
 
 
 ## References

@@ -46,7 +46,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1370)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1337)
 ## Props
 @prop fillPercent = 100
 @prop fillColor = "#F5CA14"
@@ -56,5 +56,6 @@
 @prop iconIndex = 0
 @prop groupId = "star"
 @prop role = "img"
+@prop class: className
 @prop ...restProps
 -->

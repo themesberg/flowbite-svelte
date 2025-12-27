@@ -200,7 +200,7 @@ Use these examples to position the indicator component anywhere relative to the 
 
 #### Types
 
-[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1039)
+[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1038)
 
 #### Props
 

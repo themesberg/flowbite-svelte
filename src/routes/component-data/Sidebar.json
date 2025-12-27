@@ -2,7 +2,7 @@
   "name": "Sidebar",
   "type": {
     "name": "SidebarProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1393"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1360"
   },
   "props": [
     ["children", ""],
@@ -14,13 +14,9 @@
     ["position", "\"fixed\""],
     ["activateClickOutside", "true"],
     ["backdrop", "true"],
-    ["backdropClass", ""],
     ["transition", "fly"],
     ["params", ""],
-    ["divClass", ""],
     ["ariaLabel", ""],
-    ["nonActiveClass", ""],
-    ["activeClass", ""],
     ["activeUrl", "\"\""],
     ["class: className", ""],
     ["classes", ""],

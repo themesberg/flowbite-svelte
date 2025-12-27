@@ -484,7 +484,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1236)
+[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1217)
 
 #### Props
 
@@ -501,7 +501,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1200)
+[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1185)
 
 #### Props
 
@@ -517,7 +517,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1232)
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1213)
 
 #### Props
 
@@ -531,7 +531,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1206)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1191)
 
 #### Props
 
@@ -542,8 +542,6 @@ Use the following example to add active class.
     onPageChange
 - prevContent
 - nextContent
-- prevClass
-- nextClass
 - layout: "pagination"
 - nextLabel: "Next"
 - previousLabel: "Previous"
@@ -551,8 +549,6 @@ Use the following example to add active class.
 - size: "default"
 - class: className
 - classes
-- spanClass
-- tableDivClass
 
 
 ## References

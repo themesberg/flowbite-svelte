@@ -35,12 +35,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1113)
+[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1104)
 ## Props
 @prop size = "24"
 @prop color = "currentColor"
 @prop variation = "outline"
-@prop ariaLabel = "bars 3"
 @prop class: className
 @prop ...restProps
 -->

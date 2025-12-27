@@ -2,13 +2,12 @@
   "name": "Popover",
   "type": {
     "name": "PopoverProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1246"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1227"
   },
   "props": [
     ["title: titleSlot", ""],
     ["color", "\"default\""],
     ["trigger", "\"hover\""],
-    ["defaultClass", ""],
     ["arrow", "true"],
     ["children", ""],
     ["placement", "\"top\""],

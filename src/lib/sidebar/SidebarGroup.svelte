@@ -13,11 +13,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1458)
+[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1412)
 ## Props
 @prop children
 @prop class: className = "space-y-2"
-dark:border-gray-700"
 @prop border = false
 @prop ...restProps
 -->

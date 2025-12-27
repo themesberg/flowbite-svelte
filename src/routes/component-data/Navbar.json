@@ -2,13 +2,13 @@
   "name": "Navbar",
   "type": {
     "name": "NavbarProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1129"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1119"
   },
   "props": [
     ["children", ""],
     ["fluid", ""],
-    ["navContainerClass", ""],
     ["class: className", ""],
+    ["classes", ""],
     ["closeOnClickOutside", "true"],
     ["breakpoint", "\"md\""]
   ]

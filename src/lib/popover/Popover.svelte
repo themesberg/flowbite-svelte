@@ -42,12 +42,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1246)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1227)
 ## Props
 @prop title: titleSlot
 @prop color = "default"
 @prop trigger = "hover"
-@prop defaultClass
 @prop arrow = true
 @prop children
 @prop placement = "top"

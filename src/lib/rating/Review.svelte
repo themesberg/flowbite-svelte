@@ -83,7 +83,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1343)
+[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1317)
 ## Props
 @prop children
 @prop address
@@ -92,11 +92,4 @@
 @prop item3
 @prop review
 @prop classes
-@prop articleClass
-@prop divClass
-@prop div2Class
-@prop div3Class
-@prop imgClass
-@prop ulClass
-@prop liClass
 -->

@@ -1,5 +1,5 @@
 # Flowbite Svelte Documentation - Full Context
-# Generated on 2025-12-24T06:27:46.841Z
+# Generated on 2025-12-27T08:56:15.620Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -568,41 +568,36 @@ Update your main CSS file to support Tailwind CSS and the Flowbite plugin. You c
 
 The location of your main CSS file determines the correct path for `@source` directives:
 
-**If your CSS file is at `src/app.css`:**
+**Your CSS file is at `src/routes/+layout.css`:**
 
 ```css
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+/* MINIMAL THEME
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+*/
 
-@plugin 'flowbite/plugin';
+/* ENTERPRISE THEME
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+*/
+
+/* PLAYFUL THEME
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+*/
+
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+/* @import "flowbite/src/themes/minimal"; */
+/* @import "flowbite/src/themes/enterprise"; */
+/* @import "flowbite/src/themes/playful"; */
+/* @import "flowbite/src/themes/mono"; */
+
+@plugin "flowbite/plugin";
+@plugin "flowbite-typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --color-primary-50: #fff5f2;
-  --color-primary-100: #fff1ee;
-  --color-primary-200: #ffe4de;
-  --color-primary-300: #ffd5cc;
-  --color-primary-400: #ffbcad;
-  --color-primary-500: #fe795d;
-  --color-primary-600: #ef562f;
-  --color-primary-700: #eb4f27;
-  --color-primary-800: #cc4522;
-  --color-primary-900: #a5371b;
-
-  --color-secondary-50: #f0f9ff;
-  --color-secondary-100: #e0f2fe;
-  --color-secondary-200: #bae6fd;
-  --color-secondary-300: #7dd3fc;
-  --color-secondary-400: #38bdf8;
-  --color-secondary-500: #0ea5e9;
-  --color-secondary-600: #0284c7;
-  --color-secondary-700: #0369a1;
-  --color-secondary-800: #075985;
-  --color-secondary-900: #0c4a6e;
-}
-
-@source "../node_modules/flowbite-svelte/dist";
-@source "../node_modules/flowbite-svelte-icons/dist";
+@source "../../node_modules/flowbite-svelte/dist";
+@source "../../node_modules/flowbite-svelte-icons/dist";
 
 @layer base {
   /* disable chrome cancel button */
@@ -612,14 +607,9 @@ The location of your main CSS file determines the correct path for `@source` dir
 }
 ```
 
-**If your CSS file is at `src/routes/+layout.css`:**
+The following lines can be used to override the brand colors:
+
 ```css
-@import "tailwindcss";
-
-@plugin 'flowbite/plugin';
-
-@custom-variant dark (&:where(.dark, .dark *));
-
 @theme {
   --color-primary-50: #fff5f2;
   --color-primary-100: #fff1ee;
@@ -642,15 +632,35 @@ The location of your main CSS file determines the correct path for `@source` dir
   --color-secondary-700: #0369a1;
   --color-secondary-800: #075985;
   --color-secondary-900: #0c4a6e;
+
+  --color-brand-softer: var(--color-primary-50);
+  --color-brand-soft: var(--color-primary-100);
+  --color-brand: var(--color-primary-700);
+  --color-brand-medium: var(--color-primary-200);
+  --color-brand-strong: var(--color-primary-800);
+
+  --color-fg-brand-subtle: var(--color-primary-200);
+  --color-fg-brand: var(--color-primary-700);
+  --color-fg-brand-strong: var(--color-primary-900); 
+  
+  --color-brand-subtle: var(--color-primary-200);
+  --color-brand-light: var(--color-primary-600);
 }
 
-@source "../../node_modules/flowbite-svelte/dist";
-@source "../../node_modules/flowbite-svelte-icons/dist";
-
 @layer base {
-  /* disable chrome cancel button */
-  input[type="search"]::-webkit-search-cancel-button {
-    display: none;
+  .dark {
+    --color-brand-softer: var(--color-primary-900);
+    --color-brand-soft: var(--color-primary-800);
+    --color-brand: var(--color-primary-600);
+    --color-brand-medium: var(--color-primary-800);
+    --color-brand-strong: var(--color-primary-700);
+
+    --color-fg-brand-subtle: var(--color-primary-200);
+    --color-fg-brand: var(--color-primary-500);
+    --color-fg-brand-strong: var(--color-primary-400);
+
+    --color-brand-subtle: var(--color-primary-800);
+    --color-brand-light: var(--color-primary-600);
   }
 }
 ```
@@ -6676,7 +6686,7 @@ Use this example to show a navigational sidebar inside the drawer component.
           <SidebarItem label="Billing" />
           <SidebarItem label="Invoice" />
         </SidebarDropdownWrapper>
-        <SidebarItem label="Kanban" {spanClass}>
+        <SidebarItem label="Kanban" classes={{ span: spanClass }}>
           {#snippet icon()}
             <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
           {/snippet}
@@ -6684,7 +6694,7 @@ Use this example to show a navigational sidebar inside the drawer component.
             <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
           {/snippet}
         </SidebarItem>
-        <SidebarItem label="Inbox" {spanClass}>
+        <SidebarItem label="Inbox" classes={{ span: spanClass }}>
           {#snippet icon()}
             <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
           {/snippet}
@@ -8689,7 +8699,6 @@ This example shows how to get a complete control over the gallery images look an
 - children
 - figure
 - items: []
-- imgClass
 - class: className
 - classes
 
@@ -8904,7 +8913,7 @@ Use these examples to position the indicator component anywhere relative to the 
 
 #### Types
 
-[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1039)
+[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1038)
 
 #### Props
 
@@ -9139,7 +9148,7 @@ This example can be used to denote function keys inside the KBD component.
 
 #### Types
 
-[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1050)
+[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1049)
 
 #### Props
 
@@ -9344,7 +9353,7 @@ When non-standard usage is needed you can omit the `items` props and add element
 
 #### Types
 
-[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1069)
+[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1068)
 
 #### Props
 
@@ -9356,14 +9365,13 @@ When non-standard usage is needed you can omit the `items` props and add element
 - rounded
 - border
 - class: className
-- itemClass
-- iconClass
+- classes
 
 ### ListgroupItem
 
 #### Types
 
-[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1080)
+[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1078)
 
 #### Props
 
@@ -9375,7 +9383,9 @@ When non-standard usage is needed you can omit the `items` props and add element
 - name
 - Icon
 - class: className
-- iconClass: "me-2.5 h-15 w-15"
+- classes
+- href
+- type
 
 
 ## References
@@ -9729,7 +9739,7 @@ This example can be used to also show a CTA with a backdround image inside the d
 
 #### Types
 
-[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1091)
+[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1088)
 
 #### Props
 
@@ -9737,10 +9747,8 @@ This example can be used to also show a CTA with a backdround image inside the d
 - extra
 - items: []
 - full
-- ulClass
 - isOpen: $bindable(false)
 - class: className
-- extraClass
 - classes
 
 
@@ -10347,7 +10355,7 @@ This is perfect for advertisements, terms of service, or important announcements
 
 #### Types
 
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1102)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1097)
 
 #### Props
 
@@ -10358,10 +10366,6 @@ This is perfect for advertisements, terms of service, or important announcements
 - open: $bindable(false)
 - permanent: false
 - dismissable: true
-- closeBtnClass
-- headerClass
-- bodyClass
-- footerClass
 - size: "md"
 - placement
 - class: className
@@ -10846,21 +10850,20 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1113)
+[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1104)
 
 #### Props
 
 - size: "24"
 - color: "currentColor"
 - variation: "outline"
-- ariaLabel: "bars 3"
 - class: className
 
 ### NavBrand
 
 #### Types
 
-[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1137)
+[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1126)
 
 #### Props
 
@@ -10871,7 +10874,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1139)
+[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1128)
 
 #### Props
 
@@ -10883,13 +10886,12 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1143)
+[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1132)
 
 #### Props
 
 - children
 - onclick
-- menuClass
 - class: className
 - classes
 - name: "Open main menu"
@@ -10898,7 +10900,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1164)
+[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1149)
 
 #### Props
 
@@ -10912,18 +10914,15 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1149)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1137)
 
 #### Props
 
 - children
 - activeUrl: $bindable()
-- ulClass
 - slideParams
 - transition: slide
 - transitionParams
-- activeClass
-- nonActiveClass
 - respectMotionPreference: true
 - class: className
 - classes
@@ -10932,14 +10931,14 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1129)
+[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1119)
 
 #### Props
 
 - children
 - fluid
-- navContainerClass
 - class: className
+- classes
 - closeOnClickOutside: true
 - breakpoint: "md"
 
@@ -11438,7 +11437,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1236)
+[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1217)
 
 #### Props
 
@@ -11455,7 +11454,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1200)
+[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1185)
 
 #### Props
 
@@ -11471,7 +11470,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1232)
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1213)
 
 #### Props
 
@@ -11485,7 +11484,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1206)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1191)
 
 #### Props
 
@@ -11496,8 +11495,6 @@ Use the following example to add active class.
     onPageChange
 - prevContent
 - nextContent
-- prevClass
-- nextClass
 - layout: "pagination"
 - nextLabel: "Next"
 - previousLabel: "Previous"
@@ -11505,8 +11502,6 @@ Use the following example to add active class.
 - size: "default"
 - class: className
 - classes
-- spanClass
-- tableDivClass
 
 
 ## References
@@ -11912,14 +11907,13 @@ If you need the popover to be attached to the other element then the triggering 
 
 #### Types
 
-[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1246)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1227)
 
 #### Props
 
 - title: titleSlot
 - color: "default"
 - trigger: "hover"
-- defaultClass
 - arrow: true
 - children
 - placement: "top"
@@ -12149,7 +12143,7 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1256)
+[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1236)
 
 #### Props
 
@@ -12169,7 +12163,7 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1267)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1247)
 
 #### Props
 
@@ -12515,18 +12509,13 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1284)
+[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1264)
 
 #### Props
 
 - rating
 - globalText
 - ratings
-- divClass
-- spanClass
-- div2Class
-- div3Class
-- span2Class
 - class: className
 - classes
 - unit
@@ -12535,7 +12524,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1370)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1337)
 
 #### Props
 
@@ -12547,14 +12536,14 @@ Use this component to show the review content from a user alongside the avatar, 
 - iconIndex: 0
 - groupId: "custom"
 - role: "img"
-- svgClass
 - pathd: "M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+- class: className
 
 ### Heart
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1370)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1337)
 
 #### Props
 
@@ -12566,13 +12555,13 @@ Use this component to show the review content from a user alongside the avatar, 
 - iconIndex: 0
 - groupId: "star"
 - role: "img"
-- svgClass
+- class: className
 
 ### Rating
 
 #### Types
 
-[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1296)
+[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1271)
 
 #### Props
 
@@ -12585,13 +12574,12 @@ Use this component to show the review content from a user alongside the avatar, 
 - rating: 4
 - icon: Icon: Star
 - count: false
-- pClass
 
 ### RatingComment
 
 #### Types
 
-[RatingCommentProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1307)
+[RatingCommentProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1281)
 
 #### Props
 
@@ -12605,7 +12593,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1343)
+[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1317)
 
 #### Props
 
@@ -12616,19 +12604,12 @@ Use this component to show the review content from a user alongside the avatar, 
 - item3
 - review
 - classes
-- articleClass
-- divClass
-- div2Class
-- div3Class
-- imgClass
-- ulClass
-- liClass
 
 ### ScoreRating
 
 #### Types
 
-[ScoreRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1359)
+[ScoreRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1326)
 
 #### Props
 
@@ -12641,7 +12622,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1370)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1337)
 
 #### Props
 
@@ -12653,13 +12634,13 @@ Use this component to show the review content from a user alongside the avatar, 
 - iconIndex: 0
 - groupId: "star"
 - role: "img"
-- svgClass
+- class: className
 
 ### Thumbup
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1370)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1337)
 
 #### Props
 
@@ -12671,7 +12652,7 @@ Use this component to show the review content from a user alongside the avatar, 
 - iconIndex: 0
 - groupId: "star"
 - role: "img"
-- svgClass
+- class: className
 
 
 ## References
@@ -12736,7 +12717,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12744,7 +12725,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12812,7 +12793,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12820,7 +12801,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12886,7 +12867,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} active={false}>
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} active={false}>
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12894,7 +12875,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} active={false}>
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} active={false}>
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12960,7 +12941,7 @@ You can control icon class by changing the `class` prop in the `Icon` component.
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12968,7 +12949,7 @@ You can control icon class by changing the `class` prop in the `Icon` component.
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13050,7 +13031,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
         <SidebarItem label="Billing" />
         <SidebarItem label="Invoice" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13058,7 +13039,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13207,7 +13188,7 @@ Separate the content inside the sidebar component by applying a border separator
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13215,7 +13196,7 @@ Separate the content inside the sidebar component by applying a border separator
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13298,7 +13279,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13306,7 +13287,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13394,7 +13375,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13402,7 +13383,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13473,7 +13454,7 @@ The following example shows how to use children for your branding.
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13481,7 +13462,7 @@ The following example shows how to use children for your branding.
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13552,7 +13533,7 @@ Use the following example to show a close button in the sidebar for a small scre
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13560,7 +13541,7 @@ Use the following example to show a close button in the sidebar for a small scre
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13646,7 +13627,7 @@ You can use object for the sidebar items as the following example.
   >
     <SidebarGroup>
       {#each sidebarEx1 as { label, href, icon: Icon, subContent }}
-        <SidebarItem {label} {href} {spanClass}>
+        <SidebarItem {label} {href} classes={{ span: spanClass }}>
           {#snippet icon()}
             <Icon class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"></Icon>
           {/snippet}
@@ -13722,7 +13703,7 @@ The following example shows to open only one dropdown when you click another dro
         {/snippet}
         <SidebarItem label="Projects" href="/" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Sidebar" {spanClass} href="/components/sidebar">
+      <SidebarItem label="Sidebar" classes={{ span: spanClass }} href="/components/sidebar">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13802,7 +13783,7 @@ To open all dropdown menus, set `isSingle={false}`.
         {/snippet}
         <SidebarItem label="Projects" href="/" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Sidebar" {spanClass} href="/components/sidebar">
+      <SidebarItem label="Sidebar" classes={{ span: spanClass }} href="/components/sidebar">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13883,7 +13864,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
         <SidebarItem label="Billing" />
         <SidebarItem label="Invoice" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Kanban" {spanClass} href="/">
+      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13891,7 +13872,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" {spanClass} href="/">
+      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13968,7 +13949,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
               <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
           </SidebarItem>
-          <SidebarItem label="Kanban" {spanClass} href="/">
+          <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
             {#snippet icon()}
               <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
@@ -13976,7 +13957,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
               <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
             {/snippet}
           </SidebarItem>
-          <SidebarItem label="Inbox" {spanClass} href="/">
+          <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
             {#snippet icon()}
               <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
@@ -14048,7 +14029,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1393)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1360)
 
 #### Props
 
@@ -14061,13 +14042,9 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 - position: "fixed"
 - activateClickOutside: true
 - backdrop: true
-- backdropClass
 - transition: fly
 - params
-- divClass
 - ariaLabel
-- nonActiveClass
-- activeClass
 - activeUrl: ""
 - class: className
 - classes
@@ -14077,14 +14054,12 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1430)
+[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1390)
 
 #### Props
 
 - children
 - site
-- imgClass
-- spanClass
 - class: className
 - classes
 
@@ -14092,7 +14067,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1412)
+[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1375)
 
 #### Props
 
@@ -14104,14 +14079,12 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1417)
+[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1379)
 
 #### Props
 
 - children
 - icon
-- divClass
-- spanClass
 - label
 - class: className
 - classes
@@ -14120,7 +14093,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1441)
+[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1399)
 
 #### Props
 
@@ -14129,13 +14102,9 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 - arrowdown
 - icon
 - isOpen: $bindable()
-- btnClass
 - label
-- spanClass
-- ulClass
 - transition: slide
 - params
-- svgClass
 - class: className
 - classes
 - onclick
@@ -14144,20 +14113,19 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1458)
+[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1412)
 
 #### Props
 
 - children
 - class: className: "space-y-2"
-- borderClass: "pt-4 mt-4 border-t border-gray-200 dark:border-gray-700"
 - border: false
 
 ### SidebarItem
 
 #### Types
 
-[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1464)
+[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1417)
 
 #### Props
 
@@ -14165,12 +14133,9 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 - subtext
 - href
 - label
-- spanClass: "ms-3"
-- activeClass
-- nonActiveClass
-- aClass
 - active
 - class: className
+- classes
 
 ### SidebarWrapper
 
@@ -14311,7 +14276,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1476)
+[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1425)
 
 #### Props
 
@@ -14323,7 +14288,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1480)
+[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1429)
 
 #### Props
 
@@ -14337,7 +14302,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1486)
+[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1435)
 
 #### Props
 
@@ -14351,7 +14316,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1492)
+[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1441)
 
 #### Props
 
@@ -14363,7 +14328,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1496)
+[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1445)
 
 #### Props
 
@@ -14374,7 +14339,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1498)
+[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1447)
 
 #### Props
 
@@ -14386,7 +14351,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1502)
+[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1451)
 
 #### Props
 
@@ -14397,7 +14362,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1506)
+[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1455)
 
 #### Props
 
@@ -15022,7 +14987,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1538)
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1487)
 
 #### Props
 
@@ -15041,7 +15006,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1553)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1502)
 
 #### Props
 
@@ -15059,7 +15024,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1536)
+[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1485)
 
 #### Props
 
@@ -15194,7 +15159,7 @@ The spinner component can also be used inside elements such as buttons when subm
 
 #### Types
 
-[SpinnerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1563)
+[SpinnerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1512)
 
 #### Props
 
@@ -16419,7 +16384,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1669)
+[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1618)
 
 #### Props
 
@@ -16446,7 +16411,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1632)
+[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1581)
 
 #### Props
 
@@ -16483,7 +16448,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1614)
+[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1563)
 
 #### Props
 
@@ -16499,7 +16464,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1598)
+[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1547)
 
 #### Props
 
@@ -16515,7 +16480,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1687)
+[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1636)
 
 #### Props
 
@@ -16532,7 +16497,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1650)
+[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1599)
 
 #### Props
 
@@ -17427,7 +17392,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1722)
+[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1671)
 
 #### Props
 
@@ -17448,7 +17413,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1754)
+[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1703)
 
 #### Props
 
@@ -17460,7 +17425,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1743)
+[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1692)
 
 #### Props
 
@@ -17473,7 +17438,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1735)
+[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1684)
 
 #### Props
 
@@ -17488,7 +17453,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1710)
+[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1659)
 
 #### Props
 
@@ -17505,7 +17470,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1759)
+[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1708)
 
 #### Props
 
@@ -17516,7 +17481,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1774)
+[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1723)
 
 #### Props
 
@@ -18041,7 +18006,7 @@ Use the following example to add active class.
 
 #### Types
 
-[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1803)
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1752)
 
 #### Props
 
@@ -18061,7 +18026,7 @@ Use the following example to add active class.
 
 #### Types
 
-[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1794)
+[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1743)
 
 #### Props
 
@@ -18541,7 +18506,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1848)
+[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1797)
 
 #### Props
 
@@ -18552,7 +18517,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1852)
+[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1801)
 
 #### Props
 
@@ -18572,7 +18537,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1864)
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1813)
 
 #### Props
 
@@ -18588,7 +18553,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1872)
+[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1821)
 
 #### Props
 
@@ -18605,7 +18570,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1893)
+[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1842)
 
 #### Props
 
@@ -18617,7 +18582,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1900)
+[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1849)
 
 #### Props
 
@@ -19155,7 +19120,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1919)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1868)
 
 #### Props
 
@@ -19177,7 +19142,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1934)
+[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1883)
 
 #### Props
 
@@ -19381,7 +19346,7 @@ When you want to add a fully custom styles, use `type="custom"`, and `class` to 
 
 #### Types
 
-[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1941)
+[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1890)
 
 #### Props
 
@@ -19664,7 +19629,7 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 #### Types
 
-[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2091)
+[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2040)
 
 #### Props
 
@@ -24224,7 +24189,7 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 #### Types
 
-[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1974)
+[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1923)
 
 #### Props
 
@@ -24482,7 +24447,7 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 #### Types
 
-[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1990)
+[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1939)
 
 #### Props
 
@@ -24640,7 +24605,7 @@ The `restProps` will be removed in the next version. Please use `divProps` and `
 
 #### Types
 
-[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1996)
+[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1945)
 
 #### Props
 
@@ -25366,7 +25331,7 @@ Use this example to create a horizontally aligned list of items.
 
 #### Types
 
-[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2050)
+[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1999)
 
 #### Props
 
@@ -26513,7 +26478,7 @@ See [examples](/docs-examples/extend/clipboard-manager) and [code](https://githu
 
 #### Types
 
-[ClipboardManagerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2319)
+[ClipboardManagerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2268)
 
 #### Props
 
@@ -26567,7 +26532,7 @@ See [examples](/docs-examples/extend/command-palette) and [code](https://github.
 
 #### Types
 
-[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2253)
+[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2202)
 
 #### Props
 
@@ -27071,7 +27036,7 @@ For production, use a proper database (PostgreSQL, MongoDB, Supabase, etc.) with
 
 #### Types
 
-[KanbanBoardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2162)
+[KanbanBoardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2111)
 
 #### Props
 
@@ -27219,7 +27184,7 @@ Import the `Progressradial` component in a script tag.
 
 #### Types
 
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1267)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1247)
 
 #### Props
 
@@ -27265,7 +27230,7 @@ See [examples](/docs-examples/extend/scroll-spy) and [code](https://github.com/t
 
 #### Types
 
-[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2268)
+[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2217)
 
 #### Props
 
@@ -27313,7 +27278,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[DividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2199)
+[DividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2148)
 
 #### Props
 
@@ -27330,7 +27295,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[PaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2193)
+[PaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2142)
 
 #### Props
 
@@ -27342,7 +27307,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2179)
+[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2128)
 
 #### Props
 
@@ -27683,7 +27648,7 @@ Use the `color` prop to change the color of a step indicator.
 
 #### Types
 
-[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1572)
+[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1521)
 
 #### Props
 
@@ -27873,7 +27838,7 @@ See [examples](/docs-examples/extend/tour) and [code](https://github.com/themesb
 
 #### Types
 
-[TourProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2230)
+[TourProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2179)
 
 #### Props
 
@@ -28338,7 +28303,7 @@ Enable with `<VirtualList contained …>` or override via `classes.item`.
 
 #### Types
 
-[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2134)
+[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2083)
 
 #### Props
 
@@ -28390,7 +28355,7 @@ See [examples](/docs-examples/extend/virtual-masonry) and [code](https://github.
 
 #### Types
 
-[VirtualMasonryProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2295)
+[VirtualMasonryProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2244)
 
 #### Props
 
@@ -28661,7 +28626,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1170)
+[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1155)
 
 #### Props
 
@@ -28676,7 +28641,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1176)
+[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1161)
 
 #### Props
 
@@ -28684,6 +28649,7 @@ Most often the textarea component is used as the main text field input element i
 - color
 - name
 - "aria-label": ariaLabel
+- "aria-expanded": ariaExpanded
 - size
 - class: className
 
@@ -28691,7 +28657,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1174)
+[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1159)
 
 #### Props
 

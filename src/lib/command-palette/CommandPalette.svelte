@@ -194,7 +194,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2253)
+[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2202)
 ## Props
 @prop open = $bindable(false)
 @prop items = []

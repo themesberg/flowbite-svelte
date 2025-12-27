@@ -33,16 +33,11 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1284)
+[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1264)
 ## Props
 @prop rating
 @prop globalText
 @prop ratings
-@prop divClass
-@prop spanClass
-@prop div2Class
-@prop div3Class
-@prop span2Class
 @prop class: className
 @prop classes
 @prop unit

@@ -48,7 +48,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1080)
+[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1078)
 ## Props
 @prop children
 @prop active
@@ -58,5 +58,8 @@
 @prop name
 @prop Icon
 @prop class: className
+@prop classes
+@prop href
+@prop type
 @prop ...restProps
 -->

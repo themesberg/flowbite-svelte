@@ -2,13 +2,14 @@
   "name": "ToolbarButton",
   "type": {
     "name": "ToolbarButtonProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1176"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1161"
   },
   "props": [
     ["children", ""],
     ["color", ""],
     ["name", ""],
     ["\"aria-label\": ariaLabel", ""],
+    ["\"aria-expanded\": ariaExpanded", ""],
     ["size", ""],
     ["class: className", ""]
   ]

@@ -26,12 +26,10 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1430)
+[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1390)
 ## Props
 @prop children
 @prop site
-@prop imgClass
-@prop spanClass
 @prop class: className
 @prop classes
 @prop ...restProps

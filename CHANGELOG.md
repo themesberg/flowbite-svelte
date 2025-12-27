@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0-next.1
+
+### Minor Changes
+
+- feat: update gallery to sidebar
+
 ## 2.0.0-next.0
 
 ### Major Changes

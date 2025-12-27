@@ -238,7 +238,6 @@ This example shows how to get a complete control over the gallery images look an
 - children
 - figure
 - items: []
-- imgClass
 - class: className
 - classes
 

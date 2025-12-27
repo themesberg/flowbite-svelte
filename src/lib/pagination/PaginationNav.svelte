@@ -115,7 +115,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1206)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1191)
 ## Props
 @prop currentPage = 1
 @prop totalPages = 1
@@ -129,11 +129,6 @@
 @prop ariaLabel = "Page navigation"
 @prop size = "default"
 @prop class: className
-@prop classes.tableDiv - Custom classes for table layout container
-@prop classes.span - Custom classes for page count spans  
-@prop classes.prev - Custom classes for previous button
-@prop classes.next - Custom classes for next button
-@prop classes.active - Custom classes for active page button
 @prop classes
 @prop ...restProps
 -->
