@@ -5,6 +5,7 @@ export * from "./utils";
 // export { default as ThemeProvider } from "./theme/ThemeProvider.svelte";
 export * from "./theme";
 export { getTheme } from "./theme/themeUtils";
+export * from "./theme-selector";
 // components
 export * from "./accordion";
 export * from "./alert";

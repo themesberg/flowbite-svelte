@@ -27,10 +27,10 @@
     Avatar,
     Rating,
     Timeline,
-    TimelineItem
+    TimelineItem,
+    ThemeSelector
   } from "$lib";
   import { CheckCircleSolid, CloseCircleSolid, ExclamationCircleOutline, InfoCircleSolid } from "flowbite-svelte-icons";
-  import ThemeSelector from "../utils/ThemeSelector.svelte";
 
   let textValue = "Sample text input";
   let textareaValue = "Sample textarea content";
