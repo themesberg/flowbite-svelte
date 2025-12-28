@@ -37,7 +37,7 @@
   const theme = $derived(getTheme("input"));
 
   // onSelect is a custom combobox selection handler that takes a string
-  // Event handlers use standard DOM event names (oninput, onfocus, onblur, onkeydown)
+  // Derive event handler props (using lowercase DOM event names: oninput, onfocus, onblur, onkeydown)
   const resolvedOnInput = $derived(oninput);
   const resolvedOnFocus = $derived(onfocus);
   const resolvedOnBlur = $derived(onblur);

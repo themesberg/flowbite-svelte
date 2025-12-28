@@ -39,8 +39,6 @@
 @prop color = "primary"
 @prop class: className
 @prop classes
-@prop inputClass
-@prop spanClass
 @prop offLabel
 @prop ...restProps
 -->

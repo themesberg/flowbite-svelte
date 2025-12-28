@@ -84,19 +84,11 @@
 @prop addon
 @prop value = $bindable()
 @prop elementRef = $bindable()
-@prop divClass
-@prop innerClass
-@prop headerClass
-@prop footerClass
-@prop addonClass
 @prop disabled
 @prop class: className
 @prop classes
 @prop clearable
-@prop clearableSvgClass
 @prop clearableColor = "none"
-@prop clearableClass
 @prop clearableOnClick
-@prop textareaClass
 @prop ...restProps
 -->

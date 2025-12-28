@@ -48,8 +48,9 @@
       if (imgEffect !== undefined) props.push(` effect="${imgEffect}"`);
       // if (imgShadow !== 'none') props.push(` shadow="${imgShadow}"`);
       // if (imgRounded !== 'none') props.push(` rounded="${imgRounded}"`);
-      if (imgEffect !== undefined && imgCaption) props.push(` figClass="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"`);
-      if (imgEffect !== undefined && imgCaption) props.push(` captionClass="absolute bottom-6 px-4 text-lg text-white"`);
+      if (imgEffect !== undefined && imgCaption) {
+        props.push(` classes={{ figure: "relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0", caption: "absolute bottom-6 px-4 text-lg text-white" }}`);
+      }
       if (imgCaption) props.push(` caption="Image caption"`);
       if (imgHref) props.push(` href="/"`);
 

@@ -44,7 +44,7 @@ In Tailwind CSS, you can make any utility class important by adding a `!` charac
 
 ## Overwriting Specific Classes
 
-While the `class` prop can be used for the most outer tag.
+While the `class` prop can be used for the most outer tag, you can use the `classes` prop to customize internal element classes.
 
 ```svelte example class="flex flex-col relative"
 <script lang="ts">
@@ -63,7 +63,7 @@ You can observe the background color change to green.
 
 ### Classes
 
-Instead of intrducing multiple props for component's internal element classes new prop `classes` has been introduced: an object of internal element names and desired new classes. The above example will therefore change to:
+Instead of introducing multiple props for component's internal element classes new prop `classes` has been introduced: an object of internal element names and desired new classes. The above example will therefore change to:
 
 ```svelte example class="flex flex-col relative"
 <script lang="ts">

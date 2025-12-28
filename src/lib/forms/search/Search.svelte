@@ -61,15 +61,12 @@
 [SearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L880)
 ## Props
 @prop children
-@prop inputClass
 @prop size
 @prop placeholder = "Search"
 @prop value = $bindable()
 @prop elementRef = $bindable()
 @prop clearable = false
-@prop clearableSvgClass
 @prop clearableColor = "none"
-@prop clearableClass
 @prop clearableOnClick
 @prop class: className
 @prop classes

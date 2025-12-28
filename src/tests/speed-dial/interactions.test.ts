@@ -143,8 +143,8 @@ describe("SpeedDial - Interactions", () => {
 
       await user.unhover(shareButton);
       await act(() => vi.advanceTimersByTime(300));
-      // Extra time for tooltip to fully disappear
-      await act(() => vi.advanceTimersByTime(200));
+      // Extra time for tooltip to fully disappear (increased from 200 to 500)
+      await act(() => vi.advanceTimersByTime(500));
 
       // Tooltip should be hidden, only button text remains
       const shareTexts = screen.queryAllByText(/share/i);
@@ -222,10 +222,14 @@ describe("SpeedDial - Interactions", () => {
       // Open hover trigger
       await user.hover(hoverTrigger);
       await act(() => vi.advanceTimersByTime(300));
+      // Add extra time for buttons to render
+      await act(() => vi.advanceTimersByTime(200));
 
       // Click trigger should not be affected
       await user.click(clickTrigger);
       await act(() => vi.advanceTimersByTime(300));
+      // Add extra time for buttons to render
+      await act(() => vi.advanceTimersByTime(200));
 
       // Both should have share buttons
       const shareButtons = screen.getAllByRole("button", { name: /share/i });

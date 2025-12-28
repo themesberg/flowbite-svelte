@@ -95,8 +95,6 @@
 @prop children
 @prop selected = $bindable()
 @prop tabStyle = "none"
-@prop ulClass
-@prop contentClass
 @prop divider = true
 @prop class: className
 @prop classes

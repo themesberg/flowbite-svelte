@@ -6,7 +6,6 @@
   import Label from "$lib/forms/label/Label.svelte";
   import { getTheme } from "$lib/theme/themeUtils";
 
-  // remove inputClass in next major version
   let {
     children,
     "aria-describedby": ariaDescribedby,

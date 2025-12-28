@@ -214,15 +214,13 @@
 @prop placeholder = "Enter tags"
 @prop class: className
 @prop classes
-@prop itemClass
-@prop spanClass
-@prop closeClass
-@prop inputClass
 @prop closeBtnSize = "xs"
 @prop unique = false
 @prop availableTags = []
 @prop showHelper = false
 @prop showAvailableTags = false
 @prop allowNewTags = true
+@prop inputProps = {}
+@prop disabled
 @prop ...restProps
 -->

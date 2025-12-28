@@ -58,8 +58,6 @@
 @prop caption
 @prop class: className
 @prop classes
-@prop figClass
-@prop captionClass
 @prop href
 @prop ...restProps
 -->

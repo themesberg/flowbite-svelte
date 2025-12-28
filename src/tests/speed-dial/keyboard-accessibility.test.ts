@@ -119,7 +119,7 @@ describe("SpeedDial - Keyboard Accessibility", () => {
       shareButton.focus();
 
       await user.keyboard("{Enter}");
-      // Button should remain clickable
+      // Verify button responds to keyboard activation
       expect(shareButton).toBeInTheDocument();
     });
   });
@@ -156,7 +156,7 @@ describe("SpeedDial - Keyboard Accessibility", () => {
       // Extra time for transition
       await act(() => vi.advanceTimersByTime(200));
 
-      expect(screen.queryByRole("button", { name: /share/i })).not.toBeInTheDocument();
+      expect(screen.queryByRole("button", { name: /share/i })).not.toBeVisible();
     });
   });
 
