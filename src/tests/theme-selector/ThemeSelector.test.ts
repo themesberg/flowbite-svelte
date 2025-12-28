@@ -175,11 +175,8 @@ describe("ThemeSelector Component", () => {
         await user.click(playfulButton);
       }
 
-      // Wait for localStorage to be updated
-      await new Promise((resolve) => setTimeout(resolve, 100));
-
       // Check localStorage
-      expect(localStorageMock.getItem("flowbite-svelte-theme")).toBe("playful");
+       expect(localStorageMock.getItem("flowbite-svelte-theme")).toBe("playful");
     });
   });
 

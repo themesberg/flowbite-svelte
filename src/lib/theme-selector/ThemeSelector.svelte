@@ -44,7 +44,7 @@
     <DropdownItem onclick={handleThemeChange(theme.id)} class="mb-1 inline-flex w-full items-center justify-between rounded-xl {theme.id === currentTheme ? 'bg-brand-50 dark:bg-brand-900/20' : ''}">
       <span class="theme-select-button inline-flex w-full items-center justify-between rounded">{theme.name}</span>
       <div class="flex items-center rounded-xs">
-        {#each theme.colors as color, index (color)}
+        {#each theme.colors as color, index (`${theme.id}-${index}`)}
           <div class="h-3.5 w-[1.125rem] {color} {index === 0 ? 'rounded-s-xs' : ''} {index === theme.colors.length - 1 ? 'rounded-e-xs' : ''}"></div>
         {/each}
       </div>

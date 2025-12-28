@@ -45,7 +45,7 @@ The component will render a button with a palette icon and the current theme nam
 
 First, ensure your theme CSS files are available in your `static/themes` directory. Each theme should have its runtime CSS file:
 
-```
+```text
 static/
   └── themes/
       ├── default-runtime.css

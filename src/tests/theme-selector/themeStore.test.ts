@@ -99,8 +99,7 @@ describe("themeStore", () => {
       expect(selectedTheme?.name).toBe("Enterprise");
     });
 
-    test("returns undefined for invalid theme", () => {
-      // This shouldn't happen in practice, but testing edge case
+    test("returns defined theme object for current valid theme", () => {
       const selectedTheme = getSelectedTheme();
       expect(selectedTheme).toBeDefined();
     });
@@ -296,7 +295,7 @@ describe("themeStore", () => {
       // Trigger onerror
       const fontLink = mockLinks.find((link) => link.id === "dynamic-theme-font");
       if (fontLink?.onerror && typeof fontLink.onerror === "function") {
-        fontLink.onerror(new Event("error"), "", 0, 0, undefined);
+        (fontLink.onerror as (event: Event) => void)(new Event("error"));
       }
 
       expect(consoleWarnSpy).toHaveBeenCalled();
@@ -312,7 +311,7 @@ describe("themeStore", () => {
       // Trigger onerror
       const themeLink = mockLinks.find((link) => link.id === "dynamic-theme-css");
       if (themeLink?.onerror && typeof themeLink.onerror === "function") {
-        themeLink.onerror(new Event("error"), "", 0, 0, undefined);
+        (themeLink.onerror as (event: Event) => void)(new Event("error"));
       }
 
       expect(consoleErrorSpy).toHaveBeenCalled();

@@ -8,7 +8,7 @@ export interface FlowbiteTheme {
   colors: string[];
 }
 
-export const themeConfigs: FlowbiteTheme[] = [
+export const themeConfigs = [
   {
     id: "default",
     name: "Default",
@@ -44,4 +44,4 @@ export const themeConfigs: FlowbiteTheme[] = [
     fontUrl: "https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@300;400;500;600;700&display=swap",
     colors: ["bg-neutral-100 dark:bg-neutral-700", "bg-indigo-50 dark:bg-indigo-900", "bg-indigo-100 dark:bg-indigo-800", "bg-indigo-700 dark:bg-indigo-700"]
   }
-];
+] as const satisfies readonly FlowbiteTheme[];
