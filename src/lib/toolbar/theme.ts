@@ -14,7 +14,7 @@ export const toolbar = tv({
     embedded: {
       true: {},
       false: {
-        base: "py-2 px-3 rounded-lg dark:border"
+        base: "py-2 px-3 rounded-base dark:border"
       }
     },
     color: {

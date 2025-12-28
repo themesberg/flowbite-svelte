@@ -72,18 +72,18 @@
     </NavUl>
 
     <div class="order-1 ml-auto flex items-center lg:order-2">
-      <ToolbarLink class="hidden hover:text-gray-900 xl:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
-        <GitHub />
+      <ToolbarLink class="hidden hover:text-gray-900 xl:inline-block dark:hover:text-white p-1.5 rounded-sm" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
+        <GitHub size="md"/>
       </ToolbarLink>
-      <ToolbarLink class="hidden hover:text-gray-900 xl:inline-block dark:hover:text-white" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
+      <ToolbarLink class="hidden hover:text-gray-900 xl:inline-block dark:hover:text-white p-1.5 rounded-sm" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
         <Discord />
       </ToolbarLink>
-      <DarkMode size="lg" class="inline-block hover:text-gray-900 focus:ring-gray-100 dark:hover:text-white dark:focus:ring-gray-700" />
+      <DarkMode size="md" class="inline-block hover:text-gray-900 focus:ring-gray-100 dark:hover:text-white dark:focus:ring-gray-700 p-1.5" />
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
       <ThemeSelector />
     </div>
     <a href="https://www.npmjs.com/package/flowbite-svelte" class="order-4 hidden 2xl:block">
-      <Badge large class="hover:bg-primary-600 dark:hover:bg-primary-800 ms-2 hover:text-white xl:ms-4 dark:hover:text-white">
+      <Badge large class="hover:bg-primary-600 dark:hover:bg-primary-800 ms-1 hover:text-white xl:ms-4 dark:hover:text-white">
         v{version}
       </Badge>
     </a>
