@@ -281,7 +281,7 @@
       onfocus={handleFocus}
       onblur={handleBlur}
       onkeydown={handleKeydown}
-      class={[wrapped || base(), inputCls({ class: clsx(theme?.input, className) })]}
+      class={clsx(!wrapped && base(), inputCls({ class: clsx(theme?.input, className) }))}
     />
     {#if value !== undefined && value !== "" && clearable}
       <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling?.svg)} />

@@ -136,19 +136,19 @@
 <svelte:window />
 
 {#if showAvailableTags && availableTags.length > 0}
-  <P class={clsx(info(), classes?.info)}>Available tags: {availableTags.join(", ")}</P>
+  <P class={clsx(info(), styling?.info)}>Available tags: {availableTags.join(", ")}</P>
 {/if}
 
 {#if showHelper && contents.trim().length > 0}
   {#if unique && value.some((tag) => tag.toLowerCase() === contents.trim().toLowerCase())}
-    <P class={clsx(warning(), classes?.warning)}>"{contents.trim()}" is already added.</P>
+    <P class={clsx(warning(), styling?.warning)}>"{contents.trim()}" is already added.</P>
   {:else if availableTags.length > 0 && !allowNewTags && !availableTags.some((tag) => tag.toLowerCase() === contents.trim().toLowerCase())}
-    <P class={clsx(error(), classes?.error)}>"{contents.trim()}" is not in the available tags.</P>
+    <P class={clsx(error(), styling?.error)}>"{contents.trim()}" is not in the available tags.</P>
   {/if}
 {/if}
 
 {#if errorMessage}
-  <P class={clsx(error(), classes?.error)}>{errorMessage}</P>
+  <P class={clsx(error(), styling?.error)}>{errorMessage}</P>
 {/if}
 
 <div

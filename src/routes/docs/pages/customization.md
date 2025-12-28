@@ -63,7 +63,7 @@ You can observe the background color change to green.
 
 ### Classes
 
-Instead of introducing multiple props for component's internal element classes new prop `classes` has been introduced: an object of internal element names and desired new classes. The above example will therefore change to:
+Instead of introducing multiple props for a component's internal element classes, a new prop `classes` has been introduced: an object of internal element names and desired new classes. The above example will therefore change to:
 
 ```svelte example class="flex flex-col relative"
 <script lang="ts">

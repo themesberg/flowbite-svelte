@@ -104,7 +104,6 @@ Use the following example to preserve the input value. First fill out the form, 
 {#include Snapshot.svelte}
 ```
 
-
 ## Active class
 
 Use the following example to add active class.
@@ -112,7 +111,6 @@ Use the following example to add active class.
 ```svelte example
 {#include ActiveClass.svelte}
 ```
-
 
 ## Component data
 
