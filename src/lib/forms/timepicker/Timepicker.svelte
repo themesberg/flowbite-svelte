@@ -44,7 +44,7 @@
 
   // Generate theme classes
   const styles = $derived(timepicker({ type, columns, disabled }));
-
+  let selectCls = $derived(styles.select({ class: clsx(theme?.select, selectClass) }));
   // State
   let selectedOption = $state("");
   let showTimerange = $state(false);
@@ -223,7 +223,7 @@
         oninput={(e) => handleTimeChange(e)}
         onchange={(e) => handleTimeChange(e)}
       />
-      <Select selectClass={styles.select({ class: clsx(theme?.select, selectClass) })} onchange={handleOptionSelect} items={options} value={selectedOption} />
+      <Select classes={{ select: selectCls }} onchange={handleOptionSelect} items={options} value={selectedOption} />
     {:else if type === "dropdown"}
       <Input
         {id}
@@ -352,7 +352,7 @@
     {:else if type === "timerange-toggle"}
       <div class={styles.toggleWrapper({ class: clsx(theme?.toggleWrapper) })}>
         <div class={styles.toggleRow({ class: clsx(theme?.toggleRow) })}>
-          <Toggle id={`${id}-timerange-toggle`} checked={showTimerange} onchange={toggleTimerange} spanClass="me-0 rounded-lg" />
+          <Toggle id={`${id}-timerange-toggle`} checked={showTimerange} onchange={toggleTimerange} classes={{ span: "me-0 rounded-base" }} />
         </div>
         {#if showTimerange}
           <div class={styles.toggleTimeRow({ class: clsx(theme?.toggleTimeRow) })}>

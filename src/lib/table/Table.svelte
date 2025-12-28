@@ -5,22 +5,12 @@
   import TableBody from "./TableBody.svelte";
   import clsx from "clsx";
   import type { TableProps, TableContextType } from "$lib/types";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, footerSlot, captionSlot, items, divClass, striped, hoverable, border = true, shadow, color = "default", class: className, classes, ...restProps }: TableProps = $props();
+  let { children, footerSlot, captionSlot, items, striped, hoverable, border = true, shadow, color = "default", class: className, classes, ...restProps }: TableProps = $props();
 
-  warnThemeDeprecation(
-    "Table",
-    untrack(() => ({ divClass })),
-    { divClass: "div" }
-  );
+  const styling = $derived(classes);
 
-  const styling = $derived(
-    classes ?? {
-      div: divClass
-    }
-  );
   const theme = $derived(getTheme("table"));
 
   const { div, table } = $derived(tableCls({ color, shadow }));
@@ -46,8 +36,8 @@
   let bodyItems = $derived(items && items.length > 0 ? items.map((item) => Object.values(item)) : []);
 </script>
 
-<div class={div({ class: clsx(theme?.div, styling.div) })}>
-  <table {...restProps} class={table({ class: clsx(theme?.table, className) })}>
+<div class={div({ class: clsx(theme?.div, className) })}>
+  <table {...restProps} class={table({ class: clsx(theme?.table, styling?.table) })}>
     {#if captionSlot}
       {@render captionSlot()}
     {/if}
@@ -73,7 +63,6 @@
 @prop footerSlot
 @prop captionSlot
 @prop items
-@prop divClass
 @prop striped
 @prop hoverable
 @prop border = true

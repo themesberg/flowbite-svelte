@@ -2,24 +2,11 @@
   import clsx from "clsx";
   import { img } from "./theme";
   import type { ImgProps } from "$lib/types";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, size, effect: imgEffect, align, caption, class: className, classes, figClass, captionClass, href, ...restProps }: ImgProps = $props();
+  let { children, size, effect: imgEffect, align, caption, class: className, classes, href, ...restProps }: ImgProps = $props();
 
-  warnThemeDeprecation(
-    "Img",
-    untrack(() => ({ figClass, captionClass })),
-    {
-      figClass: "figure",
-      captionClass: "caption"
-    }
-  );
-
-  const styling = $derived({
-    figure: figClass || classes?.figure,
-    caption: captionClass || classes?.caption
-  });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("img"));
 
@@ -33,13 +20,13 @@
 
 {#snippet imageSlot()}
   {#if caption}
-    <figure class={figure({ class: clsx(theme?.figure, styling.figure) })}>
+    <figure class={figure({ class: clsx(theme?.figure, styling?.figure) })}>
       {#if useSlot}
         {@render children?.({ class: imgClass, restProps })}
       {:else}
         <img {...restProps} class={imgClass} />
       {/if}
-      <figcaption class={figureCaption({ class: clsx(theme?.caption, styling.caption) })}>
+      <figcaption class={figureCaption({ class: clsx(theme?.caption, styling?.caption) })}>
         {@html caption}
       </figcaption>
     </figure>
@@ -71,8 +58,6 @@
 @prop caption
 @prop class: className
 @prop classes
-@prop figClass
-@prop captionClass
 @prop href
 @prop ...restProps
 -->

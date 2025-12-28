@@ -146,19 +146,47 @@
   }
 
   $effect(() => {
+    // Ensure popover is shown/hidden based on isOpen state
+    if (popover) {
+      if (isOpen) {
+        try {
+          if (!popover.matches(":popover-open")) {
+            popover.showPopover();
+          }
+        } catch (e) {
+          // Ignore errors
+        }
+      } else {
+        try {
+          if (popover.matches(":popover-open")) {
+            popover.hidePopover();
+          }
+        } catch (e) {
+          // Ignore errors
+        }
+      }
+    }
+  });
+
+  $effect(() => {
     // Floating UI instance when it's closed we need to keep a autoUpdate destroy function
     let autoUpdateDestroy: (() => void) | null = null;
 
     if (isOpen && popover && invoker) {
       autoUpdateDestroy = dom.autoUpdate(referenceElement ?? invoker, popover, updatePopoverPosition);
-      popover.ownerDocument.addEventListener("click", closeOnClickOutside);
+      // Only add click outside handler for click triggers
+      if (clickable) {
+        popover.ownerDocument.addEventListener("click", closeOnClickOutside);
+      }
       popover.ownerDocument.addEventListener("keydown", closeOnEscape);
     }
 
     return () => {
       autoUpdateDestroy?.();
       autoUpdateDestroy = null;
-      popover?.ownerDocument.removeEventListener("click", closeOnClickOutside);
+      if (clickable && popover) {
+        popover.ownerDocument.removeEventListener("click", closeOnClickOutside);
+      }
       popover?.ownerDocument.removeEventListener("keydown", closeOnEscape);
     };
   });
@@ -212,6 +240,8 @@
   function closeOnEscape(event: KeyboardEvent) {
     if (event.key === "Escape") {
       isOpen = false;
+      // Return focus to the trigger element when closing with escape
+      invoker?.focus();
     }
   }
 
@@ -249,7 +279,6 @@
     onintrostart={() => popover?.showPopover()}
     onbeforetoggle={on_before_toggle}
     ontoggle={on_toggle}
-    onoutroend={() => popover?.hidePopover()}
     {...restProps}
   >
     {@render children()}

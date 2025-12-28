@@ -15,7 +15,8 @@ import type {
   NavbarBreakpoint,
   SidebarContextType,
   TableContextType,
-  TabsContextType
+  TabsContextType,
+  SpeedCtxType
 } from "./types";
 import type { SplitPaneContext } from "./types";
 import type { ThemeConfig } from "./theme";
@@ -112,3 +113,7 @@ export { getSplitPaneContext, setSplitPaneContext };
 // Tabs
 const [getTabsContext, setTabsContext] = createSafeContext<TabsContextType>();
 export { getTabsContext, setTabsContext };
+
+// SpeedDial
+const [getSpeedDialContext, setSpeedDialContext] = createSafeContext<SpeedCtxType>();
+export { getSpeedDialContext, setSpeedDialContext };

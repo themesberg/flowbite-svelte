@@ -1,24 +1,19 @@
 <script lang="ts">
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme/themeUtils";
   import type { SelectedTab, TabCtxType, TabsProps } from "$lib/types";
   import { createSingleSelectionContext, useSingleSelection } from "$lib/utils/singleselection.svelte";
   import clsx from "clsx";
   import { tabs } from "./theme";
   import { setTabsContext } from "$lib/context";
-  import { untrack } from "svelte";
 
-  let { children, selected = $bindable(), tabStyle = "none", ulClass, contentClass, divider = true, class: className, classes, ...restProps }: TabsProps = $props();
+  let { children, selected = $bindable(), tabStyle = "none", divider = true, class: className, classes, ...restProps }: TabsProps = $props();
 
   const activeClasses = $derived(typeof classes?.active === "string" ? classes.active : undefined);
 
-  warnThemeDeprecation(
-    "Tabs",
-    untrack(() => ({ ulClass, contentClass })),
-    { ulClass: "class", contentClass: "content" }
-  );
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("tabs"));
-  const styling = $derived(classes ?? { content: contentClass });
+
   const { base, content, divider: dividerClass } = $derived(tabs({ tabStyle, hasDivider: divider }));
 
   const uuid = $props.id();
@@ -80,14 +75,14 @@
   });
 </script>
 
-<ul role="tablist" {...restProps} class={base({ class: clsx(theme?.base, className ?? ulClass) })}>
+<ul role="tablist" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {@render children()}
 </ul>
 {#if dividerBool}
-  <div class={dividerClass({ class: clsx(theme?.divider, classes?.divider) })}></div>
+  <div class={dividerClass({ class: clsx(theme?.divider, styling?.divider) })}></div>
 {/if}
 
-<div id={panelId} class={content({ class: clsx(theme?.content, styling.content) })} role="tabpanel" aria-labelledby={selectedTab.id}>
+<div id={panelId} class={content({ class: clsx(theme?.content, styling?.content) })} role="tabpanel" aria-labelledby={selectedTab.id}>
   {@render selectedTab.snippet?.()}
 </div>
 
@@ -100,8 +95,6 @@
 @prop children
 @prop selected = $bindable()
 @prop tabStyle = "none"
-@prop ulClass
-@prop contentClass
 @prop divider = true
 @prop class: className
 @prop classes

@@ -313,7 +313,7 @@ describe("Datepicker Component", () => {
       render(BasicDatepickerTest);
       const input = screen.getByPlaceholderText("Select a date");
 
-      expect(input).toHaveClass("w-full", "rounded-md", "border", "px-4", "py-2", "text-sm");
+      expect(input).toHaveClass("w-full", "rounded-base", "border", "px-4", "py-2", "text-sm");
     });
 
     test("disabled input has disabled styling", () => {

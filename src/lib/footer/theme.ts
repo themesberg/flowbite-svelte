@@ -5,7 +5,7 @@ export const footer = tv({
   base: "bg-white dark:bg-gray-800",
   variants: {
     footerType: {
-      default: "p-4 rounded-lg shadow md:flex md:items-center md:justify-between md:p-6",
+      default: "p-4 rounded-base shadow md:flex md:items-center md:justify-between md:p-6",
       sitemap: "bg-white dark:bg-gray-900",
       socialmedia: "p-4 sm:p-6",
       logo: "p-4 rounded-lg shadow md:px-6 md:py-8",

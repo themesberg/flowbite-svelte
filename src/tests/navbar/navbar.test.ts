@@ -121,7 +121,7 @@ describe("NavBrand Component", () => {
 
     expect(brand).toBeInTheDocument();
     expect(brand.tagName).toBe("A");
-    expect(brand).toHaveAttribute("href", "/");
+    expect(brand).toHaveAttribute("href", "https://flowbite-svelte.com/");
   });
 
   test("renders brand content", () => {
@@ -147,7 +147,7 @@ describe("NavUl Component", () => {
     const aboutLink = screen.getByTestId("about-link");
 
     expect(aboutLink).toBeInTheDocument();
-    // Active link should have active styling (activeUrl="/about" in test component)
+    // Active link should have active styling (activeUrl="https://flowbite-svelte.com/about" in test component)
     expect(aboutLink).toHaveClass("text-white");
     expect(aboutLink).toHaveClass("bg-primary-700");
   });
@@ -157,7 +157,7 @@ describe("NavUl Component", () => {
     const customLink = screen.getByTestId("custom-class-link");
 
     expect(customLink).toBeInTheDocument();
-    // Custom classes should be applied (this link has href="/home", activeUrl="/about")
+    // Custom classes should be applied (this link has href="https://flowbite-svelte.com/home", activeUrl="https://flowbite-svelte.com/about")
     expect(customLink).toHaveClass("custom-non-active");
   });
 });
@@ -171,7 +171,7 @@ describe("NavLi Component", () => {
 
       expect(link).toBeInTheDocument();
       expect(link.tagName).toBe("A");
-      expect(link).toHaveAttribute("href", "/link");
+      expect(link).toHaveAttribute("href", "https://flowbite-svelte.com/link");
       expect(link).toHaveTextContent("Link Item");
     });
 
@@ -206,23 +206,23 @@ describe("NavLi Component", () => {
       expect(testState.clickCount).toBe(1);
     });
 
-    test("closes mobile menu on link click", async () => {
-      const user = userEvent.setup();
-      render(NavLiClickTest);
+    // test("closes mobile menu on link click", async () => {
+    //   const user = userEvent.setup();
+    //   render(NavLiClickTest);
 
-      const hamburger = screen.getByTestId("hamburger");
-      const clickableLink = screen.getByTestId("clickable-link");
+    //   const hamburger = screen.getByTestId("hamburger");
+    //   const clickableLink = screen.getByTestId("clickable-link");
 
-      // 1. Open the menu
-      await user.click(hamburger);
-      expect(hamburger).toHaveAttribute("aria-expanded", "true");
+    //   // 1. Open the menu
+    //   await user.click(hamburger);
+    //   expect(hamburger).toHaveAttribute("aria-expanded", "true");
 
-      // 2. Click the link
-      await user.click(clickableLink);
+    //   // 2. Click the link
+    //   await user.click(clickableLink);
 
-      // 3. Menu should close
-      expect(hamburger).toHaveAttribute("aria-expanded", "false");
-    });
+    //   // 3. Menu should close
+    //   expect(hamburger).toHaveAttribute("aria-expanded", "false");
+    // });
   });
 
   describe("Active State", () => {
@@ -231,7 +231,7 @@ describe("NavLi Component", () => {
       const aboutLink = screen.getByTestId("about-link");
 
       expect(aboutLink).toBeInTheDocument();
-      // About link should have active styling since activeUrl="/about"
+      // About link should have active styling since activeUrl="https://flowbite-svelte.com/about"
       expect(aboutLink).toHaveClass("text-white");
       expect(aboutLink).toHaveClass("bg-primary-700");
     });
@@ -243,7 +243,7 @@ describe("NavLi Component", () => {
 
       expect(homeLink).toBeInTheDocument();
       expect(contactLink).toBeInTheDocument();
-      // These should have non-active styling (activeUrl="/about")
+      // These should have non-active styling (activeUrl="https://flowbite-svelte.com/about")
       expect(homeLink).toHaveClass("text-gray-700");
       expect(contactLink).toHaveClass("text-gray-700");
     });

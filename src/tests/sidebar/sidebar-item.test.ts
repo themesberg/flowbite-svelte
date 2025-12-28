@@ -22,7 +22,7 @@ describe("SidebarItem Component", () => {
       render(BasicSidebarTest);
       const dashboardLink = screen.getByRole("link", { name: /dashboard/i });
 
-      expect(dashboardLink).toHaveAttribute("href", "/dashboard");
+      expect(dashboardLink).toHaveAttribute("href", "https://flowbite-svelte.com/dashboard");
     });
 
     test("sidebar item is within list item", () => {
@@ -86,7 +86,7 @@ describe("SidebarItem Component", () => {
       const dashboardLink = screen.getByRole("link", { name: /dashboard/i });
 
       // Verify href is correct before click
-      expect(dashboardLink).toHaveAttribute("href", "/dashboard");
+      expect(dashboardLink).toHaveAttribute("href", "https://flowbite-svelte.com/dashboard");
 
       // Verify link is clickable (preventDefault in test prevents actual navigation)
       await user.click(dashboardLink);

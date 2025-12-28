@@ -2,34 +2,20 @@
   import { group } from "./theme";
   import type { GroupProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { untrack } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
 
-  let { children, divClass, timeClass, date, olClass, class: className, classes, ...restProps }: GroupProps = $props();
+  let { children, date, class: className, classes, ...restProps }: GroupProps = $props();
 
-  warnThemeDeprecation(
-    "Group",
-    untrack(() => ({ divClass, timeClass, olClass })),
-    {
-      divClass: "class",
-      timeClass: "time",
-      olClass: "ol"
-    }
-  );
-
-  const styling = $derived({
-    time: timeClass,
-    ol: olClass
-  });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("group"));
 
   const { div, time, ol } = $derived(group());
 </script>
 
-<div class={div({ class: clsx(theme?.div, className ?? divClass) })}>
-  <time class={time({ class: clsx(theme?.time, styling.time) })}>{date}</time>
-  <ol {...restProps} class={ol({ class: clsx(theme?.ol, styling.ol) })}>
+<div class={div({ class: clsx(theme?.div, className) })}>
+  <time class={time({ class: clsx(theme?.time, styling?.time) })}>{date}</time>
+  <ol {...restProps} class={ol({ class: clsx(theme?.ol, styling?.ol) })}>
     {@render children()}
   </ol>
 </div>
@@ -41,10 +27,7 @@
 [GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1813)
 ## Props
 @prop children
-@prop divClass
-@prop timeClass
 @prop date
-@prop olClass
 @prop class: className
 @prop classes
 @prop ...restProps

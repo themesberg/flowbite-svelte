@@ -4,8 +4,8 @@
   import Badge from "$lib/badge/Badge.svelte";
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { multiSelect } from "./theme";
-  import { getTheme, warnThemeDeprecation } from "$lib/theme/themeUtils";
-  import { onMount, untrack } from "svelte";
+  import { getTheme } from "$lib/theme/themeUtils";
+  import { onMount } from "svelte";
   import { createDismissableContext } from "$lib/utils/dismissable";
   import { getButtonGroupContext } from "$lib/context";
 
@@ -16,7 +16,6 @@
     items = [],
     value = $bindable(),
     size = "md",
-    dropdownClass = "",
     placeholder = "",
     disabled = false,
     onchange,
@@ -31,13 +30,7 @@
     ...restProps
   }: MultiSelectProps<T> = $props();
 
-  warnThemeDeprecation(
-    "MultiSelect",
-    untrack(() => ({ dropdownClass })),
-    { dropdownClass: "dropdown" }
-  );
-
-  const styling = $derived(classes ?? { dropdown: dropdownClass });
+  const styling = $derived(classes);
 
   const theme = $derived(getTheme("multiSelect"));
 
@@ -247,7 +240,7 @@
   </div>
 
   {#if show}
-    <div role="presentation" class={dropdown({ class: clsx(styling.dropdown) })}>
+    <div role="presentation" class={dropdown({ class: clsx(styling?.dropdown) })}>
       {#each items as item (item.value)}
         {@const isSelected = selectItems.includes(item)}
         {@const isActive = activeItem === item}

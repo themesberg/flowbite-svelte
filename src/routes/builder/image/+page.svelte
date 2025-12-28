@@ -46,10 +46,11 @@
       if (imgSize !== undefined) props.push(` size="${imgSize}"`);
       // if (imgAlignment !== 'left') props.push(` alignment="${imgAlignment}"`);
       if (imgEffect !== undefined) props.push(` effect="${imgEffect}"`);
-      // if (imgShadow !== 'none') props.push(` shadow="${imgShadow}"`);
-      // if (imgRounded !== 'none') props.push(` rounded="${imgRounded}"`);
-      if (imgEffect !== undefined && imgCaption) props.push(` figClass="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"`);
-      if (imgEffect !== undefined && imgCaption) props.push(` captionClass="absolute bottom-6 px-4 text-lg text-white"`);
+      if (imgEffect !== undefined && imgCaption) {
+        props.push(
+          ` classes={{ figure: "relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0", caption: "absolute bottom-6 px-4 text-lg text-white mx-auto" }}`
+        );
+      }
       if (imgCaption) props.push(` caption="Image caption"`);
       if (imgHref) props.push(` href="/"`);
 
@@ -69,6 +70,8 @@
   $effect(() => {
     builderExpand = builder.isOpen;
   });
+  let figClass = $derived(imgEffect !== undefined && imgCaption ? "relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" : "");
+  let captionClass = $derived(imgEffect !== undefined && imgCaption ? "absolute bottom-6 px-4 text-lg text-white mx-auto" : "");
 </script>
 
 <MetaTag {breadcrumb_title} {description} {title} {dir} />
@@ -82,8 +85,7 @@
       class={imgClass}
       alt="sample 1"
       effect={imgEffect}
-      figClass={imgEffect !== undefined && imgCaption ? "relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" : ""}
-      captionClass={imgEffect !== undefined && imgCaption ? "absolute bottom-6 px-4 text-lg text-white mx-auto" : ""}
+      classes={{ figure: figClass, caption: captionClass }}
       caption={imgEffect !== undefined ? "Do you want to get notified when a new component is added to Flowbite?" : imgCaption ? "Image caption" : ""}
       href={imgHref}
     />
