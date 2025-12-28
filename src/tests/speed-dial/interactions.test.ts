@@ -13,7 +13,9 @@ beforeEach(() => {
     const id = ++rafId;
     setTimeout(() => cb(performance.now()), 0);
     return id;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   }) as any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   window.cancelAnimationFrame = vi.fn() as any;
 });
 

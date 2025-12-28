@@ -47,7 +47,9 @@
       // if (imgAlignment !== 'left') props.push(` alignment="${imgAlignment}"`);
       if (imgEffect !== undefined) props.push(` effect="${imgEffect}"`);
       if (imgEffect !== undefined && imgCaption) {
-        props.push(` classes={{ figure: "relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0", caption: "absolute bottom-6 px-4 text-lg text-white mx-auto" }}`);
+        props.push(
+          ` classes={{ figure: "relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0", caption: "absolute bottom-6 px-4 text-lg text-white mx-auto" }}`
+        );
       }
       if (imgCaption) props.push(` caption="Image caption"`);
       if (imgHref) props.push(` href="/"`);

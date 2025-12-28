@@ -150,7 +150,7 @@
     if (popover) {
       if (isOpen) {
         try {
-          if (!popover.matches(':popover-open')) {
+          if (!popover.matches(":popover-open")) {
             popover.showPopover();
           }
         } catch (e) {
@@ -158,7 +158,7 @@
         }
       } else {
         try {
-          if (popover.matches(':popover-open')) {
+          if (popover.matches(":popover-open")) {
             popover.hidePopover();
           }
         } catch (e) {
