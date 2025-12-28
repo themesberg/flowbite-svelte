@@ -12,6 +12,14 @@ afterEach(() => {
   cleanup();
 });
 
+const EXPECTED_SPINNER_TYPES_COUNT = 5;
+const EXPECTED_SPINNER_COLORS_COUNT = 5;
+const EXPECTED_SPINNER_SIZES_COUNT = 7;
+const EXPECTED_DOTS_CIRCLES = 3;
+const EXPECTED_BARS_RECTS = 3;
+const EXPECTED_PULSE_TYPE = 3;
+const EXPECTED_ORBIT_TYPE = 3;
+
 describe("Spinner Component", () => {
   describe("Basic Rendering", () => {
     test("renders basic spinner with default props", () => {
@@ -35,7 +43,7 @@ describe("Spinner Component", () => {
       const { container } = render(SpinnerTypesTest);
       const spinners = container.querySelectorAll("svg");
 
-      expect(spinners.length).toBe(5);
+      expect(spinners.length).toBe(EXPECTED_SPINNER_TYPES_COUNT);
       spinners.forEach((spinner) => {
         expect(spinner).toBeInTheDocument();
         expect(spinner).toHaveAttribute("role", "status");
@@ -54,7 +62,7 @@ describe("Spinner Component", () => {
       const dotsSpinner = container.querySelector('[data-testid="dots-spinner"]');
       const circles = dotsSpinner?.querySelectorAll("circle");
 
-      expect(circles?.length).toBe(3);
+      expect(circles?.length).toBe(EXPECTED_DOTS_CIRCLES);
     });
 
     test("bars type renders with correct structure", () => {
@@ -62,7 +70,7 @@ describe("Spinner Component", () => {
       const barsSpinner = container.querySelector('[data-testid="bars-spinner"]');
       const rects = barsSpinner?.querySelectorAll("rect");
 
-      expect(rects?.length).toBe(3);
+      expect(rects?.length).toBe(EXPECTED_BARS_RECTS);
     });
 
     test("pulse type renders with correct structure", () => {
@@ -70,7 +78,7 @@ describe("Spinner Component", () => {
       const pulseSpinner = container.querySelector('[data-testid="pulse-spinner"]');
       const circles = pulseSpinner?.querySelectorAll("circle");
 
-      expect(circles?.length).toBe(3);
+      expect(circles?.length).toBe(EXPECTED_PULSE_TYPE);
     });
 
     test("orbit type renders with correct structure", () => {
@@ -78,7 +86,7 @@ describe("Spinner Component", () => {
       const orbitSpinner = container.querySelector('[data-testid="orbit-spinner"]');
       const circles = orbitSpinner?.querySelectorAll("circle");
 
-      expect(circles?.length).toBe(3);
+      expect(circles?.length).toBe(EXPECTED_ORBIT_TYPE);
     });
   });
 
@@ -87,7 +95,7 @@ describe("Spinner Component", () => {
       const { container } = render(SpinnerColorsTest);
       const spinners = container.querySelectorAll("svg");
 
-      expect(spinners.length).toBe(5);
+      expect(spinners.length).toBe(EXPECTED_SPINNER_COLORS_COUNT);
     });
 
     test("applies color classes correctly", () => {
@@ -107,7 +115,7 @@ describe("Spinner Component", () => {
       const { container } = render(SpinnerSizesTest);
       const spinners = container.querySelectorAll("svg");
 
-      expect(spinners.length).toBe(7);
+      expect(spinners.length).toBe(EXPECTED_SPINNER_SIZES_COUNT);
     });
 
     test("applies size classes correctly", () => {

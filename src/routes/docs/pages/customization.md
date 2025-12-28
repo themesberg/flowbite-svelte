@@ -55,7 +55,7 @@ While the `class` prop can be used for the most outer tag, you can use the `clas
 <ImagePlaceholder class="py-4" />
 
 <Banner id="default-banner" type="bottom" class="border-green-600 bg-green-700 dark:border-green-400 dark:bg-green-500">
-  <p class="flex items-center text-sm font-normal">Overwriting divClass and innerClass</p>
+  <p class="flex items-center text-sm font-normal">Overwriting the outer class</p>
 </Banner>
 ```
 

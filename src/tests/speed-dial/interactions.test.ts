@@ -4,6 +4,7 @@ import userEvent from "@testing-library/user-event";
 
 import BasicSpeedDialTest from "./basic-speed-dial.test.svelte";
 import ClickTriggerTest from "./click-trigger.test.svelte";
+import ClickTriggerParameterized from "./click-trigger-parameterized.test.svelte";
 
 beforeEach(() => {
   vi.useFakeTimers();
@@ -152,20 +153,23 @@ describe("SpeedDial - Interactions", () => {
     //   await user.hover(shareButton);
     //   await act(() => vi.advanceTimersByTime(300));
 
-    //   // Verify tooltip appears (button text + tooltip = 2)
-    //   let shareTexts = screen.queryAllByText(/share/i);
-    //   expect(shareTexts.length).toBeGreaterThan(1);
+    //   // Verify tooltip appears by checking for the tooltip element
+    //   const tooltip = document.querySelector('[role="tooltip"]');
+    //   expect(tooltip).toBeInTheDocument();
+    //   expect(tooltip?.textContent).toMatch(/share/i);
 
-    //   // Move mouse to far corner of container to ensure we're not hovering tooltip
-    //   await user.pointer({ coords: { x: 1, y: 1 } });
-    //   await act(() => vi.advanceTimersByTime(500));
-    //   // Advance one more frame for RAF-based debounce
-    //   await act(() => vi.advanceTimersToNextTimer());
-    //   await act(() => vi.advanceTimersByTime(200));
+    //   // Unhover the button
+    //   await user.unhover(shareButton);
+    //   // Move mouse to far location to ensure we're not hovering tooltip
+    //   const container = screen.getByTestId("speed-dial-trigger").closest("div");
+    //   if (container) {
+    //     await user.pointer({ target: container, coords: { x: 0, y: 0 } });
+    //   }
+    //   await act(() => vi.advanceTimersByTime(300)); // triggerDelay
+    //   await act(() => vi.advanceTimersByTime(200)); // transition time
 
-    //   // Tooltip should be hidden, only button text remains
-    //   shareTexts = screen.queryAllByText(/share/i);
-    //   expect(shareTexts.length).toBe(1);
+    //   // Tooltip should be hidden now
+    //   expect(document.querySelector('[role="tooltip"]')).not.toBeInTheDocument();
     // });
   });
 
@@ -229,24 +233,28 @@ describe("SpeedDial - Interactions", () => {
     // test("opening one speed dial does not affect another", async () => {
     //   const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
 
-    //   // Use two click-triggered speed dials to avoid hover interference
-    //   render(ClickTriggerTest);
-    //   render(ClickTriggerTest);
+    //   // Render two instances with unique IDs
+    //   render(ClickTriggerParameterized, { props: { triggerId: "click-trigger-1" } });
+    //   render(ClickTriggerParameterized, { props: { triggerId: "click-trigger-2" } });
 
-    //   const triggers = screen.getAllByTestId("click-trigger");
-    //   expect(triggers).toHaveLength(2);
+    //   const trigger1 = screen.getByTestId("click-trigger-1");
+    //   const trigger2 = screen.getByTestId("click-trigger-2");
 
-    //   // Open first speed dial
-    //   await user.click(triggers[0]);
+    //   // Open only first speed dial
+    //   await user.click(trigger1);
     //   await act(() => vi.advanceTimersByTime(300));
 
-    //   // Open second speed dial
-    //   await user.click(triggers[1]);
+    //   // Should have exactly 1 share button (from first dial only)
+    //   let shareButtons = screen.getAllByRole("button", { name: /share/i });
+    //   expect(shareButtons.length).toBe(1);
+
+    //   // Now open second speed dial
+    //   await user.click(trigger2);
     //   await act(() => vi.advanceTimersByTime(300));
 
-    //   // Both should have share buttons (3 buttons each = 6 total, including 2 share buttons)
-    //   const shareButtons = screen.getAllByRole("button", { name: /share/i });
-    //   expect(shareButtons.length).toBeGreaterThanOrEqual(2);
+    //   // Now should have 2 share buttons (one from each dial)
+    //   shareButtons = screen.getAllByRole("button", { name: /share/i });
+    //   expect(shareButtons.length).toBe(2);
     // });
   });
 });
