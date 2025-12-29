@@ -130,6 +130,7 @@
     bind:open
     transition={currentTransition.transition}
     placement={currentPlacement.placement as DrawerProps["placement"]}
+    dismissable={false}
     width={currentPlacement.width as DrawerProps["width"]}
     transitionParams={currentPlacement.placement === "left" ? currentTransition.params : currentPlacement.params}
     outsideclose={outsideclickStatus}
