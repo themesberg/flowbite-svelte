@@ -27,6 +27,7 @@
     "test:unit": "vitest",
     "test:unit:run": "vitest run",
     "test:unit-t": "vitest run -t",
+    "test:all": "pnpm format && pnpm lint && pnpm check && pnpm test:e2e && pnpm test:unit:run",
     "gen:docspropvalue": "svelte-lib-helpers docspropvalue themesberg/flowbite-svelte",
     "gen:component-data-prop-value": "svelte-lib-helpers component-data-prop-value themesberg/flowbite-svelte",
     "copy:packagejson": "svelte-lib-helpers package",
