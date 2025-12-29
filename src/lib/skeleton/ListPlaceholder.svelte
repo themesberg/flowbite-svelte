@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { listPlaceholder } from "./theme";
   import type { ListPlaceholderProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { itemNumber = 5, size = "md", rounded, class: className, classes, ...restProps }: ListPlaceholderProps = $props();
 

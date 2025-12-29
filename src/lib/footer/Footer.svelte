@@ -2,7 +2,7 @@
   import { footer } from "./theme";
   import clsx from "clsx";
   import type { FooterProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, footerType = "default", class: className, ...restProps }: FooterProps = $props();
 

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getSidebarContext, getActiveUrlContext } from "$lib/context";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { sidebarItem } from "./theme";
   import type { SidebarItemProps } from "$lib/types";
 

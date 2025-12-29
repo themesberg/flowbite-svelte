@@ -1,5 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Classes } from "$lib/theme/themeUtils";
+import type { Classes } from "$lib/theme-provider/themeUtils";
 import { dialog } from "$lib/dialog/theme";
 
 export type DrawerVariants = VariantProps<typeof drawer> & Classes<typeof drawer> & Classes<typeof dialog>;
@@ -70,7 +70,7 @@ export const drawerhead = tv({
   slots: {
     base: "flex items-center justify-between",
     button:
-      "ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white",
+      "ms-auto inline-flex h-8 w-8 items-center justify-center rounded-base bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white",
     svg: "h-4 w-4"
   }
 });

@@ -1,5 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Classes } from "$lib/theme/themeUtils";
+import type { Classes } from "$lib/theme-provider/themeUtils";
 
 // Define breakpoint type
 export type NavbarBreakpoint = "sm" | "md" | "lg" | "xl";

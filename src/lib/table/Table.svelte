@@ -5,7 +5,7 @@
   import TableBody from "./TableBody.svelte";
   import clsx from "clsx";
   import type { TableProps, TableContextType } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, footerSlot, captionSlot, items, striped, hoverable, border = true, shadow, color = "default", class: className, classes, ...restProps }: TableProps = $props();
 

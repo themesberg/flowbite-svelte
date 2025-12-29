@@ -2,7 +2,7 @@
   import { dropdownGroup } from "./theme";
   import clsx from "clsx";
   import type { DropdownGroupProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, ...restProps }: DropdownGroupProps = $props();
 

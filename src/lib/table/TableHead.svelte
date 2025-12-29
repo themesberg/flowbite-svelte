@@ -4,7 +4,7 @@
   import { tableHead } from "./theme";
   import type { TableHeadProps, HeadItemType } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, headerSlot, color, striped, border, class: className, headItems, defaultRow = true, ...restProps }: TableHeadProps = $props();
 

@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { img } from "./theme";
   import type { ImgProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, size, effect: imgEffect, align, caption, class: className, classes, href, ...restProps }: ImgProps = $props();
 

@@ -2,7 +2,7 @@
   import { pagination } from "./theme";
   import PaginationItem from "./PaginationItem.svelte";
   import type { PaginationProps, PaginationContextType } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { setPaginationContext } from "$lib/context";
   import clsx from "clsx";
 

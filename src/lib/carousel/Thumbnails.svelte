@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { ThumbnailsProps } from "$lib";
   import Thumbnail from "./Thumbnail.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { thumbnails } from "./theme";
 

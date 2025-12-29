@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { CardProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { card } from "./theme";
 

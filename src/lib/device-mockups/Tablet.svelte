@@ -1,7 +1,7 @@
 <script lang="ts">
   import { tablet } from "./theme";
   import type { TabletProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
 
   let { children, class: className, classes, ...restProps }: TabletProps = $props();

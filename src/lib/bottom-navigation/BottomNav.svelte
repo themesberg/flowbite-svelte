@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { BottomNavContextType, BottomNavProps } from "$lib/types";
   import { cn } from "$lib/utils";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { setBottomNavContext } from "$lib/context";
   import { bottomNav } from "./theme";

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ThemeSelector from "../../utils/ThemeSelector.svelte";
+  import { ThemeSelector } from "$lib";
   const fgBrand = ["text-fg-brand", "text-fg-brand-subtle", "text-fg-brand-strong"];
   const shikiFgBrand = ["text-shiki-fg-brand", "text-shiki-fg-brand-subtle"];
   const fontSizeVariables = ["text-2xs"];

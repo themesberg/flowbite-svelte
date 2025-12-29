@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { navbarContainer } from "./theme";
   import type { NavContainerProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, fluid, class: className, ...restProps }: NavContainerProps = $props();
 

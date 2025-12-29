@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { paragraph } from "./theme";
   import type { ParagraphProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let {
     children,

@@ -3,7 +3,7 @@
   import type { TableSearchProps, TableContextType } from "$lib/types";
   import clsx from "clsx";
   import { tableSearch } from "./theme";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let {
     children,

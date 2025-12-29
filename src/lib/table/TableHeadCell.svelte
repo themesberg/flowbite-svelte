@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { tableHeadCell } from "./theme";
   import type { TableHeadCellProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, ...restProps }: TableHeadCellProps = $props();
 

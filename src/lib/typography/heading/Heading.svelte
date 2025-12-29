@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { heading } from "./theme";
   import type { HeadingProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, tag = "h1", class: className, ...restProps }: HeadingProps = $props();
 

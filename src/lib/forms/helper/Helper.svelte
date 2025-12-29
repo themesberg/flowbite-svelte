@@ -2,7 +2,7 @@
   import { helper } from "./theme";
   import type { HelperProps } from "$lib";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, color = "brand", ...restProps }: HelperProps = $props();
 

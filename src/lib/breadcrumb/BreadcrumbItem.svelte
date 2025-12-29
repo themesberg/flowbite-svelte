@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { BreadcrumbItemProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { breadcrumbItem } from "./theme";
 

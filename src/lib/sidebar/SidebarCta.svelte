@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { sidebarCta } from "./theme";
   import type { SidebarCtaProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, icon, label, class: className, classes, ...restProps }: SidebarCtaProps = $props();
 

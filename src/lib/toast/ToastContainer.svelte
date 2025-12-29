@@ -2,7 +2,7 @@
   import type { ToastContainerProps } from "$lib/types";
   import clsx from "clsx";
   import { toastContainer } from "./theme";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, position = "top-right", class: className, ...restProps }: ToastContainerProps = $props();
 

@@ -4,7 +4,7 @@
   import type { ClipboardProps } from "$lib";
   import { clipboard } from "./theme";
   import type { MouseEventHandler } from "svelte/elements";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, embedded = false, value = $bindable(""), success = $bindable(false), onclick, class: className = "", ...restProps }: ClipboardProps = $props();
 

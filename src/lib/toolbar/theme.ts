@@ -1,5 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Classes } from "$lib/theme/themeUtils";
+import type { Classes } from "$lib/theme-provider/themeUtils";
 
 // Variants
 export type ToolbarVariants = VariantProps<typeof toolbar> & Classes<typeof toolbar>;
@@ -14,7 +14,7 @@ export const toolbar = tv({
     embedded: {
       true: {},
       false: {
-        base: "py-2 px-3 rounded-lg dark:border"
+        base: "py-2 px-3 rounded-base dark:border"
       }
     },
     color: {

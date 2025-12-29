@@ -2,10 +2,11 @@
   import type { ModalProps } from "$lib";
   import Dialog from "$lib/dialog/Dialog.svelte";
   import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
+  import { prefersReducedMotion } from "svelte/motion";
   import { modal as modalStyle } from "./theme";
 
   let {
@@ -31,7 +32,12 @@
   const theme = $derived(getTheme("modal"));
 
   const paramsDefault = { duration: 100, easing: sineIn };
-  const paramsOptions = $derived(transitionParams ?? paramsDefault);
+
+  // Check if running in browser to avoid SSR issues
+  const isBrowser = typeof window !== "undefined";
+
+  // Respect reduced motion preference by setting duration to 0
+  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { ...(transitionParams ?? paramsDefault), duration: 0 } : (transitionParams ?? paramsDefault));
 
   const { base, header: headerCls, footer: footerCls, body } = $derived(modalStyle({ placement, size }));
 </script>
@@ -40,7 +46,7 @@
   bind:open
   {transition}
   dismissable={dismissable && !title && !permanent}
-  transitionParams={paramsOptions}
+  transitionParams={effectiveParams}
   {classes}
   {permanent}
   {...restProps}

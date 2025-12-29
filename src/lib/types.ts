@@ -61,7 +61,7 @@ import type {
 } from "$lib/skeleton/theme";
 import type { SpeedDialVariants, SpeedDialButtonVariants } from "$lib/speed-dial/theme";
 import type { SpinnerVariants } from "$lib/spinner/theme";
-import type { StepIndicatorVariants } from "$lib/step-indicator/theme";
+import type { StepIndicatorVariants } from "$lib/extend/step-indicator/theme";
 import type { StepperVariants, ProgressStepperVariants, DetailedStepperVariants, VerticalStepperVariants, BreadcrumbStepperVariants, TimelineStepperVariants } from "$lib/stepper/theme";
 import type { PaginationItemVariants, PaginationVariants } from "$lib/pagination/theme";
 import type { ProgressbarVariants, ProgressradialVariants } from "$lib/progress/theme";
@@ -111,13 +111,13 @@ import type { AndroidVariants, DefaultMockupVariants, DesktopVariants, IosVarian
 import type { ApexOptions } from "apexcharts";
 
 // extend
-import type { ButtonToggleVariants } from "$lib/forms/button-toggle/theme";
-import type { TagsVariants } from "$lib/forms/tags/theme";
-import type { VirtualListVariants } from "$lib/virtuallist/theme";
-import type { KanbanBoardVariants, KanbanCardVariants } from "$lib/kanban/theme";
-import type { TourVariants } from "$lib/tour/theme";
-import type { CommandPaletteVariants } from "$lib/command-palette/theme";
-import type { ScrollSpyVariants } from "$lib/scroll-spy/theme";
+import type { ButtonToggleVariants } from "$lib/extend/button-toggle/theme";
+import type { TagsVariants } from "$lib/extend/tags/theme";
+import type { VirtualListVariants } from "$lib/extend/virtuallist/theme";
+import type { KanbanBoardVariants, KanbanCardVariants } from "$lib/extend/kanban/theme";
+import type { TourVariants } from "$lib/extend/tour/theme";
+import type { CommandPaletteVariants } from "$lib/extend/command-palette/theme";
+import type { ScrollSpyVariants } from "$lib/extend/scroll-spy/theme";
 
 // utils
 import type { CloseButtonVariants } from "$lib/utils/theme";
@@ -202,6 +202,7 @@ export interface AccordionProps extends AccordionVariants, Omit<HTMLAttributes<H
   activeClass?: ClassValue;
   inactiveClass?: ClassValue;
   transitionType?: TransitionFunc | "none";
+  respectReducedMotion?: boolean;
   classes?: Partial<{
     button?: ClassValue;
     contentWrapper?: ClassValue;
@@ -345,6 +346,7 @@ export interface GradientButtonProps extends GradientButtonVariants, HTMLButtonO
 export interface AccordionContextType {
   flush?: boolean;
   transitionType?: TransitionFunc | "none";
+  respectReducedMotion?: boolean;
   classes?: Partial<{
     button?: ClassValue;
     contentWrapper?: ClassValue;
@@ -1730,7 +1732,7 @@ export interface TabsContextType {
 //  [key: string]: ClassValue | ThemeConfig;
 //}
 
-export type { ThemeConfig } from "$lib/theme";
+export type { ThemeConfig } from "$lib/theme-provider";
 
 // timeline
 export interface ActivityType {
@@ -2156,7 +2158,7 @@ export interface ScrollSpyProps extends ScrollSpyVariants, HTMLAttributes<HTMLEl
   onNavigate?: (itemId: string) => void;
 }
 
-import type { VirtualMasonryVariants } from "$lib/virtual-masonry/theme";
+import type { VirtualMasonryVariants } from "$lib/extend/virtual-masonry/theme";
 // VirtualMasonry
 export interface VirtualMasonryProps<T = unknown> extends VirtualMasonryVariants, Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   children: Snippet<[item: T, index: number]>;
@@ -2173,7 +2175,7 @@ export interface VirtualMasonryProps<T = unknown> extends VirtualMasonryVariants
 }
 
 // clipboard-manager
-import type { ClipboardManagerVariants } from "$lib/clipboard-manager/theme";
+import type { ClipboardManagerVariants } from "$lib/extend/clipboard-manager/theme";
 
 export interface ClipboardItem {
   id: number;

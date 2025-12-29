@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import type { SelectProps } from "$lib";
   import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
   import { getButtonGroupContext } from "$lib/context";
 

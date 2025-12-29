@@ -6,7 +6,7 @@
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { input } from "./theme";
   import { clampSize } from "./index";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
   let {

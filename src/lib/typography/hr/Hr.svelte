@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { hr } from "./theme";
   import type { HrProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, classes, divProps = {}, hrProps = {} }: HrProps = $props();
 

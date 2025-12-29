@@ -3,7 +3,7 @@
   import Star from "./Star.svelte";
   import { rating as ratingVariants } from "./theme";
   import type { RatingProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, text, class: className, classes, size = 24, total = 5, rating = 4, icon: Icon = Star, count = false, ...restProps }: RatingProps = $props();
 

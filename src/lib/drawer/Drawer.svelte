@@ -1,9 +1,10 @@
 <script lang="ts">
   import type { DrawerProps } from "$lib";
   import Dialog from "$lib/dialog/Dialog.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
+  import { prefersReducedMotion } from "svelte/motion";
   import { fly } from "svelte/transition";
   import { drawer } from "./theme";
   import { setDrawerContext } from "$lib/context";
@@ -45,7 +46,11 @@
   let x = $state(),
     y = $state();
 
-  let transition_params = $derived({ x, y, duration: 300, easing: sineIn, opacity: 1, ...transitionParams });
+  const isBrowser = typeof window !== "undefined";
+
+  let transition_params = $derived(
+    isBrowser && prefersReducedMotion.current ? { x, y, easing: sineIn, opacity: 1, ...transitionParams, duration: 0 } : { x, y, duration: 300, easing: sineIn, opacity: 1, ...transitionParams }
+  );
 
   function init(node: HTMLDialogElement) {
     // set initial offset, later it will be switched on/off by onintrostart

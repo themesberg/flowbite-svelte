@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import type { DrawerHandleProps } from "$lib";
   import clsx from "clsx";
   import { drawerhandle } from "./theme";

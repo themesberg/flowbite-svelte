@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import type { MegaMenuProps } from "$lib";
   import Popper from "$lib/utils/Popper.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, extra, items = [], full, isOpen = $bindable(false), class: className, classes, ...restProps }: MegaMenuProps = $props();
 

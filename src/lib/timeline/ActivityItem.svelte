@@ -2,7 +2,7 @@
   import { activityItem } from "./theme";
   import type { ActivityItemProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { activities, class: className, classes, ...restProps }: ActivityItemProps = $props();
 

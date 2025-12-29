@@ -1,7 +1,7 @@
 <script lang="ts">
   import { ios } from "./theme";
   import type { IosProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
 
   let { children, class: className, classes, ...restProps }: IosProps = $props();

@@ -1,13 +1,13 @@
 <script lang="ts">
   import type { AccordionContextType, AccordionProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { setAccordionContext } from "$lib/context";
   import { accordion } from "./theme";
   import { createSingleSelectionContext } from "$lib/utils/singleselection.svelte";
   import { untrack } from "svelte";
 
-  let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, classes, ...restProps }: AccordionProps = $props();
+  let { children, flush, activeClass, inactiveClass, multiple = false, class: className, transitionType, respectReducedMotion = true, classes, ...restProps }: AccordionProps = $props();
 
   const theme = $derived(getTheme("accordion"));
 
@@ -18,6 +18,9 @@
     },
     get transitionType() {
       return transitionType;
+    },
+    get respectReducedMotion() {
+      return respectReducedMotion;
     },
     get classes() {
       return classes;
@@ -51,6 +54,7 @@
 @prop multiple = false
 @prop class: className
 @prop transitionType
+@prop respectReducedMotion = true
 @prop classes
 @prop ...restProps
 -->

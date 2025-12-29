@@ -2,7 +2,7 @@
   import type { LaptopProps } from "$lib";
   import clsx from "clsx";
   import { laptop } from "./theme";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, classes, ...restProps }: LaptopProps = $props();
 

@@ -1,6 +1,6 @@
 // Dial
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Classes } from "$lib/theme/themeUtils";
+import type { Classes } from "$lib/theme-provider/themeUtils";
 
 export type SpeedDialVariants = VariantProps<typeof speedDial> & Classes<typeof speedDial>;
 export type SpeedDialButtonVariants = VariantProps<typeof speedDialButton> & Classes<typeof speedDialButton>;

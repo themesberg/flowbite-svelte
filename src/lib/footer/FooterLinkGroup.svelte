@@ -2,7 +2,7 @@
   import { footerLinkGroup } from "./theme";
   import clsx from "clsx";
   import type { FooterLinkGroupProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { class: className, children, ...restProps }: FooterLinkGroupProps = $props();
 

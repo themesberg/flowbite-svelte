@@ -2,7 +2,7 @@
   import { footerBrand } from "./theme";
   import clsx from "clsx";
   import type { FooterBrandProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, classes, href, src, alt, name, ...restProps }: FooterBrandProps = $props();
 

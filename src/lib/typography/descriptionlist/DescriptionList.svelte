@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { descriptionList } from "./theme";
   import type { DescriptionListProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, tag, class: className, ...restProps }: DescriptionListProps = $props();
 

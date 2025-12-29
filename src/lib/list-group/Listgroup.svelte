@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import type { ListgroupProps } from "$lib";
   import ListgroupItem from "./ListgroupItem.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { setListGroupContext } from "$lib/context";
 
   let { children, items, active, onclick, horizontal, rounded, border, class: className, classes, ...restProps }: ListgroupProps = $props();

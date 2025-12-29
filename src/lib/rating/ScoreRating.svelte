@@ -2,7 +2,7 @@
   import { scoreRating } from "./theme";
   import type { ScoreRatingProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { ratings, ratings2, headerLabel, classes }: ScoreRatingProps = $props();
 

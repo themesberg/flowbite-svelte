@@ -2,7 +2,7 @@
   import { darkmode } from "./theme";
   import clsx from "clsx";
   import type { DarkmodeProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   // const THEME_PREFERENCE_KEY = 'color-theme';
   let { class: className, lightIcon, darkIcon, size = "sm", ariaLabel = "Dark mode", ...restProps }: DarkmodeProps = $props();

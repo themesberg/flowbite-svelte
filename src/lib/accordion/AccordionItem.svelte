@@ -1,10 +1,11 @@
 <script lang="ts">
   import type { AccordionItemProps, ParamsType } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { useSingleSelection } from "$lib/utils/singleselection.svelte";
   import clsx from "clsx";
   import { getAccordionContext } from "$lib/context";
   import { slide } from "svelte/transition";
+  import { prefersReducedMotion } from "svelte/motion";
   import { accordionItem } from "./theme";
 
   let { children, header, arrowup, arrowdown, open = $bindable(false), transitionType = slide, transitionParams, class: className, classes }: AccordionItemProps = $props();
@@ -24,6 +25,14 @@
   const ctxTransitionType = $derived(ctx?.transitionType ?? transitionType);
   // Check if transitionType is explicitly set to undefined in props
   const useTransition = $derived(transitionType === "none" ? false : ctxTransitionType === "none" ? false : true);
+
+  // Get respectReducedMotion from context (defaults to true)
+  const ctxRespectReducedMotion = $derived(ctx?.respectReducedMotion ?? true);
+
+  // Merge transition params with reduced motion handling
+  // Only check prefersReducedMotion in the browser to avoid SSR issues
+  const isBrowser = typeof window !== "undefined";
+  const effectiveTransitionParams = $derived(isBrowser && ctxRespectReducedMotion && prefersReducedMotion.current ? { ...transitionParams, duration: 0 } : transitionParams);
 
   // Theme context
   const theme = $derived(getTheme("accordionItem"));
@@ -73,7 +82,7 @@
 
 {#if useTransition}
   {#if open && transitionType !== "none"}
-    <div class={contentWrapperCls} transition:transitionType={transitionParams as ParamsType}>
+    <div class={contentWrapperCls} transition:transitionType={effectiveTransitionParams as ParamsType}>
       <div class={content({ class: clsx(theme?.content, finalClasses.content) })}>
         {@render children()}
       </div>

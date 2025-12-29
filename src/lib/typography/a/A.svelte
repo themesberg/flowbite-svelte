@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { anchor } from "./theme";
   import type { AnchorProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, color = "primary", asButton = false, onclick, href = "#", class: className, ...restProps }: AnchorProps = $props();
 

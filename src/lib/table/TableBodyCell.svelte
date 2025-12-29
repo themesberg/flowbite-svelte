@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { tableBodyCell } from "./theme";
   import type { TableBodyCellProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, colspan, onclick, ...restProps }: TableBodyCellProps = $props();
 

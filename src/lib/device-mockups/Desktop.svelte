@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { DesktopProps } from "$lib";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { desktop } from "./theme";
 
   let { children, class: className, classes, ...restProps }: DesktopProps = $props();

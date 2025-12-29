@@ -4,7 +4,7 @@
   import { cubicOut } from "svelte/easing";
   import { Tween } from "svelte/motion";
   import { progressbar } from "./theme";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let {
     progress = "45",

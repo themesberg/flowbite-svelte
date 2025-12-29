@@ -2,7 +2,7 @@
   import { kbd } from "./theme";
   import clsx from "clsx";
   import type { KbdProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, ...restProps }: KbdProps = $props();
 

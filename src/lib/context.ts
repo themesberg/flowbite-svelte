@@ -19,7 +19,7 @@ import type {
   SpeedCtxType
 } from "./types";
 import type { SplitPaneContext } from "./types";
-import type { ThemeConfig } from "./theme";
+import type { ThemeConfig } from "./theme-provider";
 
 /**
  * Helper function to create a context with safe getter that returns undefined instead of throwing

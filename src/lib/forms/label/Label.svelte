@@ -2,7 +2,7 @@
   import { label } from "./theme";
   import clsx from "clsx";
   import type { LabelProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, color = "gray", show = true, class: className, ...restProps }: LabelProps = $props();
 

@@ -2,7 +2,7 @@
   import { controlButton } from "./theme";
   import clsx from "clsx";
   import type { ControlButtonProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, forward, name, class: className, classes, ...restProps }: ControlButtonProps = $props();
 

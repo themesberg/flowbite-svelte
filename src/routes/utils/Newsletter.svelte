@@ -56,7 +56,7 @@
   }
 </script>
 
-<aside class="mb-8 flex flex-col items-start justify-center gap-4 rounded-lg border bg-white p-4 shadow-lg sm:p-8 dark:border-gray-700 dark:bg-gray-800">
+<aside class="rounded-base mb-8 flex flex-col items-start justify-center gap-4 border bg-white p-4 shadow-lg sm:p-8 dark:border-gray-700 dark:bg-gray-800">
   <div class="flex flex-col items-center gap-5">
     <div class="flex flex-col items-start gap-4">
       <h4 class="text-xl leading-none font-bold tracking-tight text-gray-900 sm:text-2xl dark:text-white">Get more updates</h4>

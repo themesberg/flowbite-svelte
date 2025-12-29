@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ThemeSelector from "../../utils/ThemeSelector.svelte";
+  import { ThemeSelector } from "$lib";
 
   const colors = [
     "brand",

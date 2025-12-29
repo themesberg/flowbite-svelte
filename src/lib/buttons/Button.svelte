@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { Spinner } from "$lib";
   import type { ButtonProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { button } from "./theme";
   import { getButtonGroupContext } from "$lib/context";
 

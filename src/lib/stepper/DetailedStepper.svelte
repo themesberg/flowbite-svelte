@@ -3,7 +3,7 @@
   import { detailedStepper } from "./theme";
   import type { DetailedStepperProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { steps = [], contentClass, class: className, classes, current = $bindable(0), clickable = true, showCheckmarkForCompleted = true, onStepClick, ...restProps }: DetailedStepperProps = $props();
 

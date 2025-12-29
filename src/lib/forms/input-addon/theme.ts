@@ -1,5 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Classes } from "$lib/theme/themeUtils";
+import type { Classes } from "$lib/theme-provider/themeUtils";
 
 export type InputAddonVariants = VariantProps<typeof inputAddon> & Classes<typeof inputAddon>;
 

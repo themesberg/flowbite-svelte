@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import type { FileuploadProps } from "$lib";
   import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
   let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, classes, clearableColor = "none", clearableOnClick, ...restProps }: FileuploadProps = $props();

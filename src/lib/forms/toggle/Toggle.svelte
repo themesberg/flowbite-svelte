@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import type { ToggleProps } from "$lib";
   import Label from "$lib/forms/label/Label.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, size = "default", value, checked = $bindable(), disabled, color = "primary", class: className, classes, offLabel, ...restProps }: ToggleProps = $props();
 

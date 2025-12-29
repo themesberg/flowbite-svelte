@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import type { NavLiProps } from "$lib/types";
   import clsx from "clsx";
   import { navbarLi } from "./theme";

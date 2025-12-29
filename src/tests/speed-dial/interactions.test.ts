@@ -4,7 +4,6 @@ import userEvent from "@testing-library/user-event";
 
 import BasicSpeedDialTest from "./basic-speed-dial.test.svelte";
 import ClickTriggerTest from "./click-trigger.test.svelte";
-import ClickTriggerParameterized from "./click-trigger-parameterized.test.svelte";
 
 beforeEach(() => {
   vi.useFakeTimers();

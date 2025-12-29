@@ -1,5 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Classes } from "$lib/theme/themeUtils";
+import type { Classes } from "$lib/theme-provider/themeUtils";
 
 export type ListgroupVariants = VariantProps<typeof listGroup> & Classes<typeof listGroup>;
 export type ListgroupItemVariants = VariantProps<typeof listGroupItem> & Classes<typeof listGroupItem>;

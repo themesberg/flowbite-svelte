@@ -1,13 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
+  import { prefersReducedMotion } from "svelte/motion";
   import clsx from "clsx";
   import type { DatepickerProps } from "$lib";
   import Button from "$lib/buttons/Button.svelte";
   import ToolbarButton from "$lib/toolbar/ToolbarButton.svelte";
   import { datepicker } from "./theme";
   import { parse, isValid, addDays, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, isWithinInterval } from "date-fns";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let {
     value = $bindable(),
@@ -452,7 +453,14 @@
   {/if}
 
   {#if isOpen || inline}
-    <div bind:this={calendarRef} id="datepicker-dropdown" class={base({ inline, class: clsx(theme?.base, className) })} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
+    <div
+      bind:this={calendarRef}
+      id="datepicker-dropdown"
+      class={base({ inline, class: clsx(theme?.base, className) })}
+      transition:fade={{ duration: typeof window !== "undefined" && prefersReducedMotion.current ? 0 : 100 }}
+      role="dialog"
+      aria-label="Calendar"
+    >
       {#if title}
         <h2 class={titleVariant({ class: clsx(theme?.titleVariant, styling?.titleVariant) })}>{title}</h2>
       {/if}

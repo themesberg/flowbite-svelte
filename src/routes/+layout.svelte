@@ -3,7 +3,7 @@
   import FathomAnalytics from "./utils/FathomAnalytics.svelte";
   import CarbonAds from "./utils/CarbonAds.svelte";
   import { onMount } from "svelte";
-  import { loadTheme, getCurrentTheme } from "./utils/themeStore.svelte";
+  import { loadTheme, getCurrentTheme } from "$lib";
 
   let { children, data } = $props();
 

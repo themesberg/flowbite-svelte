@@ -5,7 +5,7 @@
   import { speedDialButton } from "./theme";
   import type { SpeedDialButtonProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { getSpeedDialContext } from "$lib/context";
 
   const context = getSpeedDialContext();

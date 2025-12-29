@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { advancedRating } from "./theme";
   import type { AdvancedRatingProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { rating, globalText, ratings, class: className, classes, unit }: AdvancedRatingProps = $props();
 

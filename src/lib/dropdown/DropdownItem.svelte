@@ -2,7 +2,7 @@
   import { getDropdownContext } from "$lib/context";
   import { dropdownItem } from "./theme";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import type { DropdownItemProps } from "$lib/types";
 
   let { children, classes, class: className, href, onclick, ...restProps }: DropdownItemProps = $props();

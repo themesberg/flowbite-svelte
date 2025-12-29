@@ -5,7 +5,7 @@
   import { timelineStepper } from "./theme";
   import type { TimelineStepperProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { steps = [], class: className, classes, contentClass, current = $bindable(1), clickable = true, showCheckmarkForCompleted = true, onStepClick, ...restProps }: TimelineStepperProps = $props();
 
