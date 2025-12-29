@@ -4,6 +4,7 @@
   import { getTheme } from "$lib/theme/themeUtils";
   import clsx from "clsx";
   import { fade } from "svelte/transition";
+  import { prefersReducedMotion } from "svelte/motion";
   import { badge } from "./theme";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
@@ -33,6 +34,12 @@
 
   const { base, linkClass } = $derived(badge({ color, size: large ? "large" : "small", rounded, border, href: !!href }));
 
+  // Check if running in browser to avoid SSR issues
+  const isBrowser = typeof window !== 'undefined';
+  
+  // Respect reduced motion preference by setting duration to 0
+  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { duration: 0, ...params } : params);
+
   let ref: HTMLDivElement | undefined = $state(undefined);
 
   const close = () => {
@@ -45,7 +52,7 @@
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} bind:this={ref} transition:transition={params as ParamsType} class={base({ class: clsx(theme?.base, className) })}>
+  <div {...restProps} bind:this={ref} transition:transition={effectiveParams as ParamsType} class={base({ class: clsx(theme?.base, className) })}>
     {#if href}
       <a {href} {target} class={linkClass({ class: clsx(theme?.linkClass, styling?.linkClass) })}>
         {@render children()}

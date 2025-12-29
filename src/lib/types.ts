@@ -202,6 +202,7 @@ export interface AccordionProps extends AccordionVariants, Omit<HTMLAttributes<H
   activeClass?: ClassValue;
   inactiveClass?: ClassValue;
   transitionType?: TransitionFunc | "none";
+  respectReducedMotion?: boolean;
   classes?: Partial<{
     button?: ClassValue;
     contentWrapper?: ClassValue;
@@ -345,6 +346,7 @@ export interface GradientButtonProps extends GradientButtonVariants, HTMLButtonO
 export interface AccordionContextType {
   flush?: boolean;
   transitionType?: TransitionFunc | "none";
+  respectReducedMotion?: boolean;
   classes?: Partial<{
     button?: ClassValue;
     contentWrapper?: ClassValue;

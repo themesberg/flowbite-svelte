@@ -3,6 +3,7 @@
   import type { ParamsType, SidebarDropdownWrapperProps } from "$lib/types";
   import clsx from "clsx";
   import { getSidebarContext } from "$lib/context";
+  import { prefersReducedMotion } from "svelte/motion";
   import { writable } from "svelte/store";
   import { slide } from "svelte/transition";
   import { sidebarDropdownWrapper } from "./theme";
@@ -14,6 +15,14 @@
   const theme = $derived(getTheme("sidebarDropdownWrapper"));
   const { base, btn, span, svg, ul } = sidebarDropdownWrapper();
   const isControlled = $derived(isOpen !== undefined);
+
+  const isBrowser = typeof window !== 'undefined';
+
+  const effectiveParams = $derived(
+    isBrowser && prefersReducedMotion.current
+      ? { ...(params as ParamsType), duration: 0 }
+      : (params as ParamsType)
+  );
 
   let ctx = getSidebarContext() || { isSingle: false };
 
@@ -64,7 +73,7 @@
     {/if}
   </button>
   {#if openState}
-    <ul class={ul({ class: clsx(theme?.ul, styling?.ul) })} transition:transition={params as ParamsType}>
+    <ul class={ul({ class: clsx(theme?.ul, styling?.ul) })} transition:transition={effectiveParams}>
       {@render children()}
     </ul>
   {/if}

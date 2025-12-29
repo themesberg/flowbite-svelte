@@ -5,6 +5,7 @@
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
+  import { prefersReducedMotion } from "svelte/motion";
   import Arrow from "./Arrow.svelte";
   import { createMutualDebounce } from "./debounce";
 
@@ -71,7 +72,14 @@
   });
 
   const paramsDefault = { duration: 100, easing: sineIn };
-  const paramsOptions = $derived(transitionParams ?? paramsDefault);
+  
+  // Check if running in browser to avoid SSR issues
+  const isBrowser = typeof window !== 'undefined';
+  
+  // Respect reduced motion preference by setting duration to 0
+  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { duration: 0, ...(transitionParams ?? paramsDefault) } : (transitionParams ?? paramsDefault));
+  
+  const paramsOptions = $derived(effectiveParams);
 
   const px = (n: number | undefined) => (n ? `${n}px` : "");
 

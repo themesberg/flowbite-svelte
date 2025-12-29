@@ -1,9 +1,9 @@
 // Import CSS files as URLs - Vite will process these and give us the actual URLs
-import defaultCss from './themes/default-runtime.css?url';
-import minimalCss from './themes/minimal-runtime.css?url';
-import enterpriseCss from './themes/enterprise-runtime.css?url';
-import playfulCss from './themes/playful-runtime.css?url';
-import monoCss from './themes/mono-runtime.css?url';
+import defaultCss from "./themes/default-runtime.css?url";
+import minimalCss from "./themes/minimal-runtime.css?url";
+import enterpriseCss from "./themes/enterprise-runtime.css?url";
+import playfulCss from "./themes/playful-runtime.css?url";
+import monoCss from "./themes/mono-runtime.css?url";
 
 export type ThemeId = "default" | "minimal" | "enterprise" | "playful" | "mono";
 

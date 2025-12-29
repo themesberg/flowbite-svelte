@@ -176,7 +176,7 @@ describe("ThemeSelector Component", () => {
       }
 
       // Check localStorage
-       expect(localStorageMock.getItem("flowbite-svelte-theme")).toBe("playful");
+      expect(localStorageMock.getItem("flowbite-svelte-theme")).toBe("playful");
     });
   });
 

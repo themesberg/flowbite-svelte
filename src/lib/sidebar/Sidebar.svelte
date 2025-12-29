@@ -5,6 +5,7 @@
   import clsx from "clsx";
   import { setSidebarContext, setActiveUrlContext } from "$lib/context";
   import { sineIn } from "svelte/easing";
+  import { prefersReducedMotion } from "svelte/motion";
   import { writable } from "svelte/store";
   import { fly } from "svelte/transition";
   import { sidebar } from "./theme";
@@ -76,7 +77,13 @@
     }
   };
 
-  let transitionParams = $derived(params ? params : { x: -320, duration: 200, easing: sineIn });
+  const isBrowser = typeof window !== 'undefined';
+
+  let transitionParams = $derived(
+    isBrowser && prefersReducedMotion.current
+      ? { ...(params ? params : { x: -320, duration: 200, easing: sineIn }), duration: 0 }
+      : params ? params : { x: -320, duration: 200, easing: sineIn }
+  );
 
   setSidebarContext(sidebarCtx);
 

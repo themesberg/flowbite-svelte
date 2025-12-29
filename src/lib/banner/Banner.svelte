@@ -1,5 +1,6 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
+  import { prefersReducedMotion } from "svelte/motion";
   import { banner } from "./theme";
   import clsx from "clsx";
   import { type ParamsType, type BannerProps } from "$lib";
@@ -30,6 +31,12 @@
 
   const { base, insideDiv, dismissable: dismissableClass } = $derived(banner({ type, color }));
 
+  // Check if running in browser to avoid SSR issues
+  const isBrowser = typeof window !== 'undefined';
+  
+  // Respect reduced motion preference by setting duration to 0
+  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { duration: 0, ...params } : params);
+
   let ref: HTMLDivElement | undefined = $state(undefined);
   function close(event: MouseEvent) {
     if (ref?.dispatchEvent(new Event("close", { bubbles: true, cancelable: true }))) {
@@ -41,7 +48,7 @@
 </script>
 
 {#if open}
-  <div tabindex="-1" bind:this={ref} class={base({ class: clsx(theme?.base, className) })} {...restProps} transition:transition={params as ParamsType}>
+  <div tabindex="-1" bind:this={ref} class={base({ class: clsx(theme?.base, className) })} {...restProps} transition:transition={effectiveParams as ParamsType}>
     <div class={insideDiv({ class: clsx(theme?.insideDiv, styling?.insideDiv) })}>
       {@render children?.()}
     </div>

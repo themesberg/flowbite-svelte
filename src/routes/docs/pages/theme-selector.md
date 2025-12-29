@@ -32,13 +32,13 @@ The component automatically loads the saved theme from localStorage and defaults
 
 ## Built-in Themes
 
-| Theme | Font | Colors | Best For |
-|-------|------|--------|----------|
-| **Default** | Inter | Gray & Blue | General applications |
-| **Minimal** | Open Sans | Stone tones | Content-focused apps |
-| **Enterprise** | STIX Two Text | Zinc & Cyan | Business applications |
-| **Playful** | Shantell Sans | Slate & Pink | Creative applications |
-| **Mono** | Google Sans Code | Neutral & Indigo | Developer tools |
+| Theme          | Font             | Colors           | Best For              |
+| -------------- | ---------------- | ---------------- | --------------------- |
+| **Default**    | Inter            | Gray & Blue      | General applications  |
+| **Minimal**    | Open Sans        | Stone tones      | Content-focused apps  |
+| **Enterprise** | STIX Two Text    | Zinc & Cyan      | Business applications |
+| **Playful**    | Shantell Sans    | Slate & Pink     | Creative applications |
+| **Mono**       | Google Sans Code | Neutral & Indigo | Developer tools       |
 
 ## Programmatic Control
 
@@ -101,7 +101,7 @@ Control themes programmatically using the exported functions:
   <Heading tag="h3">Appearance</Heading>
   <div class="space-y-4">
     <div>
-      <label class="block mb-2">Theme</label>
+      <p class="block mb-2">Theme</p>
       <ThemeSelector />
     </div>
   </div>

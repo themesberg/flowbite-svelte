@@ -64,7 +64,8 @@ beforeEach(() => {
   // Reset theme to default to prevent state leaking (after mocks are set up)
   loadTheme("default");
 
-  // Clear mockLinks after initial theme load so tests start fresh
+  // Clear mockLinks after initial theme load so each test starts with a clean
+  // slate and doesn't count the default theme's link elements in assertions
   mockLinks.length = 0;
 });
 

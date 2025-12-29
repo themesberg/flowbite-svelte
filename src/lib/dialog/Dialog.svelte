@@ -6,6 +6,7 @@
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";
+  import { prefersReducedMotion } from "svelte/motion";
   import { dialog } from "./theme";
 
   let {
@@ -29,7 +30,11 @@
     ...restProps
   }: DialogProps = $props();
 
-  const paramsOptions = $derived(transitionParams ?? { duration: 100, easing: sineIn });
+  // Check if running in browser to avoid SSR issues
+  const isBrowser = typeof window !== 'undefined';
+  
+  // Respect reduced motion preference by setting duration to 0
+  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { duration: 0, ...(transitionParams ?? { duration: 100, easing: sineIn }) } : (transitionParams ?? { duration: 100, easing: sineIn }));
 
   const styling = $derived(classes);
   let { base, form: formCls, close: closeCls } = $derived(dialog());
@@ -160,7 +165,7 @@
     oncancel={_oncancel}
     onclick={_onclick}
     ontoggle={_ontoggle}
-    transition:transition|global={paramsOptions as ParamsType}
+    transition:transition|global={effectiveParams as ParamsType}
     {...restProps}
     class={base({ class: clsx(className) })}
   >

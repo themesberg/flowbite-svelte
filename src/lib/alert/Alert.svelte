@@ -1,5 +1,6 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
+  import { prefersReducedMotion } from "svelte/motion";
   import { alert } from "./theme";
   import clsx from "clsx";
   import { type AlertProps, type ParamsType } from "$lib";
@@ -41,6 +42,12 @@
     })
   );
 
+  // Check if running in browser to avoid SSR issues
+  const isBrowser = typeof window !== 'undefined';
+  
+  // Respect reduced motion preference by setting duration to 0
+  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { duration: 0, ...params } : params);
+
   let ref: HTMLDivElement | undefined = $state(undefined);
 
   function close() {
@@ -53,7 +60,7 @@
 </script>
 
 {#if alertStatus}
-  <div role="alert" bind:this={ref} {...restProps} transition:transition={params as ParamsType} class={divCls}>
+  <div role="alert" bind:this={ref} {...restProps} transition:transition={effectiveParams as ParamsType} class={divCls}>
     {#if icon}
       {@render icon()}
     {/if}

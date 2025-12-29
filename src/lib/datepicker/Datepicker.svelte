@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
+  import { prefersReducedMotion } from "svelte/motion";
   import clsx from "clsx";
   import type { DatepickerProps } from "$lib";
   import Button from "$lib/buttons/Button.svelte";
@@ -452,7 +453,14 @@
   {/if}
 
   {#if isOpen || inline}
-    <div bind:this={calendarRef} id="datepicker-dropdown" class={base({ inline, class: clsx(theme?.base, className) })} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
+    <div
+      bind:this={calendarRef}
+      id="datepicker-dropdown"
+      class={base({ inline, class: clsx(theme?.base, className) })}
+      transition:fade={{ duration: typeof window !== 'undefined' && prefersReducedMotion.current ? 0 : 100 }}
+      role="dialog"
+      aria-label="Calendar"
+    >
       {#if title}
         <h2 class={titleVariant({ class: clsx(theme?.titleVariant, styling?.titleVariant) })}>{title}</h2>
       {/if}
