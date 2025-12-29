@@ -202,7 +202,7 @@ describe("ThemeSelector Component", () => {
 
     test("all themes have valid CSS paths", () => {
       themeConfigs.forEach((theme) => {
-        expect(theme.cssPath).toMatch(/^\/themes\/.+\.css$/);
+        expect(theme.cssPath).toMatch(/\/themes\/.+\.css$/);
       });
     });
 

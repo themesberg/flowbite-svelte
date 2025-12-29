@@ -457,7 +457,7 @@
       bind:this={calendarRef}
       id="datepicker-dropdown"
       class={base({ inline, class: clsx(theme?.base, className) })}
-      transition:fade={{ duration: typeof window !== 'undefined' && prefersReducedMotion.current ? 0 : 100 }}
+      transition:fade={{ duration: typeof window !== "undefined" && prefersReducedMotion.current ? 0 : 100 }}
       role="dialog"
       aria-label="Calendar"
     >

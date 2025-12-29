@@ -14,8 +14,8 @@
   const theme = $derived(getTheme("slide"));
 
   // Check if running in browser to avoid SSR issues
-  const isBrowser = typeof window !== 'undefined';
-  
+  const isBrowser = typeof window !== "undefined";
+
   let transitionSlideIn = $derived({
     x: _state?.forward ? "100%" : "-100%",
     opacity: 1,

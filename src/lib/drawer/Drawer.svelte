@@ -46,12 +46,10 @@
   let x = $state(),
     y = $state();
 
-  const isBrowser = typeof window !== 'undefined';
+  const isBrowser = typeof window !== "undefined";
 
   let transition_params = $derived(
-    isBrowser && prefersReducedMotion.current
-      ? { x, y, easing: sineIn, opacity: 1, ...transitionParams, duration: 0 }
-      : { x, y, duration: 300, easing: sineIn, opacity: 1, ...transitionParams }
+    isBrowser && prefersReducedMotion.current ? { x, y, easing: sineIn, opacity: 1, ...transitionParams, duration: 0 } : { x, y, duration: 300, easing: sineIn, opacity: 1, ...transitionParams }
   );
 
   function init(node: HTMLDialogElement) {

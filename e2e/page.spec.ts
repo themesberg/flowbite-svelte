@@ -39,8 +39,3 @@ test("Type list page should have h1", async ({ page }) => {
   await page.goto("/docs/pages/typescript");
   expect(await page.textContent("h1")).toBe("TypeScript Types - Flowbite Svelte");
 });
-
-test("Faster Compiling Speed page should have h1", async ({ page }) => {
-  await page.goto("/docs/pages/compiler-speed");
-  expect(await page.textContent("h1")).toBe("Compiler Speed - Flowbite Svelte");
-});

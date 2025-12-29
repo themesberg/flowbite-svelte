@@ -31,10 +31,12 @@
   }: DialogProps = $props();
 
   // Check if running in browser to avoid SSR issues
-  const isBrowser = typeof window !== 'undefined';
-  
+  const isBrowser = typeof window !== "undefined";
+
   // Respect reduced motion preference by setting duration to 0
-  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { duration: 0, ...(transitionParams ?? { duration: 100, easing: sineIn }) } : (transitionParams ?? { duration: 100, easing: sineIn }));
+  const effectiveParams = $derived(
+    isBrowser && prefersReducedMotion.current ? { duration: 0, ...(transitionParams ?? { duration: 100, easing: sineIn }) } : (transitionParams ?? { duration: 100, easing: sineIn })
+  );
 
   const styling = $derived(classes);
   let { base, form: formCls, close: closeCls } = $derived(dialog());

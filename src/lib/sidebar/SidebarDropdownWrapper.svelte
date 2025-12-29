@@ -16,13 +16,9 @@
   const { base, btn, span, svg, ul } = sidebarDropdownWrapper();
   const isControlled = $derived(isOpen !== undefined);
 
-  const isBrowser = typeof window !== 'undefined';
+  const isBrowser = typeof window !== "undefined";
 
-  const effectiveParams = $derived(
-    isBrowser && prefersReducedMotion.current
-      ? { ...(params as ParamsType), duration: 0 }
-      : (params as ParamsType)
-  );
+  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { ...(params as ParamsType), duration: 0 } : (params as ParamsType));
 
   let ctx = getSidebarContext() || { isSingle: false };
 

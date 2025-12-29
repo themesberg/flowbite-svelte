@@ -72,13 +72,13 @@
   });
 
   const paramsDefault = { duration: 100, easing: sineIn };
-  
+
   // Check if running in browser to avoid SSR issues
-  const isBrowser = typeof window !== 'undefined';
-  
+  const isBrowser = typeof window !== "undefined";
+
   // Respect reduced motion preference by setting duration to 0
   const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { duration: 0, ...(transitionParams ?? paramsDefault) } : (transitionParams ?? paramsDefault));
-  
+
   const paramsOptions = $derived(effectiveParams);
 
   const px = (n: number | undefined) => (n ? `${n}px` : "");

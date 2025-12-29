@@ -31,7 +31,7 @@
 
   // Merge transition params with reduced motion handling
   // Only check prefersReducedMotion in the browser to avoid SSR issues
-  const isBrowser = typeof window !== 'undefined';
+  const isBrowser = typeof window !== "undefined";
   const effectiveTransitionParams = $derived(isBrowser && ctxRespectReducedMotion && prefersReducedMotion.current ? { duration: 0, ...transitionParams } : transitionParams);
 
   // Theme context

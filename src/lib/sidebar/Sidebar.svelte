@@ -77,12 +77,10 @@
     }
   };
 
-  const isBrowser = typeof window !== 'undefined';
+  const isBrowser = typeof window !== "undefined";
 
   let transitionParams = $derived(
-    isBrowser && prefersReducedMotion.current
-      ? { ...(params ? params : { x: -320, duration: 200, easing: sineIn }), duration: 0 }
-      : params ? params : { x: -320, duration: 200, easing: sineIn }
+    isBrowser && prefersReducedMotion.current ? { ...(params ? params : { x: -320, duration: 200, easing: sineIn }), duration: 0 } : params ? params : { x: -320, duration: 200, easing: sineIn }
   );
 
   setSidebarContext(sidebarCtx);

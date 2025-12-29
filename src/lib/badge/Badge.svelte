@@ -35,8 +35,8 @@
   const { base, linkClass } = $derived(badge({ color, size: large ? "large" : "small", rounded, border, href: !!href }));
 
   // Check if running in browser to avoid SSR issues
-  const isBrowser = typeof window !== 'undefined';
-  
+  const isBrowser = typeof window !== "undefined";
+
   // Respect reduced motion preference by setting duration to 0
   const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { duration: 0, ...params } : params);
 

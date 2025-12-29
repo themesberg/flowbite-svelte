@@ -1,6 +1,6 @@
 import { themeConfigs, type FlowbiteTheme, type ThemeId } from "./themes";
 
-const browser = typeof window !== 'undefined';
+const browser = typeof window !== "undefined";
 const dev = import.meta.env.DEV;
 
 const getInitialTheme = (): string => {
