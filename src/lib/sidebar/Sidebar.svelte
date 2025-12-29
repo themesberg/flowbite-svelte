@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { SidebarContextType, SidebarProps } from "$lib/types";
   import { trapFocus } from "$lib/utils/actions";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { setSidebarContext, setActiveUrlContext } from "$lib/context";
   import { sineIn } from "svelte/easing";

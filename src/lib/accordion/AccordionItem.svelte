@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { AccordionItemProps, ParamsType } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { useSingleSelection } from "$lib/utils/singleselection.svelte";
   import clsx from "clsx";
   import { getAccordionContext } from "$lib/context";
@@ -32,7 +32,7 @@
   // Merge transition params with reduced motion handling
   // Only check prefersReducedMotion in the browser to avoid SSR issues
   const isBrowser = typeof window !== "undefined";
-  const effectiveTransitionParams = $derived(isBrowser && ctxRespectReducedMotion && prefersReducedMotion.current ? { duration: 0, ...transitionParams } : transitionParams);
+  const effectiveTransitionParams = $derived(isBrowser && ctxRespectReducedMotion && prefersReducedMotion.current ? { ...transitionParams, duration: 0 } : transitionParams);
 
   // Theme context
   const theme = $derived(getTheme("accordionItem"));

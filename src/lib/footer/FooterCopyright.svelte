@@ -3,7 +3,7 @@
   import { footerCopyright } from "./theme";
   import clsx from "clsx";
   import type { FooterCopyrightProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { href, by, copyrightMessage = "All Rights Reserved.", year, classes, class: className, ...restProps }: FooterCopyrightProps = $props();
 

@@ -2,7 +2,7 @@
   import { gallery } from "./theme";
   import clsx from "clsx";
   import type { GalleryProps, ImgType } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, figure, items = [], class: className, classes, ...restProps }: GalleryProps = $props();
 

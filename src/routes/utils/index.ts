@@ -83,7 +83,7 @@ export const fetchMarkdownPosts = async () => {
     illustrations: import.meta.glob<Mdsvex>("/src/routes/illustrations/*.md")
   };
 
-  const pageOrder = ["introduction", "quickstart", "colors", "customization", "typescript", "compiler-speed", "how-to-contribute", "license"];
+  const pageOrder = ["introduction", "quickstart", "colors", "customization", "typescript", "license"];
 
   const mcpOrder = ["overview", "local-setup", "remote-setup", "prompts"];
 

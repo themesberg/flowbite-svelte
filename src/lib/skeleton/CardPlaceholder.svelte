@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { cardPlaceholder } from "./theme";
   import type { CardPlaceholderProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { size = "sm", class: className, classes, ...restProps }: CardPlaceholderProps = $props();
 

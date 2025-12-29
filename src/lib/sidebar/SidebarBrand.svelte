@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { sidebarBrand } from "./theme";
   import type { SidebarBrandProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, site, class: className, classes, ...restProps }: SidebarBrandProps = $props();
 

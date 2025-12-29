@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { blockquote } from "./theme";
   import type { BlockquoteProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, border, italic = true, bg, alignment = "left", size = "lg", ...restProps }: BlockquoteProps = $props();
 

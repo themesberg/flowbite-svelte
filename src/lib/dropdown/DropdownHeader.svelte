@@ -2,7 +2,7 @@
   import { dropdownHeader } from "./theme";
   import clsx from "clsx";
   import type { DropdownHeaderProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, ...restProps }: DropdownHeaderProps = $props();
 

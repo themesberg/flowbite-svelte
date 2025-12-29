@@ -3,7 +3,7 @@
   import type { RadioButtonProps } from "$lib";
   import Button from "$lib/buttons/Button.svelte";
   import { radioButton } from "./theme";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, group = $bindable<T>(), value = $bindable<T>(), inline, pill, outline, size, color, shadow, checkedClass, class: className, ...restProps }: RadioButtonProps<T> = $props();
 

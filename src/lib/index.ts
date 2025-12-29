@@ -3,8 +3,8 @@ export * from "./uiHelpers.svelte.js";
 export * from "./utils";
 // theme
 // export { default as ThemeProvider } from "./theme/ThemeProvider.svelte";
-export * from "./theme";
-export { getTheme } from "./theme/themeUtils";
+export * from "./theme-provider";
+export { getTheme } from "./theme-provider/themeUtils.js";
 export * from "./theme-selector";
 // components
 export * from "./accordion";
@@ -41,7 +41,7 @@ export * from "./sidebar";
 export * from "./skeleton";
 export * from "./speed-dial";
 export * from "./spinner";
-export * from "./step-indicator";
+export * from "./extend/step-indicator";
 export * from "./stepper";
 export * from "./tabs";
 export * from "./table";
@@ -53,7 +53,6 @@ export * from "./utils";
 export * from "./video";
 
 // forms
-export * from "./forms/button-toggle";
 export * from "./forms/checkbox";
 export * from "./forms/dropzone";
 export * from "./forms/fileupload";
@@ -67,7 +66,6 @@ export * from "./forms/select";
 export * from "./forms/radio";
 export * from "./forms/range";
 export * from "./forms/search";
-export * from "./forms/tags";
 export * from "./forms/textarea";
 export * from "./forms/timepicker";
 export * from "./forms/toggle";
@@ -90,11 +88,13 @@ export * from "./utils";
 export * from "./types";
 
 // extend
-export * from "./clipboard-manager";
-export * from "./command-palette";
-export * from "./kanban";
-export * from "./scroll-spy";
-export * from "./split-pane";
-export * from "./tour";
-export * from "./virtuallist";
-export * from "./virtual-masonry";
+export * from "./extend/button-toggle";
+export * from "./extend/clipboard-manager";
+export * from "./extend/command-palette";
+export * from "./extend/kanban";
+export * from "./extend/scroll-spy";
+export * from "./extend/split-pane";
+export * from "./extend/tags";
+export * from "./extend/tour";
+export * from "./extend/virtuallist";
+export * from "./extend/virtual-masonry";

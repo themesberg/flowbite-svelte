@@ -5,7 +5,7 @@
   import { navbarHamburger } from "./theme";
   import type { NavHamburgerProps } from "$lib/types";
   import type { MouseEventHandler } from "svelte/elements";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
   let { children, onclick, class: className, classes, name = "Open main menu", ...restProps }: NavHamburgerProps = $props();

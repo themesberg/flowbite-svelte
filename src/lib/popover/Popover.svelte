@@ -3,7 +3,7 @@
   import Popper from "../utils/Popper.svelte";
   import { popover } from "./theme";
   import type { PopoverProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let {
     title: titleSlot,

@@ -3,7 +3,7 @@
   import { paginationNav } from "./theme";
   import type { PaginationNavProps, PaginationContextType } from "$lib";
   import PaginationButton from "./PaginationButton.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { setPaginationContext } from "$lib/context";
 
   function paginationRange(start: number, end: number): number[] {

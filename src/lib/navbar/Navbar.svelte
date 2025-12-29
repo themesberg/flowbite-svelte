@@ -3,7 +3,7 @@
   import NavContainer from "./NavContainer.svelte";
   import { navbar } from "./theme";
   import type { NavbarState, NavbarProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { setNavbarStateContext, setNavbarBreakpointContext } from "$lib/context";
 
   let { children, fluid, class: className, classes, closeOnClickOutside = true, breakpoint = "md", ...restProps }: NavbarProps = $props();

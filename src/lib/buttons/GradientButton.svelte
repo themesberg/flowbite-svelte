@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import type { GradientButtonProps } from "$lib";
   import Button from "./Button.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { getButtonGroupContext } from "$lib/context";
 
   const group = getButtonGroupContext()?.size;

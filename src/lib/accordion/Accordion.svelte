@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { AccordionContextType, AccordionProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { setAccordionContext } from "$lib/context";
   import { accordion } from "./theme";

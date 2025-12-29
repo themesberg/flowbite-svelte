@@ -5,7 +5,7 @@
   import clsx from "clsx";
   import { type ParamsType, type BannerProps } from "$lib";
   import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
   let {
@@ -35,7 +35,7 @@
   const isBrowser = typeof window !== "undefined";
 
   // Respect reduced motion preference by setting duration to 0
-  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { duration: 0, ...params } : params);
+  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { ...params, duration: 0 } : params);
 
   let ref: HTMLDivElement | undefined = $state(undefined);
   function close(event: MouseEvent) {

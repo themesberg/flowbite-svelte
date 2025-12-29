@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { layout } from "./theme";
   import type { LayoutProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, ...restProps }: LayoutProps = $props();
 

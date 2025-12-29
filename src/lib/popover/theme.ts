@@ -1,5 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import type { Classes } from "$lib/theme/themeUtils";
+import type { Classes } from "$lib/theme-provider/themeUtils";
 
 // Variants
 export type PopoverVariants = VariantProps<typeof popover> & Classes<typeof popover>;

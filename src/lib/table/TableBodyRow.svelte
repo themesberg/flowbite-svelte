@@ -3,7 +3,7 @@
   import { tableBodyRow } from "./theme";
   import type { TableBodyRowProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, color, striped, hoverable, border, ...restProps }: TableBodyRowProps = $props();
 

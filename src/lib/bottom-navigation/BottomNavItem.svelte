@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { BottomNavItemProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { getBottomNavContext } from "$lib/context";
   import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";

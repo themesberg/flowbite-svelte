@@ -8,7 +8,7 @@
   import ToolbarButton from "$lib/toolbar/ToolbarButton.svelte";
   import { datepicker } from "./theme";
   import { parse, isValid, addDays, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameDay, isWithinInterval } from "date-fns";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let {
     value = $bindable(),

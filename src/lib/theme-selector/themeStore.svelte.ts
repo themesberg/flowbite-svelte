@@ -3,10 +3,15 @@ import { themeConfigs, type FlowbiteTheme, type ThemeId } from "./themes";
 const browser = typeof window !== "undefined";
 const dev = import.meta.env.DEV;
 
-const getInitialTheme = (): string => {
+function isThemeId(value: string): value is ThemeId {
+  return themeConfigs.some((t) => t.id === value);
+}
+
+const getInitialTheme = (): ThemeId => {
   if (browser) {
     try {
-      return localStorage.getItem("flowbite-svelte-theme") || "default";
+      const stored = localStorage.getItem("flowbite-svelte-theme");
+      if (stored && isThemeId(stored)) return stored;
     } catch (e) {
       // console.warn("localStorage not available:", e);
       return "default";
@@ -16,12 +21,12 @@ const getInitialTheme = (): string => {
 };
 
 // Using $state rune for reactive global state
-let currentTheme = $state<string>(getInitialTheme());
+let currentTheme = $state<ThemeId>(getInitialTheme());
 
 // Using $derived for computed value
 let selectedTheme = $derived<FlowbiteTheme | undefined>(themeConfigs.find((t) => t.id === currentTheme));
 
-export function loadTheme(themeId: string): void {
+export function loadTheme(themeId: ThemeId): void {
   if (!browser) return;
 
   const theme = themeConfigs.find((t) => t.id === themeId);
@@ -84,7 +89,7 @@ export function loadTheme(themeId: string): void {
 }
 
 // Export getter functions to access the state
-export function getCurrentTheme(): string {
+export function getCurrentTheme(): ThemeId {
   return currentTheme;
 }
 

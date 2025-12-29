@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import { type CheckboxProps } from "$lib";
   import Label from "$lib/forms/label/Label.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let {
     children,

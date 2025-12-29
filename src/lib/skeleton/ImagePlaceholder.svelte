@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { imagePlaceholder } from "./theme";
   import type { ImagePlaceholderProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { size = "md", rounded, imgOnly = false, class: className, classes, ...restProps }: ImagePlaceholderProps = $props();
 

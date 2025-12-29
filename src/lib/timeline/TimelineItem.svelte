@@ -3,7 +3,7 @@
   import { timelineItem, type TimelineVariants } from "./theme";
   import type { TimelineItemProps, DateFormat } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, orientationSlot, title, date, dateFormat = "month-year", color = "primary", isLast = false, datePrefix, class: className, classes, ...restProps }: TimelineItemProps = $props();
 

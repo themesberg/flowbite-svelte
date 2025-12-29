@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import type { ToolbarGroupProps } from "$lib/types";
   import clsx from "clsx";
   import { getToolbarContext } from "$lib/context";

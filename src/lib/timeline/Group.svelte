@@ -2,7 +2,7 @@
   import { group } from "./theme";
   import type { GroupProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, date, class: className, classes, ...restProps }: GroupProps = $props();
 

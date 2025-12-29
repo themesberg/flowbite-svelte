@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { navbarBrand } from "./theme";
   import type { NavBrandProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, ...restProps }: NavBrandProps = $props();
 

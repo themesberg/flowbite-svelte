@@ -4,7 +4,7 @@
   import { breadcrumbStepper } from "./theme";
   import clsx from "clsx";
   import type { BreadcrumbStepperProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { steps = [], class: className, classes, current = $bindable(1), clickable = true, showCheckmarkForCompleted = true, onStepClick, ...restProps }: BreadcrumbStepperProps = $props();
 

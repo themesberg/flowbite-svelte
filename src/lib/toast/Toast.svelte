@@ -5,7 +5,7 @@
   import { fly } from "svelte/transition";
   import { prefersReducedMotion } from "svelte/motion";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
   let {
@@ -33,7 +33,7 @@
   const isBrowser = typeof window !== "undefined";
 
   // Respect reduced motion preference by setting duration to 0
-  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { duration: 0, ...params } : params);
+  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { ...params, duration: 0 } : params);
 
   let ref: HTMLDivElement | undefined = $state(undefined);
 

@@ -2,7 +2,7 @@
   import { drawerhead } from "./theme";
   import clsx from "clsx";
   import type { DrawerheadProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { closeIcon, children, class: className, classes, ...restProps }: DrawerheadProps = $props();
 

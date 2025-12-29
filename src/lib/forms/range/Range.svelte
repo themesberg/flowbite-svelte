@@ -2,7 +2,7 @@
   import { range } from "./theme";
   import clsx from "clsx";
   import type { RangeProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { value = $bindable(), appearance = "none", color = "blue", size = "md", inputClass, class: className, ...restProps }: RangeProps = $props();
 

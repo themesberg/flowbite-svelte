@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { videoPlaceholder } from "./theme";
   import type { VideoPlaceholderProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { size = "sm", class: className }: VideoPlaceholderProps = $props();
 

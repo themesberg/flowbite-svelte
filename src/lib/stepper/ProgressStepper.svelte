@@ -3,7 +3,7 @@
   import { progressStepper } from "./theme";
   import type { ProgressStepperProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { Tween } from "svelte/motion";
   import { cubicOut } from "svelte/easing";
 

@@ -11,7 +11,7 @@
   import Toggle from "$lib/forms/toggle/Toggle.svelte";
   import { timepicker } from "./theme";
   import { parse, isValid, isBefore, isAfter } from "date-fns";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let {
     id = "time",

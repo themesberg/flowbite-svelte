@@ -35,7 +35,7 @@
 
   // Respect reduced motion preference by setting duration to 0
   const effectiveParams = $derived(
-    isBrowser && prefersReducedMotion.current ? { duration: 0, ...(transitionParams ?? { duration: 100, easing: sineIn }) } : (transitionParams ?? { duration: 100, easing: sineIn })
+    isBrowser && prefersReducedMotion.current ? { ...(transitionParams ?? { duration: 100, easing: sineIn }), duration: 0 } : (transitionParams ?? { duration: 100, easing: sineIn })
   );
 
   const styling = $derived(classes);

@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { review as reviewVariants } from "./theme";
   import type { ReviewProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, address, item1, item2, item3, review, classes }: ReviewProps = $props();
 

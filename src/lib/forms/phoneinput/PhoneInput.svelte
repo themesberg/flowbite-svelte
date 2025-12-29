@@ -2,7 +2,7 @@
   import type { PhoneInputProps } from "$lib";
   import { phoneInput } from "./theme";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let {
     children,

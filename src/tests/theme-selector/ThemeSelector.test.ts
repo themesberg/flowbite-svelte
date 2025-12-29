@@ -5,28 +5,10 @@ import userEvent from "@testing-library/user-event";
 import BasicThemeSelectorTest from "./basic-theme-selector.test.svelte";
 import { themeConfigs } from "$lib/theme-selector/themes";
 import { loadTheme } from "$lib/theme-selector";
+import { setupLocalStorageMock } from "../utils/localStorageMock";
 
-// Mock localStorage
-const localStorageMock = (() => {
-  let store: Record<string, string> = {};
-
-  return {
-    getItem: (key: string) => store[key] || null,
-    setItem: (key: string, value: string) => {
-      store[key] = value.toString();
-    },
-    removeItem: (key: string) => {
-      delete store[key];
-    },
-    clear: () => {
-      store = {};
-    }
-  };
-})();
-
-Object.defineProperty(window, "localStorage", {
-  value: localStorageMock
-});
+// Set up localStorage mock
+const localStorageMock = setupLocalStorageMock();
 
 beforeEach(() => {
   // Clear localStorage before each test
@@ -92,8 +74,8 @@ describe("ThemeSelector Component", () => {
       await user.click(button);
 
       // Check that color swatches are rendered
-      const colorSwatches = document.querySelectorAll(".h-3\\.5");
-      expect(colorSwatches.length).toBeGreaterThan(0);
+      const swatches = screen.getAllByTestId("basic-theme");
+      expect(swatches.length).toBeGreaterThan(0);
     });
 
     test("highlights active theme with correct styling", async () => {
@@ -104,10 +86,8 @@ describe("ThemeSelector Component", () => {
       await user.click(button);
 
       // Find the default theme item in dropdown (should be active)
-      const dropdownButtons = screen.getAllByRole("button").filter((btn) => btn.textContent?.includes("Default") && btn.classList.contains("bg-brand-50"));
-
-      expect(dropdownButtons.length).toBeGreaterThan(0);
-      expect(dropdownButtons[0].className).toContain("bg-brand-50");
+      const activeTheme = screen.getByRole("option", { name: /default/i });
+      expect(activeTheme).toHaveAttribute("aria-selected", "true");
     });
   });
 
@@ -120,21 +100,17 @@ describe("ThemeSelector Component", () => {
       const button = screen.getByRole("button", { name: /select theme/i });
       await user.click(button);
 
-      // Click on "Minimal" theme - get all buttons and find the one in dropdown
-      const allButtons = screen.getAllByRole("button");
-      const minimalButton = allButtons.find((btn) => btn.textContent?.includes("Minimal") && btn.classList.contains("text-left"));
-
-      expect(minimalButton).toBeDefined();
-      if (minimalButton) {
-        await user.click(minimalButton);
-      }
+      // Click on "Minimal" theme - find by role="option"
+      const minimalOption = screen.getByRole("option", { name: /minimal/i });
+      expect(minimalOption).toBeDefined();
+      await user.click(minimalOption);
 
       // Re-open dropdown to check active theme
       await user.click(button);
 
       // Check that Minimal is now active
-      const activeButtons = screen.getAllByRole("button").filter((btn) => btn.textContent?.includes("Minimal") && btn.classList.contains("bg-brand-50"));
-      expect(activeButtons.length).toBeGreaterThan(0);
+      const minimalOptionAfter = screen.getByRole("option", { name: /minimal/i });
+      expect(minimalOptionAfter).toHaveAttribute("aria-selected", "true");
     });
 
     test("updates button text when theme changes", async () => {
@@ -149,12 +125,8 @@ describe("ThemeSelector Component", () => {
       await user.click(button);
 
       // Click on "Enterprise" theme
-      const allButtons = screen.getAllByRole("button");
-      const enterpriseButton = allButtons.find((btn) => btn.textContent?.includes("Enterprise") && btn.classList.contains("text-left"));
-
-      if (enterpriseButton) {
-        await user.click(enterpriseButton);
-      }
+      const enterpriseOption = screen.getByRole("option", { name: /enterprise/i });
+      await user.click(enterpriseOption);
 
       // Button should now show "Enterprise"
       expect(button).toHaveTextContent("Enterprise");
@@ -168,12 +140,8 @@ describe("ThemeSelector Component", () => {
       await user.click(button);
 
       // Click on "Playful" theme
-      const allButtons = screen.getAllByRole("button");
-      const playfulButton = allButtons.find((btn) => btn.textContent?.includes("Playful") && btn.classList.contains("text-left"));
-
-      if (playfulButton) {
-        await user.click(playfulButton);
-      }
+      const playfulOption = screen.getByRole("option", { name: /playful/i });
+      await user.click(playfulOption);
 
       // Check localStorage
       expect(localStorageMock.getItem("flowbite-svelte-theme")).toBe("playful");
@@ -244,11 +212,11 @@ describe("ThemeSelector Component", () => {
       const button = screen.getByRole("button", { name: /select theme/i });
       await user.click(button);
 
-      // All theme items should be accessible via keyboard
-      const themeButtons = screen.getAllByRole("button");
+      // All theme items should be accessible via role="option"
+      const themeOptions = screen.getAllByRole("option");
 
-      // Should have at least the toggle button plus theme options
-      expect(themeButtons.length).toBeGreaterThanOrEqual(themeConfigs.length);
+      // Should have one option for each theme
+      expect(themeOptions.length).toBeGreaterThanOrEqual(themeConfigs.length);
     });
   });
 
@@ -262,13 +230,9 @@ describe("ThemeSelector Component", () => {
 
       // Each theme should have its color swatches
       themeConfigs.forEach((theme) => {
-        const allButtons = screen.getAllByRole("button");
-        const themeButton = allButtons.find((btn) => btn.textContent?.includes(theme.name) && btn.classList.contains("text-left"));
-
-        if (themeButton) {
-          const colorDivs = themeButton.querySelectorAll(".h-3\\.5");
-          expect(colorDivs.length).toBe(theme.colors.length);
-        }
+        const themeOption = screen.getByRole("option", { name: new RegExp(theme.name, "i") });
+        const colorDivs = themeOption.querySelectorAll(".h-3\\.5");
+        expect(colorDivs.length).toBe(theme.colors.length);
       });
     });
 

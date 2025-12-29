@@ -5,7 +5,7 @@
   import { clampSize } from "$lib/forms/input-field";
   import { getButtonGroupContext } from "$lib/context";
   import { inputAddon } from "./theme";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, size, ...restProps }: InputAddonProps = $props();
 

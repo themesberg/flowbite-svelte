@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { DrawerProps } from "$lib";
   import Dialog from "$lib/dialog/Dialog.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { prefersReducedMotion } from "svelte/motion";

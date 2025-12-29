@@ -77,9 +77,7 @@
   const isBrowser = typeof window !== "undefined";
 
   // Respect reduced motion preference by setting duration to 0
-  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { duration: 0, ...(transitionParams ?? paramsDefault) } : (transitionParams ?? paramsDefault));
-
-  const paramsOptions = $derived(effectiveParams);
+  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { ...(transitionParams ?? paramsDefault), duration: 0 } : (transitionParams ?? paramsDefault));
 
   const px = (n: number | undefined) => (n ? `${n}px` : "");
 
@@ -283,7 +281,7 @@
     onmouseleave={hoverable ? close_popover : undefined}
     onmouseenter={hoverable ? open_popover : undefined}
     class={clsx(className)}
-    transition:transition={paramsOptions as ParamsType}
+    transition:transition={effectiveParams as ParamsType}
     onintrostart={() => popover?.showPopover()}
     onbeforetoggle={on_before_toggle}
     ontoggle={on_toggle}

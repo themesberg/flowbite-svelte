@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import type { ListgroupItemProps } from "$lib";
   import { listGroupItem, type ListgroupItemVariants } from "./theme";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { getListGroupContext } from "$lib/context";
 
   let { children, active, current, disabled, horizontal, name, Icon, class: className, classes, href, type, ...restProps }: ListgroupItemProps = $props();

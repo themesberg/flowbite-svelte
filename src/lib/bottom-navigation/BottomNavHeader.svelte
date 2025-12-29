@@ -2,7 +2,7 @@
   import { bottomNavHeader } from "./theme";
   import clsx from "clsx";
   import type { BottomNavHeaderProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, classes, ...restProps }: BottomNavHeaderProps = $props();
 

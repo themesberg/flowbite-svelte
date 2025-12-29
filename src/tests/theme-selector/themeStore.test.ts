@@ -1,28 +1,10 @@
 import { describe, test, expect, beforeEach, vi, afterEach } from "vitest";
 import { loadTheme, getCurrentTheme, getSelectedTheme, themeConfigs } from "$lib/theme-selector";
+import { setupLocalStorageMock, createNodeListMock } from "../utils/localStorageMock";
+import type { ThemeId } from "$lib";
 
-// Mock localStorage
-const localStorageMock = (() => {
-  let store: Record<string, string> = {};
-
-  return {
-    getItem: (key: string) => store[key] || null,
-    setItem: (key: string, value: string) => {
-      store[key] = value.toString();
-    },
-    removeItem: (key: string) => {
-      delete store[key];
-    },
-    clear: () => {
-      store = {};
-    }
-  };
-})();
-
-Object.defineProperty(window, "localStorage", {
-  value: localStorageMock,
-  writable: true
-});
+// Set up localStorage mock
+const localStorageMock = setupLocalStorageMock();
 
 // Store mock links
 const mockLinks: HTMLLinkElement[] = [];
@@ -41,7 +23,7 @@ beforeEach(() => {
   // Mock document.querySelectorAll
   vi.spyOn(document, "querySelectorAll").mockImplementation((selector: string) => {
     if (selector === "#dynamic-theme-css, #initial-theme-css, #dynamic-theme-font") {
-      return mockLinks as unknown as NodeListOf<Element>;
+      return createNodeListMock(mockLinks);
     }
     return originalQuerySelectorAll(selector);
   });
@@ -174,7 +156,7 @@ describe("themeStore", () => {
     test("handles invalid theme ID gracefully", () => {
       const consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 
-      loadTheme("invalid-theme-id");
+      loadTheme("invalid-theme-id" as unknown as ThemeId);
 
       expect(consoleErrorSpy).toHaveBeenCalledWith("Theme invalid-theme-id not found");
 

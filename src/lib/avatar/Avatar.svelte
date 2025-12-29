@@ -3,7 +3,7 @@
   import clsx from "clsx";
   import { type AvatarProps } from "$lib";
   import Indicator from "$lib/indicator/Indicator.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, indicator, src, href, target, cornerStyle = "circular", border = false, stacked = false, dot, class: className, alt, size = "md", onclick, ...restProps }: AvatarProps = $props();
 

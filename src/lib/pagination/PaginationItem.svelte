@@ -3,7 +3,7 @@
   import { paginationItem } from "./theme";
   import type { PaginationItemProps } from "$lib/types";
   import { getPaginationContext } from "$lib/context";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, size, class: className, href, active, ...restProps }: PaginationItemProps = $props();
 

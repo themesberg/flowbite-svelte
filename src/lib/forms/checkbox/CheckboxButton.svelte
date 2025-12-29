@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { CheckboxButtonProps } from "$lib";
   import Button from "$lib/buttons/Button.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import Checkbox from "./Checkbox.svelte";
   import { checkboxButton } from "./theme";

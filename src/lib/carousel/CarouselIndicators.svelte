@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { IndicatorsProps } from "$lib";
   import Indicator from "$lib/indicator/Indicator.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { getCarouselContext } from "$lib/context";
   import { carouselIndicators } from "./theme";

@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { SlideProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { getCarouselContext } from "$lib/context";
   import { fly } from "svelte/transition";

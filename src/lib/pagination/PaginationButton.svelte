@@ -3,7 +3,7 @@
   import { paginationButton } from "./theme";
   import type { PaginationButtonProps } from "$lib/types";
   import { getPaginationContext } from "$lib/context";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, size, onclick, disabled = false, class: className, href, active = false, ...restProps }: PaginationButtonProps = $props();
 

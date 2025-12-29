@@ -2,7 +2,7 @@
   import { indicator } from "./theme";
   import clsx from "clsx";
   import type { IndicatorProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, color = "brand", cornerStyle = "circular", size = "md", border = false, placement, offset = true, class: className, ...restProps }: IndicatorProps = $props();
 

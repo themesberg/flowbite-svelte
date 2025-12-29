@@ -2,7 +2,7 @@
   import { groupItem } from "./theme";
   import type { GroupItemProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { timelines, class: className, classes, ...restProps }: GroupItemProps = $props();
 

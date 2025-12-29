@@ -2,7 +2,7 @@
   import type { ModalProps } from "$lib";
   import Dialog from "$lib/dialog/Dialog.svelte";
   import CloseButton from "$lib/utils/CloseButton.svelte";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { sineIn } from "svelte/easing";
   import { fade } from "svelte/transition";

@@ -2,7 +2,7 @@
   import { footerLink } from "./theme";
   import clsx from "clsx";
   import type { FooterLinkProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, href, classes, class: className, ...restProps }: FooterLinkProps = $props();
 

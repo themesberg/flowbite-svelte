@@ -2,7 +2,7 @@
   import clsx from "clsx";
   import { secondary } from "./theme";
   import type { SecondaryProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, class: className, ...restProps }: SecondaryProps = $props();
 

@@ -3,7 +3,7 @@
   import { dropzone } from "./theme";
   import clsx from "clsx";
   import type { DropzoneProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   type HTMLInputElementWithFiles = HTMLInputElement & { files: FileList | null };
 

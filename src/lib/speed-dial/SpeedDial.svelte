@@ -5,7 +5,7 @@
   import { setSpeedDialContext } from "$lib/context";
   import { speedDial } from "./theme";
   import type { SpeedDialProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let {
     children,

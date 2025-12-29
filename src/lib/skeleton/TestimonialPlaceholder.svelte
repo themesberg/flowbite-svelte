@@ -2,7 +2,7 @@
   import { testimonialPlaceholder } from "./theme";
   import clsx from "clsx";
   import type { TestimonialPlaceholderProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { class: className, classes, ...restProps }: TestimonialPlaceholderProps = $props();
 

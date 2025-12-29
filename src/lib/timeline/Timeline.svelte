@@ -3,7 +3,7 @@
   import { timeline, type TimelineVariants } from "./theme";
   import clsx from "clsx";
   import type { TimelineProps } from "$lib/types";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, order = "default", class: className, ...restProps }: TimelineProps = $props();
 

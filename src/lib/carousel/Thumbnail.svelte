@@ -2,7 +2,7 @@
   import { thumbnail } from "./theme";
   import type { ThumbnailProps } from "$lib";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { selected, class: className, ...restProps }: ThumbnailProps = $props();
 

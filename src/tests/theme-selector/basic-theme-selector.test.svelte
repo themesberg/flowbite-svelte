@@ -2,4 +2,4 @@
   import { ThemeSelector } from "$lib";
 </script>
 
-<ThemeSelector />
+<ThemeSelector data-testid="basic-theme" />

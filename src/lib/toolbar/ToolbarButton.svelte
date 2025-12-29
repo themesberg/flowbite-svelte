@@ -2,7 +2,7 @@
   import { toolbarButton } from "./theme";
   import type { ToolbarButtonProps } from "$lib/types";
   import clsx from "clsx";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, color, name, "aria-label": ariaLabel, "aria-expanded": ariaExpanded, size, class: className, ...restProps }: ToolbarButtonProps = $props();
 

@@ -2,7 +2,7 @@
   import { buttonGroup } from "./theme";
   import clsx from "clsx";
   import type { ButtonGroupProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
   import { setButtonGroupContext } from "$lib/context";
 
   let { children, size = "md", disabled, class: className, ...restProps }: ButtonGroupProps = $props();

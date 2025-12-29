@@ -2,7 +2,7 @@
   import { breadcrumb } from "./theme";
   import clsx from "clsx";
   import type { BreadcrumbProps } from "$lib";
-  import { getTheme } from "$lib/theme/themeUtils";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, solid = false, class: className, classes, ariaLabel = "Breadcrumb", ...restProps }: BreadcrumbProps = $props();
 
