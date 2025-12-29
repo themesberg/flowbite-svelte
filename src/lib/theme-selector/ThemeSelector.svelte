@@ -21,22 +21,19 @@
   onMount(() => {
     loadTheme(currentTheme);
   });
-  let isOpen = $state(false);
 </script>
 
 <Button
-  onclick={() => (isOpen = true)}
   color="gray"
   class="gap-2 rounded-sm border-0 px-1 py-1 shadow-none focus:ring-gray-100 dark:focus:ring-gray-700"
   aria-haspopup="true"
-  aria-expanded={isOpen}
   aria-label="Select Theme"
   {...restProps}
 >
   <ThemeIcon />
   <span>{selectedTheme?.name ?? "Theme"}</span>
 </Button>
-<Dropdown class="w-52 px-2" bind:isOpen simple>
+<Dropdown class="w-52 px-2" simple>
   {#each themeConfigs as theme (theme.id)}
     <DropdownItem
       onclick={handleThemeChange(theme.id)}
