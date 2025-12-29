@@ -2,7 +2,7 @@
   "name": "Select",
   "type": {
     "name": "SelectProps<T>",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L900"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L879"
   },
   "props": [
     ["children", ""],
@@ -17,9 +17,6 @@
     ["clearableColor", "\"none\""],
     ["clearableOnClick", ""],
     ["onClear", ""],
-    ["clearableSvgClass", ""],
-    ["clearableClass", ""],
-    ["selectClass", ""],
     ["class: className", ""],
     ["classes", ""]
   ]

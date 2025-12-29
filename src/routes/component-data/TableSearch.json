@@ -2,24 +2,17 @@
   "name": "TableSearch",
   "type": {
     "name": "TableSearchProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1723"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1680"
   },
   "props": [
     ["children", ""],
     ["header", ""],
     ["footer", ""],
-    ["divClass", ""],
     ["inputValue", "$bindable()"],
     ["striped", "false"],
     ["hoverable", "false"],
     ["customColor", "\"\""],
     ["color", "\"default\""],
-    ["innerDivClass", ""],
-    ["inputClass", ""],
-    ["searchClass", ""],
-    ["svgDivClass", ""],
-    ["svgClass", ""],
-    ["tableClass", ""],
     ["class: className", ""],
     ["classes", ""],
     ["placeholder", "\"Search\""]

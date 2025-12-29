@@ -2,19 +2,16 @@
   "name": "Radio",
   "type": {
     "name": "RadioProps<T>",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L853"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L837"
   },
   "props": [
     ["children", ""],
     ["\"aria-describedby\": ariaDescribedby", ""],
     ["inline", "false"],
-    ["labelClass", ""],
     ["color", "\"brand\""],
     ["custom", "false"],
     ["group", "$bindable<T>()"],
     ["value", "$bindable<T>()"],
-    ["class: className", ""],
-    ["inputClass", ""],
     ["classes", ""]
   ]
 }

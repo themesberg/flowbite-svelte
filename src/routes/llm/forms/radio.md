@@ -326,20 +326,17 @@ Use `color` and `checkedClass` props to style the checked state:
 
 #### Types
 
-[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L853)
+[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L837)
 
 #### Props
 
 - children
 - "aria-describedby": ariaDescribedby
 - inline: false
-- labelClass
 - color: "brand"
 - custom: false
 - group: $bindable<T>()
 - value: $bindable<T>()
-- class: className
-- inputClass
 - classes
 
 

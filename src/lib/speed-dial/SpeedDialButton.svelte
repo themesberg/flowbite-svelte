@@ -47,14 +47,14 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1502)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1461)
 ## Props
 @prop children
 @prop name = ""
 @prop color = "light"
 @prop tooltip: _tooltip
-@prop pill = context.pill
-@prop textOutside = context.textOutside
+@prop pill = context?.pill ?? true
+@prop textOutside = context?.textOutside ?? false
 @prop class: className
 @prop classes
 @prop ...restProps

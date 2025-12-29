@@ -2,17 +2,13 @@
   "name": "Tags",
   "type": {
     "name": "TagsProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L934"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L909"
   },
   "props": [
     ["value", "$bindable([])"],
     ["placeholder", "\"Enter tags\""],
     ["class: className", ""],
     ["classes", ""],
-    ["itemClass", ""],
-    ["spanClass", ""],
-    ["closeClass", ""],
-    ["inputClass", ""],
     ["closeBtnSize", "\"xs\""],
     ["unique", "false"],
     ["availableTags", "[]"],

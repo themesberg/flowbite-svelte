@@ -2,7 +2,7 @@
   "name": "Img",
   "type": {
     "name": "ImgProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1970"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1889"
   },
   "props": [
     ["children", ""],
@@ -12,8 +12,6 @@
     ["caption", ""],
     ["class: className", ""],
     ["classes", ""],
-    ["figClass", ""],
-    ["captionClass", ""],
     ["href", ""]
   ]
 }

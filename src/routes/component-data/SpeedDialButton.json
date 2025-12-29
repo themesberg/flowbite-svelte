@@ -2,16 +2,15 @@
   "name": "SpeedDialButton",
   "type": {
     "name": "SpeedDialButtonProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1502"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1461"
   },
   "props": [
     ["children", ""],
     ["name", "\"\""],
     ["color", "\"light\""],
     ["tooltip: _tooltip", ""],
-    ["pill", "context.pill"],
-    ["textOutside", "context.textOutside"],
-    ["textClass", ""],
+    ["pill", "context?.pill ?? true"],
+    ["textOutside", "context?.textOutside ?? false"],
     ["class: className", ""],
     ["classes", ""]
   ]

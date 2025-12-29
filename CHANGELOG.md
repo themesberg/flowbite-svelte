@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.0-next.2
+
+### Patch Changes
+
+- fix: remove all warnThemeDeprecation
+  tests: unit tests
+
 ## 2.0.0-next.1
 
 ### Minor Changes

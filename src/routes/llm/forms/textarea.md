@@ -234,7 +234,7 @@ If you want to build a chatroom component you will usually want to use a textare
 
 #### Types
 
-[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L989)
+[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L960)
 
 #### Props
 
@@ -243,20 +243,12 @@ If you want to build a chatroom component you will usually want to use a textare
 - addon
 - value: $bindable()
 - elementRef: $bindable()
-- divClass
-- innerClass
-- headerClass
-- footerClass
-- addonClass
 - disabled
 - class: className
 - classes
 - clearable
-- clearableSvgClass
 - clearableColor: "none"
-- clearableClass
 - clearableOnClick
-- textareaClass
 
 
 ## References

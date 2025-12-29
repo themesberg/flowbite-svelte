@@ -437,7 +437,6 @@ Use the following example to preserve the input value. First fill out the form, 
 </Tabs>
 ```
 
-
 ## Active class
 
 Use the following example to add active class.
@@ -484,14 +483,13 @@ Use the following example to add active class.
 </Tabs>
 ```
 
-
 ## Component data
 
 ### TabItem
 
 #### Types
 
-[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1752)
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1700)
 
 #### Props
 
@@ -511,15 +509,13 @@ Use the following example to add active class.
 
 #### Types
 
-[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1743)
+[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1693)
 
 #### Props
 
 - children
 - selected: $bindable()
 - tabStyle: "none"
-- ulClass
-- contentClass
 - divider: true
 - class: className
 - classes

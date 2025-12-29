@@ -242,7 +242,7 @@ This example can be used to show the descriptive text inside the button instead 
 
 <SpeedDialTrigger class="absolute end-24 bottom-6" />
 <SpeedDial tooltip="none">
-  <SpeedDialButton name="Share" textClass="text-blue-500">
+  <SpeedDialButton name="Share" classes={{ span: "text-blue-500" }}>
     <ShareNodesSolid class="h-6 w-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">
@@ -258,7 +258,7 @@ This example can be used to show the descriptive text inside the button instead 
 
 <SpeedDialTrigger class="absolute end-6 bottom-6" />
 <SpeedDial pill={false} tooltip="none">
-  <SpeedDialButton name="Share" textClass="text-green-500">
+  <SpeedDialButton name="Share" classes={{ span: "text-green-500" }}>
     <ShareNodesSolid class="h-6 w-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">
@@ -285,7 +285,7 @@ Use this example to show the text of each button outside of the speed dial as an
 
 <SpeedDialTrigger class="absolute end-24 bottom-6" />
 <SpeedDial tooltip="none" textOutside>
-  <SpeedDialButton name="Share" textClass="text-pink-500">
+  <SpeedDialButton name="Share" classes={{ span: "text-pink-500" }}>
     <ShareNodesSolid class="h-6 w-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">
@@ -301,7 +301,7 @@ Use this example to show the text of each button outside of the speed dial as an
 
 <SpeedDialTrigger class="absolute end-6 bottom-6" />
 <SpeedDial pill={false} tooltip="none" textOutside>
-  <SpeedDialButton name="Share" textClass="text-purple-500">
+  <SpeedDialButton name="Share" classes={{ span: "text-purple-500" }}>
     <ShareNodesSolid class="h-6 w-6" />
   </SpeedDialButton>
   <SpeedDialButton name="Print">
@@ -607,12 +607,11 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1487)
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1447)
 
 #### Props
 
 - children
-- popperClass
 - placement: "top"
 - pill: true
 - tooltip: "left"
@@ -626,7 +625,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1502)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1461)
 
 #### Props
 
@@ -634,9 +633,8 @@ You can change the main button to any element you want.
 - name: ""
 - color: "light"
 - tooltip: _tooltip
-- pill: context.pill
-- textOutside: context.textOutside
-- textClass
+- pill: context?.pill ?? true
+- textOutside: context?.textOutside ?? false
 - class: className
 - classes
 
@@ -644,7 +642,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1485)
+[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1445)
 
 #### Props
 

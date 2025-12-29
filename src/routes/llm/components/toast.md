@@ -505,7 +505,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1868)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1793)
 
 #### Props
 
@@ -515,8 +515,6 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 - dismissable: true
 - color: "primary"
 - position
-- iconClass
-- contentClass
 - align: true
 - params
 - transition: fly
@@ -527,7 +525,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1883)
+[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1806)
 
 #### Props
 

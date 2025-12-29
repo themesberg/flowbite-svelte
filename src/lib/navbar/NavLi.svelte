@@ -55,7 +55,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1149)
+[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1109)
 ## Props
 @prop children
 @prop onclick
