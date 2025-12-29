@@ -361,7 +361,7 @@ Handle dismissal interactions with the `onclick` event to track dismissals, save
 
 #### Types
 
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L224)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L225)
 
 #### Props
 

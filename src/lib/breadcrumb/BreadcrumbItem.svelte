@@ -60,7 +60,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L310)
+[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L311)
 ## Props
 @prop children
 @prop icon

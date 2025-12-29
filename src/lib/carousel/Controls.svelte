@@ -29,7 +29,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L493)
+[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L495)
 ## Props
 @prop children
 @prop class: className

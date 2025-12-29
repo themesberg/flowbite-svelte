@@ -396,7 +396,7 @@ explicabo minus.
 
 #### Types
 
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L547)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L549)
 
 #### Props
 

@@ -79,15 +79,14 @@ llms: markdown
 /docs: https://flowbite-svelte.com/llm/mcp/prompts.md
 /docs: https://flowbite-svelte.com/llm/mcp/remote-setup.md
 /docs: https://flowbite-svelte.com/llm/pages/colors.md
-/docs: https://flowbite-svelte.com/llm/pages/compiler-speed.md
 /docs: https://flowbite-svelte.com/llm/pages/customization.md
 /docs: https://flowbite-svelte.com/llm/pages/faq-and-tips.md
-/docs: https://flowbite-svelte.com/llm/pages/how-to-contribute.md
 /docs: https://flowbite-svelte.com/llm/pages/ide-support.md
 /docs: https://flowbite-svelte.com/llm/pages/introduction.md
 /docs: https://flowbite-svelte.com/llm/pages/license.md
 /docs: https://flowbite-svelte.com/llm/pages/quickstart.md
 /docs: https://flowbite-svelte.com/llm/pages/theme-provider.md
+/docs: https://flowbite-svelte.com/llm/pages/theme-selector.md
 /docs: https://flowbite-svelte.com/llm/pages/typescript.md
 /docs: https://flowbite-svelte.com/llm/plugins/charts.md
 /docs: https://flowbite-svelte.com/llm/plugins/datatables.md

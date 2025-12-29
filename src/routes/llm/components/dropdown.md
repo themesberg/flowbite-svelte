@@ -800,7 +800,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L646)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L648)
 
 #### Props
 
@@ -817,7 +817,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L652)
+[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L654)
 
 #### Props
 
@@ -827,7 +827,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L674)
+[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L676)
 
 #### Props
 
@@ -838,7 +838,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L654)
+[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L656)
 
 #### Props
 
@@ -849,7 +849,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L658)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L660)
 
 #### Props
 

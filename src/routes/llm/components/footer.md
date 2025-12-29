@@ -222,7 +222,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L681)
+[FooterProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L683)
 
 #### Props
 
@@ -234,7 +234,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L686)
+[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L688)
 
 #### Props
 
@@ -250,7 +250,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L695)
+[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L697)
 
 #### Props
 
@@ -265,7 +265,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L702)
+[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L704)
 
 #### Props
 
@@ -278,7 +278,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L712)
+[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L714)
 
 #### Props
 
@@ -291,7 +291,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L708)
+[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L710)
 
 #### Props
 

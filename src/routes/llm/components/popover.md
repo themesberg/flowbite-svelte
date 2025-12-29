@@ -393,7 +393,7 @@ If you need the popover to be attached to the other element then the triggering 
 
 #### Types
 
-[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1187)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1189)
 
 #### Props
 

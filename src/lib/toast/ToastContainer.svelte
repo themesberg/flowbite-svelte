@@ -26,7 +26,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1806)
+[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1808)
 ## Props
 @prop children
 @prop position = "top-right"

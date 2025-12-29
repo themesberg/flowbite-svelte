@@ -395,7 +395,7 @@ The Button component follows accessibility best practices:
 
 #### Types
 
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L328)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L329)
 
 #### Props
 
@@ -414,7 +414,7 @@ The Button component follows accessibility best practices:
 
 #### Types
 
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L338)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L339)
 
 #### Props
 

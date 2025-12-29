@@ -12,6 +12,7 @@
     ["multiple", "false"],
     ["class: className", ""],
     ["transitionType", ""],
+    ["respectReducedMotion", "true"],
     ["classes", ""]
   ]
 }

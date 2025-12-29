@@ -628,13 +628,14 @@ The Accordion component is built with accessibility in mind:
 - multiple: false
 - class: className
 - transitionType
+- respectReducedMotion: true
 - classes
 
 ### AccordionItem
 
 #### Types
 
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L214)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L215)
 
 #### Props
 

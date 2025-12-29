@@ -2,7 +2,7 @@
   "name": "VirtualMasonry",
   "type": {
     "name": "VirtualMasonryProps<T>",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2161"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2163"
   },
   "props": [
     ["items", "[]"],

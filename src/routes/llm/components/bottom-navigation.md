@@ -401,7 +401,7 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L276)
+[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L277)
 
 #### Props
 
@@ -417,7 +417,7 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L294)
+[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L295)
 
 #### Props
 
@@ -429,7 +429,7 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L298)
+[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L299)
 
 #### Props
 
@@ -441,7 +441,7 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L282)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L283)
 
 #### Props
 

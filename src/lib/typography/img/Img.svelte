@@ -49,7 +49,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ImgProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1889)
+[ImgProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1891)
 ## Props
 @prop children
 @prop size

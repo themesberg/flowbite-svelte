@@ -379,7 +379,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L635)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L637)
 
 #### Props
 
@@ -399,7 +399,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L639)
+[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L641)
 
 #### Props
 
@@ -413,7 +413,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L641)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L643)
 
 #### Props
 
