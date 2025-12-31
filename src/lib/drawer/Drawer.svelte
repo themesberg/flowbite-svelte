@@ -114,7 +114,18 @@
 </Dialog>
 
 {#if offset && !open}
-  <Dialog {@attach init} open modal={false} dismissable={finalDismissable} {outsideclose} inert {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <Dialog
+    data-scope="drawer"
+    data-part="base"
+    {@attach init}
+    open
+    modal={false}
+    dismissable={finalDismissable}
+    {outsideclose}
+    inert
+    {...restProps}
+    class={base({ class: clsx(theme?.base, className) })}
+  >
     {@render children?.()}
   </Dialog>
 {/if}

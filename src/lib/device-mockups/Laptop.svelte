@@ -10,20 +10,20 @@
 
   const styling = $derived(classes);
 
-  const { base, inner, bot, botCen } = laptop();
+  const { base, screen, bottom, bottomCenter } = laptop();
 </script>
 
 <div {...restProps}>
   <div data-scope="laptop" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
-    <div data-part="inner" class={inner({ class: clsx(theme?.inner, styling?.inner) })}>
+    <div data-part="screen" class={screen({ class: clsx(theme?.screen, styling?.screen) })}>
       {#if children}
         {@render children()}
       {/if}
     </div>
   </div>
 
-  <div data-part="bot" class={bot({ class: clsx(theme?.bot, styling?.bot) })}>
-    <div data-part="bot-cen" class={botCen({ class: clsx(theme?.botCen, styling?.botCen) })}></div>
+  <div data-part="bottom" class={bottom({ class: clsx(theme?.bottom, styling?.bottom) })}>
+    <div data-part="bottom-center" class={bottomCenter({ class: clsx(theme?.bottomCenter, styling?.bottomCenter) })}></div>
   </div>
 </div>
 
