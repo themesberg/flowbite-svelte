@@ -20,14 +20,14 @@
 </script>
 
 {#if _state}
-  <div class={base({ class: clsx(theme?.base, className) })} {...restProps}>
+  <div class={base({ class: clsx(theme?.base, className) })} data-scope="carousel-indicators" data-part="base" {...restProps}>
     {#each _state.images as _, idx (idx)}
       {@const selected = _state.index === idx}
-      <button type="button" onclick={() => goToIndex(idx)} aria-current={selected ? "true" : undefined} aria-label={`Go to slide ${idx + 1}`}>
+      <button type="button" onclick={() => goToIndex(idx)} aria-current={selected ? "true" : undefined} aria-label={`Go to slide ${idx + 1}`} data-part="button">
         {#if children}
           {@render children({ selected, index: idx })}
         {:else}
-          <Indicator class={indicator({ selected, class: clsx(theme?.indicator, selected ? styling?.active : styling?.inactive) })} />
+          <Indicator class={indicator({ selected, class: clsx(theme?.indicator, selected ? styling?.active : styling?.inactive) })} data-part="indicator" />
         {/if}
       </button>
     {/each}

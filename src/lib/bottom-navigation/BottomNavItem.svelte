@@ -6,7 +6,7 @@
   import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
   import { bottomNavItem } from "./theme";
 
-  let { children, btnName, appBtnPosition = "middle", activeClass, class: className, classes, active: manualActive, btnClass, spanClass, ...restProps }: BottomNavItemProps = $props();
+  let { children, btnName, appBtnPosition = "middle", class: className, classes, active: manualActive, ...restProps }: BottomNavItemProps = $props();
 
   // Support for deprecated props with fallback to new props
   const styling = $derived(classes);
@@ -36,22 +36,14 @@
     // Priority: theme (lowest) -> className/btnClass (highest)
     // Note: Classes<T> type intentionally omits "base" - use class prop for base element
     return base({
-      class: clsx(
-        theme?.base,
-        className ?? btnClass, // Support deprecated btnClass
-        isActive && (activeClass ?? context?.activeClass)
-      )
+      class: clsx(theme?.base, className, isActive && context?.activeClass)
     });
   }
 
   function getSpanClass() {
     // Priority: theme (lowest) -> classes.span/spanClass (highest)
     return span({
-      class: clsx(
-        theme?.span,
-        styling?.span ?? spanClass, // Support deprecated spanClass
-        isActive && (activeClass ?? context?.activeClass)
-      )
+      class: clsx(theme?.span, styling?.span, isActive && context?.activeClass)
     });
   }
 
@@ -73,14 +65,14 @@
 </script>
 
 {#if restProps.href === undefined}
-  <button {...buttonProps}>
+  <button data-scope="bottom-nav-item" data-part="base" {...buttonProps}>
     {@render children()}
-    <span class={getSpanClass()}>{btnName}</span>
+    <span data-part="label" class={getSpanClass()}>{btnName}</span>
   </button>
 {:else}
-  <a {...anchorProps}>
+  <a data-scope="bottom-nav-item" data-part="base" {...anchorProps}>
     {@render children()}
-    <span class={getSpanClass()}>{btnName}</span>
+    <span data-part="label" class={getSpanClass()}>{btnName}</span>
   </a>
 {/if}
 
@@ -93,11 +85,8 @@
 @prop children
 @prop btnName
 @prop appBtnPosition = "middle"
-@prop activeClass
 @prop class: className
 @prop classes
 @prop active: manualActive
-@prop btnClass
-@prop spanClass
 @prop ...restProps
 -->

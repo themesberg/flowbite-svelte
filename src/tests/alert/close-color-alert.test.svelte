@@ -2,4 +2,4 @@
   import Alert from "$lib/alert/Alert.svelte";
 </script>
 
-<Alert dismissable closeColor="success">Alert with custom close button color</Alert>
+<Alert dismissable closeButtonProps={{ color: "success" }}>Alert with custom close button color</Alert>

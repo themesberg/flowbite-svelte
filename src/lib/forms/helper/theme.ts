@@ -9,6 +9,8 @@ export const helper = tv({
     color: {
       disabled: "text-gray-400 dark:text-gray-500",
       brand: "text-body",
+      success: "text-fg-success-strong",
+      danger: "text-fg-danger-strong",
       primary: "text-primary-500 dark:text-primary-400",
       secondary: "text-secondary-500 dark:text-secondary-400",
       green: "text-green-500 dark:text-green-400",

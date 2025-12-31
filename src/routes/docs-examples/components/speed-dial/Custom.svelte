@@ -3,7 +3,7 @@
   import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
 </script>
 
-<Button color="green" class="absolute end-6 bottom-6 py-0">
+<Button color="success" class="absolute end-6 bottom-6 py-0">
   <Rating total={1} rating={0.5} size={48} /> Rating
 </Button>
 <SpeedDial placement="top-end">

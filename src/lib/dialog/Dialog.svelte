@@ -27,6 +27,7 @@
     classes,
     transition = fade,
     transitionParams,
+    closeButtonProps,
     ...restProps
   }: DialogProps = $props();
 
@@ -148,17 +149,31 @@
   }
 
   createDismissableContext(close_handler);
+
+  const finalCloseProps = $derived({
+    type: "submit" as const,
+    formnovalidate: true,
+    class: closeCls({ class: clsx(styling?.close, closeButtonProps?.class) }),
+    color: closeButtonProps?.color,
+    size: closeButtonProps?.size,
+    classes: closeButtonProps?.classes,
+    name: closeButtonProps?.name,
+    ariaLabel: closeButtonProps?.ariaLabel,
+    onclick: closeButtonProps?.onclick
+  });
 </script>
 
 {#snippet content()}
   {@render children?.()}
   {#if dismissable && !permanent}
-    <CloseButton type="submit" formnovalidate class={closeCls({ class: clsx(styling?.close) })} />
+    <CloseButton {...finalCloseProps} />
   {/if}
 {/snippet}
 
 {#if open}
   <dialog
+    data-scope="dialog"
+    data-part="base"
     {@attach init}
     bind:this={ref}
     use:focusTrap

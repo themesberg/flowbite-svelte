@@ -65,16 +65,16 @@
       name: "Fly",
       transition: fly,
       params: { duration: 500, easing: linear, x: 150 },
-      color: "blue"
+      color: "brand"
     },
-    { name: "Blur", transition: blur, params: { duration: 500, easing: linear }, color: "lime" },
+    { name: "Blur", transition: blur, params: { duration: 500, easing: linear }, color: "success" },
     {
       name: "Slide",
       transition: slide,
       params: { duration: 500, easing: linear, x: -150 },
-      color: "violet"
+      color: "warning"
     },
-    { name: "Scale", transition: scale, params: { duration: 500, easing: linear }, color: "pink" }
+    { name: "Scale", transition: scale, params: { duration: 500, easing: linear }, color: "danger" }
   ];
 
   let selectedTransition = $state("Fly");
@@ -189,13 +189,13 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" color="blue" onclick={changeSize}>{badgeSize ? "Small" : "Large"}</Button>
-    <Button class="w-40" color="green" onclick={changeDismissable}>{badgeDismissable ? "Not dismissable" : "Dismissable"}</Button>
-    <Button class="w-40" color="purple" onclick={changeClass}>{badgeClass ? "Remove class" : "Add class"}</Button>
-    <Button class="w-40" color="yellow" onclick={changeBorder}>{border ? "Remove border" : "Add border"}</Button>
+    <Button class="w-40" onclick={changeSize}>{badgeSize ? "Small" : "Large"}</Button>
+    <Button class="w-40" color="success" onclick={changeDismissable}>{badgeDismissable ? "Not dismissable" : "Dismissable"}</Button>
+    <Button class="w-40" color="warning" onclick={changeClass}>{badgeClass ? "Remove class" : "Add class"}</Button>
+    <Button class="w-40" color="danger" onclick={changeBorder}>{border ? "Remove border" : "Add border"}</Button>
     <Button class="w-40" color="dark" onclick={changeRounded}>{rounded ? "Remove rounded" : "Add rounded"}</Button>
-    <Button class="w-40" color="pink" onclick={changeLink}>{link ? "Remove href" : "Add href"}</Button>
-    <Button class="w-40" color="teal" onclick={changeIconSlot}>{iconSlot ? "Remove icon" : "Add icon"}</Button>
+    <Button class="w-40" color="alternative" onclick={changeLink}>{link ? "Remove href" : "Add href"}</Button>
+    <Button class="w-40" color="gray" onclick={changeIconSlot}>{iconSlot ? "Remove icon" : "Add icon"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

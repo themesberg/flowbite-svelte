@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/svelte";
+import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 
@@ -58,6 +58,11 @@ describe("ThemeSelector Component", () => {
       const button = screen.getByRole("button", { name: /select theme/i });
       await user.click(button);
 
+      // Wait for dropdown to open and aria-expanded to be true
+      await waitFor(() => {
+        expect(button).toHaveAttribute("aria-expanded", "true");
+      });
+
       // Check that all themes are displayed using getAllByText since themes appear in dropdown
       for (const theme of themeConfigs) {
         const themeItems = screen.getAllByText(theme.name);
@@ -73,6 +78,11 @@ describe("ThemeSelector Component", () => {
       const button = screen.getByRole("button", { name: /select theme/i });
       await user.click(button);
 
+      // Wait for dropdown to open
+      await waitFor(() => {
+        expect(button).toHaveAttribute("aria-expanded", "true");
+      });
+
       // Check that color swatches are rendered
       const swatches = screen.getAllByTestId("basic-theme");
       expect(swatches.length).toBeGreaterThan(0);
@@ -84,6 +94,11 @@ describe("ThemeSelector Component", () => {
 
       const button = screen.getByRole("button", { name: /select theme/i });
       await user.click(button);
+
+      // Wait for dropdown to open
+      await waitFor(() => {
+        expect(button).toHaveAttribute("aria-expanded", "true");
+      });
 
       // Find the default theme item in dropdown (should be active)
       const activeTheme = screen.getByRole("option", { name: /default/i });
@@ -100,13 +115,28 @@ describe("ThemeSelector Component", () => {
       const button = screen.getByRole("button", { name: /select theme/i });
       await user.click(button);
 
+      // Wait for dropdown to open
+      await waitFor(() => {
+        expect(button).toHaveAttribute("aria-expanded", "true");
+      });
+
       // Click on "Minimal" theme - find by role="option"
       const minimalOption = screen.getByRole("option", { name: /minimal/i });
       expect(minimalOption).toBeDefined();
       await user.click(minimalOption);
 
+      // Wait for dropdown to close
+      await waitFor(() => {
+        expect(button).toHaveAttribute("aria-expanded", "false");
+      });
+
       // Re-open dropdown to check active theme
       await user.click(button);
+
+      // Wait for dropdown to open again
+      await waitFor(() => {
+        expect(button).toHaveAttribute("aria-expanded", "true");
+      });
 
       // Check that Minimal is now active
       const minimalOptionAfter = screen.getByRole("option", { name: /minimal/i });
@@ -124,12 +154,19 @@ describe("ThemeSelector Component", () => {
 
       await user.click(button);
 
+      // Wait for dropdown to open
+      await waitFor(() => {
+        expect(button).toHaveAttribute("aria-expanded", "true");
+      });
+
       // Click on "Enterprise" theme
       const enterpriseOption = screen.getByRole("option", { name: /enterprise/i });
       await user.click(enterpriseOption);
 
-      // Button should now show "Enterprise"
-      expect(button).toHaveTextContent("Enterprise");
+      // Wait for theme change to complete
+      await waitFor(() => {
+        expect(button).toHaveTextContent("Enterprise");
+      });
     });
 
     test("persists theme selection to localStorage", async () => {
@@ -139,12 +176,19 @@ describe("ThemeSelector Component", () => {
       const button = screen.getByRole("button", { name: /select theme/i });
       await user.click(button);
 
+      // Wait for dropdown to open
+      await waitFor(() => {
+        expect(button).toHaveAttribute("aria-expanded", "true");
+      });
+
       // Click on "Playful" theme
       const playfulOption = screen.getByRole("option", { name: /playful/i });
       await user.click(playfulOption);
 
-      // Check localStorage
-      expect(localStorageMock.getItem("flowbite-svelte-theme")).toBe("playful");
+      // Wait for localStorage to be updated
+      await waitFor(() => {
+        expect(localStorageMock.getItem("flowbite-svelte-theme")).toBe("playful");
+      });
     });
   });
 
@@ -197,12 +241,14 @@ describe("ThemeSelector Component", () => {
       const button = screen.getByRole("button", { name: /select theme/i });
 
       // Initially should be false or not expanded
-      expect(button).toHaveAttribute("aria-expanded");
+      expect(button).toHaveAttribute("aria-expanded", "false");
 
       await user.click(button);
 
       // After clicking should be true
-      expect(button.getAttribute("aria-expanded")).toBe("true");
+      await waitFor(() => {
+        expect(button.getAttribute("aria-expanded")).toBe("true");
+      });
     });
 
     test("dropdown items are keyboard accessible", async () => {
@@ -211,6 +257,11 @@ describe("ThemeSelector Component", () => {
 
       const button = screen.getByRole("button", { name: /select theme/i });
       await user.click(button);
+
+      // Wait for dropdown to open
+      await waitFor(() => {
+        expect(button).toHaveAttribute("aria-expanded", "true");
+      });
 
       // All theme items should be accessible via role="option"
       const themeOptions = screen.getAllByRole("option");
@@ -228,6 +279,11 @@ describe("ThemeSelector Component", () => {
       const button = screen.getByRole("button", { name: /select theme/i });
       await user.click(button);
 
+      // Wait for dropdown to open
+      await waitFor(() => {
+        expect(button).toHaveAttribute("aria-expanded", "true");
+      });
+
       // Each theme should have its color swatches
       themeConfigs.forEach((theme) => {
         const themeOption = screen.getByRole("option", { name: new RegExp(theme.name, "i") });
@@ -243,8 +299,15 @@ describe("ThemeSelector Component", () => {
       const button = screen.getByRole("button", { name: /select theme/i });
       await user.click(button);
 
-      const firstSwatch = document.querySelector(".h-3\\.5.rounded-s-xs");
-      expect(firstSwatch).toBeInTheDocument();
+      // Wait for dropdown to open
+      await waitFor(() => {
+        expect(button).toHaveAttribute("aria-expanded", "true");
+      });
+
+      await waitFor(() => {
+        const firstSwatch = document.querySelector(".h-3\\.5.rounded-s-xs");
+        expect(firstSwatch).toBeInTheDocument();
+      });
     });
 
     test("last color swatch has correct border radius", async () => {
@@ -254,8 +317,15 @@ describe("ThemeSelector Component", () => {
       const button = screen.getByRole("button", { name: /select theme/i });
       await user.click(button);
 
-      const lastSwatch = document.querySelector(".h-3\\.5.rounded-e-xs");
-      expect(lastSwatch).toBeInTheDocument();
+      // Wait for dropdown to open
+      await waitFor(() => {
+        expect(button).toHaveAttribute("aria-expanded", "true");
+      });
+
+      await waitFor(() => {
+        const lastSwatch = document.querySelector(".h-3\\.5.rounded-e-xs");
+        expect(lastSwatch).toBeInTheDocument();
+      });
     });
   });
 });

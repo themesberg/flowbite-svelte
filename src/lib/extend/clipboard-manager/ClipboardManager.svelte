@@ -25,7 +25,7 @@
     children,
     emptyState,
     open = $bindable(), // If undefined, renders inline; if defined, renders as modal
-    badgeProps = { color: "blue", class: "text-xs" },
+    badgeProps = { color: "brand", class: "text-xs" },
     modalProps,
     detectSensitiveData
   }: ClipboardManagerProps = $props();

@@ -12,7 +12,7 @@
   let base = $derived(bottomNavHeaderItem({ active, class: clsx(theme, className) }));
 </script>
 
-<button {...restProps} class={base}>
+<button data-scope="bottom-nav-header-item" data-part="base" {...restProps} class={base}>
   {itemName}
 </button>
 

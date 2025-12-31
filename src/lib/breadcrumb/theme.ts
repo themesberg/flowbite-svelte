@@ -8,7 +8,7 @@ export type BreadcrumbItemVariants = VariantProps<typeof breadcrumbItem> & Class
 export const breadcrumb = tv({
   slots: {
     base: "flex",
-    list: "inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"
+    content: "inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"
   },
   variants: {
     solid: {
@@ -28,7 +28,7 @@ export const breadcrumbItem = tv({
     base: "",
     link: "inline-flex items-center text-sm font-medium text-body hover:text-fg-brand",
     separator: "w-3.5 h-3.5 rtl:rotate-180 text-body",
-    span: "inline-flex items-center text-sm font-medium text-body-subtle"
+    label: "inline-flex items-center text-sm font-medium text-body-subtle"
   },
   variants: {
     home: {

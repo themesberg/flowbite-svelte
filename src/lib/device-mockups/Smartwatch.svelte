@@ -12,17 +12,17 @@
 </script>
 
 <div {...restProps}>
-  <div class={base({ class: clsx(theme?.base, className) })}></div>
-  <div class={top({ class: clsx(theme?.top, styling?.top) })}>
-    <div class={rightTop({ class: clsx(theme?.rightTop, styling?.rightTop) })}></div>
-    <div class={rightBot({ class: clsx(theme?.rightBot, styling?.rightBot) })}></div>
-    <div class={slot({ class: clsx(theme?.slot, styling?.slot) })}>
+  <div data-scope="smart-watch" class={base({ class: clsx(theme?.base, className) })}></div>
+  <div data-part="top" class={top({ class: clsx(theme?.top, styling?.top) })}>
+    <div data-part="right-top" class={rightTop({ class: clsx(theme?.rightTop, styling?.rightTop) })}></div>
+    <div data-part="right-bot" class={rightBot({ class: clsx(theme?.rightBot, styling?.rightBot) })}></div>
+    <div data-part="slot" class={slot({ class: clsx(theme?.slot, styling?.slot) })}>
       {#if children}
         {@render children()}
       {/if}
     </div>
   </div>
-  <div class={bot({ class: clsx(theme?.bot, styling?.bot) })}></div>
+  <div data-part="bot" class={bot({ class: clsx(theme?.bot, styling?.bot) })}></div>
 </div>
 
 <!--

@@ -98,9 +98,9 @@ ${
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-40" onclick={changeDisabled}>{disabled ? "Enabled" : "Disabled"}</Button>
-    <Button class="w-40" color="secondary" onclick={changeMinMax}>{minmax.max === 10 ? "Add max min" : "Remove max min"}</Button>
-    <Button class="w-40" color="rose" onclick={changeLabelStatus}>{labelStatus ? "Remove label" : "Add label"}</Button>
-    <Button class="w-40" color="indigo" onclick={changeStepValue}>{stepValue !== 0.5 ? "Add step" : "Remove step"}</Button>
+    <Button class="w-40" onclick={changeMinMax}>{minmax.max === 10 ? "Add max min" : "Remove max min"}</Button>
+    <Button class="w-40" color="success" onclick={changeLabelStatus}>{labelStatus ? "Remove label" : "Add label"}</Button>
+    <Button class="w-40" color="warning" onclick={changeStepValue}>{stepValue !== 0.5 ? "Add step" : "Remove step"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

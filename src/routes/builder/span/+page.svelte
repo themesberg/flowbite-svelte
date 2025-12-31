@@ -202,11 +202,11 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-36" color="violet" onclick={changeLinethrough}>{spanLinethrough ? "No linethrough" : "Linethrough "}</Button>
-    <Button class="w-36" color="blue" onclick={changeUppercase}>{spanUppercase ? "No uppercase" : "Uppercase"}</Button>
+    <Button class="w-36" onclick={changeLinethrough}>{spanLinethrough ? "No linethrough" : "Linethrough "}</Button>
+    <Button class="w-36" color="success" onclick={changeUppercase}>{spanUppercase ? "No uppercase" : "Uppercase"}</Button>
     <Button class="w-24" onclick={changeItalic}>{spanItalic ? "No italic" : "Italic"}</Button>
-    <Button class="w-28" color="amber" onclick={changeUnderline}>{spanUnderline ? "No underline" : "Underline"}</Button>
-    <Button class="w-32" color="teal" onclick={changeOpacity}>{opacityClass ? "No opacity" : "Add opacity"}</Button>
+    <Button class="w-28" color="warning" onclick={changeUnderline}>{spanUnderline ? "No underline" : "Underline"}</Button>
+    <Button class="w-32" color="danger" onclick={changeOpacity}>{opacityClass ? "No opacity" : "Add opacity"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

@@ -4,6 +4,14 @@ import type { Classes } from "$lib/theme-provider/themeUtils";
 // Variants
 export type CardVariants = VariantProps<typeof card> & Classes<typeof card>;
 
+/**
+ * Card component theme
+ *
+ * Anatomical Selectors:
+ * - data-scope="card" - Applied to the root card element
+ * - data-part="base" - The main card container (div or a tag) (matches 'base' slot)
+ * - data-part="image" - The card image element (matches 'image' slot)
+ */
 export const card = tv({
   slots: {
     base: "w-full flex max-w-sm bg-neutral-primary-soft border border-default rounded-base",

@@ -13,9 +13,9 @@
   let { base, handle } = $derived(drawerhandle({ placement: placement ?? ctx?.placement ?? "left" }));
 </script>
 
-<button type="button" aria-label={ariaLabel} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<button data-scope="drawer-handle" data-part="base" type="button" aria-label={ariaLabel} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {@render children?.()}
-  <span class={handle({ class: clsx(theme?.handle, styling?.handle) })}></span>
+  <span data-part="handle" class={handle({ class: clsx(theme?.handle, styling?.handle) })}></span>
 </button>
 
 <!--

@@ -15,6 +15,8 @@
     return (e: MouseEvent) => {
       e.preventDefault();
       loadTheme(themeId);
+      // Close the dropdown after selecting a theme
+      isOpen = false;
     };
   }
 
@@ -25,7 +27,6 @@
 </script>
 
 <Button
-  onclick={() => (isOpen = true)}
   color="gray"
   class="gap-2 rounded-sm border-0 px-1 py-1 shadow-none focus:ring-gray-100 dark:focus:ring-gray-700"
   aria-haspopup="true"

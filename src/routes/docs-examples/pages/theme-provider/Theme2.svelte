@@ -37,14 +37,14 @@
       base: "mx-auto bg-yellow-400 border-blue-600"
     },
     bottomNav: {
-      inner: "border-red-500"
+      content: "border-red-500"
     },
     bottomNavItem: {
       base: "bg-blue-200",
       span: "bg-green-400"
     },
     breadcrumb: {
-      list: "bg-blue-100"
+      content: "bg-blue-100"
     },
     breadcrumbItem: {
       separator: "text-green-500"
@@ -114,7 +114,7 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus unde ratione voluptatibus ex nobis nostrum eum aliquid sit vitae odio tempora a impedit ducimus omnis, itaque illo? Illo,
       voluptas natus!
     </P>
-    <BottomNav position="absolute" classes={{ inner: "grid-cols-4" }}>
+    <BottomNav position="absolute" classes={{ content: "grid-cols-4" }}>
       <BottomNavItem btnName="Home">
         <HomeSolid />
       </BottomNavItem>

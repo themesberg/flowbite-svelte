@@ -4,21 +4,21 @@
 </script>
 
 <div class="grid w-fit grid-cols-8 gap-x-6 gap-y-18">
-  <SpeedDialTrigger color="red" />
+  <SpeedDialTrigger />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
 
-  <SpeedDialTrigger color="purple" />
+  <SpeedDialTrigger color="success" />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
 
-  <SpeedDialTrigger color="light" />
+  <SpeedDialTrigger color="warning" />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
@@ -31,25 +31,7 @@
     </SpeedDialButton>
   </SpeedDial>
 
-  <SpeedDialTrigger color="red" />
-  <SpeedDial>
-    <SpeedDialButton name="Share">
-      <ShareNodesSolid class="h-6 w-6" />
-    </SpeedDialButton>
-  </SpeedDial>
-  <SpeedDialTrigger color="green" />
-  <SpeedDial>
-    <SpeedDialButton name="Share">
-      <ShareNodesSolid class="h-6 w-6" />
-    </SpeedDialButton>
-  </SpeedDial>
-  <SpeedDialTrigger color="yellow" />
-  <SpeedDial>
-    <SpeedDialButton name="Share">
-      <ShareNodesSolid class="h-6 w-6" />
-    </SpeedDialButton>
-  </SpeedDial>
-  <SpeedDialTrigger color="blue" />
+  <SpeedDialTrigger color="danger" />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
@@ -81,25 +63,25 @@
     </SpeedDialButton>
   </SpeedDial>
 
-  <SpeedDialTrigger color="green" outline />
+  <SpeedDialTrigger outline />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
-  <SpeedDialTrigger color="red" outline />
+  <SpeedDialTrigger color="success" outline />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
-  <SpeedDialTrigger color="blue" outline />
+  <SpeedDialTrigger color="warning" outline />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
-  <SpeedDialTrigger color="purple" outline />
+  <SpeedDialTrigger color="danger" outline />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />

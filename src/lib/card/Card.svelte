@@ -29,6 +29,7 @@
       src={img}
       alt={imgAlt || ""}
       loading="lazy"
+      data-part="image"
       onerror={(e) => {
         const target = e.currentTarget as HTMLImageElement;
         if (target) {
@@ -43,11 +44,11 @@
 {/snippet}
 
 {#if restProps.href === undefined}
-  <div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <div {...restProps} class={base({ class: clsx(theme?.base, className) })} data-scope="card" data-part="base">
     {@render childSlot()}
   </div>
 {:else}
-  <a {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <a {...restProps} class={base({ class: clsx(theme?.base, className) })} data-scope="card" data-part="base">
     {@render childSlot()}
   </a>
 {/if}

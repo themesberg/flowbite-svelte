@@ -20,7 +20,6 @@
     color = "default",
     class: className,
     classes,
-    clearableColor = "none",
     clearableOnClick,
     data = [],
     maxSuggestions = 5,
@@ -29,6 +28,7 @@
     onfocus,
     onblur,
     onkeydown,
+    closeButtonProps,
     ...restProps
   }: InputProps<InputValue> = $props();
 
@@ -230,6 +230,16 @@
       elementRef.focus();
     }
   }
+
+  const finalCloseProps = $derived({
+    class: close({ class: clsx(theme?.close, styling?.close) }),
+    color: closeButtonProps?.color ?? "gray",
+    ariaLabel: closeButtonProps?.ariaLabel ?? "Clear search value",
+    size: closeButtonProps?.size,
+    classes: closeButtonProps?.classes ?? { svg: clsx(theme?.svg, styling?.svg) },
+    name: closeButtonProps?.name,
+    onclick: closeButtonProps?.onclick
+  });
 </script>
 
 {#if clearable}
@@ -284,7 +294,7 @@
       class={clsx(!wrapped && base(), inputCls({ class: clsx(theme?.input, className) }))}
     />
     {#if value !== undefined && value !== "" && clearable}
-      <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling?.svg)} />
+      <CloseButton {...finalCloseProps} />
     {/if}
   {/if}
 {/snippet}

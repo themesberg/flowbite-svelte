@@ -3,7 +3,7 @@
   import { ShareNodesSolid, PrinterSolid, ImageSolid } from "flowbite-svelte-icons";
   import type { ButtonProps } from "$lib/types";
 
-  let { color = $bindable<ButtonProps["color"]>("light"), isOpen = $bindable(false) } = $props();
+  let { color = $bindable<ButtonProps["color"]>("brand"), isOpen = $bindable(false) } = $props();
 
   // Create a derived value to satisfy TypeScript
   let buttonColor = $derived(color as ButtonProps["color"]);

@@ -82,12 +82,6 @@
           <Button color="warning">Warning</Button>
           <Button color="transparent">Transparent</Button>
           <Button color="dark">Dark</Button>
-          <Button color="light">Light</Button>
-          <Button color="blue">Blue</Button>
-          <Button color="green">Green</Button>
-          <Button color="red">Red</Button>
-          <Button color="yellow">Yellow</Button>
-          <Button color="purple">Purple</Button>
         </div>
 
         <div class="flex flex-wrap gap-2">
@@ -99,12 +93,6 @@
           <Button color="warning" outline>Warning</Button>
           <Button color="transparent" outline>Transparent</Button>
           <Button color="dark" outline>Dark</Button>
-          <Button color="light" outline>Light</Button>
-          <Button color="blue" outline>Blue</Button>
-          <Button color="green" outline>Green</Button>
-          <Button color="red" outline>Red</Button>
-          <Button color="yellow" outline>Yellow</Button>
-          <Button color="purple" outline>Purple</Button>
         </div>
       </div>
     </Card>
@@ -115,25 +103,25 @@
     <Card class="p-4">
       <h2 class="mb-3 text-xl font-bold text-gray-900 dark:text-white">Alerts</h2>
       <div class="space-y-3">
-        <Alert color="blue" class="py-2">
+        <Alert color="brand" class="py-2">
           <InfoCircleSolid class="h-4 w-4" />
           <span class="text-sm font-medium">Info:</span>
           Informational message.
         </Alert>
 
-        <Alert color="green" class="py-2">
+        <Alert color="success" class="py-2">
           <CheckCircleSolid class="h-4 w-4" />
           <span class="text-sm font-medium">Success:</span>
           Action completed.
         </Alert>
 
-        <Alert color="yellow" class="py-2">
+        <Alert color="warning" class="py-2">
           <ExclamationCircleOutline class="h-4 w-4" />
           <span class="text-sm font-medium">Warning:</span>
           Please check.
         </Alert>
 
-        <Alert color="red" class="py-2">
+        <Alert color="danger" class="py-2">
           <CloseCircleSolid class="h-4 w-4" />
           <span class="text-sm font-medium">Error:</span>
           Something wrong.
@@ -148,13 +136,11 @@
           <p class="mb-2 text-sm text-gray-600 dark:text-gray-400">Badges:</p>
           <div class="flex flex-wrap gap-2">
             <Badge>Default</Badge>
-            <Badge color="blue">Blue</Badge>
-            <Badge color="gray">Dark</Badge>
-            <Badge color="red">Red</Badge>
-            <Badge color="green">Green</Badge>
-            <Badge color="yellow">Yellow</Badge>
-            <Badge color="purple">Purple</Badge>
-            <Badge color="pink">Pink</Badge>
+            <Badge color="brand">Bland</Badge>
+            <Badge color="warning">Warning</Badge>
+            <Badge color="success">Success</Badge>
+            <Badge color="danger">Danger</Badge>
+            <Badge color="gray">Gray</Badge>
           </div>
         </div>
 
@@ -266,19 +252,19 @@
             <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
             <TableBodyCell>Laptop</TableBodyCell>
             <TableBodyCell>$2999</TableBodyCell>
-            <TableBodyCell><Badge color="green">In Stock</Badge></TableBodyCell>
+            <TableBodyCell><Badge color="success">In Stock</Badge></TableBodyCell>
           </TableBodyRow>
           <TableBodyRow>
             <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
             <TableBodyCell>Tablet</TableBodyCell>
             <TableBodyCell>$1999</TableBodyCell>
-            <TableBodyCell><Badge color="yellow">Low Stock</Badge></TableBodyCell>
+            <TableBodyCell><Badge color="warning">Low Stock</Badge></TableBodyCell>
           </TableBodyRow>
           <TableBodyRow>
             <TableBodyCell>Magic Mouse 2</TableBodyCell>
             <TableBodyCell>Accessories</TableBodyCell>
             <TableBodyCell>$99</TableBodyCell>
-            <TableBodyCell><Badge color="red">Out of Stock</Badge></TableBodyCell>
+            <TableBodyCell><Badge color="danger">Out of Stock</Badge></TableBodyCell>
           </TableBodyRow>
         </TableBody>
       </Table>
@@ -351,7 +337,7 @@
         </div>
 
         <div class="rounded-lg border border-gray-200 p-3 dark:border-gray-700">
-          <Badge color="green" class="mb-2">New</Badge>
+          <Badge color="success" class="mb-2">New</Badge>
           <h3 class="text-sm font-bold text-gray-900 dark:text-white">Featured</h3>
         </div>
 

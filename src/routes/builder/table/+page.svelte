@@ -81,9 +81,9 @@
   </div>
   <div class="mb-4 flex gap-4">
     <Button class="w-40" onclick={changeStriped}>{striped ? "Unstriped" : "Striped"}</Button>
-    <Button class="w-40" color="secondary" onclick={changeHoverable}>{hoverable ? "Unhoverable" : "Hoverable"}</Button>
-    <Button class="w-40" color="indigo" onclick={changeNoborder}>{noborder ? "Borderless" : "Border"}</Button>
-    <Button class="w-40" color="rose" onclick={changeShadow}>{shadow ? "No Shadow" : "Shadow"}</Button>
+    <Button class="w-40" color="success" onclick={changeHoverable}>{hoverable ? "Unhoverable" : "Hoverable"}</Button>
+    <Button class="w-40" color="warning" onclick={changeNoborder}>{noborder ? "Borderless" : "Border"}</Button>
+    <Button class="w-40" color="danger" onclick={changeShadow}>{shadow ? "No Shadow" : "Shadow"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

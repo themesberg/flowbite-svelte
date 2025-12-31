@@ -24,6 +24,7 @@
     transitionParams,
     transition = fade,
     fullscreen = false,
+    closeButtonProps,
     ...restProps
   }: ModalProps = $props();
 
@@ -40,6 +41,18 @@
   const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { ...(transitionParams ?? paramsDefault), duration: 0 } : (transitionParams ?? paramsDefault));
 
   const { base, header: headerCls, footer: footerCls, body } = $derived(modalStyle({ placement, size }));
+
+  const finalCloseProps = $derived({
+    type: "submit" as const,
+    formnovalidate: true,
+    class: clsx(theme?.close, styling?.close),
+    color: closeButtonProps?.color,
+    ariaLabel: closeButtonProps?.ariaLabel,
+    size: closeButtonProps?.size,
+    classes: closeButtonProps?.classes,
+    name: closeButtonProps?.name,
+    onclick: closeButtonProps?.onclick
+  });
 </script>
 
 <Dialog
@@ -57,7 +70,7 @@
       {#if title}
         <h3>{title}</h3>
         {#if dismissable && !permanent}
-          <CloseButton type="submit" formnovalidate class={clsx(theme?.close, styling?.close)} />
+          <CloseButton {...finalCloseProps} />
         {/if}
       {:else if header}
         {@render header()}

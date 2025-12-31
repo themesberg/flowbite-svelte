@@ -48,8 +48,8 @@ Use this free example of a drawer component to show a list of input field items 
         <Input id="name" name="name" required placeholder="Type product name" />
       </div>
       <div class="mb-6">
-        <Label for="bland" class="mb-2 block">Bland</Label>
-        <Input id="bland" name="bland" required placeholder="Product brand" />
+        <Label for="brand" class="mb-2 block">Bland</Label>
+        <Input id="brand" name="brand" required placeholder="Product brand" />
       </div>
       <div class="mb-6">
         <Label for="price" class="mb-2 block">Price</Label>

@@ -31,10 +31,10 @@
   });
 </script>
 
-<div class={clsx(thumbnails().base(), theme?.base, className)}>
+<div class={clsx(thumbnails().base(), theme?.base, className)} data-scope="thumbnails" data-part="base">
   {#each images as image, idx (image.src || idx)}
     {@const selected = index === idx}
-    <button onclick={() => btnClick(idx)} aria-label={ariaLabel} aria-current={selected ? "true" : undefined}>
+    <button onclick={() => btnClick(idx)} aria-label={ariaLabel} aria-current={selected ? "true" : undefined} data-part="button">
       {#if children}
         {@render children({ image, selected, imgClass: clsx(theme?.img, styling?.img), Thumbnail })}
       {:else}

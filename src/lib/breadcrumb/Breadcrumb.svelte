@@ -10,13 +10,13 @@
 
   const theme = $derived(getTheme("breadcrumb"));
 
-  const { base, list } = $derived(breadcrumb({ solid }));
+  const { base, content } = $derived(breadcrumb({ solid }));
   let classNav = $derived(base({ class: clsx(theme?.base, className) }));
-  let classList = $derived(list({ class: clsx(theme?.list, styling?.list) }));
+  let classContent = $derived(content({ class: clsx(theme?.content, styling?.content) }));
 </script>
 
-<nav aria-label={ariaLabel} {...restProps} class={classNav}>
-  <ol class={classList}>
+<nav data-scope="breadcrumb" data-part="base" aria-label={ariaLabel} {...restProps} class={classNav}>
+  <ol data-part="content" class={classContent}>
     {@render children()}
   </ol>
 </nav>

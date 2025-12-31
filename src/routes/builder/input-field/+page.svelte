@@ -101,7 +101,7 @@ ${closeBtnStatus ? `</Input>` : ""}${helperSlot ? `<Helper class="ps-6" color="$
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Button class="mb-4 w-40" color="secondary" onclick={changeHelperSlot}>{helperSlot ? "Remove helper" : "Add helper"}</Button>
+    <Button class="mb-4 w-40" color="success" onclick={changeHelperSlot}>{helperSlot ? "Remove helper" : "Add helper"}</Button>
     <Label class="mb-4 w-full font-bold">Helper Color</Label>
     {#each colors as colorOption}
       <Radio
@@ -118,7 +118,7 @@ ${closeBtnStatus ? `</Input>` : ""}${helperSlot ? `<Helper class="ps-6" color="$
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-44" onclick={changeDisabled}>{disabled ? "Remove disabled" : "Add disabled"}</Button>
-    <Button class="w-44" color="secondary" onclick={changeCloseBtnStatus}>{closeBtnStatus ? "Remove close button" : "Add close button"}</Button>
+    <Button class="w-44" color="warning" onclick={changeCloseBtnStatus}>{closeBtnStatus ? "Remove close button" : "Add close button"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

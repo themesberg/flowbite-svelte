@@ -33,7 +33,7 @@ export const accordionItem = tv({
   slots: {
     base: "group",
     button: "flex items-center justify-between w-full p-5 font-medium rtl:text-right text-body group-first:rounded-t-base border border-t-0 border-x-0 border-b-default gap-3",
-    contentWrapper: "",
+    container: "",
     content: "p-4 md:p-5 group-last:border group-last:border-t-default group-last:border-x-0",
     active: "",
     inactive: ""

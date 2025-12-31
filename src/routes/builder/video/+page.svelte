@@ -81,9 +81,9 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" color="emerald" onclick={changeControls}>{controls ? "Remove controls" : "Add controls"}</Button>
-    <Button class="w-40" color="blue" onclick={changeAutoplay}>{autoplay ? "Remove autoplay" : "Add autoplay"}</Button>
-    <Button class="w-40" color="pink" onclick={changeMuted}>{muted ? "Remove muted" : "Add muted"}</Button>
+    <Button class="w-40" onclick={changeControls}>{controls ? "Remove controls" : "Add controls"}</Button>
+    <Button class="w-40" color="success" onclick={changeAutoplay}>{autoplay ? "Remove autoplay" : "Add autoplay"}</Button>
+    <Button class="w-40" color="danger" onclick={changeMuted}>{muted ? "Remove muted" : "Add muted"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

@@ -14,7 +14,6 @@
     alertStatus = $bindable(true),
     closeIcon: CloseIcon,
     color = "brand",
-    closeColor,
     rounded = true,
     border,
     class: className,
@@ -23,6 +22,7 @@
     params,
     listContent,
     borderAccent,
+    closeButtonProps,
     ...restProps
   }: AlertProps = $props();
 
@@ -57,10 +57,20 @@
   }
 
   createDismissableContext(close);
+
+  const finalCloseProps = $derived({
+    class: clsx("-my-1.5 ms-auto -me-1.5", closeButtonProps?.class),
+    color: closeButtonProps?.color ?? color,
+    ariaLabel: closeButtonProps?.ariaLabel ?? "Remove alert",
+    size: closeButtonProps?.size,
+    classes: closeButtonProps?.classes,
+    name: closeButtonProps?.name,
+    onclick: closeButtonProps?.onclick
+  });
 </script>
 
 {#if alertStatus}
-  <div role="alert" bind:this={ref} {...restProps} transition:transition={effectiveParams as ParamsType} class={divCls}>
+  <div data-scope="alert" data-part="base" role="alert" bind:this={ref} {...restProps} transition:transition={effectiveParams as ParamsType} class={divCls}>
     {#if icon}
       {@render icon()}
     {/if}
@@ -75,11 +85,11 @@
 
     {#if dismissable}
       {#if CloseIcon}
-        <CloseButton class="-my-1.5 ms-auto -me-1.5" color={closeColor ?? color} ariaLabel="Remove alert">
+        <CloseButton {...finalCloseProps}>
           <CloseIcon />
         </CloseButton>
       {:else}
-        <CloseButton class="-my-1.5 ms-auto -me-1.5" color={closeColor ?? color} ariaLabel="Remove alert" />
+        <CloseButton {...finalCloseProps} />
       {/if}
     {/if}
   </div>

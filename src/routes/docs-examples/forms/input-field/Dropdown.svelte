@@ -17,7 +17,7 @@
     <DropdownItem>Finance</DropdownItem>
   </Dropdown>
   <Input placeholder="Search" />
-  <Button color="primary" class="p-2.5!" type="submit">
+  <Button class="p-2.5!" type="submit">
     <SearchOutline class="h-5 w-5" />
   </Button>
 </ButtonGroup>

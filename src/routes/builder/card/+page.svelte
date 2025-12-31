@@ -101,14 +101,14 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" color="sky" onclick={changeLink}>{link === "" ? "Add link" : "Remove link"}</Button>
-    <Button class="w-40" color="green" onclick={changeClass}>{cardClass ? "Remove class" : "Add class"}</Button>
+    <Button class="w-40" onclick={changeLink}>{link === "" ? "Add link" : "Remove link"}</Button>
+    <Button class="w-40" color="success" onclick={changeClass}>{cardClass ? "Remove class" : "Add class"}</Button>
 
-    <Button class="w-40" color="blue" onclick={changeImage}>
+    <Button class="w-40" color="warning" onclick={changeImage}>
       {hasImageContent(cardImage) ? "Remove image" : "Add image"}
     </Button>
 
-    <Button disabled={!hasImageContent(cardImage)} class="w-40" color="violet" onclick={changeImgLayout}>
+    <Button disabled={!hasImageContent(cardImage)} class="w-40" color="danger" onclick={changeImgLayout}>
       {horizontal ? "Vertical" : "Horizontal"}
     </Button>
 

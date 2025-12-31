@@ -6,6 +6,14 @@ export type CarouselIndicatorsVariants = VariantProps<typeof carouselIndicators>
 export type ControlButtonVariants = VariantProps<typeof controlButton> & Classes<typeof controlButton>;
 export type ThumbnailsVariants = VariantProps<typeof thumbnails> & Classes<typeof thumbnails>;
 
+/**
+ * Carousel component theme
+ *
+ * Anatomical Selectors:
+ * - data-scope="carousel" - Applied to the root carousel container
+ * - data-part="base" - The main carousel container (matches 'base' slot)
+ * - data-part="slide" - The slide element (matches 'slide' slot)
+ */
 export const carousel = tv({
   slots: {
     base: "grid overflow-hidden relative rounded-base h-56 sm:h-64 xl:h-80 2xl:h-96",
@@ -16,6 +24,15 @@ export const carousel = tv({
   defaultVariants: {}
 });
 
+/**
+ * Carousel Indicators component theme
+ *
+ * Anatomical Selectors:
+ * - data-scope="carousel-indicators" - Applied to the indicators container
+ * - data-part="base" - The indicators container (matches 'base' slot)
+ * - data-part="button" - Each indicator button
+ * - data-part="indicator" - The indicator visual element (matches 'indicator' slot)
+ */
 export const carouselIndicators = tv({
   slots: {
     base: "absolute start-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:translate-x-1/2 rtl:space-x-reverse",
@@ -35,6 +52,15 @@ export const carouselIndicators = tv({
   }
 });
 
+/**
+ * Control Button component theme
+ *
+ * Anatomical Selectors:
+ * - data-scope="control-button" - Applied to the control button
+ * - data-part="base" - The button element (matches 'base' slot)
+ * - data-part="icon" - The icon container span (matches 'span' slot)
+ * - data-part="svg" - The SVG icon element
+ */
 export const controlButton = tv({
   slots: {
     base: "flex absolute top-0 z-30 justify-center items-center px-4 h-full group focus:outline-hidden text-white dark:text-gray-300",
@@ -48,6 +74,15 @@ export const controlButton = tv({
   }
 });
 
+/**
+ * Thumbnails component theme
+ *
+ * Anatomical Selectors:
+ * - data-scope="thumbnails" - Applied to the thumbnails container
+ * - data-part="base" - The thumbnails container (matches 'base' slot)
+ * - data-part="button" - Each thumbnail button
+ * - data-part="img" - Thumbnail images (matches 'img' slot)
+ */
 export const thumbnails = tv({
   slots: {
     base: "flex flex-row justify-center bg-gray-100 w-full",
@@ -55,6 +90,13 @@ export const thumbnails = tv({
   }
 });
 
+/**
+ * Thumbnail component theme
+ *
+ * Anatomical Selectors:
+ * - data-scope="thumbnail" - Applied to the thumbnail image
+ * - data-part="image" - The thumbnail image element
+ */
 export const thumbnail = tv({
   base: "",
   variants: {
@@ -70,6 +112,13 @@ export const thumbnail = tv({
 
 export type SlideVariants = VariantProps<typeof slide>;
 
+/**
+ * Slide component theme
+ *
+ * Anatomical Selectors:
+ * - data-scope="slide" - Applied to the slide image
+ * - data-part="image" - The slide image element
+ */
 export const slide = tv({
   base: "absolute block w-full h-full",
   variants: {

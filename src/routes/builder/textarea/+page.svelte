@@ -89,13 +89,13 @@
     <Textarea id="textarea-id" name="message" {value} {required} {rows} {maxlength} {placeholder} class={textAreaClass} {disabled} />
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-48" color="blue" onclick={changeRequired}>{required ? "Remove required" : "Add required"}</Button>
-    <Button class="w-48" color="red" onclick={changePlaceholder}>{placeholder ? "Remove placeholder" : "Add placeholder"}</Button>
-    <Button class="w-48" color="yellow" onclick={changeRows}>{rows !== undefined ? "Remove rows" : "Add rows"}</Button>
-    <Button class="w-48" color="green" onclick={changeMaxlength}>{maxlength ? "Remove maxlength" : "Add maxlength"}</Button>
-    <Button class="w-48" color="pink" onclick={changeClass}>{textAreaClass === "w-full" ? "Use narrow width" : "Use full width"}</Button>
-    <Button class="w-48" color="purple" onclick={changeDisabled}>{disabled ? "Remove disabled" : "Add disabled"}</Button>
-    <Button class="w-48" color="orange" onclick={changeValue}>{value ? "Remove value" : "Add value"}</Button>
+    <Button class="w-48" onclick={changeRequired}>{required ? "Remove required" : "Add required"}</Button>
+    <Button class="w-48" color="danger" onclick={changePlaceholder}>{placeholder ? "Remove placeholder" : "Add placeholder"}</Button>
+    <Button class="w-48" color="warning" onclick={changeRows}>{rows !== undefined ? "Remove rows" : "Add rows"}</Button>
+    <Button class="w-48" color="success" onclick={changeMaxlength}>{maxlength ? "Remove maxlength" : "Add maxlength"}</Button>
+    <Button class="w-48" color="alternative" onclick={changeClass}>{textAreaClass === "w-full" ? "Use narrow width" : "Use full width"}</Button>
+    <Button class="w-48" color="gray" onclick={changeDisabled}>{disabled ? "Remove disabled" : "Add disabled"}</Button>
+    <Button class="w-48" onclick={changeValue}>{value ? "Remove value" : "Add value"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

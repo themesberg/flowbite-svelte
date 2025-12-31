@@ -88,7 +88,7 @@
                 required
                 type="email"
               />
-              <Button type="submit" color="primary" size="xl" class="self-stretch" disabled={isSubmitting}>
+              <Button type="submit" size="xl" class="self-stretch" disabled={isSubmitting}>
                 {#if isSubmitting}
                   <div class="flex items-center">
                     <span class="mr-2">Subscribing...</span>

@@ -7,14 +7,18 @@
   let {
     children,
     phoneIcon = true,
-    pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}",
+    pattern,
     phoneType = "default",
     floatingLabel = "Phone number",
     labelFor = "floating-phone-number",
     class: className,
     classes,
+    value = $bindable(""),
     ...restProps
   }: PhoneInputProps = $props();
+
+  // Set default pattern if not provided
+  const inputPattern = $derived(pattern ?? "[0-9]{3}-[0-9]{3}-[0-9]{4}");
 
   const theme = $derived(getTheme("phoneInput"));
 
@@ -36,7 +40,7 @@
         {@render phoneIconSnippet()}
       </div>
     {/if}
-    <input type="tel" {pattern} {...restProps} class={input({ class: clsx(theme?.input, classes?.input) })} />
+    <input type="tel" pattern={inputPattern} bind:value {...restProps} class={input({ class: clsx(theme?.input, classes?.input) })} />
   </div>
 {:else if phoneType === "floating"}
   <div class="relative">
@@ -45,7 +49,7 @@
         {@render phoneIconSnippet()}
       </span>
     {/if}
-    <input type="tel" class={floatingInput({ class: clsx(theme?.floatingInput, classes?.floatingInput) })} {pattern} {...restProps} />
+    <input type="tel" pattern={inputPattern} bind:value {...restProps} class={floatingInput({ class: clsx(theme?.floatingInput, classes?.floatingInput) })} />
     <label for={labelFor} class={label({ class: clsx(theme?.label, classes?.label) })}>{floatingLabel}</label>
   </div>
 {/if}

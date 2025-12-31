@@ -32,7 +32,7 @@
   <ButtonGroup class="w-full">
     <InputAddon>@</InputAddon>
     <Input id="input-addon-button" type="email" placeholder="john.doe@mail.com" />
-    <Button color="primary">Search</Button>
+    <Button>Search</Button>
   </ButtonGroup>
 </div>
 
@@ -40,12 +40,12 @@
   <Label for="input-addon-crazy" class="mb-2">Crazy example</Label>
   <ButtonGroup class="w-full">
     <InputAddon><Checkbox /></InputAddon>
-    <Button color="primary">Search</Button>
+    <Button>Search</Button>
     <InputAddon>http://</InputAddon>
     <Input id="input-addon-crazy" type="email" placeholder="john.doe@mail.com" />
     <InputAddon>@</InputAddon>
     <InputAddon><Checkbox /></InputAddon>
-    <Button color="blue">Send</Button>
+    <Button color="success">Send</Button>
     <InputAddon>kg</InputAddon>
   </ButtonGroup>
 </div>

@@ -118,9 +118,9 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-48" color="blue" onclick={changeListIcon}>{listIcon ? "Remove icon" : "Add icon"}</Button>
-    <Button class="w-48" color="rose" onclick={changeCtxClass}>{ctxClass !== "" ? "Remove ctxClass" : "Add ctxClass"}</Button>
-    <Button class="w-48" color="teal" onclick={changeNested}>{nested ? "Remove nested" : "Add nested"}</Button>
+    <Button class="w-48" onclick={changeListIcon}>{listIcon ? "Remove icon" : "Add icon"}</Button>
+    <Button class="w-48" color="success" onclick={changeCtxClass}>{ctxClass !== "" ? "Remove ctxClass" : "Add ctxClass"}</Button>
+    <Button class="w-48" color="warning" onclick={changeNested}>{nested ? "Remove nested" : "Add nested"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

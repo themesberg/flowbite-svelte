@@ -37,6 +37,7 @@ import type { ButtonVariants, GradientButtonVariants, gradientButton } from "$li
 import type { CardVariants } from "$lib/card/theme";
 import type Slide from "$lib/carousel/Slide.svelte";
 import type { CarouselVariants, SlideVariants, CarouselIndicatorsVariants, ControlButtonVariants, ThumbnailsVariants } from "$lib/carousel/theme";
+import type { DarkmodeVariants } from "$lib/darkmode/theme";
 import type { DrawerHandleVariants, DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
 import type { DatepickerVariants } from "$lib/datepicker/theme";
 import type { FooterBrandVariants, FooterCopyrightVariants, FooterLinkVariants } from "$lib/footer/theme";
@@ -125,6 +126,16 @@ import type { DialogVariants } from "./dialog/theme";
 
 // end of component variants
 
+export interface CloseButtonConfig {
+  color?: CloseButtonVariants["color"];
+  size?: CloseButtonVariants["size"];
+  class?: string;
+  classes?: CloseButtonVariants["classes"];
+  name?: string;
+  ariaLabel?: string;
+  onclick?: (ev: MouseEvent) => void;
+}
+
 export declare const xs = "xs";
 export declare const sm = "sm";
 export declare const md = "md";
@@ -142,7 +153,6 @@ export interface drawerTransitionParamTypes {
 }
 
 // CloseButton
-
 export type CloseButtonProps = CloseButtonVariants &
   AnchorButtonAttributes & {
     onclick?: (ev: MouseEvent) => void;
@@ -227,12 +237,12 @@ export interface AlertProps extends Omit<AlertVariants, "icon">, Omit<HTMLAttrib
   icon?: Snippet;
   alertStatus?: boolean;
   closeIcon?: Component;
-  closeColor?: CloseButtonVariants["color"];
   transition?: TransitionFunc;
   params?: ParamsType;
   onclick?: () => void;
   listContent?: boolean;
   borderAccent?: boolean;
+  closeButtonProps?: CloseButtonConfig;
 }
 
 // avatar
@@ -258,7 +268,7 @@ export interface BadgeProps extends Omit<BadgeVariants, "href">, Omit<HTMLAttrib
   target?: HTMLAnchorAttributes["target"];
   transition?: TransitionFunc;
   params?: ParamsType;
-  closeBtnColor?: CloseButtonVariants["color"];
+  closeButtonProps?: CloseButtonConfig;
 }
 
 // banner
@@ -268,8 +278,8 @@ export interface BannerProps extends BannerVariants, Omit<HTMLAttributes<HTMLDiv
   dismissable?: boolean;
   transition?: TransitionFunc;
   params?: ParamsType;
-  closeBtnColor?: CloseButtonVariants["color"];
   onclose?: (ev: MouseEvent) => void;
+  closeButtonProps?: CloseButtonConfig;
 }
 
 // bottom-navigation
@@ -284,11 +294,6 @@ export type BottomNavItemProps = BottomNavItemVariants &
   AnchorButtonAttributes & {
     children: Snippet;
     btnName?: string;
-    activeClass?: ClassValue;
-    /** @deprecated Use `class` prop instead */
-    btnClass?: ClassValue;
-    /** @deprecated Use `classes.span` instead */
-    spanClass?: ClassValue;
     active?: boolean;
   };
 
@@ -529,7 +534,7 @@ export interface ClipboardProps extends ClipboardVariants, ButtonVariants, Omit<
 }
 
 // darkmode
-export interface DarkmodeProps extends HTMLButtonAttributes {
+export interface DarkmodeProps extends DarkmodeVariants, HTMLButtonAttributes {
   lightIcon?: Snippet;
   darkIcon?: Snippet;
   size?: "sm" | "md" | "lg";
@@ -560,7 +565,7 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   placeholder?: string;
   disabled?: boolean;
   required?: boolean;
-  color?: ButtonProps["color"];
+  color?: DatepickerVariants["color"];
   inline?: boolean;
   autohide?: boolean;
   showActionButtons?: boolean;
@@ -569,7 +574,7 @@ export interface DatepickerProps extends DatepickerVariants, Omit<HTMLAttributes
   onclear?: () => void;
   onapply?: (x: DateOrRange) => void;
   inputmode?: HTMLInputAttributes["inputmode"];
-  monthColor?: ButtonProps["color"];
+  monthColor?: DatepickerVariants["color"];
   translationLocale?: string;
   elementRef?: HTMLInputElement;
   actionSlot?: Snippet<[ActionSlotParams]>;
@@ -619,7 +624,6 @@ export interface TabletProps extends TabletVariants, HTMLAttributes<HTMLDivEleme
 }
 
 // dialog
-
 export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
   onaction?: ({ action, data }: { action: string; data: FormData }) => any;
   form?: boolean;
@@ -631,6 +635,7 @@ export interface DialogProps extends DialogVariants, HTMLDialogAttributes {
   outsideclose?: boolean;
   transition?: TransitionFunc;
   transitionParams?: ParamsType;
+  closeButtonProps?: CloseButtonConfig;
 }
 
 // drawer
@@ -762,8 +767,8 @@ export interface FileuploadProps extends FileuploadViariants, Omit<HTMLInputAttr
   color?: InputProps<never>["color"];
   elementRef?: HTMLInputElement;
   clearable?: boolean;
-  clearableColor?: CloseButtonVariants["color"];
   clearableOnClick?: () => void;
+  closeButtonProps?: CloseButtonConfig;
 }
 
 // floatinglabel-input
@@ -779,12 +784,12 @@ export interface FloatingLabelInputProps extends FloatingLabelInputVaratiants, O
   disabled?: FloatingLabelInputVaratiants["disabled"];
   withIcon?: FloatingLabelInputVaratiants["withIcon"];
   clearable?: boolean;
-  clearableColor?: CloseButtonVariants["color"];
   clearableOnClick?: () => void;
   data?: string[];
   maxSuggestions?: number;
   onSelect?: (item: string) => void;
-  placeholder?: string; // this will filter out placeholder from restProps
+  placeholder?: string;
+  closeButtonProps?: CloseButtonConfig;
 }
 
 // helper
@@ -802,7 +807,6 @@ export interface InputProps<T extends InputValue = string> extends InputVariants
   elementRef?: HTMLInputElement;
   color?: InputVariants["color"];
   clearable?: boolean;
-  clearableColor?: CloseButtonVariants["color"];
   clearableOnClick?: () => void;
   data?: string[];
   maxSuggestions?: number;
@@ -811,6 +815,7 @@ export interface InputProps<T extends InputValue = string> extends InputVariants
   onfocus?: (event: FocusEvent) => void;
   onblur?: (event: FocusEvent) => void;
   onkeydown?: (event: KeyboardEvent) => void;
+  closeButtonProps?: CloseButtonConfig;
 }
 
 // input-addon
@@ -820,12 +825,13 @@ export interface InputAddonProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 // phoneInput
-export interface PhoneInputProps extends PhoneInputVariants, Omit<HTMLInputAttributes, "size" | "children" | "value"> {
+export interface PhoneInputProps extends PhoneInputVariants, Omit<HTMLInputAttributes, "size" | "children"> {
   phoneType?: "default" | "floating" | "countryCode" | "copy" | "advanced";
   children?: Snippet;
   floatingLabel?: string;
   labelFor?: string;
   phoneIcon?: boolean;
+  value?: string | number | readonly string[];
 }
 
 // label
@@ -866,8 +872,8 @@ export interface SearchProps extends SearchVariants, Omit<HTMLInputAttributes, "
   value?: string;
   elementRef?: HTMLInputElement;
   clearable?: boolean;
-  clearableColor?: CloseButtonVariants["color"];
   clearableOnClick?: () => void;
+  closeButtonProps?: CloseButtonConfig;
 }
 
 // select
@@ -884,11 +890,11 @@ export interface SelectProps<T> extends SelectVariants, Omit<HTMLSelectAttribute
   elementRef?: HTMLSelectElement;
   placeholder?: string;
   clearable?: boolean;
-  clearableColor?: CloseButtonVariants["color"];
   // remove this in next major version
   clearableOnClick?: () => void;
   onClear?: () => void;
   disabled?: boolean;
+  closeButtonProps?: CloseButtonConfig;
 }
 
 export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLAttributes<HTMLDivElement>, "size" | "children" | "onchange" | "onblur"> {
@@ -905,13 +911,13 @@ export interface MultiSelectProps<T> extends MultiSelectVariants, Omit<HTMLAttri
   autocomplete?: FullAutoFill | undefined | null;
   onchange?: (event: Event) => void;
   onblur?: (event: FocusEvent) => void;
+  closeButtonProps?: CloseButtonConfig;
 }
 
 // Tags
 export interface TagsProps extends TagsVariants, HTMLAttributes<HTMLDivElement> {
   value: string[];
   placeholder?: string;
-  closeBtnSize?: CloseButtonVariants["size"];
   unique?: boolean;
   availableTags?: string[];
   maxSuggestions?: number;
@@ -920,6 +926,7 @@ export interface TagsProps extends TagsVariants, HTMLAttributes<HTMLDivElement> 
   allowNewTags?: boolean;
   inputProps?: HTMLInputAttributes;
   disabled?: boolean;
+  closeButtonProps?: CloseButtonConfig;
 }
 
 // Timepicker
@@ -969,6 +976,7 @@ export interface TextareaProps extends TextareaVariants, HTMLTextareaAttributes 
   clearable?: boolean;
   clearableColor?: CloseButtonVariants["color"];
   clearableOnClick?: () => void;
+  closeButtonProps?: CloseButtonConfig;
 }
 
 // toggle
@@ -1060,6 +1068,7 @@ export interface ModalProps extends ModalVariants, Omit<DialogProps, "classes"> 
   header?: Snippet;
   footer?: Snippet;
   fullscreen?: boolean;
+  closeButtonProps?: CloseButtonConfig;
 }
 
 // navbar
@@ -1803,6 +1812,7 @@ export interface ToastProps extends ToastVaraints, HTMLAttributes<HTMLDivElement
   params?: ParamsType;
   transition?: TransitionFunc;
   class?: string;
+  closeButtonProps?: CloseButtonConfig;
 }
 
 export interface ToastContainerProps extends HTMLAttributes<HTMLDivElement> {

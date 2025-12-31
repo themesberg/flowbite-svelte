@@ -6,8 +6,8 @@ export type TagsVariants = VariantProps<typeof tags> & Classes<typeof tags>;
 
 export const tags = tv({
   slots: {
-    base: "border border-gray-300 dark:border-gray-600 rounded-lg flex focus-within:ring-primary-500 focus-within:ring-1 focus-within:border-primary-500 scrollbar-hidden bg-gray-50 dark:bg-gray-700",
-    tag: "flex items-center rounded-lg bg-gray-100 text-gray-900 border border-gray-300 my-1 ml-1 px-2 text-sm max-w-full min-w-fit",
+    base: "border border-gray-300 dark:border-gray-600 rounded-base flex focus-within:ring-primary-500 focus-within:ring-1 focus-within:border-primary-500 scrollbar-hidden bg-gray-50 dark:bg-gray-700",
+    tag: "flex items-center rounded-base bg-gray-100 text-gray-900 border border-gray-300 my-1 ml-1 px-2 text-sm max-w-full min-w-fit",
     span: "items-center",
     close: "my-auto ml-1",
     input:

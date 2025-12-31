@@ -133,8 +133,8 @@
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-36" onclick={changeClass}>{popoverClass !== "w-64 text-sm font-light" ? "Remove class" : "Add class"}</Button>
-    <Button class="w-36" color="secondary" onclick={changeArrow}>{arrow ? "Remove arrow" : "Add arrow"}</Button>
-    <Button class="w-36" color="rose" onclick={changeOffset}>{offset ? "Remove offset" : "Add offset"}</Button>
+    <Button class="w-36" color="success" onclick={changeArrow}>{arrow ? "Remove arrow" : "Add arrow"}</Button>
+    <Button class="w-36" color="warning" onclick={changeOffset}>{offset ? "Remove offset" : "Add offset"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

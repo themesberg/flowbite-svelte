@@ -6,7 +6,7 @@
   import { getTheme } from "$lib/theme-provider/themeUtils";
   import { createDismissableContext } from "$lib/utils/dismissable";
 
-  let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, classes, clearableColor = "none", clearableOnClick, ...restProps }: FileuploadProps = $props();
+  let { files = $bindable(), size = "md", clearable = false, elementRef = $bindable(), class: className, classes, clearableOnClick, closeButtonProps, ...restProps }: FileuploadProps = $props();
 
   const styling = $derived(classes);
 
@@ -36,12 +36,22 @@
 
   // Check if we should show the clear button
   const showClearButton = $derived(clearable && files && files.length > 0);
+
+  const finalCloseProps = $derived({
+    class: close({ class: clsx(theme?.close, styling?.close) }),
+    color: closeButtonProps?.color ?? "gray",
+    ariaLabel: closeButtonProps?.ariaLabel ?? "Clear selected files",
+    size: closeButtonProps?.size,
+    classes: closeButtonProps?.classes ?? { svg: clsx(theme?.svg, styling?.svg) },
+    name: closeButtonProps?.name,
+    onclick: closeButtonProps?.onclick
+  });
 </script>
 
 <div class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })}>
   <input type="file" onchange={handleChange} bind:this={elementRef} {...restProps} class={base({ size, class: clsx(theme?.base, className) })} />
   {#if showClearButton}
-    <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} color={clearableColor} ariaLabel="Clear selected files" svgClass={clsx(theme?.svg, styling?.svg)} />
+    <CloseButton {...finalCloseProps} />
   {/if}
 </div>
 

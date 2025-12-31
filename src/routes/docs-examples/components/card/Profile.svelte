@@ -18,7 +18,7 @@
     <span class="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
     <div class="mt-4 flex space-x-3 lg:mt-6 rtl:space-x-reverse">
       <Button>Add friend</Button>
-      <Button color="light" class="dark:text-white">Message</Button>
+      <Button color="success" class="dark:text-white">Message</Button>
     </div>
   </div>
 </Card>

@@ -3,10 +3,14 @@
   import type { CloseButtonProps } from "$lib/types";
   import { closeButton } from "./theme";
   import { useDismiss } from "./dismissable";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
 
-  let { children, color = "gray", onclick: onclickorg, name = "Close", ariaLabel, size = "md", class: className, svgClass, ...restProps }: CloseButtonProps = $props();
+  let { children, color = "gray", onclick: onclickorg, name = "Close", ariaLabel, size = "md", class: className, classes, ...restProps }: CloseButtonProps = $props();
 
   const { base, svg } = $derived(closeButton({ color, size }));
+
+  const theme = $derived(getTheme("closeButton"));
+  const styling = $derived(classes);
 
   const context = useDismiss();
 
@@ -18,12 +22,12 @@
 </script>
 
 {#if restProps.href === undefined}
-  <button type="button" {...restProps} class={base({ class: clsx(className) })} {onclick} aria-label={ariaLabel ?? name}>
+  <button data-scope="close-button" data-part="base" type="button" {...restProps} class={base({ class: clsx(theme?.base, className) })} {onclick} aria-label={ariaLabel ?? name}>
     {#if name}<span class="sr-only">{name}</span>{/if}
     {#if children}
       {@render children()}
     {:else}
-      <svg class={svg({ class: svgClass })} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <svg data-part="svg" class={svg({ class: clsx(theme?.svg, styling?.svg) })} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -33,12 +37,12 @@
     {/if}
   </button>
 {:else}
-  <a {...restProps} {onclick} class={base({ class: clsx(className) })} aria-label={ariaLabel ?? name}>
+  <a data-part="base" {...restProps} {onclick} class={base({ class: clsx(theme?.base, className) })} aria-label={ariaLabel ?? name}>
     {#if name}<span class="sr-only">{name}</span>{/if}
     {#if children}
       {@render children()}
     {:else}
-      <svg class={svg()} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <svg data-part="svg" class={svg({ class: clsx(theme?.svg, styling?.svg) })} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
           d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"

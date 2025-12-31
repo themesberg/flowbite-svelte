@@ -9,7 +9,7 @@
   const theme = $derived(getTheme("thumbnail"));
 </script>
 
-<img {...restProps} class={thumbnail({ selected, class: clsx(theme, className) })} />
+<img {...restProps} class={thumbnail({ selected, class: clsx(theme, className) })} data-scope="thumbnail" data-part="image" />
 
 <!--
 @component

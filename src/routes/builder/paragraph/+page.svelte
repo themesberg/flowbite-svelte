@@ -121,7 +121,7 @@
     <Button class="w-40" onclick={() => (pFirstupper = !pFirstupper)}>{pFirstupper ? "Remove upper" : "First upper"}</Button>
     <Button
       class="w-40"
-      color="secondary"
+      color="success"
       onclick={() => {
         pJustify = !pJustify;
         pAlign = "left";
@@ -129,7 +129,7 @@
     >
       {pJustify ? "Remove justify" : "Justify"}
     </Button>
-    <Button class="w-40" color="emerald" onclick={changeItalic}>{italic ? "Remove italic" : "Italic"}</Button>
+    <Button class="w-40" color="warning" onclick={changeItalic}>{italic ? "Remove italic" : "Italic"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

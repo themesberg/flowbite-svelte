@@ -38,7 +38,7 @@
       {selectedCount} of {items.length} completed
     </span>
     {#if selectedCount > 0}
-      <Button size="xs" color="red" onclick={clearCompleted}>Clear Completed</Button>
+      <Button size="xs" onclick={clearCompleted}>Clear Completed</Button>
     {/if}
   </div>
 
@@ -50,7 +50,7 @@
         <span class="flex-1 {task.completed ? 'text-gray-400 line-through' : 'text-gray-900 dark:text-white'}">
           {task.text}
         </span>
-        <Button size="xs" color="red" class="!p-2" onclick={() => deleteItem(task.id)}>
+        <Button size="xs" class="!p-2" onclick={() => deleteItem(task.id)}>
           <TrashBinSolid class="h-3 w-3" />
         </Button>
       </div>

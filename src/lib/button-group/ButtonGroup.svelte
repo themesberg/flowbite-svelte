@@ -25,7 +25,7 @@
   setButtonGroupContext(reactiveCtx);
 </script>
 
-<div {...restProps} class={groupClass} role="group">
+<div data-scope="button-group" data-part="base" {...restProps} class={groupClass} role="group">
   {@render children()}
 </div>
 

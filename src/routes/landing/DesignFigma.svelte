@@ -17,7 +17,6 @@
         <p class="self-stretch">Our design system is being used by a large number of devs:</p>
         <div class="max-w-l isolate flex flex-col items-start gap-4 self-stretch">
           <Button
-            color="light"
             class="max-w-lg justify-start! gap-5 self-stretch px-4! sm:gap-7"
             size="xl"
             href="https://www.figma.com/file/5pHMkriSz9q98zawojb4mx/flowbite-pro-figma-v2.5.0?node-id=18-0&t=X431WUvSP7jsPiEI-0"
@@ -25,7 +24,7 @@
             <Figma /> Preview in Figma
             <div class="ms-auto hidden sm:block"><ArrowRight /></div>
           </Button>
-          <Button color="light" class="max-w-lg justify-start! gap-4 self-stretch px-4! sm:gap-6" size="xl" href="https://flowbite.com/figma/">
+          <Button color="success" class="max-w-lg justify-start! gap-4 self-stretch px-4! sm:gap-6" size="xl" href="https://flowbite.com/figma/">
             <FlowbiteLogo /> Learn more
             <div class="ms-auto hidden sm:block"><ArrowRight /></div>
           </Button>

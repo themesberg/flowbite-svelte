@@ -99,8 +99,8 @@
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-40" onclick={changeUnderline}>{underline ? "Default" : "Underline"}</Button>
-    <Button class="w-40" color="secondary" onclick={changeDiabled}>{disabled ? "Enabled" : "Disabled"}</Button>
-    <Button class="w-40" color="rose" onclick={changeBindValue}>{bindValue ? "Unbind" : "Bind value"}</Button>
+    <Button class="w-40" color="success" onclick={changeDiabled}>{disabled ? "Enabled" : "Disabled"}</Button>
+    <Button class="w-40" color="warning" onclick={changeBindValue}>{bindValue ? "Unbind" : "Bind value"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

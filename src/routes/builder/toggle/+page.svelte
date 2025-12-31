@@ -94,8 +94,8 @@
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-40" onclick={changeChecked}>{checked ? "Remove checked" : "Add checked"}</Button>
-    <Button class="w-40" color="secondary" onclick={changeDisabled}>{disabled ? "Remove disabled" : "Add disabled"}</Button>
-    <Button class="w-40" color="emerald" onclick={changeLeftLabel}>{leftSlot ? "Remove left slot" : "Add left slot"}</Button>
+    <Button class="w-40" color="success" onclick={changeDisabled}>{disabled ? "Remove disabled" : "Add disabled"}</Button>
+    <Button class="w-40" color="warning" onclick={changeLeftLabel}>{leftSlot ? "Remove left slot" : "Add left slot"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

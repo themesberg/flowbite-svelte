@@ -16,8 +16,8 @@
     class: className,
     classes,
     clearable,
-    clearableColor = "none",
     clearableOnClick,
+    closeButtonProps,
     ...restProps
   }: TextareaProps = $props();
 
@@ -41,6 +41,16 @@
   };
 
   createDismissableContext(clearAll);
+
+  const finalCloseProps = $derived({
+    class: close({ class: clsx(theme?.close, styling?.close) }),
+    color: closeButtonProps?.color ?? "gray",
+    ariaLabel: closeButtonProps?.ariaLabel ?? "Clear search value",
+    size: closeButtonProps?.size,
+    classes: closeButtonProps?.classes ?? { svg: clsx(theme?.svg, styling?.svg) },
+    name: closeButtonProps?.name,
+    onclick: closeButtonProps?.onclick
+  });
 </script>
 
 <div class={div({ class: clsx(theme?.div, className) })}>
@@ -69,7 +79,7 @@
     </div>
   {/if}
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} color={clearableColor} aria-label="Clear search value" svgClass={clsx(styling?.svg)} />
+    <CloseButton {...finalCloseProps} />
   {/if}
 </div>
 

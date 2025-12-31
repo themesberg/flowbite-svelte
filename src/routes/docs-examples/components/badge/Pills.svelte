@@ -8,5 +8,3 @@
 <Badge rounded color="danger">Danger</Badge>
 <Badge rounded color="success">Success</Badge>
 <Badge rounded color="warning">Warning</Badge>
-<Badge rounded color="purple">Purple</Badge>
-<Badge rounded color="pink">Pink</Badge>

@@ -104,8 +104,8 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-48" color="blue" onclick={changeImgCaption}>{imgCaption ? "Remove caption" : "Add caption"}</Button>
-    <Button class="w-48" color="lime" onclick={changeImgHrf}>{imgHref === "" ? "Add href" : "Remove href"}</Button>
+    <Button class="w-48" onclick={changeImgCaption}>{imgCaption ? "Remove caption" : "Add caption"}</Button>
+    <Button class="w-48" color="success" onclick={changeImgHrf}>{imgHref === "" ? "Add href" : "Remove href"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

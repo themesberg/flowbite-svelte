@@ -23,7 +23,7 @@
     rounded,
     transition = fade,
     params,
-    closeBtnColor = "gray",
+    closeButtonProps,
     ...restProps
   }: BadgeProps = $props();
 
@@ -32,7 +32,18 @@
   // Theme context
   const theme = $derived(getTheme("badge"));
 
-  const { base, linkClass } = $derived(badge({ color, size: large ? "large" : "small", rounded, border, href: !!href }));
+  const { base, link } = $derived(badge({ color, size: large ? "large" : "small", rounded, border, href: !!href }));
+
+  const size: "sm" | "xs" = $derived(large ? "sm" : "xs");
+  const finalCloseProps = $derived({
+    class: clsx("ms-1", closeButtonProps?.class),
+    size: closeButtonProps?.size ?? size,
+    color: closeButtonProps?.color ?? color,
+    ariaLabel: closeButtonProps?.ariaLabel ?? "Remove badge",
+    classes: closeButtonProps?.classes,
+    name: closeButtonProps?.name,
+    onclick: closeButtonProps?.onclick
+  });
 
   // Check if running in browser to avoid SSR issues
   const isBrowser = typeof window !== "undefined";
@@ -52,9 +63,9 @@
 </script>
 
 {#if badgeStatus}
-  <div {...restProps} bind:this={ref} transition:transition={effectiveParams as ParamsType} class={base({ class: clsx(theme?.base, className) })}>
+  <div data-scope="badge" data-part="base" {...restProps} bind:this={ref} transition:transition={effectiveParams as ParamsType} class={base({ class: clsx(theme?.base, className) })}>
     {#if href}
-      <a {href} {target} class={linkClass({ class: clsx(theme?.linkClass, styling?.linkClass) })}>
+      <a {href} {target} class={link({ class: clsx(theme?.link, styling?.link) })}>
         {@render children()}
       </a>
     {:else}
@@ -63,11 +74,11 @@
 
     {#if dismissable}
       {#if icon}
-        <CloseButton class="ms-1" color={closeBtnColor} size={large ? "sm" : "xs"} ariaLabel="Remove badge">
+        <CloseButton {...finalCloseProps}>
           {@render icon()}
         </CloseButton>
       {:else}
-        <CloseButton class="ms-1" color={closeBtnColor} size={large ? "sm" : "xs"} ariaLabel="Remove badge" />
+        <CloseButton {...finalCloseProps} />
       {/if}
     {/if}
   </div>

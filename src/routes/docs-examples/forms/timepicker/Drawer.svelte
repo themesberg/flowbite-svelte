@@ -127,7 +127,7 @@
               inputClass={timepickerClasses.inputClass}
               size="sm"
             />
-            <Button color="red" size="xs" pill={true} onclick={() => removeInterval(index)} class="shrink-0 p-2 hover:bg-red-600">
+            <Button color="danger" size="xs" pill={true} onclick={() => removeInterval(index)} class="shrink-0 p-2 hover:bg-red-600">
               <TrashBinSolid class="h-2 w-2 sm:h-3 sm:w-3" />
             </Button>
           </div>
@@ -141,8 +141,8 @@
     </Button>
 
     <div class="flex gap-4">
-      <Button class="w-1/2" color="alternative" onclick={() => (open = false)}>Cancel</Button>
-      <Button type="submit" class="w-1/2" color="primary">Save Changes</Button>
+      <Button class="w-1/2" onclick={() => (open = false)}>Cancel</Button>
+      <Button type="submit" class="w-1/2" color="success">Save Changes</Button>
     </div>
   </form>
 </Drawer>

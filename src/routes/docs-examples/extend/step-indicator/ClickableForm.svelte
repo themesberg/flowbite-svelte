@@ -117,7 +117,7 @@
       {#if currentStep < 4}
         <Button type="submit">Next</Button>
       {:else if currentStep === 4}
-        <Button type="submit" color="green">Complete</Button>
+        <Button type="submit" color="success">Complete</Button>
       {/if}
     </div>
   </form>

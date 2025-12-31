@@ -13,7 +13,7 @@
   let {
     children,
     name = "",
-    color = "light",
+    color = "brand",
     tooltip: _tooltip,
     pill = context?.pill ?? true,
     textOutside = context?.textOutside ?? false,
