@@ -1057,7 +1057,7 @@ export type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> &
 // mega-menu
 export interface MegaMenuProps extends MegaMenuVariants, Omit<PopperProps, "children"> {
   children: Snippet<[{ item: LinkType; index: number }]>;
-  extra?: Snippet;
+  addon?: Snippet;
   items?: LinkType[];
   full?: boolean;
   isOpen?: boolean;
