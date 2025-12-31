@@ -19,7 +19,7 @@
 <span data-scope="footer-copyright" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
   &copy; {effectiveYear}
   {#if href}
-    <a  data-part="link" {...restProps} {href} class={link({ class: clsx(theme?.link, styling?.link) })}>
+    <a data-part="link" {...restProps} {href} class={link({ class: clsx(theme?.link, styling?.link) })}>
       {by}
     </a>
   {:else}

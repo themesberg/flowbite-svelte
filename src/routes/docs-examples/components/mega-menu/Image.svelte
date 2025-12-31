@@ -34,7 +34,7 @@
           {item.name}
         </a>
       {/snippet}
-      {#snippet extra()}
+      {#snippet addon()}
         <a
           href={resolve("/")}
           class="mt-4 block rounded-lg bg-gray-500 bg-cover bg-local bg-center bg-no-repeat p-4 text-left bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken"

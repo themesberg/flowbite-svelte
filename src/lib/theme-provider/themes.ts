@@ -23,7 +23,7 @@ export { kbd } from "../kbd";
 export { listGroup, listGroupItem } from "../list-group";
 export { megamenu } from "../mega-menu";
 export { modal } from "../modal";
-export { navbar, navbarBrand, navbarHamburger, navbarLi, navbarUl, navbarContainer } from "../navbar";
+export { navbar, navbarBrand, navbarHamburger, navLi, navUl, navbarContainer } from "../navbar";
 export { pagination, paginationButton, paginationItem, paginationNav } from "../pagination";
 export { popover } from "../popover";
 export { progressbar, progressradial } from "../progress";

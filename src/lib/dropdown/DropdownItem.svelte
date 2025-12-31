@@ -16,10 +16,10 @@
   let isActive = $derived(ctx?.activeUrl && href ? href === ctx.activeUrl : false);
 
   const { base, active, item } = dropdownItem();
-  let itemClass = $derived(isActive ? active({ class: clsx(theme?.active, styling?.active) }) : base({ class: clsx(theme?.item, styling?.item) }));
+  let itemClass = $derived(isActive ? active({ class: clsx(theme?.active, styling?.active) }) : item({ class: clsx(theme?.item, styling?.item) }));
 </script>
 
-<li data-scope="dropdown-item" data-part="" class={base({ class: clsx(theme?.base, className) })}>
+<li data-scope="dropdown-item" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
   {#if href}
     <a data-part="item" {href} {onclick} {...restProps} class={itemClass}>
       {@render children()}

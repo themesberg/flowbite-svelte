@@ -11,7 +11,7 @@
   const styling = $derived(classes);
   const theme = $derived(getTheme("navbar"));
 
-  let { base, container: navContainerClass } = $derived(navbar());
+  let { base, content, container: navContainerClass } = $derived(navbar());
 
   let navState = $state<NavbarState>({ hidden: true });
   setNavbarStateContext(navState);
@@ -39,8 +39,8 @@
 
 <svelte:document onclick={handleDocumentClick} />
 
-<nav bind:this={navbarElement}>
-  <div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<nav data-scope="navbar" data-part="base" class={base({ class: clsx(className) })} bind:this={navbarElement}>
+  <div {...restProps} class={content({ class: clsx(theme?.content, styling?.content) })}>
     <NavContainer {fluid} class={navContainerClass({ class: clsx(theme?.container, styling?.container) })}>
       {@render children({ hidden: navState.hidden, toggle, NavContainer })}
     </NavContainer>

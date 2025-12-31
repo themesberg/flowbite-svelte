@@ -40,13 +40,14 @@ import type { CarouselVariants, SlideVariants, CarouselIndicatorsVariants, Contr
 import type { DarkmodeVariants } from "$lib/darkmode/theme";
 import type { DrawerHandleVariants, DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
 import type { DatepickerVariants } from "$lib/datepicker/theme";
+import type { DropdownItemVariants } from "$lib/dropdown/theme";
 import type { FooterBrandVariants, FooterCopyrightVariants, FooterLinkVariants } from "$lib/footer/theme";
 import type { GalleryVariants } from "$lib/gallery/theme";
 import type { IndicatorVariants } from "$lib/indicator/theme";
 import type { ListgroupItemVariants, ListgroupVariants } from "$lib/list-group/theme";
 import type { MegaMenuVariants } from "$lib/mega-menu/theme";
 import type { ModalVariants } from "$lib/modal/theme";
-import type { NavbarVariants, NavbarUlVariants, NavbarHamburgerVariants } from "$lib/navbar/theme";
+import type { NavbarVariants, NavbarUlVariants, NavbarHamburgerVariants, NavLiVariants } from "$lib/navbar/theme";
 import type { PaginationNavVariants } from "$lib/pagination/theme";
 import type { PopoverVariants } from "$lib/popover/theme";
 import type { SidebarVariants, SidebarCtaVariants, SidebarBrandVariants, SidebarDropdownWrapperVariants, SidebarButtonVariants, SidebarItemVariants } from "$lib/sidebar/theme";
@@ -214,6 +215,7 @@ export interface AccordionProps extends AccordionVariants, Omit<HTMLAttributes<H
   transitionType?: TransitionFunc | "none";
   respectReducedMotion?: boolean;
   classes?: Partial<{
+    // for AccordionItem
     button?: ClassValue;
     contentWrapper?: ClassValue;
     content?: ClassValue;
@@ -662,16 +664,11 @@ export interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
 }
 
-export interface DropdownItemProps {
+export interface DropdownItemProps extends DropdownItemVariants {
   children: Snippet;
   aClass?: ClassValue;
   activeClass?: ClassValue;
   liClass?: ClassValue;
-  classes?: {
-    active?: ClassValue;
-    base?: ClassValue;
-    li?: ClassValue;
-  };
   class?: ClassValue;
   href?: string;
   onclick?: (e: MouseEvent) => void;
@@ -1117,10 +1114,11 @@ export interface NavUlProps extends NavbarUlVariants, Omit<HTMLAttributes<HTMLDi
   class?: ClassValue;
 }
 
-export type NavLiProps = AnchorButtonAttributes & {
-  activeClass?: ClassValue;
-  nonActiveClass?: ClassValue;
-};
+export type NavLiProps = AnchorButtonAttributes &
+  NavLiVariants & {
+    activeClass?: ClassValue;
+    nonActiveClass?: ClassValue;
+  };
 
 // toolbar
 export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
@@ -1177,7 +1175,7 @@ export interface PaginationNavProps extends PaginationNavVariants, HTMLAttribute
     next?: ClassValue;
     span?: ClassValue;
     tableDiv?: ClassValue;
-    active?: ClassValue; // Add this line to support custom active classes
+    active?: ClassValue;
   };
 }
 

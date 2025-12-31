@@ -27,7 +27,7 @@
   });
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width={size} height={size} class={clsx(className)} {...restProps} fill="none" {viewBox} stroke-width="2">
+<svg data-scope="menu" data-part="base" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width={size} height={size} class={clsx(className)} {...restProps} fill="none" {viewBox} stroke-width="2">
   {@html svgpath}
 </svg>
 
