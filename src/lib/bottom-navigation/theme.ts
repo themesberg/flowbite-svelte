@@ -10,7 +10,7 @@ export type BottomNavHeaderItemVariants = VariantProps<typeof bottomNavHeaderIte
 export const bottomNav = tv({
   slots: {
     base: "w-full z-30 border-default bg-neutral-primary-soft",
-    inner: "grid h-full max-w-lg mx-auto",
+    content: "grid h-full max-w-lg mx-auto",
     active: ""
   },
   variants: {
@@ -109,7 +109,7 @@ export const bottomNavItem = tv({
 export const bottomNavHeader = tv({
   slots: {
     base: "w-full",
-    innerDiv: "grid max-w-xs grid-cols-3 gap-1 p-1 mx-auto my-2 bg-neutral-tertiary rounded-base"
+    content: "grid max-w-xs grid-cols-3 gap-1 p-1 mx-auto my-2 bg-neutral-tertiary rounded-base"
   }
 });
 

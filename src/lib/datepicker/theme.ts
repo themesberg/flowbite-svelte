@@ -5,13 +5,13 @@ export type DatepickerVariants = VariantProps<typeof datepicker> & Classes<typeo
 
 export const datepicker = tv({
   slots: {
-    base: "inline-block rounded-base bg-white dark:bg-gray-700 shadow-lg p-4",
+    content: "inline-block rounded-base bg-white dark:bg-gray-700 shadow-lg p-4",
     input:
       "w-full rounded-base border px-4 py-2 text-sm focus:ring-2 focus:outline-none outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white disabled:cursor-not-allowed disabled:opacity-50 border-gray-300 bg-gray-50 text-gray-900",
-    titleVariant: "mb-2 text-lg font-semibold text-gray-900 dark:text-white",
-    polite:
+    title: "mb-2 text-lg font-semibold text-gray-900 dark:text-white",
+    label:
       "text-sm rounded-base text-gray-900 dark:text-white bg-white dark:bg-gray-700 font-semibold py-2.5 px-5 hover:bg-gray-100 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-200",
-    button: "absolute inset-y-0 right-0 flex items-center px-3 text-gray-500 focus:outline-hidden dark:text-gray-400",
+    trigger: "absolute inset-y-0 right-0 flex items-center px-3 text-gray-500 focus:outline-hidden dark:text-gray-400",
     actionButtons: "mt-4 flex justify-between",
     columnHeader: "text-center text-sm font-medium text-gray-500 dark:text-gray-400",
     grid: "grid grid-cols-7 gap-1 w-64",
@@ -58,7 +58,7 @@ export const datepicker = tv({
       }
     },
     inline: {
-      false: { base: "absolute z-10 mt-1" }
+      false: { content: "absolute z-10 mt-1" }
     },
     current: {
       true: { dayButton: "text-gray-400 dark:text-gray-500" }

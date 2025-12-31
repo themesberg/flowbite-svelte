@@ -8,7 +8,7 @@
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classes={{ inner: "grid-cols-4", active: "font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300" }}>
+<BottomNav {activeUrl} position="absolute" classes={{ content: "grid-cols-4", active: "font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300" }}>
   <BottomNavItem btnName="Home" href="/">
     <HomeOutline />
   </BottomNavItem>

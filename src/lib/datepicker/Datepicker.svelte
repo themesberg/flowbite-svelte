@@ -395,7 +395,7 @@
     if (!inline) isOpen = false;
   }
 
-  let { base, input, button, titleVariant, actionButtons, columnHeader, polite, grid, nav, dayButton, monthButton } = datepicker();
+  const styles = datepicker();
 </script>
 
 {#snippet navButton(forward: boolean)}
@@ -414,14 +414,15 @@
   </ToolbarButton>
 {/snippet}
 
-<div bind:this={datepickerContainerElement} class={["relative", inline && "inline-block"]}>
+<div data-scope="datepicker" bind:this={datepickerContainerElement} class={["relative", inline && "inline-block"]}>
   {#if !inline}
     <div class="relative">
       <input
+        data-part="input"
         {...inputProps}
         bind:this={inputElement}
         type="text"
-        class={input({ color, class: clsx(theme?.input, styling?.input) })}
+        class={styles.input({ color, class: clsx(theme?.input, styling?.input) })}
         {placeholder}
         value={range ? `${formatDate(rangeFrom)} - ${formatDate(rangeTo)}` : formatDate(value)}
         onfocus={() => (isOpen = true)}
@@ -433,8 +434,9 @@
         aria-haspopup="dialog"
       />
       <button
+        data-part="trigger"
         type="button"
-        class={button({ class: clsx(theme?.button, styling?.button) })}
+        class={styles.trigger({ class: clsx(theme?.trigger, styling?.trigger) })}
         onclick={() => (isOpen = !isOpen)}
         {disabled}
         aria-label={isOpen ? "Close date picker" : "Open date picker"}
@@ -454,22 +456,23 @@
 
   {#if isOpen || inline}
     <div
+      data-part="content"
       bind:this={calendarRef}
       id="datepicker-dropdown"
-      class={base({ inline, class: clsx(theme?.base, className) })}
+      class={styles.content({ inline, class: clsx(theme?.content, className) })}
       transition:fade={{ duration: typeof window !== "undefined" && prefersReducedMotion.current ? 0 : 100 }}
       role="dialog"
       aria-label="Calendar"
     >
       {#if title}
-        <h2 class={titleVariant({ class: clsx(theme?.titleVariant, styling?.titleVariant) })}>{title}</h2>
+        <h2 data-part="title" class={styles.title({ class: clsx(theme?.title, styling?.title) })}>{title}</h2>
       {/if}
 
       {#if showMonthSelector}
         <!-- Month/Year Selector View -->
-        <div class={nav({ class: clsx(theme?.nav, styling?.nav) })}>
+        <div data-part="nav" class={styles.nav({ class: clsx(theme?.nav, styling?.nav) })}>
           {@render yearNavButton(false)}
-          <h3 class={polite({ class: clsx(theme?.polite, styling?.polite) })} aria-live="polite">
+          <h3 data-part="label" class={styles.label({ class: clsx(theme?.label, styling?.label) })} aria-live="polite">
             {currentMonth.getFullYear()}
           </h3>
           {@render yearNavButton(true)}
@@ -477,9 +480,10 @@
         <div class="grid grid-cols-4 gap-2 p-4">
           {#each monthNames as month, index (index)}
             <Button
+              data-part="month-button"
               type="button"
               color={monthColor}
-              class={monthButton({
+              class={styles.monthButton({
                 class: clsx(theme?.monthButton, styling?.monthButton, currentMonth.getMonth() === index ? styling?.monthBtnSelected : styling?.monthBtn)
               })}
               onclick={(event: MouseEvent) => selectMonth(index, event)}
@@ -489,11 +493,12 @@
           {/each}
         </div>
       {:else}
-        <div class={nav({ class: clsx(theme?.nav, styling?.nav) })}>
+        <div data-part="nav" class={styles.nav({ class: clsx(theme?.nav, styling?.nav) })}>
           {@render navButton(false)}
           <Button
+            data-part="label"
             type="button"
-            class={polite({ class: clsx("cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700", theme?.polite, styling?.polite) })}
+            class={styles.label({ class: clsx("cursor-pointer rounded px-2 py-1 hover:bg-gray-100 dark:hover:bg-gray-700", theme?.label, styling?.label) })}
             aria-live="polite"
             onclick={(event: MouseEvent) => toggleMonthSelector(event)}
           >
@@ -501,17 +506,18 @@
           </Button>
           {@render navButton(true)}
         </div>
-        <div class={grid({ class: clsx(theme?.grid, styling?.grid) })} role="grid">
+        <div data-part="grid" class={styles.grid({ class: clsx(theme?.grid, styling?.grid) })} role="grid">
           {#each weekdays as day (day)}
-            <div class={columnHeader({ class: clsx(theme?.columnHeader, styling?.columnHeader) })} role="columnheader">{day}</div>
+            <div data-part="column-header" class={styles.columnHeader({ class: clsx(theme?.columnHeader, styling?.columnHeader) })} role="columnheader">{day}</div>
           {/each}
           {#each daysInMonth as day (day)}
             {@const current = day.getMonth() !== currentMonth.getMonth()}
             {@const available = isDateAvailable(day)}
             <Button
+              data-part="day-button"
               type="button"
               color={isSelected(day) ? color : "brand"}
-              class={dayButton({
+              class={styles.dayButton({
                 current,
                 today: isToday(day),
                 color: isInRange(day) ? color : undefined,
@@ -533,7 +539,7 @@
       {/if}
 
       {#if showActionButtons && !showMonthSelector}
-        <div class={actionButtons({ class: clsx(theme?.actionButtons, styling?.actionButtons) })}>
+        <div data-part="action-buttons" class={styles.actionButtons({ class: clsx(theme?.actionButtons, styling?.actionButtons) })}>
           <Button onclick={() => handleDaySelect(new Date())} {color} size="sm" disabled={!isDateAvailable(new Date())}>Today</Button>
           <Button onclick={handleClear} color="danger" size="sm">Clear</Button>
           <Button onclick={handleApply} {color} size="sm">Apply</Button>
@@ -541,7 +547,7 @@
       {/if}
 
       {#if actionSlot}
-        <div class={clsx(theme?.actionSlot, styling?.actionSlot)}>
+        <div data-part="action-slot" class={clsx(theme?.actionSlot, styling?.actionSlot)}>
           {@render actionSlot({
             selectedDate: range ? { from: rangeFrom, to: rangeTo } : value,
             handleClear,

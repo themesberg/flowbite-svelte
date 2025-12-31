@@ -4,6 +4,16 @@ import { tv, type VariantProps } from "tailwind-variants";
 export type ButtonVariants = VariantProps<typeof button>;
 export type GradientButtonVariants = VariantProps<typeof gradientButton>;
 
+/**
+ * Button component theme
+ *
+ * Anatomical Selectors:
+ * - data-scope="button" - Applied to the root button element
+ * - data-part="base" - The main button element (matches 'base' slot)
+ * - data-part="spinner" - The loading spinner element (matches 'spinner' slot)
+ *
+ * The 'outline' and 'shadow' slots are styling modifiers applied to the base element.
+ */
 export const button = tv({
   slots: {
     base: "text-center font-medium inline-flex items-center justify-center shadow-xs leading-5 focus:outline-none focus:ring-4 text-sm px-4 py-2.5",
@@ -89,6 +99,14 @@ export const button = tv({
   }
 });
 
+/**
+ * Gradient Button component theme
+ *
+ * Anatomical Selectors:
+ * - data-scope="button" - Applied to the root button element
+ * - data-part="base" - The main button element (matches 'base' slot)
+ * - data-part="outlineWrapper" - The wrapper for outline variants (matches 'outlineWrapper' slot)
+ */
 export const gradientButton = tv({
   slots: {
     base: "inline-flex items-center justify-center transition-all duration-75 ease-in text-white bg-linear-to-r ",

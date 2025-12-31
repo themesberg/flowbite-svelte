@@ -5,9 +5,13 @@
   import { getTheme } from "$lib/theme-provider/themeUtils";
 
   // const THEME_PREFERENCE_KEY = 'color-theme';
-  let { class: className, lightIcon, darkIcon, size = "sm", ariaLabel = "Dark mode", ...restProps }: DarkmodeProps = $props();
+  let { class: className, lightIcon, darkIcon, size = "sm", ariaLabel = "Dark mode", classes, ...restProps }: DarkmodeProps = $props();
 
+  const styling = $derived(classes);
   const theme = $derived(getTheme("darkmode"));
+  const { base, icon } = $derived(darkmode({ class: clsx(theme, className) }));
+
+  // const styles = $derived(darkmode({ class: clsx(theme, className) }));
 
   const sizes = {
     sm: "w-4 h-4",
@@ -34,8 +38,8 @@
   </script>
 </svelte:head>
 
-<button onclick={toggleTheme} aria-label={ariaLabel} type="button" {...restProps} class={darkmode({ class: clsx(theme, className) })} tabindex={0}>
-  <span class="hidden dark:block">
+<button data-scope="dark-mode" data-part="base" onclick={toggleTheme} aria-label={ariaLabel} type="button" {...restProps} class={base({ class: clsx(theme?.base, className) })} tabindex={0}>
+  <span data-part="icon" class={icon({ class: clsx(theme?.icon, styling?.icon, "hidden dark:block") })}>
     {#if lightIcon}
       {@render lightIcon()}
     {:else}
@@ -50,7 +54,7 @@
       </svg>
     {/if}
   </span>
-  <span class="block dark:hidden">
+  <span data-part="icon" class={icon({ class: clsx(theme?.icon, styling?.icon, "block dark:hidden") })}>
     {#if darkIcon}
       {@render darkIcon()}
     {:else}

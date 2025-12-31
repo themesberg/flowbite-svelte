@@ -96,6 +96,8 @@
 </script>
 
 <Dialog
+  data-scope="drawer"
+  data-part="base"
   {@attach init}
   bind:open
   {modal}

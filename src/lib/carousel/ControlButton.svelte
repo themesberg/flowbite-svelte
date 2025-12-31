@@ -12,17 +12,17 @@
   const theme = $derived(getTheme("controlButton"));
 </script>
 
-<button type="button" class={base({ class: clsx(className, theme?.base) })} {...restProps}>
+<button type="button" class={base({ class: clsx(className, theme?.base) })} data-scope="control-button" data-part="base" {...restProps}>
   {#if children}
     {@render children()}
   {:else}
-    <span class={span({ class: clsx(theme?.span, styling?.span) })}>
+    <span class={span({ class: clsx(theme?.span, styling?.span) })} data-part="icon">
       {#if forward}
-        <svg aria-hidden="true" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg aria-hidden="true" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-part="svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       {:else}
-        <svg aria-hidden="true" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg aria-hidden="true" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-part="svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
       {/if}

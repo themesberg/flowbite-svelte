@@ -198,12 +198,14 @@
   tabindex="0"
   {...restProps}
   class={base({ class: clsx(activeDragGesture === undefined ? "transition-transform" : "", theme?.base, className) })}
+  data-scope="carousel"
+  data-part="base"
   {@attach loop}
 >
   {#if slide}
     {@render slide({ index: _state.index, Slide })}
   {:else}
-    <Slide image={images[_state.index]} fit={slideFit} class={slideCls({ class: clsx(theme?.slide, styling?.slide) })} {transition} />
+    <Slide image={images[_state.index]} fit={slideFit} class={slideCls({ class: clsx(theme?.slide, styling?.slide) })} {transition} data-part="slide" />
   {/if}
 
   {@render children?.(_state.index)}

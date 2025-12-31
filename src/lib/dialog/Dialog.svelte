@@ -172,6 +172,8 @@
 
 {#if open}
   <dialog
+    data-scope="dialog"
+    data-part="base"
     {@attach init}
     bind:this={ref}
     use:focusTrap

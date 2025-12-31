@@ -7,7 +7,7 @@
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
-  <BottomNav position="absolute" navType="group" classes={{ inner: "grid-cols-5" }}>
+  <BottomNav position="absolute" navType="group" classes={{ content: "grid-cols-5" }}>
     {#snippet header()}
       <BottomNavHeader>
         <BottomNavHeaderItem itemName="New" />

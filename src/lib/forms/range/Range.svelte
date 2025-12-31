@@ -11,7 +11,7 @@
   const inputCls = $derived(range({ appearance, color, size, class: clsx(theme, inputClass, className) }));
 </script>
 
-<input type="range" bind:value {...restProps} class={inputCls} />
+<input data-scope="range" data-part="base" type="range" bind:value {...restProps} class={inputCls} />
 
 <!--
 @component

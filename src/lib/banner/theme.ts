@@ -7,7 +7,7 @@ export type BannerVariants = VariantProps<typeof banner> & Classes<typeof banner
 export const banner = tv({
   slots: {
     base: "fixed z-50 flex justify-between p-4 mx-auto dark:bg-gray-700 dark:border-gray-600",
-    insideDiv: "flex flex-col md:flex-row md:items-center gap-2 mx-auto",
+    content: "flex flex-col md:flex-row md:items-center gap-2 mx-auto",
     dismissable: "absolute end-2.5 top-2.5 md:static md:end-auto md:top-auto"
   },
   variants: {

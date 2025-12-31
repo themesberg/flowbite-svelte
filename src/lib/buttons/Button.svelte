@@ -37,18 +37,18 @@
 </script>
 
 {#if restProps.href !== undefined}
-  <a {...restProps} class={btnCls}>
+  <a {...restProps} class={btnCls} data-scope="button" data-part="base">
     {@render children?.()}
   </a>
 {:else if tag === "button"}
-  <button type="button" {...restProps} class={btnCls} disabled={isDisabled}>
+  <button type="button" {...restProps} class={btnCls} disabled={isDisabled} data-scope="button" data-part="base">
     {@render children?.()}
     {#if loading}
-      <Spinner {...spinnerProps} class={spinner()} />
+      <Spinner {...spinnerProps} class={spinner()} data-part="spinner" />
     {/if}
   </button>
 {:else}
-  <svelte:element this={tag} {...restProps} class={btnCls}>
+  <svelte:element this={tag} {...restProps} class={btnCls} data-scope="button" data-part="base">
     {@render children?.()}
   </svelte:element>
 {/if}

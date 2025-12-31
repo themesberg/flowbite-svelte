@@ -6,7 +6,7 @@
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="application" classes={{ inner: "grid-cols-5" }}>
+<BottomNav position="absolute" navType="application" classes={{ content: "grid-cols-5" }}>
   <BottomNavItem btnName="Home" appBtnPosition="left">
     <HomeOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>

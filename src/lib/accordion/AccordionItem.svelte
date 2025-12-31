@@ -16,7 +16,7 @@
   // Theme is applied in template via clsx with lowest priority.
   const finalClasses = $derived({
     button: classes?.button || ctx?.classes?.button,
-    contentWrapper: classes?.contentWrapper || ctx?.classes?.contentWrapper,
+    contentWrapper: classes?.container || ctx?.classes?.contentWrapper,
     content: classes?.content || ctx?.classes?.content,
     active: classes?.active || ctx?.classes?.active,
     inactive: classes?.inactive || ctx?.classes?.inactive
@@ -50,11 +50,11 @@
     open = !open;
   };
 
-  const { base, button, contentWrapper, content, active, inactive } = $derived(accordionItem({ flush: ctx?.flush, open }));
+  const { base, button, container, content, active, inactive } = $derived(accordionItem({ flush: ctx?.flush, open }));
 
   let buttonClass = $derived(clsx(open && !ctx?.flush && (finalClasses.active || active()), !open && !ctx?.flush && (finalClasses.inactive || inactive())));
 
-  let contentWrapperCls = $derived(clsx(contentWrapper(), open ? "block" : "hidden", finalClasses.contentWrapper));
+  let contentWrapperCls = $derived(clsx(container(), open ? "block" : "hidden", finalClasses.contentWrapper));
 </script>
 
 <h2 data-scope="accordion-item" data-part="base" class={base({ class: clsx(theme?.base, className) })}>

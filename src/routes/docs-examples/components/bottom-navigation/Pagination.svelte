@@ -6,7 +6,7 @@
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="pagination" classes={{ inner: "grid-cols-6" }}>
+<BottomNav position="absolute" navType="pagination" classes={{ content: "grid-cols-6" }}>
   <BottomNavItem btnName="New document">
     <FileCirclePlusOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>

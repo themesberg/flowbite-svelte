@@ -17,7 +17,7 @@
 
   // Create reactive context using getters
   // Note: context.classes is for item styling, not BottomNav styling
-  // BottomNav's classes prop only affects its own elements (inner, active)
+  // BottomNav's classes prop only affects its own elements (content, active)
   const reactiveCtx: BottomNavContextType = {
     get activeClass() {
       return activeCls;
@@ -33,15 +33,15 @@
 
   setBottomNavContext(reactiveCtx);
 
-  const { base, inner } = $derived(bottomNav({ position, navType }));
+  const { base, content } = $derived(bottomNav({ position, navType }));
 </script>
 
-<div data-scope="bottom-nav" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<div data-scope="bottom-nav" data-part="base" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {#if header}
     {@render header()}
   {/if}
 
-  <div class={inner({ class: clsx(theme?.inner, styling?.inner) })}>
+  <div data-part="content" class={content({ class: clsx(theme?.content, styling?.content) })}>
     {@render children()}
   </div>
 </div>

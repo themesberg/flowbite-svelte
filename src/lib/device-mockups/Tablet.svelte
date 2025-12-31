@@ -12,12 +12,12 @@
   const { base, leftTop, leftMid, leftBot, right, slot } = tablet();
 </script>
 
-<div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-  <div class={leftTop({ class: clsx(theme?.leftTop, styling?.leftTop) })}></div>
-  <div class={leftMid({ class: clsx(theme?.leftMid, styling?.leftMid) })}></div>
-  <div class={leftBot({ class: clsx(theme?.leftBot, styling?.leftBot) })}></div>
-  <div class={right({ class: clsx(theme?.right, styling?.right) })}></div>
-  <div class={slot({ class: clsx(theme?.slot, styling?.slot) })}>
+<div data-scope="tablet" data-part="base" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <div data-part="left-top" class={leftTop({ class: clsx(theme?.leftTop, styling?.leftTop) })}></div>
+  <div data-part="left-mid" class={leftMid({ class: clsx(theme?.leftMid, styling?.leftMid) })}></div>
+  <div data-part="left-bot" class={leftBot({ class: clsx(theme?.leftBot, styling?.leftBot) })}></div>
+  <div data-part="right" class={right({ class: clsx(theme?.right, styling?.right) })}></div>
+  <div data-part="slot" class={slot({ class: clsx(theme?.slot, styling?.slot) })}>
     {#if children}
       {@render children()}
     {/if}

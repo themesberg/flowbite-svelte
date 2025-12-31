@@ -37,6 +37,7 @@ import type { ButtonVariants, GradientButtonVariants, gradientButton } from "$li
 import type { CardVariants } from "$lib/card/theme";
 import type Slide from "$lib/carousel/Slide.svelte";
 import type { CarouselVariants, SlideVariants, CarouselIndicatorsVariants, ControlButtonVariants, ThumbnailsVariants } from "$lib/carousel/theme";
+import type { DarkmodeVariants } from "$lib/darkmode/theme";
 import type { DrawerHandleVariants, DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
 import type { DatepickerVariants } from "$lib/datepicker/theme";
 import type { FooterBrandVariants, FooterCopyrightVariants, FooterLinkVariants } from "$lib/footer/theme";
@@ -293,11 +294,6 @@ export type BottomNavItemProps = BottomNavItemVariants &
   AnchorButtonAttributes & {
     children: Snippet;
     btnName?: string;
-    activeClass?: ClassValue;
-    /** @deprecated Use `class` prop instead */
-    btnClass?: ClassValue;
-    /** @deprecated Use `classes.span` instead */
-    spanClass?: ClassValue;
     active?: boolean;
   };
 
@@ -538,7 +534,7 @@ export interface ClipboardProps extends ClipboardVariants, ButtonVariants, Omit<
 }
 
 // darkmode
-export interface DarkmodeProps extends HTMLButtonAttributes {
+export interface DarkmodeProps extends DarkmodeVariants, HTMLButtonAttributes {
   lightIcon?: Snippet;
   darkIcon?: Snippet;
   size?: "sm" | "md" | "lg";

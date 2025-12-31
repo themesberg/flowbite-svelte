@@ -29,7 +29,7 @@
   // Theme context
   const theme = $derived(getTheme("banner"));
 
-  const { base, insideDiv, dismissable: dismissableClass } = $derived(banner({ type, color }));
+  const { base, content, dismissable: dismissableClass } = $derived(banner({ type, color }));
 
   // Check if running in browser to avoid SSR issues
   const isBrowser = typeof window !== "undefined";
@@ -58,8 +58,8 @@
 </script>
 
 {#if open}
-  <div data-scope="banner" tabindex="-1" bind:this={ref} class={base({ class: clsx(theme?.base, className) })} {...restProps} transition:transition={effectiveParams as ParamsType}>
-    <div class={insideDiv({ class: clsx(theme?.insideDiv, styling?.insideDiv) })}>
+  <div data-scope="banner" data-part="base" tabindex="-1" bind:this={ref} class={base({ class: clsx(theme?.base, className) })} {...restProps} transition:transition={effectiveParams as ParamsType}>
+    <div data-part="content" class={content({ class: clsx(theme?.content, styling?.content) })}>
       {@render children?.()}
     </div>
 

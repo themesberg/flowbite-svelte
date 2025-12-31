@@ -37,11 +37,11 @@
 
 {#if transition}
   {#key image}
-    <img alt="..." {...image} transition:transition={{}} {...restProps} class={imgClass} />
+    <img alt="..." {...image} transition:transition={{}} {...restProps} class={imgClass} data-scope="slide" data-part="image" />
   {/key}
 {:else}
   {#key image}
-    <img alt="..." {...image} {...restProps} out:fly={transitionSlideOut} in:fly={transitionSlideIn} class={imgClass} />
+    <img alt="..." {...image} {...restProps} out:fly={transitionSlideOut} in:fly={transitionSlideIn} class={imgClass} data-scope="slide" data-part="image" />
   {/key}
 {/if}
 

@@ -10,7 +10,7 @@
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classes={{ inner: "grid-cols-4" }}>
+<BottomNav {activeUrl} position="absolute" classes={{ content: "grid-cols-4" }}>
   <BottomNavItem btnName="Home" href="/">
     <HomeOutline class={activeUrl === "/" ? svgActiveClass : svgClass} />
   </BottomNavItem>

@@ -11,11 +11,11 @@
   // Theme context
   const theme = $derived(getTheme("bottomNavHeader"));
 
-  const { innerDiv, base } = $derived(bottomNavHeader());
+  const { content, base } = $derived(bottomNavHeader());
 </script>
 
-<div data-scope="bottom-nav-header" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-  <div class={innerDiv({ class: clsx(theme?.innerDiv, styling?.innerDiv) })} role="group">
+<div data-scope="bottom-nav-header" data-part="base" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <div data-part="content" class={content({ class: clsx(theme?.content, styling?.content) })} role="group">
     {@render children()}
   </div>
 </div>

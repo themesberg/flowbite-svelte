@@ -14,16 +14,16 @@
 </script>
 
 <div {...restProps}>
-  <div class={base({ class: clsx(theme?.base, className) })}>
-    <div class={inner({ class: clsx(theme?.inner, styling?.inner) })}>
+  <div data-scope="laptop" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
+    <div data-part="inner" class={inner({ class: clsx(theme?.inner, styling?.inner) })}>
       {#if children}
         {@render children()}
       {/if}
     </div>
   </div>
 
-  <div class={bot({ class: clsx(theme?.bot, styling?.bot) })}>
-    <div class={botCen({ class: clsx(theme?.botCen, styling?.botCen) })}></div>
+  <div data-part="bot" class={bot({ class: clsx(theme?.bot, styling?.bot) })}>
+    <div data-part="bot-cen" class={botCen({ class: clsx(theme?.botCen, styling?.botCen) })}></div>
   </div>
 </div>
 
