@@ -98,7 +98,7 @@ ${helperSlot ? `<Helper class="ps-6" color="${helperColor}">Helper text</Helper>
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Button class="mb-4 w-40" color="secondary" onclick={changeHelperSlot}>{helperSlot ? "Remove helper" : "Add helper"}</Button>
+    <Button class="mb-4 w-40" onclick={changeHelperSlot}>{helperSlot ? "Remove helper" : "Add helper"}</Button>
     <Label class="mb-4 w-full font-bold">Helper Color</Label>
     {#each colors as colorOption}
       <Radio
@@ -114,9 +114,9 @@ ${helperSlot ? `<Helper class="ps-6" color="${helperColor}">Helper text</Helper>
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-32" color="primary" onclick={changeInputClass}>{inputClass === inputClasses[0] ? "class=w-6 h-6" : "Default size"}</Button>
-    <Button class="w-32" color="secondary" onclick={changeLabelClass}>{labelClass === labelClasses[0] ? "Default label" : "label:w-24 m-2"}</Button>
-    <Button class="w-32" color="lime" onclick={changeDisabled}>{disabled ? "Enabled" : "Disabled"}</Button>
+    <Button class="w-32" onclick={changeInputClass}>{inputClass === inputClasses[0] ? "class=w-6 h-6" : "Default size"}</Button>
+    <Button class="w-32" color="success" onclick={changeLabelClass}>{labelClass === labelClasses[0] ? "Default label" : "label:w-24 m-2"}</Button>
+    <Button class="w-32" color="warning" onclick={changeDisabled}>{disabled ? "Enabled" : "Disabled"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

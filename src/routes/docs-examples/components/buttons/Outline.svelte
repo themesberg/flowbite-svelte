@@ -10,9 +10,3 @@
 <Button color="warning" outline>Warning</Button>
 <Button color="transparent" outline>Transparent</Button>
 <Button color="dark" outline>Dark</Button>
-<Button color="light" outline>Light</Button>
-<Button color="blue" outline>Blue</Button>
-<Button color="green" outline>Green</Button>
-<Button color="red" outline>Red</Button>
-<Button color="yellow" outline>Yellow</Button>
-<Button color="purple" outline>Purple</Button>

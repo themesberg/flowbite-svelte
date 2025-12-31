@@ -121,9 +121,9 @@
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-48" onclick={changeLabelContent}>{labelContent ? "Remove outlise label" : "Add outside label"}</Button>
-    <Button class="w-48" color="purple" onclick={changeLabelInside}>{labelInside ? "Remove inside label" : "Add inside label"}</Button>
-    <Button class="w-48" color="red" onclick={changeAnimation}>{animation ? "No animation" : "Animation"}</Button>
-    <Button class="w-48" color="emerald" onclick={() => (progress = `${Math.round(Math.random() * 100)}`)}>Randomize</Button>
+    <Button class="w-48" onclick={changeLabelInside}>{labelInside ? "Remove inside label" : "Add inside label"}</Button>
+    <Button class="w-48" color="success" onclick={changeAnimation}>{animation ? "No animation" : "Animation"}</Button>
+    <Button class="w-48" color="warning" onclick={() => (progress = `${Math.round(Math.random() * 100)}`)}>Randomize</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

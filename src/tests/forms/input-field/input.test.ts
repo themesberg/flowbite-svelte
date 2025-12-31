@@ -83,7 +83,7 @@ describe("Input - Value Binding", () => {
     render(InputValueBindingTest);
     const input = screen.getByTestId("bound-input") as HTMLInputElement;
     const display = screen.getByTestId("display-value");
-    
+
     expect(input.value).toBe("Initial value");
     expect(display).toHaveTextContent("Initial value");
   });
@@ -91,7 +91,7 @@ describe("Input - Value Binding", () => {
   test("updates display when input value changes", async () => {
     const user = userEvent.setup();
     render(InputValueBindingTest);
-    
+
     const input = screen.getByTestId("bound-input") as HTMLInputElement;
     const display = screen.getByTestId("display-value");
 
@@ -105,7 +105,7 @@ describe("Input - Value Binding", () => {
   test("input is editable", async () => {
     const user = userEvent.setup();
     render(InputValueBindingTest);
-    
+
     const input = screen.getByTestId("bound-input") as HTMLInputElement;
 
     await user.clear(input);
@@ -126,41 +126,41 @@ describe("Input - Clearable", () => {
   test("shows close button when clearable input has value", () => {
     render(InputClearableTest);
     const input = screen.getByTestId("clearable-input") as HTMLInputElement;
-    
+
     expect(input.value).toBe("Clearable text");
-    // Close button should be present when there's a value (labeled as "Close")
-    const closeButton = screen.queryByLabelText("Close");
+    // Close button should be present when there's a value
+    const closeButton = screen.queryByLabelText("Clear search value");
     expect(closeButton).toBeInTheDocument();
   });
 
   test("does not show close button when clearable input is empty", () => {
     render(InputClearableTest);
-    
+
     // First input has value, so it has a close button
     const inputWithValue = screen.getByTestId("clearable-input") as HTMLInputElement;
     expect(inputWithValue.value).toBe("Clearable text");
-    
+
     // Empty input should not have a close button
     const emptyInput = screen.getByTestId("empty-clearable-input") as HTMLInputElement;
     expect(emptyInput.value).toBe("");
-    
+
     // There should be only one close button (from the first input with value)
-    const closeButtons = screen.queryAllByLabelText("Close");
+    const closeButtons = screen.queryAllByLabelText("Clear search value");
     expect(closeButtons).toHaveLength(1);
   });
 
   test("close button clears input value", async () => {
     const user = userEvent.setup();
     render(InputClearableTest);
-    
+
     const input = screen.getByTestId("clearable-input") as HTMLInputElement;
     expect(input.value).toBe("Clearable text");
 
-    const closeButton = screen.getByLabelText("Close");
+    const closeButton = screen.getByLabelText("Clear search value");
     expect(closeButton).toBeInTheDocument();
 
     await user.click(closeButton);
-    
+
     // Value should be cleared
     expect(input.value).toBe("");
   });
@@ -178,7 +178,7 @@ describe("Input - States", () => {
   test("disabled input cannot be edited", async () => {
     const user = userEvent.setup();
     render(InputStatesTest);
-    
+
     const disabledInput = screen.getByTestId("disabled-input") as HTMLInputElement;
     expect(disabledInput).toBeDisabled();
 
@@ -190,7 +190,7 @@ describe("Input - States", () => {
   test("readonly input cannot be edited", async () => {
     const user = userEvent.setup();
     render(InputStatesTest);
-    
+
     const readonlyInput = screen.getByTestId("readonly-input") as HTMLInputElement;
     expect(readonlyInput).toHaveAttribute("readonly");
     expect(readonlyInput.value).toBe("Readonly");
@@ -203,7 +203,7 @@ describe("Input - States", () => {
   test("default and tinted inputs are editable", async () => {
     const user = userEvent.setup();
     render(InputStatesTest);
-    
+
     const defaultInput = screen.getByTestId("default-input") as HTMLInputElement;
     const tintedInput = screen.getByTestId("tinted-input") as HTMLInputElement;
 
@@ -225,7 +225,7 @@ describe("Input - Custom Props", () => {
   test("passes through custom attributes", () => {
     render(InputCustomPropsTest);
     const input = screen.getByTestId("custom-input") as HTMLInputElement;
-    
+
     expect(input).toHaveAttribute("id", "custom-id");
     expect(input).toHaveAttribute("name", "custom-name");
     expect(input).toHaveAttribute("required");
@@ -250,9 +250,9 @@ describe("Input - User Interaction", () => {
   test("accepts user input", async () => {
     const user = userEvent.setup();
     render(InputBasicTest);
-    
+
     const input = screen.getByTestId("basic-input") as HTMLInputElement;
-    
+
     await user.type(input, "Hello World");
     expect(input.value).toBe("Hello World");
   });
@@ -260,9 +260,9 @@ describe("Input - User Interaction", () => {
   test("can be focused", async () => {
     const user = userEvent.setup();
     render(InputBasicTest);
-    
+
     const input = screen.getByTestId("basic-input") as HTMLInputElement;
-    
+
     await user.click(input);
     expect(input).toHaveFocus();
   });
@@ -270,9 +270,9 @@ describe("Input - User Interaction", () => {
   test("can be cleared and retyped", async () => {
     const user = userEvent.setup();
     render(InputBasicTest);
-    
+
     const input = screen.getByTestId("basic-input") as HTMLInputElement;
-    
+
     await user.type(input, "First text");
     expect(input.value).toBe("First text");
 

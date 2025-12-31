@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Input } from "$lib";
-  
+
   let inputValue = $state("Initial value");
 </script>
 

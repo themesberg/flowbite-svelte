@@ -24,7 +24,7 @@
 </script>
 
 {#if !src || !!href || children || dot || indicator}
-  <svelte:element this={href ? "a" : "div"} role={href ? undefined : "button"} {onclick} {href} {target} {...restProps} class={avatarClass}>
+  <svelte:element this={href ? "a" : "div"} data-scope="avatar" data-part="base" role={href ? undefined : "button"} {onclick} {href} {target} {...restProps} class={avatarClass}>
     {#if src}
       <img {alt} {src} class={cornerStyle === "circular" ? "rounded-full" : "rounded-sm"} />
     {:else if children}
@@ -42,7 +42,7 @@
     {/if}
   </svelte:element>
 {:else}
-  <img {alt} {src} {...restProps} {onclick} class={avatarClass} />
+  <img data-scope="avatar" data-part="base" {alt} {src} {...restProps} {onclick} class={avatarClass} />
 {/if}
 
 <!--

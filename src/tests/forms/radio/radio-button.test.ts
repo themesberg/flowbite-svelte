@@ -38,9 +38,9 @@ describe("RadioButton - Basic Functionality", () => {
 
     expect(inputA).not.toBeChecked();
     expect(inputB).not.toBeChecked();
-    
+
     await user.click(inputB.parentElement!);
-    
+
     expect(inputA).not.toBeChecked();
     expect(inputB).toBeChecked();
   });
@@ -94,7 +94,7 @@ describe("RadioButton - Group Binding", () => {
   test("updates displayed value when selection changes", async () => {
     const user = userEvent.setup();
     render(RadioButtonGroupTest);
-    
+
     const option1 = screen.getByLabelText("Option 1");
     const option3 = screen.getByLabelText("Option 3");
     const selectedDisplay = screen.getByTestId("selected-value");
@@ -111,7 +111,7 @@ describe("RadioButton - Group Binding", () => {
   test("ensures only one option is selected at a time", async () => {
     const user = userEvent.setup();
     render(RadioButtonGroupTest);
-    
+
     const option1 = screen.getByLabelText("Option 1");
     const option2 = screen.getByLabelText("Option 2");
     const option3 = screen.getByLabelText("Option 3");
@@ -135,7 +135,7 @@ describe("RadioButton - Sizes", () => {
   test("all sizes are clickable", async () => {
     const user = userEvent.setup();
     render(RadioButtonSizesTest);
-    
+
     const small = screen.getByLabelText("Small");
     const large = screen.getByLabelText("Large");
 
@@ -151,25 +151,25 @@ describe("RadioButton - Sizes", () => {
 describe("RadioButton - Colors", () => {
   test("renders radio buttons with different colors", () => {
     render(RadioButtonColorsTest);
-    expect(screen.getByText("Blue")).toBeInTheDocument();
-    expect(screen.getByText("Red")).toBeInTheDocument();
-    expect(screen.getByText("Green")).toBeInTheDocument();
-    expect(screen.getByText("Purple")).toBeInTheDocument();
+    expect(screen.getByText("Brand")).toBeInTheDocument();
+    expect(screen.getByText("Danger")).toBeInTheDocument();
+    expect(screen.getByText("Success")).toBeInTheDocument();
+    expect(screen.getByText("Warning")).toBeInTheDocument();
   });
 
   test("colored radio buttons are functional", async () => {
     const user = userEvent.setup();
     render(RadioButtonColorsTest);
-    
-    const blue = screen.getByLabelText("Blue");
-    const red = screen.getByLabelText("Red");
 
-    await user.click(blue.parentElement!);
-    expect(blue).toBeChecked();
+    const brand = screen.getByLabelText("Brand");
+    const danger = screen.getByLabelText("Danger");
 
-    await user.click(red.parentElement!);
-    expect(red).toBeChecked();
-    expect(blue).not.toBeChecked();
+    await user.click(brand.parentElement!);
+    expect(brand).toBeChecked();
+
+    await user.click(danger.parentElement!);
+    expect(danger).toBeChecked();
+    expect(brand).not.toBeChecked();
   });
 });
 
@@ -185,7 +185,7 @@ describe("RadioButton - Variants", () => {
   test("variant radio buttons are functional", async () => {
     const user = userEvent.setup();
     render(RadioButtonVariantsTest);
-    
+
     const pill = screen.getByLabelText("Pill Button");
     const outline = screen.getByLabelText("Outline Button");
 
@@ -209,7 +209,7 @@ describe("RadioButton - Inline Layout", () => {
   test("inline radio buttons are functional", async () => {
     const user = userEvent.setup();
     render(RadioButtonInlineTest);
-    
+
     const inline1 = screen.getByLabelText("Inline 1");
     const inline2 = screen.getByLabelText("Inline 2");
 

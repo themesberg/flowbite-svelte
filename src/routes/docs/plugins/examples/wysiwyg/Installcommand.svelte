@@ -18,7 +18,7 @@
     <pre><code id="code-block">pnpm i -D @flowbite-svelte-plugins/texteditor@latest lowlight @tiptap/core@{tiptapVersion}
 </code></pre>
   </div>
-  <Clipboard color={success ? "alternative" : "light"} bind:value bind:success size="sm" class="absolute end-2 -top-9 h-8 px-2.5 font-medium focus:ring-0" {onclick}>
+  <Clipboard color={success ? "success" : "danger"} bind:value bind:success size="sm" class="absolute end-2 -top-9 h-8 px-2.5 font-medium focus:ring-0" {onclick}>
     {#if success}
       <CheckOutline class="h-3 w-3" /> Copied
     {:else}

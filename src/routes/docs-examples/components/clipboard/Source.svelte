@@ -30,7 +30,7 @@
             </code></pre>
     </div>
 
-    <Clipboard color={success ? "alternative" : "light"} bind:value bind:success size="sm" {onclick}>
+    <Clipboard color={success ? "success" : "danger"} bind:value bind:success size="sm" {onclick}>
       {#if success}
         <CheckOutline class="h-4 w-4" />
         <span class="text-fg-brand text-xs font-semibold">Copied</span>

@@ -34,7 +34,7 @@
 
 <div class="space-y-4">
   <div class="flex items-center gap-4 text-sm">
-    <Badge large color="blue">
+    <Badge large>
       {ITEM_COUNT.toLocaleString()} items
     </Badge>
     {#if renderTime > 0}

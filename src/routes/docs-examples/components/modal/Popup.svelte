@@ -12,8 +12,8 @@
     <ExclamationCircleOutline class="mx-auto mb-4 h-12 w-12 text-gray-400 dark:text-gray-200" />
     <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
     <div class="space-x-2">
-      <Button type="submit" value="yes" color="red">Yes, I'm sure</Button>
-      <Button type="submit" value="no" color="alternative">No, cancel</Button>
+      <Button type="submit" value="yes" color="success">Yes, I'm sure</Button>
+      <Button type="submit" value="no" color="danger">No, cancel</Button>
     </div>
   </div>
 </Modal>

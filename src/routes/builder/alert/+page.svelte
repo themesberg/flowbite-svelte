@@ -171,12 +171,12 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-48" color="blue" onclick={changeRounded}>{rounded ? "Remove rounded" : "Add rounded"}</Button>
-    <Button class="w-48" color="red" onclick={changeBorder}>{border ? "Remove border" : "Add border"}</Button>
-    <Button class="w-48" color="yellow" onclick={changeDismissable}>{dismissable ? "Remove dismissable" : "Add dismissable"}</Button>
-    <Button class="w-48" color="green" onclick={changeClass}>{alertClass ? "Remove class" : "Add class"}</Button>
-    <Button class="w-48" color="sky" onclick={changeIconSlot}>{iconSlot ? "Remove icon" : "Add icon"}</Button>
-    <Button class="w-48" color="rose" onclick={changeBorderAccent}>{borderAccent ? "Remove accent" : "Add accent"}</Button>
+    <Button class="w-48" onclick={changeRounded}>{rounded ? "Remove rounded" : "Add rounded"}</Button>
+    <Button class="w-48" color="success" onclick={changeBorder}>{border ? "Remove border" : "Add border"}</Button>
+    <Button class="w-48" color="warning" onclick={changeDismissable}>{dismissable ? "Remove dismissable" : "Add dismissable"}</Button>
+    <Button class="w-48" color="danger" onclick={changeClass}>{alertClass ? "Remove class" : "Add class"}</Button>
+    <Button class="w-48" color="gray" onclick={changeIconSlot}>{iconSlot ? "Remove icon" : "Add icon"}</Button>
+    <Button class="w-48" color="alternative" onclick={changeBorderAccent}>{borderAccent ? "Remove accent" : "Add accent"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

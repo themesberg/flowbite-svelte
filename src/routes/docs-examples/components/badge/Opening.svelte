@@ -7,4 +7,4 @@
 </script>
 
 <Button onclick={openBadge}>Open badge</Button>
-<Badge class="ml-4" color="blue" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
+<Badge class="ml-4" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>

@@ -44,7 +44,7 @@
                 required
                 type="email"
               />
-              <Button type="submit" color="primary" size="xl" class="formkit-submit self-stretch" data-element="submit">
+              <Button type="submit" size="xl" class="formkit-submit self-stretch" data-element="submit">
                 <div class="formkit-spinner">
                   <div></div>
                   <div></div>

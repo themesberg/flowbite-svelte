@@ -105,6 +105,6 @@
   </Accordion>
 
   <div class="border-t border-gray-200 p-6 dark:border-gray-700">
-    <Button color="primary">Schedule Event</Button>
+    <Button>Schedule Event</Button>
   </div>
 </div>

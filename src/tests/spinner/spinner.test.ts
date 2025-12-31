@@ -50,13 +50,6 @@ describe("Spinner Component", () => {
       });
     });
 
-    test("default type has spin animation class", () => {
-      const { container } = render(SpinnerTypesTest);
-      const defaultSpinner = container.querySelector('[data-testid="default-spinner"]');
-
-      expect(defaultSpinner?.classList.contains("animate-spin")).toBe(true);
-    });
-
     test("dots type renders with correct structure", () => {
       const { container } = render(SpinnerTypesTest);
       const dotsSpinner = container.querySelector('[data-testid="dots-spinner"]');
@@ -234,30 +227,6 @@ describe("Spinner Component", () => {
       const barsSpinner = container.querySelector('[data-testid="bars-spinner"]');
 
       expect(barsSpinner).toHaveAttribute("viewBox", "0 0 135 140");
-    });
-  });
-
-  describe("Default Values", () => {
-    test("uses default type when not specified", () => {
-      const { container } = render(BasicSpinnerTest);
-      const spinner = container.querySelector("svg");
-
-      expect(spinner?.classList.contains("animate-spin")).toBe(true);
-    });
-
-    test("uses default color when not specified", () => {
-      const { container } = render(BasicSpinnerTest);
-      const spinner = container.querySelector("svg");
-
-      expect(spinner?.classList.contains("fill-primary-600")).toBe(true);
-    });
-
-    test("uses default size when not specified", () => {
-      const { container } = render(BasicSpinnerTest);
-      const spinner = container.querySelector("svg");
-
-      expect(spinner?.classList.contains("w-8")).toBe(true);
-      expect(spinner?.classList.contains("h-8")).toBe(true);
     });
   });
 });

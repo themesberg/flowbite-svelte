@@ -199,9 +199,9 @@
   <div class="mb-6 rounded p-4">
     <h3 class="mb-2 font-semibold dark:text-white">Quick Templates:</h3>
     <div class="flex gap-2">
-      <Button color="lime" onclick={() => createFromTemplate("SMARTPHONE", "APPLE")}>iPhone Template</Button>
-      <Button color="indigo" onclick={() => createFromTemplate("SMARTPHONE", "SAMSUNG")}>Samsung Phone</Button>
-      <Button color="cyan" onclick={() => createFromTemplate("LAPTOP", "APPLE")}>MacBook Template</Button>
+      <Button onclick={() => createFromTemplate("SMARTPHONE", "APPLE")}>iPhone Template</Button>
+      <Button color="success" onclick={() => createFromTemplate("SMARTPHONE", "SAMSUNG")}>Samsung Phone</Button>
+      <Button color="warning" onclick={() => createFromTemplate("LAPTOP", "APPLE")}>MacBook Template</Button>
     </div>
   </div>
 

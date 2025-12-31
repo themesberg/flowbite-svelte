@@ -2,6 +2,4 @@
   import { Helper } from "$lib";
 </script>
 
-<Helper class="custom-class" data-testid="custom-helper" id="helper-id">
-  Helper with custom props
-</Helper>
+<Helper class="custom-class" data-testid="custom-helper" id="helper-id">Helper with custom props</Helper>

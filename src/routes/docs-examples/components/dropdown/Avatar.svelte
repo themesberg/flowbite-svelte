@@ -2,7 +2,7 @@
   import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup } from "flowbite-svelte";
 </script>
 
-<Button pill color="light" id="avatar_with_name" class="p-1!">
+<Button pill id="avatar_with_name" class="p-1!">
   <Avatar src="/images/people/profile-picture-5.jpg" class="me-2" />
   Bonnie Green
 </Button>

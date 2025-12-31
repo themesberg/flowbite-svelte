@@ -19,7 +19,7 @@
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
   <div class="grid grid-cols-2 gap-2">
-    <Button color="light" href="#/">Learn more</Button>
+    <Button color="alternative" href="#/">Learn more</Button>
     <Button href="#/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
 </Drawer>

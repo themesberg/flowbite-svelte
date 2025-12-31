@@ -20,6 +20,7 @@
     transition = fly,
     class: className,
     classes,
+    closeButtonProps,
     ...restProps
   }: ToastProps = $props();
 
@@ -44,6 +45,16 @@
   }
 
   createDismissableContext(_close);
+
+  const finalCloseProps = $derived({
+    class: close({ class: clsx(theme?.close, styling?.close) }),
+    color: closeButtonProps?.color ?? "gray",
+    ariaLabel: closeButtonProps?.ariaLabel ?? "Remove toast",
+    size: closeButtonProps?.size,
+    classes: closeButtonProps?.classes,
+    name: closeButtonProps?.name,
+    onclick: closeButtonProps?.onclick
+  });
 </script>
 
 {#if toastStatus}
@@ -59,7 +70,7 @@
     </div>
 
     {#if dismissable}
-      <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} ariaLabel="Remove toast" {color} />
+      <CloseButton {...finalCloseProps} />
     {/if}
   </div>
 {/if}

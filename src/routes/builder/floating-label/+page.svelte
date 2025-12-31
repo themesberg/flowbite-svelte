@@ -95,7 +95,7 @@
     {/each}
   </div>
   <div class="mb-4 flex flex-wrap space-x-2">
-    <Button class="mb-4 w-48" color="secondary" onclick={changeHelperSlot}>{helperSlot ? "Remove helper slot" : "Add helper slot"}</Button>
+    <Button class="mb-4 w-48" onclick={changeHelperSlot}>{helperSlot ? "Remove helper slot" : "Add helper slot"}</Button>
     <Label class="mb-4 w-full font-bold">Helper Validation</Label>
     {#each validations as validationOption}
       <Radio

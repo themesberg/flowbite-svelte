@@ -13,7 +13,6 @@
     placeholder = "Enter tags",
     class: className,
     classes,
-    closeBtnSize = "xs",
     unique = false,
     availableTags = [],
     showHelper = false,
@@ -21,6 +20,7 @@
     allowNewTags = true,
     inputProps = {},
     disabled,
+    closeButtonProps,
     ...restProps
   }: TagsProps = $props();
 
@@ -131,6 +131,17 @@
   onDestroy(() => {
     cleanupFloating?.();
   });
+
+  const finalCloseProps = (index: number) => ({
+    class: close({ class: clsx(theme?.close, styling?.close, closeButtonProps?.class) }),
+    color: closeButtonProps?.color ?? "gray",
+    ariaLabel: closeButtonProps?.ariaLabel ?? "Remove tag",
+    disabled,
+    size: closeButtonProps?.size ?? "xs",
+    classes: closeButtonProps?.classes,
+    name: closeButtonProps?.name,
+    onclick: closeButtonProps?.onclick ?? (() => deleteField(index))
+  });
 </script>
 
 <svelte:window />
@@ -162,7 +173,7 @@
       <span class={spanCls({ class: clsx(theme?.span, styling?.span) })}>
         {tag}
       </span>
-      <CloseButton {disabled} size={closeBtnSize} class={close({ class: clsx(theme?.close, styling?.close) })} onclick={() => deleteField(index)} />
+      <CloseButton {...finalCloseProps(index)} />
     </div>
   {/each}
   <div class="relative w-full" bind:this={inputContainer}>
@@ -214,7 +225,6 @@
 @prop placeholder = "Enter tags"
 @prop class: className
 @prop classes
-@prop closeBtnSize = "xs"
 @prop unique = false
 @prop availableTags = []
 @prop showHelper = false

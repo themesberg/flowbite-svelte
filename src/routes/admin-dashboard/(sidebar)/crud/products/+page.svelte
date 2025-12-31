@@ -120,7 +120,7 @@
             <Button size="sm" class="gap-2 px-3" onclick={() => ((current_product = product), toggle(ProductDrawer))}>
               <EditOutline size="sm" /> Update
             </Button>
-            <Button color="red" size="sm" class="gap-2 px-3" onclick={() => toggle(DeleteDrawer as Component)}>
+            <Button color="danger" size="sm" class="gap-2 px-3" onclick={() => toggle(DeleteDrawer as Component)}>
               <TrashBinSolid size="sm" /> Delete item
             </Button>
           </TableBodyCell>

@@ -45,10 +45,10 @@
       </List>
 
       <div class="flex flex-row gap-4">
-        <Button href="/docs/pages/introduction" color="primary" class="gap-2">
+        <Button href="/docs/pages/introduction" class="gap-2">
           Start building <ArrowRight />
         </Button>
-        <Button href="https://github.com/themesberg/flowbite-svelte" color="light" class="w-auto dark:text-gray-400!">View on GitHub</Button>
+        <Button href="https://github.com/themesberg/flowbite-svelte" color="success" class="w-auto dark:text-gray-400!">View on GitHub</Button>
       </div>
     </div>
   </Row>

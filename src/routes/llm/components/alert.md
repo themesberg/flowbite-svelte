@@ -42,7 +42,7 @@ Use semantic color variants to convey meaning:
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="dark">
+<Alert color="gray">
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
 </Alert>
@@ -78,7 +78,7 @@ Include descriptive icons to improve visual scanning and quick identification.
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="dark">
+<Alert color="gray">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
@@ -193,7 +193,7 @@ Enable dismissal for temporary messages like notices or one-time tips. Customize
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   An alert with non default animation - fly away.
 </Alert>
-<Alert color="dark" dismissable closeIcon={EnvelopeSolid}>
+<Alert color="gray" dismissable closeIcon={EnvelopeSolid}>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   An alert with the custom dismissal button.
 </Alert>
@@ -229,7 +229,7 @@ Use left border accents for a clean, modern look ideal for sidebars or embedded 
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="dark" borderAccent rounded={false}>
+<Alert color="gray" borderAccent rounded={false}>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.

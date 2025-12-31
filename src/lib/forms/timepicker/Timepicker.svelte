@@ -23,7 +23,7 @@
     required = true,
     disabled = false,
     inputColor,
-    buttonColor = "primary",
+    buttonColor = "brand",
     Icon,
     iconClass = "h-5 w-5 text-gray-500 dark:text-gray-400",
     type = "default",
@@ -396,7 +396,7 @@
 {:else}
   <div class={styles.inlineGrid({ class: clsx(theme?.inlineGrid) })}>
     {#each timeIntervals as time (time)}
-      <Button {size} color={value === time ? buttonColor : "light"} class={styles.inlineButton({ class: clsx(theme?.inlineButton) })} onclick={() => handleInlineButtonSelect(time)}>
+      <Button {size} color={value === time ? buttonColor : "danger"} class={styles.inlineButton({ class: clsx(theme?.inlineButton) })} onclick={() => handleInlineButtonSelect(time)}>
         {time}
       </Button>
     {/each}

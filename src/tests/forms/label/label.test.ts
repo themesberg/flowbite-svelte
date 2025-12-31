@@ -53,7 +53,7 @@ describe("Label - Show/Hide", () => {
     render(LabelShowTest);
     // Content should still be present
     expect(screen.getByText("Hidden Label Content")).toBeInTheDocument();
-    
+
     // But the label element should not exist
     const hiddenLabel = screen.queryByTestId("hidden-label");
     expect(hiddenLabel).not.toBeInTheDocument();
@@ -91,7 +91,7 @@ describe("Label - Custom Props", () => {
     render(LabelCustomPropsTest);
     const label = screen.getByText("Email Address");
     const input = document.getElementById("email-input");
-    
+
     expect(label).toHaveAttribute("for", "email-input");
     expect(input).toBeInTheDocument();
   });
@@ -100,7 +100,7 @@ describe("Label - Custom Props", () => {
     render(LabelCustomPropsTest);
     const label = screen.getByText("Email Address") as HTMLLabelElement;
     const input = document.getElementById("email-input") as HTMLInputElement;
-    
+
     expect(label.htmlFor).toBe("email-input");
     expect(input.id).toBe("email-input");
   });

@@ -36,7 +36,7 @@
   const { base, inner } = $derived(bottomNav({ position, navType }));
 </script>
 
-<div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<div data-scope="bottom-nav" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {#if header}
     {@render header()}
   {/if}

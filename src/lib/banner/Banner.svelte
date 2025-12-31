@@ -20,7 +20,7 @@
     transition = fade,
     params,
     onclose,
-    closeBtnColor = "gray",
+    closeButtonProps,
     ...restProps
   }: BannerProps = $props();
 
@@ -45,17 +45,27 @@
     }
   }
   createDismissableContext(close);
+
+  const finalCloseProps = $derived({
+    class: dismissableClass({ class: clsx(theme?.dismissable, styling?.dismissable, closeButtonProps?.class) }),
+    color: closeButtonProps?.color ?? "gray",
+    ariaLabel: closeButtonProps?.ariaLabel ?? "Remove banner",
+    size: closeButtonProps?.size,
+    classes: closeButtonProps?.classes,
+    name: closeButtonProps?.name,
+    onclick: closeButtonProps?.onclick
+  });
 </script>
 
 {#if open}
-  <div tabindex="-1" bind:this={ref} class={base({ class: clsx(theme?.base, className) })} {...restProps} transition:transition={effectiveParams as ParamsType}>
+  <div data-scope="banner" tabindex="-1" bind:this={ref} class={base({ class: clsx(theme?.base, className) })} {...restProps} transition:transition={effectiveParams as ParamsType}>
     <div class={insideDiv({ class: clsx(theme?.insideDiv, styling?.insideDiv) })}>
       {@render children?.()}
     </div>
 
     {#if dismissable}
       <div class="flex items-center justify-end">
-        <CloseButton class={dismissableClass({ class: clsx(theme?.dismissable, styling?.dismissable) })} color={closeBtnColor} ariaLabel="Remove banner" />
+        <CloseButton {...finalCloseProps} />
       </div>
     {/if}
   </div>

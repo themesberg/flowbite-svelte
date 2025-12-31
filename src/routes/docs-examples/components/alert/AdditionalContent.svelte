@@ -21,5 +21,5 @@
   <p class="mt-2 mb-4 text-sm">
     More info about this success alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
   </p>
-  <Button size="xs" color="green"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
+  <Button size="xs" color="success"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
 </Alert>

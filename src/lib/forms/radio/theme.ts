@@ -11,7 +11,7 @@ export const radio = tv({
   },
   variants: {
     color: {
-      // "brand" | "danger" | "success" | "warning" | "dark" | "neutral" | "purple" | "indigo" | "teal"
+      // "brand" | "danger" | "success" | "warning" | "dark" | "neutral"
       brand: {
         input: "text-brand focus:ring-fuchsia-500 dark:focus:ring-fuchsia-600"
       },
@@ -27,15 +27,6 @@ export const radio = tv({
       },
       success: {
         input: "text-green-600 focus:ring-green-500 dark:focus:ring-green-600"
-      },
-      teal: {
-        input: "text-teal-600 focus:ring-teal-500 dark:focus:ring-teal-600"
-      },
-      indigo: {
-        input: "text-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600"
-      },
-      purple: {
-        input: "text-purple-600 focus:ring-purple-500 dark:focus:ring-purple-600"
       }
     },
     tinted: {

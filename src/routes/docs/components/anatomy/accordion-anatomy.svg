@@ -1,0 +1,96 @@
+<svg width="1000" height="650" viewBox="0 0 1000 650" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-w-full h-auto">
+  <!-- Background -->
+  <rect width="1000" height="650" fill="#1e293b"/>
+  
+  <!-- Accordion base container -->
+  <rect x="200" y="100" width="600" height="400" fill="#0f172a" stroke="#475569" stroke-width="2" rx="8"/>
+  
+  <!-- AccordionItem 1 (expanded) -->
+  <g id="item1">
+    <!-- Item base (h2) -->
+    <rect x="200" y="100" width="600" height="80" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    
+    <!-- Button -->
+    <rect x="220" y="120" width="560" height="40" fill="#334155" rx="4"/>
+    <text x="240" y="145" fill="#e2e8f0" font-size="16" font-family="Arial">Section 1 (Open)</text>
+    
+    <!-- Arrow icon -->
+    <path d="M740 135L755 140L740 145" stroke="#e2e8f0" stroke-width="2" fill="none"/>
+    
+    <!-- Content wrapper and content -->
+    <rect x="200" y="180" width="600" height="100" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+    <text x="220" y="210" fill="#94a3b8" font-size="14" font-family="Arial">Content for section 1...</text>
+    <text x="220" y="235" fill="#94a3b8" font-size="14" font-family="Arial">This is the collapsible content area</text>
+    <text x="220" y="260" fill="#94a3b8" font-size="14" font-family="Arial">that expands when the button is clicked.</text>
+  </g>
+  
+  <!-- AccordionItem 2 (collapsed) -->
+  <g id="item2">
+    <!-- Item base (h2) -->
+    <rect x="200" y="280" width="600" height="80" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    
+    <!-- Button -->
+    <rect x="220" y="300" width="560" height="40" fill="#334155" rx="4"/>
+    <text x="240" y="325" fill="#e2e8f0" font-size="16" font-family="Arial">Section 2 (Closed)</text>
+    
+    <!-- Arrow icon -->
+    <path d="M740 320L755 325L740 330" stroke="#e2e8f0" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- AccordionItem 3 (collapsed) -->
+  <g id="item3">
+    <!-- Item base (h2) -->
+    <rect x="200" y="360" width="600" height="80" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    
+    <!-- Button -->
+    <rect x="220" y="380" width="560" height="40" fill="#334155" rx="4"/>
+    <text x="240" y="405" fill="#e2e8f0" font-size="16" font-family="Arial">Section 3 (Closed)</text>
+    
+    <!-- Arrow icon -->
+    <path d="M740 400L755 405L740 410" stroke="#e2e8f0" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Labels with arrows -->
+  <!-- Accordion base label -->
+  <line x1="200" y1="80" x2="200" y2="50" stroke="#f87171" stroke-width="2"/>
+  <text x="90" y="45" fill="#ffffff" font-size="14" font-family="Arial" font-weight="bold">Accordion</text>
+  <text x="90" y="65" fill="#94a3b8" font-size="12" font-family="Arial">data-scope="accordion"</text>
+  <text x="90" y="80" fill="#94a3b8" font-size="12" font-family="Arial">data-part="base"</text>
+  
+  <!-- Item base label -->
+  <line x1="850" y1="140" x2="900" y2="140" stroke="#f87171" stroke-width="2"/>
+  <text x="910" y="120" fill="#ffffff" font-size="14" font-family="Arial" font-weight="bold">AccordionItem</text>
+  <text x="910" y="140" fill="#94a3b8" font-size="12" font-family="Arial">data-scope="accordion"</text>
+  <text x="910" y="155" fill="#94a3b8" font-size="12" font-family="Arial">data-part="base"</text>
+  
+  <!-- Button label -->
+  <line x1="220" y1="120" x2="150" y2="90" stroke="#60a5fa" stroke-width="2"/>
+  <text x="30" y="90" fill="#ffffff" font-size="14" font-family="Arial" font-weight="bold">Button</text>
+  <text x="30" y="105" fill="#94a3b8" font-size="12" font-family="Arial">data-part="button"</text>
+  
+  <!-- Content wrapper label -->
+  <line x1="200" y1="230" x2="150" y2="260" stroke="#a78bfa" stroke-width="2"/>
+  <text x="10" y="260" fill="#ffffff" font-size="14" font-family="Arial" font-weight="bold">Content Wrapper</text>
+  <text x="10" y="275" fill="#94a3b8" font-size="12" font-family="Arial">data-part="content-wrapper"</text>
+  
+  <!-- Content label -->
+  <line x1="220" y1="210" x2="150" y2="200" stroke="#34d399" stroke-width="2"/>
+  <text x="30" y="180" fill="#ffffff" font-size="14" font-family="Arial" font-weight="bold">Content</text>
+  <text x="30" y="195" fill="#94a3b8" font-size="12" font-family="Arial">data-part="content"</text>
+  
+  <!-- Legend box -->
+  <rect x="50" y="520" width="900" height="100" fill="#0f172a" stroke="#475569" stroke-width="2" rx="4"/>
+  <text x="70" y="545" fill="#ffffff" font-size="16" font-family="Arial" font-weight="bold">Component Structure</text>
+  
+  <text x="70" y="570" fill="#f87171" font-size="14" font-family="Arial">●</text>
+  <text x="90" y="570" fill="#e2e8f0" font-size="14" font-family="Arial">Accordion (base) - Root container with data-scope="accordion" data-part="base"</text>
+  
+  <text x="70" y="590" fill="#60a5fa" font-size="14" font-family="Arial">●</text>
+  <text x="90" y="590" fill="#e2e8f0" font-size="14" font-family="Arial">AccordionItem (base) - Each item wrapper (h2) with data-scope="accordion" data-part="base"</text>
+  
+  <text x="480" y="570" fill="#a78bfa" font-size="14" font-family="Arial">●</text>
+  <text x="500" y="570" fill="#e2e8f0" font-size="14" font-family="Arial">Button - Toggle button with data-part="button"</text>
+  
+  <text x="480" y="590" fill="#34d399" font-size="14" font-family="Arial">●</text>
+  <text x="500" y="590" fill="#e2e8f0" font-size="14" font-family="Arial">Content - Content area with data-part="content" & wrapper with data-part="content-wrapper"</text>
+</svg>

@@ -84,10 +84,10 @@ ${helperState ? `<Helper class="ps-6">Helper text</Helper>` : ""}`;
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-48" color="primary" onclick={changeCheckedState}>{checkedState ? "Remove checked" : "Add checked"}</Button>
-    <Button class="w-48" color="secondary" onclick={changeIntermidiateState}>{indeterminateState ? "Remove indeterminate" : "Add indeterminate"}</Button>
-    <Button class="w-48" color="pink" onclick={changeDisabledState}>{disabledState ? "Remove disabled" : "Add disabled"}</Button>
-    <Button class="w-48" color="lime" onclick={changeHelperState}>{helperState ? "Remove helper" : "Add helper"}</Button>
+    <Button class="w-48" onclick={changeCheckedState}>{checkedState ? "Remove checked" : "Add checked"}</Button>
+    <Button class="w-48" color="success" onclick={changeIntermidiateState}>{indeterminateState ? "Remove indeterminate" : "Add indeterminate"}</Button>
+    <Button class="w-48" color="warning" onclick={changeDisabledState}>{disabledState ? "Remove disabled" : "Add disabled"}</Button>
+    <Button class="w-48" color="danger" onclick={changeHelperState}>{helperState ? "Remove helper" : "Add helper"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

@@ -510,7 +510,7 @@
             {@const available = isDateAvailable(day)}
             <Button
               type="button"
-              color={isSelected(day) ? color : "alternative"}
+              color={isSelected(day) ? color : "brand"}
               class={dayButton({
                 current,
                 today: isToday(day),

@@ -18,7 +18,7 @@
   let size: ButtonGroupProps["size"] = $state("md");
   // button colors
   const colors = Object.keys(button.variants.color);
-  let color: ButtonProps["color"] = $state("primary");
+  let color: ButtonProps["color"] = $state("brand");
   let link: ButtonProps["href"] = $state("");
   const changeLink = () => {
     link = link === "" ? "/" : "";
@@ -47,7 +47,7 @@
       if (buttonGroupClass !== "") props.push(` class="${buttonGroupClass}"`);
 
       if (link) btnProps.push(` href="${link}"`);
-      if (color !== "primary") btnProps.push(` color="${color}"`);
+      if (color !== "brand") btnProps.push(` color="${color}"`);
       if (outline) btnProps.push(" outline");
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
@@ -104,9 +104,9 @@
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-40" onclick={changeClass}>{buttonGroupClass ? "Remove class" : "Add class"}</Button>
-    <Button class="w-40" color="secondary" onclick={changeLink}>{link === "" ? "Add link" : "Remove link"}</Button>
-    <Button class="w-40" color="red" onclick={changeIcon}>{icon ? "Remove icon" : "Add icon"}</Button>
-    <Button class="w-40" color="violet" onclick={changeOutline}>{outline ? "Remove outline" : "Add outline"}</Button>
+    <Button class="w-40" color="success" onclick={changeLink}>{link === "" ? "Add link" : "Remove link"}</Button>
+    <Button class="w-40" color="warning" onclick={changeIcon}>{icon ? "Remove icon" : "Add icon"}</Button>
+    <Button class="w-40" color="danger" onclick={changeOutline}>{outline ? "Remove outline" : "Add outline"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

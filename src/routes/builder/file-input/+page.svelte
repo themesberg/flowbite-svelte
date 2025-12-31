@@ -80,8 +80,8 @@ ${fileNames ? `{#each files as file}<p>{file.name}</p>{/each}` : ""}`;
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
     <Button class="w-40" onclick={changeHelperState}>{helperState ? "Remove helper" : "Add helper"}</Button>
-    <Button class="w-40" color="emerald" onclick={changeBindFile}>{fileNames ? "Hide file names" : "Show file names"}</Button>
-    <Button class="w-40" color="sky" onclick={changeMultiple}>{multiple ? "Remove multiple" : "Add multiple"}</Button>
+    <Button class="w-40" color="success" onclick={changeBindFile}>{fileNames ? "Hide file names" : "Show file names"}</Button>
+    <Button class="w-40" color="warning" onclick={changeMultiple}>{multiple ? "Remove multiple" : "Add multiple"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

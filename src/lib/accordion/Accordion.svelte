@@ -37,7 +37,7 @@
   const base = $derived(accordion({ flush, class: clsx(theme, className) }));
 </script>
 
-<div {...restProps} class={base}>
+<div data-scope="accordion" data-part="base" {...restProps} class={base}>
   {@render children()}
 </div>
 

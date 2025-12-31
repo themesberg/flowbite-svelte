@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Input } from "$lib";
-  
+
   let value1 = $state("Clearable text");
   let value2 = $state("");
 </script>

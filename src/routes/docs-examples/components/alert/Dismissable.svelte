@@ -26,7 +26,7 @@
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   An alert with non default animation - fly away.
 </Alert>
-<Alert color="dark" dismissable closeIcon={EnvelopeSolid}>
+<Alert color="gray" dismissable closeIcon={EnvelopeSolid}>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   An alert with the custom dismissal button.
 </Alert>

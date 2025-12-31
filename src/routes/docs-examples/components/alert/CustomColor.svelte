@@ -20,15 +20,15 @@
   With border styling.
 </Alert>
 
-<!-- Dismissable with color="none" for full custom control -->
-<Alert dismissable color="none" closeColor="none" class="bg-indigo-100 text-indigo-900 dark:bg-indigo-900 dark:text-indigo-100">
+<!-- Dismissable for full custom control -->
+<Alert dismissable class="bg-indigo-100 text-indigo-900 dark:bg-indigo-900 dark:text-indigo-100">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Custom dismissable!</span>
   Use color="none" and closeColor="none" for full control.
 </Alert>
 
 <!-- Dismissable with predefined closeColor -->
-<Alert dismissable color="none" closeColor="danger" class="bg-pink-100 text-pink-900 dark:bg-pink-900 dark:text-pink-100">
+<Alert dismissable closeButtonProps={{ color: "danger" }} class="bg-pink-100 text-pink-900 dark:bg-pink-900 dark:text-pink-100">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Custom alert with danger close button!</span>
   Mix custom colors with predefined closeColor.

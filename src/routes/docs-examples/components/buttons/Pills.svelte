@@ -10,9 +10,3 @@
 <Button color="warning" pill>Warning</Button>
 <Button color="transparent" pill>Transparent</Button>
 <Button color="dark" pill>Dark</Button>
-<Button color="light" pill>Light</Button>
-<Button color="blue" pill>Blue</Button>
-<Button color="green" pill>Green</Button>
-<Button color="red" pill>Red</Button>
-<Button color="yellow" pill>Yellow</Button>
-<Button color="purple" pill>Purple</Button>

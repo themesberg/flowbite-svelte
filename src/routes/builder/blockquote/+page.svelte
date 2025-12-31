@@ -96,10 +96,10 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" color="blue" onclick={changeBorder}>{border ? "Remove border" : "Add border"}</Button>
-    <Button class="w-40" color="rose" onclick={changeItalic}>{italic ? "Remove italic" : "Add italic"}</Button>
-    <Button class="w-40" color="indigo" onclick={changeBg}>{bg ? "Remove bg" : "Add bg"}</Button>
-    <Button class="w-40" color="sky" onclick={changeClass}>{blockClass === "p-8" ? "class: p-4" : "class: p-8"}</Button>
+    <Button class="w-40" onclick={changeBorder}>{border ? "Remove border" : "Add border"}</Button>
+    <Button class="w-40" color="success" onclick={changeItalic}>{italic ? "Remove italic" : "Add italic"}</Button>
+    <Button class="w-40" color="warning" onclick={changeBg}>{bg ? "Remove bg" : "Add bg"}</Button>
+    <Button class="w-40" color="danger" onclick={changeClass}>{blockClass === "p-8" ? "class: p-4" : "class: p-8"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

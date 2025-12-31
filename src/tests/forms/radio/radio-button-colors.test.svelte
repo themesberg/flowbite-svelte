@@ -3,8 +3,8 @@
 </script>
 
 <div>
-  <RadioButton name="colors" value="blue" color="blue">Blue</RadioButton>
-  <RadioButton name="colors" value="red" color="red">Red</RadioButton>
-  <RadioButton name="colors" value="green" color="green">Green</RadioButton>
-  <RadioButton name="colors" value="purple" color="purple">Purple</RadioButton>
+  <RadioButton name="colors" value="Brand">Brand</RadioButton>
+  <RadioButton name="colors" value="danger" color="danger">Danger</RadioButton>
+  <RadioButton name="colors" value="success" color="success">Success</RadioButton>
+  <RadioButton name="colors" value="warning" color="warning">Warning</RadioButton>
 </div>

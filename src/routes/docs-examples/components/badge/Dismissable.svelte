@@ -8,5 +8,3 @@
 <Badge dismissable border color="danger">Danger</Badge>
 <Badge dismissable border color="success">Success</Badge>
 <Badge dismissable border color="warning">Warning</Badge>
-<Badge dismissable border color="purple">Purple</Badge>
-<Badge dismissable border color="pink">Pink</Badge>

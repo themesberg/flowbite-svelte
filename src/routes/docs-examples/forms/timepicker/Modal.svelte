@@ -54,8 +54,8 @@
       <Timepicker type="inline-buttons" value={modalTimeSelection.time} {timeIntervals} onselect={handleModalTimeSelect} columns={3} />
     </div>
     <div class="flex items-center space-x-4">
-      <Button color="primary" class="w-full" onclick={handleSave}>Save</Button>
-      <Button color="alternative" class="w-full" onclick={() => (open = false)}>Discard</Button>
+      <Button class="w-full" onclick={handleSave}>Save</Button>
+      <Button color="danger" class="w-full" onclick={() => (open = false)}>Discard</Button>
     </div>
   </div>
 </Modal>

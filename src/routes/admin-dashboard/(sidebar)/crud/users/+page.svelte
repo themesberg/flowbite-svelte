@@ -106,7 +106,7 @@
             <Button size="sm" class="gap-2 px-3" onclick={() => ((current_user = user), (openUser = true))}>
               <EditOutline size="sm" /> Edit user
             </Button>
-            <Button color="red" size="sm" class="gap-2 px-3" onclick={() => ((current_user = user), (openDelete = true))}>
+            <Button color="danger" size="sm" class="gap-2 px-3" onclick={() => ((current_user = user), (openDelete = true))}>
               <TrashBinSolid size="sm" /> Delete user
             </Button>
           </TableBodyCell>

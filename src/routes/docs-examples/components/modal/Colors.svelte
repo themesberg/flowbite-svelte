@@ -2,7 +2,7 @@
   import { Button, Modal, type ButtonProps } from "flowbite-svelte";
 
   let openColor = $state(false);
-  let color: ButtonProps["color"] = $state("primary");
+  let color: ButtonProps["color"] = $state("brand");
   function onclickColor(buttonColor: ButtonProps["color"]) {
     color = buttonColor;
     openColor = true;
@@ -10,11 +10,11 @@
 </script>
 
 <div class="block space-y-4 md:space-y-0 md:space-x-2 rtl:space-x-reverse">
-  <Button color="primary" onclick={() => onclickColor("primary")}>Primary modal</Button>
-  <Button color="red" onclick={() => onclickColor("red")}>Red modal</Button>
-  <Button color="green" onclick={() => onclickColor("green")}>Green modal</Button>
-  <Button color="blue" onclick={() => onclickColor("blue")}>Blue modal</Button>
-  <Button color="yellow" onclick={() => onclickColor("yellow")}>Yellow modal</Button>
+  <Button onclick={() => onclickColor("brand")}>Brand modal</Button>
+  <Button color="danger" onclick={() => onclickColor("danger")}>Danger modal</Button>
+  <Button color="success" onclick={() => onclickColor("success")}>Success modal</Button>
+  <Button color="warning" onclick={() => onclickColor("warning")}>Warning modal</Button>
+  <Button color="danger" onclick={() => onclickColor("danger")}>Danger modal</Button>
 </div>
 
 <Modal title="Terms of Service" form bind:open={openColor} {color}>

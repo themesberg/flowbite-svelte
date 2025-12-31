@@ -14,7 +14,7 @@
     <div class="sm:justify-start1 mt-4 w-full justify-center sm:flex md:mt-5">
       <div class="mx-0 flex max-w-2xl flex-col items-center gap-4 sm:flex-row sm:gap-6">
         <CopyCliboardInput class="bg-white md:w-80!" />
-        <Button size="lg" class="hover:bg-primary-800 w-full gap-2 whitespace-nowrap sm:max-w-sm md:w-fit" href="/docs/components/accordion" color="primary">
+        <Button size="lg" class="hover:bg-primary-800 w-full gap-2 whitespace-nowrap sm:max-w-sm md:w-fit" href="/docs/components/accordion">
           See our docs <ArrowRight />
         </Button>
       </div>

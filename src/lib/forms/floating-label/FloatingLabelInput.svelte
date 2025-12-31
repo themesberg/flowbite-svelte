@@ -20,12 +20,12 @@
     class: className,
     classes,
     clearable,
-    clearableColor = "none",
     clearableOnClick,
     data = [],
     maxSuggestions = 5,
     onSelect,
     placeholder,
+    closeButtonProps,
     ...restProps
   }: FloatingLabelInputProps = $props();
 
@@ -160,6 +160,16 @@
   }
 
   createDismissableContext(clearAll);
+
+  const finalCloseProps = $derived({
+    class: close({ class: clsx(theme?.close, styling?.close) }),
+    color: closeButtonProps?.color ?? "gray",
+    ariaLabel: closeButtonProps?.ariaLabel ?? "Clear search value",
+    size: closeButtonProps?.size,
+    classes: closeButtonProps?.classes ?? { svg: clsx(theme?.svg, styling?.svg) },
+    name: closeButtonProps?.name,
+    onclick: closeButtonProps?.onclick
+  });
 </script>
 
 {#if clearable}
@@ -181,7 +191,7 @@
     onkeydown={handleKeydown}
   />
   {#if showClearButton}
-    <CloseButton class={close({ class: clsx(theme?.close, styling?.close) })} color={clearableColor} ariaLabel="Clear search value" svgClass={clsx(styling?.svg)} />
+    <CloseButton {...finalCloseProps} />
   {/if}
   <label for={id} class={label({ class: clsx(theme?.label, styling?.label) })}>
     {@render children()}

@@ -57,8 +57,8 @@
   let contentWrapperCls = $derived(clsx(contentWrapper(), open ? "block" : "hidden", finalClasses.contentWrapper));
 </script>
 
-<h2 class={base({ class: clsx(theme?.base, className) })}>
-  <button type="button" onclick={handleToggle} class={button({ class: clsx(buttonClass, theme?.button, finalClasses.button) })} aria-expanded={open}>
+<h2 data-scope="accordion-item" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
+  <button data-part="button" type="button" onclick={handleToggle} class={button({ class: clsx(buttonClass, theme?.button, finalClasses.button) })} aria-expanded={open}>
     {#if header}
       {@render header()}
       {#if open}
@@ -82,15 +82,15 @@
 
 {#if useTransition}
   {#if open && transitionType !== "none"}
-    <div class={contentWrapperCls} transition:transitionType={effectiveTransitionParams as ParamsType}>
-      <div class={content({ class: clsx(theme?.content, finalClasses.content) })}>
+    <div data-part="content-wrapper" class={contentWrapperCls} transition:transitionType={effectiveTransitionParams as ParamsType}>
+      <div data-part="content" class={content({ class: clsx(theme?.content, finalClasses.content) })}>
         {@render children()}
       </div>
     </div>
   {/if}
 {:else}
-  <div class={contentWrapperCls}>
-    <div class={content({ class: clsx(theme?.content, finalClasses.content) })}>
+  <div data-part="content-wrapper" class={contentWrapperCls}>
+    <div data-part="content" class={content({ class: clsx(theme?.content, finalClasses.content) })}>
       {@render children()}
     </div>
   </div>

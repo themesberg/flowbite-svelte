@@ -86,3 +86,6 @@ export { tags } from "../extend/tags";
 export { tour } from "$lib/extend/tour/theme";
 export { virtualList } from "$lib/extend/virtuallist";
 export { virtualMasonry } from "$lib/extend/virtual-masonry/theme";
+
+// utils
+export { closeButton } from "$lib/utils/theme";

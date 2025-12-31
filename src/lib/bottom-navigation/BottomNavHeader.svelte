@@ -14,7 +14,7 @@
   const { innerDiv, base } = $derived(bottomNavHeader());
 </script>
 
-<div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<div data-scope="bottom-nav-header" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   <div class={innerDiv({ class: clsx(theme?.innerDiv, styling?.innerDiv) })} role="group">
     {@render children()}
   </div>

@@ -27,6 +27,7 @@
     form,
     required,
     autocomplete,
+    closeButtonProps,
     ...restProps
   }: MultiSelectProps<T> = $props();
 
@@ -195,6 +196,17 @@
   });
 
   const { base, dropdown, item: dropdownItem, close, select, placeholder: placeholderSpan, svg } = $derived(multiSelect({ disabled, grouped: !!group }));
+
+  const finalCloseProps = $derived({
+    class: close({ class: clsx(theme?.close, styling?.close) }),
+    color: closeButtonProps?.color ?? "gray",
+    ariaLabel: closeButtonProps?.ariaLabel ?? "Clear search value",
+    size: closeButtonProps?.size,
+    classes: closeButtonProps?.classes ?? { svg: clsx(theme?.svg, styling?.svg) },
+    name: closeButtonProps?.name,
+    onclick: closeButtonProps?.onclick,
+    disabled
+  });
 </script>
 
 <select {name} {form} {required} {autocomplete} {value} hidden multiple {onchange}>
@@ -231,7 +243,7 @@
   </span>
   <div class="ms-auto flex items-center gap-2">
     {#if selectItems.length}
-      <CloseButton {size} color="none" class={close({ class: clsx(theme?.close, classes?.close) })} {disabled} />
+      <CloseButton {...finalCloseProps} />
     {/if}
 
     <svg class={clsx(svg(), disabled && "cursor-not-allowed", classes?.svg)} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">

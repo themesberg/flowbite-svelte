@@ -152,13 +152,13 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" color="blue" onclick={toggleCornerStyle}>{isRounded ? "Default: circular" : "Rounded"}</Button>
-    <Button class="w-40" color="red" onclick={changeBorder}>{border ? "Remove border" : "Add border"}</Button>
-    <Button class="w-40" color="green" onclick={changeStacked}>{stacked ? "Remove stacked" : "Add  stacked"}</Button>
-    <Button class="w-40" color="purple" onclick={changeClassStatus}>{classStatus ? "Remove class" : "Add class"}</Button>
-    <Button class="w-40" color="yellow" onclick={changeHrf}>{hrefStatus ? "Remove href" : "Add href"}</Button>
-    <Button class="w-40" color="cyan" onclick={changeDot}>{dotStatus ? "Remove dot" : "Add dot"}</Button>
-    <Button class="w-40" color="pink" onclick={changeTarget}>{targetStatus ? "Remove target" : "Add target"}</Button>
+    <Button class="w-40" onclick={toggleCornerStyle}>{isRounded ? "Default: circular" : "Rounded"}</Button>
+    <Button class="w-40" color="success" onclick={changeBorder}>{border ? "Remove border" : "Add border"}</Button>
+    <Button class="w-40" color="warning" onclick={changeStacked}>{stacked ? "Remove stacked" : "Add  stacked"}</Button>
+    <Button class="w-40" color="danger" onclick={changeClassStatus}>{classStatus ? "Remove class" : "Add class"}</Button>
+    <Button class="w-40" color="alternative" onclick={changeHrf}>{hrefStatus ? "Remove href" : "Add href"}</Button>
+    <Button class="w-40" color="gray" onclick={changeDot}>{dotStatus ? "Remove dot" : "Add dot"}</Button>
+    <Button class="w-40" color="ghost" onclick={changeTarget}>{targetStatus ? "Remove target" : "Add target"}</Button>
     <Button class="w-40" color="gray" onclick={changeEventStatus}>{eventStatus ? "Remove event" : "Add event"}</Button>
   </div>
   {#snippet codeblock()}

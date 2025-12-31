@@ -165,12 +165,12 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" color="blue" onclick={changeBtnOutline}>{btnOutline === false ? "Add outline" : "Remove outline"}</Button>
-    <Button class="w-40" color="green" onclick={changeBtnShadow}>{btnShadow === false ? "Add shadow" : "Remove shadow"}</Button>
-    <Button class="w-40" color="yellow" onclick={changeBtnPill}>{btnPill === false ? "Add pill" : "Remove pill"}</Button>
-    <Button class="w-40" color="red" onclick={changeBtnDisabled}>{btnDisabled === false ? "Add disabled" : "Remove disabled"}</Button>
+    <Button class="w-40" onclick={changeBtnOutline}>{btnOutline === false ? "Add outline" : "Remove outline"}</Button>
+    <Button class="w-40" color="success" onclick={changeBtnShadow}>{btnShadow === false ? "Add shadow" : "Remove shadow"}</Button>
+    <Button class="w-40" color="warning" onclick={changeBtnPill}>{btnPill === false ? "Add pill" : "Remove pill"}</Button>
+    <Button class="w-40" color="danger" onclick={changeBtnDisabled}>{btnDisabled === false ? "Add disabled" : "Remove disabled"}</Button>
     <Button class="w-40" onclick={changeBtnClass}>{btnClass === "" ? "Add class" : "Remove class"}</Button>
-    <Button class="w-40" color="sky" onclick={changeBtnLink}>{btnLink === "" ? "Add link" : "Remove link"}</Button>
+    <Button class="w-40" color="alternative" onclick={changeBtnLink}>{btnLink === "" ? "Add link" : "Remove link"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
@@ -206,12 +206,12 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" color="blue" onclick={changeGradientOutline}>{gradientOutline === false ? "Add outline" : "Remove outline"}</Button>
-    <Button class="w-40" color="green" onclick={changeGradientShadow}>{gradientShadow === false ? "Add shadow" : "Remove shadow"}</Button>
-    <Button class="w-40" color="yellow" onclick={changeGradientPill}>{graidentPill === false ? "Add pill" : "Remove pill"}</Button>
-    <Button class="w-40" color="red" onclick={changeGradientDisabled}>{gradientDisabled === false ? "Add disabled" : "Remove disabled"}</Button>
+    <Button class="w-40" onclick={changeGradientOutline}>{gradientOutline === false ? "Add outline" : "Remove outline"}</Button>
+    <Button class="w-40" color="success" onclick={changeGradientShadow}>{gradientShadow === false ? "Add shadow" : "Remove shadow"}</Button>
+    <Button class="w-40" color="warning" onclick={changeGradientPill}>{graidentPill === false ? "Add pill" : "Remove pill"}</Button>
+    <Button class="w-40" color="danger" onclick={changeGradientDisabled}>{gradientDisabled === false ? "Add disabled" : "Remove disabled"}</Button>
     <Button class="w-40" onclick={changeGradientClass}>{gradientClass === "" ? "Add class" : "Remove class"}</Button>
-    <Button class="w-40" color="sky" onclick={changeGradientLink}>{btnLink === "" ? "Add link" : "Remove link"}</Button>
+    <Button class="w-40" color="alternative" onclick={changeGradientLink}>{btnLink === "" ? "Add link" : "Remove link"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleGradientBuilderExpandClick} expand={gradientBuilderExpand} showExpandButton={showGradientBuilderExpandButton} code={gradientGeneratedCode} />

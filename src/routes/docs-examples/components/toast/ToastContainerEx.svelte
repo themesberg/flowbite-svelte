@@ -98,10 +98,10 @@
       <P class="mb-8">Click the buttons below to trigger toast notifications. Each toast will appear in the top-right corner and automatically dismiss after 5 seconds.</P>
       <div class="space-y-4">
         <div class="grid grid-cols-2 gap-3">
-          <Button onclick={() => addToast("green")} color="green">Success Toast</Button>
-          <Button onclick={() => addToast("blue")} color="blue">Info Toast</Button>
-          <Button onclick={() => addToast("yellow")} color="yellow">Warning Toast</Button>
-          <Button onclick={() => addToast("red")} color="red">Error Toast</Button>
+          <Button onclick={() => addToast("green")} color="success">Success Toast</Button>
+          <Button onclick={() => addToast("blue")}>Info Toast</Button>
+          <Button onclick={() => addToast("yellow")} color="warning">Warning Toast</Button>
+          <Button onclick={() => addToast("red")} color="danger">Error Toast</Button>
         </div>
         <Button onclick={() => addToast()} color="dark" class="w-full">Random Toast</Button>
       </div>

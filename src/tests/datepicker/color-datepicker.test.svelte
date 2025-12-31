@@ -2,6 +2,6 @@
   import Datepicker from "$lib/datepicker/Datepicker.svelte";
 </script>
 
-<Datepicker color="primary" placeholder="Primary" />
-<Datepicker color="red" placeholder="Red" />
-<Datepicker color="green" placeholder="Green" />
+<Datepicker placeholder="Brand" />
+<Datepicker color="danger" placeholder="Danger" />
+<Datepicker color="success" placeholder="Success" />

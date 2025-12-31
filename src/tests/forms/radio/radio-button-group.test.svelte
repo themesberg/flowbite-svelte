@@ -1,6 +1,6 @@
 <script lang="ts">
   import { RadioButton } from "$lib";
-  
+
   let selected = $state("option2");
 </script>
 
