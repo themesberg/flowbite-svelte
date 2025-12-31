@@ -15,21 +15,21 @@
 
   let isActive = $derived(ctx?.activeUrl && href ? href === ctx.activeUrl : false);
 
-  const { base, active, li } = dropdownItem();
-  let finalClass = $derived(isActive ? active({ class: clsx(theme?.active, styling?.active) }) : base({ class: clsx(theme?.base, className) }));
+  const { base, active, item } = dropdownItem();
+  let itemClass = $derived(isActive ? active({ class: clsx(theme?.active, styling?.active) }) : base({ class: clsx(theme?.item, styling?.item) }));
 </script>
 
-<li class={li({ class: clsx(theme?.li, styling?.li) })}>
+<li data-scope="dropdown-item" data-part="" class={base({ class: clsx(theme?.base, className) })}>
   {#if href}
-    <a {href} {onclick} {...restProps} class={finalClass}>
+    <a data-part="item" {href} {onclick} {...restProps} class={itemClass}>
       {@render children()}
     </a>
   {:else if onclick}
-    <button type="button" {onclick} {...restProps} class={finalClass}>
+    <button data-part="item" type="button" {onclick} {...restProps} class={itemClass}>
       {@render children()}
     </button>
   {:else}
-    <div {...restProps} class={finalClass}>
+    <div data-part="item" {...restProps} class={itemClass}>
       {@render children()}
     </div>
   {/if}

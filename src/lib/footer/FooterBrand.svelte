@@ -9,23 +9,23 @@
   const styling = $derived(classes);
   const theme = $derived(getTheme("footerBrand"));
 
-  const { base, span, img } = $derived(footerBrand());
+  const { base, label, image } = $derived(footerBrand());
 </script>
 
 {#if href}
-  <a {...restProps} {href} class={base({ class: clsx(theme?.base, className) })}>
+  <a data-scope="footer-brand" data-part="base" {...restProps} {href} class={base({ class: clsx(theme?.base, className) })}>
     {#if src}
-      <img {src} class={img({ class: clsx(theme?.img, styling?.img) })} {alt} />
+      <img data-part="image" {src} class={image({ class: clsx(theme?.image, styling?.image) })} {alt} />
     {/if}
     {#if name}
-      <span class={span({ class: clsx(theme?.span, styling?.span) })}>{name}</span>
+      <span data-part="label" class={label({ class: clsx(theme?.label, styling?.label) })}>{name}</span>
     {/if}
     {#if children}
       {@render children()}
     {/if}
   </a>
 {:else}
-  <img {src} class={img({ class: clsx(theme?.img, styling?.img) })} {alt} />
+  <img data-scope="footer-brand" data-part="image" {src} class={image({ class: clsx(theme?.image, styling?.image) })} {alt} />
 {/if}
 
 <!--

@@ -23,7 +23,7 @@
   );
 </script>
 
-<div {...restProps} class={base}>
+<div data-scope="indicator" data-part="base" {...restProps} class={base}>
   {#if children}
     {@render children()}
   {/if}

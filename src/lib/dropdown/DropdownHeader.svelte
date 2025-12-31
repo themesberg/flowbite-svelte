@@ -7,9 +7,10 @@
   let { children, class: className, ...restProps }: DropdownHeaderProps = $props();
 
   const theme = $derived(getTheme("dropdownHeader"));
+  const base = $derived(dropdownHeader({ class: clsx(theme, className) }));
 </script>
 
-<div {...restProps} class={dropdownHeader({ class: clsx(theme, className) })}>
+<div data-scope="dropdown-header" data-part="base" {...restProps} class={base}>
   {@render children()}
 </div>
 

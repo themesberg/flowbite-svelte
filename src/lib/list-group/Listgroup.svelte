@@ -38,7 +38,7 @@
   }
 </script>
 
-<svelte:element this={tag} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<svelte:element data-scope="list-group" data-part="base" this={tag} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   {#if items?.length}
     {#each items as item, i (i)}
       {#if children}

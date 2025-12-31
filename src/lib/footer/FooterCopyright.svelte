@@ -13,17 +13,17 @@
 
   const effectiveYear = $derived(year ?? new SvelteDate().getFullYear());
 
-  const { base, link, bySpan } = footerCopyright();
+  const { base, link, label } = footerCopyright();
 </script>
 
-<span class={base({ class: clsx(theme?.base, className) })}>
+<span data-scope="footer-copyright" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
   &copy; {effectiveYear}
   {#if href}
-    <a {...restProps} {href} class={link({ class: clsx(theme?.link, styling?.link) })}>
+    <a  data-part="link" {...restProps} {href} class={link({ class: clsx(theme?.link, styling?.link) })}>
       {by}
     </a>
   {:else}
-    <span class={bySpan({ class: clsx(theme?.bySpan, styling?.bySpan) })}>{by}</span>
+    <span data-part="label" class={label({ class: clsx(theme?.label, styling?.label) })}>{by}</span>
   {/if}
   {copyrightMessage}
 </span>

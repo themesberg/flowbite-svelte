@@ -7,9 +7,10 @@
   let { children, class: className, ...restProps }: DropdownGroupProps = $props();
 
   const theme = $derived(getTheme("dropdownGroup"));
+  const base = $derived(dropdownGroup({ class: clsx(theme, className) }));
 </script>
 
-<ul {...restProps} class={dropdownGroup({ class: clsx(theme, className) })}>
+<ul data-scope="dropdown-group" data-part="base" {...restProps} class={base}>
   {@render children()}
 </ul>
 

@@ -13,8 +13,8 @@
   const { base, link } = footerLink();
 </script>
 
-<li class={base({ class: clsx(theme?.base, className) })}>
-  <a {...restProps} {href} class={link({ class: clsx(theme?.link, styling?.link) })}>
+<li data-scope="footer-link" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
+  <a data-part="link" {...restProps} {href} class={link({ class: clsx(theme?.link, styling?.link) })}>
     {@render children()}
   </a>
 </li>

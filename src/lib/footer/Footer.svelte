@@ -11,7 +11,7 @@
   const footerCls = $derived(footer({ footerType, class: clsx(theme, className) }));
 </script>
 
-<footer {...restProps} class={footerCls}>
+<footer data-scope="footer" data-part="base" {...restProps} class={footerCls}>
   {@render children()}
 </footer>
 
