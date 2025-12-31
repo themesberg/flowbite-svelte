@@ -6,27 +6,16 @@ export type PaginationNavVariants = VariantProps<typeof paginationNav> & Classes
 export type PaginationVariants = VariantProps<typeof pagination>;
 export type PaginationItemVariants = VariantProps<typeof paginationItem>;
 
-export const paginationNav = tv({
-  slots: {
-    base: "inline-flex -space-x-px rtl:space-x-reverse items-center",
-    tableDiv: "flex items-center text-sm mb-4",
-    span: "font-semibold mx-1",
-    prev: "rounded-none",
-    next: "rounded-none",
-    active: ""
-  },
+export const pagination = tv({
+  base: "inline-flex -space-x-px rtl:space-x-reverse items-center",
   variants: {
+    table: {
+      true: "divide-x rtl:divide-x-reverse dark divide-gray-700 dark:divide-gray-700",
+      false: ""
+    },
     size: {
       default: "",
       large: ""
-    },
-    layout: {
-      table: {
-        prev: "rounded-s bg-gray-800 hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white text-white  hover:text-gray-200",
-        next: "text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 hover:text-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-      },
-      navigation: { prev: "rounded-s-base", next: "rounded-e-base" },
-      pagination: { prev: "rounded-s-base", next: "rounded-e-base" }
     }
   },
   defaultVariants: {
@@ -68,6 +57,35 @@ export const paginationButton = tv({
   }
 });
 
+export const paginationNav = tv({
+  slots: {
+    base: "inline-flex -space-x-px rtl:space-x-reverse items-center",
+    tableInfo: "flex items-center text-sm mb-4",
+    pageNumber: "font-semibold mx-1",
+    prev: "rounded-none",
+    next: "rounded-none",
+    active: ""
+  },
+  variants: {
+    size: {
+      default: "",
+      large: ""
+    },
+    layout: {
+      table: {
+        prev: "rounded-s bg-gray-800 hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white text-white  hover:text-gray-200",
+        next: "text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 hover:text-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+      },
+      navigation: { prev: "rounded-s-base", next: "rounded-e-base" },
+      pagination: { prev: "rounded-s-base", next: "rounded-e-base" }
+    }
+  },
+  defaultVariants: {
+    table: false,
+    size: "default"
+  }
+});
+
 export const paginationItem = tv({
   base: "flex items-center font-medium",
   variants: {
@@ -100,23 +118,5 @@ export const paginationItem = tv({
     active: false,
     group: false,
     table: false
-  }
-});
-
-export const pagination = tv({
-  base: "inline-flex -space-x-px rtl:space-x-reverse items-center",
-  variants: {
-    table: {
-      true: "divide-x rtl:divide-x-reverse dark divide-gray-700 dark:divide-gray-700",
-      false: ""
-    },
-    size: {
-      default: "",
-      large: ""
-    }
-  },
-  defaultVariants: {
-    table: false,
-    size: "default"
   }
 });

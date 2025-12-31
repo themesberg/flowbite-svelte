@@ -8,37 +8,42 @@
 
   const theme = $derived(getTheme("listPlaceholder"));
 
-  const { base, item, content, title, subTitle, extra } = $derived(listPlaceholder({ size, rounded }));
+  const { base, listItem, itemContent, primaryLine, secondaryLine, valueLine } = $derived(listPlaceholder({ size, rounded }));
 
   let items = $derived([...Array(itemNumber).keys()]);
 </script>
 
-<div role="status" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<div role="status" {...restProps} data-scope="list-placeholder" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
   {#each items as _, i (i)}
     <div
-      class={item({
-        class: clsx(i > 0 ? "pt-4" : "", theme?.item, classes?.item)
+      data-part="list-item"
+      class={listItem({
+        class: clsx(i > 0 ? "pt-4" : "", theme?.listItem, classes?.listItem)
       })}
     >
       <div
-        class={content({
-          class: clsx(theme?.content, classes?.content)
+        data-part="item-content"
+        class={itemContent({
+          class: clsx(theme?.itemContent, classes?.itemContent)
         })}
       >
         <div
-          class={title({
-            class: clsx(theme?.title, classes?.title)
+          data-part="primary-line"
+          class={primaryLine({
+            class: clsx(theme?.primaryLine, classes?.primaryLine)
           })}
         ></div>
         <div
-          class={subTitle({
-            class: clsx(theme?.subTitle, classes?.subTitle)
+          data-part="secondary-line"
+          class={secondaryLine({
+            class: clsx(theme?.secondaryLine, classes?.secondaryLine)
           })}
         ></div>
       </div>
       <div
-        class={extra({
-          class: clsx(theme?.extra, classes?.extra)
+        data-part="value-line"
+        class={valueLine({
+          class: clsx(theme?.valueLine, classes?.valueLine)
         })}
       ></div>
     </div>

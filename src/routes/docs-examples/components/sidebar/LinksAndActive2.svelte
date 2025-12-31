@@ -4,7 +4,7 @@
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const activeClass = "flex items-center p-2 text-base font-normal text-primary-900 bg-primary-200 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700";
   const nonActiveClass = "flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700";
   const demoSidebarUi = uiHelpers();
@@ -34,7 +34,7 @@
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} active={false}>
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} active={false}>
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -42,7 +42,7 @@
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} active={false}>
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} active={false}>
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}

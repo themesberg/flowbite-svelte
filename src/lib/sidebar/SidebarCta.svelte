@@ -10,12 +10,12 @@
 
   const theme = $derived(getTheme("sidebarCta"));
 
-  const { base, div, span } = $derived(sidebarCta());
+  const { base, labelWrapper, badge } = $derived(sidebarCta());
 </script>
 
-<div {...restProps} id="dropdown-cta" class={base({ class: clsx(theme?.base, className) })} role="alert">
-  <div class={div({ class: clsx(theme?.div, styling?.div) })}>
-    <span class={span({ class: clsx(theme?.span, styling?.span) })}>{label}</span>
+<div {...restProps} id="dropdown-cta" data-scope="sidebar-cta" data-part="base" class={base({ class: clsx(theme?.base, className) })} role="alert">
+  <div data-part="label-wrapper" class={labelWrapper({ class: clsx(theme?.labelWrapper, styling?.labelWrapper) })}>
+    <span data-part="badge" class={badge({ class: clsx(theme?.badge, styling?.badge) })}>{label}</span>
     {#if icon}
       {@render icon()}
     {/if}

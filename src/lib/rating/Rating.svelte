@@ -11,7 +11,7 @@
 
   const theme = $derived(getTheme("rating"));
 
-  const { base, p } = $derived(ratingVariants());
+  const { base, value } = $derived(ratingVariants());
   const ratingGroupId = crypto.randomUUID();
   let clampedRating = $derived(Math.max(0, Math.min(rating, total)));
   let fullStars = $derived(Math.floor(clampedRating));
@@ -20,10 +20,10 @@
   let grayStars = $derived(total - (fullStars + Math.ceil(rateDifference)));
 </script>
 
-<div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<div {...restProps} data-scope="rating" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
   {#if count && children}
     <Icon fillPercent={100} {size} iconIndex={0} groupId={ratingGroupId} />
-    <p class={p({ class: clsx(theme?.p, styling?.p) })}>{rating}</p>
+    <p data-part="value" class={value({ class: clsx(theme?.value, styling?.value) })}>{rating}</p>
     {@render children()}
   {:else}
     <!-- eslint-disable @typescript-eslint/no-unused-vars-->

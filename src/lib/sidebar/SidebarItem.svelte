@@ -16,15 +16,15 @@
 
   let activeItem = $derived(active !== undefined ? active : activeUrl?.value ? href === activeUrl.value : false);
 
-  const { base, link, span } = $derived(sidebarItem({ active: activeItem }));
+  const { base, link, label: labelCls } = $derived(sidebarItem({ active: activeItem }));
 </script>
 
-<li class={base({ class: clsx(theme?.base, className) })}>
-  <a onclick={context.closeSidebar ?? undefined} {...restProps} {href} aria-current={activeItem ? "page" : undefined} class={link({ class: clsx(theme?.link, styling?.link) })}>
+<li data-scope="sidebar-item" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
+  <a onclick={context.closeSidebar ?? undefined} {...restProps} {href} aria-current={activeItem ? "page" : undefined} data-part="link" class={link({ class: clsx(theme?.link, styling?.link) })}>
     {#if icon}
       {@render icon()}
     {/if}
-    <span class={span({ class: clsx(theme?.span, styling?.span) })}>{label}</span>
+    <span data-part="label" class={labelCls({ class: clsx(theme?.label, styling?.label) })}>{label}</span>
     {#if subtext}
       {@render subtext()}
     {/if}

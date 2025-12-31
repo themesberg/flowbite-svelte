@@ -56,7 +56,7 @@
   $effect(() => {
     if (disableBreakpoints) isOpen = true;
   });
-  const { base, active, nonactive, div, backdrop: backdropCls } = $derived(sidebar({ isOpen, breakpoint, position, backdrop, alwaysOpen: alwaysOpen && !disableBreakpoints }));
+  const { base, active, nonactive, content, backdrop: backdropCls } = $derived(sidebar({ isOpen, breakpoint, position, backdrop, alwaysOpen: alwaysOpen && !disableBreakpoints }));
 
   const selectedStore = $derived(isSingle ? writable<object | null>(null) : undefined);
   let sidebarCtx: SidebarContextType = {
@@ -97,9 +97,9 @@
   {#if isOpen || isLargeScreen}
     {#if isOpen && !alwaysOpen}
       {#if backdrop && activateClickOutside}
-        <div role="presentation" class={backdropCls({ class: clsx(theme?.backdrop, styling?.backdrop) })} onclick={closeSidebar}></div>
+        <div role="presentation" data-part="backdrop" class={backdropCls({ class: clsx(theme?.backdrop, styling?.backdrop) })} onclick={closeSidebar}></div>
       {:else if backdrop && !activateClickOutside}
-        <div role="presentation" class={backdropCls({ class: clsx(theme?.backdrop, styling?.backdrop) })}></div>
+        <div role="presentation" data-part="backdrop" class={backdropCls({ class: clsx(theme?.backdrop, styling?.backdrop) })}></div>
       {:else if !backdrop && activateClickOutside}
         <div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full" onclick={closeSidebar}></div>
       {:else if !backdrop && !activateClickOutside}
@@ -110,17 +110,26 @@
       use:trapFocus={!isLargeScreen && isOpen && !alwaysOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null}
       transition:transition={!alwaysOpen ? transitionParams : undefined}
       {...restProps}
+      data-scope="sidebar"
+      data-part="base"
       class={base({ class: clsx(theme?.base, className) })}
       aria-label={ariaLabel}
     >
-      <div class={div({ class: clsx(theme?.div, styling?.div) })}>
+      <div data-part="content" class={content({ class: clsx(theme?.content, styling?.content) })}>
         {@render children()}
       </div>
     </aside>
   {/if}
 {:else}
-  <aside use:trapFocus={isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null} {...restProps} class={base({ class: clsx(theme?.base, className) })} aria-label={ariaLabel}>
-    <div class={div({ class: clsx(theme?.div, styling?.div) })}>
+  <aside
+    use:trapFocus={isOpen ? { onEscape: closeSidebar ? handleEscape : undefined } : null}
+    {...restProps}
+    data-scope="sidebar"
+    data-part="base"
+    class={base({ class: clsx(theme?.base, className) })}
+    aria-label={ariaLabel}
+  >
+    <div data-part="content" class={content({ class: clsx(theme?.content, styling?.content) })}>
       {@render children()}
     </div>
   </aside>

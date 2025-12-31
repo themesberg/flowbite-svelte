@@ -13,7 +13,7 @@
   const styling = $derived(classes);
 
   const theme = $derived(getTheme("sidebarDropdownWrapper"));
-  const { base, btn, span, svg, ul } = sidebarDropdownWrapper();
+  const { base, trigger, label: labelCls, icon: iconCls, list } = sidebarDropdownWrapper();
   const isControlled = $derived(isOpen !== undefined);
 
   const isBrowser = typeof window !== "undefined";
@@ -46,30 +46,30 @@
   }
 </script>
 
-<li class={base({ class: clsx(theme?.base, className) })}>
-  <button {...restProps} onclick={handleDropdown} type="button" class={btn({ class: clsx(theme?.btn, styling?.btn) })} aria-controls="sidebar-dropdown">
+<li data-scope="sidebar-dropdown-wrapper" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
+  <button {...restProps} onclick={handleDropdown} type="button" data-part="trigger" class={trigger({ class: clsx(theme?.trigger, styling?.trigger) })} aria-controls="sidebar-dropdown">
     {#if icon}
       {@render icon()}
     {/if}
-    <span class={span({ class: clsx(theme?.span, styling?.span) })}>{label}</span>
+    <span data-part="label" class={labelCls({ class: clsx(theme?.label, styling?.label) })}>{label}</span>
     {#if openState}
       {#if arrowup}
         {@render arrowup()}
       {:else}
-        <svg class={svg({ class: clsx(theme?.svg, styling?.svg) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <svg data-part="icon" class={iconCls({ class: clsx(theme?.icon, styling?.icon) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
         </svg>
       {/if}
     {:else if arrowdown}
       {@render arrowdown()}
     {:else}
-      <svg class={svg({ class: clsx(theme?.svg, styling?.svg) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+      <svg data-part="icon" class={iconCls({ class: clsx(theme?.icon, styling?.icon) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
       </svg>
     {/if}
   </button>
   {#if openState}
-    <ul class={ul({ class: clsx(theme?.ul, styling?.ul) })} transition:transition={effectiveParams}>
+    <ul data-part="menu" class={list({ class: clsx(theme?.list, styling?.list) })} transition:transition={effectiveParams}>
       {@render children()}
     </ul>
   {/if}

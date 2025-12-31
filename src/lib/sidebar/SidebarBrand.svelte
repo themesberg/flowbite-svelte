@@ -10,13 +10,13 @@
 
   const theme = $derived(getTheme("sidebarBrand"));
 
-  const { base, img, span } = $derived(sidebarBrand());
+  const { base, logo, brandName } = $derived(sidebarBrand());
 </script>
 
-<a {...restProps} href={site?.href ? site.href : "/"} class={base({ class: clsx(theme?.base, className) })}>
+<a {...restProps} href={site?.href ? site.href : "/"} data-scope="sidebar-brand" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
   {#if site}
-    <img src={site.img} class={img({ class: clsx(theme?.img, styling?.img) })} alt={site.name} />
-    <span class={span({ class: clsx(theme?.span, styling?.span) })}>{site.name}</span>
+    <img data-part="logo" src={site.img} class={logo({ class: clsx(theme?.logo, styling?.logo) })} alt={site.name} />
+    <span data-part="brand-name" class={brandName({ class: clsx(theme?.brandName, styling?.brandName) })}>{site.name}</span>
   {:else if children}
     {@render children()}
   {/if}

@@ -1170,13 +1170,6 @@ export interface PaginationNavProps extends PaginationNavVariants, HTMLAttribute
   showIcons?: boolean;
   ariaLabel?: string;
   size?: "default" | "large";
-  classes?: {
-    prev?: ClassValue;
-    next?: ClassValue;
-    span?: ClassValue;
-    tableDiv?: ClassValue;
-    active?: ClassValue;
-  };
 }
 
 export interface PaginationItemProps extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {

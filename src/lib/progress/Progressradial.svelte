@@ -33,7 +33,7 @@
     })
   );
 
-  const { base, label, background, foreground, outside, span, progressCls } = $derived(
+  const { base, label, background, foreground, labelWrapper, labelText, percentage } = $derived(
     progressradial({
       color,
       labelInside
@@ -54,21 +54,22 @@
   let formattedProgress = $derived(_progress.current.toFixed(precision));
 </script>
 
-<div class="flex flex-col items-center">
+<div data-scope="progressradial" class="flex flex-col items-center">
   {#if labelOutside}
-    <div class={outside({ class: clsx(theme?.outside, classes?.outside) })}>
-      <span class={span({ class: clsx(theme?.span, classes?.span) })}>{labelOutside}</span>
-      <span class={progressCls({ class: clsx(theme?.progressCls, classes?.progressCls) })}>{formattedProgress}%</span>
+    <div data-part="label-wrapper" class={labelWrapper({ class: clsx(theme?.labelWrapper, classes?.labelWrapper) })}>
+      <span data-part="label-text" class={labelText({ class: clsx(theme?.labelText, classes?.labelText) })}>{labelOutside}</span>
+      <span data-part="percentage" class={percentage({ class: clsx(theme?.percentage, classes?.percentage) })}>{formattedProgress}%</span>
     </div>
   {/if}
 
-  <div {...restProps} class={base({ class: clsx(size, theme?.base, className) })}>
+  <div {...restProps} data-part="base" class={base({ class: clsx(size, theme?.base, className) })}>
     <svg viewBox="0 0 100 100" class="h-full w-full" style="transform: rotate({rotationAngle}deg)">
       <!-- Background circle -->
-      <circle cx="50" cy="50" r={radius} class={background({ class: clsx(theme?.background, classes?.background) })} fill="none" stroke-width={thickness} />
+      <circle data-part="background" cx="50" cy="50" r={radius} class={background({ class: clsx(theme?.background, classes?.background) })} fill="none" stroke-width={thickness} />
 
       <!-- Foreground circle (progress indicator) -->
       <circle
+        data-part="foreground"
         cx="50"
         cy="50"
         r={radius}
@@ -82,7 +83,7 @@
     </svg>
 
     {#if labelInside}
-      <div class={label({ class: clsx(theme?.label, classes?.label) })}>
+      <div data-part="label" class={label({ class: clsx(theme?.label, classes?.label) })}>
         {formattedProgress}%
       </div>
     {/if}

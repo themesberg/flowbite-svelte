@@ -10,7 +10,7 @@
 
   const theme = $derived(getTheme("advancedRating"));
 
-  const { base, span, div2, div3, span2 } = $derived(advancedRating());
+  const { base, label, barTrack, barFill, percentage } = $derived(advancedRating());
 </script>
 
 {#if rating}
@@ -19,13 +19,13 @@
 {#if globalText}
   {@render globalText()}
 {/if}
-{#each ratings as { label, rating }, i (label ?? i)}
-  <div class={base({ class: clsx(theme?.base, className) })}>
-    <span class={span({ class: clsx(theme?.span, styling?.span) })}>{label}</span>
-    <div class={div2({ class: clsx(theme?.div2, styling?.div2) })}>
-      <div class={div3({ class: clsx(theme?.div3, styling?.div3) })} style="width: {rating}%"></div>
+{#each ratings as { label: ratingLabel, rating: ratingValue }, i (ratingLabel ?? i)}
+  <div data-scope="advanced-rating" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
+    <span data-part="label" class={label({ class: clsx(theme?.label, styling?.label) })}>{ratingLabel}</span>
+    <div data-part="bar-track" class={barTrack({ class: clsx(theme?.barTrack, styling?.barTrack) })}>
+      <div data-part="bar-fill" class={barFill({ class: clsx(theme?.barFill, styling?.barFill) })} style="width: {ratingValue}%"></div>
     </div>
-    <span class={span2({ class: clsx(theme?.span2, styling?.span2) })}>{rating}{unit}</span>
+    <span data-part="percentage" class={percentage({ class: clsx(theme?.percentage, styling?.percentage) })}>{ratingValue}{unit}</span>
   </div>
 {/each}
 

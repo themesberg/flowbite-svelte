@@ -6,7 +6,7 @@
   import { setPaginationContext } from "$lib/context";
   import clsx from "clsx";
 
-  let { pages = [], previous, next, prevContent, nextContent, table, size, ariaLabel, ...restProps }: PaginationProps = $props();
+  let { pages = [], previous, next, prevContent, nextContent, table, size, ariaLabel, class: className, ...restProps }: PaginationProps = $props();
 
   const theme = $derived(getTheme("pagination"));
 
@@ -26,13 +26,13 @@
   // Set context during initialization
   setPaginationContext(ctx);
 
-  const paginationCls = $derived(pagination({ table, size, class: clsx(theme) }));
+  const paginationCls = $derived(pagination({ table, size, class: clsx(theme, className) }));
 </script>
 
-<nav aria-label={ariaLabel}>
-  <ul class={paginationCls}>
+<nav data-scope="pagination" aria-label={ariaLabel}>
+  <ul data-part="base" class={paginationCls}>
     {#if typeof previous === "function"}
-      <li {...restProps}>
+      <li>
         <PaginationItem {size} onclick={() => previous()} class={table ? "rounded-none rounded-l" : "rounded-s-base rounded-none"}>
           {#if prevContent}
             {@render prevContent()}
@@ -43,7 +43,7 @@
       </li>
     {/if}
     {#each pages as { name, href, active, size }, index (href ?? index)}
-      <li {...restProps}>
+      <li>
         <PaginationItem {size} {active} {href}>
           {name}
         </PaginationItem>

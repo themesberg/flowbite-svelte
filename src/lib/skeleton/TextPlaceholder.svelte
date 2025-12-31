@@ -8,67 +8,73 @@
 
   const theme = $derived(getTheme("textPlaceholder"));
 
-  const { base, div, lineA, lineB } = $derived(
+  const { base, lineGroup, primaryLine, secondaryLine } = $derived(
     textPlaceholder({
       size
     })
   );
 </script>
 
-<div role="status" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<div role="status" {...restProps} data-scope="text-placeholder" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
   <div
-    class={div({
-      class: clsx("w-full", theme?.div, classes?.div)
+    data-part="line-group"
+    class={lineGroup({
+      class: clsx("w-full", theme?.lineGroup, classes?.lineGroup)
     })}
   >
-    <div class={lineA({ class: clsx("h-2.5 w-32", theme?.lineA, classes?.lineA) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-24", theme?.lineB, classes?.lineB) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-full", theme?.lineB, classes?.lineB) })}></div>
+    <div data-part="primary-line" class={primaryLine({ class: clsx("h-2.5 w-32", theme?.primaryLine, classes?.primaryLine) })}></div>
+    <div data-part="secondary-line" class={secondaryLine({ class: clsx("h-2.5 w-24", theme?.secondaryLine, classes?.secondaryLine) })}></div>
+    <div data-part="secondary-line" class={secondaryLine({ class: clsx("h-2.5 w-full", theme?.secondaryLine, classes?.secondaryLine) })}></div>
   </div>
   <div
-    class={div({
-      class: clsx("w-11/12", theme?.div, classes?.div)
+    data-part="line-group"
+    class={lineGroup({
+      class: clsx("w-11/12", theme?.lineGroup, classes?.lineGroup)
     })}
   >
-    <div class={lineA({ class: clsx("h-2.5 w-full", theme?.lineA, classes?.lineA) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-full", theme?.lineB, classes?.lineB) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-24", theme?.lineB, classes?.lineB) })}></div>
+    <div data-part="primary-line" class={primaryLine({ class: clsx("h-2.5 w-full", theme?.primaryLine, classes?.primaryLine) })}></div>
+    <div data-part="secondary-line" class={secondaryLine({ class: clsx("h-2.5 w-full", theme?.secondaryLine, classes?.secondaryLine) })}></div>
+    <div data-part="secondary-line" class={secondaryLine({ class: clsx("h-2.5 w-24", theme?.secondaryLine, classes?.secondaryLine) })}></div>
   </div>
   <div
-    class={div({
-      class: clsx("w-9/12", theme?.div, classes?.div)
+    data-part="line-group"
+    class={lineGroup({
+      class: clsx("w-9/12", theme?.lineGroup, classes?.lineGroup)
     })}
   >
-    <div class={lineB({ class: clsx("h-2.5 w-full", theme?.lineB, classes?.lineB) })}></div>
-    <div class={lineA({ class: clsx("h-2.5 w-80", theme?.lineA, classes?.lineA) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-full", theme?.lineB, classes?.lineB) })}></div>
+    <div data-part="secondary-line" class={secondaryLine({ class: clsx("h-2.5 w-full", theme?.secondaryLine, classes?.secondaryLine) })}></div>
+    <div data-part="primary-line" class={primaryLine({ class: clsx("h-2.5 w-80", theme?.primaryLine, classes?.primaryLine) })}></div>
+    <div data-part="secondary-line" class={secondaryLine({ class: clsx("h-2.5 w-full", theme?.secondaryLine, classes?.secondaryLine) })}></div>
   </div>
   <div
-    class={div({
-      class: clsx("w-11/12", theme?.div, classes?.div)
+    data-part="line-group"
+    class={lineGroup({
+      class: clsx("w-11/12", theme?.lineGroup, classes?.lineGroup)
     })}
   >
-    <div class={lineA({ class: clsx("h-2.5 w-full", theme?.lineA, classes?.lineA) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-full", theme?.lineB, classes?.lineB) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-24", theme?.lineB, classes?.lineB) })}></div>
+    <div data-part="primary-line" class={primaryLine({ class: clsx("h-2.5 w-full", theme?.primaryLine, classes?.primaryLine) })}></div>
+    <div data-part="secondary-line" class={secondaryLine({ class: clsx("h-2.5 w-full", theme?.secondaryLine, classes?.secondaryLine) })}></div>
+    <div data-part="secondary-line" class={secondaryLine({ class: clsx("h-2.5 w-24", theme?.secondaryLine, classes?.secondaryLine) })}></div>
   </div>
   <div
-    class={div({
-      class: clsx("w-10/12", theme?.div, classes?.div)
+    data-part="line-group"
+    class={lineGroup({
+      class: clsx("w-10/12", theme?.lineGroup, classes?.lineGroup)
     })}
   >
-    <div class={lineB({ class: clsx("h-2.5 w-32", theme?.lineB, classes?.lineB) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-24", theme?.lineB, classes?.lineB) })}></div>
-    <div class={lineA({ class: clsx("h-2.5 w-full", theme?.lineA, classes?.lineA) })}></div>
+    <div data-part="secondary-line" class={secondaryLine({ class: clsx("h-2.5 w-32", theme?.secondaryLine, classes?.secondaryLine) })}></div>
+    <div data-part="secondary-line" class={secondaryLine({ class: clsx("h-2.5 w-24", theme?.secondaryLine, classes?.secondaryLine) })}></div>
+    <div data-part="primary-line" class={primaryLine({ class: clsx("h-2.5 w-full", theme?.primaryLine, classes?.primaryLine) })}></div>
   </div>
   <div
-    class={div({
-      class: clsx("w-8/12", theme?.div)
+    data-part="line-group"
+    class={lineGroup({
+      class: clsx("w-8/12", theme?.lineGroup, classes?.lineGroup)
     })}
   >
-    <div class={lineB({ class: clsx("h-2.5 w-full", theme?.lineB, classes?.lineB) })}></div>
-    <div class={lineA({ class: clsx("h-2.5 w-80", theme?.lineA, classes?.lineA) })}></div>
-    <div class={lineB({ class: clsx("h-2.5 w-full", theme?.lineB, classes?.lineB) })}></div>
+    <div data-part="secondary-line" class={secondaryLine({ class: clsx("h-2.5 w-full", theme?.secondaryLine, classes?.secondaryLine) })}></div>
+    <div data-part="primary-line" class={primaryLine({ class: clsx("h-2.5 w-80", theme?.primaryLine, classes?.primaryLine) })}></div>
+    <div data-part="secondary-line" class={secondaryLine({ class: clsx("h-2.5 w-full", theme?.secondaryLine, classes?.secondaryLine) })}></div>
   </div>
   <span class="sr-only">Loading...</span>
 </div>

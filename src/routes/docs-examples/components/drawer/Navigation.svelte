@@ -2,7 +2,7 @@
   import { Drawer, CardPlaceholder, Button, Sidebar, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
   import { ChartPieSolid, CartSolid, GridSolid, MailBoxSolid, UsersSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   let open2 = $state(false);
-  let spanClass = "flex-1 ms-3 whitespace-nowrap";
+  let labelClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
 
 <div class="text-center">
@@ -27,7 +27,7 @@
           <SidebarItem label="Billing" />
           <SidebarItem label="Invoice" />
         </SidebarDropdownWrapper>
-        <SidebarItem label="Kanban" classes={{ span: spanClass }}>
+        <SidebarItem label="Kanban" classes={{ label: labelClass }}>
           {#snippet icon()}
             <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
           {/snippet}
@@ -35,7 +35,7 @@
             <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
           {/snippet}
         </SidebarItem>
-        <SidebarItem label="Inbox" classes={{ span: spanClass }}>
+        <SidebarItem label="Inbox" classes={{ label: labelClass }}>
           {#snippet icon()}
             <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
           {/snippet}

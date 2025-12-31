@@ -80,7 +80,7 @@ export const navUl = tv({
       hidden: false,
       class: {
         base: "sm:static sm:z-auto",
-        ul: "sm:border-none sm:rounded-none sm:bg-inherit dark:sm:bg-inherit sm:shadow-none"
+        list: "sm:border-none sm:rounded-none sm:bg-inherit dark:sm:bg-inherit sm:shadow-none"
       }
     },
     {
@@ -88,7 +88,7 @@ export const navUl = tv({
       hidden: false,
       class: {
         base: "md:static md:z-auto",
-        ul: "md:border-none md:rounded-none md:bg-inherit dark:md:bg-inherit md:shadow-none"
+        list: "md:border-none md:rounded-none md:bg-inherit dark:md:bg-inherit md:shadow-none"
       }
     },
     {
@@ -96,7 +96,7 @@ export const navUl = tv({
       hidden: false,
       class: {
         base: "lg:static lg:z-auto",
-        ul: "lg:border-none lg:rounded-none lg:bg-inherit dark:lg:bg-inherit lg:shadow-none"
+        list: "lg:border-none lg:rounded-none lg:bg-inherit dark:lg:bg-inherit lg:shadow-none"
       }
     },
     {
@@ -104,7 +104,7 @@ export const navUl = tv({
       hidden: false,
       class: {
         base: "xl:static xl:z-auto",
-        ul: "xl:border-none xl:rounded-none xl:bg-inherit dark:xl:bg-inherit xl:shadow-none"
+        list: "xl:border-none xl:rounded-none xl:bg-inherit dark:xl:bg-inherit xl:shadow-none"
       }
     }
   ],

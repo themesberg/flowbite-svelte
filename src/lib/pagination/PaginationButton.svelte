@@ -45,13 +45,13 @@
 </script>
 
 {#if href}
-  <a {href} {...restProps} class={paginationCls} onclick={handleClick}>
+  <a data-scope="pagination-button" {href} {...restProps} class={paginationCls} onclick={handleClick}>
     {#if children}
       {@render children()}
     {/if}
   </a>
 {:else}
-  <button {...restProps} {disabled} class={paginationCls} onclick={handleClick}>
+  <button data-scope="pagination-button" {...restProps} {disabled} class={paginationCls} onclick={handleClick}>
     {#if children}
       {@render children()}
     {/if}
