@@ -277,7 +277,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L468)
+[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L473)
 
 #### Props
 
@@ -300,7 +300,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L482)
+[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L487)
 
 #### Props
 
@@ -313,7 +313,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L489)
+[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L494)
 
 #### Props
 
@@ -327,7 +327,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L495)
+[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L500)
 
 #### Props
 
@@ -338,7 +338,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L511)
+[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L516)
 
 #### Props
 
@@ -351,7 +351,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L499)
+[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L504)
 
 #### Props
 
@@ -362,7 +362,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L503)
+[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L508)
 
 #### Props
 

@@ -37,7 +37,7 @@ Since `Drawer` component extend Svelte's `HTMLAttributes<HTMLDivElement>`, you c
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
   <div class="grid grid-cols-2 gap-2">
-    <Button color="light" href="/">Learn more</Button>
+    <Button color="success" href="/">Learn more</Button>
     <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
 </Drawer>
@@ -247,7 +247,7 @@ Use the placement prop to position the drawer component either on the top, right
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
   <div class="grid grid-cols-2 gap-2">
-    <Button color="light" href="/">Learn more</Button>
+    <Button color="success" href="/">Learn more</Button>
     <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
 </Drawer>
@@ -289,7 +289,7 @@ Drawer is `modal` by default (see `dialog`). You can set `modal={false}` to open
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
   <div class="grid grid-cols-2 gap-2">
-    <Button color="light" href="#/">Learn more</Button>
+    <Button color="alternative" href="#/">Learn more</Button>
     <Button href="#/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
 </Drawer>
@@ -321,7 +321,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
   <div class="grid grid-cols-2 gap-2">
-    <Button color="light" href="/">Learn more</Button>
+    <Button color="success" href="/">Learn more</Button>
     <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
 </Drawer>
@@ -379,7 +379,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L637)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L642)
 
 #### Props
 
@@ -399,7 +399,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L641)
+[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L646)
 
 #### Props
 
@@ -413,7 +413,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L643)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L648)
 
 #### Props
 

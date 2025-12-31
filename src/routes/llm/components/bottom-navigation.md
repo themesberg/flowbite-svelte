@@ -28,7 +28,7 @@ The fixed positioning ensures the navigation remains accessible as users scroll 
 <Skeleton class="py-4" />
 <ImagePlaceholder />
 
-<BottomNav position="fixed" classes={{ inner: "grid-cols-4" }}>
+<BottomNav position="fixed" classes={{ content: "grid-cols-4" }}>
   <BottomNavItem btnName="Home">
     <HomeOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
@@ -61,7 +61,7 @@ By default, the `BottomNavItem` will only be set to active if the `href` and the
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classes={{ inner: "grid-cols-4" }}>
+<BottomNav {activeUrl} position="absolute" classes={{ content: "grid-cols-4" }}>
   <BottomNavItem btnName="Home" href="/">
     <HomeOutline />
   </BottomNavItem>
@@ -90,7 +90,7 @@ The following example shows how to change the active class styling using the `ac
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classes={{ inner: "grid-cols-4", active: "font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300" }}>
+<BottomNav {activeUrl} position="absolute" classes={{ content: "grid-cols-4", active: "font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300" }}>
   <BottomNavItem btnName="Home" href="/">
     <HomeOutline />
   </BottomNavItem>
@@ -119,7 +119,7 @@ The following example shows how to change the active class styling using the `ac
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classes={{ inner: "grid-cols-4" }}>
+<BottomNav {activeUrl} position="absolute" classes={{ content: "grid-cols-4" }}>
   <BottomNavItem btnName="Home" href="/">
     <HomeOutline class={activeUrl === "/" ? svgActiveClass : svgClass} />
   </BottomNavItem>
@@ -148,7 +148,7 @@ This example can be used to show a border between the menu items inside the bott
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="border" classes={{ inner: "grid-cols-4" }}>
+<BottomNav position="absolute" navType="border" classes={{ content: "grid-cols-4" }}>
   <BottomNavItem btnName="Home">
     <HomeOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
@@ -179,7 +179,7 @@ The centered primary action draws attention and makes the most important action 
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="application" classes={{ inner: "grid-cols-5" }}>
+<BottomNav position="absolute" navType="application" classes={{ content: "grid-cols-5" }}>
   <BottomNavItem btnName="Home" appBtnPosition="left">
     <HomeOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
@@ -224,7 +224,7 @@ This keeps pagination accessible without requiring users to scroll to the bottom
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="pagination" classes={{ inner: "grid-cols-6" }}>
+<BottomNav position="absolute" navType="pagination" classes={{ content: "grid-cols-6" }}>
   <BottomNavItem btnName="New document">
     <FileCirclePlusOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
@@ -277,7 +277,7 @@ This example demonstrates a button group layout in the bottom bar.
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
-  <BottomNav position="absolute" navType="group" classes={{ inner: "grid-cols-5" }}>
+  <BottomNav position="absolute" navType="group" classes={{ content: "grid-cols-5" }}>
     {#snippet header()}
       <BottomNavHeader>
         <BottomNavHeaderItem itemName="New" />
@@ -362,7 +362,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
       {/if}
     {/snippet}
   </Listgroup>
-  <BottomNav position="sticky" navType="card" classes={{ inner: "grid-cols-3 pt-2 pb-4" }}>
+  <BottomNav position="sticky" navType="card" classes={{ content: "grid-cols-3 pt-2 pb-4" }}>
     <BottomNavItem btnName="Latest" id="card-latest">
       <ClockOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
     </BottomNavItem>
@@ -401,7 +401,7 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L277)
+[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L287)
 
 #### Props
 
@@ -417,7 +417,7 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L295)
+[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L300)
 
 #### Props
 
@@ -429,7 +429,7 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L299)
+[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L304)
 
 #### Props
 
@@ -441,19 +441,16 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L283)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L293)
 
 #### Props
 
 - children
 - btnName
 - appBtnPosition: "middle"
-- activeClass
 - class: className
 - classes
 - active: manualActive
-- btnClass
-- spanClass
 
 
 ## References

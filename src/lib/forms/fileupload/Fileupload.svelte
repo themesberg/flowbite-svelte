@@ -59,7 +59,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L759)
+[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L764)
 ## Props
 @prop files = $bindable()
 @prop size = "md"
@@ -67,7 +67,7 @@
 @prop elementRef = $bindable()
 @prop class: className
 @prop classes
-@prop clearableColor = "none"
 @prop clearableOnClick
+@prop closeButtonProps
 @prop ...restProps
 -->

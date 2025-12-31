@@ -1,5 +1,5 @@
 # Flowbite Svelte Documentation - Full Context
-# Generated on 2025-12-29T19:57:17.408Z
+# Generated on 2025-12-31T14:33:13.854Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -1759,7 +1759,7 @@ The Accordion component is built with accessibility in mind:
 
 #### Types
 
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L199)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L209)
 
 #### Props
 
@@ -1777,7 +1777,7 @@ The Accordion component is built with accessibility in mind:
 
 #### Types
 
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L215)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L225)
 
 #### Props
 
@@ -1845,7 +1845,11 @@ Use semantic color variants to convey meaning:
   Change a few things up and try submitting again.
 </Alert>
 <Alert color="gray">
-  <span class="font-medium">Dark alert!</span>
+  <span class="font-medium">Gray alert!</span>
+  Change a few things up and try submitting again.
+</Alert>
+<Alert color="alternative">
+  <span class="font-medium">Alternative alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 ```
@@ -1917,7 +1921,7 @@ Add border accents for a more subtle appearance while maintaining visual distinc
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert border color="dark">
+<Alert border color="gray">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
@@ -2066,7 +2070,7 @@ Include expandable content for help text, detailed explanations, or rich content
   <p class="mt-2 mb-4 text-sm">
     More info about this success alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
   </p>
-  <Button size="xs" color="green"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
+  <Button size="xs" color="success"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
 </Alert>
 ```
 
@@ -2097,15 +2101,15 @@ Use the `class` prop with `color="none"` to create fully custom-styled alerts. T
   With border styling.
 </Alert>
 
-<!-- Dismissable with color="none" for full custom control -->
-<Alert dismissable color="none" closeColor="none" class="bg-indigo-100 text-indigo-900 dark:bg-indigo-900 dark:text-indigo-100">
+<!-- Dismissable for full custom control -->
+<Alert dismissable class="bg-indigo-100 text-indigo-900 dark:bg-indigo-900 dark:text-indigo-100">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Custom dismissable!</span>
   Use color="none" and closeColor="none" for full control.
 </Alert>
 
 <!-- Dismissable with predefined closeColor -->
-<Alert dismissable color="none" closeColor="danger" class="bg-pink-100 text-pink-900 dark:bg-pink-900 dark:text-pink-100">
+<Alert dismissable closeButtonProps={{ color: "danger" }} class="bg-pink-100 text-pink-900 dark:bg-pink-900 dark:text-pink-100">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Custom alert with danger close button!</span>
   Mix custom colors with predefined closeColor.
@@ -2163,7 +2167,7 @@ Handle dismissal interactions with the `onclick` event to track dismissals, save
 
 #### Types
 
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L225)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L235)
 
 #### Props
 
@@ -2172,7 +2176,6 @@ Handle dismissal interactions with the `onclick` event to track dismissals, save
 - alertStatus: $bindable(true)
 - closeIcon: CloseIcon
 - color: "brand"
-- closeColor
 - rounded: true
 - border
 - class: className
@@ -2181,11 +2184,92 @@ Handle dismissal interactions with the `onclick` event to track dismissals, save
 - params
 - listContent
 - borderAccent
+- closeButtonProps
 
 
 ## References
 
 - [Flowbite Alerts](https://flowbite.com/docs/components/alerts/)
+
+
+---
+
+<!-- Source: components/anatomy/README.md -->
+# Component Anatomy
+
+This directory contains visual diagrams showing the anatomy of Flowbite Svelte components.
+
+## Purpose
+
+Anatomy diagrams help developers understand:
+1. The structure of each component
+2. Which `data-part` attributes are available for styling
+3. How `data-scope` attributes help namespace component styles
+4. The hierarchical relationship between component parts
+
+## Data Attributes
+
+### `data-scope`
+- Namespaces components to prevent style conflicts
+- Example: `data-scope="accordion"` indicates this element belongs to an accordion
+- Useful for scoped CSS: `[data-scope="accordion"] [data-part="button"]`
+
+### `data-part`
+- Identifies specific parts of a component
+- Maps directly to theme slot names for consistency
+- Example: `data-part="button"` identifies the button part
+- Allows precise CSS targeting: `[data-part="button"] { ... }`
+
+## Benefits
+
+1. **Developer Experience**: Easy identification of component parts in DevTools
+2. **Testing**: Simple selectors for E2E tests (`[data-part="button"]`)
+3. **Styling**: Clear CSS targeting without relying on class names
+4. **Documentation**: Visual mapping between code and rendered output
+5. **Theme Integration**: Direct correspondence with theme configuration slots
+
+## Example Usage
+
+```css
+/* Target a specific component scope */
+[data-scope="accordion"] {
+  border: 1px solid gray;
+}
+
+/* Target a specific part within a scope */
+[data-scope="accordion"] [data-part="button"] {
+  font-weight: bold;
+}
+
+/* Target a part across all scopes */
+[data-part="button"] {
+  cursor: pointer;
+}
+```
+
+## Adding New Diagrams
+
+When creating anatomy diagrams for new components:
+
+1. Create an SVG file: `component-name-anatomy.svg`
+2. Show the visual structure with labels
+3. Annotate with `data-scope` and `data-part` attributes
+4. Use consistent colors for different element types
+5. Include a legend explaining the structure
+6. Update the main page to include the new diagram
+
+## Inspiration
+
+This approach is inspired by component libraries like:
+- **Ark UI**: Uses `data-part` and `data-scope` extensively
+- **Radix UI**: Uses data attributes for state and identification
+- **Headless UI**: Clear separation of component concerns
+
+## Files
+
+- `+page.svelte` - Main anatomy documentation page
+- `accordion-anatomy.svg` - Accordion component anatomy diagram
+- More component diagrams will be added here
 
 
 ---
@@ -2461,7 +2545,7 @@ The Avatar component is built with accessibility in mind:
 
 #### Types
 
-[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L239)
+[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L249)
 
 #### Props
 
@@ -2520,8 +2604,6 @@ Use the following badge elements to indicate counts or labels inside or outside 
 <Badge color="danger">Danger</Badge>
 <Badge color="success">Success</Badge>
 <Badge color="warning">Warning</Badge>
-<Badge color="purple">Purple</Badge>
-<Badge color="pink">Pink</Badge>
 ```
 
 ## Large badges
@@ -2539,8 +2621,6 @@ Use the `large` prop to create a large variant of the badges.
 <Badge large color="danger">Danger</Badge>
 <Badge large color="success">Success</Badge>
 <Badge large color="warning">Warning</Badge>
-<Badge large color="purple">Purple</Badge>
-<Badge large color="pink">Pink</Badge>
 ```
 
 ## Bordered badge
@@ -2559,8 +2639,6 @@ Use the `border` prop to add a border accent to the badge component.
   <Badge border color="danger">Danger</Badge>
   <Badge border color="success">Success</Badge>
   <Badge border color="warning">Warning</Badge>
-  <Badge border color="purple">Purple</Badge>
-  <Badge border color="pink">Pink</Badge>
 </div>
 <div class="flex flex-wrap gap-2">
   <Badge border large>Brand</Badge>
@@ -2569,8 +2647,6 @@ Use the `border` prop to add a border accent to the badge component.
   <Badge border large color="danger">Danger</Badge>
   <Badge border large color="success">Success</Badge>
   <Badge border large color="warning">Warning</Badge>
-  <Badge border large color="purple">Purple</Badge>
-  <Badge border large color="pink">Pink</Badge>
 </div>
 ```
 
@@ -2589,8 +2665,6 @@ Use the `rounded` prop to make the corners even more rounded like pills for the 
 <Badge rounded color="danger">Danger</Badge>
 <Badge rounded color="success">Success</Badge>
 <Badge rounded color="warning">Warning</Badge>
-<Badge rounded color="purple">Purple</Badge>
-<Badge rounded color="pink">Pink</Badge>
 ```
 
 ## Badges as links
@@ -2709,8 +2783,6 @@ Use the `dismissable` prop to dismiss the current badge.
 <Badge dismissable border color="danger">Danger</Badge>
 <Badge dismissable border color="success">Success</Badge>
 <Badge dismissable border color="warning">Warning</Badge>
-<Badge dismissable border color="purple">Purple</Badge>
-<Badge dismissable border color="pink">Pink</Badge>
 ```
 
 Use the `icon` snippet to add your desired custom close button icon.
@@ -2784,7 +2856,7 @@ This example demonstrates badges with transition effects, creating a smooth anim
 </script>
 
 <Button onclick={openBadge}>Open badge</Button>
-<Badge class="ml-4" color="blue" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
+<Badge class="ml-4" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
 ```
 
 ## Persistent Dismissible Badge with Reset (localStorage)
@@ -2859,7 +2931,7 @@ The Badge component follows accessibility best practices:
 
 #### Types
 
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L251)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L261)
 
 #### Props
 
@@ -2877,7 +2949,7 @@ The Badge component follows accessibility best practices:
 - rounded
 - transition: fade
 - params
-- closeBtnColor: "gray"
+- closeButtonProps
 
 
 ## References
@@ -3001,7 +3073,7 @@ This example can be used to encourage your website visitors to sign up to your e
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
-<Banner classes={{ insideDiv: "w-full sm:w-auto" }} class="absolute">
+<Banner classes={{ content: "w-full sm:w-auto" }} class="absolute">
   <form action="/" class="flex w-full flex-col gap-2 md:flex-row md:items-center md:gap-4">
     <Label for="email" class="shrink-0 text-gray-500 dark:text-gray-400">Sign up for our newsletter</Label>
     <Input type="email" id="email" placeholder="Enter your email" class="bg-white md:w-64 dark:border-gray-500 dark:bg-gray-600" required />
@@ -3177,7 +3249,7 @@ The Banner component follows accessibility best practices:
 
 #### Types
 
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L265)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L275)
 
 #### Props
 
@@ -3192,7 +3264,7 @@ The Banner component follows accessibility best practices:
 - transition: fade
 - params
 - onclose
-- closeBtnColor: "gray"
+- closeButtonProps
 
 
 ## References
@@ -3233,7 +3305,7 @@ The fixed positioning ensures the navigation remains accessible as users scroll 
 <Skeleton class="py-4" />
 <ImagePlaceholder />
 
-<BottomNav position="fixed" classes={{ inner: "grid-cols-4" }}>
+<BottomNav position="fixed" classes={{ content: "grid-cols-4" }}>
   <BottomNavItem btnName="Home">
     <HomeOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
@@ -3266,7 +3338,7 @@ By default, the `BottomNavItem` will only be set to active if the `href` and the
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classes={{ inner: "grid-cols-4" }}>
+<BottomNav {activeUrl} position="absolute" classes={{ content: "grid-cols-4" }}>
   <BottomNavItem btnName="Home" href="/">
     <HomeOutline />
   </BottomNavItem>
@@ -3295,7 +3367,7 @@ The following example shows how to change the active class styling using the `ac
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classes={{ inner: "grid-cols-4", active: "font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300" }}>
+<BottomNav {activeUrl} position="absolute" classes={{ content: "grid-cols-4", active: "font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300" }}>
   <BottomNavItem btnName="Home" href="/">
     <HomeOutline />
   </BottomNavItem>
@@ -3324,7 +3396,7 @@ The following example shows how to change the active class styling using the `ac
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classes={{ inner: "grid-cols-4" }}>
+<BottomNav {activeUrl} position="absolute" classes={{ content: "grid-cols-4" }}>
   <BottomNavItem btnName="Home" href="/">
     <HomeOutline class={activeUrl === "/" ? svgActiveClass : svgClass} />
   </BottomNavItem>
@@ -3353,7 +3425,7 @@ This example can be used to show a border between the menu items inside the bott
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="border" classes={{ inner: "grid-cols-4" }}>
+<BottomNav position="absolute" navType="border" classes={{ content: "grid-cols-4" }}>
   <BottomNavItem btnName="Home">
     <HomeOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
@@ -3384,7 +3456,7 @@ The centered primary action draws attention and makes the most important action 
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="application" classes={{ inner: "grid-cols-5" }}>
+<BottomNav position="absolute" navType="application" classes={{ content: "grid-cols-5" }}>
   <BottomNavItem btnName="Home" appBtnPosition="left">
     <HomeOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
@@ -3429,7 +3501,7 @@ This keeps pagination accessible without requiring users to scroll to the bottom
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" navType="pagination" classes={{ inner: "grid-cols-6" }}>
+<BottomNav position="absolute" navType="pagination" classes={{ content: "grid-cols-6" }}>
   <BottomNavItem btnName="New document">
     <FileCirclePlusOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
@@ -3482,7 +3554,7 @@ This example demonstrates a button group layout in the bottom bar.
   <Skeleton class="py-4" />
   <ImagePlaceholder class="pb-20" />
 
-  <BottomNav position="absolute" navType="group" classes={{ inner: "grid-cols-5" }}>
+  <BottomNav position="absolute" navType="group" classes={{ content: "grid-cols-5" }}>
     {#snippet header()}
       <BottomNavHeader>
         <BottomNavHeaderItem itemName="New" />
@@ -3567,7 +3639,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
       {/if}
     {/snippet}
   </Listgroup>
-  <BottomNav position="sticky" navType="card" classes={{ inner: "grid-cols-3 pt-2 pb-4" }}>
+  <BottomNav position="sticky" navType="card" classes={{ content: "grid-cols-3 pt-2 pb-4" }}>
     <BottomNavItem btnName="Latest" id="card-latest">
       <ClockOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
     </BottomNavItem>
@@ -3606,7 +3678,7 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L277)
+[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L287)
 
 #### Props
 
@@ -3622,7 +3694,7 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L295)
+[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L300)
 
 #### Props
 
@@ -3634,7 +3706,7 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L299)
+[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L304)
 
 #### Props
 
@@ -3646,19 +3718,16 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L283)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L293)
 
 #### Props
 
 - children
 - btnName
 - appBtnPosition: "middle"
-- activeClass
 - class: className
 - classes
 - active: manualActive
-- btnClass
-- spanClass
 
 
 ## References
@@ -3775,7 +3844,7 @@ The Breadcrumb component follows accessibility best practices:
 
 #### Types
 
-[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L305)
+[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L310)
 
 #### Props
 
@@ -3789,7 +3858,7 @@ The Breadcrumb component follows accessibility best practices:
 
 #### Types
 
-[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L311)
+[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L316)
 
 #### Props
 
@@ -3878,21 +3947,21 @@ Choose color combinations that maintain sufficient contrast and clearly communic
 <div class="text-gray-900 dark:text-gray-100">
   <div class="py-4">Pills</div>
   <ButtonGroup class="space-x-px">
-    <Button pill color="purple">Profile</Button>
-    <Button pill color="purple">Settings</Button>
-    <Button pill color="purple">Messages</Button>
+    <Button pill>Profile</Button>
+    <Button pill>Settings</Button>
+    <Button pill>Messages</Button>
   </ButtonGroup>
   <div class="py-4">Standard buttons</div>
   <ButtonGroup>
-    <Button color="red">Profile</Button>
-    <Button color="green">Settings</Button>
-    <Button color="yellow">Messages</Button>
+    <Button color="danger">Profile</Button>
+    <Button color="success">Settings</Button>
+    <Button color="warning">Messages</Button>
   </ButtonGroup>
   <div class="py-4">Outline</div>
   <ButtonGroup>
-    <Button outline color="red">Profile</Button>
-    <Button outline color="green">Settings</Button>
-    <Button outline color="yellow">Messages</Button>
+    <Button outline color="danger">Profile</Button>
+    <Button outline color="success">Settings</Button>
+    <Button outline color="warning">Messages</Button>
   </ButtonGroup>
   <div class="py-4">Gradient with shadows</div>
   <ButtonGroup>
@@ -4053,7 +4122,7 @@ The Button Group component follows accessibility best practices:
 
 #### Types
 
-[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L319)
+[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L324)
 
 #### Props
 
@@ -4107,12 +4176,6 @@ Choose colors that align with user expectations and provide clear visual hierarc
 <Button color="warning">Warning</Button>
 <Button color="transparent">Transparent</Button>
 <Button color="dark">Dark</Button>
-<Button color="light">Light</Button>
-<Button color="blue">Blue</Button>
-<Button color="green">Green</Button>
-<Button color="red">Red</Button>
-<Button color="yellow">Yellow</Button>
-<Button color="purple">Purple</Button>
 ```
 
 ## Button with link
@@ -4146,12 +4209,6 @@ Pill buttons work especially well in modern web apps, social platforms, and cons
 <Button color="warning" pill>Warning</Button>
 <Button color="transparent" pill>Transparent</Button>
 <Button color="dark" pill>Dark</Button>
-<Button color="light" pill>Light</Button>
-<Button color="blue" pill>Blue</Button>
-<Button color="green" pill>Green</Button>
-<Button color="red" pill>Red</Button>
-<Button color="yellow" pill>Yellow</Button>
-<Button color="purple" pill>Purple</Button>
 ```
 
 ## Shadow
@@ -4169,12 +4226,6 @@ Pill buttons work especially well in modern web apps, social platforms, and cons
 <Button color="warning" shadow>Warning</Button>
 <Button color="transparent" shadow>Transparent</Button>
 <Button color="dark" shadow>Dark</Button>
-<Button color="light" shadow>Light</Button>
-<Button color="blue" shadow>Blue</Button>
-<Button color="green" shadow>Green</Button>
-<Button color="red" shadow>Red</Button>
-<Button color="yellow" shadow>Yellow</Button>
-<Button color="purple" shadow>Purple</Button>
 ```
 
 ## Gradient monochrome
@@ -4279,12 +4330,6 @@ Outline buttons provide clear hierarchy while maintaining a clean, uncluttered i
 <Button color="warning" outline>Warning</Button>
 <Button color="transparent" outline>Transparent</Button>
 <Button color="dark" outline>Dark</Button>
-<Button color="light" outline>Light</Button>
-<Button color="blue" outline>Blue</Button>
-<Button color="green" outline>Green</Button>
-<Button color="red" outline>Red</Button>
-<Button color="yellow" outline>Yellow</Button>
-<Button color="purple" outline>Purple</Button>
 ```
 
 ## Button sizes with icons
@@ -4468,7 +4513,7 @@ The Button component follows accessibility best practices:
 
 #### Types
 
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L329)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L334)
 
 #### Props
 
@@ -4487,7 +4532,7 @@ The Button component follows accessibility best practices:
 
 #### Types
 
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L339)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L344)
 
 #### Props
 
@@ -4667,7 +4712,7 @@ This pattern combines information display with action controls in a cohesive pac
     <span class="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
     <div class="mt-4 flex space-x-3 lg:mt-6 rtl:space-x-reverse">
       <Button>Add friend</Button>
-      <Button color="light" class="dark:text-white">Message</Button>
+      <Button color="success" class="dark:text-white">Message</Button>
     </div>
   </div>
 </Card>
@@ -5276,7 +5321,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L468)
+[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L473)
 
 #### Props
 
@@ -5299,7 +5344,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L482)
+[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L487)
 
 #### Props
 
@@ -5312,7 +5357,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L489)
+[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L494)
 
 #### Props
 
@@ -5326,7 +5371,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L495)
+[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L500)
 
 #### Props
 
@@ -5337,7 +5382,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L511)
+[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L516)
 
 #### Props
 
@@ -5350,7 +5395,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L499)
+[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L504)
 
 #### Props
 
@@ -5361,7 +5406,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L503)
+[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L508)
 
 #### Props
 
@@ -5573,7 +5618,7 @@ This example can be used to copy and paste code inside a `<pre>` and `<code>` bl
             </code></pre>
     </div>
 
-    <Clipboard color={success ? "alternative" : "light"} bind:value bind:success size="sm" {onclick}>
+    <Clipboard color={success ? "success" : "danger"} bind:value bind:success size="sm" {onclick}>
       {#if success}
         <CheckOutline class="h-4 w-4" />
         <span class="text-fg-brand text-xs font-semibold">Copied</span>
@@ -5665,7 +5710,7 @@ Add a `Clipboard` to your `Textarea` using the `addon` snippet. The button appea
 <Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" bind:value class="w-full">
   {#snippet addon()}
     {#if value.length > 0}
-      <Clipboard color={success ? "alternative" : "light"} bind:value bind:success size="sm" class="absolute end-2 top-2 h-8 w-32 px-2.5 font-medium focus:ring-0">
+      <Clipboard color={success ? "success" : "danger"} bind:value bind:success size="sm" class="absolute end-2 top-2 h-8 w-32 px-2.5 font-medium focus:ring-0">
         {#if success}
           <CheckOutline class="h-4 w-4" />
           <span class="text-fg-brand text-xs font-semibold">Copied</span>
@@ -5766,7 +5811,7 @@ Use this example to show an input field where you can copy the URL of the curren
 
 #### Types
 
-[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L523)
+[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L528)
 
 #### Props
 
@@ -5862,7 +5907,7 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 #### Types
 
-[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L532)
+[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L537)
 
 #### Props
 
@@ -5871,6 +5916,7 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 - darkIcon
 - size: "sm"
 - ariaLabel: "Dark mode"
+- classes
 
 
 ## References
@@ -5925,7 +5971,7 @@ Enable date range selection using the `range` prop. The start and end dates are 
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker range bind:rangeFrom={dateRange.from} bind:rangeTo={dateRange.to} color="blue" />
+  <Datepicker range bind:rangeFrom={dateRange.from} bind:rangeTo={dateRange.to} color="success" />
   <P class="mt-4">
     Selected range:
     {dateRange.from ? dateRange.from.toLocaleDateString() : "None"} -
@@ -5963,11 +6009,7 @@ The `classes` prop has the following `class` for disposal: `base`, `input`, `tit
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker
-    color="blue"
-    classes={{ polite: "hover:text-blue-700!", dayButton: "hover:text-blue-400", titleVariant: "text-blue-800", monthButton: "text-blue-700" }}
-    title="Select your preferred date"
-  />
+  <Datepicker color="success" classes={{ label: "hover:text-blue-700!", dayButton: "hover:text-blue-400", title: "text-blue-800", monthButton: "text-blue-700" }} title="Select your preferred date" />
 </div>
 ```
 
@@ -6279,7 +6321,7 @@ explicabo minus.
 
 #### Types
 
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L549)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L554)
 
 #### Props
 
@@ -6450,7 +6492,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L601)
+[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L606)
 
 #### Props
 
@@ -6462,7 +6504,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L605)
+[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L610)
 
 #### Props
 
@@ -6474,7 +6516,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[DesktopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L585)
+[DesktopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L590)
 
 #### Props
 
@@ -6486,7 +6528,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[DeviceMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L580)
+[DeviceMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L585)
 
 #### Props
 
@@ -6497,7 +6539,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L609)
+[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L614)
 
 #### Props
 
@@ -6509,7 +6551,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L593)
+[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L598)
 
 #### Props
 
@@ -6521,7 +6563,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L613)
+[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L618)
 
 #### Props
 
@@ -6533,7 +6575,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L617)
+[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L622)
 
 #### Props
 
@@ -6589,7 +6631,7 @@ Since `Drawer` component extend Svelte's `HTMLAttributes<HTMLDivElement>`, you c
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
   <div class="grid grid-cols-2 gap-2">
-    <Button color="light" href="/">Learn more</Button>
+    <Button color="success" href="/">Learn more</Button>
     <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
 </Drawer>
@@ -6799,7 +6841,7 @@ Use the placement prop to position the drawer component either on the top, right
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
   <div class="grid grid-cols-2 gap-2">
-    <Button color="light" href="/">Learn more</Button>
+    <Button color="success" href="/">Learn more</Button>
     <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
 </Drawer>
@@ -6841,7 +6883,7 @@ Drawer is `modal` by default (see `dialog`). You can set `modal={false}` to open
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
   <div class="grid grid-cols-2 gap-2">
-    <Button color="light" href="#/">Learn more</Button>
+    <Button color="alternative" href="#/">Learn more</Button>
     <Button href="#/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
 </Drawer>
@@ -6873,7 +6915,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
   <div class="grid grid-cols-2 gap-2">
-    <Button color="light" href="/">Learn more</Button>
+    <Button color="success" href="/">Learn more</Button>
     <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
   </div>
 </Drawer>
@@ -6931,7 +6973,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L637)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L642)
 
 #### Props
 
@@ -6951,7 +6993,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L641)
+[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L646)
 
 #### Props
 
@@ -6965,7 +7007,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L643)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L648)
 
 #### Props
 
@@ -7566,7 +7608,7 @@ Use this example to also show the name or email of the user next to the avatar f
   import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownGroup } from "flowbite-svelte";
 </script>
 
-<Button pill color="light" id="avatar_with_name" class="p-1!">
+<Button pill id="avatar_with_name" class="p-1!">
   <Avatar src="/images/people/profile-picture-5.jpg" class="me-2" />
   Bonnie Green
 </Button>
@@ -7785,7 +7827,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L648)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L653)
 
 #### Props
 
@@ -7802,7 +7844,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L654)
+[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L659)
 
 #### Props
 
@@ -7812,7 +7854,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L676)
+[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L681)
 
 #### Props
 
@@ -7823,7 +7865,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L656)
+[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L661)
 
 #### Props
 
@@ -7834,7 +7876,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L660)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L665)
 
 #### Props
 
@@ -8077,7 +8119,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L683)
+[FooterProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L688)
 
 #### Props
 
@@ -8089,7 +8131,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L688)
+[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L693)
 
 #### Props
 
@@ -8105,7 +8147,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L697)
+[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L702)
 
 #### Props
 
@@ -8120,7 +8162,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L704)
+[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L709)
 
 #### Props
 
@@ -8133,7 +8175,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L714)
+[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L719)
 
 #### Props
 
@@ -8146,7 +8188,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L710)
+[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L715)
 
 #### Props
 
@@ -8635,7 +8677,7 @@ This example shows how to get a complete control over the gallery images look an
 
 #### Types
 
-[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L990)
+[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L998)
 
 #### Props
 
@@ -8856,7 +8898,7 @@ Use these examples to position the indicator component anywhere relative to the 
 
 #### Types
 
-[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1000)
+[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1008)
 
 #### Props
 
@@ -9091,7 +9133,7 @@ This example can be used to denote function keys inside the KBD component.
 
 #### Types
 
-[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1011)
+[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1019)
 
 #### Props
 
@@ -9296,7 +9338,7 @@ When non-standard usage is needed you can omit the `items` props and add element
 
 #### Types
 
-[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1030)
+[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1038)
 
 #### Props
 
@@ -9314,7 +9356,7 @@ When non-standard usage is needed you can omit the `items` props and add element
 
 #### Types
 
-[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1040)
+[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1048)
 
 #### Props
 
@@ -9682,7 +9724,7 @@ This example can be used to also show a CTA with a backdround image inside the d
 
 #### Types
 
-[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1050)
+[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1058)
 
 #### Props
 
@@ -9791,8 +9833,8 @@ Notice as well the lack of the `footer` snippet and the transition set to `slide
     <ExclamationCircleOutline class="mx-auto mb-4 h-12 w-12 text-gray-400 dark:text-gray-200" />
     <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
     <div class="space-x-2">
-      <Button type="submit" value="yes" color="red">Yes, I'm sure</Button>
-      <Button type="submit" value="no" color="alternative">No, cancel</Button>
+      <Button type="submit" value="yes" color="success">Yes, I'm sure</Button>
+      <Button type="submit" value="no" color="danger">No, cancel</Button>
     </div>
   </div>
 </Modal>
@@ -10298,7 +10340,7 @@ This is perfect for advertisements, terms of service, or important announcements
 
 #### Types
 
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1059)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1067)
 
 #### Props
 
@@ -10316,6 +10358,7 @@ This is perfect for advertisements, terms of service, or important announcements
 - transitionParams
 - transition: fade
 - fullscreen: false
+- closeButtonProps
 
 
 ## References
@@ -10793,7 +10836,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1066)
+[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1075)
 
 #### Props
 
@@ -10806,7 +10849,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1088)
+[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1097)
 
 #### Props
 
@@ -10817,7 +10860,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1090)
+[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099)
 
 #### Props
 
@@ -10829,7 +10872,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1094)
+[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1103)
 
 #### Props
 
@@ -10843,7 +10886,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1111)
+[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1120)
 
 #### Props
 
@@ -10857,7 +10900,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1108)
 
 #### Props
 
@@ -10874,7 +10917,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1081)
+[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1090)
 
 #### Props
 
@@ -11380,7 +11423,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1179)
+[PaginationProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1188)
 
 #### Props
 
@@ -11397,7 +11440,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1147)
+[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1156)
 
 #### Props
 
@@ -11413,7 +11456,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1175)
+[PaginationItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1184)
 
 #### Props
 
@@ -11427,7 +11470,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1153)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1162)
 
 #### Props
 
@@ -11850,7 +11893,7 @@ If you need the popover to be attached to the other element then the triggering 
 
 #### Types
 
-[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1189)
+[PopoverProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1198)
 
 #### Props
 
@@ -12086,7 +12129,7 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1198)
+[ProgressbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1207)
 
 #### Props
 
@@ -12106,7 +12149,7 @@ Use the `labelInsideDiv` prop to change the color of the progress bar.
 
 #### Types
 
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1209)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1218)
 
 #### Props
 
@@ -12452,7 +12495,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1226)
+[AdvancedRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1235)
 
 #### Props
 
@@ -12467,7 +12510,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1299)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1308)
 
 #### Props
 
@@ -12486,7 +12529,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1299)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1308)
 
 #### Props
 
@@ -12504,7 +12547,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1233)
+[RatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1242)
 
 #### Props
 
@@ -12522,7 +12565,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingCommentProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1243)
+[RatingCommentProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1252)
 
 #### Props
 
@@ -12536,7 +12579,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1279)
+[ReviewProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1288)
 
 #### Props
 
@@ -12552,7 +12595,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[ScoreRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1288)
+[ScoreRatingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1297)
 
 #### Props
 
@@ -12565,7 +12608,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1299)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1308)
 
 #### Props
 
@@ -12583,7 +12626,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 #### Types
 
-[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1299)
+[RatingIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1308)
 
 #### Props
 
@@ -13972,7 +14015,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1322)
+[SidebarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1331)
 
 #### Props
 
@@ -13997,7 +14040,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1352)
+[SidebarBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1361)
 
 #### Props
 
@@ -14010,7 +14053,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1337)
+[SidebarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1346)
 
 #### Props
 
@@ -14022,7 +14065,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1341)
+[SidebarCtaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1350)
 
 #### Props
 
@@ -14036,7 +14079,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1361)
+[SidebarDropdownWrapperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1370)
 
 #### Props
 
@@ -14056,7 +14099,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1374)
+[SidebarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1383)
 
 #### Props
 
@@ -14068,7 +14111,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
 
 #### Types
 
-[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1379)
+[SidebarItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1388)
 
 #### Props
 
@@ -14219,7 +14262,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1387)
+[CardPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1396)
 
 #### Props
 
@@ -14231,7 +14274,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1391)
+[ImagePlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1400)
 
 #### Props
 
@@ -14245,7 +14288,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1397)
+[ListPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1406)
 
 #### Props
 
@@ -14259,7 +14302,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1403)
+[SkeletonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1412)
 
 #### Props
 
@@ -14271,7 +14314,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1407)
+[TestimonialPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1416)
 
 #### Props
 
@@ -14282,7 +14325,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1409)
+[TextPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1418)
 
 #### Props
 
@@ -14294,7 +14337,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1413)
+[VideoPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1422)
 
 #### Props
 
@@ -14305,7 +14348,7 @@ To display image placeholder without text, use `imgOnly` prop as seen in the fol
 
 #### Types
 
-[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1417)
+[WidgetPlaceholderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1426)
 
 #### Props
 
@@ -14372,21 +14415,21 @@ The Speed Dial components accommodate color options ("red" | "lime" | "green" | 
 </script>
 
 <div class="grid w-fit grid-cols-8 gap-x-6 gap-y-18">
-  <SpeedDialTrigger color="red" />
+  <SpeedDialTrigger />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
 
-  <SpeedDialTrigger color="purple" />
+  <SpeedDialTrigger color="success" />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
 
-  <SpeedDialTrigger color="light" />
+  <SpeedDialTrigger color="warning" />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
@@ -14399,25 +14442,7 @@ The Speed Dial components accommodate color options ("red" | "lime" | "green" | 
     </SpeedDialButton>
   </SpeedDial>
 
-  <SpeedDialTrigger color="red" />
-  <SpeedDial>
-    <SpeedDialButton name="Share">
-      <ShareNodesSolid class="h-6 w-6" />
-    </SpeedDialButton>
-  </SpeedDial>
-  <SpeedDialTrigger color="green" />
-  <SpeedDial>
-    <SpeedDialButton name="Share">
-      <ShareNodesSolid class="h-6 w-6" />
-    </SpeedDialButton>
-  </SpeedDial>
-  <SpeedDialTrigger color="yellow" />
-  <SpeedDial>
-    <SpeedDialButton name="Share">
-      <ShareNodesSolid class="h-6 w-6" />
-    </SpeedDialButton>
-  </SpeedDial>
-  <SpeedDialTrigger color="blue" />
+  <SpeedDialTrigger color="danger" />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
@@ -14449,25 +14474,25 @@ The Speed Dial components accommodate color options ("red" | "lime" | "green" | 
     </SpeedDialButton>
   </SpeedDial>
 
-  <SpeedDialTrigger color="green" outline />
+  <SpeedDialTrigger outline />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
-  <SpeedDialTrigger color="red" outline />
+  <SpeedDialTrigger color="success" outline />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
-  <SpeedDialTrigger color="blue" outline />
+  <SpeedDialTrigger color="warning" outline />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
-  <SpeedDialTrigger color="purple" outline />
+  <SpeedDialTrigger color="danger" outline />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
@@ -14905,7 +14930,7 @@ You can change the main button to any element you want.
   import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
 </script>
 
-<Button color="green" class="absolute end-6 bottom-6 py-0">
+<Button color="success" class="absolute end-6 bottom-6 py-0">
   <Rating total={1} rating={0.5} size={48} /> Rating
 </Button>
 <SpeedDial placement="top-end">
@@ -14930,7 +14955,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1449)
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1458)
 
 #### Props
 
@@ -14948,13 +14973,13 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1463)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1472)
 
 #### Props
 
 - children
 - name: ""
-- color: "light"
+- color: "brand"
 - tooltip: _tooltip
 - pill: context?.pill ?? true
 - textOutside: context?.textOutside ?? false
@@ -14965,7 +14990,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1447)
+[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1456)
 
 #### Props
 
@@ -15100,7 +15125,7 @@ The spinner component can also be used inside elements such as buttons when subm
 
 #### Types
 
-[SpinnerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1472)
+[SpinnerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1481)
 
 #### Props
 
@@ -16325,7 +16350,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1578)
+[BreadcrumbStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1587)
 
 #### Props
 
@@ -16352,7 +16377,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1541)
+[DetailedStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1550)
 
 #### Props
 
@@ -16389,7 +16414,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1523)
+[ProgressStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1532)
 
 #### Props
 
@@ -16405,7 +16430,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1507)
+[StepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1516)
 
 #### Props
 
@@ -16421,7 +16446,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1596)
+[TimelineStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1605)
 
 #### Props
 
@@ -16438,7 +16463,7 @@ Use this example to show the stepper component next to a form layout and change 
 
 #### Types
 
-[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1559)
+[VerticalStepperProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1568)
 
 #### Props
 
@@ -17333,7 +17358,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1631)
+[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1640)
 
 #### Props
 
@@ -17353,7 +17378,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1662)
+[TableBodyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1671)
 
 #### Props
 
@@ -17365,7 +17390,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1651)
+[TableBodyCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1660)
 
 #### Props
 
@@ -17378,7 +17403,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1643)
+[TableBodyRowProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1652)
 
 #### Props
 
@@ -17393,7 +17418,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1619)
+[TableHeadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1628)
 
 #### Props
 
@@ -17410,7 +17435,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1667)
+[TableHeadCellProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1676)
 
 #### Props
 
@@ -17421,7 +17446,7 @@ An example to use `onclick` (main row) and on:dblclick (expanded row)
 
 #### Types
 
-[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1682)
+[TableSearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1691)
 
 #### Props
 
@@ -17937,7 +17962,7 @@ Use the following example to add active class.
 
 #### Types
 
-[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1702)
+[TabitemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1711)
 
 #### Props
 
@@ -17957,7 +17982,7 @@ Use the following example to add active class.
 
 #### Types
 
-[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1695)
+[TabsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1704)
 
 #### Props
 
@@ -18435,7 +18460,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1747)
+[ActivityProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1756)
 
 #### Props
 
@@ -18446,7 +18471,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1751)
+[ActivityItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1760)
 
 #### Props
 
@@ -18458,7 +18483,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1755)
+[GroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1764)
 
 #### Props
 
@@ -18471,7 +18496,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1760)
+[GroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1769)
 
 #### Props
 
@@ -18483,7 +18508,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1776)
+[TimelineProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1785)
 
 #### Props
 
@@ -18495,7 +18520,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 #### Types
 
-[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1783)
+[TimelineItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1792)
 
 #### Props
 
@@ -18654,10 +18679,10 @@ Use the following example with `ToastContainer` to stack toasts vertically on th
       <P class="mb-8">Click the buttons below to trigger toast notifications. Each toast will appear in the top-right corner and automatically dismiss after 5 seconds.</P>
       <div class="space-y-4">
         <div class="grid grid-cols-2 gap-3">
-          <Button onclick={() => addToast("green")} color="green">Success Toast</Button>
-          <Button onclick={() => addToast("blue")} color="blue">Info Toast</Button>
-          <Button onclick={() => addToast("yellow")} color="yellow">Warning Toast</Button>
-          <Button onclick={() => addToast("red")} color="red">Error Toast</Button>
+          <Button onclick={() => addToast("green")} color="success">Success Toast</Button>
+          <Button onclick={() => addToast("blue")}>Info Toast</Button>
+          <Button onclick={() => addToast("yellow")} color="warning">Warning Toast</Button>
+          <Button onclick={() => addToast("red")} color="danger">Error Toast</Button>
         </div>
         <Button onclick={() => addToast()} color="dark" class="w-full">Random Toast</Button>
       </div>
@@ -19026,7 +19051,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1795)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1804)
 
 #### Props
 
@@ -19041,12 +19066,13 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 - transition: fly
 - class: className
 - classes
+- closeButtonProps
 
 ### ToastContainer
 
 #### Types
 
-[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1808)
+[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1818)
 
 #### Props
 
@@ -19250,7 +19276,7 @@ When you want to add a fully custom styles, use `type="custom"`, and `class` to 
 
 #### Types
 
-[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1815)
+[TooltipProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1825)
 
 #### Props
 
@@ -19533,7 +19559,7 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 #### Types
 
-[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1959)
+[VideoProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1969)
 
 #### Props
 
@@ -19919,7 +19945,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 #### Types
 
-[CheckboxProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L728)
+[CheckboxProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L733)
 
 #### Props
 
@@ -20104,7 +20130,7 @@ Add `clearable` and `clearableOnClick` props.
 
 #### Types
 
-[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L759)
+[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L764)
 
 #### Props
 
@@ -20114,8 +20140,8 @@ Add `clearable` and `clearableOnClick` props.
 - elementRef: $bindable()
 - class: className
 - classes
-- clearableColor: "none"
 - clearableOnClick
+- closeButtonProps
 
 
 ## References
@@ -20900,7 +20926,7 @@ This example can be used to add a descriptive icon or additional text inside the
   <ButtonGroup class="w-full">
     <InputAddon>@</InputAddon>
     <Input id="input-addon-button" type="email" placeholder="john.doe@mail.com" />
-    <Button color="primary">Search</Button>
+    <Button>Search</Button>
   </ButtonGroup>
 </div>
 
@@ -20908,12 +20934,12 @@ This example can be used to add a descriptive icon or additional text inside the
   <Label for="input-addon-crazy" class="mb-2">Crazy example</Label>
   <ButtonGroup class="w-full">
     <InputAddon><Checkbox /></InputAddon>
-    <Button color="primary">Search</Button>
+    <Button>Search</Button>
     <InputAddon>http://</InputAddon>
     <Input id="input-addon-crazy" type="email" placeholder="john.doe@mail.com" />
     <InputAddon>@</InputAddon>
     <InputAddon><Checkbox /></InputAddon>
-    <Button color="blue">Send</Button>
+    <Button color="success">Send</Button>
     <InputAddon>kg</InputAddon>
   </ButtonGroup>
 </div>
@@ -21047,7 +21073,7 @@ Use this example to show a dropdown menu right next to the input field.
     <DropdownItem>Finance</DropdownItem>
   </Dropdown>
   <Input placeholder="Search" />
-  <Button color="primary" class="p-2.5!" type="submit">
+  <Button class="p-2.5!" type="submit">
     <SearchOutline class="h-5 w-5" />
   </Button>
 </ButtonGroup>
@@ -21695,13 +21721,19 @@ The PhoneInput component provides customizable styling through six distinct clas
 
 #### Types
 
-[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L823)
+[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L828)
 
 #### Props
 
 - children
 - phoneIcon: true
-- pattern: "[0-9]{3
+- pattern
+- phoneType: "default"
+- floatingLabel: "Phone number"
+- labelFor: "floating-phone-number"
+- class: className
+- classes
+- value: $bindable("")
 
 
 ## References
@@ -21938,17 +21970,15 @@ You can use the property `inline` as the alternative.
 ```svelte
 <script lang="ts">
   import { Radio } from "flowbite-svelte";
-  let colors = $state("text-purple-500");
+  let colors = $state("bg-brand");
 </script>
 
-<p class="mb-4 font-semibold {colors}">Select color</p>
+<p class="mb-4 p-2 font-semibold text-white {colors}">Select color</p>
 <div class="flex gap-4">
-  <Radio bind:group={colors} color="danger" value="text-red-500">Red</Radio>
-  <Radio bind:group={colors} color="success" value="text-green-500">Green</Radio>
-  <Radio bind:group={colors} color="purple" value="text-purple-500">Purple</Radio>
-  <Radio bind:group={colors} color="teal" value="text-teal-500">Teal</Radio>
-  <Radio bind:group={colors} color="warning" value="text-yellow-500">Yellow</Radio>
-  <Radio bind:group={colors} color="warning" value="text-orange-500">Orange</Radio>
+  <Radio bind:group={colors} color="brand" value="fg-brand">Brand</Radio>
+  <Radio bind:group={colors} color="success" value="fg-success">Success</Radio>
+  <Radio bind:group={colors} color="warning" value="fg-warning">Warning</Radio>
+  <Radio bind:group={colors} color="danger" value="fg-danger">Danger</Radio>
 </div>
 ```
 
@@ -22010,9 +22040,9 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 </div>
 
 <ButtonGroup>
-  <RadioButton color="green" outline value="notes" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
-  <RadioButton color="green" outline value="numbers" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
-  <RadioButton color="green" outline value="bullets" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
+  <RadioButton color="success" outline value="notes" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
+  <RadioButton color="success" outline value="numbers" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
+  <RadioButton color="success" outline value="bullets" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
 </ButtonGroup>
 
 <p>List style: {radioGroup}</p>
@@ -22029,8 +22059,8 @@ Use `color` and `checkedClass` props to style the checked state:
 </script>
 
 <ButtonGroup>
-  <RadioButton color="amber" outline checkedClass="outline-4 outline-amber-500" name="options" value="Option 1" bind:group={options}>Option 1</RadioButton>
-  <RadioButton color="blue" outline checkedClass="outline-4 outline-blue-500" name="options" value="Option 2" bind:group={options}>Option 2</RadioButton>
+  <RadioButton outline checkedClass="outline-4 outline-amber-500" name="options" value="Option 1" bind:group={options}>Option 1</RadioButton>
+  <RadioButton color="success" outline checkedClass="outline-4 outline-blue-500" name="options" value="Option 2" bind:group={options}>Option 2</RadioButton>
 </ButtonGroup>
 ```
 
@@ -22040,7 +22070,7 @@ Use `color` and `checkedClass` props to style the checked state:
 
 #### Types
 
-[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L839)
+[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L845)
 
 #### Props
 
@@ -22152,7 +22182,7 @@ Since we added `...restProps` to input field, you can contain the props which ar
 
 #### Types
 
-[RangeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L858)
+[RangeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L864)
 
 #### Props
 
@@ -22853,7 +22883,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 #### Types
 
-[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L881)
+[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L887)
 
 #### Props
 
@@ -22866,11 +22896,11 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 - disabled
 - placeholder: "Choose option ..."
 - clearable
-- clearableColor: "none"
 - clearableOnClick
 - onClear
 - class: className
 - classes
+- closeButtonProps
 
 
 ## References
@@ -23117,7 +23147,7 @@ If you want to build a chatroom component you will usually want to use a textare
 
 #### Types
 
-[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L962)
+[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L969)
 
 #### Props
 
@@ -23130,8 +23160,8 @@ If you want to build a chatroom component you will usually want to use a textare
 - class: className
 - classes
 - clearable
-- clearableColor: "none"
 - clearableOnClick
+- closeButtonProps
 
 
 ## References
@@ -23472,7 +23502,7 @@ This is an advanced example that you can use to show the details of an event and
   </Accordion>
 
   <div class="border-t border-gray-200 p-6 dark:border-gray-700">
-    <Button color="primary">Schedule Event</Button>
+    <Button>Schedule Event</Button>
   </div>
 </div>
 ```
@@ -23538,8 +23568,8 @@ Use this example to select a date and time inside of a modal component based on 
       <Timepicker type="inline-buttons" value={modalTimeSelection.time} {timeIntervals} onselect={handleModalTimeSelect} columns={3} />
     </div>
     <div class="flex items-center space-x-4">
-      <Button color="primary" class="w-full" onclick={handleSave}>Save</Button>
-      <Button color="alternative" class="w-full" onclick={() => (open = false)}>Discard</Button>
+      <Button class="w-full" onclick={handleSave}>Save</Button>
+      <Button color="danger" class="w-full" onclick={() => (open = false)}>Discard</Button>
     </div>
   </div>
 </Modal>
@@ -23679,7 +23709,7 @@ Use this example to show multiple time interval selections inside of a drawer co
               inputClass={timepickerClasses.inputClass}
               size="sm"
             />
-            <Button color="red" size="xs" pill={true} onclick={() => removeInterval(index)} class="shrink-0 p-2 hover:bg-red-600">
+            <Button color="danger" size="xs" pill={true} onclick={() => removeInterval(index)} class="shrink-0 p-2 hover:bg-red-600">
               <TrashBinSolid class="h-2 w-2 sm:h-3 sm:w-3" />
             </Button>
           </div>
@@ -23693,8 +23723,8 @@ Use this example to show multiple time interval selections inside of a drawer co
     </Button>
 
     <div class="flex gap-4">
-      <Button class="w-1/2" color="alternative" onclick={() => (open = false)}>Cancel</Button>
-      <Button type="submit" class="w-1/2" color="primary">Save Changes</Button>
+      <Button class="w-1/2" onclick={() => (open = false)}>Cancel</Button>
+      <Button type="submit" class="w-1/2" color="success">Save Changes</Button>
     </div>
   </form>
 </Drawer>
@@ -23809,7 +23839,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 #### Types
 
-[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L975)
+[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L983)
 
 #### Props
 
@@ -24077,7 +24107,7 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 #### Types
 
-[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1848)
+[BlockquoteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1858)
 
 #### Props
 
@@ -24335,7 +24365,7 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 #### Types
 
-[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1864)
+[HeadingProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1874)
 
 #### Props
 
@@ -24493,7 +24523,7 @@ The `restProps` will be removed in the next version. Please use `divProps` and `
 
 #### Types
 
-[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1870)
+[HrProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1880)
 
 #### Props
 
@@ -25217,7 +25247,7 @@ Use this example to create a horizontally aligned list of items.
 
 #### Types
 
-[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1918)
+[ListProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1928)
 
 #### Props
 
@@ -26321,7 +26351,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 
 #### Types
 
-[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L443)
+[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L448)
 
 #### Props
 
@@ -26364,7 +26394,7 @@ See [examples](/docs-examples/extend/clipboard-manager) and [code](https://githu
 
 #### Types
 
-[ClipboardManagerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2187)
+[ClipboardManagerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2197)
 
 #### Props
 
@@ -26389,7 +26419,7 @@ See [examples](/docs-examples/extend/clipboard-manager) and [code](https://githu
 - // If undefined
 - renders inline; if defined
 - renders as modal
-    badgeProps: { color: "blue", class: "text-xs"
+    badgeProps: { color: "brand", class: "text-xs"
 
 
 
@@ -26418,7 +26448,7 @@ See [examples](/docs-examples/extend/command-palette) and [code](https://github.
 
 #### Types
 
-[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2121)
+[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2131)
 
 #### Props
 
@@ -26922,7 +26952,7 @@ For production, use a proper database (PostgreSQL, MongoDB, Supabase, etc.) with
 
 #### Types
 
-[KanbanBoardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2030)
+[KanbanBoardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2040)
 
 #### Props
 
@@ -27070,7 +27100,7 @@ Import the `Progressradial` component in a script tag.
 
 #### Types
 
-[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1209)
+[ProgressradialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1218)
 
 #### Props
 
@@ -27116,7 +27146,7 @@ See [examples](/docs-examples/extend/scroll-spy) and [code](https://github.com/t
 
 #### Types
 
-[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2136)
+[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2146)
 
 #### Props
 
@@ -27164,7 +27194,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2047)
+[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2057)
 
 #### Props
 
@@ -27387,7 +27417,7 @@ Here's a complete example of using the step indicator with a multi-step form. Us
       {#if currentStep < 4}
         <Button type="submit">Next</Button>
       {:else if currentStep === 4}
-        <Button type="submit" color="green">Complete</Button>
+        <Button type="submit" color="success">Complete</Button>
       {/if}
     </div>
   </form>
@@ -27505,7 +27535,7 @@ Use the `color` prop to change the color of a step indicator.
 
 #### Types
 
-[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1481)
+[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1490)
 
 #### Props
 
@@ -27648,7 +27678,7 @@ Use `disabled` to the `Tags` component.
 
 #### Types
 
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L911)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L918)
 
 #### Props
 
@@ -27656,7 +27686,6 @@ Use `disabled` to the `Tags` component.
 - placeholder: "Enter tags"
 - class: className
 - classes
-- closeBtnSize: "xs"
 - unique: false
 - availableTags: []
 - showHelper: false
@@ -27691,7 +27720,7 @@ See [examples](/docs-examples/extend/tour) and [code](https://github.com/themesb
 
 #### Types
 
-[TourProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2098)
+[TourProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2108)
 
 #### Props
 
@@ -27978,7 +28007,7 @@ Add checkboxes, buttons, and other interactive elements to virtual list items.
       {selectedCount} of {items.length} completed
     </span>
     {#if selectedCount > 0}
-      <Button size="xs" color="red" onclick={clearCompleted}>Clear Completed</Button>
+      <Button size="xs" onclick={clearCompleted}>Clear Completed</Button>
     {/if}
   </div>
 
@@ -27990,7 +28019,7 @@ Add checkboxes, buttons, and other interactive elements to virtual list items.
         <span class="flex-1 {task.completed ? 'text-gray-400 line-through' : 'text-gray-900 dark:text-white'}">
           {task.text}
         </span>
-        <Button size="xs" color="red" class="!p-2" onclick={() => deleteItem(task.id)}>
+        <Button size="xs" class="!p-2" onclick={() => deleteItem(task.id)}>
           <TrashBinSolid class="h-3 w-3" />
         </Button>
       </div>
@@ -28040,7 +28069,7 @@ Demonstrates smooth scrolling and rendering performance with 100,000 items.
 
 <div class="space-y-4">
   <div class="flex items-center gap-4 text-sm">
-    <Badge large color="blue">
+    <Badge large>
       {ITEM_COUNT.toLocaleString()} items
     </Badge>
     {#if renderTime > 0}
@@ -28156,7 +28185,7 @@ Enable with `<VirtualList contained …>` or override via `classes.item`.
 
 #### Types
 
-[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2002)
+[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2012)
 
 #### Props
 
@@ -28208,7 +28237,7 @@ See [examples](/docs-examples/extend/virtual-masonry) and [code](https://github.
 
 #### Types
 
-[VirtualMasonryProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2163)
+[VirtualMasonryProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2173)
 
 #### Props
 
@@ -28277,7 +28306,7 @@ Use `CloseButton` component to close a component.
 
 #### Types
 
-[CloseButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L146)
+[CloseButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L156)
 
 #### Props
 
@@ -28288,7 +28317,7 @@ Use `CloseButton` component to close a component.
 - ariaLabel
 - size: "md"
 - class: className
-- svgClass
+- classes
 
 
 
@@ -28318,7 +28347,7 @@ Use the `Label` component when you need to add a label.
 
 #### Types
 
-[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L832)
+[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L838)
 
 #### Props
 
@@ -28479,7 +28508,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1117)
+[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1126)
 
 #### Props
 
@@ -28494,7 +28523,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1123)
+[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1132)
 
 #### Props
 
@@ -28510,7 +28539,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1121)
+[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1130)
 
 #### Props
 
@@ -28538,6 +28567,275 @@ Most often the textarea component is used as the main text field input element i
 <CompoAttributesViewer {components}/>
 
 ## References
+
+
+---
+
+
+# ===== MCP =====
+
+<!-- Source: mcp/local-setup.md -->
+# Flowbite-Svelte MCP Local Setup
+
+
+## Local Setup
+
+The local (or stdio) version of the Flowbite-Svelte MCP server runs directly on your machine. You'll need to clone the repository and build it locally before configuring it with your MCP client.
+
+### Installation
+
+```bash
+git clone git@github.com:shinokada/flowbite-svelte-mcp.git
+cd flowbite-svelte-mcp
+pnpm install
+pnpm run copy:llm  # Fetch latest Flowbite-Svelte docs
+pnpm run build
+```
+
+### Configuration
+
+Here's how to set it up in common MCP clients:
+
+#### Claude Desktop
+
+1. In the Settings > Developer section, click on **Edit Config**
+2. This opens the folder containing `claude_desktop_config.json`
+3. Edit the file to include:
+
+```json
+{
+  "mcpServers": {
+    "flowbite-svelte": {
+      "command": "node",
+      "args": ["/absolute/path/to/flowbite-svelte-mcp/build/server.js"]
+    }
+  }
+}
+```
+
+**Important:** Replace `/absolute/path/to/` with the actual path where you cloned the repository.
+
+4. Restart Claude Desktop
+
+#### Testing
+
+After setup, test the installation by asking Claude:
+
+- "Search the flowbite-svelte docs for how to use an Accordion"
+- "What components are available in flowbite-svelte?"
+- "Show me how to use the Button component"
+
+### Troubleshooting
+
+**Tools not working:**
+1. Verify the path in your config is absolute and correct
+2. Ensure you ran `pnpm run build` after cloning
+3. Restart your MCP client after configuration changes
+4. Check the client's logs for error messages
+
+
+---
+
+<!-- Source: mcp/overview.md -->
+# Flowbite-Svelte MCP Overview
+
+
+## Overview
+
+The Flowbite-Svelte MCP (__Model Context Protocol__) server can help your LLM or agent of choice write better Flowbite-Svelte code. It works by providing comprehensive component documentation, usage examples, and best practices for all Flowbite-Svelte components.
+
+## Usage
+
+To get the most out of the MCP server we recommend including the following prompt in your `AGENTS.md` (or `CLAUDE.md`, if using Claude Code. Or `GEMINI.md`, if using Gemini). Place this file in the __root of your project directory__ so it's automatically loaded by your AI coding assistant. This will tell the LLM which tools are available and when it's appropriate to use them.
+
+```md
+You are able to use the Flowbite-Svelte MCP server, where you have access to comprehensive Flowbite-Svelte component documentation. Here's how to use the available tools effectively:
+
+## Available MCP Tools:
+
+### 1. findComponent
+
+Use this FIRST to discover components by name or category. Returns component information including the documentation path.
+When asked about Flowbite-Svelte components, ALWAYS use this tool to locate the correct component before fetching documentation.
+Example queries: 'Button', 'CardPlaceholder', 'form checkbox'
+
+### 2. getComponentList
+
+Lists all available Flowbite-Svelte components with their categories.
+Use this to discover what components are available or to help users explore component options.
+
+### 3. getComponentDoc
+
+Retrieves full documentation content for a specific component. Accepts the component path found using findComponent.
+After calling findComponent, use this tool to fetch the complete documentation including usage examples, props, and best practices.
+
+### 4. searchDocs
+
+Performs full-text search across all Flowbite-Svelte documentation.
+Use this when you need to find specific information that might span multiple components or when the user asks about features or patterns.
+```
+
+## CLAUDE.md for Svelte and Flowbite-Svelte
+
+Use the following example for Svelte and Flowbite-Svelte:
+```md
+# Claude MCP Server Documentation
+
+This project uses multiple MCP servers to provide comprehensive documentation access.
+
+## Available MCP Servers
+
+### Svelte MCP Server
+
+You have access to comprehensive Svelte 5 and SvelteKit documentation. Here's how to use the available tools effectively:
+
+#### Available Tools:
+
+**1. list-sections**
+- Use this FIRST to discover all available documentation sections
+- Returns a structured list with titles, use_cases, and paths
+- When asked about Svelte or SvelteKit topics, ALWAYS use this tool at the start to find relevant sections
+
+**2. get-documentation**
+- Retrieves full documentation content for specific sections
+- Accepts single or multiple sections
+- After calling list-sections, you MUST analyze the returned documentation (especially the use_cases field) and then fetch ALL relevant sections for the user's task
+
+**3. svelte-autofixer**
+- Analyzes Svelte code and returns issues and suggestions
+- You MUST use this tool whenever writing Svelte code before sending it to the user
+- Keep calling it until no issues or suggestions are returned
+
+**4. playground-link**
+- Generates a Svelte Playground link with the provided code
+- After completing the code, ask the user if they want a playground link
+- NEVER call this if code was written to files in their project
+
+### Flowbite-Svelte MCP Server
+
+You have access to comprehensive Flowbite-Svelte component documentation. Here's how to use the available tools effectively:
+
+#### Available Tools:
+
+**1. findComponent**
+- Use this FIRST to discover components by name or category
+- Returns component information including the documentation path
+- When asked about Flowbite-Svelte components, ALWAYS use this tool to locate the correct component before fetching documentation
+- Example queries: 'Button', 'CardPlaceholder', 'form checkbox'
+
+**2. getComponentList**
+- Lists all available Flowbite-Svelte components with their categories
+- Use this to discover what components are available or to help users explore component options
+
+**3. getComponentDoc**
+- Retrieves full documentation content for a specific component
+- Accepts the component path found using findComponent
+- After calling findComponent, use this tool to fetch complete documentation including usage examples, props, and best practices
+
+**4. searchDocs**
+- Performs full-text search across all Flowbite-Svelte documentation
+- Use this when you need to find specific information that might span multiple components or when the user asks about features or patterns
+
+## Workflow Guidelines
+
+### When building Svelte components with Flowbite-Svelte:
+
+1. **Start with Svelte documentation**: Use `list-sections` to understand which Svelte concepts are needed
+2. **Fetch relevant Svelte docs**: Use `get-documentation` to get all necessary Svelte sections
+3. **Find Flowbite-Svelte components**: Use `findComponent` to locate the UI components needed
+4. **Get component details**: Use `getComponentDoc` to fetch usage examples and props
+5. **Write the code**: Combine Svelte patterns with Flowbite-Svelte components
+6. **Validate the code**: Use `svelte-autofixer` to check for issues
+7. **Offer playground**: Ask if the user wants a playground link (only if not writing to files)
+
+### Best Practices:
+
+- Always prioritize Svelte 5 runes and modern patterns
+- Use Flowbite-Svelte components for consistent UI design
+- Validate all code with svelte-autofixer before delivering
+- Keep documentation lookups efficient by fetching multiple sections at once
+```
+
+---
+
+<!-- Source: mcp/prompts.md -->
+# Flowbite-Svelte MCP Prompts
+
+
+## Effective Prompts
+
+To get the most out of the Flowbite-Svelte MCP server, use clear, specific prompts that help the AI understand what you need.
+
+### Discovering Components
+
+**Good prompts:**
+- "What flowbite-svelte components are available for forms?"
+- "Show me all flowbite-svelte card-related components"
+- "Find flowbite-svelte components for navigation"
+
+**Why they work:** These prompts trigger the `findComponent` or `getComponentList` tools to search the component library.
+
+### Getting Documentation
+
+**Good prompts:**
+- "How do I use the flowbite-svelte Button component?"
+- "Show me the props for the flowbite-svelte Modal component"
+- "What events does the flowbite-svelte Dropdown component emit?"
+
+**Why they work:** After finding a component, these prompts fetch full documentation including usage examples, props, events, and slots.
+
+### Implementation Help
+
+**Good prompts:**
+- "Create a form with email and password inputs using flowbite-svelte"
+- "Build a responsive navbar with a dropdown menu using flowbite-svelte"
+- "Show me how to implement a data table with pagination using flowbite-svelte"
+
+**Why they work:** The AI can use component documentation to generate accurate, working code with proper imports and props.
+
+### Searching Documentation
+
+**Good prompts:**
+- "How do I customize colors in flowbite-svelte?"
+- "Search the flowbite-svelte docs for dark mode implementation"
+- "Find information about flowbite-svelte TypeScript types"
+
+**Why they work:** These use the `searchDocs` tool for full-text search across all documentation.
+
+### Best Practices
+
+1. **Be specific about components** - Use exact component names when possible
+2. **Ask for examples** - Request code examples to see components in action
+3. **Mention your framework version** - Specify if you're using Svelte 4 or 5
+4. **Request explanations** - Ask the AI to explain props or patterns you don't understand
+
+
+---
+
+<!-- Source: mcp/remote-setup.md -->
+# Flowbite-Svelte MCP Remote Setup
+
+
+## Remote Setup
+
+Currently, the Flowbite-Svelte MCP server is only available as a **local (stdio) installation**. There is no hosted remote endpoint available at this time.
+
+### Why Local Only?
+
+The Flowbite-Svelte MCP server is designed to run locally on your machine for several reasons:
+
+- **Privacy**: Your queries and usage patterns stay on your machine
+- **Performance**: No network latency for documentation lookups
+- **Offline Access**: Works without an internet connection
+- **Customization**: You can modify and extend the server for your needs
+
+### Using the Local Version
+
+Please refer to the [Local Setup](/docs/mcp/local-setup) guide to install and configure the Flowbite-Svelte MCP server on your machine.
+
+### Future Considerations
+
+If there's significant community interest in a hosted remote version, it may be considered for future development. For now, the local installation provides the best experience with full access to all Flowbite-Svelte component documentation.
 
 
 ---
@@ -30346,275 +30644,6 @@ Either using the above example or use button components to create your custom te
 meta={{hideOutput: true}}
 codeString={exampleRawModules['./examples/wysiwyg/CustomEditor.svelte']}
 />
-
-
----
-
-
-# ===== MCP =====
-
-<!-- Source: mcp/local-setup.md -->
-# Flowbite-Svelte MCP Local Setup
-
-
-## Local Setup
-
-The local (or stdio) version of the Flowbite-Svelte MCP server runs directly on your machine. You'll need to clone the repository and build it locally before configuring it with your MCP client.
-
-### Installation
-
-```bash
-git clone git@github.com:shinokada/flowbite-svelte-mcp.git
-cd flowbite-svelte-mcp
-pnpm install
-pnpm run copy:llm  # Fetch latest Flowbite-Svelte docs
-pnpm run build
-```
-
-### Configuration
-
-Here's how to set it up in common MCP clients:
-
-#### Claude Desktop
-
-1. In the Settings > Developer section, click on **Edit Config**
-2. This opens the folder containing `claude_desktop_config.json`
-3. Edit the file to include:
-
-```json
-{
-  "mcpServers": {
-    "flowbite-svelte": {
-      "command": "node",
-      "args": ["/absolute/path/to/flowbite-svelte-mcp/build/server.js"]
-    }
-  }
-}
-```
-
-**Important:** Replace `/absolute/path/to/` with the actual path where you cloned the repository.
-
-4. Restart Claude Desktop
-
-#### Testing
-
-After setup, test the installation by asking Claude:
-
-- "Search the flowbite-svelte docs for how to use an Accordion"
-- "What components are available in flowbite-svelte?"
-- "Show me how to use the Button component"
-
-### Troubleshooting
-
-**Tools not working:**
-1. Verify the path in your config is absolute and correct
-2. Ensure you ran `pnpm run build` after cloning
-3. Restart your MCP client after configuration changes
-4. Check the client's logs for error messages
-
-
----
-
-<!-- Source: mcp/overview.md -->
-# Flowbite-Svelte MCP Overview
-
-
-## Overview
-
-The Flowbite-Svelte MCP (__Model Context Protocol__) server can help your LLM or agent of choice write better Flowbite-Svelte code. It works by providing comprehensive component documentation, usage examples, and best practices for all Flowbite-Svelte components.
-
-## Usage
-
-To get the most out of the MCP server we recommend including the following prompt in your `AGENTS.md` (or `CLAUDE.md`, if using Claude Code. Or `GEMINI.md`, if using Gemini). Place this file in the __root of your project directory__ so it's automatically loaded by your AI coding assistant. This will tell the LLM which tools are available and when it's appropriate to use them.
-
-```md
-You are able to use the Flowbite-Svelte MCP server, where you have access to comprehensive Flowbite-Svelte component documentation. Here's how to use the available tools effectively:
-
-## Available MCP Tools:
-
-### 1. findComponent
-
-Use this FIRST to discover components by name or category. Returns component information including the documentation path.
-When asked about Flowbite-Svelte components, ALWAYS use this tool to locate the correct component before fetching documentation.
-Example queries: 'Button', 'CardPlaceholder', 'form checkbox'
-
-### 2. getComponentList
-
-Lists all available Flowbite-Svelte components with their categories.
-Use this to discover what components are available or to help users explore component options.
-
-### 3. getComponentDoc
-
-Retrieves full documentation content for a specific component. Accepts the component path found using findComponent.
-After calling findComponent, use this tool to fetch the complete documentation including usage examples, props, and best practices.
-
-### 4. searchDocs
-
-Performs full-text search across all Flowbite-Svelte documentation.
-Use this when you need to find specific information that might span multiple components or when the user asks about features or patterns.
-```
-
-## CLAUDE.md for Svelte and Flowbite-Svelte
-
-Use the following example for Svelte and Flowbite-Svelte:
-```md
-# Claude MCP Server Documentation
-
-This project uses multiple MCP servers to provide comprehensive documentation access.
-
-## Available MCP Servers
-
-### Svelte MCP Server
-
-You have access to comprehensive Svelte 5 and SvelteKit documentation. Here's how to use the available tools effectively:
-
-#### Available Tools:
-
-**1. list-sections**
-- Use this FIRST to discover all available documentation sections
-- Returns a structured list with titles, use_cases, and paths
-- When asked about Svelte or SvelteKit topics, ALWAYS use this tool at the start to find relevant sections
-
-**2. get-documentation**
-- Retrieves full documentation content for specific sections
-- Accepts single or multiple sections
-- After calling list-sections, you MUST analyze the returned documentation (especially the use_cases field) and then fetch ALL relevant sections for the user's task
-
-**3. svelte-autofixer**
-- Analyzes Svelte code and returns issues and suggestions
-- You MUST use this tool whenever writing Svelte code before sending it to the user
-- Keep calling it until no issues or suggestions are returned
-
-**4. playground-link**
-- Generates a Svelte Playground link with the provided code
-- After completing the code, ask the user if they want a playground link
-- NEVER call this if code was written to files in their project
-
-### Flowbite-Svelte MCP Server
-
-You have access to comprehensive Flowbite-Svelte component documentation. Here's how to use the available tools effectively:
-
-#### Available Tools:
-
-**1. findComponent**
-- Use this FIRST to discover components by name or category
-- Returns component information including the documentation path
-- When asked about Flowbite-Svelte components, ALWAYS use this tool to locate the correct component before fetching documentation
-- Example queries: 'Button', 'CardPlaceholder', 'form checkbox'
-
-**2. getComponentList**
-- Lists all available Flowbite-Svelte components with their categories
-- Use this to discover what components are available or to help users explore component options
-
-**3. getComponentDoc**
-- Retrieves full documentation content for a specific component
-- Accepts the component path found using findComponent
-- After calling findComponent, use this tool to fetch complete documentation including usage examples, props, and best practices
-
-**4. searchDocs**
-- Performs full-text search across all Flowbite-Svelte documentation
-- Use this when you need to find specific information that might span multiple components or when the user asks about features or patterns
-
-## Workflow Guidelines
-
-### When building Svelte components with Flowbite-Svelte:
-
-1. **Start with Svelte documentation**: Use `list-sections` to understand which Svelte concepts are needed
-2. **Fetch relevant Svelte docs**: Use `get-documentation` to get all necessary Svelte sections
-3. **Find Flowbite-Svelte components**: Use `findComponent` to locate the UI components needed
-4. **Get component details**: Use `getComponentDoc` to fetch usage examples and props
-5. **Write the code**: Combine Svelte patterns with Flowbite-Svelte components
-6. **Validate the code**: Use `svelte-autofixer` to check for issues
-7. **Offer playground**: Ask if the user wants a playground link (only if not writing to files)
-
-### Best Practices:
-
-- Always prioritize Svelte 5 runes and modern patterns
-- Use Flowbite-Svelte components for consistent UI design
-- Validate all code with svelte-autofixer before delivering
-- Keep documentation lookups efficient by fetching multiple sections at once
-```
-
----
-
-<!-- Source: mcp/prompts.md -->
-# Flowbite-Svelte MCP Prompts
-
-
-## Effective Prompts
-
-To get the most out of the Flowbite-Svelte MCP server, use clear, specific prompts that help the AI understand what you need.
-
-### Discovering Components
-
-**Good prompts:**
-- "What flowbite-svelte components are available for forms?"
-- "Show me all flowbite-svelte card-related components"
-- "Find flowbite-svelte components for navigation"
-
-**Why they work:** These prompts trigger the `findComponent` or `getComponentList` tools to search the component library.
-
-### Getting Documentation
-
-**Good prompts:**
-- "How do I use the flowbite-svelte Button component?"
-- "Show me the props for the flowbite-svelte Modal component"
-- "What events does the flowbite-svelte Dropdown component emit?"
-
-**Why they work:** After finding a component, these prompts fetch full documentation including usage examples, props, events, and slots.
-
-### Implementation Help
-
-**Good prompts:**
-- "Create a form with email and password inputs using flowbite-svelte"
-- "Build a responsive navbar with a dropdown menu using flowbite-svelte"
-- "Show me how to implement a data table with pagination using flowbite-svelte"
-
-**Why they work:** The AI can use component documentation to generate accurate, working code with proper imports and props.
-
-### Searching Documentation
-
-**Good prompts:**
-- "How do I customize colors in flowbite-svelte?"
-- "Search the flowbite-svelte docs for dark mode implementation"
-- "Find information about flowbite-svelte TypeScript types"
-
-**Why they work:** These use the `searchDocs` tool for full-text search across all documentation.
-
-### Best Practices
-
-1. **Be specific about components** - Use exact component names when possible
-2. **Ask for examples** - Request code examples to see components in action
-3. **Mention your framework version** - Specify if you're using Svelte 4 or 5
-4. **Request explanations** - Ask the AI to explain props or patterns you don't understand
-
-
----
-
-<!-- Source: mcp/remote-setup.md -->
-# Flowbite-Svelte MCP Remote Setup
-
-
-## Remote Setup
-
-Currently, the Flowbite-Svelte MCP server is only available as a **local (stdio) installation**. There is no hosted remote endpoint available at this time.
-
-### Why Local Only?
-
-The Flowbite-Svelte MCP server is designed to run locally on your machine for several reasons:
-
-- **Privacy**: Your queries and usage patterns stay on your machine
-- **Performance**: No network latency for documentation lookups
-- **Offline Access**: Works without an internet connection
-- **Customization**: You can modify and extend the server for your needs
-
-### Using the Local Version
-
-Please refer to the [Local Setup](/docs/mcp/local-setup) guide to install and configure the Flowbite-Svelte MCP server on your machine.
-
-### Future Considerations
-
-If there's significant community interest in a hosted remote version, it may be considered for future development. For now, the local installation provides the best experience with full access to all Flowbite-Svelte component documentation.
 
 
 ---

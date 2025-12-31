@@ -91,7 +91,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1059)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1067)
 ## Props
 @prop children
 @prop header
@@ -107,5 +107,6 @@
 @prop transitionParams
 @prop transition = fade
 @prop fullscreen = false
+@prop closeButtonProps
 @prop ...restProps
 -->

@@ -24,7 +24,7 @@ See [examples](/docs-examples/extend/clipboard-manager) and [code](https://githu
 
 #### Types
 
-[ClipboardManagerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2187)
+[ClipboardManagerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2197)
 
 #### Props
 
@@ -49,5 +49,5 @@ See [examples](/docs-examples/extend/clipboard-manager) and [code](https://githu
 - // If undefined
 - renders inline; if defined
 - renders as modal
-    badgeProps: { color: "blue", class: "text-xs"
+    badgeProps: { color: "brand", class: "text-xs"
 

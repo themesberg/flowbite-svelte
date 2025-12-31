@@ -407,7 +407,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TimepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L933)
+[TimepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L940)
 ## Props
 @prop id = "time"
 @prop endId = "end-time"
@@ -418,7 +418,7 @@
 @prop required = true
 @prop disabled = false
 @prop inputColor
-@prop buttonColor = "primary"
+@prop buttonColor = "brand"
 @prop Icon
 @prop iconClass = "h-5 w-5 text-gray-500 dark:text-gray-400"
 @prop type = "default"

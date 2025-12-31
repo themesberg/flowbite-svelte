@@ -189,7 +189,7 @@ This example can be used to copy and paste code inside a `<pre>` and `<code>` bl
             </code></pre>
     </div>
 
-    <Clipboard color={success ? "alternative" : "light"} bind:value bind:success size="sm" {onclick}>
+    <Clipboard color={success ? "success" : "danger"} bind:value bind:success size="sm" {onclick}>
       {#if success}
         <CheckOutline class="h-4 w-4" />
         <span class="text-fg-brand text-xs font-semibold">Copied</span>
@@ -281,7 +281,7 @@ Add a `Clipboard` to your `Textarea` using the `addon` snippet. The button appea
 <Textarea id="textarea-id" placeholder="Your message" rows={4} name="message" bind:value class="w-full">
   {#snippet addon()}
     {#if value.length > 0}
-      <Clipboard color={success ? "alternative" : "light"} bind:value bind:success size="sm" class="absolute end-2 top-2 h-8 w-32 px-2.5 font-medium focus:ring-0">
+      <Clipboard color={success ? "success" : "danger"} bind:value bind:success size="sm" class="absolute end-2 top-2 h-8 w-32 px-2.5 font-medium focus:ring-0">
         {#if success}
           <CheckOutline class="h-4 w-4" />
           <span class="text-fg-brand text-xs font-semibold">Copied</span>
@@ -382,7 +382,7 @@ Use this example to show an input field where you can copy the URL of the curren
 
 #### Types
 
-[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L523)
+[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L528)
 
 #### Props
 

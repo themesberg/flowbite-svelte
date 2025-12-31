@@ -328,7 +328,7 @@ This is an advanced example that you can use to show the details of an event and
   </Accordion>
 
   <div class="border-t border-gray-200 p-6 dark:border-gray-700">
-    <Button color="primary">Schedule Event</Button>
+    <Button>Schedule Event</Button>
   </div>
 </div>
 ```
@@ -394,8 +394,8 @@ Use this example to select a date and time inside of a modal component based on 
       <Timepicker type="inline-buttons" value={modalTimeSelection.time} {timeIntervals} onselect={handleModalTimeSelect} columns={3} />
     </div>
     <div class="flex items-center space-x-4">
-      <Button color="primary" class="w-full" onclick={handleSave}>Save</Button>
-      <Button color="alternative" class="w-full" onclick={() => (open = false)}>Discard</Button>
+      <Button class="w-full" onclick={handleSave}>Save</Button>
+      <Button color="danger" class="w-full" onclick={() => (open = false)}>Discard</Button>
     </div>
   </div>
 </Modal>
@@ -535,7 +535,7 @@ Use this example to show multiple time interval selections inside of a drawer co
               inputClass={timepickerClasses.inputClass}
               size="sm"
             />
-            <Button color="red" size="xs" pill={true} onclick={() => removeInterval(index)} class="shrink-0 p-2 hover:bg-red-600">
+            <Button color="danger" size="xs" pill={true} onclick={() => removeInterval(index)} class="shrink-0 p-2 hover:bg-red-600">
               <TrashBinSolid class="h-2 w-2 sm:h-3 sm:w-3" />
             </Button>
           </div>
@@ -549,8 +549,8 @@ Use this example to show multiple time interval selections inside of a drawer co
     </Button>
 
     <div class="flex gap-4">
-      <Button class="w-1/2" color="alternative" onclick={() => (open = false)}>Cancel</Button>
-      <Button type="submit" class="w-1/2" color="primary">Save Changes</Button>
+      <Button class="w-1/2" onclick={() => (open = false)}>Cancel</Button>
+      <Button type="submit" class="w-1/2" color="success">Save Changes</Button>
     </div>
   </form>
 </Drawer>

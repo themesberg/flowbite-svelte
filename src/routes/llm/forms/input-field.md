@@ -438,7 +438,7 @@ This example can be used to add a descriptive icon or additional text inside the
   <ButtonGroup class="w-full">
     <InputAddon>@</InputAddon>
     <Input id="input-addon-button" type="email" placeholder="john.doe@mail.com" />
-    <Button color="primary">Search</Button>
+    <Button>Search</Button>
   </ButtonGroup>
 </div>
 
@@ -446,12 +446,12 @@ This example can be used to add a descriptive icon or additional text inside the
   <Label for="input-addon-crazy" class="mb-2">Crazy example</Label>
   <ButtonGroup class="w-full">
     <InputAddon><Checkbox /></InputAddon>
-    <Button color="primary">Search</Button>
+    <Button>Search</Button>
     <InputAddon>http://</InputAddon>
     <Input id="input-addon-crazy" type="email" placeholder="john.doe@mail.com" />
     <InputAddon>@</InputAddon>
     <InputAddon><Checkbox /></InputAddon>
-    <Button color="blue">Send</Button>
+    <Button color="success">Send</Button>
     <InputAddon>kg</InputAddon>
   </ButtonGroup>
 </div>
@@ -585,7 +585,7 @@ Use this example to show a dropdown menu right next to the input field.
     <DropdownItem>Finance</DropdownItem>
   </Dropdown>
   <Input placeholder="Search" />
-  <Button color="primary" class="p-2.5!" type="submit">
+  <Button class="p-2.5!" type="submit">
     <SearchOutline class="h-5 w-5" />
   </Button>
 </ButtonGroup>

@@ -57,7 +57,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[CloseButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L146)
+[CloseButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L156)
 ## Props
 @prop children
 @prop color = "gray"
@@ -66,6 +66,6 @@
 @prop ariaLabel
 @prop size = "md"
 @prop class: className
-@prop svgClass
+@prop classes
 @prop ...restProps
 -->

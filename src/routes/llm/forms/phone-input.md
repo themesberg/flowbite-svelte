@@ -337,13 +337,19 @@ The PhoneInput component provides customizable styling through six distinct clas
 
 #### Types
 
-[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L823)
+[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L828)
 
 #### Props
 
 - children
 - phoneIcon: true
-- pattern: "[0-9]{3
+- pattern
+- phoneType: "default"
+- floatingLabel: "Phone number"
+- labelFor: "floating-phone-number"
+- class: className
+- classes
+- value: $bindable("")
 
 
 ## References

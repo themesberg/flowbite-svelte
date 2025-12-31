@@ -49,21 +49,21 @@ The Speed Dial components accommodate color options ("red" | "lime" | "green" | 
 </script>
 
 <div class="grid w-fit grid-cols-8 gap-x-6 gap-y-18">
-  <SpeedDialTrigger color="red" />
+  <SpeedDialTrigger />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
 
-  <SpeedDialTrigger color="purple" />
+  <SpeedDialTrigger color="success" />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
 
-  <SpeedDialTrigger color="light" />
+  <SpeedDialTrigger color="warning" />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
@@ -76,25 +76,7 @@ The Speed Dial components accommodate color options ("red" | "lime" | "green" | 
     </SpeedDialButton>
   </SpeedDial>
 
-  <SpeedDialTrigger color="red" />
-  <SpeedDial>
-    <SpeedDialButton name="Share">
-      <ShareNodesSolid class="h-6 w-6" />
-    </SpeedDialButton>
-  </SpeedDial>
-  <SpeedDialTrigger color="green" />
-  <SpeedDial>
-    <SpeedDialButton name="Share">
-      <ShareNodesSolid class="h-6 w-6" />
-    </SpeedDialButton>
-  </SpeedDial>
-  <SpeedDialTrigger color="yellow" />
-  <SpeedDial>
-    <SpeedDialButton name="Share">
-      <ShareNodesSolid class="h-6 w-6" />
-    </SpeedDialButton>
-  </SpeedDial>
-  <SpeedDialTrigger color="blue" />
+  <SpeedDialTrigger color="danger" />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
@@ -126,25 +108,25 @@ The Speed Dial components accommodate color options ("red" | "lime" | "green" | 
     </SpeedDialButton>
   </SpeedDial>
 
-  <SpeedDialTrigger color="green" outline />
+  <SpeedDialTrigger outline />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
-  <SpeedDialTrigger color="red" outline />
+  <SpeedDialTrigger color="success" outline />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
-  <SpeedDialTrigger color="blue" outline />
+  <SpeedDialTrigger color="warning" outline />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
     </SpeedDialButton>
   </SpeedDial>
-  <SpeedDialTrigger color="purple" outline />
+  <SpeedDialTrigger color="danger" outline />
   <SpeedDial>
     <SpeedDialButton name="Share">
       <ShareNodesSolid class="h-6 w-6" />
@@ -582,7 +564,7 @@ You can change the main button to any element you want.
   import { ShareNodesSolid, PrinterSolid, DownloadSolid, FileCopySolid } from "flowbite-svelte-icons";
 </script>
 
-<Button color="green" class="absolute end-6 bottom-6 py-0">
+<Button color="success" class="absolute end-6 bottom-6 py-0">
   <Rating total={1} rating={0.5} size={48} /> Rating
 </Button>
 <SpeedDial placement="top-end">
@@ -607,7 +589,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1449)
+[SpeedDialProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1458)
 
 #### Props
 
@@ -625,13 +607,13 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1463)
+[SpeedDialButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1472)
 
 #### Props
 
 - children
 - name: ""
-- color: "light"
+- color: "brand"
 - tooltip: _tooltip
 - pill: context?.pill ?? true
 - textOutside: context?.textOutside ?? false
@@ -642,7 +624,7 @@ You can change the main button to any element you want.
 
 #### Types
 
-[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1447)
+[SpeedDialTriggerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1456)
 
 #### Props
 

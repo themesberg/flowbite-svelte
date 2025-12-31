@@ -224,17 +224,15 @@ You can use the property `inline` as the alternative.
 ```svelte
 <script lang="ts">
   import { Radio } from "flowbite-svelte";
-  let colors = $state("text-purple-500");
+  let colors = $state("bg-brand");
 </script>
 
-<p class="mb-4 font-semibold {colors}">Select color</p>
+<p class="mb-4 p-2 font-semibold text-white {colors}">Select color</p>
 <div class="flex gap-4">
-  <Radio bind:group={colors} color="danger" value="text-red-500">Red</Radio>
-  <Radio bind:group={colors} color="success" value="text-green-500">Green</Radio>
-  <Radio bind:group={colors} color="purple" value="text-purple-500">Purple</Radio>
-  <Radio bind:group={colors} color="teal" value="text-teal-500">Teal</Radio>
-  <Radio bind:group={colors} color="warning" value="text-yellow-500">Yellow</Radio>
-  <Radio bind:group={colors} color="warning" value="text-orange-500">Orange</Radio>
+  <Radio bind:group={colors} color="brand" value="fg-brand">Brand</Radio>
+  <Radio bind:group={colors} color="success" value="fg-success">Success</Radio>
+  <Radio bind:group={colors} color="warning" value="fg-warning">Warning</Radio>
+  <Radio bind:group={colors} color="danger" value="fg-danger">Danger</Radio>
 </div>
 ```
 
@@ -296,9 +294,9 @@ This component accepts all props from the [Button](/docs/components/buttons) for
 </div>
 
 <ButtonGroup>
-  <RadioButton color="green" outline value="notes" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
-  <RadioButton color="green" outline value="numbers" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
-  <RadioButton color="green" outline value="bullets" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
+  <RadioButton color="success" outline value="notes" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><ListMusicSolid class="h-7 w-7" /></RadioButton>
+  <RadioButton color="success" outline value="numbers" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><OrderedListOutline class="h-7 w-7" /></RadioButton>
+  <RadioButton color="success" outline value="bullets" checkedClass="outline-4 outline-green-500" bind:group={radioGroup}><ListOutline class="h-7 w-7" /></RadioButton>
 </ButtonGroup>
 
 <p>List style: {radioGroup}</p>
@@ -315,8 +313,8 @@ Use `color` and `checkedClass` props to style the checked state:
 </script>
 
 <ButtonGroup>
-  <RadioButton color="amber" outline checkedClass="outline-4 outline-amber-500" name="options" value="Option 1" bind:group={options}>Option 1</RadioButton>
-  <RadioButton color="blue" outline checkedClass="outline-4 outline-blue-500" name="options" value="Option 2" bind:group={options}>Option 2</RadioButton>
+  <RadioButton outline checkedClass="outline-4 outline-amber-500" name="options" value="Option 1" bind:group={options}>Option 1</RadioButton>
+  <RadioButton color="success" outline checkedClass="outline-4 outline-blue-500" name="options" value="Option 2" bind:group={options}>Option 2</RadioButton>
 </ButtonGroup>
 ```
 
@@ -326,7 +324,7 @@ Use `color` and `checkedClass` props to style the checked state:
 
 #### Types
 
-[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L839)
+[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L845)
 
 #### Props
 

@@ -2,7 +2,7 @@
   "name": "VirtualList",
   "type": {
     "name": "VirtualListProps<T>",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2002"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2012"
   },
   "props": [
     ["items", "[]"],

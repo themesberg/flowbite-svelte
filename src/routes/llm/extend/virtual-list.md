@@ -267,7 +267,7 @@ Add checkboxes, buttons, and other interactive elements to virtual list items.
       {selectedCount} of {items.length} completed
     </span>
     {#if selectedCount > 0}
-      <Button size="xs" color="red" onclick={clearCompleted}>Clear Completed</Button>
+      <Button size="xs" onclick={clearCompleted}>Clear Completed</Button>
     {/if}
   </div>
 
@@ -279,7 +279,7 @@ Add checkboxes, buttons, and other interactive elements to virtual list items.
         <span class="flex-1 {task.completed ? 'text-gray-400 line-through' : 'text-gray-900 dark:text-white'}">
           {task.text}
         </span>
-        <Button size="xs" color="red" class="!p-2" onclick={() => deleteItem(task.id)}>
+        <Button size="xs" class="!p-2" onclick={() => deleteItem(task.id)}>
           <TrashBinSolid class="h-3 w-3" />
         </Button>
       </div>
@@ -329,7 +329,7 @@ Demonstrates smooth scrolling and rendering performance with 100,000 items.
 
 <div class="space-y-4">
   <div class="flex items-center gap-4 text-sm">
-    <Badge large color="blue">
+    <Badge large>
       {ITEM_COUNT.toLocaleString()} items
     </Badge>
     {#if renderTime > 0}
@@ -445,7 +445,7 @@ Enable with `<VirtualList contained …>` or override via `classes.item`.
 
 #### Types
 
-[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2002)
+[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2012)
 
 #### Props
 

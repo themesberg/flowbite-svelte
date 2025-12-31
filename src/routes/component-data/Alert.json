@@ -2,7 +2,7 @@
   "name": "Alert",
   "type": {
     "name": "AlertProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L225"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L235"
   },
   "props": [
     ["children", ""],
@@ -10,7 +10,6 @@
     ["alertStatus", "$bindable(true)"],
     ["closeIcon: CloseIcon", ""],
     ["color", "\"brand\""],
-    ["closeColor", ""],
     ["rounded", "true"],
     ["border", ""],
     ["class: className", ""],
@@ -18,6 +17,7 @@
     ["transition", "fade"],
     ["params", ""],
     ["listContent", ""],
-    ["borderAccent", ""]
+    ["borderAccent", ""],
+    ["closeButtonProps", ""]
   ]
 }

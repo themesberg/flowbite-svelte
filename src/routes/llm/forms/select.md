@@ -408,7 +408,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 #### Types
 
-[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L881)
+[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L887)
 
 #### Props
 
@@ -421,11 +421,11 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 - disabled
 - placeholder: "Choose option ..."
 - clearable
-- clearableColor: "none"
 - clearableOnClick
 - onClear
 - class: className
 - classes
+- closeButtonProps
 
 
 ## References

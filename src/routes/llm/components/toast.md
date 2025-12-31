@@ -133,10 +133,10 @@ Use the following example with `ToastContainer` to stack toasts vertically on th
       <P class="mb-8">Click the buttons below to trigger toast notifications. Each toast will appear in the top-right corner and automatically dismiss after 5 seconds.</P>
       <div class="space-y-4">
         <div class="grid grid-cols-2 gap-3">
-          <Button onclick={() => addToast("green")} color="green">Success Toast</Button>
-          <Button onclick={() => addToast("blue")} color="blue">Info Toast</Button>
-          <Button onclick={() => addToast("yellow")} color="yellow">Warning Toast</Button>
-          <Button onclick={() => addToast("red")} color="red">Error Toast</Button>
+          <Button onclick={() => addToast("green")} color="success">Success Toast</Button>
+          <Button onclick={() => addToast("blue")}>Info Toast</Button>
+          <Button onclick={() => addToast("yellow")} color="warning">Warning Toast</Button>
+          <Button onclick={() => addToast("red")} color="danger">Error Toast</Button>
         </div>
         <Button onclick={() => addToast()} color="dark" class="w-full">Random Toast</Button>
       </div>
@@ -505,7 +505,7 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 
 #### Types
 
-[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1795)
+[ToastProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1804)
 
 #### Props
 
@@ -520,12 +520,13 @@ The Toast component extends `HTMLAttributes<HTMLDivElement>`, allowing you to us
 - transition: fly
 - class: className
 - classes
+- closeButtonProps
 
 ### ToastContainer
 
 #### Types
 
-[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1808)
+[ToastContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1818)
 
 #### Props
 

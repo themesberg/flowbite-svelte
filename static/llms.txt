@@ -7,6 +7,7 @@ llms: markdown
 # Main documentation sections
 /docs: https://flowbite-svelte.com/llm/components/accordion.md
 /docs: https://flowbite-svelte.com/llm/components/alert.md
+/docs: https://flowbite-svelte.com/llm/components/anatomy/README.md
 /docs: https://flowbite-svelte.com/llm/components/avatar.md
 /docs: https://flowbite-svelte.com/llm/components/badge.md
 /docs: https://flowbite-svelte.com/llm/components/banner.md

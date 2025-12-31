@@ -200,7 +200,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DialogProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L623)
+[DialogProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L627)
 ## Props
 @prop children
 @prop onaction = ()
@@ -219,5 +219,6 @@
 @prop classes
 @prop transition = fade
 @prop transitionParams
+@prop closeButtonProps
 @prop ...restProps
 -->

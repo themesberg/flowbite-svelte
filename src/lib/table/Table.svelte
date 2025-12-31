@@ -57,7 +57,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1631)
+[TableProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1640)
 ## Props
 @prop children
 @prop footerSlot

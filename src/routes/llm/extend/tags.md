@@ -113,7 +113,7 @@ Use `disabled` to the `Tags` component.
 
 #### Types
 
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L911)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L918)
 
 #### Props
 
@@ -121,7 +121,6 @@ Use `disabled` to the `Tags` component.
 - placeholder: "Enter tags"
 - class: className
 - classes
-- closeBtnSize: "xs"
 - unique: false
 - availableTags: []
 - showHelper: false

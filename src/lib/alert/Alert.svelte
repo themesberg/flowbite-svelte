@@ -99,14 +99,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L225)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L235)
 ## Props
 @prop children
 @prop icon
 @prop alertStatus = $bindable(true)
 @prop closeIcon: CloseIcon
 @prop color = "brand"
-@prop closeColor
 @prop rounded = true
 @prop border
 @prop class: className
@@ -115,5 +114,6 @@
 @prop params
 @prop listContent
 @prop borderAccent
+@prop closeButtonProps
 @prop ...restProps
 -->

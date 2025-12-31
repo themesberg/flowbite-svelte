@@ -34,12 +34,6 @@ Choose colors that align with user expectations and provide clear visual hierarc
 <Button color="warning">Warning</Button>
 <Button color="transparent">Transparent</Button>
 <Button color="dark">Dark</Button>
-<Button color="light">Light</Button>
-<Button color="blue">Blue</Button>
-<Button color="green">Green</Button>
-<Button color="red">Red</Button>
-<Button color="yellow">Yellow</Button>
-<Button color="purple">Purple</Button>
 ```
 
 ## Button with link
@@ -73,12 +67,6 @@ Pill buttons work especially well in modern web apps, social platforms, and cons
 <Button color="warning" pill>Warning</Button>
 <Button color="transparent" pill>Transparent</Button>
 <Button color="dark" pill>Dark</Button>
-<Button color="light" pill>Light</Button>
-<Button color="blue" pill>Blue</Button>
-<Button color="green" pill>Green</Button>
-<Button color="red" pill>Red</Button>
-<Button color="yellow" pill>Yellow</Button>
-<Button color="purple" pill>Purple</Button>
 ```
 
 ## Shadow
@@ -96,12 +84,6 @@ Pill buttons work especially well in modern web apps, social platforms, and cons
 <Button color="warning" shadow>Warning</Button>
 <Button color="transparent" shadow>Transparent</Button>
 <Button color="dark" shadow>Dark</Button>
-<Button color="light" shadow>Light</Button>
-<Button color="blue" shadow>Blue</Button>
-<Button color="green" shadow>Green</Button>
-<Button color="red" shadow>Red</Button>
-<Button color="yellow" shadow>Yellow</Button>
-<Button color="purple" shadow>Purple</Button>
 ```
 
 ## Gradient monochrome
@@ -206,12 +188,6 @@ Outline buttons provide clear hierarchy while maintaining a clean, uncluttered i
 <Button color="warning" outline>Warning</Button>
 <Button color="transparent" outline>Transparent</Button>
 <Button color="dark" outline>Dark</Button>
-<Button color="light" outline>Light</Button>
-<Button color="blue" outline>Blue</Button>
-<Button color="green" outline>Green</Button>
-<Button color="red" outline>Red</Button>
-<Button color="yellow" outline>Yellow</Button>
-<Button color="purple" outline>Purple</Button>
 ```
 
 ## Button sizes with icons
@@ -395,7 +371,7 @@ The Button component follows accessibility best practices:
 
 #### Types
 
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L329)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L334)
 
 #### Props
 
@@ -414,7 +390,7 @@ The Button component follows accessibility best practices:
 
 #### Types
 
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L339)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L344)
 
 #### Props
 

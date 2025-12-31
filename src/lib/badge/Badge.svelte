@@ -88,7 +88,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L251)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L261)
 ## Props
 @prop children
 @prop icon
@@ -104,6 +104,6 @@
 @prop rounded
 @prop transition = fade
 @prop params
-@prop closeBtnColor = "gray"
+@prop closeButtonProps
 @prop ...restProps
 -->

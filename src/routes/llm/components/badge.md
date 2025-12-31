@@ -30,8 +30,6 @@ Use the following badge elements to indicate counts or labels inside or outside 
 <Badge color="danger">Danger</Badge>
 <Badge color="success">Success</Badge>
 <Badge color="warning">Warning</Badge>
-<Badge color="purple">Purple</Badge>
-<Badge color="pink">Pink</Badge>
 ```
 
 ## Large badges
@@ -49,8 +47,6 @@ Use the `large` prop to create a large variant of the badges.
 <Badge large color="danger">Danger</Badge>
 <Badge large color="success">Success</Badge>
 <Badge large color="warning">Warning</Badge>
-<Badge large color="purple">Purple</Badge>
-<Badge large color="pink">Pink</Badge>
 ```
 
 ## Bordered badge
@@ -69,8 +65,6 @@ Use the `border` prop to add a border accent to the badge component.
   <Badge border color="danger">Danger</Badge>
   <Badge border color="success">Success</Badge>
   <Badge border color="warning">Warning</Badge>
-  <Badge border color="purple">Purple</Badge>
-  <Badge border color="pink">Pink</Badge>
 </div>
 <div class="flex flex-wrap gap-2">
   <Badge border large>Brand</Badge>
@@ -79,8 +73,6 @@ Use the `border` prop to add a border accent to the badge component.
   <Badge border large color="danger">Danger</Badge>
   <Badge border large color="success">Success</Badge>
   <Badge border large color="warning">Warning</Badge>
-  <Badge border large color="purple">Purple</Badge>
-  <Badge border large color="pink">Pink</Badge>
 </div>
 ```
 
@@ -99,8 +91,6 @@ Use the `rounded` prop to make the corners even more rounded like pills for the 
 <Badge rounded color="danger">Danger</Badge>
 <Badge rounded color="success">Success</Badge>
 <Badge rounded color="warning">Warning</Badge>
-<Badge rounded color="purple">Purple</Badge>
-<Badge rounded color="pink">Pink</Badge>
 ```
 
 ## Badges as links
@@ -219,8 +209,6 @@ Use the `dismissable` prop to dismiss the current badge.
 <Badge dismissable border color="danger">Danger</Badge>
 <Badge dismissable border color="success">Success</Badge>
 <Badge dismissable border color="warning">Warning</Badge>
-<Badge dismissable border color="purple">Purple</Badge>
-<Badge dismissable border color="pink">Pink</Badge>
 ```
 
 Use the `icon` snippet to add your desired custom close button icon.
@@ -294,7 +282,7 @@ This example demonstrates badges with transition effects, creating a smooth anim
 </script>
 
 <Button onclick={openBadge}>Open badge</Button>
-<Badge class="ml-4" color="blue" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
+<Badge class="ml-4" dismissable large bind:badgeStatus={openBadgeStatus}>Default</Badge>
 ```
 
 ## Persistent Dismissible Badge with Reset (localStorage)
@@ -369,7 +357,7 @@ The Badge component follows accessibility best practices:
 
 #### Types
 
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L251)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L261)
 
 #### Props
 
@@ -387,7 +375,7 @@ The Badge component follows accessibility best practices:
 - rounded
 - transition: fade
 - params
-- closeBtnColor: "gray"
+- closeButtonProps
 
 
 ## References

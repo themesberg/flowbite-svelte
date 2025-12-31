@@ -2,7 +2,7 @@
   "name": "ClipboardManager",
   "type": {
     "name": "ClipboardManagerProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2187"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2197"
   },
   "props": [
     ["items: initialItems", "[]"],
@@ -25,6 +25,6 @@
     ["open", "$bindable()"],
     ["// If undefined", ""],
     ["renders inline; if defined", ""],
-    ["renders as modal\n    badgeProps", "{ color: \"blue\", class: \"text-xs\""]
+    ["renders as modal\n    badgeProps", "{ color: \"brand\", class: \"text-xs\""]
   ]
 }

@@ -87,7 +87,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L962)
+[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L969)
 ## Props
 @prop header
 @prop footer
@@ -98,7 +98,7 @@
 @prop class: className
 @prop classes
 @prop clearable
-@prop clearableColor = "none"
 @prop clearableOnClick
+@prop closeButtonProps
 @prop ...restProps
 -->

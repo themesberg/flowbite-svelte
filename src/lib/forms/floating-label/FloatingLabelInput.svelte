@@ -217,7 +217,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[FloatingLabelInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L770)
+[FloatingLabelInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L775)
 ## Props
 @prop children
 @prop id = idGenerator()
@@ -231,11 +231,11 @@
 @prop class: className
 @prop classes
 @prop clearable
-@prop clearableColor = "none"
 @prop clearableOnClick
 @prop data = []
 @prop maxSuggestions = 5
 @prop onSelect
 @prop placeholder
+@prop closeButtonProps
 @prop ...restProps
 -->

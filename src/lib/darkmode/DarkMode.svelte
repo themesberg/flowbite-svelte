@@ -75,12 +75,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L532)
+[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L537)
 ## Props
 @prop class: className
 @prop lightIcon
 @prop darkIcon
 @prop size = "sm"
 @prop ariaLabel = "Dark mode"
+@prop classes
 @prop ...restProps
 -->

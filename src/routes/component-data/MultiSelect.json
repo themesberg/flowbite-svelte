@@ -2,7 +2,7 @@
   "name": "MultiSelect",
   "type": {
     "name": "MultiSelectProps<T>",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L894"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L900"
   },
   "props": [
     ["children", ""],
@@ -18,6 +18,7 @@
     ["// Extract select-specific props\n    name", ""],
     ["form", ""],
     ["required", ""],
-    ["autocomplete", ""]
+    ["autocomplete", ""],
+    ["closeButtonProps", ""]
   ]
 }

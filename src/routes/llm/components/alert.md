@@ -43,7 +43,11 @@ Use semantic color variants to convey meaning:
   Change a few things up and try submitting again.
 </Alert>
 <Alert color="gray">
-  <span class="font-medium">Dark alert!</span>
+  <span class="font-medium">Gray alert!</span>
+  Change a few things up and try submitting again.
+</Alert>
+<Alert color="alternative">
+  <span class="font-medium">Alternative alert!</span>
   Change a few things up and try submitting again.
 </Alert>
 ```
@@ -115,7 +119,7 @@ Add border accents for a more subtle appearance while maintaining visual distinc
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert border color="dark">
+<Alert border color="gray">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Dark alert!</span>
   Change a few things up and try submitting again.
@@ -264,7 +268,7 @@ Include expandable content for help text, detailed explanations, or rich content
   <p class="mt-2 mb-4 text-sm">
     More info about this success alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
   </p>
-  <Button size="xs" color="green"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
+  <Button size="xs" color="success"><EyeSolid class="me-2 h-4 w-4" />View more</Button>
 </Alert>
 ```
 
@@ -295,15 +299,15 @@ Use the `class` prop with `color="none"` to create fully custom-styled alerts. T
   With border styling.
 </Alert>
 
-<!-- Dismissable with color="none" for full custom control -->
-<Alert dismissable color="none" closeColor="none" class="bg-indigo-100 text-indigo-900 dark:bg-indigo-900 dark:text-indigo-100">
+<!-- Dismissable for full custom control -->
+<Alert dismissable class="bg-indigo-100 text-indigo-900 dark:bg-indigo-900 dark:text-indigo-100">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Custom dismissable!</span>
   Use color="none" and closeColor="none" for full control.
 </Alert>
 
 <!-- Dismissable with predefined closeColor -->
-<Alert dismissable color="none" closeColor="danger" class="bg-pink-100 text-pink-900 dark:bg-pink-900 dark:text-pink-100">
+<Alert dismissable closeButtonProps={{ color: "danger" }} class="bg-pink-100 text-pink-900 dark:bg-pink-900 dark:text-pink-100">
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
   <span class="font-medium">Custom alert with danger close button!</span>
   Mix custom colors with predefined closeColor.
@@ -361,7 +365,7 @@ Handle dismissal interactions with the `onclick` event to track dismissals, save
 
 #### Types
 
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L225)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L235)
 
 #### Props
 
@@ -370,7 +374,6 @@ Handle dismissal interactions with the `onclick` event to track dismissals, save
 - alertStatus: $bindable(true)
 - closeIcon: CloseIcon
 - color: "brand"
-- closeColor
 - rounded: true
 - border
 - class: className
@@ -379,6 +382,7 @@ Handle dismissal interactions with the `onclick` event to track dismissals, save
 - params
 - listContent
 - borderAccent
+- closeButtonProps
 
 
 ## References

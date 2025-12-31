@@ -68,7 +68,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[SearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L864)
+[SearchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L870)
 ## Props
 @prop children
 @prop size
@@ -76,9 +76,9 @@
 @prop value = $bindable()
 @prop elementRef = $bindable()
 @prop clearable = false
-@prop clearableColor = "none"
 @prop clearableOnClick
 @prop class: className
 @prop classes
+@prop closeButtonProps
 @prop ...restProps
 -->

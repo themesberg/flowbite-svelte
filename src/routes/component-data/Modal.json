@@ -2,7 +2,7 @@
   "name": "Modal",
   "type": {
     "name": "ModalProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1059"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1067"
   },
   "props": [
     ["children", ""],
@@ -18,6 +18,7 @@
     ["classes", ""],
     ["transitionParams", ""],
     ["transition", "fade"],
-    ["fullscreen", "false"]
+    ["fullscreen", "false"],
+    ["closeButtonProps", ""]
   ]
 }

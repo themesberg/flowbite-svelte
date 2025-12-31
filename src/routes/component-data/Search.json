@@ -2,7 +2,7 @@
   "name": "Search",
   "type": {
     "name": "SearchProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L864"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L870"
   },
   "props": [
     ["children", ""],
@@ -11,9 +11,9 @@
     ["value", "$bindable()"],
     ["elementRef", "$bindable()"],
     ["clearable", "false"],
-    ["clearableColor", "\"none\""],
     ["clearableOnClick", ""],
     ["class: className", ""],
-    ["classes", ""]
+    ["classes", ""],
+    ["closeButtonProps", ""]
   ]
 }

@@ -196,7 +196,7 @@ Here's a complete example of using the step indicator with a multi-step form. Us
       {#if currentStep < 4}
         <Button type="submit">Next</Button>
       {:else if currentStep === 4}
-        <Button type="submit" color="green">Complete</Button>
+        <Button type="submit" color="success">Complete</Button>
       {/if}
     </div>
   </form>
@@ -314,7 +314,7 @@ Use the `color` prop to change the color of a step indicator.
 
 #### Types
 
-[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1481)
+[StepIndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1490)
 
 #### Props
 

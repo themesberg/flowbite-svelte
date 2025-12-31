@@ -42,7 +42,7 @@ Enable date range selection using the `range` prop. The start and end dates are 
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker range bind:rangeFrom={dateRange.from} bind:rangeTo={dateRange.to} color="blue" />
+  <Datepicker range bind:rangeFrom={dateRange.from} bind:rangeTo={dateRange.to} color="success" />
   <P class="mt-4">
     Selected range:
     {dateRange.from ? dateRange.from.toLocaleDateString() : "None"} -
@@ -80,11 +80,7 @@ The `classes` prop has the following `class` for disposal: `base`, `input`, `tit
 </script>
 
 <div class="mb-64 md:w-1/2">
-  <Datepicker
-    color="blue"
-    classes={{ polite: "hover:text-blue-700!", dayButton: "hover:text-blue-400", titleVariant: "text-blue-800", monthButton: "text-blue-700" }}
-    title="Select your preferred date"
-  />
+  <Datepicker color="success" classes={{ label: "hover:text-blue-700!", dayButton: "hover:text-blue-400", title: "text-blue-800", monthButton: "text-blue-700" }} title="Select your preferred date" />
 </div>
 ```
 
@@ -396,7 +392,7 @@ explicabo minus.
 
 #### Types
 
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L549)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L554)
 
 #### Props
 

@@ -67,21 +67,21 @@ Choose color combinations that maintain sufficient contrast and clearly communic
 <div class="text-gray-900 dark:text-gray-100">
   <div class="py-4">Pills</div>
   <ButtonGroup class="space-x-px">
-    <Button pill color="purple">Profile</Button>
-    <Button pill color="purple">Settings</Button>
-    <Button pill color="purple">Messages</Button>
+    <Button pill>Profile</Button>
+    <Button pill>Settings</Button>
+    <Button pill>Messages</Button>
   </ButtonGroup>
   <div class="py-4">Standard buttons</div>
   <ButtonGroup>
-    <Button color="red">Profile</Button>
-    <Button color="green">Settings</Button>
-    <Button color="yellow">Messages</Button>
+    <Button color="danger">Profile</Button>
+    <Button color="success">Settings</Button>
+    <Button color="warning">Messages</Button>
   </ButtonGroup>
   <div class="py-4">Outline</div>
   <ButtonGroup>
-    <Button outline color="red">Profile</Button>
-    <Button outline color="green">Settings</Button>
-    <Button outline color="yellow">Messages</Button>
+    <Button outline color="danger">Profile</Button>
+    <Button outline color="success">Settings</Button>
+    <Button outline color="warning">Messages</Button>
   </ButtonGroup>
   <div class="py-4">Gradient with shadows</div>
   <ButtonGroup>
@@ -242,7 +242,7 @@ The Button Group component follows accessibility best practices:
 
 #### Types
 
-[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L319)
+[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L324)
 
 #### Props
 
