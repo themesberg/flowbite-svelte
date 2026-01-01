@@ -267,8 +267,6 @@
       isOpen = false;
     }
   }
-
-  // data-scope: Popper should expose structural roles, not semantic meaning. Only the parent component should have data-scope.
 </script>
 
 <div data-part="positioner" {@attach set_triggers} hidden></div>
@@ -316,7 +314,7 @@
 @prop reference
 @prop middlewares = [dom.flip(), dom.shift()]
 @prop class: className = ""
-@prop arrowClass = ""
+@prop arrowClass
 @prop isOpen = $bindable(false)
 @prop transitionParams
 @prop transition = fade

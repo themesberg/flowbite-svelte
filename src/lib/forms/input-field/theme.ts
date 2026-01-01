@@ -8,13 +8,13 @@ export const input = tv({
   slots: {
     base: "relative w-full",
     input: "text-heading text-sm focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body",
-    left: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 pointer-events-none start-0 p-2.5",
-    right: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 end-0 p-2.5",
-    close: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black",
-    combo: "absolute top-full right-0 left-0 z-20 mt-1 max-h-60 overflow-y-auto rounded-md border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800",
-    comboItem: "text-gray-900 dark:text-gray-50",
-    div: "",
-    svg: ""
+    leftAddon: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 pointer-events-none start-0 p-2.5",
+    rightAddon: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 end-0 p-2.5",
+    closeButton: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black",
+    comboList: "absolute top-full right-0 left-0 z-20 mt-1 max-h-60 overflow-y-auto rounded-md border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800",
+    option: "text-gray-900 dark:text-gray-50",
+    wrapper: "",
+    closeIcon: ""
   },
   variants: {
     size: {

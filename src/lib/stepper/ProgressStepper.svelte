@@ -33,7 +33,7 @@
 
   const theme = $derived(getTheme("progressStepper"));
 
-  const { base, item, circle, line, progressLine } = $derived(progressStepper());
+  const { base, item, circle, line, progress } = $derived(progressStepper());
 
   // Handle step click
   function handleStepClick(stepIndex: number) {
@@ -81,7 +81,7 @@
   <div class={line({ class: clsx(theme?.line, classes?.line) })} style="left: {lineStart}; width: {lineWidth}" aria-hidden="true" data-part="line"></div>
 
   <!-- Progress line (colored, overlays the background) -->
-  <div class={progressLine({ class: clsx(theme?.progressLine, classes?.progressLine) })} style="left: {lineStart}; width: {progressWidth}" aria-hidden="true" data-part="progress-line"></div>
+  <div class={progress({ class: clsx(theme?.progress, classes?.progress) })} style="left: {lineStart}; width: {progressWidth}" aria-hidden="true" data-part="progress-line"></div>
 
   {#each steps as step, index (step.id)}
     {@const status = step.status ?? getStepStatus(index)}

@@ -9,9 +9,9 @@ export const floatingLabelInput = tv({
     base: "relative",
     input: "block w-full text-sm text-heading bg-transparent appearance-none focus:outline-none focus:ring-0 peer",
     label: "absolute text-sm items-center duration-300 z-10 origin-[0] rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto",
-    close: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black",
-    combo: "absolute top-full right-0 left-0 z-10 mt-1 max-h-60 overflow-y-auto rounded-base border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800",
-    svg: "w-4 h-4 me-1.5"
+    closeButton: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black",
+    comboList: "absolute top-full right-0 left-0 z-10 mt-1 max-h-60 overflow-y-auto rounded-base border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800",
+    closeIcon: "w-4 h-4 me-1.5"
   },
   variants: {
     variant: {

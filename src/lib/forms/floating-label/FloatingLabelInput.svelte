@@ -33,7 +33,7 @@
 
   const theme = $derived(getTheme("floatingLabelInput"));
 
-  const { base, input, label, close, combo } = $derived(floatingLabelInput({ variant, size, validation, disabled, withIcon }));
+  const { base, input, label, closeButton, comboList } = $derived(floatingLabelInput({ variant, size, validation, disabled, withIcon }));
 
   // Track if clear button should be shown
   const showClearButton = $derived(clearable && value !== undefined && value !== "");
@@ -162,11 +162,11 @@
   createDismissableContext(clearAll);
 
   const finalCloseProps = $derived({
-    class: close({ class: clsx(theme?.close, styling?.close) }),
+    class: closeButton({ class: clsx(theme?.closeButton, styling?.closeButton) }),
     color: closeButtonProps?.color ?? "gray",
     ariaLabel: closeButtonProps?.ariaLabel ?? "Clear search value",
     size: closeButtonProps?.size,
-    classes: closeButtonProps?.classes ?? { svg: clsx(theme?.svg, styling?.svg) },
+    classes: closeButtonProps?.classes ?? { svg: clsx(theme?.closeIcon, styling?.closeIcon) },
     name: closeButtonProps?.name,
     onclick: closeButtonProps?.onclick
   });
@@ -176,7 +176,7 @@
   <div tabindex="-1" bind:this={dummyFocusDiv} class="sr-only"></div>
 {/if}
 
-<div class={base({ class: clsx(isCombobox ? "relative" : "", theme?.base, className) })}>
+<div class={base({ class: clsx(isCombobox ? "relative" : "", theme?.base, className) })} data-scope="floating-label-input" data-part="base">
   <input
     {id}
     {disabled}
@@ -189,22 +189,26 @@
     onfocus={handleFocus}
     onblur={handleBlur}
     onkeydown={handleKeydown}
+    data-scope="floating-label-input"
+    data-part="input"
   />
   {#if showClearButton}
-    <CloseButton {...finalCloseProps} />
+    <CloseButton {...finalCloseProps} data-scope="floating-label-input" data-part="close-button" />
   {/if}
-  <label for={id} class={label({ class: clsx(theme?.label, styling?.label) })}>
+  <label for={id} class={label({ class: clsx(theme?.label, styling?.label) })} data-scope="floating-label-input" data-part="label">
     {@render children()}
   </label>
 
   {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-    <div class={combo({ class: clsx(theme?.combo, styling?.combo) })}>
+    <div class={comboList({ class: clsx(theme?.comboList, styling?.comboList) })} data-scope="floating-label-input" data-part="combo-list">
       {#each filteredSuggestions as item, i (item)}
         <button
           type="button"
           class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none"
           onclick={() => selectItem(item)}
           onmouseenter={() => (selectedIndex = i)}
+          data-scope="floating-label-input"
+          data-part="option"
         >
           {item}
         </button>

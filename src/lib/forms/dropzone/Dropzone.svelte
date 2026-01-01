@@ -7,9 +7,8 @@
 
   type HTMLInputElementWithFiles = HTMLInputElement & { files: FileList | null };
 
-  let { children, files = $bindable<FileList | null>(), class: className, classes, onDrop, onDragOver, onChange, ...restProps }: DropzoneProps = $props();
+  let { children, files = $bindable<FileList | null>(), class: className, onDrop, onDragOver, onChange, ...restProps }: DropzoneProps = $props();
 
-  const styling = $derived(classes);
   const theme = $derived(getTheme("dropzone"));
 
   let inputElement: HTMLInputElement;
@@ -45,16 +44,12 @@
       onChange.call(this, event);
     }
   };
-
-  const { base, content, input } = $derived(dropzone());
 </script>
 
-<label data-part="base" class={base({ class: clsx(theme?.base, className) })} ondrop={handleDrop} ondragover={handleDragOver}>
-  <div data-part="content" class={content({ class: clsx(theme?.content, styling?.content) })}>
-    {@render children()}
-  </div>
+<label class={dropzone({ class: clsx(theme, className) })} ondrop={handleDrop} ondragover={handleDragOver} data-scope="dropzone" data-part="base">
+  {@render children()}
 
-  <input data-part="input" {...restProps} bind:this={inputElement} onchange={handleChange} type="file" class={input({ class: clsx(theme?.input, styling?.input) })} />
+  <input {...restProps} bind:this={inputElement} onchange={handleChange} type="file" class="hidden" data-scope="dropzone" data-part="input" />
 </label>
 
 <!--

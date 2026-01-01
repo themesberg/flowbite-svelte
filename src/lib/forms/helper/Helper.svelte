@@ -11,7 +11,7 @@
   const base = $derived(helper({ color, class: clsx(theme, className) }));
 </script>
 
-<p {...restProps} class={base}>
+<p {...restProps} class={base} data-scope="helper" data-part="base">
   {@render children?.()}
 </p>
 
