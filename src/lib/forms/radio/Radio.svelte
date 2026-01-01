@@ -25,8 +25,8 @@
   const { input, label } = $derived(radio({ color, tinted: !!getContext("background"), custom, inline }));
 </script>
 
-<Label class={label({ class: clsx(theme?.label, styling?.label) })}>
-  <input type="radio" bind:group {value} aria-describedby={ariaDescribedby} {...restProps} class={input({ class: clsx(theme?.input, styling?.input) })} />
+<Label data-scope="radio" data-part="label" class={label({ class: clsx(theme?.label, styling?.label) })}>
+  <input data-part="input" type="radio" bind:group {value} aria-describedby={ariaDescribedby} {...restProps} class={input({ class: clsx(theme?.input, styling?.input) })} />
   {@render children?.()}
 </Label>
 

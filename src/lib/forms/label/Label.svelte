@@ -12,7 +12,7 @@
 </script>
 
 {#if show}
-  <label {...restProps} class={base}>
+  <label data-scope="label" data-part="base" {...restProps} class={base}>
     {@render children()}
   </label>
 {:else}
