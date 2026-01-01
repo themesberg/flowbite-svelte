@@ -24,7 +24,7 @@
   let classP = $derived(paragraph({ height, size, weight, space, align, justify, italic, firstUpper, whitespace, class: clsx(theme, className) }));
 </script>
 
-<p data-scope="paragraph" {...restProps} class={classP}>
+<p data-scope="paragraph" data-part="base" {...restProps} class={classP}>
   {@render children()}
 </p>
 

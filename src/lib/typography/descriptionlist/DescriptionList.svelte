@@ -16,7 +16,7 @@
   );
 </script>
 
-<svelte:element this={tag} data-scope="description-list" {...restProps} class={descCls}>
+<svelte:element this={tag} data-scope="description-list" data-part="base" {...restProps} class={descCls}>
   {@render children()}
 </svelte:element>
 

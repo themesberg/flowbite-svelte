@@ -11,7 +11,7 @@
   let divCls = $derived(layout({ class: clsx(theme, className) }));
 </script>
 
-<div data-scope="layout" {...restProps} class={divCls}>
+<div data-scope="layout" data-part="base" {...restProps} class={divCls}>
   {@render children()}
 </div>
 

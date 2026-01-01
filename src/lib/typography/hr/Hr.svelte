@@ -19,13 +19,13 @@
 
 {#if children}
   <div data-scope="hr" data-part="wrapper" {...mergedDivProps} class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })}>
-    <hr data-scope="base" {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
+    <hr data-part="base" {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
     <div data-part="content" class={content({ class: clsx(theme?.content, styling?.content) })}>
       {@render children()}
     </div>
   </div>
 {:else}
-  <hr data-scope="base" {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
+  <hr data-scope="hr" data-part="base" {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
 {/if}
 
 <!--

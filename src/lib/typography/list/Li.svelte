@@ -10,7 +10,7 @@
   let liCls = $derived(clsx(ctx?.ctxClass, icon && "flex items-center", className));
 </script>
 
-<li {...restProps} class={liCls}>
+<li data-scope="li" data-part="base" {...restProps} class={liCls}>
   {@render children()}
 </li>
 

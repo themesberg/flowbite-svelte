@@ -291,7 +291,7 @@
         </button>
       </div>
       <span data-part="range-separator" class={styles.rangeSeparator({ class: clsx(theme?.rangeSeparator) })}>-</span>
-      <div class={styles.rangeInputWrapper({ class: clsx(theme?.rangeInputWrapper) })}>
+      <div data-part="range-input-wrapper" class={styles.rangeInputWrapper({ class: clsx(theme?.rangeInputWrapper) })}>
         <Input
           id={endId}
           color={inputColor}
@@ -305,11 +305,11 @@
           oninput={(e) => handleTimeChange(e, true)}
           onchange={(e) => handleTimeChange(e, true)}
         />
-        <button type="button" class={styles.rangeButton({ class: clsx(theme?.rangeButton) })} onclick={() => document.getElementById(endId)?.click()} aria-label="Open end time picker">
+        <button data-part="range-button" type="button" class={styles.rangeButton({ class: clsx(theme?.rangeButton) })} onclick={() => document.getElementById(endId)?.click()} aria-label="Open end time picker">
           {#if Icon}
             <Icon class={iconClass} />
           {:else}
-            <svg class={styles.icon({ class: clsx(theme?.icon) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <svg data-part="icon" class={styles.icon({ class: clsx(theme?.icon) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
           {/if}
@@ -341,7 +341,7 @@
                 onchange={(e) => handleTimeChange(e)}
               />
             </div>
-            <div class={styles.dropdownTimeCol({ class: clsx(theme?.dropdownTimeCol) })}>
+            <div data-part="dropdown-time-col" class={styles.dropdownTimeCol({ class: clsx(theme?.dropdownTimeCol) })}>
               <Label for={endId}>End time:</Label>
               <Input
                 id={endId}
@@ -386,7 +386,7 @@
                 onchange={(e) => handleTimeChange(e)}
               />
             </div>
-            <div class={styles.toggleTimeCol({ class: clsx(theme?.toggleTimeCol) })}>
+            <div data-part="toggle-time-col" class={styles.toggleTimeCol({ class: clsx(theme?.toggleTimeCol) })}>
               <Label for={endId}>End time:</Label>
               <Input
                 id={endId}

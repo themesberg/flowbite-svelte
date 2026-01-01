@@ -10,21 +10,21 @@
 
   const theme = $derived(getTheme("img"));
 
-  let { base, figure, caption: figureCaption } = $derived(img({ size, effect: imgEffect, align }));
+  let { base, caption: figureCaption, image } = $derived(img({ size, effect: imgEffect, align }));
 
   // Determine if using slot or traditional props
   const useSlot = $derived(!!children);
   // Compute the final class string to pass to children
-  const imgClass = $derived(base({ class: clsx(theme?.base, className) }));
+  const imgClass = $derived(image({ class: clsx(theme?.image, styling?.image) }));
 </script>
 
 {#snippet imageSlot()}
   {#if caption}
-    <figure data-scope="img" data-part="figure" class={figure({ class: clsx(theme?.figure, styling?.figure) })}>
+    <figure data-scope="img" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
       {#if useSlot}
         {@render children?.({ class: imgClass, restProps })}
       {:else}
-        <img data-scope="img" {...restProps} class={imgClass} />
+        <img data-part="image" {...restProps} class={imgClass} />
       {/if}
       <figcaption data-part="caption" class={figureCaption({ class: clsx(theme?.caption, styling?.caption) })}>
         {@html caption}
