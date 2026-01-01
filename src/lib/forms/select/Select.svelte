@@ -61,8 +61,8 @@
   });
 </script>
 
-<div class={base({ class: clsx(theme?.base, className) })}>
-  <select {disabled} {...restProps} bind:value bind:this={elementRef} class={select({ class: clsx(theme?.select, styling?.select) })}>
+<div data-scope="select" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
+  <select data-part="select" {disabled} {...restProps} bind:value bind:this={elementRef} class={select({ class: clsx(theme?.select, styling?.select) })}>
     {#if placeholder}
       <option disabled selected={value === "" || value === undefined} value="">{placeholder}</option>
     {/if}
@@ -78,6 +78,6 @@
     {/if}
   </select>
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton {...finalCloseProps} />
+    <CloseButton data-part="close" {...finalCloseProps} />
   {/if}
 </div>

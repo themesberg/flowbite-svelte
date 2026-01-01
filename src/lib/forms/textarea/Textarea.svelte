@@ -30,7 +30,7 @@
   let hasAddon = $derived(!!addon);
   let wrapped: boolean = $derived(hasHeader || hasFooter || hasAddon);
 
-  const { div, base, wrapper, inner, header: headerCls, footer: footerCls, addon: addonCls, close } = $derived(textarea({ wrapped, hasHeader, hasFooter }));
+  const { container, base, wrapper, inner, header: headerCls, footer: footerCls, addon: addonCls, close } = $derived(textarea({ wrapped, hasHeader, hasFooter }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -53,33 +53,33 @@
   });
 </script>
 
-<div class={div({ class: clsx(theme?.div, className) })}>
+<div data-scope="textarea" data-part="container" class={container({ class: clsx(theme?.container, className) })}>
   {#if !wrapped}
-    <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })}></textarea>
+    <textarea data-part="wrapper" bind:value bind:this={elementRef} {disabled} {...restProps} class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })}></textarea>
   {:else}
-    <div class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })}>
+    <div data-part="wrapper" class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })}>
       {#if header}
-        <div class={headerCls({ class: clsx(theme?.header, styling?.header) })}>
+        <div data-part="header" class={headerCls({ class: clsx(theme?.header, styling?.header) })}>
           {@render header()}
         </div>
       {/if}
-      <div class={inner({ class: clsx(theme?.inner, styling?.inner) })}>
+      <div data-part="inner" class={inner({ class: clsx(theme?.inner, styling?.inner) })}>
         {#if addon}
-          <div class={addonCls({ class: clsx(theme?.addon, styling?.addon) })}>
+          <div data-part="addon" class={addonCls({ class: clsx(theme?.addon, styling?.addon) })}>
             {@render addon()}
           </div>
         {/if}
-        <textarea bind:value bind:this={elementRef} {disabled} {...restProps} class={base({ class: clsx(theme?.base) })}></textarea>
+        <textarea data-part="base" bind:value bind:this={elementRef} {disabled} {...restProps} class={base({ class: clsx(theme?.base) })}></textarea>
       </div>
       {#if footer}
-        <div class={footerCls({ class: clsx(theme?.footer, styling?.footer) })}>
+        <div data-part="footer" class={footerCls({ class: clsx(theme?.footer, styling?.footer) })}>
           {@render footer()}
         </div>
       {/if}
     </div>
   {/if}
   {#if value !== undefined && value !== "" && clearable}
-    <CloseButton {...finalCloseProps} />
+    <CloseButton data-part="close" {...finalCloseProps} />
   {/if}
 </div>
 

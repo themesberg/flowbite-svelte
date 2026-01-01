@@ -216,6 +216,8 @@
 </select>
 
 <div
+  data-scope="multi-select"
+  data-part="base"
   bind:this={multiSelectContainer}
   {...restProps}
   onclick={toggleDropdown}
@@ -226,9 +228,9 @@
   class={base({ size, class: clsx(theme?.base, className) })}
 >
   {#if !selectItems.length}
-    <span class={placeholderSpan({ class: clsx(classes?.placeholder) })}>{placeholder}</span>
+    <span data-part="placeholder" class={placeholderSpan({ class: clsx(classes?.placeholder) })}>{placeholder}</span>
   {/if}
-  <span class={select({ class: clsx(theme?.select, classes?.span) })}>
+  <span data-part="select" class={select({ class: clsx(theme?.select, classes?.span) })}>
     {#if selectItems.length}
       {#each selectItems as item (item.value)}
         {#if children}
@@ -243,20 +245,21 @@
   </span>
   <div class="ms-auto flex items-center gap-2">
     {#if selectItems.length}
-      <CloseButton {...finalCloseProps} />
+      <CloseButton data-part="close" {...finalCloseProps} />
     {/if}
 
-    <svg class={clsx(svg(), disabled && "cursor-not-allowed", classes?.svg)} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <svg data-part="svg" class={clsx(svg(), disabled && "cursor-not-allowed", classes?.svg)} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={show ? "m1 5 4-4 4 4" : "m9 1-4 4-4-4"} />
     </svg>
   </div>
 
   {#if show}
-    <div role="presentation" class={dropdown({ class: clsx(styling?.dropdown) })}>
+    <div data-part="dropdown" role="presentation" class={dropdown({ class: clsx(styling?.dropdown) })}>
       {#each items as item (item.value)}
         {@const isSelected = selectItems.includes(item)}
         {@const isActive = activeItem === item}
         <div
+          data-part="item"
           onclick={(e) => selectOption(item, e)}
           role="presentation"
           class={dropdownItem({

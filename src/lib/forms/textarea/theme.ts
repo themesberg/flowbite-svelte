@@ -5,7 +5,7 @@ export type TextareaVariants = VariantProps<typeof textarea> & Classes<typeof te
 
 export const textarea = tv({
   slots: {
-    div: "relative",
+    container: "relative",
     base: "block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-hidden focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50",
     wrapper:
       "text-sm rounded-lg bg-gray-50 dark:bg-gray-600 text-gray-900 dark:placeholder-gray-400 dark:text-white border border-gray-200 dark:border-gray-500 disabled:cursor-not-allowed disabled:opacity-50",
