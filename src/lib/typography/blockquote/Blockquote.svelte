@@ -20,7 +20,7 @@
   );
 </script>
 
-<blockquote {...restProps} class={blockquoteCls}>
+<blockquote data-scope="blockquote" {...restProps} class={blockquoteCls}>
   {@render children()}
 </blockquote>
 

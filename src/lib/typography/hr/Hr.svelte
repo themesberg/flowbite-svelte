@@ -13,18 +13,18 @@
   const mergedDivProps = $derived({ ...divProps });
   const mergedHrProps = $derived({ ...hrProps });
 
-  let { base, div, content } = $derived(hr({ withChildren: !!children }));
+  let { base, wrapper, content } = $derived(hr({ withChildren: !!children }));
 </script>
 
 {#if children}
-  <div {...mergedDivProps} class={div({ class: clsx(theme?.div, className) })}>
-    <hr {...mergedHrProps} class={base({ class: clsx(theme?.base, styling?.bg ?? "bg-gray-200 dark:bg-gray-700") })} />
-    <div class={content({ class: clsx(theme?.content, styling?.content) })}>
+  <div data-scope="hr" data-part="wrapper" {...mergedDivProps} class={wrapper({ class: clsx(theme?.wrapper, className) })}>
+    <hr {...mergedHrProps} class={base({ class: clsx(theme?.base, styling?.base) })} />
+    <div data-part="content" class={content({ class: clsx(theme?.content, styling?.content) })}>
       {@render children()}
     </div>
   </div>
 {:else}
-  <hr {...mergedHrProps} class={base({ class: clsx(theme?.base, styling?.bg ?? "bg-gray-200 dark:bg-gray-700") })} />
+  <hr data-scope="hr" {...mergedHrProps} class={base({ class: clsx(theme?.base, styling?.base) })} />
 {/if}
 
 <!--

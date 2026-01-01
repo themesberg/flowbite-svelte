@@ -20,20 +20,20 @@
 
 {#snippet imageSlot()}
   {#if caption}
-    <figure class={figure({ class: clsx(theme?.figure, styling?.figure) })}>
+    <figure data-scope="img" data-part="figure" class={figure({ class: clsx(theme?.figure, styling?.figure) })}>
       {#if useSlot}
         {@render children?.({ class: imgClass, restProps })}
       {:else}
-        <img {...restProps} class={imgClass} />
+        <img data-scope="img" {...restProps} class={imgClass} />
       {/if}
-      <figcaption class={figureCaption({ class: clsx(theme?.caption, styling?.caption) })}>
+      <figcaption data-part="caption" class={figureCaption({ class: clsx(theme?.caption, styling?.caption) })}>
         {@html caption}
       </figcaption>
     </figure>
   {:else if useSlot}
     {@render children?.({ class: imgClass, restProps })}
   {:else}
-    <img {...restProps} class={imgClass} />
+    <img data-scope="img" {...restProps} class={imgClass} />
   {/if}
 {/snippet}
 

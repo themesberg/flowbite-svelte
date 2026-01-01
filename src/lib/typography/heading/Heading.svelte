@@ -11,7 +11,7 @@
   let headingCls = $derived(heading({ tag, class: clsx(theme, className) }));
 </script>
 
-<svelte:element this={tag} {...restProps} class={headingCls}>
+<svelte:element this={tag} data-scope="heading" {...restProps} class={headingCls}>
   {@render children()}
 </svelte:element>
 
