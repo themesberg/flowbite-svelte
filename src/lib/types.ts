@@ -77,6 +77,7 @@ import type { TooltipVariants } from "$lib/tooltip/theme";
 
 // forms component variants
 import type { CheckboxButtonVariants, CheckboxVariants } from "$lib/forms/checkbox/theme";
+import type { DropzoneVariants } from "$lib/forms/dropzone/theme";
 import type { FileuploadViariants } from "$lib/forms/fileupload/theme";
 import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label/theme";
 import type { HelperVariants } from "$lib/forms/helper/theme";
@@ -749,7 +750,7 @@ export interface CheckboxButtonProps extends CheckboxButtonVariants, Omit<HTMLIn
 }
 
 // dropzone
-export interface DropzoneProps extends HTMLInputAttributes {
+export interface DropzoneProps extends DropzoneVariants, HTMLInputAttributes {
   children: Snippet;
   files?: FileList | null;
   onDrop?: HTMLLabelAttributes["ondrop"];
@@ -1976,7 +1977,7 @@ export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbef
   trigger?: "hover" | "click";
   placement?: Placement;
   arrow?: boolean;
-  arrowClass?: string;
+  arrowClass?: ClassValue;
   offset?: number;
   role?: "tooltip" | "menu" | "dialog" | "listbox" | "combobox";
   yOnly?: boolean; // special case for megamenu - only move on y axis
@@ -1992,11 +1993,10 @@ export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbef
   isOpen?: boolean;
 }
 
-export interface ArrowProps {
+export interface ArrowProps extends HTMLAttributes<HTMLDivElement> {
   placement?: Placement;
   cords: Partial<Coords>;
   strategy?: "absolute" | "fixed";
-  class?: ClassValue | null;
 }
 
 // VirtualList

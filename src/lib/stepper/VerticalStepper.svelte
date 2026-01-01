@@ -59,7 +59,7 @@
   {/if}
 {/snippet}
 
-<ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
+<ol class={base({ class: clsx(theme?.base, className) })} {...restProps} data-scope="vertical-stepper" data-part="base">
   {#each steps as step, index (step.id)}
     {@const status = step.status ?? getStepStatus(index)}
     <li class={clsx(liClass)}>
@@ -69,15 +69,16 @@
           class="w-full cursor-pointer text-left transition-opacity hover:opacity-75 {card({ status, class: clsx(theme?.card, classes?.card) })}"
           aria-current={status === "current" ? "step" : undefined}
           onclick={() => handleStepClick(index)}
+          data-part="card"
         >
-          <div class={content({ class: clsx(theme?.content, classes?.content) })}>
+          <div class={content({ class: clsx(theme?.content, classes?.content) })} data-part="content">
             <span class="sr-only">{step.label}</span>
             <h3 class="font-medium">{step.id}. {step.label}</h3>
             {@render stepIcon(status, step)}
           </div>
         </button>
       {:else}
-        <div class={card({ status, class: clsx(theme?.card, classes?.card) })} aria-current={status === "current" ? "step" : undefined}>
+        <div class={card({ status, class: clsx(theme?.card, classes?.card) })} aria-current={status === "current" ? "step" : undefined} data-part="card">
           <div class={content({ class: clsx(theme?.content, classes?.content) })}>
             <span class="sr-only">{step.label}</span>
             <h3 class="font-medium">{step.id}. {step.label}</h3>

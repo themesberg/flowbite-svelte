@@ -81,7 +81,7 @@ export const paginationNav = tv({
     }
   },
   defaultVariants: {
-    table: false,
+    layout: "pagination",
     size: "default"
   }
 });

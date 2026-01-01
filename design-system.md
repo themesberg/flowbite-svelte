@@ -57,6 +57,12 @@ Using camelCase makes slot names predictable, easy to reference, and consistent 
 
 These show up across almost all well-designed component libraries (Radix, Ark, Shoelace, Adobe Spectrum, etc.)
 
+When a data-part name matches a component prop, rename it while destructuring.
+This prevents naming conflicts and makes it clear which value comes from the variant system.
+
+```ts
+const { base, title: _title } = $derived(timelineItem());
+```
 ---
 
 ### **1️⃣ Structural parts (layout / grouping)**

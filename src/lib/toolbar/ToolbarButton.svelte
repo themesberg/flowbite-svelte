@@ -19,12 +19,12 @@
 </script>
 
 {#if restProps.href === undefined}
-  <button type="button" {...restProps} class={buttonCls} aria-label={ariaLabel ?? name} aria-expanded={ariaExpanded}>
+  <button type="button" {...restProps} class={buttonCls} aria-label={ariaLabel ?? name} aria-expanded={ariaExpanded} data-scope="toolbar-button" data-part="button">
     {#if name}<span class="sr-only">{name}</span>{/if}
     {@render children?.()}
   </button>
 {:else}
-  <a {...restProps} class={buttonCls} aria-label={ariaLabel ?? name} aria-expanded={ariaExpanded}>
+  <a {...restProps} class={buttonCls} aria-label={ariaLabel ?? name} aria-expanded={ariaExpanded} data-scope="toolbar-button" data-part="link">
     {#if name}<span class="sr-only">{name}</span>{/if}
     {@render children?.()}
   </a>

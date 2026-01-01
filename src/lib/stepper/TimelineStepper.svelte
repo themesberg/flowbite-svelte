@@ -58,10 +58,10 @@
   {/if}
 {/snippet}
 
-<ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
+<ol class={base({ class: clsx(theme?.base, className) })} {...restProps} data-scope="timeline-stepper" data-part="base">
   {#each steps as step, index (step.id)}
     {@const status = step.status ?? getStepStatus(index)}
-    <li class={item({ isLast: index === steps.length - 1, class: clsx(theme?.item, classes?.item) })}>
+    <li class={item({ isLast: index === steps.length - 1, class: clsx(theme?.item, classes?.item) })} data-part="item">
       {#if clickable}
         <button
           type="button"
@@ -71,11 +71,12 @@
           })}"
           onclick={() => handleStepClick(index)}
           aria-current={status === "current" ? "step" : undefined}
+          data-part="circle"
         >
           {@render stepIcon(status, step)}
         </button>
       {:else}
-        <span class={circle({ status, class: clsx(theme?.circle, classes?.circle) })} aria-current={status === "current" ? "step" : undefined}>
+        <span class={circle({ status, class: clsx(theme?.circle, classes?.circle) })} aria-current={status === "current" ? "step" : undefined} data-part="circle">
           {@render stepIcon(status, step)}
         </span>
       {/if}

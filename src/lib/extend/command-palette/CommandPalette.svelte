@@ -116,7 +116,17 @@
 
 <svelte:window onkeydown={open ? handleKeydown : handleGlobalKeydown} />
 
-<Dialog bind:open dismissable={false} {@attach init} aria-modal="true" aria-labelledby={ariaLabelledby} tabindex={-1} class={styles.base({ class: clsx(theme?.base, className) })} {...restProps}>
+<Dialog
+  data-scope="dialog"
+  bind:open
+  dismissable={false}
+  {@attach init}
+  aria-modal="true"
+  aria-labelledby={ariaLabelledby}
+  tabindex={-1}
+  class={styles.base({ class: clsx(theme?.base, className) })}
+  {...restProps}
+>
   <!-- Search Input -->
   <Search
     size="md"

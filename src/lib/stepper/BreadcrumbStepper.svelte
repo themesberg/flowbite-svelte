@@ -47,7 +47,7 @@
   }
 </script>
 
-<ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
+<ol class={base({ class: clsx(theme?.base, className) })} {...restProps} data-scope="breadcrumb-stepper" data-part="base">
   {#each steps as step, index (step.id)}
     {@const status = step.status ?? getStepStatus(index)}
     <li
@@ -56,6 +56,7 @@
         hasChevron: index < steps.length - 1,
         class: clsx(theme?.item, classes?.item)
       })}
+      data-part="item"
     >
       {#if clickable}
         <button
@@ -64,7 +65,7 @@
           onclick={() => handleStepClick(index)}
           aria-current={status === "current" ? "step" : undefined}
         >
-          <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })}>
+          <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })} data-part="indicator">
             {#if status === "completed" && showCheckmarkForCompleted}
               {#if step.icon}
                 <step.icon class={step.iconClass || "h-3 w-3"} />
@@ -86,7 +87,7 @@
         </button>
       {:else}
         <span aria-current={status === "current" ? "step" : undefined} class="flex items-center">
-          <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })}>
+          <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })} data-part="indicator">
             {#if status === "completed" && showCheckmarkForCompleted}
               {#if step.icon}
                 <step.icon class={step.iconClass || "h-3 w-3"} />

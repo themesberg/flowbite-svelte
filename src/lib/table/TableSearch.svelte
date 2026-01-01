@@ -26,7 +26,7 @@
 
   const themeColor = $derived(color === "custom" ? "default" : (color as "default" | "blue" | "green" | "red" | "yellow" | "purple" | "indigo" | "pink"));
 
-  const { root, inner, search, svgDiv, svg, input, table } = $derived(tableSearch({ color: themeColor, striped, hoverable }));
+  const { root, inner, search, iconContainer, icon, input, table } = $derived(tableSearch({ color: themeColor, striped, hoverable }));
 
   const tableCls = $derived(table({ class: clsx(theme?.table, styling?.table) }));
 
@@ -44,22 +44,22 @@
   });
 </script>
 
-<div class={root({ class: clsx(theme?.root, className) })}>
-  <div class={inner({ class: clsx(theme?.inner, styling?.inner) })}>
+<div class={root({ class: clsx(theme?.root, className) })} data-scope="table-search" data-part="root">
+  <div class={inner({ class: clsx(theme?.inner, styling?.inner) })} data-part="inner">
     <label for="table-search" class="sr-only">Search</label>
-    <div class={search({ class: clsx(theme?.search, styling?.search) })}>
-      <div class={svgDiv({ class: clsx(theme?.svgDiv, styling?.svgDiv) })}>
-        <svg class={svg({ class: clsx(theme?.svg, styling?.svg) })} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <div class={search({ class: clsx(theme?.search, styling?.search) })} data-part="search">
+      <div class={iconContainer({ class: clsx(theme?.iconContainer, styling?.iconContainer) })} data-part="icon-container">
+        <svg class={icon({ class: clsx(theme?.icon, styling?.icon) })} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-part="icon">
           <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
         </svg>
       </div>
-      <input bind:value={inputValue} type="text" id="table-search" class={input({ class: clsx(theme?.input, styling?.input) })} {placeholder} />
+      <input bind:value={inputValue} type="text" id="table-search" class={input({ class: clsx(theme?.input, styling?.input) })} {placeholder} data-part="input" />
     </div>
     {#if header}
       {@render header()}
     {/if}
   </div>
-  <table {...restProps} class={finalTableClass}>
+  <table {...restProps} class={finalTableClass} data-part="table">
     {#if children}
       {@render children()}
     {/if}

@@ -10,23 +10,23 @@
 
   const theme = $derived(getTheme("activityItem"));
 
-  const { li, span, img, outer, inner, time, title, text } = $derived(activityItem());
+  const { item, indicator, img, card, header, time, title, text } = $derived(activityItem());
 </script>
 
 {#each activities as { title: name, date, src, alt, text: activity, id }, index (id ?? src ?? index)}
-  <li {...restProps} class={li({ class: clsx(theme?.li, className) })}>
-    <span class={span({ class: clsx(theme?.span, styling?.span) })}>
-      <img class={img({ class: clsx(theme?.img, styling?.img) })} {src} {alt} />
+  <li {...restProps} class={item({ class: clsx(theme?.item, className) })} data-scope="activity-item" data-part="item">
+    <span class={indicator({ class: clsx(theme?.indicator, styling?.indicator) })} data-part="indicator">
+      <img class={img({ class: clsx(theme?.img, styling?.img) })} {src} {alt} data-part="img" />
     </span>
-    <div class={outer({ class: clsx(theme?.outer, styling?.outer) })}>
-      <div class={inner({ class: clsx(theme?.inner, styling?.inner) })}>
-        <time class={time({ class: clsx(theme?.time, styling?.time) })}>{date}</time>
-        <div class={title({ class: clsx(theme?.title, styling?.title) })}>
+    <div class={card({ class: clsx(theme?.card, styling?.card) })} data-part="card">
+      <div class={header({ class: clsx(theme?.header, styling?.header) })} data-part="header">
+        <time class={time({ class: clsx(theme?.time, styling?.time) })} data-part="time">{date}</time>
+        <div class={title({ class: clsx(theme?.title, styling?.title) })} data-part="title">
           {@html name}
         </div>
       </div>
       {#if activity}
-        <div class={text({ class: clsx(theme?.text, styling?.text) })}>
+        <div class={text({ class: clsx(theme?.text, styling?.text) })} data-part="text">
           {@html activity}
         </div>
       {/if}

@@ -6,7 +6,7 @@
   import { setPaginationContext } from "$lib/context";
   import clsx from "clsx";
 
-  let { pages = [], previous, next, prevContent, nextContent, table, size, ariaLabel, class: className, ...restProps }: PaginationProps = $props();
+  let { pages = [], previous, next, prevContent, nextContent, table, size, ariaLabel, class: className }: PaginationProps = $props();
 
   const theme = $derived(getTheme("pagination"));
 
@@ -50,7 +50,7 @@
       </li>
     {/each}
     {#if typeof next === "function"}
-      <li {...restProps}>
+      <li>
         <PaginationItem {size} onclick={() => next()} class={table ? "rounded-none rounded-r" : "rounded-e-base rounded-none"}>
           {#if nextContent}
             {@render nextContent()}

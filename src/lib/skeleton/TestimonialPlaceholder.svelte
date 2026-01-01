@@ -8,7 +8,7 @@
 
   const theme = $derived(getTheme("testimonialPlaceholder"));
 
-  const { base, primaryLine, secondaryLine, avatarIcon, authorInfo } = testimonialPlaceholder();
+  const { base, primaryLine, secondaryLine, avatarIcon, authorInfo } = $derived(testimonialPlaceholder());
 </script>
 
 <div role="status" {...restProps} data-scope="testimonial-placeholder" data-part="base" class={base({ class: clsx(theme?.base, className) })}>

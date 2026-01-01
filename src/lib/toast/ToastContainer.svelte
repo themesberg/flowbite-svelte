@@ -18,7 +18,7 @@
   const base = $derived(toastContainer({ class: clsx(positionClasses[position], theme, className) }));
 </script>
 
-<div {...restProps} class={base}>
+<div {...restProps} class={base} data-scope="toast-container" data-part="base">
   {@render children()}
 </div>
 

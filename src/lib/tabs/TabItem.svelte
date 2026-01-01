@@ -44,7 +44,7 @@
   const { base, button } = $derived(tabItem({ open, disabled }));
 </script>
 
-<li {...restProps} class={base({ class: clsx(theme?.base, className) })} role="presentation">
+<li {...restProps} class={base({ class: clsx(theme?.base, className) })} role="presentation" data-scope="tab-item" data-part="base">
   <button
     type="button"
     onclick={() => (open = true)}
@@ -56,6 +56,7 @@
     class={button({
       class: clsx(open ? (activeClass ?? active({ class: activeClasses })) : (inactiveClass ?? inactive()), theme?.button, classes?.button)
     })}
+    data-part="button"
   >
     {#if titleSlot}
       {@render titleSlot()}

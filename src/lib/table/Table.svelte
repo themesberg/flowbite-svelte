@@ -13,7 +13,7 @@
 
   const theme = $derived(getTheme("table"));
 
-  const { div, table } = $derived(tableCls({ color, shadow }));
+  const { wrapper, table } = $derived(tableCls({ color, shadow }));
 
   let tableCtx: TableContextType = {
     get striped() {
@@ -36,8 +36,8 @@
   let bodyItems = $derived(items && items.length > 0 ? items.map((item) => Object.values(item)) : []);
 </script>
 
-<div class={div({ class: clsx(theme?.div, className) })}>
-  <table {...restProps} class={table({ class: clsx(theme?.table, styling?.table) })}>
+<div class={wrapper({ class: clsx(theme?.wrapper, className) })} data-scope="table" data-part="wrapper">
+  <table {...restProps} class={table({ class: clsx(theme?.table, styling?.table) })} data-part="table">
     {#if captionSlot}
       {@render captionSlot()}
     {/if}

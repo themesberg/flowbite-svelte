@@ -25,7 +25,7 @@
     reference,
     middlewares = [dom.flip(), dom.shift()],
     class: className = "",
-    arrowClass = "",
+    arrowClass,
     isOpen = $bindable(false),
     transitionParams,
     transition = fade,
@@ -267,13 +267,17 @@
       isOpen = false;
     }
   }
+
+  // data-scope: Popper should expose structural roles, not semantic meaning. Only the parent component should have data-scope.
 </script>
 
-<div {@attach set_triggers} hidden></div>
+<div data-part="positioner" {@attach set_triggers} hidden></div>
 
 {#if isOpen}
   <div
     popover="manual"
+    data-scope="popper"
+    data-part="base"
     {role}
     bind:this={popover}
     class:overflow-visible={true}
@@ -289,7 +293,7 @@
   >
     {@render children()}
     {#if arrow}
-      <Arrow {...arrowParams} class={arrowClass} />
+      <Arrow data-part="arrow" {...arrowParams} class={arrowClass} />
     {/if}
   </div>
 {/if}

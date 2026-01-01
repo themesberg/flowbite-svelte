@@ -3,7 +3,7 @@
   import { getOppositePlacement, getSide } from "@floating-ui/utils";
   import type { ArrowProps } from "$lib/types";
 
-  let { placement = "top", cords, class: className = "" }: ArrowProps = $props();
+  let { placement = "top", cords, class: className = "", ...restProps }: ArrowProps = $props();
 
   const px = (n: number | undefined) => (n ? `${n}px` : "");
 
@@ -43,7 +43,7 @@
   }
 </script>
 
-<div use:positioning class="popover-arrow clip pointer-events-none absolute block h-[10px] w-[10px] border-b border-l border-inherit bg-inherit text-inherit {className}"></div>
+<div {...restProps} use:positioning class="popover-arrow clip pointer-events-none absolute block h-[10px] w-[10px] border-b border-l border-inherit bg-inherit text-inherit {className}"></div>
 
 <!--
 @component

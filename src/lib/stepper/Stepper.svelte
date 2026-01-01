@@ -64,7 +64,7 @@
   {/if}
 {/snippet}
 
-<ol {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<ol {...restProps} class={base({ class: clsx(theme?.base, className) })} data-scope="stepper" data-part="base">
   {#each steps as step, index (step.id ?? index)}
     {@const status = step.status ?? getStepStatus(index)}
     <li
@@ -73,6 +73,7 @@
         isLast: index === steps.length - 1,
         class: clsx(theme?.item, classes?.item)
       })}
+      data-part="item"
     >
       {#if clickable}
         <button
@@ -84,6 +85,7 @@
           })}
           onclick={() => handleStepClick(index)}
           aria-current={status === "current" ? "step" : undefined}
+          data-part="content"
         >
           {@render stepContent(step, status, index)}
         </button>
@@ -94,6 +96,7 @@
             isLast: index === steps.length - 1,
             class: clsx(theme?.content, classes?.content)
           })}
+          data-part="content"
         >
           {@render stepContent(step, status, index)}
         </span>

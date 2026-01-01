@@ -25,7 +25,7 @@
   let { base, title, heading, content } = $derived(popover({ color }));
 </script>
 
-<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} data-scope="popover" class={base({ class: clsx(theme?.base, className) })}>
+<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} data-scope="popper" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
   {#if typeof titleSlot === "string"}
     <div data-part="title" class={title({ class: clsx(theme?.title, styling?.title) })}>
       <h3 data-part="heading" class={heading({ class: clsx(theme?.heading, styling?.heading) })}>{titleSlot}</h3>

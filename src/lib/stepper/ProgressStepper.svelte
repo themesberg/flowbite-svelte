@@ -76,12 +76,12 @@
   const progressWidth = $derived(steps.length <= 1 || lineWidth === "0" ? "0" : `${(animatedProgress.current / 100) * parseFloat(lineWidth)}%`);
 </script>
 
-<ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
+<ol class={base({ class: clsx(theme?.base, className) })} {...restProps} data-scope="progress-stepper" data-part="base">
   <!-- Background line (gray) - from center of first to center of last circle -->
-  <div class={line({ class: clsx(theme?.line, classes?.line) })} style="left: {lineStart}; width: {lineWidth}" aria-hidden="true"></div>
+  <div class={line({ class: clsx(theme?.line, classes?.line) })} style="left: {lineStart}; width: {lineWidth}" aria-hidden="true" data-part="line"></div>
 
   <!-- Progress line (colored, overlays the background) -->
-  <div class={progressLine({ class: clsx(theme?.progressLine, classes?.progressLine) })} style="left: {lineStart}; width: {progressWidth}" aria-hidden="true"></div>
+  <div class={progressLine({ class: clsx(theme?.progressLine, classes?.progressLine) })} style="left: {lineStart}; width: {progressWidth}" aria-hidden="true" data-part="progress-line"></div>
 
   {#each steps as step, index (step.id)}
     {@const status = step.status ?? getStepStatus(index)}
@@ -90,6 +90,7 @@
         status,
         class: clsx(theme?.item, classes?.item)
       })}
+      data-part="item"
     >
       {#if clickable}
         <button
@@ -97,6 +98,7 @@
           class={circle({ status, class: clsx(theme?.circle, classes?.circle, "cursor-pointer transition-all hover:brightness-110") })}
           onclick={() => handleStepClick(index)}
           aria-current={status === "current" ? "step" : undefined}
+          data-part="circle"
         >
           {#if status === "completed" && showCheckmarkForCompleted}
             <!-- Checkmark for completed steps -->
@@ -110,7 +112,7 @@
           {/if}
         </button>
       {:else}
-        <span class={circle({ status, class: clsx(theme?.circle, classes?.circle) })} aria-current={status === "current" ? "step" : undefined}>
+        <span class={circle({ status, class: clsx(theme?.circle, classes?.circle) })} aria-current={status === "current" ? "step" : undefined} data-part="circle">
           {#if status === "completed" && showCheckmarkForCompleted}
             <!-- Checkmark for completed steps -->
             <CheckmarkIcon variant="tick" />
