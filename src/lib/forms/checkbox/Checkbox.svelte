@@ -55,7 +55,17 @@
 {#if choices.length > 0}
   {#each choices as choice, i (choice.value ?? i)}
     <Label show={!!children || !!choice.label} {...labelProps} class={labelStyle({ class: clsx(theme?.label, styling?.label) })} data-scope="checkbox" data-part="label">
-      <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} class={base({ class: clsx(theme?.base, className) })} data-scope="checkbox" data-part="base" />
+      <input
+        type="checkbox"
+        value={choice.value}
+        checked={choice.checked ?? false}
+        {disabled}
+        bind:group
+        {...restProps}
+        class={base({ class: clsx(theme?.base, className) })}
+        data-scope="checkbox"
+        data-part="base"
+      />
       {#if children}
         {@render children({ value: choice.value, checked: choice.checked, disabled })}
       {:else}

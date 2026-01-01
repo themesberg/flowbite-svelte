@@ -240,7 +240,15 @@
       />
       <Button color={buttonColor} class={styles.button({ class: clsx(theme?.button) })}>
         {optionLabel}
-        <svg data-part="button-icon" class={styles.buttonIcon({ class: clsx(theme?.buttonIcon) })} aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          data-part="button-icon"
+          class={styles.buttonIcon({ class: clsx(theme?.buttonIcon) })}
+          aria-hidden="true"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </Button>
@@ -266,7 +274,13 @@
           oninput={(e) => handleTimeChange(e)}
           onchange={(e) => handleTimeChange(e)}
         />
-        <button data-part="range-button" type="button" class={styles.rangeButton({ class: clsx(theme?.rangeButton) })} onclick={() => document.getElementById(id)?.click()} aria-label="Open time picker">
+        <button
+          data-part="range-button"
+          type="button"
+          class={styles.rangeButton({ class: clsx(theme?.rangeButton) })}
+          onclick={() => document.getElementById(id)?.click()}
+          aria-label="Open time picker"
+        >
           {#if Icon}
             <Icon class={iconClass} />
           {:else}

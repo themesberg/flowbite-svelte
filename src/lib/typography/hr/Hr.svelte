@@ -9,6 +9,7 @@
   const styling = $derived(classes);
 
   const theme = $derived(getTheme("hr"));
+  const bg = $derived(classes?.bg ?? "bg-gray-200 dark:bg-gray-700");
 
   const mergedDivProps = $derived({ ...divProps });
   const mergedHrProps = $derived({ ...hrProps });
@@ -17,14 +18,14 @@
 </script>
 
 {#if children}
-  <div data-scope="hr" data-part="wrapper" {...mergedDivProps} class={wrapper({ class: clsx(theme?.wrapper, className) })}>
-    <hr {...mergedHrProps} class={base({ class: clsx(theme?.base, styling?.base) })} />
+  <div data-scope="hr" data-part="wrapper" {...mergedDivProps} class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })}>
+    <hr data-scope="base" {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
     <div data-part="content" class={content({ class: clsx(theme?.content, styling?.content) })}>
       {@render children()}
     </div>
   </div>
 {:else}
-  <hr data-scope="hr" {...mergedHrProps} class={base({ class: clsx(theme?.base, styling?.base) })} />
+  <hr data-scope="base" {...mergedHrProps} class={base({ class: clsx(theme?.base, className, bg) })} />
 {/if}
 
 <!--
