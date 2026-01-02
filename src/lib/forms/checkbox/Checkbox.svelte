@@ -63,7 +63,6 @@
         bind:group
         {...restProps}
         class={base({ class: clsx(theme?.base, className) })}
-        data-scope="checkbox"
         data-part="base"
       />
       {#if children}
@@ -75,7 +74,7 @@
   {/each}
 {:else}
   <Label show={!!children} {...labelProps} class={labelStyle({ class: clsx(theme?.label, styling?.label) })} data-scope="checkbox" data-part="label">
-    <input type="checkbox" {value} bind:checked {disabled} {...restProps} class={base({ class: clsx(theme?.base, className) })} data-scope="checkbox" data-part="base" />
+    <input type="checkbox" {value} bind:checked {disabled} {...restProps} class={base({ class: clsx(theme?.base, className) })} data-part="base" />
     {#if children}
       {@render children({ value, checked, disabled })}
     {/if}

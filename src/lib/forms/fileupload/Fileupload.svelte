@@ -49,9 +49,9 @@
 </script>
 
 <div class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })} data-scope="fileupload" data-part="wrapper">
-  <input type="file" onchange={handleChange} bind:this={elementRef} {...restProps} class={base({ size, class: clsx(theme?.base, className) })} data-scope="fileupload" data-part="base" />
+  <input type="file" onchange={handleChange} bind:this={elementRef} {...restProps} class={base({ size, class: clsx(theme?.base, className) })} data-part="base" />
   {#if showClearButton}
-    <CloseButton {...finalCloseProps} data-scope="fileupload" data-part="close-button" />
+    <CloseButton {...finalCloseProps} data-part="close-button" />
   {/if}
 </div>
 

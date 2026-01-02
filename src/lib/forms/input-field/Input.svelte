@@ -249,26 +249,25 @@
 {#if isCombobox || right || left || clearable}
   <div class={base({ class: clsx(theme?.base, styling?.wrapper) })} data-scope="input" data-part="base">
     {#if left}
-      <div class={leftAddon({ class: clsx(theme?.leftAddon, styling?.leftAddon) })} data-scope="input" data-part="left-addon">
+      <div class={leftAddon({ class: clsx(theme?.leftAddon, styling?.leftAddon) })} data-part="left-addon">
         {@render left()}
       </div>
     {/if}
     {@render inputContent(true)}
     {#if right}
-      <div class={rightAddon({ class: clsx(theme?.rightAddon, styling?.rightAddon) })} data-scope="input" data-part="right-addon">
+      <div class={rightAddon({ class: clsx(theme?.rightAddon, styling?.rightAddon) })} data-part="right-addon">
         {@render right()}
       </div>
     {/if}
 
     {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-      <div class={comboList({ class: clsx(theme?.comboList, styling?.comboList) })} data-scope="input" data-part="combo-list">
+      <div class={comboList({ class: clsx(theme?.comboList, styling?.comboList) })} data-part="combo-list">
         {#each filteredSuggestions as item, i (item)}
           <button
             type="button"
             class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none"
             onclick={() => selectItem(item)}
             onmouseenter={() => (selectedIndex = i)}
-            data-scope="input"
             data-part="option"
           >
             <p class={option({ class: clsx(theme?.option, styling?.option) })}>{item}</p>
@@ -294,11 +293,10 @@
       onblur={handleBlur}
       onkeydown={handleKeydown}
       class={clsx(!wrapped && base(), inputCls({ class: clsx(theme?.input, className) }))}
-      data-scope="input"
       data-part="input"
     />
     {#if value !== undefined && value !== "" && clearable}
-      <CloseButton {...finalCloseProps} data-scope="input" data-part="close-button" />
+      <CloseButton {...finalCloseProps} data-part="close-button" />
     {/if}
   {/if}
 {/snippet}
