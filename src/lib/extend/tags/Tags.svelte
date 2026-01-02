@@ -196,7 +196,7 @@
       {#if filteredSuggestions.length > 0}
         <ul data-part="list" bind:this={dropdownElement} class="z-10 max-h-48 w-full overflow-auto rounded border border-gray-300 bg-white shadow" style="position: absolute;">
           {#each filteredSuggestions as suggestion (suggestion)}
-            <li data-part="item">
+            <li data-part="suggestion-item">
               <button
                 data-part="option"
                 type="button"

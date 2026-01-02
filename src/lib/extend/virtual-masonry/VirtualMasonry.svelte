@@ -27,7 +27,7 @@
   let scrollTop = $state(0);
   let rafId: number | undefined;
 
-  const {base, spacer, content, item:itemPart} = $derived(virtualMasonry({ contained }));
+  const { base, spacer, content, item: itemPart } = $derived(virtualMasonry({ contained }));
 
   const containStyle = $derived.by(() => {
     if (!contained) return "";
@@ -140,7 +140,7 @@
 </script>
 
 <div
-  data-scope="virtual-mansonry"
+  data-scope="virtual-masonry"
   data-part="base"
   bind:this={container}
   onscroll={handleScroll}
@@ -149,13 +149,14 @@
   class={base({ class: clsx(theme?.base, className) })}
   style={`height:${height}px; position:relative;`}
 >
-  <div class={spacer({ class: clsx(theme?.spacer, styling?.spacer) })} style={`height:${totalHeight}px;`}>
-    <div class={content({ class: clsx(theme?.content, styling?.content) })}>
+  <div data-part="spacer" class={spacer({ class: clsx(theme?.spacer, styling?.spacer) })} style={`height:${totalHeight}px;`}>
+    <div data-part="content" class={content({ class: clsx(theme?.content, styling?.content) })}>
       {#each visibleItems as { item, index, x, y, height: itemHeight } (index)}
         <div
           role="listitem"
           aria-setsize={items.length}
           aria-posinset={index + 1}
+          data-part="item"
           class={itemPart({ class: clsx(theme?.item, styling?.item) })}
           style={`position:absolute; left:${x}px; top:${y}px; width:${columnWidth}px; height:${itemHeight}px; ${containStyle}`}
         >

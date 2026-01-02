@@ -74,6 +74,7 @@ import type { TimelineVariants, ActivityItemVariants, GroupVariants, GroupItemVa
 import type { ToastVaraints } from "$lib/toast/theme";
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "$lib/toolbar/theme";
 import type { TooltipVariants } from "$lib/tooltip/theme";
+import type { VideoVariants } from "$lib/video/theme";
 
 // forms component variants
 import type { CheckboxButtonVariants, CheckboxVariants } from "$lib/forms/checkbox/theme";
@@ -116,7 +117,7 @@ import type { ApexOptions } from "apexcharts";
 // extend
 import type { ButtonToggleVariants } from "$lib/extend/button-toggle/theme";
 import type { TagsVariants } from "$lib/extend/tags/theme";
-import type { VirtualListVariants } from "$lib/extend/virtuallist/theme";
+import type { VirtualListVariants } from "$lib/extend/virtual-list/theme";
 import type { KanbanBoardVariants, KanbanCardVariants } from "$lib/extend/kanban/theme";
 import type { TourVariants } from "$lib/extend/tour/theme";
 import type { CommandPaletteVariants } from "$lib/extend/command-palette/theme";
@@ -1964,7 +1965,7 @@ export interface SpanProps extends SpanVariants, HTMLAttributes<HTMLSpanElement>
 }
 
 // video
-export interface VideoProps extends HTMLVideoAttributes {
+export interface VideoProps extends VideoVariants, HTMLVideoAttributes {
   type?: HTMLSourceAttributes["type"];
   src?: HTMLSourceAttributes["src"];
   trackSrc?: HTMLTrackAttributes["src"];

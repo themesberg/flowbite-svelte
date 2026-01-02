@@ -84,7 +84,7 @@ export { splitpane, pane, divider } from "$lib/extend/split-pane/theme";
 export { stepIndicator } from "../extend/step-indicator";
 export { tags } from "../extend/tags";
 export { tour } from "$lib/extend/tour/theme";
-export { virtualList } from "$lib/extend/virtuallist";
+export { virtualList } from "$lib/extend/virtual-list";
 export { virtualMasonry } from "$lib/extend/virtual-masonry/theme";
 
 // utils

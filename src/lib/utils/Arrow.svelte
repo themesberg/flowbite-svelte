@@ -43,7 +43,7 @@
   }
 </script>
 
-<div {...restProps} use:positioning class="popover-arrow clip pointer-events-none absolute block h-[10px] w-[10px] border-b border-l border-inherit bg-inherit text-inherit {className}"></div>
+<div data-scope="arrow" data-part="base" {...restProps} use:positioning class="popover-arrow clip pointer-events-none absolute block h-[10px] w-[10px] border-b border-l border-inherit bg-inherit text-inherit {className}"></div>
 
 <!--
 @component
