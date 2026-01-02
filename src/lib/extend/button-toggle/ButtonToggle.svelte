@@ -40,7 +40,7 @@
     toggleSelected(value);
   }
 
-  const { button, content, text, icon } = $derived(buttonToggle({ selected, color: actualColor, size: actualSize }));
+  const { button, content, label, icon } = $derived(buttonToggle({ selected, color: actualColor, size: actualSize }));
 
   $effect(() => {
     selected = isSelected(value);
@@ -64,7 +64,7 @@
         <CheckIcon class={icon({ class: clsx(theme?.icon ?? actualIconClass, styling?.icon) })} />
       {/if}
     {/if}
-    <span class={text({ selected, class: clsx(theme?.text, styling?.text) })}>
+    <span class={label({ selected, class: clsx(theme?.label, styling?.label) })}>
       {@render children()}
     </span>
   </div>

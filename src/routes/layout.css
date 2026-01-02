@@ -8,6 +8,18 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@media (prefers-color-scheme: dark) {
+  .cw-base {
+    background-color: #111827 !important; /* Flowbite's dark gray-900 */
+    border-color: #1f2937 !important;
+  }
+  
+  .cw-inner {
+    background-color: #1f2937 !important; /* Slightly lighter for content */
+    color: #f9fafb !important; /* Light text */
+  }
+}
+
 .datatable-pagination .datatable-active a,
 .datatable-pagination .datatable-active a:focus,
 .datatable-pagination .datatable-active a:hover,

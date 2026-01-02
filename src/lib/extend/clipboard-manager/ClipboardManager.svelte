@@ -283,7 +283,7 @@
   <div class={styles.inputSection({ class: clsx(theme?.inputSection, classes?.inputSection) })}>
     <div class={styles.inputWrapper({ class: clsx(theme?.inputWrapper, classes?.inputWrapper) })}>
       <input type="text" bind:value={newText} onkeydown={handleKeydown} {placeholder} class={styles.input({ class: clsx(theme?.input, classes?.input) })} />
-      <button onclick={addToClipboard} disabled={!newText.trim()} class={styles.addToClipboard({ class: clsx(theme?.addToClipboard, classes?.addToClipboard) })}>
+      <button onclick={addToClipboard} disabled={!newText.trim()} class={styles.addButton({ class: clsx(theme?.addButton, classes?.addButton) })}>
         {saveLabel}
       </button>
     </div>
@@ -298,7 +298,7 @@
             <path d="m21 21-4.35-4.35" />
           </svg>
         </div>
-        <button onclick={clearAll} class={styles.clearAll({ class: clsx(theme?.clearAll, classes?.clearAll) })}>
+        <button onclick={clearAll} class={styles.clearButton({ class: clsx(theme?.clearButton, classes?.clearButton) })}>
           {clearLabel}
         </button>
       </div>
@@ -317,7 +317,7 @@
           <path d="m21 21-4.35-4.35" />
         </svg>
       </div>
-      <button onclick={clearAll} class={styles.clearAll({ class: clsx(theme?.clearAll, classes?.clearAll) })}>
+      <button onclick={clearAll} class={styles.clearButton({ class: clsx(theme?.clearButton, classes?.clearButton) })}>
         {clearLabel}
       </button>
     </div>
@@ -341,8 +341,8 @@
                 d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
             </svg>
-            <p class={styles.emptyText({ class: clsx(theme?.emptyText, classes?.emptyText) })}>No clipboard items yet.</p>
-            <p class={styles.emptySubtext({ class: clsx(theme?.emptySubtext, classes?.emptySubtext) })}>
+            <p class={styles.emptyMessage({ class: clsx(theme?.emptyMessage, classes?.emptyMessage) })}>No clipboard items yet.</p>
+            <p class={styles.emptyDescription({ class: clsx(theme?.emptyDescription, classes?.emptyDescription) })}>
               {#if enableSelectionMenu}
                 Select any text and click "Save" to add it here
               {:else}
@@ -350,7 +350,7 @@
               {/if}
             </p>
           {:else}
-            <p class={styles.emptyText({ class: clsx(theme?.emptyText, classes?.emptyText) })}>No items match "{searchQuery}"</p>
+            <p class={styles.emptyMessage({ class: clsx(theme?.emptyMessage, classes?.emptyMessage) })}>No items match "{searchQuery}"</p>
           {/if}
         </div>
       {/if}

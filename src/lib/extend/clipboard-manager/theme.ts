@@ -10,12 +10,12 @@ export const clipboardManager = tv({
     // Input section
     inputSection: "space-y-2",
     inputWrapper: "flex gap-2",
-    input: "flex-1 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500 dark:text-white",
+    input: "flex-1 rounded-base border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500 dark:text-white",
 
     // Search section
     searchWrapper: "flex gap-2",
     searchContainer: "relative flex-1",
-    searchInput: "w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 pl-9 pr-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500 dark:text-white",
+    searchInput: "w-full rounded-base border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 pl-9 pr-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500 dark:text-white",
     searchIcon: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400",
 
     // Items list
@@ -24,11 +24,11 @@ export const clipboardManager = tv({
     // Empty state
     emptyState: "text-center py-8",
     emptyIcon: "w-12 h-12 mx-auto text-gray-300 dark:text-gray-600 mb-3",
-    emptyText: "text-sm text-gray-500 dark:text-gray-400",
-    emptySubtext: "text-xs text-gray-400 dark:text-gray-500 mt-1",
+    emptyMessage: "text-sm text-gray-500 dark:text-gray-400",
+    emptyDescription: "text-xs text-gray-400 dark:text-gray-500 mt-1",
 
     // Item
-    item: "group flex items-start gap-3 rounded-lg border border-gray-200 dark:border-gray-700 p-3 transition hover:bg-gray-50 dark:hover:bg-gray-800/50",
+    item: "group flex items-start gap-3 rounded-base border border-gray-200 dark:border-gray-700 p-3 transition hover:bg-gray-50 dark:hover:bg-gray-800/50",
     itemContent: "flex-1 min-w-0",
     itemHeader: "flex items-center gap-2 mb-1",
     itemTimestamp: "text-xs text-gray-500 dark:text-gray-400",
@@ -36,24 +36,24 @@ export const clipboardManager = tv({
 
     // Actions
     itemActions: "flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity",
-    actionButton: "p-1.5 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition flex items-center justify-center",
+    actionButton: "p-1.5 rounded-base hover:bg-gray-200 dark:hover:bg-gray-700 transition flex items-center justify-center",
     actionIcon: "w-4 h-4 flex-shrink-0",
-    pinButton: "p-1.5 rounded transition",
-    deleteButton: "p-1.5 rounded text-red-500 hover:bg-red-100 dark:hover:bg-red-900/20 transition",
+    pinButton: "p-1.5 rounded-base transition",
+    deleteButton: "p-1.5 rounded-base text-red-500 hover:bg-red-100 dark:hover:bg-red-900/20 transition",
 
     // Toast
     toastContainer: "fixed top-4 left-1/2 -translate-x-1/2 z-50 animate-[slideIn_0.2s_ease-out]",
-    toast: "flex items-center gap-2 px-4 py-2 rounded-lg shadow-lg",
+    toast: "flex items-center gap-2 px-4 py-2 rounded-base shadow-lg",
     toastIcon: "w-5 h-5",
     toastText: "text-sm font-medium",
     // buttons
-    addToClipboard: "whitespace-nowrap rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:opacity-50",
-    clearAll: "rounded bg-red-600 px-4 py-2 text-white hover:bg-red-700",
+    addButton: "whitespace-nowrap rounded-base bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:opacity-50",
+    clearButton: "rounded-base bg-red-600 px-4 py-2 text-white hover:bg-red-700",
     // Selection bubble menu
     selectionMenu: "selection-menu fixed z-50 -translate-x-1/2 -translate-y-full",
-    selectionBubble: "mb-2 flex items-center gap-2 rounded-lg bg-gray-900 px-3 py-2 text-white shadow-xl",
+    selectionBubble: "mb-2 flex items-center gap-2 rounded-base bg-gray-900 px-3 py-2 text-white shadow-xl",
     selectionText: "max-w-[200px] truncate text-xs",
-    selectionButton: "rounded bg-primary-700 px-2 py-1 text-xs font-medium whitespace-nowrap transition hover:bg-primary-500",
+    selectionButton: "rounded-base bg-primary-700 px-2 py-1 text-xs font-medium whitespace-nowrap transition hover:bg-primary-500",
     selectionArrow: "absolute bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-gray-900"
   },
   variants: {

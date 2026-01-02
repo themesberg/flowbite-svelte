@@ -172,7 +172,7 @@
       {/each}
     </ul>
   {:else if search}
-    <div class={styles.empty({ class: clsx(theme?.empty, classes?.empty) })}>
+    <div class={styles.emptyState({ class: clsx(theme?.emptyState, classes?.emptyState) })}>
       <p>{emptyMessage}</p>
     </div>
   {/if}
