@@ -17,18 +17,13 @@
 
   let active = $derived(navState?.activeUrl ? restProps.href === navState.activeUrl : false);
   const { base, item } = $derived(navLi());
-  
+
   // Combine item class from theme with itemClass from context and local styling
   let itemClass = $derived(
     item({
       breakpoint: navBreakpoint ?? "md",
       hidden: navState?.hidden ?? true,
-      class: clsx(
-        active ? (activeClass ?? navState?.activeClass) : (nonActiveClass ?? navState?.nonActiveClass),
-        navState?.itemClass,
-        theme?.item,
-        styling?.item
-      )
+      class: clsx(active ? (activeClass ?? navState?.activeClass) : (nonActiveClass ?? navState?.nonActiveClass), navState?.itemClass, theme?.item, styling?.item)
     })
   );
 

@@ -59,7 +59,7 @@
     <NavUl
       {activeUrl}
       class="order-1 ml-auto w-full lg:order-none lg:block lg:w-auto"
-      classes={{ list: "flex flex-col lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-1 p-3", item:"ps-0 pe-0 lg:ps-2 lg:pe-2" }}
+      classes={{ list: "flex flex-col lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-1 p-3", item: "ps-0 pe-0 lg:ps-2 lg:pe-2" }}
     >
       <NavLi href="/docs/pages/introduction">Docs</NavLi>
       <NavLi href="/docs/components/accordion">Components</NavLi>

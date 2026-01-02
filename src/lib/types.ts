@@ -1113,12 +1113,12 @@ export interface NavUlProps extends NavbarUlVariants, Omit<HTMLAttributes<HTMLDi
   respectMotionPreference?: boolean;
   class?: ClassValue;
   classes?: Partial<{
-      base?: ClassValue;
-      list?: ClassValue;
-      active?: ClassValue;
-      nonActive?: ClassValue;
-      item?: ClassValue; 
-    }>;
+    base?: ClassValue;
+    list?: ClassValue;
+    active?: ClassValue;
+    nonActive?: ClassValue;
+    item?: ClassValue;
+  }>;
 }
 
 export type NavLiProps = AnchorButtonAttributes &
