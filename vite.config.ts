@@ -24,7 +24,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "flowbite-svelte": path.resolve(process.cwd(), "./src/lib/index.ts")
+      "flowbite-svelte": path.resolve(process.cwd(), "src/lib")
     }
   },
   test: {
