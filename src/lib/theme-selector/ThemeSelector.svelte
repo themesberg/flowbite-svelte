@@ -1,11 +1,20 @@
 <script lang="ts">
   import { getCurrentTheme, getSelectedTheme, themeConfigs, loadTheme } from "./themeStore.svelte";
   import type { ThemeId } from "./themes";
+  import type { ThemeSelectorProps } from "$lib/types";
   import { onMount } from "svelte";
   import { Button, Dropdown, DropdownItem } from "$lib";
   import ThemeIcon from "./ThemeIcon.svelte";
+  import { themeSelector } from "./theme";
+  import { getTheme } from "$lib/theme-provider/themeUtils";
+  import clsx from "clsx";
 
-  let { ...restProps } = $props();
+  let { classes, ...restProps }: ThemeSelectorProps = $props();
+
+  const styling = $derived(classes);
+  const themeStyling = $derived(getTheme("themeSelector"));
+
+  const { button, dropdown, item, itemLabel, colorSwatchContainer, colorSwatch } = themeSelector();
 
   // Access the reactive state
   let currentTheme = $derived(getCurrentTheme());
@@ -26,31 +35,33 @@
   let isOpen = $state(false);
 </script>
 
-<Button
-  color="gray"
-  class="gap-2 rounded-sm border-0 px-1 py-1 shadow-none focus:ring-gray-100 dark:focus:ring-gray-700"
-  aria-haspopup="true"
-  aria-expanded={isOpen}
-  aria-label="Select Theme"
-  {...restProps}
->
-  <ThemeIcon />
-  <span>{selectedTheme?.name ?? "Theme"}</span>
-</Button>
-<Dropdown class="w-52 px-2" bind:isOpen simple>
-  {#each themeConfigs as theme (theme.id)}
-    <DropdownItem
-      onclick={handleThemeChange(theme.id)}
-      class="mb-1 inline-flex w-full items-center justify-between rounded-xl {theme.id === currentTheme ? 'bg-brand-50 dark:bg-brand-900/20' : ''}"
-      role="option"
-      aria-selected={theme.id === currentTheme}
-    >
-      <span class="theme-select-button inline-flex w-full items-center justify-between rounded">{theme.name}</span>
-      <div class="flex items-center rounded-xs">
-        {#each theme.colors as color, index (`${theme.id}-${index}`)}
-          <div class="h-3.5 w-[1.125rem] {color} {index === 0 ? 'rounded-s-xs' : ''} {index === theme.colors.length - 1 ? 'rounded-e-xs' : ''}"></div>
-        {/each}
-      </div>
-    </DropdownItem>
-  {/each}
-</Dropdown>
+<div data-scope="theme-selector" data-part="base" {...restProps}>
+  <Button data-part="button" color="gray" class={button({ class: clsx(themeStyling?.button, styling?.button) })} aria-haspopup="true" aria-expanded={isOpen} aria-label="Select Theme">
+    <ThemeIcon />
+    <span>{selectedTheme?.name ?? "Theme"}</span>
+  </Button>
+  <Dropdown data-part="dropdown" class={dropdown({ class: clsx(themeStyling?.dropdown, styling?.dropdown) })} bind:isOpen simple>
+    {#each themeConfigs as theme (theme.id)}
+      <DropdownItem
+        data-part="item"
+        onclick={handleThemeChange(theme.id)}
+        class={item({ active: theme.id === currentTheme, class: clsx(themeStyling?.item, styling?.item) })}
+        role="option"
+        aria-selected={theme.id === currentTheme}
+      >
+        <span data-part="item-label" class={itemLabel({ class: clsx(themeStyling?.itemLabel, styling?.itemLabel) })}>{theme.name}</span>
+        <div data-part="color-swatch-container" class={colorSwatchContainer({ class: clsx(themeStyling?.colorSwatchContainer, styling?.colorSwatchContainer) })}>
+          {#each theme.colors as color, index (`${theme.id}-${index}`)}
+            <div
+              data-part="color-swatch"
+              class={colorSwatch({
+                swatchPosition: index === 0 ? "first" : index === theme.colors.length - 1 ? "last" : "middle",
+                class: clsx(color, themeStyling?.colorSwatch, styling?.colorSwatch)
+              })}
+            ></div>
+          {/each}
+        </div>
+      </DropdownItem>
+    {/each}
+  </Dropdown>
+</div>

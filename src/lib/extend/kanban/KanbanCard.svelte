@@ -4,7 +4,7 @@
   import { kanbanCard } from "./theme";
   import { getTheme } from "$lib/theme-provider/themeUtils";
 
-  let { card, isDragging = false, onDragStart, onDragEnd, class:className, classes, ...restProps }: KanbanCardProps = $props();
+  let { card, isDragging = false, onDragStart, onDragEnd, class: className, classes, ...restProps }: KanbanCardProps = $props();
 
   const styling = $derived(classes);
   const theme = $derived(getTheme("kanbanCard"));

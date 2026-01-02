@@ -75,6 +75,7 @@ import type { ToastVaraints } from "$lib/toast/theme";
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "$lib/toolbar/theme";
 import type { TooltipVariants } from "$lib/tooltip/theme";
 import type { VideoVariants } from "$lib/video/theme";
+import type { ThemeSelectorVariants } from "$lib/theme-selector/theme";
 
 // forms component variants
 import type { CheckboxButtonVariants, CheckboxVariants } from "$lib/forms/checkbox/theme";
@@ -2214,3 +2215,6 @@ export interface ClipboardManagerProps extends ClipboardManagerVariants {
   modalProps?: ModalProps;
   detectSensitiveData?: (text: string) => boolean;
 }
+
+// theme-selector
+export interface ThemeSelectorProps extends ThemeSelectorVariants, HTMLAttributes<HTMLDivElement> {}

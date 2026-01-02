@@ -1,3 +1,6 @@
+// themeSelector
+export { themeSelector } from "../theme-selector";
+
 // components
 export { accordion, accordionItem } from "../accordion";
 export { alert } from "../alert";
@@ -40,7 +43,7 @@ export { toast, toastContainer } from "../toast";
 export { toolbar, toolbarButton, toolbarGroup } from "../toolbar";
 export { tooltip } from "../tooltip";
 // export {utils} from "../utils";
-// export {} from "../video";
+export { video } from "../video";
 
 // forms
 export { checkbox, checkboxButton } from "../forms/checkbox";

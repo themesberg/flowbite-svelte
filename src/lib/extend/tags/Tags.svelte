@@ -178,7 +178,7 @@
       <CloseButton data-part="close-button" {...finalCloseProps(index)} />
     </div>
   {/each}
-  <div data-part="input-wrapper" class={inputWrapper({ class: clsx(theme?.inputWrapper, styling?.inputWrapper)})} bind:this={inputContainer}>
+  <div data-part="input-wrapper" class={inputWrapper({ class: clsx(theme?.inputWrapper, styling?.inputWrapper) })} bind:this={inputContainer}>
     <input
       data-part="input"
       {...inputProps}
@@ -200,7 +200,7 @@
               <button
                 data-part="option"
                 type="button"
-                class={option({class: clsx(theme?.option, styling?.option)})}
+                class={option({ class: clsx(theme?.option, styling?.option) })}
                 onclick={() => {
                   value = [...value, suggestion];
                   contents = "";
