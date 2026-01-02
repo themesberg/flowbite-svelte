@@ -305,7 +305,13 @@
           oninput={(e) => handleTimeChange(e, true)}
           onchange={(e) => handleTimeChange(e, true)}
         />
-        <button data-part="range-button" type="button" class={styles.rangeButton({ class: clsx(theme?.rangeButton) })} onclick={() => document.getElementById(endId)?.click()} aria-label="Open end time picker">
+        <button
+          data-part="range-button"
+          type="button"
+          class={styles.rangeButton({ class: clsx(theme?.rangeButton) })}
+          onclick={() => document.getElementById(endId)?.click()}
+          aria-label="Open end time picker"
+        >
           {#if Icon}
             <Icon class={iconClass} />
           {:else}

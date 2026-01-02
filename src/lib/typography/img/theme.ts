@@ -7,18 +7,18 @@ export type ImgVariants = VariantProps<typeof img> & Classes<typeof img>;
 export const img = tv({
   slots: {
     image: "max-w-full h-auto",
-    base: "",
+    figure: "",
     caption: "mt-2 text-sm text-center text-gray-500 dark:text-gray-400"
   },
   variants: {
     size: {
-      xs: { image: "max-w-xs", base: "max-w-xs" },
-      sm: { image: "max-w-sm", base: "max-w-sm" },
-      md: { image: "max-w-md", base: "max-w-md" },
-      lg: { image: "max-w-lg", base: "max-w-lg" },
-      xl: { image: "max-w-xl", base: "max-w-xl" },
-      "2xl": { image: "max-w-2xl", base: "max-w-2xl" },
-      full: { image: "max-w-full", base: "max-w-full" }
+      xs: { image: "max-w-xs", figure: "max-w-xs" },
+      sm: { image: "max-w-sm", figure: "max-w-sm" },
+      md: { image: "max-w-md", figure: "max-w-md" },
+      lg: { image: "max-w-lg", figure: "max-w-lg" },
+      xl: { image: "max-w-xl", figure: "max-w-xl" },
+      "2xl": { image: "max-w-2xl", figure: "max-w-2xl" },
+      full: { image: "max-w-full", figure: "max-w-full" }
     },
     effect: {
       grayscale: {
@@ -39,9 +39,9 @@ export const img = tv({
       }
     },
     align: {
-      left: { image: "mx-0", base: "mx-0" },
-      center: { image: "mx-auto", base: "mx-auto" },
-      right: { image: "ml-auto mr-0", base: "ml-auto mr-0" }
+      left: { image: "mx-0", figure: "mx-0" },
+      center: { image: "mx-auto", figure: "mx-auto" },
+      right: { image: "ml-auto mr-0", figure: "ml-auto mr-0" }
     }
   }
 });

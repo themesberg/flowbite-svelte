@@ -6,7 +6,8 @@ export type FileuploadViariants = VariantProps<typeof fileupload> & Classes<type
 
 export const fileupload = tv({
   slots: {
-    input: "block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:ring-brand focus:border-brand bg-neutral-secondary-medium text-heading text-sm dark:placeholder-gray-400 border-default-medium rounded-base border  shadow-xs placeholder:text-body",
+    input:
+      "block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right focus:ring-brand focus:border-brand bg-neutral-secondary-medium text-heading text-sm dark:placeholder-gray-400 border-default-medium rounded-base border  shadow-xs placeholder:text-body",
     base: "relative w-full",
     closeButton: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 end-0 p-2.5",
     closeIcon: ""
