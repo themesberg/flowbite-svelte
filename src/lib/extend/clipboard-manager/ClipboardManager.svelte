@@ -292,7 +292,13 @@
     {#if items.length > 0}
       <div data-part="search-wrapper" class={styles.searchWrapper({ class: clsx(theme?.searchWrapper, classes?.searchWrapper) })}>
         <div data-part="search-container" class={styles.searchContainer({ class: clsx(theme?.searchContainer, classes?.searchContainer) })}>
-          <input data-part="search-input" type="text" bind:value={searchQuery} placeholder="Search clipboard..." class={styles.searchInput({ class: clsx(theme?.searchInput, classes?.searchInput) })} />
+          <input
+            data-part="search-input"
+            type="text"
+            bind:value={searchQuery}
+            placeholder="Search clipboard..."
+            class={styles.searchInput({ class: clsx(theme?.searchInput, classes?.searchInput) })}
+          />
           <svg data-part="search-icon" class={styles.searchIcon({ class: clsx(theme?.searchIcon, classes?.searchIcon) })} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <circle cx="11" cy="11" r="8" />
             <path d="m21 21-4.35-4.35" />

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { ExampleWrapper, HighlightCompo, transformComponents, transformModules } from "svelte-rune-highlight";
-  import 'highlight.js/styles/github-dark.css';
+  import "highlight.js/styles/github-dark.css";
   import type { Component } from "svelte";
   import { Table } from "$lib";
   import { clipboardManagerProps } from "./clipboardManagerProps";
@@ -36,7 +36,7 @@
   <section class="space-y-6">
     <Heading tag="h2" class="text-2xl font-semibold">📚 Usage Examples</Heading>
 
-    <div class="space-y-3 rounded-base p-6 shadow">
+    <div class="rounded-base space-y-3 p-6 shadow">
       <div class="flex items-center gap-3">
         <span class="rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800">Basic</span>
         <Heading tag="h3" class="text-lg font-semibold">Enable Selection Menu</Heading>
@@ -45,7 +45,7 @@
       <HighlightCompo code={modules["EnableSelectionMenu"] as string} class="max-w-7xl bg-white" />
     </div>
 
-    <div class="space-y-3 rounded-base p-6 shadow">
+    <div class="rounded-base space-y-3 p-6 shadow">
       <div class="flex items-center gap-3">
         <span class="rounded bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-800">Targeted</span>
         <Heading tag="h3" class="my-4 text-lg font-semibold">Target Specific Area</Heading>
@@ -61,7 +61,7 @@
       <ExampleWrapper component={components["TargetSpecific"]} code={modules["TargetSpecific"]} innerClass="p-4" />
     </div>
 
-    <div class="space-y-3 rounded-base p-6 shadow">
+    <div class="rounded-base space-y-3 p-6 shadow">
       <div class="flex items-center gap-3">
         <span class="rounded bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-800">Modal</span>
         <Heading tag="h3" class="my-4 text-lg font-semibold">Modal</Heading>
@@ -74,7 +74,7 @@
       <ExampleWrapper component={components["WithModal"]} code={modules["WithModal"]} innerClass="p-4" />
     </div>
 
-    <div class="space-y-3 rounded-base p-6 shadow">
+    <div class="rounded-base space-y-3 p-6 shadow">
       <div class="flex items-center gap-3">
         <span class="rounded bg-purple-100 px-2.5 py-0.5 text-xs font-semibold text-purple-800">Documentation</span>
         <Heading tag="h3" class="text-lg font-semibold">Documentation Site</Heading>
@@ -89,7 +89,7 @@
       <ExampleWrapper component={components["DocumentationSite"]} code={modules["DocumentationSite"]} innerClass="p-4" />
     </div>
 
-    <div class="space-y-3 rounded-base p-6 shadow">
+    <div class="rounded-base space-y-3 p-6 shadow">
       <div class="flex items-center gap-3">
         <span class="rounded bg-orange-100 px-2.5 py-0.5 text-xs font-semibold text-orange-800">Content</span>
         <Heading tag="h3" class="text-lg font-semibold">Blog/Article Reader</Heading>
@@ -104,7 +104,7 @@
       <ExampleWrapper component={components["BlogReader"]} code={modules["BlogReader"]} innerClass="p-4" />
     </div>
 
-    <div class="space-y-3 rounded-base p-6 shadow">
+    <div class="rounded-base space-y-3 p-6 shadow">
       <div class="flex items-center gap-3">
         <span class="rounded bg-pink-100 px-2.5 py-0.5 text-xs font-semibold text-pink-800">Support</span>
         <Heading tag="h3" class="text-lg font-semibold">Email Client / Support Dashboard</Heading>
@@ -114,7 +114,7 @@
     </div>
 
     <!-- Example 6 -->
-    <div class="space-y-3 rounded-base p-6 shadow">
+    <div class="rounded-base space-y-3 p-6 shadow">
       <div class="flex items-center gap-3">
         <span class="rounded bg-yellow-100 px-2.5 py-0.5 text-xs font-semibold text-yellow-800">localStorage</span>
         <Heading tag="h3" class="text-lg font-semibold">Save to Store</Heading>
@@ -146,7 +146,7 @@
       <ExampleWrapper component={components["SaveToStorage"]} code={modules["SaveToStorage"]} innerClass="p-4" />
     </div>
 
-    <div class="space-y-3 rounded-base p-6 shadow">
+    <div class="rounded-base space-y-3 p-6 shadow">
       <div class="flex items-center gap-3">
         <span class="rounded bg-indigo-100 px-2.5 py-0.5 text-xs font-semibold text-indigo-800">Developer</span>
         <Heading tag="h3" class="text-lg font-semibold">Code Editor with Snippets</Heading>
@@ -171,7 +171,7 @@
       <ExampleWrapper component={components["CodeEditor"]} code={modules["CodeEditor"]} innerClass="p-4" />
     </div>
 
-    <div class="space-y-3 rounded-base p-6 shadow">
+    <div class="rounded-base space-y-3 p-6 shadow">
       <div class="flex items-center gap-3">
         <span class="rounded bg-teal-100 px-2.5 py-0.5 text-xs font-semibold text-teal-800">Advanced</span>
         <Heading tag="h3" class="text-lg font-semibold">Multiple Content Areas</Heading>
@@ -180,7 +180,7 @@
       <ExampleWrapper component={components["MultipleContent"]} code={modules["MultipleContent"]} innerClass="p-4" />
     </div>
 
-    <div class="space-y-3 rounded-base p-6 shadow">
+    <div class="rounded-base space-y-3 p-6 shadow">
       <div class="flex items-center gap-3">
         <span class="rounded bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-800">Selection Only</span>
         <Heading tag="h3" class="text-lg font-semibold">No Manual Input</Heading>
@@ -192,7 +192,7 @@
       <ExampleWrapper component={components["NoManualInput"]} code={modules["NoManualInput"]} innerClass="p-4" />
     </div>
 
-    <div class="space-y-3 rounded-base p-6 shadow">
+    <div class="rounded-base space-y-3 p-6 shadow">
       <div class="flex items-center gap-3">
         <span class="rounded bg-gray-100 px-2.5 py-0.5 text-xs font-semibold text-gray-800">Custom</span>
         <Heading tag="h3" class="text-lg font-semibold">Custom Empty State</Heading>
@@ -202,7 +202,7 @@
     </div>
   </section>
 
-  <section class="space-y-4 rounded-base p-6 shadow">
+  <section class="rounded-base space-y-4 p-6 shadow">
     <Heading tag="h2" class="text-2xl font-semibold">💡 Best Practices</Heading>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
       <div class="border-l-4 border-green-500 pl-4">

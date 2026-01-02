@@ -80,7 +80,7 @@ export { clipboardManager } from "$lib/extend/clipboard-manager/theme";
 export { commandPalette } from "$lib/extend/command-palette/theme";
 export { kanbanBoard, kanbanCard } from "$lib/extend/kanban/theme";
 export { scrollspy } from "$lib/extend/scroll-spy/theme";
-export { splitpane, pane, divider, dividerHitArea } from "$lib/extend/split-pane/theme";
+export { splitpane, pane, divider } from "$lib/extend/split-pane/theme";
 export { stepIndicator } from "../extend/step-indicator";
 export { tags } from "../extend/tags";
 export { tour } from "$lib/extend/tour/theme";

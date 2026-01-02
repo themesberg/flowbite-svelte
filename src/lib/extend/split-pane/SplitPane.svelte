@@ -377,7 +377,7 @@
   }
 </script>
 
-<div bind:this={container} class={splitpane({ direction: currentDirection, class: clsx(theme, className) })}>
+<div bind:this={container} class={splitpane({ direction: currentDirection, class: clsx(theme, className) })} data-scope="split-pane" data-part="base">
   {@render children()}
 </div>
 

@@ -38,7 +38,7 @@
   let intersectingSections = $state<Map<string, IntersectionObserverEntry>>(new Map());
 
   const theme = $derived.by(() => {
-    const { base, container, list, li } = scrollspy({
+    const { base, container, list, item } = scrollspy({
       position,
       sticky,
       isSticky
@@ -53,7 +53,7 @@
       list: list({ class: clsx(styles?.list, classes?.list) }),
       activeLink: activeLink({ class: clsx(styles?.link, classes?.link) }),
       inactiveLink: inactiveLink({ class: clsx(styles?.link, classes?.link) }),
-      li: li({ class: clsx(styles?.li, classes?.li) })
+      item: item({ class: clsx(styles?.item, classes?.item) })
     };
   });
 
@@ -232,14 +232,15 @@
   });
 </script>
 
-<nav {...restProps} bind:this={navElement} class={theme.base} aria-label="Scroll spy navigation">
-  <div class={theme.container}>
-    <ul class={theme.list} role="list">
+<nav {...restProps} bind:this={navElement} class={theme.base} data-scope="scroll-spy" data-part="base" aria-label="Scroll spy navigation">
+  <div class={theme.container} data-part="container">
+    <ul class={theme.list} data-part="list" role="list">
       {#each items as item (item.id)}
-        <li class={theme.li}>
+        <li class={theme.item} data-part="item">
           <a
             href={item.href || `#${item.id}`}
             class={getItemClass(item.id)}
+            data-part="link"
             aria-current={activeId === item.id ? "location" : undefined}
             onclick={(e) => {
               scrollToSection(item.id, e);
