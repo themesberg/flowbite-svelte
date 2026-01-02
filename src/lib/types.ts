@@ -211,8 +211,6 @@ export type AnchorButtonDivAttributes =
 export interface AccordionProps extends AccordionVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   children: Snippet;
   multiple?: boolean;
-  activeClass?: ClassValue;
-  inactiveClass?: ClassValue;
   transitionType?: TransitionFunc | "none";
   respectReducedMotion?: boolean;
   classes?: Partial<{
@@ -1080,6 +1078,7 @@ export type NavbarState = {
   hidden: boolean;
   activeClass?: ClassValue;
   nonActiveClass?: ClassValue;
+  itemClass?: ClassValue;
   activeUrl?: string;
 };
 
@@ -1113,6 +1112,13 @@ export interface NavUlProps extends NavbarUlVariants, Omit<HTMLAttributes<HTMLDi
   transitionParams?: SlideParams | FlyParams | FadeParams | ScaleParams;
   respectMotionPreference?: boolean;
   class?: ClassValue;
+  classes?: Partial<{
+      base?: ClassValue;
+      list?: ClassValue;
+      active?: ClassValue;
+      nonActive?: ClassValue;
+      item?: ClassValue; 
+    }>;
 }
 
 export type NavLiProps = AnchorButtonAttributes &

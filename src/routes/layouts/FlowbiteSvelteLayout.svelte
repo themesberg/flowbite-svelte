@@ -59,14 +59,14 @@
     <NavUl
       {activeUrl}
       class="order-1 ml-auto w-full lg:order-none lg:block lg:w-auto"
-      classes={{ list: "flex flex-col lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-1" }}
+      classes={{ list: "flex flex-col lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-1 p-3", item:"ps-0 pe-0 lg:ps-2 lg:pe-2" }}
     >
-      <NavLi class="lg:mb-0 lg:px-2" href="/docs/pages/introduction">Docs</NavLi>
-      <NavLi class="lg:mb-0 lg:px-2" href="/docs/components/accordion">Components</NavLi>
-      <NavLi class="lg:mb-0 lg:px-2" href="/blocks">Blocks</NavLi>
-      <NavLi class="lg:mb-0 lg:px-2" href="/admin-dashboard">Dashboard</NavLi>
-      <NavLi class="lg:mb-0 lg:px-2" href="/icons/quickstart">Icons</NavLi>
-      <NavLi class="lg:mb-0 lg:px-2" href="/illustrations/illustrations">Illustrations</NavLi>
+      <NavLi href="/docs/pages/introduction">Docs</NavLi>
+      <NavLi href="/docs/components/accordion">Components</NavLi>
+      <NavLi href="/blocks">Blocks</NavLi>
+      <NavLi href="/admin-dashboard">Dashboard</NavLi>
+      <NavLi href="/icons/quickstart">Icons</NavLi>
+      <NavLi href="/illustrations/illustrations">Illustrations</NavLi>
     </NavUl>
 
     <div class="order-1 ml-auto flex items-center lg:order-2">

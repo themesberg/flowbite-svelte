@@ -1,51 +1,37 @@
 You can access /Users/shinichiokada/Flowbite/flowbite-svelte-local-development.
 
-In a markdown file, for example, src/routes/docs/typography/hr.md, I use the following:
-
-
-```markdown
-## Default HR
-
-```svelte example
-{#include Default.svelte}
+I use src/lib/context.ts for setting and getting context. You can find which components I use for in the file.
+In src/lib/navbar/NavUl.svelte, I'd like to set context for NavLi's classes.item so that I can overwrite const navLi in src/lib/navbar/theme.ts at once in NavUl components.
+NavUl and NavLi already uses `getNavbarStateContext` and `getNavbarBreakpointContext`. 
+I updated `NavbarState` by adding `itemClass`.
+```ts
+export type NavbarState = {
+  hidden: boolean;
+  activeClass?: ClassValue;
+  nonActiveClass?: ClassValue;
+  itemClass?: ClassValue;
+  activeUrl?: string;
+};
 ```
-```
 
-The `#include` is coming from `./include-files.js`.  It picks up example svelte code from src/routes/docs-examples directory where component name and file name matches.
-I use src/routes/utils/ExampleWrapper.svelte to display rendered output and code string.
-I define it in ./mdsvex.config.js.
-
-So far I use import from ``flowbite-svelte`` as the following:
+I created a page in src/routes/testdir/navbar/+page.svelte and I have a type error on `item`: Object literal may only specify known properties, and 'item' does not exist in type 'Partial<{ list: ClassValue; active: ClassValue; nonActive: ClassValue; }>'.ts(2353)
+(property) item: string
 
 ```svelte
-<script lang="ts">
-  import { Hr, P } from "flowbite-svelte";
-</script>
+<Navbar>
+  <NavBrand href="/">
+    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite Svelte</span>
+  </NavBrand>
+  <NavHamburger />
+  <NavUl {activeUrl} classes={{ active: activeClass, nonActive: nonActiveClass, item: itemClass }}>
+    <NavLi href="/">Home</NavLi>
+    <NavLi href="/docs/components/navbar">Navbar</NavLi>
+  </NavUl>
+</Navbar>
 ```
 
-I alias `flowbite-svelte` in ./vite.config.ts:
+I'm not sure where I should add `item` in NavLi.svelte.
+Can you help to set it up NavUl and NavLi?
 
-```
- ...
-  resolve: {
-    alias: {
-      "flowbite-svelte": path.resolve(process.cwd(), "./src/lib/index.ts")
-    }
-  },
-```
+=========================
 
-The problem is that when I update any file in the src/lib directory, I need to run pnpm build, otherwise I get errors on editor and pnpm check.
-
-I'm not sure what I need to change so that when I change code in the lib directory, it automatically reflect on files in src/routes directory.
-
-I may be wrong but if I import from "$lib" as the following:
-
-```svelte
-<script lang="ts">
-  import { Hr, P } from "flowbite-svelte";
-</script>
-```
-
-and replace $lib with flowbite-svelte for code string and copy code  in ExampleWrapper.svelte may work???
-
-Do you have any suggestions? Can you fix this problem?

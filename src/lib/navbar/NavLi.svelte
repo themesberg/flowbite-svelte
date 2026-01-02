@@ -17,11 +17,18 @@
 
   let active = $derived(navState?.activeUrl ? restProps.href === navState.activeUrl : false);
   const { base, item } = $derived(navLi());
+  
+  // Combine item class from theme with itemClass from context and local styling
   let itemClass = $derived(
     item({
       breakpoint: navBreakpoint ?? "md",
       hidden: navState?.hidden ?? true,
-      class: clsx(active ? (activeClass ?? navState?.activeClass) : (nonActiveClass ?? navState?.nonActiveClass), theme?.item, styling?.item)
+      class: clsx(
+        active ? (activeClass ?? navState?.activeClass) : (nonActiveClass ?? navState?.nonActiveClass),
+        navState?.itemClass,
+        theme?.item,
+        styling?.item
+      )
     })
   );
 
@@ -41,13 +48,13 @@
   }
 </script>
 
-<li data-scope="nav-li" class={base({ class: clsx(theme?.base, className) })}>
+<li data-scope="nav-li" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
   {#if restProps.href === undefined}
-    <button role="presentation" onclick={handleClick} {...restProps} class={itemClass}>
+    <button role="presentation" data-part="item" onclick={handleClick} {...restProps} class={itemClass}>
       {@render children?.()}
     </button>
   {:else}
-    <a {...restProps} class={itemClass} onclick={handleClick}>
+    <a {...restProps} class={itemClass} data-part="item" onclick={handleClick}>
       {@render children?.()}
     </a>
   {/if}

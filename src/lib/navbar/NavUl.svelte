@@ -52,6 +52,7 @@
     if (!navState) return;
     navState.activeClass = active({ class: clsx(theme?.active, styling?.active) });
     navState.nonActiveClass = nonActive({ class: clsx(theme?.nonActive, styling?.nonActive) });
+    navState.itemClass = styling?.item;
     navState.activeUrl = activeUrl;
   });
 
@@ -60,14 +61,14 @@
 </script>
 
 {#if !hidden}
-  <div {...restProps} class={divCls} transition:transition={transitionOptions()}>
-    <ul class={ulCls}>
+  <div data-scope="nav-ul" data-part="base" {...restProps} class={divCls} transition:transition={transitionOptions()}>
+    <ul class={ulCls} data-part="list">
       {@render children?.()}
     </ul>
   </div>
 {:else}
-  <div {...restProps} class={divCls}>
-    <ul class={ulCls}>
+  <div data-scope="nav-ul" data-part="base" {...restProps} class={divCls}>
+    <ul class={ulCls} data-part="list">
       {@render children?.()}
     </ul>
   </div>
