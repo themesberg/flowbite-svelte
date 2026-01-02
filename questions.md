@@ -1,5 +1,15 @@
 You can access /Users/shinichiokada/Flowbite/flowbite-svelte-local-development.
 
+I want to add data-scope and data-part to svelte components in src/lib/extend/kanban directory. For this task, please follow the following steps.
+
+First add data-scope and data-part to these files according to design-system-guide. If you can't find a proper data-part use proper data-part names.
+
+Once you finish the part 1, then update slots names in theme.ts. Use base if 
+
+=================
+
+You can access /Users/shinichiokada/Flowbite/flowbite-svelte-local-development.
+
 I use src/lib/context.ts for setting and getting context. You can find which components I use for in the file.
 In src/lib/navbar/NavUl.svelte, I'd like to set context for NavLi's classes.item so that I can overwrite const navLi in src/lib/navbar/theme.ts at once in NavUl components.
 NavUl and NavLi already uses `getNavbarStateContext` and `getNavbarBreakpointContext`. 

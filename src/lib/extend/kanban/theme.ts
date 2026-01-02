@@ -6,16 +6,11 @@ export type KanbanCardVariants = VariantProps<typeof kanbanCard> & Classes<typeo
 
 export const kanbanBoard = tv({
   slots: {
-    container: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 p-2 md:p-4",
+    base: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 p-2 md:p-4",
     column: "w-full rounded-xl shadow-sm p-3 md:p-4 flex flex-col bg-surface-elevated text-surface-foreground transition-colors",
-    columnTitle: "text-sm md:text-base font-semibold mb-2 md:mb-3 dark:text-white",
-    cardList: "flex flex-col gap-2 flex-1 min-h-[60px]",
-    card: "bg-surface text-surface-foreground rounded-lg p-2.5 md:p-3 shadow-sm cursor-grab active:cursor-grabbing transition-all hover:bg-surface-hover hover:shadow-md",
-    cardTitle: "font-medium text-sm md:text-base",
-    cardDescription: "text-xs md:text-sm text-muted mt-1",
-    cardTags: "flex flex-wrap gap-1 mt-2",
-    cardTag: "text-[10px] md:text-xs bg-primary/10 text-primary px-1.5 md:px-2 py-0.5 rounded-full",
-    addButton:
+    title: "text-sm md:text-base font-semibold mb-2 md:mb-3 dark:text-white",
+    list: "flex flex-col gap-2 flex-1 min-h-[60px]",
+    button:
       "mt-2 md:mt-3 w-full bg-primary text-primary-foreground rounded-lg py-1.5 text-xs md:text-sm dark:text-primary-500 font-medium hover:bg-primary/90 transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2"
   },
   variants: {
@@ -26,7 +21,7 @@ export const kanbanBoard = tv({
     },
     isDragging: {
       true: {
-        card: "opacity-50"
+        base: "opacity-50"
       }
     }
   }
@@ -34,16 +29,16 @@ export const kanbanBoard = tv({
 
 export const kanbanCard = tv({
   slots: {
-    card: "bg-surface text-surface-foreground rounded-lg p-2.5 md:p-3 shadow-sm shadow-black/20 dark:shadow-white/10 cursor-grab active:cursor-grabbing transition-all hover:bg-surface-hover hover:shadow-md",
-    cardTitle: "font-medium text-sm md:text-base dark:text-white",
-    cardDescription: "text-xs md:text-sm text-muted mt-1 dark:text-white",
-    cardTags: "flex flex-wrap gap-1 mt-2 dark:text-white",
-    cardTag: "text-[10px] md:text-xs bg-primary/10 text-primary px-1.5 md:px-2 py-0.5 rounded-full dark:text-white"
+    base: "bg-surface text-surface-foreground rounded-lg p-2.5 md:p-3 shadow-sm shadow-black/20 dark:shadow-white/10 cursor-grab active:cursor-grabbing transition-all hover:bg-surface-hover hover:shadow-md",
+    title: "font-medium text-sm md:text-base dark:text-white",
+    description: "text-xs md:text-sm text-muted mt-1 dark:text-white",
+    tags: "flex flex-wrap gap-1 mt-2 dark:text-white",
+    tag: "text-[10px] md:text-xs bg-primary/10 text-primary px-1.5 md:px-2 py-0.5 rounded-full dark:text-white"
   },
   variants: {
     isDragging: {
       true: {
-        card: "opacity-50"
+        base: "opacity-50"
       }
     }
   }

@@ -19,6 +19,7 @@
     contained = false
   }: VirtualMasonryProps<T> = $props();
 
+  const styling = $derived(classes);
   const theme = $derived(getTheme("virtualMasonry"));
 
   let container: HTMLDivElement | undefined;
@@ -26,7 +27,7 @@
   let scrollTop = $state(0);
   let rafId: number | undefined;
 
-  const styles = $derived(virtualMasonry({ contained }));
+  const {base, spacer, content, item:itemPart} = $derived(virtualMasonry({ contained }));
 
   const containStyle = $derived.by(() => {
     if (!contained) return "";
@@ -139,21 +140,23 @@
 </script>
 
 <div
+  data-scope="virtual-mansonry"
+  data-part="base"
   bind:this={container}
   onscroll={handleScroll}
   role="list"
   aria-label={ariaLabel}
-  class={styles.container({ class: clsx(theme?.container, className) })}
+  class={base({ class: clsx(theme?.base, className) })}
   style={`height:${height}px; position:relative;`}
 >
-  <div class={styles.spacer({ class: clsx(theme?.spacer, classes?.spacer) })} style={`height:${totalHeight}px;`}>
-    <div class={styles.content({ class: clsx(theme?.content, classes?.content) })}>
+  <div class={spacer({ class: clsx(theme?.spacer, styling?.spacer) })} style={`height:${totalHeight}px;`}>
+    <div class={content({ class: clsx(theme?.content, styling?.content) })}>
       {#each visibleItems as { item, index, x, y, height: itemHeight } (index)}
         <div
           role="listitem"
           aria-setsize={items.length}
           aria-posinset={index + 1}
-          class={styles.item({ class: clsx(theme?.item, classes?.item) })}
+          class={itemPart({ class: clsx(theme?.item, styling?.item) })}
           style={`position:absolute; left:${x}px; top:${y}px; width:${columnWidth}px; height:${itemHeight}px; ${containStyle}`}
         >
           {@render children?.(item, index)}
