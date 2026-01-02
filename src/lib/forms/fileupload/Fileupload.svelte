@@ -12,7 +12,7 @@
 
   const theme = $derived(getTheme("fileupload"));
 
-  const { base, wrapper, closeButton } = fileupload();
+  const { input, base, closeButton } = fileupload();
 
   const clearAll = () => {
     if (elementRef) {
@@ -48,8 +48,8 @@
   });
 </script>
 
-<div class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })} data-scope="fileupload" data-part="wrapper">
-  <input type="file" onchange={handleChange} bind:this={elementRef} {...restProps} class={base({ size, class: clsx(theme?.base, className) })} data-part="base" />
+<div class={base({ class: clsx(theme?.base, className) })} data-scope="fileupload" data-part="wrapper">
+  <input type="file" onchange={handleChange} bind:this={elementRef} {...restProps} class={input({ size, class: clsx(theme?.input, styling?.input) })} data-part="input" />
   {#if showClearButton}
     <CloseButton {...finalCloseProps} data-part="close-button" />
   {/if}
