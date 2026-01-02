@@ -27,7 +27,7 @@
 
   const theme = $derived(getTheme("checkbox"));
 
-  const { base, label: labelStyle } = $derived(checkbox({ color, tinted, custom, rounded, inline, disabled: disabled ?? false }));
+  const { input, label: labelStyle } = $derived(checkbox({ color, tinted, custom, rounded, inline, disabled: disabled ?? false }));
 
   $effect(() => {
     if (value !== undefined && Array.isArray(group)) {
@@ -62,8 +62,8 @@
         {disabled}
         bind:group
         {...restProps}
-        class={base({ class: clsx(theme?.base, className) })}
-        data-part="base"
+        class={input({ class: clsx(theme?.input, styling?.input) })}
+        data-part="input"
       />
       {#if children}
         {@render children({ value: choice.value, checked: choice.checked, disabled })}
@@ -74,7 +74,7 @@
   {/each}
 {:else}
   <Label show={!!children} {...labelProps} class={labelStyle({ class: clsx(theme?.label, styling?.label) })} data-scope="checkbox" data-part="label">
-    <input type="checkbox" {value} bind:checked {disabled} {...restProps} class={base({ class: clsx(theme?.base, className) })} data-part="base" />
+    <input type="checkbox" {value} bind:checked {disabled} {...restProps} class={input({ class: clsx(theme?.input, styling?.input) })} data-part="input" />
     {#if children}
       {@render children({ value, checked, disabled })}
     {/if}
