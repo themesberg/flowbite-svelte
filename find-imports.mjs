@@ -61,4 +61,5 @@ if (results.length === 0) {
     });
     console.log("");
   });
+  console.log("\n💡 To fix these, run: node convert-imports.mjs");
 }

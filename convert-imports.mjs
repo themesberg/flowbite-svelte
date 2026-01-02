@@ -58,16 +58,16 @@ function findFiles(dir, fileList = []) {
 function convertImports(content, filePath) {
   const fileName = path.basename(filePath);
 
+  // Skip excluded files entirely
+  if (shouldExcludeFile(filePath)) {
+    return content;
+  }
+
   // Special handling for helpers.ts - only convert the actual imports, not the string replacements
   if (fileName === "helpers.ts" && filePath.includes("src/routes/utils/helpers.ts")) {
     // Don't convert lines that are part of the replaceLibImport function
     // These lines contain strings like: .replace(/from ["']\$lib["']/g, "from 'flowbite-svelte'")
     // We want to preserve those
-    return content;
-  }
-
-  // Don't convert if the file contains transformation logic in include-files.js
-  if (filePath.includes("include-files.js")) {
     return content;
   }
 
@@ -115,17 +115,10 @@ function main() {
         const fileName = path.basename(filePath);
         const relativePath = path.relative(process.cwd(), filePath);
 
-        // Check if it's a transformation utility file that should be skipped
-        if (fileName === "helpers.ts" && filePath.includes("src/routes/utils/helpers.ts")) {
-          console.log(`⊘ Skipped (transformation utility): ${relativePath}`);
-          skippedFiles.push(relativePath);
-          skippedCount++;
-        } else {
-          fs.writeFileSync(filePath, converted, "utf-8");
-          console.log(`✓ Converted: ${relativePath}`);
-          convertedFiles.push(relativePath);
-          convertedCount++;
-        }
+        fs.writeFileSync(filePath, converted, "utf-8");
+        console.log(`✓ Converted: ${relativePath}`);
+        convertedFiles.push(relativePath);
+        convertedCount++;
       } else {
         unchangedCount++;
       }
