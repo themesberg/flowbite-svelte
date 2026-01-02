@@ -10,6 +10,8 @@ Format: Always kebab-case (e.g., breadcrumb-item for BreadcrumbItem, button-grou
 
 Usage: Applied to the root element of the component. It acts as a namespace to prevent CSS leakage and helps in end-to-end testing (Playwright/Vitest).
 
+There should be only one data-scope attribute per component file, except when conditional rendering (if-else statements) requires otherwise.
+
 2. `data-part`
 Definition: Identifies a specific sub-element (slot) within the component.
 
@@ -73,25 +75,28 @@ These show up across almost all well-designed component libraries (Radix, Ark, S
 
 ### **1️⃣ Structural parts (layout / grouping)**
 
-| Name        | Meaning                                       |
-| :---------- | :-------------------------------------------- |
-| `base`      | Root element of the component                 |
-| `content`   | Main content area                             |
-| `container` | Layout wrapper (less semantic than `content`) |
-| `wrapper`   | Structural wrapper (use sparingly)            |
-| `body`      | Main content body (dialogs, cards)            |
+| Name        | Meaning                                                |
+| :---------- | :----------------------------------------------------- |
+| `base`      | Root element of the component                          |
+| `content`   | Main content area                                      |
+| `container` | Layout wrapper (less semantic than `content`)          |
+| `wrapper`   | Structural wrapper (use sparingly)                     |
+| `body`      | Main content body (dialogs, cards)                     |
+| `list`      | Ordered or unordered list container (e.g., <ul>, <ol>) |
+| `item`      | Individual items inside a list or group                |
 
 ---
 
 ### **2️⃣ Interactive parts**
 
-| Name      | Use case                  |
-| :-------- | :------------------------ |
-| `trigger` | Opens/toggles something   |
-| `button`  | Clickable control         |
-| `item`    | Repeated interactive item |
-| `option`  | Selectable option         |
-| `tab`     | Tab element               |
+| Name           | Use case                  |
+| :------------- | :------------------------ |
+| `trigger`      | Opens/toggles something   |
+| `button`       | Clickable control         |
+| `close-button` | For CloseButton           |
+| `item`         | Repeated interactive item |
+| `option`       | Selectable option         |
+| `tab`          | Tab element               |
 
 Example:
 
