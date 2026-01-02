@@ -109,7 +109,7 @@
 </script>
 
 <div class="inline">
-  <div class={base} role={multiSelect ? "group" : "radiogroup"} aria-label={name} {...restProps}>
+  <div data-scope="button-toggle-group" class={base} role={multiSelect ? "group" : "radiogroup"} aria-label={name} {...restProps}>
     {@render children()}
   </div>
 </div>

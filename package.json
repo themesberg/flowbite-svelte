@@ -175,10 +175,13 @@
   },
   "exports": {
     ".": {
+      "development": "./src/lib/index.ts",
       "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js"
+      "svelte": "./dist/index.js",
+      "default": "./dist/index.js"
     },
     "./types": {
+      "development": "./src/lib/types.ts",
       "types": "./dist/types.d.ts",
       "import": "./dist/types.js",
       "default": "./dist/types.js"
