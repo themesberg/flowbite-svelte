@@ -104,6 +104,9 @@ describe("Stepper Component", () => {
       const stepper = screen.getByTestId("stepper-description");
 
       expect(stepper).toBeInTheDocument();
+      // Verify descriptions are actually rendered
+    const descriptions = stepper.querySelectorAll('[data-part="content"]');
+    expect(descriptions.length).toBeGreaterThan(0);
     });
   });
 
