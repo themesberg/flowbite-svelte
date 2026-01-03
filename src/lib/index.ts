@@ -73,7 +73,7 @@ export * from "./forms/toggle";
 // typography
 export * from "./typography/a";
 export * from "./typography/blockquote";
-export * from "./typography/descriptionlist";
+export * from "./typography/description-list/index.js";
 export * from "./typography/heading";
 export * from "./typography/hr";
 export * from "./typography/img";

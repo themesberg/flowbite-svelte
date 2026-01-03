@@ -1,5 +1,6 @@
 <script lang="ts">
   import Avatar from "$lib/avatar/Avatar.svelte";
+  import { TEST_IMAGE_SVG } from "../fixtures/test-images"
 </script>
 
-<Avatar src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="User with status" dot={{ color: "success" }} />
+<Avatar src={TEST_IMAGE_SVG} alt="User with status" dot={{ color: "success" }} />

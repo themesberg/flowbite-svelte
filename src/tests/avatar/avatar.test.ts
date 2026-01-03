@@ -1,5 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
+import { TEST_IMAGE_SVG } from "../fixtures/test-images"
 
 import BasicAvatarTest from "./basic-avatar.test.svelte";
 import AvatarWithImageTest from "./avatar-with-image.test.svelte";
@@ -31,7 +32,7 @@ describe("Avatar Component", () => {
       const img = screen.getByRole("img", { name: "User avatar" });
 
       expect(img).toBeInTheDocument();
-      expect(img).toHaveAttribute("src", "https://flowbite.com/docs/images/people/profile-picture-5.jpg");
+      expect(img).toHaveAttribute("src", TEST_IMAGE_SVG);
       expect(img).toHaveAttribute("alt", "User avatar");
     });
 
@@ -53,7 +54,7 @@ describe("Avatar Component", () => {
       const link = screen.getByRole("link");
 
       expect(link).toBeInTheDocument();
-      expect(link).toHaveAttribute("href", "/profile");
+      expect(link).toHaveAttribute("href", "https://example.com");
       expect(link.querySelector("img")).toHaveAttribute("alt", "Profile link");
     });
   });
