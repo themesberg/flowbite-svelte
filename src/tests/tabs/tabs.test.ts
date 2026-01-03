@@ -100,7 +100,8 @@ describe("Tabs Component", () => {
       expect(tablist).toBeInTheDocument();
 
       // Check that divider element is not present
-      const divider = document.querySelector('[data-part="divider"]');
+      const container = tablist.closest('[data-scope="tabs"]') || tablist.parentElement;
+      const divider = container?.querySelector('[data-part="divider"]');
       expect(divider).not.toBeInTheDocument();
     });
 
@@ -157,14 +158,18 @@ describe("Tabs Component", () => {
       const user = userEvent.setup();
       render(TabsWithDisabledTest);
 
-      const disabledTab = screen.getByTestId("disabled-tab").querySelector('[role="tab"]');
+      const disabledTab = screen.getByTestId("disabled-tab").querySelector('[role="tab"]')!;
+      const enabledTab = screen.getByTestId("enabled-tab").querySelector('[role="tab"]')!;
+      
+      expect(disabledTab).toBeInTheDocument();
+      expect(enabledTab).toHaveAttribute("aria-selected", "true");
 
-      if (disabledTab) {
-        await user.click(disabledTab);
-
-        // Disabled tab should not become selected
-        expect(disabledTab).toHaveAttribute("aria-selected", "false");
-      }
+      await user.click(disabledTab);
+      
+      // Disabled tab should not become selected
+      expect(disabledTab).toHaveAttribute("aria-selected", "false");
+      // Previously selected tab should remain selected
+      expect(enabledTab).toHaveAttribute("aria-selected", "true");
     });
 
     test("tab switching updates selected state", async () => {
@@ -271,9 +276,6 @@ describe("Tabs Component", () => {
       const tabs = screen.getAllByRole("tab");
 
       expect(tabs.length).toBeGreaterThan(0);
-      tabs.forEach((tab) => {
-        expect(tab).toHaveAttribute("role", "tab");
-      });
     });
 
     test("tab panel has correct role and is connected to tab", async () => {

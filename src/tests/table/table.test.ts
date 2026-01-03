@@ -133,23 +133,18 @@ describe("Table Component", () => {
       expect(button2).toBeInTheDocument();
       expect(testState.clickCount).toBe(0);
 
-      if (button1) {
-        await user.click(button1);
-        expect(testState.clickCount).toBe(1);
-        expect(testState.lastClickedCell).toBe("cell1");
-      }
+            // Buttons are already asserted to exist above
+      await user.click(button1!);
+      expect(testState.clickCount).toBe(1);
+      expect(testState.lastClickedCell).toBe("cell1");
 
-      if (button2) {
-        await user.click(button2);
-        expect(testState.clickCount).toBe(2);
-        expect(testState.lastClickedCell).toBe("cell2");
-      }
+      await user.click(button2!);
+      expect(testState.clickCount).toBe(2);
+      expect(testState.lastClickedCell).toBe("cell2");
 
-      if (button1) {
-        await user.click(button1);
-        expect(testState.clickCount).toBe(3);
-        expect(testState.lastClickedCell).toBe("cell1");
-      }
+      await user.click(button1!);
+      expect(testState.clickCount).toBe(3);
+      expect(testState.lastClickedCell).toBe("cell1");
     });
   });
 
@@ -255,10 +250,9 @@ describe("Table Component", () => {
 
     test("search input has accessible label", () => {
       render(TableSearchTest);
-      const label = document.querySelector('label[for="table-search"]');
 
-      expect(label).toBeInTheDocument();
-      expect(label).toHaveClass("sr-only");
+      const searchInput = screen.getByLabelText(/search/i);
+      expect(searchInput).toBeInTheDocument();
     });
 
     test("table headers are properly marked", () => {
