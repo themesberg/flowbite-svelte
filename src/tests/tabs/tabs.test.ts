@@ -47,7 +47,7 @@ describe("Tabs Component", () => {
     test("first tab is selected by default", async () => {
       render(BasicTabsTest);
       const firstTab = screen.getAllByRole("tab")[0];
-      
+
       await waitFor(() => {
         expect(firstTab).toHaveAttribute("aria-selected", "true");
       });
@@ -55,7 +55,7 @@ describe("Tabs Component", () => {
 
     test("renders tab content for active tab", async () => {
       render(BasicTabsTest);
-      
+
       await waitFor(() => {
         const content = screen.getByTestId("content-1");
         expect(content).toBeInTheDocument();
@@ -98,7 +98,7 @@ describe("Tabs Component", () => {
       const tablist = screen.getByTestId("tabs-no-divider");
 
       expect(tablist).toBeInTheDocument();
-      
+
       // Check that divider element is not present
       const divider = document.querySelector('[data-part="divider"]');
       expect(divider).not.toBeInTheDocument();
@@ -107,11 +107,11 @@ describe("Tabs Component", () => {
     test("renders tabs with pre-selected tab", async () => {
       render(TabsWithSelectedTest);
       const secondTab = screen.getByTestId("selected-tab-2").querySelector('[role="tab"]');
-      
+
       await waitFor(() => {
         expect(secondTab).toHaveAttribute("aria-selected", "true");
       });
-      
+
       await waitFor(() => {
         const content = screen.getByTestId("selected-content-2");
         expect(content).toBeInTheDocument();
@@ -137,16 +137,16 @@ describe("Tabs Component", () => {
     test("clicking tab switches to that tab", async () => {
       const user = userEvent.setup();
       render(BasicTabsTest);
-      
+
       const tabs = screen.getAllByRole("tab");
       const secondTab = tabs[1];
 
       await user.click(secondTab);
-      
+
       await waitFor(() => {
         expect(secondTab).toHaveAttribute("aria-selected", "true");
       });
-      
+
       await waitFor(() => {
         const content = screen.getByTestId("content-2");
         expect(content).toBeInTheDocument();
@@ -156,12 +156,12 @@ describe("Tabs Component", () => {
     test("clicking disabled tab does not switch tabs", async () => {
       const user = userEvent.setup();
       render(TabsWithDisabledTest);
-      
+
       const disabledTab = screen.getByTestId("disabled-tab").querySelector('[role="tab"]');
-      
+
       if (disabledTab) {
         await user.click(disabledTab);
-        
+
         // Disabled tab should not become selected
         expect(disabledTab).toHaveAttribute("aria-selected", "false");
       }
@@ -173,7 +173,7 @@ describe("Tabs Component", () => {
       testState.tabClickCount = 0;
 
       render(ClickableTabsTest);
-      
+
       await waitFor(() => {
         expect(testState.currentTab).toBeTruthy();
       });
@@ -196,9 +196,9 @@ describe("Tabs Component", () => {
     test("switching tabs displays correct content", async () => {
       const user = userEvent.setup();
       render(BasicTabsTest);
-      
+
       const tabs = screen.getAllByRole("tab");
-      
+
       await user.click(tabs[1]);
       await waitFor(() => {
         const content2 = screen.getByTestId("content-2");
@@ -235,7 +235,7 @@ describe("Tabs Component", () => {
     test("tabs have correct data attributes", () => {
       render(BasicTabsTest);
       const tablist = screen.getByRole("tablist");
-      
+
       expect(tablist).toHaveAttribute("data-scope", "tabs");
       expect(tablist).toHaveAttribute("data-part", "base");
     });
@@ -243,7 +243,7 @@ describe("Tabs Component", () => {
     test("tab items have correct data attributes", () => {
       render(BasicTabsTest);
       const tabItems = screen.getAllByRole("presentation");
-      
+
       tabItems.forEach((item) => {
         expect(item).toHaveAttribute("data-scope", "tab-item");
         expect(item).toHaveAttribute("data-part", "base");
@@ -253,7 +253,7 @@ describe("Tabs Component", () => {
     test("tab panel has correct data attribute", () => {
       render(BasicTabsTest);
       const panel = screen.getByRole("tabpanel");
-      
+
       expect(panel).toHaveAttribute("data-part", "content");
     });
   });
@@ -279,7 +279,7 @@ describe("Tabs Component", () => {
     test("tab panel has correct role and is connected to tab", async () => {
       render(BasicTabsTest);
       const panel = screen.getByRole("tabpanel");
-      
+
       await waitFor(() => {
         const firstTab = screen.getAllByRole("tab")[0];
         expect(panel).toHaveAttribute("aria-labelledby", firstTab.id);
@@ -288,12 +288,10 @@ describe("Tabs Component", () => {
 
     test("only one tab is aria-selected at a time", async () => {
       render(BasicTabsTest);
-      
+
       await waitFor(() => {
         const tabs = screen.getAllByRole("tab");
-        const selectedTabs = tabs.filter((tab) =>
-          tab.getAttribute("aria-selected") === "true"
-        );
+        const selectedTabs = tabs.filter((tab) => tab.getAttribute("aria-selected") === "true");
         expect(selectedTabs).toHaveLength(1);
       });
     });
@@ -310,13 +308,13 @@ describe("Tabs Component", () => {
     test("tab panel is connected to active tab via aria-labelledby", async () => {
       const user = userEvent.setup();
       render(BasicTabsTest);
-      
+
       const tabs = screen.getAllByRole("tab");
       const panel = screen.getByRole("tabpanel");
       const secondTab = tabs[1];
 
       await user.click(secondTab);
-      
+
       await waitFor(() => {
         expect(panel).toHaveAttribute("aria-labelledby", secondTab.id);
       });

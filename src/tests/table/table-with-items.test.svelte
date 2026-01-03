@@ -1,6 +1,6 @@
 <script lang="ts">
   import Table from "$lib/table/Table.svelte";
-  
+
   interface Product {
     name: string;
     category: string;

@@ -11,7 +11,7 @@
   {#snippet captionSlot()}
     <caption data-testid="table-caption">This is a caption</caption>
   {/snippet}
-  
+
   <TableHead>
     <TableHeadCell>Column</TableHeadCell>
   </TableHead>
@@ -20,7 +20,7 @@
       <TableBodyCell>Data</TableBodyCell>
     </TableBodyRow>
   </TableBody>
-  
+
   {#snippet footerSlot()}
     <tfoot data-testid="table-footer">
       <tr>

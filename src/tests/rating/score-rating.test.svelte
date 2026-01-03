@@ -1,13 +1,14 @@
 <script lang="ts">
   import ScoreRating from "$lib/rating/ScoreRating.svelte";
+  import type { RatingItem } from "$lib/types";
 
-  const ratings = [
+  const ratings: RatingItem[] = [
     { label: "Staff", rating: 8.8 },
     { label: "Comfort", rating: 8.9 },
     { label: "Location", rating: 9.0 }
   ];
 
-  const ratings2 = [
+  const ratings2: RatingItem[] = [
     { label: "Facilities", rating: 8.7 },
     { label: "Cleanliness", rating: 9.2 },
     { label: "Value", rating: 8.5 }

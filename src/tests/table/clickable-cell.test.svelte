@@ -25,20 +25,10 @@
   </TableHead>
   <TableBody>
     <TableBodyRow>
-      <TableBodyCell 
-        onclick={() => handleCellClick("cell1")} 
-        data-testid="clickable-cell-1"
-      >
-        Click me 1
-      </TableBodyCell>
+      <TableBodyCell onclick={() => handleCellClick("cell1")} data-testid="clickable-cell-1">Click me 1</TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
-      <TableBodyCell 
-        onclick={() => handleCellClick("cell2")} 
-        data-testid="clickable-cell-2"
-      >
-        Click me 2
-      </TableBodyCell>
+      <TableBodyCell onclick={() => handleCellClick("cell2")} data-testid="clickable-cell-2">Click me 2</TableBodyCell>
     </TableBodyRow>
   </TableBody>
 </Table>

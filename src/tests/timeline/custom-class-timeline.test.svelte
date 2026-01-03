@@ -2,11 +2,7 @@
   import { Timeline, TimelineItem } from "$lib";
 </script>
 
-<Timeline
-  order="vertical"
-  class="custom-timeline-class"
-  data-testid="custom-class-timeline"
->
+<Timeline order="vertical" class="custom-timeline-class" data-testid="custom-class-timeline">
   <TimelineItem
     data-testid="custom-class-item"
     title="Custom Event"
@@ -22,4 +18,3 @@
     Custom styled timeline item
   </TimelineItem>
 </Timeline>
-

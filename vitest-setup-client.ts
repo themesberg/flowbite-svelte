@@ -14,11 +14,7 @@ beforeEach(() => {
   vi.spyOn(console, "log").mockImplementation((...args: unknown[]) => {
     const message = args.join(" ");
     // Filter out theme-related console messages
-    if (
-      message.includes("Theme state updated to:") ||
-      message.includes("Loading theme:") ||
-      message.includes("Theme") && message.includes("loaded successfully")
-    ) {
+    if (message.includes("Theme state updated to:") || message.includes("Loading theme:") || (message.includes("Theme") && message.includes("loaded successfully"))) {
       return;
     }
     originalConsoleLog(...args);
@@ -38,10 +34,7 @@ beforeEach(() => {
   vi.spyOn(console, "warn").mockImplementation((...args: unknown[]) => {
     const message = args.join(" ");
     // Filter out theme-related warnings
-    if (
-      message.includes("Failed to load font for theme") ||
-      message.includes("Could not save theme")
-    ) {
+    if (message.includes("Failed to load font for theme") || message.includes("Could not save theme")) {
       return;
     }
     originalConsoleWarn(...args);

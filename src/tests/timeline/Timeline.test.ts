@@ -336,37 +336,30 @@ describe("Timeline - Group Component", () => {
   });
 
   test("groups have correct data attributes", () => {
-  render(GroupTimelineTest);
+    render(GroupTimelineTest);
 
-  const cards = document.querySelectorAll(
-    '[data-scope="group"][data-part="card"]'
-  );
+    const cards = document.querySelectorAll('[data-scope="group"][data-part="card"]');
 
-  expect(cards).toHaveLength(2);
-});
+    expect(cards).toHaveLength(2);
+  });
 
   test("groups display time elements", () => {
-  render(GroupTimelineTest);
+    render(GroupTimelineTest);
 
-  const cards = document.querySelectorAll(
-    '[data-scope="group"][data-part="card"]'
-  );
+    const cards = document.querySelectorAll('[data-scope="group"][data-part="card"]');
 
-  expect(cards).toHaveLength(2);
+    expect(cards).toHaveLength(2);
 
-  cards.forEach((card) => {
-    const time = card.querySelector('[data-part="time"]');
-    expect(time).toBeInTheDocument();
+    cards.forEach((card) => {
+      const time = card.querySelector('[data-part="time"]');
+      expect(time).toBeInTheDocument();
+    });
   });
-});
 
   test("groups have list containers", () => {
     render(GroupTimelineTest);
 
-    const groups = [
-      screen.getByTestId("group-1"),
-      screen.getByTestId("group-2")
-    ];
+    const groups = [screen.getByTestId("group-1"), screen.getByTestId("group-2")];
 
     groups.forEach((list) => {
       expect(list).toBeInTheDocument();

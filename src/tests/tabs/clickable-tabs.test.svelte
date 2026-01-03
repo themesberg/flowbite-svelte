@@ -10,7 +10,7 @@
   import TabItem from "$lib/tabs/TabItem.svelte";
 
   let selected = $state("");
-  
+
   $effect(() => {
     if (selected) {
       testState.currentTab = selected;

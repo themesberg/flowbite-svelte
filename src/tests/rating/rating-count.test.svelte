@@ -3,7 +3,5 @@
 </script>
 
 <Rating data-testid="rating-count" rating={4.5} total={5} count={true}>
-  {#snippet children()}
-    <span data-testid="count-text">out of 5</span>
-  {/snippet}
+  <span data-testid="count-text">out of 5</span>
 </Rating>

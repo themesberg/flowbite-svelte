@@ -3,9 +3,9 @@
   import type { Step } from "$lib/types";
 
   const steps: Step[] = [
-    { id: 1, label: "Personal Info", description: "Step description" },
-    { id: 2, label: "Account Details", description: "Step description" },
-    { id: 3, label: "Confirmation", description: "Step description" }
+    { id: 1, label: "Personal Info", description: "Enter your name and contact details" },
+    { id: 2, label: "Account Details", description: "Choose username and password" },
+    { id: 3, label: "Confirmation", description: "Review and confirm your information" }
   ];
 </script>
 

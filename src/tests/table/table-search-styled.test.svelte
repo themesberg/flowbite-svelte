@@ -10,13 +10,7 @@
 </script>
 
 <div data-testid="styled-table-search-wrapper">
-  <TableSearch 
-    bind:inputValue={searchValue}
-    placeholder="Find items..." 
-    striped 
-    hoverable
-    color="blue"
-  >
+  <TableSearch bind:inputValue={searchValue} placeholder="Find items..." striped hoverable color="blue">
     <TableHead>
       <TableHeadCell>Item</TableHeadCell>
     </TableHead>

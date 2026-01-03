@@ -35,13 +35,13 @@ describe("Table Component", () => {
     test("renders table with items prop", () => {
       render(TableWithItemsTest);
       const table = screen.getByTestId("table-with-items");
-      
+
       expect(table).toBeInTheDocument();
-      
+
       // Should have 3 header cells (Name, Category, Price)
       const headerCells = screen.getAllByRole("columnheader");
       expect(headerCells).toHaveLength(3);
-      
+
       // Should have 3 rows with 3 cells each = 9 cells total
       const bodyCells = screen.getAllByRole("cell");
       expect(bodyCells).toHaveLength(9);
@@ -120,7 +120,7 @@ describe("Table Component", () => {
       const user = userEvent.setup();
       testState.clickCount = 0;
       testState.lastClickedCell = "";
-      
+
       render(ClickableCellTest);
       const cell1 = screen.getByTestId("clickable-cell-1");
       const cell2 = screen.getByTestId("clickable-cell-2");
@@ -217,7 +217,7 @@ describe("Table Component", () => {
       // Find the TableSearch root div within the wrapper
       const searchRoot = searchWrapper.querySelector('[data-scope="table-search"]');
       expect(searchRoot).toBeInTheDocument();
-      
+
       // The icon is inside the search root with data-part="icon"
       const icon = searchRoot?.querySelector('[data-part="icon"]');
 
@@ -230,7 +230,7 @@ describe("Table Component", () => {
     test("table has correct data attributes", () => {
       render(BasicTableTest);
       const wrapper = screen.getByTestId("basic-table").closest('[data-scope="table"]');
-      
+
       expect(wrapper).toBeInTheDocument();
       expect(wrapper).toHaveAttribute("data-part", "wrapper");
     });
@@ -239,7 +239,7 @@ describe("Table Component", () => {
       render(TableSearchTest);
       const searchWrapper = screen.getByTestId("table-search-wrapper");
       const searchRoot = searchWrapper.querySelector('[data-scope="table-search"]');
-      
+
       expect(searchRoot).toBeInTheDocument();
       expect(searchRoot).toHaveAttribute("data-part", "root");
     });
@@ -249,14 +249,14 @@ describe("Table Component", () => {
     test("table has proper semantic structure", () => {
       render(BasicTableTest);
       const table = screen.getByRole("table");
-      
+
       expect(table).toBeInTheDocument();
     });
 
     test("search input has accessible label", () => {
       render(TableSearchTest);
       const label = document.querySelector('label[for="table-search"]');
-      
+
       expect(label).toBeInTheDocument();
       expect(label).toHaveClass("sr-only");
     });
@@ -264,9 +264,9 @@ describe("Table Component", () => {
     test("table headers are properly marked", () => {
       render(BasicTableTest);
       const headers = screen.getAllByRole("columnheader");
-      
+
       expect(headers).toHaveLength(2);
-      headers.forEach(header => {
+      headers.forEach((header) => {
         expect(header.tagName.toLowerCase()).toBe("th");
       });
     });
@@ -274,9 +274,9 @@ describe("Table Component", () => {
     test("table cells are properly marked", () => {
       render(BasicTableTest);
       const cells = screen.getAllByRole("cell");
-      
+
       expect(cells).toHaveLength(2);
-      cells.forEach(cell => {
+      cells.forEach((cell) => {
         expect(cell.tagName.toLowerCase()).toBe("td");
       });
     });

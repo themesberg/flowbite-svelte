@@ -3,11 +3,7 @@
   import TabItem from "$lib/tabs/TabItem.svelte";
 </script>
 
-<Tabs 
-  data-testid="tabs-with-custom-classes"
-  class="custom-tabs-class"
-  classes={{ active: "custom-active-class" }}
->
+<Tabs data-testid="tabs-with-custom-classes" class="custom-tabs-class" classes={{ active: "custom-active-class" }}>
   <TabItem data-testid="custom-tab-1" title="Tab One" class="custom-tab-item">
     <div>Tab one content</div>
   </TabItem>
