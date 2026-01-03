@@ -2,6 +2,4 @@
   import Toast from "$lib/toast/Toast.svelte";
 </script>
 
-<Toast>
-  Toast content
-</Toast>
+<Toast>Toast content</Toast>

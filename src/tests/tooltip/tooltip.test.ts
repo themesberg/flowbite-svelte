@@ -1,6 +1,5 @@
-import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
-import { expect, test, afterEach, describe, beforeEach, vi } from "vitest";
-import userEvent from "@testing-library/user-event";
+import { cleanup, render, screen } from "@testing-library/svelte";
+import { expect, test, afterEach, describe, beforeEach } from "vitest";
 
 import BasicTooltipTest from "./basic-tooltip.test.svelte";
 import PlacementTooltipTest from "./placement-tooltip.test.svelte";
@@ -138,7 +137,7 @@ describe("Tooltip Component", () => {
       const trigger = screen.getByTestId("event-trigger");
 
       expect(trigger).toBeInTheDocument();
-      
+
       // Verify initial state
       expect(eventState.beforeToggleCalled).toBe(false);
     });
@@ -154,7 +153,7 @@ describe("Tooltip Component", () => {
 
     test("tooltip has appropriate role", () => {
       render(BasicTooltipTest);
-      
+
       // The tooltip itself should have role when visible
       // This is handled by the Popper component
       const trigger = screen.getByTestId("trigger-button");

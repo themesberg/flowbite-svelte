@@ -145,7 +145,6 @@ describe("Video Component", () => {
   describe("Children Snippet", () => {
     test("renders additional source elements from children", () => {
       render(ChildrenVideoTest);
-      const video = screen.getByTestId("children-video");
       const altSource = screen.getByTestId("alt-source");
 
       expect(altSource).toBeInTheDocument();

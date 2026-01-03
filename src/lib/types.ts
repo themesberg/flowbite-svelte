@@ -97,7 +97,7 @@ import type { PhoneInputVariants } from "$lib/forms/phoneinput/theme";
 // typography component variants
 import type { AnchorVariants } from "$lib/typography/a/theme";
 import type { BlockquoteVariants } from "$lib/typography/blockquote/theme";
-import type { DescriptionListVariants } from "$lib/typography/descriptionlist/theme";
+import type { DescriptionListVariants } from "$lib/typography/description-list/theme";
 import type { HeadingVariants } from "$lib/typography/heading/theme";
 import type { HrVariants } from "$lib/typography/hr/theme";
 import type { ImgVariants } from "$lib/typography/img/theme";

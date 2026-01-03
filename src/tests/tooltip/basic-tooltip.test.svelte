@@ -3,6 +3,4 @@
 </script>
 
 <button data-testid="trigger-button">Hover me</button>
-<Tooltip data-testid="tooltip-content">
-  Tooltip content
-</Tooltip>
+<Tooltip data-testid="tooltip-content">Tooltip content</Tooltip>

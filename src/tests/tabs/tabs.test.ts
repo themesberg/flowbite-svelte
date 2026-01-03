@@ -160,12 +160,12 @@ describe("Tabs Component", () => {
 
       const disabledTab = screen.getByTestId("disabled-tab").querySelector('[role="tab"]')!;
       const enabledTab = screen.getByTestId("enabled-tab").querySelector('[role="tab"]')!;
-      
+
       expect(disabledTab).toBeInTheDocument();
       expect(enabledTab).toHaveAttribute("aria-selected", "true");
 
       await user.click(disabledTab);
-      
+
       // Disabled tab should not become selected
       expect(disabledTab).toHaveAttribute("aria-selected", "false");
       // Previously selected tab should remain selected

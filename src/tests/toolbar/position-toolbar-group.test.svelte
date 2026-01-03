@@ -5,7 +5,7 @@
 </script>
 
 <Toolbar>
-  <ToolbarGroup data-testid="position-start" position="start">
+  <ToolbarGroup data-testid="position-start" position="first">
     <ToolbarButton>Start</ToolbarButton>
   </ToolbarGroup>
 
@@ -13,7 +13,7 @@
     <ToolbarButton>Middle</ToolbarButton>
   </ToolbarGroup>
 
-  <ToolbarGroup data-testid="position-end" position="end">
+  <ToolbarGroup data-testid="position-end" position="last">
     <ToolbarButton>End</ToolbarButton>
   </ToolbarGroup>
 </Toolbar>

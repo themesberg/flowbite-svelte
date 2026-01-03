@@ -5,19 +5,15 @@
 </script>
 
 <Toolbar>
-  <ToolbarGroup data-testid="spacing-none" spacing="none">
+  <ToolbarGroup data-testid="spacing-default" spacing="default">
     <ToolbarButton>Button 1</ToolbarButton>
   </ToolbarGroup>
 
-  <ToolbarGroup data-testid="spacing-sm" spacing="sm">
+  <ToolbarGroup data-testid="spacing-tight" spacing="tight">
     <ToolbarButton>Button 2</ToolbarButton>
   </ToolbarGroup>
 
-  <ToolbarGroup data-testid="spacing-md" spacing="md">
+  <ToolbarGroup data-testid="spacing-loose" spacing="loose">
     <ToolbarButton>Button 3</ToolbarButton>
-  </ToolbarGroup>
-
-  <ToolbarGroup data-testid="spacing-lg" spacing="lg">
-    <ToolbarButton>Button 4</ToolbarButton>
   </ToolbarGroup>
 </Toolbar>

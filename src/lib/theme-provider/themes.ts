@@ -66,7 +66,7 @@ export { toggle } from "../forms/toggle";
 // typography
 export { anchor } from "../typography/a";
 export { blockquote } from "../typography/blockquote";
-export { descriptionList } from "../typography/descriptionlist";
+export { descriptionList } from "../typography/description-list";
 export { heading } from "../typography/heading";
 export { hr } from "../typography/hr";
 export { img } from "../typography/img";

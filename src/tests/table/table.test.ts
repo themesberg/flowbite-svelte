@@ -133,7 +133,7 @@ describe("Table Component", () => {
       expect(button2).toBeInTheDocument();
       expect(testState.clickCount).toBe(0);
 
-            // Buttons are already asserted to exist above
+      // Buttons are already asserted to exist above
       await user.click(button1!);
       expect(testState.clickCount).toBe(1);
       expect(testState.lastClickedCell).toBe("cell1");

@@ -155,13 +155,11 @@ describe("ToolbarButton Component", () => {
       const smButton = screen.getByTestId("size-sm");
       const mdButton = screen.getByTestId("size-md");
       const lgButton = screen.getByTestId("size-lg");
-      const xlButton = screen.getByTestId("size-xl");
 
       expect(xsButton).toBeInTheDocument();
       expect(smButton).toBeInTheDocument();
       expect(mdButton).toBeInTheDocument();
       expect(lgButton).toBeInTheDocument();
-      expect(xlButton).toBeInTheDocument();
     });
   });
 
@@ -237,15 +235,13 @@ describe("ToolbarGroup Component", () => {
   describe("Spacing Variants", () => {
     test("renders toolbar group with different spacing variants", () => {
       render(SpacingToolbarGroupTest);
-      const noneSpacing = screen.getByTestId("spacing-none");
-      const smSpacing = screen.getByTestId("spacing-sm");
-      const mdSpacing = screen.getByTestId("spacing-md");
-      const lgSpacing = screen.getByTestId("spacing-lg");
+      const defaultSpacing = screen.getByTestId("spacing-default");
+      const tightSpacing = screen.getByTestId("spacing-tight");
+      const looseSpacing = screen.getByTestId("spacing-loose");
 
-      expect(noneSpacing).toBeInTheDocument();
-      expect(smSpacing).toBeInTheDocument();
-      expect(mdSpacing).toBeInTheDocument();
-      expect(lgSpacing).toBeInTheDocument();
+      expect(defaultSpacing).toBeInTheDocument();
+      expect(tightSpacing).toBeInTheDocument();
+      expect(looseSpacing).toBeInTheDocument();
     });
   });
 
@@ -253,14 +249,10 @@ describe("ToolbarGroup Component", () => {
     test("renders toolbar group with different padding variants", () => {
       render(PaddingToolbarGroupTest);
       const nonePadding = screen.getByTestId("padding-none");
-      const smPadding = screen.getByTestId("padding-sm");
-      const mdPadding = screen.getByTestId("padding-md");
-      const lgPadding = screen.getByTestId("padding-lg");
+      const defaultPadding = screen.getByTestId("padding-default");
 
       expect(nonePadding).toBeInTheDocument();
-      expect(smPadding).toBeInTheDocument();
-      expect(mdPadding).toBeInTheDocument();
-      expect(lgPadding).toBeInTheDocument();
+      expect(defaultPadding).toBeInTheDocument();
     });
   });
 

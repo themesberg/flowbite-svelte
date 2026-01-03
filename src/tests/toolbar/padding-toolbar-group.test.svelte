@@ -9,15 +9,7 @@
     <ToolbarButton>None</ToolbarButton>
   </ToolbarGroup>
 
-  <ToolbarGroup data-testid="padding-sm" padding="sm">
-    <ToolbarButton>Small</ToolbarButton>
-  </ToolbarGroup>
-
-  <ToolbarGroup data-testid="padding-md" padding="md">
-    <ToolbarButton>Medium</ToolbarButton>
-  </ToolbarGroup>
-
-  <ToolbarGroup data-testid="padding-lg" padding="lg">
-    <ToolbarButton>Large</ToolbarButton>
+  <ToolbarGroup data-testid="padding-default" padding="default">
+    <ToolbarButton>Default</ToolbarButton>
   </ToolbarGroup>
 </Toolbar>

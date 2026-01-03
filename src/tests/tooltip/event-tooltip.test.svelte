@@ -1,6 +1,4 @@
 <script lang="ts" module>
-  import type { TriggeredToggleEvent } from "$lib/types";
-
   export const testState = {
     beforeToggleCalled: false,
     eventReceived: null as TriggeredToggleEvent | null
@@ -18,6 +16,4 @@
 </script>
 
 <button data-testid="event-trigger">Trigger Event</button>
-<Tooltip onbeforetoggle={handleBeforeToggle} data-testid="event-tooltip">
-  Event tooltip
-</Tooltip>
+<Tooltip onbeforetoggle={handleBeforeToggle} data-testid="event-tooltip">Event tooltip</Tooltip>

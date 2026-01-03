@@ -3,6 +3,4 @@
 </script>
 
 <button data-testid="click-trigger">Click me</button>
-<Tooltip trigger="click" data-testid="click-tooltip">
-  Tooltip on click
-</Tooltip>
+<Tooltip trigger="click" data-testid="click-tooltip">Tooltip on click</Tooltip>

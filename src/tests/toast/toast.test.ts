@@ -4,7 +4,6 @@ import userEvent from "@testing-library/user-event";
 
 import BasicToastTest from "./basic-toast.test.svelte";
 import DismissableToastTest from "./dismissable-toast.test.svelte";
-import ColorToastTest from "./color-toast.test.svelte";
 import PositionToastTest from "./position-toast.test.svelte";
 import IconToastTest from "./icon-toast.test.svelte";
 import CloseToastTest, { testState } from "./close-toast.test.svelte";
@@ -54,25 +53,16 @@ describe("Toast Component", () => {
 
   describe("Color Variants", () => {
     test("renders toast with different position variants", () => {
-  render(PositionToastTest);
+      render(PositionToastTest);
 
-  expect(
-    screen.getByTestId("position-top-left")
-  ).toHaveAttribute("role", "alert");
+      expect(screen.getByTestId("position-top-left")).toHaveAttribute("role", "alert");
 
-  expect(
-    screen.getByTestId("position-top-right")
-  ).toHaveAttribute("role", "alert");
+      expect(screen.getByTestId("position-top-right")).toHaveAttribute("role", "alert");
 
-  expect(
-    screen.getByTestId("position-bottom-left")
-  ).toHaveAttribute("role", "alert");
+      expect(screen.getByTestId("position-bottom-left")).toHaveAttribute("role", "alert");
 
-  expect(
-    screen.getByTestId("position-bottom-right")
-  ).toHaveAttribute("role", "alert");
-});
-
+      expect(screen.getByTestId("position-bottom-right")).toHaveAttribute("role", "alert");
+    });
   });
 
   describe("Position Variants", () => {
@@ -132,7 +122,7 @@ describe("Toast Component", () => {
 
       // Wait for state update
       await new Promise((resolve) => setTimeout(resolve, 50));
-      
+
       expect(testState.toastVisible).toBe(false);
     });
   });
