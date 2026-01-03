@@ -16,6 +16,7 @@ export const tags = tv({
     warning: "mt-1 text-sm text-yellow-400 dark:text-yellow-300",
     error: "mt-1 text-sm text-red-500 dark:text-red-400",
     inputWrapper: "relative w-full",
-    option: "block w-full cursor-pointer px-3 py-2 text-left hover:bg-gray-100"
+    option: "block w-full cursor-pointer px-3 py-2 text-left hover:bg-gray-100",
+    list: "z-10 max-h-48 w-full overflow-auto rounded border border-gray-300 bg-white shadow"
   }
 });

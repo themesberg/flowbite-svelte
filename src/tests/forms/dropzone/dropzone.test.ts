@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi } from "vitest";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from '@testing-library/user-event'
 
 import DropzoneBasicTest from "./dropzone-basic.test.svelte";
 

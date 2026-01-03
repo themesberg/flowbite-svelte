@@ -1,6 +1,6 @@
 import { cleanup, render, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from '@testing-library/user-event'
 
 import FileuploadBasicTest from "./fileupload-basic.test.svelte";
 import FileuploadClearableTest from "./fileupload-clearable.test.svelte";

@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from '@testing-library/user-event'
 
 import SearchBasicTest from "./search-basic.test.svelte";
 import SearchValueBindingTest from "./search-value-binding.test.svelte";
@@ -122,7 +122,7 @@ describe("Search - Clearable", () => {
     const input = screen.getByTestId("clearable-search") as HTMLInputElement;
 
     expect(input.value).toBe("Test search");
-    const closeButton = screen.queryByLabelText("Clear search value");
+    const closeButton = screen.getByRole("button", { name: /clear/i });
     expect(closeButton).toBeInTheDocument();
   });
 
@@ -132,7 +132,7 @@ describe("Search - Clearable", () => {
     expect(emptyInput.value).toBe("");
 
     // There should be only one close button (from the search with value)
-    const closeButtons = screen.queryAllByLabelText("Clear search value");
+    const closeButtons = screen.queryAllByRole("button", {name: /clear/i });
     expect(closeButtons).toHaveLength(1);
   });
 
@@ -143,7 +143,7 @@ describe("Search - Clearable", () => {
     const input = screen.getByTestId("clearable-search") as HTMLInputElement;
     expect(input.value).toBe("Test search");
 
-    const closeButton = screen.getByLabelText("Clear search value");
+    const closeButton = screen.getByRole("button", { name: /clear/i });
     await user.click(closeButton);
 
     expect(input.value).toBe("");
@@ -153,11 +153,12 @@ describe("Search - Clearable", () => {
     const user = userEvent.setup();
     render(SearchClearableTest);
 
-    const closeButton = screen.getByLabelText("Clear search value");
+    const closeButton = screen.getByRole("button", { name: /clear/i });
     await user.click(closeButton);
 
     // Close button should no longer be present
-    expect(screen.queryByLabelText("Clear search value")).not.toBeInTheDocument();
+    expect(
+    screen.queryByRole("button", { name: /clear/i })).not.toBeInTheDocument();
   });
 });
 
@@ -229,7 +230,7 @@ describe("Search - Callback", () => {
     const status = screen.getByTestId("callback-status");
     expect(status).toHaveTextContent("not-triggered");
 
-    const closeButton = screen.getByLabelText("Clear search value");
+    const closeButton = screen.getByRole("button", { name: /clear/i });
     expect(closeButton).toBeInTheDocument();
 
     await user.click(closeButton);
@@ -247,7 +248,7 @@ describe("Search - Callback", () => {
     expect(input.value).toBe("Test value");
     expect(status).toHaveTextContent("not-triggered");
 
-    const closeButton = screen.getByLabelText("Clear search value");
+    const closeButton = screen.getByRole("button", { name: /clear/i });
     await user.click(closeButton);
 
     expect(input.value).toBe("");

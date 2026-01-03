@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from '@testing-library/user-event'
 
 import RangeBasicTest from "./range-basic.test.svelte";
 import RangeValueBindingTest from "./range-value-binding.test.svelte";

@@ -1,6 +1,6 @@
 import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from '@testing-library/user-event'
 
 import PhoneInputBasicTest from "./phoneinput-basic.test.svelte";
 import PhoneInputNoIconTest from "./phoneinput-no-icon.test.svelte";

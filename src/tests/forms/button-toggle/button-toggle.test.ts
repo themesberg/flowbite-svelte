@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from '@testing-library/user-event'
 
 import ButtonToggleSingleTest from "./button-toggle-single.test.svelte";
 import ButtonToggleMultiTest from "./button-toggle-multi.test.svelte";

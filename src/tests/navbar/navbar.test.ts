@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, beforeEach } from "vitest";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from '@testing-library/user-event'
 
 import BasicNavbarTest from "./basic-navbar.test.svelte";
 import FluidNavbarTest from "./fluid-navbar.test.svelte";
