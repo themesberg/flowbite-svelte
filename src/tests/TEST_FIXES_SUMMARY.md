@@ -2,7 +2,32 @@
 
 ## Issues Fixed
 
-### 1. Table Cell Click Event Test Failure
+### 1. TypeScript Error in table-with-items.test.svelte
+
+**Problem:**
+```
+Type 'Product[]' is not assignable to type 'TableItemType[]'.
+Index signature for type 'string' is missing in type 'Product'.
+```
+
+**Root Cause:**
+The `TableItemType` requires an index signature `[key: string]: string | number | boolean` to allow dynamic property access, but the `Product` interface didn't have this.
+
+**Solution:**
+Added the index signature to the `Product` interface:
+
+```typescript
+interface Product {
+  name: string;
+  category: string;
+  price: number;
+  [key: string]: string | number; // Add index signature
+}
+```
+
+**File Modified:** `src/tests/table/table-with-items.test.svelte`
+
+### 2. Table Cell Click Event Test Failure
 
 **Problem:**
 ```
@@ -30,7 +55,7 @@ if (button1) {
 
 **File Modified:** `src/tests/table/table.test.ts` (lines 119-145)
 
-### 2. Table Search Icon Test Failure
+### 3. Table Search Icon Test Failure
 
 **Problem:**
 ```
@@ -40,22 +65,33 @@ Received has type: Null
 ```
 
 **Root Cause:**
-The test was using `querySelector('svg')` which didn't find the icon element. The `TableSearch` component uses data attributes for all its parts.
+The `data-testid` was being passed to `TableSearch` component, but the component doesn't apply it to its root element. It uses `data-scope="table-search"` and `data-part="root"` instead. The `data-testid` ends up on the `<table>` element via `{...restProps}`, not on the root wrapper where the icon is located.
 
 **Solution:**
-Updated the selector to use the data-part attribute that the component provides:
+1. Wrapped `TableSearch` components in test files with a wrapper div that has `data-testid`:
 
-```typescript
-// Before
-const icon = searchContainer.querySelector('svg');
-
-// After
-const icon = searchContainer.querySelector('[data-part="icon"]');
+```svelte
+<div data-testid="table-search-wrapper">
+  <TableSearch bind:inputValue={searchValue}>
+    <!-- content -->
+  </TableSearch>
+</div>
 ```
 
-**File Modified:** `src/tests/table/table.test.ts` (lines 202-208)
+2. Updated test to navigate the correct DOM structure:
 
-### 3. Console Output Suppression
+```typescript
+const searchWrapper = screen.getByTestId("table-search-wrapper");
+const searchRoot = searchWrapper.querySelector('[data-scope="table-search"]');
+const icon = searchRoot?.querySelector('[data-part="icon"]');
+```
+
+**Files Modified:** 
+- `src/tests/table/table-search.test.svelte` - Added wrapper div
+- `src/tests/table/table-search-styled.test.svelte` - Added wrapper div
+- `src/tests/table/table.test.ts` - Updated selectors (lines 171-222)
+
+### 4. Console Output Suppression
 
 **Problem:**
 Unwanted console output during tests:
@@ -101,21 +137,37 @@ beforeEach(() => {
 ✅ All table tests passing
 ✅ All tabs tests passing  
 ✅ Clean console output
+✅ No TypeScript errors
 ✅ No breaking changes to component behavior
 
-## Files Modified
+## Files Modified Summary
 
-1. `src/tests/table/table.test.ts` - Fixed clickable cell and search icon tests
-2. `vitest-setup-client.ts` - Added console suppression for theme messages
+1. **`src/tests/table/table-with-items.test.svelte`** - Fixed TypeScript type error
+2. **`src/tests/table/table-search.test.svelte`** - Added wrapper for proper testing
+3. **`src/tests/table/table-search-styled.test.svelte`** - Added wrapper for proper testing
+4. **`src/tests/table/table.test.ts`** - Fixed clickable cell, search icon tests, and updated selectors
+5. **`vitest-setup-client.ts`** - Added console suppression for theme messages
 
 ## Testing Best Practices Maintained
 
 ✅ Tests focus on behavior, not implementation
 ✅ Uses data attributes for element selection
 ✅ No hard-coded text in tests
-✅ Type-safe (no `any` types)
+✅ Type-safe (no `any` types, proper index signatures)
 ✅ Proper async handling with userEvent
 ✅ Tests user interactions realistically
+✅ Proper DOM navigation respecting component structure
+
+## Key Learnings
+
+### Working with Component Props
+When components spread `{...restProps}` on internal elements (not the root), `data-testid` won't be on the root element. Solution: wrap test components in a container with `data-testid`.
+
+### Index Signatures for Dynamic Objects
+When working with components that accept dynamic data objects (like table items), ensure your test types include appropriate index signatures to match the component's type requirements.
+
+### DOM Structure Awareness
+Always examine the actual rendered DOM structure. Components may use their own `data-scope` and `data-part` attributes for internal structure, requiring careful navigation in tests.
 
 ## Running Tests
 
@@ -133,4 +185,4 @@ npm run test:unit -- tabs
 npm run test:unit table
 ```
 
-All tests should now pass with clean console output! ✅
+All tests should now pass with clean console output and no TypeScript errors! ✅
