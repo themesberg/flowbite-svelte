@@ -5,6 +5,7 @@ import BasicFooterBrandTest from "./basic-footer-brand.test.svelte";
 import FooterBrandNoLinkTest from "./footer-brand-no-link.test.svelte";
 import FooterBrandNoNameTest from "./footer-brand-no-name.test.svelte";
 import FooterBrandNoSrcTest from "./footer-brand-no-src.test.svelte";
+import { TEST_IMAGE_SVG } from "../fixtures/test-images"
 
 afterEach(() => {
   cleanup();
@@ -26,7 +27,7 @@ describe("FooterBrand Component", () => {
       const image = screen.getByRole("img");
 
       expect(image).toBeInTheDocument();
-      expect(image).toHaveAttribute("src", "https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg");
+      expect(image).toHaveAttribute("src", TEST_IMAGE_SVG);
       expect(image).toHaveAttribute("alt", "Flowbite Logo");
     });
 
@@ -46,7 +47,7 @@ describe("FooterBrand Component", () => {
 
       expect(image).toBeInTheDocument();
       expect(image.tagName.toLowerCase()).toBe("img");
-      expect(image).toHaveAttribute("src", "https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg");
+      expect(image).toHaveAttribute("src", TEST_IMAGE_SVG);
       expect(image).toHaveAttribute("alt", "Flowbite Logo");
     });
 

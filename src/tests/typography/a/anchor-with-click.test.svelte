@@ -10,4 +10,4 @@
   }
 </script>
 
-<A href="/test" onclick={handleClick}>Clickable link</A>
+<A href="/test" onclick={handleClick} data-sveltekit-preload-data="off">Clickable link</A>
