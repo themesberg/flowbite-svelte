@@ -1,6 +1,6 @@
 import { cleanup, render } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi } from "vitest";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from '@testing-library/user-event'
 
 import SelectBasicTest from "./select-basic.test.svelte";
 import SelectClearableTest from "./select-clearable.test.svelte";

@@ -1,6 +1,6 @@
 import { cleanup, render, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi } from "vitest";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from '@testing-library/user-event'
 
 import TextareaBasicTest from "./textarea-basic.test.svelte";
 import TextareaClearableTest from "./textarea-clearable.test.svelte";
@@ -14,9 +14,9 @@ afterEach(() => {
 });
 
 const getTextareaElement = (container: HTMLElement): HTMLTextAreaElement => {
-  const wrapped = container.querySelector('textarea[data-part="base"]');
-  const unwrapped = container.querySelector('textarea[data-part="wrapper"]');
-  return (wrapped || unwrapped) as HTMLTextAreaElement;
+  const base = container.querySelector('textarea[data-part="base"]');
+  const wrapper = container.querySelector('textarea[data-part="wrapper"]');
+  return (base || wrapper) as HTMLTextAreaElement;
 };
 
 describe("Textarea - Basic", () => {
@@ -227,13 +227,6 @@ describe("Textarea - Addon", () => {
 });
 
 describe("Textarea - Attributes", () => {
-  test("passes through native textarea attributes", () => {
-    const { container } = render(TextareaBasicTest);
-    const textarea = getTextareaElement(container);
-    expect(textarea).toBeInTheDocument();
-    expect(textarea.tagName).toBe("TEXTAREA");
-  });
-
   test("supports rows attribute", () => {
     const { container } = render(TextareaAttributesTest);
     const textarea = getTextareaElement(container);

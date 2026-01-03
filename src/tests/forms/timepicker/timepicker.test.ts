@@ -232,9 +232,7 @@ describe("Timepicker - Callback Functionality", () => {
     await fireEvent.input(input);
 
     // Wait for callback to be processed
-    await new Promise((resolve) => setTimeout(resolve, 100));
-
-    const result = screen.queryByTestId("callback-result");
+    const result = await screen.findByTestId("callback-result");
     expect(result).toBeInTheDocument();
   });
 
@@ -246,10 +244,8 @@ describe("Timepicker - Callback Functionality", () => {
     // For time inputs, directly set the value and fire the input event
     input.value = "11:45";
     await fireEvent.input(input);
-
-    await new Promise((resolve) => setTimeout(resolve, 100));
-
-    const result = screen.queryByTestId("callback-result");
+    
+    const result = await screen.findByTestId("callback-result");
     if (result) {
       const data = JSON.parse(result.textContent || "{}");
       expect(data).toHaveProperty("time");
