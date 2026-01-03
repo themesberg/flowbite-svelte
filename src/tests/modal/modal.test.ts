@@ -1,6 +1,6 @@
 import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
-import userEvent from '@testing-library/user-event'
+import userEvent from "@testing-library/user-event";
 
 import BasicModal from "./basic-modal.test.svelte";
 import TitleModal from "./title-modal.test.svelte";

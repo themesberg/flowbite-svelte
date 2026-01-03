@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
-import userEvent from '@testing-library/user-event'
+import userEvent from "@testing-library/user-event";
 
 import SearchBasicTest from "./search-basic.test.svelte";
 import SearchValueBindingTest from "./search-value-binding.test.svelte";
@@ -132,7 +132,7 @@ describe("Search - Clearable", () => {
     expect(emptyInput.value).toBe("");
 
     // There should be only one close button (from the search with value)
-    const closeButtons = screen.queryAllByRole("button", {name: /clear/i });
+    const closeButtons = screen.queryAllByRole("button", { name: /clear/i });
     expect(closeButtons).toHaveLength(1);
   });
 
@@ -157,8 +157,7 @@ describe("Search - Clearable", () => {
     await user.click(closeButton);
 
     // Close button should no longer be present
-    expect(
-    screen.queryByRole("button", { name: /clear/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /clear/i })).not.toBeInTheDocument();
   });
 });
 
@@ -274,10 +273,10 @@ describe("Search - With Content", () => {
   test("content slot button is clickable", async () => {
     const user = userEvent.setup();
     render(SearchWithContentTest);
-    
+
     const button = screen.getByTestId("search-button");
     await user.click(button);
-    
+
     // Button should be functional
     expect(button).toBeInTheDocument();
   });

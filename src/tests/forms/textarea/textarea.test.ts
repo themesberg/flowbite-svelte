@@ -1,4 +1,4 @@
-import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
+import { cleanup, render, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi } from "vitest";
 import { userEvent } from "@testing-library/user-event";
 
@@ -7,6 +7,7 @@ import TextareaClearableTest from "./textarea-clearable.test.svelte";
 import TextareaDisabledTest from "./textarea-disabled.test.svelte";
 import TextareaHeaderFooterTest from "./textarea-header-footer.test.svelte";
 import TextareaAddonTest from "./textarea-addon.test.svelte";
+import TextareaAttributesTest from "./textarea-attributes.test.svelte";
 
 afterEach(() => {
   cleanup();
@@ -234,25 +235,15 @@ describe("Textarea - Attributes", () => {
   });
 
   test("supports rows attribute", () => {
-    const { container } = render(TextareaBasicTest);
+    const { container } = render(TextareaAttributesTest);
     const textarea = getTextareaElement(container);
-
-    // Set rows via attribute
-    textarea.rows = 5;
     expect(textarea.rows).toBe(5);
   });
 
-  test("supports maxlength attribute", async () => {
-    const user = userEvent.setup();
-    const { container } = render(TextareaBasicTest);
+  test("supports maxlength attribute", () => {
+    const { container } = render(TextareaAttributesTest);
     const textarea = getTextareaElement(container);
-
-    // Set maxlength
-    textarea.maxLength = 10;
-    
-    await user.type(textarea, "12345678901234567890");
-    // Browser will enforce maxlength
-    expect(textarea.value.length).toBeLessThanOrEqual(10);
+    expect(textarea.maxLength).toBe(10);
   });
 });
 

@@ -194,7 +194,7 @@
     {#if availableTags.length > 0 && contents.trim() !== ""}
       {@const filteredSuggestions = availableTags.filter((tag) => tag.toLowerCase().includes(contents.trim().toLowerCase()) && (!unique || !value.some((t) => t.toLowerCase() === tag.toLowerCase())))}
       {#if filteredSuggestions.length > 0}
-        <ul data-part="list" bind:this={dropdownElement} class={list({class:clsx(theme?.list, styling?.list)})} style="position: absolute;">
+        <ul data-part="list" bind:this={dropdownElement} class={list({ class: clsx(theme?.list, styling?.list) })} style="position: absolute;">
           {#each filteredSuggestions as suggestion (suggestion)}
             <li data-part="suggestion-item">
               <button

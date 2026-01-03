@@ -1,4 +1,4 @@
-import { cleanup, render, screen, waitFor, within } from "@testing-library/svelte";
+import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
 import { userEvent } from "@testing-library/user-event";
 
@@ -19,7 +19,7 @@ const getDropdownItem = (container: HTMLElement, text: string) => {
   const dropdown = getDropdown(container);
   if (!dropdown) return null;
   const items = Array.from(dropdown.querySelectorAll('[data-part="item"]'));
-  return items.find(item => item.textContent?.includes(text)) as HTMLElement | null;
+  return items.find((item) => item.textContent?.includes(text)) as HTMLElement | null;
 };
 
 const isDropdownVisible = (container: HTMLElement) => {
@@ -63,7 +63,7 @@ describe("MultiSelect - Basic", () => {
     await user.click(appleItem!);
 
     await waitFor(() => {
-      const selectedBadges = container.querySelectorAll('[data-part="select"] [class*="badge"]');
+      const selectedBadges = container.querySelectorAll('[data-scope="badge"]');
       expect(selectedBadges.length).toBeGreaterThan(0);
     });
   });
@@ -85,7 +85,7 @@ describe("MultiSelect - Basic", () => {
     await user.click(orangeItem!);
 
     await waitFor(() => {
-      const selectedBadges = container.querySelectorAll('[data-part="select"] [class*="badge"]');
+      const selectedBadges = container.querySelectorAll('[data-scope="badge"]');
       expect(selectedBadges.length).toBeGreaterThanOrEqual(2);
     });
   });
@@ -139,7 +139,7 @@ describe("MultiSelect - Basic", () => {
 describe("MultiSelect - Preselected", () => {
   test("renders with preselected values", () => {
     const { container } = render(MultiSelectPreselectedTest);
-    const selectedBadges = container.querySelectorAll('[data-part="select"] [class*="badge"]');
+    const selectedBadges = container.querySelectorAll('[data-scope="badge"]');
     expect(selectedBadges.length).toBeGreaterThanOrEqual(2);
   });
 
@@ -155,18 +155,18 @@ describe("MultiSelect - Preselected", () => {
     const { container } = render(MultiSelectPreselectedTest);
 
     const selectSection = container.querySelector('[data-part="select"]');
-    const initialBadges = selectSection?.querySelectorAll('[class*="badge"]').length || 0;
+    const initialBadges = selectSection?.querySelectorAll('[data-scope="badge"]').length || 0;
 
     // Find a badge close button
-    const badges = container.querySelectorAll('[data-part="select"] [class*="badge"]');
+    const badges = container.querySelectorAll('[data-scope="badge"]');
     const firstBadge = badges[0] as HTMLElement;
-    const closeButton = firstBadge.querySelector('button');
+    const closeButton = firstBadge.querySelector("button");
 
     expect(closeButton).toBeInTheDocument();
     await user.click(closeButton!);
 
     await waitFor(() => {
-      const remainingBadges = selectSection?.querySelectorAll('[class*="badge"]').length || 0;
+      const remainingBadges = selectSection?.querySelectorAll('[data-scope="badge"]').length || 0;
       expect(remainingBadges).toBeLessThan(initialBadges);
     });
   });
@@ -187,7 +187,7 @@ describe("MultiSelect - Disabled", () => {
     await user.click(multiselect);
 
     // Wait a bit to ensure dropdown doesn't appear
-    await new Promise(resolve => setTimeout(resolve, 200));
+    await new Promise((resolve) => setTimeout(resolve, 200));
     expect(isDropdownVisible(container)).toBe(false);
   });
 });
@@ -221,7 +221,7 @@ describe("MultiSelect - Disabled Options", () => {
     await user.click(bananaItem!);
 
     // Wait a bit and check that Banana is not selected
-    await new Promise(resolve => setTimeout(resolve, 200));
+    await new Promise((resolve) => setTimeout(resolve, 200));
 
     const selectSection = container.querySelector('[data-part="select"]');
     expect(selectSection?.textContent).not.toContain("Banana");
@@ -332,7 +332,7 @@ describe("MultiSelect - Keyboard Navigation", () => {
 
     await waitFor(() => {
       const selectSection = container.querySelector('[data-part="select"]');
-      const badges = selectSection?.querySelectorAll('[class*="badge"]');
+      const badges = selectSection?.querySelectorAll('[data-scope="badge"]');
       expect(badges?.length).toBeGreaterThan(0);
     });
   });

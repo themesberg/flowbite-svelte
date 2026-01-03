@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/svelte";
+import { cleanup, render } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi } from "vitest";
 import { userEvent } from "@testing-library/user-event";
 
@@ -21,18 +21,16 @@ describe("Select - Basic", () => {
     const { container } = render(SelectBasicTest);
     const select = getSelectElement(container);
     expect(select).toBeInTheDocument();
-    
-    const placeholderOption = Array.from(select.options).find(
-      opt => opt.textContent === "Choose a country"
-    );
+
+    const placeholderOption = Array.from(select.options).find((opt) => opt.textContent === "Choose a country");
     expect(placeholderOption).toBeInTheDocument();
   });
 
   test("renders all options from items", () => {
     const { container } = render(SelectBasicTest);
     const select = getSelectElement(container);
-    
-    const optionTexts = Array.from(select.options).map(opt => opt.textContent);
+
+    const optionTexts = Array.from(select.options).map((opt) => opt.textContent);
     expect(optionTexts).toContain("United States");
     expect(optionTexts).toContain("Canada");
     expect(optionTexts).toContain("Mexico");
@@ -145,7 +143,7 @@ describe("Select - Disabled Options", () => {
   test("renders select with disabled option", () => {
     const { container } = render(SelectDisabledOptionsTest);
     const select = getSelectElement(container);
-    const canadaOption = Array.from(select.options).find(opt => opt.value === "ca");
+    const canadaOption = Array.from(select.options).find((opt) => opt.value === "ca");
     expect(canadaOption).toBeDisabled();
   });
 
@@ -167,8 +165,8 @@ describe("Select - Children", () => {
     const { container } = render(SelectChildrenTest);
     const select = getSelectElement(container);
     expect(select).toBeInTheDocument();
-    
-    const optionTexts = Array.from(select.options).map(opt => opt.textContent);
+
+    const optionTexts = Array.from(select.options).map((opt) => opt.textContent);
     expect(optionTexts).toContain("United States");
     expect(optionTexts).toContain("Canada");
     expect(optionTexts).toContain("Mexico");

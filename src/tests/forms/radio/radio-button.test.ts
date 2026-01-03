@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
-import userEvent from '@testing-library/user-event'
+import userEvent from "@testing-library/user-event";
 
 import CheckRadioButtonTest from "./check-radio-button.test.svelte";
 import RadioButtonGroupTest from "./radio-button-group.test.svelte";

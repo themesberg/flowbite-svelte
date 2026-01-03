@@ -10,11 +10,6 @@
 </script>
 
 <div>
-  <Search 
-    bind:value={searchValue} 
-    clearable 
-    clearableOnClick={handleClear}
-    data-testid="callback-search" 
-  />
+  <Search bind:value={searchValue} clearable clearableOnClick={handleClear} data-testid="callback-search" />
   <div data-testid="callback-status">{callbackTriggered ? "triggered" : "not-triggered"}</div>
 </div>

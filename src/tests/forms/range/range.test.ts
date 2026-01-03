@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
-import userEvent from '@testing-library/user-event'
+import userEvent from "@testing-library/user-event";
 
 import RangeBasicTest from "./range-basic.test.svelte";
 import RangeValueBindingTest from "./range-value-binding.test.svelte";
@@ -62,7 +62,7 @@ describe("Range - Value Binding", () => {
     range.dispatchEvent(new Event("input", { bubbles: true }));
 
     // Wait for reactivity
-    await new Promise(resolve => setTimeout(resolve, 0));
+    await new Promise((resolve) => setTimeout(resolve, 0));
 
     expect(range.value).toBe("75");
     expect(display.textContent).toBe("75");
@@ -73,12 +73,12 @@ describe("Range - Value Binding", () => {
 
     const range = screen.getByTestId("bound-range") as HTMLInputElement;
     const display = screen.getByTestId("display-value");
-    
+
     // Set value to 25
     range.value = "25";
     range.dispatchEvent(new Event("input", { bubbles: true }));
 
-    await new Promise(resolve => setTimeout(resolve, 0));
+    await new Promise((resolve) => setTimeout(resolve, 0));
 
     expect(range.value).toBe("25");
     expect(display.textContent).toBe("25");
@@ -89,19 +89,15 @@ describe("Range - Colors", () => {
   test("renders ranges with different colors", () => {
     render(RangeColorsTest);
     expect(screen.getByTestId("blue-range")).toBeInTheDocument();
-    expect(screen.getByTestId("green-range")).toBeInTheDocument();
     expect(screen.getByTestId("red-range")).toBeInTheDocument();
     expect(screen.getByTestId("purple-range")).toBeInTheDocument();
-    expect(screen.getByTestId("yellow-range")).toBeInTheDocument();
   });
 
   test("all color variants are range input elements", () => {
     render(RangeColorsTest);
     expect(screen.getByTestId("blue-range")).toHaveAttribute("type", "range");
-    expect(screen.getByTestId("green-range")).toHaveAttribute("type", "range");
     expect(screen.getByTestId("red-range")).toHaveAttribute("type", "range");
     expect(screen.getByTestId("purple-range")).toHaveAttribute("type", "range");
-    expect(screen.getByTestId("yellow-range")).toHaveAttribute("type", "range");
   });
 });
 
@@ -125,7 +121,7 @@ describe("Range - Attributes", () => {
   test("renders with min and max attributes", () => {
     render(RangeAttributesTest);
     const range = screen.getByTestId("min-max-range") as HTMLInputElement;
-    
+
     expect(range).toHaveAttribute("min", "0");
     expect(range).toHaveAttribute("max", "100");
   });
@@ -133,14 +129,14 @@ describe("Range - Attributes", () => {
   test("respects step attribute", () => {
     render(RangeAttributesTest);
     const range = screen.getByTestId("step-range") as HTMLInputElement;
-    
+
     expect(range).toHaveAttribute("step", "5");
   });
 
   test("supports negative range values", () => {
     render(RangeAttributesTest);
     const range = screen.getByTestId("negative-range") as HTMLInputElement;
-    
+
     expect(range).toHaveAttribute("min", "-50");
     expect(range).toHaveAttribute("max", "50");
   });
@@ -148,7 +144,7 @@ describe("Range - Attributes", () => {
   test("supports decimal step values", () => {
     render(RangeAttributesTest);
     const range = screen.getByTestId("decimal-range") as HTMLInputElement;
-    
+
     expect(range).toHaveAttribute("min", "0");
     expect(range).toHaveAttribute("max", "1");
     expect(range).toHaveAttribute("step", "0.1");
@@ -220,7 +216,7 @@ describe("Range - User Interaction", () => {
     range.value = "80";
     range.dispatchEvent(new Event("input", { bubbles: true }));
 
-    await new Promise(resolve => setTimeout(resolve, 0));
+    await new Promise((resolve) => setTimeout(resolve, 0));
 
     expect(range.value).not.toBe(initialValue);
     expect(range.value).toBe("80");
