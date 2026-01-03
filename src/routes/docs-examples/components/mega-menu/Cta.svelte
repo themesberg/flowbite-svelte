@@ -33,7 +33,7 @@
           {item.name}
         </a>
       {/snippet}
-      {#snippet extra()}
+      {#snippet addon()}
         <h2 class="mt-4 mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
         <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
         <a href="/" class="text-primary-600 hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700 inline-flex items-center text-sm font-medium hover:underline">

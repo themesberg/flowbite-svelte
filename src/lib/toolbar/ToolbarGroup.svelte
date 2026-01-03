@@ -16,7 +16,7 @@
   if (ctx) ctx.separators = true;
 </script>
 
-<div {...restProps} class={groupCls}>
+<div {...restProps} class={groupCls} data-scope="toolbar-group" data-part="base">
   {@render children?.()}
 </div>
 

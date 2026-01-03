@@ -10,7 +10,7 @@
 </script>
 
 {#if href}
-  <a {...restProps} {href} aria-label={ariaLabel} class={footerIcon({ class: clsx(theme, className) })}>
+  <a data-scope="footer-icon" data-part="base" {...restProps} {href} aria-label={ariaLabel} class={footerIcon({ class: clsx(theme, className) })}>
     {@render children()}
   </a>
 {:else}

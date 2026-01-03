@@ -4,10 +4,10 @@
 </script>
 
 <!-- Live Interactive Demo -->
-<section class="rounded-lg p-6">
+<section class="rounded-base p-6">
   <h2 class="mb-4 text-2xl font-semibold">🎮 Interactive Demo</h2>
   <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-    <div class="rounded-lg p-6">
+    <div class="rounded-base p-6">
       <h3 class="mb-3 font-semibold">📖 Select text here:</h3>
       <div class="prose prose-sm" id="demo-content">
         <p>
@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <div class="rounded-lg p-6">
+    <div class="rounded-base p-6">
       <h3 class="mb-3 font-semibold">💾 Your saved items:</h3>
       <ClipboardManager items={demoItems} enableSelectionMenu={true} selectionTarget="#demo-content" placeholder="Or type here..." storageKey="interactive" />
     </div>

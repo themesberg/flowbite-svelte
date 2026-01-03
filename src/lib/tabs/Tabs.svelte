@@ -75,14 +75,14 @@
   });
 </script>
 
-<ul role="tablist" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<ul role="tablist" {...restProps} class={base({ class: clsx(theme?.base, className) })} data-scope="tabs" data-part="base">
   {@render children()}
 </ul>
 {#if dividerBool}
-  <div class={dividerClass({ class: clsx(theme?.divider, styling?.divider) })}></div>
+  <div class={dividerClass({ class: clsx(theme?.divider, styling?.divider) })} data-part="divider"></div>
 {/if}
 
-<div id={panelId} class={content({ class: clsx(theme?.content, styling?.content) })} role="tabpanel" aria-labelledby={selectedTab.id}>
+<div id={panelId} class={content({ class: clsx(theme?.content, styling?.content) })} role="tabpanel" aria-labelledby={selectedTab.id} data-part="content">
   {@render selectedTab.snippet?.()}
 </div>
 

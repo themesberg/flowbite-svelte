@@ -40,7 +40,7 @@
     toggleSelected(value);
   }
 
-  const { button, content, text, icon } = $derived(buttonToggle({ selected, color: actualColor, size: actualSize }));
+  const { button, content, label, icon } = $derived(buttonToggle({ selected, color: actualColor, size: actualSize }));
 
   $effect(() => {
     selected = isSelected(value);
@@ -49,6 +49,7 @@
 
 <button
   type="button"
+  data-scope="button-toggle"
   class={button({ selected, color: actualColor, size: actualSize, roundedSize: actualRoundedSize, class: clsx(theme?.button, ctxBtnClass, className) })}
   data-selected={selected}
   onclick={handleClick}
@@ -56,15 +57,15 @@
   aria-checked={selected}
   {...restProps}
 >
-  <div class={content({ class: clsx(theme?.content, styling?.content) })}>
+  <div data-part="content" class={content({ class: clsx(theme?.content, styling?.content) })}>
     {#if selected}
       {#if iconSlot}
         {@render iconSlot()}
       {:else}
-        <CheckIcon class={icon({ class: clsx(theme?.icon ?? actualIconClass, styling?.icon) })} />
+        <CheckIcon data-part="icon" class={icon({ class: clsx(theme?.icon ?? actualIconClass, styling?.icon) })} />
       {/if}
     {/if}
-    <span class={text({ selected, class: clsx(theme?.text, styling?.text) })}>
+    <span data-part="label" class={label({ selected, class: clsx(theme?.label, styling?.label) })}>
       {@render children()}
     </span>
   </div>

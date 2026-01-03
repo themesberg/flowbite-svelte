@@ -27,7 +27,7 @@
 
   const theme = $derived(getTheme("checkbox"));
 
-  const { base, label: labelStyle } = $derived(checkbox({ color, tinted, custom, rounded, inline, disabled: disabled ?? false }));
+  const { input, label: labelStyle } = $derived(checkbox({ color, tinted, custom, rounded, inline, disabled: disabled ?? false }));
 
   $effect(() => {
     if (value !== undefined && Array.isArray(group)) {
@@ -54,8 +54,17 @@
 
 {#if choices.length > 0}
   {#each choices as choice, i (choice.value ?? i)}
-    <Label show={!!children || !!choice.label} {...labelProps} class={labelStyle({ class: clsx(theme?.label, styling?.label) })}>
-      <input type="checkbox" value={choice.value} checked={choice.checked ?? false} {disabled} bind:group {...restProps} class={base({ class: clsx(theme?.base, className) })} />
+    <Label show={!!children || !!choice.label} {...labelProps} class={labelStyle({ class: clsx(theme?.label, styling?.label) })} data-scope="checkbox" data-part="label">
+      <input
+        type="checkbox"
+        value={choice.value}
+        checked={choice.checked ?? false}
+        {disabled}
+        bind:group
+        {...restProps}
+        class={input({ class: clsx(theme?.input, styling?.input) })}
+        data-part="input"
+      />
       {#if children}
         {@render children({ value: choice.value, checked: choice.checked, disabled })}
       {:else}
@@ -64,8 +73,8 @@
     </Label>
   {/each}
 {:else}
-  <Label show={!!children} {...labelProps} class={labelStyle({ class: clsx(theme?.label, styling?.label) })}>
-    <input type="checkbox" {value} bind:checked {disabled} {...restProps} class={base({ class: clsx(theme?.base, className) })} />
+  <Label show={!!children} {...labelProps} class={labelStyle({ class: clsx(theme?.label, styling?.label) })} data-scope="checkbox" data-part="label">
+    <input type="checkbox" {value} bind:checked {disabled} {...restProps} class={input({ class: clsx(theme?.input, styling?.input) })} data-part="input" />
     {#if children}
       {@render children({ value, checked, disabled })}
     {/if}

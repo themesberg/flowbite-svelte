@@ -9,7 +9,7 @@
   const theme = $derived(getTheme("activity"));
 </script>
 
-<ol {...restProps} class={activity({ class: clsx(theme, className) })}>
+<ol {...restProps} class={activity({ class: clsx(theme, className) })} data-scope="activity" data-part="base">
   {@render children()}
 </ol>
 

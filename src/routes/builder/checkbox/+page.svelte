@@ -13,7 +13,7 @@
   let dir = "builder";
 
   const colors = Object.keys(checkbox.variants.color);
-  let checkboxColor: CheckboxProps["color"] = $state("primary");
+  let checkboxColor: CheckboxProps["color"] = $state("brand");
 
   // const checkedStates = [ 'false', 'true', 'indeterminate' ];
   let checkedState = $state(false);

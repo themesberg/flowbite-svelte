@@ -13,7 +13,7 @@
   const olCls = $derived(timeline({ order, class: clsx(theme, className) }));
 </script>
 
-<ol {...restProps} class={olCls}>
+<ol {...restProps} class={olCls} data-scope="timeline" data-part="base">
   {@render children()}
 </ol>
 

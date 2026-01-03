@@ -28,7 +28,7 @@
 
   const theme = $derived(getTheme("tags"));
 
-  const { base, tag: tagCls, span: spanCls, close, input: inputCls, info, warning, error } = $derived(tags());
+  const { base, item: itemCls, label: labelCls, close, input: inputCls, info, warning, error, inputWrapper, option, list } = $derived(tags());
 
   let contents: string = $state("");
   let errorMessage: string = $state("");
@@ -147,37 +147,40 @@
 <svelte:window />
 
 {#if showAvailableTags && availableTags.length > 0}
-  <P class={clsx(info(), styling?.info)}>Available tags: {availableTags.join(", ")}</P>
+  <P data-part="info" class={clsx(info(), styling?.info)}>Available tags: {availableTags.join(", ")}</P>
 {/if}
 
 {#if showHelper && contents.trim().length > 0}
   {#if unique && value.some((tag) => tag.toLowerCase() === contents.trim().toLowerCase())}
-    <P class={clsx(warning(), styling?.warning)}>"{contents.trim()}" is already added.</P>
+    <P data-part="warning" class={clsx(warning(), styling?.warning)}>"{contents.trim()}" is already added.</P>
   {:else if availableTags.length > 0 && !allowNewTags && !availableTags.some((tag) => tag.toLowerCase() === contents.trim().toLowerCase())}
-    <P class={clsx(error(), styling?.error)}>"{contents.trim()}" is not in the available tags.</P>
+    <P data-part="error" class={clsx(error(), styling?.error)}>"{contents.trim()}" is not in the available tags.</P>
   {/if}
 {/if}
 
 {#if errorMessage}
-  <P class={clsx(error(), styling?.error)}>{errorMessage}</P>
+  <P data-part="error" class={clsx(error(), styling?.error)}>{errorMessage}</P>
 {/if}
 
 <div
+  data-scope="tags"
+  data-part="base"
   {...restProps}
   class={base({
     class: clsx(theme?.base, className)
   })}
 >
   {#each value as tag, index (index)}
-    <div class={tagCls({ class: clsx(theme?.tag, styling?.tag) })}>
-      <span class={spanCls({ class: clsx(theme?.span, styling?.span) })}>
+    <div data-part="item" class={itemCls({ class: clsx(theme?.item, styling?.item) })}>
+      <span data-part="label" class={labelCls({ class: clsx(theme?.label, styling?.label) })}>
         {tag}
       </span>
-      <CloseButton {...finalCloseProps(index)} />
+      <CloseButton data-part="close-button" {...finalCloseProps(index)} />
     </div>
   {/each}
-  <div class="relative w-full" bind:this={inputContainer}>
+  <div data-part="input-wrapper" class={inputWrapper({ class: clsx(theme?.inputWrapper, styling?.inputWrapper) })} bind:this={inputContainer}>
     <input
+      data-part="input"
       {...inputProps}
       {disabled}
       bind:this={inputElement}
@@ -191,12 +194,13 @@
     {#if availableTags.length > 0 && contents.trim() !== ""}
       {@const filteredSuggestions = availableTags.filter((tag) => tag.toLowerCase().includes(contents.trim().toLowerCase()) && (!unique || !value.some((t) => t.toLowerCase() === tag.toLowerCase())))}
       {#if filteredSuggestions.length > 0}
-        <ul bind:this={dropdownElement} class="z-10 max-h-48 w-full overflow-auto rounded border border-gray-300 bg-white shadow" style="position: absolute;">
+        <ul data-part="list" bind:this={dropdownElement} class={list({ class: clsx(theme?.list, styling?.list) })} style="position: absolute;">
           {#each filteredSuggestions as suggestion (suggestion)}
-            <li>
+            <li data-part="suggestion-item">
               <button
+                data-part="option"
                 type="button"
-                class="block w-full cursor-pointer px-3 py-2 text-left hover:bg-gray-100"
+                class={option({ class: clsx(theme?.option, styling?.option) })}
                 onclick={() => {
                   value = [...value, suggestion];
                   contents = "";

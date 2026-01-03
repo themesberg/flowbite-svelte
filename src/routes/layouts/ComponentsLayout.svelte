@@ -67,14 +67,14 @@
     closeSidebar();
   });
 
-  let spanClass = "";
+  let labelClass = "";
   let mainClass = "fixed inset-0 z-40 lg:z-39 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:pt-0 lg:block bg-white dark:bg-gray-900";
   let nonActiveClass =
     "text-sm transition-colors duration-200 relative font-medium hover:text-gray-900 hover:bg-transparent dark:hover:bg-transparent hover:cursor-pointer text-gray-500 dark:text-gray-400 dark:hover:text-white";
   let activeClass = "text-sm relative font-medium cursor-default bg-transparent dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent text-primary-700 dark:text-primary-700";
-  let btnClass =
+  let triggerClass =
     "my-0 text-sm font-semibold tracking-wide uppercase text-gray-700 dark:text-gray-200 hover:bg-transparent dark:hover:bg-transparent hover:text-primary-700 dark:hover:text-primary-600";
-  let divClass = "overflow-y-auto px-4 pt-20 lg:pt-4 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block lg:me-0 lg:sticky top-20 bg-white dark:bg-gray-900";
+  let contentClass = "overflow-y-auto px-4 pt-20 lg:pt-4 h-full scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block lg:me-0 lg:sticky top-20 bg-white dark:bg-gray-900";
   // const blockCls = "px-4 mx-auto max-w-8xl";
   const nonBlockCls = "min-w-0 lg:static lg:container lg:mx-auto lg:max-h-full lg:overflow-visible";
 </script>
@@ -87,7 +87,7 @@
     isSingle={false}
     {isOpen}
     {closeSidebar}
-    classes={{ div: divClass, nonactive: nonActiveClass, active: activeClass }}
+    classes={{ content: contentClass, nonactive: nonActiveClass, active: activeClass }}
     activeUrl={mainSidebarUrl}
     class={mainClass}
     params={{ x: -50, duration: 50 }}
@@ -97,14 +97,14 @@
       {#each Object.entries(posts) as [key, values] (key)}
         <SidebarDropdownWrapper
           label={names_mapping[key] ?? key}
-          classes={{ btn: btnClass, ul: "space-y-0 p-0" }}
+          classes={{ trigger: triggerClass, list: "space-y-0 p-0" }}
           class={dropdownStates[key] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}
           bind:isOpen={dropdownStates[key]}
         >
           {#each values as { meta, path }}
             {#if meta?.component_title}
               {@const href = key === "icons" || key === "illustrations" ? `/${key}${path}` : `/docs/${key}${path}`}
-              <SidebarItem label={meta.component_title} {href} classes={{ span: spanClass }} />
+              <SidebarItem label={meta.component_title} {href} classes={{ label: labelClass }} />
             {/if}
           {/each}
         </SidebarDropdownWrapper>
@@ -112,7 +112,7 @@
       {#if builders.length}
         <SidebarDropdownWrapper
           label="Builders"
-          classes={{ btn: btnClass, ul: "space-y-0 p-0" }}
+          classes={{ trigger: triggerClass, list: "space-y-0 p-0" }}
           class={dropdownStates["builders"] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}
           bind:isOpen={dropdownStates["builders"]}
         >
@@ -120,24 +120,24 @@
             {@const pathWithoutSlash = builder.path.replace(/^\//, "")}
             {@const capitalizedPath = pathWithoutSlash.charAt(0).toUpperCase() + pathWithoutSlash.slice(1)}
             {@const href = `/builder/${builder.path}`}
-            <SidebarItem label={capitalizedPath} {href} classes={{ span: spanClass }} />
+            <SidebarItem label={capitalizedPath} {href} classes={{ label: labelClass }} />
           {/each}
         </SidebarDropdownWrapper>
       {/if}
       <SidebarDropdownWrapper
         label="Blocks"
-        classes={{ btn: btnClass, ul: "space-y-0 p-0" }}
+        classes={{ trigger: triggerClass, list: "space-y-0 p-0" }}
         class={dropdownStates["blocks"] ? "text-primary-700 dark:text-primary-700" : "text-gray-700 dark:text-gray-200"}
         bind:isOpen={dropdownStates["blocks"]}
       >
         {#each blocks as block}
-          <SidebarItem label={capitalizeFirstLetter(block)} href="/blocks/{block}" classes={{ span: spanClass }} />
+          <SidebarItem label={capitalizeFirstLetter(block)} href="/blocks/{block}" classes={{ label: labelClass }} />
         {/each}
       </SidebarDropdownWrapper>
       <SidebarItem
         label="Admin Dashboard"
         href="/admin-dashboard"
-        classes={{ span: "ms-3 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" }}
+        classes={{ label: "ms-3 w-full text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600 text-gray-700 dark:text-gray-200" }}
       ></SidebarItem>
     </SidebarGroup>
     <!-- /SidebarWrapper -->

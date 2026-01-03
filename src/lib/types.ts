@@ -40,13 +40,14 @@ import type { CarouselVariants, SlideVariants, CarouselIndicatorsVariants, Contr
 import type { DarkmodeVariants } from "$lib/darkmode/theme";
 import type { DrawerHandleVariants, DrawerVariants, DrawerheadVariants } from "$lib/drawer/theme";
 import type { DatepickerVariants } from "$lib/datepicker/theme";
+import type { DropdownItemVariants } from "$lib/dropdown/theme";
 import type { FooterBrandVariants, FooterCopyrightVariants, FooterLinkVariants } from "$lib/footer/theme";
 import type { GalleryVariants } from "$lib/gallery/theme";
 import type { IndicatorVariants } from "$lib/indicator/theme";
 import type { ListgroupItemVariants, ListgroupVariants } from "$lib/list-group/theme";
 import type { MegaMenuVariants } from "$lib/mega-menu/theme";
 import type { ModalVariants } from "$lib/modal/theme";
-import type { NavbarVariants, NavbarUlVariants, NavbarHamburgerVariants } from "$lib/navbar/theme";
+import type { NavbarVariants, NavbarUlVariants, NavbarHamburgerVariants, NavLiVariants } from "$lib/navbar/theme";
 import type { PaginationNavVariants } from "$lib/pagination/theme";
 import type { PopoverVariants } from "$lib/popover/theme";
 import type { SidebarVariants, SidebarCtaVariants, SidebarBrandVariants, SidebarDropdownWrapperVariants, SidebarButtonVariants, SidebarItemVariants } from "$lib/sidebar/theme";
@@ -73,9 +74,12 @@ import type { TimelineVariants, ActivityItemVariants, GroupVariants, GroupItemVa
 import type { ToastVaraints } from "$lib/toast/theme";
 import type { ToolbarButtonVariants, ToolbarGroupVariants, ToolbarVariants } from "$lib/toolbar/theme";
 import type { TooltipVariants } from "$lib/tooltip/theme";
+import type { VideoVariants } from "$lib/video/theme";
+import type { ThemeSelectorVariants } from "$lib/theme-selector/theme";
 
 // forms component variants
 import type { CheckboxButtonVariants, CheckboxVariants } from "$lib/forms/checkbox/theme";
+import type { DropzoneVariants } from "$lib/forms/dropzone/theme";
 import type { FileuploadViariants } from "$lib/forms/fileupload/theme";
 import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label/theme";
 import type { HelperVariants } from "$lib/forms/helper/theme";
@@ -114,7 +118,7 @@ import type { ApexOptions } from "apexcharts";
 // extend
 import type { ButtonToggleVariants } from "$lib/extend/button-toggle/theme";
 import type { TagsVariants } from "$lib/extend/tags/theme";
-import type { VirtualListVariants } from "$lib/extend/virtuallist/theme";
+import type { VirtualListVariants } from "$lib/extend/virtual-list/theme";
 import type { KanbanBoardVariants, KanbanCardVariants } from "$lib/extend/kanban/theme";
 import type { TourVariants } from "$lib/extend/tour/theme";
 import type { CommandPaletteVariants } from "$lib/extend/command-palette/theme";
@@ -209,11 +213,10 @@ export type AnchorButtonDivAttributes =
 export interface AccordionProps extends AccordionVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   children: Snippet;
   multiple?: boolean;
-  activeClass?: ClassValue;
-  inactiveClass?: ClassValue;
   transitionType?: TransitionFunc | "none";
   respectReducedMotion?: boolean;
   classes?: Partial<{
+    // for AccordionItem
     button?: ClassValue;
     contentWrapper?: ClassValue;
     content?: ClassValue;
@@ -662,16 +665,11 @@ export interface DropdownHeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: Snippet;
 }
 
-export interface DropdownItemProps {
+export interface DropdownItemProps extends DropdownItemVariants {
   children: Snippet;
   aClass?: ClassValue;
   activeClass?: ClassValue;
   liClass?: ClassValue;
-  classes?: {
-    active?: ClassValue;
-    base?: ClassValue;
-    li?: ClassValue;
-  };
   class?: ClassValue;
   href?: string;
   onclick?: (e: MouseEvent) => void;
@@ -752,7 +750,7 @@ export interface CheckboxButtonProps extends CheckboxButtonVariants, Omit<HTMLIn
 }
 
 // dropzone
-export interface DropzoneProps extends HTMLInputAttributes {
+export interface DropzoneProps extends DropzoneVariants, HTMLInputAttributes {
   children: Snippet;
   files?: FileList | null;
   onDrop?: HTMLLabelAttributes["ondrop"];
@@ -1057,7 +1055,7 @@ export type ListgroupItemProps = Omit<ListgroupItemVariants, "state"> &
 // mega-menu
 export interface MegaMenuProps extends MegaMenuVariants, Omit<PopperProps, "children"> {
   children: Snippet<[{ item: LinkType; index: number }]>;
-  extra?: Snippet;
+  addon?: Snippet;
   items?: LinkType[];
   full?: boolean;
   isOpen?: boolean;
@@ -1082,6 +1080,7 @@ export type NavbarState = {
   hidden: boolean;
   activeClass?: ClassValue;
   nonActiveClass?: ClassValue;
+  itemClass?: ClassValue;
   activeUrl?: string;
 };
 
@@ -1115,12 +1114,20 @@ export interface NavUlProps extends NavbarUlVariants, Omit<HTMLAttributes<HTMLDi
   transitionParams?: SlideParams | FlyParams | FadeParams | ScaleParams;
   respectMotionPreference?: boolean;
   class?: ClassValue;
+  classes?: Partial<{
+    base?: ClassValue;
+    list?: ClassValue;
+    active?: ClassValue;
+    nonActive?: ClassValue;
+    item?: ClassValue;
+  }>;
 }
 
-export type NavLiProps = AnchorButtonAttributes & {
-  activeClass?: ClassValue;
-  nonActiveClass?: ClassValue;
-};
+export type NavLiProps = AnchorButtonAttributes &
+  NavLiVariants & {
+    activeClass?: ClassValue;
+    nonActiveClass?: ClassValue;
+  };
 
 // toolbar
 export interface ToolbarProps extends ToolbarVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
@@ -1172,13 +1179,6 @@ export interface PaginationNavProps extends PaginationNavVariants, HTMLAttribute
   showIcons?: boolean;
   ariaLabel?: string;
   size?: "default" | "large";
-  classes?: {
-    prev?: ClassValue;
-    next?: ClassValue;
-    span?: ClassValue;
-    tableDiv?: ClassValue;
-    active?: ClassValue; // Add this line to support custom active classes
-  };
 }
 
 export interface PaginationItemProps extends PaginationItemVariants, PaginationHTMLButtonOrAnchorAttributes {
@@ -1966,7 +1966,7 @@ export interface SpanProps extends SpanVariants, HTMLAttributes<HTMLSpanElement>
 }
 
 // video
-export interface VideoProps extends HTMLVideoAttributes {
+export interface VideoProps extends VideoVariants, HTMLVideoAttributes {
   type?: HTMLSourceAttributes["type"];
   src?: HTMLSourceAttributes["src"];
   trackSrc?: HTMLTrackAttributes["src"];
@@ -1985,7 +1985,7 @@ export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbef
   trigger?: "hover" | "click";
   placement?: Placement;
   arrow?: boolean;
-  arrowClass?: string;
+  arrowClass?: ClassValue;
   offset?: number;
   role?: "tooltip" | "menu" | "dialog" | "listbox" | "combobox";
   yOnly?: boolean; // special case for megamenu - only move on y axis
@@ -2001,11 +2001,10 @@ export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbef
   isOpen?: boolean;
 }
 
-export interface ArrowProps {
+export interface ArrowProps extends HTMLAttributes<HTMLDivElement> {
   placement?: Placement;
   cords: Partial<Coords>;
   strategy?: "absolute" | "fixed";
-  class?: ClassValue | null;
 }
 
 // VirtualList
@@ -2216,3 +2215,6 @@ export interface ClipboardManagerProps extends ClipboardManagerVariants {
   modalProps?: ModalProps;
   detectSensitiveData?: (text: string) => boolean;
 }
+
+// theme-selector
+export interface ThemeSelectorProps extends ThemeSelectorVariants, HTMLAttributes<HTMLDivElement> {}

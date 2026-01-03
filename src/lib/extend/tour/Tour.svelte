@@ -209,59 +209,63 @@
 </script>
 
 {#if active && currentStepData}
-  <!-- Overlay -->
-  {#if showOverlay}
-    <div
-      class="{styles.overlay({ class: clsx(theme?.overlay, classes?.overlay) })} z-[9998]"
-      style={clipPathStyle}
-      onclick={skip}
-      onkeydown={(e) => e.key === "Escape" && skip()}
-      role="button"
-      tabindex="0"
-      aria-label="Close tour"
-    ></div>
-  {/if}
+  <div data-scope="tour" class="relative">
+    <!-- Overlay -->
+    {#if showOverlay}
+      <div
+        data-part="overlay"
+        class="{styles.overlay({ class: clsx(theme?.overlay, classes?.overlay) })} z-[9998]"
+        style={clipPathStyle}
+        onclick={skip}
+        onkeydown={(e) => e.key === "Escape" && skip()}
+        role="button"
+        tabindex="0"
+        aria-label="Close tour"
+      ></div>
+    {/if}
 
-  <!-- Highlight -->
-  <div class="{highlightClass ? highlightClass : styles.highlight({ class: clsx(theme?.highlight, classes?.highlight) })} z-[9999]" style={highlightStyle}></div>
+    <!-- Highlight -->
+    <div data-part="highlight" class="{highlightClass ? highlightClass : styles.highlight({ class: clsx(theme?.highlight, classes?.highlight) })} z-[9999]" style={highlightStyle}></div>
 
-  <!-- Tooltip -->
-  <div tabindex="-1" bind:this={tooltipElement} class={clsx(styles.tooltip({ class: clsx(theme?.tooltip, classes?.tooltip) }), "z-[10001]", className)} style={tooltipStyle}>
-    <!-- Arrow -->
-    <div bind:this={arrowElement} class={styles.arrow({ class: clsx(theme?.arrow, classes?.arrow) })} style={arrowStyle} data-placement={actualPlacement}></div>
+    <!-- Tooltip -->
+    <div data-part="tooltip" tabindex="-1" bind:this={tooltipElement} class={clsx(styles.tooltip({ class: clsx(theme?.tooltip, classes?.tooltip) }), "z-[10001]", className)} style={tooltipStyle}>
+      <!-- Arrow -->
+      <div data-part="arrow" bind:this={arrowElement} class={styles.arrow({ class: clsx(theme?.arrow, classes?.arrow) })} style={arrowStyle} data-placement={actualPlacement}></div>
 
-    <div {...restProps} class={styles.content({ class: clsx(theme?.content, classes?.content) })}>
-      {#if currentStepData.title}
-        <h3 class={styles.title({ class: clsx(theme?.title, classes?.title) })}>{currentStepData.title}</h3>
-      {/if}
-
-      <p class={styles.description({ class: clsx(theme?.description, classes?.description) })}>{currentStepData.description}</p>
-
-      {#if steps.length > 1}
-        <div class={styles.progressContainer({ class: clsx(theme?.progressContainer, classes?.progressContainer) })}>
-          {#each steps as _, index (index)}
-            <button
-              class="{styles.progressDot({ class: clsx(theme?.progressDot, classes?.progressDot) })} {index === currentStep ? styles.progressDotActive() : ''}"
-              onclick={() => goToStep(index)}
-              aria-label="Go to step {index + 1}"
-              aria-current={index === currentStep ? "step" : undefined}
-            ></button>
-          {/each}
-        </div>
-      {/if}
-    </div>
-
-    <div class={styles.actions({ class: clsx(theme?.actions, classes?.actions) })}>
-      <button class="{styles.button({ class: clsx(theme?.button, classes?.button) })} {styles.buttonSecondary()}" onclick={skip}>Skip</button>
-
-      <div class={styles.navigation({ class: clsx(theme?.navigation, classes?.navigation) })}>
-        {#if !isFirstStep}
-          <button class="{styles.button({ class: clsx(theme?.button, classes?.button) })} {styles.buttonSecondary()}" onclick={previous}>Previous</button>
+      <div data-part="content" {...restProps} class={styles.content({ class: clsx(theme?.content, classes?.content) })}>
+        {#if currentStepData.title}
+          <h3 data-part="title" class={styles.title({ class: clsx(theme?.title, classes?.title) })}>{currentStepData.title}</h3>
         {/if}
 
-        <button class="{styles.button({ class: clsx(theme?.button, classes?.button) })} {styles.buttonPrimary()}" onclick={next}>
-          {isLastStep ? "Finish" : "Next"}
-        </button>
+        <p data-part="description" class={styles.description({ class: clsx(theme?.description, classes?.description) })}>{currentStepData.description}</p>
+
+        {#if steps.length > 1}
+          <div data-part="progress-container" class={styles.progressContainer({ class: clsx(theme?.progressContainer, classes?.progressContainer) })}>
+            {#each steps as _, index (index)}
+              <button
+                data-part="progress-dot"
+                class="{styles.progressDot({ class: clsx(theme?.progressDot, classes?.progressDot) })} {index === currentStep ? styles.progressDotActive() : ''}"
+                onclick={() => goToStep(index)}
+                aria-label="Go to step {index + 1}"
+                aria-current={index === currentStep ? "step" : undefined}
+              ></button>
+            {/each}
+          </div>
+        {/if}
+      </div>
+
+      <div data-part="actions" class={styles.actions({ class: clsx(theme?.actions, classes?.actions) })}>
+        <button data-part="button" class="{styles.button({ class: clsx(theme?.button, classes?.button) })} {styles.buttonSecondary()}" onclick={skip}>Skip</button>
+
+        <div data-part="navigation" class={styles.navigation({ class: clsx(theme?.navigation, classes?.navigation) })}>
+          {#if !isFirstStep}
+            <button data-part="button" class="{styles.button({ class: clsx(theme?.button, classes?.button) })} {styles.buttonSecondary()}" onclick={previous}>Previous</button>
+          {/if}
+
+          <button data-part="button" class="{styles.button({ class: clsx(theme?.button, classes?.button) })} {styles.buttonPrimary()}" onclick={next}>
+            {isLastStep ? "Finish" : "Next"}
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -46,10 +46,10 @@
   };
 </script>
 
-<label class={dropzone({ class: clsx(theme, className) })} ondrop={handleDrop} ondragover={handleDragOver}>
+<label class={dropzone({ class: clsx(theme, className) })} ondrop={handleDrop} ondragover={handleDragOver} data-scope="dropzone" data-part="base">
   {@render children()}
 
-  <input {...restProps} bind:this={inputElement} onchange={handleChange} type="file" class="hidden" />
+  <input {...restProps} bind:this={inputElement} onchange={handleChange} type="file" class="hidden" data-part="input" />
 </label>
 
 <!--

@@ -1,5 +1,5 @@
 import { render, screen, within } from "@testing-library/svelte";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
 import { expect, test, vi, beforeEach, afterEach } from "vitest";
 
 // Import test components

@@ -52,7 +52,7 @@ export const progressStepper = tv({
     item: "flex items-center justify-center z-10",
     circle: "flex items-center justify-center w-10 h-10 rounded-full lg:h-12 lg:w-12 shrink-0",
     line: "absolute h-1 top-1/2 -translate-y-1/2 bg-gray-200 dark:bg-gray-700",
-    progressLine: "absolute h-1 top-1/2 -translate-y-1/2 bg-primary-600 dark:bg-primary-500 transition-all duration-300 ease-in-out"
+    progress: "absolute h-1 top-1/2 -translate-y-1/2 bg-primary-600 dark:bg-primary-500 transition-all duration-300 ease-in-out"
   },
 
   variants: {

@@ -67,10 +67,10 @@
   }
 </script>
 
-<ol class={base({ class: clsx(theme?.base, className) })} {...restProps}>
+<ol class={base({ class: clsx(theme?.base, className) })} {...restProps} data-scope="detailed-stepper" data-part="base">
   {#each steps as step, index (step.id)}
     {@const status = step.status ?? getStepStatus(index)}
-    <li class={item({ status, class: clsx(theme?.item, classes?.item) })}>
+    <li class={item({ status, class: clsx(theme?.item, classes?.item) })} data-part="item">
       {#if clickable}
         <button
           type="button"
@@ -78,7 +78,7 @@
           onclick={() => handleStepClick(index)}
           aria-current={status === "current" ? "step" : undefined}
         >
-          <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })}>
+          <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })} data-part="indicator">
             {#if status === "completed" && showCheckmarkForCompleted}
               <!-- Checkmark for completed steps -->
               <CheckmarkIcon variant="tick" />
@@ -99,7 +99,7 @@
         </button>
       {:else}
         <div class="flex items-center space-x-2.5 rtl:space-x-reverse" aria-current={status === "current" ? "step" : undefined}>
-          <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })}>
+          <span class={indicator({ status, class: clsx(theme?.indicator, classes?.indicator) })} data-part="indicator">
             {#if status === "completed" && showCheckmarkForCompleted}
               <!-- Checkmark for completed steps -->
               <CheckmarkIcon variant="tick" />

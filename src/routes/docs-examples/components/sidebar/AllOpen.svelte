@@ -4,7 +4,7 @@
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -33,26 +33,26 @@
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="Shop" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Shop" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Products" href="" />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper label="Profile" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Profile" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Projects" href="/" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Sidebar" classes={{ span: spanClass }} href="/components/sidebar">
+      <SidebarItem label="Sidebar" classes={{ label: labelClass }} href="/components/sidebar">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
     <SidebarGroup border>
-      <SidebarDropdownWrapper label="Setting" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Setting" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <EditSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}

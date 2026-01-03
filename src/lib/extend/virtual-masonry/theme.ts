@@ -3,7 +3,7 @@ import type { Classes } from "$lib/theme-provider/themeUtils";
 
 export const virtualMasonry = tv({
   slots: {
-    container: "overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent",
+    base: "overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent",
     spacer: "relative",
     content: "relative w-full",
     item: ""

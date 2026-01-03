@@ -8,21 +8,21 @@
 
   const theme = $derived(getTheme("smartwatch"));
   const styling = $derived(classes);
-  const { base, top, rightTop, rightBot, bot, slot } = smartwatch();
+  const { topBase, base, rightTop, rightBottom, bottomBase, screen } = smartwatch();
 </script>
 
 <div {...restProps}>
-  <div data-scope="smart-watch" class={base({ class: clsx(theme?.base, className) })}></div>
-  <div data-part="top" class={top({ class: clsx(theme?.top, styling?.top) })}>
+  <div data-part="top-base" class={topBase({ class: clsx(theme?.topBase, styling?.topBase) })}></div>
+  <div data-scope="smartwatch" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
     <div data-part="right-top" class={rightTop({ class: clsx(theme?.rightTop, styling?.rightTop) })}></div>
-    <div data-part="right-bot" class={rightBot({ class: clsx(theme?.rightBot, styling?.rightBot) })}></div>
-    <div data-part="slot" class={slot({ class: clsx(theme?.slot, styling?.slot) })}>
+    <div data-part="right-bottom" class={rightBottom({ class: clsx(theme?.rightBottom, styling?.rightBottom) })}></div>
+    <div data-part="screen" class={screen({ class: clsx(theme?.screen, styling?.screen) })}>
       {#if children}
         {@render children()}
       {/if}
     </div>
   </div>
-  <div data-part="bot" class={bot({ class: clsx(theme?.bot, styling?.bot) })}></div>
+  <div data-part="bottom-base" class={bottomBase({ class: clsx(theme?.bottomBase, styling?.bottomBase) })}></div>
 </div>
 
 <!--

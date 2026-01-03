@@ -116,9 +116,20 @@
 
 <svelte:window onkeydown={open ? handleKeydown : handleGlobalKeydown} />
 
-<Dialog bind:open dismissable={false} {@attach init} aria-modal="true" aria-labelledby={ariaLabelledby} tabindex={-1} class={styles.base({ class: clsx(theme?.base, className) })} {...restProps}>
+<Dialog
+  data-scope="command-palette"
+  bind:open
+  dismissable={false}
+  {@attach init}
+  aria-modal="true"
+  aria-labelledby={ariaLabelledby}
+  tabindex={-1}
+  class={styles.base({ class: clsx(theme?.base, className) })}
+  {...restProps}
+>
   <!-- Search Input -->
   <Search
+    data-part="search"
     size="md"
     {placeholder}
     bind:value={search}
@@ -132,9 +143,10 @@
 
   <!-- Results -->
   {#if filteredItems.length > 0}
-    <ul id={ulId} class={styles.list({ class: clsx(theme?.list, classes?.list) })} role="listbox">
+    <ul data-part="list" id={ulId} class={styles.list({ class: clsx(theme?.list, classes?.list) })} role="listbox">
       {#each filteredItems as item, index (item.id)}
         <li
+          data-part="item"
           data-index={index}
           id={item.id}
           role="option"
@@ -152,7 +164,7 @@
             <div class="min-w-0 flex-1">
               <div class="truncate text-sm font-medium">{item.label}</div>
               {#if item.description}
-                <div class={styles.itemDescription({ class: clsx(theme?.itemDescription, classes?.itemDescription) })}>
+                <div data-part="item-description" class={styles.itemDescription({ class: clsx(theme?.itemDescription, classes?.itemDescription) })}>
                   {item.description}
                 </div>
               {/if}
@@ -162,15 +174,15 @@
       {/each}
     </ul>
   {:else if search}
-    <div class={styles.empty({ class: clsx(theme?.empty, classes?.empty) })}>
+    <div data-part="empty-state" class={styles.emptyState({ class: clsx(theme?.emptyState, classes?.emptyState) })}>
       <p>{emptyMessage}</p>
     </div>
   {/if}
 
   <!-- Footer -->
-  <div class={styles.footer({ class: clsx(theme?.footer, classes?.footer) })}>
+  <div data-part="footer" class={styles.footer({ class: clsx(theme?.footer, classes?.footer) })}>
     <div class="flex items-center gap-4">
-      <kbd class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd) })}>
+      <kbd data-part="kbd" class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd) })}>
         {#if vim}
           <span>j/k</span>
         {:else}
@@ -178,12 +190,12 @@
         {/if}
         <span>Navigate</span>
       </kbd>
-      <kbd class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd) })}>
+      <kbd data-part="kbd" class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd) })}>
         <span>↵</span>
         <span>Select</span>
       </kbd>
     </div>
-    <kbd class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd) })}>
+    <kbd data-part="kbd" class={styles.kbd({ class: clsx(theme?.kbd, classes?.kbd) })}>
       <span>ESC</span>
       <span>Close</span>
     </kbd>

@@ -4,25 +4,25 @@
   import type { ReviewProps } from "$lib/types";
   import { getTheme } from "$lib/theme-provider/themeUtils";
 
-  let { children, address, item1, item2, item3, review, classes }: ReviewProps = $props();
+  let { children, address, item1, item2, item3, review, class: className, classes }: ReviewProps = $props();
 
   const styling = $derived(classes);
 
   const theme = $derived(getTheme("review"));
 
-  const { article, div, div2, div3, img, ul, li } = $derived(reviewVariants());
+  const { base, userInfo, userDetails, addressWrapper, avatar, metadata, metadataItem } = $derived(reviewVariants());
 </script>
 
 {#if review}
-  <article class={article({ class: clsx(theme?.article, styling?.article) })}>
+  <article data-scope="review" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
     <div>
-      <div class={div({ class: clsx(theme?.div, styling?.div) })}>
-        <img class={img({ class: clsx(theme?.img, styling?.img) })} src={review.imgSrc} alt={review.imgAlt} />
-        <div class={div2({ class: clsx(theme?.div2, styling?.div2) })}>
+      <div data-part="user-info" class={userInfo({ class: clsx(theme?.userInfo, styling?.userInfo) })}>
+        <img data-part="avatar" class={avatar({ class: clsx(theme?.avatar, styling?.avatar) })} src={review.imgSrc} alt={review.imgAlt} />
+        <div data-part="user-details" class={userDetails({ class: clsx(theme?.userDetails, styling?.userDetails) })}>
           <p>{review.name}</p>
           {#if review.address}
             {#if address}
-              <div class={div3({ class: clsx(theme?.div3, styling?.div3) })}>
+              <div data-part="address-wrapper" class={addressWrapper({ class: clsx(theme?.addressWrapper, styling?.addressWrapper) })}>
                 {@render address()}
               </div>
             {/if}
@@ -30,23 +30,23 @@
         </div>
       </div>
       {#if review.item1 || review.item2 || review.item3}
-        <ul class={ul({ class: clsx(theme?.ul, styling?.ul) })}>
+        <ul data-part="metadata" class={metadata({ class: clsx(theme?.metadata, styling?.metadata) })}>
           {#if review.item1}
-            <li class={li({ class: clsx(theme?.li, styling?.li) })}>
+            <li data-part="metadata-item" class={metadataItem({ class: clsx(theme?.metadataItem, styling?.metadataItem) })}>
               {#if item1}
                 {@render item1()}
               {/if}
             </li>
           {/if}
           {#if review.item2}
-            <li class={clsx(styling?.li)}>
+            <li data-part="metadata-item" class={metadataItem({ class: clsx(theme?.metadataItem, styling?.metadataItem) })}>
               {#if item2}
                 {@render item2()}
               {/if}
             </li>
           {/if}
           {#if review.item3}
-            <li class={clsx(styling?.li)}>
+            <li data-part="metadata-item" class={metadataItem({ class: clsx(theme?.metadataItem, styling?.metadataItem) })}>
               {#if item3}
                 {@render item3()}
               {/if}

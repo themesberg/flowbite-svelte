@@ -5,7 +5,7 @@
   import { sineIn } from "svelte/easing";
   import { prefersReducedMotion } from "svelte/motion";
   import { fade, fly, scale, slide } from "svelte/transition";
-  import { navbarUl } from "./theme";
+  import { navUl } from "./theme";
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
   let navState = getNavbarStateContext();
@@ -17,7 +17,7 @@
 
   const styling = $derived(classes);
 
-  const theme = $derived(getTheme("navbarUl"));
+  const theme = $derived(getTheme("navUl"));
 
   // Default parameters for different transitions
   const getDefaultParams = (transitionFn: typeof slide | typeof fly | typeof fade | typeof scale) => {
@@ -46,28 +46,29 @@
     return navState.hidden;
   });
 
-  let { base, ul, active, nonActive } = $derived(navbarUl({ hidden, breakpoint: navBreakpoint ?? "md" }));
+  let { base, list, active, nonActive } = $derived(navUl({ hidden, breakpoint: navBreakpoint ?? "md" }));
 
   $effect(() => {
     if (!navState) return;
     navState.activeClass = active({ class: clsx(theme?.active, styling?.active) });
     navState.nonActiveClass = nonActive({ class: clsx(theme?.nonActive, styling?.nonActive) });
+    navState.itemClass = styling?.item;
     navState.activeUrl = activeUrl;
   });
 
   let divCls: string = $derived(base({ class: clsx(theme?.base, className) }));
-  let ulCls: string = $derived(ul({ class: clsx(theme?.ul, styling?.ul) }));
+  let ulCls: string = $derived(list({ class: clsx(theme?.list, styling?.list) }));
 </script>
 
 {#if !hidden}
-  <div {...restProps} class={divCls} transition:transition={transitionOptions()}>
-    <ul class={ulCls}>
+  <div data-scope="nav-ul" data-part="base" {...restProps} class={divCls} transition:transition={transitionOptions()}>
+    <ul class={ulCls} data-part="list">
       {@render children?.()}
     </ul>
   </div>
 {:else}
-  <div {...restProps} class={divCls}>
-    <ul class={ulCls}>
+  <div data-scope="nav-ul" data-part="base" {...restProps} class={divCls}>
+    <ul class={ulCls} data-part="list">
       {@render children?.()}
     </ul>
   </div>

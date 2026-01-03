@@ -14,11 +14,11 @@ export const activity = tv({
 
 export const activityItem = tv({
   slots: {
-    li: "mb-10 ms-6",
-    span: "flex absolute -start-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900",
+    item: "mb-10 ms-6",
+    indicator: "flex absolute -start-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900",
     img: "rounded-full shadow-lg",
-    outer: "p-4 bg-white rounded-lg border border-gray-200 shadow-xs dark:bg-gray-700 dark:border-gray-600",
-    inner: "justify-between items-center mb-3 sm:flex",
+    card: "p-4 bg-white rounded-lg border border-gray-200 shadow-xs dark:bg-gray-700 dark:border-gray-600",
+    header: "justify-between items-center mb-3 sm:flex",
     time: "mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0",
     title: "text-sm font-normal text-gray-500 lex dark:text-gray-300",
     text: "p-3 text-xs italic font-normal text-gray-500 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300"
@@ -27,21 +27,21 @@ export const activityItem = tv({
 
 export const group = tv({
   slots: {
-    div: "p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700",
+    card: "p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700",
     time: "text-lg font-semibold text-gray-900 dark:text-white",
-    ol: "mt-3 divide-y divider-gray-200 dark:divide-gray-700"
+    list: "mt-3 divide-y divider-gray-200 dark:divide-gray-700"
   }
 });
 
 export const groupItem = tv({
   slots: {
     base: "",
-    a: "block items-center p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700",
+    link: "block items-center p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700",
     img: "me-3 mb-3 w-12 h-12 rounded-full sm:mb-0",
-    div: "text-gray-600 dark:text-gray-400",
+    content: "text-gray-600 dark:text-gray-400",
     title: "text-base font-normal",
-    span: "inline-flex items-center bg-gray-100 border border-gray-200 text-xs font-medium px-1.5 py-0.5 rounded",
-    svg: "me-1 h-3 w-3"
+    badge: "inline-flex items-center bg-gray-100 border border-gray-200 text-xs font-medium px-1.5 py-0.5 rounded",
+    icon: "me-1 h-3 w-3"
   }
 });
 
@@ -108,46 +108,46 @@ export const timeline = tv({
 export const timelineItem = tv({
   slots: {
     base: "relative",
-    div: "",
-    defaultDiv: "absolute w-2 h-2 bg-gray-200 rounded-full mt-1.5 -start-5 border border-buffer",
+    indicator: "",
+    dot: "absolute w-2 h-2 bg-gray-200 rounded-full mt-1.5 -start-5 border border-buffer",
     time: "",
-    h3: "",
-    svg: "w-4 h-4",
+    title: "",
+    icon: "w-4 h-4",
     connector: "absolute top-6 left-3 w-px h-full"
   },
   variants: {
     order: {
       default: {
         base: "mb-10 ms-4",
-        div: "absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700",
+        indicator: "absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700",
         time: "mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500",
-        h3: "text-lg font-semibold text-gray-900 dark:text-white"
+        title: "text-lg font-semibold text-gray-900 dark:text-white"
       },
       vertical: {
         base: "mb-10 ms-6 relative",
-        div: "flex absolute -left-4 top-1.5 justify-center items-center w-6 h-6 rounded-full ring-8",
+        indicator: "flex absolute -left-4 top-1.5 justify-center items-center w-6 h-6 rounded-full ring-8",
         time: "mb-1 pl-4 text-sm font-normal leading-none text-gray-400 dark:text-gray-500",
-        h3: "flex ml-4 items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white",
+        title: "flex ml-4 items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white",
         connector: "absolute top-7 -left-1.5 w-px h-full"
       },
       horizontal: {
         base: "relative mb-6 sm:mb-0",
-        div: "flex items-center",
+        indicator: "flex items-center",
         time: "mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500",
-        h3: "text-lg font-semibold text-gray-900 dark:text-white"
+        title: "text-lg font-semibold text-gray-900 dark:text-white"
       },
       activity: {
         base: "mb-10 ms-6 relative",
-        div: "flex absolute -left-4 top-1.5 justify-center items-center w-6 h-6 rounded-full ring-8",
+        indicator: "flex absolute -left-4 top-1.5 justify-center items-center w-6 h-6 rounded-full ring-8",
         time: "mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500",
-        h3: "text-lg font-semibold text-gray-900 dark:text-white",
+        title: "text-lg font-semibold text-gray-900 dark:text-white",
         connector: "absolute top-7 -left-4 w-px h-full"
       },
       group: {
         base: "",
-        div: "p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700",
+        indicator: "p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700",
         time: "text-lg font-semibold text-gray-900 dark:text-white",
-        h3: "text-lg font-semibold text-gray-900 dark:text-white"
+        title: "text-lg font-semibold text-gray-900 dark:text-white"
       }
     },
     color: {
@@ -170,8 +170,8 @@ export const timelineItem = tv({
       order: "vertical",
       color: "primary",
       class: {
-        div: colorVariants.primary.dot + " " + colorVariants.primary.ring,
-        svg: colorVariants.primary.icon,
+        indicator: colorVariants.primary.dot + " " + colorVariants.primary.ring,
+        icon: colorVariants.primary.icon,
         connector: "bg-primary-200 dark:bg-primary-700"
       }
     },
@@ -179,8 +179,8 @@ export const timelineItem = tv({
       order: "vertical",
       color: "green",
       class: {
-        div: colorVariants.green.dot + " " + colorVariants.green.ring,
-        svg: colorVariants.green.icon,
+        indicator: colorVariants.green.dot + " " + colorVariants.green.ring,
+        icon: colorVariants.green.icon,
         connector: "bg-green-200 dark:bg-green-700"
       }
     },
@@ -188,8 +188,8 @@ export const timelineItem = tv({
       order: "vertical",
       color: "orange",
       class: {
-        div: colorVariants.orange.dot + " " + colorVariants.orange.ring,
-        svg: colorVariants.orange.icon,
+        indicator: colorVariants.orange.dot + " " + colorVariants.orange.ring,
+        icon: colorVariants.orange.icon,
         connector: "bg-orange-200 dark:bg-orange-700"
       }
     },
@@ -197,8 +197,8 @@ export const timelineItem = tv({
       order: "vertical",
       color: "red",
       class: {
-        div: colorVariants.red.dot + " " + colorVariants.red.ring,
-        svg: colorVariants.red.icon,
+        indicator: colorVariants.red.dot + " " + colorVariants.red.ring,
+        icon: colorVariants.red.icon,
         connector: "bg-red-200 dark:bg-red-700"
       }
     },
@@ -206,8 +206,8 @@ export const timelineItem = tv({
       order: "vertical",
       color: "blue",
       class: {
-        div: colorVariants.blue.dot + " " + colorVariants.blue.ring,
-        svg: colorVariants.blue.icon,
+        indicator: colorVariants.blue.dot + " " + colorVariants.blue.ring,
+        icon: colorVariants.blue.icon,
         connector: "bg-blue-200 dark:bg-blue-700"
       }
     },
@@ -215,8 +215,8 @@ export const timelineItem = tv({
       order: "vertical",
       color: "purple",
       class: {
-        div: colorVariants.purple.dot + " " + colorVariants.purple.ring,
-        svg: colorVariants.purple.icon,
+        indicator: colorVariants.purple.dot + " " + colorVariants.purple.ring,
+        icon: colorVariants.purple.icon,
         connector: "bg-purple-200 dark:bg-purple-700"
       }
     },
@@ -224,8 +224,8 @@ export const timelineItem = tv({
       order: "vertical",
       color: "gray",
       class: {
-        div: colorVariants.gray.dot + " " + colorVariants.gray.ring,
-        svg: colorVariants.gray.icon,
+        indicator: colorVariants.gray.dot + " " + colorVariants.gray.ring,
+        icon: colorVariants.gray.icon,
         connector: "bg-gray-200 dark:bg-gray-700"
       }
     },
@@ -234,56 +234,56 @@ export const timelineItem = tv({
       order: "horizontal",
       color: "primary",
       class: {
-        div: colorVariants.primary.dot + " " + colorVariants.primary.ring,
-        svg: colorVariants.primary.icon
+        indicator: colorVariants.primary.dot + " " + colorVariants.primary.ring,
+        icon: colorVariants.primary.icon
       }
     },
     {
       order: "horizontal",
       color: "green",
       class: {
-        div: colorVariants.green.dot + " " + colorVariants.green.ring,
-        svg: colorVariants.green.icon
+        indicator: colorVariants.green.dot + " " + colorVariants.green.ring,
+        icon: colorVariants.green.icon
       }
     },
     {
       order: "horizontal",
       color: "orange",
       class: {
-        div: colorVariants.orange.dot + " " + colorVariants.orange.ring,
-        svg: colorVariants.orange.icon
+        indicator: colorVariants.orange.dot + " " + colorVariants.orange.ring,
+        icon: colorVariants.orange.icon
       }
     },
     {
       order: "horizontal",
       color: "red",
       class: {
-        div: colorVariants.red.dot + " " + colorVariants.red.ring,
-        svg: colorVariants.red.icon
+        indicator: colorVariants.red.dot + " " + colorVariants.red.ring,
+        icon: colorVariants.red.icon
       }
     },
     {
       order: "horizontal",
       color: "blue",
       class: {
-        div: colorVariants.blue.dot + " " + colorVariants.blue.ring,
-        svg: colorVariants.blue.icon
+        indicator: colorVariants.blue.dot + " " + colorVariants.blue.ring,
+        icon: colorVariants.blue.icon
       }
     },
     {
       order: "horizontal",
       color: "purple",
       class: {
-        div: colorVariants.purple.dot + " " + colorVariants.purple.ring,
-        svg: colorVariants.purple.icon
+        indicator: colorVariants.purple.dot + " " + colorVariants.purple.ring,
+        icon: colorVariants.purple.icon
       }
     },
     {
       order: "horizontal",
       color: "gray",
       class: {
-        div: colorVariants.gray.dot + " " + colorVariants.gray.ring,
-        svg: colorVariants.gray.icon
+        indicator: colorVariants.gray.dot + " " + colorVariants.gray.ring,
+        icon: colorVariants.gray.icon
       }
     },
     // Hide connector on last item

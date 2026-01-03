@@ -10,12 +10,12 @@
 
   const theme = $derived(getTheme("group"));
 
-  const { div, time, ol } = $derived(group());
+  const { card, time, list } = $derived(group());
 </script>
 
-<div class={div({ class: clsx(theme?.div, className) })}>
-  <time class={time({ class: clsx(theme?.time, styling?.time) })}>{date}</time>
-  <ol {...restProps} class={ol({ class: clsx(theme?.ol, styling?.ol) })}>
+<div class={card({ class: clsx(theme?.card, className) })} data-scope="group" data-part="card">
+  <time class={time({ class: clsx(theme?.time, styling?.time) })} data-part="time">{date}</time>
+  <ol {...restProps} class={list({ class: clsx(theme?.list, styling?.list) })} data-part="list">
     {@render children()}
   </ol>
 </div>

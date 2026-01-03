@@ -10,7 +10,7 @@ export const scrollspy = tv({
     container: "",
     list: "",
     link: "px-4 py-2.5 transition-all duration-200 cursor-pointer rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900",
-    li: "p-2 m-1"
+    item: "p-2 m-1"
   },
   variants: {
     position: {

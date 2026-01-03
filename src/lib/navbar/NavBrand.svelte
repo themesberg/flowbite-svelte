@@ -9,7 +9,7 @@
   const theme = $derived(getTheme("navbarBrand"));
 </script>
 
-<a {...restProps} class={navbarBrand({ class: clsx(theme, className) })}>
+<a data-scope="nav-brand" data-part="base" {...restProps} class={navbarBrand({ class: clsx(theme, className) })}>
   {@render children?.()}
 </a>
 

@@ -9,18 +9,18 @@
   const theme = $derived(getTheme("desktop"));
   const styling = $derived(classes);
 
-  const { base, inner, bot, botUnder } = desktop();
+  const { base, screen, bottom, bottomBase } = desktop();
 </script>
 
 <div data-scope="desktop" data-part="base" {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-  <div data-part="inner" class={inner({ class: clsx(theme?.inner, styling?.inner) })}>
+  <div data-part="screen" class={screen({ class: clsx(theme?.screen, styling?.screen) })}>
     {#if children}
       {@render children()}
     {/if}
   </div>
 </div>
-<div data-part="bot" class={bot({ class: clsx(theme?.bot, styling?.bot) })}></div>
-<div data-part="bot-under" class={botUnder({ class: clsx(theme?.botUnder, styling?.botUnder) })}></div>
+<div data-part="bottom" class={bottom({ class: clsx(theme?.bottom, styling?.bottom) })}></div>
+<div data-part="bottom-base" class={bottomBase({ class: clsx(theme?.bottomBase, styling?.bottomBase) })}></div>
 
 <!--
 @component

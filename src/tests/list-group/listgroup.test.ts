@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
 
 import BasicListgroup from "./basic-listgroup.test.svelte";
 import ActiveListgroup from "./active-listgroup.test.svelte";

@@ -9,7 +9,7 @@
   {#snippet children({ item })}
     <a href="/">{item.name}</a>
   {/snippet}
-  {#snippet extra()}
+  {#snippet addon()}
     <div>Extra Content</div>
   {/snippet}
 </MegaMenu>

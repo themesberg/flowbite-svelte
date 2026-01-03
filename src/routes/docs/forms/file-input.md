@@ -10,6 +10,12 @@ thumbnailSize: w-48
 
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
+  import { Table } from '$lib'
+
+  const migration = [
+    {v1: "close", v2: "closeIcon"},
+    {v1: "svg", v2: "closeIcon" }
+  ]
   const components = 'Fileupload'
 </script>
 
@@ -72,6 +78,13 @@ Add `clearable` and `clearableOnClick` props.
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 <CompoAttributesViewer {components}/>
+
+## Migration Guide
+### Fileupload
+The following `tailwind-variants` slot names have been renamed.
+If you were previously using the old slot names, please update them to the new ones shown below.
+
+<Table items={migration} hoverable={true}/>
 
 ## References
 

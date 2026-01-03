@@ -39,8 +39,8 @@
   // let divClass: string = twMerge('flex justify-between items-center', !embedded && 'py-2 px-3', className);
 </script>
 
-<div {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-  <div class={content({ class: clsx(theme?.content, classes?.content) })}>
+<div {...restProps} class={base({ class: clsx(theme?.base, className) })} data-scope="toolbar" data-part="base">
+  <div class={content({ class: clsx(theme?.content, classes?.content) })} data-part="content">
     {@render children?.()}
   </div>
   {#if end}

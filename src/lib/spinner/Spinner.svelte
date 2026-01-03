@@ -11,7 +11,7 @@
 </script>
 
 {#if type === "default"}
-  <svg {...restProps} role="status" class={spinnerClass} viewBox="0 0 100 101" fill="none">
+  <svg {...restProps} role="status" class={spinnerClass} viewBox="0 0 100 101" fill="none" data-scope="spinner">
     <path
       d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
       fill={currentColor}
@@ -22,7 +22,7 @@
     />
   </svg>
 {:else if type === "dots"}
-  <svg {...restProps} role="status" class={spinnerClass} viewBox="0 0 120 30" fill="currentColor">
+  <svg {...restProps} role="status" class={spinnerClass} viewBox="0 0 120 30" fill="currentColor" data-scope="spinner">
     <circle cx="15" cy="15" r="15">
       <animate attributeName="r" values="15;9;15" dur="0.8s" repeatCount="indefinite" />
       <animate attributeName="fill-opacity" values="1;.5;1" dur="0.8s" repeatCount="indefinite" />
@@ -37,7 +37,7 @@
     </circle>
   </svg>
 {:else if type === "bars"}
-  <svg {...restProps} role="status" class={spinnerClass} viewBox="0 0 135 140" fill="currentColor">
+  <svg {...restProps} role="status" class={spinnerClass} viewBox="0 0 135 140" fill="currentColor" data-scope="spinner">
     <rect y="10" width="15" height="120" rx="6">
       <animate attributeName="height" values="120;60;120" dur="1.2s" repeatCount="indefinite" />
       <animate attributeName="y" values="10;40;10" dur="1.2s" repeatCount="indefinite" />
@@ -52,7 +52,7 @@
     </rect>
   </svg>
 {:else if type === "pulse"}
-  <svg {...restProps} role="status" class={spinnerClass} viewBox="0 0 100 100">
+  <svg {...restProps} role="status" class={spinnerClass} viewBox="0 0 100 100" data-scope="spinner">
     <circle cx="50" cy="50" r="8" fill={currentFill}>
       <animate attributeName="r" values="8;45" dur="1.5s" repeatCount="indefinite" />
       <animate attributeName="opacity" values="0.9;0" dur="1.5s" repeatCount="indefinite" />
@@ -67,7 +67,7 @@
     </circle>
   </svg>
 {:else if type === "orbit"}
-  <svg {...restProps} role="status" class={spinnerClass} viewBox="0 0 100 100" fill="currentColor">
+  <svg {...restProps} role="status" class={spinnerClass} viewBox="0 0 100 100" fill="currentColor" data-scope="spinner">
     <g>
       <!-- Three dots evenly spaced around center -->
       <circle cx="50" cy="20" r="8" />

@@ -90,10 +90,11 @@
   onAddCard={handleAddCard}
   classes={{
     column: "dark:bg-gray-800 shadow-lg",
-    card: "hover:shadow-xl transition-shadow",
-    cardTitle: "text-blue-600 font-bold",
-    addButton: "bg-blue-500 hover:bg-blue-600 text-white dark:text-white",
-    cardTags: "text-gray-900"
+    button: "bg-blue-500 hover:bg-blue-600 text-white dark:text-white"
+  }}
+  cardProps={{
+    class: "hover:shadow-xl transition-shadow",
+    title: "text-blue-600 font-bold"
   }}
 />
 

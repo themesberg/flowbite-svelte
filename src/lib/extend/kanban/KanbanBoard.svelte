@@ -15,6 +15,7 @@
     ...restProps
   }: KanbanBoardProps = $props();
 
+  const styling = $derived(classes);
   const theme = $derived(getTheme("kanbanBoard"));
 
   // Changed from KanbanCard to KanbanCardType
@@ -22,7 +23,7 @@
   let sourceColumnId = $state<string | number | null>(null);
   let dragOverColumnId = $state<string | number | null>(null);
 
-  const styles = kanbanBoard();
+  const { base, column, title, list, button } = kanbanBoard();
 
   // Changed parameter type from KanbanCard to KanbanCardType
   function handleDragStart(card: KanbanCardType, colId: string | number) {
@@ -74,26 +75,27 @@
   }
 </script>
 
-<div {...restProps} class={styles.container({ class: clsx(theme?.container, className) })}>
+<div {...restProps} data-scope="kanban-board" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
   {#each columns as col (col.id)}
     <div
       role="group"
+      data-part="column"
       aria-label={`${col.title} column drop zone`}
-      class={styles.column({ isDragOver: dragOverColumnId === col.id, class: clsx(theme?.column, classes?.column) })}
+      class={column({ isDragOver: dragOverColumnId === col.id, class: clsx(theme?.column, styling?.column) })}
       ondragover={(e) => handleDragOver(e, col.id)}
       ondragleave={(e) => handleDragLeave(e)}
       ondrop={(e) => handleDrop(e, col.id)}
       style={col.color ? `border-top: 4px solid ${col.color}` : ""}
     >
-      <h2 class={styles.columnTitle({ class: clsx(theme?.columnTitle, classes?.columnTitle) })}>{col.title}</h2>
+      <h2 data-part="title" class={title({ class: clsx(theme?.title, styling?.title) })}>{col.title}</h2>
 
-      <div class={styles.cardList({ class: clsx(theme?.cardList, classes?.cardList) })} role="list" aria-label={`${col.title} cards`}>
+      <div data-part="list" class={list({ class: clsx(theme?.list, styling?.list) })} role="list" aria-label={`${col.title} cards`}>
         {#each col.cards as card (card.id)}
-          <KanbanCard {card} {classes} {...cardProps} isDragging={draggedCard?.id === card.id} onDragStart={() => handleDragStart(card, col.id)} onDragEnd={handleDragEnd} />
+          <KanbanCard {card} {...cardProps} isDragging={draggedCard?.id === card.id} onDragStart={() => handleDragStart(card, col.id)} onDragEnd={handleDragEnd} />
         {/each}
       </div>
 
-      <button class={styles.addButton({ class: clsx(theme?.addButton, classes?.addButton) })} onclick={() => onAddCard(col)} aria-label={`Add card to ${col.title}`}>+ Add card</button>
+      <button data-part="button" class={button({ class: clsx(theme?.button, styling?.button) })} onclick={() => onAddCard(col)} aria-label={`Add card to ${col.title}`}>+ Add card</button>
     </div>
   {/each}
 </div>

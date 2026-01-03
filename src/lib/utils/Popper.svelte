@@ -25,7 +25,7 @@
     reference,
     middlewares = [dom.flip(), dom.shift()],
     class: className = "",
-    arrowClass = "",
+    arrowClass,
     isOpen = $bindable(false),
     transitionParams,
     transition = fade,
@@ -269,11 +269,13 @@
   }
 </script>
 
-<div {@attach set_triggers} hidden></div>
+<div data-part="positioner" {@attach set_triggers} hidden></div>
 
 {#if isOpen}
   <div
     popover="manual"
+    data-scope="popper"
+    data-part="base"
     {role}
     bind:this={popover}
     class:overflow-visible={true}
@@ -289,7 +291,7 @@
   >
     {@render children()}
     {#if arrow}
-      <Arrow {...arrowParams} class={arrowClass} />
+      <Arrow data-part="arrow" {...arrowParams} class={arrowClass} />
     {/if}
   </div>
 {/if}
@@ -312,7 +314,7 @@
 @prop reference
 @prop middlewares = [dom.flip(), dom.shift()]
 @prop class: className = ""
-@prop arrowClass = ""
+@prop arrowClass
 @prop isOpen = $bindable(false)
 @prop transitionParams
 @prop transition = fade

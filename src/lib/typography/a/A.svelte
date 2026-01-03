@@ -21,7 +21,7 @@
     }
   }
 
-  let buttonProps = $derived(() => {
+  let buttonProps = $derived.by(() => {
     const { href, target, rel, download, ...filtered } = restProps;
     return filtered;
   });
@@ -29,12 +29,12 @@
 
 {#if asButton}
   <!-- Render as a button that looks like a link -->
-  <button type="button" class={linkCls} onclick={handleClick} {...buttonProps}>
+  <button type="button" data-scope="anchor" data-part="base" class={linkCls} onclick={handleClick} {...buttonProps}>
     {@render children()}
   </button>
 {:else}
   <!-- Standard anchor behavior -->
-  <a {href} class={linkCls} onclick={handleClick} {...restProps}>
+  <a {href} data-scope="anchor" data-part="base" class={linkCls} onclick={handleClick} {...restProps}>
     {@render children()}
   </a>
 {/if}

@@ -31,15 +31,15 @@
 {/snippet}
 
 {#if href === undefined && !active}
-  <li {...restProps as HTMLLiAttributes} class={base({ class: clsx(theme?.base, className) })}>
+  <li data-scope="listgroup-item" data-part="base" {...restProps as HTMLLiAttributes} class={base({ class: clsx(theme?.base, className) })}>
     {@render nameOrChildren()}
   </li>
 {:else if href === undefined}
-  <button type={type ?? "button"} {...restProps} class={base({ class: clsx(theme?.base, className) })} {disabled} aria-current={current}>
+  <button data-scope="listgroup-item" data-part="base" type={type ?? "button"} {...restProps} class={base({ class: clsx(theme?.base, className) })} {disabled} aria-current={current}>
     {@render nameOrChildren()}
   </button>
 {:else}
-  <a {href} {...restProps} class={base({ class: clsx(theme?.base, className) })} aria-current={current}>
+  <a data-scope="listgroup-item" data-part="base" {href} {...restProps} class={base({ class: clsx(theme?.base, className) })} aria-current={current}>
     {@render nameOrChildren()}
   </a>
 {/if}

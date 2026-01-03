@@ -22,7 +22,7 @@
 
   const theme = $derived(getTheme("stepIndicator"));
 
-  const { base, label, container, wrapper, step: stepCls, glow: stepGlow, incomplete } = $derived(stepIndicator({ size, color, glow, hideLabel }));
+  const { base, label, container, wrapper, step: stepCls, glow: stepGlow, incompleteStep } = $derived(stepIndicator({ size, color, glow, hideLabel }));
 
   // Ensure currentStep is within bounds
   let safeCurrentStep = $derived(Math.max(1, Math.min(currentStep, steps.length)));
@@ -56,25 +56,30 @@
   };
 </script>
 
-<div {...restProps} class={base({ class: clsx((theme as StepIndicatorTheme)?.base, className) })}>
+<div {...restProps} class={base({ class: clsx((theme as StepIndicatorTheme)?.base, className) })} data-scope="step-indicator" data-part="base">
   {#if !hideLabel}
-    <h3 class={label({ class: clsx((theme as StepIndicatorTheme)?.label, classes?.label) })}>{currentStepLabel}</h3>
+    <h3 class={label({ class: clsx((theme as StepIndicatorTheme)?.label, classes?.label) })} data-part="label">{currentStepLabel}</h3>
   {/if}
 
-  <div class={container({ class: clsx((theme as StepIndicatorTheme)?.container, classes?.container) })}>
+  <div class={container({ class: clsx((theme as StepIndicatorTheme)?.container, classes?.container) })} data-part="container">
     {#each steps as _step, i (i)}
       {#if clickable}
         {#if i === currentStep - 1}
           <button
             type="button"
             class={wrapper({ class: clsx((theme as StepIndicatorTheme)?.wrapper, classes?.wrapper, "cursor-pointer transition-opacity hover:opacity-75") })}
+            data-part="wrapper"
             onclick={() => handleStepClick(i)}
             aria-current="step"
             aria-label={`Current step: ${steps[i]}`}
           >
-            <div class={stepCls({ class: clsx(getStepStateClasses(i, currentStep), getCustomStepClass(i), (theme as StepIndicatorTheme)?.step, classes?.step) })} data-state="current"></div>
+            <div
+              class={stepCls({ class: clsx(getStepStateClasses(i, currentStep), getCustomStepClass(i), (theme as StepIndicatorTheme)?.step, classes?.step) })}
+              data-part="step"
+              data-state="current"
+            ></div>
             {#if glow}
-              <div class={stepGlow({ class: clsx(getCustomStepClass(i), (theme as StepIndicatorTheme)?.glow, classes?.glow) })}></div>
+              <div class={stepGlow({ class: clsx(getCustomStepClass(i), (theme as StepIndicatorTheme)?.glow, classes?.glow) })} data-part="glow"></div>
             {/if}
           </button>
         {:else if i < currentStep - 1}
@@ -84,6 +89,7 @@
             class={stepCls({
               class: clsx(getStepStateClasses(i, currentStep), getCustomStepClass(i), (theme as StepIndicatorTheme)?.step, classes?.step, "cursor-pointer transition-opacity hover:opacity-75")
             })}
+            data-part="step"
             data-state="completed"
             onclick={() => handleStepClick(i)}
           ></button>
@@ -91,22 +97,31 @@
           <button
             type="button"
             aria-label={`Go to ${steps[i]}`}
-            class={incomplete({ class: clsx((theme as StepIndicatorTheme)?.incomplete, classes?.incomplete, "cursor-pointer transition-opacity hover:opacity-75") })}
+            class={incompleteStep({ class: clsx((theme as StepIndicatorTheme)?.incompleteStep, classes?.incompleteStep, "cursor-pointer transition-opacity hover:opacity-75") })}
+            data-part="incomplete-step"
             data-state="incomplete"
             onclick={() => handleStepClick(i)}
           ></button>
         {/if}
       {:else if i === currentStep - 1}
-        <div class={wrapper({ class: clsx((theme as StepIndicatorTheme)?.wrapper, classes?.wrapper) })}>
-          <div class={stepCls({ class: clsx(getStepStateClasses(i, currentStep), getCustomStepClass(i), (theme as StepIndicatorTheme)?.step, classes?.step) })} data-state="current"></div>
+        <div class={wrapper({ class: clsx((theme as StepIndicatorTheme)?.wrapper, classes?.wrapper) })} data-part="wrapper">
+          <div
+            class={stepCls({ class: clsx(getStepStateClasses(i, currentStep), getCustomStepClass(i), (theme as StepIndicatorTheme)?.step, classes?.step) })}
+            data-part="step"
+            data-state="current"
+          ></div>
           {#if glow}
-            <div class={stepGlow({ class: clsx(getCustomStepClass(i), (theme as StepIndicatorTheme)?.glow, classes?.glow) })}></div>
+            <div class={stepGlow({ class: clsx(getCustomStepClass(i), (theme as StepIndicatorTheme)?.glow, classes?.glow) })} data-part="glow"></div>
           {/if}
         </div>
       {:else if i < currentStep - 1}
-        <div class={stepCls({ class: clsx(getStepStateClasses(i, currentStep), getCustomStepClass(i), (theme as StepIndicatorTheme)?.step, classes?.step) })} data-state="completed"></div>
+        <div
+          class={stepCls({ class: clsx(getStepStateClasses(i, currentStep), getCustomStepClass(i), (theme as StepIndicatorTheme)?.step, classes?.step) })}
+          data-part="step"
+          data-state="completed"
+        ></div>
       {:else}
-        <div class={incomplete({ class: clsx((theme as StepIndicatorTheme)?.incomplete, classes?.incomplete) })} data-state="incomplete"></div>
+        <div class={incompleteStep({ class: clsx((theme as StepIndicatorTheme)?.incompleteStep, classes?.incompleteStep) })} data-part="incomplete-step" data-state="incomplete"></div>
       {/if}
     {/each}
   </div>

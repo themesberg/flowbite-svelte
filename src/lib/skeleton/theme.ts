@@ -14,9 +14,9 @@ export type WidgetPlaceholderVariants = VariantProps<typeof widgetPlaceholder> &
 export const cardPlaceholder = tv({
   slots: {
     base: "p-4 rounded-sm border border-gray-200 shadow-sm animate-pulse md:p-6 dark:border-gray-700",
-    area: "mb-4 flex h-48 items-center justify-center rounded-sm bg-gray-300 dark:bg-gray-700",
-    icon: "text-gray-200 dark:text-gray-600",
-    line: "rounded-full bg-gray-200 dark:bg-gray-700",
+    imagePlaceholder: "mb-4 flex h-48 items-center justify-center rounded-sm bg-gray-300 dark:bg-gray-700",
+    imageIcon: "text-gray-200 dark:text-gray-600",
+    skeletonLine: "rounded-full bg-gray-200 dark:bg-gray-700",
     footer: "mt-4 flex items-center space-x-3 rtl:space-x-reverse"
   },
   variants: {
@@ -35,46 +35,46 @@ export const cardPlaceholder = tv({
 export const imagePlaceholder = tv({
   slots: {
     base: "space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center",
-    image: "flex w-full items-center justify-center rounded-sm bg-gray-300 sm:w-96 dark:bg-gray-700",
-    svg: "text-gray-200",
+    imagePlaceholder: "flex w-full items-center justify-center rounded-sm bg-gray-300 sm:w-96 dark:bg-gray-700",
+    imageIcon: "text-gray-200",
     content: "w-full",
-    line: "rounded-full bg-gray-200 dark:bg-gray-700"
+    skeletonLine: "rounded-full bg-gray-200 dark:bg-gray-700"
   },
   variants: {
     size: {
       sm: {
-        image: "h-32",
+        imagePlaceholder: "h-32",
         content: "space-y-2"
       },
       md: {
-        image: "h-48",
+        imagePlaceholder: "h-48",
         content: "space-y-3"
       },
       lg: {
-        image: "h-64",
+        imagePlaceholder: "h-64",
         content: "space-y-4"
       }
     },
     rounded: {
       none: {
-        image: "rounded-none",
-        line: "rounded-none"
+        imagePlaceholder: "rounded-none",
+        skeletonLine: "rounded-none"
       },
       sm: {
-        image: "rounded-xs",
-        line: "rounded-xs"
+        imagePlaceholder: "rounded-xs",
+        skeletonLine: "rounded-xs"
       },
       md: {
-        image: "rounded-sm",
-        line: "rounded-sm"
+        imagePlaceholder: "rounded-sm",
+        skeletonLine: "rounded-sm"
       },
       lg: {
-        image: "rounded-lg",
-        line: "rounded-lg"
+        imagePlaceholder: "rounded-lg",
+        skeletonLine: "rounded-lg"
       },
       full: {
-        image: "rounded-full",
-        line: "rounded-full"
+        imagePlaceholder: "rounded-full",
+        skeletonLine: "rounded-full"
       }
     }
   }
@@ -85,26 +85,26 @@ export const imagePlaceholder = tv({
 export const listPlaceholder = tv({
   slots: {
     base: "p-4 space-y-4 max-w-md rounded-sm border border-gray-200 divide-y divide-gray-200 shadow-sm animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700",
-    item: "flex items-center justify-between",
-    content: "",
-    title: "mb-2.5 h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600",
-    subTitle: "h-2 w-32 rounded-full bg-gray-200 dark:bg-gray-700",
-    extra: "h-2.5 w-12 rounded-full bg-gray-300 dark:bg-gray-700"
+    listItem: "flex items-center justify-between",
+    itemContent: "",
+    primaryLine: "mb-2.5 h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600",
+    secondaryLine: "h-2 w-32 rounded-full bg-gray-200 dark:bg-gray-700",
+    valueLine: "h-2.5 w-12 rounded-full bg-gray-300 dark:bg-gray-700"
   },
   variants: {
     size: {
       sm: {
         base: "p-3 space-y-3 max-w-sm md:p-4",
-        title: "mb-2 h-2 w-20",
-        subTitle: "h-1.5 w-28",
-        extra: "h-2 w-10"
+        primaryLine: "mb-2 h-2 w-20",
+        secondaryLine: "h-1.5 w-28",
+        valueLine: "h-2 w-10"
       },
       md: {}, // default size
       lg: {
         base: "p-5 space-y-5 max-w-lg md:p-7",
-        title: "mb-3 h-3 w-28",
-        subTitle: "h-2.5 w-36",
-        extra: "h-3 w-14"
+        primaryLine: "mb-3 h-3 w-28",
+        secondaryLine: "h-2.5 w-36",
+        valueLine: "h-3 w-14"
       }
     },
     rounded: {
@@ -120,25 +120,25 @@ export const listPlaceholder = tv({
 // Skeleton
 export const skeleton = tv({
   slots: {
-    wrapper: "animate-pulse",
-    line: "rounded-full bg-gray-200 dark:bg-gray-700"
+    base: "animate-pulse",
+    skeletonLine: "rounded-full bg-gray-200 dark:bg-gray-700"
   },
   variants: {
     size: {
       sm: {
-        wrapper: "max-w-sm"
+        base: "max-w-sm"
       },
       md: {
-        wrapper: "max-w-md"
+        base: "max-w-md"
       },
       lg: {
-        wrapper: "max-w-lg"
+        base: "max-w-lg"
       },
       xl: {
-        wrapper: "max-w-xl"
+        base: "max-w-xl"
       },
       "2xl": {
-        wrapper: "max-w-2xl"
+        base: "max-w-2xl"
       }
     }
   }
@@ -148,10 +148,10 @@ export const skeleton = tv({
 export const testimonialPlaceholder = tv({
   slots: {
     base: "animate-pulse",
-    lineA: "rounded-full bg-gray-200 dark:bg-gray-700",
-    lineB: "rounded-full bg-gray-300 dark:bg-gray-700",
-    svg: "me-2 h-10 w-10 text-gray-200 dark:text-gray-700",
-    content: "mt-4 flex items-center justify-center"
+    primaryLine: "rounded-full bg-gray-200 dark:bg-gray-700",
+    secondaryLine: "rounded-full bg-gray-300 dark:bg-gray-700",
+    avatarIcon: "me-2 h-10 w-10 text-gray-200 dark:text-gray-700",
+    authorInfo: "mt-4 flex items-center justify-center"
   }
 });
 
@@ -159,9 +159,9 @@ export const testimonialPlaceholder = tv({
 export const textPlaceholder = tv({
   slots: {
     base: "space-y-2.5 animate-pulse",
-    div: "flex items-center space-x-2 rtl:space-x-reverse",
-    lineA: "rounded-full bg-gray-200 dark:bg-gray-700",
-    lineB: "rounded-full bg-gray-300 dark:bg-gray-600"
+    lineGroup: "flex items-center space-x-2 rtl:space-x-reverse",
+    primaryLine: "rounded-full bg-gray-200 dark:bg-gray-700",
+    secondaryLine: "rounded-full bg-gray-300 dark:bg-gray-600"
   },
   variants: {
     size: {
@@ -192,8 +192,8 @@ export const videoPlaceholder = tv({
 export const widgetPlaceholder = tv({
   slots: {
     base: "p-4 max-w-sm rounded-sm border border-gray-200 shadow-sm animate-pulse md:p-6 dark:border-gray-700",
-    wrapper: "mt-4 flex items-baseline space-x-6 rtl:space-x-reverse",
-    hLine: "rounded-full bg-gray-200 dark:bg-gray-700",
-    vLine: "w-full rounded-t-lg bg-gray-200 dark:bg-gray-700"
+    chartContainer: "mt-4 flex items-baseline space-x-6 rtl:space-x-reverse",
+    labelLine: "rounded-full bg-gray-200 dark:bg-gray-700",
+    chartBar: "w-full rounded-t-lg bg-gray-200 dark:bg-gray-700"
   }
 });

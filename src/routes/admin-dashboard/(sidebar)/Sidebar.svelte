@@ -126,7 +126,7 @@
   {closeSidebar}
   params={{ x: -50, duration: 50 }}
   class="top-0 left-0 mt-[69px] h-screen w-64 bg-gray-50 transition-transform lg:block dark:bg-gray-800"
-  classes={{ div: "h-full px-1 py-1 overflow-y-auto bg-gray-50 dark:bg-gray-800", nonactive: "p-2 group-has-[ul]:ms-0", active: "p-2 group-has-[ul]:ms-0" }}
+  classes={{ content: "h-full px-1 py-1 overflow-y-auto bg-gray-50 dark:bg-gray-800", nonactive: "p-2 group-has-[ul]:ms-0", active: "p-2 group-has-[ul]:ms-0" }}
 >
   <h4 class="sr-only">Main menu</h4>
   <SidebarWrapper class="scrolling-touch h-full max-w-2xs overflow-y-auto bg-white px-3 pt-20 lg:sticky lg:me-0 lg:block lg:h-[calc(100vh-4rem)] lg:pt-5 dark:bg-gray-800">
@@ -144,11 +144,11 @@
               <Icon class={iconClass} />
             {/snippet}
             {#each Object.entries(children) as [title, href]}
-              <SidebarItem label={title} {href} classes={{ span: "ml-9", link: "w-full" }} class={itemClass} />
+              <SidebarItem label={title} {href} classes={{ label: "ml-9", link: "w-full" }} class={itemClass} />
             {/each}
           </SidebarDropdownWrapper>
         {:else}
-          <SidebarItem label={name} {href} classes={{ span: "ml-3", link: "w-full p-0 py-2" }} class={itemClass}>
+          <SidebarItem label={name} {href} classes={{ label: "ml-3", link: "w-full p-0 py-2" }} class={itemClass}>
             {#snippet icon()}
               <Icon class={iconClass} />
             {/snippet}
@@ -157,7 +157,7 @@
       {/each}
     </SidebarGroup>
     <SidebarGroup class={groupClass}>
-      <SidebarItem label="Quickstart" classes={{ span: "ml-3" }} href="/admin-dashboard/quickstart">
+      <SidebarItem label="Quickstart" classes={{ label: "ml-3" }} href="/admin-dashboard/quickstart">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-white" />
         {/snippet}
@@ -165,7 +165,7 @@
     </SidebarGroup>
     <SidebarGroup class={groupClass}>
       {#each links as { label, href, Icon } (label)}
-        <SidebarItem {label} {href} classes={{ span: "ml-3" }} class={itemClass}>
+        <SidebarItem {label} {href} classes={{ label: "ml-3" }} class={itemClass}>
           {#snippet icon()}
             <Icon class={iconClass} />
           {/snippet}

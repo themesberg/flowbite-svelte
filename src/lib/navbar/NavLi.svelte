@@ -2,7 +2,7 @@
   import { getTheme } from "$lib/theme-provider/themeUtils";
   import type { NavLiProps } from "$lib/types";
   import clsx from "clsx";
-  import { navbarLi } from "./theme";
+  import { navLi } from "./theme";
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
   let navState = getNavbarStateContext();
@@ -10,16 +10,20 @@
   // Reactively get the breakpoint - use $derived to ensure it updates
   let navBreakpoint = $derived(getNavbarBreakpointContext());
 
-  let { children, onclick, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
+  let { children, onclick, activeClass, nonActiveClass, class: className, classes, ...restProps }: NavLiProps = $props();
 
-  const theme = $derived(getTheme("navbarLi"));
+  const styling = $derived(classes);
+  const theme = $derived(getTheme("navLi"));
 
   let active = $derived(navState?.activeUrl ? restProps.href === navState.activeUrl : false);
-  let liClass = $derived(
-    navbarLi({
+  const { base, item } = $derived(navLi());
+
+  // Combine item class from theme with itemClass from context and local styling
+  let itemClass = $derived(
+    item({
       breakpoint: navBreakpoint ?? "md",
       hidden: navState?.hidden ?? true,
-      class: clsx(active ? (activeClass ?? navState?.activeClass) : (nonActiveClass ?? navState?.nonActiveClass), theme, className)
+      class: clsx(active ? (activeClass ?? navState?.activeClass) : (nonActiveClass ?? navState?.nonActiveClass), navState?.itemClass, theme?.item, styling?.item)
     })
   );
 
@@ -39,13 +43,13 @@
   }
 </script>
 
-<li>
+<li data-scope="nav-li" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
   {#if restProps.href === undefined}
-    <button role="presentation" onclick={handleClick} {...restProps} class={liClass}>
+    <button role="presentation" data-part="item" onclick={handleClick} {...restProps} class={itemClass}>
       {@render children?.()}
     </button>
   {:else}
-    <a {...restProps} class={liClass} onclick={handleClick}>
+    <a {...restProps} class={itemClass} data-part="item" onclick={handleClick}>
       {@render children?.()}
     </a>
   {/if}

@@ -18,6 +18,7 @@
     contained = false
   }: VirtualListProps<T> = $props();
 
+  const styling = $derived(classes);
   const theme = $derived(getTheme("virtualList"));
 
   let container: HTMLDivElement | undefined;
@@ -29,7 +30,7 @@
    * Defaults to false. This prop value takes precedence over any theme defaults.
    * @default false
    */
-  const styles = $derived(virtualList({ contained }));
+  const { base, spacer, content, item: itemPart } = $derived(virtualList({ contained }));
 
   const containStyle = $derived.by(() => {
     if (!contained) return "";
@@ -107,17 +108,19 @@
 </script>
 
 <div
+  data-scope="virtual-list"
+  data-part="base"
   bind:this={container}
   onscroll={handleScroll}
   role="list"
   aria-label={ariaLabel}
-  class={styles.container({ class: clsx(theme?.container, className) })}
+  class={base({ class: clsx(theme?.base, className) })}
   style={`height:${height}px; position:relative;`}
 >
-  <div class={styles.spacer({ class: clsx(theme?.spacer, classes?.spacer) })} style={`height:${totalHeight}px;`}>
-    <div class={styles.content({ class: clsx(theme?.content, classes?.content) })} style={`transform:translateY(${offsetY}px); will-change:transform;`}>
+  <div data-part="spacer" class={spacer({ class: clsx(theme?.spacer, styling?.spacer) })} style={`height:${totalHeight}px;`}>
+    <div data-part="content" class={content({ class: clsx(theme?.content, styling?.content) })} style={`transform:translateY(${offsetY}px); will-change:transform;`}>
       {#each visibleItems as item, i (startIndex + i)}
-        <div role="listitem" aria-setsize={items.length} aria-posinset={startIndex + i + 1} class={styles.item({ class: clsx(theme?.item, classes?.item) })} style={containStyle}>
+        <div role="listitem" aria-setsize={items.length} aria-posinset={startIndex + i + 1} data-part="item" class={itemPart({ class: clsx(theme?.item, styling?.item) })} style={containStyle}>
           {@render children?.(item, startIndex + i)}
         </div>
       {/each}

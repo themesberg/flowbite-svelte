@@ -11,7 +11,7 @@
   const kbdCls = $derived(kbd({ class: clsx(theme, className) }));
 </script>
 
-<kbd {...restProps} class={kbdCls}>
+<kbd data-scope="kbd" data-part="base" {...restProps} class={kbdCls}>
   {@render children()}
 </kbd>
 

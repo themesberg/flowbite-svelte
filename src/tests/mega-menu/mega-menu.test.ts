@@ -1,6 +1,6 @@
 import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
 
 import BasicMegaMenu from "./basic-mega-menu.test.svelte";
 import FullMegaMenu from "./full-mega-menu.test.svelte";

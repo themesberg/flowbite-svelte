@@ -4,7 +4,7 @@
   let activeUrl = $state(page.url.pathname);
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from "flowbite-svelte-icons";
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const sidebarEx1 = [
     {
       label: "Dashboard",
@@ -52,7 +52,7 @@
   >
     <SidebarGroup>
       {#each sidebarEx1 as { label, href, icon: Icon, subContent }}
-        <SidebarItem {label} {href} classes={{ span: spanClass }}>
+        <SidebarItem {label} {href} classes={{ label: labelClass }}>
           {#snippet icon()}
             <Icon class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"></Icon>
           {/snippet}

@@ -187,7 +187,7 @@
     class={base({ class: clsx(className) })}
   >
     {#if form}
-      <form method="dialog" class={formCls({ class: clsx(styling?.form) })}>
+      <form method="dialog" data-part="form" class={formCls({ class: clsx(styling?.form) })}>
         {@render content()}
       </form>
     {:else}

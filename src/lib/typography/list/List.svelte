@@ -28,7 +28,7 @@
   let classList = $derived(list({ position, tag, class: clsx(theme, className) }));
 </script>
 
-<svelte:element this={tag} {...restProps} class={classList} contenteditable={isContenteditable}>
+<svelte:element this={tag} data-scope="list" data-part="base" {...restProps} class={classList} contenteditable={isContenteditable}>
   {@render children()}
 </svelte:element>
 

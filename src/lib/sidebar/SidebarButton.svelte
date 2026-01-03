@@ -9,12 +9,12 @@
   const styling = $derived(classes);
   const theme = $derived(getTheme("sidebarButton"));
 
-  const { base, svg } = $derived(sidebarButton({ breakpoint }));
+  const { base, icon } = $derived(sidebarButton({ breakpoint }));
 </script>
 
-<button {...restProps} type="button" class={base({ class: clsx(theme?.base, className) })}>
+<button {...restProps} type="button" data-scope="sidebar-button" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
   <span class="sr-only">Open sidebar</span>
-  <svg class={svg({ class: clsx(theme?.svg, styling?.svg) })} aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+  <svg data-part="icon" class={icon({ class: clsx(theme?.icon, styling?.icon) })} aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
     <path
       clip-rule="evenodd"
       fill-rule="evenodd"

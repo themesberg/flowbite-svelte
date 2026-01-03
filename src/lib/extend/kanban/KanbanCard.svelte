@@ -4,10 +4,12 @@
   import { kanbanCard } from "./theme";
   import { getTheme } from "$lib/theme-provider/themeUtils";
 
-  let { card, isDragging = false, onDragStart, onDragEnd, classes, ...restProps }: KanbanCardProps = $props();
+  let { card, isDragging = false, onDragStart, onDragEnd, class: className, classes, ...restProps }: KanbanCardProps = $props();
 
+  const styling = $derived(classes);
   const theme = $derived(getTheme("kanbanCard"));
-  const styles = kanbanCard();
+  // Rename destructured values to avoid naming conflicts with props
+  const { base: basePart, title: titlePart, description: descriptionPart, tags: tagsPart, tag: tagPart } = kanbanCard();
 </script>
 
 <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
@@ -20,22 +22,24 @@
   tabindex="0"
   aria-grabbed={isDragging}
   aria-label={card.title}
-  class={styles.card({ isDragging, class: clsx(theme?.card, classes?.card) })}
+  data-scope="kanban-card"
+  data-part="base"
+  class={basePart({ isDragging, class: clsx(theme?.base, className) })}
 >
-  <p class={styles.cardTitle({ class: clsx(theme?.cardTitle, classes?.cardTitle) })}>
+  <p data-part="title" class={titlePart({ class: clsx(theme?.title, styling?.title) })}>
     {card.title}
   </p>
 
   {#if card.description}
-    <p class={styles.cardDescription({ class: clsx(theme?.cardDescription, classes?.cardDescription) })}>
+    <p data-part="description" class={descriptionPart({ class: clsx(theme?.description, styling?.description) })}>
       {card.description}
     </p>
   {/if}
 
   {#if card.tags?.length}
-    <div class={styles.cardTags({ class: clsx(theme?.cardTags, classes?.cardTags) })}>
+    <div data-part="tags" class={tagsPart({ class: clsx(theme?.tags, styling?.tags) })}>
       {#each card.tags as tag, i (i)}
-        <span class={styles.cardTag({ class: clsx(theme?.cardTag, classes?.cardTag) })}>
+        <span data-part="tag" class={tagPart({ class: clsx(theme?.tag, styling?.tag) })}>
           {tag}
         </span>
       {/each}

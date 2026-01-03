@@ -9,7 +9,7 @@
   const theme = $derived(getTheme("secondary"));
 </script>
 
-<small {...restProps} class={secondary({ class: clsx(theme, className) })}>
+<small data-scope="secondary" data-part="base" {...restProps} class={secondary({ class: clsx(theme, className) })}>
   {@render children()}
 </small>
 

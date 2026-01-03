@@ -96,5 +96,5 @@ export * from "./extend/scroll-spy";
 export * from "./extend/split-pane";
 export * from "./extend/tags";
 export * from "./extend/tour";
-export * from "./extend/virtuallist";
+export * from "./extend/virtual-list/index.js";
 export * from "./extend/virtual-masonry";

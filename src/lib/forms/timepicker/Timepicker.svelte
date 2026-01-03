@@ -185,7 +185,7 @@
 </script>
 
 {#if type !== "inline-buttons"}
-  <ButtonGroup {size} class={styles.buttonGroup({ class: clsx(theme?.buttonGroup, divClass) })}>
+  <ButtonGroup data-scope="timepicker" data-part="button-group" {size} class={styles.buttonGroup({ class: clsx(theme?.buttonGroup, divClass) })}>
     {#if type === "default"}
       <Input
         {id}
@@ -200,11 +200,11 @@
         oninput={(e) => handleTimeChange(e)}
         onchange={(e) => handleTimeChange(e)}
       />
-      <div class={styles.iconWrapper({ class: clsx(theme?.iconWrapper) })}>
+      <div data-part="icon-wrapper" class={styles.iconWrapper({ class: clsx(theme?.iconWrapper) })}>
         {#if Icon}
           <Icon class={iconClass} />
         {:else}
-          <svg class={styles.icon()} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+          <svg data-part="icon" class={styles.icon()} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
           </svg>
         {/if}
@@ -240,7 +240,15 @@
       />
       <Button color={buttonColor} class={styles.button({ class: clsx(theme?.button) })}>
         {optionLabel}
-        <svg class={styles.buttonIcon({ class: clsx(theme?.buttonIcon) })} aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          data-part="button-icon"
+          class={styles.buttonIcon({ class: clsx(theme?.buttonIcon) })}
+          aria-hidden="true"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </Button>
@@ -252,7 +260,7 @@
         {/each}
       </Dropdown>
     {:else if type === "range"}
-      <div class={styles.rangeInputWrapper({ class: clsx(theme?.rangeInputWrapper) })}>
+      <div data-part="range-input-wrapper" class={styles.rangeInputWrapper({ class: clsx(theme?.rangeInputWrapper) })}>
         <Input
           {id}
           color={inputColor}
@@ -266,18 +274,24 @@
           oninput={(e) => handleTimeChange(e)}
           onchange={(e) => handleTimeChange(e)}
         />
-        <button type="button" class={styles.rangeButton({ class: clsx(theme?.rangeButton) })} onclick={() => document.getElementById(id)?.click()} aria-label="Open time picker">
+        <button
+          data-part="range-button"
+          type="button"
+          class={styles.rangeButton({ class: clsx(theme?.rangeButton) })}
+          onclick={() => document.getElementById(id)?.click()}
+          aria-label="Open time picker"
+        >
           {#if Icon}
             <Icon class={iconClass} />
           {:else}
-            <svg class={styles.icon({ class: clsx(theme?.icon) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <svg data-part="icon" class={styles.icon({ class: clsx(theme?.icon) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
           {/if}
         </button>
       </div>
-      <span class={styles.rangeSeparator({ class: clsx(theme?.rangeSeparator) })}>-</span>
-      <div class={styles.rangeInputWrapper({ class: clsx(theme?.rangeInputWrapper) })}>
+      <span data-part="range-separator" class={styles.rangeSeparator({ class: clsx(theme?.rangeSeparator) })}>-</span>
+      <div data-part="range-input-wrapper" class={styles.rangeInputWrapper({ class: clsx(theme?.rangeInputWrapper) })}>
         <Input
           id={endId}
           color={inputColor}
@@ -291,11 +305,17 @@
           oninput={(e) => handleTimeChange(e, true)}
           onchange={(e) => handleTimeChange(e, true)}
         />
-        <button type="button" class={styles.rangeButton({ class: clsx(theme?.rangeButton) })} onclick={() => document.getElementById(endId)?.click()} aria-label="Open end time picker">
+        <button
+          data-part="range-button"
+          type="button"
+          class={styles.rangeButton({ class: clsx(theme?.rangeButton) })}
+          onclick={() => document.getElementById(endId)?.click()}
+          aria-label="Open end time picker"
+        >
           {#if Icon}
             <Icon class={iconClass} />
           {:else}
-            <svg class={styles.icon({ class: clsx(theme?.icon) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <svg data-part="icon" class={styles.icon({ class: clsx(theme?.icon) })} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6v4l3.276 3.276M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
           {/if}
@@ -308,10 +328,10 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </Button>
-      <Dropdown simple class={styles.dropdownContent({ class: clsx(theme?.dropdownContent) })}>
-        <div class={styles.dropdownInner({ class: clsx(theme?.dropdownInner) })}>
-          <div class={styles.dropdownTimeRow({ class: clsx(theme?.dropdownTimeRow) })}>
-            <div class={styles.dropdownTimeCol({ class: clsx(theme?.dropdownTimeCol) })}>
+      <Dropdown simple data-part="dropdown-content" class={styles.dropdownContent({ class: clsx(theme?.dropdownContent) })}>
+        <div data-part="dropdown-inner" class={styles.dropdownInner({ class: clsx(theme?.dropdownInner) })}>
+          <div data-part="dropdown-time-row" class={styles.dropdownTimeRow({ class: clsx(theme?.dropdownTimeRow) })}>
+            <div data-part="dropdown-time-col" class={styles.dropdownTimeCol({ class: clsx(theme?.dropdownTimeCol) })}>
               <Label for={id}>Start time:</Label>
               <Input
                 {id}
@@ -327,7 +347,7 @@
                 onchange={(e) => handleTimeChange(e)}
               />
             </div>
-            <div class={styles.dropdownTimeCol({ class: clsx(theme?.dropdownTimeCol) })}>
+            <div data-part="dropdown-time-col" class={styles.dropdownTimeCol({ class: clsx(theme?.dropdownTimeCol) })}>
               <Label for={endId}>End time:</Label>
               <Input
                 id={endId}
@@ -350,13 +370,13 @@
         </div>
       </Dropdown>
     {:else if type === "timerange-toggle"}
-      <div class={styles.toggleWrapper({ class: clsx(theme?.toggleWrapper) })}>
-        <div class={styles.toggleRow({ class: clsx(theme?.toggleRow) })}>
-          <Toggle id={`${id}-timerange-toggle`} checked={showTimerange} onchange={toggleTimerange} classes={{ span: "me-0 rounded-base" }} />
+      <div data-part="toggle-wrapper" class={styles.toggleWrapper({ class: clsx(theme?.toggleWrapper) })}>
+        <div data-part="toggle-row" class={styles.toggleRow({ class: clsx(theme?.toggleRow) })}>
+          <Toggle id={`${id}-timerange-toggle`} checked={showTimerange} onchange={toggleTimerange} classes={{ track: "me-0 rounded-base" }} />
         </div>
         {#if showTimerange}
-          <div class={styles.toggleTimeRow({ class: clsx(theme?.toggleTimeRow) })}>
-            <div class={styles.toggleTimeCol({ class: clsx(theme?.toggleTimeCol) })}>
+          <div data-part="toggle-time-row" class={styles.toggleTimeRow({ class: clsx(theme?.toggleTimeRow) })}>
+            <div data-part="toggle-time-col" class={styles.toggleTimeCol({ class: clsx(theme?.toggleTimeCol) })}>
               <Label for={id}>Start time:</Label>
               <Input
                 {id}
@@ -372,7 +392,7 @@
                 onchange={(e) => handleTimeChange(e)}
               />
             </div>
-            <div class={styles.toggleTimeCol({ class: clsx(theme?.toggleTimeCol) })}>
+            <div data-part="toggle-time-col" class={styles.toggleTimeCol({ class: clsx(theme?.toggleTimeCol) })}>
               <Label for={endId}>End time:</Label>
               <Input
                 id={endId}
@@ -394,7 +414,7 @@
     {/if}
   </ButtonGroup>
 {:else}
-  <div class={styles.inlineGrid({ class: clsx(theme?.inlineGrid) })}>
+  <div data-scope="timepicker" data-part="inline-grid" class={styles.inlineGrid({ class: clsx(theme?.inlineGrid) })}>
     {#each timeIntervals as time (time)}
       <Button {size} color={value === time ? buttonColor : "danger"} class={styles.inlineButton({ class: clsx(theme?.inlineButton) })} onclick={() => handleInlineButtonSelect(time)}>
         {time}

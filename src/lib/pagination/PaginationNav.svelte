@@ -41,9 +41,6 @@
     },
     get table() {
       return layout === "table";
-    },
-    get activeClasses() {
-      return classes?.active;
     }
   };
 
@@ -67,22 +64,22 @@
     onPageChange(Math.max(currentPage - 1, 1));
   }
 
-  const { base, tableDiv, span, prev, next } = $derived(paginationNav({ layout }));
+  const { base, tableInfo, pageNumber, prev, next } = $derived(paginationNav({ layout }));
 </script>
 
-<nav aria-label={ariaLabel} {...restProps}>
+<nav aria-label={ariaLabel} data-scope="pagination-nav" {...restProps}>
   {#if layout === "table"}
-    <div class={tableDiv({ class: clsx(theme?.tableDiv, styling?.tableDiv) })}>
-      Showing <span class={span({ class: clsx(theme?.span, styling?.span) })}>{currentPage}</span>
+    <div data-part="table-info" class={tableInfo({ class: clsx(theme?.tableInfo, styling?.tableInfo) })}>
+      Showing <span data-part="page-number" class={pageNumber({ class: clsx(theme?.pageNumber, styling?.pageNumber) })}>{currentPage}</span>
       of
-      <span class={span({ class: clsx(theme?.span, styling?.span) })}>{totalPages}</span>
+      <span data-part="page-number" class={pageNumber({ class: clsx(theme?.pageNumber, styling?.pageNumber) })}>{totalPages}</span>
       Entries
     </div>
   {/if}
 
-  <ul class={base({ class: clsx(theme?.base, className) })}>
+  <ul data-part="base" class={base({ class: clsx(theme?.base, className) })}>
     <li>
-      <PaginationButton onclick={goToPreviousPage} disabled={currentPage === 1} class={prev({ class: clsx(theme?.prev, styling?.prev) })}>
+      <PaginationButton data-part="prev" onclick={goToPreviousPage} disabled={currentPage === 1} class={prev({ class: clsx(theme?.prev, styling?.prev) })}>
         {#if prevContent}
           {@render prevContent()}
         {:else}
@@ -100,7 +97,7 @@
       {/each}
     {/if}
     <li>
-      <PaginationButton onclick={goToNextPage} disabled={currentPage === totalPages} class={next({ class: clsx(theme?.next, styling?.next) })}>
+      <PaginationButton data-part="next" onclick={goToNextPage} disabled={currentPage === totalPages} class={next({ class: clsx(theme?.next, styling?.next) })}>
         {#if nextContent}
           {@render nextContent()}
         {:else}

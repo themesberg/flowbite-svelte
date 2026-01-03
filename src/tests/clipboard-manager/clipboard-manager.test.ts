@@ -1,6 +1,6 @@
 import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, beforeEach, vi, describe } from "vitest";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
 
 import ClipboardManagerTest from "./clipboard-manager.test.svelte";
 

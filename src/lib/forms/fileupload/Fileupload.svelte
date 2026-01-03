@@ -12,7 +12,7 @@
 
   const theme = $derived(getTheme("fileupload"));
 
-  const { base, wrapper, close } = fileupload();
+  const { input, base, closeButton } = fileupload();
 
   const clearAll = () => {
     if (elementRef) {
@@ -38,20 +38,20 @@
   const showClearButton = $derived(clearable && files && files.length > 0);
 
   const finalCloseProps = $derived({
-    class: close({ class: clsx(theme?.close, styling?.close) }),
+    class: closeButton({ class: clsx(theme?.closeButton, styling?.closeButton) }),
     color: closeButtonProps?.color ?? "gray",
     ariaLabel: closeButtonProps?.ariaLabel ?? "Clear selected files",
     size: closeButtonProps?.size,
-    classes: closeButtonProps?.classes ?? { svg: clsx(theme?.svg, styling?.svg) },
+    classes: closeButtonProps?.classes ?? { svg: clsx(theme?.closeIcon, styling?.closeIcon) },
     name: closeButtonProps?.name,
     onclick: closeButtonProps?.onclick
   });
 </script>
 
-<div class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })}>
-  <input type="file" onchange={handleChange} bind:this={elementRef} {...restProps} class={base({ size, class: clsx(theme?.base, className) })} />
+<div class={base({ class: clsx(theme?.base, className) })} data-scope="fileupload" data-part="wrapper">
+  <input type="file" onchange={handleChange} bind:this={elementRef} {...restProps} class={input({ size, class: clsx(theme?.input, styling?.input) })} data-part="input" />
   {#if showClearButton}
-    <CloseButton {...finalCloseProps} />
+    <CloseButton {...finalCloseProps} data-part="close-button" />
   {/if}
 </div>
 

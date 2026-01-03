@@ -9,23 +9,23 @@
   const styling = $derived(classes);
   const theme = $derived(getTheme("scoreRating"));
 
-  const { desc1, desc2, desc3span, desc3p, link, bar } = $derived(scoreRating());
+  const { badge, title, separator, subtitle, reviewLink, bar } = $derived(scoreRating());
 </script>
 
-<div class="mb-5 flex items-center">
+<div data-scope="score-rating" class="mb-5 flex items-center">
   {#if headerLabel}
     {#if headerLabel.desc1}
-      <p class={desc1({ class: clsx(theme?.desc1, styling?.desc1) })}>{headerLabel.desc1}</p>
+      <p data-part="badge" class={badge({ class: clsx(theme?.badge, styling?.badge) })}>{headerLabel.desc1}</p>
     {/if}
     {#if headerLabel.desc2}
-      <p class={desc2({ class: clsx(theme?.desc2, styling?.desc2) })}>{headerLabel.desc2}</p>
+      <p data-part="title" class={title({ class: clsx(theme?.title, styling?.title) })}>{headerLabel.desc2}</p>
     {/if}
     {#if headerLabel.desc3}
-      <span class={desc3span({ class: clsx(theme?.desc3span, styling?.desc3span) })}></span>
-      <p class={desc3p({ class: clsx(theme?.desc3p, styling?.desc3p) })}>{headerLabel.desc3}</p>
+      <span data-part="separator" class={separator({ class: clsx(theme?.separator, styling?.separator) })}></span>
+      <p data-part="subtitle" class={subtitle({ class: clsx(theme?.subtitle, styling?.subtitle) })}>{headerLabel.desc3}</p>
     {/if}
     {#if headerLabel.link}
-      <a href={headerLabel.link.url} class={link({ class: clsx(theme?.link, styling?.link) })}>{headerLabel.link.label}</a>
+      <a data-part="review-link" href={headerLabel.link.url} class={reviewLink({ class: clsx(theme?.reviewLink, styling?.reviewLink) })}>{headerLabel.link.label}</a>
     {/if}
   {/if}
 </div>
@@ -39,7 +39,7 @@
           </dt>
           <dd class="mb-3 flex items-center">
             <div class="me-2 h-2.5 w-full rounded-sm bg-gray-200 dark:bg-gray-700">
-              <div class={bar({ class: clsx(theme?.bar, styling?.bar) })} style="width: {rating * 10}%"></div>
+              <div data-part="bar" class={bar({ class: clsx(theme?.bar, styling?.bar) })} style="width: {rating * 10}%"></div>
             </div>
             <span class="text-sm font-medium text-gray-500 dark:text-gray-400">{rating}</span>
           </dd>
@@ -56,7 +56,7 @@
           </dt>
           <dd class="mb-3 flex items-center">
             <div class="me-2 h-2.5 w-full rounded-sm bg-gray-200 dark:bg-gray-700">
-              <div class={bar({ class: clsx(theme?.bar, styling?.bar) })} style="width: {rating * 10}%"></div>
+              <div data-part="bar" class={bar({ class: clsx(theme?.bar, styling?.bar) })} style="width: {rating * 10}%"></div>
             </div>
             <span class="text-sm font-medium text-gray-500 dark:text-gray-400">{rating}</span>
           </dd>

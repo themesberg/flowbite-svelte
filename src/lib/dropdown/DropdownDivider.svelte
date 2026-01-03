@@ -7,9 +7,10 @@
   let { class: className, ...restProps }: DropdownDividerProps = $props();
 
   const theme = $derived(getTheme("dropdownDivider"));
+  const base = $derived(dropdownDivider({ class: clsx(theme, className) }));
 </script>
 
-<div {...restProps} class={dropdownDivider({ class: clsx(theme, className) })}></div>
+<div data-scope="dropdown-divider" data-part="base" {...restProps} class={base}></div>
 
 <!--
 @component

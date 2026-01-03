@@ -58,14 +58,14 @@
 </script>
 
 {#if toastStatus}
-  <div role="alert" bind:this={ref} transition:transition={effectiveParams as ParamsType} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+  <div role="alert" bind:this={ref} transition:transition={effectiveParams as ParamsType} {...restProps} class={base({ class: clsx(theme?.base, className) })} data-scope="toast" data-part="base">
     {#if icon}
-      <div class={iconVariants({ class: clsx(theme?.icon, styling?.icon) })}>
+      <div class={iconVariants({ class: clsx(theme?.icon, styling?.icon) })} data-part="icon">
         {@render icon()}
       </div>
     {/if}
 
-    <div class={content({ class: clsx(theme?.content, styling?.content) })}>
+    <div class={content({ class: clsx(theme?.content, styling?.content) })} data-part="content">
       {@render children()}
     </div>
 

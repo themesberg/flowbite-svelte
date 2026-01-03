@@ -24,7 +24,7 @@
   );
 </script>
 
-<span {...restProps} class={classSpan}>
+<span data-scope="span" data-part="base" {...restProps} class={classSpan}>
   {#if children}
     {@render children()}
   {/if}

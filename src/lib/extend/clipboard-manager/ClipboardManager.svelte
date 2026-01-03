@@ -280,25 +280,31 @@
 </script>
 
 {#snippet inputArea()}
-  <div class={styles.inputSection({ class: clsx(theme?.inputSection, classes?.inputSection) })}>
-    <div class={styles.inputWrapper({ class: clsx(theme?.inputWrapper, classes?.inputWrapper) })}>
-      <input type="text" bind:value={newText} onkeydown={handleKeydown} {placeholder} class={styles.input({ class: clsx(theme?.input, classes?.input) })} />
-      <button onclick={addToClipboard} disabled={!newText.trim()} class={styles.addToClipboard({ class: clsx(theme?.addToClipboard, classes?.addToClipboard) })}>
+  <div data-part="input-section" class={styles.inputSection({ class: clsx(theme?.inputSection, classes?.inputSection) })}>
+    <div data-part="input-wrapper" class={styles.inputWrapper({ class: clsx(theme?.inputWrapper, classes?.inputWrapper) })}>
+      <input data-part="input" type="text" bind:value={newText} onkeydown={handleKeydown} {placeholder} class={styles.input({ class: clsx(theme?.input, classes?.input) })} />
+      <button data-part="add-button" onclick={addToClipboard} disabled={!newText.trim()} class={styles.addButton({ class: clsx(theme?.addButton, classes?.addButton) })}>
         {saveLabel}
       </button>
     </div>
 
     <!-- Search and Clear -->
     {#if items.length > 0}
-      <div class={styles.searchWrapper({ class: clsx(theme?.searchWrapper, classes?.searchWrapper) })}>
-        <div class={styles.searchContainer({ class: clsx(theme?.searchContainer, classes?.searchContainer) })}>
-          <input type="text" bind:value={searchQuery} placeholder="Search clipboard..." class={styles.searchInput({ class: clsx(theme?.searchInput, classes?.searchInput) })} />
-          <svg class={styles.searchIcon({ class: clsx(theme?.searchIcon, classes?.searchIcon) })} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div data-part="search-wrapper" class={styles.searchWrapper({ class: clsx(theme?.searchWrapper, classes?.searchWrapper) })}>
+        <div data-part="search-container" class={styles.searchContainer({ class: clsx(theme?.searchContainer, classes?.searchContainer) })}>
+          <input
+            data-part="search-input"
+            type="text"
+            bind:value={searchQuery}
+            placeholder="Search clipboard..."
+            class={styles.searchInput({ class: clsx(theme?.searchInput, classes?.searchInput) })}
+          />
+          <svg data-part="search-icon" class={styles.searchIcon({ class: clsx(theme?.searchIcon, classes?.searchIcon) })} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <circle cx="11" cy="11" r="8" />
             <path d="m21 21-4.35-4.35" />
           </svg>
         </div>
-        <button onclick={clearAll} class={styles.clearAll({ class: clsx(theme?.clearAll, classes?.clearAll) })}>
+        <button data-part="clear-button" onclick={clearAll} class={styles.clearButton({ class: clsx(theme?.clearButton, classes?.clearButton) })}>
           {clearLabel}
         </button>
       </div>
@@ -308,16 +314,16 @@
 
 {#snippet searchClear()}
   <!-- Show only search and clear when input is hidden -->
-  <div class={styles.inputSection({ class: clsx(theme?.inputSection, classes?.inputSection) })}>
-    <div class={styles.searchWrapper({ class: clsx(theme?.searchWrapper, classes?.searchWrapper) })}>
-      <div class={styles.searchContainer({ class: clsx(theme?.searchContainer, classes?.searchContainer) })}>
-        <input type="text" bind:value={searchQuery} placeholder="Search clipboard..." class={styles.searchInput({ class: clsx(theme?.searchInput, classes?.searchInput) })} />
-        <svg class={styles.searchIcon({ class: clsx(theme?.searchIcon, classes?.searchIcon) })} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <div data-part="input-section" class={styles.inputSection({ class: clsx(theme?.inputSection, classes?.inputSection) })}>
+    <div data-part="search-wrapper" class={styles.searchWrapper({ class: clsx(theme?.searchWrapper, classes?.searchWrapper) })}>
+      <div data-part="search-container" class={styles.searchContainer({ class: clsx(theme?.searchContainer, classes?.searchContainer) })}>
+        <input data-part="search-input" type="text" bind:value={searchQuery} placeholder="Search clipboard..." class={styles.searchInput({ class: clsx(theme?.searchInput, classes?.searchInput) })} />
+        <svg data-part="search-icon" class={styles.searchIcon({ class: clsx(theme?.searchIcon, classes?.searchIcon) })} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <circle cx="11" cy="11" r="8" />
           <path d="m21 21-4.35-4.35" />
         </svg>
       </div>
-      <button onclick={clearAll} class={styles.clearAll({ class: clsx(theme?.clearAll, classes?.clearAll) })}>
+      <button data-part="clear-button" onclick={clearAll} class={styles.clearButton({ class: clsx(theme?.clearButton, classes?.clearButton) })}>
         {clearLabel}
       </button>
     </div>
@@ -326,14 +332,14 @@
 
 {#snippet itemList()}
   <!-- Items list -->
-  <div class={styles.itemsList({ class: clsx(theme?.itemsList, classes?.itemsList) })}>
+  <div data-part="items-list" class={styles.itemsList({ class: clsx(theme?.itemsList, classes?.itemsList) })}>
     {#if filteredItems.length === 0}
       {#if emptyState}
         {@render emptyState()}
       {:else}
-        <div class={styles.emptyState({ class: clsx(theme?.emptyState, classes?.emptyState) })}>
+        <div data-part="empty-state" class={styles.emptyState({ class: clsx(theme?.emptyState, classes?.emptyState) })}>
           {#if items.length === 0}
-            <svg class={styles.emptyIcon({ class: clsx(theme?.emptyIcon, classes?.emptyIcon) })} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg data-part="empty-icon" class={styles.emptyIcon({ class: clsx(theme?.emptyIcon, classes?.emptyIcon) })} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -341,8 +347,8 @@
                 d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
             </svg>
-            <p class={styles.emptyText({ class: clsx(theme?.emptyText, classes?.emptyText) })}>No clipboard items yet.</p>
-            <p class={styles.emptySubtext({ class: clsx(theme?.emptySubtext, classes?.emptySubtext) })}>
+            <p data-part="empty-message" class={styles.emptyMessage({ class: clsx(theme?.emptyMessage, classes?.emptyMessage) })}>No clipboard items yet.</p>
+            <p data-part="empty-description" class={styles.emptyDescription({ class: clsx(theme?.emptyDescription, classes?.emptyDescription) })}>
               {#if enableSelectionMenu}
                 Select any text and click "Save" to add it here
               {:else}
@@ -350,7 +356,7 @@
               {/if}
             </p>
           {:else}
-            <p class={styles.emptyText({ class: clsx(theme?.emptyText, classes?.emptyText) })}>No items match "{searchQuery}"</p>
+            <p data-part="empty-message" class={styles.emptyMessage({ class: clsx(theme?.emptyMessage, classes?.emptyMessage) })}>No items match "{searchQuery}"</p>
           {/if}
         </div>
       {/if}
@@ -359,27 +365,28 @@
         {#if children}
           {@render children({ item, copyItem, deleteItem, togglePin })}
         {:else}
-          <div class={styles.item({ class: clsx(theme?.item, classes?.item) })}>
+          <div data-part="item" class={styles.item({ class: clsx(theme?.item, classes?.item) })}>
             <!-- Content -->
-            <div class={styles.itemContent({ class: clsx(theme?.itemContent, classes?.itemContent) })}>
-              <div class={styles.itemHeader({ class: clsx(theme?.itemHeader, classes?.itemHeader) })}>
+            <div data-part="item-content" class={styles.itemContent({ class: clsx(theme?.itemContent, classes?.itemContent) })}>
+              <div data-part="item-header" class={styles.itemHeader({ class: clsx(theme?.itemHeader, classes?.itemHeader) })}>
                 {#if item.pinned}
                   <Badge {...badgeProps}>Pinned</Badge>
                 {/if}
-                <span class={styles.itemTimestamp({ class: clsx(theme?.itemTimestamp, classes?.itemTimestamp) })}>
+                <span data-part="item-timestamp" class={styles.itemTimestamp({ class: clsx(theme?.itemTimestamp, classes?.itemTimestamp) })}>
                   {formatDistanceToNow(item.timestamp, { addSuffix: true })}
                 </span>
               </div>
-              <p class={styles.itemText({ class: clsx(theme?.itemText, classes?.itemText) })}>
+              <p data-part="item-text" class={styles.itemText({ class: clsx(theme?.itemText, classes?.itemText) })}>
                 {item.text}
               </p>
             </div>
 
             <!-- Actions -->
-            <div class={styles.itemActions({ class: clsx(theme?.itemActions, classes?.itemActions) })}>
+            <div data-part="item-actions" class={styles.itemActions({ class: clsx(theme?.itemActions, classes?.itemActions) })}>
               <!-- Copy -->
-              <button onclick={() => copyItem(item)} class={styles.actionButton({ class: clsx(theme?.actionButton, classes?.actionButton) })} aria-label="Copy">
+              <button data-part="action-button" onclick={() => copyItem(item)} class={styles.actionButton({ class: clsx(theme?.actionButton, classes?.actionButton) })} aria-label="Copy">
                 <svg
+                  data-part="action-icon"
                   class={styles.actionIcon({ class: clsx(theme?.actionIcon, classes?.actionIcon) })}
                   fill="none"
                   stroke="currentColor"
@@ -395,6 +402,7 @@
 
               <!-- Pin / Unpin -->
               <button
+                data-part="pin-button"
                 onclick={() => togglePin(item.id)}
                 class={styles.pinButton({ pinned: item.pinned, class: clsx(theme?.pinButton, classes?.pinButton) })}
                 aria-label={item.pinned ? "Unpin" : "Pin"}
@@ -415,8 +423,9 @@
               </button>
 
               <!-- Delete -->
-              <button onclick={() => deleteItem(item.id)} class={styles.deleteButton({ class: clsx(theme?.deleteButton, classes?.deleteButton) })} aria-label="Delete">
+              <button data-part="delete-button" onclick={() => deleteItem(item.id)} class={styles.deleteButton({ class: clsx(theme?.deleteButton, classes?.deleteButton) })} aria-label="Delete">
                 <svg
+                  data-part="action-icon"
                   class={styles.actionIcon({ class: clsx(theme?.actionIcon, classes?.actionIcon) })}
                   fill="none"
                   stroke="currentColor"
@@ -439,7 +448,7 @@
 
 {#if isModal}
   <Modal title="Clipboard Manager" bind:open {...modalProps}>
-    <div class={styles.base({ class: clsx(theme?.base, className) })}>
+    <div data-scope="clipboard-manager" class={styles.base({ class: clsx(theme?.base, className) })}>
       {#if showInput}
         {@render inputArea()}
       {:else if items.length > 0}
@@ -450,7 +459,7 @@
     </div>
   </Modal>
 {:else}
-  <div class={styles.base({ class: clsx(theme?.base, className) })}>
+  <div data-scope="clipboard-manager" class={styles.base({ class: clsx(theme?.base, className) })}>
     {#if showInput}
       {@render inputArea()}
     {:else if items.length > 0}
@@ -463,23 +472,23 @@
 
 <!-- Selection Bubble Menu -->
 {#if selectionMenu.show}
-  <div class={styles.selectionMenu({ class: clsx(theme?.selectionMenu, classes?.selectionMenu) })} style="left: {selectionMenu.x}px; top: {selectionMenu.y}px;">
-    <div class={styles.selectionBubble({ class: clsx(theme?.selectionBubble, classes?.selectionBubble) })}>
-      <span class={styles.selectionText({ class: clsx(theme?.selectionText, classes?.selectionText) })}>
+  <div data-part="selection-menu" class={styles.selectionMenu({ class: clsx(theme?.selectionMenu, classes?.selectionMenu) })} style="left: {selectionMenu.x}px; top: {selectionMenu.y}px;">
+    <div data-part="selection-bubble" class={styles.selectionBubble({ class: clsx(theme?.selectionBubble, classes?.selectionBubble) })}>
+      <span data-part="selection-text" class={styles.selectionText({ class: clsx(theme?.selectionText, classes?.selectionText) })}>
         {selectionMenu.text.slice(0, 50)}{selectionMenu.text.length > 50 ? "..." : ""}
       </span>
-      <button onclick={saveSelection} class={styles.selectionButton()}>Save to Clipboard</button>
+      <button data-part="selection-button" onclick={saveSelection} class={styles.selectionButton()}>Save to Clipboard</button>
     </div>
     <!-- Arrow -->
-    <div class={styles.selectionArrow({ class: clsx(theme?.selectionArrow, classes?.selectionArrow) })}></div>
+    <div data-part="selection-arrow" class={styles.selectionArrow({ class: clsx(theme?.selectionArrow, classes?.selectionArrow) })}></div>
   </div>
 {/if}
 
 <!-- Toast notification -->
 {#if toast}
-  <div class={styles.toastContainer({ class: clsx(theme?.toastContainer, classes?.toastContainer) })}>
-    <div class={styles.toast({ type: toast.type, class: clsx(theme?.toast, classes?.toast) })}>
-      <svg class={styles.toastIcon({ class: clsx(theme?.toastIcon, classes?.toastIcon) })} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+  <div data-part="toast-container" class={styles.toastContainer({ class: clsx(theme?.toastContainer, classes?.toastContainer) })}>
+    <div data-part="toast" class={styles.toast({ type: toast.type, class: clsx(theme?.toast, classes?.toast) })}>
+      <svg data-part="toast-icon" class={styles.toastIcon({ class: clsx(theme?.toastIcon, classes?.toastIcon) })} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         {#if toast.type === "success"}
           <path d="M5 13l4 4L19 7" />
         {:else if toast.type === "error"}
@@ -490,7 +499,7 @@
           <path d="M12 16v-4M12 8h.01" />
         {/if}
       </svg>
-      <span class={styles.toastText({ class: clsx(theme?.toastText, classes?.toastText) })}>{toast.message}</span>
+      <span data-part="toast-text" class={styles.toastText({ class: clsx(theme?.toastText, classes?.toastText) })}>{toast.message}</span>
     </div>
   </div>
 {/if}

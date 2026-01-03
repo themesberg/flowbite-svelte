@@ -9,92 +9,92 @@ export const progressbar = tv({
   slots: {
     base: "w-full bg-gray-200 rounded-full dark:bg-gray-700",
     label: "text-primary-100 text-xs font-medium text-center leading-none rounded-full",
-    inside: "rounded-full",
-    outside: "mb-1 flex justify-between",
-    span: "text-base font-medium dark:text-white",
-    progressCls: "text-sm font-medium dark:text-white"
+    bar: "rounded-full",
+    labelWrapper: "mb-1 flex justify-between",
+    labelText: "text-base font-medium dark:text-white",
+    percentage: "text-sm font-medium dark:text-white"
   },
   variants: {
     color: {
       primary: {
         label: "bg-primary-600",
-        inside: "bg-primary-600"
+        bar: "bg-primary-600"
       },
       secondary: {
         label: "bg-secondary-600",
-        inside: "bg-secondary-600"
+        bar: "bg-secondary-600"
       },
       gray: {
         label: "bg-gray-600 dark:bg-gray-300",
-        inside: "bg-gray-600 dark:bg-gray-300"
+        bar: "bg-gray-600 dark:bg-gray-300"
       },
       red: {
         label: "bg-red-600 dark:bg-red-500",
-        inside: "bg-red-600 dark:bg-red-500"
+        bar: "bg-red-600 dark:bg-red-500"
       },
       orange: {
         label: "bg-orange-600 dark:bg-orange-500",
-        inside: "bg-orange-600 dark:bg-orange-500"
+        bar: "bg-orange-600 dark:bg-orange-500"
       },
       amber: {
         label: "bg-amber-600 dark:bg-amber-500",
-        inside: "bg-amber-600 dark:bg-amber-500"
+        bar: "bg-amber-600 dark:bg-amber-500"
       },
       yellow: {
         label: "bg-yellow-400",
-        inside: "bg-yellow-400"
+        bar: "bg-yellow-400"
       },
       lime: {
         label: "bg-lime-600 dark:bg-lime-500",
-        inside: "bg-lime-600 dark:bg-lime-500"
+        bar: "bg-lime-600 dark:bg-lime-500"
       },
       green: {
         label: "bg-green-600 dark:bg-green-500",
-        inside: "bg-green-600 dark:bg-green-500"
+        bar: "bg-green-600 dark:bg-green-500"
       },
       emerald: {
         label: "bg-emerald-600 dark:bg-emerald-500",
-        inside: "bg-emerald-600 dark:bg-emerald-500"
+        bar: "bg-emerald-600 dark:bg-emerald-500"
       },
       teal: {
         label: "bg-teal-600 dark:bg-teal-500",
-        inside: "bg-teal-600 dark:bg-teal-500"
+        bar: "bg-teal-600 dark:bg-teal-500"
       },
       cyan: {
         label: "bg-cyan-600 dark:bg-cyan-500",
-        inside: "bg-cyan-600 dark:bg-cyan-500"
+        bar: "bg-cyan-600 dark:bg-cyan-500"
       },
       sky: {
         label: "bg-sky-600 dark:bg-sky-500",
-        inside: "bg-sky-600 dark:bg-sky-500"
+        bar: "bg-sky-600 dark:bg-sky-500"
       },
       blue: {
         label: "bg-blue-600",
-        inside: "bg-blue-600"
+        bar: "bg-blue-600"
       },
       indigo: {
         label: "bg-indigo-600 dark:bg-indigo-500",
-        inside: "bg-indigo-600 dark:bg-indigo-500"
+        bar: "bg-indigo-600 dark:bg-indigo-500"
       },
       violet: {
         label: "bg-violet-600 dark:bg-violet-500",
-        inside: "bg-violet-600 dark:bg-violet-500"
+        bar: "bg-violet-600 dark:bg-violet-500"
       },
       purple: {
         label: "bg-purple-600 dark:bg-purple-500",
-        inside: "bg-purple-600 dark:bg-purple-500"
+        bar: "bg-purple-600 dark:bg-purple-500"
       },
       fuchsia: {
         label: "bg-fuchsia-600 dark:bg-fuchsia-500",
-        inside: "bg-fuchsia-600 dark:bg-fuchsia-500"
+        bar: "bg-fuchsia-600 dark:bg-fuchsia-500"
       },
       pink: {
         label: "bg-pink-600 dark:bg-pink-500",
-        inside: "bg-pink-600 dark:bg-pink-500"
+        bar: "bg-pink-600 dark:bg-pink-500"
       },
       rose: {
         label: "bg-rose-600 dark:bg-rose-500",
-        inside: "bg-rose-600 dark:bg-rose-500"
+        bar: "bg-rose-600 dark:bg-rose-500"
       }
     },
     labelInside: {
@@ -127,9 +127,9 @@ export const progressradial = tv({
     label: "absolute inset-0 flex items-center justify-center text-sm font-medium",
     background: "opacity-25",
     foreground: "transition-all",
-    outside: "flex flex-col items-center mb-2 text-center",
-    span: "text-base font-medium",
-    progressCls: "text-sm font-medium ml-1"
+    labelWrapper: "flex flex-col items-center mb-2 text-center",
+    labelText: "text-base font-medium",
+    percentage: "text-sm font-medium ml-1"
   },
   variants: {
     color: {

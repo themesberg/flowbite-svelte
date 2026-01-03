@@ -12,7 +12,7 @@
   const theme = $derived(getTheme("timelineItem"));
   let order = getContext<TimelineVariants["order"]>("order");
 
-  const { base, div, defaultDiv, time, h3, svg, connector } = $derived(timelineItem({ order, color, isLast }));
+  const { base, indicator, dot, time, title: _title, icon, connector } = $derived(timelineItem({ order, color, isLast }));
 
   function formatDisplayDate(dateStr: string, format: DateFormat) {
     const date = new Date(dateStr);
@@ -43,18 +43,18 @@
   }
 </script>
 
-<li {...restProps} class={base({ class: clsx(theme?.base, className) })}>
+<li {...restProps} class={base({ class: clsx(theme?.base, className) })} data-scope="timeline-item" data-part="base">
   <!-- Individual connector line for vertical/activity layouts -->
   {#if !isLast && (order === "vertical" || order === "activity")}
-    <div class={connector({ class: clsx(theme?.connector, styling?.connector) })} aria-hidden="true"></div>
+    <div class={connector({ class: clsx(theme?.connector, styling?.connector) })} aria-hidden="true" data-part="connector"></div>
   {/if}
 
   {#if order !== "default"}
     {#if orientationSlot && (order === "vertical" || order === "horizontal")}
       {@render orientationSlot()}
     {:else}
-      <div class={div({ class: clsx(theme?.div, styling?.div) })}>
-        <svg aria-hidden="true" class={svg({ class: clsx(theme?.svg, styling?.svg) })} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <div class={indicator({ class: clsx(theme?.indicator, styling?.indicator) })} data-part="indicator">
+        <svg aria-hidden="true" class={icon({ class: clsx(theme?.icon, styling?.icon) })} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-part="icon">
           <path
             fill-rule="evenodd"
             d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
@@ -64,22 +64,22 @@
       </div>
     {/if}
   {:else if date}
-    <div class={defaultDiv({ class: clsx(theme?.defaultDiv, styling?.defaultDiv) })} aria-hidden="true"></div>
-    <time datetime={date} class={time({ class: clsx(theme?.time, styling?.time) })}>
+    <div class={dot({ class: clsx(theme?.dot, styling?.dot) })} aria-hidden="true" data-part="dot"></div>
+    <time datetime={date} class={time({ class: clsx(theme?.time, styling?.time) })} data-part="time">
       {datePrefix}
       {formatDisplayDate(date, dateFormat)}
     </time>
   {/if}
 
   {#if title}
-    <h3 class={h3({ class: clsx(theme?.h3, styling?.h3) })}>
+    <h3 class={_title({ class: clsx(theme?.title, styling?.title) })} data-part="title">
       {title}
     </h3>
   {/if}
 
   {#if order !== "default"}
     {#if date}
-      <time datetime={date} class={time({ class: clsx(theme?.time, styling?.time) })}>
+      <time datetime={date} class={time({ class: clsx(theme?.time, styling?.time) })} data-part="time">
         {datePrefix}
         {formatDisplayDate(date, dateFormat)}
       </time>

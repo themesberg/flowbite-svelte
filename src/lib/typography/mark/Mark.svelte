@@ -9,7 +9,7 @@
   const theme = $derived(getTheme("mark"));
 </script>
 
-<mark {...restProps} class={mark({ class: clsx(theme, className) })}>
+<mark data-scope="mark" data-part="base" {...restProps} class={mark({ class: clsx(theme, className) })}>
   {@render children()}
 </mark>
 

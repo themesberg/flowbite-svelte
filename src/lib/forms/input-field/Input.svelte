@@ -56,7 +56,7 @@
   let isGroup = $derived(!!group);
   let _size = $derived(size || (group?.size ? clampSize(group.size) : undefined) || "md");
   const _color = $derived(color === "default" && background ? "tinted" : color);
-  const { base, input: inputCls, left: leftCls, right: rightCls, close, combo, comboItem } = $derived(input({ size: _size, color: _color, grouped: isGroup }));
+  const { base, input: inputCls, leftAddon, rightAddon, closeButton, comboList, option } = $derived(input({ size: _size, color: _color, grouped: isGroup }));
 
   const clearAll = () => {
     if (elementRef) {
@@ -232,11 +232,11 @@
   }
 
   const finalCloseProps = $derived({
-    class: close({ class: clsx(theme?.close, styling?.close) }),
+    class: closeButton({ class: clsx(theme?.closeButton, styling?.closeButton) }),
     color: closeButtonProps?.color ?? "gray",
     ariaLabel: closeButtonProps?.ariaLabel ?? "Clear search value",
     size: closeButtonProps?.size,
-    classes: closeButtonProps?.classes ?? { svg: clsx(theme?.svg, styling?.svg) },
+    classes: closeButtonProps?.classes ?? { svg: clsx(theme?.closeIcon, styling?.closeIcon) },
     name: closeButtonProps?.name,
     onclick: closeButtonProps?.onclick
   });
@@ -247,29 +247,30 @@
 {/if}
 
 {#if isCombobox || right || left || clearable}
-  <div class={base({ class: clsx(theme?.base, styling?.div) })}>
+  <div class={base({ class: clsx(theme?.base, className) })} data-scope="input" data-part="base">
     {#if left}
-      <div class={leftCls({ class: clsx(theme?.left, styling?.left) })}>
+      <div class={leftAddon({ class: clsx(theme?.leftAddon, styling?.leftAddon) })} data-part="left-addon">
         {@render left()}
       </div>
     {/if}
     {@render inputContent(true)}
     {#if right}
-      <div class={rightCls({ class: clsx(theme?.right, styling?.right) })}>
+      <div class={rightAddon({ class: clsx(theme?.rightAddon, styling?.rightAddon) })} data-part="right-addon">
         {@render right()}
       </div>
     {/if}
 
     {#if isCombobox && isFocused && filteredSuggestions.length > 0}
-      <div class={combo({ class: clsx(theme?.combo, styling?.combo) })}>
+      <div class={comboList({ class: clsx(theme?.comboList, styling?.comboList) })} data-part="combo-list">
         {#each filteredSuggestions as item, i (item)}
           <button
             type="button"
             class="w-full px-3 py-2 text-left {i === selectedIndex ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'} focus:outline-none"
             onclick={() => selectItem(item)}
             onmouseenter={() => (selectedIndex = i)}
+            data-part="option"
           >
-            <p class={comboItem({ class: clsx(theme?.comboItem, styling?.comboItem) })}>{item}</p>
+            <p class={option({ class: clsx(theme?.option, styling?.option) })}>{item}</p>
           </button>
         {/each}
       </div>
@@ -292,9 +293,10 @@
       onblur={handleBlur}
       onkeydown={handleKeydown}
       class={clsx(!wrapped && base(), inputCls({ class: clsx(theme?.input, className) }))}
+      data-part="input"
     />
     {#if value !== undefined && value !== "" && clearable}
-      <CloseButton {...finalCloseProps} />
+      <CloseButton {...finalCloseProps} data-part="close-button" />
     {/if}
   {/if}
 {/snippet}

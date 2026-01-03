@@ -15,7 +15,7 @@ export const sidebar = tv({
     active:
       "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
     nonactive: "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal text-gray-900 rounded-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
-    div: "overflow-y-auto px-3 py-4 bg-gray-50 dark:bg-gray-800",
+    content: "overflow-y-auto px-3 py-4 bg-gray-50 dark:bg-gray-800",
     backdrop: "fixed top-0 start-0 z-40 w-full h-full"
   },
   variants: {
@@ -56,7 +56,7 @@ export const sidebar = tv({
 export const sidebarButton = tv({
   slots: {
     base: "inline-flex items-center text-sm text-gray-500 rounded-base hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
-    svg: "h-6 w-6 m-2"
+    icon: "h-6 w-6 m-2"
   },
   variants: {
     breakpoint: {
@@ -72,26 +72,26 @@ export const sidebarButton = tv({
 export const sidebarBrand = tv({
   slots: {
     base: "flex items-center ps-2.5 mb-5",
-    img: "h-6 me-3 sm:h-7",
-    span: "self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+    logo: "h-6 me-3 sm:h-7",
+    brandName: "self-center text-xl font-semibold whitespace-nowrap dark:text-white"
   }
 });
 
 export const sidebarCta = tv({
   slots: {
     base: "p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900",
-    div: "flex items-center mb-3",
-    span: "bg-primary-100 text-primary-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded-sm dark:bg-primary-200 dark:text-primary-900"
+    labelWrapper: "flex items-center mb-3",
+    badge: "bg-primary-100 text-primary-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded-sm dark:bg-primary-200 dark:text-primary-900"
   }
 });
 
 export const sidebarDropdownWrapper = tv({
   slots: {
     base: "group",
-    btn: "flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-sm transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
-    span: "flex-1 ms-3 text-left whitespace-nowrap",
-    svg: "h-3 w-3 text-gray-800 dark:text-white",
-    ul: "py-2 space-y-0"
+    trigger: "flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-sm transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
+    label: "flex-1 ms-3 text-left whitespace-nowrap",
+    icon: "h-3 w-3 text-gray-800 dark:text-white",
+    list: "py-2 space-y-0"
   }
 });
 
@@ -99,7 +99,7 @@ export const sidebarItem = tv({
   slots: {
     base: "",
     link: "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal rounded-sm",
-    span: "ms-3"
+    label: "ms-3"
   },
   variants: {
     active: {

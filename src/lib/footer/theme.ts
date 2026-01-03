@@ -19,8 +19,8 @@ export type FooterBrandVariants = VariantProps<typeof footerBrand> & Classes<typ
 export const footerBrand = tv({
   slots: {
     base: "flex items-center",
-    span: "self-center text-2xl font-semibold whitespace-nowrap dark:text-white",
-    img: "me-3 h-8"
+    label: "self-center text-2xl font-semibold whitespace-nowrap dark:text-white",
+    image: "me-3 h-8"
   }
 });
 
@@ -30,7 +30,7 @@ export const footerCopyright = tv({
   slots: {
     base: "block text-sm text-gray-500 sm:text-center dark:text-gray-400",
     link: "hover:underline",
-    bySpan: "ms-1"
+    label: "ms-1"
   }
 });
 

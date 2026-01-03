@@ -1,3 +1,6 @@
+// themeSelector
+export { themeSelector } from "../theme-selector";
+
 // components
 export { accordion, accordionItem } from "../accordion";
 export { alert } from "../alert";
@@ -23,7 +26,7 @@ export { kbd } from "../kbd";
 export { listGroup, listGroupItem } from "../list-group";
 export { megamenu } from "../mega-menu";
 export { modal } from "../modal";
-export { navbar, navbarBrand, navbarHamburger, navbarLi, navbarUl, navbarContainer } from "../navbar";
+export { navbar, navbarBrand, navbarHamburger, navLi, navUl, navbarContainer } from "../navbar";
 export { pagination, paginationButton, paginationItem, paginationNav } from "../pagination";
 export { popover } from "../popover";
 export { progressbar, progressradial } from "../progress";
@@ -40,7 +43,7 @@ export { toast, toastContainer } from "../toast";
 export { toolbar, toolbarButton, toolbarGroup } from "../toolbar";
 export { tooltip } from "../tooltip";
 // export {utils} from "../utils";
-// export {} from "../video";
+export { video } from "../video";
 
 // forms
 export { checkbox, checkboxButton } from "../forms/checkbox";
@@ -80,11 +83,11 @@ export { clipboardManager } from "$lib/extend/clipboard-manager/theme";
 export { commandPalette } from "$lib/extend/command-palette/theme";
 export { kanbanBoard, kanbanCard } from "$lib/extend/kanban/theme";
 export { scrollspy } from "$lib/extend/scroll-spy/theme";
-export { splitpane, pane, divider, dividerHitArea } from "$lib/extend/split-pane/theme";
+export { splitpane, pane, divider } from "$lib/extend/split-pane/theme";
 export { stepIndicator } from "../extend/step-indicator";
 export { tags } from "../extend/tags";
 export { tour } from "$lib/extend/tour/theme";
-export { virtualList } from "$lib/extend/virtuallist";
+export { virtualList } from "$lib/extend/virtual-list";
 export { virtualMasonry } from "$lib/extend/virtual-masonry/theme";
 
 // utils

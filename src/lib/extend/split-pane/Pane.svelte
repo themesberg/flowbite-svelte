@@ -27,7 +27,7 @@
   const isDragging = $derived(context?.getIsDragging() ?? false);
 </script>
 
-<div class={pane({ class: clsx(theme, className) })} style={paneStyle}>
+<div class={pane({ class: clsx(theme, className) })} data-scope="pane" data-part="base" style={paneStyle}>
   {@render children?.()}
 </div>
 

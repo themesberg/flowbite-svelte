@@ -1,14 +1,15 @@
 <script lang="ts">
   import type { DividerProps } from "$lib/types";
-  import { divider, dividerHitArea } from "./theme";
+  import { divider } from "./theme";
   import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
   import { nonPassiveTouch } from "$lib/utils/nonPassiveTouch";
 
   let { direction, index, onMouseDown, onTouchStart, onKeyDown, isDragging, currentSize, class: className = "" }: DividerProps = $props();
 
-  const themeDivider = $derived(getTheme("divider"));
-  const themeDividerHitArea = $derived(getTheme("dividerHitArea"));
+  const theme = $derived(getTheme("divider"));
+
+  const { base, hitArea } = $derived(divider({ direction, isDragging }));
 
   const isHorizontal = $derived(direction === "horizontal");
   const roundedSize = $derived(Math.round(currentSize));
@@ -25,12 +26,14 @@
   aria-valuemin="0"
   aria-valuemax="100"
   aria-valuetext={`${roundedSize} percent`}
-  class={divider({ direction, isDragging, class: clsx(themeDivider, className) })}
+  class={base({ class: clsx(theme?.base, className) })}
+  data-scope="divider"
+  data-part="base"
   onmousedown={(e) => onMouseDown(e, index)}
   use:nonPassiveTouch={(e) => onTouchStart(e, index)}
   onkeydown={(e) => onKeyDown(e, index)}
 >
-  <div class={dividerHitArea({ direction, class: clsx(themeDividerHitArea, className) })}></div>
+  <div class={hitArea({ class: clsx(theme?.hitArea) })} data-part="hit-area"></div>
 </div>
 
 <!--

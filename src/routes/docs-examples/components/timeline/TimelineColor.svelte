@@ -108,7 +108,7 @@
     {@const itemColor = getColorForStatus(appointment.status)}
     {@const IconComponent = getIconForStatus(appointment.status)}
 
-    <TimelineItem title={appointment.title} date={appointment.date} color={itemColor} isLast={isLastItem} dateFormat="full-date" classes={{ h3: "ml-4" }} datePrefix="Released on">
+    <TimelineItem title={appointment.title} date={appointment.date} color={itemColor} isLast={isLastItem} dateFormat="full-date" classes={{ title: "ml-4" }} datePrefix="Released on">
       {#snippet orientationSlot()}
         <span
           class="absolute -left-4 flex h-6 w-6 items-center justify-center rounded-full ring-8 ring-white dark:ring-gray-900 {appointment.status === 'completed'

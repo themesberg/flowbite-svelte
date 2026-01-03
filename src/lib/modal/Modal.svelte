@@ -53,10 +53,14 @@
     name: closeButtonProps?.name,
     onclick: closeButtonProps?.onclick
   });
+
+  // use data-scope="dialog": Because Modal is not a new primitive — it is a composition of Dialog. Therefore it inherits the dialog scope instead of redefining it.
 </script>
 
 <Dialog
   bind:open
+  data-scope="dialog"
+  data-part="base"
   {transition}
   dismissable={dismissable && !title && !permanent}
   transitionParams={effectiveParams}
@@ -66,22 +70,22 @@
   class={base({ fullscreen, class: clsx(theme?.base, className) })}
 >
   {#if title || header}
-    <div class={headerCls({ class: clsx(theme?.header, styling?.header) })}>
+    <div data-part="header" class={headerCls({ class: clsx(theme?.header, styling?.header) })}>
       {#if title}
-        <h3>{title}</h3>
+        <h3 data-part="title">{title}</h3>
         {#if dismissable && !permanent}
-          <CloseButton {...finalCloseProps} />
+          <CloseButton data-part="close" {...finalCloseProps} />
         {/if}
       {:else if header}
         {@render header()}
       {/if}
     </div>
   {/if}
-  <div class={body({ class: clsx(theme?.body, styling?.body) })}>
+  <div data-part="body" class={body({ class: clsx(theme?.body, styling?.body) })}>
     {@render children?.()}
   </div>
   {#if footer}
-    <div class={footerCls({ class: clsx(theme?.footer, styling?.footer) })}>
+    <div data-part="footer" class={footerCls({ class: clsx(theme?.footer, styling?.footer) })}>
       {@render footer()}
     </div>
   {/if}

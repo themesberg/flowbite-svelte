@@ -16,7 +16,7 @@ export const stepIndicator = tv({
     wrapper: "relative h-full w-full",
     step: "h-full w-full rounded-xs",
     glow: "absolute -inset-1 rounded-xs opacity-30 blur-sm dark:opacity-25",
-    incomplete: "h-full w-full rounded-xs bg-gray-200 dark:bg-gray-700"
+    incompleteStep: "h-full w-full rounded-xs bg-gray-200 dark:bg-gray-700"
   },
   variants: {
     size: {

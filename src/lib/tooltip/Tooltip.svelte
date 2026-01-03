@@ -28,8 +28,8 @@
   }
 </script>
 
-<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={base} {onbeforetoggle}>
-  <div class="pointer-events-none">{@render children()}</div>
+<Popper {...restProps} bind:isOpen {placement} {trigger} {arrow} class={base} {onbeforetoggle} data-scope="tooltip">
+  <div class="pointer-events-none" data-part="content">{@render children()}</div>
 </Popper>
 
 <!--

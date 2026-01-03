@@ -32,10 +32,10 @@
   const {
     base,
     label: labelInsideCls,
-    inside,
-    outside,
-    span,
-    progressCls
+    bar,
+    labelWrapper,
+    labelText,
+    percentage
   } = $derived(
     progressbar({
       color,
@@ -49,18 +49,18 @@
 </script>
 
 {#if labelOutside}
-  <div {...restProps} class={outside({ class: clsx(theme?.outside, classes?.outside) })}>
-    <span class={span({ class: clsx(theme?.span, classes?.span) })}>{labelOutside}</span>
-    <span class={progressCls({ class: clsx(theme?.progressCls, classes?.progressCls) })}>{progress}%</span>
+  <div {...restProps} data-part="label-wrapper" class={labelWrapper({ class: clsx(theme?.labelWrapper, classes?.labelWrapper) })}>
+    <span data-part="label-text" class={labelText({ class: clsx(theme?.labelText, classes?.labelText) })}>{labelOutside}</span>
+    <span data-part="percentage" class={percentage({ class: clsx(theme?.percentage, classes?.percentage) })}>{progress}%</span>
   </div>
 {/if}
-<div {...restProps} class={base({ class: clsx(size, theme?.base, className) })}>
+<div {...restProps} data-scope="progressbar" data-part="base" class={base({ class: clsx(size, theme?.base, className) })}>
   {#if labelInside}
-    <div class={labelInsideCls({ class: clsx(size, theme?.label, classes?.label) })} style="width: {_progress.current}%">
+    <div data-part="label" class={labelInsideCls({ class: clsx(size, theme?.label, classes?.label) })} style="width: {_progress.current}%">
       {_progress.current.toFixed(precision)}%
     </div>
   {:else}
-    <div class={inside({ class: clsx(size, theme?.inside, classes?.label) })} style="width: {_progress.current}%"></div>
+    <div data-part="bar" class={bar({ class: clsx(size, theme?.bar, classes?.bar) })} style="width: {_progress.current}%"></div>
   {/if}
 </div>
 

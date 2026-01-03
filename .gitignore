@@ -16,3 +16,5 @@ vite.config.ts.timestamp-*
 /test-results
 bun.lockb
 /.vercel
+
+questions.md
