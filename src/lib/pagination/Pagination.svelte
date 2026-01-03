@@ -77,4 +77,5 @@
 @prop table
 @prop size
 @prop ariaLabel
+@prop class: className
 -->

@@ -34,7 +34,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1132)
+[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1139)
 ## Props
 @prop children
 @prop color

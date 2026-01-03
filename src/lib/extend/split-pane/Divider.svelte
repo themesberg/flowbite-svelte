@@ -40,7 +40,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2077)
+[DividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2076)
 ## Props
 @prop direction
 @prop index

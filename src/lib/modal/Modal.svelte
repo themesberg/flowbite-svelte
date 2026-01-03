@@ -95,7 +95,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1067)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1065)
 ## Props
 @prop children
 @prop header

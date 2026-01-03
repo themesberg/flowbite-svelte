@@ -32,9 +32,9 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L648)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L651)
 ## Props
-@prop closeIcon
+@prop closeIcon: closeIconSnippet
 @prop children
 @prop class: className
 @prop classes

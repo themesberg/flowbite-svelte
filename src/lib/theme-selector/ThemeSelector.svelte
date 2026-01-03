@@ -65,3 +65,13 @@
     {/each}
   </Dropdown>
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Type
+[ThemeSelectorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2220)
+## Props
+@prop classes
+@prop ...restProps
+-->

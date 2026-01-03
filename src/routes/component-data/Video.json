@@ -11,6 +11,7 @@
     ["src", ""],
     ["srclang", "\"en\""],
     ["label", "\"english_captions\""],
-    ["class: classname", ""]
+    ["class: className", ""],
+    ["classes", ""]
   ]
 }

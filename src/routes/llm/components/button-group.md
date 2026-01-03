@@ -242,7 +242,7 @@ The Button Group component follows accessibility best practices:
 
 #### Types
 
-[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L324)
+[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L327)
 
 #### Props
 

@@ -91,5 +91,6 @@
 @prop item2
 @prop item3
 @prop review
+@prop class: className
 @prop classes
 -->

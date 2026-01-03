@@ -38,7 +38,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L487)
+[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L490)
 ## Props
 @prop children
 @prop position = "bottom"

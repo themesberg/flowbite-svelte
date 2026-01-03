@@ -617,14 +617,12 @@ The Accordion component is built with accessibility in mind:
 
 #### Types
 
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L209)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L213)
 
 #### Props
 
 - children
 - flush
-- activeClass
-- inactiveClass
 - multiple: false
 - class: className
 - transitionType
@@ -635,7 +633,7 @@ The Accordion component is built with accessibility in mind:
 
 #### Types
 
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L225)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L228)
 
 #### Props
 

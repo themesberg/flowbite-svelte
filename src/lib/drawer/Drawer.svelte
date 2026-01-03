@@ -134,7 +134,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L642)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L645)
 ## Props
 @prop children
 @prop open = $bindable(false)

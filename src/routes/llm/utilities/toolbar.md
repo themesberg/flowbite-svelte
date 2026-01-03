@@ -139,7 +139,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1126)
+[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1133)
 
 #### Props
 
@@ -154,7 +154,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1132)
+[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1139)
 
 #### Props
 
@@ -170,7 +170,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1130)
+[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1137)
 
 #### Props
 

@@ -2,11 +2,11 @@
   "name": "MegaMenu",
   "type": {
     "name": "MegaMenuProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1058"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1056"
   },
   "props": [
     ["children", ""],
-    ["extra", ""],
+    ["addon", ""],
     ["items", "[]"],
     ["full", ""],
     ["isOpen", "$bindable(false)"],

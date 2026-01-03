@@ -11,6 +11,7 @@
     ["item2", ""],
     ["item3", ""],
     ["review", ""],
+    ["class: className", ""],
     ["classes", ""]
   ]
 }

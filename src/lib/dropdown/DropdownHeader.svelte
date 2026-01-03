@@ -18,7 +18,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L661)
+[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L664)
 ## Props
 @prop children
 @prop class: className

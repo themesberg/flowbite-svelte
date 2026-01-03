@@ -268,7 +268,7 @@ The Avatar component is built with accessibility in mind:
 
 #### Types
 
-[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L249)
+[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L252)
 
 #### Props
 

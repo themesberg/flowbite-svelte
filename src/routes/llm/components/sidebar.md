@@ -24,7 +24,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -52,7 +52,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -60,7 +60,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -105,7 +105,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
     isDemoOpen = demoSidebarUi.isOpen;
     activeUrl = page.url.pathname;
   });
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const activeClass = "flex items-center p-2 text-base font-normal text-white bg-primary-600 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-800 dark:hover:bg-primary-800";
   const nonActiveClass = "flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700";
 </script>
@@ -128,7 +128,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -136,7 +136,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -172,7 +172,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const activeClass = "flex items-center p-2 text-base font-normal text-primary-900 bg-primary-200 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700";
   const nonActiveClass = "flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700";
   const demoSidebarUi = uiHelpers();
@@ -202,7 +202,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} active={false}>
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} active={false}>
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -210,7 +210,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} active={false}>
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} active={false}>
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -248,7 +248,7 @@ You can control icon class by changing the `class` prop in the `Icon` component.
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -276,7 +276,7 @@ You can control icon class by changing the `class` prop in the `Icon` component.
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -284,7 +284,7 @@ You can control icon class by changing the `class` prop in the `Icon` component.
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -322,7 +322,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -358,7 +358,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="E-commerce" classes={{ btn: "p-2" }} isOpen={matchesRoute}>
+      <SidebarDropdownWrapper label="E-commerce" classes={{ trigger: "p-2" }} isOpen={matchesRoute}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -366,7 +366,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
         <SidebarItem label="Billing" />
         <SidebarItem label="Invoice" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -374,7 +374,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -455,7 +455,7 @@ You can change the icons using `arrowup` and `arrowdown` slots.
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="E-commerce" classes={{ btn: "p-2" }} isOpen={matchesRoute}>
+      <SidebarDropdownWrapper label="E-commerce" classes={{ trigger: "p-2" }} isOpen={matchesRoute}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -495,7 +495,7 @@ Separate the content inside the sidebar component by applying a border separator
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -523,7 +523,7 @@ Separate the content inside the sidebar component by applying a border separator
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -531,7 +531,7 @@ Separate the content inside the sidebar component by applying a border separator
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -586,7 +586,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -614,7 +614,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -622,7 +622,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -675,7 +675,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -704,13 +704,13 @@ Show the logo of your brand and link back to the homepage from the top part of t
   >
     <CloseButton onclick={closeDemoSidebar} color="gray" class="absolute top-3 right-1 p-2 md:hidden" />
     <SidebarGroup>
-      <SidebarBrand {site} classes={{ img: "h-6 w-6" }} />
+      <SidebarBrand {site} classes={{ logo: "h-6 w-6" }} />
       <SidebarItem label="Dashboard" href="/">
         {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -718,7 +718,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -756,7 +756,7 @@ The following example shows how to use children for your branding.
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -789,7 +789,7 @@ The following example shows how to use children for your branding.
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -797,7 +797,7 @@ The following example shows how to use children for your branding.
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -839,7 +839,7 @@ Use the following example to show a close button in the sidebar for a small scre
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -868,7 +868,7 @@ Use the following example to show a close button in the sidebar for a small scre
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -876,7 +876,7 @@ Use the following example to show a close button in the sidebar for a small scre
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -914,7 +914,7 @@ You can use object for the sidebar items as the following example.
   let activeUrl = $state(page.url.pathname);
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from "flowbite-svelte-icons";
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const sidebarEx1 = [
     {
       label: "Dashboard",
@@ -962,7 +962,7 @@ You can use object for the sidebar items as the following example.
   >
     <SidebarGroup>
       {#each sidebarEx1 as { label, href, icon: Icon, subContent }}
-        <SidebarItem {label} {href} classes={{ span: spanClass }}>
+        <SidebarItem {label} {href} classes={{ label: labelClass }}>
           {#snippet icon()}
             <Icon class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"></Icon>
           {/snippet}
@@ -998,7 +998,7 @@ The following example shows to open only one dropdown when you click another dro
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -1026,26 +1026,26 @@ The following example shows to open only one dropdown when you click another dro
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="Shop" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Shop" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Products" href="" />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper label="Profile" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Profile" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Projects" href="/" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Sidebar" classes={{ span: spanClass }} href="/components/sidebar">
+      <SidebarItem label="Sidebar" classes={{ label: labelClass }} href="/components/sidebar">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
     <SidebarGroup border>
-      <SidebarDropdownWrapper label="Setting" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Setting" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <EditSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1077,7 +1077,7 @@ To open all dropdown menus, set `isSingle={false}`.
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -1106,26 +1106,26 @@ To open all dropdown menus, set `isSingle={false}`.
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="Shop" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Shop" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Products" href="" />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper label="Profile" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Profile" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Projects" href="/" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Sidebar" classes={{ span: spanClass }} href="/components/sidebar">
+      <SidebarItem label="Sidebar" classes={{ label: labelClass }} href="/components/sidebar">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
     <SidebarGroup border>
-      <SidebarDropdownWrapper label="Setting" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Setting" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <EditSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1163,7 +1163,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
     duration: 700,
     easing: sineIn
   };
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -1191,7 +1191,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="E-commerce" classes={{ btn: "p-2" }} transition={fade} {params}>
+      <SidebarDropdownWrapper label="E-commerce" classes={{ trigger: "p-2" }} transition={fade} {params}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1199,7 +1199,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
         <SidebarItem label="Billing" />
         <SidebarItem label="Invoice" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1207,7 +1207,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -1254,7 +1254,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(true);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -1284,7 +1284,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
               <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
           </SidebarItem>
-          <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+          <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
             {#snippet icon()}
               <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
@@ -1292,7 +1292,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
               <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
             {/snippet}
           </SidebarItem>
-          <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+          <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
             {#snippet icon()}
               <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}

@@ -113,7 +113,8 @@ Customize the video player appearance using the utility classes from Tailwind CS
 - src
 - srclang: "en"
 - label: "english_captions"
-- class: classname
+- class: className
+- classes
 
 
 ## References

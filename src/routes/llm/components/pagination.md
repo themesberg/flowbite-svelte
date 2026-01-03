@@ -496,12 +496,13 @@ Use the following example to add active class.
 - table
 - size
 - ariaLabel
+- class: className
 
 ### PaginationButton
 
 #### Types
 
-[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1156)
+[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1163)
 
 #### Props
 
@@ -531,7 +532,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1162)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1169)
 
 #### Props
 

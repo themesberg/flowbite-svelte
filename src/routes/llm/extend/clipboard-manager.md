@@ -24,7 +24,7 @@ See [examples](/docs-examples/extend/clipboard-manager) and [code](https://githu
 
 #### Types
 
-[ClipboardManagerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2197)
+[ClipboardManagerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2196)
 
 #### Props
 

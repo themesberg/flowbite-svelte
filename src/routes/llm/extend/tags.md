@@ -113,7 +113,7 @@ Use `disabled` to the `Tags` component.
 
 #### Types
 
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L918)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L916)
 
 #### Props
 

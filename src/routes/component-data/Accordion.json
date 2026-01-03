@@ -2,13 +2,11 @@
   "name": "Accordion",
   "type": {
     "name": "AccordionProps",
-    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L209"
+    "link": "https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L213"
   },
   "props": [
     ["children", ""],
     ["flush", ""],
-    ["activeClass", ""],
-    ["inactiveClass", ""],
     ["multiple", "false"],
     ["class: className", ""],
     ["transitionType", ""],

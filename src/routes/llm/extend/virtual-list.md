@@ -445,7 +445,7 @@ Enable with `<VirtualList contained …>` or override via `classes.item`.
 
 #### Types
 
-[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2012)
+[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2011)
 
 #### Props
 

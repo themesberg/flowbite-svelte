@@ -20,7 +20,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2057)
+[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2056)
 
 #### Props
 

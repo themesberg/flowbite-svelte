@@ -1,5 +1,5 @@
 # Flowbite Svelte Documentation - Full Context
-# Generated on 2025-12-31T14:33:13.854Z
+# Generated on 2026-01-03T11:01:07.390Z
 # This file contains all documentation concatenated in logical order
 
 
@@ -1759,14 +1759,12 @@ The Accordion component is built with accessibility in mind:
 
 #### Types
 
-[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L209)
+[AccordionProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L213)
 
 #### Props
 
 - children
 - flush
-- activeClass
-- inactiveClass
 - multiple: false
 - class: className
 - transitionType
@@ -1777,7 +1775,7 @@ The Accordion component is built with accessibility in mind:
 
 #### Types
 
-[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L225)
+[AccordionItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L228)
 
 #### Props
 
@@ -2167,7 +2165,7 @@ Handle dismissal interactions with the `onclick` event to track dismissals, save
 
 #### Types
 
-[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L235)
+[AlertProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L238)
 
 #### Props
 
@@ -2545,7 +2543,7 @@ The Avatar component is built with accessibility in mind:
 
 #### Types
 
-[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L249)
+[AvatarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L252)
 
 #### Props
 
@@ -2931,7 +2929,7 @@ The Badge component follows accessibility best practices:
 
 #### Types
 
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L261)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L264)
 
 #### Props
 
@@ -3249,7 +3247,7 @@ The Banner component follows accessibility best practices:
 
 #### Types
 
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L275)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L278)
 
 #### Props
 
@@ -3678,7 +3676,7 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L287)
+[BottomNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L290)
 
 #### Props
 
@@ -3694,7 +3692,7 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L300)
+[BottomNavHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L303)
 
 #### Props
 
@@ -3706,7 +3704,7 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L304)
+[BottomNavHeaderItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L307)
 
 #### Props
 
@@ -3718,7 +3716,7 @@ The Bottom Navigation component follows accessibility best practices:
 
 #### Types
 
-[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L293)
+[BottomNavItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L296)
 
 #### Props
 
@@ -3844,7 +3842,7 @@ The Breadcrumb component follows accessibility best practices:
 
 #### Types
 
-[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L310)
+[BreadcrumbProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L313)
 
 #### Props
 
@@ -3858,7 +3856,7 @@ The Breadcrumb component follows accessibility best practices:
 
 #### Types
 
-[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L316)
+[BreadcrumbItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L319)
 
 #### Props
 
@@ -4122,7 +4120,7 @@ The Button Group component follows accessibility best practices:
 
 #### Types
 
-[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L324)
+[ButtonGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L327)
 
 #### Props
 
@@ -4513,7 +4511,7 @@ The Button component follows accessibility best practices:
 
 #### Types
 
-[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L334)
+[ButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L337)
 
 #### Props
 
@@ -4532,7 +4530,7 @@ The Button component follows accessibility best practices:
 
 #### Types
 
-[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L344)
+[GradientButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L347)
 
 #### Props
 
@@ -5321,7 +5319,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L473)
+[CarouselProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L476)
 
 #### Props
 
@@ -5344,7 +5342,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L487)
+[IndicatorsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L490)
 
 #### Props
 
@@ -5357,7 +5355,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L494)
+[ControlButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L497)
 
 #### Props
 
@@ -5371,7 +5369,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L500)
+[ControlsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L503)
 
 #### Props
 
@@ -5382,7 +5380,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L516)
+[SlideProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L519)
 
 #### Props
 
@@ -5395,7 +5393,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L504)
+[ThumbnailProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L507)
 
 #### Props
 
@@ -5406,7 +5404,7 @@ Custom transitions can create distinctive experiences.
 
 #### Types
 
-[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L508)
+[ThumbnailsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L511)
 
 #### Props
 
@@ -5811,7 +5809,7 @@ Use this example to show an input field where you can copy the URL of the curren
 
 #### Types
 
-[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L528)
+[ClipboardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L531)
 
 #### Props
 
@@ -5907,7 +5905,7 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 #### Types
 
-[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L537)
+[DarkmodeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L540)
 
 #### Props
 
@@ -6321,7 +6319,7 @@ explicabo minus.
 
 #### Types
 
-[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L554)
+[DatepickerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L557)
 
 #### Props
 
@@ -6492,7 +6490,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L606)
+[AndroidProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L609)
 
 #### Props
 
@@ -6504,7 +6502,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L610)
+[DefaultMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L613)
 
 #### Props
 
@@ -6516,7 +6514,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[DesktopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L590)
+[DesktopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L593)
 
 #### Props
 
@@ -6528,7 +6526,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[DeviceMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L585)
+[DeviceMockupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L588)
 
 #### Props
 
@@ -6539,7 +6537,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L614)
+[IosProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L617)
 
 #### Props
 
@@ -6551,7 +6549,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L598)
+[LaptopProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L601)
 
 #### Props
 
@@ -6563,7 +6561,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L618)
+[SmartwatchProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L621)
 
 #### Props
 
@@ -6575,7 +6573,7 @@ This component can be used to showcase applications built for smartwatches.
 
 #### Types
 
-[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L622)
+[TabletProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L625)
 
 #### Props
 
@@ -6646,7 +6644,7 @@ Use this example to show a navigational sidebar inside the drawer component.
   import { Drawer, CardPlaceholder, Button, Sidebar, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
   import { ChartPieSolid, CartSolid, GridSolid, MailBoxSolid, UsersSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   let open2 = $state(false);
-  let spanClass = "flex-1 ms-3 whitespace-nowrap";
+  let labelClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
 
 <div class="text-center">
@@ -6671,7 +6669,7 @@ Use this example to show a navigational sidebar inside the drawer component.
           <SidebarItem label="Billing" />
           <SidebarItem label="Invoice" />
         </SidebarDropdownWrapper>
-        <SidebarItem label="Kanban" classes={{ span: spanClass }}>
+        <SidebarItem label="Kanban" classes={{ label: labelClass }}>
           {#snippet icon()}
             <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
           {/snippet}
@@ -6679,7 +6677,7 @@ Use this example to show a navigational sidebar inside the drawer component.
             <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
           {/snippet}
         </SidebarItem>
-        <SidebarItem label="Inbox" classes={{ span: spanClass }}>
+        <SidebarItem label="Inbox" classes={{ label: labelClass }}>
           {#snippet icon()}
             <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
           {/snippet}
@@ -6973,7 +6971,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L642)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L645)
 
 #### Props
 
@@ -6993,7 +6991,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L646)
+[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L649)
 
 #### Props
 
@@ -7007,11 +7005,11 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L648)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L651)
 
 #### Props
 
-- closeIcon
+- closeIcon: closeIconSnippet
 - children
 - class: className
 - classes
@@ -7827,7 +7825,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L653)
+[DropdownProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L656)
 
 #### Props
 
@@ -7844,7 +7842,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L659)
+[DropdownDividerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L662)
 
 #### Props
 
@@ -7854,7 +7852,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L681)
+[DropdownGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L679)
 
 #### Props
 
@@ -7865,7 +7863,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L661)
+[DropdownHeaderProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L664)
 
 #### Props
 
@@ -7876,7 +7874,7 @@ Use `onclose` to run a callback when the dropdown closes. For more control over 
 
 #### Types
 
-[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L665)
+[DropdownItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L668)
 
 #### Props
 
@@ -8119,7 +8117,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L688)
+[FooterProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L686)
 
 #### Props
 
@@ -8131,7 +8129,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L693)
+[FooterBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L691)
 
 #### Props
 
@@ -8147,7 +8145,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L702)
+[FooterCopyrightProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L700)
 
 #### Props
 
@@ -8162,7 +8160,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L709)
+[FooterIconProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L707)
 
 #### Props
 
@@ -8175,7 +8173,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L719)
+[FooterLinkProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L717)
 
 #### Props
 
@@ -8188,7 +8186,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 #### Types
 
-[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L715)
+[FooterLinkGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L713)
 
 #### Props
 
@@ -8677,7 +8675,7 @@ This example shows how to get a complete control over the gallery images look an
 
 #### Types
 
-[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L998)
+[GalleryProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L996)
 
 #### Props
 
@@ -8898,7 +8896,7 @@ Use these examples to position the indicator component anywhere relative to the 
 
 #### Types
 
-[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1008)
+[IndicatorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1006)
 
 #### Props
 
@@ -9133,7 +9131,7 @@ This example can be used to denote function keys inside the KBD component.
 
 #### Types
 
-[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1019)
+[KbdProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1017)
 
 #### Props
 
@@ -9338,7 +9336,7 @@ When non-standard usage is needed you can omit the `items` props and add element
 
 #### Types
 
-[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1038)
+[ListgroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1036)
 
 #### Props
 
@@ -9356,7 +9354,7 @@ When non-standard usage is needed you can omit the `items` props and add element
 
 #### Types
 
-[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1048)
+[ListgroupItemProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1046)
 
 #### Props
 
@@ -9642,7 +9640,7 @@ This example can be used to also show a CTA button or link next to the menu item
           {item.name}
         </a>
       {/snippet}
-      {#snippet extra()}
+      {#snippet addon()}
         <h2 class="mt-4 mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
         <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
         <a href="/" class="text-primary-600 hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700 inline-flex items-center text-sm font-medium hover:underline">
@@ -9700,7 +9698,7 @@ This example can be used to also show a CTA with a backdround image inside the d
           {item.name}
         </a>
       {/snippet}
-      {#snippet extra()}
+      {#snippet addon()}
         <a
           href={resolve("/")}
           class="mt-4 block rounded-lg bg-gray-500 bg-cover bg-local bg-center bg-no-repeat p-4 text-left bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken"
@@ -9724,12 +9722,12 @@ This example can be used to also show a CTA with a backdround image inside the d
 
 #### Types
 
-[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1058)
+[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1056)
 
 #### Props
 
 - children
-- extra
+- addon
 - items: []
 - full
 - isOpen: $bindable(false)
@@ -10340,7 +10338,7 @@ This is perfect for advertisements, terms of service, or important announcements
 
 #### Types
 
-[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1067)
+[ModalProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1065)
 
 #### Props
 
@@ -10836,7 +10834,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1075)
+[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1073)
 
 #### Props
 
@@ -10849,7 +10847,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1097)
+[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1096)
 
 #### Props
 
@@ -10860,7 +10858,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099)
+[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1098)
 
 #### Props
 
@@ -10872,7 +10870,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1103)
+[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1102)
 
 #### Props
 
@@ -10886,7 +10884,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1120)
+[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1126)
 
 #### Props
 
@@ -10895,12 +10893,13 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 - activeClass
 - nonActiveClass
 - class: className
+- classes
 
 ### NavUl
 
 #### Types
 
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1108)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1107)
 
 #### Props
 
@@ -10917,7 +10916,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1090)
+[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1089)
 
 #### Props
 
@@ -11435,12 +11434,13 @@ Use the following example to add active class.
 - table
 - size
 - ariaLabel
+- class: className
 
 ### PaginationButton
 
 #### Types
 
-[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1156)
+[PaginationButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1163)
 
 #### Props
 
@@ -11470,7 +11470,7 @@ Use the following example to add active class.
 
 #### Types
 
-[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1162)
+[PaginationNavProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1169)
 
 #### Props
 
@@ -12589,6 +12589,7 @@ Use this component to show the review content from a user alongside the avatar, 
 - item2
 - item3
 - review
+- class: className
 - classes
 
 ### ScoreRating
@@ -12675,7 +12676,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -12703,7 +12704,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12711,7 +12712,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12756,7 +12757,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
     isDemoOpen = demoSidebarUi.isOpen;
     activeUrl = page.url.pathname;
   });
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const activeClass = "flex items-center p-2 text-base font-normal text-white bg-primary-600 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-800 dark:hover:bg-primary-800";
   const nonActiveClass = "flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700";
 </script>
@@ -12779,7 +12780,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12787,7 +12788,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12823,7 +12824,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const activeClass = "flex items-center p-2 text-base font-normal text-primary-900 bg-primary-200 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700";
   const nonActiveClass = "flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700";
   const demoSidebarUi = uiHelpers();
@@ -12853,7 +12854,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} active={false}>
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} active={false}>
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12861,7 +12862,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} active={false}>
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} active={false}>
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12899,7 +12900,7 @@ You can control icon class by changing the `class` prop in the `Icon` component.
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -12927,7 +12928,7 @@ You can control icon class by changing the `class` prop in the `Icon` component.
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12935,7 +12936,7 @@ You can control icon class by changing the `class` prop in the `Icon` component.
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -12973,7 +12974,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -13009,7 +13010,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="E-commerce" classes={{ btn: "p-2" }} isOpen={matchesRoute}>
+      <SidebarDropdownWrapper label="E-commerce" classes={{ trigger: "p-2" }} isOpen={matchesRoute}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13017,7 +13018,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
         <SidebarItem label="Billing" />
         <SidebarItem label="Invoice" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13025,7 +13026,7 @@ Use this sidebar example to create multi-level menu items by using the SidebarDr
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13106,7 +13107,7 @@ You can change the icons using `arrowup` and `arrowdown` slots.
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="E-commerce" classes={{ btn: "p-2" }} isOpen={matchesRoute}>
+      <SidebarDropdownWrapper label="E-commerce" classes={{ trigger: "p-2" }} isOpen={matchesRoute}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13146,7 +13147,7 @@ Separate the content inside the sidebar component by applying a border separator
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -13174,7 +13175,7 @@ Separate the content inside the sidebar component by applying a border separator
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13182,7 +13183,7 @@ Separate the content inside the sidebar component by applying a border separator
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13237,7 +13238,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -13265,7 +13266,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13273,7 +13274,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13326,7 +13327,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -13355,13 +13356,13 @@ Show the logo of your brand and link back to the homepage from the top part of t
   >
     <CloseButton onclick={closeDemoSidebar} color="gray" class="absolute top-3 right-1 p-2 md:hidden" />
     <SidebarGroup>
-      <SidebarBrand {site} classes={{ img: "h-6 w-6" }} />
+      <SidebarBrand {site} classes={{ logo: "h-6 w-6" }} />
       <SidebarItem label="Dashboard" href="/">
         {#snippet icon()}
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13369,7 +13370,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13407,7 +13408,7 @@ The following example shows how to use children for your branding.
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -13440,7 +13441,7 @@ The following example shows how to use children for your branding.
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13448,7 +13449,7 @@ The following example shows how to use children for your branding.
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13490,7 +13491,7 @@ Use the following example to show a close button in the sidebar for a small scre
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -13519,7 +13520,7 @@ Use the following example to show a close button in the sidebar for a small scre
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13527,7 +13528,7 @@ Use the following example to show a close button in the sidebar for a small scre
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13565,7 +13566,7 @@ You can use object for the sidebar items as the following example.
   let activeUrl = $state(page.url.pathname);
   import { ChartOutline, GridSolid, MailBoxSolid, UserSolid } from "flowbite-svelte-icons";
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const sidebarEx1 = [
     {
       label: "Dashboard",
@@ -13613,7 +13614,7 @@ You can use object for the sidebar items as the following example.
   >
     <SidebarGroup>
       {#each sidebarEx1 as { label, href, icon: Icon, subContent }}
-        <SidebarItem {label} {href} classes={{ span: spanClass }}>
+        <SidebarItem {label} {href} classes={{ label: labelClass }}>
           {#snippet icon()}
             <Icon class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"></Icon>
           {/snippet}
@@ -13649,7 +13650,7 @@ The following example shows to open only one dropdown when you click another dro
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -13677,26 +13678,26 @@ The following example shows to open only one dropdown when you click another dro
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="Shop" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Shop" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Products" href="" />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper label="Profile" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Profile" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Projects" href="/" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Sidebar" classes={{ span: spanClass }} href="/components/sidebar">
+      <SidebarItem label="Sidebar" classes={{ label: labelClass }} href="/components/sidebar">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
     <SidebarGroup border>
-      <SidebarDropdownWrapper label="Setting" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Setting" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <EditSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13728,7 +13729,7 @@ To open all dropdown menus, set `isSingle={false}`.
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -13757,26 +13758,26 @@ To open all dropdown menus, set `isSingle={false}`.
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="Shop" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Shop" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Products" href="" />
       </SidebarDropdownWrapper>
-      <SidebarDropdownWrapper label="Profile" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Profile" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <UserSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
         <SidebarItem label="Projects" href="/" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Sidebar" classes={{ span: spanClass }} href="/components/sidebar">
+      <SidebarItem label="Sidebar" classes={{ label: labelClass }} href="/components/sidebar">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
     </SidebarGroup>
     <SidebarGroup border>
-      <SidebarDropdownWrapper label="Setting" classes={{ btn: "p-2" }}>
+      <SidebarDropdownWrapper label="Setting" classes={{ trigger: "p-2" }}>
         {#snippet icon()}
           <EditSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13814,7 +13815,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
     duration: 700,
     easing: sineIn
   };
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(false);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -13842,7 +13843,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="E-commerce" classes={{ btn: "p-2" }} transition={fade} {params}>
+      <SidebarDropdownWrapper label="E-commerce" classes={{ trigger: "p-2" }} transition={fade} {params}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13850,7 +13851,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
         <SidebarItem label="Billing" />
         <SidebarItem label="Invoice" />
       </SidebarDropdownWrapper>
-      <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13858,7 +13859,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
           <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
         {/snippet}
       </SidebarItem>
-      <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+      <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
         {#snippet icon()}
           <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
@@ -13905,7 +13906,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
   import PlusPlaceholder from "$utils/PlusPlaceholder.svelte";
   import { page } from "$app/state";
   let activeUrl = $state(page.url.pathname);
-  const spanClass = "flex-1 ms-3 whitespace-nowrap";
+  const labelClass = "flex-1 ms-3 whitespace-nowrap";
   const demoSidebarUi = uiHelpers();
   let isDemoOpen = $state(true);
   const closeDemoSidebar = demoSidebarUi.close;
@@ -13935,7 +13936,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
               <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
           </SidebarItem>
-          <SidebarItem label="Kanban" classes={{ span: spanClass }} href="/">
+          <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
             {#snippet icon()}
               <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
@@ -13943,7 +13944,7 @@ You can add own transition by setting `transition` and `params` to `SidebarDropd
               <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
             {/snippet}
           </SidebarItem>
-          <SidebarItem label="Inbox" classes={{ span: spanClass }} href="/">
+          <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
             {#snippet icon()}
               <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
             {/snippet}
@@ -18247,7 +18248,7 @@ Use the following example to add different colors depends on state (past, curren
     {@const itemColor = getColorForStatus(appointment.status)}
     {@const IconComponent = getIconForStatus(appointment.status)}
 
-    <TimelineItem title={appointment.title} date={appointment.date} color={itemColor} isLast={isLastItem} dateFormat="full-date" classes={{ h3: "ml-4" }} datePrefix="Released on">
+    <TimelineItem title={appointment.title} date={appointment.date} color={itemColor} isLast={isLastItem} dateFormat="full-date" classes={{ title: "ml-4" }} datePrefix="Released on">
       {#snippet orientationSlot()}
         <span
           class="absolute -left-4 flex h-6 w-6 items-center justify-center rounded-full ring-8 ring-white dark:ring-gray-900 {appointment.status === 'completed'
@@ -19569,7 +19570,8 @@ Customize the video player appearance using the utility classes from Tailwind CS
 - src
 - srclang: "en"
 - label: "english_captions"
-- class: classname
+- class: className
+- classes
 
 
 ## References
@@ -19834,12 +19836,10 @@ You can use the property `inline` as the alternative.
 </script>
 
 <div class="flex flex-col gap-4 sm:flex-row">
-  <Checkbox checked color="red">Red</Checkbox>
-  <Checkbox checked color="green">Green</Checkbox>
-  <Checkbox checked color="purple">Purple</Checkbox>
-  <Checkbox checked color="teal">Teal</Checkbox>
-  <Checkbox checked color="yellow">Yellow</Checkbox>
-  <Checkbox checked color="orange">Orange</Checkbox>
+  <Checkbox checked>Brand</Checkbox>
+  <Checkbox checked color="success">Success</Checkbox>
+  <Checkbox checked color="warning">Warning</Checkbox>
+  <Checkbox checked color="danger">Danger</Checkbox>
   <Label class="flex items-center">
     <Checkbox checked inline class="text-sky-400 focus:ring-pink-500" />
     Your custom color
@@ -19945,7 +19945,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 #### Types
 
-[CheckboxProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L733)
+[CheckboxProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L731)
 
 #### Props
 
@@ -20130,7 +20130,7 @@ Add `clearable` and `clearableOnClick` props.
 
 #### Types
 
-[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L764)
+[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L762)
 
 #### Props
 
@@ -20143,6 +20143,13 @@ Add `clearable` and `clearableOnClick` props.
 - clearableOnClick
 - closeButtonProps
 
+
+## Migration Guide
+### Fileupload
+The following `tailwind-variants` slot names have been renamed.
+If you were previously using the old slot names, please update them to the new ones shown below.
+
+<Table items={migration} hoverable={true}/>
 
 ## References
 
@@ -21705,7 +21712,7 @@ The PhoneInput component provides customizable styling through six distinct clas
   import { PhoneInput } from "flowbite-svelte";
 </script>
 
-<PhoneInput aria-describedby="helper-text-explanation" id="phone-input" placeholder="123-456-7890" required classes={{ input: "border-blue-500", div: "ps-4" }} />
+<PhoneInput aria-describedby="helper-text-explanation" id="phone-input" placeholder="123-456-7890" required classes={{ input: "border-blue-500", iconWrapper: "ps-4" }} />
 ```
 
 ## See also
@@ -21721,7 +21728,7 @@ The PhoneInput component provides customizable styling through six distinct clas
 
 #### Types
 
-[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L828)
+[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L826)
 
 #### Props
 
@@ -22070,7 +22077,7 @@ Use `color` and `checkedClass` props to style the checked state:
 
 #### Types
 
-[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L845)
+[RadioProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L843)
 
 #### Props
 
@@ -22182,7 +22189,7 @@ Since we added `...restProps` to input field, you can contain the props which ar
 
 #### Types
 
-[RangeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L864)
+[RangeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L862)
 
 #### Props
 
@@ -22883,7 +22890,7 @@ Remember to connect the `clear` snippet's prop to trigger option removal.
 
 #### Types
 
-[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L887)
+[SelectProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L885)
 
 #### Props
 
@@ -23087,7 +23094,7 @@ If you want to build a chatroom component you will usually want to use a textare
       <FaceGrinOutline class="h-6 w-6" />
       <span class="sr-only">Add emoji</span>
     </ToolbarButton>
-    <Textarea id="chat" class="mx-4 w-full bg-white dark:bg-gray-800" classes={{ div: "w-full" }} rows={1} placeholder="Your message..." />
+    <Textarea id="chat" class="mx-4 w-full bg-white dark:bg-gray-800" classes={{ container: "w-full" }} rows={1} placeholder="Your message..." />
     <ToolbarButton type="submit" color="blue" class="text-primary-600 dark:text-primary-500 ml-6 rounded-full">
       <PaperPlaneOutline class="h-6 w-6 rotate-45" />
       <span class="sr-only">Send message</span>
@@ -23147,7 +23154,7 @@ If you want to build a chatroom component you will usually want to use a textare
 
 #### Types
 
-[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L969)
+[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L967)
 
 #### Props
 
@@ -23798,7 +23805,7 @@ Get started with the default toggle component example as a checkbox element to r
 <Toggle size="small">Small toggle</Toggle>
 <Toggle size="default" checked>Default toggle</Toggle>
 <Toggle size="large" checked>Large toggle</Toggle>
-<Toggle size={undefined} classes={{ span: customSize }}>Custom toggle</Toggle>
+<Toggle size={undefined} classes={{ track: customSize }}>Custom toggle</Toggle>
 ```
 
 ## Label for off state
@@ -23839,7 +23846,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 #### Types
 
-[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L983)
+[ToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L981)
 
 #### Props
 
@@ -24470,7 +24477,7 @@ Use this example to add a text in the middle of the HR component.
     Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams
     have richer contextual information to rapidly respond to requests, incidents, and changes.
   </P>
-  <Hr class="w-64">or</Hr>
+  <Hr class="w-64" classes={{ content: "dark:text-white" }}>or</Hr>
   <P>
     Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete
     audit trail for every change.
@@ -26351,7 +26358,7 @@ You can use `primary`, `secondary`, `gray`, `red`, `orange`, `amber`, `yellow`, 
 
 #### Types
 
-[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L448)
+[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L451)
 
 #### Props
 
@@ -26394,7 +26401,7 @@ See [examples](/docs-examples/extend/clipboard-manager) and [code](https://githu
 
 #### Types
 
-[ClipboardManagerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2197)
+[ClipboardManagerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2196)
 
 #### Props
 
@@ -26448,7 +26455,7 @@ See [examples](/docs-examples/extend/command-palette) and [code](https://github.
 
 #### Types
 
-[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2131)
+[CommandPaletteProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2130)
 
 #### Props
 
@@ -26731,10 +26738,11 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
   onAddCard={handleAddCard}
   classes={{
     column: "dark:bg-gray-800 shadow-lg",
-    card: "hover:shadow-xl transition-shadow",
-    cardTitle: "text-blue-600 font-bold",
-    addButton: "bg-blue-500 hover:bg-blue-600 text-white dark:text-white",
-    cardTags: "text-gray-900"
+    button: "bg-blue-500 hover:bg-blue-600 text-white dark:text-white"
+  }}
+  cardProps={{
+    class: "hover:shadow-xl transition-shadow",
+    title: "text-blue-600 font-bold"
   }}
 />
 
@@ -26845,9 +26853,11 @@ Pass columns array with bindable prop, handle onMove and onAddCard callbacks. Su
     onAddCard={handleAddCard}
     classes={{
       column: "dark:bg-gray-800 shadow-lg",
-      card: "hover:shadow-xl transition-shadow",
-      cardTitle: "dark:text-white font-bold",
-      addButton: "bg-primary-500 hover:bg-primary-600 text-white dark:text-white"
+      button: "bg-primary-500 hover:bg-primary-600 text-white dark:text-white"
+    }}
+    cardProps={{
+      class: "hover:shadow-xl transition-shadow",
+      title: "text-blue-600 font-bold"
     }}
   />
 </div>
@@ -26952,7 +26962,7 @@ For production, use a proper database (PostgreSQL, MongoDB, Supabase, etc.) with
 
 #### Types
 
-[KanbanBoardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2040)
+[KanbanBoardProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2039)
 
 #### Props
 
@@ -27001,26 +27011,26 @@ Import the `Progressradial` component in a script tag.
   import { Progressradial } from "flowbite-svelte";
 </script>
 
-<Progressradial progress={65} labelOutside="default" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="secondary" progress="65" labelOutside="secondary" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="gray" progress="65" labelOutside="gray" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="red" progress="65" labelOutside="red" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="orange" progress="65" labelOutside="orange" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="amber" progress="65" labelOutside="amber" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="yellow" progress="65" labelOutside="yellow" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="lime" progress="65" labelOutside="lime" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="green" progress="65" labelOutside="green" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="emerald" progress="65" labelOutside="emerald" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="teal" progress="65" labelOutside="teal" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="cyan" progress="65" labelOutside="cyan" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="sky" progress="65" labelOutside="sky" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="blue" progress="65" labelOutside="blue" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="indigo" progress="65" labelOutside="indigo" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="violet" progress="65" labelOutside="violet" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="purple" progress="65" labelOutside="purple" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="fuchsia" progress="65" labelOutside="fuchsia" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="pink" progress="65" labelOutside="pink" classes={{ outside: "dark:text-white" }} />
-<Progressradial color="rose" progress="65" labelOutside="rose" classes={{ outside: "dark:text-white" }} />
+<Progressradial progress={65} labelOutside="default" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="secondary" progress="65" labelOutside="secondary" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="gray" progress="65" labelOutside="gray" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="red" progress="65" labelOutside="red" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="orange" progress="65" labelOutside="orange" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="amber" progress="65" labelOutside="amber" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="yellow" progress="65" labelOutside="yellow" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="lime" progress="65" labelOutside="lime" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="green" progress="65" labelOutside="green" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="emerald" progress="65" labelOutside="emerald" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="teal" progress="65" labelOutside="teal" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="cyan" progress="65" labelOutside="cyan" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="sky" progress="65" labelOutside="sky" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="blue" progress="65" labelOutside="blue" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="indigo" progress="65" labelOutside="indigo" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="violet" progress="65" labelOutside="violet" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="purple" progress="65" labelOutside="purple" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="fuchsia" progress="65" labelOutside="fuchsia" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="pink" progress="65" labelOutside="pink" classes={{ labelWrapper: "dark:text-white" }} />
+<Progressradial color="rose" progress="65" labelOutside="rose" classes={{ labelWrapper: "dark:text-white" }} />
 ```
 
 ## Radius
@@ -27071,7 +27081,7 @@ Import the `Progressradial` component in a script tag.
   let progress = $state(45);
 </script>
 
-<Progressradial {progress} animate precision={1} labelOutside="Animation" labelInside tweenDuration={1000} easing={sineOut} classes={{ outside: "dark:text-white", label: "dark:text-white" }} />
+<Progressradial {progress} animate precision={1} labelOutside="Animation" labelInside tweenDuration={1000} easing={sineOut} classes={{ labelWrapper: "dark:text-white", label: "dark:text-white" }} />
 <Button onclick={() => (progress = Math.round(Math.random() * 100))} class="mx-auto mt-8 w-24">Randomize</Button>
 ```
 
@@ -27146,7 +27156,7 @@ See [examples](/docs-examples/extend/scroll-spy) and [code](https://github.com/t
 
 #### Types
 
-[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2146)
+[ScrollSpyProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2145)
 
 #### Props
 
@@ -27194,7 +27204,7 @@ See [examples](/docs-examples/extend/split-pane) and [code](https://github.com/t
 
 #### Types
 
-[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2057)
+[SplitPaneProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2056)
 
 #### Props
 
@@ -27678,7 +27688,7 @@ Use `disabled` to the `Tags` component.
 
 #### Types
 
-[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L918)
+[TagsProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L916)
 
 #### Props
 
@@ -27720,7 +27730,7 @@ See [examples](/docs-examples/extend/tour) and [code](https://github.com/themesb
 
 #### Types
 
-[TourProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2108)
+[TourProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2107)
 
 #### Props
 
@@ -28185,7 +28195,7 @@ Enable with `<VirtualList contained …>` or override via `classes.item`.
 
 #### Types
 
-[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2012)
+[VirtualListProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2011)
 
 #### Props
 
@@ -28237,7 +28247,7 @@ See [examples](/docs-examples/extend/virtual-masonry) and [code](https://github.
 
 #### Types
 
-[VirtualMasonryProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2173)
+[VirtualMasonryProps<T>](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2172)
 
 #### Props
 
@@ -28306,7 +28316,7 @@ Use `CloseButton` component to close a component.
 
 #### Types
 
-[CloseButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L156)
+[CloseButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L160)
 
 #### Props
 
@@ -28347,7 +28357,7 @@ Use the `Label` component when you need to add a label.
 
 #### Types
 
-[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L838)
+[LabelProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L836)
 
 #### Props
 
@@ -28508,7 +28518,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1126)
+[ToolbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1133)
 
 #### Props
 
@@ -28523,7 +28533,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1132)
+[ToolbarButtonProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1139)
 
 #### Props
 
@@ -28539,7 +28549,7 @@ Most often the textarea component is used as the main text field input element i
 
 #### Types
 
-[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1130)
+[ToolbarGroupProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1137)
 
 #### Props
 
@@ -28567,275 +28577,6 @@ Most often the textarea component is used as the main text field input element i
 <CompoAttributesViewer {components}/>
 
 ## References
-
-
----
-
-
-# ===== MCP =====
-
-<!-- Source: mcp/local-setup.md -->
-# Flowbite-Svelte MCP Local Setup
-
-
-## Local Setup
-
-The local (or stdio) version of the Flowbite-Svelte MCP server runs directly on your machine. You'll need to clone the repository and build it locally before configuring it with your MCP client.
-
-### Installation
-
-```bash
-git clone git@github.com:shinokada/flowbite-svelte-mcp.git
-cd flowbite-svelte-mcp
-pnpm install
-pnpm run copy:llm  # Fetch latest Flowbite-Svelte docs
-pnpm run build
-```
-
-### Configuration
-
-Here's how to set it up in common MCP clients:
-
-#### Claude Desktop
-
-1. In the Settings > Developer section, click on **Edit Config**
-2. This opens the folder containing `claude_desktop_config.json`
-3. Edit the file to include:
-
-```json
-{
-  "mcpServers": {
-    "flowbite-svelte": {
-      "command": "node",
-      "args": ["/absolute/path/to/flowbite-svelte-mcp/build/server.js"]
-    }
-  }
-}
-```
-
-**Important:** Replace `/absolute/path/to/` with the actual path where you cloned the repository.
-
-4. Restart Claude Desktop
-
-#### Testing
-
-After setup, test the installation by asking Claude:
-
-- "Search the flowbite-svelte docs for how to use an Accordion"
-- "What components are available in flowbite-svelte?"
-- "Show me how to use the Button component"
-
-### Troubleshooting
-
-**Tools not working:**
-1. Verify the path in your config is absolute and correct
-2. Ensure you ran `pnpm run build` after cloning
-3. Restart your MCP client after configuration changes
-4. Check the client's logs for error messages
-
-
----
-
-<!-- Source: mcp/overview.md -->
-# Flowbite-Svelte MCP Overview
-
-
-## Overview
-
-The Flowbite-Svelte MCP (__Model Context Protocol__) server can help your LLM or agent of choice write better Flowbite-Svelte code. It works by providing comprehensive component documentation, usage examples, and best practices for all Flowbite-Svelte components.
-
-## Usage
-
-To get the most out of the MCP server we recommend including the following prompt in your `AGENTS.md` (or `CLAUDE.md`, if using Claude Code. Or `GEMINI.md`, if using Gemini). Place this file in the __root of your project directory__ so it's automatically loaded by your AI coding assistant. This will tell the LLM which tools are available and when it's appropriate to use them.
-
-```md
-You are able to use the Flowbite-Svelte MCP server, where you have access to comprehensive Flowbite-Svelte component documentation. Here's how to use the available tools effectively:
-
-## Available MCP Tools:
-
-### 1. findComponent
-
-Use this FIRST to discover components by name or category. Returns component information including the documentation path.
-When asked about Flowbite-Svelte components, ALWAYS use this tool to locate the correct component before fetching documentation.
-Example queries: 'Button', 'CardPlaceholder', 'form checkbox'
-
-### 2. getComponentList
-
-Lists all available Flowbite-Svelte components with their categories.
-Use this to discover what components are available or to help users explore component options.
-
-### 3. getComponentDoc
-
-Retrieves full documentation content for a specific component. Accepts the component path found using findComponent.
-After calling findComponent, use this tool to fetch the complete documentation including usage examples, props, and best practices.
-
-### 4. searchDocs
-
-Performs full-text search across all Flowbite-Svelte documentation.
-Use this when you need to find specific information that might span multiple components or when the user asks about features or patterns.
-```
-
-## CLAUDE.md for Svelte and Flowbite-Svelte
-
-Use the following example for Svelte and Flowbite-Svelte:
-```md
-# Claude MCP Server Documentation
-
-This project uses multiple MCP servers to provide comprehensive documentation access.
-
-## Available MCP Servers
-
-### Svelte MCP Server
-
-You have access to comprehensive Svelte 5 and SvelteKit documentation. Here's how to use the available tools effectively:
-
-#### Available Tools:
-
-**1. list-sections**
-- Use this FIRST to discover all available documentation sections
-- Returns a structured list with titles, use_cases, and paths
-- When asked about Svelte or SvelteKit topics, ALWAYS use this tool at the start to find relevant sections
-
-**2. get-documentation**
-- Retrieves full documentation content for specific sections
-- Accepts single or multiple sections
-- After calling list-sections, you MUST analyze the returned documentation (especially the use_cases field) and then fetch ALL relevant sections for the user's task
-
-**3. svelte-autofixer**
-- Analyzes Svelte code and returns issues and suggestions
-- You MUST use this tool whenever writing Svelte code before sending it to the user
-- Keep calling it until no issues or suggestions are returned
-
-**4. playground-link**
-- Generates a Svelte Playground link with the provided code
-- After completing the code, ask the user if they want a playground link
-- NEVER call this if code was written to files in their project
-
-### Flowbite-Svelte MCP Server
-
-You have access to comprehensive Flowbite-Svelte component documentation. Here's how to use the available tools effectively:
-
-#### Available Tools:
-
-**1. findComponent**
-- Use this FIRST to discover components by name or category
-- Returns component information including the documentation path
-- When asked about Flowbite-Svelte components, ALWAYS use this tool to locate the correct component before fetching documentation
-- Example queries: 'Button', 'CardPlaceholder', 'form checkbox'
-
-**2. getComponentList**
-- Lists all available Flowbite-Svelte components with their categories
-- Use this to discover what components are available or to help users explore component options
-
-**3. getComponentDoc**
-- Retrieves full documentation content for a specific component
-- Accepts the component path found using findComponent
-- After calling findComponent, use this tool to fetch complete documentation including usage examples, props, and best practices
-
-**4. searchDocs**
-- Performs full-text search across all Flowbite-Svelte documentation
-- Use this when you need to find specific information that might span multiple components or when the user asks about features or patterns
-
-## Workflow Guidelines
-
-### When building Svelte components with Flowbite-Svelte:
-
-1. **Start with Svelte documentation**: Use `list-sections` to understand which Svelte concepts are needed
-2. **Fetch relevant Svelte docs**: Use `get-documentation` to get all necessary Svelte sections
-3. **Find Flowbite-Svelte components**: Use `findComponent` to locate the UI components needed
-4. **Get component details**: Use `getComponentDoc` to fetch usage examples and props
-5. **Write the code**: Combine Svelte patterns with Flowbite-Svelte components
-6. **Validate the code**: Use `svelte-autofixer` to check for issues
-7. **Offer playground**: Ask if the user wants a playground link (only if not writing to files)
-
-### Best Practices:
-
-- Always prioritize Svelte 5 runes and modern patterns
-- Use Flowbite-Svelte components for consistent UI design
-- Validate all code with svelte-autofixer before delivering
-- Keep documentation lookups efficient by fetching multiple sections at once
-```
-
----
-
-<!-- Source: mcp/prompts.md -->
-# Flowbite-Svelte MCP Prompts
-
-
-## Effective Prompts
-
-To get the most out of the Flowbite-Svelte MCP server, use clear, specific prompts that help the AI understand what you need.
-
-### Discovering Components
-
-**Good prompts:**
-- "What flowbite-svelte components are available for forms?"
-- "Show me all flowbite-svelte card-related components"
-- "Find flowbite-svelte components for navigation"
-
-**Why they work:** These prompts trigger the `findComponent` or `getComponentList` tools to search the component library.
-
-### Getting Documentation
-
-**Good prompts:**
-- "How do I use the flowbite-svelte Button component?"
-- "Show me the props for the flowbite-svelte Modal component"
-- "What events does the flowbite-svelte Dropdown component emit?"
-
-**Why they work:** After finding a component, these prompts fetch full documentation including usage examples, props, events, and slots.
-
-### Implementation Help
-
-**Good prompts:**
-- "Create a form with email and password inputs using flowbite-svelte"
-- "Build a responsive navbar with a dropdown menu using flowbite-svelte"
-- "Show me how to implement a data table with pagination using flowbite-svelte"
-
-**Why they work:** The AI can use component documentation to generate accurate, working code with proper imports and props.
-
-### Searching Documentation
-
-**Good prompts:**
-- "How do I customize colors in flowbite-svelte?"
-- "Search the flowbite-svelte docs for dark mode implementation"
-- "Find information about flowbite-svelte TypeScript types"
-
-**Why they work:** These use the `searchDocs` tool for full-text search across all documentation.
-
-### Best Practices
-
-1. **Be specific about components** - Use exact component names when possible
-2. **Ask for examples** - Request code examples to see components in action
-3. **Mention your framework version** - Specify if you're using Svelte 4 or 5
-4. **Request explanations** - Ask the AI to explain props or patterns you don't understand
-
-
----
-
-<!-- Source: mcp/remote-setup.md -->
-# Flowbite-Svelte MCP Remote Setup
-
-
-## Remote Setup
-
-Currently, the Flowbite-Svelte MCP server is only available as a **local (stdio) installation**. There is no hosted remote endpoint available at this time.
-
-### Why Local Only?
-
-The Flowbite-Svelte MCP server is designed to run locally on your machine for several reasons:
-
-- **Privacy**: Your queries and usage patterns stay on your machine
-- **Performance**: No network latency for documentation lookups
-- **Offline Access**: Works without an internet connection
-- **Customization**: You can modify and extend the server for your needs
-
-### Using the Local Version
-
-Please refer to the [Local Setup](/docs/mcp/local-setup) guide to install and configure the Flowbite-Svelte MCP server on your machine.
-
-### Future Considerations
-
-If there's significant community interest in a hosted remote version, it may be considered for future development. For now, the local installation provides the best experience with full access to all Flowbite-Svelte component documentation.
 
 
 ---
@@ -30644,6 +30385,275 @@ Either using the above example or use button components to create your custom te
 meta={{hideOutput: true}}
 codeString={exampleRawModules['./examples/wysiwyg/CustomEditor.svelte']}
 />
+
+
+---
+
+
+# ===== MCP =====
+
+<!-- Source: mcp/local-setup.md -->
+# Flowbite-Svelte MCP Local Setup
+
+
+## Local Setup
+
+The local (or stdio) version of the Flowbite-Svelte MCP server runs directly on your machine. You'll need to clone the repository and build it locally before configuring it with your MCP client.
+
+### Installation
+
+```bash
+git clone git@github.com:shinokada/flowbite-svelte-mcp.git
+cd flowbite-svelte-mcp
+pnpm install
+pnpm run copy:llm  # Fetch latest Flowbite-Svelte docs
+pnpm run build
+```
+
+### Configuration
+
+Here's how to set it up in common MCP clients:
+
+#### Claude Desktop
+
+1. In the Settings > Developer section, click on **Edit Config**
+2. This opens the folder containing `claude_desktop_config.json`
+3. Edit the file to include:
+
+```json
+{
+  "mcpServers": {
+    "flowbite-svelte": {
+      "command": "node",
+      "args": ["/absolute/path/to/flowbite-svelte-mcp/build/server.js"]
+    }
+  }
+}
+```
+
+**Important:** Replace `/absolute/path/to/` with the actual path where you cloned the repository.
+
+4. Restart Claude Desktop
+
+#### Testing
+
+After setup, test the installation by asking Claude:
+
+- "Search the flowbite-svelte docs for how to use an Accordion"
+- "What components are available in flowbite-svelte?"
+- "Show me how to use the Button component"
+
+### Troubleshooting
+
+**Tools not working:**
+1. Verify the path in your config is absolute and correct
+2. Ensure you ran `pnpm run build` after cloning
+3. Restart your MCP client after configuration changes
+4. Check the client's logs for error messages
+
+
+---
+
+<!-- Source: mcp/overview.md -->
+# Flowbite-Svelte MCP Overview
+
+
+## Overview
+
+The Flowbite-Svelte MCP (__Model Context Protocol__) server can help your LLM or agent of choice write better Flowbite-Svelte code. It works by providing comprehensive component documentation, usage examples, and best practices for all Flowbite-Svelte components.
+
+## Usage
+
+To get the most out of the MCP server we recommend including the following prompt in your `AGENTS.md` (or `CLAUDE.md`, if using Claude Code. Or `GEMINI.md`, if using Gemini). Place this file in the __root of your project directory__ so it's automatically loaded by your AI coding assistant. This will tell the LLM which tools are available and when it's appropriate to use them.
+
+```md
+You are able to use the Flowbite-Svelte MCP server, where you have access to comprehensive Flowbite-Svelte component documentation. Here's how to use the available tools effectively:
+
+## Available MCP Tools:
+
+### 1. findComponent
+
+Use this FIRST to discover components by name or category. Returns component information including the documentation path.
+When asked about Flowbite-Svelte components, ALWAYS use this tool to locate the correct component before fetching documentation.
+Example queries: 'Button', 'CardPlaceholder', 'form checkbox'
+
+### 2. getComponentList
+
+Lists all available Flowbite-Svelte components with their categories.
+Use this to discover what components are available or to help users explore component options.
+
+### 3. getComponentDoc
+
+Retrieves full documentation content for a specific component. Accepts the component path found using findComponent.
+After calling findComponent, use this tool to fetch the complete documentation including usage examples, props, and best practices.
+
+### 4. searchDocs
+
+Performs full-text search across all Flowbite-Svelte documentation.
+Use this when you need to find specific information that might span multiple components or when the user asks about features or patterns.
+```
+
+## CLAUDE.md for Svelte and Flowbite-Svelte
+
+Use the following example for Svelte and Flowbite-Svelte:
+```md
+# Claude MCP Server Documentation
+
+This project uses multiple MCP servers to provide comprehensive documentation access.
+
+## Available MCP Servers
+
+### Svelte MCP Server
+
+You have access to comprehensive Svelte 5 and SvelteKit documentation. Here's how to use the available tools effectively:
+
+#### Available Tools:
+
+**1. list-sections**
+- Use this FIRST to discover all available documentation sections
+- Returns a structured list with titles, use_cases, and paths
+- When asked about Svelte or SvelteKit topics, ALWAYS use this tool at the start to find relevant sections
+
+**2. get-documentation**
+- Retrieves full documentation content for specific sections
+- Accepts single or multiple sections
+- After calling list-sections, you MUST analyze the returned documentation (especially the use_cases field) and then fetch ALL relevant sections for the user's task
+
+**3. svelte-autofixer**
+- Analyzes Svelte code and returns issues and suggestions
+- You MUST use this tool whenever writing Svelte code before sending it to the user
+- Keep calling it until no issues or suggestions are returned
+
+**4. playground-link**
+- Generates a Svelte Playground link with the provided code
+- After completing the code, ask the user if they want a playground link
+- NEVER call this if code was written to files in their project
+
+### Flowbite-Svelte MCP Server
+
+You have access to comprehensive Flowbite-Svelte component documentation. Here's how to use the available tools effectively:
+
+#### Available Tools:
+
+**1. findComponent**
+- Use this FIRST to discover components by name or category
+- Returns component information including the documentation path
+- When asked about Flowbite-Svelte components, ALWAYS use this tool to locate the correct component before fetching documentation
+- Example queries: 'Button', 'CardPlaceholder', 'form checkbox'
+
+**2. getComponentList**
+- Lists all available Flowbite-Svelte components with their categories
+- Use this to discover what components are available or to help users explore component options
+
+**3. getComponentDoc**
+- Retrieves full documentation content for a specific component
+- Accepts the component path found using findComponent
+- After calling findComponent, use this tool to fetch complete documentation including usage examples, props, and best practices
+
+**4. searchDocs**
+- Performs full-text search across all Flowbite-Svelte documentation
+- Use this when you need to find specific information that might span multiple components or when the user asks about features or patterns
+
+## Workflow Guidelines
+
+### When building Svelte components with Flowbite-Svelte:
+
+1. **Start with Svelte documentation**: Use `list-sections` to understand which Svelte concepts are needed
+2. **Fetch relevant Svelte docs**: Use `get-documentation` to get all necessary Svelte sections
+3. **Find Flowbite-Svelte components**: Use `findComponent` to locate the UI components needed
+4. **Get component details**: Use `getComponentDoc` to fetch usage examples and props
+5. **Write the code**: Combine Svelte patterns with Flowbite-Svelte components
+6. **Validate the code**: Use `svelte-autofixer` to check for issues
+7. **Offer playground**: Ask if the user wants a playground link (only if not writing to files)
+
+### Best Practices:
+
+- Always prioritize Svelte 5 runes and modern patterns
+- Use Flowbite-Svelte components for consistent UI design
+- Validate all code with svelte-autofixer before delivering
+- Keep documentation lookups efficient by fetching multiple sections at once
+```
+
+---
+
+<!-- Source: mcp/prompts.md -->
+# Flowbite-Svelte MCP Prompts
+
+
+## Effective Prompts
+
+To get the most out of the Flowbite-Svelte MCP server, use clear, specific prompts that help the AI understand what you need.
+
+### Discovering Components
+
+**Good prompts:**
+- "What flowbite-svelte components are available for forms?"
+- "Show me all flowbite-svelte card-related components"
+- "Find flowbite-svelte components for navigation"
+
+**Why they work:** These prompts trigger the `findComponent` or `getComponentList` tools to search the component library.
+
+### Getting Documentation
+
+**Good prompts:**
+- "How do I use the flowbite-svelte Button component?"
+- "Show me the props for the flowbite-svelte Modal component"
+- "What events does the flowbite-svelte Dropdown component emit?"
+
+**Why they work:** After finding a component, these prompts fetch full documentation including usage examples, props, events, and slots.
+
+### Implementation Help
+
+**Good prompts:**
+- "Create a form with email and password inputs using flowbite-svelte"
+- "Build a responsive navbar with a dropdown menu using flowbite-svelte"
+- "Show me how to implement a data table with pagination using flowbite-svelte"
+
+**Why they work:** The AI can use component documentation to generate accurate, working code with proper imports and props.
+
+### Searching Documentation
+
+**Good prompts:**
+- "How do I customize colors in flowbite-svelte?"
+- "Search the flowbite-svelte docs for dark mode implementation"
+- "Find information about flowbite-svelte TypeScript types"
+
+**Why they work:** These use the `searchDocs` tool for full-text search across all documentation.
+
+### Best Practices
+
+1. **Be specific about components** - Use exact component names when possible
+2. **Ask for examples** - Request code examples to see components in action
+3. **Mention your framework version** - Specify if you're using Svelte 4 or 5
+4. **Request explanations** - Ask the AI to explain props or patterns you don't understand
+
+
+---
+
+<!-- Source: mcp/remote-setup.md -->
+# Flowbite-Svelte MCP Remote Setup
+
+
+## Remote Setup
+
+Currently, the Flowbite-Svelte MCP server is only available as a **local (stdio) installation**. There is no hosted remote endpoint available at this time.
+
+### Why Local Only?
+
+The Flowbite-Svelte MCP server is designed to run locally on your machine for several reasons:
+
+- **Privacy**: Your queries and usage patterns stay on your machine
+- **Performance**: No network latency for documentation lookups
+- **Offline Access**: Works without an internet connection
+- **Customization**: You can modify and extend the server for your needs
+
+### Using the Local Version
+
+Please refer to the [Local Setup](/docs/mcp/local-setup) guide to install and configure the Flowbite-Svelte MCP server on your machine.
+
+### Future Considerations
+
+If there's significant community interest in a hosted remote version, it may be considered for future development. For now, the local installation provides the best experience with full access to all Flowbite-Svelte component documentation.
 
 
 ---

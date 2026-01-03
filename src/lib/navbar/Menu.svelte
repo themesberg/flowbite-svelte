@@ -35,7 +35,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1075)
+[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1073)
 ## Props
 @prop size = "24"
 @prop color = "currentColor"

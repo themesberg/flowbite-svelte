@@ -17,7 +17,7 @@
     ["reference", ""],
     ["middlewares", "[dom.flip(), dom.shift()]"],
     ["class: className", "\"\""],
-    ["arrowClass", "\"\""],
+    ["arrowClass", ""],
     ["isOpen", "$bindable(false)"],
     ["transitionParams", ""],
     ["transition", "fade"],

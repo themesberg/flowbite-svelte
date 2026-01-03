@@ -357,7 +357,7 @@ The Badge component follows accessibility best practices:
 
 #### Types
 
-[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L261)
+[BadgeProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L264)
 
 #### Props
 

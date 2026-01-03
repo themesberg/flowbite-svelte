@@ -244,7 +244,7 @@ describe("Timepicker - Callback Functionality", () => {
     // For time inputs, directly set the value and fire the input event
     input.value = "11:45";
     await fireEvent.input(input);
-    
+
     const result = await screen.findByTestId("callback-result");
     if (result) {
       const data = JSON.parse(result.textContent || "{}");

@@ -1,6 +1,6 @@
 import { cleanup, render, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi } from "vitest";
-import userEvent from '@testing-library/user-event'
+import userEvent from "@testing-library/user-event";
 
 import TextareaBasicTest from "./textarea-basic.test.svelte";
 import TextareaClearableTest from "./textarea-clearable.test.svelte";

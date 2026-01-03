@@ -60,6 +60,7 @@
 @prop placement = "top"
 @prop cords
 @prop class: className = ""
+@prop ...restProps
 -->
 
 <style>

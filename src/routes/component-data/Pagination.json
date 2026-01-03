@@ -12,6 +12,7 @@
     ["nextContent", ""],
     ["table", ""],
     ["size", ""],
-    ["ariaLabel", ""]
+    ["ariaLabel", ""],
+    ["class: className", ""]
   ]
 }

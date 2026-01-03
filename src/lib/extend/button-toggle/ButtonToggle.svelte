@@ -75,7 +75,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Type
-[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L448)
+[ButtonToggleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L451)
 ## Props
 @prop value
 @prop selected = false

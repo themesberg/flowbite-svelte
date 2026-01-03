@@ -259,7 +259,7 @@ This example can be used to also show a CTA button or link next to the menu item
           {item.name}
         </a>
       {/snippet}
-      {#snippet extra()}
+      {#snippet addon()}
         <h2 class="mt-4 mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
         <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
         <a href="/" class="text-primary-600 hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700 inline-flex items-center text-sm font-medium hover:underline">
@@ -317,7 +317,7 @@ This example can be used to also show a CTA with a backdround image inside the d
           {item.name}
         </a>
       {/snippet}
-      {#snippet extra()}
+      {#snippet addon()}
         <a
           href={resolve("/")}
           class="mt-4 block rounded-lg bg-gray-500 bg-cover bg-local bg-center bg-no-repeat p-4 text-left bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken"
@@ -341,12 +341,12 @@ This example can be used to also show a CTA with a backdround image inside the d
 
 #### Types
 
-[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1058)
+[MegaMenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1056)
 
 #### Props
 
 - children
-- extra
+- addon
 - items: []
 - full
 - isOpen: $bindable(false)

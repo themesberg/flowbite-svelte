@@ -174,7 +174,7 @@ If you want to build a chatroom component you will usually want to use a textare
       <FaceGrinOutline class="h-6 w-6" />
       <span class="sr-only">Add emoji</span>
     </ToolbarButton>
-    <Textarea id="chat" class="mx-4 w-full bg-white dark:bg-gray-800" classes={{ div: "w-full" }} rows={1} placeholder="Your message..." />
+    <Textarea id="chat" class="mx-4 w-full bg-white dark:bg-gray-800" classes={{ container: "w-full" }} rows={1} placeholder="Your message..." />
     <ToolbarButton type="submit" color="blue" class="text-primary-600 dark:text-primary-500 ml-6 rounded-full">
       <PaperPlaneOutline class="h-6 w-6 rotate-45" />
       <span class="sr-only">Send message</span>
@@ -234,7 +234,7 @@ If you want to build a chatroom component you will usually want to use a textare
 
 #### Types
 
-[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L969)
+[TextareaProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L967)
 
 #### Props
 

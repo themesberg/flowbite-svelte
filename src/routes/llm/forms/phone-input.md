@@ -321,7 +321,7 @@ The PhoneInput component provides customizable styling through six distinct clas
   import { PhoneInput } from "flowbite-svelte";
 </script>
 
-<PhoneInput aria-describedby="helper-text-explanation" id="phone-input" placeholder="123-456-7890" required classes={{ input: "border-blue-500", div: "ps-4" }} />
+<PhoneInput aria-describedby="helper-text-explanation" id="phone-input" placeholder="123-456-7890" required classes={{ input: "border-blue-500", iconWrapper: "ps-4" }} />
 ```
 
 ## See also
@@ -337,7 +337,7 @@ The PhoneInput component provides customizable styling through six distinct clas
 
 #### Types
 
-[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L828)
+[PhoneInputProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L826)
 
 #### Props
 

@@ -287,7 +287,7 @@ The Banner component follows accessibility best practices:
 
 #### Types
 
-[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L275)
+[BannerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L278)
 
 #### Props
 

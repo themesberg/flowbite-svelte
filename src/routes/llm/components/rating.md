@@ -410,6 +410,7 @@ Use this component to show the review content from a user alongside the avatar, 
 - item2
 - item3
 - review
+- class: className
 - classes
 
 ### ScoreRating

@@ -52,7 +52,7 @@ Use this example to show a navigational sidebar inside the drawer component.
   import { Drawer, CardPlaceholder, Button, Sidebar, SidebarWrapper, SidebarDropdownWrapper, SidebarGroup, SidebarItem } from "flowbite-svelte";
   import { ChartPieSolid, CartSolid, GridSolid, MailBoxSolid, UsersSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   let open2 = $state(false);
-  let spanClass = "flex-1 ms-3 whitespace-nowrap";
+  let labelClass = "flex-1 ms-3 whitespace-nowrap";
 </script>
 
 <div class="text-center">
@@ -77,7 +77,7 @@ Use this example to show a navigational sidebar inside the drawer component.
           <SidebarItem label="Billing" />
           <SidebarItem label="Invoice" />
         </SidebarDropdownWrapper>
-        <SidebarItem label="Kanban" classes={{ span: spanClass }}>
+        <SidebarItem label="Kanban" classes={{ label: labelClass }}>
           {#snippet icon()}
             <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
           {/snippet}
@@ -85,7 +85,7 @@ Use this example to show a navigational sidebar inside the drawer component.
             <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
           {/snippet}
         </SidebarItem>
-        <SidebarItem label="Inbox" classes={{ span: spanClass }}>
+        <SidebarItem label="Inbox" classes={{ label: labelClass }}>
           {#snippet icon()}
             <MailBoxSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
           {/snippet}
@@ -379,7 +379,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L642)
+[DrawerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L645)
 
 #### Props
 
@@ -399,7 +399,7 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L646)
+[DrawerHandleProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L649)
 
 #### Props
 
@@ -413,11 +413,11 @@ In this example we also use the utility `DrawerHandle` component to toggle the v
 
 #### Types
 
-[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L648)
+[DrawerheadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L651)
 
 #### Props
 
-- closeIcon
+- closeIcon: closeIconSnippet
 - children
 - class: className
 - classes

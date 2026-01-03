@@ -465,7 +465,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1075)
+[MenuProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1073)
 
 #### Props
 
@@ -478,7 +478,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1097)
+[NavBrandProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1096)
 
 #### Props
 
@@ -489,7 +489,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1099)
+[NavContainerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1098)
 
 #### Props
 
@@ -501,7 +501,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1103)
+[NavHamburgerProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1102)
 
 #### Props
 
@@ -515,7 +515,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1120)
+[NavLiProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1126)
 
 #### Props
 
@@ -524,12 +524,13 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 - activeClass
 - nonActiveClass
 - class: className
+- classes
 
 ### NavUl
 
 #### Types
 
-[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1108)
+[NavUlProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1107)
 
 #### Props
 
@@ -546,7 +547,7 @@ Use `breakpoint="sm" | "md" (default) | "lg" | "xl"` prop to change the breakpoi
 
 #### Types
 
-[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1090)
+[NavbarProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1089)
 
 #### Props
 

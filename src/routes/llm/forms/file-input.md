@@ -155,7 +155,7 @@ Add `clearable` and `clearableOnClick` props.
 
 #### Types
 
-[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L764)
+[FileuploadProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L762)
 
 #### Props
 
@@ -168,6 +168,13 @@ Add `clearable` and `clearableOnClick` props.
 - clearableOnClick
 - closeButtonProps
 
+
+## Migration Guide
+### Fileupload
+The following `tailwind-variants` slot names have been renamed.
+If you were previously using the old slot names, please update them to the new ones shown below.
+
+<Table items={migration} hoverable={true}/>
 
 ## References
 
