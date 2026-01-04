@@ -140,7 +140,7 @@ describe("Layout Component", () => {
       render(LayoutWithContentTest);
       const layouts = document.querySelectorAll('[data-scope="layout"]');
 
-      expect(layouts.length).toBeGreaterThan(0);
+      expect(layouts.length).toBe(3);
       layouts.forEach((layout) => {
         expect(layout).toHaveAttribute("data-scope", "layout");
       });
