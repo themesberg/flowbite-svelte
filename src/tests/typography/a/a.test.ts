@@ -22,7 +22,7 @@ describe("Anchor (A) Component", () => {
 
       expect(anchor).toBeInTheDocument();
       expect(anchor.tagName).toBe("A");
-      expect(anchor).toHaveAttribute("href", "/test");
+      expect(anchor).toHaveAttribute("href", "https://example.com");
       expect(anchor).toHaveAttribute("data-scope", "anchor");
       expect(anchor).toHaveAttribute("data-part", "base");
     });
@@ -137,7 +137,7 @@ describe("Anchor (A) Component", () => {
 
       // In anchor mode, we can't easily test if navigation would happen,
       // but we can verify the href is present
-      expect(anchor).toHaveAttribute("href", "/test");
+      expect(anchor).toHaveAttribute("href", "https://example.com");
     });
   });
 });

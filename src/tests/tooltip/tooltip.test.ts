@@ -1,5 +1,6 @@
-import { cleanup, render, screen } from "@testing-library/svelte";
+import { cleanup, render, screen, waitFor, fireEvent } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, beforeEach } from "vitest";
+import userEvent from "@testing-library/user-event";
 
 import BasicTooltipTest from "./basic-tooltip.test.svelte";
 import PlacementTooltipTest from "./placement-tooltip.test.svelte";
@@ -62,6 +63,50 @@ describe("Tooltip Component", () => {
       expect(trigger).toBeInTheDocument();
       expect(trigger.tabIndex).toBeGreaterThanOrEqual(0); // Should be focusable
     });
+
+    test("hover trigger shows tooltip on mouse enter", async () => {
+      render(BasicTooltipTest);
+      const trigger = screen.getByTestId("trigger-button");
+
+      // Initially, tooltip should not be in the DOM
+      expect(screen.queryByTestId("tooltip-content")).not.toBeInTheDocument();
+
+      // Show on hover
+      await fireEvent.mouseEnter(trigger);
+      await waitFor(() => {
+        const tooltip = screen.queryByTestId("tooltip-content");
+        expect(tooltip).toBeInTheDocument();
+        expect(tooltip).toBeVisible();
+      });
+
+      // Hide on leave
+      await fireEvent.mouseLeave(trigger);
+      await waitFor(() => {
+        expect(screen.queryByTestId("tooltip-content")).not.toBeInTheDocument();
+      });
+    });
+
+    test("click trigger toggles tooltip on click", async () => {
+      render(ClickTriggerTooltipTest);
+      const trigger = screen.getByTestId("click-trigger");
+
+      // Initially, tooltip should not be in the DOM
+      expect(screen.queryByTestId("click-tooltip")).not.toBeInTheDocument();
+
+      // Show on click
+      await fireEvent.mouseDown(trigger);
+      await waitFor(() => {
+        const tooltip = screen.queryByTestId("click-tooltip");
+        expect(tooltip).toBeInTheDocument();
+        expect(tooltip).toBeVisible();
+      });
+
+      // Hide on second click
+      await fireEvent.mouseDown(trigger);
+      await waitFor(() => {
+        expect(screen.queryByTestId("click-tooltip")).not.toBeInTheDocument();
+      });
+    });
   });
 
   describe("Arrow Visibility", () => {
@@ -114,15 +159,52 @@ describe("Tooltip Component", () => {
       isOpenState.isOpen = false;
     });
 
-    test("isOpen binding reflects tooltip state", async () => {
+    test("isOpen changes to true when tooltip is shown", async () => {
+      const user = userEvent.setup();
       render(IsOpenTooltipTest);
       const trigger = screen.getByTestId("open-trigger");
 
       expect(isOpenState.isOpen).toBe(false);
-      expect(trigger).toBeInTheDocument();
+
+      await user.hover(trigger);
+      await waitFor(() => expect(isOpenState.isOpen).toBe(true));
+    });
+
+    test("onbeforetoggle is called when tooltip is triggered", async () => {
+      const user = userEvent.setup();
+      render(EventTooltipTest);
+      const trigger = screen.getByTestId("event-trigger");
+
+      expect(eventState.beforeToggleCalled).toBe(false);
+
+      await user.hover(trigger);
+      await waitFor(() => expect(eventState.beforeToggleCalled).toBe(true));
+      expect(eventState.eventReceived).not.toBeNull();
+    });
+
+    test("isOpen binding reflects tooltip state", async () => {
+      render(IsOpenTooltipTest);
+      const trigger = screen.getByTestId("open-trigger");
 
       // Initial state should be false
       expect(isOpenState.isOpen).toBe(false);
+      expect(trigger).toBeInTheDocument();
+
+      // Trigger the tooltip (hover or click depending on trigger type)
+      await fireEvent.mouseEnter(trigger);
+
+      // State should update to true (wait for async state update)
+      await waitFor(() => {
+        expect(isOpenState.isOpen).toBe(true);
+      });
+
+      // Close the tooltip
+      await fireEvent.mouseLeave(trigger);
+
+      // State should update back to false (wait for async state update)
+      await waitFor(() => {
+        expect(isOpenState.isOpen).toBe(false);
+      });
     });
   });
 
@@ -140,6 +222,16 @@ describe("Tooltip Component", () => {
 
       // Verify initial state
       expect(eventState.beforeToggleCalled).toBe(false);
+      expect(eventState.eventReceived).toBe(null);
+
+      // Trigger the tooltip to invoke the callback
+      await fireEvent.mouseEnter(trigger);
+
+      // Verify the callback was invoked
+      await waitFor(() => {
+        expect(eventState.beforeToggleCalled).toBe(true);
+        expect(eventState.eventReceived).not.toBe(null);
+      });
     });
   });
 

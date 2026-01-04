@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Activity, ActivityItem } from "$lib";
   import type { ActivityType } from "$lib/types";
-  import { TEST_IMAGE_SVG } from "../fixtures/test-images"
+  import { TEST_IMAGE_SVG } from "../fixtures/test-images";
 
   const activities: ActivityType[] = [
     {

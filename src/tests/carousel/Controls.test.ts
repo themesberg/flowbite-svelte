@@ -52,26 +52,48 @@ describe("Controls Component", () => {
       const user = userEvent.setup();
       render(CarouselWithControlsTest);
 
-      const buttons = screen.getAllByRole("button");
-      const controlButtons = buttons.filter((btn) => btn.classList.contains("flex") && btn.classList.contains("absolute"));
-
       // Get carousel by aria-label (it has role="button" for dragging)
       const carousel = screen.getByLabelText("Draggable Carousel");
       expect(carousel).toBeInTheDocument();
 
-      // Click next button
-      await user.click(controlButtons[1]);
+      // Wait for carousel to initialize
+      await new Promise((resolve) => setTimeout(resolve, 300));
 
-      // Verify buttons are still in document and functional
-      expect(controlButtons[0]).toBeInTheDocument();
-      expect(controlButtons[1]).toBeInTheDocument();
+      // Get fresh button references before each interaction
+      let buttons = screen.getAllByRole("button");
+      let controlButtons = buttons.filter((btn) => btn.classList.contains("flex") && btn.classList.contains("absolute"));
 
-      // Click previous button
-      await user.click(controlButtons[0]);
+      expect(controlButtons.length).toBe(2);
+
+      // Click next button (right/end button)
+      const nextButton = controlButtons.find((btn) => btn.classList.contains("end-0"));
+      expect(nextButton).toBeInTheDocument();
+      await user.click(nextButton!);
+
+      // Wait for carousel cooldown (slideDuration * 0.25 = 1000 * 0.25 = 250ms minimum)
+      await new Promise((resolve) => setTimeout(resolve, 300));
+
+      // Get fresh references after click
+      buttons = screen.getAllByRole("button");
+      controlButtons = buttons.filter((btn) => btn.classList.contains("flex") && btn.classList.contains("absolute"));
+
+      // Verify buttons are still in document
+      expect(controlButtons.length).toBe(2);
+
+      // Click previous button (left/start button)
+      const prevButton = controlButtons.find((btn) => btn.classList.contains("start-0"));
+      expect(prevButton).toBeInTheDocument();
+      await user.click(prevButton!);
+
+      // Wait for carousel cooldown (slideDuration * 0.25 = 1000 * 0.25 = 250ms minimum)
+      await new Promise((resolve) => setTimeout(resolve, 300));
+
+      // Get fresh references again
+      buttons = screen.getAllByRole("button");
+      controlButtons = buttons.filter((btn) => btn.classList.contains("flex") && btn.classList.contains("absolute"));
 
       // Verify buttons are still functional
-      expect(controlButtons[0]).toBeInTheDocument();
-      expect(controlButtons[1]).toBeInTheDocument();
+      expect(controlButtons.length).toBe(2);
     });
   });
 

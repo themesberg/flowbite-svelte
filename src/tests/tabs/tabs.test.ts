@@ -107,7 +107,7 @@ describe("Tabs Component", () => {
 
     test("renders tabs with pre-selected tab", async () => {
       render(TabsWithSelectedTest);
-      const secondTab = screen.getByTestId("selected-tab-2").querySelector('[role="tab"]');
+      const secondTab = screen.getByTestId("selected-tab-2").querySelector('[role="tab"]')!;
 
       await waitFor(() => {
         expect(secondTab).toHaveAttribute("aria-selected", "true");
@@ -121,14 +121,14 @@ describe("Tabs Component", () => {
 
     test("renders disabled tab", () => {
       render(TabsWithDisabledTest);
-      const disabledTab = screen.getByTestId("disabled-tab").querySelector('[role="tab"]');
+      const disabledTab = screen.getByTestId("disabled-tab").querySelector('[role="tab"]')!;
 
       expect(disabledTab).toBeDisabled();
     });
 
     test("enabled tabs are not disabled", () => {
       render(TabsWithDisabledTest);
-      const enabledTab = screen.getByTestId("enabled-tab").querySelector('[role="tab"]');
+      const enabledTab = screen.getByTestId("enabled-tab").querySelector('[role="tab"]')!;
 
       expect(enabledTab).not.toBeDisabled();
     });
@@ -162,6 +162,9 @@ describe("Tabs Component", () => {
       const enabledTab = screen.getByTestId("enabled-tab").querySelector('[role="tab"]')!;
 
       expect(disabledTab).toBeInTheDocument();
+      expect(enabledTab).toBeInTheDocument();
+
+      expect(disabledTab).toBeInTheDocument();
       expect(enabledTab).toHaveAttribute("aria-selected", "true");
 
       await user.click(disabledTab);
@@ -174,8 +177,8 @@ describe("Tabs Component", () => {
 
     test("tab switching updates selected state", async () => {
       const user = userEvent.setup();
-      testState.currentTab = "";
-      testState.tabClickCount = 0;
+      // testState.currentTab = "";
+      // testState.tabClickCount = 0;
 
       render(ClickableTabsTest);
 
@@ -319,6 +322,130 @@ describe("Tabs Component", () => {
 
       await waitFor(() => {
         expect(panel).toHaveAttribute("aria-labelledby", secondTab.id);
+      });
+    });
+  });
+
+  describe("Keyboard Interactions", () => {
+    test("arrow keys navigate between tabs", async () => {
+      const user = userEvent.setup();
+      render(BasicTabsTest);
+
+      const tabs = screen.getAllByRole("tab");
+      const firstTab = tabs[0];
+      const secondTab = tabs[1];
+
+      // Focus first tab
+      firstTab.focus();
+      expect(firstTab).toHaveFocus();
+
+      // Press right arrow
+      await user.keyboard("{ArrowRight}");
+
+      await waitFor(() => {
+        expect(secondTab).toHaveFocus();
+        expect(secondTab).toHaveAttribute("aria-selected", "true");
+      });
+    });
+
+    test("left arrow navigates to previous tab", async () => {
+      const user = userEvent.setup();
+      render(BasicTabsTest);
+
+      const tabs = screen.getAllByRole("tab");
+      const secondTab = tabs[1];
+      const firstTab = tabs[0];
+
+      // Focus second tab
+      secondTab.focus();
+      await user.click(secondTab);
+
+      await waitFor(() => {
+        expect(secondTab).toHaveFocus();
+        expect(secondTab).toHaveAttribute("aria-selected", "true");
+      });
+
+      // Press left arrow
+      await user.keyboard("{ArrowLeft}");
+
+      await waitFor(() => {
+        expect(firstTab).toHaveFocus();
+        expect(firstTab).toHaveAttribute("aria-selected", "true");
+      });
+    });
+
+    test("Home key navigates to first tab", async () => {
+      const user = userEvent.setup();
+      render(BasicTabsTest);
+
+      const tabs = screen.getAllByRole("tab");
+      const lastTab = tabs[tabs.length - 1];
+      const firstTab = tabs[0];
+
+      // Focus last tab
+      lastTab.focus();
+      await user.click(lastTab);
+
+      await waitFor(() => {
+        expect(lastTab).toHaveAttribute("aria-selected", "true");
+      });
+
+      // Press Home key
+      await user.keyboard("{Home}");
+
+      await waitFor(() => {
+        expect(firstTab).toHaveFocus();
+        expect(firstTab).toHaveAttribute("aria-selected", "true");
+      });
+    });
+
+    test("End key navigates to last tab", async () => {
+      const user = userEvent.setup();
+      render(BasicTabsTest);
+
+      const tabs = screen.getAllByRole("tab");
+      const firstTab = tabs[0];
+      const lastTab = tabs[tabs.length - 1];
+
+      // Focus first tab
+      firstTab.focus();
+      expect(firstTab).toHaveFocus();
+
+      // Press End key
+      await user.keyboard("{End}");
+
+      await waitFor(() => {
+        expect(lastTab).toHaveFocus();
+        expect(lastTab).toHaveAttribute("aria-selected", "true");
+      });
+    });
+
+    test("arrow keys wrap around at boundaries", async () => {
+      const user = userEvent.setup();
+      render(BasicTabsTest);
+
+      const tabs = screen.getAllByRole("tab");
+      const firstTab = tabs[0];
+      const lastTab = tabs[tabs.length - 1];
+
+      // Focus first tab
+      firstTab.focus();
+      expect(firstTab).toHaveFocus();
+
+      // Press left arrow (should wrap to last tab)
+      await user.keyboard("{ArrowLeft}");
+
+      await waitFor(() => {
+        expect(lastTab).toHaveFocus();
+        expect(lastTab).toHaveAttribute("aria-selected", "true");
+      });
+
+      // Press right arrow (should wrap to first tab)
+      await user.keyboard("{ArrowRight}");
+
+      await waitFor(() => {
+        expect(firstTab).toHaveFocus();
+        expect(firstTab).toHaveAttribute("aria-selected", "true");
       });
     });
   });

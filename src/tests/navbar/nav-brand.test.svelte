@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Navbar, NavBrand } from "$lib";
-  import { TEST_IMAGE_SVG } from "../fixtures/test-images"
+  import { TEST_IMAGE_SVG } from "../fixtures/test-images";
 
   function preventDefault(e: Event) {
     e.preventDefault();

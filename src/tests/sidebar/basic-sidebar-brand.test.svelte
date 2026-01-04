@@ -1,6 +1,6 @@
 <script lang="ts">
   import SidebarBrand from "$lib/sidebar/SidebarBrand.svelte";
-  import { TEST_IMAGE_SVG } from "../fixtures/test-images"
+  import { TEST_IMAGE_SVG } from "../fixtures/test-images";
 
   const site = {
     name: "Flowbite",

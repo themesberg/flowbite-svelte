@@ -73,9 +73,64 @@
     registerTab: registerFn,
     unregisterTab: unregisterFn
   });
+
+  // Keyboard navigation handler for accessibility
+  function handleKeydown(event: KeyboardEvent) {
+    const target = event.target as HTMLElement;
+    if (target.getAttribute("role") !== "tab") return;
+
+    const tabs = Array.from(target.closest('[role="tablist"]')?.querySelectorAll('[role="tab"]') || []) as HTMLElement[];
+    const currentIndex = tabs.indexOf(target);
+
+    let nextIndex = currentIndex;
+
+    switch (event.key) {
+      case "ArrowRight":
+      case "ArrowDown":
+        event.preventDefault();
+        nextIndex = (currentIndex + 1) % tabs.length;
+        // Skip disabled tabs
+        while (tabs[nextIndex]?.hasAttribute("disabled") && nextIndex !== currentIndex) {
+          nextIndex = (nextIndex + 1) % tabs.length;
+        }
+        break;
+      case "ArrowLeft":
+      case "ArrowUp":
+        event.preventDefault();
+        nextIndex = currentIndex - 1 < 0 ? tabs.length - 1 : currentIndex - 1;
+        // Skip disabled tabs
+        while (tabs[nextIndex]?.hasAttribute("disabled") && nextIndex !== currentIndex) {
+          nextIndex = nextIndex - 1 < 0 ? tabs.length - 1 : nextIndex - 1;
+        }
+        break;
+      case "Home":
+        event.preventDefault();
+        nextIndex = 0;
+        // Find first non-disabled tab
+        while (tabs[nextIndex]?.hasAttribute("disabled") && nextIndex < tabs.length - 1) {
+          nextIndex++;
+        }
+        break;
+      case "End":
+        event.preventDefault();
+        nextIndex = tabs.length - 1;
+        // Find last non-disabled tab
+        while (tabs[nextIndex]?.hasAttribute("disabled") && nextIndex > 0) {
+          nextIndex--;
+        }
+        break;
+      default:
+        return;
+    }
+
+    if (nextIndex !== currentIndex && tabs[nextIndex]) {
+      tabs[nextIndex].focus();
+      tabs[nextIndex].click(); // Activate the tab
+    }
+  }
 </script>
 
-<ul role="tablist" {...restProps} class={base({ class: clsx(theme?.base, className) })} data-scope="tabs" data-part="base">
+<ul role="tablist" {...restProps} class={base({ class: clsx(theme?.base, className) })} data-scope="tabs" data-part="base" onkeydown={handleKeydown}>
   {@render children()}
 </ul>
 {#if dividerBool}

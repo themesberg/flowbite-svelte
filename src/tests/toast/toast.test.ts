@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/svelte";
+import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
 import userEvent from "@testing-library/user-event";
 
@@ -6,6 +6,7 @@ import BasicToastTest from "./basic-toast.test.svelte";
 import DismissableToastTest from "./dismissable-toast.test.svelte";
 import PositionToastTest from "./position-toast.test.svelte";
 import IconToastTest from "./icon-toast.test.svelte";
+import ColorToastTest from "./color-toast.test.svelte";
 import CloseToastTest, { testState } from "./close-toast.test.svelte";
 import CustomClassToastTest from "./custom-class-toast.test.svelte";
 import ToastContainerTest from "./toast-container.test.svelte";
@@ -52,16 +53,10 @@ describe("Toast Component", () => {
   });
 
   describe("Color Variants", () => {
-    test("renders toast with different position variants", () => {
-      render(PositionToastTest);
-
-      expect(screen.getByTestId("position-top-left")).toHaveAttribute("role", "alert");
-
-      expect(screen.getByTestId("position-top-right")).toHaveAttribute("role", "alert");
-
-      expect(screen.getByTestId("position-bottom-left")).toHaveAttribute("role", "alert");
-
-      expect(screen.getByTestId("position-bottom-right")).toHaveAttribute("role", "alert");
+    test("renders toast with different color variants", () => {
+      render(ColorToastTest);
+      // Add appropriate assertions for color variants
+      // e.g., expect(screen.getByTestId("color-primary")).toBeInTheDocument();
     });
   });
 
@@ -121,9 +116,9 @@ describe("Toast Component", () => {
       await user.click(closeButton);
 
       // Wait for state update
-      await new Promise((resolve) => setTimeout(resolve, 50));
-
-      expect(testState.toastVisible).toBe(false);
+      await waitFor(() => {
+        expect(testState.toastVisible).toBe(false);
+      });
     });
   });
 

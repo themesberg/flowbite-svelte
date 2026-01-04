@@ -68,7 +68,6 @@ describe("Video Component", () => {
       const video = screen.getByTestId("autoplay-video");
 
       expect(video).toHaveAttribute("autoplay");
-      // expect(video).toHaveAttribute("muted");
     });
 
     test("video with loop attribute", () => {

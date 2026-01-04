@@ -5,7 +5,7 @@ import BasicFooterBrandTest from "./basic-footer-brand.test.svelte";
 import FooterBrandNoLinkTest from "./footer-brand-no-link.test.svelte";
 import FooterBrandNoNameTest from "./footer-brand-no-name.test.svelte";
 import FooterBrandNoSrcTest from "./footer-brand-no-src.test.svelte";
-import { TEST_IMAGE_SVG } from "../fixtures/test-images"
+import { TEST_IMAGE_SVG } from "../fixtures/test-images";
 
 afterEach(() => {
   cleanup();

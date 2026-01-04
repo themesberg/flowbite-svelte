@@ -13,7 +13,7 @@ import BorderSidebarGroupTest from "./border-sidebar-group.test.svelte";
 import SidebarWrapperTest from "./sidebar-wrapper.test.svelte";
 import PositionedSidebarTest from "./positioned-sidebar.test.svelte";
 import BackdropSidebarTest from "./backdrop-sidebar.test.svelte";
-import { TEST_IMAGE_SVG } from "../fixtures/test-images"
+import { TEST_IMAGE_SVG } from "../fixtures/test-images";
 
 afterEach(() => {
   cleanup();

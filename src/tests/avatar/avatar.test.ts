@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
-import { TEST_IMAGE_SVG } from "../fixtures/test-images"
+import { TEST_IMAGE_SVG } from "../fixtures/test-images";
 
 import BasicAvatarTest from "./basic-avatar.test.svelte";
 import AvatarWithImageTest from "./avatar-with-image.test.svelte";

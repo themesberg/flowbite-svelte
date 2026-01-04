@@ -26,40 +26,20 @@ describe("Rating Component", () => {
   });
 
   describe("Rating Values", () => {
-    test("renders rating with value 0", () => {
+    test.each([
+      { value: 0, description: "value 0" },
+      { value: 1, description: "value 1" },
+      { value: 2.5, description: "decimal value 2.5" },
+      { value: 4, description: "value 4" },
+      { value: 5, description: "max value 5" }
+    ])("renders rating with $description", ({ value }) => {
       render(RatingValuesTest);
-      const rating = screen.getByTestId("rating-0");
+      const rating = screen.getByTestId(`rating-${value}`);
 
       expect(rating).toBeInTheDocument();
-      expect(rating).toHaveAttribute("data-scope", "rating");
-    });
-
-    test("renders rating with value 1", () => {
-      render(RatingValuesTest);
-      const rating = screen.getByTestId("rating-1");
-
-      expect(rating).toBeInTheDocument();
-    });
-
-    test("renders rating with decimal value 2.5", () => {
-      render(RatingValuesTest);
-      const rating = screen.getByTestId("rating-2.5");
-
-      expect(rating).toBeInTheDocument();
-    });
-
-    test("renders rating with value 4", () => {
-      render(RatingValuesTest);
-      const rating = screen.getByTestId("rating-4");
-
-      expect(rating).toBeInTheDocument();
-    });
-
-    test("renders rating with max value 5", () => {
-      render(RatingValuesTest);
-      const rating = screen.getByTestId("rating-5");
-
-      expect(rating).toBeInTheDocument();
+      if (value === 0) {
+        expect(rating).toHaveAttribute("data-scope", "rating");
+      }
     });
   });
 
@@ -85,44 +65,14 @@ describe("Rating Component", () => {
   });
 
   describe("Sizes", () => {
-    test("renders rating with size 16", () => {
+    test.each([16, 24, 32, 48])("renders rating with size %i", (size) => {
       render(RatingSizesTest);
-      const rating = screen.getByTestId("rating-size-16");
+      const rating = screen.getByTestId(`rating-size-${size}`);
 
       expect(rating).toBeInTheDocument();
       const svg = rating.querySelector("svg");
-      expect(svg).toHaveAttribute("width", "16");
-      expect(svg).toHaveAttribute("height", "16");
-    });
-
-    test("renders rating with size 24", () => {
-      render(RatingSizesTest);
-      const rating = screen.getByTestId("rating-size-24");
-
-      expect(rating).toBeInTheDocument();
-      const svg = rating.querySelector("svg");
-      expect(svg).toHaveAttribute("width", "24");
-      expect(svg).toHaveAttribute("height", "24");
-    });
-
-    test("renders rating with size 32", () => {
-      render(RatingSizesTest);
-      const rating = screen.getByTestId("rating-size-32");
-
-      expect(rating).toBeInTheDocument();
-      const svg = rating.querySelector("svg");
-      expect(svg).toHaveAttribute("width", "32");
-      expect(svg).toHaveAttribute("height", "32");
-    });
-
-    test("renders rating with size 48", () => {
-      render(RatingSizesTest);
-      const rating = screen.getByTestId("rating-size-48");
-
-      expect(rating).toBeInTheDocument();
-      const svg = rating.querySelector("svg");
-      expect(svg).toHaveAttribute("width", "48");
-      expect(svg).toHaveAttribute("height", "48");
+      expect(svg).toHaveAttribute("width", String(size));
+      expect(svg).toHaveAttribute("height", String(size));
     });
   });
 
@@ -168,10 +118,14 @@ describe("AdvancedRating Component", () => {
     render(AdvancedRatingTest);
 
     const percentages = document.querySelectorAll('[data-part="percentage"]');
+    // Verify all percentages are rendered with % symbol
+    percentages.forEach((percentage) => {
+      expect(percentage.textContent).toContain("%");
+      expect(percentage.textContent).toBeTruthy();
+    });
 
-    // Check first percentage (70%)
+    // Check first percentage value specifically (70%)
     expect(percentages[0].textContent).toContain("70");
-    expect(percentages[0].textContent).toContain("%");
   });
 });
 
@@ -209,6 +163,14 @@ describe("ScoreRating Component", () => {
     const bars = document.querySelectorAll('[data-part="bar"]');
 
     // First bar should have width: 88% (rating 8.8 * 10)
+    // Verify all bars have width styles applied
+    bars.forEach((bar) => {
+      const width = (bar as HTMLElement).style.width;
+      expect(width).toBeTruthy();
+      expect(width).toMatch(/^\d+%$/);
+    });
+
+    // Check first bar specifically (88% for rating 8.8)
     expect((bars[0] as HTMLElement).style.width).toBe("88%");
   });
 });

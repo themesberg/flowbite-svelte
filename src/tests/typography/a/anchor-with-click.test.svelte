@@ -5,9 +5,10 @@
 <script lang="ts">
   import A from "$lib/typography/a/A.svelte";
 
-  function handleClick() {
+  function handleClick(e: MouseEvent) {
+    e.preventDefault();
     testState.clickCount++;
   }
 </script>
 
-<A href="/test" onclick={handleClick} data-sveltekit-preload-data="off">Clickable link</A>
+<A href="https://example.com" onclick={handleClick} data-sveltekit-preload-data="off">Clickable link</A>

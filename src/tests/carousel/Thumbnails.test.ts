@@ -78,8 +78,15 @@ describe("Thumbnails Component", () => {
 
       const buttons = screen.getAllByRole("button");
 
+      // Wait for carousel to initialize
+      await new Promise((resolve) => setTimeout(resolve, 300));
+
       // Click should not throw error
       await user.click(buttons[1]);
+
+      // Wait for carousel cooldown
+      await new Promise((resolve) => setTimeout(resolve, 200));
+
       expect(buttons[1]).toBeInTheDocument();
     });
 

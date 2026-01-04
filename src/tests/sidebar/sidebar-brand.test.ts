@@ -3,7 +3,7 @@ import { expect, test, afterEach, describe } from "vitest";
 
 import BasicSidebarBrandTest from "./basic-sidebar-brand.test.svelte";
 import CustomSidebarBrandTest from "./custom-sidebar-brand.test.svelte";
-import { TEST_IMAGE_SVG } from "../fixtures/test-images"
+import { TEST_IMAGE_SVG } from "../fixtures/test-images";
 
 afterEach(() => {
   cleanup();

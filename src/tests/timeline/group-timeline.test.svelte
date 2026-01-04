@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Group, GroupItem } from "$lib";
   import type { GroupTimelineType } from "$lib/types";
-  import { TEST_IMAGE_SVG } from "../fixtures/test-images"
+  import { TEST_IMAGE_SVG } from "../fixtures/test-images";
 
   const repositories: GroupTimelineType[] = [
     {

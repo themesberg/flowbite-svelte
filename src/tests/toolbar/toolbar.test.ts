@@ -24,7 +24,7 @@ afterEach(() => {
 
 describe("Toolbar Component", () => {
   describe("Basic Rendering", () => {
-    test("toolbar renders correctly", () => {
+    test("toolbar renders with child buttons", () => {
       render(BasicToolbarTest);
       const toolbar = screen.getByRole("button", { name: /Button 1/i });
 
