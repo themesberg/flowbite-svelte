@@ -1,0 +1,11 @@
+<script lang="ts">
+  import List from "$lib/typography/list/List.svelte";
+  import Li from "$lib/typography/list/Li.svelte";
+</script>
+
+<List position="outside" data-testid="position-list">
+  {#snippet children()}
+    <Li>Outside positioned</Li>
+    <Li>List item</Li>
+  {/snippet}
+</List>
