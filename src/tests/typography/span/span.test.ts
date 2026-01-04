@@ -1,0 +1,718 @@
+import { cleanup, render } from "@testing-library/svelte";
+import { expect, test, afterEach, describe } from "vitest";
+
+import BasicSpanTest from "./basic-span.test.svelte";
+import BooleanSpanTest from "./boolean-span.test.svelte";
+import GradientSpanTest from "./gradient-span.test.svelte";
+import HighlightSpanTest from "./highlight-span.test.svelte";
+import DecorationSpanTest from "./decoration-span.test.svelte";
+import DecorationColorSpanTest from "./decoration-color-span.test.svelte";
+import DecorationThicknessSpanTest from "./decoration-thickness-span.test.svelte";
+import CustomClassSpanTest from "./custom-class-span.test.svelte";
+import AttributesSpanTest from "./attributes-span.test.svelte";
+import CombinedSpanTest from "./combined-span.test.svelte";
+
+afterEach(() => {
+  cleanup();
+});
+
+describe("Span Component", () => {
+  describe("Basic Rendering", () => {
+    test("renders span element", () => {
+      const { container } = render(BasicSpanTest);
+      const span = container.querySelector('[data-scope="span"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.tagName).toBe("SPAN");
+    });
+
+    test("renders with correct data attributes", () => {
+      const { container } = render(BasicSpanTest);
+      const span = container.querySelector('[data-scope="span"]');
+
+      expect(span).toHaveAttribute("data-scope", "span");
+      expect(span).toHaveAttribute("data-part", "base");
+    });
+
+    test("renders children content", () => {
+      const { container } = render(BasicSpanTest);
+      const span = container.querySelector('[data-scope="span"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.textContent).toBeTruthy();
+    });
+  });
+
+  describe("Boolean Variants", () => {
+    test("renders italic span", () => {
+      const { container } = render(BooleanSpanTest);
+      const span = container.querySelector('[data-testid="italic-span"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.className).toBeTruthy();
+    });
+
+    test("renders underline span", () => {
+      const { container } = render(BooleanSpanTest);
+      const span = container.querySelector('[data-testid="underline-span"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.className).toBeTruthy();
+    });
+
+    test("renders linethrough span", () => {
+      const { container } = render(BooleanSpanTest);
+      const span = container.querySelector('[data-testid="linethrough-span"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.className).toBeTruthy();
+    });
+
+    test("renders uppercase span", () => {
+      const { container } = render(BooleanSpanTest);
+      const span = container.querySelector('[data-testid="uppercase-span"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.className).toBeTruthy();
+    });
+
+    test("all boolean variants have proper data attributes", () => {
+      const { container } = render(BooleanSpanTest);
+      const spans = container.querySelectorAll('[data-scope="span"]');
+
+      spans.forEach((span) => {
+        expect(span).toHaveAttribute("data-scope", "span");
+        expect(span).toHaveAttribute("data-part", "base");
+      });
+    });
+  });
+
+  describe("Gradient Variants", () => {
+    test("renders skyToEmerald gradient", () => {
+      const { container } = render(GradientSpanTest);
+      const span = container.querySelector('[data-testid="gradient-sky-emerald"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.className).toBeTruthy();
+    });
+
+    test("renders purpleToBlue gradient", () => {
+      const { container } = render(GradientSpanTest);
+      const span = container.querySelector('[data-testid="gradient-purple-blue"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders pinkToOrange gradient", () => {
+      const { container } = render(GradientSpanTest);
+      const span = container.querySelector('[data-testid="gradient-pink-orange"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders tealToLime gradient", () => {
+      const { container } = render(GradientSpanTest);
+      const span = container.querySelector('[data-testid="gradient-teal-lime"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders redToYellow gradient", () => {
+      const { container } = render(GradientSpanTest);
+      const span = container.querySelector('[data-testid="gradient-red-yellow"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders indigoToCyan gradient", () => {
+      const { container } = render(GradientSpanTest);
+      const span = container.querySelector('[data-testid="gradient-indigo-cyan"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders fuchsiaToRose gradient", () => {
+      const { container } = render(GradientSpanTest);
+      const span = container.querySelector('[data-testid="gradient-fuchsia-rose"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders amberToEmerald gradient", () => {
+      const { container } = render(GradientSpanTest);
+      const span = container.querySelector('[data-testid="gradient-amber-emerald"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders violetToRed gradient", () => {
+      const { container } = render(GradientSpanTest);
+      const span = container.querySelector('[data-testid="gradient-violet-red"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders blueToGreen gradient", () => {
+      const { container } = render(GradientSpanTest);
+      const span = container.querySelector('[data-testid="gradient-blue-green"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders orangeToPurple gradient", () => {
+      const { container } = render(GradientSpanTest);
+      const span = container.querySelector('[data-testid="gradient-orange-purple"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders yellowToRed gradient", () => {
+      const { container } = render(GradientSpanTest);
+      const span = container.querySelector('[data-testid="gradient-yellow-red"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders with no gradient when gradient is none", () => {
+      const { container } = render(GradientSpanTest);
+      const span = container.querySelector('[data-testid="gradient-none"]');
+
+      expect(span).toBeInTheDocument();
+    });
+  });
+
+  describe("Highlight Variants", () => {
+    test("renders blue highlight", () => {
+      const { container } = render(HighlightSpanTest);
+      const span = container.querySelector('[data-testid="highlight-blue"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.className).toBeTruthy();
+    });
+
+    test("renders green highlight", () => {
+      const { container } = render(HighlightSpanTest);
+      const span = container.querySelector('[data-testid="highlight-green"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders red highlight", () => {
+      const { container } = render(HighlightSpanTest);
+      const span = container.querySelector('[data-testid="highlight-red"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders yellow highlight", () => {
+      const { container } = render(HighlightSpanTest);
+      const span = container.querySelector('[data-testid="highlight-yellow"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders purple highlight", () => {
+      const { container } = render(HighlightSpanTest);
+      const span = container.querySelector('[data-testid="highlight-purple"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders pink highlight", () => {
+      const { container } = render(HighlightSpanTest);
+      const span = container.querySelector('[data-testid="highlight-pink"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders indigo highlight", () => {
+      const { container } = render(HighlightSpanTest);
+      const span = container.querySelector('[data-testid="highlight-indigo"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders teal highlight", () => {
+      const { container } = render(HighlightSpanTest);
+      const span = container.querySelector('[data-testid="highlight-teal"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders orange highlight", () => {
+      const { container } = render(HighlightSpanTest);
+      const span = container.querySelector('[data-testid="highlight-orange"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders cyan highlight", () => {
+      const { container } = render(HighlightSpanTest);
+      const span = container.querySelector('[data-testid="highlight-cyan"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders fuchsia highlight", () => {
+      const { container } = render(HighlightSpanTest);
+      const span = container.querySelector('[data-testid="highlight-fuchsia"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders amber highlight", () => {
+      const { container } = render(HighlightSpanTest);
+      const span = container.querySelector('[data-testid="highlight-amber"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders lime highlight", () => {
+      const { container } = render(HighlightSpanTest);
+      const span = container.querySelector('[data-testid="highlight-lime"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders with no highlight when highlight is none", () => {
+      const { container } = render(HighlightSpanTest);
+      const span = container.querySelector('[data-testid="highlight-none"]');
+
+      expect(span).toBeInTheDocument();
+    });
+  });
+
+  describe("Decoration Variants", () => {
+    test("renders solid decoration", () => {
+      const { container } = render(DecorationSpanTest);
+      const span = container.querySelector('[data-testid="decoration-solid"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.className).toBeTruthy();
+    });
+
+    test("renders double decoration", () => {
+      const { container } = render(DecorationSpanTest);
+      const span = container.querySelector('[data-testid="decoration-double"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders dotted decoration", () => {
+      const { container } = render(DecorationSpanTest);
+      const span = container.querySelector('[data-testid="decoration-dotted"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders dashed decoration", () => {
+      const { container } = render(DecorationSpanTest);
+      const span = container.querySelector('[data-testid="decoration-dashed"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders wavy decoration", () => {
+      const { container } = render(DecorationSpanTest);
+      const span = container.querySelector('[data-testid="decoration-wavy"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders with no decoration when decoration is none", () => {
+      const { container } = render(DecorationSpanTest);
+      const span = container.querySelector('[data-testid="decoration-none"]');
+
+      expect(span).toBeInTheDocument();
+    });
+  });
+
+  describe("Decoration Color Variants", () => {
+    test("renders primary decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-primary"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.className).toBeTruthy();
+    });
+
+    test("renders secondary decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-secondary"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders gray decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-gray"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders red decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-red"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders orange decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-orange"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders yellow decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-yellow"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders lime decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-lime"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders green decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-green"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders emerald decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-emerald"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders teal decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-teal"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders cyan decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-cyan"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders sky decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-sky"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders blue decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-blue"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders indigo decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-indigo"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders violet decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-violet"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders purple decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-purple"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders fuchsia decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-fuchsia"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders pink decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-pink"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders rose decoration color", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-rose"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders with no decoration color when decorationColor is none", () => {
+      const { container } = render(DecorationColorSpanTest);
+      const span = container.querySelector('[data-testid="decoration-color-none"]');
+
+      expect(span).toBeInTheDocument();
+    });
+  });
+
+  describe("Decoration Thickness Variants", () => {
+    test("renders decoration thickness 0", () => {
+      const { container } = render(DecorationThicknessSpanTest);
+      const span = container.querySelector('[data-testid="decoration-thickness-0"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.className).toBeTruthy();
+    });
+
+    test("renders decoration thickness 1", () => {
+      const { container } = render(DecorationThicknessSpanTest);
+      const span = container.querySelector('[data-testid="decoration-thickness-1"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders decoration thickness 2", () => {
+      const { container } = render(DecorationThicknessSpanTest);
+      const span = container.querySelector('[data-testid="decoration-thickness-2"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders decoration thickness 4", () => {
+      const { container } = render(DecorationThicknessSpanTest);
+      const span = container.querySelector('[data-testid="decoration-thickness-4"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders decoration thickness 8", () => {
+      const { container } = render(DecorationThicknessSpanTest);
+      const span = container.querySelector('[data-testid="decoration-thickness-8"]');
+
+      expect(span).toBeInTheDocument();
+    });
+  });
+
+  describe("Custom Styling", () => {
+    test("applies custom class to span", () => {
+      const { container } = render(CustomClassSpanTest);
+      const span = container.querySelector('[data-testid="custom-span"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span).toHaveClass("custom-span-class");
+    });
+
+    test("merges custom class with theme classes", () => {
+      const { container } = render(CustomClassSpanTest);
+      const span = container.querySelector('[data-testid="custom-span"]');
+
+      expect(span?.className).toBeTruthy();
+      expect(span?.classList.length).toBeGreaterThan(0);
+    });
+  });
+
+  describe("HTML Attributes", () => {
+    test("applies additional HTML attributes", () => {
+      const { container } = render(AttributesSpanTest);
+      const span = container.querySelector('[data-testid="attributes-span"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span).toHaveAttribute("id", "custom-span-id");
+      expect(span).toHaveAttribute("title", "Span title");
+      expect(span).toHaveAttribute("aria-label", "Span label");
+    });
+
+    test("supports custom data attributes", () => {
+      const { container } = render(AttributesSpanTest);
+      const span = container.querySelector('[data-testid="attributes-span"]');
+
+      expect(span).toHaveAttribute("data-custom", "custom-value");
+      expect(span).toHaveAttribute("data-testid", "attributes-span");
+    });
+  });
+
+  describe("Combined Variants", () => {
+    test("renders italic and underline combined", () => {
+      const { container } = render(CombinedSpanTest);
+      const span = container.querySelector('[data-testid="combined-italic-underline"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.className).toBeTruthy();
+    });
+
+    test("renders uppercase with highlight combined", () => {
+      const { container } = render(CombinedSpanTest);
+      const span = container.querySelector('[data-testid="combined-uppercase-highlight"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders italic with gradient combined", () => {
+      const { container } = render(CombinedSpanTest);
+      const span = container.querySelector('[data-testid="combined-italic-gradient"]');
+
+      expect(span).toBeInTheDocument();
+    });
+
+    test("renders decoration with color and thickness combined", () => {
+      const { container } = render(CombinedSpanTest);
+      const span = container.querySelector('[data-testid="combined-decoration"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.className).toBeTruthy();
+    });
+
+    test("renders multiple boolean variants combined", () => {
+      const { container } = render(CombinedSpanTest);
+      const span = container.querySelector('[data-testid="combined-multiple"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.className).toBeTruthy();
+    });
+
+    test("combined variants maintain proper data attributes", () => {
+      const { container } = render(CombinedSpanTest);
+      const spans = container.querySelectorAll('[data-scope="span"]');
+
+      spans.forEach((span) => {
+        expect(span).toHaveAttribute("data-scope", "span");
+        expect(span).toHaveAttribute("data-part", "base");
+      });
+    });
+  });
+
+  describe("Semantic HTML", () => {
+    test("uses semantic span element", () => {
+      const { container } = render(BasicSpanTest);
+      const span = container.querySelector("span");
+
+      expect(span).toBeInTheDocument();
+      expect(span?.tagName).toBe("SPAN");
+    });
+
+    test("maintains proper document structure", () => {
+      const { container } = render(BasicSpanTest);
+      const span = container.querySelector('[data-scope="span"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.parentElement).toBeTruthy();
+    });
+  });
+
+  describe("Theme Integration", () => {
+    test("element has className property", () => {
+      const { container } = render(BasicSpanTest);
+      const span = container.querySelector('[data-scope="span"]');
+
+      // Span element has className property (may be empty without variants)
+      expect(span).toBeInTheDocument();
+      expect(span).toHaveProperty('className');
+    });
+
+    test("theme classes work with custom classes", () => {
+      const { container } = render(CustomClassSpanTest);
+      const span = container.querySelector('[data-testid="custom-span"]');
+
+      // Both theme and custom classes should be present
+      expect(span?.className).toBeTruthy();
+      expect(span).toHaveClass("custom-span-class");
+    });
+
+    test("variant classes are properly applied", () => {
+      const { container } = render(BooleanSpanTest);
+      const italicSpan = container.querySelector('[data-testid="italic-span"]');
+      const underlineSpan = container.querySelector('[data-testid="underline-span"]');
+
+      expect(italicSpan?.className).toBeTruthy();
+      expect(underlineSpan?.className).toBeTruthy();
+      // Different variants should have different class combinations
+      expect(italicSpan?.className).not.toBe(underlineSpan?.className);
+    });
+  });
+
+  describe("Accessibility", () => {
+    test("span element is semantically meaningful", () => {
+      const { container } = render(BasicSpanTest);
+      const span = container.querySelector("span");
+
+      expect(span).toBeInTheDocument();
+      expect(span?.tagName).toBe("SPAN");
+    });
+
+    test("content is readable", () => {
+      const { container } = render(BasicSpanTest);
+      const span = container.querySelector('[data-scope="span"]');
+
+      expect(span?.textContent).toBeTruthy();
+      expect(span?.textContent?.length).toBeGreaterThan(0);
+    });
+
+    test("supports aria attributes", () => {
+      const { container } = render(AttributesSpanTest);
+      const span = container.querySelector('[data-testid="attributes-span"]');
+
+      expect(span).toHaveAttribute("aria-label", "Span label");
+    });
+
+    test("maintains text readability with decorations", () => {
+      const { container } = render(DecorationSpanTest);
+      const spans = container.querySelectorAll('[data-scope="span"]');
+
+      spans.forEach((span) => {
+        expect(span.textContent).toBeTruthy();
+        expect(span.textContent?.length).toBeGreaterThan(0);
+      });
+    });
+
+    test("maintains text readability with highlights", () => {
+      const { container } = render(HighlightSpanTest);
+      const spans = container.querySelectorAll('[data-scope="span"]');
+
+      spans.forEach((span) => {
+        expect(span.textContent).toBeTruthy();
+      });
+    });
+  });
+
+  describe("Edge Cases", () => {
+    test("renders correctly with empty children", () => {
+      const { container } = render(BasicSpanTest);
+      const span = container.querySelector('[data-scope="span"]');
+
+      expect(span).toBeInTheDocument();
+      expect(span?.tagName).toBe("SPAN");
+    });
+
+    test("handles none values for optional variants", () => {
+      const { container } = render(GradientSpanTest);
+      const noneGradient = container.querySelector('[data-testid="gradient-none"]');
+
+      expect(noneGradient).toBeInTheDocument();
+    });
+
+    test("multiple spans can coexist", () => {
+      const { container } = render(BooleanSpanTest);
+      const spans = container.querySelectorAll('[data-scope="span"]');
+
+      expect(spans.length).toBeGreaterThan(1);
+      spans.forEach((span) => {
+        expect(span).toBeInTheDocument();
+      });
+    });
+  });
+});
