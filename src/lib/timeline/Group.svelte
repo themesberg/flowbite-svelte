@@ -15,6 +15,12 @@
 
 <div class={card({ class: clsx(theme?.card, className) })} data-scope="group" data-part="card">
   <time class={time({ class: clsx(theme?.time, styling?.time) })} data-part="time">{date}</time>
+  <!--
+  NOTE:
+  restProps (data-testid, aria-*, etc.)
+  are intentionally forwarded to the <ol>,
+  which is the public/semantic root of Group.
+-->
   <ol {...restProps} class={list({ class: clsx(theme?.list, styling?.list) })} data-part="list">
     {@render children()}
   </ol>

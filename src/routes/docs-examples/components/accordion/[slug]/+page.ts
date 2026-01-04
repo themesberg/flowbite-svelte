@@ -3,7 +3,7 @@ import { error } from "@sveltejs/kit";
 
 export const load: PageLoad = async ({ params }) => {
   // Basic slug validation to prevent path traversal
-  if (params.slug.includes("/") || params.slug.includes("..")) {
+  if (!/^[a-zA-Z0-9_-]+$/.test(params.slug)) {
     throw error(400, "Invalid slug");
   }
   try {

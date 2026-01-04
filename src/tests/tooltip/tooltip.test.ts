@@ -291,7 +291,7 @@ describe("Tooltip Component", () => {
       const trigger = screen.getByTestId("trigger-button");
 
       trigger.focus();
-      
+
       await waitFor(() => {
         const tooltip = screen.queryByTestId("tooltip-content");
         expect(tooltip).toBeInTheDocument();
@@ -305,7 +305,7 @@ describe("Tooltip Component", () => {
 
       // Show the tooltip first
       await fireEvent.mouseEnter(trigger);
-      
+
       await waitFor(() => {
         const tooltip = screen.queryByTestId("tooltip-content");
         expect(tooltip).toBeInTheDocument();
@@ -314,11 +314,11 @@ describe("Tooltip Component", () => {
 
       // Press Escape to hide (fire on document since that's where the listener is)
       await fireEvent.keyDown(document, { key: "Escape" });
-      
+
       await waitFor(() => {
         const tooltip = screen.queryByTestId("tooltip-content");
         expect(tooltip).not.toBeInTheDocument();
       });
     });
-  })
+  });
 });

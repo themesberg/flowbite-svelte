@@ -14,6 +14,12 @@
 </script>
 
 {#each timelines as { name, src, alt, isPrivate, href, comment, id }, index (id ?? href ?? name ?? index)}
+  <!--
+  NOTE:
+  restProps (data-testid, aria-*, etc.)
+  are intentionally forwarded to the <li>,
+  which is the public/semantic root of GroupItem.
+-->
   <li class={base({ class: clsx(theme?.base, className) })} {...restProps} data-scope="group-item" data-part="base">
     <a {href} class={link({ class: clsx(theme?.link, styling?.link) })} data-part="link">
       <img class={img({ class: clsx(theme?.img, styling?.img) })} {src} {alt} data-part="img" />

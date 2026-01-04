@@ -37,9 +37,7 @@ describe("Rating Component", () => {
       const rating = screen.getByTestId(`rating-${value}`);
 
       expect(rating).toBeInTheDocument();
-      if (value === 0) {
-        expect(rating).toHaveAttribute("data-scope", "rating");
-      }
+      expect(rating).toHaveAttribute("data-scope", "rating");
     });
   });
 

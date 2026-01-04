@@ -83,6 +83,7 @@
     const currentIndex = tabs.indexOf(target);
 
     let nextIndex = currentIndex;
+    let attempts = 0; // Safety counter to prevent infinite loops
 
     switch (event.key) {
       case "ArrowRight":
@@ -90,8 +91,10 @@
         event.preventDefault();
         nextIndex = (currentIndex + 1) % tabs.length;
         // Skip disabled tabs
-        while (tabs[nextIndex]?.hasAttribute("disabled") && nextIndex !== currentIndex) {
+        attempts = 0;
+        while (tabs[nextIndex]?.hasAttribute("disabled") && nextIndex !== currentIndex && attempts < tabs.length) {
           nextIndex = (nextIndex + 1) % tabs.length;
+          attempts++;
         }
         break;
       case "ArrowLeft":
@@ -99,24 +102,30 @@
         event.preventDefault();
         nextIndex = currentIndex - 1 < 0 ? tabs.length - 1 : currentIndex - 1;
         // Skip disabled tabs
-        while (tabs[nextIndex]?.hasAttribute("disabled") && nextIndex !== currentIndex) {
+        attempts = 0;
+        while (tabs[nextIndex]?.hasAttribute("disabled") && nextIndex !== currentIndex && attempts < tabs.length) {
           nextIndex = nextIndex - 1 < 0 ? tabs.length - 1 : nextIndex - 1;
+          attempts++;
         }
         break;
       case "Home":
         event.preventDefault();
         nextIndex = 0;
         // Find first non-disabled tab
-        while (tabs[nextIndex]?.hasAttribute("disabled") && nextIndex < tabs.length - 1) {
+        attempts = 0;
+        while (tabs[nextIndex]?.hasAttribute("disabled") && nextIndex < tabs.length - 1 && attempts < tabs.length) {
           nextIndex++;
+          attempts++;
         }
         break;
       case "End":
         event.preventDefault();
         nextIndex = tabs.length - 1;
         // Find last non-disabled tab
-        while (tabs[nextIndex]?.hasAttribute("disabled") && nextIndex > 0) {
+        attempts = 0;
+        while (tabs[nextIndex]?.hasAttribute("disabled") && nextIndex > 0 && attempts < tabs.length) {
           nextIndex--;
+          attempts++;
         }
         break;
       default:
