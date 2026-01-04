@@ -1,5 +1,5 @@
 import { cleanup, render, screen } from "@testing-library/svelte";
-import { expect, test, afterEach, describe } from "vitest";
+import { expect, test, afterEach, describe, vi } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 import BasicToolbarTest from "./basic-toolbar.test.svelte";
@@ -12,7 +12,7 @@ import LinkToolbarButtonTest from "./link-toolbar-button.test.svelte";
 import ColorToolbarButtonTest from "./color-toolbar-button.test.svelte";
 import SizeToolbarButtonTest from "./size-toolbar-button.test.svelte";
 import AriaToolbarButtonTest from "./aria-toolbar-button.test.svelte";
-import ClickToolbarButtonTest, { testState } from "./click-toolbar-button.test.svelte";
+import ClickToolbarButtonTest from "./click-toolbar-button.test.svelte";
 import BasicToolbarGroupTest from "./basic-toolbar-group.test.svelte";
 import SpacingToolbarGroupTest from "./spacing-toolbar-group.test.svelte";
 import PaddingToolbarGroupTest from "./padding-toolbar-group.test.svelte";
@@ -24,7 +24,7 @@ afterEach(() => {
 
 describe("Toolbar Component", () => {
   describe("Basic Rendering", () => {
-    test("toolbar renders with child buttons", () => {
+    test("toolbar renders correctly", () => {
       render(BasicToolbarTest);
       const toolbar = screen.getByRole("button", { name: /Button 1/i });
 
@@ -197,18 +197,18 @@ describe("ToolbarButton Component", () => {
   describe("Click Functionality", () => {
     test("toolbar button click event works", async () => {
       const user = userEvent.setup();
-      testState.clickCount = 0;
+      const handleClick = vi.fn();
 
-      render(ClickToolbarButtonTest);
+      render(ClickToolbarButtonTest, { onclick: handleClick });
       const button = screen.getByTestId("clickable-button");
 
-      expect(testState.clickCount).toBe(0);
+      expect(handleClick).not.toHaveBeenCalled();
 
       await user.click(button);
-      expect(testState.clickCount).toBe(1);
+      expect(handleClick).toHaveBeenCalledTimes(1);
 
       await user.click(button);
-      expect(testState.clickCount).toBe(2);
+      expect(handleClick).toHaveBeenCalledTimes(2);
     });
   });
 });

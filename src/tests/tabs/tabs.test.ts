@@ -177,8 +177,6 @@ describe("Tabs Component", () => {
 
     test("tab switching updates selected state", async () => {
       const user = userEvent.setup();
-      // testState.currentTab = "";
-      // testState.tabClickCount = 0;
 
       render(ClickableTabsTest);
 

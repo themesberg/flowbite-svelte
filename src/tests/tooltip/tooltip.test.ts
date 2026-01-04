@@ -25,14 +25,18 @@ describe("Tooltip Component", () => {
       expect(trigger).toBeInTheDocument();
     });
 
-    test("tooltip has correct data attributes", () => {
+    test("tooltip has correct data attributes", async () => {
       render(BasicTooltipTest);
-      const tooltip = screen.queryByTestId("tooltip-content");
+      const trigger = screen.getByTestId("trigger-button");
 
-      // Tooltip should be in the document but may not be visible initially
-      if (tooltip) {
+      // Trigger the tooltip to make it appear
+      await fireEvent.mouseEnter(trigger);
+
+      await waitFor(() => {
+        const tooltip = screen.queryByTestId("tooltip-content");
+        expect(tooltip).toBeInTheDocument();
         expect(tooltip).toHaveAttribute("data-scope", "tooltip");
-      }
+      });
     });
   });
 
@@ -262,4 +266,59 @@ describe("Tooltip Component", () => {
       expect(trigger.tabIndex).toBeGreaterThanOrEqual(0);
     });
   });
+
+  describe("Accessibility", () => {
+    test("tooltip has proper ARIA attributes", async () => {
+      render(BasicTooltipTest);
+      const trigger = screen.getByTestId("trigger-button");
+
+      // Trigger the tooltip to make it appear
+      await fireEvent.mouseEnter(trigger);
+
+      await waitFor(() => {
+        const tooltip = screen.queryByTestId("tooltip-content");
+        expect(tooltip).toBeInTheDocument();
+        // Check that the tooltip has the proper role
+        expect(tooltip).toHaveAttribute("role", "tooltip");
+      });
+
+      // Note: aria-describedby is not currently implemented on the trigger
+      // This would be a good enhancement for better accessibility
+    });
+
+    test("tooltip shows on keyboard focus", async () => {
+      render(BasicTooltipTest);
+      const trigger = screen.getByTestId("trigger-button");
+
+      trigger.focus();
+      
+      await waitFor(() => {
+        const tooltip = screen.queryByTestId("tooltip-content");
+        expect(tooltip).toBeInTheDocument();
+        expect(tooltip).toBeVisible();
+      });
+    });
+
+    test("tooltip hides on Escape key", async () => {
+      render(BasicTooltipTest);
+      const trigger = screen.getByTestId("trigger-button");
+
+      // Show the tooltip first
+      await fireEvent.mouseEnter(trigger);
+      
+      await waitFor(() => {
+        const tooltip = screen.queryByTestId("tooltip-content");
+        expect(tooltip).toBeInTheDocument();
+        expect(tooltip).toBeVisible();
+      });
+
+      // Press Escape to hide (fire on document since that's where the listener is)
+      await fireEvent.keyDown(document, { key: "Escape" });
+      
+      await waitFor(() => {
+        const tooltip = screen.queryByTestId("tooltip-content");
+        expect(tooltip).not.toBeInTheDocument();
+      });
+    });
+  })
 });

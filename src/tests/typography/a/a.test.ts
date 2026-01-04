@@ -124,19 +124,16 @@ describe("Anchor (A) Component", () => {
       expect(button).not.toHaveAttribute("href");
     });
 
-    test("anchor mode navigation is not prevented", async () => {
+    test("anchor mode preserves href and calls onclick handler", async () => {
       const user = userEvent.setup();
       clickTestState.clickCount = 0;
 
       render(AnchorWithClickTest);
       const anchor = screen.getByRole("link");
 
-      // Click the anchor - the onclick handler should be called
       await user.click(anchor);
       expect(clickTestState.clickCount).toBe(1);
 
-      // In anchor mode, we can't easily test if navigation would happen,
-      // but we can verify the href is present
       expect(anchor).toHaveAttribute("href", "https://example.com");
     });
   });

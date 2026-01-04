@@ -1,18 +1,11 @@
-<script lang="ts" module>
-  export const testState = {
-    clickCount: 0
-  };
-</script>
-
 <script lang="ts">
   import ToolbarButton from "$lib/toolbar/ToolbarButton.svelte";
 
-  let clickCount = $state(0);
-
-  function handleClick() {
-    clickCount++;
-    testState.clickCount = clickCount;
+  interface Props {
+    onclick?: () => void;
   }
+
+  let { onclick }: Props = $props();
 </script>
 
-<ToolbarButton data-testid="clickable-button" onclick={handleClick}>Click Me</ToolbarButton>
+<ToolbarButton data-testid="clickable-button" {onclick}>Click Me</ToolbarButton>
