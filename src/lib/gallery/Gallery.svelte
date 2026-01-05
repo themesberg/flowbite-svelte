@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { Attachment } from "svelte/attachments";
   import { gallery } from "./theme";
   import clsx from "clsx";
   import type { GalleryProps, ImgType } from "$lib";
@@ -10,9 +11,11 @@
 
   const theme = $derived(getTheme("gallery"));
 
-  function init(node: HTMLElement) {
-    if (getComputedStyle(node).gap === "normal") node.style.gap = "inherit";
-  }
+  const init: Attachment<HTMLElement> = (node) => {
+    if (getComputedStyle(node).gap === "normal") {
+      node.style.gap = "inherit";
+    }
+  };
 
   const { image, div } = gallery();
 </script>
@@ -23,7 +26,7 @@
   </div>
 {/snippet}
 
-<div data-scope="gallery" data-part="base" class={div({ class: clsx(theme?.div, className) })} use:init>
+<div data-scope="gallery" data-part="base" class={div({ class: clsx(theme?.div, className) })} {@attach init}>
   {#each items as item, i (item.src || i)}
     {#if figure}
       {@render figure(item as ImgType)}
