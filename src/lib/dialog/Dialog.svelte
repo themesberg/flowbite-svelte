@@ -1,6 +1,7 @@
 <script lang="ts">
+  import type { Attachment } from "svelte/attachments";
   import type { DialogProps, ParamsType } from "$lib";
-  import { trapFocus } from "$lib/utils/actions";
+  // import { trapFocus } from "$lib/utils/actions";
   import CloseButton from "$lib/utils/CloseButton.svelte";
   import { createDismissableContext } from "$lib/utils/dismissable";
   import clsx from "clsx";
@@ -117,25 +118,90 @@
     open = ev.newState === "open"; // for cases when toggle by other means
   }
 
-  function init(dlg: HTMLDialogElement) {
+  const init: Attachment<HTMLDialogElement> = (dlg) => {
     if (modal) dlg.showModal();
     else dlg.show();
 
-    // Custom focus management
     queueMicrotask(() => {
-      const autofocusEl = dlg.querySelector<HTMLElement>("[data-autofocus]") ?? dlg.querySelector<HTMLElement>('input, textarea, select, button:not([aria-label="Close"])');
+      const autofocusEl =
+        dlg.querySelector<HTMLElement>("[data-autofocus]") ??
+        dlg.querySelector<HTMLElement>(
+          'input, textarea, select, button:not([aria-label="Close"])'
+        );
 
-      if (autofocusEl) {
-        autofocusEl.focus();
-      } else {
-        dlg.focus(); // fallback
-      }
+      autofocusEl ? autofocusEl.focus() : dlg.focus();
     });
 
     return () => dlg.close();
-  }
+  };
 
-  const focusTrap = (node: HTMLElement) => (focustrap ? trapFocus(node) : undefined);
+  // const focusTrap = (node: HTMLElement) => (focustrap ? trapFocus(node) : undefined);
+
+  const trapFocusAttachment: Attachment<HTMLElement> = (node) => {
+    if (!focustrap) return;
+
+    const previous = document.activeElement as HTMLElement | null;
+    let isClosingViaOutsideClick = false;
+    let isFocusMovedOutside = false;
+
+    function focusable(): HTMLElement[] {
+      return Array.from(
+        node.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        )
+      );
+    }
+
+    function handleKeydown(event: KeyboardEvent) {
+      if (event.key === "Tab") {
+        const elements = focusable();
+        const first = elements[0];
+        const last = elements.at(-1);
+        const current = document.activeElement;
+
+        if (event.shiftKey && current === first) {
+          last?.focus();
+          event.preventDefault();
+        }
+
+        if (!event.shiftKey && current === last) {
+          first?.focus();
+          event.preventDefault();
+        }
+      }
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+        isClosingViaOutsideClick = true;
+        close();
+      }
+    }
+
+    function handleFocusOut(event: FocusEvent) {
+      if (!node.contains(event.relatedTarget as Node) && event.relatedTarget !== previous) {
+        isFocusMovedOutside = true;
+      }
+    }
+
+    // initial focus
+    const elements = focusable();
+    if (elements.length > 0) {
+      elements[0].focus();
+    }
+
+    node.addEventListener("keydown", handleKeydown);
+    node.addEventListener("focusout", handleFocusOut);
+
+    return () => {
+      node.removeEventListener("keydown", handleKeydown);
+      node.removeEventListener("focusout", handleFocusOut);
+
+      if (!isClosingViaOutsideClick && !isFocusMovedOutside && previous) {
+        setTimeout(() => previous.focus({ preventScroll: true }), 0);
+      }
+    };
+  };
+
 
   let ref: HTMLDialogElement | undefined = $state(undefined);
 
@@ -176,7 +242,7 @@
     data-part="base"
     {@attach init}
     bind:this={ref}
-    use:focusTrap
+    {@attach trapFocusAttachment}
     tabindex="-1"
     onsubmit={_onsubmit}
     oncancel={_oncancel}

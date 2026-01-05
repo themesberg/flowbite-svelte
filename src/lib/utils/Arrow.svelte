@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { Attachment } from "svelte/attachments";
   import type { Side } from "@floating-ui/dom";
   import { getOppositePlacement, getSide } from "@floating-ui/utils";
   import type { ArrowProps } from "$lib/types";
@@ -23,31 +24,32 @@
     bottom: " -rotate-45"
   };
 
-  function positioning(node: HTMLElement) {
+  const positioning: Attachment<HTMLElement> = (node) => {
     $effect(() => {
       node.style.left = px(cords.x);
       node.style.top = px(cords.y);
       node.style.right = "";
       node.style.bottom = "";
 
-      let arrowSide = getSide(getOppositePlacement(placement));
-      // node.style[arrowSide] = px(-node.offsetWidth / 2 - (border ? 1 : 0) + 1);
+      const arrowSide = getSide(getOppositePlacement(placement));
       node.style[arrowSide] = px(-node.offsetWidth / 2 - getBorderWidth(node));
 
-      // node.classList.remove("border-t", "border-b", "border-s", "border-e");
-      // border && (node.className += arrowBordersMap[arrowSide]);
-
-      node.classList.remove("rotate-45", "-rotate-45", "rotate-135", "-rotate-135");
+      node.classList.remove(
+        "rotate-45",
+        "-rotate-45",
+        "rotate-135",
+        "-rotate-135"
+      );
       node.className += rotationMap[arrowSide];
     });
-  }
+  };
 </script>
 
 <div
   data-scope="arrow"
   data-part="base"
   {...restProps}
-  use:positioning
+  {@attach positioning}
   class="popover-arrow clip pointer-events-none absolute block h-[10px] w-[10px] border-b border-l border-inherit bg-inherit text-inherit {className}"
 ></div>
 

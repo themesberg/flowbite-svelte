@@ -1,9 +1,9 @@
 <script lang="ts">
+  import type { Attachment } from "svelte/attachments";
   import type { DividerProps } from "$lib/types";
   import { divider } from "./theme";
   import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
-  import { nonPassiveTouch } from "$lib/utils/nonPassiveTouch";
 
   let { direction, index, onMouseDown, onTouchStart, onKeyDown, isDragging, currentSize, class: className = "" }: DividerProps = $props();
 
@@ -13,6 +13,16 @@
 
   const isHorizontal = $derived(direction === "horizontal");
   const roundedSize = $derived(Math.round(currentSize));
+
+  const nonPassiveTouchAttachment: Attachment<HTMLElement> = (node) => {
+    const handler = (e: TouchEvent) => onTouchStart(e, index);
+
+    node.addEventListener("touchstart", handler, { passive: false });
+
+    return () => {
+      node.removeEventListener("touchstart", handler);
+    };
+  };
 </script>
 
 <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
@@ -30,7 +40,7 @@
   data-scope="divider"
   data-part="base"
   onmousedown={(e) => onMouseDown(e, index)}
-  use:nonPassiveTouch={(e) => onTouchStart(e, index)}
+  {@attach nonPassiveTouchAttachment}
   onkeydown={(e) => onKeyDown(e, index)}
 >
   <div class={hitArea({ class: clsx(theme?.hitArea) })} data-part="hit-area"></div>
