@@ -234,16 +234,18 @@
     };
 
     // Write to clipboard first, before updating state
+    let clipboardSuccess = true;
     try {
       await navigator.clipboard.writeText(trimmed);
     } catch (e) {
       // Silently handle clipboard errors (e.g., permissions, unsupported browsers)
       console.error("Clipboard write failed:", e);
+      clipboardSuccess = false;
     }
 
     items = sortItems([item, ...items]).slice(0, limit);
     newText = "";
-    showToast("Saved and copied to clipboard");
+    showToast(clipboardSuccess ? "Saved and copied to clipboard" : "Saved to clipboard manager");
   };
 
   const copyItem = async (item: ClipboardItem) => {

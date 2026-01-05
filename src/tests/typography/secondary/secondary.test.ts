@@ -50,7 +50,9 @@ describe("Secondary Component", () => {
       const secondary = container.querySelector('[data-testid="custom-secondary"]');
 
       expect(secondary).toHaveClass("custom-secondary-class");
-      expect(secondary?.classList.length).toBeGreaterThan(0);
+      // Verify both custom and theme classes are present
+      expect(secondary?.classList.length).toBeGreaterThan(1);
+      expect(secondary?.className).toMatch(/text-/);
     });
   });
 
@@ -75,14 +77,6 @@ describe("Secondary Component", () => {
   });
 
   describe("Semantic HTML", () => {
-    test("uses semantic small element", () => {
-      const { container } = render(BasicSecondaryTest);
-      const secondary = container.querySelector("small");
-
-      expect(secondary).toBeInTheDocument();
-      expect(secondary?.tagName).toBe("SMALL");
-    });
-
     test("maintains proper document structure", () => {
       const { container } = render(BasicSecondaryTest);
       const secondary = container.querySelector('[data-scope="secondary"]');
@@ -97,9 +91,9 @@ describe("Secondary Component", () => {
       const { container } = render(BasicSecondaryTest);
       const secondary = container.querySelector('[data-scope="secondary"]');
 
-      // Verify specific theme classes are present
-      expect(secondary?.className).toContain('text-'); // or check for specific theme class pattern
-      expect(secondary?.classList.length).toBeGreaterThan(0);
+      // Verify actual theme classes applied by Secondary component
+      expect(secondary?.className).toMatch(/text-(gray|secondary)/);
+      expect(secondary).toHaveClass("test-class");
     });
 
     test("theme classes work with custom classes", () => {

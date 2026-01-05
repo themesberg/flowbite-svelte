@@ -1,4 +1,4 @@
-import { cleanup, render, screen, within } from "@testing-library/svelte";
+import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
 import userEvent from "@testing-library/user-event";
 
@@ -48,8 +48,8 @@ describe("ButtonToggle Component", () => {
       expect(toggle).toHaveAttribute("aria-checked", "true");
 
       // Check icon should be present
-      const icon = within(toggle).getByRole("img", { hidden: true });
-      expect(icon).toBeInTheDocument();
+      const iconByAttr = toggle.querySelector('svg[data-scope="check-icon"]');
+      expect(iconByAttr).toBeInTheDocument();
     });
 
     test("renders without selected state by default", () => {

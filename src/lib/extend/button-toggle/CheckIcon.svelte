@@ -15,6 +15,8 @@
   stroke-linecap="round"
   stroke-linejoin="round"
   aria-hidden="true"
+  data-scope="check-icon"
+  data-part="base"
   class={clsx(className)}
   {...restProps}
 >

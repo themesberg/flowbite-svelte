@@ -227,7 +227,7 @@ describe("ClipboardManager Component", () => {
       expect(screen.getByText("Item 4")).toBeInTheDocument();
     });
 
-    test("writes to clipboard when adding item", async () => {
+    test("adds item to manager list on save", async () => {
       const user = userEvent.setup();
       render(BasicClipboardTest);
 
