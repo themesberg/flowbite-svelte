@@ -4,8 +4,6 @@
 </script>
 
 <List position="outside" data-testid="position-list">
-  {#snippet children()}
-    <Li>Outside positioned</Li>
-    <Li>List item</Li>
-  {/snippet}
+  <Li>Outside positioned</Li>
+  <Li>List item</Li>
 </List>

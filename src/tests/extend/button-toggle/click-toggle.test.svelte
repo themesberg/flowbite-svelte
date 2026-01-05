@@ -16,6 +16,4 @@
   }
 </script>
 
-<ButtonToggle value="clickable" onclick={handleClick} data-testid="clickable-toggle">
-  Click Me
-</ButtonToggle>
+<ButtonToggle value="clickable" onclick={handleClick} data-testid="clickable-toggle">Click Me</ButtonToggle>

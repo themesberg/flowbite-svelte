@@ -163,7 +163,7 @@ describe("List Component", () => {
 
       expect(list).toBeInTheDocument();
       expect(listItems.length).toBeGreaterThan(0);
-      
+
       // All list items should be children of the list
       listItems.forEach((item) => {
         expect(item.parentElement?.tagName).toBe("UL");
@@ -176,7 +176,7 @@ describe("List Component", () => {
       const listItems = container.querySelectorAll("li");
 
       expect(list).toBeInTheDocument();
-      
+
       // All list items should be children of the ordered list
       listItems.forEach((item) => {
         expect(item.parentElement?.tagName).toBe("OL");

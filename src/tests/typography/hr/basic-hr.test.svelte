@@ -2,4 +2,4 @@
   import Hr from "$lib/typography/hr/Hr.svelte";
 </script>
 
-<Hr data-testid="basic-hr"/>
+<Hr data-testid="basic-hr" />

@@ -4,7 +4,5 @@
 </script>
 
 <List class="custom-list-class" data-testid="custom-class-list">
-  {#snippet children()}
-    <Li class="custom-li-class" data-testid="custom-li">Styled item</Li>
-  {/snippet}
+  <Li class="custom-li-class" data-testid="custom-li">Styled item</Li>
 </List>

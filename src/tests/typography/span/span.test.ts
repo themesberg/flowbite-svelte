@@ -91,7 +91,7 @@ describe("Span Component", () => {
     test.each([
       { testId: "gradient-sky-emerald", name: "skyToEmerald" },
       { testId: "gradient-purple-blue", name: "purpleToBlue" },
-      { testId: "gradient-pink-orange", name: "pinkToOrange" },
+      { testId: "gradient-pink-orange", name: "pinkToOrange" }
       // ... other variants
     ])("renders $name gradient", ({ testId }) => {
       const { container } = render(GradientSpanTest);
@@ -540,7 +540,7 @@ describe("Span Component", () => {
 
       // Span element has className property (may be empty without variants)
       expect(span).toBeInTheDocument();
-      expect(span).toHaveProperty('className');
+      expect(span).toHaveProperty("className");
     });
 
     test("theme classes work with custom classes", () => {

@@ -4,8 +4,6 @@
 </script>
 
 <List isContenteditable={true} data-testid="contenteditable-list">
-  {#snippet children()}
-    <Li>Editable item</Li>
-    <Li>Another item</Li>
-  {/snippet}
+  <Li>Editable item</Li>
+  <Li>Another item</Li>
 </List>

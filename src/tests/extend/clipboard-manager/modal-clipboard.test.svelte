@@ -5,8 +5,5 @@
 </script>
 
 <div data-testid="modal-clipboard">
-<ClipboardManager 
-  bind:open={isOpen}
-  saveToStorage={false}
-/>
+  <ClipboardManager bind:open={isOpen} saveToStorage={false} />
 </div>

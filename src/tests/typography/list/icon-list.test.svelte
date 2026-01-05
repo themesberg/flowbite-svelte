@@ -4,8 +4,6 @@
 </script>
 
 <List data-testid="icon-list">
-  {#snippet children()}
-    <Li icon={true} data-testid="icon-li">Item with icon</Li>
-    <Li icon={true}>Another icon item</Li>
-  {/snippet}
+  <Li icon={true} data-testid="icon-li">Item with icon</Li>
+  <Li icon={true}>Another icon item</Li>
 </List>

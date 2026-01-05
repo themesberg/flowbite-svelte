@@ -4,9 +4,7 @@
 </script>
 
 <List data-testid="basic-list">
-  {#snippet children()}
-    <Li>Item one</Li>
-    <Li>Item two</Li>
-    <Li>Item three</Li>
-  {/snippet}
+  <Li>Item one</Li>
+  <Li>Item two</Li>
+  <Li>Item three</Li>
 </List>

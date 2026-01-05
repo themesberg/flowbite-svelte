@@ -58,7 +58,7 @@ export function loadTheme(themeId: ThemeId, loadFromStatic = false): void {
   // Use static path if loadFromStatic is true, otherwise use bundled path
   const themePath = loadFromStatic ? `/themes/${themeId}-runtime.css` : theme.cssPath;
   themeLink.href = themePath;
-  
+
   if (dev) console.log(`Loading theme CSS from: ${themePath}, loadFromStatic=${loadFromStatic}`);
 
   // Add onload handler

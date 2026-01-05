@@ -4,9 +4,7 @@
 </script>
 
 <List tag="ol" data-testid="ordered-list">
-  {#snippet children()}
-    <Li>First item</Li>
-    <Li>Second item</Li>
-    <Li>Third item</Li>
-  {/snippet}
+  <Li>First item</Li>
+  <Li>Second item</Li>
+  <Li>Third item</Li>
 </List>

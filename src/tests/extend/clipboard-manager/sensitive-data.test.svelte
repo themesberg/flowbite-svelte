@@ -3,8 +3,5 @@
 </script>
 
 <div data-testid="sensitive-clipboard">
-<ClipboardManager 
-  filterSensitive
-  saveToStorage={false}
-/>
+  <ClipboardManager filterSensitive saveToStorage={false} />
 </div>

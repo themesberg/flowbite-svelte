@@ -3,5 +3,5 @@
 </script>
 
 <div data-testid="basic-clipboard">
-  <ClipboardManager saveToStorage={false}/>
+  <ClipboardManager saveToStorage={false} />
 </div>
