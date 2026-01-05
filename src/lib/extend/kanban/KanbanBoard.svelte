@@ -80,6 +80,7 @@
     <div
       role="group"
       data-part="column"
+      data-testid={`column-${col.id}`}
       aria-label={`${col.title} column drop zone`}
       class={column({ isDragOver: dragOverColumnId === col.id, class: clsx(theme?.column, styling?.column) })}
       ondragover={(e) => handleDragOver(e, col.id)}
@@ -87,15 +88,23 @@
       ondrop={(e) => handleDrop(e, col.id)}
       style={col.color ? `border-top: 4px solid ${col.color}` : ""}
     >
-      <h2 data-part="title" class={title({ class: clsx(theme?.title, styling?.title) })}>{col.title}</h2>
+      <h2 data-part="title" data-testid={`column-title-${col.id}`} class={title({ class: clsx(theme?.title, styling?.title) })}>{col.title}</h2>
 
-      <div data-part="list" class={list({ class: clsx(theme?.list, styling?.list) })} role="list" aria-label={`${col.title} cards`}>
+      <div data-part="list" data-testid={`card-list-${col.id}`} class={list({ class: clsx(theme?.list, styling?.list) })} role="list" aria-label={`${col.title} cards`}>
         {#each col.cards as card (card.id)}
           <KanbanCard {card} {...cardProps} isDragging={draggedCard?.id === card.id} onDragStart={() => handleDragStart(card, col.id)} onDragEnd={handleDragEnd} />
         {/each}
       </div>
 
-      <button data-part="button" class={button({ class: clsx(theme?.button, styling?.button) })} onclick={() => onAddCard(col)} aria-label={`Add card to ${col.title}`}>+ Add card</button>
+      <button
+        data-part="button"
+        data-testid={`add-card-btn-${col.id}`}
+        class={button({ class: clsx(theme?.button, styling?.button) })}
+        onclick={() => onAddCard(col)}
+        aria-label={`Add card to ${col.title}`}
+      >
+        + Add card
+      </button>
     </div>
   {/each}
 </div>

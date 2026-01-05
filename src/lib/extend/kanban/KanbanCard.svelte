@@ -24,22 +24,23 @@
   aria-label={card.title}
   data-scope="kanban-card"
   data-part="base"
+  data-testid={`card-${card.id}`}
   class={basePart({ isDragging, class: clsx(theme?.base, className) })}
 >
-  <p data-part="title" class={titlePart({ class: clsx(theme?.title, styling?.title) })}>
+  <p data-part="title" data-testid={`card-${card.id}-title`} class={titlePart({ class: clsx(theme?.title, styling?.title) })}>
     {card.title}
   </p>
 
   {#if card.description}
-    <p data-part="description" class={descriptionPart({ class: clsx(theme?.description, styling?.description) })}>
+    <p data-part="description" data-testid={`card-${card.id}-description`} class={descriptionPart({ class: clsx(theme?.description, styling?.description) })}>
       {card.description}
     </p>
   {/if}
 
   {#if card.tags?.length}
-    <div data-part="tags" class={tagsPart({ class: clsx(theme?.tags, styling?.tags) })}>
+    <div data-part="tags" data-testid={`card-${card.id}-tags`} class={tagsPart({ class: clsx(theme?.tags, styling?.tags) })}>
       {#each card.tags as tag, i (i)}
-        <span data-part="tag" class={tagPart({ class: clsx(theme?.tag, styling?.tag) })}>
+        <span data-part="tag" data-testid={`card-${card.id}-tag-${i}`} class={tagPart({ class: clsx(theme?.tag, styling?.tag) })}>
           {tag}
         </span>
       {/each}

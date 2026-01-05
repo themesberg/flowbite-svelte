@@ -43,6 +43,14 @@
     }
   });
 
+  // Clear search when dialog closes
+  $effect(() => {
+    if (!open) {
+      search = "";
+      selectedIndex = 0;
+    }
+  });
+
   function handleKeydown(e: KeyboardEvent) {
     if (!open) return;
 
@@ -96,8 +104,6 @@
   function selectItem(item: CommandItem) {
     item.onselect();
     open = false;
-    search = "";
-    selectedIndex = 0;
   }
 
   const handleGlobalKeydown = (e: KeyboardEvent) => {

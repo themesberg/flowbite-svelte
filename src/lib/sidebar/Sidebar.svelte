@@ -87,21 +87,14 @@
 
   const trapFocusAttachment: Attachment<HTMLElement> = (node) => {
     $effect(() => {
-      const shouldTrap =
-        disableBreakpoints
-          ? isOpen
-          : !isLargeScreen && isOpen && !alwaysOpen;
+      const shouldTrap = disableBreakpoints ? isOpen : !isLargeScreen && isOpen && !alwaysOpen;
 
       if (!shouldTrap) return;
 
       const previous = document.activeElement as HTMLElement | null;
 
       function focusable(): HTMLElement[] {
-        return Array.from(
-          node.querySelectorAll<HTMLElement>(
-            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-          )
-        );
+        return Array.from(node.querySelectorAll<HTMLElement>('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'));
       }
 
       function handleKeydown(event: KeyboardEvent) {
@@ -171,14 +164,7 @@
     </aside>
   {/if}
 {:else}
-  <aside
-    {@attach trapFocusAttachment}
-    {...restProps}
-    data-scope="sidebar"
-    data-part="base"
-    class={base({ class: clsx(theme?.base, className) })}
-    aria-label={ariaLabel}
-  >
+  <aside {@attach trapFocusAttachment} {...restProps} data-scope="sidebar" data-part="base" class={base({ class: clsx(theme?.base, className) })} aria-label={ariaLabel}>
     <div data-part="content" class={content({ class: clsx(theme?.content, styling?.content) })}>
       {@render children()}
     </div>

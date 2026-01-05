@@ -20,7 +20,7 @@ describe("clickOutside", () => {
 
     const callback = vi.fn();
 
-     action = clickOutside(element, callback);
+    action = clickOutside(element, callback);
 
     document.body.click();
 
@@ -36,7 +36,7 @@ describe("clickOutside", () => {
 
     const callback = vi.fn();
 
-     action = clickOutside(element, callback);
+    action = clickOutside(element, callback);
 
     child.click();
 
