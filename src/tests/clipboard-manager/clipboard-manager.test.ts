@@ -345,7 +345,7 @@ describe("ClipboardManager Storage", () => {
         const stored = localStorage.getItem("flowbite-clipboard-manager");
         expect(stored).toBeTruthy();
       },
-      { timeout: 3000 }
+      { timeout: 500 }
     );
 
     const stored = localStorage.getItem("flowbite-clipboard-manager");

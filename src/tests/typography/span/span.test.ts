@@ -49,7 +49,7 @@ describe("Span Component", () => {
       const span = container.querySelector('[data-testid="italic-span"]');
 
       expect(span).toBeInTheDocument();
-      expect(span?.className).toBeTruthy();
+      expect(span).toHaveClass("italic");
     });
 
     test("renders underline span", () => {

@@ -1,8 +1,15 @@
 import { describe, it, expect, vi, afterEach } from "vitest";
 import { clickOutside } from "$lib";
 
+let action: ReturnType<typeof clickOutside> | null = null;
+
 describe("clickOutside", () => {
   afterEach(() => {
+    // Clean up event listeners
+    if (action) {
+      action.destroy();
+      action = null;
+    }
     // Clean up DOM between tests
     document.body.innerHTML = "";
   });
@@ -13,7 +20,7 @@ describe("clickOutside", () => {
 
     const callback = vi.fn();
 
-    clickOutside(element, callback);
+     action = clickOutside(element, callback);
 
     document.body.click();
 
@@ -29,7 +36,7 @@ describe("clickOutside", () => {
 
     const callback = vi.fn();
 
-    clickOutside(element, callback);
+     action = clickOutside(element, callback);
 
     child.click();
 

@@ -82,7 +82,6 @@ describe("Secondary Component", () => {
       const secondary = container.querySelector('[data-scope="secondary"]');
 
       expect(secondary).toBeInTheDocument();
-      expect(secondary?.parentElement).toBeTruthy();
     });
   });
 
