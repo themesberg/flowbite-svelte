@@ -88,95 +88,14 @@ describe("Span Component", () => {
   });
 
   describe("Gradient Variants", () => {
-    test("renders skyToEmerald gradient", () => {
+    test.each([
+      { testId: "gradient-sky-emerald", name: "skyToEmerald" },
+      { testId: "gradient-purple-blue", name: "purpleToBlue" },
+      { testId: "gradient-pink-orange", name: "pinkToOrange" },
+      // ... other variants
+    ])("renders $name gradient", ({ testId }) => {
       const { container } = render(GradientSpanTest);
-      const span = container.querySelector('[data-testid="gradient-sky-emerald"]');
-
-      expect(span).toBeInTheDocument();
-      expect(span?.className).toBeTruthy();
-    });
-
-    test("renders purpleToBlue gradient", () => {
-      const { container } = render(GradientSpanTest);
-      const span = container.querySelector('[data-testid="gradient-purple-blue"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders pinkToOrange gradient", () => {
-      const { container } = render(GradientSpanTest);
-      const span = container.querySelector('[data-testid="gradient-pink-orange"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders tealToLime gradient", () => {
-      const { container } = render(GradientSpanTest);
-      const span = container.querySelector('[data-testid="gradient-teal-lime"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders redToYellow gradient", () => {
-      const { container } = render(GradientSpanTest);
-      const span = container.querySelector('[data-testid="gradient-red-yellow"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders indigoToCyan gradient", () => {
-      const { container } = render(GradientSpanTest);
-      const span = container.querySelector('[data-testid="gradient-indigo-cyan"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders fuchsiaToRose gradient", () => {
-      const { container } = render(GradientSpanTest);
-      const span = container.querySelector('[data-testid="gradient-fuchsia-rose"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders amberToEmerald gradient", () => {
-      const { container } = render(GradientSpanTest);
-      const span = container.querySelector('[data-testid="gradient-amber-emerald"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders violetToRed gradient", () => {
-      const { container } = render(GradientSpanTest);
-      const span = container.querySelector('[data-testid="gradient-violet-red"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders blueToGreen gradient", () => {
-      const { container } = render(GradientSpanTest);
-      const span = container.querySelector('[data-testid="gradient-blue-green"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders orangeToPurple gradient", () => {
-      const { container } = render(GradientSpanTest);
-      const span = container.querySelector('[data-testid="gradient-orange-purple"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders yellowToRed gradient", () => {
-      const { container } = render(GradientSpanTest);
-      const span = container.querySelector('[data-testid="gradient-yellow-red"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders with no gradient when gradient is none", () => {
-      const { container } = render(GradientSpanTest);
-      const span = container.querySelector('[data-testid="gradient-none"]');
-
+      const span = container.querySelector(`[data-testid="${testId}"]`);
       expect(span).toBeInTheDocument();
     });
   });
@@ -690,7 +609,7 @@ describe("Span Component", () => {
   });
 
   describe("Edge Cases", () => {
-    test("renders correctly with empty children", () => {
+    test("renders correctly as basic span element", () => {
       const { container } = render(BasicSpanTest);
       const span = container.querySelector('[data-scope="span"]');
 

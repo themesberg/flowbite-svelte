@@ -26,7 +26,7 @@ let currentTheme = $state<ThemeId>(getInitialTheme());
 // Using $derived for computed value
 let selectedTheme = $derived<FlowbiteTheme | undefined>(themeConfigs.find((t) => t.id === currentTheme));
 
-export function loadTheme(themeId: ThemeId): void {
+export function loadTheme(themeId: ThemeId, loadFromStatic = false): void {
   if (!browser) return;
 
   const theme = themeConfigs.find((t) => t.id === themeId);
@@ -35,7 +35,7 @@ export function loadTheme(themeId: ThemeId): void {
     return;
   }
 
-  if (dev) console.log(`Loading theme: ${themeId}`);
+  if (dev) console.log(`Loading theme: ${themeId}, loadFromStatic: ${loadFromStatic}`);
 
   // Remove ALL existing theme links
   const existingLinks = document.querySelectorAll("#dynamic-theme-css, #initial-theme-css, #dynamic-theme-font");
@@ -55,7 +55,11 @@ export function loadTheme(themeId: ThemeId): void {
   const themeLink = document.createElement("link");
   themeLink.id = "dynamic-theme-css";
   themeLink.rel = "stylesheet";
-  themeLink.href = theme.cssPath;
+  // Use static path if loadFromStatic is true, otherwise use bundled path
+  const themePath = loadFromStatic ? `/themes/${themeId}-runtime.css` : theme.cssPath;
+  themeLink.href = themePath;
+  
+  if (dev) console.log(`Loading theme CSS from: ${themePath}`);
 
   // Add onload handler
   themeLink.onload = () => {
@@ -71,7 +75,7 @@ export function loadTheme(themeId: ThemeId): void {
   };
 
   themeLink.onerror = () => {
-    console.error(`✗ Failed to load theme ${themeId} from ${theme.cssPath}`);
+    console.error(`✗ Failed to load theme ${themeId} from ${themePath}`);
   };
 
   document.head.appendChild(themeLink);

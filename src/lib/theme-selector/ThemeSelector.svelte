@@ -9,7 +9,7 @@
   import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
 
-  let { classes, ...restProps }: ThemeSelectorProps = $props();
+  let { classes, loadFromStatic = false, ...restProps }: ThemeSelectorProps = $props();
 
   const styling = $derived(classes);
   const themeStyling = $derived(getTheme("themeSelector"));
@@ -23,14 +23,14 @@
   function handleThemeChange(themeId: ThemeId) {
     return (e: MouseEvent) => {
       e.preventDefault();
-      loadTheme(themeId);
+      loadTheme(themeId, loadFromStatic);
       // Close the dropdown after selecting a theme
       isOpen = false;
     };
   }
 
   onMount(() => {
-    loadTheme(currentTheme);
+    loadTheme(currentTheme, loadFromStatic);
   });
   let isOpen = $state(false);
 </script>
@@ -73,5 +73,6 @@
 [ThemeSelectorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2220)
 ## Props
 @prop classes
+@prop loadFromStatic - If true, loads theme CSS files from /static/themes directory instead of bundled assets
 @prop ...restProps
 -->

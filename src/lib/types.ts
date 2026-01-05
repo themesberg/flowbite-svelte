@@ -2217,4 +2217,6 @@ export interface ClipboardManagerProps extends ClipboardManagerVariants {
 }
 
 // theme-selector
-export interface ThemeSelectorProps extends ThemeSelectorVariants, HTMLAttributes<HTMLDivElement> {}
+export interface ThemeSelectorProps extends ThemeSelectorVariants, HTMLAttributes<HTMLDivElement> {
+  loadFromStatic?: boolean;
+}

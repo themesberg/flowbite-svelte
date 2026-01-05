@@ -114,7 +114,7 @@ export const badge = tv({
       color: "warning",
       class: "hover:bg-warning-medium"
     },
-     {
+    {
       border: true,
       color: "primary",
       class: "dark:bg-transparent dark:text-primary-400 border-primary-400 dark:border-primary-400"
@@ -123,11 +123,6 @@ export const badge = tv({
       border: true,
       color: "secondary",
       class: "dark:bg-transparent dark:text-secondary-400 border-secondary-400 dark:border-secondary-400"
-    },
-    {
-      border: true,
-      color: "gray",
-      class: "dark:bg-transparent dark:text-gray-400 border-gray-400 dark:border-gray-400"
     },
     {
       border: true,
@@ -217,102 +212,102 @@ export const badge = tv({
     {
       href: true,
       color: "primary",
-      class: "hover:bg-primary-200"
+      class: "hover:bg-primary-200 dark:hover:bg-primary-700"
     },
     {
       href: true,
       color: "secondary",
-      class: "hover:bg-secondary-200"
+      class: "hover:bg-secondary-200 dark:hover:bg-secondary-700"
     },
     {
       href: true,
       color: "gray",
-      class: "hover:bg-gray-200"
+      class: "hover:bg-gray-200 dark:hover:bg-gray-700"
     },
     {
       href: true,
       color: "red",
-      class: "hover:bg-red-200"
+      class: "hover:bg-red-200 dark:hover:bg-red-700"
     },
     {
       href: true,
       color: "orange",
-      class: "hover:bg-orange-200"
+      class: "hover:bg-orange-200 dark:hover:bg-orange-700"
     },
     {
       href: true,
       color: "amber",
-      class: "hover:bg-amber-200"
+      class: "hover:bg-amber-200 dark:hover:bg-amber-700"
     },
     {
       href: true,
       color: "yellow",
-      class: "hover:bg-yellow-200"
+      class: "hover:bg-yellow-200 dark:hover:bg-yellow-700"
     },
     {
       href: true,
       color: "lime",
-      class: "hover:bg-lime-200"
+      class: "hover:bg-lime-200 dark:hover:bg-lime-700"
     },
     {
       href: true,
       color: "green",
-      class: "hover:bg-green-200"
+      class: "hover:bg-green-200 dark:hover:bg-green-700"
     },
     {
       href: true,
       color: "emerald",
-      class: "hover:bg-emerald-200"
+      class: "hover:bg-emerald-200 dark:hover:bg-emerald-700"
     },
     {
       href: true,
       color: "teal",
-      class: "hover:bg-teal-200"
+      class: "hover:bg-teal-200 dark:hover:bg-teal-700"
     },
     {
       href: true,
       color: "cyan",
-      class: "hover:bg-cyan-200"
+      class: "hover:bg-cyan-200 dark:hover:bg-cyan-700"
     },
     {
       href: true,
       color: "sky",
-      class: "hover:bg-sky-200"
+      class: "hover:bg-sky-200 dark:hover:bg-sky-700"
     },
     {
       href: true,
       color: "blue",
-      class: "hover:bg-blue-200"
+      class: "hover:bg-blue-200 dark:hover:bg-blue-700"
     },
     {
       href: true,
       color: "indigo",
-      class: "hover:bg-indigo-200"
+      class: "hover:bg-indigo-200 dark:hover:bg-indigo-700"
     },
     {
       href: true,
       color: "violet",
-      class: "hover:bg-violet-200"
+      class: "hover:bg-violet-200 dark:hover:bg-violet-700"
     },
     {
       href: true,
       color: "purple",
-      class: "hover:bg-purple-200"
+      class: "hover:bg-purple-200 dark:hover:bg-purple-700"
     },
     {
       href: true,
       color: "fuchsia",
-      class: "hover:bg-fuchsia-200"
+      class: "hover:bg-fuchsia-200 dark:hover:bg-fuchsia-700"
     },
     {
       href: true,
       color: "pink",
-      class: "hover:bg-pink-200"
+      class: "hover:bg-pink-200 dark:hover:bg-pink-700"
     },
     {
       href: true,
       color: "rose",
-      class: "hover:bg-rose-200"
+      class: "hover:bg-rose-200 dark:hover:bg-rose-700"
     }
   ],
   defaultVariants: {

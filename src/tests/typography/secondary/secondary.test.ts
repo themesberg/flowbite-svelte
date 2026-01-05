@@ -32,7 +32,7 @@ describe("Secondary Component", () => {
       const secondary = container.querySelector('[data-scope="secondary"]');
 
       expect(secondary).toBeInTheDocument();
-      expect(secondary?.textContent).toBeTruthy();
+      expect(secondary?.textContent).toBe("Basic secondary content");
     });
   });
 
@@ -49,7 +49,7 @@ describe("Secondary Component", () => {
       const { container } = render(CustomClassSecondaryTest);
       const secondary = container.querySelector('[data-testid="custom-secondary"]');
 
-      expect(secondary?.className).toBeTruthy();
+      expect(secondary).toHaveClass("custom-secondary-class");
       expect(secondary?.classList.length).toBeGreaterThan(0);
     });
   });
