@@ -2,7 +2,7 @@
   import { getCurrentTheme, getSelectedTheme, themeConfigs, loadTheme } from "./themeStore.svelte";
   import type { ThemeId } from "./themes";
   import type { ThemeSelectorProps } from "$lib/types";
-  import { onMount } from "svelte";
+  // import { onMount } from "svelte";
   import { Button, Dropdown, DropdownItem } from "$lib";
   import ThemeIcon from "./ThemeIcon.svelte";
   import { themeSelector } from "./theme";
@@ -29,9 +29,9 @@
     };
   }
 
-  onMount(() => {
-    loadTheme(currentTheme, loadFromStatic);
-  });
+  // onMount(() => {
+  //   loadTheme(currentTheme, loadFromStatic);
+  // });
   let isOpen = $state(false);
 </script>
 

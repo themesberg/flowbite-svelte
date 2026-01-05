@@ -59,7 +59,7 @@ export function loadTheme(themeId: ThemeId, loadFromStatic = false): void {
   const themePath = loadFromStatic ? `/themes/${themeId}-runtime.css` : theme.cssPath;
   themeLink.href = themePath;
   
-  if (dev) console.log(`Loading theme CSS from: ${themePath}`);
+  if (dev) console.log(`Loading theme CSS from: ${themePath}, loadFromStatic=${loadFromStatic}`);
 
   // Add onload handler
   themeLink.onload = () => {

@@ -53,7 +53,7 @@
       <h1 class="mb-2 text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">Theme Test Page</h1>
       <p class="text-gray-600 dark:text-gray-400">Test all components with different themes</p>
     </div>
-    <ThemeSelector />
+    <ThemeSelector loadFromStatic/>
   </div>
 
   <!-- Typography & Buttons Row -->

@@ -101,7 +101,7 @@
     <div>
       <h1 class="mb-2 text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">Color Test Page</h1>
     </div>
-    <ThemeSelector />
+    <ThemeSelector loadFromStatic/>
   </div>
 
   <div class="flex flex-wrap gap-4 p-8">

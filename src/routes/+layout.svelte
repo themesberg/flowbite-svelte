@@ -12,7 +12,7 @@
 
   // Load the theme as early as possible
   onMount(() => {
-    loadTheme(savedTheme);
+    loadTheme(savedTheme, true);
   });
 </script>
 
