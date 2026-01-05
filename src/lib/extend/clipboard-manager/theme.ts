@@ -32,7 +32,7 @@ export const clipboardManager = tv({
     itemContent: "flex-1 min-w-0",
     itemHeader: "flex items-center gap-2 mb-1",
     itemTimestamp: "text-xs text-gray-500 dark:text-gray-400",
-    itemText: "text-sm text-gray-900 dark:text-gray-100 break-words line-clamp-2",
+    itemText: "text-sm text-gray-900 dark:text-gray-100 break-words line-clamp-2 text-body",
 
     // Actions
     itemActions: "flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity",

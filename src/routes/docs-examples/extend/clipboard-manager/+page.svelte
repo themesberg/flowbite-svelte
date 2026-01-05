@@ -24,7 +24,7 @@
   const sensitiveEx = "detectSensitiveData=(text) => (/confidential|secret/i).test(text)";
 </script>
 
-<div class="mx-auto max-w-7xl space-y-8 p-6">
+<div id="clipboard-example" class="mx-auto max-w-7xl space-y-8 p-6">
   <div class="space-y-2">
     <Heading tag="h1" class="my-4 text-4xl">Clipboard Manager</Heading>
     <P>Real-world examples showing how to use the selection bubble menu feature</P>
@@ -229,7 +229,7 @@
   </section>
 
   <!-- Comparison -->
-  <section class="rounded-base bg-gradient-to-r from-green-50 to-blue-50 p-6">
+  <section class="rounded-base p-6">
     <Heading tag="h2" class="mb-4 text-2xl font-semibold">🔄 Selection Menu vs Manual Input</Heading>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
       <div class="rounded-base p-4">
