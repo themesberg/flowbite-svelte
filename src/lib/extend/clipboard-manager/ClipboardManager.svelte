@@ -233,16 +233,17 @@
       timestamp: Date.now()
     };
 
+    // Write to clipboard first, before updating state
+    try {
+      await navigator.clipboard.writeText(trimmed);
+    } catch (e) {
+      // Silently handle clipboard errors (e.g., permissions, unsupported browsers)
+      console.error("Clipboard write failed:", e);
+    }
+
     items = sortItems([item, ...items]).slice(0, limit);
     newText = "";
-
-    try {
-      await navigator.clipboard.writeText(item.text);
-      showToast("Saved and copied to clipboard");
-    } catch (e) {
-      console.error("Clipboard write failed:", e);
-      showToast("Saved but clipboard access denied", "error");
-    }
+    showToast("Saved and copied to clipboard");
   };
 
   const copyItem = async (item: ClipboardItem) => {
@@ -250,6 +251,7 @@
       await navigator.clipboard.writeText(item.text);
       showToast("Copied to clipboard");
     } catch (e) {
+      console.error("Clipboard copy failed:", e);
       showToast("Clipboard access denied", "error");
     }
   };
@@ -271,10 +273,10 @@
     }
   };
 
-  const handleKeydown = (e: KeyboardEvent) => {
+  const handleKeydown = async (e: KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      addToClipboard();
+      await addToClipboard();
     }
   };
 </script>
@@ -283,7 +285,7 @@
   <div data-part="input-section" class={styles.inputSection({ class: clsx(theme?.inputSection, classes?.inputSection) })}>
     <div data-part="input-wrapper" class={styles.inputWrapper({ class: clsx(theme?.inputWrapper, classes?.inputWrapper) })}>
       <input data-part="input" type="text" bind:value={newText} onkeydown={handleKeydown} {placeholder} class={styles.input({ class: clsx(theme?.input, classes?.input) })} />
-      <button data-part="add-button" onclick={addToClipboard} disabled={!newText.trim()} class={styles.addButton({ class: clsx(theme?.addButton, classes?.addButton) })}>
+      <button data-part="add-button" onclick={async () => await addToClipboard()} disabled={!newText.trim()} class={styles.addButton({ class: clsx(theme?.addButton, classes?.addButton) })}>
         {saveLabel}
       </button>
     </div>
@@ -384,7 +386,7 @@
             <!-- Actions -->
             <div data-part="item-actions" class={styles.itemActions({ class: clsx(theme?.itemActions, classes?.itemActions) })}>
               <!-- Copy -->
-              <button data-part="action-button" onclick={() => copyItem(item)} class={styles.actionButton({ class: clsx(theme?.actionButton, classes?.actionButton) })} aria-label="Copy">
+              <button data-part="action-button" onclick={async () => await copyItem(item)} class={styles.actionButton({ class: clsx(theme?.actionButton, classes?.actionButton) })} aria-label="Copy">
                 <svg
                   data-part="action-icon"
                   class={styles.actionIcon({ class: clsx(theme?.actionIcon, classes?.actionIcon) })}

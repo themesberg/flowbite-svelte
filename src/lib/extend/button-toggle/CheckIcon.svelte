@@ -14,6 +14,7 @@
   stroke-width="2"
   stroke-linecap="round"
   stroke-linejoin="round"
+  role="img"
   class={clsx(className)}
   {...restProps}
 >

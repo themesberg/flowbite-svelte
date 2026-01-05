@@ -11,7 +11,12 @@ import CallbackGroupTest, { testState as callbackTestState } from "./callback-gr
 import PresetValueGroupTest from "./preset-value-group.test.svelte";
 import PresetMultiGroupTest from "./preset-multi-group.test.svelte";
 import ColorGroupTest from "./color-group.test.svelte";
+import ColorInheritGroupTest from "./color-inherit-group.test.svelte";
+import ColorOverrideGroupTest from "./color-override-group.test.svelte";
 import SizeGroupTest from "./size-group.test.svelte";
+import SizeSmGroupTest from "./size-sm-group.test.svelte";
+import SizeMdGroupTest from "./size-md-group.test.svelte";
+import SizeXlGroupTest from "./size-xl-group.test.svelte";
 
 afterEach(() => {
   cleanup();
@@ -290,22 +295,131 @@ describe("ButtonToggleGroup Component", () => {
   });
 
   describe("Props Propagation", () => {
-    test("applies color from group context", () => {
-      render(ColorGroupTest);
-      const group = screen.getByTestId("color-group");
+    describe("Color Propagation", () => {
+      test("group color takes precedence over button color prop", () => {
+        render(ColorGroupTest);
+        const group = screen.getByTestId("color-group");
 
-      expect(group).toBeInTheDocument();
-      expect(screen.getByTestId("color-opt1")).toBeInTheDocument();
-      expect(screen.getByTestId("color-opt2")).toBeInTheDocument();
+        expect(group).toBeInTheDocument();
+
+        const option1 = screen.getByTestId("color-opt1");
+        const option2 = screen.getByTestId("color-opt2");
+
+        // Group has color="secondary", buttons have color="red" and color="green"
+        // Group color takes precedence, so both buttons use secondary color
+        expect(option1.className).toMatch(/bg-secondary-\d+/);
+        expect(option2.className).toMatch(/bg-secondary-\d+/);
+
+        // Should NOT have red or green colors
+        expect(option1.className).not.toMatch(/bg-red-\d+/);
+        expect(option2.className).not.toMatch(/bg-green-\d+/);
+      });
+
+      test("button uses own color when group has no color prop", () => {
+        render(ColorOverrideGroupTest);
+        const group = screen.getByTestId("color-override-group");
+
+        expect(group).toBeInTheDocument();
+
+        const option1 = screen.getByTestId("color-override-opt1");
+        const option2 = screen.getByTestId("color-override-opt2");
+
+        // Group has NO color prop, so buttons use their own colors
+        expect(option1.className).toMatch(/bg-red-\d+/);
+        expect(option2.className).toMatch(/bg-green-\d+/);
+      });
+
+      test("all buttons inherit same group color when set", () => {
+        render(ColorInheritGroupTest);
+        const group = screen.getByTestId("color-inherit-group");
+
+        expect(group).toBeInTheDocument();
+
+        const option1 = screen.getByTestId("color-inherit-opt1");
+        const option2 = screen.getByTestId("color-inherit-opt2");
+
+        // Buttons should inherit blue color from group
+        expect(option1.className).toMatch(/bg-blue-\d+/);
+        expect(option2.className).toMatch(/bg-blue-\d+/);
+      });
     });
 
-    test("applies size from group context", () => {
-      render(SizeGroupTest);
-      const group = screen.getByTestId("size-group");
+    describe("Size Propagation", () => {
+      test("applies small size from group context", () => {
+        render(SizeSmGroupTest);
+        const group = screen.getByTestId("size-sm-group");
 
-      expect(group).toBeInTheDocument();
-      expect(screen.getByTestId("size-opt1")).toBeInTheDocument();
-      expect(screen.getByTestId("size-opt2")).toBeInTheDocument();
+        expect(group).toBeInTheDocument();
+
+        const option1 = screen.getByTestId("size-sm-opt1");
+        const option2 = screen.getByTestId("size-sm-opt2");
+
+        // Small size: p-1, px-2, text-sm
+        expect(option1.className).toMatch(/\bp-1\b/);
+        expect(option1.className).toMatch(/\bpx-2\b/);
+        expect(option1.className).toMatch(/\btext-sm\b/);
+
+        expect(option2.className).toMatch(/\bp-1\b/);
+        expect(option2.className).toMatch(/\bpx-2\b/);
+        expect(option2.className).toMatch(/\btext-sm\b/);
+      });
+
+      test("applies medium size from group context", () => {
+        render(SizeMdGroupTest);
+        const group = screen.getByTestId("size-md-group");
+
+        expect(group).toBeInTheDocument();
+
+        const option1 = screen.getByTestId("size-md-opt1");
+        const option2 = screen.getByTestId("size-md-opt2");
+
+        // Medium size: p-2, px-4, text-base
+        expect(option1.className).toMatch(/\bp-2\b/);
+        expect(option1.className).toMatch(/\bpx-4\b/);
+        expect(option1.className).toMatch(/\btext-base\b/);
+
+        expect(option2.className).toMatch(/\bp-2\b/);
+        expect(option2.className).toMatch(/\bpx-4\b/);
+        expect(option2.className).toMatch(/\btext-base\b/);
+      });
+
+      test("applies large size from group context", () => {
+        render(SizeGroupTest);
+        const group = screen.getByTestId("size-group");
+
+        expect(group).toBeInTheDocument();
+
+        const option1 = screen.getByTestId("size-opt1");
+        const option2 = screen.getByTestId("size-opt2");
+
+        // Large size: p-3, px-5, text-lg
+        expect(option1.className).toMatch(/\bp-3\b/);
+        expect(option1.className).toMatch(/\bpx-5\b/);
+        expect(option1.className).toMatch(/\btext-lg\b/);
+
+        expect(option2.className).toMatch(/\bp-3\b/);
+        expect(option2.className).toMatch(/\bpx-5\b/);
+        expect(option2.className).toMatch(/\btext-lg\b/);
+      });
+
+      test("applies extra large size from group context", () => {
+        render(SizeXlGroupTest);
+        const group = screen.getByTestId("size-xl-group");
+
+        expect(group).toBeInTheDocument();
+
+        const option1 = screen.getByTestId("size-xl-opt1");
+        const option2 = screen.getByTestId("size-xl-opt2");
+
+        // XL size: p-4, px-6, text-xl
+        expect(option1.className).toMatch(/\bp-4\b/);
+        expect(option1.className).toMatch(/\bpx-6\b/);
+        expect(option1.className).toMatch(/\btext-xl\b/);
+
+        expect(option2.className).toMatch(/\bp-4\b/);
+        expect(option2.className).toMatch(/\bpx-6\b/);
+        expect(option2.className).toMatch(/\btext-xl\b/);
+      });
     });
   });
 

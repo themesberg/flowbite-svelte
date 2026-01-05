@@ -97,8 +97,9 @@ describe("Secondary Component", () => {
       const { container } = render(BasicSecondaryTest);
       const secondary = container.querySelector('[data-scope="secondary"]');
 
-      // Theme classes are applied through the secondary() function
-      expect(secondary?.className).toBeTruthy();
+      // Verify specific theme classes are present
+      expect(secondary?.className).toContain('text-'); // or check for specific theme class pattern
+      expect(secondary?.classList.length).toBeGreaterThan(0);
     });
 
     test("theme classes work with custom classes", () => {

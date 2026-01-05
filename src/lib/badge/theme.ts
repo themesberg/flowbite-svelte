@@ -221,11 +221,6 @@ export const badge = tv({
     },
     {
       href: true,
-      color: "gray",
-      class: "hover:bg-gray-200 dark:hover:bg-gray-700"
-    },
-    {
-      href: true,
       color: "red",
       class: "hover:bg-red-200 dark:hover:bg-red-700"
     },

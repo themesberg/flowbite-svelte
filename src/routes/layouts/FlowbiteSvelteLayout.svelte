@@ -69,7 +69,7 @@
       <NavLi href="/illustrations/illustrations">Illustrations</NavLi>
     </NavUl>
 
-    <div class="order-1 ml-auto flex gap-1 items-center lg:order-2">
+    <div class="order-1 ml-auto flex items-center gap-1 lg:order-2">
       <ToolbarLink class="hidden rounded-sm p-1.5 hover:text-gray-900 xl:inline-block dark:hover:text-white" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
         <GitHub size="md" />
       </ToolbarLink>

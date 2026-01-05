@@ -43,7 +43,10 @@
   const { button, content, label, icon } = $derived(buttonToggle({ selected, color: actualColor, size: actualSize }));
 
   $effect(() => {
-    selected = isSelected(value);
+    // Only sync with context if we're in a ButtonToggleGroup
+    if (ctx) {
+      selected = isSelected(value);
+    }
   });
 </script>
 

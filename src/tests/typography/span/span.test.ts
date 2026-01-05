@@ -101,102 +101,24 @@ describe("Span Component", () => {
   });
 
   describe("Highlight Variants", () => {
-    test("renders blue highlight", () => {
+    test.each([
+      { color: "blue" },
+      { color: "green" },
+      { color: "red" },
+      { color: "yellow" },
+      { color: "purple" },
+      { color: "pink" },
+      { color: "indigo" },
+      { color: "teal" },
+      { color: "orange" },
+      { color: "cyan" },
+      { color: "fuchsia" },
+      { color: "amber" },
+      { color: "lime" },
+      { color: "none" }
+    ])("renders $color highlight", ({ color }) => {
       const { container } = render(HighlightSpanTest);
-      const span = container.querySelector('[data-testid="highlight-blue"]');
-
-      expect(span).toBeInTheDocument();
-      expect(span?.className).toBeTruthy();
-    });
-
-    test("renders green highlight", () => {
-      const { container } = render(HighlightSpanTest);
-      const span = container.querySelector('[data-testid="highlight-green"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders red highlight", () => {
-      const { container } = render(HighlightSpanTest);
-      const span = container.querySelector('[data-testid="highlight-red"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders yellow highlight", () => {
-      const { container } = render(HighlightSpanTest);
-      const span = container.querySelector('[data-testid="highlight-yellow"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders purple highlight", () => {
-      const { container } = render(HighlightSpanTest);
-      const span = container.querySelector('[data-testid="highlight-purple"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders pink highlight", () => {
-      const { container } = render(HighlightSpanTest);
-      const span = container.querySelector('[data-testid="highlight-pink"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders indigo highlight", () => {
-      const { container } = render(HighlightSpanTest);
-      const span = container.querySelector('[data-testid="highlight-indigo"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders teal highlight", () => {
-      const { container } = render(HighlightSpanTest);
-      const span = container.querySelector('[data-testid="highlight-teal"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders orange highlight", () => {
-      const { container } = render(HighlightSpanTest);
-      const span = container.querySelector('[data-testid="highlight-orange"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders cyan highlight", () => {
-      const { container } = render(HighlightSpanTest);
-      const span = container.querySelector('[data-testid="highlight-cyan"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders fuchsia highlight", () => {
-      const { container } = render(HighlightSpanTest);
-      const span = container.querySelector('[data-testid="highlight-fuchsia"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders amber highlight", () => {
-      const { container } = render(HighlightSpanTest);
-      const span = container.querySelector('[data-testid="highlight-amber"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders lime highlight", () => {
-      const { container } = render(HighlightSpanTest);
-      const span = container.querySelector('[data-testid="highlight-lime"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders with no highlight when highlight is none", () => {
-      const { container } = render(HighlightSpanTest);
-      const span = container.querySelector('[data-testid="highlight-none"]');
-
+      const span = container.querySelector(`[data-testid="highlight-${color}"]`);
       expect(span).toBeInTheDocument();
     });
   });
@@ -247,144 +169,30 @@ describe("Span Component", () => {
   });
 
   describe("Decoration Color Variants", () => {
-    test("renders primary decoration color", () => {
+    test.each([
+      { color: "primary" },
+      { color: "secondary" },
+      { color: "gray" },
+      { color: "red" },
+      { color: "orange" },
+      { color: "yellow" },
+      { color: "lime" },
+      { color: "green" },
+      { color: "emerald" },
+      { color: "teal" },
+      { color: "cyan" },
+      { color: "sky" },
+      { color: "blue" },
+      { color: "indigo" },
+      { color: "violet" },
+      { color: "purple" },
+      { color: "fuchsia" },
+      { color: "pink" },
+      { color: "rose" },
+      { color: "none" }
+    ])("renders $color decoration color", ({ color }) => {
       const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-primary"]');
-
-      expect(span).toBeInTheDocument();
-      expect(span?.className).toBeTruthy();
-    });
-
-    test("renders secondary decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-secondary"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders gray decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-gray"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders red decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-red"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders orange decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-orange"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders yellow decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-yellow"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders lime decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-lime"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders green decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-green"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders emerald decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-emerald"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders teal decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-teal"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders cyan decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-cyan"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders sky decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-sky"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders blue decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-blue"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders indigo decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-indigo"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders violet decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-violet"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders purple decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-purple"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders fuchsia decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-fuchsia"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders pink decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-pink"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders rose decoration color", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-rose"]');
-
-      expect(span).toBeInTheDocument();
-    });
-
-    test("renders with no decoration color when decorationColor is none", () => {
-      const { container } = render(DecorationColorSpanTest);
-      const span = container.querySelector('[data-testid="decoration-color-none"]');
-
+      const span = container.querySelector(`[data-testid="decoration-color-${color}"]`);
       expect(span).toBeInTheDocument();
     });
   });

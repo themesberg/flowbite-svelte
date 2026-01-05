@@ -4,16 +4,16 @@
 
   /* Flowbite variables */
 
-  --leading-9: 36px; /* rem pls */
-  --leading-7: 28px;
-  --leading-8: 32px;
-  --leading-6: 24px;
-  --leading-4: 16px;
-  --leading-none: 1px;
-  --leading-5: 20px;
-  --tracking-tighter: -0.8px;
-  --leading-heading-none: 60px;
-  --tracking-tight: -0.4px;
+  --leading-9: 2.25rem;
+  --leading-7: 1.75rem;
+  --leading-8: 2rem;
+  --leading-6: 1.5rem;
+  --leading-4: 1rem;
+  --leading-none: 0.0625rem;
+  --leading-5: 1.25rem;
+  --tracking-tighter: -0.05rem;
+  --leading-heading-none: 3.75rem;
+  --tracking-tight: -0.025rem;
 
   /* radius variables */
   --radius-xxs: 2px;
