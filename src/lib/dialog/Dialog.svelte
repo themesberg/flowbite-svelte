@@ -131,8 +131,6 @@
     return () => dlg.close();
   };
 
-  // const focusTrap = (node: HTMLElement) => (focustrap ? trapFocus(node) : undefined);
-
   const trapFocusAttachment: Attachment<HTMLElement> = (node) => {
     if (!focustrap) return;
 
@@ -170,7 +168,8 @@
     }
 
     function handleFocusOut(event: FocusEvent) {
-      if (!node.contains(event.relatedTarget as Node) && event.relatedTarget !== previous) {
+      const related = event.relatedTarget as Node | null;
+      if (related && !node.contains(related) && related !== previous) {
         isFocusMovedOutside = true;
       }
     }

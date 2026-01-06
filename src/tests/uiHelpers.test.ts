@@ -65,7 +65,7 @@ describe("clickOutside", () => {
     const firstCallback = vi.fn();
     const secondCallback = vi.fn();
 
-    const action = clickOutside(element, firstCallback);
+    action = clickOutside(element, firstCallback);
 
     action.update(secondCallback);
 
