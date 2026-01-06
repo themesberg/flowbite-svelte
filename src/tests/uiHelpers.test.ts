@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, afterEach } from "vitest";
+import { describe, it, expect, vi, afterEach, beforeEach } from "vitest";
 import { clickOutside } from "$lib";
 
 let action: ReturnType<typeof clickOutside> | null = null;
@@ -85,5 +85,52 @@ describe("clickOutside", () => {
     action.destroy(); // Should not throw
 
     expect(() => action?.destroy()).not.toThrow();
+  });
+});
+
+describe("clickOutside error handling", () => {
+  let consoleErrorSpy: ReturnType<typeof vi.spyOn>;
+
+  beforeEach(() => {
+    consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    consoleErrorSpy.mockRestore();
+  });
+
+  it("logs error when initialized with non-function callback", () => {
+    const element = document.createElement("div");
+    document.body.appendChild(element);
+
+    // Spy console.error
+    const consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+
+    // @ts-expect-error purposely passing wrong type
+    const action = clickOutside(element, null);
+
+    // Trigger click to invoke the listener that logs error
+    document.body.click();
+
+    expect(consoleErrorSpy).toHaveBeenCalledWith("Callback function is not a function");
+
+    action.destroy();
+    consoleErrorSpy.mockRestore();
+  });
+
+  it("logs error when update is called with non-function", () => {
+    const element = document.createElement("div");
+    document.body.appendChild(element);
+
+    const validCallback = vi.fn();
+    const action = clickOutside(element, validCallback);
+
+    // @ts-expect-error purposely passing wrong type
+    action.update(null);
+
+    expect(consoleErrorSpy).toHaveBeenCalledWith("New callback function is not a function");
+
+    // Cleanup
+    action.destroy();
   });
 });

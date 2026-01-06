@@ -165,7 +165,6 @@
 
       if (event.key === "Escape") {
         event.preventDefault();
-        skipFocusRestore = true;
         close();
       }
     }
