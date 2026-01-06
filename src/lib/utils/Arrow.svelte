@@ -35,7 +35,7 @@
       node.style[arrowSide] = px(-node.offsetWidth / 2 - getBorderWidth(node));
 
       node.classList.remove("rotate-45", "-rotate-45", "rotate-135", "-rotate-135");
-      node.className += rotationMap[arrowSide];
+      node.classList.add(rotationMap[arrowSide].trim());
     });
   };
 </script>

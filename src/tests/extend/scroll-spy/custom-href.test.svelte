@@ -10,5 +10,5 @@
 
 <ScrollSpy {items} data-testid="custom-href-scrollspy" />
 
-<div id="href-section1" data-testid="href-section-1">Href Section 1 Content</div>
-<div id="href-section2" data-testid="href-section-2">Href Section 2 Content</div>
+<div id="custom-href-1" data-testid="href-section-1">Href Section 1 Content</div>
+<div id="custom-href-2" data-testid="href-section-2">Href Section 2 Content</div>

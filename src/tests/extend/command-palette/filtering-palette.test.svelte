@@ -41,9 +41,3 @@
 </script>
 
 <CommandPalette bind:open {items} data-testid="filtering-palette" />
-
-{#if open}
-  <div data-testid="empty-state" data-part="empty-state">
-    <!-- This would be rendered by the component when no results -->
-  </div>
-{/if}

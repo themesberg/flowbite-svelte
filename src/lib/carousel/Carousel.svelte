@@ -1,5 +1,4 @@
 <script lang="ts">
-  /* eslint-disable @typescript-eslint/no-unused-expressions */
   import { type CarouselProps, type CarouselContextType } from "$lib";
   import Slide from "./Slide.svelte";
   import { getTheme } from "$lib/theme-provider/themeUtils";
@@ -112,7 +111,9 @@
   const onDragStart = (evt: MouseEvent | TouchEvent) => {
     if (disableSwipe) return;
     touchEvent = evt;
-    evt.cancelable && evt.preventDefault();
+    if (evt.cancelable) {
+      evt.preventDefault();
+    }
     const start = getPositionFromEvent(evt);
     const width = carouselDiv?.getBoundingClientRect().width;
     if (start === undefined || width === undefined) return;

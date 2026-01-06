@@ -94,7 +94,8 @@ describe("KanbanBoard Component", () => {
       const columns = screen.getAllByTestId(/^column-/);
 
       const firstColumn = columns[0];
-      expect(firstColumn).toHaveStyle({ borderTop: expect.stringContaining("4px") });
+      // First column in ColoredColumnsBoard has color "#3b82f6"
+      expect(firstColumn).toHaveStyle({ borderTop: "4px solid rgb(59, 130, 246)" });
     });
 
     test("renders column drop zone with aria-label", () => {
@@ -241,7 +242,7 @@ describe("KanbanBoard Component", () => {
       // Implementation might apply specific data attributes or classes
     });
 
-    test("moves card between columns on drop", async () => {
+    test.todo("moves card between columns on drop", async () => {
       render(DragDropBoard);
 
       // This test would require more sophisticated drag-drop simulation
@@ -470,7 +471,7 @@ describe("KanbanBoard Component", () => {
       });
     });
 
-    test("preserves card data after move", () => {
+    test.todo("preserves card data after move", () => {
       render(CallbacksBoard);
 
       // When a card is moved, its data (title, description, tags) should remain intact

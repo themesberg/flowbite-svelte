@@ -137,7 +137,7 @@
     if (!focustrap) return;
 
     const previous = document.activeElement as HTMLElement | null;
-    let isClosingViaOutsideClick = false;
+    let skipFocusRestore = false;
     let isFocusMovedOutside = false;
 
     function focusable(): HTMLElement[] {
@@ -164,7 +164,7 @@
 
       if (event.key === "Escape") {
         event.preventDefault();
-        isClosingViaOutsideClick = true;
+        skipFocusRestore = true;
         close();
       }
     }
@@ -175,12 +175,6 @@
       }
     }
 
-    // initial focus
-    const elements = focusable();
-    if (elements.length > 0) {
-      elements[0].focus();
-    }
-
     node.addEventListener("keydown", handleKeydown);
     node.addEventListener("focusout", handleFocusOut);
 
@@ -188,7 +182,7 @@
       node.removeEventListener("keydown", handleKeydown);
       node.removeEventListener("focusout", handleFocusOut);
 
-      if (!isClosingViaOutsideClick && !isFocusMovedOutside && previous) {
+      if (!skipFocusRestore && !isFocusMovedOutside && previous) {
         setTimeout(() => previous.focus({ preventScroll: true }), 0);
       }
     };

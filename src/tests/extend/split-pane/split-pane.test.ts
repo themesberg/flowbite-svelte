@@ -141,21 +141,24 @@ describe("SplitPane Component", () => {
   });
 
   describe("Callback Functions", () => {
-    test("calls onResize callback", () => {
+    test("calls onResize callback", async () => {
       render(CallbackTest);
 
-      // Callback should be called during initialization
-      expect(callbackTestState.callCount).toBeGreaterThanOrEqual(0);
+      // Wait for callback to be invoked during initialization
+      await vi.waitFor(() => {
+        expect(callbackTestState.callCount).toBeGreaterThan(0);
+      });
     });
 
-    test("receives size array in callback", () => {
+    test("receives size array in callback", async () => {
       render(CallbackTest);
 
-      // Wait for initialization
-      if (callbackTestState.lastSizes.length > 0) {
-        expect(callbackTestState.lastSizes).toHaveLength(2);
-        expect(callbackTestState.lastSizes.every((size) => typeof size === "number")).toBe(true);
-      }
+      await vi.waitFor(() => {
+        expect(callbackTestState.lastSizes.length).toBeGreaterThan(0);
+      });
+
+      expect(callbackTestState.lastSizes).toHaveLength(2);
+      expect(callbackTestState.lastSizes.every((size) => typeof size === "number")).toBe(true);
     });
   });
 

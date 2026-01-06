@@ -49,7 +49,7 @@ describe("clickOutside", () => {
 
     const callback = vi.fn();
 
-    const action = clickOutside(element, callback);
+    action = clickOutside(element, callback);
 
     action.destroy();
 
