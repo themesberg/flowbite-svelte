@@ -74,4 +74,16 @@ describe("clickOutside", () => {
     expect(firstCallback).not.toHaveBeenCalled();
     expect(secondCallback).toHaveBeenCalledTimes(1);
   });
+
+  it("allows destroy() to be called multiple times safely", () => {
+    const element = document.createElement("div");
+    document.body.appendChild(element);
+    const callback = vi.fn();
+
+    action = clickOutside(element, callback);
+    action.destroy();
+    action.destroy(); // Should not throw
+
+    expect(() => action?.destroy()).not.toThrow();
+  });
 });

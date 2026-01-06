@@ -1,5 +1,4 @@
 <script lang="ts">
-  /* eslint-disable @typescript-eslint/no-unused-expressions */
   import type { Attachment } from "svelte/attachments";
   import type { DialogProps, ParamsType } from "$lib";
   import CloseButton from "$lib/utils/CloseButton.svelte";
@@ -125,7 +124,11 @@
     queueMicrotask(() => {
       const autofocusEl = dlg.querySelector<HTMLElement>("[data-autofocus]") ?? dlg.querySelector<HTMLElement>('input, textarea, select, button:not([aria-label="Close"])');
 
-      autofocusEl ? autofocusEl.focus() : dlg.focus();
+      if (autofocusEl) {
+        autofocusEl.focus();
+      } else {
+        dlg.focus();
+      }
     });
 
     return () => dlg.close();
@@ -139,7 +142,7 @@
     let isFocusMovedOutside = false;
 
     function focusable(): HTMLElement[] {
-      return Array.from(node.querySelectorAll<HTMLElement>('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'));
+      return Array.from(node.querySelectorAll<HTMLElement>('button:not(:disabled), [href], input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]:not([tabindex="-1"])'));
     }
 
     function handleKeydown(event: KeyboardEvent) {
