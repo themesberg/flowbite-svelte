@@ -300,7 +300,7 @@ describe("ScrollSpy Component", () => {
       const scrollspy = screen.getByTestId("basic-scrollspy");
 
       const links = scrollspy.querySelectorAll('[data-part="link"]');
-      
+
       links.forEach((link) => {
         expect(link).not.toHaveAttribute("tabindex", "-1");
       });

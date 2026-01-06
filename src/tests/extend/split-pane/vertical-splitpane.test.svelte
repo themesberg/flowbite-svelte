@@ -2,11 +2,13 @@
   import { SplitPane, Pane } from "$lib";
 </script>
 
-<SplitPane direction="vertical" data-testid="vertical-splitpane">
-  <Pane data-testid="vertical-pane-1">
-    <div>Vertical Pane 1</div>
-  </Pane>
-  <Pane data-testid="vertical-pane-2">
-    <div>Vertical Pane 2</div>
-  </Pane>
-</SplitPane>
+<div data-testid="vertical-splitpane">
+  <SplitPane direction="vertical">
+    <Pane>
+      <div data-testid="vertical-pane-1">Vertical Pane 1</div>
+    </Pane>
+    <Pane>
+      <div data-testid="vertical-pane-2">Vertical Pane 2</div>
+    </Pane>
+  </SplitPane>
+</div>

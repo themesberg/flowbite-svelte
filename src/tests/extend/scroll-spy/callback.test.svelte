@@ -19,12 +19,7 @@
   }
 </script>
 
-<ScrollSpy 
-  {items} 
-  onActiveChange={handleActiveChange}
-  onNavigate={handleNavigate}
-  data-testid="callback-scrollspy" 
-/>
+<ScrollSpy {items} onActiveChange={handleActiveChange} onNavigate={handleNavigate} data-testid="callback-scrollspy" />
 
 <div id="callback-section1" data-testid="callback-section-1">Callback Section 1 Content</div>
 <div id="callback-section2" data-testid="callback-section-2">Callback Section 2 Content</div>

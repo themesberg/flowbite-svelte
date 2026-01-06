@@ -93,7 +93,11 @@
     if (!container) return;
 
     const updateSize = () => {
-      containerSize = currentDirection === "horizontal" ? container.offsetWidth : container.offsetHeight;
+      const next = currentDirection === "horizontal" ? container.offsetWidth : container.offsetHeight;
+
+      if (next !== containerSize) {
+        containerSize = next;
+      }
     };
 
     updateSize();
@@ -226,8 +230,14 @@
   });
 
   // Notify parent of size changes
+  let lastSizesKey = "";
+
   $effect(() => {
-    if (sizes.length > 0 && onResize) {
+    if (!onResize || sizes.length === 0) return;
+
+    const key = sizes.join(",");
+    if (key !== lastSizesKey) {
+      lastSizesKey = key;
       onResize(sizes);
     }
   });

@@ -2,11 +2,13 @@
   import { SplitPane, Pane } from "$lib";
 </script>
 
-<SplitPane initialSizes={[70, 30]} data-testid="initial-sizes-splitpane">
-  <Pane data-testid="initial-pane-1">
-    <div>Initial Pane 1 (70%)</div>
-  </Pane>
-  <Pane data-testid="initial-pane-2">
-    <div>Initial Pane 2 (30%)</div>
-  </Pane>
-</SplitPane>
+<div data-testid="initial-sizes-splitpane">
+  <SplitPane initialSizes={[70, 30]}>
+    <Pane>
+      <div data-testid="initial-pane-1">Initial Pane 1 (70%)</div>
+    </Pane>
+    <Pane>
+      <div data-testid="initial-pane-2">Initial Pane 2 (30%)</div>
+    </Pane>
+  </SplitPane>
+</div>

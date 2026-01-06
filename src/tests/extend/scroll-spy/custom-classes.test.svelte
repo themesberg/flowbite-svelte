@@ -15,11 +15,7 @@
   };
 </script>
 
-<ScrollSpy 
-  {items} 
-  classes={customClasses}
-  data-testid="classes-scrollspy" 
-/>
+<ScrollSpy {items} classes={customClasses} data-testid="classes-scrollspy" />
 
 <div id="classes-section1" data-testid="classes-section-1">Classes Section 1 Content</div>
 <div id="classes-section2" data-testid="classes-section-2">Classes Section 2 Content</div>
