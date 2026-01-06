@@ -92,7 +92,7 @@ describe("clickOutside error handling", () => {
   let consoleErrorSpy: ReturnType<typeof vi.spyOn>;
 
   beforeEach(() => {
-    consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+    consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => { });
   });
 
   afterEach(() => {
@@ -103,9 +103,6 @@ describe("clickOutside error handling", () => {
     const element = document.createElement("div");
     document.body.appendChild(element);
 
-    // Spy console.error
-    const consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
-
     // @ts-expect-error purposely passing wrong type
     const action = clickOutside(element, null);
 
@@ -115,7 +112,6 @@ describe("clickOutside error handling", () => {
     expect(consoleErrorSpy).toHaveBeenCalledWith("Callback function is not a function");
 
     action.destroy();
-    consoleErrorSpy.mockRestore();
   });
 
   it("logs error when update is called with non-function", () => {
