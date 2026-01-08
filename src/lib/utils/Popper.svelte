@@ -97,6 +97,7 @@
   }
 
   async function _open_popover(ev: Event) {
+    console.log("[Popper] _open_popover called, event type:", ev.type, "current isOpen:", isOpen);
     ev.preventDefault();
 
     if (ev.target !== invoker && triggerEls.includes(ev.target as HTMLElement)) {
@@ -111,8 +112,10 @@
 
     if (ev.type === "mousedown") {
       isOpen = !isOpen;
+      console.log("[Popper] mousedown toggle, new isOpen:", isOpen);
     } else {
       isOpen = true;
+      console.log("[Popper] opening, new isOpen:", isOpen);
     }
   }
 
@@ -152,23 +155,26 @@
   }
 
   $effect(() => {
+    console.log("[Popper] isOpen changed:", isOpen, "popover exists:", !!popover);
     // Ensure popover is shown/hidden based on isOpen state
     if (popover) {
       if (isOpen) {
         try {
           if (!popover.matches(":popover-open")) {
+            console.log("[Popper] Showing popover");
             popover.showPopover();
           }
         } catch (e) {
-          // Ignore errors
+          console.error("[Popper] Error showing popover:", e);
         }
       } else {
         try {
           if (popover.matches(":popover-open")) {
+            console.log("[Popper] Hiding popover");
             popover.hidePopover();
           }
         } catch (e) {
-          // Ignore errors
+          console.error("[Popper] Error hiding popover:", e);
         }
       }
     }
@@ -212,6 +218,7 @@
   }
 
   function set_triggers(node: HTMLElement) {
+    console.log("[Popper] set_triggers called, triggeredBy:", triggeredBy, "trigger:", trigger);
     const events: [string, (ev: Event) => void, boolean][] = [
       ["focusin", open_popover, focusable],
       ["focusout", close_popover, focusable],
@@ -224,12 +231,15 @@
     else if (node.previousElementSibling) triggerEls = [node.previousElementSibling as HTMLElement];
     else if (node.parentElement) triggerEls = [node.parentElement];
 
+    console.log("[Popper] Found trigger elements:", triggerEls.length, "clickable:", clickable, "hoverable:", hoverable);
+
     if (!triggerEls.length) {
       console.error("No triggers found.", triggeredBy);
       return;
     }
 
     invoker = triggerEls[0];
+    console.log("[Popper] Invoker set to:", invoker);
 
     triggerEls.forEach((element: HTMLElement) => {
       if (element.tabIndex < 0) element.tabIndex = 0; // trigger must be focusable

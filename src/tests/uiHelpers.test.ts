@@ -92,11 +92,12 @@ describe("clickOutside error handling", () => {
   let consoleErrorSpy: ReturnType<typeof vi.spyOn>;
 
   beforeEach(() => {
-    consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => { });
+    consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
   });
 
   afterEach(() => {
     consoleErrorSpy.mockRestore();
+    document.body.innerHTML = "";
   });
 
   it("logs error when initialized with non-function callback", () => {

@@ -24,9 +24,10 @@
 
   const theme = $derived(getTheme("speedDial"));
 
-  $effect(() => {
-    setSpeedDialContext({ pill, tooltip, textOutside });
-  });
+  // Set context wrapped in a function for reactivity
+  const contextValue = () => ({ pill, tooltip, textOutside });
+
+  setSpeedDialContext(contextValue);
 
   let vertical: boolean = $derived(getSideAxis(placement) === "y");
 

@@ -10,7 +10,9 @@
 
   const theme = $derived(getTheme("tableHead"));
 
-  const tableCtx = getTableContext();
+  // Get the context function and call it to get the reactive value
+  const tableCtx = $derived(getTableContext()?.());
+
   // for reactivity with svelte context
   let compoColor = $derived(color ? color : tableCtx?.color || "default");
   let compoStriped = $derived(striped ? striped : tableCtx?.striped || false);

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setTableContext } from "$lib/context";
-  import type { TableSearchProps, TableContextType } from "$lib/types";
+  import type { TableSearchProps } from "$lib/types";
   import clsx from "clsx";
   import { tableSearch } from "./theme";
   import { getTheme } from "$lib/theme-provider/themeUtils";
@@ -33,15 +33,12 @@
   // Handle custom color
   const finalTableClass = $derived(color === "custom" && customColor ? clsx(tableCls, customColor) : tableCls);
 
-  const tableSearchCtx = $derived<TableContextType>({
+  // Set context wrapped in a function for reactivity
+  setTableContext(() => ({
     striped,
     hoverable,
     color: themeColor
-  });
-
-  $effect(() => {
-    setTableContext(tableSearchCtx);
-  });
+  }));
 </script>
 
 <div class={root({ class: clsx(theme?.root, className) })} data-scope="table-search" data-part="root">

@@ -11,7 +11,7 @@
 
   const theme = $derived(getTheme("accordion"));
 
-  // Simple reactive state object
+  // Multiple reactive properties that need to be accessed independently
   const reactiveCtx: AccordionContextType = {
     get flush() {
       return flush;

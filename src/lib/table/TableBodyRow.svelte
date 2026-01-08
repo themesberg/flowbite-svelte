@@ -9,7 +9,9 @@
 
   const theme = $derived(getTheme("tableBodyRow"));
 
-  const tableCtx = getTableContext();
+  // Get the context function and call it to get the reactive value
+  const tableCtx = $derived(getTableContext()?.());
+
   // for reactivity with svelte context
   let compoColor = $derived(color || tableCtx?.color || "default");
   let compoHoverable = $derived(hoverable || tableCtx?.hoverable || false);

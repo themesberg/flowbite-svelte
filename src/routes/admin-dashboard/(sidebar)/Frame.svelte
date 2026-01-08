@@ -57,14 +57,10 @@
 
   setContext("background", true);
 
-  // const dispatch = createEventDispatcher();
-  // $: dispatch(open ? 'open' : 'close');
-  // $: dispatch('show', open);
-
-  // $: color = color ?? 'default'; // for cases when undefined
-  $effect(() => {
-    setContext("color", color);
-  });
+  // Removed for async: true
+  // $effect(() => {
+  //   setContext("color", color);
+  // });
 
   // your script goes here
 

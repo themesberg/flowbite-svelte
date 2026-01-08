@@ -1,6 +1,6 @@
 <script lang="ts">
   import { twMerge } from "tailwind-merge";
-  import { setContext, type Snippet } from "svelte";
+  import { type Snippet } from "svelte";
 
   let {
     children,
@@ -12,9 +12,10 @@
     class: className
   }: { children: Snippet; category?: "props" | "events" | "slots"; tableClass?: string; theadClass?: string; thClass?: string; divClass?: string; class?: string } = $props();
 
-  $effect(() => {
-    setContext("category", category);
-  });
+  // Removed for async: true
+  // $effect(() => {
+  //   setContext("category", category);
+  // });
 
   const headerNames = {
     props: ["Name", "Default"],

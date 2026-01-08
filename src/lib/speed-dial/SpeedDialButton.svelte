@@ -8,7 +8,7 @@
   import { getTheme } from "$lib/theme-provider/themeUtils";
   import { getSpeedDialContext } from "$lib/context";
 
-  const context = getSpeedDialContext();
+  const context = $derived(getSpeedDialContext()?.());
 
   let {
     children,

@@ -16,10 +16,8 @@
   let navState = $state<NavbarState>({ hidden: true });
   setNavbarStateContext(navState);
 
-  // Update context when breakpoint prop changes
-  $effect(() => {
-    setNavbarBreakpointContext(breakpoint);
-  });
+  // Set breakpoint context wrapped in a function for reactivity
+  setNavbarBreakpointContext(() => breakpoint);
 
   // Add reference to the navbar element
   let navbarElement: HTMLElement;

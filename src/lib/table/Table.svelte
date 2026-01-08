@@ -4,7 +4,7 @@
   import TableHead from "./TableHead.svelte";
   import TableBody from "./TableBody.svelte";
   import clsx from "clsx";
-  import type { TableProps, TableContextType } from "$lib/types";
+  import type { TableProps } from "$lib/types";
   import { getTheme } from "$lib/theme-provider/themeUtils";
 
   let { children, footerSlot, captionSlot, items, striped, hoverable, border = true, shadow, color = "default", class: className, classes, ...restProps }: TableProps = $props();
@@ -15,22 +15,13 @@
 
   const { wrapper, table } = $derived(tableCls({ color, shadow }));
 
-  let tableCtx: TableContextType = {
-    get striped() {
-      return striped;
-    },
-    get hoverable() {
-      return hoverable;
-    },
-    get border() {
-      return border;
-    },
-    get color() {
-      return color;
-    }
-  };
-
-  setTableContext(tableCtx);
+  // Set context wrapped in a function for reactivity
+  setTableContext(() => ({
+    striped,
+    hoverable,
+    border,
+    color
+  }));
   let headItems = $derived(items && items.length > 0 ? Object.keys(items[0]).map((key) => ({ text: key.charAt(0).toUpperCase() + key.slice(1) })) : []);
 
   let bodyItems = $derived(items && items.length > 0 ? items.map((item) => Object.values(item)) : []);

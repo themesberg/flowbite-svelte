@@ -92,7 +92,7 @@ export { getButtonGroupContext, setButtonGroupContext };
 const [getNavbarStateContext, setNavbarStateContext] = createSafeContext<NavbarState>();
 export { getNavbarStateContext, setNavbarStateContext };
 
-const [getNavbarBreakpointContext, setNavbarBreakpointContext] = createSafeContext<NavbarBreakpoint>();
+const [getNavbarBreakpointContext, setNavbarBreakpointContext] = createSafeContext<() => NavbarBreakpoint>();
 export { getNavbarBreakpointContext, setNavbarBreakpointContext };
 
 // Sidebar
@@ -103,7 +103,7 @@ const [getActiveUrlContext, setActiveUrlContext] = createSafeContext<{ value: st
 export { getActiveUrlContext, setActiveUrlContext };
 
 // Table
-const [getTableContext, setTableContext] = createSafeContext<TableContextType>();
+const [getTableContext, setTableContext] = createSafeContext<() => TableContextType>();
 export { getTableContext, setTableContext };
 
 // SplitPane
@@ -115,5 +115,5 @@ const [getTabsContext, setTabsContext] = createSafeContext<TabsContextType>();
 export { getTabsContext, setTabsContext };
 
 // SpeedDial
-const [getSpeedDialContext, setSpeedDialContext] = createSafeContext<SpeedCtxType>();
+const [getSpeedDialContext, setSpeedDialContext] = createSafeContext<() => SpeedCtxType>();
 export { getSpeedDialContext, setSpeedDialContext };

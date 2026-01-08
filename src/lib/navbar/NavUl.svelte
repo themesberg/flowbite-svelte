@@ -10,8 +10,8 @@
 
   let navState = getNavbarStateContext();
 
-  // Reactively get the breakpoint - use $derived to ensure it updates
-  let navBreakpoint = $derived(getNavbarBreakpointContext());
+  // Reactively get the breakpoint - call the function to get the reactive value
+  let navBreakpoint = $derived(getNavbarBreakpointContext()?.() ?? "md");
 
   let { children, activeUrl = $bindable(), slideParams, transition = slide, transitionParams, respectMotionPreference = true, class: className, classes, ...restProps }: NavUlProps = $props();
 
