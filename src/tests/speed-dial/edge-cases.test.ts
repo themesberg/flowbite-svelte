@@ -38,6 +38,8 @@ describe("SpeedDial - Edge Cases & Additional Scenarios", () => {
 
       for (const color of colors) {
         cleanup();
+        // Clear timers between iterations to prevent accumulation under fake timers
+        vi.clearAllTimers();
         render(ButtonColorsTest, { color: color as string });
         const trigger = screen.getByTestId("color-trigger");
 
@@ -156,11 +158,10 @@ describe("SpeedDial - Edge Cases & Additional Scenarios", () => {
       // Hover button to show tooltip
       await user.hover(shareButton);
 
-      // Tooltip should appear
-      await waitFor(() => {
-        const shareTexts = screen.getAllByText(/share/i);
-        expect(shareTexts.length).toBeGreaterThan(1);
-      });
+      // Tooltip should appear with proper role
+      const tooltip = await screen.findByRole("tooltip");
+      expect(tooltip).toBeInTheDocument();
+      expect(tooltip).toHaveTextContent(/share/i);
     });
   });
 
@@ -168,18 +169,29 @@ describe("SpeedDial - Edge Cases & Additional Scenarios", () => {
     test("speed dial works with different viewport sizes", async () => {
       const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
 
-      // Simulate mobile viewport using window
-      window.innerWidth = 375;
-      window.innerHeight = 667;
-      window.dispatchEvent(new Event("resize"));
+      // Save original window dimensions
+      const prevWidth = window.innerWidth;
+      const prevHeight = window.innerHeight;
 
-      render(BasicSpeedDialTest);
-      const trigger = screen.getByTestId("speed-dial-trigger");
+      try {
+        // Simulate mobile viewport using window
+        window.innerWidth = 375;
+        window.innerHeight = 667;
+        window.dispatchEvent(new Event("resize"));
 
-      await user.hover(trigger);
+        render(BasicSpeedDialTest);
+        const trigger = screen.getByTestId("speed-dial-trigger");
 
-      const shareButton = await screen.findByRole("button", { name: /share/i });
-      expect(shareButton).toBeInTheDocument();
+        await user.hover(trigger);
+
+        const shareButton = await screen.findByRole("button", { name: /share/i });
+        expect(shareButton).toBeInTheDocument();
+      } finally {
+        // Restore original window dimensions to prevent cross-test leaks
+        window.innerWidth = prevWidth;
+        window.innerHeight = prevHeight;
+        window.dispatchEvent(new Event("resize"));
+      }
     });
 
     test("trigger button is appropriately sized", () => {
