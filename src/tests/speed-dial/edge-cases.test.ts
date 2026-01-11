@@ -34,13 +34,13 @@ describe("SpeedDial - Edge Cases & Additional Scenarios", () => {
 
     test("buttons with different colors render correctly", async () => {
       const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
-      const colors = ["primary", "blue", "green", "red", "yellow", "purple"];
+      const colors = ["primary", "blue", "green", "red", "yellow", "purple"] as const;
 
       for (const color of colors) {
         cleanup();
         // Clear timers between iterations to prevent accumulation under fake timers
         vi.clearAllTimers();
-        render(ButtonColorsTest, { color: color as string });
+        render(ButtonColorsTest, { color });
         const trigger = screen.getByTestId("color-trigger");
 
         await user.hover(trigger);
@@ -169,14 +169,17 @@ describe("SpeedDial - Edge Cases & Additional Scenarios", () => {
     test("speed dial works with different viewport sizes", async () => {
       const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
 
-      // Save original window dimensions
-      const prevWidth = window.innerWidth;
-      const prevHeight = window.innerHeight;
+      // Use vi.stubGlobal for more reliable viewport simulation
+      // This works consistently across browser and JSDOM environments
+      const restore = () => {
+        vi.unstubAllGlobals();
+        window.dispatchEvent(new Event("resize"));
+      };
 
       try {
-        // Simulate mobile viewport using window
-        window.innerWidth = 375;
-        window.innerHeight = 667;
+        // Simulate mobile viewport
+        vi.stubGlobal("innerWidth", 375);
+        vi.stubGlobal("innerHeight", 667);
         window.dispatchEvent(new Event("resize"));
 
         render(BasicSpeedDialTest);
@@ -188,9 +191,7 @@ describe("SpeedDial - Edge Cases & Additional Scenarios", () => {
         expect(shareButton).toBeInTheDocument();
       } finally {
         // Restore original window dimensions to prevent cross-test leaks
-        window.innerWidth = prevWidth;
-        window.innerHeight = prevHeight;
-        window.dispatchEvent(new Event("resize"));
+        restore();
       }
     });
 
