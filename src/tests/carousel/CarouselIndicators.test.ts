@@ -85,14 +85,8 @@ describe("CarouselIndicators Component", () => {
       const buttons = screen.getAllByRole("button");
       const indicatorButtons = buttons.slice(1);
 
-      // Wait for carousel to initialize
-      await new Promise((resolve) => setTimeout(resolve, 300));
-
       // Click second indicator
       await user.click(indicatorButtons[1]);
-
-      // Wait for carousel cooldown
-      await new Promise((resolve) => setTimeout(resolve, 200));
 
       // Should still be in document
       expect(indicatorButtons[1]).toBeInTheDocument();

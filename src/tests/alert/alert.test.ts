@@ -1,4 +1,4 @@
-import { cleanup, render, screen, waitForElementToBeRemoved } from "@testing-library/svelte";
+import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
 import userEvent from "@testing-library/user-event";
 
@@ -78,10 +78,7 @@ describe("Alert Component", () => {
 
       await user.click(closeButton);
 
-      // Wait for the transition to complete and the alert to be removed
-      await waitForElementToBeRemoved(() => screen.queryByRole("alert"));
-
-      // After transition completes, alert should not be in the document
+      // Alert is removed synchronously when reduced motion is enabled
       expect(screen.queryByRole("alert")).not.toBeInTheDocument();
     });
   });

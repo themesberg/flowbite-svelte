@@ -1,11 +1,11 @@
-import { cleanup, render, screen, act } from "@testing-library/svelte";
+import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 import PlacementTest from "./placement.test.svelte";
 
 beforeEach(() => {
-  vi.useFakeTimers();
+  vi.useFakeTimers({ shouldAdvanceTime: true });
 });
 
 afterEach(() => {
@@ -24,14 +24,13 @@ describe("SpeedDial - Placement", () => {
       const trigger = screen.getByTestId("placement-trigger");
 
       await user.hover(trigger);
-      await act(() => vi.advanceTimersByTime(300));
 
       // Check that items are rendered
-      const shareButton = screen.queryByRole("button", { name: /share/i });
+      const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
       expect(shareButton).toBeInTheDocument();
 
-      // Check for the tooltip/popper element
-      const popper = container.querySelector('[role="tooltip"]');
+      // Check for the menu/popper element (SpeedDial uses role="menu" not "tooltip")
+      const popper = container.querySelector('[role="menu"]');
       expect(popper).toBeInTheDocument();
     });
   });
@@ -42,9 +41,8 @@ describe("SpeedDial - Placement", () => {
     const trigger = screen.getByTestId("placement-trigger");
 
     await user.hover(trigger);
-    await act(() => vi.advanceTimersByTime(300));
 
-    const shareButton = screen.getByRole("button", { name: /share/i });
+    const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
     expect(shareButton).toBeInTheDocument();
   });
 
@@ -54,10 +52,12 @@ describe("SpeedDial - Placement", () => {
     const topTrigger = screen.getByTestId("placement-trigger");
 
     await user.hover(topTrigger);
-    await act(() => vi.advanceTimersByTime(300));
 
-    const topPopper = topContainer.querySelector('[role="tooltip"]');
-    expect(topPopper).toBeInTheDocument();
+    await waitFor(() => {
+      // SpeedDial uses role="menu" not "tooltip"
+      const topPopper = topContainer.querySelector('[role="menu"]');
+      expect(topPopper).toBeInTheDocument();
+    });
 
     cleanup();
 
@@ -65,9 +65,11 @@ describe("SpeedDial - Placement", () => {
     const leftTrigger = screen.getByTestId("placement-trigger");
 
     await user.hover(leftTrigger);
-    await act(() => vi.advanceTimersByTime(300));
 
-    const leftPopper = leftContainer.querySelector('[role="tooltip"]');
-    expect(leftPopper).toBeInTheDocument();
+    await waitFor(() => {
+      // SpeedDial uses role="menu" not "tooltip"
+      const leftPopper = leftContainer.querySelector('[role="menu"]');
+      expect(leftPopper).toBeInTheDocument();
+    });
   });
 });

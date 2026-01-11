@@ -201,10 +201,10 @@ describe("Dialog Component", () => {
       const closeButton = screen.getByRole("button", { name: /close/i });
       await user.click(closeButton);
 
-      // Wait a bit for event to be processed
-      await new Promise((resolve) => setTimeout(resolve, 50));
-
-      expect(cancelCount).toHaveTextContent("1");
+      // Wait for event to be processed
+      await waitFor(() => {
+        expect(cancelCount).toHaveTextContent("1");
+      });
     });
 
     test("tracks toggle events", async () => {

@@ -2,6 +2,14 @@
 
 import "@testing-library/jest-dom/vitest";
 import { beforeEach, afterEach, vi } from "vitest";
+import { installPopoverPolyfill } from "./src/tests/utils/installPopoverPolyfill";
+import { prefersReducedMotion } from "svelte/motion";
+
+Object.defineProperty(prefersReducedMotion, "current", {
+  get: () => true
+});
+
+installPopoverPolyfill();
 
 // Store original console methods
 const originalConsoleLog = console.log;

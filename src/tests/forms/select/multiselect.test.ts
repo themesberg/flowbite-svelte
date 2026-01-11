@@ -186,8 +186,7 @@ describe("MultiSelect - Disabled", () => {
 
     await user.click(multiselect);
 
-    // Wait a bit to ensure dropdown doesn't appear
-    await new Promise((resolve) => setTimeout(resolve, 200));
+    // Dropdown should not appear
     expect(isDropdownVisible(container)).toBe(false);
   });
 });
@@ -220,9 +219,7 @@ describe("MultiSelect - Disabled Options", () => {
     const bananaItem = getDropdownItem(container, "Banana");
     await user.click(bananaItem!);
 
-    // Wait a bit and check that Banana is not selected
-    await new Promise((resolve) => setTimeout(resolve, 200));
-
+    // Check that Banana is not selected
     const selectSection = container.querySelector('[data-part="select"]');
     expect(selectSection?.textContent).not.toContain("Banana");
   });

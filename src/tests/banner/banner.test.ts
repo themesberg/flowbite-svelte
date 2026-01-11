@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/svelte";
+import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
 import userEvent from "@testing-library/user-event";
 
@@ -66,11 +66,10 @@ describe("Banner Component", () => {
 
       await user.click(closeButton);
 
-      // After clicking, the banner should be removed from DOM
-      // Wait for transition to complete
-      await new Promise((resolve) => setTimeout(resolve, 100));
-
-      // Due to transitions, banner might still exist in DOM but be hidden
+      // Banner should be removed after dismissal
+      await waitFor(() => {
+        expect(screen.queryByText("This is a basic banner message.")).not.toBeInTheDocument();
+      });
     });
   });
 

@@ -1980,6 +1980,7 @@ export interface TriggeredToggleEvent extends ToggleEvent {
 }
 
 export interface PopperProps extends Omit<HTMLAttributes<HTMLDivElement>, "onbeforetoggle" | "ontoggle" | "onclose" | "color"> {
+  disableTransitions?: boolean;
   triggeredBy?: string;
   triggerDelay?: number;
   trigger?: "hover" | "click";

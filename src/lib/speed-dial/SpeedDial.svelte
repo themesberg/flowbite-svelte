@@ -34,7 +34,7 @@
   let { base, popper } = $derived(speedDial({ vertical }));
 </script>
 
-<Popper {...restProps} bind:isOpen {trigger} arrow={false} {placement} class={base({ class: clsx(theme?.base, className) })}>
+<Popper {...restProps} bind:isOpen {trigger} arrow={false} {placement} role="menu" class={base({ class: clsx(theme?.base, className) })}>
   <div class={popper({ class: clsx(theme?.popper, styling?.popper) })}>
     {@render children()}
   </div>

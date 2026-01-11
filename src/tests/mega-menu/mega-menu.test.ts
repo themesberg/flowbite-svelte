@@ -49,36 +49,23 @@ describe("MegaMenu - Full Width", () => {
     const user = userEvent.setup();
     render(FullMegaMenu);
 
-    // Wait for component to mount
-    await new Promise((resolve) => setTimeout(resolve, 50));
+    // Wait until the trigger is actually available
+    const trigger = await screen.findByTestId("full-mega-menu-trigger");
 
-    const trigger = screen.getByTestId("full-mega-menu-trigger");
     await user.click(trigger);
 
-    await waitFor(
-      () => {
-        expect(screen.getByText("Full Width Item")).toBeInTheDocument();
-      },
-      { timeout: 1000 }
-    );
+    // Wait for menu content to appear
+    expect(await screen.findByText("Full Width Item")).toBeInTheDocument();
   });
 
   test("renders extra content in full width mode", async () => {
     const user = userEvent.setup();
     render(FullMegaMenu);
 
-    // Wait for component to mount
-    await new Promise((resolve) => setTimeout(resolve, 50));
-
-    const trigger = screen.getByTestId("full-mega-menu-trigger");
+    const trigger = await screen.getByTestId("full-mega-menu-trigger");
     await user.click(trigger);
 
-    await waitFor(
-      () => {
-        expect(screen.getByText("Extra Content")).toBeInTheDocument();
-      },
-      { timeout: 1000 }
-    );
+    expect(await screen.findByText("Extra Content")).toBeInTheDocument();
   });
 });
 
@@ -87,17 +74,13 @@ describe("MegaMenu - Custom Content", () => {
     const user = userEvent.setup();
     render(CustomMegaMenu);
 
-    // Wait for component to mount
-    await new Promise((resolve) => setTimeout(resolve, 50));
-
-    const trigger = screen.getByTestId("custom-mega-menu-trigger");
+    const trigger = await screen.findByTestId("custom-mega-menu-trigger");
     await user.click(trigger);
 
-    await waitFor(
-      () => {
-        expect(screen.getByTestId("custom-menu-item-0")).toBeInTheDocument();
-      },
-      { timeout: 1000 }
-    );
+    // Wait for menu content to appear - use testId instead of text
+    expect(await screen.findByTestId("custom-menu-item-0")).toBeInTheDocument();
+
+    // Verify the actual content
+    expect(await screen.findByText("Custom 1 (ID: 1)")).toBeInTheDocument();
   });
 });

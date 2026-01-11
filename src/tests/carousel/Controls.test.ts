@@ -56,9 +56,6 @@ describe("Controls Component", () => {
       const carousel = screen.getByLabelText("Draggable Carousel");
       expect(carousel).toBeInTheDocument();
 
-      // Wait for carousel to initialize
-      await new Promise((resolve) => setTimeout(resolve, 300));
-
       // Get fresh button references before each interaction
       let buttons = screen.getAllByRole("button");
       let controlButtons = buttons.filter((btn) => btn.classList.contains("flex") && btn.classList.contains("absolute"));
@@ -69,9 +66,6 @@ describe("Controls Component", () => {
       const nextButton = controlButtons.find((btn) => btn.classList.contains("end-0"));
       expect(nextButton).toBeInTheDocument();
       await user.click(nextButton!);
-
-      // Wait for carousel cooldown (slideDuration * 0.25 = 1000 * 0.25 = 250ms minimum)
-      await new Promise((resolve) => setTimeout(resolve, 300));
 
       // Get fresh references after click
       buttons = screen.getAllByRole("button");
@@ -84,9 +78,6 @@ describe("Controls Component", () => {
       const prevButton = controlButtons.find((btn) => btn.classList.contains("start-0"));
       expect(prevButton).toBeInTheDocument();
       await user.click(prevButton!);
-
-      // Wait for carousel cooldown (slideDuration * 0.25 = 1000 * 0.25 = 250ms minimum)
-      await new Promise((resolve) => setTimeout(resolve, 300));
 
       // Get fresh references again
       buttons = screen.getAllByRole("button");

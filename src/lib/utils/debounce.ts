@@ -17,34 +17,30 @@
 type Func = (...args: any[]) => unknown;
 
 export function createMutualDebounce<A extends Func, B extends Func>(actionA: A, actionB: B, delayFunc: () => number): [(...args: Parameters<A>) => void, (...args: Parameters<B>) => void] {
-  let rafId: number | null = null;
+  let timeoutId: ReturnType<typeof setTimeout> | null = null;
 
-  function scheduleExecution(func: (...args: unknown[]) => unknown, args: unknown[], startTime: number): void {
-    rafId = requestAnimationFrame((currentTime) => {
-      const elapsed = currentTime - (startTime || 0);
-
-      if (elapsed < delayFunc()) return scheduleExecution(func, args, startTime);
-
-      rafId = null;
+  function scheduleExecution(func: (...args: unknown[]) => unknown, args: unknown[]): void {
+    timeoutId = setTimeout(() => {
+      timeoutId = null;
       func(...args);
-    });
+    }, delayFunc());
   }
 
   function cancel(): void {
-    if (rafId !== null) {
-      cancelAnimationFrame(rafId);
-      rafId = null;
+    if (timeoutId !== null) {
+      clearTimeout(timeoutId);
+      timeoutId = null;
     }
   }
 
   const debouncedA = (...args: Parameters<A>): void => {
     cancel();
-    scheduleExecution(actionA, args as unknown[], performance.now());
+    scheduleExecution(actionA, args as unknown[]);
   };
 
   const debouncedB = (...args: Parameters<B>): void => {
     cancel();
-    scheduleExecution(actionB, args as unknown[], performance.now());
+    scheduleExecution(actionB, args as unknown[]);
   };
 
   return [debouncedA, debouncedB];

@@ -1,11 +1,11 @@
-import { cleanup, render, screen, act } from "@testing-library/svelte";
+import { cleanup, render, screen, act, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 import TriggerVariantsTest from "./trigger-variants.test.svelte";
 
 beforeEach(() => {
-  vi.useFakeTimers();
+  vi.useFakeTimers({ shouldAdvanceTime: true });
 });
 
 afterEach(() => {
@@ -95,9 +95,11 @@ describe("SpeedDial - Trigger Variants", () => {
       const trigger = screen.getByTestId("trigger-variant");
 
       await user.hover(trigger);
-      await act(() => vi.advanceTimersByTime(300));
+      await act(async () => {
+        await vi.runAllTimersAsync();
+      });
 
-      const shareButton = screen.queryByRole("button", { name: /share/i });
+      const shareButton = await waitFor(() => screen.getByRole("button", { name: /share/i, hidden: true }));
       expect(shareButton).toBeInTheDocument();
     });
 
@@ -107,9 +109,11 @@ describe("SpeedDial - Trigger Variants", () => {
       const trigger = screen.getByTestId("trigger-variant");
 
       await user.hover(trigger);
-      await act(() => vi.advanceTimersByTime(300));
+      await act(async () => {
+        await vi.runAllTimersAsync();
+      });
 
-      const shareButton = screen.queryByRole("button", { name: /share/i });
+      const shareButton = await waitFor(() => screen.getByRole("button", { name: /share/i, hidden: true }));
       expect(shareButton).toBeInTheDocument();
     });
   });

@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/svelte";
+import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
 import userEvent from "@testing-library/user-event";
 
@@ -81,11 +81,10 @@ describe("Badge Component", () => {
 
       await user.click(closeButton);
 
-      // After clicking, the badge should be removed from DOM (due to badgeStatus = false)
-      // Wait for transition to complete
-      await new Promise((resolve) => setTimeout(resolve, 100));
-
-      // Badge might still exist during transition, but should be hidden or removed
+      // Badge should be removed or hidden after dismissal
+      await waitFor(() => {
+        expect(screen.queryByText("Dismissable")).not.toBeInTheDocument();
+      });
     });
   });
 

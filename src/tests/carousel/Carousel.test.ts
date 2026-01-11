@@ -60,14 +60,8 @@ describe("Carousel Component", () => {
 
       expect(controlButtons.length).toBe(2);
 
-      // Wait for carousel to initialize
-      await new Promise((resolve) => setTimeout(resolve, 300));
-
       // Click should not throw error
       await user.click(controlButtons[0]);
-
-      // Wait for carousel cooldown
-      await new Promise((resolve) => setTimeout(resolve, 200));
 
       expect(controlButtons[0]).toBeInTheDocument();
     });
@@ -133,14 +127,8 @@ describe("Carousel Component", () => {
 
       const thumbnailButtons = screen.getAllByRole("button", { name: /click to view image/i });
 
-      // Wait for carousel to initialize
-      await new Promise((resolve) => setTimeout(resolve, 300));
-
       // Click second thumbnail
       await user.click(thumbnailButtons[1]);
-
-      // Wait for carousel cooldown
-      await new Promise((resolve) => setTimeout(resolve, 200));
 
       // Button should still be in document
       expect(thumbnailButtons[1]).toBeInTheDocument();
@@ -186,14 +174,8 @@ describe("Carousel Component", () => {
       // Ensure control buttons are present
       expect(controlButtons.length).toBeGreaterThanOrEqual(2);
 
-      // Wait for carousel to initialize
-      await new Promise((resolve) => setTimeout(resolve, 300));
-
       // Click next button
       await user.click(controlButtons[1]);
-
-      // Wait for carousel cooldown
-      await new Promise((resolve) => setTimeout(resolve, 200));
 
       // The component should still be in the document
       const carousel = screen.getByTestId("onchange-carousel");

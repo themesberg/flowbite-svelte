@@ -1,11 +1,11 @@
-import { cleanup, render, screen, act } from "@testing-library/svelte";
+import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 import BasicSpeedDialTest from "./basic-speed-dial.test.svelte";
 
 beforeEach(() => {
-  vi.useFakeTimers();
+  vi.useFakeTimers({ shouldAdvanceTime: true });
 });
 
 afterEach(() => {
@@ -34,11 +34,8 @@ describe("SpeedDial - Basic Functionality", () => {
 
     await user.hover(trigger);
 
-    // SpeedDial has a 200ms delay by default + ~100ms transition
-    await act(() => vi.advanceTimersByTime(300));
-
     // Now it should be visible/in document
-    const shareButton = screen.queryByRole("button", { name: /share/i });
+    const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
     expect(shareButton).toBeInTheDocument();
   });
 
@@ -47,11 +44,12 @@ describe("SpeedDial - Basic Functionality", () => {
     render(BasicSpeedDialTest);
     const trigger = screen.getByTestId("speed-dial-trigger");
     await user.hover(trigger);
-    await act(() => vi.advanceTimersByTime(300));
 
-    expect(screen.getByRole("button", { name: /share/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /print/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /download/i })).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByRole("button", { name: /share/i })).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: /print/i })).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: /download/i })).toBeInTheDocument();
+    });
   });
 
   test("trigger has open/close icon transition", async () => {

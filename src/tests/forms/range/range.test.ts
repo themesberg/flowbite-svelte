@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/svelte";
+import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
 import userEvent from "@testing-library/user-event";
 
@@ -62,10 +62,10 @@ describe("Range - Value Binding", () => {
     range.dispatchEvent(new Event("input", { bubbles: true }));
 
     // Wait for reactivity
-    await new Promise((resolve) => setTimeout(resolve, 0));
-
-    expect(range.value).toBe("75");
-    expect(display.textContent).toBe("75");
+    await waitFor(() => {
+      expect(range.value).toBe("75");
+      expect(display.textContent).toBe("75");
+    });
   });
 
   test("range value can be modified programmatically", async () => {
@@ -78,10 +78,10 @@ describe("Range - Value Binding", () => {
     range.value = "25";
     range.dispatchEvent(new Event("input", { bubbles: true }));
 
-    await new Promise((resolve) => setTimeout(resolve, 0));
-
-    expect(range.value).toBe("25");
-    expect(display.textContent).toBe("25");
+    await waitFor(() => {
+      expect(range.value).toBe("25");
+      expect(display.textContent).toBe("25");
+    });
   });
 });
 
@@ -216,10 +216,10 @@ describe("Range - User Interaction", () => {
     range.value = "80";
     range.dispatchEvent(new Event("input", { bubbles: true }));
 
-    await new Promise((resolve) => setTimeout(resolve, 0));
-
-    expect(range.value).not.toBe(initialValue);
-    expect(range.value).toBe("80");
-    expect(display.textContent).toBe("80");
+    await waitFor(() => {
+      expect(range.value).not.toBe(initialValue);
+      expect(range.value).toBe("80");
+      expect(display.textContent).toBe("80");
+    });
   });
 });

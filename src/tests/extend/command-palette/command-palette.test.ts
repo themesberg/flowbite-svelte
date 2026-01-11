@@ -1,7 +1,6 @@
 import { cleanup, render, screen, within, fireEvent, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe } from "vitest";
 import userEvent from "@testing-library/user-event";
-import { tick } from "svelte";
 
 import BasicPalette from "./basic-palette.test.svelte";
 import OpenPalette from "./open-palette.test.svelte";
@@ -102,7 +101,6 @@ describe("CommandPalette Component", () => {
       // Call the native close method on the dialog element
       // This triggers the cancel event which the Dialog component handles
       dialog.close();
-      await tick();
 
       // Wait for the dialog to be removed
       await waitFor(
@@ -147,7 +145,6 @@ describe("CommandPalette Component", () => {
 
       // Use the native close method which properly triggers the cancel event
       dialog.close();
-      await tick();
 
       await waitFor(
         () => {
@@ -171,7 +168,6 @@ describe("CommandPalette Component", () => {
 
       // Close with same shortcut
       await user.keyboard("{Control>}k{/Control}");
-      await tick();
 
       // Wait for the dialog to be removed
       await waitFor(
@@ -273,7 +269,6 @@ describe("CommandPalette Component", () => {
 
       // Close the dialog by setting open to false
       component.setOpen(false);
-      await tick();
 
       // Wait for dialog to close
       await waitFor(
@@ -285,7 +280,6 @@ describe("CommandPalette Component", () => {
 
       // Reopen the dialog
       component.setOpen(true);
-      await tick();
 
       // Wait for the dialog to be rendered again
       await waitFor(
@@ -374,8 +368,10 @@ describe("CommandPalette Component", () => {
       render(SelectionPalette);
 
       await user.keyboard("{Enter}");
+
+      // Dialog should close after selection
       await waitFor(() => {
-        expect(screen.getByRole("dialog")).toBeInTheDocument();
+        expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
       });
     });
 

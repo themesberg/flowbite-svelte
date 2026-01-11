@@ -280,10 +280,10 @@ describe("FloatingLabelInput - Suggestions/Autocomplete", () => {
     await user.type(input, "a");
 
     // Wait for suggestions to appear
-    await new Promise((resolve) => setTimeout(resolve, 100));
-
-    expect(screen.getByText("Apple")).toBeInTheDocument();
-    expect(screen.getByText("Banana")).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText("Apple")).toBeInTheDocument();
+      expect(screen.getByText("Banana")).toBeInTheDocument();
+    });
   });
 
   test("filters suggestions based on input", async () => {
@@ -295,10 +295,10 @@ describe("FloatingLabelInput - Suggestions/Autocomplete", () => {
     await user.type(input, "ch");
 
     // Wait for suggestions to filter
-    await new Promise((resolve) => setTimeout(resolve, 100));
-
-    expect(screen.getByText("Cherry")).toBeInTheDocument();
-    expect(screen.queryByText("Apple")).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText("Cherry")).toBeInTheDocument();
+      expect(screen.queryByText("Apple")).not.toBeInTheDocument();
+    });
   });
 
   test("selects suggestion on click", async () => {
@@ -311,15 +311,13 @@ describe("FloatingLabelInput - Suggestions/Autocomplete", () => {
     await user.type(input, "a");
 
     // Wait for suggestions
-    await new Promise((resolve) => setTimeout(resolve, 100));
-
-    const suggestion = screen.getByText("Apple");
+    const suggestion = await screen.findByText("Apple");
     await user.click(suggestion);
 
     // Wait for selection to process
-    await new Promise((resolve) => setTimeout(resolve, 100));
-
-    expect(selectedDisplay).toHaveTextContent("Apple");
+    await waitFor(() => {
+      expect(selectedDisplay).toHaveTextContent("Apple");
+    });
   });
 
   test("navigates suggestions with keyboard", async () => {
@@ -330,18 +328,18 @@ describe("FloatingLabelInput - Suggestions/Autocomplete", () => {
     await user.click(input);
     await user.type(input, "a");
 
-    // Wait for suggestions
-    await new Promise((resolve) => setTimeout(resolve, 100));
+    // Wait for suggestions to appear
+    await screen.findByText("Apple");
 
     // Press ArrowDown to select first item
     await user.keyboard("{ArrowDown}");
     await user.keyboard("{Enter}");
 
     // Wait for selection
-    await new Promise((resolve) => setTimeout(resolve, 100));
-
-    const selectedDisplay = screen.getByTestId("selected-item");
-    expect(selectedDisplay.textContent).toBeTruthy();
+    await waitFor(() => {
+      const selectedDisplay = screen.getByTestId("selected-item");
+      expect(selectedDisplay.textContent).toBeTruthy();
+    });
   });
 
   test("closes suggestions on Escape key", async () => {
@@ -352,16 +350,14 @@ describe("FloatingLabelInput - Suggestions/Autocomplete", () => {
     await user.click(input);
     await user.type(input, "a");
 
-    // Wait for suggestions
-    await new Promise((resolve) => setTimeout(resolve, 100));
-
-    expect(screen.getByText("Apple")).toBeInTheDocument();
+    // Wait for suggestions to appear
+    await screen.findByText("Apple");
 
     await user.keyboard("{Escape}");
 
     // Wait for suggestions to close
-    await new Promise((resolve) => setTimeout(resolve, 100));
-
-    expect(screen.queryByText("Apple")).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.queryByText("Apple")).not.toBeInTheDocument();
+    });
   });
 });

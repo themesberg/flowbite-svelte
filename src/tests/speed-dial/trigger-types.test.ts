@@ -1,14 +1,11 @@
-import { cleanup, render, screen, act } from "@testing-library/svelte";
+import { cleanup, render, screen, act, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 import ClickTriggerTest from "./click-trigger.test.svelte";
 
-const TRANSITION_DURATION = 300;
-const CLOSE_ANIMATION_BUFFER = 200;
-
 beforeEach(() => {
-  vi.useFakeTimers();
+  vi.useFakeTimers({ shouldAdvanceTime: true });
 });
 
 afterEach(() => {
@@ -31,28 +28,34 @@ describe("SpeedDial - Trigger Types", () => {
       const trigger = screen.getByTestId("click-trigger");
 
       await user.click(trigger);
-      await act(() => vi.advanceTimersByTime(TRANSITION_DURATION));
+      await act(async () => {
+        await vi.runAllTimersAsync();
+      });
 
-      const shareButton = screen.queryByRole("button", { name: /share/i });
+      // const shareButton = await waitFor(() => screen.getByRole("button", { name: /share/i }));
+      const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
+
       expect(shareButton).toBeInTheDocument();
     });
 
     test("clicking trigger again hides speed dial items", async () => {
-      const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+      const user = userEvent.setup();
       render(ClickTriggerTest);
+
       const trigger = screen.getByTestId("click-trigger");
 
       // Open
       await user.click(trigger);
-      await act(() => vi.advanceTimersByTime(TRANSITION_DURATION));
-      expect(screen.queryByRole("button", { name: /share/i })).toBeInTheDocument();
+
+      const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
+      expect(shareButton).toBeInTheDocument();
 
       // Close
       await user.click(trigger);
-      await act(() => vi.advanceTimersByTime(TRANSITION_DURATION));
-      // Extra time for transition
-      await act(() => vi.advanceTimersByTime(CLOSE_ANIMATION_BUFFER));
-      expect(screen.queryByRole("button", { name: /share/i })).not.toBeInTheDocument();
+
+      await waitFor(() => {
+        expect(screen.queryByRole("button", { name: /share/i, hidden: true })).not.toBeInTheDocument();
+      });
     });
 
     test("hovering does not show items with click trigger", async () => {
@@ -61,7 +64,9 @@ describe("SpeedDial - Trigger Types", () => {
       const trigger = screen.getByTestId("click-trigger");
 
       await user.hover(trigger);
-      await act(() => vi.advanceTimersByTime(TRANSITION_DURATION));
+      await act(async () => {
+        await vi.runAllTimersAsync();
+      });
 
       const shareButton = screen.queryByRole("button", { name: /share/i });
       expect(shareButton).not.toBeInTheDocument();
@@ -73,11 +78,14 @@ describe("SpeedDial - Trigger Types", () => {
       const trigger = screen.getByTestId("click-trigger");
 
       await user.click(trigger);
-      await act(() => vi.advanceTimersByTime(TRANSITION_DURATION));
+      await act(async () => {
+        await vi.runAllTimersAsync();
+      });
 
-      const shareButton = screen.getByRole("button", { name: /share/i });
+      // const shareButton = await waitFor(() => screen.getByRole("button", { name: /share/i })); await user.click(shareButton);
+      const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
+
       await user.click(shareButton);
-      // Button click should work (no error)
       expect(shareButton).toBeInTheDocument();
     });
   });

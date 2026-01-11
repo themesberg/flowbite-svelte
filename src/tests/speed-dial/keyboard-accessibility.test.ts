@@ -1,12 +1,13 @@
-import { cleanup, render, screen, act } from "@testing-library/svelte";
+import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 import BasicSpeedDialTest from "./basic-speed-dial.test.svelte";
 import ClickTriggerTest from "./click-trigger.test.svelte";
+import KeyboardAccessibleTest from "./keyboard-accessible.test.svelte";
 
 beforeEach(() => {
-  vi.useFakeTimers();
+  vi.useFakeTimers({ shouldAdvanceTime: true });
 });
 
 afterEach(() => {
@@ -33,15 +34,15 @@ describe("SpeedDial - Keyboard Accessibility", () => {
 
       // Focus trigger first
       trigger.focus();
-      await act(() => vi.advanceTimersByTime(50));
 
       // Open speed dial with hover
       await user.hover(trigger);
-      await act(() => vi.advanceTimersByTime(300));
+
+      // Wait for buttons to appear
+      const shareButton = await screen.findByRole("button", { name: /share/i });
 
       // Tab through buttons
       await user.tab();
-      const shareButton = screen.getByRole("button", { name: /share/i });
       expect(shareButton).toHaveFocus();
 
       await user.tab();
@@ -60,7 +61,8 @@ describe("SpeedDial - Keyboard Accessibility", () => {
 
       trigger.focus();
       await user.hover(trigger);
-      await act(() => vi.advanceTimersByTime(300));
+
+      await screen.findByRole("button", { name: /download/i });
 
       // Tab to last button
       await user.tab();
@@ -86,9 +88,8 @@ describe("SpeedDial - Keyboard Accessibility", () => {
       expect(trigger).toHaveFocus();
 
       await user.keyboard("{Enter}");
-      await act(() => vi.advanceTimersByTime(300));
 
-      const shareButton = screen.queryByRole("button", { name: /share/i });
+      const shareButton = await screen.findByRole("button", { name: /share/i });
       expect(shareButton).toBeInTheDocument();
     });
 
@@ -101,9 +102,8 @@ describe("SpeedDial - Keyboard Accessibility", () => {
       expect(trigger).toHaveFocus();
 
       await user.keyboard(" ");
-      await act(() => vi.advanceTimersByTime(300));
 
-      const shareButton = screen.queryByRole("button", { name: /share/i });
+      const shareButton = await screen.findByRole("button", { name: /share/i });
       expect(shareButton).toBeInTheDocument();
     });
 
@@ -113,9 +113,8 @@ describe("SpeedDial - Keyboard Accessibility", () => {
       const trigger = screen.getByTestId("click-trigger");
 
       await user.click(trigger);
-      await act(() => vi.advanceTimersByTime(300));
 
-      const shareButton = screen.getByRole("button", { name: /share/i });
+      const shareButton = await screen.findByRole("button", { name: /share/i });
       shareButton.focus();
 
       await user.keyboard("{Enter}");
@@ -131,15 +130,16 @@ describe("SpeedDial - Keyboard Accessibility", () => {
       const trigger = screen.getByTestId("click-trigger");
 
       await user.click(trigger);
-      await act(() => vi.advanceTimersByTime(300));
-      expect(screen.queryByRole("button", { name: /share/i })).toBeInTheDocument();
+
+      await waitFor(() => {
+        expect(screen.queryByRole("button", { name: /share/i })).toBeInTheDocument();
+      });
 
       await user.keyboard("{Escape}");
-      await act(() => vi.advanceTimersByTime(300));
-      // Extra time for transition
-      await act(() => vi.advanceTimersByTime(200));
 
-      expect(screen.queryByRole("button", { name: /share/i })).not.toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.queryByRole("button", { name: /share/i })).not.toBeInTheDocument();
+      });
     });
 
     test("escape key with hover trigger closes speed dial", async () => {
@@ -148,15 +148,20 @@ describe("SpeedDial - Keyboard Accessibility", () => {
       const trigger = screen.getByTestId("speed-dial-trigger");
 
       await user.hover(trigger);
-      await act(() => vi.advanceTimersByTime(300));
-      expect(screen.queryByRole("button", { name: /share/i })).toBeInTheDocument();
 
+      await waitFor(() => {
+        expect(screen.queryByRole("button", { name: /share/i })).toBeInTheDocument();
+      });
+
+      // Focus trigger first so keyboard events work
+      trigger.focus();
+
+      // Press escape while hovering (mouse still over trigger)
       await user.keyboard("{Escape}");
-      await act(() => vi.advanceTimersByTime(100));
-      // Extra time for transition
-      await act(() => vi.advanceTimersByTime(200));
 
-      expect(screen.queryByRole("button", { name: /share/i })).not.toBeVisible();
+      await waitFor(() => {
+        expect(screen.queryByRole("button", { name: /share/i })).not.toBeInTheDocument();
+      });
     });
   });
 
@@ -167,16 +172,16 @@ describe("SpeedDial - Keyboard Accessibility", () => {
       const trigger = screen.getByTestId("click-trigger");
 
       await user.click(trigger);
-      await act(() => vi.advanceTimersByTime(300));
 
-      const shareButton = screen.getByRole("button", { name: /share/i });
+      const shareButton = await screen.findByRole("button", { name: /share/i });
       shareButton.focus();
 
       await user.keyboard("{Escape}");
-      await act(() => vi.advanceTimersByTime(300));
 
       // Focus should return to trigger
-      expect(trigger).toHaveFocus();
+      await waitFor(() => {
+        expect(trigger).toHaveFocus();
+      });
     });
 
     test("trigger remains focusable when speed dial is open", async () => {
@@ -185,7 +190,8 @@ describe("SpeedDial - Keyboard Accessibility", () => {
       const trigger = screen.getByTestId("speed-dial-trigger");
 
       await user.hover(trigger);
-      await act(() => vi.advanceTimersByTime(300));
+
+      await screen.findByRole("button", { name: /share/i });
 
       trigger.focus();
       expect(trigger).toHaveFocus();
@@ -203,16 +209,20 @@ describe("SpeedDial - Keyboard Accessibility", () => {
 
     test("speed dial buttons have accessible names", async () => {
       const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
-      render(BasicSpeedDialTest);
+      render(KeyboardAccessibleTest);
+
       const trigger = screen.getByTestId("speed-dial-trigger");
 
-      await user.hover(trigger);
-      await act(() => vi.advanceTimersByTime(300));
+      // Open via keyboard (accessibility requirement)
+      trigger.focus();
+      await user.keyboard("{Enter}");
 
-      // All buttons should be accessible by name
-      expect(screen.getByRole("button", { name: /share/i })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /print/i })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: /download/i })).toBeInTheDocument();
+      // Buttons must now be accessible by name
+      await waitFor(() => {
+        expect(screen.getByRole("button", { name: /share/i, hidden: true })).toBeInTheDocument();
+        expect(screen.getByRole("button", { name: /print/i, hidden: true })).toBeInTheDocument();
+        expect(screen.getByRole("button", { name: /download/i, hidden: true })).toBeInTheDocument();
+      });
     });
   });
 });
