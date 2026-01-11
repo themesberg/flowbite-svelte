@@ -199,9 +199,11 @@ describe("CommandPalette Component", () => {
       const searchInput = screen.getByRole("combobox");
       await user.type(searchInput, "settings");
 
-      const options = screen.getAllByRole("option");
-      expect(options.length).toBe(1);
-      expect(options[0]).toHaveTextContent(/settings/i);
+      await waitFor(async () => {
+        const options = await screen.findAllByRole("option");
+        expect(options.length).toBe(1);
+        expect(options[0]).toHaveTextContent(/settings/i);
+      });
     });
 
     test("filters items by description", async () => {
@@ -211,8 +213,10 @@ describe("CommandPalette Component", () => {
       const searchInput = screen.getByRole("combobox");
       await user.type(searchInput, "user preferences");
 
-      const options = screen.getAllByRole("option");
-      expect(options.length).toBeGreaterThan(0);
+      await waitFor(() => {
+        const options = screen.getAllByRole("option");
+        expect(options.length).toBeGreaterThan(0);
+      });
     });
 
     test("filters items by keywords", async () => {
@@ -222,8 +226,10 @@ describe("CommandPalette Component", () => {
       const searchInput = screen.getByRole("combobox");
       await user.type(searchInput, "configuration");
 
-      const options = screen.getAllByRole("option");
-      expect(options.length).toBeGreaterThan(0);
+      await waitFor(() => {
+        const options = screen.getAllByRole("option");
+        expect(options.length).toBeGreaterThan(0);
+      });
     });
 
     test("search is case-insensitive", async () => {
@@ -233,8 +239,10 @@ describe("CommandPalette Component", () => {
       const searchInput = screen.getByRole("combobox");
       await user.type(searchInput, "SETTINGS");
 
-      const options = screen.getAllByRole("option");
-      expect(options.length).toBeGreaterThan(0);
+      await waitFor(() => {
+        const options = screen.getAllByRole("option");
+        expect(options.length).toBeGreaterThan(0);
+      });
     });
 
     test("shows empty state when no results", async () => {
@@ -244,12 +252,14 @@ describe("CommandPalette Component", () => {
       const searchInput = screen.getByRole("combobox");
       await user.type(searchInput, "nonexistent command");
 
-      // No command list should be rendered
-      expect(screen.queryByRole("listbox")).not.toBeInTheDocument();
+      await waitFor(() => {
+        // No command list should be rendered
+        expect(screen.queryByRole("listbox")).not.toBeInTheDocument();
 
-      // Empty state should come from CommandPalette itself
-      const emptyState = screen.getByText(/no results/i);
-      expect(emptyState).toBeInTheDocument();
+        // Empty state should come from CommandPalette itself
+        const emptyState = screen.getByText(/no results/i);
+        expect(emptyState).toBeInTheDocument();
+      });
     });
 
     test("shows all items when search is empty", () => {
@@ -376,7 +386,7 @@ describe("CommandPalette Component", () => {
     });
 
     // TODO
-    // test("resets selection index when dialog closes", async () => {
+    // test.skip("resets selection index when dialog closes", async () => {
     //   const user = userEvent.setup();
 
     //   const { rerender } = render(KeyboardNavigationPalette, {
@@ -505,17 +515,16 @@ describe("CommandPalette Component", () => {
       expect(options[0]).toHaveTextContent(/Dashboard|Profile|Settings/);
     });
 
-    // TODO
-    // test("renders item descriptions when provided", () => {
-    //   render(OpenPalette);
+    test.skip("renders item descriptions when provided", () => {
+      render(OpenPalette);
 
-    //   const descriptions = screen.getAllByTestId(/^item-description-/);
-    //   expect(descriptions.length).toBeGreaterThan(0);
+      const descriptions = screen.getAllByTestId(/^item-description-/);
+      expect(descriptions.length).toBeGreaterThan(0);
 
-    //   descriptions.forEach(desc => {
-    //     expect(desc).toHaveAttribute("data-part", "item-description");
-    //   });
-    // });
+      descriptions.forEach((desc) => {
+        expect(desc).toHaveAttribute("data-part", "item-description");
+      });
+    });
 
     test("renders icons when provided", () => {
       render(OpenPalette);
@@ -624,9 +633,11 @@ describe("CommandPalette Component", () => {
       // Filter to fewer items
       await user.type(searchInput, "settings");
 
-      // Should reset to first item
-      options = screen.getAllByRole("option");
-      expect(options[0]).toHaveAttribute("aria-selected", "true");
+      await waitFor(() => {
+        // Should reset to first item
+        options = screen.getAllByRole("option");
+        expect(options[0]).toHaveAttribute("aria-selected", "true");
+      });
     });
 
     test("maintains valid selection when items decrease", async () => {
@@ -645,9 +656,11 @@ describe("CommandPalette Component", () => {
       // Filter to single item
       await user.type(searchInput, "settings");
 
-      // Should have valid selection (first and only item)
-      options = screen.getAllByRole("option");
-      expect(options[0]).toHaveAttribute("aria-selected", "true");
+      await waitFor(() => {
+        // Should have valid selection (first and only item)
+        options = screen.getAllByRole("option");
+        expect(options[0]).toHaveAttribute("aria-selected", "true");
+      });
     });
   });
 

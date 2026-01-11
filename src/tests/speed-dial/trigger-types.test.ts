@@ -32,7 +32,6 @@ describe("SpeedDial - Trigger Types", () => {
         await vi.runAllTimersAsync();
       });
 
-      // const shareButton = await waitFor(() => screen.getByRole("button", { name: /share/i }));
       const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
 
       expect(shareButton).toBeInTheDocument();
@@ -82,7 +81,6 @@ describe("SpeedDial - Trigger Types", () => {
         await vi.runAllTimersAsync();
       });
 
-      // const shareButton = await waitFor(() => screen.getByRole("button", { name: /share/i })); await user.click(shareButton);
       const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
 
       await user.click(shareButton);

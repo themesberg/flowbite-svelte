@@ -12,8 +12,8 @@ const config = {
   extensions: [".svelte", ...mdsvexConfig.extensions],
   compilerOptions: {
     experimental: {
-      // Disable async in test mode as it interferes with fake timers
-      async: process.env.VITEST ? false : true
+      // Enable experimental async features for reactive context fixes
+      async: true
     }
   },
   // Consult https://github.com/sveltejs/svelte-preprocess

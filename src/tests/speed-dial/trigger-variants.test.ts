@@ -1,4 +1,4 @@
-import { cleanup, render, screen, act, waitFor } from "@testing-library/svelte";
+import { cleanup, render, screen, act } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 
@@ -99,7 +99,7 @@ describe("SpeedDial - Trigger Variants", () => {
         await vi.runAllTimersAsync();
       });
 
-      const shareButton = await waitFor(() => screen.getByRole("button", { name: /share/i, hidden: true }));
+      const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
       expect(shareButton).toBeInTheDocument();
     });
 
@@ -113,7 +113,7 @@ describe("SpeedDial - Trigger Variants", () => {
         await vi.runAllTimersAsync();
       });
 
-      const shareButton = await waitFor(() => screen.getByRole("button", { name: /share/i, hidden: true }));
+      const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
       expect(shareButton).toBeInTheDocument();
     });
   });

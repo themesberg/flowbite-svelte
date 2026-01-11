@@ -62,7 +62,7 @@ describe("MegaMenu - Full Width", () => {
     const user = userEvent.setup();
     render(FullMegaMenu);
 
-    const trigger = await screen.getByTestId("full-mega-menu-trigger");
+    const trigger = await screen.findByTestId("full-mega-menu-trigger");
     await user.click(trigger);
 
     expect(await screen.findByText("Extra Content")).toBeInTheDocument();

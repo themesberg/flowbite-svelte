@@ -4,7 +4,6 @@ import userEvent from "@testing-library/user-event";
 
 import BasicSpeedDialTest from "./basic-speed-dial.test.svelte";
 import ButtonColorsTest from "./button-colors.test.svelte";
-// import ClickTriggerTest from "./click-trigger.test.svelte";
 import PropsVariationsTest from "./props-variations.test.svelte";
 import KeyboardAccessible from "./keyboard-accessible.test.svelte";
 

@@ -26,7 +26,7 @@ describe("SpeedDial - Props Variations", () => {
         await vi.runAllTimersAsync();
       });
 
-      const shareButton = await waitFor(() => screen.getByRole("button", { name: /share/i, hidden: true }));
+      const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
       expect(shareButton).toHaveClass("rounded-full");
     });
 
@@ -40,7 +40,7 @@ describe("SpeedDial - Props Variations", () => {
         await vi.runAllTimersAsync();
       });
 
-      const shareButton = await waitFor(() => screen.getByRole("button", { name: /share/i, hidden: true }));
+      const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
       expect(shareButton).not.toHaveClass("rounded-full");
     });
   });
@@ -56,7 +56,7 @@ describe("SpeedDial - Props Variations", () => {
         await vi.runAllTimersAsync();
       });
 
-      const shareButton = await waitFor(() => screen.getByRole("button", { name: /share/i, hidden: true }));
+      const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
       const span = shareButton.querySelector("span");
       expect(span).toBeInTheDocument();
       expect(span).not.toHaveClass("sr-only");
@@ -73,7 +73,7 @@ describe("SpeedDial - Props Variations", () => {
         await vi.runAllTimersAsync();
       });
 
-      const shareButton = await waitFor(() => screen.getByRole("button", { name: /share/i, hidden: true }));
+      const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
       const span = shareButton.querySelector("span.sr-only");
       expect(span).toBeInTheDocument();
       expect(span?.textContent).toBe("Share");
@@ -91,15 +91,11 @@ describe("SpeedDial - Props Variations", () => {
         await vi.runAllTimersAsync();
       });
 
-      const shareButton = await waitFor(() => screen.getByRole("button", { name: /share/i, hidden: true }));
+      const shareButton = screen.getByRole("button", { name: /share/i, hidden: true });
       await user.hover(shareButton);
-      await act(async () => {
-        await vi.runAllTimersAsync();
+      await waitFor(() => {
+        expect(screen.getByRole("tooltip")).toBeInTheDocument();
       });
-
-      // Tooltip should appear - use getAllByText for multiple matches
-      const shareElements = screen.getAllByText("Share");
-      expect(shareElements.length).toBeGreaterThan(1); // Button text + tooltip
     });
 
     test("no tooltips when tooltip='none'", async () => {
@@ -128,7 +124,7 @@ describe("SpeedDial - Props Variations", () => {
         await vi.runAllTimersAsync();
       });
 
-      const shareButton = await waitFor(() => screen.getByRole("button", { name: /share/i, hidden: true }));
+      const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
       await user.hover(shareButton);
       await act(async () => {
         await vi.runAllTimersAsync();

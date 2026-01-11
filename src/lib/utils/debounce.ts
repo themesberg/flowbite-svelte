@@ -4,7 +4,7 @@
  *
  * @param actionA - First action (e.g., openDialog)
  * @param actionB - Second action (e.g., closeDialog)
- * @param delayFunc - Function returning delay in milliseconds (default: 300ms)
+ * @param delayFunc - Function returning delay in milliseconds
  * @returns Object with mutual debounce control methods
  *
  * @example
@@ -19,11 +19,12 @@ type Func = (...args: any[]) => unknown;
 export function createMutualDebounce<A extends Func, B extends Func>(actionA: A, actionB: B, delayFunc: () => number): [(...args: Parameters<A>) => void, (...args: Parameters<B>) => void] {
   let timeoutId: ReturnType<typeof setTimeout> | null = null;
 
-  function scheduleExecution(func: (...args: unknown[]) => unknown, args: unknown[]): void {
+  function scheduleExecution<F extends Func>(func: F, args: Parameters<F>): void {
+    const delay = Math.max(0, Number(delayFunc()) || 0);
     timeoutId = setTimeout(() => {
       timeoutId = null;
       func(...args);
-    }, delayFunc());
+    }, delay);
   }
 
   function cancel(): void {
@@ -35,12 +36,12 @@ export function createMutualDebounce<A extends Func, B extends Func>(actionA: A,
 
   const debouncedA = (...args: Parameters<A>): void => {
     cancel();
-    scheduleExecution(actionA, args as unknown[]);
+    scheduleExecution(actionA, args);
   };
 
   const debouncedB = (...args: Parameters<B>): void => {
     cancel();
-    scheduleExecution(actionB, args as unknown[]);
+    scheduleExecution(actionB, args);
   };
 
   return [debouncedA, debouncedB];

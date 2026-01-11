@@ -3,7 +3,7 @@
 </script>
 
 <div data-testid="basic-splitpane">
-  <SplitPane>
+  <SplitPane responsive={false}>
     <Pane>
       <div data-testid="pane-1">Pane 1 Content</div>
     </Pane>

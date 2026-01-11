@@ -83,11 +83,13 @@ describe("Dropdown Component", () => {
       const button = screen.getByText("Dropdown button");
 
       // Dropdown starts open, so items should be visible
-      let dashboardItem = screen.getByText("Dashboard");
+      let dashboardItem = await screen.findByText("Dashboard");
       expect(dashboardItem).toBeInTheDocument();
 
       // Click to close
       await user.click(button);
+      // Optional (if close actually unmounts/hides items; add waitFor if transitions exist)
+      expect(screen.queryByText("Dashboard")).not.toBeInTheDocument();
 
       // Click again to reopen
       await user.click(button);

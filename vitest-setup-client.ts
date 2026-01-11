@@ -2,13 +2,87 @@
 
 import "@testing-library/jest-dom/vitest";
 import { beforeEach, afterEach, vi } from "vitest";
-import { installPopoverPolyfill } from "./src/tests/utils/installPopoverPolyfill";
-import { prefersReducedMotion } from "svelte/motion";
 
-Object.defineProperty(prefersReducedMotion, "current", {
-  get: () => true
+const mockMatchMedia = (
+  initialMatches = false
+): MediaQueryList & {
+  dispatchChange: (matches: boolean) => void;
+} => {
+  let _matches = initialMatches;
+
+  const listeners = new Set<(event: MediaQueryListEvent) => void>();
+
+  const mql: MediaQueryList & {
+    dispatchChange: (matches: boolean) => void;
+  } = {
+    media: "(prefers-reduced-motion: reduce)",
+    onchange: null,
+
+    get matches() {
+      return _matches;
+    },
+
+    addEventListener(_type: string, listener: EventListenerOrEventListenerObject) {
+      if (typeof listener === "function") {
+        listeners.add(listener as (e: MediaQueryListEvent) => void);
+      } else {
+        listeners.add((e) => listener.handleEvent(e));
+      }
+    },
+
+    removeEventListener(_type: string, listener: EventListenerOrEventListenerObject) {
+      if (typeof listener === "function") {
+        listeners.delete(listener as (e: MediaQueryListEvent) => void);
+      } else {
+        listeners.delete((e) => listener.handleEvent(e));
+      }
+    },
+
+    // Legacy APIs (required by TS)
+    addListener(listener: (this: MediaQueryList, ev: MediaQueryListEvent) => void) {
+      listeners.add(listener);
+    },
+
+    removeListener(listener: (this: MediaQueryList, ev: MediaQueryListEvent) => void) {
+      listeners.delete(listener);
+    },
+
+    dispatchEvent(event: Event) {
+      if (!("matches" in event)) return false;
+      listeners.forEach((listener) => listener.call(this, event as MediaQueryListEvent));
+      return true;
+    },
+
+    dispatchChange(newMatches: boolean) {
+      _matches = newMatches;
+
+      const event = { matches: newMatches } as MediaQueryListEvent;
+
+      listeners.forEach((listener) => listener.call(this, event));
+      this.onchange?.call(this, event);
+    }
+  };
+
+  return mql;
+};
+
+const mm = mockMatchMedia(true);
+
+Object.defineProperty(window, "matchMedia", {
+  configurable: true,
+  writable: true,
+  value: (query: string) => {
+    if (query.includes("prefers-reduced-motion")) {
+      return mm;
+    }
+
+    // Default behavior for everything else
+    return mockMatchMedia(false);
+  }
 });
 
+// import here
+import { installPopoverPolyfill } from "./src/tests/utils/installPopoverPolyfill";
 installPopoverPolyfill();
 
 // Store original console methods

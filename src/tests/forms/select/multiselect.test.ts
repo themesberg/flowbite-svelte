@@ -38,7 +38,9 @@ describe("MultiSelect - Basic", () => {
     const { container } = render(MultiSelectBasicTest);
     const multiselect = screen.getByRole("listbox");
 
-    expect(isDropdownVisible(container)).toBe(false);
+    await waitFor(() => {
+      expect(isDropdownVisible(container)).toBe(false);
+    });
     await user.click(multiselect);
 
     await waitFor(() => {
@@ -221,7 +223,9 @@ describe("MultiSelect - Disabled Options", () => {
 
     // Check that Banana is not selected
     const selectSection = container.querySelector('[data-part="select"]');
-    expect(selectSection?.textContent).not.toContain("Banana");
+    await waitFor(() => {
+      expect(selectSection?.textContent).not.toContain("Banana");
+    });
   });
 
   test("can select non-disabled options", async () => {

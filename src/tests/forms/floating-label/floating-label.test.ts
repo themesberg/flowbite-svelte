@@ -336,9 +336,9 @@ describe("FloatingLabelInput - Suggestions/Autocomplete", () => {
     await user.keyboard("{Enter}");
 
     // Wait for selection
+    const selectedDisplay = screen.getByTestId("selected-item");
     await waitFor(() => {
-      const selectedDisplay = screen.getByTestId("selected-item");
-      expect(selectedDisplay.textContent).toBeTruthy();
+      expect(selectedDisplay).toHaveTextContent("Apple");
     });
   });
 

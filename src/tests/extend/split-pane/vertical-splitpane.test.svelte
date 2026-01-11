@@ -3,7 +3,7 @@
 </script>
 
 <div data-testid="vertical-splitpane">
-  <SplitPane direction="vertical">
+  <SplitPane direction="vertical" responsive={false}>
     <Pane>
       <div data-testid="vertical-pane-1">Vertical Pane 1</div>
     </Pane>
