@@ -1,4 +1,4 @@
-import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
+import { cleanup, render, screen } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 
@@ -267,30 +267,13 @@ describe("SpeedDial - Edge Cases & Additional Scenarios", () => {
       await user.click(trigger);
 
       // Wait for buttons to appear after popper positioning
-      // Note: We use complex filtering instead of findByRole with names because:
-      // 1. We need to exclude the trigger button from the results
-      // 2. We need to verify the correct count of speed dial buttons
-      // 3. The buttons may not have distinct accessible names set, so we rely on textContent
-      const { shareButton, printButton, downloadButton } = await waitFor(
-        () => {
-          const allButtons = screen.getAllByRole("button");
-          // Filter out the trigger button and find our speed dial buttons
-          const speedDialButtons = allButtons.filter((btn) => btn !== trigger && btn.textContent?.trim());
+      const shareButton = await screen.findByRole("button", { name: /share/i });
+      const printButton = await screen.findByRole("button", { name: /print/i });
+      const downloadButton = await screen.findByRole("button", { name: /download/i });
 
-          expect(speedDialButtons.length).toBeGreaterThanOrEqual(3);
-
-          const shareButton = speedDialButtons.find((btn) => btn.textContent?.includes("Share"))!;
-          const printButton = speedDialButtons.find((btn) => btn.textContent?.includes("Print"))!;
-          const downloadButton = speedDialButtons.find((btn) => btn.textContent?.includes("Download"))!;
-
-          expect(shareButton).toBeDefined();
-          expect(printButton).toBeDefined();
-          expect(downloadButton).toBeDefined();
-
-          return { shareButton, printButton, downloadButton };
-        },
-        { timeout: 1000 }
-      );
+      expect(shareButton).toBeInTheDocument();
+      expect(printButton).toBeInTheDocument();
+      expect(downloadButton).toBeInTheDocument();
 
       // Tab through all buttons
       await user.tab();
