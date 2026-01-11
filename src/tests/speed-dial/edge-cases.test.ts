@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/svelte";
+import { cleanup, render, screen, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi, beforeEach } from "vitest";
 import userEvent from "@testing-library/user-event";
 
@@ -158,9 +158,8 @@ describe("SpeedDial - Edge Cases & Additional Scenarios", () => {
       // Hover button to show tooltip
       await user.hover(shareButton);
 
-      // Tooltip should appear with proper role
-      const tooltip = await screen.findByRole("tooltip");
-      expect(tooltip).toBeInTheDocument();
+      await waitFor(() => expect(screen.getByRole("tooltip")).toBeInTheDocument());
+      const tooltip = screen.getByRole("tooltip");
       expect(tooltip).toHaveTextContent(/share/i);
     });
   });
