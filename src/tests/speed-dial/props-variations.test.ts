@@ -91,7 +91,7 @@ describe("SpeedDial - Props Variations", () => {
         await vi.runAllTimersAsync();
       });
 
-      const shareButton = screen.getByRole("button", { name: /share/i, hidden: true });
+      const shareButton = await screen.findByRole("button", { name: /share/i, hidden: true });
       await user.hover(shareButton);
       await waitFor(() => {
         expect(screen.getByRole("tooltip")).toBeInTheDocument();

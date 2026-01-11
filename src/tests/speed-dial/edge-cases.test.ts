@@ -178,9 +178,8 @@ describe("SpeedDial - Edge Cases & Additional Scenarios", () => {
 
       await user.hover(trigger);
 
-      await waitFor(() => {
-        expect(screen.queryByRole("button", { name: /share/i })).toBeInTheDocument();
-      });
+      const shareButton = await screen.findByRole("button", { name: /share/i });
+      expect(shareButton).toBeInTheDocument();
     });
 
     test("trigger button is appropriately sized", () => {
@@ -241,9 +240,8 @@ describe("SpeedDial - Edge Cases & Additional Scenarios", () => {
       await user.click(trigger);
 
       // Now buttons should be in the document
-      await waitFor(() => {
-        expect(screen.queryByRole("button", { name: /share/i })).toBeInTheDocument();
-      });
+      const shareButton = await screen.findByRole("button", { name: /share/i });
+      expect(shareButton).toBeInTheDocument();
     });
 
     test("all interactive elements are keyboard accessible", async () => {
@@ -256,6 +254,10 @@ describe("SpeedDial - Edge Cases & Additional Scenarios", () => {
       await user.click(trigger);
 
       // Wait for buttons to appear after popper positioning
+      // Note: We use complex filtering instead of findByRole with names because:
+      // 1. We need to exclude the trigger button from the results
+      // 2. We need to verify the correct count of speed dial buttons
+      // 3. The buttons may not have distinct accessible names set, so we rely on textContent
       const { shareButton, printButton, downloadButton } = await waitFor(
         () => {
           const allButtons = screen.getAllByRole("button");
