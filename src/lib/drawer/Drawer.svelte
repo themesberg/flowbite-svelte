@@ -72,25 +72,14 @@
 
     // set the values for transition start position
     const dlg = ev.currentTarget;
-const rect = dlg.getBoundingClientRect();
+    const rect = dlg.getBoundingClientRect();
 
-const vw = innerWidth.current ?? 0;
-const vh = innerHeight.current ?? 0;
+    const vw = innerWidth.current ?? 0;
+    const vh = innerHeight.current ?? 0;
 
-x =
-  placement === "left"
-    ? rect.left
-    : placement === "right"
-    ? rect.right - vw
-    : undefined;
+    x = placement === "left" ? rect.left : placement === "right" ? rect.right - vw : undefined;
 
-y =
-  placement === "top"
-    ? rect.top
-    : placement === "bottom"
-    ? rect.bottom - vh
-    : undefined;
-
+    y = placement === "top" ? rect.top : placement === "bottom" ? rect.bottom - vh : undefined;
 
     await tick(); // let transition start
 

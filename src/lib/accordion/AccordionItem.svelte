@@ -8,7 +8,7 @@
   import { prefersReducedMotion } from "svelte/motion";
   import { accordionItem } from "./theme";
 
-  let { children, header, arrowup, arrowdown, open = $bindable(false), transitionType = slide, transitionParams, class: className, classes }: AccordionItemProps = $props();
+  let { children, header, arrowup, arrowdown, open = $bindable(false), transition = slide, transitionParams, class: className, classes }: AccordionItemProps = $props();
 
   // Get context - it will be undefined if used outside Accordion
   const ctx = getAccordionContext();
@@ -22,9 +22,9 @@
     inactive: classes?.inactive || ctx?.classes?.inactive
   });
 
-  const ctxTransitionType = $derived(ctx?.transitionType ?? transitionType);
-  // Check if transitionType is explicitly set to undefined in props
-  const useTransition = $derived(transitionType === "none" ? false : ctxTransitionType === "none" ? false : true);
+  const ctxTransitionType = $derived(ctx?.transition ?? transition);
+  // Check if transition is explicitly set to undefined in props
+  const useTransition = $derived(transition === "none" ? false : ctxTransitionType === "none" ? false : true);
 
   // Get respectReducedMotion from context (defaults to true)
   const ctxRespectReducedMotion = $derived(ctx?.respectReducedMotion ?? true);
@@ -81,8 +81,8 @@
 </h2>
 
 {#if useTransition}
-  {#if open && transitionType !== "none"}
-    <div data-part="content-wrapper" class={contentWrapperCls} transition:transitionType={effectiveTransitionParams as ParamsType}>
+  {#if open && transition !== "none"}
+    <div data-part="content-wrapper" class={contentWrapperCls} transition:transition={effectiveTransitionParams as ParamsType}>
       <div data-part="content" class={content({ class: clsx(theme?.content, finalClasses.content) })}>
         {@render children()}
       </div>
@@ -107,7 +107,7 @@
 @prop arrowup
 @prop arrowdown
 @prop open = $bindable(false)
-@prop transitionType = slide
+@prop transition = slide
 @prop transitionParams
 @prop class: className
 @prop classes

@@ -18,7 +18,7 @@
     class: className,
     classes,
     transition = fade,
-    params,
+    transitionParams,
     onclose,
     closeButtonProps,
     ...restProps
@@ -35,7 +35,7 @@
   const isBrowser = typeof window !== "undefined";
 
   // Respect reduced motion preference by setting duration to 0
-  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { ...params, duration: 0 } : params);
+  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { ...transitionParams, duration: 0 } : transitionParams);
 
   let ref: HTMLDivElement | undefined = $state(undefined);
   function close(event: MouseEvent) {

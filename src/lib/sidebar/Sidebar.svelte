@@ -22,7 +22,7 @@
     activateClickOutside = true,
     backdrop = true,
     transition = fly,
-    params,
+    transitionParams,
     ariaLabel,
     activeUrl = "",
     class: className,
@@ -43,12 +43,7 @@
     "2xl": 1536
   };
 
-let isLargeScreen = $derived(
-  disableBreakpoints
-    ? false
-    : alwaysOpen ||
-        (innerWidth.current ?? 0) >= breakpointValues[breakpoint]
-);
+  let isLargeScreen = $derived(disableBreakpoints ? false : alwaysOpen || (innerWidth.current ?? 0) >= breakpointValues[breakpoint]);
 
   // Create reactive context for activeUrl using getter
   const activeUrlContext = {
@@ -84,8 +79,12 @@ let isLargeScreen = $derived(
 
   const isBrowser = typeof window !== "undefined";
 
-  let transitionParams = $derived(
-    isBrowser && prefersReducedMotion.current ? { ...(params ? params : { x: -320, duration: 200, easing: sineIn }), duration: 0 } : params ? params : { x: -320, duration: 200, easing: sineIn }
+  let finalTransitionParams = $derived(
+    isBrowser && prefersReducedMotion.current
+      ? { ...(transitionParams ? transitionParams : { x: -320, duration: 200, easing: sineIn }), duration: 0 }
+      : transitionParams
+        ? transitionParams
+        : { x: -320, duration: 200, easing: sineIn }
   );
 
   setSidebarContext(sidebarCtx);
@@ -154,7 +153,7 @@ let isLargeScreen = $derived(
     {/if}
     <aside
       {@attach trapFocusAttachment}
-      transition:transition={!alwaysOpen ? transitionParams : undefined}
+      transition:transition={!alwaysOpen ? finalTransitionParams : undefined}
       {...restProps}
       data-scope="sidebar"
       data-part="base"
@@ -190,7 +189,7 @@ let isLargeScreen = $derived(
 @prop activateClickOutside = true
 @prop backdrop = true
 @prop transition = fly
-@prop params
+@prop transitionParams
 @prop ariaLabel
 @prop activeUrl = ""
 @prop class: className

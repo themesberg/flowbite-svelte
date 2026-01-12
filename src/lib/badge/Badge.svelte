@@ -22,7 +22,7 @@
     target,
     rounded,
     transition = fade,
-    params,
+    transitionParams,
     closeButtonProps,
     ...restProps
   }: BadgeProps = $props();
@@ -49,7 +49,7 @@
   const isBrowser = typeof window !== "undefined";
 
   // Respect reduced motion preference by setting duration to 0
-  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { ...params, duration: 0 } : params);
+  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { ...transitionParams, duration: 0 } : transitionParams);
 
   let ref: HTMLDivElement | undefined = $state(undefined);
 

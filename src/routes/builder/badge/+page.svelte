@@ -156,7 +156,7 @@
       {border}
       {rounded}
       transition={currentTransition.transition}
-      params={currentTransition.params}
+      transitionParams={currentTransition.params}
       href={link}
     >
       {#if iconSlot}

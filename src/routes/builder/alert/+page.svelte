@@ -134,7 +134,7 @@
 
 <CodeWrapper>
   <div class="mb-4 h-20">
-    <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatusInteractive} transition={currentTransition.transition} params={currentTransition.params}>
+    <Alert {color} {rounded} {border} {dismissable} class={alertClass} bind:alertStatus={alertStatusInteractive} transition={currentTransition.transition} transitionParams={currentTransition.params}>
       {#snippet icon()}
         {#if iconSlot}
           <InfoCircleSolid class="h-5 w-5" />

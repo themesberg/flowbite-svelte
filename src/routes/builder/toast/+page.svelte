@@ -90,7 +90,7 @@
 <H1>Toast Builder</H1>
 <CodeWrapper>
   <div class="relative h-28 md:h-56">
-    <Toast color={toastColor} bind:toastStatus {dismissable} transition={currentTransition.transition} params={currentTransition.params} position={toastPosition}>
+    <Toast color={toastColor} bind:toastStatus {dismissable} transition={currentTransition.transition} transitionParams={currentTransition.params} position={toastPosition}>
       {#snippet icon()}
         <CheckCircleSolid class="h-5 w-5" />
         <span class="sr-only">Check icon</span>

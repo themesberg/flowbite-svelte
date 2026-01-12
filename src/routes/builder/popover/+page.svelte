@@ -109,7 +109,7 @@
 <CodeWrapper class="">
   <div class="flex h-80 items-center justify-center">
     <Button id="b1">Popover</Button>
-    <Popover {color} {placement} {arrow} {offset} class={popoverClass} transition={currentTransition.transition} params={currentTransition.params} title="Popover title" triggeredBy="#b1">
+    <Popover {color} {placement} {arrow} {offset} class={popoverClass} transition={currentTransition.transition} transitionParams={currentTransition.params} title="Popover title" triggeredBy="#b1">
       <p>And here's some amazing content. It's very engaging. Right?</p>
     </Popover>
   </div>

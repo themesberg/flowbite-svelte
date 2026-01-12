@@ -8,7 +8,20 @@
   import { slide } from "svelte/transition";
   import { sidebarDropdownWrapper } from "./theme";
 
-  let { children, arrowup, arrowdown, icon, isOpen = $bindable(), label, transition = slide, params, class: className, classes, onclick, ...restProps }: SidebarDropdownWrapperProps = $props();
+  let {
+    children,
+    arrowup,
+    arrowdown,
+    icon,
+    isOpen = $bindable(),
+    label,
+    transition = slide,
+    transitionParams,
+    class: className,
+    classes,
+    onclick,
+    ...restProps
+  }: SidebarDropdownWrapperProps = $props();
 
   const styling = $derived(classes);
 
@@ -18,7 +31,7 @@
 
   const isBrowser = typeof window !== "undefined";
 
-  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { ...(params as ParamsType), duration: 0 } : (params as ParamsType));
+  const effectiveParams = $derived(isBrowser && prefersReducedMotion.current ? { ...(transitionParams as ParamsType), duration: 0 } : (transitionParams as ParamsType));
 
   let ctx = getSidebarContext() || { isSingle: false };
 

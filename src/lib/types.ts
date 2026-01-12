@@ -213,7 +213,7 @@ export type AnchorButtonDivAttributes =
 export interface AccordionProps extends AccordionVariants, Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   children: Snippet;
   multiple?: boolean;
-  transitionType?: TransitionFunc | "none";
+  transition?: TransitionFunc | "none";
   respectReducedMotion?: boolean;
   classes?: Partial<{
     // for AccordionItem
@@ -230,7 +230,7 @@ export interface AccordionItemProps extends AccordionItemVariants, HTMLAttribute
   header?: Snippet;
   arrowup?: Snippet;
   arrowdown?: Snippet;
-  transitionType?: TransitionFunc | "none";
+  transition?: TransitionFunc | "none";
   transitionParams?: ParamsType;
 }
 
@@ -241,7 +241,7 @@ export interface AlertProps extends Omit<AlertVariants, "icon">, Omit<HTMLAttrib
   alertStatus?: boolean;
   closeIcon?: Component;
   transition?: TransitionFunc;
-  params?: ParamsType;
+  transitionParams?: ParamsType;
   onclick?: () => void;
   listContent?: boolean;
   borderAccent?: boolean;
@@ -270,7 +270,7 @@ export interface BadgeProps extends Omit<BadgeVariants, "href">, Omit<HTMLAttrib
   href?: HTMLAnchorAttributes["href"];
   target?: HTMLAnchorAttributes["target"];
   transition?: TransitionFunc;
-  params?: ParamsType;
+  transitionParams?: ParamsType;
   closeButtonProps?: CloseButtonConfig;
 }
 
@@ -280,7 +280,7 @@ export interface BannerProps extends BannerVariants, Omit<HTMLAttributes<HTMLDiv
   open?: boolean;
   dismissable?: boolean;
   transition?: TransitionFunc;
-  params?: ParamsType;
+  transitionParams?: ParamsType;
   onclose?: (ev: MouseEvent) => void;
   closeButtonProps?: CloseButtonConfig;
 }
@@ -353,7 +353,7 @@ export interface GradientButtonProps extends GradientButtonVariants, HTMLButtonO
 // Context - pass classes through
 export interface AccordionContextType {
   flush?: boolean;
-  transitionType?: TransitionFunc | "none";
+  transition?: TransitionFunc | "none";
   respectReducedMotion?: boolean;
   classes?: Partial<{
     button?: ClassValue;
@@ -1198,8 +1198,8 @@ export interface PaginationProps extends PaginationVariants, HTMLLiAttributes {
 export interface PopoverProps extends PopoverVariants, Omit<PopperProps, "title"> {
   title?: Snippet | string;
   color?: PopoverVariants["color"];
-  params?: ParamsType;
   transition?: TransitionFunc;
+  transitionParams?: ParamsType;
   isOpen?: boolean;
 }
 
@@ -1335,8 +1335,8 @@ export interface SidebarProps extends SidebarVariants, HTMLAttributes<HTMLElemen
   activateClickOutside?: boolean;
   isSingle?: boolean;
   ariaLabel?: string;
-  params?: ParamsType;
   transition?: TransitionFunc;
+  transitionParams?: ParamsType;
   backdrop?: boolean;
   activeUrl?: string;
   alwaysOpen?: boolean;
@@ -1374,8 +1374,8 @@ export interface SidebarDropdownWrapperProps extends SidebarDropdownWrapperVaria
   icon?: Snippet;
   isOpen?: boolean;
   label?: string;
-  params?: ParamsType;
   transition?: TransitionFunc;
+  transitionParams?: ParamsType;
   onclick?: () => void;
   isSingle?: boolean;
 }
@@ -1809,8 +1809,8 @@ export interface ToastProps extends ToastVaraints, HTMLAttributes<HTMLDivElement
   color?: ToastVaraints["color"];
   position?: ToastVaraints["position"];
   align?: boolean;
-  params?: ParamsType;
   transition?: TransitionFunc;
+  transitionParams?: ParamsType;
   class?: string;
   closeButtonProps?: CloseButtonConfig;
 }

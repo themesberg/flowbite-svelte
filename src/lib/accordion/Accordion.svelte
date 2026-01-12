@@ -7,7 +7,7 @@
   import { createSingleSelectionContext } from "$lib/utils/singleselection.svelte";
   import { untrack } from "svelte";
 
-  let { children, flush, multiple = false, class: className, transitionType, respectReducedMotion = true, classes, ...restProps }: AccordionProps = $props();
+  let { children, flush, multiple = false, class: className, transition, respectReducedMotion = true, classes, ...restProps }: AccordionProps = $props();
 
   const theme = $derived(getTheme("accordion"));
 
@@ -16,8 +16,8 @@
     get flush() {
       return flush;
     },
-    get transitionType() {
-      return transitionType;
+    get transition() {
+      return transition;
     },
     get respectReducedMotion() {
       return respectReducedMotion;
@@ -51,7 +51,7 @@
 @prop flush
 @prop multiple = false
 @prop class: className
-@prop transitionType
+@prop transition
 @prop respectReducedMotion = true
 @prop classes
 @prop ...restProps

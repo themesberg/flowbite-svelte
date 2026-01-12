@@ -90,7 +90,7 @@
     classes={{ content: contentClass, nonactive: nonActiveClass, active: activeClass }}
     activeUrl={mainSidebarUrl}
     class={mainClass}
-    params={{ x: -50, duration: 50 }}
+    transitionParams={{ x: -50, duration: 50 }}
   >
     <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
     <SidebarGroup>
