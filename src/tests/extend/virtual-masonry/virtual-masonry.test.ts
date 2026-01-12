@@ -6,6 +6,8 @@ import TwoColumnsTest from "./two-columns.test.svelte";
 import ScrollToIndexTest, { testState as scrollTestState, scrollTo } from "./scroll-to-index.test.svelte";
 import CustomPropsTest from "./custom-props.test.svelte";
 import ContainedTest from "./contained.test.svelte";
+import EmptyItemsTest from "./empty-items.test.svelte";
+import SingleColumnTest from "./single-column.test.svelte";
 
 Object.defineProperty(HTMLElement.prototype, "clientWidth", {
   configurable: true,
@@ -239,7 +241,7 @@ describe("VirtualMasonry Component", () => {
       });
 
       // With 5 different height values, we should see variation
-      expect(heights.size).toBeGreaterThanOrEqual(1);
+      expect(heights.size).toBeGreaterThanOrEqual(2);
     });
 
     test("calculates total height based on tallest column", async () => {
@@ -295,11 +297,23 @@ describe("VirtualMasonry Component", () => {
       // Wait for ResizeObserver to trigger
       await new Promise((resolve) => setTimeout(resolve, 10));
 
+      const masonry = document.querySelector('[data-scope="virtual-masonry"]') as HTMLElement;
+      
+      // Spy on scrollTop setter
+      const scrollTopSpy = vi.spyOn(masonry, 'scrollTop', 'set');
+
       scrollTo(10);
 
       await new Promise((resolve) => setTimeout(resolve, 50));
 
       expect(scrollTestState.scrolledToIndex).toBe(10);
+      // Verify scrollTop was set (component tried to scroll)
+      expect(scrollTopSpy).toHaveBeenCalled();
+      expect(scrollTopSpy).toHaveBeenCalledWith(expect.any(Number));
+      const scrollValue = scrollTopSpy.mock.calls[0][0];
+      expect(scrollValue).toBeGreaterThan(0);
+      
+      scrollTopSpy.mockRestore();
     });
 
     test("handles out of bounds indices", async () => {
@@ -308,11 +322,26 @@ describe("VirtualMasonry Component", () => {
       // Wait for ResizeObserver to trigger
       await new Promise((resolve) => setTimeout(resolve, 10));
 
+      const masonry = document.querySelector('[data-scope="virtual-masonry"]') as HTMLElement;
+      
+      // Spy on scrollTop setter
+      const scrollTopSpy = vi.spyOn(masonry, 'scrollTop', 'set');
+
+      // Test negative index - should not attempt to scroll
       scrollTo(-1);
+      await new Promise((resolve) => setTimeout(resolve, 50));
+      expect(scrollTopSpy).not.toHaveBeenCalled();
       expect(scrollTestState.scrolledToIndex).toBe(-1);
 
+      scrollTopSpy.mockClear();
+
+      // Test index beyond array length (50 items in test) - should not attempt to scroll
       scrollTo(1000);
+      await new Promise((resolve) => setTimeout(resolve, 50));
+      expect(scrollTopSpy).not.toHaveBeenCalled();
       expect(scrollTestState.scrolledToIndex).toBe(1000);
+      
+      scrollTopSpy.mockRestore();
     });
   });
 
@@ -489,23 +518,46 @@ describe("VirtualMasonry Component", () => {
 
   describe("Edge Cases", () => {
     test("handles empty items array", async () => {
-      const { container } = render(BasicMasonryTest);
+      const { container } = render(EmptyItemsTest);
 
       // Wait for ResizeObserver to trigger
       await new Promise((resolve) => setTimeout(resolve, 10));
 
       const masonry = container.querySelector('[data-scope="virtual-masonry"]');
       expect(masonry).toBeInTheDocument();
+      
+      // Should render no items
+      const items = container.querySelectorAll('[data-part="item"]');
+      expect(items.length).toBe(0);
+      
+      // Spacer should have zero height
+      const spacer = container.querySelector('[data-part="spacer"]') as HTMLElement;
+      expect(spacer).toBeInTheDocument();
+      expect(parseInt(spacer.style.height)).toBe(0);
     });
 
     test("handles single column layout", async () => {
-      // Would need a separate test component for columns=1, but concept is tested
-      const masonry = render(BasicMasonryTest);
+      render(SingleColumnTest);
 
       // Wait for ResizeObserver to trigger
       await new Promise((resolve) => setTimeout(resolve, 10));
 
-      expect(masonry).toBeDefined();
+      const masonry = document.querySelector('[data-scope="virtual-masonry"]');
+      expect(masonry).toBeInTheDocument();
+      
+      // Get visible items
+      const items = document.querySelectorAll('[data-part="item"]') as NodeListOf<HTMLElement>;
+      expect(items.length).toBeGreaterThan(0);
+      
+      // All items should have the same left position (single column)
+      const leftPositions = new Set<string>();
+      items.forEach((item) => {
+        leftPositions.add(item.style.left);
+      });
+      
+      // With 1 column, all items should be in the same position (0px)
+      expect(leftPositions.size).toBe(1);
+      expect(leftPositions.has('0px')).toBe(true);
     });
   });
 });

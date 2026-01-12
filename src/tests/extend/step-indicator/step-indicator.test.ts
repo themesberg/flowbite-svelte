@@ -113,6 +113,9 @@ describe("StepIndicator Component", () => {
       render(SizeLgTest);
       const stepIndicator = screen.getByTestId("size-lg");
       expect(stepIndicator).toBeInTheDocument();
+      // Verify size-specific attribute or class if available
+      const steps = stepIndicator.querySelectorAll('[data-part="step"], [data-part="incomplete-step"]');
+      expect(steps.length).toBeGreaterThan(0);
     });
 
     test("applies secondary color", () => {

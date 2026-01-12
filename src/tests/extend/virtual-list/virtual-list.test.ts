@@ -233,10 +233,10 @@ describe("VirtualList Component", () => {
   });
 
   describe("Empty State", () => {
-    test("handles empty items array", () => {
+    test("renders container structure", () => {
       const { container } = render(BasicListTest);
 
-      // Should render container even with no items
+      // Verifies container renders with correct structure
       const list = container.querySelector('[data-scope="virtual-list"]');
       expect(list).toBeInTheDocument();
     });

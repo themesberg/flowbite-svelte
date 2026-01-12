@@ -6,6 +6,7 @@ import BasicTourTest from "./basic-tour.test.svelte";
 import CallbacksTest, { testState as callbackTestState } from "./callbacks.test.svelte";
 import NoOverlayTest from "./no-overlay.test.svelte";
 import CustomStyleTest from "./custom-style.test.svelte";
+import InvalidTargetTest from "./invalid-target.test.svelte";
 
 // Mock scrollIntoView
 Element.prototype.scrollIntoView = vi.fn();
@@ -63,14 +64,14 @@ describe("Tour Component", () => {
       expect(screen.getByText("Next")).toBeInTheDocument();
     });
 
-    test("displays step without title", () => {
+    test("displays step without title", async () => {
       render(NoOverlayTest);
       const nextButton = screen.getByText("Next");
 
       // Click to go to second step
       nextButton.click();
 
-      waitFor(() => {
+      await waitFor(() => {
         expect(screen.getByText("Second step without title")).toBeInTheDocument();
         expect(screen.queryByText("Step 2")).not.toBeInTheDocument();
       });
@@ -110,10 +111,8 @@ describe("Tour Component", () => {
       const nextButton = screen.getByText("Next");
       await user.click(nextButton);
 
-      await waitFor(async () => {
-        const previousButton = screen.getByText("Previous");
-        await user.click(previousButton);
-      });
+      const previousButton = await screen.findByText("Previous");
+      await user.click(previousButton);
 
       await waitFor(() => {
         expect(screen.getByText("Step 1")).toBeInTheDocument();
@@ -307,18 +306,18 @@ describe("Tour Component", () => {
       });
     });
 
-    test("warns when target element is not found", () => {
+    test("warns when target element is not found", async () => {
       const consoleWarnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
 
-      const { unmount } = render(BasicTourTest);
+      render(InvalidTargetTest);
 
-      // We need to manually trigger with invalid target
-      // Since we can't easily modify the steps after render in this setup,
-      // we'll just verify the console.warn mock is available
-      expect(consoleWarnSpy).toBeDefined();
+      await waitFor(() => {
+        expect(consoleWarnSpy).toHaveBeenCalledWith(
+          expect.stringContaining('Target element "#nonexistent" not found')
+        );
+      });
 
       consoleWarnSpy.mockRestore();
-      unmount();
     });
   });
 });
