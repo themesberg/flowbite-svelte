@@ -124,7 +124,7 @@
   backdrop={false}
   {isOpen}
   {closeSidebar}
-  params={{ x: -50, duration: 50 }}
+  transitionParams={{ x: -50, duration: 50 }}
   class="top-0 left-0 mt-[69px] h-screen w-64 bg-gray-50 transition-transform lg:block dark:bg-gray-800"
   classes={{ content: "h-full px-1 py-1 overflow-y-auto bg-gray-50 dark:bg-gray-800", nonactive: "p-2 group-has-[ul]:ms-0", active: "p-2 group-has-[ul]:ms-0" }}
 >

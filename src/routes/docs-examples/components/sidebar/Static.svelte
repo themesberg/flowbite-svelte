@@ -23,7 +23,7 @@
         backdrop={false}
         isOpen={isDemoOpen}
         closeSidebar={closeDemoSidebar}
-        params={{ x: -50, duration: 50 }}
+        transitionParams={{ x: -50, duration: 50 }}
         class="z-50"
         position="static"
         classes={{ nonactive: "p-2", active: "p-2" }}

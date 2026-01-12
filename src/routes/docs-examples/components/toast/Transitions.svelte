@@ -12,14 +12,14 @@
   Transition type: slide
 </Toast>
 
-<Toast transition={scale} params={{ delay: 250, duration: 300, easing: quintOut }}>
+<Toast transition={scale} transitionParams={{ delay: 250, duration: 300, easing: quintOut }}>
   {#snippet icon()}
     <CheckCircleSolid class="h-6 w-6" />
   {/snippet}
   Transition type: scale, delay: 250, duration: 300, easing: quintOut
 </Toast>
 
-<Toast params={{ delay: 250, duration: 1000 }}>
+<Toast transitionParams={{ delay: 250, duration: 1000 }}>
   {#snippet icon()}
     <CheckCircleSolid class="h-6 w-6" />
   {/snippet}

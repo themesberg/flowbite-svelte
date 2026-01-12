@@ -88,7 +88,7 @@
             return `${key}:${value}`;
           })
           .join(",");
-        props.push(` params={{${paramsString}}}`);
+        props.push(` transitionParams={{${paramsString}}}`);
       }
       // placement
       if (currentPlacement !== placements[0]) {

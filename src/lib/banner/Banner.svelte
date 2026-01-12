@@ -86,7 +86,7 @@
 @prop class: className
 @prop classes
 @prop transition = fade
-@prop params
+@prop transitionParams
 @prop onclose
 @prop closeButtonProps
 @prop ...restProps

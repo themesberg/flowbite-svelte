@@ -103,7 +103,7 @@
 @prop target
 @prop rounded
 @prop transition = fade
-@prop params
+@prop transitionParams
 @prop closeButtonProps
 @prop ...restProps
 -->

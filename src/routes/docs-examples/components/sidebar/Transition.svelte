@@ -27,7 +27,7 @@
     backdrop={false}
     isOpen={isDemoOpen}
     closeSidebar={closeDemoSidebar}
-    params={{ x: -50, duration: 50 }}
+    transitionParams={{ x: -50, duration: 50 }}
     position="absolute"
     classes={{ nonactive: "p-2", active: "p-2" }}
     class="z-50 h-full"
@@ -38,7 +38,7 @@
           <ChartOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}
       </SidebarItem>
-      <SidebarDropdownWrapper label="E-commerce" classes={{ trigger: "p-2" }} transition={fade} {params}>
+      <SidebarDropdownWrapper label="E-commerce" classes={{ trigger: "p-2" }} transition={fade} transitionParams={params}>
         {#snippet icon()}
           <ShoppingBagSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
         {/snippet}

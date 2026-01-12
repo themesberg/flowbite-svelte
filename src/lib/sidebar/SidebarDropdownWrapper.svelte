@@ -101,7 +101,7 @@
 @prop isOpen = $bindable()
 @prop label
 @prop transition = slide
-@prop params
+@prop transitionParams
 @prop class: className
 @prop classes
 @prop onclick

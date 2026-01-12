@@ -79,13 +79,9 @@
 
   const isBrowser = typeof window !== "undefined";
 
-  let finalTransitionParams = $derived(
-    isBrowser && prefersReducedMotion.current
-      ? { ...(transitionParams ? transitionParams : { x: -320, duration: 200, easing: sineIn }), duration: 0 }
-      : transitionParams
-        ? transitionParams
-        : { x: -320, duration: 200, easing: sineIn }
-  );
+  const defaultTransitionParams = { x: -320, duration: 200, easing: sineIn };
+
+  let finalTransitionParams = $derived(isBrowser && prefersReducedMotion.current ? { ...(transitionParams ?? defaultTransitionParams), duration: 0 } : (transitionParams ?? defaultTransitionParams));
 
   setSidebarContext(sidebarCtx);
 

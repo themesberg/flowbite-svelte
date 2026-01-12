@@ -62,7 +62,7 @@
             return `${key}:${value}`;
           })
           .join(",");
-        props.push(`params={{${paramsString}}}`);
+        props.push(`transitionParams={{${paramsString}}}`);
       }
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";

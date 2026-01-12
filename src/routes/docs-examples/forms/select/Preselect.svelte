@@ -13,7 +13,7 @@
 
 <MultiSelect items={colorCountries} value={preselected}>
   {#snippet children({ item, clear })}
-    <Badge color={item.color} dismissable params={{ duration: 100 }} onclose={clear} class="mx-0.5">
+    <Badge color={item.color} dismissable transitionParams={{ duration: 100 }} onclose={clear} class="mx-0.5">
       {item.name}
     </Badge>
   {/snippet}

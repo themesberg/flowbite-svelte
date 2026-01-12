@@ -111,7 +111,7 @@
 @prop class: className
 @prop dismissable
 @prop transition = fade
-@prop params
+@prop transitionParams
 @prop listContent
 @prop borderAccent
 @prop closeButtonProps

@@ -2,7 +2,7 @@
   import { AccordionItem, Accordion } from "flowbite-svelte";
 </script>
 
-<Accordion transitionType="none">
+<Accordion transition="none">
   <AccordionItem>
     {#snippet header()}My Header 1{/snippet}
     Content A
@@ -14,7 +14,7 @@
 </Accordion>
 
 <Accordion>
-  <AccordionItem transitionType="none">
+  <AccordionItem transition="none">
     {#snippet header()}transitionType: "none"{/snippet}
     Content C
   </AccordionItem>

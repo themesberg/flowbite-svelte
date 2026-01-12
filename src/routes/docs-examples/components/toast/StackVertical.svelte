@@ -59,7 +59,7 @@
 <div class="relative min-h-screen p-8">
   <div class="z-50 space-y-3" style="position: absolute; top: 1rem; right: 1rem;">
     {#each toasts as toast (toast.id)}
-      <Toast color={toast.color} dismissable={true} transition={fly} params={{ x: 400, duration: 300 }} class="w-64" onclose={handleClose(toast.id)}>
+      <Toast color={toast.color} dismissable={true} transition={fly} transitionParams={{ x: 400, duration: 300 }} class="w-64" onclose={handleClose(toast.id)}>
         {toast.message}
       </Toast>
     {/each}
