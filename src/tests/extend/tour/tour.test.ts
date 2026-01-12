@@ -29,11 +29,12 @@ describe("Tour Component", () => {
       });
     });
 
-    test("displays first step content", () => {
+    test("displays first step content", async () => {
       render(BasicTourTest);
-
-      expect(screen.getByText("Step 1")).toBeInTheDocument();
-      expect(screen.getByText("This is the first step")).toBeInTheDocument();
+      await waitFor(() => {
+        expect(screen.getByText("Step 1")).toBeInTheDocument();
+        expect(screen.getByText("This is the first step")).toBeInTheDocument();
+      });
     });
 
     test("renders overlay by default", () => {
@@ -312,9 +313,7 @@ describe("Tour Component", () => {
       render(InvalidTargetTest);
 
       await waitFor(() => {
-        expect(consoleWarnSpy).toHaveBeenCalledWith(
-          expect.stringContaining('Target element "#nonexistent" not found')
-        );
+        expect(consoleWarnSpy).toHaveBeenCalledWith(expect.stringContaining('Target element "#nonexistent" not found'));
       });
 
       consoleWarnSpy.mockRestore();

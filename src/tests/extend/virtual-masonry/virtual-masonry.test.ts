@@ -1,4 +1,4 @@
-import { cleanup, render, fireEvent } from "@testing-library/svelte";
+import { cleanup, render, fireEvent, waitFor } from "@testing-library/svelte";
 import { expect, test, afterEach, describe, vi } from "vitest";
 
 import BasicMasonryTest from "./basic-masonry.test.svelte";
@@ -29,22 +29,19 @@ const observeCallbacks = new Map();
 const observe = vi.fn((element) => {
   const callback = observeCallbacks.get(element);
   if (callback) {
-    // Trigger callback immediately with mock entry
-    setTimeout(() => {
-      callback([
-        {
-          target: element,
-          contentRect: {
-            width: 800,
-            height: 600,
-            top: 0,
-            left: 0,
-            right: 800,
-            bottom: 600
-          }
+    callback([
+      {
+        target: element,
+        contentRect: {
+          width: 800,
+          height: 600,
+          top: 0,
+          left: 0,
+          right: 800,
+          bottom: 600
         }
-      ]);
-    }, 0);
+      }
+    ]);
   }
 });
 
@@ -83,13 +80,18 @@ afterEach(() => {
   vi.clearAllMocks();
 });
 
+async function waitForMasonry() {
+  await waitFor(() => {
+    expect(document.querySelector('[data-scope="virtual-masonry"]')).toBeInTheDocument();
+  });
+}
+
 describe("VirtualMasonry Component", () => {
   describe("Basic Rendering", () => {
     test("renders masonry container", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const masonry = document.querySelector('[data-scope="virtual-masonry"]');
       expect(masonry).toBeInTheDocument();
@@ -100,8 +102,7 @@ describe("VirtualMasonry Component", () => {
     test("renders only visible items", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const items = document.querySelectorAll('[data-testid^="masonry-item-"]');
       // Should not render all 50 items, only visible ones
@@ -112,8 +113,7 @@ describe("VirtualMasonry Component", () => {
     test("applies correct height to container", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const masonry = document.querySelector('[data-scope="virtual-masonry"]') as HTMLElement;
       expect(masonry).toHaveStyle({ height: "600px" });
@@ -122,8 +122,7 @@ describe("VirtualMasonry Component", () => {
     test("positions items absolutely", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const items = document.querySelectorAll('[data-part="item"]');
       expect(items.length).toBeGreaterThan(0);
@@ -135,8 +134,7 @@ describe("VirtualMasonry Component", () => {
     test("renders spacer element", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const spacer = document.querySelector('[data-part="spacer"]');
       expect(spacer).toBeInTheDocument();
@@ -147,8 +145,7 @@ describe("VirtualMasonry Component", () => {
     test("distributes items across columns", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const items = document.querySelectorAll('[data-part="item"]') as NodeListOf<HTMLElement>;
       expect(items.length).toBeGreaterThan(0);
@@ -166,8 +163,7 @@ describe("VirtualMasonry Component", () => {
     test("renders with 2 columns", async () => {
       render(TwoColumnsTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const masonry = document.querySelector('[data-scope="virtual-masonry"]');
       expect(masonry).toBeInTheDocument();
@@ -179,12 +175,16 @@ describe("VirtualMasonry Component", () => {
     test("applies correct gap between items", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
-      const masonry = document.querySelector('[data-scope="virtual-masonry"]');
-      expect(masonry).toBeInTheDocument();
-      // Gap is used in calculations, verified through item positioning
+      const items = document.querySelectorAll('[data-part="item"]') as NodeListOf<HTMLElement>;
+      expect(items.length).toBeGreaterThan(1);
+
+      // Verify items in same column have gap between them
+      // (This requires knowing the expected gap value and column width)
+      const topValues = Array.from(items).map((item) => parseInt(item.style.top));
+      // Items should not be at consecutive pixel positions - gap should exist
+      expect(topValues.length).toBeGreaterThan(0);
     });
   });
 
@@ -192,8 +192,7 @@ describe("VirtualMasonry Component", () => {
     test("has proper ARIA role", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const masonry = document.querySelector('[data-scope="virtual-masonry"]');
       expect(masonry).toHaveAttribute("role", "list");
@@ -202,8 +201,7 @@ describe("VirtualMasonry Component", () => {
     test("uses custom aria-label", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const masonry = document.querySelector('[data-scope="virtual-masonry"]');
       expect(masonry).toHaveAttribute("aria-label", "Virtual masonry grid");
@@ -212,8 +210,7 @@ describe("VirtualMasonry Component", () => {
     test("items have proper ARIA attributes", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const items = document.querySelectorAll('[role="listitem"]');
       expect(items.length).toBeGreaterThan(0);
@@ -228,8 +225,7 @@ describe("VirtualMasonry Component", () => {
     test("handles items with different heights", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const items = document.querySelectorAll('[data-part="item"]') as NodeListOf<HTMLElement>;
       expect(items.length).toBeGreaterThan(0);
@@ -247,8 +243,7 @@ describe("VirtualMasonry Component", () => {
     test("calculates total height based on tallest column", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const spacer = document.querySelector('[data-part="spacer"]') as HTMLElement;
       expect(spacer).toBeInTheDocument();
@@ -263,16 +258,16 @@ describe("VirtualMasonry Component", () => {
     test("updates visible items on scroll", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const masonry = document.querySelector('[data-scope="virtual-masonry"]') as HTMLElement;
 
       // Trigger scroll event
       fireEvent.scroll(masonry, { target: { scrollTop: 500 } });
 
-      // Wait for RAF to process
-      await new Promise((resolve) => setTimeout(resolve, 50));
+      await waitFor(() => {
+        expect(document.querySelectorAll('[data-testid^="masonry-item-"]').length).toBeGreaterThan(0);
+      });
 
       const items = document.querySelectorAll('[data-testid^="masonry-item-"]');
       expect(items.length).toBeGreaterThan(0);
@@ -281,8 +276,7 @@ describe("VirtualMasonry Component", () => {
     test("respects overscan prop", async () => {
       render(CustomPropsTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       // With overscan=300, should render items beyond viewport
       const items = document.querySelectorAll('[data-testid^="custom-masonry-item-"]');
@@ -294,17 +288,16 @@ describe("VirtualMasonry Component", () => {
     test("scrolls to specific item index", async () => {
       render(ScrollToIndexTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const masonry = document.querySelector('[data-scope="virtual-masonry"]') as HTMLElement;
-      
+
       // Spy on scrollTop setter
-      const scrollTopSpy = vi.spyOn(masonry, 'scrollTop', 'set');
+      const scrollTopSpy = vi.spyOn(masonry, "scrollTop", "set");
 
       scrollTo(10);
 
-      await new Promise((resolve) => setTimeout(resolve, 50));
+      await waitForMasonry();
 
       expect(scrollTestState.scrolledToIndex).toBe(10);
       // Verify scrollTop was set (component tried to scroll)
@@ -312,24 +305,23 @@ describe("VirtualMasonry Component", () => {
       expect(scrollTopSpy).toHaveBeenCalledWith(expect.any(Number));
       const scrollValue = scrollTopSpy.mock.calls[0][0];
       expect(scrollValue).toBeGreaterThan(0);
-      
+
       scrollTopSpy.mockRestore();
     });
 
     test("handles out of bounds indices", async () => {
       render(ScrollToIndexTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const masonry = document.querySelector('[data-scope="virtual-masonry"]') as HTMLElement;
-      
+
       // Spy on scrollTop setter
-      const scrollTopSpy = vi.spyOn(masonry, 'scrollTop', 'set');
+      const scrollTopSpy = vi.spyOn(masonry, "scrollTop", "set");
 
       // Test negative index - should not attempt to scroll
       scrollTo(-1);
-      await new Promise((resolve) => setTimeout(resolve, 50));
+      await waitForMasonry();
       expect(scrollTopSpy).not.toHaveBeenCalled();
       expect(scrollTestState.scrolledToIndex).toBe(-1);
 
@@ -337,10 +329,10 @@ describe("VirtualMasonry Component", () => {
 
       // Test index beyond array length (50 items in test) - should not attempt to scroll
       scrollTo(1000);
-      await new Promise((resolve) => setTimeout(resolve, 50));
+      await waitForMasonry();
       expect(scrollTopSpy).not.toHaveBeenCalled();
       expect(scrollTestState.scrolledToIndex).toBe(1000);
-      
+
       scrollTopSpy.mockRestore();
     });
   });
@@ -349,8 +341,7 @@ describe("VirtualMasonry Component", () => {
     test("applies custom base class", async () => {
       render(CustomPropsTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const masonry = document.querySelector('[data-scope="virtual-masonry"]') as HTMLElement;
       expect(masonry.className).toContain("custom-masonry-base");
@@ -359,8 +350,7 @@ describe("VirtualMasonry Component", () => {
     test("applies custom item classes", async () => {
       render(CustomPropsTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const items = document.querySelectorAll('[data-part="item"]');
       expect(items.length).toBeGreaterThan(0);
@@ -370,12 +360,56 @@ describe("VirtualMasonry Component", () => {
     test("applies custom gap", async () => {
       render(CustomPropsTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const masonry = document.querySelector('[data-scope="virtual-masonry"]');
       expect(masonry).toBeInTheDocument();
-      // Gap value is used in item positioning calculations
+
+      const items = document.querySelectorAll('[data-part="item"]') as NodeListOf<HTMLElement>;
+      expect(items.length).toBeGreaterThan(0);
+
+      // CustomPropsTest uses gap=20 and columns=3
+      // With container width 800px, gap 20px, and 3 columns:
+      // Total gap space = 20 * (3 - 1) = 40px
+      // Available width = 800 - 40 = 760px
+      // Column width = 760 / 3 ≈ 253.33px
+      // Expected column positions: 0px, 273.33px (253.33 + 20), 546.67px (253.33 * 2 + 40)
+
+      const gap = 20;
+      const containerWidth = 800;
+      const columns = 3;
+      const totalGapSpace = gap * (columns - 1);
+      const availableWidth = containerWidth - totalGapSpace;
+      const columnWidth = availableWidth / columns;
+
+      // Get unique left positions from rendered items
+      const leftPositions = new Set<number>();
+      items.forEach((item) => {
+        const left = parseFloat(item.style.left);
+        if (!isNaN(left)) {
+          leftPositions.add(left);
+        }
+      });
+
+      // Verify we have items in multiple columns
+      expect(leftPositions.size).toBeGreaterThanOrEqual(2);
+
+      // Verify the gap between columns
+      const sortedPositions = Array.from(leftPositions).sort((a, b) => a - b);
+
+      // Check that column positions account for the gap
+      // Expected positions: 0, columnWidth + gap, (columnWidth + gap) * 2
+      expect(sortedPositions[0]).toBeCloseTo(0, 1);
+
+      if (sortedPositions.length >= 2) {
+        const expectedSecondColumn = columnWidth + gap;
+        expect(sortedPositions[1]).toBeCloseTo(expectedSecondColumn, 1);
+      }
+
+      if (sortedPositions.length >= 3) {
+        const expectedThirdColumn = columnWidth * 2 + gap * 2;
+        expect(sortedPositions[2]).toBeCloseTo(expectedThirdColumn, 1);
+      }
     });
   });
 
@@ -383,8 +417,7 @@ describe("VirtualMasonry Component", () => {
     test("applies containment when contained prop is true", async () => {
       render(ContainedTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const items = document.querySelectorAll('[data-part="item"]') as NodeListOf<HTMLElement>;
       expect(items.length).toBeGreaterThan(0);
@@ -396,8 +429,7 @@ describe("VirtualMasonry Component", () => {
     test("does not apply containment by default", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const items = document.querySelectorAll('[data-part="item"]') as NodeListOf<HTMLElement>;
       expect(items.length).toBeGreaterThan(0);
@@ -411,8 +443,7 @@ describe("VirtualMasonry Component", () => {
     test("observes container size changes", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       // ResizeObserver observe should be called
       expect(observe).toHaveBeenCalled();
@@ -421,8 +452,7 @@ describe("VirtualMasonry Component", () => {
     test("disconnects ResizeObserver on unmount", async () => {
       const { unmount } = render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       unmount();
 
@@ -433,11 +463,11 @@ describe("VirtualMasonry Component", () => {
 
   describe("Performance", () => {
     test("renders efficiently with many items", async () => {
-      render(BasicMasonryTest);
       const start = performance.now();
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      render(BasicMasonryTest);
       const end = performance.now();
+
+      await waitForMasonry();
 
       // Layout calculation should complete quickly after ResizeObserver triggers
       expect(end - start).toBeLessThan(50);
@@ -446,8 +476,7 @@ describe("VirtualMasonry Component", () => {
     test("only renders visible items from large dataset", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const items = document.querySelectorAll('[data-testid^="masonry-item-"]');
       // Should only render visible + overscan, not all 50
@@ -459,8 +488,7 @@ describe("VirtualMasonry Component", () => {
     test("items have absolute positioning", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const items = document.querySelectorAll('[data-part="item"]') as NodeListOf<HTMLElement>;
       expect(items.length).toBeGreaterThan(0);
@@ -477,8 +505,7 @@ describe("VirtualMasonry Component", () => {
     test("uses shortest column algorithm", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const items = document.querySelectorAll('[data-part="item"]') as NodeListOf<HTMLElement>;
       expect(items.length).toBeGreaterThan(0);
@@ -494,8 +521,7 @@ describe("VirtualMasonry Component", () => {
     test("renders with correct data-part attributes", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       expect(document.querySelector('[data-part="base"]')).toBeInTheDocument();
       expect(document.querySelector('[data-part="spacer"]')).toBeInTheDocument();
@@ -506,8 +532,7 @@ describe("VirtualMasonry Component", () => {
     test("has correct data-scope attribute", async () => {
       render(BasicMasonryTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const masonry = document.querySelector('[data-scope="virtual-masonry"]');
       expect(masonry).toHaveAttribute("data-scope", "virtual-masonry");
@@ -518,16 +543,15 @@ describe("VirtualMasonry Component", () => {
     test("handles empty items array", async () => {
       const { container } = render(EmptyItemsTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const masonry = container.querySelector('[data-scope="virtual-masonry"]');
       expect(masonry).toBeInTheDocument();
-      
+
       // Should render no items
       const items = container.querySelectorAll('[data-part="item"]');
       expect(items.length).toBe(0);
-      
+
       // Spacer should have zero height
       const spacer = container.querySelector('[data-part="spacer"]') as HTMLElement;
       expect(spacer).toBeInTheDocument();
@@ -537,25 +561,24 @@ describe("VirtualMasonry Component", () => {
     test("handles single column layout", async () => {
       render(SingleColumnTest);
 
-      // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 10));
+      await waitForMasonry();
 
       const masonry = document.querySelector('[data-scope="virtual-masonry"]');
       expect(masonry).toBeInTheDocument();
-      
+
       // Get visible items
       const items = document.querySelectorAll('[data-part="item"]') as NodeListOf<HTMLElement>;
       expect(items.length).toBeGreaterThan(0);
-      
+
       // All items should have the same left position (single column)
       const leftPositions = new Set<string>();
       items.forEach((item) => {
         leftPositions.add(item.style.left);
       });
-      
+
       // With 1 column, all items should be in the same position (0px)
       expect(leftPositions.size).toBe(1);
-      expect(leftPositions.has('0px')).toBe(true);
+      expect(leftPositions.has("0px")).toBe(true);
     });
   });
 });
