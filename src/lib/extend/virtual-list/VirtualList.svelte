@@ -15,7 +15,8 @@
     ariaLabel = "Virtual scrolling list",
     class: className,
     classes,
-    contained = false
+    contained = false,
+    ...restProps
   }: VirtualListProps<T> = $props();
 
   const styling = $derived(classes);
@@ -116,6 +117,7 @@
   aria-label={ariaLabel}
   class={base({ class: clsx(theme?.base, className) })}
   style={`height:${height}px; position:relative;`}
+  {...restProps}
 >
   <div data-part="spacer" class={spacer({ class: clsx(theme?.spacer, styling?.spacer) })} style={`height:${totalHeight}px;`}>
     <div data-part="content" class={content({ class: clsx(theme?.content, styling?.content) })} style={`transform:translateY(${offsetY}px); will-change:transform;`}>

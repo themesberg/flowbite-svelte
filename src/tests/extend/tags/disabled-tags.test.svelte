@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Tags } from "$lib";
-  
+
   let value: string[] = $state(["foo", "bar"]);
 </script>
 

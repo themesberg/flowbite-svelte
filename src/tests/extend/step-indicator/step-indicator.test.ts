@@ -142,7 +142,7 @@ describe("StepIndicator Component", () => {
       const stepIndicator = screen.getByTestId("custom-colors");
 
       expect(stepIndicator).toBeInTheDocument();
-      
+
       const currentStep = stepIndicator.querySelector('[data-state="current"]');
       expect(currentStep).toBeInTheDocument();
       expect(currentStep?.className).toContain("bg-blue-500");
@@ -174,7 +174,7 @@ describe("StepIndicator Component", () => {
       render(BasicStepIndicatorTest);
       const stepIndicator = screen.getByTestId("basic-step-indicator");
 
-      const allButtons = stepIndicator.querySelectorAll('button');
+      const allButtons = stepIndicator.querySelectorAll("button");
       expect(allButtons.length).toBeGreaterThan(0);
 
       // Find the button for step 2 (index 1) - it should be an incomplete step button
@@ -193,7 +193,7 @@ describe("StepIndicator Component", () => {
       render(NotClickableTest);
       const stepIndicator = screen.getByTestId("not-clickable");
 
-      const buttons = stepIndicator.querySelectorAll('button');
+      const buttons = stepIndicator.querySelectorAll("button");
       expect(buttons.length).toBe(0);
 
       // Should have div elements instead
@@ -209,7 +209,7 @@ describe("StepIndicator Component", () => {
       render(BasicStepIndicatorTest);
       const stepIndicator = screen.getByTestId("basic-step-indicator");
 
-      const currentStep = stepIndicator.querySelector('[data-state="current"]')?.closest('button');
+      const currentStep = stepIndicator.querySelector('[data-state="current"]')?.closest("button");
       expect(currentStep).toBeInTheDocument();
 
       const labelBefore = stepIndicator.querySelector('[data-part="label"]')?.textContent;
@@ -246,7 +246,7 @@ describe("StepIndicator Component", () => {
       const stepIndicator = screen.getByTestId("with-callback");
 
       // Get all incomplete step buttons
-      let incompleteButtons = Array.from(stepIndicator.querySelectorAll('button[data-state="incomplete"]'));
+      const incompleteButtons = Array.from(stepIndicator.querySelectorAll('button[data-state="incomplete"]'));
 
       // Move to step 3 (click second incomplete button)
       await user.click(incompleteButtons[1] as HTMLElement);
@@ -255,7 +255,7 @@ describe("StepIndicator Component", () => {
 
       // After clicking, step 1 and 2 become completed buttons, so we can click them
       const completedButtons = Array.from(stepIndicator.querySelectorAll('button[data-state="completed"]'));
-      
+
       // Move back to step 1
       await user.click(completedButtons[0] as HTMLElement);
       expect(callbackTestState.current).toBe(1);
@@ -267,8 +267,8 @@ describe("StepIndicator Component", () => {
       render(WithCallbackTest);
       const stepIndicator = screen.getByTestId("with-callback");
 
-      const currentButton = stepIndicator.querySelector('[data-state="current"]')?.closest('button');
-      
+      const currentButton = stepIndicator.querySelector('[data-state="current"]')?.closest("button");
+
       if (currentButton) {
         await user.click(currentButton);
       }
@@ -282,7 +282,7 @@ describe("StepIndicator Component", () => {
       render(BasicStepIndicatorTest);
       const stepIndicator = screen.getByTestId("basic-step-indicator");
 
-      const currentButton = stepIndicator.querySelector('[data-state="current"]')?.closest('button');
+      const currentButton = stepIndicator.querySelector('[data-state="current"]')?.closest("button");
       expect(currentButton).toHaveAttribute("aria-current", "step");
       expect(currentButton).toHaveAttribute("aria-label");
     });
@@ -320,7 +320,7 @@ describe("StepIndicator Component", () => {
 
       // Get incomplete step buttons and click the first one (step 2)
       let incompleteButtons = Array.from(stepIndicator.querySelectorAll('button[data-state="incomplete"]'));
-      
+
       await user.click(incompleteButtons[0] as HTMLElement);
       label = stepIndicator.querySelector('[data-part="label"]');
       expect(label?.textContent).toBe("Step 2");
@@ -342,7 +342,7 @@ describe("StepIndicator Component", () => {
 
       // Get completed step buttons (steps 1 and 2)
       const completedButtons = Array.from(stepIndicator.querySelectorAll('button[data-state="completed"]'));
-      
+
       // Click on step 2 (second completed button)
       await user.click(completedButtons[1] as HTMLElement);
       label = stepIndicator.querySelector('[data-part="label"]');
@@ -361,16 +361,16 @@ describe("StepIndicator Component", () => {
       const stepIndicator = screen.getByTestId("basic-step-indicator");
 
       // Jump to step 5 (last step)
-      let incompleteButtons = Array.from(stepIndicator.querySelectorAll('button[data-state="incomplete"]'));
+      const incompleteButtons = Array.from(stepIndicator.querySelectorAll('button[data-state="incomplete"]'));
       await user.click(incompleteButtons[3] as HTMLElement); // 4th incomplete button = step 5
-      
+
       let label = stepIndicator.querySelector('[data-part="label"]');
       expect(label?.textContent).toBe("Step 5");
 
       // Now we can click on completed steps - jump back to step 2
       const completedButtons = Array.from(stepIndicator.querySelectorAll('button[data-state="completed"]'));
       await user.click(completedButtons[1] as HTMLElement); // 2nd completed button = step 2
-      
+
       label = stepIndicator.querySelector('[data-part="label"]');
       expect(label?.textContent).toBe("Step 2");
     });

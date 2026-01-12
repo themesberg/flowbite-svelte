@@ -40,12 +40,13 @@
   const styles = $derived(tour({ size, color }));
 
   async function updatePositions(): Promise<void> {
-    if (!active || !currentStepData?.target || !tooltipElement) return;
-
+    if (!active || !currentStepData?.target || !tooltipElement || !(tooltipElement instanceof HTMLElement)) {
+      return;
+    }
     await tick();
 
-    const target = document.querySelector(currentStepData.target) as HTMLElement;
-    if (!target) {
+    const target = document.querySelector(currentStepData.target);
+    if (!(target instanceof HTMLElement)) {
       console.warn(`Tour: Target element "${currentStepData.target}" not found`);
       return;
     }

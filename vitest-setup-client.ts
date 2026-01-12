@@ -128,3 +128,33 @@ beforeEach(() => {
 afterEach(() => {
   vi.restoreAllMocks();
 });
+
+// Mock Floating UI globally
+vi.mock("@floating-ui/dom", () => {
+  return {
+    computePosition: vi.fn().mockResolvedValue({
+      x: 0,
+      y: 0,
+      placement: "bottom",
+      middlewareData: {
+        arrow: { x: 0, y: 0 }
+      }
+    }),
+
+    // middleware helpers
+    offset: vi.fn(() => ({})),
+    flip: vi.fn(() => ({})),
+    shift: vi.fn(() => ({})),
+    arrow: vi.fn(() => ({})),
+
+    // ✅ REQUIRED by other Floating UI users
+    autoUpdate: vi.fn(() => {
+      return () => {}; // cleanup function
+    })
+  };
+});
+
+// Shim global for browser tests
+if (typeof globalThis !== "undefined" && !(globalThis as Record<string, unknown>).global) {
+  (globalThis as Record<string, unknown>).global = globalThis;
+}
