@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { innerWidth } from "svelte/reactivity/window";
   import type { Attachment } from "svelte/attachments";
   import type { SidebarContextType, SidebarProps } from "$lib/types";
   import { getTheme } from "$lib/theme-provider/themeUtils";
@@ -42,8 +43,12 @@
     "2xl": 1536
   };
 
-  let innerWidth: number = $state(-1);
-  let isLargeScreen = $derived(disableBreakpoints ? false : alwaysOpen || innerWidth >= breakpointValues[breakpoint]);
+let isLargeScreen = $derived(
+  disableBreakpoints
+    ? false
+    : alwaysOpen ||
+        (innerWidth.current ?? 0) >= breakpointValues[breakpoint]
+);
 
   // Create reactive context for activeUrl using getter
   const activeUrlContext = {
@@ -133,8 +138,6 @@
     });
   };
 </script>
-
-<svelte:window bind:innerWidth />
 
 {#if !disableBreakpoints}
   {#if isOpen || isLargeScreen}

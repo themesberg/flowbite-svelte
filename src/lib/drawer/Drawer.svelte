@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { innerWidth, innerHeight } from "svelte/reactivity/window";
   import type { DrawerProps } from "$lib";
   import Dialog from "$lib/dialog/Dialog.svelte";
   import { getTheme } from "$lib/theme-provider/themeUtils";
@@ -71,12 +72,25 @@
 
     // set the values for transition start position
     const dlg = ev.currentTarget;
-    const { innerWidth = 0, innerHeight = 0 } = dlg.ownerDocument.defaultView ?? {};
+const rect = dlg.getBoundingClientRect();
 
-    const rect = dlg.getBoundingClientRect();
+const vw = innerWidth.current ?? 0;
+const vh = innerHeight.current ?? 0;
 
-    x = placement === "left" ? rect.left : placement === "right" ? rect.right - innerWidth : undefined;
-    y = placement === "top" ? rect.top : placement === "bottom" ? rect.bottom - innerHeight : undefined;
+x =
+  placement === "left"
+    ? rect.left
+    : placement === "right"
+    ? rect.right - vw
+    : undefined;
+
+y =
+  placement === "top"
+    ? rect.top
+    : placement === "bottom"
+    ? rect.bottom - vh
+    : undefined;
+
 
     await tick(); // let transition start
 
