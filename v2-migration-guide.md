@@ -9,13 +9,27 @@ v2 introduced breaking prop renames
 ### Affected Components 
 - Accordion 
 - Alert 
-- Avatar 
+- Avatar
+- Badge 
 - Banner
-- Badge
 - Popover
-- Toast
 - Sidebar
 - SidebarDropdownWrapper
+- Toast
+
+### Migration Example
+
+**Before (v1):**
+```svelte
+<Accordion transitionType={slide} />
+<Toast params={{ duration: 300 }} />
+```
+
+**After (v2):**
+```svelte
+<Accordion transition={slide} />
+<Toast transitionParams={{ duration: 300 }} />
+```
 
 ## Order of styling 
 The component classes have the highest precedence.
