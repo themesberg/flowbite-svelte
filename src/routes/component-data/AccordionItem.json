@@ -10,7 +10,7 @@
     ["arrowup", ""],
     ["arrowdown", ""],
     ["open", "$bindable(false)"],
-    ["transitionType", "slide"],
+    ["transition", "slide"],
     ["transitionParams", ""],
     ["class: className", ""],
     ["classes", ""]

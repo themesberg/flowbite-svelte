@@ -102,7 +102,7 @@ Here's an example of how to use the `multiple` option together with "expand all"
 
 ## Custom transitions
 
-The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#run-time-svelte-transition-slide">slide</A>. Use the `transitionType` and `transitionParams` prop to create custom transitions.
+The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#run-time-svelte-transition-slide">slide</A>. Use the `transition` and `transitionParams` prop to create custom transitions.
 
 You can use any Svelte transition function such as `fade`, `blur`, `fly`, or `scale` from the `svelte/transition` module, and customize them with parameters like duration and easing.
 
@@ -130,9 +130,9 @@ To test: Fill out the form, navigate to a different page, and then use your brow
 {#include Snapshot.svelte}
 ```
 
-## Using transitionType="none"
+## Using transition="none"
 
-When you set `transitionType="none"` on an Accordion or an AccordionItem, it disables Svelte transitions completely and instead uses CSS display properties (block/hidden) to show or hide content. This prevents Svelte from destroying and recreating components when toggling the accordion.
+When you set `transition="none"` on an Accordion or an AccordionItem, it disables Svelte transitions completely and instead uses CSS display properties (block/hidden) to show or hide content. This prevents Svelte from destroying and recreating components when toggling the accordion.
 
 This approach is useful when:
 - You want to preserve form state or component lifecycle
@@ -195,7 +195,7 @@ Combining multiple responsive patterns for sophisticated adaptive layouts:
 
 - `multiple`: Allow multiple items open simultaneously (default: `false`)
 - `flush`: Remove rounded borders for minimal design
-- `transitionType`: Control transitions (`TransitionFunc` or `"none"`)
+- `transition`: Control transitions (`TransitionFunc` or `"none"`)
 - `classes`: Customize styling with `active`, `inactive`, `button`, `contentWrapper`, `content` properties
 
 ### AccordionItem
@@ -203,7 +203,7 @@ Combining multiple responsive patterns for sophisticated adaptive layouts:
 - `open`: Control open state (bindable)
 - `header`: Snippet for header content
 - `arrowup` / `arrowdown`: Snippets for custom icons
-- `transitionType`: Override parent transition (`TransitionFunc` or `"none"`)
+- `transition`: Override parent transition (`TransitionFunc` or `"none"`)
 - `transitionParams`: Custom transition parameters
 - `classes`: Item-specific styling overrides
 

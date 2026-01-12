@@ -15,11 +15,11 @@
 
 <Accordion>
   <AccordionItem transition="none">
-    {#snippet header()}transitionType: "none"{/snippet}
+    {#snippet header()}transition: "none"{/snippet}
     Content C
   </AccordionItem>
   <AccordionItem>
-    {#snippet header()}transitionType: default{/snippet}
+    {#snippet header()}transition: default{/snippet}
     Content D
   </AccordionItem>
 </Accordion>

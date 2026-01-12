@@ -76,7 +76,7 @@
       if (!outsideclickStatus) props.push(" activateClickOutside={false}");
       if (currentPlacement.width !== "default") props.push(` width="${currentPlacement.width}"`);
       if (currentTransition !== transitions[0]) {
-        props.push(` transitionType={${currentTransition.transition.name}}`);
+        props.push(` transition={${currentTransition.transition.name}}`);
 
         const paramsString = Object.entries(currentTransition.params)
           .map(([key, value]) => {

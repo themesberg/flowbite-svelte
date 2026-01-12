@@ -9,7 +9,7 @@
     ["flush", ""],
     ["multiple", "false"],
     ["class: className", ""],
-    ["transitionType", ""],
+    ["transition", ""],
     ["respectReducedMotion", "true"],
     ["classes", ""]
   ]
