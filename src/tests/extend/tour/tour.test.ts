@@ -37,11 +37,13 @@ describe("Tour Component", () => {
       });
     });
 
-    test("renders overlay by default", () => {
+    test("renders overlay by default", async () => {
       render(BasicTourTest);
 
-      const overlay = document.querySelector('[data-part="overlay"]');
-      expect(overlay).toBeInTheDocument();
+      await waitFor(() => {
+        const overlay = document.querySelector('[data-part="overlay"]');
+        expect(overlay).toBeInTheDocument();
+      });
     });
 
     test("renders without overlay when showOverlay is false", () => {
@@ -66,11 +68,12 @@ describe("Tour Component", () => {
     });
 
     test("displays step without title", async () => {
+      const user = userEvent.setup();
       render(NoOverlayTest);
       const nextButton = screen.getByText("Next");
 
       // Click to go to second step
-      nextButton.click();
+      await user.click(nextButton);
 
       await waitFor(() => {
         expect(screen.getByText("Second step without title")).toBeInTheDocument();
