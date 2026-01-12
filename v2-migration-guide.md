@@ -6,7 +6,7 @@ v2 introduced breaking prop renames
 - transitionType → transition 
 - params → transitionParams
 
-### Lists affected components 
+### Affected Components 
 - Accordion 
 - Alert 
 - Avatar 
@@ -18,6 +18,6 @@ v2 introduced breaking prop renames
 - SidebarDropdownWrapper
 
 ## Order of styling 
-The component classes has the highest precedence.
+The component classes have the highest precedence.
 
 Theme provider -> context classes (if exists) -> classes
