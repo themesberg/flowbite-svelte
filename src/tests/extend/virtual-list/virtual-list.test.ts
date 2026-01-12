@@ -156,13 +156,22 @@ describe("VirtualList Component", () => {
     test("handles out of bounds indices gracefully", () => {
       render(ScrollToIndexTest);
 
-      // Try to scroll to negative index
+      const list = screen.getByTestId("scroll-list");
+      const initialScrollTop = list.scrollTop;
+
+      // Try to scroll to negative index - should not change scroll position
       scrollTo(-1);
       expect(scrollTestState.scrolledToIndex).toBe(-1);
+      expect(list.scrollTop).toBe(initialScrollTop);
 
-      // Try to scroll to index beyond items length
+      // Try to scroll to index beyond items length - should not change scroll position
       scrollTo(1000);
       expect(scrollTestState.scrolledToIndex).toBe(1000);
+      expect(list.scrollTop).toBe(initialScrollTop);
+
+      // Verify component remains stable and doesn't throw errors
+      const items = document.querySelectorAll('[data-testid^="scroll-item-"]');
+      expect(items.length).toBeGreaterThan(0);
     });
   });
 

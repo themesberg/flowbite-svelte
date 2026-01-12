@@ -271,6 +271,7 @@ describe("StepIndicator Component", () => {
       const stepIndicator = screen.getByTestId("with-callback");
 
       const currentButton = stepIndicator.querySelector('[data-state="current"]')?.closest("button");
+      expect(currentButton).toBeInTheDocument();
 
       if (currentButton) {
         await user.click(currentButton);
