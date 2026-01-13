@@ -60,13 +60,136 @@ export const button = tv({
       },
       dark: {
         base: "text-white bg-dark border border-transparent enabled:hover:bg-dark-strong focus:ring-neutral-tertiary",
-        outline: "text-dark bg-neutral-primary border border-dark enabled:hover:bg-dark enabled:hover:text-white focus:ring-neutral-tertiary",
+        outline: "text-gray-600 dark:text-gray-400 bg-neutral-primary border border-dark enabled:hover:bg-dark enabled:hover:text-white focus:ring-neutral-tertiary",
         shadow: "shadow-gray-500/50 dark:shadow-gray-800/80"
       },
       ghost: {
         base: "text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary focus:outline-none",
         outline: "",
         shadow: ""
+      },
+      // legacy colors
+      // pattern used
+      // base: "text-white bg-{color} border border-transparent enabled:hover:bg-{color}-strong focus:ring-{color}-medium",
+      // outline: "text-{color} bg-neutral-primary border border-{color} enabled:hover:bg-{color} enabled:hover:text-white focus:ring-{color}-subtle",
+      // shadow: "shadow-{color}-500/50 dark:shadow-{color}-800/80"
+      primary: {
+        base: "text-white bg-primary border border-transparent enabled:hover:bg-primary-strong focus:ring-primary-medium",
+        outline:
+          "text-primary bg-neutral-primary border border-primary enabled:hover:bg-primary enabled:hover:text-white focus:ring-primary-subtle",
+        shadow: "shadow-primary-500/50 dark:shadow-primary-800/80"
+      },
+      secondary: {
+        base: "text-white bg-secondary border border-transparent enabled:hover:bg-secondary-strong focus:ring-secondary-medium",
+        outline:
+          "text-secondary bg-neutral-primary border border-secondary enabled:hover:bg-secondary enabled:hover:text-white focus:ring-secondary-subtle",
+        shadow: "shadow-secondary-500/50 dark:shadow-secondary-800/80"
+      },
+      light: {
+        base: "text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 focus-within:ring-gray-200 dark:focus-within:ring-gray-700",
+        outline: "text-gray-700 border-gray-700 hover:bg-gray-100 dark:border-gray-400 dark:text-gray-400 dark:hover:bg-gray-500 dark:hover:text-white",
+        shadow: "shadow-gray-500/50 dark:shadow-gray-800/80"
+      },
+      amber: {
+        base: "text-white bg-amber border border-transparent enabled:hover:bg-amber-strong focus:ring-amber-medium",
+        outline:
+          "text-amber bg-neutral-primary border border-amber enabled:hover:bg-amber enabled:hover:text-white focus:ring-amber-subtle",
+        shadow: "shadow-amber-500/50 dark:shadow-amber-800/80"
+      },
+      blue: {
+        base: "text-white bg-blue border border-transparent enabled:hover:bg-blue-strong focus:ring-blue-medium",
+        outline:
+          "text-blue bg-neutral-primary border border-blue enabled:hover:bg-blue enabled:hover:text-white focus:ring-blue-subtle",
+        shadow: "shadow-blue-500/50 dark:shadow-blue-800/80"
+      },
+      cyan: {
+        base: "text-white bg-cyan border border-transparent enabled:hover:bg-cyan-strong focus:ring-cyan-medium",
+        outline:
+          "text-cyan bg-neutral-primary border border-cyan enabled:hover:bg-cyan enabled:hover:text-white focus:ring-cyan-subtle",
+        shadow: "shadow-cyan-500/50 dark:shadow-cyan-800/80"
+      },
+      emerald: {
+        base: "text-white bg-emerald border border-transparent enabled:hover:bg-emerald-strong focus:ring-emerald-medium",
+        outline:
+          "text-emerald bg-neutral-primary border border-emerald enabled:hover:bg-emerald enabled:hover:text-white focus:ring-emerald-subtle",
+        shadow: "shadow-emerald-500/50 dark:shadow-emerald-800/80"
+      },
+      fuchsia: {
+        base: "text-white bg-fuchsia border border-transparent enabled:hover:bg-fuchsia-strong focus:ring-fuchsia-medium",
+        outline:
+          "text-fuchsia bg-neutral-primary border border-fuchsia enabled:hover:bg-fuchsia enabled:hover:text-white focus:ring-fuchsia-subtle",
+        shadow: "shadow-fuchsia-500/50 dark:shadow-fuchsia-800/80"
+      },      green: {
+        base: "text-white bg-green border border-transparent enabled:hover:bg-green-strong focus:ring-green-medium",
+        outline:
+          "text-green bg-neutral-primary border border-green enabled:hover:bg-green enabled:hover:text-white focus:ring-green-subtle",
+        shadow: "shadow-green-500/50 dark:shadow-green-800/80"
+      },
+      indigo: {
+        base: "text-white bg-indigo border border-transparent enabled:hover:bg-indigo-strong focus:ring-indigo-medium",
+        outline:
+          "text-indigo bg-neutral-primary border border-indigo enabled:hover:bg-indigo enabled:hover:text-white focus:ring-indigo-subtle",
+        shadow: "shadow-indigo-500/50 dark:shadow-indigo-800/80"
+      },
+      lime: {
+        base: "text-white bg-lime border border-transparent enabled:hover:bg-lime-strong focus:ring-lime-medium",
+        outline:
+          "text-lime bg-neutral-primary border border-lime enabled:hover:bg-lime enabled:hover:text-white focus:ring-lime-subtle",
+        shadow: "shadow-lime-500/50 dark:shadow-lime-800/80"
+      },
+      orange: {
+        base: "text-white bg-orange border border-transparent enabled:hover:bg-orange-strong focus:ring-orange-medium",
+        outline:
+          "text-orange bg-neutral-primary border border-orange enabled:hover:bg-orange enabled:hover:text-white focus:ring-orange-subtle",
+        shadow: "shadow-orange-500/50 dark:shadow-orange-800/80"
+      },
+      pink: {
+        base: "text-white bg-pink border border-transparent enabled:hover:bg-pink-strong focus:ring-pink-medium",
+        outline:
+          "text-pink bg-neutral-primary border border-pink enabled:hover:bg-pink enabled:hover:text-white focus:ring-pink-subtle",
+        shadow: "shadow-pink-500/50 dark:shadow-pink-800/80"
+      },
+      purple: {
+        base: "text-white bg-purple border border-transparent enabled:hover:bg-purple-strong focus:ring-purple-medium",
+        outline:
+          "text-purple bg-neutral-primary border border-purple enabled:hover:bg-purple enabled:hover:text-white focus:ring-purple-subtle",
+        shadow: "shadow-purple-500/50 dark:shadow-purple-800/80"
+      },
+      red: {
+        base: "text-white bg-red border border-transparent enabled:hover:bg-red-strong focus:ring-red-medium",
+        outline:
+          "text-red bg-neutral-primary border border-red enabled:hover:bg-red enabled:hover:text-white focus:ring-red-subtle",
+        shadow: "shadow-red-500/50 dark:shadow-red-800/80"
+      },
+      rose: {
+        base: "text-white bg-rose border border-transparent enabled:hover:bg-rose-strong focus:ring-rose-medium",
+        outline:
+          "text-rose bg-neutral-primary border border-rose enabled:hover:bg-rose enabled:hover:text-white focus:ring-rose-subtle",
+        shadow: "shadow-rose-500/50 dark:shadow-rose-800/80"
+      },
+      sky: {
+        base: "text-white bg-sky border border-transparent enabled:hover:bg-sky-strong focus:ring-sky-medium",
+        outline:
+          "text-sky bg-neutral-primary border border-sky enabled:hover:bg-sky enabled:hover:text-white focus:ring-sky-subtle",
+        shadow: "shadow-sky-500/50 dark:shadow-sky-800/80"
+      },
+      teal: {
+        base: "text-white bg-teal border border-transparent enabled:hover:bg-teal-strong focus:ring-teal-medium",
+        outline:
+          "text-teal bg-neutral-primary border border-teal enabled:hover:bg-teal enabled:hover:text-white focus:ring-teal-subtle",
+        shadow: "shadow-teal-500/50 dark:shadow-teal-800/80"
+      },
+      violet: {
+        base: "text-white bg-violet border border-transparent enabled:hover:bg-violet-strong focus:ring-violet-medium",
+        outline:
+          "text-violet bg-neutral-primary border border-violet enabled:hover:bg-violet enabled:hover:text-white focus:ring-violet-subtle",
+        shadow: "shadow-violet-500/50 dark:shadow-violet-800/80"
+      },
+      yellow: {
+        base: "text-white bg-yellow border border-transparent enabled:hover:bg-yellow-strong focus:ring-yellow-medium",
+        outline:
+          "text-yellow bg-neutral-primary border border-yellow enabled:hover:bg-yellow enabled:hover:text-white focus:ring-yellow-subtle",
+        shadow: "shadow-yellow-500/50 dark:shadow-yellow-800/80"
       }
     },
     size: {

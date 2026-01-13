@@ -4,15 +4,15 @@
 </script>
 
 <ButtonGroup>
-  <Button outline color="dark">
+  <Button outline color="alternative">
     <UserCircleSolid class="me-2 h-4 w-4" />
     Profile
   </Button>
-  <Button outline color="dark">
+  <Button outline color="alternative">
     <AdjustmentsVerticalOutline class="me-2 h-4 w-4" />
     Settings
   </Button>
-  <Button outline color="dark">
+  <Button outline color="alternative">
     <DownloadSolid class="me-2 h-4 w-4" />
     Download
   </Button>

@@ -10,3 +10,24 @@
 <Button color="warning" pill>Warning</Button>
 <Button color="transparent" pill>Transparent</Button>
 <Button color="dark" pill>Dark</Button>
+<Button color="primary" pill>Primary</Button>
+<Button color="light" pill>Light</Button>
+<Button color="secondary" pill>Secondary</Button>
+<Button color="red" pill>Red</Button>
+<Button color="orange" pill>Orange</Button>
+<Button color="amber" pill>Amber</Button>
+<Button color="yellow" pill>Yellow</Button>
+<Button color="lime" pill>Lime</Button>
+<Button color="green" pill>Green</Button>
+<Button color="emerald" pill>Emerald</Button>
+<Button color="teal" pill>Teal</Button>
+<Button color="cyan" pill>Cyan</Button>
+<Button color="sky" pill>Sky</Button>
+<Button color="blue" pill>Blue</Button>
+<Button color="indigo" pill>Indigo</Button>
+<Button color="violet" pill>Violet</Button>
+<Button color="purple" pill>Purple</Button>
+<Button color="fuchsia" pill>Fuchsia</Button>
+<Button color="pink" pill>Pink</Button>
+<Button color="rose" pill>Rose</Button>
+

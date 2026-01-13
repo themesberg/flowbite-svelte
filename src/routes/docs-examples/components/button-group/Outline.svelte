@@ -3,7 +3,7 @@
 </script>
 
 <ButtonGroup>
-  <Button outline color="dark">Profile</Button>
-  <Button outline color="dark">Settings</Button>
-  <Button outline color="dark">Messages</Button>
+  <Button outline color="alternative">Profile</Button>
+  <Button outline color="alternative">Settings</Button>
+  <Button outline color="alternative">Messages</Button>
 </ButtonGroup>

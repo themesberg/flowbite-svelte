@@ -116,14 +116,24 @@
   --color-dark: var(--color-gray-800);
   --color-dark-strong: var(--color-gray-900);
   --color-disabled: var(--color-gray-100);
+  --color-amber: var(--color-amber-600);
+  --color-blue: var(--color-blue-600);
+  --color-cyan: var(--color-cyan-500);
+  --color-emerald: var(--color-emerald-500);
+  --color-fuchsia: var(--color-fuchsia-600);
+  --color-gray: var(--color-gray-500);
+  --color-green: var(--color-green-500);
+  --color-indigo: var(--color-indigo-600);
+  --color-lime: var(--color-lime-500);
+  --color-orange: var(--color-orange-400);
+  --color-pink: var(--color-pink-600);
   --color-purple: var(--color-purple-500);
+  --color-red: var(--color-red-500);
+  --color-rose: var(--color-rose-500);
   --color-sky: var(--color-sky-500);
   --color-teal: var(--color-teal-600);
-  --color-pink: var(--color-pink-600);
-  --color-cyan: var(--color-cyan-500);
-  --color-fuchsia: var(--color-fuchsia-600);
-  --color-indigo: var(--color-indigo-600);
-  --color-orange: var(--color-orange-400);
+  --color-violet: var(--color-violet-500);
+  --color-yellow: var(--color-yellow-500);
 
   /* BORDER COLOR VARIABLES */
   --color-buffer: var(--color-white);
@@ -211,14 +221,26 @@
   --color-dark: var(--color-gray-800);
   --color-dark-strong: var(--color-gray-700);
   --color-disabled: var(--color-gray-800);
+  --color-primary: var(--color-primary-500);
+  --color-secondary: var(--color-secondary-500);
+  --color-amber: var(--color-amber-500);
+  --color-blue: var(--color-blue-500);
+  --color-cyan: var(--color-cyan-500);
+  --color-emerald: var(--color-emerald-500);
+  --color-fuchsia: var(--color-fuchsia-500);
+  --color-gray: var(--color-gray-500);
+  --color-green: var(--color-green-500);
+  --color-indigo: var(--color-indigo-500);
+  --color-lime: var(--color-lime-500);
+  --color-orange: var(--color-orange-400);
+  --color-pink: var(--color-pink-500);
   --color-purple: var(--color-purple-500);
+  --color-red: var(--color-red-500);
+  --color-rose: var(--color-rose-500);
   --color-sky: var(--color-sky-500);
   --color-teal: var(--color-teal-500);
-  --color-pink: var(--color-pink-500);
-  --color-cyan: var(--color-cyan-500);
-  --color-fuchsia: var(--color-fuchsia-500);
-  --color-indigo: var(--color-indigo-500);
-  --color-orange: var(--color-orange-400);
+  --color-violet: var(--color-violet-500);
+  --color-yellow: var(--color-yellow-500);
 
   /* border color variables */
   --color-buffer: var(--color-gray-950);

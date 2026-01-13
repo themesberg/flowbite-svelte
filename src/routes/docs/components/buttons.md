@@ -66,7 +66,7 @@ Pill buttons work especially well in modern web apps, social platforms, and cons
 
 ## Shadow
 
-```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
+```svelte example class="flex flex-wrap gap-4" hideScript hideResponsiveButtons
 {#include Shadow.svelte}
 ```
 
