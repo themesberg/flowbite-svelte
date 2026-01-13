@@ -1837,6 +1837,7 @@ export interface TableSearchProps extends TableSearchVariants, HTMLTableAttribut
   footer?: Snippet;
   divClass?: ClassValue;
   inputValue?: string;
+  oninput?: (event: Event) => void;
   striped?: boolean;
   hoverable?: boolean;
   customColor?: string;
