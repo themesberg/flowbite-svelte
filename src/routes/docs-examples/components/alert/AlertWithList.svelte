@@ -16,7 +16,7 @@
     <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
   </ul>
 </Alert>
-<Alert color="danger" listContent class="items-start!">
+<Alert color="success" listContent class="items-start!">
   {#snippet icon()}<span>
       <InfoCircleSolid class="h-5 w-5" />
       <span class="sr-only">Info</span>

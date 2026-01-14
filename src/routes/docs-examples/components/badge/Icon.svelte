@@ -1,13 +1,25 @@
 <script lang="ts">
   import { Badge } from "flowbite-svelte";
-  import { ClockSolid } from "flowbite-svelte-icons";
+  import { ClockOutline } from "flowbite-svelte-icons";
 </script>
 
-<Badge color="gray" border>
-  <ClockSolid class="me-1.5 h-2.5 w-2.5" />
-  3 days ago
-</Badge>
 <Badge border>
-  <ClockSolid class="text-primary-800 dark:text-primary-400 me-1.5 h-2.5 w-2.5" />
-  2 minutes ago
+  <ClockOutline class="me-1.5 h-3 w-3" />
+  2 mins ago
+</Badge>
+<Badge border color="success">
+  <ClockOutline class="me-1.5 h-3 w-3" />
+  2 mins ago
+</Badge>
+<Badge border color="danger">
+  <ClockOutline class="me-1.5 h-3 w-3" />
+  2 mins ago
+</Badge>
+<Badge border color="warning">
+  <ClockOutline class="me-1.5 h-3 w-3" />
+  2 mins ago
+</Badge>
+<Badge border color="blue">
+  <ClockOutline class="me-1.5 h-3 w-3" />
+  2 mins ago
 </Badge>

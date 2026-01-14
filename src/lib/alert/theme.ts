@@ -103,6 +103,102 @@ export const alert = tv({
       color: "gray",
       class: "border-dark-subtle"
     },
+    // primary secondary amber blue cyan emerald fuchsia gray green indigo lime orange pink purple red rose sky teal violet yellow
+    {
+      border: true,
+      color: "primary",
+      class: "border-primary-subtle"
+    },
+    {
+      border: true,
+      color: "secondary",
+      class: "border-secondary-subtle"
+    },
+    {
+      border: true,
+      color: "amber",
+      class: "border-amber-subtle"
+    },
+    {
+      border: true,
+      color: "blue",
+      class: "border-blue-subtle"
+    },
+    {
+      border: true,
+      color: "cyan",
+      class: "border-cyan-subtle"
+    },
+    {
+      border: true,
+      color: "emerald",
+      class: "border-emerald-subtle"
+    },
+    {
+      border: true,
+      color: "fuchsia",
+      class: "border-fuchsia-subtle"
+    },
+    {
+      border: true,
+      color: "green",
+      class: "border-green-subtle"
+    },
+    {
+      border: true,
+      color: "indigo",
+      class: "border-indigo-subtle"
+    },
+    {
+      border: true,
+      color: "lime",
+      class: "border-lime-subtle"
+    },
+    {
+      border: true,
+      color: "orange",
+      class: "border-orange-subtle"
+    },
+    {
+      border: true,
+      color: "pink",
+      class: "border-pink-subtle"
+    },
+    {
+      border: true,
+      color: "purple",
+      class: "border-purple-subtle"
+    },
+    {
+      border: true,
+      color: "red",
+      class: "border-red-subtle"
+    },
+    {
+      border: true,
+      color: "rose",
+      class: "border-rose-subtle"
+    },
+    {
+      border: true,
+      color: "sky",
+      class: "border-sky-subtle"
+    },
+    {
+      border: true,
+      color: "teal",
+      class: "border-teal-subtle"
+    },
+     {
+      border: true,
+      color: "violet",
+      class: "border-violet-subtle"
+    },
+    {
+      border: true,
+      color: "yellow",
+      class: "border-yellow-subtle"
+    },
     {
       borderAccent: true,
       color: "brand",
@@ -124,105 +220,105 @@ export const alert = tv({
       class: "border-warning-subtle"
     },
     {
-      border: true,
+      borderAccent: true,
       color: "primary",
-      class: "border-primary-500 dark:border-primary-200 divide-primary-500 dark:divide-primary-200"
+      class: "border-primary-subtle"
     },
     {
-      border: true,
+      borderAccent: true,
       color: "secondary",
-      class: "border-secondary-500 dark:border-secondary-200 divide-secondary-500 dark:divide-secondary-200"
+      class: "border-secondary-subtle"
     },
     {
-      border: true,
-      color: "gray",
-      class: "border-gray-300 dark:border-gray-800 divide-gray-300 dark:divide-gray-800"
-    },
-    {
-      border: true,
-      color: "red",
-      class: "border-red-300 dark:border-red-800 divide-red-300 dark:divide-red-800"
-    },
-    {
-      border: true,
-      color: "orange",
-      class: "border-orange-300 dark:border-orange-800 divide-orange-300 dark:divide-orange-800"
-    },
-    {
-      border: true,
+      borderAccent: true,
       color: "amber",
-      class: "border-amber-300 dark:border-amber-800 divide-amber-300 dark:divide-amber-800"
+      class: "border-amber-subtle"
     },
     {
-      border: true,
-      color: "yellow",
-      class: "border-yellow-300 dark:border-yellow-800 divide-yellow-300 dark:divide-yellow-800"
-    },
-    {
-      border: true,
-      color: "lime",
-      class: "border-lime-300 dark:border-lime-800 divide-lime-300 dark:divide-lime-800"
-    },
-    {
-      border: true,
-      color: "green",
-      class: "border-green-300 dark:border-green-800 divide-green-300 dark:divide-green-800"
-    },
-    {
-      border: true,
-      color: "emerald",
-      class: "border-emerald-300 dark:border-emerald-800 divide-emerald-300 dark:divide-emerald-800"
-    },
-    {
-      border: true,
-      color: "teal",
-      class: "border-teal-300 dark:border-teal-800 divide-teal-300 dark:divide-teal-800"
-    },
-    {
-      border: true,
-      color: "cyan",
-      class: "border-cyan-300 dark:border-cyan-800 divide-cyan-300 dark:divide-cyan-800"
-    },
-    {
-      border: true,
-      color: "sky",
-      class: "border-sky-300 dark:border-sky-800 divide-sky-300 dark:divide-sky-800"
-    },
-    {
-      border: true,
+      borderAccent: true,
       color: "blue",
-      class: "border-blue-300 dark:border-blue-800 divide-blue-300 dark:divide-blue-800"
+      class: "border-blue-subtle"
     },
     {
-      border: true,
-      color: "indigo",
-      class: "border-indigo-300 dark:border-indigo-800 divide-indigo-300 dark:divide-indigo-800"
+      borderAccent: true,
+      color: "cyan",
+      class: "border-cyan-subtle"
     },
     {
-      border: true,
-      color: "violet",
-      class: "border-violet-300 dark:border-violet-800 divide-violet-300 dark:divide-violet-800"
+      borderAccent: true,
+      color: "emerald",
+      class: "border-emerald-subtle"
     },
     {
-      border: true,
-      color: "purple",
-      class: "border-purple-300 dark:border-purple-800 divide-purple-300 dark:divide-purple-800"
-    },
-    {
-      border: true,
+      borderAccent: true,
       color: "fuchsia",
-      class: "border-fuchsia-300 dark:border-fuchsia-800 divide-fuchsia-300 dark:divide-fuchsia-800"
+      class: "border-fuchsia-subtle"
     },
     {
-      border: true,
+      borderAccent: true,
+      color: "gray",
+      class: "border-gray-subtle"
+    },
+    {
+      borderAccent: true,
+      color: "green",
+      class: "border-green-subtle"
+    },
+    {
+      borderAccent: true,
+      color: "indigo",
+      class: "border-indigo-subtle"
+    },
+    {
+      borderAccent: true,
+      color: "lime",
+      class: "border-lime-subtle"
+    },
+    {
+      borderAccent: true,
+      color: "orange",
+      class: "border-orange-subtle"
+    },
+    {
+      borderAccent: true,
       color: "pink",
-      class: "border-pink-300 dark:border-pink-800 divide-pink-300 dark:divide-pink-800"
+      class: "border-pink-subtle"
     },
     {
-      border: true,
+      borderAccent: true,
+      color: "purple",
+      class: "border-purple-subtle"
+    },
+    {
+      borderAccent: true,
+      color: "red",
+      class: "border-red-subtle"
+    },
+    {
+      borderAccent: true,
       color: "rose",
-      class: "border-rose-300 dark:border-rose-800 divide-rose-300 dark:divide-rose-800"
-    }
+      class: "border-rose-subtle"
+    },
+    {
+      borderAccent: true,
+      color: "sky",
+      class: "border-sky-subtle"
+    },
+    {
+      borderAccent: true,
+      color: "teal",
+      class: "border-teal-subtle"
+    }, 
+    {
+      borderAccent: true,
+      color: "violet",
+      class: "border-violet-subtle"
+    },
+    {
+      borderAccent: true,
+      color: "yellow",
+      class: "border-yellow-subtle"
+    },
   ],
   defaultVariants: {
     color: "brand",
