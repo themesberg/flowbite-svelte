@@ -22,7 +22,8 @@
   --color-secondary-700: #0369a1;
   --color-secondary-800: #075985;
   --color-secondary-900: #0c4a6e;
-  
+  --color-secondary-950: #082f49;
+
   --font-sans: "Shantell Sans", cursive;
   --font-body: "Shantell Sans", cursive;
 
@@ -64,27 +65,67 @@
   --color-fg-danger-strong: var(--color-red-900);
   --color-fg-warning-subtle: var(--color-orange-600);
   --color-fg-warning: var(--color-orange-900);
-  --color-fg-yellow: var(--color-yellow-400);
   --color-fg-disabled: var(--color-slate-400);
+
   --color-fg-primary: var(--color-primary-600);
+  --color-fg-primary-strong: var(--color-primary-800);
+
   --color-fg-secondary: var(--color-secondary-600);
+  --color-fg-secondary-strong: var(--color-secondary-800);
+
   --color-fg-amber: var(--color-amber-600);
+  --color-fg-amber-strong: var(--color-amber-800);
+
   --color-fg-blue: var(--color-blue-600);
+  --color-fg-blue-strong: var(--color-blue-800);
+
   --color-fg-cyan: var(--color-cyan-600);
+  --color-fg-cyan-strong: var(--color-cyan-800);
+
   --color-fg-emerald: var(--color-emerald-600);
+  --color-fg-emerald-strong: var(--color-emerald-800);
+
   --color-fg-fuchsia: var(--color-fuchsia-600);
+  --color-fg-fuchsia-strong: var(--color-fuchsia-800);
+
   --color-fg-gray: var(--color-gray-600);
+  --color-fg-gray-strong: var(--color-gray-800);
+
   --color-fg-green: var(--color-green-600);
+  --color-fg-green-strong: var(--color-green-800);
+
   --color-fg-indigo: var(--color-indigo-600);
+  --color-fg-indigo-strong: var(--color-indigo-800);
+
   --color-fg-lime: var(--color-lime-600);
+  --color-fg-lime-strong: var(--color-lime-800);
+
   --color-fg-orange: var(--color-orange-600);
+  --color-fg-orange-strong: var(--color-orange-800);
+
   --color-fg-pink: var(--color-pink-600);
+  --color-fg-pink-strong: var(--color-pink-800);
+
   --color-fg-purple: var(--color-purple-600);
+  --color-fg-purple-strong: var(--color-purple-800);
+
   --color-fg-red: var(--color-red-600);
+  --color-fg-red-strong: var(--color-red-800);
+
   --color-fg-rose: var(--color-rose-600);
+  --color-fg-rose-strong: var(--color-rose-800);
+
   --color-fg-sky: var(--color-sky-600);
+  --color-fg-sky-strong: var(--color-sky-800);
+
   --color-fg-teal: var(--color-teal-600);
+  --color-fg-teal-strong: var(--color-teal-800);
+
   --color-fg-violet: var(--color-violet-600);
+  --color-fg-violet-strong: var(--color-violet-800);
+
+  --color-fg-yellow: var(--color-yellow-400);
+  --color-fg-yellow-strong: var(--color-yellow-800);
 
   /* background color variables */
   --color-neutral-primary-soft: var(--color-white);
@@ -128,7 +169,7 @@
   --color-primary: var(--color-primary-600);
   --color-primary-medium: var(--color-primary-100);
   --color-primary-strong: var(--color-primary-800);
-  
+
   /* secondary */
   --color-secondary-soft: var(--color-secondary-50);
   --color-secondary: var(--color-secondary-600);
@@ -263,8 +304,8 @@
   --color-dark-subtle: var(--color-slate-800);
   --color-dark-backdrop: var(--color-slate-950);
 
-
   /* subtle */
+  --color-primary-subtle: var(--color-primary-200);
   --color-secondary-subtle: var(--color-secondary-200);
   --color-amber-subtle: var(--color-amber-200);
   --color-blue-subtle: var(--color-blue-200);
@@ -300,27 +341,67 @@
   --color-fg-danger-strong: var(--color-red-300);
   --color-fg-warning-subtle: var(--color-orange-500);
   --color-fg-warning: var(--color-orange-300);
-  --color-fg-yellow: var(--color-yellow-400);
   --color-fg-disabled: var(--color-slate-600);
+
   --color-fg-primary: var(--color-primary-500);
+  --color-fg-primary-strong: var(--color-primary-300);
+
   --color-fg-secondary: var(--color-secondary-500);
+  --color-fg-secondary-strong: var(--color-secondary-300);
+
   --color-fg-amber: var(--color-amber-500);
+  --color-fg-amber-strong: var(--color-amber-300);
+
   --color-fg-blue: var(--color-blue-500);
+  --color-fg-blue-strong: var(--color-blue-300);
+
   --color-fg-cyan: var(--color-cyan-500);
+  --color-fg-cyan-strong: var(--color-cyan-300);
+
   --color-fg-emerald: var(--color-emerald-500);
+  --color-fg-emerald-strong: var(--color-emerald-300);
+
   --color-fg-fuchsia: var(--color-fuchsia-500);
+  --color-fg-fuchsia-strong: var(--color-fuchsia-300);
+
   --color-fg-gray: var(--color-gray-500);
+  --color-fg-gray-strong: var(--color-gray-300);
+
   --color-fg-green: var(--color-green-500);
+  --color-fg-green-strong: var(--color-green-300);
+
   --color-fg-indigo: var(--color-indigo-500);
+  --color-fg-indigo-strong: var(--color-indigo-300);
+
   --color-fg-lime: var(--color-lime-500);
+  --color-fg-lime-strong: var(--color-lime-300);
+
   --color-fg-orange: var(--color-orange-500);
+  --color-fg-orange-strong: var(--color-orange-300);
+
   --color-fg-pink: var(--color-pink-500);
+  --color-fg-pink-strong: var(--color-pink-300);
+
   --color-fg-purple: var(--color-purple-500);
+  --color-fg-purple-strong: var(--color-purple-300);
+
   --color-fg-red: var(--color-red-500);
+  --color-fg-red-strong: var(--color-red-300);
+
   --color-fg-rose: var(--color-rose-500);
+  --color-fg-rose-strong: var(--color-rose-300);
+
   --color-fg-sky: var(--color-sky-500);
+  --color-fg-sky-strong: var(--color-sky-300);
+
   --color-fg-teal: var(--color-teal-500);
+  --color-fg-teal-strong: var(--color-teal-300);
+
   --color-fg-violet: var(--color-violet-500);
+  --color-fg-violet-strong: var(--color-violet-300);
+
+  --color-fg-yellow: var(--color-yellow-400);
+  --color-fg-yellow-strong: var(--color-yellow-300);
 
   /* background color variables */
   --color-neutral-primary-soft: var(--color-slate-900);
@@ -364,13 +445,13 @@
   --color-primary: var(--color-primary-700);
   --color-primary-medium: var(--color-primary-900);
   --color-primary-strong: var(--color-primary-800);
-  
+
   /* secondary */
   --color-secondary-soft: var(--color-secondary-950);
   --color-secondary: var(--color-secondary-700);
   --color-secondary-medium: var(--color-secondary-900);
   --color-secondary-strong: var(--color-secondary-800);
-  
+
   /* Amber */
   --color-amber-soft: var(--color-amber-950);
   --color-amber: var(--color-amber-700);
@@ -500,6 +581,7 @@
   --color-dark-backdrop: var(--color-slate-950);
 
   /* subtle */
+  --color-primary-subtle: var(--color-primary-900);
   --color-secondary-subtle: var(--color-secondary-900);
   --color-amber-subtle: var(--color-amber-900);
   --color-blue-subtle: var(--color-blue-900);

@@ -30,4 +30,3 @@
 <Button color="fuchsia" pill>Fuchsia</Button>
 <Button color="pink" pill>Pink</Button>
 <Button color="rose" pill>Rose</Button>
-

@@ -104,7 +104,7 @@ Use this example to add a badge inside a button component for a count indicator.
 
 Alternatively you can also use badges which indicate only a SVG icon. 
 
-```svelte example hideScript hideResponsiveButtons class="gap-4"
+```svelte example hideScript hideResponsiveButtons class="space-x-2"
 {#include IconOnly.svelte}
 ```
 
