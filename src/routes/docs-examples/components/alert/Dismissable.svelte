@@ -54,5 +54,5 @@
 </Alert>
 <Alert color="purple" dismissable closeIcon={EnvelopeSolid}>
   {#snippet icon()}<InfoCircleSolid class="h-5 w-5" />{/snippet}
-  An alert with the custom dismissal button. slot
+  An alert with the custom dismissal button.
 </Alert>

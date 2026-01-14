@@ -104,7 +104,6 @@
   --color-neutral-tertiary-medium: var(--color-gray-100);
   --color-neutral-quaternary: var(--color-gray-200);
   --color-neutral-quaternary-medium: var(--color-gray-200);
-  --color-gray: var(--color-gray-300);
 
   /* used for brand colors */
   --color-brand-softer: var(--color-primary-50);
@@ -130,6 +129,18 @@
   --color-dark: var(--color-gray-800);
   --color-dark-strong: var(--color-gray-900);
   --color-disabled: var(--color-gray-100);
+
+  /* primary */
+  --color-primary-soft: var(--color-primary-50);
+  --color-primary: var(--color-primary-600);
+  --color-primary-medium: var(--color-primary-100);
+  --color-primary-strong: var(--color-primary-800);
+
+  /* secondary */
+  --color-secondary-soft: var(--color-secondary-50);
+  --color-secondary: var(--color-secondary-600);
+  --color-secondary-medium: var(--color-secondary-100);
+  --color-secondary-strong: var(--color-secondary-800);
   
   /* Amber */
   --color-amber-soft: var(--color-amber-50);
@@ -163,7 +174,7 @@
 
   /* Gray */
   --color-gray-soft: var(--color-gray-50);
-  --color-gray: var(--color-gray-500);
+  --color-gray: var(--color-gray-300);
   --color-gray-medium: var(--color-gray-100);
   --color-gray-strong: var(--color-gray-800);
 
@@ -323,7 +334,6 @@
   --color-fg-sky: var(--color-sky-500);
   --color-fg-teal: var(--color-teal-500);
   --color-fg-violet: var(--color-violet-500);
-  --color-fg-yellow: var(--color-yellow-500);
 
   /* background color variables */
   --color-neutral-primary-soft: var(--color-gray-900);
@@ -340,7 +350,6 @@
   --color-neutral-tertiary-medium: var(--color-gray-700);
   --color-neutral-quaternary: var(--color-gray-700);
   --color-neutral-quaternary-medium: var(--color-gray-600);
-  --color-gray: var(--color-gray-600);
   --color-brand-softer: var(--color-primary-950);
   --color-brand-soft: var(--color-primary-900);
   --color-brand: var(--color-primary-600);
@@ -362,8 +371,18 @@
   --color-dark: var(--color-gray-800);
   --color-dark-strong: var(--color-gray-700);
   --color-disabled: var(--color-gray-800);
-  --color-primary: var(--color-primary-500);
-  --color-secondary: var(--color-secondary-500);
+
+  /* primary */
+  --color-primary-soft: var(--color-primary-950);
+  --color-primary: var(--color-primary-700);
+  --color-primary-medium: var(--color-primary-900);
+  --color-primary-strong: var(--color-primary-800);
+
+  /* secondary */
+  --color-secondary-soft: var(--color-secondary-950);
+  --color-secondary: var(--color-secondary-700);
+  --color-secondary-medium: var(--color-secondary-900);
+  --color-secondary-strong: var(--color-secondary-800);
 
   /* Amber */
   --color-amber-soft: var(--color-amber-950);

@@ -189,7 +189,7 @@ export const alert = tv({
       color: "teal",
       class: "border-teal-subtle"
     },
-     {
+    {
       border: true,
       color: "violet",
       class: "border-violet-subtle"
@@ -308,7 +308,7 @@ export const alert = tv({
       borderAccent: true,
       color: "teal",
       class: "border-teal-subtle"
-    }, 
+    },
     {
       borderAccent: true,
       color: "violet",

@@ -1,4 +1,28 @@
 :root {
+  /* CUSTOM PRIMARY BRAND COLORS */
+  --color-primary-50: #fff5f2;
+  --color-primary-100: #fff1ee;
+  --color-primary-200: #ffe4de;
+  --color-primary-300: #ffd5cc;
+  --color-primary-400: #ffbcad;
+  --color-primary-500: #fe795d;
+  --color-primary-600: #ef562f;
+  --color-primary-700: #eb4f27;
+  --color-primary-800: #cc4522;
+  --color-primary-900: #a5371b;
+  --color-primary-950: #7a2813;
+  /* CUSTOM SECONDARY COLORS */
+  --color-secondary-50: #f0f9ff;
+  --color-secondary-100: #e0f2fe;
+  --color-secondary-200: #bae6fd;
+  --color-secondary-300: #7dd3fc;
+  --color-secondary-400: #38bdf8;
+  --color-secondary-500: #0ea5e9;
+  --color-secondary-600: #0284c7;
+  --color-secondary-700: #0369a1;
+  --color-secondary-800: #075985;
+  --color-secondary-900: #0c4a6e;
+  
   --font-sans: "Google Sans Code", monospace;
   --font-body: "Google Sans Code", monospace;
 
@@ -77,7 +101,6 @@
   --color-neutral-tertiary-medium: var(--color-neutral-100);
   --color-neutral-quaternary: var(--color-neutral-200);
   --color-neutral-quaternary-medium: var(--color-neutral-200);
-  --color-gray: var(--color-neutral-300);
   --color-brand-softer: var(--color-indigo-50);
   --color-brand-soft: var(--color-indigo-100);
   --color-brand: var(--color-indigo-900);
@@ -99,6 +122,18 @@
   --color-dark: var(--color-neutral-800);
   --color-dark-strong: var(--color-neutral-900);
   --color-disabled: var(--color-neutral-100);
+
+  /* primary */
+  --color-primary-soft: var(--color-primary-50);
+  --color-primary: var(--color-primary-600);
+  --color-primary-medium: var(--color-primary-100);
+  --color-primary-strong: var(--color-primary-800);
+
+  /* secondary */
+  --color-secondary-soft: var(--color-secondary-50);
+  --color-secondary: var(--color-secondary-600);
+  --color-secondary-medium: var(--color-secondary-100);
+  --color-secondary-strong: var(--color-secondary-800);
   
   /* Amber */
   --color-amber-soft: var(--color-amber-50);
@@ -131,10 +166,10 @@
   --color-fuchsia-strong: var(--color-fuchsia-800);
 
   /* Gray */
-  --color-gray-soft: var(--color-gray-50);
-  --color-gray: var(--color-gray-500);
-  --color-gray-medium: var(--color-gray-100);
-  --color-gray-strong: var(--color-gray-800);
+  --color-gray-soft: var(--color-neutral-50);
+  --color-gray: var(--color-neutral-500);
+  --color-gray-medium: var(--color-neutral-100);
+  --color-gray-strong: var(--color-neutral-800);
 
   /* Green */
   --color-green-soft: var(--color-green-50);
@@ -286,7 +321,6 @@
   --color-fg-sky: var(--color-sky-500);
   --color-fg-teal: var(--color-teal-500);
   --color-fg-violet: var(--color-violet-500);
-  --color-fg-yellow: var(--color-yellow-500);
 
   /* background color variables */
   --color-neutral-primary-soft: var(--color-neutral-900);
@@ -303,7 +337,6 @@
   --color-neutral-tertiary-medium: var(--color-neutral-700);
   --color-neutral-quaternary: var(--color-neutral-700);
   --color-neutral-quaternary-medium: var(--color-neutral-600);
-  --color-gray: var(--color-neutral-600);
   --color-brand-softer: var(--color-indigo-950);
   --color-brand-soft: var(--color-indigo-900);
   --color-brand: var(--color-indigo-600);
@@ -325,8 +358,19 @@
   --color-dark: var(--color-neutral-800);
   --color-dark-strong: var(--color-neutral-700);
   --color-disabled: var(--color-neutral-800);
-  --color-primary: var(--color-primary-500);
-  --color-secondary: var(--color-secondary-500);
+
+  /* primary */
+  --color-primary-soft: var(--color-primary-950);
+  --color-primary: var(--color-primary-700);
+  --color-primary-medium: var(--color-primary-900);
+  --color-primary-strong: var(--color-primary-800);
+
+  /* secondary */
+  --color-secondary-soft: var(--color-secondary-950);
+  --color-secondary: var(--color-secondary-700);
+  --color-secondary-medium: var(--color-secondary-900);
+  --color-secondary-strong: var(--color-secondary-800);
+
   /* Amber */
   --color-amber-soft: var(--color-amber-950);
   --color-amber: var(--color-amber-700);
@@ -358,10 +402,10 @@
   --color-fuchsia-strong: var(--color-fuchsia-800);
 
   /* Gray */
-  --color-gray-soft: var(--color-gray-950);
-  --color-gray: var(--color-gray-600);
-  --color-gray-medium: var(--color-gray-900);
-  --color-gray-strong: var(--color-gray-700);
+  --color-gray-soft: var(--color-neutral-950);
+  --color-gray: var(--color-neutral-600);
+  --color-gray-medium: var(--color-neutral-900);
+  --color-gray-strong: var(--color-neutral-700);
 
   /* Green */
   --color-green-soft: var(--color-green-950);

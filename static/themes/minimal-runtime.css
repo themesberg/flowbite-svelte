@@ -1,4 +1,28 @@
 :root {
+  /* CUSTOM PRIMARY BRAND COLORS */
+  --color-primary-50: #fff5f2;
+  --color-primary-100: #fff1ee;
+  --color-primary-200: #ffe4de;
+  --color-primary-300: #ffd5cc;
+  --color-primary-400: #ffbcad;
+  --color-primary-500: #fe795d;
+  --color-primary-600: #ef562f;
+  --color-primary-700: #eb4f27;
+  --color-primary-800: #cc4522;
+  --color-primary-900: #a5371b;
+  --color-primary-950: #7a2813;
+  /* CUSTOM SECONDARY COLORS */
+  --color-secondary-50: #f0f9ff;
+  --color-secondary-100: #e0f2fe;
+  --color-secondary-200: #bae6fd;
+  --color-secondary-300: #7dd3fc;
+  --color-secondary-400: #38bdf8;
+  --color-secondary-500: #0ea5e9;
+  --color-secondary-600: #0284c7;
+  --color-secondary-700: #0369a1;
+  --color-secondary-800: #075985;
+  --color-secondary-900: #0c4a6e;
+  
   --font-sans: "Open Sans", sans-serif;
   --font-body: "Open Sans", sans-serif;
 
@@ -85,7 +109,6 @@
   --color-neutral-tertiary-medium: var(--color-stone-100);
   --color-neutral-quaternary: var(--color-stone-200);
   --color-neutral-quaternary-medium: var(--color-stone-200);
-  --color-gray: var(--color-stone-300);
   --color-brand-softer: var(--color-stone-50);
   --color-brand-soft: var(--color-stone-100);
   --color-brand: var(--color-stone-900);
@@ -107,7 +130,19 @@
   --color-dark: var(--color-stone-800);
   --color-dark-strong: var(--color-stone-900);
   --color-disabled: var(--color-stone-100);
-  
+
+  /* primary */
+  --color-primary-soft: var(--color-primary-50);
+  --color-primary: var(--color-primary-600);
+  --color-primary-medium: var(--color-primary-100);
+  --color-primary-strong: var(--color-primary-800);
+
+  /* secondary */
+  --color-secondary-soft: var(--color-secondary-50);
+  --color-secondary: var(--color-secondary-600);
+  --color-secondary-medium: var(--color-secondary-100);
+  --color-secondary-strong: var(--color-secondary-800);
+
   /* Amber */
   --color-amber-soft: var(--color-amber-50);
   --color-amber: var(--color-amber-600);
@@ -139,10 +174,10 @@
   --color-fuchsia-strong: var(--color-fuchsia-800);
 
   /* Gray */
-  --color-gray-soft: var(--color-gray-50);
-  --color-gray: var(--color-gray-500);
-  --color-gray-medium: var(--color-gray-100);
-  --color-gray-strong: var(--color-gray-800);
+  --color-gray-soft: var(--color-stone-50);
+  --color-gray: var(--color-stone-300);
+  --color-gray-medium: var(--color-stone-100);
+  --color-gray-strong: var(--color-stone-800);
 
   /* Green */
   --color-green-soft: var(--color-green-50);
@@ -294,7 +329,6 @@
   --color-fg-sky: var(--color-sky-500);
   --color-fg-teal: var(--color-teal-500);
   --color-fg-violet: var(--color-violet-500);
-  --color-fg-yellow: var(--color-yellow-500);
 
   /* background color variables */
   --color-neutral-primary-soft: var(--color-stone-900);
@@ -311,7 +345,6 @@
   --color-neutral-tertiary-medium: var(--color-stone-700);
   --color-neutral-quaternary: var(--color-stone-700);
   --color-neutral-quaternary-medium: var(--color-stone-600);
-  --color-gray: var(--color-stone-600);
   --color-brand-softer: var(--color-stone-900);
   --color-brand-soft: var(--color-stone-900);
   --color-brand: var(--color-stone-600);
@@ -333,8 +366,18 @@
   --color-dark: var(--color-stone-800);
   --color-dark-strong: var(--color-stone-700);
   --color-disabled: var(--color-stone-800);
-  --color-primary: var(--color-primary-500);
-  --color-secondary: var(--color-secondary-500);
+
+  /* primary */
+  --color-primary-soft: var(--color-primary-950);
+  --color-primary: var(--color-primary-700);
+  --color-primary-medium: var(--color-primary-900);
+  --color-primary-strong: var(--color-primary-800);
+
+  /* secondary */
+  --color-secondary-soft: var(--color-secondary-950);
+  --color-secondary: var(--color-secondary-700);
+  --color-secondary-medium: var(--color-secondary-900);
+  --color-secondary-strong: var(--color-secondary-800);
   
   /* Amber */
   --color-amber-soft: var(--color-amber-950);
@@ -367,10 +410,10 @@
   --color-fuchsia-strong: var(--color-fuchsia-800);
 
   /* Gray */
-  --color-gray-soft: var(--color-gray-950);
-  --color-gray: var(--color-gray-600);
-  --color-gray-medium: var(--color-gray-900);
-  --color-gray-strong: var(--color-gray-700);
+  --color-gray-soft: var(--color-stone-950);
+  --color-gray: var(--color-stone-600);
+  --color-gray-medium: var(--color-stone-900);
+  --color-gray-strong: var(--color-stone-700);
 
   /* Green */
   --color-green-soft: var(--color-green-950);

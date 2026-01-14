@@ -119,7 +119,8 @@ export const button = tv({
         outline:
           "text-fuchsia bg-neutral-primary border border-fuchsia enabled:hover:bg-fuchsia enabled:hover:text-white focus:ring-fuchsia-subtle",
         shadow: "shadow-fuchsia-500/50 dark:shadow-fuchsia-800/80"
-      },      green: {
+      },
+      green: {
         base: "text-white bg-green border border-transparent enabled:hover:bg-green-strong focus:ring-green-medium",
         outline:
           "text-green bg-neutral-primary border border-green enabled:hover:bg-green enabled:hover:text-white focus:ring-green-subtle",
