@@ -40,7 +40,7 @@
         </p>
         <p class="mb-3 max-w-sm text-gray-600 dark:text-gray-400">
           Code licensed
-          <a href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE" class="text-primary-600 hover:underline">MIT</a>
+          <a href="https://github.com/themesberg/flowbite-svelte/blob/main/License" class="text-primary-600 hover:underline">MIT</a>
           , docs
           <a href="https://creativecommons.org/licenses/by/3.0/" class="text-primary-600 hover:underline">CC BY 3.0</a>
           .
