@@ -124,6 +124,7 @@
     // This is useful if the click triggers a re-render and focus is lost momentarily.
     if (multiSelectContainer && multiSelectContainer.contains(event.target as Node)) {
       show = !show;
+      event.preventDefault();
     } else {
       show = false; // Close if clicked outside
     }
