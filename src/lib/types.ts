@@ -1852,6 +1852,7 @@ export interface TableSearchProps extends TableSearchVariants, HTMLTableAttribut
   svgClass?: ClassValue;
   tableClass?: ClassValue;
   placeholder?: string;
+  oninput?: (event: Event) => void;
 }
 
 // tabs

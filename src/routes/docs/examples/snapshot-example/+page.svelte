@@ -14,7 +14,7 @@
   };
 </script>
 
-<Heading tag="h1" class="ml-16 mt-8 text-4xl">Snapshot Example</Heading>
+<Heading tag="h1" class="mt-8 ml-16 text-4xl">Snapshot Example</Heading>
 
 <form class="p-16">
   <div class="mb-6 grid gap-6 md:grid-cols-2">
