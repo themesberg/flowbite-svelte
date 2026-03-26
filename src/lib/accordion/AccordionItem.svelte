@@ -13,6 +13,7 @@
     header,
     arrowup,
     arrowdown,
+    headingTag,
     open = $bindable(false),
     activeClass,
     inactiveClass,
@@ -70,7 +71,7 @@
   let buttonClass = $derived(clsx(open && !ctx?.flush && (styling.active || ctx?.activeClass || active()), !open && !ctx?.flush && (styling.inactive || ctx?.inactiveClass || inactive())));
 </script>
 
-<h2 class={base({ class: clsx(theme?.base, className) })}>
+<svelte:element this={headingTag ?? "h2"} class={base({ class: clsx(theme?.base, className) })}>
   <button type="button" onclick={handleToggle} class={button({ class: clsx(buttonClass, theme?.button, styling.button) })} aria-expanded={open}>
     {#if header}
       {@render header()}
@@ -91,7 +92,7 @@
       {/if}
     {/if}
   </button>
-</h2>
+</svelte:element>
 
 {#if useTransition}
   {#if open && transitionType !== "none"}

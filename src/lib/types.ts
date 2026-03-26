@@ -209,6 +209,7 @@ export interface AccordionItemProps extends AccordionItemVariants, HTMLAttribute
   header?: Snippet;
   arrowup?: Snippet;
   arrowdown?: Snippet;
+  headingTag?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div';
   activeClass?: string;
   inactiveClass?: string;
   transitionType?: TransitionFunc | "none";
