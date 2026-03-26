@@ -35,9 +35,19 @@
 
   const theme = $derived(getTheme("speedDial"));
 
-  $effect(() => {
-    setContext<SpeedCtxType>("speed-dial", { pill, tooltip, textOutside });
-  });
+  const speedDialCtx: SpeedCtxType = {
+    get pill() {
+      return pill;
+    },
+    get tooltip() {
+      return tooltip;
+    },
+    get textOutside() {
+      return textOutside;
+    }
+  };
+
+  setContext<SpeedCtxType>("speed-dial", speedDialCtx);
 
   let vertical: boolean = $derived(getSideAxis(placement) === "y");
 

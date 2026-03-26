@@ -4,7 +4,11 @@
 
 ### Minor Changes
 
-- fix: MultiSelect, Datepicker, etc.
+- fix(Datepicker): input binding update and related datepicker bug fixes
+- feat(Alert/Banner/Badge/Toast): add `closeAriaLabel` prop for dismiss controls
+- fix(Navbar): adjust breakpoint handling
+- feat(TableSearch): add `oninput` handler support
+- docs/examples: update snapshot example
 
 ## 1.31.0
 

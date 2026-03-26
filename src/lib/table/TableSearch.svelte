@@ -58,15 +58,19 @@
   // Handle custom color
   const finalTableClass = $derived(color === "custom" && customColor ? clsx(tableCls, customColor) : tableCls);
 
-  const tableSearchCtx = $derived<TableContextType>({
-    striped,
-    hoverable,
-    color: themeColor
-  });
+  const tableSearchCtx: TableContextType = {
+    get striped() {
+      return striped;
+    },
+    get hoverable() {
+      return hoverable;
+    },
+    get color() {
+      return themeColor;
+    }
+  };
 
-  $effect(() => {
-    setTableContext(tableSearchCtx);
-  });
+  setTableContext(tableSearchCtx);
 </script>
 
 <div class={root({ class: clsx(theme?.root, styling.root) })}>
@@ -118,5 +122,6 @@
 @prop class: className
 @prop classes
 @prop placeholder = "Search"
+@prop oninput
 @prop ...restProps
 -->

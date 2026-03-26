@@ -11,7 +11,9 @@ import { includeFiles } from "./include-files.js";
 const config = {
   extensions: [".svelte", ...mdsvexConfig.extensions],
   compilerOptions: {
-    // runes: true
+    experimental: {
+      async: true
+    }
   },
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
