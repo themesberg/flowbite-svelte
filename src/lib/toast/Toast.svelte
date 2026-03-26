@@ -13,6 +13,7 @@
     icon,
     toastStatus = $bindable(true),
     dismissable = true,
+    closeAriaLabel = "Remove toast",
     color = "primary",
     position,
     iconClass,
@@ -69,7 +70,7 @@
     </div>
 
     {#if dismissable}
-      <CloseButton class={close({ class: clsx(theme?.close, classes?.close) })} ariaLabel="Remove toast" {color} />
+      <CloseButton class={close({ class: clsx(theme?.close, classes?.close) })} ariaLabel={closeAriaLabel} {color} />
     {/if}
   </div>
 {/if}
@@ -84,6 +85,7 @@
 @prop icon
 @prop toastStatus = $bindable(true)
 @prop dismissable = true
+@prop closeAriaLabel = "Remove toast"
 @prop color = "primary"
 @prop position
 @prop iconClass

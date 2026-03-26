@@ -13,6 +13,7 @@
     header,
     open = $bindable(true),
     dismissable = true,
+    closeAriaLabel = "Remove banner",
     color = "gray",
     type,
     class: className,
@@ -56,7 +57,7 @@
 
     {#if dismissable}
       <div class="flex items-center justify-end">
-        <CloseButton class={dismissableClass({ class: clsx(theme?.dismissable, styling.dismissable) })} {color} ariaLabel="Remove banner" />
+        <CloseButton class={dismissableClass({ class: clsx(theme?.dismissable, styling.dismissable) })} {color} ariaLabel={closeAriaLabel} />
       </div>
     {/if}
   </div>
@@ -72,6 +73,7 @@
 @prop header
 @prop open = $bindable(true)
 @prop dismissable = true
+@prop closeAriaLabel = "Remove banner"
 @prop color = "gray"
 @prop type
 @prop class: className

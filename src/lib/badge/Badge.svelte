@@ -15,6 +15,7 @@
     color = "primary",
     large = false,
     dismissable = false,
+    closeAriaLabel = "Remove badge",
     class: className,
     classes,
     border,
@@ -63,11 +64,11 @@
 
     {#if dismissable}
       {#if icon}
-        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge">
+        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel={closeAriaLabel}>
           {@render icon()}
         </CloseButton>
       {:else}
-        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel="Remove badge" />
+        <CloseButton class="ms-1.5 -me-1.5" {color} size={large ? "sm" : "xs"} ariaLabel={closeAriaLabel} />
       {/if}
     {/if}
   </div>
@@ -85,6 +86,7 @@
 @prop color = "primary"
 @prop large = false
 @prop dismissable = false
+@prop closeAriaLabel = "Remove badge"
 @prop class: className
 @prop classes
 @prop border
