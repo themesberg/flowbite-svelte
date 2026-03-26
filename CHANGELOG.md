@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.32.0
+
+### Minor Changes
+
+- fix: MultiSelect, Datepicker, etc.
+
 ## 1.31.0
 
 ### Minor Changes
