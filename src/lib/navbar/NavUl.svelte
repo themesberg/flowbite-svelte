@@ -10,7 +10,7 @@
   import { untrack } from "svelte";
 
   let navState = getNavbarStateContext();
-  let navBreakpoint = getNavbarBreakpointContext();
+  let navBreakpointCtx = getNavbarBreakpointContext();
 
   let {
     children,
@@ -60,7 +60,7 @@
 
   let hidden: boolean = $derived(navState?.hidden ?? true);
 
-  let { base, ul, active, nonActive } = $derived(navbarUl({ hidden, breakpoint: navBreakpoint ?? "md" }));
+  let { base, ul, active, nonActive } = $derived(navbarUl({ hidden, breakpoint: navBreakpointCtx?.value ?? "md" }));
 
   $effect(() => {
     if (!navState) return;

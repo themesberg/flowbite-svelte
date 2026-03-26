@@ -21,8 +21,8 @@
 
   const theme = $derived(getTheme("navbarHamburger"));
   const navState = getNavbarStateContext();
-  const navBreakpoint = getNavbarBreakpointContext();
-  const { base, menu } = navbarHamburger({ breakpoint: navBreakpoint ?? "md" });
+  const navBreakpointCtx = getNavbarBreakpointContext();
+  const { base, menu } = $derived(navbarHamburger({ breakpoint: navBreakpointCtx?.value ?? "md" }));
 
   const toggle: MouseEventHandler<HTMLButtonElement> = () => {
     if (!navState) return;

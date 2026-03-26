@@ -6,7 +6,7 @@
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
   let navState = getNavbarStateContext();
-  let navBreakpoint = getNavbarBreakpointContext();
+  let navBreakpointCtx = getNavbarBreakpointContext();
 
   let { children, onclick, activeClass, nonActiveClass, class: className, ...restProps }: NavLiProps = $props();
 
@@ -15,7 +15,7 @@
   let active = $derived(navState?.activeUrl ? restProps.href === navState.activeUrl : false);
   let liClass = $derived(
     navbarLi({
-      breakpoint: navBreakpoint ?? "md",
+      breakpoint: navBreakpointCtx?.value ?? "md",
       hidden: navState?.hidden ?? true,
       class: clsx(active ? (activeClass ?? navState?.activeClass) : (nonActiveClass ?? navState?.nonActiveClass), theme, className)
     })
