@@ -13,6 +13,7 @@
     header,
     open = $bindable(true),
     dismissable = true,
+    closeAriaLabel = "Remove banner",
     color = "gray",
     type,
     class: className,
@@ -49,7 +50,7 @@
   const finalCloseProps = $derived({
     class: dismissableClass({ class: clsx(theme?.dismissable, styling?.dismissable, closeButtonProps?.class) }),
     color: closeButtonProps?.color ?? "gray",
-    ariaLabel: closeButtonProps?.ariaLabel ?? "Remove banner",
+    ariaLabel: closeButtonProps?.ariaLabel ?? closeAriaLabel,
     size: closeButtonProps?.size,
     classes: closeButtonProps?.classes,
     name: closeButtonProps?.name,
@@ -81,6 +82,7 @@
 @prop header
 @prop open = $bindable(true)
 @prop dismissable = true
+@prop closeAriaLabel = "Remove banner"
 @prop color = "gray"
 @prop type
 @prop class: className

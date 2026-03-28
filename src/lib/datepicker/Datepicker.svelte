@@ -53,13 +53,6 @@
     isOpen = inline;
   });
   let showMonthSelector: boolean = $state(false);
-  let inputElement: HTMLInputElement | null = $state(null);
-
-  $effect(() => {
-    if (inputElement) {
-      elementRef = inputElement;
-    }
-  });
   let datepickerContainerElement: HTMLDivElement;
   let currentMonth: Date = $state(new Date());
   $effect(() => {
@@ -160,15 +153,15 @@
   }
 
   function handleInputChangeWithDateFns() {
-    const inputValue = inputElement?.value?.trim();
+    const inputValue = elementRef?.value?.trim();
     if (!inputValue) {
       rangeFrom = undefined;
       rangeTo = undefined;
-      inputElement?.setCustomValidity("");
+      elementRef?.setCustomValidity("");
       return;
     }
 
-    inputElement?.setCustomValidity("");
+    elementRef?.setCustomValidity("");
 
     if (range) {
       const parts = inputValue.split(" - ");
@@ -181,7 +174,7 @@
           onselect?.({ from: rangeFrom, to: rangeTo });
           return;
         } else {
-          inputElement?.setCustomValidity(`Please enter date range in format: ${getDateFormatPattern()} - ${getDateFormatPattern()}`);
+          elementRef?.setCustomValidity(`Please enter date range in format: ${getDateFormatPattern()} - ${getDateFormatPattern()}`);
           return;
         }
       }
@@ -191,12 +184,12 @@
 
     if (!parsedDate || !isValid(parsedDate)) {
       const formatPattern = getDateFormatPattern();
-      inputElement?.setCustomValidity(`Please enter date in format: ${formatPattern}`);
+      elementRef?.setCustomValidity(`Please enter date in format: ${formatPattern}`);
       return;
     }
 
     if (!isDateAvailable(parsedDate)) {
-      inputElement?.setCustomValidity("Selected date is not available");
+      elementRef?.setCustomValidity("Selected date is not available");
       return;
     }
 
@@ -351,7 +344,7 @@
       case "Escape":
         isOpen = false;
         showMonthSelector = false;
-        inputElement?.focus();
+        elementRef?.focus();
         break;
       default:
         return;
@@ -420,7 +413,7 @@
       <input
         data-part="input"
         {...inputProps}
-        bind:this={inputElement}
+        bind:this={elementRef}
         type="text"
         class={styles.input({ color, class: clsx(theme?.input, styling?.input) })}
         {placeholder}

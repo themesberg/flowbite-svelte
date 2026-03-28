@@ -38,6 +38,7 @@ const config = {
   kit: {
     adapter: adapter(),
     alias: {
+      "flowbite-svelte": path.resolve("./src/lib/index.ts"),
       $icons: path.resolve("./src/routes/utils/icons"),
       $utils: path.resolve("./src/routes/utils")
     }

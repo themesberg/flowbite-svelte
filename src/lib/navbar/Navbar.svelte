@@ -5,6 +5,8 @@
   import type { NavbarState, NavbarProps } from "$lib/types";
   import { getTheme } from "$lib/theme-provider/themeUtils";
   import { setNavbarStateContext, setNavbarBreakpointContext } from "$lib/context";
+  import type { NavbarBreakpoint } from "$lib/types";
+  import { untrack } from "svelte";
 
   let { children, fluid, class: className, classes, closeOnClickOutside = true, breakpoint = "md", ...restProps }: NavbarProps = $props();
 
@@ -16,8 +18,12 @@
   let navState = $state<NavbarState>({ hidden: true });
   setNavbarStateContext(navState);
 
-  // Set breakpoint context wrapped in a function for reactivity
-  setNavbarBreakpointContext(() => breakpoint);
+  let breakpointState = $state<{ value: NavbarBreakpoint }>({ value: untrack(() => breakpoint) });
+  setNavbarBreakpointContext(breakpointState);
+
+  $effect(() => {
+    breakpointState.value = breakpoint;
+  });
 
   // Add reference to the navbar element
   let navbarElement: HTMLElement;

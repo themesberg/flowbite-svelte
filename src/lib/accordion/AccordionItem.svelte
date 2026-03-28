@@ -8,7 +8,7 @@
   import { prefersReducedMotion } from "svelte/motion";
   import { accordionItem } from "./theme";
 
-  let { children, header, arrowup, arrowdown, open = $bindable(false), transition = slide, transitionParams, class: className, classes }: AccordionItemProps = $props();
+  let { children, header, arrowup, arrowdown, headingTag, open = $bindable(false), transition = slide, transitionParams, class: className, classes }: AccordionItemProps = $props();
 
   // Get context - it will be undefined if used outside Accordion
   const ctx = getAccordionContext();
@@ -57,7 +57,7 @@
   let contentWrapperCls = $derived(clsx(container(), open ? "block" : "hidden", finalClasses.contentWrapper));
 </script>
 
-<h2 data-scope="accordion-item" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
+<svelte:element this={headingTag ?? "h2"} data-scope="accordion-item" data-part="base" class={base({ class: clsx(theme?.base, className) })}>
   <button data-part="button" type="button" onclick={handleToggle} class={button({ class: clsx(buttonClass, theme?.button, finalClasses.button) })} aria-expanded={open}>
     {#if header}
       {@render header()}
@@ -78,7 +78,7 @@
       {/if}
     {/if}
   </button>
-</h2>
+</svelte:element>
 
 {#if useTransition}
   {#if open && transition !== "none"}

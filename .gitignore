@@ -18,3 +18,5 @@ bun.lockb
 /.vercel
 
 questions.md
+.claude/
+flowbite/

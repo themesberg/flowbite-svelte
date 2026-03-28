@@ -92,7 +92,7 @@ export { getButtonGroupContext, setButtonGroupContext };
 const [getNavbarStateContext, setNavbarStateContext] = createSafeContext<NavbarState>();
 export { getNavbarStateContext, setNavbarStateContext };
 
-const [getNavbarBreakpointContext, setNavbarBreakpointContext] = createSafeContext<() => NavbarBreakpoint>();
+const [getNavbarBreakpointContext, setNavbarBreakpointContext] = createSafeContext<{ value: NavbarBreakpoint }>();
 export { getNavbarBreakpointContext, setNavbarBreakpointContext };
 
 // Sidebar

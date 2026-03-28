@@ -82,8 +82,8 @@
     const tabs = Array.from(target.closest('[role="tablist"]')?.querySelectorAll('[role="tab"]') || []) as HTMLElement[];
     const currentIndex = tabs.indexOf(target);
 
-    let nextIndex = currentIndex;
-    let attempts = 0; // Safety counter to prevent infinite loops
+    let nextIndex: number;
+    let attempts: number; // Safety counter to prevent infinite loops
 
     switch (event.key) {
       case "ArrowRight":

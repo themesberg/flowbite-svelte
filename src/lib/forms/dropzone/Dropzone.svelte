@@ -7,6 +7,7 @@
 
   type HTMLInputElementWithFiles = HTMLInputElement & { files: FileList | null };
 
+  // eslint-disable-next-line no-useless-assignment
   let { children, files = $bindable<FileList | null>(), class: className, onDrop, onDragOver, onChange, ...restProps }: DropzoneProps = $props();
 
   const theme = $derived(getTheme("dropzone"));

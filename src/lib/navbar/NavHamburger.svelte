@@ -14,10 +14,8 @@
 
   const theme = $derived(getTheme("navbarHamburger"));
   const navState = getNavbarStateContext();
-
-  // Reactively get the breakpoint - call the function to get the reactive value
-  const navBreakpoint = $derived(getNavbarBreakpointContext()?.() ?? "md");
-  const { base, menu } = $derived(navbarHamburger({ breakpoint: navBreakpoint }));
+  const navBreakpointCtx = getNavbarBreakpointContext();
+  const { base, menu } = $derived(navbarHamburger({ breakpoint: navBreakpointCtx?.value ?? "md" }));
 
   const toggle: MouseEventHandler<HTMLButtonElement> = () => {
     if (!navState) return;

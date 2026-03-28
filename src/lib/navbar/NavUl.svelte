@@ -9,10 +9,9 @@
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
   let navState = getNavbarStateContext();
+  let navBreakpointCtx = getNavbarBreakpointContext();
 
-  // Reactively get the breakpoint - call the function to get the reactive value
-  let navBreakpoint = $derived(getNavbarBreakpointContext()?.() ?? "md");
-
+  // Reactively get the breakpoint from context
   let { children, activeUrl = $bindable(), slideParams, transition = slide, transitionParams, respectMotionPreference = true, class: className, classes, ...restProps }: NavUlProps = $props();
 
   const styling = $derived(classes);
@@ -46,7 +45,7 @@
     return navState.hidden;
   });
 
-  let { base, list, active, nonActive } = $derived(navUl({ hidden, breakpoint: navBreakpoint ?? "md" }));
+  let { base, list, active, nonActive } = $derived(navUl({ hidden, breakpoint: navBreakpointCtx?.value ?? "md" }));
 
   $effect(() => {
     if (!navState) return;

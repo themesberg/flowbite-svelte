@@ -35,6 +35,7 @@ export default [
       "build/",
       ".svelte-kit/",
       "dist/",
+      "flowbite/",
       "test-results/",
       "*.md",
       "node_modules/",

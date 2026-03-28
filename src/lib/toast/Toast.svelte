@@ -13,6 +13,7 @@
     icon,
     toastStatus = $bindable(true),
     dismissable = true,
+    closeAriaLabel = "Remove toast",
     color = "primary",
     position,
     align = true,
@@ -49,7 +50,7 @@
   const finalCloseProps = $derived({
     class: close({ class: clsx(theme?.close, styling?.close) }),
     color: closeButtonProps?.color ?? "gray",
-    ariaLabel: closeButtonProps?.ariaLabel ?? "Remove toast",
+    ariaLabel: closeButtonProps?.ariaLabel ?? closeAriaLabel,
     size: closeButtonProps?.size,
     classes: closeButtonProps?.classes,
     name: closeButtonProps?.name,
@@ -85,6 +86,7 @@
 @prop icon
 @prop toastStatus = $bindable(true)
 @prop dismissable = true
+@prop closeAriaLabel = "Remove toast"
 @prop color = "primary"
 @prop position
 @prop align = true

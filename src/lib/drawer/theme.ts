@@ -7,14 +7,14 @@ export type DrawerVariants = VariantProps<typeof drawer> & Classes<typeof drawer
 export const drawer = tv({
   extend: dialog,
   slots: {
-    base: "p-4 max-h-none max-w-none border border-gray-200 dark:border-gray-700 transform-gpu will-change-transform"
+    base: "p-4 max-h-none max-w-none bg-neutral-primary-soft transform-gpu will-change-transform"
   },
   variants: {
     placement: {
-      left: { base: "me-auto h-full" },
-      right: { base: "ms-auto h-full" },
-      top: { base: "mb-auto w-full!" },
-      bottom: { base: "mt-auto w-full!" }
+      left: { base: "me-auto h-full border-e border-default" },
+      right: { base: "ms-auto h-full border-s border-default" },
+      top: { base: "mb-auto w-full! border-b border-default" },
+      bottom: { base: "mt-auto w-full! border-t border-default" }
     },
     width: {
       default: { base: "w-80" },
@@ -69,9 +69,8 @@ export type DrawerheadVariants = VariantProps<typeof drawerhead> & Classes<typeo
 export const drawerhead = tv({
   slots: {
     base: "flex items-center justify-between",
-    closeButton:
-      "ms-auto inline-flex h-8 w-8 items-center justify-center rounded-base bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white",
-    closeIcon: "h-4 w-4"
+    closeButton: "text-body bg-transparent hover:text-heading hover:bg-neutral-tertiary rounded-base w-9 h-9 absolute top-2.5 end-2.5 flex items-center justify-center",
+    closeIcon: "w-5 h-5"
   }
 });
 
@@ -80,7 +79,7 @@ export type DrawerHandleVariants = VariantProps<typeof drawerhandle> & Classes<t
 export const drawerhandle = tv({
   slots: {
     base: "p-4 absolute flex select-none cursor-grab active:cursor-grabbing focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 dark:focus-visible:ring-gray-500",
-    handle: "absolute rounded-lg bg-gray-300 dark:bg-gray-600"
+    handle: "absolute rounded-lg bg-neutral-quaternary"
   },
   variants: {
     placement: {

@@ -1,4 +1,5 @@
 # Ignore files for PNPM, NPM and YARN
+flowbite/
 pnpm-lock.yaml
 package-lock.json
 yarn.lock

@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Input, Label, Button, Checkbox, A } from "$lib";
+  import type { Snapshot } from "@sveltejs/kit";
+  import { Input, Label, Button, Checkbox, A, Heading } from "$lib";
   let formData = $state({
     first_name: "",
     last_name: "",
@@ -7,11 +8,13 @@
     website: "",
     email: ""
   });
-  export const snapshot = {
-    capture: () => formData,
-    restore: (value: typeof formData) => (formData = value)
+  export const snapshot: Snapshot<typeof formData> = {
+    capture: () => ({ ...formData }),
+    restore: (value) => Object.assign(formData, value)
   };
 </script>
+
+<Heading tag="h1" class="mt-8 ml-16 text-4xl">Snapshot Example</Heading>
 
 <form class="p-16">
   <div class="mb-6 grid gap-6 md:grid-cols-2">

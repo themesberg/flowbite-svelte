@@ -6,10 +6,9 @@
   import { getNavbarStateContext, getNavbarBreakpointContext } from "$lib/context";
 
   let navState = getNavbarStateContext();
+  let navBreakpointCtx = getNavbarBreakpointContext();
 
-  // Reactively get the breakpoint - call the function to get the reactive value
-  let navBreakpoint = $derived(getNavbarBreakpointContext()?.() ?? "md");
-
+  // Reactively get the breakpoint from context
   let { children, onclick, activeClass, nonActiveClass, class: className, classes, ...restProps }: NavLiProps = $props();
 
   const styling = $derived(classes);
@@ -21,7 +20,7 @@
   // Combine item class from theme with itemClass from context and local styling
   let itemClass = $derived(
     item({
-      breakpoint: navBreakpoint ?? "md",
+      breakpoint: navBreakpointCtx?.value ?? "md",
       hidden: navState?.hidden ?? true,
       class: clsx(active ? (activeClass ?? navState?.activeClass) : (nonActiveClass ?? navState?.nonActiveClass), navState?.itemClass, theme?.item, styling?.item)
     })

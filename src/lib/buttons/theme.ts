@@ -16,55 +16,55 @@ export type GradientButtonVariants = VariantProps<typeof gradientButton>;
  */
 export const button = tv({
   slots: {
-    base: "text-center font-medium inline-flex items-center justify-center shadow-xs leading-5 focus:outline-none focus:ring-4 text-sm px-4 py-2.5",
-    outline: "bg-transparent border focus:ring-4",
+    base: "box-border text-center font-medium inline-flex items-center justify-center shadow-xs leading-5 focus:outline-none focus-visible:ring-4 text-sm px-4 py-2.5",
+    outline: "bg-transparent border focus-visible:ring-4",
     shadow: "shadow-lg",
     spinner: "ms-2"
   },
   variants: {
     color: {
       brand: {
-        base: "text-white bg-brand border border-transparent enabled:hover:bg-brand-strong focus:ring-brand-medium",
-        outline: "text-fg-brand bg-neutral-primary border border-brand enabled:hover:bg-brand enabled:hover:text-white focus:ring-brand-subtle",
+        base: "text-white bg-brand border border-transparent enabled:hover:bg-brand-strong focus-visible:ring-brand-medium",
+        outline: "text-fg-brand bg-neutral-primary border border-brand enabled:hover:bg-brand enabled:hover:text-white focus-visible:ring-brand-subtle",
         shadow: "shadow-brand-500/50 dark:shadow-brand-800/80"
       },
       alternative: {
-        base: "text-body bg-neutral-secondary-medium border border-default-medium enabled:hover:bg-neutral-tertiary-medium enabled:hover:text-heading focus:ring-neutral-tertiary",
-        outline: "text-body bg-neutral-primary border border-default-medium enabled:hover:bg-neutral-secondary-medium enabled:hover:text-heading focus:ring-neutral-tertiary",
+        base: "text-body bg-neutral-secondary-medium border border-default-medium enabled:hover:bg-neutral-tertiary-medium enabled:hover:text-heading focus-visible:ring-neutral-tertiary",
+        outline: "text-body bg-neutral-primary border border-default-medium enabled:hover:bg-neutral-secondary-medium enabled:hover:text-heading focus-visible:ring-neutral-tertiary",
         shadow: "shadow-gray-500/50 dark:shadow-gray-800/80"
       },
       gray: {
-        base: "text-body bg-neutral-primary-soft border border-default enabled:hover:bg-neutral-secondary-medium enabled:hover:text-heading focus:ring-neutral-tertiary-soft",
-        outline: "text-body bg-neutral-primary border border-default enabled:hover:bg-neutral-secondary-soft enabled:hover:text-heading focus:ring-neutral-tertiary",
+        base: "text-body bg-neutral-primary-soft border border-default enabled:hover:bg-neutral-secondary-medium enabled:hover:text-heading focus-visible:ring-neutral-tertiary-soft",
+        outline: "text-body bg-neutral-primary border border-default enabled:hover:bg-neutral-secondary-soft enabled:hover:text-heading focus-visible:ring-neutral-tertiary",
         shadow: "shadow-gray-500/50 dark:shadow-gray-800/80"
       },
       success: {
-        base: "text-white bg-success border border-transparent enabled:hover:bg-success-strong focus:ring-success-medium",
-        outline: "text-success bg-neutral-primary border border-success enabled:hover:bg-success enabled:hover:text-white focus:ring-success-subtle",
+        base: "text-white bg-success border border-transparent enabled:hover:bg-success-strong focus-visible:ring-success-medium",
+        outline: "text-success bg-neutral-primary border border-success enabled:hover:bg-success enabled:hover:text-white focus-visible:ring-success-subtle",
         shadow: "shadow-green-500/50 dark:shadow-green-800/80"
       },
       danger: {
-        base: "text-white bg-danger border border-transparent enabled:hover:bg-danger-strong focus:ring-danger-medium",
-        outline: "text-danger bg-neutral-primary border border-danger enabled:hover:bg-danger enabled:hover:text-white focus:ring-danger-subtle",
+        base: "text-white bg-danger border border-transparent enabled:hover:bg-danger-strong focus-visible:ring-danger-medium",
+        outline: "text-danger bg-neutral-primary border border-danger enabled:hover:bg-danger enabled:hover:text-white focus-visible:ring-danger-subtle",
         shadow: "shadow-red-500/50 dark:shadow-red-800/80"
       },
       warning: {
-        base: "text-white bg-warning border border-transparent enabled:hover:bg-warning-strong focus:ring-warning-medium",
-        outline: "text-warning bg-neutral-primary border border-warning enabled:hover:bg-warning enabled:hover:text-white focus:ring-warning-subtle",
+        base: "text-white bg-warning border border-transparent enabled:hover:bg-warning-strong focus-visible:ring-warning-medium",
+        outline: "text-warning bg-neutral-primary border border-warning enabled:hover:bg-warning enabled:hover:text-white focus-visible:ring-warning-subtle",
         shadow: "shadow-yellow-500/50 dark:shadow-yellow-800/80"
       },
       transparent: {
-        base: "text-heading bg-transparent border border-transparent enabled:hover:bg-neutral-secondary-medium focus:ring-neutral-tertiary",
-        outline: "text-heading bg-transparent border border-default enabled:hover:bg-neutral-secondary-medium focus:ring-neutral-tertiary",
+        base: "text-heading bg-transparent border border-transparent enabled:hover:bg-neutral-secondary-medium focus-visible:ring-neutral-tertiary",
+        outline: "text-heading bg-transparent border border-default enabled:hover:bg-neutral-secondary-medium focus-visible:ring-neutral-tertiary",
         shadow: "shadow-gray-500/50 dark:shadow-gray-800/80"
       },
       dark: {
-        base: "text-white bg-dark border border-transparent enabled:hover:bg-dark-strong focus:ring-neutral-tertiary",
-        outline: "text-gray-600 dark:text-gray-400 bg-neutral-primary border border-dark enabled:hover:bg-dark enabled:hover:text-white focus:ring-neutral-tertiary",
+        base: "text-white bg-dark border border-transparent enabled:hover:bg-dark-strong focus-visible:ring-neutral-tertiary",
+        outline: "text-dark bg-neutral-primary border border-dark enabled:hover:bg-dark enabled:hover:text-white focus-visible:ring-neutral-tertiary",
         shadow: "shadow-gray-500/50 dark:shadow-gray-800/80"
       },
       ghost: {
-        base: "text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary focus:outline-none",
+        base: "text-heading bg-transparent border border-transparent hover:bg-neutral-secondary-medium focus-visible:ring-neutral-tertiary",
         outline: "",
         shadow: ""
       },
@@ -182,8 +182,8 @@ export const button = tv({
       xl: "px-6 py-3.5 text-base"
     },
     group: {
-      true: "focus:ring-2 focus:z-10 [&:not(:first-child)]:rounded-s-none [&:not(:last-child)]:rounded-e-none [&:not(:last-child)]:border-e-0",
-      false: "focus:ring-4 focus:outline-hidden"
+      true: "focus-visible:ring-2 focus:z-10 [&:not(:first-child)]:rounded-s-none [&:not(:last-child)]:rounded-e-none [&:not(:last-child)]:border-e-0",
+      false: "focus-visible:ring-4 focus:outline-hidden"
     },
     disabled: {
       true: "cursor-not-allowed text-fg-disabled bg-disabled box-border border border-default-medium font-medium rounded-base text-sm px-4 py-2.5",

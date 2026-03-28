@@ -13,6 +13,7 @@
     icon,
     alertStatus = $bindable(true),
     closeIcon: CloseIcon,
+    closeAriaLabel = "Remove alert",
     color = "brand",
     rounded = true,
     border,
@@ -61,7 +62,7 @@
   const finalCloseProps = $derived({
     class: clsx("-my-1.5 ms-auto -me-1.5", closeButtonProps?.class),
     color: closeButtonProps?.color ?? color,
-    ariaLabel: closeButtonProps?.ariaLabel ?? "Remove alert",
+    ariaLabel: closeButtonProps?.ariaLabel ?? closeAriaLabel,
     size: closeButtonProps?.size,
     classes: closeButtonProps?.classes,
     name: closeButtonProps?.name,
@@ -105,6 +106,7 @@
 @prop icon
 @prop alertStatus = $bindable(true)
 @prop closeIcon: CloseIcon
+@prop closeAriaLabel = "Remove alert"
 @prop color = "brand"
 @prop rounded = true
 @prop border

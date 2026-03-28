@@ -15,6 +15,7 @@
     color = "brand",
     large = false,
     dismissable = false,
+    closeAriaLabel = "Remove badge",
     class: className,
     classes,
     border,
@@ -39,7 +40,7 @@
     class: clsx("ms-1", closeButtonProps?.class),
     size: closeButtonProps?.size ?? size,
     color: closeButtonProps?.color ?? color,
-    ariaLabel: closeButtonProps?.ariaLabel ?? "Remove badge",
+    ariaLabel: closeButtonProps?.ariaLabel ?? closeAriaLabel,
     classes: closeButtonProps?.classes,
     name: closeButtonProps?.name,
     onclick: closeButtonProps?.onclick
@@ -96,6 +97,7 @@
 @prop color = "brand"
 @prop large = false
 @prop dismissable = false
+@prop closeAriaLabel = "Remove badge"
 @prop class: className
 @prop classes
 @prop border

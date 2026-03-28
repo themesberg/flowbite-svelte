@@ -23,6 +23,7 @@
     class: className,
     classes,
     // Extract select-specific props
+    id,
     name,
     form,
     required,
@@ -118,6 +119,7 @@
     // This is useful if the click triggers a re-render and focus is lost momentarily.
     if (multiSelectContainer && multiSelectContainer.contains(event.target as Node)) {
       show = !show;
+      event.preventDefault();
     } else {
       show = false; // Close if clicked outside
     }
@@ -209,12 +211,6 @@
   });
 </script>
 
-<select {name} {form} {required} {autocomplete} {value} hidden multiple {onchange}>
-  {#each items as item (item.value)}
-    <option value={item.value} disabled={item.disabled}>{item.name}</option>
-  {/each}
-</select>
-
 <div
   data-scope="multi-select"
   data-part="base"
@@ -227,6 +223,12 @@
   role="listbox"
   class={base({ size, class: clsx(theme?.base, className) })}
 >
+  <select {id} {name} {form} {required} {autocomplete} {value} hidden multiple {onchange}>
+    {#each items as item (item.value)}
+      <option value={item.value} disabled={item.disabled}>{item.name}</option>
+    {/each}
+  </select>
+
   {#if !selectItems.length}
     <span data-part="placeholder" class={placeholderSpan({ class: clsx(classes?.placeholder) })}>{placeholder}</span>
   {/if}
