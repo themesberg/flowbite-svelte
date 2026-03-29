@@ -18,8 +18,8 @@ export type DropdownItemVariants = VariantProps<typeof dropdownItem> & Classes<t
 export const dropdownItem = tv({
   slots: {
     base: "",
-    active: "inline-flex items-center w-full p-2 text-fg-brand-strong hover:bg-neutral-tertiary-medium hover:text-heading rounded",
-    item: "inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+    active: "inline-flex w-full items-center rounded p-2 text-fg-brand-strong hover:bg-neutral-tertiary-medium hover:text-heading focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg-brand-strong",
+    item: "inline-flex w-full items-center rounded p-2 hover:bg-neutral-tertiary-medium hover:text-heading focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fg-brand-strong"
   }
 });
 
