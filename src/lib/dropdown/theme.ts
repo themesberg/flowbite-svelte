@@ -2,15 +2,15 @@ import { tv, type VariantProps } from "tailwind-variants";
 import type { Classes } from "$lib/theme-provider/themeUtils";
 
 export const dropdown = tv({
-  base: "mt-2 divide-y divide-gray-300 dark:divide-gray-500 overflow-hidden rounded-lg bg-white shadow-sm dark:bg-gray-700"
+  base: "mt-2 divide-y divide-default-medium overflow-hidden rounded-base bg-neutral-primary-medium border border-default-medium shadow-lg"
 });
 
 export const dropdownDivider = tv({
-  base: "my-1 h-px bg-gray-100 dark:bg-gray-500"
+  base: "my-1 h-px bg-default-medium"
 });
 
 export const dropdownHeader = tv({
-  base: "px-4 py-3 text-sm text-gray-900 dark:text-white"
+  base: "px-4 py-3 text-sm text-heading"
 });
 
 export type DropdownItemVariants = VariantProps<typeof dropdownItem> & Classes<typeof dropdownItem>;
@@ -18,11 +18,11 @@ export type DropdownItemVariants = VariantProps<typeof dropdownItem> & Classes<t
 export const dropdownItem = tv({
   slots: {
     base: "",
-    active: "block w-full text-left px-4 py-2 text-primary-700 dark:text-primary-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white",
-    item: "block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+    active: "inline-flex items-center w-full p-2 text-fg-brand-strong hover:bg-neutral-tertiary-medium hover:text-heading rounded",
+    item: "inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
   }
 });
 
 export const dropdownGroup = tv({
-  base: "py-2 text-sm text-gray-700 dark:text-gray-200"
+  base: "p-2 text-sm text-body font-medium"
 });
