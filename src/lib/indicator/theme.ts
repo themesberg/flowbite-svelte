@@ -46,7 +46,7 @@ export const indicator = tv({
       circular: "rounded-full"
     },
     border: {
-      true: "border border-gray-300 dark:border-gray-300",
+      true: "border border-default",
       false: {}
     },
     hasChildren: {
