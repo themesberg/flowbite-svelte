@@ -33,7 +33,7 @@ export const speedDialButton = tv({
     textOutside: {
       true: {
         base: "relative",
-        span: "absolute -start-12 top-1/2 mb-px text-sm font-medium -translate-y-1/2"
+        span: "absolute -start-12 top-1/2 mb-px text-sm font-medium -translate-y-1/2 text-body"
       }
     }
   },

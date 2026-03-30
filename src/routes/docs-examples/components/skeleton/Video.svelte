@@ -1,9 +1,23 @@
 <script lang="ts">
   import { VideoPlaceholder } from "flowbite-svelte";
+
+  const sizes = ["sm", "md", "lg", "xl", "2xl"] as const;
+  type Size = (typeof sizes)[number];
+  let selected = $state<Size>("md");
 </script>
 
-<VideoPlaceholder />
-<VideoPlaceholder size="md" class="mt-8" />
-<VideoPlaceholder size="lg" class="mt-8" />
-<VideoPlaceholder size="xl" class="mt-8" />
-<VideoPlaceholder size="2xl" class="mt-8" />
+<div class="flex flex-wrap gap-2 mb-6">
+  {#each sizes as size}
+    <button
+      onclick={() => (selected = size)}
+      class="px-3 py-1 text-sm rounded-base border font-medium transition-colors
+        {selected === size
+          ? 'bg-brand text-white border-transparent'
+          : 'bg-neutral-primary-soft text-body border-default hover:bg-neutral-secondary-medium'}"
+    >
+      {size}
+    </button>
+  {/each}
+</div>
+
+<VideoPlaceholder size={selected} />
