@@ -27,7 +27,7 @@ export const listGroup = tv({
   compoundVariants: [
     {
       border: true,
-      class: { base: "divide-default" }
+      class: { base: "" }
     }
   ],
   defaultVariants: {
@@ -66,8 +66,7 @@ export const listGroupItem = tv({
     {
       active: true,
       state: "normal",
-      class:
-        "hover:bg-neutral-secondary-medium hover:text-fg-brand focus:outline-none focus:ring-2 focus:ring-brand focus:text-fg-brand"
+      class: "hover:bg-neutral-secondary-medium hover:text-fg-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:text-fg-brand"
     }
   ]
 });

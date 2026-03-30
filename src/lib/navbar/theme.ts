@@ -33,40 +33,40 @@ export const navUl = tv({
   slots: {
     base: "",
     list: "flex flex-col p-4 mt-0 rtl:space-x-reverse",
-    active: "text-white bg-primary-700 dark:bg-primary-600",
-    nonActive: "hover:text-primary-500 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+    active: "text-white bg-brand",
+    nonActive: "text-heading hover:bg-neutral-tertiary"
   },
   variants: {
     breakpoint: {
       sm: {
         base: "w-full sm:block sm:w-auto",
         list: "sm:flex-row sm:text-sm sm:font-medium",
-        active: "sm:bg-transparent sm:text-primary-700 sm:dark:text-white sm:dark:bg-transparent",
-        nonActive: "sm:hover:bg-transparent sm:border-0 sm:hover:text-primary-700 dark:sm:text-gray-400 sm:dark:hover:text-white sm:dark:hover:bg-transparent"
+        active: "sm:bg-transparent sm:text-fg-brand",
+        nonActive: "sm:hover:bg-transparent sm:border-0 sm:hover:text-fg-brand"
       },
       md: {
         base: "w-full md:block md:w-auto",
         list: "md:flex-row md:text-sm md:font-medium",
-        active: "md:bg-transparent md:text-primary-700 md:dark:text-white md:dark:bg-transparent",
-        nonActive: "md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:md:text-gray-400 md:dark:hover:text-white md:dark:hover:bg-transparent"
+        active: "md:bg-transparent md:text-fg-brand",
+        nonActive: "md:hover:bg-transparent md:border-0 md:hover:text-fg-brand"
       },
       lg: {
         base: "w-full lg:block lg:w-auto",
         list: "lg:flex-row lg:text-sm lg:font-medium",
-        active: "lg:bg-transparent lg:text-primary-700 lg:dark:text-white lg:dark:bg-transparent",
-        nonActive: "lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 dark:lg:text-gray-400 lg:dark:hover:text-white lg:dark:hover:bg-transparent"
+        active: "lg:bg-transparent lg:text-fg-brand",
+        nonActive: "lg:hover:bg-transparent lg:border-0 lg:hover:text-fg-brand"
       },
       xl: {
         base: "w-full xl:block xl:w-auto",
         list: "xl:flex-row xl:text-sm xl:font-medium",
-        active: "xl:bg-transparent xl:text-primary-700 xl:dark:text-white xl:dark:bg-transparent",
-        nonActive: "xl:hover:bg-transparent xl:border-0 xl:hover:text-primary-700 dark:xl:text-gray-400 xl:dark:hover:text-white xl:dark:hover:bg-transparent"
+        active: "xl:bg-transparent xl:text-fg-brand",
+        nonActive: "xl:hover:bg-transparent xl:border-0 xl:hover:text-fg-brand"
       }
     },
     hidden: {
       false: {
         base: "absolute top-full left-0 right-0 z-50 w-full",
-        list: "border rounded-lg bg-white shadow-lg dark:bg-gray-800 dark:border-gray-700 text-gray-700 dark:text-gray-400 border-gray-100 dark:border-gray-700 divide-gray-100 dark:divide-gray-700"
+        list: "border border-default rounded-base bg-neutral-secondary-soft shadow-lg text-heading"
       },
       true: {
         base: "hidden"
@@ -80,7 +80,7 @@ export const navUl = tv({
       hidden: false,
       class: {
         base: "sm:static sm:z-auto",
-        list: "sm:border-none sm:rounded-none sm:bg-inherit dark:sm:bg-inherit sm:shadow-none"
+        list: "sm:border-none sm:rounded-none sm:bg-inherit sm:shadow-none"
       }
     },
     {
@@ -88,7 +88,7 @@ export const navUl = tv({
       hidden: false,
       class: {
         base: "md:static md:z-auto",
-        list: "md:border-none md:rounded-none md:bg-inherit dark:md:bg-inherit md:shadow-none"
+        list: "md:border-none md:rounded-none md:bg-inherit md:shadow-none"
       }
     },
     {
@@ -96,7 +96,7 @@ export const navUl = tv({
       hidden: false,
       class: {
         base: "lg:static lg:z-auto",
-        list: "lg:border-none lg:rounded-none lg:bg-inherit dark:lg:bg-inherit lg:shadow-none"
+        list: "lg:border-none lg:rounded-none lg:bg-inherit lg:shadow-none"
       }
     },
     {
@@ -104,7 +104,7 @@ export const navUl = tv({
       hidden: false,
       class: {
         base: "xl:static xl:z-auto",
-        list: "xl:border-none xl:rounded-none xl:bg-inherit dark:xl:bg-inherit xl:shadow-none"
+        list: "xl:border-none xl:rounded-none xl:bg-inherit xl:shadow-none"
       }
     }
   ],
@@ -116,7 +116,7 @@ export const navUl = tv({
 export const navLi = tv({
   slots: {
     base: "",
-    item: "block py-2 pe-4 ps-3 rounded-sm"
+    item: "block py-2 pe-4 ps-3 rounded"
   },
   variants: {
     breakpoint: {
@@ -126,29 +126,29 @@ export const navLi = tv({
       xl: "xl:p-2 xl:border-0"
     },
     hidden: {
-      false: "text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+      false: "text-heading hover:bg-neutral-tertiary"
     }
   },
   compoundVariants: [
     {
       breakpoint: "sm",
       hidden: false,
-      class: "sm:hover:bg-transparent sm:hover:text-primary-700 sm:dark:hover:text-white sm:dark:hover:bg-transparent"
+      class: "sm:hover:bg-transparent sm:hover:text-fg-brand"
     },
     {
       breakpoint: "md",
       hidden: false,
-      class: "md:hover:bg-transparent md:hover:text-primary-700 md:dark:hover:text-white md:dark:hover:bg-transparent"
+      class: "md:hover:bg-transparent md:hover:text-fg-brand"
     },
     {
       breakpoint: "lg",
       hidden: false,
-      class: "lg:hover:bg-transparent lg:hover:text-primary-700 lg:dark:hover:text-white lg:dark:hover:bg-transparent"
+      class: "lg:hover:bg-transparent lg:hover:text-fg-brand"
     },
     {
       breakpoint: "xl",
       hidden: false,
-      class: "xl:hover:bg-transparent xl:hover:text-primary-700 xl:dark:hover:text-white xl:dark:hover:bg-transparent"
+      class: "xl:hover:bg-transparent xl:hover:text-fg-brand"
     }
   ],
   defaultVariants: {

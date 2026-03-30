@@ -10,7 +10,7 @@ export const pagination = tv({
   base: "inline-flex -space-x-px rtl:space-x-reverse items-center",
   variants: {
     table: {
-      true: "divide-x rtl:divide-x-reverse dark divide-gray-700 dark:divide-gray-700",
+      true: "divide-x rtl:divide-x-reverse divide-default",
       false: ""
     },
     size: {
@@ -32,8 +32,8 @@ export const paginationButton = tv({
       large: "h-10 px-4 text-base"
     },
     active: {
-      true: "text-primary-600 border border-gray-300 bg-primary-50 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white",
-      false: "text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+      true: "text-fg-brand bg-neutral-tertiary-medium border border-default-medium hover:text-fg-brand",
+      false: "text-body bg-neutral-secondary-medium hover:bg-neutral-tertiary-medium hover:text-heading"
     },
     group: {
       true: "",
@@ -41,7 +41,7 @@ export const paginationButton = tv({
     },
     table: {
       true: "rounded-sm",
-      false: "border"
+      false: "border border-default-medium"
     },
     disabled: {
       true: "cursor-not-allowed opacity-50",
@@ -73,8 +73,8 @@ export const paginationNav = tv({
     },
     layout: {
       table: {
-        prev: "rounded-s bg-gray-800 hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white text-white  hover:text-gray-200",
-        next: "text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 hover:text-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+        prev: "rounded-s-base text-body bg-neutral-secondary-medium border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading",
+        next: "rounded-e-base text-body bg-neutral-secondary-medium border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading"
       },
       navigation: { prev: "rounded-s-base", next: "rounded-e-base" },
       pagination: { prev: "rounded-s-base", next: "rounded-e-base" }
@@ -94,8 +94,8 @@ export const paginationItem = tv({
       large: "h-10 px-4 text-base"
     },
     active: {
-      true: "text-primary-600 border border-gray-300 bg-primary-50 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white",
-      false: "text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+      true: "text-fg-brand bg-neutral-tertiary-medium border border-default-medium hover:text-fg-brand",
+      false: "text-body bg-neutral-secondary-medium hover:bg-neutral-tertiary-medium hover:text-heading"
     },
     group: {
       true: "",
@@ -103,7 +103,7 @@ export const paginationItem = tv({
     },
     table: {
       true: "rounded-sm",
-      false: "border"
+      false: "border border-default-medium"
     }
   },
   compoundVariants: [
