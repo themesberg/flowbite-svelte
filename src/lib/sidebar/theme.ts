@@ -11,11 +11,11 @@ export type SidebarItemVariants = VariantProps<typeof sidebarItem> & Classes<typ
 
 export const sidebar = tv({
   slots: {
-    base: "top-0 left-0 z-50 w-64 transition-transform bg-gray-50 dark:bg-gray-800",
+    base: "top-0 left-0 z-50 w-64 transition-transform",
     active:
-      "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
-    nonactive: "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal text-gray-900 rounded-sm dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700",
-    content: "overflow-y-auto px-3 py-4 bg-gray-50 dark:bg-gray-800",
+      "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal text-heading bg-neutral-tertiary rounded-base hover:bg-neutral-tertiary",
+    nonactive: "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand",
+    content: "overflow-y-auto px-3 py-4 bg-neutral-primary-soft border-e border-default",
     backdrop: "fixed top-0 start-0 z-40 w-full h-full"
   },
   variants: {
@@ -55,7 +55,7 @@ export const sidebar = tv({
 
 export const sidebarButton = tv({
   slots: {
-    base: "inline-flex items-center text-sm text-gray-500 rounded-base hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
+    base: "inline-flex items-center text-sm text-heading bg-transparent hover:bg-neutral-secondary-medium focus:outline-hidden focus:ring-4 focus:ring-neutral-tertiary rounded-base",
     icon: "h-6 w-6 m-2"
   },
   variants: {
@@ -73,24 +73,24 @@ export const sidebarBrand = tv({
   slots: {
     base: "flex items-center ps-2.5 mb-5",
     logo: "h-6 me-3 sm:h-7",
-    brandName: "self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+    brandName: "self-center text-xl font-semibold whitespace-nowrap text-heading"
   }
 });
 
 export const sidebarCta = tv({
   slots: {
-    base: "p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900",
+    base: "p-4 mt-6 bg-brand-softer border border-brand-subtle rounded-base",
     labelWrapper: "flex items-center mb-3",
-    badge: "bg-primary-100 text-primary-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded-sm dark:bg-primary-200 dark:text-primary-900"
+    badge: "bg-brand-soft text-fg-brand-strong text-sm font-semibold me-2 px-2.5 py-0.5 rounded-sm border border-brand-subtle"
   }
 });
 
 export const sidebarDropdownWrapper = tv({
   slots: {
     base: "group",
-    trigger: "flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-sm transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700",
+    trigger: "flex items-center p-2 w-full text-base font-normal text-body rounded-base transition duration-75 group hover:bg-neutral-tertiary hover:text-fg-brand",
     label: "flex-1 ms-3 text-left whitespace-nowrap",
-    icon: "h-3 w-3 text-gray-800 dark:text-white",
+    icon: "h-3 w-3 text-heading",
     list: "py-2 space-y-0"
   }
 });
@@ -98,16 +98,16 @@ export const sidebarDropdownWrapper = tv({
 export const sidebarItem = tv({
   slots: {
     base: "",
-    link: "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal rounded-sm",
+    link: "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal rounded-base",
     label: "ms-3"
   },
   variants: {
     active: {
       true: {
-        link: "text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+        link: "text-heading bg-neutral-tertiary hover:bg-neutral-tertiary"
       },
       false: {
-        link: "text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+        link: "text-body hover:bg-neutral-tertiary hover:text-fg-brand"
       }
     }
   },

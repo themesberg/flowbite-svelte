@@ -13,10 +13,10 @@ export type WidgetPlaceholderVariants = VariantProps<typeof widgetPlaceholder> &
 
 export const cardPlaceholder = tv({
   slots: {
-    base: "p-4 rounded-sm border border-gray-200 shadow-sm animate-pulse md:p-6 dark:border-gray-700",
-    imagePlaceholder: "mb-4 flex h-48 items-center justify-center rounded-sm bg-gray-300 dark:bg-gray-700",
-    imageIcon: "text-gray-200 dark:text-gray-600",
-    skeletonLine: "rounded-full bg-gray-200 dark:bg-gray-700",
+    base: "p-4 rounded-base border border-default shadow-xs animate-pulse md:p-6",
+    imagePlaceholder: "mb-4 flex h-48 items-center justify-center rounded-base bg-neutral-quaternary",
+    imageIcon: "text-fg-disabled",
+    skeletonLine: "rounded-full bg-neutral-quaternary",
     footer: "mt-4 flex items-center space-x-3 rtl:space-x-reverse"
   },
   variants: {
@@ -35,10 +35,10 @@ export const cardPlaceholder = tv({
 export const imagePlaceholder = tv({
   slots: {
     base: "space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center",
-    imagePlaceholder: "flex w-full items-center justify-center rounded-sm bg-gray-300 sm:w-96 dark:bg-gray-700",
-    imageIcon: "text-gray-200",
+    imagePlaceholder: "flex w-full items-center justify-center rounded-base bg-neutral-quaternary sm:w-96",
+    imageIcon: "text-fg-disabled",
     content: "w-full",
-    skeletonLine: "rounded-full bg-gray-200 dark:bg-gray-700"
+    skeletonLine: "rounded-full bg-neutral-quaternary"
   },
   variants: {
     size: {
@@ -84,12 +84,12 @@ export const imagePlaceholder = tv({
 
 export const listPlaceholder = tv({
   slots: {
-    base: "p-4 space-y-4 max-w-md rounded-sm border border-gray-200 divide-y divide-gray-200 shadow-sm animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700",
+    base: "p-4 space-y-4 max-w-md rounded-base border border-default divide-y divide-default shadow-xs animate-pulse md:p-6",
     listItem: "flex items-center justify-between",
     itemContent: "",
-    primaryLine: "mb-2.5 h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600",
-    secondaryLine: "h-2 w-32 rounded-full bg-gray-200 dark:bg-gray-700",
-    valueLine: "h-2.5 w-12 rounded-full bg-gray-300 dark:bg-gray-700"
+    primaryLine: "mb-2.5 h-2.5 w-24 rounded-full bg-neutral-quaternary",
+    secondaryLine: "h-2 w-32 rounded-full bg-neutral-quaternary",
+    valueLine: "h-2.5 w-12 rounded-full bg-default"
   },
   variants: {
     size: {
@@ -121,7 +121,7 @@ export const listPlaceholder = tv({
 export const skeleton = tv({
   slots: {
     base: "animate-pulse",
-    skeletonLine: "rounded-full bg-gray-200 dark:bg-gray-700"
+    skeletonLine: "rounded-full bg-neutral-quaternary"
   },
   variants: {
     size: {
@@ -148,9 +148,9 @@ export const skeleton = tv({
 export const testimonialPlaceholder = tv({
   slots: {
     base: "animate-pulse",
-    primaryLine: "rounded-full bg-gray-200 dark:bg-gray-700",
-    secondaryLine: "rounded-full bg-gray-300 dark:bg-gray-700",
-    avatarIcon: "me-2 h-10 w-10 text-gray-200 dark:text-gray-700",
+    primaryLine: "rounded-full bg-default",
+    secondaryLine: "rounded-full bg-neutral-quaternary",
+    avatarIcon: "me-2 h-10 w-10 text-fg-disabled",
     authorInfo: "mt-4 flex items-center justify-center"
   }
 });
@@ -160,8 +160,8 @@ export const textPlaceholder = tv({
   slots: {
     base: "space-y-2.5 animate-pulse",
     lineGroup: "flex items-center space-x-2 rtl:space-x-reverse",
-    primaryLine: "rounded-full bg-gray-200 dark:bg-gray-700",
-    secondaryLine: "rounded-full bg-gray-300 dark:bg-gray-600"
+    primaryLine: "rounded-full bg-neutral-quaternary",
+    secondaryLine: "rounded-full bg-neutral-quaternary"
   },
   variants: {
     size: {
@@ -176,7 +176,7 @@ export const textPlaceholder = tv({
 
 // VideoPlaceholder
 export const videoPlaceholder = tv({
-  base: "flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700",
+  base: "flex justify-center items-center h-56 bg-neutral-quaternary rounded-base animate-pulse",
   variants: {
     size: {
       sm: "max-w-sm",
@@ -191,9 +191,9 @@ export const videoPlaceholder = tv({
 // WidgetPlaceholder
 export const widgetPlaceholder = tv({
   slots: {
-    base: "p-4 max-w-sm rounded-sm border border-gray-200 shadow-sm animate-pulse md:p-6 dark:border-gray-700",
+    base: "p-4 max-w-sm rounded-base border border-default shadow-xs animate-pulse md:p-6",
     chartContainer: "mt-4 flex items-baseline space-x-6 rtl:space-x-reverse",
-    labelLine: "rounded-full bg-gray-200 dark:bg-gray-700",
-    chartBar: "w-full rounded-t-lg bg-gray-200 dark:bg-gray-700"
+    labelLine: "rounded-full bg-neutral-quaternary",
+    chartBar: "w-full rounded-t-lg bg-neutral-quaternary"
   }
 });

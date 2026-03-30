@@ -61,16 +61,16 @@
         <div class="pe-4">
           {#if review.reviewDate}
             <footer>
-              <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+              <p class="mb-2 text-sm text-body">
                 Reviewed: {review.reviewDate}
               </p>
             </footer>
           {/if}
-          <h4 class="text-xl font-bold text-gray-900 dark:text-white">
+          <h4 class="text-xl font-bold text-heading">
             {review.title}
           </h4>
         </div>
-        <p class="bg-primary-700 inline-flex items-center rounded-sm p-1.5 text-sm font-semibold text-white">
+        <p class="bg-brand-softer text-fg-brand-strong inline-flex items-center rounded-base p-1.5 text-sm font-semibold">
           {review.rating}
         </p>
       </div>

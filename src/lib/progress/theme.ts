@@ -8,7 +8,7 @@ export type ProgressradialVariants = VariantProps<typeof progressradial> & Class
 export const progressbar = tv({
   slots: {
     base: "w-full bg-neutral-quaternary rounded-full",
-    label: "text-white text-xs font-medium text-center leading-none rounded-full",
+    label: "text-white text-xs font-medium text-center leading-none rounded-full flex items-center justify-center",
     bar: "rounded-full",
     labelWrapper: "mb-1 flex justify-between",
     labelText: "text-base font-medium text-heading",
@@ -127,7 +127,7 @@ export const progressbar = tv({
       labelInside: true,
       class: {
         base: "text-primary-100 text-xs font-medium text-center leading-none rounded-full",
-        label: "p-0.5"
+        label: ""
       }
     },
     {
@@ -144,12 +144,12 @@ export const progressbar = tv({
 export const progressradial = tv({
   slots: {
     base: "relative inline-flex",
-    label: "absolute inset-0 flex items-center justify-center text-sm font-medium",
+    label: "absolute inset-0 flex items-center justify-center text-sm font-medium text-heading",
     background: "opacity-25",
     foreground: "transition-all",
     labelWrapper: "flex flex-col items-center mb-2 text-center",
-    labelText: "text-base font-medium",
-    percentage: "text-sm font-medium ml-1"
+    labelText: "text-base font-medium text-heading",
+    percentage: "text-sm font-medium ml-1 text-heading"
   },
   variants: {
     color: {
