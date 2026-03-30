@@ -6,7 +6,7 @@
 <Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white" /></Button>
 <Dropdown>
   <DropdownHeader>
-    <span class="block text-sm text-heading">Bonnie Green</span>
+    <span class="text-heading block text-sm">Bonnie Green</span>
     <span class="block truncate text-sm font-medium">name@flowbite.com</span>
   </DropdownHeader>
   <DropdownGroup>

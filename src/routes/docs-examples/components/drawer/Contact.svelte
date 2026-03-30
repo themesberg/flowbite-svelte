@@ -10,7 +10,7 @@
   <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 <Drawer bind:open={open3}>
-  <h5 class="mb-6 inline-flex items-center text-base font-semibold text-body uppercase">
+  <h5 class="text-body mb-6 inline-flex items-center text-base font-semibold uppercase">
     <InfoCircleSolid class="me-2.5 h-5 w-5" />Contact us
   </h5>
   <form method="dialog" class="mb-6">
@@ -28,10 +28,10 @@
     </div>
     <Button type="submit" class="w-full">Send message</Button>
   </form>
-  <P class="mb-2 text-sm text-body">
+  <P class="text-body mb-2 text-sm">
     <A href="/" class="text-fg-brand hover:underline">info@company.com</A>
   </P>
-  <P class="text-sm text-body">
+  <P class="text-body text-sm">
     <A href="/" class="text-fg-brand hover:underline">212-456-7890</A>
   </P>
 </Drawer>

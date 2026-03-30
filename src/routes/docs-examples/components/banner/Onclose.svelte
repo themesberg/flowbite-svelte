@@ -43,7 +43,7 @@
 </script>
 
 {#if banner.hasSeen}
-  <div class="mb-3 flex items-center gap-3 text-sm text-gray-600">
+  <div class="text-body mb-3 flex items-center gap-3 text-sm">
     <span>
       Banner is hidden because you dismissed it earlier. Remove <code>announcement-example</code>
       from localStorage to show it again or click the reset button.

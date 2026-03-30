@@ -12,42 +12,42 @@
 <Button onclick={() => (walletModal = true)}>Crypto wallet modal</Button>
 
 <Modal title="Connect wallet" bind:open={walletModal} size="xs">
-  <P class="text-sm font-normal text-body">Connect with one of our available wallet providers or create a new one.</P>
+  <P class="text-body text-sm font-normal">Connect with one of our available wallet providers or create a new one.</P>
   <ul class="my-4 space-y-3">
     <li>
-      <a href="/" class="group flex items-center rounded-base bg-neutral-tertiary p-3 text-base font-bold text-heading hover:bg-neutral-secondary-medium hover:shadow-xs">
+      <a href="/" class="group rounded-base bg-neutral-tertiary text-heading hover:bg-neutral-secondary-medium flex items-center p-3 text-base font-bold hover:shadow-xs">
         <MetaMask />
         <span class="ms-3 flex-1 whitespace-nowrap">MetaMask</span>
-        <span class="ms-3 inline-flex items-center justify-center rounded-sm bg-neutral-quaternary px-2 py-0.5 text-xs font-medium text-body">Popular</span>
+        <span class="bg-neutral-quaternary text-body ms-3 inline-flex items-center justify-center rounded-sm px-2 py-0.5 text-xs font-medium">Popular</span>
       </a>
     </li>
     <li>
-      <a href="/" class="group flex items-center rounded-base bg-neutral-tertiary p-3 text-base font-bold text-heading hover:bg-neutral-secondary-medium hover:shadow-xs">
+      <a href="/" class="group rounded-base bg-neutral-tertiary text-heading hover:bg-neutral-secondary-medium flex items-center p-3 text-base font-bold hover:shadow-xs">
         <CoinbaseWallet />
         <span class="ms-3 flex-1 whitespace-nowrap">Coinbase Wallet</span>
       </a>
     </li>
     <li>
-      <a href="/" class="group flex items-center rounded-base bg-neutral-tertiary p-3 text-base font-bold text-heading hover:bg-neutral-secondary-medium hover:shadow-xs">
+      <a href="/" class="group rounded-base bg-neutral-tertiary text-heading hover:bg-neutral-secondary-medium flex items-center p-3 text-base font-bold hover:shadow-xs">
         <OperaWallet />
         <span class="ms-3 flex-1 whitespace-nowrap">Opera Wallet</span>
       </a>
     </li>
     <li>
-      <a href="/" class="group flex items-center rounded-base bg-neutral-tertiary p-3 text-base font-bold text-heading hover:bg-neutral-secondary-medium hover:shadow-xs">
+      <a href="/" class="group rounded-base bg-neutral-tertiary text-heading hover:bg-neutral-secondary-medium flex items-center p-3 text-base font-bold hover:shadow-xs">
         <WalletConnect />
         <span class="ms-3 flex-1 whitespace-nowrap">WalletConnect</span>
       </a>
     </li>
     <li>
-      <a href="/" class="group flex items-center rounded-base bg-neutral-tertiary p-3 text-base font-bold text-heading hover:bg-neutral-secondary-medium hover:shadow-xs">
+      <a href="/" class="group rounded-base bg-neutral-tertiary text-heading hover:bg-neutral-secondary-medium flex items-center p-3 text-base font-bold hover:shadow-xs">
         <Fortmatic />
         <span class="ms-3 flex-1 whitespace-nowrap">Fortmatic</span>
       </a>
     </li>
   </ul>
   <div>
-    <a href="/" class="inline-flex items-center text-xs font-normal text-body hover:underline">
+    <a href="/" class="text-body inline-flex items-center text-xs font-normal hover:underline">
       <QuestionCircleOutline class="me-2 h-3 w-3" /> Why do I need to connect with my wallet?
     </a>
   </div>

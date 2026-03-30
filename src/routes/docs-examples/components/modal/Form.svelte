@@ -18,7 +18,7 @@
 
 <Modal form bind:open={formModal} size="xs" {onaction}>
   <div class="flex flex-col space-y-6">
-    <h3 class="mb-4 text-xl font-medium text-heading">Sign in to our platform</h3>
+    <h3 class="text-heading mb-4 text-xl font-medium">Sign in to our platform</h3>
     {#if error}
       <Label color="red">{error}</Label>
     {/if}
@@ -35,7 +35,7 @@
       <a href="/" class="text-fg-brand ms-auto text-sm hover:underline">Lost password?</a>
     </div>
     <Button type="submit" value="login">Login to your account</Button>
-    <div class="text-sm font-medium text-body">
+    <div class="text-body text-sm font-medium">
       Not registered? <a href="/" class="text-fg-brand hover:underline">Create account</a>
     </div>
   </div>

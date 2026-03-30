@@ -11,7 +11,7 @@
 
 <Gallery class="grid-cols-3 gap-4" items={images}>
   {#snippet figure(item)}
-    <div class="p-1 ring-4 ring-danger">
+    <div class="ring-danger p-1 ring-4">
       <img src={item.src} alt={item.alt} class="h-auto max-w-full" />
     </div>
   {/snippet}

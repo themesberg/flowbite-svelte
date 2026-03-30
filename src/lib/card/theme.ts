@@ -73,7 +73,7 @@ export const card = tv({
     {
       href: true,
       color: "gray",
-      class: { base: "cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700" }
+      class: { base: "cursor-pointer hover:bg-neutral-tertiary-medium" }
     },
     {
       href: true,

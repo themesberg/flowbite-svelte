@@ -8,7 +8,7 @@
   </a>
   <div class="px-5 pb-5">
     <a href="/">
-      <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
+      <h5 class="text-heading text-xl font-semibold tracking-tight">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
     </a>
     <Rating rating={4} size={24} class="mt-2.5 mb-5">
       {#snippet text()}
@@ -16,7 +16,7 @@
       {/snippet}
     </Rating>
     <div class="flex items-center justify-between">
-      <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+      <span class="text-heading text-3xl font-bold">$599</span>
       <Button href="/">Buy now</Button>
     </div>
   </div>

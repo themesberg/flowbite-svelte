@@ -6,17 +6,17 @@ export type BannerVariants = VariantProps<typeof banner> & Classes<typeof banner
 
 export const banner = tv({
   slots: {
-    base: "fixed z-50 flex justify-between p-4 mx-auto dark:bg-gray-700 dark:border-gray-600",
+    base: "fixed z-50 flex justify-between p-4 mx-auto",
     content: "flex flex-col md:flex-row md:items-center gap-2 mx-auto",
     dismissable: "absolute end-2.5 top-2.5 md:static md:end-auto md:top-auto"
   },
   variants: {
     type: {
       top: {
-        base: "top-0 start-0 w-full border-b border-gray-200 bg-gray-50"
+        base: "top-0 start-0 w-full border-b border-default bg-neutral-primary-soft"
       },
       bottom: {
-        base: "bottom-0 start-0 w-full border-t border-gray-200 bg-gray-50"
+        base: "bottom-0 start-0 w-full border-t border-default bg-neutral-primary-soft"
       }
     },
     color: {
@@ -27,7 +27,7 @@ export const banner = tv({
       // Legacy colors for backward compatibility
       primary: { base: "bg-primary-50 dark:bg-primary-900" },
       secondary: { base: "bg-secondary-50 dark:bg-secondary-900" },
-      gray: { base: "bg-gray-50 dark:bg-gray-700" },
+      gray: { base: "bg-neutral-secondary" },
       red: { base: "bg-red-50 dark:bg-red-900" },
       orange: { base: "bg-orange-50 dark:bg-orange-900" },
       amber: { base: "bg-amber-50 dark:bg-amber-900" },

@@ -10,7 +10,7 @@
   <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 <Drawer form bind:open={open4} classes={{ form: "space-y-6 mb-6" }}>
-  <h5 class="mb-6 inline-flex items-center text-base font-semibold text-body uppercase">
+  <h5 class="text-body mb-6 inline-flex items-center text-base font-semibold uppercase">
     <InfoCircleSolid class="me-2.5 h-5 w-5" />New event
   </h5>
   <Label>

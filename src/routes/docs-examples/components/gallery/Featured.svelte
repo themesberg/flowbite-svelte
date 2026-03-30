@@ -23,13 +23,13 @@
 
 <Gallery class="gap-4">
   <!-- MAIN IMAGE -->
-  <img src={main.src} alt={main.alt} class="h-[450px] w-full rounded-base bg-neutral-tertiary object-cover" />
+  <img src={main.src} alt={main.alt} class="rounded-base bg-neutral-tertiary h-[450px] w-full object-cover" />
 
   <!-- THUMBNAILS -->
   <Gallery class="grid-cols-5" items={images2} {figure} />
 
   {#snippet figure(item)}
-    <button type="button" class="cursor-pointer rounded-base border-0 bg-transparent p-0 hover:opacity-80" onclick={() => (main = item)}>
+    <button type="button" class="rounded-base cursor-pointer border-0 bg-transparent p-0 hover:opacity-80" onclick={() => (main = item)}>
       <img src={item.src} alt={item.alt} class="rounded-base" />
     </button>
   {/snippet}

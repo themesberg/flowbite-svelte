@@ -8,6 +8,6 @@
   <span class="sr-only">Icon description</span>
 </Badge>
 <Badge rounded large class="p-1! font-semibold!">
-  <CheckOutline class="text-primary-800 dark:text-primary-400 h-3 w-3" />
+  <CheckOutline class="text-fg-brand h-3 w-3" />
   <span class="sr-only">Icon description</span>
 </Badge>

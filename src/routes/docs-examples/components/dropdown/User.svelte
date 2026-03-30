@@ -5,7 +5,7 @@
 <Avatar class="acs" src="/images/people/profile-picture-5.jpg" dot={{ color: "neutral" }} />
 <Dropdown triggeredBy=".acs">
   <DropdownHeader>
-    <span class="block text-sm text-heading">Bonnie Green</span>
+    <span class="text-heading block text-sm">Bonnie Green</span>
     <span class="block truncate text-sm font-medium">name@flowbite.com</span>
   </DropdownHeader>
   <DropdownGroup>

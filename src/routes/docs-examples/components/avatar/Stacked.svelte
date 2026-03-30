@@ -12,5 +12,5 @@
   <Avatar src="/images/people/profile-picture-5.jpg" stacked />
   <Avatar src="/images/people/profile-picture-2.jpg" stacked />
   <Avatar src="/images/people/profile-picture-3.jpg" stacked />
-  <Avatar stacked href="/" class="bg-gray-700 text-sm text-white hover:bg-gray-600">+99</Avatar>
+  <Avatar stacked href="/" class="bg-dark hover:bg-dark-strong text-sm text-white">+99</Avatar>
 </div>

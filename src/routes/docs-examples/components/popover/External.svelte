@@ -2,7 +2,7 @@
   import { Popover, Button } from "flowbite-svelte";
 </script>
 
-<div id="ext-ref" class="my-4 rounded-base border border-default p-2">External reference</div>
+<div id="ext-ref" class="rounded-base border-default my-4 border p-2">External reference</div>
 <div class="space-x-4 rtl:space-x-reverse">
   <Button id="ref-1">Left</Button>
   <Button id="ref-2">Top</Button>

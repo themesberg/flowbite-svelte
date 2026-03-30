@@ -8,11 +8,11 @@
 
 <BottomNav position="absolute" navType="application" classes={{ content: "grid-cols-5" }}>
   <BottomNavItem btnName="Home" appBtnPosition="left">
-    <HomeOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <HomeOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
   </BottomNavItem>
   <Tooltip arrow={false}>Home</Tooltip>
   <BottomNavItem btnName="Wallet" appBtnPosition="middle">
-    <WalletOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <WalletOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
   </BottomNavItem>
   <Tooltip arrow={false}>Wallet</Tooltip>
   <div class="flex items-center justify-center">
@@ -26,11 +26,11 @@
     <Tooltip arrow={false}>Create new item</Tooltip>
   </div>
   <BottomNavItem btnName="Settings" appBtnPosition="middle">
-    <AdjustmentsVerticalOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <AdjustmentsVerticalOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
   </BottomNavItem>
   <Tooltip arrow={false}>Settings</Tooltip>
   <BottomNavItem btnName="Profile" appBtnPosition="right">
-    <UserCircleOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <UserCircleOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
   </BottomNavItem>
   <Tooltip arrow={false}>Profile</Tooltip>
 </BottomNav>

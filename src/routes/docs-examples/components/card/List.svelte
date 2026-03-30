@@ -24,8 +24,8 @@
 
 <Card class="p-4 sm:p-8 md:p-10" size="md">
   <div class="mb-4 flex items-center justify-between">
-    <h5 class="text-xl leading-none font-bold text-gray-900 dark:text-white">Latest Customers</h5>
-    <a href="/" class="text-primary-600 dark:text-primary-500 text-sm font-medium hover:underline">View all</a>
+    <h5 class="text-heading text-xl leading-none font-bold">Latest Customers</h5>
+    <a href="/" class="text-fg-brand text-sm font-medium hover:underline">View all</a>
   </div>
   <Listgroup items={list} class="border-0 dark:bg-transparent!">
     {#snippet children(item)}
@@ -33,14 +33,14 @@
         {#if typeof item === "object" && item.img}
           <Avatar src={item.img.src} alt={item.img.alt} class="shrink-0" />
           <div class="min-w-0 flex-1">
-            <p class="truncate text-sm font-medium text-gray-900 dark:text-white">
+            <p class="text-heading truncate text-sm font-medium">
               {item.name}
             </p>
-            <p class="truncate text-sm text-gray-500 dark:text-gray-400">
+            <p class="text-body truncate text-sm">
               {item.email}
             </p>
           </div>
-          <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+          <div class="text-heading inline-flex items-center text-base font-semibold">
             {item.value}
           </div>
         {/if}

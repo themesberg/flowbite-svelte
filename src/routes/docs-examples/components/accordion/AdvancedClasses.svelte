@@ -7,7 +7,7 @@
     button: "font-semibold",
     content: "rounded-b-lg p-6 bg-purple-50/50 dark:bg-purple-950/30",
     active: "bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/40",
-    inactive: "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+    inactive: "text-body hover:bg-neutral-secondary-medium"
   }}
 >
   <AccordionItem open>

@@ -28,7 +28,7 @@
 </script>
 
 {#if hasSeen}
-  <div class="mb-3 flex items-center gap-3 text-sm text-gray-600">
+  <div class="text-body mb-3 flex items-center gap-3 text-sm">
     <span>
       Badge is hidden because you dismissed it earlier. Remove <code>{STORAGE_KEY}</code>
       from localStorage or click Reset:

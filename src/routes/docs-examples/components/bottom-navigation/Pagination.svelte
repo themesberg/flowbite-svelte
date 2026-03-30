@@ -8,18 +8,18 @@
 
 <BottomNav position="absolute" navType="pagination" classes={{ content: "grid-cols-6" }}>
   <BottomNavItem btnName="New document">
-    <FileCirclePlusOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <FileCirclePlusOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
   </BottomNavItem>
   <Tooltip arrow={false}>New document</Tooltip>
   <BottomNavItem btnName="Bookmark">
-    <BookmarkOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <BookmarkOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
   </BottomNavItem>
   <Tooltip arrow={false}>Bookmark</Tooltip>
   <div class="col-span-2 flex items-center justify-center">
-    <div class="rounded-base mx-2 flex w-full max-w-[128px] items-center justify-between bg-gray-100 text-gray-600 dark:bg-gray-600 dark:text-gray-400">
+    <div class="rounded-base bg-neutral-tertiary text-body mx-2 flex w-full max-w-[128px] items-center justify-between">
       <button
         type="button"
-        class="rounded-s-base inline-flex h-8 items-center justify-center bg-gray-100 px-1 hover:bg-gray-200 focus:ring-2 focus:ring-gray-200 focus:outline-hidden dark:bg-gray-600 dark:hover:bg-gray-800 dark:focus:ring-gray-800"
+        class="rounded-s-base bg-neutral-tertiary hover:bg-neutral-tertiary-medium focus:ring-default inline-flex h-8 items-center justify-center px-1 focus:ring-2 focus:outline-hidden"
       >
         <AngleLeftOutline class="ms-1 h-2 w-2" />
         <span class="sr-only">Previous page</span>
@@ -27,7 +27,7 @@
       <span class="mx-1 shrink-0 text-sm font-medium">1 of 345</span>
       <button
         type="button"
-        class="rounded-e-base inline-flex h-8 items-center justify-center bg-gray-100 px-1 hover:bg-gray-200 focus:ring-2 focus:ring-gray-200 focus:outline-hidden dark:bg-gray-600 dark:hover:bg-gray-800 dark:focus:ring-gray-800"
+        class="rounded-e-base bg-neutral-tertiary hover:bg-neutral-tertiary-medium focus:ring-default inline-flex h-8 items-center justify-center px-1 focus:ring-2 focus:outline-hidden"
       >
         <AngleRightOutline class="me-1 h-2 w-2" />
         <span class="sr-only">Next page</span>
@@ -35,11 +35,11 @@
     </div>
   </div>
   <BottomNavItem btnName="Settings">
-    <AdjustmentsVerticalOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <AdjustmentsVerticalOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
   </BottomNavItem>
   <Tooltip arrow={false}>Settings</Tooltip>
   <BottomNavItem btnName="Profile">
-    <UserCircleOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <UserCircleOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
   </BottomNavItem>
   <Tooltip arrow={false}>Profile</Tooltip>
 </BottomNav>

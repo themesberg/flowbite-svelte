@@ -76,7 +76,7 @@ export const alert = tv({
     {
       listContent: true,
       color: "gray",
-      class: "bg-dark-soft border border-dark-subtle"
+      class: "bg-neutral-secondary-medium border border-default-medium"
     },
     {
       border: true,
@@ -101,7 +101,7 @@ export const alert = tv({
     {
       border: true,
       color: "gray",
-      class: "border-dark-subtle"
+      class: "border-default-medium"
     },
     {
       borderAccent: true,
@@ -122,6 +122,11 @@ export const alert = tv({
       borderAccent: true,
       color: "warning",
       class: "border-warning-subtle"
+    },
+    {
+      borderAccent: true,
+      color: "gray",
+      class: "border-default-medium"
     },
     {
       border: true,
@@ -133,11 +138,7 @@ export const alert = tv({
       color: "secondary",
       class: "border-secondary-500 dark:border-secondary-200 divide-secondary-500 dark:divide-secondary-200"
     },
-    {
-      border: true,
-      color: "gray",
-      class: "border-gray-300 dark:border-gray-800 divide-gray-300 dark:divide-gray-800"
-    },
+
     {
       border: true,
       color: "red",

@@ -8,6 +8,6 @@
   3 days ago
 </Badge>
 <Badge border>
-  <ClockSolid class="text-primary-800 dark:text-primary-400 me-1.5 h-2.5 w-2.5" />
+  <ClockSolid class="text-fg-brand me-1.5 h-2.5 w-2.5" />
   2 minutes ago
 </Badge>

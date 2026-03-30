@@ -25,7 +25,7 @@
       <Avatar src="/images/people/profile-picture-5.jpg" size="xs" />Leslie Livingston
     </DropdownItem>
   </DropdownGroup>
-  <a href="/" class="text-fg-brand -mb-1 flex items-center bg-neutral-tertiary px-3 py-2 text-sm font-medium hover:bg-neutral-tertiary-medium hover:underline">
+  <a href="/" class="text-fg-brand bg-neutral-tertiary hover:bg-neutral-tertiary-medium -mb-1 flex items-center px-3 py-2 text-sm font-medium hover:underline">
     <ChevronDownOutline class="ms-2 h-6 w-6" />Add new user
   </a>
 </Dropdown>

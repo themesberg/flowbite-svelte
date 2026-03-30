@@ -2,7 +2,7 @@
   import { ButtonGroup, Button, GradientButton } from "flowbite-svelte";
 </script>
 
-<div class="text-gray-900 dark:text-gray-100">
+<div class="text-heading">
   <div class="py-4">Pills</div>
   <ButtonGroup class="space-x-px">
     <Button pill>Profile</Button>

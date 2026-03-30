@@ -4,18 +4,18 @@ import { tv, type VariantProps } from "tailwind-variants";
 export type AvatarVariants = VariantProps<typeof avatar>;
 
 export const avatar = tv({
-  base: "relative flex items-center justify-center bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300",
+  base: "relative flex items-center justify-center bg-neutral-tertiary text-body",
   variants: {
     cornerStyle: {
       rounded: "rounded-sm",
       circular: "rounded-full"
     },
     border: {
-      true: "p-1 ring-2 ring-gray-300 dark:ring-gray-500",
+      true: "p-1 ring-2 ring-default",
       false: ""
     },
     stacked: {
-      true: "border-2 not-first:-ms-4 border-white dark:border-gray-800",
+      true: "border-2 not-first:-ms-4 border-buffer",
       false: ""
     },
     size: {

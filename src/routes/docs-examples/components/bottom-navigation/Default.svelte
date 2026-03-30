@@ -8,15 +8,15 @@
 
 <BottomNav position="fixed" classes={{ content: "grid-cols-4" }}>
   <BottomNavItem btnName="Home">
-    <HomeOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <HomeOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
   </BottomNavItem>
   <BottomNavItem btnName="Wallet">
-    <WalletOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <WalletOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
   </BottomNavItem>
   <BottomNavItem btnName="Settings">
-    <AdjustmentsVerticalOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <AdjustmentsVerticalOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
   </BottomNavItem>
   <BottomNavItem btnName="Profile">
-    <UserCircleOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <UserCircleOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
   </BottomNavItem>
 </BottomNav>

@@ -20,7 +20,7 @@
 <Navbar>
   <NavBrand href="/">
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
-    <span class="self-center text-xl font-semibold whitespace-nowrap text-heading">Flowbite</span>
+    <span class="text-heading self-center text-xl font-semibold whitespace-nowrap">Flowbite</span>
   </NavBrand>
   <NavHamburger />
   <NavUl>

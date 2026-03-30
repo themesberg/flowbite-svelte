@@ -16,9 +16,9 @@
 
 <div class="w-full max-w-lg space-y-1">
   <Label>Copy source code block:</Label>
-  <div class="rounded-base relative h-64 bg-gray-50 p-4 dark:bg-gray-700">
+  <div class="rounded-base bg-neutral-secondary relative h-64 p-4">
     <div class="max-h-full overflow-scroll">
-      <pre><code id="code-block" class="text-sm whitespace-pre text-gray-500 dark:text-gray-400">  
+      <pre><code id="code-block" class="text-body text-sm whitespace-pre">  
     &#x3C;div class="space-y-2"&#x3E;
         &#x3C;Label for="url-shortener"&#x3E;Shorten URL:&#x3C;/Label&#x3E;
         &#x3C;ButtonGroup&#x3E;

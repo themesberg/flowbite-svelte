@@ -12,7 +12,7 @@
     <CarouselIndicators />
   </Carousel>
 
-  <div class="my-2 h-10 rounded-sm bg-gray-300 p-2 text-center dark:bg-gray-700 dark:text-white">
+  <div class="bg-neutral-quaternary text-heading my-2 h-10 rounded-sm p-2 text-center">
     {image?.alt}
   </div>
 </div>

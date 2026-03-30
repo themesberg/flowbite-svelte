@@ -7,12 +7,12 @@
 <Popover class="w-80 text-sm">
   <div class="flex">
     <div class="me-3 shrink-0">
-      <a href="/" class="block rounded bg-neutral-tertiary p-2">
+      <a href="/" class="bg-neutral-tertiary block rounded p-2">
         <img class="h-8 w-8 rounded-full" src="/images/flowbite-svelte-icon-logo.svg" alt="Flowbite logo" />
       </a>
     </div>
     <div>
-      <p class="mb-1 text-base leading-none font-semibold text-heading">
+      <p class="text-heading mb-1 text-base leading-none font-semibold">
         <a href="/" class="hover:underline">Flowbite</a>
       </p>
       <p class="mb-3 text-sm font-normal">Tech company</p>

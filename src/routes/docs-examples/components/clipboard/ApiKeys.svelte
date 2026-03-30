@@ -14,11 +14,11 @@
 
 <Card size="md" class="p-4 sm:p-6 md:p-8">
   <form class="flex flex-col space-y-6" action="/">
-    <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Create a role with read only in-line policies</h2>
-    <p class="mb-6 text-gray-500 dark:text-gray-400">
-      To give Flowbite read access, please create an IAM Role following <a href="#top" class="font-medium text-blue-700 underline hover:no-underline dark:text-blue-500">trust relationship</a>
+    <h2 class="text-heading mb-2 text-lg font-semibold">Create a role with read only in-line policies</h2>
+    <p class="text-body mb-6">
+      To give Flowbite read access, please create an IAM Role following <a href="#top" class="text-fg-brand font-medium underline hover:no-underline">trust relationship</a>
       and
-      <a href="#top" class="font-medium text-blue-700 underline hover:no-underline dark:text-blue-500">inline policy</a>
+      <a href="#top" class="text-fg-brand font-medium underline hover:no-underline">inline policy</a>
       .
     </p>
 

@@ -6,7 +6,7 @@
 <Accordion
   classes={{
     active: "bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white",
-    inactive: "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+    inactive: "text-body hover:bg-neutral-secondary-medium"
   }}
 >
   <AccordionItem>

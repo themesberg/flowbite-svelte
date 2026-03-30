@@ -30,7 +30,7 @@
 <P>Selected date: {selectedDate ? formatDate(selectedDate) : "None selected"}</P>
 
 <!-- Show some context -->
-<P class="mt-4 text-sm text-body">
+<P class="text-body mt-4 text-sm">
   Today: {formatDate(today)}
   <br />
   Range: 10 days before today to 10 days after today

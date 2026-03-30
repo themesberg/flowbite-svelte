@@ -14,15 +14,15 @@
 </script>
 
 <Card class="relative p-5">
-  <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Contact details</h2>
-  <address class="relative grid grid-cols-2 rounded-lg border border-gray-200 bg-gray-50 p-4 not-italic dark:border-gray-600 dark:bg-gray-700">
-    <div class="hidden space-y-2 leading-loose text-gray-500 sm:block dark:text-gray-400">
+  <h2 class="text-heading mb-2 text-lg font-semibold">Contact details</h2>
+  <address class="rounded-base border-default bg-neutral-secondary relative grid grid-cols-2 border p-4 not-italic">
+    <div class="text-body hidden space-y-2 leading-loose sm:block">
       Name <br />
       Email
       <br />
       Phone Number
     </div>
-    <div id="contact-details" class="space-y-2 leading-loose font-medium text-gray-900 dark:text-white">
+    <div id="contact-details" class="text-heading space-y-2 leading-loose font-medium">
       Bonnie Green <br />
       name@flowbite.com
       <br />

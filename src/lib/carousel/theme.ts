@@ -36,7 +36,7 @@ export const carousel = tv({
 export const carouselIndicators = tv({
   slots: {
     base: "absolute start-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:translate-x-1/2 rtl:space-x-reverse",
-    indicator: "bg-gray-100 hover:bg-gray-300",
+    indicator: "bg-neutral-tertiary hover:bg-neutral-tertiary-medium",
     active: "",
     inactive: ""
   },
@@ -85,7 +85,7 @@ export const controlButton = tv({
  */
 export const thumbnails = tv({
   slots: {
-    base: "flex flex-row justify-center bg-gray-100 w-full",
+    base: "flex flex-row justify-center bg-neutral-tertiary w-full",
     img: ""
   }
 });

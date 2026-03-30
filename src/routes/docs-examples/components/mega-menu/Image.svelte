@@ -20,7 +20,7 @@
 <Navbar>
   <NavBrand href={resolve("/")}>
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
-    <span class="self-center text-xl font-semibold whitespace-nowrap text-heading">Flowbite</span>
+    <span class="text-heading self-center text-xl font-semibold whitespace-nowrap">Flowbite</span>
   </NavBrand>
   <NavHamburger />
   <NavUl>
@@ -37,7 +37,7 @@
       {#snippet addon()}
         <a
           href={resolve("/")}
-          class="mt-4 block rounded-base bg-dark bg-cover bg-local bg-center bg-no-repeat p-4 text-left bg-blend-multiply hover:bg-blend-soft-light"
+          class="rounded-base bg-dark mt-4 block bg-cover bg-local bg-center bg-no-repeat p-4 text-left bg-blend-multiply hover:bg-blend-soft-light"
           style="background-image: url(/images/dashboard-overview.png)"
         >
           <p class="mb-5 max-w-xl p-0 text-sm leading-tight font-extrabold tracking-tight text-white">Preview the new Flowbite dashboard navigation.</p>

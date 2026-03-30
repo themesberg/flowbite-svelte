@@ -8,10 +8,8 @@
 
 <Banner class="absolute">
   <div class="mb-4 md:me-4 md:mb-0">
-    <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Integration is the key</h2>
-    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-      You can integrate Flowbite with many tools to make your work even more efficient and lightning fast based on Tailwind CSS.
-    </p>
+    <h2 class="text-heading mb-1 text-base font-semibold">Integration is the key</h2>
+    <p class="text-body flex items-center text-sm font-normal">You can integrate Flowbite with many tools to make your work even more efficient and lightning fast based on Tailwind CSS.</p>
   </div>
   <div class="flex shrink-0 items-center gap-3">
     <Button href="/" size="sm" color="alternative">

@@ -13,12 +13,12 @@
 
 <div class="flex flex-col items-center justify-center gap-3">
   <div class="flex flex-col items-center justify-center gap-2">
-    <div class="text-sm text-body">
-      Showing <span class="font-semibold text-heading">{helper.start}</span>
+    <div class="text-body text-sm">
+      Showing <span class="text-heading font-semibold">{helper.start}</span>
       to
-      <span class="font-semibold text-heading">{helper.end}</span>
+      <span class="text-heading font-semibold">{helper.end}</span>
       of
-      <span class="font-semibold text-heading">{helper.total}</span>
+      <span class="text-heading font-semibold">{helper.total}</span>
       Entries
     </div>
 

@@ -17,12 +17,12 @@
   </div>
   <DropdownGroup class="h-24 overflow-y-auto">
     {#each filteredItems as person (person.name)}
-      <li class="rounded-sm p-2 hover:bg-neutral-tertiary-medium">
+      <li class="hover:bg-neutral-tertiary-medium rounded-sm p-2">
         <Checkbox bind:checked={person.checked}>{person.name}</Checkbox>
       </li>
     {/each}
   </DropdownGroup>
-  <a href="/" class="-mb-1 flex items-center bg-neutral-tertiary p-3 text-sm font-medium text-fg-danger hover:bg-neutral-tertiary-medium hover:underline">
+  <a href="/" class="bg-neutral-tertiary text-fg-danger hover:bg-neutral-tertiary-medium -mb-1 flex items-center p-3 text-sm font-medium hover:underline">
     <UserRemoveSolid class="text-fg-danger me-2 h-4 w-4" />Delete user
   </a>
 </Dropdown>

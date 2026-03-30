@@ -16,23 +16,23 @@
       </BottomNavHeader>
     {/snippet}
     <BottomNavItem btnName="Home" id="group-home">
-      <HomeOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+      <HomeOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
     </BottomNavItem>
     <Tooltip arrow={false}>Home</Tooltip>
     <BottomNavItem btnName="Bookmark" id="group-bookmark">
-      <BookmarkOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+      <BookmarkOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
     </BottomNavItem>
     <Tooltip arrow={false}>Bookmark</Tooltip>
     <BottomNavItem btnName="New post" id="group-new">
-      <PlusOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+      <PlusOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
     </BottomNavItem>
     <Tooltip arrow={false}>New Post</Tooltip>
     <BottomNavItem btnName="Search" id="group-search">
-      <SearchOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+      <SearchOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
     </BottomNavItem>
     <Tooltip arrow={false}>Search</Tooltip>
     <BottomNavItem btnName="Settings" id="group-settings">
-      <AdjustmentsVerticalOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+      <AdjustmentsVerticalOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
     </BottomNavItem>
     <Tooltip arrow={false}>Settings</Tooltip>
   </BottomNav>
