@@ -6,19 +6,19 @@
 
 <Tabs bind:selected={selectedKey}>
   <TabItem key="profile" title="Profile">
-    <p class="text-sm text-gray-500 dark:text-gray-400">
+    <p class="text-body text-sm">
       <b>Profile:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem key="settings" title="Settings">
-    <p class="text-sm text-gray-500 dark:text-gray-400">
+    <p class="text-body text-sm">
       <b>Settings:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem key="users" title="Users">
-    <p class="text-sm text-gray-500 dark:text-gray-400">
+    <p class="text-body text-sm">
       <b>Users:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>

@@ -19,7 +19,7 @@
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
+        <a href="/tables" class="text-fg-brand font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -28,7 +28,7 @@
       <TableBodyCell>Laptop PC</TableBodyCell>
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
+        <a href="/tables" class="text-fg-brand font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -37,7 +37,7 @@
       <TableBodyCell>Accessories</TableBodyCell>
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
+        <a href="/tables" class="text-fg-brand font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
   </TableBody>

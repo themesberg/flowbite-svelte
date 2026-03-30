@@ -34,14 +34,14 @@
     {#if ratings}
       {#each ratings as { label, rating } (label)}
         <dl>
-          <dt class="text-sm font-medium text-body">
+          <dt class="text-body text-sm font-medium">
             {label}
           </dt>
           <dd class="mb-3 flex items-center">
-            <div class="me-2 h-2.5 w-full rounded-base bg-neutral-quaternary">
+            <div class="rounded-base bg-neutral-quaternary me-2 h-2.5 w-full">
               <div data-part="bar" class={bar({ class: clsx(theme?.bar, styling?.bar) })} style="width: {rating * 10}%"></div>
             </div>
-            <span class="text-sm font-medium text-body">{rating}</span>
+            <span class="text-body text-sm font-medium">{rating}</span>
           </dd>
         </dl>
       {/each}
@@ -51,14 +51,14 @@
     {#if ratings2}
       {#each ratings2 as { label, rating } (label)}
         <dl>
-          <dt class="text-sm font-medium text-body">
+          <dt class="text-body text-sm font-medium">
             {label}
           </dt>
           <dd class="mb-3 flex items-center">
-            <div class="me-2 h-2.5 w-full rounded-base bg-neutral-quaternary">
+            <div class="rounded-base bg-neutral-quaternary me-2 h-2.5 w-full">
               <div data-part="bar" class={bar({ class: clsx(theme?.bar, styling?.bar) })} style="width: {rating * 10}%"></div>
             </div>
-            <span class="text-sm font-medium text-body">{rating}</span>
+            <span class="text-body text-sm font-medium">{rating}</span>
           </dd>
         </dl>
       {/each}

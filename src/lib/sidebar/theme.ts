@@ -12,8 +12,7 @@ export type SidebarItemVariants = VariantProps<typeof sidebarItem> & Classes<typ
 export const sidebar = tv({
   slots: {
     base: "top-0 left-0 z-50 w-64 transition-transform",
-    active:
-      "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal text-heading bg-neutral-tertiary rounded-base hover:bg-neutral-tertiary",
+    active: "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal text-heading bg-neutral-tertiary rounded-base hover:bg-neutral-tertiary",
     nonactive: "flex items-center group-has-[ul]:ms-6 px-2 py-1.5 m-1 text-base font-normal text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand",
     content: "overflow-y-auto px-3 py-4 bg-neutral-primary-soft border-e border-default",
     backdrop: "fixed top-0 start-0 z-40 w-full h-full"

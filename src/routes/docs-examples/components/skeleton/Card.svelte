@@ -6,14 +6,12 @@
   let selected = $state<Size>("md");
 </script>
 
-<div class="flex flex-wrap gap-2 mb-6">
+<div class="mb-6 flex flex-wrap gap-2">
   {#each sizes as size}
     <button
       onclick={() => (selected = size)}
-      class="px-3 py-1 text-sm rounded-base border font-medium transition-colors
-        {selected === size
-          ? 'bg-brand text-white border-transparent'
-          : 'bg-neutral-primary-soft text-body border-default hover:bg-neutral-secondary-medium'}"
+      class="rounded-base border px-3 py-1 text-sm font-medium transition-colors
+        {selected === size ? 'bg-brand border-transparent text-white' : 'bg-neutral-primary-soft text-body border-default hover:bg-neutral-secondary-medium'}"
     >
       {size}
     </button>

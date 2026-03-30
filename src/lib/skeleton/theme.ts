@@ -89,7 +89,7 @@ export const listPlaceholder = tv({
     itemContent: "",
     primaryLine: "mb-2.5 h-2.5 w-24 rounded-full bg-neutral-quaternary",
     secondaryLine: "h-2 w-32 rounded-full bg-neutral-quaternary",
-    valueLine: "h-2.5 w-12 rounded-full bg-default"
+    valueLine: "h-2.5 w-12 rounded-full bg-neutral-quaternary"
   },
   variants: {
     size: {
@@ -148,7 +148,7 @@ export const skeleton = tv({
 export const testimonialPlaceholder = tv({
   slots: {
     base: "animate-pulse",
-    primaryLine: "rounded-full bg-default",
+    primaryLine: "rounded-full bg-neutral-quaternary",
     secondaryLine: "rounded-full bg-neutral-quaternary",
     avatarIcon: "me-2 h-10 w-10 text-fg-disabled",
     authorInfo: "mt-4 flex items-center justify-center"

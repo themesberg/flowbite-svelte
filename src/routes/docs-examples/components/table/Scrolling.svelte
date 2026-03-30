@@ -29,8 +29,8 @@
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>3.0 lb.</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
-        <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">Remove</a>
+        <a href="/tables" class="text-fg-brand font-medium hover:underline">Edit</a>
+        <a href="/tables" class="text-fg-danger font-medium hover:underline">Remove</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -45,8 +45,8 @@
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>1.0 lb.</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
-        <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">Remove</a>
+        <a href="/tables" class="text-fg-brand font-medium hover:underline">Edit</a>
+        <a href="/tables" class="text-fg-danger font-medium hover:underline">Remove</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -61,8 +61,8 @@
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>0.2 lb.</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
-        <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">Remove</a>
+        <a href="/tables" class="text-fg-brand font-medium hover:underline">Edit</a>
+        <a href="/tables" class="text-fg-danger font-medium hover:underline">Remove</a>
       </TableBodyCell>
     </TableBodyRow>
   </TableBody>

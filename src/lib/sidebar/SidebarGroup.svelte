@@ -5,7 +5,7 @@
   let { children, class: className = "space-y-2", border = false, ...restProps }: SidebarGroupProps = $props();
 </script>
 
-<ul {...restProps} class={border ? clsx("mt-4 border-t border-default pt-4", className) : clsx(className)}>
+<ul {...restProps} class={border ? clsx("border-default mt-4 border-t pt-4", className) : clsx(className)}>
   {@render children()}
 </ul>
 

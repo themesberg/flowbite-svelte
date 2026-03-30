@@ -3,11 +3,9 @@
 </script>
 
 <Table>
-  <caption class="bg-white p-5 text-left text-lg font-semibold text-gray-900 dark:bg-gray-800 dark:text-white">
+  <caption class="bg-neutral-primary-soft text-heading p-5 text-left text-lg font-semibold">
     Our products
-    <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
-      Browse a list of Flowbite products designed to help you work and play, stay organized, get answers, keep in touch, grow your business, and more.
-    </p>
+    <p class="text-body mt-1 text-sm font-normal">Browse a list of Flowbite products designed to help you work and play, stay organized, get answers, keep in touch, grow your business, and more.</p>
   </caption>
   <TableHead>
     <TableHeadCell>Product name</TableHeadCell>
@@ -25,7 +23,7 @@
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
+        <a href="/tables" class="text-fg-brand font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -34,7 +32,7 @@
       <TableBodyCell>Laptop PC</TableBodyCell>
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
+        <a href="/tables" class="text-fg-brand font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
     <TableBodyRow>
@@ -43,7 +41,7 @@
       <TableBodyCell>Accessories</TableBodyCell>
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Edit</a>
+        <a href="/tables" class="text-fg-brand font-medium hover:underline">Edit</a>
       </TableBodyCell>
     </TableBodyRow>
   </TableBody>

@@ -16,7 +16,7 @@ export const table = tv({
   variants: {
     color: {
       // default, primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
-      default: { table: "text-gray-500 dark:text-gray-400" },
+      default: { table: "text-body" },
       primary: { table: "text-primary-100 dark:text-primary-100" },
       secondary: { table: "text-secondary-100 dark:text-secondary-100" },
       gray: { table: "text-gray-100 dark:text-gray-100" },
@@ -39,7 +39,7 @@ export const table = tv({
       rose: { table: "text-rose-100 dark:text-rose-100" }
     },
     shadow: {
-      true: { wrapper: "shadow-md sm:rounded-lg" }
+      true: { wrapper: "shadow-xs rounded-base" }
     }
   }
 });
@@ -48,7 +48,7 @@ export const tableBodyRow = tv({
   base: "",
   variants: {
     color: {
-      default: "bg-white dark:bg-gray-800 dark:border-gray-700",
+      default: "bg-neutral-primary border-default",
       primary: "bg-white bg-primary-500 border-primary-400",
       secondary: "bg-white bg-secondary-500 border-secondary-400",
       gray: "bg-gray-500 border-gray-400",
@@ -84,7 +84,7 @@ export const tableBodyRow = tv({
     {
       hoverable: true,
       color: "default",
-      class: "hover:bg-gray-50 dark:hover:bg-gray-600"
+      class: "hover:bg-neutral-secondary-medium"
     },
     {
       hoverable: true,
@@ -189,7 +189,7 @@ export const tableBodyRow = tv({
     {
       striped: true,
       color: "default",
-      class: "odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700"
+      class: "odd:bg-neutral-primary even:bg-neutral-secondary-soft"
     },
     {
       striped: true,
@@ -301,7 +301,7 @@ export const tableHead = tv({
     color: {
       // default, primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
 
-      default: "text-gray-700 dark:text-gray-400 bg-gray-50 dark:bg-gray-700",
+      default: "text-body bg-neutral-secondary-soft border-b border-default",
       primary: "text-white dark:text-white bg-primary-700 dark:bg-primary-700",
       secondary: "text-white dark:text-white bg-secondary-700 dark:bg-secondary-700",
       gray: "text-white dark:text-white bg-gray-700 dark:bg-gray-700",
@@ -391,20 +391,19 @@ export const tableHeadCell = tv({
 
 export const tableSearch = tv({
   slots: {
-    root: "relative overflow-x-auto shadow-md sm:rounded-lg",
+    root: "relative overflow-x-auto shadow-xs rounded-base",
     inner: "p-4",
     search: "relative mt-1",
     iconContainer: "absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none",
     icon: "w-5 h-5",
-    input:
-      "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 ps-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
+    input: "bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-80 p-2.5 ps-10 placeholder:text-body",
     table: "w-full text-left text-sm"
   },
   variants: {
     color: {
       default: {
-        icon: "text-gray-500 dark:text-gray-400",
-        table: "text-gray-500 dark:text-gray-400"
+        icon: "text-body",
+        table: "text-body"
       },
       blue: {
         icon: "text-blue-500 dark:text-blue-400",
@@ -437,13 +436,13 @@ export const tableSearch = tv({
     },
     striped: {
       true: {
-        table: "[&_tbody_tr:nth-child(odd)]:bg-white [&_tbody_tr:nth-child(odd)]:dark:bg-gray-900 [&_tbody_tr:nth-child(even)]:bg-gray-50 [&_tbody_tr:nth-child(even)]:dark:bg-gray-800"
+        table: "[&_tbody_tr:nth-child(odd)]:bg-neutral-primary [&_tbody_tr:nth-child(even)]:bg-neutral-secondary-soft"
       },
       false: {}
     },
     hoverable: {
       true: {
-        table: "[&_tbody_tr]:hover:bg-gray-50 [&_tbody_tr]:dark:hover:bg-gray-600"
+        table: "[&_tbody_tr]:hover:bg-neutral-secondary-medium"
       },
       false: {}
     }

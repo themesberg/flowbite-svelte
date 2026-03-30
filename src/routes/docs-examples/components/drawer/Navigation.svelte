@@ -11,7 +11,7 @@
   <CardPlaceholder size="2xl" class="mt-6" />
 </div>
 <Drawer bind:open={open2} class="bg-neutral-tertiary w-64 p-0">
-  <h5 class="text-body px-6 py-4 text-base font-semibold uppercase">Menu</h5>
+  <h5 class="text-heading px-6 py-4 text-base font-semibold uppercase">Menu</h5>
   <Sidebar disableBreakpoints={true} class="top-16">
     <SidebarWrapper class="overflow-y-auto rounded-sm px-3 py-0">
       <SidebarGroup>

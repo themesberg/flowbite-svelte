@@ -111,7 +111,7 @@
     <TimelineItem title={appointment.title} date={appointment.date} color={itemColor} isLast={isLastItem} dateFormat="full-date" classes={{ title: "ml-4" }} datePrefix="Released on">
       {#snippet orientationSlot()}
         <span
-          class="absolute -left-4 flex h-6 w-6 items-center justify-center rounded-full ring-8 ring-white dark:ring-gray-900 {appointment.status === 'completed'
+          class="ring-buffer absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full ring-8 {appointment.status === 'completed'
             ? 'bg-green-200 dark:bg-green-900'
             : appointment.status === 'in-progress'
               ? 'bg-orange-200 dark:bg-orange-900'
@@ -131,7 +131,7 @@
         </span>
       {/snippet}
       <div class="pl-4">
-        <p class="mb-2 text-base font-normal text-gray-500 dark:text-gray-400">
+        <p class="text-body mb-2 text-base font-normal">
           {appointment.description}
         </p>
         <span
@@ -153,15 +153,15 @@
 <P class="my-4 text-xl font-semibold">Example 2</P>
 <Timeline order="vertical" class="mt-8">
   <TimelineItem title="Past Event" date={pastDate} color="green" dateFormat="full-date" datePrefix="Released on">
-    <p class="pl-4 text-sm text-gray-500 dark:text-gray-400">This event has already happened</p>
+    <p class="text-body pl-4 text-sm">This event has already happened</p>
   </TimelineItem>
 
   <TimelineItem title="Current Event" date={currentDate} color="orange" dateFormat="full-date" datePrefix="Released on">
-    <p class="pl-4 text-sm text-gray-500 dark:text-gray-400">This event is happening now</p>
+    <p class="text-body pl-4 text-sm">This event is happening now</p>
   </TimelineItem>
 
   <TimelineItem title="Future Event" date={futureDate} color="blue" isLast={true} dateFormat="full-date" datePrefix="Released on">
-    <p class="pl-4 text-sm text-gray-500 dark:text-gray-400">This event will happen in the future</p>
+    <p class="text-body pl-4 text-sm">This event will happen in the future</p>
   </TimelineItem>
 </Timeline>
 
@@ -176,7 +176,7 @@
       {#snippet orientationSlot()}
         <div class="flex items-center">
           <div
-            class="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full ring-0 ring-white sm:ring-8 dark:ring-gray-900 {release.status === 'completed'
+            class="ring-buffer z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full ring-0 sm:ring-8 {release.status === 'completed'
               ? 'bg-green-200 dark:bg-green-900'
               : release.status === 'in-progress'
                 ? 'bg-orange-200 dark:bg-orange-900'
@@ -195,12 +195,12 @@
             />
           </div>
           {#if !isLastItem}
-            <div class="hidden h-0.5 w-full sm:flex {connectorColor}"></div>
+            <div class="hidden h-px w-full sm:flex {connectorColor}"></div>
           {/if}
         </div>
       {/snippet}
 
-      <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+      <p class="text-body text-base font-normal">
         {release.description}
       </p>
 
@@ -222,14 +222,14 @@
 <P class="my-4 text-xl font-semibold">Example 4</P>
 <Timeline order="horizontal" class="mt-8">
   <TimelineItem title="Past Release" color="green" date={pastDate}>
-    <p class="text-base font-normal text-gray-500 dark:text-gray-400">This version was released successfully</p>
+    <p class="text-body text-base font-normal">This version was released successfully</p>
   </TimelineItem>
 
   <TimelineItem title="Current Development" color="orange" date={currentDate}>
-    <p class="text-base font-normal text-gray-500 dark:text-gray-400">This version is currently in development</p>
+    <p class="text-body text-base font-normal">This version is currently in development</p>
   </TimelineItem>
 
   <TimelineItem title="Future Release" color="blue" isLast={true} date={futureDate}>
-    <p class="text-base font-normal text-gray-500 dark:text-gray-400">This version is planned for the future</p>
+    <p class="text-body text-base font-normal">This version is planned for the future</p>
   </TimelineItem>
 </Timeline>

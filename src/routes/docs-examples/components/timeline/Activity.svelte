@@ -4,7 +4,7 @@
     {
       id: "activity-1",
       title:
-        'Bonnie moved <a href="/" class="font-semibold text-primary-600 dark:text-primary-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
+        'Bonnie moved <a href="/" class="font-semibold text-fg-brand hover:underline">Jese Leos</a> to <span class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium me-2 px-1.5 py-0.5 rounded">Funny Group</span>',
       date: "just now",
       alt: "image alt here",
       src: "/images/people/profile-picture-2.jpg"

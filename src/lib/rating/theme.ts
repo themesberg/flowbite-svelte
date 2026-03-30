@@ -10,7 +10,7 @@ export type ScoreRatingVariants = VariantProps<typeof scoreRating> & Classes<typ
 export const advancedRating = tv({
   slots: {
     base: "flex items-center mt-4",
-    label: "text-sm font-medium text-fg-brand hover:underline w-14",
+    label: "text-sm font-medium text-fg-brand hover:underline w-14 truncate",
     barTrack: "mx-4 w-2/4 h-4 bg-neutral-quaternary rounded-base",
     barFill: "h-4 bg-warning rounded-base",
     percentage: "text-sm font-medium text-body"
@@ -42,7 +42,7 @@ export const scoreRating = tv({
     title: "ms-2 font-medium text-heading",
     separator: "text-sm w-24 font-medium text-body",
     subtitle: "text-sm w-24 font-medium text-body",
-    reviewLink: "ms-auto text-sm font-medium text-fg-brand hover:underline",
+    reviewLink: "ms-auto text-sm font-medium text-fg-brand hover:underline max-w-48 truncate",
     bar: "bg-brand h-2.5 rounded-base"
   }
 });

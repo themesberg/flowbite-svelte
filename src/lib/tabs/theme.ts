@@ -8,31 +8,30 @@ export type TabItemVariants = VariantProps<typeof tabItem> & Classes<typeof tabI
 export const tabs = tv({
   slots: {
     base: "flex space-x-2 rtl:space-x-reverse",
-    content: "p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4",
-    divider: "h-px bg-gray-200 dark:bg-gray-700",
-    active: "p-4 text-primary-600 bg-gray-100 rounded-t-lg dark:bg-gray-800 dark:text-primary-500",
-    inactive: "p-4 text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+    content: "p-4 bg-neutral-secondary-soft rounded-base mt-4",
+    divider: "h-px bg-default",
+    active: "p-4 text-fg-brand bg-neutral-secondary-soft active",
+    inactive: "p-4 hover:text-heading hover:bg-neutral-secondary-soft"
   },
   variants: {
     tabStyle: {
       full: {
-        active:
-          "p-4 w-full rounded-none group-first:rounded-s-lg group-last:rounded-e-lg text-gray-900 bg-gray-100 focus:ring-4 focus:ring-primary-300 focus:outline-hidden dark:bg-gray-700 dark:text-white",
+        active: "p-4 w-full rounded-none group-first:rounded-s-lg group-last:rounded-e-lg text-heading bg-neutral-secondary-medium focus:ring-4 focus:ring-brand-medium focus:outline-hidden",
         inactive:
-          "p-4 w-full rounded-none group-first:rounded-s-lg group-last:rounded-e-lg text-gray-500 dark:text-gray-400 bg-white hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-primary-300 focus:outline-hidden dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+          "p-4 w-full rounded-none group-first:rounded-s-lg group-last:rounded-e-lg text-body bg-neutral-primary-soft hover:text-heading hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-brand-medium focus:outline-hidden"
       },
       pill: {
-        active: "py-3 px-4 text-white bg-primary-600 rounded-lg",
-        inactive: "py-3 px-4 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
+        active: "py-3 px-4 text-white bg-brand rounded-base",
+        inactive: "py-3 px-4 hover:text-heading hover:bg-neutral-secondary-soft rounded-base"
       },
       underline: {
         base: "-mb-px",
-        active: "p-4 text-primary-600 border-b-2 border-primary-600 dark:text-primary-500 dark:border-primary-500 bg-transparent",
-        inactive: "p-4 border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 text-gray-500 dark:text-gray-400 bg-transparent"
+        active: "p-4 text-fg-brand border-b border-brand rounded-t-base active bg-transparent",
+        inactive: "p-4 border-b border-transparent hover:text-fg-brand hover:border-brand rounded-t-base bg-transparent"
       },
       none: {
-        active: "",
-        inactive: ""
+        active: "rounded-t-base",
+        inactive: "rounded-t-base"
       }
     },
     hasDivider: {

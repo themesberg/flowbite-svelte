@@ -7,7 +7,7 @@
     {#snippet titleSlot()}
       <span>Profile</span>
     {/snippet}
-    <p class="text-sm text-gray-500 dark:text-gray-400">
+    <p class="text-body text-sm">
       <b>Profile:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
@@ -16,7 +16,7 @@
     {#snippet titleSlot()}
       <span>Dashboard</span>
     {/snippet}
-    <p class="text-sm text-gray-500 dark:text-gray-400">
+    <p class="text-body text-sm">
       <b>Dashboard:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
@@ -25,7 +25,7 @@
     {#snippet titleSlot()}
       <span>Settings</span>
     {/snippet}
-    <p class="text-sm text-gray-500 dark:text-gray-400">
+    <p class="text-body text-sm">
       <b>Settings:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
@@ -34,7 +34,7 @@
     {#snippet titleSlot()}
       <span>Users</span>
     {/snippet}
-    <p class="text-sm text-gray-500 dark:text-gray-400">
+    <p class="text-body text-sm">
       <b>Users:</b>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
