@@ -138,7 +138,7 @@ export const timelineItem = tv({
       },
       activity: {
         base: "mb-10 ms-6 relative",
-        indicator: "flex absolute -start-3 top-1.5 justify-center items-center w-6 h-6 rounded-full ring-8 ring-buffer",
+        indicator: "flex absolute -start-3 top-1.5 justify-center items-center w-6 h-6 rounded-full ring-8 ring-buffer bg-brand-softer",
         time: "text-sm font-normal leading-none text-body",
         title: "text-lg font-semibold text-heading",
         connector: "absolute top-7 -start-3 w-px h-full"

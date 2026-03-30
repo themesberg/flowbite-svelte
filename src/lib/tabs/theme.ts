@@ -22,7 +22,7 @@ export const tabs = tv({
       },
       pill: {
         active: "py-3 px-4 text-white bg-brand rounded-base",
-        inactive: "py-3 px-4 hover:text-heading hover:bg-neutral-secondary-soft rounded-base"
+        inactive: "py-3 px-4 text-body hover:text-heading hover:bg-neutral-secondary-soft rounded-base"
       },
       underline: {
         base: "-mb-px",
