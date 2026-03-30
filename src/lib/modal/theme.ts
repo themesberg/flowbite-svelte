@@ -8,17 +8,17 @@ export type ModalVariants = VariantProps<typeof modal> & Classes<typeof modal> &
 export const modal = tv({
   extend: dialog,
   slots: {
-    base: "w-full rounded-lg divide-y text-gray-500 dark:text-gray-400 border-gray-300 dark:border-gray-700 divide-gray-300 dark:divide-gray-700 bg-white dark:bg-gray-800 pointer-events-auto",
-    form: "rounded-lg divide-y",
-    header: "flex items-center p-4 md:p-5 justify-between rounded-t-lg shrink-0 text-xl font-semibold text-gray-900 dark:text-white",
-    footer: "flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse rounded-b-lg shrink-0",
+    base: "w-full rounded-base divide-y text-body border-default divide-default bg-neutral-primary-soft pointer-events-auto",
+    form: "rounded-base divide-y",
+    header: "flex items-center p-4 md:p-5 justify-between rounded-t-base shrink-0 text-xl font-semibold text-heading",
+    footer: "flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse rounded-b-base shrink-0",
     body: "p-4 md:p-5 space-y-4 overflow-y-auto overscroll-contain",
     close: ""
   },
   variants: {
     fullscreen: {
       true: {
-        base: "fixed inset-0 w-screen h-screen max-w-none max-h-none m-0 p-0 border-none rounded-none bg-white dark:bg-gray-900"
+        base: "fixed inset-0 w-screen h-screen max-w-none max-h-none m-0 p-0 border-none rounded-none bg-neutral-primary-soft"
       }
     },
     placement: {
