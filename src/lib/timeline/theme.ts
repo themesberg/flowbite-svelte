@@ -113,7 +113,7 @@ export const timelineItem = tv({
     time: "",
     title: "",
     icon: "w-4 h-4",
-    connector: "absolute top-6 left-3 w-px h-full"
+    connector: "absolute top-6 start-3 w-px h-full"
   },
   variants: {
     order: {

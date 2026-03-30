@@ -11,7 +11,7 @@ export const tabs = tv({
     content: "p-4 bg-neutral-secondary-soft rounded-base mt-4",
     divider: "h-px bg-default",
     active: "p-4 text-fg-brand bg-neutral-secondary-soft active",
-    inactive: "p-4 hover:text-heading hover:bg-neutral-secondary-soft"
+    inactive: "p-4 text-body hover:text-heading hover:bg-neutral-secondary-soft"
   },
   variants: {
     tabStyle: {
