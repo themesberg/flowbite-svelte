@@ -161,77 +161,97 @@ export const progressradial = tv({
         background: "stroke-secondary-600",
         foreground: "stroke-secondary-600"
       },
+      brand: {
+        background: "stroke-brand",
+        foreground: "stroke-brand"
+      },
+      dark: {
+        background: "stroke-dark",
+        foreground: "stroke-dark"
+      },
+      success: {
+        background: "stroke-success",
+        foreground: "stroke-success"
+      },
+      danger: {
+        background: "stroke-danger",
+        foreground: "stroke-danger"
+      },
+      warning: {
+        background: "stroke-warning",
+        foreground: "stroke-warning"
+      },
       gray: {
-        background: "stroke-gray-600 dark:stroke-gray-300",
-        foreground: "stroke-gray-600 dark:stroke-gray-300"
+        background: "stroke-body",
+        foreground: "stroke-body"
       },
       red: {
-        background: "stroke-red-600 dark:stroke-red-500",
-        foreground: "stroke-red-600 dark:stroke-red-500"
+        background: "stroke-red-600",
+        foreground: "stroke-red-600"
       },
       orange: {
-        background: "stroke-orange-600 dark:stroke-orange-500",
-        foreground: "stroke-orange-600 dark:stroke-orange-500"
+        background: "stroke-orange-600",
+        foreground: "stroke-orange-600"
       },
       amber: {
-        background: "stroke-amber-600 dark:stroke-amber-500",
-        foreground: "stroke-amber-600 dark:stroke-amber-500"
+        background: "stroke-amber-600",
+        foreground: "stroke-amber-600"
       },
       yellow: {
         background: "stroke-yellow-400",
         foreground: "stroke-yellow-400"
       },
       lime: {
-        background: "stroke-lime-600 dark:stroke-lime-500",
-        foreground: "stroke-lime-600 dark:stroke-lime-500"
+        background: "stroke-lime-600",
+        foreground: "stroke-lime-600"
       },
       green: {
-        background: "stroke-green-600 dark:stroke-green-500",
-        foreground: "stroke-green-600 dark:stroke-green-500"
+        background: "stroke-green-600",
+        foreground: "stroke-green-600"
       },
       emerald: {
-        background: "stroke-emerald-600 dark:stroke-emerald-500",
-        foreground: "stroke-emerald-600 dark:stroke-emerald-500"
+        background: "stroke-emerald-600",
+        foreground: "stroke-emerald-600"
       },
       teal: {
-        background: "stroke-teal-600 dark:stroke-teal-500",
-        foreground: "stroke-teal-600 dark:stroke-teal-500"
+        background: "stroke-teal-600",
+        foreground: "stroke-teal-600"
       },
       cyan: {
-        background: "stroke-cyan-600 dark:stroke-cyan-500",
-        foreground: "stroke-cyan-600 dark:stroke-cyan-500"
+        background: "stroke-cyan-600",
+        foreground: "stroke-cyan-600"
       },
       sky: {
-        background: "stroke-sky-600 dark:stroke-sky-500",
-        foreground: "stroke-sky-600 dark:stroke-sky-500"
+        background: "stroke-sky-600",
+        foreground: "stroke-sky-600"
       },
       blue: {
         background: "stroke-blue-600",
         foreground: "stroke-blue-600"
       },
       indigo: {
-        background: "stroke-indigo-600 dark:stroke-indigo-500",
-        foreground: "stroke-indigo-600 dark:stroke-indigo-500"
+        background: "stroke-indigo-600",
+        foreground: "stroke-indigo-600"
       },
       violet: {
-        background: "stroke-violet-600 dark:stroke-violet-500",
-        foreground: "stroke-violet-600 dark:stroke-violet-500"
+        background: "stroke-violet-600",
+        foreground: "stroke-violet-600"
       },
       purple: {
-        background: "stroke-purple-600 dark:stroke-purple-500",
-        foreground: "stroke-purple-600 dark:stroke-purple-500"
+        background: "stroke-purple-600",
+        foreground: "stroke-purple-600"
       },
       fuchsia: {
-        background: "stroke-fuchsia-600 dark:stroke-fuchsia-500",
-        foreground: "stroke-fuchsia-600 dark:stroke-fuchsia-500"
+        background: "stroke-fuchsia-600",
+        foreground: "stroke-fuchsia-600"
       },
       pink: {
-        background: "stroke-pink-600 dark:stroke-pink-500",
-        foreground: "stroke-pink-600 dark:stroke-pink-500"
+        background: "stroke-pink-600",
+        foreground: "stroke-pink-600"
       },
       rose: {
-        background: "stroke-rose-600 dark:stroke-rose-500",
-        foreground: "stroke-rose-600 dark:stroke-rose-500"
+        background: "stroke-rose-600",
+        foreground: "stroke-rose-600"
       }
     },
     labelInside: {

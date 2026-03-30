@@ -3,8 +3,8 @@
   import { DotsHorizontalOutline, DotsVerticalOutline } from "flowbite-svelte-icons";
 </script>
 
-<DotsHorizontalOutline class="dots-menu dark:text-white" />
-<DotsVerticalOutline class="dots-menu dark:text-white" />
+<DotsHorizontalOutline class="dots-menu text-body" />
+<DotsVerticalOutline class="dots-menu text-body" />
 <Dropdown simple triggeredBy=".dots-menu">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>

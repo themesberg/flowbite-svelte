@@ -7,7 +7,7 @@
   };
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white" /></Button>
 <Dropdown simple>
   <DropdownItem href="/link" onclick={handleClick}>Rendered as link</DropdownItem>
   <DropdownItem onclick={handleClick}>Rendered as button</DropdownItem>

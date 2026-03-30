@@ -37,7 +37,7 @@
       {#snippet addon()}
         <a
           href={resolve("/")}
-          class="mt-4 block rounded-base bg-gray-500 bg-cover bg-local bg-center bg-no-repeat p-4 text-left bg-blend-multiply hover:bg-blend-soft-light"
+          class="mt-4 block rounded-base bg-dark bg-cover bg-local bg-center bg-no-repeat p-4 text-left bg-blend-multiply hover:bg-blend-soft-light"
           style="background-image: url(/images/dashboard-overview.png)"
         >
           <p class="mb-5 max-w-xl p-0 text-sm leading-tight font-extrabold tracking-tight text-white">Preview the new Flowbite dashboard navigation.</p>

@@ -5,7 +5,7 @@
 </script>
 
 <Button>
-  Dropdown radio {group1}<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
+  Dropdown radio {group1}<ChevronDownOutline class="ms-2 h-6 w-6 text-white" />
 </Button>
 <Dropdown simple class="w-44 space-y-3 p-3 text-sm">
   <li>

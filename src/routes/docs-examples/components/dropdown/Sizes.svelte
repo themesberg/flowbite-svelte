@@ -12,8 +12,8 @@
   <DropdownHeader>Sign out</DropdownHeader>
 </Dropdown>
 <Button class="sizes" size="sm">
-  Small dropdown<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
+  Small dropdown<ChevronDownOutline class="ms-2 h-6 w-6 text-white" />
 </Button>
 <Button class="sizes" size="lg">
-  Large dropdown<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
+  Large dropdown<ChevronDownOutline class="ms-2 h-6 w-6 text-white" />
 </Button>

@@ -13,10 +13,10 @@
   }}
 >
   <Button data-placement="left-start">
-    Left start<ChevronUpOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
+    Left start<ChevronUpOutline class="ms-2 h-6 w-6 text-white" />
   </Button>
   <Button data-placement="right-end">
-    Right end<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
+    Right end<ChevronDownOutline class="ms-2 h-6 w-6 text-white" />
   </Button>
 </div>
 

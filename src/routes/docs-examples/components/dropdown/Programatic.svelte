@@ -8,13 +8,13 @@
 <Button onclick={() => (isOpen = false)}>Close Btn</Button>
 
 <Button onclick={() => (isOpen = true)}>
-  Dropdown<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
+  Dropdown<ChevronDownOutline class="ms-2 h-6 w-6 text-white" />
 </Button>
 
 <Dropdown bind:isOpen simple>
   <DropdownItem onclick={() => (isOpen = false)}>Dashboard (close)</DropdownItem>
   <DropdownItem class="flex items-center justify-between">
-    Dropdown<ChevronRightOutline class="text-primary-700 ms-2 h-6 w-6 dark:text-white" />
+    Dropdown<ChevronRightOutline class="text-fg-brand ms-2 h-6 w-6" />
   </DropdownItem>
   <Dropdown simple placement="right-start">
     <DropdownItem onclick={() => (isOpen = false)}>Overview (close)</DropdownItem>

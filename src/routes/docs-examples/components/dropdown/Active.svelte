@@ -6,7 +6,7 @@
   let activeClass = "text-green-500 dark:text-green-300 hover:text-green-700 dark:hover:text-green-500";
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white" /></Button>
 <Dropdown {activeUrl} class={activeClass} simple>
   <DropdownItem href="/">Home</DropdownItem>
   <DropdownItem href="/docs/components/dropdown">Dropdown</DropdownItem>

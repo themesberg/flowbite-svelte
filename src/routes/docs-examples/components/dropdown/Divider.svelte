@@ -3,7 +3,7 @@
   import { ChevronDownOutline } from "flowbite-svelte-icons";
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white" /></Button>
 <Dropdown simple>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownDivider />

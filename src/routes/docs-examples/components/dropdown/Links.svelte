@@ -5,7 +5,7 @@
   let activeUrl = $derived(page.url.pathname);
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Button>Dropdown button<ChevronDownOutline class="ms-2 h-6 w-6 text-white" /></Button>
 <Dropdown {activeUrl} simple>
   <DropdownItem href="/">Home</DropdownItem>
   <DropdownItem href="/docs/components/dropdown">Dropdown</DropdownItem>

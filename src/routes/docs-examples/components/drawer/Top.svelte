@@ -16,11 +16,11 @@
 </div>
 
 <Drawer placement="top" class="w-full" transitionParams={transitionParamsTop} bind:open={open7}>
-  <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400">
+  <h5 id="drawer-label" class="mb-4 inline-flex items-center text-base font-semibold text-body">
     <InfoCircleSolid class="me-2.5 h-5 w-5" />Top drawer
   </h5>
-  <p class="mb-6 max-w-lg text-sm text-gray-500 dark:text-gray-400">
-    Supercharge your hiring by taking advantage of our <A href="/" class="text-primary-600 dark:text-primary-500 underline hover:no-underline">limited-time sale</A> for Flowbite Docs + Job Board. Unlimited
+  <p class="mb-6 max-w-lg text-sm text-body">
+    Supercharge your hiring by taking advantage of our <A href="/" class="text-fg-brand underline hover:no-underline">limited-time sale</A> for Flowbite Docs + Job Board. Unlimited
     access to over 190K top-ranked candidates and the #1 design job board.
   </p>
   <Button color="success" href="/">Learn more</Button>
