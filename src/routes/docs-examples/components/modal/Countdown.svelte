@@ -28,7 +28,7 @@
       <div class="flex w-full items-center justify-between">
         <h2>Ad: Special Offer!</h2>
         {#if adCountdown.isRunning}
-          <span class="text-sm text-gray-500 dark:text-gray-400">
+          <span class="text-sm text-body">
             {countdownText(adCountdown.timeLeft)}
           </span>
         {/if}
@@ -47,7 +47,7 @@
       <div class="flex w-full items-center justify-between">
         <h3>Terms of Service</h3>
         {#if termsCountdown.isRunning}
-          <span class="text-sm text-gray-500 dark:text-gray-400">
+          <span class="text-sm text-body">
             {countdownText(termsCountdown.timeLeft)}
           </span>
         {/if}

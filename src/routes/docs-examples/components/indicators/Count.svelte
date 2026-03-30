@@ -4,7 +4,7 @@
 </script>
 
 <Button size="lg" class="relative">
-  <EnvelopeSolid class="me-2 h-6 w-6 text-white dark:text-white" />
+  <EnvelopeSolid class="me-2 h-6 w-6" />
   <span class="sr-only">Notifications</span>
   Messages
   <Indicator color="danger" border size="xl" placement="top-right">

@@ -16,6 +16,6 @@
   {totalPages}
   onPageChange={handlePageChange}
   classes={{
-    active: "bg-green-100 dark:bg-green-700 text-green-600 dark:text-white"
+    active: "bg-success-soft text-fg-success"
   }}
 />

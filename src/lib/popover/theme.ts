@@ -6,16 +6,16 @@ export type PopoverVariants = VariantProps<typeof popover> & Classes<typeof popo
 
 export const popover = tv({
   slots: {
-    base: "rounded-lg shadow-md bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700",
+    base: "rounded-base shadow-xs bg-neutral-primary-soft text-body border border-default divide-default",
     content: "p-2",
-    title: "py-2 px-3 rounded-t-md border-b ",
+    title: "py-2 px-3 rounded-t-base border-b border-default",
     heading: "font-semibold"
   },
   variants: {
     color: {
       default: {
-        title: "bg-gray-100 border-gray-200 dark:border-gray-600 dark:bg-gray-700",
-        heading: "text-gray-900 dark:text-white"
+        title: "bg-neutral-tertiary",
+        heading: "text-heading"
       },
       primary: {
         title: "bg-primary-700",

@@ -19,17 +19,17 @@
 <Navbar>
   <NavBrand href="/">
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
-    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+    <span class="self-center text-xl font-semibold whitespace-nowrap text-heading">Flowbite</span>
   </NavBrand>
   <NavHamburger />
   <NavUl>
     <NavLi href="/">Home</NavLi>
     <NavLi class="cursor-pointer">
-      Mega menu<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
+      Mega menu<ChevronDownOutline class="text-fg-brand ms-2 inline h-6 w-6" />
     </NavLi>
     <MegaMenu items={menu}>
       {#snippet children({ item })}
-        <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500 flex items-center">
+        <a href={item.href} class="hover:text-fg-brand flex items-center">
           <span class="sr-only">{item.name}</span>
           <svelte:component this={item.icon} class="me-2 h-4 w-4" />{item.name}
         </a>

@@ -2,6 +2,6 @@
   import { Kbd } from "flowbite-svelte";
 </script>
 
-<p class="text-gray-500 dark:text-gray-400">
+<p class="text-body">
   Please press <Kbd>Ctrl</Kbd> + <Kbd>Shift</Kbd> + <Kbd>R</Kbd> to re-render an MDN page.
 </p>

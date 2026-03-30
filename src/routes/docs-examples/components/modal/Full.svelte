@@ -4,7 +4,7 @@
 </script>
 
 <Button onclick={() => (defaultModal = true)}>Default modal</Button>
-<Modal bind:open={defaultModal} fullscreen size="none" class="bg-gray-100">
+<Modal bind:open={defaultModal} fullscreen size="none" class="bg-neutral-tertiary">
   <div class="flex h-screen items-center justify-center">
     <P class="text-3xl">Content</P>
   </div>

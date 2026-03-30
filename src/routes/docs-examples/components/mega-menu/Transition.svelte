@@ -20,33 +20,33 @@
 <Navbar>
   <NavBrand href="/">
     <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
-    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+    <span class="self-center text-xl font-semibold whitespace-nowrap text-heading">Flowbite</span>
   </NavBrand>
   <NavHamburger />
   <NavUl>
     <NavLi href="/">Home</NavLi>
     <NavLi class="cursor-pointer">
-      Slide<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
+      Slide<ChevronDownOutline class="text-fg-brand ms-2 inline h-6 w-6" />
     </NavLi>
     <MegaMenu items={menu} transition={slide} transitionParams={{ duration: 1000 }}>
       {#snippet children({ item })}
-        <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
+        <a href={item.href} class="hover:text-fg-brand">{item.name}</a>
       {/snippet}
     </MegaMenu>
     <NavLi class="cursor-pointer">
-      Blur<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
+      Blur<ChevronDownOutline class="text-fg-brand ms-2 inline h-6 w-6" />
     </NavLi>
     <MegaMenu items={menu} transition={blur} transitionParams={{ duration: 1000 }}>
       {#snippet children({ item })}
-        <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
+        <a href={item.href} class="hover:text-fg-brand">{item.name}</a>
       {/snippet}
     </MegaMenu>
     <NavLi class="cursor-pointer">
-      Scale<ChevronDownOutline class="text-primary-800 ms-2 inline h-6 w-6 dark:text-white" />
+      Scale<ChevronDownOutline class="text-fg-brand ms-2 inline h-6 w-6" />
     </NavLi>
     <MegaMenu items={menu} transition={scale} transitionParams={{ duration: 1000 }}>
       {#snippet children({ item })}
-        <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
+        <a href={item.href} class="hover:text-fg-brand">{item.name}</a>
       {/snippet}
     </MegaMenu>
   </NavUl>
