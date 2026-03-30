@@ -6,17 +6,17 @@ export type ListgroupItemVariants = VariantProps<typeof listGroupItem> & Classes
 
 export const listGroup = tv({
   slots: {
-    base: "flex bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 divide-gray-200 dark:divide-gray-600",
+    base: "flex bg-neutral-primary-soft text-heading divide-default",
     item: "",
     icon: ""
   },
   variants: {
     rounded: {
-      true: { base: "rounded-lg" },
+      true: { base: "rounded-base" },
       false: { base: "" }
     },
     border: {
-      true: { base: "border border-gray-200 dark:border-gray-700" },
+      true: { base: "border border-default" },
       false: { base: "" }
     },
     horizontal: {
@@ -27,7 +27,7 @@ export const listGroup = tv({
   compoundVariants: [
     {
       border: true,
-      class: { base: "divide-gray-200 dark:divide-gray-700" }
+      class: { base: "divide-default" }
     }
   ],
   defaultVariants: {
@@ -45,16 +45,16 @@ export const listGroupItem = tv({
   variants: {
     state: {
       normal: "",
-      current: "text-white bg-primary-700 dark:text-white dark:bg-gray-800",
-      disabled: "text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400 opacity-50"
+      current: "text-fg-brand bg-neutral-secondary-medium",
+      disabled: "text-fg-disabled"
     },
     active: {
       true: "",
       false: ""
     },
     horizontal: {
-      true: "first:rounded-s-lg last:rounded-e-lg",
-      false: "first:rounded-t-lg last:rounded-b-lg"
+      true: "first:rounded-s-base last:rounded-e-base",
+      false: "first:rounded-t-base last:rounded-b-base"
     }
   },
   compoundVariants: [
@@ -67,7 +67,7 @@ export const listGroupItem = tv({
       active: true,
       state: "normal",
       class:
-        "hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white focus:z-40 focus:outline-hidden focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white"
+        "hover:bg-neutral-secondary-medium hover:text-fg-brand focus:outline-none focus:ring-2 focus:ring-brand focus:text-fg-brand"
     }
   ]
 });

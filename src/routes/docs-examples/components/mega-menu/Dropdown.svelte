@@ -6,9 +6,9 @@
     { name: "Segmentation", help: "Connect with third-party tools that you're already using." },
     { name: "Marketing CRM", help: "Connect with third-party tools that you're already using." },
 
-    { name: "Online Stores", help: "Connect with third-party tools that you're already using." },
-    { name: "Segmentation", help: "Connect with third-party tools that you're already using." },
-    { name: "Marketing CRM", help: "Connect with third-party tools that you're already using." },
+    { name: "Online Stores 2", help: "Connect with third-party tools that you're already using." },
+    { name: "Segmentation 2", help: "Connect with third-party tools that you're already using." },
+    { name: "Marketing CRM 2", help: "Connect with third-party tools that you're already using." },
 
     { name: "Audience Management", help: "Connect with third-party tools that you're already using." },
     { name: "Creative Tools", help: "Connect with third-party tools that you're already using." },
