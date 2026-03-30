@@ -1,6 +1,7 @@
 <script lang="ts">
   import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from "flowbite-svelte";
   import { FileCirclePlusOutline, BookmarkOutline, AngleLeftOutline, AngleRightOutline, AdjustmentsVerticalOutline, UserCircleOutline } from "flowbite-svelte-icons";
+  const navIconClass = "group-hover:text-fg-brand text-body mb-1 h-6 w-6";
 </script>
 
 <Skeleton class="py-4" />
@@ -8,11 +9,11 @@
 
 <BottomNav position="absolute" navType="pagination" classes={{ content: "grid-cols-6" }}>
   <BottomNavItem btnName="New document">
-    <FileCirclePlusOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
+    <FileCirclePlusOutline class={navIconClass} />
   </BottomNavItem>
   <Tooltip arrow={false}>New document</Tooltip>
   <BottomNavItem btnName="Bookmark">
-    <BookmarkOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
+    <BookmarkOutline class={navIconClass} />
   </BottomNavItem>
   <Tooltip arrow={false}>Bookmark</Tooltip>
   <div class="col-span-2 flex items-center justify-center">
@@ -35,11 +36,11 @@
     </div>
   </div>
   <BottomNavItem btnName="Settings">
-    <AdjustmentsVerticalOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
+    <AdjustmentsVerticalOutline class={navIconClass} />
   </BottomNavItem>
   <Tooltip arrow={false}>Settings</Tooltip>
   <BottomNavItem btnName="Profile">
-    <UserCircleOutline class="group-hover:text-fg-brand text-body mb-1 h-6 w-6" />
+    <UserCircleOutline class={navIconClass} />
   </BottomNavItem>
   <Tooltip arrow={false}>Profile</Tooltip>
 </BottomNav>

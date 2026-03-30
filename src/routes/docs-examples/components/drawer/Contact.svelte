@@ -29,9 +29,9 @@
     <Button type="submit" class="w-full">Send message</Button>
   </form>
   <P class="text-body mb-2 text-sm">
-    <A href="/" class="text-fg-brand hover:underline">info@company.com</A>
+    <A href="mailto:info@company.com" class="text-fg-brand hover:underline">info@company.com</A>
   </P>
   <P class="text-body text-sm">
-    <A href="/" class="text-fg-brand hover:underline">212-456-7890</A>
+    <A href="tel:+12124567890" class="text-fg-brand hover:underline">212-456-7890</A>
   </P>
 </Drawer>

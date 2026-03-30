@@ -16,7 +16,7 @@
       </FooterLinkGroup>
     </div>
     <div>
-      <h2 class="text-heading mb-6 text-sm font-semibold uppercase">Download</h2>
+      <h2 class="text-heading mb-6 text-sm font-semibold uppercase">Help center</h2>
       <FooterLinkGroup class="text-body">
         <FooterLink class="mb-4" href="/">Discord Server</FooterLink>
         <FooterLink class="mb-4" href="/">Twitter</FooterLink>

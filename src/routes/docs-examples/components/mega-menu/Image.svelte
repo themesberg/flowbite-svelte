@@ -11,7 +11,7 @@
     { name: "Support Center", href: "/support" },
     { name: "Resources", href: "/resource" },
     { name: "Playground", href: "/play" },
-    { name: "Terms", href: "/tersm" },
+    { name: "Terms", href: "/terms" },
     { name: "Pro Version", href: "/pro" },
     { name: "License", href: "/license" }
   ];

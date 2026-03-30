@@ -10,7 +10,7 @@
     { name: "Support Center", href: "/support" },
     { name: "Resources", href: "/resource" },
     { name: "Playground", href: "/play" },
-    { name: "Terms", href: "/tersm" },
+    { name: "Terms", href: "/terms" },
     { name: "Pro Version", href: "/pro" },
     { name: "License", href: "/license" }
   ];
@@ -36,7 +36,7 @@
       {#snippet addon()}
         <h2 class="text-heading mt-4 mb-2 font-semibold">Our brands</h2>
         <p class="text-body mb-2 p-0 text-sm font-light">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
-        <a href="/" class="text-fg-brand hover:text-fg-brand inline-flex items-center text-sm font-medium hover:underline">
+        <a href="/" class="text-fg-brand inline-flex items-center text-sm font-medium hover:underline">
           Explore our brands
           <span class="sr-only">Explore our brands</span>
           <ArrowRightOutline class="text-fg-brand ms-2 h-6 w-6" />

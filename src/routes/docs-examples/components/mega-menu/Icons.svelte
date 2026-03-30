@@ -10,7 +10,7 @@
     { name: "Support Center", href: "/support", icon: UserCircleOutline },
     { name: "Resources", href: "/resource", icon: UserCircleOutline },
     { name: "Playground", href: "/play", icon: UserCircleOutline },
-    { name: "Terms", href: "/tersm", icon: UserCircleOutline },
+    { name: "Terms", href: "/terms", icon: UserCircleOutline },
     { name: "Pro Version", href: "/pro", icon: UserCircleOutline },
     { name: "License", href: "/license", icon: UserCircleOutline }
   ];

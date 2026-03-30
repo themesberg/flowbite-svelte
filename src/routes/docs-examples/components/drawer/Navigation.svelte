@@ -3,6 +3,7 @@
   import { ChartPieSolid, CartSolid, GridSolid, MailBoxSolid, UsersSolid, ShoppingBagSolid, ArrowRightToBracketOutline, EditOutline } from "flowbite-svelte-icons";
   let open2 = $state(false);
   let labelClass = "flex-1 ms-3 whitespace-nowrap";
+  let iconClass = "text-body group-hover:text-heading h-5 w-5 transition duration-75";
 </script>
 
 <div class="text-center">
@@ -16,12 +17,12 @@
       <SidebarGroup>
         <SidebarItem label="Dashboard">
           {#snippet icon()}
-            <ChartPieSolid class="text-body group-hover:text-heading h-5 w-5 transition duration-75" />
+            <ChartPieSolid class={iconClass} />
           {/snippet}
         </SidebarItem>
         <SidebarDropdownWrapper label="E-commerce">
           {#snippet icon()}
-            <CartSolid class="text-body group-hover:text-heading h-5 w-5 transition duration-75" />
+            <CartSolid class={iconClass} />
           {/snippet}
           <SidebarItem label="Products" />
           <SidebarItem label="Billing" />
@@ -29,7 +30,7 @@
         </SidebarDropdownWrapper>
         <SidebarItem label="Kanban" classes={{ label: labelClass }}>
           {#snippet icon()}
-            <GridSolid class="text-body group-hover:text-heading h-5 w-5 transition duration-75" />
+            <GridSolid class={iconClass} />
           {/snippet}
           {#snippet subtext()}
             <span class="bg-neutral-quaternary text-heading ms-3 inline-flex items-center justify-center rounded-full px-2 text-sm font-medium">Pro</span>
@@ -37,7 +38,7 @@
         </SidebarItem>
         <SidebarItem label="Inbox" classes={{ label: labelClass }}>
           {#snippet icon()}
-            <MailBoxSolid class="text-body group-hover:text-heading h-5 w-5 transition duration-75" />
+            <MailBoxSolid class={iconClass} />
           {/snippet}
           {#snippet subtext()}
             <span class="text-fg-danger-strong bg-danger-soft border-danger-subtle ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full border p-3 text-sm font-medium">3</span>
@@ -45,22 +46,22 @@
         </SidebarItem>
         <SidebarItem label="Users">
           {#snippet icon()}
-            <UsersSolid class="text-body group-hover:text-heading h-5 w-5 transition duration-75" />
+            <UsersSolid class={iconClass} />
           {/snippet}
         </SidebarItem>
         <SidebarItem label="Products">
           {#snippet icon()}
-            <ShoppingBagSolid class="text-body group-hover:text-heading h-5 w-5 transition duration-75" />
+            <ShoppingBagSolid class={iconClass} />
           {/snippet}
         </SidebarItem>
         <SidebarItem label="Sign In">
           {#snippet icon()}
-            <ArrowRightToBracketOutline class="text-body group-hover:text-heading h-5 w-5 transition duration-75" />
+            <ArrowRightToBracketOutline class={iconClass} />
           {/snippet}
         </SidebarItem>
         <SidebarItem label="Sign Up">
           {#snippet icon()}
-            <EditOutline class="text-body group-hover:text-heading h-5 w-5 transition duration-75" />
+            <EditOutline class={iconClass} />
           {/snippet}
         </SidebarItem>
       </SidebarGroup>
