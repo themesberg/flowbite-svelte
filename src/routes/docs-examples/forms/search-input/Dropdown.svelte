@@ -25,7 +25,7 @@
 
 <form class="flex">
   <div class="relative">
-    <Button class="border-primary-700 rounded-e-none border border-e-0 whitespace-nowrap">
+    <Button class="bg-neutral-secondary-medium text-body border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading rounded-e-none border-e-0 whitespace-nowrap">
       {selectCategory}
       <ChevronDownOutline class="ms-2.5 h-6 w-6" />
     </Button>

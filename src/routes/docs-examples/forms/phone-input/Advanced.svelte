@@ -38,7 +38,6 @@
     </Dropdown>
     <Label for="phone-input" class="sr-only">Phone number:</Label>
     <PhoneInput phoneIcon={false} placeholder="123-456-7890" required phoneType="countryCode" classes={{ input: "rounded-none rounded-e-none border-r-0" }} />
-    <label for="phone-input" class="sr-only">Phone number:</label>
     <button
       id="dropdown-verification-option-button"
       data-dropdown-toggle="dropdown-verification-option"

@@ -18,7 +18,7 @@
 </script>
 
 <ButtonGroup class="w-full">
-  <Button class="bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-500 focus:ring-gray-100 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+  <Button class="bg-neutral-secondary-medium text-body hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-neutral-tertiary">
     <Usa />
     USA
     <ChevronDownOutline class="ms-2 h-6 w-6" />

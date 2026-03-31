@@ -292,7 +292,7 @@
       onfocus={handleFocus}
       onblur={handleBlur}
       onkeydown={handleKeydown}
-      class={clsx(!wrapped && base(), inputCls({ class: clsx(theme?.input, className) }))}
+      class={clsx(!wrapped && base(), inputCls({ class: clsx(theme?.input, styling?.input, className) }))}
       data-part="input"
     />
     {#if value !== undefined && value !== "" && clearable}

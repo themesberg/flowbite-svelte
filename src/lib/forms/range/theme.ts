@@ -4,7 +4,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 export type RangeVariants = VariantProps<typeof range>;
 
 export const range = tv({
-  base: "w-full bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-700",
+  base: "w-full bg-neutral-quaternary rounded-full cursor-pointer",
   variants: {
     size: {
       sm: "h-1 range-sm",

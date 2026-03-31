@@ -9,13 +9,13 @@ export const checkbox = tv({
   variants: {
     color: {
       brand: {
-        input: "text-fg-brand border border-default-medium bg-neutral-secondary-medium focus:ring-brand-soft"
+        input: "text-fg-brand focus:ring-brand-soft"
       },
       alternative: {
-        input: "border border-default-medium bg-neutral-secondary-medium focus:ring-neutral-tertiary"
+        input: "focus:ring-neutral-tertiary"
       },
       gray: {
-        input: "border border-default-medium bg-neutral-secondary-medium focus:ring-neutral-tertiary-soft"
+        input: "focus:ring-neutral-tertiary-soft"
       },
       success: {
         input: "text-success focus:ring-success-soft"

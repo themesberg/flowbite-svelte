@@ -13,7 +13,7 @@ export const radio = tv({
     color: {
       // "brand" | "danger" | "success" | "warning" | "dark" | "neutral"
       brand: {
-        input: "text-fg-brand focus:ring-brand-subtle"
+        input: ""
       },
       dark: {
         input: "text-heading focus:ring-neutral-tertiary"
