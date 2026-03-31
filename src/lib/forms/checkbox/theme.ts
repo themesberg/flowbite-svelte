@@ -69,7 +69,7 @@ export const checkboxButton = tv({
       false: "flex"
     },
     checked: {
-      true: "outline-4 outline-green-500 z-10"
+      true: "outline-4 outline-success z-10"
     }
   },
   defaultVariants: {
