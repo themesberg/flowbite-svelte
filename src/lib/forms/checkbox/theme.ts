@@ -3,7 +3,7 @@ import type { Classes } from "$lib/theme-provider/themeUtils";
 
 export const checkbox = tv({
   slots: {
-    input: "w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 me-2 rounded-xs",
+    input: "w-4 h-4 focus:ring-2 me-2 rounded-xs",
     label: "flex items-center"
   },
   variants: {
@@ -28,8 +28,8 @@ export const checkbox = tv({
       }
     },
     tinted: {
-      true: { input: "dark:bg-gray-600 dark:border-gray-500" },
-      false: { input: "dark:bg-gray-700 dark:border-gray-600" }
+      true: {},
+      false: {}
     },
     custom: {
       true: { input: "sr-only peer" }
@@ -47,7 +47,7 @@ export const checkbox = tv({
     },
     disabled: {
       true: {
-        input: "cursor-not-allowed opacity-50 bg-gray-200 border-gray-300",
+        input: "cursor-not-allowed opacity-50",
         label: "cursor-not-allowed opacity-70"
       },
       false: {}
@@ -69,7 +69,7 @@ export const checkboxButton = tv({
       false: "flex"
     },
     checked: {
-      true: "outline-4 outline-green-500"
+      true: "outline-4 outline-green-500 z-10"
     }
   },
   defaultVariants: {

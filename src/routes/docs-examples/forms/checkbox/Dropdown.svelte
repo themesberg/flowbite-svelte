@@ -3,7 +3,7 @@
   import { ChevronDownOutline, UserRemoveSolid } from "flowbite-svelte-icons";
 </script>
 
-<Button>Project users<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" /></Button>
+<Button>Project users<ChevronDownOutline class="ms-2 h-6 w-6 text-white" /></Button>
 <Dropdown>
   <div class="p-3">
     <Search size="md" />
@@ -28,7 +28,7 @@
       <Checkbox>Bonnie Green</Checkbox>
     </DropdownItem>
   </DropdownGroup>
-  <a href="/" class="-mb-1 flex items-center bg-gray-50 p-3 text-sm font-medium text-red-600 hover:bg-gray-100 hover:underline dark:bg-gray-700 dark:text-red-500 dark:hover:bg-gray-600">
+  <a href="/" class="-mb-1 flex items-center bg-neutral-primary-soft p-3 text-sm font-medium text-fg-danger hover:bg-neutral-primary-medium hover:underline">
     <UserRemoveSolid class="me-1 h-5 w-5" />Delete user
   </a>
 </Dropdown>

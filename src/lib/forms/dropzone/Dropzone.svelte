@@ -14,6 +14,8 @@
 
   let inputElement: HTMLInputElement;
 
+  const { base } = dropzone();
+
   const handleDrop: DragEventHandler<HTMLLabelElement> = function (this: Window, event) {
     event.preventDefault();
 
@@ -47,7 +49,7 @@
   };
 </script>
 
-<label class={dropzone({ class: clsx(theme, className) })} ondrop={handleDrop} ondragover={handleDragOver} data-scope="dropzone" data-part="base">
+<label class={base({ class: clsx(theme?.base, className) })} ondrop={handleDrop} ondragover={handleDragOver} data-scope="dropzone" data-part="base">
   {@render children()}
 
   <input {...restProps} bind:this={inputElement} onchange={handleChange} type="file" class="hidden" data-part="input" />

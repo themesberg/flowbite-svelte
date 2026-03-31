@@ -2,7 +2,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 import type { Classes } from "$lib/theme-provider/themeUtils";
 
 export const buttonToggleGroup = tv({
-  base: "inline-flex border border-gray-300 overflow-hidden",
+  base: "inline-flex border border-default overflow-hidden",
   variants: {
     roundedSize: {
       sm: "rounded-sm",
@@ -18,10 +18,10 @@ export type ButtonToggleVariants = VariantProps<typeof buttonToggle> & Classes<t
 
 export const buttonToggle = tv({
   slots: {
-    button: "relative flex items-center transition-all duration-200 focus:outline-none border-r last:border-r-0 dark:bg-white dark:text-gray-800 disabled:cursor-not-allowed disabled:opacity-50",
+    button: "relative flex items-center transition-all duration-200 focus:outline-none border-r last:border-r-0 bg-neutral-primary-soft text-heading disabled:cursor-not-allowed disabled:opacity-50",
     content: "flex items-center w-full overflow-hidden relative",
     label: "transition-all duration-200 ml-0",
-    icon: "absolute left-0 flex-shrink-0 text-green-600"
+    icon: "absolute left-0 flex-shrink-0 text-fg-success"
   },
   variants: {
     selected: {
@@ -63,13 +63,13 @@ export const buttonToggle = tv({
     },
     color: {
       primary: {
-        button: "data-[selected=true]:bg-primary-200 data-[selected=false]:hover:bg-gray-100"
+        button: "data-[selected=true]:bg-primary-200 data-[selected=false]:hover:bg-neutral-primary-medium"
       },
       secondary: {
-        button: "data-[selected=true]:bg-secondary-200 data-[selected=false]:hover:bg-gray-100"
+        button: "data-[selected=true]:bg-secondary-200 data-[selected=false]:hover:bg-neutral-primary-medium"
       },
       gray: {
-        button: "data-[selected=true]:bg-gray-200 data-[selected=false]:hover:bg-gray-100"
+        button: "data-[selected=true]:bg-neutral-secondary-medium data-[selected=false]:hover:bg-neutral-primary-medium"
       },
       red: {
         button: "data-[selected=true]:bg-red-200 data-[selected=false]:hover:bg-red-50"

@@ -14,7 +14,7 @@
 </script>
 
 <Button tag="label" {pill} {outline} {size} {color} {shadow} class={buttonClass} data-scope="checkbox-button" data-part="base">
-  <Checkbox bind:group bind:checked {...restProps} class="sr-only"></Checkbox>
+  <Checkbox bind:group bind:checked {...restProps} custom></Checkbox>
   {@render children?.()}
 </Button>
 

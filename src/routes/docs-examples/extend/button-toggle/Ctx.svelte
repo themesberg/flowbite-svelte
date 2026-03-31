@@ -16,4 +16,4 @@
   <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
   <ButtonToggle value="three" selected={singleValue === "three"}>Three</ButtonToggle>
 </ButtonToggleGroup>
-<p class="mt-2 dark:text-white">Selected: {singleValue || "None"}</p>
+<p class="mt-2 text-heading">Selected: {singleValue || "None"}</p>

@@ -11,10 +11,10 @@
   }
 </script>
 
-<h3 class="mb-2 text-lg font-medium dark:text-white">Single Selection</h3>
+<h3 class="mb-2 text-lg font-medium text-heading">Single Selection</h3>
 <ButtonToggleGroup onSelect={handleSingleSelect}>
   <ButtonToggle disabled value="one" selected={singleValue === "one"}>One</ButtonToggle>
   <ButtonToggle value="two" selected={singleValue === "two"}>Two</ButtonToggle>
   <ButtonToggle value="three" selected={singleValue === "three"}>Three</ButtonToggle>
 </ButtonToggleGroup>
-<p class="mt-2 dark:text-white">Selected: {singleValue || "None"}</p>
+<p class="mt-2 text-heading">Selected: {singleValue || "None"}</p>

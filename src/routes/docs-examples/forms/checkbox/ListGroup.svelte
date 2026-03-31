@@ -2,7 +2,7 @@
   import { Checkbox, Listgroup } from "flowbite-svelte";
 </script>
 
-<p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology</p>
+<p class="mb-4 font-semibold text-heading">Technology</p>
 <Listgroup class="w-48">
   <li><Checkbox classes={{ label: "p-3" }}>svelte</Checkbox></li>
   <li><Checkbox classes={{ label: "p-3" }}>Vue JS</Checkbox></li>

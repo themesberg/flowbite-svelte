@@ -5,11 +5,11 @@
   import Angular from "$icons/Angular.svelte";
 </script>
 
-<p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>
+<p class="mb-5 text-lg font-medium text-heading">Choose technology:</p>
 <div class="grid w-full gap-6 md:grid-cols-3">
   <Checkbox custom>
     <div
-      class="peer-checked:border-primary-600 w-full cursor-pointer rounded-lg border-2 border-gray-200 bg-white p-5 font-normal text-gray-500 peer-checked:text-gray-600 hover:bg-gray-50 hover:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:peer-checked:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+      class="peer-checked:border-fg-brand w-full cursor-pointer rounded-lg border-2 border-default bg-neutral-primary-soft p-5 font-normal text-body peer-checked:text-heading hover:bg-neutral-primary-medium hover:text-heading"
     >
       <React />
       <div class="w-full text-lg font-semibold">React Js</div>
@@ -18,7 +18,7 @@
   </Checkbox>
   <Checkbox custom>
     <div
-      class="peer-checked:border-primary-600 w-full cursor-pointer rounded-lg border-2 border-gray-200 bg-white p-5 font-normal text-gray-500 peer-checked:text-gray-600 hover:bg-gray-50 hover:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:peer-checked:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+      class="peer-checked:border-fg-brand w-full cursor-pointer rounded-lg border-2 border-default bg-neutral-primary-soft p-5 font-normal text-body peer-checked:text-heading hover:bg-neutral-primary-medium hover:text-heading"
     >
       <Vue />
       <div class="w-full text-lg font-semibold">Vue Js</div>
@@ -27,7 +27,7 @@
   </Checkbox>
   <Checkbox custom>
     <div
-      class="peer-checked:border-primary-600 w-full cursor-pointer rounded-lg border-2 border-gray-200 bg-white p-5 font-normal text-gray-500 peer-checked:text-gray-600 hover:bg-gray-50 hover:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:peer-checked:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+      class="peer-checked:border-fg-brand w-full cursor-pointer rounded-lg border-2 border-default bg-neutral-primary-soft p-5 font-normal text-body peer-checked:text-heading hover:bg-neutral-primary-medium hover:text-heading"
     >
       <Angular />
       <div class="w-full text-lg font-semibold">Angular</div>

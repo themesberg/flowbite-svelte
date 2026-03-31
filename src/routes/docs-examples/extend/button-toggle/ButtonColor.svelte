@@ -11,7 +11,7 @@
   }
 </script>
 
-<p class="mt-2 dark:text-white">Selected: {singleValue || "None"}</p>
+<p class="mt-2 text-heading">Selected: {singleValue || "None"}</p>
 <ButtonToggleGroup onSelect={handleSingleSelect}>
   <ButtonToggle color="red" value="red" selected={singleValue === "red"}>Red</ButtonToggle>
   <ButtonToggle color="green" value="green" selected={singleValue === "green"}>Green</ButtonToggle>

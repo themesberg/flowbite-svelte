@@ -15,7 +15,7 @@
     pill,
     outline = false,
     size = "md",
-    color = "brand",
+    color,
     shadow = false,
     tag = "button",
     disabled,
