@@ -2,7 +2,7 @@
   import { List, Li } from "flowbite-svelte";
 </script>
 
-<List tag="ul" class="space-y-4 text-gray-500 dark:text-gray-400">
+<List tag="ul" class="space-y-4">
   <Li>
     List item one
     <List tag="ol" class="mt-2 space-y-1 ps-5">

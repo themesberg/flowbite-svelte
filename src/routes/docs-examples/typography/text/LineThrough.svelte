@@ -2,4 +2,4 @@
   import { Span } from "flowbite-svelte";
 </script>
 
-<Span class="line-through">$109</Span><Span class="ms-3">$79</Span>
+<Span class="text-lg font-medium text-heading line-through">$109</Span><Span class="ms-3 text-lg font-medium text-heading">$79</Span>

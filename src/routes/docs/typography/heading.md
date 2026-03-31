@@ -103,52 +103,8 @@ This example can be used to add a secondary text inside the main heading compone
 
 The heading component has six levels of importance starting from H1 which has to be unique on the page and has the greatest weight of importance all the way to H6.
 
-### Heading one (h1)
-
-Use the `tag="h1"` as the most important text element to indicate the title of your web page.
-
 ```svelte example
-{#include H1.svelte}
-```
-
-### Heading two (h2)
-
-The `tag="h2"` can be used as subtitles of the page’s sections.
-
-```svelte example
-{#include H2.svelte}
-```
-
-### Heading three (h3)
-
-The `tag="h3"` can be used as subtitles of the page’s sections.
-
-```svelte example
-{#include H3.svelte}
-```
-
-### Heading four (h4)
-
-The `tag="h4"` can be used as subtitles of the page’s sections.
-
-```svelte example
-{#include H4.svelte}
-```
-
-### Heading five (h5)
-
-The `tag="h5"` can be used as subtitles of the page’s sections.
-
-```svelte example
-{#include H5.svelte}
-```
-
-### Heading six (h6)
-
-The `tag="h6"` can be used as subtitles of the page’s sections.
-
-```svelte example
-{#include H6.svelte}
+{#include Sizes.svelte}
 ```
 
 ## Component data

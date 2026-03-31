@@ -37,6 +37,15 @@
 @theme {
   --z-index-100: 100;
 
+  /* Border radius */
+  --radius-0: 0px;
+  --radius-xxs: 2px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-DEFAULT: 8px;
+  --radius-base: 12px;
+  --radius-lg: 16px;
+
   /* Border widths */
   --border-width-0: 0px;
   --border-width: 1px;

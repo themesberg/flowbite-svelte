@@ -9,7 +9,7 @@
   const styling = $derived(classes);
 
   const theme = $derived(getTheme("hr"));
-  const bg = $derived(classes?.bg ?? "bg-gray-200 dark:bg-gray-700");
+  const bg = $derived(classes?.bg ?? "bg-neutral-quaternary");
 
   const mergedDivProps = $derived({ ...divProps });
   const mergedHrProps = $derived({ ...hrProps });

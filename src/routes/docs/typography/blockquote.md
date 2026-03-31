@@ -70,54 +70,16 @@ Use this example to show a user review with rating stars and the name and occupa
 
 Choose from the following examples the blockquote text alignment from starting from left, center to right based on the utility classes from Tailwind CSS.
 
-### Left
-
-The default alignment of the blockquote text content is the left side of the document.
-
 ```svelte example
-{#include Left.svelte}
-```
-
-### Center
-
-Use the `alignment="center"` prop to align the text content inside the blockquote to the center.
-
-```svelte example
-{#include Center.svelte}
-```
-
-### Right
-
-Use the `alignment="right"` prop to align the blockquote text content to the right side of the page.
-
-```svelte example
-{#include Right.svelte}
+{#include Alignments.svelte}
 ```
 
 ## Sizes
 
-### Small
-
-Use the `size="lg"` prop to apply the small size for the blockquote component. You can use any size from `xs` to `9xl`. See more details in the Prop section below.
+Use the `size` prop to apply different sizes for the blockquote component. You can use any size from `xs` to `9xl`. See more details in the Prop section below.
 
 ```svelte example
-{#include Small.svelte}
-```
-
-### Medium
-
-Use the `size="xl"` to set the default size for the blockquote element.
-
-```svelte example
-{#include Medium.svelte}
-```
-
-### Large
-
-The `size="2xl"` prop can be used to set a large size for the blockquote component.
-
-```svelte example
-{#include Large.svelte}
+{#include Sizes.svelte}
 ```
 
 ## See also

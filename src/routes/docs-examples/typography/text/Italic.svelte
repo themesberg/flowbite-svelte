@@ -2,4 +2,4 @@
   import { P } from "flowbite-svelte";
 </script>
 
-<P italic>The crypto identity primitive.</P>
+<P class="text-lg font-medium text-heading" italic>The crypto identity primitive.</P>

@@ -6,7 +6,7 @@
 
   let {
     children,
-    class: className = "text-gray-900 dark:text-white",
+    class: className = "",
     height = "normal",
     align = "left",
     justify = false,
@@ -35,7 +35,7 @@
 [ParagraphProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L1947)
 ## Props
 @prop children
-@prop class: className = "text-gray-900 dark:text-white"
+@prop class: className = ""
 @prop height = "normal"
 @prop align = "left"
 @prop justify = false

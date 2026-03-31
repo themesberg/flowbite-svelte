@@ -2,4 +2,4 @@
   import { Img } from "flowbite-svelte";
 </script>
 
-<Img src="/images/examples/image-1@2x.jpg" class="ms-auto max-w-lg" alt="sample 1" />
+<Img src="/images/examples/image-1@2x.jpg" size="lg" class="ms-auto" alt="sample 1" />

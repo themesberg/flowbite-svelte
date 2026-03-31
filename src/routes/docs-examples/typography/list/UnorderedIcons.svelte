@@ -3,18 +3,18 @@
   import { CheckCircleSolid, CloseCircleSolid } from "flowbite-svelte-icons";
 </script>
 
-<Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
-<List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
+<Heading tag="h2" class="mb-2 text-lg font-semibold">Password requirements</Heading>
+<List tag="ul" class="space-y-1">
   <Li icon>
-    <CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
+    <CheckCircleSolid class="me-2 h-5 w-5 text-fg-success" />
     At least 10 characters (and up to 100 characters)
   </Li>
   <Li icon>
-    <CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />
+    <CheckCircleSolid class="me-2 h-5 w-5 text-fg-success" />
     At least one lowercase character
   </Li>
   <Li icon>
-    <CloseCircleSolid class="me-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
+    <CloseCircleSolid class="me-2 h-5 w-5 text-body" />
     Inclusion of at least one special character, e.g., ! @ # ?
   </Li>
 </List>

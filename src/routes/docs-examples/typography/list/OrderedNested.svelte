@@ -2,7 +2,7 @@
   import { List, Li } from "flowbite-svelte";
 </script>
 
-<List tag="ol" class="list-decimal text-gray-500 dark:text-gray-400">
+<List tag="ol">
   <Li>
     List item one
     <List tag="ul" class="mt-2 space-y-1 ps-5">
@@ -21,7 +21,7 @@
   </Li>
   <Li>
     List item three
-    <List tag="ul" class="mt-2 space-y-1 ps-5 text-gray-500 dark:text-gray-400">
+    <List tag="ul" class="mt-2 space-y-1 ps-5">
       <Li>Again please don't nest lists if you want</Li>
       <Li>Nobody wants to look at this.</Li>
       <Li>I'm upset that we even have to bother styling this.</Li>

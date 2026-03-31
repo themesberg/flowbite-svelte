@@ -106,86 +106,24 @@ Text elements by default are non-italic.
 
 Set the height between lines using the `height` prop.
 
-### Leading normal
-
-Use the `height="normal"` (default) prop to set default line height.
-
-```svelte example hideScript
-{#include LeadingNormal.svelte}
-```
-
-### Leading relaxed
-
-Use the `height="relaxed"` prop to increase the space between lines.
-
-```svelte example hideScript
-{#include LeadingRelaxed.svelte}
-```
-
-### Leading loose
-
-Use the `height="loose"` prop to set a large amount of space between text lines.
-
-```svelte example hideScript
-{#include LeadingLoose.svelte}
+```svelte example
+{#include LineHeight.svelte}
 ```
 
 ## Text Align
 
-### Left
+Align the text using the `align` prop or the `justify` prop.
 
-```svelte example hideScript
-{#include Left.svelte}
-```
-
-### Center
-
-```svelte example hideScript
-{#include Center.svelte}
-```
-
-### Right
-
-Use the `align="right"` prop to align the text element to the right side of the page.
-
-```svelte example hideScript
-{#include Right.svelte}
-```
-
-### Text justify
-
-Use the `justify` prop to justify the text content.
-
-```svelte example hideScript
-{#include TextJustify.svelte}
+```svelte example
+{#include TextAlign.svelte}
 ```
 
 ## Whitespace
 
 Configure the whitespace behaviour of inline text elements using the `whitespace` prop.
 
-### Normal
-
-Use the `whitespace="normal"` prop to set the default whitespace behaviour.
-
-```svelte example hideScript
-{#include WhitespaceNormal.svelte}
-```
-
-### Nowrap
-
-Use the `whitespace="nowrap"` prop to prevent text being added to a new line when the full width has been reached.
-
-```svelte example class="overflow-y-scroll" hideScript
-{#include WhitespaceNowrap.svelte}
-```
-
-### Pre line
-
-Use the `whitespace="preline'` prop to add whitespace exactly how it has been set from the source code.
-
-```svelte example hideScript
-{#include WhitespacePreline.svelte}
+```svelte example
+{#include Whitespace.svelte}
 ```
 
 ## Component data

@@ -49,36 +49,12 @@ Use `firstUpper` prop to highlight the first letter of the paragraph, often used
 {#include FirstLetter.svelte}
 ```
 
-## Paragraph link
+## Paragraph inline styles
 
-This example can be used to add a custom styled link element inside the paragraph.
+Use these examples to apply inline text decorations — link, bold, underline, or italic — to a part of the paragraph.
 
 ```svelte example
 {#include Link.svelte}
-```
-
-## Paragraph bold
-
-Use this example to highlight a piece of text inside the paragraph by using a bolder font weight.
-
-```svelte example
-{#include Bold.svelte}
-```
-
-## Paragraph underline
-
-This example can be used to underline a certain part of the text inside the paragraph.
-
-```svelte example
-{#include Underline.svelte}
-```
-
-## Paragraph italic
-
-Use this example to make the font style of the text inside the paragraph italic.
-
-```svelte example
-{#include Italic.svelte}
 ```
 
 ## Paragraph popover
@@ -127,30 +103,10 @@ Use this example to separate paragraphs into two uneven columns.
 
 ## Text alignment
 
-Align the paragraph component to the left (default), center or right side of the document page using the `text-left|center|right` utility class from Tailwind CSS.
-
-### Left
-
-The default alignment of the paragraph is to the left side and you can use the `align="left"` prop to align it manually.
+Align the paragraph component to the left (default), center or right side of the document page using the `align` prop.
 
 ```svelte example
-{#include Left.svelte}
-```
-
-### Center
-
-Use the `align="center"` prop to align the paragraph text to the center.
-
-```svelte example
-{#include Center.svelte}
-```
-
-### Right
-
-Use the `align="right"` prop to align the paragraph text the right side of the page.
-
-```svelte example
-{#include Right.svelte}
+{#include Alignments.svelte}
 ```
 
 ## Component data

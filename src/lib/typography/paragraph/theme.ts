@@ -3,7 +3,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 export type ParagraphVariants = VariantProps<typeof paragraph>;
 
 export const paragraph = tv({
-  base: "text-gray-900 dark:text-white",
+  base: "text-body",
   variants: {
     size: {
       xs: "text-xs",
@@ -71,7 +71,7 @@ export const paragraph = tv({
       true: "italic"
     },
     firstUpper: {
-      true: "first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left",
+      true: "first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-heading first-letter:me-3 first-letter:float-start",
       false: ""
     },
     justify: {

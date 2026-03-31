@@ -3,7 +3,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 export type ListVariants = VariantProps<typeof list>;
 
 export const list = tv({
-  base: "",
+  base: "text-body",
   variants: {
     tag: {
       ul: "list-disc",

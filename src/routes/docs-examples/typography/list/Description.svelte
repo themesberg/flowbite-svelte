@@ -2,7 +2,7 @@
   import { List, DescriptionList } from "flowbite-svelte";
 </script>
 
-<List tag="dl" class="divide-y divide-gray-200 text-gray-900 dark:divide-gray-700  dark:text-white">
+<List tag="dl" class="divide-y divide-default text-heading">
   <div class="flex flex-col pb-3">
     <DescriptionList tag="dt" class="mb-1">Email address</DescriptionList>
     <DescriptionList tag="dd">yourname@flowbite.com</DescriptionList>

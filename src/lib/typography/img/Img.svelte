@@ -15,7 +15,7 @@
   // Determine if using slot or traditional props
   const useSlot = $derived(!!children);
   // Compute the final class string to pass to children
-  const imgClass = $derived(image({ class: clsx(theme?.image, styling?.image) }));
+  const imgClass = $derived(image({ class: clsx(theme?.image, styling?.image, className) }));
 </script>
 
 {#snippet imageSlot()}

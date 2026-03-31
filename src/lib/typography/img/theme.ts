@@ -8,7 +8,7 @@ export const img = tv({
   slots: {
     image: "max-w-full h-auto",
     figure: "",
-    caption: "mt-2 text-sm text-center text-gray-500 dark:text-gray-400"
+    caption: "mt-2 text-sm text-center text-body"
   },
   variants: {
     size: {
@@ -22,7 +22,7 @@ export const img = tv({
     },
     effect: {
       grayscale: {
-        image: "cursor-pointer rounded-lg grayscale filter transition-all duration-300 hover:grayscale-0"
+        image: "cursor-pointer rounded-base grayscale filter transition-all duration-300 hover:grayscale-0"
       },
       blur: { image: "blur-xs transition-all duration-300 hover:blur-none" },
       invert: {

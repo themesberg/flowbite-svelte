@@ -6,7 +6,7 @@
 
 <A
   href="/"
-  class="inline-flex items-center justify-center rounded-lg bg-gray-50 p-5 text-base font-medium hover:bg-gray-100 hover:text-gray-900 hover:no-underline dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+  class="inline-flex items-center justify-center p-5 text-base font-medium border border-default text-body rounded-lg bg-neutral-secondary-soft hover:text-heading hover:bg-neutral-tertiary"
 >
   <Figma />
   <span class="ms-3 w-full">Get started with our Figma Design System</span>

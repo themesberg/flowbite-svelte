@@ -3,19 +3,18 @@
 </script>
 
 <P>
-  Track work across the enterprise through an open, collaborative platform. <Span underline>Link issues across Jira</Span> and ingest data from other <Span
+  Track work across the enterprise through an open, collaborative platform. <Span underline class="decoration-indigo">Link issues across Jira</Span> and ingest data from other <Span
     underline
-    class="decoration-blue-500 decoration-double"
   >
     software development
-  </Span> tools, so your IT support and operations teams have richer contextual information to rapidly respond to <Span underline class="decoration-green-500 decoration-dotted">requests</Span>, <Span
+  </Span> tools, so your IT support and operations teams have richer contextual information to rapidly respond to <Span underline class="decoration-success">requests</Span>, <Span
     underline
-    class="decoration-red-500 decoration-dashed decoration-4"
+    class="decoration-danger"
   >
     incidents
-  </Span>, and <Span underline class="decoration-sky-500 decoration-wavy">changes</Span>.
+  </Span>, and <Span underline class="decoration-sky">changes</Span>.
 </P>
 
-<Span class="line-through">$109</Span><Span class="ms-3">$79</Span>
+<Span class="text-lg font-medium text-heading line-through">$109</Span><Span class="ms-3 text-lg font-medium text-heading">$79</Span>
 
-<P>The crypto <Span class="uppercase">identity</Span> primitive.</P>
+<P class="text-lg font-medium text-heading">The crypto <Span class="uppercase">identity</Span> primitive.</P>

@@ -8,7 +8,7 @@ export const span = tv({
       true: "italic"
     },
     underline: {
-      true: "underline decoration-2 decoration-blue-400 dark:decoration-blue-600"
+      true: "underline decoration-2 decoration-brand"
     },
     linethrough: {
       true: "line-through"
@@ -48,7 +48,7 @@ export const span = tv({
       none: ""
     },
     decoration: {
-      solid: "underline decoratio-solid",
+      solid: "underline decoration-solid",
       double: "underline decoration-double",
       dotted: "underline decoration-dotted",
       dashed: "underline decoration-dashed",

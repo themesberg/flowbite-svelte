@@ -1,12 +1,8 @@
-export { default as Center } from "./Center.svelte";
 export { default as Default } from "./Default.svelte";
 export { default as Icon } from "./Icon.svelte";
-export { default as Large } from "./Large.svelte";
-export { default as Left } from "./Left.svelte";
-export { default as Medium } from "./Medium.svelte";
+export { default as Alignments } from "./Alignments.svelte";
 export { default as Paragraph } from "./Paragraph.svelte";
 export { default as Review } from "./Review.svelte";
-export { default as Right } from "./Right.svelte";
-export { default as Small } from "./Small.svelte";
+export { default as Sizes } from "./Sizes.svelte";
 export { default as Solid } from "./Solid.svelte";
 export { default as Testimonial } from "./Testimonial.svelte";

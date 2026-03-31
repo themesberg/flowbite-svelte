@@ -3,10 +3,10 @@ import { tv, type VariantProps } from "tailwind-variants";
 export type BlockquoteVariants = VariantProps<typeof blockquote>;
 
 export const blockquote = tv({
-  base: "font-semibold text-gray-900 dark:text-white",
+  base: "font-semibold text-heading",
   variants: {
     border: {
-      true: "border-s-4 border-gray-300 dark:border-gray-500",
+      true: "border-s-4 border-default",
       false: ""
     },
     italic: {
@@ -14,7 +14,7 @@ export const blockquote = tv({
       false: ""
     },
     bg: {
-      true: "bg-gray-50 dark:bg-gray-800",
+      true: "bg-neutral-secondary-soft",
       false: ""
     },
     alignment: {
