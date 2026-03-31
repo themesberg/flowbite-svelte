@@ -31,7 +31,18 @@ export function createMarkdownDocLoader(filesMap: Record<string, () => Promise<u
     }
 
     // Safely import the file
-    const post = (await filesMap[filePath]()) as MarkdownModule;
+    let post = (await filesMap[filePath]()) as MarkdownModule;
+
+    // In development, HMR can cause a race condition where the module is loaded
+    // before mdsvex has finished recompiling the frontmatter metadata. Retry with
+    // increasing delays to let the compilation complete.
+    if (import.meta.env.DEV && (!post.metadata || typeof post.metadata !== "object")) {
+      for (let i = 0; i < 3; i++) {
+        await new Promise((resolve) => setTimeout(resolve, 100 * (i + 1)));
+        post = (await filesMap[filePath]()) as MarkdownModule;
+        if (post.metadata && typeof post.metadata === "object") break;
+      }
+    }
 
     // Validate metadata exists
     if (!post.metadata || typeof post.metadata !== "object") {
