@@ -17,6 +17,8 @@ export const timepicker = tv({
     rangeSeparator: "flex items-center justify-center px-2 text-body",
     rangeInputWrapper: "relative",
     rangeInput: "relative pr-8",
+    rangeStartInput: "rounded-s-base !rounded-e-none",
+    rangeEndInput: "rounded-e-base !rounded-s-none",
     rangeButton: "pointer-events-none absolute inset-y-0 top-0 right-0 flex items-center border-0 bg-transparent pe-3.5",
     dropdownContent: "p-4 last:rounded-r-lg",
     dropdownInner: "flex flex-col space-y-4",

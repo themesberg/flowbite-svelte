@@ -509,7 +509,7 @@
             <Button
               data-part="day-button"
               type="button"
-              color={isSelected(day) ? color : "brand"}
+              color={isSelected(day) ? color : "transparent"}
               class={styles.dayButton({
                 current,
                 today: isToday(day),

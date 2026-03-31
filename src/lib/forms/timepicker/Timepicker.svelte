@@ -48,6 +48,9 @@
   // State
   let selectedOption = $state("");
   let showTimerange = $state(false);
+  // Track last known valid values so resets work despite Svelte's synchronous bind:value updates
+  let prevValue = value;
+  let prevEndValue = endValue;
 
   // Helper functions using date-fns
   function parseTime(time: string): Date | null {
@@ -88,13 +91,15 @@
 
     // Validate time format
     if (!isValidTimeFormat(newValue)) {
-      target.value = isEndTime ? endValue : value;
+      if (isEndTime) { endValue = prevEndValue; target.value = prevEndValue; }
+      else { value = prevValue; target.value = prevValue; }
       return;
     }
 
     // Validate against min/max constraints
     if (!isTimeInRange(newValue, min, max)) {
-      target.value = isEndTime ? endValue : value;
+      if (isEndTime) { endValue = prevEndValue; target.value = prevEndValue; }
+      else { value = prevValue; target.value = prevValue; }
       return;
     }
 
@@ -109,7 +114,8 @@
         if (isTimeInRange(newValue, min, max)) {
           value = newValue;
         } else {
-          target.value = endValue;
+          endValue = prevEndValue;
+          target.value = prevEndValue;
           return;
         }
       } else {
@@ -121,7 +127,8 @@
         if (isTimeInRange(newValue, min, max)) {
           endValue = newValue;
         } else {
-          target.value = value;
+          value = prevValue;
+          target.value = prevValue;
           return;
         }
       } else {
@@ -181,6 +188,16 @@
     if (!isValidTimeFormat(endValue)) {
       endValue = "00:00";
     }
+  });
+
+  // Keep prevValue/prevEndValue in sync — only update when the value is within the allowed range.
+  // Using a range-guard prevents prevValue from being overwritten with an invalid value
+  // when Svelte flushes this effect before the oninput handler has a chance to reset.
+  $effect(() => {
+    if (isTimeInRange(value, min, max)) prevValue = value;
+  });
+  $effect(() => {
+    if (isTimeInRange(endValue, min, max)) prevEndValue = endValue;
   });
 </script>
 
@@ -269,7 +286,7 @@
           {max}
           {required}
           {disabled}
-          class={styles.input({ class: clsx(theme?.rangeInput, styles.rangeInput(), inputClass) })}
+          class={styles.input({ class: clsx(theme?.rangeInput, styles.rangeInput(), styles.rangeStartInput(), inputClass) })}
           bind:value
           oninput={(e) => handleTimeChange(e)}
           onchange={(e) => handleTimeChange(e)}
@@ -300,7 +317,7 @@
           {max}
           {required}
           {disabled}
-          class={styles.input({ class: clsx(styles.rangeInput(), theme?.rangeInput, inputClass) })}
+          class={styles.input({ class: clsx(styles.rangeInput(), styles.rangeEndInput(), theme?.rangeInput, inputClass) })}
           bind:value={endValue}
           oninput={(e) => handleTimeChange(e, true)}
           onchange={(e) => handleTimeChange(e, true)}

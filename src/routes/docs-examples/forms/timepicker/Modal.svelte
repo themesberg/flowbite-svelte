@@ -47,7 +47,7 @@
   {/snippet}
   <div class="p-4 sm:p-5">
     <div class="mb-4">
-      <Datepicker bind:value={modalSelectedDate} onselect={handleModalDateSelect} inline class="mx-auto [&_div>button]:bg-gray-50 [&>div>div]:bg-gray-50 [&>div>div]:shadow-none" />
+      <Datepicker bind:value={modalSelectedDate} onselect={handleModalDateSelect} inline class="mx-auto" />
     </div>
     <div class="mb-4">
       <Label class="mb-2 block">Pick your time</Label>
