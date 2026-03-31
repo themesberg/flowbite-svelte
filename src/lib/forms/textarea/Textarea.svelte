@@ -53,9 +53,9 @@
   });
 </script>
 
-<div data-scope="textarea" data-part="container" class={container({ class: clsx(theme?.container, className) })}>
+<div data-scope="textarea" data-part="container" class={container({ class: clsx(theme?.container, wrapped && className) })}>
   {#if !wrapped}
-    <textarea data-part="wrapper" bind:value bind:this={elementRef} {disabled} {...restProps} class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })}></textarea>
+    <textarea data-part="wrapper" bind:value bind:this={elementRef} {disabled} {...restProps} class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper, className) })}></textarea>
   {:else}
     <div data-part="wrapper" class={wrapper({ class: clsx(theme?.wrapper, styling?.wrapper) })}>
       {#if header}

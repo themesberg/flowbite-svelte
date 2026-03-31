@@ -7,7 +7,7 @@ export type InputVariants = VariantProps<typeof input> & Classes<typeof input>;
 export const input = tv({
   slots: {
     base: "relative w-full",
-    input: "text-heading text-sm focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body disabled:text-fg-disabled",
+    input: "text-heading text-sm focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body disabled:text-fg-disabled disabled:placeholder:text-fg-disabled",
     leftAddon: "flex absolute inset-y-0 items-center text-body pointer-events-none start-0 p-2.5",
     rightAddon: "flex absolute inset-y-0 items-center text-body end-0 p-2.5",
     closeButton: "absolute right-2 top-1/2 -translate-y-1/2 text-body hover:text-heading",
@@ -113,7 +113,7 @@ export const input = tv({
       false: { base: "rounded-base", input: "rounded-base" },
       true: {
         base: "first:rounded-s-base last:rounded-e-base not-first:-ms-px",
-        input: "first:rounded-s-base last:rounded-e-base not-first:-ms-px h-full"
+        input: "first:rounded-s-base last:rounded-e-base not-first:-ms-px h-full shadow-none"
       }
     }
   },

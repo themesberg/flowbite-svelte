@@ -6,27 +6,27 @@ export type RadioVariants = VariantProps<typeof radio> & Classes<typeof radio>;
 
 export const radio = tv({
   slots: {
-    input: "w-4 h-4 text-neutral-primary border-default-medium bg-neutral-secondary-medium rounded-full checked:border-brand focus:ring-2 focus:outline-none focus:ring-brand-subtle border border-default appearance-none me-2",
+    input: "w-4 h-4 text-fg-brand bg-neutral-secondary-medium border border-default-medium focus:ring-2 focus:ring-brand-subtle me-2",
     label: "flex items-center"
   },
   variants: {
     color: {
       // "brand" | "danger" | "success" | "warning" | "dark" | "neutral"
       brand: {
-        input: ""
+        input: "text-fg-brand focus:ring-brand-subtle"
       },
       dark: {
-        input: "checked:border-default-strong focus:ring-neutral-tertiary"
+        input: "text-heading focus:ring-neutral-tertiary"
       },
-      danger: { input: "checked:border-danger focus:ring-danger-soft" },
+      danger: { input: "text-danger focus:ring-danger-soft" },
       neutral: {
-        input: "checked:border-warning focus:ring-warning-soft"
+        input: "text-body focus:ring-neutral-tertiary"
       },
       warning: {
-        input: "checked:border-warning focus:ring-warning-soft"
+        input: "text-warning focus:ring-warning-soft"
       },
       success: {
-        input: "checked:border-success focus:ring-success-soft"
+        input: "text-success focus:ring-success-soft"
       }
     },
     tinted: {
@@ -35,7 +35,7 @@ export const radio = tv({
     },
     custom: {
       true: { input: "sr-only peer" },
-      false: { input: "relative" }
+      false: {}
     },
     inline: {
       true: { label: "inline-flex" },

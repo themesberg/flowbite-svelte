@@ -12,7 +12,7 @@
   <div class="flex">
     <button
       id="states-button"
-      class="z-10 inline-flex shrink-0 items-center rounded-s-base border border-r-0 border-default-medium bg-neutral-secondary-medium px-4 py-2.5 text-center text-sm font-medium text-body hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary focus:outline-none"
+      class="z-10 inline-flex shrink-0 items-center rounded-s-base border border-r-0 border-default-medium bg-neutral-secondary-medium px-4 py-2 text-center text-sm font-medium text-body hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary focus:outline-none"
       type="button"
     >
       <Usa />

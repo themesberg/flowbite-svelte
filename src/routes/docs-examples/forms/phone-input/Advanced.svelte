@@ -11,7 +11,7 @@
   <div class="mt-2 flex">
     <button
       id="states-button"
-      class="z-10 inline-flex shrink-0 items-center rounded-s-base border border-r-0 border-default-medium bg-neutral-secondary-medium px-4 py-2.5 text-center text-sm font-medium text-body hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary focus:outline-none"
+      class="z-10 inline-flex shrink-0 items-center rounded-s-base border border-r-0 border-default-medium bg-neutral-secondary-medium px-4 py-2 text-center text-sm font-medium text-body hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary focus:outline-none"
       type="button"
     >
       <Usa />
@@ -37,12 +37,12 @@
       </DropdownItem>
     </Dropdown>
     <Label for="phone-input" class="sr-only">Phone number:</Label>
-    <PhoneInput phoneIcon={false} placeholder="123-456-7890" required phoneType="countryCode" classes={{ input: "rounded-none border-r-0" }} />
+    <PhoneInput phoneIcon={false} placeholder="123-456-7890" required phoneType="countryCode" classes={{ input: "rounded-none rounded-e-none border-r-0" }} />
     <label for="phone-input" class="sr-only">Phone number:</label>
     <button
       id="dropdown-verification-option-button"
       data-dropdown-toggle="dropdown-verification-option"
-      class="z-10 inline-flex shrink-0 items-center rounded-e-base border border-default-medium bg-neutral-secondary-medium px-4 py-2.5 text-center text-sm font-medium text-heading hover:bg-neutral-tertiary-medium focus:ring-4 focus:ring-neutral-tertiary focus:outline-none"
+      class="z-10 inline-flex shrink-0 items-center rounded-e-base border border-default-medium bg-neutral-secondary-medium px-4 py-2 text-center text-sm font-medium text-heading hover:bg-neutral-tertiary-medium focus:ring-4 focus:ring-neutral-tertiary focus:outline-none"
       type="button"
     >
       Send SMS <svg class="ms-2.5 h-2.5 w-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">

@@ -5,8 +5,8 @@
 
 <ButtonGroup class="w-full">
   <Button
-    color={undefined}
-    class="shrink-0 border border-default-medium bg-neutral-secondary-medium text-heading hover:bg-neutral-tertiary-medium focus:ring-neutral-tertiary"
+    color="alternative"
+    class="shrink-0"
   >
     All categories<ChevronDownOutline class="ms-2 h-6 w-6" />
   </Button>
@@ -16,7 +16,7 @@
     <DropdownItem>News</DropdownItem>
     <DropdownItem>Finance</DropdownItem>
   </Dropdown>
-  <Input placeholder="Search" />
+  <Input placeholder="Search" class="py-3"  />
   <Button class="p-2.5!" type="submit">
     <SearchOutline class="h-5 w-5" />
   </Button>
