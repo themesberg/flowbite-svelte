@@ -11,7 +11,7 @@
   <div class="mt-2 flex">
     <button
       id="states-button"
-      class="z-10 inline-flex shrink-0 items-center rounded-s-lg border border-r-0 border-gray-300 bg-gray-100 px-3 py-2 text-center text-sm font-medium text-gray-500 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 focus:outline-hidden dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+      class="z-10 inline-flex shrink-0 items-center rounded-s-base border border-r-0 border-default-medium bg-neutral-secondary-medium px-4 py-2.5 text-center text-sm font-medium text-body hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary focus:outline-none"
       type="button"
     >
       <Usa />
@@ -42,7 +42,7 @@
     <button
       id="dropdown-verification-option-button"
       data-dropdown-toggle="dropdown-verification-option"
-      class="z-10 inline-flex shrink-0 items-center rounded-e-lg border border-gray-300 bg-gray-100 px-4 py-2.5 text-center text-sm font-medium text-gray-900 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-700"
+      class="z-10 inline-flex shrink-0 items-center rounded-e-base border border-default-medium bg-neutral-secondary-medium px-4 py-2.5 text-center text-sm font-medium text-heading hover:bg-neutral-tertiary-medium focus:ring-4 focus:ring-neutral-tertiary focus:outline-none"
       type="button"
     >
       Send SMS <svg class="ms-2.5 h-2.5 w-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">

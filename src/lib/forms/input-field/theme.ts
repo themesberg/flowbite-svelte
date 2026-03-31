@@ -7,26 +7,26 @@ export type InputVariants = VariantProps<typeof input> & Classes<typeof input>;
 export const input = tv({
   slots: {
     base: "relative w-full",
-    input: "text-heading text-sm focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body",
-    leftAddon: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 pointer-events-none start-0 p-2.5",
-    rightAddon: "flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400 end-0 p-2.5",
-    closeButton: "absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black",
-    comboList: "absolute top-full right-0 left-0 z-20 mt-1 max-h-60 overflow-y-auto rounded-md border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800",
-    option: "text-gray-900 dark:text-gray-50",
+    input: "text-heading text-sm focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body disabled:text-fg-disabled",
+    leftAddon: "flex absolute inset-y-0 items-center text-body pointer-events-none start-0 p-2.5",
+    rightAddon: "flex absolute inset-y-0 items-center text-body end-0 p-2.5",
+    closeButton: "absolute right-2 top-1/2 -translate-y-1/2 text-body hover:text-heading",
+    comboList: "absolute top-full right-0 left-0 z-20 mt-1 max-h-60 overflow-y-auto rounded-md border border-default-medium bg-neutral-primary-medium shadow-lg",
+    option: "text-heading",
     closeIcon: ""
   },
   variants: {
     size: {
-      sm: { input: "text-xs px-2 py-1" },
-      md: { input: "text-sm px-2.5 py-2.5" },
-      lg: { input: "sm:text-base px-3 py-3" }
+      sm: { input: "text-sm px-2.5 py-2" },
+      md: { input: "text-sm px-3 py-2.5" },
+      lg: { input: "text-base px-3.5 py-3" }
     },
     color: {
       default: {
         input: "bg-neutral-secondary-medium border border-default-medium"
       },
       tinted: {
-        input: "border border-gray-300 dark:border-gray-500 bg-gray-50 text-gray-900 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
+        input: "bg-neutral-secondary-medium border border-default-medium"
       },
       primary: {
         input:

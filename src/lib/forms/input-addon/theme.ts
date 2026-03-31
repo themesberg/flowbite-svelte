@@ -5,7 +5,7 @@ export type InputAddonVariants = VariantProps<typeof inputAddon> & Classes<typeo
 
 export const inputAddon = tv({
   slots: {
-    base: "text-gray-500 bg-gray-200 inline-flex items-center border first:rounded-s-base last:rounded-e-base"
+    base: "text-body bg-neutral-secondary-medium inline-flex items-center border first:rounded-s-base last:rounded-e-base"
   },
   variants: {
     size: {
@@ -15,10 +15,10 @@ export const inputAddon = tv({
     },
     background: {
       base: {
-        base: "border-gray-300 dark:border-gray-600 dark:bg-gray-600 dark:text-gray-400 dark:border-e-gray-700 dark:last:border-e-gray-600"
+        base: "border-default-medium"
       },
       tinted: {
-        base: "border-gray-300 dark:border-gray-500 dark:bg-gray-500 dark:text-gray-300 dark:border-e-gray-600 dark:last:border-e-gray-500"
+        base: "border-default"
       }
     },
     grouped: {

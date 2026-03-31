@@ -4,10 +4,10 @@ import { tv, type VariantProps } from "tailwind-variants";
 export type HelperVariants = VariantProps<typeof helper>;
 
 export const helper = tv({
-  base: "text-xs text-gray-500 dark:text-gray-300",
+  base: "text-xs text-body",
   variants: {
     color: {
-      disabled: "text-gray-400 dark:text-gray-500",
+      disabled: "text-fg-disabled",
       brand: "text-body",
       success: "text-fg-success-strong",
       danger: "text-fg-danger-strong",

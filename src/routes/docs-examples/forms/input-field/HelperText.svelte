@@ -6,7 +6,7 @@
   <span>Your email</span>
   <Input id="email" name="email" required placeholder="name@flowbite.com" />
   <Helper class="text-sm">
-    We’ll never share your details. Read our <a href="/" class="text-primary-600 dark:text-primary-500 font-medium hover:underline">Privacy Policy</a>
+    We'll never share your details. Read our <a href="/" class="text-fg-brand font-medium hover:underline">Privacy Policy</a>
     .
   </Helper>
 </Label>

@@ -2,8 +2,8 @@
   import { Radio } from "flowbite-svelte";
 </script>
 
-<p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
-<ul class="w-full items-center divide-x divide-gray-200 rounded-lg border border-gray-200 sm:flex rtl:divide-x-reverse dark:divide-gray-600 dark:border-gray-600 dark:bg-gray-800">
+<p class="mb-4 font-semibold text-heading">Identification</p>
+<ul class="w-full items-center divide-x divide-default rounded-base border border-default bg-neutral-primary-soft sm:flex rtl:divide-x-reverse">
   <li class="w-full"><Radio name="hor-list" classes={{ label: "p-3" }}>Svelte</Radio></li>
   <li class="w-full"><Radio name="hor-list" classes={{ label: "p-3" }}>Vue JS</Radio></li>
   <li class="w-full"><Radio name="hor-list" classes={{ label: "p-3" }}>React</Radio></li>

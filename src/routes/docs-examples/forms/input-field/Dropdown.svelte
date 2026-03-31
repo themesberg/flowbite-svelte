@@ -6,7 +6,7 @@
 <ButtonGroup class="w-full">
   <Button
     color={undefined}
-    class="shrink-0 border border-gray-300 bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-300 dark:border-gray-700 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+    class="shrink-0 border border-default-medium bg-neutral-secondary-medium text-heading hover:bg-neutral-tertiary-medium focus:ring-neutral-tertiary"
   >
     All categories<ChevronDownOutline class="ms-2 h-6 w-6" />
   </Button>

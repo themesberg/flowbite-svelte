@@ -42,7 +42,7 @@
     <Input type="password" id="confirm_password" placeholder="•••••••••" required />
   </div>
   <Checkbox classes={{ label: "mb-6 gap-1 rtl:space-x-reverse" }} required>
-    I agree with the <A href="/" class="text-primary-700 dark:text-primary-600 hover:underline">terms and conditions</A>.
+    I agree with the <A href="/" class="text-fg-brand hover:underline">terms and conditions</A>.
   </Checkbox>
   <Button type="submit">Submit</Button>
 </form>
