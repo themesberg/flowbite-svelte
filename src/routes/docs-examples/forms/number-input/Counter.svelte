@@ -8,7 +8,7 @@
 </script>
 
 <form class="mx-auto max-w-xs">
-  <Label for="counter-input" class="mb-1 text-sm text-heading">Choose quantity:</Label>
+  <Label for="counter-input" class="text-heading mb-1 text-sm">Choose quantity:</Label>
   <div class="relative flex items-center gap-2">
     <Button color="alternative" class="h-5 w-5 rounded-xl p-2" onclick={() => (counterInput -= 1)}>
       <MinusOutline class="h-2.5 w-2.5" />

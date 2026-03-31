@@ -7,7 +7,7 @@
     <Avatar src="/images/people/profile-picture-1.jpg" class="h-8" />
   {/snippet}
   <div class="ms-3 text-sm font-normal">
-    <span class="mb-1 text-sm font-semibold text-heading">Jese Leos</span>
+    <span class="text-heading mb-1 text-sm font-semibold">Jese Leos</span>
     <div class="mb-2 text-sm font-normal">Hi Neil, thanks for sharing your thoughts regarding Flowbite.</div>
     <Button size="xs">Reply</Button>
   </div>

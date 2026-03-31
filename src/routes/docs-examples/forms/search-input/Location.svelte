@@ -32,7 +32,7 @@
 
 <form class="flex">
   <div class="relative">
-    <Button class="bg-neutral-secondary-medium text-body border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading rounded-e-none border-e-0 whitespace-nowrap">
+    <Button class="bg-brand hover:bg-brand-strong text-white rounded-e-none border border-transparent border-e-0 whitespace-nowrap">
       <img class="me-2 h-3.5 w-3.5 rounded-full" src={buttonLabel?.icon} alt={buttonLabel?.label} />
       {buttonLabel?.labelSelected}
       <ChevronDownOutline class="ms-2.5 h-6 w-6" />

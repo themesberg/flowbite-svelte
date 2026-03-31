@@ -5,11 +5,11 @@
   import Angular from "$icons/Angular.svelte";
 </script>
 
-<p class="mb-5 text-lg font-medium text-heading">Choose technology:</p>
+<p class="text-heading mb-5 text-lg font-medium">Choose technology:</p>
 <div class="grid w-full gap-6 md:grid-cols-3">
   <Checkbox custom>
     <div
-      class="peer-checked:border-fg-brand w-full cursor-pointer rounded-lg border-2 border-default bg-neutral-primary-soft p-5 font-normal text-body peer-checked:text-heading hover:bg-neutral-primary-medium hover:text-heading"
+      class="peer-checked:border-fg-brand border-default bg-neutral-primary-soft text-body peer-checked:text-heading hover:bg-neutral-primary-medium hover:text-heading w-full cursor-pointer rounded-lg border-2 p-5 font-normal"
     >
       <React />
       <div class="w-full text-lg font-semibold">React Js</div>
@@ -18,7 +18,7 @@
   </Checkbox>
   <Checkbox custom>
     <div
-      class="peer-checked:border-fg-brand w-full cursor-pointer rounded-lg border-2 border-default bg-neutral-primary-soft p-5 font-normal text-body peer-checked:text-heading hover:bg-neutral-primary-medium hover:text-heading"
+      class="peer-checked:border-fg-brand border-default bg-neutral-primary-soft text-body peer-checked:text-heading hover:bg-neutral-primary-medium hover:text-heading w-full cursor-pointer rounded-lg border-2 p-5 font-normal"
     >
       <Vue />
       <div class="w-full text-lg font-semibold">Vue Js</div>
@@ -27,7 +27,7 @@
   </Checkbox>
   <Checkbox custom>
     <div
-      class="peer-checked:border-fg-brand w-full cursor-pointer rounded-lg border-2 border-default bg-neutral-primary-soft p-5 font-normal text-body peer-checked:text-heading hover:bg-neutral-primary-medium hover:text-heading"
+      class="peer-checked:border-fg-brand border-default bg-neutral-primary-soft text-body peer-checked:text-heading hover:bg-neutral-primary-medium hover:text-heading w-full cursor-pointer rounded-lg border-2 p-5 font-normal"
     >
       <Angular />
       <div class="w-full text-lg font-semibold">Angular</div>

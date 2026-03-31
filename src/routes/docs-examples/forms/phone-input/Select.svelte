@@ -20,7 +20,7 @@
     <Clipboard
       color="alternative"
       bind:value={selected}
-      class="z-10 inline-flex shrink-0 items-center rounded-e-base border border-default-medium bg-neutral-secondary-medium px-4 py-2.5 text-center text-sm font-medium text-body hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary focus:outline-none"
+      class="rounded-e-base border-default-medium bg-neutral-secondary-medium text-body hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-neutral-tertiary z-10 inline-flex shrink-0 items-center border px-4 py-2.5 text-center text-sm font-medium focus:ring-4 focus:outline-none"
     >
       {#snippet children(success)}
         <Tooltip class="whitespace-nowrap">{success ? "Copied" : "Copy to clipboard"}</Tooltip>

@@ -28,7 +28,7 @@
       <Checkbox>Bonnie Green</Checkbox>
     </DropdownItem>
   </DropdownGroup>
-  <a href="/" class="-mb-1 flex items-center bg-neutral-primary-soft p-3 text-sm font-medium text-fg-danger hover:bg-neutral-primary-medium hover:underline">
+  <a href="/" class="bg-neutral-primary-soft text-fg-danger hover:bg-neutral-primary-medium -mb-1 flex items-center p-3 text-sm font-medium hover:underline">
     <UserRemoveSolid class="me-1 h-5 w-5" />Delete user
   </a>
 </Dropdown>

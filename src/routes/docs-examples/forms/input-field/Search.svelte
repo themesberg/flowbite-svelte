@@ -7,7 +7,7 @@
   <Label for="search" class="mb-2 block">Your Email</Label>
   <Input id="search" placeholder="Search" size="lg" class="ps-9">
     {#snippet left()}
-      <SearchOutline class="h-6 w-6 text-body" />
+      <SearchOutline class="text-body h-6 w-6" />
     {/snippet}
     {#snippet right()}
       <Button size="sm" type="submit">Search</Button>

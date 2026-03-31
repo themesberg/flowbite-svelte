@@ -10,7 +10,7 @@
   }
 </script>
 
-<div id="ext-ref" class="rounded-lg border border-default p-2">External reference</div>
+<div id="ext-ref" class="border-default rounded-lg border p-2">External reference</div>
 <div class="space-x-4 rtl:space-x-reverse">
   <Button id="ref-left">Left</Button>
   <Button id="ref-top">Top</Button>

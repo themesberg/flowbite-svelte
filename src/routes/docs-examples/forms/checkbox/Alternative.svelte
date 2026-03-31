@@ -7,12 +7,12 @@
     <TableHeadCell>Left column</TableHeadCell>
     <TableHeadCell>Right column</TableHeadCell>
   </TableHead>
-  <TableBody class="divide-y divide-default">
-    <TableBodyRow class="divide-x rtl:divide-x-reverse divide-default">
+  <TableBody class="divide-default divide-y">
+    <TableBodyRow class="divide-default divide-x rtl:divide-x-reverse">
       <TableBodyCell><Label for="checkbox1">Default checkbox</Label></TableBodyCell>
       <TableBodyCell><Label for="checkbox2">Disabled checkbox</Label></TableBodyCell>
     </TableBodyRow>
-    <TableBodyRow class="divide-x rtl:divide-x-reverse divide-default">
+    <TableBodyRow class="divide-default divide-x rtl:divide-x-reverse">
       <TableBodyCell><Checkbox id="checkbox1" checked /></TableBodyCell>
       <TableBodyCell><Checkbox id="checkbox2" disabled /></TableBodyCell>
     </TableBodyRow>

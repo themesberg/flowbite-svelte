@@ -4,10 +4,7 @@
 </script>
 
 <ButtonGroup class="w-full">
-  <Button
-    color="alternative"
-    class="shrink-0"
-  >
+  <Button color="alternative" class="shrink-0">
     All categories<ChevronDownOutline class="ms-2 h-6 w-6" />
   </Button>
   <Dropdown simple>
@@ -16,7 +13,7 @@
     <DropdownItem>News</DropdownItem>
     <DropdownItem>Finance</DropdownItem>
   </Dropdown>
-  <Input placeholder="Search" class="py-3"  />
+  <Input placeholder="Search" class="py-3" />
   <Button class="p-2.5!" type="submit">
     <SearchOutline class="h-5 w-5" />
   </Button>

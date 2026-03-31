@@ -15,12 +15,10 @@ export const select = tv({
   variants: {
     underline: {
       true: {
-        select:
-          "text-body bg-transparent rounded-none! border-0 border-b-2 border-default-medium appearance-none focus:outline-hidden focus:ring-0 focus:border-brand peer px-0!"
+        select: "text-body bg-transparent rounded-none! border-0 border-b-2 border-default-medium appearance-none focus:outline-hidden focus:ring-0 focus:border-brand peer px-0!"
       },
       false: {
-        select:
-          "text-heading bg-neutral-secondary-medium border border-default-medium focus:ring-brand focus:border-brand shadow-xs placeholder:text-body"
+        select: "text-heading bg-neutral-secondary-medium border border-default-medium focus:ring-brand focus:border-brand shadow-xs placeholder:text-body"
       }
     },
     size: {

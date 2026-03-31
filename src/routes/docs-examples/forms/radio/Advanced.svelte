@@ -3,7 +3,7 @@
   import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 
-<p class="mb-5 text-lg font-medium text-heading">Choose technology:</p>
+<p class="text-heading mb-5 text-lg font-medium">Choose technology:</p>
 <div class="grid w-full gap-6 md:grid-cols-2">
   <Radio name="custom" custom>
     <div

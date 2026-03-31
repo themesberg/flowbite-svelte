@@ -4,10 +4,10 @@
 </script>
 
 <div class="grid grid-cols-2 gap-6">
-  <div class="rounded-base border border-default bg-neutral-primary-soft">
+  <div class="rounded-base border-default bg-neutral-primary-soft border">
     <Radio name="bordered" value="1" bind:group={selectedValue3} classes={{ label: "w-full p-4" }}>Default radio</Radio>
   </div>
-  <div class="rounded-base border border-default bg-neutral-primary-soft">
+  <div class="rounded-base border-default bg-neutral-primary-soft border">
     <Radio name="bordered" value="2" bind:group={selectedValue3} classes={{ label: "w-full p-4" }}>Checked state</Radio>
   </div>
 </div>

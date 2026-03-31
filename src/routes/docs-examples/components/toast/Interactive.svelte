@@ -8,7 +8,7 @@
     <CameraPhotoOutline class="h-6 w-6" />
   {/snippet}
 
-  <span class="font-semibold text-heading">Update available</span>
+  <span class="text-heading font-semibold">Update available</span>
   <div class="mt-3">
     <div class="mb-2 text-sm font-normal">A new software version is available for download.</div>
     <div class="grid grid-cols-2 gap-2">
