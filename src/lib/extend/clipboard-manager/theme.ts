@@ -10,33 +10,33 @@ export const clipboardManager = tv({
     // Input section
     inputSection: "space-y-2",
     inputWrapper: "flex gap-2",
-    input: "flex-1 rounded-base border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500 dark:text-white",
+    input: "flex-1 rounded-base border border-default bg-neutral-primary-soft px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-brand text-heading",
 
     // Search section
     searchWrapper: "flex gap-2",
     searchContainer: "relative flex-1",
-    searchInput: "w-full rounded-base border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 pl-9 pr-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500 dark:text-white",
-    searchIcon: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400",
+    searchInput: "w-full rounded-base border border-default bg-neutral-primary-soft pl-9 pr-3 py-2 text-sm outline-none focus:ring-2 focus:ring-brand text-heading",
+    searchIcon: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-body",
 
     // Items list
     itemsList: "space-y-2 max-h-[500px] overflow-y-auto",
 
     // Empty state
     emptyState: "text-center py-8",
-    emptyIcon: "w-12 h-12 mx-auto text-gray-300 dark:text-gray-600 mb-3",
-    emptyMessage: "text-sm text-gray-500 dark:text-gray-400",
-    emptyDescription: "text-xs text-gray-400 dark:text-gray-500 mt-1",
+    emptyIcon: "w-12 h-12 mx-auto text-fg-disabled mb-3",
+    emptyMessage: "text-sm text-body",
+    emptyDescription: "text-xs text-body mt-1",
 
     // Item
-    item: "group flex items-start gap-3 rounded-base border border-gray-200 dark:border-gray-700 p-3 transition hover:bg-gray-50 dark:hover:bg-gray-800/50",
+    item: "group flex items-start gap-3 rounded-base border border-default bg-neutral-primary-soft p-3 transition hover:bg-neutral-secondary-soft",
     itemContent: "flex-1 min-w-0",
     itemHeader: "flex items-center gap-2 mb-1",
-    itemTimestamp: "text-xs text-gray-500 dark:text-gray-400",
-    itemText: "text-sm text-gray-900 dark:text-gray-100 break-words line-clamp-2 text-body",
+    itemTimestamp: "text-xs text-body",
+    itemText: "text-sm text-heading break-words line-clamp-2 text-body",
 
     // Actions
     itemActions: "flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity",
-    actionButton: "p-1.5 rounded-base hover:bg-gray-200 dark:hover:bg-gray-700 transition flex items-center justify-center",
+    actionButton: "p-1.5 rounded-base hover:bg-neutral-secondary-medium transition flex items-center justify-center",
     actionIcon: "w-4 h-4 flex-shrink-0",
     pinButton: "p-1.5 rounded-base transition",
     deleteButton: "p-1.5 rounded-base text-red-500 hover:bg-red-100 dark:hover:bg-red-900/20 transition",
@@ -47,13 +47,13 @@ export const clipboardManager = tv({
     toastIcon: "w-5 h-5",
     toastText: "text-sm font-medium",
     // buttons
-    addButton: "whitespace-nowrap rounded-base bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:opacity-50",
+    addButton: "whitespace-nowrap rounded-base bg-brand px-4 py-2 text-white hover:bg-brand-strong disabled:opacity-50",
     clearButton: "rounded-base bg-red-600 px-4 py-2 text-white hover:bg-red-700",
     // Selection bubble menu
     selectionMenu: "selection-menu fixed z-50 -translate-x-1/2 -translate-y-full",
     selectionBubble: "mb-2 flex items-center gap-2 rounded-base bg-gray-900 px-3 py-2 text-white shadow-xl",
     selectionText: "max-w-[200px] truncate text-xs",
-    selectionButton: "rounded-base bg-primary-700 px-2 py-1 text-xs font-medium whitespace-nowrap transition hover:bg-primary-500",
+    selectionButton: "rounded-base bg-brand px-2 py-1 text-xs font-medium whitespace-nowrap transition hover:bg-brand-strong",
     selectionArrow: "absolute bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-gray-900"
   },
   variants: {
@@ -62,7 +62,7 @@ export const clipboardManager = tv({
         pinButton: "text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/20"
       },
       false: {
-        pinButton: "hover:bg-gray-200 dark:hover:bg-gray-700"
+        pinButton: "hover:bg-neutral-secondary-medium"
       }
     },
     type: {

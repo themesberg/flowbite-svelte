@@ -8,7 +8,7 @@
 <div class="space-y-4">
   <StepIndicator bind:currentStep {steps} clickable={false} />
 
-  <p class="text-sm text-gray-500 dark:text-gray-400">
+  <p class="text-sm text-body">
     Step indicators are non-clickable when <code class="text-xs">clickable={"{false}"}</code>
     is set.
   </p>

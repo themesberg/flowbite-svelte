@@ -81,32 +81,32 @@
   }
 </script>
 
-<div class="min-h-screen bg-gray-50">
+<div class="min-h-screen bg-neutral-secondary-soft">
   <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-gray-200 bg-white">
+  <header class="sticky top-0 z-50 border-b border-default bg-neutral-primary-soft">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <div class="flex items-center gap-8">
-          <h1 id="welcome-section" class="text-xl font-bold text-gray-900">MyApp</h1>
+          <h1 id="welcome-section" class="text-xl font-bold text-heading">MyApp</h1>
 
           <div id="search-bar" class="hidden sm:block">
-            <input type="text" placeholder="Search..." class="w-64 rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+            <input type="text" placeholder="Search..." class="w-64 rounded-lg border border-default px-4 py-2 focus:ring-2 focus:ring-brand focus:outline-none" />
           </div>
         </div>
 
         <div class="flex items-center gap-4">
-          <button id="notifications" class="relative rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900" aria-label="Notifications">
+          <button id="notifications" class="relative rounded-lg p-2 text-body transition-colors hover:bg-neutral-primary-medium hover:text-heading" aria-label="Notifications">
             <BellOutline class="h-6 w-6" />
             <span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-red-500"></span>
           </button>
 
-          <button id="help-center" class="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900" aria-label="Help">
+          <button id="help-center" class="rounded-lg p-2 text-body transition-colors hover:bg-neutral-primary-medium hover:text-heading" aria-label="Help">
             <QuestionCircleOutline class="h-6 w-6" />
           </button>
 
-          <button id="profile-button" class="flex items-center gap-2 rounded-lg px-3 py-2 transition-colors hover:bg-gray-100">
-            <Avatar class="bg-blue-400 text-white">JD</Avatar>
-            <span class="hidden text-sm font-medium text-gray-700 sm:block">John Doe</span>
+          <button id="profile-button" class="flex items-center gap-2 rounded-lg px-3 py-2 transition-colors hover:bg-neutral-primary-medium">
+            <Avatar class="bg-brand-medium text-white">JD</Avatar>
+            <span class="hidden text-sm font-medium text-heading sm:block">John Doe</span>
           </button>
         </div>
       </div>
@@ -115,43 +115,43 @@
 
   <!-- Main Content -->
   <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-    <div class="mb-8 rounded-lg bg-white p-8 shadow-sm">
-      <h2 class="mb-4 text-2xl font-bold text-gray-900">Welcome Back! 👋</h2>
-      <p class="mb-6 text-gray-600">Ready to explore? Start the interactive tour to learn about all the features.</p>
+    <div class="mb-8 rounded-lg bg-neutral-primary-soft p-8 shadow-sm">
+      <h2 class="mb-4 text-2xl font-bold text-heading">Welcome Back! 👋</h2>
+      <p class="mb-6 text-body">Ready to explore? Start the interactive tour to learn about all the features.</p>
       <Button onclick={startTour}>Start Tour</Button>
     </div>
 
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <div id="fast-performance" class="rounded-lg bg-white p-6 shadow-sm">
+      <div id="fast-performance" class="rounded-lg bg-neutral-primary-soft p-6 shadow-sm">
         <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-purple-100">
           <FireOutline class="h-6 w-6 text-purple-600" />
         </div>
-        <h3 class="mb-2 text-lg font-semibold text-gray-900">Fast Performance</h3>
-        <p class="text-sm text-gray-600">Lightning fast load times and smooth interactions.</p>
+        <h3 class="mb-2 text-lg font-semibold text-heading">Fast Performance</h3>
+        <p class="text-sm text-body">Lightning fast load times and smooth interactions.</p>
       </div>
 
-      <div id="secure" class="rounded-lg bg-white p-6 shadow-sm">
+      <div id="secure" class="rounded-lg bg-neutral-primary-soft p-6 shadow-sm">
         <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-green-100">
           <BellRingOutline class="h-6 w-6 text-green-600" />
         </div>
-        <h3 class="mb-2 text-lg font-semibold text-gray-900">Secure</h3>
-        <p class="text-sm text-gray-600">Your data is protected with enterprise-grade security.</p>
+        <h3 class="mb-2 text-lg font-semibold text-heading">Secure</h3>
+        <p class="text-sm text-body">Your data is protected with enterprise-grade security.</p>
       </div>
 
-      <div id="customizable" class="rounded-lg bg-white p-6 shadow-sm">
+      <div id="customizable" class="rounded-lg bg-neutral-primary-soft p-6 shadow-sm">
         <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
           <GlobeOutline class="h-6 w-6 text-blue-600" />
         </div>
-        <h3 class="mb-2 text-lg font-semibold text-gray-900">Customizable</h3>
-        <p class="text-sm text-gray-600">Tailor the experience to match your workflow.</p>
+        <h3 class="mb-2 text-lg font-semibold text-heading">Customizable</h3>
+        <p class="text-sm text-body">Tailor the experience to match your workflow.</p>
       </div>
 
-      <div id="a11y" class="rounded-lg bg-white p-6 shadow-sm">
-        <div class="bg-primary-100 mb-4 flex h-12 w-12 items-center justify-center rounded-lg">
-          <GridOutline class="text-primary-600 h-6 w-6" />
+      <div id="a11y" class="rounded-lg bg-neutral-primary-soft p-6 shadow-sm">
+        <div class="bg-brand-softer mb-4 flex h-12 w-12 items-center justify-center rounded-lg">
+          <GridOutline class="text-fg-brand h-6 w-6" />
         </div>
-        <h3 class="mb-2 text-lg font-semibold text-gray-900">A11y</h3>
-        <p class="text-sm text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <h3 class="mb-2 text-lg font-semibold text-heading">A11y</h3>
+        <p class="text-sm text-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
       </div>
     </div>
   </main>

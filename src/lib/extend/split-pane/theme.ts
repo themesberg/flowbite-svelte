@@ -23,7 +23,7 @@ export const pane = tv({
 
 export const divider = tv({
   slots: {
-    base: "bg-gray-300 shrink-0 relative z-10 transition-colors duration-200 hover:bg-gray-400 focus:bg-gray-400 focus:outline focus:outline-2 focus:outline-blue-500 focus:-outline-offset-2",
+    base: "bg-neutral-tertiary shrink-0 relative z-10 transition-colors duration-200 hover:bg-neutral-quaternary focus:bg-neutral-quaternary focus:outline focus:outline-2 focus:outline-brand focus:-outline-offset-2",
     hitArea: "absolute bg-transparent"
   },
   variants: {
@@ -39,7 +39,7 @@ export const divider = tv({
     },
     isDragging: {
       true: {
-        base: "bg-blue-500"
+        base: "bg-brand-medium"
       },
       false: {
         base: ""

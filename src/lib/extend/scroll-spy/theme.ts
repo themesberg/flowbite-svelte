@@ -6,10 +6,10 @@ export type ScrollSpyVariants = VariantProps<typeof scrollspy> & Classes<typeof 
 
 export const scrollspy = tv({
   slots: {
-    base: "bg-white dark:bg-gray-900 p-2 transition-all duration-300 z-40 border-b border-gray-200 dark:border-gray-700",
+    base: "bg-neutral-primary-soft p-2 transition-all duration-300 z-40 border-b border-default",
     container: "",
     list: "",
-    link: "px-4 py-2.5 transition-all duration-200 cursor-pointer rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900",
+    link: "px-4 py-2.5 transition-all duration-200 cursor-pointer rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2",
     item: "p-2 m-1"
   },
   variants: {
@@ -48,10 +48,10 @@ export const scrollspy = tv({
     },
     active: {
       true: {
-        link: "text-primary-700 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 font-semibold focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900"
+        link: "text-fg-brand bg-brand-softer font-semibold focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
       },
       false: {
-        link: "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
+        link: "text-body hover:text-heading hover:bg-neutral-primary-medium"
       }
     }
   },

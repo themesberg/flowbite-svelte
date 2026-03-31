@@ -22,13 +22,13 @@
     {@const user = item as User}
     <div
       class="flex items-center justify-between border-b p-4 transition-colors
-             {index % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-gray-50 dark:bg-gray-800'}
-             hover:bg-blue-50 dark:hover:bg-blue-900/20"
+             {index % 2 === 0 ? 'bg-neutral-primary-soft' : 'bg-neutral-secondary-soft'}
+             hover:bg-brand-softer"
       style="height:70px"
     >
       <div class="flex-1">
-        <div class="font-medium text-gray-900 dark:text-white">{user.name}</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400">{user.email}</div>
+        <div class="font-medium text-heading">{user.name}</div>
+        <div class="text-sm text-body">{user.email}</div>
       </div>
       <span
         class="rounded-full px-3 py-1 text-xs font-semibold
@@ -36,7 +36,7 @@
           ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
           : user.status === 'pending'
             ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
-            : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'}"
+            : 'bg-neutral-tertiary text-heading'}"
       >
         {user.status}
       </span>

@@ -10,13 +10,13 @@ export type StepIndicatorTheme = Partial<Record<StepIndicatorSlots, ClassValue>>
 
 export const stepIndicator = tv({
   slots: {
-    base: "space-y-2 dark:text-white",
+    base: "space-y-2",
     label: "text-base font-semibold",
     container: "flex w-full justify-between gap-2",
     wrapper: "relative h-full w-full",
     step: "h-full w-full rounded-xs",
     glow: "absolute -inset-1 rounded-xs opacity-30 blur-sm dark:opacity-25",
-    incompleteStep: "h-full w-full rounded-xs bg-gray-200 dark:bg-gray-700"
+    incompleteStep: "h-full w-full rounded-xs bg-neutral-quaternary"
   },
   variants: {
     size: {

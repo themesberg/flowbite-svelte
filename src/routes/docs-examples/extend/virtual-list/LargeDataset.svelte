@@ -38,7 +38,7 @@
       {ITEM_COUNT.toLocaleString()} items
     </Badge>
     {#if renderTime > 0}
-      <span class="text-gray-600 dark:text-gray-400">
+      <span class="text-body">
         Rendered in {renderTime.toFixed(2)}ms
       </span>
     {/if}
@@ -47,14 +47,14 @@
   <VirtualList {items} minItemHeight={45} height={500} class="rounded-lg border">
     {#snippet children(item, _index)}
       {@const record = item as Record}
-      <div class="flex items-center justify-between border-b p-3 hover:bg-gray-50 dark:hover:bg-gray-800" style="height:45px">
-        <span class="text-gray-900 dark:text-white">{record.title}</span>
-        <span class="font-mono text-sm text-gray-600 dark:text-gray-400">
+      <div class="flex items-center justify-between border-b p-3 hover:bg-neutral-secondary-soft" style="height:45px">
+        <span class="text-heading">{record.title}</span>
+        <span class="font-mono text-sm text-body">
           ${record.value.toLocaleString()}
         </span>
       </div>
     {/snippet}
   </VirtualList>
 
-  <p class="text-xs text-gray-500 dark:text-gray-400">💡 Try scrolling through 100,000 items - notice how smooth it remains!</p>
+  <p class="text-xs text-body">💡 Try scrolling through 100,000 items - notice how smooth it remains!</p>
 </div>

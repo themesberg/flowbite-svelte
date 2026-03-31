@@ -188,13 +188,13 @@
   }
 </script>
 
-<div class="bg-gray-100">
+<div class="bg-neutral-tertiary">
   <!-- Example 1: Basic Horizontal Split -->
-  <div class="mb-8 bg-white p-8">
+  <div class="mb-8 bg-neutral-primary-soft p-8">
     <h2 class="mb-4 text-xl font-bold">Basic Horizontal Split</h2>
-    <p class="dark:text-white">Simple two-pane horizontal layout with draggable divider. Demonstrates core resizing functionality with visual feedback showing percentage and pixel widths.</p>
+    <p class="text-body">Simple two-pane horizontal layout with draggable divider. Demonstrates core resizing functionality with visual feedback showing percentage and pixel widths.</p>
     {#if basicSizes.length > 0 && basicContainerWidth > 0}
-      <div class="mb-2 text-sm text-gray-600">
+      <div class="mb-2 text-sm text-body">
         <strong>Container:</strong>
         {basicContainerWidth}px
         <span class="ml-4"><strong>Sizes:</strong></span>
@@ -213,7 +213,7 @@
             <h3 class="font-semibold">Left Pane</h3>
             <p>This is the left pane content. Drag the divider to resize!</p>
             {#if basicSizes.length > 0 && basicContainerWidth > 0}
-              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+              <div class="mt-4 rounded border bg-neutral-primary-soft p-2 font-mono text-xs">
                 Width: {basicSizes[0].toFixed(2)}% = {getPixels(basicSizes[0], basicContainerWidth)}px
               </div>
             {/if}
@@ -225,7 +225,7 @@
             <h3 class="font-semibold">Right Pane</h3>
             <p>This is the right pane content.</p>
             {#if basicSizes.length > 0 && basicContainerWidth > 0}
-              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+              <div class="mt-4 rounded border bg-neutral-primary-soft p-2 font-mono text-xs">
                 Width: {basicSizes[1].toFixed(2)}% = {getPixels(basicSizes[1], basicContainerWidth)}px
               </div>
             {/if}
@@ -236,11 +236,11 @@
   </div>
 
   <!-- Example 1b: Basic Horizontal Split with Sidebar -->
-  <div class="mb-8 bg-white p-8">
+  <div class="mb-8 bg-neutral-primary-soft p-8">
     <h2 class="mb-4 text-xl font-bold">Basic Horizontal Split with Sidebar</h2>
-    <p class="dark:text-white">Two-pane horizontal layout with minSize of 200 and initialSizes of [25,75] and Sidebar components on the left pane.</p>
+    <p class="text-body">Two-pane horizontal layout with minSize of 200 and initialSizes of [25,75] and Sidebar components on the left pane.</p>
     {#if basicWithSidebarSizes.length > 0 && basicWithSidebarWidth > 0}
-      <div class="mb-2 text-sm text-gray-600">
+      <div class="mb-2 text-sm text-body">
         <strong>Container:</strong>
         {basicWithSidebarWidth}px
         <span class="ml-4"><strong>Sizes:</strong></span>
@@ -260,30 +260,30 @@
             <SidebarGroup>
               <SidebarItem label="Dashboard" href="/">
                 {#snippet icon()}
-                  <ChartOutline class="inline h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                  <ChartOutline class="inline h-5 w-5 text-body transition duration-75 group-hover:text-heading" />
                 {/snippet}
               </SidebarItem>
               <SidebarItem label="Kanban" classes={{ label: labelClass }} href="/">
                 {#snippet icon()}
-                  <GridSolid class="inline h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                  <GridSolid class="inline h-5 w-5 text-body transition duration-75 group-hover:text-heading" />
                 {/snippet}
                 {#snippet subtext()}
-                  <span class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300">Pro</span>
+                  <span class="ms-3 inline-flex items-center justify-center rounded-full bg-neutral-quaternary px-2 text-sm font-medium text-heading">Pro</span>
                 {/snippet}
               </SidebarItem>
               <SidebarItem label="Inbox" classes={{ label: labelClass }} href="/">
                 {#snippet icon()}
-                  <MailBoxSolid class="inline h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                  <MailBoxSolid class="inline h-5 w-5 text-body transition duration-75 group-hover:text-heading" />
                 {/snippet}
                 {#snippet subtext()}
-                  <span class="bg-primary-200 text-primary-600 dark:bg-primary-900 dark:text-primary-200 ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full p-3 text-sm font-medium">
+                  <span class="bg-brand-softer text-fg-brand ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full p-3 text-sm font-medium">
                     3
                   </span>
                 {/snippet}
               </SidebarItem>
               <SidebarItem label="Sidebar" href="/components/sidebar">
                 {#snippet icon()}
-                  <UserSolid class="inline h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" />
+                  <UserSolid class="inline h-5 w-5 text-body transition duration-75 group-hover:text-heading" />
                 {/snippet}
               </SidebarItem>
             </SidebarGroup>
@@ -304,11 +304,11 @@
   </div>
 
   <!-- Example 2: Vertical Split with Custom Sizes -->
-  <div class="mb-8 bg-white p-8">
+  <div class="mb-8 bg-neutral-primary-soft p-8">
     <h2 class="mb-4 text-xl font-bold">Vertical Split (30/70)</h2>
-    <p class="dark:text-white">Vertical layout with custom initial sizes and keyboard controls. Use arrow keys to adjust, Enter/Space to reset to equal distribution.</p>
+    <p class="text-body">Vertical layout with custom initial sizes and keyboard controls. Use arrow keys to adjust, Enter/Space to reset to equal distribution.</p>
     {#if verticalSizes.length > 0 && verticalContainerHeight > 0}
-      <div class="mb-2 text-sm text-gray-600">
+      <div class="mb-2 text-sm text-body">
         <strong>Container:</strong>
         {verticalContainerHeight}px
         <span class="ml-4"><strong>Sizes:</strong></span>
@@ -327,7 +327,7 @@
             <h3 class="font-semibold">Top Pane (30%)</h3>
             <p>Tab to the divider and use arrow keys (↑/↓) for keyboard control.</p>
             {#if verticalSizes.length > 0 && verticalContainerHeight > 0}
-              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+              <div class="mt-4 rounded border bg-neutral-primary-soft p-2 font-mono text-xs">
                 Height: {verticalSizes[0].toFixed(2)}% = {getPixels(verticalSizes[0], verticalContainerHeight)}px
               </div>
             {/if}
@@ -339,7 +339,7 @@
             <h3 class="font-semibold">Bottom Pane (70%)</h3>
             <p>Press Enter or Space on divider to reset to equal sizes.</p>
             {#if verticalSizes.length > 0 && verticalContainerHeight > 0}
-              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+              <div class="mt-4 rounded border bg-neutral-primary-soft p-2 font-mono text-xs">
                 Height: {verticalSizes[1].toFixed(2)}% = {getPixels(verticalSizes[1], verticalContainerHeight)}px
               </div>
             {/if}
@@ -350,11 +350,11 @@
   </div>
 
   <!-- Example 3: Three Panes -->
-  <div class="mb-8 bg-white p-8">
+  <div class="mb-8 bg-neutral-primary-soft p-8">
     <h2 class="mb-4 text-xl font-bold">Three Panes</h2>
-    <p class="dark:text-white">Multiple panes in single container with individual dividers. Each pane can be resized independently while maintaining minimum size constraints.</p>
+    <p class="text-body">Multiple panes in single container with individual dividers. Each pane can be resized independently while maintaining minimum size constraints.</p>
     {#if threePaneSizes.length > 0 && threePaneContainerWidth > 0}
-      <div class="mb-2 text-sm text-gray-600">
+      <div class="mb-2 text-sm text-body">
         <strong>Container:</strong>
         {threePaneContainerWidth}px
         <span class="ml-4"><strong>Sizes:</strong></span>
@@ -376,7 +376,7 @@
             <h3 class="font-semibold">Pane 1</h3>
             <p>First pane</p>
             {#if threePaneSizes.length > 0 && threePaneContainerWidth > 0}
-              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+              <div class="mt-4 rounded border bg-neutral-primary-soft p-2 font-mono text-xs">
                 Width: {threePaneSizes[0].toFixed(2)}% = {getPixels(threePaneSizes[0], threePaneContainerWidth)}px
               </div>
             {/if}
@@ -388,7 +388,7 @@
             <h3 class="font-semibold">Pane 2</h3>
             <p>Middle pane</p>
             {#if threePaneSizes.length > 0 && threePaneContainerWidth > 0}
-              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+              <div class="mt-4 rounded border bg-neutral-primary-soft p-2 font-mono text-xs">
                 Width: {threePaneSizes[1].toFixed(2)}% = {getPixels(threePaneSizes[1], threePaneContainerWidth)}px
               </div>
             {/if}
@@ -400,7 +400,7 @@
             <h3 class="font-semibold">Pane 3</h3>
             <p>Last pane</p>
             {#if threePaneSizes.length > 0 && threePaneContainerWidth > 0}
-              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+              <div class="mt-4 rounded border bg-neutral-primary-soft p-2 font-mono text-xs">
                 Width: {threePaneSizes[2].toFixed(2)}% = {getPixels(threePaneSizes[2], threePaneContainerWidth)}px
               </div>
             {/if}
@@ -411,11 +411,11 @@
   </div>
 
   <!-- Example 4: Responsive with Callback -->
-  <div class="mb-8 bg-white p-8">
+  <div class="mb-8 bg-neutral-primary-soft p-8">
     <h2 class="mb-4 text-xl font-bold">Responsive (switches to vertical on mobile)</h2>
-    <p class="dark:text-white">Automatically switches between horizontal and vertical layouts based on viewport width. Features callback tracking for size change monitoring.</p>
+    <p class="text-body">Automatically switches between horizontal and vertical layouts based on viewport width. Features callback tracking for size change monitoring.</p>
     {#if responsiveSizes.length > 0 && responsiveContainerWidth > 0}
-      <div class="mb-2 text-sm text-gray-600">
+      <div class="mb-2 text-sm text-body">
         <strong>Container:</strong>
         {responsiveContainerWidth}px
         <span class="ml-4"><strong>Sizes:</strong></span>
@@ -434,7 +434,7 @@
             <h3 class="font-semibold">Pane A</h3>
             <p>Resize your browser window to see the layout change from horizontal to vertical at 768px.</p>
             {#if responsiveSizes.length > 0 && responsiveContainerWidth > 0}
-              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+              <div class="mt-4 rounded border bg-neutral-primary-soft p-2 font-mono text-xs">
                 Size: {responsiveSizes[0].toFixed(2)}% = {getPixels(responsiveSizes[0], responsiveContainerWidth)}px
               </div>
             {/if}
@@ -446,7 +446,7 @@
             <h3 class="font-semibold">Pane B</h3>
             <p>The onResize callback tracks size changes shown above.</p>
             {#if responsiveSizes.length > 0 && responsiveContainerWidth > 0}
-              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+              <div class="mt-4 rounded border bg-neutral-primary-soft p-2 font-mono text-xs">
                 Size: {responsiveSizes[1].toFixed(2)}% = {getPixels(responsiveSizes[1], responsiveContainerWidth)}px
               </div>
             {/if}
@@ -457,11 +457,11 @@
   </div>
 
   <!-- Example 5: Nested Split Panes -->
-  <div class="mb-8 bg-white p-8">
+  <div class="mb-8 bg-neutral-primary-soft p-8">
     <h2 class="mb-4 text-xl font-bold">Nested Split Panes</h2>
-    <p class="dark:text-white">Complex layout combining horizontal and vertical splits. Creates sidebar with vertically-split main content area for advanced dashboard layouts.</p>
+    <p class="text-body">Complex layout combining horizontal and vertical splits. Creates sidebar with vertically-split main content area for advanced dashboard layouts.</p>
     {#if nestedSizes.length > 0 && nestedContainerWidth > 0}
-      <div class="mb-2 text-sm text-gray-600">
+      <div class="mb-2 text-sm text-body">
         <strong>Container:</strong>
         {nestedContainerWidth}px
         <span class="ml-4"><strong>Outer Sizes:</strong></span>
@@ -476,11 +476,11 @@
     <div class="h-96 rounded border" bind:this={nestedContainerElement}>
       <SplitPane responsive={false} onResize={handleNestedResize}>
         <Pane>
-          <div class="h-full bg-gray-50 p-4">
+          <div class="h-full bg-neutral-secondary-soft p-4">
             <h3 class="font-semibold">Sidebar</h3>
             <p>Navigation or tools</p>
             {#if nestedSizes.length > 0 && nestedContainerWidth > 0}
-              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+              <div class="mt-4 rounded border bg-neutral-primary-soft p-2 font-mono text-xs">
                 Width: {nestedSizes[0].toFixed(2)}% = {getPixels(nestedSizes[0], nestedContainerWidth)}px
               </div>
             {/if}
@@ -509,11 +509,11 @@
   </div>
 
   <!-- Example 6: With Min Constraints -->
-  <div class="mb-8 bg-white p-8">
+  <div class="mb-8 bg-neutral-primary-soft p-8">
     <h2 class="mb-4 text-xl font-bold">With Min Constraints (300px minimum)</h2>
-    <p class="dark:text-white">Demonstrates minimum size enforcement. Panes cannot be resized below 300px, preventing content from becoming unusable during aggressive resizing.</p>
+    <p class="text-body">Demonstrates minimum size enforcement. Panes cannot be resized below 300px, preventing content from becoming unusable during aggressive resizing.</p>
     {#if constrainedSizes.length > 0 && constrainedContainerWidth > 0}
-      <div class="mb-2 text-sm text-gray-600">
+      <div class="mb-2 text-sm text-body">
         <strong>Container:</strong>
         {constrainedContainerWidth}px
         <span class="ml-4"><strong>Sizes:</strong></span>
@@ -523,7 +523,7 @@
         <span class="ml-3">
           Right: {constrainedSizes[1].toFixed(1)}% ({getPixels(constrainedSizes[1], constrainedContainerWidth)}px)
         </span>
-        <span class="ml-4 text-blue-600">
+        <span class="ml-4 text-fg-brand">
           <strong>Min:</strong>
           {((300 / constrainedContainerWidth) * 100).toFixed(2)}%
         </span>
@@ -541,7 +541,7 @@
               </li>
             </ul>
             {#if constrainedSizes.length > 0 && constrainedContainerWidth > 0}
-              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+              <div class="mt-4 rounded border bg-neutral-primary-soft p-2 font-mono text-xs">
                 Width: {constrainedSizes[0].toFixed(2)}% = {getPixels(constrainedSizes[0], constrainedContainerWidth)}px
               </div>
             {/if}
@@ -553,7 +553,7 @@
             <h3 class="font-semibold">Flexible Pane</h3>
             <p>This pane takes up the remaining space.</p>
             {#if constrainedSizes.length > 0 && constrainedContainerWidth > 0}
-              <div class="mt-4 rounded border bg-white p-2 font-mono text-xs">
+              <div class="mt-4 rounded border bg-neutral-primary-soft p-2 font-mono text-xs">
                 Width: {constrainedSizes[1].toFixed(2)}% = {getPixels(constrainedSizes[1], constrainedContainerWidth)}px
               </div>
             {/if}
@@ -564,11 +564,11 @@
   </div>
 
   <!-- Example 7: Code Editor Layout -->
-  <div class="mb-8 bg-white p-8">
+  <div class="mb-8 bg-neutral-primary-soft p-8">
     <h2 class="mb-4 text-xl font-bold">Code Editor Layout</h2>
-    <p class="dark:text-white">Production-ready IDE-style interface with file explorer, code editor, and terminal. Shows practical implementation with nested panes and dark theme.</p>
+    <p class="text-body">Production-ready IDE-style interface with file explorer, code editor, and terminal. Shows practical implementation with nested panes and dark theme.</p>
     {#if editorSizes.length > 0 && editorContainerWidth > 0}
-      <div class="mb-2 text-sm text-gray-600">
+      <div class="mb-2 text-sm text-body">
         <strong>Container:</strong>
         {editorContainerWidth}px
         <span class="ml-4"><strong>Sizes:</strong></span>

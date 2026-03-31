@@ -61,7 +61,7 @@
 
 <div class="p-4">
   <div class="mb-4 flex items-center justify-between">
-    <h1 class="text-2xl font-bold dark:text-white">My Tasks</h1>
+    <h1 class="text-2xl font-bold text-heading">My Tasks</h1>
     <Button onclick={clearBoard}>Clear Board</Button>
   </div>
 
@@ -70,8 +70,8 @@
     onMove={handleMove}
     onAddCard={handleAddCard}
     classes={{
-      column: "dark:bg-gray-800 shadow-lg",
-      button: "bg-primary-500 hover:bg-primary-600 text-white dark:text-white"
+      column: "bg-neutral-primary-soft shadow-lg",
+      button: "bg-brand hover:bg-brand-strong text-white"
     }}
     cardProps={{
       class: "hover:shadow-xl transition-shadow",

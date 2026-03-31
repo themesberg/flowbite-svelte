@@ -65,10 +65,10 @@
   }
 </script>
 
-<div class="bg-white p-4 dark:bg-gray-800">
+<div class="bg-neutral-primary-soft p-4">
   {#if loading}
     <div class="flex h-64 items-center justify-center">
-      <div class="text-gray-600">Loading board...</div>
+      <div class="text-body">Loading board...</div>
     </div>
   {:else if error}
     <div class="rounded border border-red-200 bg-red-50 p-4 text-red-800">

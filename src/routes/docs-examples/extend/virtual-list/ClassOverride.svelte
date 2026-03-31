@@ -5,7 +5,7 @@
 
 <VirtualList {items} classes={{ item: "[contain:layout_style_paint] h-12" }}>
   {#snippet children(item, index)}
-    <div class="p-3 text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800">
+    <div class="p-3 text-heading hover:bg-neutral-secondary-soft">
       {index + 1}: {item}
     </div>
   {/snippet}

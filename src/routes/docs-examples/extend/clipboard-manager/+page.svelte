@@ -194,7 +194,7 @@
 
     <div class="rounded-base space-y-3 p-6 shadow">
       <div class="flex items-center gap-3">
-        <span class="rounded bg-gray-100 px-2.5 py-0.5 text-xs font-semibold text-gray-800">Custom</span>
+        <span class="rounded bg-neutral-tertiary px-2.5 py-0.5 text-xs font-semibold text-heading">Custom</span>
         <Heading tag="h3" class="text-lg font-semibold">Custom Empty State</Heading>
       </div>
       <P class="text-sm">Provide clear instructions for first-time users</P>
@@ -207,7 +207,7 @@
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
       <div class="border-l-4 border-green-500 pl-4">
         <Heading tag="h3" class="mb-2 font-semibold text-green-900">✅ Do</Heading>
-        <List class="space-y-1 text-sm text-gray-700 dark:text-gray-50">
+        <List class="space-y-1 text-sm text-body">
           <Li>• Target specific content areas</Li>
           <Li>• Use for text-heavy interfaces</Li>
           <Li>• Combine with manual input option</Li>
@@ -217,7 +217,7 @@
       </div>
       <div class="border-l-4 border-red-500 pl-4">
         <Heading tag="h3" class="mb-2 font-semibold text-red-900">❌ Don't</Heading>
-        <List class="space-y-1 text-sm text-gray-700 dark:text-gray-50">
+        <List class="space-y-1 text-sm text-body">
           <Li>• Enable on form inputs</Li>
           <Li>• Use for tiny text snippets</Li>
           <Li>• Forget mobile considerations</Li>
@@ -281,7 +281,7 @@
         </List>
       </div>
     </div>
-    <p class="mt-4 text-center text-sm text-gray-600">
+    <p class="mt-4 text-center text-sm text-body">
       💡 <strong>Pro tip:</strong>
       Enable both for maximum flexibility!
     </p>

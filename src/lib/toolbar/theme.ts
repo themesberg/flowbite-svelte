@@ -14,7 +14,7 @@ export const toolbar = tv({
     embedded: {
       true: {},
       false: {
-        base: "py-2 px-3 rounded-base dark:border"
+        base: "py-2 px-3 rounded-base border"
       }
     },
     color: {
@@ -23,11 +23,11 @@ export const toolbar = tv({
         content: "divide-default"
       },
       primary: {
-        base: "bg-primary-50 dark:bg-gray-800 dark:border-primary-800",
+        base: "bg-primary-50 dark:bg-primary-900 dark:border-primary-800",
         content: "divide-primary-300 dark:divide-primary-800"
       },
       secondary: {
-        base: "bg-secondary-50 dark:bg-gray-800 dark:border-secondary-800",
+        base: "bg-secondary-50 dark:bg-secondary-900 dark:border-secondary-800",
         content: "divide-secondary-300 dark:divide-primary-800"
       },
       gray: {
@@ -35,31 +35,31 @@ export const toolbar = tv({
         content: "divide-default"
       },
       red: {
-        base: "bg-red-50 dark:bg-gray-800 dark:border-red-800",
+        base: "bg-red-50 dark:bg-red-900 dark:border-red-800",
         content: "divide-red-300 dark:divide-red-800"
       },
       yellow: {
-        base: "bg-yellow-50 dark:bg-gray-800 dark:border-yellow-800",
+        base: "bg-yellow-50 dark:bg-yellow-900 dark:border-yellow-800",
         content: "divide-yellow-300 dark:divide-yellow-800"
       },
       green: {
-        base: "bg-green-50 dark:bg-gray-800 dark:border-green-800",
+        base: "bg-green-50 dark:bg-green-900 dark:border-green-800",
         content: "divide-green-300 dark:divide-green-800"
       },
       indigo: {
-        base: "bg-indigo-50 dark:bg-gray-800 dark:border-indigo-800",
+        base: "bg-indigo-50 dark:bg-indigo-900 dark:border-indigo-800",
         content: "divide-indigo-300 dark:divide-indigo-800"
       },
       purple: {
-        base: "bg-purple-50 dark:bg-gray-800 dark:border-purple-800",
+        base: "bg-purple-50 dark:bg-purple-900 dark:border-purple-800",
         content: "divide-purple-300 dark:divide-purple-800"
       },
       pink: {
-        base: "bg-pink-50 dark:bg-gray-800 dark:border-pink-800",
+        base: "bg-pink-50 dark:bg-pink-900 dark:border-pink-800",
         content: "divide-pink-300 dark:divide-pink-800"
       },
       blue: {
-        base: "bg-blue-50 dark:bg-gray-800 dark:border-blue-800",
+        base: "bg-blue-50 dark:bg-blue-900 dark:border-blue-800",
         content: "divide-blue-300 dark:divide-blue-800"
       },
       dark: {

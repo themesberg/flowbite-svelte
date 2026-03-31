@@ -89,8 +89,8 @@
   onMove={handleMove}
   onAddCard={handleAddCard}
   classes={{
-    column: "dark:bg-gray-800 shadow-lg",
-    button: "bg-blue-500 hover:bg-blue-600 text-white dark:text-white"
+    column: "shadow-lg",
+    button: "bg-brand hover:bg-brand-strong text-white"
   }}
   cardProps={{
     class: "hover:shadow-xl transition-shadow",
@@ -100,7 +100,7 @@
 
 <Modal form bind:open={formModal} size="sm" {onaction}>
   <div class="flex flex-col space-y-6">
-    <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
+    <h3 class="mb-4 text-xl font-medium text-heading">
       Add Card to {currentColumn?.title}
     </h3>
 
@@ -121,7 +121,7 @@
     <Label class="space-y-2">
       <span>Tags</span>
       <Input type="text" name="tags" placeholder="tag1, tag2, tag3" />
-      <p class="text-sm text-gray-500 dark:text-gray-400">Separate tags with commas</p>
+      <p class="text-sm text-body">Separate tags with commas</p>
     </Label>
 
     <Button type="submit" value="addCard" class="w-full">Add Card</Button>

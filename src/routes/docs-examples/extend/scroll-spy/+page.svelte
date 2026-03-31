@@ -50,7 +50,7 @@
   const mainMarginClass = $derived(position === "left" ? "ml-64" : position === "right" ? "mr-64" : "");
 </script>
 
-<div class="{isFlex ? 'flex' : ''} pb-32 dark:bg-gray-900">
+<div class="{isFlex ? 'flex' : ''} pb-32 bg-neutral-primary-soft">
   <!-- ScrollSpy Navigation -->
   <ScrollSpy items={navigationItems} {position} offset={offsetValue} sticky={isSticky} smoothScroll={true} />
 
@@ -75,7 +75,7 @@
     </section>
 
     <!-- Installation Section -->
-    <section id="installation" class="border-t border-gray-200 px-4 py-8 dark:border-gray-700">
+    <section id="installation" class="border-t border-default px-4 py-8">
       <Heading tag="h2" class="mb-6 text-3xl font-bold">Installation</Heading>
       <P>Install the required packages:</P>
       <HighlightSvelte code={exampleModules["./md/installation.md"] as string} langtag --langtag-color="orange" class="mb-4" />
@@ -85,7 +85,7 @@
     <!-- Basic Usage Section -->
     <section id="basic-usage" class="px-4 pb-16">
       <Heading tag="h2" class="mb-6 text-3xl font-bold">Basic Usage</Heading>
-      <P class="mb-6 text-gray-700 dark:text-gray-300">The simplest way to use ScrollSpy is to provide an array of navigation items:</P>
+      <P class="mb-6 text-body">The simplest way to use ScrollSpy is to provide an array of navigation items:</P>
       <HighlightSvelte code={exampleModules["./md/usage.md"] as string} langtag --langtag-color="orange" class="mb-4" />
       <Alert color="danger" class="text-md p-6">
         <strong>Note:</strong>
@@ -101,19 +101,19 @@
     <section id="features" class="px-4 pb-16">
       <Heading tag="h2" class="mb-6 text-3xl font-bold">Features</Heading>
 
-      <h3 class="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-200">Custom Positioning</h3>
-      <p class="mb-4 text-gray-700 dark:text-gray-300">You can position the navigation on the top, left, or right:</p>
+      <h3 class="mb-4 text-2xl font-semibold text-heading">Custom Positioning</h3>
+      <p class="mb-4 text-body">You can position the navigation on the top, left, or right:</p>
       <HighlightSvelte code={exampleModules["./md/position.md"] as string} langtag --langtag-color="orange" class="mb-4" />
 
-      <h3 class="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-200">Offset for Fixed Headers</h3>
-      <p class="mb-4 text-gray-700 dark:text-gray-300">
+      <h3 class="mb-4 text-2xl font-semibold text-heading">Offset for Fixed Headers</h3>
+      <p class="mb-4 text-body">
         If you have a fixed header, use the <code>offset</code>
         prop to adjust when sections are considered "active":
       </p>
       <HighlightSvelte code={exampleModules["./md/offset.md"] as string} langtag --langtag-color="orange" class="mb-4" />
 
-      <h3 class="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-200">Custom Active Styling</h3>
-      <p class="mb-4 text-gray-700 dark:text-gray-300">Customize the appearance of active navigation items:</p>
+      <h3 class="mb-4 text-2xl font-semibold text-heading">Custom Active Styling</h3>
+      <p class="mb-4 text-body">Customize the appearance of active navigation items:</p>
       <HighlightSvelte code={exampleModules["./md/style.md"] as string} langtag --langtag-color="orange" class="mb-4" />
     </section>
 
@@ -123,63 +123,63 @@
       <div class="overflow-x-auto">
         <table class="w-full border-collapse text-left">
           <thead>
-            <tr class="border-b border-gray-300 dark:border-gray-700">
-              <th class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Prop</th>
-              <th class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Type</th>
-              <th class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Default</th>
-              <th class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Description</th>
+            <tr class="border-b border-default">
+              <th class="px-4 py-3 font-semibold text-heading">Prop</th>
+              <th class="px-4 py-3 font-semibold text-heading">Type</th>
+              <th class="px-4 py-3 font-semibold text-heading">Default</th>
+              <th class="px-4 py-3 font-semibold text-heading">Description</th>
             </tr>
           </thead>
-          <tbody class="text-gray-700 dark:text-gray-300">
-            <tr class="border-b border-gray-200 dark:border-gray-800">
+          <tbody class="text-body">
+            <tr class="border-b border-default">
               <td class="px-4 py-3 font-mono text-sm">items</td>
               <td class="px-4 py-3 font-mono text-sm">ScrollSpyItem[]</td>
               <td class="px-4 py-3">required</td>
               <td class="px-4 py-3">Array of navigation items</td>
             </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-800">
+            <tr class="border-b border-default">
               <td class="px-4 py-3 font-mono text-sm">position</td>
               <td class="px-4 py-3 font-mono text-sm">'top'|'left'|'right'</td>
               <td class="px-4 py-3">'top'</td>
               <td class="px-4 py-3">Position of the navigation bar</td>
             </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-800">
+            <tr class="border-b border-default">
               <td class="px-4 py-3 font-mono text-sm">offset</td>
               <td class="px-4 py-3 font-mono text-sm">number</td>
               <td class="px-4 py-3">0</td>
               <td class="px-4 py-3">Offset in pixels from top for active section calculation</td>
             </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-800">
+            <tr class="border-b border-default">
               <td class="px-4 py-3 font-mono text-sm">sticky</td>
               <td class="px-4 py-3 font-mono text-sm">boolean</td>
               <td class="px-4 py-3">true</td>
               <td class="px-4 py-3">Enable sticky positioning</td>
             </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-800">
+            <tr class="border-b border-default">
               <td class="px-4 py-3 font-mono text-sm">activeClass</td>
               <td class="px-4 py-3 font-mono text-sm">string</td>
               <td class="px-4 py-3">''</td>
               <td class="px-4 py-3">Custom Tailwind classes for active items</td>
             </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-800">
+            <tr class="border-b border-default">
               <td class="px-4 py-3 font-mono text-sm">class</td>
               <td class="px-4 py-3 font-mono text-sm">string</td>
               <td class="px-4 py-3">''</td>
               <td class="px-4 py-3">Custom Tailwind classes for the nav container</td>
             </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-800">
+            <tr class="border-b border-default">
               <td class="px-4 py-3 font-mono text-sm">smoothScroll</td>
               <td class="px-4 py-3 font-mono text-sm">boolean</td>
               <td class="px-4 py-3">true</td>
               <td class="px-4 py-3">Enable smooth scroll behavior</td>
             </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-800">
+            <tr class="border-b border-default">
               <td class="px-4 py-3 font-mono text-sm">onActiveChange</td>
               <td class="px-4 py-3 font-mono text-sm">(id: string) => void</td>
               <td class="px-4 py-3">undefined</td>
               <td class="px-4 py-3">Callback when active section changes</td>
             </tr>
-            <tr class="border-b border-gray-200 dark:border-gray-800">
+            <tr class="border-b border-default">
               <td class="px-4 py-3 font-mono text-sm">onNavigate</td>
               <td class="px-4 py-3 font-mono text-sm">(id: string) => void</td>
               <td class="px-4 py-3">undefined</td>
@@ -193,8 +193,8 @@
     <!-- Accessibility Section -->
     <section id="accessibility" class="px-4 pb-16">
       <Heading tag="h2" class="mb-6 text-3xl font-bold">Accessibility</Heading>
-      <p class="mb-6 text-gray-700 dark:text-gray-300">The ScrollSpy component is built with accessibility in mind:</p>
-      <ul class="space-y-4 text-gray-700 dark:text-gray-300">
+      <p class="mb-6 text-body">The ScrollSpy component is built with accessibility in mind:</p>
+      <ul class="space-y-4 text-body">
         <li class="flex items-start">
           <span class="mr-3 text-green-500">✓</span>
           <span>
