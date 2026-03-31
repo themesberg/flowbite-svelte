@@ -6,12 +6,12 @@ export type TextareaVariants = VariantProps<typeof textarea> & Classes<typeof te
 export const textarea = tv({
   slots: {
     container: "relative",
-    base: "block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-hidden focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50",
+    base: "block w-full text-sm text-heading border-0 px-0 bg-transparent focus:outline-hidden focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50 placeholder:text-body",
     wrapper:
-      "text-sm rounded-lg bg-gray-50 dark:bg-gray-600 text-gray-900 dark:placeholder-gray-400 dark:text-white border border-gray-200 dark:border-gray-500 disabled:cursor-not-allowed disabled:opacity-50",
-    inner: "py-2 px-4 bg-white dark:bg-gray-800",
-    header: "py-2 px-3 border-gray-200 dark:border-gray-500",
-    footer: "py-2 px-3 border-gray-200 dark:border-gray-500",
+      "text-sm rounded-base bg-neutral-secondary-medium text-heading border border-default-medium shadow-xs disabled:cursor-not-allowed disabled:opacity-50",
+    inner: "py-2 px-4 bg-neutral-secondary-medium",
+    header: "py-2 px-3 border-default-medium",
+    footer: "py-2 px-3 border-default-medium",
     addon: "absolute top-2 right-2 z-10",
     close: "absolute right-2 top-5 -translate-y-1/2 text-gray-400 hover:text-black",
     svg: ""
@@ -20,7 +20,7 @@ export const textarea = tv({
     wrapped: {
       false: {
         wrapper:
-          "p-2.5 text-sm focus:outline-hidden focus:ring-primary-500 border-gray-300 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 disabled:cursor-not-allowed disabled:opacity-50"
+          "p-3.5 focus:outline-hidden focus:ring-brand focus:border-brand placeholder:text-body disabled:cursor-not-allowed disabled:opacity-50"
       }
     },
     hasHeader: {
@@ -28,7 +28,7 @@ export const textarea = tv({
         header: "border-b"
       },
       false: {
-        inner: "rounded-t-lg"
+        inner: "rounded-t-base"
       }
     },
     hasFooter: {
@@ -36,7 +36,7 @@ export const textarea = tv({
         footer: "border-t"
       },
       false: {
-        inner: "rounded-b-lg"
+        inner: "rounded-b-base"
       }
     }
   }

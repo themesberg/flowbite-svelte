@@ -25,22 +25,22 @@
   }
 </script>
 
-<div class="mx-auto max-w-2xl rounded-lg bg-white shadow-md dark:bg-gray-800">
+<div class="mx-auto max-w-2xl rounded-base bg-neutral-primary-soft shadow-xs">
   <div class="p-6">
-    <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{eventTitle}</h2>
+    <h2 class="mb-4 text-2xl font-bold text-heading">{eventTitle}</h2>
 
     <div class="mb-6 flex flex-wrap gap-4">
       <div class="flex items-center">
-        <CalendarMonthSolid class="mr-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
-        <span class="text-gray-900 dark:text-white">{selectedDate.toLocaleDateString("en-US", { year: "numeric", month: "2-digit", day: "2-digit" })}</span>
+        <CalendarMonthSolid class="me-2 h-5 w-5 text-body" />
+        <span class="text-heading">{selectedDate.toLocaleDateString("en-US", { year: "numeric", month: "2-digit", day: "2-digit" })}</span>
       </div>
       <div class="flex items-center">
-        <ClockSolid class="mr-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
-        <span class="text-gray-900 dark:text-white">{selectedInlineTime.time}</span>
+        <ClockSolid class="me-2 h-5 w-5 text-body" />
+        <span class="text-heading">{selectedInlineTime.time}</span>
       </div>
       <div class="flex items-center">
-        <MapPinSolid class="mr-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
-        <span class="text-gray-900 dark:text-white">{eventLocation}</span>
+        <MapPinSolid class="me-2 h-5 w-5 text-body" />
+        <span class="text-heading">{eventLocation}</span>
       </div>
     </div>
 
@@ -51,20 +51,20 @@
           {#each participants as participant}
             <Avatar src={participant.img} alt={participant.alt} />
           {/each}
-          <Avatar class="bg-gray-700 text-white">+99</Avatar>
+          <Avatar class="bg-dark text-white">+99</Avatar>
         </div>
       </div>
       <div>
         <Label class="mb-2">Duration</Label>
-        <span class="text-lg font-medium text-gray-900 dark:text-white">{eventDuration}</span>
+          <span class="text-lg font-medium text-heading">{eventDuration}</span>
       </div>
       <div>
         <Label class="mb-2">Meeting Type</Label>
-        <span class="text-lg font-medium text-gray-900 dark:text-white">{eventType}</span>
+          <span class="text-lg font-medium text-heading">{eventType}</span>
       </div>
     </div>
 
-    <div class="border-t border-gray-200 pt-6 dark:border-gray-700">
+    <div class="border-t border-default pt-6">
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
           <Label class="mb-2">Select Date</Label>
@@ -104,7 +104,7 @@
     </AccordionItem>
   </Accordion>
 
-  <div class="border-t border-gray-200 p-6 dark:border-gray-700">
+  <div class="border-t border-default p-6">
     <Button>Schedule Event</Button>
   </div>
 </div>

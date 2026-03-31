@@ -7,8 +7,8 @@ export type ToggleVariants = VariantProps<typeof toggle> & Classes<typeof toggle
 export const toggle = tv({
   slots: {
     track:
-      "me-3 shrink-0 bg-gray-200 rounded-full peer-focus:ring-4 peer-checked:after:translate-x-full peer-checked:rtl:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:bg-white after:border-gray-300 after:border after:rounded-full after:transition-all dark:bg-gray-600 dark:border-gray-500 relative ",
-    label: "flex items-center",
+      "me-3 shrink-0 bg-neutral-quaternary rounded-full peer-focus:ring-4 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:bg-white after:rounded-full after:transition-all relative peer-focus:outline-none",
+    label: "flex items-center cursor-pointer",
     input: "w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 rounded-sm dark:bg-gray-700 dark:border-gray-600 sr-only peer"
   },
   variants: {
@@ -25,7 +25,7 @@ export const toggle = tv({
     color: {
       // primary, secondary, gray, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
       primary: {
-        track: "peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 peer-checked:bg-primary-600"
+        track: "peer-focus:ring-brand-soft peer-checked:bg-brand"
       },
       secondary: {
         track: "peer-focus:ring-secondary-300 dark:peer-focus:ring-secondary-800 peer-checked:bg-secondary-600"
@@ -90,10 +90,10 @@ export const toggle = tv({
         track: "w-9 h-5 after:top-[2px] after:start-[2px] after:h-4 after:w-4"
       },
       default: {
-        track: "w-11 h-6 after:top-0.5 after:start-[2px] after:h-5 after:w-5"
+        track: "w-11 h-6 after:top-[2px] after:start-[2px] after:h-5 after:w-5"
       },
       large: {
-        track: "w-14 h-7 after:top-0.5 after:start-[4px]  after:h-6 after:w-6"
+        track: "w-14 h-7 after:top-[2px] after:start-[4px] after:h-6 after:w-6"
       }
     }
   },
