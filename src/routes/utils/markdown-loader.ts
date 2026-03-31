@@ -37,6 +37,7 @@ export function createMarkdownDocLoader(filesMap: Record<string, () => Promise<u
     // before mdsvex has finished recompiling the frontmatter metadata. Retry with
     // increasing delays to let the compilation complete.
     if (import.meta.env.DEV && (!post.metadata || typeof post.metadata !== "object")) {
+      console.warn(`[markdown-loader] Metadata not ready for "${slug}", retrying...`);
       for (let i = 0; i < 3; i++) {
         await new Promise((resolve) => setTimeout(resolve, 100 * (i + 1)));
         post = (await filesMap[filePath]()) as MarkdownModule;

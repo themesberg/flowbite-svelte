@@ -70,7 +70,7 @@ export const multiSelect = tv({
         item: "cursor-not-allowed opacity-50",
         close: "cursor-not-allowed"
       },
-      false: { base: "focus-within:border-brand focus-within:ring-1" }
+      false: { base: "focus-within:border-brand focus-within:ring-1 focus-within:ring-brand" }
     },
     active: {
       true: {
@@ -101,7 +101,6 @@ export const multiSelect = tv({
     }
   ],
   defaultVariants: {
-    underline: false,
     size: "md"
   }
 });
