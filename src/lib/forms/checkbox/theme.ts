@@ -3,7 +3,7 @@ import type { Classes } from "$lib/theme-provider/themeUtils";
 
 export const checkbox = tv({
   slots: {
-    input: "w-4 h-4 focus:ring-2 me-2 rounded-xs",
+    input: "w-4 h-4 border border-default-medium bg-neutral-secondary-medium focus:ring-2 me-2 rounded-xs",
     label: "flex items-center"
   },
   variants: {

@@ -80,7 +80,7 @@ import type { ThemeSelectorVariants } from "$lib/theme-selector/theme";
 // forms component variants
 import type { CheckboxButtonVariants, CheckboxVariants } from "$lib/forms/checkbox/theme";
 import type { DropzoneVariants } from "$lib/forms/dropzone/theme";
-import type { FileuploadViariants } from "$lib/forms/fileupload/theme";
+import type { FileuploadVariants } from "$lib/forms/fileupload/theme";
 import type { FloatingLabelInputVaratiants } from "$lib/forms/floating-label/theme";
 import type { HelperVariants } from "$lib/forms/helper/theme";
 import type { InputVariants } from "$lib/forms/input-field/theme";
@@ -763,9 +763,9 @@ export interface DropzoneProps extends DropzoneVariants, HTMLInputAttributes {
 }
 
 // fileupload
-export interface FileuploadProps extends FileuploadViariants, Omit<HTMLInputAttributes, "size"> {
+export interface FileuploadProps extends FileuploadVariants, Omit<HTMLInputAttributes, "size"> {
   files?: FileList | null;
-  size?: FileuploadViariants["size"];
+  size?: FileuploadVariants["size"];
   color?: InputProps<never>["color"];
   elementRef?: HTMLInputElement;
   clearable?: boolean;

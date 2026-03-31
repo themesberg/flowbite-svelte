@@ -2,7 +2,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 import type { Classes } from "$lib/theme-provider/themeUtils";
 
 // Variants
-export type FileuploadViariants = VariantProps<typeof fileupload> & Classes<typeof fileupload>;
+export type FileuploadVariants = VariantProps<typeof fileupload> & Classes<typeof fileupload>;
 
 export const fileupload = tv({
   slots: {
