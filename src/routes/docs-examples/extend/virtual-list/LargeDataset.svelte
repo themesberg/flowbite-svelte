@@ -47,14 +47,14 @@
   <VirtualList {items} minItemHeight={45} height={500} class="rounded-lg border">
     {#snippet children(item, _index)}
       {@const record = item as Record}
-      <div class="flex items-center justify-between border-b p-3 hover:bg-neutral-secondary-soft" style="height:45px">
+      <div class="hover:bg-neutral-secondary-soft flex items-center justify-between border-b p-3" style="height:45px">
         <span class="text-heading">{record.title}</span>
-        <span class="font-mono text-sm text-body">
+        <span class="text-body font-mono text-sm">
           ${record.value.toLocaleString()}
         </span>
       </div>
     {/snippet}
   </VirtualList>
 
-  <p class="text-xs text-body">💡 Try scrolling through 100,000 items - notice how smooth it remains!</p>
+  <p class="text-body text-xs">💡 Try scrolling through 100,000 items - notice how smooth it remains!</p>
 </div>

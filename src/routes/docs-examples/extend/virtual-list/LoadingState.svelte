@@ -24,7 +24,7 @@
   </Button>
 
   {#if items.length === 0 && !isLoading}
-    <div class="rounded-lg border p-8 text-center text-body" style="height:400px">
+    <div class="text-body rounded-lg border p-8 text-center" style="height:400px">
       <div class="mb-4 text-6xl">📋</div>
       <p class="text-lg font-medium">No items yet</p>
       <p class="text-sm">Click the button above to load items</p>
@@ -33,13 +33,13 @@
     <div class="flex items-center justify-center rounded-lg border p-8" style="height:400px">
       <div class="text-center">
         <Spinner size="12" />
-        <p class="mt-4 text-body">Loading items...</p>
+        <p class="text-body mt-4">Loading items...</p>
       </div>
     </div>
   {:else}
     <VirtualList {items} minItemHeight={40} height={400} class="rounded-lg border">
       {#snippet children(item, index)}
-        <div class="border-b p-2 text-heading hover:bg-neutral-secondary-soft">
+        <div class="text-heading hover:bg-neutral-secondary-soft border-b p-2">
           {index + 1}: {item}
         </div>
       {/snippet}

@@ -66,7 +66,7 @@
       <Hr class="mx-auto my-4 h-1 w-48 rounded md:my-10" />
     {:else if selectedStyle === "icon"}
       <Hr class="my-8 h-1 w-64">
-        <QuoteSolid class="h-6 w-6 text-body" />
+        <QuoteSolid class="text-body h-6 w-6" />
       </Hr>
     {:else if selectedStyle === "text"}
       <Hr class="my-8 w-64">or</Hr>

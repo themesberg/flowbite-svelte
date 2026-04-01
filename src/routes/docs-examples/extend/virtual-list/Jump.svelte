@@ -14,7 +14,7 @@
   <Button onclick={() => jumpToItem(0)}>Jump to top item</Button>
   <VirtualList {items} minItemHeight={40} height={400} scrollToIndex={(fn) => (scrollToFn = fn)}>
     {#snippet children(item, index)}
-      <div class="h-[40px] border-b p-2 leading-[40px] text-heading hover:bg-neutral-secondary-soft">
+      <div class="text-heading hover:bg-neutral-secondary-soft h-[40px] border-b p-2 leading-[40px]">
         {index + 1}: {item}
       </div>
     {/snippet}

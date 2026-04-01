@@ -33,7 +33,7 @@
   <form onsubmit={handleSubmit} class="space-y-4">
     {#if currentStep === 1}
       <div class="space-y-4">
-        <h3 class="text-lg font-semibold text-heading">Personal Information</h3>
+        <h3 class="text-heading text-lg font-semibold">Personal Information</h3>
         <div>
           <Label for="firstName" class="mb-2">First Name</Label>
           <Input type="text" id="firstName" bind:value={personalInfo.firstName} placeholder="John" required />
@@ -45,7 +45,7 @@
       </div>
     {:else if currentStep === 2}
       <div class="space-y-4">
-        <h3 class="text-lg font-semibold text-heading">Contact Details</h3>
+        <h3 class="text-heading text-lg font-semibold">Contact Details</h3>
         <div>
           <Label for="email" class="mb-2">Email</Label>
           <Input type="email" id="email" bind:value={contactInfo.email} placeholder="john.doe@example.com" required />
@@ -57,7 +57,7 @@
       </div>
     {:else if currentStep === 3}
       <div class="space-y-4">
-        <h3 class="text-lg font-semibold text-heading">Address Information</h3>
+        <h3 class="text-heading text-lg font-semibold">Address Information</h3>
         <div>
           <Label for="street" class="mb-2">Street Address</Label>
           <Input type="text" id="street" bind:value={addressInfo.street} placeholder="123 Main St" required />
@@ -75,28 +75,28 @@
       </div>
     {:else if currentStep === 4}
       <div class="space-y-4">
-        <h3 class="text-lg font-semibold text-heading">Review Your Information</h3>
-        <div class="rounded-lg border border-default p-4">
+        <h3 class="text-heading text-lg font-semibold">Review Your Information</h3>
+        <div class="border-default rounded-lg border p-4">
           <dl class="space-y-2">
             <div class="flex justify-between">
-              <dt class="font-medium text-body">Name:</dt>
+              <dt class="text-body font-medium">Name:</dt>
               <dd class="text-heading">{personalInfo.firstName} {personalInfo.lastName}</dd>
             </div>
             <div class="flex justify-between">
-              <dt class="font-medium text-body">Email:</dt>
+              <dt class="text-body font-medium">Email:</dt>
               <dd class="text-heading">{contactInfo.email}</dd>
             </div>
             <div class="flex justify-between">
-              <dt class="font-medium text-body">Phone:</dt>
+              <dt class="text-body font-medium">Phone:</dt>
               <dd class="text-heading">{contactInfo.phone}</dd>
             </div>
             <div class="flex justify-between">
-              <dt class="font-medium text-body">Address:</dt>
+              <dt class="text-body font-medium">Address:</dt>
               <dd class="text-heading">{addressInfo.street}, {addressInfo.city} {addressInfo.zip}</dd>
             </div>
           </dl>
         </div>
-        <p class="text-sm text-body">Click on any step indicator above to go back and edit your information.</p>
+        <p class="text-body text-sm">Click on any step indicator above to go back and edit your information.</p>
       </div>
     {:else if currentStep === 5}
       <div class="space-y-4 text-center">
@@ -105,7 +105,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-heading">Registration Complete!</h3>
+        <h3 class="text-heading text-lg font-semibold">Registration Complete!</h3>
         <p class="text-body">Thank you for completing the form.</p>
       </div>
     {/if}

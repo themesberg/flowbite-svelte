@@ -17,7 +17,7 @@
 
 <VirtualList {items} minItemHeight={40} height={400}>
   {#snippet children(item, index)}
-    <div class="border-b p-2 text-heading hover:bg-neutral-secondary-soft">
+    <div class="text-heading hover:bg-neutral-secondary-soft border-b p-2">
       {index + 1}: {item}
     </div>
   {/snippet}

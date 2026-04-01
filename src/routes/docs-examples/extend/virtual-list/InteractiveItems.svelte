@@ -34,7 +34,7 @@
 
 <div class="space-y-4">
   <div class="flex items-center justify-between">
-    <span class="text-sm text-body">
+    <span class="text-body text-sm">
       {selectedCount} of {items.length} completed
     </span>
     {#if selectedCount > 0}
@@ -45,7 +45,7 @@
   <VirtualList {items} minItemHeight={50} height={400} class="rounded-lg border">
     {#snippet children(item, _index)}
       {@const task = item as Task}
-      <div class="flex items-center gap-3 border-b p-3 hover:bg-neutral-secondary-soft" style="height:50px">
+      <div class="hover:bg-neutral-secondary-soft flex items-center gap-3 border-b p-3" style="height:50px">
         <Checkbox checked={task.completed} onchange={() => toggleItem(task.id)} />
         <span class="flex-1 {task.completed ? 'text-fg-disabled line-through' : 'text-heading'}">
           {task.text}

@@ -17,6 +17,7 @@
     {/snippet}
   </Textarea>
 </form>
-<p class="ms-auto text-xs text-body">
-  Remember, contributions to this topic should follow our <a href="/" class="text-fg-brand hover:underline">Community Guidelines</a>.
+<p class="text-body ms-auto text-xs">
+  Remember, contributions to this topic should follow our <a href="/" class="text-fg-brand hover:underline">Community Guidelines</a>
+  .
 </p>

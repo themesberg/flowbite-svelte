@@ -9,7 +9,7 @@
     have richer contextual information to rapidly respond to requests, incidents, and changes.
   </P>
   <Hr class="h-1 w-64">
-    <QuoteSolid class="h-6 w-6 text-body" />
+    <QuoteSolid class="text-body h-6 w-6" />
   </Hr>
   <P>
     Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete

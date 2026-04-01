@@ -136,12 +136,12 @@
     outsideclose={outsideclickStatus}
   >
     <Drawerhead onclick={() => (open = false)} class="mb-4">
-      <h5 id="drawer-label" class="inline-flex items-center text-xl font-semibold text-body">
+      <h5 id="drawer-label" class="text-body inline-flex items-center text-xl font-semibold">
         <InfoCircleSolid class="me-2.5 h-5 w-5" />{selectedTransition} drawer
       </h5>
     </Drawerhead>
-    <p class="mb-6 text-sm text-body">Content</p>
-    <p class="mb-6 text-sm text-body">
+    <p class="text-body mb-6 text-sm">Content</p>
+    <p class="text-body mb-6 text-sm">
       Outsideclose: {outsideclickStatus ? "true" : "false"}
     </p>
   </Drawer>

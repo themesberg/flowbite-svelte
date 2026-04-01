@@ -27,8 +27,8 @@
       style="height:70px"
     >
       <div class="flex-1">
-        <div class="font-medium text-heading">{user.name}</div>
-        <div class="text-sm text-body">{user.email}</div>
+        <div class="text-heading font-medium">{user.name}</div>
+        <div class="text-body text-sm">{user.email}</div>
       </div>
       <span
         class="rounded-full px-3 py-1 text-xs font-semibold

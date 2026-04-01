@@ -20,4 +20,4 @@
   {/each}
 </div>
 
-<P size="3xl" height={selected} class="max-w-lg text-heading" weight="semibold">The AI-powered app will help you improve yourself by analysing your everyday life.</P>
+<P size="3xl" height={selected} class="text-heading max-w-lg" weight="semibold">The AI-powered app will help you improve yourself by analysing your everyday life.</P>

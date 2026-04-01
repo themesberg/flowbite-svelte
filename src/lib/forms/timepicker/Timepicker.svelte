@@ -91,15 +91,25 @@
 
     // Validate time format
     if (!isValidTimeFormat(newValue)) {
-      if (isEndTime) { endValue = prevEndValue; target.value = prevEndValue; }
-      else { value = prevValue; target.value = prevValue; }
+      if (isEndTime) {
+        endValue = prevEndValue;
+        target.value = prevEndValue;
+      } else {
+        value = prevValue;
+        target.value = prevValue;
+      }
       return;
     }
 
     // Validate against min/max constraints
     if (!isTimeInRange(newValue, min, max)) {
-      if (isEndTime) { endValue = prevEndValue; target.value = prevEndValue; }
-      else { value = prevValue; target.value = prevValue; }
+      if (isEndTime) {
+        endValue = prevEndValue;
+        target.value = prevEndValue;
+      } else {
+        value = prevValue;
+        target.value = prevValue;
+      }
       return;
     }
 

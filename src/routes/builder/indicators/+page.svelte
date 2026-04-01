@@ -62,7 +62,7 @@
 
 <H1>Indicator Builder</H1>
 <CodeWrapper>
-  <div class="relative h-56 w-56 rounded-lg border border-default bg-neutral-primary-soft">
+  <div class="border-default bg-neutral-primary-soft relative h-56 w-56 rounded-lg border">
     <Indicator {color} {size} {border} {placement} {cornerStyle} />
   </div>
   <div class="mt-8 space-y-4">

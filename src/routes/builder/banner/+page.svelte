@@ -105,18 +105,13 @@
       <ImagePlaceholder class="py-4" />
     </div>
     <Banner id="sample-banner" {color} bind:open={bannerStatus} class={bannerClass} transition={currentTransition.transition} transitionParams={currentTransition.params}>
-      <p class="flex items-center text-sm font-normal text-body">
-        <span class="me-3 inline-flex rounded-full bg-neutral-quaternary-medium p-1">
-          <BullhornOutline class="h-3 w-3 text-body" />
+      <p class="text-body flex items-center text-sm font-normal">
+        <span class="bg-neutral-quaternary-medium me-3 inline-flex rounded-full p-1">
+          <BullhornOutline class="text-body h-3 w-3" />
           <span class="sr-only">Light bulb</span>
         </span>
         <span>
-          New brand identity has been launched for the <a
-            href="https://flowbite.com"
-            class="text-fg-brand inline font-medium underline decoration-fg-brand"
-          >
-            Flowbite Library
-          </a>
+          New brand identity has been launched for the <a href="https://flowbite.com" class="text-fg-brand decoration-fg-brand inline font-medium underline">Flowbite Library</a>
         </span>
       </p>
     </Banner>

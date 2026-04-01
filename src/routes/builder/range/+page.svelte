@@ -85,9 +85,9 @@ ${
     {/if}
     <Range color={rangeColor} {disabled} min={minmax.min} max={minmax.max} bind:value={interactiveValue} step={stepValue} appearance="auto" />
     {#if labelStatus}
-      <span class="absolute start-0 -bottom-6 text-sm text-body">Min: {minmax.min}</span>
-      <span class="absolute start-1/2 -bottom-6 -translate-x-1/2 text-sm text-body rtl:translate-x-1/2">{minmax.max / 2}</span>
-      <span class="absolute end-0 -bottom-6 text-sm text-body">Max: {minmax.max}</span>
+      <span class="text-body absolute start-0 -bottom-6 text-sm">Min: {minmax.min}</span>
+      <span class="text-body absolute start-1/2 -bottom-6 -translate-x-1/2 text-sm rtl:translate-x-1/2">{minmax.max / 2}</span>
+      <span class="text-body absolute end-0 -bottom-6 text-sm">Max: {minmax.max}</span>
     {/if}
   </div>
   <div class="mt-12 mb-4 flex flex-wrap space-x-2">

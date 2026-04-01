@@ -25,7 +25,7 @@
   {#if selected === "link"}
     <A href="/">Link issues across Jira</A>
   {:else if selected === "bold"}
-    <strong class="font-semibold text-heading">Link issues across Jira</strong>
+    <strong class="text-heading font-semibold">Link issues across Jira</strong>
   {:else if selected === "underline"}
     <u class="underline">Link issues across Jira</u>
   {:else}

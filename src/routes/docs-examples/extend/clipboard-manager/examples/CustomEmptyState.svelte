@@ -15,7 +15,7 @@
     <div class="py-12 text-center">
       <div class="mb-4 text-6xl">👆</div>
       <h3 class="mb-2 text-lg font-semibold">No saved items yet</h3>
-      <p class="text-sm text-body">
+      <p class="text-body text-sm">
         Highlight any text in the article above
         <br />
         and click "Save to Clipboard" to get started

@@ -7,8 +7,7 @@ export const textarea = tv({
   slots: {
     container: "relative",
     base: "block w-full text-sm text-heading border-0 px-0 bg-transparent focus:outline-hidden focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50 placeholder:text-body",
-    wrapper:
-      "text-sm rounded-base bg-neutral-secondary-medium text-heading border border-default-medium shadow-xs disabled:cursor-not-allowed disabled:opacity-50",
+    wrapper: "text-sm rounded-base bg-neutral-secondary-medium text-heading border border-default-medium shadow-xs disabled:cursor-not-allowed disabled:opacity-50",
     inner: "py-2 px-4 bg-neutral-secondary-medium",
     header: "py-2 px-3 border-default-medium",
     footer: "py-2 px-3 border-default-medium",
@@ -19,8 +18,7 @@ export const textarea = tv({
   variants: {
     wrapped: {
       false: {
-        wrapper:
-          "p-3.5 focus:outline-hidden focus:ring-brand focus:border-brand placeholder:text-body disabled:cursor-not-allowed disabled:opacity-50"
+        wrapper: "p-3.5 focus:outline-hidden focus:ring-brand focus:border-brand placeholder:text-body disabled:cursor-not-allowed disabled:opacity-50"
       }
     },
     hasHeader: {

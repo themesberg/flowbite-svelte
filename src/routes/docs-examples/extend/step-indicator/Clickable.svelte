@@ -34,5 +34,5 @@
     <Button onclick={reset} color="alternative">Reset</Button>
   </div>
 
-  <p class="text-sm text-body">Click on any step indicator to navigate directly to that step.</p>
+  <p class="text-body text-sm">Click on any step indicator to navigate directly to that step.</p>
 </div>

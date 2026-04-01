@@ -25,21 +25,21 @@
   }
 </script>
 
-<div class="mx-auto max-w-2xl rounded-base bg-neutral-primary-soft shadow-xs">
+<div class="rounded-base bg-neutral-primary-soft mx-auto max-w-2xl shadow-xs">
   <div class="p-6">
-    <h2 class="mb-4 text-2xl font-bold text-heading">{eventTitle}</h2>
+    <h2 class="text-heading mb-4 text-2xl font-bold">{eventTitle}</h2>
 
     <div class="mb-6 flex flex-wrap gap-4">
       <div class="flex items-center">
-        <CalendarMonthSolid class="me-2 h-5 w-5 text-body" />
+        <CalendarMonthSolid class="text-body me-2 h-5 w-5" />
         <span class="text-heading">{selectedDate.toLocaleDateString("en-US", { year: "numeric", month: "2-digit", day: "2-digit" })}</span>
       </div>
       <div class="flex items-center">
-        <ClockSolid class="me-2 h-5 w-5 text-body" />
+        <ClockSolid class="text-body me-2 h-5 w-5" />
         <span class="text-heading">{selectedInlineTime.time}</span>
       </div>
       <div class="flex items-center">
-        <MapPinSolid class="me-2 h-5 w-5 text-body" />
+        <MapPinSolid class="text-body me-2 h-5 w-5" />
         <span class="text-heading">{eventLocation}</span>
       </div>
     </div>
@@ -56,15 +56,15 @@
       </div>
       <div>
         <Label class="mb-2">Duration</Label>
-          <span class="text-lg font-medium text-heading">{eventDuration}</span>
+        <span class="text-heading text-lg font-medium">{eventDuration}</span>
       </div>
       <div>
         <Label class="mb-2">Meeting Type</Label>
-          <span class="text-lg font-medium text-heading">{eventType}</span>
+        <span class="text-heading text-lg font-medium">{eventType}</span>
       </div>
     </div>
 
-    <div class="border-t border-default pt-6">
+    <div class="border-default border-t pt-6">
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
           <Label class="mb-2">Select Date</Label>
@@ -104,7 +104,7 @@
     </AccordionItem>
   </Accordion>
 
-  <div class="border-t border-default p-6">
+  <div class="border-default border-t p-6">
     <Button>Schedule Event</Button>
   </div>
 </div>

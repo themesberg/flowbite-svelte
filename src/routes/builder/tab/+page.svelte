@@ -75,31 +75,31 @@
 
 <H1>Tab Builder</H1>
 <CodeWrapper>
-  <Tabs {tabStyle} class={tabStyle === "full" ? "flex flex-nowrap space-x-0 divide-x divide-default rounded-lg shadow rtl:divide-x-reverse" : ""}>
+  <Tabs {tabStyle} class={tabStyle === "full" ? "divide-default flex flex-nowrap space-x-0 divide-x rounded-lg shadow rtl:divide-x-reverse" : ""}>
     <TabItem open title={tabStyle === "full" ? "" : "Profile"} class={tabStyle === "full" ? "w-full" : ""}>
       {#snippet titleSlot()}Profile{/snippet}
-      <p class="text-sm text-body">
+      <p class="text-body text-sm">
         <b>Profile:</b>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </TabItem>
     <TabItem title={tabStyle === "full" ? "" : "Settings"} class={tabStyle === "full" ? "w-full" : ""}>
       {#snippet titleSlot()}Settings{/snippet}
-      <p class="text-sm text-body">
+      <p class="text-body text-sm">
         <b>Settings:</b>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </TabItem>
     <TabItem title={tabStyle === "full" ? "" : "Users"} class={tabStyle === "full" ? "w-full" : ""}>
       {#snippet titleSlot()}Users{/snippet}
-      <p class="text-sm text-body">
+      <p class="text-body text-sm">
         <b>Users:</b>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </TabItem>
     <TabItem title={tabStyle === "full" ? "" : "Dashboard"} class={tabStyle === "full" ? "w-full" : ""}>
       {#snippet titleSlot()}Dashboard{/snippet}
-      <p class="text-sm text-body">
+      <p class="text-body text-sm">
         <b>Dashboard:</b>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
@@ -108,7 +108,7 @@
       {#snippet titleSlot()}
         <span class="text-fg-disabled">Disabled</span>
       {/snippet}
-      <p class="text-sm text-body">
+      <p class="text-body text-sm">
         <b>Disabled:</b>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>

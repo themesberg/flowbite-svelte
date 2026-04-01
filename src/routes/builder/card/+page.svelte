@@ -84,8 +84,8 @@
 <CodeWrapper>
   <div class="flex justify-center">
     <Card size={cardSize} shadow={cardShadow} href={link ? link : ""} class={cardClass} img={cardImage?.src} {horizontal} {reverse}>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-heading">Noteworthy technology acquisitions</h5>
-      <p class="leading-tight font-normal text-body">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
+      <h5 class="text-heading mb-2 text-2xl font-bold tracking-tight">Noteworthy technology acquisitions</h5>
+      <p class="text-body leading-tight font-normal">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
     </Card>
   </div>
   <div class="my-4 flex flex-wrap space-x-4">

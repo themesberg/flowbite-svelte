@@ -23,9 +23,7 @@
 
   let currentTheme = $derived(getCurrentTheme());
   let staticThemes = $state<DisplayTheme[]>([]);
-  let displayThemes = $derived<DisplayTheme[]>(
-    loadFromStatic && staticThemes.length > 0 ? staticThemes : (themeConfigs as unknown as DisplayTheme[])
-  );
+  let displayThemes = $derived<DisplayTheme[]>(loadFromStatic && staticThemes.length > 0 ? staticThemes : (themeConfigs as unknown as DisplayTheme[]));
   let currentThemeName = $derived(displayThemes.find((t) => t.id === currentTheme)?.name ?? "Theme");
 
   type ManifestEntry = string | { id: string; name?: string; colors?: string[] };

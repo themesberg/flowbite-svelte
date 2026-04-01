@@ -16,10 +16,7 @@
   let headingTag: HeadingProps["tag"] = $state("h1");
   let headingCls = $state("text-fg-brand");
   const changeHeadingCls = () => {
-    headingCls =
-      headingCls === "text-fg-brand"
-        ? "text-blue-500 dark:text-blue-400 uppercase italic underline text-center font-semibold bg-neutral-secondary-soft p-4"
-        : "text-fg-brand";
+    headingCls = headingCls === "text-fg-brand" ? "text-blue-500 dark:text-blue-400 uppercase italic underline text-center font-semibold bg-neutral-secondary-soft p-4" : "text-fg-brand";
   };
 
   let { text = $bindable("My heading") } = $props();

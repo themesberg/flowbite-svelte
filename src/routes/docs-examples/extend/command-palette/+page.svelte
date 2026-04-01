@@ -133,37 +133,37 @@
   ];
 </script>
 
-<div class="min-h-screen bg-neutral-secondary-soft p-8">
+<div class="bg-neutral-secondary-soft min-h-screen p-8">
   <div class="mx-auto max-w-4xl">
-    <h1 class="mb-4 text-4xl font-bold text-heading">Command Palette Demo</h1>
-    <p class="mb-8 text-body">
-      Press <kbd class="rounded bg-neutral-tertiary px-2 py-1 font-mono text-sm">⌘P (default ⌘K)</kbd>
+    <h1 class="text-heading mb-4 text-4xl font-bold">Command Palette Demo</h1>
+    <p class="text-body mb-8">
+      Press <kbd class="bg-neutral-tertiary rounded px-2 py-1 font-mono text-sm">⌘P (default ⌘K)</kbd>
       or
-      <kbd class="rounded bg-neutral-tertiary px-2 py-1 font-mono text-sm">Ctrl+P (default Ctrl+K)</kbd>
+      <kbd class="bg-neutral-tertiary rounded px-2 py-1 font-mono text-sm">Ctrl+P (default Ctrl+K)</kbd>
       to open the command palette, or click the button below.
     </p>
 
     <button onclick={() => (paletteOpen = true)} class="bg-brand hover:bg-brand-strong mb-4 rounded-lg px-6 py-3 font-medium text-white transition-colors">Open Command Palette</button>
     <Toggle checked={vimMode} onclick={handleVimToggle}>Vim mode is {vimMode ? "on" : "off"}</Toggle>
     <div class="mt-12 space-y-6">
-      <h2 class="text-2xl font-bold text-heading">Available Commands</h2>
+      <h2 class="text-heading text-2xl font-bold">Available Commands</h2>
 
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         {#each commands as command (command.id)}
-          <div class="rounded-lg border border-default bg-neutral-primary-soft p-4">
+          <div class="border-default bg-neutral-primary-soft rounded-lg border p-4">
             <div class="flex items-start gap-3">
               <span class="text-2xl">{command.icon}</span>
               <div>
-                <h3 class="font-semibold text-heading">
+                <h3 class="text-heading font-semibold">
                   {command.label}
                 </h3>
-                <p class="text-sm text-body">
+                <p class="text-body text-sm">
                   {command.description}
                 </p>
                 {#if command.keywords}
                   <div class="mt-2 flex flex-wrap gap-1">
                     {#each command.keywords as keyword (keyword)}
-                      <span class="rounded bg-neutral-tertiary px-2 py-0.5 text-xs text-body">
+                      <span class="bg-neutral-tertiary text-body rounded px-2 py-0.5 text-xs">
                         {keyword}
                       </span>
                     {/each}

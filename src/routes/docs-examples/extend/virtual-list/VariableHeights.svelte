@@ -32,10 +32,10 @@
 <VirtualList {items} minItemHeight={100} {getItemHeight} height={400}>
   {#snippet children(item, _index)}
     {@const typedItem = item as Item}
-    <div class="border-b p-3 hover:bg-neutral-secondary-soft" style="height:{getItemHeight(typedItem)}px">
-      <div class="font-semibold text-heading">{typedItem.title}</div>
-      <div class="mt-1 text-sm text-body">{typedItem.description}</div>
-      <div class="mt-1 text-xs text-body">Height: {getItemHeight(typedItem)}px</div>
+    <div class="hover:bg-neutral-secondary-soft border-b p-3" style="height:{getItemHeight(typedItem)}px">
+      <div class="text-heading font-semibold">{typedItem.title}</div>
+      <div class="text-body mt-1 text-sm">{typedItem.description}</div>
+      <div class="text-body mt-1 text-xs">Height: {getItemHeight(typedItem)}px</div>
     </div>
   {/snippet}
 </VirtualList>

@@ -73,7 +73,7 @@
       <button
         onclick={handleExpandClick}
         type="button"
-        class="hover:text-fg-brand absolute start-0 bottom-0 w-full border-t border-default-strong bg-neutral-tertiary-medium px-5 py-2.5 text-sm font-medium text-body hover:bg-neutral-tertiary-medium"
+        class="hover:text-fg-brand border-default-strong bg-neutral-tertiary-medium text-body hover:bg-neutral-tertiary-medium absolute start-0 bottom-0 w-full border-t px-5 py-2.5 text-sm font-medium"
       >
         {expand ? "Collapse code" : "Expand code"}
       </button>

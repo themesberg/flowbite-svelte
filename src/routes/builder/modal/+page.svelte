@@ -98,7 +98,7 @@
     </div>
 
     <Modal title="Terms of Service" size={modalSize} {placement} transition={currentTransition.transition} transitionParams={currentTransition.params} bind:open={defaultModal} autoclose>
-      <p class="text-base leading-relaxed text-body">
+      <p class="text-body text-base leading-relaxed">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odit quis fugit beatae, veritatis minus cupiditate ea numquam facere iusto vitae sequi, ipsum ducimus quo eaque illum.
         Eveniet, dolorem autem.
       </p>

@@ -61,7 +61,7 @@
 
 <div class="p-4">
   <div class="mb-4 flex items-center justify-between">
-    <h1 class="text-2xl font-bold text-heading">My Tasks</h1>
+    <h1 class="text-heading text-2xl font-bold">My Tasks</h1>
     <Button onclick={clearBoard}>Clear Board</Button>
   </div>
 
