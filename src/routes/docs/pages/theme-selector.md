@@ -230,6 +230,8 @@ const theme = getSelectedTheme();
 ### Types
 
 ```typescript
+type ThemeId = "default" | "minimal" | "enterprise" | "playful" | "mono";
+
 interface FlowbiteTheme {
   id: ThemeId;
   name: string;
