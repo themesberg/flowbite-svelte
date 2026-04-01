@@ -52,6 +52,11 @@ Control themes programmatically using the exported functions:
   function switchTheme() {
     loadTheme("minimal");
   }
+
+  // Switch to a custom/static theme (second arg must be true)
+  function switchCustomTheme() {
+    loadTheme("mytheme", true);
+  }
   
   // Get current theme ID
   let currentTheme = $state("");
