@@ -3,9 +3,5 @@
   "minimal",
   "enterprise",
   "playful",
-  "mono",
-  {
-    "id": "mytheme",
-    "colors": ["bg-gray-100 dark:bg-gray-700", "bg-green-50 dark:bg-green-900", "bg-green-200 dark:bg-green-800", "bg-green-700 dark:bg-green-700"]
-  }
+  "mono"
 ]
