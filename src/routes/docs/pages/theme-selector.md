@@ -132,7 +132,7 @@ Create a runtime theme file in `static/themes/` using `:root` for light mode and
 
 ### 2. Add a manifest file
 
-Create `static/themes/manifest.json` listing all themes to display in the selector. Built-in themes can be listed as plain strings. Custom themes can be objects:
+Create `static/themes/manifest.json` listing all themes to display in the selector. Every entry in this manifest is loaded at runtime from `static/themes/<id>.css`, including built-in ids like `"default"`. If you include a built-in theme here, copy its runtime CSS into `static/themes/` as well. Custom themes can be objects:
 
 ```json
 [
@@ -190,7 +190,7 @@ In your `src/routes/layout.css` (or equivalent), import a theme CSS file for bui
 @import "../../static/styles/mydefault.css";
 ```
 
-Copy the theme file from the library as a starting point:
+If your manifest includes a built-in theme id, also create `static/themes/<id>.css` for it. Separately, copy the build-time token file from the library as a starting point:
 
 ```sh
 cp node_modules/flowbite-svelte/src/lib/theme-selector/themes/default.css static/styles/mydefault.css
@@ -231,7 +231,7 @@ const theme = getSelectedTheme();
 
 ```typescript
 interface FlowbiteTheme {
-  id: string;
+  id: ThemeId;
   name: string;
   cssPath: string;
   fontUrl: string;

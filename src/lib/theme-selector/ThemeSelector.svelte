@@ -25,7 +25,11 @@
   let staticThemes = $state<DisplayTheme[]>([]);
   let useStaticThemeAssets = $derived(loadFromStatic && staticThemes.length > 0);
   let displayThemes = $derived<DisplayTheme[]>(useStaticThemeAssets ? staticThemes : (themeConfigs as unknown as DisplayTheme[]));
-  let currentThemeName = $derived(displayThemes.find((t) => t.id === currentTheme)?.name ?? "Theme");
+  let currentThemeName = $derived(
+    displayThemes.find((t) => t.id === currentTheme)?.name ??
+      themeConfigs.find((t) => t.id === currentTheme)?.name ??
+      (currentTheme ? currentTheme.charAt(0).toUpperCase() + currentTheme.slice(1) : "Theme")
+  );
 
   type ManifestEntry = string | { id: string; name?: string; colors?: string[] };
 
@@ -34,9 +38,21 @@
     try {
       const res = await fetch("/themes/manifest.json");
       if (!res.ok) return;
-      const entries: ManifestEntry[] = await res.json();
-      staticThemes = entries
-        .filter((entry) => typeof entry === "string" || (typeof entry === "object" && entry?.id))
+      const json: unknown = await res.json();
+      if (!Array.isArray(json)) return;
+      staticThemes = json
+        .filter(
+          (entry): entry is ManifestEntry =>
+            typeof entry === "string" ||
+            (typeof entry === "object" &&
+              entry !== null &&
+              typeof (entry as { id?: unknown }).id === "string" &&
+              (typeof (entry as { name?: unknown }).name === "undefined" ||
+                typeof (entry as { name?: unknown }).name === "string") &&
+              (typeof (entry as { colors?: unknown }).colors === "undefined" ||
+                (Array.isArray((entry as { colors?: unknown }).colors) &&
+                  (entry as { colors: unknown[] }).colors.every((color) => typeof color === "string"))))
+        )
         .map((entry) => {
           const id = typeof entry === "string" ? entry : entry.id;
           const known = themeConfigs.find((t) => t.id === id);
