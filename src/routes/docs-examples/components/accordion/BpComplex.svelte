@@ -3,12 +3,11 @@
 
   // Different approaches to responsive behavior
   const isMdAndUp = useMediaQuery("(min-width: 768px)");
+  const isMobileOnly = useMediaQuery("(max-width: 639px)");
   const breakpoints = useBreakpoints();
   const getCurrentBreakpoint = useCurrentBreakpoint();
 
   const currentBp = $derived(getCurrentBreakpoint());
-  const tabletOnly = $derived(breakpoints.sm && !breakpoints.lg);
-  const mobileOnly = $derived(!breakpoints.sm);
 </script>
 
 <!-- Always open on medium+ screens -->
@@ -28,7 +27,7 @@
 
 <!-- Open only in tablet range -->
 <Accordion>
-  <AccordionItem open={tabletOnly}>
+  <AccordionItem open={breakpoints.sm && !breakpoints.lg}>
     {#snippet header()}
       📱 Tablet Only (640px - 1023px)
     {/snippet}
@@ -38,7 +37,7 @@
 
 <!-- Mobile-first approach -->
 <Accordion>
-  <AccordionItem open={mobileOnly}>
+  <AccordionItem open={isMobileOnly()}>
     {#snippet header()}
       📱 Mobile Only (below 640px)
     {/snippet}

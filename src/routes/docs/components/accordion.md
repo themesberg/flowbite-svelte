@@ -153,7 +153,7 @@ For example, you might want to keep sections expanded on desktop for easy scanni
 
 Simple Media Query opens accordion item on medium screens and larger:
 
-```svelte example hideResponsiveButtons class="h-48"
+```svelte example class="h-48"
 {#include BpBasic.svelte}
 ```
 
@@ -161,7 +161,7 @@ Simple Media Query opens accordion item on medium screens and larger:
 
 Access multiple breakpoints with a single hook for cleaner, more maintainable code:
 
-```svelte example hideResponsiveButtons class="h-48"
+```svelte example class="h-48"
 {#include BpObject.svelte}
 ```
 
@@ -169,7 +169,7 @@ Access multiple breakpoints with a single hook for cleaner, more maintainable co
 
 Current Breakpoint Display shows the current breakpoint in your UI, useful for debugging responsive behavior:
 
-```svelte example hideResponsiveButtons class="h-48"
+```svelte example class="h-48"
 {#include BpAdvanced.svelte}
 ```
 
@@ -177,7 +177,7 @@ Current Breakpoint Display shows the current breakpoint in your UI, useful for d
 
 Open accordion only within specific screen size ranges. This is useful when you want different behavior for phones, tablets, and desktops:
 
-```svelte example hideResponsiveButtons class="h-[450px]"
+```svelte example class="h-[450px]"
 {#include BpRange.svelte}
 ```
 
@@ -185,7 +185,7 @@ Open accordion only within specific screen size ranges. This is useful when you 
 
 Combining multiple responsive patterns for sophisticated adaptive layouts:
 
-```svelte example hideResponsiveButtons class="space-y-4 h-[550px]"
+```svelte example class="space-y-4 h-[550px]"
 {#include BpComplex.svelte}
 ```
 

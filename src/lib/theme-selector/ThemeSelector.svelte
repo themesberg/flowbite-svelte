@@ -47,11 +47,9 @@
             (typeof entry === "object" &&
               entry !== null &&
               typeof (entry as { id?: unknown }).id === "string" &&
-              (typeof (entry as { name?: unknown }).name === "undefined" ||
-                typeof (entry as { name?: unknown }).name === "string") &&
+              (typeof (entry as { name?: unknown }).name === "undefined" || typeof (entry as { name?: unknown }).name === "string") &&
               (typeof (entry as { colors?: unknown }).colors === "undefined" ||
-                (Array.isArray((entry as { colors?: unknown }).colors) &&
-                  (entry as { colors: unknown[] }).colors.every((color) => typeof color === "string"))))
+                (Array.isArray((entry as { colors?: unknown }).colors) && (entry as { colors: unknown[] }).colors.every((color) => typeof color === "string"))))
         )
         .map((entry) => {
           const id = typeof entry === "string" ? entry : entry.id;
