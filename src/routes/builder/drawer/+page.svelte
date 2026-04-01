@@ -99,7 +99,7 @@
 
       return `<Button onclick={drawer.toggle}>Drawer</Button>
 <Drawer dismissable={false} drawerStatus={drawerStatus} closeDrawer={closeDrawer}${propsString}>
-  <Drawerhead onclick={closeDrawer} class="mb-4>
+  <Drawerhead onclick={closeDrawer} class="mb-4">
     <h5 id="drawer-label" class="inline-flex items-center text-xl font-semibold text-body">
         <InfoCircleSolid class="me-2.5 h-5 w-5" />${selectedTransition} drawer
       </h5>

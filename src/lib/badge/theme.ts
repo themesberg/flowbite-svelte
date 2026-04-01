@@ -12,7 +12,7 @@ export const badge = tv({
   variants: {
     color: {
       brand: { base: "bg-brand-softer text-fg-brand-strong " },
-      alternative: { base: "bg-neutral-secondary-medium text-heading" },
+      alternative: { base: "bg-neutral-primary-soft text-fg-brand" },
       gray: { base: "bg-neutral-secondary-medium text-heading " },
       danger: { base: "bg-danger-soft text-fg-danger-strong" },
       success: { base: "bg-success-soft text-fg-success-strong" },
@@ -92,7 +92,7 @@ export const badge = tv({
     {
       href: true,
       color: "alternative",
-      class: "hover:bg-neutral-secondary-medium"
+      class: "hover:bg-neutral-primary-medium"
     },
     {
       href: true,

@@ -114,7 +114,7 @@ You can add custom themes without modifying the library by placing CSS files in 
 
 ### 1. Add a theme CSS file
 
-Copy one of the built-in theme files as a starting point and customize it. Each file uses `:root` for light mode and `.dark` for dark mode overrides:
+Create a runtime theme file in `static/themes/` using `:root` for light mode and `.dark` for dark mode overrides. Keep this separate from the library `src/lib/theme-selector/themes/*.css` files, which are for build-time theme registration.
 
 ```css
 /* static/themes/mytheme.css */

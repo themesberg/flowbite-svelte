@@ -124,7 +124,6 @@
       {/if}
       <DropdownItem href="/components/dropdown">Dropdown</DropdownItem>
       <DropdownItem href="/components/footer">Footer</DropdownItem>
-      <DropdownItem href="/components">Alert</DropdownItem>
     </Dropdown>
   </div>
   <div class="mb-4 flex gap-4">

@@ -23,7 +23,8 @@
 
   let currentTheme = $derived(getCurrentTheme());
   let staticThemes = $state<DisplayTheme[]>([]);
-  let displayThemes = $derived<DisplayTheme[]>(loadFromStatic && staticThemes.length > 0 ? staticThemes : (themeConfigs as unknown as DisplayTheme[]));
+  let useStaticThemeAssets = $derived(loadFromStatic && staticThemes.length > 0);
+  let displayThemes = $derived<DisplayTheme[]>(useStaticThemeAssets ? staticThemes : (themeConfigs as unknown as DisplayTheme[]));
   let currentThemeName = $derived(displayThemes.find((t) => t.id === currentTheme)?.name ?? "Theme");
 
   type ManifestEntry = string | { id: string; name?: string; colors?: string[] };
@@ -53,7 +54,7 @@
   function handleThemeChange(themeId: string) {
     return (e: MouseEvent) => {
       e.preventDefault();
-      loadTheme(themeId, loadFromStatic);
+      loadTheme(themeId, useStaticThemeAssets);
       // Close the dropdown after selecting a theme
       isOpen = false;
     };
