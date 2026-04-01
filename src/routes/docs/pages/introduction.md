@@ -73,7 +73,6 @@ pnpm i -D flowbite-svelte-icons
 
 ### Configuration
 
-
 Update your main CSS file to support Tailwind CSS and the Flowbite plugin. You can also customize the primary color by modifying the appropriate color values.
 
 #### SvelteKit Projects
@@ -84,24 +83,9 @@ The location of your main CSS file determines the correct path for `@source` dir
 
 ```css
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
-/* MINIMAL THEME
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-*/
-
-/* ENTERPRISE THEME
-@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-*/
-
-/* PLAYFUL THEME
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
-*/
 
 @import "tailwindcss";
-@import "flowbite/src/themes/default";
-/* @import "flowbite/src/themes/minimal"; */
-/* @import "flowbite/src/themes/enterprise"; */
-/* @import "flowbite/src/themes/playful"; */
-/* @import "flowbite/src/themes/mono"; */
+@import "../../node_modules/flowbite-svelte/src/lib/theme-selector/themes/default.css";
 
 @plugin "flowbite/plugin";
 @plugin "flowbite-typography";
@@ -118,6 +102,8 @@ The location of your main CSS file determines the correct path for `@source` dir
   }
 }
 ```
+
+Read [ThemeSelector](/docs/pages/theme-selector) for more details about theme.
 
 > **Note:** The `@source` directive tells Tailwind CSS v4 to scan these directories for utility classes. The path is relative to your CSS file location:
 > - `src/app.css` → one level up to root (`../`)

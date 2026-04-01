@@ -28,7 +28,7 @@
       }
       if (selectedStyle === "icon") {
         hr = `<Hr hrClass="my-8 w-64 h-1" icon>
-  <QuoteSolid class="w-4 h-4 text-gray-700 dark:text-gray-300" />
+  <QuoteSolid class="w-4 h-4 text-body" />
 </Hr>`;
       }
       if (selectedStyle === "text") {
@@ -66,7 +66,7 @@
       <Hr class="mx-auto my-4 h-1 w-48 rounded md:my-10" />
     {:else if selectedStyle === "icon"}
       <Hr class="my-8 h-1 w-64">
-        <QuoteSolid class="h-6 w-6 text-gray-700 dark:text-gray-300" />
+        <QuoteSolid class="h-6 w-6 text-body" />
       </Hr>
     {:else if selectedStyle === "text"}
       <Hr class="my-8 w-64">or</Hr>

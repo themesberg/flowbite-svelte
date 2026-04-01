@@ -23,8 +23,6 @@
   let title = "Dropdown builder";
   let dir = "builder";
 
-  let dropdownDividerHeaderFooter = uiHelpers();
-
   let dividerStatus = $state(false);
   const changeDividerStatus = () => {
     dividerStatus = !dividerStatus;
@@ -32,10 +30,6 @@
   let headerStatus = $state(false);
   const changeHeaderStatus = () => {
     headerStatus = !headerStatus;
-  };
-  let footerStatus = $state(false);
-  const changeFooterStatus = () => {
-    footerStatus = !footerStatus;
   };
 
   // transition
@@ -58,19 +52,11 @@
   let generatedCode = $derived(
     (() => {
       let headerContent = headerStatus
-        ? ` 
+        ? `
     <DropdownHeader>
       <div>Bonnie Green</div>
       <div class="truncate font-medium">name@flowbite.com</div>
     </DropdownHeader>`
-        : "";
-      let footerContent = footerStatus
-        ? `
-    <DropdownFooter>
-      <div class="py-2">
-        <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
-      </div>
-    </DropdownFooter>`
         : "";
       let dividerContent = dividerStatus
         ? `
@@ -80,14 +66,11 @@
       if (currentTransition !== transitions[0]) {
         props.push(` transition={${currentTransition.name.toLowerCase()}}`);
 
-        // Generate params string without quotes and handle functions
         const paramsString = Object.entries(currentTransition.params)
           .map(([key, value]) => {
             if (key === "easing") {
-              // For easing, use the name of the easing function
               return `${key}:${value.name || "linear"}`;
             }
-            // For other values, just use the literal value
             return `${key}:${value}`;
           })
           .join(",");
@@ -96,19 +79,14 @@
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
-      return `<div class="flex items-start justify-center">
-  <Button onclick={dropdownA.toggle}>Dropdown
-    <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
-  </Button>
-  <div class="relative h-96">
-    <Dropdown {activeUrl}${propsString} dropdownStatus={dropdownAStatus} closeDropdown={closeDropdownA} class="absolute -left-[150px] top-[40px]">${headerContent}
-      <DropdownUl>
-        <DropdownLi href="/">Dashboard</DropdownLi>${dividerContent}
-        <DropdownLi href="/components/dropdown">Dropdown</DropdownLi>
-      </DropdownUl>${footerContent}
-    </Dropdown>
-  </div>
-</div>`;
+      return `<Button>Dropdown
+  <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
+</Button>
+<Dropdown {activeUrl} simple${propsString} class="w-44">${headerContent}
+  <DropdownItem href="/">Dashboard</DropdownItem>${dividerContent}
+  <DropdownItem href="/components/dropdown">Dropdown</DropdownItem>
+  <DropdownItem href="/components/footer">Footer</DropdownItem>
+</Dropdown>`;
     })()
   );
   // for interactive builder
@@ -128,36 +106,30 @@
 
 <H1>Dropdown Builder</H1>
 <CodeWrapper>
-  <div class="flex items-start justify-center">
-    <Button onclick={dropdownDividerHeaderFooter.toggle}>
+  <div class="mb-4 flex h-72 items-start justify-center">
+    <Button>
       Dropdown
       <ChevronDownOutline class="ms-2 h-5 w-5 text-white dark:text-white" />
     </Button>
-    <div class="relative h-96">
-      <Dropdown {activeUrl} class="absolute top-[40px] -left-[150px]">
-        {#if headerStatus}
-          <DropdownHeader>
-            <div>Bonnie Green</div>
-            <div class="truncate font-medium">name@flowbite.com</div>
-          </DropdownHeader>
-        {/if}
-
-        <DropdownItem href="/">Dashboard</DropdownItem>
-        {#if dividerStatus}
-          <DropdownDivider />
-        {/if}
-        <DropdownItem href="/components/dropdown">Dropdown</DropdownItem>
-        <DropdownItem href="/components/footer">Footer</DropdownItem>
-        <DropdownItem href="/components">Alert</DropdownItem>
-      </Dropdown>
-    </div>
+    <Dropdown {activeUrl} simple class="w-44" transition={currentTransition.transition} transitionParams={currentTransition.params}>
+      {#if headerStatus}
+        <DropdownHeader>
+          <div>Bonnie Green</div>
+          <div class="truncate font-medium">name@flowbite.com</div>
+        </DropdownHeader>
+      {/if}
+      <DropdownItem href="/">Dashboard</DropdownItem>
+      {#if dividerStatus}
+        <DropdownDivider />
+      {/if}
+      <DropdownItem href="/components/dropdown">Dropdown</DropdownItem>
+      <DropdownItem href="/components/footer">Footer</DropdownItem>
+      <DropdownItem href="/components">Alert</DropdownItem>
+    </Dropdown>
   </div>
   <div class="mb-4 flex gap-4">
     <Button onclick={changeHeaderStatus}>
       Header {#if headerStatus}off{:else}on{/if}
-    </Button>
-    <Button onclick={changeFooterStatus}>
-      Footer {#if footerStatus}off{:else}on{/if}
     </Button>
     <Button onclick={changeDividerStatus}>
       Divider {#if dividerStatus}off{:else}on{/if}
@@ -173,3 +145,4 @@
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />
   {/snippet}
 </CodeWrapper>
+

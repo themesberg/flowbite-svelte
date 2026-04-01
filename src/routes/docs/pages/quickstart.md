@@ -85,16 +85,18 @@ The location of your main CSS file determines the correct path for `@source` dir
 @plugin 'flowbite/plugin';
 @custom-variant dark (&:where(.dark, .dark *));
 /* ... */
+@import "../node_modules/flowbite-svelte/src/lib/theme-selector/themes/default.css";
 @source "../node_modules/flowbite-svelte/dist";
 @source "../node_modules/flowbite-svelte-icons/dist";
 ```
 
-**If your CSS file is at `src/routes/+layout.css`:**
+**If your CSS file is at `src/routes/+layout.css` (or equivalent):**
 ```css
 @import "tailwindcss";
 @plugin 'flowbite/plugin';
 @custom-variant dark (&:where(.dark, .dark *));
 /* ... */
+@import "../../node_modules/flowbite-svelte/src/lib/theme-selector/themes/default.css";
 @source "../../node_modules/flowbite-svelte/dist";
 @source "../../node_modules/flowbite-svelte-icons/dist";
 ```

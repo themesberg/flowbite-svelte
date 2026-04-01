@@ -51,7 +51,7 @@
   const docrationThickness = Object.keys(span.variants.decorationThickness);
   let opacityClass = $state("");
   const changeOpacity = () => {
-    opacityClass = opacityClass === "" ? "text-gray-600/50 dark:text-gray-500/50" : "";
+    opacityClass = opacityClass === "" ? "text-body/50" : "";
     spanHighlight = "none";
     spanGradient = "none";
   };

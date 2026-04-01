@@ -14,12 +14,12 @@
 
   const tags = ["h1", "h2", "h3", "h4", "h5", "h6"];
   let headingTag: HeadingProps["tag"] = $state("h1");
-  let headingCls = $state("text-primary-700 dark:text-primary-500");
+  let headingCls = $state("text-fg-brand");
   const changeHeadingCls = () => {
     headingCls =
-      headingCls === "text-primary-700 dark:text-primary-500"
-        ? "text-blue-500 dark:text-blue-400 uppercase italic underline text-center font-semibold bg-gray-50 dark:bg-gray-700 p-4"
-        : "text-primary-700 dark:text-primary-500";
+      headingCls === "text-fg-brand"
+        ? "text-blue-500 dark:text-blue-400 uppercase italic underline text-center font-semibold bg-neutral-secondary-soft p-4"
+        : "text-fg-brand";
   };
 
   let { text = $bindable("My heading") } = $props();
@@ -69,7 +69,7 @@
     {/each}
   </div>
   <div class="flex flex-wrap justify-center gap-2 md:justify-start">
-    <Button class="w-40" onclick={changeHeadingCls}>{headingCls !== "text-primary-700 dark:text-primary-500" ? "Original class" : "Change class"}</Button>
+    <Button class="w-40" onclick={changeHeadingCls}>{headingCls !== "text-fg-brand" ? "Original class" : "Change class"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

@@ -12,7 +12,7 @@ export const badge = tv({
   variants: {
     color: {
       brand: { base: "bg-brand-softer text-fg-brand-strong " },
-      alternative: { base: "bg-neutral-primary-soft text-heading" },
+      alternative: { base: "bg-neutral-secondary-medium text-heading" },
       gray: { base: "bg-neutral-secondary-medium text-heading " },
       danger: { base: "bg-danger-soft text-fg-danger-strong" },
       success: { base: "bg-success-soft text-fg-success-strong" },

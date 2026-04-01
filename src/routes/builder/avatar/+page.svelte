@@ -76,7 +76,7 @@
       if (stacked) props.push("stacked");
       if (avatarClass) props.push(`class="${avatarClass}"`);
       if (hrefStatus) props.push('href="/"');
-      if (dotStatus) props.push('dot={{ placement: "bottom-right", color: "green" }}');
+      if (dotStatus) props.push('dot={{ placement: "bottom-right", color: "success" }}');
       if (targetStatus) props.push('target="_blank"');
       if (eventStatus) props.push('onclick={()=> alert("Clicked!")}');
 
@@ -158,8 +158,8 @@
     <Button class="w-40" color="danger" onclick={changeClassStatus}>{classStatus ? "Remove class" : "Add class"}</Button>
     <Button class="w-40" color="alternative" onclick={changeHrf}>{hrefStatus ? "Remove href" : "Add href"}</Button>
     <Button class="w-40" color="gray" onclick={changeDot}>{dotStatus ? "Remove dot" : "Add dot"}</Button>
-    <Button class="w-40" color="ghost" onclick={changeTarget}>{targetStatus ? "Remove target" : "Add target"}</Button>
-    <Button class="w-40" color="gray" onclick={changeEventStatus}>{eventStatus ? "Remove event" : "Add event"}</Button>
+    <Button class="w-40" color="dark" onclick={changeTarget}>{targetStatus ? "Remove target" : "Add target"}</Button>
+    <Button class="w-40" color="alternative" onclick={changeEventStatus}>{eventStatus ? "Remove event" : "Add event"}</Button>
   </div>
   {#snippet codeblock()}
     <DynamicCodeBlockHighlight handleExpandClick={handleBuilderExpandClick} expand={builderExpand} showExpandButton={showBuilderExpandButton} code={generatedCode} />

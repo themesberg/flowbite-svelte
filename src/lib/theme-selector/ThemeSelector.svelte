@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { getCurrentTheme, getSelectedTheme, themeConfigs, loadTheme } from "./themeStore.svelte";
-  import type { ThemeId } from "./themes";
+  import { onMount } from "svelte";
+  import { getCurrentTheme, themeConfigs, loadTheme } from "./themeStore.svelte";
   import type { ThemeSelectorProps } from "$lib/types";
   import { Button, Dropdown, DropdownItem } from "$lib";
   import ThemeIcon from "./ThemeIcon.svelte";
@@ -8,18 +8,51 @@
   import { getTheme } from "$lib/theme-provider/themeUtils";
   import clsx from "clsx";
 
-  let { classes, loadFromStatic = false, ...restProps }: ThemeSelectorProps = $props();
+  interface DisplayTheme {
+    id: string;
+    name: string;
+    colors: readonly string[];
+  }
+
+  let { classes, loadFromStatic = true, ...restProps }: ThemeSelectorProps = $props();
 
   const styling = $derived(classes);
   const themeStyling = $derived(getTheme("themeSelector"));
 
   const { button, dropdown, item, itemLabel, colorSwatchContainer, colorSwatch } = themeSelector();
 
-  // Access the reactive state
   let currentTheme = $derived(getCurrentTheme());
-  let selectedTheme = $derived(getSelectedTheme());
+  let staticThemes = $state<DisplayTheme[]>([]);
+  let displayThemes = $derived<DisplayTheme[]>(
+    loadFromStatic && staticThemes.length > 0 ? staticThemes : (themeConfigs as unknown as DisplayTheme[])
+  );
+  let currentThemeName = $derived(displayThemes.find((t) => t.id === currentTheme)?.name ?? "Theme");
 
-  function handleThemeChange(themeId: ThemeId) {
+  type ManifestEntry = string | { id: string; name?: string; colors?: string[] };
+
+  onMount(async () => {
+    if (!loadFromStatic) return;
+    try {
+      const res = await fetch("/themes/manifest.json");
+      if (!res.ok) return;
+      const entries: ManifestEntry[] = await res.json();
+      staticThemes = entries.map((entry) => {
+        const id = typeof entry === "string" ? entry : entry.id;
+        const known = themeConfigs.find((t) => t.id === id);
+        const overrideName = typeof entry === "object" ? entry.name : undefined;
+        const overrideColors = typeof entry === "object" ? entry.colors : undefined;
+        return {
+          id,
+          name: overrideName ?? known?.name ?? id.charAt(0).toUpperCase() + id.slice(1),
+          colors: overrideColors ?? known?.colors ?? []
+        };
+      });
+    } catch (e) {
+      console.warn("Failed to load theme manifest:", e);
+    }
+  });
+
+  function handleThemeChange(themeId: string) {
     return (e: MouseEvent) => {
       e.preventDefault();
       loadTheme(themeId, loadFromStatic);
@@ -34,10 +67,10 @@
 <div data-scope="theme-selector" data-part="base" {...restProps}>
   <Button data-part="button" color="gray" class={button({ class: clsx(themeStyling?.button, styling?.button) })} aria-haspopup="true" aria-expanded={isOpen} aria-label="Select Theme">
     <ThemeIcon />
-    <span>{selectedTheme?.name ?? "Theme"}</span>
+    <span>{currentThemeName}</span>
   </Button>
   <Dropdown data-part="dropdown" class={dropdown({ class: clsx(themeStyling?.dropdown, styling?.dropdown) })} bind:isOpen simple>
-    {#each themeConfigs as theme (theme.id)}
+    {#each displayThemes as theme (theme.id)}
       <DropdownItem
         data-part="item"
         onclick={handleThemeChange(theme.id)}
@@ -69,6 +102,6 @@
 [ThemeSelectorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2221)
 ## Props
 @prop classes
-@prop loadFromStatic = false
+@prop loadFromStatic = true
 @prop ...restProps
 -->

@@ -8,7 +8,7 @@ export const alert = tv({
   variants: {
     color: {
       brand: "text-fg-brand-strong bg-brand-softer",
-      alternative: "bg-neutral-primary-soft text-heading",
+      alternative: "bg-neutral-secondary-medium text-heading",
       gray: "text-heading bg-neutral-secondary-medium",
       danger: "text-fg-danger-strong bg-danger-soft",
       success: "text-fg-success-strong bg-success-soft",

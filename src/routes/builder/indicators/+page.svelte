@@ -40,7 +40,7 @@
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
-      return `<div class="border relative h-56 w-56 rounded-lg border-gray-300 m-8">
+      return `<div class="border relative h-56 w-56 rounded-lg border-default m-8">
   <Indicator${propsString} />
 </div>`;
     })()
@@ -62,7 +62,7 @@
 
 <H1>Indicator Builder</H1>
 <CodeWrapper>
-  <div class="relative h-56 w-56 rounded-lg border border-gray-300 bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
+  <div class="relative h-56 w-56 rounded-lg border border-default bg-neutral-primary-soft">
     <Indicator {color} {size} {border} {placement} {cornerStyle} />
   </div>
   <div class="mt-8 space-y-4">

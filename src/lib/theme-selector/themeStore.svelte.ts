@@ -3,15 +3,11 @@ import { themeConfigs, type FlowbiteTheme, type ThemeId } from "./themes";
 const browser = typeof window !== "undefined";
 const dev = import.meta.env.DEV;
 
-function isThemeId(value: string): value is ThemeId {
-  return themeConfigs.some((t) => t.id === value);
-}
-
-const getInitialTheme = (): ThemeId => {
+const getInitialTheme = (): string => {
   if (browser) {
     try {
       const stored = localStorage.getItem("flowbite-svelte-theme");
-      if (stored && isThemeId(stored)) return stored;
+      if (stored) return stored;
     } catch (e) {
       // console.warn("localStorage not available:", e);
       return "default";
@@ -21,16 +17,16 @@ const getInitialTheme = (): ThemeId => {
 };
 
 // Using $state rune for reactive global state
-let currentTheme = $state<ThemeId>(getInitialTheme());
+let currentTheme = $state<string>(getInitialTheme());
 
 // Using $derived for computed value
 let selectedTheme = $derived<FlowbiteTheme | undefined>(themeConfigs.find((t) => t.id === currentTheme));
 
-export function loadTheme(themeId: ThemeId, loadFromStatic = false): void {
+export function loadTheme(themeId: string, loadFromStatic = false): void {
   if (!browser) return;
 
   const theme = themeConfigs.find((t) => t.id === themeId);
-  if (!theme) {
+  if (!theme && !loadFromStatic) {
     console.error(`Theme ${themeId} not found`);
     return;
   }
@@ -41,22 +37,24 @@ export function loadTheme(themeId: ThemeId, loadFromStatic = false): void {
   const existingLinks = document.querySelectorAll("#dynamic-theme-css, #initial-theme-css, #dynamic-theme-font");
   existingLinks.forEach((link) => link.remove());
 
-  // Add new font
-  const fontLink = document.createElement("link");
-  fontLink.id = "dynamic-theme-font";
-  fontLink.rel = "stylesheet";
-  fontLink.href = theme.fontUrl;
-  fontLink.onerror = () => {
-    console.warn(`Failed to load font for theme ${themeId}`);
-  };
-  document.head.appendChild(fontLink);
+  // Add font only for known built-in themes
+  if (theme) {
+    const fontLink = document.createElement("link");
+    fontLink.id = "dynamic-theme-font";
+    fontLink.rel = "stylesheet";
+    fontLink.href = theme.fontUrl;
+    fontLink.onerror = () => {
+      console.warn(`Failed to load font for theme ${themeId}`);
+    };
+    document.head.appendChild(fontLink);
+  }
 
   // Add new theme CSS
   const themeLink = document.createElement("link");
   themeLink.id = "dynamic-theme-css";
   themeLink.rel = "stylesheet";
   // Use static path if loadFromStatic is true, otherwise use bundled path
-  const themePath = loadFromStatic ? `/themes/${themeId}-runtime.css` : theme.cssPath;
+  const themePath = loadFromStatic ? `/themes/${themeId}.css` : theme!.cssPath;
   themeLink.href = themePath;
 
   // if (dev) console.log(`Loading theme CSS from: ${themePath}, loadFromStatic=${loadFromStatic}`);
@@ -93,7 +91,7 @@ export function loadTheme(themeId: ThemeId, loadFromStatic = false): void {
 }
 
 // Export getter functions to access the state
-export function getCurrentTheme(): ThemeId {
+export function getCurrentTheme(): string {
   return currentTheme;
 }
 

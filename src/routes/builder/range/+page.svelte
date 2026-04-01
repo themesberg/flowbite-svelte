@@ -54,9 +54,9 @@
       return `${labelStatus ? `<div class="relative">\n  ` : ""}<Range${propsString}/>
 ${
   labelStatus
-    ? `<span class="text-sm text-gray-500 dark:text-gray-400 absolute start-0 -bottom-6">Min: ${minmax.min}</span>
-<span class="text-sm text-gray-500 dark:text-gray-400 absolute start-1/2 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">${minmax.max / 2}</span>
-<span class="text-sm text-gray-500 dark:text-gray-400 absolute end-0 -bottom-6">Max: ${minmax.max}</span></div>`
+    ? `<span class="text-sm text-body absolute start-0 -bottom-6">Min: ${minmax.min}</span>
+<span class="text-sm text-body absolute start-1/2 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">${minmax.max / 2}</span>
+<span class="text-sm text-body absolute end-0 -bottom-6">Max: ${minmax.max}</span></div>`
     : ""
 }`;
     })()
@@ -85,9 +85,9 @@ ${
     {/if}
     <Range color={rangeColor} {disabled} min={minmax.min} max={minmax.max} bind:value={interactiveValue} step={stepValue} appearance="auto" />
     {#if labelStatus}
-      <span class="absolute start-0 -bottom-6 text-sm text-gray-500 dark:text-gray-400">Min: {minmax.min}</span>
-      <span class="absolute start-1/2 -bottom-6 -translate-x-1/2 text-sm text-gray-500 rtl:translate-x-1/2 dark:text-gray-400">{minmax.max / 2}</span>
-      <span class="absolute end-0 -bottom-6 text-sm text-gray-500 dark:text-gray-400">Max: {minmax.max}</span>
+      <span class="absolute start-0 -bottom-6 text-sm text-body">Min: {minmax.min}</span>
+      <span class="absolute start-1/2 -bottom-6 -translate-x-1/2 text-sm text-body rtl:translate-x-1/2">{minmax.max / 2}</span>
+      <span class="absolute end-0 -bottom-6 text-sm text-body">Max: {minmax.max}</span>
     {/if}
   </div>
   <div class="mt-12 mb-4 flex flex-wrap space-x-2">

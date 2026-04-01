@@ -23,34 +23,34 @@
 
       return `<Tab${props}>
   <TabItem open title="Profile">
-      <p class="text-sm text-gray-500 dark:text-gray-400">
+      <p class="text-sm text-body">
         <b>Profile:</b>
         Tab content
       </p>
     </TabItem>
     <TabItem title="Dashboard">
-      <p class="text-sm text-gray-500 dark:text-gray-400">
+      <p class="text-sm text-body">
         <b>Dashboard:</b>
         Tab content
       </p>
     </TabItem>
     <TabItem title="Settings">
-      <p class="text-sm text-gray-500 dark:text-gray-400">
+      <p class="text-sm text-body">
         <b>Settings:</b>
         Tab content
       </p>
     </TabItem>
     <TabItem title="Users">
-      <p class="text-sm text-gray-500 dark:text-gray-400">
+      <p class="text-sm text-body">
         <b>Users:</b>
         Tab content
       </p>
     </TabItem>
     <TabItem disabled>
       {#snippet titleSlot()}
-        <span class="text-gray-400 dark:text-gray-500">Disabled</span>
+        <span class="text-fg-disabled">Disabled</span>
       {/snippet}
-      <p class="text-sm text-gray-500 dark:text-gray-400">
+      <p class="text-sm text-body">
         <b>Disabled:</b>
         Tab content
       </p>
@@ -75,40 +75,40 @@
 
 <H1>Tab Builder</H1>
 <CodeWrapper>
-  <Tabs {tabStyle} class={tabStyle === "full" ? "flex flex-nowrap space-x-0 divide-x divide-gray-200 rounded-lg shadow rtl:divide-x-reverse dark:divide-gray-700" : ""}>
+  <Tabs {tabStyle} class={tabStyle === "full" ? "flex flex-nowrap space-x-0 divide-x divide-default rounded-lg shadow rtl:divide-x-reverse" : ""}>
     <TabItem open title={tabStyle === "full" ? "" : "Profile"} class={tabStyle === "full" ? "w-full" : ""}>
       {#snippet titleSlot()}Profile{/snippet}
-      <p class="text-sm text-gray-500 dark:text-gray-400">
+      <p class="text-sm text-body">
         <b>Profile:</b>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </TabItem>
     <TabItem title={tabStyle === "full" ? "" : "Settings"} class={tabStyle === "full" ? "w-full" : ""}>
       {#snippet titleSlot()}Settings{/snippet}
-      <p class="text-sm text-gray-500 dark:text-gray-400">
+      <p class="text-sm text-body">
         <b>Settings:</b>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </TabItem>
     <TabItem title={tabStyle === "full" ? "" : "Users"} class={tabStyle === "full" ? "w-full" : ""}>
       {#snippet titleSlot()}Users{/snippet}
-      <p class="text-sm text-gray-500 dark:text-gray-400">
+      <p class="text-sm text-body">
         <b>Users:</b>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </TabItem>
     <TabItem title={tabStyle === "full" ? "" : "Dashboard"} class={tabStyle === "full" ? "w-full" : ""}>
       {#snippet titleSlot()}Dashboard{/snippet}
-      <p class="text-sm text-gray-500 dark:text-gray-400">
+      <p class="text-sm text-body">
         <b>Dashboard:</b>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </TabItem>
     <TabItem disabled title={tabStyle === "full" ? "" : "Disabled"} class={tabStyle === "full" ? "w-full" : ""}>
       {#snippet titleSlot()}
-        <span class="text-gray-400 dark:text-gray-500">Disabled</span>
+        <span class="text-fg-disabled">Disabled</span>
       {/snippet}
-      <p class="text-sm text-gray-500 dark:text-gray-400">
+      <p class="text-sm text-body">
         <b>Disabled:</b>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>

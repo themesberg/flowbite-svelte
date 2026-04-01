@@ -2,7 +2,7 @@ import { tv } from "tailwind-variants";
 
 export const highlightcompo = tv({
   slots: {
-    base: "mt-4 max-w-4xl rounded bg-gray-50 dark:bg-gray-700",
+    base: "mt-4 max-w-4xl rounded bg-neutral-secondary-strong",
     badge: "absolute -top-8 right-[8px]",
     button: "absolute right-2 top-2 rounded px-2 py-1 bg-primary-800 text-white"
   },
@@ -16,7 +16,7 @@ export const highlightcompo = tv({
 
 export const codewrapper = tv({
   slots: {
-    base: "max-w-4xl mx-auto rounded-md border border-gray-200 bg-white bg-gradient-to-r dark:border-gray-600 dark:bg-gray-950",
+    base: "max-w-4xl mx-auto rounded-md border border-default-strong bg-neutral-primary bg-gradient-to-r",
     inner: "p-6"
   }
 });

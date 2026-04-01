@@ -18,7 +18,7 @@
 
   // interactive example
   const colors = Object.keys(banner.variants.color);
-  let color: BannerProps["color"] = $state("primary");
+  let color: BannerProps["color"] = $state("gray");
 
   let bannerClass: BannerProps["class"] = $state("absolute");
 
@@ -49,7 +49,7 @@
     (() => {
       // position, bannerType color, class
       let props = [];
-      if (color !== "primary") props.push(` color="${color}"`);
+      if (color !== "gray") props.push(` color="${color}"`);
       if (bannerClass) props.push(` class="${bannerClass}"`);
       if (!bannerStatus) props.push(" bannerStatus={false}");
       if (currentTransition !== transitions[0]) {
@@ -105,15 +105,15 @@
       <ImagePlaceholder class="py-4" />
     </div>
     <Banner id="sample-banner" {color} bind:open={bannerStatus} class={bannerClass} transition={currentTransition.transition} transitionParams={currentTransition.params}>
-      <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-        <span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
-          <BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
+      <p class="flex items-center text-sm font-normal text-body">
+        <span class="me-3 inline-flex rounded-full bg-neutral-quaternary-medium p-1">
+          <BullhornOutline class="h-3 w-3 text-body" />
           <span class="sr-only">Light bulb</span>
         </span>
         <span>
           New brand identity has been launched for the <a
             href="https://flowbite.com"
-            class="text-primary-600 dark:text-primary-500 inline font-medium decoration-solid decoration-600 dark:decoration-500"
+            class="text-fg-brand inline font-medium underline decoration-fg-brand"
           >
             Flowbite Library
           </a>

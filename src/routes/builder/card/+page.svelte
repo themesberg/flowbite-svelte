@@ -28,7 +28,7 @@
   };
   let cardClass: CardProps["class"] = $state("");
   const changeClass = () => {
-    cardClass = cardClass === "" ? "pl-10" : "";
+    cardClass = cardClass === "" ? "p-4" : "";
   };
   let cardImage = $state<ImgType | undefined>(undefined);
   const changeImage = () => {
@@ -84,8 +84,8 @@
 <CodeWrapper>
   <div class="flex justify-center">
     <Card size={cardSize} shadow={cardShadow} href={link ? link : ""} class={cardClass} img={cardImage?.src} {horizontal} {reverse}>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions</h5>
-      <p class="leading-tight font-normal text-gray-700 dark:text-gray-300">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-heading">Noteworthy technology acquisitions</h5>
+      <p class="leading-tight font-normal text-body">Here are the biggest enterprise technology acquisitions of so far, in reverse chronological order.</p>
     </Card>
   </div>
   <div class="my-4 flex flex-wrap space-x-4">
@@ -112,7 +112,7 @@
       {horizontal ? "Vertical" : "Horizontal"}
     </Button>
 
-    <Toggle bind:checked={reverse} class="italic dark:text-gray-500 {!hasImageContent(cardImage) ? 'cursor-not-allowed opacity-50' : ''}" disabled={!hasImageContent(cardImage)}>
+    <Toggle bind:checked={reverse} class="italic {!hasImageContent(cardImage) ? 'cursor-not-allowed opacity-50' : ''}" disabled={!hasImageContent(cardImage)}>
       Reverse: {reverse}
     </Toggle>
   </div>

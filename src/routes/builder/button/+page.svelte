@@ -16,7 +16,7 @@
 
   // color, size, group, outline, shadow, disabled, pill
   const btnColors = Object.keys(button.variants.color);
-  let btnColor = $state("primary");
+  let btnColor = $state("brand");
   let btnClass = $state("");
   const changeBtnClass = () => {
     btnClass = btnClass === "" ? "w-48" : "";
@@ -82,7 +82,7 @@
   let generatedCode = $derived(
     (() => {
       let props = [];
-      if (btnColor !== "primary") props.push(` color="${btnColor}"`);
+      if (btnColor !== "brand") props.push(` color="${btnColor}"`);
       if (btnShadow) props.push(" shadow");
       if (btnOutline) props.push(" outline");
       if (btnPill) props.push(" pill");

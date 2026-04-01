@@ -47,7 +47,7 @@
       if (listTag !== "ul") props.push(` tag="${listTag}"`);
       if (listPosition !== "inside") props.push(` position="${listPosition}"`);
       // if (linkClass) props.push(` class="${linkClass}"`);
-      iconSlot = listIcon ? `<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />` : "";
+      iconSlot = listIcon ? `<CheckCircleSolid class="me-2 h-5 w-5 text-success" />` : "";
       if (ctxClass) props.push(` ctxClass="${ctxClass}"`);
       liIcon = listIcon ? ` icon` : "";
       nestedContent = nested
@@ -86,10 +86,10 @@
 
 <H1>List Builder</H1>
 <CodeWrapper>
-  <Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">List title</Heading>
-  <List tag={listTag} position={listPosition} class="space-y-1 text-gray-500 dark:text-gray-400" {ctxClass}>
+  <Heading tag="h2" class="mb-2 text-lg font-semibold text-heading">List title</Heading>
+  <List tag={listTag} position={listPosition} class="space-y-1 text-body" {ctxClass}>
     <Li icon={listIcon}>
-      {#if listIcon}<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />{/if}At least 10 characters (and up to 100 characters)
+      {#if listIcon}<CheckCircleSolid class="me-2 h-5 w-5 text-success" />{/if}At least 10 characters (and up to 100 characters)
       {#if nested}
         <List tag="ol" ctxClass="mt-2 space-y-1 ps-5">
           <Li>item 1-1</Li>
@@ -99,10 +99,10 @@
       {/if}
     </Li>
     <Li icon={listIcon}>
-      {#if listIcon}<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />{/if}At least one lowercase character
+      {#if listIcon}<CheckCircleSolid class="me-2 h-5 w-5 text-success" />{/if}At least one lowercase character
     </Li>
     <Li icon={listIcon}>
-      {#if listIcon}<CheckCircleSolid class="me-2 h-5 w-5 text-green-500 dark:text-green-400" />{/if}Inclusion of at least one special character, e.g., ! @ # ?
+      {#if listIcon}<CheckCircleSolid class="me-2 h-5 w-5 text-success" />{/if}Inclusion of at least one special character, e.g., ! @ # ?
     </Li>
   </List>
   <div class="mt-4 mb-4 flex flex-wrap space-x-2">
