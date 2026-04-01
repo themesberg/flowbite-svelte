@@ -47,7 +47,7 @@
       if (listTag !== "ul") props.push(` tag="${listTag}"`);
       if (listPosition !== "inside") props.push(` position="${listPosition}"`);
       // if (linkClass) props.push(` class="${linkClass}"`);
-      iconSlot = listIcon ? `<CheckCircleSolid class="me-2 h-5 w-5 text-success" />` : "";
+      iconSlot = listIcon ? `<CheckCircleSolid class="text-success me-2 h-5 w-5" />` : "";
       if (ctxClass) props.push(` ctxClass="${ctxClass}"`);
       liIcon = listIcon ? ` icon` : "";
       nestedContent = nested

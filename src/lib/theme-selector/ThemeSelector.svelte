@@ -35,17 +35,19 @@
       const res = await fetch("/themes/manifest.json");
       if (!res.ok) return;
       const entries: ManifestEntry[] = await res.json();
-      staticThemes = entries.map((entry) => {
-        const id = typeof entry === "string" ? entry : entry.id;
-        const known = themeConfigs.find((t) => t.id === id);
-        const overrideName = typeof entry === "object" ? entry.name : undefined;
-        const overrideColors = typeof entry === "object" ? entry.colors : undefined;
-        return {
-          id,
-          name: overrideName ?? known?.name ?? id.charAt(0).toUpperCase() + id.slice(1),
-          colors: overrideColors ?? known?.colors ?? []
-        };
-      });
+      staticThemes = entries
+        .filter((entry) => typeof entry === "string" || (typeof entry === "object" && entry?.id))
+        .map((entry) => {
+          const id = typeof entry === "string" ? entry : entry.id;
+          const known = themeConfigs.find((t) => t.id === id);
+          const overrideName = typeof entry === "object" ? entry.name : undefined;
+          const overrideColors = typeof entry === "object" ? entry.colors : undefined;
+          return {
+            id,
+            name: overrideName ?? known?.name ?? id.charAt(0).toUpperCase() + id.slice(1),
+            colors: overrideColors ?? known?.colors ?? []
+          };
+        });
     } catch (e) {
       console.warn("Failed to load theme manifest:", e);
     }

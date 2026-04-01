@@ -178,7 +178,7 @@ If you want to force the bundled theme list (ignoring the manifest), pass `loadF
 
 In your `src/routes/layout.css` (or equivalent), import a theme CSS file for build-time Tailwind token registration. You have two options:
 
-**Option A — import directly from the library** (no customization needed):
+**Option A — import directly from the library** (no customization, path may vary by project structure):
 
 ```css
 @import "../../node_modules/flowbite-svelte/src/lib/theme-selector/themes/default.css";

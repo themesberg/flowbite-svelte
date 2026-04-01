@@ -63,19 +63,17 @@
       <DropdownDivider />`
         : "";
       let props = [];
-      if (currentTransition !== transitions[0]) {
-        props.push(` transition={${currentTransition.name.toLowerCase()}}`);
+      props.push(` transition={${currentTransition.name.toLowerCase()}}`);
 
-        const paramsString = Object.entries(currentTransition.params)
-          .map(([key, value]) => {
-            if (key === "easing") {
-              return `${key}:${value.name || "linear"}`;
-            }
-            return `${key}:${value}`;
-          })
-          .join(",");
-        props.push(` transitionParams={{${paramsString}}}`);
-      }
+      const paramsString = Object.entries(currentTransition.params)
+        .map(([key, value]) => {
+          if (key === "easing") {
+            return `${key}:${value.name || "linear"}`;
+          }
+          return `${key}:${value}`;
+        })
+        .join(",");
+      props.push(` transitionParams={{${paramsString}}}`);
 
       const propsString = props.length > 0 ? props.map((prop) => `\n  ${prop}`).join("") + "\n" : "";
 
