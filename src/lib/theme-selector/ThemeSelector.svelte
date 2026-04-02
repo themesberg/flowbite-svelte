@@ -14,7 +14,7 @@
     colors: readonly string[];
   }
 
-  let { classes, loadFromStatic = true, ...restProps }: ThemeSelectorProps = $props();
+  let { classes, loadFromStatic = false, ...restProps }: ThemeSelectorProps = $props();
 
   const styling = $derived(classes);
   const themeStyling = $derived(getTheme("themeSelector"));
@@ -40,7 +40,7 @@
       if (!res.ok) return;
       const json: unknown = await res.json();
       if (!Array.isArray(json)) return;
-      staticThemes = json
+      const themes = json
         .filter(
           (entry): entry is ManifestEntry =>
             typeof entry === "string" ||
@@ -62,6 +62,7 @@
             colors: overrideColors ?? known?.colors ?? []
           };
         });
+      staticThemes = Array.from(new Map(themes.map((theme) => [theme.id, theme] as const)).values());
     } catch (e) {
       console.warn("Failed to load theme manifest:", e);
     }
@@ -117,6 +118,6 @@
 [ThemeSelectorProps](https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/types.ts#L2221)
 ## Props
 @prop classes
-@prop loadFromStatic = true
+@prop loadFromStatic = false
 @prop ...restProps
 -->
