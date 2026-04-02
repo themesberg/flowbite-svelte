@@ -4,7 +4,7 @@
 </script>
 
 <Skeleton class="py-4" />
-<ImagePlaceholder />
+<ImagePlaceholder class="pb-20"/>
 
 <BottomNav position="fixed" classes={{ content: "grid-cols-4" }}>
   <BottomNavItem btnName="Home">

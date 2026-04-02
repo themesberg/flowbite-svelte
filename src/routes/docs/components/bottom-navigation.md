@@ -39,7 +39,7 @@ Use the default bottom navigation bar example to show a list of menu items as bu
 
 The fixed positioning ensures the navigation remains accessible as users scroll through content, providing consistent access to key actions and navigation.
 
-```svelte example 
+```svelte example class="flex flex-col relative"
 {#include Default.svelte}
 ```
 

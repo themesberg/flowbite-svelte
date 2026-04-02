@@ -5,7 +5,7 @@
 
 <div class="relative flex flex-col">
   <Skeleton class="py-4" />
-  <ImagePlaceholder class="pb-20" />
+  <ImagePlaceholder class="pb-40" />
 
   <BottomNav position="absolute" navType="group" classes={{ content: "grid-cols-5" }}>
     {#snippet header()}

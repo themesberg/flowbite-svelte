@@ -8,6 +8,7 @@
   import ExampleHelper from "./ExampleHelper.svelte";
   import ExampleRtl from "./ExampleRTL.svelte";
   import GitHub from "./icons/GitHub.svelte";
+  import { getCurrentTheme } from "$lib/theme-selector/themeStore.svelte";
 
   // Define the props properly with TypeScript
   type Props = {
@@ -86,6 +87,7 @@
   let iframeLoad = $state(false);
   let copy_text = "Copy";
   let documentObserver: MutationObserver | undefined = $state(undefined);
+  let currentTheme = $derived(getCurrentTheme());
 
   const responsiveSize = {
     mobile: "max-w-sm",
@@ -116,6 +118,34 @@
       } else {
         iframe.contentDocument.documentElement.classList.remove("dark");
       }
+    }
+  }
+
+  function syncIframeTheme(): void {
+    if (!iframe || !iframe.contentDocument) return;
+
+    const themeLink = document.querySelector("#dynamic-theme-css") as HTMLLinkElement | null;
+    if (themeLink) {
+      let iframeThemeLink = iframe.contentDocument.querySelector("#iframe-dynamic-theme-css") as HTMLLinkElement | null;
+      if (!iframeThemeLink) {
+        iframeThemeLink = iframe.contentDocument.createElement("link");
+        iframeThemeLink.id = "iframe-dynamic-theme-css";
+        iframeThemeLink.rel = "stylesheet";
+        iframe.contentDocument.head.appendChild(iframeThemeLink);
+      }
+      iframeThemeLink.href = themeLink.href;
+    }
+
+    const fontLink = document.querySelector("#dynamic-theme-font") as HTMLLinkElement | null;
+    if (fontLink) {
+      let iframeFontLink = iframe.contentDocument.querySelector("#iframe-dynamic-theme-font") as HTMLLinkElement | null;
+      if (!iframeFontLink) {
+        iframeFontLink = iframe.contentDocument.createElement("link");
+        iframeFontLink.id = "iframe-dynamic-theme-font";
+        iframeFontLink.rel = "stylesheet";
+        iframe.contentDocument.head.appendChild(iframeFontLink);
+      }
+      iframeFontLink.href = fontLink.href;
     }
   }
 
@@ -241,6 +271,7 @@
     });
 
     syncIframeDarkMode();
+    syncIframeTheme();
     updateHeightContent();
 
     if (iframe.contentDocument?.body.firstChild) {
@@ -273,6 +304,15 @@
     if (!iframe.contentDocument) return;
 
     iframe.contentDocument.documentElement.dir = rtl || "";
+  });
+
+  $effect(() => {
+    // Re-sync theme link whenever the active theme changes
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    currentTheme;
+    if (iframeLoad) {
+      syncIframeTheme();
+    }
   });
 </script>
 
