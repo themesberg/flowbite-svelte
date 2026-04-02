@@ -85,7 +85,7 @@ The location of your main CSS file determines the correct path for `@source` dir
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
 @import "tailwindcss";
-@import "../../node_modules/flowbite-svelte/src/lib/theme-selector/themes/default.css";
+@import "../../node_modules/flowbite-svelte/dist/theme-selector/themes/default.css";
 
 @plugin "flowbite/plugin";
 @plugin "flowbite-typography";

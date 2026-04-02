@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 export { default as CloseButton } from "./CloseButton.svelte";
 export { closeButton } from "./theme";
 export { default as Popper } from "./Popper.svelte";
-export * from "./responsive.svelte.ts";
+export * from "./responsive.svelte.js";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
