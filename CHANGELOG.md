@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0-next.14
+
+### Patch Changes
+
+- ci: add ci ([`36ead47`](https://github.com/themesberg/flowbite-svelte/commit/36ead47739c33047ea49f45f88b2d655e540cc3f))
+
 ## 2.0.0-next.13
 
 ### Patch Changes
