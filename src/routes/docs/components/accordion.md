@@ -40,7 +40,7 @@ To allow multiple items to remain open simultaneously, set the `multiple` proper
 
 Use the `open` prop to make an item open on mount. This is useful for highlighting important content or the most frequently accessed section.
 
-```svelte example class="h-64"
+```svelte example class="h-72"
 {#include Open.svelte}
 ```
 
@@ -48,7 +48,7 @@ Use the `open` prop to make an item open on mount. This is useful for highlighti
 
 Customize accordion styling using the `classes` prop with properties like `active`, `inactive`, `button`, `content`, and `contentWrapper`. Define them in `Accordion` to apply globally, or set them per `AccordionItem` to override.
 
-```svelte example class="h-64"
+```svelte example class="h-72"
 {#include Color.svelte}
 ```
 
@@ -56,7 +56,7 @@ Customize accordion styling using the `classes` prop with properties like `activ
 
 You can customize all aspects including button font, content padding, and both active/inactive states:
 
-```svelte example class="h-64"
+```svelte example class="h-72"
 {#include AdvancedClasses.svelte}
 ```
 
@@ -64,7 +64,7 @@ You can customize all aspects including button font, content padding, and both a
 
 Use `flush` prop to remove the rounded borders. This creates a cleaner, more minimal design that works well in tight layouts or when embedded within cards.
 
-```svelte example class="h-64"
+```svelte example class="h-72"
 {#include Flush.svelte}
 ```
 
@@ -72,7 +72,7 @@ Use `flush` prop to remove the rounded borders. This creates a cleaner, more min
 
 Use the `arrowup` and `arrowdown` snippets to customize the expand/collapse icons. You can use any icon library or custom SVG icons.
 
-```svelte example class="h-64"
+```svelte example class="h-72"
 {#include ArrowStyle.svelte}
 ```
 
@@ -80,7 +80,7 @@ Use the `arrowup` and `arrowdown` snippets to customize the expand/collapse icon
 
 Use `header` snippet to add icons and create visually enhanced accordion headers. This helps users quickly identify sections and improves scanability.
 
-```svelte example class="h-64"
+```svelte example class="h-72"
 {#include Icon.svelte}
 ```
 
@@ -96,7 +96,7 @@ Use `multiple` prop to allow multiple accordion items to be open at the same tim
 
 Here's an example of how to use the `multiple` option together with "expand all" and "collapse all" functionality. This pattern is helpful for long forms or documentation pages where users may want to see everything at once.
 
-```svelte example class="space-y-4 h-[500px]"
+```svelte example class="space-y-4 h-[540px]"
 {#include MultipleMode2.svelte}
 ```
 
@@ -106,7 +106,7 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 
 You can use any Svelte transition function such as `fade`, `blur`, `fly`, or `scale` from the `svelte/transition` module, and customize them with parameters like duration and easing.
 
-```svelte example class="h-80"
+```svelte example class="h-96"
 {#include Transitions.svelte}
 ```
 
@@ -126,7 +126,7 @@ Use the following example to preserve the input value when navigating between pa
 
 To test: Fill out the form, navigate to a different page, and then use your browser's back button. You'll notice that your input is preserved automatically.
 
-```svelte example hideOutput class="h-64"
+```svelte example hideOutput class="h-72"
 {#include Snapshot.svelte}
 ```
 
@@ -139,7 +139,7 @@ This approach is useful when:
 - You need better performance with many accordion items
 - You want instant show/hide without animation
 
-```svelte example class="h-[450px] space-y-4"
+```svelte example class="h-[500px] space-y-4"
 {#include TransitionNone.svelte}
 ```
 
@@ -153,7 +153,7 @@ For example, you might want to keep sections expanded on desktop for easy scanni
 
 Simple Media Query opens accordion item on medium screens and larger:
 
-```svelte example class="h-48"
+```svelte example class="h-52"
 {#include BpBasic.svelte}
 ```
 
@@ -161,7 +161,7 @@ Simple Media Query opens accordion item on medium screens and larger:
 
 Access multiple breakpoints with a single hook for cleaner, more maintainable code:
 
-```svelte example class="h-48"
+```svelte example class="h-52"
 {#include BpObject.svelte}
 ```
 
@@ -169,7 +169,7 @@ Access multiple breakpoints with a single hook for cleaner, more maintainable co
 
 Current Breakpoint Display shows the current breakpoint in your UI, useful for debugging responsive behavior:
 
-```svelte example class="h-48"
+```svelte example class="h-52"
 {#include BpAdvanced.svelte}
 ```
 
@@ -177,7 +177,7 @@ Current Breakpoint Display shows the current breakpoint in your UI, useful for d
 
 Open accordion only within specific screen size ranges. This is useful when you want different behavior for phones, tablets, and desktops:
 
-```svelte example class="h-[450px]"
+```svelte example class="h-[500px]"
 {#include BpRange.svelte}
 ```
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0-next.12
+
+### Patch Changes
+
+- fix: theme selector, css, and builder directory update
+
 ## 2.0.0-next.11
 
 ### Patch Changes

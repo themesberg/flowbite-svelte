@@ -12,7 +12,7 @@
 
   let isHomePage: boolean = $derived(page.route.id === "/");
   /*eslint no-undef: "off"*/
-  const version = __VERSION__;
+  const version = $derived((page.data as { npmVersion?: string }).npmVersion ?? __VERSION__);
 
   let logo = "/images/flowbite-svelte-icon-logo.svg";
   // let divClass = 'w-full ms-auto lg:block lg:w-auto order-1 lg:order-none';

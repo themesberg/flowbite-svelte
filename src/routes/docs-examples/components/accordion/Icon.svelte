@@ -23,6 +23,6 @@
         <span>My Header 2</span>
       </div>
     {/snippet}
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sintexplicabo...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit ...</p>
   </AccordionItem>
 </Accordion>
