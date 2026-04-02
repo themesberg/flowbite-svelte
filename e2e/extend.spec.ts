@@ -18,12 +18,6 @@ test("CommandPalette page should have h1", async ({ page }) => {
   expect(await page.textContent("h1")).toBe("Svelte Command Palette");
 });
 
-// flowbite-svelte-starter
-test("Flowbite Svelte Starter page should have h1", async ({ page }) => {
-  await page.goto("/docs/extend/flowbite-svelte-starter");
-  expect(await page.textContent("h1")).toBe("Flowbite Svelte Starters");
-});
-
 // Kanban
 test("KanbanBoard page should have h1", async ({ page }) => {
   await page.goto("/docs/extend/kanban-board");

@@ -2,4 +2,4 @@
 "flowbite-svelte": patch
 ---
 
-fix: theme selector, css, and builder directory update
+fix: accordion examples updated and SVG images added

@@ -24,11 +24,7 @@
   let currentTheme = $derived(getCurrentTheme());
   let staticThemes = $state<DisplayTheme[]>([]);
   let useStaticThemeAssets = $derived(loadFromStatic && staticThemes.length > 0);
-  let displayThemes = $derived<DisplayTheme[]>(
-    useStaticThemeAssets
-      ? staticThemes
-      : themeConfigs.map((t) => ({ id: t.id, name: t.name, colors: t.colors }))
-  );
+  let displayThemes = $derived<DisplayTheme[]>(useStaticThemeAssets ? staticThemes : themeConfigs.map((t) => ({ id: t.id, name: t.name, colors: t.colors })));
   let currentThemeName = $derived(
     displayThemes.find((t) => t.id === currentTheme)?.name ??
       themeConfigs.find((t) => t.id === currentTheme)?.name ??
