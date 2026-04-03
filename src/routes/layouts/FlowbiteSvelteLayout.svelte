@@ -37,13 +37,22 @@
 
   function onBannerClose(_event: MouseEvent) {
     const until = Date.now() + BANNER_DURATION_MS;
-    localStorage.setItem(BANNER_KEY, String(until));
+    try {
+      localStorage.setItem(BANNER_KEY, String(until));
+    } catch {
+      // ignore storage failures
+    }
     bannerOpen = false;
   }
 
   onMount(() => {
-    const until = localStorage.getItem(BANNER_KEY);
-    bannerOpen = !until || Date.now() > Number(until);
+    try {
+      const raw = localStorage.getItem(BANNER_KEY);
+      const until = raw ? Number(raw) : NaN;
+      bannerOpen = !Number.isFinite(until) || Date.now() > until;
+    } catch {
+      bannerOpen = true;
+    }
 
     // Workaround until https://github.com/sveltejs/kit/issues/2664 is fixed
     if (typeof window !== "undefined" && window.location.hash) {
