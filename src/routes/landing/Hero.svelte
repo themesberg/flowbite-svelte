@@ -10,6 +10,11 @@
     <div class="flex items-center gap-8">
       <div class="flex flex-col justify-start gap-10">
         <div class="flex flex-col gap-4 text-left lg:gap-6">
+          <a href="https://flowbite-svelte-v2.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex w-fit items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-1.5 text-sm font-medium text-primary-700 hover:bg-primary-100 dark:border-primary-800 dark:bg-primary-900/30 dark:text-primary-400 dark:hover:bg-primary-900/50">
+            <span class="rounded-full bg-primary-600 px-2 py-0.5 text-xs font-semibold text-white">New</span>
+            Flowbite Svelte v2 is coming soon!
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          </a>
           <h1 class="max-w-2xl text-4xl leading-none font-extrabold text-gray-900 lg:text-6xl dark:text-white">
             <span class="block1 xl:inline">Speed up your web development with</span>
             <span class="block1 text-primary-700 dark:text-primary-700 xl:inline">Flowbite Svelte</span>

@@ -44,7 +44,7 @@
     "@flowbite-svelte-plugins/chart": "^0.2.4",
     "@flowbite-svelte-plugins/datatable": "^0.4.1",
     "@flowbite-svelte-plugins/texteditor": "^0.25.6",
-    "@playwright/test": "^1.58.2",
+    "@playwright/test": "^1.59.1",
     "@resvg/resvg-js": "^2.6.2",
     "@sveltejs/adapter-vercel": "^6.3.3",
     "@sveltejs/kit": "^2.55.0",
