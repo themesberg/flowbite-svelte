@@ -20,8 +20,9 @@
 </script>
 
 <Popper arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-  <div class={div({ class: clsx(theme?.div, classes?.div) })}>
-    <ul class={ul({ class: clsx(theme?.ul, styling.ul) })} onclick={() => (isOpen = false)} onkeydown={(e) => e.key === 'Enter' && (isOpen = false)} role="menu">
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
+  <div class={div({ class: clsx(theme?.div, classes?.div) })} onclick={() => (isOpen = false)} onkeydown={(e) => e.key === "Enter" && (isOpen = false)}>
+    <ul class={ul({ class: clsx(theme?.ul, styling.ul) })}>
       {#each items as item, index (item.name)}
         <li>
           {@render children({ item, index })}
