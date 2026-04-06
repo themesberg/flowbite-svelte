@@ -149,7 +149,7 @@ describe("NavUl Component", () => {
     expect(aboutLink).toBeInTheDocument();
     // Active link should have active styling (activeUrl="https://flowbite-svelte.com/about" in test component)
     expect(aboutLink).toHaveClass("text-white");
-    expect(aboutLink).toHaveClass("bg-primary-700");
+    expect(aboutLink).toHaveClass("bg-brand");
   });
 
   test("supports custom active classes", () => {
@@ -233,7 +233,7 @@ describe("NavLi Component", () => {
       expect(aboutLink).toBeInTheDocument();
       // About link should have active styling since activeUrl="https://flowbite-svelte.com/about"
       expect(aboutLink).toHaveClass("text-white");
-      expect(aboutLink).toHaveClass("bg-primary-700");
+      expect(aboutLink).toHaveClass("bg-brand");
     });
 
     test("applies non-active class to non-matching URLs", () => {
@@ -244,8 +244,8 @@ describe("NavLi Component", () => {
       expect(homeLink).toBeInTheDocument();
       expect(contactLink).toBeInTheDocument();
       // These should have non-active styling (activeUrl="https://flowbite-svelte.com/about")
-      expect(homeLink).toHaveClass("text-gray-700");
-      expect(contactLink).toHaveClass("text-gray-700");
+      expect(homeLink).toHaveClass("text-heading");
+      expect(contactLink).toHaveClass("text-heading");
     });
   });
 });

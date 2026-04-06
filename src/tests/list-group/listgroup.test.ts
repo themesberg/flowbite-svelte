@@ -71,7 +71,7 @@ describe("Listgroup - Rounded", () => {
   test("applies rounded class", () => {
     render(RoundedListgroup);
     const list = screen.getByRole("list");
-    expect(list).toHaveClass("rounded-lg");
+    expect(list).toHaveClass("rounded-base");
   });
 });
 
@@ -109,7 +109,7 @@ describe("Listgroup - Disabled", () => {
     render(DisabledListgroup);
     const disabledButton = screen.getByText("Disabled Item");
     expect(disabledButton).toHaveClass("cursor-not-allowed");
-    expect(disabledButton).toHaveClass("opacity-50");
+    expect(disabledButton).toHaveClass("text-fg-disabled");
   });
 });
 

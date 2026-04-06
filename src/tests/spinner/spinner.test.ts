@@ -97,7 +97,7 @@ describe("Spinner Component", () => {
       const blueSpinner = container.querySelector('[data-testid="blue-spinner"]');
       const redSpinner = container.querySelector('[data-testid="red-spinner"]');
 
-      expect(primarySpinner?.classList.contains("fill-primary-600")).toBe(true);
+      expect(primarySpinner?.classList.contains("fill-brand")).toBe(true);
       expect(blueSpinner?.classList.contains("fill-blue-600")).toBe(true);
       expect(redSpinner?.classList.contains("fill-red-600")).toBe(true);
     });

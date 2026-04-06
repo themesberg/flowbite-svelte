@@ -45,7 +45,7 @@ describe("SidebarItem Component", () => {
       render(ActiveSidebarItemTest);
       const dashboardLink = screen.getByRole("link", { name: /dashboard/i });
 
-      expect(dashboardLink).toHaveClass("bg-gray-200");
+      expect(dashboardLink).toHaveClass("bg-neutral-tertiary");
     });
 
     test("non-active item does not have aria-current", () => {

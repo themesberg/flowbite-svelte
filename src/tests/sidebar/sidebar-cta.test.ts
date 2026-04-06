@@ -35,7 +35,7 @@ describe("SidebarCta Component", () => {
       const { container } = render(BasicSidebarCtaTest);
       const cta = container.querySelector('[role="alert"]');
 
-      expect(cta).toHaveClass("p-4", "mt-6", "rounded-lg");
+      expect(cta).toHaveClass("p-4", "mt-6", "rounded-base");
     });
 
     test("label has badge styling", () => {

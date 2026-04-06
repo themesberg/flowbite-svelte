@@ -91,7 +91,7 @@ describe("Secondary Component", () => {
       const secondary = container.querySelector('[data-scope="secondary"]');
 
       // Verify actual theme classes applied by Secondary component
-      expect(secondary?.className).toMatch(/text-(gray|secondary)/);
+      expect(secondary?.className).toMatch(/text-body-subtle/);
       expect(secondary).toHaveClass("test-class");
     });
 

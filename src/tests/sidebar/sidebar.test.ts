@@ -180,7 +180,7 @@ describe("Sidebar Component", () => {
       // Active items should have aria-current for accessibility
       expect(dashboardLink).toHaveAttribute("aria-current", "page");
       // Active items should have visual styling (testing implementation detail)
-      expect(dashboardLink).toHaveClass("bg-gray-200");
+      expect(dashboardLink).toHaveClass("bg-neutral-tertiary");
     });
 
     test("renders non-active sidebar item", () => {

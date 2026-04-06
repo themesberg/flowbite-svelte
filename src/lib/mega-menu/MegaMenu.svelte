@@ -13,8 +13,9 @@
 </script>
 
 <Popper data-scope="mega-menu" data-part="base" arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
-  <div class={content({ class: clsx(theme?.content, styling?.content) })}>
-    <ul class={list({ class: clsx(theme?.list, styling?.list) })} onclick={() => (isOpen = false)} onkeydown={(e) => e.key === 'Enter' && (isOpen = false)} role="menu">
+  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+  <nav class={content({ class: clsx(theme?.content, styling?.content) })} onclick={() => (isOpen = false)} onkeydown={(e) => e.key === "Enter" && (isOpen = false)}>
+    <ul class={list({ class: clsx(theme?.list, styling?.list) })}>
       {#each items as item, index (item.name)}
         <li>
           {@render children({ item, index })}
@@ -24,7 +25,7 @@
       {/each}
     </ul>
     {#if full && addon}<div class={addonCls({ class: clsx(theme?.footer, styling?.footer) })}>{@render addon()}</div>{/if}
-  </div>
+  </nav>
 </Popper>
 
 <!--

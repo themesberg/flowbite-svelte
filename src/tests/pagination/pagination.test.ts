@@ -82,7 +82,7 @@ describe("Pagination Component", () => {
       const links = screen.getAllByRole("link");
 
       // Check that active pagination item has correct styling
-      expect(links[0]).toHaveClass("text-primary-600");
+      expect(links[0]).toHaveClass("text-fg-brand");
     });
   });
 

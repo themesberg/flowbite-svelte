@@ -25,8 +25,8 @@ describe("PaginationButton Component", () => {
       render(BasicPaginationButtonTest);
       const button = screen.getByRole("button");
 
-      expect(button).toHaveClass("text-gray-500");
-      expect(button).toHaveClass("hover:bg-gray-100");
+      expect(button).toHaveClass("text-body");
+      expect(button).toHaveClass("hover:bg-neutral-tertiary-medium");
     });
   });
 
@@ -42,8 +42,8 @@ describe("PaginationButton Component", () => {
       render(ActivePaginationButtonTest);
       const button = screen.getByRole("button");
 
-      expect(button).toHaveClass("text-primary-600");
-      expect(button).toHaveClass("bg-primary-50");
+      expect(button).toHaveClass("text-fg-brand");
+      expect(button).toHaveClass("bg-neutral-tertiary-medium");
     });
   });
 
@@ -61,7 +61,7 @@ describe("PaginationButton Component", () => {
       render(LinkPaginationButtonTest);
       const link = screen.getByRole("link");
 
-      expect(link).toHaveClass("text-gray-500");
+      expect(link).toHaveClass("text-body");
     });
   });
 

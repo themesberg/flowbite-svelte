@@ -45,7 +45,7 @@ describe("SidebarGroup Component", () => {
       const { container } = render(BorderSidebarGroupTest);
       const borderedGroup = container.querySelector(".border-t");
 
-      expect(borderedGroup).toHaveClass("pt-4", "mt-4", "border-gray-200");
+      expect(borderedGroup).toHaveClass("pt-4", "mt-4", "border-default");
     });
 
     test("renders multiple groups", () => {
