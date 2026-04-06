@@ -14,7 +14,7 @@
 
 <Popper data-scope="mega-menu" data-part="base" arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   <div class={content({ class: clsx(theme?.content, styling?.content) })}>
-    <ul class={list({ class: clsx(theme?.list, styling?.list) })}>
+    <ul class={list({ class: clsx(theme?.list, styling?.list) })} onclick={() => (isOpen = false)} onkeydown={(e) => e.key === 'Enter' && (isOpen = false)} role="menu">
       {#each items as item, index (item.name)}
         <li>
           {@render children({ item, index })}
