@@ -21,7 +21,7 @@
 
 <Popper arrow={false} bind:isOpen trigger="click" placement="bottom" yOnly={full} {...restProps} class={base({ class: clsx(theme?.base, className) })}>
   <div class={div({ class: clsx(theme?.div, classes?.div) })}>
-    <ul class={ul({ class: clsx(theme?.ul, styling.ul) })}>
+    <ul class={ul({ class: clsx(theme?.ul, styling.ul) })} onclick={() => (isOpen = false)} onkeydown={(e) => e.key === 'Enter' && (isOpen = false)} role="menu">
       {#each items as item, index (item.name)}
         <li>
           {@render children({ item, index })}
