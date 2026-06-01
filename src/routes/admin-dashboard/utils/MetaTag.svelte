@@ -9,7 +9,10 @@
   }
   let { path, description, title, subtitle }: Props = $props();
 
-  let imgsrc = $derived(`https://flowbite-svelte.com/og?package=Flowbite%20Svelte%20Admin%20Dashboard&title=${subtitle}`);
+  // slug mirrors pathToSlug() in generate-admin-dashboard-og-images.js
+  let imgsrc = $derived(
+    `https://flowbite-svelte.com/og/admin-dashboard${path.replace(/\//g, "-")}.png`
+  );
   let og_url = $derived(`https://flowbite-svelte.com/admin-dashboard${path}`);
 </script>
 

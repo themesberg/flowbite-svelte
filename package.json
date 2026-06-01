@@ -31,6 +31,8 @@
     "copy:packagejson": "svelte-lib-helpers package",
     "lib-helpers": "pnpm gen:component-data-prop-value && pnpm gen:docspropvalue && pnpm format && pnpm package && pnpm gen:exports && pnpm copy:packagejson && pnpm llm",
     "llm": "svelte-doc-llm && ./scripts/update-llms.sh",
+    "og": "node ./scripts/generate-og-images.js",
+    "og:admin": "node ./scripts/generate-admin-dashboard-og-images.js",
     "ch": "npx changeset",
     "cv": "npx changeset version",
     "cp": "npx changeset publish"
@@ -46,6 +48,7 @@
     "@flowbite-svelte-plugins/texteditor": "^0.25.6",
     "@playwright/test": "^1.58.2",
     "@resvg/resvg-js": "^2.6.2",
+    "@fontsource/noto-sans": "^5.0.0",
     "@sveltejs/adapter-vercel": "^6.3.3",
     "@sveltejs/kit": "^2.55.0",
     "@sveltejs/package": "^2.5.7",

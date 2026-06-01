@@ -1,5 +1,7 @@
 <script lang="ts">
   import { MetaTags } from "svelte-meta-tags";
+  import { page } from "$app/stores";
+
   interface Props {
     breadcrumb_title?: string;
     description?: string;
@@ -8,7 +10,8 @@
   }
   let { breadcrumb_title, description, title, dir }: Props = $props();
 
-  let imgsrc = $derived(`https://flowbite-svelte.com/og?package=Flowbite%20Svelte%20Blocks&title=${encodeURIComponent(breadcrumb_title || "")}`);
+  let ogSlug = $derived($page.url.pathname.slice(1).replace(/\//g, "-") || "blocks");
+  let imgsrc = $derived(`https://flowbite-svelte.com/og/${ogSlug}.png`);
   let dirstring = $derived(dir?.toLowerCase());
   let breadcrumb = $derived(breadcrumb_title?.toLowerCase().replaceAll(" ", "-"));
   let finalBreadcrumbTitle = $derived(breadcrumb_title && breadcrumb_title.length > 0 ? breadcrumb_title : (title?.split("-")[0] ?? "Flowbite Svelte Blocks"));
