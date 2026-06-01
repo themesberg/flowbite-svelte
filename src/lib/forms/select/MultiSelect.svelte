@@ -212,6 +212,8 @@
   onclick={toggleDropdown}
   onblur={handleBlur}
   onkeydown={handleKeyDown}
+  // prevents the onclose event from the Badge from bubbling up outside of the MultiSelect container
+  onclose={(e) => e.stopPropagation()}
   tabindex="0"
   role="listbox"
   class={base({ size, class: clsx(theme?.base, className) })}
