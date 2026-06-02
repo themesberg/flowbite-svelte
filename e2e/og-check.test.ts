@@ -1,121 +1,97 @@
 import { expect, test } from "@playwright/test";
+
+function checkOgImage(content: string | null, expected: string) {
+  expect(content).toBeTruthy();
+  expect(content).toContain(expected);
+}
+
 // home
 test("Home page should have OG image", async ({ page }) => {
   await page.goto("/");
-
-  const ogImage = page.locator('meta[property="og:image"]');
-  const content = await ogImage.getAttribute("content");
-
-  expect(content).toContain("og?title=Svelte UI Components");
+  const content = await page.locator('meta[property="og:image"]').getAttribute("content");
+  checkOgImage(content, "/og/docs-pages-introduction.png");
 });
+
 // component
 test("Accordion page should have OG image", async ({ page }) => {
   await page.goto("/docs/components/accordion");
-
-  const ogImage = page.locator('meta[property="og:image"]');
-  const content = await ogImage.getAttribute("content");
-
-  expect(content).toContain("og?title=Svelte%20Accordion");
+  const content = await page.locator('meta[property="og:image"]').getAttribute("content");
+  checkOgImage(content, "/og/docs-components-accordion.png");
 });
 
 // form
 test("Checkbox page should have OG image", async ({ page }) => {
   await page.goto("/docs/forms/checkbox");
-
-  const ogImage = page.locator('meta[property="og:image"]');
-  const content = await ogImage.getAttribute("content");
-
-  expect(content).toContain("og?title=Svelte%20Checkbox");
+  const content = await page.locator('meta[property="og:image"]').getAttribute("content");
+  checkOgImage(content, "/og/docs-forms-checkbox.png");
 });
 
 // typography
 test("Blockquote page should have OG image", async ({ page }) => {
   await page.goto("/docs/typography/blockquote");
-
-  const ogImage = page.locator('meta[property="og:image"]');
-  const content = await ogImage.getAttribute("content");
-
-  expect(content).toContain("og?title=Svelte%20Blockquote");
+  const content = await page.locator('meta[property="og:image"]').getAttribute("content");
+  checkOgImage(content, "/og/docs-typography-blockquote.png");
 });
 
 // utilities
 test("CloseButton page should have OG image", async ({ page }) => {
   await page.goto("/docs/utilities/close-button");
-
-  const ogImage = page.locator('meta[property="og:image"]');
-  const content = await ogImage.getAttribute("content");
-
-  expect(content).toContain("og?title=Svelte%20Close%20Button%20-%20Flowbite");
+  const content = await page.locator('meta[property="og:image"]').getAttribute("content");
+  checkOgImage(content, "/og/docs-utilities-close-button.png");
 });
+
 // extend
 test("ButtonToggle page should have OG image", async ({ page }) => {
   await page.goto("/docs/extend/button-toggle");
-
-  const ogImage = page.locator('meta[property="og:image"]');
-  const content = await ogImage.getAttribute("content");
-
-  expect(content).toContain("og?title=Button%20toggle");
+  const content = await page.locator('meta[property="og:image"]').getAttribute("content");
+  checkOgImage(content, "/og/docs-extend-button-toggle.png");
 });
+
 // plugins
 test("Chart page should have OG image", async ({ page }) => {
   await page.goto("/docs/plugins/charts");
-
-  const ogImage = page.locator('meta[property="og:image"]');
-  const content = await ogImage.getAttribute("content");
-
-  expect(content).toContain("og?title=Svelte%20Charts");
+  const content = await page.locator('meta[property="og:image"]').getAttribute("content");
+  checkOgImage(content, "/og/docs-plugins-charts.png");
 });
+
 // icon
 test("Icon page should have OG image", async ({ page }) => {
   await page.goto("/icons/outline-icons");
-
-  const ogImage = page.locator('meta[property="og:image"]');
-  const content = await ogImage.getAttribute("content");
-
-  expect(content).toContain("og?title=Outline%20Icons&package=Flowbite%20Svelte%20Icons");
+  const content = await page.locator('meta[property="og:image"]').getAttribute("content");
+  checkOgImage(content, "/og/icons-outline-icons.png");
 });
+
 // illustrations
 test("Illustration page should have OG image", async ({ page }) => {
   await page.goto("/illustrations/illustrations");
-
-  const ogImage = page.locator('meta[property="og:image"]');
-  const content = await ogImage.getAttribute("content");
-
-  expect(content).toContain("og?title=Illustrations&package=Flowbite%20Svelte%20Illustrations");
+  const content = await page.locator('meta[property="og:image"]').getAttribute("content");
+  checkOgImage(content, "/og/illustrations-illustrations.png");
 });
+
 // builder
 test("Builder page should have OG image", async ({ page }) => {
   await page.goto("/builder/alert");
-
-  const ogImage = page.locator('meta[property="og:image"]');
-  const content = await ogImage.getAttribute("content");
-
-  expect(content).toContain("og?title=Alert%20builder&package=Flowbite%20Svelte");
+  const content = await page.locator('meta[property="og:image"]').getAttribute("content");
+  checkOgImage(content, "/og/builder-alert.png");
 });
+
 // blocks
-test("Blocsk page should have OG image", async ({ page }) => {
+test("Blocks page should have OG image", async ({ page }) => {
   await page.goto("/blocks/application");
-
-  const ogImage = page.locator('meta[property="og:image"]');
-  const content = await ogImage.getAttribute("content");
-
-  expect(content).toContain("og?title=Application&package=Flowbite%20Svelte%20Blocks");
+  const content = await page.locator('meta[property="og:image"]').getAttribute("content");
+  checkOgImage(content, "/og/blocks-application.png");
 });
+
 // blocks/application/advanced-tables
 test("blocks/application/advanced-tables page should have OG image", async ({ page }) => {
   await page.goto("/blocks/application/advanced-tables");
-
-  const ogImage = page.locator('meta[property="og:image"]');
-  const content = await ogImage.getAttribute("content");
-
-  expect(content).toContain("og?title=Advanced%20Tables&package=Flowbite%20Svelte%20Blocks");
+  const content = await page.locator('meta[property="og:image"]').getAttribute("content");
+  checkOgImage(content, "/og/blocks-application-advanced-tables.png");
 });
+
 // admin-dashboard
 test("admin-dashboard page should have OG image", async ({ page }) => {
   await page.goto("/admin-dashboard");
-
-  const ogImage = page.locator('meta[property="og:image"]');
-  const content = await ogImage.getAttribute("content");
-
-  expect(content).toContain("og?package=Flowbite%20Svelte%20Admin%20Dashboard&title=Admin Dashboard");
+  const content = await page.locator('meta[property="og:image"]').getAttribute("content");
+  checkOgImage(content, "/og/admin-dashboard.png");
 });

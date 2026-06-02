@@ -5,14 +5,12 @@
     path: string;
     description: string;
     title: string;
-    subtitle: string;
+    subtitle?: string;
   }
-  let { path, description, title, subtitle }: Props = $props();
+  let { path, description, title, subtitle: _subtitle = "" }: Props = $props();
 
   // slug mirrors pathToSlug() in generate-admin-dashboard-og-images.js
-  let imgsrc = $derived(
-    `https://flowbite-svelte.com/og/admin-dashboard${path.replace(/\//g, "-")}.png`
-  );
+  let imgsrc = $derived(`https://flowbite-svelte.com/og/admin-dashboard${path.replace(/\//g, "-")}.png`);
   let og_url = $derived(`https://flowbite-svelte.com/admin-dashboard${path}`);
 </script>
 

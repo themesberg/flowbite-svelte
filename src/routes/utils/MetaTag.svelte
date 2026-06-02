@@ -2,7 +2,7 @@
   import { MetaTags } from "svelte-meta-tags";
   import { page } from "$app/stores";
 
-  let { breadcrumb_title = "", description = "", title = "", dir = "", pkg = "Flowbite Svelte" } = $props();
+  let { breadcrumb_title = "", description = "", title = "", dir = "", pkg: _pkg = "Flowbite Svelte" } = $props();
 
   let ogSlug = $derived($page.url.pathname === "/" ? "docs-pages-introduction" : $page.url.pathname.slice(1).replace(/\//g, "-"));
   let imgsrc = $derived(`https://flowbite-svelte.com/og/${ogSlug}.png`);
