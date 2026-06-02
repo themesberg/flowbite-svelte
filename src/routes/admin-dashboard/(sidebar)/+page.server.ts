@@ -1,13 +1,4 @@
-const json = (r: Response) => r.json();
-// export const prerender = true;
+// This file has been removed. /api/posts is no longer used.
+// Safe to delete: git rm src/routes/admin-dashboard/(sidebar)/+page.server.ts
 import type { PageServerLoad } from "./$types";
-
-export const load: PageServerLoad = async ({ fetch }) => {
-  try {
-    const posts = await fetch("/api/posts").then(json);
-    // console.log('posts: ', posts);
-    return { posts };
-  } catch (error) {
-    console.error(`Error in load function for /: ${error}`);
-  }
-};
+export const load: PageServerLoad = async () => ({});

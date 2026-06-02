@@ -21,3 +21,4 @@ questions.md
 .claude/
 flowbite/
 ai-docs/
+src/lib/generated/nav.json

@@ -1,17 +1,4 @@
-// src/routes/api/posts/+server.ts
-import { json } from "@sveltejs/kit";
-import { fetchMarkdownPosts, fetchBuilders, fetchBlocksMarkdownPosts, fetchDashboardPosts } from "../../utils";
-
-// Disable prerendering for this endpoint since it uses import.meta.glob
-export const prerender = false;
-
-export const GET = async () => {
-  const [posts, blocks, builders, dashboard] = await Promise.all([fetchMarkdownPosts(), fetchBlocksMarkdownPosts(), fetchBuilders(), fetchDashboardPosts()]);
-
-  return json({
-    posts,
-    blocks,
-    builders,
-    dashboard
-  });
-};
+// This endpoint has been removed. Nav data is served from src/lib/generated/nav.json.
+// Safe to delete this file: git rm src/routes/api/posts/+server.js
+import { error } from "@sveltejs/kit";
+export const GET = () => error(404, "Not found");

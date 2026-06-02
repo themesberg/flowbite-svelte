@@ -13,7 +13,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && npm run package",
+    "nav": "node scripts/generate-nav.mjs",
+    "build": "node scripts/generate-nav.mjs && vite build && npm run package",
     "preview": "vite preview",
     "package": "svelte-kit sync && svelte-package && publint",
     "prepublishOnly": "npm run package",
