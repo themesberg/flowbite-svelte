@@ -36,7 +36,9 @@ const config = {
     }
   },
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      external: ["satori", "@resvg/resvg-js", "@fontsource/noto-sans"]
+    }),
     prerender: {
       handleHttpError: ({ status, path, referrer }) => {
         if (status === 404) {
