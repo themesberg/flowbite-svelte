@@ -2,17 +2,17 @@
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte";
   import { ChevronDownOutline } from "flowbite-svelte-icons";
   let menu = [
-    { name: "About us", href: "/about" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact us", href: "/contact" },
-    { name: "Library", href: "/library" },
-    { name: "Newsletter", href: "/news" },
-    { name: "Support Center", href: "/support" },
-    { name: "Resources", href: "/resource" },
-    { name: "Playground", href: "/play" },
-    { name: "Terms", href: "/terms" },
-    { name: "Pro Version", href: "/pro" },
-    { name: "License", href: "/license" }
+    { name: "About us", href: "#" },
+    { name: "Blog", href: "#" },
+    { name: "Contact us", href: "#" },
+    { name: "Library", href: "#" },
+    { name: "Newsletter", href: "#" },
+    { name: "Support Center", href: "#" },
+    { name: "Resources", href: "#" },
+    { name: "Playground", href: "#" },
+    { name: "Terms", href: "#" },
+    { name: "Pro Version", href: "#" },
+    { name: "License", href: "#" }
   ];
 </script>
 
@@ -32,8 +32,8 @@
         <a href={item.href} class="hover:text-fg-brand">{item.name}</a>
       {/snippet}
     </MegaMenu>
-    <NavLi href="/services">Services</NavLi>
-    <NavLi href="/services">Products</NavLi>
-    <NavLi href="/services">Contact</NavLi>
+    <NavLi href="#">Services</NavLi>
+    <NavLi href="#">Products</NavLi>
+    <NavLi href="#">Contact</NavLi>
   </NavUl>
 </Navbar>

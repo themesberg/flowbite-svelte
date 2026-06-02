@@ -61,17 +61,17 @@ function buildPosts() {
   const mcpOrder = ["overview", "local-setup", "remote-setup", "prompts"];
 
   const SECTIONS = [
-    { key: "pages",         dir: "src/routes/docs/pages",         order: pageOrder },
-    { key: "mcp",           dir: "src/routes/docs/mcp",           order: mcpOrder  },
-    { key: "components",    dir: "src/routes/docs/components"                       },
-    { key: "forms",         dir: "src/routes/docs/forms"                            },
-    { key: "typography",    dir: "src/routes/docs/typography"                       },
-    { key: "utilities",     dir: "src/routes/docs/utilities"                        },
-    { key: "extend",        dir: "src/routes/docs/extend"                           },
-    { key: "examples",      dir: "src/routes/docs/examples"                         },
-    { key: "plugins",       dir: "src/routes/docs/plugins"                          },
-    { key: "icons",         dir: "src/routes/icons"                                 },
-    { key: "illustrations", dir: "src/routes/illustrations"                         },
+    { key: "pages", dir: "src/routes/docs/pages", order: pageOrder },
+    { key: "mcp", dir: "src/routes/docs/mcp", order: mcpOrder },
+    { key: "components", dir: "src/routes/docs/components" },
+    { key: "forms", dir: "src/routes/docs/forms" },
+    { key: "typography", dir: "src/routes/docs/typography" },
+    { key: "utilities", dir: "src/routes/docs/utilities" },
+    { key: "extend", dir: "src/routes/docs/extend" },
+    { key: "examples", dir: "src/routes/docs/examples" },
+    { key: "plugins", dir: "src/routes/docs/plugins" },
+    { key: "icons", dir: "src/routes/icons" },
+    { key: "illustrations", dir: "src/routes/illustrations" }
   ];
 
   const result = {};
@@ -95,7 +95,7 @@ function buildPosts() {
         return {
           _key: basename(file),
           meta,
-          path: "/" + basename(file),
+          path: "/" + basename(file)
         };
       })
       .filter(Boolean);
@@ -106,6 +106,48 @@ function buildPosts() {
 
     // Strip internal _key before writing
     result[key] = entries.map(({ _key, ...rest }) => rest);
+  }
+
+  return result;
+}
+
+// ─── Build blocks (mirrors fetchBlocksMarkdownPosts) ────────────────────────
+// Block .md files use `breadcrumb_title` (not `component_title`).
+// Skip +page.md category index files (they have category:true).
+function buildBlocks() {
+  const SECTIONS = [
+    { key: "application", dir: "src/routes/blocks/application" },
+    { key: "marketing", dir: "src/routes/blocks/marketing" },
+    { key: "publisher", dir: "src/routes/blocks/publisher" },
+    { key: "quickstart", dir: "src/routes/blocks/quickstart" }
+  ];
+
+  const result = {};
+
+  for (const { key, dir } of SECTIONS) {
+    const absDir = join(ROOT, dir);
+    let files;
+    try {
+      files = collectMdFiles(absDir);
+    } catch {
+      console.warn(`  [nav] Skipping blocks section "${key}" — directory not found: ${dir}`);
+      result[key] = [];
+      continue;
+    }
+
+    const entries = files
+      .map((file) => {
+        // Skip category index pages (+page.md)
+        if (basename(file) === "+page") return null;
+        const content = readFileSync(file, "utf-8");
+        const meta = parseFrontmatter(content);
+        // Block .md files use breadcrumb_title, and category:true marks index pages
+        if (!meta.breadcrumb_title || meta.category === "true") return null;
+        return { meta, path: "/" + basename(file) };
+      })
+      .filter(Boolean);
+
+    result[key] = entries;
   }
 
   return result;
@@ -158,7 +200,7 @@ function buildDashboard() {
         if (name.startsWith("[")) continue;
         // Route groups like (sidebar) don't contribute to the path
         const isGroup = name.startsWith("(") && name.endsWith(")");
-        const nextPrefix = isGroup ? prefix : (prefix ? `${prefix}/${name}` : name);
+        const nextPrefix = isGroup ? prefix : prefix ? `${prefix}/${name}` : name;
         walkPages(join(dir, name), nextPrefix);
       } else if (name === "+page.svelte") {
         const route = prefix === "" ? "admin-dashboard" : `admin-dashboard/${prefix}`;
@@ -195,10 +237,11 @@ function main() {
   console.log("Generating src/lib/generated/nav.json…");
 
   const posts = buildPosts();
+  const blocks = buildBlocks();
   const builders = buildBuilders();
   const dashboard = buildDashboard();
 
-  const nav = { posts, builders, dashboard };
+  const nav = { posts, blocks, builders, dashboard };
 
   const outDir = join(ROOT, "src/lib/generated");
   mkdirSync(outDir, { recursive: true });
@@ -211,6 +254,10 @@ function main() {
     .map(([k, v]) => `${k}:${v.length}`)
     .join(", ");
   console.log(`  posts  — { ${sectionCounts} }`);
+  const blockCounts = Object.entries(blocks)
+    .map(([k, v]) => `${k}:${v.length}`)
+    .join(", ");
+  console.log(`  blocks — { ${blockCounts} }`);
   console.log(`  builders  — ${builders.length} entries`);
   console.log(`  dashboard — ${dashboard.length} routes`);
   console.log(`Done → ${outPath}`);

@@ -1,47 +1,29 @@
 // /src/routes/sitemap.xml/docs.ts
-import { fetchMarkdownPosts, fetchBuilders, fetchBlocksMarkdownPosts, fetchDashboardPosts } from "../utils";
+import nav from "$lib/generated/nav.json";
 
-export async function getDocsSlugs() {
-  // Fetch your markdown posts
-  const posts = await fetchMarkdownPosts();
-  const builders = await fetchBuilders();
-  const blocks = await fetchBlocksMarkdownPosts();
-  const dashboard = await fetchDashboardPosts();
-
-  console.log("dashboard", dashboard);
-
+export function getDocsSlugs() {
   const slugsByCategory: Record<string, string[]> = {};
 
-  // Process each category
-  Object.entries(posts).forEach(([category, items]) => {
+  // Process each posts section (components, forms, etc.)
+  for (const [category, items] of Object.entries(nav.posts)) {
     if (Array.isArray(items)) {
-      slugsByCategory[category] = items.map((item) => {
-        // Remove leading slash from path
-        // e.g., '/introduction' becomes 'introduction'
-        return item.path.startsWith("/") ? item.path.slice(1) : item.path;
-      });
+      slugsByCategory[category] = items.map((item) => (item.path.startsWith("/") ? item.path.slice(1) : item.path));
     }
-  });
-
-  // Process blocks (application, quickstart, marketing, publisher)
-  Object.entries(blocks).forEach(([category, items]) => {
-    if (Array.isArray(items)) {
-      const blocksCategoryKey = `blocks-${category}`; // e.g., 'blocks-application'
-      slugsByCategory[blocksCategoryKey] = items.map((item) => {
-        // Remove leading slash from path
-        return item.path.startsWith("/") ? item.path.slice(1) : item.path;
-      });
-    }
-  });
-
-  // Process builders (simple array with path property)
-  if (Array.isArray(builders)) {
-    slugsByCategory["builders"] = builders.map((item) => item.path);
   }
 
-  if (Array.isArray(dashboard)) {
-    slugsByCategory["dashboard"] = dashboard;
+  // Process blocks sections (application, marketing, publisher, quickstart)
+  for (const [category, items] of Object.entries(nav.blocks as Record<string, { path: string }[]>)) {
+    if (Array.isArray(items)) {
+      const key = `blocks-${category}`; // e.g. 'blocks-application'
+      slugsByCategory[key] = items.map((item) => (item.path.startsWith("/") ? item.path.slice(1) : item.path));
+    }
   }
+
+  // Builders
+  slugsByCategory["builders"] = nav.builders.map((item) => item.path);
+
+  // Dashboard routes (already full paths like "admin-dashboard/...")
+  slugsByCategory["dashboard"] = nav.dashboard;
 
   return slugsByCategory;
 }

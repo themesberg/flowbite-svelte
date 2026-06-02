@@ -2,17 +2,17 @@
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from "flowbite-svelte";
   import { ChevronDownOutline, UserCircleOutline } from "flowbite-svelte-icons";
   let menu = [
-    { name: "About us", href: "/about", icon: UserCircleOutline },
-    { name: "Blog", href: "/blog", icon: UserCircleOutline },
-    { name: "Contact us", href: "/contact", icon: UserCircleOutline },
-    { name: "Library", href: "/library", icon: UserCircleOutline },
-    { name: "Newsletter", href: "/news", icon: UserCircleOutline },
-    { name: "Support Center", href: "/support", icon: UserCircleOutline },
-    { name: "Resources", href: "/resource", icon: UserCircleOutline },
-    { name: "Playground", href: "/play", icon: UserCircleOutline },
-    { name: "Terms", href: "/terms", icon: UserCircleOutline },
-    { name: "Pro Version", href: "/pro", icon: UserCircleOutline },
-    { name: "License", href: "/license", icon: UserCircleOutline }
+    { name: "About us", href: "#", icon: UserCircleOutline },
+    { name: "Blog", href: "#", icon: UserCircleOutline },
+    { name: "Contact us", href: "#", icon: UserCircleOutline },
+    { name: "Library", href: "#", icon: UserCircleOutline },
+    { name: "Newsletter", href: "#", icon: UserCircleOutline },
+    { name: "Support Center", href: "#", icon: UserCircleOutline },
+    { name: "Resources", href: "#", icon: UserCircleOutline },
+    { name: "Playground", href: "#", icon: UserCircleOutline },
+    { name: "Terms", href: "#", icon: UserCircleOutline },
+    { name: "Pro Version", href: "#", icon: UserCircleOutline },
+    { name: "License", href: "#", icon: UserCircleOutline }
   ];
 </script>
 
@@ -35,8 +35,8 @@
         </a>
       {/snippet}
     </MegaMenu>
-    <NavLi href="/services">Services</NavLi>
-    <NavLi href="/services">Products</NavLi>
-    <NavLi href="/services">Contact</NavLi>
+    <NavLi href="#">Services</NavLi>
+    <NavLi href="#">Products</NavLi>
+    <NavLi href="#">Contact</NavLi>
   </NavUl>
 </Navbar>

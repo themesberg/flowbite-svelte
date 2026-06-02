@@ -1,13 +1,13 @@
 import type { LayoutLoad } from "./$types";
+import nav from "$lib/generated/nav.json";
 
-export const prerender = false;
+export const prerender = true;
 
-export const load: LayoutLoad = async ({ fetch }) => {
-  try {
-    const response = await fetch("/api/posts");
-
-    return { posts: await response.json() };
-  } catch (error) {
-    console.error(`Error in load function for /: ${error}`);
-  }
+export const load: LayoutLoad = async () => {
+  return {
+    posts: {
+      posts: nav.posts,
+      builders: nav.builders
+    }
+  };
 };

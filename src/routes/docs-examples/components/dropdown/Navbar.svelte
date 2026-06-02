@@ -20,8 +20,8 @@
       <DropdownItem>Earnings</DropdownItem>
       <DropdownItem>Sign out</DropdownItem>
     </Dropdown>
-    <NavLi href="/services">Services</NavLi>
-    <NavLi href="/pricing">Pricing</NavLi>
-    <NavLi href="/contact">Contact</NavLi>
+    <NavLi href="#">Services</NavLi>
+    <NavLi href="#">Pricing</NavLi>
+    <NavLi href="#">Contact</NavLi>
   </NavUl>
 </Navbar>

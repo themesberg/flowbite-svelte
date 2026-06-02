@@ -15,8 +15,6 @@ export { default as Seealso } from "./Seealso.svelte";
 export { createMarkdownDocLoader, type MarkdownModule } from "./markdown-loader";
 
 // src/utils/posts.ts
-type Metadata = Record<string, any>;
-
 export type PathEntry = {
   path: string;
 };

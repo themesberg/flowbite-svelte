@@ -58,7 +58,7 @@ Use the `tabStyle="underline"` to achieve this alternative tabs component style 
 
 ## Tabs with icons
 
-This is an example of the tabs component where you can also use an SVG‑powered icon to complement the text within the navigational tabs. Use icon components for a simple syntax. See <a href="/icons">Icons</a> for more details.
+This is an example of the tabs component where you can also use an SVG‑powered icon to complement the text within the navigational tabs. Use icon components for a simple syntax. See <a href="/docs/icons/quickstart">Icons</a> for more details.
 
 ```svelte example
 {#include Icons.svelte}

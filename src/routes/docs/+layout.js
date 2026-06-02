@@ -1,4 +1,4 @@
-import navData from '$lib/generated/nav.json';
+import navData from "$lib/generated/nav.json";
 
 export const prerender = true;
 

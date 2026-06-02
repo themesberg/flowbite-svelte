@@ -37,7 +37,7 @@ Use the following example of a progress bar element to show a completion rate of
 
 ## Progressradial
 
-Please see more details on [the extend page](/extend/progressradial).
+Please see more details on [the extend page](/docs/extend/progressradial).
 
 ```svelte example class="grid grid-cols-1"
 {#include Progressradial.svelte}

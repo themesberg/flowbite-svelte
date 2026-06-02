@@ -367,7 +367,7 @@ Default: false
 Type: 'start' | 'end' | 'all' | number | boolean | null
 ```
 
-<P>See an example at <A href="/examples/texteditor/autofocus">this page</A>.</P>
+<P>See an example at <A href="https://flowbite-svelte-texteditor.vercel.app/examples/texteditor/autofocus" target="_blank">this page</A>.</P>
 <ExampleWrapper 
   meta={{hideOutput: true}}
   codeString={exampleRawModules['./examples/wysiwyg/Autofocus.svelte']}

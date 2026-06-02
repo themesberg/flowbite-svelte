@@ -46,6 +46,9 @@ const config = {
           return;
         }
         throw new Error(`${status} ${path}`);
+      },
+      handleMissingId: ({ path, id, referrers }) => {
+        console.warn(`Missing id "${id}" on ${path} (linked from ${referrers.join(", ")})`);
       }
     },
     alias: {

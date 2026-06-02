@@ -5,7 +5,10 @@
   import { Search } from "flowbite-svelte";
   import type { Snippet } from "svelte";
 
-  import type { MarkdownEntry } from "../../utils";
+  type MarkdownEntry = {
+    meta: Record<string, string | undefined>;
+    path: string;
+  };
 
   interface Post extends MarkdownEntry {
     meta: MarkdownEntry["meta"] & {
