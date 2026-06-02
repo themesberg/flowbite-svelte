@@ -1,4 +1,5 @@
 import { error } from "@sveltejs/kit";
+import type { EntryGenerator } from "./$types";
 import type { RequestEvent } from "@sveltejs/kit";
 
 // Pre-load all markdown and text files at build time
@@ -17,6 +18,15 @@ const txtFiles = import.meta.glob("../**/*.txt", {
 
 // Combine both file maps
 const allFiles = { ...mdFiles, ...txtFiles };
+
+export const prerender = true;
+
+// Enumerate all valid slugs for prerendering.
+// Keys look like "../components/accordion.md" → slug "components/accordion"
+export const entries: EntryGenerator = () =>
+  Object.keys(allFiles).map((key) => ({
+    slug: key.replace(/^\.\.\//, "").replace(/\.(md|txt)$/, "")
+  }));
 
 // Debug in development
 if (import.meta.env.DEV) {
