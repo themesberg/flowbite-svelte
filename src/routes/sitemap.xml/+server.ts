@@ -2,7 +2,7 @@ import * as sitemap from "super-sitemap";
 import { error } from "@sveltejs/kit";
 import type { RequestHandler } from "@sveltejs/kit";
 import * as docs from "./docs";
-
+export const prerender = true;
 export const GET: RequestHandler = async () => {
   let docsSlugs;
   try {
@@ -31,6 +31,7 @@ export const GET: RequestHandler = async () => {
       "/docs/typography/[slug]": docsSlugs["typography"] || [],
       "/docs/utilities/[slug]": docsSlugs["utilities"] || [],
       "/docs/extend/[slug]": docsSlugs["extend"] || [],
+      "/docs/mcp/[slug]": docsSlugs["mcp"] || [],
       "/docs/plugins/[slug]": docsSlugs["plugins"] || [],
       "/icons/[slug]": docsSlugs["icons"] || [],
       "/illustrations/[slug]": docsSlugs["illustrations"] || [],
