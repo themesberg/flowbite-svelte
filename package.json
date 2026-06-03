@@ -154,6 +154,7 @@
   "dependencies": {
     "@floating-ui/dom": "^1.7.6",
     "@floating-ui/utils": "^0.2.11",
+    "@vercel/analytics": "^2.0.1",
     "apexcharts": "^5.13.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.4.0",

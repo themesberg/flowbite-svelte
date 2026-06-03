@@ -4,7 +4,10 @@
   import CarbonAds from "./utils/CarbonAds.svelte";
   import { onMount } from "svelte";
   import { loadTheme, getCurrentTheme } from "$lib";
+  import { dev } from "$app/environment";
+  import { injectAnalytics } from "@vercel/analytics/sveltekit";
 
+  injectAnalytics({ mode: dev ? "development" : "production" });
   let { children } = $props();
 
   // Get the saved theme from localStorage (or default)
