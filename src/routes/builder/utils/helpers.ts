@@ -69,11 +69,17 @@ export const isGeneratedCodeOverflow = (code: string): boolean => {
   return lines.length > 7;
 };
 
-export const isSvelteOverflow = (sveltefile: string, exampleModules: Record<string, string>): boolean => {
-  const filePath = `./examples/${sveltefile}`;
+export const isSvelteOverflow = (sveltefile: string, exampleModules: Record<string, string>, prefix = "./examples/"): boolean => {
+  const filePath = `${prefix}${sveltefile}`;
   const fileContent = exampleModules[filePath];
 
   if (typeof fileContent !== "string") {
+    // Try to find the key by suffix match as a fallback
+    const fallbackKey = Object.keys(exampleModules).find((k) => k.endsWith(`/${sveltefile}`));
+    if (fallbackKey) {
+      const lines = exampleModules[fallbackKey].split("\n");
+      return lines.length > 7;
+    }
     console.warn(`File content for ${filePath} is not found or not a string`);
     return false;
   }

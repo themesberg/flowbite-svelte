@@ -42,7 +42,7 @@
   // for DynamicCodeBlock setup for examples section. dynamically adjust the height of the code block based on the svelteCode content.
   let codeBlock = uiHelpers();
   let expand = $state(false);
-  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules));
+  let showExpandButton = $derived(isSvelteOverflow(svelteCode, exampleModules, "../layoutExamples/"));
 
   const handleExpandClick = () => {
     expand = !expand;

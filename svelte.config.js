@@ -1,11 +1,14 @@
 import { mdsvex } from "mdsvex";
 import path from "path";
+import { fileURLToPath } from "url";
 import mdsvexConfig from "./mdsvex.config.js";
 import adapter from "@sveltejs/adapter-vercel";
 // import adapter from '@sveltejs/adapter-auto';
 // import preprocess from 'svelte-preprocess';
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { includeFiles } from "./include-files.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -21,8 +24,8 @@ const config = {
   preprocess: [
     includeFiles({
       extensions: [".md"],
-      docsDir: "src/routes/docs",
-      examplesDir: "src/routes/docs-examples"
+      docsDir: path.resolve(__dirname, "src/routes/docs"),
+      examplesDir: path.resolve(__dirname, "src/routes/docs-examples")
     }),
     mdsvex(mdsvexConfig),
     // preprocess({
@@ -40,12 +43,21 @@ const config = {
       external: ["satori", "@resvg/resvg-js", "@fontsource/noto-sans"]
     }),
     prerender: {
-      handleHttpError: ({ status, path, referrer }) => {
+      handleHttpError: ({ status, path: routePath, referrer }) => {
         if (status === 404) {
-          console.warn(`404 during prerender: ${path} (linked from ${referrer})`);
+          // Known pages/assets that are not yet implemented or are external references
+          const knownMissing = [
+            "/builder/flowbite.mp4", // trackSrc attr mistakenly followed as a link
+            "/docs/icons/quickstart", // icons docs page not yet created
+            "/icons", // icons landing page not yet created
+            "/api/kanban/columns" // example API route only used client-side
+          ];
+          if (!knownMissing.includes(routePath)) {
+            console.warn(`404 during prerender: ${routePath} (linked from ${referrer})`);
+          }
           return;
         }
-        throw new Error(`${status} ${path}`);
+        throw new Error(`${status} ${routePath}`);
       },
       handleMissingId: ({ path, id, referrers }) => {
         console.warn(`Missing id "${id}" on ${path} (linked from ${referrers.join(", ")})`);

@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { PUBLIC_FATHOM_ID } from "$env/static/public";
+  import { env } from "$env/dynamic/public";
+  const PUBLIC_FATHOM_ID = env.PUBLIC_FATHOM_ID;
 </script>
 
 <svelte:head>

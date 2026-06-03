@@ -61,7 +61,7 @@ This component can be used to show simple messages and notifications without the
 
 For the right positioning of the icon use: `{#snippet icon()}...{/snippet}`.
 
-You can use any [icon components](/icons).
+You can use any [icon components](/icons/quickstart).
 
 ```svelte example class="flex flex-col items-center gap-4 h-52"
 {#include Icons.svelte}
