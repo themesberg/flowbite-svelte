@@ -5,7 +5,7 @@
   import { onMount } from "svelte";
   import { loadTheme, getCurrentTheme } from "$lib";
 
-  let { children, data } = $props();
+  let { children } = $props();
 
   // Get the saved theme from localStorage (or default)
   const savedTheme = getCurrentTheme();
@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="/themes/{savedTheme}.css" id="initial-theme-css" />
 </svelte:head>
 
-<FathomAnalytics FATHOM_ID={data.FATHOM_ID} />
+<FathomAnalytics />
 
 {@render children()}
 

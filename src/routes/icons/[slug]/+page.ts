@@ -1,8 +1,7 @@
 import type { PageLoad, EntryGenerator } from "./$types";
 import nav from "$lib/generated/nav.json";
 
-export const entries: EntryGenerator = () =>
-  nav.posts.icons.map((entry) => ({ slug: entry.path.slice(1) }));
+export const entries: EntryGenerator = () => nav.posts.icons.map((entry) => ({ slug: entry.path.slice(1) }));
 
 export const load: PageLoad = async ({ params }) => {
   const post = await import(`../${params.slug}.md`);
