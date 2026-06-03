@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const path_to_layout = join(__dirname, "./src/routes/layouts/component/+page.svelte");
+const path_to_layout = join(__dirname, "./src/routes/layouts/component/ComponentLayout.svelte");
 
 const config = defineConfig({
   layout: {
