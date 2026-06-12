@@ -1,42 +1,42 @@
 [
   {
-    "alt": "Cosmic timetraveler",
-    "src": "/images/carousel/cosmic-timetraveler-pYyOZ8q7AII-unsplash.webp",
-    "title": "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
+    "alt": "Image 1",
+    "src": "/images/carousel/carousel-1.svg",
+    "title": "Image 1"
   },
   {
-    "alt": "Cristina Gottardi",
-    "src": "/images/carousel/cristina-gottardi-CSpjU6hYo_0-unsplash.webp",
-    "title": "cristina-gottardi-CSpjU6hYo_0-unsplash.com"
+    "alt": "Image 2",
+    "src": "/images/carousel/carousel-2.svg",
+    "title": "Image 2"
   },
   {
-    "alt": "Johannes Plenio",
-    "src": "/images/carousel/johannes-plenio-RwHv7LgeC7s-unsplash.webp",
-    "title": "johannes-plenio-RwHv7LgeC7s-unsplash.com"
+    "alt": "Image 3",
+    "src": "/images/carousel/carousel-3.svg",
+    "title": "Image 3"
   },
   {
-    "alt": "Jonatan Pie",
-    "src": "/images/carousel/jonatan-pie-3l3RwQdHRHg-unsplash.webp",
-    "title": "jonatan-pie-3l3RwQdHRHg-unsplash.com"
+    "alt": "Image 4",
+    "src": "/images/carousel/carousel-4.svg",
+    "title": "Image 4"
   },
   {
-    "alt": "Mark Harpur",
-    "src": "/images/carousel/mark-harpur-K2s_YE031CA-unsplash.webp",
-    "title": "mark-harpur-K2s_YE031CA-unsplash"
+    "alt": "Image 5",
+    "src": "/images/carousel/carousel-5.svg",
+    "title": "Image 5"
   },
   {
-    "alt": "Pietro De Grandi",
-    "src": "/images/carousel/pietro-de-grandi-T7K4aEPoGGk-unsplash.webp",
-    "title": "pietro-de-grandi-T7K4aEPoGGk-unsplash"
+    "alt": "Image 6",
+    "src": "/images/carousel/carousel-6.svg",
+    "title": "Image 6"
   },
   {
-    "alt": "Sergey Pesterev",
-    "src": "/images/carousel/sergey-pesterev-tMvuB9se2uQ-unsplash.webp",
-    "title": "sergey-pesterev-tMvuB9se2uQ-unsplash"
+    "alt": "Image 7",
+    "src": "/images/carousel/carousel-7.svg",
+    "title": "Image 7"
   },
   {
-    "alt": "Solo travel goals",
-    "src": "/images/carousel/solotravelgoals-7kLufxYoqWk-unsplash.webp",
-    "title": "solotravelgoals-7kLufxYoqWk-unsplash"
+    "alt": "Image 8",
+    "src": "/images/carousel/carousel-8.svg",
+    "title": "Image 8"
   }
 ]
