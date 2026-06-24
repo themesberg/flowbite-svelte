@@ -66,7 +66,7 @@
     return clsx(link, customClass);
   }
 
-  function scrollToSection(itemId: string, event?: MouseEvent) {
+  function scrollToSection(itemId: string, event: MouseEvent | undefined = undefined) {
     if (!browser) return;
 
     if (event) event.preventDefault();

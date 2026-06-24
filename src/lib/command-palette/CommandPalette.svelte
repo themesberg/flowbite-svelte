@@ -33,7 +33,7 @@
     const searchLower = search.trim().toLowerCase();
     if (searchLower === "") return items;
 
-    const check = (x?: string) => x?.toLowerCase().includes(searchLower);
+    const check = (x: string | undefined = undefined) => x?.toLowerCase().includes(searchLower);
     return items.filter((item) => check(item.label) || check(item.description) || item.keywords?.some(check));
   });
 
