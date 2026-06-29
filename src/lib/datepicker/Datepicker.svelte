@@ -304,8 +304,8 @@
   }
 
   // Use locale for formatting (not finalTranslationLocale)
-  const formatDate = (date?: Date): string => date?.toLocaleDateString(locale, dateFormat) ?? "";
-  const isSameDate = (date1?: Date, date2?: Date): boolean => (date1 && date2 ? isSameDay(date1, date2) : false);
+  const formatDate = (date: Date | undefined = undefined): string => date?.toLocaleDateString(locale, dateFormat) ?? "";
+  const isSameDate = (date1: Date | undefined = undefined, date2: Date | undefined = undefined): boolean => (date1 && date2 ? isSameDay(date1, date2) : false);
   const isToday = (day: Date): boolean => isSameDate(day, new Date());
   const isInRange = (day: Date): boolean => !!(range && rangeFrom && rangeTo && isWithinInterval(day, { start: rangeFrom, end: rangeTo }));
 
