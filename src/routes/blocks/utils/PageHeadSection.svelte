@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Heading } from "flowbite-svelte";
-  import CompoDescription from "./CompoDescription.svelte";
+  import CompoDescription from "$utils/CompoDescription.svelte";
   interface Props {
     dir?: string;
     breadcrumb_title?: string;

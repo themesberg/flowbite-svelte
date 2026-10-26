@@ -48,8 +48,8 @@ Branch: `version-2`. One phase = one PR. Tick boxes as you go and add a line to 
 
 ## Phase 2: Dedupe (re-scoped after Phase 0)
 - [x] Decided: keep only `extend/tags`, remove `forms/tags` (breaking only in API: `classes` -> `styling`, per-item class props -> `closeButtonProps`). Done on branch `chore/structure-phase-2`: deleted `src/lib/forms/tags`, repointed the `./Tags.svelte` export in `package.json` to `dist/extend/tags/Tags.svelte` (kept the entry so `flowbite-svelte/Tags.svelte` still resolves), `docs/extend/tags.md` `dirName` "forms/tags" -> "tags", added `.changeset/quiet-tags-merge.md`. Gate green (unit 2122/2119/1/2, e2e 203); `dist` diff = exactly the 4 `dist/forms/tags/*` files; `baseline-dist.txt` re-saved (742 files)
-- [ ] Create `src/docs-ui/` and add `$docs-ui` alias in `svelte.config.js` and `tsconfig.json`
-- [ ] Move identical `CompoDescription` to `src/docs-ui/`; update `routes/utils` and `routes/blocks/utils` importers; delete both copies
+- [ ] ~~Create `src/docs-ui/` and `$docs-ui` alias~~ Superseded: the `$utils` alias (`svelte.config.js:69` -> `src/routes/utils`) already exists; share helpers from `src/routes/utils` via `$utils/...` (decided 2026-10-26). Revisit only if helpers must leave `routes/` (Phase 5 landing/layouts move)
+- [x] `CompoDescription`: deleted the `routes/blocks/utils` copy; `PageHeadSection.svelte` and `fetchPost.ts` now import `$utils/CompoDescription.svelte`. Gate: check 0 errors, unit 2122/2119, build + dist same, e2e 203 (unit not re-run after the final alias spelling change; it only touches routes)
 - [ ] For `CodeWrapper`, `CompoAttributesViewer`, `CompoCard`: per helper, decide merge vs rename (they differ in props/imports/data shape). Log decision: ____
 - [ ] Switch consumers one folder per commit (`routes/utils`, `routes/blocks`, `routes/admin-dashboard`)
 - [ ] Spot-check a docs page, a blocks page, an admin-dashboard page in the browser
@@ -108,3 +108,4 @@ Format: `YYYY-MM-DD | phase | done | skipped/failed | next`
 - 2026-10-26 | Phase 0 COMPLETE | check green, dist baseline, forms/tags grep, helper diff, playwright chromium installed, unit tests baseline | none | Phase 1 (Q1-Q3 still open, none block Phase 1)
 - 2026-10-26 | Phase 1 done, committed on `chore/structure-phase-1` | all tasks, gate green | PR not opened | Phase 2 (needs the forms/tags decision) or Phase 3 (needs Q1)
 - 2026-10-26 | Phase 2 partial (forms/tags removed, commit on `chore/structure-phase-2`) | gate green, dist baseline re-saved | docs-ui helper dedupe not started; llms.txt and routes/llm may still mention forms/tags (generated, not touched) | docs-ui steps
+- 2026-10-26 | Phase 2 partial: CompoDescription deduped via `$utils` (`chore/structure-phase-2b`) | gate green | CodeWrapper / CompoAttributesViewer / CompoCard decisions open | those three

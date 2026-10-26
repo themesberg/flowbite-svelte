@@ -1,6 +1,6 @@
 import type Mdsvex from "*.md";
 
-export { default as CompoDescription } from "./CompoDescription.svelte";
+export { default as CompoDescription } from "$utils/CompoDescription.svelte";
 export { default as GitHubSource } from "./GitHubSource.svelte";
 export { default as GitHubSourceList } from "./GitHubSourceList.svelte";
 export { default as PageHeadSection } from "./PageHeadSection.svelte";
