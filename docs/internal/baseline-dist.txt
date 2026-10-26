@@ -336,10 +336,6 @@ dist/forms/select/Select.svelte
 dist/forms/select/Select.svelte.d.ts
 dist/forms/select/theme.d.ts
 dist/forms/select/theme.js
-dist/forms/tags/Tags.svelte
-dist/forms/tags/Tags.svelte.d.ts
-dist/forms/tags/theme.d.ts
-dist/forms/tags/theme.js
 dist/forms/textarea/index.d.ts
 dist/forms/textarea/index.js
 dist/forms/textarea/Textarea.svelte

@@ -11,7 +11,7 @@ description: A customizable tag input component that allows users to enter multi
   import {  TableProp, TableDefaultRow, CompoAttributesViewer, Seealso, GitHubCompoLinks, LlmLink } from '../../utils'
   import { P, A } from '$lib'
   const components = 'Tags'
-  const dirName = "forms/tags"
+  const dirName = "tags"
   const relatedLinks = ['/docs/forms/input-field','/docs/forms/floating-label' ]
 </script>
 

@@ -441,8 +441,8 @@
       "svelte": "./dist/forms/select/Select.svelte"
     },
     "./Tags.svelte": {
-      "types": "./dist/forms/tags/Tags.svelte.d.ts",
-      "svelte": "./dist/forms/tags/Tags.svelte"
+      "types": "./dist/extend/tags/Tags.svelte.d.ts",
+      "svelte": "./dist/extend/tags/Tags.svelte"
     },
     "./Textarea.svelte": {
       "types": "./dist/forms/textarea/Textarea.svelte.d.ts",
