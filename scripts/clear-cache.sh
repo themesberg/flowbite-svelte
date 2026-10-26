@@ -2,6 +2,8 @@
 # Usage: Stop your dev server before running this script.
 # This script clears build caches and requires a dev server restart.
 
+cd "$(dirname "$0")/.." || exit 1
+
 echo "Clearing build caches..."
 
 # Remove .svelte-kit directory
