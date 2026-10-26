@@ -1,0 +1,112 @@
+# Structure migration tasks
+
+Rationale and risks: [structure-migration-plan.md](./structure-migration-plan.md).
+Branch: `version-2`. One phase = one PR. Tick boxes as you go and add a line to the session log.
+
+## How to resume in a new session
+1. Read this file and the session log at the bottom.
+2. Find the first phase with unchecked boxes.
+3. Run the gate (below) before touching anything, to confirm the starting state is green.
+4. Tick each box only after verifying it. Record skipped or failed items in the log, do not leave them unchecked silently.
+
+## Gate (run at start and end of every phase)
+- [ ] `pnpm check`
+- [ ] `pnpm test:unit`
+- [ ] `pnpm test:e2e`
+- [ ] `pnpm build` (includes `publint`)
+- [ ] `find dist -type f | sort | diff - docs/internal/baseline-dist.txt` shows no unintended export change
+
+## Decisions needed (block the phases noted)
+- [ ] Q1: commit generated output, or generate on `build`? (blocks Phase 3) Answer: ____
+- [ ] Q2: do external sites or Algolia depend on current doc URLs? (blocks Phase 5) Answer: ____
+- [ ] Q3: is the workspace split wanted for `version-2`? (blocks Phase 6) Answer: ____
+
+---
+
+## Phase 0: Safety net
+- [x] `pnpm check`: 4534 files, 0 errors, 0 warnings (2026-10-26)
+- [x] `pnpm test:unit`: 2122 tests, 2119 passed, 0 failed, 1 skipped, 2 todo (966 suites) after `playwright install chromium` (headless shell 148, installed 2026-10-26)
+- [x] `pnpm test:e2e`: 203 expected, 0 unexpected, 0 skipped, 0 flaky (~82 s)
+- [x] `pnpm build`: exit 0, publint "All good!", no tracked file changed (`nav.json` untouched). Pre-existing warnings, left alone: missing anchors `form-element` (/docs/components/modal) and `custom-main-button` (/docs/components/speed-dial); `svelte-package` flags `import.meta.env` in lib code
+- [x] Saved `docs/internal/baseline-dist.txt` (746 files). Confirmed identical to the `dist/` from a fresh `pnpm build` (746 files, no diff).
+- [x] `grep forms/tags`: NOT dead. `package.json` exports `./Tags.svelte` -> `./dist/forms/tags/Tags.svelte`, and `src/routes/docs/extend/tags.md` sets `dirName = "forms/tags"`. Both `forms/tags` and `extend/tags` ship; the `extend/tags` export in `lib/index.ts` is a second copy. Needs a decision, see Phase 2.
+- [x] Helper diff: the four helpers are NOT four drifted copies. Presence: `CodeWrapper` (routes/utils, admin-dashboard), `CompoAttributesViewer` (all three), `CompoCard` and `CompoDescription` (routes/utils, blocks/utils). `CompoDescription` is identical in both places. The others differ in props, imports (`$lib` vs `flowbite-svelte`) and data shape, so they are different components with the same name.
+- [x] Test count baseline: 2122 total / 2119 passed / 1 skipped / 2 todo. Phase 4 must match this
+
+## Phase 1: Root cleanup
+- [ ] Grep `package.json`, `.github/`, `vercel.json` for each script name before moving
+- [ ] Move to `scripts/` or delete if one-off: `convert-imports.mjs`
+- [ ] same: `find-imports.mjs`
+- [ ] same: `find-all-imports.mjs`
+- [ ] same: `convertThemes.js`
+- [ ] same: `include-files.js`
+- [ ] same: `clear-cache.sh`
+- [ ] Move to `docs/internal/`: `POPOVER_POLYFILL_ANALYSIS.md`
+- [ ] same: `TEST_IMPROVEMENTS_SUMMARY.md`, `TEST_SETUP_ANALYSIS.md`, `TIMER_USAGE_ANALYSIS.md`
+- [ ] same: `reactive-context.md`, `workflow.md`, `md-to-lim.txt`, `design-system-guide.md`
+- [ ] Move `v2-migration-guide.md` to `docs/`
+- [ ] Add `test-results/` to `.gitignore`; `git rm --cached test-results/.last-run.json`
+- [ ] Move `src/routes/vite-env.d.ts` to `src/`
+- [ ] Update any references (README, CONTRIBUTING, CLAUDE.md, GEMINI.md) to moved files
+- [ ] Gate passes; open PR
+
+## Phase 2: Dedupe (re-scoped after Phase 0)
+- [ ] Decide `forms/tags` vs `extend/tags`: they are both public (`package.json` exports `./Tags.svelte` from `forms/tags`). Options: keep both (document why), or make one re-export the other. Answer: ____
+- [ ] Create `src/docs-ui/` and add `$docs-ui` alias in `svelte.config.js` and `tsconfig.json`
+- [ ] Move identical `CompoDescription` to `src/docs-ui/`; update `routes/utils` and `routes/blocks/utils` importers; delete both copies
+- [ ] For `CodeWrapper`, `CompoAttributesViewer`, `CompoCard`: per helper, decide merge vs rename (they differ in props/imports/data shape). Log decision: ____
+- [ ] Switch consumers one folder per commit (`routes/utils`, `routes/blocks`, `routes/admin-dashboard`)
+- [ ] Spot-check a docs page, a blocks page, an admin-dashboard page in the browser
+- [ ] Gate passes; open PR
+
+## Phase 3: Generated output out of `routes/` (needs Q1)
+- [ ] Inventory generator scripts and their output paths (`svelte-lib-helpers`, `svelte-doc-llm`, `generate-nav.mjs`, `update-llms.sh`)
+- [ ] Create `src/generated/` (or build-time step per Q1)
+- [ ] Move `admin-dashboard/utils/highlight` (1,136 files) and update importers
+- [ ] Move `routes/component-data` and `routes/blocks/component-data` and update generator paths
+- [ ] Move `routes/og-manifest.json` and update `scripts/generate-og-images.js`
+- [ ] Move `routes/llm` output and update `llm.config.js` / `update-llms.sh`
+- [ ] Move `lib/generated/nav.json` out of the library; confirm it is gone from `dist/`
+- [ ] If Q1 = generate on build: gitignore outputs and wire into `build`
+- [ ] Verify `/llm`, `/sitemap.xml`, `e2e/og-check.test.ts`
+- [ ] Gate passes; open PR
+
+## Phase 4: Tests
+- [ ] Decide convention (colocated `*.test.ts` recommended); record it here: ____
+- [ ] Rename `src/tests/button` to match `lib/buttons`
+- [ ] Resolve `src/tests/toggle-example` (relocate or remove)
+- [ ] Move `src/demo.spec.ts`
+- [ ] Rename `e2e/*.test.ts` to `*.spec.ts` and update `playwright.config.ts`
+- [ ] Update vitest `include` globs in `vite.config.ts`
+- [ ] Migrate test folders in batches (tick per batch, log batch names)
+- [ ] Test count equals the Phase 0 count
+- [ ] Gate passes; open PR
+
+## Phase 5: Docs tidy-up (needs Phase 2). Keep the `docs` / `docs-examples` mirror: it is intentional.
+- [ ] Save a route list from the current build for comparison
+- [ ] Write `scripts/check-docs-mirror.mjs`: every example imported by a `.md` exists, every `docs-examples` file is imported by some `.md`, folder structure matches 1:1
+- [ ] Run it; record orphans and mismatches here: ____
+- [ ] Fix orphans and mismatches
+- [ ] Wire the check into CI (and optionally `pnpm lint`)
+- [ ] Move `routes/theme-test`, `routes/snapshots`, `docs/examples` snapshot pages to a dev-only route group or `e2e/fixtures`
+- [ ] Move `routes/landing` and `routes/layouts` components to `src/docs-ui/`
+- [ ] Resolve `docs/mcp` vs `llm/mcp` overlap
+- [ ] Route list after build matches the saved one (or differences are intended and redirected)
+- [ ] Gate passes; open PR
+
+## Phase 6: Workspace split (optional, needs Q3, Phases 1-5)
+- [ ] Create `packages/flowbite-svelte` and `apps/docs`; update `pnpm-workspace.yaml`
+- [ ] Move library sources, `package.json`, `svelte.config.js`, `tsconfig` for the package
+- [ ] Move site sources and config for the app; switch `$lib` imports to `workspace:*`
+- [ ] Move changesets, publish scripts, CI workflows
+- [ ] Update Vercel project root directory and `vercel.json`
+- [ ] Dry-run publish (`pnpm publish --dry-run`) and diff package contents against baseline
+- [ ] Gate passes; open PR
+
+---
+
+## Session log
+Format: `YYYY-MM-DD | phase | done | skipped/failed | next`
+
+- 2026-10-26 | plan created | none | none | Phase 0
+- 2026-10-26 | Phase 0 COMPLETE | check green, dist baseline, forms/tags grep, helper diff, playwright chromium installed, unit tests baseline | none | Phase 1 (Q1-Q3 still open, none block Phase 1)
