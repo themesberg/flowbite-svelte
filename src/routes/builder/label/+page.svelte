@@ -2,7 +2,7 @@
   import { Label, label, Radio, uiHelpers } from "$lib";
   import type { ColorName } from "../types";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
-  import CodeWrapper from "../utils/CodeWrapper.svelte";
+  import CodeWrapper from "$utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
   import { capitalizeFirstLetter } from "../utils/helpers";
   import { isGeneratedCodeOverflow } from "../utils/helpers";

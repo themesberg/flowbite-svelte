@@ -2,7 +2,7 @@
   import { type Component } from "svelte";
   import { Label, Radio, uiHelpers } from "$lib";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
-  import CodeWrapper from "../utils/CodeWrapper.svelte";
+  import CodeWrapper from "$utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
   import { isSvelteOverflow, getExampleFileName } from "../utils/helpers";
   import MetaTag from "../../utils/MetaTag.svelte";
