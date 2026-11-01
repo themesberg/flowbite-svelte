@@ -75,16 +75,15 @@ Branch: `version-2`. One phase = one PR. Tick boxes as you go and add a line to 
 - [ ] Fresh clones need `pnpm gen` before `pnpm dev`, `check`, `test:unit`; not yet in CONTRIBUTING
 - [ ] Open PR
 
-## Phase 4: Tests
-- [x] Decide convention (colocated `*.test.ts` recommended); record it here: colocated `*.test.ts`, e2e renamed to `*.spec.ts` (2026-10-31)
-- [ ] Rename `src/tests/button` to match `lib/buttons`
-- [ ] Resolve `src/tests/toggle-example` (relocate or remove)
-- [ ] Move `src/demo.spec.ts`
-- [ ] Rename `e2e/*.test.ts` to `*.spec.ts` and update `playwright.config.ts`
-- [ ] Update vitest `include` globs in `vite.config.ts`
-- [ ] Migrate test folders in batches (tick per batch, log batch names)
-- [ ] Test count equals the Phase 0 count
-- [ ] Gate passes; open PR
+## Phase 4: Tests (done on branch `chore/structure-phase-3`, same branch as Phase 3)
+- [x] Convention REVISED 2026-11-01: keep `src/tests`, folder names identical to `lib`. Colocation dropped: `svelte-package` has no exclude option and SvelteKit 2 rejects `kit.package.files`, so ~760 colocated test files would ship in `dist` unless a post-package prune is added. Pilot with `buttons` confirmed this and was reverted
+- [x] Renamed `src/tests/button` to `buttons` (all other test folders already match `lib`; only `fixtures`, `utils`, `sandbox` are non-lib helpers)
+- [x] `src/tests/toggle-example` -> `src/tests/sandbox` (kept, test count preserved). It tests a self-contained Svelte 4 style demo, not the library: candidate for deletion (-1 test), needs a decision
+- [x] `src/demo.spec.ts` -> `src/tests/sanity.test.ts` (now runs in the client project; count unchanged)
+- [x] `e2e/*.test.ts` -> `*.spec.ts` (4 files); `playwright.config.ts` needs no change (default `testMatch` covers both)
+- [x] vitest `include` globs unchanged and still correct
+- [x] Test count equals the Phase 0 count: 2122 / 2119 passed / 1 skipped / 2 todo; e2e 203; check 0 errors. Build/dist not re-run (no `src/lib` change)
+- [ ] Open PR
 
 ## Phase 5: Docs tidy-up (needs Phase 2). Keep the `docs` / `docs-examples` mirror: it is intentional.
 - [ ] Save a route list from the current build for comparison
@@ -125,3 +124,4 @@ Format: `YYYY-MM-DD | phase | done | skipped/failed | next`
 - 2026-11-01 | `docs/v2-migration-guide.md` moved to repo root (developer-facing info); plan line updated, no code or config referenced the old path | none | none | open PR, then Phase 3
 - 2026-11-01 | `docs/internal/workflow.md` (release steps) moved to repo root, same reason | none | none | open PR, then Phase 3
 - 2026-11-01 | Phase 3 done on `chore/structure-phase-3` | gate green under Node 24 | blocks component-data and highlight kept (highlight is unreferenced); CI build check, CONTRIBUTING note, PR | decide on highlight, then Phase 4
+- 2026-11-01 | Phase 4 done (renames only, colocation dropped) | check, unit 2122/2119/1/2, e2e 203 green | `sandbox` test is lib-unrelated; Phase 3+4 PR not opened; CI build check, CONTRIBUTING `pnpm gen` note | decide on sandbox, open PR, then Phase 5
