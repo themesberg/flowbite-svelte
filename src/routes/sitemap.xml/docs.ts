@@ -1,5 +1,5 @@
 // /src/routes/sitemap.xml/docs.ts
-import nav from "$lib/generated/nav.json";
+import nav from "$generated/nav.json";
 
 export function getDocsSlugs() {
   const slugsByCategory: Record<string, string[]> = {};

@@ -9,7 +9,7 @@ description: Get started with the project portfolio UI components coded with Tai
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Portfolio, PortfolioItem, Section'
 </script>
 
@@ -55,4 +55,4 @@ Use this example to show a list of company clients and case study previews insid
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

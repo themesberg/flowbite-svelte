@@ -9,7 +9,7 @@ description: Get started with footer sections coded in Tailwind CSS to use at th
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Section'
 </script>
 
@@ -101,4 +101,4 @@ Use this footer section to show the logo of your brand, the sitemap, social medi
 </Footer>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

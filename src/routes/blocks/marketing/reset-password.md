@@ -9,7 +9,7 @@ description: Use a collection of reset password forms based on multiple layouts 
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Register, Section'
 </script>
 
@@ -56,4 +56,4 @@ Use this example with an email input and two password input fields to let the us
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

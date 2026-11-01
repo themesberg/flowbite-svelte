@@ -4,7 +4,7 @@
   import { sineIn, linear } from "svelte/easing";
   import { Popover, popover, Button, Label, Radio, uiHelpers, type PopoverProps } from "$lib";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
-  import CodeWrapper from "../utils/CodeWrapper.svelte";
+  import CodeWrapper from "$utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
   import { isGeneratedCodeOverflow } from "../utils/helpers";
   import type { Placement } from "@floating-ui/dom";

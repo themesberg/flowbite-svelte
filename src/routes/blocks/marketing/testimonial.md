@@ -9,7 +9,7 @@ description: Get started with a collection of testimonial sections built with Ta
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Testimonial, TestimonialCard, TestimonialCardItem, Section'
 </script>
 
@@ -114,4 +114,4 @@ You can use this example of testimonial cards up to two items on a row and show 
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

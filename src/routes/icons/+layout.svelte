@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { PageData } from "../$types";
-  import FlowbiteSvelteLayout from "../layouts/FlowbiteSvelteLayout.svelte";
-  import ComponentsLayout from "../layouts/ComponentsLayout.svelte";
+  import FlowbiteSvelteLayout from "$docs-ui/layouts/FlowbiteSvelteLayout.svelte";
+  import ComponentsLayout from "$docs-ui/layouts/ComponentsLayout.svelte";
   import type { Snippet } from "svelte";
 
   let { data, children }: { data: PageData; children: Snippet } = $props();

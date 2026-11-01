@@ -9,7 +9,7 @@ description: Get started with a collection of responsive website sections built 
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   import componentData1 from '../component-data/HeroHeader.json'
   import componentData2 from '../component-data/FeatureDefault.json'
   import componentData3 from '../component-data/FeatureItem.json'
@@ -67,4 +67,4 @@ Get started with this default example of feature items based on a grid layout wh
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

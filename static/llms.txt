@@ -52,7 +52,6 @@ llms: markdown
 /docs: https://flowbite-svelte.com/llm/extend/button-toggle.md
 /docs: https://flowbite-svelte.com/llm/extend/clipboard-manager.md
 /docs: https://flowbite-svelte.com/llm/extend/command-palette.md
-/docs: https://flowbite-svelte.com/llm/extend/flowbite-svelte-starter.md
 /docs: https://flowbite-svelte.com/llm/extend/kanban-board.md
 /docs: https://flowbite-svelte.com/llm/extend/progressradial.md
 /docs: https://flowbite-svelte.com/llm/extend/scroll-spy.md

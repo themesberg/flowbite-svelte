@@ -9,7 +9,7 @@ description: Get started with this website section to offer social proof to your
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Social, Section'
 </script>
 
@@ -40,4 +40,4 @@ Use this example of statistical numbers that you can use to showcase the adoptio
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

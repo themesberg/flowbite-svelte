@@ -6,7 +6,7 @@ import adapter from "@sveltejs/adapter-vercel";
 // import adapter from '@sveltejs/adapter-auto';
 // import preprocess from 'svelte-preprocess';
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
-import { includeFiles } from "./include-files.js";
+import { includeFiles } from "./scripts/include-files.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -66,7 +66,9 @@ const config = {
     alias: {
       "flowbite-svelte": path.resolve("./src/lib/index.ts"),
       $icons: path.resolve("./src/routes/utils/icons"),
-      $utils: path.resolve("./src/routes/utils")
+      $utils: path.resolve("./src/routes/utils"),
+      $generated: path.resolve("./src/generated"),
+      "$docs-ui": path.resolve("./src/docs-ui")
     }
   }
 };

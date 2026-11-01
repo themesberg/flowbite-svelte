@@ -410,8 +410,9 @@ async function main() {
   for (const { title, pkg, slug } of pages) {
     manifest[`${title}::${pkg}`] = `/og/${slug}.png`;
   }
-  writeFileSync(join(ROOT, "src/routes/og-manifest.json"), JSON.stringify(manifest, null, 2));
-  console.log(`Manifest → src/routes/og-manifest.json`);
+  mkdirSync(join(ROOT, "src/generated"), { recursive: true });
+  writeFileSync(join(ROOT, "src/generated/og-manifest.json"), JSON.stringify(manifest, null, 2));
+  console.log(`Manifest → src/generated/og-manifest.json`);
 }
 
 main().catch((err) => {

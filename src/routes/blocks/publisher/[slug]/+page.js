@@ -1,4 +1,4 @@
-import nav from "$lib/generated/nav.json";
+import nav from "$generated/nav.json";
 
 /** @type {import('./$types').EntryGenerator} */
 export const entries = () => nav.blocks.publisher.map((entry) => ({ slug: entry.path.slice(1) }));

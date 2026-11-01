@@ -9,7 +9,7 @@ description: Get started with a collection of delete confirmation modal componen
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Section'
 </script>
 
@@ -45,4 +45,4 @@ Use this free example of a modal component coded with Tailwind CSS to confirm wi
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

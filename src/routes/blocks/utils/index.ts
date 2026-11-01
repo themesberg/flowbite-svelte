@@ -17,4 +17,4 @@ export { default as Youtube } from "./icons/Youtube.svelte";
 
 export { default as TableDefaultRow } from "./TableDefaultRow.svelte";
 export { default as TableProp } from "./TableProp.svelte";
-export { default as CompoAttributesViewer } from "./CompoAttributesViewer.svelte";
+export { default as BlockAttributesViewer } from "./BlockAttributesViewer.svelte";

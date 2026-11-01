@@ -60,7 +60,7 @@
   async function processComponents() {
     if (componentArray.length > 0) {
       importPromises = componentArray.map(async (component) => {
-        const module = await import(`../component-data/${component}.json`);
+        const module = await import(`$generated/component-data/${component}.json`);
         return { data: module };
       });
     } else if (plugin === "chart" && chartData) {
@@ -69,7 +69,7 @@
       importPromises = [Promise.resolve({ data: dataTableData })];
     } else {
       importPromises = fileNames.map(async (component) => {
-        const module = await import(`../component-data/${component}.json`);
+        const module = await import(`$generated/component-data/${component}.json`);
         return { data: module };
       });
     }

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button, Select } from "flowbite-svelte";
-  import CompoCard from "./CompoCard.svelte";
+  import BlockCard from "./BlockCard.svelte";
   import Section from "./Section.svelte";
   import { Search } from "flowbite-svelte";
   import type { Snippet } from "svelte";
@@ -80,11 +80,11 @@
 
   <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
     {#each components.slice(0, INIT_COUNT) as component ((component.meta.dir || "") + component.path)}
-      <CompoCard name={component.meta.breadcrumb_title || ""} dir={"blocks/" + (component.meta.dir || "")} path={component.path} />
+      <BlockCard name={component.meta.breadcrumb_title || ""} dir={"blocks/" + (component.meta.dir || "")} path={component.path} />
     {/each}
     {#if expanded}
       {#each components.slice(INIT_COUNT) as component ((component.meta.dir || "") + component.path)}
-        <CompoCard name={component.meta.breadcrumb_title || ""} dir={"blocks/" + (component.meta.dir || "")} path={component.path} />
+        <BlockCard name={component.meta.breadcrumb_title || ""} dir={"blocks/" + (component.meta.dir || "")} path={component.path} />
       {/each}
     {/if}
   </div>

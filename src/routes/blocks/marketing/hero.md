@@ -9,7 +9,7 @@ description: Get started with a collection of hero sections coded with Tailwind 
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'News, HeroHeader, HeroBody, Section'
 </script>
 
@@ -92,4 +92,4 @@ Use this example to show an image next to the heading and CTA buttons to improve
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

@@ -9,7 +9,7 @@ description: Get started with the side nav component to show a list of menu item
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'SidebarBottomNav, SidebarBottomNavItem, Section'
 </script>
 
@@ -194,4 +194,4 @@ Use the default sidebar navigation to show a list of menu items with dropdown it
 </Sidebar>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

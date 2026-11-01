@@ -1,5 +1,5 @@
 import type { PageLoad, EntryGenerator } from "./$types";
-import nav from "$lib/generated/nav.json";
+import nav from "$generated/nav.json";
 
 export const entries: EntryGenerator = () => nav.blocks.application.map((entry) => ({ slug: entry.path.slice(1) }));
 

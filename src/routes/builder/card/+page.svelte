@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Card, card, Button, Toggle, Label, Radio, uiHelpers, type CardProps, type ImgType } from "$lib";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
-  import CodeWrapper from "../utils/CodeWrapper.svelte";
+  import CodeWrapper from "$utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
   import { isGeneratedCodeOverflow } from "../utils/helpers";
   import MetaTag from "../../utils/MetaTag.svelte";

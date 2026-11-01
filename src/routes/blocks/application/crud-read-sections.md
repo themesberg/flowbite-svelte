@@ -9,7 +9,7 @@ description: Get started with a collection of responsive website sections to sho
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Section'
 </script>
 
@@ -56,4 +56,4 @@ Use this free example of a "read" CRUD layout section to show details of an exis
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

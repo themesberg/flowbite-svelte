@@ -4,7 +4,7 @@
   import { linear } from "svelte/easing";
   import { Radio, Label, Modal, modal, Button, uiHelpers, type ModalProps } from "$lib";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
-  import CodeWrapper from "../utils/CodeWrapper.svelte";
+  import CodeWrapper from "$utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
   import { isGeneratedCodeOverflow } from "../utils/helpers";
   import type { ModalPlacementType } from "../types";

@@ -16,12 +16,11 @@ export const GET: RequestHandler = async () => {
   return await sitemap.response({
     origin: "https://flowbite-svelte.com",
     excludeRoutePatterns: [
-      "^/component-data.*",
       "^/docs-examples.*",
       "^/docs/examples.*",
       "^/fonts.*",
       "^/_testdir.*",
-      "^/layouts/component.*",
+      "^/\\(dev\\)/.*", // dev-only pages, 404 in production
       "^/admin-dashboard/.*/\\[.*\\].*" // Exclude any dynamic routes in admin-dashboard
     ],
     paramValues: {

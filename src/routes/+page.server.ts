@@ -1,4 +1,4 @@
-import nav from "$lib/generated/nav.json";
+import nav from "$generated/nav.json";
 import type { PageServerLoad } from "./$types";
 
 export const prerender = true;

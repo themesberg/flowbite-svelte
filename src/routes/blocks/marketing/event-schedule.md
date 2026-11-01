@@ -9,7 +9,7 @@ description: Get started with a collection of website sections coded with Tailwi
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Schedule, ScheduleItem, Section'
 </script>
 
@@ -78,4 +78,4 @@ Use this free example to show a list of workshops for an event using a timeline 
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

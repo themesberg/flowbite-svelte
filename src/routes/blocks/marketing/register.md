@@ -9,7 +9,7 @@ description: Use a collection of register pages to let your users create an acco
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Register, Section'
 </script>
 
@@ -59,4 +59,4 @@ This example can be used to allow users to create an account on your website usi
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

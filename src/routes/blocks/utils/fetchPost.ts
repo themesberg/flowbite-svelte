@@ -1,6 +1,6 @@
 import type Mdsvex from "*.md";
 
-export { default as CompoDescription } from "./CompoDescription.svelte";
+export { default as CompoDescription } from "$utils/CompoDescription.svelte";
 export { default as GitHubSource } from "./GitHubSource.svelte";
 export { default as GitHubSourceList } from "./GitHubSourceList.svelte";
 export { default as PageHeadSection } from "./PageHeadSection.svelte";
@@ -60,7 +60,7 @@ export const fetchMarkdownPosts = async () => {
 };
 
 export const fetchComponentData = async () => {
-  const josonFiles = import.meta.glob("/src/routes/component-data/*.json");
+  const josonFiles = import.meta.glob("/src/generated/component-data/*.json");
   // const iterableJsonFiles = Object.entries(josonFiles);
 
   // const allJsonFiles = await Promise.all(

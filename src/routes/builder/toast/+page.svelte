@@ -5,7 +5,7 @@
   import { blur, fly, slide, scale, fade } from "svelte/transition";
   import type { FlyParams, BlurParams, SlideParams, ScaleParams } from "svelte/transition";
   import DynamicCodeBlockHighlight from "../utils/DynamicCodeBlockHighlight.svelte";
-  import CodeWrapper from "../utils/CodeWrapper.svelte";
+  import CodeWrapper from "$utils/CodeWrapper.svelte";
   import H1 from "../utils/H1.svelte";
   import { isGeneratedCodeOverflow } from "../utils/helpers";
   import MetaTag from "../../utils/MetaTag.svelte";
