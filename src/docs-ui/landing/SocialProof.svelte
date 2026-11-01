@@ -1,13 +1,13 @@
 <script lang="ts">
   import Avatar from "$lib/avatar/Avatar.svelte";
-  import Discord from "../utils/icons/Discord.svelte";
-  import Figma from "../utils/icons/Figma.svelte";
-  import GitHub from "../utils/icons/GitHub.svelte";
-  import Npm from "../utils/icons/Npm.svelte";
-  import Quote from "../utils/icons/Quote.svelte";
+  import Discord from "$utils/icons/Discord.svelte";
+  import Figma from "$utils/icons/Figma.svelte";
+  import GitHub from "$utils/icons/GitHub.svelte";
+  import Npm from "$utils/icons/Npm.svelte";
+  import Quote from "$utils/icons/Quote.svelte";
   import Section from "./utils/Section.svelte";
   import { page } from "$app/state";
-  import type { PageData } from "../$types";
+  import type { PageData } from "../../routes/$types";
 
   let data: PageData = page.data as PageData;
 

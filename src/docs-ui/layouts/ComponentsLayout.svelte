@@ -4,9 +4,9 @@
   import { Sidebar, SidebarGroup, SidebarItem, uiHelpers, SidebarButton, SidebarDropdownWrapper } from "$lib";
   import { getContext, type Snippet } from "svelte";
   import type { Writable } from "svelte/store";
-  import Toc from "../utils/Toc.svelte";
+  import Toc from "$utils/Toc.svelte";
   import { extract } from "./component/Anchor.svelte";
-  import { capitalizeFirstLetter } from "../builder/utils/helpers";
+  import { capitalizeFirstLetter } from "../../routes/builder/utils/helpers";
 
   interface Props {
     data: any;

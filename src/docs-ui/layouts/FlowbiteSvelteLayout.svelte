@@ -3,10 +3,10 @@
   import { DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl, Badge, ThemeSelector } from "$lib";
   import Tooltip from "$lib/tooltip/Tooltip.svelte";
   import { onMount } from "svelte";
-  import Discord from "../utils/icons/Discord.svelte";
-  import GitHub from "../utils/icons/GitHub.svelte";
-  import ToolbarLink from "../utils/ToolbarLink.svelte";
-  import AlgoliaSearch from "../utils/AlgoliaSearch.svelte";
+  import Discord from "$utils/icons/Discord.svelte";
+  import GitHub from "$utils/icons/GitHub.svelte";
+  import ToolbarLink from "$utils/ToolbarLink.svelte";
+  import AlgoliaSearch from "$utils/AlgoliaSearch.svelte";
 
   let { children } = $props();
 

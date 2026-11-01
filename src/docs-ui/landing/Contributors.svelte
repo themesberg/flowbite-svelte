@@ -2,7 +2,7 @@
   import Avatar from "$lib/avatar/Avatar.svelte";
   import Tooltip from "$lib/tooltip/Tooltip.svelte";
   import { ChevronRightOutline } from "flowbite-svelte-icons";
-  import Community from "../utils/icons/Community.svelte";
+  import Community from "$utils/icons/Community.svelte";
   import Section from "./utils/Section.svelte";
   import type { TriggeredToggleEvent } from "$lib";
 

@@ -67,7 +67,8 @@ const config = {
       "flowbite-svelte": path.resolve("./src/lib/index.ts"),
       $icons: path.resolve("./src/routes/utils/icons"),
       $utils: path.resolve("./src/routes/utils"),
-      $generated: path.resolve("./src/generated")
+      $generated: path.resolve("./src/generated"),
+      "$docs-ui": path.resolve("./src/docs-ui")
     }
   }
 };

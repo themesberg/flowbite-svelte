@@ -3,10 +3,10 @@
   import { DarkMode } from "$lib";
   import Li from "$lib/typography/list/Li.svelte";
   import List from "$lib/typography/list/List.svelte";
-  import ArrowRight from "../utils/icons/ArrowRight.svelte";
-  import Check from "../utils/icons/Check.svelte";
-  import Moon from "../utils/icons/Moon.svelte";
-  import Sun from "../utils/icons/Sun.svelte";
+  import ArrowRight from "$utils/icons/ArrowRight.svelte";
+  import Check from "$utils/icons/Check.svelte";
+  import Moon from "$utils/icons/Moon.svelte";
+  import Sun from "$utils/icons/Sun.svelte";
   import A from "./utils/A.svelte";
   import H2 from "./utils/H2.svelte";
   import Row from "./utils/Row.svelte";

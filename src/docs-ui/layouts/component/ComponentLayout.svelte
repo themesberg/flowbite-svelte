@@ -6,12 +6,12 @@
 </script>
 
 <script lang="ts">
-  import Footer from "../../utils/Footer.svelte";
-  import MetaTag from "../../utils/MetaTag.svelte";
-  import Newsletter from "../../utils/Newsletter.svelte";
-  import PageHeadSection from "../../utils/PageHeadSection.svelte";
-  import Paging from "../../utils/Paging.svelte";
-  import SectionHeader from "../../blocks/utils/SectionHeader.svelte";
+  import Footer from "$utils/Footer.svelte";
+  import MetaTag from "$utils/MetaTag.svelte";
+  import Newsletter from "$utils/Newsletter.svelte";
+  import PageHeadSection from "$utils/PageHeadSection.svelte";
+  import Paging from "$utils/Paging.svelte";
+  import SectionHeader from "../../../routes/blocks/utils/SectionHeader.svelte";
 
   let { title, breadcrumb_title, component_title = "", dir, description, layout = "", category, children, pkg = "Flowbite Svelte" } = $props();
 

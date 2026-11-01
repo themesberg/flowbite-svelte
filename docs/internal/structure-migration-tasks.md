@@ -85,17 +85,17 @@ Branch: `version-2`. One phase = one PR. Tick boxes as you go and add a line to 
 - [x] Test count equals the Phase 0 count: 2122 / 2119 passed / 1 skipped / 2 todo; e2e 203; check 0 errors. Build/dist not re-run (no `src/lib` change)
 - [ ] Open PR
 
-## Phase 5: Docs tidy-up (needs Phase 2). Keep the `docs` / `docs-examples` mirror: it is intentional.
-- [ ] Save a route list from the current build for comparison
-- [ ] Write `scripts/check-docs-mirror.mjs`: every example imported by a `.md` exists, every `docs-examples` file is imported by some `.md`, folder structure matches 1:1
-- [ ] Run it; record orphans and mismatches here: ____
-- [ ] Fix orphans and mismatches
-- [ ] Wire the check into `pnpm lint` only (decided 2026-10-31: local, not CI)
-- [ ] Move `routes/theme-test`, `routes/snapshots`, `docs/examples` snapshot pages to a dev-only route group or `e2e/fixtures`
-- [ ] Move `routes/landing` and `routes/layouts` components to `src/docs-ui/`
-- [ ] Resolve `docs/mcp` vs `llm/mcp` overlap
-- [ ] Route list after build matches the saved one (or differences are intended and redirected)
-- [ ] Gate passes; open PR
+## Phase 5: Docs tidy-up (done on branch `chore/structure-phase-3`). Keep the `docs` / `docs-examples` mirror: it is intentional.
+- [x] Route list saved before changes (prerendered pages 194, route dirs 95, in the session scratchpad) and compared after: identical
+- [x] `scripts/check-docs-mirror.mjs`: every `{#include}` resolves, every example file is included/imported/referenced, every example folder has a docs page. Exempt: `index.ts` barrels (71, unused but conventional), `+page`/`+layout` route files and `md/` content under `docs-examples`
+- [x] Ran it: 108 reports = 71 barrels + 15 route files + 5 md (exempted) + 17 real orphans. No missing includes, no folder mismatches
+- [x] Fixed: deleted the 17 orphans (`components/toast/StackVertical`, `extend/virtual-masonry/Default`, `typography/heading/H1..H6`, `typography/image/{Blur,Center,FullWidth,Grayscale,Large,Left,Medium,Right,Small}`); none referenced anywhere
+- [x] Wired into `pnpm lint` (end of the chain), not CI, per 2026-10-31 decision
+- [x] `routes/theme-test` and `routes/snapshots` -> `routes/(dev)/` with `+layout.ts` that 404s outside `vite dev` (verified 404 on `vite preview`). CHANGE: they were reachable in production before. `docs/examples/*` NOT moved: `snapshot` is a real docs page (in nav, covered by `e2e/examples.spec.ts`), `snapshot-example` is its demo
+- [x] `routes/landing`, `routes/layouts` -> `src/docs-ui/` with a `$docs-ui` alias (`svelte.config.js`); relative imports into `routes/utils` rewritten to `$utils`, `mdsvex.config.js` layout path updated
+- [x] `docs/mcp` vs `llm/mcp`: no longer an overlap. `llm/mcp` is generated output of `docs/mcp` (Phase 3), nothing to merge
+- [x] Gate (Node 24): check 0/0, unit 2122/2119/1/2, build + publint ok, dist = baseline, e2e 203
+- [ ] Open PR
 
 ## Phase 6: Workspace split (optional, needs Q3, Phases 1-5)
 - [ ] Create `packages/flowbite-svelte` and `apps/docs`; update `pnpm-workspace.yaml`
@@ -124,4 +124,4 @@ Format: `YYYY-MM-DD | phase | done | skipped/failed | next`
 - 2026-11-01 | `docs/v2-migration-guide.md` moved to repo root (developer-facing info); plan line updated, no code or config referenced the old path | none | none | open PR, then Phase 3
 - 2026-11-01 | `docs/internal/workflow.md` (release steps) moved to repo root, same reason | none | none | open PR, then Phase 3
 - 2026-11-01 | Phase 3 done on `chore/structure-phase-3` | gate green under Node 24 | blocks component-data and highlight kept (highlight is unreferenced); CI build check, CONTRIBUTING note, PR | decide on highlight, then Phase 4
-- 2026-11-01 | Phase 4 done (renames only, colocation dropped) | check, unit 2122/2119/1/2, e2e 203 green | `sandbox` test is lib-unrelated; Phase 3+4 PR not opened; CI build check, CONTRIBUTING `pnpm gen` note | decide on sandbox, open PR, then Phase 5
+- 2026-11-01 | Phase 4 done (renames only, colocation dropped) | check, unit 2122/2119/1/2, e2e 203 green | `sandbox` test is lib-unrelated; Phase 3+4 PR not opened; CI build check, CONTRIBUTING `pnpm gen` note | decide on sandbox, open PR, then Phase 5- 2026-11-01 | Phase 5 done | gate green; route lists identical | `(dev)` pages now 404 in production; `sitemap.xml/+server.ts` still has stale exclude patterns (`^/layouts/component.*`, `^/component-data.*`); PR not opened | decide on Phase 6 (workspace split)

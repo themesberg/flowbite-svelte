@@ -1,16 +1,16 @@
 <script lang="ts">
-  import FlowbiteSvelteLayout from "./layouts/FlowbiteSvelteLayout.svelte";
+  import FlowbiteSvelteLayout from "$docs-ui/layouts/FlowbiteSvelteLayout.svelte";
   import { MetaTags } from "svelte-meta-tags";
   import type { PageData } from "./$types";
-  import Components from "./landing/Components.svelte";
-  import Featured from "./landing/Featured.svelte";
-  import Hero from "./landing/Hero.svelte";
+  import Components from "$docs-ui/landing/Components.svelte";
+  import Featured from "$docs-ui/landing/Featured.svelte";
+  import Hero from "$docs-ui/landing/Hero.svelte";
   import Footer from "./utils/Footer.svelte";
-  import Contributors from "./landing/Contributors.svelte";
-  import DesignFigma from "./landing/DesignFigma.svelte";
-  import GetStarted from "./landing/GetStarted.svelte";
-  import SocialProof from "./landing/SocialProof.svelte";
-  import CTA from "./landing/CTA.svelte";
+  import Contributors from "$docs-ui/landing/Contributors.svelte";
+  import DesignFigma from "$docs-ui/landing/DesignFigma.svelte";
+  import GetStarted from "$docs-ui/landing/GetStarted.svelte";
+  import SocialProof from "$docs-ui/landing/SocialProof.svelte";
+  import CTA from "$docs-ui/landing/CTA.svelte";
 
   let { data }: { data: PageData } = $props();
 
