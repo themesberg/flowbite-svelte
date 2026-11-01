@@ -26,7 +26,7 @@ Each phase is one PR and can be reverted on its own. Every phase must end with `
 
 ## Phase 1: Root cleanup (low risk)
 - Move scripts (`convert-imports.mjs`, `find-*.mjs`, `convertThemes.js`, `include-files.js`, `clear-cache.sh`) to `scripts/`. Delete one-off ones after checking `git log` and that nothing in `package.json`, CI or `vercel.json` calls them.
-- Move analysis notes (`POPOVER_*`, `TEST_*`, `TIMER_*`, `reactive-context.md`, `workflow.md`, `md-to-lim.txt`, `design-system-guide.md`) to `docs/internal/`. `v2-migration-guide.md` lives in the repo root (moved there 2026-11-01, developer-facing).
+- Move analysis notes (`POPOVER_*`, `TEST_*`, `TIMER_*`, `reactive-context.md`, `md-to-lim.txt`, `design-system-guide.md`) to `docs/internal/`. `v2-migration-guide.md` lives in the repo root and so does `workflow.md` (both moved there 2026-11-01, developer-facing).
 - Add `test-results/` to `.gitignore` and `git rm --cached` it. Move `src/routes/vite-env.d.ts` to `src/`.
 - Check: `grep -rn` each moved script name in `package.json`, `.github/`, `vercel.json`.
 - Rollback: plain revert.
