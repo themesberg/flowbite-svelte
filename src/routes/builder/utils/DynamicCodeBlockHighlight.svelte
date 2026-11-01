@@ -46,7 +46,7 @@
   };
 </script>
 
-<div class={base({ className })}>
+<div class={base({ class: ["mt-0", className] })}>
   <div class="relative">
     <div class="overflow-hidden {showExpandButton ? 'pb-8' : ''}" class:max-h-56={!expand} tabindex="-1">
       {#if copiedStatus}
