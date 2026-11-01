@@ -70,7 +70,7 @@ Branch: `version-2`. One phase = one PR. Tick boxes as you go and add a line to 
 - [x] Wired: `pnpm gen` = component-data + llm + nav; `build` runs `gen` first. `gen:component-data-prop-value` now calls the new script
 - [x] Verified `/llm/**` prerendered (`.vercel/output/static/llm/components/accordion.md`), sitemap built, `e2e/og-check.test.ts` in e2e run
 - [x] Gate (Node 24): check 0/0 (4527 files), unit 2122/2119/1/2, build + publint ok, e2e 203, dist diff = only the 2 `generated/` files
-- [ ] KEPT in place by decision: `routes/blocks/component-data` (58, hand-written, no generator) and `admin-dashboard/utils/highlight` (1,136 files). FINDING: nothing imports the admin highlight dir (builder `DynamicCodeBlockStyle.svelte` globs a `./highlight` that was deleted in 32d2d3eae, so its style list is empty). Candidate for deletion, needs a decision
+- [x] `routes/blocks/component-data` kept (hand-written). `admin-dashboard/utils/highlight` DELETED 2026-11-01 (1,136 files, nothing imported it; builder `DynamicCodeBlockStyle.svelte` is itself unused and still globs a missing `./highlight`, left alone)
 - [ ] Add CI build check (Q1): not done, no CI workflow touched
 - [ ] Fresh clones need `pnpm gen` before `pnpm dev`, `check`, `test:unit`; not yet in CONTRIBUTING
 - [ ] Open PR
