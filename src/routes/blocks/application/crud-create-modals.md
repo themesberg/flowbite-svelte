@@ -9,7 +9,7 @@ description: Get started with a collection of modal components with form input e
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Section'
 </script>
 
@@ -73,4 +73,4 @@ Use this free example to show a modal component with a form inside when creating
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

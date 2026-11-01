@@ -1,5 +1,4 @@
 export { default as JSONView } from "./JSONView.svelte";
-export { default as CompoAttributesViewer } from "./CompoAttributesViewer.svelte";
 export { default as HighlightCompo } from "./HighlightCompo.svelte";
 /**
  * Extracts the route name from a SvelteKit file path

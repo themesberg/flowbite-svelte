@@ -9,7 +9,7 @@ description: Use this collection of CRUD modal components to show information ab
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Section'
 </script>
 
@@ -62,4 +62,4 @@ Use this free modal component to show a list of data entries from the database b
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

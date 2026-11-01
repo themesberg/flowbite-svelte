@@ -9,7 +9,7 @@ description: The login page can be used to allow users to authenticate inside yo
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Register, Section'
 </script>
 
@@ -54,4 +54,4 @@ This example includes a form with an email and password input accompanied by the
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

@@ -9,7 +9,7 @@ description: Choose one of these website sections to show extra content relative
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Content, ContentWithImage, Section'
 </script>
 
@@ -59,4 +59,4 @@ Use this example to show a couple of images next to a heading and paragraph to p
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

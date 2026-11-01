@@ -9,7 +9,7 @@ description: Get started with a collection of modal components based on the CRUD
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Section'
 </script>
 
@@ -83,4 +83,4 @@ Use this free example of a modal component to update an existing data entry insi
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

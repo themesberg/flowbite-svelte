@@ -9,7 +9,7 @@ description: Get started with account recovery (aka. forgot password) pages to a
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'ForgotPassword, ForgotPasswordHeader, Section'
 </script>
 
@@ -46,4 +46,4 @@ Use this example for users who forgot their password and send a recovery email t
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

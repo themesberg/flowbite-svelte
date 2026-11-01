@@ -9,7 +9,7 @@ description: Get started with the popup component to overlay the main website co
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Popup'
 </script>
 
@@ -38,4 +38,4 @@ Use this example of a popup element to show a simple yes or no type of dialog to
 </Popup>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

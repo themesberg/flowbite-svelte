@@ -9,7 +9,7 @@ description: Get started with a collection of responsive pricing sections to sho
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'PricingBodyHead, PricingCard, PricingItemWrapper, PricingHead, PricingItem, Section'
 </script>
 
@@ -146,4 +146,4 @@ Use this example of three pricing cards showcasing the pricing plan title, descr
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

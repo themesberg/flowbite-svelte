@@ -9,7 +9,7 @@ description: The newsletter component is an important marketing method that you 
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Newsletter, Section'
 </script>
 
@@ -51,4 +51,4 @@ Use this example as a website section to allow website visitors to sign up for y
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

@@ -9,7 +9,7 @@ description: Get started with a collection of team sections built with Tailwind 
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'TeamWrapper, TeamHeader, TeamBody, TeamItem, Facebook, GitHub, Twitter, Section'
 </script>
 
@@ -81,4 +81,4 @@ Use this example to show information about your team members such as the name, o
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

@@ -9,7 +9,7 @@ description: Get started with maintenance pages coded with Tailwind CSS to show 
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Maintenance, Section'
 </script>
 
@@ -30,4 +30,4 @@ Use this example to let your users know that you are working on an important upd
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

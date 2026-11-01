@@ -9,7 +9,7 @@ description: Get started with a collection of website sections related to the bl
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'ArticleAuthor, ArticleBody, ArticleHead, ArticleWrapper, BlogHead, BlogBodyWrapper, Section'
 </script>
 
@@ -84,4 +84,4 @@ Use this example to show a preview of a blog post including the title, descripti
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

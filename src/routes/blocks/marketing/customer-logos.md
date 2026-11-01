@@ -9,7 +9,7 @@ description: This website section can be used as a social proof incentive to con
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'HeroHeader, Section'
 </script>
 
@@ -51,4 +51,4 @@ Use this example to show a list of logos of the companies that have used your pr
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

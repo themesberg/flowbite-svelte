@@ -9,7 +9,7 @@ description: Get started with a collection of FAQ (frequently asked questions) s
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Faq, FaqItem, Section'
 </script>
 
@@ -86,4 +86,4 @@ Use this simple example of a FAQ section to show a list of questions and answers
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

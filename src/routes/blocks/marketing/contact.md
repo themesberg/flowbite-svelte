@@ -9,7 +9,7 @@ description: The contact section is an important part of your website where the 
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Contact, Section'
 </script>
 
@@ -46,4 +46,4 @@ Use this example of a contact form coded with Tailwind CSS including the email, 
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>

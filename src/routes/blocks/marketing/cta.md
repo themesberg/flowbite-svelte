@@ -9,7 +9,7 @@ description: The CTA (call to action) website sections can be used anywhere on y
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../utils'
+  import { TableProp, TableDefaultRow, BlockAttributesViewer } from '../utils'
   const components = 'Cta, Section'
 </script>
 
@@ -83,4 +83,4 @@ Use this simple yet effective CTA section with a heading, short paragraph, and a
 </Section>
 ```
 
-<CompoAttributesViewer {components}/>
+<BlockAttributesViewer {components}/>
