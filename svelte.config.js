@@ -66,7 +66,8 @@ const config = {
     alias: {
       "flowbite-svelte": path.resolve("./src/lib/index.ts"),
       $icons: path.resolve("./src/routes/utils/icons"),
-      $utils: path.resolve("./src/routes/utils")
+      $utils: path.resolve("./src/routes/utils"),
+      $generated: path.resolve("./src/generated")
     }
   }
 };

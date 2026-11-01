@@ -9,8 +9,8 @@ description: Use the datatable component to search, sort, filter and paginate ta
 
 <script lang="ts">
   import { CompoAttributesViewer, GitHubCompoLinks, ExampleWrapper, LlmLink } from '../../utils'
-  import componentData1 from '../../component-data/Chart.json'
-  import componentData2 from '../../component-data/Card.json'
+  import componentData1 from '$generated/component-data/Chart.json'
+  import componentData2 from '$generated/component-data/Card.json'
   const components = 'Table'
 
   import * as Examples from './examples/datatable';

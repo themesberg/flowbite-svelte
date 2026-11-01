@@ -1,7 +1,7 @@
 // scripts/generate-nav.mjs
 // Generates static nav data for /docs/** layout.
 // Run with: pnpm nav
-// Output:   src/lib/generated/nav.json
+// Output:   src/generated/nav.json
 
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync } from "fs";
 import { join, dirname } from "path";
@@ -234,7 +234,7 @@ function buildDashboard() {
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 function main() {
-  console.log("Generating src/lib/generated/nav.json…");
+  console.log("Generating src/generated/nav.json…");
 
   const posts = buildPosts();
   const blocks = buildBlocks();
@@ -243,7 +243,7 @@ function main() {
 
   const nav = { posts, blocks, builders, dashboard };
 
-  const outDir = join(ROOT, "src/lib/generated");
+  const outDir = join(ROOT, "src/generated");
   mkdirSync(outDir, { recursive: true });
 
   const outPath = join(outDir, "nav.json");

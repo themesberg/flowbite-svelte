@@ -2,15 +2,17 @@ import { error } from "@sveltejs/kit";
 import type { EntryGenerator } from "./$types";
 import type { RequestEvent } from "@sveltejs/kit";
 
+const PREFIX = "/src/generated/llm/";
+
 // Pre-load all markdown and text files at build time
 // This works on both localhost and Vercel
-const mdFiles = import.meta.glob("../**/*.md", {
+const mdFiles = import.meta.glob("/src/generated/llm/**/*.md", {
   query: "?raw",
   import: "default",
   eager: true
 }) as Record<string, string>;
 
-const txtFiles = import.meta.glob("../**/*.txt", {
+const txtFiles = import.meta.glob("/src/generated/llm/**/*.txt", {
   query: "?raw",
   import: "default",
   eager: true
@@ -22,10 +24,10 @@ const allFiles = { ...mdFiles, ...txtFiles };
 export const prerender = true;
 
 // Enumerate all valid slugs for prerendering.
-// Keys look like "../components/accordion.md" → slug "components/accordion"
+// Keys look like "/src/generated/llm/components/accordion.md" → slug "components/accordion"
 export const entries: EntryGenerator = () =>
   Object.keys(allFiles).map((key) => ({
-    slug: key.replace(/^\.\.\//, "").replace(/\.(md|txt)$/, "")
+    slug: key.replace(/^\/src\/generated\/llm\//, "").replace(/\.(md|txt)$/, "")
   }));
 
 // Debug in development
@@ -49,12 +51,12 @@ export async function GET({ params }: RequestEvent) {
   // Check if the path already has an extension
   if (filePath.endsWith(".md") || filePath.endsWith(".txt")) {
     // Path includes extension, use it directly
-    const key = `../${filePath}`;
+    const key = `${PREFIX}${filePath}`;
     content = allFiles[key];
   } else {
     // Path doesn't have extension, try adding .md or .txt
-    const mdKey = `../${filePath}.md`;
-    const txtKey = `../${filePath}.txt`;
+    const mdKey = `${PREFIX}${filePath}.md`;
+    const txtKey = `${PREFIX}${filePath}.txt`;
     content = allFiles[mdKey] ?? allFiles[txtKey];
   }
 
@@ -63,8 +65,8 @@ export async function GET({ params }: RequestEvent) {
     if (import.meta.env.DEV) {
       console.error("File not found:", filePath);
       console.error("Tried keys:", {
-        mdKey: `../${filePath}.md`,
-        txtKey: `../${filePath}.txt`
+        mdKey: `${PREFIX}${filePath}.md`,
+        txtKey: `${PREFIX}${filePath}.txt`
       });
       console.error("Available files sample:", Object.keys(allFiles).slice(0, 10));
     }

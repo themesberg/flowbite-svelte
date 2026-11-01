@@ -9,7 +9,7 @@ description: Use the search input component as a text field to allow users to en
 
 <script lang="ts">
   import { CompoAttributesViewer,  GitHubCompoLinks, toKebabCase, LlmLink } from '../../utils'
-  import componentData1 from '../../component-data/Search.json'
+  import componentData1 from '$generated/component-data/Search.json'
   const components = 'Search'
 </script>
 

@@ -6,13 +6,13 @@ export default {
   srcDir: "./src/routes/docs",
 
   // Output directory for processed files
-  outDir: "./src/routes/llm",
+  outDir: "./src/generated/llm",
 
   // Output file format
   format: "md",
 
   // Directory for component data
-  dataDir: "./src/routes/component-data",
+  dataDir: "./src/generated/component-data",
 
   // Sections to ignore (can be string or array)
   ignore: ["GitHub Links", "LLM Link"],

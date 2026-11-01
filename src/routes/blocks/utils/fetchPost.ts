@@ -60,7 +60,7 @@ export const fetchMarkdownPosts = async () => {
 };
 
 export const fetchComponentData = async () => {
-  const josonFiles = import.meta.glob("/src/routes/component-data/*.json");
+  const josonFiles = import.meta.glob("/src/generated/component-data/*.json");
   // const iterableJsonFiles = Object.entries(josonFiles);
 
   // const allJsonFiles = await Promise.all(

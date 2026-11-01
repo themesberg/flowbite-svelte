@@ -360,8 +360,6 @@ dist/gallery/index.d.ts
 dist/gallery/index.js
 dist/gallery/theme.d.ts
 dist/gallery/theme.js
-dist/generated/.gitkeep
-dist/generated/nav.json
 dist/index.d.ts
 dist/index.js
 dist/indicator/index.d.ts

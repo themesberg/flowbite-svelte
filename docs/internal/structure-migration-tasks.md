@@ -60,17 +60,20 @@ Branch: `version-2`. One phase = one PR. Tick boxes as you go and add a line to 
 - [x] Spot-check a docs page, a blocks page, an admin-dashboard page in the browser: done by hand in Firefox 2026-11-01. Found two bugs, both fixed (see log). Not re-checked after the `mt-0` fix: builder code block gap
 - [ ] Gate passes; open PR
 
-## Phase 3: Generated output out of `routes/` (needs Q1)
-- [ ] Inventory generator scripts and their output paths (`svelte-lib-helpers`, `svelte-doc-llm`, `generate-nav.mjs`, `update-llms.sh`)
-- [ ] Create `src/generated/` (or build-time step per Q1)
-- [ ] Move `admin-dashboard/utils/highlight` (1,136 files) and update importers
-- [ ] Move `routes/component-data` and `routes/blocks/component-data` and update generator paths
-- [ ] Move `routes/og-manifest.json` and update `scripts/generate-og-images.js`
-- [ ] Move `routes/llm` output and update `llm.config.js` / `update-llms.sh`
-- [ ] Move `lib/generated/nav.json` out of the library; confirm it is gone from `dist/`
-- [ ] If Q1 = generate on build: gitignore outputs and wire into `build`
-- [ ] Verify `/llm`, `/sitemap.xml`, `e2e/og-check.test.ts`
-- [ ] Gate passes; open PR
+## Phase 3: Generated output out of `routes/` (Q1 = generate on build; done on branch `chore/structure-phase-3`)
+- [x] Inventory: `component-data` <- `svelte-lib-helpers component-data-prop-value` (reads `src/lib`, no network, `--dest`); `routes/llm` <- `svelte-doc-llm` + `update-llms.sh`; `nav.json` <- `generate-nav.mjs`; `og-manifest.json` <- `generate-og-images.js` (manual script, writes committed `static/og`). `admin-dashboard/utils/highlight` has NO generator
+- [x] Created `src/generated/` (gitignored) with `$generated` alias in `svelte.config.js`
+- [x] `nav.json`: now `src/generated/nav.json`, 12 importers use `$generated/nav.json`, `src/lib/generated/` removed. `dist/generated/*` gone (baseline re-saved, 740 files)
+- [x] `component-data`: generated to `src/generated/component-data` by new `scripts/generate-component-data.mjs`, then overlays 8 committed files from `src/data/component-data-overrides/`: `Chart`, `EnhancedImg`, `Indicators`, `theme` (no generator source) and `Button`, `P` (hand-edited defaults), `MultiSelect`, `TableSearch` (generator emits junk/extra props). Other 10 committed files were stale (e.g. missing `closeAriaLabel`); fresh output replaces them. Importers (4 docs `.md`, `CompoAttributesViewer`, `fetchPost.ts` glob) use `$generated/component-data`
+- [x] `routes/llm`: output now `src/generated/llm` (`llm.config.js`, `update-llms.sh`); `routes/llm/[...slug]/+server.ts` globs updated; 1,300+ committed md/txt removed. `static/llms.txt` is still tracked and rewritten by `pnpm gen` (dropped a stale `flowbite-svelte-starter` line)
+- [x] `og-manifest.json`: nothing reads it. Tracked copy removed, script writes to `src/generated/og-manifest.json`. `pnpm og` stays manual (images are committed)
+- [x] Wired: `pnpm gen` = component-data + llm + nav; `build` runs `gen` first. `gen:component-data-prop-value` now calls the new script
+- [x] Verified `/llm/**` prerendered (`.vercel/output/static/llm/components/accordion.md`), sitemap built, `e2e/og-check.test.ts` in e2e run
+- [x] Gate (Node 24): check 0/0 (4527 files), unit 2122/2119/1/2, build + publint ok, e2e 203, dist diff = only the 2 `generated/` files
+- [ ] KEPT in place by decision: `routes/blocks/component-data` (58, hand-written, no generator) and `admin-dashboard/utils/highlight` (1,136 files). FINDING: nothing imports the admin highlight dir (builder `DynamicCodeBlockStyle.svelte` globs a `./highlight` that was deleted in 32d2d3eae, so its style list is empty). Candidate for deletion, needs a decision
+- [ ] Add CI build check (Q1): not done, no CI workflow touched
+- [ ] Fresh clones need `pnpm gen` before `pnpm dev`, `check`, `test:unit`; not yet in CONTRIBUTING
+- [ ] Open PR
 
 ## Phase 4: Tests
 - [x] Decide convention (colocated `*.test.ts` recommended); record it here: colocated `*.test.ts`, e2e renamed to `*.spec.ts` (2026-10-31)
@@ -121,3 +124,4 @@ Format: `YYYY-MM-DD | phase | done | skipped/failed | next`
 - 2026-11-01 | Phase 2 spot-check (Firefox, by hand) + 2 fixes | builder: `mt-4` from the builder `highlightcompo` theme showed as a gap inside the new `border-t` CodeWrapper div, fixed with `mt-0` in `DynamicCodeBlockHighlight` (`288b843ec`); blocks: Section table rows printed as one cell because `setContext` in `TableProp` ran inside nested `$effect`s (pre-existing since #1869, also on `main`), fixed at init (`86cb0e8ef`, table confirmed OK). Gate green under Node 24: check 0/0, unit 2122/2119/1/2, build + publint ok, dist = baseline, e2e 203 | builder gap not re-viewed after the fix; Phase 2 PR not opened (`version-2` is ahead of `origin/version-2`, nothing pushed); CONTRIBUTING/CLAUDE/GEMINI path refs; Algolia reindex after deploy; stale boxes "Switch consumers one folder per commit" | open PR, then Phase 3
 - 2026-11-01 | `docs/v2-migration-guide.md` moved to repo root (developer-facing info); plan line updated, no code or config referenced the old path | none | none | open PR, then Phase 3
 - 2026-11-01 | `docs/internal/workflow.md` (release steps) moved to repo root, same reason | none | none | open PR, then Phase 3
+- 2026-11-01 | Phase 3 done on `chore/structure-phase-3` | gate green under Node 24 | blocks component-data and highlight kept (highlight is unreferenced); CI build check, CONTRIBUTING note, PR | decide on highlight, then Phase 4

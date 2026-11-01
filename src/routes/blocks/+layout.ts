@@ -1,5 +1,5 @@
 import type { LayoutLoad } from "./$types";
-import nav from "$lib/generated/nav.json";
+import nav from "$generated/nav.json";
 
 export const prerender = true;
 
