@@ -20,13 +20,8 @@
     class?: string;
   } = $props();
 
-  $effect(() => {
-    $effect(() => {
-      $effect(() => {
-        setContext("category", category);
-      });
-    });
-  });
+  // svelte-ignore state_referenced_locally
+  setContext("category", category);
 
   const headerNames = {
     props: ["Name", "Type", "Default"],
