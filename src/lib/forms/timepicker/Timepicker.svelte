@@ -141,6 +141,7 @@
   }
 
   function handleDropdownSelect(option: TimePickerOption): void {
+    if (disabled) return;
     selectedOption = option.value;
     notifyChange();
   }
@@ -156,6 +157,7 @@
   }
 
   function applyTimerange(): void {
+    if (disabled) return;
     notifyChange();
   }
 
@@ -238,13 +240,13 @@
         oninput={(e) => handleTimeChange(e)}
         onchange={(e) => handleTimeChange(e)}
       />
-      <Button color={buttonColor} class={styles.button({ class: clsx(theme?.button) })}>
+      <Button {disabled} color={buttonColor} class={styles.button({ class: clsx(theme?.button) })}>
         {optionLabel}
         <svg class={styles.buttonIcon({ class: clsx(theme?.buttonIcon) })} aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </Button>
-      <Dropdown simple>
+      <Dropdown simple inert={disabled}>
         {#each options as option (option.value)}
           <DropdownItem onclick={() => handleDropdownSelect(option)}>
             {option.name}
@@ -302,13 +304,13 @@
         </button>
       </div>
     {:else if type === "timerange-dropdown"}
-      <Button color={buttonColor} {size} class={styles.button({ class: clsx(theme?.button) })}>
+      <Button {disabled} color={buttonColor} {size} class={styles.button({ class: clsx(theme?.button) })}>
         {timerangeLabel}
         <svg class={styles.buttonIcon({ class: clsx(theme?.buttonIcon) })} aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </Button>
-      <Dropdown simple class={styles.dropdownContent({ class: clsx(theme?.dropdownContent) })}>
+      <Dropdown simple inert={disabled} class={styles.dropdownContent({ class: clsx(theme?.dropdownContent) })}>
         <div class={styles.dropdownInner({ class: clsx(theme?.dropdownInner) })}>
           <div class={styles.dropdownTimeRow({ class: clsx(theme?.dropdownTimeRow) })}>
             <div class={styles.dropdownTimeCol({ class: clsx(theme?.dropdownTimeCol) })}>
@@ -344,7 +346,7 @@
               />
             </div>
           </div>
-          <Button color={buttonColor} class={styles.dropdownButton({ class: clsx(theme?.dropdownButton) })} onclick={applyTimerange}>
+          <Button {disabled} color={buttonColor} class={styles.dropdownButton({ class: clsx(theme?.dropdownButton) })} onclick={applyTimerange}>
             {timerangeButtonLabel}
           </Button>
         </div>
