@@ -444,7 +444,15 @@
   {/if}
 
   {#if isOpen || inline}
-    <div bind:this={calendarRef} id="datepicker-dropdown" class={base({ inline, class: clsx(theme?.base, className) })} transition:fade={{ duration: 100 }} role="dialog" aria-label="Calendar">
+    <div
+      bind:this={calendarRef}
+      id="datepicker-dropdown"
+      class={base({ inline, class: clsx(theme?.base, className) })}
+      transition:fade={{ duration: 100 }}
+      role="dialog"
+      aria-label="Calendar"
+      inert={disabled}
+    >
       {#if title}
         <h2 class={titleVariant({ class: clsx(theme?.titleVariant, classes?.titleVariant) })}>{title}</h2>
       {/if}
